@@ -1,13 +1,13 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._AmountAndDirection5 import AmountAndDirection5
-from ._PartyIdentification272 import PartyIdentification272
-from ._Number import Number
 from ._CashAccount40 import CashAccount40
+from ._Max35Text import Max35Text
+from ._Number import Number
+from ._PartyIdentification272 import PartyIdentification272
 
 class MovementRecord2(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmAgt", "_SeqNb", "_Ref", "_Id", "_SttlmAgtAcct", "_PtcptAcct", "_Ptcpt", "_Amt"]
+	__slots__ = ["_Amt", "_Id", "_Ptcpt", "_PtcptAcct", "_Ref", "_SeqNb", "_SttlmAgt", "_SttlmAgtAcct"]
 	@property
 	def Amt(self):
 		return self._Amt

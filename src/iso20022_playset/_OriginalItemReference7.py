@@ -1,14 +1,14 @@
 from . import base_types
-from ._Party50Choice import Party50Choice
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._RemittanceLocation8 import RemittanceLocation8
-from ._RemittanceInformation22 import RemittanceInformation22
-from ._Purpose2Choice import Purpose2Choice
 from ._CashAccount40 import CashAccount40
+from ._Party50Choice import Party50Choice
+from ._Purpose2Choice import Purpose2Choice
+from ._RemittanceInformation22 import RemittanceInformation22
+from ._RemittanceLocation8 import RemittanceLocation8
 
 class OriginalItemReference7(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcr", "_RltdAcct", "_Dbtr", "_AcctOwnr", "_IntrmyAgt", "_RmtInf", "_DbtrAgt", "_Acct", "_Purp", "_RltdRmtInf"]
+	__slots__ = ["_Acct", "_AcctOwnr", "_AcctSvcr", "_Dbtr", "_DbtrAgt", "_IntrmyAgt", "_Purp", "_RltdAcct", "_RltdRmtInf", "_RmtInf"]
 	@property
 	def Acct(self):
 		return self._Acct

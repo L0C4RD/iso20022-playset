@@ -1,13 +1,13 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._TypeTransactionTotals2Code import TypeTransactionTotals2Code
-from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
 from ._Number import Number
+from ._TypeTransactionTotals2Code import TypeTransactionTotals2Code
 
 class TransactionTotals12(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_POIGrpId", "_CardPdctPrfl", "_CardBrnd", "_CmltvAmt", "_TtlNb", "_Ccy"]
+	__slots__ = ["_CardBrnd", "_CardPdctPrfl", "_Ccy", "_CmltvAmt", "_POIGrpId", "_Tp", "_TtlNb"]
 	@property
 	def CardBrnd(self):
 		return self._CardBrnd

@@ -1,6 +1,6 @@
 from . import base_types
-from ._PartyIdentification232Choice import PartyIdentification232Choice
 from ._PartyIdentification129Choice import PartyIdentification129Choice
+from ._PartyIdentification232Choice import PartyIdentification232Choice
 
 class IndividualPerson43(base_types._BaseFieldType):
 

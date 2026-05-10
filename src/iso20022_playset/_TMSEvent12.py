@@ -1,14 +1,14 @@
 from . import base_types
-from ._TerminalManagementActionResult5Code import TerminalManagementActionResult5Code
 from ._DeviceResponse8 import DeviceResponse8
-from ._TMSActionIdentification10 import TMSActionIdentification10
+from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
-from ._ISODateTime import ISODateTime
+from ._TMSActionIdentification10 import TMSActionIdentification10
+from ._TerminalManagementActionResult5Code import TerminalManagementActionResult5Code
 
 class TMSEvent12(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlErrInf", "_TermnlMgrId", "_ActnId", "_TmStmp", "_Rslt", "_DvcRspn"]
+	__slots__ = ["_ActnId", "_AddtlErrInf", "_DvcRspn", "_Rslt", "_TermnlMgrId", "_TmStmp"]
 	@property
 	def ActnId(self):
 		return self._ActnId

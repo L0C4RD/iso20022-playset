@@ -4,7 +4,7 @@ from ._Max140Text import Max140Text
 
 class CertificationRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyId", "_KeyVrsn", "_CertReqInf"]
+	__slots__ = ["_CertReqInf", "_KeyId", "_KeyVrsn"]
 	@property
 	def CertReqInf(self):
 		return self._CertReqInf

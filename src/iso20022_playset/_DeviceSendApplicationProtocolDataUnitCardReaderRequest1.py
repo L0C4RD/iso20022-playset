@@ -3,7 +3,7 @@ from ._Min1Max256Binary import Min1Max256Binary
 
 class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_Param1", "_Param2", "_Instr", "_Clss", "_Data", "_XpctdLngth"]
+	__slots__ = ["_Clss", "_Data", "_Instr", "_Param1", "_Param2", "_XpctdLngth"]
 	@property
 	def Clss(self):
 		return self._Clss

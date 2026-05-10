@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISODateTime import ISODateTime
 from ._DateTimePeriod1 import DateTimePeriod1
+from ._ISODateTime import ISODateTime
 
 class Period8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FrDtToDt", "_DtTm", "_FrDtTm", "_ToDtTm"]
+	__slots__ = ["_DtTm", "_FrDtTm", "_FrDtToDt", "_ToDtTm"]
 	@property
 	def DtTm(self):
 		return self._DtTm

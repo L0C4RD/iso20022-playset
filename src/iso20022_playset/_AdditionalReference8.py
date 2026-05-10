@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentification113 import PartyIdentification113
 from ._Max35Text import Max35Text
+from ._PartyIdentification113 import PartyIdentification113
 
 class AdditionalReference8(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgNm", "_RefIssr", "_Ref"]
+	__slots__ = ["_MsgNm", "_Ref", "_RefIssr"]
 	@property
 	def MsgNm(self):
 		return self._MsgNm

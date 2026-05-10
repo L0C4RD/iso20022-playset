@@ -1,7 +1,7 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._GroupHeader118 import GroupHeader118
 from ._PaymentInstruction45 import PaymentInstruction45
+from ._SupplementaryData1 import SupplementaryData1
 
 class CustomerDirectDebitInitiationV11(base_types._BaseFieldType):
 

@@ -1,13 +1,13 @@
 from . import base_types
+from ._ActionMessage11 import ActionMessage11
 from ._ActionType15Code import ActionType15Code
 from ._NetworkParameters7 import NetworkParameters7
-from ._ActionMessage11 import ActionMessage11
 from ._ProcessRetry3 import ProcessRetry3
 from ._ProcessTiming6 import ProcessTiming6
 
 class Action17(base_types._BaseFieldType):
 
-	__slots__ = ["_Rtry", "_ActnTp", "_RmotAccs", "_MsgToPres", "_TmCond"]
+	__slots__ = ["_ActnTp", "_MsgToPres", "_RmotAccs", "_Rtry", "_TmCond"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp

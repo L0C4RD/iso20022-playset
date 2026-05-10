@@ -3,7 +3,7 @@ from ._Max350Text import Max350Text
 
 class CorporateActionNarrative30(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyCtctNrrtv", "_CertfctnBrkdwn", "_RegnDtls"]
+	__slots__ = ["_CertfctnBrkdwn", "_PtyCtctNrrtv", "_RegnDtls"]
 	@property
 	def CertfctnBrkdwn(self):
 		return self._CertfctnBrkdwn

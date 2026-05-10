@@ -1,13 +1,13 @@
 from . import base_types
-from ._BaseOneRate import BaseOneRate
-from ._Max35Text import Max35Text
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._BaseOneRate import BaseOneRate
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 from ._PositiveNumber import PositiveNumber
 
 class CurrencyExchange24(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitCcy", "_QtnDt", "_XchgRate", "_TrgtCcy", "_SrcCcy", "_XchgRateBase", "_CtrctId"]
+	__slots__ = ["_CtrctId", "_QtnDt", "_SrcCcy", "_TrgtCcy", "_UnitCcy", "_XchgRate", "_XchgRateBase"]
 	@property
 	def CtrctId(self):
 		return self._CtrctId

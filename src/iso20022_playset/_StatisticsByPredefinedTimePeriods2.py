@@ -4,7 +4,7 @@ from ._PriceValueChange1 import PriceValueChange1
 
 class StatisticsByPredefinedTimePeriods2(base_types._BaseFieldType):
 
-	__slots__ = ["_ThreeYrPricChng", "_LwstPricVal12Mnths", "_OneYrPricChng", "_FiveYrPricChng", "_HghstPricVal12Mnths"]
+	__slots__ = ["_FiveYrPricChng", "_HghstPricVal12Mnths", "_LwstPricVal12Mnths", "_OneYrPricChng", "_ThreeYrPricChng"]
 	@property
 	def FiveYrPricChng(self):
 		return self._FiveYrPricChng

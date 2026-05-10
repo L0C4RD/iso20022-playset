@@ -1,6 +1,6 @@
 from . import base_types
-from ._Location1 import Location1
 from ._GovernanceIdentification1Choice import GovernanceIdentification1Choice
+from ._Location1 import Location1
 
 class GovernanceRules1(base_types._BaseFieldType):
 

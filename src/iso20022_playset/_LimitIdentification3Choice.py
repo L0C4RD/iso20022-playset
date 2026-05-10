@@ -4,7 +4,7 @@ from ._LimitIdentification9 import LimitIdentification9
 
 class LimitIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cur", "_AllCur", "_AllDflt", "_Dflt"]
+	__slots__ = ["_AllCur", "_AllDflt", "_Cur", "_Dflt"]
 	@property
 	def AllCur(self):
 		return self._AllCur

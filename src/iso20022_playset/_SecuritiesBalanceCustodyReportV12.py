@@ -1,18 +1,18 @@
 from . import base_types
-from ._Intermediary44 import Intermediary44
-from ._BlockChainAddressWallet1 import BlockChainAddressWallet1
-from ._Statement73 import Statement73
-from ._SecuritiesAccount26 import SecuritiesAccount26
 from ._AggregateBalanceInformation46 import AggregateBalanceInformation46
-from ._SubAccountIdentification71 import SubAccountIdentification71
+from ._BlockChainAddressWallet1 import BlockChainAddressWallet1
+from ._Intermediary44 import Intermediary44
+from ._Pagination1 import Pagination1
 from ._PartyIdentification136 import PartyIdentification136
 from ._PartyIdentification144 import PartyIdentification144
-from ._Pagination1 import Pagination1
+from ._SecuritiesAccount26 import SecuritiesAccount26
+from ._Statement73 import Statement73
+from ._SubAccountIdentification71 import SubAccountIdentification71
 from ._TotalValueInPageAndStatement1 import TotalValueInPageAndStatement1
 
 class SecuritiesBalanceCustodyReportV12(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_IntrmyInf", "_SubAcctDtls", "_AcctBaseCcyTtlAmts", "_AcctSvcr", "_SfkpgAcct", "_Pgntn", "_StmtGnlDtls", "_BalForAcct", "_AcctOwnr"]
+	__slots__ = ["_AcctBaseCcyTtlAmts", "_AcctOwnr", "_AcctSvcr", "_BalForAcct", "_BlckChainAdrOrWllt", "_IntrmyInf", "_Pgntn", "_SfkpgAcct", "_StmtGnlDtls", "_SubAcctDtls"]
 	@property
 	def AcctBaseCcyTtlAmts(self):
 		return self._AcctBaseCcyTtlAmts

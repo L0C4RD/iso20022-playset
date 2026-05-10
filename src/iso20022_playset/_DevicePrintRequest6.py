@@ -1,12 +1,12 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._DocumentType7Code import DocumentType7Code
 from ._ActionMessage11 import ActionMessage11
+from ._DocumentType7Code import DocumentType7Code
 from ._ResponseMode2Code import ResponseMode2Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class DevicePrintRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_DocQlfr", "_OutptCntt", "_ReqrdSgntrFlg", "_RspnMd", "_IntgrtdPrtFlg"]
+	__slots__ = ["_DocQlfr", "_IntgrtdPrtFlg", "_OutptCntt", "_ReqrdSgntrFlg", "_RspnMd"]
 	@property
 	def DocQlfr(self):
 		return self._DocQlfr

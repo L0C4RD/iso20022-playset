@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class MatchingSystemReference1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdRef", "_MtchgSysUnqRef"]
+	__slots__ = ["_MtchgSysUnqRef", "_RltdRef"]
 	@property
 	def MtchgSysUnqRef(self):
 		return self._MtchgSysUnqRef

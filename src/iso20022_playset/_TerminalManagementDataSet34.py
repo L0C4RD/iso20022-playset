@@ -1,12 +1,12 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._DataSetIdentification11 import DataSetIdentification11
 from ._ManagementPlanContent13 import ManagementPlanContent13
 from ._Max9NumericText import Max9NumericText
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TerminalManagementDataSet34(base_types._BaseFieldType):
 
-	__slots__ = ["_SeqCntr", "_LastSeq", "_Cntt", "_Id"]
+	__slots__ = ["_Cntt", "_Id", "_LastSeq", "_SeqCntr"]
 	@property
 	def Cntt(self):
 		return self._Cntt

@@ -1,11 +1,11 @@
 from . import base_types
 from ._FailedMovement1 import FailedMovement1
-from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._Max35Text import Max35Text
+from ._PartyIdentification2Choice import PartyIdentification2Choice
 
 class CorporateActionMovementFailedStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_RsrcDtls", "_AcctOwnrId", "_AgtAcctId", "_ClntAcctId"]
+	__slots__ = ["_AcctOwnrId", "_AgtAcctId", "_ClntAcctId", "_RsrcDtls"]
 	@property
 	def AcctOwnrId(self):
 		return self._AcctOwnrId

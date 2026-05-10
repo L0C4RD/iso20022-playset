@@ -1,12 +1,12 @@
 from . import base_types
-from ._PaymentCard4 import PaymentCard4
 from ._CardTransaction3Choice import CardTransaction3Choice
-from ._PointOfInteraction1 import PointOfInteraction1
 from ._CashAccount40 import CashAccount40
+from ._PaymentCard4 import PaymentCard4
+from ._PointOfInteraction1 import PointOfInteraction1
 
 class CardTransaction18(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_Card", "_PrePdAcct", "_POI"]
+	__slots__ = ["_Card", "_POI", "_PrePdAcct", "_Tx"]
 	@property
 	def Card(self):
 		return self._Card

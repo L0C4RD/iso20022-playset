@@ -5,7 +5,7 @@ from ._GenericIdentification47 import GenericIdentification47
 
 class QuantityBreakdown65(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesSubBalTp", "_LotNb", "_LotQty"]
+	__slots__ = ["_LotNb", "_LotQty", "_SctiesSubBalTp"]
 	@property
 	def LotNb(self):
 		return self._LotNb

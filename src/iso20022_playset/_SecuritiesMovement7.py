@@ -1,13 +1,13 @@
 from . import base_types
-from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._Max35Text import Max35Text
 from ._CollateralEntryType1Code import CollateralEntryType1Code
+from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
+from ._Max35Text import Max35Text
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._YesNoIndicator import YesNoIndicator
 
 class SecuritiesMovement7(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_ClntSctiesMvmntId", "_Qty", "_CollMvmnt", "_SctiesMvmntTp", "_TrptyAgtSvcPrvdrSctiesMvmntId"]
+	__slots__ = ["_ClntSctiesMvmntId", "_CollMvmnt", "_FinInstrmId", "_Qty", "_SctiesMvmntTp", "_TrptyAgtSvcPrvdrSctiesMvmntId"]
 	@property
 	def ClntSctiesMvmntId(self):
 		return self._ClntSctiesMvmntId

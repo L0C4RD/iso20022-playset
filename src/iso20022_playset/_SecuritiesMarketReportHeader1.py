@@ -1,11 +1,11 @@
 from . import base_types
-from ._TradingVenueIdentification1Choice import TradingVenueIdentification1Choice
-from ._Period4Choice import Period4Choice
 from ._ISODateTime import ISODateTime
+from ._Period4Choice import Period4Choice
+from ._TradingVenueIdentification1Choice import TradingVenueIdentification1Choice
 
 class SecuritiesMarketReportHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgPrd", "_SubmissnDtTm", "_RptgNtty"]
+	__slots__ = ["_RptgNtty", "_RptgPrd", "_SubmissnDtTm"]
 	@property
 	def RptgNtty(self):
 		return self._RptgNtty

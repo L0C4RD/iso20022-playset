@@ -1,16 +1,16 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._LanguageCode import LanguageCode
 from ._CurrencyCode import CurrencyCode
-from ._xs:IDREF import xs:IDREF
-from ._Max35Text import Max35Text
 from ._ExternalDocumentPurpose1Code import ExternalDocumentPurpose1Code
+from ._ISODate import ISODate
+from ._LanguageCode import LanguageCode
+from ._Max35Text import Max35Text
 from ._TradeMarket1Choice import TradeMarket1Choice
+from ._xs:IDREF import xs:IDREF
 
 class FinancialItemParameters1(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_DocPurp", "_Ccy", "_IsseDt", "_Rcpt", "_Sellr", "_LangCd", "_BuyrFinAgt", "_SellrFinAgt", "_Buyr", "_DbtAcct", "_RltdItm", "_LglCntxt", "_GovngCtrct", "_TradMkt", "_CdtAcct", "_Idr"]
+	__slots__ = ["_Buyr", "_BuyrFinAgt", "_Ccy", "_CdtAcct", "_DbtAcct", "_DocPurp", "_GovngCtrct", "_Idr", "_IsseDt", "_Issr", "_LangCd", "_LglCntxt", "_Rcpt", "_RltdItm", "_Sellr", "_SellrFinAgt", "_TradMkt"]
 	@property
 	def Buyr(self):
 		return self._Buyr

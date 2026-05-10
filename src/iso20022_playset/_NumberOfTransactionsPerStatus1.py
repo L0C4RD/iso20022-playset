@@ -1,11 +1,11 @@
 from . import base_types
-from ._TransactionIndividualStatus1Code import TransactionIndividualStatus1Code
-from ._Max15NumericText import Max15NumericText
 from ._DecimalNumber import DecimalNumber
+from ._Max15NumericText import Max15NumericText
+from ._TransactionIndividualStatus1Code import TransactionIndividualStatus1Code
 
 class NumberOfTransactionsPerStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_DtldSts", "_DtldNbOfTxs", "_DtldCtrlSum"]
+	__slots__ = ["_DtldCtrlSum", "_DtldNbOfTxs", "_DtldSts"]
 	@property
 	def DtldCtrlSum(self):
 		return self._DtldCtrlSum

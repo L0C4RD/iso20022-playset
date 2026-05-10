@@ -5,7 +5,7 @@ from ._DocumentIdentification8 import DocumentIdentification8
 
 class AgentCADeactivationInstructionV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_DeactvtnDtls", "_CorpActnGnlInf"]
+	__slots__ = ["_CorpActnGnlInf", "_DeactvtnDtls", "_Id"]
 	@property
 	def CorpActnGnlInf(self):
 		return self._CorpActnGnlInf

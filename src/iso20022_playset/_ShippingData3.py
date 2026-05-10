@@ -1,18 +1,18 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max6NumericText import Max6NumericText
 from ._AdditionalData1 import AdditionalData1
-from ._Max40Text import Max40Text
-from ._ShippingPackage3 import ShippingPackage3
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ISODateTime import ISODateTime
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._Max40Text import Max40Text
+from ._Max6NumericText import Max6NumericText
+from ._Max70Text import Max70Text
+from ._ShippingPackage3 import ShippingPackage3
 from ._Tax41 import Tax41
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ShippingData3(base_types._BaseFieldType):
 
-	__slots__ = ["_MiscExpnss", "_NbOfPackgs", "_AddtlData", "_SvcDscrptrCd", "_IncntivAmt", "_Tax", "_NetAmt", "_Packg", "_SummryCmmdtyId", "_InsrncAmt", "_InvcCreDtTm", "_InvcNb", "_Insrnc"]
+	__slots__ = ["_AddtlData", "_IncntivAmt", "_Insrnc", "_InsrncAmt", "_InvcCreDtTm", "_InvcNb", "_MiscExpnss", "_NbOfPackgs", "_NetAmt", "_Packg", "_SummryCmmdtyId", "_SvcDscrptrCd", "_Tax"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

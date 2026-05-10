@@ -1,18 +1,18 @@
 from . import base_types
-from ._Frequency26Choice import Frequency26Choice
-from ._DatePeriod2 import DatePeriod2
-from ._YesNoIndicator import YesNoIndicator
-from ._UpdateType16Choice import UpdateType16Choice
-from ._Max5NumericText import Max5NumericText
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._CorporateActionStatementReportingType1Code import CorporateActionStatementReportingType1Code
+from ._CorporateActionStatementType2Code import CorporateActionStatementType2Code
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._DateOrDateTimePeriod1Choice import DateOrDateTimePeriod1Choice
-from ._CorporateActionStatementType2Code import CorporateActionStatementType2Code
-from ._CorporateActionStatementReportingType1Code import CorporateActionStatementReportingType1Code
+from ._DatePeriod2 import DatePeriod2
+from ._Frequency26Choice import Frequency26Choice
+from ._Max5NumericText import Max5NumericText
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._UpdateType16Choice import UpdateType16Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class Statement75(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtTp", "_InstrAggtnPrd", "_StmtDtTm", "_UpdTp", "_RptNb", "_NtfctnDdlnPrd", "_Frqcy", "_ActvtyInd", "_RptgTp", "_StmtId"]
+	__slots__ = ["_ActvtyInd", "_Frqcy", "_InstrAggtnPrd", "_NtfctnDdlnPrd", "_RptNb", "_RptgTp", "_StmtDtTm", "_StmtId", "_StmtTp", "_UpdTp"]
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd

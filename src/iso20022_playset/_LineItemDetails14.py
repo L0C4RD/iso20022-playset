@@ -1,19 +1,19 @@
 from . import base_types
-from ._UnitPrice18 import UnitPrice18
-from ._Tax22 import Tax22
+from ._Adjustment6 import Adjustment6
 from ._Charge25 import Charge25
-from ._CurrencyAndAmount import CurrencyAndAmount
 from ._CountryCode import CountryCode
+from ._CurrencyAndAmount import CurrencyAndAmount
+from ._Max70Text import Max70Text
+from ._ProductCategory1Choice import ProductCategory1Choice
 from ._ProductCharacteristics1Choice import ProductCharacteristics1Choice
 from ._ProductIdentifier2Choice import ProductIdentifier2Choice
-from ._ProductCategory1Choice import ProductCategory1Choice
-from ._Max70Text import Max70Text
-from ._Adjustment6 import Adjustment6
 from ._Quantity9 import Quantity9
+from ._Tax22 import Tax22
+from ._UnitPrice18 import UnitPrice18
 
 class LineItemDetails14(base_types._BaseFieldType):
 
-	__slots__ = ["_FrghtChrgs", "_PdctNm", "_Tax", "_PdctOrgn", "_TtlAmt", "_UnitPric", "_Adjstmnt", "_PdctChrtcs", "_PdctCtgy", "_Qty", "_LineItmId", "_PdctIdr"]
+	__slots__ = ["_Adjstmnt", "_FrghtChrgs", "_LineItmId", "_PdctChrtcs", "_PdctCtgy", "_PdctIdr", "_PdctNm", "_PdctOrgn", "_Qty", "_Tax", "_TtlAmt", "_UnitPric"]
 	@property
 	def Adjstmnt(self):
 		return self._Adjstmnt

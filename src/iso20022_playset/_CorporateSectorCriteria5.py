@@ -1,11 +1,11 @@
 from . import base_types
-from ._NotReported1Code import NotReported1Code
-from ._NACEDomainIdentifier import NACEDomainIdentifier
 from ._FinancialPartySectorType2Code import FinancialPartySectorType2Code
+from ._NACEDomainIdentifier import NACEDomainIdentifier
+from ._NotReported1Code import NotReported1Code
 
 class CorporateSectorCriteria5(base_types._BaseFieldType):
 
-	__slots__ = ["_NotRptd", "_NFISctr", "_FISctr"]
+	__slots__ = ["_FISctr", "_NFISctr", "_NotRptd"]
 	@property
 	def FISctr(self):
 		return self._FISctr

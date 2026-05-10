@@ -1,15 +1,15 @@
 from . import base_types
+from ._EncryptedDataElement2 import EncryptedDataElement2
+from ._Exact1HexBinaryText import Exact1HexBinaryText
 from ._Max2NumericText import Max2NumericText
 from ._Max32HexBinaryText import Max32HexBinaryText
-from ._Exact1HexBinaryText import Exact1HexBinaryText
-from ._Max8NumericText import Max8NumericText
-from ._EncryptedDataElement2 import EncryptedDataElement2
 from ._Max4NumericText import Max4NumericText
 from ._Max5NumericText import Max5NumericText
+from ._Max8NumericText import Max8NumericText
 
 class EncryptedData2(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyLngth", "_NcrptdFrmt", "_NcrptdElmt", "_Algo", "_KeyPrtcn", "_KeyIndx", "_KeySetIdr", "_PddgMtd", "_Ctrl", "_DrvdInf"]
+	__slots__ = ["_Algo", "_Ctrl", "_DrvdInf", "_KeyIndx", "_KeyLngth", "_KeyPrtcn", "_KeySetIdr", "_NcrptdElmt", "_NcrptdFrmt", "_PddgMtd"]
 	@property
 	def Algo(self):
 		return self._Algo

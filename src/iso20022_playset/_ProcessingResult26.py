@@ -1,14 +1,14 @@
 from . import base_types
-from ._PartyType9Code import PartyType9Code
+from ._AdditionalData1 import AdditionalData1
+from ._ISO8583ResponseCode import ISO8583ResponseCode
 from ._ISOMax3ACountryCode import ISOMax3ACountryCode
 from ._Max35Text import Max35Text
-from ._ISO8583ResponseCode import ISO8583ResponseCode
 from ._PartyType26Code import PartyType26Code
-from ._AdditionalData1 import AdditionalData1
+from ._PartyType9Code import PartyType9Code
 
 class ProcessingResult26(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_RspnSrcAssgnr", "_RspnSrcOthrTp", "_RspnSrcId", "_RspnSrcTp", "_RspnSrcCtry", "_RspnCd", "_RspnSrcShrtNm"]
+	__slots__ = ["_AddtlInf", "_RspnCd", "_RspnSrcAssgnr", "_RspnSrcCtry", "_RspnSrcId", "_RspnSrcOthrTp", "_RspnSrcShrtNm", "_RspnSrcTp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

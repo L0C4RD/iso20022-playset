@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISOTime import ISOTime
-from ._NetworkParameters7 import NetworkParameters7
 from ._Max70Text import Max70Text
+from ._NetworkParameters7 import NetworkParameters7
 
 class ClockSynchronisation3(base_types._BaseFieldType):
 
-	__slots__ = ["_POITmZone", "_Dely", "_SynctnSvr"]
+	__slots__ = ["_Dely", "_POITmZone", "_SynctnSvr"]
 	@property
 	def Dely(self):
 		return self._Dely

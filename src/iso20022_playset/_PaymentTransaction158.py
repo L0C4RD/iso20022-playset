@@ -1,15 +1,15 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._OriginalTransactionReference42 import OriginalTransactionReference42
-from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 from ._OriginalGroupInformation29 import OriginalGroupInformation29
+from ._OriginalTransactionReference42 import OriginalTransactionReference42
+from ._SupplementaryData1 import SupplementaryData1
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class PaymentTransaction158(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSysRef", "_OrgnlTxRef", "_OrgnlUETR", "_InstgAgt", "_OrgnlEndToEndId", "_OrgnlInstrId", "_OrgnlTxId", "_AccptncDtTm", "_OrgnlGrpInf", "_SplmtryData", "_InstdAgt", "_StsReqId"]
+	__slots__ = ["_AccptncDtTm", "_ClrSysRef", "_InstdAgt", "_InstgAgt", "_OrgnlEndToEndId", "_OrgnlGrpInf", "_OrgnlInstrId", "_OrgnlTxId", "_OrgnlTxRef", "_OrgnlUETR", "_SplmtryData", "_StsReqId"]
 	@property
 	def AccptncDtTm(self):
 		return self._AccptncDtTm

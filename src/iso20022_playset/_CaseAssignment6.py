@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISODateTime import ISODateTime
-from ._Party50Choice import Party50Choice
 from ._Max35Text import Max35Text
+from ._Party50Choice import Party50Choice
 
 class CaseAssignment6(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Assgnr", "_Assgne", "_CreDtTm"]
+	__slots__ = ["_Assgne", "_Assgnr", "_CreDtTm", "_Id"]
 	@property
 	def Assgne(self):
 		return self._Assgne

@@ -1,11 +1,11 @@
 from . import base_types
-from ._AccountIdentification80Choice import AccountIdentification80Choice
 from ._ATMAccountStatement2 import ATMAccountStatement2
+from ._AccountIdentification80Choice import AccountIdentification80Choice
 from ._Max70Text import Max70Text
 
 class ATMAccountStatement3(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctNm", "_AcctStmt", "_AcctIdr"]
+	__slots__ = ["_AcctIdr", "_AcctNm", "_AcctStmt"]
 	@property
 	def AcctIdr(self):
 		return self._AcctIdr

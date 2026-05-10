@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ISODate import ISODate
 
 class CollateralDate2(base_types._BaseFieldType):
 
-	__slots__ = ["_TradDt", "_ReqdExctnDt", "_SttlmDt"]
+	__slots__ = ["_ReqdExctnDt", "_SttlmDt", "_TradDt"]
 	@property
 	def ReqdExctnDt(self):
 		return self._ReqdExctnDt

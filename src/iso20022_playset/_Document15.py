@@ -1,16 +1,16 @@
 from . import base_types
-from ._Max140Text import Max140Text
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DocumentFormat1Choice import DocumentFormat1Choice
+from ._DocumentType1Choice import DocumentType1Choice
 from ._LanguageCode import LanguageCode
 from ._Max10MbBinary import Max10MbBinary
-from ._DocumentFormat1Choice import DocumentFormat1Choice
+from ._Max140Text import Max140Text
 from ._Max35Text import Max35Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._DocumentType1Choice import DocumentType1Choice
 from ._PartyAndSignature4 import PartyAndSignature4
 
 class Document15(base_types._BaseFieldType):
 
-	__slots__ = ["_FileNm", "_Nm", "_Tp", "_Id", "_IsseDt", "_LangCd", "_DgtlSgntr", "_Nclsr", "_Frmt"]
+	__slots__ = ["_DgtlSgntr", "_FileNm", "_Frmt", "_Id", "_IsseDt", "_LangCd", "_Nclsr", "_Nm", "_Tp"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr

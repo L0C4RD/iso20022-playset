@@ -1,11 +1,11 @@
 from . import base_types
-from ._AmountAndQuantityRatio4 import AmountAndQuantityRatio4
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._AmountAndQuantityRatio4 import AmountAndQuantityRatio4
 from ._Percentage14Rate import Percentage14Rate
 
 class SolicitationFeeRateFormat12Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtToQty", "_Rate", "_Amt"]
+	__slots__ = ["_Amt", "_AmtToQty", "_Rate"]
 	@property
 	def Amt(self):
 		return self._Amt

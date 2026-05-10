@@ -1,12 +1,12 @@
 from . import base_types
-from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
 from ._SecuritiesCertificate5 import SecuritiesCertificate5
 
 class RegistrationParameters7(base_types._BaseFieldType):
 
-	__slots__ = ["_CertfctnDtTm", "_CertfctnId", "_RegarAcct", "_CertNb"]
+	__slots__ = ["_CertNb", "_CertfctnDtTm", "_CertfctnId", "_RegarAcct"]
 	@property
 	def CertNb(self):
 		return self._CertNb

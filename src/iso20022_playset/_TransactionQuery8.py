@@ -1,10 +1,10 @@
 from . import base_types
-from ._TransactionCriteria8Choice import TransactionCriteria8Choice
 from ._QueryType2Code import QueryType2Code
+from ._TransactionCriteria8Choice import TransactionCriteria8Choice
 
 class TransactionQuery8(base_types._BaseFieldType):
 
-	__slots__ = ["_TxCrit", "_QryTp"]
+	__slots__ = ["_QryTp", "_TxCrit"]
 	@property
 	def QryTp(self):
 		return self._QryTp

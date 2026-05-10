@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._PartyIdentification72 import PartyIdentification72
-from ._GroupHeader69 import GroupHeader69
-from ._DocumentGeneralInformation2 import DocumentGeneralInformation2
 from ._AdditionalInformation1 import AdditionalInformation1
+from ._DocumentGeneralInformation2 import DocumentGeneralInformation2
+from ._GroupHeader69 import GroupHeader69
+from ._PartyIdentification72 import PartyIdentification72
+from ._SupplementaryData1 import SupplementaryData1
 from ._TradeSettlement2 import TradeSettlement2
 
 class TaxReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_TradSttlm", "_Sellr", "_AddtlInf", "_TaxRptHdr", "_SplmtryData", "_Buyr", "_OthrPty", "_AddtlRef"]
+	__slots__ = ["_AddtlInf", "_AddtlRef", "_Buyr", "_OthrPty", "_Sellr", "_SplmtryData", "_TaxRptHdr", "_TradSttlm"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

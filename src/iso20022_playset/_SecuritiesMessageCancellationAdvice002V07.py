@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._References79Choice import References79Choice
-from ._PartyIdentification156 import PartyIdentification156
-from ._SecuritiesAccount30 import SecuritiesAccount30
 from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
+from ._PartyIdentification156 import PartyIdentification156
+from ._References79Choice import References79Choice
+from ._SecuritiesAccount30 import SecuritiesAccount30
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesMessageCancellationAdvice002V07(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_Ref", "_SfkpgAcct", "_AcctOwnr", "_SplmtryData"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_Ref", "_SfkpgAcct", "_SplmtryData"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

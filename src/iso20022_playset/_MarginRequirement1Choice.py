@@ -1,10 +1,10 @@
 from . import base_types
-from ._Requirement1 import Requirement1
 from ._MarginRequirement1 import MarginRequirement1
+from ._Requirement1 import Requirement1
 
 class MarginRequirement1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SgrtdIndpdntAmtRqrmnt", "_MrgnRqrmnt"]
+	__slots__ = ["_MrgnRqrmnt", "_SgrtdIndpdntAmtRqrmnt"]
 	@property
 	def MrgnRqrmnt(self):
 		return self._MrgnRqrmnt

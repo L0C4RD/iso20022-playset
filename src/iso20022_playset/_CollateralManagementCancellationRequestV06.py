@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CollateralCancellationReason1 import CollateralCancellationReason1
-from ._Reference3Choice import Reference3Choice
 from ._Obligation8 import Obligation8
+from ._Reference3Choice import Reference3Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class CollateralManagementCancellationRequestV06(base_types._BaseFieldType):
 
-	__slots__ = ["_Oblgtn", "_SplmtryData", "_Ref", "_CxlRsn"]
+	__slots__ = ["_CxlRsn", "_Oblgtn", "_Ref", "_SplmtryData"]
 	@property
 	def CxlRsn(self):
 		return self._CxlRsn

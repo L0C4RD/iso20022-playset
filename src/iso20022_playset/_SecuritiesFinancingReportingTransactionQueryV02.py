@@ -1,11 +1,11 @@
 from . import base_types
+from ._PartyIdentification121Choice import PartyIdentification121Choice
 from ._SupplementaryData1 import SupplementaryData1
 from ._TradeReportQuery13Choice import TradeReportQuery13Choice
-from ._PartyIdentification121Choice import PartyIdentification121Choice
 
 class SecuritiesFinancingReportingTransactionQueryV02(base_types._BaseFieldType):
 
-	__slots__ = ["_TradQryData", "_SplmtryData", "_RqstngAuthrty"]
+	__slots__ = ["_RqstngAuthrty", "_SplmtryData", "_TradQryData"]
 	@property
 	def RqstngAuthrty(self):
 		return self._RqstngAuthrty

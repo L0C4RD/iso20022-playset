@@ -5,7 +5,7 @@ from ._References62Choice import References62Choice
 
 class MessageAndBusinessReference10(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdRef", "_OrdrRef", "_Ref"]
+	__slots__ = ["_OrdrRef", "_Ref", "_RltdRef"]
 	@property
 	def OrdrRef(self):
 		return self._OrdrRef

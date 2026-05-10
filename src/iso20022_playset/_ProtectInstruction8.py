@@ -1,13 +1,13 @@
 from . import base_types
+from ._FinancialInstrumentQuantity31Choice import FinancialInstrumentQuantity31Choice
 from ._ISODate import ISODate
+from ._ProtectInstructionStatus4Code import ProtectInstructionStatus4Code
 from ._ProtectTransactionType3Code import ProtectTransactionType3Code
 from ._RestrictedFINMax15Text import RestrictedFINMax15Text
-from ._FinancialInstrumentQuantity31Choice import FinancialInstrumentQuantity31Choice
-from ._ProtectInstructionStatus4Code import ProtectInstructionStatus4Code
 
 class ProtectInstruction8(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctDt", "_UcvrdPrtctQty", "_TxId", "_TxTp", "_PrtctTxSts"]
+	__slots__ = ["_PrtctDt", "_PrtctTxSts", "_TxId", "_TxTp", "_UcvrdPrtctQty"]
 	@property
 	def PrtctDt(self):
 		return self._PrtctDt

@@ -1,16 +1,16 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ChequeCancellationReason1 import ChequeCancellationReason1
-from ._Max35Text import Max35Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._PartyIdentification272 import PartyIdentification272
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._CashAccount40 import CashAccount40
+from ._ChequeCancellationReason1 import ChequeCancellationReason1
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._PartyIdentification272 import PartyIdentification272
 
 class Cheque20(base_types._BaseFieldType):
 
-	__slots__ = ["_ChqNb", "_ChqCxlOrStopRsn", "_DrwrAgt", "_PyeeAcct", "_IsseDt", "_Amt", "_OrgnlInstrId", "_StlDt", "_DrwrAgtAcct", "_Pyee", "_FctvDt", "_InstrId"]
+	__slots__ = ["_Amt", "_ChqCxlOrStopRsn", "_ChqNb", "_DrwrAgt", "_DrwrAgtAcct", "_FctvDt", "_InstrId", "_IsseDt", "_OrgnlInstrId", "_Pyee", "_PyeeAcct", "_StlDt"]
 	@property
 	def Amt(self):
 		return self._Amt

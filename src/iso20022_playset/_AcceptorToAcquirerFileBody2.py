@@ -1,11 +1,11 @@
 from . import base_types
-from ._AcceptorCompletionAdvice14 import AcceptorCompletionAdvice14
 from ._AcceptorCancellationAdvice14 import AcceptorCancellationAdvice14
+from ._AcceptorCompletionAdvice14 import AcceptorCompletionAdvice14
 from ._CardPaymentBatchTransfer13 import CardPaymentBatchTransfer13
 
 class AcceptorToAcquirerFileBody2(base_types._BaseFieldType):
 
-	__slots__ = ["_BtchTrf", "_CxlAdvc", "_CmpltnAdvc"]
+	__slots__ = ["_BtchTrf", "_CmpltnAdvc", "_CxlAdvc"]
 	@property
 	def BtchTrf(self):
 		return self._BtchTrf

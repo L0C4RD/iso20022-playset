@@ -1,10 +1,10 @@
 from . import base_types
-from ._UUIDv4Identifier import UUIDv4Identifier
 from ._Max35Text import Max35Text
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class PaymentIdentification6(base_types._BaseFieldType):
 
-	__slots__ = ["_EndToEndId", "_UETR", "_InstrId"]
+	__slots__ = ["_EndToEndId", "_InstrId", "_UETR"]
 	@property
 	def EndToEndId(self):
 		return self._EndToEndId

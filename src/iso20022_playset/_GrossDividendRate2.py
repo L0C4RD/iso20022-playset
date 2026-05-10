@@ -4,7 +4,7 @@ from ._GrossDividendRateType1FormatChoice import GrossDividendRateType1FormatCho
 
 class GrossDividendRate2(base_types._BaseFieldType):
 
-	__slots__ = ["_RateTp", "_Amt"]
+	__slots__ = ["_Amt", "_RateTp"]
 	@property
 	def Amt(self):
 		return self._Amt

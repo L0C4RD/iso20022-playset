@@ -3,7 +3,7 @@ from ._SettlementFailsDailyInstructionType1Choice import SettlementFailsDailyIns
 
 class SettlementFailsDailyCSD3(base_types._BaseFieldType):
 
-	__slots__ = ["_IntraCSD", "_CrossCSD"]
+	__slots__ = ["_CrossCSD", "_IntraCSD"]
 	@property
 	def CrossCSD(self):
 		return self._CrossCSD

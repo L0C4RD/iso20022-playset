@@ -1,13 +1,13 @@
 from . import base_types
-from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
-from ._PartyIdentification156 import PartyIdentification156
 from ._CashAccountIdentification6Choice import CashAccountIdentification6Choice
-from ._SafeKeepingPlace4 import SafeKeepingPlace4
+from ._PartyIdentification156 import PartyIdentification156
 from ._QuantityBreakdown69 import QuantityBreakdown69
+from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
+from ._SafeKeepingPlace4 import SafeKeepingPlace4
 
 class QuantityAndAccount111(base_types._BaseFieldType):
 
-	__slots__ = ["_DnmtnChc", "_CshAcct", "_SfkpgPlc", "_AcctOwnr", "_QtyBrkdwn"]
+	__slots__ = ["_AcctOwnr", "_CshAcct", "_DnmtnChc", "_QtyBrkdwn", "_SfkpgPlc"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

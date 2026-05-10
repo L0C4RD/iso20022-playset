@@ -4,7 +4,7 @@ from ._ErrorHandling3 import ErrorHandling3
 
 class ExchangeRateReportOrError4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyXchg", "_BizErr"]
+	__slots__ = ["_BizErr", "_CcyXchg"]
 	@property
 	def BizErr(self):
 		return self._BizErr

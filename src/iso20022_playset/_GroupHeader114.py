@@ -1,16 +1,16 @@
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._Authorisation1Choice import Authorisation1Choice
-from ._PaymentInitiationSource1 import PaymentInitiationSource1
-from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._DecimalNumber import DecimalNumber
 from ._ISODateTime import ISODateTime
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
 from ._PartyIdentification272 import PartyIdentification272
+from ._PaymentInitiationSource1 import PaymentInitiationSource1
 
 class GroupHeader114(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfTxs", "_InitnSrc", "_MsgId", "_CtrlSum", "_Authstn", "_InitgPty", "_FwdgAgt", "_CreDtTm"]
+	__slots__ = ["_Authstn", "_CreDtTm", "_CtrlSum", "_FwdgAgt", "_InitgPty", "_InitnSrc", "_MsgId", "_NbOfTxs"]
 	@property
 	def Authstn(self):
 		return self._Authstn

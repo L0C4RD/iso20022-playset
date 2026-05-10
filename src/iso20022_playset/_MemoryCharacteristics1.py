@@ -1,11 +1,11 @@
 from . import base_types
-from ._MemoryUnit1Code import MemoryUnit1Code
 from ._DecimalNumber import DecimalNumber
 from ._Max35Text import Max35Text
+from ._MemoryUnit1Code import MemoryUnit1Code
 
 class MemoryCharacteristics1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_FreeSz", "_Unit", "_TtlSz"]
+	__slots__ = ["_FreeSz", "_Id", "_TtlSz", "_Unit"]
 	@property
 	def FreeSz(self):
 		return self._FreeSz

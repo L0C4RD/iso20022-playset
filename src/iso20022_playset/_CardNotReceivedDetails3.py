@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._CardSecurityCapability1 import CardSecurityCapability1
 from ._Address2 import Address2
+from ._CardSecurityCapability1 import CardSecurityCapability1
+from ._ISODate import ISODate
 from ._Max16Text import Max16Text
 from ._Max256Text import Max256Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CardNotReceivedDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_MldFrPstlCd", "_CardSctyCpblty", "_MlngAdr", "_MlngAdrUstrd", "_VldFr", "_DtMld", "_CardSctyCd"]
+	__slots__ = ["_CardSctyCd", "_CardSctyCpblty", "_DtMld", "_MldFrPstlCd", "_MlngAdr", "_MlngAdrUstrd", "_VldFr"]
 	@property
 	def CardSctyCd(self):
 		return self._CardSctyCd

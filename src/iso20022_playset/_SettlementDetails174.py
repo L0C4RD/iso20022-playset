@@ -1,19 +1,19 @@
 from . import base_types
-from ._SettlementTransactionCondition26Choice import SettlementTransactionCondition26Choice
+from ._BeneficialOwnership5Choice import BeneficialOwnership5Choice
 from ._CashSettlementSystem5Choice import CashSettlementSystem5Choice
 from ._GenericIdentification47 import GenericIdentification47
-from ._RepurchaseType17Choice import RepurchaseType17Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._BeneficialOwnership5Choice import BeneficialOwnership5Choice
-from ._SecuritiesTransactionType49Choice import SecuritiesTransactionType49Choice
 from ._MarketClientSide7Choice import MarketClientSide7Choice
-from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
-from ._SecuritiesRTGS5Choice import SecuritiesRTGS5Choice
 from ._Registration11Choice import Registration11Choice
+from ._RepurchaseType17Choice import RepurchaseType17Choice
+from ._SecuritiesRTGS5Choice import SecuritiesRTGS5Choice
+from ._SecuritiesTransactionType49Choice import SecuritiesTransactionType49Choice
+from ._SettlementTransactionCondition26Choice import SettlementTransactionCondition26Choice
+from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
+from ._YesNoIndicator import YesNoIndicator
 
 class SettlementDetails174(base_types._BaseFieldType):
 
-	__slots__ = ["_HldInd", "_RpTp", "_SctiesRTGS", "_MktClntSd", "_SttlmTxCond", "_StmpDtyTaxBsis", "_BnfclOwnrsh", "_CshClrSys", "_Regn", "_PrtlSttlmInd", "_SctiesTxTp"]
+	__slots__ = ["_BnfclOwnrsh", "_CshClrSys", "_HldInd", "_MktClntSd", "_PrtlSttlmInd", "_Regn", "_RpTp", "_SctiesRTGS", "_SctiesTxTp", "_StmpDtyTaxBsis", "_SttlmTxCond"]
 	@property
 	def BnfclOwnrsh(self):
 		return self._BnfclOwnrsh

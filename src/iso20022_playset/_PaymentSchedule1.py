@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max35Text import Max35Text
+from ._ISODate import ISODate
 from ._Max1025Text import Max1025Text
+from ._Max35Text import Max35Text
 
 class PaymentSchedule1(base_types._BaseFieldType):
 
-	__slots__ = ["_XpctdDt", "_DueDt", "_Amt", "_AddtlInf", "_PmtSchdlId"]
+	__slots__ = ["_AddtlInf", "_Amt", "_DueDt", "_PmtSchdlId", "_XpctdDt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

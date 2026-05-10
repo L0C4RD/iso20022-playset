@@ -5,7 +5,7 @@ from ._SecuritiesBalanceType6Choice import SecuritiesBalanceType6Choice
 
 class IntraPositionDetails66(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgPlc", "_BalFr", "_IntraPosMvmnt"]
+	__slots__ = ["_BalFr", "_IntraPosMvmnt", "_SfkpgPlc"]
 	@property
 	def BalFr(self):
 		return self._BalFr

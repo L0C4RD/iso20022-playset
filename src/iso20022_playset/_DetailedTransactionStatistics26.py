@@ -1,10 +1,10 @@
 from . import base_types
-from ._Number import Number
 from ._MissingMarginData2 import MissingMarginData2
+from ._Number import Number
 
 class DetailedTransactionStatistics26(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfOutsdngDerivsWthNoMrgnInf", "_Wrnngs", "_NbOfOutsdngDerivs", "_NbOfOutsdngDerivsWthOutdtdMrgnInf"]
+	__slots__ = ["_NbOfOutsdngDerivs", "_NbOfOutsdngDerivsWthNoMrgnInf", "_NbOfOutsdngDerivsWthOutdtdMrgnInf", "_Wrnngs"]
 	@property
 	def NbOfOutsdngDerivs(self):
 		return self._NbOfOutsdngDerivs

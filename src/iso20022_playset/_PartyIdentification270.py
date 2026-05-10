@@ -4,7 +4,7 @@ from ._PartyIdentification246Choice import PartyIdentification246Choice
 
 class PartyIdentification270(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AddtlIdInf"]
+	__slots__ = ["_AddtlIdInf", "_Id"]
 	@property
 	def AddtlIdInf(self):
 		return self._AddtlIdInf

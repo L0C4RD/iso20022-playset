@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._SupplementaryData1 import SupplementaryData1
 from ._AcknowledgementDetails1Choice import AcknowledgementDetails1Choice
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
 
 class PayInEventAcknowledgementV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_AckDtls", "_SttlmSsnIdr", "_MsgId"]
+	__slots__ = ["_AckDtls", "_MsgId", "_SplmtryData", "_SttlmSsnIdr"]
 	@property
 	def AckDtls(self):
 		return self._AckDtls

@@ -4,7 +4,7 @@ from ._DateFormat41Choice import DateFormat41Choice
 
 class SecurityDate26(base_types._BaseFieldType):
 
-	__slots__ = ["_EarlstPmtDt", "_PstngDt", "_PmtDt", "_AvlblDt", "_DvddRnkgDt", "_PrpssDt"]
+	__slots__ = ["_AvlblDt", "_DvddRnkgDt", "_EarlstPmtDt", "_PmtDt", "_PrpssDt", "_PstngDt"]
 	@property
 	def AvlblDt(self):
 		return self._AvlblDt

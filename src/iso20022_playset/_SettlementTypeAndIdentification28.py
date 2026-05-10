@@ -1,11 +1,11 @@
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class SettlementTypeAndIdentification28(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesMvmntTp", "_PoolId", "_CtrPtyMktInfrstrctrTxId", "_CorpActnEvtId", "_Pmt", "_MktInfrstrctrTxId", "_AcctOwnrTxId", "_PrcrTxId", "_CmonId", "_AcctSvcrTxId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_CmonId", "_CorpActnEvtId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_Pmt", "_PoolId", "_PrcrTxId", "_SctiesMvmntTp"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

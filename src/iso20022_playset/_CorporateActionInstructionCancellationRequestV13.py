@@ -1,16 +1,16 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._YesNoIndicator import YesNoIndicator
+from ._AccountIdentification69 import AccountIdentification69
+from ._CorporateActionGeneralInformation183 import CorporateActionGeneralInformation183
 from ._CorporateActionNarrative10 import CorporateActionNarrative10
 from ._CorporateActionOption200 import CorporateActionOption200
-from ._CorporateActionGeneralInformation183 import CorporateActionGeneralInformation183
-from ._ProtectInstruction3 import ProtectInstruction3
 from ._DocumentIdentification31 import DocumentIdentification31
-from ._AccountIdentification69 import AccountIdentification69
+from ._ProtectInstruction3 import ProtectInstruction3
+from ._SupplementaryData1 import SupplementaryData1
+from ._YesNoIndicator import YesNoIndicator
 
 class CorporateActionInstructionCancellationRequestV13(base_types._BaseFieldType):
 
-	__slots__ = ["_ChngInstrInd", "_PrtctInstr", "_CorpActnInstr", "_AddtlInf", "_AcctDtls", "_CorpActnGnlInf", "_SplmtryData", "_InstrId"]
+	__slots__ = ["_AcctDtls", "_AddtlInf", "_ChngInstrInd", "_CorpActnGnlInf", "_CorpActnInstr", "_InstrId", "_PrtctInstr", "_SplmtryData"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

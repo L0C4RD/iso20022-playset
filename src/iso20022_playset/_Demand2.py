@@ -6,7 +6,7 @@ from ._Max35Text import Max35Text
 
 class Demand2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_SubmissnDtTm", "_AddtlInf", "_Amt"]
+	__slots__ = ["_AddtlInf", "_Amt", "_Id", "_SubmissnDtTm"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

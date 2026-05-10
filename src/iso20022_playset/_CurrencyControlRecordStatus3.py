@@ -1,13 +1,13 @@
 from . import base_types
+from ._DocumentIdentification28 import DocumentIdentification28
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 from ._StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
 from ._ValidationStatusReason3 import ValidationStatusReason3
-from ._DocumentIdentification28 import DocumentIdentification28
-from ._Max35Text import Max35Text
-from ._ISODateTime import ISODateTime
 
 class CurrencyControlRecordStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_RcrdId", "_DocId", "_StsRsn", "_StsDtTm", "_Sts"]
+	__slots__ = ["_DocId", "_RcrdId", "_Sts", "_StsDtTm", "_StsRsn"]
 	@property
 	def DocId(self):
 		return self._DocId

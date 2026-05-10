@@ -1,11 +1,11 @@
 from . import base_types
+from ._DetailedAmount21 import DetailedAmount21
 from ._ISODateTime import ISODateTime
 from ._Number import Number
-from ._DetailedAmount21 import DetailedAmount21
 
 class AggregationTransaction3(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfPmts", "_LastPmtDtTm", "_FrstPmtDtTm", "_IndvPmt"]
+	__slots__ = ["_FrstPmtDtTm", "_IndvPmt", "_LastPmtDtTm", "_NbOfPmts"]
 	@property
 	def FrstPmtDtTm(self):
 		return self._FrstPmtDtTm

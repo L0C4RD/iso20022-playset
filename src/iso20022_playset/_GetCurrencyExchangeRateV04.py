@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MessageHeader1 import MessageHeader1
 from ._CurrencyQueryDefinition3 import CurrencyQueryDefinition3
+from ._MessageHeader1 import MessageHeader1
+from ._SupplementaryData1 import SupplementaryData1
 
 class GetCurrencyExchangeRateV04(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyQryDef", "_SplmtryData", "_MsgHdr"]
+	__slots__ = ["_CcyQryDef", "_MsgHdr", "_SplmtryData"]
 	@property
 	def CcyQryDef(self):
 		return self._CcyQryDef

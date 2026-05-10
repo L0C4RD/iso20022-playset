@@ -1,12 +1,12 @@
 from . import base_types
 from ._AmountPrice1 import AmountPrice1
-from ._PriceFormat2Choice import PriceFormat2Choice
 from ._PriceFormat1Choice import PriceFormat1Choice
+from ._PriceFormat2Choice import PriceFormat2Choice
 from ._PriceFormat4Choice import PriceFormat4Choice
 
 class CorporateActionPrice1(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxblIncmPerDvddShr", "_GncCshPricRcvdPerPdct", "_CshInLieuOfShrPric", "_OverSbcptDpstPric", "_ExrcPric", "_IssePric", "_GncCshPricPdPerPdct"]
+	__slots__ = ["_CshInLieuOfShrPric", "_ExrcPric", "_GncCshPricPdPerPdct", "_GncCshPricRcvdPerPdct", "_IssePric", "_OverSbcptDpstPric", "_TaxblIncmPerDvddShr"]
 	@property
 	def CshInLieuOfShrPric(self):
 		return self._CshInLieuOfShrPric

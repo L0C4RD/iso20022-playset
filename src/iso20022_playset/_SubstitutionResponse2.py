@@ -1,11 +1,11 @@
 from . import base_types
 from ._CollateralSubstitutionResponse1 import CollateralSubstitutionResponse1
-from ._Status4Code import Status4Code
 from ._CollateralSubstitutionResponse3 import CollateralSubstitutionResponse3
+from ._Status4Code import Status4Code
 
 class SubstitutionResponse2(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnTp", "_CollSbstitnRjctnDtls", "_CollSbstitnAccptncDtls"]
+	__slots__ = ["_CollSbstitnAccptncDtls", "_CollSbstitnRjctnDtls", "_RspnTp"]
 	@property
 	def CollSbstitnAccptncDtls(self):
 		return self._CollSbstitnAccptncDtls

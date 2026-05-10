@@ -1,15 +1,15 @@
 from . import base_types
-from ._Max35Text import Max35Text
+from ._AdditionalData1 import AdditionalData1
 from ._CreditDebit3Code import CreditDebit3Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max4Text import Max4Text
 from ._Max15Text import Max15Text
-from ._AdditionalData1 import AdditionalData1
+from ._Max35Text import Max35Text
+from ._Max4Text import Max4Text
 from ._Tax41 import Tax41
 
 class AncillaryPurchase3(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Fee", "_SvcCtgyCd", "_CdtRsnCd", "_DocNb", "_CdtDbt", "_AddtlData", "_SvcSubCtgyCd", "_Tax", "_RltdDocNb", "_SvcPrvdrSvcTp", "_SummryCmmdtyId"]
+	__slots__ = ["_AddtlData", "_Amt", "_CdtDbt", "_CdtRsnCd", "_DocNb", "_Fee", "_RltdDocNb", "_SummryCmmdtyId", "_SvcCtgyCd", "_SvcPrvdrSvcTp", "_SvcSubCtgyCd", "_Tax"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

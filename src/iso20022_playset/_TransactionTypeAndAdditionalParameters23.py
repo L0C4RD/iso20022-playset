@@ -1,12 +1,12 @@
 from . import base_types
-from ._RepurchaseType21Choice import RepurchaseType21Choice
-from ._SecuritiesFinancingTransactionType2Code import SecuritiesFinancingTransactionType2Code
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 from ._Max35Text import Max35Text
+from ._RepurchaseType21Choice import RepurchaseType21Choice
+from ._SecuritiesFinancingTransactionType2Code import SecuritiesFinancingTransactionType2Code
 
 class TransactionTypeAndAdditionalParameters23(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesFincgTxTp", "_Pmt", "_NonceId", "_CmonId", "_ModTp", "_AcctSvcrTxId", "_AcctOwnrTxId", "_PoolId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_CmonId", "_ModTp", "_NonceId", "_Pmt", "_PoolId", "_SctiesFincgTxTp"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

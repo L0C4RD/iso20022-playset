@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._OriginalNotification15 import OriginalNotification15
 from ._GroupHeader121 import GroupHeader121
+from ._OriginalNotification15 import OriginalNotification15
+from ._SupplementaryData1 import SupplementaryData1
 
 class NotificationToReceiveStatusReportV08(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_OrgnlNtfctnAndSts", "_GrpHdr"]
+	__slots__ = ["_GrpHdr", "_OrgnlNtfctnAndSts", "_SplmtryData"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

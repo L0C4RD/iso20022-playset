@@ -4,7 +4,7 @@ from ._Quantity1Code import Quantity1Code
 
 class QuantityOrCode1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_Cd"]
+	__slots__ = ["_Cd", "_Qty"]
 	@property
 	def Cd(self):
 		return self._Cd

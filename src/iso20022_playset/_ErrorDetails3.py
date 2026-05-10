@@ -1,12 +1,12 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._Max4000Text import Max4000Text
 from ._Max500Text import Max500Text
 from ._MessageError1Code import MessageError1Code
-from ._Max35Text import Max35Text
 
 class ErrorDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Cd", "_Desc", "_OthrTp", "_DataElmtInErr"]
+	__slots__ = ["_Cd", "_DataElmtInErr", "_Desc", "_OthrTp", "_Tp"]
 	@property
 	def Cd(self):
 		return self._Cd

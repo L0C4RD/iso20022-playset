@@ -1,19 +1,19 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._PartyIdentification127Choice import PartyIdentification127Choice
-from ._NumberCount1Choice import NumberCount1Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._IntraPositionDetails58 import IntraPositionDetails58
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._FinancialInstrumentAttributes112 import FinancialInstrumentAttributes112
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._SafekeepingPlaceFormat41Choice import SafekeepingPlaceFormat41Choice
+from ._FinancialInstrumentAttributes112 import FinancialInstrumentAttributes112
+from ._IntraPositionDetails58 import IntraPositionDetails58
 from ._Linkages59 import Linkages59
 from ._Max35Text import Max35Text
+from ._NumberCount1Choice import NumberCount1Choice
+from ._PartyIdentification127Choice import PartyIdentification127Choice
+from ._SafekeepingPlaceFormat41Choice import SafekeepingPlaceFormat41Choice
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SupplementaryData1 import SupplementaryData1
 
 class IntraPositionMovementInstructionV07(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_IntraPosDtls", "_CorpActnEvtId", "_SfkpgAcct", "_SfkpgPlc", "_TxId", "_BlckChainAdrOrWllt", "_Lnkgs", "_AcctOwnr", "_FinInstrmAttrbts", "_NbCounts", "_SplmtryData"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_CorpActnEvtId", "_FinInstrmAttrbts", "_FinInstrmId", "_IntraPosDtls", "_Lnkgs", "_NbCounts", "_SfkpgAcct", "_SfkpgPlc", "_SplmtryData", "_TxId"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

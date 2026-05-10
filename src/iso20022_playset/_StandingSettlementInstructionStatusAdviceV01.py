@@ -1,15 +1,15 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._AccountIdentification26 import AccountIdentification26
 from ._EffectiveDate1 import EffectiveDate1
+from ._MarketIdentificationOrCashPurpose1Choice import MarketIdentificationOrCashPurpose1Choice
 from ._Max35Text import Max35Text
 from ._PartyOrCurrency1Choice import PartyOrCurrency1Choice
-from ._MarketIdentificationOrCashPurpose1Choice import MarketIdentificationOrCashPurpose1Choice
-from ._AccountIdentification26 import AccountIdentification26
 from ._ProcessingStatus43Choice import ProcessingStatus43Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class StandingSettlementInstructionStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdMsgRef", "_SttlmDtls", "_PrcgSts", "_FctvDtDtls", "_MktId", "_AcctId", "_SplmtryData"]
+	__slots__ = ["_AcctId", "_FctvDtDtls", "_MktId", "_PrcgSts", "_RltdMsgRef", "_SplmtryData", "_SttlmDtls"]
 	@property
 	def AcctId(self):
 		return self._AcctId

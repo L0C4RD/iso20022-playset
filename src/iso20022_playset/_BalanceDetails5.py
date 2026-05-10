@@ -1,12 +1,12 @@
 from . import base_types
-from ._BalanceDetails6 import BalanceDetails6
-from ._Unrealised1Code import Unrealised1Code
 from ._AmountAndDirection31 import AmountAndDirection31
+from ._BalanceDetails6 import BalanceDetails6
 from ._BalanceType6Choice import BalanceType6Choice
+from ._Unrealised1Code import Unrealised1Code
 
 class BalanceDetails5(base_types._BaseFieldType):
 
-	__slots__ = ["_DtldBal", "_Tp", "_Amt", "_Urlsd"]
+	__slots__ = ["_Amt", "_DtldBal", "_Tp", "_Urlsd"]
 	@property
 	def Amt(self):
 		return self._Amt

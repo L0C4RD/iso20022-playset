@@ -1,10 +1,10 @@
 from . import base_types
-from ._RejectedStatus61Choice import RejectedStatus61Choice
 from ._Quantity54Choice import Quantity54Choice
+from ._RejectedStatus61Choice import RejectedStatus61Choice
 
 class RejectedStatus12(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctdRsn", "_RjctdQty"]
+	__slots__ = ["_RjctdQty", "_RjctdRsn"]
 	@property
 	def RjctdQty(self):
 		return self._RjctdQty

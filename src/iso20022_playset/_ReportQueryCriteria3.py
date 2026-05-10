@@ -1,10 +1,10 @@
 from . import base_types
-from ._ReportQuerySearchCriteria3 import ReportQuerySearchCriteria3
 from ._Max35Text import Max35Text
+from ._ReportQuerySearchCriteria3 import ReportQuerySearchCriteria3
 
 class ReportQueryCriteria3(base_types._BaseFieldType):
 
-	__slots__ = ["_SchCrit", "_NewQryNm"]
+	__slots__ = ["_NewQryNm", "_SchCrit"]
 	@property
 	def NewQryNm(self):
 		return self._NewQryNm

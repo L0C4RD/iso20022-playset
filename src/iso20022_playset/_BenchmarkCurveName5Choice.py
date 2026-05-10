@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max25Text import Max25Text
 from ._BenchmarkCurveName2Code import BenchmarkCurveName2Code
+from ._Max25Text import Max25Text
 
 class BenchmarkCurveName5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Indx"]
+	__slots__ = ["_Indx", "_Nm"]
 	@property
 	def Indx(self):
 		return self._Indx

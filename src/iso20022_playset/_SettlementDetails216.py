@@ -1,29 +1,29 @@
 from . import base_types
-from ._LetterOfGuarantee4Choice import LetterOfGuarantee4Choice
-from ._GenericIdentification30 import GenericIdentification30
-from ._SettlingCapacity7Choice import SettlingCapacity7Choice
-from ._ExposureType25Choice import ExposureType25Choice
-from ._RepurchaseType22Choice import RepurchaseType22Choice
-from ._SecuritiesRTGS4Choice import SecuritiesRTGS4Choice
-from ._Registration9Choice import Registration9Choice
-from ._BlockTrade4Choice import BlockTrade4Choice
-from ._Restriction5Choice import Restriction5Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._SecuritiesTransactionType44Choice import SecuritiesTransactionType44Choice
-from ._MarketClientSide6Choice import MarketClientSide6Choice
-from ._HoldIndicator6 import HoldIndicator6
-from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
-from ._CashSettlementSystem4Choice import CashSettlementSystem4Choice
-from ._TaxCapacityParty4Choice import TaxCapacityParty4Choice
-from ._SettlementTransactionCondition34Choice import SettlementTransactionCondition34Choice
-from ._CentralCounterPartyEligibility4Choice import CentralCounterPartyEligibility4Choice
 from ._BeneficialOwnership4Choice import BeneficialOwnership4Choice
-from ._SettlementSystemMethod4Choice import SettlementSystemMethod4Choice
+from ._BlockTrade4Choice import BlockTrade4Choice
+from ._CashSettlementSystem4Choice import CashSettlementSystem4Choice
+from ._CentralCounterPartyEligibility4Choice import CentralCounterPartyEligibility4Choice
+from ._ExposureType25Choice import ExposureType25Choice
+from ._GenericIdentification30 import GenericIdentification30
+from ._HoldIndicator6 import HoldIndicator6
+from ._LetterOfGuarantee4Choice import LetterOfGuarantee4Choice
+from ._MarketClientSide6Choice import MarketClientSide6Choice
 from ._NettingEligibility4Choice import NettingEligibility4Choice
+from ._Registration9Choice import Registration9Choice
+from ._RepurchaseType22Choice import RepurchaseType22Choice
+from ._Restriction5Choice import Restriction5Choice
+from ._SecuritiesRTGS4Choice import SecuritiesRTGS4Choice
+from ._SecuritiesTransactionType44Choice import SecuritiesTransactionType44Choice
+from ._SettlementSystemMethod4Choice import SettlementSystemMethod4Choice
+from ._SettlementTransactionCondition34Choice import SettlementTransactionCondition34Choice
+from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
+from ._SettlingCapacity7Choice import SettlingCapacity7Choice
+from ._TaxCapacityParty4Choice import TaxCapacityParty4Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class SettlementDetails216(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmTxCond", "_ElgblForColl", "_HldInd", "_MktClntSd", "_SttlmSysMtd", "_RpTp", "_BnfclOwnrsh", "_StmpDtyTaxBsis", "_NetgElgblty", "_PrtlSttlmInd", "_SctiesRTGS", "_CCPElgblty", "_CshClrSys", "_Regn", "_LttrOfGrnt", "_TaxCpcty", "_SctiesTxTp", "_SttlgCpcty", "_LglRstrctns", "_BlckTrad", "_XpsrTp"]
+	__slots__ = ["_BlckTrad", "_BnfclOwnrsh", "_CCPElgblty", "_CshClrSys", "_ElgblForColl", "_HldInd", "_LglRstrctns", "_LttrOfGrnt", "_MktClntSd", "_NetgElgblty", "_PrtlSttlmInd", "_Regn", "_RpTp", "_SctiesRTGS", "_SctiesTxTp", "_StmpDtyTaxBsis", "_SttlgCpcty", "_SttlmSysMtd", "_SttlmTxCond", "_TaxCpcty", "_XpsrTp"]
 	@property
 	def BlckTrad(self):
 		return self._BlckTrad

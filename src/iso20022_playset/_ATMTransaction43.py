@@ -1,12 +1,12 @@
 from . import base_types
-from ._OnLinePIN5 import OnLinePIN5
-from ._TransactionIdentifier3 import TransactionIdentifier3
 from ._Max10000Binary import Max10000Binary
 from ._Max35Text import Max35Text
+from ._OnLinePIN5 import OnLinePIN5
+from ._TransactionIdentifier3 import TransactionIdentifier3
 
 class ATMTransaction43(base_types._BaseFieldType):
 
-	__slots__ = ["_ICCRltdData", "_RcncltnId", "_CrdhldrNewPIN", "_TxId"]
+	__slots__ = ["_CrdhldrNewPIN", "_ICCRltdData", "_RcncltnId", "_TxId"]
 	@property
 	def CrdhldrNewPIN(self):
 		return self._CrdhldrNewPIN

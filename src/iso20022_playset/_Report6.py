@@ -1,15 +1,15 @@
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
 from ._DateAndDateTime1Choice import DateAndDateTime1Choice
 from ._Frequency25Choice import Frequency25Choice
+from ._GenericIdentification30 import GenericIdentification30
 from ._Max35Text import Max35Text
+from ._Max5NumericText import Max5NumericText
 from ._QueryReference2 import QueryReference2
 from ._StatementUpdateTypeCodeAndDSSCode1Choice import StatementUpdateTypeCodeAndDSSCode1Choice
-from ._Max5NumericText import Max5NumericText
 
 class Report6(base_types._BaseFieldType):
 
-	__slots__ = ["_Frqcy", "_NtceTp", "_RptId", "_QryRef", "_RptDtTm", "_UpdTp", "_RptNb"]
+	__slots__ = ["_Frqcy", "_NtceTp", "_QryRef", "_RptDtTm", "_RptId", "_RptNb", "_UpdTp"]
 	@property
 	def Frqcy(self):
 		return self._Frqcy

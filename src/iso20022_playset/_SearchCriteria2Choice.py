@@ -1,12 +1,12 @@
 from . import base_types
 from ._AccountAndParties3 import AccountAndParties3
-from ._PaymentInstrumentType1 import PaymentInstrumentType1
 from ._CustomerIdentification2 import CustomerIdentification2
+from ._PaymentInstrumentType1 import PaymentInstrumentType1
 from ._RequestType1 import RequestType1
 
 class SearchCriteria2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlTxNb", "_PmtInstrm", "_Acct", "_CstmrId"]
+	__slots__ = ["_Acct", "_CstmrId", "_OrgnlTxNb", "_PmtInstrm"]
 	@property
 	def Acct(self):
 		return self._Acct

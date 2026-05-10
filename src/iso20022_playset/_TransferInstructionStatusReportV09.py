@@ -1,14 +1,14 @@
 from . import base_types
-from ._References64Choice import References64Choice
-from ._TransferStatusAndReason8 import TransferStatusAndReason8
+from ._AdditionalReference10 import AdditionalReference10
+from ._Extension1 import Extension1
 from ._MarketPracticeVersion1 import MarketPracticeVersion1
 from ._MessageIdentification1 import MessageIdentification1
-from ._Extension1 import Extension1
-from ._AdditionalReference10 import AdditionalReference10
+from ._References64Choice import References64Choice
+from ._TransferStatusAndReason8 import TransferStatusAndReason8
 
 class TransferInstructionStatusReportV09(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRpt", "_MsgId", "_Xtnsn", "_MktPrctcVrsn", "_Ref", "_CtrPtyRef"]
+	__slots__ = ["_CtrPtyRef", "_MktPrctcVrsn", "_MsgId", "_Ref", "_StsRpt", "_Xtnsn"]
 	@property
 	def CtrPtyRef(self):
 		return self._CtrPtyRef

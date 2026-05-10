@@ -1,22 +1,22 @@
 from . import base_types
-from ._FinancialInstrumentAttributes111 import FinancialInstrumentAttributes111
-from ._OtherAmounts39 import OtherAmounts39
-from ._QuantityAndAccount118 import QuantityAndAccount118
+from ._AmountAndDirection95 import AmountAndDirection95
 from ._CashParties41 import CashParties41
-from ._SupplementaryData1 import SupplementaryData1
-from ._SettlementDetails218 import SettlementDetails218
-from ._SettlementTypeAndAdditionalParameters13 import SettlementTypeAndAdditionalParameters13
-from ._SettlementParties98 import SettlementParties98
+from ._FinancialInstrumentAttributes111 import FinancialInstrumentAttributes111
+from ._Linkages40 import Linkages40
+from ._OtherAmounts39 import OtherAmounts39
+from ._OtherParties43 import OtherParties43
+from ._QuantityAndAccount118 import QuantityAndAccount118
 from ._RegistrationParameters6 import RegistrationParameters6
 from ._SecuritiesTradeDetails146 import SecuritiesTradeDetails146
-from ._Linkages40 import Linkages40
+from ._SettlementDetails218 import SettlementDetails218
+from ._SettlementParties98 import SettlementParties98
+from ._SettlementTypeAndAdditionalParameters13 import SettlementTypeAndAdditionalParameters13
 from ._StandingSettlementInstruction20 import StandingSettlementInstruction20
-from ._AmountAndDirection95 import AmountAndDirection95
-from ._OtherParties43 import OtherParties43
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesSettlementTransactionDetails58(base_types._BaseFieldType):
 
-	__slots__ = ["_RcvgSttlmPties", "_Lnkgs", "_FinInstrmAttrbts", "_SttlmTpAndAddtlParams", "_TradDtls", "_StgSttlmInstrDtls", "_OthrAmts", "_AddtlPhysOrRegnDtls", "_CshPties", "_DlvrgSttlmPties", "_SttlmAmt", "_QtyAndAcctDtls", "_OthrBizPties", "_SplmtryData", "_SttlmParams"]
+	__slots__ = ["_AddtlPhysOrRegnDtls", "_CshPties", "_DlvrgSttlmPties", "_FinInstrmAttrbts", "_Lnkgs", "_OthrAmts", "_OthrBizPties", "_QtyAndAcctDtls", "_RcvgSttlmPties", "_SplmtryData", "_StgSttlmInstrDtls", "_SttlmAmt", "_SttlmParams", "_SttlmTpAndAddtlParams", "_TradDtls"]
 	@property
 	def AddtlPhysOrRegnDtls(self):
 		return self._AddtlPhysOrRegnDtls

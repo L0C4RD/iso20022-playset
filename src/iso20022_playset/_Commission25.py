@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._AmountAndDirection29 import AmountAndDirection29
 from ._AmountOrRate2Choice import AmountOrRate2Choice
 from ._BaseOneRate import BaseOneRate
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._PartyIdentification267 import PartyIdentification267
 from ._CommissionType6Choice import CommissionType6Choice
+from ._ISODate import ISODate
+from ._PartyIdentification267 import PartyIdentification267
 
 class Commission25(base_types._BaseFieldType):
 
-	__slots__ = ["_VATRate", "_TtlVATAmt", "_Comssn", "_RcptId", "_Tp", "_ClctnDt", "_TtlComssn"]
+	__slots__ = ["_ClctnDt", "_Comssn", "_RcptId", "_Tp", "_TtlComssn", "_TtlVATAmt", "_VATRate"]
 	@property
 	def ClctnDt(self):
 		return self._ClctnDt

@@ -1,12 +1,12 @@
 from . import base_types
-from ._TradeDataReport2 import TradeDataReport2
 from ._Pagination1 import Pagination1
 from ._SupplementaryData1 import SupplementaryData1
 from ._TradeData45 import TradeData45
+from ._TradeDataReport2 import TradeDataReport2
 
 class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgPgntn", "_SplmtryData", "_TradDataRpt", "_StsDtls"]
+	__slots__ = ["_MsgPgntn", "_SplmtryData", "_StsDtls", "_TradDataRpt"]
 	@property
 	def MsgPgntn(self):
 		return self._MsgPgntn

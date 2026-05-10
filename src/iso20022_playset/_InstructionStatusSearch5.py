@@ -5,7 +5,7 @@ from ._PaymentStatusCodeSearch2Choice import PaymentStatusCodeSearch2Choice
 
 class InstructionStatusSearch5(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryStsRsn", "_PmtInstrSts", "_PmtInstrStsDtTm"]
+	__slots__ = ["_PmtInstrSts", "_PmtInstrStsDtTm", "_PrtryStsRsn"]
 	@property
 	def PmtInstrSts(self):
 		return self._PmtInstrSts

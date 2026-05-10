@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class CardWritingCapabilities1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrCpblty", "_Cpblty"]
+	__slots__ = ["_Cpblty", "_OthrCpblty"]
 	@property
 	def Cpblty(self):
 		return self._Cpblty

@@ -1,10 +1,10 @@
 from . import base_types
-from ._DigitalTokenAmount3 import DigitalTokenAmount3
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._DigitalTokenAmount3 import DigitalTokenAmount3
 
 class CurrencyOrDigitalTokenAmount2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlTknAmt", "_Amt"]
+	__slots__ = ["_Amt", "_DgtlTknAmt"]
 	@property
 	def Amt(self):
 		return self._Amt

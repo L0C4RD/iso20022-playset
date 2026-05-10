@@ -1,6 +1,6 @@
 from . import base_types
-from ._ProcessingPosition7Choice import ProcessingPosition7Choice
 from ._Max35Text import Max35Text
+from ._ProcessingPosition7Choice import ProcessingPosition7Choice
 
 class DocumentIdentification31(base_types._BaseFieldType):
 

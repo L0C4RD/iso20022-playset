@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class TransportBySea4(base_types._BaseFieldType):
 
-	__slots__ = ["_PortOfDschrge", "_VsslNm", "_PortOfLoadng", "_SeaCrrierNm"]
+	__slots__ = ["_PortOfDschrge", "_PortOfLoadng", "_SeaCrrierNm", "_VsslNm"]
 	@property
 	def PortOfDschrge(self):
 		return self._PortOfDschrge

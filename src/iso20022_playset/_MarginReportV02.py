@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._MarginCalculation1 import MarginCalculation1
 from ._MarginReport2 import MarginReport2
 from ._Pagination import Pagination
 from ._PartyIdentification35Choice import PartyIdentification35Choice
 from ._ReportParameters3 import ReportParameters3
-from ._MarginCalculation1 import MarginCalculation1
+from ._SupplementaryData1 import SupplementaryData1
 
 class MarginReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RptSummry", "_RptDtls", "_ClrMmb", "_Pgntn", "_RptParams", "_SplmtryData"]
+	__slots__ = ["_ClrMmb", "_Pgntn", "_RptDtls", "_RptParams", "_RptSummry", "_SplmtryData"]
 	@property
 	def ClrMmb(self):
 		return self._ClrMmb

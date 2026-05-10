@@ -1,7 +1,7 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._TerminationReason1Choice import TerminationReason1Choice
 from ._Max2000Text import Max2000Text
+from ._TerminationReason1Choice import TerminationReason1Choice
 
 class UndertakingTermination3(base_types._BaseFieldType):
 

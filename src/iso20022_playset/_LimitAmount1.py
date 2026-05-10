@@ -3,7 +3,7 @@ from ._CreditDebitAmount1 import CreditDebitAmount1
 
 class LimitAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_UtlstnAmt", "_AvlblAmt", "_Amt"]
+	__slots__ = ["_Amt", "_AvlblAmt", "_UtlstnAmt"]
 	@property
 	def Amt(self):
 		return self._Amt

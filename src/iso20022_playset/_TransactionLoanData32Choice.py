@@ -1,11 +1,11 @@
 from . import base_types
-from ._LoanData145 import LoanData145
-from ._LoanData144 import LoanData144
 from ._LoanData143 import LoanData143
+from ._LoanData144 import LoanData144
+from ._LoanData145 import LoanData145
 
 class TransactionLoanData32Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesLndg", "_RpTrad", "_BuySellBck"]
+	__slots__ = ["_BuySellBck", "_RpTrad", "_SctiesLndg"]
 	@property
 	def BuySellBck(self):
 		return self._BuySellBck

@@ -1,11 +1,11 @@
 from . import base_types
-from ._PreConfirmation1Code import PreConfirmation1Code
-from ._PartialSettlement2Code import PartialSettlement2Code
 from ._Max35Text import Max35Text
+from ._PartialSettlement2Code import PartialSettlement2Code
+from ._PreConfirmation1Code import PreConfirmation1Code
 
 class AdditionalParameters29(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntCollInstrId", "_TrptyAgtSvcPrvdrCollInstrId", "_ClntTrptyCollTxId", "_PrtlSttlm", "_PrvsPrtlConfId", "_PreConf", "_TrptyAgtSvcPrvdrCollTxId"]
+	__slots__ = ["_ClntCollInstrId", "_ClntTrptyCollTxId", "_PreConf", "_PrtlSttlm", "_PrvsPrtlConfId", "_TrptyAgtSvcPrvdrCollInstrId", "_TrptyAgtSvcPrvdrCollTxId"]
 	@property
 	def ClntCollInstrId(self):
 		return self._ClntCollInstrId

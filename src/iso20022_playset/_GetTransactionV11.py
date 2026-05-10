@@ -5,7 +5,7 @@ from ._TransactionQuery8 import TransactionQuery8
 
 class GetTransactionV11(base_types._BaseFieldType):
 
-	__slots__ = ["_TxQryDef", "_MsgHdr", "_SplmtryData"]
+	__slots__ = ["_MsgHdr", "_SplmtryData", "_TxQryDef"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

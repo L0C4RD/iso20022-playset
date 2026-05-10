@@ -1,42 +1,42 @@
 from . import base_types
-from ._TransactionChannelType1Choice import TransactionChannelType1Choice
-from ._RoundingDirection2Code import RoundingDirection2Code
-from ._DeliveryParameters3 import DeliveryParameters3
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._BestExecution1Code import BestExecution1Code
-from ._PercentageRate import PercentageRate
-from ._InformativeTax1 import InformativeTax1
-from ._UnitPrice22 import UnitPrice22
-from ._SourceOfCash1Choice import SourceOfCash1Choice
+from ._CustomerConductClassification1Choice import CustomerConductClassification1Choice
+from ._DateAndDateTimeChoice import DateAndDateTimeChoice
+from ._DecimalNumber import DecimalNumber
+from ._DeliveryParameters3 import DeliveryParameters3
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._Equalisation1 import Equalisation1
+from ._FinancialAdvice1Code import FinancialAdvice1Code
+from ._ForeignExchangeTerms33 import ForeignExchangeTerms33
+from ._FundOrderType4Choice import FundOrderType4Choice
 from ._FundSettlementParameters12 import FundSettlementParameters12
 from ._ISODate import ISODate
-from ._DecimalNumber import DecimalNumber
-from ._YesNoIndicator import YesNoIndicator
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._IncomePreference1Code import IncomePreference1Code
 from ._IndividualPerson31 import IndividualPerson31
-from ._FinancialAdvice1Code import FinancialAdvice1Code
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._LateReport1Code import LateReport1Code
-from ._OrderWaiver1 import OrderWaiver1
-from ._Max350Text import Max350Text
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._SignatureType1Choice import SignatureType1Choice
-from ._TotalFeesAndTaxes40 import TotalFeesAndTaxes40
-from ._InvestmentFundsOrderBreakdown2 import InvestmentFundsOrderBreakdown2
-from ._InvestmentAccount58 import InvestmentAccount58
-from ._NegotiatedTrade1Code import NegotiatedTrade1Code
-from ._Equalisation1 import Equalisation1
-from ._CustomerConductClassification1Choice import CustomerConductClassification1Choice
-from ._ProfitAndLoss2Choice import ProfitAndLoss2Choice
-from ._PaymentTransaction70 import PaymentTransaction70
-from ._FundOrderType4Choice import FundOrderType4Choice
-from ._Max35Text import Max35Text
-from ._ForeignExchangeTerms33 import ForeignExchangeTerms33
+from ._InformativeTax1 import InformativeTax1
 from ._Intermediary39 import Intermediary39
+from ._InvestmentAccount58 import InvestmentAccount58
+from ._InvestmentFundsOrderBreakdown2 import InvestmentFundsOrderBreakdown2
+from ._LateReport1Code import LateReport1Code
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._NegotiatedTrade1Code import NegotiatedTrade1Code
+from ._OrderWaiver1 import OrderWaiver1
+from ._PaymentTransaction70 import PaymentTransaction70
+from ._PercentageRate import PercentageRate
+from ._ProfitAndLoss2Choice import ProfitAndLoss2Choice
+from ._RoundingDirection2Code import RoundingDirection2Code
+from ._SignatureType1Choice import SignatureType1Choice
+from ._SourceOfCash1Choice import SourceOfCash1Choice
+from ._TotalFeesAndTaxes40 import TotalFeesAndTaxes40
+from ._TransactionChannelType1Choice import TransactionChannelType1Choice
+from ._UnitPrice22 import UnitPrice22
+from ._YesNoIndicator import YesNoIndicator
 
 class SubscriptionExecution12(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrTp", "_TradDtTm", "_SttlmAndCtdyDtls", "_NonStdSttlmInf", "_StffClntBrkdwn", "_IncmPref", "_SbcptIntrst", "_CshSttlmDt", "_FXDtls", "_ClntRef", "_SttlmAmt", "_AcmltnRghtRef", "_RltdPtyDtls", "_SrcOfCsh", "_InftvPricDtls", "_InvstmtAcctDtls", "_CshSttlmDtls", "_OrdrWvrDtls", "_LttrInttRef", "_PhysDlvryInd", "_BnfcryDtls", "_CumDvddInd", "_CstmrCndctClssfctn", "_PhysDlvryDtls", "_NgtdTrad", "_BestExctn", "_OrdrRef", "_IntrmPrftAmt", "_SttlmMtd", "_UnitsNb", "_PrtlSttlmOfCsh", "_TxOvrhd", "_PrtlSttlmOfUnits", "_DealgPricDtls", "_InftvTaxDtls", "_DealRef", "_GrssAmt", "_TxChanlTp", "_SgntrTp", "_Rfnd", "_Rndg", "_NetAmt", "_PrtlyExctdInd", "_FinAdvc", "_Equlstn", "_LateRpt"]
+	__slots__ = ["_AcmltnRghtRef", "_BestExctn", "_BnfcryDtls", "_ClntRef", "_CshSttlmDt", "_CshSttlmDtls", "_CstmrCndctClssfctn", "_CumDvddInd", "_DealRef", "_DealgPricDtls", "_Equlstn", "_FXDtls", "_FinAdvc", "_GrssAmt", "_IncmPref", "_InftvPricDtls", "_InftvTaxDtls", "_IntrmPrftAmt", "_InvstmtAcctDtls", "_LateRpt", "_LttrInttRef", "_NetAmt", "_NgtdTrad", "_NonStdSttlmInf", "_OrdrRef", "_OrdrTp", "_OrdrWvrDtls", "_PhysDlvryDtls", "_PhysDlvryInd", "_PrtlSttlmOfCsh", "_PrtlSttlmOfUnits", "_PrtlyExctdInd", "_Rfnd", "_RltdPtyDtls", "_Rndg", "_SbcptIntrst", "_SgntrTp", "_SrcOfCsh", "_StffClntBrkdwn", "_SttlmAmt", "_SttlmAndCtdyDtls", "_SttlmMtd", "_TradDtTm", "_TxChanlTp", "_TxOvrhd", "_UnitsNb"]
 	@property
 	def AcmltnRghtRef(self):
 		return self._AcmltnRghtRef

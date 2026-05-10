@@ -1,6 +1,6 @@
 from . import base_types
-from ._PartyIdentification1Choice import PartyIdentification1Choice
 from ._Max35Text import Max35Text
+from ._PartyIdentification1Choice import PartyIdentification1Choice
 
 class AdditionalReference2(base_types._BaseFieldType):
 

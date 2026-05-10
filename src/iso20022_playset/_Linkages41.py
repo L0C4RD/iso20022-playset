@@ -4,7 +4,7 @@ from ._ProcessingPosition9Choice import ProcessingPosition9Choice
 
 class Linkages41(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesSttlmTxId", "_PrcgPos"]
+	__slots__ = ["_PrcgPos", "_SctiesSttlmTxId"]
 	@property
 	def PrcgPos(self):
 		return self._PrcgPos

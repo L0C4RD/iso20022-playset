@@ -1,20 +1,20 @@
 from . import base_types
-from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
-from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._UnitPrice15 import UnitPrice15
-from ._PerformanceFactors1 import PerformanceFactors1
-from ._YesNoIndicator import YesNoIndicator
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._FinancialInstrument8 import FinancialInstrument8
-from ._EventFrequency1Code import EventFrequency1Code
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
+from ._EventFrequency1Code import EventFrequency1Code
+from ._FinancialInstrument8 import FinancialInstrument8
+from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
+from ._Max35Text import Max35Text
+from ._PartyIdentification2Choice import PartyIdentification2Choice
+from ._PerformanceFactors1 import PerformanceFactors1
+from ._UnitPrice15 import UnitPrice15
 from ._ValuationStatistics3 import ValuationStatistics3
 from ._ValuationTiming1Code import ValuationTiming1Code
-from ._Max35Text import Max35Text
+from ._YesNoIndicator import YesNoIndicator
 
 class PriceValuation4(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNAV", "_SspdInd", "_PrfrmncDtls", "_ValtnTp", "_FndMgmtCpny", "_ValtnDtTm", "_Id", "_OffclValtnInd", "_ValtnSttstcs", "_TtlUnitsNb", "_FinInstrmDtls", "_NAVDtTm", "_PrvsValtnDtTm", "_ValtnFrqcy", "_PricDtls", "_NxtValtnDtTm"]
+	__slots__ = ["_FinInstrmDtls", "_FndMgmtCpny", "_Id", "_NAVDtTm", "_NxtValtnDtTm", "_OffclValtnInd", "_PrfrmncDtls", "_PricDtls", "_PrvsValtnDtTm", "_SspdInd", "_TtlNAV", "_TtlUnitsNb", "_ValtnDtTm", "_ValtnFrqcy", "_ValtnSttstcs", "_ValtnTp"]
 	@property
 	def FinInstrmDtls(self):
 		return self._FinInstrmDtls

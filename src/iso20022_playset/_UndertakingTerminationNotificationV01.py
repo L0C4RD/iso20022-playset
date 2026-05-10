@@ -4,7 +4,7 @@ from ._UndertakingTerminationNotice1 import UndertakingTerminationNotice1
 
 class UndertakingTerminationNotificationV01(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgTermntnNtfctnDtls", "_DgtlSgntr"]
+	__slots__ = ["_DgtlSgntr", "_UdrtkgTermntnNtfctnDtls"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr

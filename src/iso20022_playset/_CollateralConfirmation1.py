@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class CollateralConfirmation1(base_types._BaseFieldType):
 
-	__slots__ = ["_CollSbstitnRspnId", "_Cmnt", "_ConfTp", "_CollSbstitnReqId"]
+	__slots__ = ["_Cmnt", "_CollSbstitnReqId", "_CollSbstitnRspnId", "_ConfTp"]
 	@property
 	def Cmnt(self):
 		return self._Cmnt

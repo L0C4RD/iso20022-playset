@@ -1,10 +1,10 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
 from ._ConcentrationAccount1 import ConcentrationAccount1
+from ._LEIIdentifier import LEIIdentifier
 
 class ConcentrationAgent1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Acct"]
+	__slots__ = ["_Acct", "_Id"]
 	@property
 	def Acct(self):
 		return self._Acct

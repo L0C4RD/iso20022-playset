@@ -1,18 +1,18 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
-from ._CashInOutForecast7 import CashInOutForecast7
-from ._OtherIdentification4 import OtherIdentification4
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._CashInOutForecast7 import CashInOutForecast7
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._PercentageRate import PercentageRate
-from ._NetCashForecast5 import NetCashForecast5
+from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
+from ._LEIIdentifier import LEIIdentifier
 from ._Max350Text import Max350Text
+from ._NetCashForecast5 import NetCashForecast5
+from ._OtherIdentification4 import OtherIdentification4
+from ._PercentageRate import PercentageRate
 
 class Fund1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_TradDtTm", "_LglNttyIdr", "_EstmtdTtlUnitsNb", "_EstmtdNetCshFcstDtls", "_Nm", "_Ccy", "_PrvsTtlNAV", "_EstmtdTtlNAV", "_EstmtdCshInFcstDtls", "_EstmtdPctgOfFndTtlNAV", "_EstmtdCshOutFcstDtls", "_PrvsTtlUnitsNb", "_PrvsTradDtTm"]
+	__slots__ = ["_Ccy", "_EstmtdCshInFcstDtls", "_EstmtdCshOutFcstDtls", "_EstmtdNetCshFcstDtls", "_EstmtdPctgOfFndTtlNAV", "_EstmtdTtlNAV", "_EstmtdTtlUnitsNb", "_Id", "_LglNttyIdr", "_Nm", "_PrvsTradDtTm", "_PrvsTtlNAV", "_PrvsTtlUnitsNb", "_TradDtTm"]
 	@property
 	def Ccy(self):
 		return self._Ccy

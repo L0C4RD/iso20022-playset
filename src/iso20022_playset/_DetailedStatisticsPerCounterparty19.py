@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._RejectionStatistics9 import RejectionStatistics9
 from ._Max20PositiveNumber import Max20PositiveNumber
+from ._RejectionStatistics9 import RejectionStatistics9
 
 class DetailedStatisticsPerCounterparty19(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfRptsAccptd", "_TtlNbOfTxsAccptd", "_TtlNbOfTxs", "_RjctnSttstcs", "_TtlCrrctdRjctns", "_TtlNbOfTxsRjctd", "_TtlNbOfRptsRjctd", "_TtlNbOfRpts", "_RefDt"]
+	__slots__ = ["_RefDt", "_RjctnSttstcs", "_TtlCrrctdRjctns", "_TtlNbOfRpts", "_TtlNbOfRptsAccptd", "_TtlNbOfRptsRjctd", "_TtlNbOfTxs", "_TtlNbOfTxsAccptd", "_TtlNbOfTxsRjctd"]
 	@property
 	def RefDt(self):
 		return self._RefDt

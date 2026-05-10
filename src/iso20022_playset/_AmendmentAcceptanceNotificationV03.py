@@ -1,16 +1,16 @@
 from . import base_types
-from ._TransactionStatus4 import TransactionStatus4
-from ._PendingActivity2 import PendingActivity2
-from ._DocumentIdentification3 import DocumentIdentification3
 from ._BICIdentification1 import BICIdentification1
-from ._DocumentIdentification5 import DocumentIdentification5
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 from ._Count1 import Count1
+from ._DocumentIdentification3 import DocumentIdentification3
+from ._DocumentIdentification5 import DocumentIdentification5
 from ._MessageIdentification1 import MessageIdentification1
+from ._PendingActivity2 import PendingActivity2
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._TransactionStatus4 import TransactionStatus4
 
 class AmendmentAcceptanceNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_DltaRptRef", "_TxSts", "_Initr", "_TxId", "_AccptdAmdmntNb", "_ReqForActn", "_UsrTxRef", "_EstblishdBaselnId", "_NtfctnId"]
+	__slots__ = ["_AccptdAmdmntNb", "_DltaRptRef", "_EstblishdBaselnId", "_Initr", "_NtfctnId", "_ReqForActn", "_TxId", "_TxSts", "_UsrTxRef"]
 	@property
 	def AccptdAmdmntNb(self):
 		return self._AccptdAmdmntNb

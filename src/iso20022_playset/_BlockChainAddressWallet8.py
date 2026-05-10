@@ -1,12 +1,12 @@
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
 from ._GenericIdentification47 import GenericIdentification47
+from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._RestrictedFINXMax70Text import RestrictedFINXMax70Text
 
 class BlockChainAddressWallet8(base_types._BaseFieldType):
 
-	__slots__ = ["_Dsgnt", "_Tp", "_Id", "_Nm"]
+	__slots__ = ["_Dsgnt", "_Id", "_Nm", "_Tp"]
 	@property
 	def Dsgnt(self):
 		return self._Dsgnt

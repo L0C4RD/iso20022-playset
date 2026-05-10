@@ -1,7 +1,7 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MandateAcceptance8 import MandateAcceptance8
 from ._GroupHeader110 import GroupHeader110
+from ._MandateAcceptance8 import MandateAcceptance8
+from ._SupplementaryData1 import SupplementaryData1
 
 class MandateAcceptanceReportV08(base_types._BaseFieldType):
 

@@ -1,10 +1,10 @@
 from . import base_types
-from ._SequenceRange1 import SequenceRange1
 from ._Max35Text import Max35Text
+from ._SequenceRange1 import SequenceRange1
 
 class SequenceRange1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_EQSeq", "_FrToSeq", "_ToSeq", "_FrSeq", "_NEQSeq"]
+	__slots__ = ["_EQSeq", "_FrSeq", "_FrToSeq", "_NEQSeq", "_ToSeq"]
 	@property
 	def EQSeq(self):
 		return self._EQSeq

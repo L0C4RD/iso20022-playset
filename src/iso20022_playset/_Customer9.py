@@ -1,13 +1,13 @@
 from . import base_types
-from ._Max2NumericText import Max2NumericText
 from ._Address2 import Address2
-from ._Credentials3 import Credentials3
-from ._Max70Text import Max70Text
 from ._ContactPersonal1 import ContactPersonal1
+from ._Credentials3 import Credentials3
+from ._Max2NumericText import Max2NumericText
+from ._Max70Text import Max70Text
 
 class Customer9(base_types._BaseFieldType):
 
-	__slots__ = ["_CstmrFileRefNb", "_Nm", "_Adr", "_Ctct", "_Age", "_Id"]
+	__slots__ = ["_Adr", "_Age", "_CstmrFileRefNb", "_Ctct", "_Id", "_Nm"]
 	@property
 	def Adr(self):
 		return self._Adr

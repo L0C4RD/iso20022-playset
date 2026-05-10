@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Party50Choice import Party50Choice
-from ._Max35Text import Max35Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
+from ._Party50Choice import Party50Choice
 
 class IdentificationAssignment4(base_types._BaseFieldType):
 
-	__slots__ = ["_FrstAgt", "_Assgnr", "_Cretr", "_Assgne", "_MsgId", "_CreDtTm"]
+	__slots__ = ["_Assgne", "_Assgnr", "_CreDtTm", "_Cretr", "_FrstAgt", "_MsgId"]
 	@property
 	def Assgne(self):
 		return self._Assgne

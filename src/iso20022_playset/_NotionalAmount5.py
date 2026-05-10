@@ -4,7 +4,7 @@ from ._Schedule11 import Schedule11
 
 class NotionalAmount5(base_types._BaseFieldType):
 
-	__slots__ = ["_SchdlPrd", "_Amt"]
+	__slots__ = ["_Amt", "_SchdlPrd"]
 	@property
 	def Amt(self):
 		return self._Amt

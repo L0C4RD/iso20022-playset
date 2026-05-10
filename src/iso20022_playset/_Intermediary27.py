@@ -5,7 +5,7 @@ from ._Role4Choice import Role4Choice
 
 class Intermediary27(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Acct", "_Role"]
+	__slots__ = ["_Acct", "_Id", "_Role"]
 	@property
 	def Acct(self):
 		return self._Acct

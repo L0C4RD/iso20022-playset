@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISODateTime import ISODateTime
 from ._ExternalAuthorityExchangeReason1Code import ExternalAuthorityExchangeReason1Code
+from ._ISODateTime import ISODateTime
 
 class RecordTechnicalData5(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgRsn", "_RctDtTm"]
+	__slots__ = ["_RctDtTm", "_XchgRsn"]
 	@property
 	def RctDtTm(self):
 		return self._RctDtTm

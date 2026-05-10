@@ -1,19 +1,19 @@
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
 from ._AdditionalReference10 import AdditionalReference10
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
+from ._AdditionalReference11 import AdditionalReference11
 from ._BusinessFlowDirectionType1Code import BusinessFlowDirectionType1Code
 from ._Extension1 import Extension1
-from ._AdditionalReference11 import AdditionalReference11
-from ._PortfolioTransfer9 import PortfolioTransfer9
-from ._PartyIdentification132 import PartyIdentification132
-from ._InvestmentAccount69 import InvestmentAccount69
 from ._IndividualPerson8 import IndividualPerson8
+from ._InvestmentAccount69 import InvestmentAccount69
+from ._MarketPracticeVersion1 import MarketPracticeVersion1
+from ._MessageIdentification1 import MessageIdentification1
 from ._Organisation36 import Organisation36
+from ._PartyIdentification132 import PartyIdentification132
+from ._PortfolioTransfer9 import PortfolioTransfer9
 
 class AccountHoldingInformationV09(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctTrf", "_RltdRef", "_ScndryIndvInvstr", "_MktPrctcVrsn", "_ScndryCorpInvstr", "_PmryIndvInvstr", "_PoolRef", "_OthrIndvInvstr", "_BizFlowDrctnTp", "_TrfrAcct", "_PrvsRef", "_MsgRef", "_OthrCorpInvstr", "_Trfee", "_Xtnsn", "_PmryCorpInvstr", "_NmneeAcct"]
+	__slots__ = ["_BizFlowDrctnTp", "_MktPrctcVrsn", "_MsgRef", "_NmneeAcct", "_OthrCorpInvstr", "_OthrIndvInvstr", "_PdctTrf", "_PmryCorpInvstr", "_PmryIndvInvstr", "_PoolRef", "_PrvsRef", "_RltdRef", "_ScndryCorpInvstr", "_ScndryIndvInvstr", "_Trfee", "_TrfrAcct", "_Xtnsn"]
 	@property
 	def BizFlowDrctnTp(self):
 		return self._BizFlowDrctnTp

@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class DerivativeBasicAttributes2(base_types._BaseFieldType):
 
-	__slots__ = ["_NtnlCcyAndAmt", "_IntrstInclInPric"]
+	__slots__ = ["_IntrstInclInPric", "_NtnlCcyAndAmt"]
 	@property
 	def IntrstInclInPric(self):
 		return self._IntrstInclInPric

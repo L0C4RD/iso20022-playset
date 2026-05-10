@@ -1,6 +1,6 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._AccountIdentification4Choice import AccountIdentification4Choice
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._Max70Text import Max70Text
 
 class AccountForAction2(base_types._BaseFieldType):

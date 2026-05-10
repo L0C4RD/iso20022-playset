@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Binary import Max35Binary
-from ._POICommunicationType2Code import POICommunicationType2Code
 from ._Max2KBinary import Max2KBinary
+from ._Max35Binary import Max35Binary
 from ._Max35Text import Max35Text
+from ._POICommunicationType2Code import POICommunicationType2Code
 
 class PhysicalInterfaceParameter1(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrfcNm", "_SctyPrfl", "_AddtlParams", "_IntrfcTp", "_AccsCd", "_UsrNm"]
+	__slots__ = ["_AccsCd", "_AddtlParams", "_IntrfcNm", "_IntrfcTp", "_SctyPrfl", "_UsrNm"]
 	@property
 	def AccsCd(self):
 		return self._AccsCd

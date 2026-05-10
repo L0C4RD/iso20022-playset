@@ -1,18 +1,18 @@
 from . import base_types
-from ._TradeDate8Choice import TradeDate8Choice
-from ._TypeOfPrice29Choice import TypeOfPrice29Choice
-from ._UTIIdentifier import UTIIdentifier
-from ._TradeTransactionCondition5Choice import TradeTransactionCondition5Choice
-from ._SettlementDate17Choice import SettlementDate17Choice
+from ._Max35Text import Max35Text
 from ._Max3Number import Max3Number
 from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
-from ._Max35Text import Max35Text
 from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
 from ._Price10 import Price10
+from ._SettlementDate17Choice import SettlementDate17Choice
+from ._TradeDate8Choice import TradeDate8Choice
+from ._TradeTransactionCondition5Choice import TradeTransactionCondition5Choice
+from ._TypeOfPrice29Choice import TypeOfPrice29Choice
+from ._UTIIdentifier import UTIIdentifier
 
 class SecuritiesTradeDetails144(base_types._BaseFieldType):
 
-	__slots__ = ["_CollTxId", "_TpOfPric", "_PlcOfTrad", "_TradId", "_PrcrTxId", "_TradDt", "_AcctOwnrTxId", "_UnqTxIdr", "_TradTxCond", "_PlcOfClr", "_SttlmDt", "_DealPric", "_NbOfDaysAcrd"]
+	__slots__ = ["_AcctOwnrTxId", "_CollTxId", "_DealPric", "_NbOfDaysAcrd", "_PlcOfClr", "_PlcOfTrad", "_PrcrTxId", "_SttlmDt", "_TpOfPric", "_TradDt", "_TradId", "_TradTxCond", "_UnqTxIdr"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

@@ -4,7 +4,7 @@ from ._SecuritiesTransactionPrice17Choice import SecuritiesTransactionPrice17Cho
 
 class Schedule4(base_types._BaseFieldType):
 
-	__slots__ = ["_Pric", "_UadjstdFctvDt", "_UadjstdEndDt"]
+	__slots__ = ["_Pric", "_UadjstdEndDt", "_UadjstdFctvDt"]
 	@property
 	def Pric(self):
 		return self._Pric

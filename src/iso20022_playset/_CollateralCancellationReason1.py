@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._CollateralCancellationType1Choice import CollateralCancellationType1Choice
+from ._Max35Text import Max35Text
 
 class CollateralCancellationReason1(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsnCd", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_CxlRsnCd"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

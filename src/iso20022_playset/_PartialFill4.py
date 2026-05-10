@@ -1,13 +1,13 @@
 from . import base_types
-from ._TradeDate7Choice import TradeDate7Choice
-from ._QuantityOrAmount2Choice import QuantityOrAmount2Choice
 from ._MarketIdentification97 import MarketIdentification97
 from ._Price14 import Price14
 from ._Quantity6Choice import Quantity6Choice
+from ._QuantityOrAmount2Choice import QuantityOrAmount2Choice
+from ._TradeDate7Choice import TradeDate7Choice
 
 class PartialFill4(base_types._BaseFieldType):
 
-	__slots__ = ["_RmngQty", "_TradDt", "_PlcOfTrad", "_ConfQty", "_DealPric", "_OrgnlOrdrdQty", "_MtchIncrmtQty", "_PrevslyExctdQty"]
+	__slots__ = ["_ConfQty", "_DealPric", "_MtchIncrmtQty", "_OrgnlOrdrdQty", "_PlcOfTrad", "_PrevslyExctdQty", "_RmngQty", "_TradDt"]
 	@property
 	def ConfQty(self):
 		return self._ConfQty

@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._YesNoIndicator import YesNoIndicator
+from ._GateHoldBack1Code import GateHoldBack1Code
+from ._ISODate import ISODate
+from ._Max350Text import Max350Text
 from ._RedemptionCompletion1Code import RedemptionCompletion1Code
 from ._SecurityIdentification25Choice import SecurityIdentification25Choice
-from ._Max350Text import Max350Text
-from ._GateHoldBack1Code import GateHoldBack1Code
+from ._YesNoIndicator import YesNoIndicator
 
 class HoldBackInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_RedCmpltn", "_Tp", "_XpctdRlsDt", "_FinInstrmNm", "_FinInstrmId", "_Amt", "_FnlConf"]
+	__slots__ = ["_Amt", "_FinInstrmId", "_FinInstrmNm", "_FnlConf", "_RedCmpltn", "_Tp", "_XpctdRlsDt"]
 	@property
 	def Amt(self):
 		return self._Amt

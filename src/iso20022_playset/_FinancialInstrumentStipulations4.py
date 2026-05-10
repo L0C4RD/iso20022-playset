@@ -1,24 +1,24 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._AmountOrPercentageRange1 import AmountOrPercentageRange1
-from ._DateTimePeriod2 import DateTimePeriod2
-from ._Number import Number
-from ._Max256Text import Max256Text
-from ._PercentageRate import PercentageRate
-from ._ISOYearMonth import ISOYearMonth
-from ._ISODateTime import ISODateTime
-from ._BICNonFIDec2014Identifier import BICNonFIDec2014Identifier
-from ._YesNoIndicator import YesNoIndicator
-from ._Rating1 import Rating1
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._TradeTransactionCondition2Code import TradeTransactionCondition2Code
-from ._Max35Text import Max35Text
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._AmountOrPercentageRange1 import AmountOrPercentageRange1
+from ._BICNonFIDec2014Identifier import BICNonFIDec2014Identifier
+from ._DateTimePeriod2 import DateTimePeriod2
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 from ._Frequency1Code import Frequency1Code
+from ._ISODateTime import ISODateTime
+from ._ISOYearMonth import ISOYearMonth
+from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Number import Number
+from ._PercentageRate import PercentageRate
+from ._Rating1 import Rating1
+from ._TradeTransactionCondition2Code import TradeTransactionCondition2Code
+from ._YesNoIndicator import YesNoIndicator
 
 class FinancialInstrumentStipulations4(base_types._BaseFieldType):
 
-	__slots__ = ["_PricFrqcy", "_MinQty", "_CllblInd", "_EscrwdInd", "_PricSrc", "_IsseSz", "_InsrdInd", "_OverAlltmtRate", "_MtrtyDt", "_ConvtblInd", "_OverAlltmtAmt", "_XprtnDt", "_CpnRg", "_PerptlInd", "_MaxSbstitn", "_WhlPoolInd", "_PutblInd", "_LookBck", "_Sctr", "_Ccy", "_PricRg", "_PmtFrqcy", "_IssrId", "_PreFnddInd", "_TxConds", "_CstmDt", "_MinIncrmt", "_MinDnmtn", "_IsseDt", "_AutoRinvstmt", "_Hrcut", "_YldRg", "_SbstitnLft", "_Geogcs", "_RstrctdInd", "_AmtsblInd", "_Pdctn", "_SbstitnFrqcy", "_AltrntvMinTaxInd", "_Purp", "_Ratg"]
+	__slots__ = ["_AltrntvMinTaxInd", "_AmtsblInd", "_AutoRinvstmt", "_Ccy", "_CllblInd", "_ConvtblInd", "_CpnRg", "_CstmDt", "_EscrwdInd", "_Geogcs", "_Hrcut", "_InsrdInd", "_IsseDt", "_IsseSz", "_IssrId", "_LookBck", "_MaxSbstitn", "_MinDnmtn", "_MinIncrmt", "_MinQty", "_MtrtyDt", "_OverAlltmtAmt", "_OverAlltmtRate", "_Pdctn", "_PerptlInd", "_PmtFrqcy", "_PreFnddInd", "_PricFrqcy", "_PricRg", "_PricSrc", "_Purp", "_PutblInd", "_Ratg", "_RstrctdInd", "_SbstitnFrqcy", "_SbstitnLft", "_Sctr", "_TxConds", "_WhlPoolInd", "_XprtnDt", "_YldRg"]
 	@property
 	def AltrntvMinTaxInd(self):
 		return self._AltrntvMinTaxInd

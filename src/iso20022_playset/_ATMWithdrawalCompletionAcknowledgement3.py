@@ -5,7 +5,7 @@ from ._AutomatedTellerMachine3 import AutomatedTellerMachine3
 
 class ATMWithdrawalCompletionAcknowledgement3(base_types._BaseFieldType):
 
-	__slots__ = ["_Cntxt", "_Tx", "_ATM"]
+	__slots__ = ["_ATM", "_Cntxt", "_Tx"]
 	@property
 	def ATM(self):
 		return self._ATM

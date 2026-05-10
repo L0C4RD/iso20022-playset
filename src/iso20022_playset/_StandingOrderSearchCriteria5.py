@@ -1,17 +1,17 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._AccountIdentification4Choice import AccountIdentification4Choice
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._DatePeriod2Choice import DatePeriod2Choice
-from ._Number import Number
-from ._Max35Text import Max35Text
-from ._StandingOrderType1Choice import StandingOrderType1Choice
 from ._CashAccount40 import CashAccount40
+from ._DatePeriod2Choice import DatePeriod2Choice
+from ._Max35Text import Max35Text
+from ._Number import Number
+from ._StandingOrderType1Choice import StandingOrderType1Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class StandingOrderSearchCriteria5(base_types._BaseFieldType):
 
-	__slots__ = ["_StgOrdrId", "_LkSetOrdrId", "_SysMmb", "_LkSetId", "_VldtyPrd", "_Tp", "_AssoctdPoolAcct", "_LkSetOrdrSeq", "_ZeroSweepInd", "_Acct", "_RspnsblPty", "_KeyAttrbtsInd", "_Ccy"]
+	__slots__ = ["_Acct", "_AssoctdPoolAcct", "_Ccy", "_KeyAttrbtsInd", "_LkSetId", "_LkSetOrdrId", "_LkSetOrdrSeq", "_RspnsblPty", "_StgOrdrId", "_SysMmb", "_Tp", "_VldtyPrd", "_ZeroSweepInd"]
 	@property
 	def Acct(self):
 		return self._Acct

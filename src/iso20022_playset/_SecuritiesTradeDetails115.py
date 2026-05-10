@@ -1,20 +1,20 @@
 from . import base_types
-from ._TradeDate8Choice import TradeDate8Choice
-from ._TradeTransactionCondition5Choice import TradeTransactionCondition5Choice
+from ._InvestorCapacity4Choice import InvestorCapacity4Choice
+from ._Max350Text import Max350Text
 from ._Max3Number import Max3Number
+from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
+from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
+from ._Price10 import Price10
 from ._Reporting6Choice import Reporting6Choice
 from ._SettlementDate17Choice import SettlementDate17Choice
 from ._SettlementDate18Choice import SettlementDate18Choice
-from ._InvestorCapacity4Choice import InvestorCapacity4Choice
+from ._TradeDate8Choice import TradeDate8Choice
 from ._TradeOriginator3Choice import TradeOriginator3Choice
-from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
-from ._Max350Text import Max350Text
-from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
-from ._Price10 import Price10
+from ._TradeTransactionCondition5Choice import TradeTransactionCondition5Choice
 
 class SecuritiesTradeDetails115(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstrCpcty", "_SttlmDt", "_PlcOfTrad", "_Rptg", "_TradOrgtrRole", "_TradDt", "_SttlmInstrPrcgAddtlDtls", "_TradTxCond", "_PlcOfClr", "_DealPric", "_NbOfDaysAcrd", "_FctvSttlmDt", "_FxAddtlDtls"]
+	__slots__ = ["_DealPric", "_FctvSttlmDt", "_FxAddtlDtls", "_InvstrCpcty", "_NbOfDaysAcrd", "_PlcOfClr", "_PlcOfTrad", "_Rptg", "_SttlmDt", "_SttlmInstrPrcgAddtlDtls", "_TradDt", "_TradOrgtrRole", "_TradTxCond"]
 	@property
 	def DealPric(self):
 		return self._DealPric

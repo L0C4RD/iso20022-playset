@@ -1,13 +1,13 @@
 from . import base_types
 from ._ATMCommand15 import ATMCommand15
 from ._ATMCommand16 import ATMCommand16
-from ._ATMSecurityContext5 import ATMSecurityContext5
 from ._ATMEnvironment6 import ATMEnvironment6
+from ._ATMSecurityContext5 import ATMSecurityContext5
 from ._ATMStatus2 import ATMStatus2
 
 class ATMDeviceReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_CmdRslt", "_ATMGblSts", "_ATMSctyCntxt", "_Envt", "_CmdCntxt"]
+	__slots__ = ["_ATMGblSts", "_ATMSctyCntxt", "_CmdCntxt", "_CmdRslt", "_Envt"]
 	@property
 	def ATMGblSts(self):
 		return self._ATMGblSts

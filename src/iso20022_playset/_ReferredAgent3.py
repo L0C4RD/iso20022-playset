@@ -1,10 +1,10 @@
 from . import base_types
-from ._Referred1Code import Referred1Code
 from ._PartyIdentification125Choice import PartyIdentification125Choice
+from ._Referred1Code import Referred1Code
 
 class ReferredAgent3(base_types._BaseFieldType):
 
-	__slots__ = ["_RfrdPlcmntAgt", "_Rfrd"]
+	__slots__ = ["_Rfrd", "_RfrdPlcmntAgt"]
 	@property
 	def Rfrd(self):
 		return self._Rfrd

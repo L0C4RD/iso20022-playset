@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._AmountAndDirection106 import AmountAndDirection106
+from ._ISODate import ISODate
 
 class Schedule11(base_types._BaseFieldType):
 
-	__slots__ = ["_UadjstdFctvDt", "_UadjstdEndDt", "_Amt"]
+	__slots__ = ["_Amt", "_UadjstdEndDt", "_UadjstdFctvDt"]
 	@property
 	def Amt(self):
 		return self._Amt

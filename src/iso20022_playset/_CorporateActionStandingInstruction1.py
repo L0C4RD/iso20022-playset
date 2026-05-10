@@ -1,12 +1,12 @@
 from . import base_types
 from ._CashAccount17 import CashAccount17
 from ._Max350Text import Max350Text
-from ._StandingInstructionGrossNet1Code import StandingInstructionGrossNet1Code
 from ._SecuritiesAccount6 import SecuritiesAccount6
+from ._StandingInstructionGrossNet1Code import StandingInstructionGrossNet1Code
 
 class CorporateActionStandingInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesDstrbtnDtls", "_NetOrGrss", "_CshDstrbtnDtls", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_CshDstrbtnDtls", "_NetOrGrss", "_SctiesDstrbtnDtls"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

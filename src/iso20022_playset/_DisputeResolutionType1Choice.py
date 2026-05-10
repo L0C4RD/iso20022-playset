@@ -4,7 +4,7 @@ from ._GenericIdentification30 import GenericIdentification30
 
 class DisputeResolutionType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryId", "_Cd"]
+	__slots__ = ["_Cd", "_PrtryId"]
 	@property
 	def Cd(self):
 		return self._Cd

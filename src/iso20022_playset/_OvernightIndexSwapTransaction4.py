@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._LEIIdentifier import LEIIdentifier
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionOperationType1Code import TransactionOperationType1Code
-from ._NovationStatus1Code import NovationStatus1Code
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._CounterpartyIdentification3Choice import CounterpartyIdentification3Choice
-from ._Max105Text import Max105Text
-from ._PercentageRate import PercentageRate
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
+from ._ISODate import ISODate
+from ._LEIIdentifier import LEIIdentifier
+from ._Max105Text import Max105Text
+from ._NovationStatus1Code import NovationStatus1Code
 from ._OvernightIndexSwapType1Code import OvernightIndexSwapType1Code
+from ._PercentageRate import PercentageRate
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionOperationType1Code import TransactionOperationType1Code
 
 class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
-	__slots__ = ["_TxNmnlAmt", "_NvtnSts", "_MtrtyDt", "_RptdTxSts", "_BrnchId", "_CtrPtyId", "_FxdIntrstRate", "_TxTp", "_TradDt", "_StartDt", "_CtrPtyPrtryTxId", "_RltdPrtryTxId", "_SplmtryData", "_UnqTxIdr", "_PrtryTxId"]
+	__slots__ = ["_BrnchId", "_CtrPtyId", "_CtrPtyPrtryTxId", "_FxdIntrstRate", "_MtrtyDt", "_NvtnSts", "_PrtryTxId", "_RltdPrtryTxId", "_RptdTxSts", "_SplmtryData", "_StartDt", "_TradDt", "_TxNmnlAmt", "_TxTp", "_UnqTxIdr"]
 	@property
 	def BrnchId(self):
 		return self._BrnchId

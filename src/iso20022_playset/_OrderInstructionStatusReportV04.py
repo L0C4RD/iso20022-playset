@@ -1,12 +1,12 @@
 from . import base_types
+from ._Extension1 import Extension1
 from ._MessageIdentification1 import MessageIdentification1
 from ._References61Choice import References61Choice
-from ._Extension1 import Extension1
 from ._Status24Choice import Status24Choice
 
 class OrderInstructionStatusReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRpt", "_Ref", "_MsgId", "_Xtnsn"]
+	__slots__ = ["_MsgId", "_Ref", "_StsRpt", "_Xtnsn"]
 	@property
 	def MsgId(self):
 		return self._MsgId

@@ -3,7 +3,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class CashBalanceReturnCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_StsInd", "_TpInd", "_ValDtInd", "_NbOfPmtsInd", "_PrcgDtInd"]
+	__slots__ = ["_NbOfPmtsInd", "_PrcgDtInd", "_StsInd", "_TpInd", "_ValDtInd"]
 	@property
 	def NbOfPmtsInd(self):
 		return self._NbOfPmtsInd

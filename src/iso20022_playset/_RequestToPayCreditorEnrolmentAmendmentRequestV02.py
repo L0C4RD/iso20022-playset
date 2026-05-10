@@ -1,7 +1,7 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CreditorEnrolmentAmendment5 import CreditorEnrolmentAmendment5
 from ._EnrolmentHeader3 import EnrolmentHeader3
+from ._SupplementaryData1 import SupplementaryData1
 
 class RequestToPayCreditorEnrolmentAmendmentRequestV02(base_types._BaseFieldType):
 

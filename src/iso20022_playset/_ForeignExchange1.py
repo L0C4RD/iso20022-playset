@@ -1,11 +1,11 @@
 from . import base_types
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._DecimalNumber import DecimalNumber
 from ._BaseOneRate import BaseOneRate
+from ._DecimalNumber import DecimalNumber
 
 class ForeignExchange1(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgFwdPt", "_XchgSpotRate", "_FrgnCcy"]
+	__slots__ = ["_FrgnCcy", "_XchgFwdPt", "_XchgSpotRate"]
 	@property
 	def FrgnCcy(self):
 		return self._FrgnCcy

@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
 from ._ContactAttributes5 import ContactAttributes5
+from ._GenericIdentification36 import GenericIdentification36
 
 class ExtendedParty13(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyRole", "_OthrPtyDtls"]
+	__slots__ = ["_OthrPtyDtls", "_PtyRole"]
 	@property
 	def OthrPtyDtls(self):
 		return self._OthrPtyDtls

@@ -1,11 +1,11 @@
 from . import base_types
-from ._UniqueTransactionIdentifier3 import UniqueTransactionIdentifier3
-from ._PartyIdentification242Choice import PartyIdentification242Choice
 from ._Max35Text import Max35Text
+from ._PartyIdentification242Choice import PartyIdentification242Choice
+from ._UniqueTransactionIdentifier3 import UniqueTransactionIdentifier3
 
 class CounterpartySideTransactionReporting3(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgJursdctn", "_RptgPty", "_CtrPtySdUnqTxIdr"]
+	__slots__ = ["_CtrPtySdUnqTxIdr", "_RptgJursdctn", "_RptgPty"]
 	@property
 	def CtrPtySdUnqTxIdr(self):
 		return self._CtrPtySdUnqTxIdr

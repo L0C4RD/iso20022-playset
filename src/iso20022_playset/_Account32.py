@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentification125Choice import PartyIdentification125Choice
 from ._Max35Text import Max35Text
+from ._PartyIdentification125Choice import PartyIdentification125Choice
 
 class Account32(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AcctSvcr"]
+	__slots__ = ["_AcctSvcr", "_Id"]
 	@property
 	def AcctSvcr(self):
 		return self._AcctSvcr

@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
 
 class SpecialProgrammeDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_Nm"]
+	__slots__ = ["_Nm", "_Val"]
 	@property
 	def Nm(self):
 		return self._Nm

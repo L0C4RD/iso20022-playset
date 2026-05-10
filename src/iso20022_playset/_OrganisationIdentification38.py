@@ -1,11 +1,11 @@
 from . import base_types
 from ._GenericIdentification175 import GenericIdentification175
-from ._Max500Text import Max500Text
 from ._Max105Text import Max105Text
+from ._Max500Text import Max500Text
 
 class OrganisationIdentification38(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Dmcl", "_Nm"]
+	__slots__ = ["_Dmcl", "_Id", "_Nm"]
 	@property
 	def Dmcl(self):
 		return self._Dmcl

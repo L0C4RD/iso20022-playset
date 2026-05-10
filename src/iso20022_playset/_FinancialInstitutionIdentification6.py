@@ -1,11 +1,11 @@
 from . import base_types
-from ._GenericIdentification4 import GenericIdentification4
-from ._ClearingSystemMemberIdentification2Choice import ClearingSystemMemberIdentification2Choice
 from ._BICIdentifier import BICIdentifier
+from ._ClearingSystemMemberIdentification2Choice import ClearingSystemMemberIdentification2Choice
+from ._GenericIdentification4 import GenericIdentification4
 
 class FinancialInstitutionIdentification6(base_types._BaseFieldType):
 
-	__slots__ = ["_BIC", "_PrtryId", "_ClrSysMmbId"]
+	__slots__ = ["_BIC", "_ClrSysMmbId", "_PrtryId"]
 	@property
 	def BIC(self):
 		return self._BIC

@@ -1,26 +1,26 @@
 from . import base_types
-from ._ResponseType12 import ResponseType12
-from ._DetailedAmount17 import DetailedAmount17
-from ._DetailedAmount18 import DetailedAmount18
-from ._CardAccount19 import CardAccount19
-from ._ContentInformationType10 import ContentInformationType10
+from ._ATMCommand7 import ATMCommand7
 from ._ATMTransactionAmounts6 import ATMTransactionAmounts6
 from ._Action7 import Action7
-from ._Max10000Binary import Max10000Binary
-from ._RecurringTransaction3 import RecurringTransaction3
-from ._AuthorisationResult20 import AuthorisationResult20
-from ._ISODate import ISODate
-from ._ATMCommand7 import ATMCommand7
 from ._AmountAndCurrency1 import AmountAndCurrency1
+from ._AuthorisationResult20 import AuthorisationResult20
 from ._CardAccount18 import CardAccount18
-from ._TransactionIdentifier3 import TransactionIdentifier3
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
+from ._CardAccount19 import CardAccount19
+from ._ContentInformationType10 import ContentInformationType10
+from ._DetailedAmount17 import DetailedAmount17
+from ._DetailedAmount18 import DetailedAmount18
+from ._ISODate import ISODate
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max10000Binary import Max10000Binary
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._RecurringTransaction3 import RecurringTransaction3
+from ._ResponseType12 import ResponseType12
+from ._TransactionIdentifier3 import TransactionIdentifier3
 
 class ATMTransaction39(base_types._BaseFieldType):
 
-	__slots__ = ["_Lmts", "_AcctFr", "_TxRspn", "_TrfIdr", "_Actn", "_DtldReqdAmt", "_DbtrLabl", "_PmtRef", "_PrtctdAcctFr", "_CdtrLabl", "_TtlAuthrsdAmt", "_Cmd", "_ICCRltdData", "_AddtlChrg", "_TxId", "_PropsdExctnDt", "_PrtctdAcctTo", "_RcrngTrf", "_InstntTrfPrgm", "_TtlReqdAmt", "_AuthstnRslt", "_AcctInf", "_AcctTo", "_ReqdExctnDt", "_RcncltnId"]
+	__slots__ = ["_AcctFr", "_AcctInf", "_AcctTo", "_Actn", "_AddtlChrg", "_AuthstnRslt", "_CdtrLabl", "_Cmd", "_DbtrLabl", "_DtldReqdAmt", "_ICCRltdData", "_InstntTrfPrgm", "_Lmts", "_PmtRef", "_PropsdExctnDt", "_PrtctdAcctFr", "_PrtctdAcctTo", "_RcncltnId", "_RcrngTrf", "_ReqdExctnDt", "_TrfIdr", "_TtlAuthrsdAmt", "_TtlReqdAmt", "_TxId", "_TxRspn"]
 	@property
 	def AcctFr(self):
 		return self._AcctFr

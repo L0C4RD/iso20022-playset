@@ -1,15 +1,15 @@
 from . import base_types
-from ._UniqueProductIdentifier2Choice import UniqueProductIdentifier2Choice
+from ._CustomBasket4 import CustomBasket4
+from ._GenericIdentification184 import GenericIdentification184
 from ._ISINOct2015Identifier import ISINOct2015Identifier
 from ._IndexIdentification1 import IndexIdentification1
-from ._GenericIdentification184 import GenericIdentification184
 from ._Max52Text import Max52Text
 from ._UnderlyingIdentification1Code import UnderlyingIdentification1Code
-from ._CustomBasket4 import CustomBasket4
+from ._UniqueProductIdentifier2Choice import UniqueProductIdentifier2Choice
 
 class SecurityIdentification41Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Bskt", "_UnqPdctIdr", "_ISIN", "_Indx", "_Othr", "_IdNotAvlbl", "_AltrntvInstrmId"]
+	__slots__ = ["_AltrntvInstrmId", "_Bskt", "_ISIN", "_IdNotAvlbl", "_Indx", "_Othr", "_UnqPdctIdr"]
 	@property
 	def AltrntvInstrmId(self):
 		return self._AltrntvInstrmId

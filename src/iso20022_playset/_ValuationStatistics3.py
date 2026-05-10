@@ -1,14 +1,14 @@
 from . import base_types
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._PercentageRate import PercentageRate
 from ._PriceType2 import PriceType2
-from ._StatisticsByUserDefinedTimePeriod2 import StatisticsByUserDefinedTimePeriod2
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._PriceValueChange1 import PriceValueChange1
 from ._StatisticsByPredefinedTimePeriods2 import StatisticsByPredefinedTimePeriods2
+from ._StatisticsByUserDefinedTimePeriod2 import StatisticsByUserDefinedTimePeriod2
 
 class ValuationStatistics3(base_types._BaseFieldType):
 
-	__slots__ = ["_PricTpChngBsis", "_ByUsrDfndTmPrd", "_PricChng", "_ByPrdfndTmPrds", "_Ccy", "_Yld"]
+	__slots__ = ["_ByPrdfndTmPrds", "_ByUsrDfndTmPrd", "_Ccy", "_PricChng", "_PricTpChngBsis", "_Yld"]
 	@property
 	def ByPrdfndTmPrds(self):
 		return self._ByPrdfndTmPrds

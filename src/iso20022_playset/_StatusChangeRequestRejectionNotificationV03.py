@@ -1,16 +1,16 @@
 from . import base_types
-from ._TransactionStatus4 import TransactionStatus4
-from ._Reason2 import Reason2
 from ._DocumentIdentification3 import DocumentIdentification3
+from ._DocumentIdentification5 import DocumentIdentification5
+from ._MessageIdentification1 import MessageIdentification1
+from ._PendingActivity2 import PendingActivity2
+from ._Reason2 import Reason2
 from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 from ._TransactionStatus3 import TransactionStatus3
-from ._DocumentIdentification5 import DocumentIdentification5
-from ._PendingActivity2 import PendingActivity2
-from ._MessageIdentification1 import MessageIdentification1
+from ._TransactionStatus4 import TransactionStatus4
 
 class StatusChangeRequestRejectionNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_TxSts", "_RjctnRsn", "_RjctdStsChng", "_TxId", "_ReqForActn", "_EstblishdBaselnId", "_UsrTxRef", "_NtfctnId"]
+	__slots__ = ["_EstblishdBaselnId", "_NtfctnId", "_ReqForActn", "_RjctdStsChng", "_RjctnRsn", "_TxId", "_TxSts", "_UsrTxRef"]
 	@property
 	def EstblishdBaselnId(self):
 		return self._EstblishdBaselnId

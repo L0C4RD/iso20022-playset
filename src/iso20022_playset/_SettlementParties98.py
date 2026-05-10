@@ -3,7 +3,7 @@ from ._PartyIdentificationAndAccount196 import PartyIdentificationAndAccount196
 
 class SettlementParties98(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty3", "_Pty2", "_Pty4", "_Pty5"]
+	__slots__ = ["_Pty2", "_Pty3", "_Pty4", "_Pty5"]
 	@property
 	def Pty2(self):
 		return self._Pty2

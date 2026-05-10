@@ -1,12 +1,12 @@
 from . import base_types
 from ._FinancingRateOrAmountChoice import FinancingRateOrAmountChoice
-from ._StatusReason4Choice import StatusReason4Choice
-from ._RequestStatus1Code import RequestStatus1Code
 from ._Max105Text import Max105Text
+from ._RequestStatus1Code import RequestStatus1Code
+from ._StatusReason4Choice import StatusReason4Choice
 
 class FinancingResult1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlStsRsnInf", "_StsRsn", "_FincgReqSts", "_FincdAmt"]
+	__slots__ = ["_AddtlStsRsnInf", "_FincdAmt", "_FincgReqSts", "_StsRsn"]
 	@property
 	def AddtlStsRsnInf(self):
 		return self._AddtlStsRsnInf

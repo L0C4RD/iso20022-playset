@@ -4,7 +4,7 @@ from ._CollateralAmount14 import CollateralAmount14
 
 class DealTransactionDetails7(base_types._BaseFieldType):
 
-	__slots__ = ["_DealDtlsAmt", "_ClsgDt"]
+	__slots__ = ["_ClsgDt", "_DealDtlsAmt"]
 	@property
 	def ClsgDt(self):
 		return self._ClsgDt

@@ -1,12 +1,12 @@
 from . import base_types
-from ._PartyIdentificationAndAccount227 import PartyIdentificationAndAccount227
-from ._TradeLeg12 import TradeLeg12
 from ._PartyIdentification253Choice import PartyIdentification253Choice
+from ._PartyIdentificationAndAccount227 import PartyIdentificationAndAccount227
 from ._SecuritiesAccount18 import SecuritiesAccount18
+from ._TradeLeg12 import TradeLeg12
 
 class TradeLegStatement4(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSgmt", "_NonClrMmb", "_ClrAcct", "_TradLegsDtls"]
+	__slots__ = ["_ClrAcct", "_ClrSgmt", "_NonClrMmb", "_TradLegsDtls"]
 	@property
 	def ClrAcct(self):
 		return self._ClrAcct

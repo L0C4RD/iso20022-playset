@@ -1,10 +1,10 @@
 from . import base_types
-from ._TradeStatus6Code import TradeStatus6Code
 from ._Max35Text import Max35Text
+from ._TradeStatus6Code import TradeStatus6Code
 
 class Status27Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

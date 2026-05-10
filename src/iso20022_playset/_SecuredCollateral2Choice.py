@@ -4,7 +4,7 @@ from ._CollateralValuation7 import CollateralValuation7
 
 class SecuredCollateral2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SnglColl", "_MltplColl", "_OthrColl", "_PoolColl"]
+	__slots__ = ["_MltplColl", "_OthrColl", "_PoolColl", "_SnglColl"]
 	@property
 	def MltplColl(self):
 		return self._MltplColl

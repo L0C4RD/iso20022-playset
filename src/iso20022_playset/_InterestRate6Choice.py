@@ -1,10 +1,10 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._FloatingInterestRate6 import FloatingInterestRate6
+from ._PercentageRate import PercentageRate
 
 class InterestRate6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Fxd", "_Fltg"]
+	__slots__ = ["_Fltg", "_Fxd"]
 	@property
 	def Fltg(self):
 		return self._Fltg

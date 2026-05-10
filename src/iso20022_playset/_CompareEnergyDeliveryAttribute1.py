@@ -1,15 +1,15 @@
 from . import base_types
 from ._CompareAmountAndDirection3 import CompareAmountAndDirection3
 from ._CompareDatePeriod2 import CompareDatePeriod2
-from ._CompareLongFraction19DecimalNumber1 import CompareLongFraction19DecimalNumber1
-from ._CompareWeekDay1 import CompareWeekDay1
 from ._CompareDurationType1 import CompareDurationType1
-from ._CompareTimePeriod2 import CompareTimePeriod2
 from ._CompareEnergyQuantityUnit1 import CompareEnergyQuantityUnit1
+from ._CompareLongFraction19DecimalNumber1 import CompareLongFraction19DecimalNumber1
+from ._CompareTimePeriod2 import CompareTimePeriod2
+from ._CompareWeekDay1 import CompareWeekDay1
 
 class CompareEnergyDeliveryAttribute1(base_types._BaseFieldType):
 
-	__slots__ = ["_NrgyDlvryIntrvl", "_NrgyWkDay", "_NrgyQtyUnit", "_NrgyPricTmIntrvlQty", "_NrgyDlvryCpcty", "_NrgyDt", "_NrgyDrtn"]
+	__slots__ = ["_NrgyDlvryCpcty", "_NrgyDlvryIntrvl", "_NrgyDrtn", "_NrgyDt", "_NrgyPricTmIntrvlQty", "_NrgyQtyUnit", "_NrgyWkDay"]
 	@property
 	def NrgyDlvryCpcty(self):
 		return self._NrgyDlvryCpcty

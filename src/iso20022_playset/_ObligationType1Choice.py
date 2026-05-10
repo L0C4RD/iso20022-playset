@@ -1,6 +1,6 @@
 from . import base_types
-from ._ObligationType1Code import ObligationType1Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._ObligationType1Code import ObligationType1Code
 
 class ObligationType1Choice(base_types._BaseFieldType):
 

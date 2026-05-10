@@ -5,7 +5,7 @@ from ._PositiveNumber import PositiveNumber
 
 class PackageType5(base_types._BaseFieldType):
 
-	__slots__ = ["_PackgId", "_OffsetEnd", "_PackgLngth", "_OffsetStart", "_PackgBlck"]
+	__slots__ = ["_OffsetEnd", "_OffsetStart", "_PackgBlck", "_PackgId", "_PackgLngth"]
 	@property
 	def OffsetEnd(self):
 		return self._OffsetEnd

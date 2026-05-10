@@ -1,16 +1,16 @@
 from . import base_types
-from ._PINData1 import PINData1
-from ._VerificationEntity2Code import VerificationEntity2Code
 from ._AdditionalData1 import AdditionalData1
-from ._Verification3Code import Verification3Code
-from ._VerificationValue1 import VerificationValue1
+from ._ExternalAuthenticationMethod1Code import ExternalAuthenticationMethod1Code
 from ._Max35Text import Max35Text
 from ._Max500Text import Max500Text
-from ._ExternalAuthenticationMethod1Code import ExternalAuthenticationMethod1Code
+from ._PINData1 import PINData1
+from ._Verification3Code import Verification3Code
+from ._VerificationEntity2Code import VerificationEntity2Code
+from ._VerificationValue1 import VerificationValue1
 
 class Verification6(base_types._BaseFieldType):
 
-	__slots__ = ["_SubTp", "_OthrRslt", "_Rslt", "_PINData", "_Ntty", "_OthrTp", "_RsltDtls", "_Data", "_OthrNtty", "_Tp"]
+	__slots__ = ["_Data", "_Ntty", "_OthrNtty", "_OthrRslt", "_OthrTp", "_PINData", "_Rslt", "_RsltDtls", "_SubTp", "_Tp"]
 	@property
 	def Data(self):
 		return self._Data

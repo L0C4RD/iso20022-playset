@@ -1,10 +1,10 @@
 from . import base_types
-from ._ExchangeRateReportOrError4Choice import ExchangeRateReportOrError4Choice
 from ._CurrencySourceTarget1 import CurrencySourceTarget1
+from ._ExchangeRateReportOrError4Choice import ExchangeRateReportOrError4Choice
 
 class CurrencyExchangeReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyXchgOrErr", "_CcyRef"]
+	__slots__ = ["_CcyRef", "_CcyXchgOrErr"]
 	@property
 	def CcyRef(self):
 		return self._CcyRef

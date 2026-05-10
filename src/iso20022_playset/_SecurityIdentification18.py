@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._IdentificationType2Code import IdentificationType2Code
+from ._Max35Text import Max35Text
 
 class SecurityIdentification18(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyIdSrc", "_SctyId"]
+	__slots__ = ["_SctyId", "_SctyIdSrc"]
 	@property
 	def SctyId(self):
 		return self._SctyId

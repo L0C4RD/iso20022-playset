@@ -1,19 +1,19 @@
 from . import base_types
-from ._TerminationDate7Choice import TerminationDate7Choice
-from ._LegalFramework4Choice import LegalFramework4Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
-from ._RateName2 import RateName2
-from ._Rate2 import Rate2
 from ._AmountAndDirection59 import AmountAndDirection59
 from ._Exact3NumericText import Exact3NumericText
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._LegalFramework4Choice import LegalFramework4Choice
+from ._Rate2 import Rate2
+from ._RateName2 import RateName2
 from ._RateType67Choice import RateType67Choice
+from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
+from ._TerminationDate7Choice import TerminationDate7Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
-	__slots__ = ["_LglFrmwk", "_AcrdIntrstAmt", "_IntrstPmt", "_SctiesFincgTradId", "_RateTp", "_TxCallDely", "_ScndLegNrrtv", "_TermntnTxAmt", "_ClsgLegId", "_VarblRateSpprt", "_RpRate", "_MtrtyDtMod", "_TermntnDt"]
+	__slots__ = ["_AcrdIntrstAmt", "_ClsgLegId", "_IntrstPmt", "_LglFrmwk", "_MtrtyDtMod", "_RateTp", "_RpRate", "_ScndLegNrrtv", "_SctiesFincgTradId", "_TermntnDt", "_TermntnTxAmt", "_TxCallDely", "_VarblRateSpprt"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt

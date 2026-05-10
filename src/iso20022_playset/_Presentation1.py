@@ -1,12 +1,12 @@
 from . import base_types
 from ._Document8 import Document8
-from ._PresentationMedium1Choice import PresentationMedium1Choice
 from ._Max2000Text import Max2000Text
 from ._PlaceOrUnderConfirmationChoice1 import PlaceOrUnderConfirmationChoice1
+from ._PresentationMedium1Choice import PresentationMedium1Choice
 
 class Presentation1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_PlcOfPresntnOrUdrConfChc", "_Doc", "_Mdm"]
+	__slots__ = ["_AddtlInf", "_Doc", "_Mdm", "_PlcOfPresntnOrUdrConfChc"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

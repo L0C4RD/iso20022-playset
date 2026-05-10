@@ -4,7 +4,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class PaymentReturnCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtTpInd", "_InstrInd", "_InstrCpyInd", "_PmtMTInd", "_MsgIdInd", "_InstgRmbrsmntAgtInd", "_ReqdExctnDtInd", "_PurpInd", "_InstdRmbrsmntAgtInd", "_InstdAmtInd", "_CdtrInd", "_IntrBkSttlmDtInd", "_CdtrAgtInd", "_InstrStsRtrCrit", "_EndToEndIdInd", "_TxIdInd", "_IntrmyInd", "_IntrBkSttlmAmtInd", "_DbtrInd", "_CdtDbtInd", "_PmtMtdInd", "_DbtrAgtInd", "_PrcgVldtyTmInd", "_PrtyInd"]
+	__slots__ = ["_CdtDbtInd", "_CdtrAgtInd", "_CdtrInd", "_DbtrAgtInd", "_DbtrInd", "_EndToEndIdInd", "_InstdAmtInd", "_InstdRmbrsmntAgtInd", "_InstgRmbrsmntAgtInd", "_InstrCpyInd", "_InstrInd", "_InstrStsRtrCrit", "_IntrBkSttlmAmtInd", "_IntrBkSttlmDtInd", "_IntrmyInd", "_MsgIdInd", "_PmtMTInd", "_PmtMtdInd", "_PmtTpInd", "_PrcgVldtyTmInd", "_PrtyInd", "_PurpInd", "_ReqdExctnDtInd", "_TxIdInd"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd

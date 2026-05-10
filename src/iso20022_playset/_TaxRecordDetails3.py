@@ -1,6 +1,6 @@
 from . import base_types
-from ._TaxPeriod3 import TaxPeriod3
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._TaxPeriod3 import TaxPeriod3
 
 class TaxRecordDetails3(base_types._BaseFieldType):
 

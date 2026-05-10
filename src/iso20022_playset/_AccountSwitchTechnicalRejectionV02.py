@@ -1,7 +1,7 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MessageIdentification1 import MessageIdentification1
 from ._AccountSwitchDetails1 import AccountSwitchDetails1
+from ._MessageIdentification1 import MessageIdentification1
+from ._SupplementaryData1 import SupplementaryData1
 
 class AccountSwitchTechnicalRejectionV02(base_types._BaseFieldType):
 

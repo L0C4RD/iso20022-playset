@@ -1,19 +1,19 @@
 from . import base_types
-from ._UpdateLogRestriction1 import UpdateLogRestriction1
-from ._UpdateLogProprietary1 import UpdateLogProprietary1
-from ._UpdateLogContact2 import UpdateLogContact2
-from ._UpdateLogPartyName1 import UpdateLogPartyName1
 from ._UpdateLogAddress2 import UpdateLogAddress2
-from ._UpdateLogMarketSpecificAttribute1 import UpdateLogMarketSpecificAttribute1
-from ._UpdateLogTechnicalAddress1 import UpdateLogTechnicalAddress1
-from ._UpdateLogResidenceType1 import UpdateLogResidenceType1
+from ._UpdateLogContact2 import UpdateLogContact2
 from ._UpdateLogDate1 import UpdateLogDate1
+from ._UpdateLogMarketSpecificAttribute1 import UpdateLogMarketSpecificAttribute1
 from ._UpdateLogPartyLockStatus1 import UpdateLogPartyLockStatus1
+from ._UpdateLogPartyName1 import UpdateLogPartyName1
+from ._UpdateLogProprietary1 import UpdateLogProprietary1
+from ._UpdateLogResidenceType1 import UpdateLogResidenceType1
+from ._UpdateLogRestriction1 import UpdateLogRestriction1
 from ._UpdateLogSystemPartyType1 import UpdateLogSystemPartyType1
+from ._UpdateLogTechnicalAddress1 import UpdateLogTechnicalAddress1
 
 class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Adr", "_MktSpcfcAttr", "_Tp", "_TechAdr", "_ClsgDt", "_ResTp", "_LckSts", "_Nm", "_CtctDtls", "_OpngDt", "_Rstrctn", "_Othr"]
+	__slots__ = ["_Adr", "_ClsgDt", "_CtctDtls", "_LckSts", "_MktSpcfcAttr", "_Nm", "_OpngDt", "_Othr", "_ResTp", "_Rstrctn", "_TechAdr", "_Tp"]
 	@property
 	def Adr(self):
 		return self._Adr

@@ -4,7 +4,7 @@ from ._RestrictionStatus1Code import RestrictionStatus1Code
 
 class RestrictionStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

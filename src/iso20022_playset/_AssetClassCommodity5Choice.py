@@ -1,22 +1,22 @@
 from . import base_types
-from ._AssetClassCommodityOther1 import AssetClassCommodityOther1
-from ._AssetClassCommodityInflation1 import AssetClassCommodityInflation1
+from ._AssetClassCommodityAgricultural5Choice import AssetClassCommodityAgricultural5Choice
+from ._AssetClassCommodityEnergy2Choice import AssetClassCommodityEnergy2Choice
+from ._AssetClassCommodityEnvironmental2Choice import AssetClassCommodityEnvironmental2Choice
+from ._AssetClassCommodityFertilizer3Choice import AssetClassCommodityFertilizer3Choice
 from ._AssetClassCommodityFreight3Choice import AssetClassCommodityFreight3Choice
 from ._AssetClassCommodityIndustrialProduct1Choice import AssetClassCommodityIndustrialProduct1Choice
-from ._AssetClassCommodityOtherC102Choice import AssetClassCommodityOtherC102Choice
-from ._AssetClassCommodityPolypropylene3Choice import AssetClassCommodityPolypropylene3Choice
+from ._AssetClassCommodityInflation1 import AssetClassCommodityInflation1
 from ._AssetClassCommodityMetal1Choice import AssetClassCommodityMetal1Choice
-from ._AssetClassCommodityEnergy2Choice import AssetClassCommodityEnergy2Choice
 from ._AssetClassCommodityMultiCommodityExotic1 import AssetClassCommodityMultiCommodityExotic1
-from ._AssetClassCommodityFertilizer3Choice import AssetClassCommodityFertilizer3Choice
-from ._AssetClassCommodityEnvironmental2Choice import AssetClassCommodityEnvironmental2Choice
 from ._AssetClassCommodityOfficialEconomicStatistics1 import AssetClassCommodityOfficialEconomicStatistics1
+from ._AssetClassCommodityOther1 import AssetClassCommodityOther1
+from ._AssetClassCommodityOtherC102Choice import AssetClassCommodityOtherC102Choice
 from ._AssetClassCommodityPaper3Choice import AssetClassCommodityPaper3Choice
-from ._AssetClassCommodityAgricultural5Choice import AssetClassCommodityAgricultural5Choice
+from ._AssetClassCommodityPolypropylene3Choice import AssetClassCommodityPolypropylene3Choice
 
 class AssetClassCommodity5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Ppr", "_OffclEcnmcSttstcs", "_Infltn", "_IndstrlPdct", "_Frtlzr", "_Nrgy", "_OthrC10", "_MultiCmmdtyExtc", "_Othr", "_Frght", "_Plprpln", "_Metl", "_Agrcltrl", "_Envttl"]
+	__slots__ = ["_Agrcltrl", "_Envttl", "_Frght", "_Frtlzr", "_IndstrlPdct", "_Infltn", "_Metl", "_MultiCmmdtyExtc", "_Nrgy", "_OffclEcnmcSttstcs", "_Othr", "_OthrC10", "_Plprpln", "_Ppr"]
 	@property
 	def Agrcltrl(self):
 		return self._Agrcltrl

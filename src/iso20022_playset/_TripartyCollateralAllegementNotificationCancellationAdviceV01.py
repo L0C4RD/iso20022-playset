@@ -1,17 +1,17 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._CollateralRole1Code import CollateralRole1Code
-from ._GenericIdentification1 import GenericIdentification1
-from ._ExposureType23Choice import ExposureType23Choice
-from ._CollateralParties8 import CollateralParties8
-from ._TransactionIdentifications44 import TransactionIdentifications44
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._AmountAndDirection49 import AmountAndDirection49
+from ._CollateralParties8 import CollateralParties8
+from ._CollateralRole1Code import CollateralRole1Code
 from ._CollateralTransactionType1Choice import CollateralTransactionType1Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ExposureType23Choice import ExposureType23Choice
+from ._GenericIdentification1 import GenericIdentification1
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionIdentifications44 import TransactionIdentifications44
 
 class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_ElgbltySetPrfl", "_XpsrTp", "_SplmtryData", "_ReqdExctnDt", "_TxAmt", "_TxInstrId", "_CollTxTp", "_CollSd", "_CollPties"]
+	__slots__ = ["_CollPties", "_CollSd", "_CollTxTp", "_ElgbltySetPrfl", "_ReqdExctnDt", "_SplmtryData", "_TxAmt", "_TxInstrId", "_XpsrTp"]
 	@property
 	def CollPties(self):
 		return self._CollPties

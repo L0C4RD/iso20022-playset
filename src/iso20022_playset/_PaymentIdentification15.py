@@ -1,11 +1,11 @@
 from . import base_types
-from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._Max35Text import Max35Text
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class PaymentIdentification15(base_types._BaseFieldType):
 
-	__slots__ = ["_EndToEndId", "_FrstAgt", "_ClrSysRef", "_UETR", "_InstrId", "_TxId"]
+	__slots__ = ["_ClrSysRef", "_EndToEndId", "_FrstAgt", "_InstrId", "_TxId", "_UETR"]
 	@property
 	def ClrSysRef(self):
 		return self._ClrSysRef

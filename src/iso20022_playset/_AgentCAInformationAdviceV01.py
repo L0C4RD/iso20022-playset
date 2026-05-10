@@ -1,13 +1,13 @@
 from . import base_types
+from ._ContactPerson1 import ContactPerson1
 from ._CorporateActionAdditionalInformation1 import CorporateActionAdditionalInformation1
 from ._CorporateActionInformation1 import CorporateActionInformation1
 from ._DocumentIdentification8 import DocumentIdentification8
 from ._SecuritiesAccount7 import SecuritiesAccount7
-from ._ContactPerson1 import ContactPerson1
 
 class AgentCAInformationAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AcctDtls", "_CtctDtls", "_AgtCAElctnAdvcId", "_CorpActnGnlInf", "_CorpActnAddtlInf"]
+	__slots__ = ["_AcctDtls", "_AgtCAElctnAdvcId", "_CorpActnAddtlInf", "_CorpActnGnlInf", "_CtctDtls", "_Id"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

@@ -1,6 +1,6 @@
 from . import base_types
-from ._LoyaltyAccount3 import LoyaltyAccount3
 from ._CustomerOrder1 import CustomerOrder1
+from ._LoyaltyAccount3 import LoyaltyAccount3
 
 class LoyaltyAccountRequest3(base_types._BaseFieldType):
 

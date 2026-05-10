@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._ErrorHandling1Choice import ErrorHandling1Choice
+from ._Max140Text import Max140Text
 
 class ErrorHandling3(base_types._BaseFieldType):
 
-	__slots__ = ["_Err", "_Desc"]
+	__slots__ = ["_Desc", "_Err"]
 	@property
 	def Desc(self):
 		return self._Desc

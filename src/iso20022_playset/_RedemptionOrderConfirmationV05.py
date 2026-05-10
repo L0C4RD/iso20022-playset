@@ -1,13 +1,13 @@
 from . import base_types
-from ._CopyInformation5 import CopyInformation5
-from ._RedemptionMultipleExecution6 import RedemptionMultipleExecution6
 from ._AdditionalReference10 import AdditionalReference10
-from ._MessageIdentification1 import MessageIdentification1
+from ._CopyInformation5 import CopyInformation5
 from ._Extension1 import Extension1
+from ._MessageIdentification1 import MessageIdentification1
+from ._RedemptionMultipleExecution6 import RedemptionMultipleExecution6
 
 class RedemptionOrderConfirmationV05(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_PrvsRef", "_MltplExctnDtls", "_Xtnsn", "_RltdRef", "_CpyDtls", "_PoolRef"]
+	__slots__ = ["_CpyDtls", "_MltplExctnDtls", "_MsgId", "_PoolRef", "_PrvsRef", "_RltdRef", "_Xtnsn"]
 	@property
 	def CpyDtls(self):
 		return self._CpyDtls

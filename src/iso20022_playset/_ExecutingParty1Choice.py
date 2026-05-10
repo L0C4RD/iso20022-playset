@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max50Text import Max50Text
 from ._NoReasonCode import NoReasonCode
 from ._PersonIdentification12 import PersonIdentification12
-from ._Max50Text import Max50Text
 
 class ExecutingParty1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Algo", "_Prsn", "_Clnt"]
+	__slots__ = ["_Algo", "_Clnt", "_Prsn"]
 	@property
 	def Algo(self):
 		return self._Algo

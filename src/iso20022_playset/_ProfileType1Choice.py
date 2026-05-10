@@ -1,10 +1,10 @@
 from . import base_types
-from ._ProfileType1Code import ProfileType1Code
 from ._GenericIdentification47 import GenericIdentification47
+from ._ProfileType1Code import ProfileType1Code
 
 class ProfileType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

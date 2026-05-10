@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecuredMarketReport4Choice import SecuredMarketReport4Choice
 from ._MoneyMarketReportHeader1 import MoneyMarketReportHeader1
+from ._SecuredMarketReport4Choice import SecuredMarketReport4Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class MoneyMarketSecuredMarketStatisticalReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ScrdMktRpt", "_RptHdr", "_SplmtryData"]
+	__slots__ = ["_RptHdr", "_ScrdMktRpt", "_SplmtryData"]
 	@property
 	def RptHdr(self):
 		return self._RptHdr

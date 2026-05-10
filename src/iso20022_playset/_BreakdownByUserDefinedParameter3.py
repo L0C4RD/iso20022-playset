@@ -1,15 +1,15 @@
 from . import base_types
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._CashInForecast5 import CashInForecast5
+from ._CashOutForecast5 import CashOutForecast5
+from ._CountryCode import CountryCode
 from ._DataFormat2Choice import DataFormat2Choice
 from ._InvestmentAccount42 import InvestmentAccount42
-from ._CountryCode import CountryCode
-from ._CashOutForecast5 import CashOutForecast5
 from ._NetCashForecast4 import NetCashForecast4
-from ._CashInForecast5 import CashInForecast5
 
 class BreakdownByUserDefinedParameter3(base_types._BaseFieldType):
 
-	__slots__ = ["_UsrDfnd", "_Pty", "_CshOutFcst", "_NetCshFcst", "_Ccy", "_Ctry", "_CshInFcst"]
+	__slots__ = ["_Ccy", "_CshInFcst", "_CshOutFcst", "_Ctry", "_NetCshFcst", "_Pty", "_UsrDfnd"]
 	@property
 	def Ccy(self):
 		return self._Ccy

@@ -1,7 +1,7 @@
 from . import base_types
+from ._CRSSource1Choice import CRSSource1Choice
 from ._CRSStatus3Choice import CRSStatus3Choice
 from ._CountryCode import CountryCode
-from ._CRSSource1Choice import CRSSource1Choice
 
 class CRSStatus4(base_types._BaseFieldType):
 

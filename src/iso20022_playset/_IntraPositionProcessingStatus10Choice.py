@@ -1,12 +1,12 @@
 from . import base_types
 from ._AcknowledgedAcceptedStatus25Choice import AcknowledgedAcceptedStatus25Choice
-from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
 from ._CancellationStatus25Choice import CancellationStatus25Choice
+from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
 from ._RejectionOrRepairStatus45Choice import RejectionOrRepairStatus45Choice
 
 class IntraPositionProcessingStatus10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AckdAccptd", "_Rjctd", "_Rpr", "_Prtry", "_Canc"]
+	__slots__ = ["_AckdAccptd", "_Canc", "_Prtry", "_Rjctd", "_Rpr"]
 	@property
 	def AckdAccptd(self):
 		return self._AckdAccptd

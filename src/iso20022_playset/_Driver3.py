@@ -1,18 +1,18 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
-from ._Max16Text import Max16Text
 from ._AdditionalData1 import AdditionalData1
-from ._TravelDocument2 import TravelDocument2
+from ._ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
+from ._ISODate import ISODate
 from ._ISOMax3ACountryCode import ISOMax3ACountryCode
 from ._LegalStructure1Code import LegalStructure1Code
-from ._PresentationMedium2Code import PresentationMedium2Code
-from ._Max70Text import Max70Text
+from ._Max16Text import Max16Text
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._PresentationMedium2Code import PresentationMedium2Code
+from ._TravelDocument2 import TravelDocument2
 
 class Driver3(base_types._BaseFieldType):
 
-	__slots__ = ["_LicId", "_DtOfBirth", "_LicCtrySubDvsnMnr", "_LicOthrAuthrty", "_LicForm", "_AddtlData", "_AddtlId", "_LicTp", "_LicIssncDt", "_LicCtry", "_Mplyr", "_MplyeeId", "_LicXprtnDt", "_DeptNb", "_LicAssgnr", "_Id", "_LicCtrySubDvsnMjr", "_Nm"]
+	__slots__ = ["_AddtlData", "_AddtlId", "_DeptNb", "_DtOfBirth", "_Id", "_LicAssgnr", "_LicCtry", "_LicCtrySubDvsnMjr", "_LicCtrySubDvsnMnr", "_LicForm", "_LicId", "_LicIssncDt", "_LicOthrAuthrty", "_LicTp", "_LicXprtnDt", "_MplyeeId", "_Mplyr", "_Nm"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

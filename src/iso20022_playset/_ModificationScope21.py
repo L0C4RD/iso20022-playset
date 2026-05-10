@@ -1,6 +1,6 @@
 from . import base_types
-from ._NewIssueAllocation2 import NewIssueAllocation2
 from ._DataModification1Code import DataModification1Code
+from ._NewIssueAllocation2 import NewIssueAllocation2
 
 class ModificationScope21(base_types._BaseFieldType):
 

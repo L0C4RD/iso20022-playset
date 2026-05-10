@@ -1,6 +1,6 @@
 from . import base_types
-from ._Registration1Code import Registration1Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._Registration1Code import Registration1Code
 
 class Registration9Choice(base_types._BaseFieldType):
 

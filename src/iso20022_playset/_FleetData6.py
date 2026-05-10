@@ -1,19 +1,19 @@
 from . import base_types
-from ._FleetLineItem5 import FleetLineItem5
-from ._Max1Number import Max1Number
-from ._Max10Text import Max10Text
-from ._LocalAmenity1 import LocalAmenity1
-from ._Driver3 import Driver3
-from ._Vehicle6 import Vehicle6
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
-from ._FleetTransactionDetail1 import FleetTransactionDetail1
 from ._AdditionalInformation31 import AdditionalInformation31
+from ._Driver3 import Driver3
+from ._FleetLineItem5 import FleetLineItem5
+from ._FleetTransactionDetail1 import FleetTransactionDetail1
+from ._LocalAmenity1 import LocalAmenity1
+from ._Max10Text import Max10Text
+from ._Max1Number import Max1Number
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 from ._PlainCardData23 import PlainCardData23
+from ._Vehicle6 import Vehicle6
 
 class FleetData6(base_types._BaseFieldType):
 
-	__slots__ = ["_AgtFuelPrmptCd", "_LineItm", "_TripWorkOrdr", "_AddtlNtrdData", "_TripBllgId", "_TripNb", "_DrvrOrVhclCard", "_Drvr", "_CardFuelPrmptCd", "_Vhcl", "_TripDlvryTcktNb", "_LclAmnty", "_TxRltdData", "_TripInvcNb", "_TripCtrlNb", "_TripJobNb"]
+	__slots__ = ["_AddtlNtrdData", "_AgtFuelPrmptCd", "_CardFuelPrmptCd", "_Drvr", "_DrvrOrVhclCard", "_LclAmnty", "_LineItm", "_TripBllgId", "_TripCtrlNb", "_TripDlvryTcktNb", "_TripInvcNb", "_TripJobNb", "_TripNb", "_TripWorkOrdr", "_TxRltdData", "_Vhcl"]
 	@property
 	def AddtlNtrdData(self):
 		return self._AddtlNtrdData

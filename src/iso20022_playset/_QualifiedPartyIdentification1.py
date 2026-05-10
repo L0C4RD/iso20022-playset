@@ -1,13 +1,13 @@
 from . import base_types
+from ._GenericIdentification1 import GenericIdentification1
+from ._Max256Text import Max256Text
 from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._SingleQualifiedPartyIdentification1 import SingleQualifiedPartyIdentification1
 from ._xs:ID import xs:ID
-from ._GenericIdentification1 import GenericIdentification1
-from ._Max256Text import Max256Text
 
 class QualifiedPartyIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtId", "_Role", "_Id", "_RoleDesc", "_Pty"]
+	__slots__ = ["_Id", "_Pty", "_Role", "_RoleDesc", "_ShrtId"]
 	@property
 	def Id(self):
 		return self._Id

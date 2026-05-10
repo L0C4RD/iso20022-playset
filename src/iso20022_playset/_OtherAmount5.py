@@ -1,12 +1,12 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._Number import Number
 from ._CreditDebit3Code import CreditDebit3Code
+from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Number import Number
 
 class OtherAmount5(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrCnt", "_IntrchngFeeCcy", "_AgtFeeAmt", "_ClrCdtDbt", "_IntrchngFeeCdtDbt", "_AgtFeeCcy", "_IntrchngFeeAmt", "_ClrCcy", "_ClrAmt", "_AgtFeeCdtDbt"]
+	__slots__ = ["_AgtFeeAmt", "_AgtFeeCcy", "_AgtFeeCdtDbt", "_ClrAmt", "_ClrCcy", "_ClrCdtDbt", "_ClrCnt", "_IntrchngFeeAmt", "_IntrchngFeeCcy", "_IntrchngFeeCdtDbt"]
 	@property
 	def AgtFeeAmt(self):
 		return self._AgtFeeAmt

@@ -1,11 +1,11 @@
 from . import base_types
-from ._EncryptedDataFormat1Code import EncryptedDataFormat1Code
 from ._EncryptedData2Choice import EncryptedData2Choice
+from ._EncryptedDataFormat1Code import EncryptedDataFormat1Code
 from ._Max35Text import Max35Text
 
 class EncryptedDataElement2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_OthrClearTxtFrmt", "_ClearTxtFrmt", "_Data"]
+	__slots__ = ["_ClearTxtFrmt", "_Data", "_Id", "_OthrClearTxtFrmt"]
 	@property
 	def ClearTxtFrmt(self):
 		return self._ClearTxtFrmt

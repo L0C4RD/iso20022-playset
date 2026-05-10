@@ -1,12 +1,12 @@
 from . import base_types
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
 from ._AutoExtension1 import AutoExtension1
+from ._DateAndDateTimeChoice import DateAndDateTimeChoice
 from ._Max2000Text import Max2000Text
 from ._YesNoIndicator import YesNoIndicator
 
 class ExpiryTerms1(base_types._BaseFieldType):
 
-	__slots__ = ["_OpnEnddInd", "_Cond", "_AutoXtnsn", "_DtTm"]
+	__slots__ = ["_AutoXtnsn", "_Cond", "_DtTm", "_OpnEnddInd"]
 	@property
 	def AutoXtnsn(self):
 		return self._AutoXtnsn

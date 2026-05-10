@@ -1,10 +1,10 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PaymentConditionStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_EarlyPmt", "_AccptdAmt", "_GrntedPmt"]
+	__slots__ = ["_AccptdAmt", "_EarlyPmt", "_GrntedPmt"]
 	@property
 	def AccptdAmt(self):
 		return self._AccptdAmt

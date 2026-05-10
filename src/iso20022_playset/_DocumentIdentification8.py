@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class DocumentIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CreDtTm"]
+	__slots__ = ["_CreDtTm", "_Id"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

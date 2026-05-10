@@ -4,7 +4,7 @@ from ._Max70Text import Max70Text
 
 class AccountDetails4(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Tp", "_Id"]
+	__slots__ = ["_Id", "_Nm", "_Tp"]
 	@property
 	def Id(self):
 		return self._Id

@@ -1,11 +1,11 @@
 from . import base_types
+from ._CountryCode import CountryCode
 from ._ISODate import ISODate
 from ._ShipmentCondition1Choice import ShipmentCondition1Choice
-from ._CountryCode import CountryCode
 
 class ShipmentAttribute2(base_types._BaseFieldType):
 
-	__slots__ = ["_Conds", "_XpctdDt", "_CtryOfCntrPty"]
+	__slots__ = ["_Conds", "_CtryOfCntrPty", "_XpctdDt"]
 	@property
 	def Conds(self):
 		return self._Conds

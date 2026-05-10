@@ -1,24 +1,24 @@
 from . import base_types
-from ._DataType1Code import DataType1Code
-from ._PremiumAmount3 import PremiumAmount3
-from ._OptionType1Code import OptionType1Code
-from ._AmountsAndValueDate4 import AmountsAndValueDate4
-from ._PercentageRate import PercentageRate
-from ._Max4AlphaNumericText import Max4AlphaNumericText
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._AgreedRate3 import AgreedRate3
-from ._SettlementType1Code import SettlementType1Code
+from ._AmountsAndValueDate4 import AmountsAndValueDate4
+from ._DataType1Code import DataType1Code
+from ._DerivativeExerciseStatus1Code import DerivativeExerciseStatus1Code
 from ._ISODateTime import ISODateTime
 from ._Max140Text import Max140Text
-from ._OptionPayoutType1Code import OptionPayoutType1Code
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._SettlementDate8Code import SettlementDate8Code
 from ._Max35Text import Max35Text
+from ._Max4AlphaNumericText import Max4AlphaNumericText
+from ._OptionPayoutType1Code import OptionPayoutType1Code
 from ._OptionStyle2Code import OptionStyle2Code
-from ._DerivativeExerciseStatus1Code import DerivativeExerciseStatus1Code
+from ._OptionType1Code import OptionType1Code
+from ._PercentageRate import PercentageRate
+from ._PremiumAmount3 import PremiumAmount3
+from ._SettlementDate8Code import SettlementDate8Code
+from ._SettlementType1Code import SettlementType1Code
 
 class Option16(base_types._BaseFieldType):
 
-	__slots__ = ["_XpryLctn", "_ValtnRate", "_DerivOptnId", "_XpryDtAndTm", "_ExrcStyle", "_Prm", "_OptnPyoutTp", "_ExrcSts", "_OptnTp", "_RskAmt", "_StrkPric", "_AddtlOptnInf", "_OptnAmts", "_SttlmAmtTp", "_SttlmTp", "_VoltlyMrgn", "_Data"]
+	__slots__ = ["_AddtlOptnInf", "_Data", "_DerivOptnId", "_ExrcSts", "_ExrcStyle", "_OptnAmts", "_OptnPyoutTp", "_OptnTp", "_Prm", "_RskAmt", "_StrkPric", "_SttlmAmtTp", "_SttlmTp", "_ValtnRate", "_VoltlyMrgn", "_XpryDtAndTm", "_XpryLctn"]
 	@property
 	def AddtlOptnInf(self):
 		return self._AddtlOptnInf

@@ -1,14 +1,14 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._CountryCode import CountryCode
-from ._TaxType3Choice import TaxType3Choice
-from ._PartyIdentification113 import PartyIdentification113
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._CountryCode import CountryCode
+from ._PartyIdentification113 import PartyIdentification113
+from ._PercentageRate import PercentageRate
 from ._TaxCalculationInformation10 import TaxCalculationInformation10
+from ._TaxType3Choice import TaxType3Choice
 
 class Tax31(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_ApldRate", "_Ctry", "_RcptId", "_TaxClctnDtls", "_ApldAmt"]
+	__slots__ = ["_ApldAmt", "_ApldRate", "_Ctry", "_RcptId", "_TaxClctnDtls", "_Tp"]
 	@property
 	def ApldAmt(self):
 		return self._ApldAmt

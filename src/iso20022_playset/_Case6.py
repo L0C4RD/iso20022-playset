@@ -1,11 +1,11 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._Max35Text import Max35Text
 from ._Party50Choice import Party50Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class Case6(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_ReopCaseIndctn", "_Cretr"]
+	__slots__ = ["_Cretr", "_Id", "_ReopCaseIndctn"]
 	@property
 	def Cretr(self):
 		return self._Cretr

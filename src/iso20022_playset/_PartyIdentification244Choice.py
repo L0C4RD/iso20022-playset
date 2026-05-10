@@ -1,11 +1,11 @@
 from . import base_types
-from ._NameAndAddress13 import NameAndAddress13
-from ._CountryCode import CountryCode
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._CountryCode import CountryCode
+from ._NameAndAddress13 import NameAndAddress13
 
 class PartyIdentification244Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_BIC", "_NmAndAdr"]
+	__slots__ = ["_BIC", "_Ctry", "_NmAndAdr"]
 	@property
 	def BIC(self):
 		return self._BIC

@@ -1,20 +1,20 @@
 from . import base_types
-from ._PartyIdentification125Choice import PartyIdentification125Choice
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._CashAccountType3Choice import CashAccountType3Choice
-from ._GenericIdentification82 import GenericIdentification82
-from ._FinancialInstitutionIdentification11Choice import FinancialInstitutionIdentification11Choice
-from ._BranchData4 import BranchData4
-from ._SettlementInstructionReason1Choice import SettlementInstructionReason1Choice
-from ._AccountType2Choice import AccountType2Choice
 from ._AccountDesignation1Choice import AccountDesignation1Choice
-from ._CreditDebit3Code import CreditDebit3Code
 from ._AccountIdentificationAndName5 import AccountIdentificationAndName5
+from ._AccountType2Choice import AccountType2Choice
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._BranchData4 import BranchData4
+from ._CashAccountType3Choice import CashAccountType3Choice
+from ._CreditDebit3Code import CreditDebit3Code
+from ._FinancialInstitutionIdentification11Choice import FinancialInstitutionIdentification11Choice
+from ._GenericIdentification82 import GenericIdentification82
+from ._PartyIdentification125Choice import PartyIdentification125Choice
 from ._PercentageBoundedRate import PercentageBoundedRate
+from ._SettlementInstructionReason1Choice import SettlementInstructionReason1Choice
 
 class CashAccount204(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrOthrId", "_DvddPctg", "_CdtDbt", "_AcctOwnr", "_SttlmCcy", "_Id", "_SttlmInstrRsn", "_CshAcctPurp", "_InvstmtAcctTp", "_AcctSvcr", "_CshAcctDsgnt", "_AcctSvcrBrnch"]
+	__slots__ = ["_AcctOwnr", "_AcctOwnrOthrId", "_AcctSvcr", "_AcctSvcrBrnch", "_CdtDbt", "_CshAcctDsgnt", "_CshAcctPurp", "_DvddPctg", "_Id", "_InvstmtAcctTp", "_SttlmCcy", "_SttlmInstrRsn"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

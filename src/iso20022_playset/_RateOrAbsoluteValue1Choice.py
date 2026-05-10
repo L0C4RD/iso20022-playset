@@ -1,10 +1,10 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._Number import Number
+from ._PercentageRate import PercentageRate
 
 class RateOrAbsoluteValue1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RateVal", "_AbsVal"]
+	__slots__ = ["_AbsVal", "_RateVal"]
 	@property
 	def AbsVal(self):
 		return self._AbsVal

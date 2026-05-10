@@ -1,10 +1,10 @@
 from . import base_types
-from ._ClaimNonReceiptRejectReason1Choice import ClaimNonReceiptRejectReason1Choice
 from ._ClaimNonReceipt3 import ClaimNonReceipt3
+from ._ClaimNonReceiptRejectReason1Choice import ClaimNonReceiptRejectReason1Choice
 
 class ClaimNonReceipt3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rjctd", "_Accptd"]
+	__slots__ = ["_Accptd", "_Rjctd"]
 	@property
 	def Accptd(self):
 		return self._Accptd

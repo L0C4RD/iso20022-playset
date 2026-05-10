@@ -1,11 +1,11 @@
 from . import base_types
-from ._PaymentCard29 import PaymentCard29
 from ._DirectDebitMandate7 import DirectDebitMandate7
+from ._PaymentCard29 import PaymentCard29
 from ._YesNoIndicator import YesNoIndicator
 
 class PaymentInstrument24Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtCardDtls", "_Chq", "_BkrsDrft", "_DrctDbtDtls"]
+	__slots__ = ["_BkrsDrft", "_Chq", "_DrctDbtDtls", "_PmtCardDtls"]
 	@property
 	def BkrsDrft(self):
 		return self._BkrsDrft

@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ISODate import ISODate
 
 class CorporateActionDate99(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_PstngDt", "_PmtDt", "_EarlstPmtDt", "_FXRateFxgDt"]
+	__slots__ = ["_EarlstPmtDt", "_FXRateFxgDt", "_PmtDt", "_PstngDt", "_ValDt"]
 	@property
 	def EarlstPmtDt(self):
 		return self._EarlstPmtDt

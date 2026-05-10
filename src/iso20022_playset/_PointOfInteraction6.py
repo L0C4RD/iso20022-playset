@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class PointOfInteraction6(base_types._BaseFieldType):
 
-	__slots__ = ["_SrlNb", "_Mdl", "_ManfctrIdr"]
+	__slots__ = ["_ManfctrIdr", "_Mdl", "_SrlNb"]
 	@property
 	def ManfctrIdr(self):
 		return self._ManfctrIdr

@@ -1,16 +1,16 @@
 from . import base_types
-from ._TMSEvent12 import TMSEvent12
-from ._PointOfInteractionComponent17 import PointOfInteractionComponent17
 from ._AttendanceContext1Code import AttendanceContext1Code
-from ._PointOfInteractionCapabilities9 import PointOfInteractionCapabilities9
 from ._DataSetRequest6 import DataSetRequest6
-from ._Max35Text import Max35Text
 from ._ISODateTime import ISODateTime
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._PointOfInteractionCapabilities9 import PointOfInteractionCapabilities9
+from ._PointOfInteractionComponent17 import PointOfInteractionComponent17
+from ._TMSEvent12 import TMSEvent12
 
 class StatusReportContent14(base_types._BaseFieldType):
 
-	__slots__ = ["_POICmpnt", "_Errs", "_POICpblties", "_AttndncCntxt", "_DataSetReqrd", "_POIGrpId", "_Evt", "_POIDtTm"]
+	__slots__ = ["_AttndncCntxt", "_DataSetReqrd", "_Errs", "_Evt", "_POICmpnt", "_POICpblties", "_POIDtTm", "_POIGrpId"]
 	@property
 	def AttndncCntxt(self):
 		return self._AttndncCntxt

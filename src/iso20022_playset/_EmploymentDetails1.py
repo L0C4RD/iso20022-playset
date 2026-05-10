@@ -1,13 +1,13 @@
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
-from ._DateFormat42Choice import DateFormat42Choice
-from ._YesNoIndicator import YesNoIndicator
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._DateFormat42Choice import DateFormat42Choice
+from ._GenericIdentification36 import GenericIdentification36
+from ._YesNoIndicator import YesNoIndicator
 
 class EmploymentDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsTax", "_EndDt", "_TaxCd", "_AddtlInf", "_OthrTaxCdInd", "_CmltvTaxInd", "_StartDt", "_PrvsPay"]
+	__slots__ = ["_AddtlInf", "_CmltvTaxInd", "_EndDt", "_OthrTaxCdInd", "_PrvsPay", "_PrvsTax", "_StartDt", "_TaxCd"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

@@ -1,6 +1,6 @@
 from . import base_types
-from ._PoliticallyExposedPersonStatus1Choice import PoliticallyExposedPersonStatus1Choice
 from ._PoliticalExposureType2Choice import PoliticalExposureType2Choice
+from ._PoliticallyExposedPersonStatus1Choice import PoliticallyExposedPersonStatus1Choice
 
 class PoliticallyExposedPerson1(base_types._BaseFieldType):
 

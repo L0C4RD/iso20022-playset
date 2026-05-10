@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max15NumericText import Max15NumericText
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Max15NumericText import Max15NumericText
 
 class CashDeposit1(base_types._BaseFieldType):
 
-	__slots__ = ["_NoteDnmtn", "_NbOfNotes", "_Amt"]
+	__slots__ = ["_Amt", "_NbOfNotes", "_NoteDnmtn"]
 	@property
 	def Amt(self):
 		return self._Amt

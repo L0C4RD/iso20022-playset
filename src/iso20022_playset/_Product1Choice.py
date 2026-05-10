@@ -1,11 +1,11 @@
 from . import base_types
-from ._FinancialInstrument59 import FinancialInstrument59
 from ._Derivative3 import Derivative3
+from ._FinancialInstrument59 import FinancialInstrument59
 from ._RepurchaseAgreement3 import RepurchaseAgreement3
 
 class Product1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Deriv", "_Scty", "_SctiesFincgTx"]
+	__slots__ = ["_Deriv", "_SctiesFincgTx", "_Scty"]
 	@property
 	def Deriv(self):
 		return self._Deriv

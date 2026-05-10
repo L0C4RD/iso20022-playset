@@ -1,11 +1,11 @@
 from . import base_types
-from ._RTPPartyIdentification2 import RTPPartyIdentification2
 from ._DebtorActivationAmendmentReason1Choice import DebtorActivationAmendmentReason1Choice
 from ._Max105Text import Max105Text
+from ._RTPPartyIdentification2 import RTPPartyIdentification2
 
 class DebtorActivationAmendmentReason3(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_Orgtr", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Orgtr", "_Rsn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

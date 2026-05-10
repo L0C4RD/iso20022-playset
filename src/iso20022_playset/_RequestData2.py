@@ -1,12 +1,12 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._PartyIdentification242Choice import PartyIdentification242Choice
 from ._Max35Text import Max35Text
 from ._Max4Text import Max4Text
+from ._PartyIdentification242Choice import PartyIdentification242Choice
 
 class RequestData2(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqTp", "_ReqSvcr", "_NetSvcPtcptId", "_NetSvcTp", "_ReqdActvtnDt", "_MsgId"]
+	__slots__ = ["_MsgId", "_NetSvcPtcptId", "_NetSvcTp", "_ReqSvcr", "_ReqTp", "_ReqdActvtnDt"]
 	@property
 	def MsgId(self):
 		return self._MsgId

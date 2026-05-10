@@ -1,18 +1,18 @@
 from . import base_types
 from ._CardPaymentServiceType10Code import CardPaymentServiceType10Code
-from ._KeyUsage1Code import KeyUsage1Code
-from ._Max20000Text import Max20000Text
-from ._PointOfInteraction6 import PointOfInteraction6
-from ._Max140Binary import Max140Binary
-from ._Max70Text import Max70Text
 from ._CertificationRequest1 import CertificationRequest1
-from ._Max10KBinary import Max10KBinary
-from ._ISODateTime import ISODateTime
 from ._GenericIdentification176 import GenericIdentification176
+from ._ISODateTime import ISODateTime
+from ._KeyUsage1Code import KeyUsage1Code
+from ._Max10KBinary import Max10KBinary
+from ._Max140Binary import Max140Binary
+from ._Max20000Text import Max20000Text
+from ._Max70Text import Max70Text
+from ._PointOfInteraction6 import PointOfInteraction6
 
 class CertificateManagementRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_POIChllngVal", "_WhtListId", "_KeyFctn", "_SctyDomn", "_BinryCertfctnReq", "_ClntCert", "_TMId", "_CertSvc", "_CertfctnReq", "_POIId", "_POIDtTm"]
+	__slots__ = ["_BinryCertfctnReq", "_CertSvc", "_CertfctnReq", "_ClntCert", "_KeyFctn", "_POIChllngVal", "_POIDtTm", "_POIId", "_SctyDomn", "_TMId", "_WhtListId"]
 	@property
 	def BinryCertfctnReq(self):
 		return self._BinryCertfctnReq

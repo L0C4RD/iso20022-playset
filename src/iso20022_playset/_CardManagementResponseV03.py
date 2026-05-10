@@ -1,39 +1,39 @@
 from . import base_types
-from ._ProcessingResult22 import ProcessingResult22
-from ._Token2 import Token2
-from ._AdditionalData2 import AdditionalData2
-from ._TransactionIdentification57 import TransactionIdentification57
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._OriginalDataElements4 import OriginalDataElements4
-from ._TransactionAmounts4 import TransactionAmounts4
-from ._Cardholder22 import Cardholder22
-from ._Terminal8 import Terminal8
-from ._Jurisdiction2 import Jurisdiction2
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ContentInformationType41 import ContentInformationType41
-from ._CustomerDevice5 import CustomerDevice5
-from ._PartyIdentification285 import PartyIdentification285
-from ._Verification7 import Verification7
-from ._Context20 import Context20
-from ._SettlementService6 import SettlementService6
-from ._CardData12 import CardData12
-from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
-from ._ProtectedData2 import ProtectedData2
-from ._RiskContext3 import RiskContext3
-from ._Wallet3 import Wallet3
 from ._AdditionalAmounts4 import AdditionalAmounts4
-from ._Max10KHexBinaryText import Max10KHexBinaryText
+from ._AdditionalData2 import AdditionalData2
+from ._AdditionalFee3 import AdditionalFee3
 from ._AdditionalService2 import AdditionalService2
-from ._TransactionCharacteristics2 import TransactionCharacteristics2
+from ._CardData12 import CardData12
+from ._Cardholder22 import Cardholder22
+from ._ContentInformationType41 import ContentInformationType41
+from ._Context20 import Context20
+from ._CustomerDevice5 import CustomerDevice5
 from ._DateTime2 import DateTime2
-from ._StrongCustomerAuthentication2 import StrongCustomerAuthentication2
 from ._Header71 import Header71
+from ._Jurisdiction2 import Jurisdiction2
+from ._Max10KHexBinaryText import Max10KHexBinaryText
+from ._OriginalDataElements4 import OriginalDataElements4
+from ._PartyIdentification285 import PartyIdentification285
+from ._PartyIdentification286 import PartyIdentification286
+from ._ProcessingResult22 import ProcessingResult22
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._ProtectedData2 import ProtectedData2
+from ._Reconciliation4 import Reconciliation4
+from ._RiskContext3 import RiskContext3
+from ._SettlementService6 import SettlementService6
+from ._StrongCustomerAuthentication2 import StrongCustomerAuthentication2
+from ._SupplementaryData1 import SupplementaryData1
+from ._Terminal8 import Terminal8
+from ._Token2 import Token2
+from ._TransactionAmounts4 import TransactionAmounts4
+from ._TransactionCharacteristics2 import TransactionCharacteristics2
+from ._TransactionIdentification57 import TransactionIdentification57
+from ._Verification7 import Verification7
+from ._Wallet3 import Wallet3
 
 class CardManagementResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlAmt", "_Termnl", "_OrgnlDataElmts", "_Sndr", "_AddtlData", "_TxChrtcs", "_AddtlFee", "_Rcncltn", "_ConvsDtTm", "_Crdhldr", "_TxId", "_PrcgRslt", "_TxAmts", "_Card", "_CstmrDvc", "_Rsk", "_Orgtr", "_ICCRltdData", "_Acqrr", "_Dstn", "_Issr", "_Jursdctn", "_Cntxt", "_Hdr", "_StrngCstmrAuthntcn", "_Tkn", "_Prgrmm", "_SctyTrlr", "_Vrfctn", "_Rcvr", "_Accptr", "_SttlmSvc", "_PrtctdData", "_AddtlSvc", "_Wllt", "_SplmtryData"]
+	__slots__ = ["_Accptr", "_Acqrr", "_AddtlAmt", "_AddtlData", "_AddtlFee", "_AddtlSvc", "_Card", "_Cntxt", "_ConvsDtTm", "_Crdhldr", "_CstmrDvc", "_Dstn", "_Hdr", "_ICCRltdData", "_Issr", "_Jursdctn", "_OrgnlDataElmts", "_Orgtr", "_PrcgRslt", "_Prgrmm", "_PrtctdData", "_Rcncltn", "_Rcvr", "_Rsk", "_SctyTrlr", "_Sndr", "_SplmtryData", "_StrngCstmrAuthntcn", "_SttlmSvc", "_Termnl", "_Tkn", "_TxAmts", "_TxChrtcs", "_TxId", "_Vrfctn", "_Wllt"]
 	@property
 	def Accptr(self):
 		return self._Accptr

@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._GroupHeader117 import GroupHeader117
 from ._NotificationCancellationReason2 import NotificationCancellationReason2
 from ._OriginalNotification16 import OriginalNotification16
+from ._SupplementaryData1 import SupplementaryData1
 
 class NotificationToReceiveCancellationAdviceV09(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_CxlRsn", "_GrpHdr", "_OrgnlNtfctn"]
+	__slots__ = ["_CxlRsn", "_GrpHdr", "_OrgnlNtfctn", "_SplmtryData"]
 	@property
 	def CxlRsn(self):
 		return self._CxlRsn

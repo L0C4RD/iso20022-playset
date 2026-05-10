@@ -1,26 +1,26 @@
 from . import base_types
-from ._Max210Text import Max210Text
-from ._CollateralisationIndicator1Code import CollateralisationIndicator1Code
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._TradingSideTransactionReporting3 import TradingSideTransactionReporting3
-from ._Max10Text import Max10Text
 from ._AllocationIndicator1Code import AllocationIndicator1Code
 from ._ClearingBrokerIdentification1 import ClearingBrokerIdentification1
-from ._ISODateTime import ISODateTime
-from ._PartyIdentification242Choice import PartyIdentification242Choice
-from ._FXCommissionOrFee1 import FXCommissionOrFee1
-from ._ISOTime import ISOTime
-from ._YesNoIndicator import YesNoIndicator
-from ._Exact42Text import Exact42Text
-from ._ProductIdentifier3Choice import ProductIdentifier3Choice
-from ._Max35Text import Max35Text
+from ._CollateralisationIndicator1Code import CollateralisationIndicator1Code
+from ._CorporateSectorIdentifier1Code import CorporateSectorIdentifier1Code
 from ._CounterpartySideTransactionReporting3 import CounterpartySideTransactionReporting3
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._CorporateSectorIdentifier1Code import CorporateSectorIdentifier1Code
+from ._Exact42Text import Exact42Text
+from ._FXCommissionOrFee1 import FXCommissionOrFee1
+from ._ISODateTime import ISODateTime
+from ._ISOTime import ISOTime
+from ._Max10Text import Max10Text
+from ._Max210Text import Max210Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification242Choice import PartyIdentification242Choice
+from ._ProductIdentifier3Choice import ProductIdentifier3Choice
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._TradingSideTransactionReporting3 import TradingSideTransactionReporting3
+from ._YesNoIndicator import YesNoIndicator
 
 class RegulatoryReporting8(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrTmstmp", "_CntrlCtrPtyClrHs", "_AddtlRptgInf", "_ConfDtAndTmstmp", "_CorpSctrInd", "_CtrPtySdTxRptg", "_PrtflCmprssnInd", "_PdctIdr", "_ComssnsAndFees", "_TradWthNonEEACtrPtyInd", "_FinNtrOfTheCtrPtyInd", "_CollPrtflInd", "_FinInstrmId", "_ClrXcptnPty", "_ExctnTmstmp", "_LkSwpId", "_ComrclOrTrsrFincgInd", "_CollPrtflCd", "_NonStdFlg", "_ExctnVn", "_ClrThrshldInd", "_ClrdPdctId", "_AllcnInd", "_NtrgrpTradInd", "_ClrBrkr", "_TradgSdTxRptg", "_CollstnInd", "_ClrBrkrId"]
+	__slots__ = ["_AddtlRptgInf", "_AllcnInd", "_ClrBrkr", "_ClrBrkrId", "_ClrThrshldInd", "_ClrTmstmp", "_ClrXcptnPty", "_ClrdPdctId", "_CntrlCtrPtyClrHs", "_CollPrtflCd", "_CollPrtflInd", "_CollstnInd", "_ComrclOrTrsrFincgInd", "_ComssnsAndFees", "_ConfDtAndTmstmp", "_CorpSctrInd", "_CtrPtySdTxRptg", "_ExctnTmstmp", "_ExctnVn", "_FinInstrmId", "_FinNtrOfTheCtrPtyInd", "_LkSwpId", "_NonStdFlg", "_NtrgrpTradInd", "_PdctIdr", "_PrtflCmprssnInd", "_TradWthNonEEACtrPtyInd", "_TradgSdTxRptg"]
 	@property
 	def AddtlRptgInf(self):
 		return self._AddtlRptgInf

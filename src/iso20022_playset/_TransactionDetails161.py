@@ -1,30 +1,30 @@
 from . import base_types
-from ._Quantity54Choice import Quantity54Choice
-from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
-from ._SettlementParties109 import SettlementParties109
 from ._AmountAndDirection67 import AmountAndDirection67
-from ._TradeDate9Choice import TradeDate9Choice
-from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._SettlementDate32Choice import SettlementDate32Choice
-from ._PlaceOfTradeIdentification2 import PlaceOfTradeIdentification2
-from ._ISODateTime import ISODateTime
-from ._SettlementDetails210 import SettlementDetails210
-from ._PartyIdentification157 import PartyIdentification157
-from ._PartyIdentification156 import PartyIdentification156
-from ._SecuritiesAccount30 import SecuritiesAccount30
-from ._SafeKeepingPlace4 import SafeKeepingPlace4
 from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._PartyIdentification170 import PartyIdentification170
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._ISODateTime import ISODateTime
+from ._PartyIdentification156 import PartyIdentification156
+from ._PartyIdentification157 import PartyIdentification157
+from ._PartyIdentification170 import PartyIdentification170
+from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
+from ._PlaceOfTradeIdentification2 import PlaceOfTradeIdentification2
+from ._Quantity54Choice import Quantity54Choice
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
+from ._SafeKeepingPlace4 import SafeKeepingPlace4
+from ._SecuritiesAccount30 import SecuritiesAccount30
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._SettlementDate32Choice import SettlementDate32Choice
+from ._SettlementDetails210 import SettlementDetails210
+from ._SettlementParties109 import SettlementParties109
+from ._TradeDate9Choice import TradeDate9Choice
 
 class TransactionDetails161(base_types._BaseFieldType):
 
-	__slots__ = ["_TradId", "_BlckChainAdrOrWllt", "_LateDlvryDt", "_RcvgSttlmPties", "_SttlmQty", "_PlcOfTrad", "_AcctOwnr", "_XpctdSttlmDt", "_Pmt", "_PlcOfClr", "_FinInstrmId", "_Invstr", "_DlvrgSttlmPties", "_QlfdFrgnIntrmy", "_SfkpgPlc", "_SfkpgAcct", "_PrtlyRlsdQty", "_XpctdValDt", "_MtchdStsTmStmp", "_SttlmAmt", "_TradDt", "_SctiesMvmntTp", "_PoolId", "_CorpActnEvtId", "_ClntCollInstrId", "_SttlmDt", "_TrptyAgtSvcPrvdrCollInstrId", "_SttlmParams", "_SttlmInstrPrcgAddtlDtls", "_TrptyAgtSvcPrvdrCollTxId", "_AckdStsTmStmp", "_ClntTrptyCollTxId"]
+	__slots__ = ["_AcctOwnr", "_AckdStsTmStmp", "_BlckChainAdrOrWllt", "_ClntCollInstrId", "_ClntTrptyCollTxId", "_CorpActnEvtId", "_DlvrgSttlmPties", "_FinInstrmId", "_Invstr", "_LateDlvryDt", "_MtchdStsTmStmp", "_PlcOfClr", "_PlcOfTrad", "_Pmt", "_PoolId", "_PrtlyRlsdQty", "_QlfdFrgnIntrmy", "_RcvgSttlmPties", "_SctiesMvmntTp", "_SfkpgAcct", "_SfkpgPlc", "_SttlmAmt", "_SttlmDt", "_SttlmInstrPrcgAddtlDtls", "_SttlmParams", "_SttlmQty", "_TradDt", "_TradId", "_TrptyAgtSvcPrvdrCollInstrId", "_TrptyAgtSvcPrvdrCollTxId", "_XpctdSttlmDt", "_XpctdValDt"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

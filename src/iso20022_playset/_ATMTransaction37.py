@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ATMCommand7 import ATMCommand7
-from ._ResponseType12 import ResponseType12
-from ._Max10000Binary import Max10000Binary
 from ._Action7 import Action7
+from ._Max10000Binary import Max10000Binary
 from ._Max35Text import Max35Text
+from ._ResponseType12 import ResponseType12
 from ._TransactionIdentifier3 import TransactionIdentifier3
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ATMTransaction37(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmd", "_TxRspn", "_Actn", "_CmpltnReqrd", "_ICCRltdData", "_RcncltnId", "_TxId"]
+	__slots__ = ["_Actn", "_Cmd", "_CmpltnReqrd", "_ICCRltdData", "_RcncltnId", "_TxId", "_TxRspn"]
 	@property
 	def Actn(self):
 		return self._Actn

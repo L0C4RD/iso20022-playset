@@ -1,11 +1,11 @@
 from . import base_types
-from ._ReconciliationReport15 import ReconciliationReport15
-from ._Number import Number
 from ._CounterpartyData91 import CounterpartyData91
+from ._Number import Number
+from ._ReconciliationReport15 import ReconciliationReport15
 
 class ReconciliationCounterpartyPairStatistics7(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyId", "_TtlNbOfTxs", "_RcncltnRpt"]
+	__slots__ = ["_CtrPtyId", "_RcncltnRpt", "_TtlNbOfTxs"]
 	@property
 	def CtrPtyId(self):
 		return self._CtrPtyId

@@ -1,12 +1,12 @@
 from . import base_types
-from ._RequestType4Choice import RequestType4Choice
 from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
 from ._OriginalBusinessQuery1 import OriginalBusinessQuery1
+from ._RequestType4Choice import RequestType4Choice
 
 class MessageHeader7(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_ReqTp", "_QryNm", "_CreDtTm", "_OrgnlBizQry"]
+	__slots__ = ["_CreDtTm", "_MsgId", "_OrgnlBizQry", "_QryNm", "_ReqTp"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

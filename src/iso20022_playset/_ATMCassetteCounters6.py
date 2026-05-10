@@ -1,13 +1,13 @@
 from . import base_types
+from ._ATMCassetteCounters5 import ATMCassetteCounters5
 from ._ATMMediaType3Code import ATMMediaType3Code
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Number import Number
-from ._ATMCassetteCounters5 import ATMCassetteCounters5
 
 class ATMCassetteCounters6(base_types._BaseFieldType):
 
-	__slots__ = ["_FlowTtls", "_UnitVal", "_InitlCnt", "_MdiaCtgy", "_CurNb", "_CurAmt", "_Ccy"]
+	__slots__ = ["_Ccy", "_CurAmt", "_CurNb", "_FlowTtls", "_InitlCnt", "_MdiaCtgy", "_UnitVal"]
 	@property
 	def Ccy(self):
 		return self._Ccy

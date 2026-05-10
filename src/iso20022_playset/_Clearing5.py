@@ -4,7 +4,7 @@ from ._PartyIdentificationAndAccount149 import PartyIdentificationAndAccount149
 
 class Clearing5(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSgmt", "_ClrMmb"]
+	__slots__ = ["_ClrMmb", "_ClrSgmt"]
 	@property
 	def ClrMmb(self):
 		return self._ClrMmb

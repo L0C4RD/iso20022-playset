@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max70Text import Max70Text
 from ._PurposeCode8Choice import PurposeCode8Choice
 from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
-from ._Max70Text import Max70Text
 
 class SecuritiesAccount42(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Tp", "_Dsgnt", "_Id"]
+	__slots__ = ["_Dsgnt", "_Id", "_Nm", "_Tp"]
 	@property
 	def Dsgnt(self):
 		return self._Dsgnt

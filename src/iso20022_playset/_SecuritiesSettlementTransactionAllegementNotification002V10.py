@@ -1,23 +1,23 @@
 from . import base_types
-from ._SettlementDetails191 import SettlementDetails191
-from ._SupplementaryData1 import SupplementaryData1
-from ._OtherAmounts36 import OtherAmounts36
-from ._FinancialInstrumentAttributes122 import FinancialInstrumentAttributes122
-from ._QuantityAndAccount106 import QuantityAndAccount106
-from ._SecuritiesFinancingTransactionDetails50 import SecuritiesFinancingTransactionDetails50
-from ._CashParties40 import CashParties40
-from ._SettlementParties105 import SettlementParties105
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._SettlementTypeAndAdditionalParameters15 import SettlementTypeAndAdditionalParameters15
-from ._Max35Text import Max35Text
-from ._SecuritiesTradeDetails126 import SecuritiesTradeDetails126
 from ._AmountAndDirection92 import AmountAndDirection92
+from ._CashParties40 import CashParties40
+from ._FinancialInstrumentAttributes122 import FinancialInstrumentAttributes122
+from ._Max35Text import Max35Text
+from ._OtherAmounts36 import OtherAmounts36
 from ._OtherParties37 import OtherParties37
+from ._QuantityAndAccount106 import QuantityAndAccount106
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._SecuritiesFinancingTransactionDetails50 import SecuritiesFinancingTransactionDetails50
+from ._SecuritiesTradeDetails126 import SecuritiesTradeDetails126
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._SettlementDetails191 import SettlementDetails191
+from ._SettlementParties105 import SettlementParties105
+from ._SettlementTypeAndAdditionalParameters15 import SettlementTypeAndAdditionalParameters15
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesSettlementTransactionAllegementNotification002V10(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_OthrAmts", "_SttlmParams", "_CtrPtyMktInfrstrctrTxId", "_SctiesFincgDtls", "_OthrBizPties", "_TradDtls", "_CshPties", "_SttlmTpAndAddtlParams", "_SttlmAmt", "_FinInstrmAttrbts", "_RcvgSttlmPties", "_MktInfrstrctrTxId", "_FinInstrmId", "_DlvrgSttlmPties", "_QtyAndAcctDtls", "_SplmtryData"]
+	__slots__ = ["_CshPties", "_CtrPtyMktInfrstrctrTxId", "_DlvrgSttlmPties", "_FinInstrmAttrbts", "_FinInstrmId", "_MktInfrstrctrTxId", "_OthrAmts", "_OthrBizPties", "_QtyAndAcctDtls", "_RcvgSttlmPties", "_SctiesFincgDtls", "_SplmtryData", "_SttlmAmt", "_SttlmParams", "_SttlmTpAndAddtlParams", "_TradDtls", "_TxId"]
 	@property
 	def CshPties(self):
 		return self._CshPties

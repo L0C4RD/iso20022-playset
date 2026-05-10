@@ -1,15 +1,15 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._DecimalNumber import DecimalNumber
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._InvestmentAccount58 import InvestmentAccount58
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._DecimalNumber import DecimalNumber
 from ._FinancialInstrument57 import FinancialInstrument57
+from ._InvestmentAccount58 import InvestmentAccount58
+from ._PercentageRate import PercentageRate
 
 class FundOrderData5(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitsNb", "_NetAmt", "_HldgsRedRate", "_UnitCcy", "_GrssAmt", "_InvstmtAcctDtls", "_QtdCcy", "_SttlmAmt", "_FinInstrmDtls"]
+	__slots__ = ["_FinInstrmDtls", "_GrssAmt", "_HldgsRedRate", "_InvstmtAcctDtls", "_NetAmt", "_QtdCcy", "_SttlmAmt", "_UnitCcy", "_UnitsNb"]
 	@property
 	def FinInstrmDtls(self):
 		return self._FinInstrmDtls

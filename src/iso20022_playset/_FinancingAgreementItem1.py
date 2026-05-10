@@ -1,16 +1,16 @@
 from . import base_types
+from ._AgreementItemAction1Code import AgreementItemAction1Code
 from ._FinancialItemParameters1 import FinancialItemParameters1
 from ._GuaranteeDetails1 import GuaranteeDetails1
-from ._YesNoIndicator import YesNoIndicator
-from ._AgreementItemAction1Code import AgreementItemAction1Code
-from ._PaymentInstrumentCode import PaymentInstrumentCode
-from ._xs:IDREF import xs:IDREF
-from ._ValidationStatusInformation1 import ValidationStatusInformation1
 from ._Max2000Text import Max2000Text
+from ._PaymentInstrumentCode import PaymentInstrumentCode
+from ._ValidationStatusInformation1 import ValidationStatusInformation1
+from ._YesNoIndicator import YesNoIndicator
+from ._xs:IDREF import xs:IDREF
 
 class FinancingAgreementItem1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_ItmActn", "_GrntSts", "_ReopIndctn", "_Ratg", "_Grnt", "_PmtInstrm", "_RltdGrntLttr", "_ItmCntxt", "_AssoctdDoc", "_VldtnStsInf"]
+	__slots__ = ["_AddtlInf", "_AssoctdDoc", "_Grnt", "_GrntSts", "_ItmActn", "_ItmCntxt", "_PmtInstrm", "_Ratg", "_ReopIndctn", "_RltdGrntLttr", "_VldtnStsInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

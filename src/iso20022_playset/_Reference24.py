@@ -1,10 +1,10 @@
 from . import base_types
-from ._TradeLegNotificationIdentification1Choice import TradeLegNotificationIdentification1Choice
 from ._Max35Text import Max35Text
+from ._TradeLegNotificationIdentification1Choice import TradeLegNotificationIdentification1Choice
 
 class Reference24(base_types._BaseFieldType):
 
-	__slots__ = ["_TradLegNtfctnId", "_NetPosId"]
+	__slots__ = ["_NetPosId", "_TradLegNtfctnId"]
 	@property
 	def NetPosId(self):
 		return self._NetPosId

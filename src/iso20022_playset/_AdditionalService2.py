@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._AdditionalServiceType2Code import AdditionalServiceType2Code
-from ._AdditionalServiceResult1Code import AdditionalServiceResult1Code
 from ._AdditionalData1 import AdditionalData1
+from ._AdditionalServiceResult1Code import AdditionalServiceResult1Code
+from ._AdditionalServiceType2Code import AdditionalServiceType2Code
+from ._Max35Text import Max35Text
 
 class AdditionalService2(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcDtl", "_Rslt", "_Tp", "_OthrRslt", "_OthrTp"]
+	__slots__ = ["_OthrRslt", "_OthrTp", "_Rslt", "_SvcDtl", "_Tp"]
 	@property
 	def OthrRslt(self):
 		return self._OthrRslt

@@ -4,7 +4,7 @@ from ._AccountIdentification10 import AccountIdentification10
 
 class AccountIdentification76Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ForAllAccts", "_AcctsListAndBalDtls"]
+	__slots__ = ["_AcctsListAndBalDtls", "_ForAllAccts"]
 	@property
 	def AcctsListAndBalDtls(self):
 		return self._AcctsListAndBalDtls

@@ -1,15 +1,15 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._IntraBalance5 import IntraBalance5
-from ._CashAccount40 import CashAccount40
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._RequestDetails22 import RequestDetails22
+from ._CashAccount40 import CashAccount40
 from ._DocumentIdentification51 import DocumentIdentification51
+from ._IntraBalance5 import IntraBalance5
+from ._RequestDetails22 import RequestDetails22
+from ._SupplementaryData1 import SupplementaryData1
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class IntraBalanceMovementModificationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcctSvcr", "_Id", "_UndrlygIntraBal", "_CshAcct", "_CshAcctOwnr", "_ReqDtls", "_SplmtryData"]
+	__slots__ = ["_CshAcct", "_CshAcctOwnr", "_CshAcctSvcr", "_Id", "_ReqDtls", "_SplmtryData", "_UndrlygIntraBal"]
 	@property
 	def CshAcct(self):
 		return self._CshAcct

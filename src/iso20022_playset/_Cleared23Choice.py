@@ -1,11 +1,11 @@
 from . import base_types
-from ._ClearingPartyAndTime22Choice import ClearingPartyAndTime22Choice
-from ._ClearingPartyAndTime21Choice import ClearingPartyAndTime21Choice
 from ._ClearingExceptionOrExemption3Choice import ClearingExceptionOrExemption3Choice
+from ._ClearingPartyAndTime21Choice import ClearingPartyAndTime21Choice
+from ._ClearingPartyAndTime22Choice import ClearingPartyAndTime22Choice
 
 class Cleared23Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NonClrd", "_Clrd", "_IntndToClear"]
+	__slots__ = ["_Clrd", "_IntndToClear", "_NonClrd"]
 	@property
 	def Clrd(self):
 		return self._Clrd

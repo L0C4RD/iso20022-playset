@@ -1,15 +1,15 @@
 from . import base_types
-from ._TotalCharges7 import TotalCharges7
-from ._Max35Text import Max35Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
 from ._ChargeType3Choice import ChargeType3Choice
 from ._ChargesPerTypeRecord6 import ChargesPerTypeRecord6
 from ._Max140Text import Max140Text
-from ._CashAccount40 import CashAccount40
+from ._Max35Text import Max35Text
+from ._TotalCharges7 import TotalCharges7
 
 class ChargesPerType6(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgsId", "_ChrgsAcctAgt", "_AddtlInf", "_ChrgsAcctAgtAcct", "_TtlChrgsPerChrgTp", "_Rcrd", "_Tp"]
+	__slots__ = ["_AddtlInf", "_ChrgsAcctAgt", "_ChrgsAcctAgtAcct", "_ChrgsId", "_Rcrd", "_Tp", "_TtlChrgsPerChrgTp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

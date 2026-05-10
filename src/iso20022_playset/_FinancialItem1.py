@@ -1,18 +1,18 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._CreditDebitCode import CreditDebitCode
 from ._FinancialItemParameters1 import FinancialItemParameters1
 from ._FinancingInformationAndStatus1 import FinancingInformationAndStatus1
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Instalment2 import Instalment2
-from ._xs:IDREF import xs:IDREF
-from ._ValidationStatusInformation1 import ValidationStatusInformation1
-from ._Max2000Text import Max2000Text
 from ._InvoiceTotals1 import InvoiceTotals1
-from ._CreditDebitCode import CreditDebitCode
+from ._Max2000Text import Max2000Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._ValidationStatusInformation1 import ValidationStatusInformation1
+from ._xs:IDREF import xs:IDREF
 
 class FinancialItem1(base_types._BaseFieldType):
 
-	__slots__ = ["_DueAmt", "_AddtlInf", "_CdtDbtInd", "_TtlAmt", "_FinDocRef", "_FincgSts", "_ItmCntxt", "_InstlmtInf", "_AssoctdDoc", "_VldtnStsInf", "_PrtryDtls"]
+	__slots__ = ["_AddtlInf", "_AssoctdDoc", "_CdtDbtInd", "_DueAmt", "_FinDocRef", "_FincgSts", "_InstlmtInf", "_ItmCntxt", "_PrtryDtls", "_TtlAmt", "_VldtnStsInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

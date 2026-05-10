@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._OriginalEnrolment3Choice import OriginalEnrolment3Choice
 from ._CreditorEnrolmentCancellationReason3 import CreditorEnrolmentCancellationReason3
 from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
+from ._OriginalEnrolment3Choice import OriginalEnrolment3Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class CreditorEnrolmentCancellation3(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlEnrlmnt", "_SplmtryData", "_OrgnlBizInstr", "_CxlRsn"]
+	__slots__ = ["_CxlRsn", "_OrgnlBizInstr", "_OrgnlEnrlmnt", "_SplmtryData"]
 	@property
 	def CxlRsn(self):
 		return self._CxlRsn

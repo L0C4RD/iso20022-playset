@@ -1,12 +1,12 @@
 from . import base_types
 from ._CryptographicKey18 import CryptographicKey18
 from ._Max140Binary import Max140Binary
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
 from ._Max256Text import Max256Text
+from ._TerminalManagementAction3Code import TerminalManagementAction3Code
 
 class SecurityParameters16(base_types._BaseFieldType):
 
-	__slots__ = ["_ActnTp", "_SctyElmt", "_TMChllng", "_POIChllng", "_Vrsn"]
+	__slots__ = ["_ActnTp", "_POIChllng", "_SctyElmt", "_TMChllng", "_Vrsn"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp

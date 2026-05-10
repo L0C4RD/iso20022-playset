@@ -4,7 +4,7 @@ from ._MarketType9Choice import MarketType9Choice
 
 class MarketIdentification85(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Id"]
+	__slots__ = ["_Id", "_Tp"]
 	@property
 	def Id(self):
 		return self._Id

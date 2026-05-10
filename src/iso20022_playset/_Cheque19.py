@@ -1,15 +1,15 @@
 from . import base_types
+from ._ChequeDeliveryMethod1Choice import ChequeDeliveryMethod1Choice
+from ._ChequeType2Code import ChequeType2Code
 from ._ISODate import ISODate
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
-from ._Priority2Code import Priority2Code
 from ._NameAndAddress18 import NameAndAddress18
-from ._ChequeType2Code import ChequeType2Code
-from ._ChequeDeliveryMethod1Choice import ChequeDeliveryMethod1Choice
+from ._Priority2Code import Priority2Code
 
 class Cheque19(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvrTo", "_Sgntr", "_ChqTp", "_ChqNb", "_FrmsCd", "_RgnlClrZone", "_ChqMtrtyDt", "_DlvryMtd", "_PrtLctn", "_MemoFld", "_InstrPrty", "_ChqFr"]
+	__slots__ = ["_ChqFr", "_ChqMtrtyDt", "_ChqNb", "_ChqTp", "_DlvrTo", "_DlvryMtd", "_FrmsCd", "_InstrPrty", "_MemoFld", "_PrtLctn", "_RgnlClrZone", "_Sgntr"]
 	@property
 	def ChqFr(self):
 		return self._ChqFr

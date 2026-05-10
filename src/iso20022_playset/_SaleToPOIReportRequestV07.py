@@ -5,7 +5,7 @@ from ._ReportRequest8 import ReportRequest8
 
 class SaleToPOIReportRequestV07(base_types._BaseFieldType):
 
-	__slots__ = ["_RptReq", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_Hdr", "_RptReq", "_SctyTrlr"]
 	@property
 	def Hdr(self):
 		return self._Hdr

@@ -1,12 +1,12 @@
 from . import base_types
+from ._ATMDepositedMediaItem1 import ATMDepositedMediaItem1
 from ._ATMMediaType3Code import ATMMediaType3Code
 from ._ATMMediaType4Code import ATMMediaType4Code
-from ._ATMDepositedMediaItem1 import ATMDepositedMediaItem1
 from ._Number import Number
 
 class ATMDepositedMedia4(base_types._BaseFieldType):
 
-	__slots__ = ["_MdiaTp", "_AcctSeqNb", "_MdiaItm", "_MdiaCtgy"]
+	__slots__ = ["_AcctSeqNb", "_MdiaCtgy", "_MdiaItm", "_MdiaTp"]
 	@property
 	def AcctSeqNb(self):
 		return self._AcctSeqNb

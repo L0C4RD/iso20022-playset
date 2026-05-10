@@ -1,11 +1,11 @@
 from . import base_types
-from ._TradePartyIdentificationQuery11Choice import TradePartyIdentificationQuery11Choice
-from ._TradePartyIdentificationQuery10Choice import TradePartyIdentificationQuery10Choice
 from ._Operation3Code import Operation3Code
+from ._TradePartyIdentificationQuery10Choice import TradePartyIdentificationQuery10Choice
+from ._TradePartyIdentificationQuery11Choice import TradePartyIdentificationQuery11Choice
 
 class TradePartyQueryCriteria7(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrCtrPty", "_Bnfcry", "_Brkr", "_SubmitgAgt", "_ClrMmb", "_Oprtr", "_RptgCtrPty", "_CCP", "_NttyRspnsblForRpt"]
+	__slots__ = ["_Bnfcry", "_Brkr", "_CCP", "_ClrMmb", "_NttyRspnsblForRpt", "_Oprtr", "_OthrCtrPty", "_RptgCtrPty", "_SubmitgAgt"]
 	@property
 	def Bnfcry(self):
 		return self._Bnfcry

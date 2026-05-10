@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._Pagination1 import Pagination1
 from ._MessageHeader1 import MessageHeader1
+from ._Pagination1 import Pagination1
 from ._SecuritiesAccountStatement2 import SecuritiesAccountStatement2
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesAccountActivityAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_Pgntn", "_SctiesAcctActvty"]
+	__slots__ = ["_MsgHdr", "_Pgntn", "_SctiesAcctActvty", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

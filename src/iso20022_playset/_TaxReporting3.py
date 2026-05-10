@@ -1,13 +1,13 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._PartyIdentification125Choice import PartyIdentification125Choice
 from ._CashAccount204 import CashAccount204
 from ._CountryCode import CountryCode
 from ._Max350Text import Max350Text
+from ._PartyIdentification125Choice import PartyIdentification125Choice
+from ._PercentageRate import PercentageRate
 
 class TaxReporting3(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxRate", "_Desc", "_CshAcctDtls", "_TaxtnCtry", "_TaxRcpt", "_TaxPyer"]
+	__slots__ = ["_CshAcctDtls", "_Desc", "_TaxPyer", "_TaxRate", "_TaxRcpt", "_TaxtnCtry"]
 	@property
 	def CshAcctDtls(self):
 		return self._CshAcctDtls

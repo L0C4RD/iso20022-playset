@@ -1,6 +1,6 @@
 from . import base_types
-from ._PersonName2 import PersonName2
 from ._PartyIdentification198Choice import PartyIdentification198Choice
+from ._PersonName2 import PersonName2
 
 class PartyIdentification201(base_types._BaseFieldType):
 

@@ -3,7 +3,7 @@ from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
 
 class CorporateActionNarrative35(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlTxt", "_NrrtvVrsn", "_TaxtnConds", "_PtyCtctNrrtv"]
+	__slots__ = ["_AddtlTxt", "_NrrtvVrsn", "_PtyCtctNrrtv", "_TaxtnConds"]
 	@property
 	def AddtlTxt(self):
 		return self._AddtlTxt

@@ -1,11 +1,11 @@
 from . import base_types
-from ._RatingValueIdentifier import RatingValueIdentifier
 from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
+from ._RatingValueIdentifier import RatingValueIdentifier
 
 class Rating1(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_RatgSchme", "_ValId"]
+	__slots__ = ["_RatgSchme", "_ValDt", "_ValId"]
 	@property
 	def RatgSchme(self):
 		return self._RatgSchme

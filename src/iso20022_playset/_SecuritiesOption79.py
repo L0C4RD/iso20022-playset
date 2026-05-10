@@ -1,10 +1,10 @@
 from . import base_types
-from ._Quantity52Choice import Quantity52Choice
 from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
+from ._Quantity52Choice import Quantity52Choice
 
 class SecuritiesOption79(base_types._BaseFieldType):
 
-	__slots__ = ["_CondlQty", "_InstdQty", "_AddtlRndUpQty"]
+	__slots__ = ["_AddtlRndUpQty", "_CondlQty", "_InstdQty"]
 	@property
 	def AddtlRndUpQty(self):
 		return self._AddtlRndUpQty

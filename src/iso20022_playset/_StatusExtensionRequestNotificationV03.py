@@ -1,15 +1,15 @@
 from . import base_types
+from ._BICIdentification1 import BICIdentification1
 from ._DocumentIdentification3 import DocumentIdentification3
 from ._DocumentIdentification5 import DocumentIdentification5
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._PendingActivity2 import PendingActivity2
 from ._MessageIdentification1 import MessageIdentification1
-from ._BICIdentification1 import BICIdentification1
+from ._PendingActivity2 import PendingActivity2
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 from ._TransactionStatus5 import TransactionStatus5
 
 class StatusExtensionRequestNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_UsrTxRef", "_EstblishdBaselnId", "_StsToBeXtnded", "_Initr", "_TxId", "_NtfctnId", "_ReqForActn"]
+	__slots__ = ["_EstblishdBaselnId", "_Initr", "_NtfctnId", "_ReqForActn", "_StsToBeXtnded", "_TxId", "_UsrTxRef"]
 	@property
 	def EstblishdBaselnId(self):
 		return self._EstblishdBaselnId

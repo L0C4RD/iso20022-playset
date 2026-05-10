@@ -1,17 +1,17 @@
 from . import base_types
-from ._RateOrType1Choice import RateOrType1Choice
-from ._GenericIdentification30 import GenericIdentification30
-from ._YesNoIndicator import YesNoIndicator
-from ._CollateralRole1Code import CollateralRole1Code
-from ._ExposureType23Choice import ExposureType23Choice
-from ._BasketIdentificationAndEligibilitySetProfile1 import BasketIdentificationAndEligibilitySetProfile1
 from ._AdditionalInformation24 import AdditionalInformation24
-from ._ResponseStatus9Choice import ResponseStatus9Choice
+from ._BasketIdentificationAndEligibilitySetProfile1 import BasketIdentificationAndEligibilitySetProfile1
+from ._CollateralRole1Code import CollateralRole1Code
 from ._CollateralTransactionType1Choice import CollateralTransactionType1Choice
+from ._ExposureType23Choice import ExposureType23Choice
+from ._GenericIdentification30 import GenericIdentification30
+from ._RateOrType1Choice import RateOrType1Choice
+from ._ResponseStatus9Choice import ResponseStatus9Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class CollateralParameters10(base_types._BaseFieldType):
 
-	__slots__ = ["_MainTradgAcctCollstn", "_FaildSttlmSlvtn", "_XpsrTp", "_AutomtcAllcn", "_ValSghtMrgnRate", "_TrfTitl", "_RspnSts", "_BsktIdAndElgbltySetPrfl", "_AddtlInf", "_SttlmPrc", "_Prty", "_CollSd", "_CollInstrTp"]
+	__slots__ = ["_AddtlInf", "_AutomtcAllcn", "_BsktIdAndElgbltySetPrfl", "_CollInstrTp", "_CollSd", "_FaildSttlmSlvtn", "_MainTradgAcctCollstn", "_Prty", "_RspnSts", "_SttlmPrc", "_TrfTitl", "_ValSghtMrgnRate", "_XpsrTp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

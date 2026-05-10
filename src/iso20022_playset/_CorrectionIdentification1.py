@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISOTime import ISOTime
 from ._ISODate import ISODate
+from ._ISOTime import ISOTime
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CorrectionIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ind", "_Dt", "_Tm"]
+	__slots__ = ["_Dt", "_Ind", "_Tm"]
 	@property
 	def Dt(self):
 		return self._Dt

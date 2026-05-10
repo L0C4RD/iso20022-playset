@@ -1,15 +1,15 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._NameAndAddress3 import NameAndAddress3
-from ._AccountIdentification54Choice import AccountIdentification54Choice
-from ._Max70Text import Max70Text
-from ._CardAccountType3Code import CardAccountType3Code
-from ._PartyIdentification177Choice import PartyIdentification177Choice
 from ._AccountChoiceMethod1Code import AccountChoiceMethod1Code
+from ._AccountIdentification54Choice import AccountIdentification54Choice
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._CardAccountType3Code import CardAccountType3Code
+from ._Max70Text import Max70Text
+from ._NameAndAddress3 import NameAndAddress3
+from ._PartyIdentification177Choice import PartyIdentification177Choice
 
 class CardAccount16(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctNm", "_AcctIdr", "_Svcr", "_SelctdAcctTp", "_AcctOwnr", "_SelctnMtd", "_Ccy"]
+	__slots__ = ["_AcctIdr", "_AcctNm", "_AcctOwnr", "_Ccy", "_SelctdAcctTp", "_SelctnMtd", "_Svcr"]
 	@property
 	def AcctIdr(self):
 		return self._AcctIdr

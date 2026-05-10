@@ -1,11 +1,11 @@
 from . import base_types
 from ._InvoiceTaxReportTransactionStatus1 import InvoiceTaxReportTransactionStatus1
-from ._SupplementaryData1 import SupplementaryData1
 from ._InvoiceTaxStatusReportHeader1 import InvoiceTaxStatusReportHeader1
+from ._SupplementaryData1 import SupplementaryData1
 
 class InvoiceTaxReportStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRptHdr", "_TxSts", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_StsRptHdr", "_TxSts"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData

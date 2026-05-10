@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max350Text import Max350Text
 from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
 from ._Max256Text import Max256Text
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
 
 class AuditTrail1(base_types._BaseFieldType):
 
-	__slots__ = ["_NewFldVal", "_OprTmStmp", "_OdFldVal", "_FldNm", "_InstgUsr", "_ApprvgUsr"]
+	__slots__ = ["_ApprvgUsr", "_FldNm", "_InstgUsr", "_NewFldVal", "_OdFldVal", "_OprTmStmp"]
 	@property
 	def ApprvgUsr(self):
 		return self._ApprvgUsr

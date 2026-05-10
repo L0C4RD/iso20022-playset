@@ -1,14 +1,14 @@
 from . import base_types
-from ._PartyIdentification41 import PartyIdentification41
 from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._BranchAndFinancialInstitutionIdentification5 import BranchAndFinancialInstitutionIdentification5
-from ._Max70Text import Max70Text
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._BranchAndFinancialInstitutionIdentification5 import BranchAndFinancialInstitutionIdentification5
 from ._CashAccountType2 import CashAccountType2
+from ._Max70Text import Max70Text
+from ._PartyIdentification41 import PartyIdentification41
 
 class CashAccount27(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Ccy", "_Tp", "_Ownr", "_Nm", "_Svcr"]
+	__slots__ = ["_Ccy", "_Id", "_Nm", "_Ownr", "_Svcr", "_Tp"]
 	@property
 	def Ccy(self):
 		return self._Ccy

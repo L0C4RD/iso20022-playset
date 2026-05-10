@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
-from ._ServiceStatus1Choice import ServiceStatus1Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._DebtorActivationStatusReason3 import DebtorActivationStatusReason3
 from ._OriginalActivation3Choice import OriginalActivation3Choice
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
+from ._ServiceStatus1Choice import ServiceStatus1Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class ActivationStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlActvtnRef", "_StsRsn", "_OrgnlBizInstr", "_FctvActvtnDt", "_SplmtryData", "_Sts"]
+	__slots__ = ["_FctvActvtnDt", "_OrgnlActvtnRef", "_OrgnlBizInstr", "_SplmtryData", "_Sts", "_StsRsn"]
 	@property
 	def FctvActvtnDt(self):
 		return self._FctvActvtnDt

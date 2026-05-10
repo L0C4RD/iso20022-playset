@@ -1,11 +1,11 @@
 from . import base_types
 from ._AmountAndDirection34 import AmountAndDirection34
-from ._DecimalNumber import DecimalNumber
 from ._BillingServiceIdentification2 import BillingServiceIdentification2
+from ._DecimalNumber import DecimalNumber
 
 class BillingServiceParameters2(base_types._BaseFieldType):
 
-	__slots__ = ["_Vol", "_BkSvc", "_UnitPric", "_SvcChrgAmt"]
+	__slots__ = ["_BkSvc", "_SvcChrgAmt", "_UnitPric", "_Vol"]
 	@property
 	def BkSvc(self):
 		return self._BkSvc

@@ -1,12 +1,12 @@
 from . import base_types
-from ._ValuationType1Code import ValuationType1Code
-from ._ISODateTime import ISODateTime
 from ._AmountAndDirection109 import AmountAndDirection109
+from ._ISODateTime import ISODateTime
 from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from ._ValuationType1Code import ValuationType1Code
 
 class ContractValuationData8(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_TmStmp", "_CtrctVal", "_Dlta"]
+	__slots__ = ["_CtrctVal", "_Dlta", "_TmStmp", "_Tp"]
 	@property
 	def CtrctVal(self):
 		return self._CtrctVal

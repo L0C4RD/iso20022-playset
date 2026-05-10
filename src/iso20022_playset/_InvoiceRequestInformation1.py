@@ -1,17 +1,17 @@
 from . import base_types
-from ._DocumentGeneralInformation1 import DocumentGeneralInformation1
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._PaymentInformation15 import PaymentInformation15
+from ._DocumentGeneralInformation1 import DocumentGeneralInformation1
 from ._FinancingRateOrAmountChoice import FinancingRateOrAmountChoice
-from ._ReferredDocumentInformation2 import ReferredDocumentInformation2
-from ._PartyIdentificationAndContactInformation1 import PartyIdentificationAndContactInformation1
 from ._Instalment1 import Instalment1
 from ._InvoiceTotals1 import InvoiceTotals1
 from ._PartyAndAccountIdentificationAndContactInformation1 import PartyAndAccountIdentificationAndContactInformation1
+from ._PartyIdentificationAndContactInformation1 import PartyIdentificationAndContactInformation1
+from ._PaymentInformation15 import PaymentInformation15
+from ._ReferredDocumentInformation2 import ReferredDocumentInformation2
 
 class InvoiceRequestInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_RfrdDoc", "_InvcTtlsInf", "_Spplr", "_InstlmtInf", "_CdtDbtNoteAmt", "_InvcPmtInf", "_InvcGnlInf", "_Buyr", "_ReqdAmt"]
+	__slots__ = ["_Buyr", "_CdtDbtNoteAmt", "_InstlmtInf", "_InvcGnlInf", "_InvcPmtInf", "_InvcTtlsInf", "_ReqdAmt", "_RfrdDoc", "_Spplr"]
 	@property
 	def Buyr(self):
 		return self._Buyr

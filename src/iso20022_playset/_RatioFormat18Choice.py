@@ -1,12 +1,12 @@
 from . import base_types
-from ._QuantityToQuantityRatio1 import QuantityToQuantityRatio1
-from ._AmountToAmountRatio2 import AmountToAmountRatio2
 from ._AmountAndQuantityRatio4 import AmountAndQuantityRatio4
+from ._AmountToAmountRatio2 import AmountToAmountRatio2
+from ._QuantityToQuantityRatio1 import QuantityToQuantityRatio1
 from ._RateValueType7Code import RateValueType7Code
 
 class RatioFormat18Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtToAmt", "_AmtToQty", "_QtyToAmt", "_QtyToQty", "_NotSpcfdRate"]
+	__slots__ = ["_AmtToAmt", "_AmtToQty", "_NotSpcfdRate", "_QtyToAmt", "_QtyToQty"]
 	@property
 	def AmtToAmt(self):
 		return self._AmtToAmt

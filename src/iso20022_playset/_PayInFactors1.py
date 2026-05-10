@@ -4,7 +4,7 @@ from ._CurrencyFactors1 import CurrencyFactors1
 
 class PayInFactors1(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyFctrs", "_AggtShrtPosLmt"]
+	__slots__ = ["_AggtShrtPosLmt", "_CcyFctrs"]
 	@property
 	def AggtShrtPosLmt(self):
 		return self._AggtShrtPosLmt

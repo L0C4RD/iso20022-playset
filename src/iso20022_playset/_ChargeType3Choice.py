@@ -4,7 +4,7 @@ from ._GenericIdentification3 import GenericIdentification3
 
 class ChargeType3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

@@ -1,13 +1,13 @@
 from . import base_types
 from ._GenericIdentification165 import GenericIdentification165
 from ._Max2000Text import Max2000Text
+from ._ScenarioType1Code import ScenarioType1Code
 from ._StrategyStressType1Code import StrategyStressType1Code
 from ._StressItem1 import StressItem1
-from ._ScenarioType1Code import ScenarioType1Code
 
 class ScenarioDefinition2(base_types._BaseFieldType):
 
-	__slots__ = ["_ScnroTp", "_StrssItm", "_Desc", "_Id", "_StrtgyStrssTp"]
+	__slots__ = ["_Desc", "_Id", "_ScnroTp", "_StrssItm", "_StrtgyStrssTp"]
 	@property
 	def Desc(self):
 		return self._Desc

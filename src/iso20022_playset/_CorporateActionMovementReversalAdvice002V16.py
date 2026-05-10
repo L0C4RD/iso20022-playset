@@ -1,20 +1,20 @@
 from . import base_types
-from ._PartyIdentification137Choice import PartyIdentification137Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._DocumentIdentification38 import DocumentIdentification38
+from ._AccountAndBalance54 import AccountAndBalance54
+from ._CorporateAction78 import CorporateAction78
 from ._CorporateActionEventReference4 import CorporateActionEventReference4
+from ._CorporateActionGeneralInformation193 import CorporateActionGeneralInformation193
+from ._CorporateActionNarrative35 import CorporateActionNarrative35
 from ._CorporateActionOption246 import CorporateActionOption246
 from ._CorporateActionReversalReason10 import CorporateActionReversalReason10
-from ._CorporateActionGeneralInformation193 import CorporateActionGeneralInformation193
-from ._CorporateAction78 import CorporateAction78
 from ._DocumentIdentification37 import DocumentIdentification37
-from ._CorporateActionNarrative35 import CorporateActionNarrative35
-from ._AccountAndBalance54 import AccountAndBalance54
+from ._DocumentIdentification38 import DocumentIdentification38
+from ._PartyIdentification137Choice import PartyIdentification137Choice
+from ._SupplementaryData1 import SupplementaryData1
 from ._TransactionIdentification1 import TransactionIdentification1
 
 class CorporateActionMovementReversalAdvice002V16(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_CorpActnDtls", "_SubPngAgt", "_IssrAgt", "_TxId", "_MvmntConfId", "_OthrDocId", "_CorpActnGnlInf", "_CorpActnConfDtls", "_EvtsLkg", "_PngAgt", "_AddtlInf", "_RvslRsn", "_SplmtryData"]
+	__slots__ = ["_AcctDtls", "_AddtlInf", "_CorpActnConfDtls", "_CorpActnDtls", "_CorpActnGnlInf", "_EvtsLkg", "_IssrAgt", "_MvmntConfId", "_OthrDocId", "_PngAgt", "_RvslRsn", "_SplmtryData", "_SubPngAgt", "_TxId"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

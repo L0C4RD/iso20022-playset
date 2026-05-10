@@ -1,42 +1,42 @@
 from . import base_types
-from ._InvestmentAccountCategory1Choice import InvestmentAccountCategory1Choice
-from ._AccountingStatus1Choice import AccountingStatus1Choice
-from ._TransactionChannelType1Choice import TransactionChannelType1Choice
-from ._AccountUsageType2Choice import AccountUsageType2Choice
-from ._AccountType2Choice import AccountType2Choice
-from ._DateAndDateTime1Choice import DateAndDateTime1Choice
-from ._FiscalYear1Choice import FiscalYear1Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._Provided1Code import Provided1Code
-from ._Collateral1Code import Collateral1Code
-from ._ModificationScope46 import ModificationScope46
-from ._Max350Text import Max350Text
-from ._PositionEffect3Code import PositionEffect3Code
-from ._IncomePreference2Code import IncomePreference2Code
-from ._Liability1Choice import Liability1Choice
-from ._PartyIdentification125Choice import PartyIdentification125Choice
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._LanguageCode import LanguageCode
-from ._StatementFrequencyReason2Choice import StatementFrequencyReason2Choice
-from ._Number import Number
-from ._Reinvestment4 import Reinvestment4
-from ._LetterIntent1 import LetterIntent1
-from ._Eligible1Code import Eligible1Code
-from ._TaxExemptionReason2Choice import TaxExemptionReason2Choice
-from ._BlockedStatusReason2Choice import BlockedStatusReason2Choice
-from ._TaxWithholdingMethod3Code import TaxWithholdingMethod3Code
 from ._AccountStatusUpdateInstruction1 import AccountStatusUpdateInstruction1
-from ._ThirdPartyRights2 import ThirdPartyRights2
-from ._ModificationScope42 import ModificationScope42
-from ._Max35Text import Max35Text
+from ._AccountType2Choice import AccountType2Choice
+from ._AccountUsageType2Choice import AccountUsageType2Choice
+from ._AccountingStatus1Choice import AccountingStatus1Choice
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._BlockedStatusReason2Choice import BlockedStatusReason2Choice
+from ._Collateral1Code import Collateral1Code
+from ._DateAndDateTime1Choice import DateAndDateTime1Choice
+from ._Eligible1Code import Eligible1Code
+from ._FiscalYear1Choice import FiscalYear1Choice
+from ._IncomePreference2Code import IncomePreference2Code
+from ._InvestmentAccountCategory1Choice import InvestmentAccountCategory1Choice
+from ._LanguageCode import LanguageCode
+from ._LetterIntent1 import LetterIntent1
 from ._LevelOfControl1Choice import LevelOfControl1Choice
+from ._Liability1Choice import Liability1Choice
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._ModificationScope42 import ModificationScope42
+from ._ModificationScope46 import ModificationScope46
+from ._Number import Number
 from ._OwnershipType2Choice import OwnershipType2Choice
+from ._PartyIdentification125Choice import PartyIdentification125Choice
+from ._PositionEffect3Code import PositionEffect3Code
+from ._Provided1Code import Provided1Code
+from ._Reinvestment4 import Reinvestment4
 from ._RoundingParameters1 import RoundingParameters1
+from ._StatementFrequencyReason2Choice import StatementFrequencyReason2Choice
+from ._TaxExemptionReason2Choice import TaxExemptionReason2Choice
 from ._TaxReporting3 import TaxReporting3
+from ._TaxWithholdingMethod3Code import TaxWithholdingMethod3Code
+from ._ThirdPartyRights2 import ThirdPartyRights2
+from ._TransactionChannelType1Choice import TransactionChannelType1Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class InvestmentAccount75(base_types._BaseFieldType):
 
-	__slots__ = ["_Lblty", "_IncmPref", "_Coll", "_ModfdFinInstrmDtls", "_Pldgg", "_ReqrdSgntriesNb", "_RinvstmtDtls", "_ThrdPtyRghts", "_Nm", "_RndgDtls", "_AcmltnRghtRef", "_OpngDt", "_OwnrshTp", "_FrgnStsCertfctn", "_StmtFrqcy", "_ModfdInvstrPrfl", "_Lang", "_AcctSvcr", "_FsclYr", "_RefCcy", "_AcctSgntrDtTm", "_AcctUsgTp", "_TaxXmptn", "_Dsgnt", "_TaxRptg", "_AcctStsUpdInstr", "_TaxWhldgMtd", "_InvstmtAcctCtgy", "_BlckdSts", "_PrcgOrdr", "_AcctgSts", "_ClsgDt", "_LttrInttDtls", "_PwrOfAttnyLvlOfCtrl", "_Tp", "_TxChanlTp", "_NegInd", "_FndFmlyNm"]
+	__slots__ = ["_AcctSgntrDtTm", "_AcctStsUpdInstr", "_AcctSvcr", "_AcctUsgTp", "_AcctgSts", "_AcmltnRghtRef", "_BlckdSts", "_ClsgDt", "_Coll", "_Dsgnt", "_FndFmlyNm", "_FrgnStsCertfctn", "_FsclYr", "_IncmPref", "_InvstmtAcctCtgy", "_Lang", "_Lblty", "_LttrInttDtls", "_ModfdFinInstrmDtls", "_ModfdInvstrPrfl", "_NegInd", "_Nm", "_OpngDt", "_OwnrshTp", "_Pldgg", "_PrcgOrdr", "_PwrOfAttnyLvlOfCtrl", "_RefCcy", "_ReqrdSgntriesNb", "_RinvstmtDtls", "_RndgDtls", "_StmtFrqcy", "_TaxRptg", "_TaxWhldgMtd", "_TaxXmptn", "_ThrdPtyRghts", "_Tp", "_TxChanlTp"]
 	@property
 	def AcctSgntrDtTm(self):
 		return self._AcctSgntrDtTm

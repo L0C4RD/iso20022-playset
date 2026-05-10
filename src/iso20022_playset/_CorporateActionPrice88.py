@@ -1,11 +1,11 @@
 from . import base_types
+from ._IndicativeOrMarketPrice13Choice import IndicativeOrMarketPrice13Choice
 from ._PriceFormat77Choice import PriceFormat77Choice
 from ._PriceFormat78Choice import PriceFormat78Choice
-from ._IndicativeOrMarketPrice13Choice import IndicativeOrMarketPrice13Choice
 
 class CorporateActionPrice88(base_types._BaseFieldType):
 
-	__slots__ = ["_IndctvOrMktPric", "_GncCshPricPdPerPdct", "_IssePric", "_GncCshPricRcvdPerPdct"]
+	__slots__ = ["_GncCshPricPdPerPdct", "_GncCshPricRcvdPerPdct", "_IndctvOrMktPric", "_IssePric"]
 	@property
 	def GncCshPricPdPerPdct(self):
 		return self._GncCshPricPdPerPdct

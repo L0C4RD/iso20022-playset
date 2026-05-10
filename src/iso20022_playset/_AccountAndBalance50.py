@@ -1,11 +1,11 @@
 from . import base_types
+from ._BalanceFormat11Choice import BalanceFormat11Choice
 from ._Max140Text import Max140Text
 from ._Max35Text import Max35Text
-from ._BalanceFormat11Choice import BalanceFormat11Choice
 
 class AccountAndBalance50(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_SfkpgAcct", "_ConfdBal"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_ConfdBal", "_SfkpgAcct"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt

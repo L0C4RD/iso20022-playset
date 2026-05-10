@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._DisseminationData1 import DisseminationData1
-from ._TechnicalAttributes5 import TechnicalAttributes5
-from ._ModificationLevel1Code import ModificationLevel1Code
-from ._CounterpartySpecificData36 import CounterpartySpecificData36
 from ._CommonTradeDataReport71 import CommonTradeDataReport71
+from ._CounterpartySpecificData36 import CounterpartySpecificData36
+from ._DisseminationData1 import DisseminationData1
+from ._ModificationLevel1Code import ModificationLevel1Code
+from ._SupplementaryData1 import SupplementaryData1
+from ._TechnicalAttributes5 import TechnicalAttributes5
 
 class TradeData43(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_PblcDssmntnData", "_CtrPtySpcfcData", "_TechAttrbts", "_CmonTradData", "_Lvl"]
+	__slots__ = ["_CmonTradData", "_CtrPtySpcfcData", "_Lvl", "_PblcDssmntnData", "_SplmtryData", "_TechAttrbts"]
 	@property
 	def CmonTradData(self):
 		return self._CmonTradData

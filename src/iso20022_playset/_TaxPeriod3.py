@@ -1,11 +1,11 @@
 from . import base_types
-from ._TaxRecordPeriod1Code import TaxRecordPeriod1Code
 from ._DatePeriod2 import DatePeriod2
 from ._ISOYear import ISOYear
+from ._TaxRecordPeriod1Code import TaxRecordPeriod1Code
 
 class TaxPeriod3(base_types._BaseFieldType):
 
-	__slots__ = ["_FrToDt", "_Yr", "_Tp"]
+	__slots__ = ["_FrToDt", "_Tp", "_Yr"]
 	@property
 	def FrToDt(self):
 		return self._FrToDt

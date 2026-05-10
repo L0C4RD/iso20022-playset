@@ -1,6 +1,6 @@
 from . import base_types
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class PartyAuditTrailSearchCriteria2(base_types._BaseFieldType):
 

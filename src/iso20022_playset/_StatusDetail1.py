@@ -1,13 +1,13 @@
 from . import base_types
 from ._CountryCode import CountryCode
+from ._Max10Text import Max10Text
 from ._Max20000Text import Max20000Text
 from ._Period4Choice import Period4Choice
-from ._Max10Text import Max10Text
 from ._SupervisingAuthorityIdentification1 import SupervisingAuthorityIdentification1
 
 class StatusDetail1(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmnt", "_StsRsn", "_Ctry", "_CmptntAuthrty", "_ActvtyPrd", "_Sts"]
+	__slots__ = ["_ActvtyPrd", "_Cmnt", "_CmptntAuthrty", "_Ctry", "_Sts", "_StsRsn"]
 	@property
 	def ActvtyPrd(self):
 		return self._ActvtyPrd

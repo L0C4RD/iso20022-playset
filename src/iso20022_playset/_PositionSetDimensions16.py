@@ -1,23 +1,23 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._CreditDerivative7 import CreditDerivative7
-from ._OptionType2Code import OptionType2Code
-from ._MasterAgreement8 import MasterAgreement8
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._Max52Text import Max52Text
-from ._ExchangeRateBasis1Choice import ExchangeRateBasis1Choice
-from ._TradeCounterpartyReport20 import TradeCounterpartyReport20
-from ._FinancialInstrumentContractType2Code import FinancialInstrumentContractType2Code
-from ._TimeToMaturity1Choice import TimeToMaturity1Choice
-from ._MarginCollateralReport4 import MarginCollateralReport4
-from ._ProductType4Code import ProductType4Code
 from ._AssetClassCommodity6Choice import AssetClassCommodity6Choice
-from ._SecurityIdentification41Choice import SecurityIdentification41Choice
+from ._CreditDerivative7 import CreditDerivative7
+from ._ExchangeRateBasis1Choice import ExchangeRateBasis1Choice
+from ._FinancialInstrumentContractType2Code import FinancialInstrumentContractType2Code
+from ._MarginCollateralReport4 import MarginCollateralReport4
+from ._MasterAgreement8 import MasterAgreement8
+from ._Max52Text import Max52Text
+from ._OptionType2Code import OptionType2Code
 from ._OtherPayment6 import OtherPayment6
+from ._ProductType4Code import ProductType4Code
+from ._SecurityIdentification41Choice import SecurityIdentification41Choice
+from ._TimeToMaturity1Choice import TimeToMaturity1Choice
+from ._TradeCounterpartyReport20 import TradeCounterpartyReport20
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PositionSetDimensions16(base_types._BaseFieldType):
 
-	__slots__ = ["_Coll", "_CtrctTp", "_CtrPtyId", "_ValCcy", "_Cmmdty", "_UndrlygInstrm", "_Clrd", "_IRSTp", "_XchgRateBsis", "_NtnlCcyScndLeg", "_SttlmCcyScndLeg", "_IntraGrp", "_NtnlCcy", "_OthrPmt", "_TmToMtrty", "_OptnTp", "_AsstClss", "_Cdt", "_MstrAgrmt", "_SttlmCcy"]
+	__slots__ = ["_AsstClss", "_Cdt", "_Clrd", "_Cmmdty", "_Coll", "_CtrPtyId", "_CtrctTp", "_IRSTp", "_IntraGrp", "_MstrAgrmt", "_NtnlCcy", "_NtnlCcyScndLeg", "_OptnTp", "_OthrPmt", "_SttlmCcy", "_SttlmCcyScndLeg", "_TmToMtrty", "_UndrlygInstrm", "_ValCcy", "_XchgRateBsis"]
 	@property
 	def AsstClss(self):
 		return self._AsstClss

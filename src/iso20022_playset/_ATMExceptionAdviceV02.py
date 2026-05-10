@@ -6,7 +6,7 @@ from ._Header32 import Header32
 
 class ATMExceptionAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMXcptnAdvc", "_SctyTrlr", "_Hdr", "_ATMXcptnAdvc"]
+	__slots__ = ["_ATMXcptnAdvc", "_Hdr", "_PrtctdATMXcptnAdvc", "_SctyTrlr"]
 	@property
 	def ATMXcptnAdvc(self):
 		return self._ATMXcptnAdvc

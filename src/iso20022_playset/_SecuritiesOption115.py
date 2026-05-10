@@ -1,24 +1,24 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._CorporateActionAmounts61 import CorporateActionAmounts61
+from ._CorporateActionPrice93 import CorporateActionPrice93
+from ._CorporateActionRate132 import CorporateActionRate132
+from ._CountryCode import CountryCode
+from ._CreditDebitCode import CreditDebitCode
 from ._FractionDispositionType30Choice import FractionDispositionType30Choice
-from ._Quantity54Choice import Quantity54Choice
-from ._TemporaryFinancialInstrumentIndicator4Choice import TemporaryFinancialInstrumentIndicator4Choice
+from ._GenericIdentification47 import GenericIdentification47
 from ._IssuerOfferorTaxabilityIndicator1Choice import IssuerOfferorTaxabilityIndicator1Choice
 from ._NewSecuritiesIssuanceType6Code import NewSecuritiesIssuanceType6Code
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._CountryCode import CountryCode
-from ._CorporateActionAmounts61 import CorporateActionAmounts61
+from ._Quantity54Choice import Quantity54Choice
 from ._SafekeepingPlaceFormat50Choice import SafekeepingPlaceFormat50Choice
-from ._GenericIdentification47 import GenericIdentification47
-from ._SettlementParties130 import SettlementParties130
-from ._CorporateActionPrice93 import CorporateActionPrice93
-from ._CreditDebitCode import CreditDebitCode
-from ._CorporateActionRate132 import CorporateActionRate132
 from ._SecurityDate26 import SecurityDate26
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._SettlementParties130 import SettlementParties130
+from ._TemporaryFinancialInstrumentIndicator4Choice import TemporaryFinancialInstrumentIndicator4Choice
 
 class SecuritiesOption115(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvrgSttlmPties", "_CdtDbtInd", "_IncmTp", "_TempFinInstrmInd", "_FrctnDspstn", "_CtryOfIncmSrc", "_PricDtls", "_IssrOfferrTaxbltyInd", "_DtDtls", "_NewSctiesIssncInd", "_AmtDtls", "_CcyOptn", "_OthrIncmTp", "_SfkpgPlc", "_RcvgSttlmPties", "_PstngQty", "_RateDtls", "_FinInstrmId", "_XmptnTp"]
+	__slots__ = ["_AmtDtls", "_CcyOptn", "_CdtDbtInd", "_CtryOfIncmSrc", "_DlvrgSttlmPties", "_DtDtls", "_FinInstrmId", "_FrctnDspstn", "_IncmTp", "_IssrOfferrTaxbltyInd", "_NewSctiesIssncInd", "_OthrIncmTp", "_PricDtls", "_PstngQty", "_RateDtls", "_RcvgSttlmPties", "_SfkpgPlc", "_TempFinInstrmInd", "_XmptnTp"]
 	@property
 	def AmtDtls(self):
 		return self._AmtDtls

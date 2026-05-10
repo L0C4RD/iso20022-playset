@@ -1,14 +1,14 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._AggregateHoldingBalance3 import AggregateHoldingBalance3
-from ._PartyIdentification100 import PartyIdentification100
-from ._AggregateHoldingBalance2 import AggregateHoldingBalance2
 from ._AccountSubLevel11 import AccountSubLevel11
+from ._AggregateHoldingBalance2 import AggregateHoldingBalance2
+from ._AggregateHoldingBalance3 import AggregateHoldingBalance3
 from ._BeneficialOwner2 import BeneficialOwner2
+from ._PartyIdentification100 import PartyIdentification100
+from ._SecuritiesAccount19 import SecuritiesAccount19
 
 class SafekeepingAccount7(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSubLvl1", "_AcctSvcr", "_BalDtls", "_AcctId", "_AcctSubLvl1Diff", "_AcctOwnr", "_BnfclOwnr"]
+	__slots__ = ["_AcctId", "_AcctOwnr", "_AcctSubLvl1", "_AcctSubLvl1Diff", "_AcctSvcr", "_BalDtls", "_BnfclOwnr"]
 	@property
 	def AcctId(self):
 		return self._AcctId

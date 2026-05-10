@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class PartyLockStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_VldFr", "_LckRsn"]
+	__slots__ = ["_LckRsn", "_Sts", "_VldFr"]
 	@property
 	def LckRsn(self):
 		return self._LckRsn

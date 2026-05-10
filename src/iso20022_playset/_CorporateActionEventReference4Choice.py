@@ -3,7 +3,7 @@ from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class CorporateActionEventReference4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LkdOffclCorpActnEvtId", "_LkdCorpActnId"]
+	__slots__ = ["_LkdCorpActnId", "_LkdOffclCorpActnEvtId"]
 	@property
 	def LkdCorpActnId(self):
 		return self._LkdCorpActnId

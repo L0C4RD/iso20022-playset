@@ -4,7 +4,7 @@ from ._DecimalNumber import DecimalNumber
 
 class UnitsOrAmount1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Unit", "_Amt"]
+	__slots__ = ["_Amt", "_Unit"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -1,13 +1,13 @@
 from . import base_types
-from ._Min2Max3AlphaText import Min2Max3AlphaText
 from ._AddressType2Code import AddressType2Code
+from ._Max16Text import Max16Text
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
-from ._Max16Text import Max16Text
+from ._Min2Max3AlphaText import Min2Max3AlphaText
 
 class PostalAddress22(base_types._BaseFieldType):
 
-	__slots__ = ["_AdrTp", "_Dept", "_AdrLine", "_CtryCd", "_SubDept", "_PstCd", "_BldgNb", "_StrtNm", "_CtrySubDvsn", "_TwnNm"]
+	__slots__ = ["_AdrLine", "_AdrTp", "_BldgNb", "_CtryCd", "_CtrySubDvsn", "_Dept", "_PstCd", "_StrtNm", "_SubDept", "_TwnNm"]
 	@property
 	def AdrLine(self):
 		return self._AdrLine

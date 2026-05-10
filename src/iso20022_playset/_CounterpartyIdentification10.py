@@ -1,10 +1,10 @@
 from . import base_types
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 from ._CollateralRole1Code import CollateralRole1Code
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class CounterpartyIdentification10(base_types._BaseFieldType):
 
-	__slots__ = ["_Sd", "_Id"]
+	__slots__ = ["_Id", "_Sd"]
 	@property
 	def Id(self):
 		return self._Id

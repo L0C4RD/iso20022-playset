@@ -1,11 +1,11 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
 from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._LEIIdentifier import LEIIdentifier
 from ._Max52Text import Max52Text
 
 class BasketQuery1(base_types._BaseFieldType):
 
-	__slots__ = ["_Strr", "_Idr", "_ISIN"]
+	__slots__ = ["_ISIN", "_Idr", "_Strr"]
 	@property
 	def ISIN(self):
 		return self._ISIN

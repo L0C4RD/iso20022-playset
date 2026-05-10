@@ -1,11 +1,11 @@
 from . import base_types
 from ._CollateralPortfolioCode5Choice import CollateralPortfolioCode5Choice
-from ._ISODateTime import ISODateTime
 from ._CollateralisationType3Code import CollateralisationType3Code
+from ._ISODateTime import ISODateTime
 
 class MarginCollateralReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_CollstnCtgy", "_TmStmp", "_CollPrtflCd"]
+	__slots__ = ["_CollPrtflCd", "_CollstnCtgy", "_TmStmp"]
 	@property
 	def CollPrtflCd(self):
 		return self._CollPrtflCd

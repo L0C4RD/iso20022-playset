@@ -3,7 +3,7 @@ from ._ISOTime import ISOTime
 
 class TimePeriod3(base_types._BaseFieldType):
 
-	__slots__ = ["_ToTm", "_FrTm"]
+	__slots__ = ["_FrTm", "_ToTm"]
 	@property
 	def FrTm(self):
 		return self._FrTm

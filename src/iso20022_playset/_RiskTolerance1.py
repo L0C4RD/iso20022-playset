@@ -1,12 +1,12 @@
 from . import base_types
 from ._Max1Number import Max1Number
 from ._OtherTargetMarketRiskTolerance1 import OtherTargetMarketRiskTolerance1
-from ._TargetMarket2Code import TargetMarket2Code
 from ._RiskLevel1Code import RiskLevel1Code
+from ._TargetMarket2Code import TargetMarket2Code
 
 class RiskTolerance1(base_types._BaseFieldType):
 
-	__slots__ = ["_RskTlrnceForNonPRIIPSAndNonUCITSES", "_RskTlrnceUCITSMthdlgy", "_RskTlrncePRIIPSMthdlgy", "_Othr", "_NotForInvstrsWthTheLwstRskTlrnceDE", "_RskTlrnceIntl"]
+	__slots__ = ["_NotForInvstrsWthTheLwstRskTlrnceDE", "_Othr", "_RskTlrnceForNonPRIIPSAndNonUCITSES", "_RskTlrnceIntl", "_RskTlrncePRIIPSMthdlgy", "_RskTlrnceUCITSMthdlgy"]
 	@property
 	def NotForInvstrsWthTheLwstRskTlrnceDE(self):
 		return self._NotForInvstrsWthTheLwstRskTlrnceDE

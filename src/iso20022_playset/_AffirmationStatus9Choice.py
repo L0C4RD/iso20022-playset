@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification47 import GenericIdentification47
 from ._AffirmationStatus1Code import AffirmationStatus1Code
+from ._GenericIdentification47 import GenericIdentification47
 
 class AffirmationStatus9Choice(base_types._BaseFieldType):
 

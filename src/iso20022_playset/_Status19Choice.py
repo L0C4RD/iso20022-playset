@@ -1,21 +1,21 @@
 from . import base_types
+from ._AffirmationStatus8Choice import AffirmationStatus8Choice
+from ._AllocationSatus3Choice import AllocationSatus3Choice
+from ._CancellationProcessingStatus7Choice import CancellationProcessingStatus7Choice
 from ._CorporateActionEventProcessingStatus3Choice import CorporateActionEventProcessingStatus3Choice
+from ._CorporateActionEventStage3Choice import CorporateActionEventStage3Choice
+from ._InstructionProcessingStatus23Choice import InstructionProcessingStatus23Choice
 from ._MatchingStatus27Choice import MatchingStatus27Choice
 from ._RegistrationProcessingStatus3Choice import RegistrationProcessingStatus3Choice
-from ._ResponseStatus5Choice import ResponseStatus5Choice
-from ._SettlementStatus19Choice import SettlementStatus19Choice
-from ._CancellationProcessingStatus7Choice import CancellationProcessingStatus7Choice
-from ._RepoCallRequestStatus8Choice import RepoCallRequestStatus8Choice
-from ._SettlementConditionModificationStatus3Choice import SettlementConditionModificationStatus3Choice
-from ._AffirmationStatus8Choice import AffirmationStatus8Choice
 from ._ReplacementProcessingStatus8Choice import ReplacementProcessingStatus8Choice
-from ._InstructionProcessingStatus23Choice import InstructionProcessingStatus23Choice
-from ._CorporateActionEventStage3Choice import CorporateActionEventStage3Choice
-from ._AllocationSatus3Choice import AllocationSatus3Choice
+from ._RepoCallRequestStatus8Choice import RepoCallRequestStatus8Choice
+from ._ResponseStatus5Choice import ResponseStatus5Choice
+from ._SettlementConditionModificationStatus3Choice import SettlementConditionModificationStatus3Choice
+from ._SettlementStatus19Choice import SettlementStatus19Choice
 
 class Status19Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnEvtPrcgSts", "_IfrrdMtchgSts", "_SttlmCondModSts", "_InstrPrcgSts", "_CorpActnEvtStag", "_CxlPrcgSts", "_RepoCallReqSts", "_RegnPrcgSts", "_RspnSts", "_MtchgSts", "_SttlmSts", "_AllcnSts", "_AffirmSts", "_RplcmntPrcgSts"]
+	__slots__ = ["_AffirmSts", "_AllcnSts", "_CorpActnEvtPrcgSts", "_CorpActnEvtStag", "_CxlPrcgSts", "_IfrrdMtchgSts", "_InstrPrcgSts", "_MtchgSts", "_RegnPrcgSts", "_RepoCallReqSts", "_RplcmntPrcgSts", "_RspnSts", "_SttlmCondModSts", "_SttlmSts"]
 	@property
 	def AffirmSts(self):
 		return self._AffirmSts

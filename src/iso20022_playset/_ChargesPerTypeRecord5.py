@@ -1,18 +1,18 @@
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._TransactionReferences7 import TransactionReferences7
-from ._InstructionForInstructedAgent1 import InstructionForInstructedAgent1
-from ._PartyIdentification272 import PartyIdentification272
-from ._Max35Text import Max35Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._CreditDebitCode import CreditDebitCode
-from ._Max140Text import Max140Text
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._CashAccount40 import CashAccount40
+from ._CreditDebitCode import CreditDebitCode
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._InstructionForInstructedAgent1 import InstructionForInstructedAgent1
+from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification272 import PartyIdentification272
+from ._TransactionReferences7 import TransactionReferences7
 
 class ChargesPerTypeRecord5(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygTx", "_ChrgsAcct", "_InstrForInstdAgt", "_DbtrAcct", "_Amt", "_CdtDbtInd", "_RcrdId", "_ChrgsRqstr", "_ValDt", "_DbtrAgt", "_AddtlInf", "_ChrgsAcctOwnr", "_DbtrAgtAcct", "_Dbtr"]
+	__slots__ = ["_AddtlInf", "_Amt", "_CdtDbtInd", "_ChrgsAcct", "_ChrgsAcctOwnr", "_ChrgsRqstr", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_InstrForInstdAgt", "_RcrdId", "_UndrlygTx", "_ValDt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

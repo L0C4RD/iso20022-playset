@@ -1,12 +1,12 @@
 from . import base_types
-from ._References58Choice import References58Choice
 from ._DocumentNumber6Choice import DocumentNumber6Choice
 from ._PairedOrTurnedQuantity6Choice import PairedOrTurnedQuantity6Choice
 from ._ProcessingPosition10Choice import ProcessingPosition10Choice
+from ._References58Choice import References58Choice
 
 class Linkages70(base_types._BaseFieldType):
 
-	__slots__ = ["_LkdQty", "_Ref", "_MsgNb", "_PrcgPos"]
+	__slots__ = ["_LkdQty", "_MsgNb", "_PrcgPos", "_Ref"]
 	@property
 	def LkdQty(self):
 		return self._LkdQty

@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._CountryCode import CountryCode
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
 
 class DateAndPlaceOfBirth(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvcOfBirth", "_BirthDt", "_CtryOfBirth", "_CityOfBirth"]
+	__slots__ = ["_BirthDt", "_CityOfBirth", "_CtryOfBirth", "_PrvcOfBirth"]
 	@property
 	def BirthDt(self):
 		return self._BirthDt

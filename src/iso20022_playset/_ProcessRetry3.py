@@ -1,11 +1,11 @@
 from . import base_types
-from ._Number import Number
 from ._Max9NumericText import Max9NumericText
+from ._Number import Number
 from ._TimeUnit1Code import TimeUnit1Code
 
 class ProcessRetry3(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxNb", "_UnitOfTm", "_Dely"]
+	__slots__ = ["_Dely", "_MaxNb", "_UnitOfTm"]
 	@property
 	def Dely(self):
 		return self._Dely

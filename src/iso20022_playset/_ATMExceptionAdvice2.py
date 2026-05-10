@@ -1,11 +1,11 @@
 from . import base_types
 from ._ATMContext25 import ATMContext25
-from ._ATMTransaction40 import ATMTransaction40
 from ._ATMEnvironment20 import ATMEnvironment20
+from ._ATMTransaction40 import ATMTransaction40
 
 class ATMExceptionAdvice2(base_types._BaseFieldType):
 
-	__slots__ = ["_Cntxt", "_Tx", "_Envt"]
+	__slots__ = ["_Cntxt", "_Envt", "_Tx"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt

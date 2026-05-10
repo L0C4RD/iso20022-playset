@@ -1,10 +1,10 @@
 from . import base_types
-from ._ValidationResult5 import ValidationResult5
 from ._Number import Number
+from ._ValidationResult5 import ValidationResult5
 
 class MisMatchReport3(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfMisMtchs", "_MisMtchInf"]
+	__slots__ = ["_MisMtchInf", "_NbOfMisMtchs"]
 	@property
 	def MisMtchInf(self):
 		return self._MisMtchInf

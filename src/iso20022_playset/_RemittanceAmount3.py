@@ -1,12 +1,12 @@
 from . import base_types
-from ._DiscountAmountAndType1 import DiscountAmountAndType1
-from ._TaxAmountAndType1 import TaxAmountAndType1
-from ._DocumentAdjustment1 import DocumentAdjustment1
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._DiscountAmountAndType1 import DiscountAmountAndType1
+from ._DocumentAdjustment1 import DocumentAdjustment1
+from ._TaxAmountAndType1 import TaxAmountAndType1
 
 class RemittanceAmount3(base_types._BaseFieldType):
 
-	__slots__ = ["_AdjstmntAmtAndRsn", "_CdtNoteAmt", "_RmtdAmt", "_DscntApldAmt", "_DuePyblAmt", "_TaxAmt"]
+	__slots__ = ["_AdjstmntAmtAndRsn", "_CdtNoteAmt", "_DscntApldAmt", "_DuePyblAmt", "_RmtdAmt", "_TaxAmt"]
 	@property
 	def AdjstmntAmtAndRsn(self):
 		return self._AdjstmntAmtAndRsn

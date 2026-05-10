@@ -1,19 +1,19 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._AcquirerProtocolParameters17 import AcquirerProtocolParameters17
+from ._ApplicationParameters13 import ApplicationParameters13
+from ._HostCommunicationParameter7 import HostCommunicationParameter7
 from ._MerchantConfigurationParameters6 import MerchantConfigurationParameters6
-from ._SecurityParameters16 import SecurityParameters16
-from ._SaleToPOIProtocolParameter3 import SaleToPOIProtocolParameter3
 from ._PaymentTerminalParameters8 import PaymentTerminalParameters8
+from ._SaleToPOIProtocolParameter3 import SaleToPOIProtocolParameter3
+from ._SecurityParameters16 import SecurityParameters16
+from ._ServiceProviderParameters4 import ServiceProviderParameters4
 from ._TMSProtocolParameters7 import TMSProtocolParameters7
 from ._TerminalPackageType5 import TerminalPackageType5
-from ._HostCommunicationParameter7 import HostCommunicationParameter7
-from ._ServiceProviderParameters4 import ServiceProviderParameters4
-from ._ApplicationParameters13 import ApplicationParameters13
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class AcceptorConfigurationContent14(base_types._BaseFieldType):
 
-	__slots__ = ["_TermnlPackg", "_MrchntParams", "_AcqrrPrtcolParams", "_SvcPrvdrParams", "_TMSPrtcolParams", "_SaleToPOIParams", "_ApplParams", "_SctyParams", "_RplcCfgtn", "_TermnlParams", "_HstComParams"]
+	__slots__ = ["_AcqrrPrtcolParams", "_ApplParams", "_HstComParams", "_MrchntParams", "_RplcCfgtn", "_SaleToPOIParams", "_SctyParams", "_SvcPrvdrParams", "_TMSPrtcolParams", "_TermnlPackg", "_TermnlParams"]
 	@property
 	def AcqrrPrtcolParams(self):
 		return self._AcqrrPrtcolParams

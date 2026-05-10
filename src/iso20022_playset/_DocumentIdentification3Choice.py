@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class DocumentIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcrDocId", "_AcctOwnrDocId"]
+	__slots__ = ["_AcctOwnrDocId", "_AcctSvcrDocId"]
 	@property
 	def AcctOwnrDocId(self):
 		return self._AcctOwnrDocId

@@ -1,25 +1,25 @@
 from . import base_types
-from ._Max3Number import Max3Number
+from ._AmountAndDirection57 import AmountAndDirection57
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 from ._FinancialInstrumentAttributes122 import FinancialInstrumentAttributes122
-from ._TradeDate9Choice import TradeDate9Choice
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._Max3Number import Max3Number
 from ._OtherAmounts33 import OtherAmounts33
 from ._OtherParties42 import OtherParties42
+from ._PortfolioTransferStatus2Choice import PortfolioTransferStatus2Choice
 from ._Quantity49 import Quantity49
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._Reporting8Choice import Reporting8Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._SettlementDate20Choice import SettlementDate20Choice
+from ._SettlementDetails103 import SettlementDetails103
 from ._SettlementParties104 import SettlementParties104
 from ._SupplementaryData1 import SupplementaryData1
-from ._AmountAndDirection57 import AmountAndDirection57
-from ._SettlementDate20Choice import SettlementDate20Choice
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._SettlementDetails103 import SettlementDetails103
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._Reporting8Choice import Reporting8Choice
-from ._PortfolioTransferStatus2Choice import PortfolioTransferStatus2Choice
+from ._TradeDate9Choice import TradeDate9Choice
 
 class SecuritiesTradeDetails139(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_SttlmDt", "_DlvrgSttlmPties", "_SttlmAmt", "_NbOfDaysAcrd", "_NtfctnSndrTxId", "_OthrAmts", "_FinInstrmAttrbts", "_OthrBizPties", "_SctiesMvmntTp", "_TradDt", "_RcvgSttlmPties", "_SttlmParams", "_QtyDtls", "_Pmt", "_FinInstrmId", "_CmonId", "_NtfctnRcvrTxId", "_Rptg", "_SplmtryData"]
+	__slots__ = ["_CmonId", "_DlvrgSttlmPties", "_FinInstrmAttrbts", "_FinInstrmId", "_NbOfDaysAcrd", "_NtfctnRcvrTxId", "_NtfctnSndrTxId", "_OthrAmts", "_OthrBizPties", "_Pmt", "_QtyDtls", "_RcvgSttlmPties", "_Rptg", "_SctiesMvmntTp", "_SplmtryData", "_Sts", "_SttlmAmt", "_SttlmDt", "_SttlmParams", "_TradDt"]
 	@property
 	def CmonId(self):
 		return self._CmonId

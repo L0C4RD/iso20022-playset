@@ -1,10 +1,10 @@
 from . import base_types
-from ._RestrictedFINXMax30Text import RestrictedFINXMax30Text
 from ._Max4AlphaNumericText import Max4AlphaNumericText
+from ._RestrictedFINXMax30Text import RestrictedFINXMax30Text
 
 class SecuritiesCertificate5(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_SchmeNm", "_Nb"]
+	__slots__ = ["_Issr", "_Nb", "_SchmeNm"]
 	@property
 	def Issr(self):
 		return self._Issr

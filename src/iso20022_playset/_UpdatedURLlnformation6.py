@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max2048Text import Max2048Text
 from ._ISO2ALanguageCode import ISO2ALanguageCode
+from ._Max2048Text import Max2048Text
 
 class UpdatedURLlnformation6(base_types._BaseFieldType):
 
-	__slots__ = ["_URLAdr", "_Lang"]
+	__slots__ = ["_Lang", "_URLAdr"]
 	@property
 	def Lang(self):
 		return self._Lang

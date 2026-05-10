@@ -1,46 +1,46 @@
 from . import base_types
-from ._OriginalBusinessInstruction4 import OriginalBusinessInstruction4
-from ._ChargeBearerType1Code import ChargeBearerType1Code
-from ._RelatedTransactionData1 import RelatedTransactionData1
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._TrackerPartyIdentification2 import TrackerPartyIdentification2
-from ._SettlementTimeRequest2 import SettlementTimeRequest2
-from ._Charges7 import Charges7
-from ._PaymentScenario1Choice import PaymentScenario1Choice
-from ._BICFIDec2014Identifier import BICFIDec2014Identifier
-from ._PartyIdentification135 import PartyIdentification135
-from ._Purpose2Choice import Purpose2Choice
-from ._Priority3Code import Priority3Code
-from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
-from ._RegulatoryReporting3 import RegulatoryReporting3
-from ._ISODateTime import ISODateTime
-from ._TaxInformation8 import TaxInformation8
-from ._ISODate import ISODate
-from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._EquivalentAmount2 import EquivalentAmount2
-from ._PaymentRejectReturnReason1 import PaymentRejectReturnReason1
-from ._InstructionForNextAgent1 import InstructionForNextAgent1
-from ._RemittanceInformation16 import RemittanceInformation16
-from ._TrackerData8 import TrackerData8
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._BICFIDec2014Identifier import BICFIDec2014Identifier
 from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._PaymentIdentification10 import PaymentIdentification10
-from ._Max2048Text import Max2048Text
-from ._PaymentTypeInformation28 import PaymentTypeInformation28
-from ._TrackerRecord8 import TrackerRecord8
-from ._CreditTransferTransaction46 import CreditTransferTransaction46
-from ._TransactionParties8 import TransactionParties8
-from ._SettlementInstruction9 import SettlementInstruction9
-from ._RemittanceLocation7 import RemittanceLocation7
-from ._CurrencyExchange15 import CurrencyExchange15
 from ._CashAccount38 import CashAccount38
+from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._Charges7 import Charges7
+from ._CreditTransferTransaction46 import CreditTransferTransaction46
+from ._CurrencyExchange15 import CurrencyExchange15
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._EquivalentAmount2 import EquivalentAmount2
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
+from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
+from ._InstructionForNextAgent1 import InstructionForNextAgent1
+from ._Max2048Text import Max2048Text
 from ._Max35Text import Max35Text
+from ._OriginalBusinessInstruction4 import OriginalBusinessInstruction4
 from ._Party40Choice import Party40Choice
+from ._PartyIdentification135 import PartyIdentification135
+from ._PaymentIdentification10 import PaymentIdentification10
+from ._PaymentRejectReturnReason1 import PaymentRejectReturnReason1
+from ._PaymentScenario1Choice import PaymentScenario1Choice
+from ._PaymentTypeInformation28 import PaymentTypeInformation28
+from ._Priority3Code import Priority3Code
+from ._Purpose2Choice import Purpose2Choice
+from ._RegulatoryReporting3 import RegulatoryReporting3
+from ._RelatedTransactionData1 import RelatedTransactionData1
+from ._RemittanceInformation16 import RemittanceInformation16
+from ._RemittanceLocation7 import RemittanceLocation7
+from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
+from ._SettlementInstruction9 import SettlementInstruction9
+from ._SettlementTimeRequest2 import SettlementTimeRequest2
+from ._TaxInformation8 import TaxInformation8
+from ._TrackerData8 import TrackerData8
+from ._TrackerPartyIdentification2 import TrackerPartyIdentification2
+from ._TrackerRecord8 import TrackerRecord8
+from ._TransactionParties8 import TransactionParties8
 
 class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
-	__slots__ = ["_TrckrInfrmgPty", "_ChrgBr", "_DbtrAcct", "_PmtScnro", "_SttlmInf", "_PoolgAdjstmntDt", "_Dbtr", "_CdtrAcct", "_OrgnlInstrId", "_InstdAmt", "_IntrmyAgt1", "_InitgPty", "_IntrmyAgt2Acct", "_SttlmTmIndctn", "_InstgAgt", "_TechSndr", "_OrgnlEndToEndId", "_RtrdIntrBkSttlmAmt", "_UltmtDbtr", "_Cdtr", "_InstrForCdtrAgt", "_IntrmyAgt3Acct", "_CdtrAgtAcct", "_PrvsInstgAgt2Acct", "_IntrBkSttlmDt", "_CdtrAgt", "_RtrChain", "_InstrForNxtAgt", "_ChrgsInf", "_Tax", "_IntrmyAgt1Acct", "_TrckdMsgId", "_TrckrInfrmdPty", "_PmtTpInf", "_PrvsInstgAgt3", "_DbtConfURLAdr", "_PrvsInstgAgt1Acct", "_RmtInf", "_TrckrData", "_IntrmyAgt2", "_RltdRmtInf", "_RgltryRptg", "_InstdAgt", "_TrckrRcrd", "_RltdPmtId", "_SttlmTmReq", "_UndrlygCstmrCdtTrf", "_UltmtCdtr", "_Purp", "_IntrmyAgt3", "_PrvsInstgAgt2", "_TechRcvr", "_PmtId", "_DbtrAgt", "_AccptncDtTm", "_RtrdInstdAmt", "_DbtrAgtAcct", "_SttlmPrty", "_PrvsInstgAgt1", "_IntrBkSttlmAmt", "_XchgRateData", "_ReqdExctnDt", "_PrvsInstgAgt3Acct", "_EqvtAmt", "_RjctRtrRsn"]
+	__slots__ = ["_AccptncDtTm", "_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_ChrgBr", "_ChrgsInf", "_DbtConfURLAdr", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_EqvtAmt", "_InitgPty", "_InstdAgt", "_InstdAmt", "_InstgAgt", "_InstrForCdtrAgt", "_InstrForNxtAgt", "_IntrBkSttlmAmt", "_IntrBkSttlmDt", "_IntrmyAgt1", "_IntrmyAgt1Acct", "_IntrmyAgt2", "_IntrmyAgt2Acct", "_IntrmyAgt3", "_IntrmyAgt3Acct", "_OrgnlEndToEndId", "_OrgnlInstrId", "_PmtId", "_PmtScnro", "_PmtTpInf", "_PoolgAdjstmntDt", "_PrvsInstgAgt1", "_PrvsInstgAgt1Acct", "_PrvsInstgAgt2", "_PrvsInstgAgt2Acct", "_PrvsInstgAgt3", "_PrvsInstgAgt3Acct", "_Purp", "_ReqdExctnDt", "_RgltryRptg", "_RjctRtrRsn", "_RltdPmtId", "_RltdRmtInf", "_RmtInf", "_RtrChain", "_RtrdInstdAmt", "_RtrdIntrBkSttlmAmt", "_SttlmInf", "_SttlmPrty", "_SttlmTmIndctn", "_SttlmTmReq", "_Tax", "_TechRcvr", "_TechSndr", "_TrckdMsgId", "_TrckrData", "_TrckrInfrmdPty", "_TrckrInfrmgPty", "_TrckrRcrd", "_UltmtCdtr", "_UltmtDbtr", "_UndrlygCstmrCdtTrf", "_XchgRateData"]
 	@property
 	def AccptncDtTm(self):
 		return self._AccptncDtTm

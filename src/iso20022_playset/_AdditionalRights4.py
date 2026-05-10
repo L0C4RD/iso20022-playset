@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max2048Text import Max2048Text
+from ._AdditionalRightCode1Choice import AdditionalRightCode1Choice
 from ._AdditionalRightThreshold2Choice import AdditionalRightThreshold2Choice
 from ._DateFormat58Choice import DateFormat58Choice
-from ._AdditionalRightCode1Choice import AdditionalRightCode1Choice
+from ._Max2048Text import Max2048Text
 
 class AdditionalRights4(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlRghtInfURLAdr", "_AddtlRghtThrshld", "_AddtlRght", "_AddtlRghtMktDdln", "_AddtlRghtDdln"]
+	__slots__ = ["_AddtlRght", "_AddtlRghtDdln", "_AddtlRghtInfURLAdr", "_AddtlRghtMktDdln", "_AddtlRghtThrshld"]
 	@property
 	def AddtlRght(self):
 		return self._AddtlRght

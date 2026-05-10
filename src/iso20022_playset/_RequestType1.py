@@ -1,7 +1,7 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._Max500Text import Max500Text
 from ._TransactionRequestType1Code import TransactionRequestType1Code
-from ._Max35Text import Max35Text
 
 class RequestType1(base_types._BaseFieldType):
 

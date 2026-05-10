@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class ProductClassification1(base_types._BaseFieldType):
 
-	__slots__ = ["_SubCmmdty", "_AsstClss", "_BasePdct", "_SubPdct", "_TxTp"]
+	__slots__ = ["_AsstClss", "_BasePdct", "_SubCmmdty", "_SubPdct", "_TxTp"]
 	@property
 	def AsstClss(self):
 		return self._AsstClss

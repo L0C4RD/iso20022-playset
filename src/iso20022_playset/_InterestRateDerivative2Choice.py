@@ -1,6 +1,6 @@
 from . import base_types
-from ._UnderlyingInterestRateType3Code import UnderlyingInterestRateType3Code
 from ._SwapType1Code import SwapType1Code
+from ._UnderlyingInterestRateType3Code import UnderlyingInterestRateType3Code
 
 class InterestRateDerivative2Choice(base_types._BaseFieldType):
 

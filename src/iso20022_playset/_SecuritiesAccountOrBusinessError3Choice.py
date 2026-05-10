@@ -4,7 +4,7 @@ from ._SystemSecuritiesAccount6 import SystemSecuritiesAccount6
 
 class SecuritiesAccountOrBusinessError3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesAcct", "_BizErr"]
+	__slots__ = ["_BizErr", "_SctiesAcct"]
 	@property
 	def BizErr(self):
 		return self._BizErr

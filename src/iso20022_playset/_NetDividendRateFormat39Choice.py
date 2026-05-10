@@ -1,12 +1,12 @@
 from . import base_types
-from ._RateTypeAndAmountAndStatus58 import RateTypeAndAmountAndStatus58
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._RateValueType7Code import RateValueType7Code
 from ._AmountAndRateStatus1 import AmountAndRateStatus1
+from ._RateTypeAndAmountAndStatus58 import RateTypeAndAmountAndStatus58
+from ._RateValueType7Code import RateValueType7Code
 
 class NetDividendRateFormat39Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtAndRateSts", "_RateTpAndAmtAndRateSts", "_Amt", "_NotSpcfdRate"]
+	__slots__ = ["_Amt", "_AmtAndRateSts", "_NotSpcfdRate", "_RateTpAndAmtAndRateSts"]
 	@property
 	def Amt(self):
 		return self._Amt

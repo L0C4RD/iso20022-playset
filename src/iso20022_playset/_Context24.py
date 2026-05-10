@@ -1,26 +1,26 @@
 from . import base_types
-from ._SecurityCharacteristics1Code import SecurityCharacteristics1Code
 from ._AdditionalData1 import AdditionalData1
-from ._TransactionInitiator1Code import TransactionInitiator1Code
-from ._GoodsAndServices1Code import GoodsAndServices1Code
-from ._MOTO2Code import MOTO2Code
-from ._GoodAndServiceDeliveryChannel1Code import GoodAndServiceDeliveryChannel1Code
 from ._CardDataReading10Code import CardDataReading10Code
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISODate import ISODate
 from ._ECommerceData1 import ECommerceData1
-from ._QRCodePresentmentMode1Code import QRCodePresentmentMode1Code
+from ._GoodAndServiceDeliveryChannel1Code import GoodAndServiceDeliveryChannel1Code
 from ._GoodAndServiceDeliverySchedule1Code import GoodAndServiceDeliverySchedule1Code
-from ._ReceiptType1Code import ReceiptType1Code
+from ._GoodsAndServices1Code import GoodsAndServices1Code
 from ._GoodsAndServicesSubType1Code import GoodsAndServicesSubType1Code
 from ._ISO18245MerchantCategoryCode import ISO18245MerchantCategoryCode
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
+from ._ISODate import ISODate
+from ._MOTO2Code import MOTO2Code
 from ._Max35NumericText import Max35NumericText
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._QRCodePresentmentMode1Code import QRCodePresentmentMode1Code
+from ._ReceiptType1Code import ReceiptType1Code
+from ._SecurityCharacteristics1Code import SecurityCharacteristics1Code
+from ._TransactionInitiator1Code import TransactionInitiator1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Context24(base_types._BaseFieldType):
 
-	__slots__ = ["_CardPres", "_GoodAndSvcsOthrSubTp", "_PrtlShipmnt", "_ReSubmissn", "_MrchntCtgyCd", "_RctReq", "_DelydAuthstn", "_TrnspndrInittd", "_StorgLctn", "_EComrcIndPropsd", "_Attndd", "_EComrcData", "_OthrGoodAndSvcDlvryChanl", "_OthrGoodAndSvcDlvrySchdl", "_Reauthstn", "_DfrrdDlvry", "_RctDstn", "_DelydChrgs", "_CardDataNtryMd", "_GoodAndSvcDlvrySchdl", "_NoShow", "_CaptrDt", "_RctTp", "_Trnst", "_EComrcIndApld", "_SctyChrtcs", "_EComrc", "_CrdhldrPres", "_AddtlData", "_OthrMrchntCtgy", "_CrdhldrActvtd", "_PmtCrdntlMrchntRltsh", "_QRCdPresntmntMd", "_TxInitr", "_GoodAndSvcDlvryChanl", "_OthrCardDataNtryMd", "_OthrSctyChrtcs", "_DtAntcptd", "_OthrQRCdPresntmntMd", "_GoodsAndSvcsTp", "_GoodAndSvcsSubTp", "_SaleRefNb", "_LatePresntmnt", "_AuthntcnOutg", "_UattnddLvlCtgy", "_MOTOCd", "_PrtlApprvlSpprtd", "_SpltPmt", "_MrchntCtgySpcfcData"]
+	__slots__ = ["_AddtlData", "_Attndd", "_AuthntcnOutg", "_CaptrDt", "_CardDataNtryMd", "_CardPres", "_CrdhldrActvtd", "_CrdhldrPres", "_DelydAuthstn", "_DelydChrgs", "_DfrrdDlvry", "_DtAntcptd", "_EComrc", "_EComrcData", "_EComrcIndApld", "_EComrcIndPropsd", "_GoodAndSvcDlvryChanl", "_GoodAndSvcDlvrySchdl", "_GoodAndSvcsOthrSubTp", "_GoodAndSvcsSubTp", "_GoodsAndSvcsTp", "_LatePresntmnt", "_MOTOCd", "_MrchntCtgyCd", "_MrchntCtgySpcfcData", "_NoShow", "_OthrCardDataNtryMd", "_OthrGoodAndSvcDlvryChanl", "_OthrGoodAndSvcDlvrySchdl", "_OthrMrchntCtgy", "_OthrQRCdPresntmntMd", "_OthrSctyChrtcs", "_PmtCrdntlMrchntRltsh", "_PrtlApprvlSpprtd", "_PrtlShipmnt", "_QRCdPresntmntMd", "_RctDstn", "_RctReq", "_RctTp", "_ReSubmissn", "_Reauthstn", "_SaleRefNb", "_SctyChrtcs", "_SpltPmt", "_StorgLctn", "_TrnspndrInittd", "_Trnst", "_TxInitr", "_UattnddLvlCtgy"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

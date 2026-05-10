@@ -1,23 +1,23 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._NotionalOrUnitBased1Choice import NotionalOrUnitBased1Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._SecurityIdentification40 import SecurityIdentification40
-from ._QuotationType1Choice import QuotationType1Choice
 from ._AdditionalInformation15 import AdditionalInformation15
-from ._GovernanceProcess1Choice import GovernanceProcess1Choice
-from ._CountryCode import CountryCode
 from ._ContactAttributes5 import ContactAttributes5
+from ._CountryCode import CountryCode
 from ._ExPostCostCalculationBasis1Choice import ExPostCostCalculationBasis1Choice
-from ._Max35Text import Max35Text
-from ._ProductStructure1Choice import ProductStructure1Choice
-from ._Max350Text import Max350Text
+from ._GovernanceProcess1Choice import GovernanceProcess1Choice
 from ._Max140Text import Max140Text
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._NotionalOrUnitBased1Choice import NotionalOrUnitBased1Choice
+from ._ProductStructure1Choice import ProductStructure1Choice
+from ._QuotationType1Choice import QuotationType1Choice
 from ._SecurityClassificationType2Choice import SecurityClassificationType2Choice
+from ._SecurityIdentification40 import SecurityIdentification40
+from ._YesNoIndicator import YesNoIndicator
 
 class SecurityIdentification47(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctCtgy", "_NoRtrcssnInd", "_UmbrllNm", "_ShrtNm", "_ExPstCostClctnBsis", "_ClssfctnTp", "_ClssTp", "_NewUmbrll", "_PdctTp", "_Nm", "_BaseCcy", "_NtnlOrUnitBased", "_QtnTp", "_RegdDstrbtnCtry", "_IssrPdctGovncPrc", "_LvrgdOrCntngntLblty", "_CtryOfDmcl", "_AddtlInf", "_PdctCtgyDE", "_Id", "_Issr"]
+	__slots__ = ["_AddtlInf", "_BaseCcy", "_ClssTp", "_ClssfctnTp", "_CtryOfDmcl", "_ExPstCostClctnBsis", "_Id", "_Issr", "_IssrPdctGovncPrc", "_LvrgdOrCntngntLblty", "_NewUmbrll", "_Nm", "_NoRtrcssnInd", "_NtnlOrUnitBased", "_PdctCtgy", "_PdctCtgyDE", "_PdctTp", "_QtnTp", "_RegdDstrbtnCtry", "_ShrtNm", "_UmbrllNm"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

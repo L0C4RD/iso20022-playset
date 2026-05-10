@@ -4,7 +4,7 @@ from ._ExternalTypeOfParty1Code import ExternalTypeOfParty1Code
 
 class PlaceOfPresentation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Plc", "_Ctry"]
+	__slots__ = ["_Ctry", "_Plc"]
 	@property
 	def Ctry(self):
 		return self._Ctry

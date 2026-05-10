@@ -1,10 +1,10 @@
 from . import base_types
-from ._ChargesRecord8 import ChargesRecord8
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ChargesRecord8 import ChargesRecord8
 
 class Charges15(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlChrgsAndTaxAmt", "_Rcrd"]
+	__slots__ = ["_Rcrd", "_TtlChrgsAndTaxAmt"]
 	@property
 	def Rcrd(self):
 		return self._Rcrd

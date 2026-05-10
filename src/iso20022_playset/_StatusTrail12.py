@@ -1,18 +1,18 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._OrganisationIdentification31 import OrganisationIdentification31
+from ._ISODateTime import ISODateTime
 from ._MatchingStatus25Choice import MatchingStatus25Choice
-from ._ProcessingStatus86Choice import ProcessingStatus86Choice
-from ._ProcessingStatus87Choice import ProcessingStatus87Choice
 from ._Max35Text import Max35Text
 from ._ModificationProcessingStatus10Choice import ModificationProcessingStatus10Choice
+from ._OrganisationIdentification31 import OrganisationIdentification31
+from ._ProcessingStatus86Choice import ProcessingStatus86Choice
+from ._ProcessingStatus87Choice import ProcessingStatus87Choice
 from ._ProprietaryReason4 import ProprietaryReason4
-from ._ISODateTime import ISODateTime
 from ._SettlementStatus32Choice import SettlementStatus32Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class StatusTrail12(base_types._BaseFieldType):
 
-	__slots__ = ["_UsrId", "_StsDt", "_CxlSts", "_PrcgSts", "_IfrrdMtchgSts", "_MtchgSts", "_Sttld", "_SttlmSts", "_SplmtryData", "_ModPrcgSts", "_SndgOrgId"]
+	__slots__ = ["_CxlSts", "_IfrrdMtchgSts", "_ModPrcgSts", "_MtchgSts", "_PrcgSts", "_SndgOrgId", "_SplmtryData", "_StsDt", "_Sttld", "_SttlmSts", "_UsrId"]
 	@property
 	def CxlSts(self):
 		return self._CxlSts

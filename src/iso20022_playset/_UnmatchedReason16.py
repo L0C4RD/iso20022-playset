@@ -1,10 +1,10 @@
 from . import base_types
-from ._UnmatchedReason23Choice import UnmatchedReason23Choice
 from ._Max210Text import Max210Text
+from ._UnmatchedReason23Choice import UnmatchedReason23Choice
 
 class UnmatchedReason16(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_AddtlRsnInf"]
+	__slots__ = ["_AddtlRsnInf", "_Cd"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

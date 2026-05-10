@@ -1,15 +1,15 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._ChargeType5Choice import ChargeType5Choice
-from ._Max35Text import Max35Text
-from ._PartyIdentification113 import PartyIdentification113
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ChargeBasis2Choice import ChargeBasis2Choice
 from ._ChargeOrCommissionDiscount1 import ChargeOrCommissionDiscount1
+from ._ChargeType5Choice import ChargeType5Choice
+from ._Max35Text import Max35Text
+from ._PartyIdentification113 import PartyIdentification113
+from ._PercentageRate import PercentageRate
 
 class Fee1(base_types._BaseFieldType):
 
-	__slots__ = ["_NonStdSLARef", "_Tp", "_ReqdRate", "_Bsis", "_DscntDtls", "_RcptId", "_ReqdAmt", "_StdAmt", "_StdRate"]
+	__slots__ = ["_Bsis", "_DscntDtls", "_NonStdSLARef", "_RcptId", "_ReqdAmt", "_ReqdRate", "_StdAmt", "_StdRate", "_Tp"]
 	@property
 	def Bsis(self):
 		return self._Bsis

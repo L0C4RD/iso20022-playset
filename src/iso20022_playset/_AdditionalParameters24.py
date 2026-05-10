@@ -1,11 +1,11 @@
 from . import base_types
-from ._PreConfirmation1Code import PreConfirmation1Code
-from ._PartialSettlement2Code import PartialSettlement2Code
 from ._Max35Text import Max35Text
+from ._PartialSettlement2Code import PartialSettlement2Code
+from ._PreConfirmation1Code import PreConfirmation1Code
 
 class AdditionalParameters24(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtlSttlm", "_PrvsPrtlConfId", "_PreConf"]
+	__slots__ = ["_PreConf", "_PrtlSttlm", "_PrvsPrtlConfId"]
 	@property
 	def PreConf(self):
 		return self._PreConf

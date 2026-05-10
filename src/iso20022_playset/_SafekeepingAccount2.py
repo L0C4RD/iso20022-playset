@@ -1,13 +1,13 @@
 from . import base_types
+from ._AccountIdentificationFormatChoice import AccountIdentificationFormatChoice
 from ._Intermediary11 import Intermediary11
+from ._Max35Text import Max35Text
 from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._YesNoIndicator import YesNoIndicator
-from ._Max35Text import Max35Text
-from ._AccountIdentificationFormatChoice import AccountIdentificationFormatChoice
 
 class SafekeepingAccount2(base_types._BaseFieldType):
 
-	__slots__ = ["_FngbInd", "_Nm", "_IntrmyInf", "_AcctOwnr", "_AcctSvcr", "_Id", "_Dsgnt"]
+	__slots__ = ["_AcctOwnr", "_AcctSvcr", "_Dsgnt", "_FngbInd", "_Id", "_IntrmyInf", "_Nm"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

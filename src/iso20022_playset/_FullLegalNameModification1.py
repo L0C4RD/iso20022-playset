@@ -4,7 +4,7 @@ from ._Modification1Code import Modification1Code
 
 class FullLegalNameModification1(base_types._BaseFieldType):
 
-	__slots__ = ["_ModCd", "_FullLglNm"]
+	__slots__ = ["_FullLglNm", "_ModCd"]
 	@property
 	def FullLglNm(self):
 		return self._FullLglNm

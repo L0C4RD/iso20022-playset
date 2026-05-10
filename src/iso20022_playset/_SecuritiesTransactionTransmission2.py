@@ -1,10 +1,10 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._LEIIdentifier import LEIIdentifier
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class SecuritiesTransactionTransmission2(base_types._BaseFieldType):
 
-	__slots__ = ["_TrnsmssnInd", "_TrnsmttgSellr", "_TrnsmttgBuyr"]
+	__slots__ = ["_TrnsmssnInd", "_TrnsmttgBuyr", "_TrnsmttgSellr"]
 	@property
 	def TrnsmssnInd(self):
 		return self._TrnsmssnInd

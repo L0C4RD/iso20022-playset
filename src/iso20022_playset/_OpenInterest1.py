@@ -4,7 +4,7 @@ from ._PositiveNumber import PositiveNumber
 
 class OpenInterest1(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfLots", "_GrssNtnlAmt"]
+	__slots__ = ["_GrssNtnlAmt", "_NbOfLots"]
 	@property
 	def GrssNtnlAmt(self):
 		return self._GrssNtnlAmt

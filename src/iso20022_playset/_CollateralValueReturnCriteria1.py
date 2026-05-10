@@ -3,7 +3,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class CollateralValueReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcctOwnrInd", "_Scties", "_SctiesAcctInd", "_SctiesAcctSvcrInd", "_SctiesAcctOwnrInd", "_TtlCollValtnInd", "_CshAcctSvcrInd"]
+	__slots__ = ["_CshAcctOwnrInd", "_CshAcctSvcrInd", "_Scties", "_SctiesAcctInd", "_SctiesAcctOwnrInd", "_SctiesAcctSvcrInd", "_TtlCollValtnInd"]
 	@property
 	def CshAcctOwnrInd(self):
 		return self._CshAcctOwnrInd

@@ -1,23 +1,23 @@
 from . import base_types
-from ._UnitPrice18 import UnitPrice18
 from ._Adjustment7 import Adjustment7
-from ._ShipmentSchedule2Choice import ShipmentSchedule2Choice
-from ._Incoterms4 import Incoterms4
-from ._CurrencyAndAmount import CurrencyAndAmount
+from ._Charge24 import Charge24
 from ._CountryCode import CountryCode
-from ._ProductCharacteristics1Choice import ProductCharacteristics1Choice
-from ._Tax23 import Tax23
-from ._ProductCategory1Choice import ProductCategory1Choice
+from ._CurrencyAndAmount import CurrencyAndAmount
+from ._Incoterms4 import Incoterms4
 from ._Max70Text import Max70Text
-from ._TransportMeans5 import TransportMeans5
 from ._PercentageTolerance1 import PercentageTolerance1
+from ._ProductCategory1Choice import ProductCategory1Choice
+from ._ProductCharacteristics1Choice import ProductCharacteristics1Choice
 from ._ProductIdentifier2Choice import ProductIdentifier2Choice
 from ._Quantity9 import Quantity9
-from ._Charge24 import Charge24
+from ._ShipmentSchedule2Choice import ShipmentSchedule2Choice
+from ._Tax23 import Tax23
+from ._TransportMeans5 import TransportMeans5
+from ._UnitPrice18 import UnitPrice18
 
 class LineItemDetails13(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctNm", "_Incotrms", "_PricTlrnce", "_QtyTlrnce", "_PdctOrgn", "_Tax", "_PdctCtgy", "_Qty", "_TtlAmt", "_RtgSummry", "_ShipmntSchdl", "_UnitPric", "_PdctChrtcs", "_FrghtChrgs", "_Adjstmnt", "_LineItmId", "_PdctIdr"]
+	__slots__ = ["_Adjstmnt", "_FrghtChrgs", "_Incotrms", "_LineItmId", "_PdctChrtcs", "_PdctCtgy", "_PdctIdr", "_PdctNm", "_PdctOrgn", "_PricTlrnce", "_Qty", "_QtyTlrnce", "_RtgSummry", "_ShipmntSchdl", "_Tax", "_TtlAmt", "_UnitPric"]
 	@property
 	def Adjstmnt(self):
 		return self._Adjstmnt

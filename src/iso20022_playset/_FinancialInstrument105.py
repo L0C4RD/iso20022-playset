@@ -1,31 +1,31 @@
 from . import base_types
-from ._BusinessFlowType1Code import BusinessFlowType1Code
-from ._DateAndAmount2 import DateAndAmount2
-from ._Unit11 import Unit11
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._PercentageRate import PercentageRate
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._FinancialInstrument63Choice import FinancialInstrument63Choice
-from ._Intermediary43 import Intermediary43
-from ._Quantity50 import Quantity50
-from ._Crystallisation2 import Crystallisation2
-from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
-from ._Tax36 import Tax36
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AdditionalReference10 import AdditionalReference10
-from ._PaymentInstrument20 import PaymentInstrument20
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._FundSettlementParameters17 import FundSettlementParameters17
-from ._Conversion3 import Conversion3
-from ._TransferType2Choice import TransferType2Choice
 from ._Account28 import Account28
-from ._Max35Text import Max35Text
+from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._AdditionalInformation15 import AdditionalInformation15
+from ._AdditionalReference10 import AdditionalReference10
+from ._BusinessFlowType1Code import BusinessFlowType1Code
+from ._Conversion3 import Conversion3
+from ._Crystallisation2 import Crystallisation2
+from ._DateAndAmount2 import DateAndAmount2
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._FinancialInstrument63Choice import FinancialInstrument63Choice
+from ._FundSettlementParameters17 import FundSettlementParameters17
+from ._ISODate import ISODate
+from ._Intermediary43 import Intermediary43
+from ._Max35Text import Max35Text
+from ._PaymentInstrument20 import PaymentInstrument20
+from ._PercentageRate import PercentageRate
+from ._Quantity50 import Quantity50
+from ._Tax36 import Tax36
+from ._TransferType2Choice import TransferType2Choice
+from ._Unit11 import Unit11
+from ._YesNoIndicator import YesNoIndicator
 
 class FinancialInstrument105(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlPctgInstd", "_OrgnlCost", "_Trfr", "_IntrmyInf", "_PrtlInstdQty", "_FctvTrfDt", "_Instrm", "_CrstllstnDtls", "_SttlmPtiesDtls", "_ReqdSttlmDt", "_NotAvlbl", "_AsstsHeldInOwnNm", "_Qty", "_Convs", "_PmtDtls", "_TrfRsltsInChngOfBnfclOwnr", "_ClntRef", "_TrfeeAcct", "_CtrPtyRef", "_AvrgAcqstnPric", "_BizFlowTp", "_TtlBookVal", "_AddtlAsst", "_TrfCcy", "_LineId", "_TaxValtnPt", "_FctvSttlmDt", "_AddtlInf", "_TrfTp", "_ReqdTradDt", "_UnitsDtls", "_LatstValtn"]
+	__slots__ = ["_AddtlAsst", "_AddtlInf", "_AsstsHeldInOwnNm", "_AvrgAcqstnPric", "_BizFlowTp", "_ClntRef", "_Convs", "_CrstllstnDtls", "_CtrPtyRef", "_FctvSttlmDt", "_FctvTrfDt", "_Instrm", "_IntrmyInf", "_LatstValtn", "_LineId", "_NotAvlbl", "_OrgnlCost", "_OrgnlPctgInstd", "_PmtDtls", "_PrtlInstdQty", "_Qty", "_ReqdSttlmDt", "_ReqdTradDt", "_SttlmPtiesDtls", "_TaxValtnPt", "_TrfCcy", "_TrfRsltsInChngOfBnfclOwnr", "_TrfTp", "_TrfeeAcct", "_Trfr", "_TtlBookVal", "_UnitsDtls"]
 	@property
 	def AddtlAsst(self):
 		return self._AddtlAsst

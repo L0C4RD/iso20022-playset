@@ -1,11 +1,11 @@
 from . import base_types
-from ._TimePeriodDetails1 import TimePeriodDetails1
 from ._DatePeriod3 import DatePeriod3
 from ._QueryType3Code import QueryType3Code
+from ._TimePeriodDetails1 import TimePeriodDetails1
 
 class ReportingPeriod5(base_types._BaseFieldType):
 
-	__slots__ = ["_FrToTm", "_FrToDt", "_Tp"]
+	__slots__ = ["_FrToDt", "_FrToTm", "_Tp"]
 	@property
 	def FrToDt(self):
 		return self._FrToDt

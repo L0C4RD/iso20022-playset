@@ -5,7 +5,7 @@ from ._ReconciliationRequest8 import ReconciliationRequest8
 
 class SaleToPOIReconciliationRequestV07(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnReq", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_Hdr", "_RcncltnReq", "_SctyTrlr"]
 	@property
 	def Hdr(self):
 		return self._Hdr

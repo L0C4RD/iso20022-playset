@@ -1,11 +1,11 @@
 from . import base_types
 from ._Cleared23Choice import Cleared23Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ClearingObligationType1Code import ClearingObligationType1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TradeClearing11(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSts", "_IntraGrp", "_ClrOblgtn"]
+	__slots__ = ["_ClrOblgtn", "_ClrSts", "_IntraGrp"]
 	@property
 	def ClrOblgtn(self):
 		return self._ClrOblgtn

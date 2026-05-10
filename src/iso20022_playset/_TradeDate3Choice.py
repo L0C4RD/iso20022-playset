@@ -4,7 +4,7 @@ from ._ISODate import ISODate
 
 class TradeDate3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DtCd", "_Dt"]
+	__slots__ = ["_Dt", "_DtCd"]
 	@property
 	def Dt(self):
 		return self._Dt

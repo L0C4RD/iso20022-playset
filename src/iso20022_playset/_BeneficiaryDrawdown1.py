@@ -1,11 +1,11 @@
 from . import base_types
-from ._BeneficiaryType1Choice import BeneficiaryType1Choice
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._BeneficiaryType1Choice import BeneficiaryType1Choice
 from ._YesNoIndicator import YesNoIndicator
 
 class BeneficiaryDrawdown1(base_types._BaseFieldType):
 
-	__slots__ = ["_DthUdrLmt", "_AddtlInf", "_BnfcryTp"]
+	__slots__ = ["_AddtlInf", "_BnfcryTp", "_DthUdrLmt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

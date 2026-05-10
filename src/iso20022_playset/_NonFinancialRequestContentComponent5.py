@@ -5,7 +5,7 @@ from ._NonFinancialRequestType2Code import NonFinancialRequestType2Code
 
 class NonFinancialRequestContentComponent5(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_NonFinReqTp", "_AddtlReq"]
+	__slots__ = ["_AddtlReq", "_NonFinReqTp", "_Tx"]
 	@property
 	def AddtlReq(self):
 		return self._AddtlReq

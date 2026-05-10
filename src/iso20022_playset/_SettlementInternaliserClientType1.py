@@ -3,7 +3,7 @@ from ._InternalisationData1 import InternalisationData1
 
 class SettlementInternaliserClientType1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rtl", "_Prfssnl"]
+	__slots__ = ["_Prfssnl", "_Rtl"]
 	@property
 	def Prfssnl(self):
 		return self._Prfssnl

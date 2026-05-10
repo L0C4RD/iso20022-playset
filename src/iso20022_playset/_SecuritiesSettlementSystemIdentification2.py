@@ -1,13 +1,13 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._CountryCode import CountryCode
-from ._Max35Text import Max35Text
 from ._Contact9 import Contact9
+from ._CountryCode import CountryCode
+from ._LEIIdentifier import LEIIdentifier
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
 
 class SecuritiesSettlementSystemIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_RspnsblPty", "_CSDLglNm", "_CtryOfJursdctn", "_SysNm", "_SysId"]
+	__slots__ = ["_CSDLglNm", "_CtryOfJursdctn", "_LEI", "_RspnsblPty", "_SysId", "_SysNm"]
 	@property
 	def CSDLglNm(self):
 		return self._CSDLglNm

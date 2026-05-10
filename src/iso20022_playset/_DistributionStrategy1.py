@@ -4,7 +4,7 @@ from ._OtherDistributionStrategy1 import OtherDistributionStrategy1
 
 class DistributionStrategy1(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtflMgmt", "_ExctnWthApprprtnssTstOrNonAdvsdSvcs", "_InvstmtAdvc", "_Othr", "_ExctnOnly"]
+	__slots__ = ["_ExctnOnly", "_ExctnWthApprprtnssTstOrNonAdvsdSvcs", "_InvstmtAdvc", "_Othr", "_PrtflMgmt"]
 	@property
 	def ExctnOnly(self):
 		return self._ExctnOnly

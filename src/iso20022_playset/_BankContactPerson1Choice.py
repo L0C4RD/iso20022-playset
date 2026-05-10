@@ -3,7 +3,7 @@ from ._ContactIdentification1 import ContactIdentification1
 
 class BankContactPerson1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SellrBkCtctPrsn", "_BuyrBkCtctPrsn"]
+	__slots__ = ["_BuyrBkCtctPrsn", "_SellrBkCtctPrsn"]
 	@property
 	def BuyrBkCtctPrsn(self):
 		return self._BuyrBkCtctPrsn

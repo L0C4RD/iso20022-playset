@@ -1,10 +1,10 @@
 from . import base_types
-from ._PaymentType4Choice import PaymentType4Choice
 from ._ISODateTime import ISODateTime
+from ._PaymentType4Choice import PaymentType4Choice
 
 class PaymentInstruction13(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqdExctnDtTm", "_PmtTp"]
+	__slots__ = ["_PmtTp", "_ReqdExctnDtTm"]
 	@property
 	def PmtTp(self):
 		return self._PmtTp

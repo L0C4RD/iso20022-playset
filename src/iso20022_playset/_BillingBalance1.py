@@ -5,7 +5,7 @@ from ._BillingCurrencyType1Code import BillingCurrencyType1Code
 
 class BillingBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_CcyTp", "_Val"]
+	__slots__ = ["_CcyTp", "_Tp", "_Val"]
 	@property
 	def CcyTp(self):
 		return self._CcyTp

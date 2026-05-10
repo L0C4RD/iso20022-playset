@@ -4,7 +4,7 @@ from ._ReuseDataReport6Choice import ReuseDataReport6Choice
 
 class TradeData36Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rpt", "_DataSetActn"]
+	__slots__ = ["_DataSetActn", "_Rpt"]
 	@property
 	def DataSetActn(self):
 		return self._DataSetActn

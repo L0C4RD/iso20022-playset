@@ -1,11 +1,11 @@
 from . import base_types
 from ._Algorithm26Code import Algorithm26Code
-from ._EncryptionFormat2Code import EncryptionFormat2Code
 from ._AlgorithmIdentification34 import AlgorithmIdentification34
+from ._EncryptionFormat2Code import EncryptionFormat2Code
 
 class Parameter17(base_types._BaseFieldType):
 
-	__slots__ = ["_MskGnrtrAlgo", "_NcrptnFrmt", "_DgstAlgo"]
+	__slots__ = ["_DgstAlgo", "_MskGnrtrAlgo", "_NcrptnFrmt"]
 	@property
 	def DgstAlgo(self):
 		return self._DgstAlgo

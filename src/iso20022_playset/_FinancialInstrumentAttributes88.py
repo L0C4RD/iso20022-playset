@@ -1,11 +1,11 @@
 from . import base_types
 from ._Frequency11Code import Frequency11Code
-from ._Standardisation1Code import Standardisation1Code
 from ._InterestRateContractTerm1 import InterestRateContractTerm1
+from ._Standardisation1Code import Standardisation1Code
 
 class FinancialInstrumentAttributes88(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctTerm", "_Stdstn", "_PmtFrqcy"]
+	__slots__ = ["_CtrctTerm", "_PmtFrqcy", "_Stdstn"]
 	@property
 	def CtrctTerm(self):
 		return self._CtrctTerm

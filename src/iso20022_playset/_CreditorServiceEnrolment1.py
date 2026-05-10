@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max2048Text import Max2048Text
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Visibilty1 import Visibilty1
+from ._Max2048Text import Max2048Text
 from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Visibilty1 import Visibilty1
 
 class CreditorServiceEnrolment1(base_types._BaseFieldType):
 
-	__slots__ = ["_EnrlmntStartDt", "_CdtrSvcActvtnLk", "_EnrlmntEndDt", "_SvcActvtnAllwd", "_Vsblty", "_SvcDescLk"]
+	__slots__ = ["_CdtrSvcActvtnLk", "_EnrlmntEndDt", "_EnrlmntStartDt", "_SvcActvtnAllwd", "_SvcDescLk", "_Vsblty"]
 	@property
 	def CdtrSvcActvtnLk(self):
 		return self._CdtrSvcActvtnLk

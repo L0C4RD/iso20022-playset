@@ -5,7 +5,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class PriceRateOrAmountOrUnknown3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_UknwnInd", "_Amt"]
+	__slots__ = ["_Amt", "_Rate", "_UknwnInd"]
 	@property
 	def Amt(self):
 		return self._Amt

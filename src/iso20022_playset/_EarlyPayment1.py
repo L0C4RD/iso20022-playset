@@ -1,12 +1,12 @@
 from . import base_types
+from ._CurrencyAndAmount import CurrencyAndAmount
+from ._EarlyPaymentsVAT1 import EarlyPaymentsVAT1
 from ._ISODate import ISODate
 from ._PercentageRate import PercentageRate
-from ._EarlyPaymentsVAT1 import EarlyPaymentsVAT1
-from ._CurrencyAndAmount import CurrencyAndAmount
 
 class EarlyPayment1(base_types._BaseFieldType):
 
-	__slots__ = ["_EarlyPmtDt", "_EarlyPmtTaxTtl", "_EarlyPmtTaxSpcfctn", "_DscntPct", "_DscntAmt", "_DuePyblAmtWthEarlyPmt"]
+	__slots__ = ["_DscntAmt", "_DscntPct", "_DuePyblAmtWthEarlyPmt", "_EarlyPmtDt", "_EarlyPmtTaxSpcfctn", "_EarlyPmtTaxTtl"]
 	@property
 	def DscntAmt(self):
 		return self._DscntAmt

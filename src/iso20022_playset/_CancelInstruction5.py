@@ -1,10 +1,10 @@
 from . import base_types
-from ._SafekeepingAccount18 import SafekeepingAccount18
 from ._Max35Text import Max35Text
+from ._SafekeepingAccount18 import SafekeepingAccount18
 
 class CancelInstruction5(base_types._BaseFieldType):
 
-	__slots__ = ["_SnglInstrId", "_InstdPos"]
+	__slots__ = ["_InstdPos", "_SnglInstrId"]
 	@property
 	def InstdPos(self):
 		return self._InstdPos

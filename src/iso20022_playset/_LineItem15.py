@@ -1,17 +1,17 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
-from ._Tax22 import Tax22
+from ._Adjustment6 import Adjustment6
 from ._Charge25 import Charge25
-from ._UserDefinedInformation1 import UserDefinedInformation1
-from ._Incoterms4 import Incoterms4
 from ._CurrencyAndAmount import CurrencyAndAmount
 from ._DocumentIdentification7 import DocumentIdentification7
+from ._Incoterms4 import Incoterms4
 from ._LineItemDetails14 import LineItemDetails14
-from ._Adjustment6 import Adjustment6
+from ._Tax22 import Tax22
+from ._UserDefinedInformation1 import UserDefinedInformation1
+from ._YesNoIndicator import YesNoIndicator
 
 class LineItem15(base_types._BaseFieldType):
 
-	__slots__ = ["_FrghtChrgs", "_Tax", "_FnlSubmissn", "_SellrDfndInf", "_Incotrms", "_ComrclLineItms", "_LineItmsTtlAmt", "_PurchsOrdrRef", "_BuyrDfndInf", "_TtlNetAmt", "_Adjstmnt"]
+	__slots__ = ["_Adjstmnt", "_BuyrDfndInf", "_ComrclLineItms", "_FnlSubmissn", "_FrghtChrgs", "_Incotrms", "_LineItmsTtlAmt", "_PurchsOrdrRef", "_SellrDfndInf", "_Tax", "_TtlNetAmt"]
 	@property
 	def Adjstmnt(self):
 		return self._Adjstmnt

@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._ProprietaryReference1 import ProprietaryReference1
 from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
 
 class TransactionReferences6(base_types._BaseFieldType):
 
-	__slots__ = ["_ChqNb", "_ClrSysRef", "_PmtInfId", "_AcctSvcrRef", "_MsgId", "_UETR", "_PrcgId", "_MktInfrstrctrTxId", "_TxId", "_MndtId", "_Prtry", "_EndToEndId", "_AcctSvcrTxId", "_InstrId", "_AcctOwnrTxId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrRef", "_AcctSvcrTxId", "_ChqNb", "_ClrSysRef", "_EndToEndId", "_InstrId", "_MktInfrstrctrTxId", "_MndtId", "_MsgId", "_PmtInfId", "_PrcgId", "_Prtry", "_TxId", "_UETR"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

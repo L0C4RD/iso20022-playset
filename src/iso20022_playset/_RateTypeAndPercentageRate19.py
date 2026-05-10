@@ -4,7 +4,7 @@ from ._Percentage14Rate import Percentage14Rate
 
 class RateTypeAndPercentageRate19(base_types._BaseFieldType):
 
-	__slots__ = ["_RateTp", "_Rate"]
+	__slots__ = ["_Rate", "_RateTp"]
 	@property
 	def Rate(self):
 		return self._Rate

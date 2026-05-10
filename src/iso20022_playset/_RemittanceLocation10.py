@@ -1,11 +1,11 @@
 from . import base_types
-from ._TransactionReferences8 import TransactionReferences8
-from ._RemittanceLocationData2 import RemittanceLocationData2
 from ._Max35Text import Max35Text
+from ._RemittanceLocationData2 import RemittanceLocationData2
+from ._TransactionReferences8 import TransactionReferences8
 
 class RemittanceLocation10(base_types._BaseFieldType):
 
-	__slots__ = ["_RmtId", "_RmtLctnDtls", "_Refs"]
+	__slots__ = ["_Refs", "_RmtId", "_RmtLctnDtls"]
 	@property
 	def Refs(self):
 		return self._Refs

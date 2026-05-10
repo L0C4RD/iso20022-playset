@@ -1,10 +1,10 @@
 from . import base_types
-from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
 from ._Registration12Choice import Registration12Choice
+from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
 
 class RegistrationReason6(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Cd"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

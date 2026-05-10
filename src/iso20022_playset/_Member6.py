@@ -1,11 +1,11 @@
 from . import base_types
+from ._CommunicationAddress8 import CommunicationAddress8
 from ._ContactIdentificationAndAddress1 import ContactIdentificationAndAddress1
 from ._MemberIdentification3Choice import MemberIdentification3Choice
-from ._CommunicationAddress8 import CommunicationAddress8
 
 class Member6(base_types._BaseFieldType):
 
-	__slots__ = ["_ComAdr", "_MmbRtrAdr", "_CtctRef"]
+	__slots__ = ["_ComAdr", "_CtctRef", "_MmbRtrAdr"]
 	@property
 	def ComAdr(self):
 		return self._ComAdr

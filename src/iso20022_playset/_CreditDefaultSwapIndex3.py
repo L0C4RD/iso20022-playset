@@ -1,14 +1,14 @@
 from . import base_types
-from ._Max25Text import Max25Text
-from ._ISODate import ISODate
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._RestrictedMonthExact2Number import RestrictedMonthExact2Number
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._ISODate import ISODate
+from ._Max25Text import Max25Text
 from ._Number import Number
+from ._RestrictedMonthExact2Number import RestrictedMonthExact2Number
 
 class CreditDefaultSwapIndex3(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygIndxId", "_NtnlCcy", "_Vrsn", "_RollMnth", "_Srs", "_UndrlygIndxNm", "_NxtRollDt"]
+	__slots__ = ["_NtnlCcy", "_NxtRollDt", "_RollMnth", "_Srs", "_UndrlygIndxId", "_UndrlygIndxNm", "_Vrsn"]
 	@property
 	def NtnlCcy(self):
 		return self._NtnlCcy

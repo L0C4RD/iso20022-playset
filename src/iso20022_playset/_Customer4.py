@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._PhoneNumber import PhoneNumber
+from ._CustomerType2Code import CustomerType2Code
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
-from ._CustomerType2Code import CustomerType2Code
+from ._PhoneNumber import PhoneNumber
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Customer4(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_AuthrsdCtctCpny", "_VIPInd", "_AuthrsdCtctPhneNb", "_TaxRegnId", "_CstmrRltsh", "_AuthrsdCtctNm", "_RefNb"]
+	__slots__ = ["_AuthrsdCtctCpny", "_AuthrsdCtctNm", "_AuthrsdCtctPhneNb", "_CstmrRltsh", "_RefNb", "_TaxRegnId", "_Tp", "_VIPInd"]
 	@property
 	def AuthrsdCtctCpny(self):
 		return self._AuthrsdCtctCpny

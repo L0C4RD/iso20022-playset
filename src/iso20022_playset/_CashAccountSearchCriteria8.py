@@ -1,14 +1,14 @@
 from . import base_types
+from ._AccountIdentificationSearchCriteria2Choice import AccountIdentificationSearchCriteria2Choice
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashBalance14 import CashBalance14
 from ._CashAccountType2Choice import CashAccountType2Choice
-from ._AccountIdentificationSearchCriteria2Choice import AccountIdentificationSearchCriteria2Choice
+from ._CashBalance14 import CashBalance14
 from ._PartyIdentification272 import PartyIdentification272
 
 class CashAccountSearchCriteria8(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_AcctSvcr", "_AcctId", "_Ccy", "_AcctOwnr", "_Bal"]
+	__slots__ = ["_AcctId", "_AcctOwnr", "_AcctSvcr", "_Bal", "_Ccy", "_Tp"]
 	@property
 	def AcctId(self):
 		return self._AcctId

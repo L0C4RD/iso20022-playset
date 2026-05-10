@@ -1,11 +1,11 @@
 from . import base_types
+from ._AuthorityRequestType1 import AuthorityRequestType1
 from ._Max500Text import Max500Text
 from ._Min8Max28NumericText import Min8Max28NumericText
-from ._AuthorityRequestType1 import AuthorityRequestType1
 
 class PaymentInstrumentType1(base_types._BaseFieldType):
 
-	__slots__ = ["_CardNb", "_AuthrtyReqTp", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_AuthrtyReqTp", "_CardNb"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

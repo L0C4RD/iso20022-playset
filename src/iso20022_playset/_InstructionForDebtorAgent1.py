@@ -4,7 +4,7 @@ from ._Max140Text import Max140Text
 
 class InstructionForDebtorAgent1(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrInf", "_Cd"]
+	__slots__ = ["_Cd", "_InstrInf"]
 	@property
 	def Cd(self):
 		return self._Cd

@@ -1,13 +1,13 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._DateTimePeriod1 import DateTimePeriod1
 from ._InterestType1Choice import InterestType1Choice
+from ._Max35Text import Max35Text
 from ._Rate4 import Rate4
 from ._TaxCharges2 import TaxCharges2
 
 class AccountInterest4(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_Tp", "_FrToDt", "_Tax", "_Rsn"]
+	__slots__ = ["_FrToDt", "_Rate", "_Rsn", "_Tax", "_Tp"]
 	@property
 	def FrToDt(self):
 		return self._FrToDt

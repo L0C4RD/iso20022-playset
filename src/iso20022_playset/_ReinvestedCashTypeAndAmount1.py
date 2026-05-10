@@ -1,10 +1,10 @@
 from . import base_types
-from ._ReinvestmentType1Code import ReinvestmentType1Code
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ReinvestmentType1Code import ReinvestmentType1Code
 
 class ReinvestedCashTypeAndAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_RinvstdCshAmt"]
+	__slots__ = ["_RinvstdCshAmt", "_Tp"]
 	@property
 	def RinvstdCshAmt(self):
 		return self._RinvstdCshAmt

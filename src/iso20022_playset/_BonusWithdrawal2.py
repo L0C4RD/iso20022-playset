@@ -1,14 +1,14 @@
 from . import base_types
-from ._TypeOfAmount1Choice import TypeOfAmount1Choice
 from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
-from ._YesNoIndicator import YesNoIndicator
-from ._Max35Text import Max35Text
-from ._WithdrawalReason1Choice import WithdrawalReason1Choice
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._Max35Text import Max35Text
+from ._TypeOfAmount1Choice import TypeOfAmount1Choice
+from ._WithdrawalReason1Choice import WithdrawalReason1Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class BonusWithdrawal2(base_types._BaseFieldType):
 
-	__slots__ = ["_Outsdng", "_UclmdAmt", "_Rsn", "_Amt", "_AddtlInf", "_Ref", "_TpOfAmt"]
+	__slots__ = ["_AddtlInf", "_Amt", "_Outsdng", "_Ref", "_Rsn", "_TpOfAmt", "_UclmdAmt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

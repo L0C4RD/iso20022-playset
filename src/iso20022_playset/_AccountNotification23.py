@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Party50Choice import Party50Choice
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
 from ._NotificationItem9 import NotificationItem9
-from ._CashAccount40 import CashAccount40
+from ._Party50Choice import Party50Choice
 
 class AccountNotification23(base_types._BaseFieldType):
 
-	__slots__ = ["_Itm", "_AcctSvcr", "_RltdAcct", "_XpctdValDt", "_Dbtr", "_Id", "_AcctOwnr", "_IntrmyAgt", "_DbtrAgt", "_Acct", "_TtlAmt"]
+	__slots__ = ["_Acct", "_AcctOwnr", "_AcctSvcr", "_Dbtr", "_DbtrAgt", "_Id", "_IntrmyAgt", "_Itm", "_RltdAcct", "_TtlAmt", "_XpctdValDt"]
 	@property
 	def Acct(self):
 		return self._Acct

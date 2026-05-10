@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._SettlementFailsDailyData3 import SettlementFailsDailyData3
 from ._SettlementFailsData3 import SettlementFailsData3
 from ._SettlementFailsReportHeader2 import SettlementFailsReportHeader2
-from ._SettlementFailsDailyData3 import SettlementFailsDailyData3
+from ._SupplementaryData1 import SupplementaryData1
 
 class SettlementFailsMonthlyReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RptHdr", "_SplmtryData", "_DalyData", "_MnthlyAggt"]
+	__slots__ = ["_DalyData", "_MnthlyAggt", "_RptHdr", "_SplmtryData"]
 	@property
 	def DalyData(self):
 		return self._DalyData

@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class SecuritiesCertificate3(base_types._BaseFieldType):
 
-	__slots__ = ["_SchmeNm", "_Issr", "_Nb"]
+	__slots__ = ["_Issr", "_Nb", "_SchmeNm"]
 	@property
 	def Issr(self):
 		return self._Issr

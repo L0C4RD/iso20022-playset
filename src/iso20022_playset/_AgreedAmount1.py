@@ -3,7 +3,7 @@ from ._Amount1 import Amount1
 
 class AgreedAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_VartnMrgnAmt", "_SgrtdIndpdntAmt"]
+	__slots__ = ["_SgrtdIndpdntAmt", "_VartnMrgnAmt"]
 	@property
 	def SgrtdIndpdntAmt(self):
 		return self._SgrtdIndpdntAmt

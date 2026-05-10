@@ -5,7 +5,7 @@ from ._SupportingDocument4 import SupportingDocument4
 
 class CurrencyControlSupportingDocumentDeliveryV04(base_types._BaseFieldType):
 
-	__slots__ = ["_SpprtgDoc", "_SplmtryData", "_GrpHdr"]
+	__slots__ = ["_GrpHdr", "_SplmtryData", "_SpprtgDoc"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

@@ -1,15 +1,15 @@
 from . import base_types
 from ._ClosingBalance5 import ClosingBalance5
-from ._Transaction161 import Transaction161
 from ._FinancialInstrument72 import FinancialInstrument72
-from ._SecurityIdentification19 import SecurityIdentification19
 from ._OpeningBalance5 import OpeningBalance5
 from ._PriceInformation30 import PriceInformation30
 from ._SafeKeepingPlace5 import SafeKeepingPlace5
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._Transaction161 import Transaction161
 
 class FinancialInstrumentDetails46(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_ClsgBal", "_InvstmtFndsFinInstrmAttrbts", "_SfkpgPlc", "_PricDtls", "_OpngBal", "_Tx"]
+	__slots__ = ["_ClsgBal", "_FinInstrmId", "_InvstmtFndsFinInstrmAttrbts", "_OpngBal", "_PricDtls", "_SfkpgPlc", "_Tx"]
 	@property
 	def ClsgBal(self):
 		return self._ClsgBal

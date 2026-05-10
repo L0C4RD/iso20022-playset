@@ -1,7 +1,7 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._MessageHeader3 import MessageHeader3
 from ._PartyOrOperationalError4Choice import PartyOrOperationalError4Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class PartyReportV02(base_types._BaseFieldType):
 

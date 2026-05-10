@@ -1,12 +1,12 @@
 from . import base_types
+from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._Max35Text import Max35Text
 from ._SupplementaryData1 import SupplementaryData1
 from ._WithdrawalReason1 import WithdrawalReason1
-from ._Max35Text import Max35Text
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 
 class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MtchgSysUnqRef", "_SttlmSsnIdr", "_MsgId", "_WdrwlRsn", "_SplmtryData"]
+	__slots__ = ["_MsgId", "_MtchgSysUnqRef", "_SplmtryData", "_SttlmSsnIdr", "_WdrwlRsn"]
 	@property
 	def MsgId(self):
 		return self._MsgId

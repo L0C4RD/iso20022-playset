@@ -4,7 +4,7 @@ from ._Number import Number
 
 class ATMMediaMix1(base_types._BaseFieldType):
 
-	__slots__ = ["_Nb", "_UnitVal", "_CshUnitNb"]
+	__slots__ = ["_CshUnitNb", "_Nb", "_UnitVal"]
 	@property
 	def CshUnitNb(self):
 		return self._CshUnitNb

@@ -4,7 +4,7 @@ from ._StructuredLongPostalAddress1 import StructuredLongPostalAddress1
 
 class LongPostalAddress1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Ustrd", "_Strd"]
+	__slots__ = ["_Strd", "_Ustrd"]
 	@property
 	def Strd(self):
 		return self._Strd

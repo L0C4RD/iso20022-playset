@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PercentageRate import PercentageRate
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._BaseOneRate import BaseOneRate
 from ._DepositType1Code import DepositType1Code
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._PercentageRate import PercentageRate
 
 class CashCollateral4(base_types._BaseFieldType):
 
-	__slots__ = ["_CollVal", "_ValDt", "_Hrcut", "_XchgRate", "_DpstTp", "_MtrtyDt", "_DpstAmt", "_BlckdAmt", "_AsstNb"]
+	__slots__ = ["_AsstNb", "_BlckdAmt", "_CollVal", "_DpstAmt", "_DpstTp", "_Hrcut", "_MtrtyDt", "_ValDt", "_XchgRate"]
 	@property
 	def AsstNb(self):
 		return self._AsstNb

@@ -6,7 +6,7 @@ from ._SafekeepingPlaceTypeAndText1 import SafekeepingPlaceTypeAndText1
 
 class SafekeepingPlaceFormat7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Ctry", "_TpAndId", "_Id"]
+	__slots__ = ["_Ctry", "_Id", "_Prtry", "_TpAndId"]
 	@property
 	def Ctry(self):
 		return self._Ctry

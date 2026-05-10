@@ -1,13 +1,13 @@
 from . import base_types
-from ._DateTimeSearch2Choice import DateTimeSearch2Choice
 from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._SystemIdentification2Choice import SystemIdentification2Choice
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._DateTimeSearch2Choice import DateTimeSearch2Choice
 from ._ReservationType2Choice import ReservationType2Choice
+from ._SystemIdentification2Choice import SystemIdentification2Choice
 
 class ReservationSearchCriteria6(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_CurRsvatnTp", "_SysId", "_DfltRsvatnTp", "_AcctOwnr", "_DtTm"]
+	__slots__ = ["_AcctId", "_AcctOwnr", "_CurRsvatnTp", "_DfltRsvatnTp", "_DtTm", "_SysId"]
 	@property
 	def AcctId(self):
 		return self._AcctId

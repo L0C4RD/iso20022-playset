@@ -1,16 +1,16 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._FormOfSecurity1Code import FormOfSecurity1Code
-from ._YesNoIndicator import YesNoIndicator
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._DistributionPolicy1Code import DistributionPolicy1Code
 from ._CountryCode import CountryCode
+from ._DistributionPolicy1Code import DistributionPolicy1Code
+from ._FormOfSecurity1Code import FormOfSecurity1Code
 from ._Max35Text import Max35Text
 from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._YesNoIndicator import YesNoIndicator
 
 class FinancialInstrument22(base_types._BaseFieldType):
 
-	__slots__ = ["_DnmtnCcy", "_SctiesForm", "_BaseCcy", "_UmbrllNm", "_DstrbtnPlcy", "_DualFndInd", "_RegdDstrbtnCtry", "_ClssTp", "_CtryOfDmcl", "_PdctGrp", "_ReqdNAVCcy"]
+	__slots__ = ["_BaseCcy", "_ClssTp", "_CtryOfDmcl", "_DnmtnCcy", "_DstrbtnPlcy", "_DualFndInd", "_PdctGrp", "_RegdDstrbtnCtry", "_ReqdNAVCcy", "_SctiesForm", "_UmbrllNm"]
 	@property
 	def BaseCcy(self):
 		return self._BaseCcy

@@ -1,14 +1,14 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._Demand2 import Demand2
-from ._Max2000Text import Max2000Text
 from ._Discrepancy1 import Discrepancy1
+from ._Max2000Text import Max2000Text
+from ._Max35Text import Max35Text
 from ._Refused7Text import Refused7Text
 from ._Undertaking9 import Undertaking9
 
 class DemandRefusal1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_DspstnOfDocs", "_Sts", "_DmndDtls", "_ScndAdvsgPtyRefNb", "_AdvsgPtyRefNb", "_CnfrmrRefNb", "_Dscrpncy", "_UdrtkgId"]
+	__slots__ = ["_AddtlInf", "_AdvsgPtyRefNb", "_CnfrmrRefNb", "_DmndDtls", "_Dscrpncy", "_DspstnOfDocs", "_ScndAdvsgPtyRefNb", "_Sts", "_UdrtkgId"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

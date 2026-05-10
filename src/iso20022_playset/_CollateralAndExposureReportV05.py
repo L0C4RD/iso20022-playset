@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._ReportParameters6 import ReportParameters6
-from ._Obligation11 import Obligation11
-from ._Collateral53 import Collateral53
 from ._Agreement4 import Agreement4
+from ._Collateral53 import Collateral53
+from ._Obligation11 import Obligation11
 from ._Pagination1 import Pagination1
+from ._ReportParameters6 import ReportParameters6
+from ._SupplementaryData1 import SupplementaryData1
 
 class CollateralAndExposureReportV05(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Oblgtn", "_Agrmt", "_CollRpt", "_RptParams", "_Pgntn"]
+	__slots__ = ["_Agrmt", "_CollRpt", "_Oblgtn", "_Pgntn", "_RptParams", "_SplmtryData"]
 	@property
 	def Agrmt(self):
 		return self._Agrmt

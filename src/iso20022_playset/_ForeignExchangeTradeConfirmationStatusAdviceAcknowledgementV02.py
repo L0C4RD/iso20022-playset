@@ -1,17 +1,17 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._TradeConfirmationStatus1Code import TradeConfirmationStatus1Code
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradingModeType1Code import TradingModeType1Code
-from ._Max35Text import Max35Text
 from ._AdditionalInformation5 import AdditionalInformation5
-from ._MessageIdentification1 import MessageIdentification1
 from ._AffirmStatus1Code import AffirmStatus1Code
+from ._ISODate import ISODate
 from ._MarketIdentification88 import MarketIdentification88
+from ._Max35Text import Max35Text
+from ._MessageIdentification1 import MessageIdentification1
+from ._SupplementaryData1 import SupplementaryData1
+from ._TradeConfirmationStatus1Code import TradeConfirmationStatus1Code
+from ._TradingModeType1Code import TradingModeType1Code
 
 class ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgMd", "_TradId", "_TradDt", "_AdvcAckId", "_AffirmSts", "_MktId", "_ConfSts", "_AddtlInf", "_ReqId", "_SplmtryData"]
+	__slots__ = ["_AddtlInf", "_AdvcAckId", "_AffirmSts", "_ConfSts", "_MktId", "_ReqId", "_SplmtryData", "_TradDt", "_TradId", "_TradgMd"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

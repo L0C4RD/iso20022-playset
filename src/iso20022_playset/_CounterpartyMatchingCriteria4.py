@@ -1,11 +1,11 @@
 from . import base_types
+from ._CompareCounterpartySide2 import CompareCounterpartySide2
 from ._CompareOrganisationIdentification6 import CompareOrganisationIdentification6
 from ._CompareOrganisationIdentification7 import CompareOrganisationIdentification7
-from ._CompareCounterpartySide2 import CompareCounterpartySide2
 
 class CounterpartyMatchingCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgCtrPty", "_CtrPtySd", "_OthrCtrPty"]
+	__slots__ = ["_CtrPtySd", "_OthrCtrPty", "_RptgCtrPty"]
 	@property
 	def CtrPtySd(self):
 		return self._CtrPtySd

@@ -4,7 +4,7 @@ from ._OwnershipLegalRestrictions1Code import OwnershipLegalRestrictions1Code
 
 class Restriction6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

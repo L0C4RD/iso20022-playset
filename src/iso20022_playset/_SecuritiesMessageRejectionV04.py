@@ -1,10 +1,10 @@
 from . import base_types
-from ._RejectionReason69 import RejectionReason69
 from ._AdditionalReference14 import AdditionalReference14
+from ._RejectionReason69 import RejectionReason69
 
 class SecuritiesMessageRejectionV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_RltdRef"]
+	__slots__ = ["_RltdRef", "_Rsn"]
 	@property
 	def RltdRef(self):
 		return self._RltdRef

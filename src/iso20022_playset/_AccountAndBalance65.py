@@ -1,13 +1,13 @@
 from . import base_types
+from ._CorporateActionBalanceDetails46 import CorporateActionBalanceDetails46
 from ._PartyIdentification136Choice import PartyIdentification136Choice
+from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
 from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
 from ._SafekeepingPlaceFormat55Choice import SafekeepingPlaceFormat55Choice
-from ._CorporateActionBalanceDetails46 import CorporateActionBalanceDetails46
-from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
 
 class AccountAndBalance65(base_types._BaseFieldType):
 
-	__slots__ = ["_Bal", "_AcctOwnr", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_SfkpgPlc"]
+	__slots__ = ["_AcctOwnr", "_Bal", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_SfkpgPlc"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

@@ -1,16 +1,16 @@
 from . import base_types
-from ._VoteDetails6 import VoteDetails6
-from ._SpecificInstructionRequest4 import SpecificInstructionRequest4
-from ._YesNoIndicator import YesNoIndicator
-from ._Proxy12 import Proxy12
-from ._SafekeepingAccount19 import SafekeepingAccount19
+from ._ISODateTime import ISODateTime
 from ._IndividualPerson41 import IndividualPerson41
 from ._Max35Text import Max35Text
-from ._ISODateTime import ISODateTime
+from ._Proxy12 import Proxy12
+from ._SafekeepingAccount19 import SafekeepingAccount19
+from ._SpecificInstructionRequest4 import SpecificInstructionRequest4
+from ._VoteDetails6 import VoteDetails6
+from ._YesNoIndicator import YesNoIndicator
 
 class Instruction8(base_types._BaseFieldType):
 
-	__slots__ = ["_Prxy", "_ReqdExctnDt", "_VoteDtls", "_SpcfcInstrReq", "_SnglInstrId", "_VoteExctnConf", "_MtgAttndee", "_AcctDtls"]
+	__slots__ = ["_AcctDtls", "_MtgAttndee", "_Prxy", "_ReqdExctnDt", "_SnglInstrId", "_SpcfcInstrReq", "_VoteDtls", "_VoteExctnConf"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

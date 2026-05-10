@@ -1,16 +1,16 @@
 from . import base_types
-from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
 from ._AmountAndDirection19 import AmountAndDirection19
-from ._Quantity54Choice import Quantity54Choice
-from ._PartyIdentification156 import PartyIdentification156
-from ._SecuritiesAccount30 import SecuritiesAccount30
-from ._SafeKeepingPlace4 import SafeKeepingPlace4
 from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
 from ._CashAccountIdentification6Choice import CashAccountIdentification6Choice
+from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
+from ._PartyIdentification156 import PartyIdentification156
+from ._Quantity54Choice import Quantity54Choice
+from ._SafeKeepingPlace4 import SafeKeepingPlace4
+from ._SecuritiesAccount30 import SecuritiesAccount30
 
 class QuantityAndAccount103(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_CshAcct", "_SfkpgPlc", "_SfkpgAcct", "_RmngToBeSttldQty", "_PrevslySttldQty", "_PrevslySttldAmt", "_AcctOwnr", "_SttldQty", "_RmngToBeSttldAmt"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_CshAcct", "_PrevslySttldAmt", "_PrevslySttldQty", "_RmngToBeSttldAmt", "_RmngToBeSttldQty", "_SfkpgAcct", "_SfkpgPlc", "_SttldQty"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

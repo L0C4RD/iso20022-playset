@@ -1,13 +1,13 @@
 from . import base_types
 from ._BusinessLetter1 import BusinessLetter1
 from ._DecimalNumber import DecimalNumber
-from ._ReconciliationList1 import ReconciliationList1
-from ._Max15NumericText import Max15NumericText
 from ._EncapsulatedBusinessMessage1 import EncapsulatedBusinessMessage1
+from ._Max15NumericText import Max15NumericText
+from ._ReconciliationList1 import ReconciliationList1
 
 class InvoicePaymentReconciliationAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnList", "_Hdr", "_AttchdMsg", "_RcncltnCnt", "_CtrlSum", "_ItmCnt"]
+	__slots__ = ["_AttchdMsg", "_CtrlSum", "_Hdr", "_ItmCnt", "_RcncltnCnt", "_RcncltnList"]
 	@property
 	def AttchdMsg(self):
 		return self._AttchdMsg

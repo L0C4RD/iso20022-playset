@@ -1,15 +1,15 @@
 from . import base_types
 from ._CountryCode import CountryCode
-from ._TaxCalculationInformation9 import TaxCalculationInformation9
-from ._YesNoIndicator import YesNoIndicator
-from ._TaxType3Choice import TaxType3Choice
+from ._ExemptionReason1Choice import ExemptionReason1Choice
 from ._PartyIdentification113 import PartyIdentification113
 from ._TaxAmountOrRate4Choice import TaxAmountOrRate4Choice
-from ._ExemptionReason1Choice import ExemptionReason1Choice
+from ._TaxCalculationInformation9 import TaxCalculationInformation9
+from ._TaxType3Choice import TaxType3Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class Tax30(base_types._BaseFieldType):
 
-	__slots__ = ["_Tax", "_XmptnRsn", "_TaxClctnDtls", "_Ctry", "_RcptId", "_Tp", "_XmptnInd"]
+	__slots__ = ["_Ctry", "_RcptId", "_Tax", "_TaxClctnDtls", "_Tp", "_XmptnInd", "_XmptnRsn"]
 	@property
 	def Ctry(self):
 		return self._Ctry

@@ -1,12 +1,12 @@
 from . import base_types
+from ._AdjustmentRequest1 import AdjustmentRequest1
+from ._CompensationRequest1 import CompensationRequest1
 from ._DebitAuthorisation3 import DebitAuthorisation3
 from ._Max500Text import Max500Text
-from ._CompensationRequest1 import CompensationRequest1
-from ._AdjustmentRequest1 import AdjustmentRequest1
 
 class AdditionalRequestData1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqdCompstn", "_ReqdDbtAuthstn", "_ReqNrrtv", "_ReqdValtn"]
+	__slots__ = ["_ReqNrrtv", "_ReqdCompstn", "_ReqdDbtAuthstn", "_ReqdValtn"]
 	@property
 	def ReqNrrtv(self):
 		return self._ReqNrrtv

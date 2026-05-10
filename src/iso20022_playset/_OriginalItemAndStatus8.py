@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._UUIDv4Identifier import UUIDv4Identifier
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._Max35Text import Max35Text
-from ._OriginalItemReference7 import OriginalItemReference7
-from ._NotificationStatus3Code import NotificationStatus3Code
+from ._ISODate import ISODate
 from ._Max105Text import Max105Text
+from ._Max35Text import Max35Text
+from ._NotificationStatus3Code import NotificationStatus3Code
+from ._OriginalItemReference7 import OriginalItemReference7
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class OriginalItemAndStatus8(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlStsInf", "_XpctdValDt", "_OrgnlItmRef", "_ItmSts", "_OrgnlUETR", "_OrgnlEndToEndId", "_Amt", "_OrgnlItmId"]
+	__slots__ = ["_AddtlStsInf", "_Amt", "_ItmSts", "_OrgnlEndToEndId", "_OrgnlItmId", "_OrgnlItmRef", "_OrgnlUETR", "_XpctdValDt"]
 	@property
 	def AddtlStsInf(self):
 		return self._AddtlStsInf

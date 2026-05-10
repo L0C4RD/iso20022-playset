@@ -1,16 +1,16 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
+from ._ModificationProcessingStatus11Choice import ModificationProcessingStatus11Choice
 from ._PartyIdentification156 import PartyIdentification156
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._SecuritiesAccount30 import SecuritiesAccount30
+from ._SupplementaryData1 import SupplementaryData1
 from ._TransactionDetails158 import TransactionDetails158
 from ._TransactionIdentifications37 import TransactionIdentifications37
-from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._ModificationProcessingStatus11Choice import ModificationProcessingStatus11Choice
 
 class SecuritiesSettlementTransactionModificationRequestStatusAdvice002V06(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_SfkpgAcct", "_TxId", "_AcctOwnr", "_SplmtryData", "_TxDtls", "_ModPrcgSts", "_ModReqRef"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_ModPrcgSts", "_ModReqRef", "_SfkpgAcct", "_SplmtryData", "_TxDtls", "_TxId"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

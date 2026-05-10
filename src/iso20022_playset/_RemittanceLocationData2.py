@@ -5,7 +5,7 @@ from ._RemittanceLocationMethod2Code import RemittanceLocationMethod2Code
 
 class RemittanceLocationData2(base_types._BaseFieldType):
 
-	__slots__ = ["_Mtd", "_PstlAdr", "_ElctrncAdr"]
+	__slots__ = ["_ElctrncAdr", "_Mtd", "_PstlAdr"]
 	@property
 	def ElctrncAdr(self):
 		return self._ElctrncAdr

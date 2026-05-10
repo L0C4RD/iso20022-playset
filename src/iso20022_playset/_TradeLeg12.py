@@ -1,31 +1,31 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._UTIIdentifier import UTIIdentifier
+from ._AmountAndDirection21 import AmountAndDirection21
+from ._Clearing7 import Clearing7
+from ._CurrencyCode import CurrencyCode
 from ._DateFormat66Choice import DateFormat66Choice
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._AmountAndDirection21 import AmountAndDirection21
-from ._SecurityIdentification48 import SecurityIdentification48
-from ._TradingCapacity5Code import TradingCapacity5Code
-from ._Settlement2 import Settlement2
-from ._Side1Code import Side1Code
 from ._ISODateTime import ISODateTime
 from ._MarketIdentification84 import MarketIdentification84
-from ._PartyIdentificationAndAccount230 import PartyIdentificationAndAccount230
 from ._MarketIdentification85 import MarketIdentification85
-from ._YesNoIndicator import YesNoIndicator
-from ._Clearing7 import Clearing7
-from ._TradePosting1Code import TradePosting1Code
-from ._SafekeepingPlaceFormat43Choice import SafekeepingPlaceFormat43Choice
-from ._TradeType1Code import TradeType1Code
-from ._Price14 import Price14
-from ._CurrencyCode import CurrencyCode
-from ._PartyIdentificationAndAccount227 import PartyIdentificationAndAccount227
 from ._Max35Text import Max35Text
 from ._PartyIdentification253Choice import PartyIdentification253Choice
+from ._PartyIdentificationAndAccount227 import PartyIdentificationAndAccount227
+from ._PartyIdentificationAndAccount230 import PartyIdentificationAndAccount230
+from ._Price14 import Price14
+from ._SafekeepingPlaceFormat43Choice import SafekeepingPlaceFormat43Choice
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SecurityIdentification48 import SecurityIdentification48
+from ._Settlement2 import Settlement2
+from ._Side1Code import Side1Code
+from ._TradePosting1Code import TradePosting1Code
+from ._TradeType1Code import TradeType1Code
+from ._TradingCapacity5Code import TradingCapacity5Code
+from ._UTIIdentifier import UTIIdentifier
+from ._YesNoIndicator import YesNoIndicator
 
 class TradeLeg12(base_types._BaseFieldType):
 
-	__slots__ = ["_PlcOfListg", "_TradTp", "_TradQty", "_Brkr", "_TradgPtyAcct", "_FinInstrmId", "_TradgCpcty", "_TradDt", "_SfkpgAcct", "_DlvryAcct", "_DerivRltdTrad", "_GrssAmt", "_TradLegId", "_TradRegnOrgn", "_OrdrId", "_TradgCcy", "_PlcOfTrad", "_BuySellInd", "_SfkpgPlc", "_DealPric", "_UnqTxIdr", "_TradPstngCd", "_AcrdIntrstAmt", "_MrgnAcct", "_SttlmDt", "_TradId", "_SttlmDtls", "_AllcnId", "_TxDtAndTm", "_TradgPty", "_ClrDtls", "_NonClrMmb", "_TradExctnId"]
+	__slots__ = ["_AcrdIntrstAmt", "_AllcnId", "_Brkr", "_BuySellInd", "_ClrDtls", "_DealPric", "_DerivRltdTrad", "_DlvryAcct", "_FinInstrmId", "_GrssAmt", "_MrgnAcct", "_NonClrMmb", "_OrdrId", "_PlcOfListg", "_PlcOfTrad", "_SfkpgAcct", "_SfkpgPlc", "_SttlmDt", "_SttlmDtls", "_TradDt", "_TradExctnId", "_TradId", "_TradLegId", "_TradPstngCd", "_TradQty", "_TradRegnOrgn", "_TradTp", "_TradgCcy", "_TradgCpcty", "_TradgPty", "_TradgPtyAcct", "_TxDtAndTm", "_UnqTxIdr"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt

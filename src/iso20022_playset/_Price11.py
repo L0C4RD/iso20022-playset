@@ -1,10 +1,10 @@
 from . import base_types
-from ._YieldedOrValueType2Choice import YieldedOrValueType2Choice
 from ._PriceRateOrAmount1Choice import PriceRateOrAmount1Choice
+from ._YieldedOrValueType2Choice import YieldedOrValueType2Choice
 
 class Price11(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_Tp"]
+	__slots__ = ["_Tp", "_Val"]
 	@property
 	def Tp(self):
 		return self._Tp

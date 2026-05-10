@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._Frequency3Code import Frequency3Code
+from ._ISODate import ISODate
 from ._Number import Number
 
 class RecurringTransaction3(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrvlDay", "_NbOfOcrncs", "_PrdUnit", "_StartDt", "_EndDt"]
+	__slots__ = ["_EndDt", "_IntrvlDay", "_NbOfOcrncs", "_PrdUnit", "_StartDt"]
 	@property
 	def EndDt(self):
 		return self._EndDt

@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ExternalBillingBalanceType1Code import ExternalBillingBalanceType1Code
+from ._Max35Text import Max35Text
 
 class BillingBalanceType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

@@ -5,7 +5,7 @@ from ._TMSHeader1 import TMSHeader1
 
 class AcceptorConfigurationUpdateV14(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_AccptrCfgtn", "_SctyTrlr"]
+	__slots__ = ["_AccptrCfgtn", "_Hdr", "_SctyTrlr"]
 	@property
 	def AccptrCfgtn(self):
 		return self._AccptrCfgtn

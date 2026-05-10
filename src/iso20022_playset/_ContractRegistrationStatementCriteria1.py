@@ -3,7 +3,7 @@ from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_TxJrnl", "_AddtlSpprtgDocJrnl", "_SpprtgDocJrnl", "_RgltryRuleVldtn"]
+	__slots__ = ["_AddtlSpprtgDocJrnl", "_RgltryRuleVldtn", "_SpprtgDocJrnl", "_TxJrnl"]
 	@property
 	def AddtlSpprtgDocJrnl(self):
 		return self._AddtlSpprtgDocJrnl

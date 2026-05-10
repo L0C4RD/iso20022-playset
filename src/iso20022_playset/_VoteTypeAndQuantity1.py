@@ -1,10 +1,10 @@
 from . import base_types
-from ._VoteInstructionType1Choice import VoteInstructionType1Choice
 from ._Number import Number
+from ._VoteInstructionType1Choice import VoteInstructionType1Choice
 
 class VoteTypeAndQuantity1(base_types._BaseFieldType):
 
-	__slots__ = ["_VoteQty", "_VoteInstrTp"]
+	__slots__ = ["_VoteInstrTp", "_VoteQty"]
 	@property
 	def VoteInstrTp(self):
 		return self._VoteInstrTp

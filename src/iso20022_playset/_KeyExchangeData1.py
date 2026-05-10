@@ -1,15 +1,15 @@
 from . import base_types
+from ._Exact1HexBinaryText import Exact1HexBinaryText
 from ._Max2NumericText import Max2NumericText
 from ._Max32HexBinaryText import Max32HexBinaryText
-from ._Exact1HexBinaryText import Exact1HexBinaryText
-from ._Max8NumericText import Max8NumericText
 from ._Max4NumericText import Max4NumericText
-from ._Max9999HexBinaryText import Max9999HexBinaryText
 from ._Max5NumericText import Max5NumericText
+from ._Max8NumericText import Max8NumericText
+from ._Max9999HexBinaryText import Max9999HexBinaryText
 
 class KeyExchangeData1(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyLngth", "_Algo", "_KeyPrtcn", "_KeyIndx", "_KeySetIdr", "_Ctrl", "_NcrptdData", "_KeyChcksmVal", "_DrvdInf"]
+	__slots__ = ["_Algo", "_Ctrl", "_DrvdInf", "_KeyChcksmVal", "_KeyIndx", "_KeyLngth", "_KeyPrtcn", "_KeySetIdr", "_NcrptdData"]
 	@property
 	def Algo(self):
 		return self._Algo

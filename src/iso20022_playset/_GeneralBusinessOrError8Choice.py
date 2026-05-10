@@ -1,10 +1,10 @@
 from . import base_types
-from ._GeneralBusinessInformation1 import GeneralBusinessInformation1
 from ._ErrorHandling5 import ErrorHandling5
+from ._GeneralBusinessInformation1 import GeneralBusinessInformation1
 
 class GeneralBusinessOrError8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_GnlBiz", "_BizErr"]
+	__slots__ = ["_BizErr", "_GnlBiz"]
 	@property
 	def BizErr(self):
 		return self._BizErr

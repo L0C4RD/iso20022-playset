@@ -5,7 +5,7 @@ from ._NonEquitySubClass1 import NonEquitySubClass1
 
 class AssetClassAndSubClassIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_DerivSubClss", "_AsstClss", "_FinInstrmClssfctn"]
+	__slots__ = ["_AsstClss", "_DerivSubClss", "_FinInstrmClssfctn"]
 	@property
 	def AsstClss(self):
 		return self._AsstClss

@@ -4,7 +4,7 @@ from ._VoteInstructionType1Choice import VoteInstructionType1Choice
 
 class VoteInstructionForMeetingResolution3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_VoteIndctn", "_Shrhldr"]
+	__slots__ = ["_Shrhldr", "_VoteIndctn"]
 	@property
 	def Shrhldr(self):
 		return self._Shrhldr

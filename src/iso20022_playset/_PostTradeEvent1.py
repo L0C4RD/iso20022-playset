@@ -1,13 +1,13 @@
 from . import base_types
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._ISODate import ISODate
+from ._Max35Text import Max35Text
 from ._PostTradeEventType2Choice import PostTradeEventType2Choice
 from ._ProfitAndLossAmount2 import ProfitAndLossAmount2
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._Max35Text import Max35Text
 
 class PostTradeEvent1(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygLbltyRef", "_OutsdngSttlmAmt", "_Tp", "_PrftOrLoss", "_OrgnlRef", "_PrftOrLossSttlmDt"]
+	__slots__ = ["_OrgnlRef", "_OutsdngSttlmAmt", "_PrftOrLoss", "_PrftOrLossSttlmDt", "_Tp", "_UndrlygLbltyRef"]
 	@property
 	def OrgnlRef(self):
 		return self._OrgnlRef

@@ -6,7 +6,7 @@ from ._Number import Number
 
 class Parameter16(base_types._BaseFieldType):
 
-	__slots__ = ["_OIDCrvNm", "_MskGnrtrAlgo", "_DgstAlgo", "_SaltLngth", "_TrlrFld"]
+	__slots__ = ["_DgstAlgo", "_MskGnrtrAlgo", "_OIDCrvNm", "_SaltLngth", "_TrlrFld"]
 	@property
 	def DgstAlgo(self):
 		return self._DgstAlgo

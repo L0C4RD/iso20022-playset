@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISODateTime import ISODateTime
-from ._Party50Choice import Party50Choice
 from ._Max35Text import Max35Text
+from ._Party50Choice import Party50Choice
 
 class GroupHeader121(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgRcpt", "_CreDtTm", "_MsgId"]
+	__slots__ = ["_CreDtTm", "_MsgId", "_MsgRcpt"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

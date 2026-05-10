@@ -1,11 +1,11 @@
 from . import base_types
 from ._CorporateActionStandingInstruction1 import CorporateActionStandingInstruction1
-from ._DocumentIdentification8 import DocumentIdentification8
 from ._CorporateActionStandingInstructionGeneralInformation1 import CorporateActionStandingInstructionGeneralInformation1
+from ._DocumentIdentification8 import DocumentIdentification8
 
 class AgentCAStandingInstructionCancellationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_StgInstrGnlInf", "_AgtCAStgInstrReqId", "_Id", "_StgInstrDtls"]
+	__slots__ = ["_AgtCAStgInstrReqId", "_Id", "_StgInstrDtls", "_StgInstrGnlInf"]
 	@property
 	def AgtCAStgInstrReqId(self):
 		return self._AgtCAStgInstrReqId

@@ -1,10 +1,10 @@
 from . import base_types
-from ._TaxAuthorisation1 import TaxAuthorisation1
 from ._Max35Text import Max35Text
+from ._TaxAuthorisation1 import TaxAuthorisation1
 
 class TaxParty2(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxId", "_RegnId", "_TaxTp", "_Authstn"]
+	__slots__ = ["_Authstn", "_RegnId", "_TaxId", "_TaxTp"]
 	@property
 	def Authstn(self):
 		return self._Authstn

@@ -1,12 +1,12 @@
 from . import base_types
 from ._ActionTaken1Code import ActionTaken1Code
 from ._AdditionalInformation30 import AdditionalInformation30
-from ._Max35Text import Max35Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
 
 class FraudDispositionStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_ErrData", "_AddtlInf", "_OthrActnTaken", "_WrngData", "_ActnTaken"]
+	__slots__ = ["_ActnTaken", "_AddtlInf", "_ErrData", "_OthrActnTaken", "_WrngData"]
 	@property
 	def ActnTaken(self):
 		return self._ActnTaken

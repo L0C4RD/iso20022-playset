@@ -1,12 +1,12 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ISODateTime import ISODateTime
+from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._SecurityCharacteristics3 import SecurityCharacteristics3
 
 class CollateralValuePosition3(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlCollValtn", "_Scties", "_DataAccsTm", "_SctiesAcct"]
+	__slots__ = ["_DataAccsTm", "_Scties", "_SctiesAcct", "_TtlCollValtn"]
 	@property
 	def DataAccsTm(self):
 		return self._DataAccsTm

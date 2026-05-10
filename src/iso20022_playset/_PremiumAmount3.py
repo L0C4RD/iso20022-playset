@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max35Text import Max35Text
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._PremiumQuote1Choice import PremiumQuote1Choice
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
 from ._Number import Number
+from ._PremiumQuote1Choice import PremiumQuote1Choice
 
 class PremiumAmount3(base_types._BaseFieldType):
 
-	__slots__ = ["_PrmSttlmDt", "_RcvrPtyRef", "_PrmCcy", "_DcmlPlcs", "_PrmQt", "_PyerPtyRef", "_Amt"]
+	__slots__ = ["_Amt", "_DcmlPlcs", "_PrmCcy", "_PrmQt", "_PrmSttlmDt", "_PyerPtyRef", "_RcvrPtyRef"]
 	@property
 	def Amt(self):
 		return self._Amt

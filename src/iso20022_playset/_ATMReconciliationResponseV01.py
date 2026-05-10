@@ -1,12 +1,12 @@
 from . import base_types
-from ._ContentInformationType10 import ContentInformationType10
-from ._Header31 import Header31
-from ._ContentInformationType15 import ContentInformationType15
 from ._ATMReconciliationRequestComponent1 import ATMReconciliationRequestComponent1
+from ._ContentInformationType10 import ContentInformationType10
+from ._ContentInformationType15 import ContentInformationType15
+from ._Header31 import Header31
 
 class ATMReconciliationResponseV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_SctyTrlr", "_ATMRcncltnRspn", "_PrtctdATMRcncltnRspn"]
+	__slots__ = ["_ATMRcncltnRspn", "_Hdr", "_PrtctdATMRcncltnRspn", "_SctyTrlr"]
 	@property
 	def ATMRcncltnRspn(self):
 		return self._ATMRcncltnRspn

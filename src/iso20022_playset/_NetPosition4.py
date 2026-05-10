@@ -1,22 +1,22 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._AmountAndDirection21 import AmountAndDirection21
 from ._DateFormat66Choice import DateFormat66Choice
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._AmountAndDirection21 import AmountAndDirection21
-from ._SecurityIdentification48 import SecurityIdentification48
-from ._Price14 import Price14
+from ._ISODate import ISODate
 from ._MarketIdentification20 import MarketIdentification20
 from ._PartyIdentification255Choice import PartyIdentification255Choice
-from ._SecuritiesAccount18 import SecuritiesAccount18
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._TradingCapacity5Code import TradingCapacity5Code
 from ._PartyIdentificationAndAccount227 import PartyIdentificationAndAccount227
+from ._Price14 import Price14
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._SecuritiesAccount18 import SecuritiesAccount18
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SecurityIdentification48 import SecurityIdentification48
 from ._TradeLeg13 import TradeLeg13
+from ._TradingCapacity5Code import TradingCapacity5Code
 
 class NetPosition4(base_types._BaseFieldType):
 
-	__slots__ = ["_NetQty", "_Dpstry", "_AvrgDealPric", "_ClrAcct", "_PlcOfTrad", "_AcrdIntrstAmt", "_FinInstrmId", "_SctiesMvmntTp", "_TradDt", "_SttlmDt", "_TradgCpcty", "_DlvryAcct", "_InitlPosAmt", "_NonClrMmb", "_NetPosAmt", "_TradLegDtls"]
+	__slots__ = ["_AcrdIntrstAmt", "_AvrgDealPric", "_ClrAcct", "_DlvryAcct", "_Dpstry", "_FinInstrmId", "_InitlPosAmt", "_NetPosAmt", "_NetQty", "_NonClrMmb", "_PlcOfTrad", "_SctiesMvmntTp", "_SttlmDt", "_TradDt", "_TradLegDtls", "_TradgCpcty"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt

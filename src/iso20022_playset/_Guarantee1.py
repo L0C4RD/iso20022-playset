@@ -4,7 +4,7 @@ from ._PartyIdentification118Choice import PartyIdentification118Choice
 
 class Guarantee1(base_types._BaseFieldType):
 
-	__slots__ = ["_Prvdr", "_Amt"]
+	__slots__ = ["_Amt", "_Prvdr"]
 	@property
 	def Amt(self):
 		return self._Amt

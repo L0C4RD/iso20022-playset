@@ -1,20 +1,20 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._SecuritiesTransactionTransmission2 import SecuritiesTransactionTransmission2
-from ._LEIIdentifier import LEIIdentifier
-from ._SupplementaryData1 import SupplementaryData1
-from ._InvestmentParty1Choice import InvestmentParty1Choice
-from ._SecuritiesTransactionIndicator2 import SecuritiesTransactionIndicator2
-from ._Max52Text import Max52Text
 from ._ExecutingParty1Choice import ExecutingParty1Choice
-from ._SecuritiesTransaction3 import SecuritiesTransaction3
 from ._FinancialInstrumentAttributes5Choice import FinancialInstrumentAttributes5Choice
-from ._RecordTechnicalData5 import RecordTechnicalData5
+from ._InvestmentParty1Choice import InvestmentParty1Choice
+from ._LEIIdentifier import LEIIdentifier
+from ._Max52Text import Max52Text
 from ._PartyIdentification79 import PartyIdentification79
+from ._RecordTechnicalData5 import RecordTechnicalData5
+from ._SecuritiesTransaction3 import SecuritiesTransaction3
+from ._SecuritiesTransactionIndicator2 import SecuritiesTransactionIndicator2
+from ._SecuritiesTransactionTransmission2 import SecuritiesTransactionTransmission2
+from ._SupplementaryData1 import SupplementaryData1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class SecuritiesTransactionReport7(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_Sellr", "_OrdrTrnsmssn", "_Tx", "_InvstmtPtyInd", "_FinInstrm", "_ExctgPty", "_TechAttrbts", "_Buyr", "_AddtlAttrbts", "_SubmitgPty", "_SplmtryData", "_InvstmtDcsnPrsn", "_ExctgPrsn"]
+	__slots__ = ["_AddtlAttrbts", "_Buyr", "_ExctgPrsn", "_ExctgPty", "_FinInstrm", "_InvstmtDcsnPrsn", "_InvstmtPtyInd", "_OrdrTrnsmssn", "_Sellr", "_SplmtryData", "_SubmitgPty", "_TechAttrbts", "_Tx", "_TxId"]
 	@property
 	def AddtlAttrbts(self):
 		return self._AddtlAttrbts

@@ -1,33 +1,33 @@
 from . import base_types
-from ._Exact12Text import Exact12Text
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._Number import Number
-from ._Max12NumericText import Max12NumericText
 from ._AdditionalData2 import AdditionalData2
-from ._Exact15Text import Exact15Text
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._Max35Binary import Max35Binary
-from ._Jurisdiction2 import Jurisdiction2
-from ._ISODateTime import ISODateTime
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ProcessingResult23 import ProcessingResult23
-from ._ContentInformationType41 import ContentInformationType41
-from ._BatchManagementType2Code import BatchManagementType2Code
-from ._SettlementService6 import SettlementService6
-from ._ProtectedData2 import ProtectedData2
 from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
+from ._BatchManagementType2Code import BatchManagementType2Code
+from ._ContentInformationType41 import ContentInformationType41
 from ._CorrectionIdentification1 import CorrectionIdentification1
+from ._Exact12Text import Exact12Text
+from ._Exact15Text import Exact15Text
 from ._Header71 import Header71
+from ._ISO8583ResponseCode import ISO8583ResponseCode
+from ._ISODateTime import ISODateTime
+from ._Jurisdiction2 import Jurisdiction2
+from ._Max12NumericText import Max12NumericText
+from ._Max15NumericText import Max15NumericText
+from ._Max35Binary import Max35Binary
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._Number import Number
+from ._PartyIdentification286 import PartyIdentification286
+from ._ProcessingResult23 import ProcessingResult23
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._ProtectedData2 import ProtectedData2
+from ._Reconciliation4 import Reconciliation4
+from ._SettlementService6 import SettlementService6
+from ._SupplementaryData1 import SupplementaryData1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class BatchManagementResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlRspnCd", "_Conttn", "_BtchIdList", "_Sndr", "_NbOfMsgs", "_AddtlData", "_AddtlFee", "_ColltnIdList", "_ColltnSz", "_RtrvlRefNb", "_ColltnId", "_Rcncltn", "_ColltnChcksm", "_PrcgRslt", "_ChckptId", "_OthrBtchMgmtTp", "_SysTracAudtNb", "_OrgnlColltnId", "_RmngMsgsInColltn", "_Orgtr", "_BtchMgmtTp", "_Dstn", "_MsgSeqNb", "_Jursdctn", "_BtchChcksm", "_LifeCyclId", "_Hdr", "_Crrctn", "_NbOfBtchsInColltn", "_PostvAck", "_Prgrmm", "_TrnsmssnDtTm", "_OrgnlBtchId", "_SctyTrlr", "_MsgsBfrAck", "_Rcvr", "_SttlmSvc", "_ReqAck", "_PrtctdData", "_BtchId", "_SplmtryData"]
+	__slots__ = ["_AddtlData", "_AddtlFee", "_BtchChcksm", "_BtchId", "_BtchIdList", "_BtchMgmtTp", "_ChckptId", "_ColltnChcksm", "_ColltnId", "_ColltnIdList", "_ColltnSz", "_Conttn", "_Crrctn", "_Dstn", "_Hdr", "_Jursdctn", "_LifeCyclId", "_MsgSeqNb", "_MsgsBfrAck", "_NbOfBtchsInColltn", "_NbOfMsgs", "_OrgnlBtchId", "_OrgnlColltnId", "_OrgnlRspnCd", "_Orgtr", "_OthrBtchMgmtTp", "_PostvAck", "_PrcgRslt", "_Prgrmm", "_PrtctdData", "_Rcncltn", "_Rcvr", "_ReqAck", "_RmngMsgsInColltn", "_RtrvlRefNb", "_SctyTrlr", "_Sndr", "_SplmtryData", "_SttlmSvc", "_SysTracAudtNb", "_TrnsmssnDtTm"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

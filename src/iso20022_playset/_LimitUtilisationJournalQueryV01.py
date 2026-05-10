@@ -1,7 +1,7 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MessageHeader1 import MessageHeader1
 from ._LimitUtilisationJournalSearchCriteria2 import LimitUtilisationJournalSearchCriteria2
+from ._MessageHeader1 import MessageHeader1
+from ._SupplementaryData1 import SupplementaryData1
 
 class LimitUtilisationJournalQueryV01(base_types._BaseFieldType):
 

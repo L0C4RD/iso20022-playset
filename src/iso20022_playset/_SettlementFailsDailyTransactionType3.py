@@ -3,7 +3,7 @@ from ._SettlementFailsDailyCSD1Choice import SettlementFailsDailyCSD1Choice
 
 class SettlementFailsDailyTransactionType3(base_types._BaseFieldType):
 
-	__slots__ = ["_RpAgrmt", "_SctiesLndgOrBrrwg", "_CollMgmtOpr", "_Othr", "_SctiesBuyOrSell"]
+	__slots__ = ["_CollMgmtOpr", "_Othr", "_RpAgrmt", "_SctiesBuyOrSell", "_SctiesLndgOrBrrwg"]
 	@property
 	def CollMgmtOpr(self):
 		return self._CollMgmtOpr

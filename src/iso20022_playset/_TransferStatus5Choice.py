@@ -1,17 +1,17 @@
 from . import base_types
 from ._CancellationPendingStatus7Choice import CancellationPendingStatus7Choice
-from ._PendingSettlementStatus3Choice import PendingSettlementStatus3Choice
 from ._CancelledStatus13Choice import CancelledStatus13Choice
+from ._FailedSettlementStatus2Choice import FailedSettlementStatus2Choice
+from ._InRepairStatus4Choice import InRepairStatus4Choice
+from ._PendingSettlementStatus3Choice import PendingSettlementStatus3Choice
 from ._RejectionReason56 import RejectionReason56
+from ._ReversedStatus2Choice import ReversedStatus2Choice
 from ._TransferInstructionStatus5 import TransferInstructionStatus5
 from ._TransferUnmatchedStatus4Choice import TransferUnmatchedStatus4Choice
-from ._InRepairStatus4Choice import InRepairStatus4Choice
-from ._FailedSettlementStatus2Choice import FailedSettlementStatus2Choice
-from ._ReversedStatus2Choice import ReversedStatus2Choice
 
 class TransferStatus5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FaildSttlm", "_Canc", "_PdgSttlm", "_Umtchd", "_CxlPdg", "_InRpr", "_Rjctd", "_Sts", "_Rvsd"]
+	__slots__ = ["_Canc", "_CxlPdg", "_FaildSttlm", "_InRpr", "_PdgSttlm", "_Rjctd", "_Rvsd", "_Sts", "_Umtchd"]
 	@property
 	def Canc(self):
 		return self._Canc

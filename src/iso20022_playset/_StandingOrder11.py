@@ -1,22 +1,22 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._StandingOrderTotalAmount1 import StandingOrderTotalAmount1
-from ._DatePeriod3 import DatePeriod3
 from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Frequency2Code import Frequency2Code
-from ._Number import Number
-from ._Max35Text import Max35Text
-from ._ExecutionType1Choice import ExecutionType1Choice
-from ._CreditDebitCode import CreditDebitCode
-from ._StandingOrderType1Choice import StandingOrderType1Choice
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._Amount2Choice import Amount2Choice
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._CashAccount40 import CashAccount40
+from ._CreditDebitCode import CreditDebitCode
+from ._DatePeriod3 import DatePeriod3
+from ._ExecutionType1Choice import ExecutionType1Choice
+from ._Frequency2Code import Frequency2Code
+from ._Max35Text import Max35Text
+from ._Number import Number
+from ._StandingOrderTotalAmount1 import StandingOrderTotalAmount1
+from ._StandingOrderType1Choice import StandingOrderType1Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class StandingOrder11(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_Ref", "_TtlsPerStgOrdr", "_LkSetId", "_Tp", "_AssoctdPoolAcct", "_LkSetOrdrSeq", "_VldtyPrd", "_Dbtr", "_ZeroSweepInd", "_LkSetOrdrId", "_SysMmb", "_CdtrAcct", "_DbtrAcct", "_Amt", "_ExctnTp", "_RspnsblPty", "_Cdtr", "_Ccy", "_Frqcy"]
+	__slots__ = ["_Amt", "_AssoctdPoolAcct", "_Ccy", "_CdtDbtInd", "_Cdtr", "_CdtrAcct", "_Dbtr", "_DbtrAcct", "_ExctnTp", "_Frqcy", "_LkSetId", "_LkSetOrdrId", "_LkSetOrdrSeq", "_Ref", "_RspnsblPty", "_SysMmb", "_Tp", "_TtlsPerStgOrdr", "_VldtyPrd", "_ZeroSweepInd"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -4,7 +4,7 @@ from ._Identification30 import Identification30
 
 class DocumentNumber20(base_types._BaseFieldType):
 
-	__slots__ = ["_Refs", "_Nb"]
+	__slots__ = ["_Nb", "_Refs"]
 	@property
 	def Nb(self):
 		return self._Nb

@@ -3,7 +3,7 @@ from ._CreditTransferTransaction59 import CreditTransferTransaction59
 
 class SettlementMethod5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Dbt", "_Cdt"]
+	__slots__ = ["_Cdt", "_Dbt"]
 	@property
 	def Cdt(self):
 		return self._Cdt

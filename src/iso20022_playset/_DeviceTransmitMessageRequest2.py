@@ -1,11 +1,11 @@
 from . import base_types
-from ._NetworkParameters7 import NetworkParameters7
 from ._Max100KBinary import Max100KBinary
+from ._NetworkParameters7 import NetworkParameters7
 from ._Number import Number
 
 class DeviceTransmitMessageRequest2(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxTrnsmssnTm", "_DstnAdr", "_MsgToSnd", "_MaxWtgTm"]
+	__slots__ = ["_DstnAdr", "_MaxTrnsmssnTm", "_MaxWtgTm", "_MsgToSnd"]
 	@property
 	def DstnAdr(self):
 		return self._DstnAdr

@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ContentInformationType10 import ContentInformationType10
-from ._OnLinePIN5 import OnLinePIN5
-from ._Max5000Binary import Max5000Binary
 from ._AuthenticationMethod7Code import AuthenticationMethod7Code
+from ._ContentInformationType10 import ContentInformationType10
+from ._Max5000Binary import Max5000Binary
+from ._OnLinePIN5 import OnLinePIN5
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CardholderAuthentication8(base_types._BaseFieldType):
 
-	__slots__ = ["_TknReqd", "_AuthntcnVal", "_PrtctdAuthntcnVal", "_AuthntcnMtd", "_CrdhldrOnLinePIN"]
+	__slots__ = ["_AuthntcnMtd", "_AuthntcnVal", "_CrdhldrOnLinePIN", "_PrtctdAuthntcnVal", "_TknReqd"]
 	@property
 	def AuthntcnMtd(self):
 		return self._AuthntcnMtd

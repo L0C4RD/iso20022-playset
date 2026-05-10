@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification1 import GenericIdentification1
 from ._ExternalDocumentType1Code import ExternalDocumentType1Code
+from ._GenericIdentification1 import GenericIdentification1
 
 class DocumentType1Choice(base_types._BaseFieldType):
 

@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentificationAndAccount97 import PartyIdentificationAndAccount97
 from ._PartyIdentificationAndAccount96 import PartyIdentificationAndAccount96
+from ._PartyIdentificationAndAccount97 import PartyIdentificationAndAccount97
 
 class CashParties24(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrAgt", "_Intrmy", "_Intrmy2", "_Cdtr"]
+	__slots__ = ["_Cdtr", "_CdtrAgt", "_Intrmy", "_Intrmy2"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

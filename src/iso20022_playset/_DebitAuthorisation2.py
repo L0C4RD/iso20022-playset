@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._CancellationReason33Choice import CancellationReason33Choice
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._CancellationReason33Choice import CancellationReason33Choice
+from ._ISODate import ISODate
 from ._Max105Text import Max105Text
 
 class DebitAuthorisation2(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_AmtToDbt", "_ValDtToDbt", "_AddtlCxlRsnInf"]
+	__slots__ = ["_AddtlCxlRsnInf", "_AmtToDbt", "_CxlRsn", "_ValDtToDbt"]
 	@property
 	def AddtlCxlRsnInf(self):
 		return self._AddtlCxlRsnInf

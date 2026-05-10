@@ -5,7 +5,7 @@ from ._PartyIdentification132 import PartyIdentification132
 
 class CreditTransfer9(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrmyAgt2Acct", "_DbtrAgtAcct", "_Dbtr", "_IntrmyAgt1", "_CdtrAcct", "_DbtrAgt", "_IntrmyAgt1Acct", "_IntrmyAgt2", "_DbtrAcct", "_CdtrAgtAcct", "_CdtrAgt", "_Cdtr"]
+	__slots__ = ["_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_IntrmyAgt1", "_IntrmyAgt1Acct", "_IntrmyAgt2", "_IntrmyAgt2Acct"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

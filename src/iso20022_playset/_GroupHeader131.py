@@ -1,18 +1,18 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._SettlementInstruction15 import SettlementInstruction15
-from ._DecimalNumber import DecimalNumber
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._BatchBookingIndicator import BatchBookingIndicator
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._PaymentTypeInformation28 import PaymentTypeInformation28
-from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
+from ._DecimalNumber import DecimalNumber
+from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
+from ._PaymentTypeInformation28 import PaymentTypeInformation28
+from ._SettlementInstruction15 import SettlementInstruction15
 
 class GroupHeader131(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfTxs", "_IntrBkSttlmDt", "_MsgId", "_CtrlSum", "_TtlIntrBkSttlmAmt", "_InstgAgt", "_SttlmInf", "_XpryDtTm", "_PmtTpInf", "_InstdAgt", "_CreDtTm", "_BtchBookg"]
+	__slots__ = ["_BtchBookg", "_CreDtTm", "_CtrlSum", "_InstdAgt", "_InstgAgt", "_IntrBkSttlmDt", "_MsgId", "_NbOfTxs", "_PmtTpInf", "_SttlmInf", "_TtlIntrBkSttlmAmt", "_XpryDtTm"]
 	@property
 	def BtchBookg(self):
 		return self._BtchBookg

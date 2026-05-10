@@ -1,10 +1,10 @@
 from . import base_types
-from ._TrackerStatus1 import TrackerStatus1
 from ._TrackerPaymentTransaction14 import TrackerPaymentTransaction14
+from ._TrackerStatus1 import TrackerStatus1
 
 class TrackerStatusAndTransaction19(base_types._BaseFieldType):
 
-	__slots__ = ["_TxSts", "_Tx"]
+	__slots__ = ["_Tx", "_TxSts"]
 	@property
 	def Tx(self):
 		return self._Tx

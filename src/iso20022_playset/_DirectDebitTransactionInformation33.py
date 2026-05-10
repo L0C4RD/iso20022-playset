@@ -1,20 +1,20 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
-from ._Max210Text import Max210Text
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._RemittanceInformation2 import RemittanceInformation2
-from ._SettlementTimeRequest2 import SettlementTimeRequest2
-from ._PaymentTypeInformation28 import PaymentTypeInformation28
-from ._Purpose2Choice import Purpose2Choice
-from ._Priority3Code import Priority3Code
-from ._PaymentIdentification13 import PaymentIdentification13
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._CashAccount40 import CashAccount40
+from ._ISODate import ISODate
+from ._Max210Text import Max210Text
+from ._PaymentIdentification13 import PaymentIdentification13
+from ._PaymentTypeInformation28 import PaymentTypeInformation28
+from ._Priority3Code import Priority3Code
+from ._Purpose2Choice import Purpose2Choice
+from ._RemittanceInformation2 import RemittanceInformation2
+from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
+from ._SettlementTimeRequest2 import SettlementTimeRequest2
 
 class DirectDebitTransactionInformation33(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrBkSttlmDt", "_SttlmPrty", "_SttlmTmIndctn", "_DbtrAcct", "_RmtInf", "_PmtId", "_Dbtr", "_SttlmTmReq", "_DbtrAgtAcct", "_PmtTpInf", "_DbtrAgt", "_InstrForDbtrAgt", "_Purp", "_UltmtDbtr", "_IntrBkSttlmAmt"]
+	__slots__ = ["_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_InstrForDbtrAgt", "_IntrBkSttlmAmt", "_IntrBkSttlmDt", "_PmtId", "_PmtTpInf", "_Purp", "_RmtInf", "_SttlmPrty", "_SttlmTmIndctn", "_SttlmTmReq", "_UltmtDbtr"]
 	@property
 	def Dbtr(self):
 		return self._Dbtr

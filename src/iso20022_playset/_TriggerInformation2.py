@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyType5Code import PartyType5Code
 from ._ExchangePolicy2Code import ExchangePolicy2Code
+from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
+from ._PartyType5Code import PartyType5Code
 
 class TriggerInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_SrcId", "_TrggrTp", "_TrggrSrc"]
+	__slots__ = ["_AddtlInf", "_SrcId", "_TrggrSrc", "_TrggrTp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

@@ -1,10 +1,10 @@
 from . import base_types
-from ._SecuritiesFinancing12 import SecuritiesFinancing12
 from ._FutureOrOptionDetails3 import FutureOrOptionDetails3
+from ._SecuritiesFinancing12 import SecuritiesFinancing12
 
 class TwoLegTransactionType4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesFincgDtls", "_FutrOrOptnDtls"]
+	__slots__ = ["_FutrOrOptnDtls", "_SctiesFincgDtls"]
 	@property
 	def FutrOrOptnDtls(self):
 		return self._FutrOrOptnDtls

@@ -1,14 +1,14 @@
 from . import base_types
-from ._TypeOfPrice29Choice import TypeOfPrice29Choice
 from ._Balance16 import Balance16
 from ._BalanceAmounts2 import BalanceAmounts2
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._GenericIdentification37 import GenericIdentification37
 from ._Price7 import Price7
+from ._TypeOfPrice29Choice import TypeOfPrice29Choice
 
 class QuantityBreakdown58(base_types._BaseFieldType):
 
-	__slots__ = ["_LotQty", "_AcctBaseCcyAmts", "_TpOfPric", "_InstrmCcyAmts", "_LotDtTm", "_AltrnRptgCcyAmts", "_LotNb", "_LotPric"]
+	__slots__ = ["_AcctBaseCcyAmts", "_AltrnRptgCcyAmts", "_InstrmCcyAmts", "_LotDtTm", "_LotNb", "_LotPric", "_LotQty", "_TpOfPric"]
 	@property
 	def AcctBaseCcyAmts(self):
 		return self._AcctBaseCcyAmts

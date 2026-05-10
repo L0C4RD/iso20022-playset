@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._CardPaymentServiceType13Code import CardPaymentServiceType13Code
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 from ._TransactionIdentifier1 import TransactionIdentifier1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CardAcquisitionRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleToAcqrrData", "_SaleTxId", "_ForceCstmrSelctnFlg", "_CshBckFlg", "_TtlAmt", "_SaleToIssrData", "_PmtTp", "_AllwdLltyBrnd", "_AllwdPmtBrnd", "_SaleToPOIData"]
+	__slots__ = ["_AllwdLltyBrnd", "_AllwdPmtBrnd", "_CshBckFlg", "_ForceCstmrSelctnFlg", "_PmtTp", "_SaleToAcqrrData", "_SaleToIssrData", "_SaleToPOIData", "_SaleTxId", "_TtlAmt"]
 	@property
 	def AllwdLltyBrnd(self):
 		return self._AllwdLltyBrnd

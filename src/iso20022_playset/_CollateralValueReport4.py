@@ -1,14 +1,14 @@
 from . import base_types
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._PartyIdentification136 import PartyIdentification136
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._SystemPartyIdentification11 import SystemPartyIdentification11
-from ._CollateralValueReportOrError6Choice import CollateralValueReportOrError6Choice
 from ._CashAccount40 import CashAccount40
+from ._CollateralValueReportOrError6Choice import CollateralValueReportOrError6Choice
+from ._PartyIdentification136 import PartyIdentification136
+from ._SystemPartyIdentification11 import SystemPartyIdentification11
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class CollateralValueReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcctSvcr", "_SctiesAcctOwnr", "_CshAcct", "_CollValRpt", "_SctiesAcctSvcr", "_CshAcctOwnr"]
+	__slots__ = ["_CollValRpt", "_CshAcct", "_CshAcctOwnr", "_CshAcctSvcr", "_SctiesAcctOwnr", "_SctiesAcctSvcr"]
 	@property
 	def CollValRpt(self):
 		return self._CollValRpt

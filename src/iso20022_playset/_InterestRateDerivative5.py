@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._BondDerivative2 import BondDerivative2
 from ._FloatingInterestRate8 import FloatingInterestRate8
+from ._ISODate import ISODate
 from ._InflationIndex1Choice import InflationIndex1Choice
 from ._InterestRateDerivative2Choice import InterestRateDerivative2Choice
 
 class InterestRateDerivative5(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygTp", "_SwptnNtnlCcy", "_UndrlygBd", "_InfltnIndx", "_IntrstRateRef", "_UndrlygSwpMtrtyDt"]
+	__slots__ = ["_InfltnIndx", "_IntrstRateRef", "_SwptnNtnlCcy", "_UndrlygBd", "_UndrlygSwpMtrtyDt", "_UndrlygTp"]
 	@property
 	def InfltnIndx(self):
 		return self._InfltnIndx

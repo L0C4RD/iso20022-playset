@@ -1,12 +1,12 @@
 from . import base_types
-from ._Recipient5Choice import Recipient5Choice
 from ._AlgorithmIdentification11 import AlgorithmIdentification11
-from ._Number import Number
 from ._Max5000Binary import Max5000Binary
+from ._Number import Number
+from ._Recipient5Choice import Recipient5Choice
 
 class KeyTransport4(base_types._BaseFieldType):
 
-	__slots__ = ["_NcrptdKey", "_KeyNcrptnAlgo", "_Vrsn", "_RcptId"]
+	__slots__ = ["_KeyNcrptnAlgo", "_NcrptdKey", "_RcptId", "_Vrsn"]
 	@property
 	def KeyNcrptnAlgo(self):
 		return self._KeyNcrptnAlgo

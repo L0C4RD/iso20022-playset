@@ -1,12 +1,12 @@
 from . import base_types
-from ._PostalAddress1 import PostalAddress1
 from ._CountryCode import CountryCode
-from ._Party2Choice import Party2Choice
 from ._Max70Text import Max70Text
+from ._Party2Choice import Party2Choice
+from ._PostalAddress1 import PostalAddress1
 
 class PartyIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Nm", "_CtryOfRes", "_PstlAdr"]
+	__slots__ = ["_CtryOfRes", "_Id", "_Nm", "_PstlAdr"]
 	@property
 	def CtryOfRes(self):
 		return self._CtryOfRes

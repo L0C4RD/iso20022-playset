@@ -4,7 +4,7 @@ from ._RejectionReason53 import RejectionReason53
 
 class DetailedTransactionStatistics13(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfTxsRjctd", "_TtlNbOfTxs", "_TtlNbOfTxsAccptd", "_TxsRjctnsRsn"]
+	__slots__ = ["_TtlNbOfTxs", "_TtlNbOfTxsAccptd", "_TtlNbOfTxsRjctd", "_TxsRjctnsRsn"]
 	@property
 	def TtlNbOfTxs(self):
 		return self._TtlNbOfTxs

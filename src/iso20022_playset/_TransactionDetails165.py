@@ -1,27 +1,27 @@
 from . import base_types
-from ._Max3Number import Max3Number
-from ._Quantity54Choice import Quantity54Choice
-from ._SettlementParties109 import SettlementParties109
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
-from ._TradeDate9Choice import TradeDate9Choice
+from ._AmountAndDirection18 import AmountAndDirection18
 from ._AmountAndDirection59 import AmountAndDirection59
-from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._PlaceOfTradeIdentification2 import PlaceOfTradeIdentification2
-from ._ISODateTime import ISODateTime
-from ._YesNoIndicator import YesNoIndicator
-from ._SafeKeepingPlace4 import SafeKeepingPlace4
-from ._SettlementDate20Choice import SettlementDate20Choice
-from ._TransactionActivity4Choice import TransactionActivity4Choice
-from ._SettlementDetails198 import SettlementDetails198
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._AmountAndDirection18 import AmountAndDirection18
+from ._ISODateTime import ISODateTime
+from ._Max3Number import Max3Number
+from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
+from ._PlaceOfTradeIdentification2 import PlaceOfTradeIdentification2
+from ._Quantity54Choice import Quantity54Choice
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from ._SafeKeepingPlace4 import SafeKeepingPlace4
+from ._SettlementDate20Choice import SettlementDate20Choice
+from ._SettlementDetails198 import SettlementDetails198
 from ._SettlementOrCorporateActionEvent33Choice import SettlementOrCorporateActionEvent33Choice
+from ._SettlementParties109 import SettlementParties109
+from ._TradeDate9Choice import TradeDate9Choice
+from ._TransactionActivity4Choice import TransactionActivity4Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class TransactionDetails165(base_types._BaseFieldType):
 
-	__slots__ = ["_TxActvty", "_SfkpgPlc", "_PstngAmt", "_MtchdStsTmStmp", "_RcvgSttlmPties", "_NbOfDaysAcrd", "_FctvSttlmDt", "_SttlmParams", "_SttlmDt", "_SttlmTxOrCorpActnEvtTp", "_SctiesMvmntTp", "_AcrdIntrstAmt", "_TradDt", "_TxAddtlDtls", "_PlcOfTrad", "_Pmt", "_RvslInd", "_ValDt", "_PstngQty", "_PlcOfClr", "_DlvrgSttlmPties", "_AckdStsTmStmp"]
+	__slots__ = ["_AckdStsTmStmp", "_AcrdIntrstAmt", "_DlvrgSttlmPties", "_FctvSttlmDt", "_MtchdStsTmStmp", "_NbOfDaysAcrd", "_PlcOfClr", "_PlcOfTrad", "_Pmt", "_PstngAmt", "_PstngQty", "_RcvgSttlmPties", "_RvslInd", "_SctiesMvmntTp", "_SfkpgPlc", "_SttlmDt", "_SttlmParams", "_SttlmTxOrCorpActnEvtTp", "_TradDt", "_TxActvty", "_TxAddtlDtls", "_ValDt"]
 	@property
 	def AckdStsTmStmp(self):
 		return self._AckdStsTmStmp

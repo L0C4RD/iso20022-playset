@@ -1,12 +1,12 @@
 from . import base_types
-from ._CreditDebitCode import CreditDebitCode
 from ._Amount2Choice import Amount2Choice
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._CashBalance11 import CashBalance11
+from ._CreditDebitCode import CreditDebitCode
 
 class BilateralLimit4(base_types._BaseFieldType):
 
-	__slots__ = ["_BilBal", "_LmtAmt", "_CtrPtyId", "_CdtDbtInd"]
+	__slots__ = ["_BilBal", "_CdtDbtInd", "_CtrPtyId", "_LmtAmt"]
 	@property
 	def BilBal(self):
 		return self._BilBal

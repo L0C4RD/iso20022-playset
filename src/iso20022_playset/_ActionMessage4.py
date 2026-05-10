@@ -1,13 +1,13 @@
 from . import base_types
-from ._Max20000Text import Max20000Text
-from ._OutputFormat2Code import OutputFormat2Code
-from ._Max35Text import Max35Text
-from ._Max35Binary import Max35Binary
 from ._ATMDevice1Code import ATMDevice1Code
+from ._Max20000Text import Max20000Text
+from ._Max35Binary import Max35Binary
+from ._Max35Text import Max35Text
+from ._OutputFormat2Code import OutputFormat2Code
 
 class ActionMessage4(base_types._BaseFieldType):
 
-	__slots__ = ["_Msg", "_Ref", "_Frmt", "_MsgCnttSgntr", "_Dvc"]
+	__slots__ = ["_Dvc", "_Frmt", "_Msg", "_MsgCnttSgntr", "_Ref"]
 	@property
 	def Dvc(self):
 		return self._Dvc

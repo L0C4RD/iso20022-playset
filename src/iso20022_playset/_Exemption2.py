@@ -1,11 +1,11 @@
 from . import base_types
-from ._Exemption2Code import Exemption2Code
 from ._AttestationValue1Code import AttestationValue1Code
+from ._Exemption2Code import Exemption2Code
 from ._Max4Text import Max4Text
 
 class Exemption2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Val", "_RsnNotHnrd"]
+	__slots__ = ["_RsnNotHnrd", "_Tp", "_Val"]
 	@property
 	def RsnNotHnrd(self):
 		return self._RsnNotHnrd

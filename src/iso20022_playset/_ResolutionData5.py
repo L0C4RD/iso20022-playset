@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Charges14 import Charges14
-from ._Compensation5 import Compensation5
-from ._UUIDv4Identifier import UUIDv4Identifier
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._Max35Text import Max35Text
+from ._Charges14 import Charges14
 from ._ClearingChannel2Code import ClearingChannel2Code
+from ._Compensation5 import Compensation5
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class ResolutionData5(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrBkSttlmDt", "_UETR", "_IntrBkSttlmAmt", "_Compstn", "_TxId", "_ClrChanl", "_EndToEndId", "_ChrgsInf"]
+	__slots__ = ["_ChrgsInf", "_ClrChanl", "_Compstn", "_EndToEndId", "_IntrBkSttlmAmt", "_IntrBkSttlmDt", "_TxId", "_UETR"]
 	@property
 	def ChrgsInf(self):
 		return self._ChrgsInf

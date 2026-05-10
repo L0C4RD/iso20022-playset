@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class Forms1(base_types._BaseFieldType):
 
-	__slots__ = ["_SgntrTp", "_ApplForm"]
+	__slots__ = ["_ApplForm", "_SgntrTp"]
 	@property
 	def ApplForm(self):
 		return self._ApplForm

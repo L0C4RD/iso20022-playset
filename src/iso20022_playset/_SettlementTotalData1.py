@@ -1,10 +1,10 @@
 from . import base_types
-from ._SettlementDataVolume2 import SettlementDataVolume2
 from ._SettlementDataRate2 import SettlementDataRate2
+from ._SettlementDataVolume2 import SettlementDataVolume2
 
 class SettlementTotalData1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ttl", "_Faild", "_FaildRate", "_Sttld"]
+	__slots__ = ["_Faild", "_FaildRate", "_Sttld", "_Ttl"]
 	@property
 	def Faild(self):
 		return self._Faild

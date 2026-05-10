@@ -1,12 +1,12 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ReportingWaiverType1Code import ReportingWaiverType1Code
 from ._ReportingWaiverType3Code import ReportingWaiverType3Code
 from ._Side5Code import Side5Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class SecuritiesTransactionIndicator2(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtSellgInd", "_SctiesFincgTxInd", "_WvrInd", "_OTCPstTradInd", "_RskRdcgTx"]
+	__slots__ = ["_OTCPstTradInd", "_RskRdcgTx", "_SctiesFincgTxInd", "_ShrtSellgInd", "_WvrInd"]
 	@property
 	def OTCPstTradInd(self):
 		return self._OTCPstTradInd

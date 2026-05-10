@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._AdditionalData1 import AdditionalData1
 from ._ISO3NumericCountryCode import ISO3NumericCountryCode
 from ._ISOYearMonth import ISOYearMonth
+from ._Max19NumericText import Max19NumericText
 from ._Max35Text import Max35Text
 from ._Min2Max3NumericText import Min2Max3NumericText
-from ._Max19NumericText import Max19NumericText
-from ._AdditionalData1 import AdditionalData1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CardData15(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtflIdr", "_PAN", "_PmtAcctRef", "_PdctTp", "_Ctry", "_PANRefIdr", "_PrtctdPAN", "_AddtlData", "_PdctSubTp", "_XpryDt", "_PANAcctRg", "_CardSeqNb", "_FctvDt"]
+	__slots__ = ["_AddtlData", "_CardSeqNb", "_Ctry", "_FctvDt", "_PAN", "_PANAcctRg", "_PANRefIdr", "_PdctSubTp", "_PdctTp", "_PmtAcctRef", "_PrtctdPAN", "_PrtflIdr", "_XpryDt"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

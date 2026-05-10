@@ -1,7 +1,7 @@
 from . import base_types
+from ._DocumentIdentification3Choice import DocumentIdentification3Choice
 from ._DocumentNumber5Choice import DocumentNumber5Choice
 from ._ProcessingPosition7Choice import ProcessingPosition7Choice
-from ._DocumentIdentification3Choice import DocumentIdentification3Choice
 
 class DocumentIdentification32(base_types._BaseFieldType):
 

@@ -1,12 +1,12 @@
 from . import base_types
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max4NumericText import Max4NumericText
 from ._Max35Text import Max35Text
+from ._Max4NumericText import Max4NumericText
 from ._PeriodUnit4Code import PeriodUnit4Code
 
 class RentalRate2(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrPrd", "_Prd", "_Rate", "_PrdCnt"]
+	__slots__ = ["_OthrPrd", "_Prd", "_PrdCnt", "_Rate"]
 	@property
 	def OthrPrd(self):
 		return self._OthrPrd

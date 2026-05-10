@@ -1,12 +1,12 @@
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
-from ._References61Choice import References61Choice
 from ._Extension1 import Extension1
 from ._IndividualOrderConfirmationStatusAndReason2 import IndividualOrderConfirmationStatusAndReason2
+from ._MessageIdentification1 import MessageIdentification1
+from ._References61Choice import References61Choice
 
 class OrderConfirmationStatusReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Xtnsn", "_Ref", "_IndvOrdrConfDtlsRpt", "_MsgId"]
+	__slots__ = ["_IndvOrdrConfDtlsRpt", "_MsgId", "_Ref", "_Xtnsn"]
 	@property
 	def IndvOrdrConfDtlsRpt(self):
 		return self._IndvOrdrConfDtlsRpt

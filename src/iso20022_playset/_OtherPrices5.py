@@ -4,7 +4,7 @@ from ._PriceInformation28 import PriceInformation28
 
 class OtherPrices5(base_types._BaseFieldType):
 
-	__slots__ = ["_AllMktsWghtdAvrg", "_NetDscld", "_Max", "_NtnlGrss", "_OthrPric", "_RptdPric", "_IndxPric", "_MrkdDwn", "_Tx", "_NetUdscld", "_MrkdUp", "_Bchmk", "_BchmkWghtdAvrg", "_MktBrkrComssn", "_RefPric"]
+	__slots__ = ["_AllMktsWghtdAvrg", "_Bchmk", "_BchmkWghtdAvrg", "_IndxPric", "_Max", "_MktBrkrComssn", "_MrkdDwn", "_MrkdUp", "_NetDscld", "_NetUdscld", "_NtnlGrss", "_OthrPric", "_RefPric", "_RptdPric", "_Tx"]
 	@property
 	def AllMktsWghtdAvrg(self):
 		return self._AllMktsWghtdAvrg

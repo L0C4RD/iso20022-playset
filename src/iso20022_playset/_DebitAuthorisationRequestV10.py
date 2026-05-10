@@ -1,13 +1,13 @@
 from . import base_types
+from ._Case6 import Case6
+from ._CaseAssignment6 import CaseAssignment6
+from ._DebitAuthorisation2 import DebitAuthorisation2
 from ._SupplementaryData1 import SupplementaryData1
 from ._UnderlyingTransaction8Choice import UnderlyingTransaction8Choice
-from ._Case6 import Case6
-from ._DebitAuthorisation2 import DebitAuthorisation2
-from ._CaseAssignment6 import CaseAssignment6
 
 class DebitAuthorisationRequestV10(base_types._BaseFieldType):
 
-	__slots__ = ["_Undrlyg", "_Dtl", "_Assgnmt", "_Case", "_SplmtryData"]
+	__slots__ = ["_Assgnmt", "_Case", "_Dtl", "_SplmtryData", "_Undrlyg"]
 	@property
 	def Assgnmt(self):
 		return self._Assgnmt

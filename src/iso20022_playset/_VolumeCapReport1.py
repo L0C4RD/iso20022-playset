@@ -1,7 +1,7 @@
 from . import base_types
+from ._MICIdentifier import MICIdentifier
 from ._Period4Choice import Period4Choice
 from ._VolumeCapReport2 import VolumeCapReport2
-from ._MICIdentifier import MICIdentifier
 
 class VolumeCapReport1(base_types._BaseFieldType):
 

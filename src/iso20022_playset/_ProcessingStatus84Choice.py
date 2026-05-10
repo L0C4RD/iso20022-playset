@@ -1,15 +1,15 @@
 from . import base_types
+from ._AcknowledgedAcceptedStatus24Choice import AcknowledgedAcceptedStatus24Choice
 from ._CancellationStatus15Choice import CancellationStatus15Choice
 from ._DeniedStatus15Choice import DeniedStatus15Choice
-from ._AcknowledgedAcceptedStatus24Choice import AcknowledgedAcceptedStatus24Choice
+from ._PendingStatus39Choice import PendingStatus39Choice
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 from ._RejectionOrRepairStatus42Choice import RejectionOrRepairStatus42Choice
 from ._RejectionOrRepairStatus43Choice import RejectionOrRepairStatus43Choice
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
-from ._PendingStatus39Choice import PendingStatus39Choice
 
 class ProcessingStatus84Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Canc", "_Dnd", "_Rjctd", "_Rpr", "_Prtry", "_PdgCxl", "_AckdAccptd"]
+	__slots__ = ["_AckdAccptd", "_Canc", "_Dnd", "_PdgCxl", "_Prtry", "_Rjctd", "_Rpr"]
 	@property
 	def AckdAccptd(self):
 		return self._AckdAccptd

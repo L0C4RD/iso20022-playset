@@ -1,7 +1,7 @@
 from . import base_types
+from ._MessageHeader1 import MessageHeader1
 from ._SupplementaryData1 import SupplementaryData1
 from ._SystemParty7 import SystemParty7
-from ._MessageHeader1 import MessageHeader1
 
 class PartyCreationRequestV02(base_types._BaseFieldType):
 

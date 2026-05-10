@@ -1,18 +1,18 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISOTime import ISOTime
 from ._AdditionalData1 import AdditionalData1
+from ._CreditDebit3Code import CreditDebit3Code
+from ._ISODate import ISODate
+from ._ISOTime import ISOTime
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._LodgingService1Code import LodgingService1Code
 from ._Max35Text import Max35Text
-from ._CreditDebit3Code import CreditDebit3Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max4NumericText import Max4NumericText
 from ._Tax41 import Tax41
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class LodgingLineItem3(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_Tp", "_UnitAmt", "_CdtDbt", "_OthrTp", "_AddtlData", "_Tm", "_PstChckOut", "_Tax", "_Drtn", "_SubTtlAmt"]
+	__slots__ = ["_AddtlData", "_CdtDbt", "_Drtn", "_Dt", "_OthrTp", "_PstChckOut", "_SubTtlAmt", "_Tax", "_Tm", "_Tp", "_UnitAmt"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

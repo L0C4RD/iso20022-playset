@@ -1,17 +1,17 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._DecimalNumber import DecimalNumber
-from ._Max6Text import Max6Text
-from ._Max4Text import Max4Text
 from ._FleetServiceType1Code import FleetServiceType1Code
-from ._Tax41 import Tax41
-from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._Max4Text import Max4Text
+from ._Max6Text import Max6Text
+from ._Tax41 import Tax41
+from ._TrueFalseIndicator import TrueFalseIndicator
 from ._UnitOfMeasure1Code import UnitOfMeasure1Code
 
 class FleetLineItem5(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctCdAssgnr", "_PdctCtgy", "_SvcTp", "_PdctQty", "_PdctQlfr", "_OthrUnitOfMeasr", "_UnitOfMeasr", "_Fuel", "_TtlAmtInclgTax", "_NonTaxbl", "_DscntAmt", "_FuelBrndCd", "_UnitPricTax", "_Tax", "_TtlAmtExclgTax", "_PdctCd", "_UnitPric"]
+	__slots__ = ["_DscntAmt", "_Fuel", "_FuelBrndCd", "_NonTaxbl", "_OthrUnitOfMeasr", "_PdctCd", "_PdctCdAssgnr", "_PdctCtgy", "_PdctQlfr", "_PdctQty", "_SvcTp", "_Tax", "_TtlAmtExclgTax", "_TtlAmtInclgTax", "_UnitOfMeasr", "_UnitPric", "_UnitPricTax"]
 	@property
 	def DscntAmt(self):
 		return self._DscntAmt

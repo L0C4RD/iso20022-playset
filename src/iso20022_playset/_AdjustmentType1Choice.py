@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class AdjustmentType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_OthrAdjstmntTp"]
+	__slots__ = ["_OthrAdjstmntTp", "_Tp"]
 	@property
 	def OthrAdjstmntTp(self):
 		return self._OthrAdjstmntTp

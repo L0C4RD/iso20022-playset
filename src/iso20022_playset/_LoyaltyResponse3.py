@@ -1,11 +1,11 @@
 from . import base_types
 from ._LoyaltyResult3 import LoyaltyResult3
-from ._TransactionIdentifier1 import TransactionIdentifier1
 from ._Max35Text import Max35Text
+from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class LoyaltyResponse3(base_types._BaseFieldType):
 
-	__slots__ = ["_POIRcncltnId", "_SaleTxId", "_POITxId", "_Rslt"]
+	__slots__ = ["_POIRcncltnId", "_POITxId", "_Rslt", "_SaleTxId"]
 	@property
 	def POIRcncltnId(self):
 		return self._POIRcncltnId

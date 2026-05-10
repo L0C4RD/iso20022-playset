@@ -1,12 +1,12 @@
 from . import base_types
+from ._BlockedReason2Choice import BlockedReason2Choice
 from ._Max350Text import Max350Text
 from ._TransactionType5Choice import TransactionType5Choice
 from ._YesNoIndicator import YesNoIndicator
-from ._BlockedReason2Choice import BlockedReason2Choice
 
 class BlockedStatusReason2(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_Blckd", "_TxTp", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Blckd", "_Rsn", "_TxTp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

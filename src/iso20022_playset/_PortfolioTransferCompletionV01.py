@@ -1,18 +1,18 @@
 from . import base_types
-from ._PartyIdentification309 import PartyIdentification309
-from ._MessageIdentification1 import MessageIdentification1
 from ._AdditionalReference10 import AdditionalReference10
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._Extension1 import Extension1
 from ._AdditionalReference11 import AdditionalReference11
-from ._PortfolioTransfer13 import PortfolioTransfer13
-from ._InvestmentAccount69 import InvestmentAccount69
+from ._Extension1 import Extension1
 from ._IndividualPerson8 import IndividualPerson8
+from ._InvestmentAccount69 import InvestmentAccount69
+from ._MarketPracticeVersion1 import MarketPracticeVersion1
+from ._MessageIdentification1 import MessageIdentification1
 from ._Organisation36 import Organisation36
+from ._PartyIdentification309 import PartyIdentification309
+from ._PortfolioTransfer13 import PortfolioTransfer13
 
 class PortfolioTransferCompletionV01(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctTrf", "_RltdRef", "_ScndryIndvInvstr", "_Trfee", "_RegdHldr", "_MktPrctcVrsn", "_ScndryCorpInvstr", "_PmryIndvInvstr", "_PoolRef", "_OthrIndvInvstr", "_TrfrAcct", "_PrvsRef", "_MsgRef", "_OthrCorpInvstr", "_Xtnsn", "_PmryCorpInvstr", "_NmneeAcct"]
+	__slots__ = ["_MktPrctcVrsn", "_MsgRef", "_NmneeAcct", "_OthrCorpInvstr", "_OthrIndvInvstr", "_PdctTrf", "_PmryCorpInvstr", "_PmryIndvInvstr", "_PoolRef", "_PrvsRef", "_RegdHldr", "_RltdRef", "_ScndryCorpInvstr", "_ScndryIndvInvstr", "_Trfee", "_TrfrAcct", "_Xtnsn"]
 	@property
 	def MktPrctcVrsn(self):
 		return self._MktPrctcVrsn

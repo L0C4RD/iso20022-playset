@@ -1,6 +1,6 @@
 from . import base_types
-from ._NoReasonCode import NoReasonCode
 from ._ClosedStatusReason1 import ClosedStatusReason1
+from ._NoReasonCode import NoReasonCode
 
 class ClosedStatusReason1Choice(base_types._BaseFieldType):
 

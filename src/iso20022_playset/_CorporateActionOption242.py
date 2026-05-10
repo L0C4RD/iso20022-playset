@@ -1,22 +1,22 @@
 from . import base_types
-from ._CorporateActionOption42Choice import CorporateActionOption42Choice
-from ._SignedQuantityFormat11 import SignedQuantityFormat11
-from ._RestrictedFINActiveCurrencyAndAmount import RestrictedFINActiveCurrencyAndAmount
-from ._YesNoIndicator import YesNoIndicator
-from ._Quantity54Choice import Quantity54Choice
-from ._SafekeepingPlaceFormat47Choice import SafekeepingPlaceFormat47Choice
-from ._SignedQuantityFormat12 import SignedQuantityFormat12
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._OptionNumber1Choice import OptionNumber1Choice
 from ._CashAccountIdentification11Choice import CashAccountIdentification11Choice
-from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
-from ._PartyIdentification136Choice import PartyIdentification136Choice
-from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._CorporateActionOption42Choice import CorporateActionOption42Choice
 from ._OptionFeaturesFormat27Choice import OptionFeaturesFormat27Choice
+from ._OptionNumber1Choice import OptionNumber1Choice
+from ._PartyIdentification136Choice import PartyIdentification136Choice
+from ._Quantity54Choice import Quantity54Choice
+from ._RestrictedFINActiveCurrencyAndAmount import RestrictedFINActiveCurrencyAndAmount
+from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from ._SafekeepingPlaceFormat47Choice import SafekeepingPlaceFormat47Choice
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._SignedQuantityFormat11 import SignedQuantityFormat11
+from ._SignedQuantityFormat12 import SignedQuantityFormat12
+from ._YesNoIndicator import YesNoIndicator
 
 class CorporateActionOption242(base_types._BaseFieldType):
 
-	__slots__ = ["_InstdBal", "_SlctnDealrFeeInd", "_AcctOwnr", "_StsCshAmt", "_FinInstrmId", "_OptnFeatrs", "_TtlElgblBal", "_OptnTp", "_OptnNb", "_BlckChainAdrOrWllt", "_StsQty", "_CshAcct", "_PrtctBal", "_SfkpgPlc", "_UinstdBal", "_SfkpgAcct"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_CshAcct", "_FinInstrmId", "_InstdBal", "_OptnFeatrs", "_OptnNb", "_OptnTp", "_PrtctBal", "_SfkpgAcct", "_SfkpgPlc", "_SlctnDealrFeeInd", "_StsCshAmt", "_StsQty", "_TtlElgblBal", "_UinstdBal"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

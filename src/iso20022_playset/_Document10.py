@@ -1,12 +1,12 @@
 from . import base_types
+from ._Channel1Choice import Channel1Choice
 from ._DocumentFormat1Choice import DocumentFormat1Choice
 from ._UndertakingDocumentType2Choice import UndertakingDocumentType2Choice
 from ._YesNoIndicator import YesNoIndicator
-from ._Channel1Choice import Channel1Choice
 
 class Document10(base_types._BaseFieldType):
 
-	__slots__ = ["_PresntnChanl", "_DocFrmt", "_SgndInd", "_CpyInd", "_DocTp"]
+	__slots__ = ["_CpyInd", "_DocFrmt", "_DocTp", "_PresntnChanl", "_SgndInd"]
 	@property
 	def CpyInd(self):
 		return self._CpyInd

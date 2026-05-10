@@ -1,12 +1,12 @@
 from . import base_types
-from ._Pagination import Pagination
-from ._MessageIdentification1 import MessageIdentification1
 from ._AdditionalReference2 import AdditionalReference2
+from ._MessageIdentification1 import MessageIdentification1
+from ._Pagination import Pagination
 from ._StatementOfInvestmentFundTransactions3 import StatementOfInvestmentFundTransactions3
 
 class StatementOfInvestmentFundTransactionsCancellationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsRef", "_MsgId", "_MsgPgntn", "_StmtToBeCanc", "_RltdRef"]
+	__slots__ = ["_MsgId", "_MsgPgntn", "_PrvsRef", "_RltdRef", "_StmtToBeCanc"]
 	@property
 	def MsgId(self):
 		return self._MsgId

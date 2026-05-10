@@ -1,12 +1,12 @@
 from . import base_types
-from ._Warrant4 import Warrant4
 from ._Debt5 import Debt5
 from ._Derivative4 import Derivative4
 from ._Equity3 import Equity3
+from ._Warrant4 import Warrant4
 
 class FinancialInstrument97(base_types._BaseFieldType):
 
-	__slots__ = ["_Deriv", "_Warrt", "_Debt", "_Eqty"]
+	__slots__ = ["_Debt", "_Deriv", "_Eqty", "_Warrt"]
 	@property
 	def Debt(self):
 		return self._Debt

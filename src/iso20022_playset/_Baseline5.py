@@ -1,23 +1,23 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
-from ._PaymentTerms5 import PaymentTerms5
-from ._SettlementTerms3 import SettlementTerms3
-from ._LineItem13 import LineItem13
 from ._BICIdentification1 import BICIdentification1
-from ._PartyIdentification26 import PartyIdentification26
-from ._RequiredSubmission2 import RequiredSubmission2
-from ._RequiredSubmission6 import RequiredSubmission6
-from ._TradeFinanceService2Code import TradeFinanceService2Code
-from ._RequiredSubmission4 import RequiredSubmission4
-from ._DocumentIdentification7 import DocumentIdentification7
 from ._DocumentIdentification1 import DocumentIdentification1
+from ._DocumentIdentification7 import DocumentIdentification7
+from ._ISODate import ISODate
+from ._LineItem13 import LineItem13
+from ._PartyIdentification26 import PartyIdentification26
 from ._PaymentObligation2 import PaymentObligation2
+from ._PaymentTerms5 import PaymentTerms5
+from ._RequiredSubmission2 import RequiredSubmission2
 from ._RequiredSubmission3 import RequiredSubmission3
+from ._RequiredSubmission4 import RequiredSubmission4
+from ._RequiredSubmission6 import RequiredSubmission6
+from ._SettlementTerms3 import SettlementTerms3
+from ._TradeFinanceService2Code import TradeFinanceService2Code
+from ._YesNoIndicator import YesNoIndicator
 
 class Baseline5(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrBk", "_SellrSdSubmitgBk", "_PmtTerms", "_SubmitrBaselnId", "_SvcCd", "_PurchsOrdrRef", "_BuyrSdSubmitgBk", "_Buyr", "_LatstMtchDt", "_SttlmTerms", "_CertDataSetReqrd", "_Consgn", "_InsrncDataSetReqrd", "_ShipTo", "_TrnsprtDataSetReqrd", "_SellrBk", "_Sellr", "_OthrCertDataSetReqrd", "_InttToPayXpctd", "_BllTo", "_PmtOblgtn", "_ComrclDataSetReqrd", "_Goods"]
+	__slots__ = ["_BllTo", "_Buyr", "_BuyrBk", "_BuyrSdSubmitgBk", "_CertDataSetReqrd", "_ComrclDataSetReqrd", "_Consgn", "_Goods", "_InsrncDataSetReqrd", "_InttToPayXpctd", "_LatstMtchDt", "_OthrCertDataSetReqrd", "_PmtOblgtn", "_PmtTerms", "_PurchsOrdrRef", "_Sellr", "_SellrBk", "_SellrSdSubmitgBk", "_ShipTo", "_SttlmTerms", "_SubmitrBaselnId", "_SvcCd", "_TrnsprtDataSetReqrd"]
 	@property
 	def BllTo(self):
 		return self._BllTo

@@ -1,16 +1,16 @@
 from . import base_types
-from ._UnderlyingContract4Choice import UnderlyingContract4Choice
-from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
-from ._SupplementaryData1 import SupplementaryData1
 from ._ContractBalance1 import ContractBalance1
+from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
+from ._Max1025Text import Max1025Text
 from ._Max35Text import Max35Text
 from ._PaymentScheduleType2Choice import PaymentScheduleType2Choice
-from ._Max1025Text import Max1025Text
 from ._Priority2Code import Priority2Code
+from ._SupplementaryData1 import SupplementaryData1
+from ._UnderlyingContract4Choice import UnderlyingContract4Choice
 
 class RegisteredContract17(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctrct", "_PmtSchdlTp", "_AddtlInf", "_RegdCtrctAmdmntId", "_OrgnlRegdCtrctId", "_CtrctBal", "_Attchmnt", "_SplmtryData", "_Prty"]
+	__slots__ = ["_AddtlInf", "_Attchmnt", "_Ctrct", "_CtrctBal", "_OrgnlRegdCtrctId", "_PmtSchdlTp", "_Prty", "_RegdCtrctAmdmntId", "_SplmtryData"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

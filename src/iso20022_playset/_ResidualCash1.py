@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class ResidualCash1(base_types._BaseFieldType):
 
-	__slots__ = ["_RsdlCshInd", "_Ccy"]
+	__slots__ = ["_Ccy", "_RsdlCshInd"]
 	@property
 	def Ccy(self):
 		return self._Ccy

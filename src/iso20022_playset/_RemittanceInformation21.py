@@ -1,10 +1,10 @@
 from . import base_types
-from ._StructuredRemittanceInformation17 import StructuredRemittanceInformation17
 from ._Max140Text import Max140Text
+from ._StructuredRemittanceInformation17 import StructuredRemittanceInformation17
 
 class RemittanceInformation21(base_types._BaseFieldType):
 
-	__slots__ = ["_Ustrd", "_Strd"]
+	__slots__ = ["_Strd", "_Ustrd"]
 	@property
 	def Strd(self):
 		return self._Strd

@@ -1,14 +1,14 @@
 from . import base_types
-from ._FinancialInstrumentDetails44 import FinancialInstrumentDetails44
-from ._Statement81 import Statement81
-from ._PartyIdentification136Choice import PartyIdentification136Choice
-from ._Pagination1 import Pagination1
-from ._SecuritiesAccount30 import SecuritiesAccount30
 from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
+from ._FinancialInstrumentDetails44 import FinancialInstrumentDetails44
+from ._Pagination1 import Pagination1
+from ._PartyIdentification136Choice import PartyIdentification136Choice
+from ._SecuritiesAccount30 import SecuritiesAccount30
+from ._Statement81 import Statement81
 
 class IntraPositionMovementPostingReport002V09(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_SfkpgAcct", "_FinInstrm", "_AcctOwnr", "_Pgntn", "_StmtGnlDtls"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_FinInstrm", "_Pgntn", "_SfkpgAcct", "_StmtGnlDtls"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._Price4 import Price4
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._PartyIdentificationAndAccount31 import PartyIdentificationAndAccount31
-from ._PartyIdentification34Choice import PartyIdentification34Choice
-from ._SecurityIdentification14 import SecurityIdentification14
-from ._Max35Text import Max35Text
 from ._AmountAndDirection27 import AmountAndDirection27
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._PartyIdentification34Choice import PartyIdentification34Choice
 from ._PartyIdentification35Choice import PartyIdentification35Choice
+from ._PartyIdentificationAndAccount31 import PartyIdentificationAndAccount31
+from ._Price4 import Price4
 from ._SafekeepingPlaceFormat7Choice import SafekeepingPlaceFormat7Choice
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SecurityIdentification14 import SecurityIdentification14
 
 class SettlementObligation7(base_types._BaseFieldType):
 
-	__slots__ = ["_DealPric", "_CSDTxId", "_CntrlCtrPtyTxId", "_RmngQtyToBeSttld", "_FinInstrmId", "_RmngAmtToBeSttld", "_NonClrMmb", "_SttlmAmt", "_Qty", "_TradDt", "_PrvsBuyInId", "_IntnddSttlmDt", "_SfkpgAcct", "_DlvryAcct", "_Dpstry", "_ClrSgmt", "_SfkpgPlc"]
+	__slots__ = ["_CSDTxId", "_ClrSgmt", "_CntrlCtrPtyTxId", "_DealPric", "_DlvryAcct", "_Dpstry", "_FinInstrmId", "_IntnddSttlmDt", "_NonClrMmb", "_PrvsBuyInId", "_Qty", "_RmngAmtToBeSttld", "_RmngQtyToBeSttld", "_SfkpgAcct", "_SfkpgPlc", "_SttlmAmt", "_TradDt"]
 	@property
 	def CSDTxId(self):
 		return self._CSDTxId

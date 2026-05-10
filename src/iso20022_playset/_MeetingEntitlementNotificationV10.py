@@ -1,16 +1,16 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MeetingReference10 import MeetingReference10
-from ._PartyIdentification232Choice import PartyIdentification232Choice
 from ._EligibilityDates1 import EligibilityDates1
 from ._Max35Text import Max35Text
-from ._SecurityPosition21 import SecurityPosition21
+from ._MeetingReference10 import MeetingReference10
 from ._NotificationType2Code import NotificationType2Code
 from ._PartyIdentification129Choice import PartyIdentification129Choice
+from ._PartyIdentification232Choice import PartyIdentification232Choice
+from ._SecurityPosition21 import SecurityPosition21
+from ._SupplementaryData1 import SupplementaryData1
 
 class MeetingEntitlementNotificationV10(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsEntitlmntNtfctnId", "_Elgblty", "_NtfctnTp", "_Issr", "_Scty", "_MtgAttndee", "_Prxy", "_MtgRef", "_SplmtryData"]
+	__slots__ = ["_Elgblty", "_Issr", "_MtgAttndee", "_MtgRef", "_NtfctnTp", "_PrvsEntitlmntNtfctnId", "_Prxy", "_Scty", "_SplmtryData"]
 	@property
 	def Elgblty(self):
 		return self._Elgblty

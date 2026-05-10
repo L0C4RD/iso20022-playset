@@ -1,11 +1,11 @@
 from . import base_types
-from ._SignatureEnvelope import SignatureEnvelope
 from ._Max140Text import Max140Text
 from ._Number import Number
+from ._SignatureEnvelope import SignatureEnvelope
 
 class ApplicationSpecifics1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfDocs", "_SysUsr", "_Sgntr"]
+	__slots__ = ["_Sgntr", "_SysUsr", "_TtlNbOfDocs"]
 	@property
 	def Sgntr(self):
 		return self._Sgntr

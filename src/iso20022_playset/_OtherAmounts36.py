@@ -3,7 +3,7 @@ from ._AmountAndDirection72 import AmountAndDirection72
 
 class OtherAmounts36(base_types._BaseFieldType):
 
-	__slots__ = ["_LclBrkrComssn", "_Othr", "_CsmptnTax", "_StmpDty", "_LclTax", "_ExctgBrkrAmt", "_ChrgsFees", "_TxTax", "_AcrdIntrstAmt", "_TradAmt", "_WhldgTax"]
+	__slots__ = ["_AcrdIntrstAmt", "_ChrgsFees", "_CsmptnTax", "_ExctgBrkrAmt", "_LclBrkrComssn", "_LclTax", "_Othr", "_StmpDty", "_TradAmt", "_TxTax", "_WhldgTax"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt

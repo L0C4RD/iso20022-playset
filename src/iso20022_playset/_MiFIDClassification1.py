@@ -4,7 +4,7 @@ from ._OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
 
 class MiFIDClassification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Nrrtv", "_Clssfctn"]
+	__slots__ = ["_Clssfctn", "_Nrrtv"]
 	@property
 	def Clssfctn(self):
 		return self._Clssfctn

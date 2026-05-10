@@ -1,19 +1,19 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._CollateralParties10 import CollateralParties10
-from ._DealTransactionDetails5 import DealTransactionDetails5
 from ._CashMovement8 import CashMovement8
-from ._Linkages58 import Linkages58
-from ._SecuritiesMovement9 import SecuritiesMovement9
 from ._CollateralDate2 import CollateralDate2
 from ._CollateralParameters10 import CollateralParameters10
-from ._TransactionIdentifications45 import TransactionIdentifications45
-from ._Pagination1 import Pagination1
+from ._CollateralParties10 import CollateralParties10
+from ._DealTransactionDetails5 import DealTransactionDetails5
+from ._Linkages58 import Linkages58
 from ._OtherParties38 import OtherParties38
+from ._Pagination1 import Pagination1
+from ._SecuritiesMovement9 import SecuritiesMovement9
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionIdentifications45 import TransactionIdentifications45
 
 class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesMvmnt", "_CshMvmnt", "_DealTxDt", "_OthrPties", "_CollPties", "_Pgntn", "_Lnkgs", "_GnlParams", "_DealTxDtls", "_TxInstrId", "_SplmtryData"]
+	__slots__ = ["_CollPties", "_CshMvmnt", "_DealTxDt", "_DealTxDtls", "_GnlParams", "_Lnkgs", "_OthrPties", "_Pgntn", "_SctiesMvmnt", "_SplmtryData", "_TxInstrId"]
 	@property
 	def CollPties(self):
 		return self._CollPties

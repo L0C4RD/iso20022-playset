@@ -1,11 +1,11 @@
 from . import base_types
 from ._AmountPrice1 import AmountPrice1
-from ._PriceValueType5FormatChoice import PriceValueType5FormatChoice
 from ._PriceRate1 import PriceRate1
+from ._PriceValueType5FormatChoice import PriceValueType5FormatChoice
 
 class PriceFormat2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Rate", "_NotSpcfd"]
+	__slots__ = ["_Amt", "_NotSpcfd", "_Rate"]
 	@property
 	def Amt(self):
 		return self._Amt

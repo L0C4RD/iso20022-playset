@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._Proposal6 import Proposal6
-from ._Max35Text import Max35Text
 from ._Agreement4 import Agreement4
+from ._Max35Text import Max35Text
 from ._Obligation9 import Obligation9
+from ._Proposal6 import Proposal6
+from ._SupplementaryData1 import SupplementaryData1
 
 class CollateralProposalV06(base_types._BaseFieldType):
 
-	__slots__ = ["_Oblgtn", "_SplmtryData", "_Agrmt", "_TxId", "_TpAndDtls"]
+	__slots__ = ["_Agrmt", "_Oblgtn", "_SplmtryData", "_TpAndDtls", "_TxId"]
 	@property
 	def Agrmt(self):
 		return self._Agrmt

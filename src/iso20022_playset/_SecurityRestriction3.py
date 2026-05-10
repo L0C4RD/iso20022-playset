@@ -1,13 +1,13 @@
 from . import base_types
+from ._DateTimePeriod2 import DateTimePeriod2
 from ._InvestorRestrictionType3Choice import InvestorRestrictionType3Choice
 from ._InvestorType3Choice import InvestorType3Choice
-from ._SecurityRestrictionType2Choice import SecurityRestrictionType2Choice
-from ._DateTimePeriod2 import DateTimePeriod2
 from ._LegalRestrictions5Choice import LegalRestrictions5Choice
+from ._SecurityRestrictionType2Choice import SecurityRestrictionType2Choice
 
 class SecurityRestriction3(base_types._BaseFieldType):
 
-	__slots__ = ["_RstrctnTp", "_LglRstrctnTp", "_InvstrTp", "_FctvPrd", "_InvstrRstrctnTp"]
+	__slots__ = ["_FctvPrd", "_InvstrRstrctnTp", "_InvstrTp", "_LglRstrctnTp", "_RstrctnTp"]
 	@property
 	def FctvPrd(self):
 		return self._FctvPrd

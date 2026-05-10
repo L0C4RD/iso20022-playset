@@ -1,19 +1,19 @@
 from . import base_types
-from ._TaxData1 import TaxData1
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._RemittanceInformation22 import RemittanceInformation22
+from ._CashAccount40 import CashAccount40
+from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
+from ._InstructionForNextAgent1 import InstructionForNextAgent1
+from ._PartyIdentification272 import PartyIdentification272
+from ._PaymentIdentification13 import PaymentIdentification13
 from ._PaymentTypeInformation28 import PaymentTypeInformation28
 from ._Purpose2Choice import Purpose2Choice
-from ._InstructionForNextAgent1 import InstructionForNextAgent1
-from ._PaymentIdentification13 import PaymentIdentification13
-from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
-from ._PartyIdentification272 import PartyIdentification272
-from ._CashAccount40 import CashAccount40
+from ._RemittanceInformation22 import RemittanceInformation22
+from ._TaxData1 import TaxData1
 
 class CreditTransferTransaction68(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsInstgAgt2Acct", "_Dbtr", "_IntrmyAgt1", "_Cdtr", "_UltmtCdtr", "_PrvsInstgAgt3Acct", "_DbtrAgtAcct", "_InstrForCdtrAgt", "_DbtrAgt", "_RmtInf", "_InstdAmt", "_Tax", "_IntrmyAgt1Acct", "_InitgPty", "_IntrmyAgt3", "_PmtId", "_PrvsInstgAgt1Acct", "_PrvsInstgAgt2", "_UltmtDbtr", "_PrvsInstgAgt3", "_CdtrAgt", "_PrvsInstgAgt1", "_InstrForNxtAgt", "_CdtrAcct", "_CdtrAgtAcct", "_DbtrAcct", "_PmtTpInf", "_IntrmyAgt3Acct", "_Purp", "_IntrmyAgt2", "_IntrmyAgt2Acct"]
+	__slots__ = ["_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_InitgPty", "_InstdAmt", "_InstrForCdtrAgt", "_InstrForNxtAgt", "_IntrmyAgt1", "_IntrmyAgt1Acct", "_IntrmyAgt2", "_IntrmyAgt2Acct", "_IntrmyAgt3", "_IntrmyAgt3Acct", "_PmtId", "_PmtTpInf", "_PrvsInstgAgt1", "_PrvsInstgAgt1Acct", "_PrvsInstgAgt2", "_PrvsInstgAgt2Acct", "_PrvsInstgAgt3", "_PrvsInstgAgt3Acct", "_Purp", "_RmtInf", "_Tax", "_UltmtCdtr", "_UltmtDbtr"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

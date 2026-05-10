@@ -1,17 +1,17 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._SupplementaryData1 import SupplementaryData1
-from ._Case6 import Case6
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._PaymentCancellationReason6 import PaymentCancellationReason6
-from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
+from ._Case6 import Case6
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
 from ._OriginalTransactionReference42 import OriginalTransactionReference42
+from ._PaymentCancellationReason6 import PaymentCancellationReason6
+from ._SupplementaryData1 import SupplementaryData1
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class PaymentTransaction154(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlReqdColltnDt", "_OrgnlTxRef", "_Case", "_OrgnlUETR", "_OrgnlEndToEndId", "_OrgnlInstrId", "_CxlRsnInf", "_OrgnlReqdExctnDt", "_OrgnlInstdAmt", "_SplmtryData", "_CxlId"]
+	__slots__ = ["_Case", "_CxlId", "_CxlRsnInf", "_OrgnlEndToEndId", "_OrgnlInstdAmt", "_OrgnlInstrId", "_OrgnlReqdColltnDt", "_OrgnlReqdExctnDt", "_OrgnlTxRef", "_OrgnlUETR", "_SplmtryData"]
 	@property
 	def Case(self):
 		return self._Case

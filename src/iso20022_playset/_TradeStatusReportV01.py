@@ -4,7 +4,7 @@ from ._TradeStatusReport1 import TradeStatusReport1
 
 class TradeStatusReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_TradStsAdvcDtls", "_DgtlSgntr"]
+	__slots__ = ["_DgtlSgntr", "_TradStsAdvcDtls"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr

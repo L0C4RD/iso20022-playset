@@ -1,11 +1,11 @@
 from . import base_types
-from ._ValidationRuleSchemeName1Choice import ValidationRuleSchemeName1Choice
 from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
+from ._ValidationRuleSchemeName1Choice import ValidationRuleSchemeName1Choice
 
 class GenericValidationRuleIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_SchmeNm", "_Id", "_Issr", "_Desc"]
+	__slots__ = ["_Desc", "_Id", "_Issr", "_SchmeNm"]
 	@property
 	def Desc(self):
 		return self._Desc

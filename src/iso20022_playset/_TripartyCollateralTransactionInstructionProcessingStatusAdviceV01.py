@@ -1,21 +1,21 @@
 from . import base_types
 from ._CancellationStatus30Choice import CancellationStatus30Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecuritiesMovement8 import SecuritiesMovement8
 from ._CashMovement7 import CashMovement7
-from ._TransactionIdentifications46 import TransactionIdentifications46
 from ._CollateralDate2 import CollateralDate2
 from ._CollateralParameters12 import CollateralParameters12
 from ._CollateralParties8 import CollateralParties8
-from ._ProcessingStatus82Choice import ProcessingStatus82Choice
+from ._DealTransactionDetails7 import DealTransactionDetails7
+from ._MatchingStatus33Choice import MatchingStatus33Choice
 from ._Max35Text import Max35Text
 from ._Pagination1 import Pagination1
-from ._MatchingStatus33Choice import MatchingStatus33Choice
-from ._DealTransactionDetails7 import DealTransactionDetails7
+from ._ProcessingStatus82Choice import ProcessingStatus82Choice
+from ._SecuritiesMovement8 import SecuritiesMovement8
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionIdentifications46 import TransactionIdentifications46
 
 class TripartyCollateralTransactionInstructionProcessingStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MtchgSts", "_DealTxDtls", "_SctiesMvmnt", "_DealTxDt", "_TxInstrId", "_Pgntn", "_CxlPrcgSts", "_GnlParams", "_CxlReqRef", "_InstrPrcgSts", "_CollPties", "_SplmtryData", "_CshMvmnt"]
+	__slots__ = ["_CollPties", "_CshMvmnt", "_CxlPrcgSts", "_CxlReqRef", "_DealTxDt", "_DealTxDtls", "_GnlParams", "_InstrPrcgSts", "_MtchgSts", "_Pgntn", "_SctiesMvmnt", "_SplmtryData", "_TxInstrId"]
 	@property
 	def CollPties(self):
 		return self._CollPties

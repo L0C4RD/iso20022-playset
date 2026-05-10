@@ -1,32 +1,32 @@
 from . import base_types
-from ._ProcessingResult26 import ProcessingResult26
-from ._Token2 import Token2
-from ._TransactionCharacteristics4 import TransactionCharacteristics4
-from ._CardData14 import CardData14
-from ._AdditionalData2 import AdditionalData2
-from ._TransactionIdentification57 import TransactionIdentification57
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._Jurisdiction2 import Jurisdiction2
-from ._TransactionAmounts3 import TransactionAmounts3
-from ._FeeCollectionReference2 import FeeCollectionReference2
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ContentInformationType41 import ContentInformationType41
-from ._PartyIdentification285 import PartyIdentification285
-from ._SettlementService6 import SettlementService6
-from ._ProtectedData2 import ProtectedData2
-from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
-from ._Context22 import Context22
 from ._AdditionalAmounts4 import AdditionalAmounts4
-from ._OriginalDataElements3 import OriginalDataElements3
+from ._AdditionalData2 import AdditionalData2
+from ._AdditionalFee3 import AdditionalFee3
+from ._CardData14 import CardData14
+from ._ContentInformationType41 import ContentInformationType41
+from ._Context22 import Context22
 from ._DateTime2 import DateTime2
-from ._SpecialProgrammeQualification2 import SpecialProgrammeQualification2
+from ._FeeCollectionReference2 import FeeCollectionReference2
 from ._Header71 import Header71
+from ._Jurisdiction2 import Jurisdiction2
+from ._OriginalDataElements3 import OriginalDataElements3
+from ._PartyIdentification285 import PartyIdentification285
+from ._PartyIdentification286 import PartyIdentification286
+from ._ProcessingResult26 import ProcessingResult26
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._ProtectedData2 import ProtectedData2
+from ._Reconciliation4 import Reconciliation4
+from ._SettlementService6 import SettlementService6
+from ._SpecialProgrammeQualification2 import SpecialProgrammeQualification2
+from ._SupplementaryData1 import SupplementaryData1
+from ._Token2 import Token2
+from ._TransactionAmounts3 import TransactionAmounts3
+from ._TransactionCharacteristics4 import TransactionCharacteristics4
+from ._TransactionIdentification57 import TransactionIdentification57
 
 class FeeCollectionInitiationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlAmt", "_OrgnlDataElmts", "_Sndr", "_PrcgRslt", "_AddtlData", "_Issr", "_Jursdctn", "_Prgrmm", "_SplmtryData", "_Card", "_AddtlFee", "_Hdr", "_Tkn", "_Rcncltn", "_ConvsDtTm", "_SctyTrlr", "_TxId", "_Rcvr", "_Accptr", "_SttlmSvc", "_SpclPrgrmmQlfctn", "_TxChrtcs", "_Cntxt", "_TxAmts", "_FeeColltnRef", "_PrtctdData", "_Orgtr", "_Acqrr", "_Dstn"]
+	__slots__ = ["_Accptr", "_Acqrr", "_AddtlAmt", "_AddtlData", "_AddtlFee", "_Card", "_Cntxt", "_ConvsDtTm", "_Dstn", "_FeeColltnRef", "_Hdr", "_Issr", "_Jursdctn", "_OrgnlDataElmts", "_Orgtr", "_PrcgRslt", "_Prgrmm", "_PrtctdData", "_Rcncltn", "_Rcvr", "_SctyTrlr", "_Sndr", "_SpclPrgrmmQlfctn", "_SplmtryData", "_SttlmSvc", "_Tkn", "_TxAmts", "_TxChrtcs", "_TxId"]
 	@property
 	def Accptr(self):
 		return self._Accptr

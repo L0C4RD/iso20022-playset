@@ -1,44 +1,44 @@
 from . import base_types
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._TransactionIdentification54 import TransactionIdentification54
-from ._Context23 import Context23
 from ._AccountDetails4 import AccountDetails4
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ContentInformationType41 import ContentInformationType41
-from ._CustomerDevice5 import CustomerDevice5
-from ._Terminal7 import Terminal7
-from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
-from ._RiskContext3 import RiskContext3
-from ._PartyIdentification288 import PartyIdentification288
-from ._AdditionalService2 import AdditionalService2
-from ._TransactionCharacteristics2 import TransactionCharacteristics2
-from ._PointOfInteractionComponent16 import PointOfInteractionComponent16
-from ._DateTime2 import DateTime2
-from ._StrongCustomerAuthentication2 import StrongCustomerAuthentication2
-from ._Verification6 import Verification6
-from ._Header71 import Header71
-from ._SettlementService5 import SettlementService5
-from ._ProcessingResult27 import ProcessingResult27
+from ._AdditionalAmounts4 import AdditionalAmounts4
 from ._AdditionalData2 import AdditionalData2
+from ._AdditionalFee3 import AdditionalFee3
+from ._AdditionalService2 import AdditionalService2
 from ._CardData11 import CardData11
-from ._TransactionAmounts4 import TransactionAmounts4
 from ._Cardholder22 import Cardholder22
-from ._Jurisdiction2 import Jurisdiction2
+from ._ContentInformationType41 import ContentInformationType41
+from ._Context23 import Context23
+from ._CustomerDevice5 import CustomerDevice5
+from ._DateTime2 import DateTime2
 from ._ExchangeRateInformation5 import ExchangeRateInformation5
+from ._Header71 import Header71
+from ._ISO8583ResponseCode import ISO8583ResponseCode
+from ._Instalment6 import Instalment6
+from ._Jurisdiction2 import Jurisdiction2
+from ._Max10KHexBinaryText import Max10KHexBinaryText
+from ._PartyIdentification286 import PartyIdentification286
+from ._PartyIdentification288 import PartyIdentification288
+from ._PointOfInteractionComponent16 import PointOfInteractionComponent16
+from ._ProcessingResult27 import ProcessingResult27
 from ._ProgrammeMode4 import ProgrammeMode4
 from ._ProtectedData2 import ProtectedData2
-from ._Wallet3 import Wallet3
-from ._AdditionalAmounts4 import AdditionalAmounts4
-from ._Instalment6 import Instalment6
-from ._Max10KHexBinaryText import Max10KHexBinaryText
+from ._Reconciliation4 import Reconciliation4
+from ._RiskContext3 import RiskContext3
+from ._SettlementService5 import SettlementService5
 from ._SpecialProgrammeQualification2 import SpecialProgrammeQualification2
+from ._StrongCustomerAuthentication2 import StrongCustomerAuthentication2
+from ._SupplementaryData1 import SupplementaryData1
+from ._Terminal7 import Terminal7
 from ._Token2 import Token2
+from ._TransactionAmounts4 import TransactionAmounts4
+from ._TransactionCharacteristics2 import TransactionCharacteristics2
+from ._TransactionIdentification54 import TransactionIdentification54
+from ._Verification6 import Verification6
+from ._Wallet3 import Wallet3
 
 class InquiryInitiationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctFr", "_AddtlAmt", "_Termnl", "_Sndr", "_AddtlData", "_TxChrtcs", "_AddtlFee", "_Vrfctn", "_Rcncltn", "_ConvsDtTm", "_Cntxt", "_POICmpnt", "_Crdhldr", "_TxId", "_TxAmts", "_CstmrDvc", "_Accptr", "_Rsk", "_Orgtr", "_XchgRate", "_Card", "_Acqrr", "_ICCRltdData", "_Dstn", "_PrcgRslt", "_Instlmt", "_Prgrmm", "_Issr", "_Jursdctn", "_Hdr", "_StrngCstmrAuthntcn", "_Tkn", "_SctyTrlr", "_Rcvr", "_SttlmSvc", "_PrtctdData", "_AddtlSvc", "_OrgnlRspnCd", "_SpclPrgrmmQlfctn", "_Wllt", "_SplmtryData"]
+	__slots__ = ["_Accptr", "_AcctFr", "_Acqrr", "_AddtlAmt", "_AddtlData", "_AddtlFee", "_AddtlSvc", "_Card", "_Cntxt", "_ConvsDtTm", "_Crdhldr", "_CstmrDvc", "_Dstn", "_Hdr", "_ICCRltdData", "_Instlmt", "_Issr", "_Jursdctn", "_OrgnlRspnCd", "_Orgtr", "_POICmpnt", "_PrcgRslt", "_Prgrmm", "_PrtctdData", "_Rcncltn", "_Rcvr", "_Rsk", "_SctyTrlr", "_Sndr", "_SpclPrgrmmQlfctn", "_SplmtryData", "_StrngCstmrAuthntcn", "_SttlmSvc", "_Termnl", "_Tkn", "_TxAmts", "_TxChrtcs", "_TxId", "_Vrfctn", "_Wllt", "_XchgRate"]
 	@property
 	def Accptr(self):
 		return self._Accptr

@@ -1,13 +1,13 @@
 from . import base_types
 from ._Address2 import Address2
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
 from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class Location6(base_types._BaseFieldType):
 
-	__slots__ = ["_LclCcy", "_Nm", "_Cd", "_Adr", "_LclTmZone", "_Desc"]
+	__slots__ = ["_Adr", "_Cd", "_Desc", "_LclCcy", "_LclTmZone", "_Nm"]
 	@property
 	def Adr(self):
 		return self._Adr

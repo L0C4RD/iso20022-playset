@@ -1,8 +1,8 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._CardDepositType1Code import CardDepositType1Code
-from ._Max35Text import Max35Text
 from ._CreditDebit3Code import CreditDebit3Code
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
 
 class DepositDetails3(base_types._BaseFieldType):
 

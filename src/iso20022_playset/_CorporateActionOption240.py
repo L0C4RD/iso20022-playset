@@ -1,12 +1,12 @@
 from . import base_types
+from ._CashOption109 import CashOption109
+from ._CorporateActionOption33Choice import CorporateActionOption33Choice
 from ._OptionNumber1Choice import OptionNumber1Choice
 from ._SecuritiesOption80 import SecuritiesOption80
-from ._CorporateActionOption33Choice import CorporateActionOption33Choice
-from ._CashOption109 import CashOption109
 
 class CorporateActionOption240(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnNb", "_OptnTp", "_CshMvmntDtls", "_SctiesMvmntDtls"]
+	__slots__ = ["_CshMvmntDtls", "_OptnNb", "_OptnTp", "_SctiesMvmntDtls"]
 	@property
 	def CshMvmntDtls(self):
 		return self._CshMvmntDtls

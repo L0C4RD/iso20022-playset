@@ -1,10 +1,10 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._BaseOneRate import BaseOneRate
+from ._PercentageRate import PercentageRate
 
 class SecuritiesTransactionPrice14Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_Dcml"]
+	__slots__ = ["_Dcml", "_Rate"]
 	@property
 	def Dcml(self):
 		return self._Dcml

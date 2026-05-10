@@ -1,11 +1,11 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._DecimalNumber import DecimalNumber
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._DecimalNumber import DecimalNumber
+from ._PercentageRate import PercentageRate
 
 class FinancialInstrumentQuantity26Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_GrssAmt", "_UnitsNb", "_NetAmt", "_PctgOfTtlRedAmt"]
+	__slots__ = ["_GrssAmt", "_NetAmt", "_PctgOfTtlRedAmt", "_UnitsNb"]
 	@property
 	def GrssAmt(self):
 		return self._GrssAmt

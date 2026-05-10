@@ -1,19 +1,19 @@
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._PaymentMethod4Code import PaymentMethod4Code
-from ._RemittanceInformation22 import RemittanceInformation22
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._AmountType4Choice import AmountType4Choice
-from ._PaymentTypeInformation29 import PaymentTypeInformation29
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
 from ._CreditTransferMandateData1 import CreditTransferMandateData1
-from ._PaymentCondition2 import PaymentCondition2
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._Document15 import Document15
 from ._PartyIdentification272 import PartyIdentification272
-from ._CashAccount40 import CashAccount40
+from ._PaymentCondition2 import PaymentCondition2
+from ._PaymentMethod4Code import PaymentMethod4Code
+from ._PaymentTypeInformation29 import PaymentTypeInformation29
+from ._RemittanceInformation22 import RemittanceInformation22
 
 class OriginalTransactionReference40(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_NclsdFile", "_PmtMtd", "_MndtRltdInf", "_Cdtr", "_UltmtCdtr", "_RmtInf", "_Dbtr", "_UltmtDbtr", "_CdtrAgt", "_PmtCond", "_PmtTpInf", "_CdtrAcct", "_CdtrAgtAcct", "_ReqdExctnDt", "_DbtrAcct", "_XpryDt", "_DbtrAgt", "_DbtrAgtAcct"]
+	__slots__ = ["_Amt", "_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_MndtRltdInf", "_NclsdFile", "_PmtCond", "_PmtMtd", "_PmtTpInf", "_ReqdExctnDt", "_RmtInf", "_UltmtCdtr", "_UltmtDbtr", "_XpryDt"]
 	@property
 	def Amt(self):
 		return self._Amt

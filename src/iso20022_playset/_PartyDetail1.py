@@ -1,15 +1,15 @@
 from . import base_types
+from ._CommunicationAddress7 import CommunicationAddress7
 from ._CountryCode import CountryCode
+from ._Max10Text import Max10Text
 from ._Max20000Text import Max20000Text
 from ._Max350Text import Max350Text
-from ._Max10Text import Max10Text
 from ._PostalAddress6 import PostalAddress6
 from ._SupervisingAuthorityIdentification1Choice import SupervisingAuthorityIdentification1Choice
-from ._CommunicationAddress7 import CommunicationAddress7
 
 class PartyDetail1(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmnt", "_PstlAdr", "_PtyTp", "_Ctry", "_FullNm", "_SprvsgAuthrty", "_Ctct"]
+	__slots__ = ["_Cmnt", "_Ctct", "_Ctry", "_FullNm", "_PstlAdr", "_PtyTp", "_SprvsgAuthrty"]
 	@property
 	def Cmnt(self):
 		return self._Cmnt

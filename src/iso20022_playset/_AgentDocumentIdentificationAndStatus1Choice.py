@@ -4,7 +4,7 @@ from ._AgentNotificationIdentificationAndStatus1 import AgentNotificationIdentif
 
 class AgentDocumentIdentificationAndStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AgtCANtfctnCxlReqIdAndSts", "_AgtCANtfctnAdvcIdAndSts"]
+	__slots__ = ["_AgtCANtfctnAdvcIdAndSts", "_AgtCANtfctnCxlReqIdAndSts"]
 	@property
 	def AgtCANtfctnAdvcIdAndSts(self):
 		return self._AgtCANtfctnAdvcIdAndSts

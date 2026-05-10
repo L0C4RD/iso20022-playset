@@ -4,7 +4,7 @@ from ._Security51 import Security51
 
 class SecurityCommodity9(base_types._BaseFieldType):
 
-	__slots__ = ["_Scty", "_Cmmdty"]
+	__slots__ = ["_Cmmdty", "_Scty"]
 	@property
 	def Cmmdty(self):
 		return self._Cmmdty

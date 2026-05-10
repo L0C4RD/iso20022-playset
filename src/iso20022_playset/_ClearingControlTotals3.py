@@ -1,12 +1,12 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._Number import Number
 from ._CreditDebit3Code import CreditDebit3Code
+from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Number import Number
 
 class ClearingControlTotals3(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Cnt", "_CdtDbt", "_Ccy"]
+	__slots__ = ["_Amt", "_Ccy", "_CdtDbt", "_Cnt"]
 	@property
 	def Amt(self):
 		return self._Amt

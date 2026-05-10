@@ -1,15 +1,15 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._OptionType6Choice import OptionType6Choice
 from ._BasketIdentificationAndEligibilitySetProfile1 import BasketIdentificationAndEligibilitySetProfile1
 from ._CollateralAmount16 import CollateralAmount16
-from ._RepoTerminationOption1Code import RepoTerminationOption1Code
-from ._CollateralStatus1Code import CollateralStatus1Code
 from ._CollateralParties11 import CollateralParties11
+from ._CollateralStatus1Code import CollateralStatus1Code
+from ._OptionType6Choice import OptionType6Choice
+from ._PercentageRate import PercentageRate
+from ._RepoTerminationOption1Code import RepoTerminationOption1Code
 
 class CounterpartyAggregation3(base_types._BaseFieldType):
 
-	__slots__ = ["_TermntnOptn", "_CollPties", "_BsktIdAndElgbltySetPrfl", "_OptnTp", "_ValtnAmts", "_MrgnRate", "_GblCtrPtySts"]
+	__slots__ = ["_BsktIdAndElgbltySetPrfl", "_CollPties", "_GblCtrPtySts", "_MrgnRate", "_OptnTp", "_TermntnOptn", "_ValtnAmts"]
 	@property
 	def BsktIdAndElgbltySetPrfl(self):
 		return self._BsktIdAndElgbltySetPrfl

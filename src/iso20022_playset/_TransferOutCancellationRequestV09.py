@@ -1,15 +1,15 @@
 from . import base_types
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
+from ._AdditionalReference10 import AdditionalReference10
 from ._AdditionalReference11 import AdditionalReference11
 from ._CopyInformation5 import CopyInformation5
-from ._TransferReference15 import TransferReference15
+from ._MarketPracticeVersion1 import MarketPracticeVersion1
 from ._Max35Text import Max35Text
-from ._AdditionalReference10 import AdditionalReference10
 from ._MessageIdentification1 import MessageIdentification1
+from ._TransferReference15 import TransferReference15
 
 class TransferOutCancellationRequestV09(base_types._BaseFieldType):
 
-	__slots__ = ["_TrfRefs", "_MsgId", "_RltdRef", "_PoolRef", "_PrvsRef", "_MstrRef", "_MktPrctcVrsn", "_CpyDtls"]
+	__slots__ = ["_CpyDtls", "_MktPrctcVrsn", "_MsgId", "_MstrRef", "_PoolRef", "_PrvsRef", "_RltdRef", "_TrfRefs"]
 	@property
 	def CpyDtls(self):
 		return self._CpyDtls

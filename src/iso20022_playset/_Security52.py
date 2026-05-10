@@ -1,19 +1,19 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._SecuritiesTransactionPrice19Choice import SecuritiesTransactionPrice19Choice
-from ._ISODate import ISODate
-from ._CFIOct2015Identifier import CFIOct2015Identifier
-from ._SecurityIssuer4 import SecurityIssuer4
-from ._CollateralQualityType1Code import CollateralQualityType1Code
-from ._PercentageRate import PercentageRate
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._SecuritiesLendingType3Choice import SecuritiesLendingType3Choice
 from ._AmountAndDirection53 import AmountAndDirection53
+from ._CFIOct2015Identifier import CFIOct2015Identifier
+from ._CollateralQualityType1Code import CollateralQualityType1Code
+from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._ISODate import ISODate
+from ._PercentageRate import PercentageRate
 from ._QuantityNominalValue2Choice import QuantityNominalValue2Choice
+from ._SecuritiesLendingType3Choice import SecuritiesLendingType3Choice
+from ._SecuritiesTransactionPrice19Choice import SecuritiesTransactionPrice19Choice
+from ._SecurityIssuer4 import SecurityIssuer4
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Security52(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_AvlblForCollReuse", "_UnitPric", "_QtyOrNmnlVal", "_ExclsvArrgmnt", "_HrcutOrMrgn", "_Issr", "_ClssfctnTp", "_Mtrty", "_Qlty", "_Id", "_MktVal"]
+	__slots__ = ["_AvlblForCollReuse", "_ClssfctnTp", "_ExclsvArrgmnt", "_HrcutOrMrgn", "_Id", "_Issr", "_MktVal", "_Mtrty", "_Qlty", "_QtyOrNmnlVal", "_Tp", "_UnitPric"]
 	@property
 	def AvlblForCollReuse(self):
 		return self._AvlblForCollReuse

@@ -1,10 +1,10 @@
 from . import base_types
-from ._SettlementFailsDailyInstructionType3 import SettlementFailsDailyInstructionType3
 from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
+from ._SettlementFailsDailyInstructionType3 import SettlementFailsDailyInstructionType3
 
 class SettlementFailsDailyInstructionType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DataSetActn", "_Data"]
+	__slots__ = ["_Data", "_DataSetActn"]
 	@property
 	def Data(self):
 		return self._Data

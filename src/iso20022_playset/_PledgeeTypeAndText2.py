@@ -4,7 +4,7 @@ from ._RestrictedFINMax30Text import RestrictedFINMax30Text
 
 class PledgeeTypeAndText2(base_types._BaseFieldType):
 
-	__slots__ = ["_PldgeeTp", "_Id"]
+	__slots__ = ["_Id", "_PldgeeTp"]
 	@property
 	def Id(self):
 		return self._Id

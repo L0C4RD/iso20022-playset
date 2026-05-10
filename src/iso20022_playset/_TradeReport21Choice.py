@@ -1,11 +1,11 @@
 from . import base_types
-from ._CollateralMarginError4 import CollateralMarginError4
 from ._CollateralMarginCorrection6 import CollateralMarginCorrection6
+from ._CollateralMarginError4 import CollateralMarginError4
 from ._CollateralMarginMarginUpdate5 import CollateralMarginMarginUpdate5
 
 class TradeReport21Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_New", "_Err", "_TradUpd", "_Crrctn"]
+	__slots__ = ["_Crrctn", "_Err", "_New", "_TradUpd"]
 	@property
 	def Crrctn(self):
 		return self._Crrctn

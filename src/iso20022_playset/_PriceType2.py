@@ -1,6 +1,6 @@
 from . import base_types
-from ._TypeOfPrice6Code import TypeOfPrice6Code
 from ._Max350Text import Max350Text
+from ._TypeOfPrice6Code import TypeOfPrice6Code
 
 class PriceType2(base_types._BaseFieldType):
 

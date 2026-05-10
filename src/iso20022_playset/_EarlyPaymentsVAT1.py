@@ -1,11 +1,11 @@
 from . import base_types
 from ._CurrencyAndAmount import CurrencyAndAmount
-from ._PercentageRate import PercentageRate
 from ._Max4Text import Max4Text
+from ._PercentageRate import PercentageRate
 
 class EarlyPaymentsVAT1(base_types._BaseFieldType):
 
-	__slots__ = ["_DscntTaxTp", "_DscntTaxAmt", "_TaxRate"]
+	__slots__ = ["_DscntTaxAmt", "_DscntTaxTp", "_TaxRate"]
 	@property
 	def DscntTaxAmt(self):
 		return self._DscntTaxAmt

@@ -1,48 +1,48 @@
 from . import base_types
-from ._Context19 import Context19
-from ._OriginalTransaction3 import OriginalTransaction3
-from ._Max256Text import Max256Text
-from ._AdministrativeType1Code import AdministrativeType1Code
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ContentInformationType41 import ContentInformationType41
-from ._CustomerDevice5 import CustomerDevice5
-from ._Max20KText import Max20KText
-from ._Terminal7 import Terminal7
-from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
-from ._Customer4 import Customer4
-from ._RiskContext3 import RiskContext3
-from ._Max1000Text import Max1000Text
-from ._PartyIdentification288 import PartyIdentification288
-from ._PartyIdentification287 import PartyIdentification287
-from ._AdditionalService2 import AdditionalService2
-from ._PointOfInteractionComponent16 import PointOfInteractionComponent16
-from ._DateTime2 import DateTime2
-from ._Verification6 import Verification6
-from ._Header71 import Header71
-from ._SettlementService5 import SettlementService5
-from ._ProcessingResult27 import ProcessingResult27
 from ._AdditionalData2 import AdditionalData2
+from ._AdditionalFee3 import AdditionalFee3
+from ._AdditionalService2 import AdditionalService2
+from ._AdministrativeType1Code import AdministrativeType1Code
 from ._CardData11 import CardData11
-from ._Jurisdiction2 import Jurisdiction2
 from ._Cardholder22 import Cardholder22
-from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
+from ._ContentInformationType41 import ContentInformationType41
+from ._Context19 import Context19
+from ._Customer4 import Customer4
+from ._CustomerDevice5 import CustomerDevice5
+from ._DateTime2 import DateTime2
 from ._ExchangeRateInformation5 import ExchangeRateInformation5
-from ._ProgrammeMode4 import ProgrammeMode4
-from ._LocalData17 import LocalData17
-from ._ProtectedData2 import ProtectedData2
-from ._Wallet3 import Wallet3
+from ._Header71 import Header71
+from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
 from ._Instalment6 import Instalment6
+from ._Jurisdiction2 import Jurisdiction2
+from ._LocalData17 import LocalData17
+from ._Max1000Text import Max1000Text
 from ._Max10KHexBinaryText import Max10KHexBinaryText
+from ._Max20KText import Max20KText
+from ._Max256Text import Max256Text
 from ._Max35Text import Max35Text
-from ._TransactionIdentification56 import TransactionIdentification56
+from ._OriginalTransaction3 import OriginalTransaction3
+from ._PartyIdentification286 import PartyIdentification286
+from ._PartyIdentification287 import PartyIdentification287
+from ._PartyIdentification288 import PartyIdentification288
+from ._PointOfInteractionComponent16 import PointOfInteractionComponent16
+from ._ProcessingResult27 import ProcessingResult27
+from ._ProgrammeMode4 import ProgrammeMode4
+from ._ProtectedData2 import ProtectedData2
+from ._Reconciliation4 import Reconciliation4
+from ._RiskContext3 import RiskContext3
+from ._SettlementService5 import SettlementService5
 from ._SpecialProgrammeQualification2 import SpecialProgrammeQualification2
+from ._SupplementaryData1 import SupplementaryData1
+from ._Terminal7 import Terminal7
 from ._Token2 import Token2
+from ._TransactionIdentification56 import TransactionIdentification56
+from ._Verification6 import Verification6
+from ._Wallet3 import Wallet3
 
 class AdministrativeInitiationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Accptr", "_MsgRsn", "_Termnl", "_Sndr", "_AddtlData", "_AddtlFee", "_Pyee", "_LclData", "_TxtMsg", "_Vrfctn", "_Rcncltn", "_ConvsDtTm", "_Crdhldr", "_POICmpnt", "_Cstmr", "_Pyer", "_CstmrDvc", "_Rsk", "_PrcgRslt", "_Orgtr", "_Card", "_XchgRate", "_OthrAdmstvTp", "_Acqrr", "_Dstn", "_ICCRltdData", "_OrgnlTx", "_Instlmt", "_Prgrmm", "_Issr", "_Jursdctn", "_TxId", "_AdmstvTp", "_Hdr", "_Tkn", "_SctyTrlr", "_AltrnMsgRsn", "_Rcvr", "_Cntxt", "_SttlmSvc", "_PrtctdData", "_TxDesc", "_AddtlSvc", "_SpclPrgrmmQlfctn", "_Wllt", "_SplmtryData"]
+	__slots__ = ["_Accptr", "_Acqrr", "_AddtlData", "_AddtlFee", "_AddtlSvc", "_AdmstvTp", "_AltrnMsgRsn", "_Card", "_Cntxt", "_ConvsDtTm", "_Crdhldr", "_Cstmr", "_CstmrDvc", "_Dstn", "_Hdr", "_ICCRltdData", "_Instlmt", "_Issr", "_Jursdctn", "_LclData", "_MsgRsn", "_OrgnlTx", "_Orgtr", "_OthrAdmstvTp", "_POICmpnt", "_PrcgRslt", "_Prgrmm", "_PrtctdData", "_Pyee", "_Pyer", "_Rcncltn", "_Rcvr", "_Rsk", "_SctyTrlr", "_Sndr", "_SpclPrgrmmQlfctn", "_SplmtryData", "_SttlmSvc", "_Termnl", "_Tkn", "_TxDesc", "_TxId", "_TxtMsg", "_Vrfctn", "_Wllt", "_XchgRate"]
 	@property
 	def Accptr(self):
 		return self._Accptr

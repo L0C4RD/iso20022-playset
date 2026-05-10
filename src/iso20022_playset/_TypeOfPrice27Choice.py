@@ -1,10 +1,10 @@
 from . import base_types
-from ._TypeOfPrice30Code import TypeOfPrice30Code
 from ._GenericIdentification29 import GenericIdentification29
+from ._TypeOfPrice30Code import TypeOfPrice30Code
 
 class TypeOfPrice27Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

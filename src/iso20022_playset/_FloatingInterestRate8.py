@@ -1,10 +1,10 @@
 from . import base_types
-from ._InterestRateContractTerm2 import InterestRateContractTerm2
 from ._BenchmarkCurveName5Choice import BenchmarkCurveName5Choice
+from ._InterestRateContractTerm2 import InterestRateContractTerm2
 
 class FloatingInterestRate8(base_types._BaseFieldType):
 
-	__slots__ = ["_Term", "_RefRate"]
+	__slots__ = ["_RefRate", "_Term"]
 	@property
 	def RefRate(self):
 		return self._RefRate

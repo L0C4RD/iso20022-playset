@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._GroupHeader130 import GroupHeader130
 from ._Charges6Choice import Charges6Choice
+from ._GroupHeader130 import GroupHeader130
+from ._SupplementaryData1 import SupplementaryData1
 
 class ChargesPaymentRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Chrgs", "_GrpHdr"]
+	__slots__ = ["_Chrgs", "_GrpHdr", "_SplmtryData"]
 	@property
 	def Chrgs(self):
 		return self._Chrgs

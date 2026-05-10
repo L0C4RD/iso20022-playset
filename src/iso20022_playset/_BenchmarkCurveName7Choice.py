@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
 from ._BenchmarkCurveName1Code import BenchmarkCurveName1Code
+from ._GenericIdentification30 import GenericIdentification30
 
 class BenchmarkCurveName7Choice(base_types._BaseFieldType):
 

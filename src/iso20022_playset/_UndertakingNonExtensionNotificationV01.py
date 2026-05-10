@@ -1,10 +1,10 @@
 from . import base_types
-from ._UndertakingNonExtensionStatusAdvice1 import UndertakingNonExtensionStatusAdvice1
 from ._PartyAndSignature2 import PartyAndSignature2
+from ._UndertakingNonExtensionStatusAdvice1 import UndertakingNonExtensionStatusAdvice1
 
 class UndertakingNonExtensionNotificationV01(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgNonXtnsnNtfctnDtls", "_DgtlSgntr"]
+	__slots__ = ["_DgtlSgntr", "_UdrtkgNonXtnsnNtfctnDtls"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr

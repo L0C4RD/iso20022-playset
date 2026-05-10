@@ -4,7 +4,7 @@ from ._Max20PositiveNumber import Max20PositiveNumber
 
 class InternalisationDataVolume1(base_types._BaseFieldType):
 
-	__slots__ = ["_Vol", "_Val"]
+	__slots__ = ["_Val", "_Vol"]
 	@property
 	def Val(self):
 		return self._Val

@@ -1,12 +1,12 @@
 from . import base_types
-from ._DerivativeEventType3Code import DerivativeEventType3Code
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._DerivativeEventType3Code import DerivativeEventType3Code
 from ._EventIdentifier1Choice import EventIdentifier1Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class DerivativeEvent6(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_TmStmp", "_Tp", "_AmdmntInd"]
+	__slots__ = ["_AmdmntInd", "_Id", "_TmStmp", "_Tp"]
 	@property
 	def AmdmntInd(self):
 		return self._AmdmntInd

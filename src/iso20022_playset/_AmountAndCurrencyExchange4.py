@@ -4,7 +4,7 @@ from ._AmountAndCurrencyExchangeDetails6 import AmountAndCurrencyExchangeDetails
 
 class AmountAndCurrencyExchange4(base_types._BaseFieldType):
 
-	__slots__ = ["_InstdAmt", "_AnncdPstngAmt", "_TxAmt", "_CntrValAmt", "_PrtryAmt"]
+	__slots__ = ["_AnncdPstngAmt", "_CntrValAmt", "_InstdAmt", "_PrtryAmt", "_TxAmt"]
 	@property
 	def AnncdPstngAmt(self):
 		return self._AnncdPstngAmt

@@ -1,10 +1,10 @@
 from . import base_types
-from ._PostalAddress6 import PostalAddress6
 from ._NameAndAddress10 import NameAndAddress10
+from ._PostalAddress6 import PostalAddress6
 
 class AddressOrParty1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NewBnfcry", "_NewAdr"]
+	__slots__ = ["_NewAdr", "_NewBnfcry"]
 	@property
 	def NewAdr(self):
 		return self._NewAdr

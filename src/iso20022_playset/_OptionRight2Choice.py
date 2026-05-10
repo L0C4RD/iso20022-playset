@@ -1,6 +1,6 @@
 from . import base_types
-from ._OptionRight1Code import OptionRight1Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._OptionRight1Code import OptionRight1Code
 
 class OptionRight2Choice(base_types._BaseFieldType):
 

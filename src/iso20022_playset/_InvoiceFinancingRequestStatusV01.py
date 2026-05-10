@@ -1,7 +1,7 @@
 from . import base_types
-from ._OriginalRequestInformation1 import OriginalRequestInformation1
-from ._MessageIdentification1 import MessageIdentification1
 from ._FinancingInformationAndStatus1 import FinancingInformationAndStatus1
+from ._MessageIdentification1 import MessageIdentification1
+from ._OriginalRequestInformation1 import OriginalRequestInformation1
 
 class InvoiceFinancingRequestStatusV01(base_types._BaseFieldType):
 

@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class TransactionIdentifications47(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyMktInfrstrctrTxId", "_CmonId", "_AcctOwnrTxId", "_NetgSvcPrvdrId", "_AcctSvcrTxId", "_PrcrTxId", "_MktInfrstrctrTxId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_CmonId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_NetgSvcPrvdrId", "_PrcrTxId"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

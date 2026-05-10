@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._AccountNotification24 import AccountNotification24
 from ._GroupHeader116 import GroupHeader116
+from ._SupplementaryData1 import SupplementaryData1
 
 class BankToCustomerDebitCreditNotificationV13(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_Ntfctn"]
+	__slots__ = ["_GrpHdr", "_Ntfctn", "_SplmtryData"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

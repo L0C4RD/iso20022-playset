@@ -4,7 +4,7 @@ from ._References70Choice import References70Choice
 
 class Linkages58(base_types._BaseFieldType):
 
-	__slots__ = ["_Refs", "_MsgNb"]
+	__slots__ = ["_MsgNb", "_Refs"]
 	@property
 	def MsgNb(self):
 		return self._MsgNb

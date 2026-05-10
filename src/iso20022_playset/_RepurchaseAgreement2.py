@@ -1,12 +1,12 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ISODate import ISODate
+from ._LEIIdentifier import LEIIdentifier
 from ._RepurchaseAgreementType3Choice import RepurchaseAgreementType3Choice
 
 class RepurchaseAgreement2(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPty", "_MtrtyDt", "_RpAgrmtTp", "_TrptyAgtId", "_CollMktVal", "_ScndLegPric"]
+	__slots__ = ["_CollMktVal", "_CtrPty", "_MtrtyDt", "_RpAgrmtTp", "_ScndLegPric", "_TrptyAgtId"]
 	@property
 	def CollMktVal(self):
 		return self._CollMktVal

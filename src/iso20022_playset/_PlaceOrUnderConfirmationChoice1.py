@@ -4,7 +4,7 @@ from ._PresentationParty1Code import PresentationParty1Code
 
 class PlaceOrUnderConfirmationChoice1(base_types._BaseFieldType):
 
-	__slots__ = ["_PresntnUdrConf", "_PlcOfPresntn"]
+	__slots__ = ["_PlcOfPresntn", "_PresntnUdrConf"]
 	@property
 	def PlcOfPresntn(self):
 		return self._PlcOfPresntn

@@ -1,7 +1,7 @@
 from . import base_types
-from ._Max15NumericText import Max15NumericText
-from ._ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
 from ._DecimalNumber import DecimalNumber
+from ._ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
+from ._Max15NumericText import Max15NumericText
 
 class NumberOfTransactionsPerStatus5(base_types._BaseFieldType):
 

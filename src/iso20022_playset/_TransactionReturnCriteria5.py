@@ -5,7 +5,7 @@ from ._SystemReturnCriteria2 import SystemReturnCriteria2
 
 class TransactionReturnCriteria5(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctCshNtryRtrCrit", "_PmtToRtrCrit", "_PmtRtrCrit", "_PmtFrRtrCrit"]
+	__slots__ = ["_AcctCshNtryRtrCrit", "_PmtFrRtrCrit", "_PmtRtrCrit", "_PmtToRtrCrit"]
 	@property
 	def AcctCshNtryRtrCrit(self):
 		return self._AcctCshNtryRtrCrit

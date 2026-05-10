@@ -1,11 +1,11 @@
 from . import base_types
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._Pagination import Pagination
 from ._Max35Text import Max35Text
+from ._Pagination import Pagination
 
 class StatementReference1(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtId", "_Pgntn", "_StmtDtTm"]
+	__slots__ = ["_Pgntn", "_StmtDtTm", "_StmtId"]
 	@property
 	def Pgntn(self):
 		return self._Pgntn

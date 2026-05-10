@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class ATMEquipment2(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_SrlNb", "_Mdl", "_FrmwrPrvdr", "_Manfctr", "_FrmwrId", "_FrmwrVrsn"]
+	__slots__ = ["_FrmwrId", "_FrmwrPrvdr", "_FrmwrVrsn", "_Manfctr", "_Mdl", "_SrlNb", "_Vrsn"]
 	@property
 	def FrmwrId(self):
 		return self._FrmwrId

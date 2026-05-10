@@ -1,15 +1,15 @@
 from . import base_types
 from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._AmountAndDirection102 import AmountAndDirection102
 from ._EndOfDayRequirement1 import EndOfDayRequirement1
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Fraction5DecimalNumber import Fraction5DecimalNumber
-from ._NonNegativeFraction5DecimalNumber import NonNegativeFraction5DecimalNumber
 from ._Max256Text import Max256Text
+from ._NonNegativeFraction5DecimalNumber import NonNegativeFraction5DecimalNumber
 
 class Position1(base_types._BaseFieldType):
 
-	__slots__ = ["_NetDltaEqvtVal", "_GrssDltaEqvtQty", "_GrssMktVal", "_RskRqrmnt", "_GrssNtnl", "_PdctId", "_GrssDltaEqvtVal", "_NetDltaEqvtQty", "_NetNtnl"]
+	__slots__ = ["_GrssDltaEqvtQty", "_GrssDltaEqvtVal", "_GrssMktVal", "_GrssNtnl", "_NetDltaEqvtQty", "_NetDltaEqvtVal", "_NetNtnl", "_PdctId", "_RskRqrmnt"]
 	@property
 	def GrssDltaEqvtQty(self):
 		return self._GrssDltaEqvtQty

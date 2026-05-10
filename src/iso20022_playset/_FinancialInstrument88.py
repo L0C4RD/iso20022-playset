@@ -1,14 +1,14 @@
 from . import base_types
+from ._DistributionPolicy1Code import DistributionPolicy1Code
 from ._FormOfSecurity1Code import FormOfSecurity1Code
-from ._YesNoIndicator import YesNoIndicator
+from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
 from ._SecurityIdentification25Choice import SecurityIdentification25Choice
-from ._DistributionPolicy1Code import DistributionPolicy1Code
-from ._Max350Text import Max350Text
+from ._YesNoIndicator import YesNoIndicator
 
 class FinancialInstrument88(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesForm", "_DmtrlsdInd", "_DstrbtnPlcy", "_ShrtNm", "_ClssTp", "_Nm", "_SplmtryId", "_Id"]
+	__slots__ = ["_ClssTp", "_DmtrlsdInd", "_DstrbtnPlcy", "_Id", "_Nm", "_SctiesForm", "_ShrtNm", "_SplmtryId"]
 	@property
 	def ClssTp(self):
 		return self._ClssTp

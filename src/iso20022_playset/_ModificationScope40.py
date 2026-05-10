@@ -1,10 +1,10 @@
 from . import base_types
-from ._Intermediary46 import Intermediary46
 from ._DataModification1Code import DataModification1Code
+from ._Intermediary46 import Intermediary46
 
 class ModificationScope40(base_types._BaseFieldType):
 
-	__slots__ = ["_ModScpIndctn", "_Intrmy"]
+	__slots__ = ["_Intrmy", "_ModScpIndctn"]
 	@property
 	def Intrmy(self):
 		return self._Intrmy

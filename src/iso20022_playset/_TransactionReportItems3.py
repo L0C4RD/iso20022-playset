@@ -1,18 +1,18 @@
 from . import base_types
-from ._TransactionStatus4 import TransactionStatus4
-from ._DocumentIdentification3 import DocumentIdentification3
 from ._BICIdentification1 import BICIdentification1
-from ._PartyIdentification26 import PartyIdentification26
-from ._CurrencyAndAmount import CurrencyAndAmount
 from ._CountryCode import CountryCode
+from ._CurrencyAndAmount import CurrencyAndAmount
+from ._DocumentIdentification3 import DocumentIdentification3
+from ._DocumentIdentification5 import DocumentIdentification5
 from ._DocumentIdentification7 import DocumentIdentification7
 from ._Max35Text import Max35Text
+from ._PartyIdentification26 import PartyIdentification26
 from ._PendingActivity2 import PendingActivity2
-from ._DocumentIdentification5 import DocumentIdentification5
+from ._TransactionStatus4 import TransactionStatus4
 
 class TransactionReportItems3(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrBk", "_TxSts", "_TxId", "_PdgReqForActn", "_PurchsOrdrRef", "_Buyr", "_UsrTxRef", "_OblgrBk", "_OutsdngAmt", "_SellrBkCtry", "_TtlNetAmt", "_BuyrBkCtry", "_SubmitgBk", "_Sellr", "_SellrBk", "_EstblishdBaselnId"]
+	__slots__ = ["_Buyr", "_BuyrBk", "_BuyrBkCtry", "_EstblishdBaselnId", "_OblgrBk", "_OutsdngAmt", "_PdgReqForActn", "_PurchsOrdrRef", "_Sellr", "_SellrBk", "_SellrBkCtry", "_SubmitgBk", "_TtlNetAmt", "_TxId", "_TxSts", "_UsrTxRef"]
 	@property
 	def Buyr(self):
 		return self._Buyr

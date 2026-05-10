@@ -1,15 +1,15 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._StatusOrStatement12Choice import StatusOrStatement12Choice
-from ._PartyIdentification156 import PartyIdentification156
-from ._SecuritiesAccount30 import SecuritiesAccount30
-from ._ProcessingStatus95Choice import ProcessingStatus95Choice
-from ._DocumentIdentification55 import DocumentIdentification55
 from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
+from ._DocumentIdentification55 import DocumentIdentification55
+from ._PartyIdentification156 import PartyIdentification156
+from ._ProcessingStatus95Choice import ProcessingStatus95Choice
+from ._SecuritiesAccount30 import SecuritiesAccount30
+from ._StatusOrStatement12Choice import StatusOrStatement12Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesStatusOrStatementQueryStatusAdvice002V06(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_StsOrStmtReqd", "_SfkpgAcct", "_PrcgSts", "_QryDtls", "_AcctOwnr", "_SplmtryData"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_PrcgSts", "_QryDtls", "_SfkpgAcct", "_SplmtryData", "_StsOrStmtReqd"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

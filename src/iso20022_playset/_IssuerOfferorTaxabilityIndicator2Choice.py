@@ -1,6 +1,6 @@
 from . import base_types
-from ._IssuerTaxability2Code import IssuerTaxability2Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._IssuerTaxability2Code import IssuerTaxability2Code
 
 class IssuerOfferorTaxabilityIndicator2Choice(base_types._BaseFieldType):
 

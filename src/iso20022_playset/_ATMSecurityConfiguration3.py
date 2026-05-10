@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Algorithm7Code import Algorithm7Code
 from ._Algorithm13Code import Algorithm13Code
 from ._Algorithm15Code import Algorithm15Code
+from ._Algorithm7Code import Algorithm7Code
 from ._EncryptionFormat1Code import EncryptionFormat1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ATMSecurityConfiguration3(base_types._BaseFieldType):
 
-	__slots__ = ["_SmmtrcNcrptnAlgo", "_AsmmtrcKeyStdId", "_NcrptnFrmt", "_SmmtrcTrnsprtKeyAlgo", "_SmmtrcTrnsprtKey", "_AsmmtrcNcrptn", "_AsmmtrcNcrptnAlgo"]
+	__slots__ = ["_AsmmtrcKeyStdId", "_AsmmtrcNcrptn", "_AsmmtrcNcrptnAlgo", "_NcrptnFrmt", "_SmmtrcNcrptnAlgo", "_SmmtrcTrnsprtKey", "_SmmtrcTrnsprtKeyAlgo"]
 	@property
 	def AsmmtrcKeyStdId(self):
 		return self._AsmmtrcKeyStdId

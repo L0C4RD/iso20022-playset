@@ -6,7 +6,7 @@ from ._Header32 import Header32
 
 class ATMCompletionAcknowledgementV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_PrtctdATMCmpltnAck", "_Hdr", "_ATMCmpltnAck"]
+	__slots__ = ["_ATMCmpltnAck", "_Hdr", "_PrtctdATMCmpltnAck", "_SctyTrlr"]
 	@property
 	def ATMCmpltnAck(self):
 		return self._ATMCmpltnAck

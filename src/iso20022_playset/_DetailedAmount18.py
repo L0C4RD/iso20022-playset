@@ -1,12 +1,12 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max70Text import Max70Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class DetailedAmount18(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_ChrgAcctTo", "_Labl", "_Ccy"]
+	__slots__ = ["_Amt", "_Ccy", "_ChrgAcctTo", "_Labl"]
 	@property
 	def Amt(self):
 		return self._Amt

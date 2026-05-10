@@ -5,7 +5,7 @@ from ._SessionManagementRequest8 import SessionManagementRequest8
 
 class SaleToPOISessionManagementRequestV07(base_types._BaseFieldType):
 
-	__slots__ = ["_SsnMgmtReq", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_Hdr", "_SctyTrlr", "_SsnMgmtReq"]
 	@property
 	def Hdr(self):
 		return self._Hdr

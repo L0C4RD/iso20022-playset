@@ -1,16 +1,16 @@
 from . import base_types
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._RequestDetails22 import RequestDetails22
+from ._CashAccount40 import CashAccount40
+from ._ISODateTime import ISODateTime
 from ._IntraBalance5 import IntraBalance5
 from ._Max35Text import Max35Text
 from ._ProcessingStatus71Choice import ProcessingStatus71Choice
-from ._ISODateTime import ISODateTime
-from ._CashAccount40 import CashAccount40
+from ._RequestDetails22 import RequestDetails22
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class IntraBalanceModification8(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygIntraBal", "_CshAcct", "_StsDt", "_ReqDtls", "_ReqRef", "_PrcgSts", "_CshAcctSvcr", "_CshAcctOwnr"]
+	__slots__ = ["_CshAcct", "_CshAcctOwnr", "_CshAcctSvcr", "_PrcgSts", "_ReqDtls", "_ReqRef", "_StsDt", "_UndrlygIntraBal"]
 	@property
 	def CshAcct(self):
 		return self._CshAcct

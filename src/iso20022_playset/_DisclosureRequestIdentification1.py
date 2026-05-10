@@ -5,7 +5,7 @@ from ._SecurityIdentification19 import SecurityIdentification19
 
 class DisclosureRequestIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrDsclsrReqId", "_FinInstrmId", "_ShrhldrsDsclsrRcrdDt"]
+	__slots__ = ["_FinInstrmId", "_IssrDsclsrReqId", "_ShrhldrsDsclsrRcrdDt"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId

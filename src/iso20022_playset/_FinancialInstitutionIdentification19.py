@@ -1,12 +1,12 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
 from ._BICFIDec2014Identifier import BICFIDec2014Identifier
-from ._GenericFinancialIdentification1 import GenericFinancialIdentification1
 from ._ClearingSystemMemberIdentification2 import ClearingSystemMemberIdentification2
+from ._GenericFinancialIdentification1 import GenericFinancialIdentification1
+from ._LEIIdentifier import LEIIdentifier
 
 class FinancialInstitutionIdentification19(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSysMmbId", "_Othr", "_LEI", "_BICFI"]
+	__slots__ = ["_BICFI", "_ClrSysMmbId", "_LEI", "_Othr"]
 	@property
 	def BICFI(self):
 		return self._BICFI

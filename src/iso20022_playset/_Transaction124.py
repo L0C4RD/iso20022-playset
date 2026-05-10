@@ -1,24 +1,24 @@
 from . import base_types
-from ._CashBalance15 import CashBalance15
-from ._Max52Text import Max52Text
-from ._RateOrName4Choice import RateOrName4Choice
-from ._ExposureType23Choice import ExposureType23Choice
-from ._PercentageRate import PercentageRate
-from ._OptionType6Choice import OptionType6Choice
 from ._BasketIdentificationAndEligibilitySetProfile1 import BasketIdentificationAndEligibilitySetProfile1
-from ._TransactionStatus6 import TransactionStatus6
-from ._CollateralAmount17 import CollateralAmount17
+from ._CashBalance15 import CashBalance15
 from ._ClosingDate4Choice import ClosingDate4Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._SecuritiesBalance3 import SecuritiesBalance3
+from ._CollateralAmount17 import CollateralAmount17
+from ._CollateralParties11 import CollateralParties11
+from ._ExposureType23Choice import ExposureType23Choice
 from ._InterestComputationMethodFormat4Choice import InterestComputationMethodFormat4Choice
 from ._Max35Text import Max35Text
+from ._Max52Text import Max52Text
+from ._OptionType6Choice import OptionType6Choice
+from ._PercentageRate import PercentageRate
+from ._RateOrName4Choice import RateOrName4Choice
 from ._RepoTerminationOption1Code import RepoTerminationOption1Code
-from ._CollateralParties11 import CollateralParties11
+from ._SecuritiesBalance3 import SecuritiesBalance3
+from ._TransactionStatus6 import TransactionStatus6
+from ._YesNoIndicator import YesNoIndicator
 
 class Transaction124(base_types._BaseFieldType):
 
-	__slots__ = ["_TermntnOptn", "_ValtnAmts", "_OptnTp", "_PricgRate", "_XpsrTp", "_CmonTxId", "_BsktIdAndElgbltySetPrfl", "_CshBal", "_ClsgDt", "_TrptyAgtSvcPrvdrCollTxId", "_CollPties", "_TxSts", "_ClntTrptyCollTxId", "_AutomtcAllcn", "_ExctnReqdDt", "_SctiesBal", "_DayCntBsis", "_SprdRate", "_MrgnRate", "_CtrPtyCollTxRef"]
+	__slots__ = ["_AutomtcAllcn", "_BsktIdAndElgbltySetPrfl", "_ClntTrptyCollTxId", "_ClsgDt", "_CmonTxId", "_CollPties", "_CshBal", "_CtrPtyCollTxRef", "_DayCntBsis", "_ExctnReqdDt", "_MrgnRate", "_OptnTp", "_PricgRate", "_SctiesBal", "_SprdRate", "_TermntnOptn", "_TrptyAgtSvcPrvdrCollTxId", "_TxSts", "_ValtnAmts", "_XpsrTp"]
 	@property
 	def AutomtcAllcn(self):
 		return self._AutomtcAllcn

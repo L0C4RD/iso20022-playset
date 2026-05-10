@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class DateQuarter1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_Dt"]
+	__slots__ = ["_Dt", "_Prd"]
 	@property
 	def Dt(self):
 		return self._Dt

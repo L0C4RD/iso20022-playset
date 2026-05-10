@@ -1,14 +1,14 @@
 from . import base_types
-from ._ExposureType23Choice import ExposureType23Choice
-from ._GenericIdentification30 import GenericIdentification30
 from ._CollateralAmount5 import CollateralAmount5
-from ._YesNoIndicator import YesNoIndicator
 from ._CollateralRole1Code import CollateralRole1Code
 from ._CollateralTransactionType1Choice import CollateralTransactionType1Choice
+from ._ExposureType23Choice import ExposureType23Choice
+from ._GenericIdentification30 import GenericIdentification30
+from ._YesNoIndicator import YesNoIndicator
 
 class CollateralParameters13(base_types._BaseFieldType):
 
-	__slots__ = ["_XpsrTp", "_AutomtcAllcn", "_CollAmt", "_CollApprvd", "_SttlmApprvd", "_Prty", "_CollSd", "_CollInstrTp"]
+	__slots__ = ["_AutomtcAllcn", "_CollAmt", "_CollApprvd", "_CollInstrTp", "_CollSd", "_Prty", "_SttlmApprvd", "_XpsrTp"]
 	@property
 	def AutomtcAllcn(self):
 		return self._AutomtcAllcn

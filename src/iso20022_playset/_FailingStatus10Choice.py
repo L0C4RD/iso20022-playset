@@ -1,10 +1,10 @@
 from . import base_types
-from ._NoReasonCode import NoReasonCode
 from ._FailingReason8 import FailingReason8
+from ._NoReasonCode import NoReasonCode
 
 class FailingStatus10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_NoSpcfdRsn"]
+	__slots__ = ["_NoSpcfdRsn", "_Rsn"]
 	@property
 	def NoSpcfdRsn(self):
 		return self._NoSpcfdRsn

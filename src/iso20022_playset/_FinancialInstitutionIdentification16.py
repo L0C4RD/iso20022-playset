@@ -1,14 +1,14 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._BranchData2 import BranchData2
-from ._Max35Text import Max35Text
-from ._ClearingSystemMemberIdentification4Choice import ClearingSystemMemberIdentification4Choice
-from ._NameAndAddress5 import NameAndAddress5
 from ._BICFIDec2014Identifier import BICFIDec2014Identifier
+from ._BranchData2 import BranchData2
+from ._ClearingSystemMemberIdentification4Choice import ClearingSystemMemberIdentification4Choice
+from ._LEIIdentifier import LEIIdentifier
+from ._Max35Text import Max35Text
+from ._NameAndAddress5 import NameAndAddress5
 
 class FinancialInstitutionIdentification16(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_BrnchId", "_PrtryId", "_BICFI", "_ClrSysMmbId", "_NmAndAdr"]
+	__slots__ = ["_BICFI", "_BrnchId", "_ClrSysMmbId", "_LEI", "_NmAndAdr", "_PrtryId"]
 	@property
 	def BICFI(self):
 		return self._BICFI

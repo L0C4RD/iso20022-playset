@@ -1,18 +1,18 @@
 from . import base_types
-from ._CashBalance13 import CashBalance13
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Limit5 import Limit5
-from ._BilateralLimit4 import BilateralLimit4
-from ._CashAccountType2Choice import CashAccountType2Choice
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._StandingOrder11 import StandingOrder11
+from ._BilateralLimit4 import BilateralLimit4
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccountType2Choice import CashAccountType2Choice
+from ._CashBalance13 import CashBalance13
+from ._Limit5 import Limit5
 from ._Max70Text import Max70Text
-from ._ProxyAccountIdentification1 import ProxyAccountIdentification1
 from ._PartyIdentification272 import PartyIdentification272
+from ._ProxyAccountIdentification1 import ProxyAccountIdentification1
+from ._StandingOrder11 import StandingOrder11
 
 class CashAccountData1(base_types._BaseFieldType):
 
-	__slots__ = ["_MulBal", "_Svcr", "_CurBilLmt", "_StgOrdr", "_Ownr", "_CurMulLmt", "_Tp", "_Prxy", "_Ccy", "_Nm"]
+	__slots__ = ["_Ccy", "_CurBilLmt", "_CurMulLmt", "_MulBal", "_Nm", "_Ownr", "_Prxy", "_StgOrdr", "_Svcr", "_Tp"]
 	@property
 	def Ccy(self):
 		return self._Ccy

@@ -1,20 +1,20 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._FinancialItemParameters1 import FinancialItemParameters1
-from ._PaymentTerms6 import PaymentTerms6
+from ._CurrencyAndAmount import CurrencyAndAmount
 from ._DecimalNumber import DecimalNumber
 from ._FinancialItem1 import FinancialItem1
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._xs:IDREF import xs:IDREF
-from ._ValidationStatusInformation1 import ValidationStatusInformation1
-from ._PaymentMeans1 import PaymentMeans1
-from ._Max2000Text import Max2000Text
+from ._FinancialItemParameters1 import FinancialItemParameters1
+from ._ISODate import ISODate
 from ._Max15NumericText import Max15NumericText
+from ._Max2000Text import Max2000Text
 from ._PaymentIdentification1 import PaymentIdentification1
+from ._PaymentMeans1 import PaymentMeans1
+from ._PaymentTerms6 import PaymentTerms6
+from ._ValidationStatusInformation1 import ValidationStatusInformation1
+from ._xs:IDREF import xs:IDREF
 
 class ReconciliationList1(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtAmt", "_Advsr", "_AssoctdDoc", "_VldtnStsInf", "_RltdDoc", "_PmtTerms", "_Itm", "_PmtDt", "_Params", "_Dt", "_AddtlInf", "_CtrlSum", "_Rcpt", "_PmtMeans", "_PmtRef", "_ItmCnt"]
+	__slots__ = ["_AddtlInf", "_Advsr", "_AssoctdDoc", "_CtrlSum", "_Dt", "_Itm", "_ItmCnt", "_Params", "_PmtAmt", "_PmtDt", "_PmtMeans", "_PmtRef", "_PmtTerms", "_Rcpt", "_RltdDoc", "_VldtnStsInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

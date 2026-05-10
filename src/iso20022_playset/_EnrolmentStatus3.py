@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._OriginalEnrolment3Choice import OriginalEnrolment3Choice
-from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
-from ._ServiceStatus1Choice import ServiceStatus1Choice
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._CreditorEnrolmentStatusReason3 import CreditorEnrolmentStatusReason3
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
+from ._OriginalEnrolment3Choice import OriginalEnrolment3Choice
+from ._ServiceStatus1Choice import ServiceStatus1Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class EnrolmentStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRsn", "_FctvEnrlmntDt", "_OrgnlEnrlmntRef", "_OrgnlBizInstr", "_SplmtryData", "_Sts"]
+	__slots__ = ["_FctvEnrlmntDt", "_OrgnlBizInstr", "_OrgnlEnrlmntRef", "_SplmtryData", "_Sts", "_StsRsn"]
 	@property
 	def FctvEnrlmntDt(self):
 		return self._FctvEnrlmntDt

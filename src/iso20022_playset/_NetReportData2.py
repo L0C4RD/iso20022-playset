@@ -1,14 +1,14 @@
 from . import base_types
 from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
 from ._ISOTime import ISOTime
 from ._Max35Text import Max35Text
 from ._Pagination1 import Pagination1
-from ._ISODateTime import ISODateTime
 from ._PartyIdentification242Choice import PartyIdentification242Choice
 
 class NetReportData2(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_NetRptSvcr", "_RptDt", "_ValDt", "_RptTp", "_NetSvcTp", "_NetgCutOffTm", "_CreDtTm", "_MsgPgntn"]
+	__slots__ = ["_CreDtTm", "_MsgId", "_MsgPgntn", "_NetRptSvcr", "_NetSvcTp", "_NetgCutOffTm", "_RptDt", "_RptTp", "_ValDt"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

@@ -1,11 +1,11 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._FromToAmountRange1 import FromToAmountRange1
 from ._AmountRangeBoundary1 import AmountRangeBoundary1
+from ._FromToAmountRange1 import FromToAmountRange1
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class ImpliedCurrencyAmountRange1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NEQAmt", "_ToAmt", "_FrAmt", "_FrToAmt", "_EQAmt"]
+	__slots__ = ["_EQAmt", "_FrAmt", "_FrToAmt", "_NEQAmt", "_ToAmt"]
 	@property
 	def EQAmt(self):
 		return self._EQAmt

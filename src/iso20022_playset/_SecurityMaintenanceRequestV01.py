@@ -1,13 +1,13 @@
 from . import base_types
-from ._UpdateType36Choice import UpdateType36Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecurityIdentification39 import SecurityIdentification39
-from ._SecuritiesUpdateReason1Choice import SecuritiesUpdateReason1Choice
 from ._MessageHeader1 import MessageHeader1
+from ._SecuritiesUpdateReason1Choice import SecuritiesUpdateReason1Choice
+from ._SecurityIdentification39 import SecurityIdentification39
+from ._SupplementaryData1 import SupplementaryData1
+from ._UpdateType36Choice import UpdateType36Choice
 
 class SecurityMaintenanceRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_UpdTp", "_UpdRsn", "_FinInstrmId", "_SplmtryData"]
+	__slots__ = ["_FinInstrmId", "_MsgHdr", "_SplmtryData", "_UpdRsn", "_UpdTp"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId

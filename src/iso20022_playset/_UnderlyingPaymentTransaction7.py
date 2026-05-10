@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._OriginalTransactionReference35 import OriginalTransactionReference35
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._UnderlyingGroupInformation1 import UnderlyingGroupInformation1
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
+from ._OriginalTransactionReference35 import OriginalTransactionReference35
 from ._ServiceLevel8Choice import ServiceLevel8Choice
 from ._UUIDv4Identifier import UUIDv4Identifier
+from ._UnderlyingGroupInformation1 import UnderlyingGroupInformation1
 
 class UnderlyingPaymentTransaction7(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlIntrBkSttlmDt", "_OrgnlIntrBkSttlmAmt", "_OrgnlUETR", "_OrgnlInstrId", "_OrgnlEndToEndId", "_OrgnlTxId", "_OrgnlGrpInf", "_OrgnlSvcLvl", "_OrgnlTxRef"]
+	__slots__ = ["_OrgnlEndToEndId", "_OrgnlGrpInf", "_OrgnlInstrId", "_OrgnlIntrBkSttlmAmt", "_OrgnlIntrBkSttlmDt", "_OrgnlSvcLvl", "_OrgnlTxId", "_OrgnlTxRef", "_OrgnlUETR"]
 	@property
 	def OrgnlEndToEndId(self):
 		return self._OrgnlEndToEndId

@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class CancellationReason23(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnEvtId", "_Cd"]
+	__slots__ = ["_Cd", "_CorpActnEvtId"]
 	@property
 	def Cd(self):
 		return self._Cd

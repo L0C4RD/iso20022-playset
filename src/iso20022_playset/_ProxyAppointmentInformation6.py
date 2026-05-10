@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max350Text import Max350Text
 from ._DateFormat58Choice import DateFormat58Choice
+from ._Max350Text import Max350Text
 from ._Proxy11 import Proxy11
 
 class ProxyAppointmentInformation6(base_types._BaseFieldType):
 
-	__slots__ = ["_MktDdln", "_AuthrsdPrxy", "_RegnMtd", "_Ddln"]
+	__slots__ = ["_AuthrsdPrxy", "_Ddln", "_MktDdln", "_RegnMtd"]
 	@property
 	def AuthrsdPrxy(self):
 		return self._AuthrsdPrxy

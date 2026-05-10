@@ -1,12 +1,12 @@
 from . import base_types
 from ._AlternatePartyIdentification7 import AlternatePartyIdentification7
 from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
-from ._PartyIdentification133Choice import PartyIdentification133Choice
 from ._Max35Text import Max35Text
+from ._PartyIdentification133Choice import PartyIdentification133Choice
 
 class PartyIdentificationAndAccount226(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CshAcct", "_PrcgId", "_AltrnId"]
+	__slots__ = ["_AltrnId", "_CshAcct", "_Id", "_PrcgId"]
 	@property
 	def AltrnId(self):
 		return self._AltrnId

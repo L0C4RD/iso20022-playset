@@ -1,34 +1,34 @@
 from . import base_types
-from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._AdditionalDateTime1 import AdditionalDateTime1
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._SettlementTimeRequest2 import SettlementTimeRequest2
-from ._Purpose2Choice import Purpose2Choice
-from ._PaymentTypeInformation28 import PaymentTypeInformation28
-from ._CashAccount40 import CashAccount40
-from ._PartyIdentification272 import PartyIdentification272
-from ._Priority3Code import Priority3Code
-from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
-from ._RegulatoryReporting3 import RegulatoryReporting3
-from ._RemittanceLocation8 import RemittanceLocation8
-from ._ISODate import ISODate
-from ._SupplementaryData1 import SupplementaryData1
-from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
 from ._BaseOneRate import BaseOneRate
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._ChargeBearerType1Code import ChargeBearerType1Code
 from ._Charges16 import Charges16
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._RemittanceInformation22 import RemittanceInformation22
-from ._CurrencyExchange26 import CurrencyExchange26
-from ._InstructionForNextAgent1 import InstructionForNextAgent1
-from ._CryptographicKey1Choice import CryptographicKey1Choice
 from ._CreditTransferMandateData1 import CreditTransferMandateData1
+from ._CryptographicKey1Choice import CryptographicKey1Choice
+from ._CurrencyExchange26 import CurrencyExchange26
+from ._ISODate import ISODate
+from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
+from ._InstructionForNextAgent1 import InstructionForNextAgent1
+from ._PartyIdentification272 import PartyIdentification272
 from ._PaymentIdentification13 import PaymentIdentification13
+from ._PaymentTypeInformation28 import PaymentTypeInformation28
+from ._Priority3Code import Priority3Code
+from ._Purpose2Choice import Purpose2Choice
+from ._RegulatoryReporting3 import RegulatoryReporting3
+from ._RemittanceInformation22 import RemittanceInformation22
+from ._RemittanceLocation8 import RemittanceLocation8
+from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
+from ._SettlementTimeRequest2 import SettlementTimeRequest2
+from ._SupplementaryData1 import SupplementaryData1
 from ._TaxData1 import TaxData1
 
 class CreditTransferTransaction70(base_types._BaseFieldType):
 
-	__slots__ = ["_AgrdRate", "_PmtSgntr", "_Dbtr", "_MndtRltdInf", "_IntrmyAgt1", "_UltmtCdtr", "_PrvsInstgAgt3Acct", "_ChrgsInf", "_DbtrAgt", "_InstdAmt", "_RmtInf", "_IntrmyAgt1Acct", "_InitgPty", "_UltmtDbtr", "_PrvsInstgAgt3", "_CdtrAgt", "_RgltryRptg", "_CdtrAcct", "_SttlmTmIndctn", "_InstgAgt", "_DbtrAcct", "_PmtId", "_RltdRmtInf", "_SttlmTmReq", "_IntrmyAgt3Acct", "_Purp", "_IntrmyAgt2Acct", "_DbtrAgtAcct", "_PrvsInstgAgt2Acct", "_Cdtr", "_InstrForCdtrAgt", "_Tax", "_IntrmyAgt3", "_PrvsInstgAgt1Acct", "_IntrBkSttlmAmt", "_PrvsInstgAgt2", "_XchgRate", "_InstdAgt", "_AddtlDtTm", "_IntrBkSttlmDt", "_SttlmPrty", "_ChrgBr", "_PrvsInstgAgt1", "_InstrForNxtAgt", "_CdtrAgtAcct", "_PmtTpInf", "_IntrmyAgt2", "_SplmtryData"]
+	__slots__ = ["_AddtlDtTm", "_AgrdRate", "_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_ChrgBr", "_ChrgsInf", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_InitgPty", "_InstdAgt", "_InstdAmt", "_InstgAgt", "_InstrForCdtrAgt", "_InstrForNxtAgt", "_IntrBkSttlmAmt", "_IntrBkSttlmDt", "_IntrmyAgt1", "_IntrmyAgt1Acct", "_IntrmyAgt2", "_IntrmyAgt2Acct", "_IntrmyAgt3", "_IntrmyAgt3Acct", "_MndtRltdInf", "_PmtId", "_PmtSgntr", "_PmtTpInf", "_PrvsInstgAgt1", "_PrvsInstgAgt1Acct", "_PrvsInstgAgt2", "_PrvsInstgAgt2Acct", "_PrvsInstgAgt3", "_PrvsInstgAgt3Acct", "_Purp", "_RgltryRptg", "_RltdRmtInf", "_RmtInf", "_SplmtryData", "_SttlmPrty", "_SttlmTmIndctn", "_SttlmTmReq", "_Tax", "_UltmtCdtr", "_UltmtDbtr", "_XchgRate"]
 	@property
 	def AddtlDtTm(self):
 		return self._AddtlDtTm

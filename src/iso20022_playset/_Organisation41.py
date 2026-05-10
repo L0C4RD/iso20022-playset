@@ -1,13 +1,13 @@
 from . import base_types
+from ._CommunicationAddress9 import CommunicationAddress9
+from ._GenericIdentification32 import GenericIdentification32
+from ._LocationCategory4Code import LocationCategory4Code
 from ._Max140Text import Max140Text
 from ._Max70Text import Max70Text
-from ._LocationCategory4Code import LocationCategory4Code
-from ._GenericIdentification32 import GenericIdentification32
-from ._CommunicationAddress9 import CommunicationAddress9
 
 class Organisation41(base_types._BaseFieldType):
 
-	__slots__ = ["_LctnAndCtct", "_CmonNm", "_Id", "_SchmeData", "_LctnCtgy"]
+	__slots__ = ["_CmonNm", "_Id", "_LctnAndCtct", "_LctnCtgy", "_SchmeData"]
 	@property
 	def CmonNm(self):
 		return self._CmonNm

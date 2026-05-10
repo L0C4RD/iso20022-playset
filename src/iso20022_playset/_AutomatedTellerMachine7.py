@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class AutomatedTellerMachine7(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_SeqNb", "_AddtlId"]
+	__slots__ = ["_AddtlId", "_Id", "_SeqNb"]
 	@property
 	def AddtlId(self):
 		return self._AddtlId

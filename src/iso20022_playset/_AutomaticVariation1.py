@@ -1,12 +1,12 @@
 from . import base_types
-from ._VariationType1Code import VariationType1Code
 from ._AmountAndTrigger1 import AmountAndTrigger1
 from ._Max2000Text import Max2000Text
 from ._Max35Text import Max35Text
+from ._VariationType1Code import VariationType1Code
 
 class AutomaticVariation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Tp", "_AmtAndTrggr", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_AmtAndTrggr", "_Id", "_Tp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

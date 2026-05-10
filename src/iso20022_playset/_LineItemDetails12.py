@@ -1,15 +1,15 @@
 from . import base_types
 from ._CurrencyAndAmount import CurrencyAndAmount
-from ._ProductCharacteristics1Choice import ProductCharacteristics1Choice
-from ._ProductIdentifier2Choice import ProductIdentifier2Choice
-from ._ProductCategory1Choice import ProductCategory1Choice
 from ._Max70Text import Max70Text
 from ._PercentageTolerance1 import PercentageTolerance1
+from ._ProductCategory1Choice import ProductCategory1Choice
+from ._ProductCharacteristics1Choice import ProductCharacteristics1Choice
+from ._ProductIdentifier2Choice import ProductIdentifier2Choice
 from ._Quantity9 import Quantity9
 
 class LineItemDetails12(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgQty", "_PdctNm", "_AccptdAmt", "_OutsdngAmt", "_OutsdngQty", "_OrdrdAmt", "_AccptdQty", "_QtyTlrnce", "_PricTlrnce", "_PdctChrtcs", "_OrdrdQty", "_PdctCtgy", "_PdgAmt", "_LineItmId", "_PdctIdr"]
+	__slots__ = ["_AccptdAmt", "_AccptdQty", "_LineItmId", "_OrdrdAmt", "_OrdrdQty", "_OutsdngAmt", "_OutsdngQty", "_PdctChrtcs", "_PdctCtgy", "_PdctIdr", "_PdctNm", "_PdgAmt", "_PdgQty", "_PricTlrnce", "_QtyTlrnce"]
 	@property
 	def AccptdAmt(self):
 		return self._AccptdAmt

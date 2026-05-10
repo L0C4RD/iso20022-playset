@@ -1,10 +1,10 @@
 from . import base_types
-from ._SettlementTypeAndIdentification18 import SettlementTypeAndIdentification18
 from ._Max35Text import Max35Text
+from ._SettlementTypeAndIdentification18 import SettlementTypeAndIdentification18
 
 class References69Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TrptyCollStsAdvcId", "_SctiesTxPdgRptId", "_TrptyCollAndXpsrRptId", "_SctiesTxPstngRptId", "_SctiesSttlmTxConfId", "_OthrMsgId", "_SctiesFincgConfId", "_PrtflTrfNtfctnId", "_SctiesSttlmTxAllgmtNtfctnTxId", "_TrptyCollTxInstrPrcgStsAdvcId", "_TtlPrtflValtnRptId", "_SctiesSttlmTxGnrtnNtfctnId", "_IntraPosMvmntPstngRptId", "_SctiesSttlmTxAllgmtRptId", "_SctiesBalAcctgRptId", "_IntraPosMvmntConfId", "_SctiesBalCtdyRptId"]
+	__slots__ = ["_IntraPosMvmntConfId", "_IntraPosMvmntPstngRptId", "_OthrMsgId", "_PrtflTrfNtfctnId", "_SctiesBalAcctgRptId", "_SctiesBalCtdyRptId", "_SctiesFincgConfId", "_SctiesSttlmTxAllgmtNtfctnTxId", "_SctiesSttlmTxAllgmtRptId", "_SctiesSttlmTxConfId", "_SctiesSttlmTxGnrtnNtfctnId", "_SctiesTxPdgRptId", "_SctiesTxPstngRptId", "_TrptyCollAndXpsrRptId", "_TrptyCollStsAdvcId", "_TrptyCollTxInstrPrcgStsAdvcId", "_TtlPrtflValtnRptId"]
 	@property
 	def IntraPosMvmntConfId(self):
 		return self._IntraPosMvmntConfId

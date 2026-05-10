@@ -1,11 +1,11 @@
 from . import base_types
-from ._PaymentContext30 import PaymentContext30
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 from ._CardPaymentTransaction143 import CardPaymentTransaction143
+from ._PaymentContext30 import PaymentContext30
 
 class AcceptorCancellationAdvice14(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_Tx"]
+	__slots__ = ["_Cntxt", "_Envt", "_Tx"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt

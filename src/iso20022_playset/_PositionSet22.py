@@ -1,10 +1,10 @@
 from . import base_types
-from ._PositionSetCollateralMetrics2 import PositionSetCollateralMetrics2
 from ._PositionSetCollateralDimensions3 import PositionSetCollateralDimensions3
+from ._PositionSetCollateralMetrics2 import PositionSetCollateralMetrics2
 
 class PositionSet22(base_types._BaseFieldType):
 
-	__slots__ = ["_Mtrcs", "_Dmnsns"]
+	__slots__ = ["_Dmnsns", "_Mtrcs"]
 	@property
 	def Dmnsns(self):
 		return self._Dmnsns

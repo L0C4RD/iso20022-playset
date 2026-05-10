@@ -6,7 +6,7 @@ from ._SubBalanceType12Choice import SubBalanceType12Choice
 
 class AdditionalBalanceInformation20(base_types._BaseFieldType):
 
-	__slots__ = ["_SubBalAddtlDtls", "_QtyBrkdwn", "_SubBalTp", "_Qty"]
+	__slots__ = ["_Qty", "_QtyBrkdwn", "_SubBalAddtlDtls", "_SubBalTp"]
 	@property
 	def Qty(self):
 		return self._Qty

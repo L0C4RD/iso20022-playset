@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class IdentificationSource1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Dmst"]
+	__slots__ = ["_Dmst", "_Prtry"]
 	@property
 	def Dmst(self):
 		return self._Dmst

@@ -1,15 +1,15 @@
 from . import base_types
-from ._CountryCode import CountryCode
-from ._ProcessingCharacteristics11 import ProcessingCharacteristics11
-from ._CashAccount205 import CashAccount205
-from ._ProcessingCharacteristics9 import ProcessingCharacteristics9
-from ._ProcessingCharacteristics10 import ProcessingCharacteristics10
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._CashAccount205 import CashAccount205
+from ._CountryCode import CountryCode
 from ._OrderDesk1 import OrderDesk1
+from ._ProcessingCharacteristics10 import ProcessingCharacteristics10
+from ._ProcessingCharacteristics11 import ProcessingCharacteristics11
+from ._ProcessingCharacteristics9 import ProcessingCharacteristics9
 
 class LocalMarketAnnex6(base_types._BaseFieldType):
 
-	__slots__ = ["_CshSttlmDtls", "_SbcptPrcgChrtcs", "_AddtlInf", "_SwtchPrcgChrtcs", "_Ctry", "_LclOrdrDsk", "_RedPrcgChrtcs"]
+	__slots__ = ["_AddtlInf", "_CshSttlmDtls", "_Ctry", "_LclOrdrDsk", "_RedPrcgChrtcs", "_SbcptPrcgChrtcs", "_SwtchPrcgChrtcs"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

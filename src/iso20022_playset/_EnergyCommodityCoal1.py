@@ -4,7 +4,7 @@ from ._AssetClassSubProductType24Code import AssetClassSubProductType24Code
 
 class EnergyCommodityCoal1(base_types._BaseFieldType):
 
-	__slots__ = ["_SubPdct", "_BasePdct"]
+	__slots__ = ["_BasePdct", "_SubPdct"]
 	@property
 	def BasePdct(self):
 		return self._BasePdct

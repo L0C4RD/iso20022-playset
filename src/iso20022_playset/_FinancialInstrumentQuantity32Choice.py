@@ -1,10 +1,10 @@
 from . import base_types
-from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
 from ._ActiveOrHistoricCurrencyAnd19DecimalAmount import ActiveOrHistoricCurrencyAnd19DecimalAmount
+from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
 
 class FinancialInstrumentQuantity32Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NmnlVal", "_MntryVal", "_Unit"]
+	__slots__ = ["_MntryVal", "_NmnlVal", "_Unit"]
 	@property
 	def MntryVal(self):
 		return self._MntryVal

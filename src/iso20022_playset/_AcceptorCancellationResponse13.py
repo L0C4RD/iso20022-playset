@@ -5,7 +5,7 @@ from ._CardPaymentTransaction145 import CardPaymentTransaction145
 
 class AcceptorCancellationResponse13(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_TxRspn", "_Tx"]
+	__slots__ = ["_Envt", "_Tx", "_TxRspn"]
 	@property
 	def Envt(self):
 		return self._Envt

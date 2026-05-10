@@ -1,12 +1,12 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max140Text import Max140Text
 from ._ActionMessage11 import ActionMessage11
+from ._Max140Text import Max140Text
 from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class AbortData6(base_types._BaseFieldType):
 
-	__slots__ = ["_TxSucss", "_AbrtRsn", "_DispOutpt", "_XchgId"]
+	__slots__ = ["_AbrtRsn", "_DispOutpt", "_TxSucss", "_XchgId"]
 	@property
 	def AbrtRsn(self):
 		return self._AbrtRsn

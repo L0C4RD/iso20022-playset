@@ -3,7 +3,7 @@ from ._Max2MBBinary import Max2MBBinary
 
 class RecordMessage1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FeeColltnRspn", "_RtrvlFlfmtRspn", "_FinInitn", "_AdddmInitn", "_AdddmRspn", "_RtrvlRspn", "_RvslInitn", "_VrfctnInitn", "_KeyXchgRspn", "_FinRspn", "_NtwkMgmtInitn", "_SttlmRptgInitn", "_KeyXchgInitn", "_AuthstnRspn", "_Err", "_ChrgBckRspn", "_NqryInitn", "_FrdRptgInitn", "_CardMgmtRspn", "_RcncltnInitn", "_FrdDspstnRspn", "_FileActnRspn", "_RvslRspn", "_SttlmRptgRspn", "_VrfctnRspn", "_RtrvlFlfmtInitn", "_Amdmnt", "_NtwkMgmtRspn", "_CardMgmtInitn", "_AuthstnInitn", "_FileActnInitn", "_FeeColltnInitn", "_ChrgBckInitn", "_FrdRptgRspn", "_FrdDspstnInitn", "_NqryRspn", "_RcncltnRspn", "_RtrvlInitn"]
+	__slots__ = ["_AdddmInitn", "_AdddmRspn", "_Amdmnt", "_AuthstnInitn", "_AuthstnRspn", "_CardMgmtInitn", "_CardMgmtRspn", "_ChrgBckInitn", "_ChrgBckRspn", "_Err", "_FeeColltnInitn", "_FeeColltnRspn", "_FileActnInitn", "_FileActnRspn", "_FinInitn", "_FinRspn", "_FrdDspstnInitn", "_FrdDspstnRspn", "_FrdRptgInitn", "_FrdRptgRspn", "_KeyXchgInitn", "_KeyXchgRspn", "_NqryInitn", "_NqryRspn", "_NtwkMgmtInitn", "_NtwkMgmtRspn", "_RcncltnInitn", "_RcncltnRspn", "_RtrvlFlfmtInitn", "_RtrvlFlfmtRspn", "_RtrvlInitn", "_RtrvlRspn", "_RvslInitn", "_RvslRspn", "_SttlmRptgInitn", "_SttlmRptgRspn", "_VrfctnInitn", "_VrfctnRspn"]
 	@property
 	def AdddmInitn(self):
 		return self._AdddmInitn

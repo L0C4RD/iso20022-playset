@@ -1,12 +1,12 @@
 from . import base_types
-from ._KEKIdentifier4 import KEKIdentifier4
 from ._CryptographicKeyType4Code import CryptographicKeyType4Code
+from ._KEKIdentifier4 import KEKIdentifier4
 from ._Max140Binary import Max140Binary
 from ._Max5000Binary import Max5000Binary
 
 class ATMConfigurationParameter2(base_types._BaseFieldType):
 
-	__slots__ = ["_Cert", "_HstChllng", "_KeyProps", "_KeyCtgy"]
+	__slots__ = ["_Cert", "_HstChllng", "_KeyCtgy", "_KeyProps"]
 	@property
 	def Cert(self):
 		return self._Cert

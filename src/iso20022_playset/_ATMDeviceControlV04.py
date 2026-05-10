@@ -1,12 +1,12 @@
 from . import base_types
-from ._ContentInformationType10 import ContentInformationType10
-from ._Header31 import Header31
-from ._ContentInformationType13 import ContentInformationType13
 from ._ATMDeviceControl3 import ATMDeviceControl3
+from ._ContentInformationType10 import ContentInformationType10
+from ._ContentInformationType13 import ContentInformationType13
+from ._Header31 import Header31
 
 class ATMDeviceControlV04(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMDvcCtrl", "_SctyTrlr", "_Hdr", "_PrtctdATMDvcCtrl"]
+	__slots__ = ["_ATMDvcCtrl", "_Hdr", "_PrtctdATMDvcCtrl", "_SctyTrlr"]
 	@property
 	def ATMDvcCtrl(self):
 		return self._ATMDvcCtrl

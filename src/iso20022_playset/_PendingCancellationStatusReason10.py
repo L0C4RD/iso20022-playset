@@ -4,7 +4,7 @@ from ._PendingCancellationReason7Choice import PendingCancellationReason7Choice
 
 class PendingCancellationStatusReason10(base_types._BaseFieldType):
 
-	__slots__ = ["_RsnCd", "_AddtlRsnInf"]
+	__slots__ = ["_AddtlRsnInf", "_RsnCd"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

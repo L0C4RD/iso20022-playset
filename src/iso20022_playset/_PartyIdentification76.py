@@ -1,10 +1,10 @@
 from . import base_types
-from ._PersonOrOrganisation1Choice import PersonOrOrganisation1Choice
 from ._CountryCode import CountryCode
+from ._PersonOrOrganisation1Choice import PersonOrOrganisation1Choice
 
 class PartyIdentification76(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CtryOfBrnch"]
+	__slots__ = ["_CtryOfBrnch", "_Id"]
 	@property
 	def CtryOfBrnch(self):
 		return self._CtryOfBrnch

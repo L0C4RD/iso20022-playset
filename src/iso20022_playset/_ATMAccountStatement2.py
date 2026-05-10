@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISODate import ISODate
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Max70Text import Max70Text
+from ._ISODate import ISODate
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max256Text import Max256Text
+from ._Max70Text import Max70Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ATMAccountStatement2(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_TxDt", "_ValDt", "_CdtTx", "_ShrtTxt", "_LngTxt", "_Ccy"]
+	__slots__ = ["_Amt", "_Ccy", "_CdtTx", "_LngTxt", "_ShrtTxt", "_TxDt", "_ValDt"]
 	@property
 	def Amt(self):
 		return self._Amt

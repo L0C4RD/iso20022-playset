@@ -1,12 +1,12 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Exemption2 import Exemption2
 from ._AttestationValue1Code import AttestationValue1Code
+from ._Exemption2 import Exemption2
 from ._Max4Text import Max4Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class StrongCustomerAuthentication2(base_types._BaseFieldType):
 
-	__slots__ = ["_SbjtToSCA", "_Wvr", "_DlgtdAuthrty", "_RsnAuthntcnNotPrfrmd", "_Xmptn"]
+	__slots__ = ["_DlgtdAuthrty", "_RsnAuthntcnNotPrfrmd", "_SbjtToSCA", "_Wvr", "_Xmptn"]
 	@property
 	def DlgtdAuthrty(self):
 		return self._DlgtdAuthrty

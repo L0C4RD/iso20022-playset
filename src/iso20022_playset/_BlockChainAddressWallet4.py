@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max140Text import Max140Text
-from ._Max70Text import Max70Text
 from ._GenericIdentification30 import GenericIdentification30
+from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class BlockChainAddressWallet4(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Nm", "_Dsgnt", "_Tp"]
+	__slots__ = ["_Dsgnt", "_Id", "_Nm", "_Tp"]
 	@property
 	def Dsgnt(self):
 		return self._Dsgnt

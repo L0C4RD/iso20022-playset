@@ -1,11 +1,11 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._DetailedAmount18 import DetailedAmount18
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class DetailedAmount17(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtToTrf", "_Fees", "_Dontn", "_Ccy"]
+	__slots__ = ["_AmtToTrf", "_Ccy", "_Dontn", "_Fees"]
 	@property
 	def AmtToTrf(self):
 		return self._AmtToTrf

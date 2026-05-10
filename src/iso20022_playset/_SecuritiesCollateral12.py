@@ -1,21 +1,21 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
 from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
+from ._Price7 import Price7
+from ._SafekeepingPlaceFormat29Choice import SafekeepingPlaceFormat29Choice
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SecurityIdentification19 import SecurityIdentification19
 from ._SettlementDetails206 import SettlementDetails206
 from ._YesNoIndicator import YesNoIndicator
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Price7 import Price7
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._SafekeepingPlaceFormat29Choice import SafekeepingPlaceFormat29Choice
-from ._PercentageRate import PercentageRate
-from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._Max35Text import Max35Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class SecuritiesCollateral12(base_types._BaseFieldType):
 
-	__slots__ = ["_Hrcut", "_ValDt", "_SfkpgAcct", "_CollId", "_MtrtyDt", "_SctyId", "_CollVal", "_Pric", "_BlckChainAdrOrWllt", "_Qty", "_SttlmParams", "_SfkpgPlc", "_MktVal", "_LtdCvrgInd"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_CollId", "_CollVal", "_Hrcut", "_LtdCvrgInd", "_MktVal", "_MtrtyDt", "_Pric", "_Qty", "_SctyId", "_SfkpgAcct", "_SfkpgPlc", "_SttlmParams", "_ValDt"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt

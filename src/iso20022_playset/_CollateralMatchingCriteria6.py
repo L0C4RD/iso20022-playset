@@ -1,12 +1,12 @@
 from . import base_types
-from ._SecurityCommodityCash4 import SecurityCommodityCash4
-from ._CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
-from ._CompareSecurityIdentification4 import CompareSecurityIdentification4
 from ._CompareDate3 import CompareDate3
+from ._CompareSecurityIdentification4 import CompareSecurityIdentification4
+from ._CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
+from ._SecurityCommodityCash4 import SecurityCommodityCash4
 
 class CollateralMatchingCriteria6(base_types._BaseFieldType):
 
-	__slots__ = ["_UncollsdFlg", "_BsktIdr", "_NetXpsrCollstnInd", "_CollValDt", "_AsstTp"]
+	__slots__ = ["_AsstTp", "_BsktIdr", "_CollValDt", "_NetXpsrCollstnInd", "_UncollsdFlg"]
 	@property
 	def AsstTp(self):
 		return self._AsstTp

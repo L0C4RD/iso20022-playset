@@ -6,7 +6,7 @@ from ._CreditDefaultSwapSingleName2 import CreditDefaultSwapSingleName2
 
 class CreditDefaultSwapsDerivative4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDfltSwpIndxDeriv", "_SnglNmCdtDfltSwpDeriv", "_CdtDfltSwpIndx", "_SnglNmCdtDfltSwp"]
+	__slots__ = ["_CdtDfltSwpIndx", "_CdtDfltSwpIndxDeriv", "_SnglNmCdtDfltSwp", "_SnglNmCdtDfltSwpDeriv"]
 	@property
 	def CdtDfltSwpIndx(self):
 		return self._CdtDfltSwpIndx

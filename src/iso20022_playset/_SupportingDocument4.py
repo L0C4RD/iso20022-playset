@@ -1,16 +1,16 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._DocumentIdentification28 import DocumentIdentification28
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._DocumentAmendment1 import DocumentAmendment1
 from ._ContractRegistrationReference2Choice import ContractRegistrationReference2Choice
-from ._SupportingDocumentEntry2 import SupportingDocumentEntry2
+from ._DocumentAmendment1 import DocumentAmendment1
+from ._DocumentIdentification28 import DocumentIdentification28
 from ._Max35Text import Max35Text
 from ._PartyIdentification272 import PartyIdentification272
+from ._SupplementaryData1 import SupplementaryData1
+from ._SupportingDocumentEntry2 import SupportingDocumentEntry2
 
 class SupportingDocument4(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlReqId", "_Cert", "_CtrctRef", "_Ntry", "_AcctSvcr", "_SpprtgDocId", "_AcctOwnr", "_Amdmnt", "_SplmtryData"]
+	__slots__ = ["_AcctOwnr", "_AcctSvcr", "_Amdmnt", "_Cert", "_CtrctRef", "_Ntry", "_OrgnlReqId", "_SplmtryData", "_SpprtgDocId"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

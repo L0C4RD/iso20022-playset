@@ -4,7 +4,7 @@ from ._UndertakingAmount4 import UndertakingAmount4
 
 class AmountOrPercentage1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PctgAmt", "_DfndAmt"]
+	__slots__ = ["_DfndAmt", "_PctgAmt"]
 	@property
 	def DfndAmt(self):
 		return self._DfndAmt

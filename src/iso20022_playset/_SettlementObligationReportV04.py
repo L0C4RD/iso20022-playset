@@ -1,15 +1,15 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SupplementaryData1 import SupplementaryData1
-from ._SettlementParties37Choice import SettlementParties37Choice
 from ._Pagination1 import Pagination1
-from ._ReportParameters8 import ReportParameters8
 from ._PartyIdentification253Choice import PartyIdentification253Choice
 from ._Report7 import Report7
+from ._ReportParameters8 import ReportParameters8
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SettlementParties37Choice import SettlementParties37Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class SettlementObligationReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmPties", "_RptParams", "_DlvryAcct", "_ClrMmb", "_Pgntn", "_ClrSgmt", "_RptDtls", "_SplmtryData"]
+	__slots__ = ["_ClrMmb", "_ClrSgmt", "_DlvryAcct", "_Pgntn", "_RptDtls", "_RptParams", "_SplmtryData", "_SttlmPties"]
 	@property
 	def ClrMmb(self):
 		return self._ClrMmb

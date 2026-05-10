@@ -1,12 +1,12 @@
 from . import base_types
-from ._StatusReason6Choice import StatusReason6Choice
 from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
-from ._PartyIdentification272 import PartyIdentification272
 from ._Max105Text import Max105Text
+from ._PartyIdentification272 import PartyIdentification272
+from ._StatusReason6Choice import StatusReason6Choice
 
 class ValidationStatusReason3(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Rsn", "_VldtnRule", "_Orgtr"]
+	__slots__ = ["_AddtlInf", "_Orgtr", "_Rsn", "_VldtnRule"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

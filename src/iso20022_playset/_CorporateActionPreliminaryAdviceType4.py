@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class CorporateActionPreliminaryAdviceType4(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_MvmntPrlimryAdvcId", "_Fctn"]
+	__slots__ = ["_Fctn", "_MvmntPrlimryAdvcId", "_Tp"]
 	@property
 	def Fctn(self):
 		return self._Fctn

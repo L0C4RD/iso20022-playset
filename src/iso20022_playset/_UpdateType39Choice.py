@@ -1,11 +1,11 @@
 from . import base_types
-from ._SecuritiesSettlementTransactionDetails58 import SecuritiesSettlementTransactionDetails58
-from ._SecuritiesSettlementTransactionDetails57 import SecuritiesSettlementTransactionDetails57
 from ._SecuritiesSettlementTransactionDetails56 import SecuritiesSettlementTransactionDetails56
+from ._SecuritiesSettlementTransactionDetails57 import SecuritiesSettlementTransactionDetails57
+from ._SecuritiesSettlementTransactionDetails58 import SecuritiesSettlementTransactionDetails58
 
 class UpdateType39Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Mod", "_Deltn", "_Addtn"]
+	__slots__ = ["_Addtn", "_Deltn", "_Mod"]
 	@property
 	def Addtn(self):
 		return self._Addtn

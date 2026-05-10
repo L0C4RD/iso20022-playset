@@ -1,10 +1,10 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._Max35Text import Max35Text
+from ._YesNoIndicator import YesNoIndicator
 
 class IncludedAccount1(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesAcctId", "_InclInd"]
+	__slots__ = ["_InclInd", "_SctiesAcctId"]
 	@property
 	def InclInd(self):
 		return self._InclInd

@@ -1,11 +1,11 @@
 from . import base_types
 from ._DeliveringPartiesAndAccount22 import DeliveringPartiesAndAccount22
-from ._ReceivingPartiesAndAccount22 import ReceivingPartiesAndAccount22
 from ._PartyIdentification253Choice import PartyIdentification253Choice
+from ._ReceivingPartiesAndAccount22 import ReceivingPartiesAndAccount22
 
 class NonGuaranteedTrade4(base_types._BaseFieldType):
 
-	__slots__ = ["_RcvgPties", "_TradCtrPtyClrMmbId", "_TradCtrPtyMmbId", "_DlvrgPties"]
+	__slots__ = ["_DlvrgPties", "_RcvgPties", "_TradCtrPtyClrMmbId", "_TradCtrPtyMmbId"]
 	@property
 	def DlvrgPties(self):
 		return self._DlvrgPties

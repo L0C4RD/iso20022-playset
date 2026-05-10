@@ -1,11 +1,11 @@
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._GenericDocumentIdentification6 import GenericDocumentIdentification6
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._SettlementTypeAndIdentification22 import SettlementTypeAndIdentification22
 
 class References60Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTxId", "_SctiesSttlmTxId", "_SctiesFincgTxId", "_IntraPosMvmntId"]
+	__slots__ = ["_IntraPosMvmntId", "_OthrTxId", "_SctiesFincgTxId", "_SctiesSttlmTxId"]
 	@property
 	def IntraPosMvmntId(self):
 		return self._IntraPosMvmntId

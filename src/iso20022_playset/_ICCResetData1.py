@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Binary import Max35Binary
 from ._Max140Binary import Max140Binary
+from ._Max35Binary import Max35Binary
 
 class ICCResetData1(base_types._BaseFieldType):
 
-	__slots__ = ["_CardSts", "_ATRVal"]
+	__slots__ = ["_ATRVal", "_CardSts"]
 	@property
 	def ATRVal(self):
 		return self._ATRVal

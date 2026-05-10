@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max8Text import Max8Text
 from ._Max6Text import Max6Text
+from ._Max8Text import Max8Text
 
 class BillingServiceCommonIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_Id"]
+	__slots__ = ["_Id", "_Issr"]
 	@property
 	def Id(self):
 		return self._Id

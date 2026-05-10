@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max52Text import Max52Text
 from ._Max35Text import Max35Text
+from ._Max52Text import Max52Text
 
 class Reference3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnCallRspnId", "_CollSbstitnRspnId", "_IntrstPmtRspnId", "_CollPrpslRspnId", "_CollPrpslId", "_CmonTxId", "_IntrstPmtReqId", "_MrgnCallReqId", "_CollSbstitnConfId", "_CollSbstitnReqId", "_ClntCollInstrId", "_TrptyAgtSvcPrvdrCollTxId", "_TrptyAgtSvcPrvdrCollInstrId", "_DsptNtfctnId", "_ClntCollTxId", "_IntrstPmtStmtId"]
+	__slots__ = ["_ClntCollInstrId", "_ClntCollTxId", "_CmonTxId", "_CollPrpslId", "_CollPrpslRspnId", "_CollSbstitnConfId", "_CollSbstitnReqId", "_CollSbstitnRspnId", "_DsptNtfctnId", "_IntrstPmtReqId", "_IntrstPmtRspnId", "_IntrstPmtStmtId", "_MrgnCallReqId", "_MrgnCallRspnId", "_TrptyAgtSvcPrvdrCollInstrId", "_TrptyAgtSvcPrvdrCollTxId"]
 	@property
 	def ClntCollInstrId(self):
 		return self._ClntCollInstrId

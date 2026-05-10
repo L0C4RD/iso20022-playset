@@ -3,7 +3,7 @@ from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class OriginalAmountDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxAmt", "_MinAmt", "_ActlAmt"]
+	__slots__ = ["_ActlAmt", "_MaxAmt", "_MinAmt"]
 	@property
 	def ActlAmt(self):
 		return self._ActlAmt

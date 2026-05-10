@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class UnderlyingGroupInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgId", "_OrgnlCreDtTm", "_OrgnlMsgDlvryChanl", "_OrgnlMsgNmId"]
+	__slots__ = ["_OrgnlCreDtTm", "_OrgnlMsgDlvryChanl", "_OrgnlMsgId", "_OrgnlMsgNmId"]
 	@property
 	def OrgnlCreDtTm(self):
 		return self._OrgnlCreDtTm

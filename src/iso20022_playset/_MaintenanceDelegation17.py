@@ -1,16 +1,16 @@
 from . import base_types
-from ._MaintenanceIdentificationAssociation1 import MaintenanceIdentificationAssociation1
-from ._Response2Code import Response2Code
 from ._ContentInformationType39 import ContentInformationType39
 from ._DataSetCategory19Code import DataSetCategory19Code
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
-from ._Max35Text import Max35Text
+from ._MaintenanceIdentificationAssociation1 import MaintenanceIdentificationAssociation1
 from ._Max3000Binary import Max3000Binary
+from ._Max35Text import Max35Text
 from ._Max5000Binary import Max5000Binary
+from ._Response2Code import Response2Code
+from ._TerminalManagementAction3Code import TerminalManagementAction3Code
 
 class MaintenanceDelegation17(base_types._BaseFieldType):
 
-	__slots__ = ["_POIIdAssoctn", "_PrtctdDlgtnProof", "_MntncSvc", "_DlgtnTp", "_DlgtnProof", "_DlgtnScpId", "_DlgtnScpDef", "_Rspn", "_POISubset", "_RspnRsn"]
+	__slots__ = ["_DlgtnProof", "_DlgtnScpDef", "_DlgtnScpId", "_DlgtnTp", "_MntncSvc", "_POIIdAssoctn", "_POISubset", "_PrtctdDlgtnProof", "_Rspn", "_RspnRsn"]
 	@property
 	def DlgtnProof(self):
 		return self._DlgtnProof

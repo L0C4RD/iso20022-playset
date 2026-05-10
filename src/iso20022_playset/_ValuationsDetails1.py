@@ -1,15 +1,15 @@
 from . import base_types
-from ._CollateralAmount4 import CollateralAmount4
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._MarketIdentification89 import MarketIdentification89
+from ._CollateralAmount4 import CollateralAmount4
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._ValuationFactorBreakdown1 import ValuationFactorBreakdown1
-from ._Price7 import Price7
+from ._MarketIdentification89 import MarketIdentification89
 from ._Number import Number
+from ._Price7 import Price7
+from ._ValuationFactorBreakdown1 import ValuationFactorBreakdown1
 
 class ValuationsDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_ValtnDtlsAmt", "_SrcOfPric", "_MktPric", "_NbOfDaysAcrd", "_CleanPric", "_AcrdIntrst", "_ValtnFctrBrkdwn", "_SttlmDt", "_QtnAge"]
+	__slots__ = ["_AcrdIntrst", "_CleanPric", "_MktPric", "_NbOfDaysAcrd", "_QtnAge", "_SrcOfPric", "_SttlmDt", "_ValtnDtlsAmt", "_ValtnFctrBrkdwn"]
 	@property
 	def AcrdIntrst(self):
 		return self._AcrdIntrst

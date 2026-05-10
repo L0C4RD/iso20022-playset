@@ -1,7 +1,7 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._DetailedReportStatistics5 import DetailedReportStatistics5
 from ._DetailedTransactionStatistics2Choice import DetailedTransactionStatistics2Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class TradeData29(base_types._BaseFieldType):
 

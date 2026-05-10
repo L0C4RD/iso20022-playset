@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PercentageRate import PercentageRate
 from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._BaseOneRate import BaseOneRate
-from ._Max35Text import Max35Text
-from ._DepositType1Code import DepositType1Code
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._BaseOneRate import BaseOneRate
+from ._DepositType1Code import DepositType1Code
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
 
 class CashCollateral3(base_types._BaseFieldType):
 
-	__slots__ = ["_CollVal", "_ValDt", "_Hrcut", "_CshAcctId", "_CollId", "_DpstTp", "_MtrtyDt", "_DpstAmt", "_XchgRate"]
+	__slots__ = ["_CollId", "_CollVal", "_CshAcctId", "_DpstAmt", "_DpstTp", "_Hrcut", "_MtrtyDt", "_ValDt", "_XchgRate"]
 	@property
 	def CollId(self):
 		return self._CollId

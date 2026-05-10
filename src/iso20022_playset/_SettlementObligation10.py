@@ -1,18 +1,18 @@
 from . import base_types
-from ._ISODate import ISODate
+from ._AmountAndDirection27 import AmountAndDirection27
+from ._CurrencyCode import CurrencyCode
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._Reference24 import Reference24
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._ObligationType1Choice import ObligationType1Choice
 from ._Price14 import Price14
 from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._ObligationType1Choice import ObligationType1Choice
-from ._CurrencyCode import CurrencyCode
-from ._Max35Text import Max35Text
-from ._AmountAndDirection27 import AmountAndDirection27
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._Reference24 import Reference24
 
 class SettlementObligation10(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmAmt", "_Qty", "_OblgtnTp", "_TradDt", "_SctiesMvmntTp", "_NetPosPric", "_Refs", "_TradgCcy", "_Pmt", "_Desc", "_SttlmDt", "_RltdSttlmOblgtnId"]
+	__slots__ = ["_Desc", "_NetPosPric", "_OblgtnTp", "_Pmt", "_Qty", "_Refs", "_RltdSttlmOblgtnId", "_SctiesMvmntTp", "_SttlmAmt", "_SttlmDt", "_TradDt", "_TradgCcy"]
 	@property
 	def Desc(self):
 		return self._Desc

@@ -1,11 +1,11 @@
 from . import base_types
 from ._Max140Text import Max140Text
-from ._Number import Number
 from ._Min5Max16Binary import Min5Max16Binary
+from ._Number import Number
 
 class KEKIdentifier6(base_types._BaseFieldType):
 
-	__slots__ = ["_SeqNb", "_KeyVrsn", "_DerivtnId", "_KeyId"]
+	__slots__ = ["_DerivtnId", "_KeyId", "_KeyVrsn", "_SeqNb"]
 	@property
 	def DerivtnId(self):
 		return self._DerivtnId

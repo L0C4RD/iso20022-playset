@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Max140Text import Max140Text
 from ._AgreementFramework1Choice import AgreementFramework1Choice
+from ._ISODate import ISODate
+from ._Max140Text import Max140Text
 
 class Agreement4(base_types._BaseFieldType):
 
-	__slots__ = ["_AgrmtId", "_AgrmtDt", "_AgrmtDtls", "_AgrmtFrmwk", "_BaseCcy"]
+	__slots__ = ["_AgrmtDt", "_AgrmtDtls", "_AgrmtFrmwk", "_AgrmtId", "_BaseCcy"]
 	@property
 	def AgrmtDt(self):
 		return self._AgrmtDt

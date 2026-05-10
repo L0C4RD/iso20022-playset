@@ -1,6 +1,6 @@
 from . import base_types
-from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
 from ._ExternalOrganisationIdentification1Code import ExternalOrganisationIdentification1Code
+from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
 
 class OrganisationIdentificationSchemeName2Choice(base_types._BaseFieldType):
 

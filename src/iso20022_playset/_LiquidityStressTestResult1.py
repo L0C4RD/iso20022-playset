@@ -1,11 +1,11 @@
 from . import base_types
-from ._LiquidityRequiredAndAvailable1 import LiquidityRequiredAndAvailable1
 from ._CoverTwoDefaulters1 import CoverTwoDefaulters1
+from ._LiquidityRequiredAndAvailable1 import LiquidityRequiredAndAvailable1
 from ._Max256Text import Max256Text
 
 class LiquidityStressTestResult1(base_types._BaseFieldType):
 
-	__slots__ = ["_LqdtyReqrdAndAvlbl", "_ScnroDfltrs", "_Id"]
+	__slots__ = ["_Id", "_LqdtyReqrdAndAvlbl", "_ScnroDfltrs"]
 	@property
 	def Id(self):
 		return self._Id

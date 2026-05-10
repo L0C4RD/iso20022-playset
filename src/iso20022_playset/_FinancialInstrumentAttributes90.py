@@ -1,12 +1,12 @@
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._InterestComputationMethod2Code import InterestComputationMethod2Code
 from ._GenericIdentification168 import GenericIdentification168
+from ._InterestComputationMethod2Code import InterestComputationMethod2Code
 from ._Max35Text import Max35Text
 
 class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 
-	__slots__ = ["_IndxId", "_IndxUnit", "_UnitVal", "_Ntnl", "_IntrstRateTerms"]
+	__slots__ = ["_IndxId", "_IndxUnit", "_IntrstRateTerms", "_Ntnl", "_UnitVal"]
 	@property
 	def IndxId(self):
 		return self._IndxId

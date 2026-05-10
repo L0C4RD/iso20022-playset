@@ -1,16 +1,16 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
+from ._AlternatePartyIdentification7 import AlternatePartyIdentification7
+from ._BeneficiaryCertificationType10Choice import BeneficiaryCertificationType10Choice
 from ._CountryCode import CountryCode
 from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._RateAndAmountFormat57Choice import RateAndAmountFormat57Choice
-from ._PartyIdentification229Choice import PartyIdentification229Choice
-from ._AlternatePartyIdentification7 import AlternatePartyIdentification7
+from ._LEIIdentifier import LEIIdentifier
 from ._Max350Text import Max350Text
-from ._BeneficiaryCertificationType10Choice import BeneficiaryCertificationType10Choice
+from ._PartyIdentification229Choice import PartyIdentification229Choice
+from ._RateAndAmountFormat57Choice import RateAndAmountFormat57Choice
 
 class PartyIdentification313(base_types._BaseFieldType):
 
-	__slots__ = ["_LEIId", "_CertfctnBrkdwn", "_CertfctnTp", "_DmclCtry", "_NonDmclCtry", "_OwnrId", "_AltrnId", "_OwndSctiesQty", "_WhldgTaxRate"]
+	__slots__ = ["_AltrnId", "_CertfctnBrkdwn", "_CertfctnTp", "_DmclCtry", "_LEIId", "_NonDmclCtry", "_OwndSctiesQty", "_OwnrId", "_WhldgTaxRate"]
 	@property
 	def AltrnId(self):
 		return self._AltrnId

@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class PensionPolicy1(base_types._BaseFieldType):
 
-	__slots__ = ["_SubIdr", "_AddtlInf", "_Idr"]
+	__slots__ = ["_AddtlInf", "_Idr", "_SubIdr"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

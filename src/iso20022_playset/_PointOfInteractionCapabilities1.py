@@ -1,13 +1,13 @@
 from . import base_types
-from ._DisplayCapabilities1 import DisplayCapabilities1
-from ._OnLineCapability1Code import OnLineCapability1Code
-from ._Max3NumericText import Max3NumericText
 from ._CardDataReading1Code import CardDataReading1Code
 from ._CardholderVerificationCapability1Code import CardholderVerificationCapability1Code
+from ._DisplayCapabilities1 import DisplayCapabilities1
+from ._Max3NumericText import Max3NumericText
+from ._OnLineCapability1Code import OnLineCapability1Code
 
 class PointOfInteractionCapabilities1(base_types._BaseFieldType):
 
-	__slots__ = ["_OnLineCpblties", "_DispCpblties", "_PrtLineWidth", "_CardRdngCpblties", "_CrdhldrVrfctnCpblties"]
+	__slots__ = ["_CardRdngCpblties", "_CrdhldrVrfctnCpblties", "_DispCpblties", "_OnLineCpblties", "_PrtLineWidth"]
 	@property
 	def CardRdngCpblties(self):
 		return self._CardRdngCpblties

@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class InvestmentFundOrder4(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrRef", "_MstrRef"]
+	__slots__ = ["_MstrRef", "_OrdrRef"]
 	@property
 	def MstrRef(self):
 		return self._MstrRef

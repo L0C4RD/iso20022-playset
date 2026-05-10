@@ -1,15 +1,15 @@
 from . import base_types
-from ._FinancialInstrument61Choice import FinancialInstrument61Choice
 from ._Account28 import Account28
-from ._FundSettlementParameters18 import FundSettlementParameters18
-from ._YesNoIndicator import YesNoIndicator
-from ._Max35Text import Max35Text
-from ._AdditionalReference10 import AdditionalReference10
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._AdditionalReference10 import AdditionalReference10
+from ._FinancialInstrument61Choice import FinancialInstrument61Choice
+from ._FundSettlementParameters18 import FundSettlementParameters18
+from ._Max35Text import Max35Text
+from ._YesNoIndicator import YesNoIndicator
 
 class FinancialInstrument101(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmPtiesDtls", "_LineId", "_AsstsHeldInOwnNm", "_Instrm", "_Trfr", "_AddtlInf", "_TrfRsltsInChngOfBnfclOwnr", "_ClntRef", "_CtrPtyRef", "_TrfeeAcct"]
+	__slots__ = ["_AddtlInf", "_AsstsHeldInOwnNm", "_ClntRef", "_CtrPtyRef", "_Instrm", "_LineId", "_SttlmPtiesDtls", "_TrfRsltsInChngOfBnfclOwnr", "_TrfeeAcct", "_Trfr"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

@@ -1,16 +1,16 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISODate import ISODate
-from ._Frequency36Choice import Frequency36Choice
 from ._AmendmentInformationDetails14 import AmendmentInformationDetails14
 from ._Exact2NumericText import Exact2NumericText
-from ._Max35Text import Max35Text
-from ._Max1025Text import Max1025Text
+from ._Frequency36Choice import Frequency36Choice
+from ._ISODate import ISODate
 from ._MandateSetupReason1Choice import MandateSetupReason1Choice
+from ._Max1025Text import Max1025Text
+from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class MandateRelatedInformation15(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_DtOfSgntr", "_ElctrncSgntr", "_AmdmntInd", "_MndtId", "_FrstColltnDt", "_AmdmntInfDtls", "_FnlColltnDt", "_TrckgDays", "_Frqcy"]
+	__slots__ = ["_AmdmntInd", "_AmdmntInfDtls", "_DtOfSgntr", "_ElctrncSgntr", "_FnlColltnDt", "_Frqcy", "_FrstColltnDt", "_MndtId", "_Rsn", "_TrckgDays"]
 	@property
 	def AmdmntInd(self):
 		return self._AmdmntInd

@@ -1,11 +1,11 @@
 from . import base_types
 from ._Max35Text import Max35Text
-from ._SafekeepingPlace1Code import SafekeepingPlace1Code
 from ._PartyIdentification3 import PartyIdentification3
+from ._SafekeepingPlace1Code import SafekeepingPlace1Code
 
 class SafekeepingPlaceAsCodeAndPartyIdentification(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty", "_PlcSfkpg", "_Nrrtv"]
+	__slots__ = ["_Nrrtv", "_PlcSfkpg", "_Pty"]
 	@property
 	def Nrrtv(self):
 		return self._Nrrtv

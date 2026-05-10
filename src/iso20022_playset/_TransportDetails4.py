@@ -1,15 +1,15 @@
 from . import base_types
-from ._Consignment3 import Consignment3
-from ._ShipmentDate1Choice import ShipmentDate1Choice
-from ._TransportedGoods1 import TransportedGoods1
-from ._DocumentIdentification7 import DocumentIdentification7
 from ._Charge25 import Charge25
-from ._TransportMeans6 import TransportMeans6
+from ._Consignment3 import Consignment3
+from ._DocumentIdentification7 import DocumentIdentification7
 from ._Incoterms4 import Incoterms4
+from ._ShipmentDate1Choice import ShipmentDate1Choice
+from ._TransportMeans6 import TransportMeans6
+from ._TransportedGoods1 import TransportedGoods1
 
 class TransportDetails4(base_types._BaseFieldType):
 
-	__slots__ = ["_TrnsprtDocRef", "_Consgnmt", "_TrnsprtdGoods", "_ShipmntDt", "_Incotrms", "_FrghtChrgs", "_RtgSummry"]
+	__slots__ = ["_Consgnmt", "_FrghtChrgs", "_Incotrms", "_RtgSummry", "_ShipmntDt", "_TrnsprtDocRef", "_TrnsprtdGoods"]
 	@property
 	def Consgnmt(self):
 		return self._Consgnmt

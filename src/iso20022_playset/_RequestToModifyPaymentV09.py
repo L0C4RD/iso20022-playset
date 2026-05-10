@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._UnderlyingTransaction8Choice import UnderlyingTransaction8Choice
-from ._InstructionForAssignee1 import InstructionForAssignee1
 from ._Case6 import Case6
 from ._CaseAssignment6 import CaseAssignment6
+from ._InstructionForAssignee1 import InstructionForAssignee1
 from ._RequestedModification11 import RequestedModification11
+from ._SupplementaryData1 import SupplementaryData1
+from ._UnderlyingTransaction8Choice import UnderlyingTransaction8Choice
 
 class RequestToModifyPaymentV09(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrForAssgne", "_Undrlyg", "_Mod", "_Assgnmt", "_Case", "_SplmtryData"]
+	__slots__ = ["_Assgnmt", "_Case", "_InstrForAssgne", "_Mod", "_SplmtryData", "_Undrlyg"]
 	@property
 	def Assgnmt(self):
 		return self._Assgnmt

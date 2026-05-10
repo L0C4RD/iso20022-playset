@@ -5,7 +5,7 @@ from ._TMSHeader1 import TMSHeader1
 
 class CertificateManagementResponseV07(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_CertMgmtRspn", "_SctyTrlr"]
+	__slots__ = ["_CertMgmtRspn", "_Hdr", "_SctyTrlr"]
 	@property
 	def CertMgmtRspn(self):
 		return self._CertMgmtRspn

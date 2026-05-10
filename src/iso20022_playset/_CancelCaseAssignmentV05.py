@@ -1,7 +1,7 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._CaseAssignment6 import CaseAssignment6
 from ._Case6 import Case6
+from ._CaseAssignment6 import CaseAssignment6
+from ._SupplementaryData1 import SupplementaryData1
 
 class CancelCaseAssignmentV05(base_types._BaseFieldType):
 

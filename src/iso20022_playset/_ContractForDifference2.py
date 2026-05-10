@@ -4,7 +4,7 @@ from ._UnderlyingContractForDifferenceType3Code import UnderlyingContractForDiff
 
 class ContractForDifference2(base_types._BaseFieldType):
 
-	__slots__ = ["_NtnlCcy2", "_UndrlygTp", "_NtnlCcy1"]
+	__slots__ = ["_NtnlCcy1", "_NtnlCcy2", "_UndrlygTp"]
 	@property
 	def NtnlCcy1(self):
 		return self._NtnlCcy1

@@ -5,7 +5,7 @@ from ._PartyIdentificationAndAccount209 import PartyIdentificationAndAccount209
 
 class OtherParties44(base_types._BaseFieldType):
 
-	__slots__ = ["_QlfdFrgnIntrmy", "_Brkr", "_Invstr", "_TrptyAgt", "_StockXchg", "_TradRgltr"]
+	__slots__ = ["_Brkr", "_Invstr", "_QlfdFrgnIntrmy", "_StockXchg", "_TradRgltr", "_TrptyAgt"]
 	@property
 	def Brkr(self):
 		return self._Brkr

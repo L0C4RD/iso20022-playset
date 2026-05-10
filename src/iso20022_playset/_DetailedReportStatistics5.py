@@ -4,7 +4,7 @@ from ._NumberOfTransactionsPerValidationRule5 import NumberOfTransactionsPerVali
 
 class DetailedReportStatistics5(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfRptsAccptd", "_NbOfRptsRjctdPerErr", "_TtlNbOfRptsRjctd", "_TtlNbOfRpts"]
+	__slots__ = ["_NbOfRptsRjctdPerErr", "_TtlNbOfRpts", "_TtlNbOfRptsAccptd", "_TtlNbOfRptsRjctd"]
 	@property
 	def NbOfRptsRjctdPerErr(self):
 		return self._NbOfRptsRjctdPerErr

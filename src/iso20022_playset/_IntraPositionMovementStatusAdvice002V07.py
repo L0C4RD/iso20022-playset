@@ -1,13 +1,13 @@
 from . import base_types
+from ._IntraPositionDetails64 import IntraPositionDetails64
+from ._IntraPositionProcessingStatus10Choice import IntraPositionProcessingStatus10Choice
+from ._SettlementStatus20Choice import SettlementStatus20Choice
 from ._SupplementaryData1 import SupplementaryData1
 from ._TransactionIdentifications34 import TransactionIdentifications34
-from ._SettlementStatus20Choice import SettlementStatus20Choice
-from ._IntraPositionProcessingStatus10Choice import IntraPositionProcessingStatus10Choice
-from ._IntraPositionDetails64 import IntraPositionDetails64
 
 class IntraPositionMovementStatusAdvice002V07(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmSts", "_TxDtls", "_TxId", "_SplmtryData", "_PrcgSts"]
+	__slots__ = ["_PrcgSts", "_SplmtryData", "_SttlmSts", "_TxDtls", "_TxId"]
 	@property
 	def PrcgSts(self):
 		return self._PrcgSts

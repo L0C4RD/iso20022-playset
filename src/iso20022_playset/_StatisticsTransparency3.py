@@ -1,11 +1,11 @@
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Number import Number
 from ._DecimalNumber import DecimalNumber
+from ._Number import Number
 
 class StatisticsTransparency3(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfTxsExctd", "_StdMktSz", "_AvrgTxVal", "_AvrgDalyTrnvr", "_TtlVolOfTxsExctd", "_AvrgDalyNbOfTxs", "_LrgInScale", "_TtlNbOfTradgDays"]
+	__slots__ = ["_AvrgDalyNbOfTxs", "_AvrgDalyTrnvr", "_AvrgTxVal", "_LrgInScale", "_StdMktSz", "_TtlNbOfTradgDays", "_TtlNbOfTxsExctd", "_TtlVolOfTxsExctd"]
 	@property
 	def AvrgDalyNbOfTxs(self):
 		return self._AvrgDalyNbOfTxs

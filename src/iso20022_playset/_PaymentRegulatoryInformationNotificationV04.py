@@ -1,11 +1,11 @@
 from . import base_types
 from ._CurrencyControlHeader9 import CurrencyControlHeader9
-from ._SupplementaryData1 import SupplementaryData1
 from ._RegulatoryReportingNotification4 import RegulatoryReportingNotification4
+from ._SupplementaryData1 import SupplementaryData1
 
 class PaymentRegulatoryInformationNotificationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_TxNtfctn", "_SplmtryData", "_GrpHdr"]
+	__slots__ = ["_GrpHdr", "_SplmtryData", "_TxNtfctn"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

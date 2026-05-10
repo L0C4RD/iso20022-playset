@@ -1,10 +1,10 @@
 from . import base_types
-from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
 from ._PendingReason71Choice import PendingReason71Choice
+from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
 
 class PendingStatusReason30(base_types._BaseFieldType):
 
-	__slots__ = ["_RsnCd", "_AddtlRsnInf"]
+	__slots__ = ["_AddtlRsnInf", "_RsnCd"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

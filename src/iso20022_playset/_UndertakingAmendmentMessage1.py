@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyAndSignature2 import PartyAndSignature2
 from ._Amendment1 import Amendment1
+from ._PartyAndSignature2 import PartyAndSignature2
 
 class UndertakingAmendmentMessage1(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgAmdmntDtls", "_DgtlSgntr"]
+	__slots__ = ["_DgtlSgntr", "_UdrtkgAmdmntDtls"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr

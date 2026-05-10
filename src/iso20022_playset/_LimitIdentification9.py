@@ -1,12 +1,12 @@
 from . import base_types
-from ._LimitType1Choice import LimitType1Choice
 from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._SystemIdentification2Choice import SystemIdentification2Choice
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._LimitType1Choice import LimitType1Choice
+from ._SystemIdentification2Choice import SystemIdentification2Choice
 
 class LimitIdentification9(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_AcctId", "_SysId", "_Tp"]
+	__slots__ = ["_AcctId", "_AcctOwnr", "_SysId", "_Tp"]
 	@property
 	def AcctId(self):
 		return self._AcctId

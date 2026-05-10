@@ -1,22 +1,22 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._Max52Text import Max52Text
-from ._ContractTerm7Choice import ContractTerm7Choice
-from ._InterestRate27Choice import InterestRate27Choice
-from ._SecurityCommodity9 import SecurityCommodity9
-from ._MICIdentifier import MICIdentifier
-from ._PercentageRate import PercentageRate
-from ._CollateralDeliveryMethod1Code import CollateralDeliveryMethod1Code
 from ._Cleared16Choice import Cleared16Choice
+from ._CollateralDeliveryMethod1Code import CollateralDeliveryMethod1Code
+from ._ContractTerm7Choice import ContractTerm7Choice
+from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
+from ._InterestRate27Choice import InterestRate27Choice
+from ._MICIdentifier import MICIdentifier
 from ._MasterAgreement7 import MasterAgreement7
+from ._Max52Text import Max52Text
+from ._PercentageRate import PercentageRate
+from ._SecurityCommodity9 import SecurityCommodity9
 from ._SpecialCollateral1Code import SpecialCollateral1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class LoanData137(base_types._BaseFieldType):
 
-	__slots__ = ["_RbtRate", "_MstrAgrmt", "_ValDt", "_TermntnDt", "_CollDlvryMtd", "_LnVal", "_LndgFee", "_GnlColl", "_AsstTp", "_DlvryByVal", "_ExctnDtTm", "_ClrSts", "_Term", "_TradgVn", "_EvtDt", "_UnqTradIdr"]
+	__slots__ = ["_AsstTp", "_ClrSts", "_CollDlvryMtd", "_DlvryByVal", "_EvtDt", "_ExctnDtTm", "_GnlColl", "_LnVal", "_LndgFee", "_MstrAgrmt", "_RbtRate", "_Term", "_TermntnDt", "_TradgVn", "_UnqTradIdr", "_ValDt"]
 	@property
 	def AsstTp(self):
 		return self._AsstTp

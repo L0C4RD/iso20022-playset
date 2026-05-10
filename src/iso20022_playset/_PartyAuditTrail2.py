@@ -5,7 +5,7 @@ from ._UpdateLogPartyRecord2Choice import UpdateLogPartyRecord2Choice
 
 class PartyAuditTrail2(base_types._BaseFieldType):
 
-	__slots__ = ["_OprTmStmp", "_Rcrd", "_ApprvgUsr", "_InstgUsr"]
+	__slots__ = ["_ApprvgUsr", "_InstgUsr", "_OprTmStmp", "_Rcrd"]
 	@property
 	def ApprvgUsr(self):
 		return self._ApprvgUsr

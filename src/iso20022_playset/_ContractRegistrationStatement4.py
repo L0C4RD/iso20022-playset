@@ -1,18 +1,18 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._TradeParty6 import TradeParty6
-from ._SupportingDocument4 import SupportingDocument4
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
+from ._Max35Text import Max35Text
 from ._RegisteredContract18 import RegisteredContract18
 from ._ReportingPeriod4 import ReportingPeriod4
-from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._SupportingDocument4 import SupportingDocument4
+from ._TradeParty6 import TradeParty6
 from ._TransactionCertificate4 import TransactionCertificate4
 
 class ContractRegistrationStatement4(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlSpprtgDocJrnl", "_RegnAgt", "_SpprtgDocJrnl", "_RgltryRuleVldtn", "_RptgPty", "_StmtId", "_RptgPrd", "_TxJrnl", "_SplmtryData", "_TtlCtrctTrnvrSum", "_RegdCtrct"]
+	__slots__ = ["_AddtlSpprtgDocJrnl", "_RegdCtrct", "_RegnAgt", "_RgltryRuleVldtn", "_RptgPrd", "_RptgPty", "_SplmtryData", "_SpprtgDocJrnl", "_StmtId", "_TtlCtrctTrnvrSum", "_TxJrnl"]
 	@property
 	def AddtlSpprtgDocJrnl(self):
 		return self._AddtlSpprtgDocJrnl

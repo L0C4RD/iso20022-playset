@@ -1,11 +1,11 @@
 from . import base_types
-from ._MessageStatusResponse9 import MessageStatusResponse9
 from ._ContentInformationType38 import ContentInformationType38
 from ._Header41 import Header41
+from ._MessageStatusResponse9 import MessageStatusResponse9
 
 class SaleToPOIMessageStatusResponseV07(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRspn", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_Hdr", "_SctyTrlr", "_StsRspn"]
 	@property
 	def Hdr(self):
 		return self._Hdr

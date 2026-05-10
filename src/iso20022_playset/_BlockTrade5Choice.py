@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification47 import GenericIdentification47
 from ._BlockTrade1Code import BlockTrade1Code
+from ._GenericIdentification47 import GenericIdentification47
 
 class BlockTrade5Choice(base_types._BaseFieldType):
 

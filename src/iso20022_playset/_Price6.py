@@ -5,7 +5,7 @@ from ._TypeOfPrice13Code import TypeOfPrice13Code
 
 class Price6(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_RateOrAmt", "_Src"]
+	__slots__ = ["_RateOrAmt", "_Src", "_Tp"]
 	@property
 	def RateOrAmt(self):
 		return self._RateOrAmt

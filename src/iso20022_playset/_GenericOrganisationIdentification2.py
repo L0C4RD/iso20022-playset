@@ -1,10 +1,10 @@
 from . import base_types
-from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
 from ._OrganisationIdentificationSchemeName2Choice import OrganisationIdentificationSchemeName2Choice
+from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
 
 class GenericOrganisationIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_SchmeNm", "_Id"]
+	__slots__ = ["_Id", "_Issr", "_SchmeNm"]
 	@property
 	def Id(self):
 		return self._Id

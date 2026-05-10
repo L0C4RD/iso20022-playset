@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._PartyType15Code import PartyType15Code
+from ._AcceptorConfigurationContent14 import AcceptorConfigurationContent14
 from ._DataSetIdentification11 import DataSetIdentification11
 from ._GenericIdentification176 import GenericIdentification176
 from ._Max9NumericText import Max9NumericText
-from ._AcceptorConfigurationContent14 import AcceptorConfigurationContent14
+from ._PartyType15Code import PartyType15Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class AcceptorConfigurationDataSet6(base_types._BaseFieldType):
 
-	__slots__ = ["_LastSeq", "_CfgtnScp", "_POIId", "_Cntt", "_SeqCntr", "_Id"]
+	__slots__ = ["_CfgtnScp", "_Cntt", "_Id", "_LastSeq", "_POIId", "_SeqCntr"]
 	@property
 	def CfgtnScp(self):
 		return self._CfgtnScp

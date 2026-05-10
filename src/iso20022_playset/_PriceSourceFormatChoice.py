@@ -1,11 +1,11 @@
 from . import base_types
-from ._PriceSource import PriceSource
 from ._GenericIdentification5 import GenericIdentification5
 from ._MICIdentifier import MICIdentifier
+from ._PriceSource import PriceSource
 
 class PriceSourceFormatChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_PlcAsDSS", "_LclMktPlc", "_NonLclMktPlc"]
+	__slots__ = ["_LclMktPlc", "_NonLclMktPlc", "_PlcAsDSS"]
 	@property
 	def LclMktPlc(self):
 		return self._LclMktPlc

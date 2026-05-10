@@ -5,7 +5,7 @@ from ._ATMTransaction43 import ATMTransaction43
 
 class ATMPINManagementRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_Tx"]
+	__slots__ = ["_Cntxt", "_Envt", "_Tx"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt

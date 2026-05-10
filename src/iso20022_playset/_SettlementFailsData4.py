@@ -1,11 +1,11 @@
 from . import base_types
-from ._SettlementFailureReason3 import SettlementFailureReason3
 from ._SettlementFailsDerogation1 import SettlementFailsDerogation1
+from ._SettlementFailureReason3 import SettlementFailureReason3
 from ._SettlementTotalData1 import SettlementTotalData1
 
 class SettlementFailsData4(base_types._BaseFieldType):
 
-	__slots__ = ["_FailrRsn", "_ElgblForDrgtn", "_Ttl"]
+	__slots__ = ["_ElgblForDrgtn", "_FailrRsn", "_Ttl"]
 	@property
 	def ElgblForDrgtn(self):
 		return self._ElgblForDrgtn

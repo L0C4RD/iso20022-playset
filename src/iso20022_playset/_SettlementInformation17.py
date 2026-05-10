@@ -1,11 +1,11 @@
 from . import base_types
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 from ._ISOYearMonth import ISOYearMonth
 from ._SettlementUnitType3Choice import SettlementUnitType3Choice
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 
 class SettlementInformation17(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctSttlmMnth", "_MinDnmtn", "_MinMltplQty", "_DevtgSttlmUnit", "_SctiesQtyTp"]
+	__slots__ = ["_CtrctSttlmMnth", "_DevtgSttlmUnit", "_MinDnmtn", "_MinMltplQty", "_SctiesQtyTp"]
 	@property
 	def CtrctSttlmMnth(self):
 		return self._CtrctSttlmMnth

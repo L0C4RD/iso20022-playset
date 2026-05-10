@@ -1,7 +1,7 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
 from ._NationalityCode import NationalityCode
+from ._YesNoIndicator import YesNoIndicator
 
 class CitizenshipInformation1(base_types._BaseFieldType):
 

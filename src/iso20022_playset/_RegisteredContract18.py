@@ -1,21 +1,21 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._UnderlyingContract4Choice import UnderlyingContract4Choice
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ContractBalance1 import ContractBalance1
-from ._RegisteredContractJournal3 import RegisteredContractJournal3
 from ._DocumentIdentification22 import DocumentIdentification22
 from ._DocumentIdentification29 import DocumentIdentification29
+from ._Max1025Text import Max1025Text
 from ._Max35Text import Max35Text
 from ._PaymentScheduleType2Choice import PaymentScheduleType2Choice
 from ._RegisteredContractAmendment1 import RegisteredContractAmendment1
-from ._Max1025Text import Max1025Text
 from ._RegisteredContractCommunication1 import RegisteredContractCommunication1
+from ._RegisteredContractJournal3 import RegisteredContractJournal3
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._UnderlyingContract4Choice import UnderlyingContract4Choice
 
 class RegisteredContract18(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlCtrctRegnReq", "_Amdmnt", "_IntrCpnyLn", "_Dlvry", "_LnPrncplAmt", "_Ctrct", "_EstmtdDtInd", "_PmtSchdlTp", "_AddtlInf", "_IssrFI", "_RegdCtrctId", "_RegdCtrctJrnl", "_CtrctBal", "_PrvsRegdCtrctId", "_Submissn"]
+	__slots__ = ["_AddtlInf", "_Amdmnt", "_Ctrct", "_CtrctBal", "_Dlvry", "_EstmtdDtInd", "_IntrCpnyLn", "_IssrFI", "_LnPrncplAmt", "_OrgnlCtrctRegnReq", "_PmtSchdlTp", "_PrvsRegdCtrctId", "_RegdCtrctId", "_RegdCtrctJrnl", "_Submissn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

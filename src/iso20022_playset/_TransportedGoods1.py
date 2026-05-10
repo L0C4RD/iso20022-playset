@@ -1,11 +1,11 @@
 from . import base_types
-from ._UserDefinedInformation1 import UserDefinedInformation1
 from ._DocumentIdentification7 import DocumentIdentification7
 from ._Max70Text import Max70Text
+from ._UserDefinedInformation1 import UserDefinedInformation1
 
 class TransportedGoods1(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrDfndInf", "_PurchsOrdrRef", "_GoodsDesc", "_SellrDfndInf"]
+	__slots__ = ["_BuyrDfndInf", "_GoodsDesc", "_PurchsOrdrRef", "_SellrDfndInf"]
 	@property
 	def BuyrDfndInf(self):
 		return self._BuyrDfndInf

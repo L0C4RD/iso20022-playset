@@ -1,15 +1,15 @@
 from . import base_types
+from ._ContractModification3 import ContractModification3
 from ._CounterpartyData88 import CounterpartyData88
+from ._Max140Text import Max140Text
+from ._ReconciliationFlag2 import ReconciliationFlag2
 from ._SupplementaryData1 import SupplementaryData1
 from ._TransactionCollateralData18Choice import TransactionCollateralData18Choice
-from ._ReconciliationFlag2 import ReconciliationFlag2
 from ._TransactionLoanData31Choice import TransactionLoanData31Choice
-from ._Max140Text import Max140Text
-from ._ContractModification3 import ContractModification3
 
 class TradeStateReport16(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtySpcfcData", "_RcncltnFlg", "_TechRcrdId", "_CollData", "_CtrctMod", "_LnData", "_SplmtryData"]
+	__slots__ = ["_CollData", "_CtrPtySpcfcData", "_CtrctMod", "_LnData", "_RcncltnFlg", "_SplmtryData", "_TechRcrdId"]
 	@property
 	def CollData(self):
 		return self._CollData

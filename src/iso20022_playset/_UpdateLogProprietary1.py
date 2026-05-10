@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class UpdateLogProprietary1(base_types._BaseFieldType):
 
-	__slots__ = ["_NewFldVal", "_OdFldVal", "_FldNm"]
+	__slots__ = ["_FldNm", "_NewFldVal", "_OdFldVal"]
 	@property
 	def FldNm(self):
 		return self._FldNm

@@ -1,12 +1,12 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Number import Number
 from ._ActionMessage11 import ActionMessage11
 from ._CardDataReading8Code import CardDataReading8Code
+from ._Number import Number
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_LeavCardFlg", "_WarmRstFlg", "_DispOutpt", "_MaxWtgTm", "_ForceNtryMd"]
+	__slots__ = ["_DispOutpt", "_ForceNtryMd", "_LeavCardFlg", "_MaxWtgTm", "_WarmRstFlg"]
 	@property
 	def DispOutpt(self):
 		return self._DispOutpt

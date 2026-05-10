@@ -1,17 +1,17 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._CancellationIndividualStatus1Code import CancellationIndividualStatus1Code
-from ._Case6 import Case6
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._CancellationIndividualStatus1Code import CancellationIndividualStatus1Code
 from ._CancellationStatusReason5 import CancellationStatusReason5
+from ._Case6 import Case6
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
 from ._OriginalTransactionReference42 import OriginalTransactionReference42
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class PaymentTransaction153(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlStsRsnInf", "_RslvdCase", "_OrgnlReqdColltnDt", "_UETR", "_CxlStsId", "_OrgnlTxRef", "_OrgnlInstrId", "_OrgnlEndToEndId", "_OrgnlInstdAmt", "_OrgnlReqdExctnDt", "_TxCxlSts"]
+	__slots__ = ["_CxlStsId", "_CxlStsRsnInf", "_OrgnlEndToEndId", "_OrgnlInstdAmt", "_OrgnlInstrId", "_OrgnlReqdColltnDt", "_OrgnlReqdExctnDt", "_OrgnlTxRef", "_RslvdCase", "_TxCxlSts", "_UETR"]
 	@property
 	def CxlStsId(self):
 		return self._CxlStsId

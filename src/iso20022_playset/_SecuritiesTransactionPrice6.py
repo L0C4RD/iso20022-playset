@@ -5,7 +5,7 @@ from ._PriceStatus1Code import PriceStatus1Code
 
 class SecuritiesTransactionPrice6(base_types._BaseFieldType):
 
-	__slots__ = ["_Pdg", "_Ccy", "_DgtlTkn"]
+	__slots__ = ["_Ccy", "_DgtlTkn", "_Pdg"]
 	@property
 	def Ccy(self):
 		return self._Ccy

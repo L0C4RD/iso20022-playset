@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max15NumericText import Max15NumericText
 from ._Max140Binary import Max140Binary
+from ._Max15NumericText import Max15NumericText
 from ._Max35Text import Max35Text
 
 class BatchManagementInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_BtchId", "_MsgChcksmInptVal", "_MsgSeqNb", "_ColltnId"]
+	__slots__ = ["_BtchId", "_ColltnId", "_MsgChcksmInptVal", "_MsgSeqNb"]
 	@property
 	def BtchId(self):
 		return self._BtchId

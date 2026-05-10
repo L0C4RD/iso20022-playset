@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._UTIIdentifier import UTIIdentifier
-from ._Max35Text import Max35Text
 from ._AdditionalReference10 import AdditionalReference10
+from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
 from ._TransactionDetails169 import TransactionDetails169
+from ._UTIIdentifier import UTIIdentifier
 
 class Transaction161(base_types._BaseFieldType):
 
-	__slots__ = ["_TrptyAgtSvcPrvdrCollInstrId", "_CorpActnEvtId", "_CtrPtyMktInfrstrctrTxId", "_UnqTxIdr", "_AcctOwnrTxId", "_PoolId", "_ClntTrptyCollTxId", "_AcctSvcrLegId", "_PrcrTxId", "_MktInfrstrctrTxId", "_TradId", "_TrptyAgtSvcPrvdrCollTxId", "_MstrRef", "_ClntCollInstrId", "_CmonId", "_TxDtls", "_ClntRef", "_AcctSvcrTxId", "_SplmtryData", "_AcctOwnrLegId"]
+	__slots__ = ["_AcctOwnrLegId", "_AcctOwnrTxId", "_AcctSvcrLegId", "_AcctSvcrTxId", "_ClntCollInstrId", "_ClntRef", "_ClntTrptyCollTxId", "_CmonId", "_CorpActnEvtId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_MstrRef", "_PoolId", "_PrcrTxId", "_SplmtryData", "_TradId", "_TrptyAgtSvcPrvdrCollInstrId", "_TrptyAgtSvcPrvdrCollTxId", "_TxDtls", "_UnqTxIdr"]
 	@property
 	def AcctOwnrLegId(self):
 		return self._AcctOwnrLegId

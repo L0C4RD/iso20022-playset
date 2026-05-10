@@ -1,10 +1,10 @@
 from . import base_types
-from ._ElectionType1Code import ElectionType1Code
 from ._DocumentIdentification8 import DocumentIdentification8
+from ._ElectionType1Code import ElectionType1Code
 
 class ElectionAdviceFunction1(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsAgtCAElctnAdvcId", "_AgtCAElctnAmdmntReqId", "_ElctnTp", "_AgtCAElctnStsAdvcId"]
+	__slots__ = ["_AgtCAElctnAmdmntReqId", "_AgtCAElctnStsAdvcId", "_ElctnTp", "_PrvsAgtCAElctnAdvcId"]
 	@property
 	def AgtCAElctnAmdmntReqId(self):
 		return self._AgtCAElctnAmdmntReqId

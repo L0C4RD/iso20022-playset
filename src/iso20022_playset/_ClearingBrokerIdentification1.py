@@ -1,6 +1,6 @@
 from . import base_types
-from ._SideIndicator1Code import SideIndicator1Code
 from ._Max35Text import Max35Text
+from ._SideIndicator1Code import SideIndicator1Code
 
 class ClearingBrokerIdentification1(base_types._BaseFieldType):
 

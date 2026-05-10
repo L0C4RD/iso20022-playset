@@ -1,10 +1,10 @@
 from . import base_types
-from ._CollateralProposalResponseType4 import CollateralProposalResponseType4
 from ._CollateralProposalResponse4 import CollateralProposalResponse4
+from ._CollateralProposalResponseType4 import CollateralProposalResponseType4
 
 class CollateralProposalResponse4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SgrtdIndpdntAmt", "_CollPrpsl"]
+	__slots__ = ["_CollPrpsl", "_SgrtdIndpdntAmt"]
 	@property
 	def CollPrpsl(self):
 		return self._CollPrpsl

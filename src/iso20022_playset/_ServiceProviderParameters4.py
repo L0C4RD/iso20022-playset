@@ -1,14 +1,14 @@
 from . import base_types
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
-from ._Max35Text import Max35Text
 from ._AcquirerHostConfiguration10 import AcquirerHostConfiguration10
-from ._NonFinancialRequestType2Code import NonFinancialRequestType2Code
 from ._GenericIdentification176 import GenericIdentification176
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._NonFinancialRequestType2Code import NonFinancialRequestType2Code
+from ._TerminalManagementAction3Code import TerminalManagementAction3Code
 
 class ServiceProviderParameters4(base_types._BaseFieldType):
 
-	__slots__ = ["_ApplId", "_ActnTp", "_SvcPrvdrId", "_Hst", "_NonFinActnSpprtd", "_Vrsn"]
+	__slots__ = ["_ActnTp", "_ApplId", "_Hst", "_NonFinActnSpprtd", "_SvcPrvdrId", "_Vrsn"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp

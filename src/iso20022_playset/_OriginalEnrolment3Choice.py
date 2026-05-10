@@ -1,6 +1,6 @@
 from . import base_types
-from ._Party53Choice import Party53Choice
 from ._CreditorEnrolment5 import CreditorEnrolment5
+from ._Party53Choice import Party53Choice
 
 class OriginalEnrolment3Choice(base_types._BaseFieldType):
 

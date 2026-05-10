@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._MissingOrIncorrectData1 import MissingOrIncorrectData1
+from ._TrueFalseIndicator import TrueFalseIndicator
 from ._YesNoIndicator import YesNoIndicator
 
 class UnableToApplyJustification4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PssblDplctInstr", "_AnyInf", "_MssngOrIncrrctInf"]
+	__slots__ = ["_AnyInf", "_MssngOrIncrrctInf", "_PssblDplctInstr"]
 	@property
 	def AnyInf(self):
 		return self._AnyInf

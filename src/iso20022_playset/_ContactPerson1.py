@@ -4,7 +4,7 @@ from ._PartyIdentification2Choice import PartyIdentification2Choice
 
 class ContactPerson1(base_types._BaseFieldType):
 
-	__slots__ = ["_InstnId", "_CtctPrsn"]
+	__slots__ = ["_CtctPrsn", "_InstnId"]
 	@property
 	def CtctPrsn(self):
 		return self._CtctPrsn

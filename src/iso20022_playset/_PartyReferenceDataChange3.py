@@ -5,7 +5,7 @@ from ._UpdateLogPartyRecord2Choice import UpdateLogPartyRecord2Choice
 
 class PartyReferenceDataChange3(base_types._BaseFieldType):
 
-	__slots__ = ["_OprTmStmp", "_Rcrd", "_PtyId"]
+	__slots__ = ["_OprTmStmp", "_PtyId", "_Rcrd"]
 	@property
 	def OprTmStmp(self):
 		return self._OprTmStmp

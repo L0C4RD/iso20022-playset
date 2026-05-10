@@ -6,7 +6,7 @@ from ._Header32 import Header32
 
 class ATMReconciliationAcknowledgementV03(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMRcncltnAck", "_SctyTrlr", "_ATMRcncltnAck", "_Hdr"]
+	__slots__ = ["_ATMRcncltnAck", "_Hdr", "_PrtctdATMRcncltnAck", "_SctyTrlr"]
 	@property
 	def ATMRcncltnAck(self):
 		return self._ATMRcncltnAck

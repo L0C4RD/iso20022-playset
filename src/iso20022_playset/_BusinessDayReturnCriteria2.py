@@ -3,7 +3,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class BusinessDayReturnCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtInd", "_SysCcyInd", "_SsnPrdInd", "_ClsrPrdInd", "_EvtTpInd", "_SysDtInd", "_SysStsInd"]
+	__slots__ = ["_ClsrPrdInd", "_EvtInd", "_EvtTpInd", "_SsnPrdInd", "_SysCcyInd", "_SysDtInd", "_SysStsInd"]
 	@property
 	def ClsrPrdInd(self):
 		return self._ClsrPrdInd

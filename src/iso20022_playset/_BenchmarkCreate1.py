@@ -1,15 +1,15 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._StatusDetail1 import StatusDetail1
-from ._Period4Choice import Period4Choice
-from ._PartyIdentification136 import PartyIdentification136
-from ._Max35Text import Max35Text
-from ._SecurityIdentification19 import SecurityIdentification19
 from ._BenchmarkDetail1 import BenchmarkDetail1
+from ._Max35Text import Max35Text
+from ._PartyIdentification136 import PartyIdentification136
+from ._Period4Choice import Period4Choice
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._StatusDetail1 import StatusDetail1
+from ._SupplementaryData1 import SupplementaryData1
 
 class BenchmarkCreate1(base_types._BaseFieldType):
 
-	__slots__ = ["_NdrsngPty", "_Othr", "_Sts", "_SplmtryData", "_TechRcrdId", "_TechVldtyPrd", "_Id", "_Admstr"]
+	__slots__ = ["_Admstr", "_Id", "_NdrsngPty", "_Othr", "_SplmtryData", "_Sts", "_TechRcrdId", "_TechVldtyPrd"]
 	@property
 	def Admstr(self):
 		return self._Admstr

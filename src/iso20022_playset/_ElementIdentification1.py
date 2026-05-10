@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max3NumericText import Max3NumericText
-from ._Max350Text import Max350Text
 from ._Max140Text import Max140Text
+from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
+from ._Max3NumericText import Max3NumericText
 
 class ElementIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_DocIndx", "_ElmtNm", "_ElmtVal", "_ElmtPth"]
+	__slots__ = ["_DocIndx", "_ElmtNm", "_ElmtPth", "_ElmtVal"]
 	@property
 	def DocIndx(self):
 		return self._DocIndx

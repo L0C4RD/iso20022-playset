@@ -1,16 +1,16 @@
 from . import base_types
 from ._AccountIdentificationSearchCriteria2Choice import AccountIdentificationSearchCriteria2Choice
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._EntryStatus1Code import EntryStatus1Code
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._ActiveOrHistoricAmountRange2Choice import ActiveOrHistoricAmountRange2Choice
-from ._DateAndDateTimeSearch3Choice import DateAndDateTimeSearch3Choice
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._CreditDebitCode import CreditDebitCode
+from ._DateAndDateTimeSearch3Choice import DateAndDateTimeSearch3Choice
+from ._EntryStatus1Code import EntryStatus1Code
 from ._PartyIdentification272 import PartyIdentification272
 
 class CashAccountEntrySearch8(base_types._BaseFieldType):
 
-	__slots__ = ["_NtryDt", "_NtryAmt", "_AcctSvcr", "_AcctId", "_NtrySts", "_CdtDbtInd", "_AcctOwnr", "_NtryAmtCcy"]
+	__slots__ = ["_AcctId", "_AcctOwnr", "_AcctSvcr", "_CdtDbtInd", "_NtryAmt", "_NtryAmtCcy", "_NtryDt", "_NtrySts"]
 	@property
 	def AcctId(self):
 		return self._AcctId

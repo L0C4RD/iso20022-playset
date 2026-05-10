@@ -1,13 +1,13 @@
 from . import base_types
-from ._PartyIdentification78 import PartyIdentification78
-from ._PartyIdentificationAndAccount119 import PartyIdentificationAndAccount119
 from ._FundIdentification6 import FundIdentification6
 from ._OptionParty1Code import OptionParty1Code
 from ._OptionParty3Code import OptionParty3Code
+from ._PartyIdentification78 import PartyIdentification78
+from ._PartyIdentificationAndAccount119 import PartyIdentificationAndAccount119
 
 class TradePartyIdentification9(base_types._BaseFieldType):
 
-	__slots__ = ["_TradPtyId", "_FndInf", "_SubmitgPty", "_InitrInd", "_BuyrOrSellrInd"]
+	__slots__ = ["_BuyrOrSellrInd", "_FndInf", "_InitrInd", "_SubmitgPty", "_TradPtyId"]
 	@property
 	def BuyrOrSellrInd(self):
 		return self._BuyrOrSellrInd

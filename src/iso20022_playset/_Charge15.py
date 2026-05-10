@@ -1,13 +1,13 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._ChargeType9Code import ChargeType9Code
 from ._CalculationBasis2Code import CalculationBasis2Code
+from ._ChargeType9Code import ChargeType9Code
 from ._Extended350Code import Extended350Code
+from ._PercentageRate import PercentageRate
 
 class Charge15(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_ClctnBsis", "_Rate", "_XtndedTp", "_Tp", "_XtndedClctnBsis"]
+	__slots__ = ["_Amt", "_ClctnBsis", "_Rate", "_Tp", "_XtndedClctnBsis", "_XtndedTp"]
 	@property
 	def Amt(self):
 		return self._Amt

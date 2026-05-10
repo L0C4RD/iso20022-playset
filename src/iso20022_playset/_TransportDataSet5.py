@@ -1,11 +1,11 @@
 from . import base_types
+from ._DocumentIdentification1 import DocumentIdentification1
 from ._PartyIdentification26 import PartyIdentification26
 from ._TransportDetails4 import TransportDetails4
-from ._DocumentIdentification1 import DocumentIdentification1
 
 class TransportDataSet5(base_types._BaseFieldType):
 
-	__slots__ = ["_Buyr", "_DataSetId", "_Sellr", "_TrnsprtInf", "_ShipTo", "_Consgn", "_Consgnr"]
+	__slots__ = ["_Buyr", "_Consgn", "_Consgnr", "_DataSetId", "_Sellr", "_ShipTo", "_TrnsprtInf"]
 	@property
 	def Buyr(self):
 		return self._Buyr

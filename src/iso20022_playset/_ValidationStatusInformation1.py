@@ -1,7 +1,7 @@
 from . import base_types
+from ._Max105Text import Max105Text
 from ._StatusReason4Choice import StatusReason4Choice
 from ._TechnicalValidationStatus1Code import TechnicalValidationStatus1Code
-from ._Max105Text import Max105Text
 
 class ValidationStatusInformation1(base_types._BaseFieldType):
 

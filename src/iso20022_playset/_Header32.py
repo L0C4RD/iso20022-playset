@@ -1,15 +1,15 @@
 from . import base_types
-from ._Max3NumericText import Max3NumericText
-from ._Max35Text import Max35Text
-from ._Max6Text import Max6Text
-from ._Traceability4 import Traceability4
 from ._ATMMessageFunction2 import ATMMessageFunction2
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
+from ._Max3NumericText import Max3NumericText
+from ._Max6Text import Max6Text
 from ._Number import Number
+from ._Traceability4 import Traceability4
 
 class Header32(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgId", "_RcptPty", "_ReTrnsmssnCntr", "_InitgPty", "_MsgFctn", "_PrcStat", "_Tracblt", "_PrtcolVrsn", "_CreDtTm"]
+	__slots__ = ["_CreDtTm", "_InitgPty", "_MsgFctn", "_PrcStat", "_PrtcolVrsn", "_RcptPty", "_ReTrnsmssnCntr", "_Tracblt", "_XchgId"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

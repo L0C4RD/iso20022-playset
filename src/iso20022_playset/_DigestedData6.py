@@ -1,12 +1,12 @@
 from . import base_types
+from ._AlgorithmIdentification36 import AlgorithmIdentification36
 from ._EncapsulatedContent3 import EncapsulatedContent3
 from ._Max140Binary import Max140Binary
-from ._AlgorithmIdentification36 import AlgorithmIdentification36
 from ._Number import Number
 
 class DigestedData6(base_types._BaseFieldType):
 
-	__slots__ = ["_NcpsltdCntt", "_DgstAlgo", "_Vrsn", "_Dgst"]
+	__slots__ = ["_Dgst", "_DgstAlgo", "_NcpsltdCntt", "_Vrsn"]
 	@property
 	def Dgst(self):
 		return self._Dgst

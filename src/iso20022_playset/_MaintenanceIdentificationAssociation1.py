@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class MaintenanceIdentificationAssociation1(base_types._BaseFieldType):
 
-	__slots__ = ["_TMId", "_MstrTMId"]
+	__slots__ = ["_MstrTMId", "_TMId"]
 	@property
 	def MstrTMId(self):
 		return self._MstrTMId

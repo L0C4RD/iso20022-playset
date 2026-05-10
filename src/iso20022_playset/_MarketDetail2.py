@@ -4,7 +4,7 @@ from ._MICIdentifier import MICIdentifier
 
 class MarketDetail2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AvrgDalyNbOfTxs"]
+	__slots__ = ["_AvrgDalyNbOfTxs", "_Id"]
 	@property
 	def AvrgDalyNbOfTxs(self):
 		return self._AvrgDalyNbOfTxs

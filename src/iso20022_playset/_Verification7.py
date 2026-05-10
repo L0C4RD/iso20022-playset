@@ -1,14 +1,14 @@
 from . import base_types
-from ._VerificationEntity2Code import VerificationEntity2Code
-from ._Verification3Code import Verification3Code
+from ._AdditionalData1 import AdditionalData1
+from ._ExternalAuthenticationMethod1Code import ExternalAuthenticationMethod1Code
 from ._Max35Text import Max35Text
 from ._Max500Text import Max500Text
-from ._ExternalAuthenticationMethod1Code import ExternalAuthenticationMethod1Code
-from ._AdditionalData1 import AdditionalData1
+from ._Verification3Code import Verification3Code
+from ._VerificationEntity2Code import VerificationEntity2Code
 
 class Verification7(base_types._BaseFieldType):
 
-	__slots__ = ["_SubTp", "_OthrRslt", "_Rslt", "_Ntty", "_OthrTp", "_RsltDtls", "_OthrNtty", "_AddtlInf", "_Tp"]
+	__slots__ = ["_AddtlInf", "_Ntty", "_OthrNtty", "_OthrRslt", "_OthrTp", "_Rslt", "_RsltDtls", "_SubTp", "_Tp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

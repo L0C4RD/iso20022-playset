@@ -3,7 +3,7 @@ from ._InternalisationData1 import InternalisationData1
 
 class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesBuyOrSell", "_CollMgmtOpr", "_OthrTxs", "_RpAgrmt", "_SctiesLndgOrBrrwg"]
+	__slots__ = ["_CollMgmtOpr", "_OthrTxs", "_RpAgrmt", "_SctiesBuyOrSell", "_SctiesLndgOrBrrwg"]
 	@property
 	def CollMgmtOpr(self):
 		return self._CollMgmtOpr

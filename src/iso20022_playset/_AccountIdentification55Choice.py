@@ -1,7 +1,7 @@
 from . import base_types
 from ._BBANIdentifier import BBANIdentifier
-from ._SimpleIdentificationInformation2 import SimpleIdentificationInformation2
 from ._IBAN2007Identifier import IBAN2007Identifier
+from ._SimpleIdentificationInformation2 import SimpleIdentificationInformation2
 from ._UPICIdentifier import UPICIdentifier
 
 class AccountIdentification55Choice(base_types._BaseFieldType):

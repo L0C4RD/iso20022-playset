@@ -1,14 +1,14 @@
 from . import base_types
 from ._ExpectedExecutionDetails2 import ExpectedExecutionDetails2
-from ._OrderStatus4Choice import OrderStatus4Choice
 from ._FundOrderData6 import FundOrderData6
 from ._Max35Text import Max35Text
+from ._OrderStatus4Choice import OrderStatus4Choice
 from ._PartyIdentification113 import PartyIdentification113
 from ._SwitchLegReferences2 import SwitchLegReferences2
 
 class SwitchOrderStatusAndReason2(base_types._BaseFieldType):
 
-	__slots__ = ["_NewDtls", "_ClntRef", "_LegInf", "_OrdrData", "_MstrRef", "_OrdrSts", "_CxlRef", "_OrdrRef", "_StsInitr", "_DealRef"]
+	__slots__ = ["_ClntRef", "_CxlRef", "_DealRef", "_LegInf", "_MstrRef", "_NewDtls", "_OrdrData", "_OrdrRef", "_OrdrSts", "_StsInitr"]
 	@property
 	def ClntRef(self):
 		return self._ClntRef

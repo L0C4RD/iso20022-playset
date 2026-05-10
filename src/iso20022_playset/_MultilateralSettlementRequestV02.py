@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._GroupHeader104 import GroupHeader104
 from ._MultilateralSettlementRequest3 import MultilateralSettlementRequest3
+from ._SupplementaryData1 import SupplementaryData1
 
 class MultilateralSettlementRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SttlmReq", "_SplmtryData"]
+	__slots__ = ["_GrpHdr", "_SplmtryData", "_SttlmReq"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

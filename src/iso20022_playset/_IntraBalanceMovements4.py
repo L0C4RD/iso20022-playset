@@ -1,13 +1,13 @@
 from . import base_types
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._IntraBalanceStatusAndReason2 import IntraBalanceStatusAndReason2
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._IntraBalanceMovement7 import IntraBalanceMovement7
 from ._CashAccount40 import CashAccount40
+from ._IntraBalanceMovement7 import IntraBalanceMovement7
+from ._IntraBalanceStatusAndReason2 import IntraBalanceStatusAndReason2
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class IntraBalanceMovements4(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcctSvcr", "_StsAndRsn", "_CshAcct", "_CshAcctOwnr", "_Mvmnt"]
+	__slots__ = ["_CshAcct", "_CshAcctOwnr", "_CshAcctSvcr", "_Mvmnt", "_StsAndRsn"]
 	@property
 	def CshAcct(self):
 		return self._CshAcct

@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max70Text import Max70Text
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class CustomerReference1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Dtl"]
+	__slots__ = ["_Dtl", "_Id"]
 	@property
 	def Dtl(self):
 		return self._Dtl

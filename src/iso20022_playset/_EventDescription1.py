@@ -1,13 +1,13 @@
 from . import base_types
-from ._xs:IDREF import xs:IDREF
-from ._LanguageCode import LanguageCode
-from ._Max35Text import Max35Text
-from ._Max2000Text import Max2000Text
 from ._ISODateTime import ISODateTime
+from ._LanguageCode import LanguageCode
+from ._Max2000Text import Max2000Text
+from ._Max35Text import Max35Text
+from ._xs:IDREF import xs:IDREF
 
 class EventDescription1(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdLttr", "_Dt", "_Desc", "_Rcpt", "_LangCd", "_RltdMsg", "_Advsr", "_LglCntxt", "_GovngCtrct", "_OthrPty", "_AssoctdDoc", "_RltdDoc", "_Idr"]
+	__slots__ = ["_Advsr", "_AssoctdDoc", "_Desc", "_Dt", "_GovngCtrct", "_Idr", "_LangCd", "_LglCntxt", "_OthrPty", "_Rcpt", "_RltdDoc", "_RltdLttr", "_RltdMsg"]
 	@property
 	def Advsr(self):
 		return self._Advsr

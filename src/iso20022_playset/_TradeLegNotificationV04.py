@@ -1,16 +1,16 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SupplementaryData1 import SupplementaryData1
 from ._Clearing7 import Clearing7
-from ._TradeLeg11 import TradeLeg11
-from ._SecuritiesAccount18 import SecuritiesAccount18
-from ._Settlement2 import Settlement2
-from ._PartyIdentificationAndAccount227 import PartyIdentificationAndAccount227
 from ._PartyIdentification253Choice import PartyIdentification253Choice
+from ._PartyIdentificationAndAccount227 import PartyIdentificationAndAccount227
+from ._SecuritiesAccount18 import SecuritiesAccount18
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._Settlement2 import Settlement2
+from ._SupplementaryData1 import SupplementaryData1
+from ._TradeLeg11 import TradeLeg11
 
 class TradeLegNotificationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrMmb", "_SttlmDtls", "_DlvryAcct", "_ClrAcct", "_TradLegDtls", "_ClrDtls", "_NonClrMmb", "_SplmtryData"]
+	__slots__ = ["_ClrAcct", "_ClrDtls", "_ClrMmb", "_DlvryAcct", "_NonClrMmb", "_SplmtryData", "_SttlmDtls", "_TradLegDtls"]
 	@property
 	def ClrAcct(self):
 		return self._ClrAcct

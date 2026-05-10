@@ -3,7 +3,7 @@ from ._Quantity10 import Quantity10
 
 class Consignment3(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlQty", "_TtlWght", "_TtlVol"]
+	__slots__ = ["_TtlQty", "_TtlVol", "_TtlWght"]
 	@property
 	def TtlQty(self):
 		return self._TtlQty

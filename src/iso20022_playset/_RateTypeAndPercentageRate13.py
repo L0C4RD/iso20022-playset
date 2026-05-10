@@ -1,10 +1,10 @@
 from . import base_types
-from ._RateType42Choice import RateType42Choice
 from ._Percentage14Rate import Percentage14Rate
+from ._RateType42Choice import RateType42Choice
 
 class RateTypeAndPercentageRate13(base_types._BaseFieldType):
 
-	__slots__ = ["_RateTp", "_Rate"]
+	__slots__ = ["_Rate", "_RateTp"]
 	@property
 	def Rate(self):
 		return self._Rate

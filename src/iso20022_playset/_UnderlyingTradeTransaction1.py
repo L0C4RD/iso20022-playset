@@ -1,14 +1,14 @@
 from . import base_types
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ISODate import ISODate
+from ._Max2000Text import Max2000Text
+from ._Max35Text import Max35Text
 from ._PercentageRate import PercentageRate
 from ._UnderlyingTradeTransactionType1Choice import UnderlyingTradeTransactionType1Choice
-from ._Max35Text import Max35Text
-from ._Max2000Text import Max2000Text
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class UnderlyingTradeTransaction1(base_types._BaseFieldType):
 
-	__slots__ = ["_TxDt", "_AddtlInf", "_Id", "_Tp", "_TndrClsgDt", "_TxAmt", "_CtrctAmtPctg"]
+	__slots__ = ["_AddtlInf", "_CtrctAmtPctg", "_Id", "_TndrClsgDt", "_Tp", "_TxAmt", "_TxDt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

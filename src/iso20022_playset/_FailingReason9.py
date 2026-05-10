@@ -1,6 +1,6 @@
 from . import base_types
-from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
 from ._FailingReason10Choice import FailingReason10Choice
+from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
 
 class FailingReason9(base_types._BaseFieldType):
 

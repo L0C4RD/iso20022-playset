@@ -1,11 +1,11 @@
 from . import base_types
-from ._UndertakingAmendmentMessage1 import UndertakingAmendmentMessage1
 from ._Max2000Text import Max2000Text
 from ._Max35Text import Max35Text
+from ._UndertakingAmendmentMessage1 import UndertakingAmendmentMessage1
 
 class Amendment6(base_types._BaseFieldType):
 
-	__slots__ = ["_ApplcntRefNb", "_AddtlInf", "_UdrtkgAmdmntMsg"]
+	__slots__ = ["_AddtlInf", "_ApplcntRefNb", "_UdrtkgAmdmntMsg"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

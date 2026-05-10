@@ -1,12 +1,12 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ModelType1Choice import ModelType1Choice
-from ._Max2000Text import Max2000Text
 from ._BaseOneRate import BaseOneRate
+from ._Max2000Text import Max2000Text
+from ._ModelType1Choice import ModelType1Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class BackTestingMethodology1(base_types._BaseFieldType):
 
-	__slots__ = ["_VartnMrgnCleanInd", "_RskMdlTp", "_MdlCnfdncLvl", "_Desc"]
+	__slots__ = ["_Desc", "_MdlCnfdncLvl", "_RskMdlTp", "_VartnMrgnCleanInd"]
 	@property
 	def Desc(self):
 		return self._Desc

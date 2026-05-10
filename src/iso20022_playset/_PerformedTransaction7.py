@@ -1,14 +1,14 @@
 from . import base_types
-from ._ResponseType11 import ResponseType11
-from ._Max35Text import Max35Text
-from ._RetailerPaymentResult7 import RetailerPaymentResult7
-from ._LoyaltyResult3 import LoyaltyResult3
-from ._TransactionIdentifier1 import TransactionIdentifier1
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._LoyaltyResult3 import LoyaltyResult3
+from ._Max35Text import Max35Text
+from ._ResponseType11 import ResponseType11
+from ._RetailerPaymentResult7 import RetailerPaymentResult7
+from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class PerformedTransaction7(base_types._BaseFieldType):
 
-	__slots__ = ["_Rspn", "_LltyRslt", "_SaleTxId", "_POIRcncltnId", "_PmtRslt", "_RvsdAmt", "_POITxId"]
+	__slots__ = ["_LltyRslt", "_POIRcncltnId", "_POITxId", "_PmtRslt", "_Rspn", "_RvsdAmt", "_SaleTxId"]
 	@property
 	def LltyRslt(self):
 		return self._LltyRslt

@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Derivative3Choice import Derivative3Choice
-from ._FinancialInstrumentContractType1Code import FinancialInstrumentContractType1Code
-from ._ExternalEmissionAllowanceSubProductType1Code import ExternalEmissionAllowanceSubProductType1Code
 from ._DebtInstrument5 import DebtInstrument5
-from ._NonEquityInstrumentReportingClassification1Code import NonEquityInstrumentReportingClassification1Code
-from ._MICIdentifier import MICIdentifier
-from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._Derivative3Choice import Derivative3Choice
+from ._ExternalEmissionAllowanceSubProductType1Code import ExternalEmissionAllowanceSubProductType1Code
 from ._ExternalProductType1Code import ExternalProductType1Code
-from ._Max35Text import Max35Text
+from ._FinancialInstrumentContractType1Code import FinancialInstrumentContractType1Code
+from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._ISODate import ISODate
+from ._MICIdentifier import MICIdentifier
 from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._NonEquityInstrumentReportingClassification1Code import NonEquityInstrumentReportingClassification1Code
 
 class TransparencyDataReport21(base_types._BaseFieldType):
 
-	__slots__ = ["_DerivCtrctTp", "_FinInstrmClssfctn", "_Deriv", "_FullNm", "_EmssnAllwncTp", "_TechRcrdId", "_MtrtyDt", "_Bd", "_TradgVn", "_UndrlygInstrmAsstClss", "_Id", "_RptgDt"]
+	__slots__ = ["_Bd", "_Deriv", "_DerivCtrctTp", "_EmssnAllwncTp", "_FinInstrmClssfctn", "_FullNm", "_Id", "_MtrtyDt", "_RptgDt", "_TechRcrdId", "_TradgVn", "_UndrlygInstrmAsstClss"]
 	@property
 	def Bd(self):
 		return self._Bd

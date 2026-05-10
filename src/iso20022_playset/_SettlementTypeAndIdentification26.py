@@ -5,7 +5,7 @@ from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class SettlementTypeAndIdentification26(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmDt", "_TxId", "_Pmt"]
+	__slots__ = ["_Pmt", "_SttlmDt", "_TxId"]
 	@property
 	def Pmt(self):
 		return self._Pmt

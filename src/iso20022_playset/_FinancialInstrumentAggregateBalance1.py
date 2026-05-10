@@ -1,11 +1,11 @@
 from . import base_types
+from ._FinancialInstrumentAggregateBalance1Choice import FinancialInstrumentAggregateBalance1Choice
 from ._ISODate import ISODate
 from ._Price6 import Price6
-from ._FinancialInstrumentAggregateBalance1Choice import FinancialInstrumentAggregateBalance1Choice
 
 class FinancialInstrumentAggregateBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_Hldgs", "_Pric", "_ItmDt"]
+	__slots__ = ["_Hldgs", "_ItmDt", "_Pric"]
 	@property
 	def Hldgs(self):
 		return self._Hldgs

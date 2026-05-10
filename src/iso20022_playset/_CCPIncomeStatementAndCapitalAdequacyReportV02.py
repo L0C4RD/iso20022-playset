@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._CapitalRequirement1 import CapitalRequirement1
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._CapitalRequirement1 import CapitalRequirement1
 from ._HypotheticalCapitalMeasure1 import HypotheticalCapitalMeasure1
 from ._IncomeStatement2 import IncomeStatement2
+from ._SupplementaryData1 import SupplementaryData1
 
 class CCPIncomeStatementAndCapitalAdequacyReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_LqdFinRsrcs", "_IncmStmt", "_TtlCptl", "_HpthtclCptlMeasr", "_SplmtryData", "_CptlRqrmnts"]
+	__slots__ = ["_CptlRqrmnts", "_HpthtclCptlMeasr", "_IncmStmt", "_LqdFinRsrcs", "_SplmtryData", "_TtlCptl"]
 	@property
 	def CptlRqrmnts(self):
 		return self._CptlRqrmnts

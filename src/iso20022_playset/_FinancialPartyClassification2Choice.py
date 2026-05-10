@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification175 import GenericIdentification175
 from ._FinancialPartySectorType3Code import FinancialPartySectorType3Code
+from ._GenericIdentification175 import GenericIdentification175
 
 class FinancialPartyClassification2Choice(base_types._BaseFieldType):
 

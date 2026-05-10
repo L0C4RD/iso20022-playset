@@ -1,15 +1,15 @@
 from . import base_types
 from ._ISODate import ISODate
 from ._InvestorKnowledge1 import InvestorKnowledge1
-from ._LossBearing2 import LossBearing2
-from ._RiskTolerance1 import RiskTolerance1
 from ._InvestorRequirements4 import InvestorRequirements4
-from ._OtherTargetMarket1 import OtherTargetMarket1
 from ._InvestorType2 import InvestorType2
+from ._LossBearing2 import LossBearing2
+from ._OtherTargetMarket1 import OtherTargetMarket1
+from ._RiskTolerance1 import RiskTolerance1
 
 class TargetMarket4(base_types._BaseFieldType):
 
-	__slots__ = ["_RefDt", "_RskTlrnce", "_Othr", "_KnwldgAndOrExprnc", "_AbltyToBearLosses", "_ClntObjctvsAndNeeds", "_InvstrTp"]
+	__slots__ = ["_AbltyToBearLosses", "_ClntObjctvsAndNeeds", "_InvstrTp", "_KnwldgAndOrExprnc", "_Othr", "_RefDt", "_RskTlrnce"]
 	@property
 	def AbltyToBearLosses(self):
 		return self._AbltyToBearLosses

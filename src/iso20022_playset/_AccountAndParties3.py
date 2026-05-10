@@ -1,11 +1,11 @@
 from . import base_types
-from ._InvestigatedParties1Choice import InvestigatedParties1Choice
-from ._CashAccount43 import CashAccount43
 from ._AuthorityRequestType1 import AuthorityRequestType1
+from ._CashAccount43 import CashAccount43
+from ._InvestigatedParties1Choice import InvestigatedParties1Choice
 
 class AccountAndParties3(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstgtdPties", "_AuthrtyReqTp", "_Id"]
+	__slots__ = ["_AuthrtyReqTp", "_Id", "_InvstgtdPties"]
 	@property
 	def AuthrtyReqTp(self):
 		return self._AuthrtyReqTp

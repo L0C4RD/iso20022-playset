@@ -5,7 +5,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class CustomerTypeRequest2(base_types._BaseFieldType):
 
-	__slots__ = ["_Reqd", "_OrgTp", "_PrvtTp"]
+	__slots__ = ["_OrgTp", "_PrvtTp", "_Reqd"]
 	@property
 	def OrgTp(self):
 		return self._OrgTp

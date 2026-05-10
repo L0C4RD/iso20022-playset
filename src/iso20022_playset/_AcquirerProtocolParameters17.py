@@ -1,20 +1,20 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._AcquirerProtocolExchangeBehavior2 import AcquirerProtocolExchangeBehavior2
-from ._ReconciliationCriteria1Code import ReconciliationCriteria1Code
-from ._MessageItemCondition2 import MessageItemCondition2
-from ._Max256Text import Max256Text
-from ._BatchTransactionType1Code import BatchTransactionType1Code
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
-from ._Max35Text import Max35Text
 from ._AcquirerHostConfiguration10 import AcquirerHostConfiguration10
-from ._TypeOfAmount8Code import TypeOfAmount8Code
+from ._AcquirerProtocolExchangeBehavior2 import AcquirerProtocolExchangeBehavior2
+from ._BatchTransactionType1Code import BatchTransactionType1Code
 from ._ExchangeConfiguration9 import ExchangeConfiguration9
 from ._GenericIdentification176 import GenericIdentification176
+from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._MessageItemCondition2 import MessageItemCondition2
+from ._ReconciliationCriteria1Code import ReconciliationCriteria1Code
+from ._TerminalManagementAction3Code import TerminalManagementAction3Code
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._TypeOfAmount8Code import TypeOfAmount8Code
 
 class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnErr", "_MsgItm", "_FileTrfBtch", "_Vrsn", "_MndtrySctyTrlr", "_CmpltnAdvcMndtd", "_RcncltnXchg", "_NtfyOffLineCxl", "_TtlsPerCcy", "_OnLineTx", "_BtchDgtlSgntr", "_OffLineTx", "_ApplId", "_SpltTtls", "_Hst", "_PrtctCardData", "_AmtQlfrForRsvatn", "_ActnTp", "_CardDataVrfctn", "_BtchTrfCntt", "_RcncltnByAcqrr", "_PrvtCardData", "_AcqrrId", "_SpltTtlCrit"]
+	__slots__ = ["_AcqrrId", "_ActnTp", "_AmtQlfrForRsvatn", "_ApplId", "_BtchDgtlSgntr", "_BtchTrfCntt", "_CardDataVrfctn", "_CmpltnAdvcMndtd", "_FileTrfBtch", "_Hst", "_MndtrySctyTrlr", "_MsgItm", "_NtfyOffLineCxl", "_OffLineTx", "_OnLineTx", "_PrtctCardData", "_PrvtCardData", "_RcncltnByAcqrr", "_RcncltnErr", "_RcncltnXchg", "_SpltTtlCrit", "_SpltTtls", "_TtlsPerCcy", "_Vrsn"]
 	@property
 	def AcqrrId(self):
 		return self._AcqrrId

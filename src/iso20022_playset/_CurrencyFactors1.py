@@ -1,12 +1,12 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._PercentageRate import PercentageRate
 from ._AgreedRate2 import AgreedRate2
 from ._CurrencyCode import CurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._PercentageRate import PercentageRate
 
 class CurrencyFactors1(base_types._BaseFieldType):
 
-	__slots__ = ["_MinPayInAmt", "_Ccy", "_VoltlyMrgn", "_Rate", "_ShrtPosLmt"]
+	__slots__ = ["_Ccy", "_MinPayInAmt", "_Rate", "_ShrtPosLmt", "_VoltlyMrgn"]
 	@property
 	def Ccy(self):
 		return self._Ccy

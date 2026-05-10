@@ -1,12 +1,12 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._Amount5 import Amount5
 from ._InstalmentAmountDetailsType1Code import InstalmentAmountDetailsType1Code
 from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
 
 class InstalmentAmountDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_SubTp", "_OthrTp", "_Amt", "_Tp", "_Pctg"]
+	__slots__ = ["_Amt", "_OthrTp", "_Pctg", "_SubTp", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

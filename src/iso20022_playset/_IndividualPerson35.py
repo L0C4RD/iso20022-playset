@@ -6,7 +6,7 @@ from ._Max35Text import Max35Text
 
 class IndividualPerson35(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Gndr", "_GvnNm", "_MddlNm", "_BirthDt"]
+	__slots__ = ["_BirthDt", "_Gndr", "_GvnNm", "_MddlNm", "_Nm"]
 	@property
 	def BirthDt(self):
 		return self._BirthDt

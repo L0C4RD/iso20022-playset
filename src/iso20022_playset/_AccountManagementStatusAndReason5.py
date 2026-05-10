@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Status25Choice import Status25Choice
+from ._AcceptedStatusReason1Choice import AcceptedStatusReason1Choice
 from ._Account23 import Account23
-from ._Max35Text import Max35Text
 from ._AccountStatus2 import AccountStatus2
 from ._BlockedStatusReason2Choice import BlockedStatusReason2Choice
-from ._AcceptedStatusReason1Choice import AcceptedStatusReason1Choice
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._Status25Choice import Status25Choice
 
 class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSts", "_CRSRptgDt", "_Sts", "_ExstgAcctId", "_FATCARptgDt", "_AcctApplId", "_AcctId", "_StsRsn", "_BlckdSts"]
+	__slots__ = ["_AcctApplId", "_AcctId", "_AcctSts", "_BlckdSts", "_CRSRptgDt", "_ExstgAcctId", "_FATCARptgDt", "_Sts", "_StsRsn"]
 	@property
 	def AcctApplId(self):
 		return self._AcctApplId

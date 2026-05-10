@@ -1,11 +1,11 @@
 from . import base_types
+from ._DocumentIdentification51 import DocumentIdentification51
 from ._IntraBalanceQueryDefinition10 import IntraBalanceQueryDefinition10
 from ._SupplementaryData1 import SupplementaryData1
-from ._DocumentIdentification51 import DocumentIdentification51
 
 class IntraBalanceMovementCancellationQueryV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_SplmtryData", "_QryDef"]
+	__slots__ = ["_Id", "_QryDef", "_SplmtryData"]
 	@property
 	def Id(self):
 		return self._Id

@@ -5,7 +5,7 @@ from ._TradeQueryExecutionFrequency3 import TradeQueryExecutionFrequency3
 
 class TradeRecurrentQuery5(base_types._BaseFieldType):
 
-	__slots__ = ["_VldUntil", "_Frqcy", "_QryTp"]
+	__slots__ = ["_Frqcy", "_QryTp", "_VldUntil"]
 	@property
 	def Frqcy(self):
 		return self._Frqcy

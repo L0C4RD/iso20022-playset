@@ -1,19 +1,19 @@
 from . import base_types
-from ._InvestmentAccount71 import InvestmentAccount71
-from ._TransferInFunction1Code import TransferInFunction1Code
 from ._AdditionalReference10 import AdditionalReference10
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._DeliverInformation21 import DeliverInformation21
 from ._AdditionalReference11 import AdditionalReference11
-from ._Transfer36 import Transfer36
 from ._CopyInformation5 import CopyInformation5
+from ._DeliverInformation21 import DeliverInformation21
+from ._Extension1 import Extension1
+from ._InvestmentAccount71 import InvestmentAccount71
+from ._MarketPracticeVersion1 import MarketPracticeVersion1
 from ._Max35Text import Max35Text
 from ._MessageIdentification1 import MessageIdentification1
-from ._Extension1 import Extension1
+from ._Transfer36 import Transfer36
+from ._TransferInFunction1Code import TransferInFunction1Code
 
 class TransferInInstructionV09(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_MsgId", "_TrfDtls", "_RltdRef", "_PoolRef", "_SttlmDtls", "_PrvsRef", "_MstrRef", "_Fctn", "_Xtnsn", "_MktPrctcVrsn", "_CpyDtls"]
+	__slots__ = ["_AcctDtls", "_CpyDtls", "_Fctn", "_MktPrctcVrsn", "_MsgId", "_MstrRef", "_PoolRef", "_PrvsRef", "_RltdRef", "_SttlmDtls", "_TrfDtls", "_Xtnsn"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

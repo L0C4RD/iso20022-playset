@@ -1,17 +1,17 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._ExchangeRate1 import ExchangeRate1
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._TransactionReferences8 import TransactionReferences8
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._PaymentTypeInformation26 import PaymentTypeInformation26
-from ._PartyIdentification272 import PartyIdentification272
 from ._AmountType3Choice import AmountType3Choice
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._CashAccount40 import CashAccount40
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ExchangeRate1 import ExchangeRate1
+from ._ISODate import ISODate
+from ._PartyIdentification272 import PartyIdentification272
+from ._PaymentTypeInformation26 import PaymentTypeInformation26
+from ._TransactionReferences8 import TransactionReferences8
 
 class OriginalPaymentInformation10(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrAcct", "_ReqdExctnDt", "_Amt", "_DbtrAcct", "_Refs", "_CdtrAgt", "_DbtrAgt", "_ReqdColltnDt", "_PmtTpInf", "_Cdtr", "_Dbtr", "_XchgRateInf"]
+	__slots__ = ["_Amt", "_Cdtr", "_CdtrAcct", "_CdtrAgt", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_PmtTpInf", "_Refs", "_ReqdColltnDt", "_ReqdExctnDt", "_XchgRateInf"]
 	@property
 	def Amt(self):
 		return self._Amt

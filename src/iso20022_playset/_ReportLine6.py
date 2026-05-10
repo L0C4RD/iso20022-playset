@@ -1,12 +1,12 @@
 from . import base_types
+from ._Adjustment6 import Adjustment6
 from ._CurrencyAndAmount import CurrencyAndAmount
 from ._InvoiceIdentification1 import InvoiceIdentification1
-from ._Adjustment6 import Adjustment6
 from ._ReportLine7 import ReportLine7
 
 class ReportLine6(base_types._BaseFieldType):
 
-	__slots__ = ["_BrkdwnByPurchsOrdr", "_ComrclDocRef", "_Adjstmnt", "_NetAmt"]
+	__slots__ = ["_Adjstmnt", "_BrkdwnByPurchsOrdr", "_ComrclDocRef", "_NetAmt"]
 	@property
 	def Adjstmnt(self):
 		return self._Adjstmnt

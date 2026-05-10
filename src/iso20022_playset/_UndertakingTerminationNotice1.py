@@ -1,12 +1,12 @@
 from . import base_types
-from ._UndertakingTermination3 import UndertakingTermination3
-from ._Undertaking9 import Undertaking9
-from ._Max2000Text import Max2000Text
 from ._Document9 import Document9
+from ._Max2000Text import Max2000Text
+from ._Undertaking9 import Undertaking9
+from ._UndertakingTermination3 import UndertakingTermination3
 
 class UndertakingTerminationNotice1(base_types._BaseFieldType):
 
-	__slots__ = ["_TermntnDtls", "_NclsdFile", "_AddtlInf", "_UdrtkgId"]
+	__slots__ = ["_AddtlInf", "_NclsdFile", "_TermntnDtls", "_UdrtkgId"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

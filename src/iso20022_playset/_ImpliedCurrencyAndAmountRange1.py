@@ -4,7 +4,7 @@ from ._ImpliedCurrencyAmountRange1Choice import ImpliedCurrencyAmountRange1Choic
 
 class ImpliedCurrencyAndAmountRange1(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_Amt"]
+	__slots__ = ["_Amt", "_CdtDbtInd"]
 	@property
 	def Amt(self):
 		return self._Amt

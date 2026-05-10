@@ -1,7 +1,7 @@
 from . import base_types
-from ._ProtectedData2 import ProtectedData2
 from ._Max10MbText import Max10MbText
 from ._Max20MbBinary import Max20MbBinary
+from ._ProtectedData2 import ProtectedData2
 
 class ReportContent2Choice(base_types._BaseFieldType):
 

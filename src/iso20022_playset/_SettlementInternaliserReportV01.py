@@ -1,12 +1,12 @@
 from . import base_types
 from ._IssuerCSDReport1 import IssuerCSDReport1
-from ._SettlementInternaliserReportHeader1 import SettlementInternaliserReportHeader1
 from ._SettlementInternaliser1 import SettlementInternaliser1
+from ._SettlementInternaliserReportHeader1 import SettlementInternaliserReportHeader1
 from ._SupplementaryData1 import SupplementaryData1
 
 class SettlementInternaliserReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmIntlr", "_IssrCSD", "_RptHdr", "_SplmtryData"]
+	__slots__ = ["_IssrCSD", "_RptHdr", "_SplmtryData", "_SttlmIntlr"]
 	@property
 	def IssrCSD(self):
 		return self._IssrCSD

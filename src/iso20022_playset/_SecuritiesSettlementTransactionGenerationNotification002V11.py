@@ -1,25 +1,25 @@
 from . import base_types
-from ._Linkages68 import Linkages68
-from ._RegistrationParameters7 import RegistrationParameters7
-from ._FinancialInstrumentAttributes122 import FinancialInstrumentAttributes122
-from ._StatusAndReason29 import StatusAndReason29
 from ._AmountAndDirection96 import AmountAndDirection96
-from ._SecurityIdentification20 import SecurityIdentification20
+from ._CashParties38 import CashParties38
+from ._FinancialInstrumentAttributes122 import FinancialInstrumentAttributes122
 from ._GeneratedReason6 import GeneratedReason6
-from ._SettlementDetails212 import SettlementDetails212
-from ._SupplementaryData1 import SupplementaryData1
-from ._QuantityAndAccount104 import QuantityAndAccount104
+from ._Linkages68 import Linkages68
 from ._NumberCount2Choice import NumberCount2Choice
-from ._SecuritiesTradeDetails130 import SecuritiesTradeDetails130
-from ._SettlementParties105 import SettlementParties105
 from ._OtherAmounts43 import OtherAmounts43
 from ._OtherParties44 import OtherParties44
+from ._QuantityAndAccount104 import QuantityAndAccount104
+from ._RegistrationParameters7 import RegistrationParameters7
+from ._SecuritiesTradeDetails130 import SecuritiesTradeDetails130
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._SettlementDetails212 import SettlementDetails212
+from ._SettlementParties105 import SettlementParties105
 from ._SettlementTypeAndIdentification28 import SettlementTypeAndIdentification28
-from ._CashParties38 import CashParties38
+from ._StatusAndReason29 import StatusAndReason29
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesSettlementTransactionGenerationNotification002V11(base_types._BaseFieldType):
 
-	__slots__ = ["_GnrtdRsn", "_Lnkgs", "_SttlmAmt", "_TradDtls", "_TxIdDtls", "_QtyAndAcctDtls", "_FinInstrmAttrbts", "_RcvgSttlmPties", "_AddtlPhysOrRegnDtls", "_NbCounts", "_SttlmParams", "_CshPties", "_FinInstrmId", "_DlvrgSttlmPties", "_OthrAmts", "_StsAndRsn", "_SplmtryData", "_OthrBizPties"]
+	__slots__ = ["_AddtlPhysOrRegnDtls", "_CshPties", "_DlvrgSttlmPties", "_FinInstrmAttrbts", "_FinInstrmId", "_GnrtdRsn", "_Lnkgs", "_NbCounts", "_OthrAmts", "_OthrBizPties", "_QtyAndAcctDtls", "_RcvgSttlmPties", "_SplmtryData", "_StsAndRsn", "_SttlmAmt", "_SttlmParams", "_TradDtls", "_TxIdDtls"]
 	@property
 	def AddtlPhysOrRegnDtls(self):
 		return self._AddtlPhysOrRegnDtls

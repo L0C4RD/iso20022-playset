@@ -3,7 +3,7 @@ from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33C
 
 class PairedOrTurnedQuantity5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TrndQty", "_PairdOffQty"]
+	__slots__ = ["_PairdOffQty", "_TrndQty"]
 	@property
 	def PairdOffQty(self):
 		return self._PairdOffQty

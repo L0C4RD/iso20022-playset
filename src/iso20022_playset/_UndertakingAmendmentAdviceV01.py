@@ -1,13 +1,13 @@
 from . import base_types
-from ._PartyIdentification43 import PartyIdentification43
-from ._ISODate import ISODate
 from ._Amendment2 import Amendment2
+from ._ISODate import ISODate
 from ._Max2000Text import Max2000Text
 from ._PartyAndSignature2 import PartyAndSignature2
+from ._PartyIdentification43 import PartyIdentification43
 
 class UndertakingAmendmentAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AdvsgPty", "_DtOfAdvc", "_DgtlSgntr", "_ScndAdvsgPty", "_BkToBkInf", "_UdrtkgAmdmntAdvcDtls"]
+	__slots__ = ["_AdvsgPty", "_BkToBkInf", "_DgtlSgntr", "_DtOfAdvc", "_ScndAdvsgPty", "_UdrtkgAmdmntAdvcDtls"]
 	@property
 	def AdvsgPty(self):
 		return self._AdvsgPty

@@ -1,13 +1,13 @@
 from . import base_types
-from ._SecuritiesSettlementSystemIdentification2 import SecuritiesSettlementSystemIdentification2
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._DatePeriod2 import DatePeriod2
 from ._ISODateTime import ISODateTime
+from ._SecuritiesSettlementSystemIdentification2 import SecuritiesSettlementSystemIdentification2
 from ._TransactionOperationType4Code import TransactionOperationType4Code
 
 class SettlementFailsReportHeader2(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_RptSts", "_RptgPrd", "_SctiesSttlmSys", "_CreDtTm"]
+	__slots__ = ["_Ccy", "_CreDtTm", "_RptSts", "_RptgPrd", "_SctiesSttlmSys"]
 	@property
 	def Ccy(self):
 		return self._Ccy

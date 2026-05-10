@@ -1,7 +1,7 @@
 from . import base_types
-from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
-from ._RateType45Choice import RateType45Choice
 from ._RateStatus4Choice import RateStatus4Choice
+from ._RateType45Choice import RateType45Choice
+from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
 
 class RateTypeAndAmountAndStatus32(base_types._BaseFieldType):
 

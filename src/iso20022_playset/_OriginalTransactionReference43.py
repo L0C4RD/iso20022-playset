@@ -1,11 +1,11 @@
 from . import base_types
-from ._PaymentIdentification15 import PaymentIdentification15
 from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
+from ._PaymentIdentification15 import PaymentIdentification15
 
 class OriginalTransactionReference43(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_MsgNmId", "_CreDtTm", "_OrgnlTx"]
+	__slots__ = ["_CreDtTm", "_MsgId", "_MsgNmId", "_OrgnlTx"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

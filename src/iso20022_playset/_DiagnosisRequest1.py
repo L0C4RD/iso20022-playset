@@ -1,10 +1,10 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class DiagnosisRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_HstDgnssFlg", "_AcqrrId"]
+	__slots__ = ["_AcqrrId", "_HstDgnssFlg"]
 	@property
 	def AcqrrId(self):
 		return self._AcqrrId

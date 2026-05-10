@@ -1,24 +1,24 @@
 from . import base_types
-from ._InterestPaymentSchedule1 import InterestPaymentSchedule1
-from ._LoanContractTranche1 import LoanContractTranche1
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._PaymentSchedule1 import PaymentSchedule1
+from ._ContractCollateral1 import ContractCollateral1
+from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
+from ._DocumentIdentification22 import DocumentIdentification22
 from ._Exact1NumericText import Exact1NumericText
 from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
+from ._InterestPaymentSchedule1 import InterestPaymentSchedule1
 from ._InterestRate2Choice import InterestRate2Choice
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._TradeParty6 import TradeParty6
+from ._LoanContractTranche1 import LoanContractTranche1
+from ._Max35Text import Max35Text
+from ._PaymentSchedule1 import PaymentSchedule1
 from ._SpecialCondition1 import SpecialCondition1
 from ._SyndicatedLoan3 import SyndicatedLoan3
-from ._ContractCollateral1 import ContractCollateral1
-from ._DocumentIdentification22 import DocumentIdentification22
-from ._Max35Text import Max35Text
+from ._TradeParty6 import TradeParty6
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class LoanContract4(base_types._BaseFieldType):
 
-	__slots__ = ["_LnTpId", "_Trch", "_SndctdLn", "_MtrtyDt", "_PmtSchdl", "_PrlngtnFlg", "_Sellr", "_CtrctDocId", "_Coll", "_IntraCpnyLn", "_IntrstRate", "_DrtnCd", "_Buyr", "_SttlmCcy", "_SpclConds", "_StartDt", "_Amt", "_Attchmnt", "_IntrstSchdl"]
+	__slots__ = ["_Amt", "_Attchmnt", "_Buyr", "_Coll", "_CtrctDocId", "_DrtnCd", "_IntraCpnyLn", "_IntrstRate", "_IntrstSchdl", "_LnTpId", "_MtrtyDt", "_PmtSchdl", "_PrlngtnFlg", "_Sellr", "_SndctdLn", "_SpclConds", "_StartDt", "_SttlmCcy", "_Trch"]
 	@property
 	def Amt(self):
 		return self._Amt

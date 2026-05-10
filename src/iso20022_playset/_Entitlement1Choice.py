@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class Entitlement1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_EntitlmntRatio", "_EntitlmntDesc"]
+	__slots__ = ["_EntitlmntDesc", "_EntitlmntRatio"]
 	@property
 	def EntitlmntDesc(self):
 		return self._EntitlmntDesc

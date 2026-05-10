@@ -1,11 +1,11 @@
 from . import base_types
-from ._Header70 import Header70
-from ._ContentInformationType37 import ContentInformationType37
 from ._AcceptorCompletionAdvice14 import AcceptorCompletionAdvice14
+from ._ContentInformationType37 import ContentInformationType37
+from ._Header70 import Header70
 
 class TransactionAdviceV06(base_types._BaseFieldType):
 
-	__slots__ = ["_TxAdvc", "_SctyTrlr", "_Hdr"]
+	__slots__ = ["_Hdr", "_SctyTrlr", "_TxAdvc"]
 	@property
 	def Hdr(self):
 		return self._Hdr

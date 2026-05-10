@@ -1,11 +1,11 @@
 from . import base_types
+from ._BenchmarkCurveName6Choice import BenchmarkCurveName6Choice
 from ._InterestRateContractTerm2 import InterestRateContractTerm2
 from ._Max5Number import Max5Number
-from ._BenchmarkCurveName6Choice import BenchmarkCurveName6Choice
 
 class FloatingInterestRate6(base_types._BaseFieldType):
 
-	__slots__ = ["_Term", "_BsisPtSprd", "_RefRate"]
+	__slots__ = ["_BsisPtSprd", "_RefRate", "_Term"]
 	@property
 	def BsisPtSprd(self):
 		return self._BsisPtSprd

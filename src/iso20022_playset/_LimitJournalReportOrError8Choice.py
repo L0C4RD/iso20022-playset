@@ -1,10 +1,10 @@
 from . import base_types
-from ._LimitJournal3 import LimitJournal3
 from ._ErrorHandling5 import ErrorHandling5
+from ._LimitJournal3 import LimitJournal3
 
 class LimitJournalReportOrError8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LmtJrnl", "_BizErr"]
+	__slots__ = ["_BizErr", "_LmtJrnl"]
 	@property
 	def BizErr(self):
 		return self._BizErr

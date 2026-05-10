@@ -6,7 +6,7 @@ from ._Number import Number
 
 class KEK4(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyNcrptnAlgo", "_NcrptdKey", "_Vrsn", "_KEKId"]
+	__slots__ = ["_KEKId", "_KeyNcrptnAlgo", "_NcrptdKey", "_Vrsn"]
 	@property
 	def KEKId(self):
 		return self._KEKId

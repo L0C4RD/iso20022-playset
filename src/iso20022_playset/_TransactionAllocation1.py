@@ -1,14 +1,14 @@
 from . import base_types
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._References74Choice import References74Choice
-from ._Max35Text import Max35Text
-from ._CreditDebitCode import CreditDebitCode
-from ._Purpose2Choice import Purpose2Choice
 from ._CashAccount40 import CashAccount40
+from ._CreditDebitCode import CreditDebitCode
+from ._Max35Text import Max35Text
+from ._Purpose2Choice import Purpose2Choice
+from ._References74Choice import References74Choice
 
 class TransactionAllocation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Purp", "_CdtDbtInd", "_Acct", "_Amt", "_Ref", "_RltdRefs"]
+	__slots__ = ["_Acct", "_Amt", "_CdtDbtInd", "_Purp", "_Ref", "_RltdRefs"]
 	@property
 	def Acct(self):
 		return self._Acct

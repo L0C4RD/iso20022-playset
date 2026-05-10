@@ -1,14 +1,14 @@
 from . import base_types
+from ._AdditionalData1 import AdditionalData1
 from ._ISO3NumericCountryCode import ISO3NumericCountryCode
 from ._LocalData14 import LocalData14
 from ._Max11NumericText import Max11NumericText
 from ._Max35Text import Max35Text
 from ._Max99Text import Max99Text
-from ._AdditionalData1 import AdditionalData1
 
 class PartyIdentification286(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_LglCorpNm", "_Assgnr", "_LclData", "_ShrtNm", "_Ctry", "_AddtlId"]
+	__slots__ = ["_AddtlId", "_Assgnr", "_Ctry", "_Id", "_LclData", "_LglCorpNm", "_ShrtNm"]
 	@property
 	def AddtlId(self):
 		return self._AddtlId

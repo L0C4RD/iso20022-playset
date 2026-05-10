@@ -1,23 +1,23 @@
 from . import base_types
-from ._ModificationScope40 import ModificationScope40
-from ._ModificationScope43 import ModificationScope43
-from ._ModificationScope45 import ModificationScope45
-from ._ModificationScope44 import ModificationScope44
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._CashSettlement4 import CashSettlement4
+from ._AccountParties18 import AccountParties18
 from ._AccountSelection3Choice import AccountSelection3Choice
-from ._ModificationScope21 import ModificationScope21
+from ._AdditionalReference13 import AdditionalReference13
+from ._CashSettlement4 import CashSettlement4
+from ._Extension1 import Extension1
 from ._InvestmentAccount75 import InvestmentAccount75
 from ._InvestmentAccountModification4 import InvestmentAccountModification4
-from ._ModificationScope41 import ModificationScope41
+from ._MarketPracticeVersion1 import MarketPracticeVersion1
 from ._MessageIdentification1 import MessageIdentification1
-from ._AdditionalReference13 import AdditionalReference13
-from ._Extension1 import Extension1
-from ._AccountParties18 import AccountParties18
+from ._ModificationScope21 import ModificationScope21
+from ._ModificationScope40 import ModificationScope40
+from ._ModificationScope41 import ModificationScope41
+from ._ModificationScope43 import ModificationScope43
+from ._ModificationScope44 import ModificationScope44
+from ._ModificationScope45 import ModificationScope45
 
 class AccountModificationInstructionV08(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrDtls", "_ModfdSvcLvlAgrmt", "_ModfdAcctPties", "_MktPrctcVrsn", "_ModfdIntrmies", "_ModfdInvstmtAcct", "_MsgId", "_ModfdPlcmnt", "_ModfdWdrwlInvstmtPlan", "_ModfdAddtlInf", "_PrvsRef", "_InvstmtAcctSelctn", "_ModfdIsseAllcn", "_ModfdSvgsInvstmtPlan", "_ModfdCshSttlm", "_Xtnsn"]
+	__slots__ = ["_InstrDtls", "_InvstmtAcctSelctn", "_MktPrctcVrsn", "_ModfdAcctPties", "_ModfdAddtlInf", "_ModfdCshSttlm", "_ModfdIntrmies", "_ModfdInvstmtAcct", "_ModfdIsseAllcn", "_ModfdPlcmnt", "_ModfdSvcLvlAgrmt", "_ModfdSvgsInvstmtPlan", "_ModfdWdrwlInvstmtPlan", "_MsgId", "_PrvsRef", "_Xtnsn"]
 	@property
 	def InstrDtls(self):
 		return self._InstrDtls

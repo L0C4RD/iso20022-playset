@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._DatePeriod2 import DatePeriod2
-from ._Max35Text import Max35Text
-from ._InterestCalculation5 import InterestCalculation5
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._DatePeriod2 import DatePeriod2
+from ._ISODate import ISODate
+from ._InterestCalculation5 import InterestCalculation5
+from ._Max35Text import Max35Text
 
 class InterestStatement5(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_IntrstPmtReqId", "_TtlIntrstAmtDueToB", "_IntrstPrd", "_IntrstClctn", "_TtlIntrstAmtDueToA"]
+	__slots__ = ["_IntrstClctn", "_IntrstPmtReqId", "_IntrstPrd", "_TtlIntrstAmtDueToA", "_TtlIntrstAmtDueToB", "_ValDt"]
 	@property
 	def IntrstClctn(self):
 		return self._IntrstClctn

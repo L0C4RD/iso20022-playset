@@ -5,7 +5,7 @@ from ._TradeCounterpartyReport20 import TradeCounterpartyReport20
 
 class CounterpartySpecificData36(base_types._BaseFieldType):
 
-	__slots__ = ["_Valtn", "_CtrPty", "_RptgTmStmp"]
+	__slots__ = ["_CtrPty", "_RptgTmStmp", "_Valtn"]
 	@property
 	def CtrPty(self):
 		return self._CtrPty

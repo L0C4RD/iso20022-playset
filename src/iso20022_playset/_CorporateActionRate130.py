@@ -5,7 +5,7 @@ from ._RateAndAmountFormat65Choice import RateAndAmountFormat65Choice
 
 class CorporateActionRate130(base_types._BaseFieldType):
 
-	__slots__ = ["_OvrsbcptRate", "_ReqdScndLvlTaxRate", "_PropsdRate", "_ReqdWhldgTaxRate"]
+	__slots__ = ["_OvrsbcptRate", "_PropsdRate", "_ReqdScndLvlTaxRate", "_ReqdWhldgTaxRate"]
 	@property
 	def OvrsbcptRate(self):
 		return self._OvrsbcptRate

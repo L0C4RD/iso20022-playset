@@ -1,6 +1,6 @@
 from . import base_types
-from ._PartyIdentification136 import PartyIdentification136
 from ._Max35Text import Max35Text
+from ._PartyIdentification136 import PartyIdentification136
 
 class MessageReference1(base_types._BaseFieldType):
 

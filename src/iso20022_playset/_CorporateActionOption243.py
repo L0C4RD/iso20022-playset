@@ -1,22 +1,22 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._CorporateActionOption43Choice import CorporateActionOption43Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._CorporateActionPrice91 import CorporateActionPrice91
-from ._SecuritiesQuantityOrAmount7Choice import SecuritiesQuantityOrAmount7Choice
-from ._CorporateActionNarrative33 import CorporateActionNarrative33
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._OptionNumber1Choice import OptionNumber1Choice
-from ._CorporateActionRate130 import CorporateActionRate130
 from ._CorporateActionChangeTypeFormat7Choice import CorporateActionChangeTypeFormat7Choice
+from ._CorporateActionNarrative33 import CorporateActionNarrative33
+from ._CorporateActionOption43Choice import CorporateActionOption43Choice
+from ._CorporateActionPrice91 import CorporateActionPrice91
+from ._CorporateActionRate130 import CorporateActionRate130
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._OptionFeaturesFormat27Choice import OptionFeaturesFormat27Choice
 from ._FractionDispositionType29Choice import FractionDispositionType29Choice
+from ._OptionFeaturesFormat27Choice import OptionFeaturesFormat27Choice
+from ._OptionNumber1Choice import OptionNumber1Choice
 from ._RestrictedFINXMax25Text import RestrictedFINXMax25Text
+from ._SecuritiesQuantityOrAmount7Choice import SecuritiesQuantityOrAmount7Choice
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._YesNoIndicator import YesNoIndicator
 
 class CorporateActionOption243(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_SlctnDealrFeeInd", "_PricDtls", "_ChngTp", "_OptnFeatrs", "_OptnNb", "_ElgblForCollInd", "_CcyToBuy", "_CcyOptn", "_SctyId", "_SctiesQtyOrInstdAmt", "_ExctnReqdDtTm", "_RateAndAmtDtls", "_CcyToSell", "_ShrhldrNb", "_FrctnDspstn", "_OptnTp"]
+	__slots__ = ["_AddtlInf", "_CcyOptn", "_CcyToBuy", "_CcyToSell", "_ChngTp", "_ElgblForCollInd", "_ExctnReqdDtTm", "_FrctnDspstn", "_OptnFeatrs", "_OptnNb", "_OptnTp", "_PricDtls", "_RateAndAmtDtls", "_SctiesQtyOrInstdAmt", "_SctyId", "_ShrhldrNb", "_SlctnDealrFeeInd"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

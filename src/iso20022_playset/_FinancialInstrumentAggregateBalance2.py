@@ -1,10 +1,10 @@
 from . import base_types
-from ._SubBalanceBreakdown1 import SubBalanceBreakdown1
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._SubBalanceBreakdown1 import SubBalanceBreakdown1
 
 class FinancialInstrumentAggregateBalance2(base_types._BaseFieldType):
 
-	__slots__ = ["_SttldBal", "_TraddBal", "_BalBrkdwn"]
+	__slots__ = ["_BalBrkdwn", "_SttldBal", "_TraddBal"]
 	@property
 	def BalBrkdwn(self):
 		return self._BalBrkdwn

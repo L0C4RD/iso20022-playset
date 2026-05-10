@@ -1,29 +1,29 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._DeliveryParameters3 import DeliveryParameters3
-from ._TotalFeesAndTaxes40 import TotalFeesAndTaxes40
-from ._InvestmentAccount58 import InvestmentAccount58
-from ._FinancialInstrument57 import FinancialInstrument57
-from ._HoldBackInformation2 import HoldBackInformation2
-from ._PercentageRate import PercentageRate
-from ._InformativeTax1 import InformativeTax1
-from ._UnitPrice22 import UnitPrice22
-from ._UKTaxGroupUnit1Code import UKTaxGroupUnit1Code
-from ._FundSettlementParameters11 import FundSettlementParameters11
-from ._Equalisation1 import Equalisation1
-from ._DecimalNumber import DecimalNumber
-from ._YesNoIndicator import YesNoIndicator
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._IncomePreference1Code import IncomePreference1Code
-from ._ProfitAndLoss2Choice import ProfitAndLoss2Choice
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._Max35Text import Max35Text
+from ._DecimalNumber import DecimalNumber
+from ._DeliveryParameters3 import DeliveryParameters3
+from ._Equalisation1 import Equalisation1
+from ._FinancialInstrument57 import FinancialInstrument57
+from ._FundSettlementParameters11 import FundSettlementParameters11
+from ._HoldBackInformation2 import HoldBackInformation2
+from ._IncomePreference1Code import IncomePreference1Code
+from ._InformativeTax1 import InformativeTax1
+from ._InvestmentAccount58 import InvestmentAccount58
 from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
+from ._ProfitAndLoss2Choice import ProfitAndLoss2Choice
+from ._TotalFeesAndTaxes40 import TotalFeesAndTaxes40
+from ._UKTaxGroupUnit1Code import UKTaxGroupUnit1Code
+from ._UnitPrice22 import UnitPrice22
+from ._YesNoIndicator import YesNoIndicator
 
 class SwitchRedemptionLegExecution4(base_types._BaseFieldType):
 
-	__slots__ = ["_TradDtTm", "_LegExctnId", "_NonStdSttlmInf", "_CumDvddInd", "_ReqdSttlmCcy", "_InvstmtAcctDtls", "_PhysDlvryDtls", "_GtgOrHldBckDtls", "_IntrmPrftAmt", "_IncmPref", "_UnitsNb", "_TxOvrhd", "_SttlmAndCtdyDtls", "_HldgsRedRate", "_Grp1Or2Units", "_PricDtls", "_InftvTaxDtls", "_FinInstrmDtls", "_InftvPricDtls", "_GrssAmt", "_LegId", "_NetAmt", "_ReqdNAVCcy", "_Equlstn", "_PhysDlvryInd"]
+	__slots__ = ["_CumDvddInd", "_Equlstn", "_FinInstrmDtls", "_Grp1Or2Units", "_GrssAmt", "_GtgOrHldBckDtls", "_HldgsRedRate", "_IncmPref", "_InftvPricDtls", "_InftvTaxDtls", "_IntrmPrftAmt", "_InvstmtAcctDtls", "_LegExctnId", "_LegId", "_NetAmt", "_NonStdSttlmInf", "_PhysDlvryDtls", "_PhysDlvryInd", "_PricDtls", "_ReqdNAVCcy", "_ReqdSttlmCcy", "_SttlmAndCtdyDtls", "_TradDtTm", "_TxOvrhd", "_UnitsNb"]
 	@property
 	def CumDvddInd(self):
 		return self._CumDvddInd

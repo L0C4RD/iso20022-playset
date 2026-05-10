@@ -3,7 +3,7 @@ from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmoun
 
 class ReceivedMarginOrCollateral4(base_types._BaseFieldType):
 
-	__slots__ = ["_InitlMrgnRcvd", "_XcssCollRcvd", "_VartnMrgnRcvd"]
+	__slots__ = ["_InitlMrgnRcvd", "_VartnMrgnRcvd", "_XcssCollRcvd"]
 	@property
 	def InitlMrgnRcvd(self):
 		return self._InitlMrgnRcvd

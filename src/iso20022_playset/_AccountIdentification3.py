@@ -1,11 +1,11 @@
 from . import base_types
 from ._AccountIdentification1 import AccountIdentification1
-from ._Max8Text import Max8Text
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._Max8Text import Max8Text
 
 class AccountIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Issr", "_Inf"]
+	__slots__ = ["_Id", "_Inf", "_Issr"]
 	@property
 	def Id(self):
 		return self._Id

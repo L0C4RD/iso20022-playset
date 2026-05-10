@@ -4,7 +4,7 @@ from ._IndependentAmount2 import IndependentAmount2
 
 class AggregatedIndependentAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_ValAtRsk", "_OthrAmt", "_NetOpnPos", "_Trad"]
+	__slots__ = ["_NetOpnPos", "_OthrAmt", "_Trad", "_ValAtRsk"]
 	@property
 	def NetOpnPos(self):
 		return self._NetOpnPos

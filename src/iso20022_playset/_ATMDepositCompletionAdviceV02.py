@@ -1,12 +1,12 @@
 from . import base_types
-from ._ContentInformationType10 import ContentInformationType10
 from ._ATMDepositCompletionAdvice2 import ATMDepositCompletionAdvice2
+from ._ContentInformationType10 import ContentInformationType10
 from ._ContentInformationType15 import ContentInformationType15
 from ._Header32 import Header32
 
 class ATMDepositCompletionAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMDpstCmpltnAdvc", "_ATMDpstCmpltnAdvc", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_ATMDpstCmpltnAdvc", "_Hdr", "_PrtctdATMDpstCmpltnAdvc", "_SctyTrlr"]
 	@property
 	def ATMDpstCmpltnAdvc(self):
 		return self._ATMDpstCmpltnAdvc

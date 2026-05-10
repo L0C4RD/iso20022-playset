@@ -1,11 +1,11 @@
 from . import base_types
+from ._BaselineStatus3Code import BaselineStatus3Code
 from ._ISODateTime import ISODateTime
 from ._Max140Text import Max140Text
-from ._BaselineStatus3Code import BaselineStatus3Code
 
 class TransactionStatus5(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Sts", "_ChngDtTm"]
+	__slots__ = ["_ChngDtTm", "_Desc", "_Sts"]
 	@property
 	def ChngDtTm(self):
 		return self._ChngDtTm

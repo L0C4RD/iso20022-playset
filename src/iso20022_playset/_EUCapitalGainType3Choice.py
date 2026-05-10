@@ -4,7 +4,7 @@ from ._GenericIdentification30 import GenericIdentification30
 
 class EUCapitalGainType3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_EUCptlGn"]
+	__slots__ = ["_EUCptlGn", "_Prtry"]
 	@property
 	def EUCptlGn(self):
 		return self._EUCptlGn

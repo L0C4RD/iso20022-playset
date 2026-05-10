@@ -1,6 +1,6 @@
 from . import base_types
-from ._MarketIdentification87 import MarketIdentification87
 from ._ExternalMarketArea1Code import ExternalMarketArea1Code
+from ._MarketIdentification87 import MarketIdentification87
 
 class MarketIdentificationOrCashPurpose1Choice(base_types._BaseFieldType):
 

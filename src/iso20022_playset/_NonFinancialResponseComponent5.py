@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
-from ._ResponseType11 import ResponseType11
 from ._NonFinancialResponseContentComponent5 import NonFinancialResponseContentComponent5
+from ._ResponseType11 import ResponseType11
+from ._SupplementaryData1 import SupplementaryData1
 
 class NonFinancialResponseComponent5(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_SplmtryData", "_Rspn", "_RspnCntt"]
+	__slots__ = ["_Envt", "_Rspn", "_RspnCntt", "_SplmtryData"]
 	@property
 	def Envt(self):
 		return self._Envt

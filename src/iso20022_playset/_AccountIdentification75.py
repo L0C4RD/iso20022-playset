@@ -1,12 +1,12 @@
 from . import base_types
-from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
 from ._PartyIdentification136Choice import PartyIdentification136Choice
-from ._SafekeepingPlaceFormat51Choice import SafekeepingPlaceFormat51Choice
 from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from ._SafekeepingPlaceFormat51Choice import SafekeepingPlaceFormat51Choice
 
 class AccountIdentification75(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_SfkpgPlc", "_BlckChainAdrOrWllt", "_SfkpgAcct"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_SfkpgPlc"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

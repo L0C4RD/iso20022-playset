@@ -1,12 +1,12 @@
 from . import base_types
-from ._PaymentContext30 import PaymentContext30
-from ._SupplementaryData1 import SupplementaryData1
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 from ._CardPaymentTransaction139 import CardPaymentTransaction139
+from ._PaymentContext30 import PaymentContext30
+from ._SupplementaryData1 import SupplementaryData1
 
 class AcceptorAuthorisationRequest14(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_Tx", "_SplmtryData"]
+	__slots__ = ["_Cntxt", "_Envt", "_SplmtryData", "_Tx"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt

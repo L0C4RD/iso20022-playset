@@ -1,12 +1,12 @@
 from . import base_types
 from ._CountryCode import CountryCode
+from ._Max70Text import Max70Text
 from ._Quantity9 import Quantity9
 from ._YesNoIndicator import YesNoIndicator
-from ._Max70Text import Max70Text
 
 class CertifiedCharacteristics2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Wght", "_Qlty", "_Orgn", "_Qty", "_PhytosntryIndctn", "_Anlys", "_HlthIndctn"]
+	__slots__ = ["_Anlys", "_HlthIndctn", "_Orgn", "_PhytosntryIndctn", "_Qlty", "_Qty", "_Wght"]
 	@property
 	def Anlys(self):
 		return self._Anlys

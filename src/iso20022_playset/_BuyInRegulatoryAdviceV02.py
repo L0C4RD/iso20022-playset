@@ -1,12 +1,12 @@
 from . import base_types
+from ._BuyInAdviceDetails2 import BuyInAdviceDetails2
+from ._PartyIdentification144 import PartyIdentification144
 from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._SupplementaryData1 import SupplementaryData1
-from ._PartyIdentification144 import PartyIdentification144
-from ._BuyInAdviceDetails2 import BuyInAdviceDetails2
 
 class BuyInRegulatoryAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyInAttrbts", "_SplmtryData", "_SfkpgAcct", "_AcctOwnr"]
+	__slots__ = ["_AcctOwnr", "_BuyInAttrbts", "_SfkpgAcct", "_SplmtryData"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

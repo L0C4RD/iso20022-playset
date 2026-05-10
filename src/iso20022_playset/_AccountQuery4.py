@@ -1,10 +1,10 @@
 from . import base_types
-from ._QueryType2Code import QueryType2Code
 from ._AccountCriteria4Choice import AccountCriteria4Choice
+from ._QueryType2Code import QueryType2Code
 
 class AccountQuery4(base_types._BaseFieldType):
 
-	__slots__ = ["_QryTp", "_AcctCrit"]
+	__slots__ = ["_AcctCrit", "_QryTp"]
 	@property
 	def AcctCrit(self):
 		return self._AcctCrit

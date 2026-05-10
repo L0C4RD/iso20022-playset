@@ -1,11 +1,11 @@
 from . import base_types
-from ._ProcessingType1Choice import ProcessingType1Choice
-from ._Max140Text import Max140Text
 from ._GenericIdentification1 import GenericIdentification1
+from ._Max140Text import Max140Text
+from ._ProcessingType1Choice import ProcessingType1Choice
 
 class BalanceRestrictionType1(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgTp", "_Desc", "_Tp"]
+	__slots__ = ["_Desc", "_PrcgTp", "_Tp"]
 	@property
 	def Desc(self):
 		return self._Desc

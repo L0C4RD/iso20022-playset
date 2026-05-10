@@ -1,14 +1,14 @@
 from . import base_types
-from ._ContentInformationType10 import ContentInformationType10
 from ._AmountAndCurrency1 import AmountAndCurrency1
-from ._Max10000Binary import Max10000Binary
 from ._CardAccount20 import CardAccount20
+from ._ContentInformationType10 import ContentInformationType10
 from ._DetailedAmount12 import DetailedAmount12
+from ._Max10000Binary import Max10000Binary
 from ._TransactionIdentifier3 import TransactionIdentifier3
 
 class ATMTransaction42(base_types._BaseFieldType):
 
-	__slots__ = ["_DtldReqdAmt", "_ICCRltdData", "_AcctData", "_PrtctdAcctData", "_TxId", "_TtlReqdAmt"]
+	__slots__ = ["_AcctData", "_DtldReqdAmt", "_ICCRltdData", "_PrtctdAcctData", "_TtlReqdAmt", "_TxId"]
 	@property
 	def AcctData(self):
 		return self._AcctData

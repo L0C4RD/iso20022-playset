@@ -5,7 +5,7 @@ from ._Max70Text import Max70Text
 
 class BlockChainAddressWallet11(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Id", "_Nm"]
+	__slots__ = ["_Id", "_Nm", "_Tp"]
 	@property
 	def Id(self):
 		return self._Id

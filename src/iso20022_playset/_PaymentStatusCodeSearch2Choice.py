@@ -1,7 +1,7 @@
 from . import base_types
+from ._CashPaymentStatus2Code import CashPaymentStatus2Code
 from ._FinalStatusCode import FinalStatusCode
 from ._PendingStatus4Code import PendingStatus4Code
-from ._CashPaymentStatus2Code import CashPaymentStatus2Code
 
 class PaymentStatusCodeSearch2Choice(base_types._BaseFieldType):
 

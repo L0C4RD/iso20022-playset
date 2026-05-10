@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max6Text import Max6Text
 from ._GenericIdentification176 import GenericIdentification176
-from ._ISODateTime import ISODateTime
 from ._GenericIdentification177 import GenericIdentification177
+from ._ISODateTime import ISODateTime
+from ._Max6Text import Max6Text
 from ._Number import Number
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Header56(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgId", "_FrmtVrsn", "_InitgPty", "_DwnldTrf", "_RcptPty", "_CreDtTm"]
+	__slots__ = ["_CreDtTm", "_DwnldTrf", "_FrmtVrsn", "_InitgPty", "_RcptPty", "_XchgId"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

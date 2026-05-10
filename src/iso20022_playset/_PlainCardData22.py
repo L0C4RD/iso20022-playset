@@ -1,16 +1,16 @@
 from . import base_types
-from ._Max76Text import Max76Text
-from ._Max45Text import Max45Text
-from ._Min2Max3NumericText import Min2Max3NumericText
 from ._Exact3NumericText import Exact3NumericText
-from ._Min8Max28NumericText import Min8Max28NumericText
+from ._Max104Text import Max104Text
 from ._Max10Text import Max10Text
 from ._Max37Text import Max37Text
-from ._Max104Text import Max104Text
+from ._Max45Text import Max45Text
+from ._Max76Text import Max76Text
+from ._Min2Max3NumericText import Min2Max3NumericText
+from ._Min8Max28NumericText import Min8Max28NumericText
 
 class PlainCardData22(base_types._BaseFieldType):
 
-	__slots__ = ["_FctvDt", "_PAN", "_CrdhldrNm", "_Trck2", "_SvcCd", "_Trck3", "_Trck1", "_CardSeqNb", "_XpryDt"]
+	__slots__ = ["_CardSeqNb", "_CrdhldrNm", "_FctvDt", "_PAN", "_SvcCd", "_Trck1", "_Trck2", "_Trck3", "_XpryDt"]
 	@property
 	def CardSeqNb(self):
 		return self._CardSeqNb

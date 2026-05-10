@@ -1,11 +1,11 @@
 from . import base_types
+from ._AccountIdentification5 import AccountIdentification5
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._BaseOneRate import BaseOneRate
-from ._AccountIdentification5 import AccountIdentification5
 
 class SecuritiesAccount21(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_RptgCcy", "_BaseCcy", "_FXRate", "_SubAcct"]
+	__slots__ = ["_Acct", "_BaseCcy", "_FXRate", "_RptgCcy", "_SubAcct"]
 	@property
 	def Acct(self):
 		return self._Acct

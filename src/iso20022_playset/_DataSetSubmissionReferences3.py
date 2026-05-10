@@ -1,11 +1,11 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._DocumentIdentification7 import DocumentIdentification7
 from ._Max35Text import Max35Text
+from ._YesNoIndicator import YesNoIndicator
 
 class DataSetSubmissionReferences3(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmitrTxRef", "_PurchsOrdrRef", "_TxId", "_ForcdMtch"]
+	__slots__ = ["_ForcdMtch", "_PurchsOrdrRef", "_SubmitrTxRef", "_TxId"]
 	@property
 	def ForcdMtch(self):
 		return self._ForcdMtch

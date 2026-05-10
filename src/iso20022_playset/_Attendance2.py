@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max350Text import Max350Text
-from ._DateFormat58Choice import DateFormat58Choice
 from ._AttendanceAdmissionConditions2 import AttendanceAdmissionConditions2
+from ._DateFormat58Choice import DateFormat58Choice
+from ._Max350Text import Max350Text
 
 class Attendance2(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfInf", "_AdmssnConds", "_ConfDdln", "_ConfMktDdln"]
+	__slots__ = ["_AdmssnConds", "_ConfDdln", "_ConfInf", "_ConfMktDdln"]
 	@property
 	def AdmssnConds(self):
 		return self._AdmssnConds

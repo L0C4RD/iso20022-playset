@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecuritiesAccountStatus2 import SecuritiesAccountStatus2
 from ._MessageHeader12 import MessageHeader12
+from ._SecuritiesAccountStatus2 import SecuritiesAccountStatus2
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesAccountStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgHdr", "_SctiesAcctSts"]
+	__slots__ = ["_MsgHdr", "_SctiesAcctSts", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

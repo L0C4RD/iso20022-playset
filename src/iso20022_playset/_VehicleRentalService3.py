@@ -1,20 +1,20 @@
 from . import base_types
-from ._CustomerAssigner1Code import CustomerAssigner1Code
-from ._VehicleRentalAgreement3 import VehicleRentalAgreement3
-from ._PartyIdentification285 import PartyIdentification285
-from ._CarRentalActivity1Code import CarRentalActivity1Code
 from ._AdditionalData1 import AdditionalData1
 from ._Address2 import Address2
+from ._CarRentalActivity1Code import CarRentalActivity1Code
+from ._ContactBusiness1 import ContactBusiness1
+from ._CustomerAssigner1Code import CustomerAssigner1Code
+from ._DriverInParty3 import DriverInParty3
 from ._LoyaltyProgramme4 import LoyaltyProgramme4
 from ._Max35Text import Max35Text
-from ._VehicleRentalInvoice3 import VehicleRentalInvoice3
 from ._Max70Text import Max70Text
-from ._DriverInParty3 import DriverInParty3
-from ._ContactBusiness1 import ContactBusiness1
+from ._PartyIdentification285 import PartyIdentification285
+from ._VehicleRentalAgreement3 import VehicleRentalAgreement3
+from ._VehicleRentalInvoice3 import VehicleRentalInvoice3
 
 class VehicleRentalService3(base_types._BaseFieldType):
 
-	__slots__ = ["_CpnyTp", "_LltyPrgrmm", "_AddtlData", "_CpnyOthrTp", "_RntlInvc", "_PmryDrvr", "_RntrNm", "_CpnyCtct", "_RntrCorpIdr", "_CpnyAdr", "_RntrCorpNm", "_RntrCorpIdrAssgnr", "_RntlAgrmt", "_CpnyNm", "_AddtlDrvr", "_CpnyId", "_SummryCmmdtyId"]
+	__slots__ = ["_AddtlData", "_AddtlDrvr", "_CpnyAdr", "_CpnyCtct", "_CpnyId", "_CpnyNm", "_CpnyOthrTp", "_CpnyTp", "_LltyPrgrmm", "_PmryDrvr", "_RntlAgrmt", "_RntlInvc", "_RntrCorpIdr", "_RntrCorpIdrAssgnr", "_RntrCorpNm", "_RntrNm", "_SummryCmmdtyId"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

@@ -1,17 +1,17 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._Transaction124 import Transaction124
-from ._Statement78 import Statement78
-from ._OverallCollateralDetails2 import OverallCollateralDetails2
-from ._ExposureTypeAggregation3 import ExposureTypeAggregation3
-from ._TotalValueInPageAndStatement5 import TotalValueInPageAndStatement5
-from ._Pagination1 import Pagination1
 from ._CollateralParties9 import CollateralParties9
 from ._CounterpartyAggregation3 import CounterpartyAggregation3
+from ._ExposureTypeAggregation3 import ExposureTypeAggregation3
+from ._OverallCollateralDetails2 import OverallCollateralDetails2
+from ._Pagination1 import Pagination1
+from ._Statement78 import Statement78
+from ._SupplementaryData1 import SupplementaryData1
+from ._TotalValueInPageAndStatement5 import TotalValueInPageAndStatement5
+from ._Transaction124 import Transaction124
 
 class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CollPties", "_StmtGnlDtls", "_Pgntn", "_OvrllCollAggtn", "_Txs", "_CtrPtyAggtn", "_XpsrTpAggtn", "_SplmtryData", "_AcctBaseCcyTtlAmts"]
+	__slots__ = ["_AcctBaseCcyTtlAmts", "_CollPties", "_CtrPtyAggtn", "_OvrllCollAggtn", "_Pgntn", "_SplmtryData", "_StmtGnlDtls", "_Txs", "_XpsrTpAggtn"]
 	@property
 	def AcctBaseCcyTtlAmts(self):
 		return self._AcctBaseCcyTtlAmts

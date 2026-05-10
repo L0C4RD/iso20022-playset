@@ -1,12 +1,12 @@
 from . import base_types
 from ._ISODate import ISODate
 from ._ISOTime import ISOTime
-from ._Max70Text import Max70Text
 from ._Max256Text import Max256Text
+from ._Max70Text import Max70Text
 
 class DepartureOrArrival1(base_types._BaseFieldType):
 
-	__slots__ = ["_Lctn", "_Dt", "_Desc", "_Tm"]
+	__slots__ = ["_Desc", "_Dt", "_Lctn", "_Tm"]
 	@property
 	def Desc(self):
 		return self._Desc

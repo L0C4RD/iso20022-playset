@@ -1,15 +1,15 @@
 from . import base_types
-from ._RateAndAmountFormat70Choice import RateAndAmountFormat70Choice
-from ._RateAndAmountFormat69Choice import RateAndAmountFormat69Choice
 from ._GrossDividendRateFormat41Choice import GrossDividendRateFormat41Choice
 from ._InterestRateUsedForPaymentFormat18Choice import InterestRateUsedForPaymentFormat18Choice
-from ._RateTypeAndAmountAndStatus33 import RateTypeAndAmountAndStatus33
 from ._NetDividendRateFormat43Choice import NetDividendRateFormat43Choice
+from ._RateAndAmountFormat69Choice import RateAndAmountFormat69Choice
+from ._RateAndAmountFormat70Choice import RateAndAmountFormat70Choice
 from ._RateFormat24Choice import RateFormat24Choice
+from ._RateTypeAndAmountAndStatus33 import RateTypeAndAmountAndStatus33
 
 class CorporateActionRate133(base_types._BaseFieldType):
 
-	__slots__ = ["_GrssIntrstRateUsdForPmt", "_TaxblIncmPerDvddShr", "_ScndLvlTax", "_MaxAllwdOvrsbcptRate", "_WhldgTaxRate", "_TaxOnIncm", "_GrssDstrbtnRate", "_PrratnRate", "_AddtlTax", "_NetDstrbtnRate"]
+	__slots__ = ["_AddtlTax", "_GrssDstrbtnRate", "_GrssIntrstRateUsdForPmt", "_MaxAllwdOvrsbcptRate", "_NetDstrbtnRate", "_PrratnRate", "_ScndLvlTax", "_TaxOnIncm", "_TaxblIncmPerDvddShr", "_WhldgTaxRate"]
 	@property
 	def AddtlTax(self):
 		return self._AddtlTax

@@ -3,7 +3,7 @@ from ._InternalisationDataVolume1 import InternalisationDataVolume1
 
 class InternalisationData2(base_types._BaseFieldType):
 
-	__slots__ = ["_Sttld", "_Faild", "_Ttl"]
+	__slots__ = ["_Faild", "_Sttld", "_Ttl"]
 	@property
 	def Faild(self):
 		return self._Faild

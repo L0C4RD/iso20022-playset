@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._CapturedSignature1 import CapturedSignature1
 from ._ContentInformationType39 import ContentInformationType39
-from ._Max20000Text import Max20000Text
 from ._InputCommand1Code import InputCommand1Code
+from ._Max20000Text import Max20000Text
 from ._Number import Number
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class InputResultData6(base_types._BaseFieldType):
 
-	__slots__ = ["_InptMsg", "_InptCmd", "_ConfdFlg", "_FctnKey", "_ImgCaptrdSgntr", "_Pwd"]
+	__slots__ = ["_ConfdFlg", "_FctnKey", "_ImgCaptrdSgntr", "_InptCmd", "_InptMsg", "_Pwd"]
 	@property
 	def ConfdFlg(self):
 		return self._ConfdFlg

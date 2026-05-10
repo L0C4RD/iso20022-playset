@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class SettlementTypeAndIdentification25(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmDt", "_Pmt", "_TxId"]
+	__slots__ = ["_Pmt", "_SttlmDt", "_TxId"]
 	@property
 	def Pmt(self):
 		return self._Pmt

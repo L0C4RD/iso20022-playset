@@ -1,15 +1,15 @@
 from . import base_types
-from ._TimePeriodDetails1 import TimePeriodDetails1
-from ._DurationType1Code import DurationType1Code
 from ._AmountAndDirection106 import AmountAndDirection106
-from ._Quantity47Choice import Quantity47Choice
 from ._DatePeriod1 import DatePeriod1
+from ._DurationType1Code import DurationType1Code
 from ._EnergyQuantityUnit2Choice import EnergyQuantityUnit2Choice
+from ._Quantity47Choice import Quantity47Choice
+from ._TimePeriodDetails1 import TimePeriodDetails1
 from ._WeekDay3Code import WeekDay3Code
 
 class EnergyDeliveryAttribute10(base_types._BaseFieldType):
 
-	__slots__ = ["_Drtn", "_QtyUnit", "_PricTmIntrvlQty", "_DlvryIntrvl", "_DlvryDt", "_DlvryCpcty", "_WkDay"]
+	__slots__ = ["_DlvryCpcty", "_DlvryDt", "_DlvryIntrvl", "_Drtn", "_PricTmIntrvlQty", "_QtyUnit", "_WkDay"]
 	@property
 	def DlvryCpcty(self):
 		return self._DlvryCpcty

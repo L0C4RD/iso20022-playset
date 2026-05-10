@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ISODate import ISODate
 from ._Max70Text import Max70Text
 
 class Instalment1(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtDueDt", "_SeqId", "_Amt"]
+	__slots__ = ["_Amt", "_PmtDueDt", "_SeqId"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -1,16 +1,16 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._PriceMethod1Code import PriceMethod1Code
+from ._AdditionalInformation15 import AdditionalInformation15
 from ._EventFrequency5Code import EventFrequency5Code
 from ._ISOTime import ISOTime
-from ._YesNoIndicator import YesNoIndicator
-from ._Number import Number
-from ._AdditionalInformation15 import AdditionalInformation15
 from ._Max350Text import Max350Text
+from ._Number import Number
+from ._PriceMethod1Code import PriceMethod1Code
+from ._YesNoIndicator import YesNoIndicator
 
 class ValuationDealingProcessingCharacteristics3(base_types._BaseFieldType):
 
-	__slots__ = ["_ValtnFrqcy", "_DualFndInd", "_ValtnFrqcyDesc", "_ValtnTm", "_PricCcy", "_DcmlstnPric", "_AddtlInf", "_DcmlstnUnits", "_PricMtd"]
+	__slots__ = ["_AddtlInf", "_DcmlstnPric", "_DcmlstnUnits", "_DualFndInd", "_PricCcy", "_PricMtd", "_ValtnFrqcy", "_ValtnFrqcyDesc", "_ValtnTm"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

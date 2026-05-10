@@ -1,15 +1,15 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SupplementaryData1 import SupplementaryData1
-from ._ProcessingStatus85Choice import ProcessingStatus85Choice
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 from ._Max35Text import Max35Text
 from ._PartyIdentification144 import PartyIdentification144
+from ._ProcessingStatus85Choice import ProcessingStatus85Choice
 from ._RequestDetails32 import RequestDetails32
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesSettlementConditionModificationStatusAdviceV10(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_AcctOwnr", "_PrcgSts", "_SfkpgAcct", "_ReqDtls", "_SplmtryData", "_ReqRef"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_PrcgSts", "_ReqDtls", "_ReqRef", "_SfkpgAcct", "_SplmtryData"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

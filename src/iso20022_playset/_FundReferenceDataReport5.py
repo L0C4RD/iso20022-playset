@@ -1,33 +1,33 @@
 from . import base_types
-from ._ProcessingCharacteristics11 import ProcessingCharacteristics11
+from ._AdditionalProductInformation3 import AdditionalProductInformation3
 from ._CashAccount205 import CashAccount205
 from ._ContactAttributes5 import ContactAttributes5
+from ._ContactAttributes6 import ContactAttributes6
+from ._CostsAndCharges2 import CostsAndCharges2
+from ._DistributionStrategy1 import DistributionStrategy1
+from ._Extension1 import Extension1
 from ._FinancialInstrument96 import FinancialInstrument96
 from ._FundParties1 import FundParties1
-from ._ValueForMoney1 import ValueForMoney1
-from ._InvestmentPlanCharacteristics1 import InvestmentPlanCharacteristics1
-from ._PaymentInstrument16 import PaymentInstrument16
-from ._ProcessingCharacteristics9 import ProcessingCharacteristics9
-from ._DistributionStrategy1 import DistributionStrategy1
-from ._ValuationDealingProcessingCharacteristics3 import ValuationDealingProcessingCharacteristics3
 from ._ISODate import ISODate
-from ._CostsAndCharges2 import CostsAndCharges2
-from ._AdditionalProductInformation3 import AdditionalProductInformation3
-from ._YesNoIndicator import YesNoIndicator
-from ._ContactAttributes6 import ContactAttributes6
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
+from ._InvestmentPlanCharacteristics1 import InvestmentPlanCharacteristics1
 from ._InvestmentRestrictions3 import InvestmentRestrictions3
 from ._LocalMarketAnnex6 import LocalMarketAnnex6
-from ._SecurityIdentification47 import SecurityIdentification47
+from ._MarketPracticeVersion1 import MarketPracticeVersion1
 from ._Max35Text import Max35Text
-from ._ProcessingCharacteristics12 import ProcessingCharacteristics12
-from ._TargetMarket4 import TargetMarket4
-from ._Extension1 import Extension1
 from ._OrderDesk1 import OrderDesk1
+from ._PaymentInstrument16 import PaymentInstrument16
+from ._ProcessingCharacteristics11 import ProcessingCharacteristics11
+from ._ProcessingCharacteristics12 import ProcessingCharacteristics12
+from ._ProcessingCharacteristics9 import ProcessingCharacteristics9
+from ._SecurityIdentification47 import SecurityIdentification47
+from ._TargetMarket4 import TargetMarket4
+from ._ValuationDealingProcessingCharacteristics3 import ValuationDealingProcessingCharacteristics3
+from ._ValueForMoney1 import ValueForMoney1
+from ._YesNoIndicator import YesNoIndicator
 
 class FundReferenceDataReport5(base_types._BaseFieldType):
 
-	__slots__ = ["_TrgtMktInd", "_TrgtMkt", "_FndMgmtCpny", "_Xtnsn", "_PmtInstrm", "_DstrbtnStrtgy", "_SctyId", "_RedPrcgChrtcs", "_AddtlInfUKMkt", "_GnlRefDt", "_CshSttlmDtls", "_Id", "_AuthrsdPrxy", "_ValForMny", "_ExAnteInd", "_CostsAndChrgs", "_FndDtls", "_Vrsn", "_SwtchPrcgChrtcs", "_PlanChrtcs", "_ValtnDealgChrtcs", "_InvstmtRstrctns", "_FndPties", "_MainFndOrdrDsk", "_ExPstInd", "_LclMktAnx", "_SbcptPrcgChrtcs"]
+	__slots__ = ["_AddtlInfUKMkt", "_AuthrsdPrxy", "_CostsAndChrgs", "_CshSttlmDtls", "_DstrbtnStrtgy", "_ExAnteInd", "_ExPstInd", "_FndDtls", "_FndMgmtCpny", "_FndPties", "_GnlRefDt", "_Id", "_InvstmtRstrctns", "_LclMktAnx", "_MainFndOrdrDsk", "_PlanChrtcs", "_PmtInstrm", "_RedPrcgChrtcs", "_SbcptPrcgChrtcs", "_SctyId", "_SwtchPrcgChrtcs", "_TrgtMkt", "_TrgtMktInd", "_ValForMny", "_ValtnDealgChrtcs", "_Vrsn", "_Xtnsn"]
 	@property
 	def AddtlInfUKMkt(self):
 		return self._AddtlInfUKMkt

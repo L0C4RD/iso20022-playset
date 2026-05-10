@@ -1,10 +1,10 @@
 from . import base_types
-from ._Undertaking3 import Undertaking3
 from ._PartyAndSignature2 import PartyAndSignature2
+from ._Undertaking3 import Undertaking3
 
 class UndertakingIssuanceMessage(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgDtls", "_DgtlSgntr"]
+	__slots__ = ["_DgtlSgntr", "_UdrtkgDtls"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr

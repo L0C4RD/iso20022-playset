@@ -1,12 +1,12 @@
 from . import base_types
-from ._MailAddress1 import MailAddress1
 from ._CommunicationAddress12 import CommunicationAddress12
+from ._MailAddress1 import MailAddress1
 from ._Max35Text import Max35Text
 from ._VoteThroughNetwork1Choice import VoteThroughNetwork1Choice
 
 class VoteMethods5(base_types._BaseFieldType):
 
-	__slots__ = ["_VoteByMail", "_VoteByTel", "_VoteThrghNtwk", "_ElctrncVote"]
+	__slots__ = ["_ElctrncVote", "_VoteByMail", "_VoteByTel", "_VoteThrghNtwk"]
 	@property
 	def ElctrncVote(self):
 		return self._ElctrncVote

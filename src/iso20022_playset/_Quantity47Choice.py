@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max52Text import Max52Text
 from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from ._Max52Text import Max52Text
 
 class Quantity47Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_Desc"]
+	__slots__ = ["_Desc", "_Qty"]
 	@property
 	def Desc(self):
 		return self._Desc

@@ -5,7 +5,7 @@ from ._TargetMarket1Code import TargetMarket1Code
 
 class TargetMarket3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Tp", "_Othr"]
+	__slots__ = ["_Othr", "_Prtry", "_Tp"]
 	@property
 	def Othr(self):
 		return self._Othr

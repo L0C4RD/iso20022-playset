@@ -1,21 +1,21 @@
 from . import base_types
-from ._RejectionReason45Choice import RejectionReason45Choice
-from ._AcknowledgementReason13Choice import AcknowledgementReason13Choice
-from ._PendingCancellationReasons4Choice import PendingCancellationReasons4Choice
-from ._GeneratedReasons5Choice import GeneratedReasons5Choice
-from ._PendingReason28Choice import PendingReason28Choice
-from ._RepairReason11Choice import RepairReason11Choice
-from ._CancellationReason20Choice import CancellationReason20Choice
-from ._UnmatchedReason22Choice import UnmatchedReason22Choice
 from ._AcknowledgementReason12Choice import AcknowledgementReason12Choice
-from ._PendingReason29Choice import PendingReason29Choice
+from ._AcknowledgementReason13Choice import AcknowledgementReason13Choice
+from ._CancellationReason20Choice import CancellationReason20Choice
 from ._DeniedReason14Choice import DeniedReason14Choice
 from ._FailingReason9Choice import FailingReason9Choice
+from ._GeneratedReasons5Choice import GeneratedReasons5Choice
+from ._PendingCancellationReasons4Choice import PendingCancellationReasons4Choice
 from ._PendingProcessingReason11Choice import PendingProcessingReason11Choice
+from ._PendingReason28Choice import PendingReason28Choice
+from ._PendingReason29Choice import PendingReason29Choice
+from ._RejectionReason45Choice import RejectionReason45Choice
+from ._RepairReason11Choice import RepairReason11Choice
+from ._UnmatchedReason22Choice import UnmatchedReason22Choice
 
 class Reason19Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_GnrtdRsn", "_PdgPrcgRsn", "_RjctnRsn", "_AckdAccptdRsn", "_FlngRsn", "_RprRsn", "_UmtchdRsn", "_PdgRsn", "_PdgModRsn", "_DndRsn", "_PdgCxlRsn", "_CxlRsn", "_RepoCallAckRsn"]
+	__slots__ = ["_AckdAccptdRsn", "_CxlRsn", "_DndRsn", "_FlngRsn", "_GnrtdRsn", "_PdgCxlRsn", "_PdgModRsn", "_PdgPrcgRsn", "_PdgRsn", "_RepoCallAckRsn", "_RjctnRsn", "_RprRsn", "_UmtchdRsn"]
 	@property
 	def AckdAccptdRsn(self):
 		return self._AckdAccptdRsn

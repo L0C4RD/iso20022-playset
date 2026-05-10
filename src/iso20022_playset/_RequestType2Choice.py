@@ -1,11 +1,11 @@
 from . import base_types
-from ._RequestType1Code import RequestType1Code
 from ._GenericIdentification1 import GenericIdentification1
+from ._RequestType1Code import RequestType1Code
 from ._RequestType2Code import RequestType2Code
 
 class RequestType2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtCtrl", "_Enqry", "_Prtry"]
+	__slots__ = ["_Enqry", "_PmtCtrl", "_Prtry"]
 	@property
 	def Enqry(self):
 		return self._Enqry

@@ -1,14 +1,14 @@
 from . import base_types
+from ._BarcodeType1Code import BarcodeType1Code
+from ._Max16Text import Max16Text
+from ._Max3000Binary import Max3000Binary
 from ._Max8000Text import Max8000Text
 from ._QRCodeEncodingMode1Code import QRCodeEncodingMode1Code
 from ._QRCodeErrorCorrection1Code import QRCodeErrorCorrection1Code
-from ._Max3000Binary import Max3000Binary
-from ._Max16Text import Max16Text
-from ._BarcodeType1Code import BarcodeType1Code
 
 class OutputBarcode2(base_types._BaseFieldType):
 
-	__slots__ = ["_BrcdVal", "_QRCdBinryVal", "_QRCdNcodgMd", "_QRCdErrCrrctn", "_BrcdTp", "_QRCdVrsn"]
+	__slots__ = ["_BrcdTp", "_BrcdVal", "_QRCdBinryVal", "_QRCdErrCrrctn", "_QRCdNcodgMd", "_QRCdVrsn"]
 	@property
 	def BrcdTp(self):
 		return self._BrcdTp

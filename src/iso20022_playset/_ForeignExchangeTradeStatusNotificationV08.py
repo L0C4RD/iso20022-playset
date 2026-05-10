@@ -1,11 +1,11 @@
 from . import base_types
+from ._RegulatoryReporting8 import RegulatoryReporting8
 from ._SupplementaryData1 import SupplementaryData1
 from ._TradeData15 import TradeData15
-from ._RegulatoryReporting8 import RegulatoryReporting8
 
 class ForeignExchangeTradeStatusNotificationV08(base_types._BaseFieldType):
 
-	__slots__ = ["_TradData", "_SplmtryData", "_RgltryRptg"]
+	__slots__ = ["_RgltryRptg", "_SplmtryData", "_TradData"]
 	@property
 	def RgltryRptg(self):
 		return self._RgltryRptg

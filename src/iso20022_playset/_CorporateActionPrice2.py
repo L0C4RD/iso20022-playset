@@ -3,7 +3,7 @@ from ._PriceFormat3Choice import PriceFormat3Choice
 
 class CorporateActionPrice2(base_types._BaseFieldType):
 
-	__slots__ = ["_MinPric", "_MaxPric"]
+	__slots__ = ["_MaxPric", "_MinPric"]
 	@property
 	def MaxPric(self):
 		return self._MaxPric

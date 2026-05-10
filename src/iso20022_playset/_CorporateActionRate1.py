@@ -1,11 +1,11 @@
 from . import base_types
-from ._RateAndAmountFormat1Choice import RateAndAmountFormat1Choice
 from ._AmountAndRateFormat3Choice import AmountAndRateFormat3Choice
+from ._RateAndAmountFormat1Choice import RateAndAmountFormat1Choice
 from ._RateFormat1Choice import RateFormat1Choice
 
 class CorporateActionRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdIndx", "_Sprd", "_BidIntrvl", "_Intrst", "_Chrgs", "_PctgSght", "_RinvstmtDscntToMkt"]
+	__slots__ = ["_BidIntrvl", "_Chrgs", "_Intrst", "_PctgSght", "_RinvstmtDscntToMkt", "_RltdIndx", "_Sprd"]
 	@property
 	def BidIntrvl(self):
 		return self._BidIntrvl

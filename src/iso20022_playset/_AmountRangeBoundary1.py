@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class AmountRangeBoundary1(base_types._BaseFieldType):
 
-	__slots__ = ["_Incl", "_BdryAmt"]
+	__slots__ = ["_BdryAmt", "_Incl"]
 	@property
 	def BdryAmt(self):
 		return self._BdryAmt

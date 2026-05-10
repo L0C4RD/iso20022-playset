@@ -5,7 +5,7 @@ from ._TradeCounterpartyType1Code import TradeCounterpartyType1Code
 
 class TradeCounterpartyRelationshipRecord1(base_types._BaseFieldType):
 
-	__slots__ = ["_StartRltshPty", "_RltshTp", "_Desc", "_EndRltshPty"]
+	__slots__ = ["_Desc", "_EndRltshPty", "_RltshTp", "_StartRltshPty"]
 	@property
 	def Desc(self):
 		return self._Desc

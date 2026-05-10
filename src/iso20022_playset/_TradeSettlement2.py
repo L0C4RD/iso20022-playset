@@ -1,17 +1,17 @@
 from . import base_types
-from ._SettlementSubTotalCalculatedTax2 import SettlementSubTotalCalculatedTax2
-from ._ISODate import ISODate
-from ._EarlyPayment1 import EarlyPayment1
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._Period2 import Period2
 from ._CreditorReferenceInformation2 import CreditorReferenceInformation2
-from ._Max500Text import Max500Text
+from ._CurrencyAndAmount import CurrencyAndAmount
 from ._CurrencyReference3 import CurrencyReference3
+from ._EarlyPayment1 import EarlyPayment1
+from ._ISODate import ISODate
 from ._Max4Text import Max4Text
+from ._Max500Text import Max500Text
+from ._Period2 import Period2
+from ._SettlementSubTotalCalculatedTax2 import SettlementSubTotalCalculatedTax2
 
 class TradeSettlement2(base_types._BaseFieldType):
 
-	__slots__ = ["_DuePyblAmt", "_DueDt", "_SubTtlClctdTax", "_BllgPrd", "_XmptnRsn", "_InvcCcyXchg", "_XmptnRsnCd", "_EarlyPmts", "_DlvryDt", "_TaxTtlAmt", "_PmtRef"]
+	__slots__ = ["_BllgPrd", "_DlvryDt", "_DueDt", "_DuePyblAmt", "_EarlyPmts", "_InvcCcyXchg", "_PmtRef", "_SubTtlClctdTax", "_TaxTtlAmt", "_XmptnRsn", "_XmptnRsnCd"]
 	@property
 	def BllgPrd(self):
 		return self._BllgPrd

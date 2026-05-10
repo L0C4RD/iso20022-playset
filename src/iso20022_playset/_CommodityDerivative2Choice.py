@@ -4,7 +4,7 @@ from ._CommodityDerivative6 import CommodityDerivative6
 
 class CommodityDerivative2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Nrgy", "_Frght"]
+	__slots__ = ["_Frght", "_Nrgy"]
 	@property
 	def Frght(self):
 		return self._Frght

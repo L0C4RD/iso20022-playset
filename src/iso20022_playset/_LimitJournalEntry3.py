@@ -1,13 +1,13 @@
 from . import base_types
+from ._Amount2Choice import Amount2Choice
+from ._CreditDebitCode import CreditDebitCode
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._Max35Text import Max35Text
 from ._Max500Text import Max500Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._CreditDebitCode import CreditDebitCode
-from ._Amount2Choice import Amount2Choice
 
 class LimitJournalEntry3(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_AcctSvcrRef", "_AddtlNtryInf", "_PrcrTxId", "_MktInfrstrctrTxId", "_TxId", "_Amt", "_JrnlDt"]
+	__slots__ = ["_AcctSvcrRef", "_AddtlNtryInf", "_Amt", "_CdtDbtInd", "_JrnlDt", "_MktInfrstrctrTxId", "_PrcrTxId", "_TxId"]
 	@property
 	def AcctSvcrRef(self):
 		return self._AcctSvcrRef

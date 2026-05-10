@@ -4,7 +4,7 @@ from ._RejectionReason52Choice import RejectionReason52Choice
 
 class RejectionReason67(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_AddtlRsnInf"]
+	__slots__ = ["_AddtlRsnInf", "_Cd"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

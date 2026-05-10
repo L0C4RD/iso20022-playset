@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISODate import ISODate
 from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._ISODate import ISODate
+from ._MICIdentifier import MICIdentifier
 from ._Max35Text import Max35Text
 from ._NumberAndVolume2 import NumberAndVolume2
-from ._MICIdentifier import MICIdentifier
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TransparencyDataReport13(base_types._BaseFieldType):
 
-	__slots__ = ["_TxsExctdExclgPreTradWvr", "_Sspnsn", "_TechRcrdId", "_TxsExctd", "_TxsExctdExclgPstTradLrgInScaleWvr", "_TradgVn", "_Id", "_RptgDt"]
+	__slots__ = ["_Id", "_RptgDt", "_Sspnsn", "_TechRcrdId", "_TradgVn", "_TxsExctd", "_TxsExctdExclgPreTradWvr", "_TxsExctdExclgPstTradLrgInScaleWvr"]
 	@property
 	def Id(self):
 		return self._Id

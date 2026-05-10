@@ -4,7 +4,7 @@ from ._BaseOneRate import BaseOneRate
 
 class ForeignExchangeTerms19(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitCcy", "_XchgRate", "_QtdCcy"]
+	__slots__ = ["_QtdCcy", "_UnitCcy", "_XchgRate"]
 	@property
 	def QtdCcy(self):
 		return self._QtdCcy

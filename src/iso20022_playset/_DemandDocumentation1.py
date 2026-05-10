@@ -1,12 +1,12 @@
 from . import base_types
 from ._Document9 import Document9
 from ._Max20000Text import Max20000Text
-from ._YesNoIndicator import YesNoIndicator
 from ._Max2000Text import Max2000Text
+from ._YesNoIndicator import YesNoIndicator
 
 class DemandDocumentation1(base_types._BaseFieldType):
 
-	__slots__ = ["_NclsdFile", "_CmpltnInf", "_CmpltInd", "_DmndNrrtv"]
+	__slots__ = ["_CmpltInd", "_CmpltnInf", "_DmndNrrtv", "_NclsdFile"]
 	@property
 	def CmpltInd(self):
 		return self._CmpltInd

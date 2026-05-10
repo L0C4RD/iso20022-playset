@@ -4,7 +4,7 @@ from ._ReportingRecordStatus1Code import ReportingRecordStatus1Code
 
 class NumberOfRecordsPerStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_DtldSts", "_DtldNbOfRcrds"]
+	__slots__ = ["_DtldNbOfRcrds", "_DtldSts"]
 	@property
 	def DtldNbOfRcrds(self):
 		return self._DtldNbOfRcrds

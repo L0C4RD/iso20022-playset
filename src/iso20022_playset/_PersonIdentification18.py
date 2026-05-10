@@ -4,7 +4,7 @@ from ._GenericPersonIdentification2 import GenericPersonIdentification2
 
 class PersonIdentification18(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_DtAndPlcOfBirth"]
+	__slots__ = ["_DtAndPlcOfBirth", "_Othr"]
 	@property
 	def DtAndPlcOfBirth(self):
 		return self._DtAndPlcOfBirth

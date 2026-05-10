@@ -1,7 +1,7 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._ISODateTime import ISODateTime
 from ._Max256Text import Max256Text
+from ._PercentageRate import PercentageRate
 
 class ATMExchangeRateComponent1(base_types._BaseFieldType):
 

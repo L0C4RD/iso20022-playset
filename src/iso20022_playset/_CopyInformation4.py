@@ -1,6 +1,6 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._AnyBICIdentifier import AnyBICIdentifier
+from ._YesNoIndicator import YesNoIndicator
 
 class CopyInformation4(base_types._BaseFieldType):
 

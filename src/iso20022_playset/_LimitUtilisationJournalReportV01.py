@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._LimitJournalReportOrError7Choice import LimitJournalReportOrError7Choice
 from ._MessageHeader12 import MessageHeader12
 from ._Pagination1 import Pagination1
-from ._LimitJournalReportOrError7Choice import LimitJournalReportOrError7Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class LimitUtilisationJournalReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgHdr", "_RptOrErr", "_Pgntn"]
+	__slots__ = ["_MsgHdr", "_Pgntn", "_RptOrErr", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

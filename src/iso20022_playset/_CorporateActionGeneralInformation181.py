@@ -5,7 +5,7 @@ from ._SecurityIdentification19 import SecurityIdentification19
 
 class CorporateActionGeneralInformation181(base_types._BaseFieldType):
 
-	__slots__ = ["_OffclCorpActnEvtId", "_FinInstrmId", "_EvtTp", "_CorpActnEvtId"]
+	__slots__ = ["_CorpActnEvtId", "_EvtTp", "_FinInstrmId", "_OffclCorpActnEvtId"]
 	@property
 	def CorpActnEvtId(self):
 		return self._CorpActnEvtId

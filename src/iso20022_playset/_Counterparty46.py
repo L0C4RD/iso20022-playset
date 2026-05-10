@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._CounterpartyTradeNature15Choice import CounterpartyTradeNature15Choice
 from ._PartyIdentification248Choice import PartyIdentification248Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Counterparty46(base_types._BaseFieldType):
 
-	__slots__ = ["_Ntr", "_IdTp", "_RptgOblgtn"]
+	__slots__ = ["_IdTp", "_Ntr", "_RptgOblgtn"]
 	@property
 	def IdTp(self):
 		return self._IdTp

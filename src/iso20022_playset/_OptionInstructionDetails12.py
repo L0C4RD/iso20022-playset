@@ -1,17 +1,17 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
+from ._ISODate import ISODate
+from ._InstructionProcessingStatus57Choice import InstructionProcessingStatus57Choice
+from ._Max3NumericText import Max3NumericText
+from ._PriceFormat82Choice import PriceFormat82Choice
+from ._ProtectTransactionType2Code import ProtectTransactionType2Code
+from ._RestrictedFINMax15Text import RestrictedFINMax15Text
 from ._RestrictedFINMax50Text import RestrictedFINMax50Text
 from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
-from ._RestrictedFINMax15Text import RestrictedFINMax15Text
-from ._InstructionProcessingStatus57Choice import InstructionProcessingStatus57Choice
-from ._PriceFormat82Choice import PriceFormat82Choice
-from ._Max3NumericText import Max3NumericText
-from ._ProtectTransactionType2Code import ProtectTransactionType2Code
 
 class OptionInstructionDetails12(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctDt", "_InstrDt", "_BidPric", "_InstrSts", "_InstrQty", "_InstrId", "_CstmrRef", "_CondlQty", "_InstrSeqNb", "_CoverPrtctDt", "_PrtctInd", "_InstrNrrtv"]
+	__slots__ = ["_BidPric", "_CondlQty", "_CoverPrtctDt", "_CstmrRef", "_InstrDt", "_InstrId", "_InstrNrrtv", "_InstrQty", "_InstrSeqNb", "_InstrSts", "_PrtctDt", "_PrtctInd"]
 	@property
 	def BidPric(self):
 		return self._BidPric

@@ -5,7 +5,7 @@ from ._StressedProduct1 import StressedProduct1
 
 class StressItem1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Strtgy", "_RskFctr", "_Pdct"]
+	__slots__ = ["_Pdct", "_RskFctr", "_Strtgy"]
 	@property
 	def Pdct(self):
 		return self._Pdct

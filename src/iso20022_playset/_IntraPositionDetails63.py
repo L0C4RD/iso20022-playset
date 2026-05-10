@@ -1,7 +1,7 @@
 from . import base_types
 from ._IntraPositionMovementDetails20 import IntraPositionMovementDetails20
-from ._SecuritiesBalanceType8Choice import SecuritiesBalanceType8Choice
 from ._SafekeepingPlaceFormat39Choice import SafekeepingPlaceFormat39Choice
+from ._SecuritiesBalanceType8Choice import SecuritiesBalanceType8Choice
 
 class IntraPositionDetails63(base_types._BaseFieldType):
 

@@ -1,15 +1,15 @@
 from . import base_types
-from ._Max1Number import Max1Number
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._CountryCodeAndName3 import CountryCodeAndName3
-from ._Period4Choice import Period4Choice
 from ._CurrencyCodeAndName1 import CurrencyCodeAndName1
+from ._ISODate import ISODate
+from ._Max1Number import Max1Number
 from ._Modification1Code import Modification1Code
+from ._Period4Choice import Period4Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_CtryDtls", "_FrctnlDgt", "_VldtyPrd", "_LastUpdtd", "_Mod", "_Ccy", "_PreEuro"]
+	__slots__ = ["_Ccy", "_CtryDtls", "_FrctnlDgt", "_LastUpdtd", "_Mod", "_PreEuro", "_VldtyPrd"]
 	@property
 	def Ccy(self):
 		return self._Ccy

@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._Max35Text import Max35Text
 
 class GenericIdentification40(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_SchmeNm", "_Issr"]
+	__slots__ = ["_Id", "_Issr", "_SchmeNm"]
 	@property
 	def Id(self):
 		return self._Id

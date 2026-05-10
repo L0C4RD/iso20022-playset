@@ -1,16 +1,16 @@
 from . import base_types
+from ._CreditDebit3Code import CreditDebit3Code
+from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
 from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max99Text import Max99Text
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max256Text import Max256Text
 from ._Max70Text import Max70Text
-from ._CreditDebit3Code import CreditDebit3Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._Max99Text import Max99Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class AccountStatementDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_PstngDt", "_LngDesc", "_TxDt", "_CdtDbt", "_ShrtDesc", "_AccptrNmAndLctn", "_CrdhldrBllgCcy", "_Pdg", "_Ccy", "_CrdhldrBllgAmt"]
+	__slots__ = ["_AccptrNmAndLctn", "_Amt", "_Ccy", "_CdtDbt", "_CrdhldrBllgAmt", "_CrdhldrBllgCcy", "_LngDesc", "_Pdg", "_PstngDt", "_ShrtDesc", "_TxDt"]
 	@property
 	def AccptrNmAndLctn(self):
 		return self._AccptrNmAndLctn

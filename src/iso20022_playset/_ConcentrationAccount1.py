@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max10NumericText import Max10NumericText
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._AmountAndDirection102 import AmountAndDirection102
 from ._Flows1 import Flows1
+from ._Max10NumericText import Max10NumericText
 
 class ConcentrationAccount1(base_types._BaseFieldType):
 
-	__slots__ = ["_EndOfDay", "_PeakDbt", "_OutFlow", "_InFlow", "_LatePmtConf", "_PeakCdt"]
+	__slots__ = ["_EndOfDay", "_InFlow", "_LatePmtConf", "_OutFlow", "_PeakCdt", "_PeakDbt"]
 	@property
 	def EndOfDay(self):
 		return self._EndOfDay

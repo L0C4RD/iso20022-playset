@@ -5,7 +5,7 @@ from ._BaseOneRate import BaseOneRate
 
 class ForeignExchangeTerms9(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgRate", "_RsltgAmt", "_UnitCcy", "_QtdCcy", "_OrgnlAmt"]
+	__slots__ = ["_OrgnlAmt", "_QtdCcy", "_RsltgAmt", "_UnitCcy", "_XchgRate"]
 	@property
 	def OrgnlAmt(self):
 		return self._OrgnlAmt

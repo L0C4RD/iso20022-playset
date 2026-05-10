@@ -1,15 +1,15 @@
 from . import base_types
-from ._Max10NumericText import Max10NumericText
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._Address2 import Address2
 from ._CardholderName3 import CardholderName3
-from ._Max35Text import Max35Text
+from ._ISODate import ISODate
 from ._LoyaltyValueType1Code import LoyaltyValueType1Code
+from ._Max10NumericText import Max10NumericText
+from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class LoyaltyProgramme5(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_MmbId", "_MmbSts", "_OthrValTp", "_MmbNm", "_Elgblty", "_XprtnDt", "_ValToCdt", "_ValTp", "_MmbAdr", "_Bal", "_Issr", "_ValToDbt"]
+	__slots__ = ["_Bal", "_Elgblty", "_Issr", "_MmbAdr", "_MmbId", "_MmbNm", "_MmbSts", "_OthrValTp", "_Val", "_ValToCdt", "_ValToDbt", "_ValTp", "_XprtnDt"]
 	@property
 	def Bal(self):
 		return self._Bal

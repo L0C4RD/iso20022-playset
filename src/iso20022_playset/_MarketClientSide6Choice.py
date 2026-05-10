@@ -1,6 +1,6 @@
 from . import base_types
-from ._MarketClientSide1Code import MarketClientSide1Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._MarketClientSide1Code import MarketClientSide1Code
 
 class MarketClientSide6Choice(base_types._BaseFieldType):
 

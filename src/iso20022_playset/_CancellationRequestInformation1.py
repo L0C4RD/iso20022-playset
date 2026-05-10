@@ -1,15 +1,15 @@
 from . import base_types
-from ._FinancialInstitutionIdentification6 import FinancialInstitutionIdentification6
-from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._PartyIdentificationAndAccount6 import PartyIdentificationAndAccount6
+from ._FinancialInstitutionIdentification6 import FinancialInstitutionIdentification6
 from ._ISODateTime import ISODateTime
 from ._Max105Text import Max105Text
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
+from ._PartyIdentificationAndAccount6 import PartyIdentificationAndAccount6
 
 class CancellationRequestInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_OrgnlCreDtTm", "_TtlBlkInvcAmt", "_IntrmyAgt", "_FrstAgt", "_FincgRqstr", "_NbOfInvcReqs", "_OrgnlGrpId"]
+	__slots__ = ["_CxlRsn", "_FincgRqstr", "_FrstAgt", "_IntrmyAgt", "_NbOfInvcReqs", "_OrgnlCreDtTm", "_OrgnlGrpId", "_TtlBlkInvcAmt"]
 	@property
 	def CxlRsn(self):
 		return self._CxlRsn

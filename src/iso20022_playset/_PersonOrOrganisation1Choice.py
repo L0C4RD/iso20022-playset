@@ -1,12 +1,12 @@
 from . import base_types
 from ._InternalPartyRole1Code import InternalPartyRole1Code
 from ._LEIIdentifier import LEIIdentifier
-from ._PersonIdentification10 import PersonIdentification10
 from ._MICIdentifier import MICIdentifier
+from ._PersonIdentification10 import PersonIdentification10
 
 class PersonOrOrganisation1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prsn", "_MIC", "_Intl", "_LEI"]
+	__slots__ = ["_Intl", "_LEI", "_MIC", "_Prsn"]
 	@property
 	def Intl(self):
 		return self._Intl

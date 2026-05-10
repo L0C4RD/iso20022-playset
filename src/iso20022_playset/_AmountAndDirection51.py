@@ -1,11 +1,11 @@
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CreditDebitCode import CreditDebitCode
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._CreditDebitCode import CreditDebitCode
 
 class AmountAndDirection51(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlCcyAndOrdrdAmt", "_CdtDbtInd", "_Amt"]
+	__slots__ = ["_Amt", "_CdtDbtInd", "_OrgnlCcyAndOrdrdAmt"]
 	@property
 	def Amt(self):
 		return self._Amt

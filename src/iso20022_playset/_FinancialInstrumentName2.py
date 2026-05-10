@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class FinancialInstrumentName2(base_types._BaseFieldType):
 
-	__slots__ = ["_VldFr", "_ISOLngNm", "_ISOShrtNm"]
+	__slots__ = ["_ISOLngNm", "_ISOShrtNm", "_VldFr"]
 	@property
 	def ISOLngNm(self):
 		return self._ISOLngNm

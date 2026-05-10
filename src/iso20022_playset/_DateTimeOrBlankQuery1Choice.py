@@ -1,6 +1,6 @@
 from . import base_types
-from ._NotReported1Code import NotReported1Code
 from ._DateTimePeriod1 import DateTimePeriod1
+from ._NotReported1Code import NotReported1Code
 
 class DateTimeOrBlankQuery1Choice(base_types._BaseFieldType):
 

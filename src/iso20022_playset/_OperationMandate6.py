@@ -1,16 +1,16 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
-from ._YesNoIndicator import YesNoIndicator
-from ._Modification1Code import Modification1Code
-from ._Max15PlusSignedNumericText import Max15PlusSignedNumericText
-from ._PartyAndAuthorisation6 import PartyAndAuthorisation6
 from ._Channel2Choice import Channel2Choice
+from ._ISODate import ISODate
+from ._Max15PlusSignedNumericText import Max15PlusSignedNumericText
 from ._Max35Text import Max35Text
+from ._Modification1Code import Modification1Code
+from ._PartyAndAuthorisation6 import PartyAndAuthorisation6
+from ._YesNoIndicator import YesNoIndicator
 
 class OperationMandate6(base_types._BaseFieldType):
 
-	__slots__ = ["_MndtHldr", "_BkOpr", "_ReqrdSgntrNb", "_Id", "_ModCd", "_StartDt", "_EndDt", "_AplblChanl", "_SgntrOrdrInd"]
+	__slots__ = ["_AplblChanl", "_BkOpr", "_EndDt", "_Id", "_MndtHldr", "_ModCd", "_ReqrdSgntrNb", "_SgntrOrdrInd", "_StartDt"]
 	@property
 	def AplblChanl(self):
 		return self._AplblChanl

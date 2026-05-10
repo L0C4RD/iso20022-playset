@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._CardDataReading5Code import CardDataReading5Code
-from ._PlainCardData17 import PlainCardData17
-from ._Vehicle2 import Vehicle2
 from ._DecimalNumber import DecimalNumber
-from ._Max35Text import Max35Text
 from ._Max35NumericText import Max35NumericText
+from ._Max35Text import Max35Text
+from ._PlainCardData17 import PlainCardData17
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Vehicle2 import Vehicle2
 
 class Vehicle1(base_types._BaseFieldType):
 
-	__slots__ = ["_RplcmntCar", "_UnitNb", "_Odmtr", "_VhclTag", "_Hbmtr", "_TrlrHrs", "_MntncId", "_VhclNb", "_AddtlVhclData", "_RefrHrs", "_VhclTagNtryMd", "_TrlrNb", "_DrvrOrVhclCard"]
+	__slots__ = ["_AddtlVhclData", "_DrvrOrVhclCard", "_Hbmtr", "_MntncId", "_Odmtr", "_RefrHrs", "_RplcmntCar", "_TrlrHrs", "_TrlrNb", "_UnitNb", "_VhclNb", "_VhclTag", "_VhclTagNtryMd"]
 	@property
 	def AddtlVhclData(self):
 		return self._AddtlVhclData

@@ -3,7 +3,7 @@ from ._MarginReportData9 import MarginReportData9
 
 class TradeReport34Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_New", "_Crrctn", "_MrgnUpd", "_Err"]
+	__slots__ = ["_Crrctn", "_Err", "_MrgnUpd", "_New"]
 	@property
 	def Crrctn(self):
 		return self._Crrctn

@@ -4,7 +4,7 @@ from ._Max2000Text import Max2000Text
 
 class BankInstructions1(base_types._BaseFieldType):
 
-	__slots__ = ["_Txt", "_LastDtForRspn"]
+	__slots__ = ["_LastDtForRspn", "_Txt"]
 	@property
 	def LastDtForRspn(self):
 		return self._LastDtForRspn

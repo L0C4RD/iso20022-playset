@@ -1,13 +1,13 @@
 from . import base_types
-from ._TR34Status1Code import TR34Status1Code
 from ._ATMEquipment2 import ATMEquipment2
-from ._ATMStatus2Code import ATMStatus2Code
 from ._ATMSecurityConfiguration1 import ATMSecurityConfiguration1
+from ._ATMStatus2Code import ATMStatus2Code
 from ._FailureReason5Code import FailureReason5Code
+from ._TR34Status1Code import TR34Status1Code
 
 class ATMSecurityDevice2(base_types._BaseFieldType):
 
-	__slots__ = ["_CurCfgtn", "_BndgStat", "_CurSts", "_SpprtdCfgtn", "_DvcPrprty", "_Incdnt"]
+	__slots__ = ["_BndgStat", "_CurCfgtn", "_CurSts", "_DvcPrprty", "_Incdnt", "_SpprtdCfgtn"]
 	@property
 	def BndgStat(self):
 		return self._BndgStat

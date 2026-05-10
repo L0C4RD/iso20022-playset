@@ -1,13 +1,13 @@
 from . import base_types
+from ._BICIdentification1 import BICIdentification1
 from ._DataSetType2Code import DataSetType2Code
 from ._Max35Text import Max35Text
 from ._Max3NumericText import Max3NumericText
-from ._BICIdentification1 import BICIdentification1
 from ._Number import Number
 
 class DocumentIdentification10(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Submitr", "_Vrsn", "_DocIndx", "_Id"]
+	__slots__ = ["_DocIndx", "_Id", "_Submitr", "_Tp", "_Vrsn"]
 	@property
 	def DocIndx(self):
 		return self._DocIndx

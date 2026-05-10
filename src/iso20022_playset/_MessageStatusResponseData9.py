@@ -1,17 +1,17 @@
 from . import base_types
-from ._ReversalResponse9 import ReversalResponse9
 from ._CardAcquisitionResponse3 import CardAcquisitionResponse3
-from ._GenericIdentification177 import GenericIdentification177
-from ._ResponseType11 import ResponseType11
-from ._StoredValueResponse8 import StoredValueResponse8
-from ._Max35Text import Max35Text
-from ._LoyaltyResponse3 import LoyaltyResponse3
 from ._DeviceSendApplicationProtocolDataUnitCardReaderResponse1 import DeviceSendApplicationProtocolDataUnitCardReaderResponse1
+from ._GenericIdentification177 import GenericIdentification177
+from ._LoyaltyResponse3 import LoyaltyResponse3
+from ._Max35Text import Max35Text
 from ._PaymentResponse7 import PaymentResponse7
+from ._ResponseType11 import ResponseType11
+from ._ReversalResponse9 import ReversalResponse9
+from ._StoredValueResponse8 import StoredValueResponse8
 
 class MessageStatusResponseData9(base_types._BaseFieldType):
 
-	__slots__ = ["_RpeatdRvslRspn", "_RpeatdLltyRspn", "_RpeatdSndApplPrtcolDataUnitCardRdrRspn", "_TxRspn", "_RpeatdCardAcqstnRspn", "_RpeatdPmtRspn", "_RpeatdStordValRspn", "_InitgPty", "_XchgId"]
+	__slots__ = ["_InitgPty", "_RpeatdCardAcqstnRspn", "_RpeatdLltyRspn", "_RpeatdPmtRspn", "_RpeatdRvslRspn", "_RpeatdSndApplPrtcolDataUnitCardRdrRspn", "_RpeatdStordValRspn", "_TxRspn", "_XchgId"]
 	@property
 	def InitgPty(self):
 		return self._InitgPty

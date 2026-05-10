@@ -1,11 +1,11 @@
 from . import base_types
-from ._Status11Code import Status11Code
 from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
+from ._Status11Code import Status11Code
 
 class InstructionProcessingStatus6(base_types._BaseFieldType):
 
-	__slots__ = ["_AttndncCardNb", "_Sts", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_AttndncCardNb", "_Sts"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

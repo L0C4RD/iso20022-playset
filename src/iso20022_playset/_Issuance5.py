@@ -1,19 +1,19 @@
 from . import base_types
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._CountryCode import CountryCode
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
 from ._Jurisdiction1 import Jurisdiction1
+from ._MICIdentifier import MICIdentifier
+from ._Number import Number
 from ._Organisation38 import Organisation38
 from ._PriceValue1 import PriceValue1
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Number import Number
-from ._MICIdentifier import MICIdentifier
-from ._CountryCode import CountryCode
 from ._SecuritiesTransactionType31Choice import SecuritiesTransactionType31Choice
-from ._ISODateTime import ISODateTime
 
 class Issuance5(base_types._BaseFieldType):
 
-	__slots__ = ["_AnncmntDt", "_IssncDstrbtn", "_IsseNmnlAmt", "_IsseSz", "_ISINVldFr", "_IsseDt", "_IssePric", "_FullIssdAmt", "_IssePlc", "_IssrOrg", "_GovngLaw", "_CtryOfIsse"]
+	__slots__ = ["_AnncmntDt", "_CtryOfIsse", "_FullIssdAmt", "_GovngLaw", "_ISINVldFr", "_IsseDt", "_IsseNmnlAmt", "_IssePlc", "_IssePric", "_IsseSz", "_IssncDstrbtn", "_IssrOrg"]
 	@property
 	def AnncmntDt(self):
 		return self._AnncmntDt

@@ -4,7 +4,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class PersonType2(base_types._BaseFieldType):
 
-	__slots__ = ["_EmailAdr", "_Othr", "_DtAndPlcOfBirth"]
+	__slots__ = ["_DtAndPlcOfBirth", "_EmailAdr", "_Othr"]
 	@property
 	def DtAndPlcOfBirth(self):
 		return self._DtAndPlcOfBirth

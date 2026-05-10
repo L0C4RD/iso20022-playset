@@ -1,11 +1,11 @@
 from . import base_types
-from ._Security55 import Security55
-from ._CollateralFlag13Choice import CollateralFlag13Choice
 from ._Collateral52 import Collateral52
+from ._CollateralFlag13Choice import CollateralFlag13Choice
+from ._Security55 import Security55
 
 class TransactionCollateralData18Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesLndg", "_MrgnLndg", "_RpTrad", "_BuySellBck"]
+	__slots__ = ["_BuySellBck", "_MrgnLndg", "_RpTrad", "_SctiesLndg"]
 	@property
 	def BuySellBck(self):
 		return self._BuySellBck

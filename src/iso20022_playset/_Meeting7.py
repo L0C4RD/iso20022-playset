@@ -1,14 +1,14 @@
 from . import base_types
-from ._Max2048Text import Max2048Text
+from ._DateFormat58Choice import DateFormat58Choice
 from ._LocationFormat1Choice import LocationFormat1Choice
-from ._YesNoIndicator import YesNoIndicator
+from ._Max2048Text import Max2048Text
 from ._MeetingDateStatus2Code import MeetingDateStatus2Code
 from ._QuorumQuantity2Choice import QuorumQuantity2Choice
-from ._DateFormat58Choice import DateFormat58Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class Meeting7(base_types._BaseFieldType):
 
-	__slots__ = ["_DtSts", "_Lctn", "_QrmReqrd", "_URLAdr", "_DtAndTm", "_QrmQty"]
+	__slots__ = ["_DtAndTm", "_DtSts", "_Lctn", "_QrmQty", "_QrmReqrd", "_URLAdr"]
 	@property
 	def DtAndTm(self):
 		return self._DtAndTm

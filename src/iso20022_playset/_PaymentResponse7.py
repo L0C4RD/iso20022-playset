@@ -1,15 +1,15 @@
 from . import base_types
-from ._RetailerPaymentResult7 import RetailerPaymentResult7
-from ._Max35Text import Max35Text
 from ._CustomerOrder1 import CustomerOrder1
 from ._LoyaltyResult3 import LoyaltyResult3
-from ._PaymentReceipt6 import PaymentReceipt6
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._PaymentReceipt6 import PaymentReceipt6
+from ._RetailerPaymentResult7 import RetailerPaymentResult7
 from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class PaymentResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtRct", "_RtlrPmtRslt", "_SaleRefId", "_POITxId", "_CstmrOrdr", "_POIRcncltnId", "_LltyRslt", "_SaleTxId", "_IssrRefData"]
+	__slots__ = ["_CstmrOrdr", "_IssrRefData", "_LltyRslt", "_POIRcncltnId", "_POITxId", "_PmtRct", "_RtlrPmtRslt", "_SaleRefId", "_SaleTxId"]
 	@property
 	def CstmrOrdr(self):
 		return self._CstmrOrdr

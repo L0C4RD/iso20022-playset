@@ -1,12 +1,12 @@
 from . import base_types
-from ._ContentInformationType10 import ContentInformationType10
-from ._Header32 import Header32
-from ._ContentInformationType15 import ContentInformationType15
 from ._ATMExceptionAcknowledgement2 import ATMExceptionAcknowledgement2
+from ._ContentInformationType10 import ContentInformationType10
+from ._ContentInformationType15 import ContentInformationType15
+from ._Header32 import Header32
 
 class ATMExceptionAcknowledgementV02(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMXcptnAck", "_ATMXcptnAck", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_ATMXcptnAck", "_Hdr", "_PrtctdATMXcptnAck", "_SctyTrlr"]
 	@property
 	def ATMXcptnAck(self):
 		return self._ATMXcptnAck

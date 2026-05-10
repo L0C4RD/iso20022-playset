@@ -1,18 +1,18 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._MarketDetail2 import MarketDetail2
-from ._MICIdentifier import MICIdentifier
+from ._EquityInstrumentReportingClassification1Code import EquityInstrumentReportingClassification1Code
 from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._Period4Choice import Period4Choice
-from ._Max35Text import Max35Text
+from ._MICIdentifier import MICIdentifier
+from ._MarketDetail2 import MarketDetail2
 from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._Period4Choice import Period4Choice
 from ._StatisticsTransparency3 import StatisticsTransparency3
 from ._TransparencyMethodology2Code import TransparencyMethodology2Code
-from ._EquityInstrumentReportingClassification1Code import EquityInstrumentReportingClassification1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TransparencyDataReport17(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmClssfctn", "_RptgPrd", "_FullNm", "_Mthdlgy", "_RlvntMkt", "_Lqdty", "_TechRcrdId", "_TradgVn", "_Id", "_Sttstcs"]
+	__slots__ = ["_FinInstrmClssfctn", "_FullNm", "_Id", "_Lqdty", "_Mthdlgy", "_RlvntMkt", "_RptgPrd", "_Sttstcs", "_TechRcrdId", "_TradgVn"]
 	@property
 	def FinInstrmClssfctn(self):
 		return self._FinInstrmClssfctn

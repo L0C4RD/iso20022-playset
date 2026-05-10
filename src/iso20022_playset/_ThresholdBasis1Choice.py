@@ -1,6 +1,6 @@
 from . import base_types
-from ._ThresholdBasis1Code import ThresholdBasis1Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._ThresholdBasis1Code import ThresholdBasis1Code
 
 class ThresholdBasis1Choice(base_types._BaseFieldType):
 

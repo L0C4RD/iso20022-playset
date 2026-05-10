@@ -1,11 +1,11 @@
 from . import base_types
 from ._Max2048Text import Max2048Text
-from ._PhoneNumber import PhoneNumber
 from ._Max35Text import Max35Text
+from ._PhoneNumber import PhoneNumber
 
 class CommunicationAddress7(base_types._BaseFieldType):
 
-	__slots__ = ["_Email", "_MobNb", "_FaxNb", "_URLAdr", "_TlxAdr", "_PhneNb"]
+	__slots__ = ["_Email", "_FaxNb", "_MobNb", "_PhneNb", "_TlxAdr", "_URLAdr"]
 	@property
 	def Email(self):
 		return self._Email

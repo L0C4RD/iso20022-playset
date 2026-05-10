@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISO8583AccountTypeCode import ISO8583AccountTypeCode
 from ._Balance29 import Balance29
+from ._ISO8583AccountTypeCode import ISO8583AccountTypeCode
 
 class AccountBalance3(base_types._BaseFieldType):
 
-	__slots__ = ["_Bal", "_AcctTp"]
+	__slots__ = ["_AcctTp", "_Bal"]
 	@property
 	def AcctTp(self):
 		return self._AcctTp

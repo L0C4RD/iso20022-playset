@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._ReportParameters7 import ReportParameters7
 from ._NetPosition4 import NetPosition4
 from ._Pagination1 import Pagination1
 from ._PartyIdentification253Choice import PartyIdentification253Choice
+from ._ReportParameters7 import ReportParameters7
+from ._SupplementaryData1 import SupplementaryData1
 
 class NetPositionV04(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrMmb", "_ClrSgmt", "_NetPosRpt", "_RptParams", "_SplmtryData", "_Pgntn"]
+	__slots__ = ["_ClrMmb", "_ClrSgmt", "_NetPosRpt", "_Pgntn", "_RptParams", "_SplmtryData"]
 	@property
 	def ClrMmb(self):
 		return self._ClrMmb

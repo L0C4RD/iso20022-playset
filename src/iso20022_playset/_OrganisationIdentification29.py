@@ -1,7 +1,7 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._GenericOrganisationIdentification1 import GenericOrganisationIdentification1
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._GenericOrganisationIdentification1 import GenericOrganisationIdentification1
+from ._LEIIdentifier import LEIIdentifier
 
 class OrganisationIdentification29(base_types._BaseFieldType):
 

@@ -1,10 +1,10 @@
 from . import base_types
-from ._Percentage14Rate import Percentage14Rate
 from ._Max35Text import Max35Text
+from ._Percentage14Rate import Percentage14Rate
 
 class AdditionalRightThreshold2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlRghtThrshldPctg", "_AddtlRghtThrshld"]
+	__slots__ = ["_AddtlRghtThrshld", "_AddtlRghtThrshldPctg"]
 	@property
 	def AddtlRghtThrshld(self):
 		return self._AddtlRghtThrshld

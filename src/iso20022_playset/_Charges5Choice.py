@@ -5,7 +5,7 @@ from ._ChargesRecord11 import ChargesRecord11
 
 class Charges5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Sngl", "_PerTx", "_PerTp"]
+	__slots__ = ["_PerTp", "_PerTx", "_Sngl"]
 	@property
 	def PerTp(self):
 		return self._PerTp

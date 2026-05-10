@@ -1,14 +1,14 @@
 from . import base_types
-from ._RetailerMessage1Code import RetailerMessage1Code
+from ._GenericIdentification177 import GenericIdentification177
+from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
 from ._Max6Text import Max6Text
+from ._RetailerMessage1Code import RetailerMessage1Code
 from ._Traceability8 import Traceability8
-from ._ISODateTime import ISODateTime
-from ._GenericIdentification177 import GenericIdentification177
 
 class Header41(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgId", "_PrtcolVrsn", "_MsgFctn", "_Tracblt", "_InitgPty", "_RcptPty", "_CreDtTm"]
+	__slots__ = ["_CreDtTm", "_InitgPty", "_MsgFctn", "_PrtcolVrsn", "_RcptPty", "_Tracblt", "_XchgId"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

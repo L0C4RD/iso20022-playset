@@ -1,18 +1,18 @@
 from . import base_types
-from ._MaintenanceIdentificationAssociation1 import MaintenanceIdentificationAssociation1
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._AcceptorConfigurationDataSet6 import AcceptorConfigurationDataSet6
 from ._DataSetCategory19Code import DataSetCategory19Code
 from ._KEKIdentifier5 import KEKIdentifier5
 from ._MaintenanceDelegateAction10 import MaintenanceDelegateAction10
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
-from ._Max35Text import Max35Text
+from ._MaintenanceIdentificationAssociation1 import MaintenanceIdentificationAssociation1
 from ._Max10KBinary import Max10KBinary
 from ._Max3000Binary import Max3000Binary
+from ._Max35Text import Max35Text
+from ._TerminalManagementAction3Code import TerminalManagementAction3Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class MaintenanceDelegation19(base_types._BaseFieldType):
 
-	__slots__ = ["_DlgtdActn", "_POIIdAssoctn", "_ParamDataSet", "_MntncSvc", "_DlgtnTp", "_Cert", "_DlgtnScpId", "_DlgtnScpDef", "_PrtlDlgtn", "_POISubset", "_SmmtrcKey"]
+	__slots__ = ["_Cert", "_DlgtdActn", "_DlgtnScpDef", "_DlgtnScpId", "_DlgtnTp", "_MntncSvc", "_POIIdAssoctn", "_POISubset", "_ParamDataSet", "_PrtlDlgtn", "_SmmtrcKey"]
 	@property
 	def Cert(self):
 		return self._Cert

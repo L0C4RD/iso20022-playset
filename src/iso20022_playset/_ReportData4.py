@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._Entry2Code import Entry2Code
-from ._Max35Text import Max35Text
-from ._ISODateTime import ISODateTime
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 
 class ReportData4(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_Tp", "_DtAndTmStmp", "_SttlmSsnIdr", "_MsgId", "_SchdlTp"]
+	__slots__ = ["_DtAndTmStmp", "_MsgId", "_SchdlTp", "_SttlmSsnIdr", "_Tp", "_ValDt"]
 	@property
 	def DtAndTmStmp(self):
 		return self._DtAndTmStmp

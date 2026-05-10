@@ -1,13 +1,13 @@
 from . import base_types
-from ._InsuranceClauses1Code import InsuranceClauses1Code
-from ._YesNoIndicator import YesNoIndicator
-from ._PartyIdentification27 import PartyIdentification27
 from ._AssuredType1Code import AssuredType1Code
 from ._BICIdentification1 import BICIdentification1
+from ._InsuranceClauses1Code import InsuranceClauses1Code
+from ._PartyIdentification27 import PartyIdentification27
+from ._YesNoIndicator import YesNoIndicator
 
 class RequiredSubmission3(base_types._BaseFieldType):
 
-	__slots__ = ["_MtchAmt", "_Submitr", "_MtchIsseDt", "_MtchTrnsprt", "_MtchAssrdPty", "_MtchIssr", "_ClausesReqrd"]
+	__slots__ = ["_ClausesReqrd", "_MtchAmt", "_MtchAssrdPty", "_MtchIsseDt", "_MtchIssr", "_MtchTrnsprt", "_Submitr"]
 	@property
 	def ClausesReqrd(self):
 		return self._ClausesReqrd

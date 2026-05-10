@@ -4,7 +4,7 @@ from ._QueryType2Code import QueryType2Code
 
 class MemberQueryDefinition4(base_types._BaseFieldType):
 
-	__slots__ = ["_QryTp", "_MmbCrit"]
+	__slots__ = ["_MmbCrit", "_QryTp"]
 	@property
 	def MmbCrit(self):
 		return self._MmbCrit

@@ -1,7 +1,7 @@
 from . import base_types
-from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._AgentRole1FormatChoice import AgentRole1FormatChoice
 from ._NameAndAddress5 import NameAndAddress5
+from ._PartyIdentification2Choice import PartyIdentification2Choice
 
 class CorporateActionAgent1(base_types._BaseFieldType):
 

@@ -1,11 +1,11 @@
 from . import base_types
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class MessageIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_FrstAgt", "_CreDtTm"]
+	__slots__ = ["_CreDtTm", "_FrstAgt", "_MsgId"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

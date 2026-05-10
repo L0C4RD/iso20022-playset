@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max52Text import Max52Text
 from ._InterestRateContractTerm4 import InterestRateContractTerm4
+from ._Max52Text import Max52Text
 
 class InterestRateFrequency3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Term", "_Prtry"]
+	__slots__ = ["_Prtry", "_Term"]
 	@property
 	def Prtry(self):
 		return self._Prtry

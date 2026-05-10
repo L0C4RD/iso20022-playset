@@ -1,16 +1,16 @@
 from . import base_types
-from ._Status28Choice import Status28Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._StatusAndSubStatus2 import StatusAndSubStatus2
-from ._Max20Text import Max20Text
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._Max35Text import Max35Text
-from ._StatusSubType2Code import StatusSubType2Code
 from ._ISODateTime import ISODateTime
+from ._Max20Text import Max20Text
+from ._Max35Text import Max35Text
+from ._Status28Choice import Status28Choice
+from ._StatusAndSubStatus2 import StatusAndSubStatus2
+from ._StatusSubType2Code import StatusSubType2Code
+from ._YesNoIndicator import YesNoIndicator
 
 class TradeData15(base_types._BaseFieldType):
 
-	__slots__ = ["_CurStsSubTp", "_PdctTp", "_MsgId", "_PrvsStsSubTp", "_SttlmSsnIdr", "_MtchgSysUnqRef", "_PrvsSts", "_PrvsStsDtTm", "_MtchgSysMtchgRef", "_MtchgSysMtchdSdRef", "_SpltTradInd", "_CurSts", "_CurStsDtTm", "_OrgtrRef", "_StsOrgtr"]
+	__slots__ = ["_CurSts", "_CurStsDtTm", "_CurStsSubTp", "_MsgId", "_MtchgSysMtchdSdRef", "_MtchgSysMtchgRef", "_MtchgSysUnqRef", "_OrgtrRef", "_PdctTp", "_PrvsSts", "_PrvsStsDtTm", "_PrvsStsSubTp", "_SpltTradInd", "_StsOrgtr", "_SttlmSsnIdr"]
 	@property
 	def CurSts(self):
 		return self._CurSts

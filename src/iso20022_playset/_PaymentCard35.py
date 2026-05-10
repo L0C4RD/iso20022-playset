@@ -1,19 +1,19 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max15NumericText import Max15NumericText
-from ._Max30Text import Max30Text
-from ._Max100KBinary import Max100KBinary
-from ._PlainCardData22 import PlainCardData22
-from ._Max3Text import Max3Text
-from ._Exact3AlphaNumericText import Exact3AlphaNumericText
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
 from ._CardProductType1Code import CardProductType1Code
 from ._ContentInformationType40 import ContentInformationType40
+from ._Exact3AlphaNumericText import Exact3AlphaNumericText
+from ._Max100KBinary import Max100KBinary
+from ._Max15NumericText import Max15NumericText
+from ._Max30Text import Max30Text
+from ._Max35Text import Max35Text
+from ._Max3Text import Max3Text
+from ._Max70Text import Max70Text
+from ._PlainCardData22 import PlainCardData22
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PaymentCard35(base_types._BaseFieldType):
 
-	__slots__ = ["_CardBrnd", "_SvcOptn", "_MskdPAN", "_PmtAcctRef", "_CardCcyCd", "_IntrnlCard", "_PrvtCardData", "_CardPdctTp", "_CardCtryCd", "_IssrBIN", "_PlainCardData", "_CardPdctSubTp", "_CardPdctPrfl", "_AllwdPdct", "_AddtlCardData", "_PrtctdCardData"]
+	__slots__ = ["_AddtlCardData", "_AllwdPdct", "_CardBrnd", "_CardCcyCd", "_CardCtryCd", "_CardPdctPrfl", "_CardPdctSubTp", "_CardPdctTp", "_IntrnlCard", "_IssrBIN", "_MskdPAN", "_PlainCardData", "_PmtAcctRef", "_PrtctdCardData", "_PrvtCardData", "_SvcOptn"]
 	@property
 	def AddtlCardData(self):
 		return self._AddtlCardData

@@ -4,7 +4,7 @@ from ._PostalAddress26 import PostalAddress26
 
 class PersonName1(base_types._BaseFieldType):
 
-	__slots__ = ["_Srnm", "_Adr", "_FrstNm"]
+	__slots__ = ["_Adr", "_FrstNm", "_Srnm"]
 	@property
 	def Adr(self):
 		return self._Adr

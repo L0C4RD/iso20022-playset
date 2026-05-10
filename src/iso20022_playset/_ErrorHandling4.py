@@ -4,7 +4,7 @@ from ._Max140Text import Max140Text
 
 class ErrorHandling4(base_types._BaseFieldType):
 
-	__slots__ = ["_Err", "_Desc"]
+	__slots__ = ["_Desc", "_Err"]
 	@property
 	def Desc(self):
 		return self._Desc

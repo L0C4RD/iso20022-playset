@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODateTime import ISODateTime
 from ._DataSetCategory20Code import DataSetCategory20Code
+from ._ISODateTime import ISODateTime
 from ._Max256Text import Max256Text
 
 class DataSetIdentification11(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_Tp", "_CreDtTm", "_Nm"]
+	__slots__ = ["_CreDtTm", "_Nm", "_Tp", "_Vrsn"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

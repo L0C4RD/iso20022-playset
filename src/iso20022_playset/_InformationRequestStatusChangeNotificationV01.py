@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._SupplementaryData1 import SupplementaryData1
 from ._YesNoIndicator import YesNoIndicator
-from ._Max35Text import Max35Text
 
 class InformationRequestStatusChangeNotificationV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_OrgnlBizQry", "_CnfdtltySts"]
+	__slots__ = ["_CnfdtltySts", "_OrgnlBizQry", "_SplmtryData"]
 	@property
 	def CnfdtltySts(self):
 		return self._CnfdtltySts

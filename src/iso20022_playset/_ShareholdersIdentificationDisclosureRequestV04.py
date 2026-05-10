@@ -1,20 +1,20 @@
 from . import base_types
-from ._DisclosureRequestType1Code import DisclosureRequestType1Code
-from ._PartyIdentification214 import PartyIdentification214
-from ._SupplementaryData1 import SupplementaryData1
-from ._DecimalNumber import DecimalNumber
-from ._YesNoIndicator import YesNoIndicator
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._DateFormat46Choice import DateFormat46Choice
-from ._PartyIdentification129Choice import PartyIdentification129Choice
 from ._CountryCode import CountryCode
-from ._RequestShareHeldDate1Choice import RequestShareHeldDate1Choice
-from ._Max35Text import Max35Text
+from ._DateFormat46Choice import DateFormat46Choice
+from ._DecimalNumber import DecimalNumber
+from ._DisclosureRequestType1Code import DisclosureRequestType1Code
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification129Choice import PartyIdentification129Choice
+from ._PartyIdentification214 import PartyIdentification214
+from ._RequestShareHeldDate1Choice import RequestShareHeldDate1Choice
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SupplementaryData1 import SupplementaryData1
+from ._YesNoIndicator import YesNoIndicator
 
 class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_DsclsrReqTp", "_FinInstrmId", "_ShrhldrsDsclsrRcrdDt", "_ShrhldrRghtsDrctvInd", "_IssrDsclsrDdln", "_FwdReqInd", "_AplblLaw", "_DsclsrRspnRcpt", "_Issr", "_PlcOfJursdctn", "_DsclsrRspnDdln", "_IssrDsclsrReqId", "_PrvsDsclsrReqId", "_RspnThrghChainInd", "_ShrsQtyThrshld", "_ReqShrHeldDt", "_SplmtryData"]
+	__slots__ = ["_AplblLaw", "_DsclsrReqTp", "_DsclsrRspnDdln", "_DsclsrRspnRcpt", "_FinInstrmId", "_FwdReqInd", "_Issr", "_IssrDsclsrDdln", "_IssrDsclsrReqId", "_PlcOfJursdctn", "_PrvsDsclsrReqId", "_ReqShrHeldDt", "_RspnThrghChainInd", "_ShrhldrRghtsDrctvInd", "_ShrhldrsDsclsrRcrdDt", "_ShrsQtyThrshld", "_SplmtryData"]
 	@property
 	def AplblLaw(self):
 		return self._AplblLaw

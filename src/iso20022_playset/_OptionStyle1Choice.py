@@ -1,10 +1,10 @@
 from . import base_types
-from ._OptionStyle1Code import OptionStyle1Code
 from ._GenericIdentification13 import GenericIdentification13
+from ._OptionStyle1Code import OptionStyle1Code
 
 class OptionStyle1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

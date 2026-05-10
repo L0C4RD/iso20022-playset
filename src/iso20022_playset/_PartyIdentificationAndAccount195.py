@@ -1,13 +1,13 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._PartyIdentification120Choice import PartyIdentification120Choice
-from ._Max35Text import Max35Text
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._LEIIdentifier import LEIIdentifier
+from ._Max35Text import Max35Text
+from ._PartyIdentification120Choice import PartyIdentification120Choice
+from ._SecuritiesAccount19 import SecuritiesAccount19
 
 class PartyIdentificationAndAccount195(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_BlckChainAdrOrWllt", "_Id", "_SfkpgAcct", "_PrcgId"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_Id", "_LEI", "_PrcgId", "_SfkpgAcct"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt

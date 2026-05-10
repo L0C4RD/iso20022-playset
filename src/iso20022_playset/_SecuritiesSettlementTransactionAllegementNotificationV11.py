@@ -1,22 +1,22 @@
 from . import base_types
-from ._FinancialInstrumentAttributes111 import FinancialInstrumentAttributes111
 from ._AmountAndDirection88 import AmountAndDirection88
-from ._SupplementaryData1 import SupplementaryData1
-from ._SettlementDetails187 import SettlementDetails187
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SecuritiesTradeDetails144 import SecuritiesTradeDetails144
-from ._SecuritiesFinancingTransactionDetails55 import SecuritiesFinancingTransactionDetails55
-from ._QuantityAndAccount116 import QuantityAndAccount116
-from ._OtherParties34 import OtherParties34
 from ._CashParties42 import CashParties42
-from ._SettlementParties126 import SettlementParties126
-from ._SettlementTypeAndAdditionalParameters12 import SettlementTypeAndAdditionalParameters12
+from ._FinancialInstrumentAttributes111 import FinancialInstrumentAttributes111
 from ._Max35Text import Max35Text
 from ._OtherAmounts32 import OtherAmounts32
+from ._OtherParties34 import OtherParties34
+from ._QuantityAndAccount116 import QuantityAndAccount116
+from ._SecuritiesFinancingTransactionDetails55 import SecuritiesFinancingTransactionDetails55
+from ._SecuritiesTradeDetails144 import SecuritiesTradeDetails144
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SettlementDetails187 import SettlementDetails187
+from ._SettlementParties126 import SettlementParties126
+from ._SettlementTypeAndAdditionalParameters12 import SettlementTypeAndAdditionalParameters12
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesSettlementTransactionAllegementNotificationV11(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_QtyAndAcctDtls", "_CshPties", "_TxId", "_SttlmTpAndAddtlParams", "_CtrPtyMktInfrstrctrTxId", "_SctiesFincgDtls", "_SttlmAmt", "_TradDtls", "_OthrAmts", "_FinInstrmAttrbts", "_OthrBizPties", "_RcvgSttlmPties", "_DlvrgSttlmPties", "_MktInfrstrctrTxId", "_SttlmParams", "_SplmtryData"]
+	__slots__ = ["_CshPties", "_CtrPtyMktInfrstrctrTxId", "_DlvrgSttlmPties", "_FinInstrmAttrbts", "_FinInstrmId", "_MktInfrstrctrTxId", "_OthrAmts", "_OthrBizPties", "_QtyAndAcctDtls", "_RcvgSttlmPties", "_SctiesFincgDtls", "_SplmtryData", "_SttlmAmt", "_SttlmParams", "_SttlmTpAndAddtlParams", "_TradDtls", "_TxId"]
 	@property
 	def CshPties(self):
 		return self._CshPties

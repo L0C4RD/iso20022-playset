@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class ProprietaryBankTransactionCodeStructure1(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_Cd"]
+	__slots__ = ["_Cd", "_Issr"]
 	@property
 	def Cd(self):
 		return self._Cd

@@ -1,15 +1,15 @@
 from . import base_types
-from ._CopyInformation4 import CopyInformation4
 from ._AdditionalReference8 import AdditionalReference8
-from ._YesNoIndicator import YesNoIndicator
-from ._Max35Text import Max35Text
-from ._InvestmentFundOrder11 import InvestmentFundOrder11
-from ._MessageIdentification1 import MessageIdentification1
 from ._AdditionalReference9 import AdditionalReference9
+from ._CopyInformation4 import CopyInformation4
+from ._InvestmentFundOrder11 import InvestmentFundOrder11
+from ._Max35Text import Max35Text
+from ._MessageIdentification1 import MessageIdentification1
+from ._YesNoIndicator import YesNoIndicator
 
 class SubscriptionBulkOrderConfirmationCancellationInstructionV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_PoolRef", "_RltdRef", "_MstrRef", "_OrdrRefs", "_PrvsRef", "_CpyDtls", "_AmdmntInd"]
+	__slots__ = ["_AmdmntInd", "_CpyDtls", "_MsgId", "_MstrRef", "_OrdrRefs", "_PoolRef", "_PrvsRef", "_RltdRef"]
 	@property
 	def AmdmntInd(self):
 		return self._AmdmntInd

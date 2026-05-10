@@ -1,12 +1,12 @@
 from . import base_types
 from ._ATMKeyDownloadResponse5 import ATMKeyDownloadResponse5
 from ._ContentInformationType10 import ContentInformationType10
-from ._Header31 import Header31
 from ._ContentInformationType13 import ContentInformationType13
+from ._Header31 import Header31
 
 class ATMKeyDownloadResponseV04(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_Hdr", "_PrtctdATMKeyDwnldRspn", "_ATMKeyDwnldRspn"]
+	__slots__ = ["_ATMKeyDwnldRspn", "_Hdr", "_PrtctdATMKeyDwnldRspn", "_SctyTrlr"]
 	@property
 	def ATMKeyDwnldRspn(self):
 		return self._ATMKeyDwnldRspn

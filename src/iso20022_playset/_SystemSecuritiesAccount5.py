@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISODate import ISODate
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._ISODate import ISODate
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class SystemSecuritiesAccount5(base_types._BaseFieldType):
 
-	__slots__ = ["_NegPos", "_EndInvstrFlg", "_ClsgDt", "_HldInd", "_PricgSchme"]
+	__slots__ = ["_ClsgDt", "_EndInvstrFlg", "_HldInd", "_NegPos", "_PricgSchme"]
 	@property
 	def ClsgDt(self):
 		return self._ClsgDt

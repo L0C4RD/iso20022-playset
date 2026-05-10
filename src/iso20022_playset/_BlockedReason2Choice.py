@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification47 import GenericIdentification47
 from ._BlockedReason2Code import BlockedReason2Code
+from ._GenericIdentification47 import GenericIdentification47
 
 class BlockedReason2Choice(base_types._BaseFieldType):
 

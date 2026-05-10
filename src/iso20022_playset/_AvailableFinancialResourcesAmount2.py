@@ -4,7 +4,7 @@ from ._ReportingAssetBreakdown2 import ReportingAssetBreakdown2
 
 class AvailableFinancialResourcesAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlInitlMrgn", "_CCPSkinInTheGame", "_OthrDfltFndCntrbtn", "_UfnddMmbCmmtmnt", "_UfnddThrdPtyCmmtmnt", "_TtlPrfnddDfltFnd"]
+	__slots__ = ["_CCPSkinInTheGame", "_OthrDfltFndCntrbtn", "_TtlInitlMrgn", "_TtlPrfnddDfltFnd", "_UfnddMmbCmmtmnt", "_UfnddThrdPtyCmmtmnt"]
 	@property
 	def CCPSkinInTheGame(self):
 		return self._CCPSkinInTheGame

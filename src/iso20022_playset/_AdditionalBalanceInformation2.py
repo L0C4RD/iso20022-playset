@@ -1,11 +1,11 @@
 from . import base_types
-from ._SubBalanceQuantity1Choice import SubBalanceQuantity1Choice
-from ._SecuritiesBalanceType2Code import SecuritiesBalanceType2Code
 from ._Extended350Code import Extended350Code
+from ._SecuritiesBalanceType2Code import SecuritiesBalanceType2Code
+from ._SubBalanceQuantity1Choice import SubBalanceQuantity1Choice
 
 class AdditionalBalanceInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_XtndedSubBalTp", "_Qty", "_SubBalTp"]
+	__slots__ = ["_Qty", "_SubBalTp", "_XtndedSubBalTp"]
 	@property
 	def Qty(self):
 		return self._Qty

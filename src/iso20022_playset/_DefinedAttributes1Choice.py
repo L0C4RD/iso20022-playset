@@ -1,10 +1,10 @@
 from . import base_types
-from ._FinancialInstrumentAttributes90 import FinancialInstrumentAttributes90
 from ._FinancialInstrumentAttributes89 import FinancialInstrumentAttributes89
+from ._FinancialInstrumentAttributes90 import FinancialInstrumentAttributes90
 
 class DefinedAttributes1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDfndAttrbts", "_QtyDfndAttrbts"]
+	__slots__ = ["_QtyDfndAttrbts", "_ValDfndAttrbts"]
 	@property
 	def QtyDfndAttrbts(self):
 		return self._QtyDfndAttrbts

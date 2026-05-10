@@ -1,10 +1,10 @@
 from . import base_types
-from ._ChargeType4Choice import ChargeType4Choice
 from ._AmountOrRate3Choice import AmountOrRate3Choice
+from ._ChargeType4Choice import ChargeType4Choice
 
 class Charge26(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_ChrgApld"]
+	__slots__ = ["_ChrgApld", "_Tp"]
 	@property
 	def ChrgApld(self):
 		return self._ChrgApld

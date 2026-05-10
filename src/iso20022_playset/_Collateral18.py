@@ -5,7 +5,7 @@ from ._SpecialCollateral2Code import SpecialCollateral2Code
 
 class Collateral18(base_types._BaseFieldType):
 
-	__slots__ = ["_Hrcut", "_Valtn", "_SpclCollInd"]
+	__slots__ = ["_Hrcut", "_SpclCollInd", "_Valtn"]
 	@property
 	def Hrcut(self):
 		return self._Hrcut

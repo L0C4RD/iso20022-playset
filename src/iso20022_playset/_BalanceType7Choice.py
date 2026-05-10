@@ -1,11 +1,11 @@
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
-from ._FinancialAssetBalanceType1Code import FinancialAssetBalanceType1Code
 from ._AccountIdentification5 import AccountIdentification5
+from ._FinancialAssetBalanceType1Code import FinancialAssetBalanceType1Code
+from ._GenericIdentification30 import GenericIdentification30
 
 class BalanceType7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Acct", "_Prtry"]
+	__slots__ = ["_Acct", "_Cd", "_Prtry"]
 	@property
 	def Acct(self):
 		return self._Acct

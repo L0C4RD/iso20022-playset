@@ -1,16 +1,16 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CorporateActionGeneralInformation182 import CorporateActionGeneralInformation182
 from ._CorporateActionNarrative10 import CorporateActionNarrative10
 from ._CorporateActionOption239 import CorporateActionOption239
+from ._DocumentIdentification33 import DocumentIdentification33
 from ._DocumentIdentification9 import DocumentIdentification9
 from ._InstructionCancellationRequestStatus17Choice import InstructionCancellationRequestStatus17Choice
-from ._DocumentIdentification33 import DocumentIdentification33
 from ._ProtectInstruction4 import ProtectInstruction4
+from ._SupplementaryData1 import SupplementaryData1
 
 class CorporateActionInstructionCancellationRequestStatusAdviceV14(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnGnlInf", "_AddtlInf", "_InstrCxlReqSts", "_CorpActnInstr", "_InstrCxlReqId", "_OthrDocId", "_SplmtryData", "_PrtctInstr"]
+	__slots__ = ["_AddtlInf", "_CorpActnGnlInf", "_CorpActnInstr", "_InstrCxlReqId", "_InstrCxlReqSts", "_OthrDocId", "_PrtctInstr", "_SplmtryData"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

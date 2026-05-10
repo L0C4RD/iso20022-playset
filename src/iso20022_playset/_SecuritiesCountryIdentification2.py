@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISODate import ISODate
 from ._CountryCodeAndName3 import CountryCodeAndName3
-from ._Period4Choice import Period4Choice
+from ._ISODate import ISODate
 from ._Modification1Code import Modification1Code
+from ._Period4Choice import Period4Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class SecuritiesCountryIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_VldtyPrd", "_LastUpdtd", "_Mod", "_EEACtry"]
+	__slots__ = ["_Ctry", "_EEACtry", "_LastUpdtd", "_Mod", "_VldtyPrd"]
 	@property
 	def Ctry(self):
 		return self._Ctry

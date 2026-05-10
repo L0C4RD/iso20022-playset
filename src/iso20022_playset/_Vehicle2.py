@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class Vehicle2(base_types._BaseFieldType):
 
-	__slots__ = ["_NtryMd", "_Tp", "_Data"]
+	__slots__ = ["_Data", "_NtryMd", "_Tp"]
 	@property
 	def Data(self):
 		return self._Data

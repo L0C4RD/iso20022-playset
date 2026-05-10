@@ -1,11 +1,11 @@
 from . import base_types
-from ._UUIDv4Identifier import UUIDv4Identifier
 from ._Max35Text import Max35Text
 from ._OriginalGroupInformation29 import OriginalGroupInformation29
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class UnderlyingStatementEntry3(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlUETR", "_OrgnlGrpInf", "_OrgnlStmtId", "_OrgnlNtryId"]
+	__slots__ = ["_OrgnlGrpInf", "_OrgnlNtryId", "_OrgnlStmtId", "_OrgnlUETR"]
 	@property
 	def OrgnlGrpInf(self):
 		return self._OrgnlGrpInf

@@ -1,10 +1,10 @@
 from . import base_types
-from ._PersonIdentification5 import PersonIdentification5
 from ._OrganisationIdentification6 import OrganisationIdentification6
+from ._PersonIdentification5 import PersonIdentification5
 
 class Party8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvtId", "_OrgId"]
+	__slots__ = ["_OrgId", "_PrvtId"]
 	@property
 	def OrgId(self):
 		return self._OrgId

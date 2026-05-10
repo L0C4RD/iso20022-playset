@@ -1,13 +1,13 @@
 from . import base_types
-from ._NetworkParameters7 import NetworkParameters7
-from ._Min2Max3AlphaText import Min2Max3AlphaText
-from ._Max35Text import Max35Text
 from ._Geolocation1 import Geolocation1
+from ._Max35Text import Max35Text
+from ._Min2Max3AlphaText import Min2Max3AlphaText
+from ._NetworkParameters7 import NetworkParameters7
 from ._PartyType33Code import PartyType33Code
 
 class GenericIdentification177(base_types._BaseFieldType):
 
-	__slots__ = ["_Glctn", "_ShrtNm", "_Id", "_RmotAccs", "_Tp", "_Issr", "_Ctry"]
+	__slots__ = ["_Ctry", "_Glctn", "_Id", "_Issr", "_RmotAccs", "_ShrtNm", "_Tp"]
 	@property
 	def Ctry(self):
 		return self._Ctry

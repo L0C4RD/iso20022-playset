@@ -1,17 +1,17 @@
 from . import base_types
 from ._ClockSynchronisation3 import ClockSynchronisation3
 from ._LocalDateTime1 import LocalDateTime1
-from ._Max256Text import Max256Text
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
 from ._Max10000Binary import Max10000Binary
-from ._Max8Text import Max8Text
+from ._Max256Text import Max256Text
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
+from ._Max8Text import Max8Text
 from ._PositiveNumber import PositiveNumber
+from ._TerminalManagementAction3Code import TerminalManagementAction3Code
 
 class PaymentTerminalParameters8(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrParamsLngth", "_ParamFrmtIdr", "_OffsetStart", "_OffsetEnd", "_OthrParams", "_LclDtTm", "_ActnTp", "_ClckSynctn", "_VndrId", "_TmZoneLine", "_Vrsn"]
+	__slots__ = ["_ActnTp", "_ClckSynctn", "_LclDtTm", "_OffsetEnd", "_OffsetStart", "_OthrParams", "_OthrParamsLngth", "_ParamFrmtIdr", "_TmZoneLine", "_VndrId", "_Vrsn"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp

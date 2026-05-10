@@ -1,6 +1,6 @@
 from . import base_types
-from ._SystemStatus3Code import SystemStatus3Code
 from ._GenericIdentification1 import GenericIdentification1
+from ._SystemStatus3Code import SystemStatus3Code
 
 class SystemStatus3Choice(base_types._BaseFieldType):
 

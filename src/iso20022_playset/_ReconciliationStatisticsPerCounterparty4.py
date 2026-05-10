@@ -1,12 +1,12 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._ReportingRequirement3Choice import ReportingRequirement3Choice
-from ._ReconciliationCounterpartyPairStatistics7 import ReconciliationCounterpartyPairStatistics7
 from ._Number import Number
+from ._ReconciliationCounterpartyPairStatistics7 import ReconciliationCounterpartyPairStatistics7
+from ._ReportingRequirement3Choice import ReportingRequirement3Choice
 
 class ReconciliationStatisticsPerCounterparty4(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfTxs", "_TxDtls", "_RefDt", "_RcncltnCtgrs"]
+	__slots__ = ["_RcncltnCtgrs", "_RefDt", "_TtlNbOfTxs", "_TxDtls"]
 	@property
 	def RcncltnCtgrs(self):
 		return self._RcncltnCtgrs

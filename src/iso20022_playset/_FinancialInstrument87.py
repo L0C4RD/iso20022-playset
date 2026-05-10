@@ -1,21 +1,21 @@
 from . import base_types
-from ._FormOfSecurity1Code import FormOfSecurity1Code
-from ._OperationalStatus1Code import OperationalStatus1Code
-from ._DistributionPolicy1Code import DistributionPolicy1Code
-from ._SecurityIdentification25Choice import SecurityIdentification25Choice
-from ._FundIntention1Code import FundIntention1Code
-from ._Collateral1Code import Collateral1Code
 from ._BlockedHoldingDetails2 import BlockedHoldingDetails2
-from ._ThirdPartyRights2 import ThirdPartyRights2
-from ._FundOwnership1Code import FundOwnership1Code
-from ._Max35Text import Max35Text
-from ._Max350Text import Max350Text
-from ._Max140Text import Max140Text
+from ._Collateral1Code import Collateral1Code
+from ._DistributionPolicy1Code import DistributionPolicy1Code
 from ._Eligible1Code import Eligible1Code
+from ._FormOfSecurity1Code import FormOfSecurity1Code
+from ._FundIntention1Code import FundIntention1Code
+from ._FundOwnership1Code import FundOwnership1Code
+from ._Max140Text import Max140Text
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._OperationalStatus1Code import OperationalStatus1Code
+from ._SecurityIdentification25Choice import SecurityIdentification25Choice
+from ._ThirdPartyRights2 import ThirdPartyRights2
 
 class FinancialInstrument87(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesForm", "_BlckdHldgDtls", "_DstrbtnPlcy", "_ShrtNm", "_OprlSts", "_ClssTp", "_Nm", "_Coll", "_ThrdPtyRghts", "_FndIntntn", "_SplmtryId", "_Pldgg", "_PdctGrp", "_Id", "_FndOwnrsh"]
+	__slots__ = ["_BlckdHldgDtls", "_ClssTp", "_Coll", "_DstrbtnPlcy", "_FndIntntn", "_FndOwnrsh", "_Id", "_Nm", "_OprlSts", "_PdctGrp", "_Pldgg", "_SctiesForm", "_ShrtNm", "_SplmtryId", "_ThrdPtyRghts"]
 	@property
 	def BlckdHldgDtls(self):
 		return self._BlckdHldgDtls

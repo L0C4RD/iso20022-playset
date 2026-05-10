@@ -4,7 +4,7 @@ from ._TotalFilter1 import TotalFilter1
 
 class ReportGetTotalsRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlFltr", "_TtlDtls"]
+	__slots__ = ["_TtlDtls", "_TtlFltr"]
 	@property
 	def TtlDtls(self):
 		return self._TtlDtls

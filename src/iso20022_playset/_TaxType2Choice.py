@@ -1,6 +1,6 @@
 from . import base_types
-from ._TaxType9Code import TaxType9Code
 from ._Max35Text import Max35Text
+from ._TaxType9Code import TaxType9Code
 
 class TaxType2Choice(base_types._BaseFieldType):
 

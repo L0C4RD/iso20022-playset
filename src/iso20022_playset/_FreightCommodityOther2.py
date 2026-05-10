@@ -1,6 +1,6 @@
 from . import base_types
-from ._AssetClassSubProductType49Code import AssetClassSubProductType49Code
 from ._AssetClassProductType4Code import AssetClassProductType4Code
+from ._AssetClassSubProductType49Code import AssetClassSubProductType49Code
 
 class FreightCommodityOther2(base_types._BaseFieldType):
 

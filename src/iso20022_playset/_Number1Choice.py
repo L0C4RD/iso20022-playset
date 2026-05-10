@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max3NumericText import Max3NumericText
 from ._GenericIdentification7 import GenericIdentification7
+from ._Max3NumericText import Max3NumericText
 
 class Number1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_NbId"]
+	__slots__ = ["_NbId", "_Prtry"]
 	@property
 	def NbId(self):
 		return self._NbId

@@ -1,10 +1,10 @@
 from . import base_types
-from ._AssetClassSubProductType30Code import AssetClassSubProductType30Code
 from ._AssetClassProductType3Code import AssetClassProductType3Code
+from ._AssetClassSubProductType30Code import AssetClassSubProductType30Code
 
 class EnvironmentalCommodityWeather1(base_types._BaseFieldType):
 
-	__slots__ = ["_SubPdct", "_BasePdct"]
+	__slots__ = ["_BasePdct", "_SubPdct"]
 	@property
 	def BasePdct(self):
 		return self._BasePdct

@@ -1,14 +1,14 @@
 from . import base_types
-from ._SubAccountIdentification3 import SubAccountIdentification3
-from ._Statement6 import Statement6
 from ._AggregateBalanceInformation3 import AggregateBalanceInformation3
-from ._SafekeepingAccount2 import SafekeepingAccount2
-from ._TotalValueInPageAndStatement import TotalValueInPageAndStatement
 from ._Extension1 import Extension1
+from ._SafekeepingAccount2 import SafekeepingAccount2
+from ._Statement6 import Statement6
+from ._SubAccountIdentification3 import SubAccountIdentification3
+from ._TotalValueInPageAndStatement import TotalValueInPageAndStatement
 
 class AccountingStatementOfHoldings2(base_types._BaseFieldType):
 
-	__slots__ = ["_SubAcctDtls", "_Xtnsn", "_BalForAcct", "_StmtGnlDtls", "_AcctDtls", "_TtlVals"]
+	__slots__ = ["_AcctDtls", "_BalForAcct", "_StmtGnlDtls", "_SubAcctDtls", "_TtlVals", "_Xtnsn"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

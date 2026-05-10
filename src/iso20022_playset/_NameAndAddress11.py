@@ -4,7 +4,7 @@ from ._RestrictedFINMax35Text import RestrictedFINMax35Text
 
 class NameAndAddress11(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Adr"]
+	__slots__ = ["_Adr", "_Nm"]
 	@property
 	def Adr(self):
 		return self._Adr

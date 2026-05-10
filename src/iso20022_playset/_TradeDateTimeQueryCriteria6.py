@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._DateTimeOrBlankQuery1Choice import DateTimeOrBlankQuery1Choice
-from ._DateTimePeriod1 import DateTimePeriod1
 from ._DateOrBlankQuery2Choice import DateOrBlankQuery2Choice
 from ._DatePeriod1 import DatePeriod1
+from ._DateTimeOrBlankQuery1Choice import DateTimeOrBlankQuery1Choice
+from ._DateTimePeriod1 import DateTimePeriod1
+from ._ISODate import ISODate
 
 class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 
-	__slots__ = ["_FctvDt", "_ExctnDtTm", "_HstrclAsOfDt", "_EarlyTermntnDt", "_CollTmStmp", "_ValtnDtTm", "_MtrtyDt", "_XprtnDt", "_RptgDtTm"]
+	__slots__ = ["_CollTmStmp", "_EarlyTermntnDt", "_ExctnDtTm", "_FctvDt", "_HstrclAsOfDt", "_MtrtyDt", "_RptgDtTm", "_ValtnDtTm", "_XprtnDt"]
 	@property
 	def CollTmStmp(self):
 		return self._CollTmStmp

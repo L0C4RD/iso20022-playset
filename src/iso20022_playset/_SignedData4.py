@@ -1,13 +1,13 @@
 from . import base_types
-from ._Signer3 import Signer3
 from ._AlgorithmIdentification16 import AlgorithmIdentification16
 from ._EncapsulatedContent3 import EncapsulatedContent3
 from ._Max5000Binary import Max5000Binary
 from ._Number import Number
+from ._Signer3 import Signer3
 
 class SignedData4(base_types._BaseFieldType):
 
-	__slots__ = ["_NcpsltdCntt", "_Vrsn", "_Sgnr", "_DgstAlgo", "_Cert"]
+	__slots__ = ["_Cert", "_DgstAlgo", "_NcpsltdCntt", "_Sgnr", "_Vrsn"]
 	@property
 	def Cert(self):
 		return self._Cert

@@ -1,11 +1,11 @@
 from . import base_types
 from ._BytePadding1Code import BytePadding1Code
-from ._Max500Binary import Max500Binary
 from ._EncryptionFormat1Code import EncryptionFormat1Code
+from ._Max500Binary import Max500Binary
 
 class Parameter6(base_types._BaseFieldType):
 
-	__slots__ = ["_BPddg", "_NcrptnFrmt", "_InitlstnVctr"]
+	__slots__ = ["_BPddg", "_InitlstnVctr", "_NcrptnFrmt"]
 	@property
 	def BPddg(self):
 		return self._BPddg

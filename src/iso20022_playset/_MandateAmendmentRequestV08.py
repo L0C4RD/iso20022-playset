@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MandateAmendment8 import MandateAmendment8
 from ._GroupHeader110 import GroupHeader110
+from ._MandateAmendment8 import MandateAmendment8
+from ._SupplementaryData1 import SupplementaryData1
 
 class MandateAmendmentRequestV08(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_UndrlygAmdmntDtls", "_SplmtryData"]
+	__slots__ = ["_GrpHdr", "_SplmtryData", "_UndrlygAmdmntDtls"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

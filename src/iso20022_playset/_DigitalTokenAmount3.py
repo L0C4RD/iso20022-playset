@@ -1,11 +1,11 @@
 from . import base_types
 from ._DTI2024Identifier import DTI2024Identifier
-from ._Max30Text import Max30Text
 from ._Max30DecimalNumber import Max30DecimalNumber
+from ._Max30Text import Max30Text
 
 class DigitalTokenAmount3(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Unit", "_Idr"]
+	__slots__ = ["_Desc", "_Idr", "_Unit"]
 	@property
 	def Desc(self):
 		return self._Desc

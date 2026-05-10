@@ -1,14 +1,14 @@
 from . import base_types
 from ._AggregateBalanceInformation4 import AggregateBalanceInformation4
+from ._Extension1 import Extension1
 from ._SafekeepingAccount2 import SafekeepingAccount2
+from ._Statement7 import Statement7
 from ._SubAccountIdentification5 import SubAccountIdentification5
 from ._TotalValueInPageAndStatement import TotalValueInPageAndStatement
-from ._Extension1 import Extension1
-from ._Statement7 import Statement7
 
 class CustodyStatementOfHoldings2(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtGnlDtls", "_BalForAcct", "_Xtnsn", "_SubAcctDtls", "_AcctDtls", "_TtlVals"]
+	__slots__ = ["_AcctDtls", "_BalForAcct", "_StmtGnlDtls", "_SubAcctDtls", "_TtlVals", "_Xtnsn"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

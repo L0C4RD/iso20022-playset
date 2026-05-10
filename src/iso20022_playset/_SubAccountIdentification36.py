@@ -1,11 +1,11 @@
 from . import base_types
+from ._AccountIdentificationFormatChoice import AccountIdentificationFormatChoice
 from ._InvestmentFundTransactionsByFund3 import InvestmentFundTransactionsByFund3
 from ._YesNoIndicator import YesNoIndicator
-from ._AccountIdentificationFormatChoice import AccountIdentificationFormatChoice
 
 class SubAccountIdentification36(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_TxOnSubAcct", "_Id"]
+	__slots__ = ["_ActvtyInd", "_Id", "_TxOnSubAcct"]
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd

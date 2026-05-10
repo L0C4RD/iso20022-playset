@@ -1,12 +1,12 @@
 from . import base_types
-from ._PhoneNumber import PhoneNumber
-from ._NamePrefix1Code import NamePrefix1Code
-from ._Max35Text import Max35Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._NamePrefix1Code import NamePrefix1Code
+from ._PhoneNumber import PhoneNumber
 
 class ContactIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_FaxNb", "_NmPrfx", "_GvnNm", "_EmailAdr", "_Nm", "_Role", "_PhneNb"]
+	__slots__ = ["_EmailAdr", "_FaxNb", "_GvnNm", "_Nm", "_NmPrfx", "_PhneNb", "_Role"]
 	@property
 	def EmailAdr(self):
 		return self._EmailAdr

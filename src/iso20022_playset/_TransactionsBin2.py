@@ -1,11 +1,11 @@
 from . import base_types
 from ._DecimalNumber import DecimalNumber
-from ._Number import Number
 from ._FromToQuantityRange2 import FromToQuantityRange2
+from ._Number import Number
 
 class TransactionsBin2(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfTxs", "_TtlNtnlAmt", "_Rg"]
+	__slots__ = ["_NbOfTxs", "_Rg", "_TtlNtnlAmt"]
 	@property
 	def NbOfTxs(self):
 		return self._NbOfTxs

@@ -1,13 +1,13 @@
 from . import base_types
-from ._UnderlyingStatementEntry5 import UnderlyingStatementEntry5
+from ._CashAccount40 import CashAccount40
+from ._GenericIdentification1 import GenericIdentification1
 from ._UnderlyingPaymentInstruction8 import UnderlyingPaymentInstruction8
 from ._UnderlyingPaymentTransaction7 import UnderlyingPaymentTransaction7
-from ._GenericIdentification1 import GenericIdentification1
-from ._CashAccount40 import CashAccount40
+from ._UnderlyingStatementEntry5 import UnderlyingStatementEntry5
 
 class UnderlyingData2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_StmtNtry", "_IntrBk", "_Initn", "_Othr"]
+	__slots__ = ["_Acct", "_Initn", "_IntrBk", "_Othr", "_StmtNtry"]
 	@property
 	def Acct(self):
 		return self._Acct

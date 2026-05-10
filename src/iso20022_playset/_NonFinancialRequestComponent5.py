@@ -1,12 +1,12 @@
 from . import base_types
-from ._PaymentContext30 import PaymentContext30
-from ._SupplementaryData1 import SupplementaryData1
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 from ._NonFinancialRequestContentComponent5 import NonFinancialRequestContentComponent5
+from ._PaymentContext30 import PaymentContext30
+from ._SupplementaryData1 import SupplementaryData1
 
 class NonFinancialRequestComponent5(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_SplmtryData", "_NonFinReqCntt"]
+	__slots__ = ["_Cntxt", "_Envt", "_NonFinReqCntt", "_SplmtryData"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt

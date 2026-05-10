@@ -1,6 +1,6 @@
 from . import base_types
-from ._SecuritiesTransactionType58Choice import SecuritiesTransactionType58Choice
 from ._CorporateActionEventType101Choice import CorporateActionEventType101Choice
+from ._SecuritiesTransactionType58Choice import SecuritiesTransactionType58Choice
 
 class SettlementOrCorporateActionEvent33Choice(base_types._BaseFieldType):
 

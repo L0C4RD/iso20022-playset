@@ -1,17 +1,17 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._PostalAddress27 import PostalAddress27
 from ._CountryCode import CountryCode
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
-from ._OrganisationLegalStatus1Code import OrganisationLegalStatus1Code
+from ._ISODate import ISODate
 from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._OrganisationLegalStatus1Code import OrganisationLegalStatus1Code
 from ._PartyIdentification272 import PartyIdentification272
+from ._PostalAddress27 import PostalAddress27
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Organisation43(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgLglSts", "_MainMndtHldr", "_OprlAdr", "_RegnCtry", "_LglAdr", "_EstblishdDt", "_Sndr", "_TradgNm", "_RegnNb", "_TaxtnCtry", "_TrsrMgr", "_TaxtnIdNb", "_BrdRsltnInd", "_BizAdr", "_RprtvOffcr", "_FullLglNm", "_RegnDt", "_CtryOfOpr"]
+	__slots__ = ["_BizAdr", "_BrdRsltnInd", "_CtryOfOpr", "_EstblishdDt", "_FullLglNm", "_LglAdr", "_MainMndtHldr", "_OprlAdr", "_OrgLglSts", "_RegnCtry", "_RegnDt", "_RegnNb", "_RprtvOffcr", "_Sndr", "_TaxtnCtry", "_TaxtnIdNb", "_TradgNm", "_TrsrMgr"]
 	@property
 	def BizAdr(self):
 		return self._BizAdr

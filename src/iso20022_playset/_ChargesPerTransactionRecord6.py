@@ -1,19 +1,19 @@
 from . import base_types
-from ._SettlementInstruction19 import SettlementInstruction19
-from ._Max140Text import Max140Text
-from ._ChargesBreakdown1 import ChargesBreakdown1
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._TransactionReferences7 import TransactionReferences7
-from ._InstructionForInstructedAgent1 import InstructionForInstructedAgent1
-from ._Max35Text import Max35Text
-from ._TotalCharges8 import TotalCharges8
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._PartyIdentification272 import PartyIdentification272
 from ._CashAccount40 import CashAccount40
+from ._ChargesBreakdown1 import ChargesBreakdown1
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._InstructionForInstructedAgent1 import InstructionForInstructedAgent1
+from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification272 import PartyIdentification272
+from ._SettlementInstruction19 import SettlementInstruction19
+from ._TotalCharges8 import TotalCharges8
+from ._TransactionReferences7 import TransactionReferences7
 
 class ChargesPerTransactionRecord6(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygTx", "_InstrForInstdAgt", "_Dbtr", "_ChrgsBrkdwn", "_DbtrAcct", "_RcrdId", "_ChrgsRqstr", "_ValDt", "_DbtrAgt", "_ChrgsAcctAgt", "_AddtlInf", "_ChrgsAcctAgtAcct", "_DbtrAgtAcct", "_TtlChrgsPerRcrd", "_SttlmInstr"]
+	__slots__ = ["_AddtlInf", "_ChrgsAcctAgt", "_ChrgsAcctAgtAcct", "_ChrgsBrkdwn", "_ChrgsRqstr", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_InstrForInstdAgt", "_RcrdId", "_SttlmInstr", "_TtlChrgsPerRcrd", "_UndrlygTx", "_ValDt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

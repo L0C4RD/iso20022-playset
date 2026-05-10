@@ -1,12 +1,12 @@
 from . import base_types
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 from ._MessageIdentification1 import MessageIdentification1
 from ._UseCases1Code import UseCases1Code
-from ._Max70Text import Max70Text
 
 class References5(base_types._BaseFieldType):
 
-	__slots__ = ["_AttchdDocNm", "_PrcId", "_MsgId", "_Sts", "_ReqTp", "_AckdMsgId"]
+	__slots__ = ["_AckdMsgId", "_AttchdDocNm", "_MsgId", "_PrcId", "_ReqTp", "_Sts"]
 	@property
 	def AckdMsgId(self):
 		return self._AckdMsgId

@@ -5,7 +5,7 @@ from ._TrackFormat1Code import TrackFormat1Code
 
 class TrackData2(base_types._BaseFieldType):
 
-	__slots__ = ["_TrckVal", "_TrckFrmt", "_TrckNb"]
+	__slots__ = ["_TrckFrmt", "_TrckNb", "_TrckVal"]
 	@property
 	def TrckFrmt(self):
 		return self._TrckFrmt

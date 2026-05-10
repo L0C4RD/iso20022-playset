@@ -1,16 +1,16 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._FraudType1Code import FraudType1Code
+from ._AuthenticationMethod12Code import AuthenticationMethod12Code
 from ._FraudReportingAction1Code import FraudReportingAction1Code
+from ._FraudType1Code import FraudType1Code
+from ._ISODate import ISODate
 from ._Max256Text import Max256Text
 from ._Max35Text import Max35Text
-from ._AuthenticationMethod12Code import AuthenticationMethod12Code
 from ._PartyType26Code import PartyType26Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ReportedFraud4(base_types._BaseFieldType):
 
-	__slots__ = ["_MktSgmt", "_RptgNtty", "_OthrRptgNtty", "_ConfRptgDt", "_OthrTp", "_OthrActn", "_CmprmsdCrdntl", "_CrdhldrRptgDt", "_CaseLctrNb", "_InvstgtnSts", "_Tp", "_SubmitrCaseRef", "_CaseRef", "_Arrst", "_Actn"]
+	__slots__ = ["_Actn", "_Arrst", "_CaseLctrNb", "_CaseRef", "_CmprmsdCrdntl", "_ConfRptgDt", "_CrdhldrRptgDt", "_InvstgtnSts", "_MktSgmt", "_OthrActn", "_OthrRptgNtty", "_OthrTp", "_RptgNtty", "_SubmitrCaseRef", "_Tp"]
 	@property
 	def Actn(self):
 		return self._Actn

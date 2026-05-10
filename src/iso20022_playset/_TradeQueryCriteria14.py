@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._TradeAdditionalQueryCriteria9 import TradeAdditionalQueryCriteria9
+from ._TradeDateTimeQueryCriteria6 import TradeDateTimeQueryCriteria6
 from ._TradePartyQueryCriteria7 import TradePartyQueryCriteria7
 from ._TradeSecurityIdentificationQueryCriteria3 import TradeSecurityIdentificationQueryCriteria3
-from ._TradeDateTimeQueryCriteria6 import TradeDateTimeQueryCriteria6
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TradeQueryCriteria14(base_types._BaseFieldType):
 
-	__slots__ = ["_TmCrit", "_MrgnLifeCyclHstry", "_TradLifeCyclHstry", "_OutsdngTradInd", "_TradPtyCrit", "_OthrCrit", "_FinInstrmCrit"]
+	__slots__ = ["_FinInstrmCrit", "_MrgnLifeCyclHstry", "_OthrCrit", "_OutsdngTradInd", "_TmCrit", "_TradLifeCyclHstry", "_TradPtyCrit"]
 	@property
 	def FinInstrmCrit(self):
 		return self._FinInstrmCrit

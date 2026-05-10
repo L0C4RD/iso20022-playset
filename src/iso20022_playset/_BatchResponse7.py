@@ -4,7 +4,7 @@ from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class BatchResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_PrfrmdTx", "_POIBtchId", "_SaleBtchId"]
+	__slots__ = ["_POIBtchId", "_PrfrmdTx", "_SaleBtchId"]
 	@property
 	def POIBtchId(self):
 		return self._POIBtchId

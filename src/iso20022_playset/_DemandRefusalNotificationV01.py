@@ -4,7 +4,7 @@ from ._PartyAndSignature2 import PartyAndSignature2
 
 class DemandRefusalNotificationV01(base_types._BaseFieldType):
 
-	__slots__ = ["_DmndRfslNtfctnDtls", "_DgtlSgntr"]
+	__slots__ = ["_DgtlSgntr", "_DmndRfslNtfctnDtls"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr

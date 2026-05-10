@@ -1,6 +1,6 @@
 from . import base_types
-from ._SegregatedIndependentAmountMargin1 import SegregatedIndependentAmountMargin1
 from ._Margin1 import Margin1
+from ._SegregatedIndependentAmountMargin1 import SegregatedIndependentAmountMargin1
 
 class MarginTerms1Choice(base_types._BaseFieldType):
 

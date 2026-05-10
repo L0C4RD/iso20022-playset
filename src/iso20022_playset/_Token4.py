@@ -1,14 +1,14 @@
 from . import base_types
-from ._Max2NumericText import Max2NumericText
 from ._ISOYearMonth import ISOYearMonth
 from ._Max11NumericText import Max11NumericText
-from ._Max35Text import Max35Text
 from ._Max140Text import Max140Text
 from ._Max19NumericText import Max19NumericText
+from ._Max2NumericText import Max2NumericText
+from ._Max35Text import Max35Text
 
 class Token4(base_types._BaseFieldType):
 
-	__slots__ = ["_TknAssrncData", "_TknXpryDt", "_TknAssrncMtd", "_PmtTkn", "_TknRqstrId", "_TknRefId"]
+	__slots__ = ["_PmtTkn", "_TknAssrncData", "_TknAssrncMtd", "_TknRefId", "_TknRqstrId", "_TknXpryDt"]
 	@property
 	def PmtTkn(self):
 		return self._PmtTkn

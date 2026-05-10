@@ -4,7 +4,7 @@ from ._AccountOrBusinessError6Choice import AccountOrBusinessError6Choice
 
 class AccountReport35(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOrErr", "_AcctId"]
+	__slots__ = ["_AcctId", "_AcctOrErr"]
 	@property
 	def AcctId(self):
 		return self._AcctId

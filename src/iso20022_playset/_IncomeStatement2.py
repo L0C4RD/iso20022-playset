@@ -5,7 +5,7 @@ from ._ClearingMemberFee1 import ClearingMemberFee1
 
 class IncomeStatement2(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrNonOprgRvn", "_OprgPrftOrLoss", "_ClrMmbFee", "_NonOprgExpnss", "_OprgExpnss", "_OthrOprgRvn", "_PreTaxPrftOrLoss", "_NetIntrstIncm", "_PstTaxPrftOrLoss"]
+	__slots__ = ["_ClrMmbFee", "_NetIntrstIncm", "_NonOprgExpnss", "_OprgExpnss", "_OprgPrftOrLoss", "_OthrNonOprgRvn", "_OthrOprgRvn", "_PreTaxPrftOrLoss", "_PstTaxPrftOrLoss"]
 	@property
 	def ClrMmbFee(self):
 		return self._ClrMmbFee

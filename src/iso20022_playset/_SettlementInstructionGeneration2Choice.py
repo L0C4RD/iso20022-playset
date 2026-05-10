@@ -1,6 +1,6 @@
 from . import base_types
-from ._SettlementInstructionGeneration1Code import SettlementInstructionGeneration1Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._SettlementInstructionGeneration1Code import SettlementInstructionGeneration1Code
 
 class SettlementInstructionGeneration2Choice(base_types._BaseFieldType):
 

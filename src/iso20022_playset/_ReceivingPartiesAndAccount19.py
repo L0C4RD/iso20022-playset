@@ -1,11 +1,11 @@
 from . import base_types
-from ._PartyIdentificationAndAccount200 import PartyIdentificationAndAccount200
 from ._PartyIdentification239Choice import PartyIdentification239Choice
+from ._PartyIdentificationAndAccount200 import PartyIdentificationAndAccount200
 from ._PartyIdentificationAndAccount201 import PartyIdentificationAndAccount201
 
 class ReceivingPartiesAndAccount19(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty1", "_Dpstry", "_Pty2"]
+	__slots__ = ["_Dpstry", "_Pty1", "_Pty2"]
 	@property
 	def Dpstry(self):
 		return self._Dpstry

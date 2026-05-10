@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._CharacterSearch1Choice import CharacterSearch1Choice
 from ._InformationQualifierType1 import InformationQualifierType1
+from ._Max35Text import Max35Text
 
 class GeneralBusinessInformationSearchCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_Qlfr", "_Sbjt", "_Ref"]
+	__slots__ = ["_Qlfr", "_Ref", "_Sbjt"]
 	@property
 	def Qlfr(self):
 		return self._Qlfr

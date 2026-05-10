@@ -4,7 +4,7 @@ from ._UTCOffset1 import UTCOffset1
 
 class MainFundOrderDeskLocation1(base_types._BaseFieldType):
 
-	__slots__ = ["_TmZoneOffSet", "_Ctry"]
+	__slots__ = ["_Ctry", "_TmZoneOffSet"]
 	@property
 	def Ctry(self):
 		return self._Ctry

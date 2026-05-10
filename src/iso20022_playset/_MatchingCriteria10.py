@@ -1,11 +1,11 @@
 from . import base_types
+from ._CollateralMatchingCriteria6 import CollateralMatchingCriteria6
 from ._CounterpartyMatchingCriteria4 import CounterpartyMatchingCriteria4
 from ._LoanMatchingCriteria9 import LoanMatchingCriteria9
-from ._CollateralMatchingCriteria6 import CollateralMatchingCriteria6
 
 class MatchingCriteria10(base_types._BaseFieldType):
 
-	__slots__ = ["_CollMtchgCrit", "_LnMtchgCrit", "_CtrPtyMtchgCrit"]
+	__slots__ = ["_CollMtchgCrit", "_CtrPtyMtchgCrit", "_LnMtchgCrit"]
 	@property
 	def CollMtchgCrit(self):
 		return self._CollMtchgCrit

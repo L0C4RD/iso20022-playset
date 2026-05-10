@@ -1,34 +1,34 @@
 from . import base_types
+from ._AmountAndDirection21 import AmountAndDirection21
+from ._AmountAndDirection51 import AmountAndDirection51
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification144 import PartyIdentification144
+from ._PartyIdentification149 import PartyIdentification149
+from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
+from ._Quantity51Choice import Quantity51Choice
+from ._Rate2 import Rate2
+from ._RateName1 import RateName1
+from ._RateOrName1Choice import RateOrName1Choice
+from ._RateType35Choice import RateType35Choice
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._SafeKeepingPlace5 import SafeKeepingPlace5
 from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SecuritiesFinancingTransactionType2Code import SecuritiesFinancingTransactionType2Code
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SettlementDate19Choice import SettlementDate19Choice
+from ._SettlementDetails170 import SettlementDetails170
+from ._SettlementParties127 import SettlementParties127
+from ._TerminationDate6Choice import TerminationDate6Choice
 from ._TradeDate8Choice import TradeDate8Choice
 from ._UTIIdentifier import UTIIdentifier
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._AmountAndDirection21 import AmountAndDirection21
-from ._SettlementDate19Choice import SettlementDate19Choice
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._TerminationDate6Choice import TerminationDate6Choice
-from ._AmountAndDirection51 import AmountAndDirection51
-from ._SettlementParties127 import SettlementParties127
-from ._PartyIdentification144 import PartyIdentification144
-from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
-from ._SettlementDetails170 import SettlementDetails170
-from ._RateType35Choice import RateType35Choice
-from ._PartyIdentification149 import PartyIdentification149
-from ._Rate2 import Rate2
-from ._SecuritiesFinancingTransactionType2Code import SecuritiesFinancingTransactionType2Code
-from ._RateOrName1Choice import RateOrName1Choice
-from ._Quantity51Choice import Quantity51Choice
-from ._Max35Text import Max35Text
-from ._RateName1 import RateName1
-from ._SafeKeepingPlace5 import SafeKeepingPlace5
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max350Text import Max350Text
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 
 class SecuritiesFinancingTransactionDetails57(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesFincgUnqTxIdr", "_FinInstrmId", "_TermntnDt", "_Invstr", "_Sprd", "_SfkpgPlc", "_LateDlvryDt", "_DlvrgSttlmPties", "_AcctOwnr", "_VarblRateSpprt", "_RateTp", "_OpngSttlmAmt", "_ClntTrptyCollTxId", "_TermntnTxAmt", "_SfkpgAcct", "_XpctdSttlmDt", "_Pmt", "_TrptyAgtSvcPrvdrCollTxId", "_ClsgLegId", "_SttlmInstrPrcgAddtlDtls", "_RpRate", "_SctiesHrcut", "_CorpActnEvtId", "_PricgRate", "_XpctdValDt", "_BlckChainAdrOrWllt", "_SttlmParams", "_StockLnMrgn", "_OpngSttlmDt", "_SttlmQty", "_PoolId", "_RateChngDt", "_SctiesMvmntTp", "_PlcOfTrad", "_SctiesFincgTxTp", "_RcvgSttlmPties", "_TradDt", "_SctiesFincgTradId"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_ClntTrptyCollTxId", "_ClsgLegId", "_CorpActnEvtId", "_DlvrgSttlmPties", "_FinInstrmId", "_Invstr", "_LateDlvryDt", "_OpngSttlmAmt", "_OpngSttlmDt", "_PlcOfTrad", "_Pmt", "_PoolId", "_PricgRate", "_RateChngDt", "_RateTp", "_RcvgSttlmPties", "_RpRate", "_SctiesFincgTradId", "_SctiesFincgTxTp", "_SctiesFincgUnqTxIdr", "_SctiesHrcut", "_SctiesMvmntTp", "_SfkpgAcct", "_SfkpgPlc", "_Sprd", "_StockLnMrgn", "_SttlmInstrPrcgAddtlDtls", "_SttlmParams", "_SttlmQty", "_TermntnDt", "_TermntnTxAmt", "_TradDt", "_TrptyAgtSvcPrvdrCollTxId", "_VarblRateSpprt", "_XpctdSttlmDt", "_XpctdValDt"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

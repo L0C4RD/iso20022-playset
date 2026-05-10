@@ -1,21 +1,21 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._ChargeBearerType1Code import ChargeBearerType1Code
 from ._BatchBookingIndicator import BatchBookingIndicator
-from ._DecimalNumber import DecimalNumber
-from ._Max140Text import Max140Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CreditTransferTransaction59 import CreditTransferTransaction59
-from ._PaymentMethod3Code import PaymentMethod3Code
-from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
-from ._PaymentTypeInformation26 import PaymentTypeInformation26
-from ._PartyIdentification272 import PartyIdentification272
 from ._CashAccount40 import CashAccount40
+from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._CreditTransferTransaction59 import CreditTransferTransaction59
+from ._DecimalNumber import DecimalNumber
+from ._ISODate import ISODate
+from ._Max140Text import Max140Text
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
+from ._PartyIdentification272 import PartyIdentification272
+from ._PaymentMethod3Code import PaymentMethod3Code
+from ._PaymentTypeInformation26 import PaymentTypeInformation26
 
 class PaymentInstruction43(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgsAcct", "_ChrgBr", "_PmtInfId", "_PmtMtd", "_PoolgAdjstmntDt", "_Dbtr", "_NbOfTxs", "_ReqdExctnDt", "_DbtrAgt", "_CdtTrfTxInf", "_ChrgsAcctAgt", "_UltmtDbtr", "_BtchBookg", "_DbtrAcct", "_CtrlSum", "_InstrForDbtrAgt", "_PmtTpInf", "_DbtrAgtAcct"]
+	__slots__ = ["_BtchBookg", "_CdtTrfTxInf", "_ChrgBr", "_ChrgsAcct", "_ChrgsAcctAgt", "_CtrlSum", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_InstrForDbtrAgt", "_NbOfTxs", "_PmtInfId", "_PmtMtd", "_PmtTpInf", "_PoolgAdjstmntDt", "_ReqdExctnDt", "_UltmtDbtr"]
 	@property
 	def BtchBookg(self):
 		return self._BtchBookg

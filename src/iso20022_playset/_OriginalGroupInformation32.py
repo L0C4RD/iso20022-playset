@@ -1,15 +1,15 @@
 from . import base_types
-from ._StatusReasonInformation14 import StatusReasonInformation14
-from ._ExternalPaymentGroupStatus1Code import ExternalPaymentGroupStatus1Code
 from ._DecimalNumber import DecimalNumber
-from ._NumberOfTransactionsPerStatus5 import NumberOfTransactionsPerStatus5
-from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
+from ._ExternalPaymentGroupStatus1Code import ExternalPaymentGroupStatus1Code
 from ._ISODateTime import ISODateTime
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
+from ._NumberOfTransactionsPerStatus5 import NumberOfTransactionsPerStatus5
+from ._StatusReasonInformation14 import StatusReasonInformation14
 
 class OriginalGroupInformation32(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRsnInf", "_OrgnlNbOfTxs", "_OrgnlCtrlSum", "_OrgnlCreDtTm", "_GrpSts", "_OrgnlMsgId", "_NbOfTxsPerSts", "_OrgnlMsgNmId"]
+	__slots__ = ["_GrpSts", "_NbOfTxsPerSts", "_OrgnlCreDtTm", "_OrgnlCtrlSum", "_OrgnlMsgId", "_OrgnlMsgNmId", "_OrgnlNbOfTxs", "_StsRsnInf"]
 	@property
 	def GrpSts(self):
 		return self._GrpSts

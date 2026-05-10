@@ -1,18 +1,18 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._PartyIdentification127Choice import PartyIdentification127Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._Linkages75 import Linkages75
-from ._SecurityIdentification19 import SecurityIdentification19
 from ._AdditionalParameters33 import AdditionalParameters33
-from ._FinancialInstrumentAttributes112 import FinancialInstrumentAttributes112
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._SafekeepingPlaceFormat41Choice import SafekeepingPlaceFormat41Choice
+from ._FinancialInstrumentAttributes112 import FinancialInstrumentAttributes112
 from ._IntraPositionDetails65 import IntraPositionDetails65
+from ._Linkages75 import Linkages75
+from ._PartyIdentification127Choice import PartyIdentification127Choice
+from ._SafekeepingPlaceFormat41Choice import SafekeepingPlaceFormat41Choice
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SupplementaryData1 import SupplementaryData1
 
 class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_Lkg", "_SfkpgAcct", "_SfkpgPlc", "_IntraPosDtls", "_BlckChainAdrOrWllt", "_FinInstrmAttrbts", "_AcctOwnr", "_AddtlParams", "_SplmtryData"]
+	__slots__ = ["_AcctOwnr", "_AddtlParams", "_BlckChainAdrOrWllt", "_FinInstrmAttrbts", "_FinInstrmId", "_IntraPosDtls", "_Lkg", "_SfkpgAcct", "_SfkpgPlc", "_SplmtryData"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

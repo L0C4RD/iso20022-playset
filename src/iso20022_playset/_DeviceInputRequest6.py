@@ -1,10 +1,10 @@
 from . import base_types
-from ._InputData6 import InputData6
 from ._ActionMessage11 import ActionMessage11
+from ._InputData6 import InputData6
 
 class DeviceInputRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_InptData", "_DispOutpt"]
+	__slots__ = ["_DispOutpt", "_InptData"]
 	@property
 	def DispOutpt(self):
 		return self._DispOutpt

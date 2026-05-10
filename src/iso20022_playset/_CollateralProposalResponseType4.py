@@ -1,11 +1,11 @@
 from . import base_types
+from ._CollateralProposalResponse1Code import CollateralProposalResponse1Code
 from ._CollateralResponse3 import CollateralResponse3
 from ._Max35Text import Max35Text
-from ._CollateralProposalResponse1Code import CollateralProposalResponse1Code
 
 class CollateralProposalResponseType4(base_types._BaseFieldType):
 
-	__slots__ = ["_CollPrpslId", "_Tp", "_Rspn"]
+	__slots__ = ["_CollPrpslId", "_Rspn", "_Tp"]
 	@property
 	def CollPrpslId(self):
 		return self._CollPrpslId

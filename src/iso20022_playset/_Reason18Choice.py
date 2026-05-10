@@ -1,6 +1,6 @@
 from . import base_types
-from ._ProprietaryReason4 import ProprietaryReason4
 from ._NoReasonCode import NoReasonCode
+from ._ProprietaryReason4 import ProprietaryReason4
 
 class Reason18Choice(base_types._BaseFieldType):
 

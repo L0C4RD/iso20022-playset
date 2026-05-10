@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ActivationStatus2Code import ActivationStatus2Code
+from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
 
 class ATMVersionReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_FailRsn", "_CfgtnSts", "_CfgtnVrsn"]
+	__slots__ = ["_CfgtnSts", "_CfgtnVrsn", "_FailRsn"]
 	@property
 	def CfgtnSts(self):
 		return self._CfgtnSts

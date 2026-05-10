@@ -1,14 +1,14 @@
 from . import base_types
 from ._Authorisation1Choice import Authorisation1Choice
-from ._Max35Text import Max35Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ISODateTime import ISODateTime
-from ._PartyIdentification272 import PartyIdentification272
 from ._CopyDuplicate1Code import CopyDuplicate1Code
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
+from ._PartyIdentification272 import PartyIdentification272
 
 class GroupHeader122(base_types._BaseFieldType):
 
-	__slots__ = ["_CpyInd", "_FwdgAgt", "_InitgPty", "_MsgId", "_MsgRcpt", "_Authstn", "_CreDtTm"]
+	__slots__ = ["_Authstn", "_CpyInd", "_CreDtTm", "_FwdgAgt", "_InitgPty", "_MsgId", "_MsgRcpt"]
 	@property
 	def Authstn(self):
 		return self._Authstn

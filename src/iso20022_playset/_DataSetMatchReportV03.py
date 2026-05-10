@@ -1,19 +1,19 @@
 from . import base_types
-from ._TransactionStatus4 import TransactionStatus4
-from ._MisMatchReport3 import MisMatchReport3
-from ._DocumentIdentification3 import DocumentIdentification3
 from ._BICIdentification1 import BICIdentification1
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._PartyIdentification26 import PartyIdentification26
-from ._ReportType3 import ReportType3
-from ._DocumentIdentification5 import DocumentIdentification5
-from ._PendingActivity2 import PendingActivity2
 from ._DocumentIdentification10 import DocumentIdentification10
+from ._DocumentIdentification3 import DocumentIdentification3
+from ._DocumentIdentification5 import DocumentIdentification5
 from ._MessageIdentification1 import MessageIdentification1
+from ._MisMatchReport3 import MisMatchReport3
+from ._PartyIdentification26 import PartyIdentification26
+from ._PendingActivity2 import PendingActivity2
+from ._ReportType3 import ReportType3
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._TransactionStatus4 import TransactionStatus4
 
 class DataSetMatchReportV03(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrBk", "_TxSts", "_TxId", "_RptId", "_ReqForActn", "_Sellr", "_SellrBk", "_SubmissnTp", "_Buyr", "_Rpt", "_UsrTxRef", "_EstblishdBaselnId", "_CmpardDocRef"]
+	__slots__ = ["_Buyr", "_BuyrBk", "_CmpardDocRef", "_EstblishdBaselnId", "_ReqForActn", "_Rpt", "_RptId", "_Sellr", "_SellrBk", "_SubmissnTp", "_TxId", "_TxSts", "_UsrTxRef"]
 	@property
 	def Buyr(self):
 		return self._Buyr

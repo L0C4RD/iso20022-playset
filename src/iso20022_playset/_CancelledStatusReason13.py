@@ -1,10 +1,10 @@
 from . import base_types
-from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
 from ._CancelledReason10Choice import CancelledReason10Choice
+from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
 
 class CancelledStatusReason13(base_types._BaseFieldType):
 
-	__slots__ = ["_RsnCd", "_AddtlRsnInf"]
+	__slots__ = ["_AddtlRsnInf", "_RsnCd"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

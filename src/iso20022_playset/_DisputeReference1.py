@@ -1,11 +1,11 @@
 from . import base_types
-from ._PartyType32Code import PartyType32Code
 from ._DisputeIdentification1 import DisputeIdentification1
 from ._Max35Text import Max35Text
+from ._PartyType32Code import PartyType32Code
 
 class DisputeReference1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrAssgnrNtty", "_AssgnrNtty", "_DsptId"]
+	__slots__ = ["_AssgnrNtty", "_DsptId", "_OthrAssgnrNtty"]
 	@property
 	def AssgnrNtty(self):
 		return self._AssgnrNtty

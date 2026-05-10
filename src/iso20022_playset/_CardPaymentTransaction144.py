@@ -1,15 +1,15 @@
 from . import base_types
-from ._AuthorisationResult17 import AuthorisationResult17
+from ._Action17 import Action17
 from ._AmountAndDirection93 import AmountAndDirection93
-from ._Product5 import Product5
+from ._AuthorisationResult17 import AuthorisationResult17
+from ._ContentInformationType40 import ContentInformationType40
 from ._CurrencyConversion29 import CurrencyConversion29
 from ._Product4 import Product4
-from ._Action17 import Action17
-from ._ContentInformationType40 import ContentInformationType40
+from ._Product5 import Product5
 
 class CardPaymentTransaction144(base_types._BaseFieldType):
 
-	__slots__ = ["_AllwdPdctCd", "_NotAllwdPdctCd", "_Bal", "_AddtlAvlblPdct", "_AuthstnRslt", "_PrtctdBal", "_Actn", "_CcyConvsElgblty"]
+	__slots__ = ["_Actn", "_AddtlAvlblPdct", "_AllwdPdctCd", "_AuthstnRslt", "_Bal", "_CcyConvsElgblty", "_NotAllwdPdctCd", "_PrtctdBal"]
 	@property
 	def Actn(self):
 		return self._Actn

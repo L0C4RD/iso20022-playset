@@ -1,11 +1,11 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._YesNoIndicator import YesNoIndicator
 
 class IssuanceAccount3(base_types._BaseFieldType):
 
-	__slots__ = ["_IssncAcct", "_PmryAcctInd", "_IssncBlckChainAdrOrWllt"]
+	__slots__ = ["_IssncAcct", "_IssncBlckChainAdrOrWllt", "_PmryAcctInd"]
 	@property
 	def IssncAcct(self):
 		return self._IssncAcct

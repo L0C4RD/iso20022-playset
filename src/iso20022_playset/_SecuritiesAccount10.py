@@ -1,14 +1,14 @@
 from . import base_types
-from ._NationalityCode import NationalityCode
-from ._PartyIdentification2Choice import PartyIdentification2Choice
+from ._CreditDebitCode import CreditDebitCode
 from ._FormOfSecurity1Code import FormOfSecurity1Code
 from ._Max35Text import Max35Text
+from ._NationalityCode import NationalityCode
+from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._SecuritiesBalanceType9FormatChoice import SecuritiesBalanceType9FormatChoice
-from ._CreditDebitCode import CreditDebitCode
 
 class SecuritiesAccount10(base_types._BaseFieldType):
 
-	__slots__ = ["_BalTp", "_AcctId", "_AcctOwnrId", "_CdtDbtInd", "_SctyHldgForm", "_AcctOwnrNtlty"]
+	__slots__ = ["_AcctId", "_AcctOwnrId", "_AcctOwnrNtlty", "_BalTp", "_CdtDbtInd", "_SctyHldgForm"]
 	@property
 	def AcctId(self):
 		return self._AcctId

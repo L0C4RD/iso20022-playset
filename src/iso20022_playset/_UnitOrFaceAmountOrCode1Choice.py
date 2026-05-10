@@ -1,11 +1,11 @@
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Quantity1Code import Quantity1Code
 from ._DecimalNumber import DecimalNumber
+from ._Quantity1Code import Quantity1Code
 
 class UnitOrFaceAmountOrCode1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Unit", "_Cd", "_FaceAmt"]
+	__slots__ = ["_Cd", "_FaceAmt", "_Unit"]
 	@property
 	def Cd(self):
 		return self._Cd

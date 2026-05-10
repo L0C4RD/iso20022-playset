@@ -4,7 +4,7 @@ from ._PartyType1Choice import PartyType1Choice
 
 class PartyAndType1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Pty"]
+	__slots__ = ["_Pty", "_Tp"]
 	@property
 	def Pty(self):
 		return self._Pty

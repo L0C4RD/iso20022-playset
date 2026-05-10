@@ -4,7 +4,7 @@ from ._StandingOrderCriteria5 import StandingOrderCriteria5
 
 class StandingOrderCriteria5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_QryNm", "_NewCrit"]
+	__slots__ = ["_NewCrit", "_QryNm"]
 	@property
 	def NewCrit(self):
 		return self._NewCrit

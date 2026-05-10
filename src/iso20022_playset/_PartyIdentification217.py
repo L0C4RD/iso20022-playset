@@ -1,15 +1,15 @@
 from . import base_types
-from ._Ownership1 import Ownership1
-from ._NaturalPersonIdentification1 import NaturalPersonIdentification1
 from ._CountryCode import CountryCode
-from ._PersonName3 import PersonName3
-from ._InvestorType1Choice import InvestorType1Choice
 from ._DateAndPlaceOfBirth2 import DateAndPlaceOfBirth2
+from ._InvestorType1Choice import InvestorType1Choice
 from ._Max256Text import Max256Text
+from ._NaturalPersonIdentification1 import NaturalPersonIdentification1
+from ._Ownership1 import Ownership1
+from ._PersonName3 import PersonName3
 
 class PartyIdentification217(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Ntlty", "_DtAndPlcOfBirth", "_EmailAdr", "_InvstrTp", "_Ownrsh", "_NmAndAdr"]
+	__slots__ = ["_DtAndPlcOfBirth", "_EmailAdr", "_Id", "_InvstrTp", "_NmAndAdr", "_Ntlty", "_Ownrsh"]
 	@property
 	def DtAndPlcOfBirth(self):
 		return self._DtAndPlcOfBirth

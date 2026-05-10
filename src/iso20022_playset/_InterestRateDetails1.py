@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
+from ._BaseOneRate import BaseOneRate
 from ._InstalmentPeriod1Code import InstalmentPeriod1Code
 from ._InterestRate1Code import InterestRate1Code
-from ._BaseOneRate import BaseOneRate
+from ._Max35Text import Max35Text
 
 class InterestRateDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_OthrTp", "_Prd", "_Tp"]
+	__slots__ = ["_OthrTp", "_Prd", "_Rate", "_Tp"]
 	@property
 	def OthrTp(self):
 		return self._OthrTp

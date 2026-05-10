@@ -5,7 +5,7 @@ from ._MovementInstruction1 import MovementInstruction1
 
 class AgentCAMovementCancellationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CorpActnGnlInf", "_MvmntDtls", "_AgtCAMvmntInstrId"]
+	__slots__ = ["_AgtCAMvmntInstrId", "_CorpActnGnlInf", "_Id", "_MvmntDtls"]
 	@property
 	def AgtCAMvmntInstrId(self):
 		return self._AgtCAMvmntInstrId

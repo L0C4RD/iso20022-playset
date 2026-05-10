@@ -1,10 +1,10 @@
 from . import base_types
-from ._UndertakingStatus2Code import UndertakingStatus2Code
 from ._Amendment8 import Amendment8
+from ._UndertakingStatus2Code import UndertakingStatus2Code
 
 class Amendment7(base_types._BaseFieldType):
 
-	__slots__ = ["_AmdmntSts", "_AmdmntId"]
+	__slots__ = ["_AmdmntId", "_AmdmntSts"]
 	@property
 	def AmdmntId(self):
 		return self._AmdmntId

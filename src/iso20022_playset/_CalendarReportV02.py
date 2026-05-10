@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CalendarReportOrError1Choice import CalendarReportOrError1Choice
 from ._MessageHeader11 import MessageHeader11
+from ._SupplementaryData1 import SupplementaryData1
 
 class CalendarReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_RptOrErr"]
+	__slots__ = ["_MsgHdr", "_RptOrErr", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

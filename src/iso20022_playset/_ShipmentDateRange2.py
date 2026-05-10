@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._DecimalNumber import DecimalNumber
+from ._ISODate import ISODate
 
 class ShipmentDateRange2(base_types._BaseFieldType):
 
-	__slots__ = ["_SubQtyVal", "_LatstShipmntDt", "_EarlstShipmntDt"]
+	__slots__ = ["_EarlstShipmntDt", "_LatstShipmntDt", "_SubQtyVal"]
 	@property
 	def EarlstShipmntDt(self):
 		return self._EarlstShipmntDt

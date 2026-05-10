@@ -1,16 +1,16 @@
 from . import base_types
-from ._BuyInState1Code import BuyInState1Code
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._RateAndAmountFormat39Choice import RateAndAmountFormat39Choice
 from ._AmountAndDirection102 import AmountAndDirection102
-from ._References31 import References31
 from ._BuyInDeferral1Code import BuyInDeferral1Code
+from ._BuyInState1Code import BuyInState1Code
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._RateAndAmountFormat39Choice import RateAndAmountFormat39Choice
+from ._References31 import References31
+from ._SecurityIdentification19 import SecurityIdentification19
 
 class BuyInAdviceDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyInSttlmDt", "_BuyInStat", "_CshCompstnAmt", "_BuyInPric", "_Ref", "_BuyInDfrrl", "_Qty", "_FinInstrmId"]
+	__slots__ = ["_BuyInDfrrl", "_BuyInPric", "_BuyInStat", "_BuyInSttlmDt", "_CshCompstnAmt", "_FinInstrmId", "_Qty", "_Ref"]
 	@property
 	def BuyInDfrrl(self):
 		return self._BuyInDfrrl

@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max105Text import Max105Text
 from ._PartyIdentification272 import PartyIdentification272
 from ._ReturnReason5Choice import ReturnReason5Choice
-from ._Max105Text import Max105Text
 
 class PaymentReturnReason7(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Rsn", "_Orgtr"]
+	__slots__ = ["_AddtlInf", "_Orgtr", "_Rsn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

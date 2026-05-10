@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max3Number import Max3Number
 from ._Frequency13Code import Frequency13Code
+from ._Max3Number import Max3Number
 
 class InterestRateContractTerm4(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_Unit"]
+	__slots__ = ["_Unit", "_Val"]
 	@property
 	def Unit(self):
 		return self._Unit

@@ -1,10 +1,10 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._GenericIdentification1 import GenericIdentification1
+from ._PercentageRate import PercentageRate
 
 class RateOrType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Rate"]
+	__slots__ = ["_Rate", "_Tp"]
 	@property
 	def Rate(self):
 		return self._Rate

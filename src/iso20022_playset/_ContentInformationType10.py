@@ -4,7 +4,7 @@ from ._EnvelopedData4 import EnvelopedData4
 
 class ContentInformationType10(base_types._BaseFieldType):
 
-	__slots__ = ["_EnvlpdData", "_CnttTp"]
+	__slots__ = ["_CnttTp", "_EnvlpdData"]
 	@property
 	def CnttTp(self):
 		return self._CnttTp

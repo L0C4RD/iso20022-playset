@@ -1,7 +1,7 @@
 from . import base_types
 from ._Document11 import Document11
-from ._PresentationMedium1Choice import PresentationMedium1Choice
 from ._Max2000Text import Max2000Text
+from ._PresentationMedium1Choice import PresentationMedium1Choice
 
 class Presentation4(base_types._BaseFieldType):
 

@@ -1,11 +1,11 @@
 from . import base_types
-from ._ConfirmationPartyDetails15 import ConfirmationPartyDetails15
 from ._ConfirmationPartyDetails12 import ConfirmationPartyDetails12
 from ._ConfirmationPartyDetails14 import ConfirmationPartyDetails14
+from ._ConfirmationPartyDetails15 import ConfirmationPartyDetails15
 
 class ConfirmationParties8(base_types._BaseFieldType):
 
-	__slots__ = ["_AffrmgPty", "_Lndr", "_Brrwr", "_Sellr", "_TradBnfcryPty", "_Buyr"]
+	__slots__ = ["_AffrmgPty", "_Brrwr", "_Buyr", "_Lndr", "_Sellr", "_TradBnfcryPty"]
 	@property
 	def AffrmgPty(self):
 		return self._AffrmgPty

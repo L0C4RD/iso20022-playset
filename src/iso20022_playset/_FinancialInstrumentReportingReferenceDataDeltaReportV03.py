@@ -1,11 +1,11 @@
 from . import base_types
-from ._SecuritiesReferenceDeltaStatusReport5Choice import SecuritiesReferenceDeltaStatusReport5Choice
 from ._SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
+from ._SecuritiesReferenceDeltaStatusReport5Choice import SecuritiesReferenceDeltaStatusReport5Choice
 from ._SupplementaryData1 import SupplementaryData1
 
 class FinancialInstrumentReportingReferenceDataDeltaReportV03(base_types._BaseFieldType):
 
-	__slots__ = ["_RptHdr", "_SplmtryData", "_FinInstrm"]
+	__slots__ = ["_FinInstrm", "_RptHdr", "_SplmtryData"]
 	@property
 	def FinInstrm(self):
 		return self._FinInstrm

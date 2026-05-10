@@ -4,7 +4,7 @@ from ._SystemStatus3Choice import SystemStatus3Choice
 
 class CalendarData1(base_types._BaseFieldType):
 
-	__slots__ = ["_SysSts", "_SysDt"]
+	__slots__ = ["_SysDt", "_SysSts"]
 	@property
 	def SysDt(self):
 		return self._SysDt

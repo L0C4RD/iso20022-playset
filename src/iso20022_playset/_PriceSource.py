@@ -1,10 +1,10 @@
 from . import base_types
-from ._PriceSource1Code import PriceSource1Code
 from ._Max35Text import Max35Text
+from ._PriceSource1Code import PriceSource1Code
 
 class PriceSource(base_types._BaseFieldType):
 
-	__slots__ = ["_PricSrc", "_Nrrtv"]
+	__slots__ = ["_Nrrtv", "_PricSrc"]
 	@property
 	def Nrrtv(self):
 		return self._Nrrtv

@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
-from ._InterestPaymentDateRange1 import InterestPaymentDateRange1
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ExchangeRate1 import ExchangeRate1
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._TradeParty6 import TradeParty6
-from ._ShipmentSchedule2Choice import ShipmentSchedule2Choice
 from ._DocumentIdentification22 import DocumentIdentification22
+from ._ExchangeRate1 import ExchangeRate1
+from ._ISODate import ISODate
+from ._InterestPaymentDateRange1 import InterestPaymentDateRange1
 from ._Max35Text import Max35Text
+from ._ShipmentSchedule2Choice import ShipmentSchedule2Choice
+from ._TradeParty6 import TradeParty6
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TradeContract4(base_types._BaseFieldType):
 
-	__slots__ = ["_StartDt", "_Buyr", "_SttlmCcy", "_ShipmntSchdl", "_TradTpId", "_MtrtyDt", "_PmtSchdl", "_Attchmnt", "_PrlngtnFlg", "_Amt", "_Sellr", "_CtrctDocId", "_XchgRateInf"]
+	__slots__ = ["_Amt", "_Attchmnt", "_Buyr", "_CtrctDocId", "_MtrtyDt", "_PmtSchdl", "_PrlngtnFlg", "_Sellr", "_ShipmntSchdl", "_StartDt", "_SttlmCcy", "_TradTpId", "_XchgRateInf"]
 	@property
 	def Amt(self):
 		return self._Amt

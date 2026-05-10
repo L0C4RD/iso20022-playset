@@ -1,12 +1,12 @@
 from . import base_types
-from ._TransactionOperationType6Code import TransactionOperationType6Code
-from ._SecuritiesTradeVenueCriteria1Choice import SecuritiesTradeVenueCriteria1Choice
-from ._PartyNatureType1Code import PartyNatureType1Code
 from ._CorporateSectorCriteria5 import CorporateSectorCriteria5
+from ._PartyNatureType1Code import PartyNatureType1Code
+from ._SecuritiesTradeVenueCriteria1Choice import SecuritiesTradeVenueCriteria1Choice
+from ._TransactionOperationType6Code import TransactionOperationType6Code
 
 class TradeAdditionalQueryCriteria7(base_types._BaseFieldType):
 
-	__slots__ = ["_NtrOfCtrPty", "_ActnTp", "_CorpSctr", "_ExctnVn"]
+	__slots__ = ["_ActnTp", "_CorpSctr", "_ExctnVn", "_NtrOfCtrPty"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp

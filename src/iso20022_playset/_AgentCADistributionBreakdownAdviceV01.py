@@ -5,7 +5,7 @@ from ._EntitlementAdvice1 import EntitlementAdvice1
 
 class AgentCADistributionBreakdownAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnDstrbtnDtls", "_Id", "_CorpActnGnlInf"]
+	__slots__ = ["_CorpActnDstrbtnDtls", "_CorpActnGnlInf", "_Id"]
 	@property
 	def CorpActnDstrbtnDtls(self):
 		return self._CorpActnDstrbtnDtls

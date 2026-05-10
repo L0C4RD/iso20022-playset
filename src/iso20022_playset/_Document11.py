@@ -1,11 +1,11 @@
 from . import base_types
-from ._PresentationDocumentFormat1Choice import PresentationDocumentFormat1Choice
 from ._Max20000Text import Max20000Text
 from ._Presentation3 import Presentation3
+from ._PresentationDocumentFormat1Choice import PresentationDocumentFormat1Choice
 
 class Document11(base_types._BaseFieldType):
 
-	__slots__ = ["_Wrdg", "_ElctrncDtls", "_Tp"]
+	__slots__ = ["_ElctrncDtls", "_Tp", "_Wrdg"]
 	@property
 	def ElctrncDtls(self):
 		return self._ElctrncDtls

@@ -1,14 +1,14 @@
 from . import base_types
+from ._AdditionalData1 import AdditionalData1
 from ._Address2 import Address2
-from ._Max70Text import Max70Text
 from ._ContactBusiness1 import ContactBusiness1
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 from ._TravelAgencyPackage2 import TravelAgencyPackage2
-from ._AdditionalData1 import AdditionalData1
 
 class TravelAgency4(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Adr", "_ShrtNm", "_Ctct", "_AddtlData", "_Assgnr", "_IATACd", "_Nm", "_TrvlPackg"]
+	__slots__ = ["_AddtlData", "_Adr", "_Assgnr", "_Cd", "_Ctct", "_IATACd", "_Nm", "_ShrtNm", "_TrvlPackg"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

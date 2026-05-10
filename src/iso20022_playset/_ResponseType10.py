@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
 from ._Response9Code import Response9Code
 
 class ResponseType10(base_types._BaseFieldType):

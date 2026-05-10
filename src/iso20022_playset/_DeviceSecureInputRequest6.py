@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._OnLinePIN11 import OnLinePIN11
-from ._PINRequestType1Code import PINRequestType1Code
 from ._Max35Text import Max35Text
 from ._Number import Number
+from ._OnLinePIN11 import OnLinePIN11
+from ._PINRequestType1Code import PINRequestType1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class DeviceSecureInputRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_PINReqTp", "_BeepKeyFlg", "_MaxWtgTm", "_PINVrfctnMtd", "_CrdhldrPIN"]
+	__slots__ = ["_BeepKeyFlg", "_CrdhldrPIN", "_MaxWtgTm", "_PINReqTp", "_PINVrfctnMtd"]
 	@property
 	def BeepKeyFlg(self):
 		return self._BeepKeyFlg

@@ -1,12 +1,12 @@
 from . import base_types
-from ._PartyIdentification113 import PartyIdentification113
-from ._SubAccount6 import SubAccount6
 from ._Max35Text import Max35Text
 from ._OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
+from ._PartyIdentification113 import PartyIdentification113
+from ._SubAccount6 import SubAccount6
 
 class InvestmentAccount58(base_types._BaseFieldType):
 
-	__slots__ = ["_OwnrId", "_SubAcctDtls", "_AcctSvcr", "_AcctId", "_OrdrOrgtrElgblty", "_AcctNm", "_AcctDsgnt"]
+	__slots__ = ["_AcctDsgnt", "_AcctId", "_AcctNm", "_AcctSvcr", "_OrdrOrgtrElgblty", "_OwnrId", "_SubAcctDtls"]
 	@property
 	def AcctDsgnt(self):
 		return self._AcctDsgnt

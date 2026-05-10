@@ -1,22 +1,22 @@
 from . import base_types
-from ._Price8 import Price8
-from ._BaseOneRate import BaseOneRate
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._DateTimePeriod1Choice import DateTimePeriod1Choice
-from ._UnderlyingAttributes4 import UnderlyingAttributes4
-from ._OptionParty3Choice import OptionParty3Choice
-from ._Number import Number
-from ._OptionType8Choice import OptionType8Choice
 from ._AssignmentMethod2Choice import AssignmentMethod2Choice
-from ._Max4AlphaNumericText import Max4AlphaNumericText
-from ._SettleStyle2Choice import SettleStyle2Choice
+from ._BaseOneRate import BaseOneRate
+from ._DateTimePeriod1Choice import DateTimePeriod1Choice
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 from ._ISODateTime import ISODateTime
-from ._Standardisation3Choice import Standardisation3Choice
+from ._Max4AlphaNumericText import Max4AlphaNumericText
+from ._Number import Number
+from ._OptionParty3Choice import OptionParty3Choice
 from ._OptionStyle1Choice import OptionStyle1Choice
+from ._OptionType8Choice import OptionType8Choice
+from ._Price8 import Price8
+from ._SettleStyle2Choice import SettleStyle2Choice
+from ._Standardisation3Choice import Standardisation3Choice
+from ._UnderlyingAttributes4 import UnderlyingAttributes4
 
 class Option15(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnSttlmStyle", "_ConvsPrd", "_MinExrcblQty", "_CtrctSz", "_StrkPric", "_OptnTp", "_StrkVal", "_XpryLctn", "_OptnStyle", "_Stdstn", "_InstrmAssgnmtMtd", "_ConvsDt", "_VrsnNb", "_AddtlUndrlygAttrbts", "_StrkMltplr", "_TradgPtyRole"]
+	__slots__ = ["_AddtlUndrlygAttrbts", "_ConvsDt", "_ConvsPrd", "_CtrctSz", "_InstrmAssgnmtMtd", "_MinExrcblQty", "_OptnSttlmStyle", "_OptnStyle", "_OptnTp", "_Stdstn", "_StrkMltplr", "_StrkPric", "_StrkVal", "_TradgPtyRole", "_VrsnNb", "_XpryLctn"]
 	@property
 	def AddtlUndrlygAttrbts(self):
 		return self._AddtlUndrlygAttrbts

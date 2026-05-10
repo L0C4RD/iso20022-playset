@@ -1,11 +1,11 @@
 from . import base_types
 from ._ActivationHeader3 import ActivationHeader3
-from ._SupplementaryData1 import SupplementaryData1
 from ._ActivationStatus3 import ActivationStatus3
+from ._SupplementaryData1 import SupplementaryData1
 
 class RequestToPayDebtorActivationStatusReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlActvtnAndSts", "_Hdr", "_SplmtryData"]
+	__slots__ = ["_Hdr", "_OrgnlActvtnAndSts", "_SplmtryData"]
 	@property
 	def Hdr(self):
 		return self._Hdr

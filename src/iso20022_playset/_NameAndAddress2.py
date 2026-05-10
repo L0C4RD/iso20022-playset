@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class NameAndAddress2(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Adr"]
+	__slots__ = ["_Adr", "_Nm"]
 	@property
 	def Adr(self):
 		return self._Adr

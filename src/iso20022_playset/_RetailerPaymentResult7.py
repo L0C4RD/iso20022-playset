@@ -1,20 +1,20 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._LanguageCode import LanguageCode
-from ._CustomerOrder1 import CustomerOrder1
-from ._CardPaymentServiceType12Code import CardPaymentServiceType12Code
-from ._PaymentTransaction165 import PaymentTransaction165
-from ._CardPaymentServiceType9Code import CardPaymentServiceType9Code
-from ._PaymentInstrumentType2Code import PaymentInstrumentType2Code
-from ._CardPaymentTransaction144 import CardPaymentTransaction144
-from ._PaymentTypeInformation26 import PaymentTypeInformation26
 from ._CapturedSignature1 import CapturedSignature1
-from ._ContentInformationType40 import ContentInformationType40
+from ._CardPaymentServiceType12Code import CardPaymentServiceType12Code
 from ._CardPaymentServiceType15Code import CardPaymentServiceType15Code
+from ._CardPaymentServiceType9Code import CardPaymentServiceType9Code
+from ._CardPaymentTransaction144 import CardPaymentTransaction144
+from ._ContentInformationType40 import ContentInformationType40
+from ._CustomerOrder1 import CustomerOrder1
+from ._LanguageCode import LanguageCode
+from ._PaymentInstrumentType2Code import PaymentInstrumentType2Code
+from ._PaymentTransaction165 import PaymentTransaction165
+from ._PaymentTypeInformation26 import PaymentTypeInformation26
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class RetailerPaymentResult7(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtInstrm", "_CstmrOrdr", "_PrtctdCaptrdSgntr", "_SvcAttr", "_ImgCaptrdSgntr", "_TxTp", "_TxRspn", "_AddtlSvc", "_ReqdTx", "_MrchntOvrrdFlg", "_PmtTpInf", "_OnlnFlg", "_CstmrLang"]
+	__slots__ = ["_AddtlSvc", "_CstmrLang", "_CstmrOrdr", "_ImgCaptrdSgntr", "_MrchntOvrrdFlg", "_OnlnFlg", "_PmtInstrm", "_PmtTpInf", "_PrtctdCaptrdSgntr", "_ReqdTx", "_SvcAttr", "_TxRspn", "_TxTp"]
 	@property
 	def AddtlSvc(self):
 		return self._AddtlSvc

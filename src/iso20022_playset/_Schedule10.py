@@ -5,7 +5,7 @@ from ._UnitOfMeasure8Choice import UnitOfMeasure8Choice
 
 class Schedule10(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitOfMeasr", "_UadjstdFctvDt", "_UadjstdEndDt", "_Qty"]
+	__slots__ = ["_Qty", "_UadjstdEndDt", "_UadjstdFctvDt", "_UnitOfMeasr"]
 	@property
 	def Qty(self):
 		return self._Qty

@@ -1,12 +1,12 @@
 from . import base_types
 from ._CashMovement2 import CashMovement2
-from ._UnderlyingSecurityMovement1 import UnderlyingSecurityMovement1
 from ._CorporateActionMovement1 import CorporateActionMovement1
 from ._ProceedsMovement1 import ProceedsMovement1
+from ._UnderlyingSecurityMovement1 import UnderlyingSecurityMovement1
 
 class MovementInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygCshMvmntDtls", "_UndrlygSctiesMvmntDtls", "_MvmntGnlInf", "_PrcdsMvmntDtls"]
+	__slots__ = ["_MvmntGnlInf", "_PrcdsMvmntDtls", "_UndrlygCshMvmntDtls", "_UndrlygSctiesMvmntDtls"]
 	@property
 	def MvmntGnlInf(self):
 		return self._MvmntGnlInf

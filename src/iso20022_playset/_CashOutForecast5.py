@@ -1,14 +1,14 @@
 from . import base_types
-from ._FundCashOutBreakdown3 import FundCashOutBreakdown3
-from ._ISODate import ISODate
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
 from ._FundBalance1 import FundBalance1
+from ._FundCashOutBreakdown3 import FundCashOutBreakdown3
+from ._ISODate import ISODate
 from ._YesNoIndicator import YesNoIndicator
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class CashOutForecast5(base_types._BaseFieldType):
 
-	__slots__ = ["_SubTtlAmt", "_CshOutBrkdwnDtls", "_XcptnlCshFlowInd", "_AddtlBal", "_CshSttlmDt", "_SubTtlUnitsNb"]
+	__slots__ = ["_AddtlBal", "_CshOutBrkdwnDtls", "_CshSttlmDt", "_SubTtlAmt", "_SubTtlUnitsNb", "_XcptnlCshFlowInd"]
 	@property
 	def AddtlBal(self):
 		return self._AddtlBal

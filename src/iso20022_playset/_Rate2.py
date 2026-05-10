@@ -4,7 +4,7 @@ from ._PlusOrMinusIndicator import PlusOrMinusIndicator
 
 class Rate2(base_types._BaseFieldType):
 
-	__slots__ = ["_Sgn", "_Rate"]
+	__slots__ = ["_Rate", "_Sgn"]
 	@property
 	def Rate(self):
 		return self._Rate

@@ -1,6 +1,6 @@
 from . import base_types
-from ._TransactionIdentifier1 import TransactionIdentifier1
 from ._StoredValueData8 import StoredValueData8
+from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class StoredValueRequest8(base_types._BaseFieldType):
 

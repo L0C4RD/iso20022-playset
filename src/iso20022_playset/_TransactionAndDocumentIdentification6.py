@@ -1,12 +1,12 @@
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._PartyIdentification136 import PartyIdentification136
-from ._Max35Text import Max35Text
 from ._CopyDuplicate1Code import CopyDuplicate1Code
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Max35Text import Max35Text
+from ._PartyIdentification136 import PartyIdentification136
 
 class TransactionAndDocumentIdentification6(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_MsgOrgtr", "_MsgRcpt", "_CpyDplct", "_TxId", "_DocId"]
+	__slots__ = ["_CpyDplct", "_CreDtTm", "_DocId", "_MsgOrgtr", "_MsgRcpt", "_TxId"]
 	@property
 	def CpyDplct(self):
 		return self._CpyDplct

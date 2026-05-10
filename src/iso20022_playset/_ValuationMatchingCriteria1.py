@@ -4,7 +4,7 @@ from ._CompareValuationType1 import CompareValuationType1
 
 class ValuationMatchingCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_CtrctVal"]
+	__slots__ = ["_CtrctVal", "_Tp"]
 	@property
 	def CtrctVal(self):
 		return self._CtrctVal

@@ -1,15 +1,15 @@
 from . import base_types
-from ._SecuritiesAccount22 import SecuritiesAccount22
-from ._Max35Text import Max35Text
-from ._PartyIdentification144 import PartyIdentification144
-from ._Pagination1 import Pagination1
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._Max35Text import Max35Text
+from ._Pagination1 import Pagination1
+from ._PartyIdentification144 import PartyIdentification144
+from ._SecuritiesAccount22 import SecuritiesAccount22
 from ._StatusTrail12 import StatusTrail12
 from ._TransactionIdentifications54 import TransactionIdentifications54
 
 class SecuritiesSettlementTransactionAuditTrailReportV06(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_StsTrl", "_QryRef", "_SfkpgAcct", "_TxId", "_AcctOwnr", "_Pgntn"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_Pgntn", "_QryRef", "_SfkpgAcct", "_StsTrl", "_TxId"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

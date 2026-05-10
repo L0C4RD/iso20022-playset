@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._AmountAndDirection34 import AmountAndDirection34
 from ._BillingMethod4 import BillingMethod4
 from ._BillingTaxIdentification3 import BillingTaxIdentification3
+from ._ISODate import ISODate
 from ._Max40Text import Max40Text
 
 class BillingTaxRegion3(base_types._BaseFieldType):
 
-	__slots__ = ["_MtdC", "_InvcNb", "_SttlmAmt", "_PtDt", "_RgnNm", "_RgnNb", "_CstmrTaxId", "_SndgFI", "_TaxDueToRgn"]
+	__slots__ = ["_CstmrTaxId", "_InvcNb", "_MtdC", "_PtDt", "_RgnNb", "_RgnNm", "_SndgFI", "_SttlmAmt", "_TaxDueToRgn"]
 	@property
 	def CstmrTaxId(self):
 		return self._CstmrTaxId

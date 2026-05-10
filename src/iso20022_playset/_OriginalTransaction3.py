@@ -1,40 +1,40 @@
 from . import base_types
-from ._DisputeData4 import DisputeData4
-from ._Context19 import Context19
-from ._TransactionIdentification54 import TransactionIdentification54
-from ._OriginalTransactionCharacteristics1 import OriginalTransactionCharacteristics1
 from ._AccountDetails4 import AccountDetails4
-from ._PartyIdentification286 import PartyIdentification286
-from ._CustomerDevice5 import CustomerDevice5
-from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
-from ._PartyIdentification284 import PartyIdentification284
-from ._RiskContext3 import RiskContext3
-from ._PartyIdentification287 import PartyIdentification287
-from ._AdditionalService2 import AdditionalService2
-from ._PointOfInteractionComponent16 import PointOfInteractionComponent16
-from ._DateTime2 import DateTime2
-from ._Verification7 import Verification7
-from ._FundingService3 import FundingService3
-from ._ProcessingResult22 import ProcessingResult22
-from ._CardData13 import CardData13
-from ._Jurisdiction2 import Jurisdiction2
-from ._Cardholder22 import Cardholder22
-from ._TransactionAmounts3 import TransactionAmounts3
-from ._ExchangeRateInformation5 import ExchangeRateInformation5
-from ._Terminal9 import Terminal9
-from ._ProgrammeMode4 import ProgrammeMode4
-from ._SettlementService6 import SettlementService6
-from ._DisputeDocumentation1 import DisputeDocumentation1
-from ._Wallet3 import Wallet3
 from ._AdditionalAmounts4 import AdditionalAmounts4
+from ._AdditionalFee3 import AdditionalFee3
+from ._AdditionalService2 import AdditionalService2
+from ._CardData13 import CardData13
+from ._Cardholder22 import Cardholder22
+from ._Context19 import Context19
+from ._CustomerDevice5 import CustomerDevice5
+from ._DateTime2 import DateTime2
 from ._DepositDetails3 import DepositDetails3
+from ._DisputeData4 import DisputeData4
+from ._DisputeDocumentation1 import DisputeDocumentation1
+from ._ExchangeRateInformation5 import ExchangeRateInformation5
+from ._FundingService3 import FundingService3
+from ._Jurisdiction2 import Jurisdiction2
+from ._OriginalTransactionCharacteristics1 import OriginalTransactionCharacteristics1
+from ._PartyIdentification284 import PartyIdentification284
+from ._PartyIdentification286 import PartyIdentification286
+from ._PartyIdentification287 import PartyIdentification287
+from ._PointOfInteractionComponent16 import PointOfInteractionComponent16
+from ._ProcessingResult22 import ProcessingResult22
+from ._ProgrammeMode4 import ProgrammeMode4
+from ._Reconciliation4 import Reconciliation4
+from ._RiskContext3 import RiskContext3
+from ._SettlementService6 import SettlementService6
 from ._SpecialProgrammeQualification2 import SpecialProgrammeQualification2
+from ._Terminal9 import Terminal9
 from ._Token2 import Token2
+from ._TransactionAmounts3 import TransactionAmounts3
+from ._TransactionIdentification54 import TransactionIdentification54
+from ._Verification7 import Verification7
+from ._Wallet3 import Wallet3
 
 class OriginalTransaction3(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctFr", "_AddtlAmt", "_Sndr", "_DsptData", "_TxAmts", "_AddtlFee", "_Pyee", "_Termnl", "_FndsSvcs", "_Rcncltn", "_ConvsDtTm", "_Crdhldr", "_POICmpnt", "_Cntxt", "_PrcgRslt", "_Pyer", "_CstmrDvc", "_Rsk", "_Orgtr", "_XchgRate", "_DpstDtls", "_Dstn", "_Accptr", "_Prgrmm", "_TxId", "_Issr", "_Jursdctn", "_Card", "_AcctTo", "_Tkn", "_Acqrr", "_Vrfctn", "_Rcvr", "_SttlmSvc", "_Dcmnttn", "_AddtlSvc", "_SpclPrgrmmQlfctn", "_Wllt", "_TxChrtcs"]
+	__slots__ = ["_Accptr", "_AcctFr", "_AcctTo", "_Acqrr", "_AddtlAmt", "_AddtlFee", "_AddtlSvc", "_Card", "_Cntxt", "_ConvsDtTm", "_Crdhldr", "_CstmrDvc", "_Dcmnttn", "_DpstDtls", "_DsptData", "_Dstn", "_FndsSvcs", "_Issr", "_Jursdctn", "_Orgtr", "_POICmpnt", "_PrcgRslt", "_Prgrmm", "_Pyee", "_Pyer", "_Rcncltn", "_Rcvr", "_Rsk", "_Sndr", "_SpclPrgrmmQlfctn", "_SttlmSvc", "_Termnl", "_Tkn", "_TxAmts", "_TxChrtcs", "_TxId", "_Vrfctn", "_Wllt", "_XchgRate"]
 	@property
 	def Accptr(self):
 		return self._Accptr

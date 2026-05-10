@@ -1,16 +1,16 @@
 from . import base_types
 from ._AdditionalReferences2 import AdditionalReferences2
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradePartyIdentification9 import TradePartyIdentification9
-from ._Header23 import Header23
 from ._Confirmation1 import Confirmation1
-from ._TradePartyIdentification10 import TradePartyIdentification10
+from ._Header23 import Header23
 from ._MessageIdentification1 import MessageIdentification1
+from ._SupplementaryData1 import SupplementaryData1
 from ._Trade8 import Trade8
+from ._TradePartyIdentification10 import TradePartyIdentification10
+from ._TradePartyIdentification9 import TradePartyIdentification9
 
 class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgSdId", "_TradDtl", "_Ref", "_Hdr", "_CtrPtySdId", "_AdvcId", "_ConfInf", "_SplmtryData"]
+	__slots__ = ["_AdvcId", "_ConfInf", "_CtrPtySdId", "_Hdr", "_Ref", "_SplmtryData", "_TradDtl", "_TradgSdId"]
 	@property
 	def AdvcId(self):
 		return self._AdvcId

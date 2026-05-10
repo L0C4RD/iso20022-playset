@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class OtherAmounts16(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_RgltryAmt", "_WhldgTax", "_MktMmbFeeAmt", "_LclTaxCtrySpcfc2", "_ExctgBrkrAmt", "_LclTax", "_ClrBrkrComssn", "_OrgnlCcyAmt", "_TrfTax", "_BrrwgFee", "_PmtLevyTax", "_RmngBookVal", "_RmnrtnAmt", "_ValAddedTax", "_ConvtdAmt", "_OddLotFee", "_MtchgConfFee", "_LclTaxCtrySpcfc1", "_RmnrtnAmtReq", "_CsmptnTax", "_Mrgn", "_NetMktVal", "_BookVal", "_TxTax", "_AcrdCptlstnAmt", "_RmngFaceVal", "_StockXchgTax", "_CtryNtlFdrlTax", "_ShrdBrkrgAmt", "_NetGnLoss", "_DiffInPric", "_LclTaxCtrySpcfc3", "_SpclCncssn", "_StmpDty", "_ChrgsFees", "_BrrwgIntrstAmt", "_IsseDscntAllwnc", "_LclTaxCtrySpcfc4", "_LclBrkrComssn"]
+	__slots__ = ["_AcrdCptlstnAmt", "_BookVal", "_BrrwgFee", "_BrrwgIntrstAmt", "_ChrgsFees", "_ClrBrkrComssn", "_ConvtdAmt", "_CsmptnTax", "_CtryNtlFdrlTax", "_DiffInPric", "_ExctgBrkrAmt", "_IsseDscntAllwnc", "_LclBrkrComssn", "_LclTax", "_LclTaxCtrySpcfc1", "_LclTaxCtrySpcfc2", "_LclTaxCtrySpcfc3", "_LclTaxCtrySpcfc4", "_MktMmbFeeAmt", "_Mrgn", "_MtchgConfFee", "_NetGnLoss", "_NetMktVal", "_OddLotFee", "_OrgnlCcyAmt", "_Othr", "_PmtLevyTax", "_RgltryAmt", "_RmngBookVal", "_RmngFaceVal", "_RmnrtnAmt", "_RmnrtnAmtReq", "_ShrdBrkrgAmt", "_SpclCncssn", "_StmpDty", "_StockXchgTax", "_TrfTax", "_TxTax", "_ValAddedTax", "_WhldgTax"]
 	@property
 	def AcrdCptlstnAmt(self):
 		return self._AcrdCptlstnAmt

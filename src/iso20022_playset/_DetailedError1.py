@@ -1,7 +1,7 @@
 from . import base_types
-from ._Max500Text import Max500Text
-from ._Max35Text import Max35Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Max500Text import Max500Text
 
 class DetailedError1(base_types._BaseFieldType):
 

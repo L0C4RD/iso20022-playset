@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISODateTime import ISODateTime
-from ._TMSContactLevel1Code import TMSContactLevel1Code
 from ._Max35Text import Max35Text
+from ._TMSContactLevel1Code import TMSContactLevel1Code
 
 class TMSTrigger1(base_types._BaseFieldType):
 
-	__slots__ = ["_TMSId", "_TMSCtctLvl", "_TMSCtctDtTm"]
+	__slots__ = ["_TMSCtctDtTm", "_TMSCtctLvl", "_TMSId"]
 	@property
 	def TMSCtctDtTm(self):
 		return self._TMSCtctDtTm

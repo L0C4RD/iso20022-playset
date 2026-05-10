@@ -4,7 +4,7 @@ from ._SubBalanceQuantity2Choice import SubBalanceQuantity2Choice
 
 class SecuritiesPosition1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Qty"]
+	__slots__ = ["_Qty", "_Tp"]
 	@property
 	def Qty(self):
 		return self._Qty

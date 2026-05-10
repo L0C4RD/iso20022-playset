@@ -1,11 +1,11 @@
 from . import base_types
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._GenericIdentification13 import GenericIdentification13
 from ._DateType6Code import DateType6Code
+from ._GenericIdentification13 import GenericIdentification13
 
 class DateFormat4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotSpcfdDt", "_Prtry", "_Dt"]
+	__slots__ = ["_Dt", "_NotSpcfdDt", "_Prtry"]
 	@property
 	def Dt(self):
 		return self._Dt

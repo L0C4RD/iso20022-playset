@@ -1,11 +1,11 @@
 from . import base_types
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
 from ._GenericIdentification47 import GenericIdentification47
 from ._InvestmentFundRole2Code import InvestmentFundRole2Code
+from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
 
 class Role7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd", "_Txt"]
+	__slots__ = ["_Cd", "_Prtry", "_Txt"]
 	@property
 	def Cd(self):
 		return self._Cd

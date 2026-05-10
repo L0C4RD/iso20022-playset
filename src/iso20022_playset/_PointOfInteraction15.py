@@ -1,14 +1,14 @@
 from . import base_types
-from ._PointOfInteractionCapabilities9 import PointOfInteractionCapabilities9
+from ._GenericIdentification177 import GenericIdentification177
 from ._LocationCategory3Code import LocationCategory3Code
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
+from ._PointOfInteractionCapabilities9 import PointOfInteractionCapabilities9
 from ._PointOfInteractionComponent17 import PointOfInteractionComponent17
-from ._GenericIdentification177 import GenericIdentification177
 
 class PointOfInteraction15(base_types._BaseFieldType):
 
-	__slots__ = ["_SysNm", "_GrpId", "_TmZone", "_Id", "_Cmpnt", "_TermnlIntgtn", "_Cpblties"]
+	__slots__ = ["_Cmpnt", "_Cpblties", "_GrpId", "_Id", "_SysNm", "_TermnlIntgtn", "_TmZone"]
 	@property
 	def Cmpnt(self):
 		return self._Cmpnt

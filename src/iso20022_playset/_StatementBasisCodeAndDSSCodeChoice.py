@@ -1,10 +1,10 @@
 from . import base_types
-from ._StatementBasis1Code import StatementBasis1Code
 from ._GenericIdentification7 import GenericIdentification7
+from ._StatementBasis1Code import StatementBasis1Code
 
 class StatementBasisCodeAndDSSCodeChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtBsisAsDSS", "_StmtBsisAsCd"]
+	__slots__ = ["_StmtBsisAsCd", "_StmtBsisAsDSS"]
 	@property
 	def StmtBsisAsCd(self):
 		return self._StmtBsisAsCd

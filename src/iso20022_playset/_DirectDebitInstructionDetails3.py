@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._YesNoIndicator import YesNoIndicator
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
 from ._PartyIdentification272 import PartyIdentification272
 from ._TransferInstruction1 import TransferInstruction1
+from ._YesNoIndicator import YesNoIndicator
 
 class DirectDebitInstructionDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrDtls", "_DrctDbtTrfblInd", "_MndtId", "_LastColltnCcyAmt", "_AutomtdDrctDbtInstrInd", "_Cdtr", "_LastColltnDt"]
+	__slots__ = ["_AutomtdDrctDbtInstrInd", "_Cdtr", "_DrctDbtTrfblInd", "_LastColltnCcyAmt", "_LastColltnDt", "_MndtId", "_OthrDtls"]
 	@property
 	def AutomtdDrctDbtInstrInd(self):
 		return self._AutomtdDrctDbtInstrInd

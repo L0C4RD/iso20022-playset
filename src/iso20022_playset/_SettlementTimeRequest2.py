@@ -3,7 +3,7 @@ from ._ISOTime import ISOTime
 
 class SettlementTimeRequest2(base_types._BaseFieldType):
 
-	__slots__ = ["_CLSTm", "_RjctTm", "_TillTm", "_FrTm"]
+	__slots__ = ["_CLSTm", "_FrTm", "_RjctTm", "_TillTm"]
 	@property
 	def CLSTm(self):
 		return self._CLSTm

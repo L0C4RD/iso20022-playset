@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._AccountLink7 import AccountLink7
 from ._MessageHeader1 import MessageHeader1
+from ._SupplementaryData1 import SupplementaryData1
 
 class AccountLinkCreationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_AcctLk", "_SplmtryData"]
+	__slots__ = ["_AcctLk", "_MsgHdr", "_SplmtryData"]
 	@property
 	def AcctLk(self):
 		return self._AcctLk

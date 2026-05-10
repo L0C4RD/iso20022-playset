@@ -1,13 +1,13 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._NamePrefix2Code import NamePrefix2Code
+from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
 from ._Max6Text import Max6Text
-from ._Max350Text import Max350Text
+from ._NamePrefix2Code import NamePrefix2Code
 
 class IndividualPersonNameLong2(base_types._BaseFieldType):
 
-	__slots__ = ["_Srnm", "_NmPrfx", "_Initls", "_NmSfx", "_Nm", "_GvnNm", "_EndDt", "_StartDt", "_MddlNm"]
+	__slots__ = ["_EndDt", "_GvnNm", "_Initls", "_MddlNm", "_Nm", "_NmPrfx", "_NmSfx", "_Srnm", "_StartDt"]
 	@property
 	def EndDt(self):
 		return self._EndDt

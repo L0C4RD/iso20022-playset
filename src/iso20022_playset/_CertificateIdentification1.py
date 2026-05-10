@@ -1,10 +1,10 @@
 from . import base_types
-from ._ProprietaryReference1 import ProprietaryReference1
 from ._Max35Text import Max35Text
+from ._ProprietaryReference1 import ProprietaryReference1
 
 class CertificateIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_EndToEndId", "_PmtInfId", "_AcctSvcrRef", "_Prtry", "_InstrId"]
+	__slots__ = ["_AcctSvcrRef", "_EndToEndId", "_InstrId", "_MsgId", "_PmtInfId", "_Prtry"]
 	@property
 	def AcctSvcrRef(self):
 		return self._AcctSvcrRef

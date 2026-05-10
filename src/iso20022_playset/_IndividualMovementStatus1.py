@@ -1,11 +1,11 @@
 from . import base_types
+from ._DistributionRejectionStatus1 import DistributionRejectionStatus1
 from ._Max35Text import Max35Text
 from ._MovementProcessingStatus1 import MovementProcessingStatus1
-from ._DistributionRejectionStatus1 import DistributionRejectionStatus1
 
 class IndividualMovementStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcdSts", "_RjctdSts", "_MvmntId"]
+	__slots__ = ["_MvmntId", "_PrcdSts", "_RjctdSts"]
 	@property
 	def MvmntId(self):
 		return self._MvmntId

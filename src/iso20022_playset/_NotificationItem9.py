@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Party50Choice import Party50Choice
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._RemittanceInformation22 import RemittanceInformation22
+from ._CashAccount40 import CashAccount40
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._Party50Choice import Party50Choice
 from ._Purpose2Choice import Purpose2Choice
+from ._RemittanceInformation22 import RemittanceInformation22
+from ._RemittanceLocation8 import RemittanceLocation8
 from ._TransactionAllocation1 import TransactionAllocation1
 from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
-from ._RemittanceLocation8 import RemittanceLocation8
-from ._CashAccount40 import CashAccount40
 
 class NotificationItem9(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcr", "_RltdAcct", "_XpctdValDt", "_Dbtr", "_UETR", "_UndrlygAllcn", "_AcctOwnr", "_IntrmyAgt", "_RmtInf", "_Acct", "_Id", "_EndToEndId", "_DbtrAgt", "_Purp", "_Amt", "_RltdRmtInf"]
+	__slots__ = ["_Acct", "_AcctOwnr", "_AcctSvcr", "_Amt", "_Dbtr", "_DbtrAgt", "_EndToEndId", "_Id", "_IntrmyAgt", "_Purp", "_RltdAcct", "_RltdRmtInf", "_RmtInf", "_UETR", "_UndrlygAllcn", "_XpctdValDt"]
 	@property
 	def Acct(self):
 		return self._Acct

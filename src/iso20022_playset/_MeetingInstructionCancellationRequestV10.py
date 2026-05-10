@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._Max35Text import Max35Text
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._MeetingReference10 import MeetingReference10
 from ._CancelInstruction5 import CancelInstruction5
+from ._Max35Text import Max35Text
+from ._MeetingReference10 import MeetingReference10
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SupplementaryData1 import SupplementaryData1
 
 class MeetingInstructionCancellationRequestV10(base_types._BaseFieldType):
 
-	__slots__ = ["_ToBeCancInstr", "_FinInstrmId", "_SplmtryData", "_MtgRef", "_MtgInstrId"]
+	__slots__ = ["_FinInstrmId", "_MtgInstrId", "_MtgRef", "_SplmtryData", "_ToBeCancInstr"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId

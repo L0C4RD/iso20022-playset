@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification1 import GenericIdentification1
 from ._ExternalUnderlyingTradeTransactionType1Code import ExternalUnderlyingTradeTransactionType1Code
+from ._GenericIdentification1 import GenericIdentification1
 
 class UnderlyingTradeTransactionType1Choice(base_types._BaseFieldType):
 

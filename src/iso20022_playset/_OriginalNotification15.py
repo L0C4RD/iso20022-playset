@@ -1,13 +1,13 @@
 from . import base_types
+from ._ISODateTime import ISODateTime
 from ._Max140Text import Max140Text
 from ._Max35Text import Max35Text
-from ._OriginalNotificationReference13 import OriginalNotificationReference13
-from ._ISODateTime import ISODateTime
 from ._NotificationStatus3Code import NotificationStatus3Code
+from ._OriginalNotificationReference13 import OriginalNotificationReference13
 
 class OriginalNotification15(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgId", "_OrgnlNtfctnRef", "_NtfctnSts", "_OrgnlNtfctnId", "_AddtlStsInf", "_OrgnlCreDtTm"]
+	__slots__ = ["_AddtlStsInf", "_NtfctnSts", "_OrgnlCreDtTm", "_OrgnlMsgId", "_OrgnlNtfctnId", "_OrgnlNtfctnRef"]
 	@property
 	def AddtlStsInf(self):
 		return self._AddtlStsInf

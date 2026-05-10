@@ -1,11 +1,11 @@
 from . import base_types
+from ._ATMContext11 import ATMContext11
 from ._ATMEnvironment21 import ATMEnvironment21
 from ._ATMTransaction44 import ATMTransaction44
-from ._ATMContext11 import ATMContext11
 
 class ATMDepositResponse2(base_types._BaseFieldType):
 
-	__slots__ = ["_Cntxt", "_Tx", "_Envt"]
+	__slots__ = ["_Cntxt", "_Envt", "_Tx"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt

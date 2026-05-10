@@ -4,7 +4,7 @@ from ._ErrorHandling4 import ErrorHandling4
 
 class CalendarReportOrError1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OprlErr", "_CalRpt"]
+	__slots__ = ["_CalRpt", "_OprlErr"]
 	@property
 	def CalRpt(self):
 		return self._CalRpt

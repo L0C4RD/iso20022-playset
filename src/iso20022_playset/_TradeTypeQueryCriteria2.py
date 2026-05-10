@@ -5,7 +5,7 @@ from ._Operation3Code import Operation3Code
 
 class TradeTypeQueryCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_Oprtr", "_SctiesFincgTxTp", "_CollCmpntTp"]
+	__slots__ = ["_CollCmpntTp", "_Oprtr", "_SctiesFincgTxTp"]
 	@property
 	def CollCmpntTp(self):
 		return self._CollCmpntTp

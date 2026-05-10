@@ -1,12 +1,12 @@
 from . import base_types
-from ._Limit8 import Limit8
 from ._Amount4Choice import Amount4Choice
 from ._Limit10 import Limit10
+from ._Limit8 import Limit8
 from ._LimitIdentification3Choice import LimitIdentification3Choice
 
 class LimitStructure5(base_types._BaseFieldType):
 
-	__slots__ = ["_NewLmtValSet", "_OdLmtValSet", "_LmtValAmdmnt", "_LmtId"]
+	__slots__ = ["_LmtId", "_LmtValAmdmnt", "_NewLmtValSet", "_OdLmtValSet"]
 	@property
 	def LmtId(self):
 		return self._LmtId

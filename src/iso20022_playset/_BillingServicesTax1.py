@@ -6,7 +6,7 @@ from ._Max40Text import Max40Text
 
 class BillingServicesTax1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_Desc", "_PricgAmt", "_HstAmt", "_Nb"]
+	__slots__ = ["_Desc", "_HstAmt", "_Nb", "_PricgAmt", "_Rate"]
 	@property
 	def Desc(self):
 		return self._Desc

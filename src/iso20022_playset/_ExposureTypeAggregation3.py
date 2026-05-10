@@ -1,13 +1,13 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._ExposureType23Choice import ExposureType23Choice
-from ._GenericIdentification30 import GenericIdentification30
 from ._CollateralAmount16 import CollateralAmount16
 from ._CollateralStatus1Code import CollateralStatus1Code
+from ._ExposureType23Choice import ExposureType23Choice
+from ._GenericIdentification30 import GenericIdentification30
+from ._PercentageRate import PercentageRate
 
 class ExposureTypeAggregation3(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnRate", "_GblXpsrTpSts", "_ValtnAmts", "_XpsrTp", "_SttlmPrc"]
+	__slots__ = ["_GblXpsrTpSts", "_MrgnRate", "_SttlmPrc", "_ValtnAmts", "_XpsrTp"]
 	@property
 	def GblXpsrTpSts(self):
 		return self._GblXpsrTpSts

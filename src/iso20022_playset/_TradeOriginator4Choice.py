@@ -1,10 +1,10 @@
 from . import base_types
-from ._OriginatorRole2Code import OriginatorRole2Code
 from ._GenericIdentification47 import GenericIdentification47
+from ._OriginatorRole2Code import OriginatorRole2Code
 
 class TradeOriginator4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

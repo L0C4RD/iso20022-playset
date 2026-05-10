@@ -1,17 +1,17 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._Exact12Text import Exact12Text
-from ._Max99Text import Max99Text
+from ._Exact15Text import Exact15Text
+from ._ISODateTime import ISODateTime
 from ._Max12NumericText import Max12NumericText
 from ._Max35Text import Max35Text
-from ._PurchaseIdentifierType2Code import PurchaseIdentifierType2Code
-from ._Exact15Text import Exact15Text
 from ._Max70Text import Max70Text
-from ._ISODateTime import ISODateTime
+from ._Max99Text import Max99Text
+from ._PurchaseIdentifierType2Code import PurchaseIdentifierType2Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TransactionIdentification56(base_types._BaseFieldType):
 
-	__slots__ = ["_PurchsIdr", "_PurchsIdrTp", "_OthrPurchsIdrTp", "_TrnsmssnDtTm", "_LifeCyclId", "_AssoctdDataDstn", "_AssoctdDataRef", "_SysTracAudtNb", "_RtrvlRefNb", "_AssoctdData"]
+	__slots__ = ["_AssoctdData", "_AssoctdDataDstn", "_AssoctdDataRef", "_LifeCyclId", "_OthrPurchsIdrTp", "_PurchsIdr", "_PurchsIdrTp", "_RtrvlRefNb", "_SysTracAudtNb", "_TrnsmssnDtTm"]
 	@property
 	def AssoctdData(self):
 		return self._AssoctdData

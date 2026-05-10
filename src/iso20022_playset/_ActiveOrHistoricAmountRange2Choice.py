@@ -1,10 +1,10 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmountRange1 import ImpliedCurrencyAndAmountRange1
 from ._ActiveOrHistoricCurrencyAndAmountRange2 import ActiveOrHistoricCurrencyAndAmountRange2
+from ._ImpliedCurrencyAndAmountRange1 import ImpliedCurrencyAndAmountRange1
 
 class ActiveOrHistoricAmountRange2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ImpldCcyAndAmtRg", "_CcyAndAmtRg"]
+	__slots__ = ["_CcyAndAmtRg", "_ImpldCcyAndAmtRg"]
 	@property
 	def CcyAndAmtRg(self):
 		return self._CcyAndAmtRg

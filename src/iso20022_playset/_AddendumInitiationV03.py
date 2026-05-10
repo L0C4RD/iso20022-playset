@@ -1,28 +1,28 @@
 from . import base_types
-from ._Token2 import Token2
-from ._CardData14 import CardData14
-from ._AdditionalData2 import AdditionalData2
-from ._ProgrammeMode5 import ProgrammeMode5
 from ._AddendumData6 import AddendumData6
-from ._Jurisdiction2 import Jurisdiction2
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ContentInformationType41 import ContentInformationType41
-from ._SettlementService6 import SettlementService6
-from ._ProtectedData2 import ProtectedData2
+from ._AdditionalData2 import AdditionalData2
 from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
+from ._CardData14 import CardData14
+from ._ContentInformationType41 import ContentInformationType41
 from ._Customer4 import Customer4
-from ._Max1000Text import Max1000Text
-from ._PartyIdentification288 import PartyIdentification288
-from ._OriginalDataElements3 import OriginalDataElements3
-from ._Max70Text import Max70Text
-from ._TransactionIdentification53 import TransactionIdentification53
 from ._Header71 import Header71
+from ._Jurisdiction2 import Jurisdiction2
+from ._Max1000Text import Max1000Text
+from ._Max70Text import Max70Text
+from ._OriginalDataElements3 import OriginalDataElements3
+from ._PartyIdentification286 import PartyIdentification286
+from ._PartyIdentification288 import PartyIdentification288
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._ProtectedData2 import ProtectedData2
+from ._Reconciliation4 import Reconciliation4
+from ._SettlementService6 import SettlementService6
+from ._SupplementaryData1 import SupplementaryData1
+from ._Token2 import Token2
+from ._TransactionIdentification53 import TransactionIdentification53
 
 class AddendumInitiationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlDataElmts", "_Accptr", "_Orgtr", "_Sndr", "_AddtlData", "_AdddmData", "_Issr", "_Jursdctn", "_SplmtryData", "_Card", "_AddtlFee", "_DataSrc", "_Hdr", "_Tkn", "_Rcncltn", "_Cstmr", "_Prgrmm", "_SctyTrlr", "_Rcvr", "_SttlmSvc", "_PrtctdData", "_TxDesc", "_TxId", "_Acqrr", "_Dstn"]
+	__slots__ = ["_Accptr", "_Acqrr", "_AdddmData", "_AddtlData", "_AddtlFee", "_Card", "_Cstmr", "_DataSrc", "_Dstn", "_Hdr", "_Issr", "_Jursdctn", "_OrgnlDataElmts", "_Orgtr", "_Prgrmm", "_PrtctdData", "_Rcncltn", "_Rcvr", "_SctyTrlr", "_Sndr", "_SplmtryData", "_SttlmSvc", "_Tkn", "_TxDesc", "_TxId"]
 	@property
 	def Accptr(self):
 		return self._Accptr

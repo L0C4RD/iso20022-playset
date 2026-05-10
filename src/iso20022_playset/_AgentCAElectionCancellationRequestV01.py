@@ -1,11 +1,11 @@
 from . import base_types
 from ._CorporateActionElection3 import CorporateActionElection3
-from ._DocumentIdentification8 import DocumentIdentification8
 from ._CorporateActionInformation1 import CorporateActionInformation1
+from ._DocumentIdentification8 import DocumentIdentification8
 
 class AgentCAElectionCancellationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_ElctnDtls", "_Id", "_AgtCAElctnAdvcId", "_CorpActnGnlInf"]
+	__slots__ = ["_AgtCAElctnAdvcId", "_CorpActnGnlInf", "_ElctnDtls", "_Id"]
 	@property
 	def AgtCAElctnAdvcId(self):
 		return self._AgtCAElctnAdvcId

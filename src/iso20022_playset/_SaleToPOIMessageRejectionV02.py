@@ -4,7 +4,7 @@ from ._Header41 import Header41
 
 class SaleToPOIMessageRejectionV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Rjct", "_Hdr"]
+	__slots__ = ["_Hdr", "_Rjct"]
 	@property
 	def Hdr(self):
 		return self._Hdr

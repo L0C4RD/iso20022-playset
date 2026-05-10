@@ -1,12 +1,12 @@
 from . import base_types
+from ._BranchAndFinancialInstitutionIdentification4 import BranchAndFinancialInstitutionIdentification4
+from ._CashAccount16 import CashAccount16
 from ._PaymentMethod4Code import PaymentMethod4Code
 from ._PaymentTypeInformation19 import PaymentTypeInformation19
-from ._CashAccount16 import CashAccount16
-from ._BranchAndFinancialInstitutionIdentification4 import BranchAndFinancialInstitutionIdentification4
 
 class PaymentMeans1(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtMtdCd", "_PyeeFI", "_PyerFI", "_PmtTp", "_PyerDbtrAcct", "_PyeeCdtrAcct"]
+	__slots__ = ["_PmtMtdCd", "_PmtTp", "_PyeeCdtrAcct", "_PyeeFI", "_PyerDbtrAcct", "_PyerFI"]
 	@property
 	def PmtMtdCd(self):
 		return self._PmtMtdCd

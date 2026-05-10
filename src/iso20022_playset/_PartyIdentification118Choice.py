@@ -1,10 +1,10 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
 from ._GenericIdentification168 import GenericIdentification168
+from ._LEIIdentifier import LEIIdentifier
 
 class PartyIdentification118Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_LEI"]
+	__slots__ = ["_LEI", "_Prtry"]
 	@property
 	def LEI(self):
 		return self._LEI

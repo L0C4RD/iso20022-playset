@@ -1,18 +1,18 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._AgreedRate3 import AgreedRate3
+from ._AmountsAndValueDate8 import AmountsAndValueDate8
+from ._GeneralInformation9 import GeneralInformation9
 from ._NonDeliverableForwardConditions1 import NonDeliverableForwardConditions1
-from ._TradeAgreement15 import TradeAgreement15
 from ._PostTradeEvent1 import PostTradeEvent1
 from ._RegulatoryReporting8 import RegulatoryReporting8
-from ._AmountsAndValueDate8 import AmountsAndValueDate8
-from ._AgreedRate3 import AgreedRate3
-from ._GeneralInformation9 import GeneralInformation9
 from ._SettlementParties120 import SettlementParties120
+from ._SupplementaryData1 import SupplementaryData1
+from ._TradeAgreement15 import TradeAgreement15
 from ._TradePartyIdentification8 import TradePartyIdentification8
 
 class ForeignExchangeTradeInstructionCancellationV06(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgSdId", "_TradgSdSttlmInstrs", "_AgrdRate", "_TradInf", "_OptnlGnlInf", "_TradAmts", "_CtrPtySdId", "_RgltryRptg", "_NDFConds", "_PstTradEvt", "_SplmtryData", "_CtrPtySdSttlmInstrs"]
+	__slots__ = ["_AgrdRate", "_CtrPtySdId", "_CtrPtySdSttlmInstrs", "_NDFConds", "_OptnlGnlInf", "_PstTradEvt", "_RgltryRptg", "_SplmtryData", "_TradAmts", "_TradInf", "_TradgSdId", "_TradgSdSttlmInstrs"]
 	@property
 	def AgrdRate(self):
 		return self._AgrdRate

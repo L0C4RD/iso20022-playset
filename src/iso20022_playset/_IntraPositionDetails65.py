@@ -1,15 +1,15 @@
 from . import base_types
 from ._AmountAndDirection44 import AmountAndDirection44
-from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
 from ._CorporateActionEventType110Choice import CorporateActionEventType110Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
 from ._GenericIdentification37 import GenericIdentification37
-from ._SecuritiesSubBalanceTypeAndQuantityBreakdown5 import SecuritiesSubBalanceTypeAndQuantityBreakdown5
 from ._Max350Text import Max350Text
+from ._SecuritiesSubBalanceTypeAndQuantityBreakdown5 import SecuritiesSubBalanceTypeAndQuantityBreakdown5
 
 class IntraPositionDetails65(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnEvtTp", "_RmngToBeSttldQty", "_AvlblDt", "_PrevslySttldQty", "_SttlmDt", "_BalTo", "_SctiesSubBalId", "_SttldQty", "_InstrPrcgAddtlDtls", "_BalFr", "_CollMntrAmt"]
+	__slots__ = ["_AvlblDt", "_BalFr", "_BalTo", "_CollMntrAmt", "_CorpActnEvtTp", "_InstrPrcgAddtlDtls", "_PrevslySttldQty", "_RmngToBeSttldQty", "_SctiesSubBalId", "_SttldQty", "_SttlmDt"]
 	@property
 	def AvlblDt(self):
 		return self._AvlblDt

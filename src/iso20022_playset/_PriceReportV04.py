@@ -1,15 +1,15 @@
 from . import base_types
-from ._PriceReportFunction1Code import PriceReportFunction1Code
-from ._Pagination import Pagination
-from ._PriceValuation4 import PriceValuation4
+from ._AdditionalReference3 import AdditionalReference3
+from ._Extension1 import Extension1
 from ._Max35Text import Max35Text
 from ._MessageIdentification1 import MessageIdentification1
-from ._Extension1 import Extension1
-from ._AdditionalReference3 import AdditionalReference3
+from ._Pagination import Pagination
+from ._PriceReportFunction1Code import PriceReportFunction1Code
+from ._PriceValuation4 import PriceValuation4
 
 class PriceReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_Fctn", "_PrvsRef", "_PricValtnDtls", "_PoolRef", "_MsgPgntn", "_PricRptId", "_Xtnsn", "_RltdRef", "_CxlId"]
+	__slots__ = ["_CxlId", "_Fctn", "_MsgId", "_MsgPgntn", "_PoolRef", "_PricRptId", "_PricValtnDtls", "_PrvsRef", "_RltdRef", "_Xtnsn"]
 	@property
 	def CxlId(self):
 		return self._CxlId

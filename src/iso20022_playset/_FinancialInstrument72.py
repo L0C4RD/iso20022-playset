@@ -1,12 +1,12 @@
 from . import base_types
-from ._FormOfSecurity1Code import FormOfSecurity1Code
 from ._DistributionPolicy1Code import DistributionPolicy1Code
+from ._FormOfSecurity1Code import FormOfSecurity1Code
 from ._Max35Text import Max35Text
 from ._SecurityClassificationType2Choice import SecurityClassificationType2Choice
 
 class FinancialInstrument72(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesForm", "_SplmtryId", "_DstrbtnPlcy", "_ClssfctnTp", "_ClssTp"]
+	__slots__ = ["_ClssTp", "_ClssfctnTp", "_DstrbtnPlcy", "_SctiesForm", "_SplmtryId"]
 	@property
 	def ClssTp(self):
 		return self._ClssTp

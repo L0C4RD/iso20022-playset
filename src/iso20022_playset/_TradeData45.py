@@ -1,14 +1,14 @@
 from . import base_types
-from ._Status28Choice import Status28Choice
-from ._Max35Text import Max35Text
-from ._StatusSubType2Code import StatusSubType2Code
-from ._StatusAndSubStatus2 import StatusAndSubStatus2
-from ._ISODateTime import ISODateTime
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
+from ._Status28Choice import Status28Choice
+from ._StatusAndSubStatus2 import StatusAndSubStatus2
+from ._StatusSubType2Code import StatusSubType2Code
 
 class TradeData45(base_types._BaseFieldType):
 
-	__slots__ = ["_CurStsSubTp", "_PdctTp", "_MsgId", "_CurStsDtTm", "_PrvsStsSubTp", "_StsOrgtr", "_PrvsSts", "_SttlmSsnIdr", "_CurSts"]
+	__slots__ = ["_CurSts", "_CurStsDtTm", "_CurStsSubTp", "_MsgId", "_PdctTp", "_PrvsSts", "_PrvsStsSubTp", "_StsOrgtr", "_SttlmSsnIdr"]
 	@property
 	def CurSts(self):
 		return self._CurSts

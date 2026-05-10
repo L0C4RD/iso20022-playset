@@ -1,11 +1,11 @@
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
-from ._NameAndAddress8 import NameAndAddress8
 from ._Max35Text import Max35Text
+from ._NameAndAddress8 import NameAndAddress8
 
 class PartyIdentification60(base_types._BaseFieldType):
 
-	__slots__ = ["_FndId", "_NmAndAdr", "_LglNttyIdr"]
+	__slots__ = ["_FndId", "_LglNttyIdr", "_NmAndAdr"]
 	@property
 	def FndId(self):
 		return self._FndId

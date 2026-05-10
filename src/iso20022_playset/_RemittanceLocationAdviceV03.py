@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._RemittanceLocation10 import RemittanceLocation10
 from ._GroupHeader122 import GroupHeader122
+from ._RemittanceLocation10 import RemittanceLocation10
+from ._SupplementaryData1 import SupplementaryData1
 
 class RemittanceLocationAdviceV03(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_RmtLctn"]
+	__slots__ = ["_GrpHdr", "_RmtLctn", "_SplmtryData"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

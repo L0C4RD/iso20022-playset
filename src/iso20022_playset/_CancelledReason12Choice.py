@@ -1,11 +1,11 @@
 from . import base_types
 from ._CancelledStatusReason2Code import CancelledStatusReason2Code
-from ._NoReasonCode import NoReasonCode
 from ._GenericIdentification1 import GenericIdentification1
+from ._NoReasonCode import NoReasonCode
 
 class CancelledReason12Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoSpcfdRsn", "_Cd", "_Prtry"]
+	__slots__ = ["_Cd", "_NoSpcfdRsn", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

@@ -1,23 +1,23 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._Linkages70 import Linkages70
-from ._RegistrationParameters7 import RegistrationParameters7
-from ._FinancialInstrumentAttributes122 import FinancialInstrumentAttributes122
-from ._SettlementDetails208 import SettlementDetails208
-from ._SettlementTypeAndAdditionalParameters18 import SettlementTypeAndAdditionalParameters18
-from ._SettlementParties105 import SettlementParties105
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._SecuritiesTradeDetails133 import SecuritiesTradeDetails133
-from ._StandingSettlementInstruction19 import StandingSettlementInstruction19
-from ._OtherAmounts43 import OtherAmounts43
-from ._OtherParties44 import OtherParties44
 from ._AmountAndDirection101 import AmountAndDirection101
 from ._CashParties38 import CashParties38
+from ._FinancialInstrumentAttributes122 import FinancialInstrumentAttributes122
+from ._Linkages70 import Linkages70
+from ._OtherAmounts43 import OtherAmounts43
+from ._OtherParties44 import OtherParties44
 from ._QuantityAndAccount112 import QuantityAndAccount112
+from ._RegistrationParameters7 import RegistrationParameters7
+from ._SecuritiesTradeDetails133 import SecuritiesTradeDetails133
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._SettlementDetails208 import SettlementDetails208
+from ._SettlementParties105 import SettlementParties105
+from ._SettlementTypeAndAdditionalParameters18 import SettlementTypeAndAdditionalParameters18
+from ._StandingSettlementInstruction19 import StandingSettlementInstruction19
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesSettlementTransactionDetails55(base_types._BaseFieldType):
 
-	__slots__ = ["_TradDtls", "_StgSttlmInstrDtls", "_Lnkgs", "_QtyAndAcctDtls", "_FinInstrmId", "_SttlmAmt", "_FinInstrmAttrbts", "_RcvgSttlmPties", "_AddtlPhysOrRegnDtls", "_SttlmTpAndAddtlParams", "_SttlmParams", "_CshPties", "_DlvrgSttlmPties", "_OthrAmts", "_SplmtryData", "_OthrBizPties"]
+	__slots__ = ["_AddtlPhysOrRegnDtls", "_CshPties", "_DlvrgSttlmPties", "_FinInstrmAttrbts", "_FinInstrmId", "_Lnkgs", "_OthrAmts", "_OthrBizPties", "_QtyAndAcctDtls", "_RcvgSttlmPties", "_SplmtryData", "_StgSttlmInstrDtls", "_SttlmAmt", "_SttlmParams", "_SttlmTpAndAddtlParams", "_TradDtls"]
 	@property
 	def AddtlPhysOrRegnDtls(self):
 		return self._AddtlPhysOrRegnDtls

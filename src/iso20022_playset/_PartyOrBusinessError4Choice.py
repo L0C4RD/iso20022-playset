@@ -1,10 +1,10 @@
 from . import base_types
-from ._SystemParty6 import SystemParty6
 from ._ErrorHandling4 import ErrorHandling4
+from ._SystemParty6 import SystemParty6
 
 class PartyOrBusinessError4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SysPty", "_BizErr"]
+	__slots__ = ["_BizErr", "_SysPty"]
 	@property
 	def BizErr(self):
 		return self._BizErr

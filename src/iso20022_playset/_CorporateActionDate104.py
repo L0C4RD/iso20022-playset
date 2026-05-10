@@ -1,12 +1,12 @@
 from . import base_types
-from ._DateFormat44Choice import DateFormat44Choice
 from ._BorrowerLendingDeadline5 import BorrowerLendingDeadline5
-from ._DateFormat59Choice import DateFormat59Choice
 from ._DateFormat43Choice import DateFormat43Choice
+from ._DateFormat44Choice import DateFormat44Choice
+from ._DateFormat59Choice import DateFormat59Choice
 
 class CorporateActionDate104(base_types._BaseFieldType):
 
-	__slots__ = ["_SbcptCostDbtDt", "_DpstryCoverXprtnDt", "_BrrwrStockLndgDdln", "_StockLndgDdln", "_CoverXprtnDdln", "_DcmnttnDdln", "_EndOfSctiesBlckgPrd", "_XpryDt", "_MktDdln", "_PrtctDdln", "_EarlyRspnDdln", "_RspnDdln"]
+	__slots__ = ["_BrrwrStockLndgDdln", "_CoverXprtnDdln", "_DcmnttnDdln", "_DpstryCoverXprtnDt", "_EarlyRspnDdln", "_EndOfSctiesBlckgPrd", "_MktDdln", "_PrtctDdln", "_RspnDdln", "_SbcptCostDbtDt", "_StockLndgDdln", "_XpryDt"]
 	@property
 	def BrrwrStockLndgDdln(self):
 		return self._BrrwrStockLndgDdln

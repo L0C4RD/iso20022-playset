@@ -1,6 +1,6 @@
 from . import base_types
-from ._SecurityOrBusinessError4Choice import SecurityOrBusinessError4Choice
 from ._ErrorHandling5 import ErrorHandling5
+from ._SecurityOrBusinessError4Choice import SecurityOrBusinessError4Choice
 
 class SecurityOrOperationalError4Choice(base_types._BaseFieldType):
 

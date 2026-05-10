@@ -1,11 +1,11 @@
 from . import base_types
-from ._Header70 import Header70
-from ._ContentInformationType37 import ContentInformationType37
 from ._AcceptorCompletionAdvice14 import AcceptorCompletionAdvice14
+from ._ContentInformationType37 import ContentInformationType37
+from ._Header70 import Header70
 
 class AcceptorCompletionAdviceV14(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_CmpltnAdvc", "_Hdr"]
+	__slots__ = ["_CmpltnAdvc", "_Hdr", "_SctyTrlr"]
 	@property
 	def CmpltnAdvc(self):
 		return self._CmpltnAdvc

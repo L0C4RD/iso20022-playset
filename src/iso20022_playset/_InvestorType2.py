@@ -1,12 +1,12 @@
 from . import base_types
 from ._OtherTargetMarketInvestor1 import OtherTargetMarketInvestor1
-from ._TargetMarket5Choice import TargetMarket5Choice
 from ._TargetMarket1Code import TargetMarket1Code
 from ._TargetMarket3Code import TargetMarket3Code
+from ._TargetMarket5Choice import TargetMarket5Choice
 
 class InvestorType2(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstrTpRtl", "_InvstrTpElgblCtrPty", "_InvstrTpPrfssnl", "_Othr"]
+	__slots__ = ["_InvstrTpElgblCtrPty", "_InvstrTpPrfssnl", "_InvstrTpRtl", "_Othr"]
 	@property
 	def InvstrTpElgblCtrPty(self):
 		return self._InvstrTpElgblCtrPty

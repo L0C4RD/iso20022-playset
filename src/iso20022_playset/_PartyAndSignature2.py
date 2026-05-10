@@ -4,7 +4,7 @@ from ._ProprietaryData3 import ProprietaryData3
 
 class PartyAndSignature2(base_types._BaseFieldType):
 
-	__slots__ = ["_Sgntr", "_Pty"]
+	__slots__ = ["_Pty", "_Sgntr"]
 	@property
 	def Pty(self):
 		return self._Pty

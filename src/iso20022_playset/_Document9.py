@@ -2,12 +2,12 @@ from . import base_types
 from ._DocumentFormat1Choice import DocumentFormat1Choice
 from ._Max2MBBinary import Max2MBBinary
 from ._Max35Text import Max35Text
-from ._UndertakingDocumentType1Choice import UndertakingDocumentType1Choice
 from ._PartyAndSignature2 import PartyAndSignature2
+from ._UndertakingDocumentType1Choice import UndertakingDocumentType1Choice
 
 class Document9(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_DgtlSgntr", "_Id", "_Frmt", "_Nclsr"]
+	__slots__ = ["_DgtlSgntr", "_Frmt", "_Id", "_Nclsr", "_Tp"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr

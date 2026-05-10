@@ -4,7 +4,7 @@ from ._TaxType3FormatChoice import TaxType3FormatChoice
 
 class RelatedTaxType1(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxTp", "_Amt"]
+	__slots__ = ["_Amt", "_TaxTp"]
 	@property
 	def Amt(self):
 		return self._Amt

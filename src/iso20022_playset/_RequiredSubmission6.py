@@ -1,11 +1,11 @@
 from . import base_types
 from ._BICIdentification1 import BICIdentification1
-from ._Max140Text import Max140Text
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._Max140Text import Max140Text
 
 class RequiredSubmission6(base_types._BaseFieldType):
 
-	__slots__ = ["_CertTp", "_Submitr", "_CertTpDesc"]
+	__slots__ = ["_CertTp", "_CertTpDesc", "_Submitr"]
 	@property
 	def CertTp(self):
 		return self._CertTp

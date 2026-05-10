@@ -1,12 +1,12 @@
 from . import base_types
-from ._Exact2AlphaNumericText import Exact2AlphaNumericText
 from ._CountryCode import CountryCode
-from ._RateSourceText import RateSourceText
+from ._Exact2AlphaNumericText import Exact2AlphaNumericText
 from ._Exact4NumericText import Exact4NumericText
+from ._RateSourceText import RateSourceText
 
 class SettlementRateSource1(base_types._BaseFieldType):
 
-	__slots__ = ["_CtryCd", "_Tm", "_LctnCd", "_RateSrc"]
+	__slots__ = ["_CtryCd", "_LctnCd", "_RateSrc", "_Tm"]
 	@property
 	def CtryCd(self):
 		return self._CtryCd

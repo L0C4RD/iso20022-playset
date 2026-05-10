@@ -1,13 +1,13 @@
 from . import base_types
 from ._BusinessLetter1 import BusinessLetter1
 from ._DecimalNumber import DecimalNumber
-from ._Max15NumericText import Max15NumericText
-from ._FinancingItemList1 import FinancingItemList1
 from ._EncapsulatedBusinessMessage1 import EncapsulatedBusinessMessage1
+from ._FinancingItemList1 import FinancingItemList1
+from ._Max15NumericText import Max15NumericText
 
 class InvoiceAssignmentStatusV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AssgnmtCnt", "_Hdr", "_AttchdMsg", "_CtrlSum", "_AssgnmtList", "_ItmCnt"]
+	__slots__ = ["_AssgnmtCnt", "_AssgnmtList", "_AttchdMsg", "_CtrlSum", "_Hdr", "_ItmCnt"]
 	@property
 	def AssgnmtCnt(self):
 		return self._AssgnmtCnt

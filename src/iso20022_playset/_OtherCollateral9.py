@@ -1,20 +1,20 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._OtherTypeOfCollateral3 import OtherTypeOfCollateral3
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._BaseOneRate import BaseOneRate
-from ._YesNoIndicator import YesNoIndicator
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._BaseOneRate import BaseOneRate
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 from ._DateFormat14Choice import DateFormat14Choice
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._OtherTypeOfCollateral3 import OtherTypeOfCollateral3
+from ._PartyIdentification178Choice import PartyIdentification178Choice
 from ._PercentageRate import PercentageRate
 from ._SafekeepingPlaceFormat29Choice import SafekeepingPlaceFormat29Choice
-from ._Max35Text import Max35Text
-from ._PartyIdentification178Choice import PartyIdentification178Choice
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._YesNoIndicator import YesNoIndicator
 
 class OtherCollateral9(base_types._BaseFieldType):
 
-	__slots__ = ["_CollVal", "_ValDt", "_XpryDt", "_LttrOfCdtId", "_CollId", "_BlckChainAdrOrWllt", "_OthrTpOfColl", "_MktVal", "_XchgRate", "_LtdCvrgInd", "_Hrcut", "_SfkpgAcct", "_Issr", "_GrntAmt", "_LttrOfCdtAmt", "_SfkpgPlc", "_IsseDt"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_CollId", "_CollVal", "_GrntAmt", "_Hrcut", "_IsseDt", "_Issr", "_LtdCvrgInd", "_LttrOfCdtAmt", "_LttrOfCdtId", "_MktVal", "_OthrTpOfColl", "_SfkpgAcct", "_SfkpgPlc", "_ValDt", "_XchgRate", "_XpryDt"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt

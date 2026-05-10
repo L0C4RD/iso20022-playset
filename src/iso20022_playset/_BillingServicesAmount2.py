@@ -3,7 +3,7 @@ from ._AmountAndDirection34 import AmountAndDirection34
 
 class BillingServicesAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_PricgAmt", "_SttlmAmt", "_HstAmt"]
+	__slots__ = ["_HstAmt", "_PricgAmt", "_SttlmAmt"]
 	@property
 	def HstAmt(self):
 		return self._HstAmt

@@ -1,12 +1,12 @@
 from . import base_types
+from ._AdditionalInformation15 import AdditionalInformation15
 from ._PreviousYear2Choice import PreviousYear2Choice
 from ._TaxEfficientProductType2Choice import TaxEfficientProductType2Choice
-from ._AdditionalInformation15 import AdditionalInformation15
 from ._YesNoIndicator import YesNoIndicator
 
 class TaxEfficientProduct4(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxEffcntPdctTp", "_AddtlInf", "_CurYr", "_PrvsYrs"]
+	__slots__ = ["_AddtlInf", "_CurYr", "_PrvsYrs", "_TaxEffcntPdctTp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

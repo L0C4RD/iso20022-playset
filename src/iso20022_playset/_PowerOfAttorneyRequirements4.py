@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max350Text import Max350Text
 from ._DateFormat58Choice import DateFormat58Choice
+from ._Max350Text import Max350Text
 from ._PowerOfAttorneyLegalisation1Code import PowerOfAttorneyLegalisation1Code
 
 class PowerOfAttorneyRequirements4(base_types._BaseFieldType):
 
-	__slots__ = ["_DocSubmissnDdln", "_OthrDcmnttn", "_LglRqrmnt"]
+	__slots__ = ["_DocSubmissnDdln", "_LglRqrmnt", "_OthrDcmnttn"]
 	@property
 	def DocSubmissnDdln(self):
 		return self._DocSubmissnDdln

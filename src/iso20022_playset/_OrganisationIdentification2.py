@@ -1,16 +1,16 @@
 from . import base_types
-from ._IBEIIdentifier import IBEIIdentifier
+from ._BEIIdentifier import BEIIdentifier
 from ._BICIdentifier import BICIdentifier
 from ._CHIPSUniversalIdentifier import CHIPSUniversalIdentifier
-from ._EANGLNIdentifier import EANGLNIdentifier
 from ._DunsIdentifier import DunsIdentifier
-from ._Max35Text import Max35Text
-from ._BEIIdentifier import BEIIdentifier
+from ._EANGLNIdentifier import EANGLNIdentifier
 from ._GenericIdentification3 import GenericIdentification3
+from ._IBEIIdentifier import IBEIIdentifier
+from ._Max35Text import Max35Text
 
 class OrganisationIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_BIC", "_EANGLN", "_PrtryId", "_BEI", "_TaxIdNb", "_USCHU", "_IBEI", "_BkPtyId", "_DUNS"]
+	__slots__ = ["_BEI", "_BIC", "_BkPtyId", "_DUNS", "_EANGLN", "_IBEI", "_PrtryId", "_TaxIdNb", "_USCHU"]
 	@property
 	def BEI(self):
 		return self._BEI

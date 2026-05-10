@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class AccountContract3(base_types._BaseFieldType):
 
-	__slots__ = ["_UrgcyFlg", "_GoLiveDt", "_TrgtGoLiveDt", "_ClsgDt", "_RmvlInd", "_TrgtClsgDt"]
+	__slots__ = ["_ClsgDt", "_GoLiveDt", "_RmvlInd", "_TrgtClsgDt", "_TrgtGoLiveDt", "_UrgcyFlg"]
 	@property
 	def ClsgDt(self):
 		return self._ClsgDt

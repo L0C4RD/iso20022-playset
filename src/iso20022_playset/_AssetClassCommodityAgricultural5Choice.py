@@ -1,18 +1,18 @@
 from . import base_types
-from ._AgriculturalCommoditySoft1 import AgriculturalCommoditySoft1
 from ._AgriculturalCommodityDairy1 import AgriculturalCommodityDairy1
 from ._AgriculturalCommodityForestry1 import AgriculturalCommodityForestry1
-from ._AgriculturalCommoditySeafood1 import AgriculturalCommoditySeafood1
 from ._AgriculturalCommodityGrain2 import AgriculturalCommodityGrain2
-from ._AgriculturalCommodityPotato1 import AgriculturalCommodityPotato1
-from ._AgriculturalCommodityOther1 import AgriculturalCommodityOther1
-from ._AgriculturalCommodityOliveOil2 import AgriculturalCommodityOliveOil2
-from ._AgriculturalCommodityOilSeed1 import AgriculturalCommodityOilSeed1
 from ._AgriculturalCommodityLiveStock1 import AgriculturalCommodityLiveStock1
+from ._AgriculturalCommodityOilSeed1 import AgriculturalCommodityOilSeed1
+from ._AgriculturalCommodityOliveOil2 import AgriculturalCommodityOliveOil2
+from ._AgriculturalCommodityOther1 import AgriculturalCommodityOther1
+from ._AgriculturalCommodityPotato1 import AgriculturalCommodityPotato1
+from ._AgriculturalCommoditySeafood1 import AgriculturalCommoditySeafood1
+from ._AgriculturalCommoditySoft1 import AgriculturalCommoditySoft1
 
 class AssetClassCommodityAgricultural5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Frstry", "_OlvOil", "_GrnOilSeed", "_LiveStock", "_Soft", "_Sfd", "_Ptt", "_Grn", "_Dairy", "_Othr"]
+	__slots__ = ["_Dairy", "_Frstry", "_Grn", "_GrnOilSeed", "_LiveStock", "_OlvOil", "_Othr", "_Ptt", "_Sfd", "_Soft"]
 	@property
 	def Dairy(self):
 		return self._Dairy

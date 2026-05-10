@@ -4,7 +4,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class CashAccountReturnCriteria5(base_types._BaseFieldType):
 
-	__slots__ = ["_TpInd", "_BilLmtInd", "_MulBalRtrCrit", "_NmInd", "_MulLmtInd", "_CcyInd", "_AcctSvcrInd", "_AcctOwnrInd", "_BilBalRtrCrit", "_StgOrdrInd"]
+	__slots__ = ["_AcctOwnrInd", "_AcctSvcrInd", "_BilBalRtrCrit", "_BilLmtInd", "_CcyInd", "_MulBalRtrCrit", "_MulLmtInd", "_NmInd", "_StgOrdrInd", "_TpInd"]
 	@property
 	def AcctOwnrInd(self):
 		return self._AcctOwnrInd

@@ -1,14 +1,14 @@
 from . import base_types
-from ._TransactionDetails165 import TransactionDetails165
-from ._SupplementaryData1 import SupplementaryData1
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._AdditionalReference12 import AdditionalReference12
-from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionDetails165 import TransactionDetails165
 
 class Transaction126(base_types._BaseFieldType):
 
-	__slots__ = ["_TradId", "_CtrPtyMktInfrstrctrTxId", "_TxDtls", "_ClntRef", "_AcctOwnrTxId", "_TrptyAgtSvcPrvdrCollTxId", "_MstrRef", "_AcctSvcrTxId", "_AcctSvcrLegId", "_PoolId", "_CorpActnEvtId", "_ClntCollInstrId", "_TrptyAgtSvcPrvdrCollInstrId", "_MktInfrstrctrTxId", "_CmonId", "_PrcrTxId", "_SplmtryData", "_AcctOwnrLegId", "_ClntTrptyCollTxId"]
+	__slots__ = ["_AcctOwnrLegId", "_AcctOwnrTxId", "_AcctSvcrLegId", "_AcctSvcrTxId", "_ClntCollInstrId", "_ClntRef", "_ClntTrptyCollTxId", "_CmonId", "_CorpActnEvtId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_MstrRef", "_PoolId", "_PrcrTxId", "_SplmtryData", "_TradId", "_TrptyAgtSvcPrvdrCollInstrId", "_TrptyAgtSvcPrvdrCollTxId", "_TxDtls"]
 	@property
 	def AcctOwnrLegId(self):
 		return self._AcctOwnrLegId

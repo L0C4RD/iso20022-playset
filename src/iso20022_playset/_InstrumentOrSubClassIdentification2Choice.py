@@ -1,10 +1,10 @@
 from . import base_types
-from ._InstrumentAndSubClassIdentification2 import InstrumentAndSubClassIdentification2
 from ._AssetClassAndSubClassIdentification2 import AssetClassAndSubClassIdentification2
+from ._InstrumentAndSubClassIdentification2 import InstrumentAndSubClassIdentification2
 
 class InstrumentOrSubClassIdentification2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ISINAndSubClss", "_AsstClssAndSubClss"]
+	__slots__ = ["_AsstClssAndSubClss", "_ISINAndSubClss"]
 	@property
 	def AsstClssAndSubClss(self):
 		return self._AsstClssAndSubClss

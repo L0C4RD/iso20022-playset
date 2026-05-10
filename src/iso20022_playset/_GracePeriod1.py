@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max3NumericText import Max3NumericText
 from ._GracePeriodUnitType1Code import GracePeriodUnitType1Code
 from ._Max35Text import Max35Text
+from ._Max3NumericText import Max3NumericText
 
 class GracePeriod1(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitTp", "_Tm", "_OthrUnitTp"]
+	__slots__ = ["_OthrUnitTp", "_Tm", "_UnitTp"]
 	@property
 	def OthrUnitTp(self):
 		return self._OthrUnitTp

@@ -1,29 +1,29 @@
 from . import base_types
-from ._NumberCount1Choice import NumberCount1Choice
-from ._CashParties33 import CashParties33
-from ._Linkages76 import Linkages76
-from ._OtherPrices5 import OtherPrices5
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._StandingSettlementInstruction13 import StandingSettlementInstruction13
-from ._TwoLegTransactionDetails5 import TwoLegTransactionDetails5
-from ._RegulatoryStipulations1 import RegulatoryStipulations1
-from ._OtherParties32 import OtherParties32
-from ._Clearing5 import Clearing5
-from ._TransactiontIdentification4 import TransactiontIdentification4
-from ._FinancialInstrumentStipulations4 import FinancialInstrumentStipulations4
-from ._SettlementParties59 import SettlementParties59
 from ._AmountAndDirection28 import AmountAndDirection28
-from ._Order24 import Order24
+from ._CashParties33 import CashParties33
+from ._Clearing5 import Clearing5
 from ._ConfirmationParties6 import ConfirmationParties6
-from ._SettlementDetails213 import SettlementDetails213
 from ._FinancialInstrumentAttributes124 import FinancialInstrumentAttributes124
-from ._SupplementaryData1 import SupplementaryData1
+from ._FinancialInstrumentStipulations4 import FinancialInstrumentStipulations4
+from ._Linkages76 import Linkages76
+from ._NumberCount1Choice import NumberCount1Choice
+from ._Order24 import Order24
 from ._OtherAmounts16 import OtherAmounts16
+from ._OtherParties32 import OtherParties32
+from ._OtherPrices5 import OtherPrices5
+from ._RegulatoryStipulations1 import RegulatoryStipulations1
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SettlementDetails213 import SettlementDetails213
+from ._SettlementParties59 import SettlementParties59
+from ._StandingSettlementInstruction13 import StandingSettlementInstruction13
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactiontIdentification4 import TransactiontIdentification4
+from ._TwoLegTransactionDetails5 import TwoLegTransactionDetails5
 from ._UnderlyingFinancialInstrument7 import UnderlyingFinancialInstrument7
 
 class SecuritiesTradeConfirmationV05(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_TwoLegTxDtls", "_FinInstrmAttrbts", "_StgSttlmInstr", "_NbCnt", "_ClrDtls", "_Stiptns", "_SttlmParams", "_RcvgSttlmPties", "_Id", "_DlvrgSttlmPties", "_Refs", "_RgltryStiptns", "_CshPties", "_OthrBizPties", "_UndrlygFinInstrm", "_SttlmAmt", "_OthrAmts", "_TradDtls", "_ConfPties", "_SplmtryData", "_OthrPrics"]
+	__slots__ = ["_ClrDtls", "_ConfPties", "_CshPties", "_DlvrgSttlmPties", "_FinInstrmAttrbts", "_FinInstrmId", "_Id", "_NbCnt", "_OthrAmts", "_OthrBizPties", "_OthrPrics", "_RcvgSttlmPties", "_Refs", "_RgltryStiptns", "_SplmtryData", "_StgSttlmInstr", "_Stiptns", "_SttlmAmt", "_SttlmParams", "_TradDtls", "_TwoLegTxDtls", "_UndrlygFinInstrm"]
 	@property
 	def ClrDtls(self):
 		return self._ClrDtls

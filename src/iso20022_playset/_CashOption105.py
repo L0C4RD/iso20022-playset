@@ -1,21 +1,21 @@
 from . import base_types
-from ._TaxVoucher4 import TaxVoucher4
-from ._Payment1Code import Payment1Code
-from ._GenericIdentification30 import GenericIdentification30
-from ._PriceDetails37 import PriceDetails37
-from ._ForeignExchangeTerms40 import ForeignExchangeTerms40
+from ._Account10Choice import Account10Choice
+from ._CashParties43 import CashParties43
+from ._CorporateActionAmounts73 import CorporateActionAmounts73
 from ._CorporateActionDate99 import CorporateActionDate99
 from ._CountryCode import CountryCode
-from ._CashParties43 import CashParties43
-from ._Rate41 import Rate41
 from ._CreditDebitCode import CreditDebitCode
-from ._CorporateActionAmounts73 import CorporateActionAmounts73
+from ._ForeignExchangeTerms40 import ForeignExchangeTerms40
+from ._GenericIdentification30 import GenericIdentification30
 from ._IssuerOfferorTaxabilityIndicator2Choice import IssuerOfferorTaxabilityIndicator2Choice
-from ._Account10Choice import Account10Choice
+from ._Payment1Code import Payment1Code
+from ._PriceDetails37 import PriceDetails37
+from ._Rate41 import Rate41
+from ._TaxVoucher4 import TaxVoucher4
 
 class CashOption105(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctlPmtInd", "_AmtDtls", "_CdtDbtInd", "_CtryOfIncmSrc", "_Acct", "_DtDtls", "_OthrIncmTp", "_CshPties", "_FXDtls", "_PricDtls", "_RateAndAmtDtls", "_XmptnTp", "_IssrOfferrTaxbltyInd", "_IncmTp", "_TaxVchrDtls"]
+	__slots__ = ["_Acct", "_AmtDtls", "_CdtDbtInd", "_CshPties", "_CtrctlPmtInd", "_CtryOfIncmSrc", "_DtDtls", "_FXDtls", "_IncmTp", "_IssrOfferrTaxbltyInd", "_OthrIncmTp", "_PricDtls", "_RateAndAmtDtls", "_TaxVchrDtls", "_XmptnTp"]
 	@property
 	def Acct(self):
 		return self._Acct

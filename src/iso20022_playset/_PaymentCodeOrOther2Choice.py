@@ -1,11 +1,11 @@
 from . import base_types
-from ._PaymentPeriod4 import PaymentPeriod4
-from ._Max140Text import Max140Text
 from ._ISODate import ISODate
+from ._Max140Text import Max140Text
+from ._PaymentPeriod4 import PaymentPeriod4
 
 class PaymentCodeOrOther2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtCd", "_PmtDueDt", "_OthrPmtTerms"]
+	__slots__ = ["_OthrPmtTerms", "_PmtCd", "_PmtDueDt"]
 	@property
 	def OthrPmtTerms(self):
 		return self._OthrPmtTerms

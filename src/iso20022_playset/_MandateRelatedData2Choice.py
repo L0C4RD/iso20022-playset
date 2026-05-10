@@ -1,10 +1,10 @@
 from . import base_types
-from ._MandateRelatedInformation15 import MandateRelatedInformation15
 from ._CreditTransferMandateData1 import CreditTransferMandateData1
+from ._MandateRelatedInformation15 import MandateRelatedInformation15
 
 class MandateRelatedData2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DrctDbtMndt", "_CdtTrfMndt"]
+	__slots__ = ["_CdtTrfMndt", "_DrctDbtMndt"]
 	@property
 	def CdtTrfMndt(self):
 		return self._CdtTrfMndt

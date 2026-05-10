@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._CollateralData33 import CollateralData33
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PositionSetDimensions12(base_types._BaseFieldType):
 
-	__slots__ = ["_CollData", "_RptgCtrPty", "_OtlrsIncl"]
+	__slots__ = ["_CollData", "_OtlrsIncl", "_RptgCtrPty"]
 	@property
 	def CollData(self):
 		return self._CollData

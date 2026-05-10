@@ -4,7 +4,7 @@ from ._ISINOct2015Identifier import ISINOct2015Identifier
 
 class FinancialInstrument58(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_ISIN"]
+	__slots__ = ["_ISIN", "_Nm"]
 	@property
 	def ISIN(self):
 		return self._ISIN

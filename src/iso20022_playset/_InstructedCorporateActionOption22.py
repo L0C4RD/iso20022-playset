@@ -1,16 +1,16 @@
 from . import base_types
-from ._SignedQuantityFormat13 import SignedQuantityFormat13
-from ._DefaultProcessingOrStandingInstruction2Choice import DefaultProcessingOrStandingInstruction2Choice
-from ._CorporateActionEventDeadlines4 import CorporateActionEventDeadlines4
 from ._BalanceFormat14Choice import BalanceFormat14Choice
-from ._Exact3NumericText import Exact3NumericText
+from ._CorporateActionEventDeadlines4 import CorporateActionEventDeadlines4
 from ._CorporateActionOption36Choice import CorporateActionOption36Choice
+from ._DefaultProcessingOrStandingInstruction2Choice import DefaultProcessingOrStandingInstruction2Choice
+from ._Exact3NumericText import Exact3NumericText
 from ._OptionInstructionDetails12 import OptionInstructionDetails12
+from ._SignedQuantityFormat13 import SignedQuantityFormat13
 from ._SignedQuantityFormat16 import SignedQuantityFormat16
 
 class InstructedCorporateActionOption22(base_types._BaseFieldType):
 
-	__slots__ = ["_DfltActn", "_OptnTp", "_OptnPrtctInstrBal", "_OptnRjctdInstrBal", "_EvtDdlns", "_OptnAccptdInstdBal", "_OptnInstrDtls", "_OptnCancInstrBal", "_OptnNb", "_OptnRtrdInstdBal", "_OptnPdgInstrBal", "_InstdBal"]
+	__slots__ = ["_DfltActn", "_EvtDdlns", "_InstdBal", "_OptnAccptdInstdBal", "_OptnCancInstrBal", "_OptnInstrDtls", "_OptnNb", "_OptnPdgInstrBal", "_OptnPrtctInstrBal", "_OptnRjctdInstrBal", "_OptnRtrdInstdBal", "_OptnTp"]
 	@property
 	def DfltActn(self):
 		return self._DfltActn

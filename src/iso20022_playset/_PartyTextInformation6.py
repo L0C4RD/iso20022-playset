@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max140Text import Max140Text
 from ._Max350Text import Max350Text
 from ._PostalAddress1 import PostalAddress1
-from ._Max140Text import Max140Text
 
 class PartyTextInformation6(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnAdr", "_DclrtnDtls", "_RegnDtls", "_PtyCtctDtls"]
+	__slots__ = ["_DclrtnDtls", "_PtyCtctDtls", "_RegnAdr", "_RegnDtls"]
 	@property
 	def DclrtnDtls(self):
 		return self._DclrtnDtls

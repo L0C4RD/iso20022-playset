@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._Max35Text import Max35Text
-from ._Reference16 import Reference16
-from ._Obligation9 import Obligation9
 from ._CollateralCancellationStatus2 import CollateralCancellationStatus2
+from ._Max35Text import Max35Text
+from ._Obligation9 import Obligation9
+from ._Reference16 import Reference16
+from ._SupplementaryData1 import SupplementaryData1
 
 class CollateralManagementCancellationStatusV05(base_types._BaseFieldType):
 
-	__slots__ = ["_Oblgtn", "_CxlSts", "_Ref", "_TxId", "_SplmtryData"]
+	__slots__ = ["_CxlSts", "_Oblgtn", "_Ref", "_SplmtryData", "_TxId"]
 	@property
 	def CxlSts(self):
 		return self._CxlSts

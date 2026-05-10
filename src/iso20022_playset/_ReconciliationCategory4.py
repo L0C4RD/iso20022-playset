@@ -3,7 +3,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class ReconciliationCategory4(base_types._BaseFieldType):
 
-	__slots__ = ["_Rvvd", "_FrthrMod"]
+	__slots__ = ["_FrthrMod", "_Rvvd"]
 	@property
 	def FrthrMod(self):
 		return self._FrthrMod

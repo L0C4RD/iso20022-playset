@@ -1,16 +1,16 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISO3NumericCountryCode import ISO3NumericCountryCode
-from ._RecommendationAction1 import RecommendationAction1
-from ._PartyType28Code import PartyType28Code
-from ._AdditionalRiskData1 import AdditionalRiskData1
 from ._AdditionalData1 import AdditionalData1
+from ._AdditionalRiskData1 import AdditionalRiskData1
+from ._ISO3NumericCountryCode import ISO3NumericCountryCode
 from ._Max35Text import Max35Text
 from ._PartyType18Code import PartyType18Code
+from ._PartyType28Code import PartyType28Code
+from ._RecommendationAction1 import RecommendationAction1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class RiskAssessment3(base_types._BaseFieldType):
 
-	__slots__ = ["_NttyShrtNm", "_Rcmmndtn", "_NttyAssgnr", "_NttyCtry", "_NttyId", "_HghRskTx", "_AddtlData", "_OthrNttyTp", "_Rsn", "_NttyTp", "_Rslt", "_Tp", "_Cond"]
+	__slots__ = ["_AddtlData", "_Cond", "_HghRskTx", "_NttyAssgnr", "_NttyCtry", "_NttyId", "_NttyShrtNm", "_NttyTp", "_OthrNttyTp", "_Rcmmndtn", "_Rslt", "_Rsn", "_Tp"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

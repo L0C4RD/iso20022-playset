@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._References26 import References26
-from ._CorporateActionGeneralInformation181 import CorporateActionGeneralInformation181
 from ._AccountIdentification70 import AccountIdentification70
+from ._CorporateActionGeneralInformation181 import CorporateActionGeneralInformation181
 from ._DocumentIdentification9 import DocumentIdentification9
+from ._References26 import References26
+from ._SupplementaryData1 import SupplementaryData1
 
 class MarketClaimCancellationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_MktClmCreId", "_CorpActnGnlInf", "_TxRef", "_SplmtryData"]
+	__slots__ = ["_AcctDtls", "_CorpActnGnlInf", "_MktClmCreId", "_SplmtryData", "_TxRef"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

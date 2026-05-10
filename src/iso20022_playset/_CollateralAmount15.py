@@ -1,10 +1,10 @@
 from . import base_types
-from ._AmountAndDirection53 import AmountAndDirection53
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._AmountAndDirection53 import AmountAndDirection53
 
 class CollateralAmount15(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlPdgCollOut", "_TtlAcrdIntrst", "_TtlOfPrncpls", "_TtlPdgCollIn", "_TtlValOfReusdColl", "_TtlCshFaild", "_ValOfCollHeld", "_TtlFeesComssns", "_TtlValOfOwnColl", "_TtlXpsr", "_TtlCollReqrd", "_Mrgn"]
+	__slots__ = ["_Mrgn", "_TtlAcrdIntrst", "_TtlCollReqrd", "_TtlCshFaild", "_TtlFeesComssns", "_TtlOfPrncpls", "_TtlPdgCollIn", "_TtlPdgCollOut", "_TtlValOfOwnColl", "_TtlValOfReusdColl", "_TtlXpsr", "_ValOfCollHeld"]
 	@property
 	def Mrgn(self):
 		return self._Mrgn

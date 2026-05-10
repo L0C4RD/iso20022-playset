@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._BillingSubServiceIdentification1 import BillingSubServiceIdentification1
 from ._AmountAndDirection34 import AmountAndDirection34
+from ._BillingSubServiceIdentification1 import BillingSubServiceIdentification1
 from ._DecimalNumber import DecimalNumber
-from ._Max35Text import Max35Text
+from ._ISODate import ISODate
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
 from ._ServiceAdjustmentType1Code import ServiceAdjustmentType1Code
 
 class BillingServiceAdjustment1(base_types._BaseFieldType):
 
-	__slots__ = ["_NewPric", "_NewVol", "_Tp", "_Amt", "_OrgnlVol", "_SubSvc", "_BalReqrdAmt", "_OrgnlPric", "_VolChng", "_OrgnlChrgAmt", "_PricChng", "_Desc", "_AdjstmntId", "_ErrDt", "_NewChrgAmt"]
+	__slots__ = ["_AdjstmntId", "_Amt", "_BalReqrdAmt", "_Desc", "_ErrDt", "_NewChrgAmt", "_NewPric", "_NewVol", "_OrgnlChrgAmt", "_OrgnlPric", "_OrgnlVol", "_PricChng", "_SubSvc", "_Tp", "_VolChng"]
 	@property
 	def AdjstmntId(self):
 		return self._AdjstmntId

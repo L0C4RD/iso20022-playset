@@ -2,15 +2,15 @@ from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 from ._CardPaymentServiceType12Code import CardPaymentServiceType12Code
-from ._PaymentContext30 import PaymentContext30
-from ._Min3Max4Text import Min3Max4Text
+from ._CardPaymentServiceType15Code import CardPaymentServiceType15Code
 from ._CardPaymentServiceType9Code import CardPaymentServiceType9Code
 from ._Max35Text import Max35Text
-from ._CardPaymentServiceType15Code import CardPaymentServiceType15Code
+from ._Min3Max4Text import Min3Max4Text
+from ._PaymentContext30 import PaymentContext30
 
 class CommonData14(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_SvcAttr", "_MrchntCtgyCd", "_AddtlSvc", "_TxTp", "_RcncltnId", "_Cntxt", "_Ccy"]
+	__slots__ = ["_AddtlSvc", "_Ccy", "_Cntxt", "_Envt", "_MrchntCtgyCd", "_RcncltnId", "_SvcAttr", "_TxTp"]
 	@property
 	def AddtlSvc(self):
 		return self._AddtlSvc

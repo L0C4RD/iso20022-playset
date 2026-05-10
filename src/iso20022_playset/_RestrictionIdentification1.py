@@ -1,6 +1,6 @@
 from . import base_types
-from ._RestrictionReference1Code import RestrictionReference1Code
 from ._Max35Text import Max35Text
+from ._RestrictionReference1Code import RestrictionReference1Code
 
 class RestrictionIdentification1(base_types._BaseFieldType):
 

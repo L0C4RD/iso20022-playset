@@ -1,15 +1,15 @@
 from . import base_types
 from ._MatchingStatus29Choice import MatchingStatus29Choice
-from ._SupplementaryData1 import SupplementaryData1
 from ._ProcessingStatus90Choice import ProcessingStatus90Choice
-from ._TransactionIdentifications35 import TransactionIdentifications35
 from ._RepoCallRequestStatus9Choice import RepoCallRequestStatus9Choice
-from ._SettlementStatus21Choice import SettlementStatus21Choice
 from ._SecuritiesFinancingTransactionDetails53 import SecuritiesFinancingTransactionDetails53
+from ._SettlementStatus21Choice import SettlementStatus21Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionIdentifications35 import TransactionIdentifications35
 
 class SecuritiesFinancingStatusAdvice002V09(base_types._BaseFieldType):
 
-	__slots__ = ["_RepoCallReqSts", "_IfrrdMtchgSts", "_SttlmSts", "_PrcgSts", "_MtchgSts", "_SplmtryData", "_TxId", "_TxDtls"]
+	__slots__ = ["_IfrrdMtchgSts", "_MtchgSts", "_PrcgSts", "_RepoCallReqSts", "_SplmtryData", "_SttlmSts", "_TxDtls", "_TxId"]
 	@property
 	def IfrrdMtchgSts(self):
 		return self._IfrrdMtchgSts

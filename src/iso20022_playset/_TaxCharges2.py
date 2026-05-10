@@ -1,11 +1,11 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
 
 class TaxCharges2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Amt", "_Rate"]
+	__slots__ = ["_Amt", "_Id", "_Rate"]
 	@property
 	def Amt(self):
 		return self._Amt

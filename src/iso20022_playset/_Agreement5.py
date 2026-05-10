@@ -1,14 +1,14 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ClosingType1Code import ClosingType1Code
 from ._DeliveryType2Code import DeliveryType2Code
 from ._ISODateTime import ISODateTime
 from ._Max350Text import Max350Text
-from ._ClosingType1Code import ClosingType1Code
+from ._PercentageRate import PercentageRate
 
 class Agreement5(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_DlvryTp", "_Dt", "_StartDt", "_ClsgTp", "_MrgnRatio", "_Ccy"]
+	__slots__ = ["_Ccy", "_ClsgTp", "_Desc", "_DlvryTp", "_Dt", "_MrgnRatio", "_StartDt"]
 	@property
 	def Ccy(self):
 		return self._Ccy

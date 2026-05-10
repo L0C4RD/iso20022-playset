@@ -1,11 +1,11 @@
 from . import base_types
-from ._GenericIdentification4 import GenericIdentification4
 from ._DateAndPlaceOfBirth import DateAndPlaceOfBirth
+from ._GenericIdentification4 import GenericIdentification4
 from ._Max35Text import Max35Text
 
 class PersonIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_DrvrsLicNb", "_MplyrIdNb", "_TaxIdNb", "_Issr", "_IdntyCardNb", "_DtAndPlcOfBirth", "_SclSctyNb", "_CstmrNb", "_OthrId", "_PsptNb", "_AlnRegnNb"]
+	__slots__ = ["_AlnRegnNb", "_CstmrNb", "_DrvrsLicNb", "_DtAndPlcOfBirth", "_IdntyCardNb", "_Issr", "_MplyrIdNb", "_OthrId", "_PsptNb", "_SclSctyNb", "_TaxIdNb"]
 	@property
 	def AlnRegnNb(self):
 		return self._AlnRegnNb

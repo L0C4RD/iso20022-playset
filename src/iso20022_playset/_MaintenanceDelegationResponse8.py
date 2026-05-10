@@ -1,12 +1,12 @@
 from . import base_types
-from ._MaintenanceDelegation17 import MaintenanceDelegation17
-from ._ISODateTime import ISODateTime
-from ._Max140Binary import Max140Binary
 from ._GenericIdentification176 import GenericIdentification176
+from ._ISODateTime import ISODateTime
+from ._MaintenanceDelegation17 import MaintenanceDelegation17
+from ._Max140Binary import Max140Binary
 
 class MaintenanceDelegationResponse8(base_types._BaseFieldType):
 
-	__slots__ = ["_TMId", "_TMDtTm", "_MstrTMId", "_TMChllngVal", "_DlgtnRspn"]
+	__slots__ = ["_DlgtnRspn", "_MstrTMId", "_TMChllngVal", "_TMDtTm", "_TMId"]
 	@property
 	def DlgtnRspn(self):
 		return self._DlgtnRspn

@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class MoneyPurchaseAnnualAllowance1(base_types._BaseFieldType):
 
-	__slots__ = ["_TrggrdDt", "_Trggrd"]
+	__slots__ = ["_Trggrd", "_TrggrdDt"]
 	@property
 	def Trggrd(self):
 		return self._Trggrd

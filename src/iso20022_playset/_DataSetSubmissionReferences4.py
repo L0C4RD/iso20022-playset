@@ -1,14 +1,14 @@
 from . import base_types
-from ._DocumentIdentification3 import DocumentIdentification3
-from ._DocumentIdentification7 import DocumentIdentification7
-from ._YesNoIndicator import YesNoIndicator
-from ._Max35Text import Max35Text
-from ._DocumentIdentification5 import DocumentIdentification5
 from ._BaselineStatus3Code import BaselineStatus3Code
+from ._DocumentIdentification3 import DocumentIdentification3
+from ._DocumentIdentification5 import DocumentIdentification5
+from ._DocumentIdentification7 import DocumentIdentification7
+from ._Max35Text import Max35Text
+from ._YesNoIndicator import YesNoIndicator
 
 class DataSetSubmissionReferences4(base_types._BaseFieldType):
 
-	__slots__ = ["_PurchsOrdrRef", "_UsrTxRef", "_EstblishdBaselnId", "_TxSts", "_TxId", "_ForcdMtch"]
+	__slots__ = ["_EstblishdBaselnId", "_ForcdMtch", "_PurchsOrdrRef", "_TxId", "_TxSts", "_UsrTxRef"]
 	@property
 	def EstblishdBaselnId(self):
 		return self._EstblishdBaselnId

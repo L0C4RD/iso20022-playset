@@ -4,7 +4,7 @@ from ._CollateralStatus2Choice import CollateralStatus2Choice
 
 class TransactionStatus6(base_types._BaseFieldType):
 
-	__slots__ = ["_ExctnSts", "_CvrgSts"]
+	__slots__ = ["_CvrgSts", "_ExctnSts"]
 	@property
 	def CvrgSts(self):
 		return self._CvrgSts

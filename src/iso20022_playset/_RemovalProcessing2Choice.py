@@ -1,11 +1,11 @@
 from . import base_types
-from ._GenericIdentification37 import GenericIdentification37
 from ._CountryCode import CountryCode
+from ._GenericIdentification37 import GenericIdentification37
 from ._SecurityIdentification19 import SecurityIdentification19
 
 class RemovalProcessing2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrCtry", "_FinInstrmId", "_IndxId"]
+	__slots__ = ["_FinInstrmId", "_IndxId", "_IssrCtry"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId

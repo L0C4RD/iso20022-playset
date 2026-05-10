@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._AmountAndCurrency1 import AmountAndCurrency1
 from ._ATMDepositComponent1 import ATMDepositComponent1
+from ._AmountAndCurrency1 import AmountAndCurrency1
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max10000Binary import Max10000Binary
 from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._TransactionIdentifier3 import TransactionIdentifier3
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ATMTransaction50(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_TtlAmt", "_TtlReqdAmt", "_RcncltnId", "_SubDpst", "_ReqdRct", "_ICCRltdData"]
+	__slots__ = ["_ICCRltdData", "_RcncltnId", "_ReqdRct", "_SubDpst", "_TtlAmt", "_TtlReqdAmt", "_TxId"]
 	@property
 	def ICCRltdData(self):
 		return self._ICCRltdData

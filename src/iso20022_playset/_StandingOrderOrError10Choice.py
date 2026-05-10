@@ -1,10 +1,10 @@
 from . import base_types
-from ._StandingOrder11 import StandingOrder11
 from ._ErrorHandling5 import ErrorHandling5
+from ._StandingOrder11 import StandingOrder11
 
 class StandingOrderOrError10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_StgOrdr", "_BizErr"]
+	__slots__ = ["_BizErr", "_StgOrdr"]
 	@property
 	def BizErr(self):
 		return self._BizErr

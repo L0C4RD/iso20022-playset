@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._DisclosureRequestIdentification1 import DisclosureRequestIdentification1
-from ._PartyIdentification215 import PartyIdentification215
 from ._Max35Text import Max35Text
+from ._PartyIdentification215 import PartyIdentification215
+from ._SupplementaryData1 import SupplementaryData1
 
 class ShareholderIdentificationDisclosureResponseCancellationAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_DsclsrRspnId", "_RspndgIntrmy", "_SplmtryData", "_IssrDsclsrReqRef"]
+	__slots__ = ["_DsclsrRspnId", "_IssrDsclsrReqRef", "_RspndgIntrmy", "_SplmtryData"]
 	@property
 	def DsclsrRspnId(self):
 		return self._DsclsrRspnId

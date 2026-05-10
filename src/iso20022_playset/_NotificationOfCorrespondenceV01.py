@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CorrespondenceNotification1 import CorrespondenceNotification1
 from ._GroupHeader129 import GroupHeader129
+from ._SupplementaryData1 import SupplementaryData1
 
 class NotificationOfCorrespondenceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_NtfctnData", "_GrpHdr"]
+	__slots__ = ["_GrpHdr", "_NtfctnData", "_SplmtryData"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

@@ -1,11 +1,11 @@
 from . import base_types
-from ._QuantityOrTerm1Choice import QuantityOrTerm1Choice
 from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from ._QuantityOrTerm1Choice import QuantityOrTerm1Choice
 from ._UnitOfMeasure8Choice import UnitOfMeasure8Choice
 
 class NotionalQuantity9(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlQty", "_UnitOfMeasr", "_Dtls"]
+	__slots__ = ["_Dtls", "_TtlQty", "_UnitOfMeasr"]
 	@property
 	def Dtls(self):
 		return self._Dtls

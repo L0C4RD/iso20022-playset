@@ -1,13 +1,13 @@
 from . import base_types
 from ._Fee3 import Fee3
-from ._LegIdentification1Choice import LegIdentification1Choice
-from ._InvestmentAccount58 import InvestmentAccount58
 from ._FinancialInstrument57 import FinancialInstrument57
+from ._InvestmentAccount58 import InvestmentAccount58
+from ._LegIdentification1Choice import LegIdentification1Choice
 from ._Max350Text import Max350Text
 
 class SwitchLegReferences2(base_types._BaseFieldType):
 
-	__slots__ = ["_LegRjctnRsn", "_RprdFee", "_FinInstrmDtls", "_LegId", "_InvstmtAcctDtls"]
+	__slots__ = ["_FinInstrmDtls", "_InvstmtAcctDtls", "_LegId", "_LegRjctnRsn", "_RprdFee"]
 	@property
 	def FinInstrmDtls(self):
 		return self._FinInstrmDtls

@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._OtherIdentification4Choice import OtherIdentification4Choice
 from ._CountryCode import CountryCode
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
+from ._OtherIdentification4Choice import OtherIdentification4Choice
 
 class AlternateIdentification4(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Tp", "_IssrCtry", "_Issr", "_XpryDt", "_IsseDt"]
+	__slots__ = ["_Id", "_IsseDt", "_Issr", "_IssrCtry", "_Tp", "_XpryDt"]
 	@property
 	def Id(self):
 		return self._Id

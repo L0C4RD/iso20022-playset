@@ -1,13 +1,13 @@
 from . import base_types
-from ._FinancingAgreementList1 import FinancingAgreementList1
 from ._BusinessLetter1 import BusinessLetter1
 from ._DecimalNumber import DecimalNumber
-from ._Max15NumericText import Max15NumericText
 from ._EncapsulatedBusinessMessage1 import EncapsulatedBusinessMessage1
+from ._FinancingAgreementList1 import FinancingAgreementList1
+from ._Max15NumericText import Max15NumericText
 
 class PartyRegistrationAndGuaranteeNotificationV01(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnList", "_Hdr", "_AttchdMsg", "_CtrlSum", "_NtfctnCnt", "_ItmCnt"]
+	__slots__ = ["_AttchdMsg", "_CtrlSum", "_Hdr", "_ItmCnt", "_NtfctnCnt", "_NtfctnList"]
 	@property
 	def AttchdMsg(self):
 		return self._AttchdMsg

@@ -1,10 +1,10 @@
 from . import base_types
-from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
 from ._GeneratedReasons6Choice import GeneratedReasons6Choice
+from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
 
 class GeneratedReason6(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_AddtlRsnInf"]
+	__slots__ = ["_AddtlRsnInf", "_Cd"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

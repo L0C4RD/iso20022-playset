@@ -1,14 +1,14 @@
 from . import base_types
-from ._PaymentContext30 import PaymentContext30
-from ._ReportTransactionRequest1 import ReportTransactionRequest1
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._PaymentContext30 import PaymentContext30
 from ._ReportGetTotalsRequest1 import ReportGetTotalsRequest1
-from ._SupplementaryData1 import SupplementaryData1
+from ._ReportTransactionRequest1 import ReportTransactionRequest1
 from ._RetailerService6Code import RetailerService6Code
+from ._SupplementaryData1 import SupplementaryData1
 
 class ReportRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_RptGetTtlsReq", "_Cntxt", "_RptTxReq", "_Envt", "_SplmtryData", "_SvcCntt"]
+	__slots__ = ["_Cntxt", "_Envt", "_RptGetTtlsReq", "_RptTxReq", "_SplmtryData", "_SvcCntt"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt

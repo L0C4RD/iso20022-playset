@@ -1,10 +1,10 @@
 from . import base_types
-from ._TransactionEnvironment3Code import TransactionEnvironment3Code
 from ._Max35Text import Max35Text
+from ._TransactionEnvironment3Code import TransactionEnvironment3Code
 
 class TerminalHosting1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Ctgy"]
+	__slots__ = ["_Ctgy", "_Id"]
 	@property
 	def Ctgy(self):
 		return self._Ctgy

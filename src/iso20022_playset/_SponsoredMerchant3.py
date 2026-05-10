@@ -1,18 +1,18 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISO3NumericCountryCode import ISO3NumericCountryCode
-from ._Max99Text import Max99Text
 from ._AdditionalData1 import AdditionalData1
-from ._Max256Text import Max256Text
 from ._Address2 import Address2
 from ._GeographicPointInDecimalDegrees import GeographicPointInDecimalDegrees
-from ._Max35Text import Max35Text
+from ._ISO3NumericCountryCode import ISO3NumericCountryCode
 from ._LocalData12 import LocalData12
 from ._Max140Text import Max140Text
+from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Max99Text import Max99Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class SponsoredMerchant3(base_types._BaseFieldType):
 
-	__slots__ = ["_LglCorpNm", "_GeogcLctn", "_Adr", "_Ctry", "_Id", "_ShrtNm", "_AddtlAdr", "_Frgn", "_CmonNm", "_AddtlData", "_Assgnr", "_AddtlId", "_LclData"]
+	__slots__ = ["_AddtlAdr", "_AddtlData", "_AddtlId", "_Adr", "_Assgnr", "_CmonNm", "_Ctry", "_Frgn", "_GeogcLctn", "_Id", "_LclData", "_LglCorpNm", "_ShrtNm"]
 	@property
 	def AddtlAdr(self):
 		return self._AddtlAdr

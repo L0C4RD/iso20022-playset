@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max1000Text import Max1000Text
-from ._Max4AlphaNumericText import Max4AlphaNumericText
 from ._ISODateTime import ISODateTime
+from ._Max1000Text import Max1000Text
 from ._Max35Text import Max35Text
+from ._Max4AlphaNumericText import Max4AlphaNumericText
 
 class Event2(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtParam", "_EvtCd", "_EvtTm", "_EvtDesc"]
+	__slots__ = ["_EvtCd", "_EvtDesc", "_EvtParam", "_EvtTm"]
 	@property
 	def EvtCd(self):
 		return self._EvtCd

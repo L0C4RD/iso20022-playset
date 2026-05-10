@@ -1,17 +1,17 @@
 from . import base_types
 from ._CardDataReading8Code import CardDataReading8Code
 from ._CardPaymentServiceType12Code import CardPaymentServiceType12Code
-from ._TransactionIdentifier1 import TransactionIdentifier1
+from ._CardPaymentServiceType15Code import CardPaymentServiceType15Code
+from ._CardPaymentServiceType9Code import CardPaymentServiceType9Code
 from ._CardPaymentTransactionResult4 import CardPaymentTransactionResult4
 from ._GenericIdentification32 import GenericIdentification32
-from ._CardPaymentServiceType9Code import CardPaymentServiceType9Code
-from ._Max35Text import Max35Text
 from ._Max140Text import Max140Text
-from ._CardPaymentServiceType15Code import CardPaymentServiceType15Code
+from ._Max35Text import Max35Text
+from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class CardPaymentTransaction138(base_types._BaseFieldType):
 
-	__slots__ = ["_TxRslt", "_SaleRefId", "_RcptTxId", "_SvcAttr", "_TxTp", "_AddtlSvc", "_InitrTxId", "_POIId", "_TxId", "_CardDataNtryMd"]
+	__slots__ = ["_AddtlSvc", "_CardDataNtryMd", "_InitrTxId", "_POIId", "_RcptTxId", "_SaleRefId", "_SvcAttr", "_TxId", "_TxRslt", "_TxTp"]
 	@property
 	def AddtlSvc(self):
 		return self._AddtlSvc

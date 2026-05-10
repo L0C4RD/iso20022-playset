@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
+from ._ISODate import ISODate
 from ._OriginalReportStatistics3 import OriginalReportStatistics3
 from ._ReportingMessageStatus1Code import ReportingMessageStatus1Code
 
 class StatusAdviceReport3(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_VldtnRule", "_MsgDt", "_Sttstcs"]
+	__slots__ = ["_MsgDt", "_Sts", "_Sttstcs", "_VldtnRule"]
 	@property
 	def MsgDt(self):
 		return self._MsgDt

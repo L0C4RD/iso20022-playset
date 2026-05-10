@@ -4,7 +4,7 @@ from ._PostalAddress1 import PostalAddress1
 
 class LocationFormat1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LctnCd", "_Adr"]
+	__slots__ = ["_Adr", "_LctnCd"]
 	@property
 	def Adr(self):
 		return self._Adr

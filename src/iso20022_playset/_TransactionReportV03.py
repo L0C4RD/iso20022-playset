@@ -4,7 +4,7 @@ from ._TransactionReportItems3 import TransactionReportItems3
 
 class TransactionReportV03(base_types._BaseFieldType):
 
-	__slots__ = ["_RptdItms", "_RptId", "_RltdMsgRef"]
+	__slots__ = ["_RltdMsgRef", "_RptId", "_RptdItms"]
 	@property
 	def RltdMsgRef(self):
 		return self._RltdMsgRef

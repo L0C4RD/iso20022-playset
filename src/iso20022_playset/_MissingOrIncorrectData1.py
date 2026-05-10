@@ -1,6 +1,6 @@
 from . import base_types
-from ._UnableToApplyIncorrect2 import UnableToApplyIncorrect2
 from ._AMLIndicator import AMLIndicator
+from ._UnableToApplyIncorrect2 import UnableToApplyIncorrect2
 from ._UnableToApplyMissing2 import UnableToApplyMissing2
 
 class MissingOrIncorrectData1(base_types._BaseFieldType):

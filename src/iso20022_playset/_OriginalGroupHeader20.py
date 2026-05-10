@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISODateTime import ISODateTime
-from ._PaymentReversalReason10 import PaymentReversalReason10
 from ._Max35Text import Max35Text
+from ._PaymentReversalReason10 import PaymentReversalReason10
 
 class OriginalGroupHeader20(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgId", "_OrgnlCreDtTm", "_RvslRsnInf", "_OrgnlMsgNmId"]
+	__slots__ = ["_OrgnlCreDtTm", "_OrgnlMsgId", "_OrgnlMsgNmId", "_RvslRsnInf"]
 	@property
 	def OrgnlCreDtTm(self):
 		return self._OrgnlCreDtTm

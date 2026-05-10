@@ -1,11 +1,11 @@
 from . import base_types
-from ._CollateralAccountType3Code import CollateralAccountType3Code
 from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
 from ._AssetHolding1Choice import AssetHolding1Choice
+from ._CollateralAccountType3Code import CollateralAccountType3Code
 
 class AssetHolding1(base_types._BaseFieldType):
 
-	__slots__ = ["_CollRqrmnt", "_AsstTp", "_PstHrcutVal"]
+	__slots__ = ["_AsstTp", "_CollRqrmnt", "_PstHrcutVal"]
 	@property
 	def AsstTp(self):
 		return self._AsstTp

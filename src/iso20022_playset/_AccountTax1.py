@@ -1,11 +1,11 @@
 from . import base_types
-from ._ResidenceLocation1Choice import ResidenceLocation1Choice
 from ._BillingTaxCalculationMethod1Code import BillingTaxCalculationMethod1Code
 from ._Max40Text import Max40Text
+from ._ResidenceLocation1Choice import ResidenceLocation1Choice
 
 class AccountTax1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rgn", "_NonResCtry", "_ClctnMtd"]
+	__slots__ = ["_ClctnMtd", "_NonResCtry", "_Rgn"]
 	@property
 	def ClctnMtd(self):
 		return self._ClctnMtd

@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MessageHeader1 import MessageHeader1
 from ._BusinessInformationQueryDefinition3 import BusinessInformationQueryDefinition3
+from ._MessageHeader1 import MessageHeader1
+from ._SupplementaryData1 import SupplementaryData1
 
 class GetGeneralBusinessInformationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_GnlBizInfQryDef", "_SplmtryData", "_MsgHdr"]
+	__slots__ = ["_GnlBizInfQryDef", "_MsgHdr", "_SplmtryData"]
 	@property
 	def GnlBizInfQryDef(self):
 		return self._GnlBizInfQryDef

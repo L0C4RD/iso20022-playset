@@ -1,20 +1,20 @@
 from . import base_types
+from ._AgreedRate3 import AgreedRate3
+from ._AmountsAndValueDate8 import AmountsAndValueDate8
+from ._GeneralInformation9 import GeneralInformation9
+from ._NonDeliverableForwardConditions2 import NonDeliverableForwardConditions2
+from ._PostTradeEvent1 import PostTradeEvent1
+from ._RegulatoryReporting8 import RegulatoryReporting8
+from ._SettlementParties120 import SettlementParties120
+from ._SplitTradeDetails5 import SplitTradeDetails5
 from ._SupplementaryData1 import SupplementaryData1
 from ._TradeAgreement12 import TradeAgreement12
-from ._PostTradeEvent1 import PostTradeEvent1
-from ._NonDeliverableForwardConditions2 import NonDeliverableForwardConditions2
-from ._AmountsAndValueDate8 import AmountsAndValueDate8
-from ._RegulatoryReporting8 import RegulatoryReporting8
-from ._AgreedRate3 import AgreedRate3
-from ._SplitTradeDetails5 import SplitTradeDetails5
-from ._GeneralInformation9 import GeneralInformation9
 from ._TradeData14 import TradeData14
-from ._SettlementParties120 import SettlementParties120
 from ._TradePartyIdentification8 import TradePartyIdentification8
 
 class ForeignExchangeTradeStatusAndDetailsNotificationV06(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgSdId", "_TradgSdSttlmInstrs", "_SpltTradInf", "_TradAmts", "_CtrPtySdId", "_NDFConds", "_RgltryRptg", "_SplmtryData", "_GnlInf", "_AgrdRate", "_PstTradEvt", "_StsDtls", "_TradInf", "_CtrPtySdSttlmInstrs"]
+	__slots__ = ["_AgrdRate", "_CtrPtySdId", "_CtrPtySdSttlmInstrs", "_GnlInf", "_NDFConds", "_PstTradEvt", "_RgltryRptg", "_SplmtryData", "_SpltTradInf", "_StsDtls", "_TradAmts", "_TradInf", "_TradgSdId", "_TradgSdSttlmInstrs"]
 	@property
 	def AgrdRate(self):
 		return self._AgrdRate

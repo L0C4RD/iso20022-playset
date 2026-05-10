@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._ReservationIdentification4 import ReservationIdentification4
 from ._MessageHeader1 import MessageHeader1
+from ._ReservationIdentification4 import ReservationIdentification4
+from ._SupplementaryData1 import SupplementaryData1
 
 class DeleteReservationV07(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgHdr", "_CurRsvatn"]
+	__slots__ = ["_CurRsvatn", "_MsgHdr", "_SplmtryData"]
 	@property
 	def CurRsvatn(self):
 		return self._CurRsvatn

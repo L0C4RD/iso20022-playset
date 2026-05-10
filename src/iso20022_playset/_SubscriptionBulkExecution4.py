@@ -1,20 +1,20 @@
 from . import base_types
-from ._ISODate import ISODate
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._CancellationRight1Choice import CancellationRight1Choice
+from ._FinancialInstrument57 import FinancialInstrument57
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
+from ._PaymentTransaction70 import PaymentTransaction70
+from ._PlaceOfTradeIdentification1Choice import PlaceOfTradeIdentification1Choice
 from ._SubscriptionExecution12 import SubscriptionExecution12
 from ._YesNoIndicator import YesNoIndicator
-from ._PlaceOfTradeIdentification1Choice import PlaceOfTradeIdentification1Choice
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._FinancialInstrument57 import FinancialInstrument57
-from ._CancellationRight1Choice import CancellationRight1Choice
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._PaymentTransaction70 import PaymentTransaction70
-from ._Max35Text import Max35Text
-from ._ISODateTime import ISODateTime
 
 class SubscriptionBulkExecution4(base_types._BaseFieldType):
 
-	__slots__ = ["_AmdmntInd", "_RcvdDtTm", "_BlkCshSttlmDtls", "_ReqdFutrTradDt", "_ReqdSttlmCcy", "_IndvExctnDtls", "_FinInstrmDtls", "_MstrRef", "_ReqdNAVCcy", "_CxlRght", "_TtlSttlmAmt", "_PlcOfTrad", "_OrdrDtTm"]
+	__slots__ = ["_AmdmntInd", "_BlkCshSttlmDtls", "_CxlRght", "_FinInstrmDtls", "_IndvExctnDtls", "_MstrRef", "_OrdrDtTm", "_PlcOfTrad", "_RcvdDtTm", "_ReqdFutrTradDt", "_ReqdNAVCcy", "_ReqdSttlmCcy", "_TtlSttlmAmt"]
 	@property
 	def AmdmntInd(self):
 		return self._AmdmntInd

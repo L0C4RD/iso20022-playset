@@ -1,6 +1,6 @@
 from . import base_types
-from ._PendingStatusReason22 import PendingStatusReason22
 from ._NoReasonCode import NoReasonCode
+from ._PendingStatusReason22 import PendingStatusReason22
 
 class PendingStatus63Choice(base_types._BaseFieldType):
 

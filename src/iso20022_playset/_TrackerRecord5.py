@@ -1,12 +1,12 @@
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CurrencyExchange13 import CurrencyExchange13
-from ._ChargeBearerType1Code import ChargeBearerType1Code
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._CurrencyExchange13 import CurrencyExchange13
 
 class TrackerRecord5(base_types._BaseFieldType):
 
-	__slots__ = ["_Agt", "_XchgRateData", "_ChrgsAmt", "_ChrgBr"]
+	__slots__ = ["_Agt", "_ChrgBr", "_ChrgsAmt", "_XchgRateData"]
 	@property
 	def Agt(self):
 		return self._Agt

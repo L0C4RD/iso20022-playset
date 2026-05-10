@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._AdditionalReference10 import AdditionalReference10
-from ._Status31Choice import Status31Choice
+from ._Max35Text import Max35Text
 from ._PartyIdentification139 import PartyIdentification139
+from ._Status31Choice import Status31Choice
 
 class CancellationStatusAndReason5(base_types._BaseFieldType):
 
-	__slots__ = ["_StsInitr", "_MstrRef", "_CxlRef", "_ClntRef", "_Sts", "_TrfRef"]
+	__slots__ = ["_ClntRef", "_CxlRef", "_MstrRef", "_Sts", "_StsInitr", "_TrfRef"]
 	@property
 	def ClntRef(self):
 		return self._ClntRef

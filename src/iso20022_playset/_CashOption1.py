@@ -2,12 +2,12 @@ from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._CorporateActionAmounts1 import CorporateActionAmounts1
 from ._CorporateActionDate5 import CorporateActionDate5
-from ._ForeignExchangeTerms8 import ForeignExchangeTerms8
 from ._CreditDebitCode import CreditDebitCode
+from ._ForeignExchangeTerms8 import ForeignExchangeTerms8
 
 class CashOption1(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgRate", "_CdtDbtInd", "_DtDtls", "_Ccy", "_AmtDtls"]
+	__slots__ = ["_AmtDtls", "_Ccy", "_CdtDbtInd", "_DtDtls", "_XchgRate"]
 	@property
 	def AmtDtls(self):
 		return self._AmtDtls

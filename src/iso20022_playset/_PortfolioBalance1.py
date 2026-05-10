@@ -1,10 +1,10 @@
 from . import base_types
-from ._BalanceDetails6 import BalanceDetails6
 from ._BalanceDetails5 import BalanceDetails5
+from ._BalanceDetails6 import BalanceDetails6
 
 class PortfolioBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_SummryBal", "_DtldBal"]
+	__slots__ = ["_DtldBal", "_SummryBal"]
 	@property
 	def DtldBal(self):
 		return self._DtldBal

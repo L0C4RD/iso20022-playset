@@ -3,7 +3,7 @@ from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class TransactionIdentifications37(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_OthrId", "_PrcrTxId", "_MktInfrstrctrTxId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_MktInfrstrctrTxId", "_OthrId", "_PrcrTxId"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

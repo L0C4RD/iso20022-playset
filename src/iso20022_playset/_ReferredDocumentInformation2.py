@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ReferredDocumentType1 import ReferredDocumentType1
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
+from ._ReferredDocumentType1 import ReferredDocumentType1
 
 class ReferredDocumentInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_DocAmt", "_RltdDt", "_Tp", "_DocNb"]
+	__slots__ = ["_DocAmt", "_DocNb", "_RltdDt", "_Tp"]
 	@property
 	def DocAmt(self):
 		return self._DocAmt

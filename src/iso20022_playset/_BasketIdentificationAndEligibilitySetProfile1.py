@@ -3,7 +3,7 @@ from ._GenericIdentification1 import GenericIdentification1
 
 class BasketIdentificationAndEligibilitySetProfile1(base_types._BaseFieldType):
 
-	__slots__ = ["_FllbckStartgBsktId", "_PrfrntlBsktIdNb", "_ElgbltySetPrfl", "_ExclsnBsktId"]
+	__slots__ = ["_ElgbltySetPrfl", "_ExclsnBsktId", "_FllbckStartgBsktId", "_PrfrntlBsktIdNb"]
 	@property
 	def ElgbltySetPrfl(self):
 		return self._ElgbltySetPrfl

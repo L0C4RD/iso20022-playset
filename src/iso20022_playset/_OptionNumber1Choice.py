@@ -4,7 +4,7 @@ from ._OptionNumber1Code import OptionNumber1Code
 
 class OptionNumber1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Nb", "_Cd"]
+	__slots__ = ["_Cd", "_Nb"]
 	@property
 	def Cd(self):
 		return self._Cd

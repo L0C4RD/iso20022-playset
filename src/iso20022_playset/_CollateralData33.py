@@ -1,18 +1,18 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ReinvestedCashTypeAndAmount2 import ReinvestedCashTypeAndAmount2
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._ContractTerm6Choice import ContractTerm6Choice
 from ._CollateralQualityType1Code import CollateralQualityType1Code
 from ._CollateralType6Code import CollateralType6Code
-from ._ReconciliationFlag2 import ReconciliationFlag2
-from ._SecuritiesLendingType3Choice import SecuritiesLendingType3Choice
+from ._ContractTerm6Choice import ContractTerm6Choice
 from ._IssuerJurisdiction1Choice import IssuerJurisdiction1Choice
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._ReconciliationFlag2 import ReconciliationFlag2
+from ._ReinvestedCashTypeAndAmount2 import ReinvestedCashTypeAndAmount2
+from ._SecuritiesLendingType3Choice import SecuritiesLendingType3Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CollateralData33(base_types._BaseFieldType):
 
-	__slots__ = ["_CmpntTp", "_TradRpstry", "_IssrJursdctn", "_Qlty", "_PricCcy", "_RcncltnFlg", "_Mtrty", "_CshCollCcy", "_NetXpsrCollstnInd", "_RinvstdCsh", "_Tp"]
+	__slots__ = ["_CmpntTp", "_CshCollCcy", "_IssrJursdctn", "_Mtrty", "_NetXpsrCollstnInd", "_PricCcy", "_Qlty", "_RcncltnFlg", "_RinvstdCsh", "_Tp", "_TradRpstry"]
 	@property
 	def CmpntTp(self):
 		return self._CmpntTp

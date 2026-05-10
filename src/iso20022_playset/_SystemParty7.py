@@ -1,19 +1,19 @@
 from . import base_types
+from ._Contact14 import Contact14
 from ._ISODate import ISODate
-from ._TechnicalIdentification2Choice import TechnicalIdentification2Choice
+from ._MarketSpecificAttribute1 import MarketSpecificAttribute1
 from ._PartyLockStatus1 import PartyLockStatus1
-from ._ResidenceType1Code import ResidenceType1Code
+from ._PartyName4 import PartyName4
 from ._PostalAddress28 import PostalAddress28
+from ._ResidenceType1Code import ResidenceType1Code
+from ._SystemPartyIdentification9 import SystemPartyIdentification9
 from ._SystemPartyType1Choice import SystemPartyType1Choice
 from ._SystemRestriction1 import SystemRestriction1
-from ._PartyName4 import PartyName4
-from ._MarketSpecificAttribute1 import MarketSpecificAttribute1
-from ._Contact14 import Contact14
-from ._SystemPartyIdentification9 import SystemPartyIdentification9
+from ._TechnicalIdentification2Choice import TechnicalIdentification2Choice
 
 class SystemParty7(base_types._BaseFieldType):
 
-	__slots__ = ["_Rstrctn", "_TechAdr", "_Tp", "_LckSts", "_Nm", "_PtyId", "_MktSpcfcAttr", "_ResTp", "_CtctDtls", "_OpngDt", "_Adr", "_ClsgDt"]
+	__slots__ = ["_Adr", "_ClsgDt", "_CtctDtls", "_LckSts", "_MktSpcfcAttr", "_Nm", "_OpngDt", "_PtyId", "_ResTp", "_Rstrctn", "_TechAdr", "_Tp"]
 	@property
 	def Adr(self):
 		return self._Adr

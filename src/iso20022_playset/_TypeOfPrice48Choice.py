@@ -1,6 +1,6 @@
 from . import base_types
-from ._TypeOfPrice17Code import TypeOfPrice17Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._TypeOfPrice17Code import TypeOfPrice17Code
 
 class TypeOfPrice48Choice(base_types._BaseFieldType):
 

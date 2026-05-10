@@ -1,15 +1,15 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._Exact3NumericText import Exact3NumericText
+from ._CorporateActionCashMovements2 import CorporateActionCashMovements2
 from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
 from ._CorporateActionSecuritiesMovement2 import CorporateActionSecuritiesMovement2
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from ._Exact3NumericText import Exact3NumericText
+from ._PercentageRate import PercentageRate
 from ._SecuritiesAccount7 import SecuritiesAccount7
-from ._CorporateActionCashMovements2 import CorporateActionCashMovements2
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 
 class CorporateActionElection3(base_types._BaseFieldType):
 
-	__slots__ = ["_InstdUndrlygSctiesQty", "_CshMvmntDtls", "_PropsdRate", "_SctiesMvmntDtls", "_InstdSctiesQtyToRcv", "_OptnNb", "_AcctDtls", "_OptnTp"]
+	__slots__ = ["_AcctDtls", "_CshMvmntDtls", "_InstdSctiesQtyToRcv", "_InstdUndrlygSctiesQty", "_OptnNb", "_OptnTp", "_PropsdRate", "_SctiesMvmntDtls"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

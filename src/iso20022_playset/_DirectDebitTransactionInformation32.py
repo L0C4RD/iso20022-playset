@@ -1,23 +1,23 @@
 from . import base_types
-from ._ChargeBearerType1Code import ChargeBearerType1Code
-from ._SupplementaryData1 import SupplementaryData1
-from ._PaymentIdentification6 import PaymentIdentification6
-from ._Max140Text import Max140Text
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._DirectDebitTransaction12 import DirectDebitTransaction12
-from ._RemittanceInformation22 import RemittanceInformation22
-from ._Purpose2Choice import Purpose2Choice
 from ._CashAccount40 import CashAccount40
-from ._PaymentTypeInformation29 import PaymentTypeInformation29
-from ._RemittanceLocation8 import RemittanceLocation8
-from ._RegulatoryReporting3 import RegulatoryReporting3
+from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._DirectDebitTransaction12 import DirectDebitTransaction12
+from ._Max140Text import Max140Text
 from ._PartyIdentification272 import PartyIdentification272
+from ._PaymentIdentification6 import PaymentIdentification6
+from ._PaymentTypeInformation29 import PaymentTypeInformation29
+from ._Purpose2Choice import Purpose2Choice
+from ._RegulatoryReporting3 import RegulatoryReporting3
+from ._RemittanceInformation22 import RemittanceInformation22
+from ._RemittanceLocation8 import RemittanceLocation8
+from ._SupplementaryData1 import SupplementaryData1
 from ._TaxData1 import TaxData1
 
 class DirectDebitTransactionInformation32(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgBr", "_Dbtr", "_UltmtCdtr", "_Tax", "_DbtrAgt", "_RmtInf", "_UltmtDbtr", "_DbtrAcct", "_RgltryRptg", "_InstrForCdtrAgt", "_DrctDbtTx", "_PmtTpInf", "_InstdAmt", "_RltdRmtInf", "_PmtId", "_Purp", "_DbtrAgtAcct", "_SplmtryData"]
+	__slots__ = ["_ChrgBr", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_DrctDbtTx", "_InstdAmt", "_InstrForCdtrAgt", "_PmtId", "_PmtTpInf", "_Purp", "_RgltryRptg", "_RltdRmtInf", "_RmtInf", "_SplmtryData", "_Tax", "_UltmtCdtr", "_UltmtDbtr"]
 	@property
 	def ChrgBr(self):
 		return self._ChrgBr

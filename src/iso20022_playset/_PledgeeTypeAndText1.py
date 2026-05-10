@@ -1,10 +1,10 @@
 from . import base_types
-from ._PledgeeType1Code import PledgeeType1Code
 from ._Max35Text import Max35Text
+from ._PledgeeType1Code import PledgeeType1Code
 
 class PledgeeTypeAndText1(base_types._BaseFieldType):
 
-	__slots__ = ["_PldgeeTp", "_Id"]
+	__slots__ = ["_Id", "_PldgeeTp"]
 	@property
 	def Id(self):
 		return self._Id

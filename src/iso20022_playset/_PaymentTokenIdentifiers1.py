@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class PaymentTokenIdentifiers1(base_types._BaseFieldType):
 
-	__slots__ = ["_RqstrId", "_PrvdrId"]
+	__slots__ = ["_PrvdrId", "_RqstrId"]
 	@property
 	def PrvdrId(self):
 		return self._PrvdrId

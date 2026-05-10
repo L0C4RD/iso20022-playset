@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max500Text import Max500Text
-from ._InvestigatedParties1Choice import InvestigatedParties1Choice
 from ._AuthorityRequestType1 import AuthorityRequestType1
+from ._InvestigatedParties1Choice import InvestigatedParties1Choice
+from ._Max500Text import Max500Text
 
 class AuthorityInvestigation2(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstgtdRoles", "_Tp", "_AddtlInvstgtdPties", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_AddtlInvstgtdPties", "_InvstgtdRoles", "_Tp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

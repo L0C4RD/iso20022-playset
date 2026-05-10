@@ -1,29 +1,29 @@
 from . import base_types
-from ._PartyIdentification43 import PartyIdentification43
 from ._AutomaticVariation1 import AutomaticVariation1
-from ._UndertakingIssuanceName1Code import UndertakingIssuanceName1Code
 from ._CommunicationChannel1 import CommunicationChannel1
-from ._Presentation1 import Presentation1
 from ._Document9 import Document9
+from ._ExpiryDetails1 import ExpiryDetails1
 from ._ExternalTypeOfParty1Code import ExternalTypeOfParty1Code
-from ._PostalAddress12 import PostalAddress12
-from ._UndertakingAmount1 import UndertakingAmount1
-from ._UndertakingType1Choice import UndertakingType1Choice
-from ._UnderlyingTradeTransaction1 import UnderlyingTradeTransaction1
-from ._Undertaking4 import Undertaking4
-from ._Max2000Text import Max2000Text
 from ._GovernanceRules1 import GovernanceRules1
 from ._ISODate import ISODate
-from ._ExpiryDetails1 import ExpiryDetails1
-from ._YesNoIndicator import YesNoIndicator
-from ._PartyAndType1 import PartyAndType1
-from ._Narrative1 import Narrative1
 from ._IssuanceType1Code import IssuanceType1Code
+from ._Max2000Text import Max2000Text
 from ._Max35Text import Max35Text
+from ._Narrative1 import Narrative1
+from ._PartyAndType1 import PartyAndType1
+from ._PartyIdentification43 import PartyIdentification43
+from ._PostalAddress12 import PostalAddress12
+from ._Presentation1 import Presentation1
+from ._UnderlyingTradeTransaction1 import UnderlyingTradeTransaction1
+from ._Undertaking4 import Undertaking4
+from ._UndertakingAmount1 import UndertakingAmount1
+from ._UndertakingIssuanceName1Code import UndertakingIssuanceName1Code
+from ._UndertakingType1Choice import UndertakingType1Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class Undertaking3(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgAmt", "_DtOfIssnc", "_AddtlPty", "_UdrtkgTermsAndConds", "_MltplDmndInd", "_PresntnDtls", "_AutomtcAmtVartn", "_Issr", "_UndrlygTx", "_DlvryChanl", "_AdvsgPty", "_ConfPtyTp", "_ConfChrgsPyblBy", "_GovncRulesAndLaw", "_IssncTp", "_Tp", "_XpryDtls", "_Nm", "_NclsdFile", "_ReqdLclUdrtkg", "_Applcnt", "_PrtlDmndInd", "_Bnfcry", "_ConfInd", "_TrfChrgsPyblBy", "_AddtlInf", "_Id", "_ScndAdvsgPty", "_TrfInd", "_PlcOfIsse"]
+	__slots__ = ["_AddtlInf", "_AddtlPty", "_AdvsgPty", "_Applcnt", "_AutomtcAmtVartn", "_Bnfcry", "_ConfChrgsPyblBy", "_ConfInd", "_ConfPtyTp", "_DlvryChanl", "_DtOfIssnc", "_GovncRulesAndLaw", "_Id", "_IssncTp", "_Issr", "_MltplDmndInd", "_NclsdFile", "_Nm", "_PlcOfIsse", "_PresntnDtls", "_PrtlDmndInd", "_ReqdLclUdrtkg", "_ScndAdvsgPty", "_Tp", "_TrfChrgsPyblBy", "_TrfInd", "_UdrtkgAmt", "_UdrtkgTermsAndConds", "_UndrlygTx", "_XpryDtls"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

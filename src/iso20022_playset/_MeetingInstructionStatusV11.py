@@ -1,16 +1,16 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._PartyIdentification226Choice import PartyIdentification226Choice
 from ._EligiblePosition17 import EligiblePosition17
-from ._InstructionTypeStatus7Choice import InstructionTypeStatus7Choice
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._MeetingReference10 import MeetingReference10
 from ._InstructionType2Choice import InstructionType2Choice
+from ._InstructionTypeStatus7Choice import InstructionTypeStatus7Choice
+from ._MeetingReference10 import MeetingReference10
+from ._PartyIdentification226Choice import PartyIdentification226Choice
 from ._PartyIdentification246Choice import PartyIdentification246Choice
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SupplementaryData1 import SupplementaryData1
 
 class MeetingInstructionStatusV11(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_VoteCstgPty", "_InstrTpSts", "_CnfrmgPty", "_InstrTp", "_RghtsHldr", "_MtgRef", "_Pos", "_SplmtryData"]
+	__slots__ = ["_CnfrmgPty", "_FinInstrmId", "_InstrTp", "_InstrTpSts", "_MtgRef", "_Pos", "_RghtsHldr", "_SplmtryData", "_VoteCstgPty"]
 	@property
 	def CnfrmgPty(self):
 		return self._CnfrmgPty

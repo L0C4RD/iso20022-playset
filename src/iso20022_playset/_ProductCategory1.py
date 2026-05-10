@@ -1,10 +1,10 @@
 from . import base_types
-from ._ProductCategory1Code import ProductCategory1Code
 from ._Max35Text import Max35Text
+from ._ProductCategory1Code import ProductCategory1Code
 
 class ProductCategory1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Ctgy"]
+	__slots__ = ["_Ctgy", "_Tp"]
 	@property
 	def Ctgy(self):
 		return self._Ctgy

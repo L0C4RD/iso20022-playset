@@ -1,14 +1,14 @@
 from . import base_types
-from ._BillingServiceParameters3 import BillingServiceParameters3
 from ._AmountAndDirection34 import AmountAndDirection34
-from ._ServicePaymentMethod1Code import ServicePaymentMethod1Code
-from ._BillingPrice1 import BillingPrice1
-from ._ServiceTaxDesignation1 import ServiceTaxDesignation1
 from ._BillingMethod1Choice import BillingMethod1Choice
+from ._BillingPrice1 import BillingPrice1
+from ._BillingServiceParameters3 import BillingServiceParameters3
+from ._ServicePaymentMethod1Code import ServicePaymentMethod1Code
+from ._ServiceTaxDesignation1 import ServiceTaxDesignation1
 
 class BillingService2(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxDsgnt", "_OrgnlChrgPric", "_OrgnlChrgSttlmAmt", "_TaxClctn", "_BalReqrdAcctAmt", "_SvcDtl", "_Pric", "_PmtMtd"]
+	__slots__ = ["_BalReqrdAcctAmt", "_OrgnlChrgPric", "_OrgnlChrgSttlmAmt", "_PmtMtd", "_Pric", "_SvcDtl", "_TaxClctn", "_TaxDsgnt"]
 	@property
 	def BalReqrdAcctAmt(self):
 		return self._BalReqrdAcctAmt

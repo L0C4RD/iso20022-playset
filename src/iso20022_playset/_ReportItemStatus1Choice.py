@@ -4,7 +4,7 @@ from ._ReportItemStatus1 import ReportItemStatus1
 
 class ReportItemStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Accptd", "_Rjctd", "_AccptdWthXcptn"]
+	__slots__ = ["_Accptd", "_AccptdWthXcptn", "_Rjctd"]
 	@property
 	def Accptd(self):
 		return self._Accptd

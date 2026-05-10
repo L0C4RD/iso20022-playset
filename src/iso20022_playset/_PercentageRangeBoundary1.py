@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class PercentageRangeBoundary1(base_types._BaseFieldType):
 
-	__slots__ = ["_Incl", "_BdryRate"]
+	__slots__ = ["_BdryRate", "_Incl"]
 	@property
 	def BdryRate(self):
 		return self._BdryRate

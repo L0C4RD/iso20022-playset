@@ -1,18 +1,18 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ISODate import ISODate
-from ._DecimalNumber import DecimalNumber
+from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._AgreedRate3 import AgreedRate3
+from ._DecimalNumber import DecimalNumber
+from ._ISODate import ISODate
+from ._Max70Text import Max70Text
 from ._SecurityIdentification18 import SecurityIdentification18
 from ._SettlementDate8Code import SettlementDate8Code
-from ._AgreedRate3 import AgreedRate3
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._Max70Text import Max70Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Trade10(base_types._BaseFieldType):
 
-	__slots__ = ["_FxgCcy", "_ClctdCtrPtyCcyLastQty", "_AssoctdTradRef", "_OptnInd", "_ValtnRate", "_RskAmt", "_SttlmDt", "_ExctnPric", "_LastQty", "_ValDt", "_FxgDt", "_DltaInd", "_SttlmTp", "_FwdPts", "_SctyId"]
+	__slots__ = ["_AssoctdTradRef", "_ClctdCtrPtyCcyLastQty", "_DltaInd", "_ExctnPric", "_FwdPts", "_FxgCcy", "_FxgDt", "_LastQty", "_OptnInd", "_RskAmt", "_SctyId", "_SttlmDt", "_SttlmTp", "_ValDt", "_ValtnRate"]
 	@property
 	def AssoctdTradRef(self):
 		return self._AssoctdTradRef

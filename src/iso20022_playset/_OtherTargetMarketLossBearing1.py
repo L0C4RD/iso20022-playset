@@ -1,11 +1,11 @@
 from . import base_types
-from ._TargetMarket1Choice import TargetMarket1Choice
 from ._AdditionalInformation15 import AdditionalInformation15
 from ._Max35Text import Max35Text
+from ._TargetMarket1Choice import TargetMarket1Choice
 
 class OtherTargetMarketLossBearing1(base_types._BaseFieldType):
 
-	__slots__ = ["_AbltyToBearLossesTp", "_Trgt", "_AddtlInf"]
+	__slots__ = ["_AbltyToBearLossesTp", "_AddtlInf", "_Trgt"]
 	@property
 	def AbltyToBearLossesTp(self):
 		return self._AbltyToBearLossesTp

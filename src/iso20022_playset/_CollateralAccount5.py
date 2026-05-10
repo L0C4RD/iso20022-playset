@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._MarginAccount1 import MarginAccount1
 from ._PartyIdentification118Choice import PartyIdentification118Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CollateralAccount5(base_types._BaseFieldType):
 
-	__slots__ = ["_CollSgrtnByVal", "_RltdMrgnAcct", "_TitlTrfCollArrgmnt", "_Id"]
+	__slots__ = ["_CollSgrtnByVal", "_Id", "_RltdMrgnAcct", "_TitlTrfCollArrgmnt"]
 	@property
 	def CollSgrtnByVal(self):
 		return self._CollSgrtnByVal

@@ -1,44 +1,44 @@
 from . import base_types
-from ._Max3Number import Max3Number
-from ._PercentageRate import PercentageRate
-from ._QuantityBreakdown76 import QuantityBreakdown76
-from ._Side3Code import Side3Code
-from ._ISODateTime import ISODateTime
-from ._ChargeTaxBasisType2Choice import ChargeTaxBasisType2Choice
-from ._ISODate import ISODate
 from ._AmountAndDirection29 import AmountAndDirection29
-from ._DateAndDateTime1Choice import DateAndDateTime1Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._YieldCalculation7 import YieldCalculation7
-from ._Max350Text import Max350Text
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._TypeOfPrice47Choice import TypeOfPrice47Choice
-from ._Reporting6Choice import Reporting6Choice
 from ._BusinessProcessType2Choice import BusinessProcessType2Choice
-from ._RegistrationParameters3 import RegistrationParameters3
-from ._CashMarginOrder1Code import CashMarginOrder1Code
-from ._Commission24 import Commission24
-from ._SettlementDate16Choice import SettlementDate16Choice
 from ._CallIn1Code import CallIn1Code
-from ._InterestType2Code import InterestType2Code
-from ._PositionEffect2Code import PositionEffect2Code
-from ._TradeType4Choice import TradeType4Choice
-from ._PartialFill4 import PartialFill4
-from ._EUCapitalGainType3Choice import EUCapitalGainType3Choice
-from ._MatchingStatus27Choice import MatchingStatus27Choice
+from ._CashMarginOrder1Code import CashMarginOrder1Code
+from ._ChargeTaxBasisType2Choice import ChargeTaxBasisType2Choice
+from ._Commission24 import Commission24
 from ._CurrencyToBuyOrSell1Choice import CurrencyToBuyOrSell1Choice
+from ._DateAndDateTime1Choice import DateAndDateTime1Choice
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._EUCapitalGainType3Choice import EUCapitalGainType3Choice
+from ._Eligibility1Code import Eligibility1Code
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
+from ._InterestType2Code import InterestType2Code
+from ._MarketIdentification93 import MarketIdentification93
+from ._MatchingStatus27Choice import MatchingStatus27Choice
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._Max3Number import Max3Number
+from ._PartialFill4 import PartialFill4
+from ._PercentageRate import PercentageRate
+from ._PositionEffect2Code import PositionEffect2Code
 from ._Price14 import Price14
 from ._Quantity6Choice import Quantity6Choice
+from ._QuantityBreakdown76 import QuantityBreakdown76
+from ._RegistrationParameters3 import RegistrationParameters3
+from ._Reporting6Choice import Reporting6Choice
+from ._SettlementDate16Choice import SettlementDate16Choice
+from ._Side3Code import Side3Code
 from ._TradeDate7Choice import TradeDate7Choice
-from ._MarketIdentification93 import MarketIdentification93
-from ._Max35Text import Max35Text
-from ._TradeTransactionCondition9Choice import TradeTransactionCondition9Choice
 from ._TradeRegulatoryConditions1Code import TradeRegulatoryConditions1Code
-from ._Eligibility1Code import Eligibility1Code
+from ._TradeTransactionCondition9Choice import TradeTransactionCondition9Choice
+from ._TradeType4Choice import TradeType4Choice
+from ._TypeOfPrice47Choice import TypeOfPrice47Choice
+from ._YesNoIndicator import YesNoIndicator
+from ._YieldCalculation7 import YieldCalculation7
 
 class Order24(base_types._BaseFieldType):
 
-	__slots__ = ["_Pmt", "_AcrdIntrstPctg", "_OrdrOrgtrElgblty", "_ListId", "_AcrdIntrstAmt", "_TradOrgtnDt", "_GvUpNbOfDays", "_PosFct", "_AddtlTradInstrPrcgInf", "_TpOfPric", "_PrcgDt", "_QtyBrkdwn", "_ClntOrdrId", "_NbOfDaysAcrd", "_CptlGnTp", "_ChrgTaxBsisTp", "_PlcOfTrad", "_CshMrgn", "_Comssn", "_CcyToBuyOrSell", "_OrdrId", "_ScndryClntOrdrId", "_PrtlFillDtls", "_TradRgltryCondsTp", "_OrdrBookgDt", "_GrssTradAmt", "_Rptg", "_TradTxTp", "_IntrstTp", "_NAVDt", "_SttlmDt", "_DealPric", "_TradTxCond", "_BizPrcTp", "_MtchSts", "_AddtlPhysOrRegnDtls", "_YldTp", "_ConfQty", "_CallInTp", "_Sd", "_PreAdvc", "_DerivCvrd", "_TradDt"]
+	__slots__ = ["_AcrdIntrstAmt", "_AcrdIntrstPctg", "_AddtlPhysOrRegnDtls", "_AddtlTradInstrPrcgInf", "_BizPrcTp", "_CallInTp", "_CcyToBuyOrSell", "_ChrgTaxBsisTp", "_ClntOrdrId", "_Comssn", "_ConfQty", "_CptlGnTp", "_CshMrgn", "_DealPric", "_DerivCvrd", "_GrssTradAmt", "_GvUpNbOfDays", "_IntrstTp", "_ListId", "_MtchSts", "_NAVDt", "_NbOfDaysAcrd", "_OrdrBookgDt", "_OrdrId", "_OrdrOrgtrElgblty", "_PlcOfTrad", "_Pmt", "_PosFct", "_PrcgDt", "_PreAdvc", "_PrtlFillDtls", "_QtyBrkdwn", "_Rptg", "_ScndryClntOrdrId", "_Sd", "_SttlmDt", "_TpOfPric", "_TradDt", "_TradOrgtnDt", "_TradRgltryCondsTp", "_TradTxCond", "_TradTxTp", "_YldTp"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt

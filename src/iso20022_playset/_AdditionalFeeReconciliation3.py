@@ -1,9 +1,9 @@
 from . import base_types
-from ._TypeOfAmount21Code import TypeOfAmount21Code
-from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
 from ._Number import Number
 from ._ReconciliationImpact1Code import ReconciliationImpact1Code
+from ._TypeOfAmount21Code import TypeOfAmount21Code
 
 class AdditionalFeeReconciliation3(base_types._BaseFieldType):
 

@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._ExternalInstructedAgentInstruction1Code import ExternalInstructedAgentInstruction1Code
+from ._Max140Text import Max140Text
 
 class InstructionForInstructedAgent1(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrInf", "_Cd"]
+	__slots__ = ["_Cd", "_InstrInf"]
 	@property
 	def Cd(self):
 		return self._Cd

@@ -1,12 +1,12 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
 
 class ATMTransactionAmounts7(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Labl", "_Tp", "_Ccy"]
+	__slots__ = ["_Amt", "_Ccy", "_Labl", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

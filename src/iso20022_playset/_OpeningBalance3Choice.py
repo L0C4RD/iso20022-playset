@@ -3,7 +3,7 @@ from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
 
 class OpeningBalance3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrmyOpngBal", "_FrstOpngBal"]
+	__slots__ = ["_FrstOpngBal", "_IntrmyOpngBal"]
 	@property
 	def FrstOpngBal(self):
 		return self._FrstOpngBal

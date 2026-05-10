@@ -1,12 +1,12 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ATMMediaType4Code import ATMMediaType4Code
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Number import Number
 
 class ATMTotals4(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMBal", "_ATMCur", "_ATMCurNb", "_ATMBalNb", "_MdiaTp", "_Ccy"]
+	__slots__ = ["_ATMBal", "_ATMBalNb", "_ATMCur", "_ATMCurNb", "_Ccy", "_MdiaTp"]
 	@property
 	def ATMBal(self):
 		return self._ATMBal

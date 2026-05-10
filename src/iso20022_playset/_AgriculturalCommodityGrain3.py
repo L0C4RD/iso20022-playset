@@ -1,11 +1,11 @@
 from . import base_types
-from ._AssetClassSubProductType5Code import AssetClassSubProductType5Code
-from ._AssetClassProductType1Code import AssetClassProductType1Code
 from ._AssetClassDetailedSubProductType30Code import AssetClassDetailedSubProductType30Code
+from ._AssetClassProductType1Code import AssetClassProductType1Code
+from ._AssetClassSubProductType5Code import AssetClassSubProductType5Code
 
 class AgriculturalCommodityGrain3(base_types._BaseFieldType):
 
-	__slots__ = ["_SubPdct", "_AddtlSubPdct", "_BasePdct"]
+	__slots__ = ["_AddtlSubPdct", "_BasePdct", "_SubPdct"]
 	@property
 	def AddtlSubPdct(self):
 		return self._AddtlSubPdct

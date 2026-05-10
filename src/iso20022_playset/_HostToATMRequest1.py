@@ -1,11 +1,11 @@
 from . import base_types
 from ._ATMCommandIdentification1 import ATMCommandIdentification1
-from ._MessageFunction8Code import MessageFunction8Code
 from ._ATMEnvironment9 import ATMEnvironment9
+from ._MessageFunction8Code import MessageFunction8Code
 
 class HostToATMRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_XpctdMsgFctn", "_CmdId", "_Envt"]
+	__slots__ = ["_CmdId", "_Envt", "_XpctdMsgFctn"]
 	@property
 	def CmdId(self):
 		return self._CmdId

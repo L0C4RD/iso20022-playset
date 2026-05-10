@@ -1,13 +1,13 @@
 from . import base_types
 from ._AmountConsistencyType1Code import AmountConsistencyType1Code
-from ._PaymentRejectReturnReason1 import PaymentRejectReturnReason1
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
+from ._PaymentRejectReturnReason1 import PaymentRejectReturnReason1
 from ._PaymentStatusReason1 import PaymentStatusReason1
 
 class TrackerStatus4(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctRtrRsn", "_Sts", "_Dt", "_AmtIncnsstncy", "_StsRsn"]
+	__slots__ = ["_AmtIncnsstncy", "_Dt", "_RjctRtrRsn", "_Sts", "_StsRsn"]
 	@property
 	def AmtIncnsstncy(self):
 		return self._AmtIncnsstncy

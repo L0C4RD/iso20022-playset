@@ -1,15 +1,15 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Max35Text import Max35Text
-from ._DetailedAmount15 import DetailedAmount15
 from ._AmountUnit1Code import AmountUnit1Code
-from ._LoyaltyTypeTransactionTotals1Code import LoyaltyTypeTransactionTotals1Code
-from ._Number import Number
+from ._DetailedAmount15 import DetailedAmount15
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._LoyaltyTypeTransactionTotals1Code import LoyaltyTypeTransactionTotals1Code
+from ._Max35Text import Max35Text
+from ._Number import Number
 
 class LoyaltyTransactionTotals1(base_types._BaseFieldType):
 
-	__slots__ = ["_LltyUnit", "_TxTp", "_DtldAmt", "_POIGrpId", "_CardPdctPrfl", "_CmltvAmt", "_TtlNb", "_Ccy"]
+	__slots__ = ["_CardPdctPrfl", "_Ccy", "_CmltvAmt", "_DtldAmt", "_LltyUnit", "_POIGrpId", "_TtlNb", "_TxTp"]
 	@property
 	def CardPdctPrfl(self):
 		return self._CardPdctPrfl

@@ -5,7 +5,7 @@ from ._ReportItemRejectionReason1Choice import ReportItemRejectionReason1Choice
 
 class ReportItemStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Xcptn", "_AddtlRsnInf", "_RptItm"]
+	__slots__ = ["_AddtlRsnInf", "_RptItm", "_Xcptn"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

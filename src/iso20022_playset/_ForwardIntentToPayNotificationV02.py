@@ -1,16 +1,16 @@
 from . import base_types
-from ._TransactionStatus4 import TransactionStatus4
-from ._DocumentIdentification3 import DocumentIdentification3
 from ._BICIdentification1 import BICIdentification1
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._IntentToPay2 import IntentToPay2
+from ._DocumentIdentification3 import DocumentIdentification3
 from ._DocumentIdentification5 import DocumentIdentification5
-from ._PendingActivity2 import PendingActivity2
+from ._IntentToPay2 import IntentToPay2
 from ._MessageIdentification1 import MessageIdentification1
+from ._PendingActivity2 import PendingActivity2
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._TransactionStatus4 import TransactionStatus4
 
 class ForwardIntentToPayNotificationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrBk", "_TxSts", "_TxId", "_ReqForActn", "_SellrBk", "_InttToPay", "_UsrTxRef", "_EstblishdBaselnId", "_NtfctnId"]
+	__slots__ = ["_BuyrBk", "_EstblishdBaselnId", "_InttToPay", "_NtfctnId", "_ReqForActn", "_SellrBk", "_TxId", "_TxSts", "_UsrTxRef"]
 	@property
 	def BuyrBk(self):
 		return self._BuyrBk

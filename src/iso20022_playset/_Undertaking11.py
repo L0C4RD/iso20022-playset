@@ -1,13 +1,13 @@
 from . import base_types
-from ._PartyIdentification43 import PartyIdentification43
+from ._CommunicationChannel1 import CommunicationChannel1
 from ._ExpiryDetails1 import ExpiryDetails1
 from ._Narrative1 import Narrative1
-from ._CommunicationChannel1 import CommunicationChannel1
+from ._PartyIdentification43 import PartyIdentification43
 from ._UndertakingAmount2 import UndertakingAmount2
 
 class Undertaking11(base_types._BaseFieldType):
 
-	__slots__ = ["_NewUdrtkgTermsAndConds", "_NewXpryDtls", "_NewBnfcry", "_DlvryChanl", "_NewUdrtkgAmt"]
+	__slots__ = ["_DlvryChanl", "_NewBnfcry", "_NewUdrtkgAmt", "_NewUdrtkgTermsAndConds", "_NewXpryDtls"]
 	@property
 	def DlvryChanl(self):
 		return self._DlvryChanl

@@ -4,7 +4,7 @@ from ._NaturalPersonIdentification3 import NaturalPersonIdentification3
 
 class PartyIdentification248Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Ntrl", "_Lgl"]
+	__slots__ = ["_Lgl", "_Ntrl"]
 	@property
 	def Lgl(self):
 		return self._Lgl

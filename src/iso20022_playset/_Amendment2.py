@@ -1,12 +1,12 @@
 from . import base_types
-from ._UndertakingAmendmentMessage1 import UndertakingAmendmentMessage1
 from ._AdvisingPartyAdditionalInformation1 import AdvisingPartyAdditionalInformation1
-from ._UndertakingConfirmation1 import UndertakingConfirmation1
 from ._PartyAndSignature2 import PartyAndSignature2
+from ._UndertakingAmendmentMessage1 import UndertakingAmendmentMessage1
+from ._UndertakingConfirmation1 import UndertakingConfirmation1
 
 class Amendment2(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgAmdmntMsg", "_DgtlSgntr", "_ConfDtls", "_FrstAdvsgPtyAddtlInf", "_ScndAdvsgPtyAddtlInf"]
+	__slots__ = ["_ConfDtls", "_DgtlSgntr", "_FrstAdvsgPtyAddtlInf", "_ScndAdvsgPtyAddtlInf", "_UdrtkgAmdmntMsg"]
 	@property
 	def ConfDtls(self):
 		return self._ConfDtls

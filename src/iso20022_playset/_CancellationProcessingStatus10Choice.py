@@ -1,11 +1,11 @@
 from . import base_types
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
-from ._ProprietaryReason4 import ProprietaryReason4
 from ._CancellationReason39Choice import CancellationReason39Choice
+from ._ProprietaryReason4 import ProprietaryReason4
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 
 class CancellationProcessingStatus10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtrySts", "_CxlPdg", "_CxlReqd", "_CxlCmpltd"]
+	__slots__ = ["_CxlCmpltd", "_CxlPdg", "_CxlReqd", "_PrtrySts"]
 	@property
 	def CxlCmpltd(self):
 		return self._CxlCmpltd

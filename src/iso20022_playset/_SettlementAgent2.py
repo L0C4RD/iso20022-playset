@@ -4,7 +4,7 @@ from ._PaymentAccount4 import PaymentAccount4
 
 class SettlementAgent2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Acct"]
+	__slots__ = ["_Acct", "_Id"]
 	@property
 	def Acct(self):
 		return self._Acct

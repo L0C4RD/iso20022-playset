@@ -1,10 +1,10 @@
 from . import base_types
-from ._SecuritiesTransactionType44Choice import SecuritiesTransactionType44Choice
 from ._CorporateActionEventType110Choice import CorporateActionEventType110Choice
+from ._SecuritiesTransactionType44Choice import SecuritiesTransactionType44Choice
 
 class SettlementOrCorporateActionEvent34Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesTxTp", "_CorpActnEvtTp"]
+	__slots__ = ["_CorpActnEvtTp", "_SctiesTxTp"]
 	@property
 	def CorpActnEvtTp(self):
 		return self._CorpActnEvtTp

@@ -1,18 +1,18 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._SupplementaryData1 import SupplementaryData1
-from ._Case6 import Case6
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._PaymentCancellationReason6 import PaymentCancellationReason6
-from ._OriginalGroupInformation29 import OriginalGroupInformation29
-from ._UUIDv4Identifier import UUIDv4Identifier
+from ._Case6 import Case6
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
+from ._OriginalGroupInformation29 import OriginalGroupInformation29
 from ._OriginalTransactionReference42 import OriginalTransactionReference42
+from ._PaymentCancellationReason6 import PaymentCancellationReason6
+from ._SupplementaryData1 import SupplementaryData1
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class PaymentTransaction155(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgne", "_OrgnlIntrBkSttlmDt", "_OrgnlIntrBkSttlmAmt", "_OrgnlTxRef", "_Case", "_OrgnlUETR", "_OrgnlClrSysRef", "_OrgnlEndToEndId", "_OrgnlInstrId", "_Assgnr", "_CxlRsnInf", "_OrgnlTxId", "_OrgnlGrpInf", "_SplmtryData", "_CxlId"]
+	__slots__ = ["_Assgne", "_Assgnr", "_Case", "_CxlId", "_CxlRsnInf", "_OrgnlClrSysRef", "_OrgnlEndToEndId", "_OrgnlGrpInf", "_OrgnlInstrId", "_OrgnlIntrBkSttlmAmt", "_OrgnlIntrBkSttlmDt", "_OrgnlTxId", "_OrgnlTxRef", "_OrgnlUETR", "_SplmtryData"]
 	@property
 	def Assgne(self):
 		return self._Assgne

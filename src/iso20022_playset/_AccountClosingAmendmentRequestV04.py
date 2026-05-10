@@ -1,15 +1,15 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._AccountContract4 import AccountContract4
 from ._AccountForAction1 import AccountForAction1
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._AccountContract4 import AccountContract4
 from ._OrganisationIdentification39 import OrganisationIdentification39
-from ._References4 import References4
 from ._PartyAndSignature4 import PartyAndSignature4
+from ._References4 import References4
+from ._SupplementaryData1 import SupplementaryData1
 
 class AccountClosingAmendmentRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Fr", "_AcctId", "_AcctSvcrId", "_DgtlSgntr", "_SplmtryData", "_OrgId", "_TrfAcctSvcrId", "_BalTrfAcct", "_Refs", "_CtrctDts"]
+	__slots__ = ["_AcctId", "_AcctSvcrId", "_BalTrfAcct", "_CtrctDts", "_DgtlSgntr", "_Fr", "_OrgId", "_Refs", "_SplmtryData", "_TrfAcctSvcrId"]
 	@property
 	def AcctId(self):
 		return self._AcctId

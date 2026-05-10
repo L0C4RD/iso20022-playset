@@ -1,11 +1,11 @@
 from . import base_types
-from ._MarginCollateralReport4 import MarginCollateralReport4
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._MarginCollateralReport4 import MarginCollateralReport4
 from ._TradeCounterpartyReport20 import TradeCounterpartyReport20
 
 class PositionSetCollateralDimensions3(base_types._BaseFieldType):
 
-	__slots__ = ["_Coll", "_VartnMrgnPstdCcy", "_InitlMrgnPstdCcy", "_CtrPtyId", "_InitlMrgnRcvdCcy", "_XcssCollRcvdCcy", "_XcssCollPstdCcy", "_VartnMrgnRcvdCcy"]
+	__slots__ = ["_Coll", "_CtrPtyId", "_InitlMrgnPstdCcy", "_InitlMrgnRcvdCcy", "_VartnMrgnPstdCcy", "_VartnMrgnRcvdCcy", "_XcssCollPstdCcy", "_XcssCollRcvdCcy"]
 	@property
 	def Coll(self):
 		return self._Coll

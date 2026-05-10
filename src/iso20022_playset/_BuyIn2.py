@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Price4 import Price4
-from ._Max35Text import Max35Text
-from ._SecuritiesCompensation1 import SecuritiesCompensation1
 from ._CashCompensation1 import CashCompensation1
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._Price4 import Price4
+from ._SecuritiesCompensation1 import SecuritiesCompensation1
 
 class BuyIn2(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_SctiesBuyIn", "_BuyInId", "_BuyInNtfctnId", "_ReqrdCshCompstn", "_Pric"]
+	__slots__ = ["_BuyInId", "_BuyInNtfctnId", "_Dt", "_Pric", "_ReqrdCshCompstn", "_SctiesBuyIn"]
 	@property
 	def BuyInId(self):
 		return self._BuyInId

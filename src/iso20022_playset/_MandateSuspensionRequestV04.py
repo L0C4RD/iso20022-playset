@@ -1,7 +1,7 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MandateSuspension4 import MandateSuspension4
 from ._GroupHeader110 import GroupHeader110
+from ._MandateSuspension4 import MandateSuspension4
+from ._SupplementaryData1 import SupplementaryData1
 
 class MandateSuspensionRequestV04(base_types._BaseFieldType):
 

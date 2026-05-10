@@ -1,17 +1,17 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PriceFormat74Choice import PriceFormat74Choice
-from ._Max50Text import Max50Text
-from ._InstructionProcessingStatus56Choice import InstructionProcessingStatus56Choice
 from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._Max3NumericText import Max3NumericText
-from ._Max350Text import Max350Text
+from ._ISODate import ISODate
+from ._InstructionProcessingStatus56Choice import InstructionProcessingStatus56Choice
 from ._Max15Text import Max15Text
+from ._Max350Text import Max350Text
+from ._Max3NumericText import Max3NumericText
+from ._Max50Text import Max50Text
+from ._PriceFormat74Choice import PriceFormat74Choice
 from ._ProtectTransactionType2Code import ProtectTransactionType2Code
 
 class OptionInstructionDetails11(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctDt", "_InstrDt", "_InstrSts", "_CstmrRef", "_InstrQty", "_InstrNrrtv", "_InstrSeqNb", "_BidPric", "_CoverPrtctDt", "_PrtctInd", "_CondlQty", "_InstrId"]
+	__slots__ = ["_BidPric", "_CondlQty", "_CoverPrtctDt", "_CstmrRef", "_InstrDt", "_InstrId", "_InstrNrrtv", "_InstrQty", "_InstrSeqNb", "_InstrSts", "_PrtctDt", "_PrtctInd"]
 	@property
 	def BidPric(self):
 		return self._BidPric

@@ -4,7 +4,7 @@ from ._Max9999HexBinaryText import Max9999HexBinaryText
 
 class EncryptedData2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_HexBinry", "_Binry"]
+	__slots__ = ["_Binry", "_HexBinry"]
 	@property
 	def Binry(self):
 		return self._Binry

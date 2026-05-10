@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._LEIIdentifier import LEIIdentifier
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionOperationType1Code import TransactionOperationType1Code
-from ._NovationStatus1Code import NovationStatus1Code
-from ._ForeignExchange1 import ForeignExchange1
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._CounterpartyIdentification3Choice import CounterpartyIdentification3Choice
-from ._Max105Text import Max105Text
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
+from ._ForeignExchange1 import ForeignExchange1
+from ._ISODate import ISODate
+from ._LEIIdentifier import LEIIdentifier
+from ._Max105Text import Max105Text
+from ._NovationStatus1Code import NovationStatus1Code
 from ._SecuritiesTransactionType15Code import SecuritiesTransactionType15Code
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionOperationType1Code import TransactionOperationType1Code
 
 class ForeignExchangeSwapTransaction3(base_types._BaseFieldType):
 
-	__slots__ = ["_TxNmnlAmt", "_NvtnSts", "_MtrtyDt", "_RptdTxSts", "_BrnchId", "_CtrPtyId", "_TxTp", "_SpotValDt", "_TradDt", "_FX", "_CtrPtyPrtryTxId", "_RltdPrtryTxId", "_SplmtryData", "_UnqTxIdr", "_PrtryTxId"]
+	__slots__ = ["_BrnchId", "_CtrPtyId", "_CtrPtyPrtryTxId", "_FX", "_MtrtyDt", "_NvtnSts", "_PrtryTxId", "_RltdPrtryTxId", "_RptdTxSts", "_SplmtryData", "_SpotValDt", "_TradDt", "_TxNmnlAmt", "_TxTp", "_UnqTxIdr"]
 	@property
 	def BrnchId(self):
 		return self._BrnchId

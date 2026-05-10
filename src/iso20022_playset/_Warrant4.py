@@ -1,12 +1,12 @@
 from . import base_types
-from ._Organisation38 import Organisation38
-from ._WarrantStyle3Choice import WarrantStyle3Choice
-from ._Price8 import Price8
 from ._BaseOneRate import BaseOneRate
+from ._Organisation38 import Organisation38
+from ._Price8 import Price8
+from ._WarrantStyle3Choice import WarrantStyle3Choice
 
 class Warrant4(base_types._BaseFieldType):
 
-	__slots__ = ["_Mltplr", "_SbcptPric", "_WarrtAgt", "_Tp"]
+	__slots__ = ["_Mltplr", "_SbcptPric", "_Tp", "_WarrtAgt"]
 	@property
 	def Mltplr(self):
 		return self._Mltplr

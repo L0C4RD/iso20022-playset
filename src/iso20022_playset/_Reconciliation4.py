@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class Reconciliation4(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Dt", "_ChckptRef"]
+	__slots__ = ["_ChckptRef", "_Dt", "_Id"]
 	@property
 	def ChckptRef(self):
 		return self._ChckptRef

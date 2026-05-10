@@ -4,7 +4,7 @@ from ._TransferStatus6Code import TransferStatus6Code
 
 class TransferInstructionStatus5(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_Rsn"]
+	__slots__ = ["_Rsn", "_Sts"]
 	@property
 	def Rsn(self):
 		return self._Rsn

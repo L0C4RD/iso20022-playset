@@ -1,12 +1,12 @@
 from . import base_types
-from ._GenericIdentification4 import GenericIdentification4
 from ._DateAndPlaceOfBirth1 import DateAndPlaceOfBirth1
-from ._Max35Text import Max35Text
+from ._GenericIdentification4 import GenericIdentification4
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
 
 class PersonIdentification15(base_types._BaseFieldType):
 
-	__slots__ = ["_EmailAdr", "_TaxIdNb", "_PsptNb", "_DrvrId", "_DrvrLicNb", "_DrvrLicLctn", "_DtAndPlcOfBirth", "_AlnRegnNb", "_Othr", "_Dept", "_DrvrLicNm", "_CstmrNb", "_MplyrIdNb", "_MplyeeIdNb", "_JobNb", "_SclSctyNb", "_IdntyCardNb"]
+	__slots__ = ["_AlnRegnNb", "_CstmrNb", "_Dept", "_DrvrId", "_DrvrLicLctn", "_DrvrLicNb", "_DrvrLicNm", "_DtAndPlcOfBirth", "_EmailAdr", "_IdntyCardNb", "_JobNb", "_MplyeeIdNb", "_MplyrIdNb", "_Othr", "_PsptNb", "_SclSctyNb", "_TaxIdNb"]
 	@property
 	def AlnRegnNb(self):
 		return self._AlnRegnNb

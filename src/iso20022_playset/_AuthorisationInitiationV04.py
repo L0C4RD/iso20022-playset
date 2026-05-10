@@ -1,50 +1,50 @@
 from . import base_types
-from ._Context19 import Context19
-from ._AddendumData6 import AddendumData6
-from ._AccountDetails4 import AccountDetails4
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ContentInformationType41 import ContentInformationType41
-from ._CustomerDevice5 import CustomerDevice5
 from ._AccountBalance3 import AccountBalance3
-from ._Terminal7 import Terminal7
-from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
-from ._Customer4 import Customer4
-from ._RiskContext3 import RiskContext3
-from ._PartyIdentification288 import PartyIdentification288
-from ._OriginalDataElements3 import OriginalDataElements3
-from ._PartyIdentification287 import PartyIdentification287
-from ._AdditionalService2 import AdditionalService2
-from ._PointOfInteractionComponent16 import PointOfInteractionComponent16
-from ._DateTime2 import DateTime2
-from ._StrongCustomerAuthentication2 import StrongCustomerAuthentication2
-from ._Verification6 import Verification6
-from ._Header71 import Header71
-from ._SettlementService5 import SettlementService5
-from ._FundingService3 import FundingService3
-from ._ProcessingResult27 import ProcessingResult27
+from ._AccountDetails4 import AccountDetails4
+from ._AddendumData6 import AddendumData6
+from ._AdditionalAmounts4 import AdditionalAmounts4
 from ._AdditionalData2 import AdditionalData2
-from ._TransactionIdentification57 import TransactionIdentification57
+from ._AdditionalFee3 import AdditionalFee3
+from ._AdditionalService2 import AdditionalService2
 from ._CardData11 import CardData11
-from ._Jurisdiction2 import Jurisdiction2
 from ._Cardholder22 import Cardholder22
-from ._TransactionAmounts3 import TransactionAmounts3
+from ._ContentInformationType41 import ContentInformationType41
+from ._Context19 import Context19
+from ._Customer4 import Customer4
+from ._CustomerDevice5 import CustomerDevice5
+from ._DateTime2 import DateTime2
+from ._DepositDetails3 import DepositDetails3
 from ._ExchangeRateInformation5 import ExchangeRateInformation5
+from ._FundingService3 import FundingService3
+from ._Header71 import Header71
+from ._Instalment6 import Instalment6
+from ._Jurisdiction2 import Jurisdiction2
+from ._Max10KHexBinaryText import Max10KHexBinaryText
+from ._OriginalDataElements3 import OriginalDataElements3
+from ._PartyIdentification286 import PartyIdentification286
+from ._PartyIdentification287 import PartyIdentification287
+from ._PartyIdentification288 import PartyIdentification288
+from ._PointOfInteractionComponent16 import PointOfInteractionComponent16
+from ._ProcessingResult27 import ProcessingResult27
 from ._ProgrammeMode4 import ProgrammeMode4
 from ._ProtectedData2 import ProtectedData2
-from ._TransactionCharacteristics1 import TransactionCharacteristics1
-from ._Wallet3 import Wallet3
-from ._AdditionalAmounts4 import AdditionalAmounts4
-from ._DepositDetails3 import DepositDetails3
-from ._Instalment6 import Instalment6
-from ._Max10KHexBinaryText import Max10KHexBinaryText
+from ._Reconciliation4 import Reconciliation4
+from ._RiskContext3 import RiskContext3
+from ._SettlementService5 import SettlementService5
 from ._SpecialProgrammeQualification2 import SpecialProgrammeQualification2
+from ._StrongCustomerAuthentication2 import StrongCustomerAuthentication2
+from ._SupplementaryData1 import SupplementaryData1
+from ._Terminal7 import Terminal7
 from ._Token2 import Token2
+from ._TransactionAmounts3 import TransactionAmounts3
+from ._TransactionCharacteristics1 import TransactionCharacteristics1
+from ._TransactionIdentification57 import TransactionIdentification57
+from ._Verification6 import Verification6
+from ._Wallet3 import Wallet3
 
 class AuthorisationInitiationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctFr", "_TxChrtcs", "_AddtlAmt", "_OrgnlDataElmts", "_Accptr", "_Termnl", "_Sndr", "_AcctBal", "_AdddmData", "_AddtlData", "_AddtlFee", "_Pyee", "_FndsSvcs", "_Vrfctn", "_Rcncltn", "_ConvsDtTm", "_Crdhldr", "_POICmpnt", "_Cstmr", "_TxId", "_Pyer", "_CstmrDvc", "_Rsk", "_PrcgRslt", "_Orgtr", "_XchgRate", "_Card", "_Acqrr", "_ICCRltdData", "_Dstn", "_DpstDtls", "_Instlmt", "_Prgrmm", "_Issr", "_Jursdctn", "_Hdr", "_StrngCstmrAuthntcn", "_AcctTo", "_Tkn", "_SctyTrlr", "_Rcvr", "_Cntxt", "_SttlmSvc", "_TxAmts", "_PrtctdData", "_AddtlSvc", "_SpclPrgrmmQlfctn", "_Wllt", "_SplmtryData"]
+	__slots__ = ["_Accptr", "_AcctBal", "_AcctFr", "_AcctTo", "_Acqrr", "_AdddmData", "_AddtlAmt", "_AddtlData", "_AddtlFee", "_AddtlSvc", "_Card", "_Cntxt", "_ConvsDtTm", "_Crdhldr", "_Cstmr", "_CstmrDvc", "_DpstDtls", "_Dstn", "_FndsSvcs", "_Hdr", "_ICCRltdData", "_Instlmt", "_Issr", "_Jursdctn", "_OrgnlDataElmts", "_Orgtr", "_POICmpnt", "_PrcgRslt", "_Prgrmm", "_PrtctdData", "_Pyee", "_Pyer", "_Rcncltn", "_Rcvr", "_Rsk", "_SctyTrlr", "_Sndr", "_SpclPrgrmmQlfctn", "_SplmtryData", "_StrngCstmrAuthntcn", "_SttlmSvc", "_Termnl", "_Tkn", "_TxAmts", "_TxChrtcs", "_TxId", "_Vrfctn", "_Wllt", "_XchgRate"]
 	@property
 	def Accptr(self):
 		return self._Accptr

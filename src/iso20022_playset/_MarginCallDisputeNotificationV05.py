@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._Obligation9 import Obligation9
-from ._Max35Text import Max35Text
 from ._DisputeNotification2Choice import DisputeNotification2Choice
+from ._Max35Text import Max35Text
+from ._Obligation9 import Obligation9
+from ._SupplementaryData1 import SupplementaryData1
 
 class MarginCallDisputeNotificationV05(base_types._BaseFieldType):
 
-	__slots__ = ["_Oblgtn", "_TxId", "_SplmtryData", "_DsptNtfctn"]
+	__slots__ = ["_DsptNtfctn", "_Oblgtn", "_SplmtryData", "_TxId"]
 	@property
 	def DsptNtfctn(self):
 		return self._DsptNtfctn

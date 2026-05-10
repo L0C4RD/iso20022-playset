@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class AlternateSecurityIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_DmstIdSrc", "_PrtryIdSrc"]
+	__slots__ = ["_DmstIdSrc", "_Id", "_PrtryIdSrc"]
 	@property
 	def DmstIdSrc(self):
 		return self._DmstIdSrc

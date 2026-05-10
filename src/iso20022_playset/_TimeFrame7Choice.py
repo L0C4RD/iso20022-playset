@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class TimeFrame7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TPlus", "_Prepmt"]
+	__slots__ = ["_Prepmt", "_TPlus"]
 	@property
 	def Prepmt(self):
 		return self._Prepmt

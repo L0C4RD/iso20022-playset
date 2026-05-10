@@ -1,12 +1,12 @@
 from . import base_types
 from ._ISODate import ISODate
 from ._MandateRelatedInformation16 import MandateRelatedInformation16
-from ._PartyIdentification272 import PartyIdentification272
 from ._Max35Text import Max35Text
+from ._PartyIdentification272 import PartyIdentification272
 
 class DirectDebitTransaction12(base_types._BaseFieldType):
 
-	__slots__ = ["_PreNtfctnDt", "_PreNtfctnId", "_MndtRltdInf", "_CdtrSchmeId"]
+	__slots__ = ["_CdtrSchmeId", "_MndtRltdInf", "_PreNtfctnDt", "_PreNtfctnId"]
 	@property
 	def CdtrSchmeId(self):
 		return self._CdtrSchmeId

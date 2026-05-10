@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class ResponseType8(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlRspnInf", "_Cdfctn", "_RspndrId", "_Rspn", "_RspnRsn"]
+	__slots__ = ["_AddtlRspnInf", "_Cdfctn", "_Rspn", "_RspnRsn", "_RspndrId"]
 	@property
 	def AddtlRspnInf(self):
 		return self._AddtlRspnInf

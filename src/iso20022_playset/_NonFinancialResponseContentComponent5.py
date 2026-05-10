@@ -1,15 +1,15 @@
 from . import base_types
-from ._NonFinancialResponseRisk1Code import NonFinancialResponseRisk1Code
-from ._ResponseType11 import ResponseType11
-from ._NonFinancialRequestType2Code import NonFinancialRequestType2Code
-from ._Action17 import Action17
 from ._Acquirer10 import Acquirer10
+from ._Action17 import Action17
 from ._ExternallyDefinedData5 import ExternallyDefinedData5
+from ._NonFinancialRequestType2Code import NonFinancialRequestType2Code
+from ._NonFinancialResponseRisk1Code import NonFinancialResponseRisk1Code
 from ._RecurringTransaction6 import RecurringTransaction6
+from ._ResponseType11 import ResponseType11
 
 class NonFinancialResponseContentComponent5(base_types._BaseFieldType):
 
-	__slots__ = ["_Rspn", "_AddtlRspn", "_RskMgmtRslt", "_Actn", "_AcqrrSelctd", "_Instlmt", "_NonFinReqTp"]
+	__slots__ = ["_AcqrrSelctd", "_Actn", "_AddtlRspn", "_Instlmt", "_NonFinReqTp", "_RskMgmtRslt", "_Rspn"]
 	@property
 	def AcqrrSelctd(self):
 		return self._AcqrrSelctd

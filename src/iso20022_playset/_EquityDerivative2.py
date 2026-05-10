@@ -1,10 +1,10 @@
 from . import base_types
-from ._EquityReturnParameter1Code import EquityReturnParameter1Code
 from ._EquityDerivative3Choice import EquityDerivative3Choice
+from ._EquityReturnParameter1Code import EquityReturnParameter1Code
 
 class EquityDerivative2(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygTp", "_Param"]
+	__slots__ = ["_Param", "_UndrlygTp"]
 	@property
 	def Param(self):
 		return self._Param

@@ -4,7 +4,7 @@ from ._DateType8Code import DateType8Code
 
 class DateFormat45Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotSpcfdDt", "_Dt"]
+	__slots__ = ["_Dt", "_NotSpcfdDt"]
 	@property
 	def Dt(self):
 		return self._Dt

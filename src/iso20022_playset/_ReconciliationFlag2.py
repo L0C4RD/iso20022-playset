@@ -1,10 +1,10 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._TradeRepositoryReportingType1Code import TradeRepositoryReportingType1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ReconciliationFlag2(base_types._BaseFieldType):
 
-	__slots__ = ["_BothCtrPtiesRptg", "_ModSts", "_RptTp", "_CollRcncltnSts", "_LnRcncltnSts", "_PairdSts"]
+	__slots__ = ["_BothCtrPtiesRptg", "_CollRcncltnSts", "_LnRcncltnSts", "_ModSts", "_PairdSts", "_RptTp"]
 	@property
 	def BothCtrPtiesRptg(self):
 		return self._BothCtrPtiesRptg

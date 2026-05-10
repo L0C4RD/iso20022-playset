@@ -1,10 +1,10 @@
 from . import base_types
-from ._FinancialInstrument104 import FinancialInstrument104
 from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
+from ._FinancialInstrument104 import FinancialInstrument104
 
 class SpecificCollateral3(base_types._BaseFieldType):
 
-	__slots__ = ["_MktVal", "_FinInstrmId"]
+	__slots__ = ["_FinInstrmId", "_MktVal"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId

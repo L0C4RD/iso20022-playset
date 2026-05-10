@@ -1,11 +1,11 @@
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._CreditDebitCode import CreditDebitCode
 from ._Amount2Choice import Amount2Choice
+from ._CreditDebitCode import CreditDebitCode
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class Limit8(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_StartDtTm", "_Amt"]
+	__slots__ = ["_Amt", "_CdtDbtInd", "_StartDtTm"]
 	@property
 	def Amt(self):
 		return self._Amt

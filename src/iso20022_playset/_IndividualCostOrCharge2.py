@@ -1,15 +1,15 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
-from ._Period15 import Period15
-from ._ChargeType8Choice import ChargeType8Choice
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._ChargeType8Choice import ChargeType8Choice
 from ._IntendedOrActual2Code import IntendedOrActual2Code
+from ._PercentageRate import PercentageRate
+from ._Period15 import Period15
+from ._PlusOrMinusIndicator import PlusOrMinusIndicator
 
 class IndividualCostOrCharge2(base_types._BaseFieldType):
 
-	__slots__ = ["_RefPrd", "_Sgn", "_AddtlInf", "_ExAnteOrExPst", "_Amt", "_CostTp", "_Rate"]
+	__slots__ = ["_AddtlInf", "_Amt", "_CostTp", "_ExAnteOrExPst", "_Rate", "_RefPrd", "_Sgn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

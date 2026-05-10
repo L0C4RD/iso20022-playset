@@ -1,17 +1,17 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._FinancingNotificationParties1 import FinancingNotificationParties1
 from ._DecimalNumber import DecimalNumber
 from ._FinancingAgreementItem1 import FinancingAgreementItem1
-from ._xs:IDREF import xs:IDREF
-from ._ValidationStatusInformation1 import ValidationStatusInformation1
+from ._FinancingNotificationParties1 import FinancingNotificationParties1
+from ._ISODate import ISODate
+from ._Max15NumericText import Max15NumericText
 from ._Max2000Text import Max2000Text
 from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
+from ._ValidationStatusInformation1 import ValidationStatusInformation1
+from ._xs:IDREF import xs:IDREF
 
 class FinancingAgreementList1(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_GrntApplcnt", "_Itm", "_AddtlInf", "_CtrlSum", "_AgrmtRqstr", "_GrntIssr", "_ItmCnt", "_GrntNbfcry", "_NtfctnInf", "_AgrmtRspndr", "_VldtnStsInf", "_RltdDoc", "_Idr"]
+	__slots__ = ["_AddtlInf", "_AgrmtRqstr", "_AgrmtRspndr", "_CtrlSum", "_Dt", "_GrntApplcnt", "_GrntIssr", "_GrntNbfcry", "_Idr", "_Itm", "_ItmCnt", "_NtfctnInf", "_RltdDoc", "_VldtnStsInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

@@ -1,11 +1,11 @@
 from . import base_types
-from ._ReversalRequest7 import ReversalRequest7
 from ._LoyaltyRequest7 import LoyaltyRequest7
 from ._PaymentRequest7 import PaymentRequest7
+from ._ReversalRequest7 import ReversalRequest7
 
 class TransactionToPerform7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RvslReq", "_PmtReq", "_LltyReq"]
+	__slots__ = ["_LltyReq", "_PmtReq", "_RvslReq"]
 	@property
 	def LltyReq(self):
 		return self._LltyReq

@@ -1,12 +1,12 @@
 from . import base_types
 from ._ISOMax3ACountryCode import ISOMax3ACountryCode
-from ._PartyType18Code import PartyType18Code
 from ._Max35Text import Max35Text
 from ._PartyType17Code import PartyType17Code
+from ._PartyType18Code import PartyType18Code
 
 class GenericIdentification183(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Ctry", "_ShrtNm", "_Id", "_OthrTp", "_Assgnr"]
+	__slots__ = ["_Assgnr", "_Ctry", "_Id", "_OthrTp", "_ShrtNm", "_Tp"]
 	@property
 	def Assgnr(self):
 		return self._Assgnr

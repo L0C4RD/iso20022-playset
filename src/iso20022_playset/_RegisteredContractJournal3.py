@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ContractClosureReason1Choice import ContractClosureReason1Choice
 from ._DocumentIdentification28 import DocumentIdentification28
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ISODate import ISODate
 
 class RegisteredContractJournal3(base_types._BaseFieldType):
 
-	__slots__ = ["_ClsrRsn", "_UnqId", "_ClsrDt", "_RegnAgt"]
+	__slots__ = ["_ClsrDt", "_ClsrRsn", "_RegnAgt", "_UnqId"]
 	@property
 	def ClsrDt(self):
 		return self._ClsrDt

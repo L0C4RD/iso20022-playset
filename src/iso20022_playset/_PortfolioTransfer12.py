@@ -1,12 +1,12 @@
 from . import base_types
-from ._FinancialInstrument101 import FinancialInstrument101
 from ._AdditionalInformation15 import AdditionalInformation15
-from ._Max35Text import Max35Text
+from ._FinancialInstrument101 import FinancialInstrument101
 from ._FundPortfolio9Choice import FundPortfolio9Choice
+from ._Max35Text import Max35Text
 
 class PortfolioTransfer12(base_types._BaseFieldType):
 
-	__slots__ = ["_MstrRef", "_TrfId", "_AddtlInf", "_FinInstrmAsstForTrf", "_Prtfl"]
+	__slots__ = ["_AddtlInf", "_FinInstrmAsstForTrf", "_MstrRef", "_Prtfl", "_TrfId"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

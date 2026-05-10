@@ -1,13 +1,13 @@
 from . import base_types
+from ._InternalisationData1 import InternalisationData1
+from ._SettlementInternaliserClientType1 import SettlementInternaliserClientType1
 from ._SettlementInternaliserFinancialInstrument1 import SettlementInternaliserFinancialInstrument1
 from ._SettlementInternaliserIdentification1 import SettlementInternaliserIdentification1
-from ._SettlementInternaliserClientType1 import SettlementInternaliserClientType1
-from ._InternalisationData1 import InternalisationData1
 from ._SettlementInternaliserTransactionType1 import SettlementInternaliserTransactionType1
 
 class SettlementInternaliser1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_FinInstrm", "_OvrllTtl", "_TtlCshTrf", "_ClntTp", "_TxTp"]
+	__slots__ = ["_ClntTp", "_FinInstrm", "_Id", "_OvrllTtl", "_TtlCshTrf", "_TxTp"]
 	@property
 	def ClntTp(self):
 		return self._ClntTp

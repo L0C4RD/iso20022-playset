@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._CashAccount40 import CashAccount40
 from ._ContentInformationType39 import ContentInformationType39
 from ._Max1025Text import Max1025Text
 from ._PartyIdentification272 import PartyIdentification272
-from ._CashAccount40 import CashAccount40
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CreditTransferContext1(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrAcct", "_DbtrAcct", "_WaitForNtfctnBfrEndg", "_SysToNtfy", "_PrtctdCdtrAcct", "_PrtctdDbtrAcct", "_Cdtr", "_Dbtr", "_AutomtcNtfctnOfCshMvmnt"]
+	__slots__ = ["_AutomtcNtfctnOfCshMvmnt", "_Cdtr", "_CdtrAcct", "_Dbtr", "_DbtrAcct", "_PrtctdCdtrAcct", "_PrtctdDbtrAcct", "_SysToNtfy", "_WaitForNtfctnBfrEndg"]
 	@property
 	def AutomtcNtfctnOfCshMvmnt(self):
 		return self._AutomtcNtfctnOfCshMvmnt

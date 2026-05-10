@@ -1,12 +1,12 @@
 from . import base_types
-from ._TransactionStatus4 import TransactionStatus4
-from ._Reason2 import Reason2
 from ._MessageIdentification1 import MessageIdentification1
+from ._Reason2 import Reason2
 from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._TransactionStatus4 import TransactionStatus4
 
 class StatusExtensionRequestRejectionV03(base_types._BaseFieldType):
 
-	__slots__ = ["_StsNotToBeXtnded", "_RjctnRsn", "_RjctnId", "_TxId", "_SubmitrTxRef"]
+	__slots__ = ["_RjctnId", "_RjctnRsn", "_StsNotToBeXtnded", "_SubmitrTxRef", "_TxId"]
 	@property
 	def RjctnId(self):
 		return self._RjctnId

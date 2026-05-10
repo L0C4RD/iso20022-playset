@@ -1,13 +1,13 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._TrackerPartyIdentification2 import TrackerPartyIdentification2
-from ._Max15NumericText import Max15NumericText
-from ._ServiceLevel8Choice import ServiceLevel8Choice
 from ._ISODateTime import ISODateTime
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
+from ._ServiceLevel8Choice import ServiceLevel8Choice
+from ._TrackerPartyIdentification2 import TrackerPartyIdentification2
 
 class TrackerHeader6(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcLvl", "_TrckrInfrmdPty", "_TrckrInfrmgPty", "_MsgId", "_CreDtTm", "_NbOfTxs"]
+	__slots__ = ["_CreDtTm", "_MsgId", "_NbOfTxs", "_SvcLvl", "_TrckrInfrmdPty", "_TrckrInfrmgPty"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

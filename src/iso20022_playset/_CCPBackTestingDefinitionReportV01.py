@@ -1,6 +1,6 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._BackTestingMethodology1 import BackTestingMethodology1
+from ._SupplementaryData1 import SupplementaryData1
 
 class CCPBackTestingDefinitionReportV01(base_types._BaseFieldType):
 

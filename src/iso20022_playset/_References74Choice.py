@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max52Text import Max52Text
 from ._Max35Text import Max35Text
+from ._Max52Text import Max52Text
 
 class References74Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IntraBalMvmntId", "_MktInfrstrctrTxId", "_PoolId", "_TradId", "_IntraPosMvmntId", "_SctiesSttlmTxId", "_CtrPtyMktInfrstrctrTxId", "_CmonId", "_OthrTxId", "_AcctSvcrTxId"]
+	__slots__ = ["_AcctSvcrTxId", "_CmonId", "_CtrPtyMktInfrstrctrTxId", "_IntraBalMvmntId", "_IntraPosMvmntId", "_MktInfrstrctrTxId", "_OthrTxId", "_PoolId", "_SctiesSttlmTxId", "_TradId"]
 	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId

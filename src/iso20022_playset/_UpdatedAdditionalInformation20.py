@@ -4,7 +4,7 @@ from ._Max8000Text import Max8000Text
 
 class UpdatedAdditionalInformation20(base_types._BaseFieldType):
 
-	__slots__ = ["_Lang", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Lang"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

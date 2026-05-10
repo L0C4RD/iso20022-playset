@@ -4,7 +4,7 @@ from ._Parameter13 import Parameter13
 
 class AlgorithmIdentification27(base_types._BaseFieldType):
 
-	__slots__ = ["_Param", "_Algo"]
+	__slots__ = ["_Algo", "_Param"]
 	@property
 	def Algo(self):
 		return self._Algo

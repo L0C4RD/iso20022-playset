@@ -1,13 +1,13 @@
 from . import base_types
-from ._CrystallisationDay1 import CrystallisationDay1
-from ._BenchmarkCurveName13Choice import BenchmarkCurveName13Choice
-from ._Max3NumericText import Max3NumericText
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._BenchmarkCurveName13Choice import BenchmarkCurveName13Choice
+from ._CrystallisationDay1 import CrystallisationDay1
 from ._InterestRateIndexTenor2Code import InterestRateIndexTenor2Code
+from ._Max3NumericText import Max3NumericText
 
 class RateTypeAndLookback2(base_types._BaseFieldType):
 
-	__slots__ = ["_LookBckDays", "_Ccy", "_Tnr", "_Tp", "_CrstllstnDt"]
+	__slots__ = ["_Ccy", "_CrstllstnDt", "_LookBckDays", "_Tnr", "_Tp"]
 	@property
 	def Ccy(self):
 		return self._Ccy

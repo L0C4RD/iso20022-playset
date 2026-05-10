@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
 from ._FlowDirectionType1Code import FlowDirectionType1Code
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ISODate import ISODate
 
 class NetCashForecast5(base_types._BaseFieldType):
 
-	__slots__ = ["_NetUnitsNb", "_NetAmt", "_CshSttlmDt", "_FlowDrctn"]
+	__slots__ = ["_CshSttlmDt", "_FlowDrctn", "_NetAmt", "_NetUnitsNb"]
 	@property
 	def CshSttlmDt(self):
 		return self._CshSttlmDt

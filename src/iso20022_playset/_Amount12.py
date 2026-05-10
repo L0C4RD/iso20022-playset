@@ -1,12 +1,12 @@
 from . import base_types
-from ._TemporaryServicesCharge1Code import TemporaryServicesCharge1Code
-from ._Max6NumericText import Max6NumericText
-from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._Max6NumericText import Max6NumericText
+from ._TemporaryServicesCharge1Code import TemporaryServicesCharge1Code
 
 class Amount12(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_OthrTp", "_Rate", "_Hrs"]
+	__slots__ = ["_Hrs", "_OthrTp", "_Rate", "_Tp"]
 	@property
 	def Hrs(self):
 		return self._Hrs

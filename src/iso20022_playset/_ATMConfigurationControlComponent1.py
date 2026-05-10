@@ -1,13 +1,13 @@
 from . import base_types
-from ._ATMPropertyComponent1 import ATMPropertyComponent1
-from ._Max35Text import Max35Text
 from ._ATMActionType1Code import ATMActionType1Code
-from ._ISODateTime import ISODateTime
 from ._ATMEnvironment7 import ATMEnvironment7
+from ._ATMPropertyComponent1 import ATMPropertyComponent1
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 
 class ATMConfigurationControlComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_CfgtnVrsn", "_Envt", "_ActvtnDt", "_ActnReqrd", "_Prprty"]
+	__slots__ = ["_ActnReqrd", "_ActvtnDt", "_CfgtnVrsn", "_Envt", "_Prprty"]
 	@property
 	def ActnReqrd(self):
 		return self._ActnReqrd

@@ -1,10 +1,10 @@
 from . import base_types
-from ._IdentificationReference15Choice import IdentificationReference15Choice
 from ._DocumentNumber17Choice import DocumentNumber17Choice
+from ._IdentificationReference15Choice import IdentificationReference15Choice
 
 class Linkages76(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_MsgNb"]
+	__slots__ = ["_MsgNb", "_Ref"]
 	@property
 	def MsgNb(self):
 		return self._MsgNb

@@ -5,7 +5,7 @@ from ._RemittanceAmount3 import RemittanceAmount3
 
 class DocumentLineInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Id", "_Desc"]
+	__slots__ = ["_Amt", "_Desc", "_Id"]
 	@property
 	def Amt(self):
 		return self._Amt

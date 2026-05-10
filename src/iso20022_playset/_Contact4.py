@@ -1,16 +1,16 @@
 from . import base_types
-from ._Max2048Text import Max2048Text
-from ._PhoneNumber import PhoneNumber
-from ._NamePrefix2Code import NamePrefix2Code
-from ._PreferredContactMethod1Code import PreferredContactMethod1Code
-from ._OtherContact1 import OtherContact1
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
 from ._Max140Text import Max140Text
+from ._Max2048Text import Max2048Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._NamePrefix2Code import NamePrefix2Code
+from ._OtherContact1 import OtherContact1
+from ._PhoneNumber import PhoneNumber
+from ._PreferredContactMethod1Code import PreferredContactMethod1Code
 
 class Contact4(base_types._BaseFieldType):
 
-	__slots__ = ["_FaxNb", "_Nm", "_EmailPurp", "_Dept", "_Othr", "_PrefrdMtd", "_EmailAdr", "_JobTitl", "_Rspnsblty", "_PhneNb", "_NmPrfx", "_MobNb"]
+	__slots__ = ["_Dept", "_EmailAdr", "_EmailPurp", "_FaxNb", "_JobTitl", "_MobNb", "_Nm", "_NmPrfx", "_Othr", "_PhneNb", "_PrefrdMtd", "_Rspnsblty"]
 	@property
 	def Dept(self):
 		return self._Dept

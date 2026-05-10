@@ -4,7 +4,7 @@ from ._Unlimited9Text import Unlimited9Text
 
 class FixedAmountOrUnlimited1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotLtd", "_Amt"]
+	__slots__ = ["_Amt", "_NotLtd"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -1,11 +1,11 @@
 from . import base_types
-from ._ReconciliationMessageType2Code import ReconciliationMessageType2Code
-from ._Number import Number
 from ._Max35Text import Max35Text
+from ._Number import Number
+from ._ReconciliationMessageType2Code import ReconciliationMessageType2Code
 
 class MessageReconciliation3(base_types._BaseFieldType):
 
-	__slots__ = ["_Cnt", "_Tp", "_OthrTp"]
+	__slots__ = ["_Cnt", "_OthrTp", "_Tp"]
 	@property
 	def Cnt(self):
 		return self._Cnt

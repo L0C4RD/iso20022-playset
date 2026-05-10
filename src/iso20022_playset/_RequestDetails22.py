@@ -1,15 +1,15 @@
 from . import base_types
-from ._LinkageType3Choice import LinkageType3Choice
+from ._ClearingChannel2Code import ClearingChannel2Code
 from ._GenericIdentification30 import GenericIdentification30
-from ._YesNoIndicator import YesNoIndicator
+from ._LinkageType3Choice import LinkageType3Choice
 from ._Linkages57 import Linkages57
 from ._PriorityNumeric4Choice import PriorityNumeric4Choice
 from ._References14 import References14
-from ._ClearingChannel2Code import ClearingChannel2Code
+from ._YesNoIndicator import YesNoIndicator
 
 class RequestDetails22(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrChanl", "_Prty", "_Lkg", "_Lnkgs", "_PrtlSttlmInd", "_OthrPrcg", "_Ref"]
+	__slots__ = ["_ClrChanl", "_Lkg", "_Lnkgs", "_OthrPrcg", "_PrtlSttlmInd", "_Prty", "_Ref"]
 	@property
 	def ClrChanl(self):
 		return self._ClrChanl

@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._Mandate23 import Mandate23
 from ._GroupHeader110 import GroupHeader110
+from ._Mandate23 import Mandate23
+from ._SupplementaryData1 import SupplementaryData1
 
 class MandateInitiationRequestV08(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_Mndt"]
+	__slots__ = ["_GrpHdr", "_Mndt", "_SplmtryData"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

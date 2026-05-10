@@ -1,13 +1,13 @@
 from . import base_types
-from ._PendingStatus56Choice import PendingStatus56Choice
-from ._RejectionStatus33Choice import RejectionStatus33Choice
 from ._CancellationStatus29Choice import CancellationStatus29Choice
+from ._PendingStatus56Choice import PendingStatus56Choice
 from ._ProprietaryReason4 import ProprietaryReason4
 from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._RejectionStatus33Choice import RejectionStatus33Choice
 
 class ProcessingStatus82Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rjctd", "_Canc", "_Futr", "_CxlReq", "_Prtry", "_Prcd", "_PdgCxl"]
+	__slots__ = ["_Canc", "_CxlReq", "_Futr", "_PdgCxl", "_Prcd", "_Prtry", "_Rjctd"]
 	@property
 	def Canc(self):
 		return self._Canc

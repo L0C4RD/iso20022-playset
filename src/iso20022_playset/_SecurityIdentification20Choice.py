@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max25Text import Max25Text
 from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._Max25Text import Max25Text
 
 class SecurityIdentification20Choice(base_types._BaseFieldType):
 

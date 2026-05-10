@@ -1,23 +1,23 @@
 from . import base_types
-from ._CorporateActionGeneralInformation192 import CorporateActionGeneralInformation192
-from ._PartyIdentification151Choice import PartyIdentification151Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._DocumentIdentification38 import DocumentIdentification38
-from ._CorporateActionNarrative62 import CorporateActionNarrative62
+from ._AccountIdentification76Choice import AccountIdentification76Choice
 from ._CorporateAction77 import CorporateAction77
 from ._CorporateActionEventReference4 import CorporateActionEventReference4
-from ._DocumentIdentification17 import DocumentIdentification17
-from ._CorporateActionReversalReason9 import CorporateActionReversalReason9
+from ._CorporateActionGeneralInformation192 import CorporateActionGeneralInformation192
+from ._CorporateActionNarrative62 import CorporateActionNarrative62
 from ._CorporateActionOption245 import CorporateActionOption245
-from ._Pagination1 import Pagination1
 from ._CorporateActionPreliminaryAdviceType5 import CorporateActionPreliminaryAdviceType5
-from ._PartyIdentification137Choice import PartyIdentification137Choice
+from ._CorporateActionReversalReason9 import CorporateActionReversalReason9
+from ._DocumentIdentification17 import DocumentIdentification17
 from ._DocumentIdentification37 import DocumentIdentification37
-from ._AccountIdentification76Choice import AccountIdentification76Choice
+from ._DocumentIdentification38 import DocumentIdentification38
+from ._Pagination1 import Pagination1
+from ._PartyIdentification137Choice import PartyIdentification137Choice
+from ._PartyIdentification151Choice import PartyIdentification151Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_IssrAgt", "_SubPngAgt", "_SlctnAgt", "_NtfctnId", "_Regar", "_RsellngAgt", "_OthrDocId", "_DrpAgt", "_SplmtryData", "_Offerr", "_TrfAgt", "_MvmntPrlimryAdvcGnlInf", "_Pgntn", "_InstrId", "_CorpActnDtls", "_PhysSctiesAgt", "_InfAgt", "_CorpActnGnlInf", "_AddtlInf", "_Issr", "_EvtsLkg", "_PngAgt", "_MvmntConfId", "_RvslRsn", "_CorpActnMvmntDtls", "_PrvsMvmntPrlimryAdvcId"]
+	__slots__ = ["_AcctDtls", "_AddtlInf", "_CorpActnDtls", "_CorpActnGnlInf", "_CorpActnMvmntDtls", "_DrpAgt", "_EvtsLkg", "_InfAgt", "_InstrId", "_Issr", "_IssrAgt", "_MvmntConfId", "_MvmntPrlimryAdvcGnlInf", "_NtfctnId", "_Offerr", "_OthrDocId", "_Pgntn", "_PhysSctiesAgt", "_PngAgt", "_PrvsMvmntPrlimryAdvcId", "_Regar", "_RsellngAgt", "_RvslRsn", "_SlctnAgt", "_SplmtryData", "_SubPngAgt", "_TrfAgt"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

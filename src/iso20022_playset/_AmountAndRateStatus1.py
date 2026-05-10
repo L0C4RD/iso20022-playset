@@ -1,10 +1,10 @@
 from . import base_types
-from ._RateStatus1Code import RateStatus1Code
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._RateStatus1Code import RateStatus1Code
 
 class AmountAndRateStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_RateSts", "_Amt"]
+	__slots__ = ["_Amt", "_RateSts"]
 	@property
 	def Amt(self):
 		return self._Amt

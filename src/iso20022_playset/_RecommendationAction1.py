@@ -1,11 +1,11 @@
 from . import base_types
 from ._ActionType8Code import ActionType8Code
-from ._Max35Text import Max35Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
 
 class RecommendationAction1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrActn", "_Dtls", "_Actn"]
+	__slots__ = ["_Actn", "_Dtls", "_OthrActn"]
 	@property
 	def Actn(self):
 		return self._Actn

@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class PaymentInitiationSource1(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_Nm", "_Prvdr"]
+	__slots__ = ["_Nm", "_Prvdr", "_Vrsn"]
 	@property
 	def Nm(self):
 		return self._Nm

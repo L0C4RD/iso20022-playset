@@ -4,7 +4,7 @@ from ._Max70Text import Max70Text
 
 class CountryCodeAndName3(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Cd"]
+	__slots__ = ["_Cd", "_Nm"]
 	@property
 	def Cd(self):
 		return self._Cd

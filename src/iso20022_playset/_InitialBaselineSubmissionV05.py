@@ -1,15 +1,15 @@
 from . import base_types
-from ._ContactIdentification3 import ContactIdentification3
 from ._BankContactPerson1Choice import BankContactPerson1Choice
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._ContactIdentification1 import ContactIdentification1
-from ._MessageIdentification1 import MessageIdentification1
 from ._Baseline5 import Baseline5
+from ._ContactIdentification1 import ContactIdentification1
+from ._ContactIdentification3 import ContactIdentification3
 from ._InstructionType1 import InstructionType1
+from ._MessageIdentification1 import MessageIdentification1
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 
 class InitialBaselineSubmissionV05(base_types._BaseFieldType):
 
-	__slots__ = ["_BkCtctPrsn", "_SubmissnId", "_Baseln", "_Instr", "_BuyrCtctPrsn", "_SellrCtctPrsn", "_OthrBkCtctPrsn", "_SubmitrTxRef"]
+	__slots__ = ["_Baseln", "_BkCtctPrsn", "_BuyrCtctPrsn", "_Instr", "_OthrBkCtctPrsn", "_SellrCtctPrsn", "_SubmissnId", "_SubmitrTxRef"]
 	@property
 	def Baseln(self):
 		return self._Baseln

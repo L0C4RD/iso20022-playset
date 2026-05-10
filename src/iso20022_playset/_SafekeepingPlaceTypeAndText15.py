@@ -4,7 +4,7 @@ from ._SafekeepingPlace3Code import SafekeepingPlace3Code
 
 class SafekeepingPlaceTypeAndText15(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgPlcTp", "_Id"]
+	__slots__ = ["_Id", "_SfkpgPlcTp"]
 	@property
 	def Id(self):
 		return self._Id

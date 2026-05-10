@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionIdentifications52 import TransactionIdentifications52
 from ._Max35Text import Max35Text
-from ._TransactionDetails174 import TransactionDetails174
 from ._ProcessingStatus84Choice import ProcessingStatus84Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionDetails174 import TransactionDetails174
+from ._TransactionIdentifications52 import TransactionIdentifications52
 
 class SecuritiesTransactionCancellationRequestStatusAdviceV08(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_TxDtls", "_PrcgSts", "_SplmtryData", "_CxlReqRef"]
+	__slots__ = ["_CxlReqRef", "_PrcgSts", "_SplmtryData", "_TxDtls", "_TxId"]
 	@property
 	def CxlReqRef(self):
 		return self._CxlReqRef

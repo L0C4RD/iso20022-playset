@@ -1,12 +1,12 @@
 from . import base_types
 from ._ApplicationSpecifics1 import ApplicationSpecifics1
 from ._ManifestData2 import ManifestData2
-from ._PayloadData2 import PayloadData2
 from ._Max256Text import Max256Text
+from ._PayloadData2 import PayloadData2
 
 class PayloadDescription2(base_types._BaseFieldType):
 
-	__slots__ = ["_MnfstData", "_PyldTp", "_ApplSpcfcs", "_PyldData"]
+	__slots__ = ["_ApplSpcfcs", "_MnfstData", "_PyldData", "_PyldTp"]
 	@property
 	def ApplSpcfcs(self):
 		return self._ApplSpcfcs

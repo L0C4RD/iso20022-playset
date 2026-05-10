@@ -1,6 +1,6 @@
 from . import base_types
-from ._UpdateType38Choice import UpdateType38Choice
 from ._TransactionDetails159 import TransactionDetails159
+from ._UpdateType38Choice import UpdateType38Choice
 
 class SecuritiesSettlementTransactionModificationRequest002V09(base_types._BaseFieldType):
 

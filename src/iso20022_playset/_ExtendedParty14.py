@@ -1,6 +1,6 @@
 from . import base_types
-from ._InvestmentAccountOwnershipInformation16 import InvestmentAccountOwnershipInformation16
 from ._Extended350Code import Extended350Code
+from ._InvestmentAccountOwnershipInformation16 import InvestmentAccountOwnershipInformation16
 
 class ExtendedParty14(base_types._BaseFieldType):
 

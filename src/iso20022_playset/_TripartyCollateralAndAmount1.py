@@ -4,7 +4,7 @@ from ._CollateralType22Choice import CollateralType22Choice
 
 class TripartyCollateralAndAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_Trpty", "_CollTp"]
+	__slots__ = ["_CollTp", "_Trpty"]
 	@property
 	def CollTp(self):
 		return self._CollTp

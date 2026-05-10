@@ -1,13 +1,13 @@
 from . import base_types
+from ._AmountAndDirection49 import AmountAndDirection49
 from ._CalculationMethod1Code import CalculationMethod1Code
 from ._CollateralTransactionAmountBreakdown2 import CollateralTransactionAmountBreakdown2
-from ._Max3NumericText import Max3NumericText
-from ._AmountAndDirection49 import AmountAndDirection49
 from ._Frequency38Choice import Frequency38Choice
+from ._Max3NumericText import Max3NumericText
 
 class CollateralAmount18(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrstPmtDely", "_TxAmtBrkdwn", "_Tx", "_CmpndSmplAcrlClctn", "_PmtFrqcy", "_Termntn", "_Acrd", "_ValSght"]
+	__slots__ = ["_Acrd", "_CmpndSmplAcrlClctn", "_IntrstPmtDely", "_PmtFrqcy", "_Termntn", "_Tx", "_TxAmtBrkdwn", "_ValSght"]
 	@property
 	def Acrd(self):
 		return self._Acrd

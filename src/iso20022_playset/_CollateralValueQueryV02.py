@@ -1,11 +1,11 @@
 from . import base_types
 from ._CollateralValueCriteriaDefinition4Choice import CollateralValueCriteriaDefinition4Choice
-from ._SupplementaryData1 import SupplementaryData1
 from ._MessageHeader3 import MessageHeader3
+from ._SupplementaryData1 import SupplementaryData1
 
 class CollateralValueQueryV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_CollValQryDef", "_SplmtryData"]
+	__slots__ = ["_CollValQryDef", "_MsgHdr", "_SplmtryData"]
 	@property
 	def CollValQryDef(self):
 		return self._CollValQryDef

@@ -4,7 +4,7 @@ from ._PartyIdentification129Choice import PartyIdentification129Choice
 
 class IssuerInformation3(base_types._BaseFieldType):
 
-	__slots__ = ["_URLAdr", "_Id"]
+	__slots__ = ["_Id", "_URLAdr"]
 	@property
 	def Id(self):
 		return self._Id

@@ -1,16 +1,16 @@
 from . import base_types
-from ._CompareNumber5 import CompareNumber5
-from ._CompareRateBasis3 import CompareRateBasis3
-from ._ComparePercentageRate3 import ComparePercentageRate3
-from ._CompareDecimalNumber3 import CompareDecimalNumber3
 from ._CompareAmountAndDirection1 import CompareAmountAndDirection1
-from ._CompareNumber6 import CompareNumber6
-from ._CompareInterestComputationMethod3 import CompareInterestComputationMethod3
 from ._CompareBenchmarkCurveName3 import CompareBenchmarkCurveName3
+from ._CompareDecimalNumber3 import CompareDecimalNumber3
+from ._CompareInterestComputationMethod3 import CompareInterestComputationMethod3
+from ._CompareNumber5 import CompareNumber5
+from ._CompareNumber6 import CompareNumber6
+from ._ComparePercentageRate3 import ComparePercentageRate3
+from ._CompareRateBasis3 import CompareRateBasis3
 
 class CompareInterestRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_FltgIntrstRatePmtFrqcyVal", "_FltgIntrstRateTermVal", "_FltgIntrstRateRstFrqcyVal", "_FxdIntrstRate", "_FltgIntrstRefRate", "_FltgIntrstRateRstFrqcyUnit", "_DayCntBsis", "_BsisPtSprd", "_FltgIntrstRatePmtFrqcyUnit", "_FltgIntrstRateTermUnit", "_MrgnLnAmt"]
+	__slots__ = ["_BsisPtSprd", "_DayCntBsis", "_FltgIntrstRatePmtFrqcyUnit", "_FltgIntrstRatePmtFrqcyVal", "_FltgIntrstRateRstFrqcyUnit", "_FltgIntrstRateRstFrqcyVal", "_FltgIntrstRateTermUnit", "_FltgIntrstRateTermVal", "_FltgIntrstRefRate", "_FxdIntrstRate", "_MrgnLnAmt"]
 	@property
 	def BsisPtSprd(self):
 		return self._BsisPtSprd

@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._DerivativePartyIdentification1Choice import DerivativePartyIdentification1Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CreditDefaultSwapSingleName2(base_types._BaseFieldType):
 
-	__slots__ = ["_RefPty", "_SvrgnIssr", "_NtnlCcy"]
+	__slots__ = ["_NtnlCcy", "_RefPty", "_SvrgnIssr"]
 	@property
 	def NtnlCcy(self):
 		return self._NtnlCcy

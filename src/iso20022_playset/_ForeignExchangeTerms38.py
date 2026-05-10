@@ -1,10 +1,10 @@
 from . import base_types
-from ._BaseOne14Rate import BaseOne14Rate
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._BaseOne14Rate import BaseOne14Rate
 
 class ForeignExchangeTerms38(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgRate", "_UnitCcy", "_QtdCcy"]
+	__slots__ = ["_QtdCcy", "_UnitCcy", "_XchgRate"]
 	@property
 	def QtdCcy(self):
 		return self._QtdCcy

@@ -1,33 +1,33 @@
 from . import base_types
-from ._SettlementCategoryTotal3 import SettlementCategoryTotal3
-from ._Exact12Text import Exact12Text
-from ._SettlementCategoryTotal2 import SettlementCategoryTotal2
-from ._Max256Text import Max256Text
-from ._Max12NumericText import Max12NumericText
 from ._AdditionalData2 import AdditionalData2
-from ._Exact15Text import Exact15Text
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._Jurisdiction2 import Jurisdiction2
-from ._ISODateTime import ISODateTime
-from ._SettlementReportType1Code import SettlementReportType1Code
-from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ContentInformationType41 import ContentInformationType41
-from ._PartyIdentification285 import PartyIdentification285
-from ._FinancialInstitution9 import FinancialInstitution9
-from ._SettlementService6 import SettlementService6
-from ._Amount17 import Amount17
 from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
-from ._ProtectedData2 import ProtectedData2
-from ._Max1000Text import Max1000Text
-from ._Max35Text import Max35Text
+from ._Amount17 import Amount17
+from ._ContentInformationType41 import ContentInformationType41
+from ._Exact12Text import Exact12Text
+from ._Exact15Text import Exact15Text
+from ._FinancialInstitution9 import FinancialInstitution9
 from ._Header71 import Header71
+from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
+from ._ISODateTime import ISODateTime
+from ._Jurisdiction2 import Jurisdiction2
+from ._Max1000Text import Max1000Text
+from ._Max12NumericText import Max12NumericText
+from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification285 import PartyIdentification285
+from ._PartyIdentification286 import PartyIdentification286
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._ProtectedData2 import ProtectedData2
+from ._Reconciliation4 import Reconciliation4
+from ._SettlementCategoryTotal2 import SettlementCategoryTotal2
+from ._SettlementCategoryTotal3 import SettlementCategoryTotal3
+from ._SettlementReportType1Code import SettlementReportType1Code
+from ._SettlementService6 import SettlementService6
+from ._SupplementaryData1 import SupplementaryData1
 
 class SettlementReportingInitiationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgRsn", "_OthrSttlmTtls", "_Sndr", "_OthrInstn", "_AddtlData", "_OthrSttlmRptTp", "_TrnsmssnDtTm", "_Jursdctn", "_AddtlFee", "_LifeCyclId", "_FndsTrfAmt", "_Hdr", "_SysTracAudtNb", "_RtrvlRefNb", "_Rcncltn", "_Prgrmm", "_SctyTrlr", "_FI", "_IssrSttlmTtls", "_AltrnMsgRsn", "_TtlSttlmAmt", "_Rcvr", "_SttlmRptTp", "_AcqrrSttlmTtls", "_SttlmSvc", "_SttlmInstn", "_PrtctdData", "_TxDesc", "_Orgtr", "_SplmtryData", "_Dstn"]
+	__slots__ = ["_AcqrrSttlmTtls", "_AddtlData", "_AddtlFee", "_AltrnMsgRsn", "_Dstn", "_FI", "_FndsTrfAmt", "_Hdr", "_IssrSttlmTtls", "_Jursdctn", "_LifeCyclId", "_MsgRsn", "_Orgtr", "_OthrInstn", "_OthrSttlmRptTp", "_OthrSttlmTtls", "_Prgrmm", "_PrtctdData", "_Rcncltn", "_Rcvr", "_RtrvlRefNb", "_SctyTrlr", "_Sndr", "_SplmtryData", "_SttlmInstn", "_SttlmRptTp", "_SttlmSvc", "_SysTracAudtNb", "_TrnsmssnDtTm", "_TtlSttlmAmt", "_TxDesc"]
 	@property
 	def AcqrrSttlmTtls(self):
 		return self._AcqrrSttlmTtls

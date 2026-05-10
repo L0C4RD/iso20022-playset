@@ -4,7 +4,7 @@ from ._VolumeMetrics4 import VolumeMetrics4
 
 class PositionSetMetrics11(base_types._BaseFieldType):
 
-	__slots__ = ["_VolMtrcs", "_CshRinvstmtRate"]
+	__slots__ = ["_CshRinvstmtRate", "_VolMtrcs"]
 	@property
 	def CshRinvstmtRate(self):
 		return self._CshRinvstmtRate

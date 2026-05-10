@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max500Text import Max500Text
-from ._Max2MBBinary import Max2MBBinary
 from ._Max140Text import Max140Text
+from ._Max2MBBinary import Max2MBBinary
 from ._Max35Text import Max35Text
+from ._Max500Text import Max500Text
 
 class CapturedSignature1(base_types._BaseFieldType):
 
-	__slots__ = ["_ImgData", "_ImgFrmt", "_AddtlInf", "_ImgRef"]
+	__slots__ = ["_AddtlInf", "_ImgData", "_ImgFrmt", "_ImgRef"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

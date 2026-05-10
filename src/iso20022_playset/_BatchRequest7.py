@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._TransactionToPerform7Choice import TransactionToPerform7Choice
 from ._TransactionIdentifier1 import TransactionIdentifier1
+from ._TransactionToPerform7Choice import TransactionToPerform7Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class BatchRequest7(base_types._BaseFieldType):
 
-	__slots__ = ["_TxToPrfrm", "_RmvAllFlg", "_SaleBtchId"]
+	__slots__ = ["_RmvAllFlg", "_SaleBtchId", "_TxToPrfrm"]
 	@property
 	def RmvAllFlg(self):
 		return self._RmvAllFlg

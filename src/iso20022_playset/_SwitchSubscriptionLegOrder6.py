@@ -1,21 +1,21 @@
 from . import base_types
-from ._FundSettlementParameters11 import FundSettlementParameters11
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._FeeAndTax1 import FeeAndTax1
-from ._YesNoIndicator import YesNoIndicator
-from ._InvestmentAccount58 import InvestmentAccount58
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._FinancialInstrument57 import FinancialInstrument57
-from ._IncomePreference1Code import IncomePreference1Code
-from ._NameAndAddress4 import NameAndAddress4
-from ._Max35Text import Max35Text
-from ._Max350Text import Max350Text
-from ._FinancialInstrumentQuantity26Choice import FinancialInstrumentQuantity26Choice
 from ._Equalisation1 import Equalisation1
+from ._FeeAndTax1 import FeeAndTax1
+from ._FinancialInstrument57 import FinancialInstrument57
+from ._FinancialInstrumentQuantity26Choice import FinancialInstrumentQuantity26Choice
+from ._FundSettlementParameters11 import FundSettlementParameters11
+from ._IncomePreference1Code import IncomePreference1Code
+from ._InvestmentAccount58 import InvestmentAccount58
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._NameAndAddress4 import NameAndAddress4
+from ._YesNoIndicator import YesNoIndicator
 
 class SwitchSubscriptionLegOrder6(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmAndCtdyDtls", "_NonStdSttlmInf", "_ReqdSttlmCcy", "_TxOvrhd", "_FinInstrmQtyChc", "_InvstmtAcctDtls", "_FinInstrmDtls", "_LegId", "_PhysDlvryDtls", "_IncmPref", "_ReqdNAVCcy", "_Equlstn", "_PhysDlvryInd"]
+	__slots__ = ["_Equlstn", "_FinInstrmDtls", "_FinInstrmQtyChc", "_IncmPref", "_InvstmtAcctDtls", "_LegId", "_NonStdSttlmInf", "_PhysDlvryDtls", "_PhysDlvryInd", "_ReqdNAVCcy", "_ReqdSttlmCcy", "_SttlmAndCtdyDtls", "_TxOvrhd"]
 	@property
 	def Equlstn(self):
 		return self._Equlstn

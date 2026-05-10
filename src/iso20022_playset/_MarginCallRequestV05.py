@@ -1,17 +1,17 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MarginCallResult3 import MarginCallResult3
-from ._Obligation9 import Obligation9
-from ._MarginCall1 import MarginCall1
-from ._MarginCall3 import MarginCall3
-from ._MarginRequirement1Choice import MarginRequirement1Choice
-from ._Max35Text import Max35Text
 from ._Agreement4 import Agreement4
 from ._ExpectedCollateral2Choice import ExpectedCollateral2Choice
+from ._MarginCall1 import MarginCall1
+from ._MarginCall3 import MarginCall3
+from ._MarginCallResult3 import MarginCallResult3
+from ._MarginRequirement1Choice import MarginRequirement1Choice
+from ._Max35Text import Max35Text
+from ._Obligation9 import Obligation9
+from ._SupplementaryData1 import SupplementaryData1
 
 class MarginCallRequestV05(base_types._BaseFieldType):
 
-	__slots__ = ["_XpctdCollDueToA", "_Agrmt", "_TxId", "_MrgnCallDtls", "_MrgnDtlsDueToB", "_Oblgtn", "_MrgnDtlsDueToA", "_RqrmntDtlsDueToA", "_SplmtryData", "_MrgnCallRslt", "_XpctdCollDueToB", "_RqrmntDtlsDueToB"]
+	__slots__ = ["_Agrmt", "_MrgnCallDtls", "_MrgnCallRslt", "_MrgnDtlsDueToA", "_MrgnDtlsDueToB", "_Oblgtn", "_RqrmntDtlsDueToA", "_RqrmntDtlsDueToB", "_SplmtryData", "_TxId", "_XpctdCollDueToA", "_XpctdCollDueToB"]
 	@property
 	def Agrmt(self):
 		return self._Agrmt

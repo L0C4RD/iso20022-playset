@@ -3,7 +3,7 @@ from ._LiquidResourceInformation1 import LiquidResourceInformation1
 
 class LiquidResources1(base_types._BaseFieldType):
 
-	__slots__ = ["_FcltiesCmmtdLinesOfCdt", "_FinInstrmsDfltrsNonCshColl", "_FcltiesCmmtdRpAgrmts", "_CshDue", "_FcltiesCmmtdFxSwps", "_FcltiesUcmmtd", "_FinInstrmsTrsrInvstmts", "_FinInstrmsDfltrsSttlmColl", "_FcltiesOthrCmmtd", "_FinInstrmsCCP"]
+	__slots__ = ["_CshDue", "_FcltiesCmmtdFxSwps", "_FcltiesCmmtdLinesOfCdt", "_FcltiesCmmtdRpAgrmts", "_FcltiesOthrCmmtd", "_FcltiesUcmmtd", "_FinInstrmsCCP", "_FinInstrmsDfltrsNonCshColl", "_FinInstrmsDfltrsSttlmColl", "_FinInstrmsTrsrInvstmts"]
 	@property
 	def CshDue(self):
 		return self._CshDue

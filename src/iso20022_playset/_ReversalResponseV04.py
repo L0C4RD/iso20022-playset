@@ -1,35 +1,35 @@
 from . import base_types
-from ._ProcessingResult22 import ProcessingResult22
-from ._Token2 import Token2
-from ._CardData13 import CardData13
-from ._AdditionalData2 import AdditionalData2
-from ._TransactionIdentification57 import TransactionIdentification57
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._Jurisdiction2 import Jurisdiction2
-from ._Terminal8 import Terminal8
 from ._AccountDetails4 import AccountDetails4
-from ._TransactionAmounts3 import TransactionAmounts3
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ContentInformationType41 import ContentInformationType41
-from ._PartyIdentification285 import PartyIdentification285
-from ._SettlementService6 import SettlementService6
-from ._ProtectedData2 import ProtectedData2
-from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
-from ._Context22 import Context22
-from ._TransactionCharacteristics1 import TransactionCharacteristics1
 from ._AdditionalAmounts4 import AdditionalAmounts4
+from ._AdditionalData2 import AdditionalData2
+from ._AdditionalFee3 import AdditionalFee3
+from ._AdditionalService2 import AdditionalService2
+from ._CardData13 import CardData13
+from ._ContentInformationType41 import ContentInformationType41
+from ._Context22 import Context22
+from ._DateTime2 import DateTime2
+from ._Header71 import Header71
+from ._Jurisdiction2 import Jurisdiction2
 from ._Max10KHexBinaryText import Max10KHexBinaryText
 from ._OriginalDataElements3 import OriginalDataElements3
-from ._AdditionalService2 import AdditionalService2
-from ._DateTime2 import DateTime2
+from ._PartyIdentification285 import PartyIdentification285
+from ._PartyIdentification286 import PartyIdentification286
+from ._ProcessingResult22 import ProcessingResult22
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._ProtectedData2 import ProtectedData2
+from ._Reconciliation4 import Reconciliation4
+from ._SettlementService6 import SettlementService6
 from ._SpecialProgrammeQualification2 import SpecialProgrammeQualification2
-from ._Header71 import Header71
+from ._SupplementaryData1 import SupplementaryData1
+from ._Terminal8 import Terminal8
+from ._Token2 import Token2
+from ._TransactionAmounts3 import TransactionAmounts3
+from ._TransactionCharacteristics1 import TransactionCharacteristics1
+from ._TransactionIdentification57 import TransactionIdentification57
 
 class ReversalResponseV04(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctFr", "_TxChrtcs", "_AddtlAmt", "_OrgnlDataElmts", "_Termnl", "_Sndr", "_AddtlData", "_AddtlFee", "_Rcncltn", "_ConvsDtTm", "_TxId", "_PrcgRslt", "_Cntxt", "_Orgtr", "_Acqrr", "_ICCRltdData", "_Dstn", "_Issr", "_Jursdctn", "_Hdr", "_AcctTo", "_Tkn", "_Prgrmm", "_SctyTrlr", "_Card", "_Rcvr", "_Accptr", "_SttlmSvc", "_TxAmts", "_PrtctdData", "_AddtlSvc", "_SpclPrgrmmQlfctn", "_SplmtryData"]
+	__slots__ = ["_Accptr", "_AcctFr", "_AcctTo", "_Acqrr", "_AddtlAmt", "_AddtlData", "_AddtlFee", "_AddtlSvc", "_Card", "_Cntxt", "_ConvsDtTm", "_Dstn", "_Hdr", "_ICCRltdData", "_Issr", "_Jursdctn", "_OrgnlDataElmts", "_Orgtr", "_PrcgRslt", "_Prgrmm", "_PrtctdData", "_Rcncltn", "_Rcvr", "_SctyTrlr", "_Sndr", "_SpclPrgrmmQlfctn", "_SplmtryData", "_SttlmSvc", "_Termnl", "_Tkn", "_TxAmts", "_TxChrtcs", "_TxId"]
 	@property
 	def Accptr(self):
 		return self._Accptr

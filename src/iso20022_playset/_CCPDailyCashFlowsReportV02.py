@@ -1,11 +1,11 @@
 from . import base_types
-from ._SettlementAgent2 import SettlementAgent2
 from ._ConcentrationAgent1 import ConcentrationAgent1
+from ._SettlementAgent2 import SettlementAgent2
 from ._SupplementaryData1 import SupplementaryData1
 
 class CCPDailyCashFlowsReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmAgt", "_CncntrtnAgt", "_SplmtryData"]
+	__slots__ = ["_CncntrtnAgt", "_SplmtryData", "_SttlmAgt"]
 	@property
 	def CncntrtnAgt(self):
 		return self._CncntrtnAgt

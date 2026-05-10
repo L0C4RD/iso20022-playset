@@ -1,13 +1,13 @@
 from . import base_types
+from ._CardDataReading8Code import CardDataReading8Code
+from ._ISODateTime import ISODateTime
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max10000Binary import Max10000Binary
 from ._Max140Text import Max140Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._ISODateTime import ISODateTime
-from ._CardDataReading8Code import CardDataReading8Code
 
 class DetailedAmount21(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Labl", "_DtTm", "_ICCRltdData", "_CardDataNtryMd"]
+	__slots__ = ["_Amt", "_CardDataNtryMd", "_DtTm", "_ICCRltdData", "_Labl"]
 	@property
 	def Amt(self):
 		return self._Amt

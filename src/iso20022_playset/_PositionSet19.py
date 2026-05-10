@@ -4,7 +4,7 @@ from ._PositionSetMetrics11 import PositionSetMetrics11
 
 class PositionSet19(base_types._BaseFieldType):
 
-	__slots__ = ["_Mtrcs", "_Dmnsns"]
+	__slots__ = ["_Dmnsns", "_Mtrcs"]
 	@property
 	def Dmnsns(self):
 		return self._Dmnsns

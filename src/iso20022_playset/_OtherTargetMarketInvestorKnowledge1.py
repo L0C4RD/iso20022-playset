@@ -1,7 +1,7 @@
 from . import base_types
-from ._TargetMarket1Choice import TargetMarket1Choice
 from ._AdditionalInformation15 import AdditionalInformation15
 from ._Max35Text import Max35Text
+from ._TargetMarket1Choice import TargetMarket1Choice
 
 class OtherTargetMarketInvestorKnowledge1(base_types._BaseFieldType):
 

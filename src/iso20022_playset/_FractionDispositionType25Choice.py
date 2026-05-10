@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
 from ._FractionDispositionType9Code import FractionDispositionType9Code
+from ._GenericIdentification30 import GenericIdentification30
 
 class FractionDispositionType25Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

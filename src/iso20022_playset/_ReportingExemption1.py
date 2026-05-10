@@ -4,7 +4,7 @@ from ._Max4Text import Max4Text
 
 class ReportingExemption1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_Desc"]
+	__slots__ = ["_Desc", "_Rsn"]
 	@property
 	def Desc(self):
 		return self._Desc

@@ -4,7 +4,7 @@ from ._OutputResult2 import OutputResult2
 
 class DeviceInputResponse6(base_types._BaseFieldType):
 
-	__slots__ = ["_OutptRslt", "_InptRslt"]
+	__slots__ = ["_InptRslt", "_OutptRslt"]
 	@property
 	def InptRslt(self):
 		return self._InptRslt

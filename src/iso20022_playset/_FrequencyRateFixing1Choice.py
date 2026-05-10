@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max3NumericText import Max3NumericText
 from ._FrequencyRateFixing1Code import FrequencyRateFixing1Code
+from ._Max3NumericText import Max3NumericText
 
 class FrequencyRateFixing1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfDays", "_Cd"]
+	__slots__ = ["_Cd", "_NbOfDays"]
 	@property
 	def Cd(self):
 		return self._Cd

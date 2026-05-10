@@ -1,22 +1,22 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._OtherTypeOfCollateral3 import OtherTypeOfCollateral3
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._YesNoIndicator import YesNoIndicator
-from ._BaseOneRate import BaseOneRate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._BaseOneRate import BaseOneRate
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 from ._CollateralOwnership3 import CollateralOwnership3
 from ._DateFormat14Choice import DateFormat14Choice
+from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._OtherTypeOfCollateral3 import OtherTypeOfCollateral3
+from ._PartyIdentification178Choice import PartyIdentification178Choice
 from ._PercentageRate import PercentageRate
 from ._SafekeepingPlaceFormat29Choice import SafekeepingPlaceFormat29Choice
-from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._Max35Text import Max35Text
-from ._PartyIdentification178Choice import PartyIdentification178Choice
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._YesNoIndicator import YesNoIndicator
 
 class OtherCollateral10(base_types._BaseFieldType):
 
-	__slots__ = ["_CollVal", "_ValDt", "_CollOwnrsh", "_XpryDt", "_LttrOfCdtId", "_BlckChainAdrOrWllt", "_OthrTpOfColl", "_BlckdQty", "_MktVal", "_LtdCvrgInd", "_XchgRate", "_Hrcut", "_SfkpgAcct", "_Issr", "_GrntAmt", "_LttrOfCdtAmt", "_SfkpgPlc", "_IsseDt", "_AsstNb"]
+	__slots__ = ["_AsstNb", "_BlckChainAdrOrWllt", "_BlckdQty", "_CollOwnrsh", "_CollVal", "_GrntAmt", "_Hrcut", "_IsseDt", "_Issr", "_LtdCvrgInd", "_LttrOfCdtAmt", "_LttrOfCdtId", "_MktVal", "_OthrTpOfColl", "_SfkpgAcct", "_SfkpgPlc", "_ValDt", "_XchgRate", "_XpryDt"]
 	@property
 	def AsstNb(self):
 		return self._AsstNb

@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISODateTime import ISODateTime
-from ._Reconciliation3Code import Reconciliation3Code
 from ._Max140Text import Max140Text
+from ._Reconciliation3Code import Reconciliation3Code
 
 class TechnicalAttributes5(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnFlg", "_TechRcrdId", "_RptRctTmStmp"]
+	__slots__ = ["_RcncltnFlg", "_RptRctTmStmp", "_TechRcrdId"]
 	@property
 	def RcncltnFlg(self):
 		return self._RcncltnFlg

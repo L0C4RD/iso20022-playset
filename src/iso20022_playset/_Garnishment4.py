@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._PartyIdentification272 import PartyIdentification272
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._GarnishmentType1 import GarnishmentType1
+from ._ISODate import ISODate
 from ._Max140Text import Max140Text
+from ._PartyIdentification272 import PartyIdentification272
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Garnishment4(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_FmlyMdclInsrncInd", "_MplyeeTermntnInd", "_Tp", "_GrnshmtAdmstr", "_RefNb", "_RmtdAmt", "_Grnshee"]
+	__slots__ = ["_Dt", "_FmlyMdclInsrncInd", "_Grnshee", "_GrnshmtAdmstr", "_MplyeeTermntnInd", "_RefNb", "_RmtdAmt", "_Tp"]
 	@property
 	def Dt(self):
 		return self._Dt

@@ -1,18 +1,18 @@
 from . import base_types
-from ._RatioFormat2Choice import RatioFormat2Choice
-from ._RatioFormat1Choice import RatioFormat1Choice
-from ._ForeignExchangeTerms8 import ForeignExchangeTerms8
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._GrossDividendRate1Choice import GrossDividendRate1Choice
-from ._RateFormat1Choice import RateFormat1Choice
-from ._RelatedTaxType1 import RelatedTaxType1
 from ._AmountAndRateFormat2Choice import AmountAndRateFormat2Choice
+from ._ForeignExchangeTerms8 import ForeignExchangeTerms8
+from ._GrossDividendRate1Choice import GrossDividendRate1Choice
 from ._NetDividendRate1Choice import NetDividendRate1Choice
 from ._RateAndAmountFormat1Choice import RateAndAmountFormat1Choice
+from ._RateFormat1Choice import RateFormat1Choice
+from ._RatioFormat1Choice import RatioFormat1Choice
+from ._RatioFormat2Choice import RatioFormat2Choice
+from ._RelatedTaxType1 import RelatedTaxType1
 
 class CorporateActionRate2(base_types._BaseFieldType):
 
-	__slots__ = ["_GrmnLclTax1", "_OrgnlAmt", "_AddtlQtyForExstgScties", "_XchgRate", "_TaxRclm", "_NetDvdd", "_IndxFctr", "_FnlDvdd", "_GrmnLclTax3", "_FullyFrnkd", "_SlctnFee", "_NewSctiesToUndrlygScties", "_Chrgs", "_WhldgOfFrgnTax", "_GrssDvdd", "_AddtlQtyForSbcbdRsltntScties", "_GrmnLclTax2", "_AddtlTax", "_MaxAllwdOvrsbcpt", "_AplblRate", "_FsclStmp", "_NewToOd", "_TaxOnPrft", "_RltdTax", "_NonResdtRate", "_TaxOnIncm", "_IntrstForUsdPmt", "_WhldgOfLclTax", "_GrmnLclTax4", "_CshIncntiv", "_WhldgTax", "_Prratn", "_PrvsnlDvdd"]
+	__slots__ = ["_AddtlQtyForExstgScties", "_AddtlQtyForSbcbdRsltntScties", "_AddtlTax", "_AplblRate", "_Chrgs", "_CshIncntiv", "_FnlDvdd", "_FsclStmp", "_FullyFrnkd", "_GrmnLclTax1", "_GrmnLclTax2", "_GrmnLclTax3", "_GrmnLclTax4", "_GrssDvdd", "_IndxFctr", "_IntrstForUsdPmt", "_MaxAllwdOvrsbcpt", "_NetDvdd", "_NewSctiesToUndrlygScties", "_NewToOd", "_NonResdtRate", "_OrgnlAmt", "_Prratn", "_PrvsnlDvdd", "_RltdTax", "_SlctnFee", "_TaxOnIncm", "_TaxOnPrft", "_TaxRclm", "_WhldgOfFrgnTax", "_WhldgOfLclTax", "_WhldgTax", "_XchgRate"]
 	@property
 	def AddtlQtyForExstgScties(self):
 		return self._AddtlQtyForExstgScties

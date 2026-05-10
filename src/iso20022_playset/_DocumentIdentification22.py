@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class DocumentIdentification22(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_DtOfIsse"]
+	__slots__ = ["_DtOfIsse", "_Id"]
 	@property
 	def DtOfIsse(self):
 		return self._DtOfIsse

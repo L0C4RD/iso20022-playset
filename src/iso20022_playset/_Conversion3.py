@@ -1,6 +1,6 @@
 from . import base_types
-from ._FinancialInstrumentIdentification5 import FinancialInstrumentIdentification5
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._FinancialInstrumentIdentification5 import FinancialInstrumentIdentification5
 
 class Conversion3(base_types._BaseFieldType):
 

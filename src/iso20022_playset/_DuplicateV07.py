@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._ProprietaryData7 import ProprietaryData7
-from ._CaseAssignment6 import CaseAssignment6
 from ._Case6 import Case6
+from ._CaseAssignment6 import CaseAssignment6
+from ._ProprietaryData7 import ProprietaryData7
+from ._SupplementaryData1 import SupplementaryData1
 
 class DuplicateV07(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnmt", "_Case", "_SplmtryData", "_Dplct"]
+	__slots__ = ["_Assgnmt", "_Case", "_Dplct", "_SplmtryData"]
 	@property
 	def Assgnmt(self):
 		return self._Assgnmt

@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max500Text import Max500Text
+from ._AuthorityRequestType1 import AuthorityRequestType1
 from ._DateOrDateTimePeriod1Choice import DateOrDateTimePeriod1Choice
 from ._InvestigationResult1Choice import InvestigationResult1Choice
-from ._AuthorityRequestType1 import AuthorityRequestType1
+from ._Max500Text import Max500Text
 
 class ReturnIndicator2(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_RspnPrd", "_InvstgtnRslt", "_AuthrtyReqTp"]
+	__slots__ = ["_AddtlInf", "_AuthrtyReqTp", "_InvstgtnRslt", "_RspnPrd"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

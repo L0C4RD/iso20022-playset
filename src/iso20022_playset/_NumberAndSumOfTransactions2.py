@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max15NumericText import Max15NumericText
 from ._CreditDebitCode import CreditDebitCode
 from ._DecimalNumber import DecimalNumber
+from ._Max15NumericText import Max15NumericText
 
 class NumberAndSumOfTransactions2(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNetNtryAmt", "_Sum", "_CdtDbtInd", "_NbOfNtries"]
+	__slots__ = ["_CdtDbtInd", "_NbOfNtries", "_Sum", "_TtlNetNtryAmt"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd

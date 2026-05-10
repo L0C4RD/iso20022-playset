@@ -3,7 +3,7 @@ from ._AmountAndDirection44 import AmountAndDirection44
 
 class CollateralAmount5(base_types._BaseFieldType):
 
-	__slots__ = ["_Collsd", "_RmngSttlm", "_ReqrdMrgn", "_RmngCollsd", "_Sttld"]
+	__slots__ = ["_Collsd", "_ReqrdMrgn", "_RmngCollsd", "_RmngSttlm", "_Sttld"]
 	@property
 	def Collsd(self):
 		return self._Collsd

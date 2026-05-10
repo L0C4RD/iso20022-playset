@@ -1,13 +1,13 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
 from ._EUCapitalGain2Code import EUCapitalGain2Code
 from ._EUDividendStatus1Code import EUDividendStatus1Code
 from ._Extended350Code import Extended350Code
+from ._PercentageRate import PercentageRate
 
 class TaxCalculationInformation4(base_types._BaseFieldType):
 
-	__slots__ = ["_PctgOfDebtClm", "_PctgGrdfthdDebt", "_XtndedEUCptlGn", "_XtndedEUDvddSts", "_TaxblIncmPerDvdd", "_EUDvddSts", "_EUCptlGn"]
+	__slots__ = ["_EUCptlGn", "_EUDvddSts", "_PctgGrdfthdDebt", "_PctgOfDebtClm", "_TaxblIncmPerDvdd", "_XtndedEUCptlGn", "_XtndedEUDvddSts"]
 	@property
 	def EUCptlGn(self):
 		return self._EUCptlGn

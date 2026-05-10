@@ -1,10 +1,10 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._DecimalNumber import DecimalNumber
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class FinancialInstrumentQuantityChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_FaceAmt", "_AmtsdVal", "_Unit"]
+	__slots__ = ["_AmtsdVal", "_FaceAmt", "_Unit"]
 	@property
 	def AmtsdVal(self):
 		return self._AmtsdVal

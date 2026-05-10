@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ContractRegistrationReference2Choice import ContractRegistrationReference2Choice
+from ._ISODate import ISODate
 from ._Max1025Text import Max1025Text
 
 class TransactionCertificateContract2(base_types._BaseFieldType):
 
-	__slots__ = ["_XpctdShipmntDt", "_CtrctRef", "_XpctdAdvncPmtRtrDt", "_TxAmtInCtrctCcy", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_CtrctRef", "_TxAmtInCtrctCcy", "_XpctdAdvncPmtRtrDt", "_XpctdShipmntDt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

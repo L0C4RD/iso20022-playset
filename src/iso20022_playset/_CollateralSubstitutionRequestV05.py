@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._CollateralSubstitution8 import CollateralSubstitution8
-from ._CollateralSubstitution7 import CollateralSubstitution7
-from ._Max35Text import Max35Text
 from ._Agreement4 import Agreement4
+from ._CollateralSubstitution7 import CollateralSubstitution7
+from ._CollateralSubstitution8 import CollateralSubstitution8
+from ._Max35Text import Max35Text
 from ._Obligation9 import Obligation9
+from ._SupplementaryData1 import SupplementaryData1
 
 class CollateralSubstitutionRequestV05(base_types._BaseFieldType):
 
-	__slots__ = ["_Oblgtn", "_Agrmt", "_CollSbstitnDlvr", "_CollSbstitnRtr", "_TxId", "_SplmtryData"]
+	__slots__ = ["_Agrmt", "_CollSbstitnDlvr", "_CollSbstitnRtr", "_Oblgtn", "_SplmtryData", "_TxId"]
 	@property
 	def Agrmt(self):
 		return self._Agrmt

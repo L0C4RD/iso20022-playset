@@ -1,8 +1,8 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._RetailerEvent7 import RetailerEvent7
 from ._ActionMessage11 import ActionMessage11
 from ._LanguageCode import LanguageCode
+from ._RetailerEvent7 import RetailerEvent7
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class EventNotificationData7(base_types._BaseFieldType):
 

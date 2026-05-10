@@ -1,8 +1,8 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._TypeOfAmount19Code import TypeOfAmount19Code
-from ._Max35Text import Max35Text
 from ._CreditDebit3Code import CreditDebit3Code
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._TypeOfAmount19Code import TypeOfAmount19Code
 
 class Amount23(base_types._BaseFieldType):
 

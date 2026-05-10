@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
 from ._ExternalPendingProcessingReason1Code import ExternalPendingProcessingReason1Code
+from ._GenericIdentification36 import GenericIdentification36
 
 class PendingProcessingReason8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

@@ -1,11 +1,11 @@
 from . import base_types
+from ._MessageHeader1 import MessageHeader1
 from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._SupplementaryData1 import SupplementaryData1
-from ._MessageHeader1 import MessageHeader1
 
 class SecuritiesAccountDeletionRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_AcctId"]
+	__slots__ = ["_AcctId", "_MsgHdr", "_SplmtryData"]
 	@property
 	def AcctId(self):
 		return self._AcctId

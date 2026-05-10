@@ -1,11 +1,11 @@
 from . import base_types
-from ._Header70 import Header70
 from ._AcceptorAuthorisationResponse14 import AcceptorAuthorisationResponse14
 from ._ContentInformationType37 import ContentInformationType37
+from ._Header70 import Header70
 
 class AcceptorAuthorisationResponseV14(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_AuthstnRspn", "_Hdr"]
+	__slots__ = ["_AuthstnRspn", "_Hdr", "_SctyTrlr"]
 	@property
 	def AuthstnRspn(self):
 		return self._AuthstnRspn

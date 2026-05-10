@@ -1,27 +1,27 @@
 from . import base_types
-from ._TradeDate8Choice import TradeDate8Choice
-from ._TypeOfPrice29Choice import TypeOfPrice29Choice
-from ._Max3Number import Max3Number
-from ._UTIIdentifier import UTIIdentifier
-from ._Reporting6Choice import Reporting6Choice
-from ._SettlementDate17Choice import SettlementDate17Choice
 from ._AffirmationStatus8Choice import AffirmationStatus8Choice
-from ._TradeOriginator3Choice import TradeOriginator3Choice
+from ._CurrencyToBuyOrSell1Choice import CurrencyToBuyOrSell1Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._InvestorCapacity4Choice import InvestorCapacity4Choice
+from ._MatchingStatus27Choice import MatchingStatus27Choice
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._Max3Number import Max3Number
+from ._OpeningClosing3Choice import OpeningClosing3Choice
 from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
 from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
-from ._OpeningClosing3Choice import OpeningClosing3Choice
-from ._TradeTransactionCondition5Choice import TradeTransactionCondition5Choice
-from ._MatchingStatus27Choice import MatchingStatus27Choice
-from ._CurrencyToBuyOrSell1Choice import CurrencyToBuyOrSell1Choice
-from ._Max35Text import Max35Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max350Text import Max350Text
 from ._Price10 import Price10
+from ._Reporting6Choice import Reporting6Choice
+from ._SettlementDate17Choice import SettlementDate17Choice
+from ._TradeDate8Choice import TradeDate8Choice
+from ._TradeOriginator3Choice import TradeOriginator3Choice
+from ._TradeTransactionCondition5Choice import TradeTransactionCondition5Choice
+from ._TypeOfPrice29Choice import TypeOfPrice29Choice
+from ._UTIIdentifier import UTIIdentifier
 
 class SecuritiesTradeDetails142(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstrCpcty", "_TpOfPric", "_Rptg", "_LateDlvryDt", "_UnqTxIdr", "_SttlmDt", "_OpngClsg", "_TradTxCond", "_NbOfDaysAcrd", "_AffirmSts", "_FxAddtlDtls", "_CollTxId", "_PlcOfTrad", "_MtchgSts", "_CcyToBuyOrSell", "_TradOrgtrRole", "_TradId", "_TradDt", "_SttlmInstrPrcgAddtlDtls", "_PlcOfClr", "_DealPric"]
+	__slots__ = ["_AffirmSts", "_CcyToBuyOrSell", "_CollTxId", "_DealPric", "_FxAddtlDtls", "_InvstrCpcty", "_LateDlvryDt", "_MtchgSts", "_NbOfDaysAcrd", "_OpngClsg", "_PlcOfClr", "_PlcOfTrad", "_Rptg", "_SttlmDt", "_SttlmInstrPrcgAddtlDtls", "_TpOfPric", "_TradDt", "_TradId", "_TradOrgtrRole", "_TradTxCond", "_UnqTxIdr"]
 	@property
 	def AffirmSts(self):
 		return self._AffirmSts

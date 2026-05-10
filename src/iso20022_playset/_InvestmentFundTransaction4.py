@@ -1,20 +1,20 @@
 from . import base_types
-from ._ReversalCode import ReversalCode
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._CreditDebitCode import CreditDebitCode
+from ._DateAndDateTimeChoice import DateAndDateTimeChoice
 from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
 from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
-from ._TransactionType1Choice import TransactionType1Choice
-from ._TransactionStatus1Code import TransactionStatus1Code
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ISODateTime import ISODateTime
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
 from ._Max35Text import Max35Text
-from ._CreditDebitCode import CreditDebitCode
+from ._ReversalCode import ReversalCode
+from ._TransactionStatus1Code import TransactionStatus1Code
+from ._TransactionType1Choice import TransactionType1Choice
 from ._UnitPrice20 import UnitPrice20
+from ._YesNoIndicator import YesNoIndicator
 
 class InvestmentFundTransaction4(base_types._BaseFieldType):
 
-	__slots__ = ["_TradDtTm", "_LegExctnId", "_Rvsl", "_CumDvddInd", "_CdtDbt", "_SttldTxInd", "_RegdTxInd", "_OrdrDtTm", "_EvtTp", "_BookgSts", "_ClntRef", "_UnitsQty", "_PricDtls", "_MstrRef", "_OrdrRef", "_LegId", "_PrtlyExctdInd", "_SttlmAmt", "_SttlmDt", "_DealRef"]
+	__slots__ = ["_BookgSts", "_CdtDbt", "_ClntRef", "_CumDvddInd", "_DealRef", "_EvtTp", "_LegExctnId", "_LegId", "_MstrRef", "_OrdrDtTm", "_OrdrRef", "_PricDtls", "_PrtlyExctdInd", "_RegdTxInd", "_Rvsl", "_SttldTxInd", "_SttlmAmt", "_SttlmDt", "_TradDtTm", "_UnitsQty"]
 	@property
 	def BookgSts(self):
 		return self._BookgSts

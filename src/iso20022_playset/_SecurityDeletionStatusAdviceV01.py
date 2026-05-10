@@ -1,12 +1,12 @@
 from . import base_types
-from ._SecurityIdentification39 import SecurityIdentification39
-from ._SupplementaryData1 import SupplementaryData1
 from ._MessageHeader12 import MessageHeader12
 from ._ProcessingStatus72Choice import ProcessingStatus72Choice
+from ._SecurityIdentification39 import SecurityIdentification39
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecurityDeletionStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_MsgHdr", "_SplmtryData", "_PrcgSts"]
+	__slots__ = ["_FinInstrmId", "_MsgHdr", "_PrcgSts", "_SplmtryData"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId

@@ -1,37 +1,37 @@
 from . import base_types
-from ._CorporateActionFrequencyType1FormatChoice import CorporateActionFrequencyType1FormatChoice
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
-from ._LotteryType1FormatChoice import LotteryType1FormatChoice
-from ._OfferType1FormatChoice import OfferType1FormatChoice
+from ._BeneficiaryCertificationType1FormatChoice import BeneficiaryCertificationType1FormatChoice
 from ._ConversionType1FormatChoice import ConversionType1FormatChoice
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from ._CorporateActionCalculationMethod1FormatChoice import CorporateActionCalculationMethod1FormatChoice
+from ._CorporateActionChangeType1FormatChoice import CorporateActionChangeType1FormatChoice
+from ._CorporateActionDate2 import CorporateActionDate2
+from ._CorporateActionEventStage1FormatChoice import CorporateActionEventStage1FormatChoice
+from ._CorporateActionFrequencyType1FormatChoice import CorporateActionFrequencyType1FormatChoice
+from ._CorporateActionNarrative1 import CorporateActionNarrative1
+from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
+from ._CorporateActionPeriod1 import CorporateActionPeriod1
+from ._CorporateActionPrice2 import CorporateActionPrice2
+from ._CorporateActionRate1 import CorporateActionRate1
+from ._DistributionType1FormatChoice import DistributionType1FormatChoice
+from ._EUCapitalGain2Code import EUCapitalGain2Code
+from ._ElectionMovementType1FormatChoice import ElectionMovementType1FormatChoice
+from ._Exact3NumericText import Exact3NumericText
 from ._GenericIdentification13 import GenericIdentification13
 from ._IntermediateSecurityDistributionType1FormatChoice import IntermediateSecurityDistributionType1FormatChoice
-from ._RenounceableStatus1FormatChoice import RenounceableStatus1FormatChoice
-from ._Number import Number
-from ._UnitOrFaceAmountOrCode1Choice import UnitOrFaceAmountOrCode1Choice
-from ._CorporateActionDate2 import CorporateActionDate2
-from ._CorporateActionChangeType1FormatChoice import CorporateActionChangeType1FormatChoice
+from ._LotteryType1FormatChoice import LotteryType1FormatChoice
 from ._Max3NumericText import Max3NumericText
-from ._CorporateActionCalculationMethod1FormatChoice import CorporateActionCalculationMethod1FormatChoice
-from ._CorporateActionPrice2 import CorporateActionPrice2
-from ._ElectionMovementType1FormatChoice import ElectionMovementType1FormatChoice
-from ._BeneficiaryCertificationType1FormatChoice import BeneficiaryCertificationType1FormatChoice
-from ._CorporateActionNarrative1 import CorporateActionNarrative1
-from ._TaxableIncomePerShareCalculated2Code import TaxableIncomePerShareCalculated2Code
-from ._YesNoIndicator import YesNoIndicator
-from ._CorporateActionRate1 import CorporateActionRate1
-from ._CorporateActionEventStage1FormatChoice import CorporateActionEventStage1FormatChoice
-from ._DistributionType1FormatChoice import DistributionType1FormatChoice
-from ._CorporateActionPeriod1 import CorporateActionPeriod1
-from ._Exact3NumericText import Exact3NumericText
 from ._Max70Text import Max70Text
-from ._EUCapitalGain2Code import EUCapitalGain2Code
+from ._Number import Number
+from ._OfferType1FormatChoice import OfferType1FormatChoice
+from ._RenounceableStatus1FormatChoice import RenounceableStatus1FormatChoice
+from ._TaxableIncomePerShareCalculated2Code import TaxableIncomePerShareCalculated2Code
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from ._UnitOrFaceAmountOrCode1Choice import UnitOrFaceAmountOrCode1Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class CorporateAction2(base_types._BaseFieldType):
 
-	__slots__ = ["_PrdDtls", "_RstrctnInd", "_DstrbtnTp", "_ConvsTp", "_DtDtls", "_NewPlcOfIncorprtn", "_TaxblIncmPerShrClctd", "_MinExrcblMltplSctiesQty", "_ChngTp", "_PrtlElctnInd", "_RnncblEntitlmntStsTp", "_EvtStag", "_OfferTp", "_CpnNb", "_IncmTp", "_DfltOptnNb", "_RedChrgsApldInd", "_CertfctnTp", "_LtryTp", "_MinExrcblSctiesQty", "_NewBrdLotSctiesQty", "_FrntEndOddLotSctiesQty", "_NewDnmtnSctiesQty", "_IntrmdtSctiesDstrbtnTp", "_ClctnMtd", "_DvddTp", "_NewDnmtnCcy", "_RateAndAmtDtls", "_BckEndOddLotSctiesQty", "_IncrmtlDnmtn", "_CorpActnAddtlInf", "_BaseDnmtn", "_SctiesQtySght", "_PricDtls", "_ElctnTp", "_DfltOptnTp", "_CertfctnReqrdInd", "_CptlGn", "_IntrstAcrdNbOfDays"]
+	__slots__ = ["_BaseDnmtn", "_BckEndOddLotSctiesQty", "_CertfctnReqrdInd", "_CertfctnTp", "_ChngTp", "_ClctnMtd", "_ConvsTp", "_CorpActnAddtlInf", "_CpnNb", "_CptlGn", "_DfltOptnNb", "_DfltOptnTp", "_DstrbtnTp", "_DtDtls", "_DvddTp", "_ElctnTp", "_EvtStag", "_FrntEndOddLotSctiesQty", "_IncmTp", "_IncrmtlDnmtn", "_IntrmdtSctiesDstrbtnTp", "_IntrstAcrdNbOfDays", "_LtryTp", "_MinExrcblMltplSctiesQty", "_MinExrcblSctiesQty", "_NewBrdLotSctiesQty", "_NewDnmtnCcy", "_NewDnmtnSctiesQty", "_NewPlcOfIncorprtn", "_OfferTp", "_PrdDtls", "_PricDtls", "_PrtlElctnInd", "_RateAndAmtDtls", "_RedChrgsApldInd", "_RnncblEntitlmntStsTp", "_RstrctnInd", "_SctiesQtySght", "_TaxblIncmPerShrClctd"]
 	@property
 	def BaseDnmtn(self):
 		return self._BaseDnmtn

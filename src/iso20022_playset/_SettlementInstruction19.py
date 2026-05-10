@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._CashAccount40 import CashAccount40
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._ISODate import ISODate
 
 class SettlementInstruction19(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrAgt", "_ReqdSttlmDt", "_CdtrAgtAcct", "_Cdtr", "_CdtrAcct"]
+	__slots__ = ["_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_ReqdSttlmDt"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

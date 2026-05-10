@@ -1,18 +1,18 @@
 from . import base_types
-from ._TransactionStatus4 import TransactionStatus4
-from ._DocumentIdentification3 import DocumentIdentification3
+from ._Baseline5 import Baseline5
 from ._ContactIdentification1 import ContactIdentification1
 from ._ContactIdentification3 import ContactIdentification3
-from ._ReportType1 import ReportType1
+from ._DocumentIdentification3 import DocumentIdentification3
 from ._DocumentIdentification5 import DocumentIdentification5
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._PendingActivity2 import PendingActivity2
 from ._MessageIdentification1 import MessageIdentification1
-from ._Baseline5 import Baseline5
+from ._PendingActivity2 import PendingActivity2
+from ._ReportType1 import ReportType1
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._TransactionStatus4 import TransactionStatus4
 
 class FullPushThroughReportV05(base_types._BaseFieldType):
 
-	__slots__ = ["_TxSts", "_PushdThrghBaseln", "_BuyrBkCtctPrsn", "_TxId", "_RptId", "_ReqForActn", "_SellrBkCtctPrsn", "_BuyrCtctPrsn", "_EstblishdBaselnId", "_UsrTxRef", "_SellrCtctPrsn", "_OthrBkCtctPrsn", "_RptPurp"]
+	__slots__ = ["_BuyrBkCtctPrsn", "_BuyrCtctPrsn", "_EstblishdBaselnId", "_OthrBkCtctPrsn", "_PushdThrghBaseln", "_ReqForActn", "_RptId", "_RptPurp", "_SellrBkCtctPrsn", "_SellrCtctPrsn", "_TxId", "_TxSts", "_UsrTxRef"]
 	@property
 	def BuyrBkCtctPrsn(self):
 		return self._BuyrBkCtctPrsn

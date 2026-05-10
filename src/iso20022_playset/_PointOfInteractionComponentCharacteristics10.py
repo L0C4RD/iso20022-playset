@@ -1,12 +1,12 @@
 from . import base_types
-from ._CryptographicKey18 import CryptographicKey18
-from ._Number import Number
 from ._CommunicationCharacteristics5 import CommunicationCharacteristics5
+from ._CryptographicKey18 import CryptographicKey18
 from ._MemoryCharacteristics1 import MemoryCharacteristics1
+from ._Number import Number
 
 class PointOfInteractionComponentCharacteristics10(base_types._BaseFieldType):
 
-	__slots__ = ["_SbcbrIdntyMdls", "_Mmry", "_SctyElmt", "_Com", "_SctyAccsMdls"]
+	__slots__ = ["_Com", "_Mmry", "_SbcbrIdntyMdls", "_SctyAccsMdls", "_SctyElmt"]
 	@property
 	def Com(self):
 		return self._Com

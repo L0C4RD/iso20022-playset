@@ -4,7 +4,7 @@ from ._PriceAndDirection1 import PriceAndDirection1
 
 class PriceValueAndRate4(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_Rate"]
+	__slots__ = ["_Rate", "_Val"]
 	@property
 	def Rate(self):
 		return self._Rate

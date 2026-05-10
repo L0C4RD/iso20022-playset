@@ -1,11 +1,11 @@
 from . import base_types
-from ._KeyTransport10 import KeyTransport10
 from ._KEK9 import KEK9
 from ._KEKIdentifier7 import KEKIdentifier7
+from ._KeyTransport10 import KeyTransport10
 
 class Recipient15Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyTrnsprt", "_KEK", "_KeyIdr"]
+	__slots__ = ["_KEK", "_KeyIdr", "_KeyTrnsprt"]
 	@property
 	def KEK(self):
 		return self._KEK

@@ -1,10 +1,10 @@
 from . import base_types
-from ._ATMStatus2 import ATMStatus2
 from ._ATMEnvironment9 import ATMEnvironment9
+from ._ATMStatus2 import ATMStatus2
 
 class ATMDiagnosticRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_ATMGblSts"]
+	__slots__ = ["_ATMGblSts", "_Envt"]
 	@property
 	def ATMGblSts(self):
 		return self._ATMGblSts

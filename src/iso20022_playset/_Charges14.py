@@ -1,12 +1,12 @@
 from . import base_types
-from ._CashAccount40 import CashAccount40
-from ._ChargeType3Choice import ChargeType3Choice
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._ChargeType3Choice import ChargeType3Choice
 
 class Charges14(base_types._BaseFieldType):
 
-	__slots__ = ["_Agt", "_Amt", "_Tp", "_AgtAcct"]
+	__slots__ = ["_Agt", "_AgtAcct", "_Amt", "_Tp"]
 	@property
 	def Agt(self):
 		return self._Agt

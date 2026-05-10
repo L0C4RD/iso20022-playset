@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CalendarSearchCriteria1 import CalendarSearchCriteria1
 from ._MessageHeader9 import MessageHeader9
+from ._SupplementaryData1 import SupplementaryData1
 
 class CalendarQueryV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_SchCrit"]
+	__slots__ = ["_MsgHdr", "_SchCrit", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

@@ -1,10 +1,10 @@
 from . import base_types
-from ._DecimalNumber import DecimalNumber
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._DecimalNumber import DecimalNumber
 
 class FinancialInstrumentQuantity25Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NmnlVal", "_MntryVal", "_Unit"]
+	__slots__ = ["_MntryVal", "_NmnlVal", "_Unit"]
 	@property
 	def MntryVal(self):
 		return self._MntryVal

@@ -1,11 +1,11 @@
 from . import base_types
+from ._ChequeCancellationStatus1Choice import ChequeCancellationStatus1Choice
 from ._ChequePartyRole1Code import ChequePartyRole1Code
 from ._Max140Text import Max140Text
-from ._ChequeCancellationStatus1Choice import ChequeCancellationStatus1Choice
 
 class ChequeCancellationStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Orgtr", "_Sts", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Orgtr", "_Sts"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

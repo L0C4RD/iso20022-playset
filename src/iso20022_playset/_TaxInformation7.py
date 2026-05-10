@@ -1,16 +1,16 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._TaxParty2 import TaxParty2
-from ._Number import Number
-from ._TaxRecord2 import TaxRecord2
-from ._Max35Text import Max35Text
+from ._ISODate import ISODate
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Number import Number
 from ._TaxParty1 import TaxParty1
+from ._TaxParty2 import TaxParty2
+from ._TaxRecord2 import TaxRecord2
 
 class TaxInformation7(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_SeqNb", "_Rcrd", "_Cdtr", "_AdmstnZone", "_UltmtDbtr", "_RefNb", "_Mtd", "_TtlTaxblBaseAmt", "_Dbtr", "_TtlTaxAmt"]
+	__slots__ = ["_AdmstnZone", "_Cdtr", "_Dbtr", "_Dt", "_Mtd", "_Rcrd", "_RefNb", "_SeqNb", "_TtlTaxAmt", "_TtlTaxblBaseAmt", "_UltmtDbtr"]
 	@property
 	def AdmstnZone(self):
 		return self._AdmstnZone

@@ -1,6 +1,6 @@
 from . import base_types
-from ._UnmatchedReason12Code import UnmatchedReason12Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._UnmatchedReason12Code import UnmatchedReason12Code
 
 class UnmatchedReason23Choice(base_types._BaseFieldType):
 

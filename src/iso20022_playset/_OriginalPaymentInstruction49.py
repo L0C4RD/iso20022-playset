@@ -1,16 +1,16 @@
 from . import base_types
-from ._DecimalNumber import DecimalNumber
 from ._Case6 import Case6
+from ._DecimalNumber import DecimalNumber
+from ._GroupCancellationIndicator import GroupCancellationIndicator
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
 from ._OriginalGroupInformation29 import OriginalGroupInformation29
 from ._PaymentCancellationReason6 import PaymentCancellationReason6
 from ._PaymentTransaction154 import PaymentTransaction154
-from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
-from ._GroupCancellationIndicator import GroupCancellationIndicator
 
 class OriginalPaymentInstruction49(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtInfCxl", "_TxInf", "_OrgnlPmtInfId", "_CtrlSum", "_Case", "_NbOfTxs", "_CxlRsnInf", "_PmtCxlId", "_OrgnlGrpInf"]
+	__slots__ = ["_Case", "_CtrlSum", "_CxlRsnInf", "_NbOfTxs", "_OrgnlGrpInf", "_OrgnlPmtInfId", "_PmtCxlId", "_PmtInfCxl", "_TxInf"]
 	@property
 	def Case(self):
 		return self._Case

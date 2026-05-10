@@ -1,12 +1,12 @@
 from . import base_types
 from ._Max140Text import Max140Text
-from ._SchemeIdentificationType1Code import SchemeIdentificationType1Code
-from ._Max35Text import Max35Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._SchemeIdentificationType1Code import SchemeIdentificationType1Code
 
 class GenericIdentification165(base_types._BaseFieldType):
 
-	__slots__ = ["_SchmeNm", "_Desc", "_Issr", "_Id"]
+	__slots__ = ["_Desc", "_Id", "_Issr", "_SchmeNm"]
 	@property
 	def Desc(self):
 		return self._Desc

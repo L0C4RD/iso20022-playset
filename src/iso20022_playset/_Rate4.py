@@ -1,6 +1,6 @@
 from . import base_types
-from ._RateType4Choice import RateType4Choice
 from ._ActiveOrHistoricCurrencyAndAmountRange2 import ActiveOrHistoricCurrencyAndAmountRange2
+from ._RateType4Choice import RateType4Choice
 
 class Rate4(base_types._BaseFieldType):
 

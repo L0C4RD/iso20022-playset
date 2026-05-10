@@ -1,14 +1,14 @@
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max35Text import Max35Text
-from ._EntryStatus1Code import EntryStatus1Code
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._EntryStatus1Code import EntryStatus1Code
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
 from ._Number import Number
 
 class CashEntry2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Sts", "_AddtlNtryInf", "_Amt", "_Dt", "_StmtId", "_AcctSvcrRef"]
+	__slots__ = ["_AcctSvcrRef", "_AddtlNtryInf", "_Amt", "_Dt", "_Id", "_StmtId", "_Sts"]
 	@property
 	def AcctSvcrRef(self):
 		return self._AcctSvcrRef

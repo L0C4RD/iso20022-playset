@@ -1,10 +1,10 @@
 from . import base_types
-from ._Party50Choice import Party50Choice
 from ._Max35Text import Max35Text
+from ._Party50Choice import Party50Choice
 
 class ProprietaryParty6(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Pty"]
+	__slots__ = ["_Pty", "_Tp"]
 	@property
 	def Pty(self):
 		return self._Pty

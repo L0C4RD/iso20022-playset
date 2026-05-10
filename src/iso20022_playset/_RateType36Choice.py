@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
 from ._DividendRateType1Code import DividendRateType1Code
+from ._GenericIdentification30 import GenericIdentification30
 
 class RateType36Choice(base_types._BaseFieldType):
 

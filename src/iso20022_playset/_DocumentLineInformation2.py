@@ -1,11 +1,11 @@
 from . import base_types
 from ._DocumentLineIdentification1 import DocumentLineIdentification1
-from ._RemittanceAmount4 import RemittanceAmount4
 from ._Max2048Text import Max2048Text
+from ._RemittanceAmount4 import RemittanceAmount4
 
 class DocumentLineInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Amt", "_Desc"]
+	__slots__ = ["_Amt", "_Desc", "_Id"]
 	@property
 	def Amt(self):
 		return self._Amt

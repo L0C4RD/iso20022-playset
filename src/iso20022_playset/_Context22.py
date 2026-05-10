@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._AdditionalData1 import AdditionalData1
 from ._ISO18245MerchantCategoryCode import ISO18245MerchantCategoryCode
 from ._Max35Text import Max35Text
-from ._AdditionalData1 import AdditionalData1
 from ._TransactionInitiator1Code import TransactionInitiator1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Context22(base_types._BaseFieldType):
 
-	__slots__ = ["_ReSubmissn", "_AddtlData", "_Reauthstn", "_OthrMrchntCtgy", "_PrtlShipmnt", "_DelydChrgs", "_TxInitr", "_NoShow", "_MrchntCtgyCd", "_MrchntCtgySpcfcData"]
+	__slots__ = ["_AddtlData", "_DelydChrgs", "_MrchntCtgyCd", "_MrchntCtgySpcfcData", "_NoShow", "_OthrMrchntCtgy", "_PrtlShipmnt", "_ReSubmissn", "_Reauthstn", "_TxInitr"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

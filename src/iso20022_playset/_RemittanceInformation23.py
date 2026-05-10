@@ -1,12 +1,12 @@
 from . import base_types
-from ._OriginalPaymentInformation10 import OriginalPaymentInformation10
-from ._StructuredRemittanceInformation18 import StructuredRemittanceInformation18
 from ._Max140Text import Max140Text
 from ._Max35Text import Max35Text
+from ._OriginalPaymentInformation10 import OriginalPaymentInformation10
+from ._StructuredRemittanceInformation18 import StructuredRemittanceInformation18
 
 class RemittanceInformation23(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlPmtInf", "_RmtId", "_Ustrd", "_Strd"]
+	__slots__ = ["_OrgnlPmtInf", "_RmtId", "_Strd", "_Ustrd"]
 	@property
 	def OrgnlPmtInf(self):
 		return self._OrgnlPmtInf

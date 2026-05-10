@@ -4,7 +4,7 @@ from ._IBAN2007Identifier import IBAN2007Identifier
 
 class AccountIdentification4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_IBAN"]
+	__slots__ = ["_IBAN", "_Othr"]
 	@property
 	def IBAN(self):
 		return self._IBAN

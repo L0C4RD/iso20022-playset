@@ -1,12 +1,12 @@
 from . import base_types
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BillingServicesTax3 import BillingServicesTax3
 from ._AmountAndDirection34 import AmountAndDirection34
 from ._BillingServicesAmount3 import BillingServicesAmount3
+from ._BillingServicesTax3 import BillingServicesTax3
 
 class TaxCalculation1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlTax", "_TtlTaxblSvcChrgHstAmt", "_TaxblSvcChrgConvs", "_TaxId", "_HstCcy"]
+	__slots__ = ["_HstCcy", "_TaxId", "_TaxblSvcChrgConvs", "_TtlTax", "_TtlTaxblSvcChrgHstAmt"]
 	@property
 	def HstCcy(self):
 		return self._HstCcy

@@ -1,16 +1,16 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
-from ._DecimalNumber import DecimalNumber
-from ._NumberAndSumOfTransactions1 import NumberAndSumOfTransactions1
 from ._AmountAndDirection35 import AmountAndDirection35
-from ._Max15NumericText import Max15NumericText
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
 from ._CashAvailability1 import CashAvailability1
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DecimalNumber import DecimalNumber
+from ._Max15NumericText import Max15NumericText
+from ._NumberAndSumOfTransactions1 import NumberAndSumOfTransactions1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TotalsPerBankTransactionCode5(base_types._BaseFieldType):
 
-	__slots__ = ["_Sum", "_DbtNtries", "_BkTxCd", "_Avlbty", "_Dt", "_CdtNtries", "_FcstInd", "_NbOfNtries", "_TtlNetNtry"]
+	__slots__ = ["_Avlbty", "_BkTxCd", "_CdtNtries", "_DbtNtries", "_Dt", "_FcstInd", "_NbOfNtries", "_Sum", "_TtlNetNtry"]
 	@property
 	def Avlbty(self):
 		return self._Avlbty

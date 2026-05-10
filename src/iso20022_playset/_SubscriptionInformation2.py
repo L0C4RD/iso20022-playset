@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._ISODate import ISODate
 
 class SubscriptionInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_CshCmpnt", "_DtOfFrstSbcpt", "_TtlAmtYrToDt", "_EqtyCmpnt"]
+	__slots__ = ["_CshCmpnt", "_DtOfFrstSbcpt", "_EqtyCmpnt", "_TtlAmtYrToDt"]
 	@property
 	def CshCmpnt(self):
 		return self._CshCmpnt

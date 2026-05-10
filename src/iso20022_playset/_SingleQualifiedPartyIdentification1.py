@@ -4,7 +4,7 @@ from ._TradeParty1 import TradeParty1
 
 class SingleQualifiedPartyIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_RltvIdr", "_BasePty"]
+	__slots__ = ["_BasePty", "_RltvIdr"]
 	@property
 	def BasePty(self):
 		return self._BasePty

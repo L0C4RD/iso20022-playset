@@ -1,11 +1,11 @@
 from . import base_types
+from ._MessageHeader12 import MessageHeader12
 from ._PartyStatus2 import PartyStatus2
 from ._SupplementaryData1 import SupplementaryData1
-from ._MessageHeader12 import MessageHeader12
 
 class PartyStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_PtySts"]
+	__slots__ = ["_MsgHdr", "_PtySts", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

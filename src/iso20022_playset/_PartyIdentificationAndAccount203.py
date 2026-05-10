@@ -1,14 +1,14 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._TradingPartyCapacity5Choice import TradingPartyCapacity5Choice
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._PartyIdentification120Choice import PartyIdentification120Choice
 from ._AlternatePartyIdentification7 import AlternatePartyIdentification7
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._LEIIdentifier import LEIIdentifier
+from ._PartyIdentification120Choice import PartyIdentification120Choice
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._TradingPartyCapacity5Choice import TradingPartyCapacity5Choice
 
 class PartyIdentificationAndAccount203(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_BlckChainAdrOrWllt", "_PtyCpcty", "_Id", "_SfkpgAcct", "_AltrnId"]
+	__slots__ = ["_AltrnId", "_BlckChainAdrOrWllt", "_Id", "_LEI", "_PtyCpcty", "_SfkpgAcct"]
 	@property
 	def AltrnId(self):
 		return self._AltrnId

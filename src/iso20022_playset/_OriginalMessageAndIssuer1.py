@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max70Text import Max70Text
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class OriginalMessageAndIssuer1(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgNmId", "_OrgtrNm", "_MsgId"]
+	__slots__ = ["_MsgId", "_MsgNmId", "_OrgtrNm"]
 	@property
 	def MsgId(self):
 		return self._MsgId

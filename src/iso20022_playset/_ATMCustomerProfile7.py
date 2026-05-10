@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max70Text import Max70Text
 from ._ATMService28 import ATMService28
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class ATMCustomerProfile7(base_types._BaseFieldType):
 
-	__slots__ = ["_PrflRef", "_PrflDesc", "_AllwdSvcs", "_CstmrId"]
+	__slots__ = ["_AllwdSvcs", "_CstmrId", "_PrflDesc", "_PrflRef"]
 	@property
 	def AllwdSvcs(self):
 		return self._AllwdSvcs

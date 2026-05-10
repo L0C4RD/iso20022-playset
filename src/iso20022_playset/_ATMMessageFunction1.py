@@ -1,10 +1,10 @@
 from . import base_types
-from ._MessageFunction7Code import MessageFunction7Code
 from ._Max35Text import Max35Text
+from ._MessageFunction7Code import MessageFunction7Code
 
 class ATMMessageFunction1(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMSvcCd", "_HstSvcCd", "_Fctn"]
+	__slots__ = ["_ATMSvcCd", "_Fctn", "_HstSvcCd"]
 	@property
 	def ATMSvcCd(self):
 		return self._ATMSvcCd

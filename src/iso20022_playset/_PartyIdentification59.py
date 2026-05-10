@@ -1,13 +1,13 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._PartyIdentification44 import PartyIdentification44
-from ._Max34Text import Max34Text
 from ._ClearingSystemIdentification2Choice import ClearingSystemIdentification2Choice
+from ._LEIIdentifier import LEIIdentifier
 from ._Max105Text import Max105Text
+from ._Max34Text import Max34Text
+from ._PartyIdentification44 import PartyIdentification44
 
 class PartyIdentification59(base_types._BaseFieldType):
 
-	__slots__ = ["_Adr", "_AcctNb", "_AnyBIC", "_LglNttyIdr", "_ClrSysId", "_PtyNm"]
+	__slots__ = ["_AcctNb", "_Adr", "_AnyBIC", "_ClrSysId", "_LglNttyIdr", "_PtyNm"]
 	@property
 	def AcctNb(self):
 		return self._AcctNb

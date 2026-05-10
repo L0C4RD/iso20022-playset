@@ -1,11 +1,11 @@
 from . import base_types
-from ._PartyIdentification113 import PartyIdentification113
 from ._Max35Text import Max35Text
 from ._OrderStatus3Choice import OrderStatus3Choice
+from ._PartyIdentification113 import PartyIdentification113
 
 class OrderStatusAndReason10(base_types._BaseFieldType):
 
-	__slots__ = ["_MstrRef", "_StsInitr", "_OrdrSts"]
+	__slots__ = ["_MstrRef", "_OrdrSts", "_StsInitr"]
 	@property
 	def MstrRef(self):
 		return self._MstrRef

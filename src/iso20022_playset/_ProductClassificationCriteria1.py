@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max52Text import Max52Text
 from ._CFIOct2015Identifier import CFIOct2015Identifier
+from ._Max52Text import Max52Text
 
 class ProductClassificationCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_UnqPdctIdr", "_ClssfctnFinInstrm"]
+	__slots__ = ["_ClssfctnFinInstrm", "_UnqPdctIdr"]
 	@property
 	def ClssfctnFinInstrm(self):
 		return self._ClssfctnFinInstrm

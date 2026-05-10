@@ -1,21 +1,21 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PartyIdentification43 import PartyIdentification43
-from ._ExpiryDetails1 import ExpiryDetails1
-from ._UndertakingTermination3 import UndertakingTermination3
-from ._UndertakingAmount2 import UndertakingAmount2
-from ._YesNoIndicator import YesNoIndicator
 from ._CommunicationChannel1 import CommunicationChannel1
-from ._Undertaking11 import Undertaking11
-from ._Narrative1 import Narrative1
-from ._Max4AlphaNumericText import Max4AlphaNumericText
 from ._Document9 import Document9
+from ._ExpiryDetails1 import ExpiryDetails1
+from ._ISODate import ISODate
 from ._Max2000Text import Max2000Text
+from ._Max4AlphaNumericText import Max4AlphaNumericText
+from ._Narrative1 import Narrative1
+from ._PartyIdentification43 import PartyIdentification43
+from ._Undertaking11 import Undertaking11
 from ._Undertaking7 import Undertaking7
+from ._UndertakingAmount2 import UndertakingAmount2
+from ._UndertakingTermination3 import UndertakingTermination3
+from ._YesNoIndicator import YesNoIndicator
 
 class Amendment1(base_types._BaseFieldType):
 
-	__slots__ = ["_NewUdrtkgTermsAndConds", "_AddtlInf", "_DtOfIssnc", "_NewXpryDtls", "_NewBnfcry", "_ScndAdvsgPty", "_BnfcryCnsntReqInd", "_UdrtkgId", "_TermntnDtls", "_DlvryChanl", "_UdrtkgAmtAdjstmnt", "_AdvsgPty", "_LclUdrtkg", "_SeqNb", "_NclsdFile"]
+	__slots__ = ["_AddtlInf", "_AdvsgPty", "_BnfcryCnsntReqInd", "_DlvryChanl", "_DtOfIssnc", "_LclUdrtkg", "_NclsdFile", "_NewBnfcry", "_NewUdrtkgTermsAndConds", "_NewXpryDtls", "_ScndAdvsgPty", "_SeqNb", "_TermntnDtls", "_UdrtkgAmtAdjstmnt", "_UdrtkgId"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

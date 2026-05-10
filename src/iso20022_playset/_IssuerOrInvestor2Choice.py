@@ -3,7 +3,7 @@ from ._SystemPartyIdentification2Choice import SystemPartyIdentification2Choice
 
 class IssuerOrInvestor2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrCSD", "_InvstrCSD"]
+	__slots__ = ["_InvstrCSD", "_IssrCSD"]
 	@property
 	def InvstrCSD(self):
 		return self._InvstrCSD

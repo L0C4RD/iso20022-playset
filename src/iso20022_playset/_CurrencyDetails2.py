@@ -1,12 +1,12 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._Exact3NumericText import Exact3NumericText
-from ._Number import Number
 from ._Max35Text import Max35Text
+from ._Number import Number
 
 class CurrencyDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_Dcml", "_AlphaCd", "_NmrcCd", "_Nm"]
+	__slots__ = ["_AlphaCd", "_Dcml", "_Nm", "_NmrcCd"]
 	@property
 	def AlphaCd(self):
 		return self._AlphaCd

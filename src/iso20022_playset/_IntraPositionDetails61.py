@@ -1,15 +1,15 @@
 from . import base_types
-from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
 from ._AmountAndDirection55 import AmountAndDirection55
-from ._SecuritiesSubBalanceTypeAndQuantityBreakdown6 import SecuritiesSubBalanceTypeAndQuantityBreakdown6
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._GenericIdentification39 import GenericIdentification39
 from ._CorporateActionEventType101Choice import CorporateActionEventType101Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
+from ._GenericIdentification39 import GenericIdentification39
+from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from ._SecuritiesSubBalanceTypeAndQuantityBreakdown6 import SecuritiesSubBalanceTypeAndQuantityBreakdown6
 
 class IntraPositionDetails61(base_types._BaseFieldType):
 
-	__slots__ = ["_SttldQty", "_BalTo", "_RmngToBeSttldQty", "_AvlblDt", "_CollMntrAmt", "_PrevslySttldQty", "_BalFr", "_CorpActnEvtTp", "_SctiesSubBalId", "_SttlmDt", "_InstrPrcgAddtlDtls"]
+	__slots__ = ["_AvlblDt", "_BalFr", "_BalTo", "_CollMntrAmt", "_CorpActnEvtTp", "_InstrPrcgAddtlDtls", "_PrevslySttldQty", "_RmngToBeSttldQty", "_SctiesSubBalId", "_SttldQty", "_SttlmDt"]
 	@property
 	def AvlblDt(self):
 		return self._AvlblDt

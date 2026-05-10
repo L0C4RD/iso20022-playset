@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
 from ._DocumentIdentification1 import DocumentIdentification1
-from ._Max350Text import Max350Text
-from ._PartyIdentification26 import PartyIdentification26
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._ISODate import ISODate
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification26 import PartyIdentification26
 
 class OtherCertificateDataSet2(base_types._BaseFieldType):
 
-	__slots__ = ["_CertTp", "_DataSetId", "_CertId", "_IsseDt", "_Issr", "_CertInf"]
+	__slots__ = ["_CertId", "_CertInf", "_CertTp", "_DataSetId", "_IsseDt", "_Issr"]
 	@property
 	def CertId(self):
 		return self._CertId

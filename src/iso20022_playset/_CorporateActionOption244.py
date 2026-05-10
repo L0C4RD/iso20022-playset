@@ -1,20 +1,20 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._FractionDispositionType30Choice import FractionDispositionType30Choice
-from ._CorporateActionPeriod13 import CorporateActionPeriod13
-from ._SecuritiesOption115 import SecuritiesOption115
-from ._OptionNumber1Choice import OptionNumber1Choice
 from ._CashOption110 import CashOption110
+from ._CorporateActionDate109 import CorporateActionDate109
 from ._CorporateActionOption39Choice import CorporateActionOption39Choice
+from ._CorporateActionPeriod13 import CorporateActionPeriod13
+from ._CorporateActionPrice92 import CorporateActionPrice92
 from ._CorporateActionRate131 import CorporateActionRate131
+from ._FractionDispositionType30Choice import FractionDispositionType30Choice
 from ._MarketIdentification90 import MarketIdentification90
 from ._OptionFeaturesFormat30Choice import OptionFeaturesFormat30Choice
-from ._CorporateActionDate109 import CorporateActionDate109
-from ._CorporateActionPrice92 import CorporateActionPrice92
+from ._OptionNumber1Choice import OptionNumber1Choice
+from ._SecuritiesOption115 import SecuritiesOption115
 
 class CorporateActionOption244(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyOptn", "_PrdDtls", "_FrctnDspstn", "_DtDtls", "_PlcOfTrad", "_OptnNb", "_OptnFeatrs", "_PricDtls", "_SctiesMvmntDtls", "_CshMvmntDtls", "_OptnTp", "_RateAndAmtDtls"]
+	__slots__ = ["_CcyOptn", "_CshMvmntDtls", "_DtDtls", "_FrctnDspstn", "_OptnFeatrs", "_OptnNb", "_OptnTp", "_PlcOfTrad", "_PrdDtls", "_PricDtls", "_RateAndAmtDtls", "_SctiesMvmntDtls"]
 	@property
 	def CcyOptn(self):
 		return self._CcyOptn

@@ -5,7 +5,7 @@ from ._Max140Text import Max140Text
 
 class ChequeCancellationReason1(base_types._BaseFieldType):
 
-	__slots__ = ["_Orgtr", "_Rsn", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Orgtr", "_Rsn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

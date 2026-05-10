@@ -1,11 +1,11 @@
 from . import base_types
 from ._CorporateActionDate86 import CorporateActionDate86
-from ._LotteryTypeFormat4Choice import LotteryTypeFormat4Choice
 from ._CorporateActionEventStageFormat14Choice import CorporateActionEventStageFormat14Choice
+from ._LotteryTypeFormat4Choice import LotteryTypeFormat4Choice
 
 class CorporateAction71(base_types._BaseFieldType):
 
-	__slots__ = ["_DtDtls", "_LtryTp", "_EvtStag"]
+	__slots__ = ["_DtDtls", "_EvtStag", "_LtryTp"]
 	@property
 	def DtDtls(self):
 		return self._DtDtls

@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ATMEnvironment7 import ATMEnvironment7
 from ._ATMVersionReport1 import ATMVersionReport1
+from ._Max35Text import Max35Text
 
 class ATMConfigurationReportComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_NonActvVrsn", "_Envt", "_ActvVrsn"]
+	__slots__ = ["_ActvVrsn", "_Envt", "_NonActvVrsn"]
 	@property
 	def ActvVrsn(self):
 		return self._ActvVrsn

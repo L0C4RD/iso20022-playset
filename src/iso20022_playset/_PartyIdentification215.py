@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentification195Choice import PartyIdentification195Choice
 from ._Max350Text import Max350Text
+from ._PartyIdentification195Choice import PartyIdentification195Choice
 
 class PartyIdentification215(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Id"]
+	__slots__ = ["_Id", "_Nm"]
 	@property
 	def Id(self):
 		return self._Id

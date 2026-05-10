@@ -5,7 +5,7 @@ from ._SystemSearch5 import SystemSearch5
 
 class TransactionSearchCriteria11(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtTo", "_AcctNtrySch", "_PmtSch", "_PmtFr"]
+	__slots__ = ["_AcctNtrySch", "_PmtFr", "_PmtSch", "_PmtTo"]
 	@property
 	def AcctNtrySch(self):
 		return self._AcctNtrySch

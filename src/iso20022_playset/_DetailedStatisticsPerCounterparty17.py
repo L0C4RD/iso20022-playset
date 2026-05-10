@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._DetailedAbnormalValuesStatistics4Choice import DetailedAbnormalValuesStatistics4Choice
-from ._DetailedMissingValuationsStatistics4Choice import DetailedMissingValuationsStatistics4Choice
 from ._DetailedMissingMarginInformationStatistics4Choice import DetailedMissingMarginInformationStatistics4Choice
+from ._DetailedMissingValuationsStatistics4Choice import DetailedMissingValuationsStatistics4Choice
+from ._ISODate import ISODate
 
 class DetailedStatisticsPerCounterparty17(base_types._BaseFieldType):
 
-	__slots__ = ["_AbnrmlVals", "_MssngMrgnInf", "_RefDt", "_MssngValtn"]
+	__slots__ = ["_AbnrmlVals", "_MssngMrgnInf", "_MssngValtn", "_RefDt"]
 	@property
 	def AbnrmlVals(self):
 		return self._AbnrmlVals

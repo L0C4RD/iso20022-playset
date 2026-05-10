@@ -3,7 +3,7 @@ from ._PartyIdentificationAndAccount147 import PartyIdentificationAndAccount147
 
 class ReceivingPartiesAndAccount16(base_types._BaseFieldType):
 
-	__slots__ = ["_RcvgAgtDtls", "_RcvrsIntrmy1Dtls", "_RcvrsCtdnDtls", "_RcvrsIntrmy2Dtls"]
+	__slots__ = ["_RcvgAgtDtls", "_RcvrsCtdnDtls", "_RcvrsIntrmy1Dtls", "_RcvrsIntrmy2Dtls"]
 	@property
 	def RcvgAgtDtls(self):
 		return self._RcvgAgtDtls

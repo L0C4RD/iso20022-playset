@@ -1,11 +1,11 @@
 from . import base_types
-from ._NotionalAmountLegs6 import NotionalAmountLegs6
-from ._Max20PositiveNumber import Max20PositiveNumber
 from ._ActiveOrHistoricCurrencyAnd19DecimalAmount import ActiveOrHistoricCurrencyAnd19DecimalAmount
+from ._Max20PositiveNumber import Max20PositiveNumber
+from ._NotionalAmountLegs6 import NotionalAmountLegs6
 
 class PositionSetTotal2(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfTrds", "_NegVal", "_PostvVal", "_Ntnl", "_OthrPmtAmt"]
+	__slots__ = ["_NbOfTrds", "_NegVal", "_Ntnl", "_OthrPmtAmt", "_PostvVal"]
 	@property
 	def NbOfTrds(self):
 		return self._NbOfTrds

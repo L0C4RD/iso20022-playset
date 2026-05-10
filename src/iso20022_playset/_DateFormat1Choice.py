@@ -5,7 +5,7 @@ from ._SettlementDate1Code import SettlementDate1Code
 
 class DateFormat1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_DtTm", "_Dt"]
+	__slots__ = ["_Cd", "_Dt", "_DtTm"]
 	@property
 	def Cd(self):
 		return self._Cd

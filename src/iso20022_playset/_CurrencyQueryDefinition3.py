@@ -1,10 +1,10 @@
 from . import base_types
-from ._QueryType2Code import QueryType2Code
 from ._CurrencyCriteriaDefinition1Choice import CurrencyCriteriaDefinition1Choice
+from ._QueryType2Code import QueryType2Code
 
 class CurrencyQueryDefinition3(base_types._BaseFieldType):
 
-	__slots__ = ["_QryTp", "_CcyCrit"]
+	__slots__ = ["_CcyCrit", "_QryTp"]
 	@property
 	def CcyCrit(self):
 		return self._CcyCrit

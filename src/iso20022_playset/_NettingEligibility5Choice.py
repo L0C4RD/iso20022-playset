@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class NettingEligibility5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Ind"]
+	__slots__ = ["_Ind", "_Prtry"]
 	@property
 	def Ind(self):
 		return self._Ind

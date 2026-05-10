@@ -3,7 +3,7 @@ from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class CorporateActionAmounts71(base_types._BaseFieldType):
 
-	__slots__ = ["_FsclStmpAmt", "_RgltryFeesAmt", "_FATCATaxAmt", "_PrncplOrCrps", "_StockXchgTax", "_CshInLieuOfShr", "_OrgnlAmt", "_TaxDfrrdAmt", "_DmdDvddAmt", "_AddtlTaxAmt", "_EntitldAmt", "_PngAgtComssnAmt", "_ChrgsAmt", "_DmdIntrstAmt", "_DmdAmt", "_IncmPrtn", "_RedPrmAmt", "_IntrstAmt", "_BuyUpAmt", "_AcrdIntrstAmt", "_BckUpWhldgTaxAmt", "_ShppgFeesAmt", "_SlctnFees", "_IndmntyAmt", "_TaxCdtAmt", "_TxTax", "_RinvstmtAmt", "_DmdRyltsAmt", "_SndryOrOthrAmt", "_UfrnkdAmt", "_TaxOnIncmAmt", "_LclBrkrComssnAmt", "_FullyFrnkdAmt", "_ValAddedTaxAmt", "_StmpDtyAmt", "_ManfctrdDvddPmtAmt", "_NRATaxAmt", "_TaxFreeAmt", "_EUTaxRtntnAmt", "_DmdFndAmt", "_EqulstnAmt", "_CptlGn", "_GrssAmt", "_ScndLvlTaxAmt", "_WhldgTaxAmt", "_ExctgBrkrAmt", "_NetAmt", "_TaxRclmAmt", "_FrgnIncmAmt"]
+	__slots__ = ["_AcrdIntrstAmt", "_AddtlTaxAmt", "_BckUpWhldgTaxAmt", "_BuyUpAmt", "_ChrgsAmt", "_CptlGn", "_CshInLieuOfShr", "_DmdAmt", "_DmdDvddAmt", "_DmdFndAmt", "_DmdIntrstAmt", "_DmdRyltsAmt", "_EUTaxRtntnAmt", "_EntitldAmt", "_EqulstnAmt", "_ExctgBrkrAmt", "_FATCATaxAmt", "_FrgnIncmAmt", "_FsclStmpAmt", "_FullyFrnkdAmt", "_GrssAmt", "_IncmPrtn", "_IndmntyAmt", "_IntrstAmt", "_LclBrkrComssnAmt", "_ManfctrdDvddPmtAmt", "_NRATaxAmt", "_NetAmt", "_OrgnlAmt", "_PngAgtComssnAmt", "_PrncplOrCrps", "_RedPrmAmt", "_RgltryFeesAmt", "_RinvstmtAmt", "_ScndLvlTaxAmt", "_ShppgFeesAmt", "_SlctnFees", "_SndryOrOthrAmt", "_StmpDtyAmt", "_StockXchgTax", "_TaxCdtAmt", "_TaxDfrrdAmt", "_TaxFreeAmt", "_TaxOnIncmAmt", "_TaxRclmAmt", "_TxTax", "_UfrnkdAmt", "_ValAddedTaxAmt", "_WhldgTaxAmt"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt

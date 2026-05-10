@@ -4,7 +4,7 @@ from ._SafekeepingPlaceFormat39Choice import SafekeepingPlaceFormat39Choice
 
 class SafeKeepingPlace4(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgPlcFrmt", "_LEI"]
+	__slots__ = ["_LEI", "_SfkpgPlcFrmt"]
 	@property
 	def LEI(self):
 		return self._LEI

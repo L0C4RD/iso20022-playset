@@ -1,11 +1,11 @@
 from . import base_types
-from ._TargetMarket3Choice import TargetMarket3Choice
 from ._AdditionalInformation15 import AdditionalInformation15
 from ._Max35Text import Max35Text
+from ._TargetMarket3Choice import TargetMarket3Choice
 
 class OtherTargetMarketInvestor1(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstrTp", "_AddtlInf", "_Trgt"]
+	__slots__ = ["_AddtlInf", "_InvstrTp", "_Trgt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

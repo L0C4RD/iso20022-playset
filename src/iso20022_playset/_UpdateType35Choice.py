@@ -3,7 +3,7 @@ from ._SecurityAttributes12 import SecurityAttributes12
 
 class UpdateType35Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Del", "_Modfy", "_Add"]
+	__slots__ = ["_Add", "_Del", "_Modfy"]
 	@property
 	def Add(self):
 		return self._Add

@@ -5,7 +5,7 @@ from ._TransparencyDataReport17 import TransparencyDataReport17
 
 class FinancialInstrumentReportingEquityTradingActivityResultV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RptHdr", "_SplmtryData", "_EqtyTrnsprncyData"]
+	__slots__ = ["_EqtyTrnsprncyData", "_RptHdr", "_SplmtryData"]
 	@property
 	def EqtyTrnsprncyData(self):
 		return self._EqtyTrnsprncyData

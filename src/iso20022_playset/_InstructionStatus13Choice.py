@@ -1,11 +1,11 @@
 from . import base_types
 from ._InstructionProcessingStatus6 import InstructionProcessingStatus6
-from ._RejectedStatus55Choice import RejectedStatus55Choice
 from ._PendingStatus70Choice import PendingStatus70Choice
+from ._RejectedStatus55Choice import RejectedStatus55Choice
 
 class InstructionStatus13Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rjctd", "_PrcgSts", "_Pdg"]
+	__slots__ = ["_Pdg", "_PrcgSts", "_Rjctd"]
 	@property
 	def Pdg(self):
 		return self._Pdg

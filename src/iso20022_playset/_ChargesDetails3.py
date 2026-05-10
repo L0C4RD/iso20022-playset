@@ -4,7 +4,7 @@ from ._ChargesType1Choice import ChargesType1Choice
 
 class ChargesDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_AmtOrPctg"]
+	__slots__ = ["_AmtOrPctg", "_Tp"]
 	@property
 	def AmtOrPctg(self):
 		return self._AmtOrPctg

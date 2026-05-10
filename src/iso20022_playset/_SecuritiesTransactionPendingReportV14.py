@@ -1,15 +1,15 @@
 from . import base_types
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._Pagination1 import Pagination1
+from ._PartyIdentification144 import PartyIdentification144
 from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._Statement64 import Statement64
-from ._PartyIdentification144 import PartyIdentification144
-from ._Pagination1 import Pagination1
-from ._Transaction163 import Transaction163
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 from ._StatusAndReason47 import StatusAndReason47
+from ._Transaction163 import Transaction163
 
 class SecuritiesTransactionPendingReportV14(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_Sts", "_StmtGnlDtls", "_SfkpgAcct", "_Txs", "_AcctOwnr", "_Pgntn"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_Pgntn", "_SfkpgAcct", "_StmtGnlDtls", "_Sts", "_Txs"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

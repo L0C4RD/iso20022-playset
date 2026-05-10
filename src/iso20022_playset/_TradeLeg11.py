@@ -1,29 +1,29 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._UTIIdentifier import UTIIdentifier
+from ._AmountAndDirection21 import AmountAndDirection21
+from ._CurrencyCode import CurrencyCode
 from ._DateFormat66Choice import DateFormat66Choice
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._AmountAndDirection21 import AmountAndDirection21
-from ._SecurityIdentification48 import SecurityIdentification48
-from ._TradingCapacity5Code import TradingCapacity5Code
-from ._Status5Code import Status5Code
-from ._Side1Code import Side1Code
 from ._ISODateTime import ISODateTime
 from ._MarketIdentification84 import MarketIdentification84
-from ._PartyIdentificationAndAccount230 import PartyIdentificationAndAccount230
 from ._MarketIdentification85 import MarketIdentification85
-from ._YesNoIndicator import YesNoIndicator
-from ._TradePosting1Code import TradePosting1Code
-from ._TradeType1Code import TradeType1Code
-from ._SafekeepingPlaceFormat43Choice import SafekeepingPlaceFormat43Choice
-from ._Price14 import Price14
-from ._CurrencyCode import CurrencyCode
 from ._Max35Text import Max35Text
 from ._PartyIdentification253Choice import PartyIdentification253Choice
+from ._PartyIdentificationAndAccount230 import PartyIdentificationAndAccount230
+from ._Price14 import Price14
+from ._SafekeepingPlaceFormat43Choice import SafekeepingPlaceFormat43Choice
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SecurityIdentification48 import SecurityIdentification48
+from ._Side1Code import Side1Code
+from ._Status5Code import Status5Code
+from ._TradePosting1Code import TradePosting1Code
+from ._TradeType1Code import TradeType1Code
+from ._TradingCapacity5Code import TradingCapacity5Code
+from ._UTIIdentifier import UTIIdentifier
+from ._YesNoIndicator import YesNoIndicator
 
 class TradeLeg11(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgPty", "_PlcOfListg", "_TradTp", "_TradRegnOrgn", "_OrdrId", "_TradQty", "_TradgCcy", "_PlcOfTrad", "_BuySellInd", "_Brkr", "_TradgPtyAcct", "_TxDtTm", "_DealPric", "_UnqTxIdr", "_TradExctnId", "_TradPstngCd", "_AcrdIntrstAmt", "_FinInstrmId", "_TradgCpcty", "_Sts", "_SttlmDt", "_TradDt", "_SfkpgAcct", "_TradId", "_AllcnId", "_DerivRltdTrad", "_SfkpgPlc", "_GrssAmt", "_TradLegId"]
+	__slots__ = ["_AcrdIntrstAmt", "_AllcnId", "_Brkr", "_BuySellInd", "_DealPric", "_DerivRltdTrad", "_FinInstrmId", "_GrssAmt", "_OrdrId", "_PlcOfListg", "_PlcOfTrad", "_SfkpgAcct", "_SfkpgPlc", "_Sts", "_SttlmDt", "_TradDt", "_TradExctnId", "_TradId", "_TradLegId", "_TradPstngCd", "_TradQty", "_TradRegnOrgn", "_TradTp", "_TradgCcy", "_TradgCpcty", "_TradgPty", "_TradgPtyAcct", "_TxDtTm", "_UnqTxIdr"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt

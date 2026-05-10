@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class DetailedInstructionStatus21(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_SubAcctId", "_SnglInstrId", "_InstrSts"]
+	__slots__ = ["_AcctId", "_InstrSts", "_SnglInstrId", "_SubAcctId"]
 	@property
 	def AcctId(self):
 		return self._AcctId

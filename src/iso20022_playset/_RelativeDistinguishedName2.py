@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._AttributeType2Code import AttributeType2Code
+from ._Max140Text import Max140Text
 
 class RelativeDistinguishedName2(base_types._BaseFieldType):
 
-	__slots__ = ["_AttrVal", "_AttrTp"]
+	__slots__ = ["_AttrTp", "_AttrVal"]
 	@property
 	def AttrTp(self):
 		return self._AttrTp

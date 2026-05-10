@@ -1,12 +1,12 @@
 from . import base_types
 from ._BBANIdentifier import BBANIdentifier
-from ._SimpleIdentificationInformation2 import SimpleIdentificationInformation2
 from ._IBANIdentifier import IBANIdentifier
+from ._SimpleIdentificationInformation2 import SimpleIdentificationInformation2
 from ._UPICIdentifier import UPICIdentifier
 
 class AccountIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IBAN", "_BBAN", "_PrtryAcct", "_UPIC"]
+	__slots__ = ["_BBAN", "_IBAN", "_PrtryAcct", "_UPIC"]
 	@property
 	def BBAN(self):
 		return self._BBAN

@@ -3,7 +3,7 @@ from ._AmountAndDirection102 import AmountAndDirection102
 
 class StressLiquidResourceRequirement1(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmOrDlvry", "_VartnMrgnPmtOblgtn", "_Othr", "_OprlOutflw"]
+	__slots__ = ["_OprlOutflw", "_Othr", "_SttlmOrDlvry", "_VartnMrgnPmtOblgtn"]
 	@property
 	def OprlOutflw(self):
 		return self._OprlOutflw

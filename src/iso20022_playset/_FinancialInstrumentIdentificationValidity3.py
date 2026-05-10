@@ -1,6 +1,6 @@
 from . import base_types
-from ._SecurityIdentification39 import SecurityIdentification39
 from ._ISODate import ISODate
+from ._SecurityIdentification39 import SecurityIdentification39
 
 class FinancialInstrumentIdentificationValidity3(base_types._BaseFieldType):
 

@@ -5,7 +5,7 @@ from ._Max140Text import Max140Text
 
 class CaseStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_DtTm", "_CaseSts", "_Rsn"]
+	__slots__ = ["_CaseSts", "_DtTm", "_Rsn"]
 	@property
 	def CaseSts(self):
 		return self._CaseSts

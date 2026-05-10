@@ -1,10 +1,10 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._SecuritiesInstrumentClassification2 import SecuritiesInstrumentClassification2
+from ._SupplementaryData1 import SupplementaryData1
 
 class FinancialInstrumentReportingInstrumentClassificationReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_InstrmClssfctn"]
+	__slots__ = ["_InstrmClssfctn", "_SplmtryData"]
 	@property
 	def InstrmClssfctn(self):
 		return self._InstrmClssfctn

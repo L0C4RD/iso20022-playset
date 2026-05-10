@@ -4,7 +4,7 @@ from ._SettlementFailsDailyCSD3 import SettlementFailsDailyCSD3
 
 class SettlementFailsDailyCSD1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DataSetActn", "_Data"]
+	__slots__ = ["_Data", "_DataSetActn"]
 	@property
 	def Data(self):
 		return self._Data

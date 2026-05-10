@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._FinancialInstrumentAggregateBalance1 import FinancialInstrumentAggregateBalance1
 from ._SecurityIdentification19 import SecurityIdentification19
+from ._SupplementaryData1 import SupplementaryData1
 
 class AggregateHoldingBalance2(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_BalForFinInstrm", "_SplmtryData"]
+	__slots__ = ["_BalForFinInstrm", "_FinInstrmId", "_SplmtryData"]
 	@property
 	def BalForFinInstrm(self):
 		return self._BalForFinInstrm

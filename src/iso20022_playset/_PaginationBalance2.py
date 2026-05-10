@@ -4,7 +4,7 @@ from ._OpeningBalance3Choice import OpeningBalance3Choice
 
 class PaginationBalance2(base_types._BaseFieldType):
 
-	__slots__ = ["_OpngBal", "_ClsgBal"]
+	__slots__ = ["_ClsgBal", "_OpngBal"]
 	@property
 	def ClsgBal(self):
 		return self._ClsgBal

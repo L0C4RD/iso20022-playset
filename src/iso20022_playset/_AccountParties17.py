@@ -1,12 +1,12 @@
 from . import base_types
 from ._AccountParties12Choice import AccountParties12Choice
-from ._RegisteredShareholderName1Choice import RegisteredShareholderName1Choice
-from ._InvestmentAccountOwnershipInformation16 import InvestmentAccountOwnershipInformation16
 from ._ExtendedParty14 import ExtendedParty14
+from ._InvestmentAccountOwnershipInformation16 import InvestmentAccountOwnershipInformation16
+from ._RegisteredShareholderName1Choice import RegisteredShareholderName1Choice
 
 class AccountParties17(base_types._BaseFieldType):
 
-	__slots__ = ["_Admstr", "_ScndryOwnr", "_Bnfcry", "_Prtctr", "_RegdShrhldrNm", "_LglGuardn", "_SnrMggOffcl", "_Grntr", "_SucssrOnDth", "_CtdnForMnr", "_Sttlr", "_OthrPty", "_PwrOfAttny", "_PrncplAcctPty"]
+	__slots__ = ["_Admstr", "_Bnfcry", "_CtdnForMnr", "_Grntr", "_LglGuardn", "_OthrPty", "_PrncplAcctPty", "_Prtctr", "_PwrOfAttny", "_RegdShrhldrNm", "_ScndryOwnr", "_SnrMggOffcl", "_Sttlr", "_SucssrOnDth"]
 	@property
 	def Admstr(self):
 		return self._Admstr

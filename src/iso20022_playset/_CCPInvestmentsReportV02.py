@@ -1,6 +1,6 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._Investment2Choice import Investment2Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class CCPInvestmentsReportV02(base_types._BaseFieldType):
 

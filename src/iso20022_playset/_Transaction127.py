@@ -1,11 +1,11 @@
 from . import base_types
 from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._TransactionDetails164 import TransactionDetails164
 from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
+from ._TransactionDetails164 import TransactionDetails164
 
 class Transaction127(base_types._BaseFieldType):
 
-	__slots__ = ["_TradId", "_TrptyAgtSvcPrvdrCollTxId", "_TxDtls", "_PoolId", "_CtrPtyMktInfrstrctrTxId", "_CorpActnEvtId", "_ClntCollInstrId", "_TrptyAgtSvcPrvdrCollInstrId", "_MktInfrstrctrTxId", "_AcctOwnrTxId", "_PrcrTxId", "_CmonId", "_AcctSvcrTxId", "_ClntTrptyCollTxId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_ClntCollInstrId", "_ClntTrptyCollTxId", "_CmonId", "_CorpActnEvtId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_PoolId", "_PrcrTxId", "_TradId", "_TrptyAgtSvcPrvdrCollInstrId", "_TrptyAgtSvcPrvdrCollTxId", "_TxDtls"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

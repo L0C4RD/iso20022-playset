@@ -1,12 +1,12 @@
 from . import base_types
 from ._GroupCancellationIndicator import GroupCancellationIndicator
 from ._ISODateTime import ISODateTime
-from ._OriginalNotificationReference14 import OriginalNotificationReference14
 from ._Max35Text import Max35Text
+from ._OriginalNotificationReference14 import OriginalNotificationReference14
 
 class OriginalNotification16(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgId", "_OrgnlNtfctnId", "_NtfctnCxl", "_OrgnlCreDtTm", "_OrgnlNtfctnRef"]
+	__slots__ = ["_NtfctnCxl", "_OrgnlCreDtTm", "_OrgnlMsgId", "_OrgnlNtfctnId", "_OrgnlNtfctnRef"]
 	@property
 	def NtfctnCxl(self):
 		return self._NtfctnCxl

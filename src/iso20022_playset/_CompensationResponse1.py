@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._PercentageRate import PercentageRate
-from ._DatePeriod2 import DatePeriod2
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._DatePeriod2 import DatePeriod2
+from ._ISODate import ISODate
 from ._Max140Text import Max140Text
+from ._PercentageRate import PercentageRate
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CompensationResponse1(base_types._BaseFieldType):
 
-	__slots__ = ["_XpctdValDt", "_Rsn", "_InitlAmt", "_Prd", "_IntrstRate", "_Grantd", "_AmtDue", "_PdChrgs"]
+	__slots__ = ["_AmtDue", "_Grantd", "_InitlAmt", "_IntrstRate", "_PdChrgs", "_Prd", "_Rsn", "_XpctdValDt"]
 	@property
 	def AmtDue(self):
 		return self._AmtDue

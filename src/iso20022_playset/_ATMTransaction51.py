@@ -1,24 +1,24 @@
 from . import base_types
-from ._DetailedAmount13 import DetailedAmount13
+from ._ATMCassette3 import ATMCassette3
+from ._ATMDepositComponent1 import ATMDepositComponent1
 from ._ATMDepositedMedia4 import ATMDepositedMedia4
 from ._ATMTotals4 import ATMTotals4
-from ._ATMDepositComponent1 import ATMDepositComponent1
-from ._Max10000Binary import Max10000Binary
-from ._ATMCassette3 import ATMCassette3
-from ._AuthorisationResult20 import AuthorisationResult20
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._AmountAndCurrency1 import AmountAndCurrency1
-from ._TransactionIdentifier3 import TransactionIdentifier3
-from ._DetailedAmount16 import DetailedAmount16
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._FailureReason9Code import FailureReason9Code
 from ._ATMTransactionStatus1Code import ATMTransactionStatus1Code
+from ._AmountAndCurrency1 import AmountAndCurrency1
+from ._AuthorisationResult20 import AuthorisationResult20
+from ._DetailedAmount13 import DetailedAmount13
+from ._DetailedAmount16 import DetailedAmount16
+from ._FailureReason9Code import FailureReason9Code
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max10000Binary import Max10000Binary
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._TransactionIdentifier3 import TransactionIdentifier3
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ATMTransaction51(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlChrg", "_TtlReqdAmt", "_SubDpst", "_IncdntDtl", "_ToBeRcncldMdiaCntrs", "_DtldReqdAmt", "_ICCRltdData", "_ATMTtls", "_RctPrtd", "_TtlDpstdAmt", "_ReqdRct", "_TxId", "_Csstt", "_AuthstnRslt", "_Incdnt", "_TxSts", "_RcncltnId", "_TtlAuthrsdAmt"]
+	__slots__ = ["_ATMTtls", "_AddtlChrg", "_AuthstnRslt", "_Csstt", "_DtldReqdAmt", "_ICCRltdData", "_Incdnt", "_IncdntDtl", "_RcncltnId", "_RctPrtd", "_ReqdRct", "_SubDpst", "_ToBeRcncldMdiaCntrs", "_TtlAuthrsdAmt", "_TtlDpstdAmt", "_TtlReqdAmt", "_TxId", "_TxSts"]
 	@property
 	def ATMTtls(self):
 		return self._ATMTtls

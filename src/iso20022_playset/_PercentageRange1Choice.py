@@ -1,11 +1,11 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._PercentageRangeBoundary1 import PercentageRangeBoundary1
 from ._FromToPercentageRange1 import FromToPercentageRange1
+from ._PercentageRangeBoundary1 import PercentageRangeBoundary1
+from ._PercentageRate import PercentageRate
 
 class PercentageRange1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FrTo", "_NEQ", "_To", "_EQ", "_Fr"]
+	__slots__ = ["_EQ", "_Fr", "_FrTo", "_NEQ", "_To"]
 	@property
 	def EQ(self):
 		return self._EQ

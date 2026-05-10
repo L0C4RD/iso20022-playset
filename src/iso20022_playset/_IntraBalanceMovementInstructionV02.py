@@ -1,17 +1,17 @@
 from . import base_types
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._IntraBalance5 import IntraBalance5
+from ._Linkages57 import Linkages57
+from ._Max35Text import Max35Text
 from ._NumberCount1Choice import NumberCount1Choice
 from ._SupplementaryData1 import SupplementaryData1
 from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._IntraBalance5 import IntraBalance5
 from ._TransactionAndDocumentIdentification6 import TransactionAndDocumentIdentification6
-from ._Max35Text import Max35Text
-from ._Linkages57 import Linkages57
-from ._CashAccount40 import CashAccount40
 
 class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CorpActnEvtId", "_IntraBal", "_CshAcctSvcr", "_Lnkgs", "_CshAcct", "_CshAcctOwnr", "_NbCounts", "_SplmtryData"]
+	__slots__ = ["_CorpActnEvtId", "_CshAcct", "_CshAcctOwnr", "_CshAcctSvcr", "_Id", "_IntraBal", "_Lnkgs", "_NbCounts", "_SplmtryData"]
 	@property
 	def CorpActnEvtId(self):
 		return self._CorpActnEvtId

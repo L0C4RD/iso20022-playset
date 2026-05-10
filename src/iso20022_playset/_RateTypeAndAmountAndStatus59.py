@@ -1,11 +1,11 @@
 from . import base_types
+from ._RateStatus4Choice import RateStatus4Choice
 from ._RateType80Choice import RateType80Choice
 from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
-from ._RateStatus4Choice import RateStatus4Choice
 
 class RateTypeAndAmountAndStatus59(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_RateTp", "_RateSts"]
+	__slots__ = ["_Amt", "_RateSts", "_RateTp"]
 	@property
 	def Amt(self):
 		return self._Amt

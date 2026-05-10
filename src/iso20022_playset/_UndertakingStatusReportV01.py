@@ -1,10 +1,10 @@
 from . import base_types
-from ._UndertakingStatusAdvice1 import UndertakingStatusAdvice1
 from ._PartyAndSignature2 import PartyAndSignature2
+from ._UndertakingStatusAdvice1 import UndertakingStatusAdvice1
 
 class UndertakingStatusReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgStsRptDtls", "_DgtlSgntr"]
+	__slots__ = ["_DgtlSgntr", "_UdrtkgStsRptDtls"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr

@@ -1,14 +1,14 @@
 from . import base_types
+from ._ContactPerson1 import ContactPerson1
 from ._CorporateActionAdditionalInformation1 import CorporateActionAdditionalInformation1
+from ._CorporateActionElection3 import CorporateActionElection3
 from ._CorporateActionInformation1 import CorporateActionInformation1
 from ._DocumentIdentification8 import DocumentIdentification8
-from ._CorporateActionElection3 import CorporateActionElection3
 from ._ElectionAdviceFunction1 import ElectionAdviceFunction1
-from ._ContactPerson1 import ContactPerson1
 
 class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_ElctnDtls", "_Id", "_AddtlInf", "_CtctDtls", "_ElctnAdvcTpAndLkg", "_CorpActnGnlInf"]
+	__slots__ = ["_AddtlInf", "_CorpActnGnlInf", "_CtctDtls", "_ElctnAdvcTpAndLkg", "_ElctnDtls", "_Id"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

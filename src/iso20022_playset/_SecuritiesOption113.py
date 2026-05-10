@@ -1,25 +1,25 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._GenericIdentification30 import GenericIdentification30
-from ._NonEligibleProceedsIndicator5Choice import NonEligibleProceedsIndicator5Choice
+from ._CorporateActionAmounts60 import CorporateActionAmounts60
+from ._CorporateActionPrice89 import CorporateActionPrice89
 from ._CorporateActionRate128 import CorporateActionRate128
 from ._CountryCode import CountryCode
-from ._CorporateActionAmounts60 import CorporateActionAmounts60
-from ._IssuerOfferorTaxabilityIndicator2Choice import IssuerOfferorTaxabilityIndicator2Choice
-from ._FractionDispositionType26Choice import FractionDispositionType26Choice
-from ._TemporaryFinancialInstrumentIndicator3Choice import TemporaryFinancialInstrumentIndicator3Choice
-from ._Period6Choice import Period6Choice
+from ._CreditDebitCode import CreditDebitCode
 from ._FinancialInstrumentAttributes131 import FinancialInstrumentAttributes131
-from ._SecurityDate20 import SecurityDate20
+from ._FractionDispositionType26Choice import FractionDispositionType26Choice
+from ._GenericIdentification30 import GenericIdentification30
+from ._IssuerOfferorTaxabilityIndicator2Choice import IssuerOfferorTaxabilityIndicator2Choice
+from ._NewSecuritiesIssuanceType5Code import NewSecuritiesIssuanceType5Code
+from ._NonEligibleProceedsIndicator5Choice import NonEligibleProceedsIndicator5Choice
+from ._Period6Choice import Period6Choice
 from ._Quantity51Choice import Quantity51Choice
 from ._SafekeepingPlaceFormat41Choice import SafekeepingPlaceFormat41Choice
-from ._CreditDebitCode import CreditDebitCode
-from ._CorporateActionPrice89 import CorporateActionPrice89
-from ._NewSecuritiesIssuanceType5Code import NewSecuritiesIssuanceType5Code
+from ._SecurityDate20 import SecurityDate20
+from ._TemporaryFinancialInstrumentIndicator3Choice import TemporaryFinancialInstrumentIndicator3Choice
 
 class SecuritiesOption113(base_types._BaseFieldType):
 
-	__slots__ = ["_DtDtls", "_CdtDbtInd", "_TempFinInstrmInd", "_EntitldQty", "_CtryOfIncmSrc", "_NonElgblPrcdsInd", "_AmtDtls", "_IssrOfferrTaxbltyInd", "_XmptnTp", "_IncmTp", "_FrctnDspstn", "_CcyOptn", "_RateDtls", "_SfkpgPlc", "_TradgPrd", "_OthrIncmTp", "_PricDtls", "_SctyDtls", "_NewSctiesIssncInd"]
+	__slots__ = ["_AmtDtls", "_CcyOptn", "_CdtDbtInd", "_CtryOfIncmSrc", "_DtDtls", "_EntitldQty", "_FrctnDspstn", "_IncmTp", "_IssrOfferrTaxbltyInd", "_NewSctiesIssncInd", "_NonElgblPrcdsInd", "_OthrIncmTp", "_PricDtls", "_RateDtls", "_SctyDtls", "_SfkpgPlc", "_TempFinInstrmInd", "_TradgPrd", "_XmptnTp"]
 	@property
 	def AmtDtls(self):
 		return self._AmtDtls

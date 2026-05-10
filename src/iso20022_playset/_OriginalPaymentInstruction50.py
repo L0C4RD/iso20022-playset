@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._BatchBookingIndicator import BatchBookingIndicator
 from ._DecimalNumber import DecimalNumber
-from ._Max35Text import Max35Text
 from ._Max15NumericText import Max15NumericText
-from ._PaymentTransaction156 import PaymentTransaction156
+from ._Max35Text import Max35Text
 from ._PaymentReversalReason10 import PaymentReversalReason10
+from ._PaymentTransaction156 import PaymentTransaction156
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class OriginalPaymentInstruction50(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlNbOfTxs", "_OrgnlCtrlSum", "_OrgnlPmtInfId", "_RvslPmtInfId", "_TxInf", "_PmtInfRvsl", "_RvslRsnInf", "_BtchBookg"]
+	__slots__ = ["_BtchBookg", "_OrgnlCtrlSum", "_OrgnlNbOfTxs", "_OrgnlPmtInfId", "_PmtInfRvsl", "_RvslPmtInfId", "_RvslRsnInf", "_TxInf"]
 	@property
 	def BtchBookg(self):
 		return self._BtchBookg

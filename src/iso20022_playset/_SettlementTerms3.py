@@ -1,10 +1,10 @@
 from . import base_types
-from ._FinancialInstitutionIdentification4Choice import FinancialInstitutionIdentification4Choice
 from ._CashAccount24 import CashAccount24
+from ._FinancialInstitutionIdentification4Choice import FinancialInstitutionIdentification4Choice
 
 class SettlementTerms3(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrAgt", "_CdtrAcct"]
+	__slots__ = ["_CdtrAcct", "_CdtrAgt"]
 	@property
 	def CdtrAcct(self):
 		return self._CdtrAcct

@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._ExposureType13Code import ExposureType13Code
-from ._SummaryAmounts2 import SummaryAmounts2
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ShortLong1Code import ShortLong1Code
+from ._ExposureType13Code import ExposureType13Code
+from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
+from ._ShortLong1Code import ShortLong1Code
+from ._SummaryAmounts2 import SummaryAmounts2
 
 class Summary3(base_types._BaseFieldType):
 
-	__slots__ = ["_NetXcssDfcitInd", "_XpsrTp", "_XpsdAmtPtyA", "_NetXcssDfcit", "_ReqdSttlmDt", "_XpsdAmtPtyB", "_SummryDtls", "_TtlValOfColl", "_ValtnDtTm"]
+	__slots__ = ["_NetXcssDfcit", "_NetXcssDfcitInd", "_ReqdSttlmDt", "_SummryDtls", "_TtlValOfColl", "_ValtnDtTm", "_XpsdAmtPtyA", "_XpsdAmtPtyB", "_XpsrTp"]
 	@property
 	def NetXcssDfcit(self):
 		return self._NetXcssDfcit

@@ -1,10 +1,10 @@
 from . import base_types
-from ._ProprietaryQuantity8 import ProprietaryQuantity8
 from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
+from ._ProprietaryQuantity8 import ProprietaryQuantity8
 
 class Quantity48Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_PrtryQty"]
+	__slots__ = ["_PrtryQty", "_Qty"]
 	@property
 	def PrtryQty(self):
 		return self._PrtryQty

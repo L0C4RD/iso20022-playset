@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._DatePeriod2 import DatePeriod2
+from ._ISODate import ISODate
 
 class DatePeriodSearch1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ToDt", "_FrDt", "_EQDt", "_NEQDt", "_FrToDt"]
+	__slots__ = ["_EQDt", "_FrDt", "_FrToDt", "_NEQDt", "_ToDt"]
 	@property
 	def EQDt(self):
 		return self._EQDt

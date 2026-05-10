@@ -1,8 +1,8 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._CreditLineType1Choice import CreditLineType1Choice
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._CreditLineType1Choice import CreditLineType1Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CreditLine3(base_types._BaseFieldType):
 

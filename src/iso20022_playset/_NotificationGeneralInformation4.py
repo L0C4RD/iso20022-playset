@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._EventStatus1 import EventStatus1
+from ._Max35Text import Max35Text
 from ._NotificationType3Code import NotificationType3Code
 from ._YesNoIndicator import YesNoIndicator
 
 class NotificationGeneralInformation4(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrhldrRghtsDrctvInd", "_ConfOfHldgReqrd", "_NtfctnSts", "_NtfctnId", "_NtfctnTp"]
+	__slots__ = ["_ConfOfHldgReqrd", "_NtfctnId", "_NtfctnSts", "_NtfctnTp", "_ShrhldrRghtsDrctvInd"]
 	@property
 	def ConfOfHldgReqrd(self):
 		return self._ConfOfHldgReqrd

@@ -1,16 +1,16 @@
 from . import base_types
-from ._TransferReference16 import TransferReference16
-from ._TransferInFunction2Code import TransferInFunction2Code
 from ._AdditionalReference10 import AdditionalReference10
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
 from ._AdditionalReference11 import AdditionalReference11
 from ._CopyInformation5 import CopyInformation5
+from ._MarketPracticeVersion1 import MarketPracticeVersion1
 from ._Max35Text import Max35Text
 from ._MessageIdentification1 import MessageIdentification1
+from ._TransferInFunction2Code import TransferInFunction2Code
+from ._TransferReference16 import TransferReference16
 
 class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_RvslRefs", "_RltdRef", "_PoolRef", "_Fctn", "_PrvsRef", "_MstrRef", "_MktPrctcVrsn", "_CpyDtls"]
+	__slots__ = ["_CpyDtls", "_Fctn", "_MktPrctcVrsn", "_MsgId", "_MstrRef", "_PoolRef", "_PrvsRef", "_RltdRef", "_RvslRefs"]
 	@property
 	def CpyDtls(self):
 		return self._CpyDtls

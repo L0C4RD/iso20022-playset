@@ -1,10 +1,10 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._PartyIdentification15 import PartyIdentification15
+from ._PercentageRate import PercentageRate
 
 class BasicCollateralValuation1Details(base_types._BaseFieldType):
 
-	__slots__ = ["_ValtnHrcut", "_HrcutSrc"]
+	__slots__ = ["_HrcutSrc", "_ValtnHrcut"]
 	@property
 	def HrcutSrc(self):
 		return self._HrcutSrc

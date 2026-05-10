@@ -1,12 +1,12 @@
 from . import base_types
+from ._AdditionalReference3 import AdditionalReference3
 from ._FundDetailedConfirmedCashForecastReport3 import FundDetailedConfirmedCashForecastReport3
 from ._MessageIdentification1 import MessageIdentification1
 from ._Pagination import Pagination
-from ._AdditionalReference3 import AdditionalReference3
 
 class FundDetailedConfirmedCashForecastReportCancellationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_RltdRef", "_MsgPgntn", "_PrvsRef", "_CshFcstRptToBeCanc", "_PoolRef"]
+	__slots__ = ["_CshFcstRptToBeCanc", "_MsgId", "_MsgPgntn", "_PoolRef", "_PrvsRef", "_RltdRef"]
 	@property
 	def CshFcstRptToBeCanc(self):
 		return self._CshFcstRptToBeCanc

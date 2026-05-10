@@ -4,7 +4,7 @@ from ._PartyAndSignature2 import PartyAndSignature2
 
 class UndertakingAmendmentResponseMessage1(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgAmdmntRspnDtls", "_DgtlSgntr"]
+	__slots__ = ["_DgtlSgntr", "_UdrtkgAmdmntRspnDtls"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr

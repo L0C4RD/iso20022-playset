@@ -1,11 +1,11 @@
 from . import base_types
-from ._SecuritiesCollateralResponse2 import SecuritiesCollateralResponse2
 from ._CashCollateralResponse3 import CashCollateralResponse3
 from ._OtherCollateralResponse3 import OtherCollateralResponse3
+from ._SecuritiesCollateralResponse2 import SecuritiesCollateralResponse2
 
 class CollateralResponse3(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesCollRspn", "_CshCollRspn", "_OthrCollRspn"]
+	__slots__ = ["_CshCollRspn", "_OthrCollRspn", "_SctiesCollRspn"]
 	@property
 	def CshCollRspn(self):
 		return self._CshCollRspn

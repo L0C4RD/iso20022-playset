@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._NumberOfReportsPerStatus4 import NumberOfReportsPerStatus4
 from ._ReconciliationReport8 import ReconciliationReport8
+from ._SupplementaryData1 import SupplementaryData1
 
 class TradeData28(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_PairgRcncltnSts", "_RcncltnRpt"]
+	__slots__ = ["_PairgRcncltnSts", "_RcncltnRpt", "_SplmtryData"]
 	@property
 	def PairgRcncltnSts(self):
 		return self._PairgRcncltnSts

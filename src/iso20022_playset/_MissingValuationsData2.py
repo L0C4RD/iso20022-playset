@@ -1,11 +1,11 @@
 from . import base_types
 from ._CounterpartyData92 import CounterpartyData92
-from ._Number import Number
 from ._MissingValuationsTransactionData2 import MissingValuationsTransactionData2
+from ._Number import Number
 
 class MissingValuationsData2(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfOutsdngDerivs", "_NbOfOutsdngDerivsWthOutdtdValtn", "_CtrPtyId", "_TxDtls", "_NbOfOutsdngDerivsWthNoValtn"]
+	__slots__ = ["_CtrPtyId", "_NbOfOutsdngDerivs", "_NbOfOutsdngDerivsWthNoValtn", "_NbOfOutsdngDerivsWthOutdtdValtn", "_TxDtls"]
 	@property
 	def CtrPtyId(self):
 		return self._CtrPtyId

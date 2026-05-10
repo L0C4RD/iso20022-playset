@@ -1,14 +1,14 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._CountryCode import CountryCode
 from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
-from ._TaxType12Code import TaxType12Code
-from ._TaxCalculationInformation4 import TaxCalculationInformation4
+from ._CountryCode import CountryCode
 from ._Extended350Code import Extended350Code
+from ._PercentageRate import PercentageRate
+from ._TaxCalculationInformation4 import TaxCalculationInformation4
+from ._TaxType12Code import TaxType12Code
 
 class Tax17(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_Amt", "_TaxClctnDtls", "_XtndedTp", "_Tp", "_Rate"]
+	__slots__ = ["_Amt", "_Ctry", "_Rate", "_TaxClctnDtls", "_Tp", "_XtndedTp"]
 	@property
 	def Amt(self):
 		return self._Amt

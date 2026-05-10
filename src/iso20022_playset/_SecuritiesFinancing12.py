@@ -1,31 +1,31 @@
 from . import base_types
+from ._Agreement5 import Agreement5
+from ._AmountAndDirection5 import AmountAndDirection5
+from ._BaseOneRate import BaseOneRate
+from ._BorrowingReason2Choice import BorrowingReason2Choice
+from ._CollateralType4Choice import CollateralType4Choice
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
+from ._InterestComputationMethod3Choice import InterestComputationMethod3Choice
+from ._LegalFramework1Code import LegalFramework1Code
 from ._LendingTransactionMethod2Choice import LendingTransactionMethod2Choice
 from ._Max3Number import Max3Number
-from ._Reversible2Choice import Reversible2Choice
-from ._CollateralType4Choice import CollateralType4Choice
-from ._PercentageRate import PercentageRate
-from ._Agreement5 import Agreement5
-from ._Revaluation3Choice import Revaluation3Choice
-from ._SecuritiesLendingType2Choice import SecuritiesLendingType2Choice
-from ._AmountAndDirection5 import AmountAndDirection5
 from ._Max3NumericText import Max3NumericText
-from ._InterestComputationMethod3Choice import InterestComputationMethod3Choice
-from ._ISODateTime import ISODateTime
-from ._ISODate import ISODate
-from ._SpreadRate1 import SpreadRate1
-from ._RateType35Choice import RateType35Choice
 from ._Number24Choice import Number24Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._BaseOneRate import BaseOneRate
+from ._PercentageRate import PercentageRate
 from ._Rate2 import Rate2
-from ._BorrowingReason2Choice import BorrowingReason2Choice
-from ._RateOrName1Choice import RateOrName1Choice
-from ._LegalFramework1Code import LegalFramework1Code
 from ._RateName1 import RateName1
+from ._RateOrName1Choice import RateOrName1Choice
+from ._RateType35Choice import RateType35Choice
+from ._Revaluation3Choice import Revaluation3Choice
+from ._Reversible2Choice import Reversible2Choice
+from ._SecuritiesLendingType2Choice import SecuritiesLendingType2Choice
+from ._SpreadRate1 import SpreadRate1
+from ._YesNoIndicator import YesNoIndicator
 
 class SecuritiesFinancing12(base_types._BaseFieldType):
 
-	__slots__ = ["_AcrdIntrstAmt", "_AcrdIntrstPctg", "_MinDtForCallBck", "_BrrwgRsn", "_CllblTradInd", "_EndFctr", "_IntrstCmptnMtd", "_FrftAmt", "_AcrdIntrstTax", "_PrdcPmt", "_VarblRateSpprt", "_LndgWthColl", "_RateTp", "_SctiesLndgTp", "_Rvsbl", "_BrrwgRate", "_TxCallDely", "_CollTp", "_RpRate", "_CtrctTermsModChngd", "_SctiesHrcut", "_PricgRate", "_StdCollRatio", "_NbOfDaysLndgBrrwg", "_RateChngDt", "_IntrstRate", "_EndNbOfDaysAcrd", "_StockLnMrgn", "_PrmAmt", "_LglFrmwk", "_LndgTxMtd", "_StdCollAmt", "_Rvaltn", "_SprdRate", "_TtlNbOfCollInstrs", "_FincgAgrmt", "_RollOver", "_ExCpn", "_DvddRatio", "_ClsgAmtPerPcsOfColl"]
+	__slots__ = ["_AcrdIntrstAmt", "_AcrdIntrstPctg", "_AcrdIntrstTax", "_BrrwgRate", "_BrrwgRsn", "_CllblTradInd", "_ClsgAmtPerPcsOfColl", "_CollTp", "_CtrctTermsModChngd", "_DvddRatio", "_EndFctr", "_EndNbOfDaysAcrd", "_ExCpn", "_FincgAgrmt", "_FrftAmt", "_IntrstCmptnMtd", "_IntrstRate", "_LglFrmwk", "_LndgTxMtd", "_LndgWthColl", "_MinDtForCallBck", "_NbOfDaysLndgBrrwg", "_PrdcPmt", "_PricgRate", "_PrmAmt", "_RateChngDt", "_RateTp", "_RollOver", "_RpRate", "_Rvaltn", "_Rvsbl", "_SctiesHrcut", "_SctiesLndgTp", "_SprdRate", "_StdCollAmt", "_StdCollRatio", "_StockLnMrgn", "_TtlNbOfCollInstrs", "_TxCallDely", "_VarblRateSpprt"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt

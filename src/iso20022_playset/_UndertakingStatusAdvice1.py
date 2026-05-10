@@ -1,19 +1,19 @@
 from . import base_types
-from ._PartyIdentification43 import PartyIdentification43
-from ._UndertakingStatus3Code import UndertakingStatus3Code
-from ._OriginalMessage1 import OriginalMessage1
-from ._StatusReasonInformation8 import StatusReasonInformation8
-from ._Undertaking8 import Undertaking8
-from ._Number import Number
-from ._ExternalUndertakingStatusCategory1Code import ExternalUndertakingStatusCategory1Code
 from ._Document9 import Document9
+from ._ExternalUndertakingStatusCategory1Code import ExternalUndertakingStatusCategory1Code
 from ._Max2000Text import Max2000Text
 from ._Max35Text import Max35Text
+from ._Number import Number
+from ._OriginalMessage1 import OriginalMessage1
+from ._PartyIdentification43 import PartyIdentification43
 from ._ReportedAmount1 import ReportedAmount1
+from ._StatusReasonInformation8 import StatusReasonInformation8
+from ._Undertaking8 import Undertaking8
+from ._UndertakingStatus3Code import UndertakingStatus3Code
 
 class UndertakingStatusAdvice1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_UdrtkgId", "_Sts", "_OrgnlMsgDtls", "_AmdmntSeqNb", "_NclsdFile", "_AdvsgPtyRefNb", "_StsRsn", "_InitgPty", "_CnfrmrRefNb", "_StsCtgy", "_RptdAmt"]
+	__slots__ = ["_AddtlInf", "_AdvsgPtyRefNb", "_AmdmntSeqNb", "_CnfrmrRefNb", "_InitgPty", "_NclsdFile", "_OrgnlMsgDtls", "_RptdAmt", "_Sts", "_StsCtgy", "_StsRsn", "_UdrtkgId"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

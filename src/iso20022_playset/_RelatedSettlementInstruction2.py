@@ -1,12 +1,12 @@
 from . import base_types
 from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
-from ._ProceedsQuantityBreakdown1 import ProceedsQuantityBreakdown1
 from ._Max35Text import Max35Text
+from ._ProceedsQuantityBreakdown1 import ProceedsQuantityBreakdown1
 from ._TransferOfProceedsType1Code import TransferOfProceedsType1Code
 
 class RelatedSettlementInstruction2(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdSttlmInstrId", "_PrcdsQtyBrkdwn", "_RltdSttlmQty", "_TrfOfPrcdsTpInd"]
+	__slots__ = ["_PrcdsQtyBrkdwn", "_RltdSttlmInstrId", "_RltdSttlmQty", "_TrfOfPrcdsTpInd"]
 	@property
 	def PrcdsQtyBrkdwn(self):
 		return self._PrcdsQtyBrkdwn

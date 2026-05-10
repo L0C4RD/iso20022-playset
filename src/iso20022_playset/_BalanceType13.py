@@ -1,10 +1,10 @@
 from . import base_types
-from ._BalanceType10Choice import BalanceType10Choice
 from ._BalanceSubType1Choice import BalanceSubType1Choice
+from ._BalanceType10Choice import BalanceType10Choice
 
 class BalanceType13(base_types._BaseFieldType):
 
-	__slots__ = ["_SubTp", "_CdOrPrtry"]
+	__slots__ = ["_CdOrPrtry", "_SubTp"]
 	@property
 	def CdOrPrtry(self):
 		return self._CdOrPrtry

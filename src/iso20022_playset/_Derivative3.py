@@ -5,7 +5,7 @@ from ._Option14 import Option14
 
 class Derivative3(base_types._BaseFieldType):
 
-	__slots__ = ["_DerivUndrlygLeg", "_OptnAttrbts", "_DerivClssfctn"]
+	__slots__ = ["_DerivClssfctn", "_DerivUndrlygLeg", "_OptnAttrbts"]
 	@property
 	def DerivClssfctn(self):
 		return self._DerivClssfctn

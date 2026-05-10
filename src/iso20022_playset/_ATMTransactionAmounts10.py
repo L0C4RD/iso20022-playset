@@ -1,12 +1,12 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ATMMediaType4Code import ATMMediaType4Code
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._Number import Number
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ATMTransactionAmounts10(base_types._BaseFieldType):
 
-	__slots__ = ["_DispFlg", "_MdiaTp", "_MinNb", "_MaxNb", "_Ccy"]
+	__slots__ = ["_Ccy", "_DispFlg", "_MaxNb", "_MdiaTp", "_MinNb"]
 	@property
 	def Ccy(self):
 		return self._Ccy

@@ -1,14 +1,14 @@
 from . import base_types
-from ._PendingStatus63Choice import PendingStatus63Choice
-from ._CancelledStatus12Choice import CancelledStatus12Choice
-from ._RejectedStatus37Choice import RejectedStatus37Choice
-from ._MatchingStatus34Choice import MatchingStatus34Choice
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 from ._AcceptedStatus8Choice import AcceptedStatus8Choice
+from ._CancelledStatus12Choice import CancelledStatus12Choice
+from ._MatchingStatus34Choice import MatchingStatus34Choice
+from ._PendingStatus63Choice import PendingStatus63Choice
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._RejectedStatus37Choice import RejectedStatus37Choice
 
 class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Pdg", "_MtchgSts", "_Canc", "_AccptdForFrthrPrcg", "_PrtrySts", "_Rjctd"]
+	__slots__ = ["_AccptdForFrthrPrcg", "_Canc", "_MtchgSts", "_Pdg", "_PrtrySts", "_Rjctd"]
 	@property
 	def AccptdForFrthrPrcg(self):
 		return self._AccptdForFrthrPrcg

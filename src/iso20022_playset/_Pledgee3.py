@@ -4,7 +4,7 @@ from ._PledgeeFormat5Choice import PledgeeFormat5Choice
 
 class Pledgee3(base_types._BaseFieldType):
 
-	__slots__ = ["_PldgeeTpAndId", "_LEI"]
+	__slots__ = ["_LEI", "_PldgeeTpAndId"]
 	@property
 	def LEI(self):
 		return self._LEI

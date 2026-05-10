@@ -5,7 +5,7 @@ from ._PledgeeTypeAndText1 import PledgeeTypeAndText1
 
 class PledgeeFormat5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_TpAndId", "_Prtry"]
+	__slots__ = ["_Id", "_Prtry", "_TpAndId"]
 	@property
 	def Id(self):
 		return self._Id

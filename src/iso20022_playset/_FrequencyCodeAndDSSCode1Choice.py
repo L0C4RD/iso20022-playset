@@ -4,7 +4,7 @@ from ._GenericIdentification7 import GenericIdentification7
 
 class FrequencyCodeAndDSSCode1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FrqcyAsDSS", "_FrqcyAsCd"]
+	__slots__ = ["_FrqcyAsCd", "_FrqcyAsDSS"]
 	@property
 	def FrqcyAsCd(self):
 		return self._FrqcyAsCd

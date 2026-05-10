@@ -4,7 +4,7 @@ from ._PendingReason52Choice import PendingReason52Choice
 
 class PendingReason27(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_AddtlRsnInf"]
+	__slots__ = ["_AddtlRsnInf", "_Cd"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

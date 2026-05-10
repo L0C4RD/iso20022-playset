@@ -1,11 +1,11 @@
 from . import base_types
-from ._ICCResetData1 import ICCResetData1
 from ._CardDataReading8Code import CardDataReading8Code
+from ._ICCResetData1 import ICCResetData1
 from ._Max10000Binary import Max10000Binary
 
 class DeviceInitialisationCardReaderResponse2(base_types._BaseFieldType):
 
-	__slots__ = ["_CardNtryMd", "_AddtlInf", "_ICCRstData"]
+	__slots__ = ["_AddtlInf", "_CardNtryMd", "_ICCRstData"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

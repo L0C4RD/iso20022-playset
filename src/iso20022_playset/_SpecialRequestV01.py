@@ -5,7 +5,7 @@ from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 
 class SpecialRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqId", "_Ntfctn", "_TxId", "_SubmitrTxRef"]
+	__slots__ = ["_Ntfctn", "_ReqId", "_SubmitrTxRef", "_TxId"]
 	@property
 	def Ntfctn(self):
 		return self._Ntfctn

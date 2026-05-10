@@ -1,7 +1,7 @@
 from . import base_types
-from ._Max30Text import Max30Text
-from ._Max30DecimalNumber import Max30DecimalNumber
 from ._DTI2021Identifier import DTI2021Identifier
+from ._Max30DecimalNumber import Max30DecimalNumber
+from ._Max30Text import Max30Text
 
 class DigitalTokenAmount2(base_types._BaseFieldType):
 

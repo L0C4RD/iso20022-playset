@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._IssuanceAccount3 import IssuanceAccount3
 from ._IssuerOrInvestor2Choice import IssuerOrInvestor2Choice
 from ._SecurityIdentification19 import SecurityIdentification19
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._SystemPartyIdentification2Choice import SystemPartyIdentification2Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class SecurityCSDLink12(base_types._BaseFieldType):
 
-	__slots__ = ["_IssncAcct", "_FinInstrmId", "_SctyMntnc", "_TechIssrCSD", "_DfltLk", "_VldFr", "_VldTo", "_IssrInvstrCSD"]
+	__slots__ = ["_DfltLk", "_FinInstrmId", "_IssncAcct", "_IssrInvstrCSD", "_SctyMntnc", "_TechIssrCSD", "_VldFr", "_VldTo"]
 	@property
 	def DfltLk(self):
 		return self._DfltLk

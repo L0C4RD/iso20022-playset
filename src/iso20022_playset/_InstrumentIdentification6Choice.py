@@ -6,7 +6,7 @@ from ._UniqueProductIdentifier1Choice import UniqueProductIdentifier1Choice
 
 class InstrumentIdentification6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ISIN", "_UnqPdctIdr", "_OthrId", "_AltrntvInstrmId"]
+	__slots__ = ["_AltrntvInstrmId", "_ISIN", "_OthrId", "_UnqPdctIdr"]
 	@property
 	def AltrntvInstrmId(self):
 		return self._AltrntvInstrmId

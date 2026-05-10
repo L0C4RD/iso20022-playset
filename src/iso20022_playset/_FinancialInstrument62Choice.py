@@ -1,11 +1,11 @@
 from . import base_types
-from ._OtherAsset2 import OtherAsset2
 from ._CashAsset2 import CashAsset2
 from ._FinancialInstrumentIdentification3 import FinancialInstrumentIdentification3
+from ._OtherAsset2 import OtherAsset2
 
 class FinancialInstrument62Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrAsst", "_Scty", "_CshAsst"]
+	__slots__ = ["_CshAsst", "_OthrAsst", "_Scty"]
 	@property
 	def CshAsst(self):
 		return self._CshAsst

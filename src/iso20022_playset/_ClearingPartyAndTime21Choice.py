@@ -1,10 +1,10 @@
 from . import base_types
-from ._NoReasonCode import NoReasonCode
 from ._ClearingPartyAndTime22 import ClearingPartyAndTime22
+from ._NoReasonCode import NoReasonCode
 
 class ClearingPartyAndTime21Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_Dtls"]
+	__slots__ = ["_Dtls", "_Rsn"]
 	@property
 	def Dtls(self):
 		return self._Dtls

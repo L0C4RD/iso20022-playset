@@ -1,6 +1,6 @@
 from . import base_types
-from ._ShortLong1Code import ShortLong1Code
 from ._BalanceQuantity13Choice import BalanceQuantity13Choice
+from ._ShortLong1Code import ShortLong1Code
 
 class Balance16(base_types._BaseFieldType):
 

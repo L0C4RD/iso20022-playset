@@ -1,30 +1,30 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._DateTimePeriod1Choice import DateTimePeriod1Choice
-from ._AmountOrPercentageRange1 import AmountOrPercentageRange1
-from ._Number import Number
-from ._Max256Text import Max256Text
-from ._PercentageRate import PercentageRate
-from ._PaymentDirectionIndicator import PaymentDirectionIndicator
-from ._ISODateTime import ISODateTime
-from ._GlobalNote2Choice import GlobalNote2Choice
-from ._Frequency35Choice import Frequency35Choice
-from ._DecimalNumber import DecimalNumber
-from ._YesNoIndicator import YesNoIndicator
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._InterestType3Code import InterestType3Code
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._AmountOrPercentageRange1 import AmountOrPercentageRange1
+from ._DateTimePeriod1Choice import DateTimePeriod1Choice
+from ._DecimalNumber import DecimalNumber
 from ._DistributionPolicy2Choice import DistributionPolicy2Choice
-from ._TradeTransactionCondition7Choice import TradeTransactionCondition7Choice
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._Frequency35Choice import Frequency35Choice
+from ._GlobalNote2Choice import GlobalNote2Choice
+from ._ISODateTime import ISODateTime
+from ._InstrumentSubStructureType2Choice import InstrumentSubStructureType2Choice
+from ._InterestType3Code import InterestType3Code
+from ._Max256Text import Max256Text
+from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
+from ._Number import Number
+from ._PaymentDirectionIndicator import PaymentDirectionIndicator
+from ._PercentageRate import PercentageRate
+from ._TradeTransactionCondition7Choice import TradeTransactionCondition7Choice
+from ._YesNoIndicator import YesNoIndicator
 from ._YieldCalculation6 import YieldCalculation6
-from ._Max350Text import Max350Text
-from ._InstrumentSubStructureType2Choice import InstrumentSubStructureType2Choice
 
 class Debt5(base_types._BaseFieldType):
 
-	__slots__ = ["_WghtdAvrgCpn", "_CllblInd", "_MinQty", "_EscrwdInd", "_InsrdInd", "_PlsMax", "_NxtFctrDt", "_YldClctn", "_CstPrePmtYld", "_IntrstRate", "_PmtCcy", "_XtndblInd", "_CpnRg", "_PlsPerLot", "_IntrstFxgDt", "_PmtDrctnInd", "_PerptlInd", "_MaxSbstitn", "_WhlPoolInd", "_NxtCllblDt", "_CurFctr", "_PreFnddInd", "_CPRegnTp", "_PotntlEuroSysElgblty", "_OddCpnInd", "_CstPrePmtPnltyInd", "_AutoRinvstmt", "_PutblDt", "_WghtdAvrgLn", "_BkQlfdInd", "_YldRg", "_PmtFrqcy", "_CptlsdIntrst", "_RstrctdInd", "_AmtsblInd", "_IntrstAcrlDt", "_Pdctn", "_PlsPerMln", "_GblTp", "_Purp", "_FrstPmtDt", "_DtdDt", "_MtrtyDt", "_SubrdntdInd", "_WghtdAvrgMtrty", "_IntrstTp", "_OverAlltmtRate", "_OverAlltmtAmt", "_LotId", "_WghtdAvrgLife", "_XprtnDt", "_FaceAmt", "_XtndblPrd", "_NxtIntrstRate", "_PutblInd", "_PricFrqcy", "_LookBck", "_Sctr", "_NxtFctr", "_PricRg", "_TxConds", "_NxtCpnDt", "_MinIncrmt", "_ActlDnmtnAmt", "_IntrstClctnMtd", "_CPPrgm", "_PlsPerTrad", "_Hrcut", "_SbstitnLft", "_Geogcs", "_VarblRateInd", "_AltrntvMinTaxInd", "_Pcs", "_PrvsFctr", "_PricSrc", "_SbstitnFrqcy", "_InstrmStrTp"]
+	__slots__ = ["_ActlDnmtnAmt", "_AltrntvMinTaxInd", "_AmtsblInd", "_AutoRinvstmt", "_BkQlfdInd", "_CPPrgm", "_CPRegnTp", "_CllblInd", "_CpnRg", "_CptlsdIntrst", "_CstPrePmtPnltyInd", "_CstPrePmtYld", "_CurFctr", "_DtdDt", "_EscrwdInd", "_FaceAmt", "_FrstPmtDt", "_GblTp", "_Geogcs", "_Hrcut", "_InsrdInd", "_InstrmStrTp", "_IntrstAcrlDt", "_IntrstClctnMtd", "_IntrstFxgDt", "_IntrstRate", "_IntrstTp", "_LookBck", "_LotId", "_MaxSbstitn", "_MinIncrmt", "_MinQty", "_MtrtyDt", "_NxtCllblDt", "_NxtCpnDt", "_NxtFctr", "_NxtFctrDt", "_NxtIntrstRate", "_OddCpnInd", "_OverAlltmtAmt", "_OverAlltmtRate", "_Pcs", "_Pdctn", "_PerptlInd", "_PlsMax", "_PlsPerLot", "_PlsPerMln", "_PlsPerTrad", "_PmtCcy", "_PmtDrctnInd", "_PmtFrqcy", "_PotntlEuroSysElgblty", "_PreFnddInd", "_PricFrqcy", "_PricRg", "_PricSrc", "_PrvsFctr", "_Purp", "_PutblDt", "_PutblInd", "_RstrctdInd", "_SbstitnFrqcy", "_SbstitnLft", "_Sctr", "_SubrdntdInd", "_TxConds", "_VarblRateInd", "_WghtdAvrgCpn", "_WghtdAvrgLife", "_WghtdAvrgLn", "_WghtdAvrgMtrty", "_WhlPoolInd", "_XprtnDt", "_XtndblInd", "_XtndblPrd", "_YldClctn", "_YldRg"]
 	@property
 	def ActlDnmtnAmt(self):
 		return self._ActlDnmtnAmt

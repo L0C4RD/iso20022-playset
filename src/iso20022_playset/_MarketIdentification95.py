@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Max210Text import Max210Text
-from ._MICEntityType1Code import MICEntityType1Code
-from ._Modification1Code import Modification1Code
-from ._MICIdentifier import MICIdentifier
 from ._CountryCodeAndName3 import CountryCodeAndName3
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
+from ._MICEntityType1Code import MICEntityType1Code
+from ._MICIdentifier import MICIdentifier
 from ._MarketIdentification1Code import MarketIdentification1Code
-from ._Period4Choice import Period4Choice
+from ._Max210Text import Max210Text
 from ._Max35Text import Max35Text
 from ._Max450Text import Max450Text
-from ._ISODateTime import ISODateTime
+from ._Modification1Code import Modification1Code
+from ._Period4Choice import Period4Choice
 
 class MarketIdentification95(base_types._BaseFieldType):
 
-	__slots__ = ["_StsDt", "_WebSite", "_CreDt", "_InstnNm", "_VldtyPrd", "_Sgmt", "_Ctgy", "_Ctry", "_Oprg", "_Acrnm", "_Mod", "_City", "_LastUpdtdDt", "_Tp", "_Note", "_AuthrtyNm"]
+	__slots__ = ["_Acrnm", "_AuthrtyNm", "_City", "_CreDt", "_Ctgy", "_Ctry", "_InstnNm", "_LastUpdtdDt", "_Mod", "_Note", "_Oprg", "_Sgmt", "_StsDt", "_Tp", "_VldtyPrd", "_WebSite"]
 	@property
 	def Acrnm(self):
 		return self._Acrnm

@@ -1,10 +1,10 @@
 from . import base_types
-from ._Number import Number
 from ._AbnormalValuesData4 import AbnormalValuesData4
+from ._Number import Number
 
 class DetailedTransactionStatistics28(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfDerivsRptdWthOtlrs", "_Wrnngs", "_NbOfDerivsRptd"]
+	__slots__ = ["_NbOfDerivsRptd", "_NbOfDerivsRptdWthOtlrs", "_Wrnngs"]
 	@property
 	def NbOfDerivsRptd(self):
 		return self._NbOfDerivsRptd

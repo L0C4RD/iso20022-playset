@@ -1,13 +1,13 @@
 from . import base_types
+from ._Max35Text import Max35Text
+from ._ReturnIndicator2 import ReturnIndicator2
+from ._SearchCriteria2Choice import SearchCriteria2Choice
 from ._StatusResponse1Code import StatusResponse1Code
 from ._SupplementaryData1 import SupplementaryData1
-from ._ReturnIndicator2 import ReturnIndicator2
-from ._Max35Text import Max35Text
-from ._SearchCriteria2Choice import SearchCriteria2Choice
 
 class InformationRequestResponseV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RtrInd", "_InvstgtnId", "_SchCrit", "_RspnId", "_SplmtryData", "_RspnSts"]
+	__slots__ = ["_InvstgtnId", "_RspnId", "_RspnSts", "_RtrInd", "_SchCrit", "_SplmtryData"]
 	@property
 	def InvstgtnId(self):
 		return self._InvstgtnId

@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
 from ._BinaryFile1 import BinaryFile1
 from ._ExternalDocumentType1Code import ExternalDocumentType1Code
+from ._ISODate import ISODate
+from ._Max140Text import Max140Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
 
 class DocumentGeneralInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_SndrRcvrSeqId", "_AttchdBinryFile", "_DocTp", "_URL", "_DocNb", "_IsseDt"]
+	__slots__ = ["_AttchdBinryFile", "_DocNb", "_DocTp", "_IsseDt", "_SndrRcvrSeqId", "_URL"]
 	@property
 	def AttchdBinryFile(self):
 		return self._AttchdBinryFile

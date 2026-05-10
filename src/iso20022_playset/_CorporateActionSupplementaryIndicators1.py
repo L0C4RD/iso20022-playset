@@ -3,7 +3,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class CorporateActionSupplementaryIndicators1(base_types._BaseFieldType):
 
-	__slots__ = ["_EscrwToMtrtyInd", "_SlctnDealrFeeInd", "_SrrndrShrsToAgtInd", "_RghtsTrfblInd", "_RghtsRndUpPrvlgInd", "_StepUpPrvlgInd", "_CondlPmtAplblInd", "_RghtsOvrsbcptInd"]
+	__slots__ = ["_CondlPmtAplblInd", "_EscrwToMtrtyInd", "_RghtsOvrsbcptInd", "_RghtsRndUpPrvlgInd", "_RghtsTrfblInd", "_SlctnDealrFeeInd", "_SrrndrShrsToAgtInd", "_StepUpPrvlgInd"]
 	@property
 	def CondlPmtAplblInd(self):
 		return self._CondlPmtAplblInd

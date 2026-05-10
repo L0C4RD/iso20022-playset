@@ -1,11 +1,11 @@
 from . import base_types
-from ._InitialMarginRequirement1 import InitialMarginRequirement1
 from ._AmountAndDirection102 import AmountAndDirection102
 from ._GenericIdentification165 import GenericIdentification165
+from ._InitialMarginRequirement1 import InitialMarginRequirement1
 
 class EndOfDayRequirement2(base_types._BaseFieldType):
 
-	__slots__ = ["_VartnMrgnRqrmnts", "_MrgnAcctId", "_InitlMrgnRqrmnts"]
+	__slots__ = ["_InitlMrgnRqrmnts", "_MrgnAcctId", "_VartnMrgnRqrmnts"]
 	@property
 	def InitlMrgnRqrmnts(self):
 		return self._InitlMrgnRqrmnts

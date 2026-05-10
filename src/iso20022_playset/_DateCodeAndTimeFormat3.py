@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISOTime import ISOTime
 from ._DateCode21Choice import DateCode21Choice
+from ._ISOTime import ISOTime
 
 class DateCodeAndTimeFormat3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tm", "_DtCd"]
+	__slots__ = ["_DtCd", "_Tm"]
 	@property
 	def DtCd(self):
 		return self._DtCd

@@ -5,7 +5,7 @@ from ._GlobalDistributionRequest1 import GlobalDistributionRequest1
 
 class AgentCAGlobalDistributionAuthorisationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CorpActnGnlInf", "_GblDstrbtnDtls"]
+	__slots__ = ["_CorpActnGnlInf", "_GblDstrbtnDtls", "_Id"]
 	@property
 	def CorpActnGnlInf(self):
 		return self._CorpActnGnlInf

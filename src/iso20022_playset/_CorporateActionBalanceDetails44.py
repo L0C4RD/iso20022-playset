@@ -4,7 +4,7 @@ from ._Quantity80Choice import Quantity80Choice
 
 class CorporateActionBalanceDetails44(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgRctBal", "_OnLnBal", "_CollOutBal", "_SttlmPosBal", "_BlckdBal", "_CollInBal", "_TradDtPosBal", "_BrrwdBal", "_RegdBal", "_StrtPosBal", "_TtlElgblBal", "_InTrnsShipmntBal", "_OutForRegnBal", "_PdgDlvryBal"]
+	__slots__ = ["_BlckdBal", "_BrrwdBal", "_CollInBal", "_CollOutBal", "_InTrnsShipmntBal", "_OnLnBal", "_OutForRegnBal", "_PdgDlvryBal", "_PdgRctBal", "_RegdBal", "_StrtPosBal", "_SttlmPosBal", "_TradDtPosBal", "_TtlElgblBal"]
 	@property
 	def BlckdBal(self):
 		return self._BlckdBal

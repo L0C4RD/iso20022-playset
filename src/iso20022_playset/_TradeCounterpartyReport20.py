@@ -1,13 +1,13 @@
 from . import base_types
+from ._Counterparty45 import Counterparty45
 from ._Counterparty46 import Counterparty46
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 from ._PartyIdentification248Choice import PartyIdentification248Choice
 from ._TradeCounterpartyRelationshipRecord1 import TradeCounterpartyRelationshipRecord1
-from ._Counterparty45 import Counterparty45
 
 class TradeCounterpartyReport20(base_types._BaseFieldType):
 
-	__slots__ = ["_Brkr", "_ClrMmb", "_ExctnAgt", "_RltshRcrd", "_NttyRspnsblForRpt", "_Bnfcry", "_OthrCtrPty", "_SubmitgAgt", "_RptgCtrPty"]
+	__slots__ = ["_Bnfcry", "_Brkr", "_ClrMmb", "_ExctnAgt", "_NttyRspnsblForRpt", "_OthrCtrPty", "_RltshRcrd", "_RptgCtrPty", "_SubmitgAgt"]
 	@property
 	def Bnfcry(self):
 		return self._Bnfcry

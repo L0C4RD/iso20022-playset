@@ -1,10 +1,10 @@
 from . import base_types
-from ._InvestigationRequestAction1Choice import InvestigationRequestAction1Choice
 from ._InvestigationActionReason1 import InvestigationActionReason1
+from ._InvestigationRequestAction1Choice import InvestigationRequestAction1Choice
 
 class InvestigationRequestAction1(base_types._BaseFieldType):
 
-	__slots__ = ["_ActnRsn", "_Actn"]
+	__slots__ = ["_Actn", "_ActnRsn"]
 	@property
 	def Actn(self):
 		return self._Actn

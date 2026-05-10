@@ -1,7 +1,7 @@
 from . import base_types
 from ._ProprietaryReason4 import ProprietaryReason4
-from ._UnmatchedStatus17Choice import UnmatchedStatus17Choice
 from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._UnmatchedStatus17Choice import UnmatchedStatus17Choice
 
 class MatchingStatus25Choice(base_types._BaseFieldType):
 

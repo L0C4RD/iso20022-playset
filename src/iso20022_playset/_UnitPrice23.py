@@ -1,15 +1,15 @@
 from . import base_types
-from ._PriceMethod1Code import PriceMethod1Code
-from ._TypeOfPrice46Choice import TypeOfPrice46Choice
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._PriceValue1 import PriceValue1
 from ._Number import Number
+from ._PriceMethod1Code import PriceMethod1Code
+from ._PriceValue1 import PriceValue1
 from ._TaxableIncomePerShareCalculated2Choice import TaxableIncomePerShareCalculated2Choice
+from ._TypeOfPrice46Choice import TypeOfPrice46Choice
 
 class UnitPrice23(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_AcrdIntrstNAV", "_TaxblIncmPerShrClctd", "_TaxblIncmPerShr", "_PricMtd", "_Tp", "_NbOfDaysAcrd"]
+	__slots__ = ["_AcrdIntrstNAV", "_NbOfDaysAcrd", "_PricMtd", "_TaxblIncmPerShr", "_TaxblIncmPerShrClctd", "_Tp", "_Val"]
 	@property
 	def AcrdIntrstNAV(self):
 		return self._AcrdIntrstNAV

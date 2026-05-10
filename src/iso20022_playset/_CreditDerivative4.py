@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrancheIndicator3Choice import TrancheIndicator3Choice
-from ._PercentageRate import PercentageRate
 from ._DebtInstrumentSeniorityType2Code import DebtInstrumentSeniorityType2Code
-from ._Max35Text import Max35Text
 from ._DerivativePartyIdentification1Choice import DerivativePartyIdentification1Choice
-from ._Number import Number
 from ._Frequency13Code import Frequency13Code
+from ._Max35Text import Max35Text
+from ._Number import Number
+from ._PercentageRate import PercentageRate
+from ._TrancheIndicator3Choice import TrancheIndicator3Choice
 
 class CreditDerivative4(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_Snrty", "_ClctnBsis", "_Trch", "_Srs", "_RefPty", "_IndxFctr", "_PmtFrqcy"]
+	__slots__ = ["_ClctnBsis", "_IndxFctr", "_PmtFrqcy", "_RefPty", "_Snrty", "_Srs", "_Trch", "_Vrsn"]
 	@property
 	def ClctnBsis(self):
 		return self._ClctnBsis

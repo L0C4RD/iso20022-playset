@@ -4,7 +4,7 @@ from ._RejectionReason69Code import RejectionReason69Code
 
 class RejectionAndRepairReason40Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

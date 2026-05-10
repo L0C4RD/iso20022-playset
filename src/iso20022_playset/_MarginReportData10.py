@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._SupplementaryData1 import SupplementaryData1
-from ._UniqueTransactionIdentifier2Choice import UniqueTransactionIdentifier2Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._PostedMarginOrCollateral6 import PostedMarginOrCollateral6
-from ._TradeCounterpartyReport20 import TradeCounterpartyReport20
 from ._ContractModification8 import ContractModification8
-from ._ReceivedMarginOrCollateral6 import ReceivedMarginOrCollateral6
-from ._TechnicalAttributes6 import TechnicalAttributes6
+from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
 from ._MarginCollateralReport5 import MarginCollateralReport5
+from ._PostedMarginOrCollateral6 import PostedMarginOrCollateral6
+from ._ReceivedMarginOrCollateral6 import ReceivedMarginOrCollateral6
+from ._SupplementaryData1 import SupplementaryData1
+from ._TechnicalAttributes6 import TechnicalAttributes6
+from ._TradeCounterpartyReport20 import TradeCounterpartyReport20
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._UniqueTransactionIdentifier2Choice import UniqueTransactionIdentifier2Choice
 
 class MarginReportData10(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtDt", "_RptgTmStmp", "_CtrctMod", "_TxId", "_SplmtryData", "_PstdMrgnOrColl", "_Coll", "_CtrPtyId", "_TechAttrbts", "_CtrPtyRatgTrggrInd", "_RcvdMrgnOrColl", "_CtrPtyRatgThrshldInd"]
+	__slots__ = ["_Coll", "_CtrPtyId", "_CtrPtyRatgThrshldInd", "_CtrPtyRatgTrggrInd", "_CtrctMod", "_EvtDt", "_PstdMrgnOrColl", "_RcvdMrgnOrColl", "_RptgTmStmp", "_SplmtryData", "_TechAttrbts", "_TxId"]
 	@property
 	def Coll(self):
 		return self._Coll

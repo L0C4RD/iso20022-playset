@@ -3,7 +3,7 @@ from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class References58Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PoolId", "_AcctSvcrTxId", "_OthrTxId", "_SctiesSttlmTxId", "_IntraPosMvmntId"]
+	__slots__ = ["_AcctSvcrTxId", "_IntraPosMvmntId", "_OthrTxId", "_PoolId", "_SctiesSttlmTxId"]
 	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId

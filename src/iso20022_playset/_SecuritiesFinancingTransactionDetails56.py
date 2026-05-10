@@ -1,23 +1,23 @@
 from . import base_types
-from ._RateType35Choice import RateType35Choice
-from ._UTIIdentifier import UTIIdentifier
-from ._YesNoIndicator import YesNoIndicator
 from ._AmountAndDirection21 import AmountAndDirection21
-from ._Rate2 import Rate2
-from ._RateOrName1Choice import RateOrName1Choice
-from ._RevaluationIndicator3Choice import RevaluationIndicator3Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._Exact3NumericText import Exact3NumericText
 from ._InterestComputationMethodFormat4Choice import InterestComputationMethodFormat4Choice
-from ._TerminationDate6Choice import TerminationDate6Choice
-from ._Max35Text import Max35Text
-from ._RateName1 import RateName1
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._LegalFramework3Choice import LegalFramework3Choice
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Rate2 import Rate2
+from ._RateName1 import RateName1
+from ._RateOrName1Choice import RateOrName1Choice
+from ._RateType35Choice import RateType35Choice
+from ._RevaluationIndicator3Choice import RevaluationIndicator3Choice
+from ._TerminationDate6Choice import TerminationDate6Choice
+from ._UTIIdentifier import UTIIdentifier
+from ._YesNoIndicator import YesNoIndicator
 
 class SecuritiesFinancingTransactionDetails56(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesFincgUnqTxIdr", "_TermntnDt", "_PricgRate", "_Sprd", "_DealAmt", "_TtlNbOfCollInstrs", "_TermntnAmtPerPcOfColl", "_TxCallDely", "_PrmAmt", "_AcrdIntrstAmt", "_StockLnMrgn", "_IntrstCmptnMtd", "_VarblRateSpprt", "_MtrtyDtMod", "_RateTp", "_RateChngDt", "_FrftAmt", "_IntrstPmt", "_TermntnTxAmt", "_LglFrmwk", "_ScndLegNrrtv", "_ChrgsRate", "_ClsgLegId", "_EarlstCallBckDt", "_Rvaltn", "_RpRate", "_SctiesFincgTradId", "_ComssnClctnDt", "_SctiesHrcut"]
+	__slots__ = ["_AcrdIntrstAmt", "_ChrgsRate", "_ClsgLegId", "_ComssnClctnDt", "_DealAmt", "_EarlstCallBckDt", "_FrftAmt", "_IntrstCmptnMtd", "_IntrstPmt", "_LglFrmwk", "_MtrtyDtMod", "_PricgRate", "_PrmAmt", "_RateChngDt", "_RateTp", "_RpRate", "_Rvaltn", "_ScndLegNrrtv", "_SctiesFincgTradId", "_SctiesFincgUnqTxIdr", "_SctiesHrcut", "_Sprd", "_StockLnMrgn", "_TermntnAmtPerPcOfColl", "_TermntnDt", "_TermntnTxAmt", "_TtlNbOfCollInstrs", "_TxCallDely", "_VarblRateSpprt"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt

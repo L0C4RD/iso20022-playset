@@ -1,15 +1,15 @@
 from . import base_types
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
+from ._ContentInformationType40 import ContentInformationType40
+from ._Max100KBinary import Max100KBinary
+from ._Max256Text import Max256Text
 from ._Max35Text import Max35Text
 from ._Max8Text import Max8Text
 from ._PositiveNumber import PositiveNumber
-from ._Max100KBinary import Max100KBinary
-from ._ContentInformationType40 import ContentInformationType40
-from ._Max256Text import Max256Text
+from ._TerminalManagementAction3Code import TerminalManagementAction3Code
 
 class ApplicationParameters13(base_types._BaseFieldType):
 
-	__slots__ = ["_ParamFrmtIdr", "_Params", "_ApplId", "_OffsetStart", "_ParamsLngth", "_NcrptdParams", "_ActnTp", "_OffsetEnd", "_Vrsn"]
+	__slots__ = ["_ActnTp", "_ApplId", "_NcrptdParams", "_OffsetEnd", "_OffsetStart", "_ParamFrmtIdr", "_Params", "_ParamsLngth", "_Vrsn"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp

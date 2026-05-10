@@ -1,7 +1,7 @@
 from . import base_types
+from ._GenericIdentification30 import GenericIdentification30
 from ._Max140Text import Max140Text
 from ._Max70Text import Max70Text
-from ._GenericIdentification30 import GenericIdentification30
 
 class BlockChainAddressWallet3(base_types._BaseFieldType):
 

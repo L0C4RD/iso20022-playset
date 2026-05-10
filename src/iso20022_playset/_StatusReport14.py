@@ -1,7 +1,7 @@
 from . import base_types
+from ._GenericIdentification176 import GenericIdentification176
 from ._StatusReportDataSetRequest6 import StatusReportDataSetRequest6
 from ._TriggerInformation2 import TriggerInformation2
-from ._GenericIdentification176 import GenericIdentification176
 
 class StatusReport14(base_types._BaseFieldType):
 

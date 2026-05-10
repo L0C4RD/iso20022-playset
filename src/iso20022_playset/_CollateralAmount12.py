@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max3NumericText import Max3NumericText
 from ._AmountAndDirection49 import AmountAndDirection49
 from ._CalculationMethod1Code import CalculationMethod1Code
 from ._Frequency38Choice import Frequency38Choice
+from ._Max3NumericText import Max3NumericText
 
 class CollateralAmount12(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtFrqcy", "_IntrstPmtDely", "_Tx", "_Termntn", "_Acrd", "_ValSght", "_CmpndSmplAcrlClctn"]
+	__slots__ = ["_Acrd", "_CmpndSmplAcrlClctn", "_IntrstPmtDely", "_PmtFrqcy", "_Termntn", "_Tx", "_ValSght"]
 	@property
 	def Acrd(self):
 		return self._Acrd

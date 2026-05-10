@@ -1,10 +1,10 @@
 from . import base_types
-from ._ReconciliationCategory5 import ReconciliationCategory5
 from ._ReconciliationCategory4 import ReconciliationCategory4
+from ._ReconciliationCategory5 import ReconciliationCategory5
 
 class ReportingRequirement3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgRqrmnt", "_NoRptgRqrmnt"]
+	__slots__ = ["_NoRptgRqrmnt", "_RptgRqrmnt"]
 	@property
 	def NoRptgRqrmnt(self):
 		return self._NoRptgRqrmnt

@@ -1,11 +1,11 @@
 from . import base_types
-from ._AutomatedTellerMachine7 import AutomatedTellerMachine7
 from ._Acquirer7 import Acquirer7
+from ._AutomatedTellerMachine7 import AutomatedTellerMachine7
 from ._Max35Text import Max35Text
 
 class ATMEnvironment9(base_types._BaseFieldType):
 
-	__slots__ = ["_Acqrr", "_ATMMgrId", "_ATM"]
+	__slots__ = ["_ATM", "_ATMMgrId", "_Acqrr"]
 	@property
 	def ATM(self):
 		return self._ATM

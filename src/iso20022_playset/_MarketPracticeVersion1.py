@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class MarketPracticeVersion1(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Nb", "_Dt"]
+	__slots__ = ["_Dt", "_Nb", "_Nm"]
 	@property
 	def Dt(self):
 		return self._Dt

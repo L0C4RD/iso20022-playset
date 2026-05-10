@@ -1,24 +1,24 @@
 from . import base_types
-from ._Max3Number import Max3Number
-from ._TradeTransactionCondition6Choice import TradeTransactionCondition6Choice
-from ._TradeDate9Choice import TradeDate9Choice
-from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
-from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
-from ._TradeOriginator4Choice import TradeOriginator4Choice
-from ._OpeningClosing4Choice import OpeningClosing4Choice
-from ._PlaceOfTradeIdentification2 import PlaceOfTradeIdentification2
 from ._InvestorCapacity5Choice import InvestorCapacity5Choice
-from ._SettlementDate22Choice import SettlementDate22Choice
-from ._Reporting9Choice import Reporting9Choice
-from ._SettlementDate20Choice import SettlementDate20Choice
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._Max3Number import Max3Number
+from ._OpeningClosing4Choice import OpeningClosing4Choice
+from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
+from ._PlaceOfTradeIdentification2 import PlaceOfTradeIdentification2
 from ._Price11 import Price11
+from ._Reporting9Choice import Reporting9Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
+from ._SettlementDate20Choice import SettlementDate20Choice
+from ._SettlementDate22Choice import SettlementDate22Choice
+from ._TradeDate9Choice import TradeDate9Choice
+from ._TradeOriginator4Choice import TradeOriginator4Choice
+from ._TradeTransactionCondition6Choice import TradeTransactionCondition6Choice
 from ._TypeOfPrice32Choice import TypeOfPrice32Choice
 
 class SecuritiesTradeDetails128(base_types._BaseFieldType):
 
-	__slots__ = ["_TradId", "_FxAddtlDtls", "_TpOfPric", "_FctvSttlmDt", "_TradTxCond", "_NbOfDaysAcrd", "_SttlmDt", "_TradDt", "_CollTxId", "_OpngClsg", "_DealPric", "_SttlmInstrPrcgAddtlDtls", "_Rptg", "_PlcOfTrad", "_TradOrgtrRole", "_PlcOfClr", "_InvstrCpcty"]
+	__slots__ = ["_CollTxId", "_DealPric", "_FctvSttlmDt", "_FxAddtlDtls", "_InvstrCpcty", "_NbOfDaysAcrd", "_OpngClsg", "_PlcOfClr", "_PlcOfTrad", "_Rptg", "_SttlmDt", "_SttlmInstrPrcgAddtlDtls", "_TpOfPric", "_TradDt", "_TradId", "_TradOrgtrRole", "_TradTxCond"]
 	@property
 	def CollTxId(self):
 		return self._CollTxId

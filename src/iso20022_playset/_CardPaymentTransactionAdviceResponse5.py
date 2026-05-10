@@ -1,11 +1,11 @@
 from . import base_types
-from ._TransactionIdentifier1 import TransactionIdentifier1
 from ._Max35Text import Max35Text
 from ._Response1Code import Response1Code
+from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class CardPaymentTransactionAdviceResponse5(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRefId", "_TxId", "_Rspn"]
+	__slots__ = ["_Rspn", "_SaleRefId", "_TxId"]
 	@property
 	def Rspn(self):
 		return self._Rspn

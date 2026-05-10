@@ -1,11 +1,11 @@
 from . import base_types
-from ._ServiceRequest8 import ServiceRequest8
 from ._ContentInformationType38 import ContentInformationType38
 from ._Header41 import Header41
+from ._ServiceRequest8 import ServiceRequest8
 
 class SaleToPOIServiceRequestV07(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_Hdr", "_SvcReq"]
+	__slots__ = ["_Hdr", "_SctyTrlr", "_SvcReq"]
 	@property
 	def Hdr(self):
 		return self._Hdr

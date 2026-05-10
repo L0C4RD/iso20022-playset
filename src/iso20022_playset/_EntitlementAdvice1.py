@@ -1,12 +1,12 @@
 from . import base_types
-from ._Exact3NumericText import Exact3NumericText
 from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
 from ._DateFormat4Choice import DateFormat4Choice
 from ._Entitlement1 import Entitlement1
+from ._Exact3NumericText import Exact3NumericText
 
 class EntitlementAdvice1(base_types._BaseFieldType):
 
-	__slots__ = ["_RcrdDt", "_AcctAndDstrbtnDtls", "_OptnTp", "_OptnNb", "_PmtDt"]
+	__slots__ = ["_AcctAndDstrbtnDtls", "_OptnNb", "_OptnTp", "_PmtDt", "_RcrdDt"]
 	@property
 	def AcctAndDstrbtnDtls(self):
 		return self._AcctAndDstrbtnDtls

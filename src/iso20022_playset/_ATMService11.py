@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ATMServiceType6Code import ATMServiceType6Code
 from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ATMService11(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMSvcCd", "_SvcRef", "_MultiAcct", "_SvcVarntId", "_CshBck", "_SvcTp"]
+	__slots__ = ["_ATMSvcCd", "_CshBck", "_MultiAcct", "_SvcRef", "_SvcTp", "_SvcVarntId"]
 	@property
 	def ATMSvcCd(self):
 		return self._ATMSvcCd

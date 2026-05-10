@@ -1,10 +1,10 @@
 from . import base_types
-from ._RejectedReason58Choice import RejectedReason58Choice
 from ._Max210Text import Max210Text
+from ._RejectedReason58Choice import RejectedReason58Choice
 
 class RejectedStatusReason57(base_types._BaseFieldType):
 
-	__slots__ = ["_RsnCd", "_AddtlRsnInf"]
+	__slots__ = ["_AddtlRsnInf", "_RsnCd"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

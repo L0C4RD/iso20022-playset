@@ -1,15 +1,15 @@
 from . import base_types
 from ._Address2 import Address2
-from ._PartyType19Code import PartyType19Code
 from ._ContactBusiness1 import ContactBusiness1
-from ._Max35Text import Max35Text
 from ._Max20KText import Max20KText
+from ._Max35Text import Max35Text
 from ._OutputFormat4Code import OutputFormat4Code
+from ._PartyType19Code import PartyType19Code
 from ._UserInterface8Code import UserInterface8Code
 
 class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 
-	__slots__ = ["_EstblishdMtd", "_Ctct", "_PstlAdr", "_Rcpt", "_Trgt", "_Val", "_Frmt", "_ReqdMtd", "_Tp", "_ActlDlvryMtd"]
+	__slots__ = ["_ActlDlvryMtd", "_Ctct", "_EstblishdMtd", "_Frmt", "_PstlAdr", "_Rcpt", "_ReqdMtd", "_Tp", "_Trgt", "_Val"]
 	@property
 	def ActlDlvryMtd(self):
 		return self._ActlDlvryMtd

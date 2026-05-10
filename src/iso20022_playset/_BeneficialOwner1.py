@@ -1,16 +1,16 @@
 from . import base_types
-from ._GenericIdentification16 import GenericIdentification16
-from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
-from ._SecurityIdentification7 import SecurityIdentification7
-from ._CountryCode import CountryCode
-from ._Max350Text import Max350Text
 from ._BeneficiaryCertificationType1FormatChoice import BeneficiaryCertificationType1FormatChoice
+from ._CountryCode import CountryCode
+from ._GenericIdentification16 import GenericIdentification16
+from ._Max350Text import Max350Text
+from ._PartyIdentification2Choice import PartyIdentification2Choice
+from ._SecurityIdentification7 import SecurityIdentification7
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class BeneficialOwner1(base_types._BaseFieldType):
 
-	__slots__ = ["_DclrtnDtls", "_CertfctnTp", "_DmclCtry", "_NonDmclCtry", "_CertfctnInd", "_ElctdSctiesQty", "_AddtlId", "_SctyId", "_Ntlty", "_BnfclOwnrId"]
+	__slots__ = ["_AddtlId", "_BnfclOwnrId", "_CertfctnInd", "_CertfctnTp", "_DclrtnDtls", "_DmclCtry", "_ElctdSctiesQty", "_NonDmclCtry", "_Ntlty", "_SctyId"]
 	@property
 	def AddtlId(self):
 		return self._AddtlId

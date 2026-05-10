@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._AccountTax1 import AccountTax1
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._CompensationMethod1Code import CompensationMethod1Code
-from ._Max105Text import Max105Text
 from ._AccountLevel2Code import AccountLevel2Code
-from ._ParentCashAccount5 import ParentCashAccount5
-from ._Contact13 import Contact13
+from ._AccountTax1 import AccountTax1
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._CashAccount40 import CashAccount40
+from ._CompensationMethod1Code import CompensationMethod1Code
+from ._Contact13 import Contact13
+from ._ISODate import ISODate
+from ._Max105Text import Max105Text
+from ._ParentCashAccount5 import ParentCashAccount5
 
 class CashAccountCharacteristics5(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcr", "_AcctLvl", "_AcctBalCcyCd", "_SttlmCcyCd", "_SttlmAdvc", "_AcctSvcrCtct", "_DbtAcct", "_HstCcyCd", "_PrntAcct", "_Tax", "_CompstnMtd", "_CshAcct", "_DelydDbtDt"]
+	__slots__ = ["_AcctBalCcyCd", "_AcctLvl", "_AcctSvcr", "_AcctSvcrCtct", "_CompstnMtd", "_CshAcct", "_DbtAcct", "_DelydDbtDt", "_HstCcyCd", "_PrntAcct", "_SttlmAdvc", "_SttlmCcyCd", "_Tax"]
 	@property
 	def AcctBalCcyCd(self):
 		return self._AcctBalCcyCd

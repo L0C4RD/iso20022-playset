@@ -1,12 +1,12 @@
 from . import base_types
-from ._Quantity5Code import Quantity5Code
 from ._Max30DecimalNumber import Max30DecimalNumber
-from ._RestrictedFINImpliedCurrencyAndAmount import RestrictedFINImpliedCurrencyAndAmount
+from ._Quantity5Code import Quantity5Code
 from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
+from ._RestrictedFINImpliedCurrencyAndAmount import RestrictedFINImpliedCurrencyAndAmount
 
 class FinancialInstrumentQuantity43Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtsdVal", "_DgtlTknUnit", "_Cd", "_FaceAmt", "_Unit"]
+	__slots__ = ["_AmtsdVal", "_Cd", "_DgtlTknUnit", "_FaceAmt", "_Unit"]
 	@property
 	def AmtsdVal(self):
 		return self._AmtsdVal

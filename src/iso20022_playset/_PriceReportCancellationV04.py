@@ -1,17 +1,17 @@
 from . import base_types
+from ._AdditionalReference3 import AdditionalReference3
 from ._DateAndDateTime1Choice import DateAndDateTime1Choice
-from ._YesNoIndicator import YesNoIndicator
 from ._Extension1 import Extension1
 from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
-from ._PriceReport3 import PriceReport3
 from ._MessageIdentification1 import MessageIdentification1
 from ._Pagination import Pagination
-from ._AdditionalReference3 import AdditionalReference3
+from ._PriceReport3 import PriceReport3
+from ._YesNoIndicator import YesNoIndicator
 
 class PriceReportCancellationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_XpctdPricCrrctnDt", "_CancPricValtnDtls", "_PrvsRef", "_CxlId", "_PoolRef", "_CmpltPricCxl", "_CxlRsn", "_PricRptId", "_MsgPgntn", "_Xtnsn"]
+	__slots__ = ["_CancPricValtnDtls", "_CmpltPricCxl", "_CxlId", "_CxlRsn", "_MsgId", "_MsgPgntn", "_PoolRef", "_PricRptId", "_PrvsRef", "_XpctdPricCrrctnDt", "_Xtnsn"]
 	@property
 	def CancPricValtnDtls(self):
 		return self._CancPricValtnDtls

@@ -1,22 +1,22 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._CardPaymentTransaction138 import CardPaymentTransaction138
-from ._CardPaymentTransactionDetails53 import CardPaymentTransactionDetails53
+from ._AuthorisationResult18 import AuthorisationResult18
 from ._CardAccount16 import CardAccount16
 from ._CardPaymentServiceType12Code import CardPaymentServiceType12Code
-from ._TransactionIdentifier1 import TransactionIdentifier1
-from ._AuthorisationResult18 import AuthorisationResult18
-from ._Min3Max4Text import Min3Max4Text
-from ._FailureReason3Code import FailureReason3Code
-from ._CardPaymentServiceType9Code import CardPaymentServiceType9Code
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
-from ._Max140Text import Max140Text
 from ._CardPaymentServiceType15Code import CardPaymentServiceType15Code
+from ._CardPaymentServiceType9Code import CardPaymentServiceType9Code
+from ._CardPaymentTransaction138 import CardPaymentTransaction138
+from ._CardPaymentTransactionDetails53 import CardPaymentTransactionDetails53
+from ._FailureReason3Code import FailureReason3Code
+from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._Min3Max4Text import Min3Max4Text
+from ._TransactionIdentifier1 import TransactionIdentifier1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CardPaymentTransaction140(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRefId", "_MrchntRefData", "_AddtlTxData", "_AcctFr", "_MrchntCtgyCd", "_IntrchngData", "_Rvsl", "_InitrTxId", "_FailrRsn", "_CardPrgrmmPropsd", "_TxId", "_MrchntCITId", "_RcptTxId", "_TxDtls", "_AcctTo", "_SvcAttr", "_IssrCITId", "_OrgnlTx", "_AddtlSvc", "_TxTp", "_TxSucss", "_MrchntOvrrd", "_LastTxFlg", "_RcncltnId", "_AuthstnRslt", "_CardPrgrmmApld", "_CstmrCnsnt", "_TxCaptr"]
+	__slots__ = ["_AcctFr", "_AcctTo", "_AddtlSvc", "_AddtlTxData", "_AuthstnRslt", "_CardPrgrmmApld", "_CardPrgrmmPropsd", "_CstmrCnsnt", "_FailrRsn", "_InitrTxId", "_IntrchngData", "_IssrCITId", "_LastTxFlg", "_MrchntCITId", "_MrchntCtgyCd", "_MrchntOvrrd", "_MrchntRefData", "_OrgnlTx", "_RcncltnId", "_RcptTxId", "_Rvsl", "_SaleRefId", "_SvcAttr", "_TxCaptr", "_TxDtls", "_TxId", "_TxSucss", "_TxTp"]
 	@property
 	def AcctFr(self):
 		return self._AcctFr

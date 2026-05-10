@@ -1,10 +1,10 @@
 from . import base_types
-from ._PriceRateType3Code import PriceRateType3Code
 from ._Percentage14Rate import Percentage14Rate
+from ._PriceRateType3Code import PriceRateType3Code
 
 class PercentagePrice2(base_types._BaseFieldType):
 
-	__slots__ = ["_PricVal", "_PctgPricTp"]
+	__slots__ = ["_PctgPricTp", "_PricVal"]
 	@property
 	def PctgPricTp(self):
 		return self._PctgPricTp

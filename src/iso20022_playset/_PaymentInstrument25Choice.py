@@ -1,6 +1,6 @@
 from . import base_types
-from ._CreditTransfer9 import CreditTransfer9
 from ._Cheque12 import Cheque12
+from ._CreditTransfer9 import CreditTransfer9
 
 class PaymentInstrument25Choice(base_types._BaseFieldType):
 

@@ -1,10 +1,10 @@
 from . import base_types
-from ._InvestmentPlan16 import InvestmentPlan16
 from ._DataModification1Code import DataModification1Code
+from ._InvestmentPlan16 import InvestmentPlan16
 
 class ModificationScope41(base_types._BaseFieldType):
 
-	__slots__ = ["_ModScpIndctn", "_InvstmtPlan"]
+	__slots__ = ["_InvstmtPlan", "_ModScpIndctn"]
 	@property
 	def InvstmtPlan(self):
 		return self._InvstmtPlan

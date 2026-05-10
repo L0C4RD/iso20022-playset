@@ -1,12 +1,12 @@
 from . import base_types
 from ._CancellationProcess2Code import CancellationProcess2Code
-from ._ExchangeConfiguration9 import ExchangeConfiguration9
 from ._ExchangeConfiguration10 import ExchangeConfiguration10
+from ._ExchangeConfiguration9 import ExchangeConfiguration9
 from ._FinancialCapture1Code import FinancialCapture1Code
 
 class AcquirerProtocolExchangeBehavior2(base_types._BaseFieldType):
 
-	__slots__ = ["_BtchTrf", "_CxlXchg", "_FinCaptr", "_CmpltnXchg"]
+	__slots__ = ["_BtchTrf", "_CmpltnXchg", "_CxlXchg", "_FinCaptr"]
 	@property
 	def BtchTrf(self):
 		return self._BtchTrf

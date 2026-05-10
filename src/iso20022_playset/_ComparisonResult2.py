@@ -1,14 +1,14 @@
 from . import base_types
-from ._Deletion2 import Deletion2
-from ._Replacement2 import Replacement2
-from ._Max35Text import Max35Text
 from ._Addition2 import Addition2
+from ._Deletion2 import Deletion2
 from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
 from ._Number import Number
+from ._Replacement2 import Replacement2
 
 class ComparisonResult2(base_types._BaseFieldType):
 
-	__slots__ = ["_Deltn", "_Addtn", "_Rplcmnt", "_ElmtSeqNb", "_ElmtNm", "_ElmtPth"]
+	__slots__ = ["_Addtn", "_Deltn", "_ElmtNm", "_ElmtPth", "_ElmtSeqNb", "_Rplcmnt"]
 	@property
 	def Addtn(self):
 		return self._Addtn

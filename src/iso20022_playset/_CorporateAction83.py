@@ -1,40 +1,40 @@
 from . import base_types
-from ._Max3Number import Max3Number
-from ._IntermediateSecuritiesDistributionTypeFormat15Choice import IntermediateSecuritiesDistributionTypeFormat15Choice
-from ._TaxableIncomePerShareCalculatedFormat3Choice import TaxableIncomePerShareCalculatedFormat3Choice
-from ._CapitalGainFormat3Choice import CapitalGainFormat3Choice
-from ._DutchAuctionTypeFormat1Choice import DutchAuctionTypeFormat1Choice
-from ._CorporateActionDate83 import CorporateActionDate83
-from ._InformationTypeFormat4Choice import InformationTypeFormat4Choice
-from ._CorporateActionSD26 import CorporateActionSD26
-from ._CorporateActionAmounts70 import CorporateActionAmounts70
-from ._CorporateActionQuantity11 import CorporateActionQuantity11
-from ._CorporateActionEventStageFormat13Choice import CorporateActionEventStageFormat13Choice
-from ._LotteryTypeFormat4Choice import LotteryTypeFormat4Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._Exact3UpperCaseAlphaNumericText import Exact3UpperCaseAlphaNumericText
-from ._CorporateActionPrice85 import CorporateActionPrice85
-from ._OfferTypeFormat14Choice import OfferTypeFormat14Choice
 from ._AdditionalBusinessProcessFormat17Choice import AdditionalBusinessProcessFormat17Choice
-from ._ProrationReturnQuantityTreatment1Code import ProrationReturnQuantityTreatment1Code
-from ._DividendTypeFormat9Choice import DividendTypeFormat9Choice
-from ._Max350Text import Max350Text
-from ._CorporateActionBalanceDetails47 import CorporateActionBalanceDetails47
-from ._GenericIdentification30 import GenericIdentification30
-from ._RenounceableEntitlementStatusTypeFormat3Choice import RenounceableEntitlementStatusTypeFormat3Choice
-from ._CorporateActionChangeTypeFormat5Choice import CorporateActionChangeTypeFormat5Choice
-from ._CorporateActionRate122 import CorporateActionRate122
-from ._CorporateActionNarrative58 import CorporateActionNarrative58
-from ._RedemptionAnnouncementNoticeType1Code import RedemptionAnnouncementNoticeType1Code
+from ._CapitalGainFormat3Choice import CapitalGainFormat3Choice
 from ._CertificationTypeFormat3Choice import CertificationTypeFormat3Choice
-from ._CorporateActionSupplementaryIndicators1 import CorporateActionSupplementaryIndicators1
-from ._CorporateActionPeriod16 import CorporateActionPeriod16
 from ._ConsentTypeFormat4Choice import ConsentTypeFormat4Choice
+from ._CorporateActionAmounts70 import CorporateActionAmounts70
+from ._CorporateActionBalanceDetails47 import CorporateActionBalanceDetails47
+from ._CorporateActionChangeTypeFormat5Choice import CorporateActionChangeTypeFormat5Choice
+from ._CorporateActionDate83 import CorporateActionDate83
+from ._CorporateActionEventStageFormat13Choice import CorporateActionEventStageFormat13Choice
+from ._CorporateActionNarrative58 import CorporateActionNarrative58
+from ._CorporateActionPeriod16 import CorporateActionPeriod16
+from ._CorporateActionPrice85 import CorporateActionPrice85
+from ._CorporateActionQuantity11 import CorporateActionQuantity11
+from ._CorporateActionRate122 import CorporateActionRate122
+from ._CorporateActionSD26 import CorporateActionSD26
+from ._CorporateActionSupplementaryIndicators1 import CorporateActionSupplementaryIndicators1
 from ._DistributionTypeFormat7Choice import DistributionTypeFormat7Choice
+from ._DividendTypeFormat9Choice import DividendTypeFormat9Choice
+from ._DutchAuctionTypeFormat1Choice import DutchAuctionTypeFormat1Choice
+from ._Exact3UpperCaseAlphaNumericText import Exact3UpperCaseAlphaNumericText
+from ._GenericIdentification30 import GenericIdentification30
+from ._InformationTypeFormat4Choice import InformationTypeFormat4Choice
+from ._IntermediateSecuritiesDistributionTypeFormat15Choice import IntermediateSecuritiesDistributionTypeFormat15Choice
+from ._LotteryTypeFormat4Choice import LotteryTypeFormat4Choice
+from ._Max350Text import Max350Text
+from ._Max3Number import Max3Number
+from ._OfferTypeFormat14Choice import OfferTypeFormat14Choice
+from ._ProrationReturnQuantityTreatment1Code import ProrationReturnQuantityTreatment1Code
+from ._RedemptionAnnouncementNoticeType1Code import RedemptionAnnouncementNoticeType1Code
+from ._RenounceableEntitlementStatusTypeFormat3Choice import RenounceableEntitlementStatusTypeFormat3Choice
+from ._TaxableIncomePerShareCalculatedFormat3Choice import TaxableIncomePerShareCalculatedFormat3Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class CorporateAction83(base_types._BaseFieldType):
 
-	__slots__ = ["_AccptncPrtyLvl", "_PrratnRtrMinQtyTrtmnt", "_RstrctnInd", "_PrdDtls", "_PricDtls", "_ChngTp", "_AmtDtls", "_CnsntTp", "_OfferTp", "_RnncblEntitlmntStsTp", "_AcrdIntrstInd", "_RateAndAmtDtls", "_EvtBalDtls", "_FrftrOfIntrstInd", "_DvddTp", "_DtDtls", "_NtceTp", "_OcrncTp", "_EvtStag", "_DtchAuctnTp", "_CertDtls", "_IntrmdtSctiesDstrbtnTp", "_CertfctnTp", "_LtryTp", "_CptlGnInOutInd", "_TaxblIncmPerShrClctd", "_ChrgsApldInd", "_TaxOnNonDstrbtdPrcdsInd", "_NewPlcOfIncorprtn", "_IntrstAcrdNbOfDays", "_AddtlInf", "_InfTp", "_SctiesQty", "_SplmtryIndctrs", "_AddtlBizPrcInd"]
+	__slots__ = ["_AccptncPrtyLvl", "_AcrdIntrstInd", "_AddtlBizPrcInd", "_AddtlInf", "_AmtDtls", "_CertDtls", "_CertfctnTp", "_ChngTp", "_ChrgsApldInd", "_CnsntTp", "_CptlGnInOutInd", "_DtDtls", "_DtchAuctnTp", "_DvddTp", "_EvtBalDtls", "_EvtStag", "_FrftrOfIntrstInd", "_InfTp", "_IntrmdtSctiesDstrbtnTp", "_IntrstAcrdNbOfDays", "_LtryTp", "_NewPlcOfIncorprtn", "_NtceTp", "_OcrncTp", "_OfferTp", "_PrdDtls", "_PricDtls", "_PrratnRtrMinQtyTrtmnt", "_RateAndAmtDtls", "_RnncblEntitlmntStsTp", "_RstrctnInd", "_SctiesQty", "_SplmtryIndctrs", "_TaxOnNonDstrbtdPrcdsInd", "_TaxblIncmPerShrClctd"]
 	@property
 	def AccptncPrtyLvl(self):
 		return self._AccptncPrtyLvl

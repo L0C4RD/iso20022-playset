@@ -1,25 +1,25 @@
 from . import base_types
-from ._ChargeBearerType1Code import ChargeBearerType1Code
-from ._SettlementInstruction15 import SettlementInstruction15
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Purpose2Choice import Purpose2Choice
 from ._AmountType4Choice import AmountType4Choice
-from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
-from ._RemittanceLocation8 import RemittanceLocation8
-from ._Max140Text import Max140Text
-from ._ISODate import ISODate
-from ._PaymentTypeInformation27 import PaymentTypeInformation27
-from ._RemittanceInformation22 import RemittanceInformation22
-from ._InstructionForNextAgent1 import InstructionForNextAgent1
-from ._Max35Text import Max35Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._PartyIdentification272 import PartyIdentification272
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._CashAccount40 import CashAccount40
+from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ISODate import ISODate
+from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
+from ._InstructionForNextAgent1 import InstructionForNextAgent1
+from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification272 import PartyIdentification272
+from ._PaymentTypeInformation27 import PaymentTypeInformation27
+from ._Purpose2Choice import Purpose2Choice
+from ._RemittanceInformation22 import RemittanceInformation22
+from ._RemittanceLocation8 import RemittanceLocation8
+from ._SettlementInstruction15 import SettlementInstruction15
 
 class PaymentComplementaryInformation11(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgBr", "_IntrmyAgt1", "_UltmtCdtr", "_PrvsInstgAgt3Acct", "_PmtTpInf", "_RmtInf", "_IntrmyAgt1Acct", "_UltmtDbtr", "_Dbtr", "_InstrId", "_PrvsInstgAgt3", "_CdtrAcct", "_DbtrAcct", "_TxId", "_CdtrAgt", "_InstrForDbtrAgt", "_EndToEndId", "_RltdRmtInf", "_IntrmyAgt3Acct", "_Purp", "_DbtrAgtAcct", "_IntrmyAgt2Acct", "_Amt", "_PrvsInstgAgt2Acct", "_IntrBkSttlmAmt", "_InstrForCdtrAgt", "_IntrmyAgt3", "_ReqdColltnDt", "_PrvsInstgAgt1Acct", "_Cdtr", "_PrvsInstgAgt2", "_IntrBkSttlmDt", "_PrvsInstgAgt1", "_InstrForNxtAgt", "_CdtrAgtAcct", "_ReqdExctnDt", "_DbtrAgt", "_IntrmyAgt2", "_SttlmInf"]
+	__slots__ = ["_Amt", "_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_ChrgBr", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_EndToEndId", "_InstrForCdtrAgt", "_InstrForDbtrAgt", "_InstrForNxtAgt", "_InstrId", "_IntrBkSttlmAmt", "_IntrBkSttlmDt", "_IntrmyAgt1", "_IntrmyAgt1Acct", "_IntrmyAgt2", "_IntrmyAgt2Acct", "_IntrmyAgt3", "_IntrmyAgt3Acct", "_PmtTpInf", "_PrvsInstgAgt1", "_PrvsInstgAgt1Acct", "_PrvsInstgAgt2", "_PrvsInstgAgt2Acct", "_PrvsInstgAgt3", "_PrvsInstgAgt3Acct", "_Purp", "_ReqdColltnDt", "_ReqdExctnDt", "_RltdRmtInf", "_RmtInf", "_SttlmInf", "_TxId", "_UltmtCdtr", "_UltmtDbtr"]
 	@property
 	def Amt(self):
 		return self._Amt

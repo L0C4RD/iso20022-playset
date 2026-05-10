@@ -4,7 +4,7 @@ from ._AccountInformationType1Code import AccountInformationType1Code
 
 class AccountIdentification30(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AcctTp"]
+	__slots__ = ["_AcctTp", "_Id"]
 	@property
 	def AcctTp(self):
 		return self._AcctTp

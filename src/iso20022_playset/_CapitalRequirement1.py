@@ -4,7 +4,7 @@ from ._BaseOneRate import BaseOneRate
 
 class CapitalRequirement1(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtRsk", "_BizRsk", "_NtfctnBffr", "_OprlAndLglRsk", "_MktRsk", "_WndgDwnOrRstrgRsk", "_CntrPtyRsk"]
+	__slots__ = ["_BizRsk", "_CdtRsk", "_CntrPtyRsk", "_MktRsk", "_NtfctnBffr", "_OprlAndLglRsk", "_WndgDwnOrRstrgRsk"]
 	@property
 	def BizRsk(self):
 		return self._BizRsk

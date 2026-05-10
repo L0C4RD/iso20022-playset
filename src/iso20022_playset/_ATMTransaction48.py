@@ -1,19 +1,19 @@
 from . import base_types
-from ._CardAccount18 import CardAccount18
-from ._ATMCommand7 import ATMCommand7
-from ._ResponseType12 import ResponseType12
-from ._CurrencyConversion5 import CurrencyConversion5
-from ._TransactionIdentifier3 import TransactionIdentifier3
-from ._CurrencyConversion33 import CurrencyConversion33
-from ._Max10000Binary import Max10000Binary
-from ._Action7 import Action7
 from ._ATMAccountStatement3 import ATMAccountStatement3
+from ._ATMCommand7 import ATMCommand7
 from ._ATMCustomerProfile7 import ATMCustomerProfile7
+from ._Action7 import Action7
 from ._AuthorisationResult20 import AuthorisationResult20
+from ._CardAccount18 import CardAccount18
+from ._CurrencyConversion33 import CurrencyConversion33
+from ._CurrencyConversion5 import CurrencyConversion5
+from ._Max10000Binary import Max10000Binary
+from ._ResponseType12 import ResponseType12
+from ._TransactionIdentifier3 import TransactionIdentifier3
 
 class ATMTransaction48(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyConvs", "_TxRspn", "_Actn", "_CcyXchg", "_AuthstnRslt", "_AcctInf", "_AcctStmtData", "_CstmrSvcPrfl", "_Cmd", "_ICCRltdData", "_TxId"]
+	__slots__ = ["_AcctInf", "_AcctStmtData", "_Actn", "_AuthstnRslt", "_CcyConvs", "_CcyXchg", "_Cmd", "_CstmrSvcPrfl", "_ICCRltdData", "_TxId", "_TxRspn"]
 	@property
 	def AcctInf(self):
 		return self._AcctInf

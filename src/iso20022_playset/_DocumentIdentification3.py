@@ -1,6 +1,6 @@
 from . import base_types
-from ._Number import Number
 from ._Max35Text import Max35Text
+from ._Number import Number
 
 class DocumentIdentification3(base_types._BaseFieldType):
 

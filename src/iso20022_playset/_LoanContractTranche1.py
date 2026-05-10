@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Exact1NumericText import Exact1NumericText
-from ._YesNoIndicator import YesNoIndicator
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Exact1NumericText import Exact1NumericText
+from ._ISODate import ISODate
 from ._Number import Number
+from ._YesNoIndicator import YesNoIndicator
 
 class LoanContractTranche1(base_types._BaseFieldType):
 
-	__slots__ = ["_XpctdDt", "_DueDt", "_LastTrchInd", "_TrchNb", "_DrtnCd", "_Amt"]
+	__slots__ = ["_Amt", "_DrtnCd", "_DueDt", "_LastTrchInd", "_TrchNb", "_XpctdDt"]
 	@property
 	def Amt(self):
 		return self._Amt

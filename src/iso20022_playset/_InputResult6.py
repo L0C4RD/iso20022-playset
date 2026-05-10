@@ -1,7 +1,7 @@
 from . import base_types
+from ._InformationQualify1Code import InformationQualify1Code
 from ._InputResultData6 import InputResultData6
 from ._SaleCapabilities2Code import SaleCapabilities2Code
-from ._InformationQualify1Code import InformationQualify1Code
 
 class InputResult6(base_types._BaseFieldType):
 

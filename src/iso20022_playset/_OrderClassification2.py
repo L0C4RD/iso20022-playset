@@ -4,7 +4,7 @@ from ._OrderType3Code import OrderType3Code
 
 class OrderClassification2(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrTpClssfctn", "_OrdrTp"]
+	__slots__ = ["_OrdrTp", "_OrdrTpClssfctn"]
 	@property
 	def OrdrTp(self):
 		return self._OrdrTp

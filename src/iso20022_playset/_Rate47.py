@@ -1,18 +1,18 @@
 from . import base_types
-from ._RateAndAmountFormat77Choice import RateAndAmountFormat77Choice
-from ._InterestRateUsedForPaymentFormat18Choice import InterestRateUsedForPaymentFormat18Choice
-from ._RateAndAmountFormat48Choice import RateAndAmountFormat48Choice
-from ._NetDividendRateFormat43Choice import NetDividendRateFormat43Choice
-from ._SolicitationFeeRateFormat15Choice import SolicitationFeeRateFormat15Choice
-from ._RateFormat24Choice import RateFormat24Choice
-from ._RateAndAmountFormat76Choice import RateAndAmountFormat76Choice
 from ._GrossDividendRateFormat41Choice import GrossDividendRateFormat41Choice
-from ._RateFormat30Choice import RateFormat30Choice
+from ._InterestRateUsedForPaymentFormat18Choice import InterestRateUsedForPaymentFormat18Choice
+from ._NetDividendRateFormat43Choice import NetDividendRateFormat43Choice
+from ._RateAndAmountFormat48Choice import RateAndAmountFormat48Choice
 from ._RateAndAmountFormat72Choice import RateAndAmountFormat72Choice
+from ._RateAndAmountFormat76Choice import RateAndAmountFormat76Choice
+from ._RateAndAmountFormat77Choice import RateAndAmountFormat77Choice
+from ._RateFormat24Choice import RateFormat24Choice
+from ._RateFormat30Choice import RateFormat30Choice
+from ._SolicitationFeeRateFormat15Choice import SolicitationFeeRateFormat15Choice
 
 class Rate47(base_types._BaseFieldType):
 
-	__slots__ = ["_GrssIntrstRateUsdForPmt", "_FsclStmp", "_WhldgTaxRate", "_ScndLvlTax", "_TaxCdtRate", "_AddtlTax", "_TaxOnPrfts", "_ChrgsFees", "_ThrdPtyIncntivRate", "_TaxRclmRate", "_SlctnFeeRate", "_AplblRate", "_DmdRate", "_GrssDstrbtnRate", "_EqulstnRate", "_TaxOnIncm", "_NetDstrbtnRate", "_EarlySlctnFeeRate"]
+	__slots__ = ["_AddtlTax", "_AplblRate", "_ChrgsFees", "_DmdRate", "_EarlySlctnFeeRate", "_EqulstnRate", "_FsclStmp", "_GrssDstrbtnRate", "_GrssIntrstRateUsdForPmt", "_NetDstrbtnRate", "_ScndLvlTax", "_SlctnFeeRate", "_TaxCdtRate", "_TaxOnIncm", "_TaxOnPrfts", "_TaxRclmRate", "_ThrdPtyIncntivRate", "_WhldgTaxRate"]
 	@property
 	def AddtlTax(self):
 		return self._AddtlTax

@@ -1,15 +1,15 @@
 from . import base_types
-from ._Max2NumericText import Max2NumericText
-from ._Max32HexBinaryText import Max32HexBinaryText
 from ._Exact1HexBinaryText import Exact1HexBinaryText
 from ._Max16HexBinaryText import Max16HexBinaryText
-from ._Max8NumericText import Max8NumericText
+from ._Max2NumericText import Max2NumericText
+from ._Max32HexBinaryText import Max32HexBinaryText
 from ._Max4NumericText import Max4NumericText
 from ._Max5NumericText import Max5NumericText
+from ._Max8NumericText import Max8NumericText
 
 class PINData1(base_types._BaseFieldType):
 
-	__slots__ = ["_PINBlckFrmt", "_KeyLngth", "_Algo", "_KeyPrtcn", "_NcrptdPINBlck", "_KeyIndx", "_KeySetIdr", "_Ctrl", "_DrvdInf"]
+	__slots__ = ["_Algo", "_Ctrl", "_DrvdInf", "_KeyIndx", "_KeyLngth", "_KeyPrtcn", "_KeySetIdr", "_NcrptdPINBlck", "_PINBlckFrmt"]
 	@property
 	def Algo(self):
 		return self._Algo

@@ -5,7 +5,7 @@ from ._Max3Number import Max3Number
 
 class SecuritiesTradeDetails100(base_types._BaseFieldType):
 
-	__slots__ = ["_OpngSttlmDt", "_NbOfDaysAcrd", "_InstrPrcgAddtlDtls", "_TradDt"]
+	__slots__ = ["_InstrPrcgAddtlDtls", "_NbOfDaysAcrd", "_OpngSttlmDt", "_TradDt"]
 	@property
 	def InstrPrcgAddtlDtls(self):
 		return self._InstrPrcgAddtlDtls

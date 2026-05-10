@@ -1,14 +1,14 @@
 from . import base_types
 from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
-from ._OpenInterest1 import OpenInterest1
-from ._NonNegativeNumber import NonNegativeNumber
-from ._Product1Choice import Product1Choice
 from ._GenericIdentification168 import GenericIdentification168
 from ._MICIdentifier import MICIdentifier
+from ._NonNegativeNumber import NonNegativeNumber
+from ._OpenInterest1 import OpenInterest1
+from ._Product1Choice import Product1Choice
 
 class ClearedProduct2(base_types._BaseFieldType):
 
-	__slots__ = ["_UvrslPdctId", "_CCPPdctId", "_Pdct", "_OpnIntrst", "_TradgVn", "_TrdsClrd", "_ClrdGrssNtnlAmt"]
+	__slots__ = ["_CCPPdctId", "_ClrdGrssNtnlAmt", "_OpnIntrst", "_Pdct", "_TradgVn", "_TrdsClrd", "_UvrslPdctId"]
 	@property
 	def CCPPdctId(self):
 		return self._CCPPdctId

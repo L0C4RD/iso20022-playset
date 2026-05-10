@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._ReportingAssetBreakdown2 import ReportingAssetBreakdown2
 from ._AvailableFinancialResourcesAmount2 import AvailableFinancialResourcesAmount2
+from ._ReportingAssetBreakdown2 import ReportingAssetBreakdown2
+from ._SupplementaryData1 import SupplementaryData1
 
 class CCPAvailableFinancialResourcesReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrPrfnddRsrcs", "_SplmtryData", "_AvlblFinRsrcsAmt"]
+	__slots__ = ["_AvlblFinRsrcsAmt", "_OthrPrfnddRsrcs", "_SplmtryData"]
 	@property
 	def AvlblFinRsrcsAmt(self):
 		return self._AvlblFinRsrcsAmt

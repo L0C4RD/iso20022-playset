@@ -1,18 +1,18 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._Max210Text import Max210Text
-from ._QuantityBreakdown63 import QuantityBreakdown63
-from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
-from ._PartyIdentification144 import PartyIdentification144
 from ._AmountAndDirection52 import AmountAndDirection52
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._Quantity51Choice import Quantity51Choice
+from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
 from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
+from ._Max210Text import Max210Text
+from ._PartyIdentification144 import PartyIdentification144
+from ._Quantity51Choice import Quantity51Choice
+from ._QuantityBreakdown63 import QuantityBreakdown63
 from ._SafeKeepingPlace5 import SafeKeepingPlace5
+from ._SecuritiesAccount19 import SecuritiesAccount19
 
 class QuantityAndAccount115(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgPlc", "_RmngToBeSttldQty", "_SfkpgAcct", "_CshAcct", "_PrevslySttldQty", "_SttldQty", "_BlckChainAdrOrWllt", "_RmngToBeSttldAmt", "_QtyBrkdwn", "_PrevslySttldAmt", "_DnmtnChc", "_AcctOwnr"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_CshAcct", "_DnmtnChc", "_PrevslySttldAmt", "_PrevslySttldQty", "_QtyBrkdwn", "_RmngToBeSttldAmt", "_RmngToBeSttldQty", "_SfkpgAcct", "_SfkpgPlc", "_SttldQty"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

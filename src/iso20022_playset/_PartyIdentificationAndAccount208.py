@@ -1,16 +1,16 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._PartyTextInformation3 import PartyTextInformation3
 from ._AlternatePartyIdentification9 import AlternatePartyIdentification9
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._CountryCode import CountryCode
+from ._LEIIdentifier import LEIIdentifier
 from ._PartyIdentification137Choice import PartyIdentification137Choice
+from ._PartyTextInformation3 import PartyTextInformation3
 from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
 
 class PartyIdentificationAndAccount208(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_Id", "_AddtlInf", "_PrcgId", "_Ntlty", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_AltrnId"]
+	__slots__ = ["_AddtlInf", "_AltrnId", "_BlckChainAdrOrWllt", "_Id", "_LEI", "_Ntlty", "_PrcgId", "_SfkpgAcct"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

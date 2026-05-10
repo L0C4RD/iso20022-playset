@@ -4,7 +4,7 @@ from ._PlusOrMinusIndicator import PlusOrMinusIndicator
 
 class SpreadRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sgn", "_RateOrAmt"]
+	__slots__ = ["_RateOrAmt", "_Sgn"]
 	@property
 	def RateOrAmt(self):
 		return self._RateOrAmt

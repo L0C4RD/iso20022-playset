@@ -1,16 +1,16 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISODate import ISODate
-from ._ContactPersonal1 import ContactPersonal1
 from ._AdditionalData1 import AdditionalData1
 from ._Address2 import Address2
 from ._CardholderName3 import CardholderName3
-from ._LocalData13 import LocalData13
+from ._ContactPersonal1 import ContactPersonal1
 from ._Credentials3 import Credentials3
+from ._ISODate import ISODate
+from ._LocalData13 import LocalData13
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Cardholder22(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_DtOfBirth", "_Adr", "_HghVal", "_AddtlData", "_CtctInf", "_LclData", "_Nm"]
+	__slots__ = ["_AddtlData", "_Adr", "_CtctInf", "_DtOfBirth", "_HghVal", "_Id", "_LclData", "_Nm"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

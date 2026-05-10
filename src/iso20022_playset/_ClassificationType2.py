@@ -1,11 +1,11 @@
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
-from ._ExternalFinancialInstrumentProductType1Code import ExternalFinancialInstrumentProductType1Code
 from ._CFIOct2015Identifier import CFIOct2015Identifier
+from ._ExternalFinancialInstrumentProductType1Code import ExternalFinancialInstrumentProductType1Code
+from ._GenericIdentification36 import GenericIdentification36
 
 class ClassificationType2(base_types._BaseFieldType):
 
-	__slots__ = ["_ClssfctnFinInstrm", "_AltrnClssfctn", "_FinInstrmPdctTpCd"]
+	__slots__ = ["_AltrnClssfctn", "_ClssfctnFinInstrm", "_FinInstrmPdctTpCd"]
 	@property
 	def AltrnClssfctn(self):
 		return self._AltrnClssfctn

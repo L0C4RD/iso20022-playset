@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class RegulatoryInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_Grp", "_Sctr", "_Brnch"]
+	__slots__ = ["_Brnch", "_Grp", "_Othr", "_Sctr"]
 	@property
 	def Brnch(self):
 		return self._Brnch

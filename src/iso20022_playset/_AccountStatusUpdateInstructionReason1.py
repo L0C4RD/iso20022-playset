@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max350Text import Max350Text
 from ._AccountStatusUpdateInstructionReason2Choice import AccountStatusUpdateInstructionReason2Choice
+from ._Max350Text import Max350Text
 
 class AccountStatusUpdateInstructionReason1(base_types._BaseFieldType):
 

@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISINOct2015Identifier import ISINOct2015Identifier
 from ._FinancialInstrument59 import FinancialInstrument59
+from ._ISINOct2015Identifier import ISINOct2015Identifier
 
 class GeneralCollateral3(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_ElgblFinInstrmId"]
+	__slots__ = ["_ElgblFinInstrmId", "_FinInstrmId"]
 	@property
 	def ElgblFinInstrmId(self):
 		return self._ElgblFinInstrmId

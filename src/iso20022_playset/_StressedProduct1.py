@@ -1,10 +1,10 @@
 from . import base_types
-from ._StressSize1Choice import StressSize1Choice
 from ._GenericIdentification168 import GenericIdentification168
+from ._StressSize1Choice import StressSize1Choice
 
 class StressedProduct1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_MinStrssSz", "_MaxStrssSz"]
+	__slots__ = ["_Id", "_MaxStrssSz", "_MinStrssSz"]
 	@property
 	def Id(self):
 		return self._Id

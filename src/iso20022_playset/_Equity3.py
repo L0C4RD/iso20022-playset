@@ -6,7 +6,7 @@ from ._PreferenceToIncome5Choice import PreferenceToIncome5Choice
 
 class Equity3(base_types._BaseFieldType):
 
-	__slots__ = ["_MtrtyDt", "_PrefToIncm", "_ParVal", "_NonPdAmt", "_VtngRghtsPerShr"]
+	__slots__ = ["_MtrtyDt", "_NonPdAmt", "_ParVal", "_PrefToIncm", "_VtngRghtsPerShr"]
 	@property
 	def MtrtyDt(self):
 		return self._MtrtyDt

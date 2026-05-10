@@ -1,19 +1,19 @@
 from . import base_types
+from ._ActionMessage11 import ActionMessage11
 from ._BinRange1 import BinRange1
 from ._Commission18 import Commission18
-from ._CurrencyDetails3 import CurrencyDetails3
 from ._Commission19 import Commission19
 from ._CurrencyDetails2 import CurrencyDetails2
-from ._PercentageRate import PercentageRate
-from ._ActionMessage11 import ActionMessage11
-from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._CurrencyDetails3 import CurrencyDetails3
 from ._ISODateTime import ISODateTime
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
 from ._OriginalAmountDetails1 import OriginalAmountDetails1
+from ._PercentageRate import PercentageRate
 
 class CurrencyConversion29(base_types._BaseFieldType):
 
-	__slots__ = ["_QtnDt", "_TrgtCcy", "_AplblBinRg", "_OrgnlAmt", "_XchgRate", "_CcyConvsId", "_VldUntil", "_ComssnDtls", "_DclrtnDtls", "_SrcCcy", "_VldFr", "_MrkUpDtls", "_RsltgAmt", "_NvrtdXchgRate"]
+	__slots__ = ["_AplblBinRg", "_CcyConvsId", "_ComssnDtls", "_DclrtnDtls", "_MrkUpDtls", "_NvrtdXchgRate", "_OrgnlAmt", "_QtnDt", "_RsltgAmt", "_SrcCcy", "_TrgtCcy", "_VldFr", "_VldUntil", "_XchgRate"]
 	@property
 	def AplblBinRg(self):
 		return self._AplblBinRg

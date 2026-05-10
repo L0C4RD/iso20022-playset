@@ -3,7 +3,7 @@ from ._MaturityTerm2 import MaturityTerm2
 
 class TimeToMaturityPeriod2(base_types._BaseFieldType):
 
-	__slots__ = ["_Start", "_End"]
+	__slots__ = ["_End", "_Start"]
 	@property
 	def End(self):
 		return self._End

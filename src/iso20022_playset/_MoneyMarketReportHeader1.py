@@ -1,6 +1,6 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
 from ._DateTimePeriod1 import DateTimePeriod1
+from ._LEIIdentifier import LEIIdentifier
 
 class MoneyMarketReportHeader1(base_types._BaseFieldType):
 

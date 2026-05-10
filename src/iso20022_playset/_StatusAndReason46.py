@@ -1,11 +1,11 @@
 from . import base_types
-from ._UnaffirmedReason3Choice import UnaffirmedReason3Choice
-from ._Max210Text import Max210Text
 from ._AffirmationStatus10Choice import AffirmationStatus10Choice
+from ._Max210Text import Max210Text
+from ._UnaffirmedReason3Choice import UnaffirmedReason3Choice
 
 class StatusAndReason46(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlRsnInf", "_UaffrmdRsn", "_AffirmSts"]
+	__slots__ = ["_AddtlRsnInf", "_AffirmSts", "_UaffrmdRsn"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Party50Choice import Party50Choice
-from ._CancellationIndividualStatus1Code import CancellationIndividualStatus1Code
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._Case6 import Case6
-from ._OriginalGroupInformation29 import OriginalGroupInformation29
-from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
-from ._ResolutionData5 import ResolutionData5
+from ._CancellationIndividualStatus1Code import CancellationIndividualStatus1Code
 from ._CancellationStatusReason5 import CancellationStatusReason5
+from ._Case6 import Case6
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._OriginalGroupInformation29 import OriginalGroupInformation29
 from ._OriginalTransactionReference42 import OriginalTransactionReference42
+from ._Party50Choice import Party50Choice
+from ._ResolutionData5 import ResolutionData5
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class PaymentTransaction152(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnr", "_OrgnlIntrBkSttlmDt", "_RslvdCase", "_OrgnlIntrBkSttlmAmt", "_CxlStsId", "_OrgnlInstrId", "_OrgnlGrpInf", "_CxlStsRsnInf", "_OrgnlTxRef", "_OrgnlUETR", "_OrgnlClrSysRef", "_OrgnlTxId", "_OrgnlEndToEndId", "_RsltnRltdInf", "_Assgne", "_TxCxlSts"]
+	__slots__ = ["_Assgne", "_Assgnr", "_CxlStsId", "_CxlStsRsnInf", "_OrgnlClrSysRef", "_OrgnlEndToEndId", "_OrgnlGrpInf", "_OrgnlInstrId", "_OrgnlIntrBkSttlmAmt", "_OrgnlIntrBkSttlmDt", "_OrgnlTxId", "_OrgnlTxRef", "_OrgnlUETR", "_RsltnRltdInf", "_RslvdCase", "_TxCxlSts"]
 	@property
 	def Assgne(self):
 		return self._Assgne

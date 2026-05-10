@@ -4,7 +4,7 @@ from ._DateFormat49Choice import DateFormat49Choice
 
 class CorporateActionDate96(base_types._BaseFieldType):
 
-	__slots__ = ["_LtryDt", "_DdlnToSplt", "_EqulstnDt", "_PmtDt", "_UcondlDt", "_EarlyClsgDt", "_PrratnDt", "_CrtApprvlDt", "_FctvDt", "_ElctnToCtrPtyMktDdln", "_GrntedPrtcptnDt", "_ElctnToCtrPtyRspnDdln", "_RcrdDt", "_OffclAnncmntPblctnDt", "_TradgSspdDt", "_RsltsPblctnDt", "_MktClmTrckgEndDt", "_MrgnFxgDt", "_RegnDdln", "_LeadPlntffDdln", "_LpsdDt", "_EarlyThrdPtyDdln", "_ThrdPtyDdln", "_HrgDt", "_AnncmntDt", "_MtgDt", "_ExDvddDt", "_SpclExDt", "_CertfctnDdln", "_FxgDt", "_NewMtrtyDt", "_DdlnForTaxBrkdwnInstr", "_FilgDt", "_FrthrDtldAnncmntDt", "_WhlyUcondlDt"]
+	__slots__ = ["_AnncmntDt", "_CertfctnDdln", "_CrtApprvlDt", "_DdlnForTaxBrkdwnInstr", "_DdlnToSplt", "_EarlyClsgDt", "_EarlyThrdPtyDdln", "_ElctnToCtrPtyMktDdln", "_ElctnToCtrPtyRspnDdln", "_EqulstnDt", "_ExDvddDt", "_FctvDt", "_FilgDt", "_FrthrDtldAnncmntDt", "_FxgDt", "_GrntedPrtcptnDt", "_HrgDt", "_LeadPlntffDdln", "_LpsdDt", "_LtryDt", "_MktClmTrckgEndDt", "_MrgnFxgDt", "_MtgDt", "_NewMtrtyDt", "_OffclAnncmntPblctnDt", "_PmtDt", "_PrratnDt", "_RcrdDt", "_RegnDdln", "_RsltsPblctnDt", "_SpclExDt", "_ThrdPtyDdln", "_TradgSspdDt", "_UcondlDt", "_WhlyUcondlDt"]
 	@property
 	def AnncmntDt(self):
 		return self._AnncmntDt

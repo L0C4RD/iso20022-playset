@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._PartyDataSearchCriteria2 import PartyDataSearchCriteria2
 from ._MessageHeader2 import MessageHeader2
 from ._PartyDataReturnCriteria2 import PartyDataReturnCriteria2
+from ._PartyDataSearchCriteria2 import PartyDataSearchCriteria2
+from ._SupplementaryData1 import SupplementaryData1
 
 class PartyQueryV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SchCrit", "_SplmtryData", "_RtrCrit", "_MsgHdr"]
+	__slots__ = ["_MsgHdr", "_RtrCrit", "_SchCrit", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

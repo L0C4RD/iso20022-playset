@@ -1,22 +1,22 @@
 from . import base_types
-from ._DateAndDateTime1Choice import DateAndDateTime1Choice
-from ._UnderlyingRatio2 import UnderlyingRatio2
-from ._Rating1 import Rating1
-from ._YesNoIndicator import YesNoIndicator
-from ._OptionRight2Choice import OptionRight2Choice
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Price14 import Price14
-from ._Number import Number
-from ._Max256Text import Max256Text
-from ._FutureAndOptionContractType1Code import FutureAndOptionContractType1Code
-from ._ISOYearMonth import ISOYearMonth
 from ._Appearance1Code import Appearance1Code
+from ._DateAndDateTime1Choice import DateAndDateTime1Choice
+from ._FutureAndOptionContractType1Code import FutureAndOptionContractType1Code
 from ._ISODateTime import ISODateTime
+from ._ISOYearMonth import ISOYearMonth
+from ._Max256Text import Max256Text
+from ._Number import Number
+from ._OptionRight2Choice import OptionRight2Choice
+from ._Price14 import Price14
+from ._Rating1 import Rating1
+from ._UnderlyingRatio2 import UnderlyingRatio2
 from ._UnitOfMeasure1Code import UnitOfMeasure1Code
+from ._YesNoIndicator import YesNoIndicator
 
 class FutureOrOptionDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_AnncmntDt", "_StrpblInd", "_FutrDt", "_MinSz", "_Ratg", "_IssePric", "_SprdTx", "_UnitOfMeasr", "_OptnRghts", "_LastDlvryDt", "_NearTermPosLmt", "_CtrctSttlmMnth", "_FrstDealgDt", "_PosLmt", "_Ratio", "_Purp", "_LastTx", "_Apprnc", "_FutrAndOptnCtrctTp", "_MinTradgPricgIncrmt"]
+	__slots__ = ["_AnncmntDt", "_Apprnc", "_CtrctSttlmMnth", "_FrstDealgDt", "_FutrAndOptnCtrctTp", "_FutrDt", "_IssePric", "_LastDlvryDt", "_LastTx", "_MinSz", "_MinTradgPricgIncrmt", "_NearTermPosLmt", "_OptnRghts", "_PosLmt", "_Purp", "_Ratg", "_Ratio", "_SprdTx", "_StrpblInd", "_UnitOfMeasr"]
 	@property
 	def AnncmntDt(self):
 		return self._AnncmntDt

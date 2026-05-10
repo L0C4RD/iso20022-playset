@@ -1,14 +1,14 @@
 from . import base_types
-from ._Status28Choice import Status28Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._Max35Text import Max35Text
-from ._StatusSubType2Code import StatusSubType2Code
-from ._StatusAndSubStatus2 import StatusAndSubStatus2
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
+from ._Status28Choice import Status28Choice
+from ._StatusAndSubStatus2 import StatusAndSubStatus2
+from ._StatusSubType2Code import StatusSubType2Code
+from ._YesNoIndicator import YesNoIndicator
 
 class TradeData14(base_types._BaseFieldType):
 
-	__slots__ = ["_CurStsSubTp", "_PrvsStsSubTp", "_AllgdTrad", "_MtchgSysUnqRef", "_StsOrgtr", "_PrvsSts", "_MtchgSysMtchgRef", "_MtchgSysMtchdSdRef", "_CurSts", "_CurStsDtTm"]
+	__slots__ = ["_AllgdTrad", "_CurSts", "_CurStsDtTm", "_CurStsSubTp", "_MtchgSysMtchdSdRef", "_MtchgSysMtchgRef", "_MtchgSysUnqRef", "_PrvsSts", "_PrvsStsSubTp", "_StsOrgtr"]
 	@property
 	def AllgdTrad(self):
 		return self._AllgdTrad

@@ -4,7 +4,7 @@ from ._Number import Number
 
 class AutoExtend1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Days", "_Yrs", "_Mnths", "_Dt"]
+	__slots__ = ["_Days", "_Dt", "_Mnths", "_Yrs"]
 	@property
 	def Days(self):
 		return self._Days

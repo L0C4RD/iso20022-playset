@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ClearingAccount1 import ClearingAccount1
-from ._ISODate import ISODate
 from ._CreditQuality1Code import CreditQuality1Code
+from ._ISODate import ISODate
 from ._PartyIdentification118Choice import PartyIdentification118Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ClearingMember1(base_types._BaseFieldType):
 
-	__slots__ = ["_FutrsComssnMrchntInd", "_MmbshVldTo", "_CdtQlty", "_Id", "_UltmtPrntId", "_MmbshVldFr", "_SpnsrgClrMmbId", "_ClrAcctOwnr"]
+	__slots__ = ["_CdtQlty", "_ClrAcctOwnr", "_FutrsComssnMrchntInd", "_Id", "_MmbshVldFr", "_MmbshVldTo", "_SpnsrgClrMmbId", "_UltmtPrntId"]
 	@property
 	def CdtQlty(self):
 		return self._CdtQlty

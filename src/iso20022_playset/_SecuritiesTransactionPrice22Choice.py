@@ -1,11 +1,11 @@
 from . import base_types
+from ._SecuritiesTransactionPrice2Choice import SecuritiesTransactionPrice2Choice
 from ._SecuritiesTransactionPrice6 import SecuritiesTransactionPrice6
 from ._SecuritiesTransactionPrice7 import SecuritiesTransactionPrice7
-from ._SecuritiesTransactionPrice2Choice import SecuritiesTransactionPrice2Choice
 
 class SecuritiesTransactionPrice22Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoPric", "_Pric", "_DgtlTknPric"]
+	__slots__ = ["_DgtlTknPric", "_NoPric", "_Pric"]
 	@property
 	def DgtlTknPric(self):
 		return self._DgtlTknPric

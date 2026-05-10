@@ -1,12 +1,12 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._PartyIdentification232 import PartyIdentification232
-from ._PartyIdentification136 import PartyIdentification136
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._PartyIdentification136 import PartyIdentification136
+from ._PartyIdentification232 import PartyIdentification232
+from ._SecuritiesAccount19 import SecuritiesAccount19
 
 class CollateralParties11(base_types._BaseFieldType):
 
-	__slots__ = ["_TrptyAgt", "_BlckChainAdrOrWllt", "_PtyB", "_ClntPtyB", "_CollAcct"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_ClntPtyB", "_CollAcct", "_PtyB", "_TrptyAgt"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt

@@ -4,7 +4,7 @@ from ._Max210Text import Max210Text
 
 class GenericIdentification184(base_types._BaseFieldType):
 
-	__slots__ = ["_Src", "_Id"]
+	__slots__ = ["_Id", "_Src"]
 	@property
 	def Id(self):
 		return self._Id

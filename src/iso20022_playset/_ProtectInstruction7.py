@@ -5,7 +5,7 @@ from ._RestrictedFINMax15Text import RestrictedFINMax15Text
 
 class ProtectInstruction7(base_types._BaseFieldType):
 
-	__slots__ = ["_TxTp", "_PrtctDt", "_TxId"]
+	__slots__ = ["_PrtctDt", "_TxId", "_TxTp"]
 	@property
 	def PrtctDt(self):
 		return self._PrtctDt

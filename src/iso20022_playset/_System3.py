@@ -1,12 +1,12 @@
 from . import base_types
-from ._MarketInfrastructureIdentification1Choice import MarketInfrastructureIdentification1Choice
-from ._CountryCode import CountryCode
 from ._AccountIdentification4Choice import AccountIdentification4Choice
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CountryCode import CountryCode
+from ._MarketInfrastructureIdentification1Choice import MarketInfrastructureIdentification1Choice
 
 class System3(base_types._BaseFieldType):
 
-	__slots__ = ["_SysId", "_AcctId", "_MmbId", "_Ctry"]
+	__slots__ = ["_AcctId", "_Ctry", "_MmbId", "_SysId"]
 	@property
 	def AcctId(self):
 		return self._AcctId

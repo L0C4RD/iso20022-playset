@@ -1,6 +1,6 @@
 from . import base_types
-from ._ISODateTime import ISODateTime
 from ._DateTimePeriod1 import DateTimePeriod1
+from ._ISODateTime import ISODateTime
 
 class DateTimePeriod1Choice(base_types._BaseFieldType):
 

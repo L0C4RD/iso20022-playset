@@ -1,11 +1,11 @@
 from . import base_types
-from ._UnmatchedStatus16Choice import UnmatchedStatus16Choice
 from ._ProprietaryReason4 import ProprietaryReason4
 from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._UnmatchedStatus16Choice import UnmatchedStatus16Choice
 
 class MatchingStatus24Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Umtchd", "_Mtchd", "_Prtry"]
+	__slots__ = ["_Mtchd", "_Prtry", "_Umtchd"]
 	@property
 	def Mtchd(self):
 		return self._Mtchd

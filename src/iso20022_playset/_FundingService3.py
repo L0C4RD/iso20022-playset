@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max500Text import Max500Text
 from ._FundingSource4 import FundingSource4
-from ._Max35Text import Max35Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Max500Text import Max500Text
 
 class FundingService3(base_types._BaseFieldType):
 
-	__slots__ = ["_Prvdr", "_Nm", "_ClmAssgnr", "_Ref", "_Desc", "_ClmCrdntls", "_FndgSrc", "_BizPurp"]
+	__slots__ = ["_BizPurp", "_ClmAssgnr", "_ClmCrdntls", "_Desc", "_FndgSrc", "_Nm", "_Prvdr", "_Ref"]
 	@property
 	def BizPurp(self):
 		return self._BizPurp

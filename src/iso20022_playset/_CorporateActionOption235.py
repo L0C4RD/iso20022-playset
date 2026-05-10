@@ -1,33 +1,33 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._FractionDispositionType12Code import FractionDispositionType12Code
-from ._CorporateActionOption37Choice import CorporateActionOption37Choice
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._CorporateActionRate124 import CorporateActionRate124
-from ._CorporateActionNarrative66 import CorporateActionNarrative66
-from ._OptionFeaturesFormat28Choice import OptionFeaturesFormat28Choice
-from ._CorporateActionDate104 import CorporateActionDate104
-from ._SecuritiesOption81 import SecuritiesOption81
-from ._ProrationBelowMinimumQuantity2Choice import ProrationBelowMinimumQuantity2Choice
-from ._FractionDispositionType26Choice import FractionDispositionType26Choice
 from ._BeneficiaryCertificationType13Choice import BeneficiaryCertificationType13Choice
-from ._OptionAvailabilityStatus3Choice import OptionAvailabilityStatus3Choice
-from ._DecimalNumber import DecimalNumber
-from ._YesNoIndicator import YesNoIndicator
-from ._Exact3UpperCaseAlphaNumericText import Exact3UpperCaseAlphaNumericText
-from ._OfferTypeFormat14Choice import OfferTypeFormat14Choice
-from ._SecuritiesOption114 import SecuritiesOption114
-from ._CorporateActionPrice87 import CorporateActionPrice87
-from ._ProrationReturnQuantityTreatment1Code import ProrationReturnQuantityTreatment1Code
-from ._Exact3NumericText import Exact3NumericText
-from ._TaxCategory1 import TaxCategory1
-from ._CorporateActionPeriod12 import CorporateActionPeriod12
-from ._ExtendedOptionFeature2Code import ExtendedOptionFeature2Code
 from ._CashOption108 import CashOption108
+from ._CorporateActionDate104 import CorporateActionDate104
+from ._CorporateActionNarrative66 import CorporateActionNarrative66
+from ._CorporateActionOption37Choice import CorporateActionOption37Choice
+from ._CorporateActionPeriod12 import CorporateActionPeriod12
+from ._CorporateActionPrice87 import CorporateActionPrice87
+from ._CorporateActionRate124 import CorporateActionRate124
+from ._DecimalNumber import DecimalNumber
+from ._Exact3NumericText import Exact3NumericText
+from ._Exact3UpperCaseAlphaNumericText import Exact3UpperCaseAlphaNumericText
+from ._ExtendedOptionFeature2Code import ExtendedOptionFeature2Code
+from ._FractionDispositionType12Code import FractionDispositionType12Code
+from ._FractionDispositionType26Choice import FractionDispositionType26Choice
+from ._OfferTypeFormat14Choice import OfferTypeFormat14Choice
+from ._OptionAvailabilityStatus3Choice import OptionAvailabilityStatus3Choice
+from ._OptionFeaturesFormat28Choice import OptionFeaturesFormat28Choice
+from ._ProrationBelowMinimumQuantity2Choice import ProrationBelowMinimumQuantity2Choice
+from ._ProrationReturnQuantityTreatment1Code import ProrationReturnQuantityTreatment1Code
+from ._SecuritiesOption114 import SecuritiesOption114
+from ._SecuritiesOption81 import SecuritiesOption81
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._TaxCategory1 import TaxCategory1
+from ._YesNoIndicator import YesNoIndicator
 
 class CorporateActionOption235(base_types._BaseFieldType):
 
-	__slots__ = ["_DfltOptnInd", "_DtDtls", "_OptnAvlbtySts", "_SctiesMvmntDtls", "_AccptncPrtyLvl", "_AddtlInf", "_PrratnRtrMinQtyTrtmnt", "_WdrwlAllwdInd", "_PrratnBlwMinQty", "_CertfctnBrkdwnTp", "_SctiesQty", "_PrtctChrgInd", "_SbcptChrgInd", "_OptnTp", "_PrratnRndgInd", "_CshMvmntDtls", "_PrdDtls", "_FinInstrmId", "_CcyOptn", "_CertfctnBrkdwnInd", "_FrctnDspstn", "_OvrsbcptChrgInd", "_TaxCtgy", "_RateAndAmtDtls", "_OfferTp", "_PrratnFrctn", "_SplmtryOptnFeatrs", "_OptnFeatrs", "_StepUpChrgInd", "_PricDtls", "_OptnNb"]
+	__slots__ = ["_AccptncPrtyLvl", "_AddtlInf", "_CcyOptn", "_CertfctnBrkdwnInd", "_CertfctnBrkdwnTp", "_CshMvmntDtls", "_DfltOptnInd", "_DtDtls", "_FinInstrmId", "_FrctnDspstn", "_OfferTp", "_OptnAvlbtySts", "_OptnFeatrs", "_OptnNb", "_OptnTp", "_OvrsbcptChrgInd", "_PrdDtls", "_PricDtls", "_PrratnBlwMinQty", "_PrratnFrctn", "_PrratnRndgInd", "_PrratnRtrMinQtyTrtmnt", "_PrtctChrgInd", "_RateAndAmtDtls", "_SbcptChrgInd", "_SctiesMvmntDtls", "_SctiesQty", "_SplmtryOptnFeatrs", "_StepUpChrgInd", "_TaxCtgy", "_WdrwlAllwdInd"]
 	@property
 	def AccptncPrtyLvl(self):
 		return self._AccptncPrtyLvl

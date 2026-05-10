@@ -4,7 +4,7 @@ from ._KEKIdentifier2 import KEKIdentifier2
 
 class Recipient5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyIdr", "_IssrAndSrlNb"]
+	__slots__ = ["_IssrAndSrlNb", "_KeyIdr"]
 	@property
 	def IssrAndSrlNb(self):
 		return self._IssrAndSrlNb

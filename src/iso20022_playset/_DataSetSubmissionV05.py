@@ -1,18 +1,18 @@
 from . import base_types
-from ._InsuranceDataSet1 import InsuranceDataSet1
 from ._BICIdentification1 import BICIdentification1
+from ._CertificateDataSet2 import CertificateDataSet2
+from ._CommercialDataSet5 import CommercialDataSet5
+from ._DataSetSubmissionReferences3 import DataSetSubmissionReferences3
+from ._InstructionType3 import InstructionType3
+from ._InsuranceDataSet1 import InsuranceDataSet1
+from ._MessageIdentification1 import MessageIdentification1
 from ._OtherCertificateDataSet2 import OtherCertificateDataSet2
 from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._DataSetSubmissionReferences3 import DataSetSubmissionReferences3
 from ._TransportDataSet5 import TransportDataSet5
-from ._InstructionType3 import InstructionType3
-from ._MessageIdentification1 import MessageIdentification1
-from ._CommercialDataSet5 import CommercialDataSet5
-from ._CertificateDataSet2 import CertificateDataSet2
 
 class DataSetSubmissionV05(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrBk", "_ComrclDataSet", "_OthrCertDataSet", "_TrnsprtDataSet", "_CertDataSet", "_SubmissnId", "_RltdTxRefs", "_SellrBk", "_InsrncDataSet", "_CmonSubmissnRef", "_Instr"]
+	__slots__ = ["_BuyrBk", "_CertDataSet", "_CmonSubmissnRef", "_ComrclDataSet", "_InsrncDataSet", "_Instr", "_OthrCertDataSet", "_RltdTxRefs", "_SellrBk", "_SubmissnId", "_TrnsprtDataSet"]
 	@property
 	def BuyrBk(self):
 		return self._BuyrBk

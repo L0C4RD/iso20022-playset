@@ -1,16 +1,16 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
-from ._PartyIdentification139 import PartyIdentification139
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ChargeBasis2Choice import ChargeBasis2Choice
-from ._PercentageRate import PercentageRate
+from ._ChargeOrCommissionDiscount1 import ChargeOrCommissionDiscount1
 from ._ChargeType5Choice import ChargeType5Choice
 from ._Max35Text import Max35Text
-from ._ChargeOrCommissionDiscount1 import ChargeOrCommissionDiscount1
+from ._PartyIdentification139 import PartyIdentification139
+from ._PercentageRate import PercentageRate
+from ._YesNoIndicator import YesNoIndicator
 
 class Fee5(base_types._BaseFieldType):
 
-	__slots__ = ["_NonStdSLARef", "_Tp", "_ApldAmt", "_ApldRate", "_InftvInd", "_Bsis", "_DscntDtls", "_StdAmt", "_StdRate", "_RcptId"]
+	__slots__ = ["_ApldAmt", "_ApldRate", "_Bsis", "_DscntDtls", "_InftvInd", "_NonStdSLARef", "_RcptId", "_StdAmt", "_StdRate", "_Tp"]
 	@property
 	def ApldAmt(self):
 		return self._ApldAmt

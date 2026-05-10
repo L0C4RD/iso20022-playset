@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class TransactionIdentifier3(base_types._BaseFieldType):
 
-	__slots__ = ["_TxDtTm", "_TxRef", "_HstTxDtTm"]
+	__slots__ = ["_HstTxDtTm", "_TxDtTm", "_TxRef"]
 	@property
 	def HstTxDtTm(self):
 		return self._HstTxDtTm

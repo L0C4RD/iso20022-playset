@@ -1,11 +1,11 @@
 from . import base_types
+from ._NumberAndSumOfTransactions2 import NumberAndSumOfTransactions2
 from ._PaymentCommon6 import PaymentCommon6
 from ._TransactionReport8 import TransactionReport8
-from ._NumberAndSumOfTransactions2 import NumberAndSumOfTransactions2
 
 class Transactions11(base_types._BaseFieldType):
 
-	__slots__ = ["_TxsSummry", "_PmtCmonInf", "_TxRpt"]
+	__slots__ = ["_PmtCmonInf", "_TxRpt", "_TxsSummry"]
 	@property
 	def PmtCmonInf(self):
 		return self._PmtCmonInf

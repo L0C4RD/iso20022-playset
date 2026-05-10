@@ -1,11 +1,11 @@
 from . import base_types
-from ._PaymentInstrument17 import PaymentInstrument17
 from ._CashAccount204 import CashAccount204
 from ._DataModification2Code import DataModification2Code
+from ._PaymentInstrument17 import PaymentInstrument17
 
 class CashSettlement4(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrCshSttlmDtls", "_ModScpIndctn", "_CshAcctDtls"]
+	__slots__ = ["_CshAcctDtls", "_ModScpIndctn", "_OthrCshSttlmDtls"]
 	@property
 	def CshAcctDtls(self):
 		return self._CshAcctDtls

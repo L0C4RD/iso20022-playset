@@ -1,10 +1,10 @@
 from . import base_types
-from ._TaxPeriod2 import TaxPeriod2
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._TaxPeriod2 import TaxPeriod2
 
 class TaxRecordDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_Amt"]
+	__slots__ = ["_Amt", "_Prd"]
 	@property
 	def Amt(self):
 		return self._Amt

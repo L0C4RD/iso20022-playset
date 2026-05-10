@@ -1,11 +1,11 @@
 from . import base_types
 from ._DeliveryInterconnectionPoint1Choice import DeliveryInterconnectionPoint1Choice
-from ._EnergyLoadType1Code import EnergyLoadType1Code
 from ._EnergyDeliveryAttribute10 import EnergyDeliveryAttribute10
+from ._EnergyLoadType1Code import EnergyLoadType1Code
 
 class EnergySpecificAttribute9(base_types._BaseFieldType):
 
-	__slots__ = ["_LdTp", "_DlvryPtOrZone", "_DlvryAttr", "_IntrCnnctnPt"]
+	__slots__ = ["_DlvryAttr", "_DlvryPtOrZone", "_IntrCnnctnPt", "_LdTp"]
 	@property
 	def DlvryAttr(self):
 		return self._DlvryAttr

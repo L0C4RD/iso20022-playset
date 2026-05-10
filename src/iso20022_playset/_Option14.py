@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._OptionEvent2 import OptionEvent2
-from ._OptionType1Code import OptionType1Code
-from ._OptionStyle5Code import OptionStyle5Code
 from ._ExoticOptionStyle1Code import ExoticOptionStyle1Code
+from ._OptionEvent2 import OptionEvent2
+from ._OptionStyle5Code import OptionStyle5Code
+from ._OptionType1Code import OptionType1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Option14(base_types._BaseFieldType):
 
-	__slots__ = ["_XprtnStyle", "_EvtTp", "_BrrrInd", "_OptnStyle", "_OptnTp"]
+	__slots__ = ["_BrrrInd", "_EvtTp", "_OptnStyle", "_OptnTp", "_XprtnStyle"]
 	@property
 	def BrrrInd(self):
 		return self._BrrrInd

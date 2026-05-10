@@ -1,21 +1,21 @@
 from . import base_types
-from ._BillingRate1 import BillingRate1
-from ._BillingTaxRegion3 import BillingTaxRegion3
-from ._BillingStatementStatus1Code import BillingStatementStatus1Code
-from ._DatePeriod1 import DatePeriod1
-from ._CurrencyExchange6 import CurrencyExchange6
-from ._BillingCompensation1 import BillingCompensation1
-from ._BillingServiceAdjustment1 import BillingServiceAdjustment1
-from ._BillingBalance1 import BillingBalance1
-from ._BillingService2 import BillingService2
-from ._Max35Text import Max35Text
-from ._CashAccountCharacteristics5 import CashAccountCharacteristics5
-from ._ISODateTime import ISODateTime
 from ._BalanceAdjustment1 import BalanceAdjustment1
+from ._BillingBalance1 import BillingBalance1
+from ._BillingCompensation1 import BillingCompensation1
+from ._BillingRate1 import BillingRate1
+from ._BillingService2 import BillingService2
+from ._BillingServiceAdjustment1 import BillingServiceAdjustment1
+from ._BillingStatementStatus1Code import BillingStatementStatus1Code
+from ._BillingTaxRegion3 import BillingTaxRegion3
+from ._CashAccountCharacteristics5 import CashAccountCharacteristics5
+from ._CurrencyExchange6 import CurrencyExchange6
+from ._DatePeriod1 import DatePeriod1
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 
 class BillingStatement5(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtId", "_Svc", "_Sts", "_Compstn", "_BalAdjstmnt", "_SvcAdjstmnt", "_FrToDt", "_RateData", "_CcyXchg", "_Bal", "_TaxRgn", "_AcctChrtcs", "_CreDtTm"]
+	__slots__ = ["_AcctChrtcs", "_Bal", "_BalAdjstmnt", "_CcyXchg", "_Compstn", "_CreDtTm", "_FrToDt", "_RateData", "_StmtId", "_Sts", "_Svc", "_SvcAdjstmnt", "_TaxRgn"]
 	@property
 	def AcctChrtcs(self):
 		return self._AcctChrtcs

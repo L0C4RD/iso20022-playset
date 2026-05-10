@@ -1,12 +1,12 @@
 from . import base_types
-from ._CardPaymentTransactionAdviceResponse5 import CardPaymentTransactionAdviceResponse5
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._CardPaymentTransactionAdviceResponse5 import CardPaymentTransactionAdviceResponse5
 from ._Max9NumericText import Max9NumericText
 from ._ResponseType10 import ResponseType10
 
 class CardPaymentDataSet38(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_TxSeqCntr", "_Tx", "_TxRspn"]
+	__slots__ = ["_Envt", "_Tx", "_TxRspn", "_TxSeqCntr"]
 	@property
 	def Envt(self):
 		return self._Envt

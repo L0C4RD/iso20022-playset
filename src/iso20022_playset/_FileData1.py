@@ -1,14 +1,14 @@
 from . import base_types
-from ._Max2048Text import Max2048Text
-from ._DocumentFormat1Choice import DocumentFormat1Choice
-from ._Max35Text import Max35Text
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DocumentFormat1Choice import DocumentFormat1Choice
 from ._DocumentType1Choice import DocumentType1Choice
 from ._Max140Text import Max140Text
+from ._Max2048Text import Max2048Text
+from ._Max35Text import Max35Text
 
 class FileData1(base_types._BaseFieldType):
 
-	__slots__ = ["_FileNm", "_Tp", "_Frmt", "_FileLctnElctrncAdr", "_Id", "_NtwkRef", "_IsseDt"]
+	__slots__ = ["_FileLctnElctrncAdr", "_FileNm", "_Frmt", "_Id", "_IsseDt", "_NtwkRef", "_Tp"]
 	@property
 	def FileLctnElctrncAdr(self):
 		return self._FileLctnElctrncAdr

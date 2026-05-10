@@ -4,7 +4,7 @@ from ._Operator1Code import Operator1Code
 
 class SearchAnd1(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_Oprtr", "_Trgt"]
+	__slots__ = ["_Oprtr", "_Trgt", "_Val"]
 	@property
 	def Oprtr(self):
 		return self._Oprtr

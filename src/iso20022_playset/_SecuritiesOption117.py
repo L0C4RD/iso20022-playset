@@ -1,25 +1,25 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Quantity54Choice import Quantity54Choice
-from ._TemporaryFinancialInstrumentIndicator4Choice import TemporaryFinancialInstrumentIndicator4Choice
-from ._IssuerOfferorTaxabilityIndicator1Choice import IssuerOfferorTaxabilityIndicator1Choice
-from ._FractionDispositionType31Choice import FractionDispositionType31Choice
-from ._CountryCode import CountryCode
-from ._FinancialInstrumentAttributes137 import FinancialInstrumentAttributes137
 from ._CorporateActionAmounts61 import CorporateActionAmounts61
-from ._NonEligibleProceedsIndicator6Choice import NonEligibleProceedsIndicator6Choice
-from ._SecurityDate24 import SecurityDate24
-from ._GenericIdentification47 import GenericIdentification47
-from ._CorporateActionRate137 import CorporateActionRate137
-from ._Period6Choice import Period6Choice
 from ._CorporateActionPrice98 import CorporateActionPrice98
-from ._SafekeepingPlaceFormat56Choice import SafekeepingPlaceFormat56Choice
+from ._CorporateActionRate137 import CorporateActionRate137
+from ._CountryCode import CountryCode
 from ._CreditDebitCode import CreditDebitCode
+from ._FinancialInstrumentAttributes137 import FinancialInstrumentAttributes137
+from ._FractionDispositionType31Choice import FractionDispositionType31Choice
+from ._GenericIdentification47 import GenericIdentification47
+from ._IssuerOfferorTaxabilityIndicator1Choice import IssuerOfferorTaxabilityIndicator1Choice
 from ._NewSecuritiesIssuanceType5Code import NewSecuritiesIssuanceType5Code
+from ._NonEligibleProceedsIndicator6Choice import NonEligibleProceedsIndicator6Choice
+from ._Period6Choice import Period6Choice
+from ._Quantity54Choice import Quantity54Choice
+from ._SafekeepingPlaceFormat56Choice import SafekeepingPlaceFormat56Choice
+from ._SecurityDate24 import SecurityDate24
+from ._TemporaryFinancialInstrumentIndicator4Choice import TemporaryFinancialInstrumentIndicator4Choice
 
 class SecuritiesOption117(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyDtls", "_CdtDbtInd", "_IncmTp", "_TempFinInstrmInd", "_CtryOfIncmSrc", "_IssrOfferrTaxbltyInd", "_PricDtls", "_DtDtls", "_AmtDtls", "_RateDtls", "_CcyOptn", "_OthrIncmTp", "_EntitldQty", "_TradgPrd", "_NonElgblPrcdsInd", "_FrctnDspstn", "_XmptnTp", "_NewSctiesIssncInd", "_SfkpgPlc"]
+	__slots__ = ["_AmtDtls", "_CcyOptn", "_CdtDbtInd", "_CtryOfIncmSrc", "_DtDtls", "_EntitldQty", "_FrctnDspstn", "_IncmTp", "_IssrOfferrTaxbltyInd", "_NewSctiesIssncInd", "_NonElgblPrcdsInd", "_OthrIncmTp", "_PricDtls", "_RateDtls", "_SctyDtls", "_SfkpgPlc", "_TempFinInstrmInd", "_TradgPrd", "_XmptnTp"]
 	@property
 	def AmtDtls(self):
 		return self._AmtDtls

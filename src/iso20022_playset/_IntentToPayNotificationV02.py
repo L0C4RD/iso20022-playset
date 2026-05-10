@@ -1,12 +1,12 @@
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
 from ._BICIdentification1 import BICIdentification1
 from ._IntentToPay2 import IntentToPay2
+from ._MessageIdentification1 import MessageIdentification1
 from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 
 class IntentToPayNotificationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrBk", "_SellrBk", "_NtfctnId", "_InttToPay", "_TxId", "_SubmitrTxRef"]
+	__slots__ = ["_BuyrBk", "_InttToPay", "_NtfctnId", "_SellrBk", "_SubmitrTxRef", "_TxId"]
 	@property
 	def BuyrBk(self):
 		return self._BuyrBk

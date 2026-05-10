@@ -1,26 +1,26 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._AggregationTransaction3 import AggregationTransaction3
+from ._CardAccountType3Code import CardAccountType3Code
+from ._CurrencyConversion30 import CurrencyConversion30
+from ._DetailedAmount15 import DetailedAmount15
 from ._ExternallyDefinedData5 import ExternallyDefinedData5
-from ._RecurringTransaction6 import RecurringTransaction6
+from ._ISODate import ISODate
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Instalment5 import Instalment5
 from ._Max10000Binary import Max10000Binary
-from ._DetailedAmount15 import DetailedAmount15
 from ._Max10Text import Max10Text
-from ._TypeOfAmount8Code import TypeOfAmount8Code
-from ._CurrencyConversion30 import CurrencyConversion30
-from ._Product6 import Product6
-from ._PositiveNumber import PositiveNumber
-from ._ISODate import ISODate
-from ._OnLineReason2Code import OnLineReason2Code
-from ._CardAccountType3Code import CardAccountType3Code
-from ._AggregationTransaction3 import AggregationTransaction3
-from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max35NumericText import Max35NumericText
+from ._Max35Text import Max35Text
+from ._OnLineReason2Code import OnLineReason2Code
+from ._PositiveNumber import PositiveNumber
+from ._Product6 import Product6
+from ._RecurringTransaction6 import RecurringTransaction6
+from ._TypeOfAmount8Code import TypeOfAmount8Code
 
 class CardPaymentTransactionDetails53(base_types._BaseFieldType):
 
-	__slots__ = ["_AuthrsdAmt", "_AggtnTx", "_PdctCdSetId", "_DlvryLctn", "_CmltvAmt", "_AcctTp", "_VldtyDt", "_DtldAmt", "_Rcrng", "_InvcAmt", "_CmpltnSeqCntr", "_Instlmt", "_AmtQlfr", "_OnLineRsn", "_ReqdAmt", "_ICCRltdData", "_SaleItm", "_CmpltnSeqNb", "_ReSubmissnCntr", "_CcyConvsRslt", "_TtlAmt", "_AddtlInf", "_UattnddLvlCtgy", "_TtlAuthrsdAmt", "_Ccy"]
+	__slots__ = ["_AcctTp", "_AddtlInf", "_AggtnTx", "_AmtQlfr", "_AuthrsdAmt", "_Ccy", "_CcyConvsRslt", "_CmltvAmt", "_CmpltnSeqCntr", "_CmpltnSeqNb", "_DlvryLctn", "_DtldAmt", "_ICCRltdData", "_Instlmt", "_InvcAmt", "_OnLineRsn", "_PdctCdSetId", "_Rcrng", "_ReSubmissnCntr", "_ReqdAmt", "_SaleItm", "_TtlAmt", "_TtlAuthrsdAmt", "_UattnddLvlCtgy", "_VldtyDt"]
 	@property
 	def AcctTp(self):
 		return self._AcctTp

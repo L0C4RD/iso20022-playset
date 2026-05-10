@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._MemberQueryDefinition4 import MemberQueryDefinition4
 from ._MessageHeader9 import MessageHeader9
+from ._SupplementaryData1 import SupplementaryData1
 
 class GetMemberV04(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_MmbQryDef", "_SplmtryData"]
+	__slots__ = ["_MmbQryDef", "_MsgHdr", "_SplmtryData"]
 	@property
 	def MmbQryDef(self):
 		return self._MmbQryDef

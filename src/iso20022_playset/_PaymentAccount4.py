@@ -1,12 +1,12 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Max10NumericText import Max10NumericText
 from ._AmountAndDirection86 import AmountAndDirection86
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max10NumericText import Max10NumericText
 
 class PaymentAccount4(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_GrssCdts", "_LatePmtConf", "_GrssDbts", "_NetPmt"]
+	__slots__ = ["_Ccy", "_GrssCdts", "_GrssDbts", "_LatePmtConf", "_NetPmt"]
 	@property
 	def Ccy(self):
 		return self._Ccy

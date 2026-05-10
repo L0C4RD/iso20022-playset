@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class TotalFilter1(base_types._BaseFieldType):
 
-	__slots__ = ["_CshrId", "_TtlsGrpId", "_SaleId", "_ShftNb", "_POIId"]
+	__slots__ = ["_CshrId", "_POIId", "_SaleId", "_ShftNb", "_TtlsGrpId"]
 	@property
 	def CshrId(self):
 		return self._CshrId

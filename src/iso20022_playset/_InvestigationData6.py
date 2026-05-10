@@ -1,16 +1,16 @@
 from . import base_types
-from ._Max3Number import Max3Number
-from ._InvestigationReason1Choice import InvestigationReason1Choice
-from ._RelatedInvestigationData1 import RelatedInvestigationData1
-from ._InvestigationReasonSubType1Choice import InvestigationReasonSubType1Choice
-from ._FileData1 import FileData1
-from ._Party40Choice import Party40Choice
 from ._Document12 import Document12
+from ._FileData1 import FileData1
 from ._InvestigationDataRecord7Choice import InvestigationDataRecord7Choice
+from ._InvestigationReason1Choice import InvestigationReason1Choice
+from ._InvestigationReasonSubType1Choice import InvestigationReasonSubType1Choice
+from ._Max3Number import Max3Number
+from ._Party40Choice import Party40Choice
+from ._RelatedInvestigationData1 import RelatedInvestigationData1
 
 class InvestigationData6(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnOrgtr", "_RspnData", "_OrgnlInvstgtnRsnSubTp", "_RltdInvstgtnData", "_OrgnlInvstgtnSeq", "_OrgnlInvstgtnRsn", "_NclsdFile", "_RltdFileData"]
+	__slots__ = ["_NclsdFile", "_OrgnlInvstgtnRsn", "_OrgnlInvstgtnRsnSubTp", "_OrgnlInvstgtnSeq", "_RltdFileData", "_RltdInvstgtnData", "_RspnData", "_RspnOrgtr"]
 	@property
 	def NclsdFile(self):
 		return self._NclsdFile

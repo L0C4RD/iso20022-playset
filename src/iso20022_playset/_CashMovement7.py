@@ -1,14 +1,14 @@
 from . import base_types
-from ._CreditDebit3Code import CreditDebit3Code
-from ._YesNoIndicator import YesNoIndicator
-from ._Max35Text import Max35Text
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 from ._CashAccountIdentification5Choice import CashAccountIdentification5Choice
+from ._CreditDebit3Code import CreditDebit3Code
+from ._Max35Text import Max35Text
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._YesNoIndicator import YesNoIndicator
 
 class CashMovement7(base_types._BaseFieldType):
 
-	__slots__ = ["_MvmntSts", "_ClntCshMvmntId", "_PosTp", "_CshAcct", "_TrptyAgtSvcPrvdrCshMvmntId", "_CshMvmntApprvd", "_CollMvmnt", "_CshMvmnt", "_CshAmt"]
+	__slots__ = ["_ClntCshMvmntId", "_CollMvmnt", "_CshAcct", "_CshAmt", "_CshMvmnt", "_CshMvmntApprvd", "_MvmntSts", "_PosTp", "_TrptyAgtSvcPrvdrCshMvmntId"]
 	@property
 	def ClntCshMvmntId(self):
 		return self._ClntCshMvmntId

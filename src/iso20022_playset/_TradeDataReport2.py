@@ -1,10 +1,10 @@
 from . import base_types
-from ._TradeData44 import TradeData44
 from ._Max35Text import Max35Text
+from ._TradeData44 import TradeData44
 
 class TradeDataReport2(base_types._BaseFieldType):
 
-	__slots__ = ["_TradData", "_LkdRptId"]
+	__slots__ = ["_LkdRptId", "_TradData"]
 	@property
 	def LkdRptId(self):
 		return self._LkdRptId

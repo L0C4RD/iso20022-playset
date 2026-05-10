@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class LocalAddress1(base_types._BaseFieldType):
 
-	__slots__ = ["_BldgNb", "_PstlCd", "_AdrLine2", "_CtrySubDvsnMjrNm", "_AdrLine1", "_StrtNm", "_TwnNm", "_CtrySubDvsnMnrNm"]
+	__slots__ = ["_AdrLine1", "_AdrLine2", "_BldgNb", "_CtrySubDvsnMjrNm", "_CtrySubDvsnMnrNm", "_PstlCd", "_StrtNm", "_TwnNm"]
 	@property
 	def AdrLine1(self):
 		return self._AdrLine1

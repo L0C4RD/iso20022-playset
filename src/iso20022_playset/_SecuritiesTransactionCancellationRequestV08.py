@@ -1,17 +1,17 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SupplementaryData1 import SupplementaryData1
-from ._References45Choice import References45Choice
-from ._TransactionDetails172 import TransactionDetails172
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._FXCancellation3Choice import FXCancellation3Choice
 from ._CancellationReason23 import CancellationReason23
+from ._FXCancellation3Choice import FXCancellation3Choice
 from ._Max35Text import Max35Text
 from ._PartyIdentification144 import PartyIdentification144
+from ._References45Choice import References45Choice
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionDetails172 import TransactionDetails172
 
 class SecuritiesTransactionCancellationRequestV08(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_FxCxl", "_SfkpgAcct", "_AcctOwnrTxId", "_PrcrTxId", "_MktInfrstrctrTxId", "_NonceId", "_BlckChainAdrOrWllt", "_SplmtryData", "_TxDtls", "_AcctSvcrTxId", "_AcctOwnr"]
+	__slots__ = ["_AcctOwnr", "_AcctOwnrTxId", "_AcctSvcrTxId", "_BlckChainAdrOrWllt", "_CxlRsn", "_FxCxl", "_MktInfrstrctrTxId", "_NonceId", "_PrcrTxId", "_SfkpgAcct", "_SplmtryData", "_TxDtls"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

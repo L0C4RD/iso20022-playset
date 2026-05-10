@@ -1,11 +1,11 @@
 from . import base_types
 from ._FeeCollectionIdentification1 import FeeCollectionIdentification1
-from ._PartyType32Code import PartyType32Code
 from ._Max35Text import Max35Text
+from ._PartyType32Code import PartyType32Code
 
 class FeeCollectionReference2(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrAssgnrNtty", "_AssgnrNtty", "_Id"]
+	__slots__ = ["_AssgnrNtty", "_Id", "_OthrAssgnrNtty"]
 	@property
 	def AssgnrNtty(self):
 		return self._AssgnrNtty

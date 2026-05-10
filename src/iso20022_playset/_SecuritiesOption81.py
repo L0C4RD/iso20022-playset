@@ -4,7 +4,7 @@ from ._FinancialInstrumentQuantity35Choice import FinancialInstrumentQuantity35C
 
 class SecuritiesOption81(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxQtyToInst", "_NewBrdLotQty", "_MinQtyToInst", "_BckEndOddLotQty", "_MinMltplQtyToInst", "_NewDnmtnQty", "_FrntEndOddLotQty"]
+	__slots__ = ["_BckEndOddLotQty", "_FrntEndOddLotQty", "_MaxQtyToInst", "_MinMltplQtyToInst", "_MinQtyToInst", "_NewBrdLotQty", "_NewDnmtnQty"]
 	@property
 	def BckEndOddLotQty(self):
 		return self._BckEndOddLotQty

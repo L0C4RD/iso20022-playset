@@ -1,11 +1,11 @@
 from . import base_types
-from ._NotificationAdviceStatus2Choice import NotificationAdviceStatus2Choice
 from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
+from ._NotificationAdviceStatus2Choice import NotificationAdviceStatus2Choice
 
 class AgentNotificationIdentificationAndStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_Id", "_CreDtTm"]
+	__slots__ = ["_CreDtTm", "_Id", "_Sts"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

@@ -1,14 +1,14 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Price8 import Price8
 from ._Max35Text import Max35Text
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from ._PercentageRate import PercentageRate
+from ._Price8 import Price8
 from ._SettlementType3Choice import SettlementType3Choice
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 
 class UnderlyingAttributes4(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_AdjstdQty", "_DrtyPric", "_CshAmt", "_CshTp", "_Pric", "_EndPric", "_CurVal", "_EndVal", "_CapVal", "_XchgRate", "_AllcnPctg", "_StartVal", "_SttlmTp"]
+	__slots__ = ["_AdjstdQty", "_AllcnPctg", "_CapVal", "_CshAmt", "_CshTp", "_CurVal", "_DrtyPric", "_EndPric", "_EndVal", "_Pric", "_Qty", "_StartVal", "_SttlmTp", "_XchgRate"]
 	@property
 	def AdjstdQty(self):
 		return self._AdjstdQty

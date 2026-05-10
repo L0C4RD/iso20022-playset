@@ -1,6 +1,6 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._CorporateActionProcessingStatus5Choice import CorporateActionProcessingStatus5Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class CorporateActionProcessingStatus7Choice(base_types._BaseFieldType):
 

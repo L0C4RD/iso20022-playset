@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._CreditDebit3Code import CreditDebit3Code
 from ._BalanceType15Code import BalanceType15Code
+from ._CreditDebit3Code import CreditDebit3Code
 from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._ISODate import ISODate
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Balance29(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Tp", "_CrdhldrCcy", "_Ccy", "_CdtDbt", "_OthrTp", "_BalDt"]
+	__slots__ = ["_Amt", "_BalDt", "_Ccy", "_CdtDbt", "_CrdhldrCcy", "_OthrTp", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

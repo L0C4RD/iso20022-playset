@@ -5,7 +5,7 @@ from ._Max256Text import Max256Text
 
 class PersonIdentification20(base_types._BaseFieldType):
 
-	__slots__ = ["_EmailAdr", "_DtAndPlcOfBirth", "_Othr"]
+	__slots__ = ["_DtAndPlcOfBirth", "_EmailAdr", "_Othr"]
 	@property
 	def DtAndPlcOfBirth(self):
 		return self._DtAndPlcOfBirth

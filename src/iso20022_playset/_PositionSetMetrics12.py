@@ -1,11 +1,11 @@
 from . import base_types
 from ._PercentageRate import PercentageRate
-from ._VolumeMetrics6 import VolumeMetrics6
 from ._QuantityNominalValue2Choice import QuantityNominalValue2Choice
+from ._VolumeMetrics6 import VolumeMetrics6
 
 class PositionSetMetrics12(base_types._BaseFieldType):
 
-	__slots__ = ["_VolMtrcs", "_QtyOrNmnlAmt", "_HrcutOrMrgn"]
+	__slots__ = ["_HrcutOrMrgn", "_QtyOrNmnlAmt", "_VolMtrcs"]
 	@property
 	def HrcutOrMrgn(self):
 		return self._HrcutOrMrgn

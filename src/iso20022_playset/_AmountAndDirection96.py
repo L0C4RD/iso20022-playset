@@ -1,14 +1,14 @@
 from . import base_types
-from ._RestrictedFINActiveCurrencyAndAmount import RestrictedFINActiveCurrencyAndAmount
-from ._YesNoIndicator import YesNoIndicator
-from ._RestrictedFINActiveOrHistoricCurrencyAndAmount import RestrictedFINActiveOrHistoricCurrencyAndAmount
-from ._ForeignExchangeTerms27 import ForeignExchangeTerms27
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._CreditDebitCode import CreditDebitCode
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ForeignExchangeTerms27 import ForeignExchangeTerms27
+from ._RestrictedFINActiveCurrencyAndAmount import RestrictedFINActiveCurrencyAndAmount
+from ._RestrictedFINActiveOrHistoricCurrencyAndAmount import RestrictedFINActiveOrHistoricCurrencyAndAmount
+from ._YesNoIndicator import YesNoIndicator
 
 class AmountAndDirection96(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_RsrchFeeInd", "_FXDtls", "_CdtDbtInd", "_AcrdIntrstInd", "_StmpDtyInd", "_BrkrgAmtInd", "_ValDt", "_OrgnlCcyAndOrdrdAmt"]
+	__slots__ = ["_AcrdIntrstInd", "_Amt", "_BrkrgAmtInd", "_CdtDbtInd", "_FXDtls", "_OrgnlCcyAndOrdrdAmt", "_RsrchFeeInd", "_StmpDtyInd", "_ValDt"]
 	@property
 	def AcrdIntrstInd(self):
 		return self._AcrdIntrstInd

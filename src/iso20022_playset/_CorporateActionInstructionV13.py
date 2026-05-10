@@ -1,19 +1,19 @@
 from . import base_types
-from ._PartyIdentification313 import PartyIdentification313
-from ._CorporateActionGeneralInformation180 import CorporateActionGeneralInformation180
-from ._CorporateActionOption237 import CorporateActionOption237
-from ._SupplementaryData1 import SupplementaryData1
-from ._YesNoIndicator import YesNoIndicator
-from ._DocumentIdentification32 import DocumentIdentification32
 from ._AccountAndBalance61 import AccountAndBalance61
 from ._CorporateActionEventReference3 import CorporateActionEventReference3
+from ._CorporateActionGeneralInformation180 import CorporateActionGeneralInformation180
 from ._CorporateActionNarrative30 import CorporateActionNarrative30
+from ._CorporateActionOption237 import CorporateActionOption237
 from ._DocumentIdentification31 import DocumentIdentification31
+from ._DocumentIdentification32 import DocumentIdentification32
+from ._PartyIdentification313 import PartyIdentification313
 from ._ProtectInstruction1 import ProtectInstruction1
+from ._SupplementaryData1 import SupplementaryData1
+from ._YesNoIndicator import YesNoIndicator
 
 class CorporateActionInstructionV13(base_types._BaseFieldType):
 
-	__slots__ = ["_ChngInstrInd", "_CancInstrId", "_CorpActnGnlInf", "_AcctDtls", "_CorpActnInstr", "_EvtsLkg", "_BnfclOwnrDtls", "_OthrDocId", "_InstrCxlReqId", "_AddtlInf", "_SplmtryData", "_PrtctInstr"]
+	__slots__ = ["_AcctDtls", "_AddtlInf", "_BnfclOwnrDtls", "_CancInstrId", "_ChngInstrInd", "_CorpActnGnlInf", "_CorpActnInstr", "_EvtsLkg", "_InstrCxlReqId", "_OthrDocId", "_PrtctInstr", "_SplmtryData"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

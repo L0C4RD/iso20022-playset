@@ -4,7 +4,7 @@ from ._PaymentMethod4Code import PaymentMethod4Code
 
 class PaymentInformation15(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtMtd", "_PmtAcct"]
+	__slots__ = ["_PmtAcct", "_PmtMtd"]
 	@property
 	def PmtAcct(self):
 		return self._PmtAcct

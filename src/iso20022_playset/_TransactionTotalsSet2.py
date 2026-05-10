@@ -1,14 +1,14 @@
 from . import base_types
+from ._LoyaltyTransactionTotals1 import LoyaltyTransactionTotals1
 from ._Max2NumericText import Max2NumericText
+from ._Max35Text import Max35Text
 from ._Organisation26 import Organisation26
 from ._PaymentInstrumentType2Code import PaymentInstrumentType2Code
 from ._TransactionTotals8 import TransactionTotals8
-from ._Max35Text import Max35Text
-from ._LoyaltyTransactionTotals1 import LoyaltyTransactionTotals1
 
 class TransactionTotalsSet2(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRcncltnId", "_SpnsrdMrchnt", "_SaleId", "_PmtInstrmTp", "_ShftNb", "_POIId", "_Brnd", "_CshrId", "_TxTtl", "_LltyTxTtl", "_RcncltnId", "_AcqrrId"]
+	__slots__ = ["_AcqrrId", "_Brnd", "_CshrId", "_LltyTxTtl", "_POIId", "_PmtInstrmTp", "_RcncltnId", "_SaleId", "_SaleRcncltnId", "_ShftNb", "_SpnsrdMrchnt", "_TxTtl"]
 	@property
 	def AcqrrId(self):
 		return self._AcqrrId

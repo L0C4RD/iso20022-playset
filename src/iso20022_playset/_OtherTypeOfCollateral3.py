@@ -4,7 +4,7 @@ from ._Max140Text import Max140Text
 
 class OtherTypeOfCollateral3(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_Desc"]
+	__slots__ = ["_Desc", "_Qty"]
 	@property
 	def Desc(self):
 		return self._Desc

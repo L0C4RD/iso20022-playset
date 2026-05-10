@@ -1,11 +1,11 @@
 from . import base_types
+from ._AuthenticationChannel1Choice import AuthenticationChannel1Choice
 from ._ISODate import ISODate
 from ._Max16Text import Max16Text
-from ._AuthenticationChannel1Choice import AuthenticationChannel1Choice
 
 class MandateAuthentication1(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_Chanl", "_MsgAuthntcnCd"]
+	__slots__ = ["_Chanl", "_Dt", "_MsgAuthntcnCd"]
 	@property
 	def Chanl(self):
 		return self._Chanl

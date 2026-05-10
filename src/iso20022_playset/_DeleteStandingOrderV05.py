@@ -1,11 +1,11 @@
 from . import base_types
+from ._MessageHeader1 import MessageHeader1
 from ._StandingOrderOrAll4Choice import StandingOrderOrAll4Choice
 from ._SupplementaryData1 import SupplementaryData1
-from ._MessageHeader1 import MessageHeader1
 
 class DeleteStandingOrderV05(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_StgOrdrDtls", "_MsgHdr"]
+	__slots__ = ["_MsgHdr", "_SplmtryData", "_StgOrdrDtls"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

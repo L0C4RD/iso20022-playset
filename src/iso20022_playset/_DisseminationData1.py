@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max52Text import Max52Text
 from ._ISODateTime import ISODateTime
+from ._Max52Text import Max52Text
 
 class DisseminationData1(base_types._BaseFieldType):
 
-	__slots__ = ["_TmStmp", "_DssmntnIdr", "_OrgnlDssmntnIdr"]
+	__slots__ = ["_DssmntnIdr", "_OrgnlDssmntnIdr", "_TmStmp"]
 	@property
 	def DssmntnIdr(self):
 		return self._DssmntnIdr

@@ -1,11 +1,11 @@
 from . import base_types
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._AdditionalReference11 import AdditionalReference11
 from ._DecimalNumber import DecimalNumber
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class RelatedSubscription1(base_types._BaseFieldType):
 
-	__slots__ = ["_CntngntLqdtnPerUnit", "_Ref", "_RltdAmt", "_EqulstnCdtPerUnit", "_RltdQty", "_DprctnDpstPerUnit"]
+	__slots__ = ["_CntngntLqdtnPerUnit", "_DprctnDpstPerUnit", "_EqulstnCdtPerUnit", "_Ref", "_RltdAmt", "_RltdQty"]
 	@property
 	def CntngntLqdtnPerUnit(self):
 		return self._CntngntLqdtnPerUnit

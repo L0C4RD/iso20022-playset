@@ -1,12 +1,12 @@
 from . import base_types
 from ._Exact3NumericText import Exact3NumericText
-from ._PlainCardData1 import PlainCardData1
 from ._GenericIdentification1 import GenericIdentification1
 from ._Max70Text import Max70Text
+from ._PlainCardData1 import PlainCardData1
 
 class PaymentCard4(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlCardData", "_CardBrnd", "_PlainCardData", "_CardCtryCd"]
+	__slots__ = ["_AddtlCardData", "_CardBrnd", "_CardCtryCd", "_PlainCardData"]
 	@property
 	def AddtlCardData(self):
 		return self._AddtlCardData

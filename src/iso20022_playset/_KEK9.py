@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max500Binary import Max500Binary
 from ._AlgorithmIdentification32 import AlgorithmIdentification32
-from ._Number import Number
 from ._KEKIdentifier7 import KEKIdentifier7
+from ._Max500Binary import Max500Binary
+from ._Number import Number
 
 class KEK9(base_types._BaseFieldType):
 
-	__slots__ = ["_KEKId", "_Vrsn", "_KeyNcrptnAlgo", "_NcrptdKey"]
+	__slots__ = ["_KEKId", "_KeyNcrptnAlgo", "_NcrptdKey", "_Vrsn"]
 	@property
 	def KEKId(self):
 		return self._KEKId

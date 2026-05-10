@@ -3,7 +3,7 @@ from ._Max140Text import Max140Text
 
 class KEKIdentifier4(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_KeyVrsn", "_KeyId"]
+	__slots__ = ["_KeyId", "_KeyVrsn", "_Nm"]
 	@property
 	def KeyId(self):
 		return self._KeyId

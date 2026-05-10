@@ -1,11 +1,11 @@
 from . import base_types
+from ._DateTimePeriod1 import DateTimePeriod1
 from ._ISODate import ISODate
 from ._Period2 import Period2
-from ._DateTimePeriod1 import DateTimePeriod1
 
 class Period11Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FrToDt", "_FrToDtTm", "_FrDt", "_ToDt", "_Dt"]
+	__slots__ = ["_Dt", "_FrDt", "_FrToDt", "_FrToDtTm", "_ToDt"]
 	@property
 	def Dt(self):
 		return self._Dt

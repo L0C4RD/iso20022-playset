@@ -1,10 +1,10 @@
 from . import base_types
-from ._NotReported1Code import NotReported1Code
 from ._Max52Text import Max52Text
+from ._NotReported1Code import NotReported1Code
 
 class UPIQueryCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_NotRptd", "_Idr"]
+	__slots__ = ["_Idr", "_NotRptd"]
 	@property
 	def Idr(self):
 		return self._Idr

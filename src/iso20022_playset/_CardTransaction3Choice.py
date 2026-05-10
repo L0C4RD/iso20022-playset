@@ -4,7 +4,7 @@ from ._CardIndividualTransaction2 import CardIndividualTransaction2
 
 class CardTransaction3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Indv", "_Aggtd"]
+	__slots__ = ["_Aggtd", "_Indv"]
 	@property
 	def Aggtd(self):
 		return self._Aggtd

@@ -1,14 +1,14 @@
 from . import base_types
-from ._PartyIdentification125Choice import PartyIdentification125Choice
-from ._Intermediary47 import Intermediary47
-from ._Max35Text import Max35Text
-from ._FinancialInstrument55 import FinancialInstrument55
-from ._Max350Text import Max350Text
 from ._AccountOwner3Choice import AccountOwner3Choice
+from ._FinancialInstrument55 import FinancialInstrument55
+from ._Intermediary47 import Intermediary47
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification125Choice import PartyIdentification125Choice
 
 class InvestmentAccount76(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_AcctOwnr", "_Intrmy", "_FndTp", "_Dsgnt", "_AcctSvcr", "_SctyDtls", "_FndFmlyNm"]
+	__slots__ = ["_AcctOwnr", "_AcctSvcr", "_Dsgnt", "_FndFmlyNm", "_FndTp", "_Intrmy", "_Nm", "_SctyDtls"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

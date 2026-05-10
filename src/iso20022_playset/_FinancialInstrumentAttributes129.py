@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PriceFormat74Choice import PriceFormat74Choice
-from ._OptionStyle8Choice import OptionStyle8Choice
-from ._SecurityIdentification19 import SecurityIdentification19
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._RateFormat24Choice import RateFormat24Choice
-from ._InterestComputationMethodFormat4Choice import InterestComputationMethodFormat4Choice
-from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._MarketIdentification3Choice import MarketIdentification3Choice
-from ._RateFormat12Choice import RateFormat12Choice
 from ._ClassificationType32Choice import ClassificationType32Choice
+from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
+from ._ISODate import ISODate
+from ._InterestComputationMethodFormat4Choice import InterestComputationMethodFormat4Choice
+from ._MarketIdentification3Choice import MarketIdentification3Choice
+from ._OptionStyle8Choice import OptionStyle8Choice
+from ._PriceFormat74Choice import PriceFormat74Choice
+from ._RateFormat12Choice import RateFormat12Choice
+from ._RateFormat24Choice import RateFormat24Choice
+from ._SecurityIdentification19 import SecurityIdentification19
 
 class FinancialInstrumentAttributes129(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_PlcOfListg", "_ConvsDt", "_FltgRateFxgDt", "_MinMltplQtyToInst", "_MtrtyDt", "_NxtCllblDt", "_NxtCpnDt", "_PutblDt", "_ClssfctnTp", "_NxtIntrstRate", "_MinQtyToInst", "_DnmtnCcy", "_IntrstRate", "_IssePric", "_IsseDt", "_DayCntBsis", "_CtrctSz", "_OptnStyle", "_DtdDt", "_PrvsFctr", "_MinNmnlQty", "_NxtFctr"]
+	__slots__ = ["_ClssfctnTp", "_ConvsDt", "_CtrctSz", "_DayCntBsis", "_DnmtnCcy", "_DtdDt", "_FinInstrmId", "_FltgRateFxgDt", "_IntrstRate", "_IsseDt", "_IssePric", "_MinMltplQtyToInst", "_MinNmnlQty", "_MinQtyToInst", "_MtrtyDt", "_NxtCllblDt", "_NxtCpnDt", "_NxtFctr", "_NxtIntrstRate", "_OptnStyle", "_PlcOfListg", "_PrvsFctr", "_PutblDt"]
 	@property
 	def ClssfctnTp(self):
 		return self._ClssfctnTp

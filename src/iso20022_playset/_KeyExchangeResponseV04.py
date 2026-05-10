@@ -1,30 +1,30 @@
 from . import base_types
-from ._Exact12Text import Exact12Text
-from ._KeyExchangeData1 import KeyExchangeData1
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._Max256Text import Max256Text
-from ._Max12NumericText import Max12NumericText
 from ._AdditionalData2 import AdditionalData2
-from ._KeyType1Code import KeyType1Code
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._Exact15Text import Exact15Text
-from ._Jurisdiction2 import Jurisdiction2
-from ._ISODateTime import ISODateTime
-from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
-from ._SupplementaryData1 import SupplementaryData1
-from ._ProcessingResult23 import ProcessingResult23
-from ._ContentInformationType41 import ContentInformationType41
-from ._SettlementService6 import SettlementService6
-from ._ProtectedData2 import ProtectedData2
 from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
-from ._Max35Text import Max35Text
 from ._CardServiceType5Code import CardServiceType5Code
+from ._ContentInformationType41 import ContentInformationType41
+from ._Exact12Text import Exact12Text
+from ._Exact15Text import Exact15Text
 from ._Header71 import Header71
+from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
+from ._ISO8583ResponseCode import ISO8583ResponseCode
+from ._ISODateTime import ISODateTime
+from ._Jurisdiction2 import Jurisdiction2
+from ._KeyExchangeData1 import KeyExchangeData1
+from ._KeyType1Code import KeyType1Code
+from ._Max12NumericText import Max12NumericText
+from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._ProcessingResult23 import ProcessingResult23
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._ProtectedData2 import ProtectedData2
+from ._Reconciliation4 import Reconciliation4
+from ._SettlementService6 import SettlementService6
+from ._SupplementaryData1 import SupplementaryData1
 
 class KeyExchangeResponseV04(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgRsn", "_AddtlData", "_Jursdctn", "_TrnsmssnDtTm", "_Prgrmm", "_AddtlFee", "_LifeCyclId", "_OthrKeyXchgFctn", "_Hdr", "_SysTracAudtNb", "_Rcncltn", "_RtrvlRefNb", "_SctyTrlr", "_AltrnMsgRsn", "_PrcgRslt", "_KeyXchgFctn", "_SttlmSvc", "_OthrKeyXchgTp", "_KeyXchgData", "_KeyXchgTp", "_PrtctdData", "_OrgnlRspnCd", "_SplmtryData"]
+	__slots__ = ["_AddtlData", "_AddtlFee", "_AltrnMsgRsn", "_Hdr", "_Jursdctn", "_KeyXchgData", "_KeyXchgFctn", "_KeyXchgTp", "_LifeCyclId", "_MsgRsn", "_OrgnlRspnCd", "_OthrKeyXchgFctn", "_OthrKeyXchgTp", "_PrcgRslt", "_Prgrmm", "_PrtctdData", "_Rcncltn", "_RtrvlRefNb", "_SctyTrlr", "_SplmtryData", "_SttlmSvc", "_SysTracAudtNb", "_TrnsmssnDtTm"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

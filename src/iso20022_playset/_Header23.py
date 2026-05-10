@@ -1,13 +1,13 @@
 from . import base_types
-from ._Max6Text import Max6Text
-from ._Max3NumericText import Max3NumericText
-from ._ISODateTime import ISODateTime
-from ._Number import Number
 from ._GenericIdentification32 import GenericIdentification32
+from ._ISODateTime import ISODateTime
+from ._Max3NumericText import Max3NumericText
+from ._Max6Text import Max6Text
+from ._Number import Number
 
 class Header23(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgSeqNb", "_XchgId", "_RcptPty", "_InitgPty", "_CreDtTm", "_FrmtVrsn"]
+	__slots__ = ["_CreDtTm", "_FrmtVrsn", "_InitgPty", "_MsgSeqNb", "_RcptPty", "_XchgId"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._Pagination1 import Pagination1
+from ._DocumentIdentification51 import DocumentIdentification51
 from ._IntraBalanceOrOperationalError10Choice import IntraBalanceOrOperationalError10Choice
 from ._IntraBalanceReport5 import IntraBalanceReport5
-from ._DocumentIdentification51 import DocumentIdentification51
+from ._Pagination1 import Pagination1
+from ._SupplementaryData1 import SupplementaryData1
 
 class IntraBalanceMovementCancellationReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_RptOrErr", "_RptGnlDtls", "_SplmtryData", "_Pgntn"]
+	__slots__ = ["_Id", "_Pgntn", "_RptGnlDtls", "_RptOrErr", "_SplmtryData"]
 	@property
 	def Id(self):
 		return self._Id

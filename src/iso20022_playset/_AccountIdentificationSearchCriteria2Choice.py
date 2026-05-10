@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class AccountIdentificationSearchCriteria2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CTTxt", "_NCTTxt", "_EQ"]
+	__slots__ = ["_CTTxt", "_EQ", "_NCTTxt"]
 	@property
 	def CTTxt(self):
 		return self._CTTxt

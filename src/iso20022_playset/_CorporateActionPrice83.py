@@ -1,13 +1,13 @@
 from . import base_types
-from ._PriceFormat77Choice import PriceFormat77Choice
 from ._AmountPrice2 import AmountPrice2
 from ._IndicativeOrMarketPrice13Choice import IndicativeOrMarketPrice13Choice
-from ._PriceFormat76Choice import PriceFormat76Choice
 from ._PriceFormat75Choice import PriceFormat75Choice
+from ._PriceFormat76Choice import PriceFormat76Choice
+from ._PriceFormat77Choice import PriceFormat77Choice
 
 class CorporateActionPrice83(base_types._BaseFieldType):
 
-	__slots__ = ["_CshInLieuOfShrPric", "_IndctvOrMktPric", "_CshValForTax", "_GncCshPricRcvdPerPdct", "_GncCshPricPdPerPdct"]
+	__slots__ = ["_CshInLieuOfShrPric", "_CshValForTax", "_GncCshPricPdPerPdct", "_GncCshPricRcvdPerPdct", "_IndctvOrMktPric"]
 	@property
 	def CshInLieuOfShrPric(self):
 		return self._CshInLieuOfShrPric

@@ -1,24 +1,24 @@
 from . import base_types
-from ._PartyIdentification43 import PartyIdentification43
 from ._AutomaticVariation1 import AutomaticVariation1
-from ._ExternalUndertakingType1Code import ExternalUndertakingType1Code
-from ._UndertakingWording1 import UndertakingWording1
-from ._Presentation1 import Presentation1
 from ._CommunicationChannel1 import CommunicationChannel1
-from ._UndertakingName1Code import UndertakingName1Code
+from ._ExpiryDetails1 import ExpiryDetails1
 from ._ExternalTypeOfParty1Code import ExternalTypeOfParty1Code
-from ._UndertakingAmount1 import UndertakingAmount1
-from ._UnderlyingTradeTransaction1 import UnderlyingTradeTransaction1
-from ._Max2000Text import Max2000Text
+from ._ExternalUndertakingType1Code import ExternalUndertakingType1Code
 from ._GovernanceRules1 import GovernanceRules1
 from ._ISODate import ISODate
-from ._ExpiryDetails1 import ExpiryDetails1
-from ._YesNoIndicator import YesNoIndicator
+from ._Max2000Text import Max2000Text
 from ._PartyAndType1 import PartyAndType1
+from ._PartyIdentification43 import PartyIdentification43
+from ._Presentation1 import Presentation1
+from ._UnderlyingTradeTransaction1 import UnderlyingTradeTransaction1
+from ._UndertakingAmount1 import UndertakingAmount1
+from ._UndertakingName1Code import UndertakingName1Code
+from ._UndertakingWording1 import UndertakingWording1
+from ._YesNoIndicator import YesNoIndicator
 
 class Undertaking4(base_types._BaseFieldType):
 
-	__slots__ = ["_Applcnt", "_AddtlPty", "_MltplDmndInd", "_DlvryChanl", "_PresntnDtls", "_AutomtcAmtVartn", "_UndrlygTx", "_AdvsgPty", "_ConfChrgsPyblBy", "_GovncRulesAndLaw", "_DtOfIssnc", "_Nm", "_LclUdrtkgAmt", "_XpryDtls", "_PrtlDmndInd", "_Bnfcry", "_ConfInd", "_TrfChrgsPyblBy", "_AddtlInf", "_ScndAdvsgPty", "_TrfInd", "_UdrtkgWrdg", "_Tp"]
+	__slots__ = ["_AddtlInf", "_AddtlPty", "_AdvsgPty", "_Applcnt", "_AutomtcAmtVartn", "_Bnfcry", "_ConfChrgsPyblBy", "_ConfInd", "_DlvryChanl", "_DtOfIssnc", "_GovncRulesAndLaw", "_LclUdrtkgAmt", "_MltplDmndInd", "_Nm", "_PresntnDtls", "_PrtlDmndInd", "_ScndAdvsgPty", "_Tp", "_TrfChrgsPyblBy", "_TrfInd", "_UdrtkgWrdg", "_UndrlygTx", "_XpryDtls"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

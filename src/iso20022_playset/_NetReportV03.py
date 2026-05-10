@@ -1,12 +1,12 @@
 from . import base_types
+from ._NetObligation3 import NetObligation3
 from ._NetReportData2 import NetReportData2
 from ._PartyIdentification242Choice import PartyIdentification242Choice
 from ._SupplementaryData1 import SupplementaryData1
-from ._NetObligation3 import NetObligation3
 
 class NetReportV03(base_types._BaseFieldType):
 
-	__slots__ = ["_NetOblgtn", "_NetSvcCtrPtyId", "_NetSvcPtcptId", "_NetRptData", "_SplmtryData"]
+	__slots__ = ["_NetOblgtn", "_NetRptData", "_NetSvcCtrPtyId", "_NetSvcPtcptId", "_SplmtryData"]
 	@property
 	def NetOblgtn(self):
 		return self._NetOblgtn

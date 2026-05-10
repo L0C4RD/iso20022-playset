@@ -1,15 +1,15 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._Organisation42 import Organisation42
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._AccountReport36 import AccountReport36
-from ._PartyAndSignature4 import PartyAndSignature4
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._Organisation42 import Organisation42
 from ._OrganisationIdentification39 import OrganisationIdentification39
+from ._PartyAndSignature4 import PartyAndSignature4
 from ._References5 import References5
+from ._SupplementaryData1 import SupplementaryData1
 
 class AccountReportV05(base_types._BaseFieldType):
 
-	__slots__ = ["_Fr", "_AcctSvcrId", "_Rpt", "_Refs", "_SplmtryData", "_DgtlSgntr", "_Org"]
+	__slots__ = ["_AcctSvcrId", "_DgtlSgntr", "_Fr", "_Org", "_Refs", "_Rpt", "_SplmtryData"]
 	@property
 	def AcctSvcrId(self):
 		return self._AcctSvcrId

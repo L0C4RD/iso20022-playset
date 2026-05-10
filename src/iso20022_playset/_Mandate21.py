@@ -1,20 +1,20 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._MandateAdjustment1 import MandateAdjustment1
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._MandateOccurrences5 import MandateOccurrences5
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._MandateAdjustment1 import MandateAdjustment1
 from ._MandateAuthentication1 import MandateAuthentication1
+from ._MandateOccurrences5 import MandateOccurrences5
+from ._MandateSetupReason1Choice import MandateSetupReason1Choice
 from ._MandateTypeInformation2 import MandateTypeInformation2
 from ._Max35Text import Max35Text
-from ._ReferredMandateDocument2 import ReferredMandateDocument2
-from ._MandateSetupReason1Choice import MandateSetupReason1Choice
 from ._PartyIdentification272 import PartyIdentification272
-from ._CashAccount40 import CashAccount40
+from ._ReferredMandateDocument2 import ReferredMandateDocument2
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Mandate21(base_types._BaseFieldType):
 
-	__slots__ = ["_FrstColltnAmt", "_Rsn", "_MndtId", "_Tp", "_MndtRef", "_ColltnAmt", "_MaxAmt", "_UltmtCdtr", "_Ocrncs", "_CdtrSchmeId", "_RfrdDoc", "_MndtReqId", "_Cdtr", "_Dbtr", "_UltmtDbtr", "_Adjstmnt", "_TrckgInd", "_CdtrAcct", "_DbtrAcct", "_CdtrAgt", "_DbtrAgt", "_Authntcn"]
+	__slots__ = ["_Adjstmnt", "_Authntcn", "_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrSchmeId", "_ColltnAmt", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_FrstColltnAmt", "_MaxAmt", "_MndtId", "_MndtRef", "_MndtReqId", "_Ocrncs", "_RfrdDoc", "_Rsn", "_Tp", "_TrckgInd", "_UltmtCdtr", "_UltmtDbtr"]
 	@property
 	def Adjstmnt(self):
 		return self._Adjstmnt

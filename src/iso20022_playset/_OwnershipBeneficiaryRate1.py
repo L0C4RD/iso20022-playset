@@ -1,6 +1,6 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
 
 class OwnershipBeneficiaryRate1(base_types._BaseFieldType):
 

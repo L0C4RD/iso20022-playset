@@ -1,12 +1,12 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._OriginalMessage1 import OriginalMessage1
 from ._StatusReasonInformation8 import StatusReasonInformation8
 from ._UndertakingStatus1Code import UndertakingStatus1Code
-from ._Max35Text import Max35Text
 
 class TradeStatusReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_AddtlInf", "_OrgnlMsgDtls", "_StsRsn"]
+	__slots__ = ["_AddtlInf", "_OrgnlMsgDtls", "_Sts", "_StsRsn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

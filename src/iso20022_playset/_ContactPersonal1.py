@@ -1,13 +1,13 @@
 from . import base_types
-from ._PhoneNumber import PhoneNumber
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
 from ._ISO2ALanguageCode import ISO2ALanguageCode
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._PhoneNumber import PhoneNumber
 
 class ContactPersonal1(base_types._BaseFieldType):
 
-	__slots__ = ["_LastNm", "_MobPhne", "_URL", "_Lang", "_BizPhne", "_PrsnlEmail", "_BizFax", "_BizEmail", "_OthrPhne", "_GvnNm", "_HomePhne", "_OthrEmail", "_Nm", "_MddlNm", "_HomeFax"]
+	__slots__ = ["_BizEmail", "_BizFax", "_BizPhne", "_GvnNm", "_HomeFax", "_HomePhne", "_Lang", "_LastNm", "_MddlNm", "_MobPhne", "_Nm", "_OthrEmail", "_OthrPhne", "_PrsnlEmail", "_URL"]
 	@property
 	def BizEmail(self):
 		return self._BizEmail

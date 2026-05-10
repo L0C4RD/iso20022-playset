@@ -4,7 +4,7 @@ from ._GenericIdentification165 import GenericIdentification165
 
 class IntraDayRequirement1(base_types._BaseFieldType):
 
-	__slots__ = ["_PeakVartnMrgnLblty", "_IntraDayMrgnCall", "_AggtPeakLblty", "_PeakInitlMrgnLblty", "_MrgnAcctId"]
+	__slots__ = ["_AggtPeakLblty", "_IntraDayMrgnCall", "_MrgnAcctId", "_PeakInitlMrgnLblty", "_PeakVartnMrgnLblty"]
 	@property
 	def AggtPeakLblty(self):
 		return self._AggtPeakLblty

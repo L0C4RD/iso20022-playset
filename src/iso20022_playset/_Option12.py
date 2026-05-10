@@ -1,10 +1,10 @@
 from . import base_types
-from ._OptionType1Code import OptionType1Code
 from ._OptionDateOrPeriod1Choice import OptionDateOrPeriod1Choice
+from ._OptionType1Code import OptionType1Code
 
 class Option12(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_DtOrPrd"]
+	__slots__ = ["_DtOrPrd", "_Tp"]
 	@property
 	def DtOrPrd(self):
 		return self._DtOrPrd

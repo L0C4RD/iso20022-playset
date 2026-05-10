@@ -4,7 +4,7 @@ from ._PartyIdentificationAndAccount232 import PartyIdentificationAndAccount232
 
 class CashParties44(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrAgt", "_MktClmCtrPty", "_Cdtr"]
+	__slots__ = ["_Cdtr", "_CdtrAgt", "_MktClmCtrPty"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

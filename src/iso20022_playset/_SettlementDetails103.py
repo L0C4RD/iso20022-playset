@@ -1,15 +1,15 @@
 from . import base_types
-from ._Restriction6Choice import Restriction6Choice
-from ._SettlementSystemMethod5Choice import SettlementSystemMethod5Choice
 from ._GenericIdentification47 import GenericIdentification47
 from ._Registration11Choice import Registration11Choice
+from ._Restriction6Choice import Restriction6Choice
 from ._SecuritiesRTGS5Choice import SecuritiesRTGS5Choice
-from ._TaxCapacityParty5Choice import TaxCapacityParty5Choice
+from ._SettlementSystemMethod5Choice import SettlementSystemMethod5Choice
 from ._SettlementTransactionCondition21Choice import SettlementTransactionCondition21Choice
+from ._TaxCapacityParty5Choice import TaxCapacityParty5Choice
 
 class SettlementDetails103(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxCpcty", "_SttlmTxCond", "_LglRstrctns", "_Regn", "_SctiesRTGS", "_StmpDtyTaxBsis", "_SttlmSysMtd"]
+	__slots__ = ["_LglRstrctns", "_Regn", "_SctiesRTGS", "_StmpDtyTaxBsis", "_SttlmSysMtd", "_SttlmTxCond", "_TaxCpcty"]
 	@property
 	def LglRstrctns(self):
 		return self._LglRstrctns

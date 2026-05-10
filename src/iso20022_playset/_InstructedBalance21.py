@@ -1,11 +1,11 @@
 from . import base_types
-from ._SignedQuantityFormat13 import SignedQuantityFormat13
-from ._InstructedCorporateActionOption22 import InstructedCorporateActionOption22
 from ._BalanceFormat14Choice import BalanceFormat14Choice
+from ._InstructedCorporateActionOption22 import InstructedCorporateActionOption22
+from ._SignedQuantityFormat13 import SignedQuantityFormat13
 
 class InstructedBalance21(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlPrtctInstrBal", "_TtlPdgInstrBal", "_TtlCancInstrBal", "_TtlAccptdInstrBal", "_OptnDtls", "_TtlInstdBal", "_TtlRjctdInstrBal"]
+	__slots__ = ["_OptnDtls", "_TtlAccptdInstrBal", "_TtlCancInstrBal", "_TtlInstdBal", "_TtlPdgInstrBal", "_TtlPrtctInstrBal", "_TtlRjctdInstrBal"]
 	@property
 	def OptnDtls(self):
 		return self._OptnDtls

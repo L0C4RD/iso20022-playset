@@ -1,22 +1,22 @@
 from . import base_types
-from ._PaymentType4Choice import PaymentType4Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISODate import ISODate
-from ._Max20000Text import Max20000Text
-from ._PaymentStatus6 import PaymentStatus6
-from ._DateTimePeriod1Choice import DateTimePeriod1Choice
-from ._Amount3Choice import Amount3Choice
-from ._PaymentTransactionParty4 import PaymentTransactionParty4
-from ._Priority1Choice import Priority1Choice
-from ._Max35Text import Max35Text
-from ._Max10Text import Max10Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._Amount2Choice import Amount2Choice
+from ._Amount3Choice import Amount3Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DateTimePeriod1Choice import DateTimePeriod1Choice
+from ._ISODate import ISODate
+from ._Max10Text import Max10Text
+from ._Max20000Text import Max20000Text
+from ._Max35Text import Max35Text
 from ._PaymentOrigin1Choice import PaymentOrigin1Choice
+from ._PaymentStatus6 import PaymentStatus6
+from ._PaymentTransactionParty4 import PaymentTransactionParty4
+from ._PaymentType4Choice import PaymentType4Choice
+from ._Priority1Choice import Priority1Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PaymentInstruction47(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtMtd", "_Tp", "_InstdAmt", "_GnrtdOrdr", "_Prty", "_IntrBkSttlmDt", "_Sts", "_IntrBkSttlmAmt", "_MsgId", "_ReqdExctnDt", "_TxId", "_EndToEndId", "_InstrCpy", "_Purp", "_PrcgVldtyTm", "_Pties"]
+	__slots__ = ["_EndToEndId", "_GnrtdOrdr", "_InstdAmt", "_InstrCpy", "_IntrBkSttlmAmt", "_IntrBkSttlmDt", "_MsgId", "_PmtMtd", "_PrcgVldtyTm", "_Prty", "_Pties", "_Purp", "_ReqdExctnDt", "_Sts", "_Tp", "_TxId"]
 	@property
 	def EndToEndId(self):
 		return self._EndToEndId

@@ -1,16 +1,16 @@
 from . import base_types
-from ._Number3Choice import Number3Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._Period7Choice import Period7Choice
-from ._Max35Text import Max35Text
-from ._UpdateType15Choice import UpdateType15Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._Frequency22Choice import Frequency22Choice
+from ._Max35Text import Max35Text
 from ._MovementResponseType1Code import MovementResponseType1Code
+from ._Number3Choice import Number3Choice
+from ._Period7Choice import Period7Choice
+from ._UpdateType15Choice import UpdateType15Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class IntraBalanceReport5(base_types._BaseFieldType):
 
-	__slots__ = ["_QryTp", "_Frqcy", "_RptNb", "_RptPrd", "_ActvtyInd", "_QryRef", "_RptId", "_UpdTp", "_RptDtTm"]
+	__slots__ = ["_ActvtyInd", "_Frqcy", "_QryRef", "_QryTp", "_RptDtTm", "_RptId", "_RptNb", "_RptPrd", "_UpdTp"]
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd

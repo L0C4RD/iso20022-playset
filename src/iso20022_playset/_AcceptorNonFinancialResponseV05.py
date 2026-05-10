@@ -1,11 +1,11 @@
 from . import base_types
-from ._NonFinancialResponseComponent5 import NonFinancialResponseComponent5
 from ._ContentInformationType37 import ContentInformationType37
 from ._Header70 import Header70
+from ._NonFinancialResponseComponent5 import NonFinancialResponseComponent5
 
 class AcceptorNonFinancialResponseV05(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_NonFinRspn", "_Hdr"]
+	__slots__ = ["_Hdr", "_NonFinRspn", "_SctyTrlr"]
 	@property
 	def Hdr(self):
 		return self._Hdr

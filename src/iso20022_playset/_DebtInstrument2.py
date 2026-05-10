@@ -1,12 +1,12 @@
 from . import base_types
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._DebtInstrumentSeniorityType1Code import DebtInstrumentSeniorityType1Code
 from ._ISODate import ISODate
 from ._InterestRate6Choice import InterestRate6Choice
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class DebtInstrument2(base_types._BaseFieldType):
 
-	__slots__ = ["_DebtSnrty", "_NmnlValPerUnit", "_MtrtyDt", "_TtlIssdNmnlAmt", "_IntrstRate"]
+	__slots__ = ["_DebtSnrty", "_IntrstRate", "_MtrtyDt", "_NmnlValPerUnit", "_TtlIssdNmnlAmt"]
 	@property
 	def DebtSnrty(self):
 		return self._DebtSnrty

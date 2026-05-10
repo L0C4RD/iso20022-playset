@@ -1,31 +1,31 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._OptionAvailabilityStatus4Choice import OptionAvailabilityStatus4Choice
-from ._BidRangeType2Choice import BidRangeType2Choice
-from ._FractionDispositionType31Choice import FractionDispositionType31Choice
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._CorporateActionNarrative64 import CorporateActionNarrative64
-from ._CountryCode import CountryCode
-from ._CorporateActionOption46Choice import CorporateActionOption46Choice
-from ._ProrationBelowMinimumQuantity1Choice import ProrationBelowMinimumQuantity1Choice
-from ._CorporateActionPrice97 import CorporateActionPrice97
 from ._BeneficiaryCertificationType15Choice import BeneficiaryCertificationType15Choice
-from ._DefaultProcessingOrStandingInstruction2Choice import DefaultProcessingOrStandingInstruction2Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._Exact3UpperCaseAlphaNumericText import Exact3UpperCaseAlphaNumericText
-from ._OfferTypeFormat16Choice import OfferTypeFormat16Choice
+from ._BidRangeType2Choice import BidRangeType2Choice
 from ._CashOption113 import CashOption113
-from ._SecuritiesOption84 import SecuritiesOption84
-from ._OptionFeaturesFormat31Choice import OptionFeaturesFormat31Choice
-from ._Exact3NumericText import Exact3NumericText
-from ._SecuritiesOption117 import SecuritiesOption117
-from ._CorporateActionPeriod12 import CorporateActionPeriod12
 from ._CorporateActionDate108 import CorporateActionDate108
+from ._CorporateActionNarrative64 import CorporateActionNarrative64
+from ._CorporateActionOption46Choice import CorporateActionOption46Choice
+from ._CorporateActionPeriod12 import CorporateActionPeriod12
+from ._CorporateActionPrice97 import CorporateActionPrice97
 from ._CorporateActionRate136 import CorporateActionRate136
+from ._CountryCode import CountryCode
+from ._DefaultProcessingOrStandingInstruction2Choice import DefaultProcessingOrStandingInstruction2Choice
+from ._Exact3NumericText import Exact3NumericText
+from ._Exact3UpperCaseAlphaNumericText import Exact3UpperCaseAlphaNumericText
+from ._FractionDispositionType31Choice import FractionDispositionType31Choice
+from ._OfferTypeFormat16Choice import OfferTypeFormat16Choice
+from ._OptionAvailabilityStatus4Choice import OptionAvailabilityStatus4Choice
+from ._OptionFeaturesFormat31Choice import OptionFeaturesFormat31Choice
+from ._ProrationBelowMinimumQuantity1Choice import ProrationBelowMinimumQuantity1Choice
+from ._SecuritiesOption117 import SecuritiesOption117
+from ._SecuritiesOption84 import SecuritiesOption84
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._YesNoIndicator import YesNoIndicator
 
 class CorporateActionOption247(base_types._BaseFieldType):
 
-	__slots__ = ["_CshMvmntDtls", "_AccptncPrtyLvl", "_WdrwlAllwdInd", "_DtDtls", "_FinInstrmId", "_NonDmclCtry", "_DfltPrcgOrStgInstr", "_OptnFeatrs", "_AddtlInf", "_PricDtls", "_OfferTp", "_PrdDtls", "_OptnAvlbtySts", "_ChngAllwdInd", "_CcyOptn", "_CertfctnBrkdwnInd", "_ApldOptnInd", "_CertfctnBrkdwnTp", "_SctiesMvmntDtls", "_SctiesQty", "_ChrgsApldInd", "_OptnTp", "_PrratnBlwMinQty", "_VldDmclCtry", "_BidRgTp", "_OptnNb", "_FrctnDspstn", "_RateAndAmtDtls"]
+	__slots__ = ["_AccptncPrtyLvl", "_AddtlInf", "_ApldOptnInd", "_BidRgTp", "_CcyOptn", "_CertfctnBrkdwnInd", "_CertfctnBrkdwnTp", "_ChngAllwdInd", "_ChrgsApldInd", "_CshMvmntDtls", "_DfltPrcgOrStgInstr", "_DtDtls", "_FinInstrmId", "_FrctnDspstn", "_NonDmclCtry", "_OfferTp", "_OptnAvlbtySts", "_OptnFeatrs", "_OptnNb", "_OptnTp", "_PrdDtls", "_PricDtls", "_PrratnBlwMinQty", "_RateAndAmtDtls", "_SctiesMvmntDtls", "_SctiesQty", "_VldDmclCtry", "_WdrwlAllwdInd"]
 	@property
 	def AccptncPrtyLvl(self):
 		return self._AccptncPrtyLvl

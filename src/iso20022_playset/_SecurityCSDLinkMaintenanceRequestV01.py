@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecurityCSDLinkUpdate3 import SecurityCSDLinkUpdate3
-from ._SecurityCSDLink9 import SecurityCSDLink9
 from ._MessageHeader1 import MessageHeader1
+from ._SecurityCSDLink9 import SecurityCSDLink9
+from ._SecurityCSDLinkUpdate3 import SecurityCSDLinkUpdate3
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecurityCSDLinkMaintenanceRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_Upd", "_SctyCSDLkId", "_SplmtryData"]
+	__slots__ = ["_MsgHdr", "_SctyCSDLkId", "_SplmtryData", "_Upd"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

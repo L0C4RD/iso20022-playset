@@ -1,6 +1,6 @@
 from . import base_types
-from ._CorporateActionGeneralInformation175 import CorporateActionGeneralInformation175
 from ._AgentDocumentIdentificationAndStatus1Choice import AgentDocumentIdentificationAndStatus1Choice
+from ._CorporateActionGeneralInformation175 import CorporateActionGeneralInformation175
 
 class AgentCANotificationStatusAdviceV03(base_types._BaseFieldType):
 

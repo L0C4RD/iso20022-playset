@@ -1,11 +1,11 @@
 from . import base_types
+from ._DecimalNumber import DecimalNumber
 from ._Max15NumericText import Max15NumericText
 from ._UnitOfMeasure3Choice import UnitOfMeasure3Choice
-from ._DecimalNumber import DecimalNumber
 
 class Quantity9(base_types._BaseFieldType):
 
-	__slots__ = ["_Fctr", "_Val", "_UnitOfMeasr"]
+	__slots__ = ["_Fctr", "_UnitOfMeasr", "_Val"]
 	@property
 	def Fctr(self):
 		return self._Fctr

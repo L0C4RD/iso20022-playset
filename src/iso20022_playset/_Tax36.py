@@ -1,10 +1,10 @@
 from . import base_types
-from ._DateQuarter1Choice import DateQuarter1Choice
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._DateQuarter1Choice import DateQuarter1Choice
 
 class Tax36(base_types._BaseFieldType):
 
-	__slots__ = ["_DtOrPrd", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_DtOrPrd"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

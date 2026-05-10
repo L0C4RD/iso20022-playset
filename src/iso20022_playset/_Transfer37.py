@@ -1,26 +1,26 @@
 from . import base_types
-from ._BusinessFlowType1Code import BusinessFlowType1Code
-from ._RoundingDirection2Code import RoundingDirection2Code
-from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
-from ._Unit12 import Unit12
-from ._PercentageRate import PercentageRate
-from ._HoldingsPlanType1Code import HoldingsPlanType1Code
-from ._TransferReason1Choice import TransferReason1Choice
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._ISODate import ISODate
-from ._DecimalNumber import DecimalNumber
-from ._YesNoIndicator import YesNoIndicator
+from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._AdditionalReference10 import AdditionalReference10
+from ._BusinessFlowType1Code import BusinessFlowType1Code
 from ._ChargePaymentMethod1Choice import ChargePaymentMethod1Choice
-from ._FinancialInstrument88 import FinancialInstrument88
-from ._Max35Text import Max35Text
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DecimalNumber import DecimalNumber
+from ._FinancialInstrument88 import FinancialInstrument88
+from ._HoldingsPlanType1Code import HoldingsPlanType1Code
+from ._ISODate import ISODate
 from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
+from ._RoundingDirection2Code import RoundingDirection2Code
+from ._TransferReason1Choice import TransferReason1Choice
+from ._Unit12 import Unit12
+from ._YesNoIndicator import YesNoIndicator
 
 class Transfer37(base_types._BaseFieldType):
 
-	__slots__ = ["_TrfExpnssPmtTp", "_TrfRsn", "_UnitsDtls", "_TtlUnitsNb", "_NonStdSttlmInf", "_BizFlowTp", "_NewAvrgDt", "_OrgnlCost", "_FinInstrmDtls", "_TrfRate", "_TradDt", "_TrfConfRef", "_TrfCcy", "_AvrgDt", "_HldgsPlanTp", "_ReqdSttlmDt", "_OwnAcctTrfInd", "_TrfOrdrDtForm", "_FctvSttlmDt", "_TrfRef", "_NewAvrgPric", "_Rndg", "_AvrgPric", "_FctvTrfDt", "_ClntRef", "_CtrPtyRef"]
+	__slots__ = ["_AvrgDt", "_AvrgPric", "_BizFlowTp", "_ClntRef", "_CtrPtyRef", "_FctvSttlmDt", "_FctvTrfDt", "_FinInstrmDtls", "_HldgsPlanTp", "_NewAvrgDt", "_NewAvrgPric", "_NonStdSttlmInf", "_OrgnlCost", "_OwnAcctTrfInd", "_ReqdSttlmDt", "_Rndg", "_TradDt", "_TrfCcy", "_TrfConfRef", "_TrfExpnssPmtTp", "_TrfOrdrDtForm", "_TrfRate", "_TrfRef", "_TrfRsn", "_TtlUnitsNb", "_UnitsDtls"]
 	@property
 	def AvrgDt(self):
 		return self._AvrgDt

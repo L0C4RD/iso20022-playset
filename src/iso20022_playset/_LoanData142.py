@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._CollateralDeliveryMethod1Code import CollateralDeliveryMethod1Code
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._InterestRate6 import InterestRate6
-from ._Max52Text import Max52Text
+from ._CollateralDeliveryMethod1Code import CollateralDeliveryMethod1Code
+from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
+from ._InterestRate6 import InterestRate6
 from ._MICIdentifier import MICIdentifier
+from ._Max52Text import Max52Text
 
 class LoanData142(base_types._BaseFieldType):
 
-	__slots__ = ["_TermntnDt", "_CollDlvryMtd", "_UnqTradIdr", "_OutsdngMrgnLnAmt", "_ExctnDtTm", "_ShrtMktValAmt", "_TradgVn", "_EvtDt", "_MrgnLnAttr"]
+	__slots__ = ["_CollDlvryMtd", "_EvtDt", "_ExctnDtTm", "_MrgnLnAttr", "_OutsdngMrgnLnAmt", "_ShrtMktValAmt", "_TermntnDt", "_TradgVn", "_UnqTradIdr"]
 	@property
 	def CollDlvryMtd(self):
 		return self._CollDlvryMtd

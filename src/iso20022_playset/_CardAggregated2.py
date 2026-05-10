@@ -1,13 +1,13 @@
 from . import base_types
-from ._Max35Text import Max35Text
+from ._CardPaymentServiceType2Code import CardPaymentServiceType2Code
 from ._CardSequenceNumberRange1 import CardSequenceNumberRange1
 from ._DateOrDateTimePeriod1Choice import DateOrDateTimePeriod1Choice
 from ._ExternalCardTransactionCategory1Code import ExternalCardTransactionCategory1Code
-from ._CardPaymentServiceType2Code import CardPaymentServiceType2Code
+from ._Max35Text import Max35Text
 
 class CardAggregated2(base_types._BaseFieldType):
 
-	__slots__ = ["_TxCtgy", "_SaleRcncltnId", "_AddtlSvc", "_SeqNbRg", "_TxDtRg"]
+	__slots__ = ["_AddtlSvc", "_SaleRcncltnId", "_SeqNbRg", "_TxCtgy", "_TxDtRg"]
 	@property
 	def AddtlSvc(self):
 		return self._AddtlSvc

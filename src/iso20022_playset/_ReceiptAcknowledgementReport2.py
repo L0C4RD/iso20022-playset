@@ -1,10 +1,10 @@
 from . import base_types
-from ._RequestHandling2 import RequestHandling2
 from ._MessageReference1 import MessageReference1
+from ._RequestHandling2 import RequestHandling2
 
 class ReceiptAcknowledgementReport2(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdRef", "_ReqHdlg"]
+	__slots__ = ["_ReqHdlg", "_RltdRef"]
 	@property
 	def ReqHdlg(self):
 		return self._ReqHdlg

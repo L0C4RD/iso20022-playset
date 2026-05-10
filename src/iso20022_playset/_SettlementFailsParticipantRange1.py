@@ -3,7 +3,7 @@ from ._SettlementFailsParticipant1 import SettlementFailsParticipant1
 
 class SettlementFailsParticipantRange1(base_types._BaseFieldType):
 
-	__slots__ = ["_HghstInVol", "_HghstInVal"]
+	__slots__ = ["_HghstInVal", "_HghstInVol"]
 	@property
 	def HghstInVal(self):
 		return self._HghstInVal

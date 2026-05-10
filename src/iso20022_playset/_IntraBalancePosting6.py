@@ -1,19 +1,19 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._GenericIdentification37 import GenericIdentification37
-from ._PriorityNumeric4Choice import PriorityNumeric4Choice
-from ._Max35Text import Max35Text
-from ._Linkages57 import Linkages57
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max350Text import Max350Text
-from ._ISODateTime import ISODateTime
 from ._Amount2Choice import Amount2Choice
 from ._CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuantityBreakdown3
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._GenericIdentification37 import GenericIdentification37
+from ._ISODateTime import ISODateTime
+from ._Linkages57 import Linkages57
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._PriorityNumeric4Choice import PriorityNumeric4Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class IntraBalancePosting6(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnEvtId", "_MsgOrgtr", "_RmngSttlmAmt", "_CshSubBalId", "_Lnkgs", "_Prty", "_FctvSttlmDt", "_AcctOwnrTxId", "_CreDtTm", "_PoolId", "_StsDt", "_PrevslySttldAmt", "_SttldAmt", "_PrcrTxId", "_MktInfrstrctrTxId", "_InstrPrcgAddtlDtls", "_AcctSvcrTxId", "_SplmtryData", "_BalTo"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_BalTo", "_CorpActnEvtId", "_CreDtTm", "_CshSubBalId", "_FctvSttlmDt", "_InstrPrcgAddtlDtls", "_Lnkgs", "_MktInfrstrctrTxId", "_MsgOrgtr", "_PoolId", "_PrcrTxId", "_PrevslySttldAmt", "_Prty", "_RmngSttlmAmt", "_SplmtryData", "_StsDt", "_SttldAmt"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

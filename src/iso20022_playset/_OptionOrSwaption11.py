@@ -1,17 +1,17 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._ExerciseDate1Choice import ExerciseDate1Choice
-from ._OptionType2Code import OptionType2Code
-from ._OptionBarrierLevel1Choice import OptionBarrierLevel1Choice
 from ._ActiveOrHistoricCurrencyAnd19DecimalAmount import ActiveOrHistoricCurrencyAnd19DecimalAmount
-from ._Schedule4 import Schedule4
-from ._OptionStyle6Code import OptionStyle6Code
-from ._SecuritiesTransactionPrice17Choice import SecuritiesTransactionPrice17Choice
 from ._EmbeddedType1Code import EmbeddedType1Code
+from ._ExerciseDate1Choice import ExerciseDate1Choice
+from ._ISODate import ISODate
+from ._OptionBarrierLevel1Choice import OptionBarrierLevel1Choice
+from ._OptionStyle6Code import OptionStyle6Code
+from ._OptionType2Code import OptionType2Code
+from ._Schedule4 import Schedule4
+from ._SecuritiesTransactionPrice17Choice import SecuritiesTransactionPrice17Choice
 
 class OptionOrSwaption11(base_types._BaseFieldType):
 
-	__slots__ = ["_StrkPric", "_PutAmt", "_ExrcStyle", "_CallAmt", "_PrmPmtDt", "_MtrtyDtOfUndrlyg", "_MbddTp", "_BrrrLvls", "_Tp", "_ExrcDt", "_StrkPricSchdl", "_PrmAmt"]
+	__slots__ = ["_BrrrLvls", "_CallAmt", "_ExrcDt", "_ExrcStyle", "_MbddTp", "_MtrtyDtOfUndrlyg", "_PrmAmt", "_PrmPmtDt", "_PutAmt", "_StrkPric", "_StrkPricSchdl", "_Tp"]
 	@property
 	def BrrrLvls(self):
 		return self._BrrrLvls

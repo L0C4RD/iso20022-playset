@@ -5,7 +5,7 @@ from ._Header70 import Header70
 
 class AcceptorReconciliationRequestV13(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_RcncltnReq", "_Hdr"]
+	__slots__ = ["_Hdr", "_RcncltnReq", "_SctyTrlr"]
 	@property
 	def Hdr(self):
 		return self._Hdr

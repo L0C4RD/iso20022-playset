@@ -1,13 +1,13 @@
 from . import base_types
+from ._Account12Choice import Account12Choice
+from ._CreditDebitCode import CreditDebitCode
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._ISODate import ISODate
 from ._RestrictedFINActiveCurrencyAndAmount import RestrictedFINActiveCurrencyAndAmount
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._CreditDebitCode import CreditDebitCode
-from ._Account12Choice import Account12Choice
 
 class CashOption112(base_types._BaseFieldType):
 
-	__slots__ = ["_PstngAmt", "_ValDt", "_Acct", "_PstngDt", "_CdtDbtInd", "_OrgnlPstngDt"]
+	__slots__ = ["_Acct", "_CdtDbtInd", "_OrgnlPstngDt", "_PstngAmt", "_PstngDt", "_ValDt"]
 	@property
 	def Acct(self):
 		return self._Acct

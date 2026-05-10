@@ -1,12 +1,12 @@
 from . import base_types
-from ._SecuritiesAccountSearchCriteria2 import SecuritiesAccountSearchCriteria2
-from ._SecuritiesAccountReturnCriteria1 import SecuritiesAccountReturnCriteria1
-from ._SupplementaryData1 import SupplementaryData1
 from ._MessageHeader2 import MessageHeader2
+from ._SecuritiesAccountReturnCriteria1 import SecuritiesAccountReturnCriteria1
+from ._SecuritiesAccountSearchCriteria2 import SecuritiesAccountSearchCriteria2
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesAccountQueryV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SchCrit", "_RtrCrit", "_SplmtryData", "_MsgHdr"]
+	__slots__ = ["_MsgHdr", "_RtrCrit", "_SchCrit", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._AssessmentOfValueRequiredUnderCOLLUKType1Code import AssessmentOfValueRequiredUnderCOLLUKType1Code
-from ._OutcomeOfPRINValueAssessmentOrReviewUKType1Code import OutcomeOfPRINValueAssessmentOrReviewUKType1Code
 from ._EMTDataReportingVFMUKType1Code import EMTDataReportingVFMUKType1Code
+from ._ISODate import ISODate
 from ._Max350Text import Max350Text
 from ._OtherReviewRelatedToValueAndOrChargesUKType1Code import OtherReviewRelatedToValueAndOrChargesUKType1Code
 from ._OutcomeOfCOLLAssessmentOfValueUKType1Code import OutcomeOfCOLLAssessmentOfValueUKType1Code
+from ._OutcomeOfPRINValueAssessmentOrReviewUKType1Code import OutcomeOfPRINValueAssessmentOrReviewUKType1Code
 
 class ValueForMoney1(base_types._BaseFieldType):
 
-	__slots__ = ["_RvwDtUK", "_AssmntOfValReqrdUdrCOLLUK", "_FrthrInfUK", "_EMTDataRptgVFMUK", "_OutcmOfCOLLAssmntOfValUK", "_OutcmOfPRINValAssmntOrRvwUK", "_RvwNxtDueUK", "_OthrRvwRltdToValAndOrChrgsUK"]
+	__slots__ = ["_AssmntOfValReqrdUdrCOLLUK", "_EMTDataRptgVFMUK", "_FrthrInfUK", "_OthrRvwRltdToValAndOrChrgsUK", "_OutcmOfCOLLAssmntOfValUK", "_OutcmOfPRINValAssmntOrRvwUK", "_RvwDtUK", "_RvwNxtDueUK"]
 	@property
 	def AssmntOfValReqrdUdrCOLLUK(self):
 		return self._AssmntOfValReqrdUdrCOLLUK

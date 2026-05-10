@@ -1,11 +1,11 @@
 from . import base_types
-from ._PartyType28Code import PartyType28Code
 from ._Max10KText import Max10KText
 from ._Max35Text import Max35Text
+from ._PartyType28Code import PartyType28Code
 
 class RiskInputData2(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrNttyTp", "_Tp", "_NttyTp", "_Val"]
+	__slots__ = ["_NttyTp", "_OthrNttyTp", "_Tp", "_Val"]
 	@property
 	def NttyTp(self):
 		return self._NttyTp

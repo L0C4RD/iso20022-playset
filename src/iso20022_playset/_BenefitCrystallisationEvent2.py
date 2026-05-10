@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PercentageRate import PercentageRate
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._YesNoIndicator import YesNoIndicator
-from ._Max35Text import Max35Text
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
+from ._YesNoIndicator import YesNoIndicator
 
 class BenefitCrystallisationEvent2(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtTpNm", "_AddtlInf", "_EvtDt", "_PctgOfAllwnc", "_LftmAllwncPrtcn", "_CrstllstnAmt", "_EvtTpNb"]
+	__slots__ = ["_AddtlInf", "_CrstllstnAmt", "_EvtDt", "_EvtTpNb", "_EvtTpNm", "_LftmAllwncPrtcn", "_PctgOfAllwnc"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

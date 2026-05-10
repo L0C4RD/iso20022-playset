@@ -1,14 +1,14 @@
 from . import base_types
-from ._BillingSubServiceIdentification1 import BillingSubServiceIdentification1
 from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
 from ._BillingServiceCommonIdentification1 import BillingServiceCommonIdentification1
+from ._BillingSubServiceIdentification1 import BillingSubServiceIdentification1
+from ._Max12Text import Max12Text
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
-from ._Max12Text import Max12Text
 
 class BillingServiceIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_SvcTp", "_BkTxCd", "_CmonCd", "_Id", "_SubSvc"]
+	__slots__ = ["_BkTxCd", "_CmonCd", "_Desc", "_Id", "_SubSvc", "_SvcTp"]
 	@property
 	def BkTxCd(self):
 		return self._BkTxCd

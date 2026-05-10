@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PercentageRate import PercentageRate
-from ._BlockChainAddressWallet5 import BlockChainAddressWallet5
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CollateralAccount3 import CollateralAccount3
-from ._Number import Number
 from ._AmountAndDirection20 import AmountAndDirection20
+from ._BlockChainAddressWallet5 import BlockChainAddressWallet5
+from ._CollateralAccount3 import CollateralAccount3
+from ._ISODate import ISODate
+from ._Number import Number
+from ._PercentageRate import PercentageRate
 
 class InterestCalculation5(base_types._BaseFieldType):
 
-	__slots__ = ["_CollAcctId", "_AcrdIntrstAmt", "_MvmntAmt", "_Sprd", "_AggtdIntrstAmt", "_FctvPrncplAmt", "_FctvRate", "_NbOfDays", "_IntrstRate", "_ClctnDt", "_PrncplAmt", "_BlckChainAdrOrWllt"]
+	__slots__ = ["_AcrdIntrstAmt", "_AggtdIntrstAmt", "_BlckChainAdrOrWllt", "_ClctnDt", "_CollAcctId", "_FctvPrncplAmt", "_FctvRate", "_IntrstRate", "_MvmntAmt", "_NbOfDays", "_PrncplAmt", "_Sprd"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt

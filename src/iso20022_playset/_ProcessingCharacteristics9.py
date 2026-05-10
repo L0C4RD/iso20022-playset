@@ -1,20 +1,20 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._TimeFrame8 import TimeFrame8
-from ._RoundingDirection2Code import RoundingDirection2Code
-from ._EventFrequency5Code import EventFrequency5Code
-from ._YesNoIndicator import YesNoIndicator
-from ._ISOTime import ISOTime
-from ._TimeFrame9 import TimeFrame9
 from ._AdditionalInformation15 import AdditionalInformation15
-from ._MainFundOrderDeskLocation1 import MainFundOrderDeskLocation1
-from ._TimeFrame8Choice import TimeFrame8Choice
-from ._Max350Text import Max350Text
+from ._EventFrequency5Code import EventFrequency5Code
 from ._Forms1 import Forms1
+from ._ISOTime import ISOTime
+from ._MainFundOrderDeskLocation1 import MainFundOrderDeskLocation1
+from ._Max350Text import Max350Text
+from ._RoundingDirection2Code import RoundingDirection2Code
+from ._TimeFrame8 import TimeFrame8
+from ._TimeFrame8Choice import TimeFrame8Choice
+from ._TimeFrame9 import TimeFrame9
+from ._YesNoIndicator import YesNoIndicator
 
 class ProcessingCharacteristics9(base_types._BaseFieldType):
 
-	__slots__ = ["_DealgCutOffTm", "_AmtInd", "_LtdPrd", "_DealgCutOffTmFrame", "_DealConfTmFrame", "_MainFndOrdrDskLctn", "_DealConfTm", "_UnitsInd", "_DealgCcyAccptd", "_AddtlInf", "_Rndg", "_DealgFrqcyDesc", "_DealgFrqcy", "_SwtchAuthstn", "_SttlmCycl"]
+	__slots__ = ["_AddtlInf", "_AmtInd", "_DealConfTm", "_DealConfTmFrame", "_DealgCcyAccptd", "_DealgCutOffTm", "_DealgCutOffTmFrame", "_DealgFrqcy", "_DealgFrqcyDesc", "_LtdPrd", "_MainFndOrdrDskLctn", "_Rndg", "_SttlmCycl", "_SwtchAuthstn", "_UnitsInd"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

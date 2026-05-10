@@ -1,15 +1,15 @@
 from . import base_types
-from ._Price8 import Price8
-from ._UnderlyingAttributes4 import UnderlyingAttributes4
-from ._BaseOneRate import BaseOneRate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._TimeUnit3Choice import TimeUnit3Choice
+from ._BaseOneRate import BaseOneRate
 from ._ISODateTime import ISODateTime
+from ._Price8 import Price8
+from ._TimeUnit3Choice import TimeUnit3Choice
+from ._UnderlyingAttributes4 import UnderlyingAttributes4
 from ._UnitOfMeasure7Choice import UnitOfMeasure7Choice
 
 class Future4(base_types._BaseFieldType):
 
-	__slots__ = ["_ExrcPric", "_AddtlUndrlygAttrbts", "_FutrDt", "_UnitOfMeasr", "_MinSz", "_CtrctSz", "_TmUnit"]
+	__slots__ = ["_AddtlUndrlygAttrbts", "_CtrctSz", "_ExrcPric", "_FutrDt", "_MinSz", "_TmUnit", "_UnitOfMeasr"]
 	@property
 	def AddtlUndrlygAttrbts(self):
 		return self._AddtlUndrlygAttrbts

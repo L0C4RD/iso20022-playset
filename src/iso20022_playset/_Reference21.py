@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max52Text import Max52Text
 from ._Max35Text import Max35Text
+from ._Max52Text import Max52Text
 
 class Reference21(base_types._BaseFieldType):
 
-	__slots__ = ["_RcvrCollTxId", "_SndrCollCtrctId", "_SndrCollTxId", "_RcvrCollCtrctId", "_CmonTxId"]
+	__slots__ = ["_CmonTxId", "_RcvrCollCtrctId", "_RcvrCollTxId", "_SndrCollCtrctId", "_SndrCollTxId"]
 	@property
 	def CmonTxId(self):
 		return self._CmonTxId

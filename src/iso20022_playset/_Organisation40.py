@@ -1,17 +1,17 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._ISODate import ISODate
-from ._PartyIdentification177Choice import PartyIdentification177Choice
-from ._OrganisationType1Choice import OrganisationType1Choice
-from ._MICIdentifier import MICIdentifier
 from ._CountryCode import CountryCode
-from ._Max35Text import Max35Text
+from ._ISODate import ISODate
+from ._LEIIdentifier import LEIIdentifier
+from ._MICIdentifier import MICIdentifier
 from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
 from ._ModificationScope34 import ModificationScope34
+from ._OrganisationType1Choice import OrganisationType1Choice
+from ._PartyIdentification177Choice import PartyIdentification177Choice
 
 class Organisation40(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtNm", "_Id", "_LglNttyIdr", "_ModfdPstlAdr", "_TpOfOrg", "_Nm", "_Purp", "_RegnCtry", "_PlcOfListg", "_RegnDt"]
+	__slots__ = ["_Id", "_LglNttyIdr", "_ModfdPstlAdr", "_Nm", "_PlcOfListg", "_Purp", "_RegnCtry", "_RegnDt", "_ShrtNm", "_TpOfOrg"]
 	@property
 	def Id(self):
 		return self._Id

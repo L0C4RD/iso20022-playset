@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._UUIDv4Identifier import UUIDv4Identifier
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._Max35Text import Max35Text
 from ._CorrectiveGroupInformation1 import CorrectiveGroupInformation1
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class CorrectiveInterbankTransaction3(base_types._BaseFieldType):
 
-	__slots__ = ["_EndToEndId", "_IntrBkSttlmDt", "_UETR", "_IntrBkSttlmAmt", "_InstrId", "_TxId", "_GrpHdr"]
+	__slots__ = ["_EndToEndId", "_GrpHdr", "_InstrId", "_IntrBkSttlmAmt", "_IntrBkSttlmDt", "_TxId", "_UETR"]
 	@property
 	def EndToEndId(self):
 		return self._EndToEndId

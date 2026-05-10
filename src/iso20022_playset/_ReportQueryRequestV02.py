@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._ReportQueryCriteria3 import ReportQueryCriteria3
 from ._MessageHeader7 import MessageHeader7
+from ._ReportQueryCriteria3 import ReportQueryCriteria3
+from ._SupplementaryData1 import SupplementaryData1
 
 class ReportQueryRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_RptQryCrit"]
+	__slots__ = ["_MsgHdr", "_RptQryCrit", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

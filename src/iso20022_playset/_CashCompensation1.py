@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._AmountAndDirection20 import AmountAndDirection20
+from ._ISODate import ISODate
 
 class CashCompensation1(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_SttlmAmt", "_Fees"]
+	__slots__ = ["_Fees", "_SttlmAmt", "_ValDt"]
 	@property
 	def Fees(self):
 		return self._Fees

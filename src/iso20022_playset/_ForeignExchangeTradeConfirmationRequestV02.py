@@ -1,16 +1,16 @@
 from . import base_types
+from ._ConfirmationRequest1Code import ConfirmationRequest1Code
+from ._Header23 import Header23
+from ._Max35NumericText import Max35NumericText
+from ._MessageIdentification1 import MessageIdentification1
+from ._Period12 import Period12
+from ._QueryTradeStatus1Code import QueryTradeStatus1Code
 from ._SupplementaryData1 import SupplementaryData1
 from ._Trade9 import Trade9
-from ._Period12 import Period12
-from ._Header23 import Header23
-from ._QueryTradeStatus1Code import QueryTradeStatus1Code
-from ._ConfirmationRequest1Code import ConfirmationRequest1Code
-from ._MessageIdentification1 import MessageIdentification1
-from ._Max35NumericText import Max35NumericText
 
 class ForeignExchangeTradeConfirmationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfTp", "_TradDtl", "_Hdr", "_ReqId", "_QryStartNb", "_QryPrd", "_QryTradSts", "_SplmtryData"]
+	__slots__ = ["_ConfTp", "_Hdr", "_QryPrd", "_QryStartNb", "_QryTradSts", "_ReqId", "_SplmtryData", "_TradDtl"]
 	@property
 	def ConfTp(self):
 		return self._ConfTp

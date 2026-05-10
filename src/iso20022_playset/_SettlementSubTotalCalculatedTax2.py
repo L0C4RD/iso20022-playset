@@ -1,13 +1,13 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._CurrencyAndAmount import CurrencyAndAmount
-from ._Max500Text import Max500Text
 from ._CurrencyReference3 import CurrencyReference3
 from ._Max4Text import Max4Text
+from ._Max500Text import Max500Text
+from ._PercentageRate import PercentageRate
 
 class SettlementSubTotalCalculatedTax2(base_types._BaseFieldType):
 
-	__slots__ = ["_XmptnRsnCd", "_ClctdRate", "_ClctdAmt", "_TaxCcyXchg", "_TpCd", "_XmptnRsnTxt", "_BsisAmt"]
+	__slots__ = ["_BsisAmt", "_ClctdAmt", "_ClctdRate", "_TaxCcyXchg", "_TpCd", "_XmptnRsnCd", "_XmptnRsnTxt"]
 	@property
 	def BsisAmt(self):
 		return self._BsisAmt

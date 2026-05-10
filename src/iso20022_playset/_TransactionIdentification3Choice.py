@@ -1,11 +1,11 @@
 from . import base_types
-from ._TradeTransactionIdentification20 import TradeTransactionIdentification20
 from ._TradeTransactionIdentification16 import TradeTransactionIdentification16
 from ._TradeTransactionIdentification17 import TradeTransactionIdentification17
+from ._TradeTransactionIdentification20 import TradeTransactionIdentification20
 
 class TransactionIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnRptg", "_Tx", "_CollReuse"]
+	__slots__ = ["_CollReuse", "_MrgnRptg", "_Tx"]
 	@property
 	def CollReuse(self):
 		return self._CollReuse

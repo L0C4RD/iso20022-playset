@@ -1,11 +1,11 @@
 from . import base_types
 from ._ContentInformationType38 import ContentInformationType38
-from ._ReconciliationResponse10 import ReconciliationResponse10
 from ._Header41 import Header41
+from ._ReconciliationResponse10 import ReconciliationResponse10
 
 class SaleToPOIReconciliationResponseV07(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnRspn", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_Hdr", "_RcncltnRspn", "_SctyTrlr"]
 	@property
 	def Hdr(self):
 		return self._Hdr

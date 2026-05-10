@@ -1,12 +1,12 @@
 from . import base_types
-from ._TransportByRoad2 import TransportByRoad2
-from ._TransportByRail2 import TransportByRail2
-from ._TransportBySea4 import TransportBySea4
 from ._TransportByAir2 import TransportByAir2
+from ._TransportByRail2 import TransportByRail2
+from ._TransportByRoad2 import TransportByRoad2
+from ._TransportBySea4 import TransportBySea4
 
 class SingleTransport3(base_types._BaseFieldType):
 
-	__slots__ = ["_TrnsprtByAir", "_TrnsprtByRoad", "_TrnsprtBySea", "_TrnsprtByRail"]
+	__slots__ = ["_TrnsprtByAir", "_TrnsprtByRail", "_TrnsprtByRoad", "_TrnsprtBySea"]
 	@property
 	def TrnsprtByAir(self):
 		return self._TrnsprtByAir

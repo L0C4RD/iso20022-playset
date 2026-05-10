@@ -1,14 +1,14 @@
 from . import base_types
-from ._SecuritiesAccount18 import SecuritiesAccount18
-from ._MarginCalculation2 import MarginCalculation2
-from ._YesNoIndicator import YesNoIndicator
-from ._PartyIdentificationAndAccount31 import PartyIdentificationAndAccount31
-from ._MarginProductType1Choice import MarginProductType1Choice
 from ._MarginCalculation1 import MarginCalculation1
+from ._MarginCalculation2 import MarginCalculation2
+from ._MarginProductType1Choice import MarginProductType1Choice
+from ._PartyIdentificationAndAccount31 import PartyIdentificationAndAccount31
+from ._SecuritiesAccount18 import SecuritiesAccount18
+from ._YesNoIndicator import YesNoIndicator
 
 class MarginReport2(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnClctn", "_CollsdMrgnAcctInd", "_MrgnPdct", "_NonClrMmb", "_MrgnClctnSummry", "_MrgnAcct"]
+	__slots__ = ["_CollsdMrgnAcctInd", "_MrgnAcct", "_MrgnClctn", "_MrgnClctnSummry", "_MrgnPdct", "_NonClrMmb"]
 	@property
 	def CollsdMrgnAcctInd(self):
 		return self._CollsdMrgnAcctInd

@@ -1,10 +1,10 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._LiquidityStressScenarioDefinition1 import LiquidityStressScenarioDefinition1
+from ._SupplementaryData1 import SupplementaryData1
 
 class CCPLiquidityStressTestingDefinitionReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_LqdtyStrssScnroDef"]
+	__slots__ = ["_LqdtyStrssScnroDef", "_SplmtryData"]
 	@property
 	def LqdtyStrssScnroDef(self):
 		return self._LqdtyStrssScnroDef

@@ -1,13 +1,13 @@
 from . import base_types
 from ._AlgorithmIdentification15 import AlgorithmIdentification15
-from ._Max140Binary import Max140Binary
-from ._Recipient4Choice import Recipient4Choice
 from ._EncapsulatedContent3 import EncapsulatedContent3
+from ._Max140Binary import Max140Binary
 from ._Number import Number
+from ._Recipient4Choice import Recipient4Choice
 
 class AuthenticatedData4(base_types._BaseFieldType):
 
-	__slots__ = ["_NcpsltdCntt", "_MACAlgo", "_Vrsn", "_MAC", "_Rcpt"]
+	__slots__ = ["_MAC", "_MACAlgo", "_NcpsltdCntt", "_Rcpt", "_Vrsn"]
 	@property
 	def MAC(self):
 		return self._MAC

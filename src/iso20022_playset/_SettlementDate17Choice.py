@@ -4,7 +4,7 @@ from ._SettlementDateCode7Choice import SettlementDateCode7Choice
 
 class SettlementDate17Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DtCd", "_Dt"]
+	__slots__ = ["_Dt", "_DtCd"]
 	@property
 	def Dt(self):
 		return self._Dt

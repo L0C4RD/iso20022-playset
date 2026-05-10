@@ -3,7 +3,7 @@ from ._AmountAndDirection6 import AmountAndDirection6
 
 class BalanceAmounts3(base_types._BaseFieldType):
 
-	__slots__ = ["_ElgblCollVal", "_BookVal", "_PrvsHldgVal", "_AcrdIntrstAmt", "_HldgVal"]
+	__slots__ = ["_AcrdIntrstAmt", "_BookVal", "_ElgblCollVal", "_HldgVal", "_PrvsHldgVal"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt

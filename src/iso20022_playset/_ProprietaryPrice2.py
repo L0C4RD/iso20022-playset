@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class ProprietaryPrice2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Pric"]
+	__slots__ = ["_Pric", "_Tp"]
 	@property
 	def Pric(self):
 		return self._Pric

@@ -1,10 +1,10 @@
 from . import base_types
-from ._LimitOrError4Choice import LimitOrError4Choice
 from ._LimitIdentification8 import LimitIdentification8
+from ._LimitOrError4Choice import LimitOrError4Choice
 
 class LimitReport8(base_types._BaseFieldType):
 
-	__slots__ = ["_LmtOrErr", "_LmtId"]
+	__slots__ = ["_LmtId", "_LmtOrErr"]
 	@property
 	def LmtId(self):
 		return self._LmtId

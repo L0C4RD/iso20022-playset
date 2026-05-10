@@ -1,25 +1,25 @@
 from . import base_types
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._Charges15 import Charges15
-from ._TechnicalInputChannel1Choice import TechnicalInputChannel1Choice
 from ._AmountAndCurrencyExchange4 import AmountAndCurrencyExchange4
-from ._Max500Text import Max500Text
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
-from ._TransactionInterest4 import TransactionInterest4
-from ._EntryDetails14 import EntryDetails14
-from ._YesNoIndicator import YesNoIndicator
 from ._CardEntry5 import CardEntry5
-from ._MessageIdentification2 import MessageIdentification2
-from ._Max35Text import Max35Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._CashAvailability1 import CashAvailability1
+from ._Charges15 import Charges15
 from ._CreditDebitCode import CreditDebitCode
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._EntryDetails14 import EntryDetails14
 from ._EntryStatus1Choice import EntryStatus1Choice
+from ._Max35Text import Max35Text
+from ._Max500Text import Max500Text
+from ._MessageIdentification2 import MessageIdentification2
+from ._TechnicalInputChannel1Choice import TechnicalInputChannel1Choice
+from ._TransactionInterest4 import TransactionInterest4
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._YesNoIndicator import YesNoIndicator
 
 class ReportEntry15(base_types._BaseFieldType):
 
-	__slots__ = ["_Chrgs", "_CdtDbtInd", "_BookgDt", "_RvslInd", "_NtryRef", "_ComssnWvrInd", "_AmtDtls", "_Intrst", "_NtryDtls", "_AcctSvcrRef", "_BkTxCd", "_AddtlNtryInf", "_Avlbty", "_TechInptChanl", "_ValDt", "_Amt", "_CardTx", "_Sts", "_AddtlInfInd"]
+	__slots__ = ["_AcctSvcrRef", "_AddtlInfInd", "_AddtlNtryInf", "_Amt", "_AmtDtls", "_Avlbty", "_BkTxCd", "_BookgDt", "_CardTx", "_CdtDbtInd", "_Chrgs", "_ComssnWvrInd", "_Intrst", "_NtryDtls", "_NtryRef", "_RvslInd", "_Sts", "_TechInptChanl", "_ValDt"]
 	@property
 	def AcctSvcrRef(self):
 		return self._AcctSvcrRef

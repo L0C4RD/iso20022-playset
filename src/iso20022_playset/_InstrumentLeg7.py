@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._DecimalNumber import DecimalNumber
+from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._AgreedRate3 import AgreedRate3
+from ._DecimalNumber import DecimalNumber
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 from ._SecurityIdentification18 import SecurityIdentification18
 from ._SettlementDate8Code import SettlementDate8Code
-from ._AgreedRate3 import AgreedRate3
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._Max35Text import Max35Text
 from ._Side1Code import Side1Code
-from ._ISODateTime import ISODateTime
 
 class InstrumentLeg7(base_types._BaseFieldType):
 
-	__slots__ = ["_LegOrdrQty", "_LegSymb", "_LegSctyId", "_LegValtnRate", "_LegCcy", "_LegRskAmt", "_LegValDt", "_LegSttlmTp", "_LegSttlmCcy", "_LegFwdPts", "_LegSttlmDt", "_LegLastPric", "_LegClctdCtrPtyCcyLastQty", "_LegSd"]
+	__slots__ = ["_LegCcy", "_LegClctdCtrPtyCcyLastQty", "_LegFwdPts", "_LegLastPric", "_LegOrdrQty", "_LegRskAmt", "_LegSctyId", "_LegSd", "_LegSttlmCcy", "_LegSttlmDt", "_LegSttlmTp", "_LegSymb", "_LegValDt", "_LegValtnRate"]
 	@property
 	def LegCcy(self):
 		return self._LegCcy

@@ -5,7 +5,7 @@ from ._NameAndAddress5 import NameAndAddress5
 
 class PartyIdentification133Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_PrtryId", "_BICFI"]
+	__slots__ = ["_BICFI", "_NmAndAdr", "_PrtryId"]
 	@property
 	def BICFI(self):
 		return self._BICFI

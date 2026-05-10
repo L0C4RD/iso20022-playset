@@ -1,14 +1,14 @@
 from . import base_types
+from ._AdditionalInformation26 import AdditionalInformation26
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._PartyIdentification144 import PartyIdentification144
+from ._RequestDetails31 import RequestDetails31
 from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._SupplementaryData1 import SupplementaryData1
-from ._AdditionalInformation26 import AdditionalInformation26
-from ._RequestDetails31 import RequestDetails31
-from ._PartyIdentification144 import PartyIdentification144
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 
 class SecuritiesSettlementConditionsModificationRequestV10(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_AddtlInf", "_AcctOwnr", "_ReqDtls", "_SfkpgAcct", "_SplmtryData"]
+	__slots__ = ["_AcctOwnr", "_AddtlInf", "_BlckChainAdrOrWllt", "_ReqDtls", "_SfkpgAcct", "_SplmtryData"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

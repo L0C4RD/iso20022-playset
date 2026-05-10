@@ -4,7 +4,7 @@ from ._MaximumAmountByPeriod1 import MaximumAmountByPeriod1
 
 class Authorisation2(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxAmtByTx", "_MaxAmtByPrd", "_MaxAmtByBlkSubmissn"]
+	__slots__ = ["_MaxAmtByBlkSubmissn", "_MaxAmtByPrd", "_MaxAmtByTx"]
 	@property
 	def MaxAmtByBlkSubmissn(self):
 		return self._MaxAmtByBlkSubmissn

@@ -1,12 +1,12 @@
 from . import base_types
-from ._RelativeDistinguishedName2 import RelativeDistinguishedName2
-from ._PublicRSAKey2 import PublicRSAKey2
-from ._Number import Number
 from ._CertificateIssuer1 import CertificateIssuer1
+from ._Number import Number
+from ._PublicRSAKey2 import PublicRSAKey2
+from ._RelativeDistinguishedName2 import RelativeDistinguishedName2
 
 class CertificationRequest2(base_types._BaseFieldType):
 
-	__slots__ = ["_Attr", "_SbjtNm", "_Vrsn", "_SbjtPblcKeyInf"]
+	__slots__ = ["_Attr", "_SbjtNm", "_SbjtPblcKeyInf", "_Vrsn"]
 	@property
 	def Attr(self):
 		return self._Attr

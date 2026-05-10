@@ -1,13 +1,13 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 from ._DecimalNumber import DecimalNumber
-from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
 
 class Quantity47(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrAsst", "_FaceAmt", "_PctgRate", "_CshAmt", "_AmtsdVal", "_Unit"]
+	__slots__ = ["_AmtsdVal", "_CshAmt", "_FaceAmt", "_OthrAsst", "_PctgRate", "_Unit"]
 	@property
 	def AmtsdVal(self):
 		return self._AmtsdVal

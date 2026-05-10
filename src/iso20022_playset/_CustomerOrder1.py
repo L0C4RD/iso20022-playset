@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Max35Text import Max35Text
-from ._Max1025Text import Max1025Text
 from ._AmountUnit1Code import AmountUnit1Code
 from ._ISODateTime import ISODateTime
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max1025Text import Max1025Text
+from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CustomerOrder1(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRefId", "_Unit", "_EndDt", "_AddtlInf", "_OpnOrdrStat", "_FrcstdAmt", "_AccsdBy", "_StartDt", "_CstmrOrdrId", "_CurAmt", "_Ccy"]
+	__slots__ = ["_AccsdBy", "_AddtlInf", "_Ccy", "_CstmrOrdrId", "_CurAmt", "_EndDt", "_FrcstdAmt", "_OpnOrdrStat", "_SaleRefId", "_StartDt", "_Unit"]
 	@property
 	def AccsdBy(self):
 		return self._AccsdBy

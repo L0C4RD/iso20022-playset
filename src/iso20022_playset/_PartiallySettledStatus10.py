@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartiallySettled21Choice import PartiallySettled21Choice
 from ._Max350Text import Max350Text
+from ._PartiallySettled21Choice import PartiallySettled21Choice
 
 class PartiallySettledStatus10(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Rsn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

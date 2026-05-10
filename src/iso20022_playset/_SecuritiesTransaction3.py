@@ -1,20 +1,20 @@
 from . import base_types
-from ._FinancialInstrumentQuantity25Choice import FinancialInstrumentQuantity25Choice
-from ._SecuritiesTransactionPrice22Choice import SecuritiesTransactionPrice22Choice
-from ._Max52Text import Max52Text
-from ._DigitalTokenAmount2 import DigitalTokenAmount2
-from ._RegulatoryTradingCapacity1Code import RegulatoryTradingCapacity1Code
-from ._VariationType1Code import VariationType1Code
-from ._MICIdentifier import MICIdentifier
-from ._CountryCode import CountryCode
-from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._AmountAndDirection53 import AmountAndDirection53
+from ._CountryCode import CountryCode
+from ._DigitalTokenAmount2 import DigitalTokenAmount2
+from ._FinancialInstrumentQuantity25Choice import FinancialInstrumentQuantity25Choice
 from ._ISODateTime import ISODateTime
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._MICIdentifier import MICIdentifier
+from ._Max35Text import Max35Text
+from ._Max52Text import Max52Text
+from ._RegulatoryTradingCapacity1Code import RegulatoryTradingCapacity1Code
+from ._SecuritiesTransactionPrice22Choice import SecuritiesTransactionPrice22Choice
+from ._VariationType1Code import VariationType1Code
 
 class SecuritiesTransaction3(base_types._BaseFieldType):
 
-	__slots__ = ["_TradDt", "_Pric", "_Qty", "_TradPlcMtchgId", "_UpFrntPmt", "_CmplxTradCmpntId", "_NetAmt", "_DerivNtnlChng", "_DgtlTknQty", "_TradgCpcty", "_CtryOfBrnch", "_TradVn"]
+	__slots__ = ["_CmplxTradCmpntId", "_CtryOfBrnch", "_DerivNtnlChng", "_DgtlTknQty", "_NetAmt", "_Pric", "_Qty", "_TradDt", "_TradPlcMtchgId", "_TradVn", "_TradgCpcty", "_UpFrntPmt"]
 	@property
 	def CmplxTradCmpntId(self):
 		return self._CmplxTradCmpntId

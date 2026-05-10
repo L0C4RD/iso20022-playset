@@ -4,7 +4,7 @@ from ._Period2 import Period2
 
 class DateAndPeriod2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_ToDt", "_FrDt", "_Dt"]
+	__slots__ = ["_Dt", "_FrDt", "_Prd", "_ToDt"]
 	@property
 	def Dt(self):
 		return self._Dt

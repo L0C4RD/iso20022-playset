@@ -1,11 +1,11 @@
 from . import base_types
+from ._InvestigationRequest3 import InvestigationRequest3
 from ._InvestigationResponse9 import InvestigationResponse9
 from ._SupplementaryData1 import SupplementaryData1
-from ._InvestigationRequest3 import InvestigationRequest3
 
 class InvestigationResponseV02(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstgtnRspn", "_SplmtryData", "_OrgnlInvstgtnReq"]
+	__slots__ = ["_InvstgtnRspn", "_OrgnlInvstgtnReq", "_SplmtryData"]
 	@property
 	def InvstgtnRspn(self):
 		return self._InvstgtnRspn

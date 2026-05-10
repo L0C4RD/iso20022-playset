@@ -1,11 +1,11 @@
 from . import base_types
-from ._MarginCollateral1 import MarginCollateral1
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Collateral1 import Collateral1
+from ._MarginCollateral1 import MarginCollateral1
 
 class CollateralBalance1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SgrtdIndpdntAmt", "_CollDtls", "_TtlColl"]
+	__slots__ = ["_CollDtls", "_SgrtdIndpdntAmt", "_TtlColl"]
 	@property
 	def CollDtls(self):
 		return self._CollDtls

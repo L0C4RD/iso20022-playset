@@ -1,13 +1,13 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._PartyIdentification136 import PartyIdentification136
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._LimitType4Code import LimitType4Code
+from ._PartyIdentification136 import PartyIdentification136
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class LimitIdentification7(base_types._BaseFieldType):
 
-	__slots__ = ["_BilLmtCtrPtyId", "_Tp", "_AcctOwnr", "_LmtCcy", "_AcctId"]
+	__slots__ = ["_AcctId", "_AcctOwnr", "_BilLmtCtrPtyId", "_LmtCcy", "_Tp"]
 	@property
 	def AcctId(self):
 		return self._AcctId

@@ -1,11 +1,11 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._DecimalNumber import DecimalNumber
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max30DecimalNumber import Max30DecimalNumber
 
 class FinancialInstrumentQuantity33Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlTknUnit", "_FaceAmt", "_AmtsdVal", "_Unit"]
+	__slots__ = ["_AmtsdVal", "_DgtlTknUnit", "_FaceAmt", "_Unit"]
 	@property
 	def AmtsdVal(self):
 		return self._AmtsdVal

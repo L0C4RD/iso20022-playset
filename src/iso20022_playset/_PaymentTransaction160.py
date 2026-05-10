@@ -1,17 +1,17 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._Charges16 import Charges16
 from ._ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
-from ._TrackerData7 import TrackerData7
-from ._StatusReasonInformation14 import StatusReasonInformation14
-from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 from ._OriginalTransactionReference42 import OriginalTransactionReference42
+from ._StatusReasonInformation14 import StatusReasonInformation14
+from ._SupplementaryData1 import SupplementaryData1
+from ._TrackerData7 import TrackerData7
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class PaymentTransaction160(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRsnInf", "_TxSts", "_TrckrData", "_ClrSysRef", "_AcctSvcrRef", "_OrgnlTxRef", "_OrgnlUETR", "_StsId", "_OrgnlInstrId", "_OrgnlEndToEndId", "_ChrgsInf", "_AccptncDtTm", "_SplmtryData"]
+	__slots__ = ["_AccptncDtTm", "_AcctSvcrRef", "_ChrgsInf", "_ClrSysRef", "_OrgnlEndToEndId", "_OrgnlInstrId", "_OrgnlTxRef", "_OrgnlUETR", "_SplmtryData", "_StsId", "_StsRsnInf", "_TrckrData", "_TxSts"]
 	@property
 	def AccptncDtTm(self):
 		return self._AccptncDtTm

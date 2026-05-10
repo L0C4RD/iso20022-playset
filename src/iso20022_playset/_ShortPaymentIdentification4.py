@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class ShortPaymentIdentification4(base_types._BaseFieldType):
 
-	__slots__ = ["_UETR", "_IntrBkSttlmDt", "_InstgAgt", "_TxId"]
+	__slots__ = ["_InstgAgt", "_IntrBkSttlmDt", "_TxId", "_UETR"]
 	@property
 	def InstgAgt(self):
 		return self._InstgAgt

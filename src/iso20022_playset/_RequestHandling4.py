@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max140Text import Max140Text
 from ._RequestStatus1Choice import RequestStatus1Choice
 from ._StatusReasonInformation14 import StatusReasonInformation14
-from ._Max140Text import Max140Text
 
 class RequestHandling4(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRsn", "_Desc", "_Sts"]
+	__slots__ = ["_Desc", "_Sts", "_StsRsn"]
 	@property
 	def Desc(self):
 		return self._Desc

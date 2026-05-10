@@ -1,11 +1,11 @@
 from . import base_types
 from ._GenericIdentification49 import GenericIdentification49
-from ._SettlementParties32 import SettlementParties32
 from ._PartyIdentification99Choice import PartyIdentification99Choice
+from ._SettlementParties32 import SettlementParties32
 
 class SettlementParties35(base_types._BaseFieldType):
 
-	__slots__ = ["_StgSttlmPties", "_LclMktId", "_RegnDtls"]
+	__slots__ = ["_LclMktId", "_RegnDtls", "_StgSttlmPties"]
 	@property
 	def LclMktId(self):
 		return self._LclMktId

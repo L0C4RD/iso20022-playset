@@ -4,7 +4,7 @@ from ._Max52Text import Max52Text
 
 class LoanData86(base_types._BaseFieldType):
 
-	__slots__ = ["_TermntnDt", "_EvtDt", "_UnqTradIdr"]
+	__slots__ = ["_EvtDt", "_TermntnDt", "_UnqTradIdr"]
 	@property
 	def EvtDt(self):
 		return self._EvtDt

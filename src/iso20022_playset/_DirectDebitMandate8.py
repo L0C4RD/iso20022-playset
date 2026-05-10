@@ -1,13 +1,13 @@
 from . import base_types
-from ._FinancialInstitutionIdentification15 import FinancialInstitutionIdentification15
-from ._PartyIdentification139 import PartyIdentification139
-from ._Max35Text import Max35Text
 from ._AccountIdentificationAndName5 import AccountIdentificationAndName5
 from ._BranchData4 import BranchData4
+from ._FinancialInstitutionIdentification15 import FinancialInstitutionIdentification15
+from ._Max35Text import Max35Text
+from ._PartyIdentification139 import PartyIdentification139
 
 class DirectDebitMandate8(base_types._BaseFieldType):
 
-	__slots__ = ["_DbtrNtlRegnNb", "_DbtrAgt", "_DbtrAgtBrnch", "_Cdtr", "_CdtrAgt", "_CdtrAgtBrnch", "_MndtId", "_RegnId", "_Dbtr", "_DbtrTaxIdNb", "_DbtrAcct"]
+	__slots__ = ["_Cdtr", "_CdtrAgt", "_CdtrAgtBrnch", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtBrnch", "_DbtrNtlRegnNb", "_DbtrTaxIdNb", "_MndtId", "_RegnId"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

@@ -1,7 +1,7 @@
 from . import base_types
+from ._BreakDown1Choice import BreakDown1Choice
 from ._ISODate import ISODate
 from ._SettlementTerms3 import SettlementTerms3
-from ._BreakDown1Choice import BreakDown1Choice
 
 class IntentToPay2(base_types._BaseFieldType):
 

@@ -1,14 +1,14 @@
 from . import base_types
-from ._NotificationType1Choice import NotificationType1Choice
-from ._RelatedNotificationData1 import RelatedNotificationData1
+from ._Document15 import Document15
 from ._Max2000Text import Max2000Text
 from ._Max35Text import Max35Text
 from ._NotificationSubType1Choice import NotificationSubType1Choice
-from ._Document15 import Document15
+from ._NotificationType1Choice import NotificationType1Choice
+from ._RelatedNotificationData1 import RelatedNotificationData1
 
 class CorrespondenceNotification1(base_types._BaseFieldType):
 
-	__slots__ = ["_NclsdFile", "_SndrNtfctnId", "_NtfctnSubTp", "_NtfctnNrrtv", "_RltdNtfctnData", "_NtfctnTp"]
+	__slots__ = ["_NclsdFile", "_NtfctnNrrtv", "_NtfctnSubTp", "_NtfctnTp", "_RltdNtfctnData", "_SndrNtfctnId"]
 	@property
 	def NclsdFile(self):
 		return self._NclsdFile

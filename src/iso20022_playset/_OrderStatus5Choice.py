@@ -1,15 +1,15 @@
 from . import base_types
-from ._InRepairStatusReason4Choice import InRepairStatusReason4Choice
-from ._SuspendedStatusReason4Choice import SuspendedStatusReason4Choice
-from ._OrderStatus4Code import OrderStatus4Code
-from ._ConditionallyAcceptedStatus3Choice import ConditionallyAcceptedStatus3Choice
 from ._CancelledStatusReason16 import CancelledStatusReason16
-from ._RejectedStatus9 import RejectedStatus9
+from ._ConditionallyAcceptedStatus3Choice import ConditionallyAcceptedStatus3Choice
+from ._InRepairStatusReason4Choice import InRepairStatusReason4Choice
+from ._OrderStatus4Code import OrderStatus4Code
 from ._PartiallySettledStatus10 import PartiallySettledStatus10
+from ._RejectedStatus9 import RejectedStatus9
+from ._SuspendedStatusReason4Choice import SuspendedStatusReason4Choice
 
 class OrderStatus5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtlySttld", "_InRpr", "_Sspd", "_CondlyAccptd", "_Sts", "_Canc", "_Rjctd"]
+	__slots__ = ["_Canc", "_CondlyAccptd", "_InRpr", "_PrtlySttld", "_Rjctd", "_Sspd", "_Sts"]
 	@property
 	def Canc(self):
 		return self._Canc

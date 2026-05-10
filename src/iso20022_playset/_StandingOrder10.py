@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Amount2Choice import Amount2Choice
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._DatePeriod2Choice import DatePeriod2Choice
 from ._ExecutionType1Choice import ExecutionType1Choice
 from ._Frequency2Code import Frequency2Code
-from ._DatePeriod2Choice import DatePeriod2Choice
-from ._Amount2Choice import Amount2Choice
-from ._CashAccount40 import CashAccount40
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class StandingOrder10(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrAcct", "_Amt", "_DbtrAcct", "_VldtyPrd", "_ExctnTp", "_ZeroSweepInd", "_Cdtr", "_Dbtr", "_Frqcy"]
+	__slots__ = ["_Amt", "_Cdtr", "_CdtrAcct", "_Dbtr", "_DbtrAcct", "_ExctnTp", "_Frqcy", "_VldtyPrd", "_ZeroSweepInd"]
 	@property
 	def Amt(self):
 		return self._Amt

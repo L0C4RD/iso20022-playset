@@ -1,11 +1,11 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Max2000Text import Max2000Text
+from ._PercentageRate import PercentageRate
 
 class UndertakingAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_PlusTlrnce", "_AddtlInf", "_Amt"]
+	__slots__ = ["_AddtlInf", "_Amt", "_PlusTlrnce"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

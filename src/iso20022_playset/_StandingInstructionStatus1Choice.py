@@ -4,7 +4,7 @@ from ._CorporateActionStandingInstructionRejectionStatus1 import CorporateAction
 
 class StandingInstructionStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctdSts", "_PrcdSts"]
+	__slots__ = ["_PrcdSts", "_RjctdSts"]
 	@property
 	def PrcdSts(self):
 		return self._PrcdSts

@@ -1,12 +1,12 @@
 from . import base_types
 from ._DateTimePeriod1Choice import DateTimePeriod1Choice
-from ._PaymentType4Choice import PaymentType4Choice
 from ._Instruction1Code import Instruction1Code
+from ._PaymentType4Choice import PaymentType4Choice
 from ._Priority1Choice import Priority1Choice
 
 class PaymentInstruction33(base_types._BaseFieldType):
 
-	__slots__ = ["_Instr", "_Prty", "_PrcgVldtyTm", "_Tp"]
+	__slots__ = ["_Instr", "_PrcgVldtyTm", "_Prty", "_Tp"]
 	@property
 	def Instr(self):
 		return self._Instr

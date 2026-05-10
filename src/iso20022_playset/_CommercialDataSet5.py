@@ -1,14 +1,14 @@
 from . import base_types
 from ._DocumentIdentification1 import DocumentIdentification1
-from ._PaymentTerms4 import PaymentTerms4
 from ._InvoiceIdentification1 import InvoiceIdentification1
 from ._LineItem15 import LineItem15
-from ._SettlementTerms3 import SettlementTerms3
 from ._PartyIdentification26 import PartyIdentification26
+from ._PaymentTerms4 import PaymentTerms4
+from ._SettlementTerms3 import SettlementTerms3
 
 class CommercialDataSet5(base_types._BaseFieldType):
 
-	__slots__ = ["_ComrclDocRef", "_DataSetId", "_Sellr", "_Goods", "_BllTo", "_Buyr", "_PmtTerms", "_SttlmTerms"]
+	__slots__ = ["_BllTo", "_Buyr", "_ComrclDocRef", "_DataSetId", "_Goods", "_PmtTerms", "_Sellr", "_SttlmTerms"]
 	@property
 	def BllTo(self):
 		return self._BllTo

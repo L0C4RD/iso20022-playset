@@ -1,13 +1,13 @@
 from . import base_types
-from ._CreditTransfer10 import CreditTransfer10
-from ._PaymentCard34 import PaymentCard34
 from ._Cheque21 import Cheque21
+from ._CreditTransfer10 import CreditTransfer10
 from ._DirectDebitMandate8 import DirectDebitMandate8
 from ._InvestmentAccount60 import InvestmentAccount60
+from ._PaymentCard34 import PaymentCard34
 
 class PaymentInstrument27Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DrctDbtDtls", "_CdtTrfDtls", "_CshAcctDtls", "_BkrsDrftDtls", "_PmtCardDtls", "_ChqDtls"]
+	__slots__ = ["_BkrsDrftDtls", "_CdtTrfDtls", "_ChqDtls", "_CshAcctDtls", "_DrctDbtDtls", "_PmtCardDtls"]
 	@property
 	def BkrsDrftDtls(self):
 		return self._BkrsDrftDtls

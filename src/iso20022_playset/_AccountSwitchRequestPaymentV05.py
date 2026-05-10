@@ -1,9 +1,9 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._AccountSwitchDetails1 import AccountSwitchDetails1
-from ._MessageIdentification1 import MessageIdentification1
-from ._CreditTransferTransaction59 import CreditTransferTransaction59
 from ._CashAccount43 import CashAccount43
+from ._CreditTransferTransaction59 import CreditTransferTransaction59
+from ._MessageIdentification1 import MessageIdentification1
+from ._SupplementaryData1 import SupplementaryData1
 
 class AccountSwitchRequestPaymentV05(base_types._BaseFieldType):
 

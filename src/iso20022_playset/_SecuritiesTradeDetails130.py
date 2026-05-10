@@ -1,28 +1,28 @@
 from . import base_types
-from ._Max3Number import Max3Number
-from ._TradeTransactionCondition6Choice import TradeTransactionCondition6Choice
-from ._TradeDate9Choice import TradeDate9Choice
-from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
-from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
-from ._TradeOriginator4Choice import TradeOriginator4Choice
-from ._OpeningClosing4Choice import OpeningClosing4Choice
-from ._PlaceOfTradeIdentification2 import PlaceOfTradeIdentification2
+from ._AffirmationStatus9Choice import AffirmationStatus9Choice
+from ._CurrencyToBuyOrSell1Choice import CurrencyToBuyOrSell1Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._ISODateTime import ISODateTime
 from ._InvestorCapacity5Choice import InvestorCapacity5Choice
-from ._CurrencyToBuyOrSell1Choice import CurrencyToBuyOrSell1Choice
-from ._Reporting9Choice import Reporting9Choice
 from ._MatchingStatus28Choice import MatchingStatus28Choice
-from ._SettlementDate20Choice import SettlementDate20Choice
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._AffirmationStatus9Choice import AffirmationStatus9Choice
+from ._Max3Number import Max3Number
+from ._OpeningClosing4Choice import OpeningClosing4Choice
+from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
+from ._PlaceOfTradeIdentification2 import PlaceOfTradeIdentification2
 from ._Price11 import Price11
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Reporting9Choice import Reporting9Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
+from ._SettlementDate20Choice import SettlementDate20Choice
+from ._TradeDate9Choice import TradeDate9Choice
+from ._TradeOriginator4Choice import TradeOriginator4Choice
+from ._TradeTransactionCondition6Choice import TradeTransactionCondition6Choice
 from ._TypeOfPrice32Choice import TypeOfPrice32Choice
 
 class SecuritiesTradeDetails130(base_types._BaseFieldType):
 
-	__slots__ = ["_TradId", "_FxAddtlDtls", "_SttlmDt", "_MtchdStsTmStmp", "_MtchgSts", "_TpOfPric", "_LateDlvryDt", "_TradTxCond", "_NbOfDaysAcrd", "_TradDt", "_CollTxId", "_OpngClsg", "_DealPric", "_SttlmInstrPrcgAddtlDtls", "_Rptg", "_PlcOfTrad", "_CcyToBuyOrSell", "_TradOrgtrRole", "_PlcOfClr", "_InvstrCpcty", "_AffirmSts", "_AckdStsTmStmp"]
+	__slots__ = ["_AckdStsTmStmp", "_AffirmSts", "_CcyToBuyOrSell", "_CollTxId", "_DealPric", "_FxAddtlDtls", "_InvstrCpcty", "_LateDlvryDt", "_MtchdStsTmStmp", "_MtchgSts", "_NbOfDaysAcrd", "_OpngClsg", "_PlcOfClr", "_PlcOfTrad", "_Rptg", "_SttlmDt", "_SttlmInstrPrcgAddtlDtls", "_TpOfPric", "_TradDt", "_TradId", "_TradOrgtrRole", "_TradTxCond"]
 	@property
 	def AckdStsTmStmp(self):
 		return self._AckdStsTmStmp

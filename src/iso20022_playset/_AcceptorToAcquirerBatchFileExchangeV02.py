@@ -1,7 +1,7 @@
 from . import base_types
-from ._Header56 import Header56
-from ._ContentInformationType38 import ContentInformationType38
 from ._AcceptorToAcquirerFileBody2 import AcceptorToAcquirerFileBody2
+from ._ContentInformationType38 import ContentInformationType38
+from ._Header56 import Header56
 
 class AcceptorToAcquirerBatchFileExchangeV02(base_types._BaseFieldType):
 

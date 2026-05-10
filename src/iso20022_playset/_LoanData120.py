@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._Max52Text import Max52Text
 from ._MasterAgreement7 import MasterAgreement7
+from ._Max52Text import Max52Text
 
 class LoanData120(base_types._BaseFieldType):
 
-	__slots__ = ["_MstrAgrmt", "_EvtDt", "_UnqTradIdr"]
+	__slots__ = ["_EvtDt", "_MstrAgrmt", "_UnqTradIdr"]
 	@property
 	def EvtDt(self):
 		return self._EvtDt

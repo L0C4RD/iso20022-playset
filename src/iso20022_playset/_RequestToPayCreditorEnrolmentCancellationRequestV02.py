@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._EnrolmentHeader3 import EnrolmentHeader3
 from ._CreditorEnrolmentCancellation3 import CreditorEnrolmentCancellation3
+from ._EnrolmentHeader3 import EnrolmentHeader3
+from ._SupplementaryData1 import SupplementaryData1
 
 class RequestToPayCreditorEnrolmentCancellationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_SplmtryData", "_CxlData"]
+	__slots__ = ["_CxlData", "_Hdr", "_SplmtryData"]
 	@property
 	def CxlData(self):
 		return self._CxlData

@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class HypotheticalCapitalMeasure1(base_types._BaseFieldType):
 
-	__slots__ = ["_DfltWtrfllId", "_Amt"]
+	__slots__ = ["_Amt", "_DfltWtrfllId"]
 	@property
 	def Amt(self):
 		return self._Amt

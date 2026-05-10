@@ -1,18 +1,18 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._TradeDate8Choice import TradeDate8Choice
-from ._SettlementParties125 import SettlementParties125
+from ._AmountAndDirection51 import AmountAndDirection51
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._PartyIdentification144 import PartyIdentification144
 from ._PartyIdentification149 import PartyIdentification149
+from ._Quantity51Choice import Quantity51Choice
+from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._SecurityIdentification19 import SecurityIdentification19
 from ._SettlementDate19Choice import SettlementDate19Choice
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._Quantity51Choice import Quantity51Choice
-from ._AmountAndDirection51 import AmountAndDirection51
-from ._PartyIdentification144 import PartyIdentification144
+from ._SettlementParties125 import SettlementParties125
+from ._TradeDate8Choice import TradeDate8Choice
 
 class TransactionDetails174(base_types._BaseFieldType):
 
-	__slots__ = ["_Invstr", "_FinInstrmId", "_SfkpgAcct", "_SttlmAmt", "_SttlmDt", "_TradDt", "_BlckChainAdrOrWllt", "_DlvrgSttlmPties", "_RcvgSttlmPties", "_AcctOwnr", "_SttlmQty"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_DlvrgSttlmPties", "_FinInstrmId", "_Invstr", "_RcvgSttlmPties", "_SfkpgAcct", "_SttlmAmt", "_SttlmDt", "_SttlmQty", "_TradDt"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

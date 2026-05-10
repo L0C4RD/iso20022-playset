@@ -1,10 +1,10 @@
 from . import base_types
-from ._SystemEventType4Choice import SystemEventType4Choice
 from ._ISODateTime import ISODateTime
+from ._SystemEventType4Choice import SystemEventType4Choice
 
 class SystemEvent3(base_types._BaseFieldType):
 
-	__slots__ = ["_EndTm", "_Tp", "_StartTm", "_FctvTm", "_SchdldTm"]
+	__slots__ = ["_EndTm", "_FctvTm", "_SchdldTm", "_StartTm", "_Tp"]
 	@property
 	def EndTm(self):
 		return self._EndTm

@@ -1,14 +1,14 @@
 from . import base_types
 from ._TradeError9 import TradeError9
-from ._TradeTransactionCollateralUpdate8 import TradeTransactionCollateralUpdate8
 from ._TradeNewTransaction13 import TradeNewTransaction13
-from ._TradeTransactionPositionComponent8 import TradeTransactionPositionComponent8
+from ._TradeTransactionCollateralUpdate8 import TradeTransactionCollateralUpdate8
 from ._TradeTransactionCorrection13 import TradeTransactionCorrection13
+from ._TradeTransactionPositionComponent8 import TradeTransactionPositionComponent8
 from ._TradeValuationUpdate9 import TradeValuationUpdate9
 
 class TradeReport22Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PosCmpnt", "_Err", "_CollUpd", "_EarlyTermntn", "_Crrctn", "_Mod", "_New", "_ValtnUpd"]
+	__slots__ = ["_CollUpd", "_Crrctn", "_EarlyTermntn", "_Err", "_Mod", "_New", "_PosCmpnt", "_ValtnUpd"]
 	@property
 	def CollUpd(self):
 		return self._CollUpd

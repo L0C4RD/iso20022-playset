@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._DirectDebitTransactionInformation31 import DirectDebitTransactionInformation31
 from ._GroupHeader125 import GroupHeader125
+from ._SupplementaryData1 import SupplementaryData1
 
 class FIToFICustomerDirectDebitV11(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_DrctDbtTxInf", "_SplmtryData"]
+	__slots__ = ["_DrctDbtTxInf", "_GrpHdr", "_SplmtryData"]
 	@property
 	def DrctDbtTxInf(self):
 		return self._DrctDbtTxInf

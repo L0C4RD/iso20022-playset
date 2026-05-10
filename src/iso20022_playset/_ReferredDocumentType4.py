@@ -4,7 +4,7 @@ from ._ReferredDocumentType3Choice import ReferredDocumentType3Choice
 
 class ReferredDocumentType4(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_CdOrPrtry"]
+	__slots__ = ["_CdOrPrtry", "_Issr"]
 	@property
 	def CdOrPrtry(self):
 		return self._CdOrPrtry

@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._DatePeriod2 import DatePeriod2
+from ._ISODate import ISODate
 
 class DatePeriod2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ToDt", "_FrDt", "_FrToDt"]
+	__slots__ = ["_FrDt", "_FrToDt", "_ToDt"]
 	@property
 	def FrDt(self):
 		return self._FrDt

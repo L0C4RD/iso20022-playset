@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentification135 import PartyIdentification135
 from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
+from ._PartyIdentification135 import PartyIdentification135
 
 class Party40Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty", "_Agt"]
+	__slots__ = ["_Agt", "_Pty"]
 	@property
 	def Agt(self):
 		return self._Agt

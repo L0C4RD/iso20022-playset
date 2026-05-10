@@ -1,21 +1,21 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Gender1Code import Gender1Code
-from ._GDPRData1 import GDPRData1
-from ._NamePrefix1Choice import NamePrefix1Choice
-from ._PoliticallyExposedPerson1 import PoliticallyExposedPerson1
-from ._PersonalInformation1 import PersonalInformation1
+from ._CitizenshipInformation2 import CitizenshipInformation2
 from ._CivilStatus1Choice import CivilStatus1Choice
 from ._CountryCode import CountryCode
-from ._Max35Text import Max35Text
-from ._CitizenshipInformation2 import CitizenshipInformation2
-from ._Max350Text import Max350Text
-from ._PostalAddress21 import PostalAddress21
+from ._GDPRData1 import GDPRData1
+from ._Gender1Code import Gender1Code
+from ._ISODate import ISODate
 from ._Max140Text import Max140Text
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._NamePrefix1Choice import NamePrefix1Choice
+from ._PersonalInformation1 import PersonalInformation1
+from ._PoliticallyExposedPerson1 import PoliticallyExposedPerson1
+from ._PostalAddress21 import PostalAddress21
 
 class IndividualPerson37(base_types._BaseFieldType):
 
-	__slots__ = ["_CvlSts", "_BirthDt", "_EdctnLvl", "_GDPRData", "_Prfssn", "_GvnNm", "_NmSfx", "_CtryOfBirth", "_MddlNm", "_Nm", "_Gndr", "_PstlAdr", "_BizFctn", "_NmPrfx", "_PltclyXpsdPrsn", "_Ctznsh", "_PrvcOfBirth", "_FmlyInf", "_EmplngCpny", "_CityOfBirth", "_DthDt"]
+	__slots__ = ["_BirthDt", "_BizFctn", "_CityOfBirth", "_CtryOfBirth", "_Ctznsh", "_CvlSts", "_DthDt", "_EdctnLvl", "_EmplngCpny", "_FmlyInf", "_GDPRData", "_Gndr", "_GvnNm", "_MddlNm", "_Nm", "_NmPrfx", "_NmSfx", "_PltclyXpsdPrsn", "_Prfssn", "_PrvcOfBirth", "_PstlAdr"]
 	@property
 	def BirthDt(self):
 		return self._BirthDt

@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
 from ._BeneficiaryType1Code import BeneficiaryType1Code
+from ._GenericIdentification36 import GenericIdentification36
 
 class BeneficiaryType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

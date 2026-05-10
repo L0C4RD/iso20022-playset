@@ -4,7 +4,7 @@ from ._Number import Number
 
 class OptionDateOrPeriod1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NtcePrd", "_EarlstExrcDt"]
+	__slots__ = ["_EarlstExrcDt", "_NtcePrd"]
 	@property
 	def EarlstExrcDt(self):
 		return self._EarlstExrcDt

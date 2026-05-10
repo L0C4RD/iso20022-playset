@@ -1,15 +1,15 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._PartyIdentification123Choice import PartyIdentification123Choice
-from ._PartyTextInformation6 import PartyTextInformation6
-from ._Max35Text import Max35Text
 from ._AlternatePartyIdentification7 import AlternatePartyIdentification7
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._LEIIdentifier import LEIIdentifier
+from ._Max35Text import Max35Text
+from ._PartyIdentification123Choice import PartyIdentification123Choice
+from ._PartyTextInformation6 import PartyTextInformation6
+from ._SecuritiesAccount19 import SecuritiesAccount19
 
 class PartyIdentificationAndAccount194(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_PrcgDt", "_PrcgId", "_SfkpgAcct", "_AltrnId", "_Id", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_AltrnId", "_Id", "_LEI", "_PrcgDt", "_PrcgId", "_SfkpgAcct"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

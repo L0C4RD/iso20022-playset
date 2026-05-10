@@ -1,11 +1,11 @@
 from . import base_types
-from ._LoyaltyTransaction7 import LoyaltyTransaction7
-from ._LoyaltyRequestData3 import LoyaltyRequestData3
 from ._CustomerOrder1 import CustomerOrder1
+from ._LoyaltyRequestData3 import LoyaltyRequestData3
+from ._LoyaltyTransaction7 import LoyaltyTransaction7
 
 class LoyaltyRequest7(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_Data", "_CstmrOrdr"]
+	__slots__ = ["_CstmrOrdr", "_Data", "_Tx"]
 	@property
 	def CstmrOrdr(self):
 		return self._CstmrOrdr

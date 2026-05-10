@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ContentInformationType14 import ContentInformationType14
+from ._Max35Text import Max35Text
 
 class ATMEquipment3(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_SrlNb", "_Mdl", "_FrmwrPrvdr", "_FrmwrId", "_FrmwrVrsn", "_Manfctr", "_SgndSrlNb"]
+	__slots__ = ["_FrmwrId", "_FrmwrPrvdr", "_FrmwrVrsn", "_Manfctr", "_Mdl", "_SgndSrlNb", "_SrlNb", "_Vrsn"]
 	@property
 	def FrmwrId(self):
 		return self._FrmwrId

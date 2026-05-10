@@ -1,12 +1,12 @@
 from . import base_types
+from ._Acquirer7 import Acquirer7
 from ._Acquirer8 import Acquirer8
 from ._AutomatedTellerMachine3 import AutomatedTellerMachine3
 from ._TerminalHosting1 import TerminalHosting1
-from ._Acquirer7 import Acquirer7
 
 class ATMEnvironment7(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMMgr", "_Acqrr", "_HstgNtty", "_ATM"]
+	__slots__ = ["_ATM", "_ATMMgr", "_Acqrr", "_HstgNtty"]
 	@property
 	def ATM(self):
 		return self._ATM

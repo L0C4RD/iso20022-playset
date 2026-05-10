@@ -1,14 +1,14 @@
 from . import base_types
 from ._ATMCommand15 import ATMCommand15
-from ._SecurityParameters9 import SecurityParameters9
-from ._Max140Binary import Max140Binary
 from ._ATMCommand16 import ATMCommand16
 from ._ATMEnvironment15 import ATMEnvironment15
 from ._ATMSecurityContext3 import ATMSecurityContext3
+from ._Max140Binary import Max140Binary
+from ._SecurityParameters9 import SecurityParameters9
 
 class ATMKeyDownloadRequest5(base_types._BaseFieldType):
 
-	__slots__ = ["_CmdRslt", "_ATMSctyParams", "_ATMSctyCntxt", "_HstChllng", "_Envt", "_CmdCntxt"]
+	__slots__ = ["_ATMSctyCntxt", "_ATMSctyParams", "_CmdCntxt", "_CmdRslt", "_Envt", "_HstChllng"]
 	@property
 	def ATMSctyCntxt(self):
 		return self._ATMSctyCntxt

@@ -1,13 +1,13 @@
 from . import base_types
-from ._InterestRateContractTerm2 import InterestRateContractTerm2
-from ._InterestComputationMethodFormat6Choice import InterestComputationMethodFormat6Choice
-from ._RateAdjustment1 import RateAdjustment1
 from ._BenchmarkCurveName10Choice import BenchmarkCurveName10Choice
+from ._InterestComputationMethodFormat6Choice import InterestComputationMethodFormat6Choice
+from ._InterestRateContractTerm2 import InterestRateContractTerm2
+from ._RateAdjustment1 import RateAdjustment1
 from ._SecuritiesTransactionPrice18Choice import SecuritiesTransactionPrice18Choice
 
 class FloatingInterestRate22(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtFrqcy", "_RateAdjstmnt", "_DayCntBsis", "_Sprd", "_RstFrqcy", "_RefRate", "_Term"]
+	__slots__ = ["_DayCntBsis", "_PmtFrqcy", "_RateAdjstmnt", "_RefRate", "_RstFrqcy", "_Sprd", "_Term"]
 	@property
 	def DayCntBsis(self):
 		return self._DayCntBsis

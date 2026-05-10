@@ -1,17 +1,17 @@
 from . import base_types
-from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
-from ._SupplementaryData1 import SupplementaryData1
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ContractCessionData2 import ContractCessionData2
-from ._TradeParty6 import TradeParty6
 from ._ContractClosureReason1Choice import ContractClosureReason1Choice
+from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
 from ._DocumentIdentification29 import DocumentIdentification29
 from ._Max35Text import Max35Text
 from ._Priority2Code import Priority2Code
+from ._SupplementaryData1 import SupplementaryData1
+from ._TradeParty6 import TradeParty6
 
 class RegisteredContract19(base_types._BaseFieldType):
 
-	__slots__ = ["_Cssn", "_RegnAgt", "_RptgPty", "_RegdCtrctClsrId", "_SplmtryData", "_ClsrRsn", "_Attchmnt", "_OrgnlRegdCtrct", "_Prty"]
+	__slots__ = ["_Attchmnt", "_ClsrRsn", "_Cssn", "_OrgnlRegdCtrct", "_Prty", "_RegdCtrctClsrId", "_RegnAgt", "_RptgPty", "_SplmtryData"]
 	@property
 	def Attchmnt(self):
 		return self._Attchmnt

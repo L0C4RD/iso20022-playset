@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class UserDefinedInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Labl", "_Inf"]
+	__slots__ = ["_Inf", "_Labl"]
 	@property
 	def Inf(self):
 		return self._Inf

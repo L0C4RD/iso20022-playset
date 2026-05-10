@@ -1,16 +1,16 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._OptionType2Code import OptionType2Code
-from ._SecuritiesTransactionPrice4Choice import SecuritiesTransactionPrice4Choice
 from ._AssetClassAttributes1Choice import AssetClassAttributes1Choice
+from ._ISODate import ISODate
 from ._NonNegativeDecimalNumber import NonNegativeDecimalNumber
-from ._UnderlyingIdentification2Choice import UnderlyingIdentification2Choice
-from ._PhysicalTransferType4Code import PhysicalTransferType4Code
 from ._OptionStyle7Code import OptionStyle7Code
+from ._OptionType2Code import OptionType2Code
+from ._PhysicalTransferType4Code import PhysicalTransferType4Code
+from ._SecuritiesTransactionPrice4Choice import SecuritiesTransactionPrice4Choice
+from ._UnderlyingIdentification2Choice import UnderlyingIdentification2Choice
 
 class DerivativeInstrument6(base_types._BaseFieldType):
 
-	__slots__ = ["_AsstClssSpcfcAttrbts", "_DlvryTp", "_XpryDt", "_OptnExrcStyle", "_OptnTp", "_PricMltplr", "_StrkPric", "_UndrlygInstrm"]
+	__slots__ = ["_AsstClssSpcfcAttrbts", "_DlvryTp", "_OptnExrcStyle", "_OptnTp", "_PricMltplr", "_StrkPric", "_UndrlygInstrm", "_XpryDt"]
 	@property
 	def AsstClssSpcfcAttrbts(self):
 		return self._AsstClssSpcfcAttrbts

@@ -1,36 +1,36 @@
 from . import base_types
-from ._UniqueTransactionIdentifier2Choice import UniqueTransactionIdentifier2Choice
-from ._Max72Text import Max72Text
+from ._AllocationIndicator1Code import AllocationIndicator1Code
+from ._AssetClassCommodity7Choice import AssetClassCommodity7Choice
+from ._CollateralPortfolioCode6Choice import CollateralPortfolioCode6Choice
+from ._CreditDerivative4 import CreditDerivative4
 from ._CurrencyExchange22 import CurrencyExchange22
+from ._DerivativeEvent6 import DerivativeEvent6
 from ._EnergySpecificAttribute9 import EnergySpecificAttribute9
-from ._TradeClearing11 import TradeClearing11
+from ._FinancialInstrumentQuantity32Choice import FinancialInstrumentQuantity32Choice
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
+from ._InterestRateLegs14 import InterestRateLegs14
+from ._MICIdentifier import MICIdentifier
+from ._MasterAgreement8 import MasterAgreement8
+from ._Max52Text import Max52Text
+from ._Max72Text import Max72Text
+from ._NotionalAmountLegs5 import NotionalAmountLegs5
+from ._NotionalQuantityLegs5 import NotionalQuantityLegs5
+from ._OptionOrSwaption11 import OptionOrSwaption11
+from ._OtherPayment5 import OtherPayment5
 from ._PTRREvent2 import PTRREvent2
 from ._Package4 import Package4
-from ._TradeConfirmation4Choice import TradeConfirmation4Choice
-from ._Max52Text import Max52Text
-from ._MICIdentifier import MICIdentifier
-from ._NotionalQuantityLegs5 import NotionalQuantityLegs5
-from ._FinancialInstrumentQuantity32Choice import FinancialInstrumentQuantity32Choice
-from ._AllocationIndicator1Code import AllocationIndicator1Code
-from ._ISODateTime import ISODateTime
-from ._CreditDerivative4 import CreditDerivative4
-from ._UniqueTransactionIdentifier3Choice import UniqueTransactionIdentifier3Choice
-from ._CollateralPortfolioCode6Choice import CollateralPortfolioCode6Choice
-from ._NotionalAmountLegs5 import NotionalAmountLegs5
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._InterestRateLegs14 import InterestRateLegs14
-from ._MasterAgreement8 import MasterAgreement8
-from ._AssetClassCommodity7Choice import AssetClassCommodity7Choice
-from ._DerivativeEvent6 import DerivativeEvent6
 from ._PhysicalTransferType4Code import PhysicalTransferType4Code
-from ._OtherPayment5 import OtherPayment5
-from ._OptionOrSwaption11 import OptionOrSwaption11
 from ._PriceData2 import PriceData2
+from ._TradeClearing11 import TradeClearing11
+from ._TradeConfirmation4Choice import TradeConfirmation4Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._UniqueTransactionIdentifier2Choice import UniqueTransactionIdentifier2Choice
+from ._UniqueTransactionIdentifier3Choice import UniqueTransactionIdentifier3Choice
 
 class TradeTransaction50(base_types._BaseFieldType):
 
-	__slots__ = ["_PstTradRskRdctnFlg", "_DlvryTp", "_NtnlQty", "_SbsqntTxId", "_SttlmDt", "_Packg", "_Optn", "_CollPrtflCd", "_MstrAgrmt", "_ExctnTmStmp", "_PltfmIdr", "_MrrrOrTrggrTx", "_TxPric", "_Cdt", "_TxId", "_XprtnDt", "_Ccy", "_Cmmdty", "_ScndryTxId", "_Cmprssn", "_DerivEvt", "_TradConf", "_NrgySpcfcAttrbts", "_PrrTxId", "_LrgNtnlOffFcltyElctn", "_NonStdsdTerm", "_Qty", "_BlckTradElctn", "_OthrPmt", "_PstTradRskRdctnEvt", "_RptTrckgNb", "_FctvDt", "_TradClr", "_EarlyTermntnDt", "_IntrstRate", "_TradAllcnSts", "_NtnlAmt"]
+	__slots__ = ["_BlckTradElctn", "_Ccy", "_Cdt", "_Cmmdty", "_Cmprssn", "_CollPrtflCd", "_DerivEvt", "_DlvryTp", "_EarlyTermntnDt", "_ExctnTmStmp", "_FctvDt", "_IntrstRate", "_LrgNtnlOffFcltyElctn", "_MrrrOrTrggrTx", "_MstrAgrmt", "_NonStdsdTerm", "_NrgySpcfcAttrbts", "_NtnlAmt", "_NtnlQty", "_Optn", "_OthrPmt", "_Packg", "_PltfmIdr", "_PrrTxId", "_PstTradRskRdctnEvt", "_PstTradRskRdctnFlg", "_Qty", "_RptTrckgNb", "_SbsqntTxId", "_ScndryTxId", "_SttlmDt", "_TradAllcnSts", "_TradClr", "_TradConf", "_TxId", "_TxPric", "_XprtnDt"]
 	@property
 	def BlckTradElctn(self):
 		return self._BlckTradElctn

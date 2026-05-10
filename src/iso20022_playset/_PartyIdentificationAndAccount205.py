@@ -1,13 +1,13 @@
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._AlternatePartyIdentification9 import AlternatePartyIdentification9
 from ._PartyIdentification137Choice import PartyIdentification137Choice
 from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
-from ._AlternatePartyIdentification9 import AlternatePartyIdentification9
 
 class PartyIdentificationAndAccount205(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AltrnId", "_PrcgId", "_BlckChainAdrOrWllt", "_SfkpgAcct"]
+	__slots__ = ["_AltrnId", "_BlckChainAdrOrWllt", "_Id", "_PrcgId", "_SfkpgAcct"]
 	@property
 	def AltrnId(self):
 		return self._AltrnId

@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification1 import GenericIdentification1
 from ._ExternalSecuritiesPurpose1Code import ExternalSecuritiesPurpose1Code
+from ._GenericIdentification1 import GenericIdentification1
 
 class Purpose3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesPurpCd", "_Prtry"]
+	__slots__ = ["_Prtry", "_SctiesPurpCd"]
 	@property
 	def Prtry(self):
 		return self._Prtry

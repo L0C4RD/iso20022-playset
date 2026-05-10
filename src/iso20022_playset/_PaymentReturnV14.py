@@ -1,12 +1,12 @@
 from . import base_types
-from ._PaymentTransaction163 import PaymentTransaction163
-from ._SupplementaryData1 import SupplementaryData1
 from ._GroupHeader123 import GroupHeader123
 from ._OriginalGroupHeader19 import OriginalGroupHeader19
+from ._PaymentTransaction163 import PaymentTransaction163
+from ._SupplementaryData1 import SupplementaryData1
 
 class PaymentReturnV14(base_types._BaseFieldType):
 
-	__slots__ = ["_TxInf", "_GrpHdr", "_OrgnlGrpInf", "_SplmtryData"]
+	__slots__ = ["_GrpHdr", "_OrgnlGrpInf", "_SplmtryData", "_TxInf"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

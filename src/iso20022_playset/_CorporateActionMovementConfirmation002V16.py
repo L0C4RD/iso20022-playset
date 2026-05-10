@@ -1,22 +1,22 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._AccountAndBalance63 import AccountAndBalance63
-from ._DocumentIdentification38 import DocumentIdentification38
+from ._CorporateAction86 import CorporateAction86
 from ._CorporateActionEventReference4 import CorporateActionEventReference4
 from ._CorporateActionGeneralInformation190 import CorporateActionGeneralInformation190
+from ._CorporateActionNarrative35 import CorporateActionNarrative35
 from ._CorporateActionOption244 import CorporateActionOption244
 from ._DocumentIdentification17 import DocumentIdentification17
 from ._DocumentIdentification37 import DocumentIdentification37
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._DocumentIdentification38 import DocumentIdentification38
 from ._Pagination1 import Pagination1
 from ._PartyIdentification137Choice import PartyIdentification137Choice
-from ._CorporateAction86 import CorporateAction86
-from ._CorporateActionNarrative35 import CorporateActionNarrative35
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._SupplementaryData1 import SupplementaryData1
 from ._TransactionIdentification1 import TransactionIdentification1
 
 class CorporateActionMovementConfirmation002V16(base_types._BaseFieldType):
 
-	__slots__ = ["_SubPngAgt", "_CorpActnDtls", "_IssrAgt", "_TxId", "_NtfctnId", "_AcctDtls", "_OthrDocId", "_CorpActnConfDtls", "_Pgntn", "_MvmntPrlimryAdvcId", "_MvmntConfId", "_InstrId", "_EvtsLkg", "_PngAgt", "_CorpActnGnlInf", "_AddtlInf", "_SplmtryData"]
+	__slots__ = ["_AcctDtls", "_AddtlInf", "_CorpActnConfDtls", "_CorpActnDtls", "_CorpActnGnlInf", "_EvtsLkg", "_InstrId", "_IssrAgt", "_MvmntConfId", "_MvmntPrlimryAdvcId", "_NtfctnId", "_OthrDocId", "_Pgntn", "_PngAgt", "_SplmtryData", "_SubPngAgt", "_TxId"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class QuantityAndAvailability4(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_AvlbtyInd"]
+	__slots__ = ["_AvlbtyInd", "_Qty"]
 	@property
 	def AvlbtyInd(self):
 		return self._AvlbtyInd

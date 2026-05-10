@@ -1,12 +1,12 @@
 from . import base_types
+from ._AdditionalInformation15 import AdditionalInformation15
+from ._DecimalNumber import DecimalNumber
 from ._FinancialInstrumentIdentification1 import FinancialInstrumentIdentification1
 from ._Unit13 import Unit13
-from ._DecimalNumber import DecimalNumber
-from ._AdditionalInformation15 import AdditionalInformation15
 
 class Conversion2(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitsDtls", "_SrcScty", "_AddtlInf", "_TtlUnitsNb"]
+	__slots__ = ["_AddtlInf", "_SrcScty", "_TtlUnitsNb", "_UnitsDtls"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

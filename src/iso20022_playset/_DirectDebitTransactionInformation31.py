@@ -1,27 +1,27 @@
 from . import base_types
-from ._ChargeBearerType1Code import ChargeBearerType1Code
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Purpose2Choice import Purpose2Choice
-from ._PartyIdentification272 import PartyIdentification272
-from ._Priority3Code import Priority3Code
-from ._RegulatoryReporting3 import RegulatoryReporting3
-from ._RemittanceLocation8 import RemittanceLocation8
-from ._ISODate import ISODate
-from ._SupplementaryData1 import SupplementaryData1
-from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
-from ._PaymentTypeInformation27 import PaymentTypeInformation27
-from ._BaseOneRate import BaseOneRate
-from ._Charges16 import Charges16
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._DirectDebitTransaction12 import DirectDebitTransaction12
-from ._RemittanceInformation22 import RemittanceInformation22
-from ._PaymentIdentification13 import PaymentIdentification13
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._BaseOneRate import BaseOneRate
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._CashAccount40 import CashAccount40
+from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._Charges16 import Charges16
+from ._DirectDebitTransaction12 import DirectDebitTransaction12
+from ._ISODate import ISODate
+from ._PartyIdentification272 import PartyIdentification272
+from ._PaymentIdentification13 import PaymentIdentification13
+from ._PaymentTypeInformation27 import PaymentTypeInformation27
+from ._Priority3Code import Priority3Code
+from ._Purpose2Choice import Purpose2Choice
+from ._RegulatoryReporting3 import RegulatoryReporting3
+from ._RemittanceInformation22 import RemittanceInformation22
+from ._RemittanceLocation8 import RemittanceLocation8
+from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
+from ._SupplementaryData1 import SupplementaryData1
 
 class DirectDebitTransactionInformation31(base_types._BaseFieldType):
 
-	__slots__ = ["_Dbtr", "_IntrmyAgt1", "_UltmtCdtr", "_ChrgsInf", "_PmtTpInf", "_InstdAmt", "_DbtrAgt", "_RmtInf", "_InitgPty", "_IntrmyAgt1Acct", "_UltmtDbtr", "_CdtrAgt", "_RgltryRptg", "_CdtrAcct", "_SttlmTmIndctn", "_InstgAgt", "_PmtId", "_RltdRmtInf", "_IntrmyAgt3Acct", "_Purp", "_DrctDbtTx", "_IntrmyAgt2Acct", "_DbtrAgtAcct", "_Cdtr", "_IntrmyAgt3", "_ReqdColltnDt", "_IntrBkSttlmAmt", "_XchgRate", "_InstdAgt", "_DbtrAcct", "_IntrBkSttlmDt", "_SttlmPrty", "_ChrgBr", "_CdtrAgtAcct", "_IntrmyAgt2", "_SplmtryData"]
+	__slots__ = ["_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_ChrgBr", "_ChrgsInf", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_DrctDbtTx", "_InitgPty", "_InstdAgt", "_InstdAmt", "_InstgAgt", "_IntrBkSttlmAmt", "_IntrBkSttlmDt", "_IntrmyAgt1", "_IntrmyAgt1Acct", "_IntrmyAgt2", "_IntrmyAgt2Acct", "_IntrmyAgt3", "_IntrmyAgt3Acct", "_PmtId", "_PmtTpInf", "_Purp", "_ReqdColltnDt", "_RgltryRptg", "_RltdRmtInf", "_RmtInf", "_SplmtryData", "_SttlmPrty", "_SttlmTmIndctn", "_UltmtCdtr", "_UltmtDbtr", "_XchgRate"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

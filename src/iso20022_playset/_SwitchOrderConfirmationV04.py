@@ -1,14 +1,14 @@
 from . import base_types
-from ._CopyInformation4 import CopyInformation4
 from ._AdditionalReference8 import AdditionalReference8
-from ._MessageIdentification1 import MessageIdentification1
-from ._Extension1 import Extension1
-from ._SwitchExecution7 import SwitchExecution7
 from ._AdditionalReference9 import AdditionalReference9
+from ._CopyInformation4 import CopyInformation4
+from ._Extension1 import Extension1
+from ._MessageIdentification1 import MessageIdentification1
+from ._SwitchExecution7 import SwitchExecution7
 
 class SwitchOrderConfirmationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdRef", "_SwtchExctnDtls", "_MsgId", "_PrvsRef", "_PoolRef", "_CpyDtls", "_Xtnsn"]
+	__slots__ = ["_CpyDtls", "_MsgId", "_PoolRef", "_PrvsRef", "_RltdRef", "_SwtchExctnDtls", "_Xtnsn"]
 	@property
 	def CpyDtls(self):
 		return self._CpyDtls

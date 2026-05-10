@@ -4,7 +4,7 @@ from ._TotalNumber1 import TotalNumber1
 
 class NumberCount1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNb", "_CurInstrNb"]
+	__slots__ = ["_CurInstrNb", "_TtlNb"]
 	@property
 	def CurInstrNb(self):
 		return self._CurInstrNb

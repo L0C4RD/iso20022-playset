@@ -1,12 +1,12 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._NotReported1Code import NotReported1Code
-from ._Max50Text import Max50Text
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._LEIIdentifier import LEIIdentifier
+from ._Max50Text import Max50Text
+from ._NotReported1Code import NotReported1Code
 
 class TradePartyIdentificationQuery8(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntId", "_LEI", "_AnyBIC", "_NotRptd"]
+	__slots__ = ["_AnyBIC", "_ClntId", "_LEI", "_NotRptd"]
 	@property
 	def AnyBIC(self):
 		return self._AnyBIC

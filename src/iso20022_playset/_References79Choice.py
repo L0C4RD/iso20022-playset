@@ -4,7 +4,7 @@ from ._SettlementTypeAndIdentification22 import SettlementTypeAndIdentification2
 
 class References79Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesSttlmTxGnrtnNtfctnId", "_SctiesBalAcctgRptId", "_TrptyCollTxInstrPrcgStsAdvcId", "_IntraPosMvmntPstngRptId", "_TtlPrtflValtnRptId", "_SctiesTxPstngRptId", "_SctiesSttlmTxAllgmtRptId", "_TrptyCollAndXpsrRptId", "_SctiesTxPdgRptId", "_SctiesSttlmTxAllgmtNtfctnTxId", "_PrtflTrfNtfctnId", "_SctiesBalCtdyRptId", "_TrptyCollStsAdvcId", "_OthrMsgId", "_SctiesFincgConfId", "_SctiesSttlmTxConfId", "_IntraPosMvmntConfId"]
+	__slots__ = ["_IntraPosMvmntConfId", "_IntraPosMvmntPstngRptId", "_OthrMsgId", "_PrtflTrfNtfctnId", "_SctiesBalAcctgRptId", "_SctiesBalCtdyRptId", "_SctiesFincgConfId", "_SctiesSttlmTxAllgmtNtfctnTxId", "_SctiesSttlmTxAllgmtRptId", "_SctiesSttlmTxConfId", "_SctiesSttlmTxGnrtnNtfctnId", "_SctiesTxPdgRptId", "_SctiesTxPstngRptId", "_TrptyCollAndXpsrRptId", "_TrptyCollStsAdvcId", "_TrptyCollTxInstrPrcgStsAdvcId", "_TtlPrtflValtnRptId"]
 	@property
 	def IntraPosMvmntConfId(self):
 		return self._IntraPosMvmntConfId

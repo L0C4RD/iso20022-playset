@@ -1,6 +1,6 @@
 from . import base_types
-from ._ReportPeriodActivity3Code import ReportPeriodActivity3Code
 from ._ForeignExchangeSwapTransaction3 import ForeignExchangeSwapTransaction3
+from ._ReportPeriodActivity3Code import ReportPeriodActivity3Code
 
 class ForeignExchangeSwap3Choice(base_types._BaseFieldType):
 

@@ -4,7 +4,7 @@ from ._ProductCategory1 import ProductCategory1
 
 class ProductCategory1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_StrdPdctCtgy", "_OthrPdctCtgy"]
+	__slots__ = ["_OthrPdctCtgy", "_StrdPdctCtgy"]
 	@property
 	def OthrPdctCtgy(self):
 		return self._OthrPdctCtgy

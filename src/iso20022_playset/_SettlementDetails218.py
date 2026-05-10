@@ -1,27 +1,27 @@
 from . import base_types
-from ._LetterOfGuarantee4Choice import LetterOfGuarantee4Choice
-from ._GenericIdentification30 import GenericIdentification30
-from ._SettlingCapacity7Choice import SettlingCapacity7Choice
-from ._FXStandingInstruction4Choice import FXStandingInstruction4Choice
-from ._ExposureType25Choice import ExposureType25Choice
-from ._Registration9Choice import Registration9Choice
-from ._ModificationCancellationAllowed4Choice import ModificationCancellationAllowed4Choice
-from ._SecuritiesTransactionType59Choice import SecuritiesTransactionType59Choice
-from ._Restriction5Choice import Restriction5Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._MarketClientSide6Choice import MarketClientSide6Choice
-from ._SettlementTransactionCondition16Choice import SettlementTransactionCondition16Choice
-from ._Tracking4Choice import Tracking4Choice
+from ._BeneficialOwnership4Choice import BeneficialOwnership4Choice
 from ._CashSettlementSystem4Choice import CashSettlementSystem4Choice
-from ._TaxCapacityParty4Choice import TaxCapacityParty4Choice
 from ._CentralCounterPartyEligibility4Choice import CentralCounterPartyEligibility4Choice
 from ._DeliveryReturn3Choice import DeliveryReturn3Choice
-from ._BeneficialOwnership4Choice import BeneficialOwnership4Choice
+from ._ExposureType25Choice import ExposureType25Choice
+from ._FXStandingInstruction4Choice import FXStandingInstruction4Choice
+from ._GenericIdentification30 import GenericIdentification30
+from ._LetterOfGuarantee4Choice import LetterOfGuarantee4Choice
+from ._MarketClientSide6Choice import MarketClientSide6Choice
+from ._ModificationCancellationAllowed4Choice import ModificationCancellationAllowed4Choice
 from ._NettingEligibility4Choice import NettingEligibility4Choice
+from ._Registration9Choice import Registration9Choice
+from ._Restriction5Choice import Restriction5Choice
+from ._SecuritiesTransactionType59Choice import SecuritiesTransactionType59Choice
+from ._SettlementTransactionCondition16Choice import SettlementTransactionCondition16Choice
+from ._SettlingCapacity7Choice import SettlingCapacity7Choice
+from ._TaxCapacityParty4Choice import TaxCapacityParty4Choice
+from ._Tracking4Choice import Tracking4Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class SettlementDetails218(base_types._BaseFieldType):
 
-	__slots__ = ["_CshSubBalTp", "_Trckg", "_ElgblForColl", "_MktClntSd", "_DlvryRtrRsn", "_BnfclOwnrsh", "_StmpDtyTaxBsis", "_NetgElgblty", "_SctiesSubBalTp", "_SttlmTxCond", "_FxStgInstr", "_CCPElgblty", "_SctiesTxTp", "_CshClrSys", "_Regn", "_LttrOfGrnt", "_TaxCpcty", "_ModCxlAllwd", "_SttlgCpcty", "_RtrLeg", "_LglRstrctns", "_XpsrTp"]
+	__slots__ = ["_BnfclOwnrsh", "_CCPElgblty", "_CshClrSys", "_CshSubBalTp", "_DlvryRtrRsn", "_ElgblForColl", "_FxStgInstr", "_LglRstrctns", "_LttrOfGrnt", "_MktClntSd", "_ModCxlAllwd", "_NetgElgblty", "_Regn", "_RtrLeg", "_SctiesSubBalTp", "_SctiesTxTp", "_StmpDtyTaxBsis", "_SttlgCpcty", "_SttlmTxCond", "_TaxCpcty", "_Trckg", "_XpsrTp"]
 	@property
 	def BnfclOwnrsh(self):
 		return self._BnfclOwnrsh

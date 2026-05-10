@@ -1,10 +1,10 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class Amount2(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgAmt", "_OrgnlCcyAmt"]
+	__slots__ = ["_OrgnlCcyAmt", "_RptgAmt"]
 	@property
 	def OrgnlCcyAmt(self):
 		return self._OrgnlCcyAmt

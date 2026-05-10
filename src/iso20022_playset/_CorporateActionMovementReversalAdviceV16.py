@@ -1,20 +1,20 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._CorporateActionOption240 import CorporateActionOption240
-from ._DocumentIdentification32 import DocumentIdentification32
-from ._CorporateActionGeneralInformation179 import CorporateActionGeneralInformation179
-from ._TransactionIdentification15 import TransactionIdentification15
-from ._DocumentIdentification31 import DocumentIdentification31
-from ._PartyIdentification120Choice import PartyIdentification120Choice
-from ._CorporateActionEventReference3 import CorporateActionEventReference3
 from ._AccountAndBalance50 import AccountAndBalance50
-from ._CorporateActionReversalReason8 import CorporateActionReversalReason8
 from ._CorporateAction70 import CorporateAction70
+from ._CorporateActionEventReference3 import CorporateActionEventReference3
+from ._CorporateActionGeneralInformation179 import CorporateActionGeneralInformation179
 from ._CorporateActionNarrative31 import CorporateActionNarrative31
+from ._CorporateActionOption240 import CorporateActionOption240
+from ._CorporateActionReversalReason8 import CorporateActionReversalReason8
+from ._DocumentIdentification31 import DocumentIdentification31
+from ._DocumentIdentification32 import DocumentIdentification32
+from ._PartyIdentification120Choice import PartyIdentification120Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionIdentification15 import TransactionIdentification15
 
 class CorporateActionMovementReversalAdviceV16(base_types._BaseFieldType):
 
-	__slots__ = ["_SubPngAgt", "_PngAgt", "_CorpActnGnlInf", "_AddtlInf", "_MvmntConfId", "_RvslRsn", "_CorpActnDtls", "_CorpActnConfDtls", "_EvtsLkg", "_OthrDocId", "_AcctDtls", "_IssrAgt", "_SplmtryData", "_TxId"]
+	__slots__ = ["_AcctDtls", "_AddtlInf", "_CorpActnConfDtls", "_CorpActnDtls", "_CorpActnGnlInf", "_EvtsLkg", "_IssrAgt", "_MvmntConfId", "_OthrDocId", "_PngAgt", "_RvslRsn", "_SplmtryData", "_SubPngAgt", "_TxId"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

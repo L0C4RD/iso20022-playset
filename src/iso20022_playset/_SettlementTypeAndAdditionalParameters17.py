@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class SettlementTypeAndAdditionalParameters17(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnInd", "_CorpActnEvtId", "_CmonId"]
+	__slots__ = ["_CmonId", "_CorpActnEvtId", "_RcncltnInd"]
 	@property
 	def CmonId(self):
 		return self._CmonId

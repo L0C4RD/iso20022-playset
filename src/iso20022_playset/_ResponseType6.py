@@ -1,11 +1,11 @@
 from . import base_types
-from ._ResultDetail3Code import ResultDetail3Code
-from ._Response2Code import Response2Code
 from ._Max140Text import Max140Text
+from ._Response2Code import Response2Code
+from ._ResultDetail3Code import ResultDetail3Code
 
 class ResponseType6(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnDtl", "_Rspn", "_AddtlRspn"]
+	__slots__ = ["_AddtlRspn", "_Rspn", "_RspnDtl"]
 	@property
 	def AddtlRspn(self):
 		return self._AddtlRspn

@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification20 import GenericIdentification20
 from ._ExternalTradeMarket1Code import ExternalTradeMarket1Code
+from ._GenericIdentification20 import GenericIdentification20
 
 class TradeMarket1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

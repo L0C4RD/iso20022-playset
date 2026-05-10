@@ -1,15 +1,15 @@
 from . import base_types
+from ._Account32 import Account32
+from ._CommunicationAddress6 import CommunicationAddress6
 from ._LEIIdentifier import LEIIdentifier
+from ._NameAndAddress4 import NameAndAddress4
+from ._PartyIdentification177Choice import PartyIdentification177Choice
 from ._PartyRole2Choice import PartyRole2Choice
 from ._YesNoIndicator import YesNoIndicator
-from ._CommunicationAddress6 import CommunicationAddress6
-from ._Account32 import Account32
-from ._PartyIdentification177Choice import PartyIdentification177Choice
-from ._NameAndAddress4 import NameAndAddress4
 
 class Intermediary46(base_types._BaseFieldType):
 
-	__slots__ = ["_PmryComAdr", "_NmAndAdr", "_WvdTrlrComssnInd", "_LglNttyIdr", "_Acct", "_ScndryComAdr", "_Role", "_Id"]
+	__slots__ = ["_Acct", "_Id", "_LglNttyIdr", "_NmAndAdr", "_PmryComAdr", "_Role", "_ScndryComAdr", "_WvdTrlrComssnInd"]
 	@property
 	def Acct(self):
 		return self._Acct

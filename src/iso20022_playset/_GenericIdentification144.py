@@ -1,11 +1,11 @@
 from . import base_types
+from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 from ._Max4AlphaNumericText import Max4AlphaNumericText
 from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 
 class GenericIdentification144(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Issr", "_SchmeNm", "_Bal"]
+	__slots__ = ["_Bal", "_Id", "_Issr", "_SchmeNm"]
 	@property
 	def Bal(self):
 		return self._Bal

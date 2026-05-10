@@ -1,13 +1,13 @@
 from . import base_types
+from ._AmountPrice1 import AmountPrice1
+from ._AmountPricePerAmount1 import AmountPricePerAmount1
 from ._AmountPricePerFinancialInstrumentQuantity1 import AmountPricePerFinancialInstrumentQuantity1
 from ._PercentageRate import PercentageRate
-from ._AmountPricePerAmount1 import AmountPricePerAmount1
 from ._PriceValueType6FormatChoice import PriceValueType6FormatChoice
-from ._AmountPrice1 import AmountPrice1
 
 class PriceFormat1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtPricPerFinInstrmQty", "_AmtPricPerAmt", "_Rate", "_NotSpcfd", "_Amt"]
+	__slots__ = ["_Amt", "_AmtPricPerAmt", "_AmtPricPerFinInstrmQty", "_NotSpcfd", "_Rate"]
 	@property
 	def Amt(self):
 		return self._Amt

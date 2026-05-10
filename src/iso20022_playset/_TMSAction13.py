@@ -1,27 +1,27 @@
 from . import base_types
 from ._ContentInformationType39 import ContentInformationType39
+from ._DataSetCategory20Code import DataSetCategory20Code
+from ._DataSetIdentification11 import DataSetIdentification11
+from ._DeviceRequest8 import DeviceRequest8
+from ._ErrorAction5 import ErrorAction5
+from ._GenericIdentification176 import GenericIdentification176
 from ._KEKIdentifier5 import KEKIdentifier5
+from ._Max10KBinary import Max10KBinary
+from ._Max140Binary import Max140Binary
+from ._Max3000Binary import Max3000Binary
+from ._Max35Text import Max35Text
+from ._Max5000Binary import Max5000Binary
+from ._MessageItemCondition2 import MessageItemCondition2
+from ._NetworkParameters7 import NetworkParameters7
+from ._ProcessRetry3 import ProcessRetry3
+from ._ProcessTiming5 import ProcessTiming5
+from ._TerminalManagementAction5Code import TerminalManagementAction5Code
 from ._TerminalManagementActionTrigger1Code import TerminalManagementActionTrigger1Code
 from ._TerminalManagementAdditionalProcess1Code import TerminalManagementAdditionalProcess1Code
-from ._Max140Binary import Max140Binary
-from ._DeviceRequest8 import DeviceRequest8
-from ._NetworkParameters7 import NetworkParameters7
-from ._Max10KBinary import Max10KBinary
-from ._Max3000Binary import Max3000Binary
-from ._Max5000Binary import Max5000Binary
-from ._GenericIdentification176 import GenericIdentification176
-from ._ErrorAction5 import ErrorAction5
-from ._DataSetIdentification11 import DataSetIdentification11
-from ._TerminalManagementAction5Code import TerminalManagementAction5Code
-from ._MessageItemCondition2 import MessageItemCondition2
-from ._DataSetCategory20Code import DataSetCategory20Code
-from ._ProcessRetry3 import ProcessRetry3
-from ._Max35Text import Max35Text
-from ._ProcessTiming5 import ProcessTiming5
 
 class TMSAction13(base_types._BaseFieldType):
 
-	__slots__ = ["_ErrActn", "_MsgItm", "_TermnlMgrId", "_AddtlInf", "_PrtctdDlgtnProof", "_KeyNcphrmntCert", "_DlgtnProof", "_DlgtnScpId", "_DlgtnScpDef", "_TMChllng", "_DvcReq", "_TmCond", "_ReTry", "_AddtlPrc", "_TMSPrtcolVrsn", "_TMSPrtcol", "_Tp", "_Key", "_Trggr", "_CmpntTp", "_RmotAccs", "_DataSetId"]
+	__slots__ = ["_AddtlInf", "_AddtlPrc", "_CmpntTp", "_DataSetId", "_DlgtnProof", "_DlgtnScpDef", "_DlgtnScpId", "_DvcReq", "_ErrActn", "_Key", "_KeyNcphrmntCert", "_MsgItm", "_PrtctdDlgtnProof", "_ReTry", "_RmotAccs", "_TMChllng", "_TMSPrtcol", "_TMSPrtcolVrsn", "_TermnlMgrId", "_TmCond", "_Tp", "_Trggr"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

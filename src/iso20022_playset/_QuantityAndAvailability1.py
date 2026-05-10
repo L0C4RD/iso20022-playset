@@ -1,10 +1,10 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class QuantityAndAvailability1(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_AvlbtyInd"]
+	__slots__ = ["_AvlbtyInd", "_Qty"]
 	@property
 	def AvlbtyInd(self):
 		return self._AvlbtyInd

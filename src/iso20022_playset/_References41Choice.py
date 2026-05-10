@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class References41Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesSttlmTxId", "_IntraBalMvmntId", "_AcctSvcrTxId", "_MktInfrstrctrTxId", "_PoolId", "_OthrTxId", "_IntraPosMvmntId"]
+	__slots__ = ["_AcctSvcrTxId", "_IntraBalMvmntId", "_IntraPosMvmntId", "_MktInfrstrctrTxId", "_OthrTxId", "_PoolId", "_SctiesSttlmTxId"]
 	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId

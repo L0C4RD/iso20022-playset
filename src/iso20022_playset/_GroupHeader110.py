@@ -1,13 +1,13 @@
 from . import base_types
 from ._Authorisation1Choice import Authorisation1Choice
-from ._Max35Text import Max35Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 from ._PartyIdentification272 import PartyIdentification272
 
 class GroupHeader110(base_types._BaseFieldType):
 
-	__slots__ = ["_InstdAgt", "_MsgId", "_InitgPty", "_InstgAgt", "_Authstn", "_CreDtTm"]
+	__slots__ = ["_Authstn", "_CreDtTm", "_InitgPty", "_InstdAgt", "_InstgAgt", "_MsgId"]
 	@property
 	def Authstn(self):
 		return self._Authstn

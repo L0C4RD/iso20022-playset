@@ -1,15 +1,15 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._Max35Text import Max35Text
-from ._CollateralEntryType1Code import CollateralEntryType1Code
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._CollateralEntryType1Code import CollateralEntryType1Code
+from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
+from ._Max35Text import Max35Text
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._YesNoIndicator import YesNoIndicator
 
 class SecuritiesMovement9(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_SctiesMvmntTp", "_SfkpgAcct", "_TrptyAgtSvcPrvdrSctiesMvmntId", "_BlckChainAdrOrWllt", "_ClntSctiesMvmntId", "_Qty", "_CollMvmnt"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_ClntSctiesMvmntId", "_CollMvmnt", "_FinInstrmId", "_Qty", "_SctiesMvmntTp", "_SfkpgAcct", "_TrptyAgtSvcPrvdrSctiesMvmntId"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt

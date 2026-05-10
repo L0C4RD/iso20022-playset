@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max70Text import Max70Text
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 from ._TransactionIdentifier1 import TransactionIdentifier1
 from ._TransactionTotals12 import TransactionTotals12
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TransactionReconciliation5(base_types._BaseFieldType):
 
-	__slots__ = ["_TxTtls", "_RcncltnId", "_RcncltnTxId", "_ClsPrd", "_AddtlTxData"]
+	__slots__ = ["_AddtlTxData", "_ClsPrd", "_RcncltnId", "_RcncltnTxId", "_TxTtls"]
 	@property
 	def AddtlTxData(self):
 		return self._AddtlTxData

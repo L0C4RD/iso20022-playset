@@ -1,35 +1,35 @@
 from . import base_types
-from ._DisputeData4 import DisputeData4
-from ._TransactionIdentification55 import TransactionIdentification55
-from ._SettlementService5 import SettlementService5
-from ._Token2 import Token2
-from ._Context21 import Context21
-from ._OriginalTransaction3 import OriginalTransaction3
-from ._CardData13 import CardData13
 from ._AdditionalData2 import AdditionalData2
-from ._Jurisdiction2 import Jurisdiction2
-from ._Terminal8 import Terminal8
-from ._ProcessingResult25 import ProcessingResult25
-from ._OriginalTransactionAmounts3 import OriginalTransactionAmounts3
-from ._TransactionAmounts3 import TransactionAmounts3
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
+from ._AdditionalFee3 import AdditionalFee3
+from ._CardData13 import CardData13
 from ._ContentInformationType41 import ContentInformationType41
+from ._Context21 import Context21
+from ._DateTime2 import DateTime2
+from ._DisputeData4 import DisputeData4
+from ._DisputeDocumentation1 import DisputeDocumentation1
+from ._Header71 import Header71
+from ._Jurisdiction2 import Jurisdiction2
+from ._OriginalTransaction3 import OriginalTransaction3
+from ._OriginalTransactionAmounts3 import OriginalTransactionAmounts3
 from ._PartyIdentification285 import PartyIdentification285
+from ._PartyIdentification286 import PartyIdentification286
+from ._PartyIdentification287 import PartyIdentification287
+from ._ProcessingResult25 import ProcessingResult25
 from ._ProgrammeMode4 import ProgrammeMode4
 from ._ProtectedData2 import ProtectedData2
-from ._AdditionalFee3 import AdditionalFee3
 from ._Reconciliation4 import Reconciliation4
-from ._DisputeDocumentation1 import DisputeDocumentation1
-from ._Wallet3 import Wallet3
-from ._PartyIdentification287 import PartyIdentification287
-from ._DateTime2 import DateTime2
+from ._SettlementService5 import SettlementService5
+from ._SupplementaryData1 import SupplementaryData1
+from ._Terminal8 import Terminal8
+from ._Token2 import Token2
+from ._TransactionAmounts3 import TransactionAmounts3
 from ._TransactionCharacteristics3 import TransactionCharacteristics3
-from ._Header71 import Header71
+from ._TransactionIdentification55 import TransactionIdentification55
+from ._Wallet3 import Wallet3
 
 class ChargeBackInitiationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Termnl", "_Sndr", "_AddtlData", "_OrgnlTxAmts", "_AddtlFee", "_Pyee", "_Rcncltn", "_ConvsDtTm", "_Pyer", "_DsptData", "_Orgtr", "_Acqrr", "_Dstn", "_Prgrmm", "_OrgnlTx", "_Issr", "_Jursdctn", "_Cntxt", "_Hdr", "_Tkn", "_TxChrtcs", "_SctyTrlr", "_Card", "_Rcvr", "_TxId", "_Accptr", "_SttlmSvc", "_Dcmnttn", "_TxAmts", "_PrtctdData", "_Wllt", "_SplmtryData", "_PrcgRslt"]
+	__slots__ = ["_Accptr", "_Acqrr", "_AddtlData", "_AddtlFee", "_Card", "_Cntxt", "_ConvsDtTm", "_Dcmnttn", "_DsptData", "_Dstn", "_Hdr", "_Issr", "_Jursdctn", "_OrgnlTx", "_OrgnlTxAmts", "_Orgtr", "_PrcgRslt", "_Prgrmm", "_PrtctdData", "_Pyee", "_Pyer", "_Rcncltn", "_Rcvr", "_SctyTrlr", "_Sndr", "_SplmtryData", "_SttlmSvc", "_Termnl", "_Tkn", "_TxAmts", "_TxChrtcs", "_TxId", "_Wllt"]
 	@property
 	def Accptr(self):
 		return self._Accptr

@@ -1,14 +1,14 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
-from ._Max35Text import Max35Text
-from ._Max350Text import Max350Text
 from ._ISODateTime import ISODateTime
 from ._Max256Text import Max256Text
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._YesNoIndicator import YesNoIndicator
 
 class TransferInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_StartDtTm", "_Prtry", "_Cd", "_StartDt", "_TrfInd"]
+	__slots__ = ["_Cd", "_Desc", "_Prtry", "_StartDt", "_StartDtTm", "_TrfInd"]
 	@property
 	def Cd(self):
 		return self._Cd

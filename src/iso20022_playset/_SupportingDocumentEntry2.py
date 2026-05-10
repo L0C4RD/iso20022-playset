@@ -1,16 +1,16 @@
 from . import base_types
-from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ShipmentAttribute2 import ShipmentAttribute2
-from ._Exact4AlphaNumericUnderscoreText import Exact4AlphaNumericUnderscoreText
-from ._DocumentIdentification22 import DocumentIdentification22
 from ._DocumentEntryAmendment1 import DocumentEntryAmendment1
+from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
+from ._DocumentIdentification22 import DocumentIdentification22
+from ._Exact4AlphaNumericUnderscoreText import Exact4AlphaNumericUnderscoreText
 from ._Max35Text import Max35Text
 from ._Max500Text import Max500Text
+from ._ShipmentAttribute2 import ShipmentAttribute2
 
 class SupportingDocumentEntry2(base_types._BaseFieldType):
 
-	__slots__ = ["_NtryAmdmntId", "_NtryId", "_TtlAmtAftrShipmnt", "_TtlAmtInCtrctCcy", "_AddtlInf", "_ShipmntAttrbts", "_TtlAmt", "_MtrtyData", "_TtlAmtAftrShipmntInCtrctCcy", "_OrgnlDoc", "_DocTp", "_Attchmnt"]
+	__slots__ = ["_AddtlInf", "_Attchmnt", "_DocTp", "_MtrtyData", "_NtryAmdmntId", "_NtryId", "_OrgnlDoc", "_ShipmntAttrbts", "_TtlAmt", "_TtlAmtAftrShipmnt", "_TtlAmtAftrShipmntInCtrctCcy", "_TtlAmtInCtrctCcy"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

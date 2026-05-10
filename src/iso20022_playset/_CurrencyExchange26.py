@@ -1,13 +1,13 @@
 from . import base_types
-from ._UUIDv4Identifier import UUIDv4Identifier
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._BaseOneRate import BaseOneRate
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._ISODateTime import ISODateTime
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class CurrencyExchange26(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitCcy", "_QtnDtTm", "_QtId", "_PreAgrdXchgRate", "_QtdCcy", "_FXAgt"]
+	__slots__ = ["_FXAgt", "_PreAgrdXchgRate", "_QtId", "_QtdCcy", "_QtnDtTm", "_UnitCcy"]
 	@property
 	def FXAgt(self):
 		return self._FXAgt

@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._DocumentLineType1 import DocumentLineType1
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
 
 class DocumentLineIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Nb", "_RltdDt"]
+	__slots__ = ["_Nb", "_RltdDt", "_Tp"]
 	@property
 	def Nb(self):
 		return self._Nb

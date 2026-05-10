@@ -4,7 +4,7 @@ from ._Number import Number
 
 class UTMCoordinates1(base_types._BaseFieldType):
 
-	__slots__ = ["_UTMZone", "_UTMNrthwrd", "_UTMEstwrd"]
+	__slots__ = ["_UTMEstwrd", "_UTMNrthwrd", "_UTMZone"]
 	@property
 	def UTMEstwrd(self):
 		return self._UTMEstwrd

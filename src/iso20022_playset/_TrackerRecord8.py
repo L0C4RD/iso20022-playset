@@ -1,13 +1,13 @@
 from . import base_types
-from ._ChargeBearerType1Code import ChargeBearerType1Code
-from ._TrackerPartyIdentification2 import TrackerPartyIdentification2
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ISODateTime import ISODateTime
+from ._ChargeBearerType1Code import ChargeBearerType1Code
 from ._CurrencyExchange13 import CurrencyExchange13
+from ._ISODateTime import ISODateTime
+from ._TrackerPartyIdentification2 import TrackerPartyIdentification2
 
 class TrackerRecord8(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgRateData", "_ChrgBr", "_IntrBkSttlmAmt", "_PtyOrAgtId", "_PrcgDtTm", "_ChrgsAmt"]
+	__slots__ = ["_ChrgBr", "_ChrgsAmt", "_IntrBkSttlmAmt", "_PrcgDtTm", "_PtyOrAgtId", "_XchgRateData"]
 	@property
 	def ChrgBr(self):
 		return self._ChrgBr

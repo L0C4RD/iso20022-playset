@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class MissingCover6(base_types._BaseFieldType):
 
-	__slots__ = ["_MssngCoverInd", "_CoverCrrctn"]
+	__slots__ = ["_CoverCrrctn", "_MssngCoverInd"]
 	@property
 	def CoverCrrctn(self):
 		return self._CoverCrrctn

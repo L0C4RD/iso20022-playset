@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max3Number import Max3Number
-from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
 from ._Frequency19Code import Frequency19Code
+from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from ._Max3Number import Max3Number
 from ._UnitOfMeasure8Choice import UnitOfMeasure8Choice
 
 class QuantityTerm1(base_types._BaseFieldType):
 
-	__slots__ = ["_TmUnit", "_UnitOfMeasr", "_Val", "_Qty"]
+	__slots__ = ["_Qty", "_TmUnit", "_UnitOfMeasr", "_Val"]
 	@property
 	def Qty(self):
 		return self._Qty

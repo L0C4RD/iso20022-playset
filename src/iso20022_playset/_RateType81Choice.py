@@ -1,10 +1,10 @@
 from . import base_types
-from ._NetDividendRateType6Code import NetDividendRateType6Code
 from ._GenericIdentification47 import GenericIdentification47
+from ._NetDividendRateType6Code import NetDividendRateType6Code
 
 class RateType81Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

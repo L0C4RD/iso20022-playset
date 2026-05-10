@@ -1,13 +1,13 @@
 from . import base_types
-from ._TypeOfAmount22Code import TypeOfAmount22Code
 from ._BaseOne25Rate import BaseOne25Rate
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
 from ._DetailedAmount22 import DetailedAmount22
+from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._TypeOfAmount22Code import TypeOfAmount22Code
 
 class TransactionAmounts3(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_RcncltnCcy", "_CrdhldrBllgFctvXchgRate", "_RcncltnFctvXchgRate", "_DtldAmt", "_CrdhldrBllgCcy", "_RcncltnAmt", "_AmtQlfr", "_CrdhldrBllgAmt", "_Ccy"]
+	__slots__ = ["_Amt", "_AmtQlfr", "_Ccy", "_CrdhldrBllgAmt", "_CrdhldrBllgCcy", "_CrdhldrBllgFctvXchgRate", "_DtldAmt", "_RcncltnAmt", "_RcncltnCcy", "_RcncltnFctvXchgRate"]
 	@property
 	def Amt(self):
 		return self._Amt

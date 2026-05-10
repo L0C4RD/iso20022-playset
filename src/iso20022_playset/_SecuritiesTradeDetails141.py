@@ -1,31 +1,31 @@
 from . import base_types
-from ._TradeDate8Choice import TradeDate8Choice
-from ._TypeOfPrice29Choice import TypeOfPrice29Choice
-from ._Max3Number import Max3Number
-from ._QuantityAndAccount114 import QuantityAndAccount114
-from ._UTIIdentifier import UTIIdentifier
-from ._SettlementDate17Choice import SettlementDate17Choice
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SettlementDetails168 import SettlementDetails168
-from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._SettlementParties126 import SettlementParties126
-from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
 from ._AllegementStatus3Choice import AllegementStatus3Choice
-from ._TradeTransactionCondition5Choice import TradeTransactionCondition5Choice
-from ._SupplementaryData1 import SupplementaryData1
 from ._AmountAndDirection88 import AmountAndDirection88
-from ._FinancialInstrumentAttributes111 import FinancialInstrumentAttributes111
-from ._SecuritiesFinancingTransactionDetails54 import SecuritiesFinancingTransactionDetails54
-from ._OtherParties34 import OtherParties34
-from ._Max35Text import Max35Text
-from ._OtherAmounts32 import OtherAmounts32
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._FinancialInstrumentAttributes111 import FinancialInstrumentAttributes111
+from ._Max35Text import Max35Text
+from ._Max3Number import Max3Number
+from ._OtherAmounts32 import OtherAmounts32
+from ._OtherParties34 import OtherParties34
+from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
+from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
 from ._Price10 import Price10
+from ._QuantityAndAccount114 import QuantityAndAccount114
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._SecuritiesFinancingTransactionDetails54 import SecuritiesFinancingTransactionDetails54
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SettlementDate17Choice import SettlementDate17Choice
+from ._SettlementDetails168 import SettlementDetails168
+from ._SettlementParties126 import SettlementParties126
+from ._SupplementaryData1 import SupplementaryData1
+from ._TradeDate8Choice import TradeDate8Choice
+from ._TradeTransactionCondition5Choice import TradeTransactionCondition5Choice
+from ._TypeOfPrice29Choice import TypeOfPrice29Choice
+from ._UTIIdentifier import UTIIdentifier
 
 class SecuritiesTradeDetails141(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_TpOfPric", "_CtrPtyMktInfrstrctrTxId", "_SttlmDt", "_Sts", "_NbOfDaysAcrd", "_SttlmAmt", "_OthrAmts", "_CollTxId", "_RcvgSttlmPties", "_DlvrgSttlmPties", "_Pmt", "_MktInfrstrctrTxId", "_PlcOfClr", "_QtyAndAcctDtls", "_AcctSvcrTxId", "_SttlmParams", "_AcctOwnrTxId", "_SctiesFincgDtls", "_UnqTxIdr", "_TradTxCond", "_PoolId", "_SctiesMvmntTp", "_FinInstrmAttrbts", "_OthrBizPties", "_PlcOfTrad", "_PrcrTxId", "_TradId", "_TradDt", "_CmonId", "_DealPric", "_SplmtryData"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_CmonId", "_CollTxId", "_CtrPtyMktInfrstrctrTxId", "_DealPric", "_DlvrgSttlmPties", "_FinInstrmAttrbts", "_FinInstrmId", "_MktInfrstrctrTxId", "_NbOfDaysAcrd", "_OthrAmts", "_OthrBizPties", "_PlcOfClr", "_PlcOfTrad", "_Pmt", "_PoolId", "_PrcrTxId", "_QtyAndAcctDtls", "_RcvgSttlmPties", "_SctiesFincgDtls", "_SctiesMvmntTp", "_SplmtryData", "_Sts", "_SttlmAmt", "_SttlmDt", "_SttlmParams", "_TpOfPric", "_TradDt", "_TradId", "_TradTxCond", "_UnqTxIdr"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

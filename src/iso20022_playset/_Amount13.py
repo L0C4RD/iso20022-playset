@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class Amount13(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Tp", "_Desc"]
+	__slots__ = ["_Amt", "_Desc", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

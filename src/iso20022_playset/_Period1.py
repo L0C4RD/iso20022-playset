@@ -3,7 +3,7 @@ from ._DateFormat4Choice import DateFormat4Choice
 
 class Period1(base_types._BaseFieldType):
 
-	__slots__ = ["_StartDt", "_EndDt"]
+	__slots__ = ["_EndDt", "_StartDt"]
 	@property
 	def EndDt(self):
 		return self._EndDt

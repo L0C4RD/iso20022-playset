@@ -1,12 +1,12 @@
 from . import base_types
-from ._FinancialInstrument46Choice import FinancialInstrument46Choice
 from ._CountryCode import CountryCode
-from ._Period4Choice import Period4Choice
+from ._FinancialInstrument46Choice import FinancialInstrument46Choice
 from ._Max35Text import Max35Text
+from ._Period4Choice import Period4Choice
 
 class SecuritiesIndexReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_TechRcrdId", "_VldtyPrd", "_RqstngNtty", "_Indx"]
+	__slots__ = ["_Indx", "_RqstngNtty", "_TechRcrdId", "_VldtyPrd"]
 	@property
 	def Indx(self):
 		return self._Indx

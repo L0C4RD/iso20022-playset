@@ -1,11 +1,11 @@
 from . import base_types
-from ._FreightCommodityWet1 import FreightCommodityWet1
-from ._FreightCommodityDry1 import FreightCommodityDry1
 from ._FreightCommodityContainerShip1 import FreightCommodityContainerShip1
+from ._FreightCommodityDry1 import FreightCommodityDry1
+from ._FreightCommodityWet1 import FreightCommodityWet1
 
 class AssetClassCommodityFreight1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Dry", "_CntnrShip", "_Wet"]
+	__slots__ = ["_CntnrShip", "_Dry", "_Wet"]
 	@property
 	def CntnrShip(self):
 		return self._CntnrShip

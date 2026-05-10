@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._ReportHeader7 import ReportHeader7
 from ._Case6 import Case6
 from ._CaseAssignment6 import CaseAssignment6
 from ._CaseForwardingNotification3 import CaseForwardingNotification3
+from ._ReportHeader7 import ReportHeader7
+from ._SupplementaryData1 import SupplementaryData1
 
 class NotificationOfCaseAssignmentV06(base_types._BaseFieldType):
 
-	__slots__ = ["_Case", "_Ntfctn", "_Hdr", "_Assgnmt", "_SplmtryData"]
+	__slots__ = ["_Assgnmt", "_Case", "_Hdr", "_Ntfctn", "_SplmtryData"]
 	@property
 	def Assgnmt(self):
 		return self._Assgnmt

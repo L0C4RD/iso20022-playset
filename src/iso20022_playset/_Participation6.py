@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Percentage14Rate import Percentage14Rate
 from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
+from ._ISODate import ISODate
 from ._Number import Number
+from ._Percentage14Rate import Percentage14Rate
 
 class Participation6(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfVtngRghts", "_ClctnDt", "_PctgOfVtngRghts", "_TtlNbOfSctiesOutsdng"]
+	__slots__ = ["_ClctnDt", "_PctgOfVtngRghts", "_TtlNbOfSctiesOutsdng", "_TtlNbOfVtngRghts"]
 	@property
 	def ClctnDt(self):
 		return self._ClctnDt

@@ -3,7 +3,7 @@ from ._MarginRequirement1 import MarginRequirement1
 
 class Requirement1(base_types._BaseFieldType):
 
-	__slots__ = ["_VartnMrgnRqrmnt", "_SgrtdIndpdntAmtRqrmnt"]
+	__slots__ = ["_SgrtdIndpdntAmtRqrmnt", "_VartnMrgnRqrmnt"]
 	@property
 	def SgrtdIndpdntAmtRqrmnt(self):
 		return self._SgrtdIndpdntAmtRqrmnt

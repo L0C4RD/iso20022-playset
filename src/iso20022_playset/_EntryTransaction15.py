@@ -1,37 +1,37 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._CorporateAction82 import CorporateAction82
-from ._CardTransaction18 import CardTransaction18
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._LocalInstrument2Choice import LocalInstrument2Choice
-from ._TransactionParties12 import TransactionParties12
-from ._Charges15 import Charges15
-from ._Purpose2Choice import Purpose2Choice
 from ._AmountAndCurrencyExchange4 import AmountAndCurrencyExchange4
-from ._RemittanceLocation8 import RemittanceLocation8
-from ._Max500Text import Max500Text
-from ._TransactionReferences6 import TransactionReferences6
-from ._PaymentReturnReason8 import PaymentReturnReason8
-from ._SupplementaryData1 import SupplementaryData1
-from ._CashDeposit1 import CashDeposit1
-from ._TransactionDates3 import TransactionDates3
-from ._Max20000Text import Max20000Text
-from ._PaymentTypeInformation27 import PaymentTypeInformation27
-from ._TransactionQuantities4Choice import TransactionQuantities4Choice
 from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
-from ._TransactionInterest4 import TransactionInterest4
-from ._TransactionAgents6 import TransactionAgents6
-from ._RemittanceInformation22 import RemittanceInformation22
-from ._TransactionAllocation1 import TransactionAllocation1
-from ._TransactionPrice4Choice import TransactionPrice4Choice
+from ._CardTransaction18 import CardTransaction18
 from ._CashAvailability1 import CashAvailability1
+from ._CashDeposit1 import CashDeposit1
+from ._Charges15 import Charges15
+from ._CorporateAction82 import CorporateAction82
 from ._CreditDebitCode import CreditDebitCode
+from ._LocalInstrument2Choice import LocalInstrument2Choice
+from ._Max20000Text import Max20000Text
+from ._Max500Text import Max500Text
+from ._PaymentReturnReason8 import PaymentReturnReason8
+from ._PaymentTypeInformation27 import PaymentTypeInformation27
+from ._Purpose2Choice import Purpose2Choice
+from ._RemittanceInformation22 import RemittanceInformation22
+from ._RemittanceLocation8 import RemittanceLocation8
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SupplementaryData1 import SupplementaryData1
 from ._TaxData1 import TaxData1
+from ._TransactionAgents6 import TransactionAgents6
+from ._TransactionAllocation1 import TransactionAllocation1
+from ._TransactionDates3 import TransactionDates3
+from ._TransactionInterest4 import TransactionInterest4
+from ._TransactionParties12 import TransactionParties12
+from ._TransactionPrice4Choice import TransactionPrice4Choice
+from ._TransactionQuantities4Choice import TransactionQuantities4Choice
+from ._TransactionReferences6 import TransactionReferences6
 
 class EntryTransaction15(base_types._BaseFieldType):
 
-	__slots__ = ["_Chrgs", "_UndrlygAllcn", "_CshDpst", "_Tax", "_PmtTpInf", "_RmtInf", "_RltdDts", "_RltdQties", "_RltdCorpActn", "_RltdPties", "_RltdAgts", "_AmtDtls", "_AddtlTxInf", "_Amt", "_Intrst", "_FinInstrmId", "_CardTx", "_RltdPric", "_SfkpgAcct", "_Avlbty", "_Refs", "_RltdRmtInf", "_CdtDbtInd", "_InstrCpy", "_BkTxCd", "_Purp", "_LclInstrm", "_RtrInf", "_SplmtryData"]
+	__slots__ = ["_AddtlTxInf", "_Amt", "_AmtDtls", "_Avlbty", "_BkTxCd", "_CardTx", "_CdtDbtInd", "_Chrgs", "_CshDpst", "_FinInstrmId", "_InstrCpy", "_Intrst", "_LclInstrm", "_PmtTpInf", "_Purp", "_Refs", "_RltdAgts", "_RltdCorpActn", "_RltdDts", "_RltdPric", "_RltdPties", "_RltdQties", "_RltdRmtInf", "_RmtInf", "_RtrInf", "_SfkpgAcct", "_SplmtryData", "_Tax", "_UndrlygAllcn"]
 	@property
 	def AddtlTxInf(self):
 		return self._AddtlTxInf

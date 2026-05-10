@@ -3,7 +3,7 @@ from ._AdditionalReference10 import AdditionalReference10
 
 class References68Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsRef", "_OthrRef"]
+	__slots__ = ["_OthrRef", "_PrvsRef"]
 	@property
 	def OthrRef(self):
 		return self._OthrRef

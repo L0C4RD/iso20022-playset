@@ -5,7 +5,7 @@ from ._UnmatchedStatus19Choice import UnmatchedStatus19Choice
 
 class MatchingStatus29Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Umtchd", "_Prtry", "_Mtchd"]
+	__slots__ = ["_Mtchd", "_Prtry", "_Umtchd"]
 	@property
 	def Mtchd(self):
 		return self._Mtchd

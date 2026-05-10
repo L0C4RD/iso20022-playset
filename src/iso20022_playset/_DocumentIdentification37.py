@@ -1,6 +1,6 @@
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._ProcessingPosition10Choice import ProcessingPosition10Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class DocumentIdentification37(base_types._BaseFieldType):
 

@@ -3,7 +3,7 @@ from ._xs:IDREF import xs:IDREF
 
 class FinancingNotificationParties1(base_types._BaseFieldType):
 
-	__slots__ = ["_NtifngPty", "_AckRcvr", "_NtfctnRcvr"]
+	__slots__ = ["_AckRcvr", "_NtfctnRcvr", "_NtifngPty"]
 	@property
 	def AckRcvr(self):
 		return self._AckRcvr

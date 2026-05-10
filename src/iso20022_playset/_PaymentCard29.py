@@ -1,13 +1,13 @@
 from . import base_types
-from ._PartyIdentification125Choice import PartyIdentification125Choice
-from ._ISOYearMonth import ISOYearMonth
-from ._Max3Text import Max3Text
-from ._Max35Text import Max35Text
 from ._CardType1Code import CardType1Code
+from ._ISOYearMonth import ISOYearMonth
+from ._Max35Text import Max35Text
+from ._Max3Text import Max3Text
+from ._PartyIdentification125Choice import PartyIdentification125Choice
 
 class PaymentCard29(base_types._BaseFieldType):
 
-	__slots__ = ["_SeqNb", "_StartDt", "_SctyCd", "_Nb", "_XpryDt", "_HldrNm", "_CardIssrId", "_Tp", "_CardIssrNm"]
+	__slots__ = ["_CardIssrId", "_CardIssrNm", "_HldrNm", "_Nb", "_SctyCd", "_SeqNb", "_StartDt", "_Tp", "_XpryDt"]
 	@property
 	def CardIssrId(self):
 		return self._CardIssrId

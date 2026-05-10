@@ -1,14 +1,14 @@
 from . import base_types
-from ._MarginCallResult3 import MarginCallResult3
-from ._MarginRequirement1Choice import MarginRequirement1Choice
 from ._BlockChainAddressWallet5 import BlockChainAddressWallet5
 from ._CollateralAccount3 import CollateralAccount3
-from ._MarginCall1 import MarginCall1
 from ._ExpectedCollateral2Choice import ExpectedCollateral2Choice
+from ._MarginCall1 import MarginCall1
+from ._MarginCallResult3 import MarginCallResult3
+from ._MarginRequirement1Choice import MarginRequirement1Choice
 
 class MarginCall3(base_types._BaseFieldType):
 
-	__slots__ = ["_CollAcctId", "_XpctdCollDueToA", "_MrgnDtlDueToA", "_MrgnDtlDueToB", "_RqrmntDtlsDueToA", "_MrgnCallRslt", "_XpctdCollDueToB", "_RqrmntDtlsDueToB", "_BlckChainAdrOrWllt"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_CollAcctId", "_MrgnCallRslt", "_MrgnDtlDueToA", "_MrgnDtlDueToB", "_RqrmntDtlsDueToA", "_RqrmntDtlsDueToB", "_XpctdCollDueToA", "_XpctdCollDueToB"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt

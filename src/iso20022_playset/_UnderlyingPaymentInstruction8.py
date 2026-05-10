@@ -1,16 +1,16 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._OriginalTransactionReference35 import OriginalTransactionReference35
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._ServiceLevel8Choice import ServiceLevel8Choice
-from ._UnderlyingGroupInformation1 import UnderlyingGroupInformation1
-from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._OriginalTransactionReference35 import OriginalTransactionReference35
+from ._ServiceLevel8Choice import ServiceLevel8Choice
+from ._UUIDv4Identifier import UUIDv4Identifier
+from ._UnderlyingGroupInformation1 import UnderlyingGroupInformation1
 
 class UnderlyingPaymentInstruction8(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlPmtInfId", "_OrgnlUETR", "_ReqdExctnDt", "_OrgnlInstrId", "_OrgnlEndToEndId", "_ReqdColltnDt", "_OrgnlGrpInf", "_OrgnlInstdAmt", "_OrgnlSvcLvl", "_OrgnlTxRef"]
+	__slots__ = ["_OrgnlEndToEndId", "_OrgnlGrpInf", "_OrgnlInstdAmt", "_OrgnlInstrId", "_OrgnlPmtInfId", "_OrgnlSvcLvl", "_OrgnlTxRef", "_OrgnlUETR", "_ReqdColltnDt", "_ReqdExctnDt"]
 	@property
 	def OrgnlEndToEndId(self):
 		return self._OrgnlEndToEndId

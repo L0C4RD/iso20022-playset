@@ -1,13 +1,13 @@
 from . import base_types
-from ._OtherCollateral9 import OtherCollateral9
-from ._Max35Text import Max35Text
-from ._Max140Text import Max140Text
 from ._CashCollateral3 import CashCollateral3
+from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._OtherCollateral9 import OtherCollateral9
 from ._SecuritiesCollateral10 import SecuritiesCollateral10
 
 class Collateral55(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnCallReqId", "_OthrColl", "_MrgnCallRspnId", "_StdSttlmInstrs", "_CollPrpslRspnId", "_CshColl", "_SctiesColl"]
+	__slots__ = ["_CollPrpslRspnId", "_CshColl", "_MrgnCallReqId", "_MrgnCallRspnId", "_OthrColl", "_SctiesColl", "_StdSttlmInstrs"]
 	@property
 	def CollPrpslRspnId(self):
 		return self._CollPrpslRspnId

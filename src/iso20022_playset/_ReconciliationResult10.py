@@ -4,7 +4,7 @@ from ._OrganisationIdentification15Choice import OrganisationIdentification15Cho
 
 class ReconciliationResult10(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPty2", "_MtchgCrit", "_CtrPty1"]
+	__slots__ = ["_CtrPty1", "_CtrPty2", "_MtchgCrit"]
 	@property
 	def CtrPty1(self):
 		return self._CtrPty1

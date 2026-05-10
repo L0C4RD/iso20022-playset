@@ -1,18 +1,18 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max140Text import Max140Text
-from ._ISOTime import ISOTime
 from ._AdditionalData1 import AdditionalData1
-from ._Max5NumericText import Max5NumericText
-from ._OutputFormat5Code import OutputFormat5Code
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
 from ._Frequency17Code import Frequency17Code
+from ._ISODate import ISODate
+from ._ISOTime import ISOTime
+from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Max5NumericText import Max5NumericText
+from ._Max70Text import Max70Text
+from ._OutputFormat5Code import OutputFormat5Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ReportData7(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_Nm", "_Frqcy", "_Qlfr", "_Id", "_AddtlData", "_Tm", "_OthrFrmt", "_Seq", "_TtlOcrncs", "_ConttnInd", "_Frmt"]
+	__slots__ = ["_AddtlData", "_ConttnInd", "_Dt", "_Frmt", "_Frqcy", "_Id", "_Nm", "_OthrFrmt", "_Qlfr", "_Seq", "_Tm", "_TtlOcrncs"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

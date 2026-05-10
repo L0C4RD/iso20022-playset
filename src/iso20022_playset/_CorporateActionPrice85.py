@@ -3,7 +3,7 @@ from ._PriceFormat73Choice import PriceFormat73Choice
 
 class CorporateActionPrice85(base_types._BaseFieldType):
 
-	__slots__ = ["_LastBidIncrmtPric", "_MaxPric", "_MinPric", "_FrstBidIncrmtPric"]
+	__slots__ = ["_FrstBidIncrmtPric", "_LastBidIncrmtPric", "_MaxPric", "_MinPric"]
 	@property
 	def FrstBidIncrmtPric(self):
 		return self._FrstBidIncrmtPric

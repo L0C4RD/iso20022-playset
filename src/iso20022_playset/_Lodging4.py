@@ -1,31 +1,31 @@
 from . import base_types
-from ._ContactPersonal1 import ContactPersonal1
-from ._LodgingLineItem3 import LodgingLineItem3
-from ._LodgingRoom2 import LodgingRoom2
 from ._AdditionalData1 import AdditionalData1
 from ._Address2 import Address2
-from ._LodgingActivity1Code import LodgingActivity1Code
-from ._Location6 import Location6
+from ._AuthorisedAmount2 import AuthorisedAmount2
+from ._CompanyAssigner2Code import CompanyAssigner2Code
 from ._ContactBusiness1 import ContactBusiness1
-from ._Max4NumericText import Max4NumericText
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._ContactPersonal1 import ContactPersonal1
 from ._Credentials3 import Credentials3
 from ._DepartureOrArrival1 import DepartureOrArrival1
-from ._PartyIdentification285 import PartyIdentification285
 from ._DepartureOrArrival2 import DepartureOrArrival2
-from ._Max2NumericText import Max2NumericText
 from ._ISOMax3ACountryCode import ISOMax3ACountryCode
-from ._AuthorisedAmount2 import AuthorisedAmount2
-from ._LoyaltyProgramme4 import LoyaltyProgramme4
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._CompanyAssigner2Code import CompanyAssigner2Code
+from ._Location6 import Location6
+from ._LodgingActivity1Code import LodgingActivity1Code
+from ._LodgingLineItem3 import LodgingLineItem3
+from ._LodgingRoom2 import LodgingRoom2
+from ._LoyaltyProgramme4 import LoyaltyProgramme4
+from ._Max2NumericText import Max2NumericText
+from ._Max35Text import Max35Text
+from ._Max4NumericText import Max4NumericText
+from ._Max70Text import Max70Text
+from ._PartyIdentification285 import PartyIdentification285
 from ._Tax41 import Tax41
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Lodging4(base_types._BaseFieldType):
 
-	__slots__ = ["_PrprtyCtry", "_PrprtyTp", "_PrprtyCtct", "_AuthrsdAmt", "_PrprtyOthrTp", "_Room", "_Dprture", "_PrprtyId", "_PrprtyAssgnr", "_CstmrCtct", "_NoShow", "_InsrncAmt", "_Insrnc", "_FolioNb", "_CstmrNm", "_CstmrAge", "_CstmrAdr", "_Arrvl", "_AddtlData", "_NbOfRooms", "_TtlAmt", "_PrstgsPrprty", "_Drtn", "_LineItm", "_PrprtyNm", "_TtlTax", "_PrprtyLctn", "_CstmrId", "_LltyPrgrmm", "_CstmrFileRefNb", "_PrprtyFireSftyAct", "_SummryCmmdtyId"]
+	__slots__ = ["_AddtlData", "_Arrvl", "_AuthrsdAmt", "_CstmrAdr", "_CstmrAge", "_CstmrCtct", "_CstmrFileRefNb", "_CstmrId", "_CstmrNm", "_Dprture", "_Drtn", "_FolioNb", "_Insrnc", "_InsrncAmt", "_LineItm", "_LltyPrgrmm", "_NbOfRooms", "_NoShow", "_PrprtyAssgnr", "_PrprtyCtct", "_PrprtyCtry", "_PrprtyFireSftyAct", "_PrprtyId", "_PrprtyLctn", "_PrprtyNm", "_PrprtyOthrTp", "_PrprtyTp", "_PrstgsPrprty", "_Room", "_SummryCmmdtyId", "_TtlAmt", "_TtlTax"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

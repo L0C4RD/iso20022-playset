@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
 from ._OtherIdentification3 import OtherIdentification3
+from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
 
 class SecurityIdentification32(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrId", "_ISIN", "_Desc"]
+	__slots__ = ["_Desc", "_ISIN", "_OthrId"]
 	@property
 	def Desc(self):
 		return self._Desc

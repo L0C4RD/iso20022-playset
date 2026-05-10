@@ -4,7 +4,7 @@ from ._SecuritiesBalanceType6Choice import SecuritiesBalanceType6Choice
 
 class SecuritiesSubBalanceTypeAndQuantityBreakdown5(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_QtyBrkdwn"]
+	__slots__ = ["_QtyBrkdwn", "_Tp"]
 	@property
 	def QtyBrkdwn(self):
 		return self._QtyBrkdwn

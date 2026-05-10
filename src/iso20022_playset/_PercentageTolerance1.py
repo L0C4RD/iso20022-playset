@@ -3,7 +3,7 @@ from ._PercentageRate import PercentageRate
 
 class PercentageTolerance1(base_types._BaseFieldType):
 
-	__slots__ = ["_PlusPct", "_MnsPct"]
+	__slots__ = ["_MnsPct", "_PlusPct"]
 	@property
 	def MnsPct(self):
 		return self._MnsPct

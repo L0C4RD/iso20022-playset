@@ -4,7 +4,7 @@ from ._PartyIdentification25 import PartyIdentification25
 
 class PartyIdentificationAndAccount6(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyId", "_FincgAcct", "_CdtAcct"]
+	__slots__ = ["_CdtAcct", "_FincgAcct", "_PtyId"]
 	@property
 	def CdtAcct(self):
 		return self._CdtAcct

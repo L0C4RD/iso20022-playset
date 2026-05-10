@@ -5,7 +5,7 @@ from ._TradeTransactionIdentification24 import TradeTransactionIdentification24
 
 class MissingValuationsTransactionData2(base_types._BaseFieldType):
 
-	__slots__ = ["_ValtnAmt", "_ValtnTmStmp", "_TxId"]
+	__slots__ = ["_TxId", "_ValtnAmt", "_ValtnTmStmp"]
 	@property
 	def TxId(self):
 		return self._TxId

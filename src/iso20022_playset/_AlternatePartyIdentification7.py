@@ -1,11 +1,11 @@
 from . import base_types
-from ._IdentificationType42Choice import IdentificationType42Choice
 from ._CountryCode import CountryCode
+from ._IdentificationType42Choice import IdentificationType42Choice
 from ._Max35Text import Max35Text
 
 class AlternatePartyIdentification7(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_AltrnId", "_IdTp"]
+	__slots__ = ["_AltrnId", "_Ctry", "_IdTp"]
 	@property
 	def AltrnId(self):
 		return self._AltrnId

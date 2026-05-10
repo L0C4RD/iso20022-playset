@@ -1,13 +1,13 @@
 from . import base_types
 from ._CardPaymentTransactionDetails53 import CardPaymentTransactionDetails53
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class CardPaymentTransaction137(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRefId", "_MrchntRefData", "_RcptTxId", "_TxDtls", "_IntrchngData", "_InitrTxId", "_RcncltnId", "_TxId"]
+	__slots__ = ["_InitrTxId", "_IntrchngData", "_MrchntRefData", "_RcncltnId", "_RcptTxId", "_SaleRefId", "_TxDtls", "_TxId"]
 	@property
 	def InitrTxId(self):
 		return self._InitrTxId

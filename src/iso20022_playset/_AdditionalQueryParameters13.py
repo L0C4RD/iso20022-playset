@@ -1,11 +1,11 @@
 from . import base_types
-from ._Status19Choice import Status19Choice
 from ._Reason19Choice import Reason19Choice
 from ._SecurityIdentification19 import SecurityIdentification19
+from ._Status19Choice import Status19Choice
 
 class AdditionalQueryParameters13(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_Sts", "_Rsn"]
+	__slots__ = ["_FinInstrmId", "_Rsn", "_Sts"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId

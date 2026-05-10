@@ -1,12 +1,12 @@
 from . import base_types
+from ._LoyaltyAccountRequest3 import LoyaltyAccountRequest3
 from ._PaymentAccountRequest1 import PaymentAccountRequest1
 from ._StoredValueRequest8 import StoredValueRequest8
 from ._TransactionIdentifier1 import TransactionIdentifier1
-from ._LoyaltyAccountRequest3 import LoyaltyAccountRequest3
 
 class BalanceInquiryRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtAcctReq", "_LltyAcctReq", "_StordValAcctReq", "_SaleTxId"]
+	__slots__ = ["_LltyAcctReq", "_PmtAcctReq", "_SaleTxId", "_StordValAcctReq"]
 	@property
 	def LltyAcctReq(self):
 		return self._LltyAcctReq

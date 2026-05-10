@@ -1,10 +1,10 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._GenericIdentification175 import GenericIdentification175
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class NonFinancialInstitutionSector10(base_types._BaseFieldType):
 
-	__slots__ = ["_FdrlInstn", "_ClrThrshld", "_DrctlyLkdActvty", "_Sctr"]
+	__slots__ = ["_ClrThrshld", "_DrctlyLkdActvty", "_FdrlInstn", "_Sctr"]
 	@property
 	def ClrThrshld(self):
 		return self._ClrThrshld

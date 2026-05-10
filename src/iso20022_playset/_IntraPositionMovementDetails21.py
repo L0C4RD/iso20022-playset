@@ -1,18 +1,18 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._AmountAndDirection44 import AmountAndDirection44
-from ._References72Choice import References72Choice
-from ._GenericIdentification37 import GenericIdentification37
+from ._CorporateActionEventType110Choice import CorporateActionEventType110Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._CorporateActionEventType110Choice import CorporateActionEventType110Choice
-from ._Max350Text import Max350Text
+from ._GenericIdentification37 import GenericIdentification37
 from ._ISODateTime import ISODateTime
+from ._Max350Text import Max350Text
+from ._References72Choice import References72Choice
 from ._SecuritiesBalanceType6Choice import SecuritiesBalanceType6Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class IntraPositionMovementDetails21(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnEvtTp", "_RmngToBeSttldQty", "_AvlblDt", "_BalTo", "_PrevslySttldQty", "_SttlmDt", "_CollMntrAmt", "_SplmtryData", "_SctiesSubBalId", "_SttldQty", "_InstrPrcgAddtlDtls", "_AckdStsTmStmp", "_Id"]
+	__slots__ = ["_AckdStsTmStmp", "_AvlblDt", "_BalTo", "_CollMntrAmt", "_CorpActnEvtTp", "_Id", "_InstrPrcgAddtlDtls", "_PrevslySttldQty", "_RmngToBeSttldQty", "_SctiesSubBalId", "_SplmtryData", "_SttldQty", "_SttlmDt"]
 	@property
 	def AckdStsTmStmp(self):
 		return self._AckdStsTmStmp

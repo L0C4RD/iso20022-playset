@@ -1,12 +1,12 @@
 from . import base_types
-from ._SecuritiesCertificate4 import SecuritiesCertificate4
+from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
 from ._Max210Text import Max210Text
 from ._QuantityBreakdown62 import QuantityBreakdown62
-from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
+from ._SecuritiesCertificate4 import SecuritiesCertificate4
 
 class Quantity48(base_types._BaseFieldType):
 
-	__slots__ = ["_CertNb", "_QtyBrkdwn", "_DnmtnChc", "_SttlmQty"]
+	__slots__ = ["_CertNb", "_DnmtnChc", "_QtyBrkdwn", "_SttlmQty"]
 	@property
 	def CertNb(self):
 		return self._CertNb

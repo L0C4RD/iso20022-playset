@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max20Text import Max20Text
 from ._AdditionalData1 import AdditionalData1
+from ._Max20Text import Max20Text
 
 class PlainCardData23(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AddtlData"]
+	__slots__ = ["_AddtlData", "_Id"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

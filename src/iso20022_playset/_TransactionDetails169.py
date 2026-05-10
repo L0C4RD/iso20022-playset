@@ -1,27 +1,27 @@
 from . import base_types
-from ._TradeDate8Choice import TradeDate8Choice
-from ._Max3Number import Max3Number
-from ._TransactionActivity3Choice import TransactionActivity3Choice
-from ._SettlementDate17Choice import SettlementDate17Choice
 from ._AmountAndDirection21 import AmountAndDirection21
-from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._ISODateTime import ISODateTime
-from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
-from ._SettlementDetails190 import SettlementDetails190
 from ._AmountAndDirection3 import AmountAndDirection3
-from ._SettlementParties125 import SettlementParties125
-from ._YesNoIndicator import YesNoIndicator
-from ._SettlementOrCorporateActionEvent35Choice import SettlementOrCorporateActionEvent35Choice
-from ._Quantity51Choice import Quantity51Choice
-from ._SafeKeepingPlace5 import SafeKeepingPlace5
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max350Text import Max350Text
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._ISODateTime import ISODateTime
+from ._Max350Text import Max350Text
+from ._Max3Number import Max3Number
+from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
+from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
+from ._Quantity51Choice import Quantity51Choice
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._SafeKeepingPlace5 import SafeKeepingPlace5
+from ._SettlementDate17Choice import SettlementDate17Choice
+from ._SettlementDetails190 import SettlementDetails190
+from ._SettlementOrCorporateActionEvent35Choice import SettlementOrCorporateActionEvent35Choice
+from ._SettlementParties125 import SettlementParties125
+from ._TradeDate8Choice import TradeDate8Choice
+from ._TransactionActivity3Choice import TransactionActivity3Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class TransactionDetails169(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmParams", "_SfkpgPlc", "_MtchdStsTmStmp", "_DlvrgSttlmPties", "_NbOfDaysAcrd", "_TxAddtlDtls", "_AcrdIntrstAmt", "_FctvSttlmDt", "_PstngAmt", "_SctiesMvmntTp", "_PlcOfTrad", "_TxActvty", "_Pmt", "_TradDt", "_RvslInd", "_SttlmTxOrCorpActnEvtTp", "_ValDt", "_PstngQty", "_PlcOfClr", "_RcvgSttlmPties", "_SttlmDt", "_AckdStsTmStmp"]
+	__slots__ = ["_AckdStsTmStmp", "_AcrdIntrstAmt", "_DlvrgSttlmPties", "_FctvSttlmDt", "_MtchdStsTmStmp", "_NbOfDaysAcrd", "_PlcOfClr", "_PlcOfTrad", "_Pmt", "_PstngAmt", "_PstngQty", "_RcvgSttlmPties", "_RvslInd", "_SctiesMvmntTp", "_SfkpgPlc", "_SttlmDt", "_SttlmParams", "_SttlmTxOrCorpActnEvtTp", "_TradDt", "_TxActvty", "_TxAddtlDtls", "_ValDt"]
 	@property
 	def AckdStsTmStmp(self):
 		return self._AckdStsTmStmp

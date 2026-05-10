@@ -4,7 +4,7 @@ from ._Position1 import Position1
 
 class PositionAccount2(base_types._BaseFieldType):
 
-	__slots__ = ["_Pos", "_Id"]
+	__slots__ = ["_Id", "_Pos"]
 	@property
 	def Id(self):
 		return self._Id

@@ -1,11 +1,11 @@
 from . import base_types
 from ._AddressType1Code import AddressType1Code
-from ._YesNoIndicator import YesNoIndicator
 from ._NameAndAddress4 import NameAndAddress4
+from ._YesNoIndicator import YesNoIndicator
 
 class PostalAddress3(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_RegnAdrInd", "_MlngInd", "_AdrTp"]
+	__slots__ = ["_AdrTp", "_MlngInd", "_NmAndAdr", "_RegnAdrInd"]
 	@property
 	def AdrTp(self):
 		return self._AdrTp

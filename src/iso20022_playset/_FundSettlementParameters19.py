@@ -1,16 +1,16 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._SafekeepingPlaceFormat40Choice import SafekeepingPlaceFormat40Choice
 from ._DeliveringPartiesAndAccount20 import DeliveringPartiesAndAccount20
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
 from ._PartyIdentification139 import PartyIdentification139
 from ._ReceivingPartiesAndAccount20 import ReceivingPartiesAndAccount20
-from ._TradeTransactionCondition8Choice import TradeTransactionCondition8Choice
-from ._Max35Text import Max35Text
+from ._SafekeepingPlaceFormat40Choice import SafekeepingPlaceFormat40Choice
 from ._SettlementTransactionCondition30Choice import SettlementTransactionCondition30Choice
+from ._TradeTransactionCondition8Choice import TradeTransactionCondition8Choice
 
 class FundSettlementParameters19(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvrgSdDtls", "_SctiesSttlmSysId", "_SttlmPlc", "_SfkpgPlc", "_SttlmTxCond", "_TradTxCond", "_RcvgSdDtls", "_SttlmDt"]
+	__slots__ = ["_DlvrgSdDtls", "_RcvgSdDtls", "_SctiesSttlmSysId", "_SfkpgPlc", "_SttlmDt", "_SttlmPlc", "_SttlmTxCond", "_TradTxCond"]
 	@property
 	def DlvrgSdDtls(self):
 		return self._DlvrgSdDtls

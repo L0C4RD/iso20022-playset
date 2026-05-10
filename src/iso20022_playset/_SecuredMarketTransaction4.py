@@ -1,23 +1,23 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._LEIIdentifier import LEIIdentifier
-from ._SupplementaryData1 import SupplementaryData1
-from ._FloatingRateNote2 import FloatingRateNote2
-from ._NovationStatus1Code import NovationStatus1Code
-from ._TransactionOperationType1Code import TransactionOperationType1Code
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CounterpartyIdentification3Choice import CounterpartyIdentification3Choice
 from ._BrokeredDeal1Code import BrokeredDeal1Code
-from ._InterestRateType1Code import InterestRateType1Code
-from ._Max105Text import Max105Text
-from ._PercentageRate import PercentageRate
-from ._MoneyMarketTransactionType1Code import MoneyMarketTransactionType1Code
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
 from ._Collateral18 import Collateral18
+from ._CounterpartyIdentification3Choice import CounterpartyIdentification3Choice
+from ._DateAndDateTimeChoice import DateAndDateTimeChoice
+from ._FloatingRateNote2 import FloatingRateNote2
+from ._ISODate import ISODate
+from ._InterestRateType1Code import InterestRateType1Code
+from ._LEIIdentifier import LEIIdentifier
+from ._Max105Text import Max105Text
+from ._MoneyMarketTransactionType1Code import MoneyMarketTransactionType1Code
+from ._NovationStatus1Code import NovationStatus1Code
+from ._PercentageRate import PercentageRate
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionOperationType1Code import TransactionOperationType1Code
 
 class SecuredMarketTransaction4(base_types._BaseFieldType):
 
-	__slots__ = ["_Coll", "_NvtnSts", "_MtrtyDt", "_BrnchId", "_DealRate", "_UnqTxIdr", "_RateTp", "_BrkrdDeal", "_FltgRateRpAgrmt", "_RptdTxSts", "_TxTp", "_CtrPtyId", "_SttlmDt", "_TrptyAgtId", "_TradDt", "_CtrPtyPrtryTxId", "_RltdPrtryTxId", "_SplmtryData", "_TxNmnlAmt", "_PrtryTxId"]
+	__slots__ = ["_BrkrdDeal", "_BrnchId", "_Coll", "_CtrPtyId", "_CtrPtyPrtryTxId", "_DealRate", "_FltgRateRpAgrmt", "_MtrtyDt", "_NvtnSts", "_PrtryTxId", "_RateTp", "_RltdPrtryTxId", "_RptdTxSts", "_SplmtryData", "_SttlmDt", "_TradDt", "_TrptyAgtId", "_TxNmnlAmt", "_TxTp", "_UnqTxIdr"]
 	@property
 	def BrkrdDeal(self):
 		return self._BrkrdDeal

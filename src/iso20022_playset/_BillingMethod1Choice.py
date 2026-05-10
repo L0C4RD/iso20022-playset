@@ -1,11 +1,11 @@
 from . import base_types
-from ._BillingMethod3 import BillingMethod3
 from ._BillingMethod1 import BillingMethod1
 from ._BillingMethod2 import BillingMethod2
+from ._BillingMethod3 import BillingMethod3
 
 class BillingMethod1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MtdB", "_MtdA", "_MtdD"]
+	__slots__ = ["_MtdA", "_MtdB", "_MtdD"]
 	@property
 	def MtdA(self):
 		return self._MtdA

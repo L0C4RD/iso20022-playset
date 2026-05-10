@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISOMax3ACountryCode import ISOMax3ACountryCode
-from ._Max50Text import Max50Text
 from ._ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
+from ._ISOMax3ACountryCode import ISOMax3ACountryCode
 from ._Max16Text import Max16Text
+from ._Max50Text import Max50Text
 from ._Max99Text import Max99Text
 
 class Address2(base_types._BaseFieldType):
 
-	__slots__ = ["_StrtNm", "_AdrLine2", "_CtrySubDvsnMjr", "_CtrySubDvsnMjrNm", "_AdrLine1", "_CtrySubDvsnMnrNm", "_PstlCd", "_BldgNb", "_Ctry", "_CtrySubDvsnMnr", "_TwnNm"]
+	__slots__ = ["_AdrLine1", "_AdrLine2", "_BldgNb", "_Ctry", "_CtrySubDvsnMjr", "_CtrySubDvsnMjrNm", "_CtrySubDvsnMnr", "_CtrySubDvsnMnrNm", "_PstlCd", "_StrtNm", "_TwnNm"]
 	@property
 	def AdrLine1(self):
 		return self._AdrLine1

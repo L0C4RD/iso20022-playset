@@ -1,11 +1,11 @@
 from . import base_types
-from ._PartyType3Code import PartyType3Code
 from ._Max35Text import Max35Text
+from ._PartyType3Code import PartyType3Code
 from ._PartyType4Code import PartyType4Code
 
 class GenericIdentification32(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtNm", "_Id", "_Issr", "_Tp"]
+	__slots__ = ["_Id", "_Issr", "_ShrtNm", "_Tp"]
 	@property
 	def Id(self):
 		return self._Id

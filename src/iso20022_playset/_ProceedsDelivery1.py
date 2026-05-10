@@ -1,11 +1,11 @@
 from . import base_types
+from ._CashAccountIdentification1Choice import CashAccountIdentification1Choice
 from ._Max35Text import Max35Text
 from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._CashAccountIdentification1Choice import CashAccountIdentification1Choice
 
 class ProceedsDelivery1(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrId", "_CshAcctId", "_AcctSvcrId", "_SctiesAcctId"]
+	__slots__ = ["_AcctOwnrId", "_AcctSvcrId", "_CshAcctId", "_SctiesAcctId"]
 	@property
 	def AcctOwnrId(self):
 		return self._AcctOwnrId

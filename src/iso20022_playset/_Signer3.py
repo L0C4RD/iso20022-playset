@@ -1,13 +1,13 @@
 from . import base_types
 from ._AlgorithmIdentification16 import AlgorithmIdentification16
-from ._Recipient5Choice import Recipient5Choice
 from ._AlgorithmIdentification17 import AlgorithmIdentification17
 from ._Max3000Binary import Max3000Binary
 from ._Number import Number
+from ._Recipient5Choice import Recipient5Choice
 
 class Signer3(base_types._BaseFieldType):
 
-	__slots__ = ["_SgnrId", "_SgntrAlgo", "_DgstAlgo", "_Vrsn", "_Sgntr"]
+	__slots__ = ["_DgstAlgo", "_SgnrId", "_Sgntr", "_SgntrAlgo", "_Vrsn"]
 	@property
 	def DgstAlgo(self):
 		return self._DgstAlgo

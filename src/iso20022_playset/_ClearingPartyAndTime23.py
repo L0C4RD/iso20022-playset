@@ -1,11 +1,11 @@
 from . import base_types
-from ._UniqueTransactionIdentifier1Choice import UniqueTransactionIdentifier1Choice
 from ._ISODateTime import ISODateTime
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._UniqueTransactionIdentifier1Choice import UniqueTransactionIdentifier1Choice
 
 class ClearingPartyAndTime23(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlIdr", "_ClrDtTm", "_OrgnlTradRpstryIdr", "_CCP", "_ClrRctDtTm", "_ClrIdr"]
+	__slots__ = ["_CCP", "_ClrDtTm", "_ClrIdr", "_ClrRctDtTm", "_OrgnlIdr", "_OrgnlTradRpstryIdr"]
 	@property
 	def CCP(self):
 		return self._CCP

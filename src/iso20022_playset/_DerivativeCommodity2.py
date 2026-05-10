@@ -1,11 +1,11 @@
 from . import base_types
+from ._AssetClassCommodity3Choice import AssetClassCommodity3Choice
 from ._AssetClassTransactionType1Code import AssetClassTransactionType1Code
 from ._AssetPriceType1Code import AssetPriceType1Code
-from ._AssetClassCommodity3Choice import AssetClassCommodity3Choice
 
 class DerivativeCommodity2(base_types._BaseFieldType):
 
-	__slots__ = ["_Pdct", "_FnlPricTp", "_TxTp"]
+	__slots__ = ["_FnlPricTp", "_Pdct", "_TxTp"]
 	@property
 	def FnlPricTp(self):
 		return self._FnlPricTp

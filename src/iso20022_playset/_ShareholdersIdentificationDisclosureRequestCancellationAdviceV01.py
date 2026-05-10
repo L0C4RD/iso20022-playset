@@ -1,12 +1,12 @@
 from . import base_types
 from ._DisclosureRequestCancellationReason1Code import DisclosureRequestCancellationReason1Code
-from ._SupplementaryData1 import SupplementaryData1
 from ._DisclosureRequestIdentification1 import DisclosureRequestIdentification1
 from ._PartyIdentification129Choice import PartyIdentification129Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class ShareholdersIdentificationDisclosureRequestCancellationAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_CxlRsn", "_SplmtryData", "_IssrDsclsrReqRef"]
+	__slots__ = ["_CxlRsn", "_Issr", "_IssrDsclsrReqRef", "_SplmtryData"]
 	@property
 	def CxlRsn(self):
 		return self._CxlRsn

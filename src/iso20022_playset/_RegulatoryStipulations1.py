@@ -4,7 +4,7 @@ from ._Max350Text import Max350Text
 
 class RegulatoryStipulations1(base_types._BaseFieldType):
 
-	__slots__ = ["_Stiptns", "_Ctry"]
+	__slots__ = ["_Ctry", "_Stiptns"]
 	@property
 	def Ctry(self):
 		return self._Ctry

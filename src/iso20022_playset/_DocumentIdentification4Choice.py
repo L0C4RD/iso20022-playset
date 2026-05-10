@@ -3,7 +3,7 @@ from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class DocumentIdentification4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcrDocId", "_AcctOwnrDocId"]
+	__slots__ = ["_AcctOwnrDocId", "_AcctSvcrDocId"]
 	@property
 	def AcctOwnrDocId(self):
 		return self._AcctOwnrDocId

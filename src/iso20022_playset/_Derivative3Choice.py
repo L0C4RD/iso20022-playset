@@ -1,15 +1,15 @@
 from . import base_types
 from ._CommodityDerivative4 import CommodityDerivative4
-from ._EquityDerivative2 import EquityDerivative2
-from ._InterestRateDerivative5 import InterestRateDerivative5
-from ._ForeignExchangeDerivative2 import ForeignExchangeDerivative2
 from ._ContractForDifference2 import ContractForDifference2
-from ._EmissionAllowanceProductType1Code import EmissionAllowanceProductType1Code
 from ._CreditDefaultSwapsDerivative4Choice import CreditDefaultSwapsDerivative4Choice
+from ._EmissionAllowanceProductType1Code import EmissionAllowanceProductType1Code
+from ._EquityDerivative2 import EquityDerivative2
+from ._ForeignExchangeDerivative2 import ForeignExchangeDerivative2
+from ._InterestRateDerivative5 import InterestRateDerivative5
 
 class Derivative3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_EmssnAllwnc", "_CtrctForDiff", "_Eqty", "_Cmmdty", "_Cdt", "_IntrstRate", "_FX"]
+	__slots__ = ["_Cdt", "_Cmmdty", "_CtrctForDiff", "_EmssnAllwnc", "_Eqty", "_FX", "_IntrstRate"]
 	@property
 	def Cdt(self):
 		return self._Cdt

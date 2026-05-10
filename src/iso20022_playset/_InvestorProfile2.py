@@ -1,13 +1,13 @@
 from . import base_types
-from ._TreasuryProfile1 import TreasuryProfile1
 from ._HighFrequencyTradingProfile1 import HighFrequencyTradingProfile1
-from ._ProfileType1Choice import ProfileType1Choice
 from ._InvestorProfileStatus1Choice import InvestorProfileStatus1Choice
 from ._MarketMakerProfile2 import MarketMakerProfile2
+from ._ProfileType1Choice import ProfileType1Choice
+from ._TreasuryProfile1 import TreasuryProfile1
 
 class InvestorProfile2(base_types._BaseFieldType):
 
-	__slots__ = ["_HghFrqcyTradg", "_Sts", "_Tp", "_MktMakr", "_Trsr"]
+	__slots__ = ["_HghFrqcyTradg", "_MktMakr", "_Sts", "_Tp", "_Trsr"]
 	@property
 	def HghFrqcyTradg(self):
 		return self._HghFrqcyTradg

@@ -1,6 +1,6 @@
 from . import base_types
-from ._TransactionStatus1Choice import TransactionStatus1Choice
 from ._StatusReasonInformation12 import StatusReasonInformation12
+from ._TransactionStatus1Choice import TransactionStatus1Choice
 
 class PaymentTransactionStatus1(base_types._BaseFieldType):
 

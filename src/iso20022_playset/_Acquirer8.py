@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class Acquirer8(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_ApplVrsn"]
+	__slots__ = ["_ApplVrsn", "_Id"]
 	@property
 	def ApplVrsn(self):
 		return self._ApplVrsn

@@ -1,18 +1,18 @@
 from . import base_types
-from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._SecuritiesAccount30 import SecuritiesAccount30
-from ._ClassificationType33Choice import ClassificationType33Choice
 from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._PartyIdentificationAndAccount215 import PartyIdentificationAndAccount215
+from ._ClassificationType33Choice import ClassificationType33Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
 from ._PartyIdentification157 import PartyIdentification157
+from ._PartyIdentificationAndAccount215 import PartyIdentificationAndAccount215
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._SecuritiesAccount30 import SecuritiesAccount30
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._YesNoIndicator import YesNoIndicator
 
 class AdditionalInformation28(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrTxId", "_BlckChainAdrOrWllt", "_TxSbjtToBuyIn", "_SfkpgAcct", "_Invstr", "_CutOffDt", "_ClssfctnTp", "_FinInstrmId", "_Qty", "_XpryDt", "_DlvrgPty1", "_FctvDt", "_RcvgPty1"]
+	__slots__ = ["_AcctOwnrTxId", "_BlckChainAdrOrWllt", "_ClssfctnTp", "_CutOffDt", "_DlvrgPty1", "_FctvDt", "_FinInstrmId", "_Invstr", "_Qty", "_RcvgPty1", "_SfkpgAcct", "_TxSbjtToBuyIn", "_XpryDt"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

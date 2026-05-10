@@ -4,7 +4,7 @@ from ._OrganisationIdentification39 import OrganisationIdentification39
 
 class Organisation44(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgId", "_FullLglNm"]
+	__slots__ = ["_FullLglNm", "_OrgId"]
 	@property
 	def FullLglNm(self):
 		return self._FullLglNm

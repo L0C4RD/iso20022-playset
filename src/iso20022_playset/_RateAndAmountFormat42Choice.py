@@ -4,7 +4,7 @@ from ._RateValueType7Code import RateValueType7Code
 
 class RateAndAmountFormat42Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotSpcfdRate", "_Amt"]
+	__slots__ = ["_Amt", "_NotSpcfdRate"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -1,12 +1,12 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._EqualisationMethodologyType1Code import EqualisationMethodologyType1Code
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._EqualisationMethodologyType1Code import EqualisationMethodologyType1Code
+from ._PercentageRate import PercentageRate
 
 class Equalisation4(base_types._BaseFieldType):
 
-	__slots__ = ["_CntngntLqdtnPerUnit", "_GrssAsstVal", "_HghWtrmrk", "_DprctnDpstPerUnit", "_Rate", "_EqulstnCdtPerUnit", "_Amt", "_EqulstnMthdlgyTp"]
+	__slots__ = ["_Amt", "_CntngntLqdtnPerUnit", "_DprctnDpstPerUnit", "_EqulstnCdtPerUnit", "_EqulstnMthdlgyTp", "_GrssAsstVal", "_HghWtrmrk", "_Rate"]
 	@property
 	def Amt(self):
 		return self._Amt

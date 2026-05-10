@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._AttendanceContext1Code import AttendanceContext1Code
-from ._CardholderAuthentication2 import CardholderAuthentication2
-from ._TransactionEnvironment1Code import TransactionEnvironment1Code
-from ._ISO2ALanguageCode import ISO2ALanguageCode
 from ._CardDataReading1Code import CardDataReading1Code
+from ._CardholderAuthentication2 import CardholderAuthentication2
+from ._ISO2ALanguageCode import ISO2ALanguageCode
 from ._TransactionChannel1Code import TransactionChannel1Code
+from ._TransactionEnvironment1Code import TransactionEnvironment1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PaymentContext3(base_types._BaseFieldType):
 
-	__slots__ = ["_CardPres", "_FllbckInd", "_AuthntcnMtd", "_CardDataNtryMd", "_AttndncCntxt", "_OnLineCntxt", "_CrdhldrPres", "_TxChanl", "_AttndntMsgCpbl", "_AttndntLang", "_TxEnvt"]
+	__slots__ = ["_AttndncCntxt", "_AttndntLang", "_AttndntMsgCpbl", "_AuthntcnMtd", "_CardDataNtryMd", "_CardPres", "_CrdhldrPres", "_FllbckInd", "_OnLineCntxt", "_TxChanl", "_TxEnvt"]
 	@property
 	def AttndncCntxt(self):
 		return self._AttndncCntxt

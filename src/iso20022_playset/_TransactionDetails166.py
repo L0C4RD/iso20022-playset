@@ -1,30 +1,30 @@
 from . import base_types
+from ._AmountAndDirection51 import AmountAndDirection51
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._ISODateTime import ISODateTime
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification136 import PartyIdentification136
+from ._PartyIdentification144 import PartyIdentification144
+from ._PartyIdentification149 import PartyIdentification149
+from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
+from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
+from ._Quantity51Choice import Quantity51Choice
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._SafeKeepingPlace5 import SafeKeepingPlace5
 from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._TradeDate8Choice import TradeDate8Choice
-from ._UTIIdentifier import UTIIdentifier
-from ._SettlementDetails216 import SettlementDetails216
 from ._SecurityIdentification19 import SecurityIdentification19
 from ._SettlementDate19Choice import SettlementDate19Choice
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._AmountAndDirection51 import AmountAndDirection51
-from ._PartyIdentification144 import PartyIdentification144
-from ._ISODateTime import ISODateTime
-from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
+from ._SettlementDetails216 import SettlementDetails216
 from ._SettlementParties125 import SettlementParties125
-from ._PartyIdentification149 import PartyIdentification149
-from ._Quantity51Choice import Quantity51Choice
-from ._PartyIdentification136 import PartyIdentification136
-from ._Max35Text import Max35Text
-from ._SafeKeepingPlace5 import SafeKeepingPlace5
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max350Text import Max350Text
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._TradeDate8Choice import TradeDate8Choice
+from ._UTIIdentifier import UTIIdentifier
 
 class TransactionDetails166(base_types._BaseFieldType):
 
-	__slots__ = ["_Invstr", "_FinInstrmId", "_TrptyAgtSvcPrvdrCollInstrId", "_SfkpgPlc", "_QlfdFrgnIntrmy", "_SttlmParams", "_SttlmDt", "_LateDlvryDt", "_AcctOwnr", "_ClntTrptyCollTxId", "_SfkpgAcct", "_SttlmAmt", "_XpctdSttlmDt", "_Pmt", "_TrptyAgtSvcPrvdrCollTxId", "_NonceId", "_ClntCollInstrId", "_SttlmInstrPrcgAddtlDtls", "_PlcOfClr", "_RcvgSttlmPties", "_CorpActnEvtId", "_XpctdValDt", "_MtchdStsTmStmp", "_BlckChainAdrOrWllt", "_DlvrgSttlmPties", "_UnqTxIdr", "_SttlmQty", "_PoolId", "_SctiesMvmntTp", "_PlcOfTrad", "_TradId", "_TradDt", "_PrtlyRlsdQty", "_AckdStsTmStmp"]
+	__slots__ = ["_AcctOwnr", "_AckdStsTmStmp", "_BlckChainAdrOrWllt", "_ClntCollInstrId", "_ClntTrptyCollTxId", "_CorpActnEvtId", "_DlvrgSttlmPties", "_FinInstrmId", "_Invstr", "_LateDlvryDt", "_MtchdStsTmStmp", "_NonceId", "_PlcOfClr", "_PlcOfTrad", "_Pmt", "_PoolId", "_PrtlyRlsdQty", "_QlfdFrgnIntrmy", "_RcvgSttlmPties", "_SctiesMvmntTp", "_SfkpgAcct", "_SfkpgPlc", "_SttlmAmt", "_SttlmDt", "_SttlmInstrPrcgAddtlDtls", "_SttlmParams", "_SttlmQty", "_TradDt", "_TradId", "_TrptyAgtSvcPrvdrCollInstrId", "_TrptyAgtSvcPrvdrCollTxId", "_UnqTxIdr", "_XpctdSttlmDt", "_XpctdValDt"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

@@ -1,12 +1,12 @@
 from . import base_types
-from ._CorporateActionSecuritiesMovement1 import CorporateActionSecuritiesMovement1
 from ._CashMovement3 import CashMovement3
 from ._CorporateActionInformation1 import CorporateActionInformation1
+from ._CorporateActionSecuritiesMovement1 import CorporateActionSecuritiesMovement1
 from ._DocumentIdentification8 import DocumentIdentification8
 
 class AgentCAMovementConfirmationV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CshMvmntDtls", "_Id", "_SctiesMvmntDtls", "_AgtCAGblDstrbtnStsAdvcId", "_AgtCAMvmntInstrId", "_AgtCAElctnStsAdvcId", "_CorpActnGnlInf"]
+	__slots__ = ["_AgtCAElctnStsAdvcId", "_AgtCAGblDstrbtnStsAdvcId", "_AgtCAMvmntInstrId", "_CorpActnGnlInf", "_CshMvmntDtls", "_Id", "_SctiesMvmntDtls"]
 	@property
 	def AgtCAElctnStsAdvcId(self):
 		return self._AgtCAElctnStsAdvcId

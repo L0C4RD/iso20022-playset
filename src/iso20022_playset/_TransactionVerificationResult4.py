@@ -1,12 +1,12 @@
 from . import base_types
-from ._Verification1Code import Verification1Code
 from ._AuthenticationEntity2Code import AuthenticationEntity2Code
 from ._AuthenticationMethod6Code import AuthenticationMethod6Code
 from ._Max500Text import Max500Text
+from ._Verification1Code import Verification1Code
 
 class TransactionVerificationResult4(base_types._BaseFieldType):
 
-	__slots__ = ["_Rslt", "_VrfctnNtty", "_AddtlRslt", "_Mtd"]
+	__slots__ = ["_AddtlRslt", "_Mtd", "_Rslt", "_VrfctnNtty"]
 	@property
 	def AddtlRslt(self):
 		return self._AddtlRslt

@@ -1,10 +1,10 @@
 from . import base_types
-from ._DateTimePeriod1Choice import DateTimePeriod1Choice
 from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
+from ._DateTimePeriod1Choice import DateTimePeriod1Choice
 
 class DateAndDateTimeSearch3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DtTmSch", "_DtSch"]
+	__slots__ = ["_DtSch", "_DtTmSch"]
 	@property
 	def DtSch(self):
 		return self._DtSch

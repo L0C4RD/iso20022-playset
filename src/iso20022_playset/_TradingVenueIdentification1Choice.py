@@ -1,11 +1,11 @@
 from . import base_types
-from ._TradingVenueIdentification2 import TradingVenueIdentification2
 from ._CountryCode import CountryCode
 from ._MICIdentifier import MICIdentifier
+from ._TradingVenueIdentification2 import TradingVenueIdentification2
 
 class TradingVenueIdentification1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_NtlCmptntAuthrty", "_MktIdCd"]
+	__slots__ = ["_MktIdCd", "_NtlCmptntAuthrty", "_Othr"]
 	@property
 	def MktIdCd(self):
 		return self._MktIdCd

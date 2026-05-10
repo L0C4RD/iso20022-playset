@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
 from ._ISO3NumericCountryCode import ISO3NumericCountryCode
+from ._ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
 from ._Max50Text import Max50Text
 
 class Authority1(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrySubDvsnMnrNm", "_Ctry", "_Nm", "_CtrySubDvsnMnr", "_CtrySubDvsnMjr", "_CtrySubDvsnMjrNm"]
+	__slots__ = ["_Ctry", "_CtrySubDvsnMjr", "_CtrySubDvsnMjrNm", "_CtrySubDvsnMnr", "_CtrySubDvsnMnrNm", "_Nm"]
 	@property
 	def Ctry(self):
 		return self._Ctry

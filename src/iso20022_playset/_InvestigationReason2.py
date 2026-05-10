@@ -1,15 +1,15 @@
 from . import base_types
-from ._InvestigationReason1Choice import InvestigationReason1Choice
-from ._Max3Number import Max3Number
-from ._RelatedInvestigationData1 import RelatedInvestigationData1
-from ._InvestigationReasonSubType1Choice import InvestigationReasonSubType1Choice
-from ._FileData1 import FileData1
 from ._AdditionalRequestData1Choice import AdditionalRequestData1Choice
 from ._Document12 import Document12
+from ._FileData1 import FileData1
+from ._InvestigationReason1Choice import InvestigationReason1Choice
+from ._InvestigationReasonSubType1Choice import InvestigationReasonSubType1Choice
+from ._Max3Number import Max3Number
+from ._RelatedInvestigationData1 import RelatedInvestigationData1
 
 class InvestigationReason2(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_RsnSubTp", "_Seq", "_RltdInvstgtnData", "_AddtlReqData", "_NclsdFile", "_RltdFileData"]
+	__slots__ = ["_AddtlReqData", "_NclsdFile", "_RltdFileData", "_RltdInvstgtnData", "_Rsn", "_RsnSubTp", "_Seq"]
 	@property
 	def AddtlReqData(self):
 		return self._AddtlReqData

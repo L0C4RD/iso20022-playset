@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecuritiesAccount22 import SecuritiesAccount22
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 from ._DocumentNumber20 import DocumentNumber20
 from ._PartyIdentification144 import PartyIdentification144
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._SecuritiesAccount22 import SecuritiesAccount22
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesTransactionStatusQueryV07(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_SplmtryData", "_SfkpgAcct", "_StsAdvcReqd", "_AcctOwnr"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_SplmtryData", "_StsAdvcReqd"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

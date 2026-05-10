@@ -6,7 +6,7 @@ from ._ATMTransaction36 import ATMTransaction36
 
 class ATMReconciliationAdvice3(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_CmdCntxt", "_Tx", "_CmdRslt"]
+	__slots__ = ["_CmdCntxt", "_CmdRslt", "_Envt", "_Tx"]
 	@property
 	def CmdCntxt(self):
 		return self._CmdCntxt

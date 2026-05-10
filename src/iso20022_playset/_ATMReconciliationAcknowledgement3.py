@@ -1,10 +1,10 @@
 from . import base_types
-from ._AutomatedTellerMachine3 import AutomatedTellerMachine3
 from ._ATMTransaction52 import ATMTransaction52
+from ._AutomatedTellerMachine3 import AutomatedTellerMachine3
 
 class ATMReconciliationAcknowledgement3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_ATM"]
+	__slots__ = ["_ATM", "_Tx"]
 	@property
 	def ATM(self):
 		return self._ATM

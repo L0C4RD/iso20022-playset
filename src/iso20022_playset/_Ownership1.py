@@ -1,10 +1,10 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._OwnershipType3Choice import OwnershipType3Choice
+from ._PercentageRate import PercentageRate
 
 class Ownership1(base_types._BaseFieldType):
 
-	__slots__ = ["_OwnrshTp", "_OwnrshPctg", "_UsfrctPctg"]
+	__slots__ = ["_OwnrshPctg", "_OwnrshTp", "_UsfrctPctg"]
 	@property
 	def OwnrshPctg(self):
 		return self._OwnrshPctg

@@ -1,14 +1,14 @@
 from . import base_types
-from ._Max76Text import Max76Text
 from ._CardDataReading5Code import CardDataReading5Code
-from ._Min8Max28NumericText import Min8Max28NumericText
+from ._Max104Text import Max104Text
 from ._Max35Text import Max35Text
 from ._Max37Text import Max37Text
-from ._Max104Text import Max104Text
+from ._Max76Text import Max76Text
+from ._Min8Max28NumericText import Min8Max28NumericText
 
 class PlainCardData17(base_types._BaseFieldType):
 
-	__slots__ = ["_PAN", "_NtryMd", "_Trck2", "_AddtlCardData", "_Trck3", "_Trck1"]
+	__slots__ = ["_AddtlCardData", "_NtryMd", "_PAN", "_Trck1", "_Trck2", "_Trck3"]
 	@property
 	def AddtlCardData(self):
 		return self._AddtlCardData

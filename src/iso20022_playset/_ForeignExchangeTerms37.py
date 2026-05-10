@@ -1,13 +1,13 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._PartyIdentification139 import PartyIdentification139
-from ._BaseOneRate import BaseOneRate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._BaseOneRate import BaseOneRate
 from ._ISODateTime import ISODateTime
+from ._PartyIdentification139 import PartyIdentification139
 
 class ForeignExchangeTerms37(base_types._BaseFieldType):
 
-	__slots__ = ["_FrAmt", "_QtnDt", "_ToAmt", "_XchgRate", "_QtgInstn", "_UnitCcy", "_QtdCcy"]
+	__slots__ = ["_FrAmt", "_QtdCcy", "_QtgInstn", "_QtnDt", "_ToAmt", "_UnitCcy", "_XchgRate"]
 	@property
 	def FrAmt(self):
 		return self._FrAmt

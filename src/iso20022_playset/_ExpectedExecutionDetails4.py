@@ -4,7 +4,7 @@ from ._ISODate import ISODate
 
 class ExpectedExecutionDetails4(base_types._BaseFieldType):
 
-	__slots__ = ["_XpctdTradDtTm", "_XpctdCshSttlmDt"]
+	__slots__ = ["_XpctdCshSttlmDt", "_XpctdTradDtTm"]
 	@property
 	def XpctdCshSttlmDt(self):
 		return self._XpctdCshSttlmDt

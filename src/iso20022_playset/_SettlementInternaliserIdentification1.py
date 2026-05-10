@@ -1,12 +1,12 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._Exact2UpperCaseAlphaText import Exact2UpperCaseAlphaText
-from ._CountryCode import CountryCode
 from ._ContactDetails4 import ContactDetails4
+from ._CountryCode import CountryCode
+from ._Exact2UpperCaseAlphaText import Exact2UpperCaseAlphaText
+from ._LEIIdentifier import LEIIdentifier
 
 class SettlementInternaliserIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_BrnchId", "_LEI", "_RspnsblPrsn"]
+	__slots__ = ["_BrnchId", "_Ctry", "_LEI", "_RspnsblPrsn"]
 	@property
 	def BrnchId(self):
 		return self._BrnchId

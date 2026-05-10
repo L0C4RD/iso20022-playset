@@ -1,18 +1,18 @@
 from . import base_types
-from ._ContactPersonal1 import ContactPersonal1
-from ._OutputFormat4Code import OutputFormat4Code
-from ._AdditionalData1 import AdditionalData1
-from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
 from ._ActionDestination1Code import ActionDestination1Code
-from ._PartyType34Code import PartyType34Code
+from ._ActionType14Code import ActionType14Code
+from ._AdditionalData1 import AdditionalData1
+from ._ContactPersonal1 import ContactPersonal1
+from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
 from ._Max140Binary import Max140Binary
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
-from ._ActionType14Code import ActionType14Code
+from ._OutputFormat4Code import OutputFormat4Code
+from ._PartyType34Code import PartyType34Code
 
 class Action16(base_types._BaseFieldType):
 
-	__slots__ = ["_DstnTp", "_Lang", "_OthrTp", "_Ctct", "_OthrFrmt", "_OthrDstnTp", "_Frmt", "_DstnAdr", "_CertId", "_Tp", "_Cntt", "_OthrDstn", "_Dstn", "_Sgntr"]
+	__slots__ = ["_CertId", "_Cntt", "_Ctct", "_Dstn", "_DstnAdr", "_DstnTp", "_Frmt", "_Lang", "_OthrDstn", "_OthrDstnTp", "_OthrFrmt", "_OthrTp", "_Sgntr", "_Tp"]
 	@property
 	def CertId(self):
 		return self._CertId

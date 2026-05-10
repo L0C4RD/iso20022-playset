@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._CFIOct2015Identifier import CFIOct2015Identifier
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._CFIOct2015Identifier import CFIOct2015Identifier
+from ._ISINOct2015Identifier import ISINOct2015Identifier
 from ._Max350Text import Max350Text
 from ._OtherIdentification1 import OtherIdentification1
 
 class SecurityInstrumentDescription23(base_types._BaseFieldType):
 
-	__slots__ = ["_ClssfctnTp", "_NtnlCcy", "_FullNm", "_OthrId", "_Id"]
+	__slots__ = ["_ClssfctnTp", "_FullNm", "_Id", "_NtnlCcy", "_OthrId"]
 	@property
 	def ClssfctnTp(self):
 		return self._ClssfctnTp

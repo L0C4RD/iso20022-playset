@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CommonFinancialInstrumentAttributes12 import CommonFinancialInstrumentAttributes12
 from ._FinancialInstrument97 import FinancialInstrument97
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecurityAttributes12(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmAttrbts", "_SplmtryData", "_FinInstrmTp"]
+	__slots__ = ["_FinInstrmAttrbts", "_FinInstrmTp", "_SplmtryData"]
 	@property
 	def FinInstrmAttrbts(self):
 		return self._FinInstrmAttrbts

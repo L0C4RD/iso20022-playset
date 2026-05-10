@@ -4,7 +4,7 @@ from ._SystemIdentification2Choice import SystemIdentification2Choice
 
 class BusinessDay8(base_types._BaseFieldType):
 
-	__slots__ = ["_SysId", "_BizDayOrErr"]
+	__slots__ = ["_BizDayOrErr", "_SysId"]
 	@property
 	def BizDayOrErr(self):
 		return self._BizDayOrErr

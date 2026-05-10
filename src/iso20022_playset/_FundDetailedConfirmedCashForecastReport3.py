@@ -1,12 +1,12 @@
 from . import base_types
-from ._Fund4 import Fund4
 from ._Extension1 import Extension1
+from ._Fund4 import Fund4
 from ._FundCashForecast6 import FundCashForecast6
 from ._NetCashForecast3 import NetCashForecast3
 
 class FundDetailedConfirmedCashForecastReport3(base_types._BaseFieldType):
 
-	__slots__ = ["_CnsltdNetCshFcst", "_FndCshFcstDtls", "_Xtnsn", "_FndOrSubFndDtls"]
+	__slots__ = ["_CnsltdNetCshFcst", "_FndCshFcstDtls", "_FndOrSubFndDtls", "_Xtnsn"]
 	@property
 	def CnsltdNetCshFcst(self):
 		return self._CnsltdNetCshFcst

@@ -1,11 +1,11 @@
 from . import base_types
 from ._CountryCode import CountryCode
-from ._Max70Text import Max70Text
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class TransportBySea6(base_types._BaseFieldType):
 
-	__slots__ = ["_PortOfLoadng", "_CrrierAgtCtry", "_PortOfDschrge", "_CrrierAgtNm", "_SeaCrrierCtry", "_VsslNm", "_SeaCrrierNm"]
+	__slots__ = ["_CrrierAgtCtry", "_CrrierAgtNm", "_PortOfDschrge", "_PortOfLoadng", "_SeaCrrierCtry", "_SeaCrrierNm", "_VsslNm"]
 	@property
 	def CrrierAgtCtry(self):
 		return self._CrrierAgtCtry

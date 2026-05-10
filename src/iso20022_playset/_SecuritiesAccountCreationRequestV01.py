@@ -1,11 +1,11 @@
 from . import base_types
+from ._MessageHeader1 import MessageHeader1
 from ._SupplementaryData1 import SupplementaryData1
 from ._SystemSecuritiesAccount7 import SystemSecuritiesAccount7
-from ._MessageHeader1 import MessageHeader1
 
 class SecuritiesAccountCreationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_SctiesAcct"]
+	__slots__ = ["_MsgHdr", "_SctiesAcct", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

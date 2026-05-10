@@ -1,12 +1,12 @@
 from . import base_types
 from ._CategoryPurpose1Choice import CategoryPurpose1Choice
-from ._ServiceLevel8Choice import ServiceLevel8Choice
 from ._LocalInstrument2Choice import LocalInstrument2Choice
 from ._MandateClassification1Choice import MandateClassification1Choice
+from ._ServiceLevel8Choice import ServiceLevel8Choice
 
 class MandateTypeInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcLvl", "_CtgyPurp", "_LclInstrm", "_Clssfctn"]
+	__slots__ = ["_Clssfctn", "_CtgyPurp", "_LclInstrm", "_SvcLvl"]
 	@property
 	def Clssfctn(self):
 		return self._Clssfctn

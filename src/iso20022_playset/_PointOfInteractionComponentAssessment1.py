@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISODateTime import ISODateTime
-from ._POIComponentAssessment1Code import POIComponentAssessment1Code
 from ._Max35Text import Max35Text
+from ._POIComponentAssessment1Code import POIComponentAssessment1Code
 
 class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 
-	__slots__ = ["_XprtnDt", "_Assgnr", "_Tp", "_DlvryDt", "_Nb"]
+	__slots__ = ["_Assgnr", "_DlvryDt", "_Nb", "_Tp", "_XprtnDt"]
 	@property
 	def Assgnr(self):
 		return self._Assgnr

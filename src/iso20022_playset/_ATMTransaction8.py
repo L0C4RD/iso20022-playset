@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ATMMediaMix2 import ATMMediaMix2
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ATMTransaction8(base_types._BaseFieldType):
 
-	__slots__ = ["_Mix", "_Amt", "_MixTp", "_RctFlg", "_BalPrtFlg", "_Ccy"]
+	__slots__ = ["_Amt", "_BalPrtFlg", "_Ccy", "_Mix", "_MixTp", "_RctFlg"]
 	@property
 	def Amt(self):
 		return self._Amt

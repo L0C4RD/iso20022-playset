@@ -1,15 +1,15 @@
 from . import base_types
+from ._CreditorReferenceInformation2 import CreditorReferenceInformation2
+from ._Garnishment3 import Garnishment3
+from ._Max140Text import Max140Text
 from ._PartyIdentification135 import PartyIdentification135
 from ._ReferredDocumentInformation7 import ReferredDocumentInformation7
-from ._TaxInformation7 import TaxInformation7
 from ._RemittanceAmount2 import RemittanceAmount2
-from ._CreditorReferenceInformation2 import CreditorReferenceInformation2
-from ._Max140Text import Max140Text
-from ._Garnishment3 import Garnishment3
+from ._TaxInformation7 import TaxInformation7
 
 class StructuredRemittanceInformation16(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrRefInf", "_Invcee", "_GrnshmtRmt", "_TaxRmt", "_RfrdDocInf", "_Invcr", "_RfrdDocAmt", "_AddtlRmtInf"]
+	__slots__ = ["_AddtlRmtInf", "_CdtrRefInf", "_GrnshmtRmt", "_Invcee", "_Invcr", "_RfrdDocAmt", "_RfrdDocInf", "_TaxRmt"]
 	@property
 	def AddtlRmtInf(self):
 		return self._AddtlRmtInf

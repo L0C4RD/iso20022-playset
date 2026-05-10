@@ -4,7 +4,7 @@ from ._PartyIdentification136 import PartyIdentification136
 
 class SystemPartyIdentification9(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_VldFr", "_RspnsblPtyId"]
+	__slots__ = ["_Id", "_RspnsblPtyId", "_VldFr"]
 	@property
 	def Id(self):
 		return self._Id

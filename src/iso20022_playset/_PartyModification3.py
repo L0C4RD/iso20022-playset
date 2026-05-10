@@ -4,7 +4,7 @@ from ._PartyIdentification274 import PartyIdentification274
 
 class PartyModification3(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyId", "_ModCd"]
+	__slots__ = ["_ModCd", "_PtyId"]
 	@property
 	def ModCd(self):
 		return self._ModCd

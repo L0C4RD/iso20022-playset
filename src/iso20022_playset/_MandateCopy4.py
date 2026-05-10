@@ -1,12 +1,12 @@
 from . import base_types
 from ._MandateStatus1Choice import MandateStatus1Choice
-from ._SupplementaryData1 import SupplementaryData1
 from ._OriginalMandate10Choice import OriginalMandate10Choice
 from ._OriginalMessageInformation1 import OriginalMessageInformation1
+from ._SupplementaryData1 import SupplementaryData1
 
 class MandateCopy4(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMndt", "_MndtSts", "_SplmtryData", "_OrgnlMsgInf"]
+	__slots__ = ["_MndtSts", "_OrgnlMndt", "_OrgnlMsgInf", "_SplmtryData"]
 	@property
 	def MndtSts(self):
 		return self._MndtSts

@@ -1,18 +1,18 @@
 from . import base_types
+from ._AccountIdentification70 import AccountIdentification70
+from ._CorporateAction59 import CorporateAction59
+from ._CorporateActionGeneralInformation181 import CorporateActionGeneralInformation181
+from ._CorporateActionOption234 import CorporateActionOption234
+from ._MarketClaimType1Code import MarketClaimType1Code
+from ._References25 import References25
+from ._RelatedSettlementInstruction2 import RelatedSettlementInstruction2
+from ._SettlementParties123 import SettlementParties123
 from ._SettlementParties124 import SettlementParties124
 from ._SupplementaryData1 import SupplementaryData1
-from ._References25 import References25
-from ._MarketClaimType1Code import MarketClaimType1Code
-from ._CorporateAction59 import CorporateAction59
-from ._CorporateActionOption234 import CorporateActionOption234
-from ._CorporateActionGeneralInformation181 import CorporateActionGeneralInformation181
-from ._AccountIdentification70 import AccountIdentification70
-from ._SettlementParties123 import SettlementParties123
-from ._RelatedSettlementInstruction2 import RelatedSettlementInstruction2
 
 class MarketClaimCreationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_RltdSttlmInstrDtls", "_RcvgSttlmPties", "_TxRef", "_CorpActnDtls", "_DlvrgSttlmPties", "_MktClmDtls", "_CorpActnGnlInf", "_MktClmTp", "_SplmtryData"]
+	__slots__ = ["_AcctDtls", "_CorpActnDtls", "_CorpActnGnlInf", "_DlvrgSttlmPties", "_MktClmDtls", "_MktClmTp", "_RcvgSttlmPties", "_RltdSttlmInstrDtls", "_SplmtryData", "_TxRef"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

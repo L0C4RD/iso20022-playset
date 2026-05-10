@@ -1,14 +1,14 @@
 from . import base_types
-from ._PriceInformation10 import PriceInformation10
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecurityIdentification14 import SecurityIdentification14
+from ._AmountAndDirection30 import AmountAndDirection30
 from ._DecimalNumber import DecimalNumber
 from ._Max35Text import Max35Text
-from ._AmountAndDirection30 import AmountAndDirection30
+from ._PriceInformation10 import PriceInformation10
+from ._SecurityIdentification14 import SecurityIdentification14
+from ._SupplementaryData1 import SupplementaryData1
 
 class InvestmentFund1(base_types._BaseFieldType):
 
-	__slots__ = ["_TxnlUnits", "_TtlVal", "_FinInstrmId", "_Pric", "_TtlUnitsOutsdng", "_SplmtryData", "_ClssTp"]
+	__slots__ = ["_ClssTp", "_FinInstrmId", "_Pric", "_SplmtryData", "_TtlUnitsOutsdng", "_TtlVal", "_TxnlUnits"]
 	@property
 	def ClssTp(self):
 		return self._ClssTp

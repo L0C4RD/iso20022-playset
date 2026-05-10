@@ -1,11 +1,11 @@
 from . import base_types
-from ._NonFinancialInstitutionSector10 import NonFinancialInstitutionSector10
-from ._NoReasonCode import NoReasonCode
 from ._FinancialInstitutionSector1 import FinancialInstitutionSector1
+from ._NoReasonCode import NoReasonCode
+from ._NonFinancialInstitutionSector10 import NonFinancialInstitutionSector10
 
 class CounterpartyTradeNature15Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CntrlCntrPty", "_NFI", "_FI", "_Othr"]
+	__slots__ = ["_CntrlCntrPty", "_FI", "_NFI", "_Othr"]
 	@property
 	def CntrlCntrPty(self):
 		return self._CntrlCntrPty

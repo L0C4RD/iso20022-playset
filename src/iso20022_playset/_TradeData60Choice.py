@@ -1,10 +1,10 @@
 from . import base_types
-from ._TradeStateReport23 import TradeStateReport23
 from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
+from ._TradeStateReport23 import TradeStateReport23
 
 class TradeData60Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Stat", "_DataSetActn"]
+	__slots__ = ["_DataSetActn", "_Stat"]
 	@property
 	def DataSetActn(self):
 		return self._DataSetActn

@@ -1,10 +1,10 @@
 from . import base_types
-from ._PaymentTime1Code import PaymentTime1Code
 from ._Number import Number
+from ._PaymentTime1Code import PaymentTime1Code
 
 class PaymentPeriod1(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfDays", "_Cd"]
+	__slots__ = ["_Cd", "_NbOfDays"]
 	@property
 	def Cd(self):
 		return self._Cd

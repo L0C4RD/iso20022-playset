@@ -5,7 +5,7 @@ from ._TrackerStatusAndTransaction18 import TrackerStatusAndTransaction18
 
 class PaymentStatusTrackerReportV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TrckrStsAndTx", "_GrpHdr"]
+	__slots__ = ["_GrpHdr", "_SplmtryData", "_TrckrStsAndTx"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

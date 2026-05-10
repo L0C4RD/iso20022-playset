@@ -4,7 +4,7 @@ from ._TerminalManagementErrorAction2Code import TerminalManagementErrorAction2C
 
 class ErrorAction5(base_types._BaseFieldType):
 
-	__slots__ = ["_ActnToPrc", "_ActnRslt"]
+	__slots__ = ["_ActnRslt", "_ActnToPrc"]
 	@property
 	def ActnRslt(self):
 		return self._ActnRslt

@@ -1,20 +1,20 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._Organisation42 import Organisation42
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Group6 import Group6
 from ._AccountContract2 import AccountContract2
-from ._References4 import References4
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._CashAccount40 import CashAccount40
-from ._OperationMandate7 import OperationMandate7
 from ._ContractDocument1 import ContractDocument1
 from ._CustomerAccount4 import CustomerAccount4
+from ._Group6 import Group6
+from ._OperationMandate7 import OperationMandate7
+from ._Organisation42 import Organisation42
 from ._OrganisationIdentification39 import OrganisationIdentification39
 from ._PartyAndSignature4 import PartyAndSignature4
+from ._References4 import References4
+from ._SupplementaryData1 import SupplementaryData1
 
 class AccountOpeningRequestV05(base_types._BaseFieldType):
 
-	__slots__ = ["_Fr", "_Mndt", "_Acct", "_AcctSvcrId", "_UndrlygMstrAgrmt", "_DgtlSgntr", "_CtrctDts", "_Grp", "_SplmtryData", "_Refs", "_RefAcct", "_Org"]
+	__slots__ = ["_Acct", "_AcctSvcrId", "_CtrctDts", "_DgtlSgntr", "_Fr", "_Grp", "_Mndt", "_Org", "_RefAcct", "_Refs", "_SplmtryData", "_UndrlygMstrAgrmt"]
 	@property
 	def Acct(self):
 		return self._Acct

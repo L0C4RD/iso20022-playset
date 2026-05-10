@@ -1,11 +1,11 @@
 from . import base_types
-from ._TradeTransaction50 import TradeTransaction50
-from ._ContractType15 import ContractType15
 from ._ContractModification9 import ContractModification9
+from ._ContractType15 import ContractType15
+from ._TradeTransaction50 import TradeTransaction50
 
 class CommonTradeDataReport72(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctMod", "_CtrctData", "_TxData"]
+	__slots__ = ["_CtrctData", "_CtrctMod", "_TxData"]
 	@property
 	def CtrctData(self):
 		return self._CtrctData

@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._ReportData5 import ReportData5
-from ._PartyIdentification73Choice import PartyIdentification73Choice
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._PartyIdentification73Choice import PartyIdentification73Choice
+from ._ReportData5 import ReportData5
+from ._SupplementaryData1 import SupplementaryData1
 
 class PayInCallV02(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyId", "_SttlmSsnIdr", "_SplmtryData", "_RptData"]
+	__slots__ = ["_PtyId", "_RptData", "_SplmtryData", "_SttlmSsnIdr"]
 	@property
 	def PtyId(self):
 		return self._PtyId

@@ -1,16 +1,16 @@
 from . import base_types
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
+from ._CashAccount38 import CashAccount38
+from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
 from ._InstructionForNextAgent1 import InstructionForNextAgent1
 from ._PartyIdentification135 import PartyIdentification135
 from ._RemittanceInformation16 import RemittanceInformation16
-from ._CashAccount38 import CashAccount38
-from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
-from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
 from ._TaxInformation8 import TaxInformation8
 
 class CreditTransferTransaction46(base_types._BaseFieldType):
 
-	__slots__ = ["_UltmtDbtr", "_IntrmyAgt3", "_DbtrAcct", "_CdtrAcct", "_PrvsInstgAgt1Acct", "_PrvsInstgAgt2", "_RmtInf", "_InstrForCdtrAgt", "_DbtrAgt", "_IntrmyAgt3Acct", "_InitgPty", "_Dbtr", "_IntrmyAgt1", "_InstdAmt", "_IntrmyAgt2", "_CdtrAgtAcct", "_Cdtr", "_PrvsInstgAgt2Acct", "_DbtrAgtAcct", "_CdtrAgt", "_IntrmyAgt2Acct", "_PrvsInstgAgt1", "_InstrForNxtAgt", "_PrvsInstgAgt3Acct", "_Tax", "_IntrmyAgt1Acct", "_UltmtCdtr", "_PrvsInstgAgt3"]
+	__slots__ = ["_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_InitgPty", "_InstdAmt", "_InstrForCdtrAgt", "_InstrForNxtAgt", "_IntrmyAgt1", "_IntrmyAgt1Acct", "_IntrmyAgt2", "_IntrmyAgt2Acct", "_IntrmyAgt3", "_IntrmyAgt3Acct", "_PrvsInstgAgt1", "_PrvsInstgAgt1Acct", "_PrvsInstgAgt2", "_PrvsInstgAgt2Acct", "_PrvsInstgAgt3", "_PrvsInstgAgt3Acct", "_RmtInf", "_Tax", "_UltmtCdtr", "_UltmtDbtr"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

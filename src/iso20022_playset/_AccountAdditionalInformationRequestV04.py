@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._References3 import References3
 from ._AccountForAction1 import AccountForAction1
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._OrganisationIdentification39 import OrganisationIdentification39
 from ._PartyAndSignature4 import PartyAndSignature4
+from ._References3 import References3
+from ._SupplementaryData1 import SupplementaryData1
 
 class AccountAdditionalInformationRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Fr", "_OrgId", "_Refs", "_AcctId", "_AcctSvcrId", "_SplmtryData", "_DgtlSgntr"]
+	__slots__ = ["_AcctId", "_AcctSvcrId", "_DgtlSgntr", "_Fr", "_OrgId", "_Refs", "_SplmtryData"]
 	@property
 	def AcctId(self):
 		return self._AcctId

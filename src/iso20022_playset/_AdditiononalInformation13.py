@@ -1,13 +1,13 @@
 from . import base_types
+from ._DateTimePeriod2 import DateTimePeriod2
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
 from ._PartyIdentification125Choice import PartyIdentification125Choice
 from ._RestrictionStatus1Choice import RestrictionStatus1Choice
-from ._Max35Text import Max35Text
-from ._Max350Text import Max350Text
-from ._DateTimePeriod2 import DateTimePeriod2
 
 class AdditiononalInformation13(base_types._BaseFieldType):
 
-	__slots__ = ["_Lmttn", "_Prd", "_Rgltr", "_AcctVldtn", "_AddtlInf", "_Sts", "_Tp"]
+	__slots__ = ["_AcctVldtn", "_AddtlInf", "_Lmttn", "_Prd", "_Rgltr", "_Sts", "_Tp"]
 	@property
 	def AcctVldtn(self):
 		return self._AcctVldtn

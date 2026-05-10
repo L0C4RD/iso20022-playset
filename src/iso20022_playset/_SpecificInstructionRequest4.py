@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class SpecificInstructionRequest4(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesRegn", "_PrtcptnMtd"]
+	__slots__ = ["_PrtcptnMtd", "_SctiesRegn"]
 	@property
 	def PrtcptnMtd(self):
 		return self._PrtcptnMtd

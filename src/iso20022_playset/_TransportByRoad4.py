@@ -1,11 +1,11 @@
 from . import base_types
 from ._CountryCode import CountryCode
-from ._Max70Text import Max70Text
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class TransportByRoad4(base_types._BaseFieldType):
 
-	__slots__ = ["_RoadCrrierCtry", "_PlcOfDlvry", "_PlcOfRct", "_CrrierAgtCtry", "_CrrierAgtNm", "_RoadCrrierNm"]
+	__slots__ = ["_CrrierAgtCtry", "_CrrierAgtNm", "_PlcOfDlvry", "_PlcOfRct", "_RoadCrrierCtry", "_RoadCrrierNm"]
 	@property
 	def CrrierAgtCtry(self):
 		return self._CrrierAgtCtry

@@ -1,11 +1,11 @@
 from . import base_types
 from ._ContactIdentification2 import ContactIdentification2
-from ._YesNoIndicator import YesNoIndicator
 from ._NameAndAddress4 import NameAndAddress4
+from ._YesNoIndicator import YesNoIndicator
 
 class DeliveryParameters4(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_CtctPrsn", "_RegdAdrInd"]
+	__slots__ = ["_CtctPrsn", "_NmAndAdr", "_RegdAdrInd"]
 	@property
 	def CtctPrsn(self):
 		return self._CtctPrsn

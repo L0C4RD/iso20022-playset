@@ -1,12 +1,12 @@
 from . import base_types
-from ._ExchangeRateOrPercentage1Choice import ExchangeRateOrPercentage1Choice
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._ISODateTime import ISODateTime
 from ._BaseOneRate import BaseOneRate
+from ._ExchangeRateOrPercentage1Choice import ExchangeRateOrPercentage1Choice
+from ._ISODateTime import ISODateTime
 
 class CurrencyExchange20(base_types._BaseFieldType):
 
-	__slots__ = ["_HghLmt", "_QtdCcy", "_XchgRate", "_LwLmt", "_QtnDt"]
+	__slots__ = ["_HghLmt", "_LwLmt", "_QtdCcy", "_QtnDt", "_XchgRate"]
 	@property
 	def HghLmt(self):
 		return self._HghLmt

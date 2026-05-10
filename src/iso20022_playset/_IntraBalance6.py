@@ -1,13 +1,13 @@
 from . import base_types
+from ._Amount2Choice import Amount2Choice
+from ._CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuantityBreakdown3
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._GenericIdentification37 import GenericIdentification37
 from ._Max350Text import Max350Text
-from ._Amount2Choice import Amount2Choice
-from ._CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuantityBreakdown3
 
 class IntraBalance6(base_types._BaseFieldType):
 
-	__slots__ = ["_PrevslySttldAmt", "_SttlmDt", "_RmngSttlmAmt", "_CshSubBalId", "_BalFr", "_SttldAmt", "_InstrPrcgAddtlDtls", "_BalTo"]
+	__slots__ = ["_BalFr", "_BalTo", "_CshSubBalId", "_InstrPrcgAddtlDtls", "_PrevslySttldAmt", "_RmngSttlmAmt", "_SttldAmt", "_SttlmDt"]
 	@property
 	def BalFr(self):
 		return self._BalFr

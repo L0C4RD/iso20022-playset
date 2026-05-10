@@ -1,11 +1,11 @@
 from . import base_types
+from ._PriceFormat61Choice import PriceFormat61Choice
 from ._PriceFormat80Choice import PriceFormat80Choice
 from ._PriceFormat81Choice import PriceFormat81Choice
-from ._PriceFormat61Choice import PriceFormat61Choice
 
 class CorporateActionPrice90(base_types._BaseFieldType):
 
-	__slots__ = ["_CshInLieuOfShrPric", "_MinPric", "_MaxCshToInst", "_LastBidIncrmtPric", "_MinCshToInst", "_MaxPric", "_FrstBidIncrmtPric", "_OverSbcptDpstPric", "_MinMltplCshToInst"]
+	__slots__ = ["_CshInLieuOfShrPric", "_FrstBidIncrmtPric", "_LastBidIncrmtPric", "_MaxCshToInst", "_MaxPric", "_MinCshToInst", "_MinMltplCshToInst", "_MinPric", "_OverSbcptDpstPric"]
 	@property
 	def CshInLieuOfShrPric(self):
 		return self._CshInLieuOfShrPric

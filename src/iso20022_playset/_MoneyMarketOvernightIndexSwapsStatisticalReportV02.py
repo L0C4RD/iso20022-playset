@@ -1,11 +1,11 @@
 from . import base_types
+from ._MoneyMarketReportHeader1 import MoneyMarketReportHeader1
 from ._OvernightIndexSwap4Choice import OvernightIndexSwap4Choice
 from ._SupplementaryData1 import SupplementaryData1
-from ._MoneyMarketReportHeader1 import MoneyMarketReportHeader1
 
 class MoneyMarketOvernightIndexSwapsStatisticalReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RptHdr", "_OvrnghtIndxSwpsRpt", "_SplmtryData"]
+	__slots__ = ["_OvrnghtIndxSwpsRpt", "_RptHdr", "_SplmtryData"]
 	@property
 	def OvrnghtIndxSwpsRpt(self):
 		return self._OvrnghtIndxSwpsRpt

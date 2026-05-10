@@ -1,11 +1,11 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
 from ._GenericPersonIdentification1 import GenericPersonIdentification1
+from ._LEIIdentifier import LEIIdentifier
 from ._PartyExceptionType1Code import PartyExceptionType1Code
 
 class PersonOrOrganisation4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_XcptnId", "_Prsn", "_LEI"]
+	__slots__ = ["_LEI", "_Prsn", "_XcptnId"]
 	@property
 	def LEI(self):
 		return self._LEI

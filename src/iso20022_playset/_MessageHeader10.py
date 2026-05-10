@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class MessageHeader10(base_types._BaseFieldType):
 
-	__slots__ = ["_QryNm", "_CreDtTm", "_MsgId"]
+	__slots__ = ["_CreDtTm", "_MsgId", "_QryNm"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

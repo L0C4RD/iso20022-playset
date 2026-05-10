@@ -1,10 +1,10 @@
 from . import base_types
-from ._UTIIdentifier import UTIIdentifier
 from ._Max35Text import Max35Text
+from ._UTIIdentifier import UTIIdentifier
 
 class IdentificationReference16Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CollTxId", "_CmplcId", "_CxlReqId", "_MktInfrstrctrTxId", "_PoolId", "_ExctgPtyTxId", "_InstgPtyTxId", "_IndxId", "_BlckId", "_AllcnId", "_CmonId", "_IndvAllcnId", "_ClntOrdrLkId", "_ScndryAllcnId", "_UnqTxIdr"]
+	__slots__ = ["_AllcnId", "_BlckId", "_ClntOrdrLkId", "_CmonId", "_CmplcId", "_CollTxId", "_CxlReqId", "_ExctgPtyTxId", "_IndvAllcnId", "_IndxId", "_InstgPtyTxId", "_MktInfrstrctrTxId", "_PoolId", "_ScndryAllcnId", "_UnqTxIdr"]
 	@property
 	def AllcnId(self):
 		return self._AllcnId

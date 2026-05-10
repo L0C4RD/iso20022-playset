@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._LoyaltyHandling1Code import LoyaltyHandling1Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._LoyaltyHandling1Code import LoyaltyHandling1Code
 from ._SaleCapabilities1Code import SaleCapabilities1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class RetailerSaleEnvironment2(base_types._BaseFieldType):
 
-	__slots__ = ["_MinSpltAmt", "_LltyHdlg", "_MinAmtToDlvr", "_SaleCpblties", "_MaxCshBckAmt", "_DbtPrefrdFlg", "_Ccy"]
+	__slots__ = ["_Ccy", "_DbtPrefrdFlg", "_LltyHdlg", "_MaxCshBckAmt", "_MinAmtToDlvr", "_MinSpltAmt", "_SaleCpblties"]
 	@property
 	def Ccy(self):
 		return self._Ccy

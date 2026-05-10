@@ -4,7 +4,7 @@ from ._Max210Text import Max210Text
 
 class Result1(base_types._BaseFieldType):
 
-	__slots__ = ["_DueToPtyA", "_DueToPtyB", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_DueToPtyA", "_DueToPtyB"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

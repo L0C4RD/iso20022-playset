@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._CustomerTypeRequest2 import CustomerTypeRequest2
 from ._DocumentFormat2Choice import DocumentFormat2Choice
+from ._DocumentType1Choice import DocumentType1Choice
 from ._Max500Text import Max500Text
 from ._RTPPartyIdentification2 import RTPPartyIdentification2
-from ._CustomerTypeRequest2 import CustomerTypeRequest2
-from ._DocumentType1Choice import DocumentType1Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CreditorInvoice6(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctFrmtTp", "_CstmrIdTp", "_CdtrInstr", "_CtrctRefTp", "_ActvtnReqDlvryPty", "_LtdPresntmntInd"]
+	__slots__ = ["_ActvtnReqDlvryPty", "_CdtrInstr", "_CstmrIdTp", "_CtrctFrmtTp", "_CtrctRefTp", "_LtdPresntmntInd"]
 	@property
 	def ActvtnReqDlvryPty(self):
 		return self._ActvtnReqDlvryPty

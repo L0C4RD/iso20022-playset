@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISINOct2015Identifier import ISINOct2015Identifier
 from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
+from ._ISINOct2015Identifier import ISINOct2015Identifier
 from ._ProductType7Code import ProductType7Code
 
 class SecurityIdentificationAndAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_MktVal", "_FinInstrmTp"]
+	__slots__ = ["_FinInstrmTp", "_Id", "_MktVal"]
 	@property
 	def FinInstrmTp(self):
 		return self._FinInstrmTp

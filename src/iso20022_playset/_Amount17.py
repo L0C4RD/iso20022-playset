@@ -1,11 +1,11 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
 from ._CreditDebit3Code import CreditDebit3Code
+from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class Amount17(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_CdtDbt", "_Ccy"]
+	__slots__ = ["_Amt", "_Ccy", "_CdtDbt"]
 	@property
 	def Amt(self):
 		return self._Amt

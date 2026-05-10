@@ -3,7 +3,7 @@ from ._ActiveOrHistoricCurrencyAnd20DecimalAmount import ActiveOrHistoricCurrenc
 
 class PostedMarginOrCollateral6(base_types._BaseFieldType):
 
-	__slots__ = ["_VartnMrgnPstdPreHrcut", "_XcssCollPstd", "_InitlMrgnPstdPstHrcut", "_VartnMrgnPstdPstHrcut", "_InitlMrgnPstdPreHrcut"]
+	__slots__ = ["_InitlMrgnPstdPreHrcut", "_InitlMrgnPstdPstHrcut", "_VartnMrgnPstdPreHrcut", "_VartnMrgnPstdPstHrcut", "_XcssCollPstd"]
 	@property
 	def InitlMrgnPstdPreHrcut(self):
 		return self._InitlMrgnPstdPreHrcut

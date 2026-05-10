@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._SettlementFailsData4 import SettlementFailsData4
 from ._SettlementFailsReportHeader2 import SettlementFailsReportHeader2
+from ._SupplementaryData1 import SupplementaryData1
 
 class SettlementFailsAnnualReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RptHdr", "_SplmtryData", "_AnlAggt"]
+	__slots__ = ["_AnlAggt", "_RptHdr", "_SplmtryData"]
 	@property
 	def AnlAggt(self):
 		return self._AnlAggt

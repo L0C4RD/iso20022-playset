@@ -1,6 +1,6 @@
 from . import base_types
-from ._NotificationType1Code import NotificationType1Code
 from ._Max140Text import Max140Text
+from ._NotificationType1Code import NotificationType1Code
 
 class Notification1(base_types._BaseFieldType):
 

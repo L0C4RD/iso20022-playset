@@ -3,7 +3,7 @@ from ._Max3NumericText import Max3NumericText
 
 class Limit1(base_types._BaseFieldType):
 
-	__slots__ = ["_Lmt", "_Cur"]
+	__slots__ = ["_Cur", "_Lmt"]
 	@property
 	def Cur(self):
 		return self._Cur

@@ -1,15 +1,15 @@
 from . import base_types
-from ._RepoCallRequestStatus7Choice import RepoCallRequestStatus7Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._SettlementStatus18Choice import SettlementStatus18Choice
-from ._TransactionIdentifications53 import TransactionIdentifications53
-from ._ProcessingStatus83Choice import ProcessingStatus83Choice
-from ._SecuritiesFinancingTransactionDetails57 import SecuritiesFinancingTransactionDetails57
 from ._MatchingStatus26Choice import MatchingStatus26Choice
+from ._ProcessingStatus83Choice import ProcessingStatus83Choice
+from ._RepoCallRequestStatus7Choice import RepoCallRequestStatus7Choice
+from ._SecuritiesFinancingTransactionDetails57 import SecuritiesFinancingTransactionDetails57
+from ._SettlementStatus18Choice import SettlementStatus18Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionIdentifications53 import TransactionIdentifications53
 
 class SecuritiesFinancingStatusAdviceV10(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_TxDtls", "_IfrrdMtchgSts", "_RepoCallReqSts", "_PrcgSts", "_SttlmSts", "_SplmtryData", "_MtchgSts"]
+	__slots__ = ["_IfrrdMtchgSts", "_MtchgSts", "_PrcgSts", "_RepoCallReqSts", "_SplmtryData", "_SttlmSts", "_TxDtls", "_TxId"]
 	@property
 	def IfrrdMtchgSts(self):
 		return self._IfrrdMtchgSts

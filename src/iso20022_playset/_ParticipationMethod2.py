@@ -1,11 +1,11 @@
 from . import base_types
-from ._ParticipationMethod3Choice import ParticipationMethod3Choice
 from ._DateFormat58Choice import DateFormat58Choice
+from ._ParticipationMethod3Choice import ParticipationMethod3Choice
 from ._YesNoIndicator import YesNoIndicator
 
 class ParticipationMethod2(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnDdlnForVtng", "_SpprtdByAcctSvcr", "_PrtcptnMtd", "_IssrDdlnForVtng"]
+	__slots__ = ["_IssrDdlnForVtng", "_PrtcptnMtd", "_RspnDdlnForVtng", "_SpprtdByAcctSvcr"]
 	@property
 	def IssrDdlnForVtng(self):
 		return self._IssrDdlnForVtng

@@ -1,21 +1,21 @@
 from . import base_types
-from ._Max10NumericText import Max10NumericText
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISOTime import ISOTime
 from ._Address2 import Address2
 from ._Amount21 import Amount21
-from ._Max35Text import Max35Text
+from ._ISODate import ISODate
+from ._ISOTime import ISOTime
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._RentalRate1 import RentalRate1
-from ._UnitOfMeasure10Code import UnitOfMeasure10Code
-from ._Max4NumericText import Max4NumericText
+from ._Max10NumericText import Max10NumericText
 from ._Max35NumericText import Max35NumericText
+from ._Max35Text import Max35Text
+from ._Max4NumericText import Max4NumericText
+from ._RentalRate1 import RentalRate1
 from ._Tax41 import Tax41
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._UnitOfMeasure10Code import UnitOfMeasure10Code
 
 class VehicleRentalInvoice3(base_types._BaseFieldType):
 
-	__slots__ = ["_MakeInvcd", "_SummryCmmdtyId", "_ClssInvcd", "_OdmtrStart", "_RtrLctn", "_AddtlAmt", "_MakePrvdd", "_Chrg", "_ClssPrvdd", "_Drtn", "_RegnNbPrvdd", "_MdlPrvdd", "_RegnNbInvcd", "_ChckInDt", "_ChckOutDt", "_ChckOutTm", "_DstncUnit", "_Adjstd", "_OdmtrRtr", "_ChckInTm", "_Tax", "_TtlDstnc", "_FreeDstnc", "_NoShow", "_DstncRate", "_MdlInvcd", "_Insrnc"]
+	__slots__ = ["_AddtlAmt", "_Adjstd", "_ChckInDt", "_ChckInTm", "_ChckOutDt", "_ChckOutTm", "_Chrg", "_ClssInvcd", "_ClssPrvdd", "_Drtn", "_DstncRate", "_DstncUnit", "_FreeDstnc", "_Insrnc", "_MakeInvcd", "_MakePrvdd", "_MdlInvcd", "_MdlPrvdd", "_NoShow", "_OdmtrRtr", "_OdmtrStart", "_RegnNbInvcd", "_RegnNbPrvdd", "_RtrLctn", "_SummryCmmdtyId", "_Tax", "_TtlDstnc"]
 	@property
 	def AddtlAmt(self):
 		return self._AddtlAmt

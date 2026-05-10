@@ -1,11 +1,11 @@
 from . import base_types
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max10NumericText import Max10NumericText
 from ._UnitOfMeasure10Code import UnitOfMeasure10Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class Distance1(base_types._BaseFieldType):
 
-	__slots__ = ["_OdmtrRtr", "_UnitOfMeasr", "_TtlDstnc", "_OdmtrStart", "_Rate", "_FreeDstnc"]
+	__slots__ = ["_FreeDstnc", "_OdmtrRtr", "_OdmtrStart", "_Rate", "_TtlDstnc", "_UnitOfMeasr"]
 	@property
 	def FreeDstnc(self):
 		return self._FreeDstnc

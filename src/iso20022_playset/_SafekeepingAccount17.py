@@ -1,12 +1,12 @@
 from . import base_types
-from ._PartyIdentification195Choice import PartyIdentification195Choice
-from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
 from ._AccountSubLevel24 import AccountSubLevel24
+from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
 from ._Max35Text import Max35Text
+from ._PartyIdentification195Choice import PartyIdentification195Choice
 
 class SafekeepingAccount17(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlShrhldgBal", "_SfkpgAcct", "_AcctSvcr", "_ShrhldgBalOnClntAcct", "_ShrhldgBalOnOwnAcct", "_AcctSubLvl"]
+	__slots__ = ["_AcctSubLvl", "_AcctSvcr", "_SfkpgAcct", "_ShrhldgBalOnClntAcct", "_ShrhldgBalOnOwnAcct", "_TtlShrhldgBal"]
 	@property
 	def AcctSubLvl(self):
 		return self._AcctSubLvl

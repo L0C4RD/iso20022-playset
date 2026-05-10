@@ -4,7 +4,7 @@ from ._DecimalNumber import DecimalNumber
 
 class PerformanceFactors1(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnFctr", "_CmltvCorpActnFctr", "_NrmlPrfrmnc", "_AcmltnPrd"]
+	__slots__ = ["_AcmltnPrd", "_CmltvCorpActnFctr", "_CorpActnFctr", "_NrmlPrfrmnc"]
 	@property
 	def AcmltnPrd(self):
 		return self._AcmltnPrd

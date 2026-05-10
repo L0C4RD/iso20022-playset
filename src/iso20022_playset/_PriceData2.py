@@ -1,12 +1,12 @@
 from . import base_types
+from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
 from ._Schedule1 import Schedule1
 from ._SecuritiesTransactionPrice17Choice import SecuritiesTransactionPrice17Choice
-from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
 from ._UnitOfMeasure8Choice import UnitOfMeasure8Choice
 
 class PriceData2(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitOfMeasr", "_SchdlPrd", "_PricMltplr", "_Pric"]
+	__slots__ = ["_Pric", "_PricMltplr", "_SchdlPrd", "_UnitOfMeasr"]
 	@property
 	def Pric(self):
 		return self._Pric

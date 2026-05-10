@@ -1,16 +1,16 @@
 from . import base_types
-from ._Ownership1 import Ownership1
+from ._ActivityIndicator1Choice import ActivityIndicator1Choice
+from ._CountryCode import CountryCode
+from ._ISOYear import ISOYear
 from ._InvestorType1Choice import InvestorType1Choice
 from ._Max256Text import Max256Text
-from ._CountryCode import CountryCode
-from ._PartyIdentification198Choice import PartyIdentification198Choice
-from ._ISOYear import ISOYear
-from ._ActivityIndicator1Choice import ActivityIndicator1Choice
 from ._NameAndAddress17 import NameAndAddress17
+from ._Ownership1 import Ownership1
+from ._PartyIdentification198Choice import PartyIdentification198Choice
 
 class PartyIdentification275(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_EmailAdr", "_Ownrsh", "_NmAndAdr", "_CtryOfIncorprtn", "_ActvtyInd", "_YrOfIncorprtn", "_InvstrTp"]
+	__slots__ = ["_ActvtyInd", "_CtryOfIncorprtn", "_EmailAdr", "_Id", "_InvstrTp", "_NmAndAdr", "_Ownrsh", "_YrOfIncorprtn"]
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd

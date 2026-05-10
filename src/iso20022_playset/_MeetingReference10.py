@@ -1,14 +1,14 @@
 from . import base_types
-from ._PostalAddress1 import PostalAddress1
-from ._Max35Text import Max35Text
-from ._MeetingTypeClassification2Choice import MeetingTypeClassification2Choice
-from ._MeetingType4Code import MeetingType4Code
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
+from ._MeetingType4Code import MeetingType4Code
+from ._MeetingTypeClassification2Choice import MeetingTypeClassification2Choice
 from ._PartyIdentification129Choice import PartyIdentification129Choice
+from ._PostalAddress1 import PostalAddress1
 
 class MeetingReference10(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrMtgId", "_Tp", "_Lctn", "_MtgDtAndTm", "_Issr", "_Clssfctn", "_MtgId"]
+	__slots__ = ["_Clssfctn", "_Issr", "_IssrMtgId", "_Lctn", "_MtgDtAndTm", "_MtgId", "_Tp"]
 	@property
 	def Clssfctn(self):
 		return self._Clssfctn

@@ -1,12 +1,12 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._DocumentType7Code import DocumentType7Code
 from ._GenericIdentification177 import GenericIdentification177
 from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class MessageStatusRequestData2(base_types._BaseFieldType):
 
-	__slots__ = ["_RctRprntFlg", "_InitgPty", "_DocQlfr", "_XchgId"]
+	__slots__ = ["_DocQlfr", "_InitgPty", "_RctRprntFlg", "_XchgId"]
 	@property
 	def DocQlfr(self):
 		return self._DocQlfr

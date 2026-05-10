@@ -1,13 +1,13 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._Pagination1 import Pagination1
 from ._Max100Text import Max100Text
 from ._Number import Number
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._Pagination1 import Pagination1
 
 class TradeReportHeader4(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgPurp", "_RptExctnDt", "_CmptntAuthrty", "_NbRcrds", "_NewTradRpstryIdr", "_MsgPgntn"]
+	__slots__ = ["_CmptntAuthrty", "_MsgPgntn", "_NbRcrds", "_NewTradRpstryIdr", "_RptExctnDt", "_RptgPurp"]
 	@property
 	def CmptntAuthrty(self):
 		return self._CmptntAuthrty

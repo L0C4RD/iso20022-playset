@@ -1,10 +1,10 @@
 from . import base_types
-from ._FinancialInstitutionIdentification7 import FinancialInstitutionIdentification7
 from ._BranchData2 import BranchData2
+from ._FinancialInstitutionIdentification7 import FinancialInstitutionIdentification7
 
 class BranchAndFinancialInstitutionIdentification4(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstnId", "_BrnchId"]
+	__slots__ = ["_BrnchId", "_FinInstnId"]
 	@property
 	def BrnchId(self):
 		return self._BrnchId

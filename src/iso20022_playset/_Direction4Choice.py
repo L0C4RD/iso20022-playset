@@ -4,7 +4,7 @@ from ._OptionParty1Code import OptionParty1Code
 
 class Direction4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Drctn", "_CtrPtySd"]
+	__slots__ = ["_CtrPtySd", "_Drctn"]
 	@property
 	def CtrPtySd(self):
 		return self._CtrPtySd

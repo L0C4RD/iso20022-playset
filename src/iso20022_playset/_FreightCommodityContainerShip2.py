@@ -1,10 +1,10 @@
 from . import base_types
-from ._AssetClassSubProductType46Code import AssetClassSubProductType46Code
 from ._AssetClassProductType4Code import AssetClassProductType4Code
+from ._AssetClassSubProductType46Code import AssetClassSubProductType46Code
 
 class FreightCommodityContainerShip2(base_types._BaseFieldType):
 
-	__slots__ = ["_SubPdct", "_BasePdct"]
+	__slots__ = ["_BasePdct", "_SubPdct"]
 	@property
 	def BasePdct(self):
 		return self._BasePdct

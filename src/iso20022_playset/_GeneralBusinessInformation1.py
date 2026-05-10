@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max350Text import Max350Text
 from ._InformationQualifierType1 import InformationQualifierType1
+from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
 
 class GeneralBusinessInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sbjt", "_Qlfr", "_SbjtDtls"]
+	__slots__ = ["_Qlfr", "_Sbjt", "_SbjtDtls"]
 	@property
 	def Qlfr(self):
 		return self._Qlfr

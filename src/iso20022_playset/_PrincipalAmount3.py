@@ -3,7 +3,7 @@ from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmoun
 
 class PrincipalAmount3(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDtAmt", "_MtrtyDtAmt"]
+	__slots__ = ["_MtrtyDtAmt", "_ValDtAmt"]
 	@property
 	def MtrtyDtAmt(self):
 		return self._MtrtyDtAmt

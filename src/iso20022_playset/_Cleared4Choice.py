@@ -3,7 +3,7 @@ from ._NoReasonCode import NoReasonCode
 
 class Cleared4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NonClrd", "_Clrd"]
+	__slots__ = ["_Clrd", "_NonClrd"]
 	@property
 	def Clrd(self):
 		return self._Clrd

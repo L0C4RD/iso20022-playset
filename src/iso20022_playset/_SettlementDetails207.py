@@ -1,36 +1,36 @@
 from . import base_types
-from ._Tracking5Choice import Tracking5Choice
-from ._GenericIdentification30 import GenericIdentification30
-from ._BeneficialOwnership5Choice import BeneficialOwnership5Choice
-from ._DeliveryReturn4Choice import DeliveryReturn4Choice
-from ._SecuritiesTransactionType53Choice import SecuritiesTransactionType53Choice
-from ._Restriction6Choice import Restriction6Choice
-from ._ExposureType24Choice import ExposureType24Choice
-from ._HoldIndicator7 import HoldIndicator7
-from ._CentralCounterPartyEligibility5Choice import CentralCounterPartyEligibility5Choice
-from ._SecuritiesRTGS5Choice import SecuritiesRTGS5Choice
-from ._Registration11Choice import Registration11Choice
-from ._CashSettlementSystem5Choice import CashSettlementSystem5Choice
-from ._GenericIdentification47 import GenericIdentification47
-from ._YesNoIndicator import YesNoIndicator
-from ._ModificationCancellationAllowed5Choice import ModificationCancellationAllowed5Choice
-from ._MarketClientSide7Choice import MarketClientSide7Choice
-from ._NettingEligibility5Choice import NettingEligibility5Choice
-from ._BlockTrade5Choice import BlockTrade5Choice
-from ._SettlingCapacity8Choice import SettlingCapacity8Choice
-from ._LetterOfGuarantee5Choice import LetterOfGuarantee5Choice
-from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
-from ._SettlementSystemMethod5Choice import SettlementSystemMethod5Choice
 from ._AutomaticBorrowing8Choice import AutomaticBorrowing8Choice
-from ._SettlementTransactionCondition39Choice import SettlementTransactionCondition39Choice
-from ._PriorityNumeric5Choice import PriorityNumeric5Choice
+from ._BeneficialOwnership5Choice import BeneficialOwnership5Choice
+from ._BlockTrade5Choice import BlockTrade5Choice
+from ._CashSettlementSystem5Choice import CashSettlementSystem5Choice
+from ._CentralCounterPartyEligibility5Choice import CentralCounterPartyEligibility5Choice
+from ._DeliveryReturn4Choice import DeliveryReturn4Choice
+from ._ExposureType24Choice import ExposureType24Choice
 from ._FXStandingInstruction5Choice import FXStandingInstruction5Choice
-from ._TaxCapacityParty5Choice import TaxCapacityParty5Choice
+from ._GenericIdentification30 import GenericIdentification30
+from ._GenericIdentification47 import GenericIdentification47
+from ._HoldIndicator7 import HoldIndicator7
+from ._LetterOfGuarantee5Choice import LetterOfGuarantee5Choice
+from ._MarketClientSide7Choice import MarketClientSide7Choice
+from ._ModificationCancellationAllowed5Choice import ModificationCancellationAllowed5Choice
+from ._NettingEligibility5Choice import NettingEligibility5Choice
+from ._PriorityNumeric5Choice import PriorityNumeric5Choice
+from ._Registration11Choice import Registration11Choice
 from ._RepurchaseType26Choice import RepurchaseType26Choice
+from ._Restriction6Choice import Restriction6Choice
+from ._SecuritiesRTGS5Choice import SecuritiesRTGS5Choice
+from ._SecuritiesTransactionType53Choice import SecuritiesTransactionType53Choice
+from ._SettlementSystemMethod5Choice import SettlementSystemMethod5Choice
+from ._SettlementTransactionCondition39Choice import SettlementTransactionCondition39Choice
+from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
+from ._SettlingCapacity8Choice import SettlingCapacity8Choice
+from ._TaxCapacityParty5Choice import TaxCapacityParty5Choice
+from ._Tracking5Choice import Tracking5Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class SettlementDetails207(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvryRtrRsn", "_SctiesTxTp", "_HldInd", "_RpTp", "_SctiesRTGS", "_ElgblForColl", "_MktClntSd", "_SttlgCpcty", "_RcvgSctiesSubBalTp", "_AutomtcBrrwg", "_ModCxlAllwd", "_Prty", "_FxStgInstr", "_LglRstrctns", "_Regn", "_DlvrgSctiesSubBalTp", "_PrtlSttlmInd", "_StmpDtyTaxBsis", "_CCPElgblty", "_SttlmTxCond", "_NetgElgblty", "_XpsrTp", "_LttrOfGrnt", "_TaxCpcty", "_CshSubBalTp", "_BlckTrad", "_BnfclOwnrsh", "_CshClrSys", "_RtrLeg", "_Trckg", "_SttlmSysMtd"]
+	__slots__ = ["_AutomtcBrrwg", "_BlckTrad", "_BnfclOwnrsh", "_CCPElgblty", "_CshClrSys", "_CshSubBalTp", "_DlvrgSctiesSubBalTp", "_DlvryRtrRsn", "_ElgblForColl", "_FxStgInstr", "_HldInd", "_LglRstrctns", "_LttrOfGrnt", "_MktClntSd", "_ModCxlAllwd", "_NetgElgblty", "_PrtlSttlmInd", "_Prty", "_RcvgSctiesSubBalTp", "_Regn", "_RpTp", "_RtrLeg", "_SctiesRTGS", "_SctiesTxTp", "_StmpDtyTaxBsis", "_SttlgCpcty", "_SttlmSysMtd", "_SttlmTxCond", "_TaxCpcty", "_Trckg", "_XpsrTp"]
 	@property
 	def AutomtcBrrwg(self):
 		return self._AutomtcBrrwg

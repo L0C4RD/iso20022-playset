@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._Frequency36Choice import Frequency36Choice
-from ._MandateTypeInformation2 import MandateTypeInformation2
-from ._Max35Text import Max35Text
-from ._Max10KBinary import Max10KBinary
+from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
 from ._MandateSetupReason1Choice import MandateSetupReason1Choice
+from ._MandateTypeInformation2 import MandateTypeInformation2
+from ._Max10KBinary import Max10KBinary
+from ._Max35Text import Max35Text
 
 class CreditTransferMandateData1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_FnlPmtDt", "_DtOfSgntr", "_Tp", "_FrstPmtDt", "_ElctrncSgntr", "_MndtId", "_DtOfVrfctn", "_Frqcy"]
+	__slots__ = ["_DtOfSgntr", "_DtOfVrfctn", "_ElctrncSgntr", "_FnlPmtDt", "_Frqcy", "_FrstPmtDt", "_MndtId", "_Rsn", "_Tp"]
 	@property
 	def DtOfSgntr(self):
 		return self._DtOfSgntr

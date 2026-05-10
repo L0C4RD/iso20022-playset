@@ -5,7 +5,7 @@ from ._ReportResponse8 import ReportResponse8
 
 class SaleToPOIReportResponseV07(base_types._BaseFieldType):
 
-	__slots__ = ["_RptRspn", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_Hdr", "_RptRspn", "_SctyTrlr"]
 	@property
 	def Hdr(self):
 		return self._Hdr

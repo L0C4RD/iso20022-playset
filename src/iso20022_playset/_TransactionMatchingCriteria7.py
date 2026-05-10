@@ -1,50 +1,50 @@
 from . import base_types
-from ._CompareReferenceParty1 import CompareReferenceParty1
-from ._CompareNumber7 import CompareNumber7
-from ._CompareBenchmarkCode1 import CompareBenchmarkCode1
-from ._CompareOtherPayment1 import CompareOtherPayment1
-from ._CompareUnitPrice5 import CompareUnitPrice5
-from ._CompareOptionType1 import CompareOptionType1
-from ._CompareCommodityAssetClass4 import CompareCommodityAssetClass4
-from ._CompareEnergyDeliveryAttribute1 import CompareEnergyDeliveryAttribute1
-from ._CompareLongFraction19DecimalNumber1 import CompareLongFraction19DecimalNumber1
-from ._CompareUnitPrice8 import CompareUnitPrice8
-from ._CompareTradeConfirmation2 import CompareTradeConfirmation2
-from ._CompareEnergyLoadType1 import CompareEnergyLoadType1
-from ._CompareTradeClearingStatus3 import CompareTradeClearingStatus3
-from ._CompareUniqueTransactionIdentifier2 import CompareUniqueTransactionIdentifier2
-from ._CompareTradeClearingObligation1 import CompareTradeClearingObligation1
-from ._CompareUnitPrice7 import CompareUnitPrice7
-from ._CompareUnitPrice4 import CompareUnitPrice4
-from ._CompareDayCount1 import CompareDayCount1
-from ._CompareSeniorityType1 import CompareSeniorityType1
-from ._CompareDateTime3 import CompareDateTime3
-from ._CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
-from ._CompareFrequencyUnit1 import CompareFrequencyUnit1
-from ._CompareDate3 import CompareDate3
-from ._CompareExchangeRateBasis1 import CompareExchangeRateBasis1
-from ._CompareNumber5 import CompareNumber5
 from ._CompareActiveOrHistoricCurrencyAndAmount4 import CompareActiveOrHistoricCurrencyAndAmount4
-from ._CompareText2 import CompareText2
-from ._CompareDeliveryInterconnectionPoint1 import CompareDeliveryInterconnectionPoint1
-from ._ComparePercentageRate3 import ComparePercentageRate3
-from ._CompareMasterAgreementType1 import CompareMasterAgreementType1
 from ._CompareAmountAndDirection3 import CompareAmountAndDirection3
+from ._CompareBenchmarkCode1 import CompareBenchmarkCode1
+from ._CompareCommodityAssetClass4 import CompareCommodityAssetClass4
+from ._CompareDate3 import CompareDate3
+from ._CompareDateTime3 import CompareDateTime3
+from ._CompareDayCount1 import CompareDayCount1
+from ._CompareDeliveryInterconnectionPoint1 import CompareDeliveryInterconnectionPoint1
 from ._CompareDeliveryType1 import CompareDeliveryType1
-from ._CompareExchangeRate1 import CompareExchangeRate1
-from ._CompareReportingLevelType2 import CompareReportingLevelType2
-from ._ComparePostTradeRiskReduction2 import ComparePostTradeRiskReduction2
-from ._CompareMICIdentifier3 import CompareMICIdentifier3
-from ._CompareMax350Text1 import CompareMax350Text1
 from ._CompareDerivativeEvent1 import CompareDerivativeEvent1
+from ._CompareEnergyDeliveryAttribute1 import CompareEnergyDeliveryAttribute1
+from ._CompareEnergyLoadType1 import CompareEnergyLoadType1
+from ._CompareExchangeRate1 import CompareExchangeRate1
+from ._CompareExchangeRateBasis1 import CompareExchangeRateBasis1
+from ._CompareFrequencyUnit1 import CompareFrequencyUnit1
 from ._CompareISINIdentifier4 import CompareISINIdentifier4
-from ._CompareTrancheIndicator1 import CompareTrancheIndicator1
-from ._CompareOptionStyle1 import CompareOptionStyle1
+from ._CompareLongFraction19DecimalNumber1 import CompareLongFraction19DecimalNumber1
+from ._CompareMICIdentifier3 import CompareMICIdentifier3
+from ._CompareMasterAgreementType1 import CompareMasterAgreementType1
+from ._CompareMax350Text1 import CompareMax350Text1
 from ._CompareMax50Text1 import CompareMax50Text1
+from ._CompareNumber5 import CompareNumber5
+from ._CompareNumber7 import CompareNumber7
+from ._CompareOptionStyle1 import CompareOptionStyle1
+from ._CompareOptionType1 import CompareOptionType1
+from ._CompareOtherPayment1 import CompareOtherPayment1
+from ._ComparePercentageRate3 import ComparePercentageRate3
+from ._ComparePostTradeRiskReduction2 import ComparePostTradeRiskReduction2
+from ._CompareReferenceParty1 import CompareReferenceParty1
+from ._CompareReportingLevelType2 import CompareReportingLevelType2
+from ._CompareSeniorityType1 import CompareSeniorityType1
+from ._CompareText2 import CompareText2
+from ._CompareTradeClearingObligation1 import CompareTradeClearingObligation1
+from ._CompareTradeClearingStatus3 import CompareTradeClearingStatus3
+from ._CompareTradeConfirmation2 import CompareTradeConfirmation2
+from ._CompareTrancheIndicator1 import CompareTrancheIndicator1
+from ._CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
+from ._CompareUniqueTransactionIdentifier2 import CompareUniqueTransactionIdentifier2
+from ._CompareUnitPrice4 import CompareUnitPrice4
+from ._CompareUnitPrice5 import CompareUnitPrice5
+from ._CompareUnitPrice7 import CompareUnitPrice7
+from ._CompareUnitPrice8 import CompareUnitPrice8
 
 class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrstFltgRateScndLegCd", "_OptnStrkPricSchdlAmt", "_PricSchdlUadjstdFctvDt", "_FctvDt", "_NtnlAmtScndLeg", "_MstrAgrmtVrsn", "_RptTrckgNb", "_NtnlAmtScndLegUadjstdEndDt", "_OptnMtrtyDtOfUndrlyg", "_IntrstFltgRateFrstLegPmtFrqcyUnit", "_NtnlQtyScndLegUadjstdEndDt", "_NtnlAmtFrstLeg", "_IntrstFltgRateScndLegRefPrdUnit", "_CcyFwdXchgRate", "_OptnTp", "_Lvl", "_NrgyLdTp", "_SttlmDt", "_Dlta", "_IntrstFltgRateScndLegId", "_NtnlQtyScndLeg", "_DlvryTp", "_IntrstFltgRateScndLegDayCnt", "_TradClrOblgtn", "_NtnlQtyScndLegSchdlQty", "_PstTradRskRdctn", "_NrgyDlvryPtOrZone", "_IntrstFxdRateFrstLegPmtFrqcyVal", "_NtnlAmtFrstLegUadjstdEndDt", "_OptnStrkPric", "_IntrstFxdRateScndLegPmtFrqcyVal", "_IntrstFxdRateFrstLegDayCnt", "_NtnlQtyFrstLegSchdlQty", "_CcyXchgRate", "_EarlyTermntnDt", "_IntraGrp", "_IntrstFxdRateFrstLeg", "_ExctnTmStmp", "_IntrstFltgRateFrstLegDayCnt", "_IntrstFltgRateScndLegRstFrqcyUnit", "_CcyXchgRateBsis", "_OptnPrmPmtDt", "_IntrstFltgRateFrstLegSprd", "_Cmmdty", "_TradConf", "_CdtVrsn", "_IntrstFltgRateScndLegPmtFrqcyUnit", "_OptnExrcStyle", "_IntrstFltgRateFrstLegPmtFrqcyVal", "_OthrPmt", "_IntrstFxdRateFrstLegPmtFrqcyUnit", "_IntrstFxdRateScndLegPmtFrqcyUnit", "_CdtTrch", "_XprtnDt", "_TxPric", "_IntrstFltgRateFrstLegRstFrqcyVal", "_IntrstFltgRateFrstLegNm", "_DlvryAttr", "_OptnStrkPricSchdlUadjstdFctvDt", "_NtnlQtyScndLegUadjstdFctvDt", "_NtnlQtyFrstLegUadjstdEndDt", "_PackgSprd", "_CdtSnrty", "_PricSchdlUadjstdEndDt", "_IntrstFltgRateScndLegRstFrqcyVal", "_NtnlAmtScndLegSchdlAmt", "_IntrstFltgRateFrstLegRefPrdUnit", "_IntrstFxdRateScndLegDayCnt", "_PrrUnqTxIdr", "_UnqTxIdr", "_IntrstFltgRateScndLegPmtFrqcyVal", "_IntrstFltgRateScndLegNm", "_NtnlAmtScndLegUadjstdFctvDt", "_MstrAgrmtTp", "_NrgyIntrCnnctnPt", "_IntrstFltgRateFrstLegRstFrqcyUnit", "_OptnPrmAmt", "_CdtSrs", "_PackgPric", "_NtnlAmtFrstLegUadjstdFctvDt", "_TradClrSts", "_IntrstFltgRateFrstLegCd", "_SbsqntPosUnqTxIdr", "_PltfmIdr", "_TxSchdlPric", "_NtnlQtyFrstLegUadjstdFctvDt", "_CdtRefPty", "_IntrstFltgRateFrstLegId", "_IntrstFltgRateScndLegRefPrdVal", "_IntrstFltgRateScndLegSprd", "_DerivEvt", "_OptnStrkPricSchdlUadjstdEndDt", "_NtnlQtyFrstLeg", "_IntrstFltgRateFrstLegRefPrdVal", "_CdtIndxFctr", "_NtnlAmtFrstLegSchdlAmt", "_IntrstRateFxdScndLeg"]
+	__slots__ = ["_CcyFwdXchgRate", "_CcyXchgRate", "_CcyXchgRateBsis", "_CdtIndxFctr", "_CdtRefPty", "_CdtSnrty", "_CdtSrs", "_CdtTrch", "_CdtVrsn", "_Cmmdty", "_DerivEvt", "_Dlta", "_DlvryAttr", "_DlvryTp", "_EarlyTermntnDt", "_ExctnTmStmp", "_FctvDt", "_IntraGrp", "_IntrstFltgRateFrstLegCd", "_IntrstFltgRateFrstLegDayCnt", "_IntrstFltgRateFrstLegId", "_IntrstFltgRateFrstLegNm", "_IntrstFltgRateFrstLegPmtFrqcyUnit", "_IntrstFltgRateFrstLegPmtFrqcyVal", "_IntrstFltgRateFrstLegRefPrdUnit", "_IntrstFltgRateFrstLegRefPrdVal", "_IntrstFltgRateFrstLegRstFrqcyUnit", "_IntrstFltgRateFrstLegRstFrqcyVal", "_IntrstFltgRateFrstLegSprd", "_IntrstFltgRateScndLegCd", "_IntrstFltgRateScndLegDayCnt", "_IntrstFltgRateScndLegId", "_IntrstFltgRateScndLegNm", "_IntrstFltgRateScndLegPmtFrqcyUnit", "_IntrstFltgRateScndLegPmtFrqcyVal", "_IntrstFltgRateScndLegRefPrdUnit", "_IntrstFltgRateScndLegRefPrdVal", "_IntrstFltgRateScndLegRstFrqcyUnit", "_IntrstFltgRateScndLegRstFrqcyVal", "_IntrstFltgRateScndLegSprd", "_IntrstFxdRateFrstLeg", "_IntrstFxdRateFrstLegDayCnt", "_IntrstFxdRateFrstLegPmtFrqcyUnit", "_IntrstFxdRateFrstLegPmtFrqcyVal", "_IntrstFxdRateScndLegDayCnt", "_IntrstFxdRateScndLegPmtFrqcyUnit", "_IntrstFxdRateScndLegPmtFrqcyVal", "_IntrstRateFxdScndLeg", "_Lvl", "_MstrAgrmtTp", "_MstrAgrmtVrsn", "_NrgyDlvryPtOrZone", "_NrgyIntrCnnctnPt", "_NrgyLdTp", "_NtnlAmtFrstLeg", "_NtnlAmtFrstLegSchdlAmt", "_NtnlAmtFrstLegUadjstdEndDt", "_NtnlAmtFrstLegUadjstdFctvDt", "_NtnlAmtScndLeg", "_NtnlAmtScndLegSchdlAmt", "_NtnlAmtScndLegUadjstdEndDt", "_NtnlAmtScndLegUadjstdFctvDt", "_NtnlQtyFrstLeg", "_NtnlQtyFrstLegSchdlQty", "_NtnlQtyFrstLegUadjstdEndDt", "_NtnlQtyFrstLegUadjstdFctvDt", "_NtnlQtyScndLeg", "_NtnlQtyScndLegSchdlQty", "_NtnlQtyScndLegUadjstdEndDt", "_NtnlQtyScndLegUadjstdFctvDt", "_OptnExrcStyle", "_OptnMtrtyDtOfUndrlyg", "_OptnPrmAmt", "_OptnPrmPmtDt", "_OptnStrkPric", "_OptnStrkPricSchdlAmt", "_OptnStrkPricSchdlUadjstdEndDt", "_OptnStrkPricSchdlUadjstdFctvDt", "_OptnTp", "_OthrPmt", "_PackgPric", "_PackgSprd", "_PltfmIdr", "_PricSchdlUadjstdEndDt", "_PricSchdlUadjstdFctvDt", "_PrrUnqTxIdr", "_PstTradRskRdctn", "_RptTrckgNb", "_SbsqntPosUnqTxIdr", "_SttlmDt", "_TradClrOblgtn", "_TradClrSts", "_TradConf", "_TxPric", "_TxSchdlPric", "_UnqTxIdr", "_XprtnDt"]
 	@property
 	def CcyFwdXchgRate(self):
 		return self._CcyFwdXchgRate

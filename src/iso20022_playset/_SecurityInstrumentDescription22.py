@@ -1,11 +1,11 @@
 from . import base_types
 from ._DebtInstrument4 import DebtInstrument4
-from ._SecurityInstrumentDescription23 import SecurityInstrumentDescription23
 from ._DerivativeInstrument6 import DerivativeInstrument6
+from ._SecurityInstrumentDescription23 import SecurityInstrumentDescription23
 
 class SecurityInstrumentDescription22(base_types._BaseFieldType):
 
-	__slots__ = ["_DebtInstrmAttrbts", "_FinInstrmGnlAttrbts", "_DerivInstrmAttrbts"]
+	__slots__ = ["_DebtInstrmAttrbts", "_DerivInstrmAttrbts", "_FinInstrmGnlAttrbts"]
 	@property
 	def DebtInstrmAttrbts(self):
 		return self._DebtInstrmAttrbts

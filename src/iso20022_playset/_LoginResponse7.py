@@ -1,12 +1,12 @@
 from . import base_types
+from ._ActionMessage11 import ActionMessage11
+from ._ISODateTime import ISODateTime
 from ._PointOfInteractionCapabilities9 import PointOfInteractionCapabilities9
 from ._PointOfInteractionComponent17 import PointOfInteractionComponent17
-from ._ISODateTime import ISODateTime
-from ._ActionMessage11 import ActionMessage11
 
 class LoginResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_POISftwr", "_POICpblties", "_OutptDisp", "_POIDtTm"]
+	__slots__ = ["_OutptDisp", "_POICpblties", "_POIDtTm", "_POISftwr"]
 	@property
 	def OutptDisp(self):
 		return self._OutptDisp

@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._ReservationReturnCriteria1 import ReservationReturnCriteria1
 from ._ReservationSearchCriteria6 import ReservationSearchCriteria6
-from ._Max35Text import Max35Text
 
 class ReservationCriteria7(base_types._BaseFieldType):
 
-	__slots__ = ["_NewQryNm", "_SchCrit", "_RtrCrit"]
+	__slots__ = ["_NewQryNm", "_RtrCrit", "_SchCrit"]
 	@property
 	def NewQryNm(self):
 		return self._NewQryNm

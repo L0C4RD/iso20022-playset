@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._Disclosure3Choice import Disclosure3Choice
+from ._DisclosureRequestIdentification1 import DisclosureRequestIdentification1
 from ._Max35Text import Max35Text
 from ._Pagination1 import Pagination1
-from ._DisclosureRequestIdentification1 import DisclosureRequestIdentification1
 from ._PartyIdentification219 import PartyIdentification219
-from ._Disclosure3Choice import Disclosure3Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class ShareholdersIdentificationDisclosureResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_DsclsrRspnId", "_IssrDsclsrReqRef", "_RspndgIntrmy", "_DsclsrInf", "_SplmtryData", "_Pgntn"]
+	__slots__ = ["_DsclsrInf", "_DsclsrRspnId", "_IssrDsclsrReqRef", "_Pgntn", "_RspndgIntrmy", "_SplmtryData"]
 	@property
 	def DsclsrInf(self):
 		return self._DsclsrInf

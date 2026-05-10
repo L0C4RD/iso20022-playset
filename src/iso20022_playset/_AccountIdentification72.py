@@ -1,7 +1,7 @@
 from . import base_types
-from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
 from ._PartyIdentification136Choice import PartyIdentification136Choice
 from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
 from ._SafekeepingPlaceFormat57Choice import SafekeepingPlaceFormat57Choice
 
 class AccountIdentification72(base_types._BaseFieldType):

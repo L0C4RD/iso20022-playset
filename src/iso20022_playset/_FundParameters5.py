@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._CountryCode import CountryCode
 from ._FinancialInstrument71 import FinancialInstrument71
+from ._ISODate import ISODate
 from ._PartyIdentification139 import PartyIdentification139
 
 class FundParameters5(base_types._BaseFieldType):
 
-	__slots__ = ["_FndMgmtCpny", "_RegdDstrbtnCtry", "_DtFr", "_FinInstrmDtls", "_CtryOfDmcl"]
+	__slots__ = ["_CtryOfDmcl", "_DtFr", "_FinInstrmDtls", "_FndMgmtCpny", "_RegdDstrbtnCtry"]
 	@property
 	def CtryOfDmcl(self):
 		return self._CtryOfDmcl

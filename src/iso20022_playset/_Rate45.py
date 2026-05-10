@@ -1,18 +1,18 @@
 from . import base_types
-from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
-from ._Percentage14Rate import Percentage14Rate
-from ._RateAndAmountFormat67Choice import RateAndAmountFormat67Choice
-from ._RateFormat28Choice import RateFormat28Choice
-from ._SolicitationFeeRateFormat13Choice import SolicitationFeeRateFormat13Choice
-from ._InterestRateUsedForPaymentFormat19Choice import InterestRateUsedForPaymentFormat19Choice
-from ._RateAndAmountFormat68Choice import RateAndAmountFormat68Choice
-from ._RateAndAmountFormat66Choice import RateAndAmountFormat66Choice
 from ._GrossDividendRateFormat40Choice import GrossDividendRateFormat40Choice
+from ._InterestRateUsedForPaymentFormat19Choice import InterestRateUsedForPaymentFormat19Choice
 from ._NetDividendRateFormat42Choice import NetDividendRateFormat42Choice
+from ._Percentage14Rate import Percentage14Rate
+from ._RateAndAmountFormat66Choice import RateAndAmountFormat66Choice
+from ._RateAndAmountFormat67Choice import RateAndAmountFormat67Choice
+from ._RateAndAmountFormat68Choice import RateAndAmountFormat68Choice
+from ._RateFormat28Choice import RateFormat28Choice
+from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from ._SolicitationFeeRateFormat13Choice import SolicitationFeeRateFormat13Choice
 
 class Rate45(base_types._BaseFieldType):
 
-	__slots__ = ["_AplblRate", "_DmdRate", "_ChrgsFees", "_TaxCdtRate", "_EqulstnRate", "_TaxRclmRate", "_FsclStmp", "_GrssIntrstRateUsdForPmt", "_SlctnFeeRate", "_TaxOnIncm", "_ThrdPtyIncntivRate", "_GrssDstrbtnRate", "_AddtlTax", "_NetDstrbtnRate", "_WhldgTaxRate", "_EarlySlctnFeeRate", "_TaxOnPrfts", "_ScndLvlTax"]
+	__slots__ = ["_AddtlTax", "_AplblRate", "_ChrgsFees", "_DmdRate", "_EarlySlctnFeeRate", "_EqulstnRate", "_FsclStmp", "_GrssDstrbtnRate", "_GrssIntrstRateUsdForPmt", "_NetDstrbtnRate", "_ScndLvlTax", "_SlctnFeeRate", "_TaxCdtRate", "_TaxOnIncm", "_TaxOnPrfts", "_TaxRclmRate", "_ThrdPtyIncntivRate", "_WhldgTaxRate"]
 	@property
 	def AddtlTax(self):
 		return self._AddtlTax

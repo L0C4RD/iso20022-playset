@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._MandateCancellationReason2 import MandateCancellationReason2
 from ._OriginalMandate10Choice import OriginalMandate10Choice
 from ._OriginalMessageInformation1 import OriginalMessageInformation1
-from ._MandateCancellationReason2 import MandateCancellationReason2
+from ._SupplementaryData1 import SupplementaryData1
 
 class MandateCancellation8(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMndt", "_CxlRsn", "_SplmtryData", "_OrgnlMsgInf"]
+	__slots__ = ["_CxlRsn", "_OrgnlMndt", "_OrgnlMsgInf", "_SplmtryData"]
 	@property
 	def CxlRsn(self):
 		return self._CxlRsn

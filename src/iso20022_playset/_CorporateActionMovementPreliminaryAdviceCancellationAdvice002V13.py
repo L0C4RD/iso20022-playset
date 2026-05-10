@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._CorporateAction76 import CorporateAction76
 from ._AccountIdentification75Choice import AccountIdentification75Choice
-from ._PartyIdentification137Choice import PartyIdentification137Choice
-from ._DocumentIdentification37 import DocumentIdentification37
+from ._CorporateAction76 import CorporateAction76
 from ._CorporateActionGeneralInformation191 import CorporateActionGeneralInformation191
+from ._DocumentIdentification37 import DocumentIdentification37
+from ._PartyIdentification137Choice import PartyIdentification137Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class CorporateActionMovementPreliminaryAdviceCancellationAdvice002V13(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_PhysSctiesAgt", "_CorpActnDtls", "_SubPngAgt", "_IssrAgt", "_CorpActnGnlInf", "_SlctnAgt", "_RsellngAgt", "_Regar", "_DrpAgt", "_MvmntPrlimryAdvcId", "_PngAgt", "_InfAgt", "_SplmtryData"]
+	__slots__ = ["_AcctDtls", "_CorpActnDtls", "_CorpActnGnlInf", "_DrpAgt", "_InfAgt", "_IssrAgt", "_MvmntPrlimryAdvcId", "_PhysSctiesAgt", "_PngAgt", "_Regar", "_RsellngAgt", "_SlctnAgt", "_SplmtryData", "_SubPngAgt"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

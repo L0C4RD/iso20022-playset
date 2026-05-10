@@ -1,11 +1,11 @@
 from . import base_types
-from ._SystemMemberStatus1Choice import SystemMemberStatus1Choice
 from ._MemberIdentification3Choice import MemberIdentification3Choice
+from ._SystemMemberStatus1Choice import SystemMemberStatus1Choice
 from ._SystemMemberType1Choice import SystemMemberType1Choice
 
 class MemberSearchCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Id", "_Sts"]
+	__slots__ = ["_Id", "_Sts", "_Tp"]
 	@property
 	def Id(self):
 		return self._Id

@@ -1,10 +1,10 @@
 from . import base_types
-from ._SignedQuantityFormat13 import SignedQuantityFormat13
 from ._SignedQuantityFormat12 import SignedQuantityFormat12
+from ._SignedQuantityFormat13 import SignedQuantityFormat13
 
 class BalanceFormat14Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Bal", "_NotElgblBal", "_ElgblBal"]
+	__slots__ = ["_Bal", "_ElgblBal", "_NotElgblBal"]
 	@property
 	def Bal(self):
 		return self._Bal

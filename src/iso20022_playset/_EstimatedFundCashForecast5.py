@@ -1,24 +1,24 @@
 from . import base_types
-from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
-from ._CurrencyDesignation1 import CurrencyDesignation1
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._BreakdownByCurrency2 import BreakdownByCurrency2
-from ._FinancialInstrument9 import FinancialInstrument9
-from ._PercentageRate import PercentageRate
-from ._BreakdownByParty3 import BreakdownByParty3
-from ._BreakdownByUserDefinedParameter3 import BreakdownByUserDefinedParameter3
-from ._UnitPrice19 import UnitPrice19
-from ._YesNoIndicator import YesNoIndicator
-from ._NetCashForecast4 import NetCashForecast4
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._BreakdownByCountry2 import BreakdownByCountry2
+from ._BreakdownByCurrency2 import BreakdownByCurrency2
+from ._BreakdownByParty3 import BreakdownByParty3
+from ._BreakdownByUserDefinedParameter3 import BreakdownByUserDefinedParameter3
+from ._CurrencyDesignation1 import CurrencyDesignation1
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
+from ._FinancialInstrument9 import FinancialInstrument9
+from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
 from ._ForeignExchangeTerms19 import ForeignExchangeTerms19
 from ._Max35Text import Max35Text
+from ._NetCashForecast4 import NetCashForecast4
+from ._PercentageRate import PercentageRate
+from ._UnitPrice19 import UnitPrice19
+from ._YesNoIndicator import YesNoIndicator
 
 class EstimatedFundCashForecast5(base_types._BaseFieldType):
 
-	__slots__ = ["_TradDtTm", "_Pric", "_EstmtdPctgOfShrClssTtlNAV", "_CcySts", "_BrkdwnByUsrDfndParam", "_EstmtdNetCshFcstDtls", "_EstmtdTtlUnitsNb", "_FXRate", "_EstmtdTtlNAV", "_PrvsTradDtTm", "_InvstmtCcy", "_BrkdwnByCcy", "_BrkdwnByCtry", "_EstmtdTtlNAVChngRate", "_Id", "_FinInstrmDtls", "_PrvsTtlNAV", "_XcptnlNetCshFlowInd", "_BrkdwnByPty", "_PrvsTtlUnitsNb"]
+	__slots__ = ["_BrkdwnByCcy", "_BrkdwnByCtry", "_BrkdwnByPty", "_BrkdwnByUsrDfndParam", "_CcySts", "_EstmtdNetCshFcstDtls", "_EstmtdPctgOfShrClssTtlNAV", "_EstmtdTtlNAV", "_EstmtdTtlNAVChngRate", "_EstmtdTtlUnitsNb", "_FXRate", "_FinInstrmDtls", "_Id", "_InvstmtCcy", "_Pric", "_PrvsTradDtTm", "_PrvsTtlNAV", "_PrvsTtlUnitsNb", "_TradDtTm", "_XcptnlNetCshFlowInd"]
 	@property
 	def BrkdwnByCcy(self):
 		return self._BrkdwnByCcy

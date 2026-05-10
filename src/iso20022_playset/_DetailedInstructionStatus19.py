@@ -1,16 +1,16 @@
 from . import base_types
 from ._DateAndDateTime1Choice import DateAndDateTime1Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._PartyIdentification232Choice import PartyIdentification232Choice
-from ._PartyIdentification231Choice import PartyIdentification231Choice
 from ._Max35Text import Max35Text
-from ._Vote19 import Vote19
-from ._PartyIdentification246Choice import PartyIdentification246Choice
 from ._ModalityOfCounting1Choice import ModalityOfCounting1Choice
+from ._PartyIdentification231Choice import PartyIdentification231Choice
+from ._PartyIdentification232Choice import PartyIdentification232Choice
+from ._PartyIdentification246Choice import PartyIdentification246Choice
+from ._Vote19 import Vote19
+from ._YesNoIndicator import YesNoIndicator
 
 class DetailedInstructionStatus19(base_types._BaseFieldType):
 
-	__slots__ = ["_StgInstr", "_VoteRctDtTm", "_ModltyOfCntg", "_SnglInstrId", "_AcctOwnr", "_Prxy", "_SubAcctId", "_RghtsHldr", "_AcctId", "_VotePerRsltn"]
+	__slots__ = ["_AcctId", "_AcctOwnr", "_ModltyOfCntg", "_Prxy", "_RghtsHldr", "_SnglInstrId", "_StgInstr", "_SubAcctId", "_VotePerRsltn", "_VoteRctDtTm"]
 	@property
 	def AcctId(self):
 		return self._AcctId

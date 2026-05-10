@@ -1,10 +1,10 @@
 from . import base_types
-from ._InstrumentSubStructureType1Code import InstrumentSubStructureType1Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._InstrumentSubStructureType1Code import InstrumentSubStructureType1Code
 
 class InstrumentSubStructureType2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

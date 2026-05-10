@@ -1,10 +1,10 @@
 from . import base_types
-from ._MemberReport6 import MemberReport6
 from ._ErrorHandling3 import ErrorHandling3
+from ._MemberReport6 import MemberReport6
 
 class MemberReportOrError7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rpt", "_OprlErr"]
+	__slots__ = ["_OprlErr", "_Rpt"]
 	@property
 	def OprlErr(self):
 		return self._OprlErr

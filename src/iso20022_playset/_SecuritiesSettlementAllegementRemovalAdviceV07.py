@@ -1,15 +1,15 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SupplementaryData1 import SupplementaryData1
-from ._SettlementTypeAndIdentification18 import SettlementTypeAndIdentification18
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 from ._Max35Text import Max35Text
 from ._PartyIdentification144 import PartyIdentification144
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SettlementTypeAndIdentification18 import SettlementTypeAndIdentification18
+from ._SupplementaryData1 import SupplementaryData1
 from ._TransactionDetails175 import TransactionDetails175
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 
 class SecuritiesSettlementAllegementRemovalAdviceV07(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgAcct", "_MktInfrstrctrTxId", "_TxDtls", "_BlckChainAdrOrWllt", "_SplmtryData", "_CtrPtyMktInfrstrctrTxId", "_AcctSvcrTxId", "_AcctOwnr"]
+	__slots__ = ["_AcctOwnr", "_AcctSvcrTxId", "_BlckChainAdrOrWllt", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_SfkpgAcct", "_SplmtryData", "_TxDtls"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

@@ -1,6 +1,6 @@
 from . import base_types
-from ._ProcessedStatus7Code import ProcessedStatus7Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._ProcessedStatus7Code import ProcessedStatus7Code
 
 class ProcessedStatus1Format1Choice(base_types._BaseFieldType):
 

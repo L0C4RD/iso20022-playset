@@ -1,21 +1,21 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
-from ._PartyIdentification26 import PartyIdentification26
-from ._DatePeriodDetails import DatePeriodDetails
-from ._PostalAddress5 import PostalAddress5
-from ._DocumentIdentification1 import DocumentIdentification1
-from ._SingleTransport3 import SingleTransport3
-from ._Max35Text import Max35Text
-from ._TradeCertificateType1Code import TradeCertificateType1Code
-from ._Max70Text import Max70Text
 from ._CertifiedCharacteristics2Choice import CertifiedCharacteristics2Choice
-from ._Max350Text import Max350Text
+from ._DatePeriodDetails import DatePeriodDetails
+from ._DocumentIdentification1 import DocumentIdentification1
+from ._ISODate import ISODate
 from ._LineItemAndPOIdentification1 import LineItemAndPOIdentification1
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._PartyIdentification26 import PartyIdentification26
+from ._PostalAddress5 import PostalAddress5
+from ._SingleTransport3 import SingleTransport3
+from ._TradeCertificateType1Code import TradeCertificateType1Code
+from ._YesNoIndicator import YesNoIndicator
 
 class CertificateDataSet2(base_types._BaseFieldType):
 
-	__slots__ = ["_InspctnDt", "_Trnsprt", "_IsseDt", "_PlcOfIsse", "_LineItm", "_CertId", "_AddtlInf", "_AuthrsdInspctrInd", "_Consgnr", "_CertTp", "_Issr", "_Consgn", "_DataSetId", "_GoodsDesc", "_Manfctr", "_CertfdChrtcs"]
+	__slots__ = ["_AddtlInf", "_AuthrsdInspctrInd", "_CertId", "_CertTp", "_CertfdChrtcs", "_Consgn", "_Consgnr", "_DataSetId", "_GoodsDesc", "_InspctnDt", "_IsseDt", "_Issr", "_LineItm", "_Manfctr", "_PlcOfIsse", "_Trnsprt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

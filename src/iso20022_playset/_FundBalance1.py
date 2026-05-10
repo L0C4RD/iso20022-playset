@@ -1,10 +1,10 @@
 from . import base_types
-from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
 
 class FundBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlUnitsFrCshOrdrs", "_TtlCshFrUnitOrdrs", "_TtlCshFrCshOrdrs", "_TtlUnitsFrUnitOrdrs"]
+	__slots__ = ["_TtlCshFrCshOrdrs", "_TtlCshFrUnitOrdrs", "_TtlUnitsFrCshOrdrs", "_TtlUnitsFrUnitOrdrs"]
 	@property
 	def TtlCshFrCshOrdrs(self):
 		return self._TtlCshFrCshOrdrs

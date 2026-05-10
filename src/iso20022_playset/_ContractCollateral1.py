@@ -5,7 +5,7 @@ from ._Max1025Text import Max1025Text
 
 class ContractCollateral1(base_types._BaseFieldType):
 
-	__slots__ = ["_CollDesc", "_TtlAmt", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_CollDesc", "_TtlAmt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

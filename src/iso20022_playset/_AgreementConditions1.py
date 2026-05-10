@@ -1,11 +1,11 @@
 from . import base_types
+from ._Exact4NumericText import Exact4NumericText
 from ._ISODate import ISODate
 from ._Max6AlphaText import Max6AlphaText
-from ._Exact4NumericText import Exact4NumericText
 
 class AgreementConditions1(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_AgrmtCd", "_Vrsn"]
+	__slots__ = ["_AgrmtCd", "_Dt", "_Vrsn"]
 	@property
 	def AgrmtCd(self):
 		return self._AgrmtCd

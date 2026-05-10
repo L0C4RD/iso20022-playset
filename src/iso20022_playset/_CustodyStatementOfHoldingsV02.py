@@ -1,17 +1,17 @@
 from . import base_types
 from ._AdditionalReference2 import AdditionalReference2
-from ._SafekeepingAccount2 import SafekeepingAccount2
-from ._Extension1 import Extension1
-from ._TotalValueInPageAndStatement import TotalValueInPageAndStatement
-from ._Statement7 import Statement7
 from ._AggregateBalanceInformation4 import AggregateBalanceInformation4
-from ._SubAccountIdentification5 import SubAccountIdentification5
+from ._Extension1 import Extension1
 from ._MessageIdentification1 import MessageIdentification1
 from ._Pagination import Pagination
+from ._SafekeepingAccount2 import SafekeepingAccount2
+from ._Statement7 import Statement7
+from ._SubAccountIdentification5 import SubAccountIdentification5
+from ._TotalValueInPageAndStatement import TotalValueInPageAndStatement
 
 class CustodyStatementOfHoldingsV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_PrvsRef", "_TtlVals", "_RltdRef", "_AcctDtls", "_MsgPgntn", "_StmtGnlDtls", "_Xtnsn", "_SubAcctDtls", "_BalForAcct"]
+	__slots__ = ["_AcctDtls", "_BalForAcct", "_MsgId", "_MsgPgntn", "_PrvsRef", "_RltdRef", "_StmtGnlDtls", "_SubAcctDtls", "_TtlVals", "_Xtnsn"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

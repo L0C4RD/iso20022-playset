@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._RegisteredContract17 import RegisteredContract17
-from ._Max35Text import Max35Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._Max35Text import Max35Text
+from ._RegisteredContract17 import RegisteredContract17
+from ._SupplementaryData1 import SupplementaryData1
 from ._TradeParty6 import TradeParty6
 
 class RegisteredContract16(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnAgt", "_RegdCtrctAmdmnt", "_CtrctRegnAmdmntId", "_RptgPty", "_SplmtryData"]
+	__slots__ = ["_CtrctRegnAmdmntId", "_RegdCtrctAmdmnt", "_RegnAgt", "_RptgPty", "_SplmtryData"]
 	@property
 	def CtrctRegnAmdmntId(self):
 		return self._CtrctRegnAmdmntId

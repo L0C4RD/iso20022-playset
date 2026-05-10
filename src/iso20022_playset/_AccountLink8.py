@@ -1,12 +1,12 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._CashAccount38 import CashAccount38
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._CashAccount38 import CashAccount38
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._SecuritiesAccount19 import SecuritiesAccount19
 
 class AccountLink8(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_VldFr", "_CshAcct", "_SctiesAcct"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_CshAcct", "_SctiesAcct", "_VldFr"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt

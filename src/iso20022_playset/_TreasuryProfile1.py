@@ -1,11 +1,11 @@
 from . import base_types
+from ._ISODate import ISODate
 from ._PartyRole5Choice import PartyRole5Choice
 from ._PercentageRate import PercentageRate
-from ._ISODate import ISODate
 
 class TreasuryProfile1(base_types._BaseFieldType):
 
-	__slots__ = ["_TradrTp", "_Dt", "_Rate"]
+	__slots__ = ["_Dt", "_Rate", "_TradrTp"]
 	@property
 	def Dt(self):
 		return self._Dt

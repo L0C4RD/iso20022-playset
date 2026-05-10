@@ -1,27 +1,27 @@
 from . import base_types
-from ._FinancialInstrumentAttributes122 import FinancialInstrumentAttributes122
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from ._AdditionalBalanceInformation24 import AdditionalBalanceInformation24
 from ._AggregateBalancePerSafekeepingPlace41 import AggregateBalancePerSafekeepingPlace41
+from ._Balance22 import Balance22
 from ._Balance25 import Balance25
-from ._Number import Number
+from ._BalanceAmounts4 import BalanceAmounts4
+from ._BalanceQuantity17Choice import BalanceQuantity17Choice
+from ._BasicCollateralValuation1Details import BasicCollateralValuation1Details
 from ._CorporateActionOption5Code import CorporateActionOption5Code
 from ._FinancialInstrument22 import FinancialInstrument22
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._AdditionalBalanceInformation24 import AdditionalBalanceInformation24
-from ._BasicCollateralValuation1Details import BasicCollateralValuation1Details
-from ._SupplementaryData1 import SupplementaryData1
-from ._SafeKeepingPlace4 import SafeKeepingPlace4
-from ._SubBalanceInformation24 import SubBalanceInformation24
+from ._FinancialInstrumentAttributes122 import FinancialInstrumentAttributes122
+from ._ForeignExchangeTerms35 import ForeignExchangeTerms35
+from ._Number import Number
 from ._PriceInformation22 import PriceInformation22
 from ._QuantityBreakdown71 import QuantityBreakdown71
-from ._BalanceQuantity17Choice import BalanceQuantity17Choice
-from ._BalanceAmounts4 import BalanceAmounts4
-from ._ForeignExchangeTerms35 import ForeignExchangeTerms35
-from ._Balance22 import Balance22
+from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from ._SafeKeepingPlace4 import SafeKeepingPlace4
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._SubBalanceInformation24 import SubBalanceInformation24
+from ._SupplementaryData1 import SupplementaryData1
 
 class AggregateBalanceInformation44(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstmtFndsFinInstrmAttrbts", "_SfkpgPlc", "_AggtBal", "_NotAvlblBal", "_BalBrkdwn", "_InstrmCcyAmts", "_AddtlBalBrkdwn", "_BalAtSfkpgPlc", "_FinInstrmAttrbts", "_DaysAcrd", "_PricDtls", "_QtyBrkdwn", "_AvlblBal", "_AcctBaseCcyAmts", "_CorpActnOptnTp", "_ValtnHrcutDtls", "_FinInstrmId", "_FXDtls", "_HldgAddtlDtls", "_SplmtryData"]
+	__slots__ = ["_AcctBaseCcyAmts", "_AddtlBalBrkdwn", "_AggtBal", "_AvlblBal", "_BalAtSfkpgPlc", "_BalBrkdwn", "_CorpActnOptnTp", "_DaysAcrd", "_FXDtls", "_FinInstrmAttrbts", "_FinInstrmId", "_HldgAddtlDtls", "_InstrmCcyAmts", "_InvstmtFndsFinInstrmAttrbts", "_NotAvlblBal", "_PricDtls", "_QtyBrkdwn", "_SfkpgPlc", "_SplmtryData", "_ValtnHrcutDtls"]
 	@property
 	def AcctBaseCcyAmts(self):
 		return self._AcctBaseCcyAmts

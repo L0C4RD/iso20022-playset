@@ -4,7 +4,7 @@ from ._OrderData3 import OrderData3
 
 class NewOrderReport2(base_types._BaseFieldType):
 
-	__slots__ = ["_RptId", "_Ordr"]
+	__slots__ = ["_Ordr", "_RptId"]
 	@property
 	def Ordr(self):
 		return self._Ordr

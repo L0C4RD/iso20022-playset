@@ -1,11 +1,11 @@
 from . import base_types
 from ._Max35Text import Max35Text
-from ._TaxReferenceType1Choice import TaxReferenceType1Choice
 from ._TaxReferenceParty1Choice import TaxReferenceParty1Choice
+from ._TaxReferenceType1Choice import TaxReferenceType1Choice
 
 class TaxReference1(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxTp", "_Ref", "_HldrTp"]
+	__slots__ = ["_HldrTp", "_Ref", "_TaxTp"]
 	@property
 	def HldrTp(self):
 		return self._HldrTp

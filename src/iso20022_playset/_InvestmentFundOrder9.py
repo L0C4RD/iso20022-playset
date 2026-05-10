@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class InvestmentFundOrder9(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRef", "_ClntRef", "_CxlRsn", "_OrdrRef"]
+	__slots__ = ["_ClntRef", "_CxlRef", "_CxlRsn", "_OrdrRef"]
 	@property
 	def ClntRef(self):
 		return self._ClntRef

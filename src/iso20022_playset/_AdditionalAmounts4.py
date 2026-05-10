@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISO8583AmountTypeCode import ISO8583AmountTypeCode
-from ._Max35Text import Max35Text
 from ._CreditDebit3Code import CreditDebit3Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max70Text import Max70Text
 from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._ISO8583AmountTypeCode import ISO8583AmountTypeCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class AdditionalAmounts4(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Ccy", "_Tp", "_CdtDbt", "_OthrTp", "_Desc"]
+	__slots__ = ["_Amt", "_Ccy", "_CdtDbt", "_Desc", "_OthrTp", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

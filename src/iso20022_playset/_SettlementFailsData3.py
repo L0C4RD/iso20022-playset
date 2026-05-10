@@ -1,16 +1,16 @@
 from . import base_types
-from ._SettlementFailsParticipantRange1 import SettlementFailsParticipantRange1
-from ._SettlementFailureReason3 import SettlementFailureReason3
-from ._SettlementFailsInstrument2 import SettlementFailsInstrument2
-from ._SettlementFailsCurrency2 import SettlementFailsCurrency2
-from ._SettlementTotalData1 import SettlementTotalData1
-from ._SettlementFailsSecuritiesRange1 import SettlementFailsSecuritiesRange1
 from ._SettlementDataVolume2 import SettlementDataVolume2
+from ._SettlementFailsCurrency2 import SettlementFailsCurrency2
+from ._SettlementFailsInstrument2 import SettlementFailsInstrument2
+from ._SettlementFailsParticipantRange1 import SettlementFailsParticipantRange1
+from ._SettlementFailsSecuritiesRange1 import SettlementFailsSecuritiesRange1
 from ._SettlementFailsTransactionType2 import SettlementFailsTransactionType2
+from ._SettlementFailureReason3 import SettlementFailureReason3
+from ._SettlementTotalData1 import SettlementTotalData1
 
 class SettlementFailsData3(base_types._BaseFieldType):
 
-	__slots__ = ["_Ttl", "_PtcptInFail", "_TtlSttlmPnlties", "_SctiesInFail", "_FlsPerCcy", "_FailrRsn", "_FlsPerFinInstrmTp", "_FlsPerTxTp"]
+	__slots__ = ["_FailrRsn", "_FlsPerCcy", "_FlsPerFinInstrmTp", "_FlsPerTxTp", "_PtcptInFail", "_SctiesInFail", "_Ttl", "_TtlSttlmPnlties"]
 	@property
 	def FailrRsn(self):
 		return self._FailrRsn

@@ -1,11 +1,11 @@
 from . import base_types
-from ._RTPPartyIdentification2 import RTPPartyIdentification2
 from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
+from ._RTPPartyIdentification2 import RTPPartyIdentification2
 
 class EnrolmentHeader3(base_types._BaseFieldType):
 
-	__slots__ = ["_InitgPty", "_MsgRcpt", "_MsgId", "_CreDtTm", "_MsgOrgtr"]
+	__slots__ = ["_CreDtTm", "_InitgPty", "_MsgId", "_MsgOrgtr", "_MsgRcpt"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

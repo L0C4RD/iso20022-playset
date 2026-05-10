@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._ISODateTime import ISODateTime
 from ._GenericIdentification77 import GenericIdentification77
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 
 class Traceability4(base_types._BaseFieldType):
 
-	__slots__ = ["_RlayId", "_TracDtTmIn", "_SeqNb", "_TracDtTmOut"]
+	__slots__ = ["_RlayId", "_SeqNb", "_TracDtTmIn", "_TracDtTmOut"]
 	@property
 	def RlayId(self):
 		return self._RlayId

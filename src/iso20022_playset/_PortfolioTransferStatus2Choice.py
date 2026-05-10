@@ -1,12 +1,12 @@
 from . import base_types
 from ._AcknowledgedAcceptedStatus32Choice import AcknowledgedAcceptedStatus32Choice
 from ._PendingProcessingStatus17Choice import PendingProcessingStatus17Choice
-from ._RejectionStatus30Choice import RejectionStatus30Choice
 from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._RejectionStatus30Choice import RejectionStatus30Choice
 
 class PortfolioTransferStatus2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgPrcg", "_AckdAccptd", "_Prtry", "_Rjctd"]
+	__slots__ = ["_AckdAccptd", "_PdgPrcg", "_Prtry", "_Rjctd"]
 	@property
 	def AckdAccptd(self):
 		return self._AckdAccptd

@@ -1,35 +1,35 @@
 from . import base_types
-from ._TransactionChannelType1Choice import TransactionChannelType1Choice
-from ._SignatureType1Choice import SignatureType1Choice
-from ._RoundingDirection2Code import RoundingDirection2Code
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._CustomerConductClassification1Choice import CustomerConductClassification1Choice
 from ._DeliveryParameters3 import DeliveryParameters3
-from ._InvestmentFundsOrderBreakdown2 import InvestmentFundsOrderBreakdown2
-from ._InvestmentAccount58 import InvestmentAccount58
-from ._FinancialInstrumentQuantity28Choice import FinancialInstrumentQuantity28Choice
-from ._ForeignExchangeTerms32 import ForeignExchangeTerms32
-from ._NegotiatedTrade1Code import NegotiatedTrade1Code
-from ._PaymentTransaction72 import PaymentTransaction72
-from ._FundSettlementParameters12 import FundSettlementParameters12
-from ._UKTaxGroupUnit1Code import UKTaxGroupUnit1Code
-from ._ISODate import ISODate
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 from ._Equalisation1 import Equalisation1
 from ._FeeAndTax1 import FeeAndTax1
-from ._CustomerConductClassification1Choice import CustomerConductClassification1Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._IncomePreference1Code import IncomePreference1Code
-from ._Intermediary40 import Intermediary40
 from ._FinancialAdvice1Code import FinancialAdvice1Code
+from ._FinancialInstrumentQuantity28Choice import FinancialInstrumentQuantity28Choice
+from ._ForeignExchangeTerms32 import ForeignExchangeTerms32
 from ._FundOrderType4Choice import FundOrderType4Choice
+from ._FundSettlementParameters12 import FundSettlementParameters12
+from ._ISODate import ISODate
+from ._IncomePreference1Code import IncomePreference1Code
 from ._IndividualPerson32 import IndividualPerson32
-from ._OrderWaiver1 import OrderWaiver1
-from ._Max35Text import Max35Text
+from ._Intermediary40 import Intermediary40
+from ._InvestmentAccount58 import InvestmentAccount58
+from ._InvestmentFundsOrderBreakdown2 import InvestmentFundsOrderBreakdown2
 from ._Max350Text import Max350Text
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._Max35Text import Max35Text
+from ._NegotiatedTrade1Code import NegotiatedTrade1Code
+from ._OrderWaiver1 import OrderWaiver1
+from ._PaymentTransaction72 import PaymentTransaction72
+from ._RoundingDirection2Code import RoundingDirection2Code
+from ._SignatureType1Choice import SignatureType1Choice
+from ._TransactionChannelType1Choice import TransactionChannelType1Choice
+from ._UKTaxGroupUnit1Code import UKTaxGroupUnit1Code
+from ._YesNoIndicator import YesNoIndicator
 
 class RedemptionOrder15(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrTp", "_SttlmAndCtdyDtls", "_NonStdSttlmInf", "_TxOvrhd", "_AmtOrUnitsOrPctg", "_CstmrCndctClssfctn", "_PhysDlvryDtls", "_FXDtls", "_StffClntBrkdwn", "_NgtdTrad", "_OrdrRef", "_IncmPref", "_SttlmMtd", "_BnfcryDtls", "_CshSttlmDtls", "_RltdPtyDtls", "_CshSttlmDt", "_ClntRef", "_Grp1Or2Units", "_InvstmtAcctDtls", "_TxChanlTp", "_SgntrTp", "_OrdrWvrDtls", "_Rndg", "_FinAdvc", "_SttlmAmt", "_Equlstn", "_PhysDlvryInd"]
+	__slots__ = ["_AmtOrUnitsOrPctg", "_BnfcryDtls", "_ClntRef", "_CshSttlmDt", "_CshSttlmDtls", "_CstmrCndctClssfctn", "_Equlstn", "_FXDtls", "_FinAdvc", "_Grp1Or2Units", "_IncmPref", "_InvstmtAcctDtls", "_NgtdTrad", "_NonStdSttlmInf", "_OrdrRef", "_OrdrTp", "_OrdrWvrDtls", "_PhysDlvryDtls", "_PhysDlvryInd", "_RltdPtyDtls", "_Rndg", "_SgntrTp", "_StffClntBrkdwn", "_SttlmAmt", "_SttlmAndCtdyDtls", "_SttlmMtd", "_TxChanlTp", "_TxOvrhd"]
 	@property
 	def AmtOrUnitsOrPctg(self):
 		return self._AmtOrUnitsOrPctg

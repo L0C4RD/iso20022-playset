@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
 
 class PointOfInteractionComponentIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_SrlNb", "_Id", "_PrvdrId", "_ItmNb"]
+	__slots__ = ["_Id", "_ItmNb", "_PrvdrId", "_SrlNb"]
 	@property
 	def Id(self):
 		return self._Id

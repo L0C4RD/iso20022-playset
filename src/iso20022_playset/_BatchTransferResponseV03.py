@@ -1,32 +1,32 @@
 from . import base_types
-from ._Exact12Text import Exact12Text
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._ClearingControlTotals3 import ClearingControlTotals3
-from ._Number import Number
-from ._Max12NumericText import Max12NumericText
 from ._AdditionalData2 import AdditionalData2
-from ._Exact15Text import Exact15Text
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._Record3 import Record3
-from ._Max35Binary import Max35Binary
-from ._Jurisdiction2 import Jurisdiction2
-from ._ISODateTime import ISODateTime
+from ._AdditionalInformation21 import AdditionalInformation21
 from ._ClearingBatchData3 import ClearingBatchData3
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ProcessingResult23 import ProcessingResult23
+from ._ClearingControlTotals3 import ClearingControlTotals3
 from ._ContentInformationType41 import ContentInformationType41
-from ._SettlementService6 import SettlementService6
+from ._Exact12Text import Exact12Text
+from ._Exact15Text import Exact15Text
+from ._Header71 import Header71
+from ._ISO8583ResponseCode import ISO8583ResponseCode
+from ._ISODateTime import ISODateTime
+from ._Jurisdiction2 import Jurisdiction2
+from ._Max12NumericText import Max12NumericText
+from ._Max35Binary import Max35Binary
+from ._Max70Text import Max70Text
+from ._Number import Number
+from ._PartyIdentification286 import PartyIdentification286
+from ._ProcessingResult23 import ProcessingResult23
+from ._ProgrammeMode5 import ProgrammeMode5
 from ._ProtectedData2 import ProtectedData2
 from ._Reconciliation4 import Reconciliation4
-from ._Max70Text import Max70Text
-from ._AdditionalInformation21 import AdditionalInformation21
-from ._Header71 import Header71
+from ._Record3 import Record3
+from ._SettlementService6 import SettlementService6
+from ._SupplementaryData1 import SupplementaryData1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class BatchTransferResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlRspnCd", "_Rcrd", "_NbOfMsgs", "_AddtlData", "_Jursdctn", "_BtchChcksm", "_LifeCyclId", "_ClrCtrlTtls", "_Hdr", "_RtrvlRefNb", "_Rcncltn", "_Prgrmm", "_SctyTrlr", "_OrgnlBtchId", "_TrnsmssnDtTm", "_PrcgRslt", "_Dstn", "_SysTracAudtNb", "_SttlmSvc", "_ReqAck", "_PrtctdData", "_BtchId", "_Orgtr", "_SplmtryData", "_ClrBtchData", "_AgtData"]
+	__slots__ = ["_AddtlData", "_AgtData", "_BtchChcksm", "_BtchId", "_ClrBtchData", "_ClrCtrlTtls", "_Dstn", "_Hdr", "_Jursdctn", "_LifeCyclId", "_NbOfMsgs", "_OrgnlBtchId", "_OrgnlRspnCd", "_Orgtr", "_PrcgRslt", "_Prgrmm", "_PrtctdData", "_Rcncltn", "_Rcrd", "_ReqAck", "_RtrvlRefNb", "_SctyTrlr", "_SplmtryData", "_SttlmSvc", "_SysTracAudtNb", "_TrnsmssnDtTm"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

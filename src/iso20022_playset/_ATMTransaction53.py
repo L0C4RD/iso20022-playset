@@ -1,27 +1,27 @@
 from . import base_types
-from ._DetailedAmount13 import DetailedAmount13
-from ._ATMTotals4 import ATMTotals4
-from ._CurrencyConversion32 import CurrencyConversion32
-from ._ContentInformationType10 import ContentInformationType10
 from ._ATMCassette3 import ATMCassette3
-from ._Max10000Binary import Max10000Binary
-from ._CardAccount17 import CardAccount17
+from ._ATMTotals4 import ATMTotals4
 from ._ATMTransactionAmounts6 import ATMTransactionAmounts6
-from ._AuthorisationResult20 import AuthorisationResult20
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._AmountAndCurrency1 import AmountAndCurrency1
-from ._DetailedAmount12 import DetailedAmount12
-from ._ATMTransactionStatus2Code import ATMTransactionStatus2Code
-from ._TransactionIdentifier3 import TransactionIdentifier3
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._FailureReason9Code import FailureReason9Code
 from ._ATMTransactionStatus1Code import ATMTransactionStatus1Code
+from ._ATMTransactionStatus2Code import ATMTransactionStatus2Code
+from ._AmountAndCurrency1 import AmountAndCurrency1
+from ._AuthorisationResult20 import AuthorisationResult20
+from ._CardAccount17 import CardAccount17
+from ._ContentInformationType10 import ContentInformationType10
+from ._CurrencyConversion32 import CurrencyConversion32
+from ._DetailedAmount12 import DetailedAmount12
+from ._DetailedAmount13 import DetailedAmount13
+from ._FailureReason9Code import FailureReason9Code
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max10000Binary import Max10000Binary
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._TransactionIdentifier3 import TransactionIdentifier3
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ATMTransaction53(base_types._BaseFieldType):
 
-	__slots__ = ["_Lmts", "_PresntdAmtSts", "_AddtlChrg", "_BndlPresntdAmt", "_MultiBndl", "_TtlAuthrsdAmt", "_IncdntDtl", "_ICCRltdData", "_ATMTtls", "_RctPrtd", "_ReqdRct", "_Csstt", "_TxId", "_CcyConvsRslt", "_DtldReqdAmt", "_AcctData", "_TtlReqdAmt", "_AuthstnRslt", "_PrtctdAcctData", "_TtlPresntdAmt", "_TxSts", "_RcncltnId", "_Incdnt", "_CstmrCnsnt"]
+	__slots__ = ["_ATMTtls", "_AcctData", "_AddtlChrg", "_AuthstnRslt", "_BndlPresntdAmt", "_CcyConvsRslt", "_Csstt", "_CstmrCnsnt", "_DtldReqdAmt", "_ICCRltdData", "_Incdnt", "_IncdntDtl", "_Lmts", "_MultiBndl", "_PresntdAmtSts", "_PrtctdAcctData", "_RcncltnId", "_RctPrtd", "_ReqdRct", "_TtlAuthrsdAmt", "_TtlPresntdAmt", "_TtlReqdAmt", "_TxId", "_TxSts"]
 	@property
 	def ATMTtls(self):
 		return self._ATMTtls

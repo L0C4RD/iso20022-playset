@@ -4,7 +4,7 @@ from ._Max350Text import Max350Text
 
 class FloatingRateIdentification8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

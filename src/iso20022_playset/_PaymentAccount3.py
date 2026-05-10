@@ -1,11 +1,11 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._Acquirer10 import Acquirer10
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class PaymentAccount3(base_types._BaseFieldType):
 
-	__slots__ = ["_CurBal", "_PmtAcqrrData", "_Ccy"]
+	__slots__ = ["_Ccy", "_CurBal", "_PmtAcqrrData"]
 	@property
 	def Ccy(self):
 		return self._Ccy

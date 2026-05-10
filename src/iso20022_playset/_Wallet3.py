@@ -1,17 +1,17 @@
 from . import base_types
-from ._RiskAssessment1Code import RiskAssessment1Code
-from ._PartyIdentification285 import PartyIdentification285
-from ._Max5PositiveNumber import Max5PositiveNumber
 from ._AdditionalData1 import AdditionalData1
-from ._ISOMax3ACountryCode import ISOMax3ACountryCode
 from ._CardDataReading9Code import CardDataReading9Code
-from ._Max35Text import Max35Text
-from ._Max10PositiveNumber import Max10PositiveNumber
 from ._Frequency12Code import Frequency12Code
+from ._ISOMax3ACountryCode import ISOMax3ACountryCode
+from ._Max10PositiveNumber import Max10PositiveNumber
+from ._Max35Text import Max35Text
+from ._Max5PositiveNumber import Max5PositiveNumber
+from ._PartyIdentification285 import PartyIdentification285
+from ._RiskAssessment1Code import RiskAssessment1Code
 
 class Wallet3(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctAge", "_PrvdrRskAssmnt", "_UsrAcctAge", "_LastWlltChng", "_AddtlData", "_Actvty", "_CardDataNtryMd", "_AcctEmailAge", "_DaysSncLastActvty", "_OthrCardDataNtryMd", "_PrvdrRskAssmntMdlVrsn", "_Prvdr", "_SspdCrds", "_AcctCtry", "_PrvdrPhneScore", "_PrvdrAcctScore", "_PANAge", "_ActvtyIntrvl", "_PrvdrDvcScore"]
+	__slots__ = ["_AcctAge", "_AcctCtry", "_AcctEmailAge", "_Actvty", "_ActvtyIntrvl", "_AddtlData", "_CardDataNtryMd", "_DaysSncLastActvty", "_LastWlltChng", "_OthrCardDataNtryMd", "_PANAge", "_Prvdr", "_PrvdrAcctScore", "_PrvdrDvcScore", "_PrvdrPhneScore", "_PrvdrRskAssmnt", "_PrvdrRskAssmntMdlVrsn", "_SspdCrds", "_UsrAcctAge"]
 	@property
 	def AcctAge(self):
 		return self._AcctAge

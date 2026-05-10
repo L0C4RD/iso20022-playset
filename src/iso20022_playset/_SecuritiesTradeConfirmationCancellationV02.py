@@ -1,12 +1,12 @@
 from . import base_types
 from ._Linkages52 import Linkages52
-from ._TransactiontIdentification4 import TransactiontIdentification4
 from ._OtherParties45 import OtherParties45
 from ._SupplementaryData1 import SupplementaryData1
+from ._TransactiontIdentification4 import TransactiontIdentification4
 
 class SecuritiesTradeConfirmationCancellationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Refs", "_Id", "_OthrBizPties", "_SplmtryData"]
+	__slots__ = ["_Id", "_OthrBizPties", "_Refs", "_SplmtryData"]
 	@property
 	def Id(self):
 		return self._Id

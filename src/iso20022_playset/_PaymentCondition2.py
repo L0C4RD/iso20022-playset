@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._AmountOrRate1Choice import AmountOrRate1Choice
 from ._Max140Text import Max140Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PaymentCondition2(base_types._BaseFieldType):
 
-	__slots__ = ["_ImdtPmtRbt", "_AmtModAllwd", "_GrntedPmtReqd", "_EarlyPmtAllwd", "_DelyPnlty"]
+	__slots__ = ["_AmtModAllwd", "_DelyPnlty", "_EarlyPmtAllwd", "_GrntedPmtReqd", "_ImdtPmtRbt"]
 	@property
 	def AmtModAllwd(self):
 		return self._AmtModAllwd

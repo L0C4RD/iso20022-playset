@@ -5,7 +5,7 @@ from ._TMSAction13 import TMSAction13
 
 class ManagementPlanContent13(base_types._BaseFieldType):
 
-	__slots__ = ["_Actn", "_TMChllng", "_KeyNcphrmntCert"]
+	__slots__ = ["_Actn", "_KeyNcphrmntCert", "_TMChllng"]
 	@property
 	def Actn(self):
 		return self._Actn

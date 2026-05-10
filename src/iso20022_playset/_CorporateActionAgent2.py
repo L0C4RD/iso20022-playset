@@ -3,7 +3,7 @@ from ._PartyIdentification289 import PartyIdentification289
 
 class CorporateActionAgent2(base_types._BaseFieldType):
 
-	__slots__ = ["_RedAgt", "_SlctnAgt", "_IssrAgt", "_Issr", "_RmktgAgt", "_PngAgt", "_InfAgt", "_TrfAgt", "_Regar"]
+	__slots__ = ["_InfAgt", "_Issr", "_IssrAgt", "_PngAgt", "_RedAgt", "_Regar", "_RmktgAgt", "_SlctnAgt", "_TrfAgt"]
 	@property
 	def InfAgt(self):
 		return self._InfAgt

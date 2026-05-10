@@ -1,15 +1,15 @@
 from . import base_types
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._PartyIdentification136 import PartyIdentification136
-from ._Max35Text import Max35Text
-from ._SystemPartyType1Choice import SystemPartyType1Choice
-from ._SystemSecuritiesAccountType1Choice import SystemSecuritiesAccountType1Choice
 from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._Max35Text import Max35Text
+from ._PartyIdentification136 import PartyIdentification136
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from ._SystemPartyType1Choice import SystemPartyType1Choice
+from ._SystemSecuritiesAccountType1Choice import SystemSecuritiesAccountType1Choice
 
 class SecuritiesAccountSearchCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyTp", "_EndInvstrFlg", "_OpngDt", "_AcctSvcr", "_AcctOwnr", "_PricgSchme", "_ClsgDt", "_AcctId", "_AcctTp"]
+	__slots__ = ["_AcctId", "_AcctOwnr", "_AcctSvcr", "_AcctTp", "_ClsgDt", "_EndInvstrFlg", "_OpngDt", "_PricgSchme", "_PtyTp"]
 	@property
 	def AcctId(self):
 		return self._AcctId

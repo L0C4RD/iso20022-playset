@@ -1,16 +1,16 @@
 from . import base_types
-from ._ProductClassificationCriteria1 import ProductClassificationCriteria1
-from ._TransactionOperationType8Code import TransactionOperationType8Code
-from ._DerivativeEventType3Code import DerivativeEventType3Code
-from ._SecuritiesTradeVenueCriteria1Choice import SecuritiesTradeVenueCriteria1Choice
-from ._PartyNatureType1Code import PartyNatureType1Code
 from ._CorporateSectorCriteria6 import CorporateSectorCriteria6
-from ._ProductType4Code import ProductType4Code
+from ._DerivativeEventType3Code import DerivativeEventType3Code
 from ._ModificationLevel1Code import ModificationLevel1Code
+from ._PartyNatureType1Code import PartyNatureType1Code
+from ._ProductClassificationCriteria1 import ProductClassificationCriteria1
+from ._ProductType4Code import ProductType4Code
+from ._SecuritiesTradeVenueCriteria1Choice import SecuritiesTradeVenueCriteria1Choice
+from ._TransactionOperationType8Code import TransactionOperationType8Code
 
 class TradeAdditionalQueryCriteria9(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtTp", "_PdctClssfctn", "_AsstClss", "_NtrOfCtrPty", "_ExctnVn", "_ActnTp", "_CorpSctr", "_Lvl"]
+	__slots__ = ["_ActnTp", "_AsstClss", "_CorpSctr", "_EvtTp", "_ExctnVn", "_Lvl", "_NtrOfCtrPty", "_PdctClssfctn"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp

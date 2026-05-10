@@ -1,13 +1,13 @@
 from . import base_types
-from ._TradeRepositoryReportingType1Code import TradeRepositoryReportingType1Code
+from ._PairingStatus1Code import PairingStatus1Code
 from ._ReconciliationStatus1Code import ReconciliationStatus1Code
 from ._ReconciliationStatus2Code import ReconciliationStatus2Code
+from ._TradeRepositoryReportingType1Code import TradeRepositoryReportingType1Code
 from ._YesNoIndicator import YesNoIndicator
-from ._PairingStatus1Code import PairingStatus1Code
 
 class ReconciliationCategory5(base_types._BaseFieldType):
 
-	__slots__ = ["_Rvvd", "_FrthrMod", "_Pairg", "_RptgTp", "_Rcncltn", "_ValtnRcncltn"]
+	__slots__ = ["_FrthrMod", "_Pairg", "_Rcncltn", "_RptgTp", "_Rvvd", "_ValtnRcncltn"]
 	@property
 	def FrthrMod(self):
 		return self._FrthrMod

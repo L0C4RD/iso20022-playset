@@ -1,13 +1,13 @@
 from . import base_types
-from ._PendingStatus56Choice import PendingStatus56Choice
 from ._CancellationStatus29Choice import CancellationStatus29Choice
+from ._PendingStatus56Choice import PendingStatus56Choice
+from ._ProprietaryReason4 import ProprietaryReason4
 from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 from ._RejectionStatus34Choice import RejectionStatus34Choice
-from ._ProprietaryReason4 import ProprietaryReason4
 
 class CancellationStatus30Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Pdg", "_Rjctd", "_Canc", "_Prtry", "_Prcd"]
+	__slots__ = ["_Canc", "_Pdg", "_Prcd", "_Prtry", "_Rjctd"]
 	@property
 	def Canc(self):
 		return self._Canc

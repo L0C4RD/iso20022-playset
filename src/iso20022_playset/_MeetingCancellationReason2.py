@@ -1,10 +1,10 @@
 from . import base_types
-from ._MeetingCancellationReason1Choice import MeetingCancellationReason1Choice
 from ._Max140Text import Max140Text
+from ._MeetingCancellationReason1Choice import MeetingCancellationReason1Choice
 
 class MeetingCancellationReason2(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsnCd", "_CxlRsn"]
+	__slots__ = ["_CxlRsn", "_CxlRsnCd"]
 	@property
 	def CxlRsn(self):
 		return self._CxlRsn

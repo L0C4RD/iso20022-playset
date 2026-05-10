@@ -1,13 +1,13 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._HoldingBalance14 import HoldingBalance14
-from ._PartyIdentification270 import PartyIdentification270
-from ._PartyIdentification241 import PartyIdentification241
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification241 import PartyIdentification241
+from ._PartyIdentification270 import PartyIdentification270
 
 class EligiblePosition19(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_RghtsHldr", "_AcctId", "_BlckChainAdrOrWllt", "_HldgBal"]
+	__slots__ = ["_AcctId", "_AcctOwnr", "_BlckChainAdrOrWllt", "_HldgBal", "_RghtsHldr"]
 	@property
 	def AcctId(self):
 		return self._AcctId

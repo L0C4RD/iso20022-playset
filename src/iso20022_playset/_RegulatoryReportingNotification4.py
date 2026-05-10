@@ -1,12 +1,12 @@
 from . import base_types
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._Max35Text import Max35Text
 from ._PartyIdentification272 import PartyIdentification272
 from ._TransactionCertificate4 import TransactionCertificate4
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class RegulatoryReportingNotification4(base_types._BaseFieldType):
 
-	__slots__ = ["_TxCert", "_AcctSvcr", "_TxNtfctnId", "_AcctOwnr"]
+	__slots__ = ["_AcctOwnr", "_AcctSvcr", "_TxCert", "_TxNtfctnId"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

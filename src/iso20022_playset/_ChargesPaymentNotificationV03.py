@@ -1,11 +1,11 @@
 from . import base_types
+from ._Charges5Choice import Charges5Choice
 from ._GroupHeader126 import GroupHeader126
 from ._SupplementaryData1 import SupplementaryData1
-from ._Charges5Choice import Charges5Choice
 
 class ChargesPaymentNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_Chrgs", "_SplmtryData"]
+	__slots__ = ["_Chrgs", "_GrpHdr", "_SplmtryData"]
 	@property
 	def Chrgs(self):
 		return self._Chrgs

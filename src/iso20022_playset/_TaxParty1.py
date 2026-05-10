@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class TaxParty1(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxId", "_RegnId", "_TaxTp"]
+	__slots__ = ["_RegnId", "_TaxId", "_TaxTp"]
 	@property
 	def RegnId(self):
 		return self._RegnId

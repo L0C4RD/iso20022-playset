@@ -1,12 +1,12 @@
 from . import base_types
-from ._CashOutForecast5 import CashOutForecast5
-from ._NetCashForecast4 import NetCashForecast4
-from ._CountryCode import CountryCode
 from ._CashInForecast5 import CashInForecast5
+from ._CashOutForecast5 import CashOutForecast5
+from ._CountryCode import CountryCode
+from ._NetCashForecast4 import NetCashForecast4
 
 class BreakdownByCountry2(base_types._BaseFieldType):
 
-	__slots__ = ["_CshOutFcst", "_Ctry", "_NetCshFcst", "_CshInFcst"]
+	__slots__ = ["_CshInFcst", "_CshOutFcst", "_Ctry", "_NetCshFcst"]
 	@property
 	def CshInFcst(self):
 		return self._CshInFcst

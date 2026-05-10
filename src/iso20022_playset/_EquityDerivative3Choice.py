@@ -1,12 +1,12 @@
 from . import base_types
-from ._UnderlyingEquityType6Code import UnderlyingEquityType6Code
+from ._UnderlyingEquityType3Code import UnderlyingEquityType3Code
 from ._UnderlyingEquityType4Code import UnderlyingEquityType4Code
 from ._UnderlyingEquityType5Code import UnderlyingEquityType5Code
-from ._UnderlyingEquityType3Code import UnderlyingEquityType3Code
+from ._UnderlyingEquityType6Code import UnderlyingEquityType6Code
 
 class EquityDerivative3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_SnglNm", "_Indx", "_Bskt"]
+	__slots__ = ["_Bskt", "_Indx", "_Othr", "_SnglNm"]
 	@property
 	def Bskt(self):
 		return self._Bskt

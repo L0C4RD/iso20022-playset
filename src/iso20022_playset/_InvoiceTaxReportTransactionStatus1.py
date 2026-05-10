@@ -1,12 +1,12 @@
 from . import base_types
-from ._TaxReportingStatus2Code import TaxReportingStatus2Code
 from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
 from ._Max35Text import Max35Text
 from ._SupplementaryData1 import SupplementaryData1
+from ._TaxReportingStatus2Code import TaxReportingStatus2Code
 
 class InvoiceTaxReportTransactionStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_VldtnRule", "_Sts", "_TaxRptId", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_Sts", "_TaxRptId", "_VldtnRule"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData

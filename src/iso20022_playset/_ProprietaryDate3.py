@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class ProprietaryDate3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Dt"]
+	__slots__ = ["_Dt", "_Tp"]
 	@property
 	def Dt(self):
 		return self._Dt

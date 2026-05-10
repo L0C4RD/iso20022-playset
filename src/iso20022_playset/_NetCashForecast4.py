@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
 from ._FlowDirectionType1Code import FlowDirectionType1Code
 from ._FundBalance1 import FundBalance1
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ISODate import ISODate
 
 class NetCashForecast4(base_types._BaseFieldType):
 
-	__slots__ = ["_NetUnitsNb", "_NetAmt", "_FlowDrctn", "_AddtlBal", "_CshSttlmDt"]
+	__slots__ = ["_AddtlBal", "_CshSttlmDt", "_FlowDrctn", "_NetAmt", "_NetUnitsNb"]
 	@property
 	def AddtlBal(self):
 		return self._AddtlBal

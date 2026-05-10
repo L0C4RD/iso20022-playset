@@ -1,14 +1,14 @@
 from . import base_types
-from ._NaturalPersonIdentification1 import NaturalPersonIdentification1
 from ._CountryCode import CountryCode
-from ._Max35Text import Max35Text
-from ._PersonName3 import PersonName3
 from ._DateAndPlaceOfBirth2 import DateAndPlaceOfBirth2
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._NaturalPersonIdentification1 import NaturalPersonIdentification1
+from ._PersonName3 import PersonName3
 
 class PartyIdentification250(base_types._BaseFieldType):
 
-	__slots__ = ["_CpnyRegrShrhldrId", "_Ntlty", "_DtAndPlcOfBirth", "_EmailAdr", "_Id", "_NmAndAdr"]
+	__slots__ = ["_CpnyRegrShrhldrId", "_DtAndPlcOfBirth", "_EmailAdr", "_Id", "_NmAndAdr", "_Ntlty"]
 	@property
 	def CpnyRegrShrhldrId(self):
 		return self._CpnyRegrShrhldrId

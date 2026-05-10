@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max35Text import Max35Text
 from ._LocationAmenity1Code import LocationAmenity1Code
+from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class LocalAmenity1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTp", "_AvlblInd", "_Tp"]
+	__slots__ = ["_AvlblInd", "_OthrTp", "_Tp"]
 	@property
 	def AvlblInd(self):
 		return self._AvlblInd

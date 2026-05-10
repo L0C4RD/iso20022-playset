@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class AccountIdentificationAndName6(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_Nm", "_IBAN"]
+	__slots__ = ["_IBAN", "_Nm", "_Othr"]
 	@property
 	def IBAN(self):
 		return self._IBAN

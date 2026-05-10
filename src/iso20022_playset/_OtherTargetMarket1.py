@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max350Text import Max350Text
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._Max350Text import Max350Text
 
 class OtherTargetMarket1(base_types._BaseFieldType):
 

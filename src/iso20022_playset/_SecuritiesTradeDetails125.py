@@ -1,22 +1,22 @@
 from . import base_types
-from ._Max3Number import Max3Number
-from ._InvestorCapacity5Choice import InvestorCapacity5Choice
-from ._TradeTransactionCondition6Choice import TradeTransactionCondition6Choice
-from ._TradeDate9Choice import TradeDate9Choice
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
-from ._CurrencyToBuyOrSell1Choice import CurrencyToBuyOrSell1Choice
-from ._Reporting9Choice import Reporting9Choice
-from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
-from ._TradeOriginator4Choice import TradeOriginator4Choice
 from ._AffirmationStatus9Choice import AffirmationStatus9Choice
-from ._Price11 import Price11
+from ._CurrencyToBuyOrSell1Choice import CurrencyToBuyOrSell1Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._PlaceOfTradeIdentification2 import PlaceOfTradeIdentification2
+from ._InvestorCapacity5Choice import InvestorCapacity5Choice
 from ._MatchingStatus28Choice import MatchingStatus28Choice
+from ._Max3Number import Max3Number
+from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
+from ._PlaceOfTradeIdentification2 import PlaceOfTradeIdentification2
+from ._Price11 import Price11
+from ._Reporting9Choice import Reporting9Choice
+from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from ._TradeDate9Choice import TradeDate9Choice
+from ._TradeOriginator4Choice import TradeOriginator4Choice
+from ._TradeTransactionCondition6Choice import TradeTransactionCondition6Choice
 
 class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
-	__slots__ = ["_TradDt", "_DealPric", "_SttlmInstrPrcgAddtlDtls", "_Rptg", "_NbOfDaysAcrd", "_PlcOfTrad", "_MtchgSts", "_CcyToBuyOrSell", "_FxAddtlDtls", "_TradOrgtrRole", "_InvstrCpcty", "_TradTxCond", "_PlcOfClr", "_OpngSttlmDt", "_AffirmSts"]
+	__slots__ = ["_AffirmSts", "_CcyToBuyOrSell", "_DealPric", "_FxAddtlDtls", "_InvstrCpcty", "_MtchgSts", "_NbOfDaysAcrd", "_OpngSttlmDt", "_PlcOfClr", "_PlcOfTrad", "_Rptg", "_SttlmInstrPrcgAddtlDtls", "_TradDt", "_TradOrgtrRole", "_TradTxCond"]
 	@property
 	def AffirmSts(self):
 		return self._AffirmSts

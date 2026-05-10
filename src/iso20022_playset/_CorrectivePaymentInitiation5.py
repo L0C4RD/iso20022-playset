@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._UUIDv4Identifier import UUIDv4Identifier
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._Max35Text import Max35Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._CorrectiveGroupInformation1 import CorrectiveGroupInformation1
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class CorrectivePaymentInitiation5(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtInfId", "_UETR", "_InstdAmt", "_ReqdExctnDt", "_EndToEndId", "_ReqdColltnDt", "_InstrId", "_GrpHdr"]
+	__slots__ = ["_EndToEndId", "_GrpHdr", "_InstdAmt", "_InstrId", "_PmtInfId", "_ReqdColltnDt", "_ReqdExctnDt", "_UETR"]
 	@property
 	def EndToEndId(self):
 		return self._EndToEndId

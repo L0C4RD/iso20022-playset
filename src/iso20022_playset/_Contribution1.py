@@ -1,11 +1,11 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._AccountIdentification4Choice import AccountIdentification4Choice
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._PartyIdentificationAndAccount31 import PartyIdentificationAndAccount31
 
 class Contribution1(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_ReqrdAmt", "_NonClrMmb", "_IncrCvrgAmt"]
+	__slots__ = ["_Acct", "_IncrCvrgAmt", "_NonClrMmb", "_ReqrdAmt"]
 	@property
 	def Acct(self):
 		return self._Acct

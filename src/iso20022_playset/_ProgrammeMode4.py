@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._AdditionalData1 import AdditionalData1
+from ._Max35Text import Max35Text
 from ._PartyType20Code import PartyType20Code
 
 class ProgrammeMode4(base_types._BaseFieldType):
 
-	__slots__ = ["_IdSelctdBy", "_AddtlId", "_PropsdId", "_ApldId"]
+	__slots__ = ["_AddtlId", "_ApldId", "_IdSelctdBy", "_PropsdId"]
 	@property
 	def AddtlId(self):
 		return self._AddtlId

@@ -1,19 +1,19 @@
 from . import base_types
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ClassificationType33Choice import ClassificationType33Choice
 from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
 from ._ISODate import ISODate
 from ._InterestComputationMethodFormat5Choice import InterestComputationMethodFormat5Choice
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._OptionStyle9Choice import OptionStyle9Choice
-from ._RateFormat24Choice import RateFormat24Choice
-from ._ClassificationType33Choice import ClassificationType33Choice
-from ._QuantityToQuantityRatio2 import QuantityToQuantityRatio2
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._RateFormat12Choice import RateFormat12Choice
 from ._MarketIdentification4Choice import MarketIdentification4Choice
+from ._OptionStyle9Choice import OptionStyle9Choice
+from ._QuantityToQuantityRatio2 import QuantityToQuantityRatio2
+from ._RateFormat12Choice import RateFormat12Choice
+from ._RateFormat24Choice import RateFormat24Choice
+from ._SecurityIdentification20 import SecurityIdentification20
 
 class FinancialInstrumentAttributes134(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnStyle", "_CtrctSz", "_ConvsDt", "_FltgRateFxgDt", "_PlcOfListg", "_MtrtyDt", "_PctgOfDebtClm", "_NxtCllblDt", "_NxtCpnDt", "_PutblDt", "_DayCntBsis", "_NxtIntrstRate", "_DnmtnCcy", "_IntrstRate", "_ClssfctnTp", "_WarrtParity", "_XpryDt", "_IsseDt", "_FinInstrmId", "_DtdDt", "_PrvsFctr", "_MinNmnlQty", "_NxtFctr"]
+	__slots__ = ["_ClssfctnTp", "_ConvsDt", "_CtrctSz", "_DayCntBsis", "_DnmtnCcy", "_DtdDt", "_FinInstrmId", "_FltgRateFxgDt", "_IntrstRate", "_IsseDt", "_MinNmnlQty", "_MtrtyDt", "_NxtCllblDt", "_NxtCpnDt", "_NxtFctr", "_NxtIntrstRate", "_OptnStyle", "_PctgOfDebtClm", "_PlcOfListg", "_PrvsFctr", "_PutblDt", "_WarrtParity", "_XpryDt"]
 	@property
 	def ClssfctnTp(self):
 		return self._ClssfctnTp

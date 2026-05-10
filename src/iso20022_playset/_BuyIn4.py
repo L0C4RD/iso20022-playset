@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._DateFormat15Choice import DateFormat15Choice
+from ._ISODate import ISODate
 from ._YesNoIndicator import YesNoIndicator
 
 class BuyIn4(base_types._BaseFieldType):
 
-	__slots__ = ["_WrngInd", "_XpctdBuyInDt", "_BuyInRvrsnDt", "_CxlLmtDt"]
+	__slots__ = ["_BuyInRvrsnDt", "_CxlLmtDt", "_WrngInd", "_XpctdBuyInDt"]
 	@property
 	def BuyInRvrsnDt(self):
 		return self._BuyInRvrsnDt

@@ -1,14 +1,14 @@
 from . import base_types
-from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._CorporateActionEventProcessingType1FormatChoice import CorporateActionEventProcessingType1FormatChoice
-from ._Max35Text import Max35Text
-from ._FinancialInstrumentDescription3 import FinancialInstrumentDescription3
-from ._CorporateActionMandatoryVoluntary1FormatChoice import CorporateActionMandatoryVoluntary1FormatChoice
 from ._CorporateActionEventType2FormatChoice import CorporateActionEventType2FormatChoice
+from ._CorporateActionMandatoryVoluntary1FormatChoice import CorporateActionMandatoryVoluntary1FormatChoice
+from ._FinancialInstrumentDescription3 import FinancialInstrumentDescription3
+from ._Max35Text import Max35Text
+from ._PartyIdentification2Choice import PartyIdentification2Choice
 
 class CorporateActionInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_MndtryVlntryEvtTp", "_IssrCorpActnId", "_UndrlygScty", "_AgtId", "_EvtTp", "_EvtPrcgTp", "_CorpActnPrcgId"]
+	__slots__ = ["_AgtId", "_CorpActnPrcgId", "_EvtPrcgTp", "_EvtTp", "_IssrCorpActnId", "_MndtryVlntryEvtTp", "_UndrlygScty"]
 	@property
 	def AgtId(self):
 		return self._AgtId

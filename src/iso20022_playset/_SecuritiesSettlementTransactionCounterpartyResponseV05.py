@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionIdentification6 import TransactionIdentification6
 from ._ResponseStatus6Choice import ResponseStatus6Choice
+from ._SupplementaryData1 import SupplementaryData1
 from ._TransactionDetails173 import TransactionDetails173
+from ._TransactionIdentification6 import TransactionIdentification6
 
 class SecuritiesSettlementTransactionCounterpartyResponseV05(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RspnSts", "_TxId", "_TxDtls"]
+	__slots__ = ["_RspnSts", "_SplmtryData", "_TxDtls", "_TxId"]
 	@property
 	def RspnSts(self):
 		return self._RspnSts

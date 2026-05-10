@@ -4,7 +4,7 @@ from ._Max2000Text import Max2000Text
 
 class UndertakingAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtChc", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_AmtChc"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

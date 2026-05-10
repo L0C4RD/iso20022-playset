@@ -4,7 +4,7 @@ from ._SettlementFailsDailyInstrument3 import SettlementFailsDailyInstrument3
 
 class SettlementFailsDailyData3(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgDt", "_DalyRcrd"]
+	__slots__ = ["_DalyRcrd", "_RptgDt"]
 	@property
 	def DalyRcrd(self):
 		return self._DalyRcrd

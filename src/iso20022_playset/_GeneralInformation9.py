@@ -1,19 +1,19 @@
 from . import base_types
-from ._Max210Text import Max210Text
-from ._YesNoIndicator import YesNoIndicator
-from ._AgreementConditions1 import AgreementConditions1
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ContactInformation1 import ContactInformation1
+from ._AgreementConditions1 import AgreementConditions1
 from ._CalculationAgent1Choice import CalculationAgent1Choice
+from ._ContactInformation1 import ContactInformation1
 from ._CountryCode import CountryCode
-from ._Trading1MethodCode import Trading1MethodCode
-from ._Max35Text import Max35Text
 from ._ISOYear import ISOYear
+from ._Max210Text import Max210Text
+from ._Max35Text import Max35Text
 from ._PartyIdentification242Choice import PartyIdentification242Choice
+from ._Trading1MethodCode import Trading1MethodCode
+from ._YesNoIndicator import YesNoIndicator
 
 class GeneralInformation9(base_types._BaseFieldType):
 
-	__slots__ = ["_SndrToRcvrInf", "_DealgBrnchCtrPtySd", "_DefsYr", "_ClctnAgt", "_BrkrId", "_DealgMtd", "_PmtClrCentr", "_RltdTradRef", "_BrkrsRef", "_BlckInd", "_AgrmtDtls", "_DealgBrnchTradgSd", "_CtrPtyRef", "_CtctInf", "_BrkrsComssn"]
+	__slots__ = ["_AgrmtDtls", "_BlckInd", "_BrkrId", "_BrkrsComssn", "_BrkrsRef", "_ClctnAgt", "_CtctInf", "_CtrPtyRef", "_DealgBrnchCtrPtySd", "_DealgBrnchTradgSd", "_DealgMtd", "_DefsYr", "_PmtClrCentr", "_RltdTradRef", "_SndrToRcvrInf"]
 	@property
 	def AgrmtDtls(self):
 		return self._AgrmtDtls

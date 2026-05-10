@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max52Text import Max52Text
 from ._Max35Text import Max35Text
+from ._Max52Text import Max52Text
 
 class TransactionIdentifications44(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntCollInstrId", "_TrptyAgtSvcPrvdrCollInstrId", "_CtrPtyCollTxId", "_CtrPtyCollInstrId", "_ClntCollTxId", "_CmonTxId", "_TrptyAgtSvcPrvdrCollTxId"]
+	__slots__ = ["_ClntCollInstrId", "_ClntCollTxId", "_CmonTxId", "_CtrPtyCollInstrId", "_CtrPtyCollTxId", "_TrptyAgtSvcPrvdrCollInstrId", "_TrptyAgtSvcPrvdrCollTxId"]
 	@property
 	def ClntCollInstrId(self):
 		return self._ClntCollInstrId

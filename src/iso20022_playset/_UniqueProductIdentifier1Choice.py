@@ -4,7 +4,7 @@ from ._Max52Text import Max52Text
 
 class UniqueProductIdentifier1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Id"]
+	__slots__ = ["_Id", "_Prtry"]
 	@property
 	def Id(self):
 		return self._Id

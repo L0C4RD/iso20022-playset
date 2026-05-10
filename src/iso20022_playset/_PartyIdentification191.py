@@ -1,11 +1,11 @@
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._PartyIdentification145Choice import PartyIdentification145Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class PartyIdentification191(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_PrcgId", "_Id"]
+	__slots__ = ["_Id", "_LEI", "_PrcgId"]
 	@property
 	def Id(self):
 		return self._Id

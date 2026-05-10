@@ -1,10 +1,10 @@
 from . import base_types
-from ._ElectronicInvoice1 import ElectronicInvoice1
 from ._DebtorActivation6 import DebtorActivation6
+from ._ElectronicInvoice1 import ElectronicInvoice1
 
 class DebtorActivationAmendment6(base_types._BaseFieldType):
 
-	__slots__ = ["_ElctrncInvcData", "_DbtrActvtn"]
+	__slots__ = ["_DbtrActvtn", "_ElctrncInvcData"]
 	@property
 	def DbtrActvtn(self):
 		return self._DbtrActvtn

@@ -1,11 +1,11 @@
 from . import base_types
-from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
 from ._Percentage14Rate import Percentage14Rate
 from ._RateTypeAndAmountAndStatus32 import RateTypeAndAmountAndStatus32
+from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
 
 class InterestRateUsedForPaymentFormat19Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_Amt", "_RateTpAndAmtAndRateSts"]
+	__slots__ = ["_Amt", "_Rate", "_RateTpAndAmtAndRateSts"]
 	@property
 	def Amt(self):
 		return self._Amt

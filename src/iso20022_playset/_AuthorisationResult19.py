@@ -1,12 +1,12 @@
 from . import base_types
 from ._GenericIdentification90 import GenericIdentification90
-from ._TMSTrigger1 import TMSTrigger1
 from ._Max8Text import Max8Text
 from ._ResponseType10 import ResponseType10
+from ._TMSTrigger1 import TMSTrigger1
 
 class AuthorisationResult19(base_types._BaseFieldType):
 
-	__slots__ = ["_AuthstnCd", "_AuthstnNtty", "_TMSTrggr", "_RspnToAuthstn"]
+	__slots__ = ["_AuthstnCd", "_AuthstnNtty", "_RspnToAuthstn", "_TMSTrggr"]
 	@property
 	def AuthstnCd(self):
 		return self._AuthstnCd

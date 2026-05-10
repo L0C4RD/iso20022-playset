@@ -1,15 +1,15 @@
 from . import base_types
-from ._TradeConfirmationStatus1Code import TradeConfirmationStatus1Code
 from ._ConfirmationRequest1Code import ConfirmationRequest1Code
-from ._YesNoIndicator import YesNoIndicator
-from ._MessageIdentification1 import MessageIdentification1
 from ._ISODateTime import ISODateTime
-from ._Number import Number
 from ._Max35NumericText import Max35NumericText
+from ._MessageIdentification1 import MessageIdentification1
+from ._Number import Number
+from ._TradeConfirmationStatus1Code import TradeConfirmationStatus1Code
+from ._YesNoIndicator import YesNoIndicator
 
 class Confirmation1(base_types._BaseFieldType):
 
-	__slots__ = ["_LastPgInd", "_ListOrdrNb", "_MsgNbOfCurPg", "_ConfTp", "_PgNb", "_LastRptReqd", "_InitgPtyConfTm", "_ConfSts", "_QryPgNb", "_ConfTm", "_ReqId", "_QryStartNb", "_TradPtyConfTm", "_TtlNbOfRpts"]
+	__slots__ = ["_ConfSts", "_ConfTm", "_ConfTp", "_InitgPtyConfTm", "_LastPgInd", "_LastRptReqd", "_ListOrdrNb", "_MsgNbOfCurPg", "_PgNb", "_QryPgNb", "_QryStartNb", "_ReqId", "_TradPtyConfTm", "_TtlNbOfRpts"]
 	@property
 	def ConfSts(self):
 		return self._ConfSts

@@ -1,11 +1,11 @@
 from . import base_types
+from ._PriceFormat92Choice import PriceFormat92Choice
 from ._PriceFormat93Choice import PriceFormat93Choice
 from ._PriceFormat94Choice import PriceFormat94Choice
-from ._PriceFormat92Choice import PriceFormat92Choice
 
 class PriceDetails43(base_types._BaseFieldType):
 
-	__slots__ = ["_GncCshPricRcvdPerPdct", "_CshInLieuOfShrPric", "_GncCshPricPdPerPdct"]
+	__slots__ = ["_CshInLieuOfShrPric", "_GncCshPricPdPerPdct", "_GncCshPricRcvdPerPdct"]
 	@property
 	def CshInLieuOfShrPric(self):
 		return self._CshInLieuOfShrPric

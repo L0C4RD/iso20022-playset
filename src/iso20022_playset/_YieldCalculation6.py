@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PercentageRate import PercentageRate
-from ._Price8 import Price8
 from ._CalculationType3Choice import CalculationType3Choice
 from ._DateTimePeriod1Choice import DateTimePeriod1Choice
+from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
+from ._PercentageRate import PercentageRate
+from ._Price8 import Price8
 
 class YieldCalculation6(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_RedPric", "_ValPrd", "_ClctnDt", "_Val", "_ClctnTp"]
+	__slots__ = ["_ClctnDt", "_ClctnTp", "_RedPric", "_Val", "_ValDt", "_ValPrd"]
 	@property
 	def ClctnDt(self):
 		return self._ClctnDt

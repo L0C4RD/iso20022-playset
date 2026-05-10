@@ -1,13 +1,13 @@
 from . import base_types
 from ._CurrencyAndAmount import CurrencyAndAmount
+from ._FailureReason8Code import FailureReason8Code
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
-from ._FailureReason8Code import FailureReason8Code
 from ._TransactionIdentifier3 import TransactionIdentifier3
 
 class ATMTransaction40(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_Xcptn", "_ElctrncPrsBal", "_XcptnDtl", "_RcncltnId"]
+	__slots__ = ["_ElctrncPrsBal", "_RcncltnId", "_TxId", "_Xcptn", "_XcptnDtl"]
 	@property
 	def ElctrncPrsBal(self):
 		return self._ElctrncPrsBal

@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentification120Choice import PartyIdentification120Choice
 from ._AccountIdentification26 import AccountIdentification26
+from ._PartyIdentification120Choice import PartyIdentification120Choice
 
 class Account29(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AcctSvcr"]
+	__slots__ = ["_AcctSvcr", "_Id"]
 	@property
 	def AcctSvcr(self):
 		return self._AcctSvcr

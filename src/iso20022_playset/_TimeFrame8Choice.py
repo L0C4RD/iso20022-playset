@@ -3,7 +3,7 @@ from ._Number import Number
 
 class TimeFrame8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TPlus", "_RPlus"]
+	__slots__ = ["_RPlus", "_TPlus"]
 	@property
 	def RPlus(self):
 		return self._RPlus

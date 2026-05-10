@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class FundingSource4(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_OthrTp", "_Ref"]
+	__slots__ = ["_OthrTp", "_Ref", "_Tp"]
 	@property
 	def OthrTp(self):
 		return self._OthrTp

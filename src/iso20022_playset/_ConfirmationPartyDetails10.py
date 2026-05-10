@@ -1,15 +1,15 @@
 from . import base_types
 from ._AccountIdentification55Choice import AccountIdentification55Choice
-from ._PartyIdentification117Choice import PartyIdentification117Choice
-from ._TradingPartyCapacity3Choice import TradingPartyCapacity3Choice
-from ._SecuritiesAccount35 import SecuritiesAccount35
-from ._Max35Text import Max35Text
-from ._PartyTextInformation5 import PartyTextInformation5
 from ._AlternatePartyIdentification8 import AlternatePartyIdentification8
+from ._Max35Text import Max35Text
+from ._PartyIdentification117Choice import PartyIdentification117Choice
+from ._PartyTextInformation5 import PartyTextInformation5
+from ._SecuritiesAccount35 import SecuritiesAccount35
+from ._TradingPartyCapacity3Choice import TradingPartyCapacity3Choice
 
 class ConfirmationPartyDetails10(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyCpcty", "_SfkpgAcct", "_Id", "_AltrnId", "_CshDtls", "_PrcgId", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_AltrnId", "_CshDtls", "_Id", "_PrcgId", "_PtyCpcty", "_SfkpgAcct"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

@@ -4,7 +4,7 @@ from ._IndependentAmountConventionType1Code import IndependentAmountConventionTy
 
 class IndependentAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_Cnvntn", "_Amt"]
+	__slots__ = ["_Amt", "_Cnvntn"]
 	@property
 	def Amt(self):
 		return self._Amt

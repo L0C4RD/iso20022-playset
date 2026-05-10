@@ -1,12 +1,12 @@
 from . import base_types
+from ._AccountIdentification4Choice import AccountIdentification4Choice
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._CashAccountType2Choice import CashAccountType2Choice
-from ._AccountIdentification4Choice import AccountIdentification4Choice
 from ._Max70Text import Max70Text
 
 class CashAccount24(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Id", "_Ccy", "_Tp"]
+	__slots__ = ["_Ccy", "_Id", "_Nm", "_Tp"]
 	@property
 	def Ccy(self):
 		return self._Ccy

@@ -1,11 +1,11 @@
 from . import base_types
 from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
-from ._Party40Choice import Party40Choice
 from ._CashAccount38 import CashAccount38
+from ._Party40Choice import Party40Choice
 
 class TransactionParties8(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrmyAgt3", "_DbtrAcct", "_CdtrAcct", "_PrvsInstgAgt1Acct", "_PrvsInstgAgt2", "_DbtrAgt", "_IntrmyAgt3Acct", "_IntrmyAgt1", "_IntrmyAgt2", "_CdtrAgtAcct", "_PrvsInstgAgt2Acct", "_Cdtr", "_DbtrAgtAcct", "_CdtrAgt", "_IntrmyAgt2Acct", "_PrvsInstgAgt1", "_PrvsInstgAgt3Acct", "_IntrmyAgt1Acct", "_Dbtr", "_UltmtDbtr", "_UltmtCdtr", "_InitgPty", "_PrvsInstgAgt3"]
+	__slots__ = ["_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_InitgPty", "_IntrmyAgt1", "_IntrmyAgt1Acct", "_IntrmyAgt2", "_IntrmyAgt2Acct", "_IntrmyAgt3", "_IntrmyAgt3Acct", "_PrvsInstgAgt1", "_PrvsInstgAgt1Acct", "_PrvsInstgAgt2", "_PrvsInstgAgt2Acct", "_PrvsInstgAgt3", "_PrvsInstgAgt3Acct", "_UltmtCdtr", "_UltmtDbtr"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

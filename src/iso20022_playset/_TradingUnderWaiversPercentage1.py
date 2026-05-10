@@ -1,11 +1,11 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._Max350Text import Max350Text
 from ._MICIdentifier import MICIdentifier
+from ._Max350Text import Max350Text
+from ._PercentageRate import PercentageRate
 
 class TradingUnderWaiversPercentage1(base_types._BaseFieldType):
 
-	__slots__ = ["_Dsclmr", "_TradgVn", "_TradgUdrWvrPctg"]
+	__slots__ = ["_Dsclmr", "_TradgUdrWvrPctg", "_TradgVn"]
 	@property
 	def Dsclmr(self):
 		return self._Dsclmr

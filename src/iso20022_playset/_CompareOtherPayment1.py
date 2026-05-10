@@ -1,12 +1,12 @@
 from . import base_types
 from ._CompareAmountAndDirection3 import CompareAmountAndDirection3
+from ._CompareDate3 import CompareDate3
 from ._CompareOrganisationIdentification7 import CompareOrganisationIdentification7
 from ._CompareOtherPaymentType1 import CompareOtherPaymentType1
-from ._CompareDate3 import CompareDate3
 
 class CompareOtherPayment1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrPmtAmt", "_OthrPmtTp", "_OthrPmtRcvr", "_OthrPmtDt", "_OthrPmtPyer"]
+	__slots__ = ["_OthrPmtAmt", "_OthrPmtDt", "_OthrPmtPyer", "_OthrPmtRcvr", "_OthrPmtTp"]
 	@property
 	def OthrPmtAmt(self):
 		return self._OthrPmtAmt

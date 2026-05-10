@@ -4,7 +4,7 @@ from ._OrganisationIdentification15Choice import OrganisationIdentification15Cho
 
 class TradePartyIdentificationQuery11Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotRptd", "_Id"]
+	__slots__ = ["_Id", "_NotRptd"]
 	@property
 	def Id(self):
 		return self._Id

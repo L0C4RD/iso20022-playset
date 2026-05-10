@@ -1,15 +1,15 @@
 from . import base_types
 from ._RateAndAmountFormat57Choice import RateAndAmountFormat57Choice
 from ._RateAndAmountFormat72Choice import RateAndAmountFormat72Choice
+from ._RateAndAmountFormat73Choice import RateAndAmountFormat73Choice
 from ._RateAndAmountFormat74Choice import RateAndAmountFormat74Choice
 from ._RateFormat12Choice import RateFormat12Choice
-from ._RateFormat25Choice import RateFormat25Choice
-from ._RateAndAmountFormat73Choice import RateAndAmountFormat73Choice
 from ._RateFormat24Choice import RateFormat24Choice
+from ._RateFormat25Choice import RateFormat25Choice
 
 class CorporateActionRate135(base_types._BaseFieldType):
 
-	__slots__ = ["_IndxFctr", "_IntrstShrtfll", "_RealsdLoss", "_Sprd", "_BidIntrvl", "_RinvstmtDscntRateToMkt", "_DclrdRate", "_IntrstRate", "_PrvsFctr", "_RltdIndx", "_NxtFctr", "_PctgSght"]
+	__slots__ = ["_BidIntrvl", "_DclrdRate", "_IndxFctr", "_IntrstRate", "_IntrstShrtfll", "_NxtFctr", "_PctgSght", "_PrvsFctr", "_RealsdLoss", "_RinvstmtDscntRateToMkt", "_RltdIndx", "_Sprd"]
 	@property
 	def BidIntrvl(self):
 		return self._BidIntrvl

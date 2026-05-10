@@ -4,7 +4,7 @@ from ._TaxType2Choice import TaxType2Choice
 
 class Tax22(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Amt"]
+	__slots__ = ["_Amt", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

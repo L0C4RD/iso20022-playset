@@ -1,12 +1,12 @@
 from . import base_types
-from ._SecurityIdentification25Choice import SecurityIdentification25Choice
 from ._ClassificationType32Choice import ClassificationType32Choice
 from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
+from ._SecurityIdentification25Choice import SecurityIdentification25Choice
 
 class FinancialInstrumentIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtNm", "_ClssfctnTp", "_Id", "_Nm"]
+	__slots__ = ["_ClssfctnTp", "_Id", "_Nm", "_ShrtNm"]
 	@property
 	def ClssfctnTp(self):
 		return self._ClssfctnTp

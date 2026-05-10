@@ -1,10 +1,10 @@
 from . import base_types
-from ._TradingDateCode2Choice import TradingDateCode2Choice
 from ._DateAndDateTime1Choice import DateAndDateTime1Choice
+from ._TradingDateCode2Choice import TradingDateCode2Choice
 
 class TradeDate7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_Dt"]
+	__slots__ = ["_Dt", "_Val"]
 	@property
 	def Dt(self):
 		return self._Dt

@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification13 import GenericIdentification13
 from ._FailedSettlementReason1Code import FailedSettlementReason1Code
+from ._GenericIdentification13 import GenericIdentification13
 
 class FailedSettlementReason1FormatChoice(base_types._BaseFieldType):
 

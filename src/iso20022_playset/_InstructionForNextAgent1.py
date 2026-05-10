@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max140Text import Max140Text
 from ._Instruction4Code import Instruction4Code
+from ._Max140Text import Max140Text
 
 class InstructionForNextAgent1(base_types._BaseFieldType):
 

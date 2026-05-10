@@ -1,11 +1,11 @@
 from . import base_types
+from ._GenericPersonIdentification1 import GenericPersonIdentification1
 from ._ISODate import ISODate
 from ._Max140Text import Max140Text
-from ._GenericPersonIdentification1 import GenericPersonIdentification1
 
 class PersonIdentification10(base_types._BaseFieldType):
 
-	__slots__ = ["_FrstNm", "_Nm", "_Othr", "_BirthDt"]
+	__slots__ = ["_BirthDt", "_FrstNm", "_Nm", "_Othr"]
 	@property
 	def BirthDt(self):
 		return self._BirthDt

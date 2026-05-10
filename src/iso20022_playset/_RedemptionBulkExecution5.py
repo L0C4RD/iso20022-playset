@@ -1,20 +1,20 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._YesNoIndicator import YesNoIndicator
-from ._PlaceOfTradeIdentification1Choice import PlaceOfTradeIdentification1Choice
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._FinancialInstrument57 import FinancialInstrument57
-from ._CancellationRight1Choice import CancellationRight1Choice
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max35Text import Max35Text
-from ._RedemptionExecution16 import RedemptionExecution16
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._CancellationRight1Choice import CancellationRight1Choice
+from ._FinancialInstrument57 import FinancialInstrument57
+from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 from ._PaymentTransaction72 import PaymentTransaction72
+from ._PlaceOfTradeIdentification1Choice import PlaceOfTradeIdentification1Choice
+from ._RedemptionExecution16 import RedemptionExecution16
+from ._YesNoIndicator import YesNoIndicator
 
 class RedemptionBulkExecution5(base_types._BaseFieldType):
 
-	__slots__ = ["_AmdmntInd", "_RcvdDtTm", "_ReqdFutrTradDt", "_ReqdSttlmCcy", "_IndvExctnDtls", "_FinInstrmDtls", "_MstrRef", "_ReqdNAVCcy", "_CxlRght", "_TtlSttlmAmt", "_BlkCshSttlmDtls", "_PlcOfTrad", "_OrdrDtTm"]
+	__slots__ = ["_AmdmntInd", "_BlkCshSttlmDtls", "_CxlRght", "_FinInstrmDtls", "_IndvExctnDtls", "_MstrRef", "_OrdrDtTm", "_PlcOfTrad", "_RcvdDtTm", "_ReqdFutrTradDt", "_ReqdNAVCcy", "_ReqdSttlmCcy", "_TtlSttlmAmt"]
 	@property
 	def AmdmntInd(self):
 		return self._AmdmntInd

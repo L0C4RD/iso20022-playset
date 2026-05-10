@@ -1,15 +1,15 @@
 from . import base_types
-from ._PriceMethod1Code import PriceMethod1Code
-from ._TypeOfPrice46Choice import TypeOfPrice46Choice
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._PriceValue1 import PriceValue1
 from ._Max350Text import Max350Text
 from ._Number import Number
+from ._PriceMethod1Code import PriceMethod1Code
+from ._PriceValue1 import PriceValue1
 from ._TaxableIncomePerShareCalculated2Choice import TaxableIncomePerShareCalculated2Choice
+from ._TypeOfPrice46Choice import TypeOfPrice46Choice
 
 class UnitPrice22(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_TaxblIncmPerShrClctd", "_TaxblIncmPerShr", "_PricDiffRsn", "_PricMtd", "_Tp", "_NbOfDaysAcrd"]
+	__slots__ = ["_NbOfDaysAcrd", "_PricDiffRsn", "_PricMtd", "_TaxblIncmPerShr", "_TaxblIncmPerShrClctd", "_Tp", "_Val"]
 	@property
 	def NbOfDaysAcrd(self):
 		return self._NbOfDaysAcrd

@@ -1,11 +1,11 @@
 from . import base_types
-from ._AccountIdentificationAndPurpose import AccountIdentificationAndPurpose
-from ._AccountIdentification3 import AccountIdentification3
 from ._AccountIdentification1 import AccountIdentification1
+from ._AccountIdentification3 import AccountIdentification3
+from ._AccountIdentificationAndPurpose import AccountIdentificationAndPurpose
 
 class AccountIdentificationFormatChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_IdAndPurp", "_SmplId", "_IdAsDSS"]
+	__slots__ = ["_IdAndPurp", "_IdAsDSS", "_SmplId"]
 	@property
 	def IdAndPurp(self):
 		return self._IdAndPurp

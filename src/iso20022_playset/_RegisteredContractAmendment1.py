@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._DocumentIdentification28 import DocumentIdentification28
-from ._Max35Text import Max35Text
+from ._ISODate import ISODate
 from ._Max1025Text import Max1025Text
+from ._Max35Text import Max35Text
 
 class RegisteredContractAmendment1(base_types._BaseFieldType):
 
-	__slots__ = ["_AmdmntRsn", "_AmdmntDt", "_StartDt", "_AddtlInf", "_Doc"]
+	__slots__ = ["_AddtlInf", "_AmdmntDt", "_AmdmntRsn", "_Doc", "_StartDt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

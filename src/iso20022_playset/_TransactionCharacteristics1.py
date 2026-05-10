@@ -1,17 +1,17 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max6NumericText import Max6NumericText
 from ._AdditionalData1 import AdditionalData1
-from ._Max256Text import Max256Text
+from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
 from ._ISO8583TransactionTypeCode import ISO8583TransactionTypeCode
 from ._Max1000Text import Max1000Text
+from ._Max256Text import Max256Text
 from ._Max35Text import Max35Text
-from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
+from ._Max6NumericText import Max6NumericText
 from ._TransactionAttribute2Code import TransactionAttribute2Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TransactionCharacteristics1(base_types._BaseFieldType):
 
-	__slots__ = ["_TxTp", "_AltrnMsgRsn", "_PreAuthstnTmLmt", "_MsgRsn", "_OthrTxAttr", "_AddtlData", "_TxAttr", "_TxDesc", "_TxSubTp", "_Cxl"]
+	__slots__ = ["_AddtlData", "_AltrnMsgRsn", "_Cxl", "_MsgRsn", "_OthrTxAttr", "_PreAuthstnTmLmt", "_TxAttr", "_TxDesc", "_TxSubTp", "_TxTp"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

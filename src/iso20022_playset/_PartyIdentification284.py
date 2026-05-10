@@ -1,17 +1,17 @@
 from . import base_types
+from ._AdditionalData1 import AdditionalData1
+from ._Address2 import Address2
+from ._CorporateTaxType1Code import CorporateTaxType1Code
+from ._GeographicPointInDecimalDegrees import GeographicPointInDecimalDegrees
 from ._ISO3NumericCountryCode import ISO3NumericCountryCode
 from ._LocalData11 import LocalData11
-from ._Max99Text import Max99Text
-from ._AdditionalData1 import AdditionalData1
 from ._Max256Text import Max256Text
-from ._CorporateTaxType1Code import CorporateTaxType1Code
-from ._Address2 import Address2
-from ._GeographicPointInDecimalDegrees import GeographicPointInDecimalDegrees
 from ._Max35Text import Max35Text
+from ._Max99Text import Max99Text
 
 class PartyIdentification284(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlCtct", "_OwnrEthnctyTp", "_URLAdr", "_ShrtNm", "_CertfctnTp", "_TaxRegnId", "_AddtlData", "_CorpTaxIdTp", "_Assgnr", "_Id", "_OwnrTp", "_OwnrEthnctyTpPrvddBy", "_Email", "_AddtlId", "_PhneNb", "_LclData", "_CertfctnTpPrvddBy", "_CstmrSvc", "_LglCorpNm", "_NmAndLctn", "_Adr", "_Ctry", "_AddtlAdr", "_OwnrTpPrvddBy", "_CorpTaxId", "_BizTp", "_GeogcLctn", "_BizTpPrvddBy"]
+	__slots__ = ["_AddtlAdr", "_AddtlCtct", "_AddtlData", "_AddtlId", "_Adr", "_Assgnr", "_BizTp", "_BizTpPrvddBy", "_CertfctnTp", "_CertfctnTpPrvddBy", "_CorpTaxId", "_CorpTaxIdTp", "_CstmrSvc", "_Ctry", "_Email", "_GeogcLctn", "_Id", "_LclData", "_LglCorpNm", "_NmAndLctn", "_OwnrEthnctyTp", "_OwnrEthnctyTpPrvddBy", "_OwnrTp", "_OwnrTpPrvddBy", "_PhneNb", "_ShrtNm", "_TaxRegnId", "_URLAdr"]
 	@property
 	def AddtlAdr(self):
 		return self._AddtlAdr

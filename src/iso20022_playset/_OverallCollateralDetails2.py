@@ -1,13 +1,13 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._CollateralAmount15 import CollateralAmount15
 from ._CollateralStatus1Code import CollateralStatus1Code
-from ._Max350Text import Max350Text
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Max350Text import Max350Text
+from ._PercentageRate import PercentageRate
 
 class OverallCollateralDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnRate", "_GblCollSts", "_ValtnDt", "_ValtnAmts", "_CollAddtlDtls"]
+	__slots__ = ["_CollAddtlDtls", "_GblCollSts", "_MrgnRate", "_ValtnAmts", "_ValtnDt"]
 	@property
 	def CollAddtlDtls(self):
 		return self._CollAddtlDtls

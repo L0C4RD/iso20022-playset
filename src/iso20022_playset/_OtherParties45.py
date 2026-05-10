@@ -1,12 +1,12 @@
 from . import base_types
-from ._PartyIdentificationAndAccount221 import PartyIdentificationAndAccount221
-from ._PartyIdentificationAndAccount220 import PartyIdentificationAndAccount220
-from ._PartyIdentificationAndAccount154 import PartyIdentificationAndAccount154
 from ._PartyIdentificationAndAccount152 import PartyIdentificationAndAccount152
+from ._PartyIdentificationAndAccount154 import PartyIdentificationAndAccount154
+from ._PartyIdentificationAndAccount220 import PartyIdentificationAndAccount220
+from ._PartyIdentificationAndAccount221 import PartyIdentificationAndAccount221
 
 class OtherParties45(base_types._BaseFieldType):
 
-	__slots__ = ["_Invstr", "_QlfdFrgnIntrmy", "_TradRgltr", "_TrptyAgt", "_StockXchg"]
+	__slots__ = ["_Invstr", "_QlfdFrgnIntrmy", "_StockXchg", "_TradRgltr", "_TrptyAgt"]
 	@property
 	def Invstr(self):
 		return self._Invstr

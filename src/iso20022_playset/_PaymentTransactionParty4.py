@@ -1,10 +1,10 @@
 from . import base_types
-from ._Party50Choice import Party50Choice
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._Party50Choice import Party50Choice
 
 class PaymentTransactionParty4(base_types._BaseFieldType):
 
-	__slots__ = ["_UltmtDbtr", "_Cdtr", "_InstgRmbrsmntAgt", "_Dbtr", "_IntrmyAgt1", "_InstgAgt", "_InstdRmbrsmntAgt", "_CdtrAgt", "_IntrmyAgt3", "_DbtrAgt", "_UltmtCdtr", "_IntrmyAgt2", "_InstdAgt"]
+	__slots__ = ["_Cdtr", "_CdtrAgt", "_Dbtr", "_DbtrAgt", "_InstdAgt", "_InstdRmbrsmntAgt", "_InstgAgt", "_InstgRmbrsmntAgt", "_IntrmyAgt1", "_IntrmyAgt2", "_IntrmyAgt3", "_UltmtCdtr", "_UltmtDbtr"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

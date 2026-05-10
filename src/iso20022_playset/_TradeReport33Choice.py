@@ -3,7 +3,7 @@ from ._TradeData43 import TradeData43
 
 class TradeReport33Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Err", "_New", "_Crrctn", "_Rvv", "_Othr", "_Cmprssn", "_PortOut", "_Mod", "_PosCmpnt", "_Termntn", "_ValtnUpd"]
+	__slots__ = ["_Cmprssn", "_Crrctn", "_Err", "_Mod", "_New", "_Othr", "_PortOut", "_PosCmpnt", "_Rvv", "_Termntn", "_ValtnUpd"]
 	@property
 	def Cmprssn(self):
 		return self._Cmprssn

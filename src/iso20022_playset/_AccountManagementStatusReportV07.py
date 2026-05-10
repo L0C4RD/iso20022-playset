@@ -1,13 +1,13 @@
 from . import base_types
 from ._AccountManagementStatusAndReason5 import AccountManagementStatusAndReason5
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._MessageIdentification1 import MessageIdentification1
 from ._AdditionalReference13 import AdditionalReference13
 from ._Extension1 import Extension1
+from ._MarketPracticeVersion1 import MarketPracticeVersion1
+from ._MessageIdentification1 import MessageIdentification1
 
 class AccountManagementStatusReportV07(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdRef", "_MsgId", "_StsRpt", "_MktPrctcVrsn", "_Xtnsn"]
+	__slots__ = ["_MktPrctcVrsn", "_MsgId", "_RltdRef", "_StsRpt", "_Xtnsn"]
 	@property
 	def MktPrctcVrsn(self):
 		return self._MktPrctcVrsn

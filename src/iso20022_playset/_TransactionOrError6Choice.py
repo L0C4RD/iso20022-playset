@@ -1,10 +1,10 @@
 from . import base_types
-from ._Transaction159 import Transaction159
 from ._ErrorHandling5 import ErrorHandling5
+from ._Transaction159 import Transaction159
 
 class TransactionOrError6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_BizErr"]
+	__slots__ = ["_BizErr", "_Tx"]
 	@property
 	def BizErr(self):
 		return self._BizErr

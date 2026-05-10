@@ -1,6 +1,6 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._SecuritiesReferenceDataReport6 import SecuritiesReferenceDataReport6
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesInvalidReferenceDataReport4(base_types._BaseFieldType):
 

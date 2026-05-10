@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PercentageRate import PercentageRate
-from ._TradingUnderWaiversPercentage1 import TradingUnderWaiversPercentage1
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._Period4Choice import Period4Choice
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._ISODate import ISODate
 from ._Max350Text import Max350Text
+from ._PercentageRate import PercentageRate
+from ._Period4Choice import Period4Choice
+from ._TradingUnderWaiversPercentage1 import TradingUnderWaiversPercentage1
 
 class VolumeCapResult1(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgPrd", "_Dsclmr", "_TradgUdrWvrBrkdwn", "_TradgUdrWvrPctg", "_Id", "_TtlTradgVol", "_LastUpdDt"]
+	__slots__ = ["_Dsclmr", "_Id", "_LastUpdDt", "_RptgPrd", "_TradgUdrWvrBrkdwn", "_TradgUdrWvrPctg", "_TtlTradgVol"]
 	@property
 	def Dsclmr(self):
 		return self._Dsclmr

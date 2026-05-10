@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._Max35Text import Max35Text
-from ._CreditDebit3Code import CreditDebit3Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ClearingMethod2Code import ClearingMethod2Code
+from ._CreditDebit3Code import CreditDebit3Code
+from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._ISODate import ISODate
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
 from ._Number import Number
 
 class ClearingBatchData3(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_AgtFeeAmt", "_TtlsCnt", "_Prty", "_TtlsAmt", "_IntrchngFeeCdtDbt", "_OthrMtd", "_AgtFeeCcy", "_TtlsCcy", "_Mtd", "_IntrchngFeeCcy", "_IntrchngFeeAmt", "_AgtFeeCdtDbt", "_TtlsCdtDbt"]
+	__slots__ = ["_AgtFeeAmt", "_AgtFeeCcy", "_AgtFeeCdtDbt", "_Dt", "_IntrchngFeeAmt", "_IntrchngFeeCcy", "_IntrchngFeeCdtDbt", "_Mtd", "_OthrMtd", "_Prty", "_TtlsAmt", "_TtlsCcy", "_TtlsCdtDbt", "_TtlsCnt"]
 	@property
 	def AgtFeeAmt(self):
 		return self._AgtFeeAmt

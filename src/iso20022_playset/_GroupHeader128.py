@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._PartyIdentification272 import PartyIdentification272
-from ._Max35Text import Max35Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
+from ._PartyIdentification272 import PartyIdentification272
 
 class GroupHeader128(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_DbtrAgt", "_FwdgAgt", "_InitgPty", "_MsgId", "_CdtrAgt"]
+	__slots__ = ["_CdtrAgt", "_CreDtTm", "_DbtrAgt", "_FwdgAgt", "_InitgPty", "_MsgId"]
 	@property
 	def CdtrAgt(self):
 		return self._CdtrAgt

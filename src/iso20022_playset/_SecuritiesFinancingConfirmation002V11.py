@@ -1,23 +1,23 @@
 from . import base_types
-from ._SecuritiesTradeDetails124 import SecuritiesTradeDetails124
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecuritiesFinancingTransactionDetails46 import SecuritiesFinancingTransactionDetails46
-from ._FinancialInstrumentAttributes122 import FinancialInstrumentAttributes122
-from ._TransactionTypeAndAdditionalParameters19 import TransactionTypeAndAdditionalParameters19
-from ._SettlementParties105 import SettlementParties105
-from ._AmountAndDirection96 import AmountAndDirection96
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._StandingSettlementInstruction19 import StandingSettlementInstruction19
-from ._OtherAmounts42 import OtherAmounts42
-from ._SettlementDetails151 import SettlementDetails151
-from ._OtherParties44 import OtherParties44
 from ._AdditionalParameters26 import AdditionalParameters26
+from ._AmountAndDirection96 import AmountAndDirection96
 from ._CashParties38 import CashParties38
+from ._FinancialInstrumentAttributes122 import FinancialInstrumentAttributes122
+from ._OtherAmounts42 import OtherAmounts42
+from ._OtherParties44 import OtherParties44
 from ._QuantityAndAccount103 import QuantityAndAccount103
+from ._SecuritiesFinancingTransactionDetails46 import SecuritiesFinancingTransactionDetails46
+from ._SecuritiesTradeDetails124 import SecuritiesTradeDetails124
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._SettlementDetails151 import SettlementDetails151
+from ._SettlementParties105 import SettlementParties105
+from ._StandingSettlementInstruction19 import StandingSettlementInstruction19
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionTypeAndAdditionalParameters19 import TransactionTypeAndAdditionalParameters19
 
 class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
-	__slots__ = ["_StgSttlmInstrDtls", "_SttlmParams", "_TradDtls", "_SctiesFincgDtls", "_TxIdDtls", "_QtyAndAcctDtls", "_FinInstrmAttrbts", "_RcvgSttlmPties", "_AddtlParams", "_SttldAmt", "_OthrAmts", "_CshPties", "_FinInstrmId", "_DlvrgSttlmPties", "_SplmtryData", "_OthrBizPties"]
+	__slots__ = ["_AddtlParams", "_CshPties", "_DlvrgSttlmPties", "_FinInstrmAttrbts", "_FinInstrmId", "_OthrAmts", "_OthrBizPties", "_QtyAndAcctDtls", "_RcvgSttlmPties", "_SctiesFincgDtls", "_SplmtryData", "_StgSttlmInstrDtls", "_SttldAmt", "_SttlmParams", "_TradDtls", "_TxIdDtls"]
 	@property
 	def AddtlParams(self):
 		return self._AddtlParams

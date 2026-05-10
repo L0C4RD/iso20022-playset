@@ -1,12 +1,12 @@
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._DebtIssuerType1Code import DebtIssuerType1Code
 from ._Max350Text import Max350Text
 from ._ProductType6Code import ProductType6Code
-from ._DebtIssuerType1Code import DebtIssuerType1Code
 
 class ReportingAssetBreakdown2(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgAsstTp", "_Amt", "_DebtIssrTp", "_Id"]
+	__slots__ = ["_Amt", "_DebtIssrTp", "_Id", "_RptgAsstTp"]
 	@property
 	def Amt(self):
 		return self._Amt

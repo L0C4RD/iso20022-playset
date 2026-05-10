@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
 from ._PartyIdentification100 import PartyIdentification100
 from ._Role5Choice import Role5Choice
-from ._OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
+from ._SupplementaryData1 import SupplementaryData1
 
 class Intermediary29(base_types._BaseFieldType):
 
-	__slots__ = ["_Role", "_OrdrOrgtrElgblty", "_Id", "_SplmtryData"]
+	__slots__ = ["_Id", "_OrdrOrgtrElgblty", "_Role", "_SplmtryData"]
 	@property
 	def Id(self):
 		return self._Id

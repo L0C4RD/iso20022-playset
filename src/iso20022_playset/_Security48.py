@@ -1,20 +1,20 @@
 from . import base_types
-from ._CompareUnitPrice6 import CompareUnitPrice6
-from ._CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
-from ._CompareISINIdentifier4 import CompareISINIdentifier4
-from ._ComparePercentageRate3 import ComparePercentageRate3
 from ._CompareAmountAndDirection2 import CompareAmountAndDirection2
-from ._CompareCollateralQualityType3 import CompareCollateralQualityType3
-from ._CompareDecimalNumber3 import CompareDecimalNumber3
-from ._CompareCountryCode3 import CompareCountryCode3
 from ._CompareCFIIdentifier3 import CompareCFIIdentifier3
-from ._CompareSecuritiesLendingType3 import CompareSecuritiesLendingType3
-from ._CompareOrganisationIdentification6 import CompareOrganisationIdentification6
+from ._CompareCollateralQualityType3 import CompareCollateralQualityType3
+from ._CompareCountryCode3 import CompareCountryCode3
 from ._CompareDate3 import CompareDate3
+from ._CompareDecimalNumber3 import CompareDecimalNumber3
+from ._CompareISINIdentifier4 import CompareISINIdentifier4
+from ._CompareOrganisationIdentification6 import CompareOrganisationIdentification6
+from ._ComparePercentageRate3 import ComparePercentageRate3
+from ._CompareSecuritiesLendingType3 import CompareSecuritiesLendingType3
+from ._CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
+from ._CompareUnitPrice6 import CompareUnitPrice6
 
 class Security48(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitPric", "_IssrCtry", "_AvlblForCollReuse", "_Tp", "_IssrId", "_HrcutOrMrgn", "_NmnlVal", "_Qlty", "_Mtrty", "_Id", "_ClssfctnTp", "_Qty", "_MktVal", "_ExclsvArrgmnt"]
+	__slots__ = ["_AvlblForCollReuse", "_ClssfctnTp", "_ExclsvArrgmnt", "_HrcutOrMrgn", "_Id", "_IssrCtry", "_IssrId", "_MktVal", "_Mtrty", "_NmnlVal", "_Qlty", "_Qty", "_Tp", "_UnitPric"]
 	@property
 	def AvlblForCollReuse(self):
 		return self._AvlblForCollReuse

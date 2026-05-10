@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
 from ._DisabledReason2Code import DisabledReason2Code
+from ._GenericIdentification36 import GenericIdentification36
 
 class DisabledStatusReason2Choice(base_types._BaseFieldType):
 

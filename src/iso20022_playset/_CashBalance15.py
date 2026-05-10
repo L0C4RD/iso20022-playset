@@ -1,13 +1,13 @@
 from . import base_types
-from ._ForeignExchangeTerms19 import ForeignExchangeTerms19
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._CashAccountIdentification5Choice import CashAccountIdentification5Choice
+from ._ForeignExchangeTerms19 import ForeignExchangeTerms19
 from ._GenericIdentification178 import GenericIdentification178
 from ._ValuationsDetails2 import ValuationsDetails2
-from ._CashAccountIdentification5Choice import CashAccountIdentification5Choice
 
 class CashBalance15(base_types._BaseFieldType):
 
-	__slots__ = ["_TxLotNb", "_ValtnDtls", "_CshAcct", "_FXDtls", "_Amt"]
+	__slots__ = ["_Amt", "_CshAcct", "_FXDtls", "_TxLotNb", "_ValtnDtls"]
 	@property
 	def Amt(self):
 		return self._Amt

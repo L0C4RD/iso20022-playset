@@ -1,12 +1,12 @@
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._AdditionalInformation15 import AdditionalInformation15
 from ._DecimalNumber import DecimalNumber
 from ._Max35Text import Max35Text
 
 class Crystallisation2(base_types._BaseFieldType):
 
-	__slots__ = ["_UcrstllsdUnitsNb", "_TrchId", "_AddtlInf", "_CrstllsdUnitsNb", "_UcrstllsdAmt", "_CrstllsdAmt"]
+	__slots__ = ["_AddtlInf", "_CrstllsdAmt", "_CrstllsdUnitsNb", "_TrchId", "_UcrstllsdAmt", "_UcrstllsdUnitsNb"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

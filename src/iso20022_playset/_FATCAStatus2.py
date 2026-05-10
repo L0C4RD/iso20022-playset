@@ -4,7 +4,7 @@ from ._FATCAStatus2Choice import FATCAStatus2Choice
 
 class FATCAStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Src"]
+	__slots__ = ["_Src", "_Tp"]
 	@property
 	def Src(self):
 		return self._Src

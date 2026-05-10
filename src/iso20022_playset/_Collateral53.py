@@ -1,12 +1,12 @@
 from . import base_types
-from ._Summary3 import Summary3
-from ._CollateralAccount3 import CollateralAccount3
 from ._BlockChainAddressWallet5 import BlockChainAddressWallet5
+from ._CollateralAccount3 import CollateralAccount3
 from ._CollateralValuation13 import CollateralValuation13
+from ._Summary3 import Summary3
 
 class Collateral53(base_types._BaseFieldType):
 
-	__slots__ = ["_RptSummry", "_AcctId", "_CollValtn", "_BlckChainAdrOrWllt"]
+	__slots__ = ["_AcctId", "_BlckChainAdrOrWllt", "_CollValtn", "_RptSummry"]
 	@property
 	def AcctId(self):
 		return self._AcctId

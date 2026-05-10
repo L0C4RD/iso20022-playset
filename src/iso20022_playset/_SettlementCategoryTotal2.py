@@ -4,7 +4,7 @@ from ._Number import Number
 
 class SettlementCategoryTotal2(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_IntrchngFee", "_PrcgFee", "_Cnt"]
+	__slots__ = ["_Amt", "_Cnt", "_IntrchngFee", "_PrcgFee"]
 	@property
 	def Amt(self):
 		return self._Amt

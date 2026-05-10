@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISODateTime import ISODateTime
 from ._DateTimePeriod1 import DateTimePeriod1
+from ._ISODateTime import ISODateTime
 
 class DateTimeSearch2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FrToDtTm", "_FrDtTm", "_EQDtTm", "_NEQDtTm", "_ToDtTm"]
+	__slots__ = ["_EQDtTm", "_FrDtTm", "_FrToDtTm", "_NEQDtTm", "_ToDtTm"]
 	@property
 	def EQDtTm(self):
 		return self._EQDtTm

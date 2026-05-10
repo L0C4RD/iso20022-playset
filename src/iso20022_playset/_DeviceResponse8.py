@@ -1,20 +1,20 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._DeviceDisplayResponse2 import DeviceDisplayResponse2
+from ._DeviceInitialisationCardReaderResponse2 import DeviceInitialisationCardReaderResponse2
 from ._DeviceInputResponse6 import DeviceInputResponse6
-from ._RetailerService9Code import RetailerService9Code
 from ._DevicePrintResponse1 import DevicePrintResponse1
 from ._DeviceSecureInputResponse6 import DeviceSecureInputResponse6
-from ._PaymentContext30 import PaymentContext30
-from ._DeviceInitialisationCardReaderResponse2 import DeviceInitialisationCardReaderResponse2
-from ._DeviceDisplayResponse2 import DeviceDisplayResponse2
-from ._ResponseType11 import ResponseType11
-from ._DeviceTransmitMessageResponse1 import DeviceTransmitMessageResponse1
 from ._DeviceSendApplicationProtocolDataUnitCardReaderResponse1 import DeviceSendApplicationProtocolDataUnitCardReaderResponse1
+from ._DeviceTransmitMessageResponse1 import DeviceTransmitMessageResponse1
+from ._PaymentContext30 import PaymentContext30
+from ._ResponseType11 import ResponseType11
+from ._RetailerService9Code import RetailerService9Code
+from ._SupplementaryData1 import SupplementaryData1
 
 class DeviceResponse8(base_types._BaseFieldType):
 
-	__slots__ = ["_InptRspn", "_ScrInptRspn", "_Envt", "_PrtRspn", "_CardRdrApplPrtcolDataUnitRspn", "_TrnsmssnRspn", "_InitlstnCardRdrRspn", "_Rspn", "_SvcCntt", "_Cntxt", "_DispRspn", "_SplmtryData"]
+	__slots__ = ["_CardRdrApplPrtcolDataUnitRspn", "_Cntxt", "_DispRspn", "_Envt", "_InitlstnCardRdrRspn", "_InptRspn", "_PrtRspn", "_Rspn", "_ScrInptRspn", "_SplmtryData", "_SvcCntt", "_TrnsmssnRspn"]
 	@property
 	def CardRdrApplPrtcolDataUnitRspn(self):
 		return self._CardRdrApplPrtcolDataUnitRspn

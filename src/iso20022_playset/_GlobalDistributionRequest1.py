@@ -1,14 +1,14 @@
 from . import base_types
-from ._Exact3NumericText import Exact3NumericText
-from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
 from ._CashMovement1 import CashMovement1
-from ._YesNoIndicator import YesNoIndicator
-from ._SecurityMovement1 import SecurityMovement1
+from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
 from ._DateFormat4Choice import DateFormat4Choice
+from ._Exact3NumericText import Exact3NumericText
+from ._SecurityMovement1 import SecurityMovement1
+from ._YesNoIndicator import YesNoIndicator
 
 class GlobalDistributionRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnTp", "_OptnNb", "_PradvcInd", "_SctiesMvmnt", "_RcrdDt", "_CshMvmnt", "_PmtDt"]
+	__slots__ = ["_CshMvmnt", "_OptnNb", "_OptnTp", "_PmtDt", "_PradvcInd", "_RcrdDt", "_SctiesMvmnt"]
 	@property
 	def CshMvmnt(self):
 		return self._CshMvmnt

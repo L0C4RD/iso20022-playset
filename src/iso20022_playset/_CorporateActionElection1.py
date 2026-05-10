@@ -1,11 +1,11 @@
 from . import base_types
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
 from ._Exact3NumericText import Exact3NumericText
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 
 class CorporateActionElection1(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlInstdQty", "_RmngQty", "_OptnTp", "_OptnNb"]
+	__slots__ = ["_OptnNb", "_OptnTp", "_OrgnlInstdQty", "_RmngQty"]
 	@property
 	def OptnNb(self):
 		return self._OptnNb

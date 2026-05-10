@@ -1,14 +1,14 @@
 from . import base_types
-from ._FertilizerCommodityUreaAndAmmoniumNitrate1 import FertilizerCommodityUreaAndAmmoniumNitrate1
-from ._FertilizerCommodityPotash1 import FertilizerCommodityPotash1
-from ._FertilizerCommodityUrea1 import FertilizerCommodityUrea1
-from ._FertilizerCommoditySulphur1 import FertilizerCommoditySulphur1
 from ._FertilizerCommodityAmmonia1 import FertilizerCommodityAmmonia1
 from ._FertilizerCommodityDiammoniumPhosphate1 import FertilizerCommodityDiammoniumPhosphate1
+from ._FertilizerCommodityPotash1 import FertilizerCommodityPotash1
+from ._FertilizerCommoditySulphur1 import FertilizerCommoditySulphur1
+from ._FertilizerCommodityUrea1 import FertilizerCommodityUrea1
+from ._FertilizerCommodityUreaAndAmmoniumNitrate1 import FertilizerCommodityUreaAndAmmoniumNitrate1
 
 class AssetClassCommodityFertilizer1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Urea", "_DmmnmPhspht", "_Slphr", "_UreaAndAmmnmNtrt", "_Ptsh", "_Ammn"]
+	__slots__ = ["_Ammn", "_DmmnmPhspht", "_Ptsh", "_Slphr", "_Urea", "_UreaAndAmmnmNtrt"]
 	@property
 	def Ammn(self):
 		return self._Ammn

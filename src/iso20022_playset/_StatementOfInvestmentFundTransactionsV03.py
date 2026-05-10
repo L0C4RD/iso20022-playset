@@ -1,16 +1,16 @@
 from . import base_types
 from ._AdditionalReference2 import AdditionalReference2
-from ._InvestmentAccount43 import InvestmentAccount43
 from ._Extension1 import Extension1
+from ._InvestmentAccount43 import InvestmentAccount43
+from ._InvestmentFundTransactionsByFund3 import InvestmentFundTransactionsByFund3
+from ._MessageIdentification1 import MessageIdentification1
 from ._Pagination import Pagination
 from ._Statement8 import Statement8
-from ._MessageIdentification1 import MessageIdentification1
-from ._InvestmentFundTransactionsByFund3 import InvestmentFundTransactionsByFund3
 from ._SubAccountIdentification36 import SubAccountIdentification36
 
 class StatementOfInvestmentFundTransactionsV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_PrvsRef", "_SubAcctDtls", "_RltdRef", "_InvstmtAcctDtls", "_MsgPgntn", "_StmtGnlDtls", "_TxOnAcct", "_Xtnsn"]
+	__slots__ = ["_InvstmtAcctDtls", "_MsgId", "_MsgPgntn", "_PrvsRef", "_RltdRef", "_StmtGnlDtls", "_SubAcctDtls", "_TxOnAcct", "_Xtnsn"]
 	@property
 	def InvstmtAcctDtls(self):
 		return self._InvstmtAcctDtls

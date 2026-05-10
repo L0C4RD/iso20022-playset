@@ -1,15 +1,15 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
-from ._PercentageRate import PercentageRate
-from ._OtherIdentification4 import OtherIdentification4
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
+from ._LEIIdentifier import LEIIdentifier
 from ._Max350Text import Max350Text
+from ._OtherIdentification4 import OtherIdentification4
+from ._PercentageRate import PercentageRate
 
 class Fund3(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_LglNttyIdr", "_EstmtdTtlUnitsNb", "_Nm", "_Ccy", "_PrvsTtlNAV", "_EstmtdTtlNAV", "_EstmtdPctgOfFndTtlNAV", "_PrvsTtlUnitsNb"]
+	__slots__ = ["_Ccy", "_EstmtdPctgOfFndTtlNAV", "_EstmtdTtlNAV", "_EstmtdTtlUnitsNb", "_Id", "_LglNttyIdr", "_Nm", "_PrvsTtlNAV", "_PrvsTtlUnitsNb"]
 	@property
 	def Ccy(self):
 		return self._Ccy

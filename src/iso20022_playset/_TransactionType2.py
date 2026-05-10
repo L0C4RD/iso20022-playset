@@ -1,11 +1,11 @@
 from . import base_types
-from ._Limit2 import Limit2
-from ._EntryStatus1Choice import EntryStatus1Choice
 from ._CreditDebitCode import CreditDebitCode
+from ._EntryStatus1Choice import EntryStatus1Choice
+from ._Limit2 import Limit2
 
 class TransactionType2(base_types._BaseFieldType):
 
-	__slots__ = ["_FlrLmt", "_Sts", "_CdtDbtInd"]
+	__slots__ = ["_CdtDbtInd", "_FlrLmt", "_Sts"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd

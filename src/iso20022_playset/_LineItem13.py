@@ -1,19 +1,19 @@
 from . import base_types
-from ._ShipmentDateRange1 import ShipmentDateRange1
-from ._LineItemDetails13 import LineItemDetails13
-from ._YesNoIndicator import YesNoIndicator
 from ._Adjustment7 import Adjustment7
-from ._UserDefinedInformation1 import UserDefinedInformation1
-from ._Incoterms4 import Incoterms4
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._Tax23 import Tax23
-from ._Max70Text import Max70Text
-from ._TransportMeans5 import TransportMeans5
 from ._Charge24 import Charge24
+from ._CurrencyAndAmount import CurrencyAndAmount
+from ._Incoterms4 import Incoterms4
+from ._LineItemDetails13 import LineItemDetails13
+from ._Max70Text import Max70Text
+from ._ShipmentDateRange1 import ShipmentDateRange1
+from ._Tax23 import Tax23
+from ._TransportMeans5 import TransportMeans5
+from ._UserDefinedInformation1 import UserDefinedInformation1
+from ._YesNoIndicator import YesNoIndicator
 
 class LineItem13(base_types._BaseFieldType):
 
-	__slots__ = ["_TrnsShipmnt", "_LineItmDtls", "_Incotrms", "_SellrDfndInf", "_PrtlShipmnt", "_RtgSummry", "_LineItmsTtlAmt", "_Tax", "_BuyrDfndInf", "_GoodsAndOrSvcsDesc", "_FrghtChrgs", "_Adjstmnt", "_TtlNetAmt", "_ShipmntDtRg"]
+	__slots__ = ["_Adjstmnt", "_BuyrDfndInf", "_FrghtChrgs", "_GoodsAndOrSvcsDesc", "_Incotrms", "_LineItmDtls", "_LineItmsTtlAmt", "_PrtlShipmnt", "_RtgSummry", "_SellrDfndInf", "_ShipmntDtRg", "_Tax", "_TrnsShipmnt", "_TtlNetAmt"]
 	@property
 	def Adjstmnt(self):
 		return self._Adjstmnt

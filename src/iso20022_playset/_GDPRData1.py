@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._GDPRDataConsent1Choice import GDPRDataConsent1Choice
+from ._ISODate import ISODate
 from ._YesNoIndicator import YesNoIndicator
 
 class GDPRData1(base_types._BaseFieldType):
 
-	__slots__ = ["_CnsntInd", "_CnsntTp", "_CnsntDt"]
+	__slots__ = ["_CnsntDt", "_CnsntInd", "_CnsntTp"]
 	@property
 	def CnsntDt(self):
 		return self._CnsntDt

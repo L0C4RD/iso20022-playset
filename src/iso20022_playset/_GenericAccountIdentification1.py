@@ -1,11 +1,11 @@
 from . import base_types
 from ._AccountSchemeName1Choice import AccountSchemeName1Choice
-from ._Max35Text import Max35Text
 from ._Max34Text import Max34Text
+from ._Max35Text import Max35Text
 
 class GenericAccountIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_SchmeNm", "_Id"]
+	__slots__ = ["_Id", "_Issr", "_SchmeNm"]
 	@property
 	def Id(self):
 		return self._Id

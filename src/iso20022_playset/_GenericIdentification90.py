@@ -1,12 +1,12 @@
 from . import base_types
-from ._PartyType14Code import PartyType14Code
-from ._Min2Max3AlphaText import Min2Max3AlphaText
 from ._Max35Text import Max35Text
+from ._Min2Max3AlphaText import Min2Max3AlphaText
+from ._PartyType14Code import PartyType14Code
 from ._PartyType4Code import PartyType4Code
 
 class GenericIdentification90(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Issr", "_Tp", "_ShrtNm", "_Ctry"]
+	__slots__ = ["_Ctry", "_Id", "_Issr", "_ShrtNm", "_Tp"]
 	@property
 	def Ctry(self):
 		return self._Ctry

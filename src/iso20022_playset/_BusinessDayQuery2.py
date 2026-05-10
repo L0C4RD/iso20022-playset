@@ -4,7 +4,7 @@ from ._QueryType2Code import QueryType2Code
 
 class BusinessDayQuery2(base_types._BaseFieldType):
 
-	__slots__ = ["_QryTp", "_Crit"]
+	__slots__ = ["_Crit", "_QryTp"]
 	@property
 	def Crit(self):
 		return self._Crit

@@ -1,11 +1,11 @@
 from . import base_types
 from ._AlgorithmIdentification25 import AlgorithmIdentification25
-from ._EncryptedDataElement2 import EncryptedDataElement2
 from ._ContentType2Code import ContentType2Code
+from ._EncryptedDataElement2 import EncryptedDataElement2
 
 class EncryptedContent8(base_types._BaseFieldType):
 
-	__slots__ = ["_NcrptdDataElmt", "_CnttTp", "_CnttNcrptnAlgo"]
+	__slots__ = ["_CnttNcrptnAlgo", "_CnttTp", "_NcrptdDataElmt"]
 	@property
 	def CnttNcrptnAlgo(self):
 		return self._CnttNcrptnAlgo

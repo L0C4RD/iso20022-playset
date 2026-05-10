@@ -1,18 +1,18 @@
 from . import base_types
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._MessageClass1Code import MessageClass1Code
 from ._AdditionalFee3 import AdditionalFee3
-from ._Exact6AlphaNumericText import Exact6AlphaNumericText
-from ._ISO8583TransactionTypeCode import ISO8583TransactionTypeCode
-from ._OriginalTransactionIdentification1 import OriginalTransactionIdentification1
-from ._Max11NumericText import Max11NumericText
 from ._DateTime2 import DateTime2
+from ._Exact6AlphaNumericText import Exact6AlphaNumericText
+from ._ISO8583ResponseCode import ISO8583ResponseCode
+from ._ISO8583TransactionTypeCode import ISO8583TransactionTypeCode
+from ._Max11NumericText import Max11NumericText
+from ._MessageClass1Code import MessageClass1Code
 from ._MessageFunction16Code import MessageFunction16Code
 from ._OriginalTransactionAmounts3 import OriginalTransactionAmounts3
+from ._OriginalTransactionIdentification1 import OriginalTransactionIdentification1
 
 class OriginalDataElements3(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_TxAmts", "_MsgFctn", "_MsgClss", "_AddtlFee", "_SndrId", "_ApprvlCd", "_RspnCd", "_TxTp", "_AcqrrId", "_ConvsDtTm"]
+	__slots__ = ["_AcqrrId", "_AddtlFee", "_ApprvlCd", "_ConvsDtTm", "_MsgClss", "_MsgFctn", "_RspnCd", "_SndrId", "_TxAmts", "_TxId", "_TxTp"]
 	@property
 	def AcqrrId(self):
 		return self._AcqrrId

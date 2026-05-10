@@ -1,32 +1,32 @@
 from . import base_types
-from ._CompareNumber5 import CompareNumber5
-from ._CompareRateBasis3 import CompareRateBasis3
 from ._CompareActiveOrHistoricCurrencyAndAmount3 import CompareActiveOrHistoricCurrencyAndAmount3
-from ._CompareText2 import CompareText2
-from ._ComparePercentageRate3 import ComparePercentageRate3
-from ._CompareBenchmarkCurveName3 import CompareBenchmarkCurveName3
-from ._CompareInterestRate1 import CompareInterestRate1
-from ._CompareNumber6 import CompareNumber6
 from ._CompareAgreementType2 import CompareAgreementType2
-from ._CompareMICIdentifier3 import CompareMICIdentifier3
-from ._CompareSpecialCollateral3 import CompareSpecialCollateral3
-from ._CompareDeliveryMethod3 import CompareDeliveryMethod3
+from ._CompareBenchmarkCurveName3 import CompareBenchmarkCurveName3
 from ._CompareClearingStatus3 import CompareClearingStatus3
-from ._CompareDateTime3 import CompareDateTime3
-from ._CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
 from ._CompareDate3 import CompareDate3
+from ._CompareDateTime3 import CompareDateTime3
 from ._CompareDecimalNumber3 import CompareDecimalNumber3
+from ._CompareDeliveryMethod3 import CompareDeliveryMethod3
+from ._CompareExposureType3 import CompareExposureType3
+from ._CompareInterestComputationMethod3 import CompareInterestComputationMethod3
+from ._CompareInterestRate1 import CompareInterestRate1
+from ._CompareMICIdentifier3 import CompareMICIdentifier3
+from ._CompareNumber5 import CompareNumber5
+from ._CompareNumber6 import CompareNumber6
+from ._CompareOrganisationIdentification6 import CompareOrganisationIdentification6
+from ._ComparePercentageRate3 import ComparePercentageRate3
+from ._CompareRateBasis3 import CompareRateBasis3
+from ._CompareReportingLevelType3 import CompareReportingLevelType3
+from ._CompareSpecialCollateral3 import CompareSpecialCollateral3
 from ._CompareTerminationOption3 import CompareTerminationOption3
+from ._CompareText2 import CompareText2
+from ._CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
 from ._CompareUnitOfMeasure3 import CompareUnitOfMeasure3
 from ._SecurityCommodity7Choice import SecurityCommodity7Choice
-from ._CompareReportingLevelType3 import CompareReportingLevelType3
-from ._CompareInterestComputationMethod3 import CompareInterestComputationMethod3
-from ._CompareOrganisationIdentification6 import CompareOrganisationIdentification6
-from ._CompareExposureType3 import CompareExposureType3
 
 class LoanMatchingCriteria9(base_types._BaseFieldType):
 
-	__slots__ = ["_MinNtcePrd", "_FltgIntrstRatePmtFrqcyVal", "_FltgRateAdjstmntDt", "_FltgIntrstRateTermVal", "_FltgRateAdjstmnt", "_CCP", "_BsisPtSprd", "_PrncplAmtValDtAmt", "_FltgRbtRateRstFrqcyUnit", "_UnitOfMeasr", "_FltgRbtRateTermVal", "_FltgIntrstRateRstFrqcyVal", "_DlvryByVal", "_FltgIntrstRefRate", "_CtrctTp", "_TradgVn", "_FltgIntrstRatePmtFrqcyUnit", "_EarlstCallBckDt", "_LndgFee", "_FltgIntrstRateTermUnit", "_PrncplAmtMtrtyDtAmt", "_MtrtyDt", "_TermntnDt", "_FxdRbtRefRate", "_FltgRbtRateTermUnit", "_ClrDtTm", "_ValDt", "_OutsdngMrgnLnAmt", "_LvlTp", "_FltgRbtRatePmtFrqcyUnit", "_ExctnDtTm", "_GnlColl", "_TermntnOptn", "_FltgRbtRateRstFrqcyVal", "_FltgRbtRatePmtFrqcyVal", "_LnVal", "_OpnTerm", "_UnqTradIdr", "_FxdIntrstRate", "_CollDlvryMtd", "_ClrSts", "_FltgIntrstRateRstFrqcyUnit", "_AsstTp", "_MstrAgrmtTp", "_DayCntBsis", "_MrgnLnAttr", "_FltgRbtRefRate", "_ShrtMktValAmt", "_RbtRateBsisPtSprd"]
+	__slots__ = ["_AsstTp", "_BsisPtSprd", "_CCP", "_ClrDtTm", "_ClrSts", "_CollDlvryMtd", "_CtrctTp", "_DayCntBsis", "_DlvryByVal", "_EarlstCallBckDt", "_ExctnDtTm", "_FltgIntrstRatePmtFrqcyUnit", "_FltgIntrstRatePmtFrqcyVal", "_FltgIntrstRateRstFrqcyUnit", "_FltgIntrstRateRstFrqcyVal", "_FltgIntrstRateTermUnit", "_FltgIntrstRateTermVal", "_FltgIntrstRefRate", "_FltgRateAdjstmnt", "_FltgRateAdjstmntDt", "_FltgRbtRatePmtFrqcyUnit", "_FltgRbtRatePmtFrqcyVal", "_FltgRbtRateRstFrqcyUnit", "_FltgRbtRateRstFrqcyVal", "_FltgRbtRateTermUnit", "_FltgRbtRateTermVal", "_FltgRbtRefRate", "_FxdIntrstRate", "_FxdRbtRefRate", "_GnlColl", "_LnVal", "_LndgFee", "_LvlTp", "_MinNtcePrd", "_MrgnLnAttr", "_MstrAgrmtTp", "_MtrtyDt", "_OpnTerm", "_OutsdngMrgnLnAmt", "_PrncplAmtMtrtyDtAmt", "_PrncplAmtValDtAmt", "_RbtRateBsisPtSprd", "_ShrtMktValAmt", "_TermntnDt", "_TermntnOptn", "_TradgVn", "_UnitOfMeasr", "_UnqTradIdr", "_ValDt"]
 	@property
 	def AsstTp(self):
 		return self._AsstTp

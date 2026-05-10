@@ -1,13 +1,13 @@
 from . import base_types
 from ._CurrencyCode import CurrencyCode
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._Max35Text import Max35Text
-from ._ISODateTime import ISODateTime
 from ._EventFrequency6Code import EventFrequency6Code
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 
 class ReportParameters2(base_types._BaseFieldType):
 
-	__slots__ = ["_Frqcy", "_RptId", "_RptCcy", "_RptDtAndTm", "_ClctnDt"]
+	__slots__ = ["_ClctnDt", "_Frqcy", "_RptCcy", "_RptDtAndTm", "_RptId"]
 	@property
 	def ClctnDt(self):
 		return self._ClctnDt

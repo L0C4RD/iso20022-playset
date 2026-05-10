@@ -4,7 +4,7 @@ from ._PartyIdentification139 import PartyIdentification139
 
 class OwnerIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgOwnrId", "_IndvOwnrId"]
+	__slots__ = ["_IndvOwnrId", "_OrgOwnrId"]
 	@property
 	def IndvOwnrId(self):
 		return self._IndvOwnrId

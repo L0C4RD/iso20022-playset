@@ -1,12 +1,12 @@
 from . import base_types
-from ._SecuritiesEntitlement1 import SecuritiesEntitlement1
-from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._CashEntitlement1 import CashEntitlement1
 from ._Max35Text import Max35Text
+from ._PartyIdentification2Choice import PartyIdentification2Choice
+from ._SecuritiesEntitlement1 import SecuritiesEntitlement1
 
 class Entitlement1(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrId", "_CshDstrbtnDtls", "_SctiesDstrbtnDtls", "_AcctId"]
+	__slots__ = ["_AcctId", "_AcctOwnrId", "_CshDstrbtnDtls", "_SctiesDstrbtnDtls"]
 	@property
 	def AcctId(self):
 		return self._AcctId

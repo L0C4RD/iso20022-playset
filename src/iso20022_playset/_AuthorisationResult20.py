@@ -1,14 +1,14 @@
 from . import base_types
-from ._ResponseType12 import ResponseType12
+from ._ATMFeeComponent1 import ATMFeeComponent1
+from ._Action7 import Action7
 from ._Max8Text import Max8Text
 from ._PartyType16Code import PartyType16Code
-from ._Action7 import Action7
-from ._ATMFeeComponent1 import ATMFeeComponent1
+from ._ResponseType12 import ResponseType12
 from ._ResponseType8 import ResponseType8
 
 class AuthorisationResult20(base_types._BaseFieldType):
 
-	__slots__ = ["_AuthstnRspn", "_Actn", "_AuthstnNtty", "_AuthstnCd", "_FeeToAdd", "_RspnTrac"]
+	__slots__ = ["_Actn", "_AuthstnCd", "_AuthstnNtty", "_AuthstnRspn", "_FeeToAdd", "_RspnTrac"]
 	@property
 	def Actn(self):
 		return self._Actn

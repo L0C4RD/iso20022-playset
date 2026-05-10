@@ -1,14 +1,14 @@
 from . import base_types
-from ._TransactionStatus4 import TransactionStatus4
 from ._DocumentIdentification3 import DocumentIdentification3
 from ._DocumentIdentification5 import DocumentIdentification5
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._PendingActivity2 import PendingActivity2
 from ._MessageIdentification1 import MessageIdentification1
+from ._PendingActivity2 import PendingActivity2
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._TransactionStatus4 import TransactionStatus4
 
 class ActionReminderV03(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgReqForActn", "_MsgReqrngActn", "_TxSts", "_RmndrId", "_EstblishdBaselnId", "_UsrTxRef", "_TxId"]
+	__slots__ = ["_EstblishdBaselnId", "_MsgReqrngActn", "_PdgReqForActn", "_RmndrId", "_TxId", "_TxSts", "_UsrTxRef"]
 	@property
 	def EstblishdBaselnId(self):
 		return self._EstblishdBaselnId

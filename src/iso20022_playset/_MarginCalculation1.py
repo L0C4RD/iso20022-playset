@@ -1,12 +1,12 @@
 from . import base_types
-from ._MarginResult1Choice import MarginResult1Choice
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Collateral6 import Collateral6
 from ._AmountAndDirection20 import AmountAndDirection20
+from ._Collateral6 import Collateral6
+from ._MarginResult1Choice import MarginResult1Choice
 
 class MarginCalculation1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlMrgnAmt", "_MinRqrmntDpst", "_MrgnRslt", "_CollOnDpst"]
+	__slots__ = ["_CollOnDpst", "_MinRqrmntDpst", "_MrgnRslt", "_TtlMrgnAmt"]
 	@property
 	def CollOnDpst(self):
 		return self._CollOnDpst

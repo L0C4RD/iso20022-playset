@@ -1,16 +1,16 @@
 from . import base_types
+from ._CommunicationAddress11 import CommunicationAddress11
+from ._DateFormat58Choice import DateFormat58Choice
+from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
 from ._IncentivePremium6 import IncentivePremium6
-from ._YesNoIndicator import YesNoIndicator
-from ._VoteMethods5 import VoteMethods5
 from ._Max350Text import Max350Text
 from ._PostalAddress1 import PostalAddress1
-from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
-from ._DateFormat58Choice import DateFormat58Choice
-from ._CommunicationAddress11 import CommunicationAddress11
+from ._VoteMethods5 import VoteMethods5
+from ._YesNoIndicator import YesNoIndicator
 
 class VoteParameters9(base_types._BaseFieldType):
 
-	__slots__ = ["_VoteDdln", "_EarlyIncntivPrm", "_EarlyVoteWthPrmDdln", "_PrtlVoteAllwd", "_SctiesQtyReqrdToVote", "_AddtlVtngRqrmnts", "_BnfclOwnrDsclsr", "_VoteMthds", "_RvcbltyMktDdln", "_VoteWthPrmMktDdln", "_VtngBlltElctrncAdr", "_VoteWthPrmDdln", "_SpltVoteAllwd", "_RvcbltyDdln", "_VtngBlltReqAdr", "_PrvsInstrInvldtyInd", "_IncntivPrm", "_VoteMktDdln"]
+	__slots__ = ["_AddtlVtngRqrmnts", "_BnfclOwnrDsclsr", "_EarlyIncntivPrm", "_EarlyVoteWthPrmDdln", "_IncntivPrm", "_PrtlVoteAllwd", "_PrvsInstrInvldtyInd", "_RvcbltyDdln", "_RvcbltyMktDdln", "_SctiesQtyReqrdToVote", "_SpltVoteAllwd", "_VoteDdln", "_VoteMktDdln", "_VoteMthds", "_VoteWthPrmDdln", "_VoteWthPrmMktDdln", "_VtngBlltElctrncAdr", "_VtngBlltReqAdr"]
 	@property
 	def AddtlVtngRqrmnts(self):
 		return self._AddtlVtngRqrmnts

@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._TransactionsBin2 import TransactionsBin2
+from ._ISODate import ISODate
+from ._MICIdentifier import MICIdentifier
 from ._Max35Text import Max35Text
 from ._Number import Number
-from ._MICIdentifier import MICIdentifier
+from ._TransactionsBin2 import TransactionsBin2
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TransparencyDataReport15(base_types._BaseFieldType):
 
-	__slots__ = ["_AggtdQttvData", "_NbTxs", "_TechRcrdId", "_TradgVn", "_Id", "_RptgDt", "_Sspnsn"]
+	__slots__ = ["_AggtdQttvData", "_Id", "_NbTxs", "_RptgDt", "_Sspnsn", "_TechRcrdId", "_TradgVn"]
 	@property
 	def AggtdQttvData(self):
 		return self._AggtdQttvData

@@ -1,15 +1,15 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._IntraBalance5 import IntraBalance5
-from ._CashAccount40 import CashAccount40
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._References14 import References14
+from ._CashAccount40 import CashAccount40
 from ._DocumentIdentification51 import DocumentIdentification51
+from ._IntraBalance5 import IntraBalance5
+from ._References14 import References14
+from ._SupplementaryData1 import SupplementaryData1
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class IntraBalanceMovementCancellationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcctSvcr", "_Id", "_TxId", "_UndrlygIntraBal", "_CshAcct", "_CshAcctOwnr", "_SplmtryData"]
+	__slots__ = ["_CshAcct", "_CshAcctOwnr", "_CshAcctSvcr", "_Id", "_SplmtryData", "_TxId", "_UndrlygIntraBal"]
 	@property
 	def CshAcct(self):
 		return self._CshAcct

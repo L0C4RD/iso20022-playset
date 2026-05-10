@@ -1,13 +1,13 @@
 from . import base_types
-from ._PaymentStatus6 import PaymentStatus6
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._System3 import System3
-from ._PaymentOrigin1Choice import PaymentOrigin1Choice
 from ._CreditDebitCode import CreditDebitCode
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._PaymentOrigin1Choice import PaymentOrigin1Choice
+from ._PaymentStatus6 import PaymentStatus6
+from ._System3 import System3
 
 class PaymentCommon6(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_PmtMtd", "_CmonSts", "_PmtFr", "_NtryDt", "_ReqdExctnDt", "_PmtTo"]
+	__slots__ = ["_CdtDbtInd", "_CmonSts", "_NtryDt", "_PmtFr", "_PmtMtd", "_PmtTo", "_ReqdExctnDt"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd

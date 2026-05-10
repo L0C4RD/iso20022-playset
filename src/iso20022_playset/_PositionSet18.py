@@ -1,10 +1,10 @@
 from . import base_types
-from ._PositionSetMetrics12 import PositionSetMetrics12
 from ._PositionSetDimensions14 import PositionSetDimensions14
+from ._PositionSetMetrics12 import PositionSetMetrics12
 
 class PositionSet18(base_types._BaseFieldType):
 
-	__slots__ = ["_Mtrcs", "_Dmnsns"]
+	__slots__ = ["_Dmnsns", "_Mtrcs"]
 	@property
 	def Dmnsns(self):
 		return self._Dmnsns

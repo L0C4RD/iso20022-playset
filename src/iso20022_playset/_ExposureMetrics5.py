@@ -3,7 +3,7 @@ from ._AmountAndDirection53 import AmountAndDirection53
 
 class ExposureMetrics5(base_types._BaseFieldType):
 
-	__slots__ = ["_CshCollAmt", "_CollMktVal"]
+	__slots__ = ["_CollMktVal", "_CshCollAmt"]
 	@property
 	def CollMktVal(self):
 		return self._CollMktVal

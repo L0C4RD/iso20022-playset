@@ -1,13 +1,13 @@
 from . import base_types
-from ._ExposureConventionType1Code import ExposureConventionType1Code
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._AggregatedIndependentAmount1 import AggregatedIndependentAmount1
-from ._MarginTerms1Choice import MarginTerms1Choice
 from ._CollateralBalance1Choice import CollateralBalance1Choice
+from ._ExposureConventionType1Code import ExposureConventionType1Code
+from ._MarginTerms1Choice import MarginTerms1Choice
 
 class MarginCall1(base_types._BaseFieldType):
 
-	__slots__ = ["_IndpdntAmtPtyA", "_CollBal", "_XpsrCnvntn", "_XpsdAmtPtyA", "_XpsdAmtPtyB", "_MrgnTerms", "_IndpdntAmtPtyB"]
+	__slots__ = ["_CollBal", "_IndpdntAmtPtyA", "_IndpdntAmtPtyB", "_MrgnTerms", "_XpsdAmtPtyA", "_XpsdAmtPtyB", "_XpsrCnvntn"]
 	@property
 	def CollBal(self):
 		return self._CollBal

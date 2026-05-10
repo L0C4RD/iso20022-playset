@@ -1,12 +1,12 @@
 from . import base_types
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._SecuritiesFinancingTransactionType2Code import SecuritiesFinancingTransactionType2Code
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 from ._YesNoIndicator import YesNoIndicator
 
 class TransactionTypeAndAdditionalParameters18(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesFincgTxTp", "_Pmt", "_RcncltnInd", "_CmonId"]
+	__slots__ = ["_CmonId", "_Pmt", "_RcncltnInd", "_SctiesFincgTxTp"]
 	@property
 	def CmonId(self):
 		return self._CmonId

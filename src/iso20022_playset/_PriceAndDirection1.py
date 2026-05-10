@@ -1,10 +1,10 @@
 from . import base_types
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
 from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
+from ._PlusOrMinusIndicator import PlusOrMinusIndicator
 
 class PriceAndDirection1(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_Sgn"]
+	__slots__ = ["_Sgn", "_Val"]
 	@property
 	def Sgn(self):
 		return self._Sgn

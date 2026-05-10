@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MoneyMarketTransactionStatus2 import MoneyMarketTransactionStatus2
 from ._MoneyMarketStatusReportHeader1 import MoneyMarketStatusReportHeader1
+from ._MoneyMarketTransactionStatus2 import MoneyMarketTransactionStatus2
+from ._SupplementaryData1 import SupplementaryData1
 
 class MoneyMarketStatisticalReportStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRptHdr", "_TxSts", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_StsRptHdr", "_TxSts"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData

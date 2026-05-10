@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from ._Remittance1 import Remittance1
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CashAccount40 import CashAccount40
-from ._PartyIdentification135 import PartyIdentification135
+from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 from ._BICFIDec2014Identifier import BICFIDec2014Identifier
 from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
+from ._CashAccount40 import CashAccount40
+from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
 from ._Max140Text import Max140Text
 from ._Max4Text import Max4Text
+from ._PartyIdentification135 import PartyIdentification135
+from ._Remittance1 import Remittance1
 
 class TransactionAmendment1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Agt", "_DtTm", "_Pty", "_Cd", "_Dt", "_CshAcct", "_Rmt", "_BICFI", "_Amt", "_AnyBIC", "_Othr"]
+	__slots__ = ["_Agt", "_Amt", "_AnyBIC", "_BICFI", "_Cd", "_CshAcct", "_Dt", "_DtTm", "_Othr", "_Pty", "_Rmt"]
 	@property
 	def Agt(self):
 		return self._Agt

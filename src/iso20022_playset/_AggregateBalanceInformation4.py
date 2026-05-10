@@ -1,19 +1,19 @@
 from . import base_types
-from ._FinancialInstrument13 import FinancialInstrument13
-from ._PriceInformation2 import PriceInformation2
-from ._ForeignExchangeTerms6 import ForeignExchangeTerms6
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._AggregateBalancePerSafekeepingPlace3 import AggregateBalancePerSafekeepingPlace3
-from ._Number import Number
-from ._SubBalanceInformation2 import SubBalanceInformation2
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
-from ._BalanceQuantity1Choice import BalanceQuantity1Choice
 from ._AdditionalBalanceInformation2 import AdditionalBalanceInformation2
+from ._AggregateBalancePerSafekeepingPlace3 import AggregateBalancePerSafekeepingPlace3
+from ._BalanceQuantity1Choice import BalanceQuantity1Choice
+from ._FinancialInstrument13 import FinancialInstrument13
+from ._ForeignExchangeTerms6 import ForeignExchangeTerms6
+from ._Number import Number
+from ._PlusOrMinusIndicator import PlusOrMinusIndicator
+from ._PriceInformation2 import PriceInformation2
 from ._SafekeepingPlaceFormatChoice import SafekeepingPlaceFormatChoice
+from ._SubBalanceInformation2 import SubBalanceInformation2
 
 class AggregateBalanceInformation4(base_types._BaseFieldType):
 
-	__slots__ = ["_HldgVal", "_FinInstrmDtls", "_AddtlBalBrkdwnDtls", "_PricDtls", "_AcrdIntrstAmtSgn", "_AcrdIntrstAmt", "_FXDtls", "_BalAtSfkpgPlc", "_AvlblQty", "_PrvsHldgVal", "_BalBrkdwnDtls", "_DaysAcrd", "_SfkpgPlc", "_AggtQty", "_BookVal", "_NotAvlblQty"]
+	__slots__ = ["_AcrdIntrstAmt", "_AcrdIntrstAmtSgn", "_AddtlBalBrkdwnDtls", "_AggtQty", "_AvlblQty", "_BalAtSfkpgPlc", "_BalBrkdwnDtls", "_BookVal", "_DaysAcrd", "_FXDtls", "_FinInstrmDtls", "_HldgVal", "_NotAvlblQty", "_PricDtls", "_PrvsHldgVal", "_SfkpgPlc"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt

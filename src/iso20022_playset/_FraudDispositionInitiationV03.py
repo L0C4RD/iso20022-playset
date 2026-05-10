@@ -1,26 +1,26 @@
 from . import base_types
-from ._AdditionalInformation30 import AdditionalInformation30
-from ._FraudDispositionStatus2 import FraudDispositionStatus2
 from ._AdditionalData2 import AdditionalData2
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._ReportedFraud5 import ReportedFraud5
-from ._Jurisdiction2 import Jurisdiction2
-from ._Cardholder22 import Cardholder22
-from ._CardData15 import CardData15
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ContentInformationType41 import ContentInformationType41
-from ._SettlementService6 import SettlementService6
-from ._ProtectedData2 import ProtectedData2
 from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
-from ._Max70Text import Max70Text
+from ._AdditionalInformation30 import AdditionalInformation30
+from ._CardData15 import CardData15
+from ._Cardholder22 import Cardholder22
+from ._ContentInformationType41 import ContentInformationType41
+from ._FraudDispositionStatus2 import FraudDispositionStatus2
 from ._Header71 import Header71
+from ._Jurisdiction2 import Jurisdiction2
+from ._Max70Text import Max70Text
+from ._PartyIdentification286 import PartyIdentification286
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._ProtectedData2 import ProtectedData2
+from ._Reconciliation4 import Reconciliation4
+from ._ReportedFraud5 import ReportedFraud5
+from ._SettlementService6 import SettlementService6
+from ._SupplementaryData1 import SupplementaryData1
 from ._Token2 import Token2
 
 class FraudDispositionInitiationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Sndr", "_FrdTxId", "_AddtlData", "_Issr", "_Jursdctn", "_Prgrmm", "_SplmtryData", "_AddtlFee", "_FrdDspstnSts", "_Hdr", "_Tkn", "_Rcncltn", "_Crdhldr", "_SctyTrlr", "_AddtlInf", "_Rcvr", "_SttlmSvc", "_RptdFrd", "_PrtctdData", "_Orgtr", "_Card", "_Acqrr", "_Dstn"]
+	__slots__ = ["_Acqrr", "_AddtlData", "_AddtlFee", "_AddtlInf", "_Card", "_Crdhldr", "_Dstn", "_FrdDspstnSts", "_FrdTxId", "_Hdr", "_Issr", "_Jursdctn", "_Orgtr", "_Prgrmm", "_PrtctdData", "_Rcncltn", "_Rcvr", "_RptdFrd", "_SctyTrlr", "_Sndr", "_SplmtryData", "_SttlmSvc", "_Tkn"]
 	@property
 	def Acqrr(self):
 		return self._Acqrr

@@ -1,12 +1,12 @@
 from . import base_types
+from ._IdentificationAssignment4 import IdentificationAssignment4
+from ._IdentificationModification5 import IdentificationModification5
 from ._OriginalTransactionReference43 import OriginalTransactionReference43
 from ._SupplementaryData1 import SupplementaryData1
-from ._IdentificationModification5 import IdentificationModification5
-from ._IdentificationAssignment4 import IdentificationAssignment4
 
 class IdentificationModificationAdviceV04(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlTxRef", "_Mod", "_Assgnmt", "_SplmtryData"]
+	__slots__ = ["_Assgnmt", "_Mod", "_OrgnlTxRef", "_SplmtryData"]
 	@property
 	def Assgnmt(self):
 		return self._Assgnmt

@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._CountryCode import CountryCode
-from ._Max70Text import Max70Text
 from ._Exact7NumericText import Exact7NumericText
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class TransportBySea5(base_types._BaseFieldType):
 
-	__slots__ = ["_CrrierAgtCtry", "_IMONb", "_PortOfDschrge", "_VsslNm", "_SeaCrrierNm", "_PortOfLoadng", "_MstrNm", "_OwnrNm", "_VygNb", "_CrrierAgtNm", "_SeaCrrierCtry", "_ChrtrrNm"]
+	__slots__ = ["_ChrtrrNm", "_CrrierAgtCtry", "_CrrierAgtNm", "_IMONb", "_MstrNm", "_OwnrNm", "_PortOfDschrge", "_PortOfLoadng", "_SeaCrrierCtry", "_SeaCrrierNm", "_VsslNm", "_VygNb"]
 	@property
 	def ChrtrrNm(self):
 		return self._ChrtrrNm

@@ -1,29 +1,29 @@
 from . import base_types
-from ._TransactionChannelType1Choice import TransactionChannelType1Choice
-from ._SignatureType1Choice import SignatureType1Choice
-from ._PlaceOfTradeIdentification1Choice import PlaceOfTradeIdentification1Choice
-from ._InvestmentAccount58 import InvestmentAccount58
-from ._CancellationRight1Choice import CancellationRight1Choice
-from ._SwitchSubscriptionLegOrder6 import SwitchSubscriptionLegOrder6
-from ._ForeignExchangeTerms32 import ForeignExchangeTerms32
-from ._SwitchRedemptionLegOrder6 import SwitchRedemptionLegOrder6
-from ._PaymentTransaction71 import PaymentTransaction71
-from ._NegotiatedTrade1Code import NegotiatedTrade1Code
-from ._ISODateTime import ISODateTime
-from ._ISODate import ISODate
-from ._CustomerConductClassification1Choice import CustomerConductClassification1Choice
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Intermediary40 import Intermediary40
-from ._FinancialAdvice1Code import FinancialAdvice1Code
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._OrderWaiver1 import OrderWaiver1
-from ._Max35Text import Max35Text
 from ._AdditionalAmount1Choice import AdditionalAmount1Choice
+from ._CancellationRight1Choice import CancellationRight1Choice
+from ._CustomerConductClassification1Choice import CustomerConductClassification1Choice
+from ._DateAndDateTimeChoice import DateAndDateTimeChoice
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._FinancialAdvice1Code import FinancialAdvice1Code
+from ._ForeignExchangeTerms32 import ForeignExchangeTerms32
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
+from ._Intermediary40 import Intermediary40
+from ._InvestmentAccount58 import InvestmentAccount58
+from ._Max35Text import Max35Text
+from ._NegotiatedTrade1Code import NegotiatedTrade1Code
+from ._OrderWaiver1 import OrderWaiver1
+from ._PaymentTransaction71 import PaymentTransaction71
+from ._PlaceOfTradeIdentification1Choice import PlaceOfTradeIdentification1Choice
+from ._SignatureType1Choice import SignatureType1Choice
+from ._SwitchRedemptionLegOrder6 import SwitchRedemptionLegOrder6
+from ._SwitchSubscriptionLegOrder6 import SwitchSubscriptionLegOrder6
+from ._TransactionChannelType1Choice import TransactionChannelType1Choice
 
 class SwitchOrder7(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlAmt", "_RedLegDtls", "_ReqdFutrTradDt", "_CshSttlmDtls", "_CstmrCndctClssfctn", "_InvstmtAcctDtls", "_FXDtls", "_NgtdTrad", "_CxlRght", "_OrdrRef", "_SttlmMtd", "_PlcOfTrad", "_OrdrDtTm", "_RltdPtyDtls", "_CshSttlmDt", "_SbcptLegDtls", "_ClntRef", "_MstrRef", "_TxChanlTp", "_SgntrTp", "_OrdrWvrDtls", "_FinAdvc", "_SttlmAmt", "_XpryDtTm"]
+	__slots__ = ["_AddtlAmt", "_ClntRef", "_CshSttlmDt", "_CshSttlmDtls", "_CstmrCndctClssfctn", "_CxlRght", "_FXDtls", "_FinAdvc", "_InvstmtAcctDtls", "_MstrRef", "_NgtdTrad", "_OrdrDtTm", "_OrdrRef", "_OrdrWvrDtls", "_PlcOfTrad", "_RedLegDtls", "_ReqdFutrTradDt", "_RltdPtyDtls", "_SbcptLegDtls", "_SgntrTp", "_SttlmAmt", "_SttlmMtd", "_TxChanlTp", "_XpryDtTm"]
 	@property
 	def AddtlAmt(self):
 		return self._AddtlAmt

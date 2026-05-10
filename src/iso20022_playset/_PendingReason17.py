@@ -1,10 +1,10 @@
 from . import base_types
-from ._PendingReason30Choice import PendingReason30Choice
 from ._Max210Text import Max210Text
+from ._PendingReason30Choice import PendingReason30Choice
 
 class PendingReason17(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_AddtlRsnInf"]
+	__slots__ = ["_AddtlRsnInf", "_Cd"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

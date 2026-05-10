@@ -1,13 +1,13 @@
 from . import base_types
-from ._StatementType5Choice import StatementType5Choice
-from ._Frequency25Choice import Frequency25Choice
-from ._UpdateType15Choice import UpdateType15Choice
-from ._StatementBasis7Choice import StatementBasis7Choice
 from ._DateAndPeriod3Choice import DateAndPeriod3Choice
+from ._Frequency25Choice import Frequency25Choice
+from ._StatementBasis7Choice import StatementBasis7Choice
+from ._StatementType5Choice import StatementType5Choice
+from ._UpdateType15Choice import UpdateType15Choice
 
 class Statement83(base_types._BaseFieldType):
 
-	__slots__ = ["_Frqcy", "_UpdTp", "_StmtTp", "_StmtDtOrPrd", "_StmtBsis"]
+	__slots__ = ["_Frqcy", "_StmtBsis", "_StmtDtOrPrd", "_StmtTp", "_UpdTp"]
 	@property
 	def Frqcy(self):
 		return self._Frqcy

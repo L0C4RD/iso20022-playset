@@ -1,18 +1,18 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._AmountAndCurrency1 import AmountAndCurrency1
-from ._DetailedAmount12 import DetailedAmount12
-from ._CardAccount20 import CardAccount20
 from ._ATMMediaMix1 import ATMMediaMix1
-from ._TransactionIdentifier3 import TransactionIdentifier3
-from ._CurrencyConversion32 import CurrencyConversion32
+from ._AmountAndCurrency1 import AmountAndCurrency1
+from ._CardAccount20 import CardAccount20
 from ._ContentInformationType10 import ContentInformationType10
+from ._CurrencyConversion32 import CurrencyConversion32
+from ._DetailedAmount12 import DetailedAmount12
 from ._Max10000Binary import Max10000Binary
 from ._Max35Text import Max35Text
+from ._TransactionIdentifier3 import TransactionIdentifier3
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ATMTransaction46(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyConvsRslt", "_AcctData", "_DtldReqdAmt", "_PrtctdAcctData", "_SelctdMix", "_ReqdRct", "_SelctdMixTp", "_ICCRltdData", "_RcncltnId", "_CshDspnsd", "_TxId", "_TtlReqdAmt"]
+	__slots__ = ["_AcctData", "_CcyConvsRslt", "_CshDspnsd", "_DtldReqdAmt", "_ICCRltdData", "_PrtctdAcctData", "_RcncltnId", "_ReqdRct", "_SelctdMix", "_SelctdMixTp", "_TtlReqdAmt", "_TxId"]
 	@property
 	def AcctData(self):
 		return self._AcctData

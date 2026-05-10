@@ -1,22 +1,22 @@
 from . import base_types
+from ._CashSettlement4 import CashSettlement4
+from ._Frequency20Choice import Frequency20Choice
 from ._ISODate import ISODate
+from ._IncomePreference2Code import IncomePreference2Code
 from ._InitialAmount1Choice import InitialAmount1Choice
 from ._InsuranceType2Choice import InsuranceType2Choice
-from ._YesNoIndicator import YesNoIndicator
+from ._Max35Text import Max35Text
+from ._Number import Number
+from ._PartyRole4Choice import PartyRole4Choice
+from ._PlanStatus2Choice import PlanStatus2Choice
 from ._Repartition6 import Repartition6
 from ._RoundingDirection1Code import RoundingDirection1Code
-from ._CashSettlement4 import CashSettlement4
-from ._PlanStatus2Choice import PlanStatus2Choice
 from ._UnitsOrAmount1Choice import UnitsOrAmount1Choice
-from ._Number import Number
-from ._Frequency20Choice import Frequency20Choice
-from ._PartyRole4Choice import PartyRole4Choice
-from ._Max35Text import Max35Text
-from ._IncomePreference2Code import IncomePreference2Code
+from ._YesNoIndicator import YesNoIndicator
 
 class InvestmentPlan16(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdCtrctRef", "_RndgDrctn", "_IncmPref", "_InitlAmt", "_SctyDtls", "_CtrctRef", "_GrssAmtInd", "_SLAChrgAndComssnRef", "_InsrncCover", "_PdctId", "_PlanSts", "_Qty", "_InstlmtMgrRole", "_ModfdCshSttlm", "_TtlNbOfInstlmts", "_EndDt", "_Frqcy", "_StartDt"]
+	__slots__ = ["_CtrctRef", "_EndDt", "_Frqcy", "_GrssAmtInd", "_IncmPref", "_InitlAmt", "_InsrncCover", "_InstlmtMgrRole", "_ModfdCshSttlm", "_PdctId", "_PlanSts", "_Qty", "_RltdCtrctRef", "_RndgDrctn", "_SLAChrgAndComssnRef", "_SctyDtls", "_StartDt", "_TtlNbOfInstlmts"]
 	@property
 	def CtrctRef(self):
 		return self._CtrctRef

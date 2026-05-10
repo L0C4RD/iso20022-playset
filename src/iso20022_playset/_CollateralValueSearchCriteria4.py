@@ -1,14 +1,14 @@
 from . import base_types
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._PartyIdentification136 import PartyIdentification136
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._PartyIdentification136 import PartyIdentification136
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class CollateralValueSearchCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcctSvcr", "_FinInstrmId", "_SctiesAcctOwnr", "_CshAcctId", "_CshAcctOwnr", "_Ccy", "_SctiesAcctSvcr"]
+	__slots__ = ["_Ccy", "_CshAcctId", "_CshAcctOwnr", "_CshAcctSvcr", "_FinInstrmId", "_SctiesAcctOwnr", "_SctiesAcctSvcr"]
 	@property
 	def Ccy(self):
 		return self._Ccy

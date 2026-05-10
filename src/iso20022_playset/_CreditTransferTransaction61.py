@@ -1,26 +1,26 @@
 from . import base_types
-from ._ChargeBearerType1Code import ChargeBearerType1Code
-from ._PaymentIdentification6 import PaymentIdentification6
-from ._TaxData1 import TaxData1
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Purpose2Choice import Purpose2Choice
 from ._AmountType4Choice import AmountType4Choice
-from ._Cheque19 import Cheque19
-from ._RegulatoryReporting3 import RegulatoryReporting3
-from ._RemittanceLocation8 import RemittanceLocation8
-from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
-from ._PaymentTypeInformation26 import PaymentTypeInformation26
-from ._InstructionForDebtorAgent1 import InstructionForDebtorAgent1
-from ._ExchangeRate1 import ExchangeRate1
-from ._SupplementaryData1 import SupplementaryData1
-from ._RemittanceInformation22 import RemittanceInformation22
-from ._CreditTransferMandateData1 import CreditTransferMandateData1
-from ._PartyIdentification272 import PartyIdentification272
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._CashAccount40 import CashAccount40
+from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._Cheque19 import Cheque19
+from ._CreditTransferMandateData1 import CreditTransferMandateData1
+from ._ExchangeRate1 import ExchangeRate1
+from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
+from ._InstructionForDebtorAgent1 import InstructionForDebtorAgent1
+from ._PartyIdentification272 import PartyIdentification272
+from ._PaymentIdentification6 import PaymentIdentification6
+from ._PaymentTypeInformation26 import PaymentTypeInformation26
+from ._Purpose2Choice import Purpose2Choice
+from ._RegulatoryReporting3 import RegulatoryReporting3
+from ._RemittanceInformation22 import RemittanceInformation22
+from ._RemittanceLocation8 import RemittanceLocation8
+from ._SupplementaryData1 import SupplementaryData1
+from ._TaxData1 import TaxData1
 
 class CreditTransferTransaction61(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgBr", "_MndtRltdInf", "_IntrmyAgt1", "_UltmtCdtr", "_InstrForCdtrAgt", "_Tax", "_IntrmyAgt3", "_RmtInf", "_IntrmyAgt1Acct", "_Cdtr", "_Amt", "_UltmtDbtr", "_ChqInstr", "_XchgRateInf", "_RgltryRptg", "_CdtrAcct", "_CdtrAgtAcct", "_InstrForDbtrAgt", "_CdtrAgt", "_RltdRmtInf", "_PmtId", "_IntrmyAgt3Acct", "_Purp", "_IntrmyAgt2", "_IntrmyAgt2Acct", "_SplmtryData", "_PmtTpInf"]
+	__slots__ = ["_Amt", "_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_ChqInstr", "_ChrgBr", "_InstrForCdtrAgt", "_InstrForDbtrAgt", "_IntrmyAgt1", "_IntrmyAgt1Acct", "_IntrmyAgt2", "_IntrmyAgt2Acct", "_IntrmyAgt3", "_IntrmyAgt3Acct", "_MndtRltdInf", "_PmtId", "_PmtTpInf", "_Purp", "_RgltryRptg", "_RltdRmtInf", "_RmtInf", "_SplmtryData", "_Tax", "_UltmtCdtr", "_UltmtDbtr", "_XchgRateInf"]
 	@property
 	def Amt(self):
 		return self._Amt

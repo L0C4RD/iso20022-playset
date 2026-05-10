@@ -1,27 +1,27 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._GenericIdentification30 import GenericIdentification30
-from ._NonEligibleProceedsIndicator5Choice import NonEligibleProceedsIndicator5Choice
 from ._CorporateActionPrice82 import CorporateActionPrice82
-from ._DTCBaseDisbursed1Code import DTCBaseDisbursed1Code
 from ._CorporateActionRate129 import CorporateActionRate129
 from ._CountryCode import CountryCode
-from ._ReinvestmentIncomeClassification2Code import ReinvestmentIncomeClassification2Code
-from ._FractionDispositionType26Choice import FractionDispositionType26Choice
-from ._TemporaryFinancialInstrumentIndicator3Choice import TemporaryFinancialInstrumentIndicator3Choice
-from ._DecimalNumber import DecimalNumber
-from ._Period6Choice import Period6Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._FinancialInstrumentAttributes130 import FinancialInstrumentAttributes130
-from ._SecurityDate20 import SecurityDate20
-from ._Quantity51Choice import Quantity51Choice
-from ._SafekeepingPlaceFormat41Choice import SafekeepingPlaceFormat41Choice
 from ._CreditDebitCode import CreditDebitCode
+from ._DTCBaseDisbursed1Code import DTCBaseDisbursed1Code
+from ._DecimalNumber import DecimalNumber
+from ._FinancialInstrumentAttributes130 import FinancialInstrumentAttributes130
+from ._FractionDispositionType26Choice import FractionDispositionType26Choice
+from ._GenericIdentification30 import GenericIdentification30
 from ._NewSecuritiesIssuanceType5Code import NewSecuritiesIssuanceType5Code
+from ._NonEligibleProceedsIndicator5Choice import NonEligibleProceedsIndicator5Choice
+from ._Period6Choice import Period6Choice
+from ._Quantity51Choice import Quantity51Choice
+from ._ReinvestmentIncomeClassification2Code import ReinvestmentIncomeClassification2Code
+from ._SafekeepingPlaceFormat41Choice import SafekeepingPlaceFormat41Choice
+from ._SecurityDate20 import SecurityDate20
+from ._TemporaryFinancialInstrumentIndicator3Choice import TemporaryFinancialInstrumentIndicator3Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class SecuritiesOption114(base_types._BaseFieldType):
 
-	__slots__ = ["_PricBsis", "_DtDtls", "_CdtDbtInd", "_TempFinInstrmInd", "_EntitldQty", "_CtryOfIncmSrc", "_NonElgblPrcdsInd", "_RndgFctr", "_XmptnTp", "_IncmTp", "_FrctnDspstn", "_CcyOptn", "_SfkpgPlc", "_RinvstmtIncmClssfctn", "_TradgPrd", "_ChrgInd", "_OthrIncmTp", "_PricDtls", "_SctyDtls", "_RateDtls", "_EstmtdPricInd", "_NewSctiesIssncInd"]
+	__slots__ = ["_CcyOptn", "_CdtDbtInd", "_ChrgInd", "_CtryOfIncmSrc", "_DtDtls", "_EntitldQty", "_EstmtdPricInd", "_FrctnDspstn", "_IncmTp", "_NewSctiesIssncInd", "_NonElgblPrcdsInd", "_OthrIncmTp", "_PricBsis", "_PricDtls", "_RateDtls", "_RinvstmtIncmClssfctn", "_RndgFctr", "_SctyDtls", "_SfkpgPlc", "_TempFinInstrmInd", "_TradgPrd", "_XmptnTp"]
 	@property
 	def CcyOptn(self):
 		return self._CcyOptn

@@ -1,10 +1,10 @@
 from . import base_types
-from ._PersonIdentificationType3Choice import PersonIdentificationType3Choice
 from ._Max35Text import Max35Text
+from ._PersonIdentificationType3Choice import PersonIdentificationType3Choice
 
 class GenericIdentification16(base_types._BaseFieldType):
 
-	__slots__ = ["_IdTp", "_Id", "_Issr"]
+	__slots__ = ["_Id", "_IdTp", "_Issr"]
 	@property
 	def Id(self):
 		return self._Id

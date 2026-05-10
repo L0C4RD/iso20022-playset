@@ -1,12 +1,12 @@
 from . import base_types
-from ._ReportIndicator1Code import ReportIndicator1Code
-from ._TransactionSearchCriteria11 import TransactionSearchCriteria11
 from ._Max35Text import Max35Text
+from ._ReportIndicator1Code import ReportIndicator1Code
 from ._TransactionReturnCriteria5 import TransactionReturnCriteria5
+from ._TransactionSearchCriteria11 import TransactionSearchCriteria11
 
 class TransactionCriteria11(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtRpt", "_NewQryNm", "_RtrCrit", "_SchCrit"]
+	__slots__ = ["_NewQryNm", "_RtrCrit", "_SchCrit", "_StmtRpt"]
 	@property
 	def NewQryNm(self):
 		return self._NewQryNm

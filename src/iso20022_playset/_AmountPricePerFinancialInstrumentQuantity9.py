@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._YieldedOrValueType1Choice import YieldedOrValueType1Choice
-from ._PriceRateOrAmount3Choice import PriceRateOrAmount3Choice
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._ISODate import ISODate
+from ._PriceRateOrAmount3Choice import PriceRateOrAmount3Choice
+from ._YieldedOrValueType1Choice import YieldedOrValueType1Choice
 
 class AmountPricePerFinancialInstrumentQuantity9(base_types._BaseFieldType):
 
-	__slots__ = ["_PricFxgDt", "_AmtPricTp", "_FinInstrmQty", "_PricVal"]
+	__slots__ = ["_AmtPricTp", "_FinInstrmQty", "_PricFxgDt", "_PricVal"]
 	@property
 	def AmtPricTp(self):
 		return self._AmtPricTp

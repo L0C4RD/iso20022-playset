@@ -1,12 +1,12 @@
 from . import base_types
-from ._MessageAndBusinessReference13 import MessageAndBusinessReference13
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._MessageIdentification1 import MessageIdentification1
 from ._Extension1 import Extension1
+from ._MarketPracticeVersion1 import MarketPracticeVersion1
+from ._MessageAndBusinessReference13 import MessageAndBusinessReference13
+from ._MessageIdentification1 import MessageIdentification1
 
 class RequestForTransferStatusReportV08(base_types._BaseFieldType):
 
-	__slots__ = ["_Xtnsn", "_ReqDtls", "_MktPrctcVrsn", "_MsgId"]
+	__slots__ = ["_MktPrctcVrsn", "_MsgId", "_ReqDtls", "_Xtnsn"]
 	@property
 	def MktPrctcVrsn(self):
 		return self._MktPrctcVrsn

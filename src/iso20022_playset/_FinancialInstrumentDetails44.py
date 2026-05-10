@@ -1,7 +1,7 @@
 from . import base_types
+from ._FinancialInstrumentAttributes119 import FinancialInstrumentAttributes119
 from ._IntraPositionDetails63 import IntraPositionDetails63
 from ._SecurityIdentification20 import SecurityIdentification20
-from ._FinancialInstrumentAttributes119 import FinancialInstrumentAttributes119
 
 class FinancialInstrumentDetails44(base_types._BaseFieldType):
 

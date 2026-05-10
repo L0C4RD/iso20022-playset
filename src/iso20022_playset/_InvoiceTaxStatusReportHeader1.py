@@ -1,12 +1,12 @@
 from . import base_types
-from ._TaxReportingStatus1Code import TaxReportingStatus1Code
-from ._MessageIdentification1 import MessageIdentification1
 from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
+from ._MessageIdentification1 import MessageIdentification1
 from ._TaxOrganisationIdentification1 import TaxOrganisationIdentification1
+from ._TaxReportingStatus1Code import TaxReportingStatus1Code
 
 class InvoiceTaxStatusReportHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_VldtnRule", "_OrgnlMsgId", "_TaxAuthrty", "_RptSts"]
+	__slots__ = ["_MsgId", "_OrgnlMsgId", "_RptSts", "_TaxAuthrty", "_VldtnRule"]
 	@property
 	def MsgId(self):
 		return self._MsgId

@@ -1,10 +1,10 @@
 from . import base_types
-from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
 from ._DetailedStatisticsPerCounterparty19 import DetailedStatisticsPerCounterparty19
+from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
 
 class StatisticsPerCounterparty18Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rpt", "_DataSetActn"]
+	__slots__ = ["_DataSetActn", "_Rpt"]
 	@property
 	def DataSetActn(self):
 		return self._DataSetActn

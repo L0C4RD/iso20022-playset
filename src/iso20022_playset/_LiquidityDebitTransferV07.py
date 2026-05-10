@@ -1,11 +1,11 @@
 from . import base_types
 from ._LiquidityDebitTransfer4 import LiquidityDebitTransfer4
-from ._SupplementaryData1 import SupplementaryData1
 from ._MessageHeader1 import MessageHeader1
+from ._SupplementaryData1 import SupplementaryData1
 
 class LiquidityDebitTransferV07(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_LqdtyDbtTrf", "_MsgHdr"]
+	__slots__ = ["_LqdtyDbtTrf", "_MsgHdr", "_SplmtryData"]
 	@property
 	def LqdtyDbtTrf(self):
 		return self._LqdtyDbtTrf

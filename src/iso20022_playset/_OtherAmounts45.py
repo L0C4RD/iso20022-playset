@@ -3,7 +3,7 @@ from ._AmountAndDirection44 import AmountAndDirection44
 
 class OtherAmounts45(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgsFees", "_CtryNtlFdrlTax", "_CsmptnTax", "_NetGnLoss", "_Othr", "_IsseDscntAllwnc", "_LclTax", "_TradAmt", "_AcrdCptlstnAmt", "_SpclCncssn", "_StmpDty", "_StockXchgTax", "_TxTax", "_ShppgAmt", "_WhldgTax", "_Mrgn", "_NtwkFee", "_RgltryAmt", "_PmtLevyTax", "_RsrchFee", "_AcrdIntrstAmt", "_LclTaxCtrySpcfc", "_ExctgBrkrAmt", "_LclBrkrComssn", "_ValAddedTax", "_TrfTax"]
+	__slots__ = ["_AcrdCptlstnAmt", "_AcrdIntrstAmt", "_ChrgsFees", "_CsmptnTax", "_CtryNtlFdrlTax", "_ExctgBrkrAmt", "_IsseDscntAllwnc", "_LclBrkrComssn", "_LclTax", "_LclTaxCtrySpcfc", "_Mrgn", "_NetGnLoss", "_NtwkFee", "_Othr", "_PmtLevyTax", "_RgltryAmt", "_RsrchFee", "_ShppgAmt", "_SpclCncssn", "_StmpDty", "_StockXchgTax", "_TradAmt", "_TrfTax", "_TxTax", "_ValAddedTax", "_WhldgTax"]
 	@property
 	def AcrdCptlstnAmt(self):
 		return self._AcrdCptlstnAmt

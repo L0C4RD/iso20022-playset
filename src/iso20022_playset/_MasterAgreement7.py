@@ -5,7 +5,7 @@ from ._Max50Text import Max50Text
 
 class MasterAgreement7(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrMstrAgrmtDtls", "_Vrsn", "_Tp"]
+	__slots__ = ["_OthrMstrAgrmtDtls", "_Tp", "_Vrsn"]
 	@property
 	def OthrMstrAgrmtDtls(self):
 		return self._OthrMstrAgrmtDtls

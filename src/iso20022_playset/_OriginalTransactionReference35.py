@@ -1,22 +1,22 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PaymentTypeInformation27 import PaymentTypeInformation27
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._SettlementInstruction11 import SettlementInstruction11
-from ._PaymentMethod4Code import PaymentMethod4Code
-from ._MandateRelatedData2Choice import MandateRelatedData2Choice
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Purpose2Choice import Purpose2Choice
-from ._PartyIdentification135 import PartyIdentification135
 from ._AmountType4Choice import AmountType4Choice
-from ._RemittanceInformation21 import RemittanceInformation21
 from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
-from ._Party40Choice import Party40Choice
 from ._CashAccount40 import CashAccount40
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ISODate import ISODate
+from ._MandateRelatedData2Choice import MandateRelatedData2Choice
+from ._Party40Choice import Party40Choice
+from ._PartyIdentification135 import PartyIdentification135
+from ._PaymentMethod4Code import PaymentMethod4Code
+from ._PaymentTypeInformation27 import PaymentTypeInformation27
+from ._Purpose2Choice import Purpose2Choice
+from ._RemittanceInformation21 import RemittanceInformation21
+from ._SettlementInstruction11 import SettlementInstruction11
 
 class OriginalTransactionReference35(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_PmtMtd", "_Cdtr", "_Dbtr", "_IntrBkSttlmAmt", "_DbtrAgt", "_PmtTpInf", "_ReqdColltnDt", "_IntrBkSttlmDt", "_CdtrAgt", "_SttlmInf", "_CdtrAcct", "_CdtrAgtAcct", "_ReqdExctnDt", "_DbtrAcct", "_RmtInf", "_UltmtDbtr", "_UltmtCdtr", "_Purp", "_CdtrSchmeId", "_DbtrAgtAcct", "_MndtRltdInf"]
+	__slots__ = ["_Amt", "_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_CdtrSchmeId", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_IntrBkSttlmAmt", "_IntrBkSttlmDt", "_MndtRltdInf", "_PmtMtd", "_PmtTpInf", "_Purp", "_ReqdColltnDt", "_ReqdExctnDt", "_RmtInf", "_SttlmInf", "_UltmtCdtr", "_UltmtDbtr"]
 	@property
 	def Amt(self):
 		return self._Amt

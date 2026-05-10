@@ -1,11 +1,11 @@
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
-from ._SectorAndLocation1 import SectorAndLocation1
 from ._NameAndLocation1 import NameAndLocation1
+from ._SectorAndLocation1 import SectorAndLocation1
 
 class CounterpartyIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctrAndLctn", "_NmAndLctn", "_LEI"]
+	__slots__ = ["_LEI", "_NmAndLctn", "_SctrAndLctn"]
 	@property
 	def LEI(self):
 		return self._LEI

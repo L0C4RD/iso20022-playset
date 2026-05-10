@@ -1,10 +1,10 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._ExternalRelativeTo1Code import ExternalRelativeTo1Code
+from ._PercentageRate import PercentageRate
 
 class Percentage1(base_types._BaseFieldType):
 
-	__slots__ = ["_RltvTo", "_Rate"]
+	__slots__ = ["_Rate", "_RltvTo"]
 	@property
 	def Rate(self):
 		return self._Rate

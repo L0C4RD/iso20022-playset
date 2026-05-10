@@ -4,7 +4,7 @@ from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
 
 class Identification29(base_types._BaseFieldType):
 
-	__slots__ = ["_TradId", "_PoolId", "_CtrPtyMktInfrstrctrTxId", "_CorpActnEvtId", "_ListId", "_IndxId", "_PrgmId", "_BsktId", "_MktInfrstrctrTxId", "_MstrId", "_AcctOwnrTxId", "_PrcrTxId", "_CmonId", "_AcctSvcrTxId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_BsktId", "_CmonId", "_CorpActnEvtId", "_CtrPtyMktInfrstrctrTxId", "_IndxId", "_ListId", "_MktInfrstrctrTxId", "_MstrId", "_PoolId", "_PrcrTxId", "_PrgmId", "_TradId"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

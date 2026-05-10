@@ -1,14 +1,14 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
 from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
 from ._PartyIdentification144 import PartyIdentification144
-from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 from ._SafeKeepingPlace5 import SafeKeepingPlace5
+from ._SecuritiesAccount19 import SecuritiesAccount19
 
 class QuantityAndAccount119(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_SttlmQty", "_SfkpgPlc", "_SfkpgAcct", "_CshAcct", "_AcctOwnr"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_CshAcct", "_SfkpgAcct", "_SfkpgPlc", "_SttlmQty"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

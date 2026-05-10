@@ -1,10 +1,10 @@
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class TaxVoucher5(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_BrgnDt", "_BrgnSttlmDt"]
+	__slots__ = ["_BrgnDt", "_BrgnSttlmDt", "_Id"]
 	@property
 	def BrgnDt(self):
 		return self._BrgnDt

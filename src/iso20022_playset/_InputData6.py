@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ActionMessage11 import ActionMessage11
-from ._InputCommand1Code import InputCommand1Code
-from ._SaleCapabilities2Code import SaleCapabilities2Code
-from ._Number import Number
 from ._InformationQualify1Code import InformationQualify1Code
+from ._InputCommand1Code import InputCommand1Code
+from ._Number import Number
+from ._SaleCapabilities2Code import SaleCapabilities2Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class InputData6(base_types._BaseFieldType):
 
-	__slots__ = ["_BeepKeyFlg", "_NtfyCardInptFlg", "_MaxInptTm", "_ImdtRspnFlg", "_InptTxt", "_MenuBckFlg", "_DsblCclFlg", "_DvcTp", "_InfQlfr", "_InptCmd", "_WaitUsrVldtnFlg", "_GblCrrctnFlg", "_DsblVldFlg", "_DsblCrrctFlg"]
+	__slots__ = ["_BeepKeyFlg", "_DsblCclFlg", "_DsblCrrctFlg", "_DsblVldFlg", "_DvcTp", "_GblCrrctnFlg", "_ImdtRspnFlg", "_InfQlfr", "_InptCmd", "_InptTxt", "_MaxInptTm", "_MenuBckFlg", "_NtfyCardInptFlg", "_WaitUsrVldtnFlg"]
 	@property
 	def BeepKeyFlg(self):
 		return self._BeepKeyFlg

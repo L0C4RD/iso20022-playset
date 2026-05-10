@@ -1,6 +1,6 @@
 from . import base_types
-from ._UnaffirmedReason3Choice import UnaffirmedReason3Choice
 from ._Max210Text import Max210Text
+from ._UnaffirmedReason3Choice import UnaffirmedReason3Choice
 
 class AffirmationReason2(base_types._BaseFieldType):
 

@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max70Text import Max70Text
 from ._DeviceIdentificationType1Code import DeviceIdentificationType1Code
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class DeviceIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTp", "_Id", "_Tp", "_Assgnr"]
+	__slots__ = ["_Assgnr", "_Id", "_OthrTp", "_Tp"]
 	@property
 	def Assgnr(self):
 		return self._Assgnr

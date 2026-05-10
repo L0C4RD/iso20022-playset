@@ -3,7 +3,7 @@ from ._Number import Number
 
 class ATMSecurityConfiguration2(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxRootKeyLngth", "_MaxRSAKeyLngth", "_MaxSmmtrcKey", "_MaxAsmmtrcKey"]
+	__slots__ = ["_MaxAsmmtrcKey", "_MaxRSAKeyLngth", "_MaxRootKeyLngth", "_MaxSmmtrcKey"]
 	@property
 	def MaxAsmmtrcKey(self):
 		return self._MaxAsmmtrcKey

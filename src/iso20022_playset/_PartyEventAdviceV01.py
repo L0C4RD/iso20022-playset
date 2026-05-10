@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max15NumericText import Max15NumericText
-from ._EventDescription1 import EventDescription1
 from ._BusinessLetter1 import BusinessLetter1
 from ._EncapsulatedBusinessMessage1 import EncapsulatedBusinessMessage1
+from ._EventDescription1 import EventDescription1
+from ._Max15NumericText import Max15NumericText
 
 class PartyEventAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtNtce", "_Hdr", "_AttchdMsg", "_EvtCnt"]
+	__slots__ = ["_AttchdMsg", "_EvtCnt", "_EvtNtce", "_Hdr"]
 	@property
 	def AttchdMsg(self):
 		return self._AttchdMsg

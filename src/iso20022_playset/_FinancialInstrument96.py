@@ -1,17 +1,17 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._AnnualChargePaymentType1Code import AnnualChargePaymentType1Code
-from ._EventFrequency5Code import EventFrequency5Code
-from ._YesNoIndicator import YesNoIndicator
-from ._DistributionPolicy1Code import DistributionPolicy1Code
-from ._TargetMarket1Code import TargetMarket1Code
 from ._AdditionalInformation15 import AdditionalInformation15
-from ._EUSavingsDirective1Code import EUSavingsDirective1Code
+from ._AnnualChargePaymentType1Code import AnnualChargePaymentType1Code
+from ._DistributionPolicy1Code import DistributionPolicy1Code
 from ._DividendPolicy1Code import DividendPolicy1Code
+from ._EUSavingsDirective1Code import EUSavingsDirective1Code
+from ._EventFrequency5Code import EventFrequency5Code
+from ._ISODate import ISODate
+from ._TargetMarket1Code import TargetMarket1Code
+from ._YesNoIndicator import YesNoIndicator
 
 class FinancialInstrument96(base_types._BaseFieldType):
 
-	__slots__ = ["_TermntnDt", "_RinvstmtFrqcy", "_ClsdEndFnd", "_DmtrlsdBrScties", "_BckEndLd", "_DmtrlsdRegdScties", "_MtrtyDt", "_EUSvgsDrctv", "_MgmtFeeSrc", "_SwtchFee", "_DvddFrqcy", "_LnchDt", "_TaxEffcntPdctElgbl", "_PrfrmncFee", "_FndEndDt", "_Authrsd", "_DstrbtnPlcy", "_InitlOfferEndDt", "_RDRCmplnt", "_MayBeTermntdEarly", "_SspnsnEndDt", "_AddtlInf", "_PhysBrScties", "_DvddPlcy", "_FrntEndLd", "_SspnsnStartDt", "_PhysRegdScties", "_Equlstn"]
+	__slots__ = ["_AddtlInf", "_Authrsd", "_BckEndLd", "_ClsdEndFnd", "_DmtrlsdBrScties", "_DmtrlsdRegdScties", "_DstrbtnPlcy", "_DvddFrqcy", "_DvddPlcy", "_EUSvgsDrctv", "_Equlstn", "_FndEndDt", "_FrntEndLd", "_InitlOfferEndDt", "_LnchDt", "_MayBeTermntdEarly", "_MgmtFeeSrc", "_MtrtyDt", "_PhysBrScties", "_PhysRegdScties", "_PrfrmncFee", "_RDRCmplnt", "_RinvstmtFrqcy", "_SspnsnEndDt", "_SspnsnStartDt", "_SwtchFee", "_TaxEffcntPdctElgbl", "_TermntnDt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

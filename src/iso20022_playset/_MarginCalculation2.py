@@ -1,15 +1,15 @@
 from . import base_types
-from ._MarginResult1Choice import MarginResult1Choice
-from ._Collateral6 import Collateral6
-from ._SecurityIdentification14 import SecurityIdentification14
-from ._Margin3 import Margin3
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Amount2 import Amount2
 from ._AmountAndDirection20 import AmountAndDirection20
+from ._Collateral6 import Collateral6
+from ._Margin3 import Margin3
+from ._MarginResult1Choice import MarginResult1Choice
+from ._SecurityIdentification14 import SecurityIdentification14
 
 class MarginCalculation2(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnTpAmt", "_XpsrAmt", "_FinInstrmId", "_TtlMrgnAmt", "_MinRqrmntDpst", "_MrgnRslt", "_CollOnDpst"]
+	__slots__ = ["_CollOnDpst", "_FinInstrmId", "_MinRqrmntDpst", "_MrgnRslt", "_MrgnTpAmt", "_TtlMrgnAmt", "_XpsrAmt"]
 	@property
 	def CollOnDpst(self):
 		return self._CollOnDpst

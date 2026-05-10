@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class TransferReference16(base_types._BaseFieldType):
 
-	__slots__ = ["_RvslRsn", "_CxlRef", "_TrfConfRef", "_ClntRef", "_TrfRef", "_CtrPtyRef"]
+	__slots__ = ["_ClntRef", "_CtrPtyRef", "_CxlRef", "_RvslRsn", "_TrfConfRef", "_TrfRef"]
 	@property
 	def ClntRef(self):
 		return self._ClntRef

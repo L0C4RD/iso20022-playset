@@ -1,20 +1,20 @@
 from . import base_types
 from ._ClosingDate4Choice import ClosingDate4Choice
-from ._YesNoIndicator import YesNoIndicator
+from ._CollateralAmount18 import CollateralAmount18
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._Exact3NumericText import Exact3NumericText
+from ._FrequencyRateFixing1Choice import FrequencyRateFixing1Choice
+from ._InterestComputationMethodFormat4Choice import InterestComputationMethodFormat4Choice
+from ._OptionType6Choice import OptionType6Choice
+from ._PercentageRate import PercentageRate
 from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
 from ._RateOrName4Choice import RateOrName4Choice
-from ._PercentageRate import PercentageRate
-from ._Exact3NumericText import Exact3NumericText
-from ._OptionType6Choice import OptionType6Choice
-from ._InterestComputationMethodFormat4Choice import InterestComputationMethodFormat4Choice
-from ._FrequencyRateFixing1Choice import FrequencyRateFixing1Choice
 from ._RepoTerminationOption1Code import RepoTerminationOption1Code
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._CollateralAmount18 import CollateralAmount18
+from ._YesNoIndicator import YesNoIndicator
 
 class DealTransactionDetails5(base_types._BaseFieldType):
 
-	__slots__ = ["_TermntnOptn", "_Pmt", "_DealDtlsAmt", "_PricgRateAndIndx", "_OvrnghtFrqcyRateFxg", "_PlcOfTrad", "_OptnTp", "_CncntrtnLmt", "_Sprd", "_MinNtcePrd", "_DayCntBsis", "_ClsgDt"]
+	__slots__ = ["_ClsgDt", "_CncntrtnLmt", "_DayCntBsis", "_DealDtlsAmt", "_MinNtcePrd", "_OptnTp", "_OvrnghtFrqcyRateFxg", "_PlcOfTrad", "_Pmt", "_PricgRateAndIndx", "_Sprd", "_TermntnOptn"]
 	@property
 	def ClsgDt(self):
 		return self._ClsgDt

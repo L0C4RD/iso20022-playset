@@ -1,12 +1,12 @@
 from . import base_types
-from ._SecurityIdentificationAndAmount2 import SecurityIdentificationAndAmount2
 from ._Deposit1 import Deposit1
 from ._OtherInvestment1 import OtherInvestment1
 from ._RepurchaseAgreement2 import RepurchaseAgreement2
+from ._SecurityIdentificationAndAmount2 import SecurityIdentificationAndAmount2
 
 class Investment2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CntrlBkDpst", "_UscrdCshDpst", "_OthrInvstmts", "_RpAgrmt", "_OutrghtInvstmt"]
+	__slots__ = ["_CntrlBkDpst", "_OthrInvstmts", "_OutrghtInvstmt", "_RpAgrmt", "_UscrdCshDpst"]
 	@property
 	def CntrlBkDpst(self):
 		return self._CntrlBkDpst

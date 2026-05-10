@@ -1,10 +1,10 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Visibilty1(base_types._BaseFieldType):
 
-	__slots__ = ["_LtdVsblty", "_StartDt", "_EndDt"]
+	__slots__ = ["_EndDt", "_LtdVsblty", "_StartDt"]
 	@property
 	def EndDt(self):
 		return self._EndDt

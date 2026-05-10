@@ -1,11 +1,11 @@
 from . import base_types
 from ._CashProceeds1 import CashProceeds1
-from ._TaxVoucher1 import TaxVoucher1
 from ._SecuritiesProceeds1 import SecuritiesProceeds1
+from ._TaxVoucher1 import TaxVoucher1
 
 class ProceedsMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesPrcdsMvmntDtls", "_TaxDtls", "_CshPrcdsMvmntDtls"]
+	__slots__ = ["_CshPrcdsMvmntDtls", "_SctiesPrcdsMvmntDtls", "_TaxDtls"]
 	@property
 	def CshPrcdsMvmntDtls(self):
 		return self._CshPrcdsMvmntDtls

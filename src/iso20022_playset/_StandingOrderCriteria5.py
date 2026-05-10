@@ -1,7 +1,7 @@
 from . import base_types
-from ._StandingOrderSearchCriteria5 import StandingOrderSearchCriteria5
-from ._StandingOrderReturnCriteria1 import StandingOrderReturnCriteria1
 from ._Max35Text import Max35Text
+from ._StandingOrderReturnCriteria1 import StandingOrderReturnCriteria1
+from ._StandingOrderSearchCriteria5 import StandingOrderSearchCriteria5
 
 class StandingOrderCriteria5(base_types._BaseFieldType):
 

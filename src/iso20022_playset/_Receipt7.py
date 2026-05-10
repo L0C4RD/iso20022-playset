@@ -1,11 +1,11 @@
 from . import base_types
-from ._RequestHandling4 import RequestHandling4
-from ._PaymentIdentification8Choice import PaymentIdentification8Choice
 from ._OriginalMessageAndIssuer1 import OriginalMessageAndIssuer1
+from ._PaymentIdentification8Choice import PaymentIdentification8Choice
+from ._RequestHandling4 import RequestHandling4
 
 class Receipt7(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlPmtId", "_OrgnlMsgId", "_ReqHdlg"]
+	__slots__ = ["_OrgnlMsgId", "_OrgnlPmtId", "_ReqHdlg"]
 	@property
 	def OrgnlMsgId(self):
 		return self._OrgnlMsgId

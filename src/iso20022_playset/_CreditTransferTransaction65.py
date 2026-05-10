@@ -1,27 +1,27 @@
 from . import base_types
-from ._ChargeBearerType1Code import ChargeBearerType1Code
-from ._PaymentIdentification6 import PaymentIdentification6
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Purpose2Choice import Purpose2Choice
-from ._CashAccount40 import CashAccount40
-from ._Document15 import Document15
 from ._AmountType4Choice import AmountType4Choice
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._ChargeBearerType1Code import ChargeBearerType1Code
 from ._Cheque19 import Cheque19
-from ._PaymentTypeInformation29 import PaymentTypeInformation29
-from ._RegulatoryReporting3 import RegulatoryReporting3
-from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
-from ._RemittanceLocation8 import RemittanceLocation8
-from ._PaymentCondition2 import PaymentCondition2
-from ._SupplementaryData1 import SupplementaryData1
-from ._RemittanceInformation22 import RemittanceInformation22
 from ._CreditTransferMandateData1 import CreditTransferMandateData1
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Document15 import Document15
+from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
 from ._PartyIdentification272 import PartyIdentification272
+from ._PaymentCondition2 import PaymentCondition2
+from ._PaymentIdentification6 import PaymentIdentification6
+from ._PaymentTypeInformation29 import PaymentTypeInformation29
+from ._Purpose2Choice import Purpose2Choice
+from ._RegulatoryReporting3 import RegulatoryReporting3
+from ._RemittanceInformation22 import RemittanceInformation22
+from ._RemittanceLocation8 import RemittanceLocation8
+from ._SupplementaryData1 import SupplementaryData1
 from ._TaxData1 import TaxData1
 
 class CreditTransferTransaction65(base_types._BaseFieldType):
 
-	__slots__ = ["_NclsdFile", "_ChrgBr", "_MndtRltdInf", "_IntrmyAgt1", "_Cdtr", "_UltmtCdtr", "_InstrForCdtrAgt", "_Tax", "_IntrmyAgt3", "_RmtInf", "_Amt", "_UltmtDbtr", "_ChqInstr", "_CdtrAgt", "_RgltryRptg", "_PmtCond", "_PmtTpInf", "_CdtrAcct", "_CdtrAgtAcct", "_ReqdExctnDt", "_RltdRmtInf", "_PmtId", "_Purp", "_IntrmyAgt2", "_SplmtryData"]
+	__slots__ = ["_Amt", "_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_ChqInstr", "_ChrgBr", "_InstrForCdtrAgt", "_IntrmyAgt1", "_IntrmyAgt2", "_IntrmyAgt3", "_MndtRltdInf", "_NclsdFile", "_PmtCond", "_PmtId", "_PmtTpInf", "_Purp", "_ReqdExctnDt", "_RgltryRptg", "_RltdRmtInf", "_RmtInf", "_SplmtryData", "_Tax", "_UltmtCdtr", "_UltmtDbtr"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -4,7 +4,7 @@ from ._Number import Number
 
 class LocalDateTime1(base_types._BaseFieldType):
 
-	__slots__ = ["_UTCOffset", "_ToDtTm", "_FrDtTm"]
+	__slots__ = ["_FrDtTm", "_ToDtTm", "_UTCOffset"]
 	@property
 	def FrDtTm(self):
 		return self._FrDtTm

@@ -1,12 +1,12 @@
 from . import base_types
-from ._CurrencyAndAmount import CurrencyAndAmount
 from ._Adjustment6 import Adjustment6
+from ._CurrencyAndAmount import CurrencyAndAmount
 from ._DocumentIdentification7 import DocumentIdentification7
 from ._Max35Text import Max35Text
 
 class ReportLine7(base_types._BaseFieldType):
 
-	__slots__ = ["_Adjstmnt", "_PurchsOrdrRef", "_TxId", "_NetAmt"]
+	__slots__ = ["_Adjstmnt", "_NetAmt", "_PurchsOrdrRef", "_TxId"]
 	@property
 	def Adjstmnt(self):
 		return self._Adjstmnt

@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._Min6Max8Text import Min6Max8Text
 from ._TransactionIdentifier1 import TransactionIdentifier1
-from ._Max35Text import Max35Text
 
 class LoyaltyServerData1(base_types._BaseFieldType):
 
-	__slots__ = ["_LltyTxId", "_HstRcncltnId", "_LltySvrId", "_ApprvlCd"]
+	__slots__ = ["_ApprvlCd", "_HstRcncltnId", "_LltySvrId", "_LltyTxId"]
 	@property
 	def ApprvlCd(self):
 		return self._ApprvlCd

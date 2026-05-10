@@ -1,14 +1,14 @@
 from . import base_types
-from ._RatioFormat20Choice import RatioFormat20Choice
 from ._Percentage14Rate import Percentage14Rate
-from ._RatioFormat19Choice import RatioFormat19Choice
+from ._RateAndAmountFormat55Choice import RateAndAmountFormat55Choice
 from ._RateAndAmountFormat59Choice import RateAndAmountFormat59Choice
 from ._RateFormat27Choice import RateFormat27Choice
-from ._RateAndAmountFormat55Choice import RateAndAmountFormat55Choice
+from ._RatioFormat19Choice import RatioFormat19Choice
+from ._RatioFormat20Choice import RatioFormat20Choice
 
 class CorporateActionRate125(base_types._BaseFieldType):
 
-	__slots__ = ["_AplblRate", "_AddtlQtyForSbcbdRsltntScties", "_ChrgsFees", "_ScndLvlTax", "_FinTxTaxRate", "_NewToOd", "_WhldgTaxRate", "_TaxCdtRate", "_AddtlQtyForExstgScties", "_FsclStmp"]
+	__slots__ = ["_AddtlQtyForExstgScties", "_AddtlQtyForSbcbdRsltntScties", "_AplblRate", "_ChrgsFees", "_FinTxTaxRate", "_FsclStmp", "_NewToOd", "_ScndLvlTax", "_TaxCdtRate", "_WhldgTaxRate"]
 	@property
 	def AddtlQtyForExstgScties(self):
 		return self._AddtlQtyForExstgScties

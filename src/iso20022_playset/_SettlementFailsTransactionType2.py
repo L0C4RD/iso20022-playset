@@ -3,7 +3,7 @@ from ._SettlementTotalData1Choice import SettlementTotalData1Choice
 
 class SettlementFailsTransactionType2(base_types._BaseFieldType):
 
-	__slots__ = ["_RpAgrmt", "_Othr", "_SctiesLndgOrBrrwg", "_CollMgmtOpr", "_SctiesBuyOrSell"]
+	__slots__ = ["_CollMgmtOpr", "_Othr", "_RpAgrmt", "_SctiesBuyOrSell", "_SctiesLndgOrBrrwg"]
 	@property
 	def CollMgmtOpr(self):
 		return self._CollMgmtOpr

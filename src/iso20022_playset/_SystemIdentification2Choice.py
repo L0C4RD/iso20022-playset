@@ -1,6 +1,6 @@
 from . import base_types
-from ._MarketInfrastructureIdentification1Choice import MarketInfrastructureIdentification1Choice
 from ._CountryCode import CountryCode
+from ._MarketInfrastructureIdentification1Choice import MarketInfrastructureIdentification1Choice
 
 class SystemIdentification2Choice(base_types._BaseFieldType):
 

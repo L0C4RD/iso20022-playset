@@ -1,22 +1,22 @@
 from . import base_types
-from ._VoteParameters9 import VoteParameters9
-from ._SupplementaryData1 import SupplementaryData1
-from ._Resolution8 import Resolution8
-from ._MeetingEventReference1 import MeetingEventReference1
-from ._SecurityPosition20 import SecurityPosition20
-from ._NotificationUpdate2 import NotificationUpdate2
-from ._IssuerAgent3 import IssuerAgent3
-from ._MeetingNotice9 import MeetingNotice9
-from ._PowerOfAttorneyRequirements4 import PowerOfAttorneyRequirements4
 from ._CorporateEventNarrative4 import CorporateEventNarrative4
-from ._Meeting7 import Meeting7
-from ._NotificationGeneralInformation4 import NotificationGeneralInformation4
-from ._Pagination1 import Pagination1
+from ._IssuerAgent3 import IssuerAgent3
 from ._IssuerInformation3 import IssuerInformation3
+from ._Meeting7 import Meeting7
+from ._MeetingEventReference1 import MeetingEventReference1
+from ._MeetingNotice9 import MeetingNotice9
+from ._NotificationGeneralInformation4 import NotificationGeneralInformation4
+from ._NotificationUpdate2 import NotificationUpdate2
+from ._Pagination1 import Pagination1
+from ._PowerOfAttorneyRequirements4 import PowerOfAttorneyRequirements4
+from ._Resolution8 import Resolution8
+from ._SecurityPosition20 import SecurityPosition20
+from ._SupplementaryData1 import SupplementaryData1
+from ._VoteParameters9 import VoteParameters9
 
 class MeetingNotificationV12(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnUpd", "_IssrAgt", "_AddtlInf", "_Mtg", "_Scty", "_Vote", "_Rsltn", "_PwrOfAttnyRqrmnts", "_MtgDtls", "_Issr", "_EvtsLkg", "_SplmtryData", "_Pgntn", "_NtfctnGnlInf"]
+	__slots__ = ["_AddtlInf", "_EvtsLkg", "_Issr", "_IssrAgt", "_Mtg", "_MtgDtls", "_NtfctnGnlInf", "_NtfctnUpd", "_Pgntn", "_PwrOfAttnyRqrmnts", "_Rsltn", "_Scty", "_SplmtryData", "_Vote"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

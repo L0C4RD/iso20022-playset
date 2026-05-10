@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._ConfirmationParties7 import ConfirmationParties7
-from ._Report6 import Report6
 from ._Pagination1 import Pagination1
 from ._PartyIdentificationAndAccount220 import PartyIdentificationAndAccount220
+from ._Report6 import Report6
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesEndOfProcessReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Invstr", "_Pgntn", "_ConfPties", "_SplmtryData", "_RptGnlDtls"]
+	__slots__ = ["_ConfPties", "_Invstr", "_Pgntn", "_RptGnlDtls", "_SplmtryData"]
 	@property
 	def ConfPties(self):
 		return self._ConfPties

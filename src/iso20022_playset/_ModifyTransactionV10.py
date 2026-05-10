@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._MessageHeader1 import MessageHeader1
+from ._SupplementaryData1 import SupplementaryData1
 from ._TransactionModification7 import TransactionModification7
 
 class ModifyTransactionV10(base_types._BaseFieldType):
 
-	__slots__ = ["_Mod", "_SplmtryData", "_MsgHdr"]
+	__slots__ = ["_Mod", "_MsgHdr", "_SplmtryData"]
 	@property
 	def Mod(self):
 		return self._Mod

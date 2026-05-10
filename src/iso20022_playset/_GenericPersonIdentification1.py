@@ -1,6 +1,6 @@
 from . import base_types
-from ._PersonIdentificationSchemeName1Choice import PersonIdentificationSchemeName1Choice
 from ._Max35Text import Max35Text
+from ._PersonIdentificationSchemeName1Choice import PersonIdentificationSchemeName1Choice
 
 class GenericPersonIdentification1(base_types._BaseFieldType):
 

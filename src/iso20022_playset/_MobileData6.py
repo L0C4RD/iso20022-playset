@@ -1,14 +1,14 @@
 from . import base_types
-from ._Min2Max3AlphaText import Min2Max3AlphaText
-from ._Max35Text import Max35Text
-from ._Min2Max3NumericText import Min2Max3NumericText
-from ._Geolocation1 import Geolocation1
 from ._ContentInformationType40 import ContentInformationType40
+from ._Geolocation1 import Geolocation1
+from ._Max35Text import Max35Text
+from ._Min2Max3AlphaText import Min2Max3AlphaText
+from ._Min2Max3NumericText import Min2Max3NumericText
 from ._SensitiveMobileData1 import SensitiveMobileData1
 
 class MobileData6(base_types._BaseFieldType):
 
-	__slots__ = ["_SnstvMobData", "_PrtctdMobData", "_MobNtwkCd", "_Glctn", "_MobCtryCd", "_MobMskdMSISDN"]
+	__slots__ = ["_Glctn", "_MobCtryCd", "_MobMskdMSISDN", "_MobNtwkCd", "_PrtctdMobData", "_SnstvMobData"]
 	@property
 	def Glctn(self):
 		return self._Glctn

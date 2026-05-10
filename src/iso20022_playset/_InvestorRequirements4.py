@@ -1,13 +1,13 @@
 from . import base_types
+from ._InvestmentNeed2Choice import InvestmentNeed2Choice
 from ._OtherInvestmentNeed1 import OtherInvestmentNeed1
-from ._TimeHorizon2Choice import TimeHorizon2Choice
 from ._SustainabilityPreferences2Code import SustainabilityPreferences2Code
 from ._TargetMarket1Code import TargetMarket1Code
-from ._InvestmentNeed2Choice import InvestmentNeed2Choice
+from ._TimeHorizon2Choice import TimeHorizon2Choice
 
 class InvestorRequirements4(base_types._BaseFieldType):
 
-	__slots__ = ["_SstnbltyPrefs", "_OptnOrLvrgdRtrPrfl", "_RtrPrflHdgg", "_RtrPrflPrsrvtn", "_RtrPrflPnsnSchmeDE", "_Othr", "_OthrSpcfcInvstmtNeed", "_RtrPrflIncm", "_MinHldgPrd", "_RtrPrflGrwth"]
+	__slots__ = ["_MinHldgPrd", "_OptnOrLvrgdRtrPrfl", "_Othr", "_OthrSpcfcInvstmtNeed", "_RtrPrflGrwth", "_RtrPrflHdgg", "_RtrPrflIncm", "_RtrPrflPnsnSchmeDE", "_RtrPrflPrsrvtn", "_SstnbltyPrefs"]
 	@property
 	def MinHldgPrd(self):
 		return self._MinHldgPrd

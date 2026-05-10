@@ -5,7 +5,7 @@ from ._AssetClassSubProductType10Code import AssetClassSubProductType10Code
 
 class EnvironmentalCommodityEmission2(base_types._BaseFieldType):
 
-	__slots__ = ["_BasePdct", "_AddtlSubPdct", "_SubPdct"]
+	__slots__ = ["_AddtlSubPdct", "_BasePdct", "_SubPdct"]
 	@property
 	def AddtlSubPdct(self):
 		return self._AddtlSubPdct

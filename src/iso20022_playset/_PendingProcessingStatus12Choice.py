@@ -4,7 +4,7 @@ from ._PendingProcessingReason9 import PendingProcessingReason9
 
 class PendingProcessingStatus12Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_NoSpcfdRsn"]
+	__slots__ = ["_NoSpcfdRsn", "_Rsn"]
 	@property
 	def NoSpcfdRsn(self):
 		return self._NoSpcfdRsn

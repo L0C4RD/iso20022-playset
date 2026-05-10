@@ -1,13 +1,13 @@
 from . import base_types
+from ._CancelledStatus14Choice import CancelledStatus14Choice
+from ._NoSpecifiedReason1 import NoSpecifiedReason1
+from ._PendingCancellationStatus15Choice import PendingCancellationStatus15Choice
 from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
 from ._RejectedStatus54Choice import RejectedStatus54Choice
-from ._NoSpecifiedReason1 import NoSpecifiedReason1
-from ._CancelledStatus14Choice import CancelledStatus14Choice
-from ._PendingCancellationStatus15Choice import PendingCancellationStatus15Choice
 
 class InstructionCancellationRequestStatus18Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgCxl", "_CxlCmpltd", "_PrtrySts", "_Rjctd", "_Accptd"]
+	__slots__ = ["_Accptd", "_CxlCmpltd", "_PdgCxl", "_PrtrySts", "_Rjctd"]
 	@property
 	def Accptd(self):
 		return self._Accptd

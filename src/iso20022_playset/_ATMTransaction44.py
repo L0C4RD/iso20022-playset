@@ -1,20 +1,20 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._CardAccount18 import CardAccount18
 from ._ATMCommand7 import ATMCommand7
-from ._AmountAndCurrency1 import AmountAndCurrency1
-from ._DetailedAmount13 import DetailedAmount13
-from ._ATMDepositedMedia4 import ATMDepositedMedia4
-from ._TransactionIdentifier3 import TransactionIdentifier3
 from ._ATMDepositComponent1 import ATMDepositComponent1
+from ._ATMDepositedMedia4 import ATMDepositedMedia4
+from ._AmountAndCurrency1 import AmountAndCurrency1
+from ._AuthorisationResult20 import AuthorisationResult20
+from ._CardAccount18 import CardAccount18
+from ._DetailedAmount13 import DetailedAmount13
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max10000Binary import Max10000Binary
 from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._AuthorisationResult20 import AuthorisationResult20
+from ._TransactionIdentifier3 import TransactionIdentifier3
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ATMTransaction44(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlChrg", "_CmpltnReqrd", "_AuthstnRslt", "_TtlReqdAmt", "_SubDpst", "_AcctInf", "_DpstdMdia", "_Cmd", "_TtlAuthrsdAmt", "_ICCRltdData", "_RcncltnId", "_TxId"]
+	__slots__ = ["_AcctInf", "_AddtlChrg", "_AuthstnRslt", "_Cmd", "_CmpltnReqrd", "_DpstdMdia", "_ICCRltdData", "_RcncltnId", "_SubDpst", "_TtlAuthrsdAmt", "_TtlReqdAmt", "_TxId"]
 	@property
 	def AcctInf(self):
 		return self._AcctInf

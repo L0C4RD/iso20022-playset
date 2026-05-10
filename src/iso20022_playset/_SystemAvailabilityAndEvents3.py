@@ -1,12 +1,12 @@
 from . import base_types
-from ._TimePeriod1 import TimePeriod1
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._SystemEvent3 import SystemEvent3
 from ._SystemClosure2 import SystemClosure2
+from ._SystemEvent3 import SystemEvent3
+from ._TimePeriod1 import TimePeriod1
 
 class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 
-	__slots__ = ["_SysCcy", "_SsnPrd", "_Evt", "_ClsrInf"]
+	__slots__ = ["_ClsrInf", "_Evt", "_SsnPrd", "_SysCcy"]
 	@property
 	def ClsrInf(self):
 		return self._ClsrInf

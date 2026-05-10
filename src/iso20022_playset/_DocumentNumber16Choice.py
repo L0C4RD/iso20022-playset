@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISO20022MessageIdentificationText import ISO20022MessageIdentificationText
 from ._Exact3NumericText import Exact3NumericText
 from ._GenericIdentification163 import GenericIdentification163
+from ._ISO20022MessageIdentificationText import ISO20022MessageIdentificationText
 
 class DocumentNumber16Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtNb", "_PrtryNb", "_LngNb"]
+	__slots__ = ["_LngNb", "_PrtryNb", "_ShrtNb"]
 	@property
 	def LngNb(self):
 		return self._LngNb

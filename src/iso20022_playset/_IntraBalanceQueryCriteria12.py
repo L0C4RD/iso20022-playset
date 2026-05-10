@@ -1,14 +1,14 @@
 from . import base_types
+from ._AccountIdentificationSearchCriteria2Choice import AccountIdentificationSearchCriteria2Choice
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._DateAndDateTimeSearch5Choice import DateAndDateTimeSearch5Choice
+from ._Max35Text import Max35Text
 from ._ModificationProcessingStatus9Choice import ModificationProcessingStatus9Choice
 from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._Max35Text import Max35Text
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._AccountIdentificationSearchCriteria2Choice import AccountIdentificationSearchCriteria2Choice
 
 class IntraBalanceQueryCriteria12(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgSts", "_MsgOrgtr", "_CshAcctSvcr", "_CreDtTm", "_ModReqId", "_CshAcct", "_CshAcctOwnr"]
+	__slots__ = ["_CreDtTm", "_CshAcct", "_CshAcctOwnr", "_CshAcctSvcr", "_ModReqId", "_MsgOrgtr", "_PrcgSts"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

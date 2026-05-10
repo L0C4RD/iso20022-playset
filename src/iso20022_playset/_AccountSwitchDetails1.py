@@ -1,15 +1,15 @@
 from . import base_types
+from ._BalanceTransferWindow1Code import BalanceTransferWindow1Code
 from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 from ._ResponseDetails1 import ResponseDetails1
 from ._SwitchStatus1Code import SwitchStatus1Code
-from ._BalanceTransferWindow1Code import BalanceTransferWindow1Code
-from ._Max35Text import Max35Text
-from ._ISODateTime import ISODateTime
 from ._SwitchType1Code import SwitchType1Code
 
 class AccountSwitchDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_RtgUnqRefNb", "_UnqRefNb", "_SwtchTp", "_SwtchDt", "_Rspn", "_SwtchRcvdDtTm", "_SwtchSts", "_BalTrfWndw"]
+	__slots__ = ["_BalTrfWndw", "_Rspn", "_RtgUnqRefNb", "_SwtchDt", "_SwtchRcvdDtTm", "_SwtchSts", "_SwtchTp", "_UnqRefNb"]
 	@property
 	def BalTrfWndw(self):
 		return self._BalTrfWndw

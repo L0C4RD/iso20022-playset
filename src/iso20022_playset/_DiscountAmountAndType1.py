@@ -1,10 +1,10 @@
 from . import base_types
-from ._DiscountAmountType1Choice import DiscountAmountType1Choice
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._DiscountAmountType1Choice import DiscountAmountType1Choice
 
 class DiscountAmountAndType1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Amt"]
+	__slots__ = ["_Amt", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

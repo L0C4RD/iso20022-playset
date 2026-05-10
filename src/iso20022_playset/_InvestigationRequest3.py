@@ -1,17 +1,17 @@
 from . import base_types
-from ._UnderlyingInvestigationInstrument1Choice import UnderlyingInvestigationInstrument1Choice
+from ._InvestigationRequestAction1 import InvestigationRequestAction1
 from ._InvestigationServiceLevel1Choice import InvestigationServiceLevel1Choice
-from ._InvestigationType1Choice import InvestigationType1Choice
 from ._InvestigationSubType1Choice import InvestigationSubType1Choice
-from ._UUIDv4Identifier import UUIDv4Identifier
+from ._InvestigationType1Choice import InvestigationType1Choice
 from ._Max35Text import Max35Text
 from ._Party40Choice import Party40Choice
+from ._UUIDv4Identifier import UUIDv4Identifier
 from ._UnderlyingData2Choice import UnderlyingData2Choice
-from ._InvestigationRequestAction1 import InvestigationRequestAction1
+from ._UnderlyingInvestigationInstrument1Choice import UnderlyingInvestigationInstrument1Choice
 
 class InvestigationRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstgtnSubTp", "_InvstgtnTp", "_EIR", "_MsgId", "_Rqstr", "_Rspndr", "_ReqOrgtr", "_SvcLvl", "_UndrlygInstrm", "_ReqActn", "_Undrlyg", "_RspndrInvstgtnId", "_RqstrInvstgtnId", "_XpctdRspndr"]
+	__slots__ = ["_EIR", "_InvstgtnSubTp", "_InvstgtnTp", "_MsgId", "_ReqActn", "_ReqOrgtr", "_Rqstr", "_RqstrInvstgtnId", "_Rspndr", "_RspndrInvstgtnId", "_SvcLvl", "_Undrlyg", "_UndrlygInstrm", "_XpctdRspndr"]
 	@property
 	def EIR(self):
 		return self._EIR

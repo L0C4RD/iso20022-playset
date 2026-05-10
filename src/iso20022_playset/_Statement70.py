@@ -1,15 +1,15 @@
 from . import base_types
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._Frequency26Choice import Frequency26Choice
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._Number3Choice import Number3Choice
-from ._YesNoIndicator import YesNoIndicator
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._StatementStructure1Code import StatementStructure1Code
 from ._UpdateType16Choice import UpdateType16Choice
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class Statement70(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtDtTm", "_RptNb", "_Frqcy", "_StmtStr", "_ActvtyInd", "_QryRef", "_UpdTp", "_StmtId"]
+	__slots__ = ["_ActvtyInd", "_Frqcy", "_QryRef", "_RptNb", "_StmtDtTm", "_StmtId", "_StmtStr", "_UpdTp"]
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd

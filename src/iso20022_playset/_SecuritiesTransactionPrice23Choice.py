@@ -1,13 +1,13 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
-from ._BaseOneRate import BaseOneRate
 from ._AmountAndDirection106 import AmountAndDirection106
+from ._BaseOneRate import BaseOneRate
+from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from ._PercentageRate import PercentageRate
 from ._SecuritiesTransactionPrice5 import SecuritiesTransactionPrice5
 
 class SecuritiesTransactionPrice23Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_Yld", "_MntryVal", "_Pctg", "_Dcml", "_Unit"]
+	__slots__ = ["_Dcml", "_MntryVal", "_Othr", "_Pctg", "_Unit", "_Yld"]
 	@property
 	def Dcml(self):
 		return self._Dcml

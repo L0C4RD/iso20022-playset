@@ -1,13 +1,13 @@
 from . import base_types
-from ._PhoneNumber import PhoneNumber
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
 from ._ISO2ALanguageCode import ISO2ALanguageCode
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._PhoneNumber import PhoneNumber
 
 class ContactBusiness1(base_types._BaseFieldType):
 
-	__slots__ = ["_LastNm", "_URL", "_Lang", "_Phne", "_Fax", "_TollFreePhne", "_PrprtyPhne", "_Email", "_GvnNm", "_Nm", "_MddlNm"]
+	__slots__ = ["_Email", "_Fax", "_GvnNm", "_Lang", "_LastNm", "_MddlNm", "_Nm", "_Phne", "_PrprtyPhne", "_TollFreePhne", "_URL"]
 	@property
 	def Email(self):
 		return self._Email

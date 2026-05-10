@@ -1,11 +1,11 @@
 from . import base_types
 from ._ActivationHeader3 import ActivationHeader3
-from ._SupplementaryData1 import SupplementaryData1
 from ._DebtorActivationCancellation3 import DebtorActivationCancellation3
+from ._SupplementaryData1 import SupplementaryData1
 
 class RequestToPayDebtorActivationCancellationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_SplmtryData", "_CxlData"]
+	__slots__ = ["_CxlData", "_Hdr", "_SplmtryData"]
 	@property
 	def CxlData(self):
 		return self._CxlData

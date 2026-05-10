@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Frequency36Choice import Frequency36Choice
 from ._DatePeriod3 import DatePeriod3
+from ._Frequency36Choice import Frequency36Choice
+from ._ISODate import ISODate
 from ._SequenceType2Code import SequenceType2Code
 
 class MandateOccurrences5(base_types._BaseFieldType):
 
-	__slots__ = ["_SeqTp", "_FrstColltnDt", "_Drtn", "_FnlColltnDt", "_Frqcy"]
+	__slots__ = ["_Drtn", "_FnlColltnDt", "_Frqcy", "_FrstColltnDt", "_SeqTp"]
 	@property
 	def Drtn(self):
 		return self._Drtn

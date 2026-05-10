@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PaymentTransaction151 import PaymentTransaction151
-from ._YesNoIndicator import YesNoIndicator
-from ._PlaceOfTradeIdentification4Choice import PlaceOfTradeIdentification4Choice
-from ._CancellationRight1Choice import CancellationRight1Choice
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._InvestmentAccount78 import InvestmentAccount78
-from ._IndividualPerson32 import IndividualPerson32
-from ._Max35Text import Max35Text
+from ._CancellationRight1Choice import CancellationRight1Choice
+from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
+from ._IndividualPerson32 import IndividualPerson32
+from ._InvestmentAccount78 import InvestmentAccount78
+from ._Max35Text import Max35Text
+from ._PaymentTransaction151 import PaymentTransaction151
+from ._PlaceOfTradeIdentification4Choice import PlaceOfTradeIdentification4Choice
 from ._RedemptionExecution17 import RedemptionExecution17
+from ._YesNoIndicator import YesNoIndicator
 
 class RedemptionMultipleExecution6(base_types._BaseFieldType):
 
-	__slots__ = ["_AmdmntInd", "_RcvdDtTm", "_ReqdFutrTradDt", "_IndvExctnDtls", "_PlcOfTrad", "_BlkCshSttlmDtls", "_InvstmtAcctDtls", "_MstrRef", "_CxlRght", "_TtlSttlmAmt", "_BnfcryDtls", "_OrdrDtTm"]
+	__slots__ = ["_AmdmntInd", "_BlkCshSttlmDtls", "_BnfcryDtls", "_CxlRght", "_IndvExctnDtls", "_InvstmtAcctDtls", "_MstrRef", "_OrdrDtTm", "_PlcOfTrad", "_RcvdDtTm", "_ReqdFutrTradDt", "_TtlSttlmAmt"]
 	@property
 	def AmdmntInd(self):
 		return self._AmdmntInd

@@ -6,7 +6,7 @@ from ._Role8Choice import Role8Choice
 
 class Intermediary48(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctPrsn", "_Acct", "_Id", "_Role"]
+	__slots__ = ["_Acct", "_CtctPrsn", "_Id", "_Role"]
 	@property
 	def Acct(self):
 		return self._Acct

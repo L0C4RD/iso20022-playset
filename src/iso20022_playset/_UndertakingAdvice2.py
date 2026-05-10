@@ -1,14 +1,14 @@
 from . import base_types
-from ._PartyIdentification43 import PartyIdentification43
 from ._Document9 import Document9
-from ._UndertakingIssuanceMessage import UndertakingIssuanceMessage
-from ._Max35Text import Max35Text
 from ._Max2000Text import Max2000Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification43 import PartyIdentification43
 from ._PresentationMedium1Code import PresentationMedium1Code
+from ._UndertakingIssuanceMessage import UndertakingIssuanceMessage
 
 class UndertakingAdvice2(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_ApplcntRefNb", "_OrgnlIssdMdm", "_Oblgr", "_NclsdFile", "_UdrtkgIssncMsg"]
+	__slots__ = ["_AddtlInf", "_ApplcntRefNb", "_NclsdFile", "_Oblgr", "_OrgnlIssdMdm", "_UdrtkgIssncMsg"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

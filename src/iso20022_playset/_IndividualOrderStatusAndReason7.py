@@ -1,15 +1,15 @@
 from . import base_types
-from ._Fee3 import Fee3
-from ._OrderStatus5Choice import OrderStatus5Choice
 from ._ExpectedExecutionDetails4 import ExpectedExecutionDetails4
-from ._Max35Text import Max35Text
-from ._PartyIdentification113 import PartyIdentification113
-from ._HoldBackInformation3 import HoldBackInformation3
+from ._Fee3 import Fee3
 from ._FundOrderData5 import FundOrderData5
+from ._HoldBackInformation3 import HoldBackInformation3
+from ._Max35Text import Max35Text
+from ._OrderStatus5Choice import OrderStatus5Choice
+from ._PartyIdentification113 import PartyIdentification113
 
 class IndividualOrderStatusAndReason7(base_types._BaseFieldType):
 
-	__slots__ = ["_NewDtls", "_GtgOrHldBckDtls", "_ClntRef", "_RprdFee", "_MstrRef", "_OrdrSts", "_OrdrData", "_CxlRef", "_OrdrRef", "_StsInitr", "_DealRef"]
+	__slots__ = ["_ClntRef", "_CxlRef", "_DealRef", "_GtgOrHldBckDtls", "_MstrRef", "_NewDtls", "_OrdrData", "_OrdrRef", "_OrdrSts", "_RprdFee", "_StsInitr"]
 	@property
 	def ClntRef(self):
 		return self._ClntRef

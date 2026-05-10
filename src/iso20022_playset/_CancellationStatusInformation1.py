@@ -1,11 +1,11 @@
 from . import base_types
-from ._StatusReason4Choice import StatusReason4Choice
 from ._CancellationStatus4Code import CancellationStatus4Code
 from ._Max105Text import Max105Text
+from ._StatusReason4Choice import StatusReason4Choice
 
 class CancellationStatusInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlStsRsnInf", "_StsRsn", "_Sts"]
+	__slots__ = ["_AddtlStsRsnInf", "_Sts", "_StsRsn"]
 	@property
 	def AddtlStsRsnInf(self):
 		return self._AddtlStsRsnInf

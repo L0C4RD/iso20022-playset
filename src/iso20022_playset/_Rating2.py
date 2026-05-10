@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max10Text import Max10Text
 from ._MarketIdentification89 import MarketIdentification89
+from ._Max10Text import Max10Text
 
 class Rating2(base_types._BaseFieldType):
 
-	__slots__ = ["_SrcOfRatg", "_Ratg"]
+	__slots__ = ["_Ratg", "_SrcOfRatg"]
 	@property
 	def Ratg(self):
 		return self._Ratg

@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification37 import GenericIdentification37
 from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
+from ._GenericIdentification37 import GenericIdentification37
 
 class QuantityBreakdown60(base_types._BaseFieldType):
 
-	__slots__ = ["_LotQty", "_LotNb"]
+	__slots__ = ["_LotNb", "_LotQty"]
 	@property
 	def LotNb(self):
 		return self._LotNb

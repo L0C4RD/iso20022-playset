@@ -1,14 +1,14 @@
 from . import base_types
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
 from ._SettlementInstruction19 import SettlementInstruction19
 from ._TotalCharges7 import TotalCharges7
-from ._Max35Text import Max35Text
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ISODateTime import ISODateTime
-from ._CashAccount40 import CashAccount40
 
 class GroupHeader130(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgsRqstr", "_TtlChrgs", "_ChrgsAcctAgt", "_MsgId", "_ChrgsAcctAgtAcct", "_SttlmInstr", "_CreDtTm"]
+	__slots__ = ["_ChrgsAcctAgt", "_ChrgsAcctAgtAcct", "_ChrgsRqstr", "_CreDtTm", "_MsgId", "_SttlmInstr", "_TtlChrgs"]
 	@property
 	def ChrgsAcctAgt(self):
 		return self._ChrgsAcctAgt

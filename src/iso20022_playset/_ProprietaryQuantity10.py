@@ -1,12 +1,12 @@
 from . import base_types
+from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 from ._Max4AlphaNumericText import Max4AlphaNumericText
 from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
 from ._ShortLong1Code import ShortLong1Code
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 
 class ProprietaryQuantity10(base_types._BaseFieldType):
 
-	__slots__ = ["_SchmeNm", "_ShrtLngPos", "_Issr", "_QtyTp", "_Qty"]
+	__slots__ = ["_Issr", "_Qty", "_QtyTp", "_SchmeNm", "_ShrtLngPos"]
 	@property
 	def Issr(self):
 		return self._Issr

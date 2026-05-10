@@ -1,8 +1,8 @@
 from . import base_types
-from ._ReconciliationCategory1Code import ReconciliationCategory1Code
-from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
 from ._Number import Number
+from ._ReconciliationCategory1Code import ReconciliationCategory1Code
 from ._ReconciliationImpact1Code import ReconciliationImpact1Code
 
 class FinancialReconciliation3(base_types._BaseFieldType):

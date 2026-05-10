@@ -1,10 +1,10 @@
 from . import base_types
-from ._PendingReason30 import PendingReason30
 from ._NoReasonCode import NoReasonCode
+from ._PendingReason30 import PendingReason30
 
 class PendingStatus67Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_NoSpcfdRsn"]
+	__slots__ = ["_NoSpcfdRsn", "_Rsn"]
 	@property
 	def NoSpcfdRsn(self):
 		return self._NoSpcfdRsn

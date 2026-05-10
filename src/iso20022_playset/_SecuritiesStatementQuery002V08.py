@@ -1,15 +1,15 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._Statement84 import Statement84
 from ._AdditionalQueryParameters14 import AdditionalQueryParameters14
+from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
+from ._DocumentNumber14 import DocumentNumber14
 from ._PartyIdentification156 import PartyIdentification156
 from ._SecuritiesAccount30 import SecuritiesAccount30
-from ._DocumentNumber14 import DocumentNumber14
-from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
+from ._Statement84 import Statement84
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesStatementQuery002V08(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_AddtlQryParams", "_StmtGnlDtls", "_SfkpgAcct", "_AcctOwnr", "_SplmtryData", "_StmtReqd"]
+	__slots__ = ["_AcctOwnr", "_AddtlQryParams", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_SplmtryData", "_StmtGnlDtls", "_StmtReqd"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

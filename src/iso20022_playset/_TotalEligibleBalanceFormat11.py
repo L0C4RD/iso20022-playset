@@ -1,10 +1,10 @@
 from . import base_types
-from ._SignedQuantityFormat13 import SignedQuantityFormat13
 from ._Quantity80Choice import Quantity80Choice
+from ._SignedQuantityFormat13 import SignedQuantityFormat13
 
 class TotalEligibleBalanceFormat11(base_types._BaseFieldType):
 
-	__slots__ = ["_FullPrdUnits", "_Bal", "_PartWayPrdUnits"]
+	__slots__ = ["_Bal", "_FullPrdUnits", "_PartWayPrdUnits"]
 	@property
 	def Bal(self):
 		return self._Bal

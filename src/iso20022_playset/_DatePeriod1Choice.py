@@ -5,7 +5,7 @@ from ._Period2 import Period2
 
 class DatePeriod1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DtMnth", "_FrDtToDt", "_Dt"]
+	__slots__ = ["_Dt", "_DtMnth", "_FrDtToDt"]
 	@property
 	def Dt(self):
 		return self._Dt

@@ -4,7 +4,7 @@ from ._SettlementStatus16Choice import SettlementStatus16Choice
 
 class PendingStatusAndReason2(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmSts", "_PrcgSts"]
+	__slots__ = ["_PrcgSts", "_SttlmSts"]
 	@property
 	def PrcgSts(self):
 		return self._PrcgSts

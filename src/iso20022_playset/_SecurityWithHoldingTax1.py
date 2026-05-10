@@ -1,10 +1,10 @@
 from . import base_types
-from ._RateAndAmountFormat1Choice import RateAndAmountFormat1Choice
 from ._CountryCode import CountryCode
+from ._RateAndAmountFormat1Choice import RateAndAmountFormat1Choice
 
 class SecurityWithHoldingTax1(base_types._BaseFieldType):
 
-	__slots__ = ["_WhldgTaxVal", "_Ctry"]
+	__slots__ = ["_Ctry", "_WhldgTaxVal"]
 	@property
 	def Ctry(self):
 		return self._Ctry

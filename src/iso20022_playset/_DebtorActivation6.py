@@ -1,15 +1,15 @@
 from . import base_types
 from ._ContractReference1 import ContractReference1
-from ._Max35Text import Max35Text
-from ._DocumentFormat2Choice import DocumentFormat2Choice
-from ._Party53Choice import Party53Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._RTPPartyIdentification2 import RTPPartyIdentification2
+from ._DocumentFormat2Choice import DocumentFormat2Choice
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Party53Choice import Party53Choice
+from ._RTPPartyIdentification2 import RTPPartyIdentification2
 
 class DebtorActivation6(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctFrmtTp", "_DispNm", "_Cdtr", "_DdctdActvtnCd", "_UltmtCdtr", "_ActvtnReqDlvryPty", "_UltmtDbtr", "_Dbtr", "_EndDt", "_CtrctRef", "_DbtrActvtnId", "_CstmrId", "_StartDt", "_DbtrSolPrvdr"]
+	__slots__ = ["_ActvtnReqDlvryPty", "_Cdtr", "_CstmrId", "_CtrctFrmtTp", "_CtrctRef", "_Dbtr", "_DbtrActvtnId", "_DbtrSolPrvdr", "_DdctdActvtnCd", "_DispNm", "_EndDt", "_StartDt", "_UltmtCdtr", "_UltmtDbtr"]
 	@property
 	def ActvtnReqDlvryPty(self):
 		return self._ActvtnReqDlvryPty

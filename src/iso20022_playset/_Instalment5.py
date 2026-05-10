@@ -1,20 +1,20 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._InstalmentPlan1Code import InstalmentPlan1Code
-from ._PlanOwner1Code import PlanOwner1Code
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._InterestRateDetails1 import InterestRateDetails1
-from ._Number import Number
-from ._InstalmentAmountDetails1 import InstalmentAmountDetails1
 from ._ActionMessage11 import ActionMessage11
-from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Frequency3Code import Frequency3Code
 from ._GracePeriod1 import GracePeriod1
+from ._ISODate import ISODate
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._InstalmentAmountDetails1 import InstalmentAmountDetails1
+from ._InstalmentPlan1Code import InstalmentPlan1Code
+from ._InterestRateDetails1 import InterestRateDetails1
+from ._Max35Text import Max35Text
+from ._Number import Number
+from ._PlanOwner1Code import PlanOwner1Code
 
 class Instalment5(base_types._BaseFieldType):
 
-	__slots__ = ["_SeqNb", "_Chrgs", "_FrstPmtDt", "_TtlAmt", "_DtldChrgs", "_PlanNtce", "_PlanId", "_FrstAmt", "_LastAmt", "_GracePrd", "_InstlmtPrd", "_SbsqntAmt", "_PlanOwnr", "_PrdUnit", "_TtlNbOfPmts", "_IntrstRate", "_InstlmtPlan"]
+	__slots__ = ["_Chrgs", "_DtldChrgs", "_FrstAmt", "_FrstPmtDt", "_GracePrd", "_InstlmtPlan", "_InstlmtPrd", "_IntrstRate", "_LastAmt", "_PlanId", "_PlanNtce", "_PlanOwnr", "_PrdUnit", "_SbsqntAmt", "_SeqNb", "_TtlAmt", "_TtlNbOfPmts"]
 	@property
 	def Chrgs(self):
 		return self._Chrgs

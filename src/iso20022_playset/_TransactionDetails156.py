@@ -1,15 +1,15 @@
 from . import base_types
-from ._SettlementDate20Choice import SettlementDate20Choice
 from ._AmountAndDirection67 import AmountAndDirection67
+from ._PartyIdentification170 import PartyIdentification170
+from ._Quantity54Choice import Quantity54Choice
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._SettlementDate20Choice import SettlementDate20Choice
 from ._SettlementParties109 import SettlementParties109
 from ._TradeDate9Choice import TradeDate9Choice
-from ._Quantity54Choice import Quantity54Choice
-from ._PartyIdentification170 import PartyIdentification170
-from ._SecurityIdentification20 import SecurityIdentification20
 
 class TransactionDetails156(base_types._BaseFieldType):
 
-	__slots__ = ["_TradDt", "_DlvrgSttlmPties", "_SttlmDt", "_RcvgSttlmPties", "_FinInstrmId", "_Invstr", "_SttlmQty", "_SttlmAmt"]
+	__slots__ = ["_DlvrgSttlmPties", "_FinInstrmId", "_Invstr", "_RcvgSttlmPties", "_SttlmAmt", "_SttlmDt", "_SttlmQty", "_TradDt"]
 	@property
 	def DlvrgSttlmPties(self):
 		return self._DlvrgSttlmPties

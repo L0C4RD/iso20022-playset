@@ -1,13 +1,13 @@
 from . import base_types
+from ._ISODateTime import ISODateTime
 from ._ISOMax3ACountryCode import ISOMax3ACountryCode
 from ._Max35Text import Max35Text
 from ._PartyType17Code import PartyType17Code
 from ._PartyType18Code import PartyType18Code
-from ._ISODateTime import ISODateTime
 
 class Traceability10(base_types._BaseFieldType):
 
-	__slots__ = ["_DtTmIn", "_ShrtNm", "_Id", "_Assgnr", "_OthrTp", "_Tp", "_Ctry", "_DtTmOut"]
+	__slots__ = ["_Assgnr", "_Ctry", "_DtTmIn", "_DtTmOut", "_Id", "_OthrTp", "_ShrtNm", "_Tp"]
 	@property
 	def Assgnr(self):
 		return self._Assgnr

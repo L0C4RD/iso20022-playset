@@ -1,12 +1,12 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._Max35Text import Max35Text
 from ._BankRole1Code import BankRole1Code
 from ._CurrencyAndAmount import CurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
 
 class Charges5(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgsPyee", "_Pctg", "_Amt", "_Tp", "_ChrgsPyer"]
+	__slots__ = ["_Amt", "_ChrgsPyee", "_ChrgsPyer", "_Pctg", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -1,14 +1,14 @@
 from . import base_types
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max140Text import Max140Text
 from ._Max35Text import Max35Text
 from ._PaymentReceipt6 import PaymentReceipt6
 from ._RetailerReversalResult7 import RetailerReversalResult7
-from ._Max140Text import Max140Text
 from ._TransactionIdentifier1 import TransactionIdentifier1
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class ReversalResponse9(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRefId", "_POITxId", "_POIRcncltnId", "_SaleTxId", "_IssrRefData", "_RvslTxRslt", "_Rct", "_RvsdAmt"]
+	__slots__ = ["_IssrRefData", "_POIRcncltnId", "_POITxId", "_Rct", "_RvsdAmt", "_RvslTxRslt", "_SaleRefId", "_SaleTxId"]
 	@property
 	def IssrRefData(self):
 		return self._IssrRefData

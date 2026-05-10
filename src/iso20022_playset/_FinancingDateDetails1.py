@@ -3,7 +3,7 @@ from ._ISODate import ISODate
 
 class FinancingDateDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDt", "_BookDt", "_DbtDt"]
+	__slots__ = ["_BookDt", "_CdtDt", "_DbtDt"]
 	@property
 	def BookDt(self):
 		return self._BookDt

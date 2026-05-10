@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISODateTime import ISODateTime
-from ._Party50Choice import Party50Choice
 from ._Max35Text import Max35Text
+from ._Party50Choice import Party50Choice
 
 class OriginalMessage6(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgId", "_OrgnlRcrdId", "_OrgnlMsgNmId", "_OrgnlSndr", "_OrgnlCreDtTm", "_OrgnlPackgId"]
+	__slots__ = ["_OrgnlCreDtTm", "_OrgnlMsgId", "_OrgnlMsgNmId", "_OrgnlPackgId", "_OrgnlRcrdId", "_OrgnlSndr"]
 	@property
 	def OrgnlCreDtTm(self):
 		return self._OrgnlCreDtTm

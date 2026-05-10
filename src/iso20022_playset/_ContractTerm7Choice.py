@@ -3,7 +3,7 @@ from ._FixedOpenTermContract2 import FixedOpenTermContract2
 
 class ContractTerm7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Opn", "_Fxd"]
+	__slots__ = ["_Fxd", "_Opn"]
 	@property
 	def Fxd(self):
 		return self._Fxd

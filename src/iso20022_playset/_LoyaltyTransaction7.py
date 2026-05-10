@@ -1,14 +1,14 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._PaymentTransaction165 import PaymentTransaction165
-from ._LoyaltyTransactionType1Code import LoyaltyTransactionType1Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._TransactionIdentifier1 import TransactionIdentifier1
+from ._LoyaltyTransactionType1Code import LoyaltyTransactionType1Code
+from ._PaymentTransaction165 import PaymentTransaction165
 from ._Product6 import Product6
+from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class LoyaltyTransaction7(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlPOITx", "_TtlAmt", "_SaleItm", "_LltyTxTp", "_SaleTxId", "_Ccy"]
+	__slots__ = ["_Ccy", "_LltyTxTp", "_OrgnlPOITx", "_SaleItm", "_SaleTxId", "_TtlAmt"]
 	@property
 	def Ccy(self):
 		return self._Ccy

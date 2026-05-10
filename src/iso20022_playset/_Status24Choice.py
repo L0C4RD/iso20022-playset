@@ -1,11 +1,11 @@
 from . import base_types
-from ._SwitchOrderStatusAndReason2 import SwitchOrderStatusAndReason2
 from ._IndividualOrderStatusAndReason7 import IndividualOrderStatusAndReason7
 from ._OrderStatusAndReason10 import OrderStatusAndReason10
+from ._SwitchOrderStatusAndReason2 import SwitchOrderStatusAndReason2
 
 class Status24Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrDtlsRpt", "_SwtchOrdrDtlsRpt", "_IndvOrdrDtlsRpt"]
+	__slots__ = ["_IndvOrdrDtlsRpt", "_OrdrDtlsRpt", "_SwtchOrdrDtlsRpt"]
 	@property
 	def IndvOrdrDtlsRpt(self):
 		return self._IndvOrdrDtlsRpt

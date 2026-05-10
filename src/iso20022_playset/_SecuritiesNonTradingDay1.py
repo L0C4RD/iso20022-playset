@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._NonTradingDayReason1Code import NonTradingDayReason1Code
 from ._Max35Text import Max35Text
+from ._NonTradingDayReason1Code import NonTradingDayReason1Code
 
 class SecuritiesNonTradingDay1(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_TechRcrdId", "_Rsn"]
+	__slots__ = ["_Dt", "_Rsn", "_TechRcrdId"]
 	@property
 	def Dt(self):
 		return self._Dt

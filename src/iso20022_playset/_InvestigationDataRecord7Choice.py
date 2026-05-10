@@ -1,15 +1,15 @@
 from . import base_types
+from ._AdjustmentCompensation1 import AdjustmentCompensation1
+from ._BookingConfirmation5 import BookingConfirmation5
+from ._CompensationResponse1 import CompensationResponse1
+from ._DebitAuthorisationConfirmation3 import DebitAuthorisationConfirmation3
+from ._Max500Text import Max500Text
 from ._PaymentTransactionStatus1 import PaymentTransactionStatus1
 from ._TransactionAmendment1 import TransactionAmendment1
-from ._BookingConfirmation5 import BookingConfirmation5
-from ._AdjustmentCompensation1 import AdjustmentCompensation1
-from ._Max500Text import Max500Text
-from ._DebitAuthorisationConfirmation3 import DebitAuthorisationConfirmation3
-from ._CompensationResponse1 import CompensationResponse1
 
 class InvestigationDataRecord7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Compstn", "_TxSts", "_Conf", "_TxData", "_DbtAuthstn", "_RspnNrrtv", "_Valtn"]
+	__slots__ = ["_Compstn", "_Conf", "_DbtAuthstn", "_RspnNrrtv", "_TxData", "_TxSts", "_Valtn"]
 	@property
 	def Compstn(self):
 		return self._Compstn

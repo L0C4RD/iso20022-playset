@@ -1,19 +1,19 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._NumberModification1 import NumberModification1
 from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._NameModification1 import NameModification1
 from ._AccountStatusModification1 import AccountStatusModification1
-from ._PurposeModification1 import PurposeModification1
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._AmountModification1 import AmountModification1
-from ._RestrictionModification1 import RestrictionModification1
 from ._DateModification1 import DateModification1
-from ._TypeModification1 import TypeModification1
+from ._NameModification1 import NameModification1
+from ._NumberModification1 import NumberModification1
+from ._PurposeModification1 import PurposeModification1
+from ._RestrictionModification1 import RestrictionModification1
 from ._StatementFrequencyAndFormModification1 import StatementFrequencyAndFormModification1
+from ._TypeModification1 import TypeModification1
 
 class CustomerAccountModification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_MnthlyPmtVal", "_Ccy", "_ClngNtfctnAmt", "_FlrNtfctnAmt", "_StmtFrqcyAndFrmt", "_Rstrctn", "_Nm", "_Id", "_MnthlyTxNb", "_AvrgBal", "_AcctPurp", "_MnthlyRcvdVal", "_Sts", "_ClsgDt"]
+	__slots__ = ["_AcctPurp", "_AvrgBal", "_Ccy", "_ClngNtfctnAmt", "_ClsgDt", "_FlrNtfctnAmt", "_Id", "_MnthlyPmtVal", "_MnthlyRcvdVal", "_MnthlyTxNb", "_Nm", "_Rstrctn", "_StmtFrqcyAndFrmt", "_Sts", "_Tp"]
 	@property
 	def AcctPurp(self):
 		return self._AcctPurp

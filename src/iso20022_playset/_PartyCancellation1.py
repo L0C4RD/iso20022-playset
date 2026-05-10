@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._PartyIdentification136 import PartyIdentification136
 from ._Max35Text import Max35Text
+from ._PartyIdentification136 import PartyIdentification136
+from ._SupplementaryData1 import SupplementaryData1
 
 class PartyCancellation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_TechRcrdId", "_SplmtryData"]
+	__slots__ = ["_Id", "_SplmtryData", "_TechRcrdId"]
 	@property
 	def Id(self):
 		return self._Id

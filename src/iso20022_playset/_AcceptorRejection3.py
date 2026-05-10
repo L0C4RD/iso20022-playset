@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max500Text import Max500Text
 from ._Max100KBinary import Max100KBinary
+from ._Max500Text import Max500Text
 from ._RejectReason2Code import RejectReason2Code
 
 class AcceptorRejection3(base_types._BaseFieldType):

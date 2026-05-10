@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._ISODate import ISODate
-from ._Max10000Binary import Max10000Binary
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max10000Binary import Max10000Binary
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 
-	__slots__ = ["_KeepAuthstnOpn", "_ICCRltdData", "_VldtyDt", "_Ccy", "_TtlAmt"]
+	__slots__ = ["_Ccy", "_ICCRltdData", "_KeepAuthstnOpn", "_TtlAmt", "_VldtyDt"]
 	@property
 	def Ccy(self):
 		return self._Ccy

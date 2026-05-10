@@ -1,13 +1,13 @@
 from . import base_types
 from ._DecimalNumber import DecimalNumber
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 from ._UnitOfMeasure1Code import UnitOfMeasure1Code
 
 class Product2(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctAmt", "_UnitPric", "_TaxTp", "_AddtlPdctInf", "_UnitOfMeasr", "_PdctCd", "_PdctQty"]
+	__slots__ = ["_AddtlPdctInf", "_PdctAmt", "_PdctCd", "_PdctQty", "_TaxTp", "_UnitOfMeasr", "_UnitPric"]
 	@property
 	def AddtlPdctInf(self):
 		return self._AddtlPdctInf

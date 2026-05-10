@@ -1,17 +1,17 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Organisation26 import Organisation26
-from ._SaleTokenScope1Code import SaleTokenScope1Code
+from ._CardDataReading8Code import CardDataReading8Code
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._LanguageCode import LanguageCode
 from ._Max2NumericText import Max2NumericText
-from ._Max70Text import Max70Text
 from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._CardDataReading8Code import CardDataReading8Code
+from ._Max70Text import Max70Text
+from ._Organisation26 import Organisation26
+from ._SaleTokenScope1Code import SaleTokenScope1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class SaleContext4(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRcncltnId", "_AddtlSaleData", "_DlvryNoteNb", "_ShftNb", "_SaleTknScp", "_CshrId", "_CstmrOrdrReqFlg", "_ReuseCardDataFlg", "_SpnsrdMrchnt", "_CshrLang", "_ForceOnlnFlg", "_RmngAmt", "_SaleId", "_AllwdNtryMd", "_SaleRefNb", "_PurchsOrdrNb", "_InvcNb", "_SpltPmt"]
+	__slots__ = ["_AddtlSaleData", "_AllwdNtryMd", "_CshrId", "_CshrLang", "_CstmrOrdrReqFlg", "_DlvryNoteNb", "_ForceOnlnFlg", "_InvcNb", "_PurchsOrdrNb", "_ReuseCardDataFlg", "_RmngAmt", "_SaleId", "_SaleRcncltnId", "_SaleRefNb", "_SaleTknScp", "_ShftNb", "_SpltPmt", "_SpnsrdMrchnt"]
 	@property
 	def AddtlSaleData(self):
 		return self._AddtlSaleData

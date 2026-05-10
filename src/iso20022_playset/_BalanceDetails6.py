@@ -1,12 +1,12 @@
 from . import base_types
-from ._FinancialAssetTypeCategory1Code import FinancialAssetTypeCategory1Code
-from ._Unrealised1Code import Unrealised1Code
 from ._AmountAndDirection31 import AmountAndDirection31
 from ._BalanceType7Choice import BalanceType7Choice
+from ._FinancialAssetTypeCategory1Code import FinancialAssetTypeCategory1Code
+from ._Unrealised1Code import Unrealised1Code
 
 class BalanceDetails6(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctgy", "_Tp", "_Amt", "_Urlsd"]
+	__slots__ = ["_Amt", "_Ctgy", "_Tp", "_Urlsd"]
 	@property
 	def Amt(self):
 		return self._Amt

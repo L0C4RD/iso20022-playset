@@ -1,13 +1,13 @@
 from . import base_types
+from ._AdditionalData1 import AdditionalData1
 from ._ISO3NumericCountryCode import ISO3NumericCountryCode
 from ._LocalData14 import LocalData14
 from ._Max35Text import Max35Text
 from ._Max99Text import Max99Text
-from ._AdditionalData1 import AdditionalData1
 
 class FinancialInstitution9(base_types._BaseFieldType):
 
-	__slots__ = ["_LglCorpNm", "_Ctry", "_Id", "_ShrtNm", "_Assgnr", "_AcctNb", "_LclData", "_AddtlId"]
+	__slots__ = ["_AcctNb", "_AddtlId", "_Assgnr", "_Ctry", "_Id", "_LclData", "_LglCorpNm", "_ShrtNm"]
 	@property
 	def AcctNb(self):
 		return self._AcctNb

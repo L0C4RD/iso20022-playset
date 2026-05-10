@@ -1,10 +1,10 @@
 from . import base_types
-from ._CurrencyAndAmount import CurrencyAndAmount
 from ._ChargesType1Choice import ChargesType1Choice
+from ._CurrencyAndAmount import CurrencyAndAmount
 
 class ChargesDetails4(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgsTp", "_Amt"]
+	__slots__ = ["_Amt", "_ChrgsTp"]
 	@property
 	def Amt(self):
 		return self._Amt

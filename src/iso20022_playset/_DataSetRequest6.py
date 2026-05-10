@@ -1,13 +1,13 @@
 from . import base_types
-from ._CryptographicKey18 import CryptographicKey18
 from ._ContentInformationType39 import ContentInformationType39
-from ._Max140Binary import Max140Binary
+from ._CryptographicKey18 import CryptographicKey18
 from ._DataSetIdentification11 import DataSetIdentification11
+from ._Max140Binary import Max140Binary
 from ._Max5000Binary import Max5000Binary
 
 class DataSetRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_DlgtnProof", "_SsnKey", "_PrtctdDlgtnProof", "_TMChllng", "_Id", "_POIChllng"]
+	__slots__ = ["_DlgtnProof", "_Id", "_POIChllng", "_PrtctdDlgtnProof", "_SsnKey", "_TMChllng"]
 	@property
 	def DlgtnProof(self):
 		return self._DlgtnProof

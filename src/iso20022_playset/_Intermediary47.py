@@ -1,11 +1,11 @@
 from . import base_types
+from ._Account32 import Account32
 from ._LEIIdentifier import LEIIdentifier
 from ._PartyIdentification125Choice import PartyIdentification125Choice
-from ._Account32 import Account32
 
 class Intermediary47(base_types._BaseFieldType):
 
-	__slots__ = ["_LglNttyIdr", "_Acct", "_Id"]
+	__slots__ = ["_Acct", "_Id", "_LglNttyIdr"]
 	@property
 	def Acct(self):
 		return self._Acct

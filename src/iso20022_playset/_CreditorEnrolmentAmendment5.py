@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CreditorEnrolmentAmendment6 import CreditorEnrolmentAmendment6
-from ._OriginalEnrolment3Choice import OriginalEnrolment3Choice
-from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
 from ._CreditorEnrolmentAmendmentReason3 import CreditorEnrolmentAmendmentReason3
+from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
+from ._OriginalEnrolment3Choice import OriginalEnrolment3Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class CreditorEnrolmentAmendment5(base_types._BaseFieldType):
 
-	__slots__ = ["_AmdmntRsn", "_Amdmnt", "_OrgnlEnrlmnt", "_OrgnlBizInstr", "_SplmtryData"]
+	__slots__ = ["_Amdmnt", "_AmdmntRsn", "_OrgnlBizInstr", "_OrgnlEnrlmnt", "_SplmtryData"]
 	@property
 	def Amdmnt(self):
 		return self._Amdmnt

@@ -1,11 +1,11 @@
 from . import base_types
-from ._BillingCurrencyType2Code import BillingCurrencyType2Code
 from ._AmountAndDirection34 import AmountAndDirection34
 from ._BillingCompensationType1Choice import BillingCompensationType1Choice
+from ._BillingCurrencyType2Code import BillingCurrencyType2Code
 
 class BillingCompensation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Val", "_CcyTp"]
+	__slots__ = ["_CcyTp", "_Tp", "_Val"]
 	@property
 	def CcyTp(self):
 		return self._CcyTp

@@ -1,23 +1,23 @@
 from . import base_types
-from ._TerminationDate7Choice import TerminationDate7Choice
-from ._LegalFramework4Choice import LegalFramework4Choice
-from ._RevaluationIndicator4Choice import RevaluationIndicator4Choice
+from ._AmountAndDirection59 import AmountAndDirection59
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Exact3NumericText import Exact3NumericText
 from ._InterestComputationMethodFormat5Choice import InterestComputationMethodFormat5Choice
-from ._RateOrName2Choice import RateOrName2Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
+from ._LegalFramework4Choice import LegalFramework4Choice
 from ._Rate2 import Rate2
 from ._RateName2 import RateName2
-from ._AmountAndDirection59 import AmountAndDirection59
-from ._Exact3NumericText import Exact3NumericText
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._RateOrName2Choice import RateOrName2Choice
 from ._RateType67Choice import RateType67Choice
+from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
+from ._RevaluationIndicator4Choice import RevaluationIndicator4Choice
+from ._TerminationDate7Choice import TerminationDate7Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class SecuritiesFinancingTransactionDetails46(base_types._BaseFieldType):
 
-	__slots__ = ["_Sprd", "_RateTp", "_TtlNbOfCollInstrs", "_FrftAmt", "_PrmAmt", "_TxCallDely", "_ScndLegNrrtv", "_TermntnTxAmt", "_Rvaltn", "_StockLnMrgn", "_MtrtyDtMod", "_PricgRate", "_RateChngDt", "_LglFrmwk", "_TermntnAmtPerPcOfColl", "_AcrdIntrstAmt", "_IntrstPmt", "_SctiesFincgTradId", "_DealAmt", "_ChrgsRate", "_VarblRateSpprt", "_IntrstCmptnMtd", "_EarlstCallBckDt", "_ClsgLegId", "_RpRate", "_ComssnClctnDt", "_TermntnDt", "_SctiesHrcut"]
+	__slots__ = ["_AcrdIntrstAmt", "_ChrgsRate", "_ClsgLegId", "_ComssnClctnDt", "_DealAmt", "_EarlstCallBckDt", "_FrftAmt", "_IntrstCmptnMtd", "_IntrstPmt", "_LglFrmwk", "_MtrtyDtMod", "_PricgRate", "_PrmAmt", "_RateChngDt", "_RateTp", "_RpRate", "_Rvaltn", "_ScndLegNrrtv", "_SctiesFincgTradId", "_SctiesHrcut", "_Sprd", "_StockLnMrgn", "_TermntnAmtPerPcOfColl", "_TermntnDt", "_TermntnTxAmt", "_TtlNbOfCollInstrs", "_TxCallDely", "_VarblRateSpprt"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt

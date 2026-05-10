@@ -1,6 +1,6 @@
 from . import base_types
-from ._ModificationReason4Choice import ModificationReason4Choice
 from ._Max210Text import Max210Text
+from ._ModificationReason4Choice import ModificationReason4Choice
 
 class ModificationReason4(base_types._BaseFieldType):
 

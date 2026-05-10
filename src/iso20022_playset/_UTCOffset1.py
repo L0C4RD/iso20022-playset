@@ -1,10 +1,10 @@
 from . import base_types
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
 from ._ISOTime import ISOTime
+from ._PlusOrMinusIndicator import PlusOrMinusIndicator
 
 class UTCOffset1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sgn", "_NbOfHrs"]
+	__slots__ = ["_NbOfHrs", "_Sgn"]
 	@property
 	def NbOfHrs(self):
 		return self._NbOfHrs

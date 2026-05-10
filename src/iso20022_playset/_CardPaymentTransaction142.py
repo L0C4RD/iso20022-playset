@@ -1,16 +1,16 @@
 from . import base_types
 from ._CardPaymentTransaction138 import CardPaymentTransaction138
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._TransactionIdentifier1 import TransactionIdentifier1
 from ._CardPaymentTransactionDetails50 import CardPaymentTransactionDetails50
-from ._Min3Max4Text import Min3Max4Text
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._Min3Max4Text import Min3Max4Text
+from ._TransactionIdentifier1 import TransactionIdentifier1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CardPaymentTransaction142(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRefId", "_TxId", "_RcptTxId", "_AddtlTxData", "_MrchntCtgyCd", "_OrgnlTx", "_InitrTxId", "_TxDtls", "_RcncltnId", "_CardPrgrmmPropsd", "_CardPrgrmmApld", "_CstmrCnsnt", "_TxCaptr"]
+	__slots__ = ["_AddtlTxData", "_CardPrgrmmApld", "_CardPrgrmmPropsd", "_CstmrCnsnt", "_InitrTxId", "_MrchntCtgyCd", "_OrgnlTx", "_RcncltnId", "_RcptTxId", "_SaleRefId", "_TxCaptr", "_TxDtls", "_TxId"]
 	@property
 	def AddtlTxData(self):
 		return self._AddtlTxData

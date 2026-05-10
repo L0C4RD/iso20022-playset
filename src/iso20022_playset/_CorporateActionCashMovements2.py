@@ -1,12 +1,12 @@
 from . import base_types
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._CashAccount19 import CashAccount19
+from ._DateAndDateTimeChoice import DateAndDateTimeChoice
 from ._Max35Text import Max35Text
 
 class CorporateActionCashMovements2(base_types._BaseFieldType):
 
-	__slots__ = ["_PstngAmt", "_AcctDtls", "_PstngDtTm", "_PstngId"]
+	__slots__ = ["_AcctDtls", "_PstngAmt", "_PstngDtTm", "_PstngId"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

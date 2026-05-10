@@ -4,7 +4,7 @@ from ._Max350Text import Max350Text
 
 class InnovativeFinance1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Inf"]
+	__slots__ = ["_Inf", "_Tp"]
 	@property
 	def Inf(self):
 		return self._Inf

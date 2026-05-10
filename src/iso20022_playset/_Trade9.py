@@ -1,20 +1,20 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._InstrumentLeg7 import InstrumentLeg7
-from ._SecurityIdentification38Choice import SecurityIdentification38Choice
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from ._UnderlyingProductIdentifier1Code import UnderlyingProductIdentifier1Code
-from ._TradingModeType1Code import TradingModeType1Code
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
-from ._Trade10 import Trade10
 from ._ClearingMethod1Code import ClearingMethod1Code
+from ._ISODate import ISODate
+from ._InstrumentLeg7 import InstrumentLeg7
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._SecurityIdentification38Choice import SecurityIdentification38Choice
+from ._Trade10 import Trade10
 from ._TradingMethodType1Code import TradingMethodType1Code
+from ._TradingModeType1Code import TradingModeType1Code
+from ._UnderlyingProductIdentifier1Code import UnderlyingProductIdentifier1Code
 
 class Trade9(base_types._BaseFieldType):
 
-	__slots__ = ["_TradId", "_TradgMd", "_AssoctdTradRef", "_ClrMtd", "_Symb", "_TradDt", "_FXTradPdct", "_TradgMtd", "_SttlmCcy", "_FXDtls", "_PdctId", "_SwpLeg", "_TradgCcy", "_PlcOfConf"]
+	__slots__ = ["_AssoctdTradRef", "_ClrMtd", "_FXDtls", "_FXTradPdct", "_PdctId", "_PlcOfConf", "_SttlmCcy", "_SwpLeg", "_Symb", "_TradDt", "_TradId", "_TradgCcy", "_TradgMd", "_TradgMtd"]
 	@property
 	def AssoctdTradRef(self):
 		return self._AssoctdTradRef

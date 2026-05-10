@@ -1,12 +1,12 @@
 from . import base_types
-from ._AccountOpeningType1Choice import AccountOpeningType1Choice
 from ._Account23 import Account23
+from ._AccountOpeningType1Choice import AccountOpeningType1Choice
 from ._AdditionalReference13 import AdditionalReference13
 from ._Max35Text import Max35Text
 
 class InvestmentAccountOpening4(base_types._BaseFieldType):
 
-	__slots__ = ["_ExstgAcctId", "_OpngTp", "_AcctApplId", "_CtrPtyRef", "_ClntRef"]
+	__slots__ = ["_AcctApplId", "_ClntRef", "_CtrPtyRef", "_ExstgAcctId", "_OpngTp"]
 	@property
 	def AcctApplId(self):
 		return self._AcctApplId

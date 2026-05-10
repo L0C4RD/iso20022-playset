@@ -1,11 +1,11 @@
 from . import base_types
 from ._FinancialInstrumentQuantity25Choice import FinancialInstrumentQuantity25Choice
-from ._SecuritiesTransactionPrice21Choice import SecuritiesTransactionPrice21Choice
 from ._Max50Text import Max50Text
+from ._SecuritiesTransactionPrice21Choice import SecuritiesTransactionPrice21Choice
 
 class AuctionData2(base_types._BaseFieldType):
 
-	__slots__ = ["_IndctvAuctnVol", "_IndctvAuctnPric", "_TradgPhs"]
+	__slots__ = ["_IndctvAuctnPric", "_IndctvAuctnVol", "_TradgPhs"]
 	@property
 	def IndctvAuctnPric(self):
 		return self._IndctvAuctnPric

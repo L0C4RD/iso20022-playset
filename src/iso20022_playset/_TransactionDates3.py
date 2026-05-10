@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._ProprietaryDate3 import ProprietaryDate3
 from ._ISODateTime import ISODateTime
+from ._ProprietaryDate3 import ProprietaryDate3
 
 class TransactionDates3(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrBkSttlmDt", "_TradDt", "_EndDt", "_TradActvtyCtrctlSttlmDt", "_TxDtTm", "_StartDt", "_AccptncDtTm", "_Prtry"]
+	__slots__ = ["_AccptncDtTm", "_EndDt", "_IntrBkSttlmDt", "_Prtry", "_StartDt", "_TradActvtyCtrctlSttlmDt", "_TradDt", "_TxDtTm"]
 	@property
 	def AccptncDtTm(self):
 		return self._AccptncDtTm

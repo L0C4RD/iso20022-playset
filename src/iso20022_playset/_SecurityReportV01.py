@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecurityOrOperationalError4Choice import SecurityOrOperationalError4Choice
 from ._MessageHeader12 import MessageHeader12
 from ._Pagination1 import Pagination1
+from ._SecurityOrOperationalError4Choice import SecurityOrOperationalError4Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecurityReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgHdr", "_SctyRptOrErr", "_Pgntn"]
+	__slots__ = ["_MsgHdr", "_Pgntn", "_SctyRptOrErr", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

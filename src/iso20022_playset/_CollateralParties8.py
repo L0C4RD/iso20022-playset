@@ -1,12 +1,12 @@
 from . import base_types
-from ._PartyIdentificationAndAccount203 import PartyIdentificationAndAccount203
 from ._PartyIdentification136 import PartyIdentification136
 from ._PartyIdentificationAndAccount193 import PartyIdentificationAndAccount193
 from ._PartyIdentificationAndAccount202 import PartyIdentificationAndAccount202
+from ._PartyIdentificationAndAccount203 import PartyIdentificationAndAccount203
 
 class CollateralParties8(base_types._BaseFieldType):
 
-	__slots__ = ["_TrptyAgt", "_ClntPtyA", "_ClntPtyB", "_PtyA", "_PtyB"]
+	__slots__ = ["_ClntPtyA", "_ClntPtyB", "_PtyA", "_PtyB", "_TrptyAgt"]
 	@property
 	def ClntPtyA(self):
 		return self._ClntPtyA

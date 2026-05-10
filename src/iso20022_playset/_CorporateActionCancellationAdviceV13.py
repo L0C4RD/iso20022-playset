@@ -1,15 +1,15 @@
 from . import base_types
-from ._Max8000Text import Max8000Text
-from ._SupplementaryData1 import SupplementaryData1
-from ._PartyIdentification120Choice import PartyIdentification120Choice
-from ._CorporateActionCancellation3 import CorporateActionCancellation3
 from ._AccountIdentification73Choice import AccountIdentification73Choice
-from ._CorporateActionGeneralInformation174 import CorporateActionGeneralInformation174
 from ._CorporateAction72 import CorporateAction72
+from ._CorporateActionCancellation3 import CorporateActionCancellation3
+from ._CorporateActionGeneralInformation174 import CorporateActionGeneralInformation174
+from ._Max8000Text import Max8000Text
+from ._PartyIdentification120Choice import PartyIdentification120Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class CorporateActionCancellationAdviceV13(base_types._BaseFieldType):
 
-	__slots__ = ["_SubPngAgt", "_DrpAgt", "_CorpActnGnlInf", "_IssrAgt", "_PngAgt", "_CorpActnDtls", "_CxlAdvcGnlInf", "_Regar", "_AddtlTxt", "_RsellngAgt", "_SlctnAgt", "_InfAgt", "_PhysSctiesAgt", "_AcctsDtls", "_SplmtryData"]
+	__slots__ = ["_AcctsDtls", "_AddtlTxt", "_CorpActnDtls", "_CorpActnGnlInf", "_CxlAdvcGnlInf", "_DrpAgt", "_InfAgt", "_IssrAgt", "_PhysSctiesAgt", "_PngAgt", "_Regar", "_RsellngAgt", "_SlctnAgt", "_SplmtryData", "_SubPngAgt"]
 	@property
 	def AcctsDtls(self):
 		return self._AcctsDtls

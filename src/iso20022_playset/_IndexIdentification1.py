@@ -1,11 +1,11 @@
 from . import base_types
 from ._ExternalBenchmarkCurveName1Code import ExternalBenchmarkCurveName1Code
-from ._Max350Text import Max350Text
 from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._Max350Text import Max350Text
 
 class IndexIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Indx", "_ISIN", "_Nm"]
+	__slots__ = ["_ISIN", "_Indx", "_Nm"]
 	@property
 	def ISIN(self):
 		return self._ISIN

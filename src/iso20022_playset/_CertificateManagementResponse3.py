@@ -1,16 +1,16 @@
 from . import base_types
 from ._CardPaymentServiceType10Code import CardPaymentServiceType10Code
-from ._Max140Binary import Max140Binary
-from ._ResponseType6 import ResponseType6
-from ._Max35Text import Max35Text
-from ._Max10KBinary import Max10KBinary
-from ._Max3000Binary import Max3000Binary
-from ._ISODateTime import ISODateTime
 from ._GenericIdentification176 import GenericIdentification176
+from ._ISODateTime import ISODateTime
+from ._Max10KBinary import Max10KBinary
+from ._Max140Binary import Max140Binary
+from ._Max3000Binary import Max3000Binary
+from ._Max35Text import Max35Text
+from ._ResponseType6 import ResponseType6
 
 class CertificateManagementResponse3(base_types._BaseFieldType):
 
-	__slots__ = ["_POIChllngVal", "_SctyPrfl", "_Rslt", "_SvrCertPth", "_TMSDtTm", "_ClntCert", "_TMId", "_CertSvc", "_ClntCertPth", "_POIId"]
+	__slots__ = ["_CertSvc", "_ClntCert", "_ClntCertPth", "_POIChllngVal", "_POIId", "_Rslt", "_SctyPrfl", "_SvrCertPth", "_TMId", "_TMSDtTm"]
 	@property
 	def CertSvc(self):
 		return self._CertSvc

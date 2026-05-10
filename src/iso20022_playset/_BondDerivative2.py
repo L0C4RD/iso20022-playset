@@ -4,7 +4,7 @@ from ._LEIIdentifier import LEIIdentifier
 
 class BondDerivative2(base_types._BaseFieldType):
 
-	__slots__ = ["_IssncDt", "_MtrtyDt", "_Issr"]
+	__slots__ = ["_IssncDt", "_Issr", "_MtrtyDt"]
 	@property
 	def IssncDt(self):
 		return self._IssncDt

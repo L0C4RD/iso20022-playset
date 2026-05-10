@@ -1,11 +1,11 @@
 from . import base_types
 from ._InterestComputationMethodFormat7 import InterestComputationMethodFormat7
-from ._SecuritiesTransactionPrice14Choice import SecuritiesTransactionPrice14Choice
 from ._InterestRateFrequency3Choice import InterestRateFrequency3Choice
+from ._SecuritiesTransactionPrice14Choice import SecuritiesTransactionPrice14Choice
 
 class FixedRate10(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtFrqcy", "_Rate", "_DayCnt"]
+	__slots__ = ["_DayCnt", "_PmtFrqcy", "_Rate"]
 	@property
 	def DayCnt(self):
 		return self._DayCnt

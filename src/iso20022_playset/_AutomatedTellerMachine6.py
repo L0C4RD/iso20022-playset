@@ -1,12 +1,12 @@
 from . import base_types
-from ._PostalAddress17 import PostalAddress17
 from ._ATMEquipment1 import ATMEquipment1
 from ._Max35Text import Max35Text
+from ._PostalAddress17 import PostalAddress17
 from ._TransactionEnvironment2Code import TransactionEnvironment2Code
 
 class AutomatedTellerMachine6(base_types._BaseFieldType):
 
-	__slots__ = ["_LctnCtgy", "_SeqNb", "_Id", "_Eqpmnt", "_Lctn", "_AddtlId"]
+	__slots__ = ["_AddtlId", "_Eqpmnt", "_Id", "_Lctn", "_LctnCtgy", "_SeqNb"]
 	@property
 	def AddtlId(self):
 		return self._AddtlId

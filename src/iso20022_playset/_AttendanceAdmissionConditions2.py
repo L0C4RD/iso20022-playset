@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max350Text import Max350Text
 from ._AttendanceAdmissionConditions2Code import AttendanceAdmissionConditions2Code
+from ._Max350Text import Max350Text
 
 class AttendanceAdmissionConditions2(base_types._BaseFieldType):
 

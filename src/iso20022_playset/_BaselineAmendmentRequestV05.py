@@ -1,13 +1,13 @@
 from . import base_types
-from ._ContactIdentification3 import ContactIdentification3
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._ContactIdentification1 import ContactIdentification1
-from ._MessageIdentification1 import MessageIdentification1
 from ._Baseline5 import Baseline5
+from ._ContactIdentification1 import ContactIdentification1
+from ._ContactIdentification3 import ContactIdentification3
+from ._MessageIdentification1 import MessageIdentification1
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 
 class BaselineAmendmentRequestV05(base_types._BaseFieldType):
 
-	__slots__ = ["_Baseln", "_TxId", "_SubmitrTxRef", "_ReqId", "_SellrBkCtctPrsn", "_BuyrCtctPrsn", "_BuyrBkCtctPrsn", "_SellrCtctPrsn", "_OthrBkCtctPrsn"]
+	__slots__ = ["_Baseln", "_BuyrBkCtctPrsn", "_BuyrCtctPrsn", "_OthrBkCtctPrsn", "_ReqId", "_SellrBkCtctPrsn", "_SellrCtctPrsn", "_SubmitrTxRef", "_TxId"]
 	@property
 	def Baseln(self):
 		return self._Baseln

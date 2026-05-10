@@ -1,10 +1,10 @@
 from . import base_types
-from ._CashAccount206 import CashAccount206
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._CashAccount206 import CashAccount206
 
 class CashAccount205(base_types._BaseFieldType):
 
-	__slots__ = ["_ScndryAcct", "_PmryAcct", "_Ccy"]
+	__slots__ = ["_Ccy", "_PmryAcct", "_ScndryAcct"]
 	@property
 	def Ccy(self):
 		return self._Ccy

@@ -4,7 +4,7 @@ from ._PlusOrMinusIndicator import PlusOrMinusIndicator
 
 class AmountAndDirection61(base_types._BaseFieldType):
 
-	__slots__ = ["_Sgn", "_Amt"]
+	__slots__ = ["_Amt", "_Sgn"]
 	@property
 	def Amt(self):
 		return self._Amt

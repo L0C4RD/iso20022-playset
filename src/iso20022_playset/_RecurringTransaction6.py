@@ -1,13 +1,13 @@
 from . import base_types
 from ._ActionMessage11 import ActionMessage11
-from ._Max35Text import Max35Text
 from ._Frequency3Code import Frequency3Code
 from ._GracePeriod1 import GracePeriod1
+from ._Max35Text import Max35Text
 from ._Number import Number
 
 class RecurringTransaction6(base_types._BaseFieldType):
 
-	__slots__ = ["_PlanNtce", "_SeqNb", "_GracePrd", "_PrdUnit", "_PlanId"]
+	__slots__ = ["_GracePrd", "_PlanId", "_PlanNtce", "_PrdUnit", "_SeqNb"]
 	@property
 	def GracePrd(self):
 		return self._GracePrd

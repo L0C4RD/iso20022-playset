@@ -1,13 +1,13 @@
 from . import base_types
-from ._Priority3Code import Priority3Code
-from ._MovementRecord2 import MovementRecord2
 from ._Max35Text import Max35Text
-from ._SettlementTimeRequest2 import SettlementTimeRequest2
+from ._MovementRecord2 import MovementRecord2
 from ._Number import Number
+from ._Priority3Code import Priority3Code
+from ._SettlementTimeRequest2 import SettlementTimeRequest2
 
 class MultilateralSettlementRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrId", "_SttlmTmReq", "_MvmntRcrd", "_SttlmPrty", "_NbOfMvmntRcrds", "_InstrPrty", "_SttlmCycl"]
+	__slots__ = ["_InstrId", "_InstrPrty", "_MvmntRcrd", "_NbOfMvmntRcrds", "_SttlmCycl", "_SttlmPrty", "_SttlmTmReq"]
 	@property
 	def InstrId(self):
 		return self._InstrId

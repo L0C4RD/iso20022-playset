@@ -1,16 +1,16 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
-from ._YesNoIndicator import YesNoIndicator
 from ._DistributionInstructionType1Code import DistributionInstructionType1Code
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 from ._Exact3NumericText import Exact3NumericText
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
+from ._PartyIdentification2Choice import PartyIdentification2Choice
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class CorporateActionMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrId", "_HghPrtyInd", "_ReqdExctnDt", "_OrdrTp", "_ConfdBalSctiesQty", "_AcctId", "_OptnNb", "_OptnTp"]
+	__slots__ = ["_AcctId", "_AcctOwnrId", "_ConfdBalSctiesQty", "_HghPrtyInd", "_OptnNb", "_OptnTp", "_OrdrTp", "_ReqdExctnDt"]
 	@property
 	def AcctId(self):
 		return self._AcctId

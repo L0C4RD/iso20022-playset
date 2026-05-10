@@ -6,7 +6,7 @@ from ._Max35Text import Max35Text
 
 class InvestmentAccountModification4(base_types._BaseFieldType):
 
-	__slots__ = ["_ExstgAcctId", "_AcctApplId", "_ModRsn", "_CtrPtyRef", "_ClntRef"]
+	__slots__ = ["_AcctApplId", "_ClntRef", "_CtrPtyRef", "_ExstgAcctId", "_ModRsn"]
 	@property
 	def AcctApplId(self):
 		return self._AcctApplId

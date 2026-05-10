@@ -1,12 +1,12 @@
 from . import base_types
+from ._ATMWithdrawalCompletionAcknowledgement3 import ATMWithdrawalCompletionAcknowledgement3
 from ._ContentInformationType10 import ContentInformationType10
 from ._ContentInformationType15 import ContentInformationType15
-from ._ATMWithdrawalCompletionAcknowledgement3 import ATMWithdrawalCompletionAcknowledgement3
 from ._Header32 import Header32
 
 class ATMWithdrawalCompletionAcknowledgementV03(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMWdrwlCmpltnAck", "_SctyTrlr", "_Hdr", "_PrtctdATMWdrwlCmpltnAck"]
+	__slots__ = ["_ATMWdrwlCmpltnAck", "_Hdr", "_PrtctdATMWdrwlCmpltnAck", "_SctyTrlr"]
 	@property
 	def ATMWdrwlCmpltnAck(self):
 		return self._ATMWdrwlCmpltnAck

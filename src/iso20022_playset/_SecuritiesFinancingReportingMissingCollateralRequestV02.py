@@ -1,6 +1,6 @@
 from . import base_types
-from ._TradeTransactionIdentification18 import TradeTransactionIdentification18
 from ._SupplementaryData1 import SupplementaryData1
+from ._TradeTransactionIdentification18 import TradeTransactionIdentification18
 
 class SecuritiesFinancingReportingMissingCollateralRequestV02(base_types._BaseFieldType):
 

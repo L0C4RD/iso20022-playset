@@ -1,11 +1,11 @@
 from . import base_types
 from ._BillingSubServiceIdentification1 import BillingSubServiceIdentification1
-from ._Max70Text import Max70Text
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class BillingServiceIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_SubSvc", "_Desc"]
+	__slots__ = ["_Desc", "_Id", "_SubSvc"]
 	@property
 	def Desc(self):
 		return self._Desc

@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class AlternatePartyIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_IdTp", "_Ctry", "_AltrnId"]
+	__slots__ = ["_AltrnId", "_Ctry", "_IdTp"]
 	@property
 	def AltrnId(self):
 		return self._AltrnId

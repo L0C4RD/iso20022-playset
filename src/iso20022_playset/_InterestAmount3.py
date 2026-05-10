@@ -1,21 +1,21 @@
 from . import base_types
-from ._CollateralPurpose1Choice import CollateralPurpose1Choice
-from ._Max210Text import Max210Text
-from ._DatePeriod2 import DatePeriod2
-from ._InterestComputationMethod2Code import InterestComputationMethod2Code
-from ._YesNoIndicator import YesNoIndicator
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Frequency1Code import Frequency1Code
 from ._CalculationMethod1Code import CalculationMethod1Code
-from ._InterestMethod1Code import InterestMethod1Code
+from ._CollateralBalance1 import CollateralBalance1
+from ._CollateralPurpose1Choice import CollateralPurpose1Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DatePeriod2 import DatePeriod2
+from ._Frequency1Code import Frequency1Code
+from ._InterestComputationMethod2Code import InterestComputationMethod2Code
+from ._InterestMethod1Code import InterestMethod1Code
 from ._InterestRate1Choice import InterestRate1Choice
 from ._Max140Text import Max140Text
-from ._CollateralBalance1 import CollateralBalance1
+from ._Max210Text import Max210Text
+from ._YesNoIndicator import YesNoIndicator
 
 class InterestAmount3(base_types._BaseFieldType):
 
-	__slots__ = ["_DayCntBsis", "_ValDt", "_OpngCollBal", "_StdSttlmInstrs", "_IntrstRate", "_ClctnMtd", "_CollPurp", "_AcrdIntrstAmt", "_AddtlInf", "_IntrstMtd", "_ClsgCollBal", "_IntrstPrd", "_ClctnFrqcy", "_ApldWhldgTax"]
+	__slots__ = ["_AcrdIntrstAmt", "_AddtlInf", "_ApldWhldgTax", "_ClctnFrqcy", "_ClctnMtd", "_ClsgCollBal", "_CollPurp", "_DayCntBsis", "_IntrstMtd", "_IntrstPrd", "_IntrstRate", "_OpngCollBal", "_StdSttlmInstrs", "_ValDt"]
 	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt

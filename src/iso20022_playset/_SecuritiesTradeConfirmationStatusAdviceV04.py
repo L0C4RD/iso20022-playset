@@ -1,19 +1,19 @@
 from . import base_types
 from ._AffirmationStatus11Choice import AffirmationStatus11Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._ConfirmationParties9 import ConfirmationParties9
 from ._CancellationProcessingStatus10Choice import CancellationProcessingStatus10Choice
-from ._Order23 import Order23
-from ._SettlementParties121 import SettlementParties121
+from ._ConfirmationParties9 import ConfirmationParties9
 from ._Linkages77 import Linkages77
-from ._TransactiontIdentification4 import TransactiontIdentification4
 from ._MatchingStatus35Choice import MatchingStatus35Choice
+from ._Order23 import Order23
 from ._ProcessingStatus98Choice import ProcessingStatus98Choice
 from ._ReplacementProcessingStatus10Choice import ReplacementProcessingStatus10Choice
+from ._SettlementParties121 import SettlementParties121
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactiontIdentification4 import TransactiontIdentification4
 
 class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Refs", "_PrcgSts", "_CtrPtyTradgDtls", "_CxlPrcgSts", "_AffirmSts", "_PtyTradgDtls", "_DlvrgSttlmPties", "_RplcmntPrcgSts", "_ConfPties", "_RcvgSttlmPties", "_Id", "_MtchgSts", "_SplmtryData"]
+	__slots__ = ["_AffirmSts", "_ConfPties", "_CtrPtyTradgDtls", "_CxlPrcgSts", "_DlvrgSttlmPties", "_Id", "_MtchgSts", "_PrcgSts", "_PtyTradgDtls", "_RcvgSttlmPties", "_Refs", "_RplcmntPrcgSts", "_SplmtryData"]
 	@property
 	def AffirmSts(self):
 		return self._AffirmSts

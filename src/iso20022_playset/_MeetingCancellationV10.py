@@ -1,12 +1,12 @@
 from . import base_types
-from ._MeetingReference10 import MeetingReference10
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecurityPosition23 import SecurityPosition23
 from ._MeetingCancellationReason2 import MeetingCancellationReason2
+from ._MeetingReference10 import MeetingReference10
+from ._SecurityPosition23 import SecurityPosition23
+from ._SupplementaryData1 import SupplementaryData1
 
 class MeetingCancellationV10(base_types._BaseFieldType):
 
-	__slots__ = ["_MtgRef", "_Scty", "_Rsn", "_SplmtryData"]
+	__slots__ = ["_MtgRef", "_Rsn", "_Scty", "_SplmtryData"]
 	@property
 	def MtgRef(self):
 		return self._MtgRef

@@ -1,10 +1,10 @@
 from . import base_types
-from ._ReuseValue1Choice import ReuseValue1Choice
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ReuseValue1Choice import ReuseValue1Choice
 
 class VolumeMetrics4(base_types._BaseFieldType):
 
-	__slots__ = ["_RinvstdCshAmt", "_ReuseVal"]
+	__slots__ = ["_ReuseVal", "_RinvstdCshAmt"]
 	@property
 	def ReuseVal(self):
 		return self._ReuseVal

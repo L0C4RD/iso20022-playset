@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
-from ._ReportingRecordStatus1Code import ReportingRecordStatus1Code
 from ._Max140Text import Max140Text
+from ._ReportingRecordStatus1Code import ReportingRecordStatus1Code
+from ._SupplementaryData1 import SupplementaryData1
 
 class StatusReportRecord3(base_types._BaseFieldType):
 
-	__slots__ = ["_VldtnRule", "_Sts", "_SplmtryData", "_OrgnlRcrdId"]
+	__slots__ = ["_OrgnlRcrdId", "_SplmtryData", "_Sts", "_VldtnRule"]
 	@property
 	def OrgnlRcrdId(self):
 		return self._OrgnlRcrdId

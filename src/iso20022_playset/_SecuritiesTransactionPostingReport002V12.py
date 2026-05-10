@@ -1,16 +1,16 @@
 from . import base_types
 from ._BlockChainAddressWallet8 import BlockChainAddressWallet8
-from ._Intermediary45 import Intermediary45
-from ._SecuritiesAccount40 import SecuritiesAccount40
-from ._PartyIdentification156 import PartyIdentification156
 from ._FinancialInstrumentDetails43 import FinancialInstrumentDetails43
-from ._SubAccountIdentification70 import SubAccountIdentification70
+from ._Intermediary45 import Intermediary45
 from ._Pagination1 import Pagination1
+from ._PartyIdentification156 import PartyIdentification156
+from ._SecuritiesAccount40 import SecuritiesAccount40
 from ._Statement82 import Statement82
+from ._SubAccountIdentification70 import SubAccountIdentification70
 
 class SecuritiesTransactionPostingReport002V12(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_StmtGnlDtls", "_Pgntn", "_SubAcctDtls", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_IntrmyInf", "_FinInstrmDtls"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_FinInstrmDtls", "_IntrmyInf", "_Pgntn", "_SfkpgAcct", "_StmtGnlDtls", "_SubAcctDtls"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._CountryCode import CountryCode
 from ._CommunicationAddress3 import CommunicationAddress3
-from ._Max35Text import Max35Text
-from ._PostalAddress3 import PostalAddress3
+from ._CountryCode import CountryCode
+from ._ISODate import ISODate
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
 from ._PartyIdentification177Choice import PartyIdentification177Choice
+from ._PostalAddress3 import PostalAddress3
 
 class Organisation38(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Id", "_TaxIdNb", "_TaxtnCtry", "_NtlRegnNb", "_Purp", "_RegnCtry", "_PstlAdr", "_ScndryComAdr", "_RegnDt", "_PmryComAdr"]
+	__slots__ = ["_Id", "_Nm", "_NtlRegnNb", "_PmryComAdr", "_PstlAdr", "_Purp", "_RegnCtry", "_RegnDt", "_ScndryComAdr", "_TaxIdNb", "_TaxtnCtry"]
 	@property
 	def Id(self):
 		return self._Id

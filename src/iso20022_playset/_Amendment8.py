@@ -1,11 +1,11 @@
 from . import base_types
-from ._PartyIdentification43 import PartyIdentification43
-from ._Max4AlphaNumericText import Max4AlphaNumericText
 from ._Max35Text import Max35Text
+from ._Max4AlphaNumericText import Max4AlphaNumericText
+from ._PartyIdentification43 import PartyIdentification43
 
 class Amendment8(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Issr", "_BnfcryRefNb", "_SeqNb"]
+	__slots__ = ["_BnfcryRefNb", "_Id", "_Issr", "_SeqNb"]
 	@property
 	def BnfcryRefNb(self):
 		return self._BnfcryRefNb

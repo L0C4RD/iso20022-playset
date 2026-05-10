@@ -1,16 +1,16 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._DecimalNumber import DecimalNumber
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._Authorisation1Choice import Authorisation1Choice
-from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._DecimalNumber import DecimalNumber
 from ._ISODateTime import ISODateTime
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
 from ._PartyIdentification272 import PartyIdentification272
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class GroupHeader124(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfTxs", "_FwdgAgt", "_MsgId", "_CtrlSum", "_GrpRvsl", "_Authstn", "_CdtrAgt", "_DbtrAgt", "_InitgPty", "_CreDtTm"]
+	__slots__ = ["_Authstn", "_CdtrAgt", "_CreDtTm", "_CtrlSum", "_DbtrAgt", "_FwdgAgt", "_GrpRvsl", "_InitgPty", "_MsgId", "_NbOfTxs"]
 	@property
 	def Authstn(self):
 		return self._Authstn

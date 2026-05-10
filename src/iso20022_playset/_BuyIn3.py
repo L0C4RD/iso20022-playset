@@ -1,12 +1,12 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
-from ._Number import Number
-from ._Max35Text import Max35Text
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._Max35Text import Max35Text
+from ._Number import Number
+from ._YesNoIndicator import YesNoIndicator
 
 class BuyIn3(base_types._BaseFieldType):
 
-	__slots__ = ["_UcvrdQty", "_CvrdQty", "_BuyInNtfctnId", "_InitlQty", "_NbOfDays", "_ReqForDelyInd"]
+	__slots__ = ["_BuyInNtfctnId", "_CvrdQty", "_InitlQty", "_NbOfDays", "_ReqForDelyInd", "_UcvrdQty"]
 	@property
 	def BuyInNtfctnId(self):
 		return self._BuyInNtfctnId

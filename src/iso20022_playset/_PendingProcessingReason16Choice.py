@@ -4,7 +4,7 @@ from ._PendingFailingReason1Code import PendingFailingReason1Code
 
 class PendingProcessingReason16Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

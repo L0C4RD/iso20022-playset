@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._OriginalGroupInformation27 import OriginalGroupInformation27
 from ._GroupHeader109 import GroupHeader109
+from ._OriginalGroupInformation27 import OriginalGroupInformation27
 from ._PaymentTransaction158 import PaymentTransaction158
+from ._SupplementaryData1 import SupplementaryData1
 
 class FIToFIPaymentStatusRequestV06(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_OrgnlGrpInf", "_GrpHdr", "_TxInf"]
+	__slots__ = ["_GrpHdr", "_OrgnlGrpInf", "_SplmtryData", "_TxInf"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

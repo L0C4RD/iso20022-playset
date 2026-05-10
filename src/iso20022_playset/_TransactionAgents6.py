@@ -1,10 +1,10 @@
 from . import base_types
-from ._ProprietaryAgent5 import ProprietaryAgent5
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ProprietaryAgent5 import ProprietaryAgent5
 
 class TransactionAgents6(base_types._BaseFieldType):
 
-	__slots__ = ["_IssgAgt", "_IntrmyAgt1", "_InstgAgt", "_RcvgAgt", "_DlvrgAgt", "_CdtrAgt", "_IntrmyAgt3", "_DbtrAgt", "_Prtry", "_IntrmyAgt2", "_InstdAgt", "_SttlmPlc"]
+	__slots__ = ["_CdtrAgt", "_DbtrAgt", "_DlvrgAgt", "_InstdAgt", "_InstgAgt", "_IntrmyAgt1", "_IntrmyAgt2", "_IntrmyAgt3", "_IssgAgt", "_Prtry", "_RcvgAgt", "_SttlmPlc"]
 	@property
 	def CdtrAgt(self):
 		return self._CdtrAgt

@@ -1,18 +1,18 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ATMService29 import ATMService29
 from ._ATMAccountUsage1Code import ATMAccountUsage1Code
-from ._AmountAndDirection111 import AmountAndDirection111
+from ._ATMService29 import ATMService29
 from ._AccountIdentification80Choice import AccountIdentification80Choice
-from ._PartyIdentification177Choice import PartyIdentification177Choice
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._AmountAndDirection111 import AmountAndDirection111
+from ._CardAccountType3Code import CardAccountType3Code
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
-from ._CardAccountType3Code import CardAccountType3Code
+from ._PartyIdentification177Choice import PartyIdentification177Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CardAccount18(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctNm", "_CdtRef", "_Svcr", "_AllwdSvc", "_AcctTp", "_BalDispFlg", "_AcctIdr", "_DfltAcctInd", "_AcctUsgCd", "_Bal", "_Ccy"]
+	__slots__ = ["_AcctIdr", "_AcctNm", "_AcctTp", "_AcctUsgCd", "_AllwdSvc", "_Bal", "_BalDispFlg", "_Ccy", "_CdtRef", "_DfltAcctInd", "_Svcr"]
 	@property
 	def AcctIdr(self):
 		return self._AcctIdr

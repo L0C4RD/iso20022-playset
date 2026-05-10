@@ -1,12 +1,12 @@
 from . import base_types
-from ._AccountLinkStatus1 import AccountLinkStatus1
-from ._SupplementaryData1 import SupplementaryData1
 from ._AccountLink8 import AccountLink8
+from ._AccountLinkStatus1 import AccountLinkStatus1
 from ._MessageHeader12 import MessageHeader12
+from ._SupplementaryData1 import SupplementaryData1
 
 class AccountLinkStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctLkId", "_MsgHdr", "_SplmtryData", "_AcctLkSts"]
+	__slots__ = ["_AcctLkId", "_AcctLkSts", "_MsgHdr", "_SplmtryData"]
 	@property
 	def AcctLkId(self):
 		return self._AcctLkId

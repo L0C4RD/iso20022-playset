@@ -1,15 +1,15 @@
 from . import base_types
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._DocumentIdentification51 import DocumentIdentification51
 from ._IntraBalancePosting5 import IntraBalancePosting5
 from ._IntraBalanceReport6 import IntraBalanceReport6
-from ._CashAccount40 import CashAccount40
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._Pagination1 import Pagination1
-from ._DocumentIdentification51 import DocumentIdentification51
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class IntraBalanceMovementPostingReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcctSvcr", "_Id", "_SubBal", "_CshAcct", "_CshAcctOwnr", "_RptGnlDtls", "_Pgntn"]
+	__slots__ = ["_CshAcct", "_CshAcctOwnr", "_CshAcctSvcr", "_Id", "_Pgntn", "_RptGnlDtls", "_SubBal"]
 	@property
 	def CshAcct(self):
 		return self._CshAcct

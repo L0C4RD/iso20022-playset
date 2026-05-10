@@ -1,6 +1,6 @@
 from . import base_types
-from ._ResidentialStatus1Code import ResidentialStatus1Code
 from ._CountryCode import CountryCode
+from ._ResidentialStatus1Code import ResidentialStatus1Code
 
 class CountryAndResidentialStatusType1(base_types._BaseFieldType):
 

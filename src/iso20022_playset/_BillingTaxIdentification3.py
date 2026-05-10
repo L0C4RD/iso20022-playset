@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class BillingTaxIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxRegnNb", "_TaxCtct", "_VATRegnNb"]
+	__slots__ = ["_TaxCtct", "_TaxRegnNb", "_VATRegnNb"]
 	@property
 	def TaxCtct(self):
 		return self._TaxCtct

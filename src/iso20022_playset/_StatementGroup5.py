@@ -1,12 +1,12 @@
 from . import base_types
 from ._BillingStatement5 import BillingStatement5
-from ._PartyIdentification273 import PartyIdentification273
 from ._Contact13 import Contact13
 from ._Max35Text import Max35Text
+from ._PartyIdentification273 import PartyIdentification273
 
 class StatementGroup5(base_types._BaseFieldType):
 
-	__slots__ = ["_Rcvr", "_SndrIndvCtct", "_RcvrIndvCtct", "_GrpId", "_Sndr", "_BllgStmt"]
+	__slots__ = ["_BllgStmt", "_GrpId", "_Rcvr", "_RcvrIndvCtct", "_Sndr", "_SndrIndvCtct"]
 	@property
 	def BllgStmt(self):
 		return self._BllgStmt

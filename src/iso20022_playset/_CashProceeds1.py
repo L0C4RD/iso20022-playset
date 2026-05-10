@@ -1,11 +1,11 @@
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max350Text import Max350Text
 from ._CashAccount19 import CashAccount19
+from ._Max350Text import Max350Text
 
 class CashProceeds1(base_types._BaseFieldType):
 
-	__slots__ = ["_PstngAmt", "_AcctDtls", "_RcncltnDtls"]
+	__slots__ = ["_AcctDtls", "_PstngAmt", "_RcncltnDtls"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

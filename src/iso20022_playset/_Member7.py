@@ -1,15 +1,15 @@
 from . import base_types
+from ._CashAccount40 import CashAccount40
 from ._CommunicationAddress10 import CommunicationAddress10
-from ._SystemMemberType1Choice import SystemMemberType1Choice
 from ._ContactIdentificationAndAddress2 import ContactIdentificationAndAddress2
 from ._Max35Text import Max35Text
 from ._MemberIdentification3Choice import MemberIdentification3Choice
 from ._SystemMemberStatus1Choice import SystemMemberStatus1Choice
-from ._CashAccount40 import CashAccount40
+from ._SystemMemberType1Choice import SystemMemberType1Choice
 
 class Member7(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_RtrAdr", "_Acct", "_Nm", "_CtctRef", "_ComAdr", "_Sts"]
+	__slots__ = ["_Acct", "_ComAdr", "_CtctRef", "_Nm", "_RtrAdr", "_Sts", "_Tp"]
 	@property
 	def Acct(self):
 		return self._Acct

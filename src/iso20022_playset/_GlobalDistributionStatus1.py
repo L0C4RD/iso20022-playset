@@ -4,7 +4,7 @@ from ._DistributionRejectionStatus1 import DistributionRejectionStatus1
 
 class GlobalDistributionStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctdSts", "_PrcdSts"]
+	__slots__ = ["_PrcdSts", "_RjctdSts"]
 	@property
 	def PrcdSts(self):
 		return self._PrcdSts

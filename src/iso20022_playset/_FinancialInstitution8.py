@@ -1,13 +1,13 @@
 from . import base_types
 from ._Address2 import Address2
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
 from ._LocalData10 import LocalData10
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class FinancialInstitution8(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlCtct", "_CstmrSvc", "_URL", "_Adr", "_Phne", "_LclData", "_Id", "_Nm", "_Email"]
+	__slots__ = ["_AddtlCtct", "_Adr", "_CstmrSvc", "_Email", "_Id", "_LclData", "_Nm", "_Phne", "_URL"]
 	@property
 	def AddtlCtct(self):
 		return self._AddtlCtct

@@ -1,14 +1,14 @@
 from . import base_types
+from ._AdditionalData1 import AdditionalData1
 from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._ISODateTime import ISODateTime
 from ._ISOTime import ISOTime
 from ._Max35Text import Max35Text
-from ._ISODateTime import ISODateTime
-from ._AdditionalData1 import AdditionalData1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class SettlementService6(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_AddtlInf", "_Dfrrd", "_RptgNttyTp", "_RptgNttyId", "_Prd", "_CutOffTm", "_Tm", "_Id", "_Tp", "_ReqdDt"]
+	__slots__ = ["_AddtlInf", "_CutOffTm", "_Dfrrd", "_Dt", "_Id", "_Prd", "_ReqdDt", "_RptgNttyId", "_RptgNttyTp", "_Tm", "_Tp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

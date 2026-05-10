@@ -1,12 +1,12 @@
 from . import base_types
 from ._Authorisation2 import Authorisation2
-from ._Modification1Code import Modification1Code
 from ._Max15PlusSignedNumericText import Max15PlusSignedNumericText
+from ._Modification1Code import Modification1Code
 from ._PartyOrGroup3Choice import PartyOrGroup3Choice
 
 class PartyAndAuthorisation6(base_types._BaseFieldType):
 
-	__slots__ = ["_Authstn", "_PtyOrGrp", "_ModCd", "_SgntrOrdr"]
+	__slots__ = ["_Authstn", "_ModCd", "_PtyOrGrp", "_SgntrOrdr"]
 	@property
 	def Authstn(self):
 		return self._Authstn

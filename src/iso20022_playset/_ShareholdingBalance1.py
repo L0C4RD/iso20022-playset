@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._DateFormat57Choice import DateFormat57Choice
-from ._ShareholdingType1Code import ShareholdingType1Code
 from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
 from ._PartyIdentification218 import PartyIdentification218
+from ._ShareholdingType1Code import ShareholdingType1Code
+from ._SupplementaryData1 import SupplementaryData1
 
 class ShareholdingBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_InitlDtOfShrhldg", "_SplmtryData", "_ThrdPty", "_ShrhldgTp"]
+	__slots__ = ["_InitlDtOfShrhldg", "_Qty", "_ShrhldgTp", "_SplmtryData", "_ThrdPty"]
 	@property
 	def InitlDtOfShrhldg(self):
 		return self._InitlDtOfShrhldg

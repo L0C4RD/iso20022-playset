@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max40KText import Max40KText
 from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
+from ._Max40KText import Max40KText
 
 class LocalData9(base_types._BaseFieldType):
 
-	__slots__ = ["_TxtMsg", "_Lang"]
+	__slots__ = ["_Lang", "_TxtMsg"]
 	@property
 	def Lang(self):
 		return self._Lang

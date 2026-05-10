@@ -1,12 +1,12 @@
 from . import base_types
 from ._ContractMatchingCriteria3 import ContractMatchingCriteria3
-from ._ValuationMatchingCriteria1 import ValuationMatchingCriteria1
-from ._TransactionMatchingCriteria7 import TransactionMatchingCriteria7
 from ._CounterpartyMatchingCriteria6 import CounterpartyMatchingCriteria6
+from ._TransactionMatchingCriteria7 import TransactionMatchingCriteria7
+from ._ValuationMatchingCriteria1 import ValuationMatchingCriteria1
 
 class MatchingCriteria17(base_types._BaseFieldType):
 
-	__slots__ = ["_TxMtchgCrit", "_CtrPtyMtchgCrit", "_ValtnMtchgCrit", "_CtrctMtchgCrit"]
+	__slots__ = ["_CtrPtyMtchgCrit", "_CtrctMtchgCrit", "_TxMtchgCrit", "_ValtnMtchgCrit"]
 	@property
 	def CtrPtyMtchgCrit(self):
 		return self._CtrPtyMtchgCrit

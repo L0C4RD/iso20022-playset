@@ -1,16 +1,16 @@
 from . import base_types
-from ._Reference17 import Reference17
-from ._CollateralSubstitutionType1Code import CollateralSubstitutionType1Code
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._OtherCollateral11 import OtherCollateral11
 from ._CashCollateral5 import CashCollateral5
-from ._SecuritiesCollateral11 import SecuritiesCollateral11
 from ._CollateralSubstitutionSequence1Code import CollateralSubstitutionSequence1Code
+from ._CollateralSubstitutionType1Code import CollateralSubstitutionType1Code
 from ._Max140Text import Max140Text
+from ._OtherCollateral11 import OtherCollateral11
+from ._Reference17 import Reference17
+from ._SecuritiesCollateral11 import SecuritiesCollateral11
 
 class CollateralSubstitution7(base_types._BaseFieldType):
 
-	__slots__ = ["_LkdRefs", "_CollSbstitnSeq", "_OthrColl", "_StdSttlmInstrs", "_SbstitnRqrmnt", "_CshColl", "_SctiesColl", "_CollSbstitnTp"]
+	__slots__ = ["_CollSbstitnSeq", "_CollSbstitnTp", "_CshColl", "_LkdRefs", "_OthrColl", "_SbstitnRqrmnt", "_SctiesColl", "_StdSttlmInstrs"]
 	@property
 	def CollSbstitnSeq(self):
 		return self._CollSbstitnSeq

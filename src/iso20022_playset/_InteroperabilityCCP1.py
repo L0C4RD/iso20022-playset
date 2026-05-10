@@ -1,13 +1,13 @@
 from . import base_types
 from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
-from ._NonNegativeNumber import NonNegativeNumber
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._AssetHolding3 import AssetHolding3
 from ._GenericIdentification168 import GenericIdentification168
+from ._NonNegativeNumber import NonNegativeNumber
 
 class InteroperabilityCCP1(base_types._BaseFieldType):
 
-	__slots__ = ["_GrssNtnlAmt", "_Id", "_TtlInitlMrgn", "_AsstHldg", "_TrdsClrd"]
+	__slots__ = ["_AsstHldg", "_GrssNtnlAmt", "_Id", "_TrdsClrd", "_TtlInitlMrgn"]
 	@property
 	def AsstHldg(self):
 		return self._AsstHldg

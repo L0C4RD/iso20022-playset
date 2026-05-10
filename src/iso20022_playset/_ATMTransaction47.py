@@ -1,16 +1,16 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._TransactionIdentifier3 import TransactionIdentifier3
-from ._Max10000Binary import Max10000Binary
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
-from ._FailureReason9Code import FailureReason9Code
 from ._ATMTransactionStatus1Code import ATMTransactionStatus1Code
 from ._AuthorisationResult20 import AuthorisationResult20
+from ._FailureReason9Code import FailureReason9Code
+from ._Max10000Binary import Max10000Binary
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._TransactionIdentifier3 import TransactionIdentifier3
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ATMTransaction47(base_types._BaseFieldType):
 
-	__slots__ = ["_AuthstnRslt", "_ReqdRct", "_IncdntDtl", "_TxSts", "_ICCRltdData", "_RcncltnId", "_CstmrCnsnt", "_RctPrtd", "_Incdnt", "_TxId"]
+	__slots__ = ["_AuthstnRslt", "_CstmrCnsnt", "_ICCRltdData", "_Incdnt", "_IncdntDtl", "_RcncltnId", "_RctPrtd", "_ReqdRct", "_TxId", "_TxSts"]
 	@property
 	def AuthstnRslt(self):
 		return self._AuthstnRslt

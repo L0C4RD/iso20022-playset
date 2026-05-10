@@ -1,11 +1,11 @@
 from . import base_types
-from ._PartyIdentification113 import PartyIdentification113
 from ._CancellationStatus22Choice import CancellationStatus22Choice
 from ._Max35Text import Max35Text
+from ._PartyIdentification113 import PartyIdentification113
 
 class OrderStatusAndReason9(base_types._BaseFieldType):
 
-	__slots__ = ["_MstrRef", "_CxlSts", "_StsInitr"]
+	__slots__ = ["_CxlSts", "_MstrRef", "_StsInitr"]
 	@property
 	def CxlSts(self):
 		return self._CxlSts

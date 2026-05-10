@@ -4,7 +4,7 @@ from ._Rates3 import Rates3
 
 class PriceMetrics3(base_types._BaseFieldType):
 
-	__slots__ = ["_Rates", "_LndgFee"]
+	__slots__ = ["_LndgFee", "_Rates"]
 	@property
 	def LndgFee(self):
 		return self._LndgFee

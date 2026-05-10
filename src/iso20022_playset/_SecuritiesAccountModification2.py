@@ -4,7 +4,7 @@ from ._SecuritiesAccountModification2Choice import SecuritiesAccountModification
 
 class SecuritiesAccountModification2(base_types._BaseFieldType):
 
-	__slots__ = ["_ScpIndctn", "_ReqdMod"]
+	__slots__ = ["_ReqdMod", "_ScpIndctn"]
 	@property
 	def ReqdMod(self):
 		return self._ReqdMod

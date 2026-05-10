@@ -1,6 +1,6 @@
 from . import base_types
-from ._ModificationProcessingStatus1Code import ModificationProcessingStatus1Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._ModificationProcessingStatus1Code import ModificationProcessingStatus1Code
 
 class ModificationProcessingStatus9Choice(base_types._BaseFieldType):
 

@@ -1,15 +1,15 @@
 from . import base_types
-from ._PendingSettlement2Code import PendingSettlement2Code
-from ._SuspendedStatusReason1Code import SuspendedStatusReason1Code
-from ._Max35Text import Max35Text
-from ._ProprietaryStatusJustification2 import ProprietaryStatusJustification2
-from ._UnmatchedStatusReason1Code import UnmatchedStatusReason1Code
 from ._CancelledStatusReason1Code import CancelledStatusReason1Code
+from ._Max35Text import Max35Text
 from ._PendingFailingSettlement1Code import PendingFailingSettlement1Code
+from ._PendingSettlement2Code import PendingSettlement2Code
+from ._ProprietaryStatusJustification2 import ProprietaryStatusJustification2
+from ._SuspendedStatusReason1Code import SuspendedStatusReason1Code
+from ._UnmatchedStatusReason1Code import UnmatchedStatusReason1Code
 
 class PaymentStatusReason1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgSttlm", "_PrtryRjctn", "_Umtchd", "_Sspd", "_PdgFlngSttlm", "_Canc", "_Prtry"]
+	__slots__ = ["_Canc", "_PdgFlngSttlm", "_PdgSttlm", "_Prtry", "_PrtryRjctn", "_Sspd", "_Umtchd"]
 	@property
 	def Canc(self):
 		return self._Canc

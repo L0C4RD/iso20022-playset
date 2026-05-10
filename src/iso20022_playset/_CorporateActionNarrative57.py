@@ -1,10 +1,10 @@
 from . import base_types
-from ._UpdatedAdditionalInformation18 import UpdatedAdditionalInformation18
 from ._UpdatedAdditionalInformation17 import UpdatedAdditionalInformation17
+from ._UpdatedAdditionalInformation18 import UpdatedAdditionalInformation18
 
 class CorporateActionNarrative57(base_types._BaseFieldType):
 
-	__slots__ = ["_Dsclmr", "_NrrtvVrsn", "_AddtlTxt", "_InfToCmplyWth", "_InfConds", "_CertfctnBrkdwn", "_TaxtnConds", "_SctyRstrctn"]
+	__slots__ = ["_AddtlTxt", "_CertfctnBrkdwn", "_Dsclmr", "_InfConds", "_InfToCmplyWth", "_NrrtvVrsn", "_SctyRstrctn", "_TaxtnConds"]
 	@property
 	def AddtlTxt(self):
 		return self._AddtlTxt

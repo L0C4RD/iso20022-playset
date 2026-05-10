@@ -1,16 +1,16 @@
 from . import base_types
 from ._Percentage14Rate import Percentage14Rate
-from ._YesNoIndicator import YesNoIndicator
 from ._RateAndAmountFormat56Choice import RateAndAmountFormat56Choice
-from ._RateFormat24Choice import RateFormat24Choice
-from ._RatioFormat18Choice import RatioFormat18Choice
-from ._RateFormat26Choice import RateFormat26Choice
 from ._RateAndAmountFormat57Choice import RateAndAmountFormat57Choice
+from ._RateFormat24Choice import RateFormat24Choice
+from ._RateFormat26Choice import RateFormat26Choice
 from ._RatioFormat17Choice import RatioFormat17Choice
+from ._RatioFormat18Choice import RatioFormat18Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class CorporateActionRate129(base_types._BaseFieldType):
 
-	__slots__ = ["_TrfrmatnRate", "_FsclStmp", "_ChrgsFees", "_WhldgTaxRate", "_AddtlQtyForExstgScties", "_AplblRate", "_EstmtdRateInd", "_NewToOd", "_FinTxTaxRate", "_AddtlQtyForSbcbdRsltntScties", "_ScndLvlTax", "_TaxCdtRate"]
+	__slots__ = ["_AddtlQtyForExstgScties", "_AddtlQtyForSbcbdRsltntScties", "_AplblRate", "_ChrgsFees", "_EstmtdRateInd", "_FinTxTaxRate", "_FsclStmp", "_NewToOd", "_ScndLvlTax", "_TaxCdtRate", "_TrfrmatnRate", "_WhldgTaxRate"]
 	@property
 	def AddtlQtyForExstgScties(self):
 		return self._AddtlQtyForExstgScties

@@ -1,11 +1,11 @@
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._PreConfirmation1Code import PreConfirmation1Code
 from ._PartialSettlement2Code import PartialSettlement2Code
+from ._PreConfirmation1Code import PreConfirmation1Code
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class AdditionalParameters32(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtlSttlm", "_ClntTrptyCollTxId", "_PreConf", "_TrptyAgtSvcPrvdrCollTxId"]
+	__slots__ = ["_ClntTrptyCollTxId", "_PreConf", "_PrtlSttlm", "_TrptyAgtSvcPrvdrCollTxId"]
 	@property
 	def ClntTrptyCollTxId(self):
 		return self._ClntTrptyCollTxId

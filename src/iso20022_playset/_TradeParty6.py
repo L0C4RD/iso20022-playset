@@ -5,7 +5,7 @@ from ._TaxParty4 import TaxParty4
 
 class TradeParty6(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxPty", "_LglOrg", "_PtyId"]
+	__slots__ = ["_LglOrg", "_PtyId", "_TaxPty"]
 	@property
 	def LglOrg(self):
 		return self._LglOrg

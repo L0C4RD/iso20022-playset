@@ -1,14 +1,14 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._PartyIdentification125Choice import PartyIdentification125Choice
-from ._Max35Text import Max35Text
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max350Text import Max350Text
 from ._ISODateTime import ISODateTime
+from ._LEIIdentifier import LEIIdentifier
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification125Choice import PartyIdentification125Choice
 
 class ThirdPartyRights2(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Hldr", "_LglNttyIdr", "_Amt", "_Tp", "_DtTm"]
+	__slots__ = ["_Amt", "_Desc", "_DtTm", "_Hldr", "_LglNttyIdr", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

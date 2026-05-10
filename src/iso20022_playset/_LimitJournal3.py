@@ -5,7 +5,7 @@ from ._LimitJournalEntry3 import LimitJournalEntry3
 
 class LimitJournal3(base_types._BaseFieldType):
 
-	__slots__ = ["_JrnlNtry", "_Lmt", "_JrnlActvtyDt"]
+	__slots__ = ["_JrnlActvtyDt", "_JrnlNtry", "_Lmt"]
 	@property
 	def JrnlActvtyDt(self):
 		return self._JrnlActvtyDt

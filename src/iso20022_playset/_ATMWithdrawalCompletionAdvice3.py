@@ -5,7 +5,7 @@ from ._ATMTransaction53 import ATMTransaction53
 
 class ATMWithdrawalCompletionAdvice3(base_types._BaseFieldType):
 
-	__slots__ = ["_Cntxt", "_Tx", "_Envt"]
+	__slots__ = ["_Cntxt", "_Envt", "_Tx"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt

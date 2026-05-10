@@ -1,12 +1,12 @@
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
-from ._SupplementaryData1 import SupplementaryData1
 from ._Max52Text import Max52Text
 from ._RecordTechnicalData2 import RecordTechnicalData2
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesTransactionReport2(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_ExctgPty", "_TechAttrbts", "_SubmitgPty", "_SplmtryData"]
+	__slots__ = ["_ExctgPty", "_SplmtryData", "_SubmitgPty", "_TechAttrbts", "_TxId"]
 	@property
 	def ExctgPty(self):
 		return self._ExctgPty

@@ -1,11 +1,11 @@
 from . import base_types
 from ._CreditTransferTransaction70 import CreditTransferTransaction70
-from ._SupplementaryData1 import SupplementaryData1
 from ._GroupHeader131 import GroupHeader131
+from ._SupplementaryData1 import SupplementaryData1
 
 class FIToFICustomerCreditTransferV13(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtTrfTxInf", "_SplmtryData", "_GrpHdr"]
+	__slots__ = ["_CdtTrfTxInf", "_GrpHdr", "_SplmtryData"]
 	@property
 	def CdtTrfTxInf(self):
 		return self._CdtTrfTxInf

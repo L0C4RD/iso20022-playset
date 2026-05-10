@@ -1,6 +1,6 @@
 from . import base_types
-from ._VoteChannel1Code import VoteChannel1Code
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._VoteChannel1Code import VoteChannel1Code
 
 class VoteThroughNetwork1Choice(base_types._BaseFieldType):
 

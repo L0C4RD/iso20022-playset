@@ -1,12 +1,12 @@
 from . import base_types
-from ._Header20 import Header20
 from ._ContentInformationType10 import ContentInformationType10
 from ._ContentInformationType15 import ContentInformationType15
+from ._Header20 import Header20
 from ._HostToATMAcknowledgement1 import HostToATMAcknowledgement1
 
 class HostToATMAcknowledgementV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_Hdr", "_HstToATMAck", "_PrtctdHstToATMAck"]
+	__slots__ = ["_Hdr", "_HstToATMAck", "_PrtctdHstToATMAck", "_SctyTrlr"]
 	@property
 	def Hdr(self):
 		return self._Hdr

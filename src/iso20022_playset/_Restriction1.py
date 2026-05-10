@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISODateTime import ISODateTime
 from ._CodeOrProprietary1Choice import CodeOrProprietary1Choice
+from ._ISODateTime import ISODateTime
 
 class Restriction1(base_types._BaseFieldType):
 
-	__slots__ = ["_RstrctnTp", "_VldUntil", "_VldFr"]
+	__slots__ = ["_RstrctnTp", "_VldFr", "_VldUntil"]
 	@property
 	def RstrctnTp(self):
 		return self._RstrctnTp

@@ -1,21 +1,21 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max50Text import Max50Text
-from ._DecimalNumber import DecimalNumber
-from ._Max10Text import Max10Text
 from ._AdditionalData1 import AdditionalData1
-from ._Max256Text import Max256Text
-from ._Tax41 import Tax41
-from ._Max35Text import Max35Text
 from ._CreditDebit3Code import CreditDebit3Code
+from ._DecimalNumber import DecimalNumber
+from ._ISODate import ISODate
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max10Text import Max10Text
+from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Max50Text import Max50Text
 from ._Max70Text import Max70Text
+from ._Tax41 import Tax41
+from ._TrueFalseIndicator import TrueFalseIndicator
 from ._UnitOfMeasure1Code import UnitOfMeasure1Code
 
 class InvoiceLineItem3(base_types._BaseFieldType):
 
-	__slots__ = ["_AdjstmntRsn", "_Dt", "_ShipToIndstryCd", "_MdclSvcs", "_OrdrDt", "_CdtDbt", "_Desc", "_PdctQty", "_AddtlData", "_AdjstmntAmt", "_UnitPric", "_Rbllg", "_TtlAmt", "_OthrUnitOfMeasr", "_UnitOfMeasr", "_TpOfSpply", "_PdctCd", "_PdctQlfr", "_AdjstmntCdtDbt", "_ZeroCostToCstmr", "_ShppgDt", "_Tax", "_VATInvcRef", "_InsrncAmt", "_CtrctNb", "_Insrnc"]
+	__slots__ = ["_AddtlData", "_AdjstmntAmt", "_AdjstmntCdtDbt", "_AdjstmntRsn", "_CdtDbt", "_CtrctNb", "_Desc", "_Dt", "_Insrnc", "_InsrncAmt", "_MdclSvcs", "_OrdrDt", "_OthrUnitOfMeasr", "_PdctCd", "_PdctQlfr", "_PdctQty", "_Rbllg", "_ShipToIndstryCd", "_ShppgDt", "_Tax", "_TpOfSpply", "_TtlAmt", "_UnitOfMeasr", "_UnitPric", "_VATInvcRef", "_ZeroCostToCstmr"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

@@ -1,14 +1,14 @@
 from . import base_types
-from ._CopyInformation4 import CopyInformation4
 from ._AdditionalReference8 import AdditionalReference8
+from ._AdditionalReference9 import AdditionalReference9
+from ._CopyInformation4 import CopyInformation4
+from ._InvestmentFundOrder9 import InvestmentFundOrder9
 from ._Max35Text import Max35Text
 from ._MessageIdentification1 import MessageIdentification1
-from ._InvestmentFundOrder9 import InvestmentFundOrder9
-from ._AdditionalReference9 import AdditionalReference9
 
 class SwitchOrderCancellationRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_MstrRef", "_OrdrRefs", "_MsgId", "_CpyDtls", "_PoolRef", "_PrvsRef"]
+	__slots__ = ["_CpyDtls", "_MsgId", "_MstrRef", "_OrdrRefs", "_PoolRef", "_PrvsRef"]
 	@property
 	def CpyDtls(self):
 		return self._CpyDtls

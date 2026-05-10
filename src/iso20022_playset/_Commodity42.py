@@ -1,13 +1,13 @@
 from . import base_types
-from ._CompareUnitOfMeasure3 import CompareUnitOfMeasure3
-from ._CompareCommodityAssetClass3 import CompareCommodityAssetClass3
-from ._CompareUnitPrice6 import CompareUnitPrice6
-from ._CompareDecimalNumber3 import CompareDecimalNumber3
 from ._CompareAmountAndDirection2 import CompareAmountAndDirection2
+from ._CompareCommodityAssetClass3 import CompareCommodityAssetClass3
+from ._CompareDecimalNumber3 import CompareDecimalNumber3
+from ._CompareUnitOfMeasure3 import CompareUnitOfMeasure3
+from ._CompareUnitPrice6 import CompareUnitPrice6
 
 class Commodity42(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitPric", "_UnitOfMeasr", "_Clssfctn", "_Qty", "_MktVal"]
+	__slots__ = ["_Clssfctn", "_MktVal", "_Qty", "_UnitOfMeasr", "_UnitPric"]
 	@property
 	def Clssfctn(self):
 		return self._Clssfctn

@@ -1,11 +1,11 @@
 from . import base_types
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
-from ._AmountPriceType1FormatChoice import AmountPriceType1FormatChoice
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._AmountPriceType1FormatChoice import AmountPriceType1FormatChoice
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 
 class AmountPricePerFinancialInstrumentQuantity1(base_types._BaseFieldType):
 
-	__slots__ = ["_PricVal", "_FinInstrmQty", "_AmtPricTp"]
+	__slots__ = ["_AmtPricTp", "_FinInstrmQty", "_PricVal"]
 	@property
 	def AmtPricTp(self):
 		return self._AmtPricTp

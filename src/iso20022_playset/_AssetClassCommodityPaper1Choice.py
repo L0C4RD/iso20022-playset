@@ -1,12 +1,12 @@
 from . import base_types
-from ._PaperCommodityNewsprint1 import PaperCommodityNewsprint1
 from ._PaperCommodityContainerBoard1 import PaperCommodityContainerBoard1
-from ._PaperCommodityRecoveredPaper1 import PaperCommodityRecoveredPaper1
+from ._PaperCommodityNewsprint1 import PaperCommodityNewsprint1
 from ._PaperCommodityPulp1 import PaperCommodityPulp1
+from ._PaperCommodityRecoveredPaper1 import PaperCommodityRecoveredPaper1
 
 class AssetClassCommodityPaper1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CntnrBrd", "_Nwsprnt", "_RcvrdPpr", "_Pulp"]
+	__slots__ = ["_CntnrBrd", "_Nwsprnt", "_Pulp", "_RcvrdPpr"]
 	@property
 	def CntnrBrd(self):
 		return self._CntnrBrd

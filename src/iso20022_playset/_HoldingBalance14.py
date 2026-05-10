@@ -1,12 +1,12 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._SecuritiesEntryType2Code import SecuritiesEntryType2Code
 from ._SafekeepingPlaceFormat42Choice import SafekeepingPlaceFormat42Choice
+from ._SecuritiesEntryType2Code import SecuritiesEntryType2Code
 from ._SignedQuantityFormat14 import SignedQuantityFormat14
 
 class HoldingBalance14(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_Bal", "_SfkpgPlc", "_BalTp"]
+	__slots__ = ["_Bal", "_BalTp", "_Dt", "_SfkpgPlc"]
 	@property
 	def Bal(self):
 		return self._Bal

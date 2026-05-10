@@ -1,7 +1,7 @@
 from . import base_types
-from ._Max15NumericText import Max15NumericText
 from ._CancellationIndividualStatus1Code import CancellationIndividualStatus1Code
 from ._DecimalNumber import DecimalNumber
+from ._Max15NumericText import Max15NumericText
 
 class NumberOfCancellationsPerStatus1(base_types._BaseFieldType):
 

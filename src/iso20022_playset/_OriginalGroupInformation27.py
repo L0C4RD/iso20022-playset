@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max15NumericText import Max15NumericText
-from ._ISODateTime import ISODateTime
 from ._DecimalNumber import DecimalNumber
+from ._ISODateTime import ISODateTime
+from ._Max15NumericText import Max15NumericText
 from ._Max35Text import Max35Text
 
 class OriginalGroupInformation27(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgId", "_OrgnlNbOfTxs", "_OrgnlCtrlSum", "_OrgnlCreDtTm", "_OrgnlMsgNmId"]
+	__slots__ = ["_OrgnlCreDtTm", "_OrgnlCtrlSum", "_OrgnlMsgId", "_OrgnlMsgNmId", "_OrgnlNbOfTxs"]
 	@property
 	def OrgnlCreDtTm(self):
 		return self._OrgnlCreDtTm

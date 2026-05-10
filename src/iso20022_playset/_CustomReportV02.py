@@ -1,20 +1,20 @@
 from . import base_types
-from ._PartyIdentification286 import PartyIdentification286
-from ._ReportData7 import ReportData7
-from ._SupplementaryData1 import SupplementaryData1
-from ._ContentInformationType41 import ContentInformationType41
-from ._SettlementService6 import SettlementService6
-from ._Jurisdiction2 import Jurisdiction2
-from ._Reconciliation4 import Reconciliation4
 from ._AdditionalData2 import AdditionalData2
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._ReportContent2 import ReportContent2
+from ._ContentInformationType41 import ContentInformationType41
 from ._CorrectionIdentification1 import CorrectionIdentification1
 from ._Header71 import Header71
+from ._Jurisdiction2 import Jurisdiction2
+from ._PartyIdentification286 import PartyIdentification286
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._Reconciliation4 import Reconciliation4
+from ._ReportContent2 import ReportContent2
+from ._ReportData7 import ReportData7
+from ._SettlementService6 import SettlementService6
+from ._SupplementaryData1 import SupplementaryData1
 
 class CustomReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_RptCntt", "_Rcvr", "_Prgrmm", "_Sndr", "_Crrctn", "_SttlmSvc", "_AddtlData", "_Jursdctn", "_Rpt", "_Hdr", "_Orgtr", "_Rcncltn", "_SplmtryData", "_Dstn"]
+	__slots__ = ["_AddtlData", "_Crrctn", "_Dstn", "_Hdr", "_Jursdctn", "_Orgtr", "_Prgrmm", "_Rcncltn", "_Rcvr", "_Rpt", "_RptCntt", "_SctyTrlr", "_Sndr", "_SplmtryData", "_SttlmSvc"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

@@ -1,10 +1,10 @@
 from . import base_types
-from ._PercentagePrice2 import PercentagePrice2
 from ._AmountPrice5 import AmountPrice5
+from ._PercentagePrice2 import PercentagePrice2
 
 class PriceFormat85Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PctgPric", "_AmtPric"]
+	__slots__ = ["_AmtPric", "_PctgPric"]
 	@property
 	def AmtPric(self):
 		return self._AmtPric

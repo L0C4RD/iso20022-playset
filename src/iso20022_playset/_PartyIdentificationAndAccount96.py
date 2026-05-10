@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentification64 import PartyIdentification64
 from ._AccountIdentification26 import AccountIdentification26
+from ._PartyIdentification64 import PartyIdentification64
 
 class PartyIdentificationAndAccount96(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyId", "_AcctId"]
+	__slots__ = ["_AcctId", "_PtyId"]
 	@property
 	def AcctId(self):
 		return self._AcctId

@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max350Text import Max350Text
 from ._EnabledStatusReason2Choice import EnabledStatusReason2Choice
+from ._Max350Text import Max350Text
 
 class EnabledStatusReason1(base_types._BaseFieldType):
 

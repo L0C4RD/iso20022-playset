@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class ATMCustomerProfile6(base_types._BaseFieldType):
 
-	__slots__ = ["_PrefrdLang", "_PrflRef", "_RtrvlMd", "_CstmrId"]
+	__slots__ = ["_CstmrId", "_PrefrdLang", "_PrflRef", "_RtrvlMd"]
 	@property
 	def CstmrId(self):
 		return self._CstmrId

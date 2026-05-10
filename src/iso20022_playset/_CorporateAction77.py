@@ -1,14 +1,14 @@
 from . import base_types
 from ._AdditionalBusinessProcessFormat21Choice import AdditionalBusinessProcessFormat21Choice
-from ._IntermediateSecuritiesDistributionTypeFormat18Choice import IntermediateSecuritiesDistributionTypeFormat18Choice
-from ._CorporateActionQuantity13 import CorporateActionQuantity13
-from ._LotteryTypeFormat5Choice import LotteryTypeFormat5Choice
 from ._CorporateActionDate93 import CorporateActionDate93
 from ._CorporateActionEventStageFormat15Choice import CorporateActionEventStageFormat15Choice
+from ._CorporateActionQuantity13 import CorporateActionQuantity13
+from ._IntermediateSecuritiesDistributionTypeFormat18Choice import IntermediateSecuritiesDistributionTypeFormat18Choice
+from ._LotteryTypeFormat5Choice import LotteryTypeFormat5Choice
 
 class CorporateAction77(base_types._BaseFieldType):
 
-	__slots__ = ["_DtDtls", "_LtryTp", "_SctiesQty", "_IntrmdtSctiesDstrbtnTp", "_EvtStag", "_AddtlBizPrcInd"]
+	__slots__ = ["_AddtlBizPrcInd", "_DtDtls", "_EvtStag", "_IntrmdtSctiesDstrbtnTp", "_LtryTp", "_SctiesQty"]
 	@property
 	def AddtlBizPrcInd(self):
 		return self._AddtlBizPrcInd

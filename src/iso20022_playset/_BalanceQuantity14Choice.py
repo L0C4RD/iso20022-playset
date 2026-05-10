@@ -4,7 +4,7 @@ from ._GenericIdentification56 import GenericIdentification56
 
 class BalanceQuantity14Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_Prtry"]
+	__slots__ = ["_Prtry", "_Qty"]
 	@property
 	def Prtry(self):
 		return self._Prtry

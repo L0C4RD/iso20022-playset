@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._PartyAuditTrailSearchCriteria2 import PartyAuditTrailSearchCriteria2
 from ._MessageHeader1 import MessageHeader1
+from ._PartyAuditTrailSearchCriteria2 import PartyAuditTrailSearchCriteria2
+from ._SupplementaryData1 import SupplementaryData1
 
 class PartyAuditTrailQueryV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_SchCrit"]
+	__slots__ = ["_MsgHdr", "_SchCrit", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

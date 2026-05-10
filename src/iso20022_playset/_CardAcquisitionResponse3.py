@@ -1,13 +1,13 @@
 from . import base_types
-from ._LoyaltyAccount3 import LoyaltyAccount3
-from ._LanguageCode import LanguageCode
-from ._Max35Text import Max35Text
 from ._CustomerOrder1 import CustomerOrder1
+from ._LanguageCode import LanguageCode
+from ._LoyaltyAccount3 import LoyaltyAccount3
+from ._Max35Text import Max35Text
 from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class CardAcquisitionResponse3(base_types._BaseFieldType):
 
-	__slots__ = ["_LltyAcct", "_POITxId", "_CstmrOrdr", "_SaleTxId", "_PmtBrnd", "_CstmrLang"]
+	__slots__ = ["_CstmrLang", "_CstmrOrdr", "_LltyAcct", "_POITxId", "_PmtBrnd", "_SaleTxId"]
 	@property
 	def CstmrLang(self):
 		return self._CstmrLang

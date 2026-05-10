@@ -1,11 +1,11 @@
 from . import base_types
 from ._MandateReason1Choice import MandateReason1Choice
-from ._YesNoIndicator import YesNoIndicator
 from ._Max105Text import Max105Text
+from ._YesNoIndicator import YesNoIndicator
 
 class AcceptanceResult6(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlRjctRsnInf", "_Accptd", "_RjctRsn"]
+	__slots__ = ["_Accptd", "_AddtlRjctRsnInf", "_RjctRsn"]
 	@property
 	def Accptd(self):
 		return self._Accptd

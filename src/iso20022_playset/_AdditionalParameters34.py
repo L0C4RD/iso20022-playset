@@ -1,10 +1,10 @@
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._PartialSettlement2Code import PartialSettlement2Code
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class AdditionalParameters34(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrTxId", "_PoolId", "_CorpActnEvtId", "_CtrPtyMktInfrstrctrTxId", "_PrtlSttlm", "_PrvsPrtlConfId", "_MktInfrstrctrTxId", "_PrcrTxId", "_AcctSvcrTxId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_CorpActnEvtId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_PoolId", "_PrcrTxId", "_PrtlSttlm", "_PrvsPrtlConfId"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

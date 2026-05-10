@@ -1,17 +1,17 @@
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._RenounceableEntitlementStatusTypeFormat3Choice import RenounceableEntitlementStatusTypeFormat3Choice
-from ._BalanceFormat11Choice import BalanceFormat11Choice
 from ._AmountPrice2 import AmountPrice2
-from ._Period11 import Period11
-from ._FractionDispositionType25Choice import FractionDispositionType25Choice
-from ._QuantityToQuantityRatio1 import QuantityToQuantityRatio1
+from ._BalanceFormat11Choice import BalanceFormat11Choice
 from ._DateFormat30Choice import DateFormat30Choice
+from ._DecimalNumber import DecimalNumber
+from ._FractionDispositionType25Choice import FractionDispositionType25Choice
+from ._Period11 import Period11
+from ._QuantityToQuantityRatio1 import QuantityToQuantityRatio1
+from ._RenounceableEntitlementStatusTypeFormat3Choice import RenounceableEntitlementStatusTypeFormat3Choice
+from ._SecurityIdentification19 import SecurityIdentification19
 
 class FinancialInstrumentAttributes110(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_UinstdBal", "_RnncblEntitlmntStsTp", "_MktPric", "_SctyId", "_FrctnDspstn", "_XpryDt", "_PstngDt", "_InstdBal", "_TradgPrd", "_IntrmdtSctiesToUndrlygRatio"]
+	__slots__ = ["_FrctnDspstn", "_InstdBal", "_IntrmdtSctiesToUndrlygRatio", "_MktPric", "_PstngDt", "_Qty", "_RnncblEntitlmntStsTp", "_SctyId", "_TradgPrd", "_UinstdBal", "_XpryDt"]
 	@property
 	def FrctnDspstn(self):
 		return self._FrctnDspstn

@@ -1,13 +1,13 @@
 from . import base_types
 from ._ActivityDetails1 import ActivityDetails1
+from ._BICIdentification1 import BICIdentification1
 from ._DocumentIdentification5 import DocumentIdentification5
 from ._Max35Text import Max35Text
 from ._PendingActivity2 import PendingActivity2
-from ._BICIdentification1 import BICIdentification1
 
 class ActivityReportItems3(base_types._BaseFieldType):
 
-	__slots__ = ["_RptdNtty", "_RptdItm", "_PdgReqForActn", "_UsrTxRef", "_TxId"]
+	__slots__ = ["_PdgReqForActn", "_RptdItm", "_RptdNtty", "_TxId", "_UsrTxRef"]
 	@property
 	def PdgReqForActn(self):
 		return self._PdgReqForActn

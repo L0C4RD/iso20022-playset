@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ContractRegistrationStatementCriteria1 import ContractRegistrationStatementCriteria1
 from ._Max35Text import Max35Text
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._TradeParty6 import TradeParty6
 from ._ReportingPeriod4 import ReportingPeriod4
+from ._SupplementaryData1 import SupplementaryData1
+from ._TradeParty6 import TradeParty6
 
 class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgPrd", "_RegdCtrctId", "_RegnAgt", "_RtrCrit", "_RptgPty", "_SplmtryData", "_StmtReqId"]
+	__slots__ = ["_RegdCtrctId", "_RegnAgt", "_RptgPrd", "_RptgPty", "_RtrCrit", "_SplmtryData", "_StmtReqId"]
 	@property
 	def RegdCtrctId(self):
 		return self._RegdCtrctId

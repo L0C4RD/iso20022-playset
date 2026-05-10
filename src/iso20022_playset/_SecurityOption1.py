@@ -1,18 +1,18 @@
 from . import base_types
-from ._FractionDispositionType1FormatChoice import FractionDispositionType1FormatChoice
-from ._YesNoIndicator import YesNoIndicator
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
-from ._FinancialInstrumentDescription3 import FinancialInstrumentDescription3
-from ._CorporateActionPrice4 import CorporateActionPrice4
 from ._CorporateActionDate3 import CorporateActionDate3
-from ._QuantityToQuantityRatio1 import QuantityToQuantityRatio1
+from ._CorporateActionPrice4 import CorporateActionPrice4
 from ._CreditDebitCode import CreditDebitCode
+from ._FinancialInstrumentDescription3 import FinancialInstrumentDescription3
+from ._FractionDispositionType1FormatChoice import FractionDispositionType1FormatChoice
 from ._Period1 import Period1
+from ._QuantityToQuantityRatio1 import QuantityToQuantityRatio1
 from ._ShareRanking1FormatChoice import ShareRanking1FormatChoice
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class SecurityOption1(base_types._BaseFieldType):
 
-	__slots__ = ["_DtDtls", "_MinExrcblMltplSctiesQty", "_TradgPrd", "_SctyId", "_AddtlQtyForExstgScties", "_FrctnDspstn", "_CdtDbtInd", "_AddtlQtyForSbcbdRsltntScties", "_MinExrcblSctiesQty", "_SctiesQty", "_NewBrdLotSctiesQty", "_NewDnmtnSctiesQty", "_PricDtls", "_ShrRnkg", "_TempFinInstrmInd"]
+	__slots__ = ["_AddtlQtyForExstgScties", "_AddtlQtyForSbcbdRsltntScties", "_CdtDbtInd", "_DtDtls", "_FrctnDspstn", "_MinExrcblMltplSctiesQty", "_MinExrcblSctiesQty", "_NewBrdLotSctiesQty", "_NewDnmtnSctiesQty", "_PricDtls", "_SctiesQty", "_SctyId", "_ShrRnkg", "_TempFinInstrmInd", "_TradgPrd"]
 	@property
 	def AddtlQtyForExstgScties(self):
 		return self._AddtlQtyForExstgScties

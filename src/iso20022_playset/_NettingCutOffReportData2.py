@@ -1,14 +1,14 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._Pagination1 import Pagination1
 from ._ISODateTime import ISODateTime
-from ._PartyIdentification242Choice import PartyIdentification242Choice
+from ._Max35Text import Max35Text
 from ._Max4Text import Max4Text
+from ._Pagination1 import Pagination1
+from ._PartyIdentification242Choice import PartyIdentification242Choice
 
 class NettingCutOffReportData2(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtnDt", "_MsgId", "_NetSvcPtcptId", "_RptSvcr", "_RptTp", "_NetSvcTp", "_CreDtTm", "_MsgPgntn"]
+	__slots__ = ["_ActvtnDt", "_CreDtTm", "_MsgId", "_MsgPgntn", "_NetSvcPtcptId", "_NetSvcTp", "_RptSvcr", "_RptTp"]
 	@property
 	def ActvtnDt(self):
 		return self._ActvtnDt

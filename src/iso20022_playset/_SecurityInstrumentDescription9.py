@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._CFIOct2015Identifier import CFIOct2015Identifier
-from ._Max35Text import Max35Text
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._CFIOct2015Identifier import CFIOct2015Identifier
+from ._ISINOct2015Identifier import ISINOct2015Identifier
 from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class SecurityInstrumentDescription9(base_types._BaseFieldType):
 
-	__slots__ = ["_ClssfctnTp", "_NtnlCcy", "_ShrtNm", "_Id", "_CmmdtyDerivInd", "_FullNm"]
+	__slots__ = ["_ClssfctnTp", "_CmmdtyDerivInd", "_FullNm", "_Id", "_NtnlCcy", "_ShrtNm"]
 	@property
 	def ClssfctnTp(self):
 		return self._ClssfctnTp

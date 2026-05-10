@@ -1,6 +1,6 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ISODate import ISODate
 
 class ClaimNonReceipt3(base_types._BaseFieldType):
 

@@ -1,20 +1,20 @@
 from . import base_types
-from ._ReversalRequest7 import ReversalRequest7
-from ._SupplementaryData1 import SupplementaryData1
-from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
-from ._PaymentRequest7 import PaymentRequest7
-from ._RetailerService2Code import RetailerService2Code
+from ._BalanceInquiryRequest8 import BalanceInquiryRequest8
 from ._BatchRequest7 import BatchRequest7
 from ._CardAcquisitionRequest3 import CardAcquisitionRequest3
+from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 from ._EnableServiceRequest6 import EnableServiceRequest6
-from ._PaymentContext30 import PaymentContext30
-from ._BalanceInquiryRequest8 import BalanceInquiryRequest8
-from ._StoredValueRequest8 import StoredValueRequest8
 from ._LoyaltyRequest7 import LoyaltyRequest7
+from ._PaymentContext30 import PaymentContext30
+from ._PaymentRequest7 import PaymentRequest7
+from ._RetailerService2Code import RetailerService2Code
+from ._ReversalRequest7 import ReversalRequest7
+from ._StoredValueRequest8 import StoredValueRequest8
+from ._SupplementaryData1 import SupplementaryData1
 
 class ServiceRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_BtchReq", "_StordValReq", "_NblSvcReq", "_PmtReq", "_Cntxt", "_RvslReq", "_BalNqryReq", "_LltyReq", "_Envt", "_CardAcqstnReq", "_SvcCntt", "_SplmtryData"]
+	__slots__ = ["_BalNqryReq", "_BtchReq", "_CardAcqstnReq", "_Cntxt", "_Envt", "_LltyReq", "_NblSvcReq", "_PmtReq", "_RvslReq", "_SplmtryData", "_StordValReq", "_SvcCntt"]
 	@property
 	def BalNqryReq(self):
 		return self._BalNqryReq

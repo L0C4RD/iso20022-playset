@@ -1,15 +1,15 @@
 from . import base_types
-from ._Pagination import Pagination
+from ._AdditionalReference3 import AdditionalReference3
+from ._Extension1 import Extension1
+from ._Fund4 import Fund4
 from ._FundCashForecast6 import FundCashForecast6
 from ._MessageIdentification1 import MessageIdentification1
-from ._Fund4 import Fund4
-from ._Extension1 import Extension1
-from ._AdditionalReference3 import AdditionalReference3
 from ._NetCashForecast3 import NetCashForecast3
+from ._Pagination import Pagination
 
 class FundDetailedConfirmedCashForecastReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_CnsltdNetCshFcst", "_MsgId", "_PrvsRef", "_PoolRef", "_RltdRef", "_MsgPgntn", "_FndCshFcstDtls", "_Xtnsn", "_FndOrSubFndDtls"]
+	__slots__ = ["_CnsltdNetCshFcst", "_FndCshFcstDtls", "_FndOrSubFndDtls", "_MsgId", "_MsgPgntn", "_PoolRef", "_PrvsRef", "_RltdRef", "_Xtnsn"]
 	@property
 	def CnsltdNetCshFcst(self):
 		return self._CnsltdNetCshFcst

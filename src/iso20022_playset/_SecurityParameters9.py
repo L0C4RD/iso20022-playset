@@ -1,13 +1,13 @@
 from . import base_types
-from ._Max140Binary import Max140Binary
 from ._ATMSignature2Choice import ATMSignature2Choice
 from ._CryptographicKey12 import CryptographicKey12
+from ._Max140Binary import Max140Binary
 from ._Max35Text import Max35Text
 from ._Max5000Binary import Max5000Binary
 
 class SecurityParameters9(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqdKey", "_SgntrChc", "_Key", "_ATMChllng", "_Cert"]
+	__slots__ = ["_ATMChllng", "_Cert", "_Key", "_ReqdKey", "_SgntrChc"]
 	@property
 	def ATMChllng(self):
 		return self._ATMChllng

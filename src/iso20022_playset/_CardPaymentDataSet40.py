@@ -1,14 +1,14 @@
 from . import base_types
+from ._CardPaymentDataSetTransaction13Choice import CardPaymentDataSetTransaction13Choice
 from ._CommonData14 import CommonData14
 from ._DataSetIdentification5 import DataSetIdentification5
-from ._CardPaymentDataSetTransaction13Choice import CardPaymentDataSetTransaction13Choice
-from ._Traceability8 import Traceability8
 from ._GenericIdentification176 import GenericIdentification176
+from ._Traceability8 import Traceability8
 from ._TransactionTotals12 import TransactionTotals12
 
 class CardPaymentDataSet40(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_DataSetId", "_CmonData", "_TxTtls", "_Tracblt", "_DataSetInitr"]
+	__slots__ = ["_CmonData", "_DataSetId", "_DataSetInitr", "_Tracblt", "_Tx", "_TxTtls"]
 	@property
 	def CmonData(self):
 		return self._CmonData

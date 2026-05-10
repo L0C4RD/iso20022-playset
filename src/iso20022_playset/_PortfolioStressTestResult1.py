@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._AmountAndDirection102 import AmountAndDirection102
 from ._GenericIdentification165 import GenericIdentification165
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PortfolioStressTestResult1(base_types._BaseFieldType):
 
-	__slots__ = ["_RawStrssLoss", "_StrssLoss", "_PrtflId", "_Cover1Flg", "_Cover2Flg"]
+	__slots__ = ["_Cover1Flg", "_Cover2Flg", "_PrtflId", "_RawStrssLoss", "_StrssLoss"]
 	@property
 	def Cover1Flg(self):
 		return self._Cover1Flg

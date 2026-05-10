@@ -1,16 +1,16 @@
 from . import base_types
+from ._AccountContract3 import AccountContract3
 from ._AccountForAction1 import AccountForAction1
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._ContractDocument1 import ContractDocument1
+from ._CustomerAccount5 import CustomerAccount5
 from ._Group6 import Group6
 from ._OperationMandate7 import OperationMandate7
-from ._CustomerAccount5 import CustomerAccount5
-from ._AccountContract3 import AccountContract3
-from ._ContractDocument1 import ContractDocument1
-from ._CashAccount40 import CashAccount40
 
 class AccountReport36(base_types._BaseFieldType):
 
-	__slots__ = ["_Mndt", "_UndrlygMstrAgrmt", "_Grp", "_Acct", "_CtrctDts", "_TrfAcctSvcrId", "_BalTrfAcct", "_RefAcct"]
+	__slots__ = ["_Acct", "_BalTrfAcct", "_CtrctDts", "_Grp", "_Mndt", "_RefAcct", "_TrfAcctSvcrId", "_UndrlygMstrAgrmt"]
 	@property
 	def Acct(self):
 		return self._Acct

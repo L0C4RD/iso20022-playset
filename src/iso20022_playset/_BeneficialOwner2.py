@@ -1,14 +1,14 @@
 from . import base_types
+from ._AlternateIdentification4 import AlternateIdentification4
 from ._BeneficiaryCertificationType9Choice import BeneficiaryCertificationType9Choice
 from ._CountryCode import CountryCode
-from ._AlternateIdentification4 import AlternateIdentification4
+from ._Max350Text import Max350Text
 from ._PartyIdentification100 import PartyIdentification100
 from ._YesNoIndicator import YesNoIndicator
-from ._Max350Text import Max350Text
 
 class BeneficialOwner2(base_types._BaseFieldType):
 
-	__slots__ = ["_DclrtnDtls", "_CertfctnTp", "_BnfclOwnrId", "_DmclCtry", "_NonDmclCtry", "_CertfctnInd", "_Ntlty", "_AddtlId"]
+	__slots__ = ["_AddtlId", "_BnfclOwnrId", "_CertfctnInd", "_CertfctnTp", "_DclrtnDtls", "_DmclCtry", "_NonDmclCtry", "_Ntlty"]
 	@property
 	def AddtlId(self):
 		return self._AddtlId

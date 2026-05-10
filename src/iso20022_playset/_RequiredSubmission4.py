@@ -1,13 +1,13 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
-from ._TradeCertificateType1Code import TradeCertificateType1Code
+from ._BICIdentification1 import BICIdentification1
 from ._Max70Text import Max70Text
 from ._PartyIdentification27 import PartyIdentification27
-from ._BICIdentification1 import BICIdentification1
+from ._TradeCertificateType1Code import TradeCertificateType1Code
+from ._YesNoIndicator import YesNoIndicator
 
 class RequiredSubmission4(base_types._BaseFieldType):
 
-	__slots__ = ["_LineItmId", "_CertTp", "_MtchIsseDt", "_AuthrsdInspctrInd", "_MtchManfctr", "_MtchConsgn", "_Submitr", "_MtchInspctnDt", "_MtchIssr"]
+	__slots__ = ["_AuthrsdInspctrInd", "_CertTp", "_LineItmId", "_MtchConsgn", "_MtchInspctnDt", "_MtchIsseDt", "_MtchIssr", "_MtchManfctr", "_Submitr"]
 	@property
 	def AuthrsdInspctrInd(self):
 		return self._AuthrsdInspctrInd

@@ -1,13 +1,13 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._FinancingDateDetails1 import FinancingDateDetails1
-from ._CashAccount7 import CashAccount7
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._CashAccount7 import CashAccount7
+from ._FinancingDateDetails1 import FinancingDateDetails1
 from ._Number import Number
+from ._PercentageRate import PercentageRate
 
 class FinancingAllowedSummary1(base_types._BaseFieldType):
 
-	__slots__ = ["_FincgAcct", "_CdtAcct", "_FincdItmNb", "_TtlAccptdItmsAmt", "_FincgDtDtls", "_TtlFincdAmt", "_ApldPctg"]
+	__slots__ = ["_ApldPctg", "_CdtAcct", "_FincdItmNb", "_FincgAcct", "_FincgDtDtls", "_TtlAccptdItmsAmt", "_TtlFincdAmt"]
 	@property
 	def ApldPctg(self):
 		return self._ApldPctg

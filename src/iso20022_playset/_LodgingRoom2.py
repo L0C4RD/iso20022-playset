@@ -1,12 +1,12 @@
 from . import base_types
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max35Text import Max35Text
 from ._Max3NumericText import Max3NumericText
 from ._Max70Text import Max70Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class LodgingRoom2(base_types._BaseFieldType):
 
-	__slots__ = ["_BedTp", "_Lctn", "_Chldrn", "_Adlts", "_DalyRate", "_Tp", "_Gsts"]
+	__slots__ = ["_Adlts", "_BedTp", "_Chldrn", "_DalyRate", "_Gsts", "_Lctn", "_Tp"]
 	@property
 	def Adlts(self):
 		return self._Adlts

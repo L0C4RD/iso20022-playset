@@ -1,14 +1,14 @@
 from . import base_types
-from ._Price8 import Price8
-from ._DecimalNumber import DecimalNumber
-from ._SecurityIdentification39 import SecurityIdentification39
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._BenchmarkCurveName7Choice import BenchmarkCurveName7Choice
+from ._DecimalNumber import DecimalNumber
 from ._Max256Text import Max256Text
+from ._Price8 import Price8
+from ._SecurityIdentification39 import SecurityIdentification39
 
 class BenchmarkCurve6(base_types._BaseFieldType):
 
-	__slots__ = ["_BchmkCrvPt", "_Sprd", "_BchmkPric", "_BchmkId", "_BchmkCrvCcy", "_BchmkCrvNm"]
+	__slots__ = ["_BchmkCrvCcy", "_BchmkCrvNm", "_BchmkCrvPt", "_BchmkId", "_BchmkPric", "_Sprd"]
 	@property
 	def BchmkCrvCcy(self):
 		return self._BchmkCrvCcy

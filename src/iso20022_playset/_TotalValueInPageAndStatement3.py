@@ -3,7 +3,7 @@ from ._AmountAndDirection14 import AmountAndDirection14
 
 class TotalValueInPageAndStatement3(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlHldgsValOfPg", "_TtlBookValOfStmt", "_TtlElgblCollVal", "_TtlHldgsValOfStmt"]
+	__slots__ = ["_TtlBookValOfStmt", "_TtlElgblCollVal", "_TtlHldgsValOfPg", "_TtlHldgsValOfStmt"]
 	@property
 	def TtlBookValOfStmt(self):
 		return self._TtlBookValOfStmt

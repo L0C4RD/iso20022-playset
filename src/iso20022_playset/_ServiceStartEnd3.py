@@ -1,14 +1,14 @@
 from . import base_types
 from ._Address2 import Address2
-from ._JourneyType1Code import JourneyType1Code
 from ._ContactBusiness1 import ContactBusiness1
-from ._Max35Text import Max35Text
 from ._ISODateTime import ISODateTime
+from ._JourneyType1Code import JourneyType1Code
+from ._Max35Text import Max35Text
 from ._TimeSegment1Code import TimeSegment1Code
 
 class ServiceStartEnd3(base_types._BaseFieldType):
 
-	__slots__ = ["_DtAndTm", "_Lctn", "_Ctct", "_Adr", "_TmSgmt", "_JrnyTp", "_JrnyDtAndTm", "_JrnyData", "_LctnCd"]
+	__slots__ = ["_Adr", "_Ctct", "_DtAndTm", "_JrnyData", "_JrnyDtAndTm", "_JrnyTp", "_Lctn", "_LctnCd", "_TmSgmt"]
 	@property
 	def Adr(self):
 		return self._Adr

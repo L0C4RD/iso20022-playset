@@ -1,18 +1,18 @@
 from . import base_types
-from ._KeyUsage1Code import KeyUsage1Code
-from ._Number import Number
-from ._Max256Text import Max256Text
-from ._KeyChoiceValue2 import KeyChoiceValue2
 from ._CryptographicKeyType3Code import CryptographicKeyType3Code
-from ._Max35Text import Max35Text
-from ._Max35Binary import Max35Binary
 from ._ISODateTime import ISODateTime
+from ._KeyChoiceValue2 import KeyChoiceValue2
+from ._KeyUsage1Code import KeyUsage1Code
 from ._Max140Text import Max140Text
+from ._Max256Text import Max256Text
+from ._Max35Binary import Max35Binary
+from ._Max35Text import Max35Text
+from ._Number import Number
 from ._PublicRSAKey1 import PublicRSAKey1
 
 class CryptographicKey12(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyDomnId", "_Fctn", "_Nm", "_PblcKeyVal", "_AddtlId", "_KeyChcVal", "_Id", "_Tp", "_ActvtnDt", "_DeactvtnDt", "_SeqCntr", "_KeyChckVal", "_Vrsn"]
+	__slots__ = ["_ActvtnDt", "_AddtlId", "_DeactvtnDt", "_Fctn", "_Id", "_KeyChcVal", "_KeyChckVal", "_Nm", "_PblcKeyVal", "_SctyDomnId", "_SeqCntr", "_Tp", "_Vrsn"]
 	@property
 	def ActvtnDt(self):
 		return self._ActvtnDt

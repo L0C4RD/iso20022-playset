@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._MessageHeader7 import MessageHeader7
 from ._ResendSearchCriteria2 import ResendSearchCriteria2
+from ._SupplementaryData1 import SupplementaryData1
 
 class ResendRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgHdr", "_RsndSchCrit"]
+	__slots__ = ["_MsgHdr", "_RsndSchCrit", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

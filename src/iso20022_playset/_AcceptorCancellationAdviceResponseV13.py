@@ -1,11 +1,11 @@
 from . import base_types
-from ._Header70 import Header70
-from ._ContentInformationType37 import ContentInformationType37
 from ._AcceptorCancellationAdviceResponse13 import AcceptorCancellationAdviceResponse13
+from ._ContentInformationType37 import ContentInformationType37
+from ._Header70 import Header70
 
 class AcceptorCancellationAdviceResponseV13(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlAdvcRspn", "_SctyTrlr", "_Hdr"]
+	__slots__ = ["_CxlAdvcRspn", "_Hdr", "_SctyTrlr"]
 	@property
 	def CxlAdvcRspn(self):
 		return self._CxlAdvcRspn

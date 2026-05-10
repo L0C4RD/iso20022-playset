@@ -5,7 +5,7 @@ from ._ReportingMessageStatus1Code import ReportingMessageStatus1Code
 
 class RejectionReason45(base_types._BaseFieldType):
 
-	__slots__ = ["_DtldVldtnRule", "_Sts", "_MsgRptId"]
+	__slots__ = ["_DtldVldtnRule", "_MsgRptId", "_Sts"]
 	@property
 	def DtldVldtnRule(self):
 		return self._DtldVldtnRule

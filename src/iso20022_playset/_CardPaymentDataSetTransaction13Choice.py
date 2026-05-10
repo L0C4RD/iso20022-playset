@@ -1,13 +1,13 @@
 from . import base_types
-from ._CardPaymentDataSetTransaction52 import CardPaymentDataSetTransaction52
-from ._CardPaymentDataSetTransaction51 import CardPaymentDataSetTransaction51
-from ._CardPaymentDataSetTransaction53 import CardPaymentDataSetTransaction53
 from ._CardPaymentDataSetTransaction50 import CardPaymentDataSetTransaction50
+from ._CardPaymentDataSetTransaction51 import CardPaymentDataSetTransaction51
+from ._CardPaymentDataSetTransaction52 import CardPaymentDataSetTransaction52
+from ._CardPaymentDataSetTransaction53 import CardPaymentDataSetTransaction53
 from ._TokenRequestComponent5 import TokenRequestComponent5
 
 class CardPaymentDataSetTransaction13Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmpltn", "_TknReq", "_Cxl", "_TknRspn", "_AuthstnRspn", "_AuthstnReq"]
+	__slots__ = ["_AuthstnReq", "_AuthstnRspn", "_Cmpltn", "_Cxl", "_TknReq", "_TknRspn"]
 	@property
 	def AuthstnReq(self):
 		return self._AuthstnReq

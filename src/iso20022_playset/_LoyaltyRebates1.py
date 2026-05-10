@@ -1,11 +1,11 @@
 from . import base_types
-from ._SaleItemRebate1 import SaleItemRebate1
-from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._SaleItemRebate1 import SaleItemRebate1
 
 class LoyaltyRebates1(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleItmRbt", "_TtlRbt", "_RbtLabl"]
+	__slots__ = ["_RbtLabl", "_SaleItmRbt", "_TtlRbt"]
 	@property
 	def RbtLabl(self):
 		return self._RbtLabl

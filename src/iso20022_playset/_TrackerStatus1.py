@@ -1,12 +1,12 @@
 from . import base_types
-from ._PaymentRejectReturnReason1 import PaymentRejectReturnReason1
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
+from ._PaymentRejectReturnReason1 import PaymentRejectReturnReason1
 from ._PaymentStatusReason1 import PaymentStatusReason1
 
 class TrackerStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctRtrRsn", "_Sts", "_Dt", "_StsRsn"]
+	__slots__ = ["_Dt", "_RjctRtrRsn", "_Sts", "_StsRsn"]
 	@property
 	def Dt(self):
 		return self._Dt

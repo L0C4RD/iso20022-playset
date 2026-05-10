@@ -5,7 +5,7 @@ from ._OtherAsset2Choice import OtherAsset2Choice
 
 class OtherAsset2(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_AddtlInf", "_OthrId", "_Id", "_OthrAsstTp", "_Desc"]
+	__slots__ = ["_AddtlInf", "_Desc", "_Id", "_Nm", "_OthrAsstTp", "_OthrId"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

@@ -1,18 +1,18 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Max2048Text import Max2048Text
-from ._YesNoIndicator import YesNoIndicator
-from ._Max6Text import Max6Text
+from ._AlgorithmAndDigest1 import AlgorithmAndDigest1
 from ._BinaryFile1 import BinaryFile1
 from ._ExternalDocumentType1Code import ExternalDocumentType1Code
-from ._AlgorithmAndDigest1 import AlgorithmAndDigest1
-from ._xs:IDREF import xs:IDREF
+from ._ISODate import ISODate
+from ._Max2048Text import Max2048Text
 from ._Max35Text import Max35Text
+from ._Max6Text import Max6Text
+from ._YesNoIndicator import YesNoIndicator
 from ._xs:ID import xs:ID
+from ._xs:IDREF import xs:IDREF
 
 class QualifiedDocumentInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_Dt", "_ItmIdr", "_Id", "_Dgst", "_Vrsn", "_AttchdFile", "_URL", "_ElctrncOrgnl", "_ItmListIdr", "_DocTp"]
+	__slots__ = ["_AttchdFile", "_Dgst", "_DocTp", "_Dt", "_ElctrncOrgnl", "_Id", "_Issr", "_ItmIdr", "_ItmListIdr", "_URL", "_Vrsn"]
 	@property
 	def AttchdFile(self):
 		return self._AttchdFile

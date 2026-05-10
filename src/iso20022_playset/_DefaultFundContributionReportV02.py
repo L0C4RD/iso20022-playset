@@ -1,12 +1,12 @@
 from . import base_types
-from ._ReportParameters2 import ReportParameters2
-from ._SupplementaryData1 import SupplementaryData1
 from ._DefaultFundReport1 import DefaultFundReport1
 from ._PartyIdentification35Choice import PartyIdentification35Choice
+from ._ReportParameters2 import ReportParameters2
+from ._SupplementaryData1 import SupplementaryData1
 
 class DefaultFundContributionReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RptDtls", "_RptParams", "_ClrMmb", "_SplmtryData"]
+	__slots__ = ["_ClrMmb", "_RptDtls", "_RptParams", "_SplmtryData"]
 	@property
 	def ClrMmb(self):
 		return self._ClrMmb

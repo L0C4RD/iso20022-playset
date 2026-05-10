@@ -4,7 +4,7 @@ from ._RejectedStatus56Choice import RejectedStatus56Choice
 
 class RejectedStatus11(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctdRsn", "_RjctdQty"]
+	__slots__ = ["_RjctdQty", "_RjctdRsn"]
 	@property
 	def RjctdQty(self):
 		return self._RjctdQty

@@ -1,14 +1,14 @@
 from . import base_types
 from ._Header23 import Header23
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradePartyIdentification9 import TradePartyIdentification9
 from ._Max35Text import Max35Text
 from ._MessageIdentification1 import MessageIdentification1
+from ._SupplementaryData1 import SupplementaryData1
+from ._TradePartyIdentification9 import TradePartyIdentification9
 from ._UnderlyingProductIdentifier1Code import UnderlyingProductIdentifier1Code
 
 class ForeignExchangeTradeConfirmationRequestCancellationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_TradId", "_CtrPtyRoleId", "_TradgSdId", "_UndrlygPdctTp", "_SplmtryData", "_Hdr", "_CxlReqId"]
+	__slots__ = ["_CtrPtyRoleId", "_CxlReqId", "_Hdr", "_SplmtryData", "_TradId", "_TradgSdId", "_UndrlygPdctTp"]
 	@property
 	def CtrPtyRoleId(self):
 		return self._CtrPtyRoleId

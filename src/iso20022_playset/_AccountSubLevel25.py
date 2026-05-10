@@ -1,11 +1,11 @@
 from . import base_types
-from ._ShareholdingBalance1 import ShareholdingBalance1
-from ._PartyIdentification276 import PartyIdentification276
 from ._Max35Text import Max35Text
+from ._PartyIdentification276 import PartyIdentification276
+from ._ShareholdingBalance1 import ShareholdingBalance1
 
 class AccountSubLevel25(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgAcct", "_AcctHldr", "_ShrhldgBal"]
+	__slots__ = ["_AcctHldr", "_SfkpgAcct", "_ShrhldgBal"]
 	@property
 	def AcctHldr(self):
 		return self._AcctHldr

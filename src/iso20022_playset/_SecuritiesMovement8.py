@@ -1,17 +1,17 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._AmountAndDirection44 import AmountAndDirection44
-from ._YesNoIndicator import YesNoIndicator
-from ._SecurityIdentification19 import SecurityIdentification19
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._Quantity51Choice import Quantity51Choice
-from ._SecuritiesMovementStatus1Choice import SecuritiesMovementStatus1Choice
 from ._Max35Text import Max35Text
+from ._Quantity51Choice import Quantity51Choice
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SecuritiesMovementStatus1Choice import SecuritiesMovementStatus1Choice
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._YesNoIndicator import YesNoIndicator
 
 class SecuritiesMovement8(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_SctiesMvmntTp", "_PosTp", "_SfkpgAcct", "_TrptyAgtSvcPrvdrSctiesMvmntId", "_SctiesQty", "_SctiesMvmntsApprvd", "_BlckChainAdrOrWllt", "_ClntSctiesMvmntId", "_MvmntSts", "_CollMvmnt", "_MrgndVal"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_ClntSctiesMvmntId", "_CollMvmnt", "_FinInstrmId", "_MrgndVal", "_MvmntSts", "_PosTp", "_SctiesMvmntTp", "_SctiesMvmntsApprvd", "_SctiesQty", "_SfkpgAcct", "_TrptyAgtSvcPrvdrSctiesMvmntId"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt

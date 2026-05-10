@@ -1,13 +1,13 @@
 from . import base_types
 from ._CommunicationMethod1Choice import CommunicationMethod1Choice
-from ._PostalAddress6 import PostalAddress6
-from ._PartyType1Choice import PartyType1Choice
 from ._Max140Text import Max140Text
 from ._Number import Number
+from ._PartyType1Choice import PartyType1Choice
+from ._PostalAddress6 import PostalAddress6
 
 class NonExtension1(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnMtd", "_NtfctnPrd", "_NtfctnRcptNm", "_NtfctnRcptTp", "_NtfctnRcptAdr"]
+	__slots__ = ["_NtfctnMtd", "_NtfctnPrd", "_NtfctnRcptAdr", "_NtfctnRcptNm", "_NtfctnRcptTp"]
 	@property
 	def NtfctnMtd(self):
 		return self._NtfctnMtd

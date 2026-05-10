@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._AccountIdentification26 import AccountIdentification26
 from ._EffectiveDate1 import EffectiveDate1
+from ._MarketIdentificationOrCashPurpose1Choice import MarketIdentificationOrCashPurpose1Choice
 from ._Max35Text import Max35Text
 from ._PartyOrCurrency1Choice import PartyOrCurrency1Choice
-from ._MarketIdentificationOrCashPurpose1Choice import MarketIdentificationOrCashPurpose1Choice
-from ._AccountIdentification26 import AccountIdentification26
+from ._SupplementaryData1 import SupplementaryData1
 
 class StandingSettlementInstructionDeletionV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmDtls", "_MsgRefId", "_FctvDtDtls", "_MktId", "_AcctId", "_SplmtryData"]
+	__slots__ = ["_AcctId", "_FctvDtDtls", "_MktId", "_MsgRefId", "_SplmtryData", "_SttlmDtls"]
 	@property
 	def AcctId(self):
 		return self._AcctId

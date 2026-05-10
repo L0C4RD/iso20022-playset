@@ -1,7 +1,7 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._IdentificationAssignment4 import IdentificationAssignment4
 from ._IdentificationVerification5 import IdentificationVerification5
+from ._SupplementaryData1 import SupplementaryData1
 
 class IdentificationVerificationRequestV04(base_types._BaseFieldType):
 

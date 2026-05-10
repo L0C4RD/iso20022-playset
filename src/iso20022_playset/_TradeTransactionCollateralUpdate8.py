@@ -1,13 +1,13 @@
 from . import base_types
 from ._CounterpartyData88 import CounterpartyData88
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionLoanData26Choice import TransactionLoanData26Choice
-from ._TransactionCollateralData18Choice import TransactionCollateralData18Choice
 from ._Max140Text import Max140Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionCollateralData18Choice import TransactionCollateralData18Choice
+from ._TransactionLoanData26Choice import TransactionLoanData26Choice
 
 class TradeTransactionCollateralUpdate8(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtySpcfcData", "_LnData", "_CollData", "_TechRcrdId", "_SplmtryData"]
+	__slots__ = ["_CollData", "_CtrPtySpcfcData", "_LnData", "_SplmtryData", "_TechRcrdId"]
 	@property
 	def CollData(self):
 		return self._CollData

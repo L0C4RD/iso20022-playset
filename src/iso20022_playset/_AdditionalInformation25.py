@@ -1,11 +1,11 @@
 from . import base_types
+from ._GenericIdentification36 import GenericIdentification36
 from ._Max350Text import Max350Text
 from ._RejectedReason33Choice import RejectedReason33Choice
-from ._GenericIdentification36 import GenericIdentification36
 
 class AdditionalInformation25(base_types._BaseFieldType):
 
-	__slots__ = ["_QryRsn", "_QryTp", "_RjctnRsn", "_Qry"]
+	__slots__ = ["_Qry", "_QryRsn", "_QryTp", "_RjctnRsn"]
 	@property
 	def Qry(self):
 		return self._Qry

@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max256Text import Max256Text
 from ._PhoneNumber import PhoneNumber
 from ._PostalAddress22 import PostalAddress22
-from ._Max256Text import Max256Text
 
 class CommunicationAddress9(base_types._BaseFieldType):
 
-	__slots__ = ["_CstmrSvc", "_Phne", "_URLAdr", "_Email", "_PstlAdr", "_AddtlCtctInf"]
+	__slots__ = ["_AddtlCtctInf", "_CstmrSvc", "_Email", "_Phne", "_PstlAdr", "_URLAdr"]
 	@property
 	def AddtlCtctInf(self):
 		return self._AddtlCtctInf

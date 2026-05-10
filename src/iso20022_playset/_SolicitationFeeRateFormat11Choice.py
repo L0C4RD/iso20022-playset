@@ -6,7 +6,7 @@ from ._RateValueType7Code import RateValueType7Code
 
 class SolicitationFeeRateFormat11Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotSpcfdRate", "_AmtToQty", "_Rate", "_Amt"]
+	__slots__ = ["_Amt", "_AmtToQty", "_NotSpcfdRate", "_Rate"]
 	@property
 	def Amt(self):
 		return self._Amt

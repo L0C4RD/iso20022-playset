@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MessageIdentification8 import MessageIdentification8
 from ._IdentificationAssignment4 import IdentificationAssignment4
+from ._MessageIdentification8 import MessageIdentification8
+from ._SupplementaryData1 import SupplementaryData1
 from ._VerificationReport5 import VerificationReport5
 
 class IdentificationVerificationReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Assgnmt", "_Rpt", "_OrgnlAssgnmt"]
+	__slots__ = ["_Assgnmt", "_OrgnlAssgnmt", "_Rpt", "_SplmtryData"]
 	@property
 	def Assgnmt(self):
 		return self._Assgnmt

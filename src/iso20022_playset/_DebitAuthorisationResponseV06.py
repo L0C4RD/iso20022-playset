@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._DebitAuthorisationConfirmation2 import DebitAuthorisationConfirmation2
-from ._CaseAssignment6 import CaseAssignment6
 from ._Case6 import Case6
+from ._CaseAssignment6 import CaseAssignment6
+from ._DebitAuthorisationConfirmation2 import DebitAuthorisationConfirmation2
+from ._SupplementaryData1 import SupplementaryData1
 
 class DebitAuthorisationResponseV06(base_types._BaseFieldType):
 
-	__slots__ = ["_Conf", "_Assgnmt", "_Case", "_SplmtryData"]
+	__slots__ = ["_Assgnmt", "_Case", "_Conf", "_SplmtryData"]
 	@property
 	def Assgnmt(self):
 		return self._Assgnmt

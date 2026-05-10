@@ -1,11 +1,11 @@
 from . import base_types
-from ._IssuerOrInvestor2Choice import IssuerOrInvestor2Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._IssuerOrInvestor2Choice import IssuerOrInvestor2Choice
 from ._SecurityIdentification19 import SecurityIdentification19
 
 class SecurityCSDLink9(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_VldFr", "_IssrInvstrCSD"]
+	__slots__ = ["_FinInstrmId", "_IssrInvstrCSD", "_VldFr"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId

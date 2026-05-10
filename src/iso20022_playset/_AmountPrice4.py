@@ -1,10 +1,10 @@
 from . import base_types
-from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
 from ._AmountPriceType2Code import AmountPriceType2Code
+from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
 
 class AmountPrice4(base_types._BaseFieldType):
 
-	__slots__ = ["_PricVal", "_AmtPricTp"]
+	__slots__ = ["_AmtPricTp", "_PricVal"]
 	@property
 	def AmtPricTp(self):
 		return self._AmtPricTp

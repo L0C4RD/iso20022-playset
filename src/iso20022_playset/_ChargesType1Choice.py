@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ChargeType8Code import ChargeType8Code
+from ._Max35Text import Max35Text
 
 class ChargesType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_OthrChrgsTp"]
+	__slots__ = ["_OthrChrgsTp", "_Tp"]
 	@property
 	def OthrChrgsTp(self):
 		return self._OthrChrgsTp

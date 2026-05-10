@@ -1,11 +1,11 @@
 from . import base_types
+from ._DocumentIdentification51 import DocumentIdentification51
 from ._IntraBalanceQueryDefinition11 import IntraBalanceQueryDefinition11
 from ._SupplementaryData1 import SupplementaryData1
-from ._DocumentIdentification51 import DocumentIdentification51
 
 class IntraBalanceMovementQueryV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Id", "_QryDef"]
+	__slots__ = ["_Id", "_QryDef", "_SplmtryData"]
 	@property
 	def Id(self):
 		return self._Id

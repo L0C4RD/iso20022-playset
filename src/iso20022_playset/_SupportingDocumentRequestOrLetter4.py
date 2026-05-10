@@ -1,18 +1,18 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._OriginalMessage6 import OriginalMessage6
-from ._SupplementaryData1 import SupplementaryData1
-from ._Party50Choice import Party50Choice
 from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
-from ._SupportLetterType1Choice import SupportLetterType1Choice
+from ._ISODate import ISODate
 from ._Max1025Text import Max1025Text
-from ._Max35Text import Max35Text
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._OriginalMessage6 import OriginalMessage6
+from ._Party50Choice import Party50Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._SupportLetterType1Choice import SupportLetterType1Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 
-	__slots__ = ["_Sbjt", "_Dt", "_OrgnlRefs", "_Desc", "_Sndr", "_DueDt", "_RspnReqrd", "_SplmtryData", "_Rcvr", "_ReqOrLttrId", "_Attchmnt", "_Tp"]
+	__slots__ = ["_Attchmnt", "_Desc", "_Dt", "_DueDt", "_OrgnlRefs", "_Rcvr", "_ReqOrLttrId", "_RspnReqrd", "_Sbjt", "_Sndr", "_SplmtryData", "_Tp"]
 	@property
 	def Attchmnt(self):
 		return self._Attchmnt

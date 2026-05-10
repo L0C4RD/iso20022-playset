@@ -1,34 +1,34 @@
 from . import base_types
-from ._DisputeData4 import DisputeData4
-from ._Token2 import Token2
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._TransactionIdentification54 import TransactionIdentification54
-from ._Context24 import Context24
-from ._CardData13 import CardData13
 from ._AdditionalData2 import AdditionalData2
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._Jurisdiction2 import Jurisdiction2
-from ._Terminal8 import Terminal8
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ProcessingResult23 import ProcessingResult23
-from ._SpecialProgrammeQualification2 import SpecialProgrammeQualification2
-from ._ContentInformationType41 import ContentInformationType41
-from ._PartyIdentification285 import PartyIdentification285
-from ._SettlementService6 import SettlementService6
-from ._ProtectedData2 import ProtectedData2
 from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
-from ._Wallet3 import Wallet3
-from ._PartyIdentification287 import PartyIdentification287
+from ._CardData13 import CardData13
+from ._ContentInformationType41 import ContentInformationType41
+from ._Context24 import Context24
 from ._DateTime2 import DateTime2
-from ._RetrievalFulfilmentInstructions3 import RetrievalFulfilmentInstructions3
-from ._TransactionCharacteristics3 import TransactionCharacteristics3
+from ._DisputeData4 import DisputeData4
 from ._Header71 import Header71
+from ._ISO8583ResponseCode import ISO8583ResponseCode
+from ._Jurisdiction2 import Jurisdiction2
+from ._PartyIdentification285 import PartyIdentification285
+from ._PartyIdentification286 import PartyIdentification286
+from ._PartyIdentification287 import PartyIdentification287
+from ._ProcessingResult23 import ProcessingResult23
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._ProtectedData2 import ProtectedData2
+from ._Reconciliation4 import Reconciliation4
+from ._RetrievalFulfilmentInstructions3 import RetrievalFulfilmentInstructions3
+from ._SettlementService6 import SettlementService6
+from ._SpecialProgrammeQualification2 import SpecialProgrammeQualification2
+from ._SupplementaryData1 import SupplementaryData1
+from ._Terminal8 import Terminal8
+from ._Token2 import Token2
+from ._TransactionCharacteristics3 import TransactionCharacteristics3
+from ._TransactionIdentification54 import TransactionIdentification54
+from ._Wallet3 import Wallet3
 
 class RetrievalResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Termnl", "_Sndr", "_AddtlData", "_AddtlFee", "_Pyee", "_Rcncltn", "_ConvsDtTm", "_PrcgRslt", "_Pyer", "_DsptData", "_RtrvlFlfmtInstrs", "_Orgtr", "_Acqrr", "_Dstn", "_TxId", "_Issr", "_Jursdctn", "_Cntxt", "_Tkn", "_TxChrtcs", "_Prgrmm", "_SctyTrlr", "_Card", "_Rcvr", "_Accptr", "_SttlmSvc", "_PrtctdData", "_OrgnlRspnCd", "_SpclPrgrmmQlfctn", "_Wllt", "_SplmtryData", "_Hdr"]
+	__slots__ = ["_Accptr", "_Acqrr", "_AddtlData", "_AddtlFee", "_Card", "_Cntxt", "_ConvsDtTm", "_DsptData", "_Dstn", "_Hdr", "_Issr", "_Jursdctn", "_OrgnlRspnCd", "_Orgtr", "_PrcgRslt", "_Prgrmm", "_PrtctdData", "_Pyee", "_Pyer", "_Rcncltn", "_Rcvr", "_RtrvlFlfmtInstrs", "_SctyTrlr", "_Sndr", "_SpclPrgrmmQlfctn", "_SplmtryData", "_SttlmSvc", "_Termnl", "_Tkn", "_TxChrtcs", "_TxId", "_Wllt"]
 	@property
 	def Accptr(self):
 		return self._Accptr

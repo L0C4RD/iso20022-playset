@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecuritiesTransactionReport7 import SecuritiesTransactionReport7
 from ._SecuritiesTransactionReport2 import SecuritiesTransactionReport2
+from ._SecuritiesTransactionReport7 import SecuritiesTransactionReport7
+from ._SupplementaryData1 import SupplementaryData1
 
 class ReportingTransactionType3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Cxl", "_New"]
+	__slots__ = ["_Cxl", "_New", "_SplmtryData"]
 	@property
 	def Cxl(self):
 		return self._Cxl

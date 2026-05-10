@@ -1,10 +1,10 @@
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 
 class EquivalentAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyOfTrf", "_Amt"]
+	__slots__ = ["_Amt", "_CcyOfTrf"]
 	@property
 	def Amt(self):
 		return self._Amt

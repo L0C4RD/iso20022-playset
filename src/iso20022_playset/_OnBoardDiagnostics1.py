@@ -1,15 +1,15 @@
 from . import base_types
-from ._Max12NumericText import Max12NumericText
 from ._Max10NumberFraction2 import Max10NumberFraction2
-from ._Max6NumberFraction2 import Max6NumberFraction2
+from ._Max12NumericText import Max12NumericText
 from ._Max35Text import Max35Text
 from ._Max3NumericText import Max3NumericText
 from ._Max4NumericText import Max4NumericText
 from ._Max5NumericText import Max5NumericText
+from ._Max6NumberFraction2 import Max6NumberFraction2
 
 class OnBoardDiagnostics1(base_types._BaseFieldType):
 
-	__slots__ = ["_FuelTankLvlStart", "_HardAcclrtn", "_NgnHrs", "_BttryVltg", "_NgnRPM", "_RfrgrtnTmprtr", "_NgnOilPrssr", "_NgnTtlTm", "_NgnOilLifeRmng", "_NgnIdleTm", "_HardBrakg", "_FuelEcnmy", "_NgnOilTmprtr", "_FuelGaugeLvl", "_CoolntTmprtr", "_ChckNgnWrngSts", "_NgnTtlIdleTm", "_RfrgrtnHrs", "_NgnLd"]
+	__slots__ = ["_BttryVltg", "_ChckNgnWrngSts", "_CoolntTmprtr", "_FuelEcnmy", "_FuelGaugeLvl", "_FuelTankLvlStart", "_HardAcclrtn", "_HardBrakg", "_NgnHrs", "_NgnIdleTm", "_NgnLd", "_NgnOilLifeRmng", "_NgnOilPrssr", "_NgnOilTmprtr", "_NgnRPM", "_NgnTtlIdleTm", "_NgnTtlTm", "_RfrgrtnHrs", "_RfrgrtnTmprtr"]
 	@property
 	def BttryVltg(self):
 		return self._BttryVltg

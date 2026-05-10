@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
 from ._CollateralAccountType1Code import CollateralAccountType1Code
+from ._GenericIdentification36 import GenericIdentification36
 
 class CollateralAccountIdentificationType3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Prtry"]
+	__slots__ = ["_Prtry", "_Tp"]
 	@property
 	def Prtry(self):
 		return self._Prtry

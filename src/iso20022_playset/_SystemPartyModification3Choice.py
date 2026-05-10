@@ -1,18 +1,18 @@
 from . import base_types
-from ._PartyName3 import PartyName3
-from ._TechnicalIdentification2Choice import TechnicalIdentification2Choice
-from ._ResidenceType1Code import ResidenceType1Code
-from ._PartyLockStatus1 import PartyLockStatus1
-from ._SystemParty2 import SystemParty2
-from ._MarketSpecificAttribute1 import MarketSpecificAttribute1
-from ._SystemRestriction1 import SystemRestriction1
 from ._Contact14 import Contact14
-from ._SystemPartyIdentification10 import SystemPartyIdentification10
+from ._MarketSpecificAttribute1 import MarketSpecificAttribute1
+from ._PartyLockStatus1 import PartyLockStatus1
+from ._PartyName3 import PartyName3
 from ._PostalAddress28 import PostalAddress28
+from ._ResidenceType1Code import ResidenceType1Code
+from ._SystemParty2 import SystemParty2
+from ._SystemPartyIdentification10 import SystemPartyIdentification10
+from ._SystemRestriction1 import SystemRestriction1
+from ._TechnicalIdentification2Choice import TechnicalIdentification2Choice
 
 class SystemPartyModification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctDtls", "_PtyId", "_TechAdr", "_PtyNm", "_MktSpcfcAttr", "_SysPtyDt", "_ResTp", "_LckSts", "_PtyAdr", "_SysRstrctn"]
+	__slots__ = ["_CtctDtls", "_LckSts", "_MktSpcfcAttr", "_PtyAdr", "_PtyId", "_PtyNm", "_ResTp", "_SysPtyDt", "_SysRstrctn", "_TechAdr"]
 	@property
 	def CtctDtls(self):
 		return self._CtctDtls

@@ -4,7 +4,7 @@ from ._TradeMarket2Code import TradeMarket2Code
 
 class TradingVenueType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OnVn", "_OffVn"]
+	__slots__ = ["_OffVn", "_OnVn"]
 	@property
 	def OffVn(self):
 		return self._OffVn

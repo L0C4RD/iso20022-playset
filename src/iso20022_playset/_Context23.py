@@ -1,21 +1,21 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISODate import ISODate
-from ._SecurityCharacteristics1Code import SecurityCharacteristics1Code
-from ._ICCFallbackReason1Code import ICCFallbackReason1Code
-from ._ECommerceData1 import ECommerceData1
-from ._QRCodePresentmentMode1Code import QRCodePresentmentMode1Code
 from ._AdditionalData1 import AdditionalData1
-from ._TransactionInitiator1Code import TransactionInitiator1Code
-from ._ISO18245MerchantCategoryCode import ISO18245MerchantCategoryCode
-from ._Max35Text import Max35Text
-from ._MOTO2Code import MOTO2Code
 from ._CardDataReading10Code import CardDataReading10Code
+from ._ECommerceData1 import ECommerceData1
+from ._ICCFallbackReason1Code import ICCFallbackReason1Code
+from ._ISO18245MerchantCategoryCode import ISO18245MerchantCategoryCode
+from ._ISODate import ISODate
+from ._MOTO2Code import MOTO2Code
 from ._Max35NumericText import Max35NumericText
+from ._Max35Text import Max35Text
+from ._QRCodePresentmentMode1Code import QRCodePresentmentMode1Code
+from ._SecurityCharacteristics1Code import SecurityCharacteristics1Code
+from ._TransactionInitiator1Code import TransactionInitiator1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Context23(base_types._BaseFieldType):
 
-	__slots__ = ["_CardPres", "_ICCFllbckRsnCd", "_PrtlShipmnt", "_CardDataNtryMd", "_ReSubmissn", "_DelydAuthstn", "_TrnspndrInittd", "_StorgLctn", "_EComrcIndPropsd", "_Attndd", "_EComrcData", "_PINNtryBpss", "_Reauthstn", "_DfrrdDlvry", "_DelydChrgs", "_NoShow", "_TempScrCardDataReusd", "_CaptrDt", "_Trnst", "_MrchntCtgyCd", "_EComrcIndApld", "_SctyChrtcs", "_EComrc", "_CrdhldrPres", "_ICCFllbck", "_OthrMrchntCtgy", "_CrdhldrActvtd", "_PmtCrdntlMrchntRltsh", "_QRCdPresntmntMd", "_PINPadInprtv", "_AddtlData", "_TxInitr", "_MgntcStrpFllbck", "_OthrCardDataNtryMd", "_OthrSctyChrtcs", "_DtAntcptd", "_FnlAuthstn", "_OthrQRCdPresntmntMd", "_OthrICCFllbckRsnCd", "_LatePresntmnt", "_AuthntcnOutg", "_UattnddLvlCtgy", "_MOTOCd", "_PrtlApprvlSpprtd", "_SpltPmt", "_MrchntCtgySpcfcData", "_CstmrCnsnt"]
+	__slots__ = ["_AddtlData", "_Attndd", "_AuthntcnOutg", "_CaptrDt", "_CardDataNtryMd", "_CardPres", "_CrdhldrActvtd", "_CrdhldrPres", "_CstmrCnsnt", "_DelydAuthstn", "_DelydChrgs", "_DfrrdDlvry", "_DtAntcptd", "_EComrc", "_EComrcData", "_EComrcIndApld", "_EComrcIndPropsd", "_FnlAuthstn", "_ICCFllbck", "_ICCFllbckRsnCd", "_LatePresntmnt", "_MOTOCd", "_MgntcStrpFllbck", "_MrchntCtgyCd", "_MrchntCtgySpcfcData", "_NoShow", "_OthrCardDataNtryMd", "_OthrICCFllbckRsnCd", "_OthrMrchntCtgy", "_OthrQRCdPresntmntMd", "_OthrSctyChrtcs", "_PINNtryBpss", "_PINPadInprtv", "_PmtCrdntlMrchntRltsh", "_PrtlApprvlSpprtd", "_PrtlShipmnt", "_QRCdPresntmntMd", "_ReSubmissn", "_Reauthstn", "_SctyChrtcs", "_SpltPmt", "_StorgLctn", "_TempScrCardDataReusd", "_TrnspndrInittd", "_Trnst", "_TxInitr", "_UattnddLvlCtgy"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

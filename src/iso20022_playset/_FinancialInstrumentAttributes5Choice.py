@@ -1,7 +1,7 @@
 from . import base_types
 from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._SecurityInstrumentDescription22 import SecurityInstrumentDescription22
 from ._SecurityIdentification19 import SecurityIdentification19
+from ._SecurityInstrumentDescription22 import SecurityInstrumentDescription22
 
 class FinancialInstrumentAttributes5Choice(base_types._BaseFieldType):
 

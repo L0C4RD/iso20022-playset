@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max100Text import Max100Text
 from ._SecuritiesTransactionPrice17Choice import SecuritiesTransactionPrice17Choice
 from ._SecuritiesTransactionPrice20Choice import SecuritiesTransactionPrice20Choice
-from ._Max100Text import Max100Text
 
 class Package4(base_types._BaseFieldType):
 
-	__slots__ = ["_Sprd", "_FxSwpLkId", "_CmplxTradId", "_Pric"]
+	__slots__ = ["_CmplxTradId", "_FxSwpLkId", "_Pric", "_Sprd"]
 	@property
 	def CmplxTradId(self):
 		return self._CmplxTradId

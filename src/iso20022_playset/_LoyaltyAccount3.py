@@ -1,15 +1,15 @@
 from . import base_types
-from ._CardIdentificationType1Code import CardIdentificationType1Code
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Max45Text import Max45Text
-from ._Max35Text import Max35Text
 from ._AmountUnit1Code import AmountUnit1Code
 from ._CardDataReading8Code import CardDataReading8Code
+from ._CardIdentificationType1Code import CardIdentificationType1Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._Max45Text import Max45Text
 
 class LoyaltyAccount3(base_types._BaseFieldType):
 
-	__slots__ = ["_NtryMd", "_Prvdr", "_IdTp", "_Bal", "_Unit", "_OwnrNm", "_LltyId", "_Brnd", "_Ccy"]
+	__slots__ = ["_Bal", "_Brnd", "_Ccy", "_IdTp", "_LltyId", "_NtryMd", "_OwnrNm", "_Prvdr", "_Unit"]
 	@property
 	def Bal(self):
 		return self._Bal

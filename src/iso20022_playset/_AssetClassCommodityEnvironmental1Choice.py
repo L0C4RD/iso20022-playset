@@ -1,11 +1,11 @@
 from . import base_types
-from ._EnvironmentalCommodityWeather1 import EnvironmentalCommodityWeather1
 from ._EnvironmentalCommodityCarbonRelated1 import EnvironmentalCommodityCarbonRelated1
 from ._EnvironmentalCommodityEmission1 import EnvironmentalCommodityEmission1
+from ._EnvironmentalCommodityWeather1 import EnvironmentalCommodityWeather1
 
 class AssetClassCommodityEnvironmental1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Wthr", "_CrbnRltd", "_Emssns"]
+	__slots__ = ["_CrbnRltd", "_Emssns", "_Wthr"]
 	@property
 	def CrbnRltd(self):
 		return self._CrbnRltd

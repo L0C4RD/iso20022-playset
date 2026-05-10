@@ -1,12 +1,12 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Exact3NumericText import Exact3NumericText
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._BaseOneRate import BaseOneRate
+from ._Exact3NumericText import Exact3NumericText
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class CurrencyConversion5(base_types._BaseFieldType):
 
-	__slots__ = ["_TrgtCcyNmrc", "_SrcCcyNmrc", "_SrcCcy", "_Rate", "_TrgtCcy", "_ClctdAmt"]
+	__slots__ = ["_ClctdAmt", "_Rate", "_SrcCcy", "_SrcCcyNmrc", "_TrgtCcy", "_TrgtCcyNmrc"]
 	@property
 	def ClctdAmt(self):
 		return self._ClctdAmt

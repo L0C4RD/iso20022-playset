@@ -4,7 +4,7 @@ from ._PartyIdentification242Choice import PartyIdentification242Choice
 
 class TradePartyIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_TradPty", "_SubmitgPty", "_FndId"]
+	__slots__ = ["_FndId", "_SubmitgPty", "_TradPty"]
 	@property
 	def FndId(self):
 		return self._FndId

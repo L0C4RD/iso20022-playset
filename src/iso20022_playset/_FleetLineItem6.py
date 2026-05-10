@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._FleetServiceType1Code import FleetServiceType1Code
 from ._DecimalNumber import DecimalNumber
-from ._Max35Text import Max35Text
+from ._FleetServiceType1Code import FleetServiceType1Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max15Text import Max15Text
+from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 from ._UnitOfMeasure1Code import UnitOfMeasure1Code
 
 class FleetLineItem6(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctCd", "_TtlAmtInclgTax", "_PdctCtgy", "_SvcTp", "_PdctQty", "_TtlAmtExclgTax", "_AllwdItm", "_UnitOfMeasr", "_Fuel"]
+	__slots__ = ["_AllwdItm", "_Fuel", "_PdctCd", "_PdctCtgy", "_PdctQty", "_SvcTp", "_TtlAmtExclgTax", "_TtlAmtInclgTax", "_UnitOfMeasr"]
 	@property
 	def AllwdItm(self):
 		return self._AllwdItm

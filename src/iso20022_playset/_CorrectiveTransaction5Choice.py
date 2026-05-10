@@ -1,6 +1,6 @@
 from . import base_types
-from ._CorrectivePaymentInitiation5 import CorrectivePaymentInitiation5
 from ._CorrectiveInterbankTransaction3 import CorrectiveInterbankTransaction3
+from ._CorrectivePaymentInitiation5 import CorrectivePaymentInitiation5
 
 class CorrectiveTransaction5Choice(base_types._BaseFieldType):
 

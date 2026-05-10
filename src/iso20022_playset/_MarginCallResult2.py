@@ -3,7 +3,7 @@ from ._Result1 import Result1
 
 class MarginCallResult2(base_types._BaseFieldType):
 
-	__slots__ = ["_VartnMrgnRslt", "_SgrtdIndpdntAmt"]
+	__slots__ = ["_SgrtdIndpdntAmt", "_VartnMrgnRslt"]
 	@property
 	def SgrtdIndpdntAmt(self):
 		return self._SgrtdIndpdntAmt

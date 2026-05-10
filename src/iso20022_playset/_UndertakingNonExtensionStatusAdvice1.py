@@ -4,7 +4,7 @@ from ._Undertaking7 import Undertaking7
 
 class UndertakingNonExtensionStatusAdvice1(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgId", "_NtifngPty"]
+	__slots__ = ["_NtifngPty", "_UdrtkgId"]
 	@property
 	def NtifngPty(self):
 		return self._NtifngPty

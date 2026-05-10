@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max70Text import Max70Text
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class DocumentReference1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Ref"]
+	__slots__ = ["_Ref", "_Tp"]
 	@property
 	def Ref(self):
 		return self._Ref

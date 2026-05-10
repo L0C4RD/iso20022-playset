@@ -1,11 +1,11 @@
 from . import base_types
-from ._CardPaymentTransaction137 import CardPaymentTransaction137
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._CardPaymentTransaction137 import CardPaymentTransaction137
 from ._CurrencyConversion30 import CurrencyConversion30
 
 class AcceptorCurrencyConversionAdvice9(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Tx", "_CcyConvsRslt"]
+	__slots__ = ["_CcyConvsRslt", "_Envt", "_Tx"]
 	@property
 	def CcyConvsRslt(self):
 		return self._CcyConvsRslt

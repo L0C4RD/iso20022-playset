@@ -3,7 +3,7 @@ from ._ISODateTime import ISODateTime
 
 class SettlementDateTimeIndication1(base_types._BaseFieldType):
 
-	__slots__ = ["_DbtDtTm", "_CdtDtTm"]
+	__slots__ = ["_CdtDtTm", "_DbtDtTm"]
 	@property
 	def CdtDtTm(self):
 		return self._CdtDtTm

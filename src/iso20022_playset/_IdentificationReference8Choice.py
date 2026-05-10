@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class IdentificationReference8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CollTxId", "_CmplcId", "_MktInfrstrctrTxId", "_PoolId", "_ExctgPtyTxId", "_InstgPtyTxId", "_IndxId", "_BlckId", "_AllcnId", "_CmonId", "_IndvAllcnId", "_ClntOrdrLkId", "_ScndryAllcnId"]
+	__slots__ = ["_AllcnId", "_BlckId", "_ClntOrdrLkId", "_CmonId", "_CmplcId", "_CollTxId", "_ExctgPtyTxId", "_IndvAllcnId", "_IndxId", "_InstgPtyTxId", "_MktInfrstrctrTxId", "_PoolId", "_ScndryAllcnId"]
 	@property
 	def AllcnId(self):
 		return self._AllcnId

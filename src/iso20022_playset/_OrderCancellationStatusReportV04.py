@@ -1,12 +1,12 @@
 from . import base_types
-from ._Status26Choice import Status26Choice
+from ._Extension1 import Extension1
 from ._MessageIdentification1 import MessageIdentification1
 from ._References61Choice import References61Choice
-from ._Extension1 import Extension1
+from ._Status26Choice import Status26Choice
 
 class OrderCancellationStatusReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Xtnsn", "_Ref", "_StsRpt", "_MsgId"]
+	__slots__ = ["_MsgId", "_Ref", "_StsRpt", "_Xtnsn"]
 	@property
 	def MsgId(self):
 		return self._MsgId

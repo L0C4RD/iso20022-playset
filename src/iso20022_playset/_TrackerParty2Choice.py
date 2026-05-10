@@ -1,11 +1,11 @@
 from . import base_types
+from ._FinancialInstitutionIdentification21 import FinancialInstitutionIdentification21
 from ._OrganisationIdentification29 import OrganisationIdentification29
 from ._PersonIdentification13 import PersonIdentification13
-from ._FinancialInstitutionIdentification21 import FinancialInstitutionIdentification21
 
 class TrackerParty2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgId", "_FinInstnId", "_PrvtId"]
+	__slots__ = ["_FinInstnId", "_OrgId", "_PrvtId"]
 	@property
 	def FinInstnId(self):
 		return self._FinInstnId

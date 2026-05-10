@@ -1,15 +1,15 @@
 from . import base_types
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._CreditDebitCode import CreditDebitCode
 from ._DateTimePeriod1 import DateTimePeriod1
 from ._InterestType1Choice import InterestType1Choice
 from ._Max35Text import Max35Text
 from ._Rate4 import Rate4
-from ._CreditDebitCode import CreditDebitCode
 from ._TaxCharges2 import TaxCharges2
 
 class InterestRecord2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_FrToDt", "_Tax", "_CdtDbtInd", "_Amt", "_Rsn", "_Rate"]
+	__slots__ = ["_Amt", "_CdtDbtInd", "_FrToDt", "_Rate", "_Rsn", "_Tax", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

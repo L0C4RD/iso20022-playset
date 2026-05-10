@@ -1,12 +1,12 @@
 from . import base_types
-from ._PartyIdentification43 import PartyIdentification43
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
 from ._Max2000Text import Max2000Text
 from ._Max35Text import Max35Text
+from ._PartyIdentification43 import PartyIdentification43
 
 class UndertakingConfirmation1(base_types._BaseFieldType):
 
-	__slots__ = ["_RefNb", "_Cnfrmr", "_Conf", "_Dt"]
+	__slots__ = ["_Cnfrmr", "_Conf", "_Dt", "_RefNb"]
 	@property
 	def Cnfrmr(self):
 		return self._Cnfrmr

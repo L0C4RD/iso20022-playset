@@ -1,11 +1,11 @@
 from . import base_types
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 from ._PartyIdentification236Choice import PartyIdentification236Choice
 from ._SettlementParties34Choice import SettlementParties34Choice
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class TransactionCounterpartyData11(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrMmb", "_Bnfcry", "_Brkr", "_TrptyAgt", "_SttlmPties", "_AgtLndr"]
+	__slots__ = ["_AgtLndr", "_Bnfcry", "_Brkr", "_ClrMmb", "_SttlmPties", "_TrptyAgt"]
 	@property
 	def AgtLndr(self):
 		return self._AgtLndr

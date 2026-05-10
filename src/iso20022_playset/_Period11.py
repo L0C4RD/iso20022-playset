@@ -3,7 +3,7 @@ from ._DateFormat45Choice import DateFormat45Choice
 
 class Period11(base_types._BaseFieldType):
 
-	__slots__ = ["_StartDt", "_EndDt"]
+	__slots__ = ["_EndDt", "_StartDt"]
 	@property
 	def EndDt(self):
 		return self._EndDt

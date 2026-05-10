@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class PartyName4(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtNm", "_VldFr", "_Nm"]
+	__slots__ = ["_Nm", "_ShrtNm", "_VldFr"]
 	@property
 	def Nm(self):
 		return self._Nm

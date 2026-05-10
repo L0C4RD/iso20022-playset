@@ -1,12 +1,12 @@
 from . import base_types
-from ._ConfirmationType1Choice import ConfirmationType1Choice
 from ._Account23 import Account23
 from ._AdditionalReference13 import AdditionalReference13
+from ._ConfirmationType1Choice import ConfirmationType1Choice
 from ._Max35Text import Max35Text
 
 class AccountManagementConfirmation5(base_types._BaseFieldType):
 
-	__slots__ = ["_ExstgAcctId", "_AcctApplId", "_CtrPtyRef", "_ClntRef", "_ConfTp"]
+	__slots__ = ["_AcctApplId", "_ClntRef", "_ConfTp", "_CtrPtyRef", "_ExstgAcctId"]
 	@property
 	def AcctApplId(self):
 		return self._AcctApplId

@@ -1,12 +1,12 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._FleetPurchaseType1Code import FleetPurchaseType1Code
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max35Text import Max35Text
 from ._Tax41 import Tax41
 
 class FleetTransactionDetail1(base_types._BaseFieldType):
 
-	__slots__ = ["_DscntTtlAmt", "_DscntTtlNonFuelAmt", "_TtlAmt", "_PurchsTp", "_DscntTtlFuelAmt", "_TaxTtl", "_SummryCmmdtyId"]
+	__slots__ = ["_DscntTtlAmt", "_DscntTtlFuelAmt", "_DscntTtlNonFuelAmt", "_PurchsTp", "_SummryCmmdtyId", "_TaxTtl", "_TtlAmt"]
 	@property
 	def DscntTtlAmt(self):
 		return self._DscntTtlAmt

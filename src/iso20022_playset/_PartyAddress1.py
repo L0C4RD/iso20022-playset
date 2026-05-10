@@ -1,8 +1,8 @@
 from . import base_types
-from ._PostalAddress26 import PostalAddress26
-from ._Max2048Text import Max2048Text
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._Max2048Text import Max2048Text
 from ._Max256Text import Max256Text
+from ._PostalAddress26 import PostalAddress26
 
 class PartyAddress1(base_types._BaseFieldType):
 

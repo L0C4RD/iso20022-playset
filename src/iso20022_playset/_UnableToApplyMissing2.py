@@ -1,10 +1,10 @@
 from . import base_types
-from ._MissingData1Choice import MissingData1Choice
 from ._Max140Text import Max140Text
+from ._MissingData1Choice import MissingData1Choice
 
 class UnableToApplyMissing2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_AddtlMssngInf"]
+	__slots__ = ["_AddtlMssngInf", "_Tp"]
 	@property
 	def AddtlMssngInf(self):
 		return self._AddtlMssngInf

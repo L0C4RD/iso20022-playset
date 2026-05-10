@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max4AlphaNumericText import Max4AlphaNumericText
 from ._ErrorHandling1Code import ErrorHandling1Code
+from ._Max4AlphaNumericText import Max4AlphaNumericText
 
 class ErrorHandling1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

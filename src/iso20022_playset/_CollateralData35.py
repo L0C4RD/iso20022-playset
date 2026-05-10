@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._SecurityIdentification26Choice import SecurityIdentification26Choice
 from ._CollateralType21 import CollateralType21
+from ._SecurityIdentification26Choice import SecurityIdentification26Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CollateralData35(base_types._BaseFieldType):
 
-	__slots__ = ["_BsktIdr", "_NetXpsrCollstnInd", "_AsstTp"]
+	__slots__ = ["_AsstTp", "_BsktIdr", "_NetXpsrCollstnInd"]
 	@property
 	def AsstTp(self):
 		return self._AsstTp

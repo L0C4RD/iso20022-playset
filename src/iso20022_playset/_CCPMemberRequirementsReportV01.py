@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._IntraDayMarginCall1 import IntraDayMarginCall1
-from ._EndOfDayRequirement2 import EndOfDayRequirement2
 from ._DefaultFundRequirement1 import DefaultFundRequirement1
+from ._EndOfDayRequirement2 import EndOfDayRequirement2
+from ._IntraDayMarginCall1 import IntraDayMarginCall1
 from ._IntraDayRequirement1 import IntraDayRequirement1
+from ._SupplementaryData1 import SupplementaryData1
 
 class CCPMemberRequirementsReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_IntraDayRqrmntAmt", "_IntraDayMrgnCall", "_SplmtryData", "_EndOfDayRqrmnt", "_DfltFndRqrmnt"]
+	__slots__ = ["_DfltFndRqrmnt", "_EndOfDayRqrmnt", "_IntraDayMrgnCall", "_IntraDayRqrmntAmt", "_SplmtryData"]
 	@property
 	def DfltFndRqrmnt(self):
 		return self._DfltFndRqrmnt

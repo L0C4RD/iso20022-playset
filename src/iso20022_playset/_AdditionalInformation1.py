@@ -4,7 +4,7 @@ from ._Max350Text import Max350Text
 
 class AdditionalInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_InfVal", "_InfTp"]
+	__slots__ = ["_InfTp", "_InfVal"]
 	@property
 	def InfTp(self):
 		return self._InfTp

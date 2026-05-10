@@ -1,16 +1,16 @@
 from . import base_types
-from ._Max6Text import Max6Text
-from ._Traceability8 import Traceability8
+from ._GenericIdentification176 import GenericIdentification176
 from ._GenericIdentification177 import GenericIdentification177
-from ._Number import Number
 from ._ISODateTime import ISODateTime
 from ._Max3NumericText import Max3NumericText
+from ._Max6Text import Max6Text
 from ._MessageFunction46Code import MessageFunction46Code
-from ._GenericIdentification176 import GenericIdentification176
+from ._Number import Number
+from ._Traceability8 import Traceability8
 
 class Header70(base_types._BaseFieldType):
 
-	__slots__ = ["_RcptPty", "_MsgFctn", "_CreDtTm", "_XchgId", "_PrtcolVrsn", "_Tracblt", "_InitgPty", "_ReTrnsmssnCntr"]
+	__slots__ = ["_CreDtTm", "_InitgPty", "_MsgFctn", "_PrtcolVrsn", "_RcptPty", "_ReTrnsmssnCntr", "_Tracblt", "_XchgId"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

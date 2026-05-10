@@ -1,12 +1,12 @@
 from . import base_types
+from ._MessageHeader1 import MessageHeader1
 from ._SupplementaryData1 import SupplementaryData1
 from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._SystemPartyModification3 import SystemPartyModification3
-from ._MessageHeader1 import MessageHeader1
 
 class PartyModificationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_SysPtyId", "_Mod"]
+	__slots__ = ["_Mod", "_MsgHdr", "_SplmtryData", "_SysPtyId"]
 	@property
 	def Mod(self):
 		return self._Mod

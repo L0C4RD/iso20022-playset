@@ -1,13 +1,13 @@
 from . import base_types
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._IntraBalanceCancellation8 import IntraBalanceCancellation8
 from ._ProcessingStatus69Choice import ProcessingStatus69Choice
 from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._IntraBalanceCancellation8 import IntraBalanceCancellation8
-from ._CashAccount40 import CashAccount40
 
 class IntraBalanceCancellation7(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcctSvcr", "_CshAcct", "_Cxl", "_PrcgSts", "_CshAcctOwnr"]
+	__slots__ = ["_CshAcct", "_CshAcctOwnr", "_CshAcctSvcr", "_Cxl", "_PrcgSts"]
 	@property
 	def CshAcct(self):
 		return self._CshAcct

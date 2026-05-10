@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max4AlphaNumericText import Max4AlphaNumericText
 from ._Max256Text import Max256Text
+from ._Max4AlphaNumericText import Max4AlphaNumericText
 
 class ProprietaryStatusJustification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_PrtryStsRsn"]
+	__slots__ = ["_PrtryStsRsn", "_Rsn"]
 	@property
 	def PrtryStsRsn(self):
 		return self._PrtryStsRsn

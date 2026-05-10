@@ -1,19 +1,19 @@
 from . import base_types
+from ._FinancialInstrument99Choice import FinancialInstrument99Choice
 from ._ISODate import ISODate
-from ._OrderRestriction1Choice import OrderRestriction1Choice
-from ._Max50Text import Max50Text
 from ._ISODateTime import ISODateTime
 from ._MICIdentifier import MICIdentifier
-from ._OrderEventType1Choice import OrderEventType1Choice
 from ._Max35Text import Max35Text
-from ._FinancialInstrument99Choice import FinancialInstrument99Choice
+from ._Max50Text import Max50Text
+from ._OrderEventType1Choice import OrderEventType1Choice
 from ._OrderPriority1 import OrderPriority1
-from ._ValidityPeriod1Choice import ValidityPeriod1Choice
+from ._OrderRestriction1Choice import OrderRestriction1Choice
 from ._PositiveNumber import PositiveNumber
+from ._ValidityPeriod1Choice import ValidityPeriod1Choice
 
 class OrderIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtTp", "_FinInstrm", "_DtOfRct", "_TmStmp", "_OrdrRstrctn", "_SeqNb", "_OrdrId", "_VldtyDtTm", "_VldtyPrd", "_OrdrBookId", "_Prty", "_TradVn"]
+	__slots__ = ["_DtOfRct", "_EvtTp", "_FinInstrm", "_OrdrBookId", "_OrdrId", "_OrdrRstrctn", "_Prty", "_SeqNb", "_TmStmp", "_TradVn", "_VldtyDtTm", "_VldtyPrd"]
 	@property
 	def DtOfRct(self):
 		return self._DtOfRct

@@ -1,10 +1,10 @@
 from . import base_types
-from ._RepoCallRequestStatus1Code import RepoCallRequestStatus1Code
 from ._GenericIdentification47 import GenericIdentification47
+from ._RepoCallRequestStatus1Code import RepoCallRequestStatus1Code
 
 class RepoCallRequestStatus10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

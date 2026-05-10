@@ -1,19 +1,19 @@
 from . import base_types
-from ._Lodging4 import Lodging4
-from ._VehicleRentalService3 import VehicleRentalService3
-from ._PassengerTransport3 import PassengerTransport3
-from ._TravelAgency4 import TravelAgency4
-from ._ShippingData3 import ShippingData3
-from ._TelecomServices3 import TelecomServices3
+from ._AdditionalData2 import AdditionalData2
 from ._FleetData6 import FleetData6
 from ._Invoice3 import Invoice3
-from ._AdditionalData2 import AdditionalData2
+from ._Lodging4 import Lodging4
+from ._PassengerTransport3 import PassengerTransport3
 from ._Sale3 import Sale3
+from ._ShippingData3 import ShippingData3
+from ._TelecomServices3 import TelecomServices3
 from ._TemporaryServices3 import TemporaryServices3
+from ._TravelAgency4 import TravelAgency4
+from ._VehicleRentalService3 import VehicleRentalService3
 
 class AddendumData6(base_types._BaseFieldType):
 
-	__slots__ = ["_VhclRntl", "_TrvlAgcy", "_AddtlData", "_TempSvcs", "_Sale", "_PssngrTrnsprt", "_ShppgData", "_Invc", "_TelecomSvcs", "_Ldgg", "_Fleet"]
+	__slots__ = ["_AddtlData", "_Fleet", "_Invc", "_Ldgg", "_PssngrTrnsprt", "_Sale", "_ShppgData", "_TelecomSvcs", "_TempSvcs", "_TrvlAgcy", "_VhclRntl"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

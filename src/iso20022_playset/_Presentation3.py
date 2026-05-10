@@ -1,11 +1,11 @@
 from . import base_types
+from ._Channel1Choice import Channel1Choice
 from ._DocumentFormat1Choice import DocumentFormat1Choice
 from ._Max256Text import Max256Text
-from ._Channel1Choice import Channel1Choice
 
 class Presentation3(base_types._BaseFieldType):
 
-	__slots__ = ["_Chanl", "_Frmt", "_Adr"]
+	__slots__ = ["_Adr", "_Chanl", "_Frmt"]
 	@property
 	def Adr(self):
 		return self._Adr

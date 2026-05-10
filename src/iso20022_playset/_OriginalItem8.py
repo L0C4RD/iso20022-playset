@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._UUIDv4Identifier import UUIDv4Identifier
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
 from ._OriginalItemReference7 import OriginalItemReference7
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class OriginalItem8(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlEndToEndId", "_XpctdValDt", "_OrgnlItmRef", "_UETR", "_Amt", "_OrgnlItmId"]
+	__slots__ = ["_Amt", "_OrgnlEndToEndId", "_OrgnlItmId", "_OrgnlItmRef", "_UETR", "_XpctdValDt"]
 	@property
 	def Amt(self):
 		return self._Amt

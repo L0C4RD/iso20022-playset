@@ -4,7 +4,7 @@ from ._Max70Text import Max70Text
 
 class LineItemAndPOIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_PurchsOrdrRef", "_LineItmId"]
+	__slots__ = ["_LineItmId", "_PurchsOrdrRef"]
 	@property
 	def LineItmId(self):
 		return self._LineItmId

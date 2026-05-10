@@ -1,12 +1,12 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._Number import Number
 from ._CreditDebit3Code import CreditDebit3Code
+from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Number import Number
 
 class SettlementCategoryTotal3(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_PrcgFeeCcy", "_CdtDbt", "_PrcgFeeAmt", "_PrcgFeeCdtDbt", "_IntrchngFeeCdtDbt", "_Cnt", "_IntrchngFeeCcy", "_IntrchngFeeAmt", "_Ccy"]
+	__slots__ = ["_Amt", "_Ccy", "_CdtDbt", "_Cnt", "_IntrchngFeeAmt", "_IntrchngFeeCcy", "_IntrchngFeeCdtDbt", "_PrcgFeeAmt", "_PrcgFeeCcy", "_PrcgFeeCdtDbt"]
 	@property
 	def Amt(self):
 		return self._Amt

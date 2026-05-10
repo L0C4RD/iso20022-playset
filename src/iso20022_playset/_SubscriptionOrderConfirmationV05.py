@@ -1,14 +1,14 @@
 from . import base_types
+from ._AdditionalReference10 import AdditionalReference10
 from ._AdditionalReference11 import AdditionalReference11
 from ._CopyInformation5 import CopyInformation5
-from ._AdditionalReference10 import AdditionalReference10
+from ._Extension1 import Extension1
 from ._MessageIdentification1 import MessageIdentification1
 from ._SubscriptionMultipleExecution6 import SubscriptionMultipleExecution6
-from ._Extension1 import Extension1
 
 class SubscriptionOrderConfirmationV05(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_MltplExctnDtls", "_Xtnsn", "_RltdRef", "_PoolRef", "_CpyDtls", "_PrvsRef"]
+	__slots__ = ["_CpyDtls", "_MltplExctnDtls", "_MsgId", "_PoolRef", "_PrvsRef", "_RltdRef", "_Xtnsn"]
 	@property
 	def CpyDtls(self):
 		return self._CpyDtls

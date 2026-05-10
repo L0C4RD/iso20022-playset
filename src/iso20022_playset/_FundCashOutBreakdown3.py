@@ -1,16 +1,16 @@
 from . import base_types
-from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._Charge26 import Charge26
+from ._Commission21 import Commission21
+from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
+from ._InvestmentFundTransactionOutType1Choice import InvestmentFundTransactionOutType1Choice
 from ._QuantityType1Choice import QuantityType1Choice
 from ._YesNoIndicator import YesNoIndicator
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._InvestmentFundTransactionOutType1Choice import InvestmentFundTransactionOutType1Choice
-from ._Commission21 import Commission21
-from ._Charge26 import Charge26
 
 class FundCashOutBreakdown3(base_types._BaseFieldType):
 
-	__slots__ = ["_NewAmtInd", "_UnitsNb", "_InvstmtFndTxOutTp", "_ComssnDtls", "_OrgnlOrdrQtyTp", "_SttlmCcy", "_Amt", "_ChrgDtls"]
+	__slots__ = ["_Amt", "_ChrgDtls", "_ComssnDtls", "_InvstmtFndTxOutTp", "_NewAmtInd", "_OrgnlOrdrQtyTp", "_SttlmCcy", "_UnitsNb"]
 	@property
 	def Amt(self):
 		return self._Amt

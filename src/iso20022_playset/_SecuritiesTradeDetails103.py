@@ -1,11 +1,11 @@
 from . import base_types
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._Max3Number import Max3Number
+from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
 
 class SecuritiesTradeDetails103(base_types._BaseFieldType):
 
-	__slots__ = ["_OpngSttlmDt", "_NbOfDaysAcrd", "_InstrPrcgAddtlDtls", "_TradDt"]
+	__slots__ = ["_InstrPrcgAddtlDtls", "_NbOfDaysAcrd", "_OpngSttlmDt", "_TradDt"]
 	@property
 	def InstrPrcgAddtlDtls(self):
 		return self._InstrPrcgAddtlDtls

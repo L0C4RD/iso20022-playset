@@ -1,10 +1,10 @@
 from . import base_types
-from ._CurrencyCode import CurrencyCode
 from ._BaseOneRate import BaseOneRate
+from ._CurrencyCode import CurrencyCode
 
 class AgreedRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgRate", "_UnitCcy", "_QtdCcy"]
+	__slots__ = ["_QtdCcy", "_UnitCcy", "_XchgRate"]
 	@property
 	def QtdCcy(self):
 		return self._QtdCcy

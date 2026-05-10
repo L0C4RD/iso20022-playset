@@ -1,12 +1,12 @@
 from . import base_types
 from ._CountryCode import CountryCode
-from ._RestrictedFINMax35Text import RestrictedFINMax35Text
 from ._RestrictedFINMax23Text import RestrictedFINMax23Text
+from ._RestrictedFINMax35Text import RestrictedFINMax35Text
 from ._RestrictedFINMax8Text import RestrictedFINMax8Text
 
 class PostalAddress7(base_types._BaseFieldType):
 
-	__slots__ = ["_PstCd", "_Ctry", "_AdrLine", "_TwnNm"]
+	__slots__ = ["_AdrLine", "_Ctry", "_PstCd", "_TwnNm"]
 	@property
 	def AdrLine(self):
 		return self._AdrLine

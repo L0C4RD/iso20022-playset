@@ -4,7 +4,7 @@ from ._ProxyAccountType1Choice import ProxyAccountType1Choice
 
 class ProxyAccountIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Id"]
+	__slots__ = ["_Id", "_Tp"]
 	@property
 	def Id(self):
 		return self._Id

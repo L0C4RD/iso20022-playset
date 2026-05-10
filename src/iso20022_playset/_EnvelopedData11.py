@@ -1,12 +1,12 @@
 from . import base_types
 from ._EncryptedContent7 import EncryptedContent7
-from ._OriginatorInformation1 import OriginatorInformation1
 from ._Number import Number
+from ._OriginatorInformation1 import OriginatorInformation1
 from ._Recipient15Choice import Recipient15Choice
 
 class EnvelopedData11(base_types._BaseFieldType):
 
-	__slots__ = ["_NcrptdCntt", "_OrgtrInf", "_Vrsn", "_Rcpt"]
+	__slots__ = ["_NcrptdCntt", "_OrgtrInf", "_Rcpt", "_Vrsn"]
 	@property
 	def NcrptdCntt(self):
 		return self._NcrptdCntt

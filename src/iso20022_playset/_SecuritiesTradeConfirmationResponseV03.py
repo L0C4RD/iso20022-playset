@@ -1,14 +1,14 @@
 from . import base_types
+from ._Clearing6 import Clearing6
+from ._ConfirmationParties8 import ConfirmationParties8
+from ._Linkages76 import Linkages76
+from ._StatusAndReason46 import StatusAndReason46
 from ._SupplementaryData1 import SupplementaryData1
 from ._TransactiontIdentification4 import TransactiontIdentification4
-from ._StatusAndReason46 import StatusAndReason46
-from ._Linkages76 import Linkages76
-from ._ConfirmationParties8 import ConfirmationParties8
-from ._Clearing6 import Clearing6
 
 class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Id", "_ConfPties", "_Refs", "_Sts", "_ClrDtls"]
+	__slots__ = ["_ClrDtls", "_ConfPties", "_Id", "_Refs", "_SplmtryData", "_Sts"]
 	@property
 	def ClrDtls(self):
 		return self._ClrDtls

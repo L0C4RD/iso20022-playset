@@ -1,18 +1,18 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._CorrectiveTransaction5Choice import CorrectiveTransaction5Choice
 from ._Case6 import Case6
 from ._CaseAssignment6 import CaseAssignment6
-from ._StatementResolutionEntry5 import StatementResolutionEntry5
-from ._UnderlyingTransaction32 import UnderlyingTransaction32
 from ._ClaimNonReceipt3Choice import ClaimNonReceipt3Choice
+from ._CorrectiveTransaction5Choice import CorrectiveTransaction5Choice
 from ._InvestigationStatus6Choice import InvestigationStatus6Choice
 from ._PaymentTransaction157 import PaymentTransaction157
 from ._ResolutionData5 import ResolutionData5
+from ._StatementResolutionEntry5 import StatementResolutionEntry5
+from ._SupplementaryData1 import SupplementaryData1
+from ._UnderlyingTransaction32 import UnderlyingTransaction32
 
 class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 
-	__slots__ = ["_CrrctnTx", "_RslvdCase", "_ModDtls", "_StmtDtls", "_Assgnmt", "_Sts", "_CxlDtls", "_RsltnRltdInf", "_ClmNonRctDtls", "_SplmtryData"]
+	__slots__ = ["_Assgnmt", "_ClmNonRctDtls", "_CrrctnTx", "_CxlDtls", "_ModDtls", "_RsltnRltdInf", "_RslvdCase", "_SplmtryData", "_StmtDtls", "_Sts"]
 	@property
 	def Assgnmt(self):
 		return self._Assgnmt

@@ -1,6 +1,6 @@
 from . import base_types
-from ._Min3Max4NumericText import Min3Max4NumericText
 from ._CSCManagement1Code import CSCManagement1Code
+from ._Min3Max4NumericText import Min3Max4NumericText
 
 class CardSecurityInformation1(base_types._BaseFieldType):
 

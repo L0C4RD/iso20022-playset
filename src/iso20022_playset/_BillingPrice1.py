@@ -1,12 +1,12 @@
 from . import base_types
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._AmountAndDirection34 import AmountAndDirection34
-from ._Max20Text import Max20Text
 from ._BillingChargeMethod1Code import BillingChargeMethod1Code
+from ._Max20Text import Max20Text
 
 class BillingPrice1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rule", "_Mtd", "_Ccy", "_UnitPric"]
+	__slots__ = ["_Ccy", "_Mtd", "_Rule", "_UnitPric"]
 	@property
 	def Ccy(self):
 		return self._Ccy

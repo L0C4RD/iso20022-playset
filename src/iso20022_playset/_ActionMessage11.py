@@ -1,16 +1,16 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._OutputBarcode2 import OutputBarcode2
-from ._Max20000Text import Max20000Text
-from ._OutputFormat3Code import OutputFormat3Code
-from ._Number import Number
 from ._ContentInformationType38 import ContentInformationType38
-from ._UserInterface4Code import UserInterface4Code
 from ._InformationQualify1Code import InformationQualify1Code
+from ._Max20000Text import Max20000Text
+from ._Number import Number
+from ._OutputBarcode2 import OutputBarcode2
+from ._OutputFormat3Code import OutputFormat3Code
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._UserInterface4Code import UserInterface4Code
 
 class ActionMessage11(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgCnttSgntr", "_RspnReqrdFlg", "_Frmt", "_OutptBrcd", "_InfQlfr", "_MsgCntt", "_MsgDstn", "_MinDispTm"]
+	__slots__ = ["_Frmt", "_InfQlfr", "_MinDispTm", "_MsgCntt", "_MsgCnttSgntr", "_MsgDstn", "_OutptBrcd", "_RspnReqrdFlg"]
 	@property
 	def Frmt(self):
 		return self._Frmt

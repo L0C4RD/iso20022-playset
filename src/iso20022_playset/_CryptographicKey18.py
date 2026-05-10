@@ -1,18 +1,18 @@
 from . import base_types
 from ._ContentInformationType39 import ContentInformationType39
+from ._CryptographicKeyType3Code import CryptographicKeyType3Code
+from ._GenericIdentification186 import GenericIdentification186
+from ._GenericInformation1 import GenericInformation1
+from ._ISODateTime import ISODateTime
 from ._KeyUsage1Code import KeyUsage1Code
 from ._Max256Text import Max256Text
-from ._GenericInformation1 import GenericInformation1
-from ._CryptographicKeyType3Code import CryptographicKeyType3Code
-from ._Max35Text import Max35Text
-from ._Max35Binary import Max35Binary
 from ._Max350Text import Max350Text
-from ._ISODateTime import ISODateTime
-from ._GenericIdentification186 import GenericIdentification186
+from ._Max35Binary import Max35Binary
+from ._Max35Text import Max35Text
 
 class CryptographicKey18(base_types._BaseFieldType):
 
-	__slots__ = ["_Fctn", "_AddtlMgmtInf", "_SctyPrfl", "_CmpntWthAuthrsdAccs", "_ItmNb", "_AddtlId", "_KeyVal", "_Id", "_Vrsn", "_PrtctdCmpntWthAuthrsdAccs", "_ActvtnDt", "_Nm", "_DeactvtnDt", "_KeyChckVal", "_Tp"]
+	__slots__ = ["_ActvtnDt", "_AddtlId", "_AddtlMgmtInf", "_CmpntWthAuthrsdAccs", "_DeactvtnDt", "_Fctn", "_Id", "_ItmNb", "_KeyChckVal", "_KeyVal", "_Nm", "_PrtctdCmpntWthAuthrsdAccs", "_SctyPrfl", "_Tp", "_Vrsn"]
 	@property
 	def ActvtnDt(self):
 		return self._ActvtnDt

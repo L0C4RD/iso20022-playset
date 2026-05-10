@@ -1,18 +1,18 @@
 from . import base_types
-from ._CustomerAccountModification1 import CustomerAccountModification1
-from ._SupplementaryData1 import SupplementaryData1
-from ._OrganisationModification3 import OrganisationModification3
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._AccountContract2 import AccountContract2
-from ._References4 import References4
-from ._ContractDocument1 import ContractDocument1
 from ._AdditionalInformation5 import AdditionalInformation5
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ContractDocument1 import ContractDocument1
+from ._CustomerAccountModification1 import CustomerAccountModification1
 from ._OrganisationIdentification39 import OrganisationIdentification39
+from ._OrganisationModification3 import OrganisationModification3
 from ._PartyAndSignature4 import PartyAndSignature4
+from ._References4 import References4
+from ._SupplementaryData1 import SupplementaryData1
 
 class AccountExcludedMandateMaintenanceRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlMsgInf", "_Fr", "_AcctSvcrId", "_UndrlygMstrAgrmt", "_DgtlSgntr", "_CtrctDts", "_Org", "_Acct", "_Refs", "_SplmtryData"]
+	__slots__ = ["_Acct", "_AcctSvcrId", "_AddtlMsgInf", "_CtrctDts", "_DgtlSgntr", "_Fr", "_Org", "_Refs", "_SplmtryData", "_UndrlygMstrAgrmt"]
 	@property
 	def Acct(self):
 		return self._Acct

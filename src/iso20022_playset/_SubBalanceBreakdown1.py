@@ -4,7 +4,7 @@ from ._SubBalanceType9Choice import SubBalanceType9Choice
 
 class SubBalanceBreakdown1(base_types._BaseFieldType):
 
-	__slots__ = ["_SubBalTp", "_Qty"]
+	__slots__ = ["_Qty", "_SubBalTp"]
 	@property
 	def Qty(self):
 		return self._Qty

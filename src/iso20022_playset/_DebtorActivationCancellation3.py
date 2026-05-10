@@ -1,8 +1,8 @@
 from . import base_types
-from ._OriginalActivation3Choice import OriginalActivation3Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
 from ._DebtorActivationCancellationReason3 import DebtorActivationCancellationReason3
+from ._OriginalActivation3Choice import OriginalActivation3Choice
+from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
+from ._SupplementaryData1 import SupplementaryData1
 
 class DebtorActivationCancellation3(base_types._BaseFieldType):
 

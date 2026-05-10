@@ -1,25 +1,25 @@
 from . import base_types
-from ._ForeignExchangeTerms37 import ForeignExchangeTerms37
-from ._StampDutyType2Code import StampDutyType2Code
 from ._Account31 import Account31
-from ._Tax38 import Tax38
-from ._FundSettlementParameters16 import FundSettlementParameters16
-from ._BeneficiaryCertificationCompletion1Code import BeneficiaryCertificationCompletion1Code
-from ._Fees2 import Fees2
-from ._Intermediary43 import Intermediary43
-from ._ISODate import ISODate
-from ._FormOfSecurity1Code import FormOfSecurity1Code
-from ._PhysicalTransferType1Code import PhysicalTransferType1Code
-from ._PartyIdentification139 import PartyIdentification139
-from ._YesNoIndicator import YesNoIndicator
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._AdditionalReference10 import AdditionalReference10
+from ._BeneficiaryCertificationCompletion1Code import BeneficiaryCertificationCompletion1Code
 from ._DeliveryParameters4 import DeliveryParameters4
+from ._Fees2 import Fees2
+from ._ForeignExchangeTerms37 import ForeignExchangeTerms37
+from ._FormOfSecurity1Code import FormOfSecurity1Code
+from ._FundSettlementParameters16 import FundSettlementParameters16
+from ._ISODate import ISODate
 from ._IncomePreference2Code import IncomePreference2Code
+from ._Intermediary43 import Intermediary43
+from ._PartyIdentification139 import PartyIdentification139
+from ._PhysicalTransferType1Code import PhysicalTransferType1Code
+from ._StampDutyType2Code import StampDutyType2Code
+from ._Tax38 import Tax38
+from ._YesNoIndicator import YesNoIndicator
 
 class ReceiveInformation21(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesForm", "_TrfeeRegdAcct", "_DmtrlsdInd", "_Trfee", "_IncmPref", "_IntrmyInf", "_PhysTrf", "_Fees", "_FXDtls", "_ReqdSttlmDt", "_BnfcryCertfctnCmpltn", "_IndvTax", "_SttlmPtiesDtls", "_PhysTrfDtls", "_ReqdTradDt", "_NetAmt", "_SttlmAmt", "_StmpDty", "_ClntRef"]
+	__slots__ = ["_BnfcryCertfctnCmpltn", "_ClntRef", "_DmtrlsdInd", "_FXDtls", "_Fees", "_IncmPref", "_IndvTax", "_IntrmyInf", "_NetAmt", "_PhysTrf", "_PhysTrfDtls", "_ReqdSttlmDt", "_ReqdTradDt", "_SctiesForm", "_StmpDty", "_SttlmAmt", "_SttlmPtiesDtls", "_Trfee", "_TrfeeRegdAcct"]
 	@property
 	def BnfcryCertfctnCmpltn(self):
 		return self._BnfcryCertfctnCmpltn

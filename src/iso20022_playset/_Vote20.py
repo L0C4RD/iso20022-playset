@@ -1,14 +1,14 @@
 from . import base_types
+from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
 from ._ItemDescription2 import ItemDescription2
-from ._ProprietaryVote2 import ProprietaryVote2
 from ._Max35Text import Max35Text
+from ._ProprietaryVote2 import ProprietaryVote2
 from ._ResolutionStatus2Code import ResolutionStatus2Code
 from ._ResolutionSubStatus1Code import ResolutionSubStatus1Code
-from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
 
 class Vote20(base_types._BaseFieldType):
 
-	__slots__ = ["_Dscrtnry", "_Blnk", "_IssrLabl", "_Desc", "_Agnst", "_For", "_ThreeYrs", "_NoActn", "_WthMgmt", "_Wthhld", "_Prtry", "_AgnstMgmt", "_SubSts", "_Abstn", "_OneYr", "_TwoYrs", "_RsltnSts"]
+	__slots__ = ["_Abstn", "_Agnst", "_AgnstMgmt", "_Blnk", "_Desc", "_Dscrtnry", "_For", "_IssrLabl", "_NoActn", "_OneYr", "_Prtry", "_RsltnSts", "_SubSts", "_ThreeYrs", "_TwoYrs", "_WthMgmt", "_Wthhld"]
 	@property
 	def Abstn(self):
 		return self._Abstn

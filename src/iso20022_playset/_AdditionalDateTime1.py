@@ -4,7 +4,7 @@ from ._ISODateTime import ISODateTime
 
 class AdditionalDateTime1(base_types._BaseFieldType):
 
-	__slots__ = ["_AccptncDtTm", "_XpryDtTm", "_PoolgAdjstmntDt"]
+	__slots__ = ["_AccptncDtTm", "_PoolgAdjstmntDt", "_XpryDtTm"]
 	@property
 	def AccptncDtTm(self):
 		return self._AccptncDtTm

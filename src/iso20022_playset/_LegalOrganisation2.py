@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class LegalOrganisation2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_RegnDt", "_Nm", "_EstblishmtDt"]
+	__slots__ = ["_EstblishmtDt", "_Id", "_Nm", "_RegnDt"]
 	@property
 	def EstblishmtDt(self):
 		return self._EstblishmtDt

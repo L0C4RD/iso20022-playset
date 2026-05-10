@@ -4,7 +4,7 @@ from ._DataModification1Code import DataModification1Code
 
 class ModificationScope45(base_types._BaseFieldType):
 
-	__slots__ = ["_ModScpIndctn", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_ModScpIndctn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

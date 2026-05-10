@@ -3,7 +3,7 @@ from ._TotalAmountAndCurrency1 import TotalAmountAndCurrency1
 
 class StandingOrderTotalAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_SetStgOrdr", "_PdgPrdfndOrdr", "_PdgStgOrdr", "_SetPrdfndOrdr"]
+	__slots__ = ["_PdgPrdfndOrdr", "_PdgStgOrdr", "_SetPrdfndOrdr", "_SetStgOrdr"]
 	@property
 	def PdgPrdfndOrdr(self):
 		return self._PdgPrdfndOrdr

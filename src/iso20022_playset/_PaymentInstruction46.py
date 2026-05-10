@@ -1,19 +1,19 @@
 from . import base_types
-from ._ChargeBearerType1Code import ChargeBearerType1Code
 from ._AdviceType1 import AdviceType1
-from ._PaymentMethod7Code import PaymentMethod7Code
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CreditTransferTransaction65 import CreditTransferTransaction65
-from ._PaymentTypeInformation29 import PaymentTypeInformation29
-from ._Max35Text import Max35Text
-from ._PaymentCondition2 import PaymentCondition2
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._PartyIdentification272 import PartyIdentification272
 from ._CashAccount40 import CashAccount40
+from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._CreditTransferTransaction65 import CreditTransferTransaction65
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Max35Text import Max35Text
+from ._PartyIdentification272 import PartyIdentification272
+from ._PaymentCondition2 import PaymentCondition2
+from ._PaymentMethod7Code import PaymentMethod7Code
+from ._PaymentTypeInformation29 import PaymentTypeInformation29
 
 class PaymentInstruction46(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtCond", "_PmtInfId", "_ReqdAdvcTp", "_PmtTpInf", "_Dbtr", "_ChrgBr", "_ReqdExctnDt", "_DbtrAcct", "_CdtTrfTx", "_XpryDt", "_DbtrAgt", "_PmtMtd", "_DbtrAgtAcct", "_UltmtDbtr"]
+	__slots__ = ["_CdtTrfTx", "_ChrgBr", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_PmtCond", "_PmtInfId", "_PmtMtd", "_PmtTpInf", "_ReqdAdvcTp", "_ReqdExctnDt", "_UltmtDbtr", "_XpryDt"]
 	@property
 	def CdtTrfTx(self):
 		return self._CdtTrfTx

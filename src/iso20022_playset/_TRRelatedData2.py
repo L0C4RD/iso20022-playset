@@ -1,10 +1,10 @@
 from . import base_types
-from ._TR34Command1Code import TR34Command1Code
 from ._Max100KBinary import Max100KBinary
+from ._TR34Command1Code import TR34Command1Code
 
 class TRRelatedData2(base_types._BaseFieldType):
 
-	__slots__ = ["_TRBlck", "_TR34Cmd"]
+	__slots__ = ["_TR34Cmd", "_TRBlck"]
 	@property
 	def TR34Cmd(self):
 		return self._TR34Cmd

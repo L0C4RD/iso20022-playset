@@ -1,15 +1,15 @@
 from . import base_types
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._AdditionalInformation15 import AdditionalInformation15
 from ._DecimalNumber import DecimalNumber
 from ._HoldingTransferable1Code import HoldingTransferable1Code
-from ._Max70Text import Max70Text
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Max350Text import Max350Text
+from ._Max70Text import Max70Text
 from ._Number import Number
 
 class InvestmentRestrictions3(base_types._BaseFieldType):
 
-	__slots__ = ["_MinSbsqntSbcptUnits", "_MaxSwtchRedAmt", "_MaxRedAmt", "_MinSbsqntSbcptAmt", "_MinHldgPrd", "_HldgTrfbl", "_MaxSwtchRedUnits", "_MinHldgAmt", "_MinRedPctg", "_MaxRedUnits", "_OthrSwtchRstrctns", "_OthrRedRstrctns", "_MinSwtchSbcptUnits", "_MinInitlSbcptAmt", "_AddtlInf", "_MinSwtchSbcptAmt", "_MinHldgUnits", "_MinInitlSbcptUnits"]
+	__slots__ = ["_AddtlInf", "_HldgTrfbl", "_MaxRedAmt", "_MaxRedUnits", "_MaxSwtchRedAmt", "_MaxSwtchRedUnits", "_MinHldgAmt", "_MinHldgPrd", "_MinHldgUnits", "_MinInitlSbcptAmt", "_MinInitlSbcptUnits", "_MinRedPctg", "_MinSbsqntSbcptAmt", "_MinSbsqntSbcptUnits", "_MinSwtchSbcptAmt", "_MinSwtchSbcptUnits", "_OthrRedRstrctns", "_OthrSwtchRstrctns"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

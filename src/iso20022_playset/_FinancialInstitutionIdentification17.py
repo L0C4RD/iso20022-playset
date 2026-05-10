@@ -1,6 +1,6 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
 from ._FinancialInstitutionIdentification10Choice import FinancialInstitutionIdentification10Choice
+from ._LEIIdentifier import LEIIdentifier
 
 class FinancialInstitutionIdentification17(base_types._BaseFieldType):
 

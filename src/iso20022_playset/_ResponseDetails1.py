@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class ResponseDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnCd", "_AddtlDtls"]
+	__slots__ = ["_AddtlDtls", "_RspnCd"]
 	@property
 	def AddtlDtls(self):
 		return self._AddtlDtls

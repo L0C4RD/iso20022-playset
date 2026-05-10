@@ -1,11 +1,11 @@
 from . import base_types
-from ._FinancialInstrumentAttributes132 import FinancialInstrumentAttributes132
 from ._CorporateActionEventType112Choice import CorporateActionEventType112Choice
+from ._FinancialInstrumentAttributes132 import FinancialInstrumentAttributes132
 from ._Max35Text import Max35Text
 
 class CorporateActionGeneralInformation180(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygScty", "_OffclCorpActnEvtId", "_EvtTp", "_CorpActnEvtId"]
+	__slots__ = ["_CorpActnEvtId", "_EvtTp", "_OffclCorpActnEvtId", "_UndrlygScty"]
 	@property
 	def CorpActnEvtId(self):
 		return self._CorpActnEvtId

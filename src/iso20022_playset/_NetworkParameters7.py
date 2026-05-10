@@ -1,13 +1,13 @@
 from . import base_types
-from ._Max140Binary import Max140Binary
-from ._Max35Text import Max35Text
 from ._Max10KBinary import Max10KBinary
-from ._NetworkParameters9 import NetworkParameters9
+from ._Max140Binary import Max140Binary
 from ._Max35Binary import Max35Binary
+from ._Max35Text import Max35Text
+from ._NetworkParameters9 import NetworkParameters9
 
 class NetworkParameters7(base_types._BaseFieldType):
 
-	__slots__ = ["_UsrNm", "_SvrCertIdr", "_SctyPrfl", "_Adr", "_AccsCd", "_SvrCert", "_ClntCert"]
+	__slots__ = ["_AccsCd", "_Adr", "_ClntCert", "_SctyPrfl", "_SvrCert", "_SvrCertIdr", "_UsrNm"]
 	@property
 	def AccsCd(self):
 		return self._AccsCd

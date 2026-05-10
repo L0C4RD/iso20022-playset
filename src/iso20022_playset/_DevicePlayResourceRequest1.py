@@ -1,14 +1,14 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._ResourceContent1 import ResourceContent1
-from ._ProcessingPosition2Code import ProcessingPosition2Code
 from ._Max35Text import Max35Text
-from ._ResponseMode2Code import ResponseMode2Code
+from ._PercentageRate import PercentageRate
+from ._ProcessingPosition2Code import ProcessingPosition2Code
 from ._ResourceAction1Code import ResourceAction1Code
+from ._ResourceContent1 import ResourceContent1
+from ._ResponseMode2Code import ResponseMode2Code
 
 class DevicePlayResourceRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsrc", "_RsrcActn", "_SoundVol", "_DispRsltn", "_RspnMd", "_TmgSlot"]
+	__slots__ = ["_DispRsltn", "_RspnMd", "_Rsrc", "_RsrcActn", "_SoundVol", "_TmgSlot"]
 	@property
 	def DispRsltn(self):
 		return self._DispRsltn

@@ -1,31 +1,31 @@
 from . import base_types
+from ._AllegementStatus4Choice import AllegementStatus4Choice
+from ._AmountAndDirection92 import AmountAndDirection92
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._FinancialInstrumentAttributes122 import FinancialInstrumentAttributes122
 from ._Max3Number import Max3Number
 from ._OtherAmounts36 import OtherAmounts36
-from ._TradeTransactionCondition6Choice import TradeTransactionCondition6Choice
-from ._FinancialInstrumentAttributes122 import FinancialInstrumentAttributes122
-from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
-from ._TradeDate9Choice import TradeDate9Choice
-from ._SecuritiesFinancingTransactionDetails50 import SecuritiesFinancingTransactionDetails50
-from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._QuantityAndAccount107 import QuantityAndAccount107
-from ._SettlementDetails174 import SettlementDetails174
-from ._PlaceOfTradeIdentification2 import PlaceOfTradeIdentification2
-from ._AmountAndDirection92 import AmountAndDirection92
-from ._SupplementaryData1 import SupplementaryData1
-from ._SettlementParties105 import SettlementParties105
-from ._TypeOfPrice32Choice import TypeOfPrice32Choice
-from ._AllegementStatus4Choice import AllegementStatus4Choice
-from ._SettlementDate20Choice import SettlementDate20Choice
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._Price11 import Price11
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 from ._OtherParties37 import OtherParties37
+from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
+from ._PlaceOfTradeIdentification2 import PlaceOfTradeIdentification2
+from ._Price11 import Price11
+from ._QuantityAndAccount107 import QuantityAndAccount107
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
+from ._SecuritiesFinancingTransactionDetails50 import SecuritiesFinancingTransactionDetails50
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._SettlementDate20Choice import SettlementDate20Choice
+from ._SettlementDetails174 import SettlementDetails174
+from ._SettlementParties105 import SettlementParties105
+from ._SupplementaryData1 import SupplementaryData1
+from ._TradeDate9Choice import TradeDate9Choice
+from ._TradeTransactionCondition6Choice import TradeTransactionCondition6Choice
+from ._TypeOfPrice32Choice import TypeOfPrice32Choice
 
 class SecuritiesTradeDetails140(base_types._BaseFieldType):
 
-	__slots__ = ["_TradId", "_OthrAmts", "_CtrPtyMktInfrstrctrTxId", "_Sts", "_SttlmDt", "_TpOfPric", "_SctiesFincgDtls", "_OthrBizPties", "_SttlmParams", "_TradTxCond", "_NbOfDaysAcrd", "_AcctSvcrTxId", "_SttlmAmt", "_FinInstrmAttrbts", "_AcctOwnrTxId", "_RcvgSttlmPties", "_SctiesMvmntTp", "_TradDt", "_CollTxId", "_PoolId", "_DealPric", "_PlcOfTrad", "_Pmt", "_QtyAndAcctDtls", "_MktInfrstrctrTxId", "_PlcOfClr", "_FinInstrmId", "_CmonId", "_DlvrgSttlmPties", "_PrcrTxId", "_SplmtryData"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_CmonId", "_CollTxId", "_CtrPtyMktInfrstrctrTxId", "_DealPric", "_DlvrgSttlmPties", "_FinInstrmAttrbts", "_FinInstrmId", "_MktInfrstrctrTxId", "_NbOfDaysAcrd", "_OthrAmts", "_OthrBizPties", "_PlcOfClr", "_PlcOfTrad", "_Pmt", "_PoolId", "_PrcrTxId", "_QtyAndAcctDtls", "_RcvgSttlmPties", "_SctiesFincgDtls", "_SctiesMvmntTp", "_SplmtryData", "_Sts", "_SttlmAmt", "_SttlmDt", "_SttlmParams", "_TpOfPric", "_TradDt", "_TradId", "_TradTxCond"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

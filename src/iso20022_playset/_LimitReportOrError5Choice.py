@@ -4,7 +4,7 @@ from ._Limits8 import Limits8
 
 class LimitReportOrError5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OprlErr", "_BizRpt"]
+	__slots__ = ["_BizRpt", "_OprlErr"]
 	@property
 	def BizRpt(self):
 		return self._BizRpt

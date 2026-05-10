@@ -1,14 +1,14 @@
 from . import base_types
+from ._ISO8583ResponseCode import ISO8583ResponseCode
 from ._ISO8583TransactionTypeCode import ISO8583TransactionTypeCode
 from ._Max11NumericText import Max11NumericText
-from ._OriginalTransactionIdentification1 import OriginalTransactionIdentification1
-from ._ISO8583ResponseCode import ISO8583ResponseCode
 from ._MessageClass1Code import MessageClass1Code
 from ._MessageFunction16Code import MessageFunction16Code
+from ._OriginalTransactionIdentification1 import OriginalTransactionIdentification1
 
 class OriginalDataElements4(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_MsgClss", "_SndrId", "_RspnCd", "_TxTp", "_AcqrrId", "_MsgFctn"]
+	__slots__ = ["_AcqrrId", "_MsgClss", "_MsgFctn", "_RspnCd", "_SndrId", "_TxId", "_TxTp"]
 	@property
 	def AcqrrId(self):
 		return self._AcqrrId

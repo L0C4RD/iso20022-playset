@@ -1,12 +1,12 @@
 from . import base_types
-from ._EventToNotify2Code import EventToNotify2Code
 from ._EventContext7 import EventContext7
+from ._EventToNotify2Code import EventToNotify2Code
 from ._ISODateTime import ISODateTime
 from ._Max1025Text import Max1025Text
 
 class RetailerEvent7(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtToNtfy", "_AddtlEvtInf", "_EvtTmStmp", "_EvtCntxt"]
+	__slots__ = ["_AddtlEvtInf", "_EvtCntxt", "_EvtTmStmp", "_EvtToNtfy"]
 	@property
 	def AddtlEvtInf(self):
 		return self._AddtlEvtInf

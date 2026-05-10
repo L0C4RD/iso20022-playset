@@ -1,26 +1,26 @@
 from . import base_types
-from ._TradeDate8Choice import TradeDate8Choice
-from ._TransactionActivity3Choice import TransactionActivity3Choice
+from ._AmountAndDirection51 import AmountAndDirection51
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._ISODateTime import ISODateTime
+from ._Max350Text import Max350Text
+from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
+from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
+from ._Quantity51Choice import Quantity51Choice
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._SafeKeepingPlace5 import SafeKeepingPlace5
 from ._SecurityIdentification19 import SecurityIdentification19
 from ._SettlementDate19Choice import SettlementDate19Choice
-from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._SettlementOrCorporateActionEvent34Choice import SettlementOrCorporateActionEvent34Choice
-from ._AmountAndDirection51 import AmountAndDirection51
-from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
-from ._ISODateTime import ISODateTime
 from ._SettlementDetails184 import SettlementDetails184
-from ._SupplementaryData1 import SupplementaryData1
+from ._SettlementOrCorporateActionEvent34Choice import SettlementOrCorporateActionEvent34Choice
 from ._SettlementParties125 import SettlementParties125
-from ._Quantity51Choice import Quantity51Choice
-from ._SafeKeepingPlace5 import SafeKeepingPlace5
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max350Text import Max350Text
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._SupplementaryData1 import SupplementaryData1
+from ._TradeDate8Choice import TradeDate8Choice
+from ._TransactionActivity3Choice import TransactionActivity3Choice
 
 class TransactionDetails170(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_AckdStsTmStmp", "_SfkpgPlc", "_XpctdValDt", "_MtchdStsTmStmp", "_SttlmDt", "_LateDlvryDt", "_DlvrgSttlmPties", "_TxAddtlDtls", "_SttlmTxOrCorpActnEvtTp", "_SctiesMvmntTp", "_PlcOfTrad", "_TxActvty", "_Pmt", "_XpctdSttlmDt", "_TradDt", "_SttlmParams", "_PstngQty", "_PlcOfClr", "_PrtlyRlsdQty", "_PstngAmt", "_RcvgSttlmPties", "_SplmtryData"]
+	__slots__ = ["_AckdStsTmStmp", "_DlvrgSttlmPties", "_FinInstrmId", "_LateDlvryDt", "_MtchdStsTmStmp", "_PlcOfClr", "_PlcOfTrad", "_Pmt", "_PrtlyRlsdQty", "_PstngAmt", "_PstngQty", "_RcvgSttlmPties", "_SctiesMvmntTp", "_SfkpgPlc", "_SplmtryData", "_SttlmDt", "_SttlmParams", "_SttlmTxOrCorpActnEvtTp", "_TradDt", "_TxActvty", "_TxAddtlDtls", "_XpctdSttlmDt", "_XpctdValDt"]
 	@property
 	def AckdStsTmStmp(self):
 		return self._AckdStsTmStmp

@@ -1,11 +1,11 @@
 from . import base_types
-from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
-from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
 from ._BalanceFormat14Choice import BalanceFormat14Choice
+from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
 
 class AccountAndBalance54(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_SfkpgAcct", "_ConfdBal"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_ConfdBal", "_SfkpgAcct"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt

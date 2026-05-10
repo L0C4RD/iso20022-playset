@@ -3,7 +3,7 @@ from ._Max350Text import Max350Text
 
 class CorporateActionNarrative32(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvryDtls", "_FXInstrsAddtlInf", "_InstrAddtlInf", "_InfToCmplyWth"]
+	__slots__ = ["_DlvryDtls", "_FXInstrsAddtlInf", "_InfToCmplyWth", "_InstrAddtlInf"]
 	@property
 	def DlvryDtls(self):
 		return self._DlvryDtls

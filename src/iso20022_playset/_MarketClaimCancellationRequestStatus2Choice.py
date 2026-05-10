@@ -1,13 +1,13 @@
 from . import base_types
-from ._RejectedStatus38Choice import RejectedStatus38Choice
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 from ._CancelledStatus11Choice import CancelledStatus11Choice
 from ._NoSpecifiedReason1 import NoSpecifiedReason1
 from ._PendingCancellationStatus14Choice import PendingCancellationStatus14Choice
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._RejectedStatus38Choice import RejectedStatus38Choice
 
 class MarketClaimCancellationRequestStatus2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlCmpltd", "_PdgCxl", "_PrtrySts", "_Rjctd", "_Accptd"]
+	__slots__ = ["_Accptd", "_CxlCmpltd", "_PdgCxl", "_PrtrySts", "_Rjctd"]
 	@property
 	def Accptd(self):
 		return self._Accptd

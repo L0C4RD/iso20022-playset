@@ -4,7 +4,7 @@ from ._Max70Text import Max70Text
 
 class Incoterms4(base_types._BaseFieldType):
 
-	__slots__ = ["_Lctn", "_IncotrmsCd"]
+	__slots__ = ["_IncotrmsCd", "_Lctn"]
 	@property
 	def IncotrmsCd(self):
 		return self._IncotrmsCd

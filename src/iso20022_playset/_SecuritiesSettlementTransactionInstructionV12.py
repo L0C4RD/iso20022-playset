@@ -1,26 +1,26 @@
 from . import base_types
-from ._SettlementTypeAndAdditionalParameters23 import SettlementTypeAndAdditionalParameters23
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SecuritiesTradeDetails142 import SecuritiesTradeDetails142
-from ._Linkages64 import Linkages64
-from ._RegistrationParameters6 import RegistrationParameters6
 from ._AmountAndDirection94 import AmountAndDirection94
-from ._SettlementParties126 import SettlementParties126
-from ._StandingSettlementInstruction20 import StandingSettlementInstruction20
-from ._OtherParties43 import OtherParties43
-from ._QuantityAndAccount117 import QuantityAndAccount117
-from ._FinancialInstrumentAttributes111 import FinancialInstrumentAttributes111
-from ._SupplementaryData1 import SupplementaryData1
 from ._CashParties41 import CashParties41
-from ._NumberCount2Choice import NumberCount2Choice
-from ._SettlementDetails219 import SettlementDetails219
-from ._OtherAmounts45 import OtherAmounts45
+from ._FinancialInstrumentAttributes111 import FinancialInstrumentAttributes111
+from ._Linkages64 import Linkages64
 from ._Max35Text import Max35Text
 from ._NetworkFee1 import NetworkFee1
+from ._NumberCount2Choice import NumberCount2Choice
+from ._OtherAmounts45 import OtherAmounts45
+from ._OtherParties43 import OtherParties43
+from ._QuantityAndAccount117 import QuantityAndAccount117
+from ._RegistrationParameters6 import RegistrationParameters6
+from ._SecuritiesTradeDetails142 import SecuritiesTradeDetails142
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SettlementDetails219 import SettlementDetails219
+from ._SettlementParties126 import SettlementParties126
+from ._SettlementTypeAndAdditionalParameters23 import SettlementTypeAndAdditionalParameters23
+from ._StandingSettlementInstruction20 import StandingSettlementInstruction20
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesSettlementTransactionInstructionV12(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_DgtlNtwkFee", "_StgSttlmInstrDtls", "_AddtlPhysOrRegnDtls", "_TxId", "_OthrAmts", "_SttlmTpAndAddtlParams", "_TradDtls", "_FinInstrmAttrbts", "_SttlmAmt", "_RcvgSttlmPties", "_DlvrgSttlmPties", "_CshPties", "_NbCounts", "_SttlmParams", "_Lnkgs", "_QtyAndAcctDtls", "_OthrBizPties", "_SplmtryData"]
+	__slots__ = ["_AddtlPhysOrRegnDtls", "_CshPties", "_DgtlNtwkFee", "_DlvrgSttlmPties", "_FinInstrmAttrbts", "_FinInstrmId", "_Lnkgs", "_NbCounts", "_OthrAmts", "_OthrBizPties", "_QtyAndAcctDtls", "_RcvgSttlmPties", "_SplmtryData", "_StgSttlmInstrDtls", "_SttlmAmt", "_SttlmParams", "_SttlmTpAndAddtlParams", "_TradDtls", "_TxId"]
 	@property
 	def AddtlPhysOrRegnDtls(self):
 		return self._AddtlPhysOrRegnDtls

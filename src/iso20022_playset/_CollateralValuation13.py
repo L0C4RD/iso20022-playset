@@ -1,20 +1,20 @@
 from . import base_types
 from ._BaseOneRate import BaseOneRate
-from ._InterestComputationMethod2Code import InterestComputationMethod2Code
-from ._SettlementStatus3Code import SettlementStatus3Code
-from ._Number import Number
+from ._CashCollateral4 import CashCollateral4
+from ._CollateralAmount1 import CollateralAmount1
+from ._CollateralAppliedExcess1Code import CollateralAppliedExcess1Code
 from ._CollateralDirection1Code import CollateralDirection1Code
 from ._CollateralType8Code import CollateralType8Code
-from ._CollateralAmount1 import CollateralAmount1
-from ._CashCollateral4 import CashCollateral4
+from ._InterestComputationMethod2Code import InterestComputationMethod2Code
 from ._Max35Text import Max35Text
+from ._Number import Number
 from ._OtherCollateral10 import OtherCollateral10
 from ._SecuritiesCollateral13 import SecuritiesCollateral13
-from ._CollateralAppliedExcess1Code import CollateralAppliedExcess1Code
+from ._SettlementStatus3Code import SettlementStatus3Code
 
 class CollateralValuation13(base_types._BaseFieldType):
 
-	__slots__ = ["_DayCntBsis", "_SttlmSts", "_CcyHrcut", "_AdjstdRate", "_ApldXcssInd", "_SctiesColl", "_CollId", "_ValtnAmts", "_CollDrctn", "_CollTp", "_NbOfDaysAcrd", "_CshColl", "_XchgRate", "_OthrColl"]
+	__slots__ = ["_AdjstdRate", "_ApldXcssInd", "_CcyHrcut", "_CollDrctn", "_CollId", "_CollTp", "_CshColl", "_DayCntBsis", "_NbOfDaysAcrd", "_OthrColl", "_SctiesColl", "_SttlmSts", "_ValtnAmts", "_XchgRate"]
 	@property
 	def AdjstdRate(self):
 		return self._AdjstdRate

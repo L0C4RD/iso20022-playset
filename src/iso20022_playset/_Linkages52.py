@@ -4,7 +4,7 @@ from ._IdentificationReference8Choice import IdentificationReference8Choice
 
 class Linkages52(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_MsgNb"]
+	__slots__ = ["_MsgNb", "_Ref"]
 	@property
 	def MsgNb(self):
 		return self._MsgNb

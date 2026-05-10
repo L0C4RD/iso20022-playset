@@ -1,10 +1,10 @@
 from . import base_types
-from ._RestrictedFINX2Max34Text import RestrictedFINX2Max34Text
 from ._IBAN2007Identifier import IBAN2007Identifier
+from ._RestrictedFINX2Max34Text import RestrictedFINX2Max34Text
 
 class CashAccountIdentification6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_IBAN"]
+	__slots__ = ["_IBAN", "_Prtry"]
 	@property
 	def IBAN(self):
 		return self._IBAN

@@ -1,15 +1,15 @@
 from . import base_types
-from ._PartyLockStatus1 import PartyLockStatus1
-from ._PartyIdentification136 import PartyIdentification136
-from ._Max35Text import Max35Text
-from ._ResidenceType1Code import ResidenceType1Code
 from ._DateAndDateTimeSearch4Choice import DateAndDateTimeSearch4Choice
-from ._SystemPartyType1Choice import SystemPartyType1Choice
 from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
+from ._Max35Text import Max35Text
+from ._PartyIdentification136 import PartyIdentification136
+from ._PartyLockStatus1 import PartyLockStatus1
+from ._ResidenceType1Code import ResidenceType1Code
+from ._SystemPartyType1Choice import SystemPartyType1Choice
 
 class PartyDataSearchCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_LckSts", "_OpngDt", "_RstrctnId", "_ResTp", "_Tp", "_PtyId", "_RstrctnIsseDt", "_ClsgDt", "_RspnsblPtyId"]
+	__slots__ = ["_ClsgDt", "_LckSts", "_OpngDt", "_PtyId", "_ResTp", "_RspnsblPtyId", "_RstrctnId", "_RstrctnIsseDt", "_Tp"]
 	@property
 	def ClsgDt(self):
 		return self._ClsgDt

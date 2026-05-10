@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._Max35Text import Max35Text
 from ._BuyIn4 import BuyIn4
-from ._SettlementObligation7 import SettlementObligation7
+from ._Max35Text import Max35Text
 from ._PartyIdentification35Choice import PartyIdentification35Choice
+from ._SettlementObligation7 import SettlementObligation7
+from ._SupplementaryData1 import SupplementaryData1
 
 class BuyInNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnDtls", "_ClrMmb", "_OrgnlSttlmOblgtn", "_SplmtryData", "_TxId"]
+	__slots__ = ["_ClrMmb", "_NtfctnDtls", "_OrgnlSttlmOblgtn", "_SplmtryData", "_TxId"]
 	@property
 	def ClrMmb(self):
 		return self._ClrMmb

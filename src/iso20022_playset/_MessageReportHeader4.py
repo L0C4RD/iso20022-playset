@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._Max140Text import Max140Text
-from ._StatusReportRecord3 import StatusReportRecord3
 from ._StatusAdviceReport3 import StatusAdviceReport3
+from ._StatusReportRecord3 import StatusReportRecord3
+from ._SupplementaryData1 import SupplementaryData1
 
 class MessageReportHeader4(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgSts", "_RcrdSts", "_SplmtryData", "_MsgRptIdr"]
+	__slots__ = ["_MsgRptIdr", "_MsgSts", "_RcrdSts", "_SplmtryData"]
 	@property
 	def MsgRptIdr(self):
 		return self._MsgRptIdr

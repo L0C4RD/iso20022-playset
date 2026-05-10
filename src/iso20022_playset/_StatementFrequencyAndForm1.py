@@ -1,12 +1,12 @@
 from . import base_types
-from ._CommunicationMethod2Choice import CommunicationMethod2Choice
 from ._CommunicationFormat1Choice import CommunicationFormat1Choice
-from ._Max350Text import Max350Text
+from ._CommunicationMethod2Choice import CommunicationMethod2Choice
 from ._Frequency7Code import Frequency7Code
+from ._Max350Text import Max350Text
 
 class StatementFrequencyAndForm1(base_types._BaseFieldType):
 
-	__slots__ = ["_Frmt", "_DlvryAdr", "_Frqcy", "_ComMtd"]
+	__slots__ = ["_ComMtd", "_DlvryAdr", "_Frmt", "_Frqcy"]
 	@property
 	def ComMtd(self):
 		return self._ComMtd

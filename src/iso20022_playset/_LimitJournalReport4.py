@@ -4,7 +4,7 @@ from ._LimitJournalReportOrError8Choice import LimitJournalReportOrError8Choice
 
 class LimitJournalReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_LmtRpt", "_LmtId"]
+	__slots__ = ["_LmtId", "_LmtRpt"]
 	@property
 	def LmtId(self):
 		return self._LmtId

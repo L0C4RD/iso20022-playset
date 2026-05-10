@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._StatusDetail1 import StatusDetail1
-from ._Period4Choice import Period4Choice
-from ._PartyIdentification136 import PartyIdentification136
-from ._PartyDetail1 import PartyDetail1
 from ._Max35Text import Max35Text
+from ._PartyDetail1 import PartyDetail1
+from ._PartyIdentification136 import PartyIdentification136
+from ._Period4Choice import Period4Choice
+from ._StatusDetail1 import StatusDetail1
+from ._SupplementaryData1 import SupplementaryData1
 
 class PartyUpdate1(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Id", "_Sts", "_TechRcrdId", "_TechVldtyPrd", "_PrvsId", "_Othr"]
+	__slots__ = ["_Id", "_Othr", "_PrvsId", "_SplmtryData", "_Sts", "_TechRcrdId", "_TechVldtyPrd"]
 	@property
 	def Id(self):
 		return self._Id

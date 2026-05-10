@@ -1,11 +1,11 @@
 from . import base_types
 from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
-from ._QuantityAndAvailability4 import QuantityAndAvailability4
 from ._GenericIdentification144 import GenericIdentification144
+from ._QuantityAndAvailability4 import QuantityAndAvailability4
 
 class SubBalanceQuantity9Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_QtyAndAvlbty", "_Qty", "_Prtry"]
+	__slots__ = ["_Prtry", "_Qty", "_QtyAndAvlbty"]
 	@property
 	def Prtry(self):
 		return self._Prtry

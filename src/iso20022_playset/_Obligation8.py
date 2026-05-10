@@ -1,18 +1,18 @@
 from . import base_types
-from ._ClosingDate4Choice import ClosingDate4Choice
-from ._GenericIdentification30 import GenericIdentification30
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._CollateralRole1Code import CollateralRole1Code
 from ._BlockChainAddressWallet5 import BlockChainAddressWallet5
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ClosingDate4Choice import ClosingDate4Choice
 from ._CollateralAccount3 import CollateralAccount3
-from ._ExposureType21Choice import ExposureType21Choice
+from ._CollateralRole1Code import CollateralRole1Code
 from ._CollateralTransactionType1Choice import CollateralTransactionType1Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ExposureType21Choice import ExposureType21Choice
+from ._GenericIdentification30 import GenericIdentification30
 from ._PartyIdentification178Choice import PartyIdentification178Choice
 
 class Obligation8(base_types._BaseFieldType):
 
-	__slots__ = ["_CollAcctId", "_SvcgPtyB", "_ValtnDt", "_ClsgDt", "_XpsrTp", "_XpsrAmt", "_SvcgPtyA", "_CollTxTp", "_PtyB", "_CollSd", "_ReqdExctnDt", "_SttlmPrc", "_PtyA", "_BlckChainAdrOrWllt"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_ClsgDt", "_CollAcctId", "_CollSd", "_CollTxTp", "_PtyA", "_PtyB", "_ReqdExctnDt", "_SttlmPrc", "_SvcgPtyA", "_SvcgPtyB", "_ValtnDt", "_XpsrAmt", "_XpsrTp"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt

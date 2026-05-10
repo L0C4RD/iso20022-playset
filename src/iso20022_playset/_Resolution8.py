@@ -1,19 +1,19 @@
 from . import base_types
+from ._Entitlement1Choice import Entitlement1Choice
 from ._ItemDescription2 import ItemDescription2
 from ._Max2048Text import Max2048Text
-from ._Entitlement1Choice import Entitlement1Choice
-from ._ResolutionType2Code import ResolutionType2Code
-from ._ResolutionStatus1Code import ResolutionStatus1Code
-from ._YesNoIndicator import YesNoIndicator
-from ._VoteInstructionType1 import VoteInstructionType1
-from ._VotingRightsThreshold2 import VotingRightsThreshold2
-from ._VoteType1Code import VoteType1Code
 from ._Max35Text import Max35Text
+from ._ResolutionStatus1Code import ResolutionStatus1Code
+from ._ResolutionType2Code import ResolutionType2Code
 from ._VoteInstruction5Code import VoteInstruction5Code
+from ._VoteInstructionType1 import VoteInstructionType1
+from ._VoteType1Code import VoteType1Code
+from ._VotingRightsThreshold2 import VotingRightsThreshold2
+from ._YesNoIndicator import YesNoIndicator
 
 class Resolution8(base_types._BaseFieldType):
 
-	__slots__ = ["_RghtToWdrwInd", "_Sts", "_NtifngPtyRcmmndtn", "_VoteTp", "_IssrLabl", "_Desc", "_SubmittdBySctyHldr", "_Entitlmnt", "_URLAdr", "_MgmtRcmmndtn", "_Tp", "_ListgGrpRsltnLabl", "_VtngRghtsThrshldForApprvl", "_VoteInstrTp", "_ForInfOnly"]
+	__slots__ = ["_Desc", "_Entitlmnt", "_ForInfOnly", "_IssrLabl", "_ListgGrpRsltnLabl", "_MgmtRcmmndtn", "_NtifngPtyRcmmndtn", "_RghtToWdrwInd", "_Sts", "_SubmittdBySctyHldr", "_Tp", "_URLAdr", "_VoteInstrTp", "_VoteTp", "_VtngRghtsThrshldForApprvl"]
 	@property
 	def Desc(self):
 		return self._Desc

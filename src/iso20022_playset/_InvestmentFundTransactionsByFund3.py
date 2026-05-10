@@ -1,15 +1,15 @@
 from . import base_types
-from ._SecurityIdentification3Choice import SecurityIdentification3Choice
+from ._DistributionPolicy1Code import DistributionPolicy1Code
 from ._FormOfSecurity1Code import FormOfSecurity1Code
 from ._InvestmentFundTransaction4 import InvestmentFundTransaction4
-from ._Max35Text import Max35Text
 from ._Max350Text import Max350Text
-from ._DistributionPolicy1Code import DistributionPolicy1Code
+from ._Max35Text import Max35Text
 from ._PaginationBalance2 import PaginationBalance2
+from ._SecurityIdentification3Choice import SecurityIdentification3Choice
 
 class InvestmentFundTransactionsByFund3(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesForm", "_TxDtls", "_DstrbtnPlcy", "_Nm", "_ClssTp", "_SplmtryId", "_BalByPg", "_Id"]
+	__slots__ = ["_BalByPg", "_ClssTp", "_DstrbtnPlcy", "_Id", "_Nm", "_SctiesForm", "_SplmtryId", "_TxDtls"]
 	@property
 	def BalByPg(self):
 		return self._BalByPg

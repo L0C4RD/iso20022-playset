@@ -1,10 +1,10 @@
 from . import base_types
-from ._NotificationCancellationRejectionReason2 import NotificationCancellationRejectionReason2
 from ._NotificationCancellationProcessingStatus2 import NotificationCancellationProcessingStatus2
+from ._NotificationCancellationRejectionReason2 import NotificationCancellationRejectionReason2
 
 class NotificationCancellationRequestStatus2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctdSts", "_PrcdSts"]
+	__slots__ = ["_PrcdSts", "_RjctdSts"]
 	@property
 	def PrcdSts(self):
 		return self._PrcdSts

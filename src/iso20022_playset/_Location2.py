@@ -1,11 +1,11 @@
 from . import base_types
-from ._CountrySubdivision1Choice import CountrySubdivision1Choice
 from ._CountryCode import CountryCode
+from ._CountrySubdivision1Choice import CountrySubdivision1Choice
 from ._Max35Text import Max35Text
 
 class Location2(base_types._BaseFieldType):
 
-	__slots__ = ["_Txt", "_CtrySubDvsn", "_Ctry"]
+	__slots__ = ["_Ctry", "_CtrySubDvsn", "_Txt"]
 	@property
 	def Ctry(self):
 		return self._Ctry

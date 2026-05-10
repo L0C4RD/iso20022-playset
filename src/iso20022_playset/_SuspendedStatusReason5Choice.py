@@ -4,7 +4,7 @@ from ._SuspendedStatusReason3Code import SuspendedStatusReason3Code
 
 class SuspendedStatusReason5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

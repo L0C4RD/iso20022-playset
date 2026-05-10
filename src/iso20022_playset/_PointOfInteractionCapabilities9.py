@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._OnLineCapability1Code import OnLineCapability1Code
-from ._CardholderVerificationCapability4Code import CardholderVerificationCapability4Code
 from ._CardDataReading8Code import CardDataReading8Code
+from ._CardholderVerificationCapability4Code import CardholderVerificationCapability4Code
 from ._DisplayCapabilities4 import DisplayCapabilities4
+from ._OnLineCapability1Code import OnLineCapability1Code
 from ._PositiveNumber import PositiveNumber
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PointOfInteractionCapabilities9(base_types._BaseFieldType):
 
-	__slots__ = ["_OnLineCpblties", "_MxScrptLngth", "_CrdhldrVrfctnCpblties", "_PINLngthCpblties", "_ApprvlCdLngth", "_CardCaptrCpbl", "_MsgCpblties", "_CardRdngCpblties"]
+	__slots__ = ["_ApprvlCdLngth", "_CardCaptrCpbl", "_CardRdngCpblties", "_CrdhldrVrfctnCpblties", "_MsgCpblties", "_MxScrptLngth", "_OnLineCpblties", "_PINLngthCpblties"]
 	@property
 	def ApprvlCdLngth(self):
 		return self._ApprvlCdLngth

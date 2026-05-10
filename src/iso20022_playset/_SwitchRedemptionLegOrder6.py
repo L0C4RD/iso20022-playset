@@ -1,22 +1,22 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._FeeAndTax1 import FeeAndTax1
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._DeliveryParameters3 import DeliveryParameters3
 from ._Equalisation1 import Equalisation1
-from ._YesNoIndicator import YesNoIndicator
-from ._FinancialInstrumentQuantity29Choice import FinancialInstrumentQuantity29Choice
-from ._InvestmentAccount58 import InvestmentAccount58
+from ._FeeAndTax1 import FeeAndTax1
 from ._FinancialInstrument57 import FinancialInstrument57
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._IncomePreference1Code import IncomePreference1Code
-from ._Max35Text import Max35Text
-from ._Max350Text import Max350Text
+from ._FinancialInstrumentQuantity29Choice import FinancialInstrumentQuantity29Choice
 from ._FundSettlementParameters12 import FundSettlementParameters12
+from ._IncomePreference1Code import IncomePreference1Code
+from ._InvestmentAccount58 import InvestmentAccount58
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
 from ._UKTaxGroupUnit1Code import UKTaxGroupUnit1Code
+from ._YesNoIndicator import YesNoIndicator
 
 class SwitchRedemptionLegOrder6(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmAndCtdyDtls", "_NonStdSttlmInf", "_ReqdSttlmCcy", "_TxOvrhd", "_FinInstrmQtyChc", "_Grp1Or2Units", "_InvstmtAcctDtls", "_FinInstrmDtls", "_PhysDlvryDtls", "_LegId", "_IncmPref", "_ReqdNAVCcy", "_Equlstn", "_PhysDlvryInd"]
+	__slots__ = ["_Equlstn", "_FinInstrmDtls", "_FinInstrmQtyChc", "_Grp1Or2Units", "_IncmPref", "_InvstmtAcctDtls", "_LegId", "_NonStdSttlmInf", "_PhysDlvryDtls", "_PhysDlvryInd", "_ReqdNAVCcy", "_ReqdSttlmCcy", "_SttlmAndCtdyDtls", "_TxOvrhd"]
 	@property
 	def Equlstn(self):
 		return self._Equlstn

@@ -1,9 +1,9 @@
 from . import base_types
-from ._SecuritiesBalanceType6FormatChoice import SecuritiesBalanceType6FormatChoice
-from ._FormOfSecurity1Code import FormOfSecurity1Code
-from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._Max35Text import Max35Text
 from ._CreditDebitCode import CreditDebitCode
+from ._FormOfSecurity1Code import FormOfSecurity1Code
+from ._Max35Text import Max35Text
+from ._PartyIdentification2Choice import PartyIdentification2Choice
+from ._SecuritiesBalanceType6FormatChoice import SecuritiesBalanceType6FormatChoice
 
 class SecuritiesAccount12(base_types._BaseFieldType):
 

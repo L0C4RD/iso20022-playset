@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class CashAccount206(base_types._BaseFieldType):
 
-	__slots__ = ["_Svcr", "_AcctId", "_AcctTpDesc"]
+	__slots__ = ["_AcctId", "_AcctTpDesc", "_Svcr"]
 	@property
 	def AcctId(self):
 		return self._AcctId

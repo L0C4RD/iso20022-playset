@@ -1,6 +1,6 @@
 from . import base_types
-from ._SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
 from ._SecuritiesIndexReport1 import SecuritiesIndexReport1
+from ._SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
 from ._SupplementaryData1 import SupplementaryData1
 
 class FinancialInstrumentReportingReferenceDataIndexReportV01(base_types._BaseFieldType):

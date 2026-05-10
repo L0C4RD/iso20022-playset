@@ -1,25 +1,25 @@
 from . import base_types
-from ._ISO8583ResponseCode import ISO8583ResponseCode
 from ._AdditionalData2 import AdditionalData2
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._Jurisdiction2 import Jurisdiction2
-from ._Cardholder22 import Cardholder22
+from ._AdditionalFee3 import AdditionalFee3
 from ._CardData15 import CardData15
+from ._Cardholder22 import Cardholder22
+from ._ContentInformationType41 import ContentInformationType41
+from ._Header71 import Header71
+from ._ISO8583ResponseCode import ISO8583ResponseCode
+from ._Jurisdiction2 import Jurisdiction2
+from ._Max70Text import Max70Text
 from ._PartyIdentification286 import PartyIdentification286
 from ._ProcessingResult23 import ProcessingResult23
-from ._SupplementaryData1 import SupplementaryData1
-from ._ContentInformationType41 import ContentInformationType41
-from ._SettlementService6 import SettlementService6
+from ._ProgrammeMode5 import ProgrammeMode5
 from ._ProtectedData2 import ProtectedData2
-from ._AdditionalFee3 import AdditionalFee3
 from ._Reconciliation4 import Reconciliation4
-from ._Max70Text import Max70Text
-from ._Header71 import Header71
+from ._SettlementService6 import SettlementService6
+from ._SupplementaryData1 import SupplementaryData1
 from ._Token2 import Token2
 
 class FraudReportingResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Sndr", "_FrdTxId", "_AddtlData", "_Issr", "_Jursdctn", "_Prgrmm", "_AddtlFee", "_Hdr", "_Tkn", "_Rcncltn", "_Acqrr", "_Crdhldr", "_SctyTrlr", "_PrcgRslt", "_Rcvr", "_SttlmSvc", "_PrtctdData", "_OrgnlRspnCd", "_Orgtr", "_Card", "_SplmtryData", "_Dstn"]
+	__slots__ = ["_Acqrr", "_AddtlData", "_AddtlFee", "_Card", "_Crdhldr", "_Dstn", "_FrdTxId", "_Hdr", "_Issr", "_Jursdctn", "_OrgnlRspnCd", "_Orgtr", "_PrcgRslt", "_Prgrmm", "_PrtctdData", "_Rcncltn", "_Rcvr", "_SctyTrlr", "_Sndr", "_SplmtryData", "_SttlmSvc", "_Tkn"]
 	@property
 	def Acqrr(self):
 		return self._Acqrr

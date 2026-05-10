@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._MessageHeader12 import MessageHeader12
 from ._PartyAuditTrailOrError3Choice import PartyAuditTrailOrError3Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class PartyAuditTrailReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RptOrErr", "_MsgHdr", "_SplmtryData"]
+	__slots__ = ["_MsgHdr", "_RptOrErr", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

@@ -1,12 +1,12 @@
 from . import base_types
+from ._AmountAndDirection30 import AmountAndDirection30
+from ._AmountAndDirection31 import AmountAndDirection31
 from ._AmountAndRate2 import AmountAndRate2
 from ._InvestmentFund1 import InvestmentFund1
-from ._AmountAndDirection31 import AmountAndDirection31
-from ._AmountAndDirection30 import AmountAndDirection30
 
 class TotalPortfolioValuation1(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsTtlBookVal", "_TtlRcts", "_IncmRcvd", "_PrvsTtlPrtflVal", "_TtlPrtflVal", "_TtlPrtflValChng", "_AcrdIncm", "_TtlBookVal", "_TtlDsbrsmnts", "_RealsdGnOrLoss", "_TtlBookValChng", "_InvstmtFndDtls", "_ExpnssPd", "_UrlsdGnOrLoss"]
+	__slots__ = ["_AcrdIncm", "_ExpnssPd", "_IncmRcvd", "_InvstmtFndDtls", "_PrvsTtlBookVal", "_PrvsTtlPrtflVal", "_RealsdGnOrLoss", "_TtlBookVal", "_TtlBookValChng", "_TtlDsbrsmnts", "_TtlPrtflVal", "_TtlPrtflValChng", "_TtlRcts", "_UrlsdGnOrLoss"]
 	@property
 	def AcrdIncm(self):
 		return self._AcrdIncm

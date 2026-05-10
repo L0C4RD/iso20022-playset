@@ -1,10 +1,10 @@
 from . import base_types
-from ._SwapLegIdentification2 import SwapLegIdentification2
 from ._FinancialInstrumentIdentification7Choice import FinancialInstrumentIdentification7Choice
+from ._SwapLegIdentification2 import SwapLegIdentification2
 
 class UnderlyingIdentification2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Swp", "_Othr"]
+	__slots__ = ["_Othr", "_Swp"]
 	@property
 	def Othr(self):
 		return self._Othr

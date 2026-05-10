@@ -1,11 +1,11 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._FinancialInstrument87 import FinancialInstrument87
+from ._PercentageRate import PercentageRate
 
 class Reinvestment4(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqdNAVCcy", "_RinvstmtPctg", "_FinInstrmDtls"]
+	__slots__ = ["_FinInstrmDtls", "_ReqdNAVCcy", "_RinvstmtPctg"]
 	@property
 	def FinInstrmDtls(self):
 		return self._FinInstrmDtls

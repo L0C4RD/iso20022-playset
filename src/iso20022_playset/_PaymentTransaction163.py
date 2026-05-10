@@ -1,27 +1,27 @@
 from . import base_types
-from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._BaseOneRate import BaseOneRate
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._SettlementTimeRequest2 import SettlementTimeRequest2
+from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._Charges16 import Charges16
+from ._CurrencyExchange26 import CurrencyExchange26
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._OriginalGroupInformation29 import OriginalGroupInformation29
+from ._OriginalTransactionReference44 import OriginalTransactionReference44
+from ._PaymentReturnReason7 import PaymentReturnReason7
 from ._PaymentTypeInformation28 import PaymentTypeInformation28
 from ._Priority3Code import Priority3Code
-from ._PaymentReturnReason7 import PaymentReturnReason7
-from ._UUIDv4Identifier import UUIDv4Identifier
-from ._ISODate import ISODate
-from ._SupplementaryData1 import SupplementaryData1
 from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
-from ._BaseOneRate import BaseOneRate
-from ._OriginalGroupInformation29 import OriginalGroupInformation29
-from ._Charges16 import Charges16
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CurrencyExchange26 import CurrencyExchange26
-from ._OriginalTransactionReference44 import OriginalTransactionReference44
-from ._Max35Text import Max35Text
+from ._SettlementTimeRequest2 import SettlementTimeRequest2
+from ._SupplementaryData1 import SupplementaryData1
 from ._TransactionParties11 import TransactionParties11
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class PaymentTransaction163(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlIntrBkSttlmDt", "_OrgnlIntrBkSttlmAmt", "_ClrSysRef", "_AgrdRate", "_ChrgBr", "_RtrdIntrBkSttlmAmt", "_RtrChain", "_OrgnlInstrId", "_ChrgsInf", "_OrgnlTxRef", "_RtrId", "_RtrRsnInf", "_OrgnlGrpInf", "_RtrdInstdAmt", "_XchgRate", "_InstdAgt", "_IntrBkSttlmDt", "_SttlmPrty", "_OrgnlUETR", "_SttlmTmIndctn", "_InstgAgt", "_OrgnlClrSysRef", "_CompstnAmt", "_OrgnlEndToEndId", "_SttlmTmReq", "_PmtTpInf", "_OrgnlTxId", "_SplmtryData"]
+	__slots__ = ["_AgrdRate", "_ChrgBr", "_ChrgsInf", "_ClrSysRef", "_CompstnAmt", "_InstdAgt", "_InstgAgt", "_IntrBkSttlmDt", "_OrgnlClrSysRef", "_OrgnlEndToEndId", "_OrgnlGrpInf", "_OrgnlInstrId", "_OrgnlIntrBkSttlmAmt", "_OrgnlIntrBkSttlmDt", "_OrgnlTxId", "_OrgnlTxRef", "_OrgnlUETR", "_PmtTpInf", "_RtrChain", "_RtrId", "_RtrRsnInf", "_RtrdInstdAmt", "_RtrdIntrBkSttlmAmt", "_SplmtryData", "_SttlmPrty", "_SttlmTmIndctn", "_SttlmTmReq", "_XchgRate"]
 	@property
 	def AgrdRate(self):
 		return self._AgrdRate

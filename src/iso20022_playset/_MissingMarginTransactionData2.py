@@ -1,6 +1,6 @@
 from . import base_types
-from ._TradeTransactionIdentification24 import TradeTransactionIdentification24
 from ._ISODateTime import ISODateTime
+from ._TradeTransactionIdentification24 import TradeTransactionIdentification24
 
 class MissingMarginTransactionData2(base_types._BaseFieldType):
 

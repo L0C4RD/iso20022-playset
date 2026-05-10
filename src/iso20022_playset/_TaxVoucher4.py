@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class TaxVoucher4(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_BrgnDt", "_BrgnSttlmDt"]
+	__slots__ = ["_BrgnDt", "_BrgnSttlmDt", "_Id"]
 	@property
 	def BrgnDt(self):
 		return self._BrgnDt

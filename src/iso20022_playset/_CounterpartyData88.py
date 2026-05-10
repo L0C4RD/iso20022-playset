@@ -1,11 +1,11 @@
 from . import base_types
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
-from ._ISODateTime import ISODateTime
 from ._CounterpartyData89 import CounterpartyData89
+from ._ISODateTime import ISODateTime
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class CounterpartyData88(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPty", "_RptgDtTm", "_RptSubmitgNtty"]
+	__slots__ = ["_CtrPty", "_RptSubmitgNtty", "_RptgDtTm"]
 	@property
 	def CtrPty(self):
 		return self._CtrPty

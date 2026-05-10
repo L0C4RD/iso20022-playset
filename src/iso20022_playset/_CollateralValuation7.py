@@ -1,12 +1,12 @@
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._CFIOct2015Identifier import CFIOct2015Identifier
 from ._CollateralPool1Code import CollateralPool1Code
 from ._SNA2008SectorIdentifier import SNA2008SectorIdentifier
-from ._CFIOct2015Identifier import CFIOct2015Identifier
 
 class CollateralValuation7(base_types._BaseFieldType):
 
-	__slots__ = ["_Sctr", "_PoolSts", "_Tp", "_NmnlAmt"]
+	__slots__ = ["_NmnlAmt", "_PoolSts", "_Sctr", "_Tp"]
 	@property
 	def NmnlAmt(self):
 		return self._NmnlAmt

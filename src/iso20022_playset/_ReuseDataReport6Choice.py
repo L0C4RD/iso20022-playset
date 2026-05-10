@@ -5,7 +5,7 @@ from ._ReuseDataReportNew6 import ReuseDataReportNew6
 
 class ReuseDataReport6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Crrctn", "_Err", "_New", "_CollReuseUpd"]
+	__slots__ = ["_CollReuseUpd", "_Crrctn", "_Err", "_New"]
 	@property
 	def CollReuseUpd(self):
 		return self._CollReuseUpd

@@ -1,11 +1,11 @@
 from . import base_types
-from ._SettlementMethod5Choice import SettlementMethod5Choice
 from ._BalanceTransferFundingLimit1 import BalanceTransferFundingLimit1
 from ._BalanceTransferReference1 import BalanceTransferReference1
+from ._SettlementMethod5Choice import SettlementMethod5Choice
 
 class BalanceTransfer5(base_types._BaseFieldType):
 
-	__slots__ = ["_BalTrfMtd", "_BalTrfFndgLmt", "_BalTrfRef"]
+	__slots__ = ["_BalTrfFndgLmt", "_BalTrfMtd", "_BalTrfRef"]
 	@property
 	def BalTrfFndgLmt(self):
 		return self._BalTrfFndgLmt

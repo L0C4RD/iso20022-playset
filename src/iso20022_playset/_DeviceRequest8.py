@@ -1,22 +1,22 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
-from ._RetailerService8Code import RetailerService8Code
-from ._DevicePrintRequest6 import DevicePrintRequest6
-from ._DeviceInputRequest6 import DeviceInputRequest6
 from ._DeviceDisplayRequest6 import DeviceDisplayRequest6
-from ._DevicePoweroffCardReaderRequest6 import DevicePoweroffCardReaderRequest6
-from ._DeviceSecureInputRequest6 import DeviceSecureInputRequest6
-from ._PaymentContext30 import PaymentContext30
-from ._DevicePlayResourceRequest1 import DevicePlayResourceRequest1
-from ._DeviceInputNotification6 import DeviceInputNotification6
 from ._DeviceInitialisationCardReaderRequest6 import DeviceInitialisationCardReaderRequest6
-from ._DeviceTransmitMessageRequest2 import DeviceTransmitMessageRequest2
+from ._DeviceInputNotification6 import DeviceInputNotification6
+from ._DeviceInputRequest6 import DeviceInputRequest6
+from ._DevicePlayResourceRequest1 import DevicePlayResourceRequest1
+from ._DevicePoweroffCardReaderRequest6 import DevicePoweroffCardReaderRequest6
+from ._DevicePrintRequest6 import DevicePrintRequest6
+from ._DeviceSecureInputRequest6 import DeviceSecureInputRequest6
 from ._DeviceSendApplicationProtocolDataUnitCardReaderRequest1 import DeviceSendApplicationProtocolDataUnitCardReaderRequest1
+from ._DeviceTransmitMessageRequest2 import DeviceTransmitMessageRequest2
+from ._PaymentContext30 import PaymentContext30
+from ._RetailerService8Code import RetailerService8Code
+from ._SupplementaryData1 import SupplementaryData1
 
 class DeviceRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_DispReq", "_Envt", "_TrnsmssnReq", "_InptReq", "_InitlstnCardRdrReq", "_SvcCntt", "_ScrInptReq", "_CardRdrAPDUReq", "_PwrOffCardRdrReq", "_PrtReq", "_InptNtfctn", "_Cntxt", "_PlayRsrcReq", "_SplmtryData"]
+	__slots__ = ["_CardRdrAPDUReq", "_Cntxt", "_DispReq", "_Envt", "_InitlstnCardRdrReq", "_InptNtfctn", "_InptReq", "_PlayRsrcReq", "_PrtReq", "_PwrOffCardRdrReq", "_ScrInptReq", "_SplmtryData", "_SvcCntt", "_TrnsmssnReq"]
 	@property
 	def CardRdrAPDUReq(self):
 		return self._CardRdrAPDUReq

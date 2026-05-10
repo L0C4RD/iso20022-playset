@@ -1,12 +1,12 @@
 from . import base_types
-from ._Pagination import Pagination
-from ._MessageIdentification1 import MessageIdentification1
-from ._CustodyStatementOfHoldings2 import CustodyStatementOfHoldings2
 from ._AdditionalReference2 import AdditionalReference2
+from ._CustodyStatementOfHoldings2 import CustodyStatementOfHoldings2
+from ._MessageIdentification1 import MessageIdentification1
+from ._Pagination import Pagination
 
 class CustodyStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsRef", "_MsgId", "_MsgPgntn", "_RltdRef", "_StmtToBeCanc"]
+	__slots__ = ["_MsgId", "_MsgPgntn", "_PrvsRef", "_RltdRef", "_StmtToBeCanc"]
 	@property
 	def MsgId(self):
 		return self._MsgId

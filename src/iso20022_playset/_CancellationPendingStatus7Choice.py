@@ -1,11 +1,11 @@
 from . import base_types
+from ._GenericIdentification1 import GenericIdentification1
 from ._Max350Text import Max350Text
 from ._NoReasonCode import NoReasonCode
-from ._GenericIdentification1 import GenericIdentification1
 
 class CancellationPendingStatus7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoSpcfdRsn", "_Rsn", "_DataSrcSchme"]
+	__slots__ = ["_DataSrcSchme", "_NoSpcfdRsn", "_Rsn"]
 	@property
 	def DataSrcSchme(self):
 		return self._DataSrcSchme

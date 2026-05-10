@@ -4,7 +4,7 @@ from ._Limit7 import Limit7
 
 class LimitOrError4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Lmt", "_BizErr"]
+	__slots__ = ["_BizErr", "_Lmt"]
 	@property
 	def BizErr(self):
 		return self._BizErr

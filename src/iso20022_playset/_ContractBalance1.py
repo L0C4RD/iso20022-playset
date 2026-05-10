@@ -5,7 +5,7 @@ from ._CreditDebit3Code import CreditDebit3Code
 
 class ContractBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_CdtDbtInd", "_Amt"]
+	__slots__ = ["_Amt", "_CdtDbtInd", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._MessageFunction47Code import MessageFunction47Code
-from ._Max8Text import Max8Text
 from ._Max1025Text import Max1025Text
+from ._Max35Text import Max35Text
+from ._Max8Text import Max8Text
+from ._MessageFunction47Code import MessageFunction47Code
 
 class AcquirerHostConfiguration10(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtcolVrsn", "_HstId", "_XtrnlyTpSpprtd", "_MsgToSnd"]
+	__slots__ = ["_HstId", "_MsgToSnd", "_PrtcolVrsn", "_XtrnlyTpSpprtd"]
 	@property
 	def HstId(self):
 		return self._HstId

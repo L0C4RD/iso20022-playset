@@ -1,11 +1,11 @@
 from . import base_types
-from ._CreditDebitCode import CreditDebitCode
 from ._Amount2 import Amount2
+from ._CreditDebitCode import CreditDebitCode
 from ._MarginType1Choice import MarginType1Choice
 
 class Margin4(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_Tp", "_Amt"]
+	__slots__ = ["_Amt", "_CdtDbtInd", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -1,11 +1,11 @@
 from . import base_types
-from ._SecuritiesCertificate3 import SecuritiesCertificate3
 from ._DateAndDateTime1Choice import DateAndDateTime1Choice
 from ._Max35Text import Max35Text
+from ._SecuritiesCertificate3 import SecuritiesCertificate3
 
 class RegistrationParameters3(base_types._BaseFieldType):
 
-	__slots__ = ["_CertfctnId", "_CertfctnDtTm", "_RegarAcct", "_CertNb"]
+	__slots__ = ["_CertNb", "_CertfctnDtTm", "_CertfctnId", "_RegarAcct"]
 	@property
 	def CertNb(self):
 		return self._CertNb

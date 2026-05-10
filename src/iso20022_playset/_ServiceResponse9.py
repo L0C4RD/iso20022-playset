@@ -1,20 +1,20 @@
 from . import base_types
-from ._BatchResponse7 import BatchResponse7
-from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
-from ._SupplementaryData1 import SupplementaryData1
-from ._ReversalResponse9 import ReversalResponse9
-from ._RetailerService3Code import RetailerService3Code
-from ._CardAcquisitionResponse3 import CardAcquisitionResponse3
 from ._BalanceInquiryResponse6 import BalanceInquiryResponse6
-from ._PaymentContext30 import PaymentContext30
-from ._ResponseType11 import ResponseType11
-from ._StoredValueResponse8 import StoredValueResponse8
+from ._BatchResponse7 import BatchResponse7
+from ._CardAcquisitionResponse3 import CardAcquisitionResponse3
+from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 from ._LoyaltyResponse3 import LoyaltyResponse3
+from ._PaymentContext30 import PaymentContext30
 from ._PaymentResponse7 import PaymentResponse7
+from ._ResponseType11 import ResponseType11
+from ._RetailerService3Code import RetailerService3Code
+from ._ReversalResponse9 import ReversalResponse9
+from ._StoredValueResponse8 import StoredValueResponse8
+from ._SupplementaryData1 import SupplementaryData1
 
 class ServiceResponse9(base_types._BaseFieldType):
 
-	__slots__ = ["_BtchRspn", "_StordValRspn", "_PmtRspn", "_LltyRspn", "_BalNqryRspn", "_SvcCntt", "_RvslRspn", "_Rspn", "_Cntxt", "_CardAcqstnRspn", "_Envt", "_SplmtryData"]
+	__slots__ = ["_BalNqryRspn", "_BtchRspn", "_CardAcqstnRspn", "_Cntxt", "_Envt", "_LltyRspn", "_PmtRspn", "_Rspn", "_RvslRspn", "_SplmtryData", "_StordValRspn", "_SvcCntt"]
 	@property
 	def BalNqryRspn(self):
 		return self._BalNqryRspn

@@ -1,19 +1,19 @@
 from . import base_types
-from ._TransactionStatus4 import TransactionStatus4
-from ._DocumentIdentification3 import DocumentIdentification3
-from ._ComparisonResult2 import ComparisonResult2
 from ._BICIdentification1 import BICIdentification1
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._PartyIdentification26 import PartyIdentification26
-from ._DocumentIdentification1 import DocumentIdentification1
-from ._DocumentIdentification5 import DocumentIdentification5
-from ._PendingActivity2 import PendingActivity2
+from ._ComparisonResult2 import ComparisonResult2
 from ._Count1 import Count1
+from ._DocumentIdentification1 import DocumentIdentification1
+from ._DocumentIdentification3 import DocumentIdentification3
+from ._DocumentIdentification5 import DocumentIdentification5
 from ._MessageIdentification1 import MessageIdentification1
+from ._PartyIdentification26 import PartyIdentification26
+from ._PendingActivity2 import PendingActivity2
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._TransactionStatus4 import TransactionStatus4
 
 class DeltaReportV03(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrBk", "_TxSts", "_TxId", "_RptId", "_ReqForActn", "_Sellr", "_SellrBk", "_AmdmntNb", "_SubmitrPropsdBaselnRef", "_Buyr", "_UsrTxRef", "_EstblishdBaselnId", "_UpdtdElmt"]
+	__slots__ = ["_AmdmntNb", "_Buyr", "_BuyrBk", "_EstblishdBaselnId", "_ReqForActn", "_RptId", "_Sellr", "_SellrBk", "_SubmitrPropsdBaselnRef", "_TxId", "_TxSts", "_UpdtdElmt", "_UsrTxRef"]
 	@property
 	def AmdmntNb(self):
 		return self._AmdmntNb

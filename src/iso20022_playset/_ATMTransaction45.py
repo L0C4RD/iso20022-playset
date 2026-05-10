@@ -2,12 +2,12 @@ from . import base_types
 from ._ATMCommand7 import ATMCommand7
 from ._Max10000Binary import Max10000Binary
 from ._Response12Code import Response12Code
-from ._TransactionIdentifier3 import TransactionIdentifier3
 from ._ResultDetail5Code import ResultDetail5Code
+from ._TransactionIdentifier3 import TransactionIdentifier3
 
 class ATMTransaction45(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmd", "_RspnRsn", "_ICCRltdData", "_Rspn", "_TxId"]
+	__slots__ = ["_Cmd", "_ICCRltdData", "_Rspn", "_RspnRsn", "_TxId"]
 	@property
 	def Cmd(self):
 		return self._Cmd

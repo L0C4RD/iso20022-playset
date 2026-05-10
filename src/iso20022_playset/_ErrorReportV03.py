@@ -1,16 +1,16 @@
 from . import base_types
-from ._TransactionStatus4 import TransactionStatus4
-from ._DocumentIdentification3 import DocumentIdentification3
-from ._ValidationResult3 import ValidationResult3
-from ._DocumentIdentification5 import DocumentIdentification5
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._PendingActivity2 import PendingActivity2
-from ._MessageIdentification1 import MessageIdentification1
 from ._Count1 import Count1
+from ._DocumentIdentification3 import DocumentIdentification3
+from ._DocumentIdentification5 import DocumentIdentification5
+from ._MessageIdentification1 import MessageIdentification1
+from ._PendingActivity2 import PendingActivity2
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._TransactionStatus4 import TransactionStatus4
+from ._ValidationResult3 import ValidationResult3
 
 class ErrorReportV03(base_types._BaseFieldType):
 
-	__slots__ = ["_RptId", "_ReqForActn", "_ErrDesc", "_TxId", "_EstblishdBaselnId", "_UsrTxRef", "_RjctdMsgRef", "_TxSts", "_NbOfErrs"]
+	__slots__ = ["_ErrDesc", "_EstblishdBaselnId", "_NbOfErrs", "_ReqForActn", "_RjctdMsgRef", "_RptId", "_TxId", "_TxSts", "_UsrTxRef"]
 	@property
 	def ErrDesc(self):
 		return self._ErrDesc

@@ -1,11 +1,11 @@
 from . import base_types
 from ._MessageHeader6 import MessageHeader6
-from ._SupplementaryData1 import SupplementaryData1
 from ._StandingOrderOrError9Choice import StandingOrderOrError9Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class ReturnStandingOrderV06(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_RptOrErr"]
+	__slots__ = ["_MsgHdr", "_RptOrErr", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max2NumericText import Max2NumericText
 from ._CountryCode import CountryCode
+from ._Max2NumericText import Max2NumericText
 from ._Max35Text import Max35Text
 
 class TaxCategory1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Desc", "_Ctry"]
+	__slots__ = ["_Ctry", "_Desc", "_Id"]
 	@property
 	def Ctry(self):
 		return self._Ctry

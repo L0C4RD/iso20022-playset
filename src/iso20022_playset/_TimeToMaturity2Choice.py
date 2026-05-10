@@ -1,10 +1,10 @@
 from . import base_types
-from ._TimeToMaturityPeriod2 import TimeToMaturityPeriod2
 from ._SpecialPurpose2Code import SpecialPurpose2Code
+from ._TimeToMaturityPeriod2 import TimeToMaturityPeriod2
 
 class TimeToMaturity2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Spcl", "_Prd"]
+	__slots__ = ["_Prd", "_Spcl"]
 	@property
 	def Prd(self):
 		return self._Prd

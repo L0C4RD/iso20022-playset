@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._EntryTypeIdentifier import EntryTypeIdentifier
-from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._EntryTypeIdentifier import EntryTypeIdentifier
+from ._ISODate import ISODate
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
 from ._PaymentOrigin1Choice import PaymentOrigin1Choice
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class LongPaymentIdentification4(base_types._BaseFieldType):
 
-	__slots__ = ["_InstdAgt", "_PmtMtd", "_IntrBkSttlmDt", "_InstgAgt", "_UETR", "_TxId", "_IntrBkSttlmAmt", "_NtryTp", "_EndToEndId"]
+	__slots__ = ["_EndToEndId", "_InstdAgt", "_InstgAgt", "_IntrBkSttlmAmt", "_IntrBkSttlmDt", "_NtryTp", "_PmtMtd", "_TxId", "_UETR"]
 	@property
 	def EndToEndId(self):
 		return self._EndToEndId

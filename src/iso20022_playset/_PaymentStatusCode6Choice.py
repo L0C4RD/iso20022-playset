@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max4AlphaNumericText import Max4AlphaNumericText
 from ._FinalStatus1Code import FinalStatus1Code
 from ._Max35Text import Max35Text
+from ._Max4AlphaNumericText import Max4AlphaNumericText
 from ._PendingStatus4Code import PendingStatus4Code
 
 class PaymentStatusCode6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Sttlm", "_RTGS", "_Pdg", "_Prtry", "_Fnl"]
+	__slots__ = ["_Fnl", "_Pdg", "_Prtry", "_RTGS", "_Sttlm"]
 	@property
 	def Fnl(self):
 		return self._Fnl

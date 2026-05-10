@@ -1,11 +1,11 @@
 from . import base_types
-from ._Security52 import Security52
-from ._Commodity43 import Commodity43
 from ._AmountHaircutMargin1 import AmountHaircutMargin1
+from ._Commodity43 import Commodity43
+from ._Security52 import Security52
 
 class CollateralType21(base_types._BaseFieldType):
 
-	__slots__ = ["_Csh", "_Scty", "_Cmmdty"]
+	__slots__ = ["_Cmmdty", "_Csh", "_Scty"]
 	@property
 	def Cmmdty(self):
 		return self._Cmmdty

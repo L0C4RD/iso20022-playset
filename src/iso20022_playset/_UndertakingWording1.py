@@ -1,11 +1,11 @@
 from . import base_types
+from ._ISO2ALanguageCode import ISO2ALanguageCode
 from ._ModelFormIdentification1 import ModelFormIdentification1
 from ._Narrative1 import Narrative1
-from ._ISO2ALanguageCode import ISO2ALanguageCode
 
 class UndertakingWording1(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgTermsAndConds", "_MdlForm", "_ReqdWrdgLang"]
+	__slots__ = ["_MdlForm", "_ReqdWrdgLang", "_UdrtkgTermsAndConds"]
 	@property
 	def MdlForm(self):
 		return self._MdlForm

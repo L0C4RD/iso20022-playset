@@ -1,14 +1,14 @@
 from . import base_types
-from ._TransactionStatus4 import TransactionStatus4
+from ._BICIdentification1 import BICIdentification1
 from ._CountryCode import CountryCode
 from ._Max35Text import Max35Text
-from ._PendingActivity1 import PendingActivity1
-from ._BICIdentification1 import BICIdentification1
 from ._PartyIdentification28 import PartyIdentification28
+from ._PendingActivity1 import PendingActivity1
+from ._TransactionStatus4 import TransactionStatus4
 
 class ReportSpecification4(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmitgBk", "_Sellr", "_SellrCtry", "_PdgReqForActn", "_BuyrCtry", "_Buyr", "_CrspdtCtry", "_TxId", "_NttiesToBeRptd", "_TxSts", "_SubmitrTxRef", "_Crspdt", "_OblgrBk"]
+	__slots__ = ["_Buyr", "_BuyrCtry", "_Crspdt", "_CrspdtCtry", "_NttiesToBeRptd", "_OblgrBk", "_PdgReqForActn", "_Sellr", "_SellrCtry", "_SubmitgBk", "_SubmitrTxRef", "_TxId", "_TxSts"]
 	@property
 	def Buyr(self):
 		return self._Buyr

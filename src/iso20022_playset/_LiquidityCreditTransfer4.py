@@ -1,13 +1,13 @@
 from . import base_types
+from ._Amount2Choice import Amount2Choice
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
 from ._ISODate import ISODate
 from ._PaymentIdentification8 import PaymentIdentification8
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Amount2Choice import Amount2Choice
-from ._CashAccount40 import CashAccount40
 
 class LiquidityCreditTransfer4(base_types._BaseFieldType):
 
-	__slots__ = ["_LqdtyTrfId", "_TrfdAmt", "_Dbtr", "_CdtrAcct", "_SttlmDt", "_Cdtr", "_DbtrAcct"]
+	__slots__ = ["_Cdtr", "_CdtrAcct", "_Dbtr", "_DbtrAcct", "_LqdtyTrfId", "_SttlmDt", "_TrfdAmt"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

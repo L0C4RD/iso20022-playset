@@ -1,10 +1,10 @@
 from . import base_types
-from ._UnitPriceType2Choice import UnitPriceType2Choice
 from ._PriceValue1 import PriceValue1
+from ._UnitPriceType2Choice import UnitPriceType2Choice
 
 class UnitPrice19(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_PricTp"]
+	__slots__ = ["_PricTp", "_Val"]
 	@property
 	def PricTp(self):
 		return self._PricTp

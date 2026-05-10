@@ -1,11 +1,11 @@
 from . import base_types
+from ._GroupHeader110 import GroupHeader110
 from ._MandateCopy4 import MandateCopy4
 from ._SupplementaryData1 import SupplementaryData1
-from ._GroupHeader110 import GroupHeader110
 
 class MandateCopyRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_UndrlygCpyReqDtls", "_SplmtryData"]
+	__slots__ = ["_GrpHdr", "_SplmtryData", "_UndrlygCpyReqDtls"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

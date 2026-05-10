@@ -1,14 +1,14 @@
 from . import base_types
-from ._SecuritiesAccount18 import SecuritiesAccount18
-from ._SupplementaryData1 import SupplementaryData1
 from ._Pagination1 import Pagination1
-from ._TradeLegStatement4 import TradeLegStatement4
-from ._Statement86 import Statement86
 from ._PartyIdentification253Choice import PartyIdentification253Choice
+from ._SecuritiesAccount18 import SecuritiesAccount18
+from ._Statement86 import Statement86
+from ._SupplementaryData1 import SupplementaryData1
+from ._TradeLegStatement4 import TradeLegStatement4
 
 class TradeLegStatementV04(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrMmb", "_StmtParams", "_ClrAcct", "_StmtDtls", "_SplmtryData", "_Pgntn"]
+	__slots__ = ["_ClrAcct", "_ClrMmb", "_Pgntn", "_SplmtryData", "_StmtDtls", "_StmtParams"]
 	@property
 	def ClrAcct(self):
 		return self._ClrAcct

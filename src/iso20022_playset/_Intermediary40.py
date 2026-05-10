@@ -1,12 +1,12 @@
 from . import base_types
-from ._InvestmentFundRole2Choice import InvestmentFundRole2Choice
 from ._Account22 import Account22
-from ._PartyIdentification113 import PartyIdentification113
+from ._InvestmentFundRole2Choice import InvestmentFundRole2Choice
 from ._OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
+from ._PartyIdentification113 import PartyIdentification113
 
 class Intermediary40(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrOrgtrElgblty", "_Role", "_Id", "_Acct"]
+	__slots__ = ["_Acct", "_Id", "_OrdrOrgtrElgblty", "_Role"]
 	@property
 	def Acct(self):
 		return self._Acct

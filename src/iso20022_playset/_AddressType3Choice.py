@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
 from ._AddressType2Code import AddressType2Code
+from ._GenericIdentification30 import GenericIdentification30
 
 class AddressType3Choice(base_types._BaseFieldType):
 

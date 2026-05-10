@@ -4,7 +4,7 @@ from ._Max34Text import Max34Text
 
 class CashAccountIdentification5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_IBAN"]
+	__slots__ = ["_IBAN", "_Prtry"]
 	@property
 	def IBAN(self):
 		return self._IBAN

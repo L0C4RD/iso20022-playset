@@ -1,12 +1,12 @@
 from . import base_types
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._GenericIdentification37 import GenericIdentification37
-from ._GenericIdentification30 import GenericIdentification30
 from ._AmountAndDirection5 import AmountAndDirection5
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._GenericIdentification30 import GenericIdentification30
+from ._GenericIdentification37 import GenericIdentification37
 
 class AmountAndQuantityBreakdown1(base_types._BaseFieldType):
 
-	__slots__ = ["_LotAmt", "_CshSubBalTp", "_LotNb", "_LotQty"]
+	__slots__ = ["_CshSubBalTp", "_LotAmt", "_LotNb", "_LotQty"]
 	@property
 	def CshSubBalTp(self):
 		return self._CshSubBalTp

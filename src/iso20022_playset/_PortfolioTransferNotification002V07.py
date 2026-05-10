@@ -1,14 +1,14 @@
 from . import base_types
-from ._SecuritiesTradeDetails139 import SecuritiesTradeDetails139
-from ._PartyIdentification156 import PartyIdentification156
-from ._Statement68 import Statement68
-from ._Pagination1 import Pagination1
-from ._SecuritiesAccount30 import SecuritiesAccount30
 from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
+from ._Pagination1 import Pagination1
+from ._PartyIdentification156 import PartyIdentification156
+from ._SecuritiesAccount30 import SecuritiesAccount30
+from ._SecuritiesTradeDetails139 import SecuritiesTradeDetails139
+from ._Statement68 import Statement68
 
 class PortfolioTransferNotification002V07(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_SfkpgAcct", "_TrfNtfctnDtls", "_StmtGnlDtls", "_AcctOwnr", "_Pgntn"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_Pgntn", "_SfkpgAcct", "_StmtGnlDtls", "_TrfNtfctnDtls"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

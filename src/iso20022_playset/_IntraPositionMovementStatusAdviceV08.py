@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._IntraPositionDetails60 import IntraPositionDetails60
+from ._IntraPositionProcessingStatus9Choice import IntraPositionProcessingStatus9Choice
 from ._Linkages75 import Linkages75
 from ._SettlementStatus16Choice import SettlementStatus16Choice
-from ._IntraPositionProcessingStatus9Choice import IntraPositionProcessingStatus9Choice
-from ._IntraPositionDetails60 import IntraPositionDetails60
+from ._SupplementaryData1 import SupplementaryData1
 from ._TransactionIdentifications29 import TransactionIdentifications29
 
 class IntraPositionMovementStatusAdviceV08(base_types._BaseFieldType):
 
-	__slots__ = ["_Lkg", "_PrcgSts", "_TxDtls", "_TxId", "_SplmtryData", "_SttlmSts"]
+	__slots__ = ["_Lkg", "_PrcgSts", "_SplmtryData", "_SttlmSts", "_TxDtls", "_TxId"]
 	@property
 	def Lkg(self):
 		return self._Lkg

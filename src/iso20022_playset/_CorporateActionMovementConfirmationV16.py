@@ -1,22 +1,22 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._DocumentIdentification32 import DocumentIdentification32
-from ._CorporateActionGeneralInformation179 import CorporateActionGeneralInformation179
 from ._AccountAndBalance58 import AccountAndBalance58
-from ._TransactionIdentification15 import TransactionIdentification15
 from ._CorporateAction85 import CorporateAction85
-from ._DocumentIdentification9 import DocumentIdentification9
-from ._CorporateActionOption233 import CorporateActionOption233
-from ._PartyIdentification120Choice import PartyIdentification120Choice
 from ._CorporateActionEventReference3 import CorporateActionEventReference3
+from ._CorporateActionGeneralInformation179 import CorporateActionGeneralInformation179
+from ._CorporateActionNarrative31 import CorporateActionNarrative31
+from ._CorporateActionOption233 import CorporateActionOption233
+from ._DocumentIdentification31 import DocumentIdentification31
+from ._DocumentIdentification32 import DocumentIdentification32
+from ._DocumentIdentification9 import DocumentIdentification9
 from ._Max35Text import Max35Text
 from ._Pagination1 import Pagination1
-from ._DocumentIdentification31 import DocumentIdentification31
-from ._CorporateActionNarrative31 import CorporateActionNarrative31
+from ._PartyIdentification120Choice import PartyIdentification120Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionIdentification15 import TransactionIdentification15
 
 class CorporateActionMovementConfirmationV16(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnId", "_CorpActnDtls", "_MvmntConfId", "_MvmntPrlimryAdvcId", "_CorpActnConfDtls", "_AcctDtls", "_OthrDocId", "_Pgntn", "_AddtlInf", "_SubPngAgt", "_PngAgt", "_CorpActnGnlInf", "_InstrId", "_EvtsLkg", "_IssrAgt", "_SplmtryData", "_TxId"]
+	__slots__ = ["_AcctDtls", "_AddtlInf", "_CorpActnConfDtls", "_CorpActnDtls", "_CorpActnGnlInf", "_EvtsLkg", "_InstrId", "_IssrAgt", "_MvmntConfId", "_MvmntPrlimryAdvcId", "_NtfctnId", "_OthrDocId", "_Pgntn", "_PngAgt", "_SplmtryData", "_SubPngAgt", "_TxId"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

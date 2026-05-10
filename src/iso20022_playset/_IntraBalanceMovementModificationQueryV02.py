@@ -1,7 +1,7 @@
 from . import base_types
+from ._DocumentIdentification51 import DocumentIdentification51
 from ._IntraBalanceQueryDefinition12 import IntraBalanceQueryDefinition12
 from ._SupplementaryData1 import SupplementaryData1
-from ._DocumentIdentification51 import DocumentIdentification51
 
 class IntraBalanceMovementModificationQueryV02(base_types._BaseFieldType):
 

@@ -1,14 +1,14 @@
 from . import base_types
+from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
 from ._Max500Text import Max500Text
-from ._Pagination1 import Pagination1
-from ._ISODateTime import ISODateTime
-from ._PartyIdentification272 import PartyIdentification272
 from ._OriginalBusinessQuery1 import OriginalBusinessQuery1
+from ._Pagination1 import Pagination1
+from ._PartyIdentification272 import PartyIdentification272
 
 class GroupHeader116(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgPgntn", "_CreDtTm", "_MsgId", "_OrgnlBizQry", "_AddtlInf", "_MsgRcpt"]
+	__slots__ = ["_AddtlInf", "_CreDtTm", "_MsgId", "_MsgPgntn", "_MsgRcpt", "_OrgnlBizQry"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

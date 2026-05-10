@@ -1,28 +1,28 @@
 from . import base_types
-from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
-from ._FractionDispositionType1FormatChoice import FractionDispositionType1FormatChoice
-from ._CorporateActionRate2 import CorporateActionRate2
-from ._OfferType1FormatChoice import OfferType1FormatChoice
-from ._CorporateActionEventStatus2FormatChoice import CorporateActionEventStatus2FormatChoice
-from ._IntermediateSecurityDistributionType1FormatChoice import IntermediateSecurityDistributionType1FormatChoice
-from ._CorporateActionAgent1 import CorporateActionAgent1
-from ._SecurityIdentification7 import SecurityIdentification7
-from ._CorporateActionPrice1 import CorporateActionPrice1
-from ._CorporateActionNarrative1 import CorporateActionNarrative1
-from ._BeneficiaryCertificationType1FormatChoice import BeneficiaryCertificationType1FormatChoice
-from ._CorporateActionDate4 import CorporateActionDate4
-from ._CashOption1 import CashOption1
-from ._YesNoIndicator import YesNoIndicator
 from ._AccountIdentification2Choice import AccountIdentification2Choice
-from ._OptionFeatures1FormatChoice import OptionFeatures1FormatChoice
+from ._BeneficiaryCertificationType1FormatChoice import BeneficiaryCertificationType1FormatChoice
+from ._CashOption1 import CashOption1
+from ._CorporateActionAgent1 import CorporateActionAgent1
+from ._CorporateActionDate4 import CorporateActionDate4
+from ._CorporateActionEventStatus2FormatChoice import CorporateActionEventStatus2FormatChoice
+from ._CorporateActionNarrative1 import CorporateActionNarrative1
+from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
 from ._CorporateActionPeriod2 import CorporateActionPeriod2
+from ._CorporateActionPrice1 import CorporateActionPrice1
+from ._CorporateActionRate2 import CorporateActionRate2
 from ._Exact3NumericText import Exact3NumericText
-from ._SecurityOption1 import SecurityOption1
+from ._FractionDispositionType1FormatChoice import FractionDispositionType1FormatChoice
+from ._IntermediateSecurityDistributionType1FormatChoice import IntermediateSecurityDistributionType1FormatChoice
 from ._Max35Text import Max35Text
+from ._OfferType1FormatChoice import OfferType1FormatChoice
+from ._OptionFeatures1FormatChoice import OptionFeatures1FormatChoice
+from ._SecurityIdentification7 import SecurityIdentification7
+from ._SecurityOption1 import SecurityOption1
+from ._YesNoIndicator import YesNoIndicator
 
 class CorporateActionOption1(base_types._BaseFieldType):
 
-	__slots__ = ["_RedChrgsApldInd", "_OptnTp", "_CertfctnTp", "_AgtCshAcctId", "_WdrwlAllwdInd", "_OptnFeatrs", "_ChngAllwdInd", "_SctiesMvmntDtls", "_IntrmdtSctiesDstrbtnTp", "_FrctnDspstn", "_AgtSctiesAcctId", "_AssntdLineSctyId", "_CertfctnInd", "_CshMvmntDtls", "_RateAndAmtDtls", "_CorpActnAddtlInf", "_OfferTp", "_CorpActnOthrAgtDtls", "_OptnNb", "_OptnAvlbtySts", "_PricDtls", "_DtDtls", "_PrdDtls"]
+	__slots__ = ["_AgtCshAcctId", "_AgtSctiesAcctId", "_AssntdLineSctyId", "_CertfctnInd", "_CertfctnTp", "_ChngAllwdInd", "_CorpActnAddtlInf", "_CorpActnOthrAgtDtls", "_CshMvmntDtls", "_DtDtls", "_FrctnDspstn", "_IntrmdtSctiesDstrbtnTp", "_OfferTp", "_OptnAvlbtySts", "_OptnFeatrs", "_OptnNb", "_OptnTp", "_PrdDtls", "_PricDtls", "_RateAndAmtDtls", "_RedChrgsApldInd", "_SctiesMvmntDtls", "_WdrwlAllwdInd"]
 	@property
 	def AgtCshAcctId(self):
 		return self._AgtCshAcctId

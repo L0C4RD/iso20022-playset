@@ -1,7 +1,7 @@
 from . import base_types
-from ._OriginalInvoiceInformation1 import OriginalInvoiceInformation1
 from ._FinancingResult1 import FinancingResult1
 from ._InstalmentFinancingInformation1 import InstalmentFinancingInformation1
+from ._OriginalInvoiceInformation1 import OriginalInvoiceInformation1
 from ._PartyIdentification8 import PartyIdentification8
 
 class InvoiceFinancingDetails1(base_types._BaseFieldType):

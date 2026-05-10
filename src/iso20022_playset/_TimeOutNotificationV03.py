@@ -1,15 +1,15 @@
 from . import base_types
-from ._TransactionStatus4 import TransactionStatus4
 from ._DocumentIdentification3 import DocumentIdentification3
 from ._DocumentIdentification5 import DocumentIdentification5
-from ._TimeOutResult2 import TimeOutResult2
-from ._PendingActivity2 import PendingActivity2
 from ._MessageIdentification1 import MessageIdentification1
+from ._PendingActivity2 import PendingActivity2
 from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._TimeOutResult2 import TimeOutResult2
+from ._TransactionStatus4 import TransactionStatus4
 
 class TimeOutNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_TmOutDesc", "_TxSts", "_EstblishdBaselnId", "_UsrTxRef", "_TxId", "_NtfctnId", "_ReqForActn"]
+	__slots__ = ["_EstblishdBaselnId", "_NtfctnId", "_ReqForActn", "_TmOutDesc", "_TxId", "_TxSts", "_UsrTxRef"]
 	@property
 	def EstblishdBaselnId(self):
 		return self._EstblishdBaselnId

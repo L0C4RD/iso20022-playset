@@ -1,13 +1,13 @@
 from . import base_types
-from ._Tax41 import Tax41
-from ._Max35Text import Max35Text
 from ._CreditDebit3Code import CreditDebit3Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._Tax41 import Tax41
 from ._TypeTypeOfAmount23Code import TypeTypeOfAmount23Code
 
 class AmountDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Tax", "_Tp", "_CdtDbt", "_OthrTp"]
+	__slots__ = ["_Amt", "_CdtDbt", "_OthrTp", "_Tax", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

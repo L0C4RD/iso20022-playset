@@ -1,15 +1,15 @@
 from . import base_types
-from ._CAPEExchangeMode1Code import CAPEExchangeMode1Code
-from ._NetworkParameters7 import NetworkParameters7
-from ._KEKIdentifier5 import KEKIdentifier5
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
-from ._Max35Text import Max35Text
 from ._CAPEEncodingMode1Code import CAPEEncodingMode1Code
+from ._CAPEExchangeMode1Code import CAPEExchangeMode1Code
+from ._KEKIdentifier5 import KEKIdentifier5
+from ._Max35Text import Max35Text
+from ._NetworkParameters7 import NetworkParameters7
 from ._PhysicalInterfaceParameter1 import PhysicalInterfaceParameter1
+from ._TerminalManagementAction3Code import TerminalManagementAction3Code
 
 class HostCommunicationParameter7(base_types._BaseFieldType):
 
-	__slots__ = ["_HstId", "_Adr", "_NtwkSvcPrvdr", "_PhysIntrfc", "_Key", "_XchgMd", "_ActnTp", "_NcodgMd"]
+	__slots__ = ["_ActnTp", "_Adr", "_HstId", "_Key", "_NcodgMd", "_NtwkSvcPrvdr", "_PhysIntrfc", "_XchgMd"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp

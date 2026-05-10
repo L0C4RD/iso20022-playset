@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._AlternatePartyIdentification8 import AlternatePartyIdentification8
-from ._PartyTextInformation5 import PartyTextInformation5
+from ._Max35Text import Max35Text
 from ._PartyIdentification240Choice import PartyIdentification240Choice
+from ._PartyTextInformation5 import PartyTextInformation5
 
 class ConfirmationPartyDetails11(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_PrcgId", "_AltrnId", "_Id"]
+	__slots__ = ["_AddtlInf", "_AltrnId", "_Id", "_PrcgId"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

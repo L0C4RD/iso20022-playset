@@ -1,7 +1,7 @@
 from . import base_types
-from ._PartyTextInformation1 import PartyTextInformation1
 from ._AlternatePartyIdentification8 import AlternatePartyIdentification8
 from ._PartyIdentification244Choice import PartyIdentification244Choice
+from ._PartyTextInformation1 import PartyTextInformation1
 
 class PartyIdentification268(base_types._BaseFieldType):
 

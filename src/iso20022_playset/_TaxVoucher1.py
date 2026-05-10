@@ -1,15 +1,15 @@
 from . import base_types
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._BaseOneRate import BaseOneRate
+from ._ForeignExchangeTerms9 import ForeignExchangeTerms9
 from ._ISODate import ISODate
 from ._PercentageRate import PercentageRate
-from ._BaseOneRate import BaseOneRate
 from ._PriceValue1 import PriceValue1
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ForeignExchangeTerms9 import ForeignExchangeTerms9
 from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 
 class TaxVoucher1(base_types._BaseFieldType):
 
-	__slots__ = ["_WhldgTaxRate", "_BrgnDt", "_TaxCdtRate", "_ScripDvddRinvstmtPricPerShr", "_TaxCdt", "_BrgnSttlmDt", "_GrssAmt", "_NtnlTax", "_ComssnAmt", "_StmpDtyAmt", "_NetAmt", "_NtnlDvddPybl", "_CshAmtCrrdFwd", "_TaxDdctn", "_TaxVchrRate", "_ChrgAmt", "_AlltdShrsCost", "_WhldgTaxAmt", "_CshAmtBrghtFwd", "_FXDtls", "_RcrdDtHldg"]
+	__slots__ = ["_AlltdShrsCost", "_BrgnDt", "_BrgnSttlmDt", "_ChrgAmt", "_ComssnAmt", "_CshAmtBrghtFwd", "_CshAmtCrrdFwd", "_FXDtls", "_GrssAmt", "_NetAmt", "_NtnlDvddPybl", "_NtnlTax", "_RcrdDtHldg", "_ScripDvddRinvstmtPricPerShr", "_StmpDtyAmt", "_TaxCdt", "_TaxCdtRate", "_TaxDdctn", "_TaxVchrRate", "_WhldgTaxAmt", "_WhldgTaxRate"]
 	@property
 	def AlltdShrsCost(self):
 		return self._AlltdShrsCost

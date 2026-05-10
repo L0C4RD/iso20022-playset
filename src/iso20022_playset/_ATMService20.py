@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class ATMService20(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMSvcCd", "_SvcRef", "_SvcVarntId", "_SvcTp"]
+	__slots__ = ["_ATMSvcCd", "_SvcRef", "_SvcTp", "_SvcVarntId"]
 	@property
 	def ATMSvcCd(self):
 		return self._ATMSvcCd

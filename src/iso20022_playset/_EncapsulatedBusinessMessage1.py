@@ -1,12 +1,12 @@
 from . import base_types
-from ._xs:ID import xs:ID
 from ._BusinessApplicationHeader1 import BusinessApplicationHeader1
-from ._YesNoIndicator import YesNoIndicator
 from ._StrictPayload import StrictPayload
+from ._YesNoIndicator import YesNoIndicator
+from ._xs:ID import xs:ID
 
 class EncapsulatedBusinessMessage1(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_Prtl", "_Prfx", "_Msg"]
+	__slots__ = ["_Hdr", "_Msg", "_Prfx", "_Prtl"]
 	@property
 	def Hdr(self):
 		return self._Hdr

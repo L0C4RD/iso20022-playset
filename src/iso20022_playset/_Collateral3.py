@@ -4,7 +4,7 @@ from ._CollateralType2Code import CollateralType2Code
 
 class Collateral3(base_types._BaseFieldType):
 
-	__slots__ = ["_PstHrcutVal", "_CollTp", "_MktVal"]
+	__slots__ = ["_CollTp", "_MktVal", "_PstHrcutVal"]
 	@property
 	def CollTp(self):
 		return self._CollTp

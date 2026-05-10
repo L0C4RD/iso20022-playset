@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max52Text import Max52Text
 from ._ISODateTime import ISODateTime
+from ._Max52Text import Max52Text
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class ClearingPartyAndTime14(base_types._BaseFieldType):
 
-	__slots__ = ["_CCP", "_PrtflCd", "_RptTrckgNb", "_ClrDtTm"]
+	__slots__ = ["_CCP", "_ClrDtTm", "_PrtflCd", "_RptTrckgNb"]
 	@property
 	def CCP(self):
 		return self._CCP

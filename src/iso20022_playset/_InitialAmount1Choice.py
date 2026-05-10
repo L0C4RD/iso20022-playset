@@ -4,7 +4,7 @@ from ._Number import Number
 
 class InitialAmount1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_InitlNbOfInstlmts", "_Amt"]
+	__slots__ = ["_Amt", "_InitlNbOfInstlmts"]
 	@property
 	def Amt(self):
 		return self._Amt

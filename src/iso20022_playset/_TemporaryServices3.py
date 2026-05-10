@@ -1,21 +1,21 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PhoneNumber import PhoneNumber
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._PartyIdentification285 import PartyIdentification285
-from ._Amount13 import Amount13
-from ._Amount12 import Amount12
 from ._AdditionalData1 import AdditionalData1
+from ._Amount12 import Amount12
+from ._Amount13 import Amount13
+from ._ISODate import ISODate
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
 from ._Max5NumericText import Max5NumericText
 from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._PartyIdentification285 import PartyIdentification285
+from ._PhoneNumber import PhoneNumber
 from ._Tax41 import Tax41
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TemporaryServices3(base_types._BaseFieldType):
 
-	__slots__ = ["_TmSheet", "_MplyeeNm", "_JobCd", "_AddtlData", "_CpnySprvsr", "_JobStartDt", "_CpnyDept", "_JobDesc", "_JobEndDt", "_MplyeePrsnlId", "_MplyeeId", "_Chrg", "_MplyeePrfssnlLvl", "_JobDrtn", "_WkEndg", "_SbttlAmt", "_DscntAmt", "_FlatRateInd", "_CpnyNm", "_Tax", "_SummryCmmdtyId", "_CpnyId", "_MiscExpnss"]
+	__slots__ = ["_AddtlData", "_Chrg", "_CpnyDept", "_CpnyId", "_CpnyNm", "_CpnySprvsr", "_DscntAmt", "_FlatRateInd", "_JobCd", "_JobDesc", "_JobDrtn", "_JobEndDt", "_JobStartDt", "_MiscExpnss", "_MplyeeId", "_MplyeeNm", "_MplyeePrfssnlLvl", "_MplyeePrsnlId", "_SbttlAmt", "_SummryCmmdtyId", "_Tax", "_TmSheet", "_WkEndg"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

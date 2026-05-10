@@ -1,10 +1,10 @@
 from . import base_types
-from ._TradingVenueIdentification1Choice import TradingVenueIdentification1Choice
 from ._SecuritiesNonTradingDay1 import SecuritiesNonTradingDay1
+from ._TradingVenueIdentification1Choice import TradingVenueIdentification1Choice
 
 class SecuritiesNonTradingDayReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_NonWorkgDay", "_Id"]
+	__slots__ = ["_Id", "_NonWorkgDay"]
 	@property
 	def Id(self):
 		return self._Id

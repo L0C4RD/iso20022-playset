@@ -1,15 +1,15 @@
 from . import base_types
+from ._ATMCommand7Code import ATMCommand7Code
 from ._ATMCommandIdentification1 import ATMCommandIdentification1
 from ._ATMCommandParameters3Choice import ATMCommandParameters3Choice
-from ._ATMCommand7Code import ATMCommand7Code
-from ._TMSContactLevel2Code import TMSContactLevel2Code
-from ._Max70Text import Max70Text
 from ._ATMCommandReason1Code import ATMCommandReason1Code
 from ._ISODateTime import ISODateTime
+from ._Max70Text import Max70Text
+from ._TMSContactLevel2Code import TMSContactLevel2Code
 
 class ATMCommand14(base_types._BaseFieldType):
 
-	__slots__ = ["_CmdId", "_Rsn", "_AddtlRsnInf", "_TracRsn", "_Tp", "_CmdParams", "_Urgcy", "_DtTm"]
+	__slots__ = ["_AddtlRsnInf", "_CmdId", "_CmdParams", "_DtTm", "_Rsn", "_Tp", "_TracRsn", "_Urgcy"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

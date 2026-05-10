@@ -1,12 +1,12 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._PositiveNumber import PositiveNumber
 from ._SearchCriteria1 import SearchCriteria1
 from ._SearchOutputOrder1 import SearchOutputOrder1
-from ._PositiveNumber import PositiveNumber
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ReportTransactionRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckStart", "_BlckStop", "_SchOutptOrdr", "_SchCrit", "_DscndgOrdr"]
+	__slots__ = ["_BlckStart", "_BlckStop", "_DscndgOrdr", "_SchCrit", "_SchOutptOrdr"]
 	@property
 	def BlckStart(self):
 		return self._BlckStart

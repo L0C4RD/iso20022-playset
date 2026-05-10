@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
 from ._FundPaymentType1Code import FundPaymentType1Code
+from ._GenericIdentification36 import GenericIdentification36
 
 class FundPaymentType1Choice(base_types._BaseFieldType):
 

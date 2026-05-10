@@ -1,7 +1,7 @@
 from . import base_types
-from ._TransactionReportOrError7Choice import TransactionReportOrError7Choice
-from ._SupplementaryData1 import SupplementaryData1
 from ._MessageHeader8 import MessageHeader8
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionReportOrError7Choice import TransactionReportOrError7Choice
 
 class ReturnTransactionV11(base_types._BaseFieldType):
 

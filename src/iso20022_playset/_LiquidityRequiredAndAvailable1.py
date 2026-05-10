@@ -1,11 +1,11 @@
 from . import base_types
-from ._StressLiquidResourceRequirement1 import StressLiquidResourceRequirement1
 from ._LiquidResources1 import LiquidResources1
 from ._SettlementDate6Code import SettlementDate6Code
+from ._StressLiquidResourceRequirement1 import StressLiquidResourceRequirement1
 
 class LiquidityRequiredAndAvailable1(base_types._BaseFieldType):
 
-	__slots__ = ["_LqdtyHrzn", "_StrssLqdRsrcRqrmnt", "_LqdRsrcs"]
+	__slots__ = ["_LqdRsrcs", "_LqdtyHrzn", "_StrssLqdRsrcRqrmnt"]
 	@property
 	def LqdRsrcs(self):
 		return self._LqdRsrcs

@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._TrackData2 import TrackData2
-from ._Max3Text import Max3Text
 from ._CheckType1Code import CheckType1Code
+from ._Max35Text import Max35Text
+from ._Max3Text import Max3Text
+from ._TrackData2 import TrackData2
 
 class Check1(base_types._BaseFieldType):
 
-	__slots__ = ["_ChckTp", "_ChckNb", "_ChckTrckData2", "_AcctNb", "_ChckCardNb", "_Ctry", "_BkId"]
+	__slots__ = ["_AcctNb", "_BkId", "_ChckCardNb", "_ChckNb", "_ChckTp", "_ChckTrckData2", "_Ctry"]
 	@property
 	def AcctNb(self):
 		return self._AcctNb

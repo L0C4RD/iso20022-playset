@@ -1,10 +1,10 @@
 from . import base_types
-from ._ServiceResponse9 import ServiceResponse9
 from ._PositiveNumber import PositiveNumber
+from ._ServiceResponse9 import ServiceResponse9
 
 class ReportTransactionResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_RptFullSz", "_BlckStop", "_TxRpt", "_BlckStart"]
+	__slots__ = ["_BlckStart", "_BlckStop", "_RptFullSz", "_TxRpt"]
 	@property
 	def BlckStart(self):
 		return self._BlckStart

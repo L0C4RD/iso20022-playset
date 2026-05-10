@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Value import Value
-from ._Max35Text import Max35Text
 from ._CallIn1Code import CallIn1Code
-from ._PayInCallItem import PayInCallItem
-from ._ISODateTime import ISODateTime
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
+from ._PayInCallItem import PayInCallItem
+from ._Value import Value
 
 class ReportData5(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_AcctVal", "_DtAndTmStmp", "_PayInCallAmt", "_MsgId", "_SttlmSsnIdr", "_Tp"]
+	__slots__ = ["_AcctVal", "_DtAndTmStmp", "_MsgId", "_PayInCallAmt", "_SttlmSsnIdr", "_Tp", "_ValDt"]
 	@property
 	def AcctVal(self):
 		return self._AcctVal

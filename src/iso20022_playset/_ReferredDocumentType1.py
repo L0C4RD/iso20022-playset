@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._DocumentType2Code import DocumentType2Code
+from ._Max35Text import Max35Text
 
 class ReferredDocumentType1(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd", "_Issr"]
+	__slots__ = ["_Cd", "_Issr", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

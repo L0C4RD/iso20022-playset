@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._DateOffsetText import DateOffsetText
 from ._ISOTime import ISOTime
+from ._Max35Text import Max35Text
 
 class CutOff1(base_types._BaseFieldType):
 
-	__slots__ = ["_CutOffTm", "_Ccy", "_CutOffUpdId", "_ValDtOffset"]
+	__slots__ = ["_Ccy", "_CutOffTm", "_CutOffUpdId", "_ValDtOffset"]
 	@property
 	def Ccy(self):
 		return self._Ccy

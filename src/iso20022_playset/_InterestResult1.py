@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._CollateralBalance1 import CollateralBalance1
+from ._ISODate import ISODate
 from ._InterestMethod1Code import InterestMethod1Code
 
 class InterestResult1(base_types._BaseFieldType):
 
-	__slots__ = ["_OpngCollBal", "_ValDt", "_IntrstDueToB", "_IntrstMtd", "_ClsgCollBal", "_IntrstDueToA"]
+	__slots__ = ["_ClsgCollBal", "_IntrstDueToA", "_IntrstDueToB", "_IntrstMtd", "_OpngCollBal", "_ValDt"]
 	@property
 	def ClsgCollBal(self):
 		return self._ClsgCollBal

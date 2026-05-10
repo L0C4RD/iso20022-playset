@@ -1,10 +1,10 @@
 from . import base_types
-from ._UpdateType35Choice import UpdateType35Choice
 from ._SecurityAttributes12 import SecurityAttributes12
+from ._UpdateType35Choice import UpdateType35Choice
 
 class UpdateType36Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_UpdTp", "_Rplc"]
+	__slots__ = ["_Rplc", "_UpdTp"]
 	@property
 	def Rplc(self):
 		return self._Rplc

@@ -1,14 +1,14 @@
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._PriceValueType8Code import PriceValueType8Code
-from ._AmountPricePerAmount2 import AmountPricePerAmount2
-from ._PercentagePrice2 import PercentagePrice2
 from ._AmountPrice3 import AmountPrice3
+from ._AmountPricePerAmount2 import AmountPricePerAmount2
 from ._AmountPricePerFinancialInstrumentQuantity10 import AmountPricePerFinancialInstrumentQuantity10
+from ._DecimalNumber import DecimalNumber
+from ._PercentagePrice2 import PercentagePrice2
+from ._PriceValueType8Code import PriceValueType8Code
 
 class PriceFormat72Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtPric", "_PctgPric", "_AmtPricPerFinInstrmQty", "_NotSpcfdPric", "_AmtPricPerAmt", "_IndxPts"]
+	__slots__ = ["_AmtPric", "_AmtPricPerAmt", "_AmtPricPerFinInstrmQty", "_IndxPts", "_NotSpcfdPric", "_PctgPric"]
 	@property
 	def AmtPric(self):
 		return self._AmtPric

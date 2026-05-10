@@ -4,7 +4,7 @@ from ._Max70Text import Max70Text
 
 class CustomerDevice3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Id", "_Prvdr"]
+	__slots__ = ["_Id", "_Prvdr", "_Tp"]
 	@property
 	def Id(self):
 		return self._Id

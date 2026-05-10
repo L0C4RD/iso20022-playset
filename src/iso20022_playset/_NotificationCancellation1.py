@@ -1,10 +1,10 @@
 from . import base_types
-from ._DocumentIdentification8 import DocumentIdentification8
 from ._CorporateActionNotificationType2Code import CorporateActionNotificationType2Code
+from ._DocumentIdentification8 import DocumentIdentification8
 
 class NotificationCancellation1(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnCxlTp", "_LkdAgtCANtfctnAdvcId"]
+	__slots__ = ["_LkdAgtCANtfctnAdvcId", "_NtfctnCxlTp"]
 	@property
 	def LkdAgtCANtfctnAdvcId(self):
 		return self._LkdAgtCANtfctnAdvcId

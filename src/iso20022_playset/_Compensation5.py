@@ -1,12 +1,12 @@
 from . import base_types
-from ._CashAccount40 import CashAccount40
-from ._CompensationReason1Choice import CompensationReason1Choice
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._CompensationReason1Choice import CompensationReason1Choice
 
 class Compensation5(base_types._BaseFieldType):
 
-	__slots__ = ["_DbtrAgt", "_CdtrAgt", "_Rsn", "_CdtrAgtAcct", "_DbtrAgtAcct", "_Amt"]
+	__slots__ = ["_Amt", "_CdtrAgt", "_CdtrAgtAcct", "_DbtrAgt", "_DbtrAgtAcct", "_Rsn"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -1,11 +1,11 @@
 from . import base_types
+from ._BICIdentification1 import BICIdentification1
 from ._DateTimePeriodDetails1 import DateTimePeriodDetails1
 from ._MessageIdentification1 import MessageIdentification1
-from ._BICIdentification1 import BICIdentification1
 
 class ActivityReportRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqId", "_NttiesToBeRptd", "_RptPrd"]
+	__slots__ = ["_NttiesToBeRptd", "_ReqId", "_RptPrd"]
 	@property
 	def NttiesToBeRptd(self):
 		return self._NttiesToBeRptd

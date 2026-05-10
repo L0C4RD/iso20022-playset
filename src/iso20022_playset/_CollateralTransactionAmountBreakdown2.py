@@ -1,11 +1,11 @@
 from . import base_types
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._GenericIdentification178 import GenericIdentification178
 from ._Period4Choice import Period4Choice
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class CollateralTransactionAmountBreakdown2(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_LotNb", "_TxAmt"]
+	__slots__ = ["_LotNb", "_Prd", "_TxAmt"]
 	@property
 	def LotNb(self):
 		return self._LotNb

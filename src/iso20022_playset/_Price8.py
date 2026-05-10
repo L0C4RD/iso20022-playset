@@ -1,11 +1,11 @@
 from . import base_types
-from ._PriceValueType3Code import PriceValueType3Code
 from ._PriceRateOrAmount3Choice import PriceRateOrAmount3Choice
+from ._PriceValueType3Code import PriceValueType3Code
 from ._TypeOfPrice1Code import TypeOfPrice1Code
 
 class Price8(base_types._BaseFieldType):
 
-	__slots__ = ["_ValTp", "_PricTp", "_Val"]
+	__slots__ = ["_PricTp", "_Val", "_ValTp"]
 	@property
 	def PricTp(self):
 		return self._PricTp

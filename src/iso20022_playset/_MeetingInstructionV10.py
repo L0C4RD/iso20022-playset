@@ -1,17 +1,17 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MeetingInstructionCancellation1 import MeetingInstructionCancellation1
-from ._SecurityIdentification19 import SecurityIdentification19
 from ._DocumentIdentification32 import DocumentIdentification32
-from ._MeetingReference10 import MeetingReference10
-from ._Max35Text import Max35Text
-from ._MeetingInstructionIdentification1 import MeetingInstructionIdentification1
-from ._Pagination1 import Pagination1
 from ._Instruction8 import Instruction8
+from ._Max35Text import Max35Text
+from ._MeetingInstructionCancellation1 import MeetingInstructionCancellation1
+from ._MeetingInstructionIdentification1 import MeetingInstructionIdentification1
+from ._MeetingReference10 import MeetingReference10
+from ._Pagination1 import Pagination1
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SupplementaryData1 import SupplementaryData1
 
 class MeetingInstructionV10(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrDocId", "_MtgInstrId", "_FinInstrmId", "_MtgRef", "_CancInstrId", "_Instr", "_InstrCxlReqId", "_SplmtryData", "_Pgntn"]
+	__slots__ = ["_CancInstrId", "_FinInstrmId", "_Instr", "_InstrCxlReqId", "_MtgInstrId", "_MtgRef", "_OthrDocId", "_Pgntn", "_SplmtryData"]
 	@property
 	def CancInstrId(self):
 		return self._CancInstrId

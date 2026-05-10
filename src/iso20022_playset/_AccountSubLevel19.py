@@ -1,13 +1,13 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SupplementaryData1 import SupplementaryData1
-from ._PartyIdentification100 import PartyIdentification100
 from ._AggregateHoldingBalance3 import AggregateHoldingBalance3
 from ._BeneficialOwner2 import BeneficialOwner2
+from ._PartyIdentification100 import PartyIdentification100
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SupplementaryData1 import SupplementaryData1
 
 class AccountSubLevel19(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_AcctSvcr", "_BalDtls", "_AcctId", "_AcctOwnr", "_BnfclOwnr"]
+	__slots__ = ["_AcctId", "_AcctOwnr", "_AcctSvcr", "_BalDtls", "_BnfclOwnr", "_SplmtryData"]
 	@property
 	def AcctId(self):
 		return self._AcctId

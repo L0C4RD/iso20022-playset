@@ -1,11 +1,11 @@
 from . import base_types
 from ._DatePeriod3Choice import DatePeriod3Choice
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._PartyAuditTrailOrError4Choice import PartyAuditTrailOrError4Choice
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class PartyAuditTrailReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyAudtTrlOrErr", "_PtyId", "_DtPrd"]
+	__slots__ = ["_DtPrd", "_PtyAudtTrlOrErr", "_PtyId"]
 	@property
 	def DtPrd(self):
 		return self._DtPrd

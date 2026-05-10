@@ -1,16 +1,16 @@
 from . import base_types
-from ._StampDutyType1FormatChoice import StampDutyType1FormatChoice
-from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._FormOfSecurity1Code import FormOfSecurity1Code
 from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
-from ._Exact3NumericText import Exact3NumericText
-from ._Max35Text import Max35Text
-from ._SecuritiesBalanceType10FormatChoice import SecuritiesBalanceType10FormatChoice
 from ._CreditDebitCode import CreditDebitCode
+from ._Exact3NumericText import Exact3NumericText
+from ._FormOfSecurity1Code import FormOfSecurity1Code
+from ._Max35Text import Max35Text
+from ._PartyIdentification2Choice import PartyIdentification2Choice
+from ._SecuritiesBalanceType10FormatChoice import SecuritiesBalanceType10FormatChoice
+from ._StampDutyType1FormatChoice import StampDutyType1FormatChoice
 
 class SecuritiesAccount8(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrId", "_CdtDbtInd", "_StmpDty", "_AcctId", "_SctyHldgForm", "_OptnNb", "_BalTp", "_OptnTp"]
+	__slots__ = ["_AcctId", "_AcctOwnrId", "_BalTp", "_CdtDbtInd", "_OptnNb", "_OptnTp", "_SctyHldgForm", "_StmpDty"]
 	@property
 	def AcctId(self):
 		return self._AcctId

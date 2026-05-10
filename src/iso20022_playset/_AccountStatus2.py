@@ -1,16 +1,16 @@
 from . import base_types
+from ._ClosedStatusReason1Choice import ClosedStatusReason1Choice
 from ._ClosurePendingStatusReason1Choice import ClosurePendingStatusReason1Choice
 from ._DisabledStatusReason1Choice import DisabledStatusReason1Choice
-from ._ProformaStatusReason1Choice import ProformaStatusReason1Choice
-from ._PendingStatusReason1Choice import PendingStatusReason1Choice
-from ._ClosedStatusReason1Choice import ClosedStatusReason1Choice
-from ._OtherAccountStatus1 import OtherAccountStatus1
 from ._EnabledStatusReason1Choice import EnabledStatusReason1Choice
+from ._OtherAccountStatus1 import OtherAccountStatus1
 from ._PendingOpeningStatusReason1Choice import PendingOpeningStatusReason1Choice
+from ._PendingStatusReason1Choice import PendingStatusReason1Choice
+from ._ProformaStatusReason1Choice import ProformaStatusReason1Choice
 
 class AccountStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_Dsbld", "_Clsd", "_ClsrPdg", "_PdgOpng", "_Profrm", "_Nbld", "_Othr", "_Pdg"]
+	__slots__ = ["_Clsd", "_ClsrPdg", "_Dsbld", "_Nbld", "_Othr", "_Pdg", "_PdgOpng", "_Profrm"]
 	@property
 	def Clsd(self):
 		return self._Clsd

@@ -1,12 +1,12 @@
 from . import base_types
-from ._IssuanceAccount2 import IssuanceAccount2
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._IssuanceAccount2 import IssuanceAccount2
 from ._SystemPartyIdentification2Choice import SystemPartyIdentification2Choice
 from ._YesNoIndicator import YesNoIndicator
 
 class SecurityCSDLink7(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstrCSD", "_SctyMntnc", "_VldFr", "_IssncAcct", "_VldTo", "_IssrCSD", "_TechIssrCSD"]
+	__slots__ = ["_InvstrCSD", "_IssncAcct", "_IssrCSD", "_SctyMntnc", "_TechIssrCSD", "_VldFr", "_VldTo"]
 	@property
 	def InvstrCSD(self):
 		return self._InvstrCSD

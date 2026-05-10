@@ -1,13 +1,13 @@
 from . import base_types
-from ._Quantity49Choice import Quantity49Choice
-from ._PendingBalance7 import PendingBalance7
 from ._BalanceFormat11Choice import BalanceFormat11Choice
 from ._InstructedBalance20 import InstructedBalance20
+from ._PendingBalance7 import PendingBalance7
+from ._Quantity49Choice import Quantity49Choice
 from ._SignedQuantityFormat10 import SignedQuantityFormat10
 
 class CorporateActionBalance50(base_types._BaseFieldType):
 
-	__slots__ = ["_CollInBal", "_TtlInstdBalDtls", "_PdgDlvryBal", "_BrrwdBal", "_InTrnsShipmntBal", "_OnLnBal", "_OutForRegnBal", "_OblgtdBal", "_TtlElgblBal", "_UinstdBal", "_PdgRctBal", "_RegdBal", "_TradDtPosBal", "_CollOutBal", "_BlckdBal", "_StrtPosBal", "_SttlmPosBal"]
+	__slots__ = ["_BlckdBal", "_BrrwdBal", "_CollInBal", "_CollOutBal", "_InTrnsShipmntBal", "_OblgtdBal", "_OnLnBal", "_OutForRegnBal", "_PdgDlvryBal", "_PdgRctBal", "_RegdBal", "_StrtPosBal", "_SttlmPosBal", "_TradDtPosBal", "_TtlElgblBal", "_TtlInstdBalDtls", "_UinstdBal"]
 	@property
 	def BlckdBal(self):
 		return self._BlckdBal

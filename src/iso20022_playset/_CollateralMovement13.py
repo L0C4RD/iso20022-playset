@@ -1,10 +1,10 @@
 from . import base_types
-from ._Collateral55 import Collateral55
 from ._Collateral54 import Collateral54
+from ._Collateral55 import Collateral55
 
 class CollateralMovement13(base_types._BaseFieldType):
 
-	__slots__ = ["_Rtr", "_Dlvr"]
+	__slots__ = ["_Dlvr", "_Rtr"]
 	@property
 	def Dlvr(self):
 		return self._Dlvr

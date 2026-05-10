@@ -5,7 +5,7 @@ from ._Max140Text import Max140Text
 
 class IndependentAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_Cnvntn", "_Desc", "_Amt"]
+	__slots__ = ["_Amt", "_Cnvntn", "_Desc"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -1,11 +1,11 @@
 from . import base_types
 from ._DateOrDateTimePeriod3Choice import DateOrDateTimePeriod3Choice
-from ._Removal1Choice import Removal1Choice
 from ._GenericIdentification30 import GenericIdentification30
+from ._Removal1Choice import Removal1Choice
 
 class RemovalTypeAndReason1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_ExclsnPrd", "_RmvlTp"]
+	__slots__ = ["_ExclsnPrd", "_RmvlTp", "_Rsn"]
 	@property
 	def ExclsnPrd(self):
 		return self._ExclsnPrd

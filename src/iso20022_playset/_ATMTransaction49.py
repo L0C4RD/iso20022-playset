@@ -1,24 +1,24 @@
 from . import base_types
-from ._DetailedAmount13 import DetailedAmount13
-from ._ATMMediaMix1 import ATMMediaMix1
-from ._CurrencyConversion32 import CurrencyConversion32
-from ._ContentInformationType10 import ContentInformationType10
-from ._ATMTransactionAmounts6 import ATMTransactionAmounts6
-from ._Max10000Binary import Max10000Binary
-from ._AuthorisationResult20 import AuthorisationResult20
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ATMCommand7 import ATMCommand7
+from ._ATMMediaMix1 import ATMMediaMix1
+from ._ATMTransactionAmounts6 import ATMTransactionAmounts6
 from ._AmountAndCurrency1 import AmountAndCurrency1
+from ._AuthorisationResult20 import AuthorisationResult20
 from ._CardAccount18 import CardAccount18
-from ._DetailedAmount12 import DetailedAmount12
-from ._TransactionIdentifier3 import TransactionIdentifier3
-from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._CardAccount22 import CardAccount22
+from ._ContentInformationType10 import ContentInformationType10
+from ._CurrencyConversion32 import CurrencyConversion32
+from ._DetailedAmount12 import DetailedAmount12
+from ._DetailedAmount13 import DetailedAmount13
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max10000Binary import Max10000Binary
+from ._Max35Text import Max35Text
+from ._TransactionIdentifier3 import TransactionIdentifier3
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ATMTransaction49(base_types._BaseFieldType):
 
-	__slots__ = ["_Lmts", "_AddtlChrg", "_CmpltnReqrd", "_AcctData", "_TtlAuthrsdAmt", "_Cmd", "_MixTp", "_AuthstnRslt", "_ICCRltdData", "_TxId", "_DtldReqdAmt", "_TtlReqdAmt", "_PrtctdAcctData", "_AcctInf", "_Mix", "_RcncltnId", "_CcyConvsElgblty"]
+	__slots__ = ["_AcctData", "_AcctInf", "_AddtlChrg", "_AuthstnRslt", "_CcyConvsElgblty", "_Cmd", "_CmpltnReqrd", "_DtldReqdAmt", "_ICCRltdData", "_Lmts", "_Mix", "_MixTp", "_PrtctdAcctData", "_RcncltnId", "_TtlAuthrsdAmt", "_TtlReqdAmt", "_TxId"]
 	@property
 	def AcctData(self):
 		return self._AcctData

@@ -1,11 +1,11 @@
 from . import base_types
-from ._AmountOrPercentage2Choice import AmountOrPercentage2Choice
-from ._AdjustmentType1Choice import AdjustmentType1Choice
 from ._AdjustmentDirection1Code import AdjustmentDirection1Code
+from ._AdjustmentType1Choice import AdjustmentType1Choice
+from ._AmountOrPercentage2Choice import AmountOrPercentage2Choice
 
 class Adjustment7(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_AmtOrPctg", "_Drctn"]
+	__slots__ = ["_AmtOrPctg", "_Drctn", "_Tp"]
 	@property
 	def AmtOrPctg(self):
 		return self._AmtOrPctg

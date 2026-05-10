@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Exact1NumericText import Exact1NumericText
-from ._DisputeReference1 import DisputeReference1
-from ._Max35Text import Max35Text
 from ._AdditionalData1 import AdditionalData1
+from ._DisputeReference1 import DisputeReference1
+from ._Exact1NumericText import Exact1NumericText
+from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class DisputeData4(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtl", "_ChrgbckElgblty", "_Cycl", "_RjctRsn", "_AddtlData", "_Cond", "_Sts", "_DcmnttnSts", "_Ref"]
+	__slots__ = ["_AddtlData", "_ChrgbckElgblty", "_Cond", "_Cycl", "_DcmnttnSts", "_Prtl", "_Ref", "_RjctRsn", "_Sts"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

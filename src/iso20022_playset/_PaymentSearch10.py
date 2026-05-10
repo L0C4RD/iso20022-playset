@@ -1,25 +1,25 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._PaymentIdentification8Choice import PaymentIdentification8Choice
 from ._ActiveAmountRange3Choice import ActiveAmountRange3Choice
-from ._DateTimePeriod1Choice import DateTimePeriod1Choice
-from ._Instruction1Code import Instruction1Code
-from ._UUIDv4Identifier import UUIDv4Identifier
-from ._InstructionStatusSearch5 import InstructionStatusSearch5
-from ._DateAndDateTimeSearch3Choice import DateAndDateTimeSearch3Choice
-from ._ISODate import ISODate
-from ._PaymentType4Choice import PaymentType4Choice
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._ActiveOrHistoricAmountRange2Choice import ActiveOrHistoricAmountRange2Choice
-from ._PaymentTransactionParty4 import PaymentTransactionParty4
-from ._Priority1Choice import Priority1Choice
-from ._Max35Text import Max35Text
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._CreditDebitCode import CreditDebitCode
+from ._DateAndDateTimeSearch3Choice import DateAndDateTimeSearch3Choice
+from ._DateTimePeriod1Choice import DateTimePeriod1Choice
+from ._ISODate import ISODate
+from ._Instruction1Code import Instruction1Code
+from ._InstructionStatusSearch5 import InstructionStatusSearch5
+from ._Max35Text import Max35Text
+from ._PaymentIdentification8Choice import PaymentIdentification8Choice
 from ._PaymentOrigin1Choice import PaymentOrigin1Choice
+from ._PaymentTransactionParty4 import PaymentTransactionParty4
+from ._PaymentType4Choice import PaymentType4Choice
+from ._Priority1Choice import Priority1Choice
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class PaymentSearch10(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqdExctnDt", "_InstdAmtCcy", "_PrcgVldtyTm", "_EndToEndId", "_IntrBkSttlmDt", "_PmtId", "_MsgId", "_TxId", "_InstdAmt", "_PmtTp", "_Sts", "_PmtMtd", "_IntrBkSttlmAmt", "_UETR", "_CdtDbtInd", "_Pties", "_IntrBkSttlmAmtCcy", "_Prty", "_Instr"]
+	__slots__ = ["_CdtDbtInd", "_EndToEndId", "_InstdAmt", "_InstdAmtCcy", "_Instr", "_IntrBkSttlmAmt", "_IntrBkSttlmAmtCcy", "_IntrBkSttlmDt", "_MsgId", "_PmtId", "_PmtMtd", "_PmtTp", "_PrcgVldtyTm", "_Prty", "_Pties", "_ReqdExctnDt", "_Sts", "_TxId", "_UETR"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd

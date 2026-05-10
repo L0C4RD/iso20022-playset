@@ -5,7 +5,7 @@ from ._NonEquitySubClass1 import NonEquitySubClass1
 
 class InstrumentAndSubClassIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_DerivSubClss", "_ISIN", "_FinInstrmClssfctn"]
+	__slots__ = ["_DerivSubClss", "_FinInstrmClssfctn", "_ISIN"]
 	@property
 	def DerivSubClss(self):
 		return self._DerivSubClss

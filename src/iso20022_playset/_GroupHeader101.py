@@ -6,7 +6,7 @@ from ._OriginalBusinessQuery1 import OriginalBusinessQuery1
 
 class GroupHeader101(base_types._BaseFieldType):
 
-	__slots__ = ["_InstdAgt", "_MsgId", "_OrgnlBizQry", "_CreDtTm", "_InstgAgt"]
+	__slots__ = ["_CreDtTm", "_InstdAgt", "_InstgAgt", "_MsgId", "_OrgnlBizQry"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

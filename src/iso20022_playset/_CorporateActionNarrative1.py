@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max256Text import Max256Text
 from ._Max350Text import Max350Text
 from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._Max256Text import Max256Text
 
 class CorporateActionNarrative1(base_types._BaseFieldType):
 
-	__slots__ = ["_InfConds", "_TaxtnConds", "_Offerr", "_InfToCmplyWth", "_URLAdr", "_NewCpnyNm", "_AddtlTxt"]
+	__slots__ = ["_AddtlTxt", "_InfConds", "_InfToCmplyWth", "_NewCpnyNm", "_Offerr", "_TaxtnConds", "_URLAdr"]
 	@property
 	def AddtlTxt(self):
 		return self._AddtlTxt

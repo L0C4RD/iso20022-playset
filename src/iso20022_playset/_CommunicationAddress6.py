@@ -1,12 +1,12 @@
 from . import base_types
 from ._AddressType1Choice import AddressType1Choice
-from ._PhoneNumber import PhoneNumber
-from ._Max35Text import Max35Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._PhoneNumber import PhoneNumber
 
 class CommunicationAddress6(base_types._BaseFieldType):
 
-	__slots__ = ["_FaxNb", "_AdrTp", "_Phne", "_URLAdr", "_Mob", "_Email", "_TlxAdr"]
+	__slots__ = ["_AdrTp", "_Email", "_FaxNb", "_Mob", "_Phne", "_TlxAdr", "_URLAdr"]
 	@property
 	def AdrTp(self):
 		return self._AdrTp

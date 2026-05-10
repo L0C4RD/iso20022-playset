@@ -1,11 +1,11 @@
 from . import base_types
-from ._ATMSecurityConfiguration1 import ATMSecurityConfiguration1
 from ._ATMEquipment3 import ATMEquipment3
+from ._ATMSecurityConfiguration1 import ATMSecurityConfiguration1
 from ._ATMSecurityScheme3Code import ATMSecurityScheme3Code
 
 class ATMSecurityContext3(base_types._BaseFieldType):
 
-	__slots__ = ["_CurSctySchme", "_CurCfgtn", "_DvcPrprty"]
+	__slots__ = ["_CurCfgtn", "_CurSctySchme", "_DvcPrprty"]
 	@property
 	def CurCfgtn(self):
 		return self._CurCfgtn

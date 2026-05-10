@@ -1,14 +1,14 @@
 from . import base_types
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._BalanceType13 import BalanceType13
 from ._CashAvailability1 import CashAvailability1
 from ._CreditDebitCode import CreditDebitCode
-from ._BalanceType13 import BalanceType13
 from ._CreditLine3 import CreditLine3
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class CashBalance8(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Dt", "_CdtDbtInd", "_Amt", "_CdtLine", "_Avlbty"]
+	__slots__ = ["_Amt", "_Avlbty", "_CdtDbtInd", "_CdtLine", "_Dt", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

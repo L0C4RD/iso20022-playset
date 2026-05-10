@@ -1,12 +1,12 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._AmountAndDirection53 import AmountAndDirection53
 from ._DecimalNumber import DecimalNumber
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._PercentageRate import PercentageRate
 
 class SecuritiesTransactionPrice21Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MntryVal", "_NmnlVal", "_BsisPts", "_Yld", "_Pctg"]
+	__slots__ = ["_BsisPts", "_MntryVal", "_NmnlVal", "_Pctg", "_Yld"]
 	@property
 	def BsisPts(self):
 		return self._BsisPts

@@ -1,11 +1,11 @@
 from . import base_types
-from ._NotificationCancellationRequestStatus2Choice import NotificationCancellationRequestStatus2Choice
 from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
+from ._NotificationCancellationRequestStatus2Choice import NotificationCancellationRequestStatus2Choice
 
 class AgentNotificationCancellationIdentificationAndStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CreDtTm", "_Sts"]
+	__slots__ = ["_CreDtTm", "_Id", "_Sts"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

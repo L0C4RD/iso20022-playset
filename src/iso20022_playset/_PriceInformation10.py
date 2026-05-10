@@ -1,11 +1,11 @@
 from . import base_types
+from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
 from ._PriceValueAndRate4 import PriceValueAndRate4
 from ._TypeOfPrice27Choice import TypeOfPrice27Choice
-from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
 
 class PriceInformation10(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsPric", "_Tp", "_AmtOfChng", "_CurPric"]
+	__slots__ = ["_AmtOfChng", "_CurPric", "_PrvsPric", "_Tp"]
 	@property
 	def AmtOfChng(self):
 		return self._AmtOfChng

@@ -5,7 +5,7 @@ from ._SupportingDocumentRequestOrLetter4 import SupportingDocumentRequestOrLett
 
 class CurrencyControlRequestOrLetterV04(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqOrLttr", "_SplmtryData", "_GrpHdr"]
+	__slots__ = ["_GrpHdr", "_ReqOrLttr", "_SplmtryData"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

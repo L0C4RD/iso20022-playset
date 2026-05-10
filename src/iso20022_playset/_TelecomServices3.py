@@ -1,16 +1,16 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PhoneNumber import PhoneNumber
-from ._Amount22 import Amount22
 from ._AdditionalData1 import AdditionalData1
-from ._TelecomServicesLineItem3 import TelecomServicesLineItem3
-from ._Max70Text import Max70Text
+from ._Amount22 import Amount22
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._PhoneNumber import PhoneNumber
 from ._Tax41 import Tax41
+from ._TelecomServicesLineItem3 import TelecomServicesLineItem3
 
 class TelecomServices3(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlTax", "_LineItm", "_CstmrNm", "_BllgStart", "_AddtlData", "_BllgEnd", "_BllgEvt", "_CstmrAcctNb", "_CstmrPhne"]
+	__slots__ = ["_AddtlData", "_BllgEnd", "_BllgEvt", "_BllgStart", "_CstmrAcctNb", "_CstmrNm", "_CstmrPhne", "_LineItm", "_TtlTax"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

@@ -1,20 +1,20 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._OriginalGroupInformation29 import OriginalGroupInformation29
-from ._SHA256SignatureText import SHA256SignatureText
-from ._Charges16 import Charges16
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
-from ._StatusReasonInformation14 import StatusReasonInformation14
-from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
+from ._Charges16 import Charges16
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
+from ._OriginalGroupInformation29 import OriginalGroupInformation29
 from ._OriginalTransactionReference42 import OriginalTransactionReference42
+from ._SHA256SignatureText import SHA256SignatureText
+from ._StatusReasonInformation14 import StatusReasonInformation14
+from ._SupplementaryData1 import SupplementaryData1
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class PaymentTransaction164(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRsnInf", "_TxSts", "_ClrSysRef", "_CdtSttlmKey", "_OrgnlInstrId", "_ChrgsInf", "_AccptncDtTm", "_PrcgDt", "_OrgnlGrpInf", "_InstdAgt", "_AcctSvcrRef", "_OrgnlTxRef", "_OrgnlUETR", "_FctvIntrBkSttlmDt", "_InstgAgt", "_StsId", "_OrgnlEndToEndId", "_OrgnlTxId", "_SplmtryData"]
+	__slots__ = ["_AccptncDtTm", "_AcctSvcrRef", "_CdtSttlmKey", "_ChrgsInf", "_ClrSysRef", "_FctvIntrBkSttlmDt", "_InstdAgt", "_InstgAgt", "_OrgnlEndToEndId", "_OrgnlGrpInf", "_OrgnlInstrId", "_OrgnlTxId", "_OrgnlTxRef", "_OrgnlUETR", "_PrcgDt", "_SplmtryData", "_StsId", "_StsRsnInf", "_TxSts"]
 	@property
 	def AccptncDtTm(self):
 		return self._AccptncDtTm

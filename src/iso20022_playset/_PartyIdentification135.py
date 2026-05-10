@@ -1,13 +1,13 @@
 from . import base_types
-from ._CountryCode import CountryCode
-from ._Party38Choice import Party38Choice
 from ._Contact4 import Contact4
-from ._PostalAddress24 import PostalAddress24
+from ._CountryCode import CountryCode
 from ._Max140Text import Max140Text
+from ._Party38Choice import Party38Choice
+from ._PostalAddress24 import PostalAddress24
 
 class PartyIdentification135(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Nm", "_CtctDtls", "_PstlAdr", "_CtryOfRes"]
+	__slots__ = ["_CtctDtls", "_CtryOfRes", "_Id", "_Nm", "_PstlAdr"]
 	@property
 	def CtctDtls(self):
 		return self._CtctDtls

@@ -1,10 +1,10 @@
 from . import base_types
-from ._InvestmentAccountOwnershipInformation17 import InvestmentAccountOwnershipInformation17
 from ._Extended350Code import Extended350Code
+from ._InvestmentAccountOwnershipInformation17 import InvestmentAccountOwnershipInformation17
 
 class ExtendedParty15(base_types._BaseFieldType):
 
-	__slots__ = ["_XtndedPtyRole", "_OthrPtyDtls"]
+	__slots__ = ["_OthrPtyDtls", "_XtndedPtyRole"]
 	@property
 	def OthrPtyDtls(self):
 		return self._OthrPtyDtls

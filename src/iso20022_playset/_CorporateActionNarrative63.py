@@ -1,11 +1,11 @@
 from . import base_types
 from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
-from ._UpdatedURLlnformation7 import UpdatedURLlnformation7
 from ._RestrictedFINZMax2048Text import RestrictedFINZMax2048Text
+from ._UpdatedURLlnformation7 import UpdatedURLlnformation7
 
 class CorporateActionNarrative63(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtPrcgWebSiteAdr", "_Offerr", "_NewCpnyNm", "_URLAdr"]
+	__slots__ = ["_EvtPrcgWebSiteAdr", "_NewCpnyNm", "_Offerr", "_URLAdr"]
 	@property
 	def EvtPrcgWebSiteAdr(self):
 		return self._EvtPrcgWebSiteAdr

@@ -1,11 +1,11 @@
 from . import base_types
 from ._ATMPropertyType1Code import ATMPropertyType1Code
-from ._Max70Text import Max70Text
 from ._Max2000Text import Max2000Text
+from ._Max70Text import Max70Text
 
 class ATMPropertyComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_PrprtyTp", "_PrprtyVal", "_PrprtyNm"]
+	__slots__ = ["_PrprtyNm", "_PrprtyTp", "_PrprtyVal"]
 	@property
 	def PrprtyNm(self):
 		return self._PrprtyNm

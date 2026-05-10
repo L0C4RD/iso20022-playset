@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
+from ._ClearingMethod2Code import ClearingMethod2Code
+from ._CreditDebit3Code import CreditDebit3Code
 from ._ISO3NumericCountryCode import ISO3NumericCountryCode
-from ._OtherAmount5 import OtherAmount5
-from ._Number import Number
 from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._ISODate import ISODate
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max140Binary import Max140Binary
 from ._Max35Text import Max35Text
-from ._CreditDebit3Code import CreditDebit3Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._ClearingMethod2Code import ClearingMethod2Code
+from ._Number import Number
+from ._OtherAmount5 import OtherAmount5
 from ._RecordMessage1Choice import RecordMessage1Choice
 
 class Record3(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrMtd", "_OrgtrId", "_OthrAmt", "_AgtFeeAmt", "_DstnId", "_ClrPrty", "_IntrchngFeeCdtDbt", "_AgtFeeCcy", "_DstnCtry", "_IntrchngFeeCcy", "_SeqCntr", "_IntrchngFeeAmt", "_ClrCcy", "_DstnShrtNm", "_AgtFeeCdtDbt", "_RcrdChcksmInptVal", "_OrgtrCtry", "_ClrAmt", "_ClrCdtDbt", "_OrgtrAssgnr", "_RcrdMsg", "_OthrClrMtd", "_DstnAssgnr", "_OrgtrShrtNm", "_ClrDt"]
+	__slots__ = ["_AgtFeeAmt", "_AgtFeeCcy", "_AgtFeeCdtDbt", "_ClrAmt", "_ClrCcy", "_ClrCdtDbt", "_ClrDt", "_ClrMtd", "_ClrPrty", "_DstnAssgnr", "_DstnCtry", "_DstnId", "_DstnShrtNm", "_IntrchngFeeAmt", "_IntrchngFeeCcy", "_IntrchngFeeCdtDbt", "_OrgtrAssgnr", "_OrgtrCtry", "_OrgtrId", "_OrgtrShrtNm", "_OthrAmt", "_OthrClrMtd", "_RcrdChcksmInptVal", "_RcrdMsg", "_SeqCntr"]
 	@property
 	def AgtFeeAmt(self):
 		return self._AgtFeeAmt

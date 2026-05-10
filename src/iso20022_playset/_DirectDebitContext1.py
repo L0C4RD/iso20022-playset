@@ -1,12 +1,12 @@
 from . import base_types
+from ._CashAccount40 import CashAccount40
 from ._ContentInformationType39 import ContentInformationType39
 from ._MandateRelatedInformation17 import MandateRelatedInformation17
 from ._PartyIdentification272 import PartyIdentification272
-from ._CashAccount40 import CashAccount40
 
 class DirectDebitContext1(base_types._BaseFieldType):
 
-	__slots__ = ["_MndtRltdInf", "_PrtctdCdtrAcct", "_PrtctdDbtrAcct", "_CdtrAcct", "_Dbtr", "_Cdtr", "_DbtrAcct"]
+	__slots__ = ["_Cdtr", "_CdtrAcct", "_Dbtr", "_DbtrAcct", "_MndtRltdInf", "_PrtctdCdtrAcct", "_PrtctdDbtrAcct"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

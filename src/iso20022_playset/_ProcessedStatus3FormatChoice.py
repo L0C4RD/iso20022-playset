@@ -4,7 +4,7 @@ from ._ProcessedStatus3Code import ProcessedStatus3Code
 
 class ProcessedStatus3FormatChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

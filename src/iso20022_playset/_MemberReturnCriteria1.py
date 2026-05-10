@@ -3,7 +3,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class MemberReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_TpInd", "_CtctRefInd", "_NmInd", "_StsInd", "_ComAdrInd", "_MmbRtrAdrInd", "_AcctInd"]
+	__slots__ = ["_AcctInd", "_ComAdrInd", "_CtctRefInd", "_MmbRtrAdrInd", "_NmInd", "_StsInd", "_TpInd"]
 	@property
 	def AcctInd(self):
 		return self._AcctInd

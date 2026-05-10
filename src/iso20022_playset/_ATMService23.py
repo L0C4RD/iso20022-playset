@@ -1,10 +1,10 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._ATMServiceType9Code import ATMServiceType9Code
+from ._Max35Text import Max35Text
 
 class ATMService23(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMSvcCd", "_SvcRef", "_SvcVarntId", "_SvcTp", "_HstSvcCd"]
+	__slots__ = ["_ATMSvcCd", "_HstSvcCd", "_SvcRef", "_SvcTp", "_SvcVarntId"]
 	@property
 	def ATMSvcCd(self):
 		return self._ATMSvcCd

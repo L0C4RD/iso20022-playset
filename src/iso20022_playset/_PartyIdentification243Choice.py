@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._GenericIdentification30 import GenericIdentification30
 
 class PartyIdentification243Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryId", "_BIC"]
+	__slots__ = ["_BIC", "_PrtryId"]
 	@property
 	def BIC(self):
 		return self._BIC

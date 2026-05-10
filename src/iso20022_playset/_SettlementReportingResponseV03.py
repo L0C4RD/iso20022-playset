@@ -1,28 +1,28 @@
 from . import base_types
-from ._Exact12Text import Exact12Text
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._Max12NumericText import Max12NumericText
 from ._AdditionalData2 import AdditionalData2
-from ._Exact15Text import Exact15Text
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._Jurisdiction2 import Jurisdiction2
-from ._ISODateTime import ISODateTime
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ProcessingResult23 import ProcessingResult23
-from ._ContentInformationType41 import ContentInformationType41
-from ._PartyIdentification285 import PartyIdentification285
-from ._FinancialInstitution9 import FinancialInstitution9
-from ._SettlementService6 import SettlementService6
-from ._ProtectedData2 import ProtectedData2
 from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
-from ._Max1000Text import Max1000Text
+from ._ContentInformationType41 import ContentInformationType41
+from ._Exact12Text import Exact12Text
+from ._Exact15Text import Exact15Text
+from ._FinancialInstitution9 import FinancialInstitution9
 from ._Header71 import Header71
+from ._ISO8583ResponseCode import ISO8583ResponseCode
+from ._ISODateTime import ISODateTime
+from ._Jurisdiction2 import Jurisdiction2
+from ._Max1000Text import Max1000Text
+from ._Max12NumericText import Max12NumericText
+from ._PartyIdentification285 import PartyIdentification285
+from ._PartyIdentification286 import PartyIdentification286
+from ._ProcessingResult23 import ProcessingResult23
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._ProtectedData2 import ProtectedData2
+from ._Reconciliation4 import Reconciliation4
+from ._SettlementService6 import SettlementService6
+from ._SupplementaryData1 import SupplementaryData1
 
 class SettlementReportingResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Sndr", "_OthrInstn", "_AddtlData", "_Jursdctn", "_TrnsmssnDtTm", "_AddtlFee", "_LifeCyclId", "_Hdr", "_SysTracAudtNb", "_Rcncltn", "_RtrvlRefNb", "_Prgrmm", "_SctyTrlr", "_FI", "_PrcgRslt", "_Rcvr", "_SttlmSvc", "_SttlmInstn", "_PrtctdData", "_TxDesc", "_OrgnlRspnCd", "_Orgtr", "_SplmtryData", "_Dstn"]
+	__slots__ = ["_AddtlData", "_AddtlFee", "_Dstn", "_FI", "_Hdr", "_Jursdctn", "_LifeCyclId", "_OrgnlRspnCd", "_Orgtr", "_OthrInstn", "_PrcgRslt", "_Prgrmm", "_PrtctdData", "_Rcncltn", "_Rcvr", "_RtrvlRefNb", "_SctyTrlr", "_Sndr", "_SplmtryData", "_SttlmInstn", "_SttlmSvc", "_SysTracAudtNb", "_TrnsmssnDtTm", "_TxDesc"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._DateCode19Choice import DateCode19Choice
+from ._ISODate import ISODate
 
 class DateFormat30Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DtCd", "_Dt"]
+	__slots__ = ["_Dt", "_DtCd"]
 	@property
 	def Dt(self):
 		return self._Dt

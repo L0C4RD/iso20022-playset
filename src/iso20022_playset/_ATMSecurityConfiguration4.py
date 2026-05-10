@@ -4,7 +4,7 @@ from ._Number import Number
 
 class ATMSecurityConfiguration4(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxSgntrs", "_DgtlSgntrAlgo", "_MaxCerts"]
+	__slots__ = ["_DgtlSgntrAlgo", "_MaxCerts", "_MaxSgntrs"]
 	@property
 	def DgtlSgntrAlgo(self):
 		return self._DgtlSgntrAlgo

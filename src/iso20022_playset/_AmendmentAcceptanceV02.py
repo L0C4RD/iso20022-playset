@@ -5,7 +5,7 @@ from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 
 class AmendmentAcceptanceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_DltaRptRef", "_AccptncId", "_SubmitrTxRef", "_TxId", "_AccptdAmdmntNb"]
+	__slots__ = ["_AccptdAmdmntNb", "_AccptncId", "_DltaRptRef", "_SubmitrTxRef", "_TxId"]
 	@property
 	def AccptdAmdmntNb(self):
 		return self._AccptdAmdmntNb

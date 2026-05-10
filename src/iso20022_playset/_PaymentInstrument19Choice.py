@@ -3,7 +3,7 @@ from ._Cheque4 import Cheque4
 
 class PaymentInstrument19Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ChqDtls", "_BkrsDrftDtls"]
+	__slots__ = ["_BkrsDrftDtls", "_ChqDtls"]
 	@property
 	def BkrsDrftDtls(self):
 		return self._BkrsDrftDtls

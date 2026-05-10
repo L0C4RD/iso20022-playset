@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification56 import GenericIdentification56
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._GenericIdentification56 import GenericIdentification56
 
 class SubBalanceQuantity5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_Prtry"]
+	__slots__ = ["_Prtry", "_Qty"]
 	@property
 	def Prtry(self):
 		return self._Prtry

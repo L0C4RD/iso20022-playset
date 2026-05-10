@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ExternalAgreementType1Code import ExternalAgreementType1Code
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._ContractTerm6Choice import ContractTerm6Choice
-from ._Max52Text import Max52Text
-from ._TradingVenueType1Choice import TradingVenueType1Choice
 from ._ExposureType10Code import ExposureType10Code
-from ._Security49 import Security49
+from ._ExternalAgreementType1Code import ExternalAgreementType1Code
+from ._ISODate import ISODate
+from ._Max52Text import Max52Text
 from ._Rates1Choice import Rates1Choice
+from ._Security49 import Security49
 from ._SpecialCollateral1Code import SpecialCollateral1Code
+from ._TradingVenueType1Choice import TradingVenueType1Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class LoanData134(base_types._BaseFieldType):
 
-	__slots__ = ["_PricCcy", "_Scty", "_OutsdngMrgnLnCcy", "_TradgVn", "_MstrAgrmtTp", "_Rates", "_PrncplAmtCcy", "_MtrtyDt", "_Clrd", "_Term", "_CtrctTp", "_GnlColl", "_PrtflCd"]
+	__slots__ = ["_Clrd", "_CtrctTp", "_GnlColl", "_MstrAgrmtTp", "_MtrtyDt", "_OutsdngMrgnLnCcy", "_PricCcy", "_PrncplAmtCcy", "_PrtflCd", "_Rates", "_Scty", "_Term", "_TradgVn"]
 	@property
 	def Clrd(self):
 		return self._Clrd

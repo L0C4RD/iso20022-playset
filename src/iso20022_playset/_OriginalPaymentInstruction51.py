@@ -1,15 +1,15 @@
 from . import base_types
+from ._DecimalNumber import DecimalNumber
+from ._ExternalPaymentGroupStatus1Code import ExternalPaymentGroupStatus1Code
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
+from ._NumberOfTransactionsPerStatus5 import NumberOfTransactionsPerStatus5
 from ._PaymentTransaction160 import PaymentTransaction160
 from ._StatusReasonInformation14 import StatusReasonInformation14
-from ._ExternalPaymentGroupStatus1Code import ExternalPaymentGroupStatus1Code
-from ._DecimalNumber import DecimalNumber
-from ._NumberOfTransactionsPerStatus5 import NumberOfTransactionsPerStatus5
-from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
 
 class OriginalPaymentInstruction51(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRsnInf", "_OrgnlNbOfTxs", "_TxInfAndSts", "_OrgnlCtrlSum", "_OrgnlPmtInfId", "_NbOfTxsPerSts", "_PmtInfSts"]
+	__slots__ = ["_NbOfTxsPerSts", "_OrgnlCtrlSum", "_OrgnlNbOfTxs", "_OrgnlPmtInfId", "_PmtInfSts", "_StsRsnInf", "_TxInfAndSts"]
 	@property
 	def NbOfTxsPerSts(self):
 		return self._NbOfTxsPerSts

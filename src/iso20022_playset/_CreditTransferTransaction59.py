@@ -1,25 +1,25 @@
 from . import base_types
-from ._ChargeBearerType1Code import ChargeBearerType1Code
-from ._PaymentIdentification6 import PaymentIdentification6
-from ._Frequency1 import Frequency1
-from ._TaxData1 import TaxData1
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Purpose2Choice import Purpose2Choice
-from ._Cheque19 import Cheque19
-from ._RegulatoryReporting3 import RegulatoryReporting3
-from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
-from ._RemittanceLocation9 import RemittanceLocation9
-from ._PaymentTypeInformation26 import PaymentTypeInformation26
-from ._TransferInstruction1 import TransferInstruction1
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._RemittanceInformation22 import RemittanceInformation22
-from ._PartyIdentification272 import PartyIdentification272
-from ._TaxRateMarker1Code import TaxRateMarker1Code
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._CashAccount40 import CashAccount40
+from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._Cheque19 import Cheque19
+from ._Frequency1 import Frequency1
+from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
+from ._PartyIdentification272 import PartyIdentification272
+from ._PaymentIdentification6 import PaymentIdentification6
+from ._PaymentTypeInformation26 import PaymentTypeInformation26
+from ._Purpose2Choice import Purpose2Choice
+from ._RegulatoryReporting3 import RegulatoryReporting3
+from ._RemittanceInformation22 import RemittanceInformation22
+from ._RemittanceLocation9 import RemittanceLocation9
+from ._TaxData1 import TaxData1
+from ._TaxRateMarker1Code import TaxRateMarker1Code
+from ._TransferInstruction1 import TransferInstruction1
 
 class CreditTransferTransaction59(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgBr", "_RltdRmtInf", "_IntrmyAgt1", "_TaxRateMrkr", "_UltmtCdtr", "_Frqcy", "_InstrForCdtrAgt", "_Tax", "_IntrmyAgt3", "_RmtInf", "_Cdtr", "_UltmtDbtr", "_ChqInstr", "_CdtrAgt", "_RgltryRptg", "_TrfInstr", "_CdtrAcct", "_Amt", "_PmtId", "_Purp", "_IntrmyAgt2", "_PmtTpInf"]
+	__slots__ = ["_Amt", "_Cdtr", "_CdtrAcct", "_CdtrAgt", "_ChqInstr", "_ChrgBr", "_Frqcy", "_InstrForCdtrAgt", "_IntrmyAgt1", "_IntrmyAgt2", "_IntrmyAgt3", "_PmtId", "_PmtTpInf", "_Purp", "_RgltryRptg", "_RltdRmtInf", "_RmtInf", "_Tax", "_TaxRateMrkr", "_TrfInstr", "_UltmtCdtr", "_UltmtDbtr"]
 	@property
 	def Amt(self):
 		return self._Amt

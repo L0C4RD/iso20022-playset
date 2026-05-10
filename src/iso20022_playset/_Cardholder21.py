@@ -1,18 +1,18 @@
 from . import base_types
-from ._MobileData6 import MobileData6
-from ._PostalAddress22 import PostalAddress22
-from ._PersonIdentification15 import PersonIdentification15
-from ._Max45Text import Max45Text
-from ._LanguageCode import LanguageCode
-from ._TransactionVerificationResult4 import TransactionVerificationResult4
 from ._CardholderAuthentication17 import CardholderAuthentication17
+from ._LanguageCode import LanguageCode
 from ._Max35Text import Max35Text
+from ._Max45Text import Max45Text
 from ._Max70Text import Max70Text
+from ._MobileData6 import MobileData6
+from ._PersonIdentification15 import PersonIdentification15
+from ._PostalAddress22 import PostalAddress22
+from ._TransactionVerificationResult4 import TransactionVerificationResult4
 from ._Vehicle1 import Vehicle1
 
 class Cardholder21(base_types._BaseFieldType):
 
-	__slots__ = ["_Vhcl", "_BllgAdr", "_TripNb", "_Id", "_Authntcn", "_PrsnlData", "_ShppgAdr", "_TxVrfctnRslt", "_MobData", "_Nm", "_Lang"]
+	__slots__ = ["_Authntcn", "_BllgAdr", "_Id", "_Lang", "_MobData", "_Nm", "_PrsnlData", "_ShppgAdr", "_TripNb", "_TxVrfctnRslt", "_Vhcl"]
 	@property
 	def Authntcn(self):
 		return self._Authntcn

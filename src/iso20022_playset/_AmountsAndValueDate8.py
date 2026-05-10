@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._CurrencyOrDigitalTokenAmount2Choice import CurrencyOrDigitalTokenAmount2Choice
+from ._ISODate import ISODate
 
 class AmountsAndValueDate8(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmDt", "_TradgSdSellAmt", "_TradgSdBuyAmt"]
+	__slots__ = ["_SttlmDt", "_TradgSdBuyAmt", "_TradgSdSellAmt"]
 	@property
 	def SttlmDt(self):
 		return self._SttlmDt

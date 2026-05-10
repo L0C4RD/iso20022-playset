@@ -1,16 +1,16 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._DecimalNumber import DecimalNumber
-from ._Vehicle2 import Vehicle2
-from ._OnBoardDiagnostics1 import OnBoardDiagnostics1
 from ._CardDataReading5Code import CardDataReading5Code
-from ._Max35Text import Max35Text
+from ._DecimalNumber import DecimalNumber
 from ._Max10Text import Max10Text
 from ._Max35NumericText import Max35NumericText
+from ._Max35Text import Max35Text
+from ._OnBoardDiagnostics1 import OnBoardDiagnostics1
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Vehicle2 import Vehicle2
 
 class Vehicle6(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlData", "_UnitNb", "_Odmtr", "_Nb", "_Tag", "_SubFleetNb", "_Hbmtr", "_MntncId", "_OnBrdDgnstcs", "_FleetNb", "_TagNtryMd", "_TrlrNb", "_Rplcmnt", "_IdNb"]
+	__slots__ = ["_AddtlData", "_FleetNb", "_Hbmtr", "_IdNb", "_MntncId", "_Nb", "_Odmtr", "_OnBrdDgnstcs", "_Rplcmnt", "_SubFleetNb", "_Tag", "_TagNtryMd", "_TrlrNb", "_UnitNb"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

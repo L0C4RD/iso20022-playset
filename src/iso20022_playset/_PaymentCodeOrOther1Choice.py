@@ -5,7 +5,7 @@ from ._PaymentPeriod3 import PaymentPeriod3
 
 class PaymentCodeOrOther1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtDueDt", "_PmtCd", "_OthrPmtTerms"]
+	__slots__ = ["_OthrPmtTerms", "_PmtCd", "_PmtDueDt"]
 	@property
 	def OthrPmtTerms(self):
 		return self._OthrPmtTerms

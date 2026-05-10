@@ -1,12 +1,12 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._PaymentInstrument19Choice import PaymentInstrument19Choice
-from ._PercentageBoundedRate import PercentageBoundedRate
 from ._PaymentInstrument24Choice import PaymentInstrument24Choice
+from ._PercentageBoundedRate import PercentageBoundedRate
 
 class PaymentInstrument17(base_types._BaseFieldType):
 
-	__slots__ = ["_DvddPmtInstrm", "_RedPmtInstrm", "_SttlmCcy", "_SbcptPmtInstrm", "_IntrstPmtInstrm", "_SvgsPlanPmtInstrm", "_DvddPctg"]
+	__slots__ = ["_DvddPctg", "_DvddPmtInstrm", "_IntrstPmtInstrm", "_RedPmtInstrm", "_SbcptPmtInstrm", "_SttlmCcy", "_SvgsPlanPmtInstrm"]
 	@property
 	def DvddPctg(self):
 		return self._DvddPctg

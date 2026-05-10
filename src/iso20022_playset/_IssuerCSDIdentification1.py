@@ -1,11 +1,11 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._Exact2UpperCaseAlphaText import Exact2UpperCaseAlphaText
 from ._CountryCode import CountryCode
+from ._Exact2UpperCaseAlphaText import Exact2UpperCaseAlphaText
+from ._LEIIdentifier import LEIIdentifier
 
 class IssuerCSDIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_Ctry", "_FrstTwoCharsInstrmId"]
+	__slots__ = ["_Ctry", "_FrstTwoCharsInstrmId", "_LEI"]
 	@property
 	def Ctry(self):
 		return self._Ctry

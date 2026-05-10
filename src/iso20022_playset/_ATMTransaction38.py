@@ -1,18 +1,18 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISODate import ISODate
 from ._CardAccount20 import CardAccount20
-from ._DetailedAmount17 import DetailedAmount17
-from ._TransactionIdentifier3 import TransactionIdentifier3
 from ._ContentInformationType10 import ContentInformationType10
+from ._DetailedAmount17 import DetailedAmount17
+from ._ISODate import ISODate
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max10000Binary import Max10000Binary
 from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._RecurringTransaction3 import RecurringTransaction3
+from ._TransactionIdentifier3 import TransactionIdentifier3
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ATMTransaction38(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdAcctFr", "_DtldReqdAmt", "_PmtRef", "_DbtrLabl", "_CdtrLabl", "_AcctFr", "_AcctTo", "_ICCRltdData", "_ReqdRct", "_RcrngTrf", "_TxId", "_InstntTrfPrgm", "_PrtctdAcctTo", "_TtlReqdAmt", "_ReqdExctnDt", "_RcncltnId"]
+	__slots__ = ["_AcctFr", "_AcctTo", "_CdtrLabl", "_DbtrLabl", "_DtldReqdAmt", "_ICCRltdData", "_InstntTrfPrgm", "_PmtRef", "_PrtctdAcctFr", "_PrtctdAcctTo", "_RcncltnId", "_RcrngTrf", "_ReqdExctnDt", "_ReqdRct", "_TtlReqdAmt", "_TxId"]
 	@property
 	def AcctFr(self):
 		return self._AcctFr

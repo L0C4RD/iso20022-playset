@@ -5,7 +5,7 @@ from ._InterestRate8Choice import InterestRate8Choice
 
 class DerivativeInterest3(base_types._BaseFieldType):
 
-	__slots__ = ["_FrstLegIntrstRate", "_OthrNtnlCcy", "_IntrstRate", "_OthrLegIntrstRate"]
+	__slots__ = ["_FrstLegIntrstRate", "_IntrstRate", "_OthrLegIntrstRate", "_OthrNtnlCcy"]
 	@property
 	def FrstLegIntrstRate(self):
 		return self._FrstLegIntrstRate

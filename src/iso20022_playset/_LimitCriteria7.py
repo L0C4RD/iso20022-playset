@@ -1,11 +1,11 @@
 from . import base_types
 from ._LimitReturnCriteria2 import LimitReturnCriteria2
-from ._Max35Text import Max35Text
 from ._LimitSearchCriteria7 import LimitSearchCriteria7
+from ._Max35Text import Max35Text
 
 class LimitCriteria7(base_types._BaseFieldType):
 
-	__slots__ = ["_SchCrit", "_NewQryNm", "_RtrCrit"]
+	__slots__ = ["_NewQryNm", "_RtrCrit", "_SchCrit"]
 	@property
 	def NewQryNm(self):
 		return self._NewQryNm

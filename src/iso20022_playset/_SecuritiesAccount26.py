@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
 from ._PurposeCode7Choice import PurposeCode7Choice
-from ._Max35Text import Max35Text
 
 class SecuritiesAccount26(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Id", "_Nm", "_Dsgnt"]
+	__slots__ = ["_Dsgnt", "_Id", "_Nm", "_Tp"]
 	@property
 	def Dsgnt(self):
 		return self._Dsgnt

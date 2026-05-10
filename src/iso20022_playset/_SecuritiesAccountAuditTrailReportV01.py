@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecuritiesAccountAuditTrailOrOperationalError3Choice import SecuritiesAccountAuditTrailOrOperationalError3Choice
 from ._MessageHeader12 import MessageHeader12
+from ._SecuritiesAccountAuditTrailOrOperationalError3Choice import SecuritiesAccountAuditTrailOrOperationalError3Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesAccountAuditTrailReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_RptOrErr"]
+	__slots__ = ["_MsgHdr", "_RptOrErr", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

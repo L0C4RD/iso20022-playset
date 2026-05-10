@@ -1,16 +1,16 @@
 from . import base_types
-from ._CorporateActionOption235 import CorporateActionOption235
-from ._CorporateActionGeneralInformation172 import CorporateActionGeneralInformation172
+from ._CorporateAction83 import CorporateAction83
 from ._CorporateActionAgent2 import CorporateActionAgent2
+from ._CorporateActionGeneralInformation172 import CorporateActionGeneralInformation172
 from ._CorporateActionNarrative2 import CorporateActionNarrative2
 from ._CorporateActionNotification12 import CorporateActionNotification12
-from ._Pagination1 import Pagination1
+from ._CorporateActionOption235 import CorporateActionOption235
 from ._DocumentIdentification31 import DocumentIdentification31
-from ._CorporateAction83 import CorporateAction83
+from ._Pagination1 import Pagination1
 
 class AgentCANotificationAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnGnlInf", "_PrvsNtfctnId", "_CorpActnOptnDtls", "_AddtlInf", "_CorpActnGnlInf", "_AgtInf", "_CorpActnDtls", "_Pgntn"]
+	__slots__ = ["_AddtlInf", "_AgtInf", "_CorpActnDtls", "_CorpActnGnlInf", "_CorpActnOptnDtls", "_NtfctnGnlInf", "_Pgntn", "_PrvsNtfctnId"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

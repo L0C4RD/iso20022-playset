@@ -5,7 +5,7 @@ from ._Max70Text import Max70Text
 
 class InstalmentFinancingInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_InstlmtTtlAmt", "_InstlmtSeqId", "_InstlmtFincgRslt"]
+	__slots__ = ["_InstlmtFincgRslt", "_InstlmtSeqId", "_InstlmtTtlAmt"]
 	@property
 	def InstlmtFincgRslt(self):
 		return self._InstlmtFincgRslt

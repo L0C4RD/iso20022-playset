@@ -1,13 +1,13 @@
 from . import base_types
+from ._Case6 import Case6
 from ._CaseAssignment6 import CaseAssignment6
+from ._ControlData1 import ControlData1
 from ._SupplementaryData1 import SupplementaryData1
 from ._UnderlyingTransaction33 import UnderlyingTransaction33
-from ._Case6 import Case6
-from ._ControlData1 import ControlData1
 
 class CustomerPaymentCancellationRequestV12(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnmt", "_Case", "_Undrlyg", "_SplmtryData", "_CtrlData"]
+	__slots__ = ["_Assgnmt", "_Case", "_CtrlData", "_SplmtryData", "_Undrlyg"]
 	@property
 	def Assgnmt(self):
 		return self._Assgnmt

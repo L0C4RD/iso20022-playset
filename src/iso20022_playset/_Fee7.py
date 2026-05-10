@@ -1,14 +1,14 @@
 from . import base_types
-from ._ChargeBearer1Code import ChargeBearer1Code
-from ._ChargeType6Choice import ChargeType6Choice
-from ._PartyIdentification139 import PartyIdentification139
-from ._ChargeOrCommissionDiscount2 import ChargeOrCommissionDiscount2
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ChargeBasis2Choice import ChargeBasis2Choice
+from ._ChargeBearer1Code import ChargeBearer1Code
+from ._ChargeOrCommissionDiscount2 import ChargeOrCommissionDiscount2
+from ._ChargeType6Choice import ChargeType6Choice
+from ._PartyIdentification139 import PartyIdentification139
 
 class Fee7(base_types._BaseFieldType):
 
-	__slots__ = ["_DscntDtls", "_Bsis", "_Tp", "_ChrgBr", "_RcptId", "_Amt"]
+	__slots__ = ["_Amt", "_Bsis", "_ChrgBr", "_DscntDtls", "_RcptId", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

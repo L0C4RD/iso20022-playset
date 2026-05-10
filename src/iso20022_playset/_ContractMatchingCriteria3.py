@@ -1,17 +1,17 @@
 from . import base_types
+from ._CompareActiveOrHistoricCurrencyCode1 import CompareActiveOrHistoricCurrencyCode1
+from ._CompareAssetClass1 import CompareAssetClass1
+from ._CompareCFIIdentifier3 import CompareCFIIdentifier3
+from ._CompareFinancialInstrumentContractType1 import CompareFinancialInstrumentContractType1
 from ._CompareISINIdentifier2 import CompareISINIdentifier2
 from ._CompareText1 import CompareText1
 from ._CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
 from ._CompareUnderlyingInstrument3 import CompareUnderlyingInstrument3
-from ._CompareActiveOrHistoricCurrencyCode1 import CompareActiveOrHistoricCurrencyCode1
-from ._CompareCFIIdentifier3 import CompareCFIIdentifier3
 from ._CompareUniqueProductIdentifier2 import CompareUniqueProductIdentifier2
-from ._CompareFinancialInstrumentContractType1 import CompareFinancialInstrumentContractType1
-from ._CompareAssetClass1 import CompareAssetClass1
 
 class ContractMatchingCriteria3(base_types._BaseFieldType):
 
-	__slots__ = ["_DerivBasedOnCrptAsst", "_AsstClss", "_CtrctTp", "_SttlmCcyScndLeg", "_UnqPdctIdr", "_AltrntvInstrmId", "_SttlmCcy", "_PdctClssfctn", "_ISIN", "_UndrlygInstrm"]
+	__slots__ = ["_AltrntvInstrmId", "_AsstClss", "_CtrctTp", "_DerivBasedOnCrptAsst", "_ISIN", "_PdctClssfctn", "_SttlmCcy", "_SttlmCcyScndLeg", "_UndrlygInstrm", "_UnqPdctIdr"]
 	@property
 	def AltrntvInstrmId(self):
 		return self._AltrntvInstrmId

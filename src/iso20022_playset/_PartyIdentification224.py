@@ -1,11 +1,11 @@
 from . import base_types
-from ._PersonName2 import PersonName2
-from ._PartyIdentification198Choice import PartyIdentification198Choice
 from ._Max256Text import Max256Text
+from ._PartyIdentification198Choice import PartyIdentification198Choice
+from ._PersonName2 import PersonName2
 
 class PartyIdentification224(base_types._BaseFieldType):
 
-	__slots__ = ["_EmailAdr", "_NmAndAdr", "_Id"]
+	__slots__ = ["_EmailAdr", "_Id", "_NmAndAdr"]
 	@property
 	def EmailAdr(self):
 		return self._EmailAdr

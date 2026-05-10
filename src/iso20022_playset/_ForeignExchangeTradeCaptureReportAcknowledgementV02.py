@@ -1,13 +1,13 @@
 from . import base_types
 from ._AdditionalReferences2 import AdditionalReferences2
-from ._SupplementaryData1 import SupplementaryData1
 from ._Max35Text import Max35Text
-from ._Status5Code import Status5Code
 from ._MessageIdentification1 import MessageIdentification1
+from ._Status5Code import Status5Code
+from ._SupplementaryData1 import SupplementaryData1
 
 class ForeignExchangeTradeCaptureReportAcknowledgementV02(base_types._BaseFieldType):
 
-	__slots__ = ["_TradId", "_AckId", "_Ref", "_DealTcktId", "_SplmtryData", "_Sts"]
+	__slots__ = ["_AckId", "_DealTcktId", "_Ref", "_SplmtryData", "_Sts", "_TradId"]
 	@property
 	def AckId(self):
 		return self._AckId

@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._OriginalMandate10Choice import OriginalMandate10Choice
-from ._Max35Text import Max35Text
-from ._OriginalMessageInformation1 import OriginalMessageInformation1
 from ._MandateSuspensionReason3 import MandateSuspensionReason3
+from ._Max35Text import Max35Text
+from ._OriginalMandate10Choice import OriginalMandate10Choice
+from ._OriginalMessageInformation1 import OriginalMessageInformation1
+from ._SupplementaryData1 import SupplementaryData1
 
 class MandateSuspension4(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgInf", "_OrgnlMndt", "_SspnsnReqId", "_SplmtryData", "_SspnsnRsn"]
+	__slots__ = ["_OrgnlMndt", "_OrgnlMsgInf", "_SplmtryData", "_SspnsnReqId", "_SspnsnRsn"]
 	@property
 	def OrgnlMndt(self):
 		return self._OrgnlMndt

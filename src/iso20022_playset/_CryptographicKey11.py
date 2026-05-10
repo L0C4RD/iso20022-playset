@@ -1,18 +1,18 @@
 from . import base_types
-from ._KeyUsage1Code import KeyUsage1Code
-from ._FailureReason6Code import FailureReason6Code
-from ._Number import Number
-from ._Max256Text import Max256Text
-from ._CryptographicKeyType3Code import CryptographicKeyType3Code
-from ._Max35Text import Max35Text
-from ._Max35Binary import Max35Binary
 from ._ATMStatus3Code import ATMStatus3Code
+from ._CryptographicKeyType3Code import CryptographicKeyType3Code
+from ._FailureReason6Code import FailureReason6Code
 from ._ISODateTime import ISODateTime
+from ._KeyUsage1Code import KeyUsage1Code
 from ._Max140Text import Max140Text
+from ._Max256Text import Max256Text
+from ._Max35Binary import Max35Binary
+from ._Max35Text import Max35Text
+from ._Number import Number
 
 class CryptographicKey11(base_types._BaseFieldType):
 
-	__slots__ = ["_Fctn", "_SctyDomnId", "_Nm", "_FailrRsn", "_AddtlId", "_Id", "_ActvtnDt", "_DeactvtnDt", "_SeqCntr", "_KeyChckVal", "_Tp", "_Vrsn", "_CurSts"]
+	__slots__ = ["_ActvtnDt", "_AddtlId", "_CurSts", "_DeactvtnDt", "_FailrRsn", "_Fctn", "_Id", "_KeyChckVal", "_Nm", "_SctyDomnId", "_SeqCntr", "_Tp", "_Vrsn"]
 	@property
 	def ActvtnDt(self):
 		return self._ActvtnDt

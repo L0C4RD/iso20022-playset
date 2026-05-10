@@ -1,11 +1,11 @@
 from . import base_types
-from ._DateFormat57Choice import DateFormat57Choice
 from ._DateFormat30Choice import DateFormat30Choice
 from ._DateFormat43Choice import DateFormat43Choice
+from ._DateFormat57Choice import DateFormat57Choice
 
 class CorporateActionDate84(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_FXRateFxgDt", "_PmtDt", "_EarlstPmtDt"]
+	__slots__ = ["_EarlstPmtDt", "_FXRateFxgDt", "_PmtDt", "_ValDt"]
 	@property
 	def EarlstPmtDt(self):
 		return self._EarlstPmtDt

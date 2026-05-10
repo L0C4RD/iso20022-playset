@@ -1,17 +1,17 @@
 from . import base_types
-from ._StatementSource1Choice import StatementSource1Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._StatementBasis6Choice import StatementBasis6Choice
-from ._Frequency8Choice import Frequency8Choice
-from ._DatePeriodDetails import DatePeriodDetails
-from ._Max5NumericText import Max5NumericText
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
+from ._DatePeriodDetails import DatePeriodDetails
+from ._Frequency8Choice import Frequency8Choice
 from ._Max35Text import Max35Text
+from ._Max5NumericText import Max5NumericText
+from ._StatementBasis6Choice import StatementBasis6Choice
+from ._StatementSource1Choice import StatementSource1Choice
 from ._UpdateType4Choice import UpdateType4Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class Report4(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_UpdTp", "_RptPrd", "_PrvsRptDtTm", "_RptSrc", "_RptNb", "_Frqcy", "_QryRef", "_RptId", "_AudtdInd", "_RptBsis", "_RptDtTm", "_ActvtyInd"]
+	__slots__ = ["_ActvtyInd", "_AudtdInd", "_CreDtTm", "_Frqcy", "_PrvsRptDtTm", "_QryRef", "_RptBsis", "_RptDtTm", "_RptId", "_RptNb", "_RptPrd", "_RptSrc", "_UpdTp"]
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd

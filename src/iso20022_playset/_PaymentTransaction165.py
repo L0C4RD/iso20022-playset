@@ -1,24 +1,24 @@
 from . import base_types
+from ._AuthorisationResult18 import AuthorisationResult18
+from ._CardPaymentServiceType15Code import CardPaymentServiceType15Code
 from ._CardPaymentServiceType16Code import CardPaymentServiceType16Code
+from ._CardPaymentServiceType9Code import CardPaymentServiceType9Code
+from ._CardPaymentToken5 import CardPaymentToken5
+from ._CardPaymentTransaction131 import CardPaymentTransaction131
 from ._CardPaymentTransactionDetails53 import CardPaymentTransactionDetails53
 from ._CustomerOrder1 import CustomerOrder1
-from ._TransactionIdentifier1 import TransactionIdentifier1
-from ._CardPaymentTransaction131 import CardPaymentTransaction131
-from ._Min3Max4Text import Min3Max4Text
-from ._CardPaymentServiceType9Code import CardPaymentServiceType9Code
-from ._PaymentInstrumentType2Code import PaymentInstrumentType2Code
-from ._CardPaymentToken5 import CardPaymentToken5
-from ._PaymentTypeInformation26 import PaymentTypeInformation26
 from ._Max140Text import Max140Text
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._AuthorisationResult18 import AuthorisationResult18
-from ._Max70Text import Max70Text
 from ._Max35Text import Max35Text
-from ._CardPaymentServiceType15Code import CardPaymentServiceType15Code
+from ._Max70Text import Max70Text
+from ._Min3Max4Text import Min3Max4Text
+from ._PaymentInstrumentType2Code import PaymentInstrumentType2Code
+from ._PaymentTypeInformation26 import PaymentTypeInformation26
+from ._TransactionIdentifier1 import TransactionIdentifier1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PaymentTransaction165(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtInstrm", "_SaleRefId", "_SaleToAcqrrData", "_MrchntRefData", "_AddtlTxData", "_IssrRefData", "_MrchntCtgyCd", "_CstmrOrdr", "_CstmrTkn", "_CardPrgrmmPropsd", "_TxId", "_SaleToPOIData", "_MrchntCITId", "_TxTp", "_SvcAttr", "_TxDtls", "_IssrCITId", "_SaleToIssrData", "_AddtlSvc", "_PmtTpInf", "_LastTxFlg", "_RcncltnId", "_OrgnlTx", "_AuthstnRslt", "_CardPrgrmmApld", "_CstmrCnsnt", "_TxCaptr"]
+	__slots__ = ["_AddtlSvc", "_AddtlTxData", "_AuthstnRslt", "_CardPrgrmmApld", "_CardPrgrmmPropsd", "_CstmrCnsnt", "_CstmrOrdr", "_CstmrTkn", "_IssrCITId", "_IssrRefData", "_LastTxFlg", "_MrchntCITId", "_MrchntCtgyCd", "_MrchntRefData", "_OrgnlTx", "_PmtInstrm", "_PmtTpInf", "_RcncltnId", "_SaleRefId", "_SaleToAcqrrData", "_SaleToIssrData", "_SaleToPOIData", "_SvcAttr", "_TxCaptr", "_TxDtls", "_TxId", "_TxTp"]
 	@property
 	def AddtlSvc(self):
 		return self._AddtlSvc

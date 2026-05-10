@@ -1,6 +1,6 @@
 from . import base_types
-from ._QueryType2Code import QueryType2Code
 from ._LimitCriteria7Choice import LimitCriteria7Choice
+from ._QueryType2Code import QueryType2Code
 
 class LimitQuery5(base_types._BaseFieldType):
 

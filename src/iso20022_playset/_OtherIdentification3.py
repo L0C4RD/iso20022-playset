@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max16Text import Max16Text
 from ._IdentificationSource3Choice import IdentificationSource3Choice
+from ._Max16Text import Max16Text
 from ._RestrictedFINXMax31Text import RestrictedFINXMax31Text
 
 class OtherIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_Sfx", "_Id", "_Tp"]
+	__slots__ = ["_Id", "_Sfx", "_Tp"]
 	@property
 	def Id(self):
 		return self._Id

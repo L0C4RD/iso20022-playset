@@ -1,11 +1,11 @@
 from . import base_types
 from ._AccountReport37 import AccountReport37
-from ._SupplementaryData1 import SupplementaryData1
 from ._GroupHeader116 import GroupHeader116
+from ._SupplementaryData1 import SupplementaryData1
 
 class BankToCustomerAccountReportV13(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_Rpt"]
+	__slots__ = ["_GrpHdr", "_Rpt", "_SplmtryData"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

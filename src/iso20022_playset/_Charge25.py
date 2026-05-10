@@ -4,7 +4,7 @@ from ._FreightCharges1Code import FreightCharges1Code
 
 class Charge25(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Chrgs"]
+	__slots__ = ["_Chrgs", "_Tp"]
 	@property
 	def Chrgs(self):
 		return self._Chrgs

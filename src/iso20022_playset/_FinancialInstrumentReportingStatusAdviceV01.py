@@ -1,6 +1,6 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._MessageReportHeader4 import MessageReportHeader4
+from ._SupplementaryData1 import SupplementaryData1
 
 class FinancialInstrumentReportingStatusAdviceV01(base_types._BaseFieldType):
 

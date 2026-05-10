@@ -1,17 +1,17 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._UndertakingAmount3 import UndertakingAmount3
 from ._CashAccount27 import CashAccount27
-from ._Presentation2 import Presentation2
-from ._Undertaking6 import Undertaking6
 from ._DemandDocumentation1 import DemandDocumentation1
 from ._DemandType1Code import DemandType1Code
-from ._Max35Text import Max35Text
+from ._ISODate import ISODate
 from ._Max2000Text import Max2000Text
+from ._Max35Text import Max35Text
+from ._Presentation2 import Presentation2
+from ._Undertaking6 import Undertaking6
+from ._UndertakingAmount3 import UndertakingAmount3
 
 class Demand1(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmAcct", "_AddtlInf", "_UdrtkgId", "_DmndDcmnttn", "_Id", "_Tp", "_PresntnDtls", "_AdvsgPtyRefNb", "_DmndAmt", "_ScndAdvsgPtyRefNb", "_CnfrmrRefNb", "_ReqdXpryDt"]
+	__slots__ = ["_AddtlInf", "_AdvsgPtyRefNb", "_CnfrmrRefNb", "_DmndAmt", "_DmndDcmnttn", "_Id", "_PresntnDtls", "_ReqdXpryDt", "_ScndAdvsgPtyRefNb", "_SttlmAcct", "_Tp", "_UdrtkgId"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

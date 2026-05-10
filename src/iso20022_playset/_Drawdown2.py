@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
-from ._ApplicableRules1Choice import ApplicableRules1Choice
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._BeneficiaryDrawdown1 import BeneficiaryDrawdown1
-from ._DrawdownType2Choice import DrawdownType2Choice
-from ._PercentageRate import PercentageRate
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._AdditionalInformation15 import AdditionalInformation15
+from ._ApplicableRules1Choice import ApplicableRules1Choice
+from ._BeneficiaryDrawdown1 import BeneficiaryDrawdown1
 from ._Capped1 import Capped1
-from ._TaxReference2 import TaxReference2
+from ._DrawdownType2Choice import DrawdownType2Choice
+from ._ISODate import ISODate
 from ._Max140Text import Max140Text
+from ._PercentageRate import PercentageRate
+from ._TaxReference2 import TaxReference2
+from ._YesNoIndicator import YesNoIndicator
 
 class Drawdown2(base_types._BaseFieldType):
 
-	__slots__ = ["_PnsnCmcmntLumpSumDt", "_TtlAmtNetDrwdwn", "_TrchTp", "_PnsnCmcmntLumpSumRmng", "_BnfcryDtls", "_MltplPnsnCmcmntLumpSums", "_FlxblDrwdwnTrggrdDt", "_AplblRules", "_AddtlFndsDsgntd", "_CapdLmts", "_Id", "_RcptOfDrwdwnInd", "_AddtlInf", "_InvstrTaxRef", "_PctgOfTtlTrfVal", "_LftmAllwnc"]
+	__slots__ = ["_AddtlFndsDsgntd", "_AddtlInf", "_AplblRules", "_BnfcryDtls", "_CapdLmts", "_FlxblDrwdwnTrggrdDt", "_Id", "_InvstrTaxRef", "_LftmAllwnc", "_MltplPnsnCmcmntLumpSums", "_PctgOfTtlTrfVal", "_PnsnCmcmntLumpSumDt", "_PnsnCmcmntLumpSumRmng", "_RcptOfDrwdwnInd", "_TrchTp", "_TtlAmtNetDrwdwn"]
 	@property
 	def AddtlFndsDsgntd(self):
 		return self._AddtlFndsDsgntd

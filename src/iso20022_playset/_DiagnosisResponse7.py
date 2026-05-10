@@ -5,7 +5,7 @@ from ._StatusReportContent14 import StatusReportContent14
 
 class DiagnosisResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_LggdSaleId", "_POISts", "_HstSts"]
+	__slots__ = ["_HstSts", "_LggdSaleId", "_POISts"]
 	@property
 	def HstSts(self):
 		return self._HstSts

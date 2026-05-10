@@ -1,12 +1,12 @@
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
-from ._PostalAddress24 import PostalAddress24
 from ._Max140Text import Max140Text
 from ._Max35Text import Max35Text
+from ._PostalAddress24 import PostalAddress24
 
 class BranchData3(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_Id", "_Nm", "_PstlAdr"]
+	__slots__ = ["_Id", "_LEI", "_Nm", "_PstlAdr"]
 	@property
 	def Id(self):
 		return self._Id

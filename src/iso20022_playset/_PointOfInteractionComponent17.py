@@ -1,17 +1,17 @@
 from . import base_types
+from ._GenericIdentification48 import GenericIdentification48
+from ._Max35Binary import Max35Binary
+from ._Max70Text import Max70Text
+from ._POIComponentType7Code import POIComponentType7Code
+from ._PackageType5 import PackageType5
 from ._PointOfInteractionComponentAssessment1 import PointOfInteractionComponentAssessment1
 from ._PointOfInteractionComponentCharacteristics10 import PointOfInteractionComponentCharacteristics10
-from ._PointOfInteractionComponentStatus3 import PointOfInteractionComponentStatus3
-from ._GenericIdentification48 import GenericIdentification48
 from ._PointOfInteractionComponentIdentification2 import PointOfInteractionComponentIdentification2
-from ._PackageType5 import PackageType5
-from ._Max70Text import Max70Text
-from ._Max35Binary import Max35Binary
-from ._POIComponentType7Code import POIComponentType7Code
+from ._PointOfInteractionComponentStatus3 import PointOfInteractionComponentStatus3
 
 class PointOfInteractionComponent17(base_types._BaseFieldType):
 
-	__slots__ = ["_Packg", "_SubTpInf", "_PrbVal", "_Assmnt", "_Chrtcs", "_StdCmplc", "_Id", "_Sts", "_Tp"]
+	__slots__ = ["_Assmnt", "_Chrtcs", "_Id", "_Packg", "_PrbVal", "_StdCmplc", "_Sts", "_SubTpInf", "_Tp"]
 	@property
 	def Assmnt(self):
 		return self._Assmnt

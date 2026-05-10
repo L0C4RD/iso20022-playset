@@ -1,11 +1,11 @@
 from . import base_types
-from ._RestrictedFINXMax30Text import RestrictedFINXMax30Text
-from ._GenericIdentification86 import GenericIdentification86
 from ._Exact3UpperCaseAlphaNumericText import Exact3UpperCaseAlphaNumericText
+from ._GenericIdentification86 import GenericIdentification86
+from ._RestrictedFINXMax30Text import RestrictedFINXMax30Text
 
 class IdentificationFormat4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtId", "_LngId", "_PrtryId"]
+	__slots__ = ["_LngId", "_PrtryId", "_ShrtId"]
 	@property
 	def LngId(self):
 		return self._LngId

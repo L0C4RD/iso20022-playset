@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
 
 class Dispute1(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnCallReqId", "_DsptdAmt", "_DsptDt"]
+	__slots__ = ["_DsptDt", "_DsptdAmt", "_MrgnCallReqId"]
 	@property
 	def DsptDt(self):
 		return self._DsptDt

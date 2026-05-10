@@ -1,12 +1,12 @@
 from . import base_types
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._AdditionalAmount1Choice import AdditionalAmount1Choice
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 
 class FundOrderData6(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlAmt", "_QtdCcy", "_UnitCcy", "_SttlmAmt", "_SttlmMtd"]
+	__slots__ = ["_AddtlAmt", "_QtdCcy", "_SttlmAmt", "_SttlmMtd", "_UnitCcy"]
 	@property
 	def AddtlAmt(self):
 		return self._AddtlAmt

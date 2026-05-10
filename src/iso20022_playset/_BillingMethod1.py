@@ -1,12 +1,12 @@
 from . import base_types
-from ._BillingServicesAmount1 import BillingServicesAmount1
 from ._AmountAndDirection34 import AmountAndDirection34
-from ._BillingServicesTax1 import BillingServicesTax1
+from ._BillingServicesAmount1 import BillingServicesAmount1
 from ._BillingServicesAmount2 import BillingServicesAmount2
+from ._BillingServicesTax1 import BillingServicesTax1
 
 class BillingMethod1(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcChrgHstAmt", "_TtlChrg", "_TaxId", "_SvcTax"]
+	__slots__ = ["_SvcChrgHstAmt", "_SvcTax", "_TaxId", "_TtlChrg"]
 	@property
 	def SvcChrgHstAmt(self):
 		return self._SvcChrgHstAmt

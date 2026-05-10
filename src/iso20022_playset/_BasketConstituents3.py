@@ -1,11 +1,11 @@
 from . import base_types
+from ._InstrumentIdentification6Choice import InstrumentIdentification6Choice
 from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
 from ._UnitOfMeasure8Choice import UnitOfMeasure8Choice
-from ._InstrumentIdentification6Choice import InstrumentIdentification6Choice
 
 class BasketConstituents3(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitOfMeasr", "_InstrmId", "_Qty"]
+	__slots__ = ["_InstrmId", "_Qty", "_UnitOfMeasr"]
 	@property
 	def InstrmId(self):
 		return self._InstrmId

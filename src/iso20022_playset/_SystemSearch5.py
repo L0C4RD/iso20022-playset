@@ -1,12 +1,12 @@
 from . import base_types
-from ._ClearingSystemIdentification3Choice import ClearingSystemIdentification3Choice
-from ._CountryCode import CountryCode
 from ._AccountIdentification4Choice import AccountIdentification4Choice
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ClearingSystemIdentification3Choice import ClearingSystemIdentification3Choice
+from ._CountryCode import CountryCode
 
 class SystemSearch5(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_AcctId", "_MmbId", "_SysId"]
+	__slots__ = ["_AcctId", "_Ctry", "_MmbId", "_SysId"]
 	@property
 	def AcctId(self):
 		return self._AcctId

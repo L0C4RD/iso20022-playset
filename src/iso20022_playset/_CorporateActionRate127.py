@@ -1,11 +1,11 @@
 from . import base_types
 from ._Percentage14Rate import Percentage14Rate
-from ._RateAndAmountFormat59Choice import RateAndAmountFormat59Choice
 from ._RateAndAmountFormat55Choice import RateAndAmountFormat55Choice
+from ._RateAndAmountFormat59Choice import RateAndAmountFormat59Choice
 
 class CorporateActionRate127(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqdScndLvlTaxRate", "_ReqdWhldgTaxRate", "_PropsdRate", "_OvrsbcptRate"]
+	__slots__ = ["_OvrsbcptRate", "_PropsdRate", "_ReqdScndLvlTaxRate", "_ReqdWhldgTaxRate"]
 	@property
 	def OvrsbcptRate(self):
 		return self._OvrsbcptRate

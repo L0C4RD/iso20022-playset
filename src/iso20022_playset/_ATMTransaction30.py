@@ -1,12 +1,12 @@
 from . import base_types
 from ._ATMCassette3 import ATMCassette3
 from ._ATMOperation2Code import ATMOperation2Code
-from ._TransactionIdentifier3 import TransactionIdentifier3
 from ._Max35Text import Max35Text
+from ._TransactionIdentifier3 import TransactionIdentifier3
 
 class ATMTransaction30(base_types._BaseFieldType):
 
-	__slots__ = ["_TpOfOpr", "_RcncltnId", "_TxId", "_Csstt"]
+	__slots__ = ["_Csstt", "_RcncltnId", "_TpOfOpr", "_TxId"]
 	@property
 	def Csstt(self):
 		return self._Csstt

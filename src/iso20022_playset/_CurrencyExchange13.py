@@ -4,7 +4,7 @@ from ._BaseOneRate import BaseOneRate
 
 class CurrencyExchange13(base_types._BaseFieldType):
 
-	__slots__ = ["_TrgtCcy", "_XchgRate", "_UnitCcy", "_SrcCcy"]
+	__slots__ = ["_SrcCcy", "_TrgtCcy", "_UnitCcy", "_XchgRate"]
 	@property
 	def SrcCcy(self):
 		return self._SrcCcy

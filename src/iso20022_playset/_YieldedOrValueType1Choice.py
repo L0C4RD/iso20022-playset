@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class YieldedOrValueType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Yldd", "_ValTp"]
+	__slots__ = ["_ValTp", "_Yldd"]
 	@property
 	def ValTp(self):
 		return self._ValTp

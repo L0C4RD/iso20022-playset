@@ -1,10 +1,10 @@
 from . import base_types
-from ._DateTimePeriod1Choice import DateTimePeriod1Choice
 from ._ClosureReason2Choice import ClosureReason2Choice
+from ._DateTimePeriod1Choice import DateTimePeriod1Choice
 
 class SystemClosure2(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_Prd"]
+	__slots__ = ["_Prd", "_Rsn"]
 	@property
 	def Prd(self):
 		return self._Prd

@@ -1,11 +1,11 @@
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._CorporateActionPreliminaryAdviceType1Code import CorporateActionPreliminaryAdviceType1Code
 from ._CorporateActionMovementPreliminaryAdviceFunction1Code import CorporateActionMovementPreliminaryAdviceFunction1Code
+from ._CorporateActionPreliminaryAdviceType1Code import CorporateActionPreliminaryAdviceType1Code
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class CorporateActionPreliminaryAdviceType5(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_MvmntPrlimryAdvcId", "_Fctn"]
+	__slots__ = ["_Fctn", "_MvmntPrlimryAdvcId", "_Tp"]
 	@property
 	def Fctn(self):
 		return self._Fctn

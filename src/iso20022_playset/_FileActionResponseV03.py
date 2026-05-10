@@ -1,39 +1,39 @@
 from . import base_types
-from ._Exact12Text import Exact12Text
-from ._Token2 import Token2
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._Max12NumericText import Max12NumericText
 from ._AdditionalData2 import AdditionalData2
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._Exact15Text import Exact15Text
-from ._Jurisdiction2 import Jurisdiction2
-from ._Cardholder22 import Cardholder22
-from ._ISODateTime import ISODateTime
-from ._Max140Text import Max140Text
-from ._CardData15 import CardData15
-from ._PartyIdentification286 import PartyIdentification286
-from ._ISODate import ISODate
-from ._SupplementaryData1 import SupplementaryData1
-from ._ContentInformationType41 import ContentInformationType41
-from ._CustomerDevice5 import CustomerDevice5
-from ._SettlementService6 import SettlementService6
-from ._ProtectedData2 import ProtectedData2
-from ._Terminal7 import Terminal7
 from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
-from ._PartyIdentification284 import PartyIdentification284
-from ._Wallet3 import Wallet3
-from ._DataRecord1Choice import DataRecord1Choice
-from ._OutputFormat5Code import OutputFormat5Code
-from ._Max35Text import Max35Text
-from ._PartyIdentification287 import PartyIdentification287
+from ._CardData15 import CardData15
+from ._Cardholder22 import Cardholder22
+from ._ContentInformationType41 import ContentInformationType41
 from ._CorrectionIdentification1 import CorrectionIdentification1
-from ._PointOfInteractionComponent16 import PointOfInteractionComponent16
+from ._CustomerDevice5 import CustomerDevice5
+from ._DataRecord1Choice import DataRecord1Choice
+from ._Exact12Text import Exact12Text
+from ._Exact15Text import Exact15Text
 from ._Header71 import Header71
+from ._ISO8583ResponseCode import ISO8583ResponseCode
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
+from ._Jurisdiction2 import Jurisdiction2
+from ._Max12NumericText import Max12NumericText
+from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._OutputFormat5Code import OutputFormat5Code
+from ._PartyIdentification284 import PartyIdentification284
+from ._PartyIdentification286 import PartyIdentification286
+from ._PartyIdentification287 import PartyIdentification287
+from ._PointOfInteractionComponent16 import PointOfInteractionComponent16
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._ProtectedData2 import ProtectedData2
+from ._Reconciliation4 import Reconciliation4
+from ._SettlementService6 import SettlementService6
+from ._SupplementaryData1 import SupplementaryData1
+from ._Terminal7 import Terminal7
+from ._Token2 import Token2
+from ._Wallet3 import Wallet3
 
 class FileActionResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Termnl", "_Sndr", "_DataRcrd", "_AddtlData", "_Prgrmm", "_AddtlFee", "_Pyee", "_SysTracAudtNb", "_RtrvlRefNb", "_Rcncltn", "_Crdhldr", "_FileNm", "_POICmpnt", "_Pyer", "_Card", "_CstmrDvc", "_Orgtr", "_Dstn", "_Accptr", "_Issr", "_Jursdctn", "_TrnsmssnDtTm", "_LifeCyclId", "_ActnDt", "_Crrctn", "_Hdr", "_Tkn", "_Frmt", "_FileSctyCd", "_Acqrr", "_SctyTrlr", "_Rcvr", "_SttlmSvc", "_PrtctdData", "_RspnCd", "_Wllt", "_SplmtryData"]
+	__slots__ = ["_Accptr", "_Acqrr", "_ActnDt", "_AddtlData", "_AddtlFee", "_Card", "_Crdhldr", "_Crrctn", "_CstmrDvc", "_DataRcrd", "_Dstn", "_FileNm", "_FileSctyCd", "_Frmt", "_Hdr", "_Issr", "_Jursdctn", "_LifeCyclId", "_Orgtr", "_POICmpnt", "_Prgrmm", "_PrtctdData", "_Pyee", "_Pyer", "_Rcncltn", "_Rcvr", "_RspnCd", "_RtrvlRefNb", "_SctyTrlr", "_Sndr", "_SplmtryData", "_SttlmSvc", "_SysTracAudtNb", "_Termnl", "_Tkn", "_TrnsmssnDtTm", "_Wllt"]
 	@property
 	def Accptr(self):
 		return self._Accptr

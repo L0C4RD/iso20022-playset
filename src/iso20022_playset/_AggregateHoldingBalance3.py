@@ -4,7 +4,7 @@ from ._Intermediary29 import Intermediary29
 
 class AggregateHoldingBalance3(base_types._BaseFieldType):
 
-	__slots__ = ["_BalForAcct", "_Agt"]
+	__slots__ = ["_Agt", "_BalForAcct"]
 	@property
 	def Agt(self):
 		return self._Agt

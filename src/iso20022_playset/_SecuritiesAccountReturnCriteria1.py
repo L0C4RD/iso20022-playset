@@ -3,7 +3,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyId", "_AcctId", "_AcctTp", "_EndInvstrFlg", "_ClsgDt", "_PricgSchme", "_AcctSvcr", "_OpngDt", "_PtyTp"]
+	__slots__ = ["_AcctId", "_AcctSvcr", "_AcctTp", "_ClsgDt", "_EndInvstrFlg", "_OpngDt", "_PricgSchme", "_PtyId", "_PtyTp"]
 	@property
 	def AcctId(self):
 		return self._AcctId

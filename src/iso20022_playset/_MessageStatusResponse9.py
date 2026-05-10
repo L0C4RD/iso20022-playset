@@ -1,13 +1,13 @@
 from . import base_types
-from ._PaymentContext30 import PaymentContext30
-from ._SupplementaryData1 import SupplementaryData1
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 from ._MessageStatusResponseData9 import MessageStatusResponseData9
+from ._PaymentContext30 import PaymentContext30
 from ._ResponseType11 import ResponseType11
+from ._SupplementaryData1 import SupplementaryData1
 
 class MessageStatusResponse9(base_types._BaseFieldType):
 
-	__slots__ = ["_Rspn", "_Cntxt", "_Envt", "_MsgStsRspnData", "_SplmtryData"]
+	__slots__ = ["_Cntxt", "_Envt", "_MsgStsRspnData", "_Rspn", "_SplmtryData"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt

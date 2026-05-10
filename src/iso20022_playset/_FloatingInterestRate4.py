@@ -1,11 +1,11 @@
 from . import base_types
-from ._Number import Number
 from ._BenchmarkCurveName4Choice import BenchmarkCurveName4Choice
 from ._InterestRateContractTerm1 import InterestRateContractTerm1
+from ._Number import Number
 
 class FloatingInterestRate4(base_types._BaseFieldType):
 
-	__slots__ = ["_BsisPtSprd", "_Term", "_RefRate"]
+	__slots__ = ["_BsisPtSprd", "_RefRate", "_Term"]
 	@property
 	def BsisPtSprd(self):
 		return self._BsisPtSprd

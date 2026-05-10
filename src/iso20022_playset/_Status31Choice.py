@@ -1,12 +1,12 @@
 from . import base_types
-from ._TransferCancellationStatus3 import TransferCancellationStatus3
-from ._TransferCancellationPendingStatus1 import TransferCancellationPendingStatus1
-from ._RejectionReason33 import RejectionReason33
 from ._CancelledCompleteReason1 import CancelledCompleteReason1
+from ._RejectionReason33 import RejectionReason33
+from ._TransferCancellationPendingStatus1 import TransferCancellationPendingStatus1
+from ._TransferCancellationStatus3 import TransferCancellationStatus3
 
 class Status31Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_Rjctd", "_Cmplt", "_Pdg"]
+	__slots__ = ["_Cmplt", "_Pdg", "_Rjctd", "_Sts"]
 	@property
 	def Cmplt(self):
 		return self._Cmplt

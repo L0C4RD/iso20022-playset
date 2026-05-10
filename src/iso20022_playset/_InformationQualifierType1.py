@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class InformationQualifierType1(base_types._BaseFieldType):
 
-	__slots__ = ["_Prty", "_IsFrmtd"]
+	__slots__ = ["_IsFrmtd", "_Prty"]
 	@property
 	def IsFrmtd(self):
 		return self._IsFrmtd

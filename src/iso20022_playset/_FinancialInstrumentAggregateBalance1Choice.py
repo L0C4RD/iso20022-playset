@@ -4,7 +4,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class FinancialInstrumentAggregateBalance1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_HldgsInd", "_HldgBal"]
+	__slots__ = ["_HldgBal", "_HldgsInd"]
 	@property
 	def HldgBal(self):
 		return self._HldgBal

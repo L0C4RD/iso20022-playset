@@ -1,15 +1,15 @@
 from . import base_types
-from ._ATMCommand7 import ATMCommand7
-from ._ResponseType12 import ResponseType12
 from ._ATMCassette3 import ATMCassette3
-from ._Max35Text import Max35Text
-from ._TransactionIdentifier3 import TransactionIdentifier3
+from ._ATMCommand7 import ATMCommand7
 from ._ATMOperation2Code import ATMOperation2Code
 from ._ATMTotals4 import ATMTotals4
+from ._Max35Text import Max35Text
+from ._ResponseType12 import ResponseType12
+from ._TransactionIdentifier3 import TransactionIdentifier3
 
 class ATMTransaction52(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmd", "_TxRspn", "_RcncltnId", "_ATMTtls", "_TpOfOpr", "_TxId", "_Csstt"]
+	__slots__ = ["_ATMTtls", "_Cmd", "_Csstt", "_RcncltnId", "_TpOfOpr", "_TxId", "_TxRspn"]
 	@property
 	def ATMTtls(self):
 		return self._ATMTtls

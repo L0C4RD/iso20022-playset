@@ -1,25 +1,25 @@
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
-from ._SettlingCapacity7Choice import SettlingCapacity7Choice
-from ._SettlementTransactionCondition18Choice import SettlementTransactionCondition18Choice
-from ._PriorityNumeric4Choice import PriorityNumeric4Choice
-from ._SecuritiesRTGS4Choice import SecuritiesRTGS4Choice
 from ._AutomaticBorrowing6Choice import AutomaticBorrowing6Choice
-from ._Restriction5Choice import Restriction5Choice
-from ._BlockTrade4Choice import BlockTrade4Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._MarketClientSide6Choice import MarketClientSide6Choice
-from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
-from ._CashSettlementSystem4Choice import CashSettlementSystem4Choice
-from ._TaxCapacityParty4Choice import TaxCapacityParty4Choice
-from ._CentralCounterPartyEligibility4Choice import CentralCounterPartyEligibility4Choice
 from ._BeneficialOwnership4Choice import BeneficialOwnership4Choice
-from ._SettlementSystemMethod4Choice import SettlementSystemMethod4Choice
+from ._BlockTrade4Choice import BlockTrade4Choice
+from ._CashSettlementSystem4Choice import CashSettlementSystem4Choice
+from ._CentralCounterPartyEligibility4Choice import CentralCounterPartyEligibility4Choice
+from ._GenericIdentification30 import GenericIdentification30
+from ._MarketClientSide6Choice import MarketClientSide6Choice
 from ._NettingEligibility4Choice import NettingEligibility4Choice
+from ._PriorityNumeric4Choice import PriorityNumeric4Choice
+from ._Restriction5Choice import Restriction5Choice
+from ._SecuritiesRTGS4Choice import SecuritiesRTGS4Choice
+from ._SettlementSystemMethod4Choice import SettlementSystemMethod4Choice
+from ._SettlementTransactionCondition18Choice import SettlementTransactionCondition18Choice
+from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
+from ._SettlingCapacity7Choice import SettlingCapacity7Choice
+from ._TaxCapacityParty4Choice import TaxCapacityParty4Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class SettlementDetails147(base_types._BaseFieldType):
 
-	__slots__ = ["_AutomtcBrrwg", "_ElgblForColl", "_MktClntSd", "_SttlmSysMtd", "_StmpDtyTaxBsis", "_NetgElgblty", "_Prty", "_BnfclOwnrsh", "_PrtlSttlmInd", "_SctiesRTGS", "_SttlmTxCond", "_CCPElgblty", "_CshClrSys", "_TaxCpcty", "_SttlgCpcty", "_LglRstrctns", "_BlckTrad"]
+	__slots__ = ["_AutomtcBrrwg", "_BlckTrad", "_BnfclOwnrsh", "_CCPElgblty", "_CshClrSys", "_ElgblForColl", "_LglRstrctns", "_MktClntSd", "_NetgElgblty", "_PrtlSttlmInd", "_Prty", "_SctiesRTGS", "_StmpDtyTaxBsis", "_SttlgCpcty", "_SttlmSysMtd", "_SttlmTxCond", "_TaxCpcty"]
 	@property
 	def AutomtcBrrwg(self):
 		return self._AutomtcBrrwg

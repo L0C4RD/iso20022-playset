@@ -1,11 +1,11 @@
 from . import base_types
-from ._EncryptedData2 import EncryptedData2
 from ._ContentType3Code import ContentType3Code
+from ._EncryptedData2 import EncryptedData2
 from ._EnvelopedData12 import EnvelopedData12
 
 class ProtectedData2(base_types._BaseFieldType):
 
-	__slots__ = ["_NcrptdData", "_EnvlpdData", "_CnttTp"]
+	__slots__ = ["_CnttTp", "_EnvlpdData", "_NcrptdData"]
 	@property
 	def CnttTp(self):
 		return self._CnttTp

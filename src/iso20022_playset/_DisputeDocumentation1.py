@@ -1,11 +1,11 @@
 from . import base_types
 from ._Max20KText import Max20KText
-from ._OutputFormat4Code import OutputFormat4Code
 from ._Max35Text import Max35Text
+from ._OutputFormat4Code import OutputFormat4Code
 
 class DisputeDocumentation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_OthrFrmt", "_Frmt", "_Tp"]
+	__slots__ = ["_Frmt", "_OthrFrmt", "_Tp", "_Val"]
 	@property
 	def Frmt(self):
 		return self._Frmt

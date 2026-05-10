@@ -1,18 +1,18 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._YesNoIndicator import YesNoIndicator
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._PartyIdentificationAndAccount195 import PartyIdentificationAndAccount195
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._PartyIdentification136 import PartyIdentification136
+from ._ClassificationType32Choice import ClassificationType32Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
 from ._Max35Text import Max35Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._ClassificationType32Choice import ClassificationType32Choice
+from ._PartyIdentification136 import PartyIdentification136
+from ._PartyIdentificationAndAccount195 import PartyIdentificationAndAccount195
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._YesNoIndicator import YesNoIndicator
 
 class AdditionalInformation26(base_types._BaseFieldType):
 
-	__slots__ = ["_TxSbjtToBuyIn", "_SfkpgAcct", "_CutOffDt", "_BlckChainAdrOrWllt", "_XpryDt", "_RcvgPty1", "_DlvrgPty1", "_Invstr", "_ClssfctnTp", "_FctvDt", "_Qty", "_AcctOwnrTxId", "_FinInstrmId"]
+	__slots__ = ["_AcctOwnrTxId", "_BlckChainAdrOrWllt", "_ClssfctnTp", "_CutOffDt", "_DlvrgPty1", "_FctvDt", "_FinInstrmId", "_Invstr", "_Qty", "_RcvgPty1", "_SfkpgAcct", "_TxSbjtToBuyIn", "_XpryDt"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

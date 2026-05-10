@@ -1,12 +1,12 @@
 from . import base_types
-from ._SecuritiesAccount18 import SecuritiesAccount18
 from ._AlternatePartyIdentification4 import AlternatePartyIdentification4
-from ._PartyTextInformation1 import PartyTextInformation1
 from ._PartyIdentification33Choice import PartyIdentification33Choice
+from ._PartyTextInformation1 import PartyTextInformation1
+from ._SecuritiesAccount18 import SecuritiesAccount18
 
 class PartyIdentificationAndAccount31(base_types._BaseFieldType):
 
-	__slots__ = ["_AltrnId", "_AddtlInf", "_Id", "_ClrAcct"]
+	__slots__ = ["_AddtlInf", "_AltrnId", "_ClrAcct", "_Id"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

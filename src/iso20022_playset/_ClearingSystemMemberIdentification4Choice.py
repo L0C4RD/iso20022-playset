@@ -1,27 +1,27 @@
 from . import base_types
-from ._CanadianPaymentsARNIdentifier import CanadianPaymentsARNIdentifier
-from ._PortugueseNCCIdentifier import PortugueseNCCIdentifier
-from ._SwissSICIdentifier import SwissSICIdentifier
-from ._SmallNetworkIdentifier import SmallNetworkIdentifier
-from ._SwissBCIdentifier import SwissBCIdentifier
-from ._SouthAfricanNCCIdentifier import SouthAfricanNCCIdentifier
-from ._ExtensiveBranchNetworkIdentifier import ExtensiveBranchNetworkIdentifier
 from ._AustrianBankleitzahlIdentifier import AustrianBankleitzahlIdentifier
-from ._RussianCentralBankIdentificationCodeIdentifier import RussianCentralBankIdentificationCodeIdentifier
-from ._NewZealandNCCIdentifier import NewZealandNCCIdentifier
+from ._CHIPSParticipantIdentifier import CHIPSParticipantIdentifier
+from ._CHIPSUniversalIdentifier import CHIPSUniversalIdentifier
+from ._CanadianPaymentsARNIdentifier import CanadianPaymentsARNIdentifier
+from ._ExtensiveBranchNetworkIdentifier import ExtensiveBranchNetworkIdentifier
 from ._FedwireRoutingNumberIdentifier import FedwireRoutingNumberIdentifier
 from ._GermanBankleitzahlIdentifier import GermanBankleitzahlIdentifier
-from ._IrishNSCIdentifier import IrishNSCIdentifier
-from ._CHIPSParticipantIdentifier import CHIPSParticipantIdentifier
-from ._ItalianDomesticIdentifier import ItalianDomesticIdentifier
 from ._HongKongBankIdentifier import HongKongBankIdentifier
-from ._CHIPSUniversalIdentifier import CHIPSUniversalIdentifier
-from ._UKDomesticSortCodeIdentifier import UKDomesticSortCodeIdentifier
+from ._IrishNSCIdentifier import IrishNSCIdentifier
+from ._ItalianDomesticIdentifier import ItalianDomesticIdentifier
+from ._NewZealandNCCIdentifier import NewZealandNCCIdentifier
+from ._PortugueseNCCIdentifier import PortugueseNCCIdentifier
+from ._RussianCentralBankIdentificationCodeIdentifier import RussianCentralBankIdentificationCodeIdentifier
+from ._SmallNetworkIdentifier import SmallNetworkIdentifier
+from ._SouthAfricanNCCIdentifier import SouthAfricanNCCIdentifier
 from ._SpanishDomesticInterbankingIdentifier import SpanishDomesticInterbankingIdentifier
+from ._SwissBCIdentifier import SwissBCIdentifier
+from ._SwissSICIdentifier import SwissSICIdentifier
+from ._UKDomesticSortCodeIdentifier import UKDomesticSortCodeIdentifier
 
 class ClearingSystemMemberIdentification4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AUBSBs", "_ITNCC", "_ZANCC", "_PTNCC", "_RUCB", "_GBSC", "_CHBC", "_AUBSBx", "_USCHU", "_HKNCC", "_USCH", "_IENSC", "_ATBLZ", "_ESNCC", "_CHSIC", "_CACPA", "_NZNCC", "_USFW", "_DEBLZ"]
+	__slots__ = ["_ATBLZ", "_AUBSBs", "_AUBSBx", "_CACPA", "_CHBC", "_CHSIC", "_DEBLZ", "_ESNCC", "_GBSC", "_HKNCC", "_IENSC", "_ITNCC", "_NZNCC", "_PTNCC", "_RUCB", "_USCH", "_USCHU", "_USFW", "_ZANCC"]
 	@property
 	def ATBLZ(self):
 		return self._ATBLZ

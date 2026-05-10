@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PaymentType5Choice import PaymentType5Choice
 from ._AmountAndDirection106 import AmountAndDirection106
+from ._ISODate import ISODate
 from ._PartyIdentification236Choice import PartyIdentification236Choice
+from ._PaymentType5Choice import PaymentType5Choice
 
 class OtherPayment5(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtDt", "_PmtRcvr", "_PmtAmt", "_PmtPyer", "_PmtTp"]
+	__slots__ = ["_PmtAmt", "_PmtDt", "_PmtPyer", "_PmtRcvr", "_PmtTp"]
 	@property
 	def PmtAmt(self):
 		return self._PmtAmt

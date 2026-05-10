@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PaymentInstrument25Choice import PaymentInstrument25Choice
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
+from ._PaymentInstrument25Choice import PaymentInstrument25Choice
 
 class PaymentInstrument18(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtDt", "_Amt", "_CshSttlmDtls", "_Ref"]
+	__slots__ = ["_Amt", "_CshSttlmDtls", "_PmtDt", "_Ref"]
 	@property
 	def Amt(self):
 		return self._Amt

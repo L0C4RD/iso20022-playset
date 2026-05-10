@@ -1,23 +1,23 @@
 from . import base_types
-from ._PartyIdentification151Choice import PartyIdentification151Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._DocumentIdentification38 import DocumentIdentification38
-from ._CorporateActionGeneralInformation194 import CorporateActionGeneralInformation194
-from ._CorporateActionOption247 import CorporateActionOption247
-from ._CorporateActionEventReference4 import CorporateActionEventReference4
+from ._AccountIdentification78Choice import AccountIdentification78Choice
 from ._CorporateAction87 import CorporateAction87
-from ._DocumentIdentification17 import DocumentIdentification17
-from ._DocumentIdentification37 import DocumentIdentification37
-from ._PartyIdentification137Choice import PartyIdentification137Choice
-from ._Pagination1 import Pagination1
+from ._CorporateActionEventReference4 import CorporateActionEventReference4
+from ._CorporateActionGeneralInformation194 import CorporateActionGeneralInformation194
 from ._CorporateActionNarrative65 import CorporateActionNarrative65
 from ._CorporateActionNotification11 import CorporateActionNotification11
+from ._CorporateActionOption247 import CorporateActionOption247
+from ._DocumentIdentification17 import DocumentIdentification17
+from ._DocumentIdentification37 import DocumentIdentification37
+from ._DocumentIdentification38 import DocumentIdentification38
 from ._FinancialInstrumentAttributes117 import FinancialInstrumentAttributes117
-from ._AccountIdentification78Choice import AccountIdentification78Choice
+from ._Pagination1 import Pagination1
+from ._PartyIdentification137Choice import PartyIdentification137Choice
+from ._PartyIdentification151Choice import PartyIdentification151Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class CorporateActionNotification002V15(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrmdtScty", "_IssrAgt", "_SubPngAgt", "_CorpActnGnlInf", "_SlctnAgt", "_RsellngAgt", "_Regar", "_DrpAgt", "_OthrDocId", "_Offerr", "_CorpActnOptnDtls", "_TrfAgt", "_Pgntn", "_InstrId", "_AcctDtls", "_PhysSctiesAgt", "_AddtlInf", "_Issr", "_EvtsLkg", "_PngAgt", "_PrvsNtfctnId", "_InfAgt", "_CorpActnDtls", "_SplmtryData", "_NtfctnGnlInf"]
+	__slots__ = ["_AcctDtls", "_AddtlInf", "_CorpActnDtls", "_CorpActnGnlInf", "_CorpActnOptnDtls", "_DrpAgt", "_EvtsLkg", "_InfAgt", "_InstrId", "_IntrmdtScty", "_Issr", "_IssrAgt", "_NtfctnGnlInf", "_Offerr", "_OthrDocId", "_Pgntn", "_PhysSctiesAgt", "_PngAgt", "_PrvsNtfctnId", "_Regar", "_RsellngAgt", "_SlctnAgt", "_SplmtryData", "_SubPngAgt", "_TrfAgt"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

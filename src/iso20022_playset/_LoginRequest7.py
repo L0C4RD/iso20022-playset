@@ -1,19 +1,19 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._SaleTokenScope1Code import SaleTokenScope1Code
-from ._LanguageCode import LanguageCode
-from ._PointOfInteractionComponent17 import PointOfInteractionComponent17
-from ._Max2NumericText import Max2NumericText
-from ._PointOfInteractionComponentIdentification2 import PointOfInteractionComponentIdentification2
 from ._ActionMessage11 import ActionMessage11
-from ._Max35Text import Max35Text
-from ._SaleTerminalData1 import SaleTerminalData1
-from ._ISODateTime import ISODateTime
 from ._CustomerOrderRequest1Code import CustomerOrderRequest1Code
+from ._ISODateTime import ISODateTime
+from ._LanguageCode import LanguageCode
+from ._Max2NumericText import Max2NumericText
+from ._Max35Text import Max35Text
+from ._PointOfInteractionComponent17 import PointOfInteractionComponent17
+from ._PointOfInteractionComponentIdentification2 import PointOfInteractionComponentIdentification2
+from ._SaleTerminalData1 import SaleTerminalData1
+from ._SaleTokenScope1Code import SaleTokenScope1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class LoginRequest7(base_types._BaseFieldType):
 
-	__slots__ = ["_CshrLang", "_LgnDtTm", "_TtlsGrpId", "_CstmrOrdrReq", "_ShftNb", "_TknReqdTp", "_OutptDisp", "_POIId", "_TrngMdFlg", "_CshrId", "_SaleSftwr", "_SaleTermnlData"]
+	__slots__ = ["_CshrId", "_CshrLang", "_CstmrOrdrReq", "_LgnDtTm", "_OutptDisp", "_POIId", "_SaleSftwr", "_SaleTermnlData", "_ShftNb", "_TknReqdTp", "_TrngMdFlg", "_TtlsGrpId"]
 	@property
 	def CshrId(self):
 		return self._CshrId

@@ -4,7 +4,7 @@ from ._QueryType2Code import QueryType2Code
 
 class BusinessInformationQueryDefinition3(base_types._BaseFieldType):
 
-	__slots__ = ["_QryTp", "_GnlBizInfCrit"]
+	__slots__ = ["_GnlBizInfCrit", "_QryTp"]
 	@property
 	def GnlBizInfCrit(self):
 		return self._GnlBizInfCrit

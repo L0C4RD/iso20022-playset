@@ -4,7 +4,7 @@ from ._UpdatedURLlnformation7 import UpdatedURLlnformation7
 
 class CorporateActionNarrative65(base_types._BaseFieldType):
 
-	__slots__ = ["_BsktOrIndxInf", "_CertfctnBrkdwn", "_InfToCmplyWth", "_PtyCtctNrrtv", "_NrrtvVrsn", "_InfConds", "_TaxtnConds", "_Dsclmr", "_RegnDtls", "_PrcgTxtForNxtIntrmy", "_URLAdr", "_AddtlTxt"]
+	__slots__ = ["_AddtlTxt", "_BsktOrIndxInf", "_CertfctnBrkdwn", "_Dsclmr", "_InfConds", "_InfToCmplyWth", "_NrrtvVrsn", "_PrcgTxtForNxtIntrmy", "_PtyCtctNrrtv", "_RegnDtls", "_TaxtnConds", "_URLAdr"]
 	@property
 	def AddtlTxt(self):
 		return self._AddtlTxt

@@ -1,13 +1,13 @@
 from . import base_types
-from ._Statement8 import Statement8
-from ._InvestmentAccount43 import InvestmentAccount43
-from ._SubAccountIdentification36 import SubAccountIdentification36
-from ._InvestmentFundTransactionsByFund3 import InvestmentFundTransactionsByFund3
 from ._Extension1 import Extension1
+from ._InvestmentAccount43 import InvestmentAccount43
+from ._InvestmentFundTransactionsByFund3 import InvestmentFundTransactionsByFund3
+from ._Statement8 import Statement8
+from ._SubAccountIdentification36 import SubAccountIdentification36
 
 class StatementOfInvestmentFundTransactions3(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstmtAcctDtls", "_TxOnAcct", "_Xtnsn", "_StmtGnlDtls", "_SubAcctDtls"]
+	__slots__ = ["_InvstmtAcctDtls", "_StmtGnlDtls", "_SubAcctDtls", "_TxOnAcct", "_Xtnsn"]
 	@property
 	def InvstmtAcctDtls(self):
 		return self._InvstmtAcctDtls

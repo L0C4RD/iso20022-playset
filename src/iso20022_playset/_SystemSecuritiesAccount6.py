@@ -1,16 +1,16 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 from ._ISODate import ISODate
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._MarketSpecificAttribute1 import MarketSpecificAttribute1
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._SystemPartyType1Choice import SystemPartyType1Choice
 from ._SystemRestriction1 import SystemRestriction1
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 from ._SystemSecuritiesAccountType1Choice import SystemSecuritiesAccountType1Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class SystemSecuritiesAccount6(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyTp", "_Rstrctn", "_NegPos", "_EndInvstrFlg", "_HldInd", "_MktSpcfcAttr", "_Tp", "_AcctOwnr", "_PricgSchme", "_OpngDt", "_ClsgDt"]
+	__slots__ = ["_AcctOwnr", "_ClsgDt", "_EndInvstrFlg", "_HldInd", "_MktSpcfcAttr", "_NegPos", "_OpngDt", "_PricgSchme", "_PtyTp", "_Rstrctn", "_Tp"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

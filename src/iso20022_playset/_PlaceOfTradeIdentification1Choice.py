@@ -1,12 +1,12 @@
 from . import base_types
 from ._AnyBICIdentifier import AnyBICIdentifier
 from ._CountryCode import CountryCode
-from ._Max35Text import Max35Text
 from ._MICIdentifier import MICIdentifier
+from ._Max35Text import Max35Text
 
 class PlaceOfTradeIdentification1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Xchg", "_Ctry", "_Pty", "_OverTheCntr"]
+	__slots__ = ["_Ctry", "_OverTheCntr", "_Pty", "_Xchg"]
 	@property
 	def Ctry(self):
 		return self._Ctry

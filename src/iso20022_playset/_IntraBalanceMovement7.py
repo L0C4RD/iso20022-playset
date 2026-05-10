@@ -1,14 +1,14 @@
 from . import base_types
-from ._IntraBalanceMovement6 import IntraBalanceMovement6
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._Max35Text import Max35Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._IntraBalanceStatusAndReason2 import IntraBalanceStatusAndReason2
 from ._CashAccount40 import CashAccount40
+from ._IntraBalanceMovement6 import IntraBalanceMovement6
+from ._IntraBalanceStatusAndReason2 import IntraBalanceStatusAndReason2
+from ._Max35Text import Max35Text
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class IntraBalanceMovement7(base_types._BaseFieldType):
 
-	__slots__ = ["_MvmntDtls", "_StsAndRsn", "_CorpActnEvtId", "_CshAcct", "_PrcrTxId", "_MktInfrstrctrTxId", "_CshAcctSvcr", "_CshAcctOwnr", "_AcctSvcrTxId", "_AcctOwnrTxId", "_PoolId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_CorpActnEvtId", "_CshAcct", "_CshAcctOwnr", "_CshAcctSvcr", "_MktInfrstrctrTxId", "_MvmntDtls", "_PoolId", "_PrcrTxId", "_StsAndRsn"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

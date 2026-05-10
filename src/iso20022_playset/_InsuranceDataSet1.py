@@ -1,20 +1,20 @@
 from . import base_types
+from ._CurrencyAndAmount import CurrencyAndAmount
+from ._CurrencyCode import CurrencyCode
+from ._DocumentIdentification1 import DocumentIdentification1
 from ._ISODate import ISODate
+from ._InsuranceClauses1Code import InsuranceClauses1Code
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 from ._PartyIdentification26 import PartyIdentification26
 from ._PartyIdentification29Choice import PartyIdentification29Choice
-from ._CurrencyAndAmount import CurrencyAndAmount
 from ._PostalAddress5 import PostalAddress5
-from ._CurrencyCode import CurrencyCode
-from ._InsuranceClauses1Code import InsuranceClauses1Code
 from ._SingleTransport3 import SingleTransport3
-from ._Max35Text import Max35Text
-from ._DocumentIdentification1 import DocumentIdentification1
-from ._Max70Text import Max70Text
-from ._Max350Text import Max350Text
 
 class InsuranceDataSet1(base_types._BaseFieldType):
 
-	__slots__ = ["_Trnsprt", "_InsrncDocId", "_InsrdAmt", "_IsseDt", "_Assrd", "_Issr", "_PlcOfIsse", "_FctvDt", "_InsrncConds", "_DataSetId", "_ClmsPyblIn", "_InsrncClauses", "_InsrdGoodsDesc", "_ClmsPyblAt"]
+	__slots__ = ["_Assrd", "_ClmsPyblAt", "_ClmsPyblIn", "_DataSetId", "_FctvDt", "_InsrdAmt", "_InsrdGoodsDesc", "_InsrncClauses", "_InsrncConds", "_InsrncDocId", "_IsseDt", "_Issr", "_PlcOfIsse", "_Trnsprt"]
 	@property
 	def Assrd(self):
 		return self._Assrd

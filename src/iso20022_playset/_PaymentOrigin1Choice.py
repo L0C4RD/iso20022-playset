@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._Max3NumericText import Max3NumericText
 from ._PaymentInstrument1Code import PaymentInstrument1Code
-from ._Max35Text import Max35Text
 
 class PaymentOrigin1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_XMLMsgNm", "_Prtry", "_FINMT", "_Instrm"]
+	__slots__ = ["_FINMT", "_Instrm", "_Prtry", "_XMLMsgNm"]
 	@property
 	def FINMT(self):
 		return self._FINMT

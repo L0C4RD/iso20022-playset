@@ -1,11 +1,11 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._OtherTargetMarketLossBearing1 import OtherTargetMarketLossBearing1
+from ._PercentageRate import PercentageRate
 from ._TargetMarket1Code import TargetMarket1Code
 
 class LossBearing2(base_types._BaseFieldType):
 
-	__slots__ = ["_LossByndCptl", "_NoCptlGrnt", "_Othr", "_LtdCptlLossLvl", "_LtdCptlLoss", "_NoCptlLoss"]
+	__slots__ = ["_LossByndCptl", "_LtdCptlLoss", "_LtdCptlLossLvl", "_NoCptlGrnt", "_NoCptlLoss", "_Othr"]
 	@property
 	def LossByndCptl(self):
 		return self._LossByndCptl

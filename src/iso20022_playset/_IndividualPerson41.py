@@ -1,12 +1,12 @@
 from . import base_types
-from ._VotingParticipationMethod2Code import VotingParticipationMethod2Code
-from ._PartyIdentification232Choice import PartyIdentification232Choice
-from ._PartyIdentification129Choice import PartyIdentification129Choice
 from ._AttendanceCard3 import AttendanceCard3
+from ._PartyIdentification129Choice import PartyIdentification129Choice
+from ._PartyIdentification232Choice import PartyIdentification232Choice
+from ._VotingParticipationMethod2Code import VotingParticipationMethod2Code
 
 class IndividualPerson41(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AttndncCardDtls", "_EmplngPty", "_PrtcptnMtd"]
+	__slots__ = ["_AttndncCardDtls", "_EmplngPty", "_Id", "_PrtcptnMtd"]
 	@property
 	def AttndncCardDtls(self):
 		return self._AttndncCardDtls

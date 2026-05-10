@@ -1,10 +1,10 @@
 from . import base_types
-from ._ShortLong1Code import ShortLong1Code
 from ._OpeningBalance7Choice import OpeningBalance7Choice
+from ._ShortLong1Code import ShortLong1Code
 
 class OpeningBalance6(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtLngInd", "_OpngBal"]
+	__slots__ = ["_OpngBal", "_ShrtLngInd"]
 	@property
 	def OpngBal(self):
 		return self._OpngBal

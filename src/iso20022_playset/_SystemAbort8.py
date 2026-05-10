@@ -1,12 +1,12 @@
 from . import base_types
-from ._PaymentContext30 import PaymentContext30
 from ._AbortData6 import AbortData6
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._PaymentContext30 import PaymentContext30
 from ._SupplementaryData1 import SupplementaryData1
 
 class SystemAbort8(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_SysAbrt", "_SplmtryData"]
+	__slots__ = ["_Cntxt", "_Envt", "_SplmtryData", "_SysAbrt"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt

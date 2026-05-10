@@ -1,18 +1,18 @@
 from . import base_types
+from ._Action16 import Action16
+from ._AdditionalData1 import AdditionalData1
+from ._ErrorDetails3 import ErrorDetails3
+from ._Exact6AlphaNumericText import Exact6AlphaNumericText
+from ._ISO8583ResponseCode import ISO8583ResponseCode
+from ._ISOMax3ACountryCode import ISOMax3ACountryCode
+from ._Max35Text import Max35Text
+from ._PartyType26Code import PartyType26Code
 from ._PartyType9Code import PartyType9Code
 from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._Exact6AlphaNumericText import Exact6AlphaNumericText
-from ._AdditionalData1 import AdditionalData1
-from ._ISOMax3ACountryCode import ISOMax3ACountryCode
-from ._ErrorDetails3 import ErrorDetails3
-from ._Max35Text import Max35Text
-from ._Action16 import Action16
-from ._PartyType26Code import PartyType26Code
 
 class ProcessingResult22(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_RspnSrcAssgnr", "_RspnSrcOthrTp", "_RspnSrcId", "_ActnReqrd", "_RspnSrcTp", "_ApprvlCd", "_TempScrCardDataReusePrtd", "_Actn", "_RspnSrcCtry", "_ErrDtl", "_RspnSrcShrtNm", "_RspnCd"]
+	__slots__ = ["_Actn", "_ActnReqrd", "_AddtlInf", "_ApprvlCd", "_ErrDtl", "_RspnCd", "_RspnSrcAssgnr", "_RspnSrcCtry", "_RspnSrcId", "_RspnSrcOthrTp", "_RspnSrcShrtNm", "_RspnSrcTp", "_TempScrCardDataReusePrtd"]
 	@property
 	def Actn(self):
 		return self._Actn

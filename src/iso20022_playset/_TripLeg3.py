@@ -1,22 +1,22 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISODate import ISODate
-from ._DepartureOrArrival1 import DepartureOrArrival1
 from ._AdditionalData1 import AdditionalData1
-from ._TransportType1Code import TransportType1Code
-from ._DocumentReference1 import DocumentReference1
-from ._LoyaltyProgramme4 import LoyaltyProgramme4
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._Max4NumericText import Max4NumericText
-from ._Max140Text import Max140Text
 from ._AmountDetails3 import AmountDetails3
+from ._DepartureOrArrival1 import DepartureOrArrival1
+from ._DocumentReference1 import DocumentReference1
+from ._ISODate import ISODate
+from ._LoyaltyProgramme4 import LoyaltyProgramme4
+from ._Max140Text import Max140Text
 from ._Max35NumericText import Max35NumericText
+from ._Max35Text import Max35Text
+from ._Max4NumericText import Max4NumericText
 from ._Max4Text import Max4Text
+from ._Max70Text import Max70Text
+from ._TransportType1Code import TransportType1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TripLeg3(base_types._BaseFieldType):
 
-	__slots__ = ["_CrrierCd", "_StopOver", "_Doc", "_LltyPrgrmm", "_TcktIsseDt", "_RouteNb", "_Dprture", "_RstrctdTckt", "_RsvatnSys", "_RcrdLctrNb", "_OrgnlRsvatnSys", "_IATACd", "_FairBsisCd", "_PrcdrId", "_Insrnc", "_TcktIsseLctn", "_OthrTrnsprtTp", "_TcktNb", "_AddtlData", "_CnjnctnTcktNb", "_CmmdtyCd", "_Drtn", "_TcktRstrctns", "_CrrierNm", "_SvcClss", "_OpnTckt", "_NonDrctRouteCd", "_SeqNb", "_TcktIssr", "_CdtRsnCd", "_Amt", "_XchgdTckt", "_RsvatnNb", "_XchgdTcktNb", "_Arrvl", "_TrnsprtTp", "_OrgnlRsvatnNb"]
+	__slots__ = ["_AddtlData", "_Amt", "_Arrvl", "_CdtRsnCd", "_CmmdtyCd", "_CnjnctnTcktNb", "_CrrierCd", "_CrrierNm", "_Doc", "_Dprture", "_Drtn", "_FairBsisCd", "_IATACd", "_Insrnc", "_LltyPrgrmm", "_NonDrctRouteCd", "_OpnTckt", "_OrgnlRsvatnNb", "_OrgnlRsvatnSys", "_OthrTrnsprtTp", "_PrcdrId", "_RcrdLctrNb", "_RouteNb", "_RstrctdTckt", "_RsvatnNb", "_RsvatnSys", "_SeqNb", "_StopOver", "_SvcClss", "_TcktIsseDt", "_TcktIsseLctn", "_TcktIssr", "_TcktNb", "_TcktRstrctns", "_TrnsprtTp", "_XchgdTckt", "_XchgdTcktNb"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

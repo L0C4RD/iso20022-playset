@@ -1,15 +1,15 @@
 from . import base_types
-from ._Max70Text import Max70Text
-from ._ServiceStartEnd3 import ServiceStartEnd3
+from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._ISODateTime import ISODateTime
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max4NumericText import Max4NumericText
-from ._ISODateTime import ISODateTime
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._Max70Text import Max70Text
 from ._PeriodUnit2Code import PeriodUnit2Code
+from ._ServiceStartEnd3 import ServiceStartEnd3
 
 class RentalDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_Rtr", "_TmPrdUnit", "_Start", "_Id", "_TmPrdRate", "_TmPrd", "_Ccy", "_DtTm"]
+	__slots__ = ["_Ccy", "_DtTm", "_Id", "_Rtr", "_Start", "_TmPrd", "_TmPrdRate", "_TmPrdUnit"]
 	@property
 	def Ccy(self):
 		return self._Ccy

@@ -1,19 +1,19 @@
 from . import base_types
-from ._TransactionStatus4 import TransactionStatus4
-from ._MisMatchReport3 import MisMatchReport3
-from ._DocumentIdentification4 import DocumentIdentification4
-from ._DocumentIdentification3 import DocumentIdentification3
 from ._BICIdentification1 import BICIdentification1
-from ._PartyIdentification26 import PartyIdentification26
+from ._DocumentIdentification3 import DocumentIdentification3
+from ._DocumentIdentification4 import DocumentIdentification4
 from ._DocumentIdentification5 import DocumentIdentification5
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._PendingActivity2 import PendingActivity2
-from ._MessageIdentification1 import MessageIdentification1
 from ._Limit1 import Limit1
+from ._MessageIdentification1 import MessageIdentification1
+from ._MisMatchReport3 import MisMatchReport3
+from ._PartyIdentification26 import PartyIdentification26
+from ._PendingActivity2 import PendingActivity2
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._TransactionStatus4 import TransactionStatus4
 
 class BaselineMatchReportV03(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrBk", "_CmpardDocRef", "_TxSts", "_Rpt", "_BaselnEstblishmtTrils", "_TxId", "_RptId", "_ReqForActn", "_Sellr", "_SellrBk", "_Buyr", "_EstblishdBaselnId", "_UsrTxRef"]
+	__slots__ = ["_BaselnEstblishmtTrils", "_Buyr", "_BuyrBk", "_CmpardDocRef", "_EstblishdBaselnId", "_ReqForActn", "_Rpt", "_RptId", "_Sellr", "_SellrBk", "_TxId", "_TxSts", "_UsrTxRef"]
 	@property
 	def BaselnEstblishmtTrils(self):
 		return self._BaselnEstblishmtTrils

@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISODate import ISODate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max52Text import Max52Text
-from ._Max140Text import Max140Text
 from ._CashAccount40 import CashAccount40
+from ._ISODate import ISODate
+from ._Max140Text import Max140Text
+from ._Max52Text import Max52Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class DebitAuthorisationConfirmation3(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtToDbt", "_DbtAuthstn", "_Acct", "_Rsn", "_CmonTxId", "_ValDtToDbt"]
+	__slots__ = ["_Acct", "_AmtToDbt", "_CmonTxId", "_DbtAuthstn", "_Rsn", "_ValDtToDbt"]
 	@property
 	def Acct(self):
 		return self._Acct

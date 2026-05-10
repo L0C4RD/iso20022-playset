@@ -5,7 +5,7 @@ from ._PaymentRole1Choice import PaymentRole1Choice
 
 class ContactIdentificationAndAddress2(base_types._BaseFieldType):
 
-	__slots__ = ["_Role", "_ComAdr", "_Nm"]
+	__slots__ = ["_ComAdr", "_Nm", "_Role"]
 	@property
 	def ComAdr(self):
 		return self._ComAdr

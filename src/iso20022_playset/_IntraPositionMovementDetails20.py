@@ -1,18 +1,18 @@
 from . import base_types
-from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecuritiesBalanceType8Choice import SecuritiesBalanceType8Choice
-from ._References75Choice import References75Choice
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
 from ._AmountAndDirection55 import AmountAndDirection55
+from ._CorporateActionEventType101Choice import CorporateActionEventType101Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
 from ._GenericIdentification39 import GenericIdentification39
 from ._ISODateTime import ISODateTime
-from ._CorporateActionEventType101Choice import CorporateActionEventType101Choice
+from ._References75Choice import References75Choice
+from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from ._SecuritiesBalanceType8Choice import SecuritiesBalanceType8Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class IntraPositionMovementDetails20(base_types._BaseFieldType):
 
-	__slots__ = ["_SttldQty", "_Id", "_RmngToBeSttldQty", "_AvlblDt", "_PrevslySttldQty", "_CollMntrAmt", "_CorpActnEvtTp", "_SctiesSubBalId", "_SttlmDt", "_SplmtryData", "_BalTo", "_InstrPrcgAddtlDtls", "_AckdStsTmStmp"]
+	__slots__ = ["_AckdStsTmStmp", "_AvlblDt", "_BalTo", "_CollMntrAmt", "_CorpActnEvtTp", "_Id", "_InstrPrcgAddtlDtls", "_PrevslySttldQty", "_RmngToBeSttldQty", "_SctiesSubBalId", "_SplmtryData", "_SttldQty", "_SttlmDt"]
 	@property
 	def AckdStsTmStmp(self):
 		return self._AckdStsTmStmp

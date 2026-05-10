@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max35Text import Max35Text
+from ._CarRentalServiceType2Code import CarRentalServiceType2Code
 from ._CreditDebit3Code import CreditDebit3Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._CarRentalServiceType2Code import CarRentalServiceType2Code
+from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Amount21(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_CstmrNtfd", "_Tp", "_CdtDbt", "_OthrTp"]
+	__slots__ = ["_Amt", "_CdtDbt", "_CstmrNtfd", "_OthrTp", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -1,6 +1,6 @@
 from . import base_types
-from ._PartyIdentification63 import PartyIdentification63
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._PartyIdentification63 import PartyIdentification63
 
 class PartyOrCurrency1Choice(base_types._BaseFieldType):
 

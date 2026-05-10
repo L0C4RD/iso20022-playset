@@ -1,7 +1,7 @@
 from . import base_types
-from ._PostalAddress6 import PostalAddress6
 from ._Max140Text import Max140Text
 from ._Max35Text import Max35Text
+from ._PostalAddress6 import PostalAddress6
 
 class BranchData2(base_types._BaseFieldType):
 

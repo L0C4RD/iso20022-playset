@@ -1,13 +1,13 @@
 from . import base_types
-from ._MerchantCategoryCodeIdentifier import MerchantCategoryCodeIdentifier
-from ._Max10KBinary import Max10KBinary
-from ._RTPPartyIdentification2 import RTPPartyIdentification2
-from ._Max140Text import Max140Text
 from ._CreditorServiceEnrolment1 import CreditorServiceEnrolment1
+from ._Max10KBinary import Max10KBinary
+from ._Max140Text import Max140Text
+from ._MerchantCategoryCodeIdentifier import MerchantCategoryCodeIdentifier
+from ._RTPPartyIdentification2 import RTPPartyIdentification2
 
 class CreditorEnrolment6(base_types._BaseFieldType):
 
-	__slots__ = ["_Cdtr", "_CdtrTradgNm", "_CdtrLogo", "_Enrlmnt", "_MrchntCtgyCd", "_UltmtCdtr"]
+	__slots__ = ["_Cdtr", "_CdtrLogo", "_CdtrTradgNm", "_Enrlmnt", "_MrchntCtgyCd", "_UltmtCdtr"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

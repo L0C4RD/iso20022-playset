@@ -4,7 +4,7 @@ from ._DocumentAmount1 import DocumentAmount1
 
 class RemittanceAmount4(base_types._BaseFieldType):
 
-	__slots__ = ["_RmtAmtAndTp", "_AdjstmntAmtAndRsn"]
+	__slots__ = ["_AdjstmntAmtAndRsn", "_RmtAmtAndTp"]
 	@property
 	def AdjstmntAmtAndRsn(self):
 		return self._AdjstmntAmtAndRsn

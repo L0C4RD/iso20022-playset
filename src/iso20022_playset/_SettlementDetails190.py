@@ -1,25 +1,25 @@
 from . import base_types
+from ._BeneficialOwnership4Choice import BeneficialOwnership4Choice
+from ._BlockTrade4Choice import BlockTrade4Choice
+from ._CashSettlementSystem4Choice import CashSettlementSystem4Choice
+from ._CentralCounterPartyEligibility4Choice import CentralCounterPartyEligibility4Choice
 from ._GenericIdentification30 import GenericIdentification30
 from ._LetterOfGuarantee4Choice import LetterOfGuarantee4Choice
-from ._SettlingCapacity7Choice import SettlingCapacity7Choice
-from ._RepurchaseType22Choice import RepurchaseType22Choice
-from ._SecuritiesRTGS4Choice import SecuritiesRTGS4Choice
-from ._Registration9Choice import Registration9Choice
-from ._Restriction5Choice import Restriction5Choice
-from ._BlockTrade4Choice import BlockTrade4Choice
 from ._MarketClientSide6Choice import MarketClientSide6Choice
-from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
-from ._CashSettlementSystem4Choice import CashSettlementSystem4Choice
-from ._TaxCapacityParty4Choice import TaxCapacityParty4Choice
-from ._SettlementTransactionCondition34Choice import SettlementTransactionCondition34Choice
-from ._CentralCounterPartyEligibility4Choice import CentralCounterPartyEligibility4Choice
-from ._BeneficialOwnership4Choice import BeneficialOwnership4Choice
-from ._SettlementSystemMethod4Choice import SettlementSystemMethod4Choice
 from ._NettingEligibility4Choice import NettingEligibility4Choice
+from ._Registration9Choice import Registration9Choice
+from ._RepurchaseType22Choice import RepurchaseType22Choice
+from ._Restriction5Choice import Restriction5Choice
+from ._SecuritiesRTGS4Choice import SecuritiesRTGS4Choice
+from ._SettlementSystemMethod4Choice import SettlementSystemMethod4Choice
+from ._SettlementTransactionCondition34Choice import SettlementTransactionCondition34Choice
+from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
+from ._SettlingCapacity7Choice import SettlingCapacity7Choice
+from ._TaxCapacityParty4Choice import TaxCapacityParty4Choice
 
 class SettlementDetails190(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmTxCond", "_MktClntSd", "_SttlmSysMtd", "_RpTp", "_StmpDtyTaxBsis", "_NetgElgblty", "_BnfclOwnrsh", "_PrtlSttlmInd", "_SctiesRTGS", "_CCPElgblty", "_CshClrSys", "_Regn", "_LttrOfGrnt", "_TaxCpcty", "_SttlgCpcty", "_LglRstrctns", "_BlckTrad"]
+	__slots__ = ["_BlckTrad", "_BnfclOwnrsh", "_CCPElgblty", "_CshClrSys", "_LglRstrctns", "_LttrOfGrnt", "_MktClntSd", "_NetgElgblty", "_PrtlSttlmInd", "_Regn", "_RpTp", "_SctiesRTGS", "_StmpDtyTaxBsis", "_SttlgCpcty", "_SttlmSysMtd", "_SttlmTxCond", "_TaxCpcty"]
 	@property
 	def BlckTrad(self):
 		return self._BlckTrad

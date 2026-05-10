@@ -1,12 +1,12 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._Max350Text import Max350Text
 from ._ISODateTime import ISODateTime
+from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
+from ._SecuritiesAccount19 import SecuritiesAccount19
 
 class SecuritiesAccountReferenceDataChange2(base_types._BaseFieldType):
 
-	__slots__ = ["_NewFldVal", "_OprTmStmp", "_OdFldVal", "_FldNm", "_SctiesAcctId"]
+	__slots__ = ["_FldNm", "_NewFldVal", "_OdFldVal", "_OprTmStmp", "_SctiesAcctId"]
 	@property
 	def FldNm(self):
 		return self._FldNm

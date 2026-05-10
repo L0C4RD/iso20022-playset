@@ -1,10 +1,10 @@
 from . import base_types
-from ._FinancialInstrumentIdentification1 import FinancialInstrumentIdentification1
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._FinancialInstrumentIdentification1 import FinancialInstrumentIdentification1
 
 class Conversion1(base_types._BaseFieldType):
 
-	__slots__ = ["_TrgtScty", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_TrgtScty"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

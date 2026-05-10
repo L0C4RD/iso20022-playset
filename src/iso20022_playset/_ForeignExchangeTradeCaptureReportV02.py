@@ -1,17 +1,17 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._AdditionalReferences2 import AdditionalReferences2
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradePartyIdentification9 import TradePartyIdentification9
-from ._MessageIdentification1 import MessageIdentification1
-from ._Number import Number
 from ._Header23 import Header23
 from ._Max35Text import Max35Text
+from ._MessageIdentification1 import MessageIdentification1
+from ._Number import Number
+from ._SupplementaryData1 import SupplementaryData1
 from ._Trade7 import Trade7
+from ._TradePartyIdentification9 import TradePartyIdentification9
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_QryRjctRsn", "_TtlNbTrds", "_LastRptReqd", "_Ref", "_Hdr", "_TradgSdId", "_CtrPtySdId", "_SplmtryData", "_ReqRspndr", "_TradDtl", "_ReqRjctd", "_RptId"]
+	__slots__ = ["_CtrPtySdId", "_Hdr", "_LastRptReqd", "_QryRjctRsn", "_Ref", "_ReqRjctd", "_ReqRspndr", "_RptId", "_SplmtryData", "_TradDtl", "_TradgSdId", "_TtlNbTrds"]
 	@property
 	def CtrPtySdId(self):
 		return self._CtrPtySdId

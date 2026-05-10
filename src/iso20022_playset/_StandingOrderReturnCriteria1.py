@@ -3,7 +3,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_TpInd", "_StgOrdrIdInd", "_TtlAmtInd", "_LkSetOrdrIdInd", "_VldtyFrInd", "_LkSetOrdrSeqInd", "_FrqcyInd", "_VldToInd", "_LkSetIdInd", "_RspnsblPtyInd", "_SysMmbInd", "_DbtrAcctInd", "_ZeroSweepInd", "_CdtrAcctInd", "_CcyInd", "_ExctnTpInd", "_AssoctdPoolAcct"]
+	__slots__ = ["_AssoctdPoolAcct", "_CcyInd", "_CdtrAcctInd", "_DbtrAcctInd", "_ExctnTpInd", "_FrqcyInd", "_LkSetIdInd", "_LkSetOrdrIdInd", "_LkSetOrdrSeqInd", "_RspnsblPtyInd", "_StgOrdrIdInd", "_SysMmbInd", "_TpInd", "_TtlAmtInd", "_VldToInd", "_VldtyFrInd", "_ZeroSweepInd"]
 	@property
 	def AssoctdPoolAcct(self):
 		return self._AssoctdPoolAcct

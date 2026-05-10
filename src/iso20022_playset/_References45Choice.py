@@ -1,11 +1,11 @@
 from . import base_types
 from ._GenericDocumentIdentification4 import GenericDocumentIdentification4
-from ._SettlementTypeAndIdentification18 import SettlementTypeAndIdentification18
 from ._Max35Text import Max35Text
+from ._SettlementTypeAndIdentification18 import SettlementTypeAndIdentification18
 
 class References45Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesFincgTxId", "_OthrTxId", "_SctiesSttlmTxId", "_IntraPosMvmntId"]
+	__slots__ = ["_IntraPosMvmntId", "_OthrTxId", "_SctiesFincgTxId", "_SctiesSttlmTxId"]
 	@property
 	def IntraPosMvmntId(self):
 		return self._IntraPosMvmntId

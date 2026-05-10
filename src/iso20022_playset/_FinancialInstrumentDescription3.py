@@ -1,11 +1,11 @@
 from . import base_types
-from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._MICIdentifier import MICIdentifier
+from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._SecurityIdentification7 import SecurityIdentification7
 
 class FinancialInstrumentDescription3(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgPlc", "_SctyId", "_PlcOfListg"]
+	__slots__ = ["_PlcOfListg", "_SctyId", "_SfkpgPlc"]
 	@property
 	def PlcOfListg(self):
 		return self._PlcOfListg

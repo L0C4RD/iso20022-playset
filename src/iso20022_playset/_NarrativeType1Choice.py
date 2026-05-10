@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification1 import GenericIdentification1
 from ._ExternalNarrativeType1Code import ExternalNarrativeType1Code
+from ._GenericIdentification1 import GenericIdentification1
 
 class NarrativeType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

@@ -1,19 +1,19 @@
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._PartyIdentificationAndAccount6 import PartyIdentificationAndAccount6
-from ._Max128Text import Max128Text
 from ._AdditionalInformation1 import AdditionalInformation1
-from ._ISODateTime import ISODateTime
+from ._AgreementClauses1 import AgreementClauses1
 from ._CurrencyCode import CurrencyCode
 from ._FinancialInstitutionIdentification6 import FinancialInstitutionIdentification6
-from ._Max35Text import Max35Text
+from ._ISODateTime import ISODateTime
+from ._Max128Text import Max128Text
 from ._Max15NumericText import Max15NumericText
 from ._Max350Text import Max350Text
-from ._AgreementClauses1 import AgreementClauses1
+from ._Max35Text import Max35Text
+from ._PartyIdentificationAndAccount6 import PartyIdentificationAndAccount6
 
 class RequestGroupInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_AgrmtClauses", "_Ccy", "_GrpId", "_AddtlInf", "_FrstAgt", "_TtlBlkInvcAmt", "_FincgRqstr", "_IntrmyAgt", "_FincgAgrmt", "_NbOfInvcReqs", "_CreDtTm", "_Authstn"]
+	__slots__ = ["_AddtlInf", "_AgrmtClauses", "_Authstn", "_Ccy", "_CreDtTm", "_FincgAgrmt", "_FincgRqstr", "_FrstAgt", "_GrpId", "_IntrmyAgt", "_NbOfInvcReqs", "_TtlBlkInvcAmt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

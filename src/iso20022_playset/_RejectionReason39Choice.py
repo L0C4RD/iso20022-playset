@@ -1,6 +1,6 @@
 from . import base_types
-from ._RejectionReason62Code import RejectionReason62Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._RejectionReason62Code import RejectionReason62Code
 
 class RejectionReason39Choice(base_types._BaseFieldType):
 

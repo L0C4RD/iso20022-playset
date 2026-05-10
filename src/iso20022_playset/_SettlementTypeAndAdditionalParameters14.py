@@ -1,12 +1,12 @@
 from . import base_types
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._YesNoIndicator import YesNoIndicator
 from ._Max35Text import Max35Text
 from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._YesNoIndicator import YesNoIndicator
 
 class SettlementTypeAndAdditionalParameters14(base_types._BaseFieldType):
 
-	__slots__ = ["_CmonId", "_Pmt", "_CorpActnEvtId", "_RcncltnInd", "_SctiesMvmntTp"]
+	__slots__ = ["_CmonId", "_CorpActnEvtId", "_Pmt", "_RcncltnInd", "_SctiesMvmntTp"]
 	@property
 	def CmonId(self):
 		return self._CmonId

@@ -1,12 +1,12 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._Max35NumericText import Max35NumericText
 from ._ISOTime import ISOTime
+from ._Max35NumericText import Max35NumericText
 from ._Max35Text import Max35Text
 
 class DepartureOrArrival2(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_CrrierCd", "_RouteNb", "_Tm"]
+	__slots__ = ["_CrrierCd", "_Dt", "_RouteNb", "_Tm"]
 	@property
 	def CrrierCd(self):
 		return self._CrrierCd

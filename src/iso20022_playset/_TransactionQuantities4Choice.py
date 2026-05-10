@@ -1,11 +1,11 @@
 from . import base_types
-from ._ProprietaryQuantity1 import ProprietaryQuantity1
 from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
 from ._OriginalAndCurrentQuantities1 import OriginalAndCurrentQuantities1
+from ._ProprietaryQuantity1 import ProprietaryQuantity1
 
 class TransactionQuantities4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Qty", "_OrgnlAndCurFaceAmt"]
+	__slots__ = ["_OrgnlAndCurFaceAmt", "_Prtry", "_Qty"]
 	@property
 	def OrgnlAndCurFaceAmt(self):
 		return self._OrgnlAndCurFaceAmt

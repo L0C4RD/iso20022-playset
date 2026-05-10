@@ -1,21 +1,21 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._AdviceType1 import AdviceType1
 from ._BatchBookingIndicator import BatchBookingIndicator
-from ._DecimalNumber import DecimalNumber
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Max15NumericText import Max15NumericText
+from ._CashAccount40 import CashAccount40
+from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._DecimalNumber import DecimalNumber
 from ._DirectDebitTransactionInformation32 import DirectDebitTransactionInformation32
+from ._ISODate import ISODate
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
+from ._PartyIdentification272 import PartyIdentification272
 from ._PaymentMethod2Code import PaymentMethod2Code
 from ._PaymentTypeInformation29 import PaymentTypeInformation29
-from ._Max35Text import Max35Text
-from ._AdviceType1 import AdviceType1
-from ._PartyIdentification272 import PartyIdentification272
-from ._CashAccount40 import CashAccount40
 
 class PaymentInstruction45(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgsAcct", "_ChrgBr", "_ReqdAdvcTp", "_PmtInfId", "_DrctDbtTxInf", "_Cdtr", "_NbOfTxs", "_UltmtCdtr", "_CdtrSchmeId", "_ChrgsAcctAgt", "_PmtMtd", "_CdtrAcct", "_CdtrAgt", "_BtchBookg", "_ReqdColltnDt", "_CtrlSum", "_PmtTpInf", "_CdtrAgtAcct"]
+	__slots__ = ["_BtchBookg", "_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_CdtrSchmeId", "_ChrgBr", "_ChrgsAcct", "_ChrgsAcctAgt", "_CtrlSum", "_DrctDbtTxInf", "_NbOfTxs", "_PmtInfId", "_PmtMtd", "_PmtTpInf", "_ReqdAdvcTp", "_ReqdColltnDt", "_UltmtCdtr"]
 	@property
 	def BtchBookg(self):
 		return self._BtchBookg

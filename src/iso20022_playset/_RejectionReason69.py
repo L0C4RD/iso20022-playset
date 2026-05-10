@@ -5,7 +5,7 @@ from ._MessageRejectedReason2Code import MessageRejectedReason2Code
 
 class RejectionReason69(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Rsn", "_LkdMsg"]
+	__slots__ = ["_AddtlInf", "_LkdMsg", "_Rsn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

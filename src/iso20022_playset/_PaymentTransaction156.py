@@ -1,15 +1,15 @@
 from . import base_types
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._Max35Text import Max35Text
+from ._OriginalTransactionReference42 import OriginalTransactionReference42
+from ._PaymentReversalReason10 import PaymentReversalReason10
 from ._SupplementaryData1 import SupplementaryData1
 from ._UUIDv4Identifier import UUIDv4Identifier
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._Max35Text import Max35Text
-from ._PaymentReversalReason10 import PaymentReversalReason10
-from ._OriginalTransactionReference42 import OriginalTransactionReference42
 
 class PaymentTransaction156(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgBr", "_OrgnlTxRef", "_OrgnlUETR", "_RvsdInstdAmt", "_OrgnlEndToEndId", "_OrgnlInstrId", "_RvslRsnInf", "_OrgnlInstdAmt", "_SplmtryData", "_RvslId"]
+	__slots__ = ["_ChrgBr", "_OrgnlEndToEndId", "_OrgnlInstdAmt", "_OrgnlInstrId", "_OrgnlTxRef", "_OrgnlUETR", "_RvsdInstdAmt", "_RvslId", "_RvslRsnInf", "_SplmtryData"]
 	@property
 	def ChrgBr(self):
 		return self._ChrgBr

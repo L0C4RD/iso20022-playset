@@ -4,7 +4,7 @@ from ._GenericIdentification1 import GenericIdentification1
 
 class OtherAmount3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Amt"]
+	__slots__ = ["_Amt", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

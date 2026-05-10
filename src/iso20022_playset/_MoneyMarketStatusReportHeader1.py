@@ -1,12 +1,12 @@
 from . import base_types
-from ._StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
-from ._LEIIdentifier import LEIIdentifier
-from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
 from ._DateTimePeriod1 import DateTimePeriod1
+from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
+from ._LEIIdentifier import LEIIdentifier
+from ._StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
 
 class MoneyMarketStatusReportHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_RptSts", "_RptgPrd", "_VldtnRule", "_RptgAgt"]
+	__slots__ = ["_RptSts", "_RptgAgt", "_RptgPrd", "_VldtnRule"]
 	@property
 	def RptSts(self):
 		return self._RptSts

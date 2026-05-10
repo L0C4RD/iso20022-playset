@@ -1,11 +1,11 @@
 from . import base_types
-from ._DocumentType1 import DocumentType1
 from ._DateAndType1 import DateAndType1
+from ._DocumentType1 import DocumentType1
 from ._Max35Text import Max35Text
 
 class ReferredMandateDocument2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_CdtrRef", "_Nb", "_RltdDt"]
+	__slots__ = ["_CdtrRef", "_Nb", "_RltdDt", "_Tp"]
 	@property
 	def CdtrRef(self):
 		return self._CdtrRef

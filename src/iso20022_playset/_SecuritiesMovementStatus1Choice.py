@@ -3,7 +3,7 @@ from ._ProprietaryReason4 import ProprietaryReason4
 
 class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MnlyAccptd", "_Futr", "_Amt", "_Excld", "_Elgblty", "_Ccy", "_Tax", "_Csh", "_Pdg", "_Wait"]
+	__slots__ = ["_Amt", "_Ccy", "_Csh", "_Elgblty", "_Excld", "_Futr", "_MnlyAccptd", "_Pdg", "_Tax", "_Wait"]
 	@property
 	def Amt(self):
 		return self._Amt

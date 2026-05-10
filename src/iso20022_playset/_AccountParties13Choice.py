@@ -3,7 +3,7 @@ from ._InvestmentAccountOwnershipInformation17 import InvestmentAccountOwnership
 
 class AccountParties13Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Nmnee", "_JntOwnr", "_Trstee", "_PmryOwnr"]
+	__slots__ = ["_JntOwnr", "_Nmnee", "_PmryOwnr", "_Trstee"]
 	@property
 	def JntOwnr(self):
 		return self._JntOwnr

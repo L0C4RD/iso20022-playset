@@ -4,7 +4,7 @@ from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class PartyReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyOrErr", "_PtyId"]
+	__slots__ = ["_PtyId", "_PtyOrErr"]
 	@property
 	def PtyId(self):
 		return self._PtyId

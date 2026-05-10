@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._CountryCode import CountryCode
-from ._PostalAddress27 import PostalAddress27
+from ._ISODate import ISODate
 from ._Max350Text import Max350Text
 from ._OrganisationIdentification39 import OrganisationIdentification39
 from ._PartyIdentification274 import PartyIdentification274
+from ._PostalAddress27 import PostalAddress27
 
 class Organisation42(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgNm", "_TrsrMgr", "_MainMndtHldr", "_CtryOfOpr", "_OprlAdr", "_LglAdr", "_BllgAdr", "_RprtvOffcr", "_Sndr", "_LglRprtv", "_BizAdr", "_OrgId", "_FullLglNm", "_RegnDt"]
+	__slots__ = ["_BizAdr", "_BllgAdr", "_CtryOfOpr", "_FullLglNm", "_LglAdr", "_LglRprtv", "_MainMndtHldr", "_OprlAdr", "_OrgId", "_RegnDt", "_RprtvOffcr", "_Sndr", "_TradgNm", "_TrsrMgr"]
 	@property
 	def BizAdr(self):
 		return self._BizAdr

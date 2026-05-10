@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._MinimumExecutable1 import MinimumExecutable1
-from ._Max50Text import Max50Text
-from ._OrderStatus10Code import OrderStatus10Code
-from ._Side6Code import Side6Code
 from ._FinancialInstrumentQuantity25Choice import FinancialInstrumentQuantity25Choice
+from ._Max50Text import Max50Text
+from ._MinimumExecutable1 import MinimumExecutable1
+from ._OrderStatus10Code import OrderStatus10Code
 from ._OrderStatus11Code import OrderStatus11Code
+from ._Side6Code import Side6Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class OrderInstructionData2(base_types._BaseFieldType):
 
-	__slots__ = ["_BuySellInd", "_SlfExctnPrvntn", "_MinExctbl", "_RmngQty", "_PssvOnlyInd", "_MinAccptblQty", "_OrdrVldtySts", "_InitlQty", "_RtgStrtgy", "_OrdrSts", "_DispdQty"]
+	__slots__ = ["_BuySellInd", "_DispdQty", "_InitlQty", "_MinAccptblQty", "_MinExctbl", "_OrdrSts", "_OrdrVldtySts", "_PssvOnlyInd", "_RmngQty", "_RtgStrtgy", "_SlfExctnPrvntn"]
 	@property
 	def BuySellInd(self):
 		return self._BuySellInd

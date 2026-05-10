@@ -1,12 +1,12 @@
 from . import base_types
-from ._PaymentContext29 import PaymentContext29
-from ._SaleContext4 import SaleContext4
 from ._CreditTransferContext1 import CreditTransferContext1
 from ._DirectDebitContext1 import DirectDebitContext1
+from ._PaymentContext29 import PaymentContext29
+from ._SaleContext4 import SaleContext4
 
 class PaymentContext30(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtCntxt", "_DrctDbtCntxt", "_CdtTrfCntxt", "_SaleCntxt"]
+	__slots__ = ["_CdtTrfCntxt", "_DrctDbtCntxt", "_PmtCntxt", "_SaleCntxt"]
 	@property
 	def CdtTrfCntxt(self):
 		return self._CdtTrfCntxt

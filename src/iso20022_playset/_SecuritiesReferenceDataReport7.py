@@ -1,15 +1,15 @@
 from . import base_types
+from ._DebtInstrument2 import DebtInstrument2
+from ._DerivativeInstrument5 import DerivativeInstrument5
 from ._LEIIdentifier import LEIIdentifier
 from ._Max35Text import Max35Text
-from ._SecurityInstrumentDescription17 import SecurityInstrumentDescription17
-from ._DebtInstrument2 import DebtInstrument2
 from ._RecordTechnicalData4 import RecordTechnicalData4
+from ._SecurityInstrumentDescription17 import SecurityInstrumentDescription17
 from ._TradingVenueAttributes2 import TradingVenueAttributes2
-from ._DerivativeInstrument5 import DerivativeInstrument5
 
 class SecuritiesReferenceDataReport7(base_types._BaseFieldType):
 
-	__slots__ = ["_TechRcrdId", "_DerivInstrmAttrbts", "_TradgVnRltdAttrbts", "_TechAttrbts", "_DebtInstrmAttrbts", "_FinInstrmGnlAttrbts", "_Issr"]
+	__slots__ = ["_DebtInstrmAttrbts", "_DerivInstrmAttrbts", "_FinInstrmGnlAttrbts", "_Issr", "_TechAttrbts", "_TechRcrdId", "_TradgVnRltdAttrbts"]
 	@property
 	def DebtInstrmAttrbts(self):
 		return self._DebtInstrmAttrbts

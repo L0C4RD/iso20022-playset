@@ -1,6 +1,6 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._PartyIdentification178Choice import PartyIdentification178Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class CollateralOwnership3(base_types._BaseFieldType):
 

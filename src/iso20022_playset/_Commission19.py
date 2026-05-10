@@ -4,7 +4,7 @@ from ._Max350Text import Max350Text
 
 class Commission19(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Amt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

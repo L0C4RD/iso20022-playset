@@ -1,10 +1,10 @@
 from . import base_types
-from ._Parameter7 import Parameter7
 from ._Algorithm23Code import Algorithm23Code
+from ._Parameter7 import Parameter7
 
 class AlgorithmIdentification25(base_types._BaseFieldType):
 
-	__slots__ = ["_Param", "_Algo"]
+	__slots__ = ["_Algo", "_Param"]
 	@property
 	def Algo(self):
 		return self._Algo

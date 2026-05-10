@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._PointOfInteractionComponent17 import PointOfInteractionComponent17
 from ._RetailerService1Code import RetailerService1Code
-from ._Max35Text import Max35Text
 
 class EventContext7(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleId", "_SvcTp", "_CmpntId"]
+	__slots__ = ["_CmpntId", "_SaleId", "_SvcTp"]
 	@property
 	def CmpntId(self):
 		return self._CmpntId

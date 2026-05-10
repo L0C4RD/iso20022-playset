@@ -1,12 +1,12 @@
 from . import base_types
-from ._POIComponentType1Code import POIComponentType1Code
-from ._Max70Text import Max70Text
 from ._Max16Text import Max16Text
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._POIComponentType1Code import POIComponentType1Code
 
 class PointOfInteractionComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_SrlNb", "_VrsnNb", "_POICmpntTp", "_Mdl", "_ManfctrId", "_ApprvlNb"]
+	__slots__ = ["_ApprvlNb", "_ManfctrId", "_Mdl", "_POICmpntTp", "_SrlNb", "_VrsnNb"]
 	@property
 	def ApprvlNb(self):
 		return self._ApprvlNb

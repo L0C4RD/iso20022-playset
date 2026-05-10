@@ -1,12 +1,12 @@
 from . import base_types
-from ._FundReferenceDataReport5 import FundReferenceDataReport5
 from ._AdditionalReference10 import AdditionalReference10
-from ._MessageIdentification1 import MessageIdentification1
+from ._FundReferenceDataReport5 import FundReferenceDataReport5
 from ._Max35Text import Max35Text
+from ._MessageIdentification1 import MessageIdentification1
 
 class FundReferenceDataReportV07(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_RltdRef", "_Rpt", "_PrvsRef", "_FndRefDataRptId"]
+	__slots__ = ["_FndRefDataRptId", "_MsgId", "_PrvsRef", "_RltdRef", "_Rpt"]
 	@property
 	def FndRefDataRptId(self):
 		return self._FndRefDataRptId

@@ -1,14 +1,14 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
+from ._CashAccount40 import CashAccount40
 from ._DatePeriod5 import DatePeriod5
 from ._Max140Text import Max140Text
-from ._CashAccount40 import CashAccount40
+from ._PercentageRate import PercentageRate
 
 class AdjustmentCompensation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_CompstnAcct", "_InitlAmt", "_IntrstRate", "_AmtDue", "_CompstnAgt", "_DueChrgs", "_Rsn"]
+	__slots__ = ["_AmtDue", "_CompstnAcct", "_CompstnAgt", "_DueChrgs", "_InitlAmt", "_IntrstRate", "_Prd", "_Rsn"]
 	@property
 	def AmtDue(self):
 		return self._AmtDue

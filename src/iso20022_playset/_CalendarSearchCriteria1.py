@@ -1,7 +1,7 @@
 from . import base_types
 from ._ISOMonth import ISOMonth
-from ._SystemAndCurrency1 import SystemAndCurrency1
 from ._ISOYear import ISOYear
+from ._SystemAndCurrency1 import SystemAndCurrency1
 
 class CalendarSearchCriteria1(base_types._BaseFieldType):
 

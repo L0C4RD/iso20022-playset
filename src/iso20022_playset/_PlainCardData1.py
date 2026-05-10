@@ -2,13 +2,13 @@ from . import base_types
 from ._CardSecurityInformation1 import CardSecurityInformation1
 from ._Exact3NumericText import Exact3NumericText
 from ._ISOYearMonth import ISOYearMonth
+from ._Min2Max3NumericText import Min2Max3NumericText
 from ._Min8Max28NumericText import Min8Max28NumericText
 from ._TrackData1 import TrackData1
-from ._Min2Max3NumericText import Min2Max3NumericText
 
 class PlainCardData1(base_types._BaseFieldType):
 
-	__slots__ = ["_FctvDt", "_PAN", "_TrckData", "_CardSctyCd", "_SvcCd", "_XpryDt", "_CardSeqNb"]
+	__slots__ = ["_CardSctyCd", "_CardSeqNb", "_FctvDt", "_PAN", "_SvcCd", "_TrckData", "_XpryDt"]
 	@property
 	def CardSctyCd(self):
 		return self._CardSctyCd

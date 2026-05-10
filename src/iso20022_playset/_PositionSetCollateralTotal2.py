@@ -1,11 +1,11 @@
 from . import base_types
-from ._ReceivedMarginOrCollateral6 import ReceivedMarginOrCollateral6
-from ._PostedMarginOrCollateral6 import PostedMarginOrCollateral6
 from ._Max20PositiveNumber import Max20PositiveNumber
+from ._PostedMarginOrCollateral6 import PostedMarginOrCollateral6
+from ._ReceivedMarginOrCollateral6 import ReceivedMarginOrCollateral6
 
 class PositionSetCollateralTotal2(base_types._BaseFieldType):
 
-	__slots__ = ["_PstdMrgnOrColl", "_NbOfRpts", "_RcvdMrgnOrColl"]
+	__slots__ = ["_NbOfRpts", "_PstdMrgnOrColl", "_RcvdMrgnOrColl"]
 	@property
 	def NbOfRpts(self):
 		return self._NbOfRpts

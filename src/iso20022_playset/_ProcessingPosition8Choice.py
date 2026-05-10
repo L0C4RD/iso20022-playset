@@ -1,10 +1,10 @@
 from . import base_types
-from ._ProcessingPosition4Code import ProcessingPosition4Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._ProcessingPosition4Code import ProcessingPosition4Code
 
 class ProcessingPosition8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

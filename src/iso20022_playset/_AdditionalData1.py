@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class AdditionalData1(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_Tp"]
+	__slots__ = ["_Tp", "_Val"]
 	@property
 	def Tp(self):
 		return self._Tp

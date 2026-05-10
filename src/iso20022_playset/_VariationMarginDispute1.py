@@ -1,10 +1,10 @@
 from . import base_types
-from ._DisputeResolutionType2Choice import DisputeResolutionType2Choice
 from ._Dispute1 import Dispute1
+from ._DisputeResolutionType2Choice import DisputeResolutionType2Choice
 
 class VariationMarginDispute1(base_types._BaseFieldType):
 
-	__slots__ = ["_RsltnTpDtls", "_DsptDtls"]
+	__slots__ = ["_DsptDtls", "_RsltnTpDtls"]
 	@property
 	def DsptDtls(self):
 		return self._DsptDtls

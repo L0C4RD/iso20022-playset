@@ -1,12 +1,12 @@
 from . import base_types
-from ._UserInterface4Code import UserInterface4Code
 from ._LanguageCode import LanguageCode
 from ._Number import Number
 from ._OutputFormat1Code import OutputFormat1Code
+from ._UserInterface4Code import UserInterface4Code
 
 class DisplayCapabilities4(base_types._BaseFieldType):
 
-	__slots__ = ["_AvlblFrmt", "_LineWidth", "_NbOfLines", "_Dstn", "_AvlblLang"]
+	__slots__ = ["_AvlblFrmt", "_AvlblLang", "_Dstn", "_LineWidth", "_NbOfLines"]
 	@property
 	def AvlblFrmt(self):
 		return self._AvlblFrmt

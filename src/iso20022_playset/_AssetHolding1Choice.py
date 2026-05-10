@@ -1,12 +1,12 @@
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Commodity2 import Commodity2
 from ._Guarantee1 import Guarantee1
 from ._SecurityIdentificationAndAmount1 import SecurityIdentificationAndAmount1
-from ._Commodity2 import Commodity2
 
 class AssetHolding1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Grnt", "_Cmmdty", "_Trpty", "_Gold", "_Scty", "_Csh"]
+	__slots__ = ["_Cmmdty", "_Csh", "_Gold", "_Grnt", "_Scty", "_Trpty"]
 	@property
 	def Cmmdty(self):
 		return self._Cmmdty

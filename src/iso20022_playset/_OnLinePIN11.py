@@ -1,11 +1,11 @@
 from . import base_types
-from ._PINFormat3Code import PINFormat3Code
 from ._ContentInformationType40 import ContentInformationType40
 from ._Max35Text import Max35Text
+from ._PINFormat3Code import PINFormat3Code
 
 class OnLinePIN11(base_types._BaseFieldType):
 
-	__slots__ = ["_PINFrmt", "_AddtlInpt", "_NcrptdPINBlck"]
+	__slots__ = ["_AddtlInpt", "_NcrptdPINBlck", "_PINFrmt"]
 	@property
 	def AddtlInpt(self):
 		return self._AddtlInpt

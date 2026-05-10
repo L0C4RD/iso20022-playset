@@ -3,7 +3,7 @@ from ._BaseOneRate import BaseOneRate
 
 class ValuationFactorBreakdown1(base_types._BaseFieldType):
 
-	__slots__ = ["_InfltnFctr", "_PoolFctr", "_ValtnFctr", "_Hrcut"]
+	__slots__ = ["_Hrcut", "_InfltnFctr", "_PoolFctr", "_ValtnFctr"]
 	@property
 	def Hrcut(self):
 		return self._Hrcut

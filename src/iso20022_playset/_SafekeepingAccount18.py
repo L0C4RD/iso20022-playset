@@ -1,13 +1,13 @@
 from . import base_types
 from ._HoldingBalance15 import HoldingBalance15
-from ._PartyIdentification231Choice import PartyIdentification231Choice
-from ._Max35Text import Max35Text
-from ._PartyIdentification246Choice import PartyIdentification246Choice
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification231Choice import PartyIdentification231Choice
+from ._PartyIdentification246Choice import PartyIdentification246Choice
 
 class SafekeepingAccount18(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_SubAcctId", "_InstdBal", "_RghtsHldr", "_BlckChainAdrOrWllt", "_AcctId"]
+	__slots__ = ["_AcctId", "_AcctOwnr", "_BlckChainAdrOrWllt", "_InstdBal", "_RghtsHldr", "_SubAcctId"]
 	@property
 	def AcctId(self):
 		return self._AcctId

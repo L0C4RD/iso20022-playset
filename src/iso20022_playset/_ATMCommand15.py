@@ -1,13 +1,13 @@
 from . import base_types
-from ._ATMCommandIdentification1 import ATMCommandIdentification1
 from ._ATMCommand7Code import ATMCommand7Code
-from ._TerminalManagementActionResult2Code import TerminalManagementActionResult2Code
+from ._ATMCommandIdentification1 import ATMCommandIdentification1
 from ._ISODateTime import ISODateTime
 from ._Max140Text import Max140Text
+from ._TerminalManagementActionResult2Code import TerminalManagementActionResult2Code
 
 class ATMCommand15(base_types._BaseFieldType):
 
-	__slots__ = ["_Rslt", "_CmdId", "_AddtlErrInf", "_ReqrdDtTm", "_PrcdDtTm", "_Tp"]
+	__slots__ = ["_AddtlErrInf", "_CmdId", "_PrcdDtTm", "_ReqrdDtTm", "_Rslt", "_Tp"]
 	@property
 	def AddtlErrInf(self):
 		return self._AddtlErrInf

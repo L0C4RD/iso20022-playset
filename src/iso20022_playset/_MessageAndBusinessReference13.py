@@ -1,17 +1,17 @@
 from . import base_types
-from ._AdditionalInformation25 import AdditionalInformation25
-from ._Intermediary48 import Intermediary48
-from ._PartyIdentification139 import PartyIdentification139
-from ._AdditionalReference10 import AdditionalReference10
 from ._Account33 import Account33
-from ._TypeOfRequest1Choice import TypeOfRequest1Choice
-from ._References68Choice import References68Choice
+from ._AdditionalInformation25 import AdditionalInformation25
+from ._AdditionalReference10 import AdditionalReference10
 from ._FinancialInstrument63Choice import FinancialInstrument63Choice
+from ._Intermediary48 import Intermediary48
 from ._Max35Text import Max35Text
+from ._PartyIdentification139 import PartyIdentification139
+from ._References68Choice import References68Choice
+from ._TypeOfRequest1Choice import TypeOfRequest1Choice
 
 class MessageAndBusinessReference13(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_Instrm", "_QryInf", "_TrfRef", "_IntrmyInf", "_ReqIssr", "_ReqRcpt", "_MstrRef", "_InvstmtAcctDtls", "_CxlRef", "_TpOfReq", "_ClntRef"]
+	__slots__ = ["_ClntRef", "_CxlRef", "_Instrm", "_IntrmyInf", "_InvstmtAcctDtls", "_MstrRef", "_QryInf", "_Ref", "_ReqIssr", "_ReqRcpt", "_TpOfReq", "_TrfRef"]
 	@property
 	def ClntRef(self):
 		return self._ClntRef

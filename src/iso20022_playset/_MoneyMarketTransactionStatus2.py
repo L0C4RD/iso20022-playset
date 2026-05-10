@@ -1,13 +1,13 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._SupplementaryData1 import SupplementaryData1
 from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
-from ._StatisticalReportingStatus2Code import StatisticalReportingStatus2Code
+from ._LEIIdentifier import LEIIdentifier
 from ._Max105Text import Max105Text
+from ._StatisticalReportingStatus2Code import StatisticalReportingStatus2Code
+from ._SupplementaryData1 import SupplementaryData1
 
 class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_VldtnRule", "_BrnchId", "_Sts", "_SplmtryData", "_UnqTxIdr", "_PrtryTxId"]
+	__slots__ = ["_BrnchId", "_PrtryTxId", "_SplmtryData", "_Sts", "_UnqTxIdr", "_VldtnRule"]
 	@property
 	def BrnchId(self):
 		return self._BrnchId

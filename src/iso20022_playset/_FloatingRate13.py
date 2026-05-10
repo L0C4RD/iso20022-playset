@@ -1,16 +1,16 @@
 from . import base_types
-from ._InterestComputationMethodFormat7 import InterestComputationMethodFormat7
-from ._InterestRateFrequency3Choice import InterestRateFrequency3Choice
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._ResetDateAndValue1 import ResetDateAndValue1
 from ._FloatingRateIdentification8Choice import FloatingRateIdentification8Choice
-from ._Max350Text import Max350Text
-from ._SecuritiesTransactionPrice20Choice import SecuritiesTransactionPrice20Choice
+from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._InterestComputationMethodFormat7 import InterestComputationMethodFormat7
 from ._InterestRateContractTerm4 import InterestRateContractTerm4
+from ._InterestRateFrequency3Choice import InterestRateFrequency3Choice
+from ._Max350Text import Max350Text
+from ._ResetDateAndValue1 import ResetDateAndValue1
+from ._SecuritiesTransactionPrice20Choice import SecuritiesTransactionPrice20Choice
 
 class FloatingRate13(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtFrqcy", "_NxtFltgRst", "_DayCnt", "_RefPrd", "_Nm", "_Rate", "_LastFltgRst", "_RstFrqcy", "_Id", "_Sprd"]
+	__slots__ = ["_DayCnt", "_Id", "_LastFltgRst", "_Nm", "_NxtFltgRst", "_PmtFrqcy", "_Rate", "_RefPrd", "_RstFrqcy", "_Sprd"]
 	@property
 	def DayCnt(self):
 		return self._DayCnt

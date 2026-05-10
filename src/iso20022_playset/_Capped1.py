@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._ISODate import ISODate
 
 class Capped1(base_types._BaseFieldType):
 
-	__slots__ = ["_IncmLmtNxtPrd", "_IncmLmtCurPrd", "_IncmCurPrd", "_AddtlInf", "_StartDt"]
+	__slots__ = ["_AddtlInf", "_IncmCurPrd", "_IncmLmtCurPrd", "_IncmLmtNxtPrd", "_StartDt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

@@ -1,6 +1,6 @@
 from . import base_types
-from ._DocumentToSend4 import DocumentToSend4
 from ._DataModification1Code import DataModification1Code
+from ._DocumentToSend4 import DocumentToSend4
 
 class ModificationScope44(base_types._BaseFieldType):
 

@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class AcknowledgementDetails1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PayInSchdlRef", "_PayInCallRef"]
+	__slots__ = ["_PayInCallRef", "_PayInSchdlRef"]
 	@property
 	def PayInCallRef(self):
 		return self._PayInCallRef

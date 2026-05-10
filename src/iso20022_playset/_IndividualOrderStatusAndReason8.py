@@ -1,13 +1,13 @@
 from . import base_types
 from ._CancellationStatus22Choice import CancellationStatus22Choice
-from ._PartyIdentification113 import PartyIdentification113
-from ._Max35Text import Max35Text
-from ._InvestmentAccount58 import InvestmentAccount58
 from ._FinancialInstrument57 import FinancialInstrument57
+from ._InvestmentAccount58 import InvestmentAccount58
+from ._Max35Text import Max35Text
+from ._PartyIdentification113 import PartyIdentification113
 
 class IndividualOrderStatusAndReason8(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlSts", "_ClntRef", "_InvstmtAcctDtls", "_MstrRef", "_CxlRef", "_OrdrRef", "_StsInitr", "_FinInstrmDtls"]
+	__slots__ = ["_ClntRef", "_CxlRef", "_CxlSts", "_FinInstrmDtls", "_InvstmtAcctDtls", "_MstrRef", "_OrdrRef", "_StsInitr"]
 	@property
 	def ClntRef(self):
 		return self._ClntRef

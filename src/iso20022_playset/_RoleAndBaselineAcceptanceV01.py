@@ -4,7 +4,7 @@ from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 
 class RoleAndBaselineAcceptanceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AccptncId", "_TxId", "_RltdMsgRef"]
+	__slots__ = ["_AccptncId", "_RltdMsgRef", "_TxId"]
 	@property
 	def AccptncId(self):
 		return self._AccptncId

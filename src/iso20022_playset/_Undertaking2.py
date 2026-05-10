@@ -1,16 +1,16 @@
 from . import base_types
-from ._PartyIdentification43 import PartyIdentification43
 from ._ExpiryDetails2 import ExpiryDetails2
-from ._YesNoIndicator import YesNoIndicator
-from ._UndertakingName1Code import UndertakingName1Code
 from ._ExternalTypeOfParty1Code import ExternalTypeOfParty1Code
-from ._UndertakingAmount1 import UndertakingAmount1
-from ._Max2000Text import Max2000Text
 from ._GovernanceRules1 import GovernanceRules1
+from ._Max2000Text import Max2000Text
+from ._PartyIdentification43 import PartyIdentification43
+from ._UndertakingAmount1 import UndertakingAmount1
+from ._UndertakingName1Code import UndertakingName1Code
+from ._YesNoIndicator import YesNoIndicator
 
 class Undertaking2(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Bnfcry", "_GovncRulesAndLaw", "_StdClmDocInd", "_CntrUdrtkgAmt", "_ConfChrgsPyblBy", "_XpryDtls", "_Nm"]
+	__slots__ = ["_AddtlInf", "_Bnfcry", "_CntrUdrtkgAmt", "_ConfChrgsPyblBy", "_GovncRulesAndLaw", "_Nm", "_StdClmDocInd", "_XpryDtls"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

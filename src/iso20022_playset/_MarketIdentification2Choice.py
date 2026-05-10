@@ -1,10 +1,10 @@
 from . import base_types
-from ._RestrictedFINXMax30Text import RestrictedFINXMax30Text
 from ._MICIdentifier import MICIdentifier
+from ._RestrictedFINXMax30Text import RestrictedFINXMax30Text
 
 class MarketIdentification2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MktIdrCd", "_Desc"]
+	__slots__ = ["_Desc", "_MktIdrCd"]
 	@property
 	def Desc(self):
 		return self._Desc

@@ -1,11 +1,11 @@
 from . import base_types
 from ._CreditTransferTransaction66 import CreditTransferTransaction66
-from ._SupplementaryData1 import SupplementaryData1
 from ._GroupHeader119 import GroupHeader119
+from ._SupplementaryData1 import SupplementaryData1
 
 class FinancialInstitutionDirectDebitV06(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_CdtInstr"]
+	__slots__ = ["_CdtInstr", "_GrpHdr", "_SplmtryData"]
 	@property
 	def CdtInstr(self):
 		return self._CdtInstr

@@ -4,7 +4,7 @@ from ._Registration10Choice import Registration10Choice
 
 class RegistrationReason5(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Cd"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

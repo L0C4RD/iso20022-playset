@@ -1,18 +1,18 @@
 from . import base_types
-from ._InsuranceDataSet1 import InsuranceDataSet1
 from ._BICIdentification1 import BICIdentification1
-from ._OtherCertificateDataSet2 import OtherCertificateDataSet2
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._DataSetSubmissionReferences4 import DataSetSubmissionReferences4
-from ._TransportDataSet5 import TransportDataSet5
-from ._PendingActivity2 import PendingActivity2
-from ._MessageIdentification1 import MessageIdentification1
-from ._CommercialDataSet5 import CommercialDataSet5
 from ._CertificateDataSet2 import CertificateDataSet2
+from ._CommercialDataSet5 import CommercialDataSet5
+from ._DataSetSubmissionReferences4 import DataSetSubmissionReferences4
+from ._InsuranceDataSet1 import InsuranceDataSet1
+from ._MessageIdentification1 import MessageIdentification1
+from ._OtherCertificateDataSet2 import OtherCertificateDataSet2
+from ._PendingActivity2 import PendingActivity2
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._TransportDataSet5 import TransportDataSet5
 
 class ForwardDataSetSubmissionReportV05(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrBk", "_ComrclDataSet", "_OthrCertDataSet", "_TrnsprtDataSet", "_Submitr", "_CertDataSet", "_RptId", "_ReqForActn", "_InsrncDataSet", "_SellrBk", "_CmonSubmissnRef", "_RltdTxRefs"]
+	__slots__ = ["_BuyrBk", "_CertDataSet", "_CmonSubmissnRef", "_ComrclDataSet", "_InsrncDataSet", "_OthrCertDataSet", "_ReqForActn", "_RltdTxRefs", "_RptId", "_SellrBk", "_Submitr", "_TrnsprtDataSet"]
 	@property
 	def BuyrBk(self):
 		return self._BuyrBk

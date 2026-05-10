@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._DocumentType4Code import DocumentType4Code
-from ._Max35Text import Max35Text
+from ._ISODate import ISODate
 from ._Max140Text import Max140Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
 
 class DocumentGeneralInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_SndrRcvrSeqId", "_URL", "_IsseDt", "_DocTp", "_DocNb"]
+	__slots__ = ["_DocNb", "_DocTp", "_IsseDt", "_SndrRcvrSeqId", "_URL"]
 	@property
 	def DocNb(self):
 		return self._DocNb

@@ -5,7 +5,7 @@ from ._SettlementStatus16Choice import SettlementStatus16Choice
 
 class IntraBalanceStatusAndReason2(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgSts", "_SttlmSts", "_Sttld"]
+	__slots__ = ["_PrcgSts", "_Sttld", "_SttlmSts"]
 	@property
 	def PrcgSts(self):
 		return self._PrcgSts

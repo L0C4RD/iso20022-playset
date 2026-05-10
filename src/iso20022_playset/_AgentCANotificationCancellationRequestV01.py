@@ -1,12 +1,12 @@
 from . import base_types
-from ._NotificationCancellation1 import NotificationCancellation1
+from ._CorporateActionInformation2 import CorporateActionInformation2
 from ._CorporateActionNotificationAdvice1 import CorporateActionNotificationAdvice1
 from ._DocumentIdentification8 import DocumentIdentification8
-from ._CorporateActionInformation2 import CorporateActionInformation2
+from ._NotificationCancellation1 import NotificationCancellation1
 
 class AgentCANotificationCancellationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnNtfctnDtls", "_Id", "_NtfctnCxlTpAndLkg", "_CorpActnGnlInf"]
+	__slots__ = ["_CorpActnGnlInf", "_CorpActnNtfctnDtls", "_Id", "_NtfctnCxlTpAndLkg"]
 	@property
 	def CorpActnGnlInf(self):
 		return self._CorpActnGnlInf

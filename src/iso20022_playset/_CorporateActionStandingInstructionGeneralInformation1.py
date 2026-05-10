@@ -1,14 +1,14 @@
 from . import base_types
-from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._IncludedAccount1 import IncludedAccount1
-from ._StandingInstructionType1Code import StandingInstructionType1Code
-from ._Max35Text import Max35Text
-from ._FinancialInstrumentDescription3 import FinancialInstrumentDescription3
 from ._CorporateActionEventType2FormatChoice import CorporateActionEventType2FormatChoice
+from ._FinancialInstrumentDescription3 import FinancialInstrumentDescription3
+from ._IncludedAccount1 import IncludedAccount1
+from ._Max35Text import Max35Text
+from ._PartyIdentification2Choice import PartyIdentification2Choice
+from ._StandingInstructionType1Code import StandingInstructionType1Code
 
 class CorporateActionStandingInstructionGeneralInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_EvtTp", "_UndrlygScty", "_InstgPtyId", "_StgInstrTp", "_ClntStgInstrId"]
+	__slots__ = ["_AcctDtls", "_ClntStgInstrId", "_EvtTp", "_InstgPtyId", "_StgInstrTp", "_UndrlygScty"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

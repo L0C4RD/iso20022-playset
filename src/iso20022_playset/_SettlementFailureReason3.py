@@ -4,7 +4,7 @@ from ._SettlementFailureReason2 import SettlementFailureReason2
 
 class SettlementFailureReason3(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_AvrgDrtn"]
+	__slots__ = ["_AvrgDrtn", "_Desc"]
 	@property
 	def AvrgDrtn(self):
 		return self._AvrgDrtn

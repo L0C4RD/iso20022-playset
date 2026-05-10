@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
+from ._AddressModification3 import AddressModification3
 from ._CountryCode import CountryCode
 from ._FullLegalNameModification1 import FullLegalNameModification1
-from ._TradingNameModification1 import TradingNameModification1
-from ._AddressModification3 import AddressModification3
-from ._PartyModification3 import PartyModification3
+from ._ISODate import ISODate
 from ._OrganisationIdentification39 import OrganisationIdentification39
+from ._PartyModification3 import PartyModification3
+from ._TradingNameModification1 import TradingNameModification1
 
 class OrganisationModification3(base_types._BaseFieldType):
 
-	__slots__ = ["_TrsrMgr", "_BllgAdr", "_LglRprtv", "_FullLglNm", "_BizAdr", "_LglAdr", "_CtryOfOpr", "_MainMndtHldr", "_TradgNm", "_OrgId", "_RprtvOffcr", "_Sndr", "_OprlAdr", "_RegnDt"]
+	__slots__ = ["_BizAdr", "_BllgAdr", "_CtryOfOpr", "_FullLglNm", "_LglAdr", "_LglRprtv", "_MainMndtHldr", "_OprlAdr", "_OrgId", "_RegnDt", "_RprtvOffcr", "_Sndr", "_TradgNm", "_TrsrMgr"]
 	@property
 	def BizAdr(self):
 		return self._BizAdr

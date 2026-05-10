@@ -1,11 +1,11 @@
 from . import base_types
-from ._OrganisationIdentificationSchemeName1Choice import OrganisationIdentificationSchemeName1Choice
-from ._Max35Text import Max35Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._OrganisationIdentificationSchemeName1Choice import OrganisationIdentificationSchemeName1Choice
 
 class GenericOrganisationIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_SchmeNm", "_Issr", "_Id"]
+	__slots__ = ["_Id", "_Issr", "_SchmeNm"]
 	@property
 	def Id(self):
 		return self._Id

@@ -1,11 +1,11 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._DateTimePeriod2 import DateTimePeriod2
+from ._PercentageRate import PercentageRate
 from ._YesNoIndicator import YesNoIndicator
 
 class MarketMakerProfile2(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxSprd", "_Dscnt", "_Cmplc", "_CtrctPrd"]
+	__slots__ = ["_Cmplc", "_CtrctPrd", "_Dscnt", "_MaxSprd"]
 	@property
 	def Cmplc(self):
 		return self._Cmplc

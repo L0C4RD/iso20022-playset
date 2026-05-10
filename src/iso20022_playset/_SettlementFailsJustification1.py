@@ -1,10 +1,10 @@
 from . import base_types
-from ._SettlementDataRate1Choice import SettlementDataRate1Choice
 from ._Max20PositiveDecimalNumber import Max20PositiveDecimalNumber
+from ._SettlementDataRate1Choice import SettlementDataRate1Choice
 
 class SettlementFailsJustification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_Rate"]
+	__slots__ = ["_Rate", "_Val"]
 	@property
 	def Rate(self):
 		return self._Rate

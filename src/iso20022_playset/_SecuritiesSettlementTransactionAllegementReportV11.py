@@ -1,14 +1,14 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 from ._Pagination1 import Pagination1
 from ._PartyIdentification144 import PartyIdentification144
-from ._Statement63 import Statement63
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._SecuritiesTradeDetails141 import SecuritiesTradeDetails141
+from ._Statement63 import Statement63
 
 class SecuritiesSettlementTransactionAllegementReportV11(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_StmtGnlDtls", "_AllgmtDtls", "_SfkpgAcct", "_AcctOwnr", "_Pgntn"]
+	__slots__ = ["_AcctOwnr", "_AllgmtDtls", "_BlckChainAdrOrWllt", "_Pgntn", "_SfkpgAcct", "_StmtGnlDtls"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

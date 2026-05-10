@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._PercentageRate import PercentageRate
-from ._Max35Text import Max35Text
+from ._AddendumTaxType3Code import AddendumTaxType3Code
 from ._CreditDebit3Code import CreditDebit3Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._AddendumTaxType3Code import AddendumTaxType3Code
+from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Tax41(base_types._BaseFieldType):
 
-	__slots__ = ["_XmptRsn", "_Amt", "_Xmptn", "_Tp", "_CdtDbt", "_OthrTp", "_Desc", "_Rate", "_InclInTtl"]
+	__slots__ = ["_Amt", "_CdtDbt", "_Desc", "_InclInTtl", "_OthrTp", "_Rate", "_Tp", "_XmptRsn", "_Xmptn"]
 	@property
 	def Amt(self):
 		return self._Amt

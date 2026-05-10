@@ -1,13 +1,13 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._ChargeType5Choice import ChargeType5Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._Max35Text import Max35Text
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ChargeType5Choice import ChargeType5Choice
+from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
+from ._YesNoIndicator import YesNoIndicator
 
 class Fee3(base_types._BaseFieldType):
 
-	__slots__ = ["_RprdReqdRate", "_RprdStdAmt", "_RprdStdRate", "_RprdDscntAmt", "_RprdDscntRate", "_RprdReqdAmt", "_Tp", "_NewComrclAgrmtRefInd", "_ComrclAgrmtRef"]
+	__slots__ = ["_ComrclAgrmtRef", "_NewComrclAgrmtRefInd", "_RprdDscntAmt", "_RprdDscntRate", "_RprdReqdAmt", "_RprdReqdRate", "_RprdStdAmt", "_RprdStdRate", "_Tp"]
 	@property
 	def ComrclAgrmtRef(self):
 		return self._ComrclAgrmtRef

@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ISODate import ISODate
 
 class AmountsAndValueDate4(base_types._BaseFieldType):
 
-	__slots__ = ["_PutAmt", "_OptnSttlmCcy", "_CallAmt", "_FnlSttlmDt"]
+	__slots__ = ["_CallAmt", "_FnlSttlmDt", "_OptnSttlmCcy", "_PutAmt"]
 	@property
 	def CallAmt(self):
 		return self._CallAmt

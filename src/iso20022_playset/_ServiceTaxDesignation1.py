@@ -1,11 +1,11 @@
 from . import base_types
-from ._TaxReason1 import TaxReason1
-from ._ServiceTaxDesignation1Code import ServiceTaxDesignation1Code
 from ._Max35Text import Max35Text
+from ._ServiceTaxDesignation1Code import ServiceTaxDesignation1Code
+from ._TaxReason1 import TaxReason1
 
 class ServiceTaxDesignation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rgn", "_Cd", "_TaxRsn"]
+	__slots__ = ["_Cd", "_Rgn", "_TaxRsn"]
 	@property
 	def Cd(self):
 		return self._Cd

@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartialSettlement2Code import PartialSettlement2Code
 from ._Max35Text import Max35Text
+from ._PartialSettlement2Code import PartialSettlement2Code
 
 class AdditionalParameters33(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnEvtId", "_PrtlSttlm", "_PrcrTxId", "_MktInfrstrctrTxId", "_CtrPtyMktInfrstrctrTxId", "_PrvsPrtlConfId", "_AcctSvcrTxId", "_AcctOwnrTxId", "_PoolId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_CorpActnEvtId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_PoolId", "_PrcrTxId", "_PrtlSttlm", "_PrvsPrtlConfId"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

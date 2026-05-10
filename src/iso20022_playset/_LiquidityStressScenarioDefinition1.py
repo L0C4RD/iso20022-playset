@@ -6,7 +6,7 @@ from ._Max35Text import Max35Text
 
 class LiquidityStressScenarioDefinition1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Tp", "_Desc", "_StrssCcy"]
+	__slots__ = ["_Desc", "_Id", "_StrssCcy", "_Tp"]
 	@property
 	def Desc(self):
 		return self._Desc

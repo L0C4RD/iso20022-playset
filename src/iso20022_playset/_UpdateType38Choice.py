@@ -5,7 +5,7 @@ from ._SecuritiesSettlementTransactionDetails55 import SecuritiesSettlementTrans
 
 class UpdateType38Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Mod", "_Deltn", "_Addtn"]
+	__slots__ = ["_Addtn", "_Deltn", "_Mod"]
 	@property
 	def Addtn(self):
 		return self._Addtn

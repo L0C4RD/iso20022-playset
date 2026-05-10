@@ -4,7 +4,7 @@ from ._FixedOrRecurrentDate1Choice import FixedOrRecurrentDate1Choice
 
 class Trigger1(base_types._BaseFieldType):
 
-	__slots__ = ["_DtChc", "_DcmntryEvt"]
+	__slots__ = ["_DcmntryEvt", "_DtChc"]
 	@property
 	def DcmntryEvt(self):
 		return self._DcmntryEvt

@@ -4,7 +4,7 @@ from ._ExchangeRateInformation1 import ExchangeRateInformation1
 
 class CurrencyReference3(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgRateInf", "_SrcCcy", "_TrgtCcy"]
+	__slots__ = ["_SrcCcy", "_TrgtCcy", "_XchgRateInf"]
 	@property
 	def SrcCcy(self):
 		return self._SrcCcy

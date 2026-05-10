@@ -3,7 +3,7 @@ from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class References75Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcrTxId", "_PoolId", "_MktInfrstrctrTxId", "_AcctSvcrTxId", "_AcctOwnrTxId", "_CtrPtyMktInfrstrctrTxId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_PoolId", "_PrcrTxId"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

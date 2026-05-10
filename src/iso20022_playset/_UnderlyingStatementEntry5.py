@@ -1,14 +1,14 @@
 from . import base_types
-from ._UUIDv4Identifier import UUIDv4Identifier
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._OriginalGroupInformation29 import OriginalGroupInformation29
-from ._Max35Text import Max35Text
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._CashAccount40 import CashAccount40
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Max35Text import Max35Text
+from ._OriginalGroupInformation29 import OriginalGroupInformation29
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class UnderlyingStatementEntry5(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlNtryRef", "_OrgnlAcct", "_OrgnlNtryValDt", "_OrgnlStmtId", "_OrgnlNtryAmt", "_OrgnlUETR", "_OrgnlGrpInf"]
+	__slots__ = ["_OrgnlAcct", "_OrgnlGrpInf", "_OrgnlNtryAmt", "_OrgnlNtryRef", "_OrgnlNtryValDt", "_OrgnlStmtId", "_OrgnlUETR"]
 	@property
 	def OrgnlAcct(self):
 		return self._OrgnlAcct

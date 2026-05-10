@@ -1,10 +1,10 @@
 from . import base_types
-from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
 from ._ActiveOrHistoricCurrencyAnd19DecimalAmount import ActiveOrHistoricCurrencyAnd19DecimalAmount
+from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
 
 class NotionalAmount7(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtInFct", "_WghtdAvrgDlta", "_Amt"]
+	__slots__ = ["_Amt", "_AmtInFct", "_WghtdAvrgDlta"]
 	@property
 	def Amt(self):
 		return self._Amt

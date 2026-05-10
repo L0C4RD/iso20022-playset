@@ -1,12 +1,12 @@
 from . import base_types
-from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._AccountIdentification1 import AccountIdentification1
-from ._Max35Text import Max35Text
 from ._Intermediary27 import Intermediary27
+from ._Max35Text import Max35Text
+from ._PartyIdentification2Choice import PartyIdentification2Choice
 
 class InvestmentAccount43(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_IntrmyInf", "_Nm", "_AcctSvcr", "_Dsgnt"]
+	__slots__ = ["_AcctSvcr", "_Dsgnt", "_Id", "_IntrmyInf", "_Nm"]
 	@property
 	def AcctSvcr(self):
 		return self._AcctSvcr

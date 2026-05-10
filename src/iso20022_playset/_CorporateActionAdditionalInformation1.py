@@ -1,14 +1,14 @@
 from . import base_types
-from ._ProceedsDelivery1 import ProceedsDelivery1
 from ._BeneficialOwner1 import BeneficialOwner1
-from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._Max350Text import Max350Text
 from ._BeneficiaryCertificationType1FormatChoice import BeneficiaryCertificationType1FormatChoice
+from ._Max350Text import Max350Text
+from ._PartyIdentification2Choice import PartyIdentification2Choice
+from ._ProceedsDelivery1 import ProceedsDelivery1
+from ._YesNoIndicator import YesNoIndicator
 
 class CorporateActionAdditionalInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInstr", "_CertfctnTp", "_RegnDtls", "_DlvryDtls", "_CertfctnInd", "_BnfclOwnrDtls", "_RcvrId"]
+	__slots__ = ["_AddtlInstr", "_BnfclOwnrDtls", "_CertfctnInd", "_CertfctnTp", "_DlvryDtls", "_RcvrId", "_RegnDtls"]
 	@property
 	def AddtlInstr(self):
 		return self._AddtlInstr

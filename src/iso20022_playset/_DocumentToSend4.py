@@ -1,11 +1,11 @@
 from . import base_types
-from ._PartyIdentification125Choice import PartyIdentification125Choice
-from ._Max140Text import Max140Text
 from ._CommunicationMethod3Choice import CommunicationMethod3Choice
+from ._Max140Text import Max140Text
+from ._PartyIdentification125Choice import PartyIdentification125Choice
 
 class DocumentToSend4(base_types._BaseFieldType):
 
-	__slots__ = ["_Rcpt", "_MtdOfTrnsmssn", "_Tp"]
+	__slots__ = ["_MtdOfTrnsmssn", "_Rcpt", "_Tp"]
 	@property
 	def MtdOfTrnsmssn(self):
 		return self._MtdOfTrnsmssn

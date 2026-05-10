@@ -1,6 +1,6 @@
 from . import base_types
-from ._DeviceResponse8 import DeviceResponse8
 from ._ContentInformationType38 import ContentInformationType38
+from ._DeviceResponse8 import DeviceResponse8
 from ._Header41 import Header41
 
 class SaleToPOIDeviceResponseV07(base_types._BaseFieldType):

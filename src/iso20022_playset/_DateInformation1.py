@@ -1,11 +1,11 @@
 from . import base_types
+from ._ExternalDateFrequency1Code import ExternalDateFrequency1Code
 from ._ISODate import ISODate
 from ._Number import Number
-from ._ExternalDateFrequency1Code import ExternalDateFrequency1Code
 
 class DateInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Nb", "_StartDt", "_Frqcy"]
+	__slots__ = ["_Frqcy", "_Nb", "_StartDt"]
 	@property
 	def Frqcy(self):
 		return self._Frqcy

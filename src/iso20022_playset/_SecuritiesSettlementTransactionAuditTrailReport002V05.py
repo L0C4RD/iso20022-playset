@@ -1,15 +1,15 @@
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._TransactionIdentifications34 import TransactionIdentifications34
-from ._PartyIdentification156 import PartyIdentification156
-from ._SecuritiesAccount37 import SecuritiesAccount37
-from ._Pagination1 import Pagination1
-from ._StatusTrail11 import StatusTrail11
 from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
+from ._Pagination1 import Pagination1
+from ._PartyIdentification156 import PartyIdentification156
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._SecuritiesAccount37 import SecuritiesAccount37
+from ._StatusTrail11 import StatusTrail11
+from ._TransactionIdentifications34 import TransactionIdentifications34
 
 class SecuritiesSettlementTransactionAuditTrailReport002V05(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_StsTrl", "_QryRef", "_TxId", "_SfkpgAcct", "_AcctOwnr", "_Pgntn"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_Pgntn", "_QryRef", "_SfkpgAcct", "_StsTrl", "_TxId"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

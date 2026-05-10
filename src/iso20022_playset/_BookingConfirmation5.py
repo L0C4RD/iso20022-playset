@@ -1,16 +1,16 @@
 from . import base_types
-from ._Charges6 import Charges6
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._BaseOneRate import BaseOneRate
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._CashAccount40 import CashAccount40
+from ._Charges6 import Charges6
 from ._CreditDebitCode import CreditDebitCode
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._Max140Text import Max140Text
 from ._TransactionReferences6 import TransactionReferences6
-from ._CashAccount40 import CashAccount40
 
 class BookingConfirmation5(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_CdtDbtInd", "_BookgDt", "_Chrgs", "_Acct", "_Amt", "_Rsn", "_XchgRate", "_Refs"]
+	__slots__ = ["_Acct", "_Amt", "_BookgDt", "_CdtDbtInd", "_Chrgs", "_Refs", "_Rsn", "_ValDt", "_XchgRate"]
 	@property
 	def Acct(self):
 		return self._Acct

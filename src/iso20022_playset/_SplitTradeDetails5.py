@@ -1,11 +1,11 @@
 from . import base_types
-from ._AmountsAndValueDate8 import AmountsAndValueDate8
 from ._AgreedRate3 import AgreedRate3
+from ._AmountsAndValueDate8 import AmountsAndValueDate8
 from ._TradeData16 import TradeData16
 
 class SplitTradeDetails5(base_types._BaseFieldType):
 
-	__slots__ = ["_StsDtls", "_TradAmts", "_AgrdRate"]
+	__slots__ = ["_AgrdRate", "_StsDtls", "_TradAmts"]
 	@property
 	def AgrdRate(self):
 		return self._AgrdRate

@@ -1,10 +1,10 @@
 from . import base_types
-from ._InvestorRestrictionType1Code import InvestorRestrictionType1Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._InvestorRestrictionType1Code import InvestorRestrictionType1Code
 
 class InvestorRestrictionType3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

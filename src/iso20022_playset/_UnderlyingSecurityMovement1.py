@@ -1,11 +1,11 @@
 from . import base_types
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 from ._SecuritiesAccount8 import SecuritiesAccount8
 from ._SecurityIdentification7 import SecurityIdentification7
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 
 class UnderlyingSecurityMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyId", "_AcctDtls", "_SctiesQty"]
+	__slots__ = ["_AcctDtls", "_SctiesQty", "_SctyId"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

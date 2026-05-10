@@ -1,15 +1,15 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._CashAccount40 import CashAccount40
 from ._CountryCode import CountryCode
+from ._DocumentAmendment1 import DocumentAmendment1
 from ._DocumentIdentification28 import DocumentIdentification28
 from ._Max35Text import Max35Text
-from ._DocumentAmendment1 import DocumentAmendment1
+from ._SupplementaryData1 import SupplementaryData1
 from ._TransactionCertificateRecord2 import TransactionCertificateRecord2
-from ._CashAccount40 import CashAccount40
 
 class TransactionCertificate4(base_types._BaseFieldType):
 
-	__slots__ = ["_BkAcctDmcltnCtry", "_Acct", "_Amdmnt", "_CertRcrd", "_Cert", "_TxId", "_SplmtryData"]
+	__slots__ = ["_Acct", "_Amdmnt", "_BkAcctDmcltnCtry", "_Cert", "_CertRcrd", "_SplmtryData", "_TxId"]
 	@property
 	def Acct(self):
 		return self._Acct

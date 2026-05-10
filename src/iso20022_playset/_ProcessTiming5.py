@@ -1,12 +1,12 @@
 from . import base_types
 from ._ISODateTime import ISODateTime
-from ._Number import Number
 from ._Max9NumericText import Max9NumericText
+from ._Number import Number
 from ._TimeUnit1Code import TimeUnit1Code
 
 class ProcessTiming5(base_types._BaseFieldType):
 
-	__slots__ = ["_EndTm", "_Prd", "_StartTm", "_WtgTm", "_MaxNb", "_UnitOfTm"]
+	__slots__ = ["_EndTm", "_MaxNb", "_Prd", "_StartTm", "_UnitOfTm", "_WtgTm"]
 	@property
 	def EndTm(self):
 		return self._EndTm

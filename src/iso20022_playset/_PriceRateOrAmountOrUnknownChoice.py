@@ -1,11 +1,11 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
+from ._PercentageRate import PercentageRate
 from ._YesNoIndicator import YesNoIndicator
 
 class PriceRateOrAmountOrUnknownChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_UknwnInd", "_Amt"]
+	__slots__ = ["_Amt", "_Rate", "_UknwnInd"]
 	@property
 	def Amt(self):
 		return self._Amt

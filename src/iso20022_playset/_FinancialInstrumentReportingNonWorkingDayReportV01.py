@@ -1,7 +1,7 @@
 from . import base_types
 from ._SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
-from ._SupplementaryData1 import SupplementaryData1
 from ._SecuritiesNonTradingDayReport1 import SecuritiesNonTradingDayReport1
+from ._SupplementaryData1 import SupplementaryData1
 
 class FinancialInstrumentReportingNonWorkingDayReportV01(base_types._BaseFieldType):
 

@@ -4,7 +4,7 @@ from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class SystemPartyIdentification2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgId", "_CmbndId"]
+	__slots__ = ["_CmbndId", "_OrgId"]
 	@property
 	def CmbndId(self):
 		return self._CmbndId

@@ -1,6 +1,6 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._StatisticsPerCounterparty16Choice import StatisticsPerCounterparty16Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class DerivativesTradeWarningsReportV01(base_types._BaseFieldType):
 

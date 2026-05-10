@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class PartyIdentification265(base_types._BaseFieldType):
 
-	__slots__ = ["_AnyBIC", "_AltrntvIdr"]
+	__slots__ = ["_AltrntvIdr", "_AnyBIC"]
 	@property
 	def AltrntvIdr(self):
 		return self._AltrntvIdr

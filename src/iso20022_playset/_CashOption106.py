@@ -1,14 +1,14 @@
 from . import base_types
-from ._RateAndAmountFormat55Choice import RateAndAmountFormat55Choice
-from ._DateFormat43Choice import DateFormat43Choice
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._CreditDebitCode import CreditDebitCode
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DateFormat43Choice import DateFormat43Choice
+from ._RateAndAmountFormat55Choice import RateAndAmountFormat55Choice
 
 class CashOption106(base_types._BaseFieldType):
 
-	__slots__ = ["_NetCshAmt", "_GrssCshAmt", "_CdtDbtInd", "_EntitldAmt", "_CshAcctId", "_WhldgTaxAmt", "_PmtDt", "_WhldgTaxRate", "_EarlstPmtDt"]
+	__slots__ = ["_CdtDbtInd", "_CshAcctId", "_EarlstPmtDt", "_EntitldAmt", "_GrssCshAmt", "_NetCshAmt", "_PmtDt", "_WhldgTaxAmt", "_WhldgTaxRate"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd

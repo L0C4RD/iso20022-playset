@@ -1,13 +1,13 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._LimitStatus1Code import LimitStatus1Code
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._CreditDebitCode import CreditDebitCode
 from ._Amount2Choice import Amount2Choice
+from ._CreditDebitCode import CreditDebitCode
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._LimitStatus1Code import LimitStatus1Code
+from ._PercentageRate import PercentageRate
 
 class Limit7(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_CdtDbtInd", "_UsdPctg", "_UsdAmtCdtDbtInd", "_UsdAmt", "_StartDtTm", "_Sts", "_RmngAmt"]
+	__slots__ = ["_Amt", "_CdtDbtInd", "_RmngAmt", "_StartDtTm", "_Sts", "_UsdAmt", "_UsdAmtCdtDbtInd", "_UsdPctg"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -1,10 +1,10 @@
 from . import base_types
-from ._AssetClassSubProductType49Code import AssetClassSubProductType49Code
 from ._AssetClassProductType5Code import AssetClassProductType5Code
+from ._AssetClassSubProductType49Code import AssetClassSubProductType49Code
 
 class FertilizerCommodityOther2(base_types._BaseFieldType):
 
-	__slots__ = ["_SubPdct", "_BasePdct"]
+	__slots__ = ["_BasePdct", "_SubPdct"]
 	@property
 	def BasePdct(self):
 		return self._BasePdct

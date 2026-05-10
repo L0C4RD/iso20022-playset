@@ -1,13 +1,13 @@
 from . import base_types
 from ._CorporateActionEventProcessingType3Choice import CorporateActionEventProcessingType3Choice
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._CorporateActionEventType122Choice import CorporateActionEventType122Choice
 from ._CorporateActionMandatoryVoluntary4Choice import CorporateActionMandatoryVoluntary4Choice
 from ._FinancialInstrumentAttributes134 import FinancialInstrumentAttributes134
-from ._CorporateActionEventType122Choice import CorporateActionEventType122Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class CorporateActionGeneralInformation192(base_types._BaseFieldType):
 
-	__slots__ = ["_MndtryVlntryEvtTp", "_CorpActnEvtId", "_EvtPrcgTp", "_UndrlygScty", "_ClssActnNb", "_OffclCorpActnEvtId", "_EvtTp"]
+	__slots__ = ["_ClssActnNb", "_CorpActnEvtId", "_EvtPrcgTp", "_EvtTp", "_MndtryVlntryEvtTp", "_OffclCorpActnEvtId", "_UndrlygScty"]
 	@property
 	def ClssActnNb(self):
 		return self._ClssActnNb

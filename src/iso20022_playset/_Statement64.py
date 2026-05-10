@@ -1,15 +1,15 @@
 from . import base_types
-from ._Number3Choice import Number3Choice
-from ._Frequency25Choice import Frequency25Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._Max35Text import Max35Text
-from ._UpdateType15Choice import UpdateType15Choice
-from ._StatementStructure1Code import StatementStructure1Code
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Frequency25Choice import Frequency25Choice
+from ._Max35Text import Max35Text
+from ._Number3Choice import Number3Choice
+from ._StatementStructure1Code import StatementStructure1Code
+from ._UpdateType15Choice import UpdateType15Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class Statement64(base_types._BaseFieldType):
 
-	__slots__ = ["_Frqcy", "_StmtDtTm", "_StmtId", "_RptNb", "_UpdTp", "_ActvtyInd", "_QryRef", "_StmtStr"]
+	__slots__ = ["_ActvtyInd", "_Frqcy", "_QryRef", "_RptNb", "_StmtDtTm", "_StmtId", "_StmtStr", "_UpdTp"]
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd

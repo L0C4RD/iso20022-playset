@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class OriginalMandate10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMndtId", "_OrgnlMndt"]
+	__slots__ = ["_OrgnlMndt", "_OrgnlMndtId"]
 	@property
 	def OrgnlMndt(self):
 		return self._OrgnlMndt

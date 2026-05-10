@@ -1,10 +1,10 @@
 from . import base_types
-from ._Period11 import Period11
 from ._DateType8Code import DateType8Code
+from ._Period11 import Period11
 
 class Period6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrdCd", "_Prd"]
+	__slots__ = ["_Prd", "_PrdCd"]
 	@property
 	def Prd(self):
 		return self._Prd

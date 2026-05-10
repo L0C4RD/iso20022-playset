@@ -1,10 +1,10 @@
 from . import base_types
-from ._EnvelopedData11 import EnvelopedData11
 from ._ContentType2Code import ContentType2Code
+from ._EnvelopedData11 import EnvelopedData11
 
 class ContentInformationType40(base_types._BaseFieldType):
 
-	__slots__ = ["_EnvlpdData", "_CnttTp"]
+	__slots__ = ["_CnttTp", "_EnvlpdData"]
 	@property
 	def CnttTp(self):
 		return self._CnttTp

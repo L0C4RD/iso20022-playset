@@ -1,16 +1,16 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._CardDataReading4Code import CardDataReading4Code
-from ._DisplayCapabilities5 import DisplayCapabilities5
-from ._Number import Number
-from ._Max256Text import Max256Text
-from ._ATMMediaType4Code import ATMMediaType4Code
 from ._ATMMediaType1Code import ATMMediaType1Code
+from ._ATMMediaType4Code import ATMMediaType4Code
+from ._CardDataReading4Code import CardDataReading4Code
 from ._CardholderVerificationCapability3Code import CardholderVerificationCapability3Code
+from ._DisplayCapabilities5 import DisplayCapabilities5
+from ._Max256Text import Max256Text
+from ._Number import Number
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 
-	__slots__ = ["_WdrwlMdia", "_IntractvTxs", "_PINLngthCpblties", "_CardRdData", "_CardCaptrCpbl", "_MxScrptLngth", "_RctPrtg", "_MsgCpblties", "_CardWrtData", "_DpstdMdia", "_ApprvlCdLngth", "_Authntcn"]
+	__slots__ = ["_ApprvlCdLngth", "_Authntcn", "_CardCaptrCpbl", "_CardRdData", "_CardWrtData", "_DpstdMdia", "_IntractvTxs", "_MsgCpblties", "_MxScrptLngth", "_PINLngthCpblties", "_RctPrtg", "_WdrwlMdia"]
 	@property
 	def ApprvlCdLngth(self):
 		return self._ApprvlCdLngth

@@ -1,23 +1,23 @@
 from . import base_types
+from ._AdditionalInformation15 import AdditionalInformation15
+from ._DateAndAmount2 import DateAndAmount2
+from ._DecimalNumber import DecimalNumber
+from ._DrawdownStatus1Choice import DrawdownStatus1Choice
+from ._DrawdownType2Choice import DrawdownType2Choice
+from ._LumpSumType1Choice import LumpSumType1Choice
+from ._Max35Text import Max35Text
+from ._MoneyPurchaseAnnualAllowance1 import MoneyPurchaseAnnualAllowance1
+from ._Number import Number
+from ._PensionOrder1 import PensionOrder1
+from ._PensionPolicy1 import PensionPolicy1
+from ._PensionSchemeType3Choice import PensionSchemeType3Choice
 from ._PensionTransferScope1Choice import PensionTransferScope1Choice
 from ._TaxReference1 import TaxReference1
 from ._YesNoIndicator import YesNoIndicator
-from ._DecimalNumber import DecimalNumber
-from ._MoneyPurchaseAnnualAllowance1 import MoneyPurchaseAnnualAllowance1
-from ._DateAndAmount2 import DateAndAmount2
-from ._LumpSumType1Choice import LumpSumType1Choice
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._Number import Number
-from ._DrawdownType2Choice import DrawdownType2Choice
-from ._DrawdownStatus1Choice import DrawdownStatus1Choice
-from ._Max35Text import Max35Text
-from ._PensionPolicy1 import PensionPolicy1
-from ._PensionSchemeType3Choice import PensionSchemeType3Choice
-from ._PensionOrder1 import PensionOrder1
 
 class Pension5(base_types._BaseFieldType):
 
-	__slots__ = ["_DrwdwnTp", "_MnyPurchsAnlAllwnc", "_Tp", "_NonSfgrddGrntedBnfts", "_TaxRef", "_NonWrpprTrf", "_TrfScp", "_DrwdwnTrchId", "_BlckTrfRef", "_TaxFreeCshAmt", "_DrwdwnSts", "_TaxFreeCshPrtcn", "_BlckTrf", "_PnsnOrdr", "_BnftCrstllstnEvtOcrd", "_Id", "_EstmtdVal", "_RtrmntAge", "_ClntLftmAllwncPrtcn", "_LftmAllwncPrtcn", "_Shrg", "_RingFncdDrwdwnAssts", "_LumpSumTp", "_RtrmntAgePrtcn", "_AddtlInf", "_SfgrdBnft", "_ValOfPnsnPlcyOrPlanOrSchme", "_NbOfDrwdwnTrnchs"]
+	__slots__ = ["_AddtlInf", "_BlckTrf", "_BlckTrfRef", "_BnftCrstllstnEvtOcrd", "_ClntLftmAllwncPrtcn", "_DrwdwnSts", "_DrwdwnTp", "_DrwdwnTrchId", "_EstmtdVal", "_Id", "_LftmAllwncPrtcn", "_LumpSumTp", "_MnyPurchsAnlAllwnc", "_NbOfDrwdwnTrnchs", "_NonSfgrddGrntedBnfts", "_NonWrpprTrf", "_PnsnOrdr", "_RingFncdDrwdwnAssts", "_RtrmntAge", "_RtrmntAgePrtcn", "_SfgrdBnft", "_Shrg", "_TaxFreeCshAmt", "_TaxFreeCshPrtcn", "_TaxRef", "_Tp", "_TrfScp", "_ValOfPnsnPlcyOrPlanOrSchme"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

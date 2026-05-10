@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._StandingOrderIdentification8 import StandingOrderIdentification8
-from ._StandingOrder10 import StandingOrder10
 from ._MessageHeader1 import MessageHeader1
+from ._StandingOrder10 import StandingOrder10
+from ._StandingOrderIdentification8 import StandingOrderIdentification8
+from ._SupplementaryData1 import SupplementaryData1
 
 class ModifyStandingOrderV08(base_types._BaseFieldType):
 
-	__slots__ = ["_StgOrdrId", "_SplmtryData", "_MsgHdr", "_NewStgOrdrValSet"]
+	__slots__ = ["_MsgHdr", "_NewStgOrdrValSet", "_SplmtryData", "_StgOrdrId"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

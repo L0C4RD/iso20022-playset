@@ -1,11 +1,11 @@
 from . import base_types
-from ._IBAN2007Identifier import IBAN2007Identifier
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._IBAN2007Identifier import IBAN2007Identifier
 from ._Max34Text import Max34Text
 
 class CashAccountIdentification9Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_BlckChainCshWllt", "_IBAN"]
+	__slots__ = ["_BlckChainCshWllt", "_IBAN", "_Prtry"]
 	@property
 	def BlckChainCshWllt(self):
 		return self._BlckChainCshWllt

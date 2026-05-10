@@ -1,12 +1,12 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Frequency37Choice import Frequency37Choice
 from ._PercentageRate import PercentageRate
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class MandateAdjustment1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctgy", "_DtAdjstmntRuleInd", "_Amt", "_Rate"]
+	__slots__ = ["_Amt", "_Ctgy", "_DtAdjstmntRuleInd", "_Rate"]
 	@property
 	def Amt(self):
 		return self._Amt

@@ -1,11 +1,11 @@
 from . import base_types
-from ._ATMStatus2Code import ATMStatus2Code
 from ._ATMSecurityConfiguration1 import ATMSecurityConfiguration1
+from ._ATMStatus2Code import ATMStatus2Code
 from ._Max35Text import Max35Text
 
 class ATMCommandParameters1(base_types._BaseFieldType):
 
-	__slots__ = ["_SrlNb", "_ReqrdSts", "_ReqrdCfgtn"]
+	__slots__ = ["_ReqrdCfgtn", "_ReqrdSts", "_SrlNb"]
 	@property
 	def ReqrdCfgtn(self):
 		return self._ReqrdCfgtn

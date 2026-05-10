@@ -1,13 +1,13 @@
 from . import base_types
-from ._ForeignExchangeTerms23 import ForeignExchangeTerms23
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._CreditDebitCode import CreditDebitCode
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ForeignExchangeTerms23 import ForeignExchangeTerms23
 
 class AmountAndDirection88(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlCcyAndOrdrdAmt", "_ValDt", "_CdtDbtInd", "_FXDtls", "_Amt"]
+	__slots__ = ["_Amt", "_CdtDbtInd", "_FXDtls", "_OrgnlCcyAndOrdrdAmt", "_ValDt"]
 	@property
 	def Amt(self):
 		return self._Amt

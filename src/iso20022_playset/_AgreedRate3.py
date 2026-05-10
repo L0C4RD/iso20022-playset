@@ -4,7 +4,7 @@ from ._BaseOneRate import BaseOneRate
 
 class AgreedRate3(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgRate", "_UnitCcy", "_QtdCcy"]
+	__slots__ = ["_QtdCcy", "_UnitCcy", "_XchgRate"]
 	@property
 	def QtdCcy(self):
 		return self._QtdCcy

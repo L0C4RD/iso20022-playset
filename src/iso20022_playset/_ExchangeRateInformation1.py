@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._BaseOneRate import BaseOneRate
 from ._ExchangeRateType1Code import ExchangeRateType1Code
+from ._Max35Text import Max35Text
 
 class ExchangeRateInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_RateTp", "_CtrctId", "_XchgRate"]
+	__slots__ = ["_CtrctId", "_RateTp", "_XchgRate"]
 	@property
 	def CtrctId(self):
 		return self._CtrctId

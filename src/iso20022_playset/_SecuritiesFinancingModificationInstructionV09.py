@@ -1,17 +1,17 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._SettlementDetails148 import SettlementDetails148
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SecuritiesTradeDetails100 import SecuritiesTradeDetails100
-from ._TransactionTypeAndAdditionalParameters23 import TransactionTypeAndAdditionalParameters23
-from ._QuantityAndAccount119 import QuantityAndAccount119
-from ._SettlementParties127 import SettlementParties127
 from ._AmountAndDirection49 import AmountAndDirection49
+from ._QuantityAndAccount119 import QuantityAndAccount119
 from ._SecuritiesFinancingTransactionDetails58 import SecuritiesFinancingTransactionDetails58
+from ._SecuritiesTradeDetails100 import SecuritiesTradeDetails100
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SettlementDetails148 import SettlementDetails148
+from ._SettlementParties127 import SettlementParties127
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionTypeAndAdditionalParameters23 import TransactionTypeAndAdditionalParameters23
 
 class SecuritiesFinancingModificationInstructionV09(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_DlvrgSttlmPties", "_RcvgSttlmPties", "_SctiesFincgAddtlDtls", "_SplmtryData", "_QtyAndAcctDtls", "_OpngSttlmAmt", "_TradDtls", "_TxTpAndModAddtlParams", "_SttlmParams"]
+	__slots__ = ["_DlvrgSttlmPties", "_FinInstrmId", "_OpngSttlmAmt", "_QtyAndAcctDtls", "_RcvgSttlmPties", "_SctiesFincgAddtlDtls", "_SplmtryData", "_SttlmParams", "_TradDtls", "_TxTpAndModAddtlParams"]
 	@property
 	def DlvrgSttlmPties(self):
 		return self._DlvrgSttlmPties

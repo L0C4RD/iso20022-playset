@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class Amount1(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnCallReqId", "_AgrdAmt", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_AgrdAmt", "_MrgnCallReqId"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

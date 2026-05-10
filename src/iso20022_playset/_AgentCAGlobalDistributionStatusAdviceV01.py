@@ -1,12 +1,12 @@
 from . import base_types
-from ._GlobalDistributionStatus1 import GlobalDistributionStatus1
 from ._CorporateActionInformation1 import CorporateActionInformation1
 from ._DocumentIdentification8 import DocumentIdentification8
+from ._GlobalDistributionStatus1 import GlobalDistributionStatus1
 from ._IndividualMovementStatus1 import IndividualMovementStatus1
 
 class AgentCAGlobalDistributionStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_IndvMvmntSts", "_Id", "_AgtCAGblDstrbtnAuthstnReqId", "_GblMvmntSts", "_CorpActnGnlInf"]
+	__slots__ = ["_AgtCAGblDstrbtnAuthstnReqId", "_CorpActnGnlInf", "_GblMvmntSts", "_Id", "_IndvMvmntSts"]
 	@property
 	def AgtCAGblDstrbtnAuthstnReqId(self):
 		return self._AgtCAGblDstrbtnAuthstnReqId

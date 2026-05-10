@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISODateTime import ISODateTime
-from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
 from ._Max35Text import Max35Text
+from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
 
 class MessageHeader12(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlBizInstr", "_CreDtTm", "_MsgId"]
+	__slots__ = ["_CreDtTm", "_MsgId", "_OrgnlBizInstr"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

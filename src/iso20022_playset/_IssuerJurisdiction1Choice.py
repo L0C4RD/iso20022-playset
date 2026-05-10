@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class IssuerJurisdiction1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_CtryCd"]
+	__slots__ = ["_CtryCd", "_Othr"]
 	@property
 	def CtryCd(self):
 		return self._CtryCd

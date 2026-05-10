@@ -1,12 +1,12 @@
 from . import base_types
 from ._BusinessDayConvention1Code import BusinessDayConvention1Code
-from ._ReferToFundOrderDesk1Code import ReferToFundOrderDesk1Code
 from ._Max350Text import Max350Text
 from ._Number import Number
+from ._ReferToFundOrderDesk1Code import ReferToFundOrderDesk1Code
 
 class TimeFrame9(base_types._BaseFieldType):
 
-	__slots__ = ["_TMns", "_RefrToOrdrDsk", "_NonWorkgDayAdjstmnt", "_OthrTmFrameDesc"]
+	__slots__ = ["_NonWorkgDayAdjstmnt", "_OthrTmFrameDesc", "_RefrToOrdrDsk", "_TMns"]
 	@property
 	def NonWorkgDayAdjstmnt(self):
 		return self._NonWorkgDayAdjstmnt

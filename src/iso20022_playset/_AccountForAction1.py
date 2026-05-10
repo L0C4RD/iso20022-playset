@@ -1,10 +1,10 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._AccountIdentification4Choice import AccountIdentification4Choice
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 
 class AccountForAction1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Ccy"]
+	__slots__ = ["_Ccy", "_Id"]
 	@property
 	def Ccy(self):
 		return self._Ccy

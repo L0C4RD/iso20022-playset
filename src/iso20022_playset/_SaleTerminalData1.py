@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class SaleTerminalData1(base_types._BaseFieldType):
 
-	__slots__ = ["_TermnlEnvt", "_SaleRcncltnId"]
+	__slots__ = ["_SaleRcncltnId", "_TermnlEnvt"]
 	@property
 	def SaleRcncltnId(self):
 		return self._SaleRcncltnId

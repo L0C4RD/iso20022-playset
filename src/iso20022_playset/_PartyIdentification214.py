@@ -1,11 +1,11 @@
 from . import base_types
-from ._PartyAddress1 import PartyAddress1
 from ._Max350Text import Max350Text
+from ._PartyAddress1 import PartyAddress1
 from ._PartyIdentification203Choice import PartyIdentification203Choice
 
 class PartyIdentification214(base_types._BaseFieldType):
 
-	__slots__ = ["_RcptNm", "_RspnRcptAdr", "_Id"]
+	__slots__ = ["_Id", "_RcptNm", "_RspnRcptAdr"]
 	@property
 	def Id(self):
 		return self._Id

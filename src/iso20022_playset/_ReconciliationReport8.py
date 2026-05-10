@@ -1,12 +1,12 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._Max140Text import Max140Text
 from ._ReconciliationStatus8Choice import ReconciliationStatus8Choice
 from ._TradeTransactionIdentification19 import TradeTransactionIdentification19
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ReconciliationReport8(base_types._BaseFieldType):
 
-	__slots__ = ["_Modfd", "_TxId", "_TechRcrdId", "_RcncltnSts"]
+	__slots__ = ["_Modfd", "_RcncltnSts", "_TechRcrdId", "_TxId"]
 	@property
 	def Modfd(self):
 		return self._Modfd

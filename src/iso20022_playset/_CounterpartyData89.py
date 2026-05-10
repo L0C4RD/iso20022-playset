@@ -1,12 +1,12 @@
 from . import base_types
 from ._CounterpartyIdentification11 import CounterpartyIdentification11
 from ._CounterpartyIdentification12 import CounterpartyIdentification12
-from ._TransactionCounterpartyData11 import TransactionCounterpartyData11
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._TransactionCounterpartyData11 import TransactionCounterpartyData11
 
 class CounterpartyData89(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgCtrPty", "_OthrPtyData", "_OthrCtrPty", "_NttyRspnsblForRpt"]
+	__slots__ = ["_NttyRspnsblForRpt", "_OthrCtrPty", "_OthrPtyData", "_RptgCtrPty"]
 	@property
 	def NttyRspnsblForRpt(self):
 		return self._NttyRspnsblForRpt

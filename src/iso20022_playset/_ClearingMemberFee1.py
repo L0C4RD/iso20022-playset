@@ -4,7 +4,7 @@ from ._PartyIdentification118Choice import PartyIdentification118Choice
 
 class ClearingMemberFee1(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrMmbId", "_ClrFee"]
+	__slots__ = ["_ClrFee", "_ClrMmbId"]
 	@property
 	def ClrFee(self):
 		return self._ClrFee

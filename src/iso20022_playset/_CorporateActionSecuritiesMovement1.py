@@ -1,12 +1,12 @@
 from . import base_types
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 from ._SecuritiesAccount8 import SecuritiesAccount8
 from ._SecurityIdentification7 import SecurityIdentification7
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 
 class CorporateActionSecuritiesMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_PstngQty", "_SctyId", "_PstngDtTm", "_AcctDtls"]
+	__slots__ = ["_AcctDtls", "_PstngDtTm", "_PstngQty", "_SctyId"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

@@ -5,7 +5,7 @@ from ._ATMTransaction50 import ATMTransaction50
 
 class ATMDepositRequest2(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_Tx"]
+	__slots__ = ["_Cntxt", "_Envt", "_Tx"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt

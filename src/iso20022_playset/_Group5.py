@@ -1,11 +1,11 @@
 from . import base_types
 from ._Max4AlphaNumericText import Max4AlphaNumericText
-from ._PartyAndCertificate7 import PartyAndCertificate7
 from ._Modification1Code import Modification1Code
+from ._PartyAndCertificate7 import PartyAndCertificate7
 
 class Group5(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty", "_GrpId", "_ModCd"]
+	__slots__ = ["_GrpId", "_ModCd", "_Pty"]
 	@property
 	def GrpId(self):
 		return self._GrpId

@@ -3,7 +3,7 @@ from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class Amount3(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgAmt", "_OrgnlAmt"]
+	__slots__ = ["_OrgnlAmt", "_RptgAmt"]
 	@property
 	def OrgnlAmt(self):
 		return self._OrgnlAmt

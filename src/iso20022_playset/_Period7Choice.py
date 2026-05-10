@@ -1,10 +1,10 @@
 from . import base_types
-from ._Period2 import Period2
 from ._DateTimePeriod1 import DateTimePeriod1
+from ._Period2 import Period2
 
 class Period7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FrDtToDt", "_FrDtTmToDtTm"]
+	__slots__ = ["_FrDtTmToDtTm", "_FrDtToDt"]
 	@property
 	def FrDtTmToDtTm(self):
 		return self._FrDtTmToDtTm

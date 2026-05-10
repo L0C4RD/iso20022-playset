@@ -1,13 +1,13 @@
 from . import base_types
-from ._TradeTransactionCondition8Choice import TradeTransactionCondition8Choice
-from ._SettlementParties94 import SettlementParties94
 from ._Max35Text import Max35Text
-from ._SettlementTransactionCondition30Choice import SettlementTransactionCondition30Choice
 from ._SafekeepingPlaceFormat28Choice import SafekeepingPlaceFormat28Choice
+from ._SettlementParties94 import SettlementParties94
+from ._SettlementTransactionCondition30Choice import SettlementTransactionCondition30Choice
+from ._TradeTransactionCondition8Choice import TradeTransactionCondition8Choice
 
 class FundSettlementParameters18(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesSttlmSysId", "_TradTxCond", "_RcvgSdDtls", "_SttlmTxCond", "_SfkpgPlc"]
+	__slots__ = ["_RcvgSdDtls", "_SctiesSttlmSysId", "_SfkpgPlc", "_SttlmTxCond", "_TradTxCond"]
 	@property
 	def RcvgSdDtls(self):
 		return self._RcvgSdDtls

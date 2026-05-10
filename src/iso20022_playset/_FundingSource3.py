@@ -1,6 +1,6 @@
 from . import base_types
-from ._FundingSourceType1Code import FundingSourceType1Code
 from ._AmountAndDirection53 import AmountAndDirection53
+from ._FundingSourceType1Code import FundingSourceType1Code
 
 class FundingSource3(base_types._BaseFieldType):
 

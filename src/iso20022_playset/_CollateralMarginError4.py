@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._Max52Text import Max52Text
+from ._Counterparty39 import Counterparty39
 from ._ISODateTime import ISODateTime
 from ._Max140Text import Max140Text
-from ._Counterparty39 import Counterparty39
+from ._Max52Text import Max52Text
+from ._SupplementaryData1 import SupplementaryData1
 
 class CollateralMarginError4(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgDtTm", "_TechRcrdId", "_CollPrtflId", "_CtrPty", "_SplmtryData"]
+	__slots__ = ["_CollPrtflId", "_CtrPty", "_RptgDtTm", "_SplmtryData", "_TechRcrdId"]
 	@property
 	def CollPrtflId(self):
 		return self._CollPrtflId

@@ -1,10 +1,10 @@
 from . import base_types
-from ._Reservation3 import Reservation3
 from ._ErrorHandling5 import ErrorHandling5
+from ._Reservation3 import Reservation3
 
 class ReservationOrError9Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsvatn", "_BizErr"]
+	__slots__ = ["_BizErr", "_Rsvatn"]
 	@property
 	def BizErr(self):
 		return self._BizErr

@@ -1,7 +1,7 @@
 from . import base_types
 from ._ClearingAccountType1Code import ClearingAccountType1Code
-from ._Max70Text import Max70Text
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class SecuritiesAccount18(base_types._BaseFieldType):
 

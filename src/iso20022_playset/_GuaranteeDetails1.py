@@ -1,13 +1,13 @@
 from . import base_types
-from ._xs:positiveInteger import xs:positiveInteger
-from ._xs:IDREF import xs:IDREF
+from ._AmountAndPeriod1 import AmountAndPeriod1
 from ._Max2000Text import Max2000Text
 from ._PercentageAndPeriod1 import PercentageAndPeriod1
-from ._AmountAndPeriod1 import AmountAndPeriod1
+from ._xs:IDREF import xs:IDREF
+from ._xs:positiveInteger import xs:positiveInteger
 
 class GuaranteeDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_AddtlInf", "_Desc", "_GrntedAmt", "_Pos", "_CvrdPctg", "_Xcss", "_AssoctdDoc"]
+	__slots__ = ["_AddtlInf", "_AssoctdDoc", "_CvrdPctg", "_Desc", "_GrntedAmt", "_Issr", "_Pos", "_Xcss"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

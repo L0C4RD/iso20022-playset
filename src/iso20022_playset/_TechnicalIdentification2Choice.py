@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max256Text import Max256Text
 from ._BICFIDec2014Identifier import BICFIDec2014Identifier
+from ._Max256Text import Max256Text
 
 class TechnicalIdentification2Choice(base_types._BaseFieldType):
 

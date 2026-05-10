@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class DetailedInstructionCancellationStatus15(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_InstrCxlSts", "_SubAcctId", "_SnglInstrCxlId"]
+	__slots__ = ["_AcctId", "_InstrCxlSts", "_SnglInstrCxlId", "_SubAcctId"]
 	@property
 	def AcctId(self):
 		return self._AcctId

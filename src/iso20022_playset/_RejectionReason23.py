@@ -1,7 +1,7 @@
 from . import base_types
-from ._MessageRejectedReason1Code import MessageRejectedReason1Code
-from ._Max140Text import Max140Text
 from ._LinkedMessage1Choice import LinkedMessage1Choice
+from ._Max140Text import Max140Text
+from ._MessageRejectedReason1Code import MessageRejectedReason1Code
 
 class RejectionReason23(base_types._BaseFieldType):
 

@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PayloadData2(base_types._BaseFieldType):
 
-	__slots__ = ["_PyldIdr", "_CreDtAndTm", "_PssblDplctFlg"]
+	__slots__ = ["_CreDtAndTm", "_PssblDplctFlg", "_PyldIdr"]
 	@property
 	def CreDtAndTm(self):
 		return self._CreDtAndTm

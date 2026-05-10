@@ -1,26 +1,26 @@
 from . import base_types
-from ._Quantity54Choice import Quantity54Choice
-from ._SettlementParties109 import SettlementParties109
-from ._TradeDate9Choice import TradeDate9Choice
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
 from ._AmountAndDirection67 import AmountAndDirection67
-from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._SettlementDetails197 import SettlementDetails197
-from ._SettlementDate32Choice import SettlementDate32Choice
-from ._PlaceOfTradeIdentification2 import PlaceOfTradeIdentification2
-from ._ISODateTime import ISODateTime
-from ._SupplementaryData1 import SupplementaryData1
-from ._SafeKeepingPlace4 import SafeKeepingPlace4
-from ._TransactionActivity4Choice import TransactionActivity4Choice
-from ._SettlementOrCorporateActionEvent32Choice import SettlementOrCorporateActionEvent32Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._ISODateTime import ISODateTime
+from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
+from ._PlaceOfTradeIdentification2 import PlaceOfTradeIdentification2
+from ._Quantity54Choice import Quantity54Choice
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from ._SafeKeepingPlace4 import SafeKeepingPlace4
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._SettlementDate32Choice import SettlementDate32Choice
+from ._SettlementDetails197 import SettlementDetails197
+from ._SettlementOrCorporateActionEvent32Choice import SettlementOrCorporateActionEvent32Choice
+from ._SettlementParties109 import SettlementParties109
+from ._SupplementaryData1 import SupplementaryData1
+from ._TradeDate9Choice import TradeDate9Choice
+from ._TransactionActivity4Choice import TransactionActivity4Choice
 
 class TransactionDetails164(base_types._BaseFieldType):
 
-	__slots__ = ["_TxActvty", "_SfkpgPlc", "_AckdStsTmStmp", "_PrtlyRlsdQty", "_XpctdValDt", "_MtchdStsTmStmp", "_LateDlvryDt", "_RcvgSttlmPties", "_SttlmParams", "_SttlmTxOrCorpActnEvtTp", "_SctiesMvmntTp", "_TradDt", "_TxAddtlDtls", "_SttlmDt", "_PlcOfTrad", "_Pmt", "_XpctdSttlmDt", "_PstngQty", "_PlcOfClr", "_FinInstrmId", "_PstngAmt", "_DlvrgSttlmPties", "_SplmtryData"]
+	__slots__ = ["_AckdStsTmStmp", "_DlvrgSttlmPties", "_FinInstrmId", "_LateDlvryDt", "_MtchdStsTmStmp", "_PlcOfClr", "_PlcOfTrad", "_Pmt", "_PrtlyRlsdQty", "_PstngAmt", "_PstngQty", "_RcvgSttlmPties", "_SctiesMvmntTp", "_SfkpgPlc", "_SplmtryData", "_SttlmDt", "_SttlmParams", "_SttlmTxOrCorpActnEvtTp", "_TradDt", "_TxActvty", "_TxAddtlDtls", "_XpctdSttlmDt", "_XpctdValDt"]
 	@property
 	def AckdStsTmStmp(self):
 		return self._AckdStsTmStmp

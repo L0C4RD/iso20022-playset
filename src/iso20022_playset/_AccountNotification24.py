@@ -1,22 +1,22 @@
 from . import base_types
-from ._DateTimePeriod1 import DateTimePeriod1
-from ._ReportingSource1Choice import ReportingSource1Choice
-from ._Number import Number
-from ._CashAccount43 import CashAccount43
 from ._AccountInterest4 import AccountInterest4
+from ._CashAccount40 import CashAccount40
+from ._CashAccount43 import CashAccount43
 from ._CopyDuplicate1Code import CopyDuplicate1Code
-from ._ReportEntry15 import ReportEntry15
-from ._TotalTransactions6 import TotalTransactions6
+from ._DateTimePeriod1 import DateTimePeriod1
+from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
 from ._Max500Text import Max500Text
+from ._Number import Number
 from ._Pagination1 import Pagination1
+from ._ReportEntry15 import ReportEntry15
+from ._ReportingSource1Choice import ReportingSource1Choice
 from ._SequenceRange1Choice import SequenceRange1Choice
-from ._ISODateTime import ISODateTime
-from ._CashAccount40 import CashAccount40
+from ._TotalTransactions6 import TotalTransactions6
 
 class AccountNotification24(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgSrc", "_NtfctnPgntn", "_RltdAcct", "_ElctrncSeqNb", "_Ntry", "_Id", "_Intrst", "_RptgSeq", "_AddtlNtfctnInf", "_CpyDplctInd", "_FrToDt", "_LglSeqNb", "_Acct", "_CreDtTm", "_TxsSummry"]
+	__slots__ = ["_Acct", "_AddtlNtfctnInf", "_CpyDplctInd", "_CreDtTm", "_ElctrncSeqNb", "_FrToDt", "_Id", "_Intrst", "_LglSeqNb", "_NtfctnPgntn", "_Ntry", "_RltdAcct", "_RptgSeq", "_RptgSrc", "_TxsSummry"]
 	@property
 	def Acct(self):
 		return self._Acct

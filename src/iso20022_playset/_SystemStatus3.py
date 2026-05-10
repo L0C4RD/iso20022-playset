@@ -4,7 +4,7 @@ from ._SystemStatus2Choice import SystemStatus2Choice
 
 class SystemStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_VldtyTm", "_Sts"]
+	__slots__ = ["_Sts", "_VldtyTm"]
 	@property
 	def Sts(self):
 		return self._Sts

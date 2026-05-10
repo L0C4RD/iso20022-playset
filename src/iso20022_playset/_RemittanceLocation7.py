@@ -1,10 +1,10 @@
 from . import base_types
-from ._RemittanceLocationData1 import RemittanceLocationData1
 from ._Max35Text import Max35Text
+from ._RemittanceLocationData1 import RemittanceLocationData1
 
 class RemittanceLocation7(base_types._BaseFieldType):
 
-	__slots__ = ["_RmtLctnDtls", "_RmtId"]
+	__slots__ = ["_RmtId", "_RmtLctnDtls"]
 	@property
 	def RmtId(self):
 		return self._RmtId

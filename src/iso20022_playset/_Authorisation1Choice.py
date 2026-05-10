@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max128Text import Max128Text
 from ._Authorisation1Code import Authorisation1Code
+from ._Max128Text import Max128Text
 
 class Authorisation1Choice(base_types._BaseFieldType):
 

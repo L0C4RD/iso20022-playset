@@ -1,11 +1,11 @@
 from . import base_types
-from ._PartyIdentification266 import PartyIdentification266
 from ._NameAndAddress8 import NameAndAddress8
 from ._PartyIdentification265 import PartyIdentification265
+from ._PartyIdentification266 import PartyIdentification266
 
 class PartyIdentification242Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AnyBIC", "_PtyId", "_NmAndAdr"]
+	__slots__ = ["_AnyBIC", "_NmAndAdr", "_PtyId"]
 	@property
 	def AnyBIC(self):
 		return self._AnyBIC

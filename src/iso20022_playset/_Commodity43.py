@@ -1,12 +1,12 @@
 from . import base_types
-from ._SecuritiesTransactionPrice19Choice import SecuritiesTransactionPrice19Choice
-from ._Quantity17 import Quantity17
 from ._AmountAndDirection53 import AmountAndDirection53
 from ._AssetClassCommodity5Choice import AssetClassCommodity5Choice
+from ._Quantity17 import Quantity17
+from ._SecuritiesTransactionPrice19Choice import SecuritiesTransactionPrice19Choice
 
 class Commodity43(base_types._BaseFieldType):
 
-	__slots__ = ["_MktVal", "_Qty", "_UnitPric", "_Clssfctn"]
+	__slots__ = ["_Clssfctn", "_MktVal", "_Qty", "_UnitPric"]
 	@property
 	def Clssfctn(self):
 		return self._Clssfctn

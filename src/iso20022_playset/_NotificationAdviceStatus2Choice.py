@@ -4,7 +4,7 @@ from ._NotificationRejectionReason2 import NotificationRejectionReason2
 
 class NotificationAdviceStatus2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctdSts", "_PrcdSts"]
+	__slots__ = ["_PrcdSts", "_RjctdSts"]
 	@property
 	def PrcdSts(self):
 		return self._PrcdSts

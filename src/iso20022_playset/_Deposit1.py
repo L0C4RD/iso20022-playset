@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ISODate import ISODate
 from ._LEIIdentifier import LEIIdentifier
 
 class Deposit1(base_types._BaseFieldType):
 
-	__slots__ = ["_MtrtyDt", "_CtrPtyId", "_Val"]
+	__slots__ = ["_CtrPtyId", "_MtrtyDt", "_Val"]
 	@property
 	def CtrPtyId(self):
 		return self._CtrPtyId

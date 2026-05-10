@@ -1,11 +1,11 @@
 from . import base_types
 from ._RegulatoryAuthority2 import RegulatoryAuthority2
-from ._StructuredRegulatoryReporting3 import StructuredRegulatoryReporting3
 from ._RegulatoryReportingType1Code import RegulatoryReportingType1Code
+from ._StructuredRegulatoryReporting3 import StructuredRegulatoryReporting3
 
 class RegulatoryReporting3(base_types._BaseFieldType):
 
-	__slots__ = ["_DbtCdtRptgInd", "_Authrty", "_Dtls"]
+	__slots__ = ["_Authrty", "_DbtCdtRptgInd", "_Dtls"]
 	@property
 	def Authrty(self):
 		return self._Authrty

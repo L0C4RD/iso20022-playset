@@ -4,7 +4,7 @@ from ._UpdatedAdditionalInformation21 import UpdatedAdditionalInformation21
 
 class CorporateActionNarrative66(base_types._BaseFieldType):
 
-	__slots__ = ["_InfConds", "_SctyRstrctn", "_InfToCmplyWth", "_NrrtvVrsn", "_CertfctnBrkdwn", "_TaxtnConds", "_AddtlTxt"]
+	__slots__ = ["_AddtlTxt", "_CertfctnBrkdwn", "_InfConds", "_InfToCmplyWth", "_NrrtvVrsn", "_SctyRstrctn", "_TaxtnConds"]
 	@property
 	def AddtlTxt(self):
 		return self._AddtlTxt

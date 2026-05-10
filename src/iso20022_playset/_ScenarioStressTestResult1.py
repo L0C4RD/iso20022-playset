@@ -1,6 +1,6 @@
 from . import base_types
-from ._PortfolioStressTestResult1 import PortfolioStressTestResult1
 from ._GenericIdentification168 import GenericIdentification168
+from ._PortfolioStressTestResult1 import PortfolioStressTestResult1
 
 class ScenarioStressTestResult1(base_types._BaseFieldType):
 

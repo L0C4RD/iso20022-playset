@@ -1,10 +1,10 @@
 from . import base_types
-from ._AccountStatusUpdateInstructionReason1Choice import AccountStatusUpdateInstructionReason1Choice
 from ._AccountStatusUpdateInstruction1Choice import AccountStatusUpdateInstruction1Choice
+from ._AccountStatusUpdateInstructionReason1Choice import AccountStatusUpdateInstructionReason1Choice
 
 class AccountStatusUpdateInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_UpdInstrRsn", "_UpdInstr"]
+	__slots__ = ["_UpdInstr", "_UpdInstrRsn"]
 	@property
 	def UpdInstr(self):
 		return self._UpdInstr

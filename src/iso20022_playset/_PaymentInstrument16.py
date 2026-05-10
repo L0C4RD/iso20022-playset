@@ -1,11 +1,11 @@
 from . import base_types
-from ._FundOrderType5Choice import FundOrderType5Choice
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._FundOrderType5Choice import FundOrderType5Choice
 from ._FundPaymentType1Choice import FundPaymentType1Choice
 
 class PaymentInstrument16(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrmTp", "_OrdrTp", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_InstrmTp", "_OrdrTp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

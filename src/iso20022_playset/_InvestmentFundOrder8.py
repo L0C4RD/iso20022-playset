@@ -1,11 +1,11 @@
 from . import base_types
-from ._InvestmentAccount58 import InvestmentAccount58
 from ._FinancialInstrument57 import FinancialInstrument57
+from ._InvestmentAccount58 import InvestmentAccount58
 from ._Max35Text import Max35Text
 
 class InvestmentFundOrder8(base_types._BaseFieldType):
 
-	__slots__ = ["_MstrRef", "_CxlRef", "_OrdrRef", "_ClntRef", "_DealRef", "_InvstmtAcctDtls", "_FinInstrmDtls"]
+	__slots__ = ["_ClntRef", "_CxlRef", "_DealRef", "_FinInstrmDtls", "_InvstmtAcctDtls", "_MstrRef", "_OrdrRef"]
 	@property
 	def ClntRef(self):
 		return self._ClntRef

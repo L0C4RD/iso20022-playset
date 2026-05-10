@@ -1,10 +1,10 @@
 from . import base_types
-from ._EquivalentAmount2 import EquivalentAmount2
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._EquivalentAmount2 import EquivalentAmount2
 
 class AmountType4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_InstdAmt", "_EqvtAmt"]
+	__slots__ = ["_EqvtAmt", "_InstdAmt"]
 	@property
 	def EqvtAmt(self):
 		return self._EqvtAmt

@@ -1,6 +1,6 @@
 from . import base_types
-from ._UnitOfMeasure5Choice import UnitOfMeasure5Choice
 from ._PositiveNumber import PositiveNumber
+from ._UnitOfMeasure5Choice import UnitOfMeasure5Choice
 
 class ContractSize1(base_types._BaseFieldType):
 

@@ -1,12 +1,12 @@
 from . import base_types
-from ._PartyIdentification113 import PartyIdentification113
-from ._FinancialInstitutionIdentification10 import FinancialInstitutionIdentification10
 from ._AccountIdentificationAndName5 import AccountIdentificationAndName5
+from ._FinancialInstitutionIdentification10 import FinancialInstitutionIdentification10
 from ._Max35Text import Max35Text
+from ._PartyIdentification113 import PartyIdentification113
 
 class CreditTransfer8(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrmyAgt1", "_Dbtr", "_IntrmyAgt1Acct", "_DbtrAgtAcct", "_DbtrAcct", "_Ref", "_CdtrAgt", "_CdtrAcct", "_IntrmyAgt2", "_IntrmyAgt2Acct", "_CdtrAgtAcct", "_Cdtr", "_DbtrAgt"]
+	__slots__ = ["_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_IntrmyAgt1", "_IntrmyAgt1Acct", "_IntrmyAgt2", "_IntrmyAgt2Acct", "_Ref"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

@@ -1,6 +1,6 @@
 from . import base_types
-from ._StatusReasonInformation10 import StatusReasonInformation10
 from ._Status6Code import Status6Code
+from ._StatusReasonInformation10 import StatusReasonInformation10
 
 class CSDLinkStatus1(base_types._BaseFieldType):
 

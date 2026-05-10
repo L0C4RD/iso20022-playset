@@ -1,26 +1,26 @@
 from . import base_types
-from ._Max2048Text import Max2048Text
-from ._Number import Number
-from ._PostalAddress1 import PostalAddress1
-from ._MeetingType4Code import MeetingType4Code
-from ._MeetingTypeClassification2Choice import MeetingTypeClassification2Choice
+from ._AdditionalRights4 import AdditionalRights4
+from ._Attendance2 import Attendance2
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DateFormat1 import DateFormat1
+from ._DateFormat3Choice import DateFormat3Choice
+from ._DateFormat58Choice import DateFormat58Choice
 from ._DateFormat60Choice import DateFormat60Choice
 from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
-from ._AdditionalRights4 import AdditionalRights4
-from ._DateFormat1 import DateFormat1
-from ._YesNoIndicator import YesNoIndicator
-from ._Attendance2 import Attendance2
-from ._Proxy5Choice import Proxy5Choice
+from ._Max2048Text import Max2048Text
 from ._Max35Text import Max35Text
-from ._DateFormat3Choice import DateFormat3Choice
-from ._ParticipationMethod2 import ParticipationMethod2
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._DateFormat58Choice import DateFormat58Choice
 from ._MeetingContactPerson3 import MeetingContactPerson3
+from ._MeetingType4Code import MeetingType4Code
+from ._MeetingTypeClassification2Choice import MeetingTypeClassification2Choice
+from ._Number import Number
+from ._ParticipationMethod2 import ParticipationMethod2
+from ._PostalAddress1 import PostalAddress1
+from ._Proxy5Choice import Proxy5Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class MeetingNotice9(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrMtgId", "_OneManOneVoteInd", "_EvtPrcgWebSiteAdr", "_SctiesBlckgPrdEndDt", "_PrxyChc", "_Tp", "_RsltPblctnDt", "_EntitlmntFxgDt", "_EnrlmntMktDdln", "_RegnSctiesMktDdln", "_AddtlDcmnttnURLAdr", "_CtctPrsnDtls", "_TtlNbOfSctiesOutsdng", "_PrxyAppntmntNtfctnAdr", "_Clssfctn", "_AnncmntDt", "_Attndnc", "_AddtlPrcdrDtls", "_Prtcptn", "_RegnSctiesDdln", "_TtlNbOfVtngRghts", "_MtgId", "_EnrlmntDdln"]
+	__slots__ = ["_AddtlDcmnttnURLAdr", "_AddtlPrcdrDtls", "_AnncmntDt", "_Attndnc", "_Clssfctn", "_CtctPrsnDtls", "_EnrlmntDdln", "_EnrlmntMktDdln", "_EntitlmntFxgDt", "_EvtPrcgWebSiteAdr", "_IssrMtgId", "_MtgId", "_OneManOneVoteInd", "_Prtcptn", "_PrxyAppntmntNtfctnAdr", "_PrxyChc", "_RegnSctiesDdln", "_RegnSctiesMktDdln", "_RsltPblctnDt", "_SctiesBlckgPrdEndDt", "_Tp", "_TtlNbOfSctiesOutsdng", "_TtlNbOfVtngRghts"]
 	@property
 	def AddtlDcmnttnURLAdr(self):
 		return self._AddtlDcmnttnURLAdr

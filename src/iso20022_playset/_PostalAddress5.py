@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._CountryCode import CountryCode
 from ._Max16Text import Max16Text
+from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
 
 class PostalAddress5(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_StrtNm", "_CtrySubDvsn", "_TwnNm", "_PstCdId"]
+	__slots__ = ["_Ctry", "_CtrySubDvsn", "_PstCdId", "_StrtNm", "_TwnNm"]
 	@property
 	def Ctry(self):
 		return self._Ctry

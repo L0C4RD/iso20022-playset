@@ -1,11 +1,11 @@
 from . import base_types
-from ._Min2Max3NumericText import Min2Max3NumericText
 from ._Max19NumericText import Max19NumericText
 from ._Max35Text import Max35Text
+from ._Min2Max3NumericText import Min2Max3NumericText
 
 class CardData14(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtflIdr", "_PAN", "_CardSeqNb", "_PmtAcctRef"]
+	__slots__ = ["_CardSeqNb", "_PAN", "_PmtAcctRef", "_PrtflIdr"]
 	@property
 	def CardSeqNb(self):
 		return self._CardSeqNb

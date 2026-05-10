@@ -1,10 +1,10 @@
 from . import base_types
-from ._DateFormat44Choice import DateFormat44Choice
 from ._DateFormat43Choice import DateFormat43Choice
+from ._DateFormat44Choice import DateFormat44Choice
 
 class CorporateActionEventDeadlines3(base_types._BaseFieldType):
 
-	__slots__ = ["_MktDdln", "_CoverPrtctDdln", "_PrtctDdln", "_EarlyRspnDdln", "_RspnDdln"]
+	__slots__ = ["_CoverPrtctDdln", "_EarlyRspnDdln", "_MktDdln", "_PrtctDdln", "_RspnDdln"]
 	@property
 	def CoverPrtctDdln(self):
 		return self._CoverPrtctDdln

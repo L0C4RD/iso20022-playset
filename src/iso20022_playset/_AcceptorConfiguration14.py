@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class AcceptorConfiguration14(base_types._BaseFieldType):
 
-	__slots__ = ["_DataSet", "_TermnlMgrId", "_POIGrpId"]
+	__slots__ = ["_DataSet", "_POIGrpId", "_TermnlMgrId"]
 	@property
 	def DataSet(self):
 		return self._DataSet

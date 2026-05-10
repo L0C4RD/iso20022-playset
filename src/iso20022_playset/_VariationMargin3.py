@@ -1,11 +1,11 @@
 from . import base_types
-from ._TotalVariationMargin1 import TotalVariationMargin1
 from ._Amount2 import Amount2
 from ._SecurityIdentification14 import SecurityIdentification14
+from ._TotalVariationMargin1 import TotalVariationMargin1
 
 class VariationMargin3(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlVartnMrgn", "_FlsHrcut", "_MrkToMktGrss", "_FinInstrmId", "_MrkToMktNetd", "_MrkToMktFls", "_TtlMrkToMkt"]
+	__slots__ = ["_FinInstrmId", "_FlsHrcut", "_MrkToMktFls", "_MrkToMktGrss", "_MrkToMktNetd", "_TtlMrkToMkt", "_TtlVartnMrgn"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId

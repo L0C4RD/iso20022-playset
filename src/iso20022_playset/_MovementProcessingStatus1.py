@@ -1,10 +1,10 @@
 from . import base_types
-from ._ProcessedStatus3FormatChoice import ProcessedStatus3FormatChoice
 from ._Max350Text import Max350Text
+from ._ProcessedStatus3FormatChoice import ProcessedStatus3FormatChoice
 
 class MovementProcessingStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Sts"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

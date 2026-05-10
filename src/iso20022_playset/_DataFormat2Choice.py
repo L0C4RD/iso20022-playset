@@ -4,7 +4,7 @@ from ._Max140Text import Max140Text
 
 class DataFormat2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Ustrd", "_Strd"]
+	__slots__ = ["_Strd", "_Ustrd"]
 	@property
 	def Strd(self):
 		return self._Strd

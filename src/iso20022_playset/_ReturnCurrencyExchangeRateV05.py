@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._ExchangeRateReportOrError3Choice import ExchangeRateReportOrError3Choice
 from ._MessageHeader7 import MessageHeader7
+from ._SupplementaryData1 import SupplementaryData1
 
 class ReturnCurrencyExchangeRateV05(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_RptOrErr"]
+	__slots__ = ["_MsgHdr", "_RptOrErr", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

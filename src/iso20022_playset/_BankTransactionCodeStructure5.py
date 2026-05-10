@@ -4,7 +4,7 @@ from ._ExternalBankTransactionDomain1Code import ExternalBankTransactionDomain1C
 
 class BankTransactionCodeStructure5(base_types._BaseFieldType):
 
-	__slots__ = ["_Fmly", "_Cd"]
+	__slots__ = ["_Cd", "_Fmly"]
 	@property
 	def Cd(self):
 		return self._Cd

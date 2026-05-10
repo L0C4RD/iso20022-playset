@@ -1,15 +1,15 @@
 from . import base_types
-from ._CountryCode import CountryCode
-from ._CFIOct2015Identifier import CFIOct2015Identifier
-from ._SecurityIdentification39 import SecurityIdentification39
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._CFIOct2015Identifier import CFIOct2015Identifier
+from ._CountryCode import CountryCode
+from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
+from ._SecurityIdentification39 import SecurityIdentification39
 from ._SecurityStatus3Choice import SecurityStatus3Choice
 from ._SystemPartyIdentification2Choice import SystemPartyIdentification2Choice
-from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
 
 class SecuritiesSearchCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_SctySts", "_TechIssrCSD", "_FinInstrmId", "_MntngCSD", "_IsseCcy", "_MtrtyDt", "_InvstrCSD", "_CSD", "_ClssfctnFinInstrm", "_CtryOfIsse", "_IsseDt", "_IssrCSD"]
+	__slots__ = ["_CSD", "_ClssfctnFinInstrm", "_CtryOfIsse", "_FinInstrmId", "_InvstrCSD", "_IsseCcy", "_IsseDt", "_IssrCSD", "_MntngCSD", "_MtrtyDt", "_SctySts", "_TechIssrCSD"]
 	@property
 	def CSD(self):
 		return self._CSD

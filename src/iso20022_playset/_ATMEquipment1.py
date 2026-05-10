@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class ATMEquipment1(base_types._BaseFieldType):
 
-	__slots__ = ["_SrlNb", "_ApplNm", "_ApprvlNb", "_Mdl", "_CfgtnParam", "_ApplPrvdr", "_ApplVrsn", "_Manfctr"]
+	__slots__ = ["_ApplNm", "_ApplPrvdr", "_ApplVrsn", "_ApprvlNb", "_CfgtnParam", "_Manfctr", "_Mdl", "_SrlNb"]
 	@property
 	def ApplNm(self):
 		return self._ApplNm

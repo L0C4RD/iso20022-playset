@@ -1,10 +1,10 @@
 from . import base_types
-from ._MemberReportOrError8Choice import MemberReportOrError8Choice
 from ._MemberIdentification3Choice import MemberIdentification3Choice
+from ._MemberReportOrError8Choice import MemberReportOrError8Choice
 
 class MemberReport6(base_types._BaseFieldType):
 
-	__slots__ = ["_MmbOrErr", "_MmbId"]
+	__slots__ = ["_MmbId", "_MmbOrErr"]
 	@property
 	def MmbId(self):
 		return self._MmbId

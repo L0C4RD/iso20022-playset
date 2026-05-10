@@ -1,11 +1,11 @@
 from . import base_types
-from ._Header70 import Header70
 from ._ContentInformationType37 import ContentInformationType37
+from ._Header70 import Header70
 from ._ReportRequest8 import ReportRequest8
 
 class AcceptorTransactionLogReportRequestV05(base_types._BaseFieldType):
 
-	__slots__ = ["_RptReq", "_SctyTrlr", "_Hdr"]
+	__slots__ = ["_Hdr", "_RptReq", "_SctyTrlr"]
 	@property
 	def Hdr(self):
 		return self._Hdr

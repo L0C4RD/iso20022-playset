@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification13 import GenericIdentification13
 from ._CorporateActionCalculationMethod1Code import CorporateActionCalculationMethod1Code
+from ._GenericIdentification13 import GenericIdentification13
 
 class CorporateActionCalculationMethod1FormatChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

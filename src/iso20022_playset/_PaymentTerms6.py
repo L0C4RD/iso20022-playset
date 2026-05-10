@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PercentageRate import PercentageRate
 from ._CurrencyAndAmount import CurrencyAndAmount
-from ._Max35Text import Max35Text
+from ._ISODate import ISODate
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
 from ._PaymentPeriod1 import PaymentPeriod1
+from ._PercentageRate import PercentageRate
 
 class PaymentTerms6(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtPrd", "_DscntPctRate", "_PnltyAmt", "_DueDt", "_Desc", "_PrtlPmtPct", "_DrctDbtMndtId", "_PnltyPctRate", "_BsisAmt", "_DscntAmt"]
+	__slots__ = ["_BsisAmt", "_Desc", "_DrctDbtMndtId", "_DscntAmt", "_DscntPctRate", "_DueDt", "_PmtPrd", "_PnltyAmt", "_PnltyPctRate", "_PrtlPmtPct"]
 	@property
 	def BsisAmt(self):
 		return self._BsisAmt

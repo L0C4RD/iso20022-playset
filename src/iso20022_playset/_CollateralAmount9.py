@@ -3,7 +3,7 @@ from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmoun
 
 class CollateralAmount9(base_types._BaseFieldType):
 
-	__slots__ = ["_ActlMktValBfrHrcut", "_ActlMktValPstHrcut", "_XpsrCollInTxCcy", "_MktValAmtBfrHrcut", "_XpsrCollInRptgCcy", "_MktValAmtPstHrcut"]
+	__slots__ = ["_ActlMktValBfrHrcut", "_ActlMktValPstHrcut", "_MktValAmtBfrHrcut", "_MktValAmtPstHrcut", "_XpsrCollInRptgCcy", "_XpsrCollInTxCcy"]
 	@property
 	def ActlMktValBfrHrcut(self):
 		return self._ActlMktValBfrHrcut

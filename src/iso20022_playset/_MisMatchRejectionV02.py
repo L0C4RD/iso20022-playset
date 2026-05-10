@@ -5,7 +5,7 @@ from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 
 class MisMatchRejectionV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctnRsn", "_DataSetMtchRptRef", "_RjctnId", "_TxId", "_SubmitrTxRef"]
+	__slots__ = ["_DataSetMtchRptRef", "_RjctnId", "_RjctnRsn", "_SubmitrTxRef", "_TxId"]
 	@property
 	def DataSetMtchRptRef(self):
 		return self._DataSetMtchRptRef

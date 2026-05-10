@@ -1,24 +1,24 @@
 from . import base_types
-from ._Number import Number
 from ._AdditionalData1 import AdditionalData1
-from ._Max256Text import Max256Text
 from ._CardReadingCapabilities1 import CardReadingCapabilities1
-from ._GeographicPointInDecimalDegrees import GeographicPointInDecimalDegrees
+from ._CardWritingCapabilities1 import CardWritingCapabilities1
+from ._CardholderVerificationCapabilities1 import CardholderVerificationCapabilities1
 from ._DisplayCapabilities6 import DisplayCapabilities6
+from ._GeographicPointInDecimalDegrees import GeographicPointInDecimalDegrees
+from ._Max16Text import Max16Text
+from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Number import Number
+from ._OnLineCapability2Code import OnLineCapability2Code
+from ._PINEntrySecurityCharacteristic1Code import PINEntrySecurityCharacteristic1Code
 from ._Software1 import Software1
+from ._TerminalIntegrationCategory1Code import TerminalIntegrationCategory1Code
 from ._TerminalType1Code import TerminalType1Code
 from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max16Text import Max16Text
-from ._PINEntrySecurityCharacteristic1Code import PINEntrySecurityCharacteristic1Code
-from ._OnLineCapability2Code import OnLineCapability2Code
-from ._CardWritingCapabilities1 import CardWritingCapabilities1
-from ._Max35Text import Max35Text
-from ._CardholderVerificationCapabilities1 import CardholderVerificationCapabilities1
-from ._TerminalIntegrationCategory1Code import TerminalIntegrationCategory1Code
 
 class Terminal9(base_types._BaseFieldType):
 
-	__slots__ = ["_IntgtnTp", "_Tp", "_MxScrptLngth", "_RdngCpblty", "_TempScrStorg", "_ApprvlCdLngth", "_SrlNb", "_Id", "_OnBrd", "_PINLngthCpblty", "_OthrPINNtrySctyChrtc", "_MsgCpblty", "_CrdhldrVrfctnCpblty", "_WrtgCpblty", "_Outdr", "_OthrTp", "_CardCaptrCpbl", "_OffPrmiss", "_OnLineCpblty", "_CertfctnId", "_PINNtrySctyChrtc", "_Sftwr", "_AddtlId", "_GeogcLctn"]
+	__slots__ = ["_AddtlId", "_ApprvlCdLngth", "_CardCaptrCpbl", "_CertfctnId", "_CrdhldrVrfctnCpblty", "_GeogcLctn", "_Id", "_IntgtnTp", "_MsgCpblty", "_MxScrptLngth", "_OffPrmiss", "_OnBrd", "_OnLineCpblty", "_OthrPINNtrySctyChrtc", "_OthrTp", "_Outdr", "_PINLngthCpblty", "_PINNtrySctyChrtc", "_RdngCpblty", "_Sftwr", "_SrlNb", "_TempScrStorg", "_Tp", "_WrtgCpblty"]
 	@property
 	def AddtlId(self):
 		return self._AddtlId

@@ -1,14 +1,14 @@
 from . import base_types
+from ._Exact1HexBinaryText import Exact1HexBinaryText
 from ._Max2NumericText import Max2NumericText
 from ._Max32HexBinaryText import Max32HexBinaryText
-from ._Exact1HexBinaryText import Exact1HexBinaryText
-from ._Max8NumericText import Max8NumericText
 from ._Max4NumericText import Max4NumericText
 from ._Max5NumericText import Max5NumericText
+from ._Max8NumericText import Max8NumericText
 
 class MACData1(base_types._BaseFieldType):
 
-	__slots__ = ["_InitlstnVctr", "_KeyLngth", "_KeySetIdr", "_Algo", "_Ctrl", "_KeyPrtcn", "_KeyIndx", "_PddgMtd", "_DrvdInf"]
+	__slots__ = ["_Algo", "_Ctrl", "_DrvdInf", "_InitlstnVctr", "_KeyIndx", "_KeyLngth", "_KeyPrtcn", "_KeySetIdr", "_PddgMtd"]
 	@property
 	def Algo(self):
 		return self._Algo

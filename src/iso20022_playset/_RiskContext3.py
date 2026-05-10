@@ -1,10 +1,10 @@
 from . import base_types
-from ._RiskInputData2 import RiskInputData2
 from ._RiskAssessment3 import RiskAssessment3
+from ._RiskInputData2 import RiskInputData2
 
 class RiskContext3(base_types._BaseFieldType):
 
-	__slots__ = ["_InptData", "_Assmnt"]
+	__slots__ = ["_Assmnt", "_InptData"]
 	@property
 	def Assmnt(self):
 		return self._Assmnt

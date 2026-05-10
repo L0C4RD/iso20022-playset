@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PercentageRate import PercentageRate
-from ._DatePeriod2 import DatePeriod2
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max140Text import Max140Text
 from ._CashAccount40 import CashAccount40
+from ._DatePeriod2 import DatePeriod2
+from ._ISODate import ISODate
+from ._Max140Text import Max140Text
+from ._PercentageRate import PercentageRate
 
 class CompensationRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_XpctdValDt", "_IntrstRate", "_Amt", "_Rsn", "_CompstnAcct"]
+	__slots__ = ["_Amt", "_CompstnAcct", "_IntrstRate", "_Prd", "_Rsn", "_XpctdValDt"]
 	@property
 	def Amt(self):
 		return self._Amt

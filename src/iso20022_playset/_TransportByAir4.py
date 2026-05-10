@@ -1,12 +1,12 @@
 from . import base_types
-from ._CountryCode import CountryCode
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
 from ._AirportName1Choice import AirportName1Choice
+from ._CountryCode import CountryCode
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class TransportByAir4(base_types._BaseFieldType):
 
-	__slots__ = ["_CrrierAgtCtry", "_FlghtNb", "_DprtureAirprt", "_AirCrrierCtry", "_CrrierAgtNm", "_DstnAirprt", "_AirCrrierNm"]
+	__slots__ = ["_AirCrrierCtry", "_AirCrrierNm", "_CrrierAgtCtry", "_CrrierAgtNm", "_DprtureAirprt", "_DstnAirprt", "_FlghtNb"]
 	@property
 	def AirCrrierCtry(self):
 		return self._AirCrrierCtry

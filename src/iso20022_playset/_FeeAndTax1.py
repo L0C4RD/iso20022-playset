@@ -1,11 +1,11 @@
 from . import base_types
-from ._Tax30 import Tax30
-from ._Max35Text import Max35Text
 from ._Fee1 import Fee1
+from ._Max35Text import Max35Text
+from ._Tax30 import Tax30
 
 class FeeAndTax1(base_types._BaseFieldType):
 
-	__slots__ = ["_ComrclAgrmtRef", "_IndvTax", "_IndvFee"]
+	__slots__ = ["_ComrclAgrmtRef", "_IndvFee", "_IndvTax"]
 	@property
 	def ComrclAgrmtRef(self):
 		return self._ComrclAgrmtRef

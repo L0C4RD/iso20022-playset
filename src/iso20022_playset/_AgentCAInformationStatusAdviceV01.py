@@ -5,7 +5,7 @@ from ._DocumentIdentification8 import DocumentIdentification8
 
 class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AgtCAInfAdvcId", "_Id", "_CorpActnAddtlInf", "_InfStsDtls"]
+	__slots__ = ["_AgtCAInfAdvcId", "_CorpActnAddtlInf", "_Id", "_InfStsDtls"]
 	@property
 	def AgtCAInfAdvcId(self):
 		return self._AgtCAInfAdvcId

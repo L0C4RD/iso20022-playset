@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._MessageHeader7 import MessageHeader7
 from ._ReservationOrError11Choice import ReservationOrError11Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class ReturnReservationV08(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgHdr", "_RptOrErr"]
+	__slots__ = ["_MsgHdr", "_RptOrErr", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

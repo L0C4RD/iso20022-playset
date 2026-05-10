@@ -5,7 +5,7 @@ from ._Max140Text import Max140Text
 
 class CorporateActionCancellation3(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgSts", "_CxlRsnCd", "_CxlRsn"]
+	__slots__ = ["_CxlRsn", "_CxlRsnCd", "_PrcgSts"]
 	@property
 	def CxlRsn(self):
 		return self._CxlRsn

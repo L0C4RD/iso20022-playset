@@ -3,7 +3,7 @@ from ._Max70Text import Max70Text
 
 class Product4(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctCd", "_AddtlPdctCd"]
+	__slots__ = ["_AddtlPdctCd", "_PdctCd"]
 	@property
 	def AddtlPdctCd(self):
 		return self._AddtlPdctCd

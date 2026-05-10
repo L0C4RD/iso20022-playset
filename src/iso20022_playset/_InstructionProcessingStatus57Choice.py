@@ -1,14 +1,14 @@
 from . import base_types
-from ._ReturnedStatus1Choice import ReturnedStatus1Choice
-from ._RejectedStatus59Choice import RejectedStatus59Choice
+from ._CancelledStatus15Choice import CancelledStatus15Choice
 from ._NoSpecifiedReason1 import NoSpecifiedReason1
 from ._PendingCancellationStatus16Choice import PendingCancellationStatus16Choice
-from ._CancelledStatus15Choice import CancelledStatus15Choice
 from ._PendingStatus72Choice import PendingStatus72Choice
+from ._RejectedStatus59Choice import RejectedStatus59Choice
+from ._ReturnedStatus1Choice import ReturnedStatus1Choice
 
 class InstructionProcessingStatus57Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgCxl", "_Canc", "_AccptdForFrthrPrcg", "_Pdg", "_Cvrd", "_Rtrd", "_Ucvrd", "_Rjctd", "_Accptd"]
+	__slots__ = ["_Accptd", "_AccptdForFrthrPrcg", "_Canc", "_Cvrd", "_Pdg", "_PdgCxl", "_Rjctd", "_Rtrd", "_Ucvrd"]
 	@property
 	def Accptd(self):
 		return self._Accptd

@@ -1,13 +1,13 @@
 from . import base_types
-from ._DebtorActivationAmendmentReason3 import DebtorActivationAmendmentReason3
-from ._SupplementaryData1 import SupplementaryData1
-from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
 from ._DebtorActivationAmendment6 import DebtorActivationAmendment6
+from ._DebtorActivationAmendmentReason3 import DebtorActivationAmendmentReason3
 from ._OriginalActivation3Choice import OriginalActivation3Choice
+from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
+from ._SupplementaryData1 import SupplementaryData1
 
 class DebtorActivationAmendment5(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlActvtn", "_AmdmntRsn", "_OrgnlBizInstr", "_SplmtryData", "_Amdmnt"]
+	__slots__ = ["_Amdmnt", "_AmdmntRsn", "_OrgnlActvtn", "_OrgnlBizInstr", "_SplmtryData"]
 	@property
 	def Amdmnt(self):
 		return self._Amdmnt

@@ -1,12 +1,12 @@
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._CreditDebitCode import CreditDebitCode
-from ._SecurityIdentification20 import SecurityIdentification20
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._Quantity54Choice import Quantity54Choice
+from ._SecurityIdentification20 import SecurityIdentification20
 
 class SecuritiesOption86(base_types._BaseFieldType):
 
-	__slots__ = ["_PstngQty", "_PstngDt", "_FinInstrmId", "_CdtDbtInd", "_OrgnlPstngDt"]
+	__slots__ = ["_CdtDbtInd", "_FinInstrmId", "_OrgnlPstngDt", "_PstngDt", "_PstngQty"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd

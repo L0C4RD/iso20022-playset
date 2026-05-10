@@ -1,11 +1,11 @@
 from . import base_types
+from ._MessageHeader1 import MessageHeader1
 from ._SecurityIdentification39 import SecurityIdentification39
 from ._SupplementaryData1 import SupplementaryData1
-from ._MessageHeader1 import MessageHeader1
 
 class SecurityDeletionRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_FinInstrmId", "_SplmtryData"]
+	__slots__ = ["_FinInstrmId", "_MsgHdr", "_SplmtryData"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId

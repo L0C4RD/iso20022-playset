@@ -1,16 +1,16 @@
 from . import base_types
-from ._CardIdentificationType1Code import CardIdentificationType1Code
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Max45Text import Max45Text
-from ._Max10Text import Max10Text
-from ._StoredValueAccountType1Code import StoredValueAccountType1Code
-from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._CardDataReading8Code import CardDataReading8Code
+from ._CardIdentificationType1Code import CardIdentificationType1Code
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max10Text import Max10Text
+from ._Max35Text import Max35Text
+from ._Max45Text import Max45Text
+from ._StoredValueAccountType1Code import StoredValueAccountType1Code
 
 class StoredValueAccount2(base_types._BaseFieldType):
 
-	__slots__ = ["_NtryMd", "_IdTp", "_Prvdr", "_AcctTp", "_Bal", "_OwnrNm", "_Id", "_Brnd", "_XpryDt", "_Ccy"]
+	__slots__ = ["_AcctTp", "_Bal", "_Brnd", "_Ccy", "_Id", "_IdTp", "_NtryMd", "_OwnrNm", "_Prvdr", "_XpryDt"]
 	@property
 	def AcctTp(self):
 		return self._AcctTp

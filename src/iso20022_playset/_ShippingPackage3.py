@@ -1,22 +1,22 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._DecimalNumber import DecimalNumber
-from ._ISOTime import ISOTime
-from ._PartyIdentification285 import PartyIdentification285
-from ._ContactPersonal1 import ContactPersonal1
-from ._Product8 import Product8
 from ._Address2 import Address2
+from ._ContactBusiness1 import ContactBusiness1
+from ._ContactPersonal1 import ContactPersonal1
+from ._DecimalNumber import DecimalNumber
+from ._ISODate import ISODate
+from ._ISOTime import ISOTime
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
-from ._ContactBusiness1 import ContactBusiness1
-from ._Max350Text import Max350Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._PartyIdentification285 import PartyIdentification285
+from ._Product8 import Product8
+from ._TrueFalseIndicator import TrueFalseIndicator
 from ._UnitOfMeasure1Code import UnitOfMeasure1Code
 
 class ShippingPackage3(base_types._BaseFieldType):
 
-	__slots__ = ["_SpplrNm", "_SpplrAdr", "_Pdct", "_DlvryNoteNb", "_DlvryCtct", "_PckpTm", "_SpplrCtct", "_DlvryAdr", "_DlvryInstrs", "_SpplrId", "_NbOfUnits", "_PckpDt", "_DlvryTm", "_WghtUnit", "_OthrWghtUnit", "_TrckgNb", "_InsrncAmt", "_SpplrInstrs", "_DlvryDt", "_Insrnc"]
+	__slots__ = ["_DlvryAdr", "_DlvryCtct", "_DlvryDt", "_DlvryInstrs", "_DlvryNoteNb", "_DlvryTm", "_Insrnc", "_InsrncAmt", "_NbOfUnits", "_OthrWghtUnit", "_PckpDt", "_PckpTm", "_Pdct", "_SpplrAdr", "_SpplrCtct", "_SpplrId", "_SpplrInstrs", "_SpplrNm", "_TrckgNb", "_WghtUnit"]
 	@property
 	def DlvryAdr(self):
 		return self._DlvryAdr

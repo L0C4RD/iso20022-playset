@@ -1,6 +1,6 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._ClearedProduct2 import ClearedProduct2
+from ._SupplementaryData1 import SupplementaryData1
 
 class CCPClearedProductReportV02(base_types._BaseFieldType):
 

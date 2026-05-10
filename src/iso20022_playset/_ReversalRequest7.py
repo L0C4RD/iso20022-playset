@@ -1,13 +1,13 @@
 from . import base_types
-from ._PaymentTransaction165 import PaymentTransaction165
-from ._ReversalReason1Code import ReversalReason1Code
 from ._CustomerOrder1 import CustomerOrder1
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._LoyaltyRequestData3 import LoyaltyRequestData3
+from ._PaymentTransaction165 import PaymentTransaction165
+from ._ReversalReason1Code import ReversalReason1Code
 
 class ReversalRequest7(base_types._BaseFieldType):
 
-	__slots__ = ["_LltyData", "_RvslRsn", "_RvslTx", "_RvsdAmt", "_CstmrOrdr"]
+	__slots__ = ["_CstmrOrdr", "_LltyData", "_RvsdAmt", "_RvslRsn", "_RvslTx"]
 	@property
 	def CstmrOrdr(self):
 		return self._CstmrOrdr

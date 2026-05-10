@@ -1,12 +1,12 @@
 from . import base_types
-from ._TransferUnmatchedReason3Code import TransferUnmatchedReason3Code
-from ._NoReasonCode import NoReasonCode
-from ._GenericIdentification1 import GenericIdentification1
 from ._Extended350Code import Extended350Code
+from ._GenericIdentification1 import GenericIdentification1
+from ._NoReasonCode import NoReasonCode
+from ._TransferUnmatchedReason3Code import TransferUnmatchedReason3Code
 
 class TransferUnmatchedStatus4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoSpcfdRsn", "_XtndedRsn", "_DataSrcSchme", "_Rsn"]
+	__slots__ = ["_DataSrcSchme", "_NoSpcfdRsn", "_Rsn", "_XtndedRsn"]
 	@property
 	def DataSrcSchme(self):
 		return self._DataSrcSchme

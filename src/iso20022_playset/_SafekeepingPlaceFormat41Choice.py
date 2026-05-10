@@ -1,13 +1,13 @@
 from . import base_types
-from ._SafekeepingPlaceTypeAndText8 import SafekeepingPlaceTypeAndText8
 from ._CountryCode import CountryCode
 from ._DTI2024Identifier import DTI2024Identifier
 from ._GenericIdentification78 import GenericIdentification78
 from ._SafekeepingPlaceTypeAndIdentification1 import SafekeepingPlaceTypeAndIdentification1
+from ._SafekeepingPlaceTypeAndText8 import SafekeepingPlaceTypeAndText8
 
 class SafekeepingPlaceFormat41Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Ctry", "_TpAndId", "_Prtry", "_DgtlLdgrId"]
+	__slots__ = ["_Ctry", "_DgtlLdgrId", "_Id", "_Prtry", "_TpAndId"]
 	@property
 	def Ctry(self):
 		return self._Ctry

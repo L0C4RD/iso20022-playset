@@ -1,10 +1,10 @@
 from . import base_types
-from ._DecimalNumber import DecimalNumber
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._DecimalNumber import DecimalNumber
 
 class FinancialInstrumentQuantity27Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_GrssAmt", "_UnitsNb", "_NetAmt"]
+	__slots__ = ["_GrssAmt", "_NetAmt", "_UnitsNb"]
 	@property
 	def GrssAmt(self):
 		return self._GrssAmt

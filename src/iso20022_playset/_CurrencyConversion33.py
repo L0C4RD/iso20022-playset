@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._CurrencyConversion32 import CurrencyConversion32
 from ._CurrencyConversionResponse2Code import CurrencyConversionResponse2Code
+from ._Max35Text import Max35Text
 
 class CurrencyConversion33(base_types._BaseFieldType):
 
-	__slots__ = ["_Rslt", "_Convs", "_RsltRsn"]
+	__slots__ = ["_Convs", "_Rslt", "_RsltRsn"]
 	@property
 	def Convs(self):
 		return self._Convs

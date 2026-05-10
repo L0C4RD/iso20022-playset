@@ -1,11 +1,11 @@
 from . import base_types
 from ._PaymentReceipt6 import PaymentReceipt6
-from ._TransactionIdentifier1 import TransactionIdentifier1
 from ._StoredValueData8 import StoredValueData8
+from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class StoredValueResponse8(base_types._BaseFieldType):
 
-	__slots__ = ["_Rslt", "_POITxId", "_Rct", "_SaleTxId"]
+	__slots__ = ["_POITxId", "_Rct", "_Rslt", "_SaleTxId"]
 	@property
 	def POITxId(self):
 		return self._POITxId

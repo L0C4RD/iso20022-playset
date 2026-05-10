@@ -5,7 +5,7 @@ from ._ISODateTime import ISODateTime
 
 class ActivityDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_Initr", "_DtTm", "_Actvty"]
+	__slots__ = ["_Actvty", "_DtTm", "_Initr"]
 	@property
 	def Actvty(self):
 		return self._Actvty

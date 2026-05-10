@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification165 import GenericIdentification165
 from ._AssetHolding1 import AssetHolding1
+from ._GenericIdentification165 import GenericIdentification165
 
 class CollateralAccount4(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AsstHldg"]
+	__slots__ = ["_AsstHldg", "_Id"]
 	@property
 	def AsstHldg(self):
 		return self._AsstHldg

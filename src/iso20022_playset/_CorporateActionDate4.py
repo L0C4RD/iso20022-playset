@@ -3,7 +3,7 @@ from ._DateFormat4Choice import DateFormat4Choice
 
 class CorporateActionDate4(base_types._BaseFieldType):
 
-	__slots__ = ["_XpryDt", "_EarlstPmtDt", "_DdlnToSplt", "_PmtDt", "_CnsntXprtnDt", "_SbcptCostDbtDt", "_MktDdln", "_QtnSetngDt", "_RspnDdln", "_CnsntRcrdDt", "_CpnClpngDt"]
+	__slots__ = ["_CnsntRcrdDt", "_CnsntXprtnDt", "_CpnClpngDt", "_DdlnToSplt", "_EarlstPmtDt", "_MktDdln", "_PmtDt", "_QtnSetngDt", "_RspnDdln", "_SbcptCostDbtDt", "_XpryDt"]
 	@property
 	def CnsntRcrdDt(self):
 		return self._CnsntRcrdDt

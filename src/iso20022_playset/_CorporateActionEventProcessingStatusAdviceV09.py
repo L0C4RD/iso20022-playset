@@ -1,14 +1,14 @@
 from . import base_types
+from ._CorporateActionGeneralInformation182 import CorporateActionGeneralInformation182
+from ._CorporateActionNarrative10 import CorporateActionNarrative10
+from ._DocumentIdentification33 import DocumentIdentification33
+from ._DocumentIdentification9 import DocumentIdentification9
 from ._EventProcessingStatus7Choice import EventProcessingStatus7Choice
 from ._SupplementaryData1 import SupplementaryData1
-from ._CorporateActionGeneralInformation182 import CorporateActionGeneralInformation182
-from ._DocumentIdentification33 import DocumentIdentification33
-from ._CorporateActionNarrative10 import CorporateActionNarrative10
-from ._DocumentIdentification9 import DocumentIdentification9
 
 class CorporateActionEventProcessingStatusAdviceV09(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrDocId", "_CorpActnGnlInf", "_NtfctnId", "_EvtPrcgSts", "_AddtlInf", "_SplmtryData"]
+	__slots__ = ["_AddtlInf", "_CorpActnGnlInf", "_EvtPrcgSts", "_NtfctnId", "_OthrDocId", "_SplmtryData"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

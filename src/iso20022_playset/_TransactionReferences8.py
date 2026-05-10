@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._PartyIdentification272 import PartyIdentification272
 from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
 
 class TransactionReferences8(base_types._BaseFieldType):
 
-	__slots__ = ["_EndToEndId", "_PmtInfId", "_UETR", "_CdtrSchmeId", "_InstrId", "_TxId", "_MndtId"]
+	__slots__ = ["_CdtrSchmeId", "_EndToEndId", "_InstrId", "_MndtId", "_PmtInfId", "_TxId", "_UETR"]
 	@property
 	def CdtrSchmeId(self):
 		return self._CdtrSchmeId

@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyType7Code import PartyType7Code
 from ._Max256Text import Max256Text
+from ._PartyType7Code import PartyType7Code
 
 class GenericIdentification186(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Id"]
+	__slots__ = ["_Id", "_Tp"]
 	@property
 	def Id(self):
 		return self._Id

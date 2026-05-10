@@ -1,17 +1,17 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._AmountOrPercentage2Choice import AmountOrPercentage2Choice
-from ._PaymentTerms4 import PaymentTerms4
+from ._BICIdentification1 import BICIdentification1
 from ._BPOApplicableRules1Choice import BPOApplicableRules1Choice
 from ._Charges5 import Charges5
-from ._SettlementTerms3 import SettlementTerms3
-from ._Location2 import Location2
-from ._BICIdentification1 import BICIdentification1
 from ._CountryCode import CountryCode
+from ._ISODate import ISODate
+from ._Location2 import Location2
+from ._PaymentTerms4 import PaymentTerms4
+from ._SettlementTerms3 import SettlementTerms3
 
 class PaymentObligation2(base_types._BaseFieldType):
 
-	__slots__ = ["_XpryDt", "_AplblRules", "_PmtOblgtnAmt", "_PlcOfJursdctn", "_Chrgs", "_OblgrBk", "_RcptBk", "_SttlmTerms", "_PmtTerms", "_AplblLaw"]
+	__slots__ = ["_AplblLaw", "_AplblRules", "_Chrgs", "_OblgrBk", "_PlcOfJursdctn", "_PmtOblgtnAmt", "_PmtTerms", "_RcptBk", "_SttlmTerms", "_XpryDt"]
 	@property
 	def AplblLaw(self):
 		return self._AplblLaw

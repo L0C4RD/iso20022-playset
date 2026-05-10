@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class InstructionType2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrId", "_InstrCxlId"]
+	__slots__ = ["_InstrCxlId", "_InstrId"]
 	@property
 	def InstrCxlId(self):
 		return self._InstrCxlId

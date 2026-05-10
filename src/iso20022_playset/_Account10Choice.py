@@ -1,10 +1,10 @@
 from . import base_types
-from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
 from ._CashAccountIdentification5Choice import CashAccountIdentification5Choice
+from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
 
 class Account10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxAcct", "_CshAcct", "_ChrgsAcct"]
+	__slots__ = ["_ChrgsAcct", "_CshAcct", "_TaxAcct"]
 	@property
 	def ChrgsAcct(self):
 		return self._ChrgsAcct

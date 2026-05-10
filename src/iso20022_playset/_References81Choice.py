@@ -1,10 +1,10 @@
 from . import base_types
-from ._UTIIdentifier import UTIIdentifier
 from ._Max35Text import Max35Text
+from ._UTIIdentifier import UTIIdentifier
 
 class References81Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IntraBalMvmntId", "_TradId", "_MktInfrstrctrTxId", "_PoolId", "_IntraPosMvmntId", "_SctiesSttlmTxId", "_CtrPtyMktInfrstrctrTxId", "_CmonId", "_AcctSvcrTxId", "_OthrTxId", "_UnqTxIdr"]
+	__slots__ = ["_AcctSvcrTxId", "_CmonId", "_CtrPtyMktInfrstrctrTxId", "_IntraBalMvmntId", "_IntraPosMvmntId", "_MktInfrstrctrTxId", "_OthrTxId", "_PoolId", "_SctiesSttlmTxId", "_TradId", "_UnqTxIdr"]
 	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId

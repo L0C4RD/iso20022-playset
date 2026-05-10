@@ -1,31 +1,31 @@
 from . import base_types
-from ._Exact12Text import Exact12Text
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._Max12NumericText import Max12NumericText
 from ._AdditionalData2 import AdditionalData2
-from ._Exact15Text import Exact15Text
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._ReconciliationFunction1Code import ReconciliationFunction1Code
-from ._Jurisdiction2 import Jurisdiction2
-from ._ISODateTime import ISODateTime
-from ._CardServiceType4Code import CardServiceType4Code
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ProcessingResult23 import ProcessingResult23
-from ._ContentInformationType41 import ContentInformationType41
-from ._SettlementService6 import SettlementService6
-from ._ProtectedData2 import ProtectedData2
 from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
+from ._CardServiceType4Code import CardServiceType4Code
+from ._ContentInformationType41 import ContentInformationType41
+from ._Exact12Text import Exact12Text
+from ._Exact15Text import Exact15Text
 from ._Exact3NumericText import Exact3NumericText
-from ._Max35Text import Max35Text
-from ._ReconciliationActivityType1Code import ReconciliationActivityType1Code
-from ._TransactionTotals14 import TransactionTotals14
 from ._Header71 import Header71
+from ._ISO8583ResponseCode import ISO8583ResponseCode
+from ._ISODateTime import ISODateTime
+from ._Jurisdiction2 import Jurisdiction2
+from ._Max12NumericText import Max12NumericText
+from ._Max35Text import Max35Text
+from ._PartyIdentification286 import PartyIdentification286
+from ._ProcessingResult23 import ProcessingResult23
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._ProtectedData2 import ProtectedData2
+from ._Reconciliation4 import Reconciliation4
+from ._ReconciliationActivityType1Code import ReconciliationActivityType1Code
+from ._ReconciliationFunction1Code import ReconciliationFunction1Code
+from ._SettlementService6 import SettlementService6
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionTotals14 import TransactionTotals14
 
 class ReconciliationResponseV04(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrRcncltnTp", "_RcncltnTp", "_Sndr", "_ReqdCcy", "_RcncltnFctn", "_AddtlData", "_Jursdctn", "_AddtlFee", "_LifeCyclId", "_Hdr", "_RcncltnTtls", "_RcncltnActvtyTp", "_RtrvlRefNb", "_Rcncltn", "_Prgrmm", "_SctyTrlr", "_TrnsmssnDtTm", "_PrcgRslt", "_Rcvr", "_SysTracAudtNb", "_SttlmSvc", "_OthrRcncltnActvtyTp", "_PrtctdData", "_OrgnlRspnCd", "_Orgtr", "_SplmtryData", "_Dstn"]
+	__slots__ = ["_AddtlData", "_AddtlFee", "_Dstn", "_Hdr", "_Jursdctn", "_LifeCyclId", "_OrgnlRspnCd", "_Orgtr", "_OthrRcncltnActvtyTp", "_OthrRcncltnTp", "_PrcgRslt", "_Prgrmm", "_PrtctdData", "_Rcncltn", "_RcncltnActvtyTp", "_RcncltnFctn", "_RcncltnTp", "_RcncltnTtls", "_Rcvr", "_ReqdCcy", "_RtrvlRefNb", "_SctyTrlr", "_Sndr", "_SplmtryData", "_SttlmSvc", "_SysTracAudtNb", "_TrnsmssnDtTm"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

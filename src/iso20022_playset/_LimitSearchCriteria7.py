@@ -1,16 +1,16 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ActiveAmountRange3Choice import ActiveAmountRange3Choice
 from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._DateAndPeriod2Choice import DateAndPeriod2Choice
-from ._SystemIdentification2Choice import SystemIdentification2Choice
+from ._ActiveAmountRange3Choice import ActiveAmountRange3Choice
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._DateAndPeriod2Choice import DateAndPeriod2Choice
 from ._LimitType1Choice import LimitType1Choice
 from ._PercentageRange1Choice import PercentageRange1Choice
+from ._SystemIdentification2Choice import SystemIdentification2Choice
 
 class LimitSearchCriteria7(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_LmtCcy", "_CurLmtTp", "_BilLmtCtrPtyId", "_LmtAmt", "_SysId", "_UsdAmt", "_DfltLmtTp", "_LmtVldAsOfDt", "_UsdPctg", "_AcctOwnr"]
+	__slots__ = ["_AcctId", "_AcctOwnr", "_BilLmtCtrPtyId", "_CurLmtTp", "_DfltLmtTp", "_LmtAmt", "_LmtCcy", "_LmtVldAsOfDt", "_SysId", "_UsdAmt", "_UsdPctg"]
 	@property
 	def AcctId(self):
 		return self._AcctId

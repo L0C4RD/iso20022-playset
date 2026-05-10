@@ -1,13 +1,13 @@
 from . import base_types
+from ._AcceptedStatusReason7 import AcceptedStatusReason7
 from ._PendingProcessingStatusReason1 import PendingProcessingStatusReason1
 from ._ProprietaryStatusAndReason5 import ProprietaryStatusAndReason5
 from ._ReceivedStatusReason1 import ReceivedStatusReason1
 from ._RejectedStatusReason12 import RejectedStatusReason12
-from ._AcceptedStatusReason7 import AcceptedStatusReason7
 
 class ProcessingStatus43Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rcvd", "_Rjctd", "_PrtrySts", "_PdgPrcg", "_Accptd"]
+	__slots__ = ["_Accptd", "_PdgPrcg", "_PrtrySts", "_Rcvd", "_Rjctd"]
 	@property
 	def Accptd(self):
 		return self._Accptd

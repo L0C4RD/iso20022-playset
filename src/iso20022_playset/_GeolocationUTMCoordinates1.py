@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class GeolocationUTMCoordinates1(base_types._BaseFieldType):
 
-	__slots__ = ["_UTMZone", "_UTMEstwrd", "_UTMNrthwrd"]
+	__slots__ = ["_UTMEstwrd", "_UTMNrthwrd", "_UTMZone"]
 	@property
 	def UTMEstwrd(self):
 		return self._UTMEstwrd

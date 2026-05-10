@@ -1,16 +1,16 @@
 from . import base_types
+from ._AccountIdentificationSearchCriteria2Choice import AccountIdentificationSearchCriteria2Choice
+from ._CashBalance14 import CashBalance14
+from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
 from ._DateTimePeriod1Choice import DateTimePeriod1Choice
+from ._EventType1Choice import EventType1Choice
+from ._Max35Text import Max35Text
 from ._Max4AlphaNumericText import Max4AlphaNumericText
 from ._PartyIdentification136 import PartyIdentification136
-from ._Max35Text import Max35Text
-from ._CashBalance14 import CashBalance14
-from ._AccountIdentificationSearchCriteria2Choice import AccountIdentificationSearchCriteria2Choice
-from ._EventType1Choice import EventType1Choice
-from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
 
 class ReportQuerySearchCriteria3(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_Evt", "_SchdldTm", "_RptNm", "_MsgNmId", "_DtSch", "_Bal", "_RspnsblPtyId", "_PtyId"]
+	__slots__ = ["_AcctId", "_Bal", "_DtSch", "_Evt", "_MsgNmId", "_PtyId", "_RptNm", "_RspnsblPtyId", "_SchdldTm"]
 	@property
 	def AcctId(self):
 		return self._AcctId

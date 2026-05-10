@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ContentInformationType39 import ContentInformationType39
+from ._ISODate import ISODate
 from ._Max2MBBinary import Max2MBBinary
 from ._Max35Text import Max35Text
 
 class MandateRelatedInformation17(base_types._BaseFieldType):
 
-	__slots__ = ["_DtOfSgntr", "_MndtImg", "_PrtctdMndtImg", "_MndtId"]
+	__slots__ = ["_DtOfSgntr", "_MndtId", "_MndtImg", "_PrtctdMndtImg"]
 	@property
 	def DtOfSgntr(self):
 		return self._DtOfSgntr

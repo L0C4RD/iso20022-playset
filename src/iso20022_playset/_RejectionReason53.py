@@ -1,11 +1,11 @@
 from . import base_types
-from ._TransactionIdentification3Choice import TransactionIdentification3Choice
 from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
 from ._ReportingMessageStatus1Code import ReportingMessageStatus1Code
+from ._TransactionIdentification3Choice import TransactionIdentification3Choice
 
 class RejectionReason53(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_Sts", "_DtldVldtnRule"]
+	__slots__ = ["_DtldVldtnRule", "_Sts", "_TxId"]
 	@property
 	def DtldVldtnRule(self):
 		return self._DtldVldtnRule

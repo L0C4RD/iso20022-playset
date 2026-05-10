@@ -1,13 +1,13 @@
 from . import base_types
+from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
 from ._Max35Text import Max35Text
 from ._Max4Text import Max4Text
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._YesNoIndicator import YesNoIndicator
 
 class TradeAgreement14(base_types._BaseFieldType):
 
-	__slots__ = ["_TradDt", "_PdctTp", "_SttlmSsnIdr", "_OprScp", "_PmtVrssPmtInd", "_OprTp", "_OrgtrRef", "_CmonRef"]
+	__slots__ = ["_CmonRef", "_OprScp", "_OprTp", "_OrgtrRef", "_PdctTp", "_PmtVrssPmtInd", "_SttlmSsnIdr", "_TradDt"]
 	@property
 	def CmonRef(self):
 		return self._CmonRef

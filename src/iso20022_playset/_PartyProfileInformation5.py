@@ -1,18 +1,18 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._CustomerConductClassification1Choice import CustomerConductClassification1Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._KYCCheckType1Choice import KYCCheckType1Choice
-from ._EventFrequency1Code import EventFrequency1Code
-from ._DataBaseCheck1 import DataBaseCheck1
-from ._Max35Text import Max35Text
 from ._CertificationType1Choice import CertificationType1Choice
-from ._RiskLevel2Choice import RiskLevel2Choice
+from ._CustomerConductClassification1Choice import CustomerConductClassification1Choice
+from ._DataBaseCheck1 import DataBaseCheck1
+from ._EventFrequency1Code import EventFrequency1Code
+from ._ISODate import ISODate
+from ._KYCCheckType1Choice import KYCCheckType1Choice
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._RiskLevel2Choice import RiskLevel2Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class PartyProfileInformation5(base_types._BaseFieldType):
 
-	__slots__ = ["_ChckngDt", "_SlryRg", "_ChckngFrqcy", "_NxtRvsnDt", "_CertfctnInd", "_ChckngPty", "_VldtngPty", "_CstmrCndctClssfctn", "_RskLvl", "_KnowYourCstmrChckTp", "_RspnsblPty", "_CertTp", "_KnowYourCstmrDBChck", "_SrcOfWlth"]
+	__slots__ = ["_CertTp", "_CertfctnInd", "_ChckngDt", "_ChckngFrqcy", "_ChckngPty", "_CstmrCndctClssfctn", "_KnowYourCstmrChckTp", "_KnowYourCstmrDBChck", "_NxtRvsnDt", "_RskLvl", "_RspnsblPty", "_SlryRg", "_SrcOfWlth", "_VldtngPty"]
 	@property
 	def CertTp(self):
 		return self._CertTp

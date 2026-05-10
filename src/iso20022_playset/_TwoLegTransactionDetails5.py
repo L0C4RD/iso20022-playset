@@ -1,18 +1,18 @@
 from . import base_types
-from ._TradeDate8Choice import TradeDate8Choice
-from ._ClosingDate4Choice import ClosingDate4Choice
 from ._AmountAndDirection29 import AmountAndDirection29
-from ._TwoLegTransactionType4Choice import TwoLegTransactionType4Choice
+from ._AmountAndDirection5 import AmountAndDirection5
+from ._ClosingDate4Choice import ClosingDate4Choice
+from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
 from ._OtherAmounts16 import OtherAmounts16
 from ._Price14 import Price14
 from ._TradeDate7Choice import TradeDate7Choice
-from ._Max35Text import Max35Text
-from ._AmountAndDirection5 import AmountAndDirection5
-from ._Max140Text import Max140Text
+from ._TradeDate8Choice import TradeDate8Choice
+from ._TwoLegTransactionType4Choice import TwoLegTransactionType4Choice
 
 class TwoLegTransactionDetails5(base_types._BaseFieldType):
 
-	__slots__ = ["_ClsgDt", "_GrssTradAmt", "_ScndLegNrrtv", "_ClsgSttlmAmt", "_TwoLegTxTp", "_TradDt", "_ClsgLegId", "_OpngLegId", "_PrcgDt", "_OthrAmts", "_EndPric"]
+	__slots__ = ["_ClsgDt", "_ClsgLegId", "_ClsgSttlmAmt", "_EndPric", "_GrssTradAmt", "_OpngLegId", "_OthrAmts", "_PrcgDt", "_ScndLegNrrtv", "_TradDt", "_TwoLegTxTp"]
 	@property
 	def ClsgDt(self):
 		return self._ClsgDt

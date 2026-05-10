@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentification34Choice import PartyIdentification34Choice
 from ._AmountAndDirection20 import AmountAndDirection20
+from ._PartyIdentification34Choice import PartyIdentification34Choice
 
 class SecuritiesCompensation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Dpstry", "_SttlmAmt", "_Fees"]
+	__slots__ = ["_Dpstry", "_Fees", "_SttlmAmt"]
 	@property
 	def Dpstry(self):
 		return self._Dpstry

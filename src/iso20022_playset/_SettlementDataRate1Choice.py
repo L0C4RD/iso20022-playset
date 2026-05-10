@@ -3,7 +3,7 @@ from ._PercentageRate import PercentageRate
 
 class SettlementDataRate1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ValOfInstrs", "_NbOfInstrs"]
+	__slots__ = ["_NbOfInstrs", "_ValOfInstrs"]
 	@property
 	def NbOfInstrs(self):
 		return self._NbOfInstrs

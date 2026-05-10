@@ -1,21 +1,21 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SafeKeepingPlace3 import SafeKeepingPlace3
-from ._ValuationsDetails1 import ValuationsDetails1
-from ._PartyIdentification232 import PartyIdentification232
-from ._YesNoIndicator import YesNoIndicator
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._GenericIdentification178 import GenericIdentification178
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._BalanceQuantity13Choice import BalanceQuantity13Choice
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 from ._ForeignExchangeTerms19 import ForeignExchangeTerms19
+from ._GenericIdentification178 import GenericIdentification178
+from ._PartyIdentification232 import PartyIdentification232
 from ._Rating2 import Rating2
+from ._SafeKeepingPlace3 import SafeKeepingPlace3
+from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._SecuritiesSettlementStatus3Code import SecuritiesSettlementStatus3Code
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._ValuationsDetails1 import ValuationsDetails1
+from ._YesNoIndicator import YesNoIndicator
 
 class SecuritiesBalance3(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_Qty", "_TxLotNb", "_DnmtnCcy", "_RatgDtls", "_CollInd", "_SfkpgPlc", "_SfkpgAcct", "_FXDtls", "_SttlmSts", "_AcctOwnr", "_BlckChainAdrOrWllt", "_ValtnDtls"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_CollInd", "_DnmtnCcy", "_FXDtls", "_FinInstrmId", "_Qty", "_RatgDtls", "_SfkpgAcct", "_SfkpgPlc", "_SttlmSts", "_TxLotNb", "_ValtnDtls"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

@@ -1,11 +1,11 @@
 from . import base_types
-from ._Header56 import Header56
-from ._ContentInformationType37 import ContentInformationType37
 from ._CardPaymentBatchTransferResponse12 import CardPaymentBatchTransferResponse12
+from ._ContentInformationType37 import ContentInformationType37
+from ._Header56 import Header56
 
 class AcceptorBatchTransferResponseV13(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_Hdr", "_BtchTrfRspn"]
+	__slots__ = ["_BtchTrfRspn", "_Hdr", "_SctyTrlr"]
 	@property
 	def BtchTrfRspn(self):
 		return self._BtchTrfRspn

@@ -1,18 +1,18 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._AuthorisationResult19 import AuthorisationResult19
 from ._CardPaymentTransaction138 import CardPaymentTransaction138
 from ._CardPaymentTransactionDetails50 import CardPaymentTransactionDetails50
-from ._TransactionIdentifier1 import TransactionIdentifier1
 from ._FailureReason3Code import FailureReason3Code
-from ._Min3Max4Text import Min3Max4Text
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
-from ._AuthorisationResult19 import AuthorisationResult19
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._Min3Max4Text import Min3Max4Text
+from ._TransactionIdentifier1 import TransactionIdentifier1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CardPaymentTransaction143(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRefId", "_AddtlTxData", "_IntrchngData", "_Rvsl", "_CardPrgrmmApld", "_InitrTxId", "_TxDtls", "_FailrRsn", "_CstmrCnsnt", "_CardPrgrmmPropsd", "_TxId", "_RcptTxId", "_OrgnlTx", "_TxSucss", "_RcncltnId", "_AuthstnRslt", "_MrchntCtgyCd"]
+	__slots__ = ["_AddtlTxData", "_AuthstnRslt", "_CardPrgrmmApld", "_CardPrgrmmPropsd", "_CstmrCnsnt", "_FailrRsn", "_InitrTxId", "_IntrchngData", "_MrchntCtgyCd", "_OrgnlTx", "_RcncltnId", "_RcptTxId", "_Rvsl", "_SaleRefId", "_TxDtls", "_TxId", "_TxSucss"]
 	@property
 	def AddtlTxData(self):
 		return self._AddtlTxData

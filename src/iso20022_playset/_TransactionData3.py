@@ -1,13 +1,13 @@
 from . import base_types
-from ._Max50Text import Max50Text
-from ._SecuritiesTransactionPrice4Choice import SecuritiesTransactionPrice4Choice
 from ._FinancialInstrumentQuantity25Choice import FinancialInstrumentQuantity25Choice
+from ._Max50Text import Max50Text
 from ._Max52Text import Max52Text
 from ._PassiveOrAgressiveType1Code import PassiveOrAgressiveType1Code
+from ._SecuritiesTransactionPrice4Choice import SecuritiesTransactionPrice4Choice
 
 class TransactionData3(base_types._BaseFieldType):
 
-	__slots__ = ["_StrtgyLkdOrdrId", "_TxId", "_TraddQty", "_TxPric", "_PssvOrAggrssvInd"]
+	__slots__ = ["_PssvOrAggrssvInd", "_StrtgyLkdOrdrId", "_TraddQty", "_TxId", "_TxPric"]
 	@property
 	def PssvOrAggrssvInd(self):
 		return self._PssvOrAggrssvInd

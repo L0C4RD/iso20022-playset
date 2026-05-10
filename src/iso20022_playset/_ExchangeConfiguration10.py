@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ExchangePolicy2Code import ExchangePolicy2Code
-from ._ProcessRetry3 import ProcessRetry3
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._ProcessTiming6 import ProcessTiming6
 from ._Number import Number
+from ._ProcessRetry3 import ProcessRetry3
+from ._ProcessTiming6 import ProcessTiming6
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ExchangeConfiguration10(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgDclnd", "_ReTry", "_MaxNb", "_MaxAmt", "_XchgPlcy", "_TmCond", "_XchgFaild"]
+	__slots__ = ["_MaxAmt", "_MaxNb", "_ReTry", "_TmCond", "_XchgDclnd", "_XchgFaild", "_XchgPlcy"]
 	@property
 	def MaxAmt(self):
 		return self._MaxAmt

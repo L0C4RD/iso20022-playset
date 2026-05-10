@@ -1,13 +1,13 @@
 from . import base_types
 from ._ISO3NumericCountryCode import ISO3NumericCountryCode
-from ._Min3Max4Text import Min3Max4Text
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._Min3Max4Text import Min3Max4Text
 
 class Organisation26(base_types._BaseFieldType):
 
-	__slots__ = ["_Adr", "_RegdIdr", "_CtryCd", "_CmonNm", "_MrchntCtgyCd"]
+	__slots__ = ["_Adr", "_CmonNm", "_CtryCd", "_MrchntCtgyCd", "_RegdIdr"]
 	@property
 	def Adr(self):
 		return self._Adr

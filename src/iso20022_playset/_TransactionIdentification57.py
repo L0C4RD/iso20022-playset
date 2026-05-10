@@ -1,24 +1,24 @@
 from . import base_types
 from ._Exact12Text import Exact12Text
-from ._LifeCycleSupport1Code import LifeCycleSupport1Code
-from ._Max99Text import Max99Text
-from ._Exact2NumericText import Exact2NumericText
-from ._Max12NumericText import Max12NumericText
 from ._Exact15Text import Exact15Text
-from ._ISODateTime import ISODateTime
-from ._Max140Text import Max140Text
+from ._Exact2NumericText import Exact2NumericText
 from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._ISODateTime import ISODateTime
 from ._ISOTime import ISOTime
-from ._Max23NumericText import Max23NumericText
+from ._LifeCycleSupport1Code import LifeCycleSupport1Code
 from ._Max1000Text import Max1000Text
-from ._PurchaseIdentifierType2Code import PurchaseIdentifierType2Code
+from ._Max12NumericText import Max12NumericText
+from ._Max140Text import Max140Text
+from ._Max23NumericText import Max23NumericText
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
+from ._Max99Text import Max99Text
+from ._PurchaseIdentifierType2Code import PurchaseIdentifierType2Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TransactionIdentification57(base_types._BaseFieldType):
 
-	__slots__ = ["_PurchsIdr", "_AuthstnSeqNb", "_PurchsIdrTp", "_LclDt", "_LclTm", "_AuthntcnTkn", "_OthrPurchsIdrTp", "_IssrRefData", "_LifeCyclId", "_AssoctdDataRef", "_SysTracAudtNb", "_PresntmntSeqNb", "_LifeCyclSpprt", "_TmZone", "_AcqrrRefData", "_AcqrrRefNb", "_RtrvlRefNb", "_AssoctdDataDstn", "_PresntmntSeqCnt", "_TrnsmssnDtTm", "_LifeCyclIdMssng", "_AssoctdData"]
+	__slots__ = ["_AcqrrRefData", "_AcqrrRefNb", "_AssoctdData", "_AssoctdDataDstn", "_AssoctdDataRef", "_AuthntcnTkn", "_AuthstnSeqNb", "_IssrRefData", "_LclDt", "_LclTm", "_LifeCyclId", "_LifeCyclIdMssng", "_LifeCyclSpprt", "_OthrPurchsIdrTp", "_PresntmntSeqCnt", "_PresntmntSeqNb", "_PurchsIdr", "_PurchsIdrTp", "_RtrvlRefNb", "_SysTracAudtNb", "_TmZone", "_TrnsmssnDtTm"]
 	@property
 	def AcqrrRefData(self):
 		return self._AcqrrRefData

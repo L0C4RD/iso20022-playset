@@ -1,21 +1,21 @@
 from . import base_types
-from ._CorporateActionAmounts76 import CorporateActionAmounts76
-from ._GenericIdentification47 import GenericIdentification47
-from ._ForeignExchangeTerms43 import ForeignExchangeTerms43
-from ._Rate47 import Rate47
-from ._IssuerOfferorTaxabilityIndicator1Choice import IssuerOfferorTaxabilityIndicator1Choice
-from ._PriceDetails43 import PriceDetails43
-from ._CountryCode import CountryCode
-from ._PriceCalculationMethod1Choice import PriceCalculationMethod1Choice
-from ._NonEligibleProceedsIndicator6Choice import NonEligibleProceedsIndicator6Choice
 from ._CashAccountIdentification15Choice import CashAccountIdentification15Choice
-from ._CreditDebitCode import CreditDebitCode
+from ._CorporateActionAmounts76 import CorporateActionAmounts76
 from ._CorporateActionDate97 import CorporateActionDate97
+from ._CountryCode import CountryCode
+from ._CreditDebitCode import CreditDebitCode
+from ._ForeignExchangeTerms43 import ForeignExchangeTerms43
+from ._GenericIdentification47 import GenericIdentification47
+from ._IssuerOfferorTaxabilityIndicator1Choice import IssuerOfferorTaxabilityIndicator1Choice
+from ._NonEligibleProceedsIndicator6Choice import NonEligibleProceedsIndicator6Choice
 from ._Payment2Code import Payment2Code
+from ._PriceCalculationMethod1Choice import PriceCalculationMethod1Choice
+from ._PriceDetails43 import PriceDetails43
+from ._Rate47 import Rate47
 
 class CashOption113(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtDtls", "_OthrIncmTp", "_DtDtls", "_XmptnTp", "_FXDtls", "_RateAndAmtDtls", "_CdtDbtInd", "_CshAcctId", "_IncmTp", "_PricClctnMtd", "_CtryOfIncmSrc", "_IssrOfferrTaxbltyInd", "_PricDtls", "_NonElgblPrcdsInd", "_CtrctlPmtInd"]
+	__slots__ = ["_AmtDtls", "_CdtDbtInd", "_CshAcctId", "_CtrctlPmtInd", "_CtryOfIncmSrc", "_DtDtls", "_FXDtls", "_IncmTp", "_IssrOfferrTaxbltyInd", "_NonElgblPrcdsInd", "_OthrIncmTp", "_PricClctnMtd", "_PricDtls", "_RateAndAmtDtls", "_XmptnTp"]
 	@property
 	def AmtDtls(self):
 		return self._AmtDtls

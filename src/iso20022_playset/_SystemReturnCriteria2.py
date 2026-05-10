@@ -3,7 +3,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class SystemReturnCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_MmbIdInd", "_AcctIdInd", "_CtryIdInd", "_SysIdInd"]
+	__slots__ = ["_AcctIdInd", "_CtryIdInd", "_MmbIdInd", "_SysIdInd"]
 	@property
 	def AcctIdInd(self):
 		return self._AcctIdInd

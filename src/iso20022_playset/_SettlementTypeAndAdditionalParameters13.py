@@ -1,6 +1,6 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._Max35Text import Max35Text
+from ._YesNoIndicator import YesNoIndicator
 
 class SettlementTypeAndAdditionalParameters13(base_types._BaseFieldType):
 

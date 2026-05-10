@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._CountryCode import CountryCode
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._Max35Text import Max35Text
+from ._CountryCode import CountryCode
+from ._ISODate import ISODate
 from ._Max10Text import Max10Text
+from ._Max35Text import Max35Text
 
 class StructuredRegulatoryReporting3(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_Cd", "_Ctry", "_Inf", "_Amt", "_Tp"]
+	__slots__ = ["_Amt", "_Cd", "_Ctry", "_Dt", "_Inf", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

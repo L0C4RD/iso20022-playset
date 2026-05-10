@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISONormalisedDateTime import ISONormalisedDateTime
-from ._Party9Choice import Party9Choice
-from ._Max35Text import Max35Text
 from ._CopyDuplicate1Code import CopyDuplicate1Code
+from ._ISONormalisedDateTime import ISONormalisedDateTime
+from ._Max35Text import Max35Text
+from ._Party9Choice import Party9Choice
 
 class OriginalMessage1(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgDefIdr", "_CpyDplct", "_To", "_CreDt", "_Fr", "_BizMsgIdr"]
+	__slots__ = ["_BizMsgIdr", "_CpyDplct", "_CreDt", "_Fr", "_MsgDefIdr", "_To"]
 	@property
 	def BizMsgIdr(self):
 		return self._BizMsgIdr

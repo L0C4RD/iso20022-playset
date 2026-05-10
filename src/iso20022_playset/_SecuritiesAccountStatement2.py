@@ -4,7 +4,7 @@ from ._SecuritiesAccountReferenceDataChange2 import SecuritiesAccountReferenceDa
 
 class SecuritiesAccountStatement2(base_types._BaseFieldType):
 
-	__slots__ = ["_SysDt", "_Chng"]
+	__slots__ = ["_Chng", "_SysDt"]
 	@property
 	def Chng(self):
 		return self._Chng

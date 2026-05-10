@@ -1,10 +1,10 @@
 from . import base_types
-from ._PensionOrderType1Choice import PensionOrderType1Choice
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._PensionOrderType1Choice import PensionOrderType1Choice
 
 class PensionOrder1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Tp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

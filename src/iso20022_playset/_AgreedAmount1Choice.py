@@ -1,10 +1,10 @@
 from . import base_types
-from ._Amount1 import Amount1
 from ._AgreedAmount1 import AgreedAmount1
+from ._Amount1 import Amount1
 
 class AgreedAmount1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SgrtdIndpdntAmt", "_AgrdAmtDtls"]
+	__slots__ = ["_AgrdAmtDtls", "_SgrtdIndpdntAmt"]
 	@property
 	def AgrdAmtDtls(self):
 		return self._AgrdAmtDtls

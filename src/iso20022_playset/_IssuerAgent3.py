@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentification129Choice import PartyIdentification129Choice
 from ._AgentRole1Code import AgentRole1Code
+from ._PartyIdentification129Choice import PartyIdentification129Choice
 
 class IssuerAgent3(base_types._BaseFieldType):
 
-	__slots__ = ["_Role", "_Id"]
+	__slots__ = ["_Id", "_Role"]
 	@property
 	def Id(self):
 		return self._Id

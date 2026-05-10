@@ -1,12 +1,12 @@
 from . import base_types
 from ._AcceptanceResult6 import AcceptanceResult6
-from ._SupplementaryData1 import SupplementaryData1
 from ._OriginalMandate11Choice import OriginalMandate11Choice
 from ._OriginalMessageInformation1 import OriginalMessageInformation1
+from ._SupplementaryData1 import SupplementaryData1
 
 class MandateAcceptance8(base_types._BaseFieldType):
 
-	__slots__ = ["_AccptncRslt", "_OrgnlMndt", "_SplmtryData", "_OrgnlMsgInf"]
+	__slots__ = ["_AccptncRslt", "_OrgnlMndt", "_OrgnlMsgInf", "_SplmtryData"]
 	@property
 	def AccptncRslt(self):
 		return self._AccptncRslt

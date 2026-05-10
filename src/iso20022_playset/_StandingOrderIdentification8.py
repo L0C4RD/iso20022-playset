@@ -1,11 +1,11 @@
 from . import base_types
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Max35Text import Max35Text
 from ._CashAccount40 import CashAccount40
+from ._Max35Text import Max35Text
 
 class StandingOrderIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Acct", "_AcctOwnr"]
+	__slots__ = ["_Acct", "_AcctOwnr", "_Id"]
 	@property
 	def Acct(self):
 		return self._Acct

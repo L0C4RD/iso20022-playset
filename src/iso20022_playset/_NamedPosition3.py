@@ -1,14 +1,14 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._PositionSet20 import PositionSet20
-from ._PositionSet18 import PositionSet18
-from ._PositionSet19 import PositionSet19
 from ._PositionSet16 import PositionSet16
 from ._PositionSet17 import PositionSet17
+from ._PositionSet18 import PositionSet18
+from ._PositionSet19 import PositionSet19
+from ._PositionSet20 import PositionSet20
 
 class NamedPosition3(base_types._BaseFieldType):
 
-	__slots__ = ["_GnlInf", "_Reuse", "_Mrgn", "_RefDt", "_Ln", "_Coll"]
+	__slots__ = ["_Coll", "_GnlInf", "_Ln", "_Mrgn", "_RefDt", "_Reuse"]
 	@property
 	def Coll(self):
 		return self._Coll

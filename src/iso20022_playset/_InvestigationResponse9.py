@@ -1,12 +1,12 @@
 from . import base_types
+from ._InvestigationData6 import InvestigationData6
+from ._InvestigationStatus2 import InvestigationStatus2
 from ._Max35Text import Max35Text
 from ._Party40Choice import Party40Choice
-from ._InvestigationStatus2 import InvestigationStatus2
-from ._InvestigationData6 import InvestigationData6
 
 class InvestigationResponse9(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstgtnData", "_InvstgtnSts", "_MsgId", "_RspndrInvstgtnId", "_NxtRspndr"]
+	__slots__ = ["_InvstgtnData", "_InvstgtnSts", "_MsgId", "_NxtRspndr", "_RspndrInvstgtnId"]
 	@property
 	def InvstgtnData(self):
 		return self._InvstgtnData

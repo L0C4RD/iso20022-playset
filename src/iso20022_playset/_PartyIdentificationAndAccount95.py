@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._PartyIdentification71Choice import PartyIdentification71Choice
 from ._SecuritiesAccount22 import SecuritiesAccount22
-from ._Max35Text import Max35Text
 
 class PartyIdentificationAndAccount95(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyId", "_AcctId", "_PrcgId"]
+	__slots__ = ["_AcctId", "_PrcgId", "_PtyId"]
 	@property
 	def AcctId(self):
 		return self._AcctId

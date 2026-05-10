@@ -1,13 +1,13 @@
 from . import base_types
 from ._CorporateActionInformation1 import CorporateActionInformation1
 from ._DocumentIdentification8 import DocumentIdentification8
-from ._ElectionCancellationStatus1Choice import ElectionCancellationStatus1Choice
-from ._ElectionAmendmentStatus1Choice import ElectionAmendmentStatus1Choice
 from ._ElectionAdviceStatus1Choice import ElectionAdviceStatus1Choice
+from ._ElectionAmendmentStatus1Choice import ElectionAmendmentStatus1Choice
+from ._ElectionCancellationStatus1Choice import ElectionCancellationStatus1Choice
 
 class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AgtCAElctnAmdmntReqId", "_AgtCAElctnCxlReqId", "_CorpActnGnlInf", "_Id", "_ElctnCxlReqSts", "_AgtCAElctnAdvcId", "_ElctnAdvcSts", "_ElctnAmdmntReqSts"]
+	__slots__ = ["_AgtCAElctnAdvcId", "_AgtCAElctnAmdmntReqId", "_AgtCAElctnCxlReqId", "_CorpActnGnlInf", "_ElctnAdvcSts", "_ElctnAmdmntReqSts", "_ElctnCxlReqSts", "_Id"]
 	@property
 	def AgtCAElctnAdvcId(self):
 		return self._AgtCAElctnAdvcId

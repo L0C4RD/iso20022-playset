@@ -1,21 +1,21 @@
 from . import base_types
-from ._Organisation41 import Organisation41
-from ._Token1 import Token1
-from ._Cardholder21 import Cardholder21
 from ._Acquirer10 import Acquirer10
-from ._RetailerSaleEnvironment2 import RetailerSaleEnvironment2
+from ._Cardholder21 import Cardholder21
+from ._Check1 import Check1
+from ._ContentInformationType40 import ContentInformationType40
+from ._CustomerDevice3 import CustomerDevice3
 from ._LoyaltyAccount3 import LoyaltyAccount3
 from ._MerchantToken2 import MerchantToken2
+from ._Organisation41 import Organisation41
 from ._PaymentCard35 import PaymentCard35
-from ._StoredValueAccount2 import StoredValueAccount2
-from ._CustomerDevice3 import CustomerDevice3
-from ._Check1 import Check1
 from ._PointOfInteraction15 import PointOfInteraction15
-from ._ContentInformationType40 import ContentInformationType40
+from ._RetailerSaleEnvironment2 import RetailerSaleEnvironment2
+from ._StoredValueAccount2 import StoredValueAccount2
+from ._Token1 import Token1
 
 class CardPaymentEnvironment81(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtTkn", "_Mrchnt", "_LltyAcct", "_Chck", "_CstmrDvc", "_StordValAcct", "_PrtctdCrdhldrData", "_SaleEnvt", "_MrchntTkn", "_Crdhldr", "_POI", "_SvcPrvdr", "_Card", "_Wllt", "_Acqrr"]
+	__slots__ = ["_Acqrr", "_Card", "_Chck", "_Crdhldr", "_CstmrDvc", "_LltyAcct", "_Mrchnt", "_MrchntTkn", "_POI", "_PmtTkn", "_PrtctdCrdhldrData", "_SaleEnvt", "_StordValAcct", "_SvcPrvdr", "_Wllt"]
 	@property
 	def Acqrr(self):
 		return self._Acqrr

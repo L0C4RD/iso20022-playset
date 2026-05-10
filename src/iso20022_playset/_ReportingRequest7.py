@@ -1,16 +1,16 @@
 from . import base_types
+from ._BalanceType13 import BalanceType13
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._Max35Text import Max35Text
 from ._Party50Choice import Party50Choice
 from ._ReportingPeriod5 import ReportingPeriod5
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Max35Text import Max35Text
 from ._SequenceRange1Choice import SequenceRange1Choice
-from ._BalanceType13 import BalanceType13
 from ._TransactionType2 import TransactionType2
-from ._CashAccount40 import CashAccount40
 
 class ReportingRequest7(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_ReqdBalTp", "_AcctSvcr", "_ReqdTxTp", "_RptgPrd", "_RptgSeq", "_Id", "_ReqdMsgNmId", "_Acct"]
+	__slots__ = ["_Acct", "_AcctOwnr", "_AcctSvcr", "_Id", "_ReqdBalTp", "_ReqdMsgNmId", "_ReqdTxTp", "_RptgPrd", "_RptgSeq"]
 	@property
 	def Acct(self):
 		return self._Acct

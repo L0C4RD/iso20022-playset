@@ -1,15 +1,15 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._PhoneNumber import PhoneNumber
-from ._Max2048Text import Max2048Text
-from ._PostalAddress1 import PostalAddress1
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from ._Max350Text import Max350Text
+from ._LEIIdentifier import LEIIdentifier
+from ._Max2048Text import Max2048Text
 from ._Max256Text import Max256Text
+from ._Max350Text import Max350Text
+from ._PhoneNumber import PhoneNumber
+from ._PostalAddress1 import PostalAddress1
 
 class ContactAttributes5(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_FaxNb", "_Nm", "_PstlAdr", "_EmailAdr", "_URLAdr", "_AnyBIC", "_PhneNb"]
+	__slots__ = ["_AnyBIC", "_EmailAdr", "_FaxNb", "_LEI", "_Nm", "_PhneNb", "_PstlAdr", "_URLAdr"]
 	@property
 	def AnyBIC(self):
 		return self._AnyBIC

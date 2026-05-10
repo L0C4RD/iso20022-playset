@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
 from ._AgreementFramework1Code import AgreementFramework1Code
+from ._GenericIdentification30 import GenericIdentification30
 
 class AgreementFramework1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryId", "_AgrmtFrmwk"]
+	__slots__ = ["_AgrmtFrmwk", "_PrtryId"]
 	@property
 	def AgrmtFrmwk(self):
 		return self._AgrmtFrmwk

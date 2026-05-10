@@ -1,12 +1,12 @@
 from . import base_types
-from ._DocumentType1 import DocumentType1
 from ._DateAndType1 import DateAndType1
 from ._DocumentLineInformation2 import DocumentLineInformation2
+from ._DocumentType1 import DocumentType1
 from ._Max35Text import Max35Text
 
 class ReferredDocumentInformation8(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Nb", "_LineDtls", "_RltdDt"]
+	__slots__ = ["_LineDtls", "_Nb", "_RltdDt", "_Tp"]
 	@property
 	def LineDtls(self):
 		return self._LineDtls

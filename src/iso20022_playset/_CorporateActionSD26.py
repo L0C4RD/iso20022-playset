@@ -1,7 +1,7 @@
 from . import base_types
-from ._Max4AlphaNumericText import Max4AlphaNumericText
 from ._DecimalNumber import DecimalNumber
 from ._Max15AlphaNumericText import Max15AlphaNumericText
+from ._Max4AlphaNumericText import Max4AlphaNumericText
 
 class CorporateActionSD26(base_types._BaseFieldType):
 

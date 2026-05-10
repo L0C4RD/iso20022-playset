@@ -1,19 +1,19 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max140Text import Max140Text
 from ._AdditionalData1 import AdditionalData1
-from ._Max2NumericText import Max2NumericText
 from ._ISOYearMonth import ISOYearMonth
 from ._Max11NumericText import Max11NumericText
+from ._Max140Text import Max140Text
+from ._Max19NumericText import Max19NumericText
+from ._Max2NumericText import Max2NumericText
 from ._Max35Text import Max35Text
-from ._Token4 import Token4
 from ._ProtectionMethod1Code import ProtectionMethod1Code
 from ._StorageLocation1Code import StorageLocation1Code
-from ._Max19NumericText import Max19NumericText
+from ._Token4 import Token4
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Token3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrPrtcnMtd", "_TknAssrncData", "_TknXpryDt", "_TknAssrncMtd", "_StorgLctn", "_PmtTkn", "_PrtcnMtd", "_TknRqstrId", "_AddtlData", "_OrgnlTkn", "_OthrStorgLctn", "_TknInittdInd", "_TknRefId"]
+	__slots__ = ["_AddtlData", "_OrgnlTkn", "_OthrPrtcnMtd", "_OthrStorgLctn", "_PmtTkn", "_PrtcnMtd", "_StorgLctn", "_TknAssrncData", "_TknAssrncMtd", "_TknInittdInd", "_TknRefId", "_TknRqstrId", "_TknXpryDt"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

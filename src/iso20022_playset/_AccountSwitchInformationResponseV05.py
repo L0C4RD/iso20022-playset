@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._DirectDebitInstructionDetails3 import DirectDebitInstructionDetails3
 from ._AccountSwitchDetails1 import AccountSwitchDetails1
-from ._PaymentInstruction43 import PaymentInstruction43
-from ._MessageIdentification1 import MessageIdentification1
 from ._CashAccount43 import CashAccount43
+from ._DirectDebitInstructionDetails3 import DirectDebitInstructionDetails3
+from ._MessageIdentification1 import MessageIdentification1
+from ._PaymentInstruction43 import PaymentInstruction43
+from ._SupplementaryData1 import SupplementaryData1
 
 class AccountSwitchInformationResponseV05(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSwtchDtls", "_PmtInstr", "_DrctDbtInstr", "_MsgId", "_NewAcct", "_OdAcct", "_SplmtryData"]
+	__slots__ = ["_AcctSwtchDtls", "_DrctDbtInstr", "_MsgId", "_NewAcct", "_OdAcct", "_PmtInstr", "_SplmtryData"]
 	@property
 	def AcctSwtchDtls(self):
 		return self._AcctSwtchDtls

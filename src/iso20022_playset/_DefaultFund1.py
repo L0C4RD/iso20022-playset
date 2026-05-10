@@ -1,11 +1,11 @@
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._AccountIdentification4Choice import AccountIdentification4Choice
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Contribution1 import Contribution1
 
 class DefaultFund1(base_types._BaseFieldType):
 
-	__slots__ = ["_DfltFndAcct", "_TtlDfltFndAmt", "_Cntrbtn", "_IncrCvrgAmt"]
+	__slots__ = ["_Cntrbtn", "_DfltFndAcct", "_IncrCvrgAmt", "_TtlDfltFndAmt"]
 	@property
 	def Cntrbtn(self):
 		return self._Cntrbtn

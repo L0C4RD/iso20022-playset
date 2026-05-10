@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._DataSetIdentification5 import DataSetIdentification5
-from ._TransactionTotals12 import TransactionTotals12
-from ._GenericIdentification176 import GenericIdentification176
 from ._CardPaymentDataSet38 import CardPaymentDataSet38
+from ._DataSetIdentification5 import DataSetIdentification5
+from ._GenericIdentification176 import GenericIdentification176
 from ._ResponseType10 import ResponseType10
+from ._TransactionTotals12 import TransactionTotals12
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CardPaymentDataSet39(base_types._BaseFieldType):
 
-	__slots__ = ["_RsmdApprvl", "_DataSetRslt", "_DataSetInitr", "_RmvDataSet", "_RjctdTx", "_DataSetId", "_RsmdRjctn", "_TxTtls", "_SspdTx"]
+	__slots__ = ["_DataSetId", "_DataSetInitr", "_DataSetRslt", "_RjctdTx", "_RmvDataSet", "_RsmdApprvl", "_RsmdRjctn", "_SspdTx", "_TxTtls"]
 	@property
 	def DataSetId(self):
 		return self._DataSetId

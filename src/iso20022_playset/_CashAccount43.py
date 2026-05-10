@@ -1,15 +1,15 @@
 from . import base_types
-from ._CashAccountType2Choice import CashAccountType2Choice
 from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._Max70Text import Max70Text
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._ProxyAccountIdentification1 import ProxyAccountIdentification1
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccountType2Choice import CashAccountType2Choice
+from ._Max70Text import Max70Text
 from ._PartyIdentification272 import PartyIdentification272
+from ._ProxyAccountIdentification1 import ProxyAccountIdentification1
 
 class CashAccount43(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Svcr", "_Ccy", "_Ownr", "_Nm", "_Tp", "_Prxy"]
+	__slots__ = ["_Ccy", "_Id", "_Nm", "_Ownr", "_Prxy", "_Svcr", "_Tp"]
 	@property
 	def Ccy(self):
 		return self._Ccy

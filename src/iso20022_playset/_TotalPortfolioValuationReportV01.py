@@ -1,14 +1,14 @@
 from . import base_types
+from ._Pagination import Pagination
 from ._PortfolioBalance1 import PortfolioBalance1
+from ._Report4 import Report4
+from ._SecuritiesAccount21 import SecuritiesAccount21
 from ._SupplementaryData1 import SupplementaryData1
 from ._TotalPortfolioValuation1 import TotalPortfolioValuation1
-from ._Report4 import Report4
-from ._Pagination import Pagination
-from ._SecuritiesAccount21 import SecuritiesAccount21
 
 class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_RptGnlDtls", "_SplmtryData", "_Pgntn", "_TtlPrtflValtn", "_Bal"]
+	__slots__ = ["_AcctDtls", "_Bal", "_Pgntn", "_RptGnlDtls", "_SplmtryData", "_TtlPrtflValtn"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

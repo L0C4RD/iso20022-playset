@@ -1,15 +1,15 @@
 from . import base_types
-from ._StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
-from ._Period4Choice import Period4Choice
-from ._ValidationStatusReason3 import ValidationStatusReason3
-from ._OriginalMessage7 import OriginalMessage7
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._TradeParty6 import TradeParty6
 from ._ISODateTime import ISODateTime
+from ._OriginalMessage7 import OriginalMessage7
+from ._Period4Choice import Period4Choice
+from ._StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
+from ._TradeParty6 import TradeParty6
+from ._ValidationStatusReason3 import ValidationStatusReason3
 
 class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_StsRsn", "_RegnAgt", "_RptgPrd", "_OrgnlRefs", "_StsDtTm", "_RptgPty"]
+	__slots__ = ["_OrgnlRefs", "_RegnAgt", "_RptgPrd", "_RptgPty", "_Sts", "_StsDtTm", "_StsRsn"]
 	@property
 	def OrgnlRefs(self):
 		return self._OrgnlRefs

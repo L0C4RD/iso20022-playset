@@ -4,7 +4,7 @@ from ._RepoTerminationOption2Code import RepoTerminationOption2Code
 
 class FixedOpenTermContract2(base_types._BaseFieldType):
 
-	__slots__ = ["_TermntnOptn", "_MtrtyDt"]
+	__slots__ = ["_MtrtyDt", "_TermntnOptn"]
 	@property
 	def MtrtyDt(self):
 		return self._MtrtyDt

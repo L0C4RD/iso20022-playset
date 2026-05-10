@@ -4,7 +4,7 @@ from ._SpecificCollateral2 import SpecificCollateral2
 
 class RepurchaseAgreementType3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SpcfcColl", "_GnlColl"]
+	__slots__ = ["_GnlColl", "_SpcfcColl"]
 	@property
 	def GnlColl(self):
 		return self._GnlColl

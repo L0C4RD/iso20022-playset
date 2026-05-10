@@ -1,17 +1,17 @@
 from . import base_types
-from ._ATMTotals4 import ATMTotals4
-from ._TransactionIdentifier3 import TransactionIdentifier3
-from ._Number import Number
-from ._ATMTotals3 import ATMTotals3
 from ._ATMCassette3 import ATMCassette3
-from ._Max35Text import Max35Text
-from ._FailureReason9Code import FailureReason9Code
 from ._ATMOperation2Code import ATMOperation2Code
+from ._ATMTotals3 import ATMTotals3
+from ._ATMTotals4 import ATMTotals4
+from ._FailureReason9Code import FailureReason9Code
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Number import Number
+from ._TransactionIdentifier3 import TransactionIdentifier3
 
 class ATMReconciliationOperation1(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_RtndCard", "_AddtlTxInf", "_TxTtls", "_ATMTtls", "_Incdnt", "_TpOfOpr", "_RcncltnId", "_Csstt"]
+	__slots__ = ["_ATMTtls", "_AddtlTxInf", "_Csstt", "_Incdnt", "_RcncltnId", "_RtndCard", "_TpOfOpr", "_TxId", "_TxTtls"]
 	@property
 	def ATMTtls(self):
 		return self._ATMTtls

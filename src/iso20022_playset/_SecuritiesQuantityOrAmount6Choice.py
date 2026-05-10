@@ -4,7 +4,7 @@ from ._SecuritiesOption79 import SecuritiesOption79
 
 class SecuritiesQuantityOrAmount6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesQty", "_InstdAmt"]
+	__slots__ = ["_InstdAmt", "_SctiesQty"]
 	@property
 	def InstdAmt(self):
 		return self._InstdAmt

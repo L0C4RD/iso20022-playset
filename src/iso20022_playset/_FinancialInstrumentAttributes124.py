@@ -1,29 +1,29 @@
 from . import base_types
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._GenericIdentification37 import GenericIdentification37
-from ._PercentageRate import PercentageRate
-from ._Frequency23Choice import Frequency23Choice
-from ._OptionType6Choice import OptionType6Choice
-from ._Number1Choice import Number1Choice
-from ._FormOfSecurity6Choice import FormOfSecurity6Choice
-from ._MarketIdentification3Choice import MarketIdentification3Choice
-from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
-from ._ISODate import ISODate
-from ._OptionStyle10Choice import OptionStyle10Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._BaseOneRate import BaseOneRate
-from ._Rating1 import Rating1
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._Price14 import Price14
-from ._InterestComputationMethodFormat4Choice import InterestComputationMethodFormat4Choice
-from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max350Text import Max350Text
+from ._BaseOneRate import BaseOneRate
 from ._ClassificationType32Choice import ClassificationType32Choice
+from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._FormOfSecurity6Choice import FormOfSecurity6Choice
+from ._Frequency23Choice import Frequency23Choice
+from ._GenericIdentification37 import GenericIdentification37
+from ._ISODate import ISODate
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._InterestComputationMethodFormat4Choice import InterestComputationMethodFormat4Choice
+from ._MarketIdentification3Choice import MarketIdentification3Choice
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._Number1Choice import Number1Choice
+from ._OptionStyle10Choice import OptionStyle10Choice
+from ._OptionType6Choice import OptionType6Choice
+from ._PercentageRate import PercentageRate
+from ._Price14 import Price14
+from ._Rating1 import Rating1
+from ._YesNoIndicator import YesNoIndicator
 
 class FinancialInstrumentAttributes124(base_types._BaseFieldType):
 
-	__slots__ = ["_CllblInd", "_OptnTp", "_EndFctr", "_IndxRateBsis", "_ExrcPric", "_RegnForm", "_NxtCllblDt", "_IntrstRate", "_ConvtblInd", "_PutblDt", "_ClssfctnTp", "_PrvsFctr", "_ConvsPric", "_MinNmnlQty", "_NxtFctr", "_PctgOfDebtClms", "_WarrtAttchdOnDlvry", "_NxtFctrDt", "_XpryDt", "_IsseDt", "_MinExrcblMltplQty", "_NxtIntrstRate", "_CpnDt", "_CurFctr", "_CpnAttchdNb", "_PoolNb", "_DtdDt", "_VrsnNb", "_CvrdInd", "_PutblInd", "_CertNb", "_PlcOfListg", "_SbcptPric", "_FaceAmt", "_VarblRateChngFrqcy", "_FrstPmtDt", "_MinExrcblQty", "_CtrctSz", "_OptnStyle", "_ConvsDt", "_FltgRateFxgDt", "_OddCpnInd", "_MtrtyDt", "_YldVar", "_TaxblIncmPerShr", "_DnmtnCcy", "_PmtFrqcy", "_VarblRateInd", "_DayCntBsis", "_FinInstrmAttrAddtlDtls", "_RedYldImpct", "_Ratg"]
+	__slots__ = ["_CertNb", "_CllblInd", "_ClssfctnTp", "_ConvsDt", "_ConvsPric", "_ConvtblInd", "_CpnAttchdNb", "_CpnDt", "_CtrctSz", "_CurFctr", "_CvrdInd", "_DayCntBsis", "_DnmtnCcy", "_DtdDt", "_EndFctr", "_ExrcPric", "_FaceAmt", "_FinInstrmAttrAddtlDtls", "_FltgRateFxgDt", "_FrstPmtDt", "_IndxRateBsis", "_IntrstRate", "_IsseDt", "_MinExrcblMltplQty", "_MinExrcblQty", "_MinNmnlQty", "_MtrtyDt", "_NxtCllblDt", "_NxtFctr", "_NxtFctrDt", "_NxtIntrstRate", "_OddCpnInd", "_OptnStyle", "_OptnTp", "_PctgOfDebtClms", "_PlcOfListg", "_PmtFrqcy", "_PoolNb", "_PrvsFctr", "_PutblDt", "_PutblInd", "_Ratg", "_RedYldImpct", "_RegnForm", "_SbcptPric", "_TaxblIncmPerShr", "_VarblRateChngFrqcy", "_VarblRateInd", "_VrsnNb", "_WarrtAttchdOnDlvry", "_XpryDt", "_YldVar"]
 	@property
 	def CertNb(self):
 		return self._CertNb

@@ -1,12 +1,12 @@
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._CreditDebitCode import CreditDebitCode
 from ._Amount2Choice import Amount2Choice
+from ._CreditDebitCode import CreditDebitCode
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._LimitIdentification8 import LimitIdentification8
 
 class LimitStructure6(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_StartDtTm", "_Amt", "_LmtId"]
+	__slots__ = ["_Amt", "_CdtDbtInd", "_LmtId", "_StartDtTm"]
 	@property
 	def Amt(self):
 		return self._Amt

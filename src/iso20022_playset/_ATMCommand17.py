@@ -1,13 +1,13 @@
 from . import base_types
-from ._ATMCommandIdentification1 import ATMCommandIdentification1
 from ._ATMCommand7Code import ATMCommand7Code
-from ._TMSContactLevel2Code import TMSContactLevel2Code
-from ._ISODateTime import ISODateTime
+from ._ATMCommandIdentification1 import ATMCommandIdentification1
 from ._ATMCommandParameters1Choice import ATMCommandParameters1Choice
+from ._ISODateTime import ISODateTime
+from ._TMSContactLevel2Code import TMSContactLevel2Code
 
 class ATMCommand17(base_types._BaseFieldType):
 
-	__slots__ = ["_CmdId", "_Urgcy", "_CmdParams", "_DtTm", "_Tp"]
+	__slots__ = ["_CmdId", "_CmdParams", "_DtTm", "_Tp", "_Urgcy"]
 	@property
 	def CmdId(self):
 		return self._CmdId

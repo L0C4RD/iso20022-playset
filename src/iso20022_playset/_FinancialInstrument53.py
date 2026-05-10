@@ -1,10 +1,10 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
 from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._LEIIdentifier import LEIIdentifier
 
 class FinancialInstrument53(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_ISIN"]
+	__slots__ = ["_ISIN", "_LEI"]
 	@property
 	def ISIN(self):
 		return self._ISIN

@@ -1,11 +1,11 @@
 from . import base_types
+from ._BasketConstituents3 import BasketConstituents3
 from ._LEIIdentifier import LEIIdentifier
 from ._Max52Text import Max52Text
-from ._BasketConstituents3 import BasketConstituents3
 
 class CustomBasket4(base_types._BaseFieldType):
 
-	__slots__ = ["_Strr", "_Cnsttnts", "_Id"]
+	__slots__ = ["_Cnsttnts", "_Id", "_Strr"]
 	@property
 	def Cnsttnts(self):
 		return self._Cnsttnts

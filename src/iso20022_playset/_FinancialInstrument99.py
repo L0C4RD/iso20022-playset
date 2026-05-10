@@ -1,25 +1,25 @@
 from . import base_types
-from ._BusinessFlowType1Code import BusinessFlowType1Code
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._DateAndAmount2 import DateAndAmount2
-from ._Unit11 import Unit11
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._Intermediary43 import Intermediary43
-from ._Crystallisation2 import Crystallisation2
-from ._YesNoIndicator import YesNoIndicator
-from ._Tax36 import Tax36
-from ._Quantity47 import Quantity47
-from ._AdditionalReference10 import AdditionalReference10
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._FundSettlementParameters17 import FundSettlementParameters17
 from ._Account28 import Account28
+from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._AdditionalInformation15 import AdditionalInformation15
+from ._AdditionalReference10 import AdditionalReference10
+from ._BusinessFlowType1Code import BusinessFlowType1Code
+from ._Crystallisation2 import Crystallisation2
+from ._DateAndAmount2 import DateAndAmount2
 from ._FinancialInstrument62Choice import FinancialInstrument62Choice
+from ._FundSettlementParameters17 import FundSettlementParameters17
+from ._Intermediary43 import Intermediary43
 from ._Max35Text import Max35Text
+from ._Quantity47 import Quantity47
+from ._Tax36 import Tax36
+from ._Unit11 import Unit11
+from ._YesNoIndicator import YesNoIndicator
 
 class FinancialInstrument99(base_types._BaseFieldType):
 
-	__slots__ = ["_BizFlowTp", "_TtlBookVal", "_OrgnlCost", "_IntrmyInf", "_SttlmPtiesDtls", "_Trfr", "_CtrPtyRef", "_TrfCcy", "_Qty", "_CrstllstnDtls", "_LineId", "_TaxValtnPt", "_AsstsHeldInOwnNm", "_AvrgAcqstnPric", "_AddtlInf", "_UnitsDtls", "_Instrm", "_ClntRef", "_TrfeeAcct", "_TrfRsltsInChngOfBnfclOwnr", "_LatstValtn"]
+	__slots__ = ["_AddtlInf", "_AsstsHeldInOwnNm", "_AvrgAcqstnPric", "_BizFlowTp", "_ClntRef", "_CrstllstnDtls", "_CtrPtyRef", "_Instrm", "_IntrmyInf", "_LatstValtn", "_LineId", "_OrgnlCost", "_Qty", "_SttlmPtiesDtls", "_TaxValtnPt", "_TrfCcy", "_TrfRsltsInChngOfBnfclOwnr", "_TrfeeAcct", "_Trfr", "_TtlBookVal", "_UnitsDtls"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

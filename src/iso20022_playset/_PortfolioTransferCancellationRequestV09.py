@@ -1,14 +1,14 @@
 from . import base_types
-from ._TransferReference14 import TransferReference14
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._AdditionalReference11 import AdditionalReference11
-from ._Max35Text import Max35Text
 from ._AdditionalReference10 import AdditionalReference10
+from ._AdditionalReference11 import AdditionalReference11
+from ._MarketPracticeVersion1 import MarketPracticeVersion1
+from ._Max35Text import Max35Text
 from ._MessageIdentification1 import MessageIdentification1
+from ._TransferReference14 import TransferReference14
 
 class PortfolioTransferCancellationRequestV09(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsRef", "_MsgRef", "_MstrRef", "_RltdRef", "_PoolRef", "_MktPrctcVrsn", "_TrfRefs"]
+	__slots__ = ["_MktPrctcVrsn", "_MsgRef", "_MstrRef", "_PoolRef", "_PrvsRef", "_RltdRef", "_TrfRefs"]
 	@property
 	def MktPrctcVrsn(self):
 		return self._MktPrctcVrsn

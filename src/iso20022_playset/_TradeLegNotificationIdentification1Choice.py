@@ -1,10 +1,10 @@
 from . import base_types
-from ._UTIIdentifier import UTIIdentifier
 from ._Max35Text import Max35Text
+from ._UTIIdentifier import UTIIdentifier
 
 class TradeLegNotificationIdentification1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_UnqTxIdr", "_TradLegNtfctnId"]
+	__slots__ = ["_TradLegNtfctnId", "_UnqTxIdr"]
 	@property
 	def TradLegNtfctnId(self):
 		return self._TradLegNtfctnId

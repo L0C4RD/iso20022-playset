@@ -1,10 +1,10 @@
 from . import base_types
-from ._ErrorHandling4 import ErrorHandling4
 from ._CalendarData1 import CalendarData1
+from ._ErrorHandling4 import ErrorHandling4
 
 class CalendarOrBusinessError1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CalData", "_BizErr"]
+	__slots__ = ["_BizErr", "_CalData"]
 	@property
 	def BizErr(self):
 		return self._BizErr

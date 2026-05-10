@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max350Text import Max350Text
-from ._Number import Number
 from ._ElementIdentification3 import ElementIdentification3
+from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
+from ._Number import Number
 
 class ValidationResult3(base_types._BaseFieldType):
 
-	__slots__ = ["_Elmt", "_SeqNb", "_RuleDesc", "_RuleId"]
+	__slots__ = ["_Elmt", "_RuleDesc", "_RuleId", "_SeqNb"]
 	@property
 	def Elmt(self):
 		return self._Elmt

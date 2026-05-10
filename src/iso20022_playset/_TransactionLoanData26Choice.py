@@ -3,7 +3,7 @@ from ._LoanData120 import LoanData120
 
 class TransactionLoanData26Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesLndg", "_BuySellBck", "_MrgnLndg", "_RpTrad"]
+	__slots__ = ["_BuySellBck", "_MrgnLndg", "_RpTrad", "_SctiesLndg"]
 	@property
 	def BuySellBck(self):
 		return self._BuySellBck

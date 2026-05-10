@@ -1,11 +1,11 @@
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CreditDebitCode import CreditDebitCode
 from ._ChargeType3Choice import ChargeType3Choice
+from ._CreditDebitCode import CreditDebitCode
 
 class ChargesBreakdown1(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_Tp", "_Amt"]
+	__slots__ = ["_Amt", "_CdtDbtInd", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

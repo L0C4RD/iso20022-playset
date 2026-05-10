@@ -1,14 +1,14 @@
 from . import base_types
-from ._InvestmentFundPlanType1Choice import InvestmentFundPlanType1Choice
 from ._AdditionalInformation15 import AdditionalInformation15
-from ._YesNoIndicator import YesNoIndicator
 from ._Frequency20Choice import Frequency20Choice
+from ._InvestmentFundPlanType1Choice import InvestmentFundPlanType1Choice
 from ._Number import Number
 from ._UnitsOrAmount1Choice import UnitsOrAmount1Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class InvestmentPlanCharacteristics1(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_PlanConttn", "_AddtlSbcptFctn", "_AddtlSbcpt", "_AddtlInf", "_TtlNbOfInstlmts", "_PlanTp", "_Frqcy"]
+	__slots__ = ["_AddtlInf", "_AddtlSbcpt", "_AddtlSbcptFctn", "_Frqcy", "_PlanConttn", "_PlanTp", "_Qty", "_TtlNbOfInstlmts"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

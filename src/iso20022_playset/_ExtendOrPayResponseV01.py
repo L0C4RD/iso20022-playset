@@ -4,7 +4,7 @@ from ._PartyAndSignature2 import PartyAndSignature2
 
 class ExtendOrPayResponseV01(base_types._BaseFieldType):
 
-	__slots__ = ["_XtndOrPayRspnDtls", "_DgtlSgntr"]
+	__slots__ = ["_DgtlSgntr", "_XtndOrPayRspnDtls"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr

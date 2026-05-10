@@ -4,7 +4,7 @@ from ._TerminalManagementDataSet34 import TerminalManagementDataSet34
 
 class ManagementPlan13(base_types._BaseFieldType):
 
-	__slots__ = ["_POIId", "_TermnlMgrId", "_DataSet"]
+	__slots__ = ["_DataSet", "_POIId", "_TermnlMgrId"]
 	@property
 	def DataSet(self):
 		return self._DataSet

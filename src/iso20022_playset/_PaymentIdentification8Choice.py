@@ -1,14 +1,14 @@
 from . import base_types
-from ._UUIDv4Identifier import UUIDv4Identifier
+from ._LongPaymentIdentification4 import LongPaymentIdentification4
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
 from ._QueueTransactionIdentification1 import QueueTransactionIdentification1
 from ._ShortPaymentIdentification4 import ShortPaymentIdentification4
-from ._LongPaymentIdentification4 import LongPaymentIdentification4
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class PaymentIdentification8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryId", "_TxId", "_UETR", "_QId", "_ShrtBizId", "_LngBizId"]
+	__slots__ = ["_LngBizId", "_PrtryId", "_QId", "_ShrtBizId", "_TxId", "_UETR"]
 	@property
 	def LngBizId(self):
 		return self._LngBizId

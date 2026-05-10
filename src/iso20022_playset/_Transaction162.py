@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._TransactionDetails170 import TransactionDetails170
 from ._UTIIdentifier import UTIIdentifier
-from ._Max35Text import Max35Text
 
 class Transaction162(base_types._BaseFieldType):
 
-	__slots__ = ["_TrptyAgtSvcPrvdrCollInstrId", "_CorpActnEvtId", "_ClntTrptyCollTxId", "_PrcrTxId", "_MktInfrstrctrTxId", "_TradId", "_TrptyAgtSvcPrvdrCollTxId", "_CtrPtyMktInfrstrctrTxId", "_UnqTxIdr", "_CmonId", "_ClntCollInstrId", "_TxDtls", "_AcctSvcrTxId", "_AcctOwnrTxId", "_PoolId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_ClntCollInstrId", "_ClntTrptyCollTxId", "_CmonId", "_CorpActnEvtId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_PoolId", "_PrcrTxId", "_TradId", "_TrptyAgtSvcPrvdrCollInstrId", "_TrptyAgtSvcPrvdrCollTxId", "_TxDtls", "_UnqTxIdr"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

@@ -4,7 +4,7 @@ from ._IndustrialProductCommodityManufacturing2 import IndustrialProductCommodit
 
 class AssetClassCommodityIndustrialProduct2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Manfctg", "_Cnstrctn"]
+	__slots__ = ["_Cnstrctn", "_Manfctg"]
 	@property
 	def Cnstrctn(self):
 		return self._Cnstrctn

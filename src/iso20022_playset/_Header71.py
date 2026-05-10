@@ -1,17 +1,17 @@
 from . import base_types
-from ._Max2048Text import Max2048Text
-from ._Traceability10 import Traceability10
+from ._AdditionalData1 import AdditionalData1
 from ._BatchManagementInformation1 import BatchManagementInformation1
 from ._ExternalMessageFunction1Code import ExternalMessageFunction1Code
-from ._AdditionalData1 import AdditionalData1
 from ._GenericIdentification183 import GenericIdentification183
+from ._ISODateTime import ISODateTime
+from ._Max2048Text import Max2048Text
 from ._Max35Text import Max35Text
 from ._Max3NumericText import Max3NumericText
-from ._ISODateTime import ISODateTime
+from ._Traceability10 import Traceability10
 
 class Header71(base_types._BaseFieldType):
 
-	__slots__ = ["_InitgPty", "_TracData", "_RcptPty", "_MsgFctn", "_XchgId", "_BtchMgmtInf", "_ReTrnsmssnCntr", "_PrtcolVrsn", "_Tracblt", "_CreDtTm"]
+	__slots__ = ["_BtchMgmtInf", "_CreDtTm", "_InitgPty", "_MsgFctn", "_PrtcolVrsn", "_RcptPty", "_ReTrnsmssnCntr", "_TracData", "_Tracblt", "_XchgId"]
 	@property
 	def BtchMgmtInf(self):
 		return self._BtchMgmtInf

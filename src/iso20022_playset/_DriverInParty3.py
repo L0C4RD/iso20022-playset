@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
+from ._Address2 import Address2
 from ._ContactPersonal1 import ContactPersonal1
 from ._ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
-from ._Max16Text import Max16Text
-from ._TravelDocument2 import TravelDocument2
-from ._Max2NumericText import Max2NumericText
+from ._ISODate import ISODate
 from ._ISOMax3ACountryCode import ISOMax3ACountryCode
-from ._Address2 import Address2
 from ._LegalStructure1Code import LegalStructure1Code
-from ._PresentationMedium2Code import PresentationMedium2Code
+from ._Max16Text import Max16Text
+from ._Max2NumericText import Max2NumericText
 from ._Max70Text import Max70Text
+from ._PresentationMedium2Code import PresentationMedium2Code
+from ._TravelDocument2 import TravelDocument2
 
 class DriverInParty3(base_types._BaseFieldType):
 
-	__slots__ = ["_DtOfBirth", "_Nm", "_LicCtrySubDvsnMnr", "_LicOthrAuthrty", "_LicForm", "_DrvrCrdntl", "_LicTp", "_Age", "_LicIssncDt", "_LicCtry", "_Adr", "_Ctct", "_LicXprtnDt", "_LicAssgnr", "_LicCtrySubDvsnMjr", "_LicId"]
+	__slots__ = ["_Adr", "_Age", "_Ctct", "_DrvrCrdntl", "_DtOfBirth", "_LicAssgnr", "_LicCtry", "_LicCtrySubDvsnMjr", "_LicCtrySubDvsnMnr", "_LicForm", "_LicId", "_LicIssncDt", "_LicOthrAuthrty", "_LicTp", "_LicXprtnDt", "_Nm"]
 	@property
 	def Adr(self):
 		return self._Adr

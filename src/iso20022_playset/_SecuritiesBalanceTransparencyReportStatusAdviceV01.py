@@ -1,14 +1,14 @@
 from . import base_types
-from ._NumberOfItemsPerStatus1 import NumberOfItemsPerStatus1
-from ._SupplementaryData1 import SupplementaryData1
-from ._PartyIdentification100 import PartyIdentification100
 from ._MessageIdentification1 import MessageIdentification1
+from ._NumberOfItemsPerStatus1 import NumberOfItemsPerStatus1
+from ._PartyIdentification100 import PartyIdentification100
 from ._ReportItemStatus1Choice import ReportItemStatus1Choice
 from ._StatementReference1 import StatementReference1
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesBalanceTransparencyReportStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfItmsPerSts", "_MsgId", "_SndrId", "_RltdStmt", "_Sts", "_RcvrId", "_SplmtryData"]
+	__slots__ = ["_MsgId", "_NbOfItmsPerSts", "_RcvrId", "_RltdStmt", "_SndrId", "_SplmtryData", "_Sts"]
 	@property
 	def MsgId(self):
 		return self._MsgId

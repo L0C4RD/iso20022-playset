@@ -1,18 +1,18 @@
 from . import base_types
+from ._AttendanceContext2Code import AttendanceContext2Code
 from ._DecimalNumber import DecimalNumber
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max10Text import Max10Text
+from ._Max140Text import Max140Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 from ._PlusOrMinusIndicator import PlusOrMinusIndicator
 from ._UnitOfMeasure6Code import UnitOfMeasure6Code
-from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max70Text import Max70Text
-from ._Max140Text import Max140Text
-from ._AttendanceContext2Code import AttendanceContext2Code
 
 class Product6(base_types._BaseFieldType):
 
-	__slots__ = ["_ItmId", "_TaxTp", "_PdctAmt", "_UnitOfMeasr", "_PdctAmtSgn", "_PdctQty", "_AddtlPdctDesc", "_SaleChanl", "_UnitPricSgn", "_DlvrySvc", "_AddtlPdctCd", "_DlvryLctn", "_PdctDesc", "_PdctCd", "_ValAddedTax", "_UnitPric"]
+	__slots__ = ["_AddtlPdctCd", "_AddtlPdctDesc", "_DlvryLctn", "_DlvrySvc", "_ItmId", "_PdctAmt", "_PdctAmtSgn", "_PdctCd", "_PdctDesc", "_PdctQty", "_SaleChanl", "_TaxTp", "_UnitOfMeasr", "_UnitPric", "_UnitPricSgn", "_ValAddedTax"]
 	@property
 	def AddtlPdctCd(self):
 		return self._AddtlPdctCd

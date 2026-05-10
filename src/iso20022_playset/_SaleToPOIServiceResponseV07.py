@@ -5,7 +5,7 @@ from ._ServiceResponse9 import ServiceResponse9
 
 class SaleToPOIServiceResponseV07(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcRspn", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_Hdr", "_SctyTrlr", "_SvcRspn"]
 	@property
 	def Hdr(self):
 		return self._Hdr

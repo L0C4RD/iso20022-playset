@@ -1,11 +1,11 @@
 from . import base_types
 from ._CardAccountType3Code import CardAccountType3Code
-from ._Max35Text import Max35Text
 from ._CustomerOrder1 import CustomerOrder1
+from ._Max35Text import Max35Text
 
 class PaymentAccountRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_CstmrOrdr", "_AcctRef", "_AcctTp"]
+	__slots__ = ["_AcctRef", "_AcctTp", "_CstmrOrdr"]
 	@property
 	def AcctRef(self):
 		return self._AcctRef

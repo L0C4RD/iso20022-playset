@@ -1,13 +1,13 @@
 from . import base_types
 from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
-from ._TransactionCertificate5 import TransactionCertificate5
 from ._Exact1NumericText import Exact1NumericText
 from ._Max35Text import Max35Text
+from ._TransactionCertificate5 import TransactionCertificate5
 from ._TransactionCertificateContract2 import TransactionCertificateContract2
 
 class TransactionCertificateRecord2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_Attchmnt", "_Ctrct", "_CertRcrdId", "_DocSubmitgPrcdr"]
+	__slots__ = ["_Attchmnt", "_CertRcrdId", "_Ctrct", "_DocSubmitgPrcdr", "_Tx"]
 	@property
 	def Attchmnt(self):
 		return self._Attchmnt

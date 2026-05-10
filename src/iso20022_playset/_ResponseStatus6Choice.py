@@ -1,11 +1,11 @@
 from . import base_types
-from ._PendingStatus20Choice import PendingStatus20Choice
 from ._ConsentStatus4Choice import ConsentStatus4Choice
+from ._PendingStatus20Choice import PendingStatus20Choice
 from ._RejectionStatus20Choice import RejectionStatus20Choice
 
 class ResponseStatus6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rjctd", "_Cnsntd", "_Pdg"]
+	__slots__ = ["_Cnsntd", "_Pdg", "_Rjctd"]
 	@property
 	def Cnsntd(self):
 		return self._Cnsntd

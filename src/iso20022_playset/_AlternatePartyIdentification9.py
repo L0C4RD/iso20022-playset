@@ -1,11 +1,11 @@
 from . import base_types
-from ._RestrictedFINXMax30Text import RestrictedFINXMax30Text
 from ._CountryCode import CountryCode
 from ._IdentificationType44Choice import IdentificationType44Choice
+from ._RestrictedFINXMax30Text import RestrictedFINXMax30Text
 
 class AlternatePartyIdentification9(base_types._BaseFieldType):
 
-	__slots__ = ["_IdTp", "_Ctry", "_AltrnId"]
+	__slots__ = ["_AltrnId", "_Ctry", "_IdTp"]
 	@property
 	def AltrnId(self):
 		return self._AltrnId

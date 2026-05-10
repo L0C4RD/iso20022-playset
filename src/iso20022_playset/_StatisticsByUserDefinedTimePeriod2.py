@@ -6,7 +6,7 @@ from ._PriceValueChange1 import PriceValueChange1
 
 class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_LwstPricVal", "_PricChng", "_Yld", "_HghstPricVal"]
+	__slots__ = ["_HghstPricVal", "_LwstPricVal", "_Prd", "_PricChng", "_Yld"]
 	@property
 	def HghstPricVal(self):
 		return self._HghstPricVal

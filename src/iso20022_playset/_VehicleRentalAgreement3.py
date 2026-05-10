@@ -1,22 +1,22 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._LoyaltyProgramme5 import LoyaltyProgramme5
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Distance1 import Distance1
-from ._ISOTime import ISOTime
-from ._RentalDetails3 import RentalDetails3
-from ._Discount3 import Discount3
 from ._Address2 import Address2
 from ._Amount21 import Amount21
-from ._RentalRate2 import RentalRate2
+from ._Discount3 import Discount3
+from ._Distance1 import Distance1
+from ._ISODate import ISODate
+from ._ISOTime import ISOTime
+from ._LoyaltyProgramme5 import LoyaltyProgramme5
+from ._Max35NumericText import Max35NumericText
 from ._Max35Text import Max35Text
 from ._Max4NumericText import Max4NumericText
-from ._Max35NumericText import Max35NumericText
+from ._RentalDetails3 import RentalDetails3
+from ._RentalRate2 import RentalRate2
 from ._Tax41 import Tax41
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class VehicleRentalAgreement3(base_types._BaseFieldType):
 
-	__slots__ = ["_RtrLctn", "_AddtlAmt", "_Mdl", "_RegnNb", "_Drtn", "_DscntPrgrmm", "_Clss", "_ChckInDt", "_ChckOutDt", "_LltyPrgrmm", "_Make", "_RntlDtls", "_Nb", "_Adjstd", "_EstmtdTax", "_ChckInTm", "_RntlLctn", "_TrvlDstnc", "_PckpLctn", "_ChckOutTm", "_RntlRate", "_Insrnc"]
+	__slots__ = ["_AddtlAmt", "_Adjstd", "_ChckInDt", "_ChckInTm", "_ChckOutDt", "_ChckOutTm", "_Clss", "_Drtn", "_DscntPrgrmm", "_EstmtdTax", "_Insrnc", "_LltyPrgrmm", "_Make", "_Mdl", "_Nb", "_PckpLctn", "_RegnNb", "_RntlDtls", "_RntlLctn", "_RntlRate", "_RtrLctn", "_TrvlDstnc"]
 	@property
 	def AddtlAmt(self):
 		return self._AddtlAmt

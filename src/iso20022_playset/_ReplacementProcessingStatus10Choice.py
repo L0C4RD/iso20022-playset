@@ -4,7 +4,7 @@ from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 
 class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmpltd", "_RcvdAtStockXchg", "_PrtrySts", "_ModReqd", "_RcvdAtIntrmy", "_InRpr", "_Dnd", "_Accptd", "_Pdg", "_Rjctd", "_PrtlRplcmntAccptd"]
+	__slots__ = ["_Accptd", "_Cmpltd", "_Dnd", "_InRpr", "_ModReqd", "_Pdg", "_PrtlRplcmntAccptd", "_PrtrySts", "_RcvdAtIntrmy", "_RcvdAtStockXchg", "_Rjctd"]
 	@property
 	def Accptd(self):
 		return self._Accptd

@@ -3,7 +3,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class LimitReturnCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_UsdAmtInd", "_StartDtTmInd", "_UsdPctgInd", "_StsInd"]
+	__slots__ = ["_StartDtTmInd", "_StsInd", "_UsdAmtInd", "_UsdPctgInd"]
 	@property
 	def StartDtTmInd(self):
 		return self._StartDtTmInd

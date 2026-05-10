@@ -1,8 +1,8 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._CurrencyControlPackageStatus3 import CurrencyControlPackageStatus3
 from ._CurrencyControlGroupStatus3 import CurrencyControlGroupStatus3
 from ._CurrencyControlHeader7 import CurrencyControlHeader7
+from ._CurrencyControlPackageStatus3 import CurrencyControlPackageStatus3
+from ._SupplementaryData1 import SupplementaryData1
 
 class CurrencyControlStatusAdviceV04(base_types._BaseFieldType):
 

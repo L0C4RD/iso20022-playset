@@ -1,16 +1,16 @@
 from . import base_types
-from ._ChargeBearerType1Code import ChargeBearerType1Code
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ChargeBearerType1Code import ChargeBearerType1Code
 from ._ChargeIncludedIndicator import ChargeIncludedIndicator
-from ._PercentageRate import PercentageRate
 from ._ChargeType3Choice import ChargeType3Choice
 from ._CreditDebitCode import CreditDebitCode
+from ._PercentageRate import PercentageRate
 from ._TaxCharges2 import TaxCharges2
 
 class ChargesRecord8(base_types._BaseFieldType):
 
-	__slots__ = ["_Agt", "_Tp", "_Rate", "_CdtDbtInd", "_ChrgInclInd", "_Tax", "_Amt", "_Br"]
+	__slots__ = ["_Agt", "_Amt", "_Br", "_CdtDbtInd", "_ChrgInclInd", "_Rate", "_Tax", "_Tp"]
 	@property
 	def Agt(self):
 		return self._Agt

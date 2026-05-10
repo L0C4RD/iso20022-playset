@@ -1,17 +1,17 @@
 from . import base_types
-from ._UniqueTransactionIdentifier2Choice import UniqueTransactionIdentifier2Choice
-from ._TransactionOperationType10Code import TransactionOperationType10Code
-from ._MasterAgreement8 import MasterAgreement8
-from ._DerivativeEventType3Code import DerivativeEventType3Code
-from ._PartyIdentification248Choice import PartyIdentification248Choice
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._CollateralPortfolioCode5Choice import CollateralPortfolioCode5Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DerivativeEventType3Code import DerivativeEventType3Code
 from ._ISODateTime import ISODateTime
+from ._MasterAgreement8 import MasterAgreement8
 from ._Max140Text import Max140Text
+from ._PartyIdentification248Choice import PartyIdentification248Choice
+from ._TransactionOperationType10Code import TransactionOperationType10Code
+from ._UniqueTransactionIdentifier2Choice import UniqueTransactionIdentifier2Choice
 
 class TradeTransactionIdentification24(base_types._BaseFieldType):
 
-	__slots__ = ["_CollPrtflCd", "_DerivEvtTp", "_OthrCtrPty", "_DerivEvtTmStmp", "_ActnTp", "_TechRcrdId", "_RptgTmStmp", "_UnqIdr", "_MstrAgrmt"]
+	__slots__ = ["_ActnTp", "_CollPrtflCd", "_DerivEvtTmStmp", "_DerivEvtTp", "_MstrAgrmt", "_OthrCtrPty", "_RptgTmStmp", "_TechRcrdId", "_UnqIdr"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp

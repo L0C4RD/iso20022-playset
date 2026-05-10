@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._CurrencyExchange24 import CurrencyExchange24
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._CurrencyExchange24 import CurrencyExchange24
+from ._Max35Text import Max35Text
 
 class AmountAndCurrencyExchangeDetails6(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Tp", "_CcyXchg"]
+	__slots__ = ["_Amt", "_CcyXchg", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

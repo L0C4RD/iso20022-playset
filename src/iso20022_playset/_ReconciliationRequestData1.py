@@ -1,10 +1,10 @@
 from . import base_types
-from ._ReconciliationType1Code import ReconciliationType1Code
 from ._Max35Text import Max35Text
+from ._ReconciliationType1Code import ReconciliationType1Code
 
 class ReconciliationRequestData1(base_types._BaseFieldType):
 
-	__slots__ = ["_POIRcncltnId", "_RcncltnTp", "_AcqrrId"]
+	__slots__ = ["_AcqrrId", "_POIRcncltnId", "_RcncltnTp"]
 	@property
 	def AcqrrId(self):
 		return self._AcqrrId

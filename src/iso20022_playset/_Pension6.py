@@ -1,15 +1,15 @@
 from . import base_types
+from ._AdditionalInformation15 import AdditionalInformation15
+from ._Max35Text import Max35Text
+from ._PensionPolicy1 import PensionPolicy1
+from ._PensionSchemeType3Choice import PensionSchemeType3Choice
 from ._PensionTransferScope1Choice import PensionTransferScope1Choice
 from ._TaxReference1 import TaxReference1
 from ._YesNoIndicator import YesNoIndicator
-from ._PensionPolicy1 import PensionPolicy1
-from ._Max35Text import Max35Text
-from ._PensionSchemeType3Choice import PensionSchemeType3Choice
-from ._AdditionalInformation15 import AdditionalInformation15
 
 class Pension6(base_types._BaseFieldType):
 
-	__slots__ = ["_TrfScp", "_DrwdwnTrchId", "_Id", "_AddtlInf", "_TaxRef", "_Tp", "_NonWrpprTrf"]
+	__slots__ = ["_AddtlInf", "_DrwdwnTrchId", "_Id", "_NonWrpprTrf", "_TaxRef", "_Tp", "_TrfScp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

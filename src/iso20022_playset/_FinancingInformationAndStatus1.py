@@ -1,6 +1,6 @@
 from . import base_types
-from ._InvoiceFinancingDetails1 import InvoiceFinancingDetails1
 from ._FinancingAllowedSummary1 import FinancingAllowedSummary1
+from ._InvoiceFinancingDetails1 import InvoiceFinancingDetails1
 
 class FinancingInformationAndStatus1(base_types._BaseFieldType):
 

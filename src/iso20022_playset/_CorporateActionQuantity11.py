@@ -4,7 +4,7 @@ from ._FinancialInstrumentQuantity35Choice import FinancialInstrumentQuantity35C
 
 class CorporateActionQuantity11(base_types._BaseFieldType):
 
-	__slots__ = ["_NewBrdLotQty", "_BaseDnmtn", "_MaxQty", "_IncrmtlDnmtn", "_MinQtySght", "_NewDnmtnQty"]
+	__slots__ = ["_BaseDnmtn", "_IncrmtlDnmtn", "_MaxQty", "_MinQtySght", "_NewBrdLotQty", "_NewDnmtnQty"]
 	@property
 	def BaseDnmtn(self):
 		return self._BaseDnmtn

@@ -4,7 +4,7 @@ from ._EmploymentDetails1 import EmploymentDetails1
 
 class Drawdown3(base_types._BaseFieldType):
 
-	__slots__ = ["_MplymntDtls", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_MplymntDtls"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

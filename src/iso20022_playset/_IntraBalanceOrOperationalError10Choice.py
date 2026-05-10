@@ -1,10 +1,10 @@
 from . import base_types
-from ._IntraBalanceCancellation7 import IntraBalanceCancellation7
 from ._ErrorHandling5 import ErrorHandling5
+from ._IntraBalanceCancellation7 import IntraBalanceCancellation7
 
 class IntraBalanceOrOperationalError10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OprlErr", "_Cxls"]
+	__slots__ = ["_Cxls", "_OprlErr"]
 	@property
 	def Cxls(self):
 		return self._Cxls

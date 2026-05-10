@@ -5,7 +5,7 @@ from ._ReceiveDelivery1Code import ReceiveDelivery1Code
 
 class SettlementTypeAndIdentification18(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesMvmntTp", "_TxId", "_Pmt"]
+	__slots__ = ["_Pmt", "_SctiesMvmntTp", "_TxId"]
 	@property
 	def Pmt(self):
 		return self._Pmt

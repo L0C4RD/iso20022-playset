@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._FinancialInstitutionIdentification15 import FinancialInstitutionIdentification15
+from ._Max35Text import Max35Text
 from ._PartyIdentification139 import PartyIdentification139
 
 class Cheque21(base_types._BaseFieldType):
 
-	__slots__ = ["_DrwrId", "_DrweeId", "_Nb", "_PyeeId"]
+	__slots__ = ["_DrweeId", "_DrwrId", "_Nb", "_PyeeId"]
 	@property
 	def DrweeId(self):
 		return self._DrweeId

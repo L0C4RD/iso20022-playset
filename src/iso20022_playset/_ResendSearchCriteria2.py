@@ -1,12 +1,12 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._SequenceRange1Choice import SequenceRange1Choice
-from ._PartyIdentification136 import PartyIdentification136
 from ._Max35Text import Max35Text
+from ._PartyIdentification136 import PartyIdentification136
+from ._SequenceRange1Choice import SequenceRange1Choice
 
 class ResendSearchCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_Rcpt", "_OrgnlMsgNmId", "_SeqNb", "_BizDt", "_SeqRg", "_FileRef"]
+	__slots__ = ["_BizDt", "_FileRef", "_OrgnlMsgNmId", "_Rcpt", "_SeqNb", "_SeqRg"]
 	@property
 	def BizDt(self):
 		return self._BizDt

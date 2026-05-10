@@ -1,11 +1,11 @@
 from . import base_types
-from ._VoteTypeAndQuantity1 import VoteTypeAndQuantity1
 from ._Number import Number
+from ._VoteTypeAndQuantity1 import VoteTypeAndQuantity1
 from ._YesNoIndicator import YesNoIndicator
 
 class IncentivePremiumType2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PerVote", "_PerAttndee", "_PerScty"]
+	__slots__ = ["_PerAttndee", "_PerScty", "_PerVote"]
 	@property
 	def PerAttndee(self):
 		return self._PerAttndee

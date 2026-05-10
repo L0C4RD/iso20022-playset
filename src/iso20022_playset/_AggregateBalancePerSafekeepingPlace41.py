@@ -1,23 +1,23 @@
 from . import base_types
-from ._Pledgee4 import Pledgee4
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
-from ._Balance25 import Balance25
-from ._SafeKeepingPlace4 import SafeKeepingPlace4
-from ._SubBalanceInformation24 import SubBalanceInformation24
-from ._Number import Number
-from ._PriceInformation22 import PriceInformation22
-from ._QuantityBreakdown71 import QuantityBreakdown71
-from ._ExposureType24Choice import ExposureType24Choice
-from ._BalanceQuantity17Choice import BalanceQuantity17Choice
-from ._BalanceAmounts4 import BalanceAmounts4
 from ._AdditionalBalanceInformation24 import AdditionalBalanceInformation24
+from ._Balance22 import Balance22
+from ._Balance25 import Balance25
+from ._BalanceAmounts4 import BalanceAmounts4
+from ._BalanceQuantity17Choice import BalanceQuantity17Choice
+from ._ExposureType24Choice import ExposureType24Choice
 from ._ForeignExchangeTerms35 import ForeignExchangeTerms35
 from ._MarketIdentification4Choice import MarketIdentification4Choice
-from ._Balance22 import Balance22
+from ._Number import Number
+from ._Pledgee4 import Pledgee4
+from ._PriceInformation22 import PriceInformation22
+from ._QuantityBreakdown71 import QuantityBreakdown71
+from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from ._SafeKeepingPlace4 import SafeKeepingPlace4
+from ._SubBalanceInformation24 import SubBalanceInformation24
 
 class AggregateBalancePerSafekeepingPlace41(base_types._BaseFieldType):
 
-	__slots__ = ["_AggtBal", "_NotAvlblBal", "_BalBrkdwn", "_PlcOfListg", "_InstrmCcyAmts", "_AddtlBalBrkdwn", "_SfkpgPlc", "_DaysAcrd", "_PricDtls", "_QtyBrkdwn", "_AvlblBal", "_XpsrTp", "_AcctBaseCcyAmts", "_FXDtls", "_Pldgee", "_HldgAddtlDtls"]
+	__slots__ = ["_AcctBaseCcyAmts", "_AddtlBalBrkdwn", "_AggtBal", "_AvlblBal", "_BalBrkdwn", "_DaysAcrd", "_FXDtls", "_HldgAddtlDtls", "_InstrmCcyAmts", "_NotAvlblBal", "_PlcOfListg", "_Pldgee", "_PricDtls", "_QtyBrkdwn", "_SfkpgPlc", "_XpsrTp"]
 	@property
 	def AcctBaseCcyAmts(self):
 		return self._AcctBaseCcyAmts

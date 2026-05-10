@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class SubAccount6(base_types._BaseFieldType):
 
-	__slots__ = ["_Chrtc", "_Id", "_Nm", "_AcctDsgnt"]
+	__slots__ = ["_AcctDsgnt", "_Chrtc", "_Id", "_Nm"]
 	@property
 	def AcctDsgnt(self):
 		return self._AcctDsgnt

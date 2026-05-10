@@ -1,11 +1,11 @@
 from . import base_types
 from ._MatchingStatus32Choice import MatchingStatus32Choice
-from ._SettlementStatus22Choice import SettlementStatus22Choice
 from ._ProcessingStatus62Choice import ProcessingStatus62Choice
+from ._SettlementStatus22Choice import SettlementStatus22Choice
 
 class StatusAndReason29(base_types._BaseFieldType):
 
-	__slots__ = ["_IfrrdMtchgSts", "_PrcgSts", "_MtchgSts", "_SttlmSts"]
+	__slots__ = ["_IfrrdMtchgSts", "_MtchgSts", "_PrcgSts", "_SttlmSts"]
 	@property
 	def IfrrdMtchgSts(self):
 		return self._IfrrdMtchgSts

@@ -1,7 +1,7 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._CashAssetType1Choice import CashAssetType1Choice
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._CashAssetType1Choice import CashAssetType1Choice
 
 class CashAsset2(base_types._BaseFieldType):
 

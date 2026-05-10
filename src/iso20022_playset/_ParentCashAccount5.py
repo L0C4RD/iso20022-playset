@@ -1,11 +1,11 @@
 from . import base_types
-from ._CashAccount40 import CashAccount40
 from ._AccountLevel1Code import AccountLevel1Code
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
 
 class ParentCashAccount5(base_types._BaseFieldType):
 
-	__slots__ = ["_Svcr", "_Lvl", "_Id"]
+	__slots__ = ["_Id", "_Lvl", "_Svcr"]
 	@property
 	def Id(self):
 		return self._Id

@@ -4,7 +4,7 @@ from ._NaturalPersonIdentification2 import NaturalPersonIdentification2
 
 class NaturalPersonIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Ctry"]
+	__slots__ = ["_Ctry", "_Id"]
 	@property
 	def Ctry(self):
 		return self._Ctry

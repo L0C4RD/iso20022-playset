@@ -1,21 +1,21 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PartyIdentification285 import PartyIdentification285
 from ._AdditionalData1 import AdditionalData1
-from ._InvoiceLineItem3 import InvoiceLineItem3
-from ._TaxReclaimMethod1Code import TaxReclaimMethod1Code
 from ._Address2 import Address2
-from ._Max1000Text import Max1000Text
-from ._Max70Text import Max70Text
 from ._ContactBusiness1 import ContactBusiness1
-from ._Max35Text import Max35Text
+from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._InvoiceLineItem3 import InvoiceLineItem3
+from ._Max1000Text import Max1000Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._PartyIdentification285 import PartyIdentification285
 from ._Tax41 import Tax41
+from ._TaxReclaimMethod1Code import TaxReclaimMethod1Code
 
 class Invoice3(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrTaxRegnId", "_TaxRclmMtd", "_Dt", "_AddtlData", "_CreDtTm", "_SellrTaxRegnId", "_Nb", "_SellrAdr", "_SellrAddtlInf", "_BuyrId", "_SellrNm", "_SellrCtct", "_BuyrNm", "_BuyrAdr", "_TaxTtl", "_BuyrCtct", "_SummryCmmdtyId", "_LineItm", "_SellrId", "_BuyrAddtlInf", "_FrghtAmt"]
+	__slots__ = ["_AddtlData", "_BuyrAddtlInf", "_BuyrAdr", "_BuyrCtct", "_BuyrId", "_BuyrNm", "_BuyrTaxRegnId", "_CreDtTm", "_Dt", "_FrghtAmt", "_LineItm", "_Nb", "_SellrAddtlInf", "_SellrAdr", "_SellrCtct", "_SellrId", "_SellrNm", "_SellrTaxRegnId", "_SummryCmmdtyId", "_TaxRclmMtd", "_TaxTtl"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

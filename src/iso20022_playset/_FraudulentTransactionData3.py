@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
-from ._Exact1NumericText import Exact1NumericText
 from ._DisputeReference1 import DisputeReference1
-from ._Max35Text import Max35Text
+from ._Exact1NumericText import Exact1NumericText
+from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
 from ._Max100KBinary import Max100KBinary
+from ._Max35Text import Max35Text
 from ._PartyType26Code import PartyType26Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class FraudulentTransactionData3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrAuthstnNtty", "_FrdlntMsg", "_MsgRsn", "_DsptRef", "_PresntmntCycl", "_Authstn", "_AltrnMsgRsn", "_DsptCond", "_AuthstnNtty"]
+	__slots__ = ["_AltrnMsgRsn", "_Authstn", "_AuthstnNtty", "_DsptCond", "_DsptRef", "_FrdlntMsg", "_MsgRsn", "_OthrAuthstnNtty", "_PresntmntCycl"]
 	@property
 	def AltrnMsgRsn(self):
 		return self._AltrnMsgRsn

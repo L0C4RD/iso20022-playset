@@ -1,10 +1,10 @@
 from . import base_types
-from ._DocumentNumber19 import DocumentNumber19
 from ._DocumentNumber14 import DocumentNumber14
+from ._DocumentNumber19 import DocumentNumber19
 
 class StatusOrStatement12Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_StsAdvc", "_Stmt"]
+	__slots__ = ["_Stmt", "_StsAdvc"]
 	@property
 	def Stmt(self):
 		return self._Stmt

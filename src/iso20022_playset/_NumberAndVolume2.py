@@ -1,10 +1,10 @@
 from . import base_types
-from ._DecimalNumberFraction5 import DecimalNumberFraction5
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._DecimalNumberFraction5 import DecimalNumberFraction5
 
 class NumberAndVolume2(base_types._BaseFieldType):
 
-	__slots__ = ["_Vol", "_Nb"]
+	__slots__ = ["_Nb", "_Vol"]
 	@property
 	def Nb(self):
 		return self._Nb

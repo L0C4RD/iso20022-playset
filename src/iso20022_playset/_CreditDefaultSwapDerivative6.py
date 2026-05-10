@@ -1,10 +1,10 @@
 from . import base_types
-from ._ISINOct2015Identifier import ISINOct2015Identifier
 from ._CreditDefaultSwapSingleName2 import CreditDefaultSwapSingleName2
+from ._ISINOct2015Identifier import ISINOct2015Identifier
 
 class CreditDefaultSwapDerivative6(base_types._BaseFieldType):
 
-	__slots__ = ["_SnglNm", "_OblgtnId", "_UndrlygCdtDfltSwpId"]
+	__slots__ = ["_OblgtnId", "_SnglNm", "_UndrlygCdtDfltSwpId"]
 	@property
 	def OblgtnId(self):
 		return self._OblgtnId

@@ -3,7 +3,7 @@ from ._PercentageRangeBoundary1 import PercentageRangeBoundary1
 
 class FromToPercentageRange1(base_types._BaseFieldType):
 
-	__slots__ = ["_To", "_Fr"]
+	__slots__ = ["_Fr", "_To"]
 	@property
 	def Fr(self):
 		return self._Fr

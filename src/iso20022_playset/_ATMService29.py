@@ -1,11 +1,11 @@
 from . import base_types
-from ._ATMTransactionAmounts6 import ATMTransactionAmounts6
 from ._ATMService18 import ATMService18
 from ._ATMServiceType13Code import ATMServiceType13Code
+from ._ATMTransactionAmounts6 import ATMTransactionAmounts6
 
 class ATMService29(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcVarnt", "_Lmts", "_SvcTp"]
+	__slots__ = ["_Lmts", "_SvcTp", "_SvcVarnt"]
 	@property
 	def Lmts(self):
 		return self._Lmts

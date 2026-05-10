@@ -1,10 +1,10 @@
 from . import base_types
-from ._UndertakingNonExtensionRequest1 import UndertakingNonExtensionRequest1
 from ._PartyAndSignature2 import PartyAndSignature2
+from ._UndertakingNonExtensionRequest1 import UndertakingNonExtensionRequest1
 
 class UndertakingNonExtensionRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgNonXtnsnReqDtls", "_DgtlSgntr"]
+	__slots__ = ["_DgtlSgntr", "_UdrtkgNonXtnsnReqDtls"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr

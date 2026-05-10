@@ -1,13 +1,13 @@
 from . import base_types
+from ._InstructionProcessingReason3Choice import InstructionProcessingReason3Choice
+from ._InstructionProcessingReason4Choice import InstructionProcessingReason4Choice
 from ._PendingProcessing2Choice import PendingProcessing2Choice
 from ._ProprietaryReason4 import ProprietaryReason4
 from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
-from ._InstructionProcessingReason4Choice import InstructionProcessingReason4Choice
-from ._InstructionProcessingReason3Choice import InstructionProcessingReason3Choice
 
 class ProcessingStatus98Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OpnOrdr", "_Futr", "_FullyExctdConfSnt", "_Rjctd", "_TradgSspdByStockXchg", "_AckdAccptd", "_AlrdyMtchdAndAffrmd", "_InRpr", "_Gnrtd", "_Done", "_ForcdRjctn", "_PrtrySts", "_DfltActn", "_Trtd", "_RcvdAtIntrmy", "_NoInstr", "_StgInstr", "_PdgPrcg", "_SttlmInstrSnt"]
+	__slots__ = ["_AckdAccptd", "_AlrdyMtchdAndAffrmd", "_DfltActn", "_Done", "_ForcdRjctn", "_FullyExctdConfSnt", "_Futr", "_Gnrtd", "_InRpr", "_NoInstr", "_OpnOrdr", "_PdgPrcg", "_PrtrySts", "_RcvdAtIntrmy", "_Rjctd", "_StgInstr", "_SttlmInstrSnt", "_TradgSspdByStockXchg", "_Trtd"]
 	@property
 	def AckdAccptd(self):
 		return self._AckdAccptd

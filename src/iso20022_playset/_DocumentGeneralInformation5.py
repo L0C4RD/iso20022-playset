@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._SignatureEnvelopeReference import SignatureEnvelopeReference
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
 from ._BinaryFile1 import BinaryFile1
 from ._ExternalDocumentType1Code import ExternalDocumentType1Code
+from ._ISODate import ISODate
+from ._Max140Text import Max140Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._SignatureEnvelopeReference import SignatureEnvelopeReference
 
 class DocumentGeneralInformation5(base_types._BaseFieldType):
 
-	__slots__ = ["_DocNm", "_DocTp", "_URL", "_AttchdBinryFile", "_IsseDt", "_DocNb", "_SndrRcvrSeqId", "_LkFileHash"]
+	__slots__ = ["_AttchdBinryFile", "_DocNb", "_DocNm", "_DocTp", "_IsseDt", "_LkFileHash", "_SndrRcvrSeqId", "_URL"]
 	@property
 	def AttchdBinryFile(self):
 		return self._AttchdBinryFile

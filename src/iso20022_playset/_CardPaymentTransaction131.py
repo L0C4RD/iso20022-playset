@@ -1,12 +1,12 @@
 from . import base_types
 from ._CurrencyConversion31 import CurrencyConversion31
 from ._GenericIdentification32 import GenericIdentification32
-from ._TransactionIdentifier1 import TransactionIdentifier1
 from ._Max35Text import Max35Text
+from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class CardPaymentTransaction131(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRefId", "_POIId", "_TxId", "_CcyConvs"]
+	__slots__ = ["_CcyConvs", "_POIId", "_SaleRefId", "_TxId"]
 	@property
 	def CcyConvs(self):
 		return self._CcyConvs

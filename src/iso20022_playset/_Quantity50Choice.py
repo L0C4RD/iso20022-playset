@@ -1,10 +1,10 @@
 from . import base_types
-from ._SignedQuantityFormat10 import SignedQuantityFormat10
 from ._OriginalAndCurrentQuantities6 import OriginalAndCurrentQuantities6
+from ._SignedQuantityFormat10 import SignedQuantityFormat10
 
 class Quantity50Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SgndQty", "_OrgnlAndCurFaceAmt"]
+	__slots__ = ["_OrgnlAndCurFaceAmt", "_SgndQty"]
 	@property
 	def OrgnlAndCurFaceAmt(self):
 		return self._OrgnlAndCurFaceAmt

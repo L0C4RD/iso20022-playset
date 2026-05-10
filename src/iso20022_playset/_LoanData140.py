@@ -1,17 +1,17 @@
 from . import base_types
+from ._Cleared16Choice import Cleared16Choice
 from ._ISODate import ISODate
-from ._SecuritiesTransactionPrice19Choice import SecuritiesTransactionPrice19Choice
+from ._ISODateTime import ISODateTime
+from ._MICIdentifier import MICIdentifier
+from ._MasterAgreement7 import MasterAgreement7
 from ._Max52Text import Max52Text
 from ._PrincipalAmount3 import PrincipalAmount3
-from ._MICIdentifier import MICIdentifier
-from ._Cleared16Choice import Cleared16Choice
-from ._ISODateTime import ISODateTime
-from ._MasterAgreement7 import MasterAgreement7
+from ._SecuritiesTransactionPrice19Choice import SecuritiesTransactionPrice19Choice
 from ._SpecialCollateral1Code import SpecialCollateral1Code
 
 class LoanData140(base_types._BaseFieldType):
 
-	__slots__ = ["_PrncplAmt", "_MstrAgrmt", "_ValDt", "_TermntnDt", "_ClrSts", "_UnitPric", "_UnqTradIdr", "_ExctnDtTm", "_MtrtyDt", "_TradgVn", "_EvtDt", "_GnlColl"]
+	__slots__ = ["_ClrSts", "_EvtDt", "_ExctnDtTm", "_GnlColl", "_MstrAgrmt", "_MtrtyDt", "_PrncplAmt", "_TermntnDt", "_TradgVn", "_UnitPric", "_UnqTradIdr", "_ValDt"]
 	@property
 	def ClrSts(self):
 		return self._ClrSts

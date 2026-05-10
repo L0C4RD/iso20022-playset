@@ -3,7 +3,7 @@ from ._Period6Choice import Period6Choice
 
 class CorporateActionPeriod16(base_types._BaseFieldType):
 
-	__slots__ = ["_DpstrySspnsnPrdForSgrtn", "_DpstrySspnsnPrdForWdrwlInStrtNm", "_PricClctnPrd", "_CmplsryPurchsPrd", "_DpstrySspnsnPrdForBookNtryTrf", "_IntrstPrd", "_DpstrySspnsnPrdForDpst", "_SpltPrd", "_DpstrySspnsnPrdForDpstAtAgt", "_DpstrySspnsnPrdForPldg", "_ClmPrd", "_DpstrySspnsnPrdForWdrwlInNmneeNm", "_BookClsrPrd", "_DpstrySspnsnPrdForWdrwlAtAgt", "_CoDpstriesSspnsnPrd", "_FsclYrPrd"]
+	__slots__ = ["_BookClsrPrd", "_ClmPrd", "_CmplsryPurchsPrd", "_CoDpstriesSspnsnPrd", "_DpstrySspnsnPrdForBookNtryTrf", "_DpstrySspnsnPrdForDpst", "_DpstrySspnsnPrdForDpstAtAgt", "_DpstrySspnsnPrdForPldg", "_DpstrySspnsnPrdForSgrtn", "_DpstrySspnsnPrdForWdrwlAtAgt", "_DpstrySspnsnPrdForWdrwlInNmneeNm", "_DpstrySspnsnPrdForWdrwlInStrtNm", "_FsclYrPrd", "_IntrstPrd", "_PricClctnPrd", "_SpltPrd"]
 	@property
 	def BookClsrPrd(self):
 		return self._BookClsrPrd

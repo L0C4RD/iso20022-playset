@@ -3,7 +3,7 @@ from ._OrganisationIdentification15Choice import OrganisationIdentification15Cho
 
 class CounterpartyData87(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgCtrPty", "_RptSubmitgNtty", "_NttyRspnsblForRpt"]
+	__slots__ = ["_NttyRspnsblForRpt", "_RptSubmitgNtty", "_RptgCtrPty"]
 	@property
 	def NttyRspnsblForRpt(self):
 		return self._NttyRspnsblForRpt

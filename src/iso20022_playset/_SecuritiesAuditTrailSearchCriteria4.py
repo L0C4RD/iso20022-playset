@@ -1,10 +1,10 @@
 from . import base_types
-from ._SecurityIdentification39 import SecurityIdentification39
 from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
+from ._SecurityIdentification39 import SecurityIdentification39
 
 class SecuritiesAuditTrailSearchCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_DtPrd"]
+	__slots__ = ["_DtPrd", "_FinInstrmId"]
 	@property
 	def DtPrd(self):
 		return self._DtPrd

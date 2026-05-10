@@ -4,7 +4,7 @@ from ._Number import Number
 
 class FloatingRateNote2(base_types._BaseFieldType):
 
-	__slots__ = ["_RefRateIndx", "_BsisPtSprd"]
+	__slots__ = ["_BsisPtSprd", "_RefRateIndx"]
 	@property
 	def BsisPtSprd(self):
 		return self._BsisPtSprd

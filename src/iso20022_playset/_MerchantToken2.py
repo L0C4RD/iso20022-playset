@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Max10Text import Max10Text
 from ._Max2NumericText import Max2NumericText
 from ._Max35Text import Max35Text
-from ._Max10Text import Max10Text
-from ._PaymentTokenIdentifiers1 import PaymentTokenIdentifiers1
 from ._Max500Binary import Max500Binary
 from ._Number import Number
+from ._PaymentTokenIdentifiers1 import PaymentTokenIdentifiers1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class MerchantToken2(base_types._BaseFieldType):
 
-	__slots__ = ["_TknAssrncLvl", "_TknAssrncMtd", "_TknXpryDt", "_TknChrtc", "_TknRqstr", "_TknAssrncData", "_Tkn", "_TknInittdInd"]
+	__slots__ = ["_Tkn", "_TknAssrncData", "_TknAssrncLvl", "_TknAssrncMtd", "_TknChrtc", "_TknInittdInd", "_TknRqstr", "_TknXpryDt"]
 	@property
 	def Tkn(self):
 		return self._Tkn

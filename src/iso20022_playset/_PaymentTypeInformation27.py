@@ -1,14 +1,14 @@
 from . import base_types
 from ._CategoryPurpose1Choice import CategoryPurpose1Choice
-from ._SequenceType3Code import SequenceType3Code
-from ._Priority2Code import Priority2Code
-from ._ServiceLevel8Choice import ServiceLevel8Choice
-from ._LocalInstrument2Choice import LocalInstrument2Choice
 from ._ClearingChannel2Code import ClearingChannel2Code
+from ._LocalInstrument2Choice import LocalInstrument2Choice
+from ._Priority2Code import Priority2Code
+from ._SequenceType3Code import SequenceType3Code
+from ._ServiceLevel8Choice import ServiceLevel8Choice
 
 class PaymentTypeInformation27(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrChanl", "_CtgyPurp", "_SvcLvl", "_LclInstrm", "_SeqTp", "_InstrPrty"]
+	__slots__ = ["_ClrChanl", "_CtgyPurp", "_InstrPrty", "_LclInstrm", "_SeqTp", "_SvcLvl"]
 	@property
 	def ClrChanl(self):
 		return self._ClrChanl

@@ -1,13 +1,13 @@
 from . import base_types
-from ._NonNegativeNumber import NonNegativeNumber
-from ._BaseOneRate import BaseOneRate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._BaseOneRate import BaseOneRate
 from ._GenericIdentification165 import GenericIdentification165
+from ._NonNegativeNumber import NonNegativeNumber
 from ._PositiveNumber import PositiveNumber
 
 class MonthlyResult1(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfObsrvtns", "_LrgstXcptn", "_LrgstXcptnId", "_Cvrg", "_AvrgXcptn", "_NbOfXcptns"]
+	__slots__ = ["_AvrgXcptn", "_Cvrg", "_LrgstXcptn", "_LrgstXcptnId", "_NbOfObsrvtns", "_NbOfXcptns"]
 	@property
 	def AvrgXcptn(self):
 		return self._AvrgXcptn

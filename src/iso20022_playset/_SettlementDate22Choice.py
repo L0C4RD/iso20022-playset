@@ -4,7 +4,7 @@ from ._GenericIdentification47 import GenericIdentification47
 
 class SettlementDate22Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DtCd", "_Dt"]
+	__slots__ = ["_Dt", "_DtCd"]
 	@property
 	def Dt(self):
 		return self._Dt

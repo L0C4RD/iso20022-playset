@@ -1,18 +1,18 @@
 from . import base_types
-from ._SafekeepingPlaceFormat28Choice import SafekeepingPlaceFormat28Choice
-from ._FormOfSecurity1Code import FormOfSecurity1Code
-from ._PartyIdentification139 import PartyIdentification139
-from ._YesNoIndicator import YesNoIndicator
-from ._SubAccount5 import SubAccount5
-from ._FundSettlementParameters16 import FundSettlementParameters16
 from ._BeneficiaryCertificationCompletion1Code import BeneficiaryCertificationCompletion1Code
-from ._Max35Text import Max35Text
-from ._Intermediary43 import Intermediary43
+from ._FormOfSecurity1Code import FormOfSecurity1Code
+from ._FundSettlementParameters16 import FundSettlementParameters16
 from ._IncomePreference2Code import IncomePreference2Code
+from ._Intermediary43 import Intermediary43
+from ._Max35Text import Max35Text
+from ._PartyIdentification139 import PartyIdentification139
+from ._SafekeepingPlaceFormat28Choice import SafekeepingPlaceFormat28Choice
+from ._SubAccount5 import SubAccount5
+from ._YesNoIndicator import YesNoIndicator
 
 class InvestmentAccount71(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesForm", "_SubAcctDtls", "_DmtrlsdInd", "_OwnrId", "_AcctSvcr", "_IncmPref", "_IntrmyInf", "_BnfcryCertfctnCmpltn", "_SttlmPtiesDtls", "_AcctId", "_AcctNm", "_AcctDsgnt", "_SfkpgPlc"]
+	__slots__ = ["_AcctDsgnt", "_AcctId", "_AcctNm", "_AcctSvcr", "_BnfcryCertfctnCmpltn", "_DmtrlsdInd", "_IncmPref", "_IntrmyInf", "_OwnrId", "_SctiesForm", "_SfkpgPlc", "_SttlmPtiesDtls", "_SubAcctDtls"]
 	@property
 	def AcctDsgnt(self):
 		return self._AcctDsgnt

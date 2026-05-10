@@ -3,7 +3,7 @@ from ._SettlementFailsDailyTransactionType1Choice import SettlementFailsDailyTra
 
 class SettlementFailsDailyInstrument3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTrfblScties", "_EmssnAllwnc", "_Eqty", "_MnyMktInstrm", "_CllctvInvstmtUdrtkgs", "_SvrgnDebt", "_XchgTraddFnds", "_Othr", "_Bd"]
+	__slots__ = ["_Bd", "_CllctvInvstmtUdrtkgs", "_EmssnAllwnc", "_Eqty", "_MnyMktInstrm", "_Othr", "_OthrTrfblScties", "_SvrgnDebt", "_XchgTraddFnds"]
 	@property
 	def Bd(self):
 		return self._Bd

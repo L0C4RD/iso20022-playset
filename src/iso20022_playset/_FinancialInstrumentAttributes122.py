@@ -1,28 +1,28 @@
 from . import base_types
-from ._InterestComputationMethodFormat5Choice import InterestComputationMethodFormat5Choice
-from ._PriceType5Choice import PriceType5Choice
-from ._FormOfSecurity7Choice import FormOfSecurity7Choice
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
-from ._Number23Choice import Number23Choice
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._ClassificationType33Choice import ClassificationType33Choice
-from ._PercentageRate import PercentageRate
-from ._OptionType7Choice import OptionType7Choice
-from ._Price3 import Price3
-from ._ISODate import ISODate
-from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._BaseOneRate import BaseOneRate
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._OptionStyle9Choice import OptionStyle9Choice
+from ._BaseOneRate import BaseOneRate
+from ._ClassificationType33Choice import ClassificationType33Choice
+from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
+from ._FormOfSecurity7Choice import FormOfSecurity7Choice
 from ._Frequency27Choice import Frequency27Choice
-from ._SecuritiesPaymentStatus6Choice import SecuritiesPaymentStatus6Choice
 from ._GenericIdentification39 import GenericIdentification39
+from ._ISODate import ISODate
+from ._InterestComputationMethodFormat5Choice import InterestComputationMethodFormat5Choice
 from ._MarketIdentification4Choice import MarketIdentification4Choice
+from ._Number23Choice import Number23Choice
+from ._OptionStyle9Choice import OptionStyle9Choice
+from ._OptionType7Choice import OptionType7Choice
+from ._PercentageRate import PercentageRate
+from ._Price3 import Price3
+from ._PriceType5Choice import PriceType5Choice
+from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from ._SecuritiesPaymentStatus6Choice import SecuritiesPaymentStatus6Choice
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._YesNoIndicator import YesNoIndicator
 
 class FinancialInstrumentAttributes122(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnStyle", "_CllblInd", "_SbcptPric", "_MktOrIndctvPric", "_PlcOfListg", "_IndxRateBsis", "_RegnForm", "_NxtCllblDt", "_IntrstRate", "_PutblDt", "_PrvsFctr", "_ExrcPric", "_OptnTp", "_NxtFctr", "_XpryDt", "_IsseDt", "_NxtIntrstRate", "_CpnDt", "_CurFctr", "_PutblInd", "_DtdDt", "_UndrlygFinInstrmId", "_PoolNb", "_PmtFrqcy", "_CtrctSz", "_FrstPmtDt", "_FltgRateFxgDt", "_FinInstrmAttrAddtlDtls", "_MtrtyDt", "_PmtSts", "_DayCntBsis", "_CpnAttchdNb", "_StrkPric", "_VarblRateChngFrqcy", "_DnmtnCcy", "_ConvsPric", "_ClssfctnTp", "_VarblRateInd", "_YldToMtrtyRate", "_MinNmnlQty"]
+	__slots__ = ["_CllblInd", "_ClssfctnTp", "_ConvsPric", "_CpnAttchdNb", "_CpnDt", "_CtrctSz", "_CurFctr", "_DayCntBsis", "_DnmtnCcy", "_DtdDt", "_ExrcPric", "_FinInstrmAttrAddtlDtls", "_FltgRateFxgDt", "_FrstPmtDt", "_IndxRateBsis", "_IntrstRate", "_IsseDt", "_MinNmnlQty", "_MktOrIndctvPric", "_MtrtyDt", "_NxtCllblDt", "_NxtFctr", "_NxtIntrstRate", "_OptnStyle", "_OptnTp", "_PlcOfListg", "_PmtFrqcy", "_PmtSts", "_PoolNb", "_PrvsFctr", "_PutblDt", "_PutblInd", "_RegnForm", "_SbcptPric", "_StrkPric", "_UndrlygFinInstrmId", "_VarblRateChngFrqcy", "_VarblRateInd", "_XpryDt", "_YldToMtrtyRate"]
 	@property
 	def CllblInd(self):
 		return self._CllblInd

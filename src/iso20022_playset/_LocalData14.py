@@ -1,13 +1,13 @@
 from . import base_types
+from ._AdditionalData1 import AdditionalData1
+from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
 from ._Max210Text import Max210Text
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
-from ._AdditionalData1 import AdditionalData1
-from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
 
 class LocalData14(base_types._BaseFieldType):
 
-	__slots__ = ["_Lang", "_LglCorpNm", "_ShrtNm", "_AddtlData", "_NcodgFrmt"]
+	__slots__ = ["_AddtlData", "_Lang", "_LglCorpNm", "_NcodgFrmt", "_ShrtNm"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

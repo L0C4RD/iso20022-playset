@@ -1,14 +1,14 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max2NumericText import Max2NumericText
-from ._Max11NumericText import Max11NumericText
 from ._Exact4NumericText import Exact4NumericText
+from ._Max11NumericText import Max11NumericText
 from ._Max140Text import Max140Text
 from ._Max19NumericText import Max19NumericText
+from ._Max2NumericText import Max2NumericText
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Token1(base_types._BaseFieldType):
 
-	__slots__ = ["_TknAssrncData", "_TknAssrncMtd", "_PmtTkn", "_TknXpryDt", "_TknInittdInd", "_TknRqstrId"]
+	__slots__ = ["_PmtTkn", "_TknAssrncData", "_TknAssrncMtd", "_TknInittdInd", "_TknRqstrId", "_TknXpryDt"]
 	@property
 	def PmtTkn(self):
 		return self._PmtTkn

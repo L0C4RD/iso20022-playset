@@ -1,16 +1,16 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Max35NumericText import Max35NumericText
-from ._TransactionIdentifier1 import TransactionIdentifier1
-from ._StoredValueAccount2 import StoredValueAccount2
-from ._PaymentTransaction165 import PaymentTransaction165
-from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35NumericText import Max35NumericText
+from ._Max35Text import Max35Text
+from ._PaymentTransaction165 import PaymentTransaction165
+from ._StoredValueAccount2 import StoredValueAccount2
 from ._StoredValueTransactionType3Code import StoredValueTransactionType3Code
+from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class StoredValueData8(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlPOITx", "_Prvdr", "_TxTp", "_PdctCd", "_HstTxId", "_ItmAmt", "_EANUPC", "_Ccy", "_AcctId"]
+	__slots__ = ["_AcctId", "_Ccy", "_EANUPC", "_HstTxId", "_ItmAmt", "_OrgnlPOITx", "_PdctCd", "_Prvdr", "_TxTp"]
 	@property
 	def AcctId(self):
 		return self._AcctId

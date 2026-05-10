@@ -1,11 +1,11 @@
 from . import base_types
-from ._SecurityIdentification39 import SecurityIdentification39
 from ._AuditTrailOrBusinessError6Choice import AuditTrailOrBusinessError6Choice
 from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
+from ._SecurityIdentification39 import SecurityIdentification39
 
 class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesAudtTrlOrErr", "_DtPrd", "_FinInstrmId"]
+	__slots__ = ["_DtPrd", "_FinInstrmId", "_SctiesAudtTrlOrErr"]
 	@property
 	def DtPrd(self):
 		return self._DtPrd

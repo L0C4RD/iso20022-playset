@@ -3,7 +3,7 @@ from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class SpecialCondition1(base_types._BaseFieldType):
 
-	__slots__ = ["_OutgngAmt", "_PmtFrOthrAcct", "_IncmgAmt", "_IncmgAmtToOthrAcct"]
+	__slots__ = ["_IncmgAmt", "_IncmgAmtToOthrAcct", "_OutgngAmt", "_PmtFrOthrAcct"]
 	@property
 	def IncmgAmt(self):
 		return self._IncmgAmt

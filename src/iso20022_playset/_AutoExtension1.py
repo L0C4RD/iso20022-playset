@@ -1,11 +1,11 @@
 from . import base_types
+from ._AutoExtend1Choice import AutoExtend1Choice
 from ._ISODate import ISODate
 from ._NonExtension1 import NonExtension1
-from ._AutoExtend1Choice import AutoExtend1Choice
 
 class AutoExtension1(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_NonXtnsnNtfctn", "_FnlXpryDt"]
+	__slots__ = ["_FnlXpryDt", "_NonXtnsnNtfctn", "_Prd"]
 	@property
 	def FnlXpryDt(self):
 		return self._FnlXpryDt

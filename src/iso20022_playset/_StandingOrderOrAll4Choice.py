@@ -1,10 +1,10 @@
 from . import base_types
-from ._StandingOrderIdentification9 import StandingOrderIdentification9
 from ._StandingOrderIdentification8 import StandingOrderIdentification8
+from ._StandingOrderIdentification9 import StandingOrderIdentification9
 
 class StandingOrderOrAll4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_StgOrdr", "_AllStgOrdrs"]
+	__slots__ = ["_AllStgOrdrs", "_StgOrdr"]
 	@property
 	def AllStgOrdrs(self):
 		return self._AllStgOrdrs

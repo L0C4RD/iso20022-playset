@@ -1,11 +1,11 @@
 from . import base_types
-from ._Pension5 import Pension5
 from ._GeneralInvestment2 import GeneralInvestment2
+from ._Pension5 import Pension5
 from ._TaxEfficientProduct7 import TaxEfficientProduct7
 
 class FundPortfolio7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_GnlInvstmt", "_TaxEffcntPdct", "_Pnsn"]
+	__slots__ = ["_GnlInvstmt", "_Pnsn", "_TaxEffcntPdct"]
 	@property
 	def GnlInvstmt(self):
 		return self._GnlInvstmt

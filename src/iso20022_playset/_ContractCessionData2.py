@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._TradeParty6 import TradeParty6
 from ._Max35Text import Max35Text
+from ._TradeParty6 import TradeParty6
 
 class ContractCessionData2(base_types._BaseFieldType):
 
-	__slots__ = ["_DocDt", "_Pty", "_DocNb"]
+	__slots__ = ["_DocDt", "_DocNb", "_Pty"]
 	@property
 	def DocDt(self):
 		return self._DocDt

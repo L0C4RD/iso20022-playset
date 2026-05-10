@@ -1,17 +1,17 @@
 from . import base_types
-from ._EnergyCommodityNaturalGas3 import EnergyCommodityNaturalGas3
-from ._EnergyCommodityLightEnd2 import EnergyCommodityLightEnd2
-from ._EnergyCommodityInterEnergy2 import EnergyCommodityInterEnergy2
-from ._EnergyCommodityOil3 import EnergyCommodityOil3
 from ._EnergyCommodityCoal2 import EnergyCommodityCoal2
-from ._EnergyCommodityRenewableEnergy2 import EnergyCommodityRenewableEnergy2
 from ._EnergyCommodityDistillates2 import EnergyCommodityDistillates2
 from ._EnergyCommodityElectricity2 import EnergyCommodityElectricity2
+from ._EnergyCommodityInterEnergy2 import EnergyCommodityInterEnergy2
+from ._EnergyCommodityLightEnd2 import EnergyCommodityLightEnd2
+from ._EnergyCommodityNaturalGas3 import EnergyCommodityNaturalGas3
+from ._EnergyCommodityOil3 import EnergyCommodityOil3
 from ._EnergyCommodityOther2 import EnergyCommodityOther2
+from ._EnergyCommodityRenewableEnergy2 import EnergyCommodityRenewableEnergy2
 
 class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NtrlGas", "_LghtEnd", "_IntrNrgy", "_Coal", "_Oil", "_RnwblNrgy", "_Othr", "_Elctrcty", "_Dstllts"]
+	__slots__ = ["_Coal", "_Dstllts", "_Elctrcty", "_IntrNrgy", "_LghtEnd", "_NtrlGas", "_Oil", "_Othr", "_RnwblNrgy"]
 	@property
 	def Coal(self):
 		return self._Coal

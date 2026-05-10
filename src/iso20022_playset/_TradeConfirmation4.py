@@ -1,10 +1,10 @@
 from . import base_types
-from ._TradeConfirmationType1Code import TradeConfirmationType1Code
 from ._ISODateTime import ISODateTime
+from ._TradeConfirmationType1Code import TradeConfirmationType1Code
 
 class TradeConfirmation4(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_TmStmp"]
+	__slots__ = ["_TmStmp", "_Tp"]
 	@property
 	def TmStmp(self):
 		return self._TmStmp

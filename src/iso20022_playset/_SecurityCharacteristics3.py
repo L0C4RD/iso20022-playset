@@ -1,12 +1,12 @@
 from . import base_types
-from ._AmountPricePerFinancialInstrumentQuantity9 import AmountPricePerFinancialInstrumentQuantity9
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._AmountPricePerFinancialInstrumentQuantity9 import AmountPricePerFinancialInstrumentQuantity9
 from ._SecuritiesPosition1 import SecuritiesPosition1
 from ._SecurityIdentification19 import SecurityIdentification19
 
 class SecurityCharacteristics3(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CollVal", "_Pos", "_ValtnPric"]
+	__slots__ = ["_CollVal", "_Id", "_Pos", "_ValtnPric"]
 	@property
 	def CollVal(self):
 		return self._CollVal

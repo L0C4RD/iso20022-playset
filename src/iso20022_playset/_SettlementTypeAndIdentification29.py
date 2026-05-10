@@ -5,7 +5,7 @@ from ._ReceiveDelivery1Code import ReceiveDelivery1Code
 
 class SettlementTypeAndIdentification29(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesMvmntTp", "_CorpActnEvtId", "_PrcrTxId", "_MktInfrstrctrTxId", "_Pmt", "_NonceId", "_CtrPtyMktInfrstrctrTxId", "_CmonId", "_AcctSvcrTxId", "_AcctOwnrTxId", "_PoolId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_CmonId", "_CorpActnEvtId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_NonceId", "_Pmt", "_PoolId", "_PrcrTxId", "_SctiesMvmntTp"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

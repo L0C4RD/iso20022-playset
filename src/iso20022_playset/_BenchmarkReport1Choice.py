@@ -1,11 +1,11 @@
 from . import base_types
-from ._BenchmarkCreate1 import BenchmarkCreate1
 from ._BenchmarkCancellation1 import BenchmarkCancellation1
+from ._BenchmarkCreate1 import BenchmarkCreate1
 from ._BenchmarkUpdate1 import BenchmarkUpdate1
 
 class BenchmarkReport1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cret", "_Upd", "_Cxl"]
+	__slots__ = ["_Cret", "_Cxl", "_Upd"]
 	@property
 	def Cret(self):
 		return self._Cret

@@ -1,10 +1,10 @@
 from . import base_types
-from ._TimeFrame9Choice import TimeFrame9Choice
 from ._DecimalNumber import DecimalNumber
+from ._TimeFrame9Choice import TimeFrame9Choice
 
 class TimeHorizon2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TmFrame", "_NbOfYrs"]
+	__slots__ = ["_NbOfYrs", "_TmFrame"]
 	@property
 	def NbOfYrs(self):
 		return self._NbOfYrs

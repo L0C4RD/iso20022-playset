@@ -1,10 +1,10 @@
 from . import base_types
-from ._Header33 import Header33
 from ._ATMReject2 import ATMReject2
+from ._Header33 import Header33
 
 class ATMRejectV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_ATMRjct"]
+	__slots__ = ["_ATMRjct", "_Hdr"]
 	@property
 	def ATMRjct(self):
 		return self._ATMRjct

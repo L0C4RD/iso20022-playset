@@ -1,15 +1,15 @@
 from . import base_types
-from ._ExposureType23Choice import ExposureType23Choice
-from ._RateOrType1Choice import RateOrType1Choice
-from ._GenericIdentification30 import GenericIdentification30
-from ._YesNoIndicator import YesNoIndicator
 from ._CollateralRole1Code import CollateralRole1Code
-from ._GenericIdentification1 import GenericIdentification1
 from ._CollateralTransactionType1Choice import CollateralTransactionType1Choice
+from ._ExposureType23Choice import ExposureType23Choice
+from ._GenericIdentification1 import GenericIdentification1
+from ._GenericIdentification30 import GenericIdentification30
+from ._RateOrType1Choice import RateOrType1Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class CollateralParameters11(base_types._BaseFieldType):
 
-	__slots__ = ["_ElgbltySetPrfl", "_XpsrTp", "_CollInstrTp", "_ValSghtMrgnRate", "_SttlmPrc", "_CollSd", "_TrfTitl"]
+	__slots__ = ["_CollInstrTp", "_CollSd", "_ElgbltySetPrfl", "_SttlmPrc", "_TrfTitl", "_ValSghtMrgnRate", "_XpsrTp"]
 	@property
 	def CollInstrTp(self):
 		return self._CollInstrTp

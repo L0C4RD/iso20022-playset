@@ -1,10 +1,10 @@
 from . import base_types
-from ._SecuritiesPaymentStatus1Code import SecuritiesPaymentStatus1Code
 from ._GenericIdentification47 import GenericIdentification47
+from ._SecuritiesPaymentStatus1Code import SecuritiesPaymentStatus1Code
 
 class SecuritiesPaymentStatus6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

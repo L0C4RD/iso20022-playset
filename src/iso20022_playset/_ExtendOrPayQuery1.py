@@ -1,15 +1,15 @@
 from . import base_types
-from ._Contacts3 import Contacts3
 from ._BankInstructions1 import BankInstructions1
-from ._ISODate import ISODate
-from ._Document9 import Document9
-from ._Max2000Text import Max2000Text
+from ._Contacts3 import Contacts3
 from ._Demand2 import Demand2
+from ._Document9 import Document9
+from ._ISODate import ISODate
+from ._Max2000Text import Max2000Text
 from ._Undertaking9 import Undertaking9
 
 class ExtendOrPayQuery1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_DmndDtls", "_UdrtkgId", "_BkCtct", "_NclsdFile", "_BkInstrs", "_ReqdXpryDt"]
+	__slots__ = ["_AddtlInf", "_BkCtct", "_BkInstrs", "_DmndDtls", "_NclsdFile", "_ReqdXpryDt", "_UdrtkgId"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

@@ -1,14 +1,14 @@
 from . import base_types
-from ._Max10NumericText import Max10NumericText
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Max70Text import Max70Text
 from ._CustomerReference1 import CustomerReference1
-from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max10NumericText import Max10NumericText
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TravelAgencyPackage2(base_types._BaseFieldType):
 
-	__slots__ = ["_CstmrRef", "_NbInPty", "_Fee", "_DlvryOrdrNb", "_CdtCardSlipNb", "_RsvatnNb", "_DataSrc", "_InsrncAmt", "_Tp", "_Insrnc"]
+	__slots__ = ["_CdtCardSlipNb", "_CstmrRef", "_DataSrc", "_DlvryOrdrNb", "_Fee", "_Insrnc", "_InsrncAmt", "_NbInPty", "_RsvatnNb", "_Tp"]
 	@property
 	def CdtCardSlipNb(self):
 		return self._CdtCardSlipNb

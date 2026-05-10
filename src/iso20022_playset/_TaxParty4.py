@@ -1,10 +1,10 @@
 from . import base_types
-from ._TaxExemptionReasonFormat1Choice import TaxExemptionReasonFormat1Choice
 from ._Max35Text import Max35Text
+from ._TaxExemptionReasonFormat1Choice import TaxExemptionReasonFormat1Choice
 
 class TaxParty4(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxId", "_RegnId", "_TaxXmptnRsn", "_TaxTp"]
+	__slots__ = ["_RegnId", "_TaxId", "_TaxTp", "_TaxXmptnRsn"]
 	@property
 	def RegnId(self):
 		return self._RegnId

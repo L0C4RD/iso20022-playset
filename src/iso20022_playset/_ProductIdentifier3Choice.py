@@ -1,10 +1,10 @@
 from . import base_types
-from ._UnderlyingProductIdentifier1Code import UnderlyingProductIdentifier1Code
 from ._Max12Text import Max12Text
+from ._UnderlyingProductIdentifier1Code import UnderlyingProductIdentifier1Code
 
 class ProductIdentifier3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_UnqPdctIdr", "_UndrlygPdctIdr"]
+	__slots__ = ["_UndrlygPdctIdr", "_UnqPdctIdr"]
 	@property
 	def UndrlygPdctIdr(self):
 		return self._UndrlygPdctIdr

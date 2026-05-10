@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._CountryCode import CountryCode
-from ._Period4Choice import Period4Choice
 from ._ISODateTime import ISODateTime
 from ._MICIdentifier import MICIdentifier
+from ._Period4Choice import Period4Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class RecordTechnicalData4(base_types._BaseFieldType):
 
-	__slots__ = ["_RlvntCmptntAuthrty", "_IncnsstncyInd", "_PblctnPrd", "_SubmissnDtTm", "_LastUpd", "_RlvntTradgVn", "_NvrPblshd"]
+	__slots__ = ["_IncnsstncyInd", "_LastUpd", "_NvrPblshd", "_PblctnPrd", "_RlvntCmptntAuthrty", "_RlvntTradgVn", "_SubmissnDtTm"]
 	@property
 	def IncnsstncyInd(self):
 		return self._IncnsstncyInd

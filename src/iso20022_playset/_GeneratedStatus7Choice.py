@@ -1,6 +1,6 @@
 from . import base_types
-from ._NoReasonCode import NoReasonCode
 from ._GeneratedReason5 import GeneratedReason5
+from ._NoReasonCode import NoReasonCode
 
 class GeneratedStatus7Choice(base_types._BaseFieldType):
 

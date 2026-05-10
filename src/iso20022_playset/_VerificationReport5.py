@@ -1,12 +1,12 @@
 from . import base_types
 from ._IdentificationInformation5 import IdentificationInformation5
-from ._VerificationReason1Choice import VerificationReason1Choice
-from ._Max35Text import Max35Text
 from ._IdentificationVerificationIndicator import IdentificationVerificationIndicator
+from ._Max35Text import Max35Text
+from ._VerificationReason1Choice import VerificationReason1Choice
 
 class VerificationReport5(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrfctn", "_OrgnlPtyAndAcctId", "_OrgnlId", "_Rsn", "_UpdtdPtyAndAcctId"]
+	__slots__ = ["_OrgnlId", "_OrgnlPtyAndAcctId", "_Rsn", "_UpdtdPtyAndAcctId", "_Vrfctn"]
 	@property
 	def OrgnlId(self):
 		return self._OrgnlId

@@ -1,21 +1,21 @@
 from . import base_types
-from ._SettlementStatus25Choice import SettlementStatus25Choice
-from ._CorporateActionEventProcessingStatus4Choice import CorporateActionEventProcessingStatus4Choice
-from ._InstructionProcessingStatus26Choice import InstructionProcessingStatus26Choice
-from ._RepoCallRequestStatus10Choice import RepoCallRequestStatus10Choice
-from ._CancellationProcessingStatus8Choice import CancellationProcessingStatus8Choice
-from ._ReplacementProcessingStatus9Choice import ReplacementProcessingStatus9Choice
-from ._RegistrationProcessingStatus4Choice import RegistrationProcessingStatus4Choice
 from ._AffirmationStatus9Choice import AffirmationStatus9Choice
 from ._AllocationSatus4Choice import AllocationSatus4Choice
-from ._ResponseStatus7Choice import ResponseStatus7Choice
-from ._MatchingStatus28Choice import MatchingStatus28Choice
-from ._SettlementConditionModificationStatus4Choice import SettlementConditionModificationStatus4Choice
+from ._CancellationProcessingStatus8Choice import CancellationProcessingStatus8Choice
+from ._CorporateActionEventProcessingStatus4Choice import CorporateActionEventProcessingStatus4Choice
 from ._CorporateActionEventStage4Choice import CorporateActionEventStage4Choice
+from ._InstructionProcessingStatus26Choice import InstructionProcessingStatus26Choice
+from ._MatchingStatus28Choice import MatchingStatus28Choice
+from ._RegistrationProcessingStatus4Choice import RegistrationProcessingStatus4Choice
+from ._ReplacementProcessingStatus9Choice import ReplacementProcessingStatus9Choice
+from ._RepoCallRequestStatus10Choice import RepoCallRequestStatus10Choice
+from ._ResponseStatus7Choice import ResponseStatus7Choice
+from ._SettlementConditionModificationStatus4Choice import SettlementConditionModificationStatus4Choice
+from ._SettlementStatus25Choice import SettlementStatus25Choice
 
 class Status22Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmSts", "_CorpActnEvtPrcgSts", "_RspnSts", "_SttlmCondModSts", "_InstrPrcgSts", "_RepoCallReqSts", "_RplcmntPrcgSts", "_RegnPrcgSts", "_MtchgSts", "_AffirmSts", "_CorpActnEvtStag", "_IfrrdMtchgSts", "_CxlPrcgSts", "_AllcnSts"]
+	__slots__ = ["_AffirmSts", "_AllcnSts", "_CorpActnEvtPrcgSts", "_CorpActnEvtStag", "_CxlPrcgSts", "_IfrrdMtchgSts", "_InstrPrcgSts", "_MtchgSts", "_RegnPrcgSts", "_RepoCallReqSts", "_RplcmntPrcgSts", "_RspnSts", "_SttlmCondModSts", "_SttlmSts"]
 	@property
 	def AffirmSts(self):
 		return self._AffirmSts

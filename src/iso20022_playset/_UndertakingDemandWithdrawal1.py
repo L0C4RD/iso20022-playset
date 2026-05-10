@@ -1,11 +1,11 @@
 from . import base_types
 from ._Demand3 import Demand3
-from ._Undertaking6 import Undertaking6
 from ._Max35Text import Max35Text
+from ._Undertaking6 import Undertaking6
 
 class UndertakingDemandWithdrawal1(base_types._BaseFieldType):
 
-	__slots__ = ["_DmndDtls", "_CnfrmrRefNb", "_UdrtkgId", "_AdvsgPtyRefNb"]
+	__slots__ = ["_AdvsgPtyRefNb", "_CnfrmrRefNb", "_DmndDtls", "_UdrtkgId"]
 	@property
 	def AdvsgPtyRefNb(self):
 		return self._AdvsgPtyRefNb

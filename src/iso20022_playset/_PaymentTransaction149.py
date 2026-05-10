@@ -1,23 +1,23 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._ChargeBearerType1Code import ChargeBearerType1Code
-from ._SupplementaryData1 import SupplementaryData1
-from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._OriginalGroupInformation29 import OriginalGroupInformation29
-from ._Charges16 import Charges16
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._BaseOneRate import BaseOneRate
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._Charges16 import Charges16
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._OriginalGroupInformation29 import OriginalGroupInformation29
+from ._OriginalTransactionReference42 import OriginalTransactionReference42
 from ._PaymentReversalReason10 import PaymentReversalReason10
 from ._Priority3Code import Priority3Code
+from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
+from ._SupplementaryData1 import SupplementaryData1
 from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
-from ._OriginalTransactionReference42 import OriginalTransactionReference42
 
 class PaymentTransaction149(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlIntrBkSttlmAmt", "_ChrgBr", "_RvsdIntrBkSttlmAmt", "_OrgnlInstrId", "_ChrgsInf", "_OrgnlGrpInf", "_InstdAgt", "_XchgRate", "_IntrBkSttlmDt", "_SttlmPrty", "_OrgnlTxRef", "_OrgnlUETR", "_SttlmTmIndctn", "_InstgAgt", "_OrgnlClrSysRef", "_RvsdInstdAmt", "_CompstnAmt", "_OrgnlEndToEndId", "_OrgnlTxId", "_RvslRsnInf", "_SplmtryData", "_RvslId"]
+	__slots__ = ["_ChrgBr", "_ChrgsInf", "_CompstnAmt", "_InstdAgt", "_InstgAgt", "_IntrBkSttlmDt", "_OrgnlClrSysRef", "_OrgnlEndToEndId", "_OrgnlGrpInf", "_OrgnlInstrId", "_OrgnlIntrBkSttlmAmt", "_OrgnlTxId", "_OrgnlTxRef", "_OrgnlUETR", "_RvsdInstdAmt", "_RvsdIntrBkSttlmAmt", "_RvslId", "_RvslRsnInf", "_SplmtryData", "_SttlmPrty", "_SttlmTmIndctn", "_XchgRate"]
 	@property
 	def ChrgBr(self):
 		return self._ChrgBr

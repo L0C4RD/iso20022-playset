@@ -1,17 +1,17 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._LanguageCode import LanguageCode
-from ._CardFallback1Code import CardFallback1Code
 from ._AttendanceContext1Code import AttendanceContext1Code
-from ._TransactionEnvironment1Code import TransactionEnvironment1Code
-from ._SupportedPaymentOption2Code import SupportedPaymentOption2Code
-from ._CardDataReading8Code import CardDataReading8Code
 from ._BusinessArea2Code import BusinessArea2Code
+from ._CardDataReading8Code import CardDataReading8Code
+from ._CardFallback1Code import CardFallback1Code
+from ._LanguageCode import LanguageCode
+from ._SupportedPaymentOption2Code import SupportedPaymentOption2Code
 from ._TransactionChannel5Code import TransactionChannel5Code
+from ._TransactionEnvironment1Code import TransactionEnvironment1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PaymentContext29(base_types._BaseFieldType):
 
-	__slots__ = ["_CardDataNtryMd", "_CardPres", "_SpprtdOptn", "_AttndncCntxt", "_OnLineCntxt", "_CrdhldrPres", "_BizArea", "_TxChanl", "_AttndntMsgCpbl", "_AttndntLang", "_FllbckInd", "_TxEnvt"]
+	__slots__ = ["_AttndncCntxt", "_AttndntLang", "_AttndntMsgCpbl", "_BizArea", "_CardDataNtryMd", "_CardPres", "_CrdhldrPres", "_FllbckInd", "_OnLineCntxt", "_SpprtdOptn", "_TxChanl", "_TxEnvt"]
 	@property
 	def AttndncCntxt(self):
 		return self._AttndncCntxt

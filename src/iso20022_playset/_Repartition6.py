@@ -1,6 +1,6 @@
 from . import base_types
-from ._FinancialInstrument87 import FinancialInstrument87
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._FinancialInstrument87 import FinancialInstrument87
 from ._UnitsOrAmountOrPercentage1Choice import UnitsOrAmountOrPercentage1Choice
 
 class Repartition6(base_types._BaseFieldType):

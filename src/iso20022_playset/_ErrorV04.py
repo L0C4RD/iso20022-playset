@@ -1,24 +1,24 @@
 from . import base_types
+from ._AdditionalData2 import AdditionalData2
+from ._AdditionalFee3 import AdditionalFee3
+from ._ContentInformationType41 import ContentInformationType41
+from ._ErrorDetails3 import ErrorDetails3
 from ._Exact12Text import Exact12Text
+from ._Exact15Text import Exact15Text
+from ._Header71 import Header71
+from ._ISODateTime import ISODateTime
+from ._Jurisdiction2 import Jurisdiction2
 from ._Max100KBinary import Max100KBinary
 from ._Max12NumericText import Max12NumericText
-from ._AdditionalData2 import AdditionalData2
-from ._Exact15Text import Exact15Text
-from ._Jurisdiction2 import Jurisdiction2
-from ._ISODateTime import ISODateTime
 from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ContentInformationType41 import ContentInformationType41
-from ._SettlementService6 import SettlementService6
 from ._ProtectedData2 import ProtectedData2
-from ._AdditionalFee3 import AdditionalFee3
 from ._Reconciliation4 import Reconciliation4
-from ._ErrorDetails3 import ErrorDetails3
-from ._Header71 import Header71
+from ._SettlementService6 import SettlementService6
+from ._SupplementaryData1 import SupplementaryData1
 
 class ErrorV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Sndr", "_AddtlData", "_Jursdctn", "_TrnsmssnDtTm", "_AddtlFee", "_LifeCyclId", "_ErrDtl", "_OrgnlMsg", "_Hdr", "_SysTracAudtNb", "_Rcncltn", "_RtrvlRefNb", "_SctyTrlr", "_Rcvr", "_SttlmSvc", "_PrtctdData", "_Orgtr", "_SplmtryData", "_Dstn"]
+	__slots__ = ["_AddtlData", "_AddtlFee", "_Dstn", "_ErrDtl", "_Hdr", "_Jursdctn", "_LifeCyclId", "_OrgnlMsg", "_Orgtr", "_PrtctdData", "_Rcncltn", "_Rcvr", "_RtrvlRefNb", "_SctyTrlr", "_Sndr", "_SplmtryData", "_SttlmSvc", "_SysTracAudtNb", "_TrnsmssnDtTm"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

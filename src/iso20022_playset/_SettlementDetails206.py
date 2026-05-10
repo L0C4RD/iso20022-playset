@@ -1,11 +1,11 @@
 from . import base_types
-from ._SettlementParties36Choice import SettlementParties36Choice
 from ._CollateralOwnership4 import CollateralOwnership4
 from ._ISODateTime import ISODateTime
+from ._SettlementParties36Choice import SettlementParties36Choice
 
 class SettlementDetails206(base_types._BaseFieldType):
 
-	__slots__ = ["_TradDt", "_CollOwnrsh", "_SttlmPties"]
+	__slots__ = ["_CollOwnrsh", "_SttlmPties", "_TradDt"]
 	@property
 	def CollOwnrsh(self):
 		return self._CollOwnrsh

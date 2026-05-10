@@ -1,16 +1,16 @@
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._Case6 import Case6
-from ._NumberOfTransactionsPerStatus1 import NumberOfTransactionsPerStatus1
-from ._GroupCancellationStatus1Code import GroupCancellationStatus1Code
-from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
-from ._ISODateTime import ISODateTime
 from ._CancellationStatusReason5 import CancellationStatusReason5
+from ._Case6 import Case6
+from ._DecimalNumber import DecimalNumber
+from ._GroupCancellationStatus1Code import GroupCancellationStatus1Code
+from ._ISODateTime import ISODateTime
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
+from ._NumberOfTransactionsPerStatus1 import NumberOfTransactionsPerStatus1
 
 class OriginalGroupHeader23(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlStsRsnInf", "_RslvdCase", "_OrgnlGrpCxlId", "_OrgnlNbOfTxs", "_OrgnlCtrlSum", "_OrgnlCreDtTm", "_OrgnlMsgId", "_GrpCxlSts", "_OrgnlMsgNmId", "_NbOfTxsPerCxlSts"]
+	__slots__ = ["_CxlStsRsnInf", "_GrpCxlSts", "_NbOfTxsPerCxlSts", "_OrgnlCreDtTm", "_OrgnlCtrlSum", "_OrgnlGrpCxlId", "_OrgnlMsgId", "_OrgnlMsgNmId", "_OrgnlNbOfTxs", "_RslvdCase"]
 	@property
 	def CxlStsRsnInf(self):
 		return self._CxlStsRsnInf

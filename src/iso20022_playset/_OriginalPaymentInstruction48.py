@@ -1,17 +1,17 @@
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._Case6 import Case6
-from ._OriginalGroupInformation29 import OriginalGroupInformation29
-from ._NumberOfCancellationsPerStatus1 import NumberOfCancellationsPerStatus1
-from ._PaymentTransaction153 import PaymentTransaction153
-from ._GroupCancellationStatus1Code import GroupCancellationStatus1Code
-from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
 from ._CancellationStatusReason5 import CancellationStatusReason5
+from ._Case6 import Case6
+from ._DecimalNumber import DecimalNumber
+from ._GroupCancellationStatus1Code import GroupCancellationStatus1Code
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
+from ._NumberOfCancellationsPerStatus1 import NumberOfCancellationsPerStatus1
+from ._OriginalGroupInformation29 import OriginalGroupInformation29
+from ._PaymentTransaction153 import PaymentTransaction153
 
 class OriginalPaymentInstruction48(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlStsRsnInf", "_TxInfAndSts", "_OrgnlPmtInfCxlId", "_RslvdCase", "_OrgnlNbOfTxs", "_OrgnlCtrlSum", "_OrgnlPmtInfId", "_NbOfTxsPerCxlSts", "_PmtInfCxlSts", "_OrgnlGrpInf"]
+	__slots__ = ["_CxlStsRsnInf", "_NbOfTxsPerCxlSts", "_OrgnlCtrlSum", "_OrgnlGrpInf", "_OrgnlNbOfTxs", "_OrgnlPmtInfCxlId", "_OrgnlPmtInfId", "_PmtInfCxlSts", "_RslvdCase", "_TxInfAndSts"]
 	@property
 	def CxlStsRsnInf(self):
 		return self._CxlStsRsnInf

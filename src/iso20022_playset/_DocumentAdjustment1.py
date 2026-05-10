@@ -1,12 +1,12 @@
 from . import base_types
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._CreditDebitCode import CreditDebitCode
 from ._Max140Text import Max140Text
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._Max4Text import Max4Text
 
 class DocumentAdjustment1(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_Rsn", "_Amt", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Amt", "_CdtDbtInd", "_Rsn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

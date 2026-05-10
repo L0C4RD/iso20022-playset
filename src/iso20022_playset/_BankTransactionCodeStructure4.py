@@ -1,10 +1,10 @@
 from . import base_types
-from ._ProprietaryBankTransactionCodeStructure1 import ProprietaryBankTransactionCodeStructure1
 from ._BankTransactionCodeStructure5 import BankTransactionCodeStructure5
+from ._ProprietaryBankTransactionCodeStructure1 import ProprietaryBankTransactionCodeStructure1
 
 class BankTransactionCodeStructure4(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Domn"]
+	__slots__ = ["_Domn", "_Prtry"]
 	@property
 	def Domn(self):
 		return self._Domn

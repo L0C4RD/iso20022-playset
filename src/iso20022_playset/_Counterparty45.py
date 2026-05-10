@@ -1,14 +1,14 @@
 from . import base_types
-from ._CountryCode import CountryCode
-from ._PartyIdentification248Choice import PartyIdentification248Choice
-from ._TradingCapacity7Code import TradingCapacity7Code
-from ._ReportingExemption1 import ReportingExemption1
-from ._Direction4Choice import Direction4Choice
 from ._CounterpartyTradeNature15Choice import CounterpartyTradeNature15Choice
+from ._CountryCode import CountryCode
+from ._Direction4Choice import Direction4Choice
+from ._PartyIdentification248Choice import PartyIdentification248Choice
+from ._ReportingExemption1 import ReportingExemption1
+from ._TradingCapacity7Code import TradingCapacity7Code
 
 class Counterparty45(base_types._BaseFieldType):
 
-	__slots__ = ["_Ntr", "_TradrLctn", "_Id", "_RptgXmptn", "_TradgCpcty", "_BookgLctn", "_DrctnOrSd"]
+	__slots__ = ["_BookgLctn", "_DrctnOrSd", "_Id", "_Ntr", "_RptgXmptn", "_TradgCpcty", "_TradrLctn"]
 	@property
 	def BookgLctn(self):
 		return self._BookgLctn

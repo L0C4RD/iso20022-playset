@@ -1,11 +1,11 @@
 from . import base_types
-from ._CashAccountSearchCriteria8 import CashAccountSearchCriteria8
 from ._CashAccountReturnCriteria5 import CashAccountReturnCriteria5
+from ._CashAccountSearchCriteria8 import CashAccountSearchCriteria8
 from ._Max35Text import Max35Text
 
 class AccountCriteria8(base_types._BaseFieldType):
 
-	__slots__ = ["_RtrCrit", "_NewQryNm", "_SchCrit"]
+	__slots__ = ["_NewQryNm", "_RtrCrit", "_SchCrit"]
 	@property
 	def NewQryNm(self):
 		return self._NewQryNm

@@ -1,11 +1,11 @@
 from . import base_types
-from ._TransactionAction1Code import TransactionAction1Code
-from ._RetailerService2Code import RetailerService2Code
 from ._ActionMessage11 import ActionMessage11
+from ._RetailerService2Code import RetailerService2Code
+from ._TransactionAction1Code import TransactionAction1Code
 
 class EnableServiceRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcsNbld", "_TxActn", "_DispOutpt"]
+	__slots__ = ["_DispOutpt", "_SvcsNbld", "_TxActn"]
 	@property
 	def DispOutpt(self):
 		return self._DispOutpt

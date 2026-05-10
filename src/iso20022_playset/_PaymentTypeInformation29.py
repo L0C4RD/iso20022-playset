@@ -1,13 +1,13 @@
 from . import base_types
 from ._CategoryPurpose1Choice import CategoryPurpose1Choice
-from ._SequenceType3Code import SequenceType3Code
-from ._Priority2Code import Priority2Code
-from ._ServiceLevel8Choice import ServiceLevel8Choice
 from ._LocalInstrument2Choice import LocalInstrument2Choice
+from ._Priority2Code import Priority2Code
+from ._SequenceType3Code import SequenceType3Code
+from ._ServiceLevel8Choice import ServiceLevel8Choice
 
 class PaymentTypeInformation29(base_types._BaseFieldType):
 
-	__slots__ = ["_CtgyPurp", "_SvcLvl", "_LclInstrm", "_SeqTp", "_InstrPrty"]
+	__slots__ = ["_CtgyPurp", "_InstrPrty", "_LclInstrm", "_SeqTp", "_SvcLvl"]
 	@property
 	def CtgyPurp(self):
 		return self._CtgyPurp

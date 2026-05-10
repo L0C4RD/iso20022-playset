@@ -1,11 +1,11 @@
 from . import base_types
 from ._Account29 import Account29
-from ._Role6Choice import Role6Choice
 from ._PartyIdentification136 import PartyIdentification136
+from ._Role6Choice import Role6Choice
 
 class Intermediary44(base_types._BaseFieldType):
 
-	__slots__ = ["_Role", "_Id", "_Acct"]
+	__slots__ = ["_Acct", "_Id", "_Role"]
 	@property
 	def Acct(self):
 		return self._Acct

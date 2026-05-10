@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._AccountIdentification77Choice import AccountIdentification77Choice
 from ._CorporateActionGeneralInformation102 import CorporateActionGeneralInformation102
 from ._RestrictedFINZMax8000Text import RestrictedFINZMax8000Text
 from ._SecurityIdentification20 import SecurityIdentification20
+from ._SupplementaryData1 import SupplementaryData1
 
 class CorporateActionNarrative002V09(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygScty", "_CorpActnGnlInf", "_AcctDtls", "_SplmtryData", "_AddtlInf"]
+	__slots__ = ["_AcctDtls", "_AddtlInf", "_CorpActnGnlInf", "_SplmtryData", "_UndrlygScty"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

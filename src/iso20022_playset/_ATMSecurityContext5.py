@@ -1,9 +1,9 @@
 from . import base_types
-from ._ATMSecurityScheme4Code import ATMSecurityScheme4Code
 from ._ATMSecurityDevice2 import ATMSecurityDevice2
-from ._Max140Binary import Max140Binary
 from ._ATMSecurityScheme3Code import ATMSecurityScheme3Code
+from ._ATMSecurityScheme4Code import ATMSecurityScheme4Code
 from ._CryptographicKey11 import CryptographicKey11
+from ._Max140Binary import Max140Binary
 
 class ATMSecurityContext5(base_types._BaseFieldType):
 

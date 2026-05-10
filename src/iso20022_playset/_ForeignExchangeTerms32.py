@@ -1,12 +1,12 @@
 from . import base_types
-from ._PartyIdentification113 import PartyIdentification113
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ISODateTime import ISODateTime
 from ._BaseOneRate import BaseOneRate
+from ._ISODateTime import ISODateTime
+from ._PartyIdentification113 import PartyIdentification113
 
 class ForeignExchangeTerms32(base_types._BaseFieldType):
 
-	__slots__ = ["_QtnDt", "_XchgRate", "_QtgInstn", "_UnitCcy", "_QtdCcy"]
+	__slots__ = ["_QtdCcy", "_QtgInstn", "_QtnDt", "_UnitCcy", "_XchgRate"]
 	@property
 	def QtdCcy(self):
 		return self._QtdCcy

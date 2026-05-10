@@ -1,12 +1,12 @@
 from . import base_types
 from ._CounterpartyData88 import CounterpartyData88
-from ._SupplementaryData1 import SupplementaryData1
 from ._LoanData86 import LoanData86
 from ._Max140Text import Max140Text
+from ._SupplementaryData1 import SupplementaryData1
 
 class TradeError9(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtySpcfcData", "_SplmtryData", "_LnData", "_TechRcrdId"]
+	__slots__ = ["_CtrPtySpcfcData", "_LnData", "_SplmtryData", "_TechRcrdId"]
 	@property
 	def CtrPtySpcfcData(self):
 		return self._CtrPtySpcfcData

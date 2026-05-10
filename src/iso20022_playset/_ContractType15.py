@@ -1,18 +1,18 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._CurrencyExchange23 import CurrencyExchange23
-from ._Max50Text import Max50Text
 from ._CFIOct2015Identifier import CFIOct2015Identifier
+from ._CountryCode import CountryCode
+from ._CurrencyExchange23 import CurrencyExchange23
 from ._FinancialInstrumentContractType2Code import FinancialInstrumentContractType2Code
 from ._MICIdentifier import MICIdentifier
-from ._SecurityIdentification46 import SecurityIdentification46
-from ._CountryCode import CountryCode
+from ._Max50Text import Max50Text
 from ._ProductType4Code import ProductType4Code
 from ._SecurityIdentification41Choice import SecurityIdentification41Choice
+from ._SecurityIdentification46 import SecurityIdentification46
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ContractType15(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygAsstTradgPltfmIdr", "_CtrctTp", "_DerivBasedOnCrptAsst", "_PdctId", "_UndrlygAsstPricSrc", "_SttlmCcyScndLeg", "_SttlmCcy", "_UndrlygInstrm", "_PlcOfSttlm", "_AsstClss", "_PdctClssfctn"]
+	__slots__ = ["_AsstClss", "_CtrctTp", "_DerivBasedOnCrptAsst", "_PdctClssfctn", "_PdctId", "_PlcOfSttlm", "_SttlmCcy", "_SttlmCcyScndLeg", "_UndrlygAsstPricSrc", "_UndrlygAsstTradgPltfmIdr", "_UndrlygInstrm"]
 	@property
 	def AsstClss(self):
 		return self._AsstClss

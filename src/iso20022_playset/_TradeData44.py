@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._RegulatoryReporting8 import RegulatoryReporting8
-from ._Max35Text import Max35Text
-from ._ISODateTime import ISODateTime
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
+from ._RegulatoryReporting8 import RegulatoryReporting8
 
 class TradeData44(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctTp", "_SttlmSsnIdr", "_MtchgSysUnqRef", "_MtchgSysMtchgRef", "_MtchgSysMtchdSdRef", "_NewSttlmDt", "_RgltryRptg", "_CurStsDtTm", "_OrgtrRef", "_CurSttlmDt"]
+	__slots__ = ["_CurStsDtTm", "_CurSttlmDt", "_MtchgSysMtchdSdRef", "_MtchgSysMtchgRef", "_MtchgSysUnqRef", "_NewSttlmDt", "_OrgtrRef", "_PdctTp", "_RgltryRptg", "_SttlmSsnIdr"]
 	@property
 	def CurStsDtTm(self):
 		return self._CurStsDtTm

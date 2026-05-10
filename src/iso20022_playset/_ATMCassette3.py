@@ -1,14 +1,14 @@
 from . import base_types
 from ._ATMCassetteCounters6 import ATMCassetteCounters6
-from ._ATMMediaType4Code import ATMMediaType4Code
 from ._ATMCassetteStatus1Code import ATMCassetteStatus1Code
 from ._ATMCassetteType1Code import ATMCassetteType1Code
-from ._Max35Text import Max35Text
+from ._ATMMediaType4Code import ATMMediaType4Code
 from ._ATMNoteType1Code import ATMNoteType1Code
+from ._Max35Text import Max35Text
 
 class ATMCassette3(base_types._BaseFieldType):
 
-	__slots__ = ["_SrlNb", "_SubTp", "_MdiaCntrs", "_Tp", "_PhysId", "_LogclId", "_MdiaTp", "_CssttSts"]
+	__slots__ = ["_CssttSts", "_LogclId", "_MdiaCntrs", "_MdiaTp", "_PhysId", "_SrlNb", "_SubTp", "_Tp"]
 	@property
 	def CssttSts(self):
 		return self._CssttSts

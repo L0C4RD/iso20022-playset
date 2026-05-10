@@ -1,13 +1,13 @@
 from . import base_types
 from ._Account23 import Account23
 from ._AccountManagementType3Code import AccountManagementType3Code
-from ._Max35Text import Max35Text
 from ._InvestmentAccount77 import InvestmentAccount77
 from ._LinkedMessage5Choice import LinkedMessage5Choice
+from ._Max35Text import Max35Text
 
 class AccountManagementMessageReference5(base_types._BaseFieldType):
 
-	__slots__ = ["_ExstgAcctId", "_InvstmtAcct", "_AcctApplId", "_StsReqTp", "_LkdRef"]
+	__slots__ = ["_AcctApplId", "_ExstgAcctId", "_InvstmtAcct", "_LkdRef", "_StsReqTp"]
 	@property
 	def AcctApplId(self):
 		return self._AcctApplId

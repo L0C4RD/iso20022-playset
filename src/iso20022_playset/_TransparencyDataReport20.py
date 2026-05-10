@@ -1,16 +1,16 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._StatisticsTransparency2 import StatisticsTransparency2
-from ._MICIdentifier import MICIdentifier
-from ._Period4Choice import Period4Choice
-from ._Max35Text import Max35Text
-from ._Max350Text import Max350Text
-from ._TonsOrCurrency2Choice import TonsOrCurrency2Choice
 from ._InstrumentOrSubClassIdentification2Choice import InstrumentOrSubClassIdentification2Choice
+from ._MICIdentifier import MICIdentifier
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._Period4Choice import Period4Choice
+from ._StatisticsTransparency2 import StatisticsTransparency2
+from ._TonsOrCurrency2Choice import TonsOrCurrency2Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TransparencyDataReport20(base_types._BaseFieldType):
 
-	__slots__ = ["_PreTradLrgInScaleThrshld", "_PreTradInstrmSzSpcfcThrshld", "_RptgPrd", "_PstTradInstrmSzSpcfcThrshld", "_FullNm", "_Lqdty", "_Id", "_TechRcrdId", "_TradgVn", "_Sttstcs", "_PstTradLrgInScaleThrshld"]
+	__slots__ = ["_FullNm", "_Id", "_Lqdty", "_PreTradInstrmSzSpcfcThrshld", "_PreTradLrgInScaleThrshld", "_PstTradInstrmSzSpcfcThrshld", "_PstTradLrgInScaleThrshld", "_RptgPrd", "_Sttstcs", "_TechRcrdId", "_TradgVn"]
 	@property
 	def FullNm(self):
 		return self._FullNm

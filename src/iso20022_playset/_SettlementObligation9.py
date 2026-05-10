@@ -1,23 +1,23 @@
 from . import base_types
+from ._AmountAndDirection27 import AmountAndDirection27
+from ._ClearingAccountType1Code import ClearingAccountType1Code
+from ._DateFormat65Choice import DateFormat65Choice
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._MarketIdentification84 import MarketIdentification84
+from ._Max35Text import Max35Text
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._SafekeepingPlaceFormat43Choice import SafekeepingPlaceFormat43Choice
 from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SecurityIdentification48 import SecurityIdentification48
+from ._SettlementObligation10 import SettlementObligation10
 from ._SettlementParties38Choice import SettlementParties38Choice
 from ._TradeDate3Choice import TradeDate3Choice
-from ._MarketIdentification84 import MarketIdentification84
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._ClearingAccountType1Code import ClearingAccountType1Code
-from ._SafekeepingPlaceFormat43Choice import SafekeepingPlaceFormat43Choice
-from ._SecurityIdentification48 import SecurityIdentification48
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
 from ._TradingCapacity5Code import TradingCapacity5Code
-from ._DateFormat65Choice import DateFormat65Choice
-from ._Max35Text import Max35Text
-from ._AmountAndDirection27 import AmountAndDirection27
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._SettlementObligation10 import SettlementObligation10
 
 class SettlementObligation9(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmAmt", "_Qty", "_TradDt", "_TradgCpcty", "_SfkpgAcct", "_AddtlSttlmOblgtnDtls", "_ClrAcctTp", "_Pmt", "_PlcOfTrad", "_IntnddSttlmDt", "_SfkpgPlc", "_SttlmPties", "_SttlmOblgtnId", "_FinInstrmId", "_SctiesMvmntTp"]
+	__slots__ = ["_AddtlSttlmOblgtnDtls", "_ClrAcctTp", "_FinInstrmId", "_IntnddSttlmDt", "_PlcOfTrad", "_Pmt", "_Qty", "_SctiesMvmntTp", "_SfkpgAcct", "_SfkpgPlc", "_SttlmAmt", "_SttlmOblgtnId", "_SttlmPties", "_TradDt", "_TradgCpcty"]
 	@property
 	def AddtlSttlmOblgtnDtls(self):
 		return self._AddtlSttlmOblgtnDtls

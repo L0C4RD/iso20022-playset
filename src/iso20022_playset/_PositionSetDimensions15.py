@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._Max52Text import Max52Text
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PositionSetDimensions15(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgCtrPty", "_OthrCtrPty", "_CollPrtflId", "_OtlrsIncl"]
+	__slots__ = ["_CollPrtflId", "_OthrCtrPty", "_OtlrsIncl", "_RptgCtrPty"]
 	@property
 	def CollPrtflId(self):
 		return self._CollPrtflId

@@ -1,11 +1,11 @@
 from . import base_types
 from ._ForeignExchangeSwap3Choice import ForeignExchangeSwap3Choice
-from ._SupplementaryData1 import SupplementaryData1
 from ._MoneyMarketReportHeader1 import MoneyMarketReportHeader1
+from ._SupplementaryData1 import SupplementaryData1
 
 class MoneyMarketForeignExchangeSwapsStatisticalReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RptHdr", "_SplmtryData", "_FXSwpsRpt"]
+	__slots__ = ["_FXSwpsRpt", "_RptHdr", "_SplmtryData"]
 	@property
 	def FXSwpsRpt(self):
 		return self._FXSwpsRpt

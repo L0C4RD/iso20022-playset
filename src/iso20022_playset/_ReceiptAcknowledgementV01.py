@@ -1,11 +1,11 @@
 from . import base_types
 from ._MessageHeader10 import MessageHeader10
-from ._SupplementaryData1 import SupplementaryData1
 from ._ReceiptAcknowledgementReport2 import ReceiptAcknowledgementReport2
+from ._SupplementaryData1 import SupplementaryData1
 
 class ReceiptAcknowledgementV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Rpt", "_MsgId", "_SplmtryData"]
+	__slots__ = ["_MsgId", "_Rpt", "_SplmtryData"]
 	@property
 	def MsgId(self):
 		return self._MsgId

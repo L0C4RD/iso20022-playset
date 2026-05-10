@@ -1,10 +1,10 @@
 from . import base_types
-from ._ReportLine1 import ReportLine1
 from ._MessageIdentification1 import MessageIdentification1
+from ._ReportLine1 import ReportLine1
 
 class IntentToPayReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RptdItms", "_RptId"]
+	__slots__ = ["_RptId", "_RptdItms"]
 	@property
 	def RptId(self):
 		return self._RptId

@@ -1,11 +1,11 @@
 from . import base_types
-from ._TradePartyIdentificationQuery9 import TradePartyIdentificationQuery9
-from ._TradePartyIdentificationQuery8 import TradePartyIdentificationQuery8
 from ._Operation3Code import Operation3Code
+from ._TradePartyIdentificationQuery8 import TradePartyIdentificationQuery8
+from ._TradePartyIdentificationQuery9 import TradePartyIdentificationQuery9
 
 class TradePartyQueryCriteria5(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrCtrPtyBrnch", "_RptgCtrPty", "_TrptyAgt", "_CCP", "_OthrCtrPty", "_RptgCtrPtyBrnch", "_SubmitgAgt", "_AgtLndr", "_Brkr", "_Bnfcry", "_Oprtr"]
+	__slots__ = ["_AgtLndr", "_Bnfcry", "_Brkr", "_CCP", "_Oprtr", "_OthrCtrPty", "_OthrCtrPtyBrnch", "_RptgCtrPty", "_RptgCtrPtyBrnch", "_SubmitgAgt", "_TrptyAgt"]
 	@property
 	def AgtLndr(self):
 		return self._AgtLndr

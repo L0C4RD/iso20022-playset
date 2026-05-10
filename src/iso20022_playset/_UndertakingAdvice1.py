@@ -1,8 +1,8 @@
 from . import base_types
 from ._AdvisingPartyAdditionalInformation1 import AdvisingPartyAdditionalInformation1
-from ._UndertakingIssuanceMessage import UndertakingIssuanceMessage
-from ._UndertakingConfirmation1 import UndertakingConfirmation1
 from ._PartyAndSignature2 import PartyAndSignature2
+from ._UndertakingConfirmation1 import UndertakingConfirmation1
+from ._UndertakingIssuanceMessage import UndertakingIssuanceMessage
 
 class UndertakingAdvice1(base_types._BaseFieldType):
 

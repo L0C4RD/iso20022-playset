@@ -1,17 +1,17 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._MICIdentifier import MICIdentifier
-from ._ISINOct2015Identifier import ISINOct2015Identifier
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._DecimalNumberFraction5 import DecimalNumberFraction5
-from ._Max35Text import Max35Text
-from ._Max350Text import Max350Text
 from ._EquityInstrumentReportingClassification1Code import EquityInstrumentReportingClassification1Code
+from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._ISODate import ISODate
+from ._MICIdentifier import MICIdentifier
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
 
 class TransparencyDataReport11(base_types._BaseFieldType):
 
-	__slots__ = ["_IssncSz", "_InstrmPric", "_FullNm", "_FinInstrmClssfctn", "_TechRcrdId", "_TradgVn", "_HldgsExcdgTtlVtngRghtThrshld", "_Id", "_NbOutsdngInstrms", "_RptgDt"]
+	__slots__ = ["_FinInstrmClssfctn", "_FullNm", "_HldgsExcdgTtlVtngRghtThrshld", "_Id", "_InstrmPric", "_IssncSz", "_NbOutsdngInstrms", "_RptgDt", "_TechRcrdId", "_TradgVn"]
 	@property
 	def FinInstrmClssfctn(self):
 		return self._FinInstrmClssfctn

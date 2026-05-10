@@ -1,10 +1,10 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._Max35Text import Max35Text
+from ._YesNoIndicator import YesNoIndicator
 
 class DataBaseCheck1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_DBChck"]
+	__slots__ = ["_DBChck", "_Id"]
 	@property
 	def DBChck(self):
 		return self._DBChck

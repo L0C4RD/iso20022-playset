@@ -1,12 +1,12 @@
 from . import base_types
 from ._LoyaltyAccount3 import LoyaltyAccount3
-from ._LoyaltyRebates1 import LoyaltyRebates1
 from ._LoyaltyAmount1 import LoyaltyAmount1
+from ._LoyaltyRebates1 import LoyaltyRebates1
 from ._LoyaltyServerData1 import LoyaltyServerData1
 
 class LoyaltyResult3(base_types._BaseFieldType):
 
-	__slots__ = ["_Rbts", "_SvrData", "_Acct", "_Amt"]
+	__slots__ = ["_Acct", "_Amt", "_Rbts", "_SvrData"]
 	@property
 	def Acct(self):
 		return self._Acct

@@ -4,7 +4,7 @@ from ._OriginalAndCurrentQuantities4 import OriginalAndCurrentQuantities4
 
 class Quantity54Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_OrgnlAndCurFace"]
+	__slots__ = ["_OrgnlAndCurFace", "_Qty"]
 	@property
 	def OrgnlAndCurFace(self):
 		return self._OrgnlAndCurFace

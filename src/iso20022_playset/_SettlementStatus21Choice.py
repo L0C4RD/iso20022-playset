@@ -1,11 +1,11 @@
 from . import base_types
-from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
 from ._FailingStatus12Choice import FailingStatus12Choice
 from ._PendingStatus47Choice import PendingStatus47Choice
+from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
 
 class SettlementStatus21Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Pdg", "_Flng", "_Prtry"]
+	__slots__ = ["_Flng", "_Pdg", "_Prtry"]
 	@property
 	def Flng(self):
 		return self._Flng

@@ -1,12 +1,12 @@
 from . import base_types
 from ._ElementIdentification1 import ElementIdentification1
 from ._Max350Text import Max350Text
-from ._Number import Number
 from ._Max35Text import Max35Text
+from ._Number import Number
 
 class ValidationResult5(base_types._BaseFieldType):
 
-	__slots__ = ["_MisMtchdElmt", "_SeqNb", "_RuleDesc", "_RuleId"]
+	__slots__ = ["_MisMtchdElmt", "_RuleDesc", "_RuleId", "_SeqNb"]
 	@property
 	def MisMtchdElmt(self):
 		return self._MisMtchdElmt

@@ -1,11 +1,11 @@
 from . import base_types
 from ._MessageIdentification1 import MessageIdentification1
-from ._TransactionStatus5 import TransactionStatus5
 from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._TransactionStatus5 import TransactionStatus5
 
 class StatusExtensionRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqId", "_StsToBeXtnded", "_TxId", "_SubmitrTxRef"]
+	__slots__ = ["_ReqId", "_StsToBeXtnded", "_SubmitrTxRef", "_TxId"]
 	@property
 	def ReqId(self):
 		return self._ReqId

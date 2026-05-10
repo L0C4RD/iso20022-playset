@@ -1,10 +1,10 @@
 from . import base_types
-from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
 from ._GenericIdentification47 import GenericIdentification47
+from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
 
 class ProprietaryReason5(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_AddtlRsnInf"]
+	__slots__ = ["_AddtlRsnInf", "_Rsn"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf

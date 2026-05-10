@@ -1,11 +1,11 @@
 from . import base_types
+from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 from ._LEIIdentifier import LEIIdentifier
 from ._OrganisationIdentification38 import OrganisationIdentification38
-from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 
 class OrganisationIdentification15Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_LEI", "_AnyBIC"]
+	__slots__ = ["_AnyBIC", "_LEI", "_Othr"]
 	@property
 	def AnyBIC(self):
 		return self._AnyBIC

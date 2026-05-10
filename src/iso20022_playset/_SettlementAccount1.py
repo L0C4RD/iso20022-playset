@@ -4,7 +4,7 @@ from ._GenericIdentification165 import GenericIdentification165
 
 class SettlementAccount1(base_types._BaseFieldType):
 
-	__slots__ = ["_EndOfDaySttlmClld", "_EndOfDayOthrClld", "_EndOfDayVartnMrgnClld", "_EndOfDayInitlMrgnClld", "_Id", "_EndOfDayDfltFndClld", "_EndOfDayLqdtyClld"]
+	__slots__ = ["_EndOfDayDfltFndClld", "_EndOfDayInitlMrgnClld", "_EndOfDayLqdtyClld", "_EndOfDayOthrClld", "_EndOfDaySttlmClld", "_EndOfDayVartnMrgnClld", "_Id"]
 	@property
 	def EndOfDayDfltFndClld(self):
 		return self._EndOfDayDfltFndClld

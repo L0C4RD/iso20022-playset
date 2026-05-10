@@ -1,11 +1,11 @@
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ATMCounterType3Code import ATMCounterType3Code
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Number import Number
 
 class ATMCassetteCounters5(base_types._BaseFieldType):
 
-	__slots__ = ["_RcycldNb", "_Tp", "_DpstdAmt", "_RmvdAmt", "_DpstdNb", "_AddedNb", "_InitlAmt", "_DspnsdNb", "_PresntdNb", "_InitlNb", "_RtrctdAmt", "_RtrctdNb", "_RmvdNb", "_RjctdNb"]
+	__slots__ = ["_AddedNb", "_DpstdAmt", "_DpstdNb", "_DspnsdNb", "_InitlAmt", "_InitlNb", "_PresntdNb", "_RcycldNb", "_RjctdNb", "_RmvdAmt", "_RmvdNb", "_RtrctdAmt", "_RtrctdNb", "_Tp"]
 	@property
 	def AddedNb(self):
 		return self._AddedNb

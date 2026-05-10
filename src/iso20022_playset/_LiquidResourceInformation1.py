@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._AmountAndDirection102 import AmountAndDirection102
 from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class LiquidResourceInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_CntrPtyId", "_LqdRsrcVal", "_AgcyArrgmnts", "_QlfygRsrc", "_AsstNcmbrd", "_Scrd", "_MktVal"]
+	__slots__ = ["_AgcyArrgmnts", "_AsstNcmbrd", "_CntrPtyId", "_LqdRsrcVal", "_MktVal", "_QlfygRsrc", "_Scrd"]
 	@property
 	def AgcyArrgmnts(self):
 		return self._AgcyArrgmnts

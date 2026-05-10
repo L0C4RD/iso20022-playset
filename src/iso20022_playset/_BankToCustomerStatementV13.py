@@ -1,7 +1,7 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._AccountStatement14 import AccountStatement14
 from ._GroupHeader116 import GroupHeader116
+from ._SupplementaryData1 import SupplementaryData1
 
 class BankToCustomerStatementV13(base_types._BaseFieldType):
 

@@ -1,10 +1,10 @@
 from . import base_types
-from ._TRRelatedData2 import TRRelatedData2
 from ._ContentInformationType14 import ContentInformationType14
+from ._TRRelatedData2 import TRRelatedData2
 
 class ATMSignature2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TRRltdData", "_DgtlSgntr"]
+	__slots__ = ["_DgtlSgntr", "_TRRltdData"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr

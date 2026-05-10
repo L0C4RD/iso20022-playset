@@ -1,23 +1,23 @@
 from . import base_types
-from ._AssetClassCommodityIndustrialProduct2Choice import AssetClassCommodityIndustrialProduct2Choice
-from ._AssetClassCommodityPolypropylene4Choice import AssetClassCommodityPolypropylene4Choice
-from ._AssetClassCommodityOther1 import AssetClassCommodityOther1
-from ._AssetClassCommodityFertilizer4Choice import AssetClassCommodityFertilizer4Choice
-from ._AssetClassCommodityFreight4Choice import AssetClassCommodityFreight4Choice
-from ._AssetClassCommodityEnvironmental3Choice import AssetClassCommodityEnvironmental3Choice
-from ._AssetClassCommodityInflation1 import AssetClassCommodityInflation1
+from ._AssetClassCommodityAgricultural6Choice import AssetClassCommodityAgricultural6Choice
 from ._AssetClassCommodityC10Other1 import AssetClassCommodityC10Other1
 from ._AssetClassCommodityEnergy3Choice import AssetClassCommodityEnergy3Choice
-from ._AssetClassCommodityMultiCommodityExotic1 import AssetClassCommodityMultiCommodityExotic1
+from ._AssetClassCommodityEnvironmental3Choice import AssetClassCommodityEnvironmental3Choice
+from ._AssetClassCommodityFertilizer4Choice import AssetClassCommodityFertilizer4Choice
+from ._AssetClassCommodityFreight4Choice import AssetClassCommodityFreight4Choice
 from ._AssetClassCommodityIndex1 import AssetClassCommodityIndex1
-from ._AssetClassCommodityPaper5Choice import AssetClassCommodityPaper5Choice
-from ._AssetClassCommodityOfficialEconomicStatistics1 import AssetClassCommodityOfficialEconomicStatistics1
+from ._AssetClassCommodityIndustrialProduct2Choice import AssetClassCommodityIndustrialProduct2Choice
+from ._AssetClassCommodityInflation1 import AssetClassCommodityInflation1
 from ._AssetClassCommodityMetal2Choice import AssetClassCommodityMetal2Choice
-from ._AssetClassCommodityAgricultural6Choice import AssetClassCommodityAgricultural6Choice
+from ._AssetClassCommodityMultiCommodityExotic1 import AssetClassCommodityMultiCommodityExotic1
+from ._AssetClassCommodityOfficialEconomicStatistics1 import AssetClassCommodityOfficialEconomicStatistics1
+from ._AssetClassCommodityOther1 import AssetClassCommodityOther1
+from ._AssetClassCommodityPaper5Choice import AssetClassCommodityPaper5Choice
+from ._AssetClassCommodityPolypropylene4Choice import AssetClassCommodityPolypropylene4Choice
 
 class AssetClassCommodity7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Envttl", "_OffclEcnmcSttstcs", "_Frght", "_Infltn", "_Frtlzr", "_Indx", "_Agrcltrl", "_IndstrlPdct", "_Metl", "_OthrC10", "_MultiCmmdtyExtc", "_Nrgy", "_Othr", "_Ppr", "_Plprpln"]
+	__slots__ = ["_Agrcltrl", "_Envttl", "_Frght", "_Frtlzr", "_IndstrlPdct", "_Indx", "_Infltn", "_Metl", "_MultiCmmdtyExtc", "_Nrgy", "_OffclEcnmcSttstcs", "_Othr", "_OthrC10", "_Plprpln", "_Ppr"]
 	@property
 	def Agrcltrl(self):
 		return self._Agrcltrl

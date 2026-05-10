@@ -1,11 +1,11 @@
 from . import base_types
-from ._StatusReason6Choice import StatusReason6Choice
-from ._PartyIdentification32 import PartyIdentification32
 from ._Max105Text import Max105Text
+from ._PartyIdentification32 import PartyIdentification32
+from ._StatusReason6Choice import StatusReason6Choice
 
 class StatusReasonInformation8(base_types._BaseFieldType):
 
-	__slots__ = ["_Orgtr", "_Rsn", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Orgtr", "_Rsn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

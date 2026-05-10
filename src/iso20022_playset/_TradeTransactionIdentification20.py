@@ -1,13 +1,13 @@
 from . import base_types
-from ._PartyIdentification236Choice import PartyIdentification236Choice
-from ._Max52Text import Max52Text
-from ._Max140Text import Max140Text
 from ._MasterAgreement7 import MasterAgreement7
+from ._Max140Text import Max140Text
+from ._Max52Text import Max52Text
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._PartyIdentification236Choice import PartyIdentification236Choice
 
 class TradeTransactionIdentification20(base_types._BaseFieldType):
 
-	__slots__ = ["_MstrAgrmt", "_AgtLndr", "_UnqTradIdr", "_TrptyAgt", "_RptgCtrPty", "_TechRcrdId", "_NttyRspnsblForRpt", "_OthrCtrPty"]
+	__slots__ = ["_AgtLndr", "_MstrAgrmt", "_NttyRspnsblForRpt", "_OthrCtrPty", "_RptgCtrPty", "_TechRcrdId", "_TrptyAgt", "_UnqTradIdr"]
 	@property
 	def AgtLndr(self):
 		return self._AgtLndr

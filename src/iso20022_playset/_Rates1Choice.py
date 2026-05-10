@@ -1,10 +1,10 @@
 from . import base_types
-from ._NoReasonCode import NoReasonCode
 from ._ExternalRatesAndTenors1Code import ExternalRatesAndTenors1Code
+from ._NoReasonCode import NoReasonCode
 
 class Rates1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Fxd", "_Fltg"]
+	__slots__ = ["_Fltg", "_Fxd"]
 	@property
 	def Fltg(self):
 		return self._Fltg

@@ -1,22 +1,22 @@
 from . import base_types
-from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
-from ._CurrencyDesignation1 import CurrencyDesignation1
-from ._UnitPrice19 import UnitPrice19
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._YesNoIndicator import YesNoIndicator
-from ._CashOutForecast6 import CashOutForecast6
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._NetCashForecast4 import NetCashForecast4
-from ._FinancialInstrument9 import FinancialInstrument9
+from ._CashInForecast6 import CashInForecast6
+from ._CashOutForecast6 import CashOutForecast6
+from ._CurrencyDesignation1 import CurrencyDesignation1
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._PercentageRate import PercentageRate
+from ._FinancialInstrument9 import FinancialInstrument9
+from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
 from ._ForeignExchangeTerms19 import ForeignExchangeTerms19
 from ._Max35Text import Max35Text
-from ._CashInForecast6 import CashInForecast6
+from ._NetCashForecast4 import NetCashForecast4
+from ._PercentageRate import PercentageRate
+from ._UnitPrice19 import UnitPrice19
+from ._YesNoIndicator import YesNoIndicator
 
 class FundCashForecast7(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNAV", "_TradDtTm", "_Pric", "_CcySts", "_PctgOfShrClssTtlNAV", "_FXRate", "_CshOutFcstDtls", "_CshInFcstDtls", "_PrvsTradDtTm", "_TtlNAVChngRate", "_InvstmtCcy", "_TtlUnitsNb", "_Id", "_FinInstrmDtls", "_PrvsTtlNAV", "_XcptnlNetCshFlowInd", "_NetCshFcstDtls", "_PrvsTtlUnitsNb"]
+	__slots__ = ["_CcySts", "_CshInFcstDtls", "_CshOutFcstDtls", "_FXRate", "_FinInstrmDtls", "_Id", "_InvstmtCcy", "_NetCshFcstDtls", "_PctgOfShrClssTtlNAV", "_Pric", "_PrvsTradDtTm", "_PrvsTtlNAV", "_PrvsTtlUnitsNb", "_TradDtTm", "_TtlNAV", "_TtlNAVChngRate", "_TtlUnitsNb", "_XcptnlNetCshFlowInd"]
 	@property
 	def CcySts(self):
 		return self._CcySts

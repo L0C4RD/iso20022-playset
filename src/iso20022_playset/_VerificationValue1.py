@@ -1,15 +1,15 @@
 from . import base_types
-from ._Max2048Text import Max2048Text
 from ._ISODate import ISODate
-from ._ISOTime import ISOTime
-from ._Max35Text import Max35Text
 from ._ISODateTime import ISODateTime
+from ._ISOTime import ISOTime
+from ._Max2048Text import Max2048Text
+from ._Max35Text import Max35Text
 from ._Max5000Binary import Max5000Binary
 from ._Max9999HexBinaryText import Max9999HexBinaryText
 
 class VerificationValue1(base_types._BaseFieldType):
 
-	__slots__ = ["_TxtVal", "_VldtyEndDt", "_Nm", "_DtTm", "_HexBinryVal", "_BinryVal", "_VldtyEndTm"]
+	__slots__ = ["_BinryVal", "_DtTm", "_HexBinryVal", "_Nm", "_TxtVal", "_VldtyEndDt", "_VldtyEndTm"]
 	@property
 	def BinryVal(self):
 		return self._BinryVal

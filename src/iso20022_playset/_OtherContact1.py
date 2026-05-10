@@ -4,7 +4,7 @@ from ._Max4Text import Max4Text
 
 class OtherContact1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_ChanlTp"]
+	__slots__ = ["_ChanlTp", "_Id"]
 	@property
 	def ChanlTp(self):
 		return self._ChanlTp

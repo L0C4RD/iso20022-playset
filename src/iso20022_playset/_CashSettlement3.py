@@ -1,10 +1,10 @@
 from . import base_types
-from ._PaymentInstrument17 import PaymentInstrument17
 from ._CashAccount204 import CashAccount204
+from ._PaymentInstrument17 import PaymentInstrument17
 
 class CashSettlement3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrCshSttlmDtls", "_CshAcctDtls"]
+	__slots__ = ["_CshAcctDtls", "_OthrCshSttlmDtls"]
 	@property
 	def CshAcctDtls(self):
 		return self._CshAcctDtls

@@ -1,11 +1,11 @@
 from . import base_types
+from ._NotionalAmountLegs5 import NotionalAmountLegs5
 from ._NotionalQuantityLegs5 import NotionalQuantityLegs5
 from ._TradeTransactionIdentification24 import TradeTransactionIdentification24
-from ._NotionalAmountLegs5 import NotionalAmountLegs5
 
 class AbnormalValuesTransactionData2(base_types._BaseFieldType):
 
-	__slots__ = ["_NtnlQty", "_NtnlAmt", "_TxId"]
+	__slots__ = ["_NtnlAmt", "_NtnlQty", "_TxId"]
 	@property
 	def NtnlAmt(self):
 		return self._NtnlAmt

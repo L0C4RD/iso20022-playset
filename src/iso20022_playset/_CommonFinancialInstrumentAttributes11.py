@@ -1,45 +1,45 @@
 from . import base_types
-from ._LegalRestrictions4Choice import LegalRestrictions4Choice
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._TradingParameters2 import TradingParameters2
-from ._SecurityStatus3Choice import SecurityStatus3Choice
-from ._TEFRARules3Choice import TEFRARules3Choice
-from ._PartyIdentification177Choice import PartyIdentification177Choice
-from ._Max256Text import Max256Text
-from ._PutType3Choice import PutType3Choice
-from ._FinancialInstrumentName2 import FinancialInstrumentName2
-from ._CallType3Choice import CallType3Choice
-from ._Max3NumericText import Max3NumericText
-from ._SecurityWithHoldingTax1 import SecurityWithHoldingTax1
-from ._ISODateTime import ISODateTime
-from ._ClassificationType2 import ClassificationType2
-from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
-from ._SecuritiesPaymentStatus5Choice import SecuritiesPaymentStatus5Choice
-from ._DateTimePeriod1 import DateTimePeriod1
-from ._BenchmarkCurve6 import BenchmarkCurve6
-from ._PartyIdentification136 import PartyIdentification136
-from ._FinancialInstrumentForm2 import FinancialInstrumentForm2
-from ._Max15NumericText import Max15NumericText
-from ._InitialPhysicalForm4Choice import InitialPhysicalForm4Choice
-from ._SecurityRestriction3 import SecurityRestriction3
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._FinancialInstrumentIdentificationValidity3 import FinancialInstrumentIdentificationValidity3
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
-from ._Number import Number
-from ._InitialPhysicalForm3Choice import InitialPhysicalForm3Choice
-from ._SettlementInformation17 import SettlementInformation17
-from ._SecurityCSDLink7 import SecurityCSDLink7
-from ._Organisation38 import Organisation38
-from ._Issuance6 import Issuance6
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._Max16Text import Max16Text
-from ._Max35Text import Max35Text
+from ._BenchmarkCurve6 import BenchmarkCurve6
+from ._CallType3Choice import CallType3Choice
+from ._ClassificationType2 import ClassificationType2
+from ._DateTimePeriod1 import DateTimePeriod1
+from ._FinancialInstrumentForm2 import FinancialInstrumentForm2
+from ._FinancialInstrumentIdentificationValidity3 import FinancialInstrumentIdentificationValidity3
+from ._FinancialInstrumentName2 import FinancialInstrumentName2
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
+from ._InitialPhysicalForm3Choice import InitialPhysicalForm3Choice
+from ._InitialPhysicalForm4Choice import InitialPhysicalForm4Choice
+from ._Issuance6 import Issuance6
+from ._LegalRestrictions4Choice import LegalRestrictions4Choice
 from ._MaturityRedemptionType3Choice import MaturityRedemptionType3Choice
+from ._Max15NumericText import Max15NumericText
+from ._Max16Text import Max16Text
+from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Max3NumericText import Max3NumericText
+from ._Number import Number
+from ._Organisation38 import Organisation38
+from ._PartyIdentification136 import PartyIdentification136
+from ._PartyIdentification177Choice import PartyIdentification177Choice
+from ._PutType3Choice import PutType3Choice
+from ._SecuritiesPaymentStatus5Choice import SecuritiesPaymentStatus5Choice
+from ._SecurityCSDLink7 import SecurityCSDLink7
+from ._SecurityRestriction3 import SecurityRestriction3
+from ._SecurityStatus3Choice import SecurityStatus3Choice
+from ._SecurityWithHoldingTax1 import SecurityWithHoldingTax1
+from ._SettlementInformation17 import SettlementInformation17
+from ._TEFRARules3Choice import TEFRARules3Choice
+from ._TradingParameters2 import TradingParameters2
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class CommonFinancialInstrumentAttributes11(base_types._BaseFieldType):
 
-	__slots__ = ["_LeadMgr", "_ListgDt", "_RcrdDt", "_FinInstrmForm", "_TaxLotNb", "_PngAgt", "_ConvtblInd", "_CtctNm", "_Dpstry", "_UndrlygRsk", "_FngbInd", "_LglRstrctns", "_SctyCSDLk", "_ConvsRatioDnmtr", "_FinInstrmNm", "_TEFRARule", "_Clss", "_AftrXchgPhysForm", "_XpryDt", "_CpnAttchdNb", "_CvrdInd", "_Issnc", "_NearTermPosLmt", "_ConvsRatioNmrtr", "_WhldgTaxRgm", "_RedTp", "_CertNb", "_SrNb", "_SttlmInf", "_FinInstrmIdVldty", "_PmtSts", "_PrvtPlcmnt", "_TradgMkt", "_CmonSfkpr", "_RedPmtCcy", "_ConvsPrd", "_CallTp", "_Cnfdtl", "_PmryPlcOfDpst", "_InitlPhysForm", "_ClssfctnTp", "_DnmtnCcy", "_SctySts", "_PutTp", "_CtrctVrsnNb", "_PoolNb", "_Rstrctn", "_TradgMtd", "_Purp", "_SprdAndBchmkCrv", "_PrncplPngAgt", "_PosLmt"]
+	__slots__ = ["_AftrXchgPhysForm", "_CallTp", "_CertNb", "_Clss", "_ClssfctnTp", "_CmonSfkpr", "_Cnfdtl", "_ConvsPrd", "_ConvsRatioDnmtr", "_ConvsRatioNmrtr", "_ConvtblInd", "_CpnAttchdNb", "_CtctNm", "_CtrctVrsnNb", "_CvrdInd", "_DnmtnCcy", "_Dpstry", "_FinInstrmForm", "_FinInstrmIdVldty", "_FinInstrmNm", "_FngbInd", "_InitlPhysForm", "_Issnc", "_LeadMgr", "_LglRstrctns", "_ListgDt", "_NearTermPosLmt", "_PmryPlcOfDpst", "_PmtSts", "_PngAgt", "_PoolNb", "_PosLmt", "_PrncplPngAgt", "_PrvtPlcmnt", "_Purp", "_PutTp", "_RcrdDt", "_RedPmtCcy", "_RedTp", "_Rstrctn", "_SctyCSDLk", "_SctySts", "_SprdAndBchmkCrv", "_SrNb", "_SttlmInf", "_TEFRARule", "_TaxLotNb", "_TradgMkt", "_TradgMtd", "_UndrlygRsk", "_WhldgTaxRgm", "_XpryDt"]
 	@property
 	def AftrXchgPhysForm(self):
 		return self._AftrXchgPhysForm

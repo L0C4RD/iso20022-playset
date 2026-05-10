@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._SystemIdentification2Choice import SystemIdentification2Choice
 from ._DateTimePeriod1Choice import DateTimePeriod1Choice
+from ._ISODate import ISODate
 from ._SystemEventType2Choice import SystemEventType2Choice
+from ._SystemIdentification2Choice import SystemIdentification2Choice
 
 class BusinessDaySearchCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_SysDt", "_EvtTp", "_ClsrPrd", "_SysId", "_SysCcy"]
+	__slots__ = ["_ClsrPrd", "_EvtTp", "_SysCcy", "_SysDt", "_SysId"]
 	@property
 	def ClsrPrd(self):
 		return self._ClsrPrd

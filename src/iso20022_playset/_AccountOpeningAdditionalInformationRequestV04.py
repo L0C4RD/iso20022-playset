@@ -1,15 +1,15 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._References3 import References3
-from ._CustomerAccount4 import CustomerAccount4
-from ._ContractDocument1 import ContractDocument1
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ContractDocument1 import ContractDocument1
+from ._CustomerAccount4 import CustomerAccount4
 from ._OrganisationIdentification39 import OrganisationIdentification39
 from ._PartyAndSignature4 import PartyAndSignature4
+from ._References3 import References3
+from ._SupplementaryData1 import SupplementaryData1
 
 class AccountOpeningAdditionalInformationRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Fr", "_Acct", "_AcctSvcrId", "_UndrlygMstrAgrmt", "_DgtlSgntr", "_OrgId", "_Refs", "_SplmtryData"]
+	__slots__ = ["_Acct", "_AcctSvcrId", "_DgtlSgntr", "_Fr", "_OrgId", "_Refs", "_SplmtryData", "_UndrlygMstrAgrmt"]
 	@property
 	def Acct(self):
 		return self._Acct

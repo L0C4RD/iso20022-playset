@@ -3,7 +3,7 @@ from ._SettlementDailyFailureReason1Choice import SettlementDailyFailureReason1C
 
 class SettlementFailsDailyInstructionType3(base_types._BaseFieldType):
 
-	__slots__ = ["_FreeOfPmt", "_PmtFreeOfDlvry", "_DlvryVrssPmt", "_DlvryWthPmt"]
+	__slots__ = ["_DlvryVrssPmt", "_DlvryWthPmt", "_FreeOfPmt", "_PmtFreeOfDlvry"]
 	@property
 	def DlvryVrssPmt(self):
 		return self._DlvryVrssPmt

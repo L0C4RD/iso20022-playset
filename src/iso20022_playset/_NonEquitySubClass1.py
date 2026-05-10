@@ -4,7 +4,7 @@ from ._NonEquitySubClassSegmentationCriterion1 import NonEquitySubClassSegmentat
 
 class NonEquitySubClass1(base_types._BaseFieldType):
 
-	__slots__ = ["_SgmttnCrit", "_Desc"]
+	__slots__ = ["_Desc", "_SgmttnCrit"]
 	@property
 	def Desc(self):
 		return self._Desc

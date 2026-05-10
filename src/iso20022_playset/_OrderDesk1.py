@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._ContactAttributes5 import ContactAttributes5
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._ContactAttributes5 import ContactAttributes5
+from ._ISODate import ISODate
 
 class OrderDesk1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_OrdrDsk", "_ClsrDts"]
+	__slots__ = ["_AddtlInf", "_ClsrDts", "_OrdrDsk"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

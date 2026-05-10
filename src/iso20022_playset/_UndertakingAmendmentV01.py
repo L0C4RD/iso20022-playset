@@ -1,11 +1,11 @@
 from . import base_types
-from ._PartyAndSignature2 import PartyAndSignature2
-from ._Max2000Text import Max2000Text
 from ._Amendment1 import Amendment1
+from ._Max2000Text import Max2000Text
+from ._PartyAndSignature2 import PartyAndSignature2
 
 class UndertakingAmendmentV01(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgAmdmntDtls", "_BkToBkInf", "_DgtlSgntr"]
+	__slots__ = ["_BkToBkInf", "_DgtlSgntr", "_UdrtkgAmdmntDtls"]
 	@property
 	def BkToBkInf(self):
 		return self._BkToBkInf

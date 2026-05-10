@@ -4,7 +4,7 @@ from ._IntraBalanceStatusType2 import IntraBalanceStatusType2
 
 class IntraBalanceQueryStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_DtPrd"]
+	__slots__ = ["_DtPrd", "_Tp"]
 	@property
 	def DtPrd(self):
 		return self._DtPrd

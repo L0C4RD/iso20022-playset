@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class GeolocationGeographicCoordinates1(base_types._BaseFieldType):
 
-	__slots__ = ["_Long", "_Lat"]
+	__slots__ = ["_Lat", "_Long"]
 	@property
 	def Lat(self):
 		return self._Lat

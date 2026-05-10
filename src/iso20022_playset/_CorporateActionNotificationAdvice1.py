@@ -1,10 +1,10 @@
 from . import base_types
-from ._CorporateActionOption1 import CorporateActionOption1
 from ._CorporateAction2 import CorporateAction2
+from ._CorporateActionOption1 import CorporateActionOption1
 
 class CorporateActionNotificationAdvice1(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnOptnDtls", "_CorpActnDtls"]
+	__slots__ = ["_CorpActnDtls", "_CorpActnOptnDtls"]
 	@property
 	def CorpActnDtls(self):
 		return self._CorpActnDtls

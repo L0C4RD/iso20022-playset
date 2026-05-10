@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
 from ._Exact4NumericText import Exact4NumericText
+from ._GenericIdentification30 import GenericIdentification30
 
 class PriorityNumeric4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Nmrc"]
+	__slots__ = ["_Nmrc", "_Prtry"]
 	@property
 	def Nmrc(self):
 		return self._Nmrc

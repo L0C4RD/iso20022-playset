@@ -1,11 +1,11 @@
 from . import base_types
-from ._TransactionVerificationResult5 import TransactionVerificationResult5
-from ._LanguageCode import LanguageCode
 from ._ATMCustomerProfile6 import ATMCustomerProfile6
+from ._LanguageCode import LanguageCode
+from ._TransactionVerificationResult5 import TransactionVerificationResult5
 
 class ATMCustomer7(base_types._BaseFieldType):
 
-	__slots__ = ["_SelctdLang", "_Prfl", "_AuthntcnRslt"]
+	__slots__ = ["_AuthntcnRslt", "_Prfl", "_SelctdLang"]
 	@property
 	def AuthntcnRslt(self):
 		return self._AuthntcnRslt

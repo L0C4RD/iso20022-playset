@@ -1,7 +1,7 @@
 from . import base_types
+from ._ContactIdentification1 import ContactIdentification1
 from ._PartyIdentification129Choice import PartyIdentification129Choice
 from ._PostalAddress1 import PostalAddress1
-from ._ContactIdentification1 import ContactIdentification1
 
 class PartyIdentification289(base_types._BaseFieldType):
 

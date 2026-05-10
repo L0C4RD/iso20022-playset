@@ -1,14 +1,14 @@
 from . import base_types
-from ._ISINOct2015Identifier import ISINOct2015Identifier
 from ._BasketQuery1 import BasketQuery1
-from ._SecurityIdentification20Choice import SecurityIdentification20Choice
+from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._Max52Text import Max52Text
 from ._NotAvailable1Code import NotAvailable1Code
 from ._NotReported1Code import NotReported1Code
-from ._Max52Text import Max52Text
+from ._SecurityIdentification20Choice import SecurityIdentification20Choice
 
 class SecurityIdentificationQuery4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_UnqPdctIdr", "_NotRptd", "_Bskt", "_AltrntvInstrmId", "_ISIN", "_NotAvlbl", "_Indx"]
+	__slots__ = ["_AltrntvInstrmId", "_Bskt", "_ISIN", "_Indx", "_NotAvlbl", "_NotRptd", "_UnqPdctIdr"]
 	@property
 	def AltrntvInstrmId(self):
 		return self._AltrntvInstrmId

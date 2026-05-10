@@ -6,7 +6,7 @@ from ._RestrictedFINXMax70Text import RestrictedFINXMax70Text
 
 class BlockChainAddressWallet10(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Tp", "_Dsgnt", "_Nm"]
+	__slots__ = ["_Dsgnt", "_Id", "_Nm", "_Tp"]
 	@property
 	def Dsgnt(self):
 		return self._Dsgnt

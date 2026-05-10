@@ -1,12 +1,12 @@
 from . import base_types
-from ._CreditorInvoice6 import CreditorInvoice6
-from ._SupplementaryData1 import SupplementaryData1
-from ._EnrolmentHeader3 import EnrolmentHeader3
 from ._CreditorEnrolment5 import CreditorEnrolment5
+from ._CreditorInvoice6 import CreditorInvoice6
+from ._EnrolmentHeader3 import EnrolmentHeader3
+from ._SupplementaryData1 import SupplementaryData1
 
 class RequestToPayCreditorEnrolmentRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrEnrlmnt", "_Hdr", "_ActvtnData", "_SplmtryData"]
+	__slots__ = ["_ActvtnData", "_CdtrEnrlmnt", "_Hdr", "_SplmtryData"]
 	@property
 	def ActvtnData(self):
 		return self._ActvtnData

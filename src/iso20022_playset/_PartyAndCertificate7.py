@@ -1,7 +1,7 @@
 from . import base_types
 from ._Max10KBinary import Max10KBinary
-from ._PartyIdentification272 import PartyIdentification272
 from ._Modification1Code import Modification1Code
+from ._PartyIdentification272 import PartyIdentification272
 
 class PartyAndCertificate7(base_types._BaseFieldType):
 

@@ -4,7 +4,7 @@ from ._SNA2008SectorIdentifier import SNA2008SectorIdentifier
 
 class SectorAndLocation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sctr", "_Lctn"]
+	__slots__ = ["_Lctn", "_Sctr"]
 	@property
 	def Lctn(self):
 		return self._Lctn

@@ -1,10 +1,10 @@
 from . import base_types
-from ._PendingCancellationStatusReason9 import PendingCancellationStatusReason9
 from ._NoReasonCode import NoReasonCode
+from ._PendingCancellationStatusReason9 import PendingCancellationStatusReason9
 
 class PendingCancellationStatus16Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_NoSpcfdRsn"]
+	__slots__ = ["_NoSpcfdRsn", "_Rsn"]
 	@property
 	def NoSpcfdRsn(self):
 		return self._NoSpcfdRsn

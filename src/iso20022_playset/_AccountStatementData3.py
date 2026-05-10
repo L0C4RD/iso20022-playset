@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._AccountStatementDetails3 import AccountStatementDetails3
+from ._ISODate import ISODate
 from ._ISOTime import ISOTime
 
 class AccountStatementData3(base_types._BaseFieldType):
 
-	__slots__ = ["_Dtls", "_Dt", "_Tm"]
+	__slots__ = ["_Dt", "_Dtls", "_Tm"]
 	@property
 	def Dt(self):
 		return self._Dt

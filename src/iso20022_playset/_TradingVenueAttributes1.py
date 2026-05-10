@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._ISODateTime import ISODateTime
 from ._MICIdentifier import MICIdentifier
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TradingVenueAttributes1(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrReq", "_Id", "_ReqForAdmssnDt", "_FrstTradDt", "_TermntnDt", "_AdmssnApprvlDtByIssr"]
+	__slots__ = ["_AdmssnApprvlDtByIssr", "_FrstTradDt", "_Id", "_IssrReq", "_ReqForAdmssnDt", "_TermntnDt"]
 	@property
 	def AdmssnApprvlDtByIssr(self):
 		return self._AdmssnApprvlDtByIssr

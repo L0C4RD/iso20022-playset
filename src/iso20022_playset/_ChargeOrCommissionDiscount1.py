@@ -1,7 +1,7 @@
 from . import base_types
-from ._WaivingInstruction2Choice import WaivingInstruction2Choice
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._PercentageRate import PercentageRate
+from ._WaivingInstruction2Choice import WaivingInstruction2Choice
 
 class ChargeOrCommissionDiscount1(base_types._BaseFieldType):
 

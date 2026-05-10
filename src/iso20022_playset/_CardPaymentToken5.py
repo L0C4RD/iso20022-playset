@@ -1,17 +1,17 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Min2Max3NumericText import Min2Max3NumericText
-from ._Number import Number
-from ._Max2NumericText import Max2NumericText
-from ._Min8Max28NumericText import Min8Max28NumericText
-from ._Max35Text import Max35Text
 from ._Max10Text import Max10Text
+from ._Max2NumericText import Max2NumericText
+from ._Max35Text import Max35Text
 from ._Max500Binary import Max500Binary
+from ._Min2Max3NumericText import Min2Max3NumericText
+from ._Min8Max28NumericText import Min8Max28NumericText
+from ._Number import Number
 from ._PaymentTokenIdentifiers1 import PaymentTokenIdentifiers1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CardPaymentToken5(base_types._BaseFieldType):
 
-	__slots__ = ["_TknInittdInd", "_TknAssrncLvl", "_TknAssrncMtd", "_TknXpryDt", "_TknChrtc", "_TknRqstr", "_Tkn", "_TknAssrncData", "_CardSeqNb"]
+	__slots__ = ["_CardSeqNb", "_Tkn", "_TknAssrncData", "_TknAssrncLvl", "_TknAssrncMtd", "_TknChrtc", "_TknInittdInd", "_TknRqstr", "_TknXpryDt"]
 	@property
 	def CardSeqNb(self):
 		return self._CardSeqNb

@@ -3,7 +3,7 @@ from ._UpdatedAdditionalInformation17 import UpdatedAdditionalInformation17
 
 class CorporateActionNarrative56(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnDtls", "_Dsclmr", "_AddtlTxt", "_InfConds", "_InfToCmplyWth", "_CertfctnBrkdwn", "_PrcgTxtForNxtIntrmy", "_NrrtvVrsn", "_PtyCtctNrrtv", "_TaxtnConds", "_BsktOrIndxInf"]
+	__slots__ = ["_AddtlTxt", "_BsktOrIndxInf", "_CertfctnBrkdwn", "_Dsclmr", "_InfConds", "_InfToCmplyWth", "_NrrtvVrsn", "_PrcgTxtForNxtIntrmy", "_PtyCtctNrrtv", "_RegnDtls", "_TaxtnConds"]
 	@property
 	def AddtlTxt(self):
 		return self._AddtlTxt

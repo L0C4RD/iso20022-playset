@@ -1,23 +1,23 @@
 from . import base_types
+from ._AlternateSecurityIdentification1 import AlternateSecurityIdentification1
+from ._BelgianIdentifier import BelgianIdentifier
 from ._BloombergIdentifier import BloombergIdentifier
-from ._TickerIdentifier import TickerIdentifier
-from ._ValorenIdentifier import ValorenIdentifier
+from ._CUSIPIdentifier import CUSIPIdentifier
+from ._ConsolidatedTapeAssociationIdentifier import ConsolidatedTapeAssociationIdentifier
+from ._DutchIdentifier import DutchIdentifier
+from ._EuroclearClearstreamIdentifier import EuroclearClearstreamIdentifier
 from ._ISINIdentifier import ISINIdentifier
 from ._QUICKIdentifier import QUICKIdentifier
-from ._DutchIdentifier import DutchIdentifier
-from ._SEDOLIdentifier import SEDOLIdentifier
 from ._RICIdentifier import RICIdentifier
-from ._AlternateSecurityIdentification1 import AlternateSecurityIdentification1
-from ._WertpapierIdentifier import WertpapierIdentifier
-from ._ConsolidatedTapeAssociationIdentifier import ConsolidatedTapeAssociationIdentifier
-from ._BelgianIdentifier import BelgianIdentifier
-from ._CUSIPIdentifier import CUSIPIdentifier
-from ._EuroclearClearstreamIdentifier import EuroclearClearstreamIdentifier
+from ._SEDOLIdentifier import SEDOLIdentifier
 from ._SicovamIdentifier import SicovamIdentifier
+from ._TickerIdentifier import TickerIdentifier
+from ._ValorenIdentifier import ValorenIdentifier
+from ._WertpapierIdentifier import WertpapierIdentifier
 
 class SecurityIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CUSIP", "_Cmon", "_CTA", "_Vlrn", "_ISIN", "_Wrtppr", "_RIC", "_Blmbrg", "_Dtch", "_Belgn", "_SCVM", "_SEDOL", "_TckrSymb", "_QUICK", "_OthrPrtryId"]
+	__slots__ = ["_Belgn", "_Blmbrg", "_CTA", "_CUSIP", "_Cmon", "_Dtch", "_ISIN", "_OthrPrtryId", "_QUICK", "_RIC", "_SCVM", "_SEDOL", "_TckrSymb", "_Vlrn", "_Wrtppr"]
 	@property
 	def Belgn(self):
 		return self._Belgn

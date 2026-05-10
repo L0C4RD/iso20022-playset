@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._NetworkParameters7 import NetworkParameters7
 from ._POICommunicationType2Code import POICommunicationType2Code
 from ._PartyType7Code import PartyType7Code
 from ._PhysicalInterfaceParameter1 import PhysicalInterfaceParameter1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CommunicationCharacteristics5(base_types._BaseFieldType):
 
-	__slots__ = ["_RmotPty", "_PhysIntrfc", "_ComTp", "_Params", "_Actv"]
+	__slots__ = ["_Actv", "_ComTp", "_Params", "_PhysIntrfc", "_RmotPty"]
 	@property
 	def Actv(self):
 		return self._Actv

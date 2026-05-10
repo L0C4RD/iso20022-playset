@@ -1,11 +1,11 @@
 from . import base_types
+from ._AdministrativeRequest8 import AdministrativeRequest8
 from ._ContentInformationType38 import ContentInformationType38
 from ._Header41 import Header41
-from ._AdministrativeRequest8 import AdministrativeRequest8
 
 class SaleToPOIAdministrativeRequestV07(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_Hdr", "_AdmstvReq"]
+	__slots__ = ["_AdmstvReq", "_Hdr", "_SctyTrlr"]
 	@property
 	def AdmstvReq(self):
 		return self._AdmstvReq

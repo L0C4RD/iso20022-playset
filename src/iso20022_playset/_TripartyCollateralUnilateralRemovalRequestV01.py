@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._PartyIdentification232 import PartyIdentification232
-from ._Max35Text import Max35Text
 from ._CollateralRole1Code import CollateralRole1Code
+from ._Max35Text import Max35Text
 from ._Pagination1 import Pagination1
+from ._PartyIdentification232 import PartyIdentification232
 from ._RequestDetails28 import RequestDetails28
+from ._SupplementaryData1 import SupplementaryData1
 
 class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RmvlReqId", "_SplmtryData", "_CollSd", "_PtyA", "_ClntPtyA", "_Pgntn", "_ReqDtls"]
+	__slots__ = ["_ClntPtyA", "_CollSd", "_Pgntn", "_PtyA", "_ReqDtls", "_RmvlReqId", "_SplmtryData"]
 	@property
 	def ClntPtyA(self):
 		return self._ClntPtyA

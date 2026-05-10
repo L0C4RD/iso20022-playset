@@ -1,11 +1,11 @@
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ThresholdType1Code import ThresholdType1Code
 from ._RoundingMethod1Code import RoundingMethod1Code
+from ._ThresholdType1Code import ThresholdType1Code
 
 class VariationMargin1(base_types._BaseFieldType):
 
-	__slots__ = ["_RndgAmt", "_ThrshldTp", "_RndgMtd", "_MinTrfAmt", "_ThrshldAmt"]
+	__slots__ = ["_MinTrfAmt", "_RndgAmt", "_RndgMtd", "_ThrshldAmt", "_ThrshldTp"]
 	@property
 	def MinTrfAmt(self):
 		return self._MinTrfAmt

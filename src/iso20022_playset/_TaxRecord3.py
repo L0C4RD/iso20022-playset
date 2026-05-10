@@ -1,12 +1,12 @@
 from . import base_types
-from ._TaxPeriod3 import TaxPeriod3
 from ._Max140Text import Max140Text
-from ._TaxAmount3 import TaxAmount3
 from ._Max35Text import Max35Text
+from ._TaxAmount3 import TaxAmount3
+from ._TaxPeriod3 import TaxPeriod3
 
 class TaxRecord3(base_types._BaseFieldType):
 
-	__slots__ = ["_FrmsCd", "_Ctgy", "_CertId", "_TaxAmt", "_DbtrSts", "_AddtlInf", "_CtgyDtls", "_Tp", "_Prd"]
+	__slots__ = ["_AddtlInf", "_CertId", "_Ctgy", "_CtgyDtls", "_DbtrSts", "_FrmsCd", "_Prd", "_TaxAmt", "_Tp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

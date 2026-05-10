@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification1 import GenericIdentification1
 from ._ExternalModelFormIdentification1Code import ExternalModelFormIdentification1Code
+from ._GenericIdentification1 import GenericIdentification1
 
 class ModelFormIdentification1Choice(base_types._BaseFieldType):
 

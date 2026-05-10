@@ -1,16 +1,16 @@
 from . import base_types
+from ._ATMMediaStatus1Code import ATMMediaStatus1Code
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._CheckCodeLine1Code import CheckCodeLine1Code
+from ._GenericInformation1 import GenericInformation1
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max70Text import Max70Text
 from ._Number import Number
 from ._PercentageRate import PercentageRate
-from ._GenericInformation1 import GenericInformation1
-from ._Max70Text import Max70Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._ATMMediaStatus1Code import ATMMediaStatus1Code
 
 class ATMDepositedMediaItem1(base_types._BaseFieldType):
 
-	__slots__ = ["_CdLineFrmt", "_RjctdRsn", "_AddtlData", "_MdiaId", "_UnitVal", "_Cnt", "_Ref", "_CnfdncLvl", "_ScnndVal", "_MdiaSts", "_CdLine", "_Ccy"]
+	__slots__ = ["_AddtlData", "_Ccy", "_CdLine", "_CdLineFrmt", "_CnfdncLvl", "_Cnt", "_MdiaId", "_MdiaSts", "_Ref", "_RjctdRsn", "_ScnndVal", "_UnitVal"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

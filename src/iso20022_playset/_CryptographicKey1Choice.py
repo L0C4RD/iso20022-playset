@@ -1,6 +1,6 @@
 from . import base_types
-from ._SHA256SignatureText import SHA256SignatureText
 from ._HexBinaryText import HexBinaryText
+from ._SHA256SignatureText import SHA256SignatureText
 
 class CryptographicKey1Choice(base_types._BaseFieldType):
 

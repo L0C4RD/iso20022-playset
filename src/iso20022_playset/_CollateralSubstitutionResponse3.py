@@ -1,12 +1,12 @@
 from . import base_types
-from ._RejectionReason68Code import RejectionReason68Code
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Max140Text import Max140Text
 from ._Max35Text import Max35Text
+from ._RejectionReason68Code import RejectionReason68Code
 
 class CollateralSubstitutionResponse3(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctnRsnInf", "_RjctnRsn", "_RjctdAmt", "_CollSbstitnReqId"]
+	__slots__ = ["_CollSbstitnReqId", "_RjctdAmt", "_RjctnRsn", "_RjctnRsnInf"]
 	@property
 	def CollSbstitnReqId(self):
 		return self._CollSbstitnReqId

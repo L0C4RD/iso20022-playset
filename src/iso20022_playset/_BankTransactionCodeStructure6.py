@@ -1,10 +1,10 @@
 from . import base_types
-from ._ExternalBankTransactionSubFamily1Code import ExternalBankTransactionSubFamily1Code
 from ._ExternalBankTransactionFamily1Code import ExternalBankTransactionFamily1Code
+from ._ExternalBankTransactionSubFamily1Code import ExternalBankTransactionSubFamily1Code
 
 class BankTransactionCodeStructure6(base_types._BaseFieldType):
 
-	__slots__ = ["_SubFmlyCd", "_Cd"]
+	__slots__ = ["_Cd", "_SubFmlyCd"]
 	@property
 	def Cd(self):
 		return self._Cd

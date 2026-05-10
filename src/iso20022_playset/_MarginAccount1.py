@@ -1,6 +1,6 @@
 from . import base_types
-from ._PositionAccount1 import PositionAccount1
 from ._PartyIdentification118Choice import PartyIdentification118Choice
+from ._PositionAccount1 import PositionAccount1
 
 class MarginAccount1(base_types._BaseFieldType):
 

@@ -1,16 +1,16 @@
 from . import base_types
-from ._Max140Text import Max140Text
-from ._PartyType32Code import PartyType32Code
 from ._BaseOne25Rate import BaseOne25Rate
-from ._TypeOfAmount21Code import TypeOfAmount21Code
-from ._Max35Text import Max35Text
 from ._CreditDebit3Code import CreditDebit3Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._PartyType32Code import PartyType32Code
+from ._TypeOfAmount21Code import TypeOfAmount21Code
 
 class AdditionalFee3(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_OthrAssgnr", "_RcncltnCcy", "_CdtDbt", "_OthrTp", "_RcncltnFctvXchgRate", "_Tp", "_Prgm", "_Assgnr", "_RcncltnAmt", "_Desc", "_Dscrptr", "_Ccy"]
+	__slots__ = ["_Amt", "_Assgnr", "_Ccy", "_CdtDbt", "_Desc", "_Dscrptr", "_OthrAssgnr", "_OthrTp", "_Prgm", "_RcncltnAmt", "_RcncltnCcy", "_RcncltnFctvXchgRate", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

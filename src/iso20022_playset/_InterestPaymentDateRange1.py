@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class InterestPaymentDateRange1(base_types._BaseFieldType):
 
-	__slots__ = ["_XpctdDt", "_DueDt", "_IntrstSchdlId"]
+	__slots__ = ["_DueDt", "_IntrstSchdlId", "_XpctdDt"]
 	@property
 	def DueDt(self):
 		return self._DueDt

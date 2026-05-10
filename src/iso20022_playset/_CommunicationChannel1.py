@@ -1,12 +1,12 @@
 from . import base_types
 from ._ExternalChannel1Code import ExternalChannel1Code
-from ._PartyType1Choice import PartyType1Choice
 from ._Max140Text import Max140Text
+from ._PartyType1Choice import PartyType1Choice
 from ._PostalAddress6 import PostalAddress6
 
 class CommunicationChannel1(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvrToNm", "_Mtd", "_DlvrToPtyTp", "_DlvrToAdr"]
+	__slots__ = ["_DlvrToAdr", "_DlvrToNm", "_DlvrToPtyTp", "_Mtd"]
 	@property
 	def DlvrToAdr(self):
 		return self._DlvrToAdr

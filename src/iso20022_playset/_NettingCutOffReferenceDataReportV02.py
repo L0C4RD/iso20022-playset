@@ -1,7 +1,7 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CutOffData2 import CutOffData2
 from ._NettingCutOffReportData2 import NettingCutOffReportData2
+from ._SupplementaryData1 import SupplementaryData1
 
 class NettingCutOffReferenceDataReportV02(base_types._BaseFieldType):
 

@@ -4,7 +4,7 @@ from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class CorporateActionGeneralInformation102(base_types._BaseFieldType):
 
-	__slots__ = ["_NrrtvTp", "_OffclCorpActnEvtId", "_CorpActnEvtId"]
+	__slots__ = ["_CorpActnEvtId", "_NrrtvTp", "_OffclCorpActnEvtId"]
 	@property
 	def CorpActnEvtId(self):
 		return self._CorpActnEvtId

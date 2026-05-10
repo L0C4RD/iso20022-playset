@@ -1,13 +1,13 @@
 from . import base_types
 from ._Amount2Choice import Amount2Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._PaymentInstruction13 import PaymentInstruction13
-from ._SystemMember3 import SystemMember3
 from ._MessageHeader1 import MessageHeader1
+from ._PaymentInstruction13 import PaymentInstruction13
+from ._SupplementaryData1 import SupplementaryData1
+from ._SystemMember3 import SystemMember3
 
 class BackupPaymentV07(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrAgt", "_TrfdAmt", "_InstrInf", "_OrgnlMsgId", "_MsgHdr", "_Cdtr", "_DbtrAgt", "_SplmtryData"]
+	__slots__ = ["_Cdtr", "_CdtrAgt", "_DbtrAgt", "_InstrInf", "_MsgHdr", "_OrgnlMsgId", "_SplmtryData", "_TrfdAmt"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

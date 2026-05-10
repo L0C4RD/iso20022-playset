@@ -1,11 +1,11 @@
 from . import base_types
+from ._ActionMessage4 import ActionMessage4
 from ._ActionType6Code import ActionType6Code
 from ._MessageFunction11Code import MessageFunction11Code
-from ._ActionMessage4 import ActionMessage4
 
 class Action7(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqToPrfrm", "_MsgToPres", "_ActnTp"]
+	__slots__ = ["_ActnTp", "_MsgToPres", "_ReqToPrfrm"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp

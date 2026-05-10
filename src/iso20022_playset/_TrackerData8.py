@@ -1,10 +1,10 @@
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class TrackerData8(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfdDt", "_RtrdConfdDt", "_PrevslyConfdDt", "_RmngToBeConfdAmt", "_ConfdAmt", "_RtrdConfdAmt", "_PrevslyConfdAmt"]
+	__slots__ = ["_ConfdAmt", "_ConfdDt", "_PrevslyConfdAmt", "_PrevslyConfdDt", "_RmngToBeConfdAmt", "_RtrdConfdAmt", "_RtrdConfdDt"]
 	@property
 	def ConfdAmt(self):
 		return self._ConfdAmt

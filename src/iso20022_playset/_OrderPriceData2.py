@@ -4,7 +4,7 @@ from ._SecuritiesTransactionPrice2Choice import SecuritiesTransactionPrice2Choic
 
 class OrderPriceData2(base_types._BaseFieldType):
 
-	__slots__ = ["_StopPric", "_AddtlLmtPric", "_CcyScndLeg", "_PggdPric", "_LmtPric"]
+	__slots__ = ["_AddtlLmtPric", "_CcyScndLeg", "_LmtPric", "_PggdPric", "_StopPric"]
 	@property
 	def AddtlLmtPric(self):
 		return self._AddtlLmtPric

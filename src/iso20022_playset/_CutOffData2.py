@@ -4,7 +4,7 @@ from ._PartyIdentification242Choice import PartyIdentification242Choice
 
 class CutOffData2(base_types._BaseFieldType):
 
-	__slots__ = ["_PtcptId", "_NetgCutOffDtls"]
+	__slots__ = ["_NetgCutOffDtls", "_PtcptId"]
 	@property
 	def NetgCutOffDtls(self):
 		return self._NetgCutOffDtls

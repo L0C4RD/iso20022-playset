@@ -1,21 +1,21 @@
 from . import base_types
-from ._SignedQuantityFormat11 import SignedQuantityFormat11
-from ._CorporateActionOption41Choice import CorporateActionOption41Choice
-from ._PartyIdentification127Choice import PartyIdentification127Choice
-from ._Max140Text import Max140Text
-from ._YesNoIndicator import YesNoIndicator
-from ._SecurityIdentification19 import SecurityIdentification19
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
-from ._Quantity51Choice import Quantity51Choice
-from ._OptionNumber1Choice import OptionNumber1Choice
-from ._OptionFeaturesFormat25Choice import OptionFeaturesFormat25Choice
+from ._CorporateActionOption41Choice import CorporateActionOption41Choice
+from ._Max140Text import Max140Text
 from ._Max35Text import Max35Text
+from ._OptionFeaturesFormat25Choice import OptionFeaturesFormat25Choice
+from ._OptionNumber1Choice import OptionNumber1Choice
+from ._PartyIdentification127Choice import PartyIdentification127Choice
+from ._Quantity51Choice import Quantity51Choice
 from ._SafekeepingPlaceFormat42Choice import SafekeepingPlaceFormat42Choice
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SignedQuantityFormat11 import SignedQuantityFormat11
+from ._YesNoIndicator import YesNoIndicator
 
 class CorporateActionOption238(base_types._BaseFieldType):
 
-	__slots__ = ["_SlctnDealrFeeInd", "_UinstdBal", "_OptnNb", "_SfkpgPlc", "_InstdBal", "_StsQty", "_FinInstrmId", "_SfkpgAcct", "_OptnTp", "_OptnFeatrs", "_BlckChainAdrOrWllt", "_CshAcct", "_PrtctBal", "_AcctOwnr", "_StsCshAmt", "_TtlElgblBal"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_CshAcct", "_FinInstrmId", "_InstdBal", "_OptnFeatrs", "_OptnNb", "_OptnTp", "_PrtctBal", "_SfkpgAcct", "_SfkpgPlc", "_SlctnDealrFeeInd", "_StsCshAmt", "_StsQty", "_TtlElgblBal", "_UinstdBal"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

@@ -1,11 +1,11 @@
 from . import base_types
+from ._GovernanceIdentification1Choice import GovernanceIdentification1Choice
 from ._Location1 import Location1
 from ._xs:ID import xs:ID
-from ._GovernanceIdentification1Choice import GovernanceIdentification1Choice
 
 class GovernanceRules2(base_types._BaseFieldType):
 
-	__slots__ = ["_AplblLaw", "_Jursdctn", "_Id", "_RuleId"]
+	__slots__ = ["_AplblLaw", "_Id", "_Jursdctn", "_RuleId"]
 	@property
 	def AplblLaw(self):
 		return self._AplblLaw

@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._BuyIn3 import BuyIn3
-from ._SettlementObligation7 import SettlementObligation7
 from ._Max35Text import Max35Text
+from ._SettlementObligation7 import SettlementObligation7
+from ._SupplementaryData1 import SupplementaryData1
 
 class BuyInResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlSttlmOblgtnDtls", "_SplmtryData", "_TxId", "_BuyInRspnDtls"]
+	__slots__ = ["_BuyInRspnDtls", "_OrgnlSttlmOblgtnDtls", "_SplmtryData", "_TxId"]
 	@property
 	def BuyInRspnDtls(self):
 		return self._BuyInRspnDtls

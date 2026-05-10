@@ -1,12 +1,12 @@
 from . import base_types
+from ._AmountAndRateStatus2 import AmountAndRateStatus2
+from ._RateType13Code import RateType13Code
 from ._RateTypeAndAmountAndStatus59 import RateTypeAndAmountAndStatus59
 from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
-from ._RateType13Code import RateType13Code
-from ._AmountAndRateStatus2 import AmountAndRateStatus2
 
 class GrossDividendRateFormat41Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotSpcfdRate", "_AmtAndRateSts", "_Amt", "_RateTpAndAmtAndRateSts"]
+	__slots__ = ["_Amt", "_AmtAndRateSts", "_NotSpcfdRate", "_RateTpAndAmtAndRateSts"]
 	@property
 	def Amt(self):
 		return self._Amt

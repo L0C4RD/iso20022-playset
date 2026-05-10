@@ -4,7 +4,7 @@ from ._AmountAndDirection58 import AmountAndDirection58
 
 class OtherAmounts43(base_types._BaseFieldType):
 
-	__slots__ = ["_LclTaxCtrySpcfc", "_TxTax", "_StockXchgTax", "_ChrgsFees", "_CtryNtlFdrlTax", "_LclBrkrComssn", "_LclTax", "_TradAmt", "_ShppgAmt", "_ExctgBrkrAmt", "_CsmptnTax", "_Othr", "_AcrdCptlstnAmt", "_SpclCncssn", "_Mrgn", "_WhldgTax", "_TrfTax", "_IsseDscntAllwnc", "_StmpDty", "_AcrdIntrstAmt", "_NetGnLoss", "_RsrchFee", "_ValAddedTax", "_PmtLevyTax", "_RgltryAmt"]
+	__slots__ = ["_AcrdCptlstnAmt", "_AcrdIntrstAmt", "_ChrgsFees", "_CsmptnTax", "_CtryNtlFdrlTax", "_ExctgBrkrAmt", "_IsseDscntAllwnc", "_LclBrkrComssn", "_LclTax", "_LclTaxCtrySpcfc", "_Mrgn", "_NetGnLoss", "_Othr", "_PmtLevyTax", "_RgltryAmt", "_RsrchFee", "_ShppgAmt", "_SpclCncssn", "_StmpDty", "_StockXchgTax", "_TradAmt", "_TrfTax", "_TxTax", "_ValAddedTax", "_WhldgTax"]
 	@property
 	def AcrdCptlstnAmt(self):
 		return self._AcrdCptlstnAmt

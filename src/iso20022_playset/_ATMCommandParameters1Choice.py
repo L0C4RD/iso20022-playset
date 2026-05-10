@@ -1,11 +1,11 @@
 from . import base_types
+from ._ATMConfigurationParameter1 import ATMConfigurationParameter1
 from ._ATMStatus1Code import ATMStatus1Code
 from ._MessageFunction8Code import MessageFunction8Code
-from ._ATMConfigurationParameter1 import ATMConfigurationParameter1
 
 class ATMCommandParameters1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMReqrdGblSts", "_XpctdMsgFctn", "_ReqrdCfgtnParam"]
+	__slots__ = ["_ATMReqrdGblSts", "_ReqrdCfgtnParam", "_XpctdMsgFctn"]
 	@property
 	def ATMReqrdGblSts(self):
 		return self._ATMReqrdGblSts

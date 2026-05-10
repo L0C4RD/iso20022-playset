@@ -1,11 +1,11 @@
 from . import base_types
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._PercentageRate import PercentageRate
 from ._TaxRecordDetails2 import TaxRecordDetails2
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class TaxAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxblBaseAmt", "_Dtls", "_TtlAmt", "_Rate"]
+	__slots__ = ["_Dtls", "_Rate", "_TaxblBaseAmt", "_TtlAmt"]
 	@property
 	def Dtls(self):
 		return self._Dtls

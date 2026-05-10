@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class ReportedAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Amt", "_Tp"]
+	__slots__ = ["_Amt", "_Id", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

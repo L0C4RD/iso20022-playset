@@ -1,13 +1,13 @@
 from . import base_types
 from ._ISODate import ISODate
 from ._ISOMax3ACountryCode import ISOMax3ACountryCode
+from ._Max70Text import Max70Text
 from ._OfficialDocumentType1Code import OfficialDocumentType1Code
 from ._PresentationMedium2Code import PresentationMedium2Code
-from ._Max70Text import Max70Text
 
 class TravelDocument2(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnr", "_XprtnDt", "_Id", "_Ctry", "_Form", "_IssncDt", "_Tp"]
+	__slots__ = ["_Assgnr", "_Ctry", "_Form", "_Id", "_IssncDt", "_Tp", "_XprtnDt"]
 	@property
 	def Assgnr(self):
 		return self._Assgnr

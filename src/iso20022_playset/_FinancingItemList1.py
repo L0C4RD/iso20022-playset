@@ -1,22 +1,22 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._FinancingNotificationParties1 import FinancingNotificationParties1
-from ._DecimalNumber import DecimalNumber
-from ._FinancingInformationAndStatus1 import FinancingInformationAndStatus1
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._FinancingRateOrAmountChoice import FinancingRateOrAmountChoice
-from ._FinancialItem1 import FinancialItem1
-from ._Instalment2 import Instalment2
-from ._xs:IDREF import xs:IDREF
-from ._ValidationStatusInformation1 import ValidationStatusInformation1
-from ._Max2000Text import Max2000Text
 from ._AgreedRate1 import AgreedRate1
+from ._DecimalNumber import DecimalNumber
+from ._FinancialItem1 import FinancialItem1
+from ._FinancingInformationAndStatus1 import FinancingInformationAndStatus1
+from ._FinancingNotificationParties1 import FinancingNotificationParties1
+from ._FinancingRateOrAmountChoice import FinancingRateOrAmountChoice
+from ._ISODate import ISODate
+from ._Instalment2 import Instalment2
 from ._Max15NumericText import Max15NumericText
+from ._Max2000Text import Max2000Text
 from ._Max35Text import Max35Text
+from ._ValidationStatusInformation1 import ValidationStatusInformation1
+from ._xs:IDREF import xs:IDREF
 
 class FinancingItemList1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlReqAmt", "_IsseDt", "_Assgnr", "_AmtCutOffDt", "_FincgInstlmt", "_TtlReqFincg", "_NtfctnInf", "_VldtnStsInf", "_RltdDoc", "_AddtlInf", "_Assgne", "_CtrlSum", "_FinItm", "_AgrdRate", "_FincgSts", "_ItmCnt", "_Idr"]
+	__slots__ = ["_AddtlInf", "_AgrdRate", "_AmtCutOffDt", "_Assgne", "_Assgnr", "_CtrlSum", "_FinItm", "_FincgInstlmt", "_FincgSts", "_Idr", "_IsseDt", "_ItmCnt", "_NtfctnInf", "_RltdDoc", "_TtlReqAmt", "_TtlReqFincg", "_VldtnStsInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

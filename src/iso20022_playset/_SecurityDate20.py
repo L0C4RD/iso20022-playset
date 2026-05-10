@@ -3,7 +3,7 @@ from ._DateFormat30Choice import DateFormat30Choice
 
 class SecurityDate20(base_types._BaseFieldType):
 
-	__slots__ = ["_LastTradgDt", "_AvlblDt", "_EarlstPmtDt", "_PmtDt", "_DvddRnkgDt", "_PrpssDt"]
+	__slots__ = ["_AvlblDt", "_DvddRnkgDt", "_EarlstPmtDt", "_LastTradgDt", "_PmtDt", "_PrpssDt"]
 	@property
 	def AvlblDt(self):
 		return self._AvlblDt

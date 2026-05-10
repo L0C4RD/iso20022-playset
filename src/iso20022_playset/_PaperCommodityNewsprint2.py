@@ -1,10 +1,10 @@
 from . import base_types
-from ._AssetClassSubProductType36Code import AssetClassSubProductType36Code
 from ._AssetClassProductType8Code import AssetClassProductType8Code
+from ._AssetClassSubProductType36Code import AssetClassSubProductType36Code
 
 class PaperCommodityNewsprint2(base_types._BaseFieldType):
 
-	__slots__ = ["_SubPdct", "_BasePdct"]
+	__slots__ = ["_BasePdct", "_SubPdct"]
 	@property
 	def BasePdct(self):
 		return self._BasePdct

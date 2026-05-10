@@ -1,10 +1,10 @@
 from . import base_types
-from ._Number import Number
 from ._DecimalNumber import DecimalNumber
+from ._Number import Number
 
 class StatisticsTransparency2(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlVolOfTxsExctd", "_TtlNbOfTxsExctd"]
+	__slots__ = ["_TtlNbOfTxsExctd", "_TtlVolOfTxsExctd"]
 	@property
 	def TtlNbOfTxsExctd(self):
 		return self._TtlNbOfTxsExctd

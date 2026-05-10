@@ -5,7 +5,7 @@ from ._QuantityAndAvailability import QuantityAndAvailability
 
 class SubBalanceQuantity1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_QtyAsDSS", "_QtyAndAvlbty", "_Qty"]
+	__slots__ = ["_Qty", "_QtyAndAvlbty", "_QtyAsDSS"]
 	@property
 	def Qty(self):
 		return self._Qty

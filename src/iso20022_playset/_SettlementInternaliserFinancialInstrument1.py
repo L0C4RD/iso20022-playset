@@ -3,7 +3,7 @@ from ._InternalisationData1 import InternalisationData1
 
 class SettlementInternaliserFinancialInstrument1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTrfblScties", "_CllctvInvstmtUdrtkgs", "_Bd", "_XchgTradgFnds", "_SvrgnDebt", "_Eqty", "_OthrFinInstrms", "_EmssnAllwnc", "_MnyMktInstrm"]
+	__slots__ = ["_Bd", "_CllctvInvstmtUdrtkgs", "_EmssnAllwnc", "_Eqty", "_MnyMktInstrm", "_OthrFinInstrms", "_OthrTrfblScties", "_SvrgnDebt", "_XchgTradgFnds"]
 	@property
 	def Bd(self):
 		return self._Bd

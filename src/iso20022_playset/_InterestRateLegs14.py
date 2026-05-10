@@ -3,7 +3,7 @@ from ._InterestRate33Choice import InterestRate33Choice
 
 class InterestRateLegs14(base_types._BaseFieldType):
 
-	__slots__ = ["_ScndLeg", "_FrstLeg"]
+	__slots__ = ["_FrstLeg", "_ScndLeg"]
 	@property
 	def FrstLeg(self):
 		return self._FrstLeg

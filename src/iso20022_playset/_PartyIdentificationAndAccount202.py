@@ -1,15 +1,15 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._TradingPartyCapacity5Choice import TradingPartyCapacity5Choice
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._PartyIdentification120Choice import PartyIdentification120Choice
-from ._PartyIdentification136 import PartyIdentification136
 from ._AlternatePartyIdentification7 import AlternatePartyIdentification7
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._LEIIdentifier import LEIIdentifier
+from ._PartyIdentification120Choice import PartyIdentification120Choice
+from ._PartyIdentification136 import PartyIdentification136
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._TradingPartyCapacity5Choice import TradingPartyCapacity5Choice
 
 class PartyIdentificationAndAccount202(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_BlckChainAdrOrWllt", "_AcctOwnr", "_PtyCpcty", "_Id", "_SfkpgAcct", "_AltrnId"]
+	__slots__ = ["_AcctOwnr", "_AltrnId", "_BlckChainAdrOrWllt", "_Id", "_LEI", "_PtyCpcty", "_SfkpgAcct"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

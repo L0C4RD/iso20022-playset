@@ -1,18 +1,18 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._GovernanceRules2 import GovernanceRules2
-from ._Priority3Code import Priority3Code
-from ._QualifiedPartyIdentification1 import QualifiedPartyIdentification1
-from ._QualifiedDocumentInformation1 import QualifiedDocumentInformation1
-from ._QualifiedPartyAndXMLSignature1 import QualifiedPartyAndXMLSignature1
-from ._ValidationStatusInformation1 import ValidationStatusInformation1
-from ._Max35Text import Max35Text
+from ._ISODate import ISODate
 from ._Max2000Text import Max2000Text
 from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._Priority3Code import Priority3Code
+from ._QualifiedDocumentInformation1 import QualifiedDocumentInformation1
+from ._QualifiedPartyAndXMLSignature1 import QualifiedPartyAndXMLSignature1
+from ._QualifiedPartyIdentification1 import QualifiedPartyIdentification1
+from ._ValidationStatusInformation1 import ValidationStatusInformation1
 
 class BusinessLetter1(base_types._BaseFieldType):
 
-	__slots__ = ["_CpyRcpt", "_LglCntxt", "_AuthstnUsr", "_Ntce", "_RspnRcpt", "_OthrPty", "_DgtlSgntr", "_AssoctdDoc", "_LttrIdr", "_Sndr", "_RltdLttr", "_GovngCtrct", "_RltdMsg", "_VldtnStsInf", "_CnttIdr", "_Dt", "_AddtlInf", "_Orgtr", "_ApplCntxt", "_PmryRcpt", "_InstrPrty"]
+	__slots__ = ["_AddtlInf", "_ApplCntxt", "_AssoctdDoc", "_AuthstnUsr", "_CnttIdr", "_CpyRcpt", "_DgtlSgntr", "_Dt", "_GovngCtrct", "_InstrPrty", "_LglCntxt", "_LttrIdr", "_Ntce", "_Orgtr", "_OthrPty", "_PmryRcpt", "_RltdLttr", "_RltdMsg", "_RspnRcpt", "_Sndr", "_VldtnStsInf"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

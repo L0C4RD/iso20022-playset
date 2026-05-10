@@ -4,7 +4,7 @@ from ._SecuritiesBalanceType10Code import SecuritiesBalanceType10Code
 
 class SecuritiesBalanceType10FormatChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

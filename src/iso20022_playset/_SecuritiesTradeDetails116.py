@@ -1,22 +1,22 @@
 from . import base_types
-from ._TradeDate8Choice import TradeDate8Choice
-from ._Max3Number import Max3Number
-from ._TradeTransactionCondition5Choice import TradeTransactionCondition5Choice
-from ._Reporting6Choice import Reporting6Choice
-from ._MatchingStatus27Choice import MatchingStatus27Choice
-from ._CurrencyToBuyOrSell1Choice import CurrencyToBuyOrSell1Choice
 from ._AffirmationStatus8Choice import AffirmationStatus8Choice
-from ._InvestorCapacity4Choice import InvestorCapacity4Choice
-from ._TradeOriginator3Choice import TradeOriginator3Choice
-from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
+from ._CurrencyToBuyOrSell1Choice import CurrencyToBuyOrSell1Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._InvestorCapacity4Choice import InvestorCapacity4Choice
+from ._MatchingStatus27Choice import MatchingStatus27Choice
 from ._Max350Text import Max350Text
+from ._Max3Number import Max3Number
+from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
 from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
 from ._Price10 import Price10
+from ._Reporting6Choice import Reporting6Choice
+from ._TradeDate8Choice import TradeDate8Choice
+from ._TradeOriginator3Choice import TradeOriginator3Choice
+from ._TradeTransactionCondition5Choice import TradeTransactionCondition5Choice
 
 class SecuritiesTradeDetails116(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstrCpcty", "_PlcOfTrad", "_Rptg", "_NbOfDaysAcrd", "_MtchgSts", "_CcyToBuyOrSell", "_TradOrgtrRole", "_TradDt", "_SttlmInstrPrcgAddtlDtls", "_TradTxCond", "_PlcOfClr", "_DealPric", "_OpngSttlmDt", "_FxAddtlDtls", "_AffirmSts"]
+	__slots__ = ["_AffirmSts", "_CcyToBuyOrSell", "_DealPric", "_FxAddtlDtls", "_InvstrCpcty", "_MtchgSts", "_NbOfDaysAcrd", "_OpngSttlmDt", "_PlcOfClr", "_PlcOfTrad", "_Rptg", "_SttlmInstrPrcgAddtlDtls", "_TradDt", "_TradOrgtrRole", "_TradTxCond"]
 	@property
 	def AffirmSts(self):
 		return self._AffirmSts

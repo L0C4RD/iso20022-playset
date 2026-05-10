@@ -1,13 +1,13 @@
 from . import base_types
-from ._SettlementInternaliserFinancialInstrument1 import SettlementInternaliserFinancialInstrument1
-from ._SettlementInternaliserClientType1 import SettlementInternaliserClientType1
 from ._InternalisationData1 import InternalisationData1
-from ._SettlementInternaliserTransactionType1 import SettlementInternaliserTransactionType1
 from ._IssuerCSDIdentification1 import IssuerCSDIdentification1
+from ._SettlementInternaliserClientType1 import SettlementInternaliserClientType1
+from ._SettlementInternaliserFinancialInstrument1 import SettlementInternaliserFinancialInstrument1
+from ._SettlementInternaliserTransactionType1 import SettlementInternaliserTransactionType1
 
 class IssuerCSDReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrm", "_OvrllTtl", "_Id", "_TtlCshTrf", "_ClntTp", "_TxTp"]
+	__slots__ = ["_ClntTp", "_FinInstrm", "_Id", "_OvrllTtl", "_TtlCshTrf", "_TxTp"]
 	@property
 	def ClntTp(self):
 		return self._ClntTp

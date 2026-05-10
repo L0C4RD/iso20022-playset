@@ -1,6 +1,6 @@
 from . import base_types
-from ._ExtendedParty13 import ExtendedParty13
 from ._ContactAttributes5 import ContactAttributes5
+from ._ExtendedParty13 import ExtendedParty13
 
 class FundParties1(base_types._BaseFieldType):
 

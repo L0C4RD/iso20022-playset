@@ -1,11 +1,11 @@
 from . import base_types
-from ._PartyIdentification236Choice import PartyIdentification236Choice
-from ._CountryCode import CountryCode
 from ._Branch6Choice import Branch6Choice
+from ._CountryCode import CountryCode
+from ._PartyIdentification236Choice import PartyIdentification236Choice
 
 class CounterpartyIdentification12(base_types._BaseFieldType):
 
-	__slots__ = ["_CtryCd", "_Brnch", "_Id"]
+	__slots__ = ["_Brnch", "_CtryCd", "_Id"]
 	@property
 	def Brnch(self):
 		return self._Brnch

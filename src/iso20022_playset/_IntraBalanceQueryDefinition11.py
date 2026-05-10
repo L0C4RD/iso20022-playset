@@ -4,7 +4,7 @@ from ._MovementResponseType1Code import MovementResponseType1Code
 
 class IntraBalanceQueryDefinition11(base_types._BaseFieldType):
 
-	__slots__ = ["_SchCrit", "_QryTp"]
+	__slots__ = ["_QryTp", "_SchCrit"]
 	@property
 	def QryTp(self):
 		return self._QryTp

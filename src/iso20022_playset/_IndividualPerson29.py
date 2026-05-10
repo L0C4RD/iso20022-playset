@@ -1,12 +1,12 @@
 from . import base_types
 from ._Max350Text import Max350Text
-from ._PostalAddress21 import PostalAddress21
 from ._Max35Text import Max35Text
 from ._NamePrefix1Choice import NamePrefix1Choice
+from ._PostalAddress21 import PostalAddress21
 
 class IndividualPerson29(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_PstlAdr", "_GvnNm", "_MddlNm", "_NmPrfx"]
+	__slots__ = ["_GvnNm", "_MddlNm", "_Nm", "_NmPrfx", "_PstlAdr"]
 	@property
 	def GvnNm(self):
 		return self._GvnNm

@@ -1,11 +1,11 @@
 from . import base_types
 from ._AdditionalReference10 import AdditionalReference10
-from ._MessageIdentification1 import MessageIdentification1
 from ._FundParameters4Choice import FundParameters4Choice
+from ._MessageIdentification1 import MessageIdentification1
 
 class InvestmentFundReportRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdRef", "_PrvsRef", "_RptReq", "_MsgId"]
+	__slots__ = ["_MsgId", "_PrvsRef", "_RltdRef", "_RptReq"]
 	@property
 	def MsgId(self):
 		return self._MsgId

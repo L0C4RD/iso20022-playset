@@ -4,7 +4,7 @@ from ._TradeContract4 import TradeContract4
 
 class UnderlyingContract4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Trad", "_Ln"]
+	__slots__ = ["_Ln", "_Trad"]
 	@property
 	def Ln(self):
 		return self._Ln

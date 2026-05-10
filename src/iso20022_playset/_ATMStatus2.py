@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class ATMStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_DmnddSts", "_CurSts", "_CurStsRsn"]
+	__slots__ = ["_CurSts", "_CurStsRsn", "_DmnddSts"]
 	@property
 	def CurSts(self):
 		return self._CurSts

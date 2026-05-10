@@ -1,15 +1,15 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._DateOrDateTimePeriod1Choice import DateOrDateTimePeriod1Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._Max35Text import Max35Text
 from ._DueDate1 import DueDate1
-from ._SearchCriteria2Choice import SearchCriteria2Choice
 from ._LegalMandate1 import LegalMandate1
+from ._Max35Text import Max35Text
+from ._SearchCriteria2Choice import SearchCriteria2Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._YesNoIndicator import YesNoIndicator
 
 class InformationRequestOpeningV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_LglMndtBsis", "_InvstgtnPrd", "_InvstgtnId", "_SchCrit", "_DueDt", "_CnfdtltySts"]
+	__slots__ = ["_CnfdtltySts", "_DueDt", "_InvstgtnId", "_InvstgtnPrd", "_LglMndtBsis", "_SchCrit", "_SplmtryData"]
 	@property
 	def CnfdtltySts(self):
 		return self._CnfdtltySts

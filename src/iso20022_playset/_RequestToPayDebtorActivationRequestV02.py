@@ -1,12 +1,12 @@
 from . import base_types
 from ._ActivationHeader3 import ActivationHeader3
-from ._SupplementaryData1 import SupplementaryData1
-from ._ElectronicInvoice1 import ElectronicInvoice1
 from ._DebtorActivation5 import DebtorActivation5
+from ._ElectronicInvoice1 import ElectronicInvoice1
+from ._SupplementaryData1 import SupplementaryData1
 
 class RequestToPayDebtorActivationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_DbtrActvtn", "_Hdr", "_SplmtryData", "_ElctrncInvcData"]
+	__slots__ = ["_DbtrActvtn", "_ElctrncInvcData", "_Hdr", "_SplmtryData"]
 	@property
 	def DbtrActvtn(self):
 		return self._DbtrActvtn

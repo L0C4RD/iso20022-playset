@@ -5,7 +5,7 @@ from ._Max256Text import Max256Text
 
 class DataSetIdentification5(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Vrsn", "_CreDtTm", "_Tp"]
+	__slots__ = ["_CreDtTm", "_Nm", "_Tp", "_Vrsn"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

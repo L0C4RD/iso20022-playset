@@ -1,13 +1,13 @@
 from . import base_types
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._GeneralInvestmentAccountType2Choice import GeneralInvestmentAccountType2Choice
-from ._DateAndAmount2 import DateAndAmount2
 from ._AccountOwnershipType6Code import AccountOwnershipType6Code
+from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 from ._AdditionalInformation15 import AdditionalInformation15
+from ._DateAndAmount2 import DateAndAmount2
+from ._GeneralInvestmentAccountType2Choice import GeneralInvestmentAccountType2Choice
 
 class GeneralInvestment2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_EstmtdVal", "_AddtlInf", "_OwnrshTp", "_CurInvstmtAmt"]
+	__slots__ = ["_AddtlInf", "_CurInvstmtAmt", "_EstmtdVal", "_OwnrshTp", "_Tp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

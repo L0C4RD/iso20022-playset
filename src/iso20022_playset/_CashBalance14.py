@@ -1,12 +1,12 @@
 from . import base_types
-from ._DateAndDateTimeSearch4Choice import DateAndDateTimeSearch4Choice
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._BalanceType11Choice import BalanceType11Choice
 from ._BalanceCounterparty1Code import BalanceCounterparty1Code
+from ._BalanceType11Choice import BalanceType11Choice
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._DateAndDateTimeSearch4Choice import DateAndDateTimeSearch4Choice
 
 class CashBalance14(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyTp", "_PrcgDt", "_Tp", "_CtrPtyId", "_ValDt"]
+	__slots__ = ["_CtrPtyId", "_CtrPtyTp", "_PrcgDt", "_Tp", "_ValDt"]
 	@property
 	def CtrPtyId(self):
 		return self._CtrPtyId

@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class GeneralBusinessReport6(base_types._BaseFieldType):
 
-	__slots__ = ["_GnlBizOrErr", "_BizInfRef"]
+	__slots__ = ["_BizInfRef", "_GnlBizOrErr"]
 	@property
 	def BizInfRef(self):
 		return self._BizInfRef

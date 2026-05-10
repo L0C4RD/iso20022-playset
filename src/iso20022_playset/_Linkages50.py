@@ -1,10 +1,10 @@
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._ProcessingPosition23Choice import ProcessingPosition23Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class Linkages50(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesSttlmTxId", "_PrcgPos"]
+	__slots__ = ["_PrcgPos", "_SctiesSttlmTxId"]
 	@property
 	def PrcgPos(self):
 		return self._PrcgPos

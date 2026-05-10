@@ -1,20 +1,20 @@
 from . import base_types
-from ._PriceMethod1Code import PriceMethod1Code
-from ._TaxableIncomePerShareCalculated2Code import TaxableIncomePerShareCalculated2Code
-from ._YesNoIndicator import YesNoIndicator
-from ._PriceValue1 import PriceValue1
 from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
-from ._TypeOfPrice9Code import TypeOfPrice9Code
-from ._Number import Number
-from ._PercentageRate import PercentageRate
-from ._Tax17 import Tax17
 from ._Charge15 import Charge15
 from ._EUDividendStatus1Code import EUDividendStatus1Code
 from ._Extended350Code import Extended350Code
+from ._Number import Number
+from ._PercentageRate import PercentageRate
+from ._PriceMethod1Code import PriceMethod1Code
+from ._PriceValue1 import PriceValue1
+from ._Tax17 import Tax17
+from ._TaxableIncomePerShareCalculated2Code import TaxableIncomePerShareCalculated2Code
+from ._TypeOfPrice9Code import TypeOfPrice9Code
+from ._YesNoIndicator import YesNoIndicator
 
 class UnitPrice15(base_types._BaseFieldType):
 
-	__slots__ = ["_ForExctnInd", "_TaxRfndDtls", "_ClctnBsis", "_CumDvddInd", "_XtndedTaxblIncmPerShrClctd", "_NbOfDaysAcrd", "_ValInAltrntvCcy", "_ValInInvstmtCcy", "_TaxblIncmPerShrClctd", "_ChrgDtls", "_XtndedTp", "_EstmtdPricInd", "_Tp", "_EUDvddSts", "_TaxblIncmPerDvdd", "_PricMtd", "_XtndedEUDvddSts", "_TaxblIncmPerShr", "_TaxLbltyDtls"]
+	__slots__ = ["_ChrgDtls", "_ClctnBsis", "_CumDvddInd", "_EUDvddSts", "_EstmtdPricInd", "_ForExctnInd", "_NbOfDaysAcrd", "_PricMtd", "_TaxLbltyDtls", "_TaxRfndDtls", "_TaxblIncmPerDvdd", "_TaxblIncmPerShr", "_TaxblIncmPerShrClctd", "_Tp", "_ValInAltrntvCcy", "_ValInInvstmtCcy", "_XtndedEUDvddSts", "_XtndedTaxblIncmPerShrClctd", "_XtndedTp"]
 	@property
 	def ChrgDtls(self):
 		return self._ChrgDtls

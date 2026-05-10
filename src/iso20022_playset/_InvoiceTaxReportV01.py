@@ -1,7 +1,7 @@
 from . import base_types
 from ._SupplementaryData1 import SupplementaryData1
-from ._TaxReportHeader1 import TaxReportHeader1
 from ._TaxReport1 import TaxReport1
+from ._TaxReportHeader1 import TaxReportHeader1
 
 class InvoiceTaxReportV01(base_types._BaseFieldType):
 

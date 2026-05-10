@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Exact1NumericText import Exact1NumericText
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Exact5NumericText import Exact5NumericText
 from ._CertificateReference2 import CertificateReference2
+from ._Exact1NumericText import Exact1NumericText
+from ._Exact5NumericText import Exact5NumericText
+from ._ISODate import ISODate
 
 class TransactionCertificate5(base_types._BaseFieldType):
 
-	__slots__ = ["_RfrdDoc", "_LclInstrm", "_TxTp", "_TxDt", "_Amt"]
+	__slots__ = ["_Amt", "_LclInstrm", "_RfrdDoc", "_TxDt", "_TxTp"]
 	@property
 	def Amt(self):
 		return self._Amt

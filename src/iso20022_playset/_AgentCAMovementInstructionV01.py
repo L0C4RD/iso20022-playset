@@ -1,14 +1,14 @@
 from . import base_types
-from ._CorporateActionInformation1 import CorporateActionInformation1
-from ._DocumentIdentification8 import DocumentIdentification8
-from ._UnderlyingSecurityMovement1 import UnderlyingSecurityMovement1
-from ._CorporateActionMovement1 import CorporateActionMovement1
-from ._ProceedsMovement1 import ProceedsMovement1
 from ._CashMovement2 import CashMovement2
+from ._CorporateActionInformation1 import CorporateActionInformation1
+from ._CorporateActionMovement1 import CorporateActionMovement1
+from ._DocumentIdentification8 import DocumentIdentification8
+from ._ProceedsMovement1 import ProceedsMovement1
+from ._UnderlyingSecurityMovement1 import UnderlyingSecurityMovement1
 
 class AgentCAMovementInstructionV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_PrcdsMvmntDtls", "_MvmntGnlInf", "_AgtCAElctnAdvcId", "_UndrlygCshMvmntDtls", "_UndrlygSctiesMvmntDtls", "_CorpActnGnlInf"]
+	__slots__ = ["_AgtCAElctnAdvcId", "_CorpActnGnlInf", "_Id", "_MvmntGnlInf", "_PrcdsMvmntDtls", "_UndrlygCshMvmntDtls", "_UndrlygSctiesMvmntDtls"]
 	@property
 	def AgtCAElctnAdvcId(self):
 		return self._AgtCAElctnAdvcId

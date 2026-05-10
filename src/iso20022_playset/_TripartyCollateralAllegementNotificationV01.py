@@ -1,17 +1,17 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecuritiesMovement7 import SecuritiesMovement7
 from ._CashMovement5 import CashMovement5
 from ._CollateralDate2 import CollateralDate2
-from ._CollateralParties8 import CollateralParties8
 from ._CollateralParameters11 import CollateralParameters11
-from ._TransactionIdentifications44 import TransactionIdentifications44
-from ._Pagination1 import Pagination1
+from ._CollateralParties8 import CollateralParties8
 from ._DealTransactionDetails6 import DealTransactionDetails6
+from ._Pagination1 import Pagination1
+from ._SecuritiesMovement7 import SecuritiesMovement7
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionIdentifications44 import TransactionIdentifications44
 
 class TripartyCollateralAllegementNotificationV01(base_types._BaseFieldType):
 
-	__slots__ = ["_DealTxDt", "_CshMvmnt", "_DealTxDtls", "_Pgntn", "_SctiesMvmnt", "_TxInstrId", "_CollPties", "_SplmtryData", "_GnlParams"]
+	__slots__ = ["_CollPties", "_CshMvmnt", "_DealTxDt", "_DealTxDtls", "_GnlParams", "_Pgntn", "_SctiesMvmnt", "_SplmtryData", "_TxInstrId"]
 	@property
 	def CollPties(self):
 		return self._CollPties

@@ -1,24 +1,24 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._FloatingRateNote2 import FloatingRateNote2
-from ._NovationStatus1Code import NovationStatus1Code
-from ._TransactionOperationType1Code import TransactionOperationType1Code
-from ._CounterpartyIdentification3Choice import CounterpartyIdentification3Choice
-from ._BrokeredDeal1Code import BrokeredDeal1Code
-from ._InterestRateType1Code import InterestRateType1Code
-from ._PercentageRate import PercentageRate
-from ._ISODate import ISODate
-from ._SupplementaryData1 import SupplementaryData1
-from ._Option12 import Option12
-from ._FinancialInstrumentProductType1Code import FinancialInstrumentProductType1Code
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._MoneyMarketTransactionType1Code import MoneyMarketTransactionType1Code
-from ._Max105Text import Max105Text
+from ._BrokeredDeal1Code import BrokeredDeal1Code
+from ._CounterpartyIdentification3Choice import CounterpartyIdentification3Choice
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
+from ._FinancialInstrumentProductType1Code import FinancialInstrumentProductType1Code
+from ._FloatingRateNote2 import FloatingRateNote2
+from ._ISODate import ISODate
+from ._InterestRateType1Code import InterestRateType1Code
+from ._LEIIdentifier import LEIIdentifier
+from ._Max105Text import Max105Text
+from ._MoneyMarketTransactionType1Code import MoneyMarketTransactionType1Code
+from ._NovationStatus1Code import NovationStatus1Code
+from ._Option12 import Option12
+from ._PercentageRate import PercentageRate
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionOperationType1Code import TransactionOperationType1Code
 
 class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
-	__slots__ = ["_NvtnSts", "_MtrtyDt", "_BrnchId", "_InstrmTp", "_DealRate", "_CallPutOptn", "_UnqTxIdr", "_FltgRateNote", "_RateTp", "_BrkrdDeal", "_TxNmnlAmt", "_RptdTxSts", "_TxTp", "_CtrPtyId", "_SttlmDt", "_TradDt", "_CtrPtyPrtryTxId", "_RltdPrtryTxId", "_SplmtryData", "_DealPric", "_PrtryTxId"]
+	__slots__ = ["_BrkrdDeal", "_BrnchId", "_CallPutOptn", "_CtrPtyId", "_CtrPtyPrtryTxId", "_DealPric", "_DealRate", "_FltgRateNote", "_InstrmTp", "_MtrtyDt", "_NvtnSts", "_PrtryTxId", "_RateTp", "_RltdPrtryTxId", "_RptdTxSts", "_SplmtryData", "_SttlmDt", "_TradDt", "_TxNmnlAmt", "_TxTp", "_UnqTxIdr"]
 	@property
 	def BrkrdDeal(self):
 		return self._BrkrdDeal

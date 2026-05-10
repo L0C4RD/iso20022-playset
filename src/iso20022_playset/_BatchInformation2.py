@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
-from ._CreditDebitCode import CreditDebitCode
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._CreditDebitCode import CreditDebitCode
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
 
 class BatchInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_TtlAmt", "_PmtInfId", "_MsgId", "_NbOfTxs"]
+	__slots__ = ["_CdtDbtInd", "_MsgId", "_NbOfTxs", "_PmtInfId", "_TtlAmt"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd

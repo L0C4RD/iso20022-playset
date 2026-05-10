@@ -1,12 +1,12 @@
 from . import base_types
-from ._ResourceType1Code import ResourceType1Code
-from ._SoundFormat1Code import SoundFormat1Code
 from ._LanguageCode import LanguageCode
 from ._Max1025Text import Max1025Text
+from ._ResourceType1Code import ResourceType1Code
+from ._SoundFormat1Code import SoundFormat1Code
 
 class ResourceContent1(base_types._BaseFieldType):
 
-	__slots__ = ["_RsrcTp", "_Lang", "_RsrcFrmt", "_RsrcRef"]
+	__slots__ = ["_Lang", "_RsrcFrmt", "_RsrcRef", "_RsrcTp"]
 	@property
 	def Lang(self):
 		return self._Lang

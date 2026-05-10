@@ -1,15 +1,15 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MatchingStatus24Choice import MatchingStatus24Choice
-from ._TransactionDetails166 import TransactionDetails166
-from ._SettlementStatus30Choice import SettlementStatus30Choice
-from ._TransactionIdentifications47 import TransactionIdentifications47
-from ._ProcessingStatus88Choice import ProcessingStatus88Choice
 from ._Linkages41 import Linkages41
+from ._MatchingStatus24Choice import MatchingStatus24Choice
+from ._ProcessingStatus88Choice import ProcessingStatus88Choice
+from ._SettlementStatus30Choice import SettlementStatus30Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionDetails166 import TransactionDetails166
+from ._TransactionIdentifications47 import TransactionIdentifications47
 
 class SecuritiesSettlementTransactionStatusAdviceV13(base_types._BaseFieldType):
 
-	__slots__ = ["_TxDtls", "_IfrrdMtchgSts", "_TxId", "_SttlmSts", "_MtchgSts", "_Lnkgs", "_SplmtryData", "_PrcgSts"]
+	__slots__ = ["_IfrrdMtchgSts", "_Lnkgs", "_MtchgSts", "_PrcgSts", "_SplmtryData", "_SttlmSts", "_TxDtls", "_TxId"]
 	@property
 	def IfrrdMtchgSts(self):
 		return self._IfrrdMtchgSts

@@ -1,10 +1,10 @@
 from . import base_types
-from ._ProxyType3Code import ProxyType3Code
 from ._IndividualPerson42 import IndividualPerson42
+from ._ProxyType3Code import ProxyType3Code
 
 class Proxy12(base_types._BaseFieldType):
 
-	__slots__ = ["_PrxyTp", "_PrsnDtls"]
+	__slots__ = ["_PrsnDtls", "_PrxyTp"]
 	@property
 	def PrsnDtls(self):
 		return self._PrsnDtls

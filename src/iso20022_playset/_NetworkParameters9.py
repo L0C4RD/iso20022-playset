@@ -4,7 +4,7 @@ from ._NetworkType1Code import NetworkType1Code
 
 class NetworkParameters9(base_types._BaseFieldType):
 
-	__slots__ = ["_NtwkTp", "_AdrVal"]
+	__slots__ = ["_AdrVal", "_NtwkTp"]
 	@property
 	def AdrVal(self):
 		return self._AdrVal

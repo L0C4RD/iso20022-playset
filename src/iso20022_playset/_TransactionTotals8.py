@@ -1,14 +1,14 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._DetailedAmount15 import DetailedAmount15
-from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
 from ._Number import Number
 from ._TypeTransactionTotals3Code import TypeTransactionTotals3Code
 
 class TransactionTotals8(base_types._BaseFieldType):
 
-	__slots__ = ["_POIGrpId", "_CardPdctPrfl", "_Tp", "_CmltvAmt", "_TtlNb", "_DtldAmt", "_Ccy"]
+	__slots__ = ["_CardPdctPrfl", "_Ccy", "_CmltvAmt", "_DtldAmt", "_POIGrpId", "_Tp", "_TtlNb"]
 	@property
 	def CardPdctPrfl(self):
 		return self._CardPdctPrfl

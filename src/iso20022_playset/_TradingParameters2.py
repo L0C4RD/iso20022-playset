@@ -1,12 +1,12 @@
 from . import base_types
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 from ._MICIdentifier import MICIdentifier
 from ._Number import Number
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 
 class TradingParameters2(base_types._BaseFieldType):
 
-	__slots__ = ["_TradLotSz", "_PmryPlcOfListgId", "_MinTradgPricgIncrmt", "_MaxTraddNmnlQty", "_MinTraddNmnlQty", "_ScndryPlcOfListg", "_MktId", "_RndLot"]
+	__slots__ = ["_MaxTraddNmnlQty", "_MinTraddNmnlQty", "_MinTradgPricgIncrmt", "_MktId", "_PmryPlcOfListgId", "_RndLot", "_ScndryPlcOfListg", "_TradLotSz"]
 	@property
 	def MaxTraddNmnlQty(self):
 		return self._MaxTraddNmnlQty

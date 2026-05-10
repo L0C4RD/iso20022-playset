@@ -5,7 +5,7 @@ from ._CardPaymentBatchTransferResponse12 import CardPaymentBatchTransferRespons
 
 class AcquirerToAcceptorFileBody2(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRspn", "_CmpltnAdvcRspn", "_BtchTrfRspn"]
+	__slots__ = ["_BtchTrfRspn", "_CmpltnAdvcRspn", "_CxlRspn"]
 	@property
 	def BtchTrfRspn(self):
 		return self._BtchTrfRspn

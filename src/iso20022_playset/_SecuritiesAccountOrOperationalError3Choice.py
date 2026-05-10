@@ -1,10 +1,10 @@
 from . import base_types
-from ._SecuritiesAccountReport3 import SecuritiesAccountReport3
 from ._ErrorHandling5 import ErrorHandling5
+from ._SecuritiesAccountReport3 import SecuritiesAccountReport3
 
 class SecuritiesAccountOrOperationalError3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesAcctRpt", "_OprlErr"]
+	__slots__ = ["_OprlErr", "_SctiesAcctRpt"]
 	@property
 	def OprlErr(self):
 		return self._OprlErr

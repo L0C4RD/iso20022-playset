@@ -1,13 +1,13 @@
 from . import base_types
 from ._BICFIIdentifier import BICFIIdentifier
 from ._ClearingSystemMemberIdentification2 import ClearingSystemMemberIdentification2
-from ._PostalAddress6 import PostalAddress6
-from ._Max140Text import Max140Text
 from ._GenericFinancialIdentification1 import GenericFinancialIdentification1
+from ._Max140Text import Max140Text
+from ._PostalAddress6 import PostalAddress6
 
 class FinancialInstitutionIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSysMmbId", "_Nm", "_PstlAdr", "_BICFI", "_Othr"]
+	__slots__ = ["_BICFI", "_ClrSysMmbId", "_Nm", "_Othr", "_PstlAdr"]
 	@property
 	def BICFI(self):
 		return self._BICFI

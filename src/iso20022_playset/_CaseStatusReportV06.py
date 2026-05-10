@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._ReportHeader7 import ReportHeader7
 from ._Case6 import Case6
-from ._CaseStatus2 import CaseStatus2
 from ._CaseAssignment6 import CaseAssignment6
+from ._CaseStatus2 import CaseStatus2
+from ._ReportHeader7 import ReportHeader7
+from ._SupplementaryData1 import SupplementaryData1
 
 class CaseStatusReportV06(base_types._BaseFieldType):
 
-	__slots__ = ["_Case", "_NewAssgnmt", "_Sts", "_Hdr", "_SplmtryData"]
+	__slots__ = ["_Case", "_Hdr", "_NewAssgnmt", "_SplmtryData", "_Sts"]
 	@property
 	def Case(self):
 		return self._Case

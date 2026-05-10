@@ -1,12 +1,12 @@
 from . import base_types
-from ._PartyIdentification232Choice import PartyIdentification232Choice
 from ._GenericIdentification36 import GenericIdentification36
-from ._YesNoIndicator import YesNoIndicator
+from ._PartyIdentification232Choice import PartyIdentification232Choice
 from ._ThirdPartyIdentification1 import ThirdPartyIdentification1
+from ._YesNoIndicator import YesNoIndicator
 
 class PledgeInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_PldgTp", "_RtrSctiesInd", "_ThrdPty", "_Pldgr"]
+	__slots__ = ["_PldgTp", "_Pldgr", "_RtrSctiesInd", "_ThrdPty"]
 	@property
 	def PldgTp(self):
 		return self._PldgTp

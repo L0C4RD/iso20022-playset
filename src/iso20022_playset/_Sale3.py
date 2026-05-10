@@ -1,12 +1,12 @@
 from . import base_types
-from ._SaleItem4 import SaleItem4
 from ._Adjustment13 import Adjustment13
 from ._LoyaltyProgramme4 import LoyaltyProgramme4
 from ._Max35Text import Max35Text
+from ._SaleItem4 import SaleItem4
 
 class Sale3(base_types._BaseFieldType):
 
-	__slots__ = ["_LltyPrgrmm", "_LineItm", "_Adjstmnt", "_SummryCmmdtyId"]
+	__slots__ = ["_Adjstmnt", "_LineItm", "_LltyPrgrmm", "_SummryCmmdtyId"]
 	@property
 	def Adjstmnt(self):
 		return self._Adjstmnt

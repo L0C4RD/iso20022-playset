@@ -3,7 +3,7 @@ from ._ISODate import ISODate
 
 class UpdateLogDate1(base_types._BaseFieldType):
 
-	__slots__ = ["_Od", "_New"]
+	__slots__ = ["_New", "_Od"]
 	@property
 	def New(self):
 		return self._New

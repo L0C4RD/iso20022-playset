@@ -1,12 +1,12 @@
 from . import base_types
 from ._Max20KText import Max20KText
-from ._UserInterface7Code import UserInterface7Code
-from ._PartyType23Code import PartyType23Code
 from ._OutputFormat4Code import OutputFormat4Code
+from ._PartyType23Code import PartyType23Code
+from ._UserInterface7Code import UserInterface7Code
 
 class AdditionalInformation21(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_Frmt", "_Trgt", "_Rcpt"]
+	__slots__ = ["_Frmt", "_Rcpt", "_Trgt", "_Val"]
 	@property
 	def Frmt(self):
 		return self._Frmt

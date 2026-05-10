@@ -1,19 +1,19 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISODate import ISODate
-from ._SettlementInstruction15 import SettlementInstruction15
-from ._DecimalNumber import DecimalNumber
-from ._BatchBookingIndicator import BatchBookingIndicator
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Authorisation1Choice import Authorisation1Choice
-from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
+from ._BatchBookingIndicator import BatchBookingIndicator
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._DecimalNumber import DecimalNumber
+from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
+from ._SettlementInstruction15 import SettlementInstruction15
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class GroupHeader127(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfTxs", "_IntrBkSttlmDt", "_MsgId", "_CtrlSum", "_GrpRvsl", "_InstgAgt", "_Authstn", "_TtlRvsdIntrBkSttlmAmt", "_SttlmInf", "_InstdAgt", "_CreDtTm", "_BtchBookg"]
+	__slots__ = ["_Authstn", "_BtchBookg", "_CreDtTm", "_CtrlSum", "_GrpRvsl", "_InstdAgt", "_InstgAgt", "_IntrBkSttlmDt", "_MsgId", "_NbOfTxs", "_SttlmInf", "_TtlRvsdIntrBkSttlmAmt"]
 	@property
 	def Authstn(self):
 		return self._Authstn

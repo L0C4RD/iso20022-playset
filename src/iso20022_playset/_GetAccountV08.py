@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._AccountQuery4 import AccountQuery4
 from ._MessageHeader9 import MessageHeader9
+from ._SupplementaryData1 import SupplementaryData1
 
 class GetAccountV08(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_AcctQryDef", "_SplmtryData"]
+	__slots__ = ["_AcctQryDef", "_MsgHdr", "_SplmtryData"]
 	@property
 	def AcctQryDef(self):
 		return self._AcctQryDef

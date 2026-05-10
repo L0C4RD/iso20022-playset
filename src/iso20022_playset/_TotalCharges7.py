@@ -1,12 +1,12 @@
 from . import base_types
-from ._Max15NumericText import Max15NumericText
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._CreditDebitCode import CreditDebitCode
 from ._DecimalNumber import DecimalNumber
+from ._Max15NumericText import Max15NumericText
 
 class TotalCharges7(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrlSum", "_NbOfChrgsRcrds", "_TtlChrgsAmt", "_CdtDbtInd"]
+	__slots__ = ["_CdtDbtInd", "_CtrlSum", "_NbOfChrgsRcrds", "_TtlChrgsAmt"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd

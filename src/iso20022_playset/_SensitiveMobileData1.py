@@ -3,7 +3,7 @@ from ._Max35NumericText import Max35NumericText
 
 class SensitiveMobileData1(base_types._BaseFieldType):
 
-	__slots__ = ["_IMSI", "_IMEI", "_MSISDN"]
+	__slots__ = ["_IMEI", "_IMSI", "_MSISDN"]
 	@property
 	def IMEI(self):
 		return self._IMEI

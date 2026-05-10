@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CorporateActionBalance50 import CorporateActionBalance50
 from ._EventInformation17 import EventInformation17
 from ._SecurityIdentification19 import SecurityIdentification19
+from ._SupplementaryData1 import SupplementaryData1
 
 class CorporateActionEventAndBalance26(base_types._BaseFieldType):
 
-	__slots__ = ["_GnlInf", "_Bal", "_UndrlygScty", "_SplmtryData"]
+	__slots__ = ["_Bal", "_GnlInf", "_SplmtryData", "_UndrlygScty"]
 	@property
 	def Bal(self):
 		return self._Bal

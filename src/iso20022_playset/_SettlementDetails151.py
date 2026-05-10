@@ -1,25 +1,25 @@
 from . import base_types
+from ._AutomaticBorrowing8Choice import AutomaticBorrowing8Choice
 from ._BeneficialOwnership5Choice import BeneficialOwnership5Choice
-from ._Restriction6Choice import Restriction6Choice
-from ._CentralCounterPartyEligibility5Choice import CentralCounterPartyEligibility5Choice
-from ._SecuritiesRTGS5Choice import SecuritiesRTGS5Choice
+from ._BlockTrade5Choice import BlockTrade5Choice
 from ._CashSettlementSystem5Choice import CashSettlementSystem5Choice
+from ._CentralCounterPartyEligibility5Choice import CentralCounterPartyEligibility5Choice
 from ._GenericIdentification47 import GenericIdentification47
-from ._YesNoIndicator import YesNoIndicator
 from ._MarketClientSide7Choice import MarketClientSide7Choice
 from ._NettingEligibility5Choice import NettingEligibility5Choice
-from ._BlockTrade5Choice import BlockTrade5Choice
-from ._SettlingCapacity8Choice import SettlingCapacity8Choice
-from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
-from ._SettlementSystemMethod5Choice import SettlementSystemMethod5Choice
-from ._AutomaticBorrowing8Choice import AutomaticBorrowing8Choice
-from ._SettlementTransactionCondition22Choice import SettlementTransactionCondition22Choice
 from ._PriorityNumeric5Choice import PriorityNumeric5Choice
+from ._Restriction6Choice import Restriction6Choice
+from ._SecuritiesRTGS5Choice import SecuritiesRTGS5Choice
+from ._SettlementSystemMethod5Choice import SettlementSystemMethod5Choice
+from ._SettlementTransactionCondition22Choice import SettlementTransactionCondition22Choice
+from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
+from ._SettlingCapacity8Choice import SettlingCapacity8Choice
 from ._TaxCapacityParty5Choice import TaxCapacityParty5Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class SettlementDetails151(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesRTGS", "_ElgblForColl", "_MktClntSd", "_SttlgCpcty", "_AutomtcBrrwg", "_Prty", "_LglRstrctns", "_PrtlSttlmInd", "_StmpDtyTaxBsis", "_SttlmTxCond", "_CCPElgblty", "_NetgElgblty", "_TaxCpcty", "_BlckTrad", "_BnfclOwnrsh", "_CshClrSys", "_SttlmSysMtd"]
+	__slots__ = ["_AutomtcBrrwg", "_BlckTrad", "_BnfclOwnrsh", "_CCPElgblty", "_CshClrSys", "_ElgblForColl", "_LglRstrctns", "_MktClntSd", "_NetgElgblty", "_PrtlSttlmInd", "_Prty", "_SctiesRTGS", "_StmpDtyTaxBsis", "_SttlgCpcty", "_SttlmSysMtd", "_SttlmTxCond", "_TaxCpcty"]
 	@property
 	def AutomtcBrrwg(self):
 		return self._AutomtcBrrwg

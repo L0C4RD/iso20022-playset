@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MessageHeader3 import MessageHeader3
 from ._CollateralValueReportOrError7Choice import CollateralValueReportOrError7Choice
+from ._MessageHeader3 import MessageHeader3
+from ._SupplementaryData1 import SupplementaryData1
 
 class CollateralValueReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgHdr", "_RptOrErr"]
+	__slots__ = ["_MsgHdr", "_RptOrErr", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

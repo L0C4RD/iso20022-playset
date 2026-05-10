@@ -4,7 +4,7 @@ from ._TaxReferenceType1Choice import TaxReferenceType1Choice
 
 class TaxReference2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Ref"]
+	__slots__ = ["_Ref", "_Tp"]
 	@property
 	def Ref(self):
 		return self._Ref

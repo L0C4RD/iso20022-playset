@@ -1,11 +1,11 @@
 from . import base_types
-from ._DetailedReportStatistics7 import DetailedReportStatistics7
 from ._CounterpartyData92 import CounterpartyData92
+from ._DetailedReportStatistics7 import DetailedReportStatistics7
 from ._DetailedTransactionStatistics7Choice import DetailedTransactionStatistics7Choice
 
 class RejectionStatistics9(base_types._BaseFieldType):
 
-	__slots__ = ["_RptSttstcs", "_CtrPtyId", "_DerivSttstcs"]
+	__slots__ = ["_CtrPtyId", "_DerivSttstcs", "_RptSttstcs"]
 	@property
 	def CtrPtyId(self):
 		return self._CtrPtyId

@@ -1,13 +1,13 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
-from ._Max35Text import Max35Text
-from ._PartyTextInformation5 import PartyTextInformation5
 from ._AlternatePartyIdentification8 import AlternatePartyIdentification8
+from ._Max35Text import Max35Text
 from ._PartyIdentification240Choice import PartyIdentification240Choice
+from ._PartyTextInformation5 import PartyTextInformation5
+from ._YesNoIndicator import YesNoIndicator
 
 class ConfirmationPartyDetails13(base_types._BaseFieldType):
 
-	__slots__ = ["_AltrnId", "_InvstrPrtcnAssoctnMmbsh", "_Id", "_PrcgId", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_AltrnId", "_Id", "_InvstrPrtcnAssoctnMmbsh", "_PrcgId"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

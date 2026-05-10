@@ -3,7 +3,7 @@ from ._Max15NumericText import Max15NumericText
 
 class BinRange1(base_types._BaseFieldType):
 
-	__slots__ = ["_LwrBin", "_HghrBin"]
+	__slots__ = ["_HghrBin", "_LwrBin"]
 	@property
 	def HghrBin(self):
 		return self._HghrBin

@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecuritiesReturnCriteria1 import SecuritiesReturnCriteria1
-from ._SecuritiesSearchCriteria4 import SecuritiesSearchCriteria4
 from ._GenericIdentification1 import GenericIdentification1
 from ._MessageHeader1 import MessageHeader1
+from ._SecuritiesReturnCriteria1 import SecuritiesReturnCriteria1
+from ._SecuritiesSearchCriteria4 import SecuritiesSearchCriteria4
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecurityQueryV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_ReqTp", "_SchCrit", "_SmlSetRtrCrit"]
+	__slots__ = ["_MsgHdr", "_ReqTp", "_SchCrit", "_SmlSetRtrCrit", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

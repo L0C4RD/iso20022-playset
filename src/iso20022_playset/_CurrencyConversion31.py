@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class CurrencyConversion31(base_types._BaseFieldType):
 
-	__slots__ = ["_Rslt", "_RsltRsn", "_ConvsDtls"]
+	__slots__ = ["_ConvsDtls", "_Rslt", "_RsltRsn"]
 	@property
 	def ConvsDtls(self):
 		return self._ConvsDtls

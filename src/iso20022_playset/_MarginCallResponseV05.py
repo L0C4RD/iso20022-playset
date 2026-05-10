@@ -1,15 +1,15 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._AgreedAmount1Choice import AgreedAmount1Choice
-from ._Max35Text import Max35Text
 from ._Agreement4 import Agreement4
-from ._Obligation9 import Obligation9
 from ._MarginCall1 import MarginCall1
+from ._Max35Text import Max35Text
+from ._Obligation9 import Obligation9
 from ._Response1 import Response1
+from ._SupplementaryData1 import SupplementaryData1
 
 class MarginCallResponseV05(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnDtls", "_Agrmt", "_TxId", "_MrgnDtlsDueToB", "_Oblgtn", "_MrgnDtlsDueToA", "_AgrdAmtDueToA", "_AgrdAmtDueToB", "_SplmtryData"]
+	__slots__ = ["_AgrdAmtDueToA", "_AgrdAmtDueToB", "_Agrmt", "_MrgnDtlsDueToA", "_MrgnDtlsDueToB", "_Oblgtn", "_RspnDtls", "_SplmtryData", "_TxId"]
 	@property
 	def AgrdAmtDueToA(self):
 		return self._AgrdAmtDueToA

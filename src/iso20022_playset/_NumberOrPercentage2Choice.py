@@ -1,10 +1,10 @@
 from . import base_types
-from ._Percentage14Rate import Percentage14Rate
 from ._Number import Number
+from ._Percentage14Rate import Percentage14Rate
 
 class NumberOrPercentage2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ThrshldPctg", "_ThrshldNb"]
+	__slots__ = ["_ThrshldNb", "_ThrshldPctg"]
 	@property
 	def ThrshldNb(self):
 		return self._ThrshldNb

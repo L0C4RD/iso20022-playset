@@ -1,10 +1,10 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._BaseOneRate import BaseOneRate
+from ._PercentageRate import PercentageRate
 
 class PremiumQuote1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PctgOfPutAmt", "_PctgOfCallAmt", "_PtsOfCallAmt", "_PtsOfPutAmt"]
+	__slots__ = ["_PctgOfCallAmt", "_PctgOfPutAmt", "_PtsOfCallAmt", "_PtsOfPutAmt"]
 	@property
 	def PctgOfCallAmt(self):
 		return self._PctgOfCallAmt

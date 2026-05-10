@@ -1,11 +1,11 @@
 from . import base_types
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 from ._AffirmationReason2Choice import AffirmationReason2Choice
 from ._ProprietaryReason4 import ProprietaryReason4
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 
 class AffirmationStatus11Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtrySts", "_Uaffrmd", "_Affrmd"]
+	__slots__ = ["_Affrmd", "_PrtrySts", "_Uaffrmd"]
 	@property
 	def Affrmd(self):
 		return self._Affrmd

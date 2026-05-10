@@ -1,11 +1,11 @@
 from . import base_types
-from ._Percentage14Rate import Percentage14Rate
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._Percentage14Rate import Percentage14Rate
 from ._RateValueType7Code import RateValueType7Code
 
 class RateAndAmountFormat57Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotSpcfdRate", "_Rate", "_Amt"]
+	__slots__ = ["_Amt", "_NotSpcfdRate", "_Rate"]
 	@property
 	def Amt(self):
 		return self._Amt

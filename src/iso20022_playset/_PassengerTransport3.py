@@ -1,22 +1,22 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._HiredVehicle3 import HiredVehicle3
-from ._DepartureOrArrival1 import DepartureOrArrival1
+from ._AdditionalData1 import AdditionalData1
+from ._AmountDetails3 import AmountDetails3
 from ._AncillaryPurchase3 import AncillaryPurchase3
 from ._Customer9 import Customer9
-from ._TripLeg3 import TripLeg3
-from ._AdditionalData1 import AdditionalData1
 from ._CustomerReference1 import CustomerReference1
+from ._DepartureOrArrival1 import DepartureOrArrival1
+from ._HiredVehicle3 import HiredVehicle3
 from ._LoyaltyProgramme4 import LoyaltyProgramme4
-from ._Max70Text import Max70Text
 from ._Max35Text import Max35Text
 from ._Max4NumericText import Max4NumericText
-from ._AmountDetails3 import AmountDetails3
 from ._Max4Text import Max4Text
+from ._Max70Text import Max70Text
+from ._TripLeg3 import TripLeg3
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PassengerTransport3(base_types._BaseFieldType):
 
-	__slots__ = ["_LltyPrgrmm", "_TripLeg", "_TrvlAuthstnCd", "_AddtlData", "_Pssngr", "_HirdVhclDtls", "_Drtn", "_Dprture", "_DocNb", "_OpnTckt", "_CstmrRef", "_RsvatnSys", "_TcktIssr", "_TtlAmt", "_AncllryPurchs", "_RsvatnNb", "_OrgnlRsvatnSys", "_SummryCmmdtyId", "_OrgnlRsvatnNb", "_Insrnc"]
+	__slots__ = ["_AddtlData", "_AncllryPurchs", "_CstmrRef", "_DocNb", "_Dprture", "_Drtn", "_HirdVhclDtls", "_Insrnc", "_LltyPrgrmm", "_OpnTckt", "_OrgnlRsvatnNb", "_OrgnlRsvatnSys", "_Pssngr", "_RsvatnNb", "_RsvatnSys", "_SummryCmmdtyId", "_TcktIssr", "_TripLeg", "_TrvlAuthstnCd", "_TtlAmt"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

@@ -1,18 +1,18 @@
 from . import base_types
-from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
-from ._SecuritiesBalanceType11Choice import SecuritiesBalanceType11Choice
-from ._SecuritiesAccount30 import SecuritiesAccount30
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._SecurityIdentification20 import SecurityIdentification20
 from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._PartyIdentification136Choice import PartyIdentification136Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
 from ._GenericIdentification39 import GenericIdentification39
 from ._ISODateTime import ISODateTime
+from ._PartyIdentification136Choice import PartyIdentification136Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._SecuritiesAccount30 import SecuritiesAccount30
+from ._SecuritiesBalanceType11Choice import SecuritiesBalanceType11Choice
+from ._SecurityIdentification20 import SecurityIdentification20
 
 class IntraPositionDetails64(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_SfkpgAcct", "_PoolId", "_LotNb", "_AcctOwnr", "_SttlmQty", "_SttlmDt", "_BalFr", "_FinInstrmId", "_BalTo", "_AckdStsTmStmp"]
+	__slots__ = ["_AcctOwnr", "_AckdStsTmStmp", "_BalFr", "_BalTo", "_BlckChainAdrOrWllt", "_FinInstrmId", "_LotNb", "_PoolId", "_SfkpgAcct", "_SttlmDt", "_SttlmQty"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

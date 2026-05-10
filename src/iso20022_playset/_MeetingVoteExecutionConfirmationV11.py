@@ -1,15 +1,15 @@
 from . import base_types
-from ._Max2048Text import Max2048Text
-from ._SupplementaryData1 import SupplementaryData1
-from ._Max35Text import Max35Text
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._Pagination1 import Pagination1
-from ._MeetingReference10 import MeetingReference10
 from ._DetailedInstructionStatus19 import DetailedInstructionStatus19
+from ._Max2048Text import Max2048Text
+from ._Max35Text import Max35Text
+from ._MeetingReference10 import MeetingReference10
+from ._Pagination1 import Pagination1
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SupplementaryData1 import SupplementaryData1
 
 class MeetingVoteExecutionConfirmationV11(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_VoteInstrs", "_VoteExctnConfId", "_VoteInstrsConfURLAdr", "_SplmtryData", "_MtgRef", "_MtgInstrId", "_Pgntn"]
+	__slots__ = ["_FinInstrmId", "_MtgInstrId", "_MtgRef", "_Pgntn", "_SplmtryData", "_VoteExctnConfId", "_VoteInstrs", "_VoteInstrsConfURLAdr"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId

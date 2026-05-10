@@ -4,7 +4,7 @@ from ._RoundingMethod1Code import RoundingMethod1Code
 
 class SegregatedIndependentAmountMargin1(base_types._BaseFieldType):
 
-	__slots__ = ["_RndgAmt", "_MinTrfAmt", "_RndgMtd"]
+	__slots__ = ["_MinTrfAmt", "_RndgAmt", "_RndgMtd"]
 	@property
 	def MinTrfAmt(self):
 		return self._MinTrfAmt

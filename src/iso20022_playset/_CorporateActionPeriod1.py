@@ -3,7 +3,7 @@ from ._Period1 import Period1
 
 class CorporateActionPeriod1(base_types._BaseFieldType):
 
-	__slots__ = ["_ActnPrd", "_BlckgPrd", "_IntrstPrd", "_CmplsryPurchsPrd", "_PricClctnPrd"]
+	__slots__ = ["_ActnPrd", "_BlckgPrd", "_CmplsryPurchsPrd", "_IntrstPrd", "_PricClctnPrd"]
 	@property
 	def ActnPrd(self):
 		return self._ActnPrd

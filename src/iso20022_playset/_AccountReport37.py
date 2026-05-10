@@ -1,23 +1,23 @@
 from . import base_types
-from ._CashBalance8 import CashBalance8
-from ._DateTimePeriod1 import DateTimePeriod1
-from ._ReportingSource1Choice import ReportingSource1Choice
-from ._Number import Number
-from ._CashAccount43 import CashAccount43
-from ._CashAccount40 import CashAccount40
 from ._AccountInterest4 import AccountInterest4
-from ._SequenceRange1Choice import SequenceRange1Choice
-from ._ReportEntry15 import ReportEntry15
+from ._CashAccount40 import CashAccount40
+from ._CashAccount43 import CashAccount43
+from ._CashBalance8 import CashBalance8
+from ._CopyDuplicate1Code import CopyDuplicate1Code
+from ._DateTimePeriod1 import DateTimePeriod1
+from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
 from ._Max500Text import Max500Text
+from ._Number import Number
 from ._Pagination1 import Pagination1
+from ._ReportEntry15 import ReportEntry15
+from ._ReportingSource1Choice import ReportingSource1Choice
+from ._SequenceRange1Choice import SequenceRange1Choice
 from ._TotalTransactions6 import TotalTransactions6
-from ._ISODateTime import ISODateTime
-from ._CopyDuplicate1Code import CopyDuplicate1Code
 
 class AccountReport37(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgSrc", "_RltdAcct", "_ElctrncSeqNb", "_Ntry", "_CpyDplctInd", "_Acct", "_Bal", "_TxsSummry", "_Id", "_Intrst", "_RptPgntn", "_RptgSeq", "_FrToDt", "_LglSeqNb", "_AddtlRptInf", "_CreDtTm"]
+	__slots__ = ["_Acct", "_AddtlRptInf", "_Bal", "_CpyDplctInd", "_CreDtTm", "_ElctrncSeqNb", "_FrToDt", "_Id", "_Intrst", "_LglSeqNb", "_Ntry", "_RltdAcct", "_RptPgntn", "_RptgSeq", "_RptgSrc", "_TxsSummry"]
 	@property
 	def Acct(self):
 		return self._Acct

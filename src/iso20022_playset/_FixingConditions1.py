@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._BaseOneRate import BaseOneRate
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._BaseOneRate import BaseOneRate
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
 
 class FixingConditions1(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdRef", "_XchgRate", "_TradgSdSellAmt", "_TradDt", "_TradgSdBuyAmt", "_OrgtrRef", "_CmonRef"]
+	__slots__ = ["_CmonRef", "_OrgtrRef", "_RltdRef", "_TradDt", "_TradgSdBuyAmt", "_TradgSdSellAmt", "_XchgRate"]
 	@property
 	def CmonRef(self):
 		return self._CmonRef

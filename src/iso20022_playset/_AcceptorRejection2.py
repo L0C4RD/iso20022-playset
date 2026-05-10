@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max500Text import Max500Text
 from ._Max100KBinary import Max100KBinary
+from ._Max500Text import Max500Text
 from ._RejectReason1Code import RejectReason1Code
 
 class AcceptorRejection2(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgInErr", "_RjctRsn", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_MsgInErr", "_RjctRsn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

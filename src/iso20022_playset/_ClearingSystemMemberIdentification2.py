@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class ClearingSystemMemberIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_MmbId", "_ClrSysId"]
+	__slots__ = ["_ClrSysId", "_MmbId"]
 	@property
 	def ClrSysId(self):
 		return self._ClrSysId

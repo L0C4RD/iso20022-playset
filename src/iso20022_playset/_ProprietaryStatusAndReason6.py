@@ -1,10 +1,10 @@
 from . import base_types
-from ._ProprietaryReason4 import ProprietaryReason4
 from ._GenericIdentification30 import GenericIdentification30
+from ._ProprietaryReason4 import ProprietaryReason4
 
 class ProprietaryStatusAndReason6(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtrySts", "_PrtryRsn"]
+	__slots__ = ["_PrtryRsn", "_PrtrySts"]
 	@property
 	def PrtryRsn(self):
 		return self._PrtryRsn

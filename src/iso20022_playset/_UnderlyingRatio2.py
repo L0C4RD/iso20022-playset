@@ -1,10 +1,10 @@
 from . import base_types
-from ._SecurityIdentification19 import SecurityIdentification19
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._SecurityIdentification19 import SecurityIdentification19
 
 class UnderlyingRatio2(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygQtyDnmtr", "_UndrlygQtyNmrtr", "_RltdFinInstrmId"]
+	__slots__ = ["_RltdFinInstrmId", "_UndrlygQtyDnmtr", "_UndrlygQtyNmrtr"]
 	@property
 	def RltdFinInstrmId(self):
 		return self._RltdFinInstrmId

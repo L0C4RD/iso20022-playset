@@ -1,16 +1,16 @@
 from . import base_types
+from ._Max1025Text import Max1025Text
+from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
 from ._Organisation26 import Organisation26
-from ._RetailerService8Code import RetailerService8Code
 from ._RetailerMessage1Code import RetailerMessage1Code
 from ._RetailerService2Code import RetailerService2Code
-from ._Max256Text import Max256Text
+from ._RetailerService8Code import RetailerService8Code
 from ._TerminalManagementAction3Code import TerminalManagementAction3Code
-from ._Max35Text import Max35Text
-from ._Max1025Text import Max1025Text
 
 class SaleToPOIProtocolParameter3(base_types._BaseFieldType):
 
-	__slots__ = ["_XtrnlyTpSpprtd", "_SaleId", "_AllwdSaleMsg", "_HstId", "_Vrsn", "_AllwdSaleDvc", "_ActnTp", "_MrchntId", "_AllwdPOIMsg", "_AllwdPOISvc", "_MrchntPOIId"]
+	__slots__ = ["_ActnTp", "_AllwdPOIMsg", "_AllwdPOISvc", "_AllwdSaleDvc", "_AllwdSaleMsg", "_HstId", "_MrchntId", "_MrchntPOIId", "_SaleId", "_Vrsn", "_XtrnlyTpSpprtd"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp

@@ -1,17 +1,17 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._DataSetCategory10Code import DataSetCategory10Code
-from ._MessageItemCondition2 import MessageItemCondition2
+from ._GenericIdentification176 import GenericIdentification176
+from ._Max1025Text import Max1025Text
 from ._Max256Text import Max256Text
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
 from ._Max35Text import Max35Text
 from ._Max8Text import Max8Text
-from ._Max1025Text import Max1025Text
-from ._GenericIdentification176 import GenericIdentification176
+from ._MessageItemCondition2 import MessageItemCondition2
+from ._TerminalManagementAction3Code import TerminalManagementAction3Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class TMSProtocolParameters7(base_types._BaseFieldType):
 
-	__slots__ = ["_ApplId", "_MsgItm", "_MntncSvc", "_HstId", "_POIId", "_FileTrf", "_Vrsn", "_InitgPtyId", "_RcptPtyId", "_ActnTp", "_PrtcolVrsn", "_XtrnlyTpSpprtd", "_TermnlMgrId"]
+	__slots__ = ["_ActnTp", "_ApplId", "_FileTrf", "_HstId", "_InitgPtyId", "_MntncSvc", "_MsgItm", "_POIId", "_PrtcolVrsn", "_RcptPtyId", "_TermnlMgrId", "_Vrsn", "_XtrnlyTpSpprtd"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp

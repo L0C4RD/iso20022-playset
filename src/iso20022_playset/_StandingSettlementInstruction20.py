@@ -1,12 +1,12 @@
 from . import base_types
-from ._SettlementParties126 import SettlementParties126
-from ._SettlementStandingInstructionDatabase4Choice import SettlementStandingInstructionDatabase4Choice
 from ._Counterparty15Choice import Counterparty15Choice
 from ._PartyIdentification136 import PartyIdentification136
+from ._SettlementParties126 import SettlementParties126
+from ._SettlementStandingInstructionDatabase4Choice import SettlementStandingInstructionDatabase4Choice
 
 class StandingSettlementInstruction20(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrDlvrgSttlmPties", "_CtrPty", "_SttlmStgInstrDB", "_Vndr", "_OthrRcvgSttlmPties"]
+	__slots__ = ["_CtrPty", "_OthrDlvrgSttlmPties", "_OthrRcvgSttlmPties", "_SttlmStgInstrDB", "_Vndr"]
 	@property
 	def CtrPty(self):
 		return self._CtrPty

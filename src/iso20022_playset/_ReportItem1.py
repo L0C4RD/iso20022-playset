@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._HoldingAccountLevel1Code import HoldingAccountLevel1Code
+from ._ISODate import ISODate
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SecurityIdentification19 import SecurityIdentification19
 
 class ReportItem1(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctLvl", "_ItmDt", "_AcctId", "_FinInstrmId"]
+	__slots__ = ["_AcctId", "_AcctLvl", "_FinInstrmId", "_ItmDt"]
 	@property
 	def AcctId(self):
 		return self._AcctId

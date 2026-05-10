@@ -1,13 +1,13 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._EUDividendStatusType2Choice import EUDividendStatusType2Choice
-from ._Tax40 import Tax40
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._EUCapitalGain3Choice import EUCapitalGain3Choice
+from ._EUDividendStatusType2Choice import EUDividendStatusType2Choice
+from ._PercentageRate import PercentageRate
+from ._Tax40 import Tax40
 
 class InformativeTax2(base_types._BaseFieldType):
 
-	__slots__ = ["_PctgOfDebtClm", "_TaxblIncmPerDvdd", "_EUCptlGn", "_EUDvddSts", "_IndvTax"]
+	__slots__ = ["_EUCptlGn", "_EUDvddSts", "_IndvTax", "_PctgOfDebtClm", "_TaxblIncmPerDvdd"]
 	@property
 	def EUCptlGn(self):
 		return self._EUCptlGn

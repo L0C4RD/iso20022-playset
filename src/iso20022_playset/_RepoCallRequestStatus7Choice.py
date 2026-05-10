@@ -1,11 +1,11 @@
 from . import base_types
+from ._AcknowledgedAcceptedStatus22Choice import AcknowledgedAcceptedStatus22Choice
 from ._DeniedStatus17Choice import DeniedStatus17Choice
 from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
-from ._AcknowledgedAcceptedStatus22Choice import AcknowledgedAcceptedStatus22Choice
 
 class RepoCallRequestStatus7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_AckdAccptd", "_Dnd"]
+	__slots__ = ["_AckdAccptd", "_Dnd", "_Prtry"]
 	@property
 	def AckdAccptd(self):
 		return self._AckdAccptd

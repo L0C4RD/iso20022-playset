@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._MemberReturnCriteria1 import MemberReturnCriteria1
 from ._MemberSearchCriteria4 import MemberSearchCriteria4
-from ._Max35Text import Max35Text
 
 class MemberCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_NewQryNm", "_SchCrit", "_RtrCrit"]
+	__slots__ = ["_NewQryNm", "_RtrCrit", "_SchCrit"]
 	@property
 	def NewQryNm(self):
 		return self._NewQryNm

@@ -5,7 +5,7 @@ from ._YesNoIndicator import YesNoIndicator
 
 class NewIssueAllocation2(base_types._BaseFieldType):
 
-	__slots__ = ["_Rstrctd", "_DeMnms", "_XmptPrsnRsn"]
+	__slots__ = ["_DeMnms", "_Rstrctd", "_XmptPrsnRsn"]
 	@property
 	def DeMnms(self):
 		return self._DeMnms

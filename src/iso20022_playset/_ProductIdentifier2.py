@@ -1,10 +1,10 @@
 from . import base_types
-from ._ProductIdentifier2Code import ProductIdentifier2Code
 from ._Max35Text import Max35Text
+from ._ProductIdentifier2Code import ProductIdentifier2Code
 
 class ProductIdentifier2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Idr"]
+	__slots__ = ["_Idr", "_Tp"]
 	@property
 	def Idr(self):
 		return self._Idr

@@ -4,7 +4,7 @@ from ._TargetMarket1Code import TargetMarket1Code
 
 class InvestorKnowledge1(base_types._BaseFieldType):
 
-	__slots__ = ["_InfrmdInvstr", "_AdvncdInvstr", "_ExprtInvstrDE", "_BsicInvstr", "_Othr"]
+	__slots__ = ["_AdvncdInvstr", "_BsicInvstr", "_ExprtInvstrDE", "_InfrmdInvstr", "_Othr"]
 	@property
 	def AdvncdInvstr(self):
 		return self._AdvncdInvstr

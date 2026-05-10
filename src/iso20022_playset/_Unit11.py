@@ -1,15 +1,15 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._DecimalNumber import DecimalNumber
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
-from ._UnitPrice23 import UnitPrice23
-from ._TotalFeesAndTaxes41 import TotalFeesAndTaxes41
 from ._OtherAmount1 import OtherAmount1
+from ._TotalFeesAndTaxes41 import TotalFeesAndTaxes41
 from ._UKTaxGroupUnit1Code import UKTaxGroupUnit1Code
+from ._UnitPrice23 import UnitPrice23
 
 class Unit11(base_types._BaseFieldType):
 
-	__slots__ = ["_CertNb", "_OthrAmt", "_Ref", "_OrdrDt", "_Grp1Or2Units", "_AcqstnDt", "_PricDtls", "_UnitsNb", "_TxOvrhd"]
+	__slots__ = ["_AcqstnDt", "_CertNb", "_Grp1Or2Units", "_OrdrDt", "_OthrAmt", "_PricDtls", "_Ref", "_TxOvrhd", "_UnitsNb"]
 	@property
 	def AcqstnDt(self):
 		return self._AcqstnDt

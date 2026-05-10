@@ -1,34 +1,34 @@
 from . import base_types
 from ._AccountingStatus1Choice import AccountingStatus1Choice
-from ._GenericIdentification82 import GenericIdentification82
+from ._AdditiononalInformation13 import AdditiononalInformation13
+from ._CRSForm1Choice import CRSForm1Choice
 from ._CRSStatus4 import CRSStatus4
-from ._LanguageCode import LanguageCode
-from ._MiFIDClassification1 import MiFIDClassification1
-from ._MailType1Choice import MailType1Choice
+from ._CommunicationAddress6 import CommunicationAddress6
 from ._CompanyLink1Choice import CompanyLink1Choice
 from ._CountryAndResidentialStatusType2 import CountryAndResidentialStatusType2
-from ._RegulatoryInformation1 import RegulatoryInformation1
-from ._CRSForm1Choice import CRSForm1Choice
-from ._CommunicationAddress6 import CommunicationAddress6
-from ._Party47Choice import Party47Choice
-from ._ISODate import ISODate
-from ._AdditiononalInformation13 import AdditiononalInformation13
-from ._TaxExemptionReason2Choice import TaxExemptionReason2Choice
-from ._YesNoIndicator import YesNoIndicator
-from ._FATCAForm1Choice import FATCAForm1Choice
 from ._DateAndAmount1 import DateAndAmount1
-from ._PartyProfileInformation5 import PartyProfileInformation5
+from ._FATCAForm1Choice import FATCAForm1Choice
 from ._FATCAStatus2 import FATCAStatus2
-from ._Max35Text import Max35Text
-from ._MoneyLaunderingCheck1Choice import MoneyLaunderingCheck1Choice
+from ._GenericIdentification82 import GenericIdentification82
+from ._ISODate import ISODate
+from ._LanguageCode import LanguageCode
+from ._MailType1Choice import MailType1Choice
 from ._Max350Text import Max350Text
-from ._OwnershipBeneficiaryRate1 import OwnershipBeneficiaryRate1
+from ._Max35Text import Max35Text
+from ._MiFIDClassification1 import MiFIDClassification1
+from ._MoneyLaunderingCheck1Choice import MoneyLaunderingCheck1Choice
 from ._Notification2 import Notification2
+from ._OwnershipBeneficiaryRate1 import OwnershipBeneficiaryRate1
+from ._Party47Choice import Party47Choice
+from ._PartyProfileInformation5 import PartyProfileInformation5
+from ._RegulatoryInformation1 import RegulatoryInformation1
+from ._TaxExemptionReason2Choice import TaxExemptionReason2Choice
 from ._TaxReporting3 import TaxReporting3
+from ._YesNoIndicator import YesNoIndicator
 
 class InvestmentAccountOwnershipInformation16(base_types._BaseFieldType):
 
-	__slots__ = ["_PmryComAdr", "_MnyLndrgChck", "_MailTp", "_CtrlgPty", "_CRSRptgDt", "_Pty", "_FATCARptgDt", "_ElctrncMlngSvcRef", "_AddtlRgltryInf", "_CpnyLk", "_AddtlInf", "_OthrId", "_MntryWlth", "_EqtyVal", "_WorkgCptl", "_Lang", "_FATCAFormTp", "_SgntryRghtInd", "_CtryAndResdtlSts", "_FsclXmptn", "_FATCASts", "_TaxXmptn", "_CRSFormTp", "_MiFIDClssfctn", "_TaxRptg", "_AcctgSts", "_ClntId", "_CRSSts", "_Ntfctn", "_ScndryComAdr", "_InvstrPrflVldtn", "_OwnrshBnfcryRate"]
+	__slots__ = ["_AcctgSts", "_AddtlInf", "_AddtlRgltryInf", "_CRSFormTp", "_CRSRptgDt", "_CRSSts", "_ClntId", "_CpnyLk", "_CtrlgPty", "_CtryAndResdtlSts", "_ElctrncMlngSvcRef", "_EqtyVal", "_FATCAFormTp", "_FATCARptgDt", "_FATCASts", "_FsclXmptn", "_InvstrPrflVldtn", "_Lang", "_MailTp", "_MiFIDClssfctn", "_MntryWlth", "_MnyLndrgChck", "_Ntfctn", "_OthrId", "_OwnrshBnfcryRate", "_PmryComAdr", "_Pty", "_ScndryComAdr", "_SgntryRghtInd", "_TaxRptg", "_TaxXmptn", "_WorkgCptl"]
 	@property
 	def AcctgSts(self):
 		return self._AcctgSts

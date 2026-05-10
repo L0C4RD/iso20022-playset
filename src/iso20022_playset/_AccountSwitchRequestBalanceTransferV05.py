@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._BalanceTransfer5 import BalanceTransfer5
 from ._AccountSwitchDetails1 import AccountSwitchDetails1
-from ._MessageIdentification1 import MessageIdentification1
+from ._BalanceTransfer5 import BalanceTransfer5
 from ._CashAccount43 import CashAccount43
+from ._MessageIdentification1 import MessageIdentification1
+from ._SupplementaryData1 import SupplementaryData1
 
 class AccountSwitchRequestBalanceTransferV05(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSwtchDtls", "_MsgId", "_NewAcct", "_NmntdAcct", "_SplmtryData", "_BalTrf"]
+	__slots__ = ["_AcctSwtchDtls", "_BalTrf", "_MsgId", "_NewAcct", "_NmntdAcct", "_SplmtryData"]
 	@property
 	def AcctSwtchDtls(self):
 		return self._AcctSwtchDtls

@@ -1,21 +1,21 @@
 from . import base_types
-from ._Linkages66 import Linkages66
-from ._GenericIdentification47 import GenericIdentification47
-from ._YesNoIndicator import YesNoIndicator
-from ._LinkageType4Choice import LinkageType4Choice
-from ._UnilateralSplit4Choice import UnilateralSplit4Choice
 from ._AutomaticBorrowing11Choice import AutomaticBorrowing11Choice
-from ._RestrictionIdentification2 import RestrictionIdentification2
-from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
-from ._MatchingDenied4Choice import MatchingDenied4Choice
+from ._GenericIdentification47 import GenericIdentification47
 from ._HoldIndicator7 import HoldIndicator7
-from ._SecuritiesRTGS5Choice import SecuritiesRTGS5Choice
+from ._LinkageType4Choice import LinkageType4Choice
+from ._Linkages66 import Linkages66
+from ._MatchingDenied4Choice import MatchingDenied4Choice
 from ._PriorityNumeric5Choice import PriorityNumeric5Choice
 from ._References28 import References28
+from ._RestrictionIdentification2 import RestrictionIdentification2
+from ._SecuritiesRTGS5Choice import SecuritiesRTGS5Choice
+from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
+from ._UnilateralSplit4Choice import UnilateralSplit4Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class RequestDetails29(base_types._BaseFieldType):
 
-	__slots__ = ["_HldInd", "_Ref", "_RstrctnRef", "_SctiesRTGS", "_MtchgDnl", "_OthrPrcg", "_Lkg", "_Lnkgs", "_Prty", "_UnltrlSplt", "_PrtlSttlmInd", "_RtnInd", "_AutomtcBrrwg"]
+	__slots__ = ["_AutomtcBrrwg", "_HldInd", "_Lkg", "_Lnkgs", "_MtchgDnl", "_OthrPrcg", "_PrtlSttlmInd", "_Prty", "_Ref", "_RstrctnRef", "_RtnInd", "_SctiesRTGS", "_UnltrlSplt"]
 	@property
 	def AutomtcBrrwg(self):
 		return self._AutomtcBrrwg

@@ -1,10 +1,10 @@
 from . import base_types
-from ._RejectionReason71 import RejectionReason71
 from ._Max20PositiveNumber import Max20PositiveNumber
+from ._RejectionReason71 import RejectionReason71
 
 class DetailedTransactionStatistics30(base_types._BaseFieldType):
 
-	__slots__ = ["_TxsRjctnsRsn", "_TtlNbOfTxsAccptd", "_TtlNbOfTxs", "_TtlCrrctdRjctns", "_TtlNbOfTxsRjctd"]
+	__slots__ = ["_TtlCrrctdRjctns", "_TtlNbOfTxs", "_TtlNbOfTxsAccptd", "_TtlNbOfTxsRjctd", "_TxsRjctnsRsn"]
 	@property
 	def TtlCrrctdRjctns(self):
 		return self._TtlCrrctdRjctns

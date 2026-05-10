@@ -1,23 +1,23 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._SecurityIdentification38Choice import SecurityIdentification38Choice
 from ._AmountAndCurrency2 import AmountAndCurrency2
-from ._OrderStatus8Code import OrderStatus8Code
-from ._UnderlyingProductIdentifier1Code import UnderlyingProductIdentifier1Code
-from ._Max30Text import Max30Text
-from ._TradingModeType1Code import TradingModeType1Code
 from ._ClearingMethod1Code import ClearingMethod1Code
-from ._Max35Text import Max35Text
-from ._InstrumentLeg7 import InstrumentLeg7
-from ._Trade10 import Trade10
+from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
+from ._InstrumentLeg7 import InstrumentLeg7
+from ._Max30Text import Max30Text
+from ._Max35Text import Max35Text
 from ._Option16 import Option16
+from ._OrderStatus8Code import OrderStatus8Code
+from ._SecurityIdentification38Choice import SecurityIdentification38Choice
+from ._Trade10 import Trade10
 from ._TradingMethodType1Code import TradingMethodType1Code
+from ._TradingModeType1Code import TradingModeType1Code
+from ._UnderlyingProductIdentifier1Code import UnderlyingProductIdentifier1Code
 
 class Trade7(base_types._BaseFieldType):
 
-	__slots__ = ["_TrgtCcyOrAmt", "_DtAndTm", "_Symb", "_PdctId", "_PlcOfConf", "_BaseCcyOrAmt", "_CmbntnDealTcktId", "_Optn", "_TradId", "_ContraCcy", "_ClrMtd", "_DealTcktId", "_TradgMd", "_SttlmCcy", "_FXDtls", "_ExctnTp", "_SwpLeg", "_TxTm", "_DtConfd", "_FXTradPdct", "_TradgMtd", "_TradgCcy"]
+	__slots__ = ["_BaseCcyOrAmt", "_ClrMtd", "_CmbntnDealTcktId", "_ContraCcy", "_DealTcktId", "_DtAndTm", "_DtConfd", "_ExctnTp", "_FXDtls", "_FXTradPdct", "_Optn", "_PdctId", "_PlcOfConf", "_SttlmCcy", "_SwpLeg", "_Symb", "_TradId", "_TradgCcy", "_TradgMd", "_TradgMtd", "_TrgtCcyOrAmt", "_TxTm"]
 	@property
 	def BaseCcyOrAmt(self):
 		return self._BaseCcyOrAmt

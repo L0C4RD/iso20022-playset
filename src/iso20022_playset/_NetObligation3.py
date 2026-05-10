@@ -1,16 +1,16 @@
 from . import base_types
-from ._Max10NumericText import Max10NumericText
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._CountryCode import CountryCode
+from ._Max10NumericText import Max10NumericText
 from ._Max35Text import Max35Text
-from ._PaymentReceipt1Code import PaymentReceipt1Code
 from ._NettingIdentification2Choice import NettingIdentification2Choice
-from ._SettlementParties120 import SettlementParties120
 from ._PartyIdentification242Choice import PartyIdentification242Choice
+from ._PaymentReceipt1Code import PaymentReceipt1Code
+from ._SettlementParties120 import SettlementParties120
 
 class NetObligation3(base_types._BaseFieldType):
 
-	__slots__ = ["_NetSvcCtrPtyId", "_PmtClrCentr", "_OblgtnId", "_Amt", "_OblgtnDrctn", "_CtrPtySttlmInstrs", "_PtcptNetgId", "_TxsNb", "_CtrPtyNetgId"]
+	__slots__ = ["_Amt", "_CtrPtyNetgId", "_CtrPtySttlmInstrs", "_NetSvcCtrPtyId", "_OblgtnDrctn", "_OblgtnId", "_PmtClrCentr", "_PtcptNetgId", "_TxsNb"]
 	@property
 	def Amt(self):
 		return self._Amt

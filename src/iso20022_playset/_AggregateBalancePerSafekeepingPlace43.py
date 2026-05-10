@@ -1,23 +1,23 @@
 from . import base_types
-from ._ForeignExchangeTerms34 import ForeignExchangeTerms34
-from ._QuantityBreakdown57 import QuantityBreakdown57
-from ._ExposureType25Choice import ExposureType25Choice
+from ._AdditionalBalanceInformation20 import AdditionalBalanceInformation20
+from ._Balance17 import Balance17
 from ._Balance18 import Balance18
 from ._BalanceAmounts3 import BalanceAmounts3
-from ._Number import Number
-from ._Balance17 import Balance17
-from ._SubBalanceInformation20 import SubBalanceInformation20
-from ._AdditionalBalanceInformation20 import AdditionalBalanceInformation20
-from ._Max350Text import Max350Text
-from ._Pledgee3 import Pledgee3
-from ._MarketIdentification3Choice import MarketIdentification3Choice
 from ._BalanceQuantity14Choice import BalanceQuantity14Choice
+from ._ExposureType25Choice import ExposureType25Choice
+from ._ForeignExchangeTerms34 import ForeignExchangeTerms34
+from ._MarketIdentification3Choice import MarketIdentification3Choice
+from ._Max350Text import Max350Text
+from ._Number import Number
+from ._Pledgee3 import Pledgee3
 from ._PriceInformation29 import PriceInformation29
+from ._QuantityBreakdown57 import QuantityBreakdown57
 from ._SafeKeepingPlace5 import SafeKeepingPlace5
+from ._SubBalanceInformation20 import SubBalanceInformation20
 
 class AggregateBalancePerSafekeepingPlace43(base_types._BaseFieldType):
 
-	__slots__ = ["_PricDtls", "_PlcOfListg", "_AcctBaseCcyAmts", "_AvlblBal", "_Pldgee", "_InstrmCcyAmts", "_XpsrTp", "_AggtBal", "_NotAvlblBal", "_FXDtls", "_DaysAcrd", "_BalBrkdwn", "_AddtlBalBrkdwn", "_SfkpgPlc", "_HldgAddtlDtls", "_QtyBrkdwn"]
+	__slots__ = ["_AcctBaseCcyAmts", "_AddtlBalBrkdwn", "_AggtBal", "_AvlblBal", "_BalBrkdwn", "_DaysAcrd", "_FXDtls", "_HldgAddtlDtls", "_InstrmCcyAmts", "_NotAvlblBal", "_PlcOfListg", "_Pldgee", "_PricDtls", "_QtyBrkdwn", "_SfkpgPlc", "_XpsrTp"]
 	@property
 	def AcctBaseCcyAmts(self):
 		return self._AcctBaseCcyAmts

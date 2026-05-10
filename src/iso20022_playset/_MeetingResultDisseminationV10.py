@@ -1,17 +1,17 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._SecurityPosition22 import SecurityPosition22
-from ._Participation6 import Participation6
-from ._MeetingReference10 import MeetingReference10
-from ._Vote20 import Vote20
-from ._Max35Text import Max35Text
-from ._Pagination1 import Pagination1
-from ._NotificationType2Code import NotificationType2Code
 from ._CommunicationAddress11 import CommunicationAddress11
+from ._Max35Text import Max35Text
+from ._MeetingReference10 import MeetingReference10
+from ._NotificationType2Code import NotificationType2Code
+from ._Pagination1 import Pagination1
+from ._Participation6 import Participation6
+from ._SecurityPosition22 import SecurityPosition22
+from ._SupplementaryData1 import SupplementaryData1
+from ._Vote20 import Vote20
 
 class MeetingResultDisseminationV10(base_types._BaseFieldType):
 
-	__slots__ = ["_VoteRslt", "_Scty", "_MtgRsltDssmntnId", "_MtgRsltsDssmntnTp", "_PrvsMtgRsltsDssmntnId", "_AddtlInf", "_Prtcptn", "_MtgRef", "_SplmtryData", "_Pgntn"]
+	__slots__ = ["_AddtlInf", "_MtgRef", "_MtgRsltDssmntnId", "_MtgRsltsDssmntnTp", "_Pgntn", "_Prtcptn", "_PrvsMtgRsltsDssmntnId", "_Scty", "_SplmtryData", "_VoteRslt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

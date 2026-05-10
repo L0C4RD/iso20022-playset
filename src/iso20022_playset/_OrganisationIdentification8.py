@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericOrganisationIdentification1 import GenericOrganisationIdentification1
 from ._AnyBICIdentifier import AnyBICIdentifier
+from ._GenericOrganisationIdentification1 import GenericOrganisationIdentification1
 
 class OrganisationIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_AnyBIC"]
+	__slots__ = ["_AnyBIC", "_Othr"]
 	@property
 	def AnyBIC(self):
 		return self._AnyBIC

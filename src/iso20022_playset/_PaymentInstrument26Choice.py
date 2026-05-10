@@ -1,11 +1,11 @@
 from . import base_types
+from ._Cheque21 import Cheque21
 from ._CreditTransfer10 import CreditTransfer10
 from ._InvestmentAccount60 import InvestmentAccount60
-from ._Cheque21 import Cheque21
 
 class PaymentInstrument26Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ChqDtls", "_CshAcctDtls", "_CdtTrfDtls", "_BkrsDrftDtls"]
+	__slots__ = ["_BkrsDrftDtls", "_CdtTrfDtls", "_ChqDtls", "_CshAcctDtls"]
 	@property
 	def BkrsDrftDtls(self):
 		return self._BkrsDrftDtls

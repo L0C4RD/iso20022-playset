@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class CharacterSearch1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_EQ", "_CT", "_NCT", "_NEQ"]
+	__slots__ = ["_CT", "_EQ", "_NCT", "_NEQ"]
 	@property
 	def CT(self):
 		return self._CT

@@ -1,6 +1,6 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._PositionAccount2 import PositionAccount2
+from ._SupplementaryData1 import SupplementaryData1
 
 class CCPAccountPositionReportV01(base_types._BaseFieldType):
 

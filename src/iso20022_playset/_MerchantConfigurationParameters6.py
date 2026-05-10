@@ -1,15 +1,15 @@
 from . import base_types
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
-from ._Max35Text import Max35Text
 from ._Max10000Binary import Max10000Binary
-from ._Max8Text import Max8Text
-from ._PositiveNumber import PositiveNumber
-from ._NetworkParameters8 import NetworkParameters8
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Max8Text import Max8Text
+from ._NetworkParameters8 import NetworkParameters8
+from ._PositiveNumber import PositiveNumber
+from ._TerminalManagementAction3Code import TerminalManagementAction3Code
 
 class MerchantConfigurationParameters6(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrParamsLngth", "_ParamFrmtIdr", "_OffsetStart", "_MrchntId", "_OthrParams", "_ActnTp", "_Prxy", "_OffsetEnd", "_Vrsn"]
+	__slots__ = ["_ActnTp", "_MrchntId", "_OffsetEnd", "_OffsetStart", "_OthrParams", "_OthrParamsLngth", "_ParamFrmtIdr", "_Prxy", "_Vrsn"]
 	@property
 	def ActnTp(self):
 		return self._ActnTp

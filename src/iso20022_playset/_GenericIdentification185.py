@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class GenericIdentification185(base_types._BaseFieldType):
 
-	__slots__ = ["_SchmeNm", "_Id", "_Issr"]
+	__slots__ = ["_Id", "_Issr", "_SchmeNm"]
 	@property
 	def Id(self):
 		return self._Id

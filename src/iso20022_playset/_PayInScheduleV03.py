@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._BalanceStatus2 import BalanceStatus2
 from ._PartyIdentification73Choice import PartyIdentification73Choice
 from ._PayInFactors1 import PayInFactors1
-from ._BalanceStatus2 import BalanceStatus2
-from ._ReportData4 import ReportData4
 from ._PayInScheduleItems1 import PayInScheduleItems1
+from ._ReportData4 import ReportData4
+from ._SupplementaryData1 import SupplementaryData1
 
 class PayInScheduleV03(base_types._BaseFieldType):
 
-	__slots__ = ["_PayInSchdlLngBal", "_RptData", "_PayInFctrs", "_PtyId", "_PayInSchdlItm", "_SplmtryData"]
+	__slots__ = ["_PayInFctrs", "_PayInSchdlItm", "_PayInSchdlLngBal", "_PtyId", "_RptData", "_SplmtryData"]
 	@property
 	def PayInFctrs(self):
 		return self._PayInFctrs

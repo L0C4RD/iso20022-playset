@@ -1,12 +1,12 @@
 from . import base_types
+from ._CorporateActionStandingInstructionGeneralInformation1 import CorporateActionStandingInstructionGeneralInformation1
 from ._DocumentIdentification8 import DocumentIdentification8
 from ._StandingInstructionCancellationStatus1Choice import StandingInstructionCancellationStatus1Choice
 from ._StandingInstructionStatus1Choice import StandingInstructionStatus1Choice
-from ._CorporateActionStandingInstructionGeneralInformation1 import CorporateActionStandingInstructionGeneralInformation1
 
 class AgentCAStandingInstructionStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_StgInstrGnlInf", "_Id", "_StgInstrReqSts", "_AgtCAStgInstrCxlReqId", "_AgtCAStgInstrReqId", "_StgInstrCxlReqSts"]
+	__slots__ = ["_AgtCAStgInstrCxlReqId", "_AgtCAStgInstrReqId", "_Id", "_StgInstrCxlReqSts", "_StgInstrGnlInf", "_StgInstrReqSts"]
 	@property
 	def AgtCAStgInstrCxlReqId(self):
 		return self._AgtCAStgInstrCxlReqId

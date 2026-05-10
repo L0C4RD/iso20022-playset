@@ -1,12 +1,12 @@
 from . import base_types
 from ._Address2 import Address2
+from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
 from ._Max99Text import Max99Text
-from ._Max35Text import Max35Text
 
 class HiredVehicle3(base_types._BaseFieldType):
 
-	__slots__ = ["_DstnAdr", "_DstnNmAndLctn", "_TpOfVhcl", "_DrvrId", "_CpnyNm", "_CpnyTp", "_DrvrTaxId", "_VhclId"]
+	__slots__ = ["_CpnyNm", "_CpnyTp", "_DrvrId", "_DrvrTaxId", "_DstnAdr", "_DstnNmAndLctn", "_TpOfVhcl", "_VhclId"]
 	@property
 	def CpnyNm(self):
 		return self._CpnyNm

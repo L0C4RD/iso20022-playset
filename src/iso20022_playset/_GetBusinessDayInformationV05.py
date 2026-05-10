@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MessageHeader9 import MessageHeader9
 from ._BusinessDayQuery2 import BusinessDayQuery2
+from ._MessageHeader9 import MessageHeader9
+from ._SupplementaryData1 import SupplementaryData1
 
 class GetBusinessDayInformationV05(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_BizDayInfQryDef", "_SplmtryData"]
+	__slots__ = ["_BizDayInfQryDef", "_MsgHdr", "_SplmtryData"]
 	@property
 	def BizDayInfQryDef(self):
 		return self._BizDayInfQryDef

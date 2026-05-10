@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Adjustment5 import Adjustment5
+from ._ISODate import ISODate
 
 class InvoiceTotals1(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtDueDt", "_TtlTaxAmt", "_TtlInvcAmt", "_TtlTaxblAmt", "_Adjstmnt"]
+	__slots__ = ["_Adjstmnt", "_PmtDueDt", "_TtlInvcAmt", "_TtlTaxAmt", "_TtlTaxblAmt"]
 	@property
 	def Adjstmnt(self):
 		return self._Adjstmnt

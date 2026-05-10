@@ -1,13 +1,13 @@
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._Max35Text import Max35Text
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Max15NumericText import Max15NumericText
+from ._DecimalNumber import DecimalNumber
 from ._ISODateTime import ISODateTime
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
 
 class GroupHeader119(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfTxs", "_MsgId", "_CtrlSum", "_InstgAgt", "_InstdAgt", "_CreDtTm"]
+	__slots__ = ["_CreDtTm", "_CtrlSum", "_InstdAgt", "_InstgAgt", "_MsgId", "_NbOfTxs"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

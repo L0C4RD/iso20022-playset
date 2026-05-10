@@ -1,13 +1,13 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
 from ._BlockChainAddressWallet2 import BlockChainAddressWallet2
-from ._PartyIdentification144 import PartyIdentification144
 from ._FinancialInstrumentDetails46 import FinancialInstrumentDetails46
+from ._PartyIdentification144 import PartyIdentification144
 from ._SecuritiesAccount25 import SecuritiesAccount25
+from ._YesNoIndicator import YesNoIndicator
 
 class SubAccountIdentification73(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_BlckChainAdrOrWllt", "_AcctOwnr", "_SfkpgAcct", "_FinInstrmDtls"]
+	__slots__ = ["_AcctOwnr", "_ActvtyInd", "_BlckChainAdrOrWllt", "_FinInstrmDtls", "_SfkpgAcct"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr

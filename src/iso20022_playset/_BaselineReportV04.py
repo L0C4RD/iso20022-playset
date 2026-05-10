@@ -1,18 +1,18 @@
 from . import base_types
-from ._TransactionStatus4 import TransactionStatus4
-from ._DocumentIdentification6 import DocumentIdentification6
-from ._PendingActivity2 import PendingActivity2
 from ._BICIdentification1 import BICIdentification1
-from ._PartyIdentification26 import PartyIdentification26
 from ._DocumentIdentification5 import DocumentIdentification5
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._ReportType2 import ReportType2
-from ._MessageIdentification1 import MessageIdentification1
+from ._DocumentIdentification6 import DocumentIdentification6
 from ._LineItem14 import LineItem14
+from ._MessageIdentification1 import MessageIdentification1
+from ._PartyIdentification26 import PartyIdentification26
+from ._PendingActivity2 import PendingActivity2
+from ._ReportType2 import ReportType2
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._TransactionStatus4 import TransactionStatus4
 
 class BaselineReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrBk", "_RptTp", "_RptdLineItm", "_TxSts", "_RltdMsgRef", "_TxId", "_RptId", "_ReqForActn", "_Sellr", "_SellrBk", "_Buyr", "_EstblishdBaselnId", "_UsrTxRef"]
+	__slots__ = ["_Buyr", "_BuyrBk", "_EstblishdBaselnId", "_ReqForActn", "_RltdMsgRef", "_RptId", "_RptTp", "_RptdLineItm", "_Sellr", "_SellrBk", "_TxId", "_TxSts", "_UsrTxRef"]
 	@property
 	def Buyr(self):
 		return self._Buyr

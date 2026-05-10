@@ -1,12 +1,12 @@
 from . import base_types
-from ._SecuritiesInvalidReferenceDataReport4 import SecuritiesInvalidReferenceDataReport4
-from ._SupplementaryData1 import SupplementaryData1
 from ._Number import Number
 from ._Period4Choice import Period4Choice
+from ._SecuritiesInvalidReferenceDataReport4 import SecuritiesInvalidReferenceDataReport4
+from ._SupplementaryData1 import SupplementaryData1
 
 class FinancialInstrumentReportingInvalidReferenceDataReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrms", "_SplmtryData", "_NbOfRcrds", "_DtPrd"]
+	__slots__ = ["_DtPrd", "_FinInstrms", "_NbOfRcrds", "_SplmtryData"]
 	@property
 	def DtPrd(self):
 		return self._DtPrd

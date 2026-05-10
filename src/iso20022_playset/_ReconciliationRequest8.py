@@ -1,12 +1,12 @@
 from . import base_types
-from ._PaymentContext30 import PaymentContext30
-from ._SupplementaryData1 import SupplementaryData1
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._PaymentContext30 import PaymentContext30
 from ._ReconciliationRequestData1 import ReconciliationRequestData1
+from ._SupplementaryData1 import SupplementaryData1
 
 class ReconciliationRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_SplmtryData", "_Cntxt", "_RcncltnReqData"]
+	__slots__ = ["_Cntxt", "_Envt", "_RcncltnReqData", "_SplmtryData"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt

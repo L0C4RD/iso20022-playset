@@ -1,14 +1,14 @@
 from . import base_types
-from ._PaymentCard37 import PaymentCard37
-from ._Max35Text import Max35Text
-from ._AutomatedTellerMachine12 import AutomatedTellerMachine12
 from ._ATMCustomer7 import ATMCustomer7
-from ._TerminalHosting1 import TerminalHosting1
 from ._Acquirer7 import Acquirer7
+from ._AutomatedTellerMachine12 import AutomatedTellerMachine12
+from ._Max35Text import Max35Text
+from ._PaymentCard37 import PaymentCard37
+from ._TerminalHosting1 import TerminalHosting1
 
 class ATMEnvironment20(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMMgrId", "_Card", "_ATM", "_Cstmr", "_Acqrr", "_HstgNtty"]
+	__slots__ = ["_ATM", "_ATMMgrId", "_Acqrr", "_Card", "_Cstmr", "_HstgNtty"]
 	@property
 	def ATM(self):
 		return self._ATM

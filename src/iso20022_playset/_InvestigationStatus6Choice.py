@@ -1,12 +1,12 @@
 from . import base_types
-from ._ExternalInvestigationExecutionConfirmation1Code import ExternalInvestigationExecutionConfirmation1Code
-from ._YesNoIndicator import YesNoIndicator
-from ._ModificationStatusReason1Choice import ModificationStatusReason1Choice
 from ._Case6 import Case6
+from ._ExternalInvestigationExecutionConfirmation1Code import ExternalInvestigationExecutionConfirmation1Code
+from ._ModificationStatusReason1Choice import ModificationStatusReason1Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class InvestigationStatus6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Conf", "_DplctOf", "_RjctdMod", "_AssgnmtCxlConf"]
+	__slots__ = ["_AssgnmtCxlConf", "_Conf", "_DplctOf", "_RjctdMod"]
 	@property
 	def AssgnmtCxlConf(self):
 		return self._AssgnmtCxlConf

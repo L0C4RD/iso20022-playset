@@ -1,14 +1,14 @@
 from . import base_types
+from ._CancellationStatusInformation1 import CancellationStatusInformation1
 from ._FinancialInstitutionIdentification6 import FinancialInstitutionIdentification6
-from ._ValidationStatusInformation1 import ValidationStatusInformation1
+from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
 from ._PartyIdentificationAndAccount6 import PartyIdentificationAndAccount6
-from ._ISODateTime import ISODateTime
-from ._CancellationStatusInformation1 import CancellationStatusInformation1
+from ._ValidationStatusInformation1 import ValidationStatusInformation1
 
 class OriginalRequestInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrmyAgt", "_FincgRqstr", "_VldtnStsInf", "_CxlStsInf", "_Id", "_CreDtTm", "_FrstAgt"]
+	__slots__ = ["_CreDtTm", "_CxlStsInf", "_FincgRqstr", "_FrstAgt", "_Id", "_IntrmyAgt", "_VldtnStsInf"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

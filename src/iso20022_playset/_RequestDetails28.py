@@ -1,14 +1,14 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 from ._CollateralParties4 import CollateralParties4
 from ._Reference21 import Reference21
-from ._RemovalTypeAndReason1 import RemovalTypeAndReason1
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 from ._RemovalProcessing2Choice import RemovalProcessing2Choice
+from ._RemovalTypeAndReason1 import RemovalTypeAndReason1
+from ._SecuritiesAccount19 import SecuritiesAccount19
 
 class RequestDetails28(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_Rmvl", "_SfkpgAcct", "_FinInstrmAndAttrbts", "_Ref", "_CtrPty"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_CtrPty", "_FinInstrmAndAttrbts", "_Ref", "_Rmvl", "_SfkpgAcct"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt

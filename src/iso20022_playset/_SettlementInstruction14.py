@@ -1,11 +1,11 @@
 from . import base_types
-from ._SettlementMethod2Code import SettlementMethod2Code
-from ._ClearingSystemIdentification3Choice import ClearingSystemIdentification3Choice
 from ._CashAccount40 import CashAccount40
+from ._ClearingSystemIdentification3Choice import ClearingSystemIdentification3Choice
+from ._SettlementMethod2Code import SettlementMethod2Code
 
 class SettlementInstruction14(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmAcct", "_ClrSys", "_SttlmMtd"]
+	__slots__ = ["_ClrSys", "_SttlmAcct", "_SttlmMtd"]
 	@property
 	def ClrSys(self):
 		return self._ClrSys

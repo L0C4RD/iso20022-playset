@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class AccountIdentificationAndName7(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Id"]
+	__slots__ = ["_Id", "_Nm"]
 	@property
 	def Id(self):
 		return self._Id

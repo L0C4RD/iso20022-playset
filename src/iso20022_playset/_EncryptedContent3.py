@@ -1,11 +1,11 @@
 from . import base_types
 from ._AlgorithmIdentification14 import AlgorithmIdentification14
-from ._Max100KBinary import Max100KBinary
 from ._ContentType2Code import ContentType2Code
+from ._Max100KBinary import Max100KBinary
 
 class EncryptedContent3(base_types._BaseFieldType):
 
-	__slots__ = ["_NcrptdData", "_CnttTp", "_CnttNcrptnAlgo"]
+	__slots__ = ["_CnttNcrptnAlgo", "_CnttTp", "_NcrptdData"]
 	@property
 	def CnttNcrptnAlgo(self):
 		return self._CnttNcrptnAlgo

@@ -1,10 +1,10 @@
 from . import base_types
-from ._VoteInstructionType2Choice import VoteInstructionType2Choice
 from ._Max35Text import Max35Text
+from ._VoteInstructionType2Choice import VoteInstructionType2Choice
 
 class Vote15(base_types._BaseFieldType):
 
-	__slots__ = ["_VoteOptn", "_IssrLabl"]
+	__slots__ = ["_IssrLabl", "_VoteOptn"]
 	@property
 	def IssrLabl(self):
 		return self._IssrLabl

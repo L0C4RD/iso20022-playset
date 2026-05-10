@@ -1,14 +1,14 @@
 from . import base_types
+from ._AlternatePartyIdentification8 import AlternatePartyIdentification8
 from ._CashAccountIdentification5Choice import CashAccountIdentification5Choice
-from ._PartyTextInformation1 import PartyTextInformation1
 from ._CountryCode import CountryCode
 from ._Max35Text import Max35Text
-from ._AlternatePartyIdentification8 import AlternatePartyIdentification8
 from ._PartyIdentification240Choice import PartyIdentification240Choice
+from ._PartyTextInformation1 import PartyTextInformation1
 
 class PartyIdentificationAndAccount220(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgAcct", "_AddtlInf", "_AltrnId", "_CtryOfRes", "_CshAcct", "_PrcgId", "_Id"]
+	__slots__ = ["_AddtlInf", "_AltrnId", "_CshAcct", "_CtryOfRes", "_Id", "_PrcgId", "_SfkpgAcct"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

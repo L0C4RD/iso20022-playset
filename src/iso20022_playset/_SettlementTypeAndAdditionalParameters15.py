@@ -1,11 +1,11 @@
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class SettlementTypeAndAdditionalParameters15(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesMvmntTp", "_Pmt", "_CmonId"]
+	__slots__ = ["_CmonId", "_Pmt", "_SctiesMvmntTp"]
 	@property
 	def CmonId(self):
 		return self._CmonId

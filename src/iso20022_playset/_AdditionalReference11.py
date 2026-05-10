@@ -4,7 +4,7 @@ from ._PartyIdentification139 import PartyIdentification139
 
 class AdditionalReference11(base_types._BaseFieldType):
 
-	__slots__ = ["_RefIssr", "_MsgNm", "_Ref"]
+	__slots__ = ["_MsgNm", "_Ref", "_RefIssr"]
 	@property
 	def MsgNm(self):
 		return self._MsgNm

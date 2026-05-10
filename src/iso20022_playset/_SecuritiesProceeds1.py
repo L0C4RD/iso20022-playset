@@ -1,12 +1,12 @@
 from . import base_types
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
-from ._SecurityIdentification7 import SecurityIdentification7
 from ._Max350Text import Max350Text
 from ._SecuritiesAccount10 import SecuritiesAccount10
+from ._SecurityIdentification7 import SecurityIdentification7
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 
 class SecuritiesProceeds1(base_types._BaseFieldType):
 
-	__slots__ = ["_PstngQty", "_AcctDtls", "_SctyId", "_RcncltnDtls"]
+	__slots__ = ["_AcctDtls", "_PstngQty", "_RcncltnDtls", "_SctyId"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

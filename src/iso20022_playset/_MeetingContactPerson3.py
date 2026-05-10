@@ -1,11 +1,11 @@
 from . import base_types
-from ._PartyIdentification129Choice import PartyIdentification129Choice
-from ._MICIdentifier import MICIdentifier
 from ._ContactIdentification1 import ContactIdentification1
+from ._MICIdentifier import MICIdentifier
+from ._PartyIdentification129Choice import PartyIdentification129Choice
 
 class MeetingContactPerson3(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctPrsn", "_PlcOfListg", "_EmplngPty"]
+	__slots__ = ["_CtctPrsn", "_EmplngPty", "_PlcOfListg"]
 	@property
 	def CtctPrsn(self):
 		return self._CtctPrsn

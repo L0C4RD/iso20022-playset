@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._GenderCode import GenderCode
+from ._ISODate import ISODate
 from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
 
 class IndividualPerson30(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Gndr", "_GvnNm", "_MddlNm", "_BirthDt"]
+	__slots__ = ["_BirthDt", "_Gndr", "_GvnNm", "_MddlNm", "_Nm"]
 	@property
 	def BirthDt(self):
 		return self._BirthDt

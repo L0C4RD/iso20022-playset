@@ -1,11 +1,11 @@
 from . import base_types
 from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
-from ._Quantity1Code import Quantity1Code
 from ._OriginalAndCurrentQuantities4 import OriginalAndCurrentQuantities4
+from ._Quantity1Code import Quantity1Code
 
 class Quantity55Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_Cd", "_OrgnlAndCurFaceAmt"]
+	__slots__ = ["_Cd", "_OrgnlAndCurFaceAmt", "_Qty"]
 	@property
 	def Cd(self):
 		return self._Cd

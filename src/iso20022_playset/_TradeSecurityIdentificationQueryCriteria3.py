@@ -1,14 +1,14 @@
 from . import base_types
-from ._SecurityIdentificationQueryCriteria1 import SecurityIdentificationQueryCriteria1
-from ._SecurityIdentificationQuery4Choice import SecurityIdentificationQuery4Choice
-from ._ISINQueryCriteria1 import ISINQueryCriteria1
-from ._UPIQueryCriteria1 import UPIQueryCriteria1
 from ._FinancialInstrumentContractType2Code import FinancialInstrumentContractType2Code
+from ._ISINQueryCriteria1 import ISINQueryCriteria1
 from ._Operation3Code import Operation3Code
+from ._SecurityIdentificationQuery4Choice import SecurityIdentificationQuery4Choice
+from ._SecurityIdentificationQueryCriteria1 import SecurityIdentificationQueryCriteria1
+from ._UPIQueryCriteria1 import UPIQueryCriteria1
 
 class TradeSecurityIdentificationQueryCriteria3(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_UnqPdctIdr", "_Oprtr", "_CtrctTp", "_UndrlygInstrmId", "_ISIN"]
+	__slots__ = ["_CtrctTp", "_ISIN", "_Id", "_Oprtr", "_UndrlygInstrmId", "_UnqPdctIdr"]
 	@property
 	def CtrctTp(self):
 		return self._CtrctTp

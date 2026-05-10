@@ -1,11 +1,11 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
+from ._PercentageRate import PercentageRate
 from ._PlusOrMinusIndicator import PlusOrMinusIndicator
 
 class PriceValueChange1(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtSgn", "_Amt", "_Rate"]
+	__slots__ = ["_Amt", "_AmtSgn", "_Rate"]
 	@property
 	def Amt(self):
 		return self._Amt

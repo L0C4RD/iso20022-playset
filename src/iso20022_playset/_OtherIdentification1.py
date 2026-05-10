@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class OtherIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Tp", "_Sfx"]
+	__slots__ = ["_Id", "_Sfx", "_Tp"]
 	@property
 	def Id(self):
 		return self._Id

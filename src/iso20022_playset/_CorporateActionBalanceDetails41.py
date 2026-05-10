@@ -1,11 +1,11 @@
 from . import base_types
+from ._BalanceFormat11Choice import BalanceFormat11Choice
 from ._BalanceFormat12Choice import BalanceFormat12Choice
 from ._TotalEligibleBalanceFormat10 import TotalEligibleBalanceFormat10
-from ._BalanceFormat11Choice import BalanceFormat11Choice
 
 class CorporateActionBalanceDetails41(base_types._BaseFieldType):
 
-	__slots__ = ["_RegdBal", "_BrrwdBal", "_InTrnsShipmntBal", "_BlckdBal", "_OnLnBal", "_AfctdBal", "_StrtPosBal", "_ConfdBal", "_OutForRegnBal", "_CollInBal", "_TradDtPosBal", "_TtlElgblBal", "_CollOutBal", "_SttlmPosBal", "_PdgDlvryBal", "_PdgRctBal", "_UafctdBal"]
+	__slots__ = ["_AfctdBal", "_BlckdBal", "_BrrwdBal", "_CollInBal", "_CollOutBal", "_ConfdBal", "_InTrnsShipmntBal", "_OnLnBal", "_OutForRegnBal", "_PdgDlvryBal", "_PdgRctBal", "_RegdBal", "_StrtPosBal", "_SttlmPosBal", "_TradDtPosBal", "_TtlElgblBal", "_UafctdBal"]
 	@property
 	def AfctdBal(self):
 		return self._AfctdBal

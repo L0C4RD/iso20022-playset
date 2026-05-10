@@ -4,7 +4,7 @@ from ._ReturnExcessCash1Choice import ReturnExcessCash1Choice
 
 class ReturnExcessCash1(base_types._BaseFieldType):
 
-	__slots__ = ["_RtrXcssCshTp", "_CshCollCcy"]
+	__slots__ = ["_CshCollCcy", "_RtrXcssCshTp"]
 	@property
 	def CshCollCcy(self):
 		return self._CshCollCcy

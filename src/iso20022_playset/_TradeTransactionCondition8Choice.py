@@ -1,6 +1,6 @@
 from . import base_types
-from ._TradeTransactionCondition5Code import TradeTransactionCondition5Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._TradeTransactionCondition5Code import TradeTransactionCondition5Code
 
 class TradeTransactionCondition8Choice(base_types._BaseFieldType):
 

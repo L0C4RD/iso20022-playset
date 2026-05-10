@@ -1,16 +1,16 @@
 from . import base_types
-from ._ProcessingStatus69Choice import ProcessingStatus69Choice
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._References14 import References14
+from ._CashAccount40 import CashAccount40
+from ._ISODateTime import ISODateTime
 from ._IntraBalance5 import IntraBalance5
 from ._Max35Text import Max35Text
-from ._ISODateTime import ISODateTime
-from ._CashAccount40 import CashAccount40
+from ._ProcessingStatus69Choice import ProcessingStatus69Choice
+from ._References14 import References14
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class IntraBalanceCancellation8(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygIntraBal", "_TxId", "_CshAcct", "_PrcgSts", "_StsDt", "_ReqRef", "_CshAcctSvcr", "_CshAcctOwnr"]
+	__slots__ = ["_CshAcct", "_CshAcctOwnr", "_CshAcctSvcr", "_PrcgSts", "_ReqRef", "_StsDt", "_TxId", "_UndrlygIntraBal"]
 	@property
 	def CshAcct(self):
 		return self._CshAcct

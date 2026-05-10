@@ -1,12 +1,12 @@
 from . import base_types
-from ._ContentInformationType10 import ContentInformationType10
-from ._Header31 import Header31
-from ._ContentInformationType15 import ContentInformationType15
 from ._ATMInquiryRequest3 import ATMInquiryRequest3
+from ._ContentInformationType10 import ContentInformationType10
+from ._ContentInformationType15 import ContentInformationType15
+from ._Header31 import Header31
 
 class ATMInquiryRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_SctyTrlr", "_PrtctdATMNqryReq", "_ATMNqryReq"]
+	__slots__ = ["_ATMNqryReq", "_Hdr", "_PrtctdATMNqryReq", "_SctyTrlr"]
 	@property
 	def ATMNqryReq(self):
 		return self._ATMNqryReq

@@ -4,7 +4,7 @@ from ._UnmatchedReason14Code import UnmatchedReason14Code
 
 class UnmatchedReason22Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

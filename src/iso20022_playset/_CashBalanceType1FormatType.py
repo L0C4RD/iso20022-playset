@@ -1,10 +1,10 @@
 from . import base_types
-from ._GenericIdentification13 import GenericIdentification13
 from ._CashBalanceType1Code import CashBalanceType1Code
+from ._GenericIdentification13 import GenericIdentification13
 
 class CashBalanceType1FormatType(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd"]
+	__slots__ = ["_Cd", "_Prtry"]
 	@property
 	def Cd(self):
 		return self._Cd

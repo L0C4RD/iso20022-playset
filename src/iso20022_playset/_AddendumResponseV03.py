@@ -1,26 +1,26 @@
 from . import base_types
-from ._CardData14 import CardData14
 from ._AdditionalData2 import AdditionalData2
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._Jurisdiction2 import Jurisdiction2
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ProcessingResult23 import ProcessingResult23
-from ._ContentInformationType41 import ContentInformationType41
-from ._PartyIdentification285 import PartyIdentification285
-from ._SettlementService6 import SettlementService6
-from ._ProtectedData2 import ProtectedData2
 from ._AdditionalFee3 import AdditionalFee3
-from ._Reconciliation4 import Reconciliation4
+from ._CardData14 import CardData14
+from ._ContentInformationType41 import ContentInformationType41
+from ._Header71 import Header71
+from ._Jurisdiction2 import Jurisdiction2
 from ._Max1000Text import Max1000Text
 from ._OriginalDataElements3 import OriginalDataElements3
-from ._Header71 import Header71
-from ._TransactionIdentification53 import TransactionIdentification53
+from ._PartyIdentification285 import PartyIdentification285
+from ._PartyIdentification286 import PartyIdentification286
+from ._ProcessingResult23 import ProcessingResult23
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._ProtectedData2 import ProtectedData2
+from ._Reconciliation4 import Reconciliation4
+from ._SettlementService6 import SettlementService6
+from ._SupplementaryData1 import SupplementaryData1
 from ._Token2 import Token2
+from ._TransactionIdentification53 import TransactionIdentification53
 
 class AddendumResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlDataElmts", "_Orgtr", "_Sndr", "_AddtlData", "_Issr", "_Jursdctn", "_SplmtryData", "_Card", "_AddtlFee", "_Hdr", "_Tkn", "_Rcncltn", "_Prgrmm", "_SctyTrlr", "_PrcgRslt", "_Rcvr", "_Accptr", "_SttlmSvc", "_PrtctdData", "_TxDesc", "_TxId", "_Acqrr", "_Dstn"]
+	__slots__ = ["_Accptr", "_Acqrr", "_AddtlData", "_AddtlFee", "_Card", "_Dstn", "_Hdr", "_Issr", "_Jursdctn", "_OrgnlDataElmts", "_Orgtr", "_PrcgRslt", "_Prgrmm", "_PrtctdData", "_Rcncltn", "_Rcvr", "_SctyTrlr", "_Sndr", "_SplmtryData", "_SttlmSvc", "_Tkn", "_TxDesc", "_TxId"]
 	@property
 	def Accptr(self):
 		return self._Accptr

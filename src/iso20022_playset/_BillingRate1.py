@@ -1,11 +1,11 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._BillingRateIdentification1Choice import BillingRateIdentification1Choice
 from ._Number import Number
+from ._PercentageRate import PercentageRate
 
 class BillingRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_DaysInYr", "_Id", "_DaysInPrd"]
+	__slots__ = ["_DaysInPrd", "_DaysInYr", "_Id", "_Val"]
 	@property
 	def DaysInPrd(self):
 		return self._DaysInPrd

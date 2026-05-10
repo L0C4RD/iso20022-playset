@@ -1,13 +1,13 @@
 from . import base_types
-from ._KeyUsage1Code import KeyUsage1Code
 from ._CryptographicKeyType3Code import CryptographicKeyType3Code
+from ._KeyUsage1Code import KeyUsage1Code
 from ._Max140Text import Max140Text
-from ._Number import Number
 from ._Min5Max16Binary import Min5Max16Binary
+from ._Number import Number
 
 class KEKIdentifier5(base_types._BaseFieldType):
 
-	__slots__ = ["_Fctn", "_SeqNb", "_KeyVrsn", "_KeyId", "_Tp", "_DerivtnId"]
+	__slots__ = ["_DerivtnId", "_Fctn", "_KeyId", "_KeyVrsn", "_SeqNb", "_Tp"]
 	@property
 	def DerivtnId(self):
 		return self._DerivtnId

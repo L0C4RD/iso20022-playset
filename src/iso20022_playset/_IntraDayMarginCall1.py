@@ -1,11 +1,11 @@
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ISODateTime import ISODateTime
 from ._GenericIdentification165 import GenericIdentification165
+from ._ISODateTime import ISODateTime
 
 class IntraDayMarginCall1(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnAcctId", "_IntraDayCall", "_TmStmp"]
+	__slots__ = ["_IntraDayCall", "_MrgnAcctId", "_TmStmp"]
 	@property
 	def IntraDayCall(self):
 		return self._IntraDayCall

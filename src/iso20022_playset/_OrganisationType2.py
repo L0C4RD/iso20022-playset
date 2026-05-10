@@ -4,7 +4,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class OrganisationType2(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_EmailAdr", "_AnyBIC", "_Othr"]
+	__slots__ = ["_AnyBIC", "_EmailAdr", "_LEI", "_Othr"]
 	@property
 	def AnyBIC(self):
 		return self._AnyBIC

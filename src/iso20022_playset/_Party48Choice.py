@@ -4,7 +4,7 @@ from ._Organisation40 import Organisation40
 
 class Party48Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Org", "_IndvPrsn"]
+	__slots__ = ["_IndvPrsn", "_Org"]
 	@property
 	def IndvPrsn(self):
 		return self._IndvPrsn

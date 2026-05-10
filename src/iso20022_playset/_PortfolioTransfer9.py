@@ -1,15 +1,15 @@
 from . import base_types
+from ._AdditionalInformation15 import AdditionalInformation15
+from ._FinancialInstrument99 import FinancialInstrument99
+from ._FundPortfolio7Choice import FundPortfolio7Choice
 from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
 from ._Max35Text import Max35Text
 from ._ResidualCash1 import ResidualCash1
-from ._FinancialInstrument99 import FinancialInstrument99
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._FundPortfolio7Choice import FundPortfolio7Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class PortfolioTransfer9(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmAsstForTrf", "_MstrRef", "_TrfId", "_PrtlDscvry", "_AddtlInf", "_TaxDt", "_Prtfl", "_TrfConfId", "_RsdlCsh"]
+	__slots__ = ["_AddtlInf", "_FinInstrmAsstForTrf", "_MstrRef", "_Prtfl", "_PrtlDscvry", "_RsdlCsh", "_TaxDt", "_TrfConfId", "_TrfId"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

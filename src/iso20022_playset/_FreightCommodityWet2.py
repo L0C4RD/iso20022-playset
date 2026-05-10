@@ -5,7 +5,7 @@ from ._AssetClassSubProductType32Code import AssetClassSubProductType32Code
 
 class FreightCommodityWet2(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlSubPdct", "_SubPdct", "_BasePdct"]
+	__slots__ = ["_AddtlSubPdct", "_BasePdct", "_SubPdct"]
 	@property
 	def AddtlSubPdct(self):
 		return self._AddtlSubPdct

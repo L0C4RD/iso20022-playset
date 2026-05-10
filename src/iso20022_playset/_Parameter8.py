@@ -1,11 +1,11 @@
 from . import base_types
+from ._Algorithm11Code import Algorithm11Code
 from ._AlgorithmIdentification12 import AlgorithmIdentification12
 from ._Number import Number
-from ._Algorithm11Code import Algorithm11Code
 
 class Parameter8(base_types._BaseFieldType):
 
-	__slots__ = ["_TrlrFld", "_DgstAlgo", "_SaltLngth", "_MskGnrtrAlgo"]
+	__slots__ = ["_DgstAlgo", "_MskGnrtrAlgo", "_SaltLngth", "_TrlrFld"]
 	@property
 	def DgstAlgo(self):
 		return self._DgstAlgo

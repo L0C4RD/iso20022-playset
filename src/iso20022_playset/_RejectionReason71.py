@@ -1,7 +1,7 @@
 from . import base_types
-from ._TradeTransactionIdentification24 import TradeTransactionIdentification24
-from ._ReportingMessageStatus2Code import ReportingMessageStatus2Code
 from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
+from ._ReportingMessageStatus2Code import ReportingMessageStatus2Code
+from ._TradeTransactionIdentification24 import TradeTransactionIdentification24
 
 class RejectionReason71(base_types._BaseFieldType):
 

@@ -1,21 +1,21 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PhoneNumber import PhoneNumber
-from ._ISOTime import ISOTime
-from ._ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
 from ._AdditionalData1 import AdditionalData1
-from ._Max256Text import Max256Text
-from ._ISOMax3ACountryCode import ISOMax3ACountryCode
-from ._Max70Text import Max70Text
-from ._TelephonyCallType1Code import TelephonyCallType1Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max35Text import Max35Text
 from ._Amount23 import Amount23
+from ._ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
+from ._ISODate import ISODate
+from ._ISOMax3ACountryCode import ISOMax3ACountryCode
+from ._ISOTime import ISOTime
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._PhoneNumber import PhoneNumber
 from ._Tax41 import Tax41
+from ._TelephonyCallType1Code import TelephonyCallType1Code
 
 class TelecomServicesLineItem3(base_types._BaseFieldType):
 
-	__slots__ = ["_CallFrPhne", "_CallFrTp", "_Desc", "_AddtlData", "_Drtn", "_CallToOthrTp", "_TtlAmt", "_StartDtTm", "_CallToPhne", "_CallToCity", "_CallFrCtrySubDvsnMjr", "_CallToCtrySubDvsnMjr", "_Chrg", "_CallFrCity", "_CallFrCtry", "_CallToCtrySubDvsnMnr", "_CallFrCtrySubDvsnMnr", "_TmPrd", "_CallToCtry", "_Tax", "_CallToTp", "_CallFrOthrTp"]
+	__slots__ = ["_AddtlData", "_CallFrCity", "_CallFrCtry", "_CallFrCtrySubDvsnMjr", "_CallFrCtrySubDvsnMnr", "_CallFrOthrTp", "_CallFrPhne", "_CallFrTp", "_CallToCity", "_CallToCtry", "_CallToCtrySubDvsnMjr", "_CallToCtrySubDvsnMnr", "_CallToOthrTp", "_CallToPhne", "_CallToTp", "_Chrg", "_Desc", "_Drtn", "_StartDtTm", "_Tax", "_TmPrd", "_TtlAmt"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

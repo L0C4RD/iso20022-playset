@@ -1,6 +1,6 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._InterestComputationMethodFormat6Choice import InterestComputationMethodFormat6Choice
+from ._PercentageRate import PercentageRate
 
 class FixedRate11(base_types._BaseFieldType):
 

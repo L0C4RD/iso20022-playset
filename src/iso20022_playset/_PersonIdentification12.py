@@ -4,7 +4,7 @@ from ._GenericPersonIdentification1 import GenericPersonIdentification1
 
 class PersonIdentification12(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_CtryOfBrnch"]
+	__slots__ = ["_CtryOfBrnch", "_Othr"]
 	@property
 	def CtryOfBrnch(self):
 		return self._CtryOfBrnch

@@ -1,15 +1,15 @@
 from . import base_types
-from ._ATMSecurityConfiguration5 import ATMSecurityConfiguration5
-from ._ATMSecurityConfiguration4 import ATMSecurityConfiguration4
 from ._ATMSecurityConfiguration2 import ATMSecurityConfiguration2
 from ._ATMSecurityConfiguration3 import ATMSecurityConfiguration3
-from ._MessageProtection1Code import MessageProtection1Code
-from ._Algorithm12Code import Algorithm12Code
+from ._ATMSecurityConfiguration4 import ATMSecurityConfiguration4
+from ._ATMSecurityConfiguration5 import ATMSecurityConfiguration5
 from ._Algorithm11Code import Algorithm11Code
+from ._Algorithm12Code import Algorithm12Code
+from ._MessageProtection1Code import MessageProtection1Code
 
 class ATMSecurityConfiguration1(base_types._BaseFieldType):
 
-	__slots__ = ["_MACAlgo", "_PIN", "_DgstAlgo", "_Ncrptn", "_Keys", "_MsgPrtcn", "_DgtlSgntr"]
+	__slots__ = ["_DgstAlgo", "_DgtlSgntr", "_Keys", "_MACAlgo", "_MsgPrtcn", "_Ncrptn", "_PIN"]
 	@property
 	def DgstAlgo(self):
 		return self._DgstAlgo

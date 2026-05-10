@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._FinancialInstitution8 import FinancialInstitution8
-from ._ContactPersonal1 import ContactPersonal1
-from ._LocalData15 import LocalData15
 from ._AdditionalData1 import AdditionalData1
-from ._ISOMax3ACountryCode import ISOMax3ACountryCode
 from ._Address2 import Address2
-from ._Max2NumericText import Max2NumericText
 from ._CardholderName3 import CardholderName3
-from ._Max35Text import Max35Text
+from ._ContactPersonal1 import ContactPersonal1
 from ._Credentials3 import Credentials3
+from ._FinancialInstitution8 import FinancialInstitution8
+from ._ISODate import ISODate
+from ._ISOMax3ACountryCode import ISOMax3ACountryCode
+from ._LocalData15 import LocalData15
+from ._Max2NumericText import Max2NumericText
+from ._Max35Text import Max35Text
 
 class PartyIdentification287(base_types._BaseFieldType):
 
-	__slots__ = ["_DtOfBirth", "_Dsgnt", "_Adr", "_CtryOfBirth", "_Ctct", "_Ntlty", "_AddtlData", "_LclData", "_Id", "_Crdntls", "_Nm", "_FI"]
+	__slots__ = ["_AddtlData", "_Adr", "_Crdntls", "_Ctct", "_CtryOfBirth", "_Dsgnt", "_DtOfBirth", "_FI", "_Id", "_LclData", "_Nm", "_Ntlty"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

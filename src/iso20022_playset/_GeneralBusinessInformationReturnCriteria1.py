@@ -3,7 +3,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class GeneralBusinessInformationReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_SbjtInd", "_SbjtDtlsInd", "_QlfrInd"]
+	__slots__ = ["_QlfrInd", "_SbjtDtlsInd", "_SbjtInd"]
 	@property
 	def QlfrInd(self):
 		return self._QlfrInd

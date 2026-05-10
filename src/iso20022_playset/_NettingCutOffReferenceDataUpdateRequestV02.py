@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._NettingCutOff2 import NettingCutOff2
 from ._RequestData2 import RequestData2
+from ._SupplementaryData1 import SupplementaryData1
 
 class NettingCutOffReferenceDataUpdateRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqData", "_SplmtryData", "_NetgCutOffReq"]
+	__slots__ = ["_NetgCutOffReq", "_ReqData", "_SplmtryData"]
 	@property
 	def NetgCutOffReq(self):
 		return self._NetgCutOffReq

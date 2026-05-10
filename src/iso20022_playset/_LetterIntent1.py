@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
 
 class LetterIntent1(base_types._BaseFieldType):
 
-	__slots__ = ["_EndDt", "_LttrInttRef", "_StartDt", "_Amt"]
+	__slots__ = ["_Amt", "_EndDt", "_LttrInttRef", "_StartDt"]
 	@property
 	def Amt(self):
 		return self._Amt

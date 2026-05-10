@@ -1,13 +1,13 @@
 from . import base_types
-from ._InvestmentAccount42 import InvestmentAccount42
 from ._AdditionalParameters1 import AdditionalParameters1
-from ._CashOutForecast5 import CashOutForecast5
-from ._NetCashForecast4 import NetCashForecast4
 from ._CashInForecast5 import CashInForecast5
+from ._CashOutForecast5 import CashOutForecast5
+from ._InvestmentAccount42 import InvestmentAccount42
+from ._NetCashForecast4 import NetCashForecast4
 
 class BreakdownByParty3(base_types._BaseFieldType):
 
-	__slots__ = ["_CshOutFcst", "_NetCshFcst", "_Pty", "_AddtlParams", "_CshInFcst"]
+	__slots__ = ["_AddtlParams", "_CshInFcst", "_CshOutFcst", "_NetCshFcst", "_Pty"]
 	@property
 	def AddtlParams(self):
 		return self._AddtlParams

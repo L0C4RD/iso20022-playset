@@ -1,16 +1,16 @@
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
-from ._ISONormalisedDateTime import ISONormalisedDateTime
-from ._UnicodeChartsCode import UnicodeChartsCode
-from ._Max35Text import Max35Text
 from ._BusinessMessagePriorityCode import BusinessMessagePriorityCode
-from ._SignatureEnvelope import SignatureEnvelope
-from ._Party9Choice import Party9Choice
 from ._CopyDuplicate1Code import CopyDuplicate1Code
+from ._ISONormalisedDateTime import ISONormalisedDateTime
+from ._Max35Text import Max35Text
+from ._Party9Choice import Party9Choice
+from ._SignatureEnvelope import SignatureEnvelope
+from ._UnicodeChartsCode import UnicodeChartsCode
+from ._YesNoIndicator import YesNoIndicator
 
 class BusinessApplicationHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgDefIdr", "_To", "_Prty", "_PssblDplct", "_Fr", "_CpyDplct", "_BizSvc", "_CharSet", "_CreDt", "_Sgntr", "_BizMsgIdr"]
+	__slots__ = ["_BizMsgIdr", "_BizSvc", "_CharSet", "_CpyDplct", "_CreDt", "_Fr", "_MsgDefIdr", "_Prty", "_PssblDplct", "_Sgntr", "_To"]
 	@property
 	def BizMsgIdr(self):
 		return self._BizMsgIdr

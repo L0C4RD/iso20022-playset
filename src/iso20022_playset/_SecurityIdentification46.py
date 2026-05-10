@@ -1,12 +1,12 @@
 from . import base_types
-from ._UniqueProductIdentifier2Choice import UniqueProductIdentifier2Choice
 from ._ISINOct2015Identifier import ISINOct2015Identifier
 from ._Max1000Text import Max1000Text
 from ._Max105Text import Max105Text
+from ._UniqueProductIdentifier2Choice import UniqueProductIdentifier2Choice
 
 class SecurityIdentification46(base_types._BaseFieldType):
 
-	__slots__ = ["_AltrntvInstrmId", "_UnqPdctIdr", "_PdctDesc", "_ISIN"]
+	__slots__ = ["_AltrntvInstrmId", "_ISIN", "_PdctDesc", "_UnqPdctIdr"]
 	@property
 	def AltrntvInstrmId(self):
 		return self._AltrntvInstrmId

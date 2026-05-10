@@ -1,11 +1,11 @@
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
 from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._LEIIdentifier import LEIIdentifier
 from ._SNA2008SectorIdentifier import SNA2008SectorIdentifier
 
 class FinancialInstrument59(base_types._BaseFieldType):
 
-	__slots__ = ["_Sctr", "_Id", "_Issr"]
+	__slots__ = ["_Id", "_Issr", "_Sctr"]
 	@property
 	def Id(self):
 		return self._Id

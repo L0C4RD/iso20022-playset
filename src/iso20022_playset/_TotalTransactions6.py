@@ -1,11 +1,11 @@
 from . import base_types
-from ._NumberAndSumOfTransactions4 import NumberAndSumOfTransactions4
 from ._NumberAndSumOfTransactions1 import NumberAndSumOfTransactions1
+from ._NumberAndSumOfTransactions4 import NumberAndSumOfTransactions4
 from ._TotalsPerBankTransactionCode5 import TotalsPerBankTransactionCode5
 
 class TotalTransactions6(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlDbtNtries", "_TtlNtries", "_TtlCdtNtries", "_TtlNtriesPerBkTxCd"]
+	__slots__ = ["_TtlCdtNtries", "_TtlDbtNtries", "_TtlNtries", "_TtlNtriesPerBkTxCd"]
 	@property
 	def TtlCdtNtries(self):
 		return self._TtlCdtNtries

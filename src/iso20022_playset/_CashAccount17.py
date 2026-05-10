@@ -1,12 +1,12 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._PartyIdentification2Choice import PartyIdentification2Choice
 from ._BICIdentifier import BICIdentifier
 from ._CashAccountIdentification1Choice import CashAccountIdentification1Choice
+from ._PartyIdentification2Choice import PartyIdentification2Choice
 
 class CashAccount17(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrId", "_CrspdtBkId", "_PmtCcy", "_AcctId"]
+	__slots__ = ["_AcctId", "_AcctOwnrId", "_CrspdtBkId", "_PmtCcy"]
 	@property
 	def AcctId(self):
 		return self._AcctId

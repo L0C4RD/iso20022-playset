@@ -1,20 +1,20 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Gender1Code import Gender1Code
-from ._PostalAddress27 import PostalAddress27
-from ._LanguageCode import LanguageCode
-from ._IndividualPersonNameLong2 import IndividualPersonNameLong2
-from ._GenericIdentification44 import GenericIdentification44
+from ._CitizenshipInformation1 import CitizenshipInformation1
+from ._CommunicationAddress3 import CommunicationAddress3
 from ._CountryAndResidentialStatusType1 import CountryAndResidentialStatusType1
 from ._CountryCode import CountryCode
-from ._CommunicationAddress3 import CommunicationAddress3
+from ._Gender1Code import Gender1Code
+from ._GenericIdentification44 import GenericIdentification44
+from ._ISODate import ISODate
+from ._IndividualPersonNameLong2 import IndividualPersonNameLong2
+from ._LanguageCode import LanguageCode
 from ._Max35Text import Max35Text
+from ._PostalAddress27 import PostalAddress27
 from ._TransferInstruction1 import TransferInstruction1
-from ._CitizenshipInformation1 import CitizenshipInformation1
 
 class IndividualPerson44(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsNm", "_CtryAndResdtlSts", "_BirthDt", "_PmryComAdr", "_CtryOfBirth", "_PstlAdr", "_ScndryComAdr", "_Gndr", "_TaxtnCtry", "_CtznshInf", "_OthrDtls", "_PrvcOfBirth", "_CurNm", "_SclSctyNb", "_Lang", "_CityOfBirth", "_OthrId"]
+	__slots__ = ["_BirthDt", "_CityOfBirth", "_CtryAndResdtlSts", "_CtryOfBirth", "_CtznshInf", "_CurNm", "_Gndr", "_Lang", "_OthrDtls", "_OthrId", "_PmryComAdr", "_PrvcOfBirth", "_PrvsNm", "_PstlAdr", "_SclSctyNb", "_ScndryComAdr", "_TaxtnCtry"]
 	@property
 	def BirthDt(self):
 		return self._BirthDt

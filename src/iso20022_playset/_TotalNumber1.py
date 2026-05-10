@@ -3,7 +3,7 @@ from ._Exact3NumericText import Exact3NumericText
 
 class TotalNumber1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlOfLkdInstrs", "_CurInstrNb"]
+	__slots__ = ["_CurInstrNb", "_TtlOfLkdInstrs"]
 	@property
 	def CurInstrNb(self):
 		return self._CurInstrNb

@@ -1,27 +1,27 @@
 from . import base_types
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._RemittanceInformation2 import RemittanceInformation2
-from ._SettlementTimeRequest2 import SettlementTimeRequest2
-from ._Purpose2Choice import Purpose2Choice
+from ._CashAccount40 import CashAccount40
+from ._CreditTransferTransaction68 import CreditTransferTransaction68
+from ._CreditTransferTransaction69 import CreditTransferTransaction69
+from ._CryptographicKey1Choice import CryptographicKey1Choice
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
+from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
+from ._InstructionForNextAgent1 import InstructionForNextAgent1
+from ._PaymentIdentification13 import PaymentIdentification13
 from ._PaymentTypeInformation28 import PaymentTypeInformation28
 from ._Priority3Code import Priority3Code
-from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
-from ._ISODateTime import ISODateTime
-from ._CreditTransferTransaction69 import CreditTransferTransaction69
-from ._ISODate import ISODate
-from ._SupplementaryData1 import SupplementaryData1
+from ._Purpose2Choice import Purpose2Choice
+from ._RemittanceInformation2 import RemittanceInformation2
 from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
-from ._CreditTransferTransaction68 import CreditTransferTransaction68
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._InstructionForNextAgent1 import InstructionForNextAgent1
+from ._SettlementTimeRequest2 import SettlementTimeRequest2
+from ._SupplementaryData1 import SupplementaryData1
 from ._TransactionAllocation1 import TransactionAllocation1
-from ._CryptographicKey1Choice import CryptographicKey1Choice
-from ._PaymentIdentification13 import PaymentIdentification13
-from ._CashAccount40 import CashAccount40
 
 class CreditTransferTransaction67(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygAllcn", "_PmtSgntr", "_UndrlygCstmrCdtTrf", "_IntrmyAgt1", "_PrvsInstgAgt3Acct", "_IntrmyAgt1Acct", "_PrvsInstgAgt3", "_CdtrAcct", "_SttlmTmIndctn", "_InstgAgt", "_DbtrAcct", "_CdtrAgt", "_PmtId", "_SttlmTmReq", "_IntrmyAgt3Acct", "_Purp", "_IntrmyAgt2Acct", "_DbtrAgtAcct", "_PrvsInstgAgt2Acct", "_RmtInf", "_InstrForCdtrAgt", "_UltmtDbtr", "_IntrmyAgt3", "_XpryDtTm", "_PrvsInstgAgt1Acct", "_IntrBkSttlmAmt", "_UltmtCdtr", "_PrvsInstgAgt2", "_InstdAgt", "_IntrBkSttlmDt", "_SttlmPrty", "_PrvsInstgAgt1", "_InstrForNxtAgt", "_UndrlygFICdtTrf", "_CdtrAgtAcct", "_Cdtr", "_Dbtr", "_PmtTpInf", "_DbtrAgt", "_IntrmyAgt2", "_SplmtryData"]
+	__slots__ = ["_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_Dbtr", "_DbtrAcct", "_DbtrAgt", "_DbtrAgtAcct", "_InstdAgt", "_InstgAgt", "_InstrForCdtrAgt", "_InstrForNxtAgt", "_IntrBkSttlmAmt", "_IntrBkSttlmDt", "_IntrmyAgt1", "_IntrmyAgt1Acct", "_IntrmyAgt2", "_IntrmyAgt2Acct", "_IntrmyAgt3", "_IntrmyAgt3Acct", "_PmtId", "_PmtSgntr", "_PmtTpInf", "_PrvsInstgAgt1", "_PrvsInstgAgt1Acct", "_PrvsInstgAgt2", "_PrvsInstgAgt2Acct", "_PrvsInstgAgt3", "_PrvsInstgAgt3Acct", "_Purp", "_RmtInf", "_SplmtryData", "_SttlmPrty", "_SttlmTmIndctn", "_SttlmTmReq", "_UltmtCdtr", "_UltmtDbtr", "_UndrlygAllcn", "_UndrlygCstmrCdtTrf", "_UndrlygFICdtTrf", "_XpryDtTm"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr

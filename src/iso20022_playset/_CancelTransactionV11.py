@@ -1,13 +1,13 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._PaymentIdentification8Choice import PaymentIdentification8Choice
+from ._CashAccount40 import CashAccount40
 from ._MessageHeader9 import MessageHeader9
 from ._PaymentCancellationReason6 import PaymentCancellationReason6
-from ._CashAccount40 import CashAccount40
+from ._PaymentIdentification8Choice import PaymentIdentification8Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class CancelTransactionV11(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_CshAcct", "_CxlRsn", "_SplmtryData", "_PmtId"]
+	__slots__ = ["_CshAcct", "_CxlRsn", "_MsgHdr", "_PmtId", "_SplmtryData"]
 	@property
 	def CshAcct(self):
 		return self._CshAcct

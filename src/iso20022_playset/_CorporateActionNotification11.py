@@ -1,11 +1,11 @@
 from . import base_types
+from ._CorporateActionNotificationType1Code import CorporateActionNotificationType1Code
 from ._CorporateActionProcessingStatus6Choice import CorporateActionProcessingStatus6Choice
 from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._CorporateActionNotificationType1Code import CorporateActionNotificationType1Code
 
 class CorporateActionNotification11(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnTp", "_PrcgSts", "_NtfctnId"]
+	__slots__ = ["_NtfctnId", "_NtfctnTp", "_PrcgSts"]
 	@property
 	def NtfctnId(self):
 		return self._NtfctnId

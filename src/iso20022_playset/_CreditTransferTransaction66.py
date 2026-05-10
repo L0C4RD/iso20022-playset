@@ -1,19 +1,19 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._SupplementaryData1 import SupplementaryData1
-from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._BatchBookingIndicator import BatchBookingIndicator
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._PaymentTypeInformation28 import PaymentTypeInformation28
-from ._DirectDebitTransactionInformation33 import DirectDebitTransactionInformation33
-from ._Max35Text import Max35Text
-from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
 from ._CashAccount40 import CashAccount40
+from ._DirectDebitTransactionInformation33 import DirectDebitTransactionInformation33
+from ._ISODate import ISODate
+from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
+from ._Max35Text import Max35Text
+from ._PaymentTypeInformation28 import PaymentTypeInformation28
+from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
+from ._SupplementaryData1 import SupplementaryData1
 
 class CreditTransferTransaction66(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtId", "_IntrmyAgt1", "_TtlIntrBkSttlmAmt", "_InstrForCdtrAgt", "_IntrmyAgt3", "_IntrmyAgt1Acct", "_UltmtCdtr", "_InstdAgt", "_BtchBookg", "_IntrBkSttlmDt", "_CdtrAcct", "_CdtrAgtAcct", "_SttlmTmIndctn", "_InstgAgt", "_Cdtr", "_CdtrAgt", "_PmtTpInf", "_IntrmyAgt3Acct", "_DrctDbtTxInf", "_IntrmyAgt2", "_IntrmyAgt2Acct", "_SplmtryData"]
+	__slots__ = ["_BtchBookg", "_CdtId", "_Cdtr", "_CdtrAcct", "_CdtrAgt", "_CdtrAgtAcct", "_DrctDbtTxInf", "_InstdAgt", "_InstgAgt", "_InstrForCdtrAgt", "_IntrBkSttlmDt", "_IntrmyAgt1", "_IntrmyAgt1Acct", "_IntrmyAgt2", "_IntrmyAgt2Acct", "_IntrmyAgt3", "_IntrmyAgt3Acct", "_PmtTpInf", "_SplmtryData", "_SttlmTmIndctn", "_TtlIntrBkSttlmAmt", "_UltmtCdtr"]
 	@property
 	def BtchBookg(self):
 		return self._BtchBookg

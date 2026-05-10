@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._DocumentType7Code import DocumentType7Code
 from ._ActionMessage11 import ActionMessage11
+from ._DocumentType7Code import DocumentType7Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PaymentReceipt6(base_types._BaseFieldType):
 
-	__slots__ = ["_IntgrtdPrtFlg", "_DocQlfr", "_ReqrdSgntrFlg", "_OutptCntt"]
+	__slots__ = ["_DocQlfr", "_IntgrtdPrtFlg", "_OutptCntt", "_ReqrdSgntrFlg"]
 	@property
 	def DocQlfr(self):
 		return self._DocQlfr

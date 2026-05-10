@@ -1,20 +1,20 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._CardPaymentTransaction138 import CardPaymentTransaction138
-from ._CardPaymentTransactionDetails53 import CardPaymentTransactionDetails53
 from ._CardAccount16 import CardAccount16
 from ._CardPaymentServiceType12Code import CardPaymentServiceType12Code
-from ._TransactionIdentifier1 import TransactionIdentifier1
-from ._Min3Max4Text import Min3Max4Text
-from ._CardPaymentServiceType9Code import CardPaymentServiceType9Code
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
-from ._Max140Text import Max140Text
 from ._CardPaymentServiceType15Code import CardPaymentServiceType15Code
+from ._CardPaymentServiceType9Code import CardPaymentServiceType9Code
+from ._CardPaymentTransaction138 import CardPaymentTransaction138
+from ._CardPaymentTransactionDetails53 import CardPaymentTransactionDetails53
+from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._Min3Max4Text import Min3Max4Text
+from ._TransactionIdentifier1 import TransactionIdentifier1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CardPaymentTransaction139(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRefId", "_MrchntRefData", "_AddtlTxData", "_TxCaptr", "_AcctFr", "_MrchntCtgyCd", "_InitrTxId", "_CardPrgrmmPropsd", "_TxId", "_MrchntCITId", "_SvcAttr", "_TxDtls", "_AcctTo", "_IssrCITId", "_OrgnlTx", "_AddtlSvc", "_TxTp", "_LastTxFlg", "_RcncltnId", "_CardPrgrmmApld", "_CstmrCnsnt"]
+	__slots__ = ["_AcctFr", "_AcctTo", "_AddtlSvc", "_AddtlTxData", "_CardPrgrmmApld", "_CardPrgrmmPropsd", "_CstmrCnsnt", "_InitrTxId", "_IssrCITId", "_LastTxFlg", "_MrchntCITId", "_MrchntCtgyCd", "_MrchntRefData", "_OrgnlTx", "_RcncltnId", "_SaleRefId", "_SvcAttr", "_TxCaptr", "_TxDtls", "_TxId", "_TxTp"]
 	@property
 	def AcctFr(self):
 		return self._AcctFr

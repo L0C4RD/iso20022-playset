@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class CorporateActionGeneralInformation92(base_types._BaseFieldType):
 
-	__slots__ = ["_NrrtvTp", "_OffclCorpActnEvtId", "_CorpActnEvtId"]
+	__slots__ = ["_CorpActnEvtId", "_NrrtvTp", "_OffclCorpActnEvtId"]
 	@property
 	def CorpActnEvtId(self):
 		return self._CorpActnEvtId

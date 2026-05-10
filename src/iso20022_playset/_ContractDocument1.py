@@ -5,7 +5,7 @@ from ._Max6Text import Max6Text
 
 class ContractDocument1(base_types._BaseFieldType):
 
-	__slots__ = ["_SgnOffDt", "_Ref", "_Vrsn"]
+	__slots__ = ["_Ref", "_SgnOffDt", "_Vrsn"]
 	@property
 	def Ref(self):
 		return self._Ref

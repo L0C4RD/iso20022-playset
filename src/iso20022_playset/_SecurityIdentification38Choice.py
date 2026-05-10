@@ -1,15 +1,15 @@
 from . import base_types
-from ._TickerIdentifier import TickerIdentifier
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._RICIdentifier import RICIdentifier
-from ._EuroclearClearstreamIdentifier import EuroclearClearstreamIdentifier
 from ._AlternateIdentification1 import AlternateIdentification1
 from ._Bloomberg2Identifier import Bloomberg2Identifier
 from ._ConsolidatedTapeAssociationIdentifier import ConsolidatedTapeAssociationIdentifier
+from ._EuroclearClearstreamIdentifier import EuroclearClearstreamIdentifier
+from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._RICIdentifier import RICIdentifier
+from ._TickerIdentifier import TickerIdentifier
 
 class SecurityIdentification38Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ISIN", "_AltrnId", "_Cmon", "_CTA", "_TckrSymb", "_RIC", "_Blmbrg"]
+	__slots__ = ["_AltrnId", "_Blmbrg", "_CTA", "_Cmon", "_ISIN", "_RIC", "_TckrSymb"]
 	@property
 	def AltrnId(self):
 		return self._AltrnId

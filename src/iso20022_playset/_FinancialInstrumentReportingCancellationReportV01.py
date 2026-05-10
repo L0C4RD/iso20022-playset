@@ -1,7 +1,7 @@
 from . import base_types
 from ._SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
-from ._SupplementaryData1 import SupplementaryData1
 from ._SecuritiesReferenceDataReport7 import SecuritiesReferenceDataReport7
+from ._SupplementaryData1 import SupplementaryData1
 
 class FinancialInstrumentReportingCancellationReportV01(base_types._BaseFieldType):
 

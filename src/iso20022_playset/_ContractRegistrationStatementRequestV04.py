@@ -1,11 +1,11 @@
 from . import base_types
+from ._ContractRegistrationStatementRequest3 import ContractRegistrationStatementRequest3
 from ._CurrencyControlHeader8 import CurrencyControlHeader8
 from ._SupplementaryData1 import SupplementaryData1
-from ._ContractRegistrationStatementRequest3 import ContractRegistrationStatementRequest3
 
 class ContractRegistrationStatementRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_StmtReq", "_SplmtryData"]
+	__slots__ = ["_GrpHdr", "_SplmtryData", "_StmtReq"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr

@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISOYearMonth import ISOYearMonth
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
 from ._Authority1 import Authority1
 from ._ExternalAuthenticationMethod1Code import ExternalAuthenticationMethod1Code
+from ._ISOYearMonth import ISOYearMonth
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class Credentials3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_SubTp", "_XpryDt", "_OthrTp", "_Assgnr", "_Val"]
+	__slots__ = ["_Assgnr", "_OthrTp", "_SubTp", "_Tp", "_Val", "_XpryDt"]
 	@property
 	def Assgnr(self):
 		return self._Assgnr

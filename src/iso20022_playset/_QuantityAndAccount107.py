@@ -1,13 +1,13 @@
 from . import base_types
-from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
-from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
 from ._CashAccountIdentification6Choice import CashAccountIdentification6Choice
-from ._SafeKeepingPlace4 import SafeKeepingPlace4
+from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
 from ._QuantityBreakdown69 import QuantityBreakdown69
+from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
+from ._SafeKeepingPlace4 import SafeKeepingPlace4
 
 class QuantityAndAccount107(base_types._BaseFieldType):
 
-	__slots__ = ["_DnmtnChc", "_CshAcct", "_SfkpgPlc", "_SttlmQty", "_QtyBrkdwn"]
+	__slots__ = ["_CshAcct", "_DnmtnChc", "_QtyBrkdwn", "_SfkpgPlc", "_SttlmQty"]
 	@property
 	def CshAcct(self):
 		return self._CshAcct

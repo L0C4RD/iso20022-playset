@@ -1,11 +1,11 @@
 from . import base_types
-from ._CurrencyDesignation1Code import CurrencyDesignation1Code
 from ._CountryCode import CountryCode
+from ._CurrencyDesignation1Code import CurrencyDesignation1Code
 from ._Max350Text import Max350Text
 
 class CurrencyDesignation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Lctn", "_CcyDsgnt", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_CcyDsgnt", "_Lctn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

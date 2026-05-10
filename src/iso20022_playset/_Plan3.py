@@ -1,23 +1,23 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._InterestRateDetails2 import InterestRateDetails2
-from ._InstalmentAmountDetails3 import InstalmentAmountDetails3
-from ._PlanOwner1Code import PlanOwner1Code
-from ._Number import Number
 from ._AdditionalData1 import AdditionalData1
+from ._Frequency18Code import Frequency18Code
+from ._GracePeriodUnitType1Code import GracePeriodUnitType1Code
+from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._ISODate import ISODate
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._InstalmentAmountDetails3 import InstalmentAmountDetails3
+from ._InterestRateDetails2 import InterestRateDetails2
 from ._Max256Text import Max256Text
 from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
 from ._Max3NumericText import Max3NumericText
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._GracePeriodUnitType1Code import GracePeriodUnitType1Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Frequency18Code import Frequency18Code
+from ._Max70Text import Max70Text
+from ._Number import Number
+from ._PlanOwner1Code import PlanOwner1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Plan3(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfGracePrdUnits", "_GracePrdUnitTp", "_Ownr", "_FrstPmtDt", "_GrdTtlAmt", "_CstmrSelctdGracePrd", "_AddtlData", "_OthrOwnr", "_OwnrNm", "_OthrGracePrdUnitTp", "_AmtDtls", "_FrstAmt", "_Ccy", "_NbOfPrds", "_RegnSysId", "_IntrstRate", "_NrmlPmtAmt", "_Id", "_DfrrdPrds", "_TtlNbOfPmts", "_PrdUnit", "_PmtTp", "_Dfrrd"]
+	__slots__ = ["_AddtlData", "_AmtDtls", "_Ccy", "_CstmrSelctdGracePrd", "_Dfrrd", "_DfrrdPrds", "_FrstAmt", "_FrstPmtDt", "_GracePrdUnitTp", "_GrdTtlAmt", "_Id", "_IntrstRate", "_NbOfGracePrdUnits", "_NbOfPrds", "_NrmlPmtAmt", "_OthrGracePrdUnitTp", "_OthrOwnr", "_Ownr", "_OwnrNm", "_PmtTp", "_PrdUnit", "_RegnSysId", "_TtlNbOfPmts"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

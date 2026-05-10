@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericOrganisationIdentification2 import GenericOrganisationIdentification2
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._GenericOrganisationIdentification2 import GenericOrganisationIdentification2
 
 class OrganisationIdentification32(base_types._BaseFieldType):
 

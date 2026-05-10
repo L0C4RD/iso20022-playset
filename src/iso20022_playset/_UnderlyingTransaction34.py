@@ -1,10 +1,10 @@
 from . import base_types
-from ._PaymentTransaction155 import PaymentTransaction155
 from ._OriginalGroupHeader21 import OriginalGroupHeader21
+from ._PaymentTransaction155 import PaymentTransaction155
 
 class UnderlyingTransaction34(base_types._BaseFieldType):
 
-	__slots__ = ["_TxInf", "_OrgnlGrpInfAndCxl"]
+	__slots__ = ["_OrgnlGrpInfAndCxl", "_TxInf"]
 	@property
 	def OrgnlGrpInfAndCxl(self):
 		return self._OrgnlGrpInfAndCxl

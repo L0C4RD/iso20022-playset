@@ -3,7 +3,7 @@ from ._Max35Text import Max35Text
 
 class PersonalInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_NmOfPrtnr", "_MdnNmOfMthr", "_NmOfFthr"]
+	__slots__ = ["_MdnNmOfMthr", "_NmOfFthr", "_NmOfPrtnr"]
 	@property
 	def MdnNmOfMthr(self):
 		return self._MdnNmOfMthr

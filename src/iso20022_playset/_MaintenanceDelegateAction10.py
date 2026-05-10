@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._NetworkParameters7 import NetworkParameters7
-from ._TMSAction13 import TMSAction13
-from ._Max35Text import Max35Text
-from ._ProcessRetry3 import ProcessRetry3
 from ._DataSetIdentification11 import DataSetIdentification11
 from ._Max3000Binary import Max3000Binary
+from ._Max35Text import Max35Text
+from ._NetworkParameters7 import NetworkParameters7
+from ._ProcessRetry3 import ProcessRetry3
+from ._TMSAction13 import TMSAction13
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class MaintenanceDelegateAction10(base_types._BaseFieldType):
 
-	__slots__ = ["_ReTry", "_TMRmotAccs", "_Actn", "_TMSPrtcolVrsn", "_TMSPrtcol", "_AddtlInf", "_PrdcActn", "_DataSetId"]
+	__slots__ = ["_Actn", "_AddtlInf", "_DataSetId", "_PrdcActn", "_ReTry", "_TMRmotAccs", "_TMSPrtcol", "_TMSPrtcolVrsn"]
 	@property
 	def Actn(self):
 		return self._Actn

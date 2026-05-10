@@ -1,13 +1,13 @@
 from . import base_types
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
-from ._CardPaymentTransaction144 import CardPaymentTransaction144
 from ._CardPaymentTransaction137 import CardPaymentTransaction137
-from ._Traceability8 import Traceability8
+from ._CardPaymentTransaction144 import CardPaymentTransaction144
 from ._Max9NumericText import Max9NumericText
+from ._Traceability8 import Traceability8
 
 class CardPaymentDataSetTransaction53(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_Tracblt", "_Envt", "_TxSeqCntr", "_TxRspn"]
+	__slots__ = ["_Envt", "_Tracblt", "_Tx", "_TxRspn", "_TxSeqCntr"]
 	@property
 	def Envt(self):
 		return self._Envt

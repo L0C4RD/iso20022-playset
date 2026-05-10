@@ -4,7 +4,7 @@ from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
 
 class References28(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrTxId", "_PoolId", "_CtrPtyMktInfrstrctrTxId", "_TradId", "_MktInfrstrctrTxId", "_PrcrTxId", "_CmonId", "_AcctSvcrTxId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_CmonId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_PoolId", "_PrcrTxId", "_TradId"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

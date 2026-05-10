@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._RejectionReason68Code import RejectionReason68Code
 from ._Status4Code import Status4Code
-from ._Max35Text import Max35Text
 
 class SecuritiesCollateralResponse2(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnTp", "_RjctnInf", "_RjctnRsn", "_CollId", "_AsstNb"]
+	__slots__ = ["_AsstNb", "_CollId", "_RjctnInf", "_RjctnRsn", "_RspnTp"]
 	@property
 	def AsstNb(self):
 		return self._AsstNb

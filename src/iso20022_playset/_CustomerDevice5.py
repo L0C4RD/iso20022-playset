@@ -1,20 +1,20 @@
 from . import base_types
-from ._ISO3NumericCountryCode import ISO3NumericCountryCode
-from ._PhoneNumber import PhoneNumber
-from ._ISO2ALanguageCode import ISO2ALanguageCode
-from ._Max100Text import Max100Text
-from ._CustomerDeviceType2Code import CustomerDeviceType2Code
 from ._AdditionalData1 import AdditionalData1
-from ._Max256Text import Max256Text
-from ._GeographicPointInDecimalDegrees import GeographicPointInDecimalDegrees
-from ._ExternalDeviceOperatingSystemType1Code import ExternalDeviceOperatingSystemType1Code
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
+from ._CustomerDeviceType2Code import CustomerDeviceType2Code
 from ._DeviceIdentification1 import DeviceIdentification1
+from ._ExternalDeviceOperatingSystemType1Code import ExternalDeviceOperatingSystemType1Code
+from ._GeographicPointInDecimalDegrees import GeographicPointInDecimalDegrees
+from ._ISO2ALanguageCode import ISO2ALanguageCode
+from ._ISO3NumericCountryCode import ISO3NumericCountryCode
+from ._Max100Text import Max100Text
+from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._PhoneNumber import PhoneNumber
 
 class CustomerDevice5(base_types._BaseFieldType):
 
-	__slots__ = ["_OprgSysId", "_OprgSysBld", "_Lang", "_LctnCtryCd", "_IPAdr", "_AddtlData", "_Tp", "_DvcId", "_Email", "_OthrOprgSysTp", "_DvcNm", "_Prvdr", "_DvcNmNrmlzd", "_Phne", "_ManfctrMdlId", "_OthrTp", "_OprgSysVrsn", "_OprgSysTp", "_Manfctr", "_GeogcLctn"]
+	__slots__ = ["_AddtlData", "_DvcId", "_DvcNm", "_DvcNmNrmlzd", "_Email", "_GeogcLctn", "_IPAdr", "_Lang", "_LctnCtryCd", "_Manfctr", "_ManfctrMdlId", "_OprgSysBld", "_OprgSysId", "_OprgSysTp", "_OprgSysVrsn", "_OthrOprgSysTp", "_OthrTp", "_Phne", "_Prvdr", "_Tp"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

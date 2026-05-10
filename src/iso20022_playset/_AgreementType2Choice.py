@@ -4,7 +4,7 @@ from ._Max50Text import Max50Text
 
 class AgreementType2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Prtry"]
+	__slots__ = ["_Prtry", "_Tp"]
 	@property
 	def Prtry(self):
 		return self._Prtry

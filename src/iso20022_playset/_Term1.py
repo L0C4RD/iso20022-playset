@@ -1,10 +1,10 @@
 from . import base_types
-from ._RateOrAbsoluteValue1Choice import RateOrAbsoluteValue1Choice
 from ._Operator1Code import Operator1Code
+from ._RateOrAbsoluteValue1Choice import RateOrAbsoluteValue1Choice
 
 class Term1(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_Oprtr"]
+	__slots__ = ["_Oprtr", "_Val"]
 	@property
 	def Oprtr(self):
 		return self._Oprtr

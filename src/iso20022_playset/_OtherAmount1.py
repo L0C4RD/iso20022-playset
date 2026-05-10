@@ -4,7 +4,7 @@ from ._OtherAmountType1Choice import OtherAmountType1Choice
 
 class OtherAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Amt"]
+	__slots__ = ["_Amt", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

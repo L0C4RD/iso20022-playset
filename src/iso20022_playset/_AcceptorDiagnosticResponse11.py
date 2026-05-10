@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 from ._TMSTrigger1 import TMSTrigger1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class AcceptorDiagnosticResponse11(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_TMSTrggr", "_AcqrrAvlbl"]
+	__slots__ = ["_AcqrrAvlbl", "_Envt", "_TMSTrggr"]
 	@property
 	def AcqrrAvlbl(self):
 		return self._AcqrrAvlbl

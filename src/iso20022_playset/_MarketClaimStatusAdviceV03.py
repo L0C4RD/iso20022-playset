@@ -1,15 +1,15 @@
 from . import base_types
-from ._MarketClaimProcessingStatus1Choice import MarketClaimProcessingStatus1Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._References26 import References26
-from ._CorporateActionGeneralInformation181 import CorporateActionGeneralInformation181
 from ._AccountIdentification70 import AccountIdentification70
-from ._DocumentIdentification9 import DocumentIdentification9
+from ._CorporateActionGeneralInformation181 import CorporateActionGeneralInformation181
 from ._CorporateActionOption234 import CorporateActionOption234
+from ._DocumentIdentification9 import DocumentIdentification9
+from ._MarketClaimProcessingStatus1Choice import MarketClaimProcessingStatus1Choice
+from ._References26 import References26
+from ._SupplementaryData1 import SupplementaryData1
 
 class MarketClaimStatusAdviceV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MktClmCreId", "_MktClmDtls", "_SplmtryData", "_CorpActnGnlInf", "_TxRef", "_AcctDtls", "_MktClmPrcgSts"]
+	__slots__ = ["_AcctDtls", "_CorpActnGnlInf", "_MktClmCreId", "_MktClmDtls", "_MktClmPrcgSts", "_SplmtryData", "_TxRef"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

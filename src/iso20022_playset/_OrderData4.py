@@ -1,17 +1,17 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._LEIIdentifier import LEIIdentifier
-from ._OrderPriceData2 import OrderPriceData2
-from ._OrderInstructionData2 import OrderInstructionData2
-from ._RegulatoryTradingCapacity1Code import RegulatoryTradingCapacity1Code
 from ._ExecutingParty2Choice import ExecutingParty2Choice
+from ._LEIIdentifier import LEIIdentifier
 from ._OrderClassification2 import OrderClassification2
-from ._TransactionData3 import TransactionData3
+from ._OrderInstructionData2 import OrderInstructionData2
+from ._OrderPriceData2 import OrderPriceData2
 from ._PersonOrOrganisation4Choice import PersonOrOrganisation4Choice
+from ._RegulatoryTradingCapacity1Code import RegulatoryTradingCapacity1Code
+from ._TransactionData3 import TransactionData3
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class OrderData4(base_types._BaseFieldType):
 
-	__slots__ = ["_DrctElctrncAccs", "_InvstmtDcsnPrsn", "_NonExctgBrkr", "_TxData", "_TradgCpcty", "_LqdtyPrvsnActvty", "_InstrData", "_ClntId", "_OrdrClssfctn", "_ExctgPrsn", "_SubmitgNtty", "_OrdrPrics"]
+	__slots__ = ["_ClntId", "_DrctElctrncAccs", "_ExctgPrsn", "_InstrData", "_InvstmtDcsnPrsn", "_LqdtyPrvsnActvty", "_NonExctgBrkr", "_OrdrClssfctn", "_OrdrPrics", "_SubmitgNtty", "_TradgCpcty", "_TxData"]
 	@property
 	def ClntId(self):
 		return self._ClntId

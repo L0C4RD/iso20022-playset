@@ -1,6 +1,6 @@
 from . import base_types
-from ._MatchingStatus1Code import MatchingStatus1Code
 from ._GenericIdentification30 import GenericIdentification30
+from ._MatchingStatus1Code import MatchingStatus1Code
 
 class MatchingStatus27Choice(base_types._BaseFieldType):
 

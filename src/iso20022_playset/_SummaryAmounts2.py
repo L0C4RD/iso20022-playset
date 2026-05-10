@@ -1,11 +1,11 @@
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ThresholdType1Code import ThresholdType1Code
 from ._ReturnExcessCash1 import ReturnExcessCash1
+from ._ThresholdType1Code import ThresholdType1Code
 
 class SummaryAmounts2(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlAcrdIntrstAmt", "_TtlFees", "_PreHrcutCollVal", "_RtrXcssCshAndCollCcy", "_PrvsCollVal", "_MinTrfAmt", "_AdjstdXpsr", "_TtlPdgOutgngColl", "_TtlPdgIncmgColl", "_RndgAmt", "_PrvsXpsrVal", "_ThrshldTp", "_ThrshldAmt", "_CollReqrd"]
+	__slots__ = ["_AdjstdXpsr", "_CollReqrd", "_MinTrfAmt", "_PreHrcutCollVal", "_PrvsCollVal", "_PrvsXpsrVal", "_RndgAmt", "_RtrXcssCshAndCollCcy", "_ThrshldAmt", "_ThrshldTp", "_TtlAcrdIntrstAmt", "_TtlFees", "_TtlPdgIncmgColl", "_TtlPdgOutgngColl"]
 	@property
 	def AdjstdXpsr(self):
 		return self._AdjstdXpsr

@@ -1,7 +1,7 @@
 from . import base_types
-from ._CollateralAccountType3Code import CollateralAccountType3Code
-from ._AssetHolding3Choice import AssetHolding3Choice
 from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
+from ._AssetHolding3Choice import AssetHolding3Choice
+from ._CollateralAccountType3Code import CollateralAccountType3Code
 
 class AssetHolding3(base_types._BaseFieldType):
 

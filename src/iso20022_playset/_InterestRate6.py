@@ -4,7 +4,7 @@ from ._InterestRate27Choice import InterestRate27Choice
 
 class InterestRate6(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrstRate", "_Amt"]
+	__slots__ = ["_Amt", "_IntrstRate"]
 	@property
 	def Amt(self):
 		return self._Amt

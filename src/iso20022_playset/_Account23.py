@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class Account23(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdAcctDtls", "_AcctId"]
+	__slots__ = ["_AcctId", "_RltdAcctDtls"]
 	@property
 	def AcctId(self):
 		return self._AcctId

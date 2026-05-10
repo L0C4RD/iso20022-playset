@@ -1,15 +1,15 @@
 from . import base_types
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
 from ._Extended350Code import Extended350Code
-from ._YesNoIndicator import YesNoIndicator
-from ._PriceSourceFormatChoice import PriceSourceFormatChoice
 from ._PriceRateOrAmountOrUnknownChoice import PriceRateOrAmountOrUnknownChoice
-from ._TypeOfPrice11Code import TypeOfPrice11Code
+from ._PriceSourceFormatChoice import PriceSourceFormatChoice
 from ._PriceValueType2Code import PriceValueType2Code
+from ._TypeOfPrice11Code import TypeOfPrice11Code
+from ._YesNoIndicator import YesNoIndicator
 
 class PriceInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_SrcOfPric", "_Tp", "_Val", "_Yldd", "_XtndedTp", "_ValTp", "_QtnDt"]
+	__slots__ = ["_QtnDt", "_SrcOfPric", "_Tp", "_Val", "_ValTp", "_XtndedTp", "_Yldd"]
 	@property
 	def QtnDt(self):
 		return self._QtnDt

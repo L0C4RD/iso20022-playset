@@ -1,28 +1,28 @@
 from . import base_types
-from ._BusinessFlowType1Code import BusinessFlowType1Code
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._DateAndAmount2 import DateAndAmount2
-from ._Unit11 import Unit11
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._Conversion1 import Conversion1
-from ._FinancialInstrument63Choice import FinancialInstrument63Choice
-from ._Intermediary43 import Intermediary43
-from ._Crystallisation2 import Crystallisation2
-from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
-from ._Tax36 import Tax36
-from ._Quantity47 import Quantity47
-from ._AdditionalReference10 import AdditionalReference10
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._FundSettlementParameters17 import FundSettlementParameters17
-from ._TransferType2Choice import TransferType2Choice
 from ._Account28 import Account28
-from ._PaymentInstrument14 import PaymentInstrument14
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._AdditionalInformation15 import AdditionalInformation15
+from ._AdditionalReference10 import AdditionalReference10
+from ._BusinessFlowType1Code import BusinessFlowType1Code
+from ._Conversion1 import Conversion1
+from ._Crystallisation2 import Crystallisation2
+from ._DateAndAmount2 import DateAndAmount2
+from ._FinancialInstrument63Choice import FinancialInstrument63Choice
+from ._FundSettlementParameters17 import FundSettlementParameters17
+from ._ISODate import ISODate
+from ._Intermediary43 import Intermediary43
 from ._Max35Text import Max35Text
+from ._PaymentInstrument14 import PaymentInstrument14
+from ._Quantity47 import Quantity47
+from ._Tax36 import Tax36
+from ._TransferType2Choice import TransferType2Choice
+from ._Unit11 import Unit11
+from ._YesNoIndicator import YesNoIndicator
 
 class FinancialInstrument102(base_types._BaseFieldType):
 
-	__slots__ = ["_BizFlowTp", "_TtlBookVal", "_IntrmyInf", "_Trfr", "_ReqdTrfDt", "_PmtDtls", "_PrtlInstdQty", "_CtrPtyRef", "_Instrm", "_AddtlAsst", "_TrfCcy", "_Qty", "_CrstllstnDtls", "_SttlmPtiesDtls", "_ReqdSttlmDt", "_NotAvlbl", "_LineId", "_TaxValtnPt", "_AsstsHeldInOwnNm", "_AvrgAcqstnPric", "_AddtlInf", "_TrfTp", "_ReqdTradDt", "_Convs", "_UnitsDtls", "_TrfRsltsInChngOfBnfclOwnr", "_ClntRef", "_TrfeeAcct"]
+	__slots__ = ["_AddtlAsst", "_AddtlInf", "_AsstsHeldInOwnNm", "_AvrgAcqstnPric", "_BizFlowTp", "_ClntRef", "_Convs", "_CrstllstnDtls", "_CtrPtyRef", "_Instrm", "_IntrmyInf", "_LineId", "_NotAvlbl", "_PmtDtls", "_PrtlInstdQty", "_Qty", "_ReqdSttlmDt", "_ReqdTradDt", "_ReqdTrfDt", "_SttlmPtiesDtls", "_TaxValtnPt", "_TrfCcy", "_TrfRsltsInChngOfBnfclOwnr", "_TrfTp", "_TrfeeAcct", "_Trfr", "_TtlBookVal", "_UnitsDtls"]
 	@property
 	def AddtlAsst(self):
 		return self._AddtlAsst

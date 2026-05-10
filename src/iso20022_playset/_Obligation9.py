@@ -1,13 +1,13 @@
 from . import base_types
 from ._BlockChainAddressWallet5 import BlockChainAddressWallet5
+from ._CollateralAccount3 import CollateralAccount3
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._ExposureType11Code import ExposureType11Code
-from ._CollateralAccount3 import CollateralAccount3
 from ._PartyIdentification178Choice import PartyIdentification178Choice
 
 class Obligation9(base_types._BaseFieldType):
 
-	__slots__ = ["_CollAcctId", "_SvcgPtyB", "_SvcgPtyA", "_XpsrTp", "_PtyB", "_ValtnDt", "_PtyA", "_BlckChainAdrOrWllt"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_CollAcctId", "_PtyA", "_PtyB", "_SvcgPtyA", "_SvcgPtyB", "_ValtnDt", "_XpsrTp"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt

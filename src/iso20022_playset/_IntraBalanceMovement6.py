@@ -1,18 +1,18 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._GenericIdentification37 import GenericIdentification37
-from ._PriorityNumeric4Choice import PriorityNumeric4Choice
-from ._Linkages57 import Linkages57
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max350Text import Max350Text
-from ._ISODateTime import ISODateTime
 from ._Amount2Choice import Amount2Choice
 from ._CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuantityBreakdown3
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._GenericIdentification37 import GenericIdentification37
+from ._ISODateTime import ISODateTime
+from ._Linkages57 import Linkages57
+from ._Max350Text import Max350Text
+from ._PriorityNumeric4Choice import PriorityNumeric4Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class IntraBalanceMovement6(base_types._BaseFieldType):
 
-	__slots__ = ["_IntnddSttlmDt", "_MsgOrgtr", "_RmngSttlmAmt", "_SttlmAmt", "_CshSubBalId", "_BalFr", "_Lnkgs", "_Prty", "_CreDtTm", "_StsDt", "_PrevslySttldAmt", "_FctvSttlmDt", "_SttldAmt", "_InstrPrcgAddtlDtls", "_SplmtryData", "_BalTo"]
+	__slots__ = ["_BalFr", "_BalTo", "_CreDtTm", "_CshSubBalId", "_FctvSttlmDt", "_InstrPrcgAddtlDtls", "_IntnddSttlmDt", "_Lnkgs", "_MsgOrgtr", "_PrevslySttldAmt", "_Prty", "_RmngSttlmAmt", "_SplmtryData", "_StsDt", "_SttldAmt", "_SttlmAmt"]
 	@property
 	def BalFr(self):
 		return self._BalFr

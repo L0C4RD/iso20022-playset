@@ -1,10 +1,10 @@
 from . import base_types
-from ._NoReasonCode import NoReasonCode
 from ._ClearingExceptionOrExemption2 import ClearingExceptionOrExemption2
+from ._NoReasonCode import NoReasonCode
 
 class ClearingExceptionOrExemption3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_CtrPties"]
+	__slots__ = ["_CtrPties", "_Rsn"]
 	@property
 	def CtrPties(self):
 		return self._CtrPties

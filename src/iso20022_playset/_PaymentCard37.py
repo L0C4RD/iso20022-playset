@@ -1,15 +1,15 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._ContentInformationType10 import ContentInformationType10
-from ._Max3Text import Max3Text
 from ._CardDataReading1Code import CardDataReading1Code
+from ._ContentInformationType10 import ContentInformationType10
+from ._CurrencyAndAmount import CurrencyAndAmount
 from ._Exact3AlphaNumericText import Exact3AlphaNumericText
+from ._Max3Text import Max3Text
 from ._PlainCardData24 import PlainCardData24
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PaymentCard37(base_types._BaseFieldType):
 
-	__slots__ = ["_CardCtryCd", "_FllbckInd", "_CardDataNtryMd", "_PrtctdCardData", "_PlainCardData", "_CardCcyCd", "_ElctrncPrsBal"]
+	__slots__ = ["_CardCcyCd", "_CardCtryCd", "_CardDataNtryMd", "_ElctrncPrsBal", "_FllbckInd", "_PlainCardData", "_PrtctdCardData"]
 	@property
 	def CardCcyCd(self):
 		return self._CardCcyCd

@@ -1,13 +1,13 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._PercentageRate import PercentageRate
-from ._Max70Text import Max70Text
-from ._Max35Text import Max35Text
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._PercentageRate import PercentageRate
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Adjustment13(base_types._BaseFieldType):
 
-	__slots__ = ["_PrmtnCd", "_Amt", "_Rsn", "_TaxOnOrgnlAmt", "_AddtlTp", "_Tp", "_Desc", "_Pctg"]
+	__slots__ = ["_AddtlTp", "_Amt", "_Desc", "_Pctg", "_PrmtnCd", "_Rsn", "_TaxOnOrgnlAmt", "_Tp"]
 	@property
 	def AddtlTp(self):
 		return self._AddtlTp

@@ -5,7 +5,7 @@ from ._QuantityOrCode1Choice import QuantityOrCode1Choice
 
 class Vote14(base_types._BaseFieldType):
 
-	__slots__ = ["_WthMgmt", "_OneYr", "_Agnst", "_Prtry", "_IssrLabl", "_Abstn", "_ThreeYrs", "_Wthhld", "_TwoYrs", "_Blnk", "_AgnstMgmt", "_For", "_ListgGrpRsltnLabl", "_Dscrtnry", "_NoActn"]
+	__slots__ = ["_Abstn", "_Agnst", "_AgnstMgmt", "_Blnk", "_Dscrtnry", "_For", "_IssrLabl", "_ListgGrpRsltnLabl", "_NoActn", "_OneYr", "_Prtry", "_ThreeYrs", "_TwoYrs", "_WthMgmt", "_Wthhld"]
 	@property
 	def Abstn(self):
 		return self._Abstn

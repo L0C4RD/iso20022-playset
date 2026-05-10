@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PostalAddress1 import PostalAddress1
-from ._Max35Text import Max35Text
 from ._GenderCode import GenderCode
+from ._ISODate import ISODate
+from ._Max35Text import Max35Text
 from ._NamePrefix1Code import NamePrefix1Code
+from ._PostalAddress1 import PostalAddress1
 
 class IndividualPerson8(base_types._BaseFieldType):
 
-	__slots__ = ["_Gndr", "_NmPrfx", "_BirthDt", "_GvnNm", "_IndvInvstrAdr", "_NmSfx", "_SclSctyNb", "_Nm"]
+	__slots__ = ["_BirthDt", "_Gndr", "_GvnNm", "_IndvInvstrAdr", "_Nm", "_NmPrfx", "_NmSfx", "_SclSctyNb"]
 	@property
 	def BirthDt(self):
 		return self._BirthDt

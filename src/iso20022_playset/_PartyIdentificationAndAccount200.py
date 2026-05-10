@@ -1,14 +1,14 @@
 from . import base_types
 from ._ContactIdentification2 import ContactIdentification2
-from ._Max35Text import Max35Text
-from ._SubAccount5 import SubAccount5
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
 from ._PartyIdentification178Choice import PartyIdentification178Choice
+from ._SubAccount5 import SubAccount5
 
 class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 
-	__slots__ = ["_SubAcct", "_CtctPrsn", "_PtyId", "_AcctId", "_BlckChainAdrOrWllt", "_PrcgDt", "_PrcgId"]
+	__slots__ = ["_AcctId", "_BlckChainAdrOrWllt", "_CtctPrsn", "_PrcgDt", "_PrcgId", "_PtyId", "_SubAcct"]
 	@property
 	def AcctId(self):
 		return self._AcctId

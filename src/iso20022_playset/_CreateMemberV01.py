@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MemberIdentification3Choice import MemberIdentification3Choice
 from ._Member6 import Member6
+from ._MemberIdentification3Choice import MemberIdentification3Choice
 from ._MessageHeader1 import MessageHeader1
+from ._SupplementaryData1 import SupplementaryData1
 
 class CreateMemberV01(base_types._BaseFieldType):
 
-	__slots__ = ["_ValSet", "_SplmtryData", "_MsgHdr", "_MmbId"]
+	__slots__ = ["_MmbId", "_MsgHdr", "_SplmtryData", "_ValSet"]
 	@property
 	def MmbId(self):
 		return self._MmbId

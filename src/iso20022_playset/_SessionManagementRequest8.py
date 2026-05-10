@@ -1,15 +1,15 @@
 from . import base_types
-from ._PaymentContext30 import PaymentContext30
-from ._SupplementaryData1 import SupplementaryData1
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
-from ._RetailerService4Code import RetailerService4Code
+from ._DiagnosisRequest1 import DiagnosisRequest1
 from ._LoginRequest7 import LoginRequest7
 from ._LogoutRequest1 import LogoutRequest1
-from ._DiagnosisRequest1 import DiagnosisRequest1
+from ._PaymentContext30 import PaymentContext30
+from ._RetailerService4Code import RetailerService4Code
+from ._SupplementaryData1 import SupplementaryData1
 
 class SessionManagementRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Cntxt", "_LgtReq", "_Envt", "_LgnReq", "_DgnssReq", "_SvcCntt"]
+	__slots__ = ["_Cntxt", "_DgnssReq", "_Envt", "_LgnReq", "_LgtReq", "_SplmtryData", "_SvcCntt"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt

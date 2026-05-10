@@ -2,14 +2,14 @@ from . import base_types
 from ._AddressType2Choice import AddressType2Choice
 from ._CountryCode import CountryCode
 from ._Max10Text import Max10Text
-from ._YesNoIndicator import YesNoIndicator
+from ._Max16Text import Max16Text
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
-from ._Max16Text import Max16Text
+from ._YesNoIndicator import YesNoIndicator
 
 class PostalAddress21(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_CareOf", "_Flr", "_Stat", "_MlngInd", "_SdInBldg", "_BldgNb", "_PstBx", "_AdrTp", "_Vllg", "_AdrLine", "_DstrctNm", "_SuiteId", "_RegnAdrInd", "_PstCd", "_StrtNm", "_TwnNm", "_BldgNm"]
+	__slots__ = ["_AdrLine", "_AdrTp", "_BldgNb", "_BldgNm", "_CareOf", "_Ctry", "_DstrctNm", "_Flr", "_MlngInd", "_PstBx", "_PstCd", "_RegnAdrInd", "_SdInBldg", "_Stat", "_StrtNm", "_SuiteId", "_TwnNm", "_Vllg"]
 	@property
 	def AdrLine(self):
 		return self._AdrLine

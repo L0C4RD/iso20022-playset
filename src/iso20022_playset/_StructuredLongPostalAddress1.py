@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class StructuredLongPostalAddress1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_StrtNm", "_DstrctNm", "_RgnId", "_POB", "_Flr", "_StrtBldgId", "_CtyId", "_TwnNm", "_Stat", "_PstCdId", "_BldgNm"]
+	__slots__ = ["_BldgNm", "_Ctry", "_CtyId", "_DstrctNm", "_Flr", "_POB", "_PstCdId", "_RgnId", "_Stat", "_StrtBldgId", "_StrtNm", "_TwnNm"]
 	@property
 	def BldgNm(self):
 		return self._BldgNm

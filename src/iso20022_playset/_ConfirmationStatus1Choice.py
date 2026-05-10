@@ -1,10 +1,10 @@
 from . import base_types
-from ._OrderConfirmationStatus1Code import OrderConfirmationStatus1Code
 from ._ConfirmationRejectedStatus2 import ConfirmationRejectedStatus2
+from ._OrderConfirmationStatus1Code import OrderConfirmationStatus1Code
 
 class ConfirmationStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfRjctd", "_AmdmntRjctd", "_Sts"]
+	__slots__ = ["_AmdmntRjctd", "_ConfRjctd", "_Sts"]
 	@property
 	def AmdmntRjctd(self):
 		return self._AmdmntRjctd

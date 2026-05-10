@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
-from ._Max70Text import Max70Text
 from ._CurrencyAndAmount import CurrencyAndAmount
+from ._ISODate import ISODate
+from ._Max70Text import Max70Text
+from ._PlusOrMinusIndicator import PlusOrMinusIndicator
 
 class AmountAndDirection111(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_Sgn", "_Labl", "_Amt"]
+	__slots__ = ["_Amt", "_Dt", "_Labl", "_Sgn"]
 	@property
 	def Amt(self):
 		return self._Amt

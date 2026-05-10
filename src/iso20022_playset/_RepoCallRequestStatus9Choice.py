@@ -1,7 +1,7 @@
 from . import base_types
-from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
-from ._DeniedStatus18Choice import DeniedStatus18Choice
 from ._AcknowledgedAcceptedStatus27Choice import AcknowledgedAcceptedStatus27Choice
+from ._DeniedStatus18Choice import DeniedStatus18Choice
+from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
 
 class RepoCallRequestStatus9Choice(base_types._BaseFieldType):
 

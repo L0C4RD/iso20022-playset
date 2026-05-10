@@ -1,6 +1,6 @@
 from . import base_types
-from ._Max70Text import Max70Text
 from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 from ._PurposeCode9Choice import PurposeCode9Choice
 
 class SecuritiesAccount35(base_types._BaseFieldType):

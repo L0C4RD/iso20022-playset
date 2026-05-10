@@ -1,11 +1,11 @@
 from . import base_types
-from ._Holding1Code import Holding1Code
 from ._DecimalNumber import DecimalNumber
+from ._Holding1Code import Holding1Code
 from ._Max35Text import Max35Text
 
 class BlockedHoldingDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_HldgCertNb", "_BlckdHldg", "_PrtlHldgUnits"]
+	__slots__ = ["_BlckdHldg", "_HldgCertNb", "_PrtlHldgUnits"]
 	@property
 	def BlckdHldg(self):
 		return self._BlckdHldg

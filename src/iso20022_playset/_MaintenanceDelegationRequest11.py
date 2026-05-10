@@ -1,12 +1,12 @@
 from . import base_types
-from ._MaintenanceDelegation19 import MaintenanceDelegation19
-from ._ISODateTime import ISODateTime
-from ._Max140Binary import Max140Binary
 from ._GenericIdentification176 import GenericIdentification176
+from ._ISODateTime import ISODateTime
+from ._MaintenanceDelegation19 import MaintenanceDelegation19
+from ._Max140Binary import Max140Binary
 
 class MaintenanceDelegationRequest11(base_types._BaseFieldType):
 
-	__slots__ = ["_TMId", "_TMDtTm", "_ReqdDlgtn", "_MstrTMId", "_TMChllngVal"]
+	__slots__ = ["_MstrTMId", "_ReqdDlgtn", "_TMChllngVal", "_TMDtTm", "_TMId"]
 	@property
 	def MstrTMId(self):
 		return self._MstrTMId

@@ -4,7 +4,7 @@ from ._Max35Text import Max35Text
 
 class ATMContext16(base_types._BaseFieldType):
 
-	__slots__ = ["_Svc", "_SsnRef"]
+	__slots__ = ["_SsnRef", "_Svc"]
 	@property
 	def SsnRef(self):
 		return self._SsnRef

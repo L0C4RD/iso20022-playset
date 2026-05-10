@@ -1,11 +1,11 @@
 from . import base_types
 from ._GenericIdentification175 import GenericIdentification175
-from ._UTIIdentifier import UTIIdentifier
 from ._NoReasonCode import NoReasonCode
+from ._UTIIdentifier import UTIIdentifier
 
 class UniqueTransactionIdentifier3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_NotAvlbl", "_UnqTxIdr"]
+	__slots__ = ["_NotAvlbl", "_Prtry", "_UnqTxIdr"]
 	@property
 	def NotAvlbl(self):
 		return self._NotAvlbl

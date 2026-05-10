@@ -1,22 +1,22 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._BonusWithdrawal2 import BonusWithdrawal2
-from ._YesNoIndicator import YesNoIndicator
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._DateAndAmount2 import DateAndAmount2
-from ._SubscriptionInformation2 import SubscriptionInformation2
-from ._PreviousYear4 import PreviousYear4
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._TaxEfficientProductType2Choice import TaxEfficientProductType2Choice
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._TaxReference2 import TaxReference2
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._AdditionalInformation15 import AdditionalInformation15
+from ._BonusWithdrawal2 import BonusWithdrawal2
+from ._DateAndAmount2 import DateAndAmount2
+from ._ISODate import ISODate
+from ._InnovativeFinance1 import InnovativeFinance1
 from ._Max35Text import Max35Text
 from ._OtherAmount3 import OtherAmount3
-from ._InnovativeFinance1 import InnovativeFinance1
+from ._PreviousYear4 import PreviousYear4
+from ._SubscriptionInformation2 import SubscriptionInformation2
+from ._TaxEfficientProductType2Choice import TaxEfficientProductType2Choice
+from ._TaxReference2 import TaxReference2
+from ._YesNoIndicator import YesNoIndicator
 
 class TaxEfficientProduct7(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsYrsSbcptAmt", "_TrfrAltrnId", "_BnsOrWdrwl", "_DtOfFrstSbcpt", "_TaxEffcntPdctTp", "_PrvsYrSbcptAmt", "_OthrAmt", "_CurInvstmtAmt", "_TtlSbcptAmt", "_UusdTaxDdctn", "_CshCmpntInd", "_EstmtdVal", "_CurYr", "_LwstInvstdAmtCurYr", "_WdrwlForResdtlPurchsPrgrs", "_TaxClctnBase", "_DtFrstQlfygAddtn", "_InnvtvFinc", "_AddtlInf", "_CurYrSbcptDtls", "_InvstrTaxRef", "_InvstmtsToFllwVal", "_PrvsYrs"]
+	__slots__ = ["_AddtlInf", "_BnsOrWdrwl", "_CshCmpntInd", "_CurInvstmtAmt", "_CurYr", "_CurYrSbcptDtls", "_DtFrstQlfygAddtn", "_DtOfFrstSbcpt", "_EstmtdVal", "_InnvtvFinc", "_InvstmtsToFllwVal", "_InvstrTaxRef", "_LwstInvstdAmtCurYr", "_OthrAmt", "_PrvsYrSbcptAmt", "_PrvsYrs", "_PrvsYrsSbcptAmt", "_TaxClctnBase", "_TaxEffcntPdctTp", "_TrfrAltrnId", "_TtlSbcptAmt", "_UusdTaxDdctn", "_WdrwlForResdtlPurchsPrgrs"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

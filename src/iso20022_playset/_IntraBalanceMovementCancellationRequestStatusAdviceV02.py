@@ -1,17 +1,17 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._ProcessingStatus69Choice import ProcessingStatus69Choice
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._References14 import References14
+from ._CashAccount40 import CashAccount40
 from ._DocumentIdentification51 import DocumentIdentification51
 from ._IntraBalance5 import IntraBalance5
 from ._Max35Text import Max35Text
-from ._CashAccount40 import CashAccount40
+from ._ProcessingStatus69Choice import ProcessingStatus69Choice
+from ._References14 import References14
+from ._SupplementaryData1 import SupplementaryData1
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
 
 class IntraBalanceMovementCancellationRequestStatusAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_TxId", "_UndrlygIntraBal", "_PrcgSts", "_ReqRef", "_CshAcctSvcr", "_CshAcct", "_CshAcctOwnr", "_SplmtryData"]
+	__slots__ = ["_CshAcct", "_CshAcctOwnr", "_CshAcctSvcr", "_Id", "_PrcgSts", "_ReqRef", "_SplmtryData", "_TxId", "_UndrlygIntraBal"]
 	@property
 	def CshAcct(self):
 		return self._CshAcct

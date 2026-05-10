@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ExternalDocumentType1Code import ExternalDocumentType1Code
+from ._ISODate import ISODate
 from ._LanguageCode import LanguageCode
 from ._Max35Text import Max35Text
 from ._PartyIdentification116 import PartyIdentification116
 
 class GroupHeader69(base_types._BaseFieldType):
 
-	__slots__ = ["_SellrTaxRprtv", "_BuyrTaxRprtv", "_OrgnlId", "_Id", "_LangCd", "_IssdDt", "_TaxRptPurp", "_RptCtgy"]
+	__slots__ = ["_BuyrTaxRprtv", "_Id", "_IssdDt", "_LangCd", "_OrgnlId", "_RptCtgy", "_SellrTaxRprtv", "_TaxRptPurp"]
 	@property
 	def BuyrTaxRprtv(self):
 		return self._BuyrTaxRprtv

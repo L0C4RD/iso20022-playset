@@ -1,16 +1,16 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._SupplementaryData1 import SupplementaryData1
-from ._QueryDataType1Code import QueryDataType1Code
-from ._Period12 import Period12
-from ._Max35Text import Max35Text
-from ._QueryOrderStatus1Code import QueryOrderStatus1Code
-from ._MessageIdentification1 import MessageIdentification1
 from ._Max35NumericText import Max35NumericText
+from ._Max35Text import Max35Text
+from ._MessageIdentification1 import MessageIdentification1
+from ._Period12 import Period12
+from ._QueryDataType1Code import QueryDataType1Code
+from ._QueryOrderStatus1Code import QueryOrderStatus1Code
+from ._SupplementaryData1 import SupplementaryData1
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ForeignExchangeTradeCaptureReportRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_QryByPrd", "_QryReqId", "_QryTp", "_QryEndId", "_QryPrd", "_QryStartNb", "_QryParamVal", "_QryPgSz", "_QryOrdrSts", "_SplmtryData", "_QryTradId"]
+	__slots__ = ["_QryByPrd", "_QryEndId", "_QryOrdrSts", "_QryParamVal", "_QryPgSz", "_QryPrd", "_QryReqId", "_QryStartNb", "_QryTp", "_QryTradId", "_SplmtryData"]
 	@property
 	def QryByPrd(self):
 		return self._QryByPrd

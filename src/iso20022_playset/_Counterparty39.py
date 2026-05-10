@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentification236Choice import PartyIdentification236Choice
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._PartyIdentification236Choice import PartyIdentification236Choice
 
 class Counterparty39(base_types._BaseFieldType):
 
-	__slots__ = ["_RptSubmitgNtty", "_RptgCtrPty", "_OthrCtrPty", "_NttyRspnsblForRpt"]
+	__slots__ = ["_NttyRspnsblForRpt", "_OthrCtrPty", "_RptSubmitgNtty", "_RptgCtrPty"]
 	@property
 	def NttyRspnsblForRpt(self):
 		return self._NttyRspnsblForRpt

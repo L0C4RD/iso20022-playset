@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentificationAndAccount219 import PartyIdentificationAndAccount219
 from ._PartyIdentification243Choice import PartyIdentification243Choice
+from ._PartyIdentificationAndAccount219 import PartyIdentificationAndAccount219
 
 class Clearing6(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSgmt", "_ClrMmb"]
+	__slots__ = ["_ClrMmb", "_ClrSgmt"]
 	@property
 	def ClrMmb(self):
 		return self._ClrMmb

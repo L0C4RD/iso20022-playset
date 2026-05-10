@@ -4,7 +4,7 @@ from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Cho
 
 class QuantityOrAmount2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_Amt"]
+	__slots__ = ["_Amt", "_Qty"]
 	@property
 	def Amt(self):
 		return self._Amt

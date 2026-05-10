@@ -1,10 +1,10 @@
 from . import base_types
-from ._UTIIdentifier import UTIIdentifier
 from ._Max35Text import Max35Text
+from ._UTIIdentifier import UTIIdentifier
 
 class TransactionIdentifications54(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrTxId", "_UnqTxIdr", "_AcctSvcrTxId", "_TradId", "_MktInfrstrctrTxId", "_PrcrTxId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_MktInfrstrctrTxId", "_PrcrTxId", "_TradId", "_UnqTxIdr"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

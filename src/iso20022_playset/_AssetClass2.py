@@ -1,11 +1,11 @@
 from . import base_types
-from ._DerivativeForeignExchange3 import DerivativeForeignExchange3
 from ._DerivativeCommodity2 import DerivativeCommodity2
+from ._DerivativeForeignExchange3 import DerivativeForeignExchange3
 from ._DerivativeInterest3 import DerivativeInterest3
 
 class AssetClass2(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmmdty", "_Intrst", "_FX"]
+	__slots__ = ["_Cmmdty", "_FX", "_Intrst"]
 	@property
 	def Cmmdty(self):
 		return self._Cmmdty

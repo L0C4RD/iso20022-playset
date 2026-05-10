@@ -4,7 +4,7 @@ from ._Max70Text import Max70Text
 
 class LoyaltyProgramme4(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Tp", "_PtcptId"]
+	__slots__ = ["_Id", "_PtcptId", "_Tp"]
 	@property
 	def Id(self):
 		return self._Id

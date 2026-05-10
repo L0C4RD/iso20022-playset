@@ -1,13 +1,13 @@
 from . import base_types
 from ._ATMCommand7 import ATMCommand7
-from ._RejectReason1Code import RejectReason1Code
+from ._Max100KBinary import Max100KBinary
 from ._Max35Text import Max35Text
 from ._Max500Text import Max500Text
-from ._Max100KBinary import Max100KBinary
+from ._RejectReason1Code import RejectReason1Code
 
 class ATMReject2(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmd", "_RjctRsn", "_RjctInitrId", "_MsgInErr", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Cmd", "_MsgInErr", "_RjctInitrId", "_RjctRsn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

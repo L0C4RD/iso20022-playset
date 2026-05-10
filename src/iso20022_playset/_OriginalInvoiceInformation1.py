@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ISODate import ISODate
 from ._Max35Text import Max35Text
 
 class OriginalInvoiceInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_IsseDt", "_TtlInvcAmt", "_PmtDueDt", "_DocNb"]
+	__slots__ = ["_DocNb", "_IsseDt", "_PmtDueDt", "_TtlInvcAmt"]
 	@property
 	def DocNb(self):
 		return self._DocNb

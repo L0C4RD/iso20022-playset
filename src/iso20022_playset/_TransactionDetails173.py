@@ -1,19 +1,19 @@
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._TradeDate8Choice import TradeDate8Choice
-from ._SettlementParties125 import SettlementParties125
+from ._AmountAndDirection51 import AmountAndDirection51
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 from ._PartyIdentification149 import PartyIdentification149
+from ._Quantity51Choice import Quantity51Choice
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._SecurityIdentification19 import SecurityIdentification19
 from ._SettlementDate19Choice import SettlementDate19Choice
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._Quantity51Choice import Quantity51Choice
-from ._AmountAndDirection51 import AmountAndDirection51
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from ._SettlementParties125 import SettlementParties125
+from ._TradeDate8Choice import TradeDate8Choice
 
 class TransactionDetails173(base_types._BaseFieldType):
 
-	__slots__ = ["_Invstr", "_FinInstrmId", "_SctiesMvmntTp", "_SfkpgAcct", "_SttlmAmt", "_Pmt", "_SttlmDt", "_TradDt", "_BlckChainAdrOrWllt", "_DlvrgSttlmPties", "_RcvgSttlmPties", "_SttlmQty"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_DlvrgSttlmPties", "_FinInstrmId", "_Invstr", "_Pmt", "_RcvgSttlmPties", "_SctiesMvmntTp", "_SfkpgAcct", "_SttlmAmt", "_SttlmDt", "_SttlmQty", "_TradDt"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt

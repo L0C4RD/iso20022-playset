@@ -3,7 +3,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 
-	__slots__ = ["_NtryDtInd", "_AcctSvcrInd", "_NtryAmtInd", "_AcctOwnrInd", "_NtryStsInd", "_AcctCcyInd", "_NtryRefInd", "_AcctTpInd"]
+	__slots__ = ["_AcctCcyInd", "_AcctOwnrInd", "_AcctSvcrInd", "_AcctTpInd", "_NtryAmtInd", "_NtryDtInd", "_NtryRefInd", "_NtryStsInd"]
 	@property
 	def AcctCcyInd(self):
 		return self._AcctCcyInd

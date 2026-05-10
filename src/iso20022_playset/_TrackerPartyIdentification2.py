@@ -1,11 +1,11 @@
 from . import base_types
-from ._TrackerParty2Choice import TrackerParty2Choice
-from ._PostalAddress24 import PostalAddress24
 from ._Max140Text import Max140Text
+from ._PostalAddress24 import PostalAddress24
+from ._TrackerParty2Choice import TrackerParty2Choice
 
 class TrackerPartyIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_PstlAdr", "_Nm", "_Id"]
+	__slots__ = ["_Id", "_Nm", "_PstlAdr"]
 	@property
 	def Id(self):
 		return self._Id

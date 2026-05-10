@@ -4,7 +4,7 @@ from ._RateName1 import RateName1
 
 class RateOrName1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RateNm", "_Rate"]
+	__slots__ = ["_Rate", "_RateNm"]
 	@property
 	def Rate(self):
 		return self._Rate

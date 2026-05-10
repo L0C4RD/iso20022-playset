@@ -1,11 +1,11 @@
 from . import base_types
-from ._Max35Text import Max35Text
 from ._InformationDistribution1Choice import InformationDistribution1Choice
+from ._Max35Text import Max35Text
 from ._YesNoIndicator import YesNoIndicator
 
 class Notification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Reqrd", "_NtfctnTp", "_DstrbtnTp"]
+	__slots__ = ["_DstrbtnTp", "_NtfctnTp", "_Reqrd"]
 	@property
 	def DstrbtnTp(self):
 		return self._DstrbtnTp

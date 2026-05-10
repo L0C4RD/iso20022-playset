@@ -4,7 +4,7 @@ from ._TradeRecurrentQuery5 import TradeRecurrentQuery5
 
 class TradeReportQuery13Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RcrntQry", "_AdHocQry"]
+	__slots__ = ["_AdHocQry", "_RcrntQry"]
 	@property
 	def AdHocQry(self):
 		return self._AdHocQry

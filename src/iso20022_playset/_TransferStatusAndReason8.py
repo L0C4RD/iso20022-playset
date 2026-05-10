@@ -1,28 +1,28 @@
 from . import base_types
-from ._Drawdown2 import Drawdown2
-from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
-from ._Unit11 import Unit11
-from ._BenefitCrystallisationEvent2 import BenefitCrystallisationEvent2
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._PaymentInstrument18 import PaymentInstrument18
-from ._TransferStatus5Choice import TransferStatus5Choice
+from ._Account33 import Account33
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
+from ._AdditionalInformation15 import AdditionalInformation15
+from ._AdditionalReference10 import AdditionalReference10
+from ._BenefitCrystallisationEvent2 import BenefitCrystallisationEvent2
+from ._Conversion2 import Conversion2
+from ._DecimalNumber import DecimalNumber
+from ._Drawdown2 import Drawdown2
+from ._Drawdown3 import Drawdown3
 from ._FinancialInstrument63Choice import FinancialInstrument63Choice
 from ._ISODate import ISODate
-from ._Conversion2 import Conversion2
-from ._Drawdown3 import Drawdown3
-from ._DecimalNumber import DecimalNumber
-from ._PartyIdentification139 import PartyIdentification139
 from ._Intermediary48 import Intermediary48
-from ._AdditionalReference10 import AdditionalReference10
-from ._Account33 import Account33
-from ._TransferStatusType3Choice import TransferStatusType3Choice
-from ._Max35Text import Max35Text
 from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification139 import PartyIdentification139
+from ._PaymentInstrument18 import PaymentInstrument18
+from ._TransferStatus5Choice import TransferStatus5Choice
+from ._TransferStatusType3Choice import TransferStatusType3Choice
+from ._Unit11 import Unit11
 
 class TransferStatusAndReason8(base_types._BaseFieldType):
 
-	__slots__ = ["_Instrm", "_PmtDtls", "_BnftCrstllstnEvt", "_Convs", "_StsRcpt", "_UnitsDtls", "_TtlTrfVal", "_SndOutDt", "_StsInitr", "_StsIssr", "_CshSttlmDt", "_TradDt", "_DrwdwnTrch", "_TrfEvtTp", "_TrfRef", "_TtlUnitsNb", "_IntrmyInf", "_TrfSts", "_MstrRef", "_InvstmtAcctDtls", "_QryRspn", "_CxlRef", "_AddtlInf", "_AvrgPric", "_ClntRef", "_SttlmDt", "_OthrDrwdwnInf"]
+	__slots__ = ["_AddtlInf", "_AvrgPric", "_BnftCrstllstnEvt", "_ClntRef", "_Convs", "_CshSttlmDt", "_CxlRef", "_DrwdwnTrch", "_Instrm", "_IntrmyInf", "_InvstmtAcctDtls", "_MstrRef", "_OthrDrwdwnInf", "_PmtDtls", "_QryRspn", "_SndOutDt", "_StsInitr", "_StsIssr", "_StsRcpt", "_SttlmDt", "_TradDt", "_TrfEvtTp", "_TrfRef", "_TrfSts", "_TtlTrfVal", "_TtlUnitsNb", "_UnitsDtls"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

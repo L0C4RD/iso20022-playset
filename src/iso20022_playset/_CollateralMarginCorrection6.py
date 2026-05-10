@@ -1,16 +1,16 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._SupplementaryData1 import SupplementaryData1
-from ._ReceivedMarginOrCollateral4 import ReceivedMarginOrCollateral4
-from ._PostedMarginOrCollateral4 import PostedMarginOrCollateral4
-from ._Max52Text import Max52Text
 from ._Counterparty39 import Counterparty39
+from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
 from ._Max140Text import Max140Text
+from ._Max52Text import Max52Text
+from ._PostedMarginOrCollateral4 import PostedMarginOrCollateral4
+from ._ReceivedMarginOrCollateral4 import ReceivedMarginOrCollateral4
+from ._SupplementaryData1 import SupplementaryData1
 
 class CollateralMarginCorrection6(base_types._BaseFieldType):
 
-	__slots__ = ["_PstdMrgnOrColl", "_RptgDtTm", "_TechRcrdId", "_CollPrtflId", "_EvtDt", "_CtrPty", "_RcvdMrgnOrColl", "_SplmtryData"]
+	__slots__ = ["_CollPrtflId", "_CtrPty", "_EvtDt", "_PstdMrgnOrColl", "_RcvdMrgnOrColl", "_RptgDtTm", "_SplmtryData", "_TechRcrdId"]
 	@property
 	def CollPrtflId(self):
 		return self._CollPrtflId

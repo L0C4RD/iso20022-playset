@@ -5,7 +5,7 @@ from ._DerivativeInterest2 import DerivativeInterest2
 
 class AssetClassAttributes1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Both", "_Intrst", "_FX"]
+	__slots__ = ["_Both", "_FX", "_Intrst"]
 	@property
 	def Both(self):
 		return self._Both

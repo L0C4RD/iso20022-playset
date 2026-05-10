@@ -1,10 +1,10 @@
 from . import base_types
-from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
 from ._AccountSubLevel25 import AccountSubLevel25
+from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
 
 class AccountSubLevel24(base_types._BaseFieldType):
 
-	__slots__ = ["_NonDscldShrhldgQty", "_BlwThrshldShrhldgQty", "_Dsclsr"]
+	__slots__ = ["_BlwThrshldShrhldgQty", "_Dsclsr", "_NonDscldShrhldgQty"]
 	@property
 	def BlwThrshldShrhldgQty(self):
 		return self._BlwThrshldShrhldgQty

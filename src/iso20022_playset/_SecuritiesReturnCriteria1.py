@@ -3,7 +3,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_MinMltplQty", "_SctySts", "_ClssfctnFinInstrm", "_ISOSctyShrtNm", "_ISOSctyLngNm", "_FinInstrmId", "_SctiesQtyTp", "_IsseCcy", "_CtryOfIsse", "_IssrCSD", "_DevtgSttlmUnit", "_TechIssrCSD", "_CSD", "_MtrtyDt", "_InvstrCSD", "_IsseDt", "_MinDnmtn"]
+	__slots__ = ["_CSD", "_ClssfctnFinInstrm", "_CtryOfIsse", "_DevtgSttlmUnit", "_FinInstrmId", "_ISOSctyLngNm", "_ISOSctyShrtNm", "_InvstrCSD", "_IsseCcy", "_IsseDt", "_IssrCSD", "_MinDnmtn", "_MinMltplQty", "_MtrtyDt", "_SctiesQtyTp", "_SctySts", "_TechIssrCSD"]
 	@property
 	def CSD(self):
 		return self._CSD

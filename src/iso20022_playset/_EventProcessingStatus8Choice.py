@@ -1,11 +1,11 @@
 from . import base_types
-from ._PendingStatus75Choice import PendingStatus75Choice
 from ._NoSpecifiedReason1 import NoSpecifiedReason1
+from ._PendingStatus75Choice import PendingStatus75Choice
 from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
 
 class EventProcessingStatus8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rcncld", "_Cmplt", "_PrtrySts", "_Pdg"]
+	__slots__ = ["_Cmplt", "_Pdg", "_PrtrySts", "_Rcncld"]
 	@property
 	def Cmplt(self):
 		return self._Cmplt

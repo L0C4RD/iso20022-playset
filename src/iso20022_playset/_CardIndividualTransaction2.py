@@ -1,17 +1,17 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Product2 import Product2
-from ._ExternalCardTransactionCategory1Code import ExternalCardTransactionCategory1Code
-from ._TransactionIdentifier1 import TransactionIdentifier1
-from ._Max35Text import Max35Text
-from ._Max1025Text import Max1025Text
-from ._ExternalRePresentmentReason1Code import ExternalRePresentmentReason1Code
 from ._CardPaymentServiceType2Code import CardPaymentServiceType2Code
+from ._ExternalCardTransactionCategory1Code import ExternalCardTransactionCategory1Code
+from ._ExternalRePresentmentReason1Code import ExternalRePresentmentReason1Code
+from ._ISODate import ISODate
+from ._Max1025Text import Max1025Text
+from ._Max35Text import Max35Text
 from ._PaymentContext3 import PaymentContext3
+from ._Product2 import Product2
+from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class CardIndividualTransaction2(base_types._BaseFieldType):
 
-	__slots__ = ["_TxCtgy", "_SaleRcncltnId", "_AddtlSvc", "_VldtnDt", "_SaleRefNb", "_PmtCntxt", "_SeqNb", "_ICCRltdData", "_VldtnSeqNb", "_Pdct", "_RePresntmntRsn", "_TxId"]
+	__slots__ = ["_AddtlSvc", "_ICCRltdData", "_Pdct", "_PmtCntxt", "_RePresntmntRsn", "_SaleRcncltnId", "_SaleRefNb", "_SeqNb", "_TxCtgy", "_TxId", "_VldtnDt", "_VldtnSeqNb"]
 	@property
 	def AddtlSvc(self):
 		return self._AddtlSvc

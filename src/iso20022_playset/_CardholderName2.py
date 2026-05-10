@@ -4,7 +4,7 @@ from ._Max70Text import Max70Text
 
 class CardholderName2(base_types._BaseFieldType):
 
-	__slots__ = ["_GvnNm", "_Nm", "_MddlNm", "_LastNm"]
+	__slots__ = ["_GvnNm", "_LastNm", "_MddlNm", "_Nm"]
 	@property
 	def GvnNm(self):
 		return self._GvnNm

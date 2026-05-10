@@ -4,7 +4,7 @@ from ._RejectionReason8FormatChoice import RejectionReason8FormatChoice
 
 class CorporateActionAmendmentRejectionStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Rsn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf

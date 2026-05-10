@@ -1,21 +1,21 @@
 from . import base_types
-from ._TransactionIdentification55 import TransactionIdentification55
-from ._PartyIdentification286 import PartyIdentification286
-from ._SupplementaryData1 import SupplementaryData1
-from ._ContentInformationType41 import ContentInformationType41
-from ._SettlementService6 import SettlementService6
-from ._ProtectedData2 import ProtectedData2
-from ._Max100KBinary import Max100KBinary
-from ._Reconciliation4 import Reconciliation4
 from ._AdditionalData2 import AdditionalData2
+from ._ContentInformationType41 import ContentInformationType41
 from ._DetailedError1 import DetailedError1
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._Jurisdiction2 import Jurisdiction2
 from ._Header71 import Header71
+from ._Jurisdiction2 import Jurisdiction2
+from ._Max100KBinary import Max100KBinary
+from ._PartyIdentification286 import PartyIdentification286
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._ProtectedData2 import ProtectedData2
+from ._Reconciliation4 import Reconciliation4
+from ._SettlementService6 import SettlementService6
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionIdentification55 import TransactionIdentification55
 
 class AmendmentV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Sndr", "_AddtlData", "_Jursdctn", "_OrgnlMsg", "_Hdr", "_Rcncltn", "_AmddData", "_Prgrmm", "_SctyTrlr", "_Rcvr", "_TxId", "_SttlmSvc", "_MsgAmdd", "_PrtctdData", "_Orgtr", "_SplmtryData", "_Dstn"]
+	__slots__ = ["_AddtlData", "_AmddData", "_Dstn", "_Hdr", "_Jursdctn", "_MsgAmdd", "_OrgnlMsg", "_Orgtr", "_Prgrmm", "_PrtctdData", "_Rcncltn", "_Rcvr", "_SctyTrlr", "_Sndr", "_SplmtryData", "_SttlmSvc", "_TxId"]
 	@property
 	def AddtlData(self):
 		return self._AddtlData

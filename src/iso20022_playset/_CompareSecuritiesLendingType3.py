@@ -3,7 +3,7 @@ from ._SecuritiesLendingType3Choice import SecuritiesLendingType3Choice
 
 class CompareSecuritiesLendingType3(base_types._BaseFieldType):
 
-	__slots__ = ["_Val2", "_Val1"]
+	__slots__ = ["_Val1", "_Val2"]
 	@property
 	def Val1(self):
 		return self._Val1

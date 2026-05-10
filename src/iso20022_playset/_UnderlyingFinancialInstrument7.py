@@ -4,7 +4,7 @@ from ._SecurityIdentification19 import SecurityIdentification19
 
 class UnderlyingFinancialInstrument7(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Attrbts"]
+	__slots__ = ["_Attrbts", "_Id"]
 	@property
 	def Attrbts(self):
 		return self._Attrbts

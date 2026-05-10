@@ -1,11 +1,11 @@
 from . import base_types
+from ._Max35Text import Max35Text
 from ._Max3NumericText import Max3NumericText
 from ._Number import Number
-from ._Max35Text import Max35Text
 
 class DocumentIdentification6(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AmdmntSeqNb", "_Vrsn"]
+	__slots__ = ["_AmdmntSeqNb", "_Id", "_Vrsn"]
 	@property
 	def AmdmntSeqNb(self):
 		return self._AmdmntSeqNb

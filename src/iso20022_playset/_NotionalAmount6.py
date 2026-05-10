@@ -1,11 +1,11 @@
 from . import base_types
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._AmountAndDirection106 import AmountAndDirection106
 from ._Schedule11 import Schedule11
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 
 class NotionalAmount6(base_types._BaseFieldType):
 
-	__slots__ = ["_SchdlPrd", "_Ccy", "_Amt"]
+	__slots__ = ["_Amt", "_Ccy", "_SchdlPrd"]
 	@property
 	def Amt(self):
 		return self._Amt

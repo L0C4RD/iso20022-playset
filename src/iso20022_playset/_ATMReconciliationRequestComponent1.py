@@ -4,7 +4,7 @@ from ._ATMTransaction30 import ATMTransaction30
 
 class ATMReconciliationRequestComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_Envt"]
+	__slots__ = ["_Envt", "_Tx"]
 	@property
 	def Envt(self):
 		return self._Envt

@@ -1,11 +1,11 @@
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._RestrictedFINActiveCurrencyAndAmount import RestrictedFINActiveCurrencyAndAmount
 from ._BaseOneRate import BaseOneRate
+from ._RestrictedFINActiveCurrencyAndAmount import RestrictedFINActiveCurrencyAndAmount
 
 class ForeignExchangeTerms27(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitCcy", "_RsltgAmt", "_XchgRate", "_QtdCcy"]
+	__slots__ = ["_QtdCcy", "_RsltgAmt", "_UnitCcy", "_XchgRate"]
 	@property
 	def QtdCcy(self):
 		return self._QtdCcy

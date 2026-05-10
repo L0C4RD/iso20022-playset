@@ -1,10 +1,10 @@
 from . import base_types
-from ._PartyIdentification43 import PartyIdentification43
 from ._Max35Text import Max35Text
+from ._PartyIdentification43 import PartyIdentification43
 
 class Undertaking6(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Issr", "_BnfcryRefNb"]
+	__slots__ = ["_BnfcryRefNb", "_Id", "_Issr"]
 	@property
 	def BnfcryRefNb(self):
 		return self._BnfcryRefNb

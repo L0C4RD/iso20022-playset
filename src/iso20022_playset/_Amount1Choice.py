@@ -3,7 +3,7 @@ from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class Amount1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IncrAmt", "_DcrAmt"]
+	__slots__ = ["_DcrAmt", "_IncrAmt"]
 	@property
 	def DcrAmt(self):
 		return self._DcrAmt

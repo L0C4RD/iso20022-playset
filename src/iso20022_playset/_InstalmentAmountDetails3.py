@@ -1,13 +1,13 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._Max35Text import Max35Text
 from ._CreditDebit3Code import CreditDebit3Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._InstalmentAmountDetailsType3Code import InstalmentAmountDetailsType3Code
+from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
 
 class InstalmentAmountDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Tp", "_SubTp", "_CdtDbt", "_OthrTp", "_Pctg"]
+	__slots__ = ["_Amt", "_CdtDbt", "_OthrTp", "_Pctg", "_SubTp", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

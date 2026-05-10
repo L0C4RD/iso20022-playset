@@ -1,13 +1,13 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._AmountAndDirection34 import AmountAndDirection34
-from ._DecimalNumber import DecimalNumber
 from ._BalanceAdjustmentType1Code import BalanceAdjustmentType1Code
+from ._DecimalNumber import DecimalNumber
+from ._ISODate import ISODate
 from ._Max105Text import Max105Text
 
 class BalanceAdjustment1(base_types._BaseFieldType):
 
-	__slots__ = ["_Days", "_BalAmt", "_Tp", "_Desc", "_AvrgAmt", "_EarngsAdjstmntAmt", "_ErrDt", "_PstngDt"]
+	__slots__ = ["_AvrgAmt", "_BalAmt", "_Days", "_Desc", "_EarngsAdjstmntAmt", "_ErrDt", "_PstngDt", "_Tp"]
 	@property
 	def AvrgAmt(self):
 		return self._AvrgAmt

@@ -1,13 +1,13 @@
 from . import base_types
 from ._CashAccountAndEntry5 import CashAccountAndEntry5
-from ._SecuritiesTransactionReferences1 import SecuritiesTransactionReferences1
-from ._PaymentInstruction47 import PaymentInstruction47
-from ._System3 import System3
 from ._CreditDebitCode import CreditDebitCode
+from ._PaymentInstruction47 import PaymentInstruction47
+from ._SecuritiesTransactionReferences1 import SecuritiesTransactionReferences1
+from ._System3 import System3
 
 class Transaction159(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_AcctNtry", "_PmtFr", "_SctiesTxRefs", "_PmtTo", "_Pmt"]
+	__slots__ = ["_AcctNtry", "_CdtDbtInd", "_Pmt", "_PmtFr", "_PmtTo", "_SctiesTxRefs"]
 	@property
 	def AcctNtry(self):
 		return self._AcctNtry

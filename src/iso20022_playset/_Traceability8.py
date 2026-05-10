@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODateTime import ISODateTime
 from ._GenericIdentification177 import GenericIdentification177
+from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
 from ._Max6Text import Max6Text
 
 class Traceability8(base_types._BaseFieldType):
 
-	__slots__ = ["_TracDtTmOut", "_PrtcolVrsn", "_TracDtTmIn", "_RlayId", "_PrtcolNm"]
+	__slots__ = ["_PrtcolNm", "_PrtcolVrsn", "_RlayId", "_TracDtTmIn", "_TracDtTmOut"]
 	@property
 	def PrtcolNm(self):
 		return self._PrtcolNm

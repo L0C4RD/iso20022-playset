@@ -1,10 +1,10 @@
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._References59Choice import References59Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class TransactionIdentifications50(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcrTxId", "_CtrPtyMktInfrstrctrTxId", "_AcctSvcrTxId", "_MktInfrstrctrTxId", "_AcctOwnrTxId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_PrcrTxId"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId

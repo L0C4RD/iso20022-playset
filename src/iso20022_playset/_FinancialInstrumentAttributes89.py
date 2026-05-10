@@ -6,7 +6,7 @@ from ._PhysicalTransferType4Code import PhysicalTransferType4Code
 
 class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygId", "_DlvryTp", "_PricCcy", "_CtrctSz"]
+	__slots__ = ["_CtrctSz", "_DlvryTp", "_PricCcy", "_UndrlygId"]
 	@property
 	def CtrctSz(self):
 		return self._CtrctSz

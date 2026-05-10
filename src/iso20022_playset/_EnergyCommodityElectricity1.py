@@ -1,11 +1,11 @@
 from . import base_types
 from ._AssetClassDetailedSubProductType5Code import AssetClassDetailedSubProductType5Code
-from ._AssetClassSubProductType6Code import AssetClassSubProductType6Code
 from ._AssetClassProductType2Code import AssetClassProductType2Code
+from ._AssetClassSubProductType6Code import AssetClassSubProductType6Code
 
 class EnergyCommodityElectricity1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlSubPdct", "_SubPdct", "_BasePdct"]
+	__slots__ = ["_AddtlSubPdct", "_BasePdct", "_SubPdct"]
 	@property
 	def AddtlSubPdct(self):
 		return self._AddtlSubPdct

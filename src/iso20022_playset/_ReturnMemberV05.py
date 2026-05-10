@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._MessageHeader7 import MessageHeader7
 from ._MemberReportOrError7Choice import MemberReportOrError7Choice
+from ._MessageHeader7 import MessageHeader7
+from ._SupplementaryData1 import SupplementaryData1
 
 class ReturnMemberV05(base_types._BaseFieldType):
 
-	__slots__ = ["_RptOrErr", "_MsgHdr", "_SplmtryData"]
+	__slots__ = ["_MsgHdr", "_RptOrErr", "_SplmtryData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr

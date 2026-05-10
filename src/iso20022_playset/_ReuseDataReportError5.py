@@ -1,12 +1,12 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._CounterpartyData87 import CounterpartyData87
 from ._ISODateTime import ISODateTime
 from ._Max140Text import Max140Text
-from ._CounterpartyData87 import CounterpartyData87
+from ._SupplementaryData1 import SupplementaryData1
 
 class ReuseDataReportError5(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPty", "_SplmtryData", "_RptgDtTm", "_TechRcrdId"]
+	__slots__ = ["_CtrPty", "_RptgDtTm", "_SplmtryData", "_TechRcrdId"]
 	@property
 	def CtrPty(self):
 		return self._CtrPty

@@ -4,7 +4,7 @@ from ._PartyIdentification149 import PartyIdentification149
 
 class OtherParties38(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_Invstr"]
+	__slots__ = ["_Invstr", "_Issr"]
 	@property
 	def Invstr(self):
 		return self._Invstr

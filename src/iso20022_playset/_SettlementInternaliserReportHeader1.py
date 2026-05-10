@@ -1,12 +1,12 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ISODate import ISODate
 from ._ISODateTime import ISODateTime
 from ._TransactionOperationType4Code import TransactionOperationType4Code
 
 class SettlementInternaliserReportHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgDt", "_RptSts", "_Ccy", "_CreDtTm"]
+	__slots__ = ["_Ccy", "_CreDtTm", "_RptSts", "_RptgDt"]
 	@property
 	def Ccy(self):
 		return self._Ccy

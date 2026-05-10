@@ -3,7 +3,7 @@ from ._CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuant
 
 class IntraBalanceType3(base_types._BaseFieldType):
 
-	__slots__ = ["_BalTo", "_BalFr"]
+	__slots__ = ["_BalFr", "_BalTo"]
 	@property
 	def BalFr(self):
 		return self._BalFr

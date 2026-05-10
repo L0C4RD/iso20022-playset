@@ -1,19 +1,19 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._OriginalTransactionReference35 import OriginalTransactionReference35
-from ._OriginalGroupInformation29 import OriginalGroupInformation29
+from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
+from ._Charges7 import Charges7
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
-from ._Charges7 import Charges7
-from ._UUIDv4Identifier import UUIDv4Identifier
-from ._Max35Text import Max35Text
-from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
+from ._OriginalGroupInformation29 import OriginalGroupInformation29
+from ._OriginalTransactionReference35 import OriginalTransactionReference35
 from ._StatusReasonInformation12 import StatusReasonInformation12
+from ._SupplementaryData1 import SupplementaryData1
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class PaymentTransaction130(base_types._BaseFieldType):
 
-	__slots__ = ["_TxSts", "_ClrSysRef", "_OrgnlInstrId", "_AccptncDtTm", "_OrgnlGrpInf", "_StsRsnInf", "_InstdAgt", "_AcctSvcrRef", "_ChrgsInf", "_OrgnlUETR", "_FctvIntrBkSttlmDt", "_StsId", "_InstgAgt", "_OrgnlEndToEndId", "_OrgnlTxId", "_SplmtryData", "_OrgnlTxRef"]
+	__slots__ = ["_AccptncDtTm", "_AcctSvcrRef", "_ChrgsInf", "_ClrSysRef", "_FctvIntrBkSttlmDt", "_InstdAgt", "_InstgAgt", "_OrgnlEndToEndId", "_OrgnlGrpInf", "_OrgnlInstrId", "_OrgnlTxId", "_OrgnlTxRef", "_OrgnlUETR", "_SplmtryData", "_StsId", "_StsRsnInf", "_TxSts"]
 	@property
 	def AccptncDtTm(self):
 		return self._AccptncDtTm

@@ -1,6 +1,6 @@
 from . import base_types
-from ._RestrictedFINImpliedCurrencyAndAmount import RestrictedFINImpliedCurrencyAndAmount
 from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
+from ._RestrictedFINImpliedCurrencyAndAmount import RestrictedFINImpliedCurrencyAndAmount
 
 class FinancialInstrumentQuantity31Choice(base_types._BaseFieldType):
 

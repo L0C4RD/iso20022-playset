@@ -1,18 +1,18 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._DecimalNumber import DecimalNumber
 from ._Adjustment14 import Adjustment14
-from ._Tax41 import Tax41
+from ._DecimalNumber import DecimalNumber
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max140Text import Max140Text
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ProductCodeType1Code import ProductCodeType1Code
-from ._Max140Text import Max140Text
+from ._Tax41 import Tax41
+from ._TrueFalseIndicator import TrueFalseIndicator
 from ._UnitOfMeasure1Code import UnitOfMeasure1Code
 
 class SaleItem4(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctCdModfr", "_Adjstmnt", "_PdctCdTp", "_PdctQty", "_AdjstdAmt", "_TtlAmt", "_OthrUnitOfMeasr", "_InsrncInd", "_UnitOfMeasr", "_PdctCd", "_PdctTp", "_AddtlPdctCdTp", "_NonAdjstdUnitPric", "_Tax", "_AddtlPdctCd", "_PdctDesc", "_InsrncAmt", "_NonAdjstdTtlAmt"]
+	__slots__ = ["_AddtlPdctCd", "_AddtlPdctCdTp", "_AdjstdAmt", "_Adjstmnt", "_InsrncAmt", "_InsrncInd", "_NonAdjstdTtlAmt", "_NonAdjstdUnitPric", "_OthrUnitOfMeasr", "_PdctCd", "_PdctCdModfr", "_PdctCdTp", "_PdctDesc", "_PdctQty", "_PdctTp", "_Tax", "_TtlAmt", "_UnitOfMeasr"]
 	@property
 	def AddtlPdctCd(self):
 		return self._AddtlPdctCd

@@ -6,7 +6,7 @@ from ._ReferToFundOrderDesk1Code import ReferToFundOrderDesk1Code
 
 class TimeFrame11(base_types._BaseFieldType):
 
-	__slots__ = ["_NonWorkgDayAdjstmnt", "_RefrToOrdrDsk", "_TPlus", "_OthrTmFrameDesc"]
+	__slots__ = ["_NonWorkgDayAdjstmnt", "_OthrTmFrameDesc", "_RefrToOrdrDsk", "_TPlus"]
 	@property
 	def NonWorkgDayAdjstmnt(self):
 		return self._NonWorkgDayAdjstmnt

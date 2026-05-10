@@ -1,11 +1,11 @@
 from . import base_types
-from ._Security48 import Security48
 from ._CashCompare3 import CashCompare3
 from ._Commodity42 import Commodity42
+from ._Security48 import Security48
 
 class SecurityCommodityCash4(base_types._BaseFieldType):
 
-	__slots__ = ["_Csh", "_Scty", "_Cmmdty"]
+	__slots__ = ["_Cmmdty", "_Csh", "_Scty"]
 	@property
 	def Cmmdty(self):
 		return self._Cmmdty

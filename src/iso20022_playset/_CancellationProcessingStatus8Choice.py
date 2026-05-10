@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification47 import GenericIdentification47
 from ._CancellationProcessingStatus1Code import CancellationProcessingStatus1Code
+from ._GenericIdentification47 import GenericIdentification47
 
 class CancellationProcessingStatus8Choice(base_types._BaseFieldType):
 

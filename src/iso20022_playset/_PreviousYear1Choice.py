@@ -1,6 +1,6 @@
 from . import base_types
-from ._PreviousAll import PreviousAll
 from ._ISOYear import ISOYear
+from ._PreviousAll import PreviousAll
 
 class PreviousYear1Choice(base_types._BaseFieldType):
 

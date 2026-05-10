@@ -1,14 +1,14 @@
 from . import base_types
-from ._TradingVenueIdentification1Choice import TradingVenueIdentification1Choice
 from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._Pagination1 import Pagination1
-from ._Period11Choice import Period11Choice
 from ._ISODateTime import ISODateTime
 from ._Number import Number
+from ._Pagination1 import Pagination1
+from ._Period11Choice import Period11Choice
+from ._TradingVenueIdentification1Choice import TradingVenueIdentification1Choice
 
 class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgNtty", "_NbRcrds", "_SubmissnDtTm", "_ISIN", "_RptgPrd", "_MsgPgntn"]
+	__slots__ = ["_ISIN", "_MsgPgntn", "_NbRcrds", "_RptgNtty", "_RptgPrd", "_SubmissnDtTm"]
 	@property
 	def ISIN(self):
 		return self._ISIN

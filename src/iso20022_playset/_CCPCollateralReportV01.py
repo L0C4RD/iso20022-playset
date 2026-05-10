@@ -1,10 +1,10 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._CollateralAccount4 import CollateralAccount4
+from ._SupplementaryData1 import SupplementaryData1
 
 class CCPCollateralReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_CollAcctOwnr"]
+	__slots__ = ["_CollAcctOwnr", "_SplmtryData"]
 	@property
 	def CollAcctOwnr(self):
 		return self._CollAcctOwnr

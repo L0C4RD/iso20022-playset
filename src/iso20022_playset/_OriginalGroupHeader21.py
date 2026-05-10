@@ -1,15 +1,15 @@
 from . import base_types
-from ._DecimalNumber import DecimalNumber
 from ._Case6 import Case6
-from ._Max35Text import Max35Text
-from ._Max15NumericText import Max15NumericText
-from ._PaymentCancellationReason6 import PaymentCancellationReason6
+from ._DecimalNumber import DecimalNumber
 from ._GroupCancellationIndicator import GroupCancellationIndicator
 from ._ISODateTime import ISODateTime
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
+from ._PaymentCancellationReason6 import PaymentCancellationReason6
 
 class OriginalGroupHeader21(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpCxl", "_GrpCxlId", "_CtrlSum", "_OrgnlCreDtTm", "_Case", "_NbOfTxs", "_OrgnlMsgId", "_CxlRsnInf", "_OrgnlMsgNmId"]
+	__slots__ = ["_Case", "_CtrlSum", "_CxlRsnInf", "_GrpCxl", "_GrpCxlId", "_NbOfTxs", "_OrgnlCreDtTm", "_OrgnlMsgId", "_OrgnlMsgNmId"]
 	@property
 	def Case(self):
 		return self._Case

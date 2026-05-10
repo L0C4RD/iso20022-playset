@@ -1,11 +1,11 @@
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
 from ._AdditionalReference3 import AdditionalReference3
+from ._MessageIdentification1 import MessageIdentification1
 from ._RejectionReason23 import RejectionReason23
 
 class SecuritiesMessageRejectionV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_MsgId", "_RltdRef"]
+	__slots__ = ["_MsgId", "_RltdRef", "_Rsn"]
 	@property
 	def MsgId(self):
 		return self._MsgId

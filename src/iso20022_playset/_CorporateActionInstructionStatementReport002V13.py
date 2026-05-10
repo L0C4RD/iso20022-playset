@@ -1,12 +1,12 @@
 from . import base_types
 from ._AccountIdentification74 import AccountIdentification74
-from ._SupplementaryData1 import SupplementaryData1
-from ._Statement75 import Statement75
 from ._Pagination1 import Pagination1
+from ._Statement75 import Statement75
+from ._SupplementaryData1 import SupplementaryData1
 
 class CorporateActionInstructionStatementReport002V13(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctAndStmtDtls", "_SplmtryData", "_Pgntn", "_StmtGnlDtls"]
+	__slots__ = ["_AcctAndStmtDtls", "_Pgntn", "_SplmtryData", "_StmtGnlDtls"]
 	@property
 	def AcctAndStmtDtls(self):
 		return self._AcctAndStmtDtls

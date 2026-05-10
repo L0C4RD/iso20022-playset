@@ -3,7 +3,7 @@ from ._RequestedIndicator import RequestedIndicator
 
 class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtNm", "_TechAdr", "_PtyId", "_Nm", "_Adr", "_MktSpcfcAttr", "_RstrctdOnDt", "_LckSts", "_ClsgDt", "_RspnsblPtyId", "_Tp", "_OpngDt", "_ResTp", "_RstrctnId", "_CtctDtls"]
+	__slots__ = ["_Adr", "_ClsgDt", "_CtctDtls", "_LckSts", "_MktSpcfcAttr", "_Nm", "_OpngDt", "_PtyId", "_ResTp", "_RspnsblPtyId", "_RstrctdOnDt", "_RstrctnId", "_ShrtNm", "_TechAdr", "_Tp"]
 	@property
 	def Adr(self):
 		return self._Adr

@@ -4,7 +4,7 @@ from ._DateTimePeriod1 import DateTimePeriod1
 
 class TradeDateTimeQueryCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_TermntnDt", "_MtrtyDt", "_ExctnDtTm", "_RptgDtTm"]
+	__slots__ = ["_ExctnDtTm", "_MtrtyDt", "_RptgDtTm", "_TermntnDt"]
 	@property
 	def ExctnDtTm(self):
 		return self._ExctnDtTm

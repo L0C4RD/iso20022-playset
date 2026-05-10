@@ -1,13 +1,13 @@
 from . import base_types
 from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._SystemIdentification2Choice import SystemIdentification2Choice
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._Max35Text import Max35Text
 from ._ReservationType2Choice import ReservationType2Choice
+from ._SystemIdentification2Choice import SystemIdentification2Choice
 
 class ReservationIdentification4(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_AcctId", "_RsvatnId", "_SysId", "_AcctOwnr"]
+	__slots__ = ["_AcctId", "_AcctOwnr", "_RsvatnId", "_SysId", "_Tp"]
 	@property
 	def AcctId(self):
 		return self._AcctId

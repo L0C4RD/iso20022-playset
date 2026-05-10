@@ -1,16 +1,16 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradePartyIdentification9 import TradePartyIdentification9
-from ._Trade9 import Trade9
-from ._Period12 import Period12
 from ._Header23 import Header23
-from ._QueryTradeStatus1Code import QueryTradeStatus1Code
-from ._MessageIdentification1 import MessageIdentification1
 from ._Max35NumericText import Max35NumericText
+from ._MessageIdentification1 import MessageIdentification1
+from ._Period12 import Period12
+from ._QueryTradeStatus1Code import QueryTradeStatus1Code
+from ._SupplementaryData1 import SupplementaryData1
+from ._Trade9 import Trade9
+from ._TradePartyIdentification9 import TradePartyIdentification9
 
 class ForeignExchangeTradeConfirmationRequestAmendmentRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_AmdmntReqId", "_TradDtl", "_Hdr", "_TradgSdId", "_CtrPtySdId", "_QryStartNb", "_QryPrd", "_QryTradSts", "_SplmtryData"]
+	__slots__ = ["_AmdmntReqId", "_CtrPtySdId", "_Hdr", "_QryPrd", "_QryStartNb", "_QryTradSts", "_SplmtryData", "_TradDtl", "_TradgSdId"]
 	@property
 	def AmdmntReqId(self):
 		return self._AmdmntReqId

@@ -1,11 +1,11 @@
 from . import base_types
-from ._DateCodeAndTimeFormat3 import DateCodeAndTimeFormat3
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._DateCode19Choice import DateCode19Choice
+from ._DateCodeAndTimeFormat3 import DateCodeAndTimeFormat3
 
 class DateFormat44Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DtCdAndTm", "_DtCd", "_Dt"]
+	__slots__ = ["_Dt", "_DtCd", "_DtCdAndTm"]
 	@property
 	def Dt(self):
 		return self._Dt

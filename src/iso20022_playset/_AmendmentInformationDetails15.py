@@ -1,16 +1,16 @@
 from . import base_types
-from ._ISODate import ISODate
-from ._Frequency36Choice import Frequency36Choice
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Exact2NumericText import Exact2NumericText
-from ._Max35Text import Max35Text
-from ._MandateSetupReason1Choice import MandateSetupReason1Choice
-from ._PartyIdentification272 import PartyIdentification272
 from ._CashAccount40 import CashAccount40
+from ._Exact2NumericText import Exact2NumericText
+from ._Frequency36Choice import Frequency36Choice
+from ._ISODate import ISODate
+from ._MandateSetupReason1Choice import MandateSetupReason1Choice
+from ._Max35Text import Max35Text
+from ._PartyIdentification272 import PartyIdentification272
 
 class AmendmentInformationDetails15(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlCdtrSchmeId", "_OrgnlTrckgDays", "_OrgnlDbtr", "_OrgnlDbtrAgtAcct", "_OrgnlFrqcy", "_OrgnlCdtrAgtAcct", "_OrgnlDbtrAgt", "_OrgnlRsn", "_OrgnlFnlColltnDt", "_OrgnlDbtrAcct", "_OrgnlCdtrAgt", "_OrgnlMndtId"]
+	__slots__ = ["_OrgnlCdtrAgt", "_OrgnlCdtrAgtAcct", "_OrgnlCdtrSchmeId", "_OrgnlDbtr", "_OrgnlDbtrAcct", "_OrgnlDbtrAgt", "_OrgnlDbtrAgtAcct", "_OrgnlFnlColltnDt", "_OrgnlFrqcy", "_OrgnlMndtId", "_OrgnlRsn", "_OrgnlTrckgDays"]
 	@property
 	def OrgnlCdtrAgt(self):
 		return self._OrgnlCdtrAgt

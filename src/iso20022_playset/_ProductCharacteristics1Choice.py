@@ -4,7 +4,7 @@ from ._ProductCharacteristics1 import ProductCharacteristics1
 
 class ProductCharacteristics1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_StrdPdctChrtcs", "_OthrPdctChrtcs"]
+	__slots__ = ["_OthrPdctChrtcs", "_StrdPdctChrtcs"]
 	@property
 	def OthrPdctChrtcs(self):
 		return self._OthrPdctChrtcs

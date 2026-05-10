@@ -1,18 +1,18 @@
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._ISODate import ISODate
-from ._ISOTime import ISOTime
-from ._ExchangeRateAgreementType1Code import ExchangeRateAgreementType1Code
 from ._BaseOne25Rate import BaseOne25Rate
 from ._Endpoint1Code import Endpoint1Code
+from ._ExchangeRateAgreementType1Code import ExchangeRateAgreementType1Code
+from ._ExchangeRateType2Code import ExchangeRateType2Code
+from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._ISODate import ISODate
+from ._ISOTime import ISOTime
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._ExchangeRateType2Code import ExchangeRateType2Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ExchangeRateInformation5(base_types._BaseFieldType):
 
-	__slots__ = ["_EndPt", "_RateLckElgbl", "_Dt", "_Rate", "_OthrAgrmtTp", "_BaseCcyCd", "_Tm", "_CntrCcyCd", "_RateLckApld", "_OthrEndPt", "_OthrRateTp", "_Prvdr", "_RateLckReqd", "_Id", "_AgrmtTp", "_RateTp"]
+	__slots__ = ["_AgrmtTp", "_BaseCcyCd", "_CntrCcyCd", "_Dt", "_EndPt", "_Id", "_OthrAgrmtTp", "_OthrEndPt", "_OthrRateTp", "_Prvdr", "_Rate", "_RateLckApld", "_RateLckElgbl", "_RateLckReqd", "_RateTp", "_Tm"]
 	@property
 	def AgrmtTp(self):
 		return self._AgrmtTp

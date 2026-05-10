@@ -5,7 +5,7 @@ from ._Max35Text import Max35Text
 
 class AdditionalParameters1(base_types._BaseFieldType):
 
-	__slots__ = ["_GeoArea", "_Ccy", "_Ctry"]
+	__slots__ = ["_Ccy", "_Ctry", "_GeoArea"]
 	@property
 	def Ccy(self):
 		return self._Ccy

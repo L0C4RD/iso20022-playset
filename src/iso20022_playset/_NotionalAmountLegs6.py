@@ -3,7 +3,7 @@ from ._NotionalAmount7 import NotionalAmount7
 
 class NotionalAmountLegs6(base_types._BaseFieldType):
 
-	__slots__ = ["_ScndLeg", "_FrstLeg"]
+	__slots__ = ["_FrstLeg", "_ScndLeg"]
 	@property
 	def FrstLeg(self):
 		return self._FrstLeg

@@ -3,7 +3,7 @@ from ._DateFormat4Choice import DateFormat4Choice
 
 class CorporateActionDate2(base_types._BaseFieldType):
 
-	__slots__ = ["_MtrtyDt", "_RcrdDt", "_UcondlDt", "_CoverXprtnDt", "_LpsdDt", "_RedDt", "_IndxFxgDt", "_EqulstnDt", "_MrgnFxgDt", "_LtryDt", "_PrtctDt", "_SpclExDt", "_RsltsPblctnDt", "_CertfctnDdln", "_CrtApprvlDt", "_ExDvddDt", "_FctvDt", "_EarlyClsgDt", "_TradgSspdDt", "_GrntedPrtcptnDt", "_DdlnForTaxBrkdwnInstr", "_WhlyUcondlDt", "_ElctnToCtrPtyDdln", "_PrratnDt", "_RegnDdln"]
+	__slots__ = ["_CertfctnDdln", "_CoverXprtnDt", "_CrtApprvlDt", "_DdlnForTaxBrkdwnInstr", "_EarlyClsgDt", "_ElctnToCtrPtyDdln", "_EqulstnDt", "_ExDvddDt", "_FctvDt", "_GrntedPrtcptnDt", "_IndxFxgDt", "_LpsdDt", "_LtryDt", "_MrgnFxgDt", "_MtrtyDt", "_PrratnDt", "_PrtctDt", "_RcrdDt", "_RedDt", "_RegnDdln", "_RsltsPblctnDt", "_SpclExDt", "_TradgSspdDt", "_UcondlDt", "_WhlyUcondlDt"]
 	@property
 	def CertfctnDdln(self):
 		return self._CertfctnDdln

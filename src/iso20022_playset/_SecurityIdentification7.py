@@ -1,11 +1,11 @@
 from . import base_types
+from ._AlternateSecurityIdentification3 import AlternateSecurityIdentification3
 from ._ISINIdentifier import ISINIdentifier
 from ._Max140Text import Max140Text
-from ._AlternateSecurityIdentification3 import AlternateSecurityIdentification3
 
 class SecurityIdentification7(base_types._BaseFieldType):
 
-	__slots__ = ["_ISIN", "_Desc", "_OthrId"]
+	__slots__ = ["_Desc", "_ISIN", "_OthrId"]
 	@property
 	def Desc(self):
 		return self._Desc

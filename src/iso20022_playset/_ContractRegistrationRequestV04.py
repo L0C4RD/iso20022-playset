@@ -5,7 +5,7 @@ from ._SupplementaryData1 import SupplementaryData1
 
 class ContractRegistrationRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_CtrctRegn", "_SplmtryData"]
+	__slots__ = ["_CtrctRegn", "_GrpHdr", "_SplmtryData"]
 	@property
 	def CtrctRegn(self):
 		return self._CtrctRegn

@@ -1,6 +1,6 @@
 from . import base_types
-from ._GenericIdentification47 import GenericIdentification47
 from ._CorporateActionEventStatus1 import CorporateActionEventStatus1
+from ._GenericIdentification47 import GenericIdentification47
 
 class CorporateActionProcessingStatus6Choice(base_types._BaseFieldType):
 

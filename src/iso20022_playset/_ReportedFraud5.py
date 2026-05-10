@@ -1,12 +1,12 @@
 from . import base_types
-from ._FraudType1Code import FraudType1Code
 from ._FraudReportingAction1Code import FraudReportingAction1Code
-from ._PartyType26Code import PartyType26Code
+from ._FraudType1Code import FraudType1Code
 from ._Max35Text import Max35Text
+from ._PartyType26Code import PartyType26Code
 
 class ReportedFraud5(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgNtty", "_OthrRptgNtty", "_OthrTp", "_OthrActn", "_Tp", "_SubmitrCaseRef", "_CaseRef", "_Actn"]
+	__slots__ = ["_Actn", "_CaseRef", "_OthrActn", "_OthrRptgNtty", "_OthrTp", "_RptgNtty", "_SubmitrCaseRef", "_Tp"]
 	@property
 	def Actn(self):
 		return self._Actn

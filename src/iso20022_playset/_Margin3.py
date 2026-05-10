@@ -1,11 +1,11 @@
 from . import base_types
-from ._Margin4 import Margin4
 from ._Amount2 import Amount2
+from ._Margin4 import Margin4
 from ._VariationMargin3 import VariationMargin3
 
 class Margin3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrMrgn", "_InitlMrgn", "_VartnMrgn"]
+	__slots__ = ["_InitlMrgn", "_OthrMrgn", "_VartnMrgn"]
 	@property
 	def InitlMrgn(self):
 		return self._InitlMrgn

@@ -1,12 +1,12 @@
 from . import base_types
+from ._DateFormat3Choice import DateFormat3Choice
 from ._IncentivePremiumType2Choice import IncentivePremiumType2Choice
 from ._Max350Text import Max350Text
 from ._PriceRateOrAmount8Choice import PriceRateOrAmount8Choice
-from ._DateFormat3Choice import DateFormat3Choice
 
 class IncentivePremium6(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_PmtDt", "_Amt", "_Tp"]
+	__slots__ = ["_Amt", "_Desc", "_PmtDt", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt

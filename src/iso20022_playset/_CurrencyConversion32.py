@@ -1,17 +1,17 @@
 from . import base_types
-from ._ActionMessage5 import ActionMessage5
 from ._ATMExchangeRateComponent1 import ATMExchangeRateComponent1
+from ._ActionMessage5 import ActionMessage5
 from ._Commission18 import Commission18
 from ._Commission19 import Commission19
 from ._CurrencyDetails2 import CurrencyDetails2
-from ._PercentageRate import PercentageRate
-from ._Max35Text import Max35Text
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._ISODateTime import ISODateTime
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
 
 class CurrencyConversion32(base_types._BaseFieldType):
 
-	__slots__ = ["_QtnDt", "_RsltgAmt", "_DclrtnDtls", "_RefRate", "_XchgRate", "_CcyConvsId", "_VldUntil", "_ComssnDtls", "_TrgtCcy", "_MrkUpDtls", "_SrcCcy", "_OrgnlAmt", "_NvrtdXchgRate"]
+	__slots__ = ["_CcyConvsId", "_ComssnDtls", "_DclrtnDtls", "_MrkUpDtls", "_NvrtdXchgRate", "_OrgnlAmt", "_QtnDt", "_RefRate", "_RsltgAmt", "_SrcCcy", "_TrgtCcy", "_VldUntil", "_XchgRate"]
 	@property
 	def CcyConvsId(self):
 		return self._CcyConvsId

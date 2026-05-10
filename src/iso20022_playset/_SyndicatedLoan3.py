@@ -1,12 +1,12 @@
 from . import base_types
-from ._PercentageRate import PercentageRate
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._TradeParty6 import TradeParty6
 from ._ExchangeRate1 import ExchangeRate1
+from ._PercentageRate import PercentageRate
+from ._TradeParty6 import TradeParty6
 
 class SyndicatedLoan3(base_types._BaseFieldType):
 
-	__slots__ = ["_Shr", "_Lndr", "_Amt", "_Brrwr", "_XchgRateInf"]
+	__slots__ = ["_Amt", "_Brrwr", "_Lndr", "_Shr", "_XchgRateInf"]
 	@property
 	def Amt(self):
 		return self._Amt

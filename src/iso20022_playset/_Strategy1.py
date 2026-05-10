@@ -1,6 +1,6 @@
 from . import base_types
-from ._StressSize1Choice import StressSize1Choice
 from ._Max35Text import Max35Text
+from ._StressSize1Choice import StressSize1Choice
 
 class Strategy1(base_types._BaseFieldType):
 

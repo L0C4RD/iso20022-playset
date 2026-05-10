@@ -1,10 +1,10 @@
 from . import base_types
-from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
 from ._DetailedTransactionStatistics28 import DetailedTransactionStatistics28
+from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
 
 class DetailedAbnormalValuesStatistics4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rpt", "_DataSetActn"]
+	__slots__ = ["_DataSetActn", "_Rpt"]
 	@property
 	def DataSetActn(self):
 		return self._DataSetActn

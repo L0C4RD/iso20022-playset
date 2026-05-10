@@ -4,7 +4,7 @@ from ._ReceivingPartiesAndAccount19 import ReceivingPartiesAndAccount19
 
 class SettlementParties36Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RcvgSttlmPties", "_DlvrgSttlmPties"]
+	__slots__ = ["_DlvrgSttlmPties", "_RcvgSttlmPties"]
 	@property
 	def DlvrgSttlmPties(self):
 		return self._DlvrgSttlmPties

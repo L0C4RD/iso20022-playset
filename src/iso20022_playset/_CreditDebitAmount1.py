@@ -1,6 +1,6 @@
 from . import base_types
-from ._CreditDebitCode import CreditDebitCode
 from ._Amount2Choice import Amount2Choice
+from ._CreditDebitCode import CreditDebitCode
 
 class CreditDebitAmount1(base_types._BaseFieldType):
 

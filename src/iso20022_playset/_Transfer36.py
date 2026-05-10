@@ -1,25 +1,25 @@
 from . import base_types
-from ._BusinessFlowType1Code import BusinessFlowType1Code
-from ._RoundingDirection2Code import RoundingDirection2Code
-from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
-from ._Max350Text import Max350Text
-from ._Unit12 import Unit12
-from ._HoldingsPlanType1Code import HoldingsPlanType1Code
-from ._TransferReason1Choice import TransferReason1Choice
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
+from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._AdditionalReference10 import AdditionalReference10
+from ._BusinessFlowType1Code import BusinessFlowType1Code
 from ._ChargePaymentMethod1Choice import ChargePaymentMethod1Choice
-from ._FinancialInstrument88 import FinancialInstrument88
-from ._Max35Text import Max35Text
 from ._DateFormat1Choice import DateFormat1Choice
+from ._FinancialInstrument88 import FinancialInstrument88
+from ._HoldingsPlanType1Code import HoldingsPlanType1Code
+from ._ISODate import ISODate
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
 from ._Quantity42Choice import Quantity42Choice
+from ._RoundingDirection2Code import RoundingDirection2Code
+from ._TransferReason1Choice import TransferReason1Choice
+from ._Unit12 import Unit12
+from ._YesNoIndicator import YesNoIndicator
 
 class Transfer36(base_types._BaseFieldType):
 
-	__slots__ = ["_TrfExpnssPmtTp", "_TrfRsn", "_UnitsDtls", "_NonStdSttlmInf", "_BizFlowTp", "_OrgnlCost", "_FinInstrmDtls", "_Qty", "_TrfCcy", "_HldgsPlanTp", "_ReqdTrfDt", "_ReqdSttlmDt", "_OwnAcctTrfInd", "_TrfOrdrDtForm", "_TrfRef", "_Rndg", "_AvrgPric", "_ClntRef", "_CtrPtyRef"]
+	__slots__ = ["_AvrgPric", "_BizFlowTp", "_ClntRef", "_CtrPtyRef", "_FinInstrmDtls", "_HldgsPlanTp", "_NonStdSttlmInf", "_OrgnlCost", "_OwnAcctTrfInd", "_Qty", "_ReqdSttlmDt", "_ReqdTrfDt", "_Rndg", "_TrfCcy", "_TrfExpnssPmtTp", "_TrfOrdrDtForm", "_TrfRef", "_TrfRsn", "_UnitsDtls"]
 	@property
 	def AvrgPric(self):
 		return self._AvrgPric

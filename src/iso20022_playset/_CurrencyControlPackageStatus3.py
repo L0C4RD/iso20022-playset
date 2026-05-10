@@ -1,13 +1,13 @@
 from . import base_types
-from ._StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
 from ._CurrencyControlRecordStatus3 import CurrencyControlRecordStatus3
-from ._ValidationStatusReason3 import ValidationStatusReason3
-from ._Max35Text import Max35Text
 from ._ISODateTime import ISODateTime
+from ._Max35Text import Max35Text
+from ._StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
+from ._ValidationStatusReason3 import ValidationStatusReason3
 
 class CurrencyControlPackageStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_PackgId", "_StsRsn", "_StsDtTm", "_RcrdSts", "_Sts"]
+	__slots__ = ["_PackgId", "_RcrdSts", "_Sts", "_StsDtTm", "_StsRsn"]
 	@property
 	def PackgId(self):
 		return self._PackgId

@@ -1,10 +1,10 @@
 from . import base_types
-from ._ShortLong1Code import ShortLong1Code
 from ._RestrictedFINImpliedCurrencyAndAmount import RestrictedFINImpliedCurrencyAndAmount
+from ._ShortLong1Code import ShortLong1Code
 
 class OriginalAndCurrentQuantities7(base_types._BaseFieldType):
 
-	__slots__ = ["_FaceAmt", "_AmtsdVal", "_ShrtLngPos"]
+	__slots__ = ["_AmtsdVal", "_FaceAmt", "_ShrtLngPos"]
 	@property
 	def AmtsdVal(self):
 		return self._AmtsdVal

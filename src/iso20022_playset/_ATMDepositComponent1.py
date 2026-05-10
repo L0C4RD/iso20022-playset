@@ -1,13 +1,13 @@
 from . import base_types
+from ._ATMDepositedMedia4 import ATMDepositedMedia4
 from ._CardAccount21 import CardAccount21
 from ._ContentInformationType10 import ContentInformationType10
 from ._DetailedAmount16 import DetailedAmount16
 from ._Max70Text import Max70Text
-from ._ATMDepositedMedia4 import ATMDepositedMedia4
 
 class ATMDepositComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdAcctData", "_AcctData", "_DtldReqdAmt", "_SubDpstId", "_DpstdMdia"]
+	__slots__ = ["_AcctData", "_DpstdMdia", "_DtldReqdAmt", "_PrtctdAcctData", "_SubDpstId"]
 	@property
 	def AcctData(self):
 		return self._AcctData

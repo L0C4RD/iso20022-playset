@@ -1,18 +1,18 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
+from ._AccountContract2 import AccountContract2
 from ._AccountForAction1 import AccountForAction1
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Group5 import Group5
-from ._AccountContract2 import AccountContract2
-from ._References4 import References4
-from ._OperationMandate6 import OperationMandate6
 from ._ContractDocument1 import ContractDocument1
+from ._Group5 import Group5
+from ._OperationMandate6 import OperationMandate6
 from ._OrganisationIdentification39 import OrganisationIdentification39
 from ._PartyAndSignature4 import PartyAndSignature4
+from ._References4 import References4
+from ._SupplementaryData1 import SupplementaryData1
 
 class AccountMandateMaintenanceAmendmentRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Fr", "_Mndt", "_AcctId", "_AcctSvcrId", "_UndrlygMstrAgrmt", "_Grp", "_DgtlSgntr", "_CtrctDts", "_OrgId", "_Refs", "_SplmtryData"]
+	__slots__ = ["_AcctId", "_AcctSvcrId", "_CtrctDts", "_DgtlSgntr", "_Fr", "_Grp", "_Mndt", "_OrgId", "_Refs", "_SplmtryData", "_UndrlygMstrAgrmt"]
 	@property
 	def AcctId(self):
 		return self._AcctId

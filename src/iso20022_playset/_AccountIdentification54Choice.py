@@ -1,15 +1,15 @@
 from . import base_types
-from ._Min8Max28NumericText import Min8Max28NumericText
-from ._Max35Text import Max35Text
-from ._UPICIdentifier import UPICIdentifier
 from ._BBANIdentifier import BBANIdentifier
-from ._Max16Text import Max16Text
 from ._IBAN2007Identifier import IBAN2007Identifier
+from ._Max16Text import Max16Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._Min8Max28NumericText import Min8Max28NumericText
+from ._UPICIdentifier import UPICIdentifier
 
 class AccountIdentification54Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_EMail", "_Dmst", "_MSISDN", "_UPIC", "_Card", "_IBAN", "_BBAN"]
+	__slots__ = ["_BBAN", "_Card", "_Dmst", "_EMail", "_IBAN", "_MSISDN", "_Othr", "_UPIC"]
 	@property
 	def BBAN(self):
 		return self._BBAN

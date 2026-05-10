@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._GroupHeader103 import GroupHeader103
 from ._Cheque18 import Cheque18
+from ._GroupHeader103 import GroupHeader103
+from ._SupplementaryData1 import SupplementaryData1
 
 class ChequeCancellationOrStopReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_Chq"]
+	__slots__ = ["_Chq", "_GrpHdr", "_SplmtryData"]
 	@property
 	def Chq(self):
 		return self._Chq

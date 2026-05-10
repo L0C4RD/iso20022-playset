@@ -1,13 +1,13 @@
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Max70Text import Max70Text
 from ._ATMCounterType2Code import ATMCounterType2Code
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max70Text import Max70Text
 from ._Number import Number
 
 class ATMTotals3(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_Amt", "_Id", "_Cnt", "_Ccy", "_AddtlId"]
+	__slots__ = ["_AddtlId", "_Amt", "_Ccy", "_Cnt", "_Id", "_Prd"]
 	@property
 	def AddtlId(self):
 		return self._AddtlId

@@ -1,11 +1,11 @@
 from . import base_types
-from ._AmountAndDirection53 import AmountAndDirection53
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._AmountAndDirection53 import AmountAndDirection53
 from ._PrincipalAmount3 import PrincipalAmount3
 
 class ExposureMetrics4(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnLn", "_LnVal", "_CollMktVal", "_OutsdngMrgnLnAmt", "_ShrtMktValAmt", "_CshCollAmt", "_PrncplAmt", "_MktVal"]
+	__slots__ = ["_CollMktVal", "_CshCollAmt", "_LnVal", "_MktVal", "_MrgnLn", "_OutsdngMrgnLnAmt", "_PrncplAmt", "_ShrtMktValAmt"]
 	@property
 	def CollMktVal(self):
 		return self._CollMktVal

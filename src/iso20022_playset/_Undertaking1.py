@@ -1,28 +1,28 @@
 from . import base_types
-from ._PartyIdentification43 import PartyIdentification43
 from ._AutomaticVariation1 import AutomaticVariation1
-from ._ExpiryDetails2 import ExpiryDetails2
-from ._UndertakingWording1 import UndertakingWording1
+from ._CashAccount28 import CashAccount28
 from ._CommunicationChannel1 import CommunicationChannel1
-from ._UndertakingName1Code import UndertakingName1Code
 from ._Document9 import Document9
+from ._ExpiryDetails2 import ExpiryDetails2
 from ._ExternalTypeOfParty1Code import ExternalTypeOfParty1Code
+from ._GovernanceRules1 import GovernanceRules1
+from ._Max2000Text import Max2000Text
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._PartyAndType1 import PartyAndType1
+from ._PartyIdentification43 import PartyIdentification43
 from ._Presentation4 import Presentation4
-from ._UndertakingAmount1 import UndertakingAmount1
-from ._UndertakingType1Choice import UndertakingType1Choice
 from ._UnderlyingTradeTransaction1 import UnderlyingTradeTransaction1
 from ._Undertaking2 import Undertaking2
-from ._Max2000Text import Max2000Text
-from ._GovernanceRules1 import GovernanceRules1
-from ._CashAccount28 import CashAccount28
+from ._UndertakingAmount1 import UndertakingAmount1
+from ._UndertakingName1Code import UndertakingName1Code
+from ._UndertakingType1Choice import UndertakingType1Choice
+from ._UndertakingWording1 import UndertakingWording1
 from ._YesNoIndicator import YesNoIndicator
-from ._PartyAndType1 import PartyAndType1
-from ._Max35Text import Max35Text
-from ._Max350Text import Max350Text
 
 class Undertaking1(base_types._BaseFieldType):
 
-	__slots__ = ["_Cnfrmr", "_Purp", "_CntrUdrtkgInd", "_ConfChrgsPyblBy", "_PresntnDtls", "_Nm", "_NclsdFile", "_Applcnt", "_PrtlDmndInd", "_TrfChrgsPyblBy", "_ScndAdvsgPty", "_OblgrSttlmAcct", "_Oblgr", "_DlvryChanl", "_ApplcntRefNb", "_CntrUdrtkg", "_UdrtkgAmt", "_AddtlPty", "_MltplDmndInd", "_AutomtcAmtVartn", "_Issr", "_Tp", "_UndrlygTx", "_AdvsgPty", "_GovncRulesAndLaw", "_Bnfcry", "_ConfInd", "_XpryDtls", "_OblgrLbltyAcct", "_TrfInd", "_OblgrChrgAcct", "_AddtlApplInf", "_UdrtkgWrdg"]
+	__slots__ = ["_AddtlApplInf", "_AddtlPty", "_AdvsgPty", "_Applcnt", "_ApplcntRefNb", "_AutomtcAmtVartn", "_Bnfcry", "_Cnfrmr", "_CntrUdrtkg", "_CntrUdrtkgInd", "_ConfChrgsPyblBy", "_ConfInd", "_DlvryChanl", "_GovncRulesAndLaw", "_Issr", "_MltplDmndInd", "_NclsdFile", "_Nm", "_Oblgr", "_OblgrChrgAcct", "_OblgrLbltyAcct", "_OblgrSttlmAcct", "_PresntnDtls", "_PrtlDmndInd", "_Purp", "_ScndAdvsgPty", "_Tp", "_TrfChrgsPyblBy", "_TrfInd", "_UdrtkgAmt", "_UdrtkgWrdg", "_UndrlygTx", "_XpryDtls"]
 	@property
 	def AddtlApplInf(self):
 		return self._AddtlApplInf

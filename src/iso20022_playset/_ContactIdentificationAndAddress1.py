@@ -1,7 +1,7 @@
 from . import base_types
-from ._PaymentRole1Code import PaymentRole1Code
 from ._CommunicationAddress8 import CommunicationAddress8
 from ._Max35Text import Max35Text
+from ._PaymentRole1Code import PaymentRole1Code
 
 class ContactIdentificationAndAddress1(base_types._BaseFieldType):
 

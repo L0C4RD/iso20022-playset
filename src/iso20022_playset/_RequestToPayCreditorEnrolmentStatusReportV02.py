@@ -1,7 +1,7 @@
 from . import base_types
+from ._EnrolmentHeader3 import EnrolmentHeader3
 from ._EnrolmentStatus3 import EnrolmentStatus3
 from ._SupplementaryData1 import SupplementaryData1
-from ._EnrolmentHeader3 import EnrolmentHeader3
 
 class RequestToPayCreditorEnrolmentStatusReportV02(base_types._BaseFieldType):
 

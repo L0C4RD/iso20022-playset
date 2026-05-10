@@ -1,11 +1,11 @@
 from . import base_types
-from ._SoftwareType1Code import SoftwareType1Code
-from ._Max35Text import Max35Text
 from ._Max256Text import Max256Text
+from ._Max35Text import Max35Text
+from ._SoftwareType1Code import SoftwareType1Code
 
 class Software1(base_types._BaseFieldType):
 
-	__slots__ = ["_SubTp", "_Tp", "_OthrTp", "_Vrsn"]
+	__slots__ = ["_OthrTp", "_SubTp", "_Tp", "_Vrsn"]
 	@property
 	def OthrTp(self):
 		return self._OthrTp

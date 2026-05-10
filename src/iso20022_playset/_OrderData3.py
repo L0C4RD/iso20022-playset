@@ -1,6 +1,6 @@
 from . import base_types
-from ._OrderData4 import OrderData4
 from ._AuctionData2 import AuctionData2
+from ._OrderData4 import OrderData4
 from ._OrderIdentification2 import OrderIdentification2
 
 class OrderData3(base_types._BaseFieldType):

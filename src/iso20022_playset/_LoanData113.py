@@ -1,11 +1,11 @@
 from . import base_types
-from ._ISODate import ISODate
 from ._AmountAndDirection53 import AmountAndDirection53
+from ._ISODate import ISODate
 from ._Max52Text import Max52Text
 
 class LoanData113(base_types._BaseFieldType):
 
-	__slots__ = ["_MktVal", "_EvtDt", "_UnqTradIdr"]
+	__slots__ = ["_EvtDt", "_MktVal", "_UnqTradIdr"]
 	@property
 	def EvtDt(self):
 		return self._EvtDt

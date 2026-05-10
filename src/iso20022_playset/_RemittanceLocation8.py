@@ -1,6 +1,6 @@
 from . import base_types
-from ._RemittanceLocationData2 import RemittanceLocationData2
 from ._Max35Text import Max35Text
+from ._RemittanceLocationData2 import RemittanceLocationData2
 
 class RemittanceLocation8(base_types._BaseFieldType):
 

@@ -1,14 +1,14 @@
 from . import base_types
-from ._UUIDv4Identifier import UUIDv4Identifier
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._OriginalGroupInformation29 import OriginalGroupInformation29
-from ._Max35Text import Max35Text
-from ._Purpose2Choice import Purpose2Choice
 from ._Charges15 import Charges15
+from ._Max35Text import Max35Text
+from ._OriginalGroupInformation29 import OriginalGroupInformation29
+from ._Purpose2Choice import Purpose2Choice
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class StatementResolutionEntry5(base_types._BaseFieldType):
 
-	__slots__ = ["_Purp", "_Chrgs", "_OrgnlStmtId", "_AcctSvcrRef", "_UETR", "_CrrctdAmt", "_OrgnlGrpInf"]
+	__slots__ = ["_AcctSvcrRef", "_Chrgs", "_CrrctdAmt", "_OrgnlGrpInf", "_OrgnlStmtId", "_Purp", "_UETR"]
 	@property
 	def AcctSvcrRef(self):
 		return self._AcctSvcrRef

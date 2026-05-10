@@ -1,16 +1,16 @@
 from . import base_types
+from ._AdditionalFeeReconciliation3 import AdditionalFeeReconciliation3
+from ._CreditDebit3Code import CreditDebit3Code
+from ._FinancialReconciliation3 import FinancialReconciliation3
 from ._ISODate import ISODate
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
 from ._MessageReconciliation3 import MessageReconciliation3
 from ._Min2Max3NumericText import Min2Max3NumericText
-from ._AdditionalFeeReconciliation3 import AdditionalFeeReconciliation3
-from ._FinancialReconciliation3 import FinancialReconciliation3
-from ._Max35Text import Max35Text
-from ._CreditDebit3Code import CreditDebit3Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class TransactionTotals14(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Dt", "_Fin", "_Ccy", "_CdtDbt", "_Id", "_AddtlFeeRcncltn", "_Msg", "_ChckptRef"]
+	__slots__ = ["_AddtlFeeRcncltn", "_Amt", "_Ccy", "_CdtDbt", "_ChckptRef", "_Dt", "_Fin", "_Id", "_Msg"]
 	@property
 	def AddtlFeeRcncltn(self):
 		return self._AddtlFeeRcncltn

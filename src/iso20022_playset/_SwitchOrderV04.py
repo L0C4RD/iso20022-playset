@@ -1,15 +1,15 @@
 from . import base_types
-from ._CopyInformation4 import CopyInformation4
 from ._AdditionalReference8 import AdditionalReference8
+from ._AdditionalReference9 import AdditionalReference9
+from ._CopyInformation4 import CopyInformation4
 from ._Extension1 import Extension1
 from ._MessageIdentification1 import MessageIdentification1
 from ._Pagination import Pagination
 from ._SwitchOrder7 import SwitchOrder7
-from ._AdditionalReference9 import AdditionalReference9
 
 class SwitchOrderV04(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_PrvsRef", "_PoolRef", "_CpyDtls", "_Xtnsn", "_SwtchOrdrDtls", "_MsgPgntn"]
+	__slots__ = ["_CpyDtls", "_MsgId", "_MsgPgntn", "_PoolRef", "_PrvsRef", "_SwtchOrdrDtls", "_Xtnsn"]
 	@property
 	def CpyDtls(self):
 		return self._CpyDtls

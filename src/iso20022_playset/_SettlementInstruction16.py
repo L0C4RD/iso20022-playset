@@ -4,7 +4,7 @@ from ._CashAccount40 import CashAccount40
 
 class SettlementInstruction16(base_types._BaseFieldType):
 
-	__slots__ = ["_InstdRmbrsmntAgtAcct", "_InstdRmbrsmntAgt", "_InstgRmbrsmntAgt", "_InstgRmbrsmntAgtAcct"]
+	__slots__ = ["_InstdRmbrsmntAgt", "_InstdRmbrsmntAgtAcct", "_InstgRmbrsmntAgt", "_InstgRmbrsmntAgtAcct"]
 	@property
 	def InstdRmbrsmntAgt(self):
 		return self._InstdRmbrsmntAgt

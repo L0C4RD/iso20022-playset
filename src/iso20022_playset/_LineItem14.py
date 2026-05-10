@@ -4,7 +4,7 @@ from ._LineItemDetails12 import LineItemDetails12
 
 class LineItem14(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrdLineItmsTtlAmt", "_OrdrdTtlNetAmt", "_PdgTtlNetAmt", "_LineItmDtls", "_AccptdLineItmsTtlAmt", "_OutsdngLineItmsTtlAmt", "_AccptdTtlNetAmt", "_OutsdngTtlNetAmt", "_PdgLineItmsTtlAmt"]
+	__slots__ = ["_AccptdLineItmsTtlAmt", "_AccptdTtlNetAmt", "_LineItmDtls", "_OrdrdLineItmsTtlAmt", "_OrdrdTtlNetAmt", "_OutsdngLineItmsTtlAmt", "_OutsdngTtlNetAmt", "_PdgLineItmsTtlAmt", "_PdgTtlNetAmt"]
 	@property
 	def AccptdLineItmsTtlAmt(self):
 		return self._AccptdLineItmsTtlAmt

@@ -1,11 +1,11 @@
 from . import base_types
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class GroupHeader109(base_types._BaseFieldType):
 
-	__slots__ = ["_InstgAgt", "_InstdAgt", "_CreDtTm", "_MsgId"]
+	__slots__ = ["_CreDtTm", "_InstdAgt", "_InstgAgt", "_MsgId"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm

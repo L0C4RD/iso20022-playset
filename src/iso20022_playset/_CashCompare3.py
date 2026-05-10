@@ -1,10 +1,10 @@
 from . import base_types
-from ._ComparePercentageRate3 import ComparePercentageRate3
 from ._CompareAmountAndDirection2 import CompareAmountAndDirection2
+from ._ComparePercentageRate3 import ComparePercentageRate3
 
 class CashCompare3(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_HrcutOrMrgn"]
+	__slots__ = ["_HrcutOrMrgn", "_Val"]
 	@property
 	def HrcutOrMrgn(self):
 		return self._HrcutOrMrgn

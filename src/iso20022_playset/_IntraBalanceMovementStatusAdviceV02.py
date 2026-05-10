@@ -1,17 +1,17 @@
 from . import base_types
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._DocumentIdentification51 import DocumentIdentification51
+from ._IntraBalance5 import IntraBalance5
+from ._ProcessingStatus67Choice import ProcessingStatus67Choice
+from ._SettlementStatus16Choice import SettlementStatus16Choice
 from ._SupplementaryData1 import SupplementaryData1
 from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._DocumentIdentification51 import DocumentIdentification51
 from ._TransactionIdentifications24 import TransactionIdentifications24
-from ._IntraBalance5 import IntraBalance5
-from ._SettlementStatus16Choice import SettlementStatus16Choice
-from ._ProcessingStatus67Choice import ProcessingStatus67Choice
-from ._CashAccount40 import CashAccount40
 
 class IntraBalanceMovementStatusAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_UndrlygIntraBal", "_TxId", "_CshAcctSvcr", "_CshAcct", "_SttlmSts", "_PrcgSts", "_CshAcctOwnr", "_SplmtryData"]
+	__slots__ = ["_CshAcct", "_CshAcctOwnr", "_CshAcctSvcr", "_Id", "_PrcgSts", "_SplmtryData", "_SttlmSts", "_TxId", "_UndrlygIntraBal"]
 	@property
 	def CshAcct(self):
 		return self._CshAcct

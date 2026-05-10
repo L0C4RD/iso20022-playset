@@ -1,13 +1,13 @@
 from . import base_types
-from ._PriceRateOrAmountOrUnknown3Choice import PriceRateOrAmountOrUnknown3Choice
-from ._MarketIdentification91 import MarketIdentification91
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._YieldedOrValueType1Choice import YieldedOrValueType1Choice
+from ._MarketIdentification91 import MarketIdentification91
+from ._PriceRateOrAmountOrUnknown3Choice import PriceRateOrAmountOrUnknown3Choice
 from ._TypeOfPrice33Choice import TypeOfPrice33Choice
+from ._YieldedOrValueType1Choice import YieldedOrValueType1Choice
 
 class PriceInformation22(base_types._BaseFieldType):
 
-	__slots__ = ["_ValTp", "_Tp", "_Val", "_SrcOfPric", "_QtnDt"]
+	__slots__ = ["_QtnDt", "_SrcOfPric", "_Tp", "_Val", "_ValTp"]
 	@property
 	def QtnDt(self):
 		return self._QtnDt

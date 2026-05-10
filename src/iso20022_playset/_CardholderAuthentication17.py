@@ -1,18 +1,18 @@
 from . import base_types
-from ._PersonIdentification15 import PersonIdentification15
-from ._Exemption1Code import Exemption1Code
-from ._AuthenticationMethod8Code import AuthenticationMethod8Code
-from ._ExternallyDefinedData5 import ExternallyDefinedData5
 from ._AddressVerification1 import AddressVerification1
+from ._AuthenticationMethod8Code import AuthenticationMethod8Code
 from ._AuthenticationResult1Code import AuthenticationResult1Code
-from ._OnLinePIN11 import OnLinePIN11
+from ._ContentInformationType40 import ContentInformationType40
+from ._Exemption1Code import Exemption1Code
+from ._ExternallyDefinedData5 import ExternallyDefinedData5
 from ._Max35Text import Max35Text
 from ._Max5000Binary import Max5000Binary
-from ._ContentInformationType40 import ContentInformationType40
+from ._OnLinePIN11 import OnLinePIN11
+from ._PersonIdentification15 import PersonIdentification15
 
 class CardholderAuthentication17(base_types._BaseFieldType):
 
-	__slots__ = ["_AuthntcnTp", "_PrtctdAuthntcnVal", "_AuthntcnXmptn", "_AuthntcnRslt", "_AuthntcnLvl", "_AuthntcnMtd", "_AuthntcnVal", "_CrdhldrOnLinePIN", "_AuthntcnAddtlInf", "_AdrVrfctn", "_CrdhldrId"]
+	__slots__ = ["_AdrVrfctn", "_AuthntcnAddtlInf", "_AuthntcnLvl", "_AuthntcnMtd", "_AuthntcnRslt", "_AuthntcnTp", "_AuthntcnVal", "_AuthntcnXmptn", "_CrdhldrId", "_CrdhldrOnLinePIN", "_PrtctdAuthntcnVal"]
 	@property
 	def AdrVrfctn(self):
 		return self._AdrVrfctn

@@ -1,23 +1,23 @@
 from . import base_types
-from ._Intermediary46 import Intermediary46
-from ._AccountParties17 import AccountParties17
-from ._AdditiononalInformation13 import AdditiononalInformation13
-from ._InvestmentFundOrder4 import InvestmentFundOrder4
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._InvestmentAccount74 import InvestmentAccount74
-from ._CashSettlement3 import CashSettlement3
 from ._AccountManagementConfirmation5 import AccountManagementConfirmation5
-from ._NewIssueAllocation2 import NewIssueAllocation2
-from ._InvestmentPlan17 import InvestmentPlan17
-from ._DocumentToSend4 import DocumentToSend4
-from ._MessageIdentification1 import MessageIdentification1
+from ._AccountParties17 import AccountParties17
 from ._AdditionalReference13 import AdditionalReference13
+from ._AdditiononalInformation13 import AdditiononalInformation13
+from ._CashSettlement3 import CashSettlement3
+from ._DocumentToSend4 import DocumentToSend4
 from ._Extension1 import Extension1
+from ._Intermediary46 import Intermediary46
+from ._InvestmentAccount74 import InvestmentAccount74
+from ._InvestmentFundOrder4 import InvestmentFundOrder4
+from ._InvestmentPlan17 import InvestmentPlan17
+from ._MarketPracticeVersion1 import MarketPracticeVersion1
+from ._MessageIdentification1 import MessageIdentification1
+from ._NewIssueAllocation2 import NewIssueAllocation2
 from ._ReferredAgent3 import ReferredAgent3
 
 class AccountDetailsConfirmationV08(base_types._BaseFieldType):
 
-	__slots__ = ["_CshSttlm", "_Plcmnt", "_NewIsseAllcn", "_Intrmies", "_SvcLvlAgrmt", "_AddtlInf", "_OrdrRef", "_MktPrctcVrsn", "_AcctPties", "_MsgId", "_InvstmtAcct", "_RltdRef", "_WdrwlInvstmtPlan", "_Xtnsn", "_SvgsInvstmtPlan", "_ConfDtls"]
+	__slots__ = ["_AcctPties", "_AddtlInf", "_ConfDtls", "_CshSttlm", "_Intrmies", "_InvstmtAcct", "_MktPrctcVrsn", "_MsgId", "_NewIsseAllcn", "_OrdrRef", "_Plcmnt", "_RltdRef", "_SvcLvlAgrmt", "_SvgsInvstmtPlan", "_WdrwlInvstmtPlan", "_Xtnsn"]
 	@property
 	def AcctPties(self):
 		return self._AcctPties

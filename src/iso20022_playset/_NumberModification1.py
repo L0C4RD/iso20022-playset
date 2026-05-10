@@ -1,10 +1,10 @@
 from . import base_types
-from ._Modification1Code import Modification1Code
 from ._Max5NumericText import Max5NumericText
+from ._Modification1Code import Modification1Code
 
 class NumberModification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Nb", "_ModCd"]
+	__slots__ = ["_ModCd", "_Nb"]
 	@property
 	def ModCd(self):
 		return self._ModCd

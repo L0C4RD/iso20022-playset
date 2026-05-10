@@ -1,12 +1,12 @@
 from . import base_types
-from ._SecurityIdentification39 import SecurityIdentification39
-from ._Max350Text import Max350Text
 from ._ISODateTime import ISODateTime
+from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
+from ._SecurityIdentification39 import SecurityIdentification39
 
 class SecuritiesReferenceDataChange3(base_types._BaseFieldType):
 
-	__slots__ = ["_NewFldVal", "_OprTmStmp", "_OdFldVal", "_FldNm", "_FinInstrmId"]
+	__slots__ = ["_FinInstrmId", "_FldNm", "_NewFldVal", "_OdFldVal", "_OprTmStmp"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId

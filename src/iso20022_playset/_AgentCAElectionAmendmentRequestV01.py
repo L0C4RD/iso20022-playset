@@ -1,14 +1,14 @@
 from . import base_types
+from ._ContactPerson1 import ContactPerson1
 from ._CorporateActionElection1 import CorporateActionElection1
+from ._CorporateActionElection2 import CorporateActionElection2
 from ._CorporateActionInformation1 import CorporateActionInformation1
 from ._DocumentIdentification8 import DocumentIdentification8
 from ._SecuritiesAccount7 import SecuritiesAccount7
-from ._CorporateActionElection2 import CorporateActionElection2
-from ._ContactPerson1 import ContactPerson1
 
 class AgentCAElectionAmendmentRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AgtCAElctnAdvcId", "_AcctDtls", "_AmddElctnDtls", "_CtctDtls", "_OrgnlElctnDtls", "_CorpActnGnlInf"]
+	__slots__ = ["_AcctDtls", "_AgtCAElctnAdvcId", "_AmddElctnDtls", "_CorpActnGnlInf", "_CtctDtls", "_Id", "_OrgnlElctnDtls"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls

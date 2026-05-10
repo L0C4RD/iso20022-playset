@@ -1,11 +1,11 @@
 from . import base_types
 from ._ISODate import ISODate
-from ._OtherIdentification1Choice import OtherIdentification1Choice
 from ._Max35Text import Max35Text
+from ._OtherIdentification1Choice import OtherIdentification1Choice
 
 class GenericIdentification44(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Id", "_Issr", "_XpryDt", "_IsseDt"]
+	__slots__ = ["_Id", "_IsseDt", "_Issr", "_Tp", "_XpryDt"]
 	@property
 	def Id(self):
 		return self._Id

@@ -1,14 +1,14 @@
 from . import base_types
+from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 from ._ISODate import ISODate
 from ._MatchingSystemReference1Choice import MatchingSystemReference1Choice
-from ._YesNoIndicator import YesNoIndicator
 from ._Max35Text import Max35Text
 from ._Max4Text import Max4Text
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._YesNoIndicator import YesNoIndicator
 
 class TradeAgreement15(base_types._BaseFieldType):
 
-	__slots__ = ["_MtchgSysRef", "_TradDt", "_PdctTp", "_SttlmSsnIdr", "_OprScp", "_AmdOrCclRsn", "_PmtVrssPmtInd", "_OprTp", "_OrgtrRef", "_CmonRef"]
+	__slots__ = ["_AmdOrCclRsn", "_CmonRef", "_MtchgSysRef", "_OprScp", "_OprTp", "_OrgtrRef", "_PdctTp", "_PmtVrssPmtInd", "_SttlmSsnIdr", "_TradDt"]
 	@property
 	def AmdOrCclRsn(self):
 		return self._AmdOrCclRsn

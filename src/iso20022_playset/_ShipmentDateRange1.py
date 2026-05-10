@@ -3,7 +3,7 @@ from ._ISODate import ISODate
 
 class ShipmentDateRange1(base_types._BaseFieldType):
 
-	__slots__ = ["_LatstShipmntDt", "_EarlstShipmntDt"]
+	__slots__ = ["_EarlstShipmntDt", "_LatstShipmntDt"]
 	@property
 	def EarlstShipmntDt(self):
 		return self._EarlstShipmntDt

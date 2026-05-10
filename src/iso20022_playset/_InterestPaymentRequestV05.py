@@ -1,14 +1,14 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._Max35Text import Max35Text
 from ._Agreement4 import Agreement4
-from ._Obligation9 import Obligation9
-from ._InterestResult1 import InterestResult1
 from ._InterestAmount4 import InterestAmount4
+from ._InterestResult1 import InterestResult1
+from ._Max35Text import Max35Text
+from ._Obligation9 import Obligation9
+from ._SupplementaryData1 import SupplementaryData1
 
 class InterestPaymentRequestV05(base_types._BaseFieldType):
 
-	__slots__ = ["_Oblgtn", "_IntrstDueToA", "_IntrstDueToB", "_NetAmtDtls", "_Agrmt", "_TxId", "_SplmtryData"]
+	__slots__ = ["_Agrmt", "_IntrstDueToA", "_IntrstDueToB", "_NetAmtDtls", "_Oblgtn", "_SplmtryData", "_TxId"]
 	@property
 	def Agrmt(self):
 		return self._Agrmt

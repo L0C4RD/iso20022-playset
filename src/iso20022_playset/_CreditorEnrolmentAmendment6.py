@@ -1,10 +1,10 @@
 from . import base_types
-from ._CreditorInvoice5 import CreditorInvoice5
 from ._CreditorEnrolment6 import CreditorEnrolment6
+from ._CreditorInvoice5 import CreditorInvoice5
 
 class CreditorEnrolmentAmendment6(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrEnrlmnt", "_ActvtnData"]
+	__slots__ = ["_ActvtnData", "_CdtrEnrlmnt"]
 	@property
 	def ActvtnData(self):
 		return self._ActvtnData

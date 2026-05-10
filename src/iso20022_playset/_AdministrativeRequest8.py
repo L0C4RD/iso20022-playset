@@ -1,12 +1,12 @@
 from . import base_types
-from ._PaymentContext30 import PaymentContext30
-from ._SupplementaryData1 import SupplementaryData1
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 from ._Max20000Text import Max20000Text
+from ._PaymentContext30 import PaymentContext30
+from ._SupplementaryData1 import SupplementaryData1
 
 class AdministrativeRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_SplmtryData", "_AdmstvSvcId"]
+	__slots__ = ["_AdmstvSvcId", "_Cntxt", "_Envt", "_SplmtryData"]
 	@property
 	def AdmstvSvcId(self):
 		return self._AdmstvSvcId

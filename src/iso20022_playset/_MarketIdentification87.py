@@ -1,11 +1,11 @@
 from . import base_types
-from ._Purpose3Choice import Purpose3Choice
-from ._CountryCode import CountryCode
 from ._ClassificationType1Choice import ClassificationType1Choice
+from ._CountryCode import CountryCode
+from ._Purpose3Choice import Purpose3Choice
 
 class MarketIdentification87(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_SttlmPurp", "_ClssfctnTp"]
+	__slots__ = ["_ClssfctnTp", "_Ctry", "_SttlmPurp"]
 	@property
 	def ClssfctnTp(self):
 		return self._ClssfctnTp

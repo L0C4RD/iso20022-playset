@@ -1,11 +1,11 @@
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
 from ._LiquidityCreditTransfer4 import LiquidityCreditTransfer4
 from ._MessageHeader1 import MessageHeader1
+from ._SupplementaryData1 import SupplementaryData1
 
 class LiquidityCreditTransferV07(base_types._BaseFieldType):
 
-	__slots__ = ["_LqdtyCdtTrf", "_SplmtryData", "_MsgHdr"]
+	__slots__ = ["_LqdtyCdtTrf", "_MsgHdr", "_SplmtryData"]
 	@property
 	def LqdtyCdtTrf(self):
 		return self._LqdtyCdtTrf
