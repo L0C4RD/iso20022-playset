@@ -1,6 +1,6 @@
-import base_types
-import DecimalNumber
+from . import base_types
 import BillingServiceIdentification3
+import DecimalNumber
 
 class BillingServiceParameters3(base_types._BaseFieldType):
 

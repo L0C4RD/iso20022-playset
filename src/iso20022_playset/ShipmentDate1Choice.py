@@ -1,22 +1,9 @@
-import base_types
+from . import base_types
 import ISODate
 
 class ShipmentDate1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ActlShipmntDt", "_PropsdShipmntDt"]
-	@property
-	def ActlShipmntDt(self):
-		return self._ActlShipmntDt
-
-	@ActlShipmntDt.setter
-	def ActlShipmntDt(self, value):
-		self._ActlShipmntDt = value if type(value) != auto else self.make_default("ActlShipmntDt")
-
-	@ActlShipmntDt.deleter
-	def ActlShipmntDt(self):
-		del self._ActlShipmntDt
-		self._ActlShipmntDt = None
-
+	__slots__ = ["_PropsdShipmntDt", "_ActlShipmntDt"]
 	@property
 	def PropsdShipmntDt(self):
 		return self._PropsdShipmntDt
@@ -30,8 +17,21 @@ class ShipmentDate1Choice(base_types._BaseFieldType):
 		del self._PropsdShipmntDt
 		self._PropsdShipmntDt = None
 
+	@property
+	def ActlShipmntDt(self):
+		return self._ActlShipmntDt
+
+	@ActlShipmntDt.setter
+	def ActlShipmntDt(self, value):
+		self._ActlShipmntDt = value if type(value) != auto else self.make_default("ActlShipmntDt")
+
+	@ActlShipmntDt.deleter
+	def ActlShipmntDt(self):
+		del self._ActlShipmntDt
+		self._ActlShipmntDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActlShipmntDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PropsdShipmntDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ActlShipmntDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 	))
 

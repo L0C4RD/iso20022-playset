@@ -1,25 +1,12 @@
-import base_types
-import Max35Text
+from . import base_types
 import TradeTransactionCondition8Choice
 import SettlementParties94
+import Max35Text
 import SettlementTransactionCondition30Choice
 
 class FundSettlementParameters15(base_types._BaseFieldType):
 
-	__slots__ = ["_TradTxCond", "_DlvrgSdDtls", "_SctiesSttlmSysId", "_SttlmTxCond"]
-	@property
-	def TradTxCond(self):
-		return self._TradTxCond
-
-	@TradTxCond.setter
-	def TradTxCond(self, value):
-		self._TradTxCond = value if type(value) != auto else self.make_default("TradTxCond")
-
-	@TradTxCond.deleter
-	def TradTxCond(self):
-		del self._TradTxCond
-		self._TradTxCond = None
-
+	__slots__ = ["_DlvrgSdDtls", "_SctiesSttlmSysId", "_TradTxCond", "_SttlmTxCond"]
 	@property
 	def DlvrgSdDtls(self):
 		return self._DlvrgSdDtls
@@ -47,6 +34,19 @@ class FundSettlementParameters15(base_types._BaseFieldType):
 		self._SctiesSttlmSysId = None
 
 	@property
+	def TradTxCond(self):
+		return self._TradTxCond
+
+	@TradTxCond.setter
+	def TradTxCond(self, value):
+		self._TradTxCond = value if type(value) != auto else self.make_default("TradTxCond")
+
+	@TradTxCond.deleter
+	def TradTxCond(self):
+		del self._TradTxCond
+		self._TradTxCond = None
+
+	@property
 	def SttlmTxCond(self):
 		return self._SttlmTxCond
 
@@ -60,9 +60,9 @@ class FundSettlementParameters15(base_types._BaseFieldType):
 		self._SttlmTxCond = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradTxCond', type=TradeTransactionCondition8Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DlvrgSdDtls', type=SettlementParties94, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesSttlmSysId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradTxCond', type=TradeTransactionCondition8Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SttlmTxCond', type=SettlementTransactionCondition30Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,26 +1,13 @@
-import base_types
-import Max35Text
-import Max140Text
-import AlternatePartyIdentification8
-import PartyTextInformation1
+from . import base_types
 import PartyIdentification240Choice
+import Max140Text
+import PartyTextInformation1
+import Max35Text
+import AlternatePartyIdentification8
 
 class PartyIdentificationAndAccount201(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgId", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_AltrnId", "_Id", "_AddtlInf"]
-	@property
-	def PrcgId(self):
-		return self._PrcgId
-
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
-
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
-
+	__slots__ = ["_BlckChainAdrOrWllt", "_SfkpgAcct", "_PrcgId", "_Id", "_AddtlInf", "_AltrnId"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -48,17 +35,17 @@ class PartyIdentificationAndAccount201(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
-	def AltrnId(self):
-		return self._AltrnId
+	def PrcgId(self):
+		return self._PrcgId
 
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
 
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
 
 	@property
 	def Id(self):
@@ -86,12 +73,25 @@ class PartyIdentificationAndAccount201(base_types._BaseFieldType):
 		del self._AddtlInf
 		self._AddtlInf = None
 
+	@property
+	def AltrnId(self):
+		return self._AltrnId
+
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification240Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

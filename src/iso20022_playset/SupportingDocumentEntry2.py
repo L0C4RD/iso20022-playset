@@ -1,16 +1,42 @@
-import base_types
+from . import base_types
 import DocumentGeneralInformation5
-import Max500Text
-import DocumentIdentification22
-import ActiveCurrencyAndAmount
+import DocumentEntryAmendment1
 import Max35Text
 import ShipmentAttribute2
-import DocumentEntryAmendment1
+import ActiveCurrencyAndAmount
+import DocumentIdentification22
+import Max500Text
 import Exact4AlphaNumericUnderscoreText
 
 class SupportingDocumentEntry2(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlAmtAftrShipmnt", "_TtlAmtAftrShipmntInCtrctCcy", "_DocTp", "_NtryId", "_AddtlInf", "_TtlAmt", "_TtlAmtInCtrctCcy", "_MtrtyData", "_NtryAmdmntId", "_Attchmnt", "_ShipmntAttrbts", "_OrgnlDoc"]
+	__slots__ = ["_Attchmnt", "_TtlAmtInCtrctCcy", "_TtlAmtAftrShipmnt", "_AddtlInf", "_MtrtyData", "_OrgnlDoc", "_DocTp", "_NtryId", "_NtryAmdmntId", "_ShipmntAttrbts", "_TtlAmt", "_TtlAmtAftrShipmntInCtrctCcy"]
+	@property
+	def Attchmnt(self):
+		return self._Attchmnt
+
+	@Attchmnt.setter
+	def Attchmnt(self, value):
+		self._Attchmnt = value if type(value) != auto else self.make_default("Attchmnt")
+
+	@Attchmnt.deleter
+	def Attchmnt(self):
+		del self._Attchmnt
+		self._Attchmnt = None
+
+	@property
+	def TtlAmtInCtrctCcy(self):
+		return self._TtlAmtInCtrctCcy
+
+	@TtlAmtInCtrctCcy.setter
+	def TtlAmtInCtrctCcy(self, value):
+		self._TtlAmtInCtrctCcy = value if type(value) != auto else self.make_default("TtlAmtInCtrctCcy")
+
+	@TtlAmtInCtrctCcy.deleter
+	def TtlAmtInCtrctCcy(self):
+		del self._TtlAmtInCtrctCcy
+		self._TtlAmtInCtrctCcy = None
+
 	@property
 	def TtlAmtAftrShipmnt(self):
 		return self._TtlAmtAftrShipmnt
@@ -25,17 +51,43 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 		self._TtlAmtAftrShipmnt = None
 
 	@property
-	def TtlAmtAftrShipmntInCtrctCcy(self):
-		return self._TtlAmtAftrShipmntInCtrctCcy
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@TtlAmtAftrShipmntInCtrctCcy.setter
-	def TtlAmtAftrShipmntInCtrctCcy(self, value):
-		self._TtlAmtAftrShipmntInCtrctCcy = value if type(value) != auto else self.make_default("TtlAmtAftrShipmntInCtrctCcy")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@TtlAmtAftrShipmntInCtrctCcy.deleter
-	def TtlAmtAftrShipmntInCtrctCcy(self):
-		del self._TtlAmtAftrShipmntInCtrctCcy
-		self._TtlAmtAftrShipmntInCtrctCcy = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def MtrtyData(self):
+		return self._MtrtyData
+
+	@MtrtyData.setter
+	def MtrtyData(self, value):
+		self._MtrtyData = value if type(value) != auto else self.make_default("MtrtyData")
+
+	@MtrtyData.deleter
+	def MtrtyData(self):
+		del self._MtrtyData
+		self._MtrtyData = None
+
+	@property
+	def OrgnlDoc(self):
+		return self._OrgnlDoc
+
+	@OrgnlDoc.setter
+	def OrgnlDoc(self, value):
+		self._OrgnlDoc = value if type(value) != auto else self.make_default("OrgnlDoc")
+
+	@OrgnlDoc.deleter
+	def OrgnlDoc(self):
+		del self._OrgnlDoc
+		self._OrgnlDoc = None
 
 	@property
 	def DocTp(self):
@@ -64,58 +116,6 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 		self._NtryId = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def TtlAmt(self):
-		return self._TtlAmt
-
-	@TtlAmt.setter
-	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != auto else self.make_default("TtlAmt")
-
-	@TtlAmt.deleter
-	def TtlAmt(self):
-		del self._TtlAmt
-		self._TtlAmt = None
-
-	@property
-	def TtlAmtInCtrctCcy(self):
-		return self._TtlAmtInCtrctCcy
-
-	@TtlAmtInCtrctCcy.setter
-	def TtlAmtInCtrctCcy(self, value):
-		self._TtlAmtInCtrctCcy = value if type(value) != auto else self.make_default("TtlAmtInCtrctCcy")
-
-	@TtlAmtInCtrctCcy.deleter
-	def TtlAmtInCtrctCcy(self):
-		del self._TtlAmtInCtrctCcy
-		self._TtlAmtInCtrctCcy = None
-
-	@property
-	def MtrtyData(self):
-		return self._MtrtyData
-
-	@MtrtyData.setter
-	def MtrtyData(self, value):
-		self._MtrtyData = value if type(value) != auto else self.make_default("MtrtyData")
-
-	@MtrtyData.deleter
-	def MtrtyData(self):
-		del self._MtrtyData
-		self._MtrtyData = None
-
-	@property
 	def NtryAmdmntId(self):
 		return self._NtryAmdmntId
 
@@ -127,19 +127,6 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 	def NtryAmdmntId(self):
 		del self._NtryAmdmntId
 		self._NtryAmdmntId = None
-
-	@property
-	def Attchmnt(self):
-		return self._Attchmnt
-
-	@Attchmnt.setter
-	def Attchmnt(self, value):
-		self._Attchmnt = value if type(value) != auto else self.make_default("Attchmnt")
-
-	@Attchmnt.deleter
-	def Attchmnt(self):
-		del self._Attchmnt
-		self._Attchmnt = None
 
 	@property
 	def ShipmntAttrbts(self):
@@ -155,30 +142,43 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 		self._ShipmntAttrbts = None
 
 	@property
-	def OrgnlDoc(self):
-		return self._OrgnlDoc
+	def TtlAmt(self):
+		return self._TtlAmt
 
-	@OrgnlDoc.setter
-	def OrgnlDoc(self, value):
-		self._OrgnlDoc = value if type(value) != auto else self.make_default("OrgnlDoc")
+	@TtlAmt.setter
+	def TtlAmt(self, value):
+		self._TtlAmt = value if type(value) != auto else self.make_default("TtlAmt")
 
-	@OrgnlDoc.deleter
-	def OrgnlDoc(self):
-		del self._OrgnlDoc
-		self._OrgnlDoc = None
+	@TtlAmt.deleter
+	def TtlAmt(self):
+		del self._TtlAmt
+		self._TtlAmt = None
+
+	@property
+	def TtlAmtAftrShipmntInCtrctCcy(self):
+		return self._TtlAmtAftrShipmntInCtrctCcy
+
+	@TtlAmtAftrShipmntInCtrctCcy.setter
+	def TtlAmtAftrShipmntInCtrctCcy(self, value):
+		self._TtlAmtAftrShipmntInCtrctCcy = value if type(value) != auto else self.make_default("TtlAmtAftrShipmntInCtrctCcy")
+
+	@TtlAmtAftrShipmntInCtrctCcy.deleter
+	def TtlAmtAftrShipmntInCtrctCcy(self):
+		del self._TtlAmtAftrShipmntInCtrctCcy
+		self._TtlAmtAftrShipmntInCtrctCcy = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Attchmnt', type=DocumentGeneralInformation5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlAmtInCtrctCcy', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmtAftrShipmnt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmtAftrShipmntInCtrctCcy', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyData', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlDoc', type=DocumentIdentification22, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocTp', type=Exact4AlphaNumericUnderscoreText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtryId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmtInCtrctCcy', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtrtyData', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtryAmdmntId', type=DocumentEntryAmendment1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Attchmnt', type=DocumentGeneralInformation5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ShipmntAttrbts', type=ShipmentAttribute2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlDoc', type=DocumentIdentification22, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmtAftrShipmntInCtrctCcy', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

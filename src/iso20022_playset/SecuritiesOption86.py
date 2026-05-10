@@ -1,24 +1,24 @@
-import base_types
-import CreditDebitCode
+from . import base_types
 import Quantity54Choice
-import SecurityIdentification20
 import DateAndDateTime2Choice
+import CreditDebitCode
+import SecurityIdentification20
 
 class SecuritiesOption86(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_PstngQty", "_OrgnlPstngDt", "_PstngDt", "_FinInstrmId"]
+	__slots__ = ["_OrgnlPstngDt", "_PstngQty", "_PstngDt", "_CdtDbtInd", "_FinInstrmId"]
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
+	def OrgnlPstngDt(self):
+		return self._OrgnlPstngDt
 
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+	@OrgnlPstngDt.setter
+	def OrgnlPstngDt(self, value):
+		self._OrgnlPstngDt = value if type(value) != auto else self.make_default("OrgnlPstngDt")
 
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
+	@OrgnlPstngDt.deleter
+	def OrgnlPstngDt(self):
+		del self._OrgnlPstngDt
+		self._OrgnlPstngDt = None
 
 	@property
 	def PstngQty(self):
@@ -34,19 +34,6 @@ class SecuritiesOption86(base_types._BaseFieldType):
 		self._PstngQty = None
 
 	@property
-	def OrgnlPstngDt(self):
-		return self._OrgnlPstngDt
-
-	@OrgnlPstngDt.setter
-	def OrgnlPstngDt(self, value):
-		self._OrgnlPstngDt = value if type(value) != auto else self.make_default("OrgnlPstngDt")
-
-	@OrgnlPstngDt.deleter
-	def OrgnlPstngDt(self):
-		del self._OrgnlPstngDt
-		self._OrgnlPstngDt = None
-
-	@property
 	def PstngDt(self):
 		return self._PstngDt
 
@@ -58,6 +45,19 @@ class SecuritiesOption86(base_types._BaseFieldType):
 	def PstngDt(self):
 		del self._PstngDt
 		self._PstngDt = None
+
+	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
 
 	@property
 	def FinInstrmId(self):
@@ -73,10 +73,10 @@ class SecuritiesOption86(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstngQty', type=Quantity54Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlPstngDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstngQty', type=Quantity54Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
 	))
 

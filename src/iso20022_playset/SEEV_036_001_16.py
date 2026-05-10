@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CorporateActionMovementConfirmationV16
 
 class SEEV_036_001_16():

@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
 import TaxRecordDetails3
 import PercentageRate
 import ActiveOrHistoricCurrencyAndAmount
 
 class TaxAmount3(base_types._BaseFieldType):
 
-	__slots__ = ["_Dtls", "_Rate", "_TtlAmt", "_TaxblBaseAmt"]
+	__slots__ = ["_TaxblBaseAmt", "_Dtls", "_Rate", "_TtlAmt"]
+	@property
+	def TaxblBaseAmt(self):
+		return self._TaxblBaseAmt
+
+	@TaxblBaseAmt.setter
+	def TaxblBaseAmt(self, value):
+		self._TaxblBaseAmt = value if type(value) != auto else self.make_default("TaxblBaseAmt")
+
+	@TaxblBaseAmt.deleter
+	def TaxblBaseAmt(self):
+		del self._TaxblBaseAmt
+		self._TaxblBaseAmt = None
+
 	@property
 	def Dtls(self):
 		return self._Dtls
@@ -45,23 +58,10 @@ class TaxAmount3(base_types._BaseFieldType):
 		del self._TtlAmt
 		self._TtlAmt = None
 
-	@property
-	def TaxblBaseAmt(self):
-		return self._TaxblBaseAmt
-
-	@TaxblBaseAmt.setter
-	def TaxblBaseAmt(self, value):
-		self._TaxblBaseAmt = value if type(value) != auto else self.make_default("TaxblBaseAmt")
-
-	@TaxblBaseAmt.deleter
-	def TaxblBaseAmt(self):
-		del self._TaxblBaseAmt
-		self._TaxblBaseAmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TaxblBaseAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dtls', type=TaxRecordDetails3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxblBaseAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import GrossDividendRate2
 import RateValueType2FormatChoice
 import ActiveCurrencyAndAmount
 
 class GrossDividendRate1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RateTpAmt", "_Amt", "_NotSpcfdRate"]
+	__slots__ = ["_NotSpcfdRate", "_Amt", "_RateTpAmt"]
 	@property
-	def RateTpAmt(self):
-		return self._RateTpAmt
+	def NotSpcfdRate(self):
+		return self._NotSpcfdRate
 
-	@RateTpAmt.setter
-	def RateTpAmt(self, value):
-		self._RateTpAmt = value if type(value) != auto else self.make_default("RateTpAmt")
+	@NotSpcfdRate.setter
+	def NotSpcfdRate(self, value):
+		self._NotSpcfdRate = value if type(value) != auto else self.make_default("NotSpcfdRate")
 
-	@RateTpAmt.deleter
-	def RateTpAmt(self):
-		del self._RateTpAmt
-		self._RateTpAmt = None
+	@NotSpcfdRate.deleter
+	def NotSpcfdRate(self):
+		del self._NotSpcfdRate
+		self._NotSpcfdRate = None
 
 	@property
 	def Amt(self):
@@ -33,21 +33,21 @@ class GrossDividendRate1Choice(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def NotSpcfdRate(self):
-		return self._NotSpcfdRate
+	def RateTpAmt(self):
+		return self._RateTpAmt
 
-	@NotSpcfdRate.setter
-	def NotSpcfdRate(self, value):
-		self._NotSpcfdRate = value if type(value) != auto else self.make_default("NotSpcfdRate")
+	@RateTpAmt.setter
+	def RateTpAmt(self, value):
+		self._RateTpAmt = value if type(value) != auto else self.make_default("RateTpAmt")
 
-	@NotSpcfdRate.deleter
-	def NotSpcfdRate(self):
-		del self._NotSpcfdRate
-		self._NotSpcfdRate = None
+	@RateTpAmt.deleter
+	def RateTpAmt(self):
+		del self._RateTpAmt
+		self._RateTpAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RateTpAmt', type=GrossDividendRate2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType2FormatChoice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RateTpAmt', type=GrossDividendRate2, min=0, max=1, mutex_group=1, array=False),
 	))
 

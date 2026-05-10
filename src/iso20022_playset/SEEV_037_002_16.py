@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CorporateActionMovementReversalAdvice002V16
 
 class SEEV_037_002_16():

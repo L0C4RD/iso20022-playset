@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class ISOYearMonth(base_types._BaseDataType_gYearMonth):
 

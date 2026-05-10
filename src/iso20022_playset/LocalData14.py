@@ -1,13 +1,26 @@
-import base_types
+from . import base_types
+import ISOMax3ALanguageCode
+import Max210Text
+import Max70Text
 import Max35Text
 import AdditionalData1
-import Max70Text
-import Max210Text
-import ISOMax3ALanguageCode
 
 class LocalData14(base_types._BaseFieldType):
 
-	__slots__ = ["_Lang", "_ShrtNm", "_NcodgFrmt", "_LglCorpNm", "_AddtlData"]
+	__slots__ = ["_LglCorpNm", "_Lang", "_ShrtNm", "_AddtlData", "_NcodgFrmt"]
+	@property
+	def LglCorpNm(self):
+		return self._LglCorpNm
+
+	@LglCorpNm.setter
+	def LglCorpNm(self, value):
+		self._LglCorpNm = value if type(value) != auto else self.make_default("LglCorpNm")
+
+	@LglCorpNm.deleter
+	def LglCorpNm(self):
+		del self._LglCorpNm
+		self._LglCorpNm = None
+
 	@property
 	def Lang(self):
 		return self._Lang
@@ -35,32 +48,6 @@ class LocalData14(base_types._BaseFieldType):
 		self._ShrtNm = None
 
 	@property
-	def NcodgFrmt(self):
-		return self._NcodgFrmt
-
-	@NcodgFrmt.setter
-	def NcodgFrmt(self, value):
-		self._NcodgFrmt = value if type(value) != auto else self.make_default("NcodgFrmt")
-
-	@NcodgFrmt.deleter
-	def NcodgFrmt(self):
-		del self._NcodgFrmt
-		self._NcodgFrmt = None
-
-	@property
-	def LglCorpNm(self):
-		return self._LglCorpNm
-
-	@LglCorpNm.setter
-	def LglCorpNm(self, value):
-		self._LglCorpNm = value if type(value) != auto else self.make_default("LglCorpNm")
-
-	@LglCorpNm.deleter
-	def LglCorpNm(self):
-		del self._LglCorpNm
-		self._LglCorpNm = None
-
-	@property
 	def AddtlData(self):
 		return self._AddtlData
 
@@ -73,11 +60,24 @@ class LocalData14(base_types._BaseFieldType):
 		del self._AddtlData
 		self._AddtlData = None
 
+	@property
+	def NcodgFrmt(self):
+		return self._NcodgFrmt
+
+	@NcodgFrmt.setter
+	def NcodgFrmt(self, value):
+		self._NcodgFrmt = value if type(value) != auto else self.make_default("NcodgFrmt")
+
+	@NcodgFrmt.deleter
+	def NcodgFrmt(self):
+		del self._NcodgFrmt
+		self._NcodgFrmt = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='LglCorpNm', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NcodgFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglCorpNm', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NcodgFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class SignatureEnvelope(base_types._BaseFieldType):
 

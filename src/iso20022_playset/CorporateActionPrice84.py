@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PriceFormat77Choice
 
 class CorporateActionPrice84(base_types._BaseFieldType):

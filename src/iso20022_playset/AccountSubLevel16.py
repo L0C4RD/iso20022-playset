@@ -1,15 +1,28 @@
-import base_types
-import PartyIdentification100
-import SupplementaryData1
+from . import base_types
 import AggregateHoldingBalance2
 import AccountSubLevel17
+import PartyIdentification100
 import BeneficialOwner2
+import SupplementaryData1
 import AggregateHoldingBalance3
 import SecuritiesAccount19
 
 class AccountSubLevel16(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_AcctSvcr", "_AcctOwnr", "_AcctId", "_BalDtls", "_AcctSubLvl7", "_BnfclOwnr", "_AcctSubLvl7Diff"]
+	__slots__ = ["_BalDtls", "_SplmtryData", "_BnfclOwnr", "_AcctSvcr", "_AcctSubLvl7", "_AcctOwnr", "_AcctId", "_AcctSubLvl7Diff"]
+	@property
+	def BalDtls(self):
+		return self._BalDtls
+
+	@BalDtls.setter
+	def BalDtls(self, value):
+		self._BalDtls = value if type(value) != auto else self.make_default("BalDtls")
+
+	@BalDtls.deleter
+	def BalDtls(self):
+		del self._BalDtls
+		self._BalDtls = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -24,6 +37,19 @@ class AccountSubLevel16(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def BnfclOwnr(self):
+		return self._BnfclOwnr
+
+	@BnfclOwnr.setter
+	def BnfclOwnr(self, value):
+		self._BnfclOwnr = value if type(value) != auto else self.make_default("BnfclOwnr")
+
+	@BnfclOwnr.deleter
+	def BnfclOwnr(self):
+		del self._BnfclOwnr
+		self._BnfclOwnr = None
+
+	@property
 	def AcctSvcr(self):
 		return self._AcctSvcr
 
@@ -35,6 +61,19 @@ class AccountSubLevel16(base_types._BaseFieldType):
 	def AcctSvcr(self):
 		del self._AcctSvcr
 		self._AcctSvcr = None
+
+	@property
+	def AcctSubLvl7(self):
+		return self._AcctSubLvl7
+
+	@AcctSubLvl7.setter
+	def AcctSubLvl7(self, value):
+		self._AcctSubLvl7 = value if type(value) != auto else self.make_default("AcctSubLvl7")
+
+	@AcctSubLvl7.deleter
+	def AcctSubLvl7(self):
+		del self._AcctSubLvl7
+		self._AcctSubLvl7 = None
 
 	@property
 	def AcctOwnr(self):
@@ -63,45 +102,6 @@ class AccountSubLevel16(base_types._BaseFieldType):
 		self._AcctId = None
 
 	@property
-	def BalDtls(self):
-		return self._BalDtls
-
-	@BalDtls.setter
-	def BalDtls(self, value):
-		self._BalDtls = value if type(value) != auto else self.make_default("BalDtls")
-
-	@BalDtls.deleter
-	def BalDtls(self):
-		del self._BalDtls
-		self._BalDtls = None
-
-	@property
-	def AcctSubLvl7(self):
-		return self._AcctSubLvl7
-
-	@AcctSubLvl7.setter
-	def AcctSubLvl7(self, value):
-		self._AcctSubLvl7 = value if type(value) != auto else self.make_default("AcctSubLvl7")
-
-	@AcctSubLvl7.deleter
-	def AcctSubLvl7(self):
-		del self._AcctSubLvl7
-		self._AcctSubLvl7 = None
-
-	@property
-	def BnfclOwnr(self):
-		return self._BnfclOwnr
-
-	@BnfclOwnr.setter
-	def BnfclOwnr(self, value):
-		self._BnfclOwnr = value if type(value) != auto else self.make_default("BnfclOwnr")
-
-	@BnfclOwnr.deleter
-	def BnfclOwnr(self):
-		del self._BnfclOwnr
-		self._BnfclOwnr = None
-
-	@property
 	def AcctSubLvl7Diff(self):
 		return self._AcctSubLvl7Diff
 
@@ -115,13 +115,13 @@ class AccountSubLevel16(base_types._BaseFieldType):
 		self._AcctSubLvl7Diff = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BalDtls', type=AggregateHoldingBalance3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BnfclOwnr', type=BeneficialOwner2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSubLvl7', type=AccountSubLevel17, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalDtls', type=AggregateHoldingBalance3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctSubLvl7', type=AccountSubLevel17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BnfclOwnr', type=BeneficialOwner2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctSubLvl7Diff', type=AggregateHoldingBalance2, min=0, max=None, mutex_group=None, array=True),
 	))
 

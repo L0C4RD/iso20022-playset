@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import OriginalMessageAndIssuer1
-import RequestHandling4
 import PaymentIdentification8Choice
+import RequestHandling4
 
 class Receipt7(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgId", "_OrgnlPmtId", "_ReqHdlg"]
-	@property
-	def OrgnlMsgId(self):
-		return self._OrgnlMsgId
-
-	@OrgnlMsgId.setter
-	def OrgnlMsgId(self, value):
-		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
-
-	@OrgnlMsgId.deleter
-	def OrgnlMsgId(self):
-		del self._OrgnlMsgId
-		self._OrgnlMsgId = None
-
+	__slots__ = ["_OrgnlPmtId", "_OrgnlMsgId", "_ReqHdlg"]
 	@property
 	def OrgnlPmtId(self):
 		return self._OrgnlPmtId
@@ -31,6 +18,19 @@ class Receipt7(base_types._BaseFieldType):
 	def OrgnlPmtId(self):
 		del self._OrgnlPmtId
 		self._OrgnlPmtId = None
+
+	@property
+	def OrgnlMsgId(self):
+		return self._OrgnlMsgId
+
+	@OrgnlMsgId.setter
+	def OrgnlMsgId(self, value):
+		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
+
+	@OrgnlMsgId.deleter
+	def OrgnlMsgId(self):
+		del self._OrgnlMsgId
+		self._OrgnlMsgId = None
 
 	@property
 	def ReqHdlg(self):
@@ -46,8 +46,8 @@ class Receipt7(base_types._BaseFieldType):
 		self._ReqHdlg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlMsgId', type=OriginalMessageAndIssuer1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlPmtId', type=PaymentIdentification8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgId', type=OriginalMessageAndIssuer1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqHdlg', type=RequestHandling4, min=0, max=None, mutex_group=None, array=True),
 	))
 

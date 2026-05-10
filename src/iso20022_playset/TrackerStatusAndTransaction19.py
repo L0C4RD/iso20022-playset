@@ -1,6 +1,6 @@
-import base_types
-import TrackerPaymentTransaction14
+from . import base_types
 import TrackerStatus1
+import TrackerPaymentTransaction14
 
 class TrackerStatusAndTransaction19(base_types._BaseFieldType):
 

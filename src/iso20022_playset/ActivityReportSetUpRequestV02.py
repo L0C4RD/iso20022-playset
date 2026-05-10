@@ -1,23 +1,10 @@
-import base_types
-import MessageIdentification1
+from . import base_types
 import UTCOffset1
+import MessageIdentification1
 
 class ActivityReportSetUpRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_UTCOffset", "_ReqId"]
-	@property
-	def UTCOffset(self):
-		return self._UTCOffset
-
-	@UTCOffset.setter
-	def UTCOffset(self, value):
-		self._UTCOffset = value if type(value) != auto else self.make_default("UTCOffset")
-
-	@UTCOffset.deleter
-	def UTCOffset(self):
-		del self._UTCOffset
-		self._UTCOffset = None
-
+	__slots__ = ["_ReqId", "_UTCOffset"]
 	@property
 	def ReqId(self):
 		return self._ReqId
@@ -31,8 +18,21 @@ class ActivityReportSetUpRequestV02(base_types._BaseFieldType):
 		del self._ReqId
 		self._ReqId = None
 
+	@property
+	def UTCOffset(self):
+		return self._UTCOffset
+
+	@UTCOffset.setter
+	def UTCOffset(self, value):
+		self._UTCOffset = value if type(value) != auto else self.make_default("UTCOffset")
+
+	@UTCOffset.deleter
+	def UTCOffset(self):
+		del self._UTCOffset
+		self._UTCOffset = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UTCOffset', type=UTCOffset1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UTCOffset', type=UTCOffset1, min=1, max=1, mutex_group=None, array=False),
 	))
 

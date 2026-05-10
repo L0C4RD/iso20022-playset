@@ -1,27 +1,14 @@
-import base_types
-import CancelledStatus12Choice
+from . import base_types
+import AcceptedStatus8Choice
 import RejectedStatus37Choice
 import ProprietaryStatusAndReason6
 import MatchingStatus34Choice
+import CancelledStatus12Choice
 import PendingStatus63Choice
-import AcceptedStatus8Choice
 
 class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtrySts", "_Canc", "_Rjctd", "_AccptdForFrthrPrcg", "_Pdg", "_MtchgSts"]
-	@property
-	def PrtrySts(self):
-		return self._PrtrySts
-
-	@PrtrySts.setter
-	def PrtrySts(self, value):
-		self._PrtrySts = value if type(value) != auto else self.make_default("PrtrySts")
-
-	@PrtrySts.deleter
-	def PrtrySts(self):
-		del self._PrtrySts
-		self._PrtrySts = None
-
+	__slots__ = ["_Canc", "_PrtrySts", "_MtchgSts", "_Pdg", "_AccptdForFrthrPrcg", "_Rjctd"]
 	@property
 	def Canc(self):
 		return self._Canc
@@ -36,30 +23,30 @@ class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 		self._Canc = None
 
 	@property
-	def Rjctd(self):
-		return self._Rjctd
+	def PrtrySts(self):
+		return self._PrtrySts
 
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+	@PrtrySts.setter
+	def PrtrySts(self, value):
+		self._PrtrySts = value if type(value) != auto else self.make_default("PrtrySts")
 
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
+	@PrtrySts.deleter
+	def PrtrySts(self):
+		del self._PrtrySts
+		self._PrtrySts = None
 
 	@property
-	def AccptdForFrthrPrcg(self):
-		return self._AccptdForFrthrPrcg
+	def MtchgSts(self):
+		return self._MtchgSts
 
-	@AccptdForFrthrPrcg.setter
-	def AccptdForFrthrPrcg(self, value):
-		self._AccptdForFrthrPrcg = value if type(value) != auto else self.make_default("AccptdForFrthrPrcg")
+	@MtchgSts.setter
+	def MtchgSts(self, value):
+		self._MtchgSts = value if type(value) != auto else self.make_default("MtchgSts")
 
-	@AccptdForFrthrPrcg.deleter
-	def AccptdForFrthrPrcg(self):
-		del self._AccptdForFrthrPrcg
-		self._AccptdForFrthrPrcg = None
+	@MtchgSts.deleter
+	def MtchgSts(self):
+		del self._MtchgSts
+		self._MtchgSts = None
 
 	@property
 	def Pdg(self):
@@ -75,24 +62,37 @@ class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 		self._Pdg = None
 
 	@property
-	def MtchgSts(self):
-		return self._MtchgSts
+	def AccptdForFrthrPrcg(self):
+		return self._AccptdForFrthrPrcg
 
-	@MtchgSts.setter
-	def MtchgSts(self, value):
-		self._MtchgSts = value if type(value) != auto else self.make_default("MtchgSts")
+	@AccptdForFrthrPrcg.setter
+	def AccptdForFrthrPrcg(self, value):
+		self._AccptdForFrthrPrcg = value if type(value) != auto else self.make_default("AccptdForFrthrPrcg")
 
-	@MtchgSts.deleter
-	def MtchgSts(self):
-		del self._MtchgSts
-		self._MtchgSts = None
+	@AccptdForFrthrPrcg.deleter
+	def AccptdForFrthrPrcg(self):
+		del self._AccptdForFrthrPrcg
+		self._AccptdForFrthrPrcg = None
+
+	@property
+	def Rjctd(self):
+		return self._Rjctd
+
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Canc', type=CancelledStatus12Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=RejectedStatus37Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AccptdForFrthrPrcg', type=AcceptedStatus8Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pdg', type=PendingStatus63Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus34Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pdg', type=PendingStatus63Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AccptdForFrthrPrcg', type=AcceptedStatus8Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=RejectedStatus37Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

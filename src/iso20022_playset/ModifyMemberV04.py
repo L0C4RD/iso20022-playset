@@ -1,12 +1,25 @@
-import base_types
+from . import base_types
 import Member6
-import SupplementaryData1
-import MessageHeader1
 import MemberIdentification3Choice
+import MessageHeader1
+import SupplementaryData1
 
 class ModifyMemberV04(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_MmbId", "_SplmtryData", "_NewMmbValSet"]
+	__slots__ = ["_NewMmbValSet", "_MsgHdr", "_MmbId", "_SplmtryData"]
+	@property
+	def NewMmbValSet(self):
+		return self._NewMmbValSet
+
+	@NewMmbValSet.setter
+	def NewMmbValSet(self, value):
+		self._NewMmbValSet = value if type(value) != auto else self.make_default("NewMmbValSet")
+
+	@NewMmbValSet.deleter
+	def NewMmbValSet(self):
+		del self._NewMmbValSet
+		self._NewMmbValSet = None
+
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr
@@ -46,23 +59,10 @@ class ModifyMemberV04(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def NewMmbValSet(self):
-		return self._NewMmbValSet
-
-	@NewMmbValSet.setter
-	def NewMmbValSet(self, value):
-		self._NewMmbValSet = value if type(value) != auto else self.make_default("NewMmbValSet")
-
-	@NewMmbValSet.deleter
-	def NewMmbValSet(self):
-		del self._NewMmbValSet
-		self._NewMmbValSet = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NewMmbValSet', type=Member6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MmbId', type=MemberIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NewMmbValSet', type=Member6, min=1, max=1, mutex_group=None, array=False),
 	))
 

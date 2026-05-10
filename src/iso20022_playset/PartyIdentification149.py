@@ -1,23 +1,10 @@
-import base_types
-import PartyIdentification134Choice
+from . import base_types
 import LEIIdentifier
+import PartyIdentification134Choice
 
 class PartyIdentification149(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_Id"]
-	@property
-	def LEI(self):
-		return self._LEI
-
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
-
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
-
+	__slots__ = ["_Id", "_LEI"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,8 +18,21 @@ class PartyIdentification149(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def LEI(self):
+		return self._LEI
+
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
+
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification134Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

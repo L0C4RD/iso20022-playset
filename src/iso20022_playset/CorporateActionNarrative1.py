@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import Max350Text
-import PartyIdentification2Choice
 import Max256Text
+import PartyIdentification2Choice
 
 class CorporateActionNarrative1(base_types._BaseFieldType):
 
-	__slots__ = ["_InfConds", "_Offerr", "_TaxtnConds", "_InfToCmplyWth", "_URLAdr", "_AddtlTxt", "_NewCpnyNm"]
-	@property
-	def InfConds(self):
-		return self._InfConds
-
-	@InfConds.setter
-	def InfConds(self, value):
-		self._InfConds = value if type(value) != auto else self.make_default("InfConds")
-
-	@InfConds.deleter
-	def InfConds(self):
-		del self._InfConds
-		self._InfConds = None
-
+	__slots__ = ["_Offerr", "_InfConds", "_NewCpnyNm", "_InfToCmplyWth", "_URLAdr", "_AddtlTxt", "_TaxtnConds"]
 	@property
 	def Offerr(self):
 		return self._Offerr
@@ -33,17 +20,30 @@ class CorporateActionNarrative1(base_types._BaseFieldType):
 		self._Offerr = None
 
 	@property
-	def TaxtnConds(self):
-		return self._TaxtnConds
+	def InfConds(self):
+		return self._InfConds
 
-	@TaxtnConds.setter
-	def TaxtnConds(self, value):
-		self._TaxtnConds = value if type(value) != auto else self.make_default("TaxtnConds")
+	@InfConds.setter
+	def InfConds(self, value):
+		self._InfConds = value if type(value) != auto else self.make_default("InfConds")
 
-	@TaxtnConds.deleter
-	def TaxtnConds(self):
-		del self._TaxtnConds
-		self._TaxtnConds = None
+	@InfConds.deleter
+	def InfConds(self):
+		del self._InfConds
+		self._InfConds = None
+
+	@property
+	def NewCpnyNm(self):
+		return self._NewCpnyNm
+
+	@NewCpnyNm.setter
+	def NewCpnyNm(self, value):
+		self._NewCpnyNm = value if type(value) != auto else self.make_default("NewCpnyNm")
+
+	@NewCpnyNm.deleter
+	def NewCpnyNm(self):
+		del self._NewCpnyNm
+		self._NewCpnyNm = None
 
 	@property
 	def InfToCmplyWth(self):
@@ -85,25 +85,25 @@ class CorporateActionNarrative1(base_types._BaseFieldType):
 		self._AddtlTxt = None
 
 	@property
-	def NewCpnyNm(self):
-		return self._NewCpnyNm
+	def TaxtnConds(self):
+		return self._TaxtnConds
 
-	@NewCpnyNm.setter
-	def NewCpnyNm(self, value):
-		self._NewCpnyNm = value if type(value) != auto else self.make_default("NewCpnyNm")
+	@TaxtnConds.setter
+	def TaxtnConds(self, value):
+		self._TaxtnConds = value if type(value) != auto else self.make_default("TaxtnConds")
 
-	@NewCpnyNm.deleter
-	def NewCpnyNm(self):
-		del self._NewCpnyNm
-		self._NewCpnyNm = None
+	@TaxtnConds.deleter
+	def TaxtnConds(self):
+		del self._TaxtnConds
+		self._TaxtnConds = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InfConds', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Offerr', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxtnConds', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InfConds', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewCpnyNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InfToCmplyWth', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URLAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlTxt', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewCpnyNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxtnConds', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,9 +1,9 @@
-import base_types
+from . import base_types
 import PartyIdentificationAndAccount222
 
 class ReceivingPartiesAndAccount20(base_types._BaseFieldType):
 
-	__slots__ = ["_RcvrsIntrmy1Dtls", "_RcvrsCtdnDtls", "_RcvrsIntrmy2Dtls", "_RcvgAgtDtls"]
+	__slots__ = ["_RcvrsIntrmy1Dtls", "_RcvrsCtdnDtls", "_RcvgAgtDtls", "_RcvrsIntrmy2Dtls"]
 	@property
 	def RcvrsIntrmy1Dtls(self):
 		return self._RcvrsIntrmy1Dtls
@@ -31,19 +31,6 @@ class ReceivingPartiesAndAccount20(base_types._BaseFieldType):
 		self._RcvrsCtdnDtls = None
 
 	@property
-	def RcvrsIntrmy2Dtls(self):
-		return self._RcvrsIntrmy2Dtls
-
-	@RcvrsIntrmy2Dtls.setter
-	def RcvrsIntrmy2Dtls(self, value):
-		self._RcvrsIntrmy2Dtls = value if type(value) != auto else self.make_default("RcvrsIntrmy2Dtls")
-
-	@RcvrsIntrmy2Dtls.deleter
-	def RcvrsIntrmy2Dtls(self):
-		del self._RcvrsIntrmy2Dtls
-		self._RcvrsIntrmy2Dtls = None
-
-	@property
 	def RcvgAgtDtls(self):
 		return self._RcvgAgtDtls
 
@@ -56,10 +43,23 @@ class ReceivingPartiesAndAccount20(base_types._BaseFieldType):
 		del self._RcvgAgtDtls
 		self._RcvgAgtDtls = None
 
+	@property
+	def RcvrsIntrmy2Dtls(self):
+		return self._RcvrsIntrmy2Dtls
+
+	@RcvrsIntrmy2Dtls.setter
+	def RcvrsIntrmy2Dtls(self, value):
+		self._RcvrsIntrmy2Dtls = value if type(value) != auto else self.make_default("RcvrsIntrmy2Dtls")
+
+	@RcvrsIntrmy2Dtls.deleter
+	def RcvrsIntrmy2Dtls(self):
+		del self._RcvrsIntrmy2Dtls
+		self._RcvrsIntrmy2Dtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RcvrsIntrmy1Dtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvrsCtdnDtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcvrsIntrmy2Dtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvgAgtDtls', type=PartyIdentificationAndAccount222, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvrsIntrmy2Dtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
-import base_types
-import NonEligibleProceedsIndicator1Code
+from . import base_types
 import GenericIdentification47
+import NonEligibleProceedsIndicator1Code
 
 class NonEligibleProceedsIndicator4Choice(base_types._BaseFieldType):
 

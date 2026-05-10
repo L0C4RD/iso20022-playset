@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
+import SecuritiesCollateralResponse2
 import CashCollateralResponse3
 import OtherCollateralResponse3
-import SecuritiesCollateralResponse2
 
 class CollateralResponse3(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReturnBusinessDayInformationV07
 
 class CAMT_019_001_07():

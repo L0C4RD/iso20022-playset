@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CertificateManagementResponseV07
 
 class CATM_008_001_07():

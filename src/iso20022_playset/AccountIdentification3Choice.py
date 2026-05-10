@@ -1,8 +1,8 @@
-import base_types
-import SimpleIdentificationInformation2
+from . import base_types
 import IBANIdentifier
-import UPICIdentifier
+import SimpleIdentificationInformation2
 import BBANIdentifier
+import UPICIdentifier
 
 class AccountIdentification3Choice(base_types._BaseFieldType):
 

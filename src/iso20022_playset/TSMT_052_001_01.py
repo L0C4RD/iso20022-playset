@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RoleAndBaselineRejectionNotificationV01
 
 class TSMT_052_001_01():

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ATMReconciliationRequestV01
 
 class CAAM_015_001_01():

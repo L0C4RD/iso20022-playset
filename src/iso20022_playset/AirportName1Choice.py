@@ -1,6 +1,6 @@
-import base_types
-import Max6Text
+from . import base_types
 import AirportDescription1
+import Max6Text
 
 class AirportName1Choice(base_types._BaseFieldType):
 

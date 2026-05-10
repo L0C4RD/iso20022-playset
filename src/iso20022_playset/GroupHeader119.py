@@ -1,13 +1,13 @@
-import base_types
-import Max35Text
+from . import base_types
 import Max15NumericText
 import ISODateTime
+import Max35Text
 import DecimalNumber
 import BranchAndFinancialInstitutionIdentification8
 
 class GroupHeader119(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_InstdAgt", "_InstgAgt", "_CreDtTm", "_NbOfTxs", "_CtrlSum"]
+	__slots__ = ["_MsgId", "_InstgAgt", "_NbOfTxs", "_CtrlSum", "_InstdAgt", "_CreDtTm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -22,19 +22,6 @@ class GroupHeader119(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def InstdAgt(self):
-		return self._InstdAgt
-
-	@InstdAgt.setter
-	def InstdAgt(self, value):
-		self._InstdAgt = value if type(value) != auto else self.make_default("InstdAgt")
-
-	@InstdAgt.deleter
-	def InstdAgt(self):
-		del self._InstdAgt
-		self._InstdAgt = None
-
-	@property
 	def InstgAgt(self):
 		return self._InstgAgt
 
@@ -46,19 +33,6 @@ class GroupHeader119(base_types._BaseFieldType):
 	def InstgAgt(self):
 		del self._InstgAgt
 		self._InstgAgt = None
-
-	@property
-	def CreDtTm(self):
-		return self._CreDtTm
-
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
-
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
 
 	@property
 	def NbOfTxs(self):
@@ -86,12 +60,38 @@ class GroupHeader119(base_types._BaseFieldType):
 		del self._CtrlSum
 		self._CtrlSum = None
 
+	@property
+	def InstdAgt(self):
+		return self._InstdAgt
+
+	@InstdAgt.setter
+	def InstdAgt(self, value):
+		self._InstdAgt = value if type(value) != auto else self.make_default("InstdAgt")
+
+	@InstdAgt.deleter
+	def InstdAgt(self):
+		del self._InstdAgt
+		self._InstdAgt = None
+
+	@property
+	def CreDtTm(self):
+		return self._CreDtTm
+
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

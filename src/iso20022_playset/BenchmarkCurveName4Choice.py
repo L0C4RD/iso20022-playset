@@ -1,24 +1,11 @@
-import base_types
-import ISINOct2015Identifier
-import BenchmarkCurveName2Code
+from . import base_types
 import Max25Text
+import BenchmarkCurveName2Code
+import ISINOct2015Identifier
 
 class BenchmarkCurveName4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Indx", "_ISIN", "_Nm"]
-	@property
-	def Indx(self):
-		return self._Indx
-
-	@Indx.setter
-	def Indx(self, value):
-		self._Indx = value if type(value) != auto else self.make_default("Indx")
-
-	@Indx.deleter
-	def Indx(self):
-		del self._Indx
-		self._Indx = None
-
+	__slots__ = ["_ISIN", "_Nm", "_Indx"]
 	@property
 	def ISIN(self):
 		return self._ISIN
@@ -45,9 +32,22 @@ class BenchmarkCurveName4Choice(base_types._BaseFieldType):
 		del self._Nm
 		self._Nm = None
 
+	@property
+	def Indx(self):
+		return self._Indx
+
+	@Indx.setter
+	def Indx(self, value):
+		self._Indx = value if type(value) != auto else self.make_default("Indx")
+
+	@Indx.deleter
+	def Indx(self):
+		del self._Indx
+		self._Indx = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Indx', type=BenchmarkCurveName2Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Nm', type=Max25Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Indx', type=BenchmarkCurveName2Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

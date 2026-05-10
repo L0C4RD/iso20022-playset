@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import MoneyMarketStatusReportHeader1
 import SupplementaryData1
 import MoneyMarketTransactionStatus2
 
 class MoneyMarketStatisticalReportStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRptHdr", "_SplmtryData", "_TxSts"]
-	@property
-	def StsRptHdr(self):
-		return self._StsRptHdr
-
-	@StsRptHdr.setter
-	def StsRptHdr(self, value):
-		self._StsRptHdr = value if type(value) != auto else self.make_default("StsRptHdr")
-
-	@StsRptHdr.deleter
-	def StsRptHdr(self):
-		del self._StsRptHdr
-		self._StsRptHdr = None
-
+	__slots__ = ["_SplmtryData", "_TxSts", "_StsRptHdr"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -45,9 +32,22 @@ class MoneyMarketStatisticalReportStatusAdviceV01(base_types._BaseFieldType):
 		del self._TxSts
 		self._TxSts = None
 
+	@property
+	def StsRptHdr(self):
+		return self._StsRptHdr
+
+	@StsRptHdr.setter
+	def StsRptHdr(self, value):
+		self._StsRptHdr = value if type(value) != auto else self.make_default("StsRptHdr")
+
+	@StsRptHdr.deleter
+	def StsRptHdr(self):
+		del self._StsRptHdr
+		self._StsRptHdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StsRptHdr', type=MoneyMarketStatusReportHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxSts', type=MoneyMarketTransactionStatus2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsRptHdr', type=MoneyMarketStatusReportHeader1, min=1, max=1, mutex_group=None, array=False),
 	))
 

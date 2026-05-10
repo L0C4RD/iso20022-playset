@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DeleteReservationV07
 
 class CAMT_049_001_07():

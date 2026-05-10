@@ -1,6 +1,6 @@
-import base_types
-import QueryType2Code
+from . import base_types
 import BusinessDayCriteria3Choice
+import QueryType2Code
 
 class BusinessDayQuery2(base_types._BaseFieldType):
 

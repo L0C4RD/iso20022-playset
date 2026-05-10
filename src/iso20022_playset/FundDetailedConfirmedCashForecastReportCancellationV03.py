@@ -1,38 +1,12 @@
-import base_types
+from . import base_types
+import FundDetailedConfirmedCashForecastReport3
+import Pagination
 import MessageIdentification1
 import AdditionalReference3
-import Pagination
-import FundDetailedConfirmedCashForecastReport3
 
 class FundDetailedConfirmedCashForecastReportCancellationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdRef", "_PoolRef", "_MsgPgntn", "_CshFcstRptToBeCanc", "_PrvsRef", "_MsgId"]
-	@property
-	def RltdRef(self):
-		return self._RltdRef
-
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
-
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
-
-	@property
-	def PoolRef(self):
-		return self._PoolRef
-
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
-
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
-
+	__slots__ = ["_MsgPgntn", "_RltdRef", "_MsgId", "_PrvsRef", "_PoolRef", "_CshFcstRptToBeCanc"]
 	@property
 	def MsgPgntn(self):
 		return self._MsgPgntn
@@ -47,17 +21,30 @@ class FundDetailedConfirmedCashForecastReportCancellationV03(base_types._BaseFie
 		self._MsgPgntn = None
 
 	@property
-	def CshFcstRptToBeCanc(self):
-		return self._CshFcstRptToBeCanc
+	def RltdRef(self):
+		return self._RltdRef
 
-	@CshFcstRptToBeCanc.setter
-	def CshFcstRptToBeCanc(self, value):
-		self._CshFcstRptToBeCanc = value if type(value) != auto else self.make_default("CshFcstRptToBeCanc")
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
 
-	@CshFcstRptToBeCanc.deleter
-	def CshFcstRptToBeCanc(self):
-		del self._CshFcstRptToBeCanc
-		self._CshFcstRptToBeCanc = None
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def PrvsRef(self):
@@ -73,24 +60,37 @@ class FundDetailedConfirmedCashForecastReportCancellationV03(base_types._BaseFie
 		self._PrvsRef = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def PoolRef(self):
+		return self._PoolRef
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
+
+	@property
+	def CshFcstRptToBeCanc(self):
+		return self._CshFcstRptToBeCanc
+
+	@CshFcstRptToBeCanc.setter
+	def CshFcstRptToBeCanc(self, value):
+		self._CshFcstRptToBeCanc = value if type(value) != auto else self.make_default("CshFcstRptToBeCanc")
+
+	@CshFcstRptToBeCanc.deleter
+	def CshFcstRptToBeCanc(self):
+		del self._CshFcstRptToBeCanc
+		self._CshFcstRptToBeCanc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshFcstRptToBeCanc', type=FundDetailedConfirmedCashForecastReport3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshFcstRptToBeCanc', type=FundDetailedConfirmedCashForecastReport3, min=0, max=1, mutex_group=None, array=False),
 	))
 

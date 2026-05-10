@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import DecimalNumber
 import BillingServiceIdentification2
 import AmountAndDirection34
 
 class BillingServiceParameters2(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcChrgAmt", "_BkSvc", "_UnitPric", "_Vol"]
-	@property
-	def SvcChrgAmt(self):
-		return self._SvcChrgAmt
-
-	@SvcChrgAmt.setter
-	def SvcChrgAmt(self, value):
-		self._SvcChrgAmt = value if type(value) != auto else self.make_default("SvcChrgAmt")
-
-	@SvcChrgAmt.deleter
-	def SvcChrgAmt(self):
-		del self._SvcChrgAmt
-		self._SvcChrgAmt = None
-
+	__slots__ = ["_BkSvc", "_Vol", "_UnitPric", "_SvcChrgAmt"]
 	@property
 	def BkSvc(self):
 		return self._BkSvc
@@ -31,6 +18,19 @@ class BillingServiceParameters2(base_types._BaseFieldType):
 	def BkSvc(self):
 		del self._BkSvc
 		self._BkSvc = None
+
+	@property
+	def Vol(self):
+		return self._Vol
+
+	@Vol.setter
+	def Vol(self, value):
+		self._Vol = value if type(value) != auto else self.make_default("Vol")
+
+	@Vol.deleter
+	def Vol(self):
+		del self._Vol
+		self._Vol = None
 
 	@property
 	def UnitPric(self):
@@ -46,22 +46,22 @@ class BillingServiceParameters2(base_types._BaseFieldType):
 		self._UnitPric = None
 
 	@property
-	def Vol(self):
-		return self._Vol
+	def SvcChrgAmt(self):
+		return self._SvcChrgAmt
 
-	@Vol.setter
-	def Vol(self, value):
-		self._Vol = value if type(value) != auto else self.make_default("Vol")
+	@SvcChrgAmt.setter
+	def SvcChrgAmt(self, value):
+		self._SvcChrgAmt = value if type(value) != auto else self.make_default("SvcChrgAmt")
 
-	@Vol.deleter
-	def Vol(self):
-		del self._Vol
-		self._Vol = None
+	@SvcChrgAmt.deleter
+	def SvcChrgAmt(self):
+		del self._SvcChrgAmt
+		self._SvcChrgAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SvcChrgAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BkSvc', type=BillingServiceIdentification2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitPric', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vol', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitPric', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcChrgAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,39 +1,13 @@
-import base_types
-import BICIdentification1
-import YesNoIndicator
+from . import base_types
 import AssuredType1Code
-import InsuranceClauses1Code
+import YesNoIndicator
 import PartyIdentification27
+import BICIdentification1
+import InsuranceClauses1Code
 
 class RequiredSubmission3(base_types._BaseFieldType):
 
-	__slots__ = ["_MtchIssr", "_MtchTrnsprt", "_MtchIsseDt", "_MtchAmt", "_ClausesReqrd", "_MtchAssrdPty", "_Submitr"]
-	@property
-	def MtchIssr(self):
-		return self._MtchIssr
-
-	@MtchIssr.setter
-	def MtchIssr(self, value):
-		self._MtchIssr = value if type(value) != auto else self.make_default("MtchIssr")
-
-	@MtchIssr.deleter
-	def MtchIssr(self):
-		del self._MtchIssr
-		self._MtchIssr = None
-
-	@property
-	def MtchTrnsprt(self):
-		return self._MtchTrnsprt
-
-	@MtchTrnsprt.setter
-	def MtchTrnsprt(self, value):
-		self._MtchTrnsprt = value if type(value) != auto else self.make_default("MtchTrnsprt")
-
-	@MtchTrnsprt.deleter
-	def MtchTrnsprt(self):
-		del self._MtchTrnsprt
-		self._MtchTrnsprt = None
-
+	__slots__ = ["_MtchIsseDt", "_MtchAmt", "_Submitr", "_MtchTrnsprt", "_MtchIssr", "_MtchAssrdPty", "_ClausesReqrd"]
 	@property
 	def MtchIsseDt(self):
 		return self._MtchIsseDt
@@ -61,17 +35,43 @@ class RequiredSubmission3(base_types._BaseFieldType):
 		self._MtchAmt = None
 
 	@property
-	def ClausesReqrd(self):
-		return self._ClausesReqrd
+	def Submitr(self):
+		return self._Submitr
 
-	@ClausesReqrd.setter
-	def ClausesReqrd(self, value):
-		self._ClausesReqrd = value if type(value) != auto else self.make_default("ClausesReqrd")
+	@Submitr.setter
+	def Submitr(self, value):
+		self._Submitr = value if type(value) != auto else self.make_default("Submitr")
 
-	@ClausesReqrd.deleter
-	def ClausesReqrd(self):
-		del self._ClausesReqrd
-		self._ClausesReqrd = None
+	@Submitr.deleter
+	def Submitr(self):
+		del self._Submitr
+		self._Submitr = None
+
+	@property
+	def MtchTrnsprt(self):
+		return self._MtchTrnsprt
+
+	@MtchTrnsprt.setter
+	def MtchTrnsprt(self, value):
+		self._MtchTrnsprt = value if type(value) != auto else self.make_default("MtchTrnsprt")
+
+	@MtchTrnsprt.deleter
+	def MtchTrnsprt(self):
+		del self._MtchTrnsprt
+		self._MtchTrnsprt = None
+
+	@property
+	def MtchIssr(self):
+		return self._MtchIssr
+
+	@MtchIssr.setter
+	def MtchIssr(self, value):
+		self._MtchIssr = value if type(value) != auto else self.make_default("MtchIssr")
+
+	@MtchIssr.deleter
+	def MtchIssr(self):
+		del self._MtchIssr
+		self._MtchIssr = None
 
 	@property
 	def MtchAssrdPty(self):
@@ -87,25 +87,25 @@ class RequiredSubmission3(base_types._BaseFieldType):
 		self._MtchAssrdPty = None
 
 	@property
-	def Submitr(self):
-		return self._Submitr
+	def ClausesReqrd(self):
+		return self._ClausesReqrd
 
-	@Submitr.setter
-	def Submitr(self, value):
-		self._Submitr = value if type(value) != auto else self.make_default("Submitr")
+	@ClausesReqrd.setter
+	def ClausesReqrd(self, value):
+		self._ClausesReqrd = value if type(value) != auto else self.make_default("ClausesReqrd")
 
-	@Submitr.deleter
-	def Submitr(self):
-		del self._Submitr
-		self._Submitr = None
+	@ClausesReqrd.deleter
+	def ClausesReqrd(self):
+		del self._ClausesReqrd
+		self._ClausesReqrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MtchIssr', type=PartyIdentification27, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtchTrnsprt', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchIsseDt', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchAmt', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClausesReqrd', type=InsuranceClauses1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MtchAssrdPty', type=AssuredType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Submitr', type=BICIdentification1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MtchTrnsprt', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtchIssr', type=PartyIdentification27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtchAssrdPty', type=AssuredType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClausesReqrd', type=InsuranceClauses1Code, min=0, max=None, mutex_group=None, array=True),
 	))
 

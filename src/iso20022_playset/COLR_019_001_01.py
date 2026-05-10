@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TripartyCollateralTransactionInstructionV01
 
 class COLR_019_001_01():

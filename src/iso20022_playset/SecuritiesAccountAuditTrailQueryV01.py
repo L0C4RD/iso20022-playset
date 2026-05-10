@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
+import SecuritiesAccountAuditTrailSearchCriteria3
 import MessageHeader1
 import SupplementaryData1
-import SecuritiesAccountAuditTrailSearchCriteria3
 
 class SecuritiesAccountAuditTrailQueryV01(base_types._BaseFieldType):
 

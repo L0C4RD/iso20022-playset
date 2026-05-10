@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
+import Number
 import InterestRateContractTerm1
 import BenchmarkCurveName4Choice
-import Number
 
 class FloatingInterestRate4(base_types._BaseFieldType):
 
-	__slots__ = ["_BsisPtSprd", "_Term", "_RefRate"]
+	__slots__ = ["_RefRate", "_Term", "_BsisPtSprd"]
 	@property
-	def BsisPtSprd(self):
-		return self._BsisPtSprd
+	def RefRate(self):
+		return self._RefRate
 
-	@BsisPtSprd.setter
-	def BsisPtSprd(self, value):
-		self._BsisPtSprd = value if type(value) != auto else self.make_default("BsisPtSprd")
+	@RefRate.setter
+	def RefRate(self, value):
+		self._RefRate = value if type(value) != auto else self.make_default("RefRate")
 
-	@BsisPtSprd.deleter
-	def BsisPtSprd(self):
-		del self._BsisPtSprd
-		self._BsisPtSprd = None
+	@RefRate.deleter
+	def RefRate(self):
+		del self._RefRate
+		self._RefRate = None
 
 	@property
 	def Term(self):
@@ -33,21 +33,21 @@ class FloatingInterestRate4(base_types._BaseFieldType):
 		self._Term = None
 
 	@property
-	def RefRate(self):
-		return self._RefRate
+	def BsisPtSprd(self):
+		return self._BsisPtSprd
 
-	@RefRate.setter
-	def RefRate(self, value):
-		self._RefRate = value if type(value) != auto else self.make_default("RefRate")
+	@BsisPtSprd.setter
+	def BsisPtSprd(self, value):
+		self._BsisPtSprd = value if type(value) != auto else self.make_default("BsisPtSprd")
 
-	@RefRate.deleter
-	def RefRate(self):
-		del self._RefRate
-		self._RefRate = None
+	@BsisPtSprd.deleter
+	def BsisPtSprd(self):
+		del self._BsisPtSprd
+		self._BsisPtSprd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BsisPtSprd', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Term', type=InterestRateContractTerm1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefRate', type=BenchmarkCurveName4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Term', type=InterestRateContractTerm1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BsisPtSprd', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
 

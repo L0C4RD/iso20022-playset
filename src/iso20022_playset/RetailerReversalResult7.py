@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
 import Max35Text
-import PaymentTransaction165
 import CustomerOrder1
+import PaymentTransaction165
 
 class RetailerReversalResult7(base_types._BaseFieldType):
 
-	__slots__ = ["_POIRcncltnId", "_CstmrOrdr", "_OrgnlPmtTx"]
+	__slots__ = ["_OrgnlPmtTx", "_POIRcncltnId", "_CstmrOrdr"]
+	@property
+	def OrgnlPmtTx(self):
+		return self._OrgnlPmtTx
+
+	@OrgnlPmtTx.setter
+	def OrgnlPmtTx(self, value):
+		self._OrgnlPmtTx = value if type(value) != auto else self.make_default("OrgnlPmtTx")
+
+	@OrgnlPmtTx.deleter
+	def OrgnlPmtTx(self):
+		del self._OrgnlPmtTx
+		self._OrgnlPmtTx = None
+
 	@property
 	def POIRcncltnId(self):
 		return self._POIRcncltnId
@@ -32,22 +45,9 @@ class RetailerReversalResult7(base_types._BaseFieldType):
 		del self._CstmrOrdr
 		self._CstmrOrdr = None
 
-	@property
-	def OrgnlPmtTx(self):
-		return self._OrgnlPmtTx
-
-	@OrgnlPmtTx.setter
-	def OrgnlPmtTx(self, value):
-		self._OrgnlPmtTx = value if type(value) != auto else self.make_default("OrgnlPmtTx")
-
-	@OrgnlPmtTx.deleter
-	def OrgnlPmtTx(self):
-		del self._OrgnlPmtTx
-		self._OrgnlPmtTx = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OrgnlPmtTx', type=PaymentTransaction165, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrOrdr', type=CustomerOrder1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlPmtTx', type=PaymentTransaction165, min=0, max=1, mutex_group=None, array=False),
 	))
 

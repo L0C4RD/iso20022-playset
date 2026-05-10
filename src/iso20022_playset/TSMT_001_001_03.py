@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AcknowledgementV03
 
 class TSMT_001_001_03():

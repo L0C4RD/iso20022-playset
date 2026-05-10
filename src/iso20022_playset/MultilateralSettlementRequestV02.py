@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
+import GroupHeader104
 import MultilateralSettlementRequest3
 import SupplementaryData1
-import GroupHeader104
 
 class MultilateralSettlementRequestV02(base_types._BaseFieldType):
 

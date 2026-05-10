@@ -1,23 +1,23 @@
-import base_types
-import ReconciliationReport15
+from . import base_types
 import CounterpartyData91
 import Number
+import ReconciliationReport15
 
 class ReconciliationCounterpartyPairStatistics7(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyId", "_RcncltnRpt", "_TtlNbOfTxs"]
+	__slots__ = ["_TtlNbOfTxs", "_RcncltnRpt", "_CtrPtyId"]
 	@property
-	def CtrPtyId(self):
-		return self._CtrPtyId
+	def TtlNbOfTxs(self):
+		return self._TtlNbOfTxs
 
-	@CtrPtyId.setter
-	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != auto else self.make_default("CtrPtyId")
+	@TtlNbOfTxs.setter
+	def TtlNbOfTxs(self, value):
+		self._TtlNbOfTxs = value if type(value) != auto else self.make_default("TtlNbOfTxs")
 
-	@CtrPtyId.deleter
-	def CtrPtyId(self):
-		del self._CtrPtyId
-		self._CtrPtyId = None
+	@TtlNbOfTxs.deleter
+	def TtlNbOfTxs(self):
+		del self._TtlNbOfTxs
+		self._TtlNbOfTxs = None
 
 	@property
 	def RcncltnRpt(self):
@@ -33,21 +33,21 @@ class ReconciliationCounterpartyPairStatistics7(base_types._BaseFieldType):
 		self._RcncltnRpt = None
 
 	@property
-	def TtlNbOfTxs(self):
-		return self._TtlNbOfTxs
+	def CtrPtyId(self):
+		return self._CtrPtyId
 
-	@TtlNbOfTxs.setter
-	def TtlNbOfTxs(self, value):
-		self._TtlNbOfTxs = value if type(value) != auto else self.make_default("TtlNbOfTxs")
+	@CtrPtyId.setter
+	def CtrPtyId(self, value):
+		self._CtrPtyId = value if type(value) != auto else self.make_default("CtrPtyId")
 
-	@TtlNbOfTxs.deleter
-	def TtlNbOfTxs(self):
-		del self._TtlNbOfTxs
-		self._TtlNbOfTxs = None
+	@CtrPtyId.deleter
+	def CtrPtyId(self):
+		del self._CtrPtyId
+		self._CtrPtyId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyData91, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnRpt', type=ReconciliationReport15, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlNbOfTxs', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnRpt', type=ReconciliationReport15, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyData91, min=1, max=1, mutex_group=None, array=False),
 	))
 

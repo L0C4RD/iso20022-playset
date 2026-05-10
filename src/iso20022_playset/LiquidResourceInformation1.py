@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
 import Max35Text
-import TrueFalseIndicator
 import AmountAndDirection102
+import TrueFalseIndicator
 
 class LiquidResourceInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_LqdRsrcVal", "_AsstNcmbrd", "_Scrd", "_MktVal", "_AgcyArrgmnts", "_CntrPtyId", "_QlfygRsrc"]
+	__slots__ = ["_MktVal", "_LqdRsrcVal", "_AsstNcmbrd", "_Scrd", "_AgcyArrgmnts", "_QlfygRsrc", "_CntrPtyId"]
+	@property
+	def MktVal(self):
+		return self._MktVal
+
+	@MktVal.setter
+	def MktVal(self, value):
+		self._MktVal = value if type(value) != auto else self.make_default("MktVal")
+
+	@MktVal.deleter
+	def MktVal(self):
+		del self._MktVal
+		self._MktVal = None
+
 	@property
 	def LqdRsrcVal(self):
 		return self._LqdRsrcVal
@@ -46,19 +59,6 @@ class LiquidResourceInformation1(base_types._BaseFieldType):
 		self._Scrd = None
 
 	@property
-	def MktVal(self):
-		return self._MktVal
-
-	@MktVal.setter
-	def MktVal(self, value):
-		self._MktVal = value if type(value) != auto else self.make_default("MktVal")
-
-	@MktVal.deleter
-	def MktVal(self):
-		del self._MktVal
-		self._MktVal = None
-
-	@property
 	def AgcyArrgmnts(self):
 		return self._AgcyArrgmnts
 
@@ -70,19 +70,6 @@ class LiquidResourceInformation1(base_types._BaseFieldType):
 	def AgcyArrgmnts(self):
 		del self._AgcyArrgmnts
 		self._AgcyArrgmnts = None
-
-	@property
-	def CntrPtyId(self):
-		return self._CntrPtyId
-
-	@CntrPtyId.setter
-	def CntrPtyId(self, value):
-		self._CntrPtyId = value if type(value) != auto else self.make_default("CntrPtyId")
-
-	@CntrPtyId.deleter
-	def CntrPtyId(self):
-		del self._CntrPtyId
-		self._CntrPtyId = None
 
 	@property
 	def QlfygRsrc(self):
@@ -97,13 +84,26 @@ class LiquidResourceInformation1(base_types._BaseFieldType):
 		del self._QlfygRsrc
 		self._QlfygRsrc = None
 
+	@property
+	def CntrPtyId(self):
+		return self._CntrPtyId
+
+	@CntrPtyId.setter
+	def CntrPtyId(self, value):
+		self._CntrPtyId = value if type(value) != auto else self.make_default("CntrPtyId")
+
+	@CntrPtyId.deleter
+	def CntrPtyId(self):
+		del self._CntrPtyId
+		self._CntrPtyId = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MktVal', type=AmountAndDirection102, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LqdRsrcVal', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AsstNcmbrd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Scrd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktVal', type=AmountAndDirection102, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgcyArrgmnts', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CntrPtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QlfygRsrc', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CntrPtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

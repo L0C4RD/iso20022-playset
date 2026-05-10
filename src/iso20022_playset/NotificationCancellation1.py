@@ -1,6 +1,6 @@
-import base_types
-import CorporateActionNotificationType2Code
+from . import base_types
 import DocumentIdentification8
+import CorporateActionNotificationType2Code
 
 class NotificationCancellation1(base_types._BaseFieldType):
 

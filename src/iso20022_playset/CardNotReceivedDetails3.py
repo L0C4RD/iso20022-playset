@@ -1,27 +1,14 @@
-import base_types
-import Max16Text
-import CardSecurityCapability1
-import Address2
+from . import base_types
 import ISODate
-import TrueFalseIndicator
+import Max16Text
+import Address2
 import Max256Text
+import TrueFalseIndicator
+import CardSecurityCapability1
 
 class CardNotReceivedDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_DtMld", "_CardSctyCpblty", "_MldFrPstlCd", "_MlngAdr", "_MlngAdrUstrd", "_CardSctyCd", "_VldFr"]
-	@property
-	def DtMld(self):
-		return self._DtMld
-
-	@DtMld.setter
-	def DtMld(self, value):
-		self._DtMld = value if type(value) != auto else self.make_default("DtMld")
-
-	@DtMld.deleter
-	def DtMld(self):
-		del self._DtMld
-		self._DtMld = None
-
+	__slots__ = ["_CardSctyCpblty", "_MldFrPstlCd", "_DtMld", "_MlngAdr", "_MlngAdrUstrd", "_VldFr", "_CardSctyCd"]
 	@property
 	def CardSctyCpblty(self):
 		return self._CardSctyCpblty
@@ -47,6 +34,19 @@ class CardNotReceivedDetails3(base_types._BaseFieldType):
 	def MldFrPstlCd(self):
 		del self._MldFrPstlCd
 		self._MldFrPstlCd = None
+
+	@property
+	def DtMld(self):
+		return self._DtMld
+
+	@DtMld.setter
+	def DtMld(self, value):
+		self._DtMld = value if type(value) != auto else self.make_default("DtMld")
+
+	@DtMld.deleter
+	def DtMld(self):
+		del self._DtMld
+		self._DtMld = None
 
 	@property
 	def MlngAdr(self):
@@ -75,19 +75,6 @@ class CardNotReceivedDetails3(base_types._BaseFieldType):
 		self._MlngAdrUstrd = None
 
 	@property
-	def CardSctyCd(self):
-		return self._CardSctyCd
-
-	@CardSctyCd.setter
-	def CardSctyCd(self, value):
-		self._CardSctyCd = value if type(value) != auto else self.make_default("CardSctyCd")
-
-	@CardSctyCd.deleter
-	def CardSctyCd(self):
-		del self._CardSctyCd
-		self._CardSctyCd = None
-
-	@property
 	def VldFr(self):
 		return self._VldFr
 
@@ -100,13 +87,26 @@ class CardNotReceivedDetails3(base_types._BaseFieldType):
 		del self._VldFr
 		self._VldFr = None
 
+	@property
+	def CardSctyCd(self):
+		return self._CardSctyCd
+
+	@CardSctyCd.setter
+	def CardSctyCd(self, value):
+		self._CardSctyCd = value if type(value) != auto else self.make_default("CardSctyCd")
+
+	@CardSctyCd.deleter
+	def CardSctyCd(self):
+		del self._CardSctyCd
+		self._CardSctyCd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtMld', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardSctyCpblty', type=CardSecurityCapability1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MldFrPstlCd', type=Max16Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtMld', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MlngAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MlngAdrUstrd', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardSctyCd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldFr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardSctyCd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import IntraBalanceMovementPostingReportV02
 
 class CAMT_084_001_02():

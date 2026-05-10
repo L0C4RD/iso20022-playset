@@ -1,6 +1,6 @@
-import base_types
-import Max140Text
+from . import base_types
 import ExternalChequeAgentInstruction1Code
+import Max140Text
 
 class InstructionForChequeAgent1(base_types._BaseFieldType):
 

@@ -1,8 +1,8 @@
-import base_types
+from . import base_types
 import AmountAndDirection31
 import BalanceType6Choice
-import BalanceDetails6
 import Unrealised1Code
+import BalanceDetails6
 
 class BalanceDetails5(base_types._BaseFieldType):
 

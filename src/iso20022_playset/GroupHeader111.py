@@ -1,25 +1,12 @@
-import base_types
-import Max35Text
-import PartyIdentification272
-import ISODateTime
+from . import base_types
 import BranchAndFinancialInstitutionIdentification8
+import PartyIdentification272
+import Max35Text
+import ISODateTime
 
 class GroupHeader111(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_InitgPty", "_CdtrAgt", "_FwdgAgt", "_DbtrAgt", "_CreDtTm"]
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
+	__slots__ = ["_InitgPty", "_MsgId", "_FwdgAgt", "_CdtrAgt", "_CreDtTm", "_DbtrAgt"]
 	@property
 	def InitgPty(self):
 		return self._InitgPty
@@ -34,17 +21,17 @@ class GroupHeader111(base_types._BaseFieldType):
 		self._InitgPty = None
 
 	@property
-	def CdtrAgt(self):
-		return self._CdtrAgt
+	def MsgId(self):
+		return self._MsgId
 
-	@CdtrAgt.setter
-	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@CdtrAgt.deleter
-	def CdtrAgt(self):
-		del self._CdtrAgt
-		self._CdtrAgt = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def FwdgAgt(self):
@@ -60,17 +47,17 @@ class GroupHeader111(base_types._BaseFieldType):
 		self._FwdgAgt = None
 
 	@property
-	def DbtrAgt(self):
-		return self._DbtrAgt
+	def CdtrAgt(self):
+		return self._CdtrAgt
 
-	@DbtrAgt.setter
-	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != auto else self.make_default("DbtrAgt")
+	@CdtrAgt.setter
+	def CdtrAgt(self, value):
+		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
 
-	@DbtrAgt.deleter
-	def DbtrAgt(self):
-		del self._DbtrAgt
-		self._DbtrAgt = None
+	@CdtrAgt.deleter
+	def CdtrAgt(self):
+		del self._CdtrAgt
+		self._CdtrAgt = None
 
 	@property
 	def CreDtTm(self):
@@ -85,12 +72,25 @@ class GroupHeader111(base_types._BaseFieldType):
 		del self._CreDtTm
 		self._CreDtTm = None
 
+	@property
+	def DbtrAgt(self):
+		return self._DbtrAgt
+
+	@DbtrAgt.setter
+	def DbtrAgt(self, value):
+		self._DbtrAgt = value if type(value) != auto else self.make_default("DbtrAgt")
+
+	@DbtrAgt.deleter
+	def DbtrAgt(self):
+		del self._DbtrAgt
+		self._DbtrAgt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FwdgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

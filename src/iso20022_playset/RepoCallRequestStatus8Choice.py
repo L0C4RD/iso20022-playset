@@ -1,6 +1,6 @@
-import base_types
-import RepoCallRequestStatus1Code
+from . import base_types
 import GenericIdentification30
+import RepoCallRequestStatus1Code
 
 class RepoCallRequestStatus8Choice(base_types._BaseFieldType):
 

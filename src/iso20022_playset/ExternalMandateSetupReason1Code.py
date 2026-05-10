@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class ExternalMandateSetupReason1Code(base_types._BaseDataType_String):
 

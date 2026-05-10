@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CorporateActionEventProcessingStatusAdviceV09
 
 class SEEV_032_001_09():

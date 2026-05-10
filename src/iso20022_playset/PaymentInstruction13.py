@@ -1,6 +1,6 @@
-import base_types
-import ISODateTime
+from . import base_types
 import PaymentType4Choice
+import ISODateTime
 
 class PaymentInstruction13(base_types._BaseFieldType):
 

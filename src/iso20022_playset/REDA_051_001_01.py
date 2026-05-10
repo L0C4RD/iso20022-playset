@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountLinkStatusAdviceV01
 
 class REDA_051_001_01():

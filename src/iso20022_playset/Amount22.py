@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
+import CreditDebit3Code
 import Max35Text
 import Tax41
 import ImpliedCurrencyAndAmount
-import CreditDebit3Code
 
 class Amount22(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Tax", "_Amt", "_CdtDbt"]
+	__slots__ = ["_Desc", "_Amt", "_Tax", "_CdtDbt"]
 	@property
 	def Desc(self):
 		return self._Desc
@@ -21,19 +21,6 @@ class Amount22(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
-	def Tax(self):
-		return self._Tax
-
-	@Tax.setter
-	def Tax(self, value):
-		self._Tax = value if type(value) != auto else self.make_default("Tax")
-
-	@Tax.deleter
-	def Tax(self):
-		del self._Tax
-		self._Tax = None
-
-	@property
 	def Amt(self):
 		return self._Amt
 
@@ -45,6 +32,19 @@ class Amount22(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
+
+	@property
+	def Tax(self):
+		return self._Tax
+
+	@Tax.setter
+	def Tax(self, value):
+		self._Tax = value if type(value) != auto else self.make_default("Tax")
+
+	@Tax.deleter
+	def Tax(self):
+		del self._Tax
+		self._Tax = None
 
 	@property
 	def CdtDbt(self):
@@ -61,8 +61,8 @@ class Amount22(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

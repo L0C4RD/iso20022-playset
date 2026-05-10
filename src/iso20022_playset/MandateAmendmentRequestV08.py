@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
+import MandateAmendment8
 import GroupHeader110
 import SupplementaryData1
-import MandateAmendment8
 
 class MandateAmendmentRequestV08(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygAmdmntDtls", "_GrpHdr", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_GrpHdr", "_UndrlygAmdmntDtls"]
 	@property
-	def UndrlygAmdmntDtls(self):
-		return self._UndrlygAmdmntDtls
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@UndrlygAmdmntDtls.setter
-	def UndrlygAmdmntDtls(self, value):
-		self._UndrlygAmdmntDtls = value if type(value) != auto else self.make_default("UndrlygAmdmntDtls")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@UndrlygAmdmntDtls.deleter
-	def UndrlygAmdmntDtls(self):
-		del self._UndrlygAmdmntDtls
-		self._UndrlygAmdmntDtls = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def GrpHdr(self):
@@ -33,21 +33,21 @@ class MandateAmendmentRequestV08(base_types._BaseFieldType):
 		self._GrpHdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def UndrlygAmdmntDtls(self):
+		return self._UndrlygAmdmntDtls
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@UndrlygAmdmntDtls.setter
+	def UndrlygAmdmntDtls(self, value):
+		self._UndrlygAmdmntDtls = value if type(value) != auto else self.make_default("UndrlygAmdmntDtls")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@UndrlygAmdmntDtls.deleter
+	def UndrlygAmdmntDtls(self):
+		del self._UndrlygAmdmntDtls
+		self._UndrlygAmdmntDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygAmdmntDtls', type=MandateAmendment8, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader110, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader110, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygAmdmntDtls', type=MandateAmendment8, min=1, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
+import ATMSignature2Choice
 import Max140Binary
 import CryptographicKey12
-import ATMSignature2Choice
 
 class SecurityParameters10(base_types._BaseFieldType):
 

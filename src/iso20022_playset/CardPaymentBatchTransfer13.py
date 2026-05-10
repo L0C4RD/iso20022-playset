@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import TransactionTotals12
 import CardPaymentDataSet40
 
 class CardPaymentBatchTransfer13(base_types._BaseFieldType):
 
-	__slots__ = ["_TxTtls", "_DataSet"]
-	@property
-	def TxTtls(self):
-		return self._TxTtls
-
-	@TxTtls.setter
-	def TxTtls(self, value):
-		self._TxTtls = value if type(value) != auto else self.make_default("TxTtls")
-
-	@TxTtls.deleter
-	def TxTtls(self):
-		del self._TxTtls
-		self._TxTtls = None
-
+	__slots__ = ["_DataSet", "_TxTtls"]
 	@property
 	def DataSet(self):
 		return self._DataSet
@@ -31,8 +18,21 @@ class CardPaymentBatchTransfer13(base_types._BaseFieldType):
 		del self._DataSet
 		self._DataSet = None
 
+	@property
+	def TxTtls(self):
+		return self._TxTtls
+
+	@TxTtls.setter
+	def TxTtls(self, value):
+		self._TxTtls = value if type(value) != auto else self.make_default("TxTtls")
+
+	@TxTtls.deleter
+	def TxTtls(self):
+		del self._TxTtls
+		self._TxTtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxTtls', type=TransactionTotals12, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DataSet', type=CardPaymentDataSet40, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxTtls', type=TransactionTotals12, min=0, max=None, mutex_group=None, array=True),
 	))
 

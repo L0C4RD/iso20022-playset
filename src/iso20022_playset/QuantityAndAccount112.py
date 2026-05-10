@@ -1,55 +1,16 @@
-import base_types
-import SecuritiesAccount30
-import RestrictedFINXMax210Text
-import PartyIdentification156
-import QuantityBreakdown69
+from . import base_types
 import CashAccountIdentification6Choice
+import PartyIdentification156
 import SafeKeepingPlace4
 import Quantity54Choice
+import QuantityBreakdown69
 import BlockChainAddressWallet7
+import SecuritiesAccount30
+import RestrictedFINXMax210Text
 
 class QuantityAndAccount112(base_types._BaseFieldType):
 
-	__slots__ = ["_QtyBrkdwn", "_DnmtnChc", "_CshAcct", "_BlckChainAdrOrWllt", "_SttlmQty", "_AcctOwnr", "_SfkpgPlc", "_SfkpgAcct"]
-	@property
-	def QtyBrkdwn(self):
-		return self._QtyBrkdwn
-
-	@QtyBrkdwn.setter
-	def QtyBrkdwn(self, value):
-		self._QtyBrkdwn = value if type(value) != auto else self.make_default("QtyBrkdwn")
-
-	@QtyBrkdwn.deleter
-	def QtyBrkdwn(self):
-		del self._QtyBrkdwn
-		self._QtyBrkdwn = None
-
-	@property
-	def DnmtnChc(self):
-		return self._DnmtnChc
-
-	@DnmtnChc.setter
-	def DnmtnChc(self, value):
-		self._DnmtnChc = value if type(value) != auto else self.make_default("DnmtnChc")
-
-	@DnmtnChc.deleter
-	def DnmtnChc(self):
-		del self._DnmtnChc
-		self._DnmtnChc = None
-
-	@property
-	def CshAcct(self):
-		return self._CshAcct
-
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
-
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
-
+	__slots__ = ["_BlckChainAdrOrWllt", "_DnmtnChc", "_AcctOwnr", "_SfkpgPlc", "_CshAcct", "_QtyBrkdwn", "_SfkpgAcct", "_SttlmQty"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -64,17 +25,17 @@ class QuantityAndAccount112(base_types._BaseFieldType):
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def SttlmQty(self):
-		return self._SttlmQty
+	def DnmtnChc(self):
+		return self._DnmtnChc
 
-	@SttlmQty.setter
-	def SttlmQty(self, value):
-		self._SttlmQty = value if type(value) != auto else self.make_default("SttlmQty")
+	@DnmtnChc.setter
+	def DnmtnChc(self, value):
+		self._DnmtnChc = value if type(value) != auto else self.make_default("DnmtnChc")
 
-	@SttlmQty.deleter
-	def SttlmQty(self):
-		del self._SttlmQty
-		self._SttlmQty = None
+	@DnmtnChc.deleter
+	def DnmtnChc(self):
+		del self._DnmtnChc
+		self._DnmtnChc = None
 
 	@property
 	def AcctOwnr(self):
@@ -103,6 +64,32 @@ class QuantityAndAccount112(base_types._BaseFieldType):
 		self._SfkpgPlc = None
 
 	@property
+	def CshAcct(self):
+		return self._CshAcct
+
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
+
+	@property
+	def QtyBrkdwn(self):
+		return self._QtyBrkdwn
+
+	@QtyBrkdwn.setter
+	def QtyBrkdwn(self, value):
+		self._QtyBrkdwn = value if type(value) != auto else self.make_default("QtyBrkdwn")
+
+	@QtyBrkdwn.deleter
+	def QtyBrkdwn(self):
+		del self._QtyBrkdwn
+		self._QtyBrkdwn = None
+
+	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
 
@@ -115,14 +102,27 @@ class QuantityAndAccount112(base_types._BaseFieldType):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
 
+	@property
+	def SttlmQty(self):
+		return self._SttlmQty
+
+	@SttlmQty.setter
+	def SttlmQty(self, value):
+		self._SttlmQty = value if type(value) != auto else self.make_default("SttlmQty")
+
+	@SttlmQty.deleter
+	def SttlmQty(self):
+		del self._SttlmQty
+		self._SttlmQty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown69, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DnmtnChc', type=RestrictedFINXMax210Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmQty', type=Quantity54Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DnmtnChc', type=RestrictedFINXMax210Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafeKeepingPlace4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown69, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmQty', type=Quantity54Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

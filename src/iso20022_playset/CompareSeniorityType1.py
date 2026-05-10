@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DebtInstrumentSeniorityType2Code
 
 class CompareSeniorityType1(base_types._BaseFieldType):

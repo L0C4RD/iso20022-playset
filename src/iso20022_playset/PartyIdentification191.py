@@ -1,24 +1,11 @@
-import base_types
-import PartyIdentification145Choice
+from . import base_types
 import RestrictedFINXMax16Text
+import PartyIdentification145Choice
 import LEIIdentifier
 
 class PartyIdentification191(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgId", "_Id", "_LEI"]
-	@property
-	def PrcgId(self):
-		return self._PrcgId
-
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
-
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
-
+	__slots__ = ["_Id", "_LEI", "_PrcgId"]
 	@property
 	def Id(self):
 		return self._Id
@@ -45,9 +32,22 @@ class PartyIdentification191(base_types._BaseFieldType):
 		del self._LEI
 		self._LEI = None
 
+	@property
+	def PrcgId(self):
+		return self._PrcgId
+
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification145Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DerivativesTradeMarginDataReportV02
 
 class AUTH_108_001_02():

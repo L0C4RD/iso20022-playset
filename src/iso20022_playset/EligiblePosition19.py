@@ -1,13 +1,26 @@
-import base_types
-import Max140Text
-import Max35Text
-import HoldingBalance14
+from . import base_types
 import PartyIdentification241
+import Max140Text
+import HoldingBalance14
 import PartyIdentification270
+import Max35Text
 
 class EligiblePosition19(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_AcctId", "_RghtsHldr", "_AcctOwnr", "_HldgBal"]
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_RghtsHldr", "_AcctId", "_HldgBal"]
+	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -20,19 +33,6 @@ class EligiblePosition19(base_types._BaseFieldType):
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
 		self._BlckChainAdrOrWllt = None
-
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
 
 	@property
 	def RghtsHldr(self):
@@ -48,17 +48,17 @@ class EligiblePosition19(base_types._BaseFieldType):
 		self._RghtsHldr = None
 
 	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
+	def AcctId(self):
+		return self._AcctId
 
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
 
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def HldgBal(self):
@@ -74,10 +74,10 @@ class EligiblePosition19(base_types._BaseFieldType):
 		self._HldgBal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RghtsHldr', type=PartyIdentification270, min=0, max=250, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification241, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RghtsHldr', type=PartyIdentification270, min=0, max=250, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HldgBal', type=HoldingBalance14, min=0, max=15, mutex_group=None, array=True),
 	))
 

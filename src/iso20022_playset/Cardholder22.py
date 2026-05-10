@@ -1,55 +1,16 @@
-import base_types
-import AdditionalData1
-import Address2
+from . import base_types
 import ISODate
-import LocalData13
-import Credentials3
-import CardholderName3
-import TrueFalseIndicator
 import ContactPersonal1
+import Credentials3
+import Address2
+import AdditionalData1
+import LocalData13
+import TrueFalseIndicator
+import CardholderName3
 
 class Cardholder22(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctInf", "_Adr", "_Id", "_LclData", "_Nm", "_HghVal", "_DtOfBirth", "_AddtlData"]
-	@property
-	def CtctInf(self):
-		return self._CtctInf
-
-	@CtctInf.setter
-	def CtctInf(self, value):
-		self._CtctInf = value if type(value) != auto else self.make_default("CtctInf")
-
-	@CtctInf.deleter
-	def CtctInf(self):
-		del self._CtctInf
-		self._CtctInf = None
-
-	@property
-	def Adr(self):
-		return self._Adr
-
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
-
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_LclData", "_CtctInf", "_DtOfBirth", "_Adr", "_HghVal", "_Nm", "_AddtlData", "_Id"]
 	@property
 	def LclData(self):
 		return self._LclData
@@ -64,30 +25,17 @@ class Cardholder22(base_types._BaseFieldType):
 		self._LclData = None
 
 	@property
-	def Nm(self):
-		return self._Nm
+	def CtctInf(self):
+		return self._CtctInf
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@CtctInf.setter
+	def CtctInf(self, value):
+		self._CtctInf = value if type(value) != auto else self.make_default("CtctInf")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def HghVal(self):
-		return self._HghVal
-
-	@HghVal.setter
-	def HghVal(self, value):
-		self._HghVal = value if type(value) != auto else self.make_default("HghVal")
-
-	@HghVal.deleter
-	def HghVal(self):
-		del self._HghVal
-		self._HghVal = None
+	@CtctInf.deleter
+	def CtctInf(self):
+		del self._CtctInf
+		self._CtctInf = None
 
 	@property
 	def DtOfBirth(self):
@@ -103,6 +51,45 @@ class Cardholder22(base_types._BaseFieldType):
 		self._DtOfBirth = None
 
 	@property
+	def Adr(self):
+		return self._Adr
+
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != auto else self.make_default("Adr")
+
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
+
+	@property
+	def HghVal(self):
+		return self._HghVal
+
+	@HghVal.setter
+	def HghVal(self, value):
+		self._HghVal = value if type(value) != auto else self.make_default("HghVal")
+
+	@HghVal.deleter
+	def HghVal(self):
+		del self._HghVal
+		self._HghVal = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
 	def AddtlData(self):
 		return self._AddtlData
 
@@ -115,14 +102,27 @@ class Cardholder22(base_types._BaseFieldType):
 		del self._AddtlData
 		self._AddtlData = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtctInf', type=ContactPersonal1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Credentials3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LclData', type=LocalData13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=CardholderName3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HghVal', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctInf', type=ContactPersonal1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtOfBirth', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HghVal', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=CardholderName3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Id', type=Credentials3, min=0, max=None, mutex_group=None, array=True),
 	))
 

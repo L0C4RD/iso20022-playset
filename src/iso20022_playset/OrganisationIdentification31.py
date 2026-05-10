@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AnyBICDec2014Identifier
 import GenericOrganisationIdentification1
 

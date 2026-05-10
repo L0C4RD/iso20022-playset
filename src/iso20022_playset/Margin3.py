@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import Margin4
-import VariationMargin3
 import Amount2
+import VariationMargin3
 
 class Margin3(base_types._BaseFieldType):
 

@@ -1,11 +1,11 @@
-import base_types
-import Max35Text
-import CountryCode
+from . import base_types
 import ActiveOrHistoricCurrencyCode
+import CountryCode
+import Max35Text
 
 class AdditionalParameters1(base_types._BaseFieldType):
 
-	__slots__ = ["_GeoArea", "_Ccy", "_Ctry"]
+	__slots__ = ["_GeoArea", "_Ctry", "_Ccy"]
 	@property
 	def GeoArea(self):
 		return self._GeoArea
@@ -20,19 +20,6 @@ class AdditionalParameters1(base_types._BaseFieldType):
 		self._GeoArea = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
 	def Ctry(self):
 		return self._Ctry
 
@@ -45,9 +32,22 @@ class AdditionalParameters1(base_types._BaseFieldType):
 		del self._Ctry
 		self._Ctry = None
 
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GeoArea', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

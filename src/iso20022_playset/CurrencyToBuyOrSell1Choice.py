@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ActiveCurrencyCode
 
 class CurrencyToBuyOrSell1Choice(base_types._BaseFieldType):

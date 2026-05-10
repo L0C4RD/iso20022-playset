@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PaymentRegulatoryInformationNotificationV04
 
 class AUTH_024_001_04():

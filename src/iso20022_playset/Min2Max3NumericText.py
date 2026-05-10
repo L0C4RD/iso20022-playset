@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class Min2Max3NumericText(base_types._BaseDataType_String):
 

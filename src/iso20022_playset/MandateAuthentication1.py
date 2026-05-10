@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
+import ISODate
 import Max16Text
 import AuthenticationChannel1Choice
-import ISODate
 
 class MandateAuthentication1(base_types._BaseFieldType):
 
-	__slots__ = ["_Chanl", "_Dt", "_MsgAuthntcnCd"]
+	__slots__ = ["_MsgAuthntcnCd", "_Dt", "_Chanl"]
 	@property
-	def Chanl(self):
-		return self._Chanl
+	def MsgAuthntcnCd(self):
+		return self._MsgAuthntcnCd
 
-	@Chanl.setter
-	def Chanl(self, value):
-		self._Chanl = value if type(value) != auto else self.make_default("Chanl")
+	@MsgAuthntcnCd.setter
+	def MsgAuthntcnCd(self, value):
+		self._MsgAuthntcnCd = value if type(value) != auto else self.make_default("MsgAuthntcnCd")
 
-	@Chanl.deleter
-	def Chanl(self):
-		del self._Chanl
-		self._Chanl = None
+	@MsgAuthntcnCd.deleter
+	def MsgAuthntcnCd(self):
+		del self._MsgAuthntcnCd
+		self._MsgAuthntcnCd = None
 
 	@property
 	def Dt(self):
@@ -33,21 +33,21 @@ class MandateAuthentication1(base_types._BaseFieldType):
 		self._Dt = None
 
 	@property
-	def MsgAuthntcnCd(self):
-		return self._MsgAuthntcnCd
+	def Chanl(self):
+		return self._Chanl
 
-	@MsgAuthntcnCd.setter
-	def MsgAuthntcnCd(self, value):
-		self._MsgAuthntcnCd = value if type(value) != auto else self.make_default("MsgAuthntcnCd")
+	@Chanl.setter
+	def Chanl(self, value):
+		self._Chanl = value if type(value) != auto else self.make_default("Chanl")
 
-	@MsgAuthntcnCd.deleter
-	def MsgAuthntcnCd(self):
-		del self._MsgAuthntcnCd
-		self._MsgAuthntcnCd = None
+	@Chanl.deleter
+	def Chanl(self):
+		del self._Chanl
+		self._Chanl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Chanl', type=AuthenticationChannel1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgAuthntcnCd', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Chanl', type=AuthenticationChannel1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

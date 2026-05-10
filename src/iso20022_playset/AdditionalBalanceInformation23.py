@@ -1,6 +1,6 @@
-import base_types
-import SubBalanceType14Choice
+from . import base_types
 import SubBalanceQuantity9Choice
+import SubBalanceType14Choice
 import RestrictedFINXMax140Text
 
 class AdditionalBalanceInformation23(base_types._BaseFieldType):

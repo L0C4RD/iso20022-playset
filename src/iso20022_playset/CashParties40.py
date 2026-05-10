@@ -1,10 +1,10 @@
-import base_types
-import PartyIdentificationAndAccount177
+from . import base_types
 import PartyIdentificationAndAccount178
+import PartyIdentificationAndAccount177
 
 class CashParties40(base_types._BaseFieldType):
 
-	__slots__ = ["_Cdtr", "_CdtrAgt", "_Dbtr", "_DbtrAgt"]
+	__slots__ = ["_Cdtr", "_Dbtr", "_CdtrAgt", "_DbtrAgt"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr
@@ -19,19 +19,6 @@ class CashParties40(base_types._BaseFieldType):
 		self._Cdtr = None
 
 	@property
-	def CdtrAgt(self):
-		return self._CdtrAgt
-
-	@CdtrAgt.setter
-	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
-
-	@CdtrAgt.deleter
-	def CdtrAgt(self):
-		del self._CdtrAgt
-		self._CdtrAgt = None
-
-	@property
 	def Dbtr(self):
 		return self._Dbtr
 
@@ -43,6 +30,19 @@ class CashParties40(base_types._BaseFieldType):
 	def Dbtr(self):
 		del self._Dbtr
 		self._Dbtr = None
+
+	@property
+	def CdtrAgt(self):
+		return self._CdtrAgt
+
+	@CdtrAgt.setter
+	def CdtrAgt(self, value):
+		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
+
+	@CdtrAgt.deleter
+	def CdtrAgt(self):
+		del self._CdtrAgt
+		self._CdtrAgt = None
 
 	@property
 	def DbtrAgt(self):
@@ -59,8 +59,8 @@ class CashParties40(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cdtr', type=PartyIdentificationAndAccount177, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount178, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dbtr', type=PartyIdentificationAndAccount177, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount178, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrAgt', type=PartyIdentificationAndAccount178, min=0, max=1, mutex_group=None, array=False),
 	))
 

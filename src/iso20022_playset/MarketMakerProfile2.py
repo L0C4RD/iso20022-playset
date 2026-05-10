@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import DateTimePeriod2
 import PercentageRate
 import YesNoIndicator
 
 class MarketMakerProfile2(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxSprd", "_Dscnt", "_Cmplc", "_CtrctPrd"]
-	@property
-	def MaxSprd(self):
-		return self._MaxSprd
-
-	@MaxSprd.setter
-	def MaxSprd(self, value):
-		self._MaxSprd = value if type(value) != auto else self.make_default("MaxSprd")
-
-	@MaxSprd.deleter
-	def MaxSprd(self):
-		del self._MaxSprd
-		self._MaxSprd = None
-
+	__slots__ = ["_Dscnt", "_Cmplc", "_MaxSprd", "_CtrctPrd"]
 	@property
 	def Dscnt(self):
 		return self._Dscnt
@@ -46,6 +33,19 @@ class MarketMakerProfile2(base_types._BaseFieldType):
 		self._Cmplc = None
 
 	@property
+	def MaxSprd(self):
+		return self._MaxSprd
+
+	@MaxSprd.setter
+	def MaxSprd(self, value):
+		self._MaxSprd = value if type(value) != auto else self.make_default("MaxSprd")
+
+	@MaxSprd.deleter
+	def MaxSprd(self):
+		del self._MaxSprd
+		self._MaxSprd = None
+
+	@property
 	def CtrctPrd(self):
 		return self._CtrctPrd
 
@@ -59,9 +59,9 @@ class MarketMakerProfile2(base_types._BaseFieldType):
 		self._CtrctPrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MaxSprd', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dscnt', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cmplc', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxSprd', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctPrd', type=DateTimePeriod2, min=0, max=1, mutex_group=None, array=False),
 	))
 

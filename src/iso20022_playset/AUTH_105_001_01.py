@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesFinancingReportingPositionSetReportV01
 
 class AUTH_105_001_01():

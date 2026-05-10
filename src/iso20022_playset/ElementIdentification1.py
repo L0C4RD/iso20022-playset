@@ -1,12 +1,12 @@
-import base_types
-import Max140Text
+from . import base_types
 import Max350Text
-import Max3NumericText
 import Max35Text
+import Max140Text
+import Max3NumericText
 
 class ElementIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_ElmtPth", "_DocIndx", "_ElmtVal", "_ElmtNm"]
+	__slots__ = ["_ElmtPth", "_DocIndx", "_ElmtNm", "_ElmtVal"]
 	@property
 	def ElmtPth(self):
 		return self._ElmtPth
@@ -34,19 +34,6 @@ class ElementIdentification1(base_types._BaseFieldType):
 		self._DocIndx = None
 
 	@property
-	def ElmtVal(self):
-		return self._ElmtVal
-
-	@ElmtVal.setter
-	def ElmtVal(self, value):
-		self._ElmtVal = value if type(value) != auto else self.make_default("ElmtVal")
-
-	@ElmtVal.deleter
-	def ElmtVal(self):
-		del self._ElmtVal
-		self._ElmtVal = None
-
-	@property
 	def ElmtNm(self):
 		return self._ElmtNm
 
@@ -59,10 +46,23 @@ class ElementIdentification1(base_types._BaseFieldType):
 		del self._ElmtNm
 		self._ElmtNm = None
 
+	@property
+	def ElmtVal(self):
+		return self._ElmtVal
+
+	@ElmtVal.setter
+	def ElmtVal(self, value):
+		self._ElmtVal = value if type(value) != auto else self.make_default("ElmtVal")
+
+	@ElmtVal.deleter
+	def ElmtVal(self):
+		del self._ElmtVal
+		self._ElmtVal = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ElmtPth', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocIndx', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ElmtVal', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElmtNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElmtVal', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

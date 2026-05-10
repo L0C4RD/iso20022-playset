@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PendingReason70Choice
 import Max210Text
 

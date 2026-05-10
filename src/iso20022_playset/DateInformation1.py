@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import ExternalDateFrequency1Code
-import ISODate
 import Number
+import ISODate
 
 class DateInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Nb", "_Frqcy", "_StartDt"]
-	@property
-	def Nb(self):
-		return self._Nb
-
-	@Nb.setter
-	def Nb(self, value):
-		self._Nb = value if type(value) != auto else self.make_default("Nb")
-
-	@Nb.deleter
-	def Nb(self):
-		del self._Nb
-		self._Nb = None
-
+	__slots__ = ["_Frqcy", "_Nb", "_StartDt"]
 	@property
 	def Frqcy(self):
 		return self._Frqcy
@@ -31,6 +18,19 @@ class DateInformation1(base_types._BaseFieldType):
 	def Frqcy(self):
 		del self._Frqcy
 		self._Frqcy = None
+
+	@property
+	def Nb(self):
+		return self._Nb
+
+	@Nb.setter
+	def Nb(self, value):
+		self._Nb = value if type(value) != auto else self.make_default("Nb")
+
+	@Nb.deleter
+	def Nb(self):
+		del self._Nb
+		self._Nb = None
 
 	@property
 	def StartDt(self):
@@ -46,8 +46,8 @@ class DateInformation1(base_types._BaseFieldType):
 		self._StartDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nb', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=ExternalDateFrequency1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nb', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

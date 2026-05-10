@@ -1,7 +1,7 @@
-import base_types
-import PartyIdentification236Choice
-import CountryCode
+from . import base_types
 import Branch6Choice
+import CountryCode
+import PartyIdentification236Choice
 
 class CounterpartyIdentification12(base_types._BaseFieldType):
 

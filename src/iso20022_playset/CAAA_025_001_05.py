@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AcceptorTransactionLogReportResponseV05
 
 class CAAA_025_001_05():

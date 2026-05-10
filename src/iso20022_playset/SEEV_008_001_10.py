@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MeetingResultDisseminationV10
 
 class SEEV_008_001_10():

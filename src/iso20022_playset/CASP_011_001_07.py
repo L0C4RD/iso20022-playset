@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SaleToPOIAbortV07
 
 class CASP_011_001_07():

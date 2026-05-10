@@ -1,6 +1,6 @@
-import base_types
-import ProformaStatusReason2Choice
+from . import base_types
 import Max350Text
+import ProformaStatusReason2Choice
 
 class ProformaStatusReason1(base_types._BaseFieldType):
 

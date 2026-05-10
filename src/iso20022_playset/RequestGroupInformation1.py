@@ -1,44 +1,31 @@
-import base_types
-import AgreementClauses1
-import PartyIdentificationAndAccount6
+from . import base_types
 import Max350Text
-import ActiveCurrencyAndAmount
-import Max35Text
-import Max15NumericText
-import ISODateTime
-import Max128Text
-import FinancialInstitutionIdentification6
-import CurrencyCode
+import AgreementClauses1
 import AdditionalInformation1
+import ISODateTime
+import Max35Text
+import ActiveCurrencyAndAmount
+import Max128Text
+import PartyIdentificationAndAccount6
+import Max15NumericText
+import CurrencyCode
+import FinancialInstitutionIdentification6
 
 class RequestGroupInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfInvcReqs", "_AgrmtClauses", "_Ccy", "_FincgAgrmt", "_FrstAgt", "_IntrmyAgt", "_TtlBlkInvcAmt", "_GrpId", "_Authstn", "_FincgRqstr", "_AddtlInf", "_CreDtTm"]
+	__slots__ = ["_Authstn", "_Ccy", "_FincgAgrmt", "_FrstAgt", "_GrpId", "_AgrmtClauses", "_AddtlInf", "_FincgRqstr", "_IntrmyAgt", "_NbOfInvcReqs", "_CreDtTm", "_TtlBlkInvcAmt"]
 	@property
-	def NbOfInvcReqs(self):
-		return self._NbOfInvcReqs
+	def Authstn(self):
+		return self._Authstn
 
-	@NbOfInvcReqs.setter
-	def NbOfInvcReqs(self, value):
-		self._NbOfInvcReqs = value if type(value) != auto else self.make_default("NbOfInvcReqs")
+	@Authstn.setter
+	def Authstn(self, value):
+		self._Authstn = value if type(value) != auto else self.make_default("Authstn")
 
-	@NbOfInvcReqs.deleter
-	def NbOfInvcReqs(self):
-		del self._NbOfInvcReqs
-		self._NbOfInvcReqs = None
-
-	@property
-	def AgrmtClauses(self):
-		return self._AgrmtClauses
-
-	@AgrmtClauses.setter
-	def AgrmtClauses(self, value):
-		self._AgrmtClauses = value if type(value) != auto else self.make_default("AgrmtClauses")
-
-	@AgrmtClauses.deleter
-	def AgrmtClauses(self):
-		del self._AgrmtClauses
-		self._AgrmtClauses = None
+	@Authstn.deleter
+	def Authstn(self):
+		del self._Authstn
+		self._Authstn = None
 
 	@property
 	def Ccy(self):
@@ -80,32 +67,6 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 		self._FrstAgt = None
 
 	@property
-	def IntrmyAgt(self):
-		return self._IntrmyAgt
-
-	@IntrmyAgt.setter
-	def IntrmyAgt(self, value):
-		self._IntrmyAgt = value if type(value) != auto else self.make_default("IntrmyAgt")
-
-	@IntrmyAgt.deleter
-	def IntrmyAgt(self):
-		del self._IntrmyAgt
-		self._IntrmyAgt = None
-
-	@property
-	def TtlBlkInvcAmt(self):
-		return self._TtlBlkInvcAmt
-
-	@TtlBlkInvcAmt.setter
-	def TtlBlkInvcAmt(self, value):
-		self._TtlBlkInvcAmt = value if type(value) != auto else self.make_default("TtlBlkInvcAmt")
-
-	@TtlBlkInvcAmt.deleter
-	def TtlBlkInvcAmt(self):
-		del self._TtlBlkInvcAmt
-		self._TtlBlkInvcAmt = None
-
-	@property
 	def GrpId(self):
 		return self._GrpId
 
@@ -119,30 +80,17 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 		self._GrpId = None
 
 	@property
-	def Authstn(self):
-		return self._Authstn
+	def AgrmtClauses(self):
+		return self._AgrmtClauses
 
-	@Authstn.setter
-	def Authstn(self, value):
-		self._Authstn = value if type(value) != auto else self.make_default("Authstn")
+	@AgrmtClauses.setter
+	def AgrmtClauses(self, value):
+		self._AgrmtClauses = value if type(value) != auto else self.make_default("AgrmtClauses")
 
-	@Authstn.deleter
-	def Authstn(self):
-		del self._Authstn
-		self._Authstn = None
-
-	@property
-	def FincgRqstr(self):
-		return self._FincgRqstr
-
-	@FincgRqstr.setter
-	def FincgRqstr(self, value):
-		self._FincgRqstr = value if type(value) != auto else self.make_default("FincgRqstr")
-
-	@FincgRqstr.deleter
-	def FincgRqstr(self):
-		del self._FincgRqstr
-		self._FincgRqstr = None
+	@AgrmtClauses.deleter
+	def AgrmtClauses(self):
+		del self._AgrmtClauses
+		self._AgrmtClauses = None
 
 	@property
 	def AddtlInf(self):
@@ -158,6 +106,45 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
+	def FincgRqstr(self):
+		return self._FincgRqstr
+
+	@FincgRqstr.setter
+	def FincgRqstr(self, value):
+		self._FincgRqstr = value if type(value) != auto else self.make_default("FincgRqstr")
+
+	@FincgRqstr.deleter
+	def FincgRqstr(self):
+		del self._FincgRqstr
+		self._FincgRqstr = None
+
+	@property
+	def IntrmyAgt(self):
+		return self._IntrmyAgt
+
+	@IntrmyAgt.setter
+	def IntrmyAgt(self, value):
+		self._IntrmyAgt = value if type(value) != auto else self.make_default("IntrmyAgt")
+
+	@IntrmyAgt.deleter
+	def IntrmyAgt(self):
+		del self._IntrmyAgt
+		self._IntrmyAgt = None
+
+	@property
+	def NbOfInvcReqs(self):
+		return self._NbOfInvcReqs
+
+	@NbOfInvcReqs.setter
+	def NbOfInvcReqs(self, value):
+		self._NbOfInvcReqs = value if type(value) != auto else self.make_default("NbOfInvcReqs")
+
+	@NbOfInvcReqs.deleter
+	def NbOfInvcReqs(self):
+		del self._NbOfInvcReqs
+		self._NbOfInvcReqs = None
+
+	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -170,18 +157,31 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 		del self._CreDtTm
 		self._CreDtTm = None
 
+	@property
+	def TtlBlkInvcAmt(self):
+		return self._TtlBlkInvcAmt
+
+	@TtlBlkInvcAmt.setter
+	def TtlBlkInvcAmt(self, value):
+		self._TtlBlkInvcAmt = value if type(value) != auto else self.make_default("TtlBlkInvcAmt")
+
+	@TtlBlkInvcAmt.deleter
+	def TtlBlkInvcAmt(self):
+		del self._TtlBlkInvcAmt
+		self._TtlBlkInvcAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfInvcReqs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgrmtClauses', type=AgreementClauses1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Authstn', type=Max128Text, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ccy', type=CurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FincgAgrmt', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstAgt', type=FinancialInstitutionIdentification6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrmyAgt', type=FinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlBlkInvcAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrpId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Authstn', type=Max128Text, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FincgRqstr', type=PartyIdentificationAndAccount6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgrmtClauses', type=AgreementClauses1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FincgRqstr', type=PartyIdentificationAndAccount6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrmyAgt', type=FinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfInvcReqs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlBlkInvcAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

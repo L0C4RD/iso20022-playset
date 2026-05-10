@@ -1,6 +1,6 @@
-import base_types
-import ExternalChargeType1Code
+from . import base_types
 import GenericIdentification3
+import ExternalChargeType1Code
 
 class ChargeType3Choice(base_types._BaseFieldType):
 

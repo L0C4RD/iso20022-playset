@@ -1,6 +1,6 @@
-import base_types
-import DefinedAttributes1Choice
+from . import base_types
 import FinancialInstrumentAttributes88
+import DefinedAttributes1Choice
 
 class DerivativeUnderlyingLeg1(base_types._BaseFieldType):
 

@@ -1,24 +1,24 @@
-import base_types
+from . import base_types
+import SupplementaryData1
 import CurrencyControlHeader7
 import CurrencyControlPackageStatus3
 import CurrencyControlGroupStatus3
-import SupplementaryData1
 
 class CurrencyControlStatusAdviceV04(base_types._BaseFieldType):
 
-	__slots__ = ["_PackgSts", "_SplmtryData", "_GrpHdr", "_GrpSts"]
+	__slots__ = ["_GrpSts", "_SplmtryData", "_GrpHdr", "_PackgSts"]
 	@property
-	def PackgSts(self):
-		return self._PackgSts
+	def GrpSts(self):
+		return self._GrpSts
 
-	@PackgSts.setter
-	def PackgSts(self, value):
-		self._PackgSts = value if type(value) != auto else self.make_default("PackgSts")
+	@GrpSts.setter
+	def GrpSts(self, value):
+		self._GrpSts = value if type(value) != auto else self.make_default("GrpSts")
 
-	@PackgSts.deleter
-	def PackgSts(self):
-		del self._PackgSts
-		self._PackgSts = None
+	@GrpSts.deleter
+	def GrpSts(self):
+		del self._GrpSts
+		self._GrpSts = None
 
 	@property
 	def SplmtryData(self):
@@ -47,22 +47,22 @@ class CurrencyControlStatusAdviceV04(base_types._BaseFieldType):
 		self._GrpHdr = None
 
 	@property
-	def GrpSts(self):
-		return self._GrpSts
+	def PackgSts(self):
+		return self._PackgSts
 
-	@GrpSts.setter
-	def GrpSts(self, value):
-		self._GrpSts = value if type(value) != auto else self.make_default("GrpSts")
+	@PackgSts.setter
+	def PackgSts(self, value):
+		self._PackgSts = value if type(value) != auto else self.make_default("PackgSts")
 
-	@GrpSts.deleter
-	def GrpSts(self):
-		del self._GrpSts
-		self._GrpSts = None
+	@PackgSts.deleter
+	def PackgSts(self):
+		del self._PackgSts
+		self._PackgSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PackgSts', type=CurrencyControlPackageStatus3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpSts', type=CurrencyControlGroupStatus3, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrpSts', type=CurrencyControlGroupStatus3, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PackgSts', type=CurrencyControlPackageStatus3, min=0, max=None, mutex_group=None, array=True),
 	))
 

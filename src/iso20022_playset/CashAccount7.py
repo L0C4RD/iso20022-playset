@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CashAccountType2
 import CurrencyCode
 import AccountIdentification3Choice
@@ -6,19 +6,19 @@ import Max70Text
 
 class CashAccount7(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Nm", "_Tp", "_Ccy"]
+	__slots__ = ["_Ccy", "_Nm", "_Id", "_Tp"]
 	@property
-	def Id(self):
-		return self._Id
+	def Ccy(self):
+		return self._Ccy
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def Nm(self):
@@ -34,6 +34,19 @@ class CashAccount7(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
 	def Tp(self):
 		return self._Tp
 
@@ -46,23 +59,10 @@ class CashAccount7(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=AccountIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=CashAccountType2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=CurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=AccountIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CashAccountType2, min=0, max=1, mutex_group=None, array=False),
 	))
 

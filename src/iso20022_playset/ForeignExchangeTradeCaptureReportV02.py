@@ -1,29 +1,29 @@
-import base_types
-import Trade7
-import SupplementaryData1
-import Header23
-import MessageIdentification1
-import Number
+from . import base_types
 import AdditionalReferences2
 import TradePartyIdentification9
+import MessageIdentification1
+import Trade7
+import SupplementaryData1
 import Max35Text
+import Header23
+import Number
 import TrueFalseIndicator
 
 class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_TtlNbTrds", "_LastRptReqd", "_TradgSdId", "_ReqRspndr", "_TradDtl", "_Hdr", "_QryRjctRsn", "_CtrPtySdId", "_ReqRjctd", "_SplmtryData", "_RptId"]
+	__slots__ = ["_Hdr", "_TtlNbTrds", "_QryRjctRsn", "_CtrPtySdId", "_SplmtryData", "_TradgSdId", "_ReqRjctd", "_ReqRspndr", "_RptId", "_Ref", "_LastRptReqd", "_TradDtl"]
 	@property
-	def Ref(self):
-		return self._Ref
+	def Hdr(self):
+		return self._Hdr
 
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
 
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def TtlNbTrds(self):
@@ -37,71 +37,6 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 	def TtlNbTrds(self):
 		del self._TtlNbTrds
 		self._TtlNbTrds = None
-
-	@property
-	def LastRptReqd(self):
-		return self._LastRptReqd
-
-	@LastRptReqd.setter
-	def LastRptReqd(self, value):
-		self._LastRptReqd = value if type(value) != auto else self.make_default("LastRptReqd")
-
-	@LastRptReqd.deleter
-	def LastRptReqd(self):
-		del self._LastRptReqd
-		self._LastRptReqd = None
-
-	@property
-	def TradgSdId(self):
-		return self._TradgSdId
-
-	@TradgSdId.setter
-	def TradgSdId(self, value):
-		self._TradgSdId = value if type(value) != auto else self.make_default("TradgSdId")
-
-	@TradgSdId.deleter
-	def TradgSdId(self):
-		del self._TradgSdId
-		self._TradgSdId = None
-
-	@property
-	def ReqRspndr(self):
-		return self._ReqRspndr
-
-	@ReqRspndr.setter
-	def ReqRspndr(self, value):
-		self._ReqRspndr = value if type(value) != auto else self.make_default("ReqRspndr")
-
-	@ReqRspndr.deleter
-	def ReqRspndr(self):
-		del self._ReqRspndr
-		self._ReqRspndr = None
-
-	@property
-	def TradDtl(self):
-		return self._TradDtl
-
-	@TradDtl.setter
-	def TradDtl(self, value):
-		self._TradDtl = value if type(value) != auto else self.make_default("TradDtl")
-
-	@TradDtl.deleter
-	def TradDtl(self):
-		del self._TradDtl
-		self._TradDtl = None
-
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
 
 	@property
 	def QryRjctRsn(self):
@@ -130,6 +65,32 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 		self._CtrPtySdId = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def TradgSdId(self):
+		return self._TradgSdId
+
+	@TradgSdId.setter
+	def TradgSdId(self, value):
+		self._TradgSdId = value if type(value) != auto else self.make_default("TradgSdId")
+
+	@TradgSdId.deleter
+	def TradgSdId(self):
+		del self._TradgSdId
+		self._TradgSdId = None
+
+	@property
 	def ReqRjctd(self):
 		return self._ReqRjctd
 
@@ -143,17 +104,17 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 		self._ReqRjctd = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def ReqRspndr(self):
+		return self._ReqRspndr
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@ReqRspndr.setter
+	def ReqRspndr(self, value):
+		self._ReqRspndr = value if type(value) != auto else self.make_default("ReqRspndr")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@ReqRspndr.deleter
+	def ReqRspndr(self):
+		del self._ReqRspndr
+		self._ReqRspndr = None
 
 	@property
 	def RptId(self):
@@ -168,18 +129,57 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 		del self._RptId
 		self._RptId = None
 
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
+	@property
+	def LastRptReqd(self):
+		return self._LastRptReqd
+
+	@LastRptReqd.setter
+	def LastRptReqd(self, value):
+		self._LastRptReqd = value if type(value) != auto else self.make_default("LastRptReqd")
+
+	@LastRptReqd.deleter
+	def LastRptReqd(self):
+		del self._LastRptReqd
+		self._LastRptReqd = None
+
+	@property
+	def TradDtl(self):
+		return self._TradDtl
+
+	@TradDtl.setter
+	def TradDtl(self, value):
+		self._TradDtl = value if type(value) != auto else self.make_default("TradDtl")
+
+	@TradDtl.deleter
+	def TradDtl(self):
+		del self._TradDtl
+		self._TradDtl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ref', type=AdditionalReferences2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNbTrds', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastRptReqd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgSdId', type=TradePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqRspndr', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDtl', type=Trade7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header23, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNbTrds', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryRjctRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtySdId', type=TradePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqRjctd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TradgSdId', type=TradePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqRjctd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqRspndr', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptId', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=AdditionalReferences2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastRptReqd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDtl', type=Trade7, min=0, max=1, mutex_group=None, array=False),
 	))
 

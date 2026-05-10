@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialInstrumentReportingTradingVolumeCapDataReportV01
 
 class AUTH_035_001_01():

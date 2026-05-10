@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesEndOfProcessReportV02
 
 class SEMT_023_001_02():

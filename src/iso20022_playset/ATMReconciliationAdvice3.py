@@ -1,25 +1,12 @@
-import base_types
-import ATMTransaction36
+from . import base_types
 import ATMCommand8
-import ATMEnvironment22
 import ATMCommand9
+import ATMEnvironment22
+import ATMTransaction36
 
 class ATMReconciliationAdvice3(base_types._BaseFieldType):
 
-	__slots__ = ["_CmdCntxt", "_Tx", "_Envt", "_CmdRslt"]
-	@property
-	def CmdCntxt(self):
-		return self._CmdCntxt
-
-	@CmdCntxt.setter
-	def CmdCntxt(self, value):
-		self._CmdCntxt = value if type(value) != auto else self.make_default("CmdCntxt")
-
-	@CmdCntxt.deleter
-	def CmdCntxt(self):
-		del self._CmdCntxt
-		self._CmdCntxt = None
-
+	__slots__ = ["_Tx", "_Envt", "_CmdCntxt", "_CmdRslt"]
 	@property
 	def Tx(self):
 		return self._Tx
@@ -47,6 +34,19 @@ class ATMReconciliationAdvice3(base_types._BaseFieldType):
 		self._Envt = None
 
 	@property
+	def CmdCntxt(self):
+		return self._CmdCntxt
+
+	@CmdCntxt.setter
+	def CmdCntxt(self, value):
+		self._CmdCntxt = value if type(value) != auto else self.make_default("CmdCntxt")
+
+	@CmdCntxt.deleter
+	def CmdCntxt(self):
+		del self._CmdCntxt
+		self._CmdCntxt = None
+
+	@property
 	def CmdRslt(self):
 		return self._CmdRslt
 
@@ -60,9 +60,9 @@ class ATMReconciliationAdvice3(base_types._BaseFieldType):
 		self._CmdRslt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CmdCntxt', type=ATMCommand9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=ATMTransaction36, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment22, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmdCntxt', type=ATMCommand9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmdRslt', type=ATMCommand8, min=0, max=None, mutex_group=None, array=True),
 	))
 

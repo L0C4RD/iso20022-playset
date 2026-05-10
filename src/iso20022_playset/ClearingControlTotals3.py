@@ -1,8 +1,8 @@
-import base_types
+from . import base_types
 import CreditDebit3Code
-import ImpliedCurrencyAndAmount
 import Number
 import ISO3NumericCurrencyCode
+import ImpliedCurrencyAndAmount
 
 class ClearingControlTotals3(base_types._BaseFieldType):
 

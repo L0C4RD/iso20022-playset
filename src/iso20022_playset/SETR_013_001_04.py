@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SwitchOrderV04
 
 class SETR_013_001_04():

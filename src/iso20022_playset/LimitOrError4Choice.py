@@ -1,6 +1,6 @@
-import base_types
-import Limit7
+from . import base_types
 import ErrorHandling5
+import Limit7
 
 class LimitOrError4Choice(base_types._BaseFieldType):
 

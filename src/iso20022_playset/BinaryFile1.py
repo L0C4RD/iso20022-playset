@@ -1,23 +1,10 @@
-import base_types
-import Max35Text
+from . import base_types
 import Max100KBinary
+import Max35Text
 
 class BinaryFile1(base_types._BaseFieldType):
 
-	__slots__ = ["_InclBinryObjct", "_NcodgTp", "_CharSet", "_MIMETp"]
-	@property
-	def InclBinryObjct(self):
-		return self._InclBinryObjct
-
-	@InclBinryObjct.setter
-	def InclBinryObjct(self, value):
-		self._InclBinryObjct = value if type(value) != auto else self.make_default("InclBinryObjct")
-
-	@InclBinryObjct.deleter
-	def InclBinryObjct(self):
-		del self._InclBinryObjct
-		self._InclBinryObjct = None
-
+	__slots__ = ["_NcodgTp", "_CharSet", "_InclBinryObjct", "_MIMETp"]
 	@property
 	def NcodgTp(self):
 		return self._NcodgTp
@@ -45,6 +32,19 @@ class BinaryFile1(base_types._BaseFieldType):
 		self._CharSet = None
 
 	@property
+	def InclBinryObjct(self):
+		return self._InclBinryObjct
+
+	@InclBinryObjct.setter
+	def InclBinryObjct(self, value):
+		self._InclBinryObjct = value if type(value) != auto else self.make_default("InclBinryObjct")
+
+	@InclBinryObjct.deleter
+	def InclBinryObjct(self):
+		del self._InclBinryObjct
+		self._InclBinryObjct = None
+
+	@property
 	def MIMETp(self):
 		return self._MIMETp
 
@@ -58,9 +58,9 @@ class BinaryFile1(base_types._BaseFieldType):
 		self._MIMETp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InclBinryObjct', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcodgTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CharSet', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InclBinryObjct', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MIMETp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

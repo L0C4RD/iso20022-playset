@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CurrencyControlStatusAdviceV04
 
 class AUTH_027_001_04():

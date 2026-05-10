@@ -1,6 +1,6 @@
-import base_types
-import DataModification1Code
+from . import base_types
 import Intermediary46
+import DataModification1Code
 
 class ModificationScope40(base_types._BaseFieldType):
 

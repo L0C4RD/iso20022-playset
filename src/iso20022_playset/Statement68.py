@@ -1,26 +1,13 @@
-import base_types
+from . import base_types
 import YesNoIndicator
-import UpdateType16Choice
-import RestrictedFINXMax16Text
-import Number3Choice
 import DateAndDateTime2Choice
+import RestrictedFINXMax16Text
+import UpdateType16Choice
+import Number3Choice
 
 class Statement68(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_StmtId", "_RptNb", "_StmtDtTm", "_CtrPtyPrtflTrfNtfctnRef", "_UpdTp"]
-	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
-
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
-
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
-
+	__slots__ = ["_StmtId", "_ActvtyInd", "_StmtDtTm", "_CtrPtyPrtflTrfNtfctnRef", "_UpdTp", "_RptNb"]
 	@property
 	def StmtId(self):
 		return self._StmtId
@@ -35,17 +22,17 @@ class Statement68(base_types._BaseFieldType):
 		self._StmtId = None
 
 	@property
-	def RptNb(self):
-		return self._RptNb
+	def ActvtyInd(self):
+		return self._ActvtyInd
 
-	@RptNb.setter
-	def RptNb(self, value):
-		self._RptNb = value if type(value) != auto else self.make_default("RptNb")
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
 
-	@RptNb.deleter
-	def RptNb(self):
-		del self._RptNb
-		self._RptNb = None
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
 
 	@property
 	def StmtDtTm(self):
@@ -86,12 +73,25 @@ class Statement68(base_types._BaseFieldType):
 		del self._UpdTp
 		self._UpdTp = None
 
+	@property
+	def RptNb(self):
+		return self._RptNb
+
+	@RptNb.setter
+	def RptNb(self, value):
+		self._RptNb = value if type(value) != auto else self.make_default("RptNb")
+
+	@RptNb.deleter
+	def RptNb(self):
+		del self._RptNb
+		self._RptNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptNb', type=Number3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyPrtflTrfNtfctnRef', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptNb', type=Number3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,54 +1,15 @@
-import base_types
-import ClearingChannel2Code
+from . import base_types
+import Linkages57
+import References14
 import GenericIdentification30
 import YesNoIndicator
-import PriorityNumeric4Choice
-import References14
+import ClearingChannel2Code
 import LinkageType3Choice
-import Linkages57
+import PriorityNumeric4Choice
 
 class RequestDetails22(base_types._BaseFieldType):
 
-	__slots__ = ["_Prty", "_Lnkgs", "_OthrPrcg", "_PrtlSttlmInd", "_Lkg", "_Ref", "_ClrChanl"]
-	@property
-	def Prty(self):
-		return self._Prty
-
-	@Prty.setter
-	def Prty(self, value):
-		self._Prty = value if type(value) != auto else self.make_default("Prty")
-
-	@Prty.deleter
-	def Prty(self):
-		del self._Prty
-		self._Prty = None
-
-	@property
-	def Lnkgs(self):
-		return self._Lnkgs
-
-	@Lnkgs.setter
-	def Lnkgs(self, value):
-		self._Lnkgs = value if type(value) != auto else self.make_default("Lnkgs")
-
-	@Lnkgs.deleter
-	def Lnkgs(self):
-		del self._Lnkgs
-		self._Lnkgs = None
-
-	@property
-	def OthrPrcg(self):
-		return self._OthrPrcg
-
-	@OthrPrcg.setter
-	def OthrPrcg(self, value):
-		self._OthrPrcg = value if type(value) != auto else self.make_default("OthrPrcg")
-
-	@OthrPrcg.deleter
-	def OthrPrcg(self):
-		del self._OthrPrcg
-		self._OthrPrcg = None
-
+	__slots__ = ["_PrtlSttlmInd", "_Lkg", "_Ref", "_Prty", "_OthrPrcg", "_Lnkgs", "_ClrChanl"]
 	@property
 	def PrtlSttlmInd(self):
 		return self._PrtlSttlmInd
@@ -89,6 +50,45 @@ class RequestDetails22(base_types._BaseFieldType):
 		self._Ref = None
 
 	@property
+	def Prty(self):
+		return self._Prty
+
+	@Prty.setter
+	def Prty(self, value):
+		self._Prty = value if type(value) != auto else self.make_default("Prty")
+
+	@Prty.deleter
+	def Prty(self):
+		del self._Prty
+		self._Prty = None
+
+	@property
+	def OthrPrcg(self):
+		return self._OthrPrcg
+
+	@OthrPrcg.setter
+	def OthrPrcg(self, value):
+		self._OthrPrcg = value if type(value) != auto else self.make_default("OthrPrcg")
+
+	@OthrPrcg.deleter
+	def OthrPrcg(self):
+		del self._OthrPrcg
+		self._OthrPrcg = None
+
+	@property
+	def Lnkgs(self):
+		return self._Lnkgs
+
+	@Lnkgs.setter
+	def Lnkgs(self, value):
+		self._Lnkgs = value if type(value) != auto else self.make_default("Lnkgs")
+
+	@Lnkgs.deleter
+	def Lnkgs(self):
+		del self._Lnkgs
+		self._Lnkgs = None
+
+	@property
 	def ClrChanl(self):
 		return self._ClrChanl
 
@@ -102,12 +102,12 @@ class RequestDetails22(base_types._BaseFieldType):
 		self._ClrChanl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prty', type=PriorityNumeric4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lnkgs', type=Linkages57, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrPrcg', type=GenericIdentification30, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrtlSttlmInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lkg', type=LinkageType3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=References14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prty', type=PriorityNumeric4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrPrcg', type=GenericIdentification30, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Lnkgs', type=Linkages57, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClrChanl', type=ClearingChannel2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

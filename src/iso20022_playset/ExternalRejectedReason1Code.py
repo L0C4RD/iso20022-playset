@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class ExternalRejectedReason1Code(base_types._BaseDataType_String):
 

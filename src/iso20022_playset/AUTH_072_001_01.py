@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SettlementInternaliserReportV01
 
 class AUTH_072_001_01():

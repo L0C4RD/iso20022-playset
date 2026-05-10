@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesTransactionType26Code
 import GenericIdentification47
 

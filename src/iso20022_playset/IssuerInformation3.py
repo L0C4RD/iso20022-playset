@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Max2048Text
 import PartyIdentification129Choice
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TransactionAdviceV06
 
 class CAAA_020_001_06():

@@ -1,37 +1,24 @@
-import base_types
+from . import base_types
+import AdvisingPartyAdditionalInformation1
 import UndertakingAmendmentMessage1
 import PartyAndSignature2
-import AdvisingPartyAdditionalInformation1
 import UndertakingConfirmation1
 
 class Amendment2(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlSgntr", "_UdrtkgAmdmntMsg", "_ConfDtls", "_FrstAdvsgPtyAddtlInf", "_ScndAdvsgPtyAddtlInf"]
+	__slots__ = ["_ScndAdvsgPtyAddtlInf", "_ConfDtls", "_FrstAdvsgPtyAddtlInf", "_UdrtkgAmdmntMsg", "_DgtlSgntr"]
 	@property
-	def DgtlSgntr(self):
-		return self._DgtlSgntr
+	def ScndAdvsgPtyAddtlInf(self):
+		return self._ScndAdvsgPtyAddtlInf
 
-	@DgtlSgntr.setter
-	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
+	@ScndAdvsgPtyAddtlInf.setter
+	def ScndAdvsgPtyAddtlInf(self, value):
+		self._ScndAdvsgPtyAddtlInf = value if type(value) != auto else self.make_default("ScndAdvsgPtyAddtlInf")
 
-	@DgtlSgntr.deleter
-	def DgtlSgntr(self):
-		del self._DgtlSgntr
-		self._DgtlSgntr = None
-
-	@property
-	def UdrtkgAmdmntMsg(self):
-		return self._UdrtkgAmdmntMsg
-
-	@UdrtkgAmdmntMsg.setter
-	def UdrtkgAmdmntMsg(self, value):
-		self._UdrtkgAmdmntMsg = value if type(value) != auto else self.make_default("UdrtkgAmdmntMsg")
-
-	@UdrtkgAmdmntMsg.deleter
-	def UdrtkgAmdmntMsg(self):
-		del self._UdrtkgAmdmntMsg
-		self._UdrtkgAmdmntMsg = None
+	@ScndAdvsgPtyAddtlInf.deleter
+	def ScndAdvsgPtyAddtlInf(self):
+		del self._ScndAdvsgPtyAddtlInf
+		self._ScndAdvsgPtyAddtlInf = None
 
 	@property
 	def ConfDtls(self):
@@ -60,23 +47,36 @@ class Amendment2(base_types._BaseFieldType):
 		self._FrstAdvsgPtyAddtlInf = None
 
 	@property
-	def ScndAdvsgPtyAddtlInf(self):
-		return self._ScndAdvsgPtyAddtlInf
+	def UdrtkgAmdmntMsg(self):
+		return self._UdrtkgAmdmntMsg
 
-	@ScndAdvsgPtyAddtlInf.setter
-	def ScndAdvsgPtyAddtlInf(self, value):
-		self._ScndAdvsgPtyAddtlInf = value if type(value) != auto else self.make_default("ScndAdvsgPtyAddtlInf")
+	@UdrtkgAmdmntMsg.setter
+	def UdrtkgAmdmntMsg(self, value):
+		self._UdrtkgAmdmntMsg = value if type(value) != auto else self.make_default("UdrtkgAmdmntMsg")
 
-	@ScndAdvsgPtyAddtlInf.deleter
-	def ScndAdvsgPtyAddtlInf(self):
-		del self._ScndAdvsgPtyAddtlInf
-		self._ScndAdvsgPtyAddtlInf = None
+	@UdrtkgAmdmntMsg.deleter
+	def UdrtkgAmdmntMsg(self):
+		del self._UdrtkgAmdmntMsg
+		self._UdrtkgAmdmntMsg = None
+
+	@property
+	def DgtlSgntr(self):
+		return self._DgtlSgntr
+
+	@DgtlSgntr.setter
+	def DgtlSgntr(self, value):
+		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
+
+	@DgtlSgntr.deleter
+	def DgtlSgntr(self):
+		del self._DgtlSgntr
+		self._DgtlSgntr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=3, mutex_group=None, array=True),
-		base_types.FieldEntry(name='UdrtkgAmdmntMsg', type=UndertakingAmendmentMessage1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScndAdvsgPtyAddtlInf', type=AdvisingPartyAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfDtls', type=UndertakingConfirmation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstAdvsgPtyAddtlInf', type=AdvisingPartyAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ScndAdvsgPtyAddtlInf', type=AdvisingPartyAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UdrtkgAmdmntMsg', type=UndertakingAmendmentMessage1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=3, mutex_group=None, array=True),
 	))
 

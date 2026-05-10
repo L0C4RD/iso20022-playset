@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MoneyMarketStatisticalReportStatusAdviceV01
 
 class AUTH_028_001_01():

@@ -1,24 +1,11 @@
-import base_types
-import FinancialInstrument97
-import SupplementaryData1
+from . import base_types
 import CommonFinancialInstrumentAttributes12
+import SupplementaryData1
+import FinancialInstrument97
 
 class SecurityAttributes12(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_FinInstrmTp", "_FinInstrmAttrbts"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_FinInstrmTp", "_FinInstrmAttrbts", "_SplmtryData"]
 	@property
 	def FinInstrmTp(self):
 		return self._FinInstrmTp
@@ -45,9 +32,22 @@ class SecurityAttributes12(base_types._BaseFieldType):
 		del self._FinInstrmAttrbts
 		self._FinInstrmAttrbts = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmTp', type=FinancialInstrument97, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmAttrbts', type=CommonFinancialInstrumentAttributes12, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

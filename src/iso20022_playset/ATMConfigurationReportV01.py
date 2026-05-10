@@ -1,25 +1,12 @@
-import base_types
-import ContentInformationType15
+from . import base_types
 import Header31
-import ContentInformationType10
 import ATMConfigurationReportComponent1
+import ContentInformationType15
+import ContentInformationType10
 
 class ATMConfigurationReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMCfgtnRpt", "_SctyTrlr", "_ATMCfgtnRpt", "_Hdr"]
-	@property
-	def PrtctdATMCfgtnRpt(self):
-		return self._PrtctdATMCfgtnRpt
-
-	@PrtctdATMCfgtnRpt.setter
-	def PrtctdATMCfgtnRpt(self, value):
-		self._PrtctdATMCfgtnRpt = value if type(value) != auto else self.make_default("PrtctdATMCfgtnRpt")
-
-	@PrtctdATMCfgtnRpt.deleter
-	def PrtctdATMCfgtnRpt(self):
-		del self._PrtctdATMCfgtnRpt
-		self._PrtctdATMCfgtnRpt = None
-
+	__slots__ = ["_SctyTrlr", "_PrtctdATMCfgtnRpt", "_Hdr", "_ATMCfgtnRpt"]
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
@@ -34,17 +21,17 @@ class ATMConfigurationReportV01(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def ATMCfgtnRpt(self):
-		return self._ATMCfgtnRpt
+	def PrtctdATMCfgtnRpt(self):
+		return self._PrtctdATMCfgtnRpt
 
-	@ATMCfgtnRpt.setter
-	def ATMCfgtnRpt(self, value):
-		self._ATMCfgtnRpt = value if type(value) != auto else self.make_default("ATMCfgtnRpt")
+	@PrtctdATMCfgtnRpt.setter
+	def PrtctdATMCfgtnRpt(self, value):
+		self._PrtctdATMCfgtnRpt = value if type(value) != auto else self.make_default("PrtctdATMCfgtnRpt")
 
-	@ATMCfgtnRpt.deleter
-	def ATMCfgtnRpt(self):
-		del self._ATMCfgtnRpt
-		self._ATMCfgtnRpt = None
+	@PrtctdATMCfgtnRpt.deleter
+	def PrtctdATMCfgtnRpt(self):
+		del self._PrtctdATMCfgtnRpt
+		self._PrtctdATMCfgtnRpt = None
 
 	@property
 	def Hdr(self):
@@ -59,10 +46,23 @@ class ATMConfigurationReportV01(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def ATMCfgtnRpt(self):
+		return self._ATMCfgtnRpt
+
+	@ATMCfgtnRpt.setter
+	def ATMCfgtnRpt(self, value):
+		self._ATMCfgtnRpt = value if type(value) != auto else self.make_default("ATMCfgtnRpt")
+
+	@ATMCfgtnRpt.deleter
+	def ATMCfgtnRpt(self):
+		del self._ATMCfgtnRpt
+		self._ATMCfgtnRpt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctdATMCfgtnRpt', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMCfgtnRpt', type=ATMConfigurationReportComponent1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMCfgtnRpt', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMCfgtnRpt', type=ATMConfigurationReportComponent1, min=0, max=1, mutex_group=None, array=False),
 	))
 

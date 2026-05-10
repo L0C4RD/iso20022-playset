@@ -1,26 +1,13 @@
-import base_types
-import Max35Text
+from . import base_types
 import OnLinePIN11
-import PINRequestType1Code
-import TrueFalseIndicator
 import Number
+import TrueFalseIndicator
+import PINRequestType1Code
+import Max35Text
 
 class DeviceSecureInputRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_CrdhldrPIN", "_PINVrfctnMtd", "_BeepKeyFlg", "_PINReqTp", "_MaxWtgTm"]
-	@property
-	def CrdhldrPIN(self):
-		return self._CrdhldrPIN
-
-	@CrdhldrPIN.setter
-	def CrdhldrPIN(self, value):
-		self._CrdhldrPIN = value if type(value) != auto else self.make_default("CrdhldrPIN")
-
-	@CrdhldrPIN.deleter
-	def CrdhldrPIN(self):
-		del self._CrdhldrPIN
-		self._CrdhldrPIN = None
-
+	__slots__ = ["_PINVrfctnMtd", "_CrdhldrPIN", "_PINReqTp", "_BeepKeyFlg", "_MaxWtgTm"]
 	@property
 	def PINVrfctnMtd(self):
 		return self._PINVrfctnMtd
@@ -35,17 +22,17 @@ class DeviceSecureInputRequest6(base_types._BaseFieldType):
 		self._PINVrfctnMtd = None
 
 	@property
-	def BeepKeyFlg(self):
-		return self._BeepKeyFlg
+	def CrdhldrPIN(self):
+		return self._CrdhldrPIN
 
-	@BeepKeyFlg.setter
-	def BeepKeyFlg(self, value):
-		self._BeepKeyFlg = value if type(value) != auto else self.make_default("BeepKeyFlg")
+	@CrdhldrPIN.setter
+	def CrdhldrPIN(self, value):
+		self._CrdhldrPIN = value if type(value) != auto else self.make_default("CrdhldrPIN")
 
-	@BeepKeyFlg.deleter
-	def BeepKeyFlg(self):
-		del self._BeepKeyFlg
-		self._BeepKeyFlg = None
+	@CrdhldrPIN.deleter
+	def CrdhldrPIN(self):
+		del self._CrdhldrPIN
+		self._CrdhldrPIN = None
 
 	@property
 	def PINReqTp(self):
@@ -61,6 +48,19 @@ class DeviceSecureInputRequest6(base_types._BaseFieldType):
 		self._PINReqTp = None
 
 	@property
+	def BeepKeyFlg(self):
+		return self._BeepKeyFlg
+
+	@BeepKeyFlg.setter
+	def BeepKeyFlg(self, value):
+		self._BeepKeyFlg = value if type(value) != auto else self.make_default("BeepKeyFlg")
+
+	@BeepKeyFlg.deleter
+	def BeepKeyFlg(self):
+		del self._BeepKeyFlg
+		self._BeepKeyFlg = None
+
+	@property
 	def MaxWtgTm(self):
 		return self._MaxWtgTm
 
@@ -74,10 +74,10 @@ class DeviceSecureInputRequest6(base_types._BaseFieldType):
 		self._MaxWtgTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CrdhldrPIN', type=OnLinePIN11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PINVrfctnMtd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BeepKeyFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrdhldrPIN', type=OnLinePIN11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PINReqTp', type=PINRequestType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BeepKeyFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxWtgTm', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DuplicateV07
 
 class CAMT_034_001_07():

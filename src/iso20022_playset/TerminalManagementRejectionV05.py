@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TMSHeader1
 import AcceptorRejection3
 

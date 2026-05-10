@@ -1,11 +1,11 @@
-import base_types
-import PriceSource2Code
+from . import base_types
 import TypeOfPrice13Code
+import PriceSource2Code
 import PriceRateOrAmountChoice
 
 class Price6(base_types._BaseFieldType):
 
-	__slots__ = ["_Src", "_RateOrAmt", "_Tp"]
+	__slots__ = ["_Src", "_Tp", "_RateOrAmt"]
 	@property
 	def Src(self):
 		return self._Src
@@ -20,19 +20,6 @@ class Price6(base_types._BaseFieldType):
 		self._Src = None
 
 	@property
-	def RateOrAmt(self):
-		return self._RateOrAmt
-
-	@RateOrAmt.setter
-	def RateOrAmt(self, value):
-		self._RateOrAmt = value if type(value) != auto else self.make_default("RateOrAmt")
-
-	@RateOrAmt.deleter
-	def RateOrAmt(self):
-		del self._RateOrAmt
-		self._RateOrAmt = None
-
-	@property
 	def Tp(self):
 		return self._Tp
 
@@ -45,9 +32,22 @@ class Price6(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def RateOrAmt(self):
+		return self._RateOrAmt
+
+	@RateOrAmt.setter
+	def RateOrAmt(self, value):
+		self._RateOrAmt = value if type(value) != auto else self.make_default("RateOrAmt")
+
+	@RateOrAmt.deleter
+	def RateOrAmt(self):
+		del self._RateOrAmt
+		self._RateOrAmt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Src', type=PriceSource2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RateOrAmt', type=PriceRateOrAmountChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=TypeOfPrice13Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RateOrAmt', type=PriceRateOrAmountChoice, min=1, max=1, mutex_group=None, array=False),
 	))
 

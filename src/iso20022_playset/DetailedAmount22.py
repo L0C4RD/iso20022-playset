@@ -1,13 +1,52 @@
-import base_types
-import Max35Text
-import ISO8583AmountTypeCode
+from . import base_types
 import ImpliedCurrencyAndAmount
-import Max70Text
 import CreditDebit3Code
+import ISO8583AmountTypeCode
+import Max35Text
+import Max70Text
 
 class DetailedAmount22(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Amt", "_RcncltnAmt", "_OthrTp", "_CrdhldrBllgAmt", "_CdtDbt", "_Tp"]
+	__slots__ = ["_Tp", "_OthrTp", "_CdtDbt", "_Desc", "_Amt", "_CrdhldrBllgAmt", "_RcncltnAmt"]
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def OthrTp(self):
+		return self._OthrTp
+
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
+
+	@property
+	def CdtDbt(self):
+		return self._CdtDbt
+
+	@CdtDbt.setter
+	def CdtDbt(self, value):
+		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+
+	@CdtDbt.deleter
+	def CdtDbt(self):
+		del self._CdtDbt
+		self._CdtDbt = None
+
 	@property
 	def Desc(self):
 		return self._Desc
@@ -35,32 +74,6 @@ class DetailedAmount22(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def RcncltnAmt(self):
-		return self._RcncltnAmt
-
-	@RcncltnAmt.setter
-	def RcncltnAmt(self, value):
-		self._RcncltnAmt = value if type(value) != auto else self.make_default("RcncltnAmt")
-
-	@RcncltnAmt.deleter
-	def RcncltnAmt(self):
-		del self._RcncltnAmt
-		self._RcncltnAmt = None
-
-	@property
-	def OthrTp(self):
-		return self._OthrTp
-
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
-
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
-
-	@property
 	def CrdhldrBllgAmt(self):
 		return self._CrdhldrBllgAmt
 
@@ -74,38 +87,25 @@ class DetailedAmount22(base_types._BaseFieldType):
 		self._CrdhldrBllgAmt = None
 
 	@property
-	def CdtDbt(self):
-		return self._CdtDbt
+	def RcncltnAmt(self):
+		return self._RcncltnAmt
 
-	@CdtDbt.setter
-	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+	@RcncltnAmt.setter
+	def RcncltnAmt(self, value):
+		self._RcncltnAmt = value if type(value) != auto else self.make_default("RcncltnAmt")
 
-	@CdtDbt.deleter
-	def CdtDbt(self):
-		del self._CdtDbt
-		self._CdtDbt = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@RcncltnAmt.deleter
+	def RcncltnAmt(self):
+		del self._RcncltnAmt
+		self._RcncltnAmt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Tp', type=ISO8583AmountTypeCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrdhldrBllgAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ISO8583AmountTypeCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import UnitOfMeasure11Code
 
 class CompareUnitOfMeasure3(base_types._BaseFieldType):

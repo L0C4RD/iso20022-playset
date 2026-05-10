@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import EncryptedContent3
-import Recipient4Choice
 import Number
+import Recipient4Choice
 
 class EnvelopedData4(base_types._BaseFieldType):
 

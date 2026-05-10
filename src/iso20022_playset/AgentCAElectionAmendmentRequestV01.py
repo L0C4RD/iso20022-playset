@@ -1,39 +1,39 @@
-import base_types
-import SecuritiesAccount7
-import DocumentIdentification8
+from . import base_types
 import CorporateActionElection1
 import CorporateActionElection2
 import ContactPerson1
 import CorporateActionInformation1
+import DocumentIdentification8
+import SecuritiesAccount7
 
 class AgentCAElectionAmendmentRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CorpActnGnlInf", "_CtctDtls", "_AmddElctnDtls", "_AgtCAElctnAdvcId", "_OrgnlElctnDtls", "_AcctDtls"]
+	__slots__ = ["_AgtCAElctnAdvcId", "_AcctDtls", "_CtctDtls", "_CorpActnGnlInf", "_OrgnlElctnDtls", "_AmddElctnDtls", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def AgtCAElctnAdvcId(self):
+		return self._AgtCAElctnAdvcId
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@AgtCAElctnAdvcId.setter
+	def AgtCAElctnAdvcId(self, value):
+		self._AgtCAElctnAdvcId = value if type(value) != auto else self.make_default("AgtCAElctnAdvcId")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@AgtCAElctnAdvcId.deleter
+	def AgtCAElctnAdvcId(self):
+		del self._AgtCAElctnAdvcId
+		self._AgtCAElctnAdvcId = None
 
 	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
+	def AcctDtls(self):
+		return self._AcctDtls
 
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
 
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
 
 	@property
 	def CtctDtls(self):
@@ -49,30 +49,17 @@ class AgentCAElectionAmendmentRequestV01(base_types._BaseFieldType):
 		self._CtctDtls = None
 
 	@property
-	def AmddElctnDtls(self):
-		return self._AmddElctnDtls
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
 
-	@AmddElctnDtls.setter
-	def AmddElctnDtls(self, value):
-		self._AmddElctnDtls = value if type(value) != auto else self.make_default("AmddElctnDtls")
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
 
-	@AmddElctnDtls.deleter
-	def AmddElctnDtls(self):
-		del self._AmddElctnDtls
-		self._AmddElctnDtls = None
-
-	@property
-	def AgtCAElctnAdvcId(self):
-		return self._AgtCAElctnAdvcId
-
-	@AgtCAElctnAdvcId.setter
-	def AgtCAElctnAdvcId(self, value):
-		self._AgtCAElctnAdvcId = value if type(value) != auto else self.make_default("AgtCAElctnAdvcId")
-
-	@AgtCAElctnAdvcId.deleter
-	def AgtCAElctnAdvcId(self):
-		del self._AgtCAElctnAdvcId
-		self._AgtCAElctnAdvcId = None
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
 
 	@property
 	def OrgnlElctnDtls(self):
@@ -88,25 +75,38 @@ class AgentCAElectionAmendmentRequestV01(base_types._BaseFieldType):
 		self._OrgnlElctnDtls = None
 
 	@property
-	def AcctDtls(self):
-		return self._AcctDtls
+	def AmddElctnDtls(self):
+		return self._AmddElctnDtls
 
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+	@AmddElctnDtls.setter
+	def AmddElctnDtls(self, value):
+		self._AmddElctnDtls = value if type(value) != auto else self.make_default("AmddElctnDtls")
 
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
+	@AmddElctnDtls.deleter
+	def AmddElctnDtls(self):
+		del self._AmddElctnDtls
+		self._AmddElctnDtls = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtctDtls', type=ContactPerson1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmddElctnDtls', type=CorporateActionElection2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtCAElctnAdvcId', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlElctnDtls', type=CorporateActionElection1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctDtls', type=ContactPerson1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlElctnDtls', type=CorporateActionElection1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmddElctnDtls', type=CorporateActionElection2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
-import base_types
-import PartyIdentification8
+from . import base_types
 import ContactIdentification1
+import PartyIdentification8
 
 class PartyIdentificationAndContactInformation1(base_types._BaseFieldType):
 

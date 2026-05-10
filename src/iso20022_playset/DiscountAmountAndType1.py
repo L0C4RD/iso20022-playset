@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DiscountAmountType1Choice
 import ActiveOrHistoricCurrencyAndAmount
 

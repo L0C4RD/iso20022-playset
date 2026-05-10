@@ -1,11 +1,11 @@
-import base_types
-import Cheque9
+from . import base_types
 import InvestmentAccount60
+import Cheque9
 import CreditTransfer8
 
 class PaymentInstrument21Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ChqDtls", "_CshAcctDtls", "_BkrsDrftDtls", "_CdtTrfDtls"]
+	__slots__ = ["_ChqDtls", "_BkrsDrftDtls", "_CdtTrfDtls", "_CshAcctDtls"]
 	@property
 	def ChqDtls(self):
 		return self._ChqDtls
@@ -18,19 +18,6 @@ class PaymentInstrument21Choice(base_types._BaseFieldType):
 	def ChqDtls(self):
 		del self._ChqDtls
 		self._ChqDtls = None
-
-	@property
-	def CshAcctDtls(self):
-		return self._CshAcctDtls
-
-	@CshAcctDtls.setter
-	def CshAcctDtls(self, value):
-		self._CshAcctDtls = value if type(value) != auto else self.make_default("CshAcctDtls")
-
-	@CshAcctDtls.deleter
-	def CshAcctDtls(self):
-		del self._CshAcctDtls
-		self._CshAcctDtls = None
 
 	@property
 	def BkrsDrftDtls(self):
@@ -58,10 +45,23 @@ class PaymentInstrument21Choice(base_types._BaseFieldType):
 		del self._CdtTrfDtls
 		self._CdtTrfDtls = None
 
+	@property
+	def CshAcctDtls(self):
+		return self._CshAcctDtls
+
+	@CshAcctDtls.setter
+	def CshAcctDtls(self, value):
+		self._CshAcctDtls = value if type(value) != auto else self.make_default("CshAcctDtls")
+
+	@CshAcctDtls.deleter
+	def CshAcctDtls(self):
+		del self._CshAcctDtls
+		self._CshAcctDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ChqDtls', type=Cheque9, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CshAcctDtls', type=InvestmentAccount60, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BkrsDrftDtls', type=Cheque9, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CdtTrfDtls', type=CreditTransfer8, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CshAcctDtls', type=InvestmentAccount60, min=0, max=1, mutex_group=1, array=False),
 	))
 

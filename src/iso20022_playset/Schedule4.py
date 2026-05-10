@@ -1,23 +1,10 @@
-import base_types
-import SecuritiesTransactionPrice17Choice
+from . import base_types
 import ISODate
+import SecuritiesTransactionPrice17Choice
 
 class Schedule4(base_types._BaseFieldType):
 
-	__slots__ = ["_UadjstdEndDt", "_UadjstdFctvDt", "_Pric"]
-	@property
-	def UadjstdEndDt(self):
-		return self._UadjstdEndDt
-
-	@UadjstdEndDt.setter
-	def UadjstdEndDt(self, value):
-		self._UadjstdEndDt = value if type(value) != auto else self.make_default("UadjstdEndDt")
-
-	@UadjstdEndDt.deleter
-	def UadjstdEndDt(self):
-		del self._UadjstdEndDt
-		self._UadjstdEndDt = None
-
+	__slots__ = ["_UadjstdFctvDt", "_Pric", "_UadjstdEndDt"]
 	@property
 	def UadjstdFctvDt(self):
 		return self._UadjstdFctvDt
@@ -44,9 +31,22 @@ class Schedule4(base_types._BaseFieldType):
 		del self._Pric
 		self._Pric = None
 
+	@property
+	def UadjstdEndDt(self):
+		return self._UadjstdEndDt
+
+	@UadjstdEndDt.setter
+	def UadjstdEndDt(self, value):
+		self._UadjstdEndDt = value if type(value) != auto else self.make_default("UadjstdEndDt")
+
+	@UadjstdEndDt.deleter
+	def UadjstdEndDt(self):
+		del self._UadjstdEndDt
+		self._UadjstdEndDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UadjstdEndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UadjstdFctvDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pric', type=SecuritiesTransactionPrice17Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UadjstdEndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

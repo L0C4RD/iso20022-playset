@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RateType5Code
 import BaseOne14Rate
 

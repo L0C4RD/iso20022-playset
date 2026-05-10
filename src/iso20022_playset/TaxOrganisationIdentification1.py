@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
 import Max140Text
-import PostalAddress6
 import ContactDetails2
+import PostalAddress6
 
 class TaxOrganisationIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctDtls", "_PstlAdr", "_Nm"]
+	__slots__ = ["_CtctDtls", "_Nm", "_PstlAdr"]
 	@property
 	def CtctDtls(self):
 		return self._CtctDtls
@@ -20,19 +20,6 @@ class TaxOrganisationIdentification1(base_types._BaseFieldType):
 		self._CtctDtls = None
 
 	@property
-	def PstlAdr(self):
-		return self._PstlAdr
-
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
-
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
-
-	@property
 	def Nm(self):
 		return self._Nm
 
@@ -45,9 +32,22 @@ class TaxOrganisationIdentification1(base_types._BaseFieldType):
 		del self._Nm
 		self._Nm = None
 
+	@property
+	def PstlAdr(self):
+		return self._PstlAdr
+
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtctDtls', type=ContactDetails2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
 	))
 

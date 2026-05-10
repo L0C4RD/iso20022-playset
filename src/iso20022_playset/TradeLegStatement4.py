@@ -1,24 +1,24 @@
-import base_types
-import PartyIdentification253Choice
+from . import base_types
 import SecuritiesAccount18
 import TradeLeg12
 import PartyIdentificationAndAccount227
+import PartyIdentification253Choice
 
 class TradeLegStatement4(base_types._BaseFieldType):
 
-	__slots__ = ["_NonClrMmb", "_TradLegsDtls", "_ClrAcct", "_ClrSgmt"]
+	__slots__ = ["_ClrSgmt", "_TradLegsDtls", "_ClrAcct", "_NonClrMmb"]
 	@property
-	def NonClrMmb(self):
-		return self._NonClrMmb
+	def ClrSgmt(self):
+		return self._ClrSgmt
 
-	@NonClrMmb.setter
-	def NonClrMmb(self, value):
-		self._NonClrMmb = value if type(value) != auto else self.make_default("NonClrMmb")
+	@ClrSgmt.setter
+	def ClrSgmt(self, value):
+		self._ClrSgmt = value if type(value) != auto else self.make_default("ClrSgmt")
 
-	@NonClrMmb.deleter
-	def NonClrMmb(self):
-		del self._NonClrMmb
-		self._NonClrMmb = None
+	@ClrSgmt.deleter
+	def ClrSgmt(self):
+		del self._ClrSgmt
+		self._ClrSgmt = None
 
 	@property
 	def TradLegsDtls(self):
@@ -47,22 +47,22 @@ class TradeLegStatement4(base_types._BaseFieldType):
 		self._ClrAcct = None
 
 	@property
-	def ClrSgmt(self):
-		return self._ClrSgmt
+	def NonClrMmb(self):
+		return self._NonClrMmb
 
-	@ClrSgmt.setter
-	def ClrSgmt(self, value):
-		self._ClrSgmt = value if type(value) != auto else self.make_default("ClrSgmt")
+	@NonClrMmb.setter
+	def NonClrMmb(self, value):
+		self._NonClrMmb = value if type(value) != auto else self.make_default("NonClrMmb")
 
-	@ClrSgmt.deleter
-	def ClrSgmt(self):
-		del self._ClrSgmt
-		self._ClrSgmt = None
+	@NonClrMmb.deleter
+	def NonClrMmb(self):
+		del self._NonClrMmb
+		self._NonClrMmb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount227, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrSgmt', type=PartyIdentification253Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradLegsDtls', type=TradeLeg12, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount18, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrSgmt', type=PartyIdentification253Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount227, min=0, max=1, mutex_group=None, array=False),
 	))
 

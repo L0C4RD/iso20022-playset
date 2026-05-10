@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ForeignExchangeTradeInstructionV06
 
 class FXTR_014_001_06():

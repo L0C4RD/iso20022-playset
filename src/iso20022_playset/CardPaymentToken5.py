@@ -1,42 +1,42 @@
-import base_types
-import Max10Text
-import Min8Max28NumericText
-import Number
-import Max35Text
-import PaymentTokenIdentifiers1
-import Max500Binary
-import Min2Max3NumericText
+from . import base_types
 import Max2NumericText
+import PaymentTokenIdentifiers1
+import Max10Text
+import Max35Text
+import Number
+import Min2Max3NumericText
+import Max500Binary
 import TrueFalseIndicator
+import Min8Max28NumericText
 
 class CardPaymentToken5(base_types._BaseFieldType):
 
-	__slots__ = ["_TknAssrncLvl", "_TknInittdInd", "_TknChrtc", "_TknAssrncMtd", "_TknXpryDt", "_TknRqstr", "_TknAssrncData", "_Tkn", "_CardSeqNb"]
+	__slots__ = ["_TknAssrncData", "_Tkn", "_TknChrtc", "_TknAssrncMtd", "_TknRqstr", "_TknInittdInd", "_CardSeqNb", "_TknXpryDt", "_TknAssrncLvl"]
 	@property
-	def TknAssrncLvl(self):
-		return self._TknAssrncLvl
+	def TknAssrncData(self):
+		return self._TknAssrncData
 
-	@TknAssrncLvl.setter
-	def TknAssrncLvl(self, value):
-		self._TknAssrncLvl = value if type(value) != auto else self.make_default("TknAssrncLvl")
+	@TknAssrncData.setter
+	def TknAssrncData(self, value):
+		self._TknAssrncData = value if type(value) != auto else self.make_default("TknAssrncData")
 
-	@TknAssrncLvl.deleter
-	def TknAssrncLvl(self):
-		del self._TknAssrncLvl
-		self._TknAssrncLvl = None
+	@TknAssrncData.deleter
+	def TknAssrncData(self):
+		del self._TknAssrncData
+		self._TknAssrncData = None
 
 	@property
-	def TknInittdInd(self):
-		return self._TknInittdInd
+	def Tkn(self):
+		return self._Tkn
 
-	@TknInittdInd.setter
-	def TknInittdInd(self, value):
-		self._TknInittdInd = value if type(value) != auto else self.make_default("TknInittdInd")
+	@Tkn.setter
+	def Tkn(self, value):
+		self._Tkn = value if type(value) != auto else self.make_default("Tkn")
 
-	@TknInittdInd.deleter
-	def TknInittdInd(self):
-		del self._TknInittdInd
-		self._TknInittdInd = None
+	@Tkn.deleter
+	def Tkn(self):
+		del self._Tkn
+		self._Tkn = None
 
 	@property
 	def TknChrtc(self):
@@ -65,19 +65,6 @@ class CardPaymentToken5(base_types._BaseFieldType):
 		self._TknAssrncMtd = None
 
 	@property
-	def TknXpryDt(self):
-		return self._TknXpryDt
-
-	@TknXpryDt.setter
-	def TknXpryDt(self, value):
-		self._TknXpryDt = value if type(value) != auto else self.make_default("TknXpryDt")
-
-	@TknXpryDt.deleter
-	def TknXpryDt(self):
-		del self._TknXpryDt
-		self._TknXpryDt = None
-
-	@property
 	def TknRqstr(self):
 		return self._TknRqstr
 
@@ -91,30 +78,17 @@ class CardPaymentToken5(base_types._BaseFieldType):
 		self._TknRqstr = None
 
 	@property
-	def TknAssrncData(self):
-		return self._TknAssrncData
+	def TknInittdInd(self):
+		return self._TknInittdInd
 
-	@TknAssrncData.setter
-	def TknAssrncData(self, value):
-		self._TknAssrncData = value if type(value) != auto else self.make_default("TknAssrncData")
+	@TknInittdInd.setter
+	def TknInittdInd(self, value):
+		self._TknInittdInd = value if type(value) != auto else self.make_default("TknInittdInd")
 
-	@TknAssrncData.deleter
-	def TknAssrncData(self):
-		del self._TknAssrncData
-		self._TknAssrncData = None
-
-	@property
-	def Tkn(self):
-		return self._Tkn
-
-	@Tkn.setter
-	def Tkn(self, value):
-		self._Tkn = value if type(value) != auto else self.make_default("Tkn")
-
-	@Tkn.deleter
-	def Tkn(self):
-		del self._Tkn
-		self._Tkn = None
+	@TknInittdInd.deleter
+	def TknInittdInd(self):
+		del self._TknInittdInd
+		self._TknInittdInd = None
 
 	@property
 	def CardSeqNb(self):
@@ -129,15 +103,41 @@ class CardPaymentToken5(base_types._BaseFieldType):
 		del self._CardSeqNb
 		self._CardSeqNb = None
 
+	@property
+	def TknXpryDt(self):
+		return self._TknXpryDt
+
+	@TknXpryDt.setter
+	def TknXpryDt(self, value):
+		self._TknXpryDt = value if type(value) != auto else self.make_default("TknXpryDt")
+
+	@TknXpryDt.deleter
+	def TknXpryDt(self):
+		del self._TknXpryDt
+		self._TknXpryDt = None
+
+	@property
+	def TknAssrncLvl(self):
+		return self._TknAssrncLvl
+
+	@TknAssrncLvl.setter
+	def TknAssrncLvl(self, value):
+		self._TknAssrncLvl = value if type(value) != auto else self.make_default("TknAssrncLvl")
+
+	@TknAssrncLvl.deleter
+	def TknAssrncLvl(self):
+		del self._TknAssrncLvl
+		self._TknAssrncLvl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TknAssrncLvl', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknInittdInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknChrtc', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TknAssrncMtd', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknXpryDt', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknRqstr', type=PaymentTokenIdentifiers1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TknAssrncData', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tkn', type=Min8Max28NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknChrtc', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TknAssrncMtd', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknRqstr', type=PaymentTokenIdentifiers1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknInittdInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardSeqNb', type=Min2Max3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknXpryDt', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknAssrncLvl', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

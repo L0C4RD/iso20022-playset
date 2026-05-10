@@ -1,24 +1,11 @@
-import base_types
-import MarginCollateralReport4
+from . import base_types
 import ActiveOrHistoricCurrencyCode
+import MarginCollateralReport4
 import TradeCounterpartyReport20
 
 class PositionSetCollateralDimensions3(base_types._BaseFieldType):
 
-	__slots__ = ["_XcssCollRcvdCcy", "_XcssCollPstdCcy", "_VartnMrgnPstdCcy", "_InitlMrgnPstdCcy", "_InitlMrgnRcvdCcy", "_Coll", "_VartnMrgnRcvdCcy", "_CtrPtyId"]
-	@property
-	def XcssCollRcvdCcy(self):
-		return self._XcssCollRcvdCcy
-
-	@XcssCollRcvdCcy.setter
-	def XcssCollRcvdCcy(self, value):
-		self._XcssCollRcvdCcy = value if type(value) != auto else self.make_default("XcssCollRcvdCcy")
-
-	@XcssCollRcvdCcy.deleter
-	def XcssCollRcvdCcy(self):
-		del self._XcssCollRcvdCcy
-		self._XcssCollRcvdCcy = None
-
+	__slots__ = ["_XcssCollPstdCcy", "_VartnMrgnRcvdCcy", "_XcssCollRcvdCcy", "_InitlMrgnPstdCcy", "_Coll", "_CtrPtyId", "_VartnMrgnPstdCcy", "_InitlMrgnRcvdCcy"]
 	@property
 	def XcssCollPstdCcy(self):
 		return self._XcssCollPstdCcy
@@ -31,58 +18,6 @@ class PositionSetCollateralDimensions3(base_types._BaseFieldType):
 	def XcssCollPstdCcy(self):
 		del self._XcssCollPstdCcy
 		self._XcssCollPstdCcy = None
-
-	@property
-	def VartnMrgnPstdCcy(self):
-		return self._VartnMrgnPstdCcy
-
-	@VartnMrgnPstdCcy.setter
-	def VartnMrgnPstdCcy(self, value):
-		self._VartnMrgnPstdCcy = value if type(value) != auto else self.make_default("VartnMrgnPstdCcy")
-
-	@VartnMrgnPstdCcy.deleter
-	def VartnMrgnPstdCcy(self):
-		del self._VartnMrgnPstdCcy
-		self._VartnMrgnPstdCcy = None
-
-	@property
-	def InitlMrgnPstdCcy(self):
-		return self._InitlMrgnPstdCcy
-
-	@InitlMrgnPstdCcy.setter
-	def InitlMrgnPstdCcy(self, value):
-		self._InitlMrgnPstdCcy = value if type(value) != auto else self.make_default("InitlMrgnPstdCcy")
-
-	@InitlMrgnPstdCcy.deleter
-	def InitlMrgnPstdCcy(self):
-		del self._InitlMrgnPstdCcy
-		self._InitlMrgnPstdCcy = None
-
-	@property
-	def InitlMrgnRcvdCcy(self):
-		return self._InitlMrgnRcvdCcy
-
-	@InitlMrgnRcvdCcy.setter
-	def InitlMrgnRcvdCcy(self, value):
-		self._InitlMrgnRcvdCcy = value if type(value) != auto else self.make_default("InitlMrgnRcvdCcy")
-
-	@InitlMrgnRcvdCcy.deleter
-	def InitlMrgnRcvdCcy(self):
-		del self._InitlMrgnRcvdCcy
-		self._InitlMrgnRcvdCcy = None
-
-	@property
-	def Coll(self):
-		return self._Coll
-
-	@Coll.setter
-	def Coll(self, value):
-		self._Coll = value if type(value) != auto else self.make_default("Coll")
-
-	@Coll.deleter
-	def Coll(self):
-		del self._Coll
-		self._Coll = None
 
 	@property
 	def VartnMrgnRcvdCcy(self):
@@ -98,6 +33,45 @@ class PositionSetCollateralDimensions3(base_types._BaseFieldType):
 		self._VartnMrgnRcvdCcy = None
 
 	@property
+	def XcssCollRcvdCcy(self):
+		return self._XcssCollRcvdCcy
+
+	@XcssCollRcvdCcy.setter
+	def XcssCollRcvdCcy(self, value):
+		self._XcssCollRcvdCcy = value if type(value) != auto else self.make_default("XcssCollRcvdCcy")
+
+	@XcssCollRcvdCcy.deleter
+	def XcssCollRcvdCcy(self):
+		del self._XcssCollRcvdCcy
+		self._XcssCollRcvdCcy = None
+
+	@property
+	def InitlMrgnPstdCcy(self):
+		return self._InitlMrgnPstdCcy
+
+	@InitlMrgnPstdCcy.setter
+	def InitlMrgnPstdCcy(self, value):
+		self._InitlMrgnPstdCcy = value if type(value) != auto else self.make_default("InitlMrgnPstdCcy")
+
+	@InitlMrgnPstdCcy.deleter
+	def InitlMrgnPstdCcy(self):
+		del self._InitlMrgnPstdCcy
+		self._InitlMrgnPstdCcy = None
+
+	@property
+	def Coll(self):
+		return self._Coll
+
+	@Coll.setter
+	def Coll(self, value):
+		self._Coll = value if type(value) != auto else self.make_default("Coll")
+
+	@Coll.deleter
+	def Coll(self):
+		del self._Coll
+		self._Coll = None
+
+	@property
 	def CtrPtyId(self):
 		return self._CtrPtyId
 
@@ -110,14 +84,40 @@ class PositionSetCollateralDimensions3(base_types._BaseFieldType):
 		del self._CtrPtyId
 		self._CtrPtyId = None
 
+	@property
+	def VartnMrgnPstdCcy(self):
+		return self._VartnMrgnPstdCcy
+
+	@VartnMrgnPstdCcy.setter
+	def VartnMrgnPstdCcy(self, value):
+		self._VartnMrgnPstdCcy = value if type(value) != auto else self.make_default("VartnMrgnPstdCcy")
+
+	@VartnMrgnPstdCcy.deleter
+	def VartnMrgnPstdCcy(self):
+		del self._VartnMrgnPstdCcy
+		self._VartnMrgnPstdCcy = None
+
+	@property
+	def InitlMrgnRcvdCcy(self):
+		return self._InitlMrgnRcvdCcy
+
+	@InitlMrgnRcvdCcy.setter
+	def InitlMrgnRcvdCcy(self, value):
+		self._InitlMrgnRcvdCcy = value if type(value) != auto else self.make_default("InitlMrgnRcvdCcy")
+
+	@InitlMrgnRcvdCcy.deleter
+	def InitlMrgnRcvdCcy(self):
+		del self._InitlMrgnRcvdCcy
+		self._InitlMrgnRcvdCcy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XcssCollRcvdCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XcssCollPstdCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VartnMrgnPstdCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitlMrgnPstdCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitlMrgnRcvdCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Coll', type=MarginCollateralReport4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VartnMrgnRcvdCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XcssCollRcvdCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitlMrgnPstdCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Coll', type=MarginCollateralReport4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyId', type=TradeCounterpartyReport20, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VartnMrgnPstdCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitlMrgnRcvdCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

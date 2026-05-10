@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
+import Max10NumericText
 import UnitOfMeasure10Code
 import ImpliedCurrencyAndAmount
-import Max10NumericText
 
 class Distance1(base_types._BaseFieldType):
 
-	__slots__ = ["_OdmtrStart", "_FreeDstnc", "_TtlDstnc", "_OdmtrRtr", "_Rate", "_UnitOfMeasr"]
-	@property
-	def OdmtrStart(self):
-		return self._OdmtrStart
-
-	@OdmtrStart.setter
-	def OdmtrStart(self, value):
-		self._OdmtrStart = value if type(value) != auto else self.make_default("OdmtrStart")
-
-	@OdmtrStart.deleter
-	def OdmtrStart(self):
-		del self._OdmtrStart
-		self._OdmtrStart = None
-
+	__slots__ = ["_FreeDstnc", "_OdmtrRtr", "_TtlDstnc", "_OdmtrStart", "_Rate", "_UnitOfMeasr"]
 	@property
 	def FreeDstnc(self):
 		return self._FreeDstnc
@@ -31,6 +18,19 @@ class Distance1(base_types._BaseFieldType):
 	def FreeDstnc(self):
 		del self._FreeDstnc
 		self._FreeDstnc = None
+
+	@property
+	def OdmtrRtr(self):
+		return self._OdmtrRtr
+
+	@OdmtrRtr.setter
+	def OdmtrRtr(self, value):
+		self._OdmtrRtr = value if type(value) != auto else self.make_default("OdmtrRtr")
+
+	@OdmtrRtr.deleter
+	def OdmtrRtr(self):
+		del self._OdmtrRtr
+		self._OdmtrRtr = None
 
 	@property
 	def TtlDstnc(self):
@@ -46,17 +46,17 @@ class Distance1(base_types._BaseFieldType):
 		self._TtlDstnc = None
 
 	@property
-	def OdmtrRtr(self):
-		return self._OdmtrRtr
+	def OdmtrStart(self):
+		return self._OdmtrStart
 
-	@OdmtrRtr.setter
-	def OdmtrRtr(self, value):
-		self._OdmtrRtr = value if type(value) != auto else self.make_default("OdmtrRtr")
+	@OdmtrStart.setter
+	def OdmtrStart(self, value):
+		self._OdmtrStart = value if type(value) != auto else self.make_default("OdmtrStart")
 
-	@OdmtrRtr.deleter
-	def OdmtrRtr(self):
-		del self._OdmtrRtr
-		self._OdmtrRtr = None
+	@OdmtrStart.deleter
+	def OdmtrStart(self):
+		del self._OdmtrStart
+		self._OdmtrStart = None
 
 	@property
 	def Rate(self):
@@ -85,10 +85,10 @@ class Distance1(base_types._BaseFieldType):
 		self._UnitOfMeasr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OdmtrStart', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FreeDstnc', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlDstnc', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OdmtrRtr', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlDstnc', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OdmtrStart', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure10Code, min=0, max=1, mutex_group=None, array=False),
 	))

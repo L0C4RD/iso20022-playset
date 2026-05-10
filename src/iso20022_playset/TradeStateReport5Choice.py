@@ -1,6 +1,6 @@
-import base_types
-import ReportPeriodActivity1Code
+from . import base_types
 import TradeStateReport16
+import ReportPeriodActivity1Code
 
 class TradeStateReport5Choice(base_types._BaseFieldType):
 

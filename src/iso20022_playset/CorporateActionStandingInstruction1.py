@@ -1,25 +1,12 @@
-import base_types
+from . import base_types
 import Max350Text
-import SecuritiesAccount6
 import StandingInstructionGrossNet1Code
 import CashAccount17
+import SecuritiesAccount6
 
 class CorporateActionStandingInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_NetOrGrss", "_AddtlInf", "_SctiesDstrbtnDtls", "_CshDstrbtnDtls"]
-	@property
-	def NetOrGrss(self):
-		return self._NetOrGrss
-
-	@NetOrGrss.setter
-	def NetOrGrss(self, value):
-		self._NetOrGrss = value if type(value) != auto else self.make_default("NetOrGrss")
-
-	@NetOrGrss.deleter
-	def NetOrGrss(self):
-		del self._NetOrGrss
-		self._NetOrGrss = None
-
+	__slots__ = ["_AddtlInf", "_NetOrGrss", "_CshDstrbtnDtls", "_SctiesDstrbtnDtls"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -34,17 +21,17 @@ class CorporateActionStandingInstruction1(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def SctiesDstrbtnDtls(self):
-		return self._SctiesDstrbtnDtls
+	def NetOrGrss(self):
+		return self._NetOrGrss
 
-	@SctiesDstrbtnDtls.setter
-	def SctiesDstrbtnDtls(self, value):
-		self._SctiesDstrbtnDtls = value if type(value) != auto else self.make_default("SctiesDstrbtnDtls")
+	@NetOrGrss.setter
+	def NetOrGrss(self, value):
+		self._NetOrGrss = value if type(value) != auto else self.make_default("NetOrGrss")
 
-	@SctiesDstrbtnDtls.deleter
-	def SctiesDstrbtnDtls(self):
-		del self._SctiesDstrbtnDtls
-		self._SctiesDstrbtnDtls = None
+	@NetOrGrss.deleter
+	def NetOrGrss(self):
+		del self._NetOrGrss
+		self._NetOrGrss = None
 
 	@property
 	def CshDstrbtnDtls(self):
@@ -59,10 +46,23 @@ class CorporateActionStandingInstruction1(base_types._BaseFieldType):
 		del self._CshDstrbtnDtls
 		self._CshDstrbtnDtls = None
 
+	@property
+	def SctiesDstrbtnDtls(self):
+		return self._SctiesDstrbtnDtls
+
+	@SctiesDstrbtnDtls.setter
+	def SctiesDstrbtnDtls(self, value):
+		self._SctiesDstrbtnDtls = value if type(value) != auto else self.make_default("SctiesDstrbtnDtls")
+
+	@SctiesDstrbtnDtls.deleter
+	def SctiesDstrbtnDtls(self):
+		del self._SctiesDstrbtnDtls
+		self._SctiesDstrbtnDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NetOrGrss', type=StandingInstructionGrossNet1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesDstrbtnDtls', type=SecuritiesAccount6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NetOrGrss', type=StandingInstructionGrossNet1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CshDstrbtnDtls', type=CashAccount17, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesDstrbtnDtls', type=SecuritiesAccount6, min=0, max=1, mutex_group=1, array=False),
 	))
 

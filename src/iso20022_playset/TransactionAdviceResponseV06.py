@@ -1,11 +1,24 @@
-import base_types
-import Header70
-import ContentInformationType37
+from . import base_types
 import AcceptorCompletionAdviceResponse13
+import ContentInformationType37
+import Header70
 
 class TransactionAdviceResponseV06(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_TxAdvcRspn", "_SctyTrlr"]
+	__slots__ = ["_SctyTrlr", "_Hdr", "_TxAdvcRspn"]
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
 	@property
 	def Hdr(self):
 		return self._Hdr
@@ -32,22 +45,9 @@ class TransactionAdviceResponseV06(base_types._BaseFieldType):
 		del self._TxAdvcRspn
 		self._TxAdvcRspn = None
 
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxAdvcRspn', type=AcceptorCompletionAdviceResponse13, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
 	))
 

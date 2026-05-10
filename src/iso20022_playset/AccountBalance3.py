@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Balance29
 import ISO8583AccountTypeCode
 

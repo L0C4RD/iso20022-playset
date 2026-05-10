@@ -1,7 +1,7 @@
-import base_types
-import ResendSearchCriteria2
-import SupplementaryData1
+from . import base_types
 import MessageHeader7
+import SupplementaryData1
+import ResendSearchCriteria2
 
 class ResendRequestV01(base_types._BaseFieldType):
 

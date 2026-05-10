@@ -1,43 +1,17 @@
-import base_types
-import AdditionalInformation5
-import TradeConfirmationStatus1Code
-import SupplementaryData1
-import MessageIdentification1
+from . import base_types
 import ISODate
-import TradingModeType1Code
-import Max35Text
+import MessageIdentification1
 import AffirmStatus1Code
+import SupplementaryData1
 import MarketIdentification88
+import Max35Text
+import TradeConfirmationStatus1Code
+import TradingModeType1Code
+import AdditionalInformation5
 
 class ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02(base_types._BaseFieldType):
 
-	__slots__ = ["_AffirmSts", "_ReqId", "_AddtlInf", "_MktId", "_AdvcAckId", "_ConfSts", "_TradgMd", "_TradDt", "_SplmtryData", "_TradId"]
-	@property
-	def AffirmSts(self):
-		return self._AffirmSts
-
-	@AffirmSts.setter
-	def AffirmSts(self, value):
-		self._AffirmSts = value if type(value) != auto else self.make_default("AffirmSts")
-
-	@AffirmSts.deleter
-	def AffirmSts(self):
-		del self._AffirmSts
-		self._AffirmSts = None
-
-	@property
-	def ReqId(self):
-		return self._ReqId
-
-	@ReqId.setter
-	def ReqId(self, value):
-		self._ReqId = value if type(value) != auto else self.make_default("ReqId")
-
-	@ReqId.deleter
-	def ReqId(self):
-		del self._ReqId
-		self._ReqId = None
-
+	__slots__ = ["_AddtlInf", "_ConfSts", "_ReqId", "_SplmtryData", "_AdvcAckId", "_TradId", "_TradDt", "_MktId", "_TradgMd", "_AffirmSts"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -50,32 +24,6 @@ class ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02(base_types.
 	def AddtlInf(self):
 		del self._AddtlInf
 		self._AddtlInf = None
-
-	@property
-	def MktId(self):
-		return self._MktId
-
-	@MktId.setter
-	def MktId(self, value):
-		self._MktId = value if type(value) != auto else self.make_default("MktId")
-
-	@MktId.deleter
-	def MktId(self):
-		del self._MktId
-		self._MktId = None
-
-	@property
-	def AdvcAckId(self):
-		return self._AdvcAckId
-
-	@AdvcAckId.setter
-	def AdvcAckId(self, value):
-		self._AdvcAckId = value if type(value) != auto else self.make_default("AdvcAckId")
-
-	@AdvcAckId.deleter
-	def AdvcAckId(self):
-		del self._AdvcAckId
-		self._AdvcAckId = None
 
 	@property
 	def ConfSts(self):
@@ -91,30 +39,17 @@ class ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02(base_types.
 		self._ConfSts = None
 
 	@property
-	def TradgMd(self):
-		return self._TradgMd
+	def ReqId(self):
+		return self._ReqId
 
-	@TradgMd.setter
-	def TradgMd(self, value):
-		self._TradgMd = value if type(value) != auto else self.make_default("TradgMd")
+	@ReqId.setter
+	def ReqId(self, value):
+		self._ReqId = value if type(value) != auto else self.make_default("ReqId")
 
-	@TradgMd.deleter
-	def TradgMd(self):
-		del self._TradgMd
-		self._TradgMd = None
-
-	@property
-	def TradDt(self):
-		return self._TradDt
-
-	@TradDt.setter
-	def TradDt(self, value):
-		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
-
-	@TradDt.deleter
-	def TradDt(self):
-		del self._TradDt
-		self._TradDt = None
+	@ReqId.deleter
+	def ReqId(self):
+		del self._ReqId
+		self._ReqId = None
 
 	@property
 	def SplmtryData(self):
@@ -130,6 +65,19 @@ class ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02(base_types.
 		self._SplmtryData = None
 
 	@property
+	def AdvcAckId(self):
+		return self._AdvcAckId
+
+	@AdvcAckId.setter
+	def AdvcAckId(self, value):
+		self._AdvcAckId = value if type(value) != auto else self.make_default("AdvcAckId")
+
+	@AdvcAckId.deleter
+	def AdvcAckId(self):
+		del self._AdvcAckId
+		self._AdvcAckId = None
+
+	@property
 	def TradId(self):
 		return self._TradId
 
@@ -142,16 +90,68 @@ class ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02(base_types.
 		del self._TradId
 		self._TradId = None
 
+	@property
+	def TradDt(self):
+		return self._TradDt
+
+	@TradDt.setter
+	def TradDt(self, value):
+		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
+
+	@TradDt.deleter
+	def TradDt(self):
+		del self._TradDt
+		self._TradDt = None
+
+	@property
+	def MktId(self):
+		return self._MktId
+
+	@MktId.setter
+	def MktId(self, value):
+		self._MktId = value if type(value) != auto else self.make_default("MktId")
+
+	@MktId.deleter
+	def MktId(self):
+		del self._MktId
+		self._MktId = None
+
+	@property
+	def TradgMd(self):
+		return self._TradgMd
+
+	@TradgMd.setter
+	def TradgMd(self, value):
+		self._TradgMd = value if type(value) != auto else self.make_default("TradgMd")
+
+	@TradgMd.deleter
+	def TradgMd(self):
+		del self._TradgMd
+		self._TradgMd = None
+
+	@property
+	def AffirmSts(self):
+		return self._AffirmSts
+
+	@AffirmSts.setter
+	def AffirmSts(self, value):
+		self._AffirmSts = value if type(value) != auto else self.make_default("AffirmSts")
+
+	@AffirmSts.deleter
+	def AffirmSts(self):
+		del self._AffirmSts
+		self._AffirmSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AffirmSts', type=AffirmStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktId', type=MarketIdentification88, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdvcAckId', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfSts', type=TradeConfirmationStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgMd', type=TradingModeType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AdvcAckId', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktId', type=MarketIdentification88, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgMd', type=TradingModeType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AffirmSts', type=AffirmStatus1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

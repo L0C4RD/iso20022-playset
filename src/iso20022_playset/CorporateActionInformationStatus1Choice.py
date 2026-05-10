@@ -1,6 +1,6 @@
-import base_types
-import CorporateActionInformationRejectedStatus1
+from . import base_types
 import CorporateActionInformationProcessingStatus1
+import CorporateActionInformationRejectedStatus1
 
 class CorporateActionInformationStatus1Choice(base_types._BaseFieldType):
 

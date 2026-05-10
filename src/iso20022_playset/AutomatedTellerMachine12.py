@@ -1,39 +1,39 @@
-import base_types
-import Max35Text
-import ATMEquipment1
+from . import base_types
 import PointOfInteractionCapabilities10
+import ATMEquipment1
+import TransactionEnvironment2Code
+import Max35Text
 import PostalAddress17
 import ActiveCurrencyCode
-import TransactionEnvironment2Code
 
 class AutomatedTellerMachine12(base_types._BaseFieldType):
 
-	__slots__ = ["_SeqNb", "_LctnCtgy", "_Eqpmnt", "_Id", "_BaseCcy", "_AddtlId", "_Cpblties", "_Lctn"]
+	__slots__ = ["_AddtlId", "_Lctn", "_Eqpmnt", "_BaseCcy", "_LctnCtgy", "_Id", "_SeqNb", "_Cpblties"]
 	@property
-	def SeqNb(self):
-		return self._SeqNb
+	def AddtlId(self):
+		return self._AddtlId
 
-	@SeqNb.setter
-	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
+	@AddtlId.setter
+	def AddtlId(self, value):
+		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
 
-	@SeqNb.deleter
-	def SeqNb(self):
-		del self._SeqNb
-		self._SeqNb = None
+	@AddtlId.deleter
+	def AddtlId(self):
+		del self._AddtlId
+		self._AddtlId = None
 
 	@property
-	def LctnCtgy(self):
-		return self._LctnCtgy
+	def Lctn(self):
+		return self._Lctn
 
-	@LctnCtgy.setter
-	def LctnCtgy(self, value):
-		self._LctnCtgy = value if type(value) != auto else self.make_default("LctnCtgy")
+	@Lctn.setter
+	def Lctn(self, value):
+		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
 
-	@LctnCtgy.deleter
-	def LctnCtgy(self):
-		del self._LctnCtgy
-		self._LctnCtgy = None
+	@Lctn.deleter
+	def Lctn(self):
+		del self._Lctn
+		self._Lctn = None
 
 	@property
 	def Eqpmnt(self):
@@ -49,19 +49,6 @@ class AutomatedTellerMachine12(base_types._BaseFieldType):
 		self._Eqpmnt = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def BaseCcy(self):
 		return self._BaseCcy
 
@@ -75,17 +62,43 @@ class AutomatedTellerMachine12(base_types._BaseFieldType):
 		self._BaseCcy = None
 
 	@property
-	def AddtlId(self):
-		return self._AddtlId
+	def LctnCtgy(self):
+		return self._LctnCtgy
 
-	@AddtlId.setter
-	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
+	@LctnCtgy.setter
+	def LctnCtgy(self, value):
+		self._LctnCtgy = value if type(value) != auto else self.make_default("LctnCtgy")
 
-	@AddtlId.deleter
-	def AddtlId(self):
-		del self._AddtlId
-		self._AddtlId = None
+	@LctnCtgy.deleter
+	def LctnCtgy(self):
+		del self._LctnCtgy
+		self._LctnCtgy = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def SeqNb(self):
+		return self._SeqNb
+
+	@SeqNb.setter
+	def SeqNb(self, value):
+		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
+
+	@SeqNb.deleter
+	def SeqNb(self):
+		del self._SeqNb
+		self._SeqNb = None
 
 	@property
 	def Cpblties(self):
@@ -100,27 +113,14 @@ class AutomatedTellerMachine12(base_types._BaseFieldType):
 		del self._Cpblties
 		self._Cpblties = None
 
-	@property
-	def Lctn(self):
-		return self._Lctn
-
-	@Lctn.setter
-	def Lctn(self, value):
-		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
-
-	@Lctn.deleter
-	def Lctn(self):
-		del self._Lctn
-		self._Lctn = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LctnCtgy', type=TransactionEnvironment2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Eqpmnt', type=ATMEquipment1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cpblties', type=PointOfInteractionCapabilities10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lctn', type=PostalAddress17, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Eqpmnt', type=ATMEquipment1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LctnCtgy', type=TransactionEnvironment2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cpblties', type=PointOfInteractionCapabilities10, min=0, max=1, mutex_group=None, array=False),
 	))
 

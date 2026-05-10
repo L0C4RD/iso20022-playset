@@ -1,8 +1,8 @@
-import base_types
-import Max35Text
-import ActiveCurrencyCode
+from . import base_types
 import Number
 import Exact3NumericText
+import Max35Text
+import ActiveCurrencyCode
 
 class CurrencyDetails2(base_types._BaseFieldType):
 

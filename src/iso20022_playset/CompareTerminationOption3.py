@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RepoTerminationOption2Code
 
 class CompareTerminationOption3(base_types._BaseFieldType):

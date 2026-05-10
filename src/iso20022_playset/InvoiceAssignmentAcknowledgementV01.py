@@ -1,13 +1,26 @@
-import base_types
+from . import base_types
 import Max15NumericText
-import EncapsulatedBusinessMessage1
-import DecimalNumber
 import BusinessLetter1
 import FinancingItemList1
+import EncapsulatedBusinessMessage1
+import DecimalNumber
 
 class InvoiceAssignmentAcknowledgementV01(base_types._BaseFieldType):
 
-	__slots__ = ["_ItmCnt", "_Hdr", "_PmtStsList", "_AttchdMsg", "_CtrlSum", "_PmtStsCnt"]
+	__slots__ = ["_PmtStsCnt", "_ItmCnt", "_PmtStsList", "_Hdr", "_CtrlSum", "_AttchdMsg"]
+	@property
+	def PmtStsCnt(self):
+		return self._PmtStsCnt
+
+	@PmtStsCnt.setter
+	def PmtStsCnt(self, value):
+		self._PmtStsCnt = value if type(value) != auto else self.make_default("PmtStsCnt")
+
+	@PmtStsCnt.deleter
+	def PmtStsCnt(self):
+		del self._PmtStsCnt
+		self._PmtStsCnt = None
+
 	@property
 	def ItmCnt(self):
 		return self._ItmCnt
@@ -20,19 +33,6 @@ class InvoiceAssignmentAcknowledgementV01(base_types._BaseFieldType):
 	def ItmCnt(self):
 		del self._ItmCnt
 		self._ItmCnt = None
-
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
 
 	@property
 	def PmtStsList(self):
@@ -48,17 +48,17 @@ class InvoiceAssignmentAcknowledgementV01(base_types._BaseFieldType):
 		self._PmtStsList = None
 
 	@property
-	def AttchdMsg(self):
-		return self._AttchdMsg
+	def Hdr(self):
+		return self._Hdr
 
-	@AttchdMsg.setter
-	def AttchdMsg(self, value):
-		self._AttchdMsg = value if type(value) != auto else self.make_default("AttchdMsg")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
 
-	@AttchdMsg.deleter
-	def AttchdMsg(self):
-		del self._AttchdMsg
-		self._AttchdMsg = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def CtrlSum(self):
@@ -74,24 +74,24 @@ class InvoiceAssignmentAcknowledgementV01(base_types._BaseFieldType):
 		self._CtrlSum = None
 
 	@property
-	def PmtStsCnt(self):
-		return self._PmtStsCnt
+	def AttchdMsg(self):
+		return self._AttchdMsg
 
-	@PmtStsCnt.setter
-	def PmtStsCnt(self, value):
-		self._PmtStsCnt = value if type(value) != auto else self.make_default("PmtStsCnt")
+	@AttchdMsg.setter
+	def AttchdMsg(self, value):
+		self._AttchdMsg = value if type(value) != auto else self.make_default("AttchdMsg")
 
-	@PmtStsCnt.deleter
-	def PmtStsCnt(self):
-		del self._PmtStsCnt
-		self._PmtStsCnt = None
+	@AttchdMsg.deleter
+	def AttchdMsg(self):
+		del self._AttchdMsg
+		self._AttchdMsg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtStsList', type=FinancingItemList1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtStsCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtStsList', type=FinancingItemList1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,24 +1,24 @@
-import base_types
-import Max140Text
+from . import base_types
 import StatusReportRecord3
 import SupplementaryData1
+import Max140Text
 import StatusAdviceReport3
 
 class MessageReportHeader4(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgSts", "_MsgRptIdr", "_SplmtryData", "_RcrdSts"]
+	__slots__ = ["_SplmtryData", "_MsgRptIdr", "_RcrdSts", "_MsgSts"]
 	@property
-	def MsgSts(self):
-		return self._MsgSts
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@MsgSts.setter
-	def MsgSts(self, value):
-		self._MsgSts = value if type(value) != auto else self.make_default("MsgSts")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@MsgSts.deleter
-	def MsgSts(self):
-		del self._MsgSts
-		self._MsgSts = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def MsgRptIdr(self):
@@ -34,19 +34,6 @@ class MessageReportHeader4(base_types._BaseFieldType):
 		self._MsgRptIdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def RcrdSts(self):
 		return self._RcrdSts
 
@@ -59,10 +46,23 @@ class MessageReportHeader4(base_types._BaseFieldType):
 		del self._RcrdSts
 		self._RcrdSts = None
 
+	@property
+	def MsgSts(self):
+		return self._MsgSts
+
+	@MsgSts.setter
+	def MsgSts(self, value):
+		self._MsgSts = value if type(value) != auto else self.make_default("MsgSts")
+
+	@MsgSts.deleter
+	def MsgSts(self):
+		del self._MsgSts
+		self._MsgSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgSts', type=StatusAdviceReport3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgRptIdr', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgRptIdr', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcrdSts', type=StatusReportRecord3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgSts', type=StatusAdviceReport3, min=0, max=1, mutex_group=None, array=False),
 	))
 

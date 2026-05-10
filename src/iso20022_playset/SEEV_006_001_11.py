@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MeetingInstructionStatusV11
 
 class SEEV_006_001_11():

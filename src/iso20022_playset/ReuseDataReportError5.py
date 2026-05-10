@@ -1,12 +1,12 @@
-import base_types
-import ISODateTime
+from . import base_types
 import CounterpartyData87
 import SupplementaryData1
 import Max140Text
+import ISODateTime
 
 class ReuseDataReportError5(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RptgDtTm", "_TechRcrdId", "_CtrPty"]
+	__slots__ = ["_SplmtryData", "_RptgDtTm", "_CtrPty", "_TechRcrdId"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -34,19 +34,6 @@ class ReuseDataReportError5(base_types._BaseFieldType):
 		self._RptgDtTm = None
 
 	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
-
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
-
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
-
-	@property
 	def CtrPty(self):
 		return self._CtrPty
 
@@ -59,10 +46,23 @@ class ReuseDataReportError5(base_types._BaseFieldType):
 		del self._CtrPty
 		self._CtrPty = None
 
+	@property
+	def TechRcrdId(self):
+		return self._TechRcrdId
+
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
+
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptgDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPty', type=CounterpartyData87, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

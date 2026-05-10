@@ -1,14 +1,14 @@
-import base_types
-import ATMConfigurationParameter2
-import ATMSecurityScheme4Code
-import ATMCommandParameters1
+from . import base_types
 import ATMConfigurationParameter1
-import ATMStatus1Code
+import ATMConfigurationParameter2
 import MessageFunction8Code
+import ATMCommandParameters1
+import ATMSecurityScheme4Code
+import ATMStatus1Code
 
 class ATMCommandParameters3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyDvc", "_ReqrdSctySchme", "_Key", "_ReqrdCfgtnParam", "_ATMReqrdGblSts", "_XpctdMsgFctn"]
+	__slots__ = ["_SctyDvc", "_ReqrdCfgtnParam", "_Key", "_XpctdMsgFctn", "_ReqrdSctySchme", "_ATMReqrdGblSts"]
 	@property
 	def SctyDvc(self):
 		return self._SctyDvc
@@ -21,32 +21,6 @@ class ATMCommandParameters3Choice(base_types._BaseFieldType):
 	def SctyDvc(self):
 		del self._SctyDvc
 		self._SctyDvc = None
-
-	@property
-	def ReqrdSctySchme(self):
-		return self._ReqrdSctySchme
-
-	@ReqrdSctySchme.setter
-	def ReqrdSctySchme(self, value):
-		self._ReqrdSctySchme = value if type(value) != auto else self.make_default("ReqrdSctySchme")
-
-	@ReqrdSctySchme.deleter
-	def ReqrdSctySchme(self):
-		del self._ReqrdSctySchme
-		self._ReqrdSctySchme = None
-
-	@property
-	def Key(self):
-		return self._Key
-
-	@Key.setter
-	def Key(self, value):
-		self._Key = value if type(value) != auto else self.make_default("Key")
-
-	@Key.deleter
-	def Key(self):
-		del self._Key
-		self._Key = None
 
 	@property
 	def ReqrdCfgtnParam(self):
@@ -62,17 +36,17 @@ class ATMCommandParameters3Choice(base_types._BaseFieldType):
 		self._ReqrdCfgtnParam = None
 
 	@property
-	def ATMReqrdGblSts(self):
-		return self._ATMReqrdGblSts
+	def Key(self):
+		return self._Key
 
-	@ATMReqrdGblSts.setter
-	def ATMReqrdGblSts(self, value):
-		self._ATMReqrdGblSts = value if type(value) != auto else self.make_default("ATMReqrdGblSts")
+	@Key.setter
+	def Key(self, value):
+		self._Key = value if type(value) != auto else self.make_default("Key")
 
-	@ATMReqrdGblSts.deleter
-	def ATMReqrdGblSts(self):
-		del self._ATMReqrdGblSts
-		self._ATMReqrdGblSts = None
+	@Key.deleter
+	def Key(self):
+		del self._Key
+		self._Key = None
 
 	@property
 	def XpctdMsgFctn(self):
@@ -87,12 +61,38 @@ class ATMCommandParameters3Choice(base_types._BaseFieldType):
 		del self._XpctdMsgFctn
 		self._XpctdMsgFctn = None
 
+	@property
+	def ReqrdSctySchme(self):
+		return self._ReqrdSctySchme
+
+	@ReqrdSctySchme.setter
+	def ReqrdSctySchme(self, value):
+		self._ReqrdSctySchme = value if type(value) != auto else self.make_default("ReqrdSctySchme")
+
+	@ReqrdSctySchme.deleter
+	def ReqrdSctySchme(self):
+		del self._ReqrdSctySchme
+		self._ReqrdSctySchme = None
+
+	@property
+	def ATMReqrdGblSts(self):
+		return self._ATMReqrdGblSts
+
+	@ATMReqrdGblSts.setter
+	def ATMReqrdGblSts(self, value):
+		self._ATMReqrdGblSts = value if type(value) != auto else self.make_default("ATMReqrdGblSts")
+
+	@ATMReqrdGblSts.deleter
+	def ATMReqrdGblSts(self):
+		del self._ATMReqrdGblSts
+		self._ATMReqrdGblSts = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctyDvc', type=ATMCommandParameters1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ReqrdSctySchme', type=ATMSecurityScheme4Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Key', type=ATMConfigurationParameter2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ReqrdCfgtnParam', type=ATMConfigurationParameter1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ATMReqrdGblSts', type=ATMStatus1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Key', type=ATMConfigurationParameter2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='XpctdMsgFctn', type=MessageFunction8Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ReqrdSctySchme', type=ATMSecurityScheme4Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ATMReqrdGblSts', type=ATMStatus1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CustomerCreditTransferInitiationV12
 
 class PAIN_001_001_12():

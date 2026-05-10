@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BankToCustomerAccountReportV13
 
 class CAMT_052_001_13():

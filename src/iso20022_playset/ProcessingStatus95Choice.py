@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
 import AcknowledgedAcceptedStatus31Choice
-import RejectionOrRepairStatus49Choice
 import ProprietaryStatusAndReason7
+import RejectionOrRepairStatus49Choice
 
 class ProcessingStatus95Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AckdAccptd", "_Prtry", "_Rjctd"]
+	__slots__ = ["_Rjctd", "_AckdAccptd", "_Prtry"]
+	@property
+	def Rjctd(self):
+		return self._Rjctd
+
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
+
 	@property
 	def AckdAccptd(self):
 		return self._AckdAccptd
@@ -32,22 +45,9 @@ class ProcessingStatus95Choice(base_types._BaseFieldType):
 		del self._Prtry
 		self._Prtry = None
 
-	@property
-	def Rjctd(self):
-		return self._Rjctd
-
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
-
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Rjctd', type=RejectionOrRepairStatus49Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus31Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=RejectionOrRepairStatus49Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

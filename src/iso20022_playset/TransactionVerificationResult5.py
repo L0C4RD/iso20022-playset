@@ -1,9 +1,9 @@
-import base_types
-import Verification1Code
+from . import base_types
+import Max140Binary
+import AuthenticationEntity2Code
 import Max500Text
 import AuthenticationMethod7Code
-import AuthenticationEntity2Code
-import Max140Binary
+import Verification1Code
 
 class TransactionVerificationResult5(base_types._BaseFieldType):
 

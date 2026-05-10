@@ -1,24 +1,24 @@
-import base_types
-import RelativeDistinguishedName2
+from . import base_types
 import Number
-import CertificateIssuer1
+import RelativeDistinguishedName2
 import PublicRSAKey2
+import CertificateIssuer1
 
 class CertificationRequest2(base_types._BaseFieldType):
 
-	__slots__ = ["_Attr", "_Vrsn", "_SbjtPblcKeyInf", "_SbjtNm"]
+	__slots__ = ["_SbjtPblcKeyInf", "_Vrsn", "_Attr", "_SbjtNm"]
 	@property
-	def Attr(self):
-		return self._Attr
+	def SbjtPblcKeyInf(self):
+		return self._SbjtPblcKeyInf
 
-	@Attr.setter
-	def Attr(self, value):
-		self._Attr = value if type(value) != auto else self.make_default("Attr")
+	@SbjtPblcKeyInf.setter
+	def SbjtPblcKeyInf(self, value):
+		self._SbjtPblcKeyInf = value if type(value) != auto else self.make_default("SbjtPblcKeyInf")
 
-	@Attr.deleter
-	def Attr(self):
-		del self._Attr
-		self._Attr = None
+	@SbjtPblcKeyInf.deleter
+	def SbjtPblcKeyInf(self):
+		del self._SbjtPblcKeyInf
+		self._SbjtPblcKeyInf = None
 
 	@property
 	def Vrsn(self):
@@ -34,17 +34,17 @@ class CertificationRequest2(base_types._BaseFieldType):
 		self._Vrsn = None
 
 	@property
-	def SbjtPblcKeyInf(self):
-		return self._SbjtPblcKeyInf
+	def Attr(self):
+		return self._Attr
 
-	@SbjtPblcKeyInf.setter
-	def SbjtPblcKeyInf(self, value):
-		self._SbjtPblcKeyInf = value if type(value) != auto else self.make_default("SbjtPblcKeyInf")
+	@Attr.setter
+	def Attr(self, value):
+		self._Attr = value if type(value) != auto else self.make_default("Attr")
 
-	@SbjtPblcKeyInf.deleter
-	def SbjtPblcKeyInf(self):
-		del self._SbjtPblcKeyInf
-		self._SbjtPblcKeyInf = None
+	@Attr.deleter
+	def Attr(self):
+		del self._Attr
+		self._Attr = None
 
 	@property
 	def SbjtNm(self):
@@ -60,9 +60,9 @@ class CertificationRequest2(base_types._BaseFieldType):
 		self._SbjtNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Attr', type=RelativeDistinguishedName2, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SbjtPblcKeyInf', type=PublicRSAKey2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Attr', type=RelativeDistinguishedName2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SbjtNm', type=CertificateIssuer1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,14 +1,40 @@
-import base_types
-import Max35Text
-import PartyTextInformation1
-import AlternatePartyIdentification7
+from . import base_types
 import PartyIdentification257Choice
 import DateAndDateTime2Choice
+import PartyTextInformation1
+import Max35Text
 import LEIIdentifier
+import AlternatePartyIdentification7
 
 class PartyIdentification315(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgId", "_PrcgDt", "_LEI", "_AltrnId", "_AddtlInf", "_Id"]
+	__slots__ = ["_LEI", "_Id", "_PrcgId", "_PrcgDt", "_AddtlInf", "_AltrnId"]
+	@property
+	def LEI(self):
+		return self._LEI
+
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
+
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	@property
 	def PrcgId(self):
 		return self._PrcgId
@@ -36,17 +62,17 @@ class PartyIdentification315(base_types._BaseFieldType):
 		self._PrcgDt = None
 
 	@property
-	def LEI(self):
-		return self._LEI
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def AltrnId(self):
@@ -61,38 +87,12 @@ class PartyIdentification315(base_types._BaseFieldType):
 		del self._AltrnId
 		self._AltrnId = None
 
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification257Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification257Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=1, mutex_group=None, array=False),
 	))
 

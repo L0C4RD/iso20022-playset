@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ResendRequestV01
 
 class ADMI_006_001_01():

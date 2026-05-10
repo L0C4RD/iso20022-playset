@@ -1,13 +1,26 @@
-import base_types
+from . import base_types
 import Max15NumericText
-import EncapsulatedBusinessMessage1
-import DecimalNumber
 import BusinessLetter1
 import FinancingItemList1
+import EncapsulatedBusinessMessage1
+import DecimalNumber
 
 class InvoiceAssignmentNotificationV01(base_types._BaseFieldType):
 
-	__slots__ = ["_ItmCnt", "_Hdr", "_NtfctnCnt", "_AttchdMsg", "_CtrlSum", "_NtfctnList"]
+	__slots__ = ["_NtfctnList", "_ItmCnt", "_Hdr", "_CtrlSum", "_AttchdMsg", "_NtfctnCnt"]
+	@property
+	def NtfctnList(self):
+		return self._NtfctnList
+
+	@NtfctnList.setter
+	def NtfctnList(self, value):
+		self._NtfctnList = value if type(value) != auto else self.make_default("NtfctnList")
+
+	@NtfctnList.deleter
+	def NtfctnList(self):
+		del self._NtfctnList
+		self._NtfctnList = None
+
 	@property
 	def ItmCnt(self):
 		return self._ItmCnt
@@ -35,17 +48,17 @@ class InvoiceAssignmentNotificationV01(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def NtfctnCnt(self):
-		return self._NtfctnCnt
+	def CtrlSum(self):
+		return self._CtrlSum
 
-	@NtfctnCnt.setter
-	def NtfctnCnt(self, value):
-		self._NtfctnCnt = value if type(value) != auto else self.make_default("NtfctnCnt")
+	@CtrlSum.setter
+	def CtrlSum(self, value):
+		self._CtrlSum = value if type(value) != auto else self.make_default("CtrlSum")
 
-	@NtfctnCnt.deleter
-	def NtfctnCnt(self):
-		del self._NtfctnCnt
-		self._NtfctnCnt = None
+	@CtrlSum.deleter
+	def CtrlSum(self):
+		del self._CtrlSum
+		self._CtrlSum = None
 
 	@property
 	def AttchdMsg(self):
@@ -61,37 +74,24 @@ class InvoiceAssignmentNotificationV01(base_types._BaseFieldType):
 		self._AttchdMsg = None
 
 	@property
-	def CtrlSum(self):
-		return self._CtrlSum
+	def NtfctnCnt(self):
+		return self._NtfctnCnt
 
-	@CtrlSum.setter
-	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != auto else self.make_default("CtrlSum")
+	@NtfctnCnt.setter
+	def NtfctnCnt(self, value):
+		self._NtfctnCnt = value if type(value) != auto else self.make_default("NtfctnCnt")
 
-	@CtrlSum.deleter
-	def CtrlSum(self):
-		del self._CtrlSum
-		self._CtrlSum = None
-
-	@property
-	def NtfctnList(self):
-		return self._NtfctnList
-
-	@NtfctnList.setter
-	def NtfctnList(self, value):
-		self._NtfctnList = value if type(value) != auto else self.make_default("NtfctnList")
-
-	@NtfctnList.deleter
-	def NtfctnList(self):
-		del self._NtfctnList
-		self._NtfctnList = None
+	@NtfctnCnt.deleter
+	def NtfctnCnt(self):
+		del self._NtfctnCnt
+		self._NtfctnCnt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NtfctnList', type=FinancingItemList1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnList', type=FinancingItemList1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NtfctnCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

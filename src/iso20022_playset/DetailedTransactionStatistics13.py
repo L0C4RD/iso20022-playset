@@ -1,22 +1,22 @@
-import base_types
-import Max15NumericText
+from . import base_types
 import RejectionReason53
+import Max15NumericText
 
 class DetailedTransactionStatistics13(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfTxsAccptd", "_TxsRjctnsRsn", "_TtlNbOfTxs", "_TtlNbOfTxsRjctd"]
+	__slots__ = ["_TtlNbOfTxs", "_TxsRjctnsRsn", "_TtlNbOfTxsAccptd", "_TtlNbOfTxsRjctd"]
 	@property
-	def TtlNbOfTxsAccptd(self):
-		return self._TtlNbOfTxsAccptd
+	def TtlNbOfTxs(self):
+		return self._TtlNbOfTxs
 
-	@TtlNbOfTxsAccptd.setter
-	def TtlNbOfTxsAccptd(self, value):
-		self._TtlNbOfTxsAccptd = value if type(value) != auto else self.make_default("TtlNbOfTxsAccptd")
+	@TtlNbOfTxs.setter
+	def TtlNbOfTxs(self, value):
+		self._TtlNbOfTxs = value if type(value) != auto else self.make_default("TtlNbOfTxs")
 
-	@TtlNbOfTxsAccptd.deleter
-	def TtlNbOfTxsAccptd(self):
-		del self._TtlNbOfTxsAccptd
-		self._TtlNbOfTxsAccptd = None
+	@TtlNbOfTxs.deleter
+	def TtlNbOfTxs(self):
+		del self._TtlNbOfTxs
+		self._TtlNbOfTxs = None
 
 	@property
 	def TxsRjctnsRsn(self):
@@ -32,17 +32,17 @@ class DetailedTransactionStatistics13(base_types._BaseFieldType):
 		self._TxsRjctnsRsn = None
 
 	@property
-	def TtlNbOfTxs(self):
-		return self._TtlNbOfTxs
+	def TtlNbOfTxsAccptd(self):
+		return self._TtlNbOfTxsAccptd
 
-	@TtlNbOfTxs.setter
-	def TtlNbOfTxs(self, value):
-		self._TtlNbOfTxs = value if type(value) != auto else self.make_default("TtlNbOfTxs")
+	@TtlNbOfTxsAccptd.setter
+	def TtlNbOfTxsAccptd(self, value):
+		self._TtlNbOfTxsAccptd = value if type(value) != auto else self.make_default("TtlNbOfTxsAccptd")
 
-	@TtlNbOfTxs.deleter
-	def TtlNbOfTxs(self):
-		del self._TtlNbOfTxs
-		self._TtlNbOfTxs = None
+	@TtlNbOfTxsAccptd.deleter
+	def TtlNbOfTxsAccptd(self):
+		del self._TtlNbOfTxsAccptd
+		self._TtlNbOfTxsAccptd = None
 
 	@property
 	def TtlNbOfTxsRjctd(self):
@@ -58,9 +58,9 @@ class DetailedTransactionStatistics13(base_types._BaseFieldType):
 		self._TtlNbOfTxsRjctd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlNbOfTxsAccptd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxsRjctnsRsn', type=RejectionReason53, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlNbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxsRjctnsRsn', type=RejectionReason53, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlNbOfTxsAccptd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfTxsRjctd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

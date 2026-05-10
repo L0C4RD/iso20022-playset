@@ -1,23 +1,10 @@
-import base_types
-import Max35Text
+from . import base_types
 import CancellationReason31Choice
+import Max35Text
 
 class InvestmentFundOrder11(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRef", "_ClntRef", "_CxlRsn", "_OrdrRef", "_DealRef"]
-	@property
-	def CxlRef(self):
-		return self._CxlRef
-
-	@CxlRef.setter
-	def CxlRef(self, value):
-		self._CxlRef = value if type(value) != auto else self.make_default("CxlRef")
-
-	@CxlRef.deleter
-	def CxlRef(self):
-		del self._CxlRef
-		self._CxlRef = None
-
+	__slots__ = ["_ClntRef", "_OrdrRef", "_CxlRsn", "_DealRef", "_CxlRef"]
 	@property
 	def ClntRef(self):
 		return self._ClntRef
@@ -30,19 +17,6 @@ class InvestmentFundOrder11(base_types._BaseFieldType):
 	def ClntRef(self):
 		del self._ClntRef
 		self._ClntRef = None
-
-	@property
-	def CxlRsn(self):
-		return self._CxlRsn
-
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
-
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
 
 	@property
 	def OrdrRef(self):
@@ -58,6 +32,19 @@ class InvestmentFundOrder11(base_types._BaseFieldType):
 		self._OrdrRef = None
 
 	@property
+	def CxlRsn(self):
+		return self._CxlRsn
+
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
+
+	@property
 	def DealRef(self):
 		return self._DealRef
 
@@ -70,11 +57,24 @@ class InvestmentFundOrder11(base_types._BaseFieldType):
 		del self._DealRef
 		self._DealRef = None
 
+	@property
+	def CxlRef(self):
+		return self._CxlRef
+
+	@CxlRef.setter
+	def CxlRef(self, value):
+		self._CxlRef = value if type(value) != auto else self.make_default("CxlRef")
+
+	@CxlRef.deleter
+	def CxlRef(self):
+		del self._CxlRef
+		self._CxlRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRsn', type=CancellationReason31Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=CancellationReason31Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DealRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

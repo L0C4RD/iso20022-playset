@@ -1,38 +1,25 @@
-import base_types
+from . import base_types
+import ProprietaryStatusAndReason5
 import ReceivedStatusReason1
 import RejectedStatusReason12
-import ProprietaryStatusAndReason5
-import AcceptedStatusReason7
 import PendingProcessingStatusReason1
+import AcceptedStatusReason7
 
 class ProcessingStatus43Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rcvd", "_PdgPrcg", "_Accptd", "_PrtrySts", "_Rjctd"]
+	__slots__ = ["_Rjctd", "_Accptd", "_PdgPrcg", "_PrtrySts", "_Rcvd"]
 	@property
-	def Rcvd(self):
-		return self._Rcvd
+	def Rjctd(self):
+		return self._Rjctd
 
-	@Rcvd.setter
-	def Rcvd(self, value):
-		self._Rcvd = value if type(value) != auto else self.make_default("Rcvd")
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
 
-	@Rcvd.deleter
-	def Rcvd(self):
-		del self._Rcvd
-		self._Rcvd = None
-
-	@property
-	def PdgPrcg(self):
-		return self._PdgPrcg
-
-	@PdgPrcg.setter
-	def PdgPrcg(self, value):
-		self._PdgPrcg = value if type(value) != auto else self.make_default("PdgPrcg")
-
-	@PdgPrcg.deleter
-	def PdgPrcg(self):
-		del self._PdgPrcg
-		self._PdgPrcg = None
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
 
 	@property
 	def Accptd(self):
@@ -48,6 +35,19 @@ class ProcessingStatus43Choice(base_types._BaseFieldType):
 		self._Accptd = None
 
 	@property
+	def PdgPrcg(self):
+		return self._PdgPrcg
+
+	@PdgPrcg.setter
+	def PdgPrcg(self, value):
+		self._PdgPrcg = value if type(value) != auto else self.make_default("PdgPrcg")
+
+	@PdgPrcg.deleter
+	def PdgPrcg(self):
+		del self._PdgPrcg
+		self._PdgPrcg = None
+
+	@property
 	def PrtrySts(self):
 		return self._PrtrySts
 
@@ -61,23 +61,23 @@ class ProcessingStatus43Choice(base_types._BaseFieldType):
 		self._PrtrySts = None
 
 	@property
-	def Rjctd(self):
-		return self._Rjctd
+	def Rcvd(self):
+		return self._Rcvd
 
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+	@Rcvd.setter
+	def Rcvd(self, value):
+		self._Rcvd = value if type(value) != auto else self.make_default("Rcvd")
 
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
+	@Rcvd.deleter
+	def Rcvd(self):
+		del self._Rcvd
+		self._Rcvd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rcvd', type=ReceivedStatusReason1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PdgPrcg', type=PendingProcessingStatusReason1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Accptd', type=AcceptedStatusReason7, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectedStatusReason12, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Accptd', type=AcceptedStatusReason7, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PdgPrcg', type=PendingProcessingStatusReason1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rcvd', type=ReceivedStatusReason1, min=0, max=1, mutex_group=1, array=False),
 	))
 

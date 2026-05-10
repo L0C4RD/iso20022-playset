@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountRequestAcknowledgementV04
 
 class ACMT_010_001_04():

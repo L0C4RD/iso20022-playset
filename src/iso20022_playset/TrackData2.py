@@ -1,7 +1,7 @@
-import base_types
-import Max140Text
+from . import base_types
 import TrackFormat1Code
 import Number
+import Max140Text
 
 class TrackData2(base_types._BaseFieldType):
 

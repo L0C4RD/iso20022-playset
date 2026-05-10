@@ -1,6 +1,6 @@
-import base_types
-import ProductIdentifier2
+from . import base_types
 import GenericIdentification4
+import ProductIdentifier2
 
 class ProductIdentifier2Choice(base_types._BaseFieldType):
 

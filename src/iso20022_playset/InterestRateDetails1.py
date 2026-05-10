@@ -1,25 +1,12 @@
-import base_types
-import Max35Text
+from . import base_types
 import InstalmentPeriod1Code
 import BaseOneRate
+import Max35Text
 import InterestRate1Code
 
 class InterestRateDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTp", "_Rate", "_Prd", "_Tp"]
-	@property
-	def OthrTp(self):
-		return self._OthrTp
-
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
-
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
-
+	__slots__ = ["_Rate", "_OthrTp", "_Prd", "_Tp"]
 	@property
 	def Rate(self):
 		return self._Rate
@@ -32,6 +19,19 @@ class InterestRateDetails1(base_types._BaseFieldType):
 	def Rate(self):
 		del self._Rate
 		self._Rate = None
+
+	@property
+	def OthrTp(self):
+		return self._OthrTp
+
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
 
 	@property
 	def Prd(self):
@@ -60,8 +60,8 @@ class InterestRateDetails1(base_types._BaseFieldType):
 		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prd', type=InstalmentPeriod1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=InterestRate1Code, min=0, max=1, mutex_group=None, array=False),
 	))

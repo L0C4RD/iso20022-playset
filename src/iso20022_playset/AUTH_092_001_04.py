@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DerivativesTradeRejectionStatisticalReportV04
 
 class AUTH_092_001_04():

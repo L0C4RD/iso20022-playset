@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import YesNoIndicator
 
 class DefaultProcessingOrStandingInstruction2Choice(base_types._BaseFieldType):

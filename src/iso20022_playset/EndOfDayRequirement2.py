@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import InitialMarginRequirement1
-import GenericIdentification165
 import AmountAndDirection102
+import GenericIdentification165
 
 class EndOfDayRequirement2(base_types._BaseFieldType):
 
-	__slots__ = ["_InitlMrgnRqrmnts", "_MrgnAcctId", "_VartnMrgnRqrmnts"]
-	@property
-	def InitlMrgnRqrmnts(self):
-		return self._InitlMrgnRqrmnts
-
-	@InitlMrgnRqrmnts.setter
-	def InitlMrgnRqrmnts(self, value):
-		self._InitlMrgnRqrmnts = value if type(value) != auto else self.make_default("InitlMrgnRqrmnts")
-
-	@InitlMrgnRqrmnts.deleter
-	def InitlMrgnRqrmnts(self):
-		del self._InitlMrgnRqrmnts
-		self._InitlMrgnRqrmnts = None
-
+	__slots__ = ["_MrgnAcctId", "_VartnMrgnRqrmnts", "_InitlMrgnRqrmnts"]
 	@property
 	def MrgnAcctId(self):
 		return self._MrgnAcctId
@@ -45,9 +32,22 @@ class EndOfDayRequirement2(base_types._BaseFieldType):
 		del self._VartnMrgnRqrmnts
 		self._VartnMrgnRqrmnts = None
 
+	@property
+	def InitlMrgnRqrmnts(self):
+		return self._InitlMrgnRqrmnts
+
+	@InitlMrgnRqrmnts.setter
+	def InitlMrgnRqrmnts(self, value):
+		self._InitlMrgnRqrmnts = value if type(value) != auto else self.make_default("InitlMrgnRqrmnts")
+
+	@InitlMrgnRqrmnts.deleter
+	def InitlMrgnRqrmnts(self):
+		del self._InitlMrgnRqrmnts
+		self._InitlMrgnRqrmnts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InitlMrgnRqrmnts', type=InitialMarginRequirement1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrgnAcctId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VartnMrgnRqrmnts', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitlMrgnRqrmnts', type=InitialMarginRequirement1, min=1, max=1, mutex_group=None, array=False),
 	))
 

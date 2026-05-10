@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DebitAuthorisationRequestV10
 
 class CAMT_037_001_10():

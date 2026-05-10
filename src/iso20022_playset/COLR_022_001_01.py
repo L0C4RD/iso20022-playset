@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TripartyCollateralAndExposureReportV01
 
 class COLR_022_001_01():

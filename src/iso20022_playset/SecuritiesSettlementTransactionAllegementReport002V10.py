@@ -1,14 +1,14 @@
-import base_types
-import Statement69
-import Pagination1
-import SecuritiesAccount30
-import PartyIdentification156
-import SecuritiesTradeDetails140
+from . import base_types
 import BlockChainAddressWallet7
+import SecuritiesAccount30
+import Statement69
+import PartyIdentification156
+import Pagination1
+import SecuritiesTradeDetails140
 
 class SecuritiesSettlementTransactionAllegementReport002V10(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_AllgmtDtls", "_StmtGnlDtls", "_Pgntn", "_AcctOwnr", "_SfkpgAcct"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_AllgmtDtls", "_StmtGnlDtls", "_AcctOwnr", "_SfkpgAcct", "_Pgntn"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -49,19 +49,6 @@ class SecuritiesSettlementTransactionAllegementReport002V10(base_types._BaseFiel
 		self._StmtGnlDtls = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
-
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
-
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
-
-	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
 
@@ -87,12 +74,25 @@ class SecuritiesSettlementTransactionAllegementReport002V10(base_types._BaseFiel
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
 
+	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AllgmtDtls', type=SecuritiesTradeDetails140, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement69, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 	))
 

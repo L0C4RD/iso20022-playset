@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CorporateActionInstructionV13
 
 class SEEV_033_001_13():

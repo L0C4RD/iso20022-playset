@@ -1,6 +1,6 @@
-import base_types
-import LongPostalAddress2Choice
+from . import base_types
 import Max350Text
+import LongPostalAddress2Choice
 
 class NameAndAddress9(base_types._BaseFieldType):
 

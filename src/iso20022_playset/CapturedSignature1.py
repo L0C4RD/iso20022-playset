@@ -1,12 +1,12 @@
-import base_types
-import Max35Text
-import Max500Text
+from . import base_types
 import Max2MBBinary
+import Max500Text
 import Max140Text
+import Max35Text
 
 class CapturedSignature1(base_types._BaseFieldType):
 
-	__slots__ = ["_ImgFrmt", "_ImgData", "_AddtlInf", "_ImgRef"]
+	__slots__ = ["_ImgFrmt", "_ImgData", "_ImgRef", "_AddtlInf"]
 	@property
 	def ImgFrmt(self):
 		return self._ImgFrmt
@@ -34,19 +34,6 @@ class CapturedSignature1(base_types._BaseFieldType):
 		self._ImgData = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
 	def ImgRef(self):
 		return self._ImgRef
 
@@ -59,10 +46,23 @@ class CapturedSignature1(base_types._BaseFieldType):
 		del self._ImgRef
 		self._ImgRef = None
 
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ImgFrmt', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ImgData', type=Max2MBBinary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ImgRef', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

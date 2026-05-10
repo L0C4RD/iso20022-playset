@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SpecialCollateral1Code
 
 class CompareSpecialCollateral3(base_types._BaseFieldType):

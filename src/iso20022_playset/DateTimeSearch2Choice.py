@@ -1,36 +1,10 @@
-import base_types
-import ISODateTime
+from . import base_types
 import DateTimePeriod1
+import ISODateTime
 
 class DateTimeSearch2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_EQDtTm", "_FrDtTm", "_NEQDtTm", "_ToDtTm", "_FrToDtTm"]
-	@property
-	def EQDtTm(self):
-		return self._EQDtTm
-
-	@EQDtTm.setter
-	def EQDtTm(self, value):
-		self._EQDtTm = value if type(value) != auto else self.make_default("EQDtTm")
-
-	@EQDtTm.deleter
-	def EQDtTm(self):
-		del self._EQDtTm
-		self._EQDtTm = None
-
-	@property
-	def FrDtTm(self):
-		return self._FrDtTm
-
-	@FrDtTm.setter
-	def FrDtTm(self, value):
-		self._FrDtTm = value if type(value) != auto else self.make_default("FrDtTm")
-
-	@FrDtTm.deleter
-	def FrDtTm(self):
-		del self._FrDtTm
-		self._FrDtTm = None
-
+	__slots__ = ["_NEQDtTm", "_EQDtTm", "_ToDtTm", "_FrToDtTm", "_FrDtTm"]
 	@property
 	def NEQDtTm(self):
 		return self._NEQDtTm
@@ -43,6 +17,19 @@ class DateTimeSearch2Choice(base_types._BaseFieldType):
 	def NEQDtTm(self):
 		del self._NEQDtTm
 		self._NEQDtTm = None
+
+	@property
+	def EQDtTm(self):
+		return self._EQDtTm
+
+	@EQDtTm.setter
+	def EQDtTm(self, value):
+		self._EQDtTm = value if type(value) != auto else self.make_default("EQDtTm")
+
+	@EQDtTm.deleter
+	def EQDtTm(self):
+		del self._EQDtTm
+		self._EQDtTm = None
 
 	@property
 	def ToDtTm(self):
@@ -70,11 +57,24 @@ class DateTimeSearch2Choice(base_types._BaseFieldType):
 		del self._FrToDtTm
 		self._FrToDtTm = None
 
+	@property
+	def FrDtTm(self):
+		return self._FrDtTm
+
+	@FrDtTm.setter
+	def FrDtTm(self, value):
+		self._FrDtTm = value if type(value) != auto else self.make_default("FrDtTm")
+
+	@FrDtTm.deleter
+	def FrDtTm(self):
+		del self._FrDtTm
+		self._FrDtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EQDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='FrDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NEQDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='EQDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ToDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FrToDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FrDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
 	))
 

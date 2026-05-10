@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
+import AmountOrPercentage1Choice
 import Max35Text
 import Trigger1
-import AmountOrPercentage1Choice
 
 class AmountAndTrigger1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Trggr", "_AmtDtlsChc"]
+	__slots__ = ["_AmtDtlsChc", "_Trggr", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def AmtDtlsChc(self):
+		return self._AmtDtlsChc
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@AmtDtlsChc.setter
+	def AmtDtlsChc(self, value):
+		self._AmtDtlsChc = value if type(value) != auto else self.make_default("AmtDtlsChc")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@AmtDtlsChc.deleter
+	def AmtDtlsChc(self):
+		del self._AmtDtlsChc
+		self._AmtDtlsChc = None
 
 	@property
 	def Trggr(self):
@@ -33,21 +33,21 @@ class AmountAndTrigger1(base_types._BaseFieldType):
 		self._Trggr = None
 
 	@property
-	def AmtDtlsChc(self):
-		return self._AmtDtlsChc
+	def Id(self):
+		return self._Id
 
-	@AmtDtlsChc.setter
-	def AmtDtlsChc(self, value):
-		self._AmtDtlsChc = value if type(value) != auto else self.make_default("AmtDtlsChc")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@AmtDtlsChc.deleter
-	def AmtDtlsChc(self):
-		del self._AmtDtlsChc
-		self._AmtDtlsChc = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trggr', type=Trigger1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AmtDtlsChc', type=AmountOrPercentage1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trggr', type=Trigger1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

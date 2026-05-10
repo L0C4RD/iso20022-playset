@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import OrderBookReportV01
 
 class AUTH_113_001_01():

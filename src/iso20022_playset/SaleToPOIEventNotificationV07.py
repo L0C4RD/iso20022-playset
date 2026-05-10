@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import ContentInformationType38
-import SystemEventNotification8
 import Header41
+import SystemEventNotification8
 
 class SaleToPOIEventNotificationV07(base_types._BaseFieldType):
 

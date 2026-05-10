@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AgentCADeactivationStatusAdviceV01
 
 class SEEV_030_001_01():

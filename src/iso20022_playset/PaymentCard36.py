@@ -1,39 +1,39 @@
-import base_types
+from . import base_types
 import CardDataReading1Code
-import Max3Text
-import Exact3AlphaNumericText
-import TrueFalseIndicator
-import ContentInformationType10
 import PlainCardData25
+import ContentInformationType10
+import TrueFalseIndicator
+import Exact3AlphaNumericText
+import Max3Text
 
 class PaymentCard36(base_types._BaseFieldType):
 
-	__slots__ = ["_PlainCardData", "_FllbckInd", "_CardCcyCd", "_CardDataNtryMd", "_CardCtryCd", "_PrtctdCardData"]
+	__slots__ = ["_CardDataNtryMd", "_PrtctdCardData", "_CardCcyCd", "_FllbckInd", "_CardCtryCd", "_PlainCardData"]
 	@property
-	def PlainCardData(self):
-		return self._PlainCardData
+	def CardDataNtryMd(self):
+		return self._CardDataNtryMd
 
-	@PlainCardData.setter
-	def PlainCardData(self, value):
-		self._PlainCardData = value if type(value) != auto else self.make_default("PlainCardData")
+	@CardDataNtryMd.setter
+	def CardDataNtryMd(self, value):
+		self._CardDataNtryMd = value if type(value) != auto else self.make_default("CardDataNtryMd")
 
-	@PlainCardData.deleter
-	def PlainCardData(self):
-		del self._PlainCardData
-		self._PlainCardData = None
+	@CardDataNtryMd.deleter
+	def CardDataNtryMd(self):
+		del self._CardDataNtryMd
+		self._CardDataNtryMd = None
 
 	@property
-	def FllbckInd(self):
-		return self._FllbckInd
+	def PrtctdCardData(self):
+		return self._PrtctdCardData
 
-	@FllbckInd.setter
-	def FllbckInd(self, value):
-		self._FllbckInd = value if type(value) != auto else self.make_default("FllbckInd")
+	@PrtctdCardData.setter
+	def PrtctdCardData(self, value):
+		self._PrtctdCardData = value if type(value) != auto else self.make_default("PrtctdCardData")
 
-	@FllbckInd.deleter
-	def FllbckInd(self):
-		del self._FllbckInd
-		self._FllbckInd = None
+	@PrtctdCardData.deleter
+	def PrtctdCardData(self):
+		del self._PrtctdCardData
+		self._PrtctdCardData = None
 
 	@property
 	def CardCcyCd(self):
@@ -49,17 +49,17 @@ class PaymentCard36(base_types._BaseFieldType):
 		self._CardCcyCd = None
 
 	@property
-	def CardDataNtryMd(self):
-		return self._CardDataNtryMd
+	def FllbckInd(self):
+		return self._FllbckInd
 
-	@CardDataNtryMd.setter
-	def CardDataNtryMd(self, value):
-		self._CardDataNtryMd = value if type(value) != auto else self.make_default("CardDataNtryMd")
+	@FllbckInd.setter
+	def FllbckInd(self, value):
+		self._FllbckInd = value if type(value) != auto else self.make_default("FllbckInd")
 
-	@CardDataNtryMd.deleter
-	def CardDataNtryMd(self):
-		del self._CardDataNtryMd
-		self._CardDataNtryMd = None
+	@FllbckInd.deleter
+	def FllbckInd(self):
+		del self._FllbckInd
+		self._FllbckInd = None
 
 	@property
 	def CardCtryCd(self):
@@ -75,24 +75,24 @@ class PaymentCard36(base_types._BaseFieldType):
 		self._CardCtryCd = None
 
 	@property
-	def PrtctdCardData(self):
-		return self._PrtctdCardData
+	def PlainCardData(self):
+		return self._PlainCardData
 
-	@PrtctdCardData.setter
-	def PrtctdCardData(self, value):
-		self._PrtctdCardData = value if type(value) != auto else self.make_default("PrtctdCardData")
+	@PlainCardData.setter
+	def PlainCardData(self, value):
+		self._PlainCardData = value if type(value) != auto else self.make_default("PlainCardData")
 
-	@PrtctdCardData.deleter
-	def PrtctdCardData(self):
-		del self._PrtctdCardData
-		self._PrtctdCardData = None
+	@PlainCardData.deleter
+	def PlainCardData(self):
+		del self._PlainCardData
+		self._PlainCardData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PlainCardData', type=PlainCardData25, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FllbckInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardCcyCd', type=Exact3AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardDataNtryMd', type=CardDataReading1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardCtryCd', type=Max3Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdCardData', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardCcyCd', type=Exact3AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FllbckInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardCtryCd', type=Max3Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlainCardData', type=PlainCardData25, min=0, max=1, mutex_group=None, array=False),
 	))
 

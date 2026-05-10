@@ -1,6 +1,6 @@
-import base_types
-import LotteryType1Code
+from . import base_types
 import GenericIdentification30
+import LotteryType1Code
 
 class LotteryTypeFormat4Choice(base_types._BaseFieldType):
 

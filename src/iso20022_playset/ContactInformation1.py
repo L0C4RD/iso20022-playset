@@ -1,24 +1,11 @@
-import base_types
-import PhoneNumber
+from . import base_types
 import Max350Text
 import Max256Text
+import PhoneNumber
 
 class ContactInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_FaxNb", "_Nm", "_TelNb", "_EmailAdr"]
-	@property
-	def FaxNb(self):
-		return self._FaxNb
-
-	@FaxNb.setter
-	def FaxNb(self, value):
-		self._FaxNb = value if type(value) != auto else self.make_default("FaxNb")
-
-	@FaxNb.deleter
-	def FaxNb(self):
-		del self._FaxNb
-		self._FaxNb = None
-
+	__slots__ = ["_Nm", "_EmailAdr", "_FaxNb", "_TelNb"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -33,19 +20,6 @@ class ContactInformation1(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def TelNb(self):
-		return self._TelNb
-
-	@TelNb.setter
-	def TelNb(self, value):
-		self._TelNb = value if type(value) != auto else self.make_default("TelNb")
-
-	@TelNb.deleter
-	def TelNb(self):
-		del self._TelNb
-		self._TelNb = None
-
-	@property
 	def EmailAdr(self):
 		return self._EmailAdr
 
@@ -58,10 +32,36 @@ class ContactInformation1(base_types._BaseFieldType):
 		del self._EmailAdr
 		self._EmailAdr = None
 
+	@property
+	def FaxNb(self):
+		return self._FaxNb
+
+	@FaxNb.setter
+	def FaxNb(self, value):
+		self._FaxNb = value if type(value) != auto else self.make_default("FaxNb")
+
+	@FaxNb.deleter
+	def FaxNb(self):
+		del self._FaxNb
+		self._FaxNb = None
+
+	@property
+	def TelNb(self):
+		return self._TelNb
+
+	@TelNb.setter
+	def TelNb(self, value):
+		self._TelNb = value if type(value) != auto else self.make_default("TelNb")
+
+	@TelNb.deleter
+	def TelNb(self):
+		del self._TelNb
+		self._TelNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TelNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TelNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

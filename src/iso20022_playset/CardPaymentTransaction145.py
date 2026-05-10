@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Action17
 import AuthorisationResult19
 

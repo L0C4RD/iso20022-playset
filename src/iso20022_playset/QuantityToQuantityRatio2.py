@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RestrictedFINDecimalNumber
 
 class QuantityToQuantityRatio2(base_types._BaseFieldType):

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class Max10NumberFraction2(base_types._BaseDataType_Decimal):
 

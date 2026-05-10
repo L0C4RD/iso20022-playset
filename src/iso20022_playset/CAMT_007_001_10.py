@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ModifyTransactionV10
 
 class CAMT_007_001_10():

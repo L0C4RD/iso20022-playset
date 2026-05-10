@@ -1,11 +1,11 @@
-import base_types
-import Max35Text
-import Max100Text
+from . import base_types
 import Max200Text
+import Max100Text
+import Max35Text
 
 class LocalAddress1(base_types._BaseFieldType):
 
-	__slots__ = ["_TwnNm", "_CtrySubDvsnMjrNm", "_PstlCd", "_BldgNb", "_AdrLine2", "_AdrLine1", "_CtrySubDvsnMnrNm", "_StrtNm"]
+	__slots__ = ["_TwnNm", "_AdrLine1", "_CtrySubDvsnMnrNm", "_PstlCd", "_CtrySubDvsnMjrNm", "_BldgNb", "_AdrLine2", "_StrtNm"]
 	@property
 	def TwnNm(self):
 		return self._TwnNm
@@ -18,58 +18,6 @@ class LocalAddress1(base_types._BaseFieldType):
 	def TwnNm(self):
 		del self._TwnNm
 		self._TwnNm = None
-
-	@property
-	def CtrySubDvsnMjrNm(self):
-		return self._CtrySubDvsnMjrNm
-
-	@CtrySubDvsnMjrNm.setter
-	def CtrySubDvsnMjrNm(self, value):
-		self._CtrySubDvsnMjrNm = value if type(value) != auto else self.make_default("CtrySubDvsnMjrNm")
-
-	@CtrySubDvsnMjrNm.deleter
-	def CtrySubDvsnMjrNm(self):
-		del self._CtrySubDvsnMjrNm
-		self._CtrySubDvsnMjrNm = None
-
-	@property
-	def PstlCd(self):
-		return self._PstlCd
-
-	@PstlCd.setter
-	def PstlCd(self, value):
-		self._PstlCd = value if type(value) != auto else self.make_default("PstlCd")
-
-	@PstlCd.deleter
-	def PstlCd(self):
-		del self._PstlCd
-		self._PstlCd = None
-
-	@property
-	def BldgNb(self):
-		return self._BldgNb
-
-	@BldgNb.setter
-	def BldgNb(self, value):
-		self._BldgNb = value if type(value) != auto else self.make_default("BldgNb")
-
-	@BldgNb.deleter
-	def BldgNb(self):
-		del self._BldgNb
-		self._BldgNb = None
-
-	@property
-	def AdrLine2(self):
-		return self._AdrLine2
-
-	@AdrLine2.setter
-	def AdrLine2(self, value):
-		self._AdrLine2 = value if type(value) != auto else self.make_default("AdrLine2")
-
-	@AdrLine2.deleter
-	def AdrLine2(self):
-		del self._AdrLine2
-		self._AdrLine2 = None
 
 	@property
 	def AdrLine1(self):
@@ -98,6 +46,58 @@ class LocalAddress1(base_types._BaseFieldType):
 		self._CtrySubDvsnMnrNm = None
 
 	@property
+	def PstlCd(self):
+		return self._PstlCd
+
+	@PstlCd.setter
+	def PstlCd(self, value):
+		self._PstlCd = value if type(value) != auto else self.make_default("PstlCd")
+
+	@PstlCd.deleter
+	def PstlCd(self):
+		del self._PstlCd
+		self._PstlCd = None
+
+	@property
+	def CtrySubDvsnMjrNm(self):
+		return self._CtrySubDvsnMjrNm
+
+	@CtrySubDvsnMjrNm.setter
+	def CtrySubDvsnMjrNm(self, value):
+		self._CtrySubDvsnMjrNm = value if type(value) != auto else self.make_default("CtrySubDvsnMjrNm")
+
+	@CtrySubDvsnMjrNm.deleter
+	def CtrySubDvsnMjrNm(self):
+		del self._CtrySubDvsnMjrNm
+		self._CtrySubDvsnMjrNm = None
+
+	@property
+	def BldgNb(self):
+		return self._BldgNb
+
+	@BldgNb.setter
+	def BldgNb(self, value):
+		self._BldgNb = value if type(value) != auto else self.make_default("BldgNb")
+
+	@BldgNb.deleter
+	def BldgNb(self):
+		del self._BldgNb
+		self._BldgNb = None
+
+	@property
+	def AdrLine2(self):
+		return self._AdrLine2
+
+	@AdrLine2.setter
+	def AdrLine2(self, value):
+		self._AdrLine2 = value if type(value) != auto else self.make_default("AdrLine2")
+
+	@AdrLine2.deleter
+	def AdrLine2(self):
+		del self._AdrLine2
+		self._AdrLine2 = None
+
+	@property
 	def StrtNm(self):
 		return self._StrtNm
 
@@ -112,12 +112,12 @@ class LocalAddress1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TwnNm', type=Max100Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrySubDvsnMjrNm', type=Max100Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstlCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BldgNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdrLine2', type=Max200Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AdrLine1', type=Max200Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrySubDvsnMnrNm', type=Max100Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrySubDvsnMjrNm', type=Max100Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BldgNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdrLine2', type=Max200Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StrtNm', type=Max200Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

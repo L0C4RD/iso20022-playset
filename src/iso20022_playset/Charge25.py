@@ -1,6 +1,6 @@
-import base_types
-import ChargesDetails4
+from . import base_types
 import FreightCharges1Code
+import ChargesDetails4
 
 class Charge25(base_types._BaseFieldType):
 

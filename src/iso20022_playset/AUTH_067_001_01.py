@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CCPCollateralReportV01
 
 class AUTH_067_001_01():

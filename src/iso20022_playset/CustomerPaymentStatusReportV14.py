@@ -1,25 +1,12 @@
-import base_types
-import GroupHeader128
-import SupplementaryData1
-import OriginalGroupHeader22
+from . import base_types
 import OriginalPaymentInstruction51
+import OriginalGroupHeader22
+import SupplementaryData1
+import GroupHeader128
 
 class CustomerPaymentStatusReportV14(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_GrpHdr", "_OrgnlPmtInfAndSts", "_OrgnlGrpInfAndSts"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_GrpHdr", "_OrgnlPmtInfAndSts", "_SplmtryData", "_OrgnlGrpInfAndSts"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr
@@ -47,6 +34,19 @@ class CustomerPaymentStatusReportV14(base_types._BaseFieldType):
 		self._OrgnlPmtInfAndSts = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def OrgnlGrpInfAndSts(self):
 		return self._OrgnlGrpInfAndSts
 
@@ -60,9 +60,9 @@ class CustomerPaymentStatusReportV14(base_types._BaseFieldType):
 		self._OrgnlGrpInfAndSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader128, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlPmtInfAndSts', type=OriginalPaymentInstruction51, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlGrpInfAndSts', type=OriginalGroupHeader22, min=1, max=1, mutex_group=None, array=False),
 	))
 

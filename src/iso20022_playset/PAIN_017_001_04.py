@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MandateCopyRequestV04
 
 class PAIN_017_001_04():

@@ -1,39 +1,39 @@
-import base_types
+from . import base_types
+import ISODate
+import Number
+import PremiumQuote1Choice
+import ActiveOrHistoricCurrencyCode
 import Max35Text
 import ActiveCurrencyAndAmount
-import ActiveOrHistoricCurrencyCode
-import ISODate
-import PremiumQuote1Choice
-import Number
 
 class PremiumAmount3(base_types._BaseFieldType):
 
-	__slots__ = ["_PrmSttlmDt", "_DcmlPlcs", "_PrmQt", "_PrmCcy", "_PyerPtyRef", "_RcvrPtyRef", "_Amt"]
+	__slots__ = ["_PrmCcy", "_Amt", "_PrmQt", "_PrmSttlmDt", "_PyerPtyRef", "_RcvrPtyRef", "_DcmlPlcs"]
 	@property
-	def PrmSttlmDt(self):
-		return self._PrmSttlmDt
+	def PrmCcy(self):
+		return self._PrmCcy
 
-	@PrmSttlmDt.setter
-	def PrmSttlmDt(self, value):
-		self._PrmSttlmDt = value if type(value) != auto else self.make_default("PrmSttlmDt")
+	@PrmCcy.setter
+	def PrmCcy(self, value):
+		self._PrmCcy = value if type(value) != auto else self.make_default("PrmCcy")
 
-	@PrmSttlmDt.deleter
-	def PrmSttlmDt(self):
-		del self._PrmSttlmDt
-		self._PrmSttlmDt = None
+	@PrmCcy.deleter
+	def PrmCcy(self):
+		del self._PrmCcy
+		self._PrmCcy = None
 
 	@property
-	def DcmlPlcs(self):
-		return self._DcmlPlcs
+	def Amt(self):
+		return self._Amt
 
-	@DcmlPlcs.setter
-	def DcmlPlcs(self, value):
-		self._DcmlPlcs = value if type(value) != auto else self.make_default("DcmlPlcs")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@DcmlPlcs.deleter
-	def DcmlPlcs(self):
-		del self._DcmlPlcs
-		self._DcmlPlcs = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def PrmQt(self):
@@ -49,17 +49,17 @@ class PremiumAmount3(base_types._BaseFieldType):
 		self._PrmQt = None
 
 	@property
-	def PrmCcy(self):
-		return self._PrmCcy
+	def PrmSttlmDt(self):
+		return self._PrmSttlmDt
 
-	@PrmCcy.setter
-	def PrmCcy(self, value):
-		self._PrmCcy = value if type(value) != auto else self.make_default("PrmCcy")
+	@PrmSttlmDt.setter
+	def PrmSttlmDt(self, value):
+		self._PrmSttlmDt = value if type(value) != auto else self.make_default("PrmSttlmDt")
 
-	@PrmCcy.deleter
-	def PrmCcy(self):
-		del self._PrmCcy
-		self._PrmCcy = None
+	@PrmSttlmDt.deleter
+	def PrmSttlmDt(self):
+		del self._PrmSttlmDt
+		self._PrmSttlmDt = None
 
 	@property
 	def PyerPtyRef(self):
@@ -88,25 +88,25 @@ class PremiumAmount3(base_types._BaseFieldType):
 		self._RcvrPtyRef = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def DcmlPlcs(self):
+		return self._DcmlPlcs
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@DcmlPlcs.setter
+	def DcmlPlcs(self, value):
+		self._DcmlPlcs = value if type(value) != auto else self.make_default("DcmlPlcs")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@DcmlPlcs.deleter
+	def DcmlPlcs(self):
+		del self._DcmlPlcs
+		self._DcmlPlcs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrmSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DcmlPlcs', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrmQt', type=PremiumQuote1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrmCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrmQt', type=PremiumQuote1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrmSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PyerPtyRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvrPtyRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DcmlPlcs', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
 

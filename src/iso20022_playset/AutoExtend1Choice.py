@@ -1,22 +1,22 @@
-import base_types
+from . import base_types
 import ISODate
 import Number
 
 class AutoExtend1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Days", "_Dt", "_Yrs", "_Mnths"]
+	__slots__ = ["_Yrs", "_Dt", "_Mnths", "_Days"]
 	@property
-	def Days(self):
-		return self._Days
+	def Yrs(self):
+		return self._Yrs
 
-	@Days.setter
-	def Days(self, value):
-		self._Days = value if type(value) != auto else self.make_default("Days")
+	@Yrs.setter
+	def Yrs(self, value):
+		self._Yrs = value if type(value) != auto else self.make_default("Yrs")
 
-	@Days.deleter
-	def Days(self):
-		del self._Days
-		self._Days = None
+	@Yrs.deleter
+	def Yrs(self):
+		del self._Yrs
+		self._Yrs = None
 
 	@property
 	def Dt(self):
@@ -32,19 +32,6 @@ class AutoExtend1Choice(base_types._BaseFieldType):
 		self._Dt = None
 
 	@property
-	def Yrs(self):
-		return self._Yrs
-
-	@Yrs.setter
-	def Yrs(self, value):
-		self._Yrs = value if type(value) != auto else self.make_default("Yrs")
-
-	@Yrs.deleter
-	def Yrs(self):
-		del self._Yrs
-		self._Yrs = None
-
-	@property
 	def Mnths(self):
 		return self._Mnths
 
@@ -57,10 +44,23 @@ class AutoExtend1Choice(base_types._BaseFieldType):
 		del self._Mnths
 		self._Mnths = None
 
+	@property
+	def Days(self):
+		return self._Days
+
+	@Days.setter
+	def Days(self, value):
+		self._Days = value if type(value) != auto else self.make_default("Days")
+
+	@Days.deleter
+	def Days(self):
+		del self._Days
+		self._Days = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Days', type=Number, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Yrs', type=Number, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Mnths', type=Number, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Days', type=Number, min=0, max=1, mutex_group=1, array=False),
 	))
 

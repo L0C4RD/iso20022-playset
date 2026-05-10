@@ -1,23 +1,10 @@
-import base_types
-import PartyAuditTrail2
+from . import base_types
 import ErrorHandling5
+import PartyAuditTrail2
 
 class PartyAuditTrailOrError4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AudtTrl", "_BizErr"]
-	@property
-	def AudtTrl(self):
-		return self._AudtTrl
-
-	@AudtTrl.setter
-	def AudtTrl(self, value):
-		self._AudtTrl = value if type(value) != auto else self.make_default("AudtTrl")
-
-	@AudtTrl.deleter
-	def AudtTrl(self):
-		del self._AudtTrl
-		self._AudtTrl = None
-
+	__slots__ = ["_BizErr", "_AudtTrl"]
 	@property
 	def BizErr(self):
 		return self._BizErr
@@ -31,8 +18,21 @@ class PartyAuditTrailOrError4Choice(base_types._BaseFieldType):
 		del self._BizErr
 		self._BizErr = None
 
+	@property
+	def AudtTrl(self):
+		return self._AudtTrl
+
+	@AudtTrl.setter
+	def AudtTrl(self, value):
+		self._AudtTrl = value if type(value) != auto else self.make_default("AudtTrl")
+
+	@AudtTrl.deleter
+	def AudtTrl(self):
+		del self._AudtTrl
+		self._AudtTrl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AudtTrl', type=PartyAuditTrail2, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='BizErr', type=ErrorHandling5, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='AudtTrl', type=PartyAuditTrail2, min=1, max=None, mutex_group=1, array=True),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ProcessingPosition10Choice
 import RestrictedFINXMax16Text
 

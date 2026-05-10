@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import SupplementaryData1
-import TradeData60Choice
 import TradeReportHeader4
+import TradeData60Choice
 
 class DerivativesTradeStateReportV02(base_types._BaseFieldType):
 

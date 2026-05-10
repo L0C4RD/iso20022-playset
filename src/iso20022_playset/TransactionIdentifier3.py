@@ -1,10 +1,23 @@
-import base_types
-import ISODateTime
+from . import base_types
 import Max35Text
+import ISODateTime
 
 class TransactionIdentifier3(base_types._BaseFieldType):
 
-	__slots__ = ["_HstTxDtTm", "_TxDtTm", "_TxRef"]
+	__slots__ = ["_TxRef", "_HstTxDtTm", "_TxDtTm"]
+	@property
+	def TxRef(self):
+		return self._TxRef
+
+	@TxRef.setter
+	def TxRef(self, value):
+		self._TxRef = value if type(value) != auto else self.make_default("TxRef")
+
+	@TxRef.deleter
+	def TxRef(self):
+		del self._TxRef
+		self._TxRef = None
+
 	@property
 	def HstTxDtTm(self):
 		return self._HstTxDtTm
@@ -31,22 +44,9 @@ class TransactionIdentifier3(base_types._BaseFieldType):
 		del self._TxDtTm
 		self._TxDtTm = None
 
-	@property
-	def TxRef(self):
-		return self._TxRef
-
-	@TxRef.setter
-	def TxRef(self, value):
-		self._TxRef = value if type(value) != auto else self.make_default("TxRef")
-
-	@TxRef.deleter
-	def TxRef(self):
-		del self._TxRef
-		self._TxRef = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TxRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstTxDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

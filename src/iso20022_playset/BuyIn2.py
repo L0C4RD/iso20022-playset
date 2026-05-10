@@ -1,38 +1,25 @@
-import base_types
-import Max35Text
-import SecuritiesCompensation1
-import Price4
-import CashCompensation1
+from . import base_types
 import ISODate
+import CashCompensation1
+import Price4
+import SecuritiesCompensation1
+import Max35Text
 
 class BuyIn2(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqrdCshCompstn", "_BuyInId", "_SctiesBuyIn", "_Pric", "_BuyInNtfctnId", "_Dt"]
+	__slots__ = ["_BuyInNtfctnId", "_SctiesBuyIn", "_Pric", "_Dt", "_BuyInId", "_ReqrdCshCompstn"]
 	@property
-	def ReqrdCshCompstn(self):
-		return self._ReqrdCshCompstn
+	def BuyInNtfctnId(self):
+		return self._BuyInNtfctnId
 
-	@ReqrdCshCompstn.setter
-	def ReqrdCshCompstn(self, value):
-		self._ReqrdCshCompstn = value if type(value) != auto else self.make_default("ReqrdCshCompstn")
+	@BuyInNtfctnId.setter
+	def BuyInNtfctnId(self, value):
+		self._BuyInNtfctnId = value if type(value) != auto else self.make_default("BuyInNtfctnId")
 
-	@ReqrdCshCompstn.deleter
-	def ReqrdCshCompstn(self):
-		del self._ReqrdCshCompstn
-		self._ReqrdCshCompstn = None
-
-	@property
-	def BuyInId(self):
-		return self._BuyInId
-
-	@BuyInId.setter
-	def BuyInId(self, value):
-		self._BuyInId = value if type(value) != auto else self.make_default("BuyInId")
-
-	@BuyInId.deleter
-	def BuyInId(self):
-		del self._BuyInId
-		self._BuyInId = None
+	@BuyInNtfctnId.deleter
+	def BuyInNtfctnId(self):
+		del self._BuyInNtfctnId
+		self._BuyInNtfctnId = None
 
 	@property
 	def SctiesBuyIn(self):
@@ -61,19 +48,6 @@ class BuyIn2(base_types._BaseFieldType):
 		self._Pric = None
 
 	@property
-	def BuyInNtfctnId(self):
-		return self._BuyInNtfctnId
-
-	@BuyInNtfctnId.setter
-	def BuyInNtfctnId(self, value):
-		self._BuyInNtfctnId = value if type(value) != auto else self.make_default("BuyInNtfctnId")
-
-	@BuyInNtfctnId.deleter
-	def BuyInNtfctnId(self):
-		del self._BuyInNtfctnId
-		self._BuyInNtfctnId = None
-
-	@property
 	def Dt(self):
 		return self._Dt
 
@@ -86,12 +60,38 @@ class BuyIn2(base_types._BaseFieldType):
 		del self._Dt
 		self._Dt = None
 
+	@property
+	def BuyInId(self):
+		return self._BuyInId
+
+	@BuyInId.setter
+	def BuyInId(self, value):
+		self._BuyInId = value if type(value) != auto else self.make_default("BuyInId")
+
+	@BuyInId.deleter
+	def BuyInId(self):
+		del self._BuyInId
+		self._BuyInId = None
+
+	@property
+	def ReqrdCshCompstn(self):
+		return self._ReqrdCshCompstn
+
+	@ReqrdCshCompstn.setter
+	def ReqrdCshCompstn(self, value):
+		self._ReqrdCshCompstn = value if type(value) != auto else self.make_default("ReqrdCshCompstn")
+
+	@ReqrdCshCompstn.deleter
+	def ReqrdCshCompstn(self):
+		del self._ReqrdCshCompstn
+		self._ReqrdCshCompstn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqrdCshCompstn', type=CashCompensation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyInId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyInNtfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesBuyIn', type=SecuritiesCompensation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pric', type=Price4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyInNtfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyInId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqrdCshCompstn', type=CashCompensation1, min=0, max=1, mutex_group=None, array=False),
 	))
 

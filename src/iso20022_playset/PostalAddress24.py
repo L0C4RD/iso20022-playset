@@ -1,26 +1,13 @@
-import base_types
-import Max35Text
+from . import base_types
+import Max16Text
 import CountryCode
+import Max35Text
 import AddressType3Choice
 import Max70Text
-import Max16Text
 
 class PostalAddress24(base_types._BaseFieldType):
 
-	__slots__ = ["_BldgNm", "_TwnNm", "_Room", "_SubDept", "_PstCd", "_PstBx", "_Flr", "_AdrLine", "_Dept", "_Ctry", "_StrtNm", "_CtrySubDvsn", "_BldgNb", "_TwnLctnNm", "_AdrTp", "_DstrctNm"]
-	@property
-	def BldgNm(self):
-		return self._BldgNm
-
-	@BldgNm.setter
-	def BldgNm(self, value):
-		self._BldgNm = value if type(value) != auto else self.make_default("BldgNm")
-
-	@BldgNm.deleter
-	def BldgNm(self):
-		del self._BldgNm
-		self._BldgNm = None
-
+	__slots__ = ["_TwnNm", "_Dept", "_Flr", "_TwnLctnNm", "_Room", "_BldgNb", "_Ctry", "_SubDept", "_StrtNm", "_CtrySubDvsn", "_BldgNm", "_PstCd", "_AdrLine", "_DstrctNm", "_PstBx", "_AdrTp"]
 	@property
 	def TwnNm(self):
 		return self._TwnNm
@@ -33,84 +20,6 @@ class PostalAddress24(base_types._BaseFieldType):
 	def TwnNm(self):
 		del self._TwnNm
 		self._TwnNm = None
-
-	@property
-	def Room(self):
-		return self._Room
-
-	@Room.setter
-	def Room(self, value):
-		self._Room = value if type(value) != auto else self.make_default("Room")
-
-	@Room.deleter
-	def Room(self):
-		del self._Room
-		self._Room = None
-
-	@property
-	def SubDept(self):
-		return self._SubDept
-
-	@SubDept.setter
-	def SubDept(self, value):
-		self._SubDept = value if type(value) != auto else self.make_default("SubDept")
-
-	@SubDept.deleter
-	def SubDept(self):
-		del self._SubDept
-		self._SubDept = None
-
-	@property
-	def PstCd(self):
-		return self._PstCd
-
-	@PstCd.setter
-	def PstCd(self, value):
-		self._PstCd = value if type(value) != auto else self.make_default("PstCd")
-
-	@PstCd.deleter
-	def PstCd(self):
-		del self._PstCd
-		self._PstCd = None
-
-	@property
-	def PstBx(self):
-		return self._PstBx
-
-	@PstBx.setter
-	def PstBx(self, value):
-		self._PstBx = value if type(value) != auto else self.make_default("PstBx")
-
-	@PstBx.deleter
-	def PstBx(self):
-		del self._PstBx
-		self._PstBx = None
-
-	@property
-	def Flr(self):
-		return self._Flr
-
-	@Flr.setter
-	def Flr(self, value):
-		self._Flr = value if type(value) != auto else self.make_default("Flr")
-
-	@Flr.deleter
-	def Flr(self):
-		del self._Flr
-		self._Flr = None
-
-	@property
-	def AdrLine(self):
-		return self._AdrLine
-
-	@AdrLine.setter
-	def AdrLine(self, value):
-		self._AdrLine = value if type(value) != auto else self.make_default("AdrLine")
-
-	@AdrLine.deleter
-	def AdrLine(self):
-		del self._AdrLine
-		self._AdrLine = None
 
 	@property
 	def Dept(self):
@@ -126,6 +35,58 @@ class PostalAddress24(base_types._BaseFieldType):
 		self._Dept = None
 
 	@property
+	def Flr(self):
+		return self._Flr
+
+	@Flr.setter
+	def Flr(self, value):
+		self._Flr = value if type(value) != auto else self.make_default("Flr")
+
+	@Flr.deleter
+	def Flr(self):
+		del self._Flr
+		self._Flr = None
+
+	@property
+	def TwnLctnNm(self):
+		return self._TwnLctnNm
+
+	@TwnLctnNm.setter
+	def TwnLctnNm(self, value):
+		self._TwnLctnNm = value if type(value) != auto else self.make_default("TwnLctnNm")
+
+	@TwnLctnNm.deleter
+	def TwnLctnNm(self):
+		del self._TwnLctnNm
+		self._TwnLctnNm = None
+
+	@property
+	def Room(self):
+		return self._Room
+
+	@Room.setter
+	def Room(self, value):
+		self._Room = value if type(value) != auto else self.make_default("Room")
+
+	@Room.deleter
+	def Room(self):
+		del self._Room
+		self._Room = None
+
+	@property
+	def BldgNb(self):
+		return self._BldgNb
+
+	@BldgNb.setter
+	def BldgNb(self, value):
+		self._BldgNb = value if type(value) != auto else self.make_default("BldgNb")
+
+	@BldgNb.deleter
+	def BldgNb(self):
+		del self._BldgNb
+		self._BldgNb = None
+
+	@property
 	def Ctry(self):
 		return self._Ctry
 
@@ -137,6 +98,19 @@ class PostalAddress24(base_types._BaseFieldType):
 	def Ctry(self):
 		del self._Ctry
 		self._Ctry = None
+
+	@property
+	def SubDept(self):
+		return self._SubDept
+
+	@SubDept.setter
+	def SubDept(self, value):
+		self._SubDept = value if type(value) != auto else self.make_default("SubDept")
+
+	@SubDept.deleter
+	def SubDept(self):
+		del self._SubDept
+		self._SubDept = None
 
 	@property
 	def StrtNm(self):
@@ -165,43 +139,43 @@ class PostalAddress24(base_types._BaseFieldType):
 		self._CtrySubDvsn = None
 
 	@property
-	def BldgNb(self):
-		return self._BldgNb
+	def BldgNm(self):
+		return self._BldgNm
 
-	@BldgNb.setter
-	def BldgNb(self, value):
-		self._BldgNb = value if type(value) != auto else self.make_default("BldgNb")
+	@BldgNm.setter
+	def BldgNm(self, value):
+		self._BldgNm = value if type(value) != auto else self.make_default("BldgNm")
 
-	@BldgNb.deleter
-	def BldgNb(self):
-		del self._BldgNb
-		self._BldgNb = None
-
-	@property
-	def TwnLctnNm(self):
-		return self._TwnLctnNm
-
-	@TwnLctnNm.setter
-	def TwnLctnNm(self, value):
-		self._TwnLctnNm = value if type(value) != auto else self.make_default("TwnLctnNm")
-
-	@TwnLctnNm.deleter
-	def TwnLctnNm(self):
-		del self._TwnLctnNm
-		self._TwnLctnNm = None
+	@BldgNm.deleter
+	def BldgNm(self):
+		del self._BldgNm
+		self._BldgNm = None
 
 	@property
-	def AdrTp(self):
-		return self._AdrTp
+	def PstCd(self):
+		return self._PstCd
 
-	@AdrTp.setter
-	def AdrTp(self, value):
-		self._AdrTp = value if type(value) != auto else self.make_default("AdrTp")
+	@PstCd.setter
+	def PstCd(self, value):
+		self._PstCd = value if type(value) != auto else self.make_default("PstCd")
 
-	@AdrTp.deleter
-	def AdrTp(self):
-		del self._AdrTp
-		self._AdrTp = None
+	@PstCd.deleter
+	def PstCd(self):
+		del self._PstCd
+		self._PstCd = None
+
+	@property
+	def AdrLine(self):
+		return self._AdrLine
+
+	@AdrLine.setter
+	def AdrLine(self, value):
+		self._AdrLine = value if type(value) != auto else self.make_default("AdrLine")
+
+	@AdrLine.deleter
+	def AdrLine(self):
+		del self._AdrLine
+		self._AdrLine = None
 
 	@property
 	def DstrctNm(self):
@@ -216,22 +190,48 @@ class PostalAddress24(base_types._BaseFieldType):
 		del self._DstrctNm
 		self._DstrctNm = None
 
+	@property
+	def PstBx(self):
+		return self._PstBx
+
+	@PstBx.setter
+	def PstBx(self, value):
+		self._PstBx = value if type(value) != auto else self.make_default("PstBx")
+
+	@PstBx.deleter
+	def PstBx(self):
+		del self._PstBx
+		self._PstBx = None
+
+	@property
+	def AdrTp(self):
+		return self._AdrTp
+
+	@AdrTp.setter
+	def AdrTp(self, value):
+		self._AdrTp = value if type(value) != auto else self.make_default("AdrTp")
+
+	@AdrTp.deleter
+	def AdrTp(self):
+		del self._AdrTp
+		self._AdrTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BldgNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TwnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Room', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubDept', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstCd', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstBx', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Flr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdrLine', type=Max70Text, min=0, max=7, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Dept', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Flr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TwnLctnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Room', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BldgNb', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubDept', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StrtNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrySubDvsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BldgNb', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TwnLctnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdrTp', type=AddressType3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BldgNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstCd', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdrLine', type=Max70Text, min=0, max=7, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DstrctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstBx', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdrTp', type=AddressType3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,26 +1,13 @@
-import base_types
-import Max35Text
-import ISODateTime
+from . import base_types
 import StatisticalReportingStatus1Code
+import ISODateTime
 import DocumentIdentification28
+import Max35Text
 import ValidationStatusReason3
 
 class CurrencyControlRecordStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_RcrdId", "_DocId", "_StsDtTm", "_Sts", "_StsRsn"]
-	@property
-	def RcrdId(self):
-		return self._RcrdId
-
-	@RcrdId.setter
-	def RcrdId(self, value):
-		self._RcrdId = value if type(value) != auto else self.make_default("RcrdId")
-
-	@RcrdId.deleter
-	def RcrdId(self):
-		del self._RcrdId
-		self._RcrdId = None
-
+	__slots__ = ["_DocId", "_Sts", "_StsDtTm", "_StsRsn", "_RcrdId"]
 	@property
 	def DocId(self):
 		return self._DocId
@@ -33,19 +20,6 @@ class CurrencyControlRecordStatus3(base_types._BaseFieldType):
 	def DocId(self):
 		del self._DocId
 		self._DocId = None
-
-	@property
-	def StsDtTm(self):
-		return self._StsDtTm
-
-	@StsDtTm.setter
-	def StsDtTm(self, value):
-		self._StsDtTm = value if type(value) != auto else self.make_default("StsDtTm")
-
-	@StsDtTm.deleter
-	def StsDtTm(self):
-		del self._StsDtTm
-		self._StsDtTm = None
 
 	@property
 	def Sts(self):
@@ -61,6 +35,19 @@ class CurrencyControlRecordStatus3(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
+	def StsDtTm(self):
+		return self._StsDtTm
+
+	@StsDtTm.setter
+	def StsDtTm(self, value):
+		self._StsDtTm = value if type(value) != auto else self.make_default("StsDtTm")
+
+	@StsDtTm.deleter
+	def StsDtTm(self):
+		del self._StsDtTm
+		self._StsDtTm = None
+
+	@property
 	def StsRsn(self):
 		return self._StsRsn
 
@@ -73,11 +60,24 @@ class CurrencyControlRecordStatus3(base_types._BaseFieldType):
 		del self._StsRsn
 		self._StsRsn = None
 
+	@property
+	def RcrdId(self):
+		return self._RcrdId
+
+	@RcrdId.setter
+	def RcrdId(self, value):
+		self._RcrdId = value if type(value) != auto else self.make_default("RcrdId")
+
+	@RcrdId.deleter
+	def RcrdId(self):
+		del self._RcrdId
+		self._RcrdId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcrdId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocId', type=DocumentIdentification28, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRsn', type=ValidationStatusReason3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RcrdId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,26 +1,13 @@
-import base_types
+from . import base_types
+import ISODate
+import FundBalance1
+import FlowDirectionType1Code
 import FinancialInstrumentQuantity1
 import ActiveOrHistoricCurrencyAndAmount
-import FundBalance1
-import ISODate
-import FlowDirectionType1Code
 
 class NetCashForecast4(base_types._BaseFieldType):
 
-	__slots__ = ["_NetUnitsNb", "_FlowDrctn", "_NetAmt", "_CshSttlmDt", "_AddtlBal"]
-	@property
-	def NetUnitsNb(self):
-		return self._NetUnitsNb
-
-	@NetUnitsNb.setter
-	def NetUnitsNb(self, value):
-		self._NetUnitsNb = value if type(value) != auto else self.make_default("NetUnitsNb")
-
-	@NetUnitsNb.deleter
-	def NetUnitsNb(self):
-		del self._NetUnitsNb
-		self._NetUnitsNb = None
-
+	__slots__ = ["_FlowDrctn", "_AddtlBal", "_NetAmt", "_NetUnitsNb", "_CshSttlmDt"]
 	@property
 	def FlowDrctn(self):
 		return self._FlowDrctn
@@ -33,6 +20,19 @@ class NetCashForecast4(base_types._BaseFieldType):
 	def FlowDrctn(self):
 		del self._FlowDrctn
 		self._FlowDrctn = None
+
+	@property
+	def AddtlBal(self):
+		return self._AddtlBal
+
+	@AddtlBal.setter
+	def AddtlBal(self, value):
+		self._AddtlBal = value if type(value) != auto else self.make_default("AddtlBal")
+
+	@AddtlBal.deleter
+	def AddtlBal(self):
+		del self._AddtlBal
+		self._AddtlBal = None
 
 	@property
 	def NetAmt(self):
@@ -48,6 +48,19 @@ class NetCashForecast4(base_types._BaseFieldType):
 		self._NetAmt = None
 
 	@property
+	def NetUnitsNb(self):
+		return self._NetUnitsNb
+
+	@NetUnitsNb.setter
+	def NetUnitsNb(self, value):
+		self._NetUnitsNb = value if type(value) != auto else self.make_default("NetUnitsNb")
+
+	@NetUnitsNb.deleter
+	def NetUnitsNb(self):
+		del self._NetUnitsNb
+		self._NetUnitsNb = None
+
+	@property
 	def CshSttlmDt(self):
 		return self._CshSttlmDt
 
@@ -60,24 +73,11 @@ class NetCashForecast4(base_types._BaseFieldType):
 		del self._CshSttlmDt
 		self._CshSttlmDt = None
 
-	@property
-	def AddtlBal(self):
-		return self._AddtlBal
-
-	@AddtlBal.setter
-	def AddtlBal(self, value):
-		self._AddtlBal = value if type(value) != auto else self.make_default("AddtlBal")
-
-	@AddtlBal.deleter
-	def AddtlBal(self):
-		del self._AddtlBal
-		self._AddtlBal = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NetUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FlowDrctn', type=FlowDirectionType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlBal', type=FundBalance1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

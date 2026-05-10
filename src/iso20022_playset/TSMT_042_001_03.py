@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TransactionReportRequestV03
 
 class TSMT_042_001_03():

@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import FundParameters5
 import NoCriteria1Code
 
 class FundParameters4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoCrit", "_Params"]
-	@property
-	def NoCrit(self):
-		return self._NoCrit
-
-	@NoCrit.setter
-	def NoCrit(self, value):
-		self._NoCrit = value if type(value) != auto else self.make_default("NoCrit")
-
-	@NoCrit.deleter
-	def NoCrit(self):
-		del self._NoCrit
-		self._NoCrit = None
-
+	__slots__ = ["_Params", "_NoCrit"]
 	@property
 	def Params(self):
 		return self._Params
@@ -31,8 +18,21 @@ class FundParameters4Choice(base_types._BaseFieldType):
 		del self._Params
 		self._Params = None
 
+	@property
+	def NoCrit(self):
+		return self._NoCrit
+
+	@NoCrit.setter
+	def NoCrit(self, value):
+		self._NoCrit = value if type(value) != auto else self.make_default("NoCrit")
+
+	@NoCrit.deleter
+	def NoCrit(self):
+		del self._NoCrit
+		self._NoCrit = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NoCrit', type=NoCriteria1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Params', type=FundParameters5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NoCrit', type=NoCriteria1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

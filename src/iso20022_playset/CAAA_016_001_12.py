@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AcceptorCurrencyConversionRequestV12
 
 class CAAA_016_001_12():

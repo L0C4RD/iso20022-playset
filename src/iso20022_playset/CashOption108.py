@@ -1,19 +1,45 @@
-import base_types
-import CountryCode
-import PriceCalculationMethod2Choice
+from . import base_types
 import ForeignExchangeTerms39
-import CorporateActionDate84
-import YesNoIndicator
-import CreditDebitCode
-import PriceDetails39
-import NonEligibleProceedsIndicator5Choice
-import Rate44
-import CorporateActionAmounts71
 import GenericIdentification30
+import YesNoIndicator
+import CountryCode
+import PriceDetails39
+import Rate44
+import NonEligibleProceedsIndicator5Choice
+import CorporateActionAmounts71
+import CreditDebitCode
+import PriceCalculationMethod2Choice
+import CorporateActionDate84
 
 class CashOption108(base_types._BaseFieldType):
 
-	__slots__ = ["_NRATaxRptblInd", "_CtryOfIncmSrc", "_OthrIncmTp", "_FXDtls", "_AmtDtls", "_PricClctnMtd", "_IncmTp", "_NonElgblPrcdsInd", "_DtDtls", "_XmptnTp", "_EstmtdRateInd", "_CdtDbtInd", "_PricDtls", "_RateAndAmtDtls"]
+	__slots__ = ["_PricClctnMtd", "_CdtDbtInd", "_NRATaxRptblInd", "_FXDtls", "_NonElgblPrcdsInd", "_EstmtdRateInd", "_PricDtls", "_RateAndAmtDtls", "_AmtDtls", "_IncmTp", "_XmptnTp", "_DtDtls", "_CtryOfIncmSrc", "_OthrIncmTp"]
+	@property
+	def PricClctnMtd(self):
+		return self._PricClctnMtd
+
+	@PricClctnMtd.setter
+	def PricClctnMtd(self, value):
+		self._PricClctnMtd = value if type(value) != auto else self.make_default("PricClctnMtd")
+
+	@PricClctnMtd.deleter
+	def PricClctnMtd(self):
+		del self._PricClctnMtd
+		self._PricClctnMtd = None
+
+	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
+
 	@property
 	def NRATaxRptblInd(self):
 		return self._NRATaxRptblInd
@@ -26,32 +52,6 @@ class CashOption108(base_types._BaseFieldType):
 	def NRATaxRptblInd(self):
 		del self._NRATaxRptblInd
 		self._NRATaxRptblInd = None
-
-	@property
-	def CtryOfIncmSrc(self):
-		return self._CtryOfIncmSrc
-
-	@CtryOfIncmSrc.setter
-	def CtryOfIncmSrc(self, value):
-		self._CtryOfIncmSrc = value if type(value) != auto else self.make_default("CtryOfIncmSrc")
-
-	@CtryOfIncmSrc.deleter
-	def CtryOfIncmSrc(self):
-		del self._CtryOfIncmSrc
-		self._CtryOfIncmSrc = None
-
-	@property
-	def OthrIncmTp(self):
-		return self._OthrIncmTp
-
-	@OthrIncmTp.setter
-	def OthrIncmTp(self, value):
-		self._OthrIncmTp = value if type(value) != auto else self.make_default("OthrIncmTp")
-
-	@OthrIncmTp.deleter
-	def OthrIncmTp(self):
-		del self._OthrIncmTp
-		self._OthrIncmTp = None
 
 	@property
 	def FXDtls(self):
@@ -67,45 +67,6 @@ class CashOption108(base_types._BaseFieldType):
 		self._FXDtls = None
 
 	@property
-	def AmtDtls(self):
-		return self._AmtDtls
-
-	@AmtDtls.setter
-	def AmtDtls(self, value):
-		self._AmtDtls = value if type(value) != auto else self.make_default("AmtDtls")
-
-	@AmtDtls.deleter
-	def AmtDtls(self):
-		del self._AmtDtls
-		self._AmtDtls = None
-
-	@property
-	def PricClctnMtd(self):
-		return self._PricClctnMtd
-
-	@PricClctnMtd.setter
-	def PricClctnMtd(self, value):
-		self._PricClctnMtd = value if type(value) != auto else self.make_default("PricClctnMtd")
-
-	@PricClctnMtd.deleter
-	def PricClctnMtd(self):
-		del self._PricClctnMtd
-		self._PricClctnMtd = None
-
-	@property
-	def IncmTp(self):
-		return self._IncmTp
-
-	@IncmTp.setter
-	def IncmTp(self, value):
-		self._IncmTp = value if type(value) != auto else self.make_default("IncmTp")
-
-	@IncmTp.deleter
-	def IncmTp(self):
-		del self._IncmTp
-		self._IncmTp = None
-
-	@property
 	def NonElgblPrcdsInd(self):
 		return self._NonElgblPrcdsInd
 
@@ -119,32 +80,6 @@ class CashOption108(base_types._BaseFieldType):
 		self._NonElgblPrcdsInd = None
 
 	@property
-	def DtDtls(self):
-		return self._DtDtls
-
-	@DtDtls.setter
-	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != auto else self.make_default("DtDtls")
-
-	@DtDtls.deleter
-	def DtDtls(self):
-		del self._DtDtls
-		self._DtDtls = None
-
-	@property
-	def XmptnTp(self):
-		return self._XmptnTp
-
-	@XmptnTp.setter
-	def XmptnTp(self, value):
-		self._XmptnTp = value if type(value) != auto else self.make_default("XmptnTp")
-
-	@XmptnTp.deleter
-	def XmptnTp(self):
-		del self._XmptnTp
-		self._XmptnTp = None
-
-	@property
 	def EstmtdRateInd(self):
 		return self._EstmtdRateInd
 
@@ -156,19 +91,6 @@ class CashOption108(base_types._BaseFieldType):
 	def EstmtdRateInd(self):
 		del self._EstmtdRateInd
 		self._EstmtdRateInd = None
-
-	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
-
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
-
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
 
 	@property
 	def PricDtls(self):
@@ -196,20 +118,98 @@ class CashOption108(base_types._BaseFieldType):
 		del self._RateAndAmtDtls
 		self._RateAndAmtDtls = None
 
+	@property
+	def AmtDtls(self):
+		return self._AmtDtls
+
+	@AmtDtls.setter
+	def AmtDtls(self, value):
+		self._AmtDtls = value if type(value) != auto else self.make_default("AmtDtls")
+
+	@AmtDtls.deleter
+	def AmtDtls(self):
+		del self._AmtDtls
+		self._AmtDtls = None
+
+	@property
+	def IncmTp(self):
+		return self._IncmTp
+
+	@IncmTp.setter
+	def IncmTp(self, value):
+		self._IncmTp = value if type(value) != auto else self.make_default("IncmTp")
+
+	@IncmTp.deleter
+	def IncmTp(self):
+		del self._IncmTp
+		self._IncmTp = None
+
+	@property
+	def XmptnTp(self):
+		return self._XmptnTp
+
+	@XmptnTp.setter
+	def XmptnTp(self, value):
+		self._XmptnTp = value if type(value) != auto else self.make_default("XmptnTp")
+
+	@XmptnTp.deleter
+	def XmptnTp(self):
+		del self._XmptnTp
+		self._XmptnTp = None
+
+	@property
+	def DtDtls(self):
+		return self._DtDtls
+
+	@DtDtls.setter
+	def DtDtls(self, value):
+		self._DtDtls = value if type(value) != auto else self.make_default("DtDtls")
+
+	@DtDtls.deleter
+	def DtDtls(self):
+		del self._DtDtls
+		self._DtDtls = None
+
+	@property
+	def CtryOfIncmSrc(self):
+		return self._CtryOfIncmSrc
+
+	@CtryOfIncmSrc.setter
+	def CtryOfIncmSrc(self, value):
+		self._CtryOfIncmSrc = value if type(value) != auto else self.make_default("CtryOfIncmSrc")
+
+	@CtryOfIncmSrc.deleter
+	def CtryOfIncmSrc(self):
+		del self._CtryOfIncmSrc
+		self._CtryOfIncmSrc = None
+
+	@property
+	def OthrIncmTp(self):
+		return self._OthrIncmTp
+
+	@OthrIncmTp.setter
+	def OthrIncmTp(self, value):
+		self._OthrIncmTp = value if type(value) != auto else self.make_default("OthrIncmTp")
+
+	@OthrIncmTp.deleter
+	def OthrIncmTp(self):
+		del self._OthrIncmTp
+		self._OthrIncmTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NRATaxRptblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryOfIncmSrc', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrIncmTp', type=GenericIdentification30, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms39, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmtDtls', type=CorporateActionAmounts71, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricClctnMtd', type=PriceCalculationMethod2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IncmTp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonElgblPrcdsInd', type=NonEligibleProceedsIndicator5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate84, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XmptnTp', type=GenericIdentification30, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='EstmtdRateInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NRATaxRptblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonElgblPrcdsInd', type=NonEligibleProceedsIndicator5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstmtdRateInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricDtls', type=PriceDetails39, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RateAndAmtDtls', type=Rate44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtDtls', type=CorporateActionAmounts71, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IncmTp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XmptnTp', type=GenericIdentification30, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate84, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfIncmSrc', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrIncmTp', type=GenericIdentification30, min=0, max=None, mutex_group=None, array=True),
 	))
 

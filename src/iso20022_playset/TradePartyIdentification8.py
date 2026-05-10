@@ -1,6 +1,6 @@
-import base_types
-import PartyIdentification242Choice
+from . import base_types
 import FundIdentification5
+import PartyIdentification242Choice
 
 class TradePartyIdentification8(base_types._BaseFieldType):
 

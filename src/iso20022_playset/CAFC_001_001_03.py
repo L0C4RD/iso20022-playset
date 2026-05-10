@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FeeCollectionInitiationV03
 
 class CAFC_001_001_03():

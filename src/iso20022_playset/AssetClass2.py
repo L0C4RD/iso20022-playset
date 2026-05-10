@@ -1,23 +1,23 @@
-import base_types
-import DerivativeForeignExchange3
-import DerivativeInterest3
+from . import base_types
 import DerivativeCommodity2
+import DerivativeInterest3
+import DerivativeForeignExchange3
 
 class AssetClass2(base_types._BaseFieldType):
 
-	__slots__ = ["_FX", "_Cmmdty", "_Intrst"]
+	__slots__ = ["_Intrst", "_Cmmdty", "_FX"]
 	@property
-	def FX(self):
-		return self._FX
+	def Intrst(self):
+		return self._Intrst
 
-	@FX.setter
-	def FX(self, value):
-		self._FX = value if type(value) != auto else self.make_default("FX")
+	@Intrst.setter
+	def Intrst(self, value):
+		self._Intrst = value if type(value) != auto else self.make_default("Intrst")
 
-	@FX.deleter
-	def FX(self):
-		del self._FX
-		self._FX = None
+	@Intrst.deleter
+	def Intrst(self):
+		del self._Intrst
+		self._Intrst = None
 
 	@property
 	def Cmmdty(self):
@@ -33,21 +33,21 @@ class AssetClass2(base_types._BaseFieldType):
 		self._Cmmdty = None
 
 	@property
-	def Intrst(self):
-		return self._Intrst
+	def FX(self):
+		return self._FX
 
-	@Intrst.setter
-	def Intrst(self, value):
-		self._Intrst = value if type(value) != auto else self.make_default("Intrst")
+	@FX.setter
+	def FX(self, value):
+		self._FX = value if type(value) != auto else self.make_default("FX")
 
-	@Intrst.deleter
-	def Intrst(self):
-		del self._Intrst
-		self._Intrst = None
+	@FX.deleter
+	def FX(self):
+		del self._FX
+		self._FX = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FX', type=DerivativeForeignExchange3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cmmdty', type=DerivativeCommodity2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Intrst', type=DerivativeInterest3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cmmdty', type=DerivativeCommodity2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FX', type=DerivativeForeignExchange3, min=0, max=1, mutex_group=None, array=False),
 	))
 

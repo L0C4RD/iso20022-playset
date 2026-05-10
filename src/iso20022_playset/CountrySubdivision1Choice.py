@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import GenericIdentification1
+import Max35Text
 
 class CountrySubdivision1Choice(base_types._BaseFieldType):
 

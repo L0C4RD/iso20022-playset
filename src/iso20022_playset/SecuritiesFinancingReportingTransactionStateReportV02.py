@@ -1,6 +1,6 @@
-import base_types
-import TradeStateReport5Choice
+from . import base_types
 import SupplementaryData1
+import TradeStateReport5Choice
 
 class SecuritiesFinancingReportingTransactionStateReportV02(base_types._BaseFieldType):
 

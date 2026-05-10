@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AuthenticatedData4
 import ContentType2Code
 

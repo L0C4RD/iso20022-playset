@@ -1,23 +1,23 @@
-import base_types
-import ContentType3Code
-import EncryptedData2
+from . import base_types
 import EnvelopedData12
+import EncryptedData2
+import ContentType3Code
 
 class ProtectedData2(base_types._BaseFieldType):
 
-	__slots__ = ["_NcrptdData", "_CnttTp", "_EnvlpdData"]
+	__slots__ = ["_EnvlpdData", "_CnttTp", "_NcrptdData"]
 	@property
-	def NcrptdData(self):
-		return self._NcrptdData
+	def EnvlpdData(self):
+		return self._EnvlpdData
 
-	@NcrptdData.setter
-	def NcrptdData(self, value):
-		self._NcrptdData = value if type(value) != auto else self.make_default("NcrptdData")
+	@EnvlpdData.setter
+	def EnvlpdData(self, value):
+		self._EnvlpdData = value if type(value) != auto else self.make_default("EnvlpdData")
 
-	@NcrptdData.deleter
-	def NcrptdData(self):
-		del self._NcrptdData
-		self._NcrptdData = None
+	@EnvlpdData.deleter
+	def EnvlpdData(self):
+		del self._EnvlpdData
+		self._EnvlpdData = None
 
 	@property
 	def CnttTp(self):
@@ -33,21 +33,21 @@ class ProtectedData2(base_types._BaseFieldType):
 		self._CnttTp = None
 
 	@property
-	def EnvlpdData(self):
-		return self._EnvlpdData
+	def NcrptdData(self):
+		return self._NcrptdData
 
-	@EnvlpdData.setter
-	def EnvlpdData(self, value):
-		self._EnvlpdData = value if type(value) != auto else self.make_default("EnvlpdData")
+	@NcrptdData.setter
+	def NcrptdData(self, value):
+		self._NcrptdData = value if type(value) != auto else self.make_default("NcrptdData")
 
-	@EnvlpdData.deleter
-	def EnvlpdData(self):
-		del self._EnvlpdData
-		self._EnvlpdData = None
+	@NcrptdData.deleter
+	def NcrptdData(self):
+		del self._NcrptdData
+		self._NcrptdData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NcrptdData', type=EncryptedData2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CnttTp', type=ContentType3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EnvlpdData', type=EnvelopedData12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CnttTp', type=ContentType3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcrptdData', type=EncryptedData2, min=0, max=1, mutex_group=None, array=False),
 	))
 

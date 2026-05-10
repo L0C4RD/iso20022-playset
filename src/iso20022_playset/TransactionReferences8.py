@@ -1,36 +1,23 @@
-import base_types
-import Max35Text
-import UUIDv4Identifier
+from . import base_types
 import PartyIdentification272
+import UUIDv4Identifier
+import Max35Text
 
 class TransactionReferences8(base_types._BaseFieldType):
 
-	__slots__ = ["_UETR", "_CdtrSchmeId", "_TxId", "_PmtInfId", "_InstrId", "_MndtId", "_EndToEndId"]
+	__slots__ = ["_MndtId", "_TxId", "_CdtrSchmeId", "_EndToEndId", "_PmtInfId", "_UETR", "_InstrId"]
 	@property
-	def UETR(self):
-		return self._UETR
+	def MndtId(self):
+		return self._MndtId
 
-	@UETR.setter
-	def UETR(self, value):
-		self._UETR = value if type(value) != auto else self.make_default("UETR")
+	@MndtId.setter
+	def MndtId(self, value):
+		self._MndtId = value if type(value) != auto else self.make_default("MndtId")
 
-	@UETR.deleter
-	def UETR(self):
-		del self._UETR
-		self._UETR = None
-
-	@property
-	def CdtrSchmeId(self):
-		return self._CdtrSchmeId
-
-	@CdtrSchmeId.setter
-	def CdtrSchmeId(self, value):
-		self._CdtrSchmeId = value if type(value) != auto else self.make_default("CdtrSchmeId")
-
-	@CdtrSchmeId.deleter
-	def CdtrSchmeId(self):
-		del self._CdtrSchmeId
-		self._CdtrSchmeId = None
+	@MndtId.deleter
+	def MndtId(self):
+		del self._MndtId
+		self._MndtId = None
 
 	@property
 	def TxId(self):
@@ -46,43 +33,17 @@ class TransactionReferences8(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def PmtInfId(self):
-		return self._PmtInfId
+	def CdtrSchmeId(self):
+		return self._CdtrSchmeId
 
-	@PmtInfId.setter
-	def PmtInfId(self, value):
-		self._PmtInfId = value if type(value) != auto else self.make_default("PmtInfId")
+	@CdtrSchmeId.setter
+	def CdtrSchmeId(self, value):
+		self._CdtrSchmeId = value if type(value) != auto else self.make_default("CdtrSchmeId")
 
-	@PmtInfId.deleter
-	def PmtInfId(self):
-		del self._PmtInfId
-		self._PmtInfId = None
-
-	@property
-	def InstrId(self):
-		return self._InstrId
-
-	@InstrId.setter
-	def InstrId(self, value):
-		self._InstrId = value if type(value) != auto else self.make_default("InstrId")
-
-	@InstrId.deleter
-	def InstrId(self):
-		del self._InstrId
-		self._InstrId = None
-
-	@property
-	def MndtId(self):
-		return self._MndtId
-
-	@MndtId.setter
-	def MndtId(self, value):
-		self._MndtId = value if type(value) != auto else self.make_default("MndtId")
-
-	@MndtId.deleter
-	def MndtId(self):
-		del self._MndtId
-		self._MndtId = None
+	@CdtrSchmeId.deleter
+	def CdtrSchmeId(self):
+		del self._CdtrSchmeId
+		self._CdtrSchmeId = None
 
 	@property
 	def EndToEndId(self):
@@ -97,13 +58,52 @@ class TransactionReferences8(base_types._BaseFieldType):
 		del self._EndToEndId
 		self._EndToEndId = None
 
+	@property
+	def PmtInfId(self):
+		return self._PmtInfId
+
+	@PmtInfId.setter
+	def PmtInfId(self, value):
+		self._PmtInfId = value if type(value) != auto else self.make_default("PmtInfId")
+
+	@PmtInfId.deleter
+	def PmtInfId(self):
+		del self._PmtInfId
+		self._PmtInfId = None
+
+	@property
+	def UETR(self):
+		return self._UETR
+
+	@UETR.setter
+	def UETR(self, value):
+		self._UETR = value if type(value) != auto else self.make_default("UETR")
+
+	@UETR.deleter
+	def UETR(self):
+		del self._UETR
+		self._UETR = None
+
+	@property
+	def InstrId(self):
+		return self._InstrId
+
+	@InstrId.setter
+	def InstrId(self, value):
+		self._InstrId = value if type(value) != auto else self.make_default("InstrId")
+
+	@InstrId.deleter
+	def InstrId(self):
+		del self._InstrId
+		self._InstrId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrSchmeId', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MndtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrSchmeId', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

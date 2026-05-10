@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import UndertakingNonExtensionRequestV01
 
 class TSRV_010_001_01():

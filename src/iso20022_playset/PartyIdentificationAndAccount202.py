@@ -1,15 +1,15 @@
-import base_types
-import TradingPartyCapacity5Choice
+from . import base_types
 import PartyIdentification120Choice
-import SecuritiesAccount19
 import BlockChainAddressWallet3
 import AlternatePartyIdentification7
 import PartyIdentification136
+import TradingPartyCapacity5Choice
 import LEIIdentifier
+import SecuritiesAccount19
 
 class PartyIdentificationAndAccount202(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_LEI", "_AltrnId", "_Id", "_SfkpgAcct", "_AcctOwnr", "_PtyCpcty"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_LEI", "_PtyCpcty", "_SfkpgAcct", "_Id", "_AcctOwnr", "_AltrnId"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -37,30 +37,17 @@ class PartyIdentificationAndAccount202(base_types._BaseFieldType):
 		self._LEI = None
 
 	@property
-	def AltrnId(self):
-		return self._AltrnId
+	def PtyCpcty(self):
+		return self._PtyCpcty
 
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+	@PtyCpcty.setter
+	def PtyCpcty(self, value):
+		self._PtyCpcty = value if type(value) != auto else self.make_default("PtyCpcty")
 
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@PtyCpcty.deleter
+	def PtyCpcty(self):
+		del self._PtyCpcty
+		self._PtyCpcty = None
 
 	@property
 	def SfkpgAcct(self):
@@ -76,6 +63,19 @@ class PartyIdentificationAndAccount202(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
 
@@ -89,25 +89,25 @@ class PartyIdentificationAndAccount202(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def PtyCpcty(self):
-		return self._PtyCpcty
+	def AltrnId(self):
+		return self._AltrnId
 
-	@PtyCpcty.setter
-	def PtyCpcty(self, value):
-		self._PtyCpcty = value if type(value) != auto else self.make_default("PtyCpcty")
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
 
-	@PtyCpcty.deleter
-	def PtyCpcty(self):
-		del self._PtyCpcty
-		self._PtyCpcty = None
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification120Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyCpcty', type=TradingPartyCapacity5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification120Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=1, mutex_group=None, array=False),
 	))
 

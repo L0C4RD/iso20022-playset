@@ -1,26 +1,13 @@
-import base_types
-import ImpliedCurrencyAndAmount
-import Max70Text
-import ATMCounterType2Code
+from . import base_types
 import Number
+import ImpliedCurrencyAndAmount
+import ATMCounterType2Code
 import ActiveCurrencyCode
+import Max70Text
 
 class ATMTotals3(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Cnt", "_Id", "_AddtlId", "_Prd", "_Ccy"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_Cnt", "_Id", "_Prd", "_Amt", "_AddtlId", "_Ccy"]
 	@property
 	def Cnt(self):
 		return self._Cnt
@@ -48,19 +35,6 @@ class ATMTotals3(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def AddtlId(self):
-		return self._AddtlId
-
-	@AddtlId.setter
-	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
-
-	@AddtlId.deleter
-	def AddtlId(self):
-		del self._AddtlId
-		self._AddtlId = None
-
-	@property
 	def Prd(self):
 		return self._Prd
 
@@ -72,6 +46,32 @@ class ATMTotals3(base_types._BaseFieldType):
 	def Prd(self):
 		del self._Prd
 		self._Prd = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def AddtlId(self):
+		return self._AddtlId
+
+	@AddtlId.setter
+	def AddtlId(self, value):
+		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
+
+	@AddtlId.deleter
+	def AddtlId(self):
+		del self._AddtlId
+		self._AddtlId = None
 
 	@property
 	def Ccy(self):
@@ -87,11 +87,11 @@ class ATMTotals3(base_types._BaseFieldType):
 		self._Ccy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cnt', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prd', type=ATMCounterType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,12 @@
-import base_types
-import Reference3Choice
-import SupplementaryData1
+from . import base_types
 import Obligation8
+import SupplementaryData1
 import CollateralCancellationReason1
+import Reference3Choice
 
 class CollateralManagementCancellationRequestV06(base_types._BaseFieldType):
 
-	__slots__ = ["_Oblgtn", "_CxlRsn", "_SplmtryData", "_Ref"]
+	__slots__ = ["_Oblgtn", "_Ref", "_SplmtryData", "_CxlRsn"]
 	@property
 	def Oblgtn(self):
 		return self._Oblgtn
@@ -21,17 +21,17 @@ class CollateralManagementCancellationRequestV06(base_types._BaseFieldType):
 		self._Oblgtn = None
 
 	@property
-	def CxlRsn(self):
-		return self._CxlRsn
+	def Ref(self):
+		return self._Ref
 
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
 
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	@property
 	def SplmtryData(self):
@@ -47,22 +47,22 @@ class CollateralManagementCancellationRequestV06(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Ref(self):
-		return self._Ref
+	def CxlRsn(self):
+		return self._CxlRsn
 
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
 
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Oblgtn', type=Obligation8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRsn', type=CollateralCancellationReason1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ref', type=Reference3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CxlRsn', type=CollateralCancellationReason1, min=1, max=1, mutex_group=None, array=False),
 	))
 

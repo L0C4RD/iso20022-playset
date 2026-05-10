@@ -1,12 +1,25 @@
-import base_types
+from . import base_types
 import SimpleIdentificationInformation2
 import IBAN2007Identifier
-import UPICIdentifier
 import BBANIdentifier
+import UPICIdentifier
 
 class AccountIdentification55Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_BBAN", "_PrtryAcct", "_IBAN", "_UPIC"]
+	__slots__ = ["_UPIC", "_BBAN", "_IBAN", "_PrtryAcct"]
+	@property
+	def UPIC(self):
+		return self._UPIC
+
+	@UPIC.setter
+	def UPIC(self, value):
+		self._UPIC = value if type(value) != auto else self.make_default("UPIC")
+
+	@UPIC.deleter
+	def UPIC(self):
+		del self._UPIC
+		self._UPIC = None
+
 	@property
 	def BBAN(self):
 		return self._BBAN
@@ -19,19 +32,6 @@ class AccountIdentification55Choice(base_types._BaseFieldType):
 	def BBAN(self):
 		del self._BBAN
 		self._BBAN = None
-
-	@property
-	def PrtryAcct(self):
-		return self._PrtryAcct
-
-	@PrtryAcct.setter
-	def PrtryAcct(self, value):
-		self._PrtryAcct = value if type(value) != auto else self.make_default("PrtryAcct")
-
-	@PrtryAcct.deleter
-	def PrtryAcct(self):
-		del self._PrtryAcct
-		self._PrtryAcct = None
 
 	@property
 	def IBAN(self):
@@ -47,22 +47,22 @@ class AccountIdentification55Choice(base_types._BaseFieldType):
 		self._IBAN = None
 
 	@property
-	def UPIC(self):
-		return self._UPIC
+	def PrtryAcct(self):
+		return self._PrtryAcct
 
-	@UPIC.setter
-	def UPIC(self, value):
-		self._UPIC = value if type(value) != auto else self.make_default("UPIC")
+	@PrtryAcct.setter
+	def PrtryAcct(self, value):
+		self._PrtryAcct = value if type(value) != auto else self.make_default("PrtryAcct")
 
-	@UPIC.deleter
-	def UPIC(self):
-		del self._UPIC
-		self._UPIC = None
+	@PrtryAcct.deleter
+	def PrtryAcct(self):
+		del self._PrtryAcct
+		self._PrtryAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BBAN', type=BBANIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtryAcct', type=SimpleIdentificationInformation2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UPIC', type=UPICIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BBAN', type=BBANIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtryAcct', type=SimpleIdentificationInformation2, min=0, max=1, mutex_group=1, array=False),
 	))
 

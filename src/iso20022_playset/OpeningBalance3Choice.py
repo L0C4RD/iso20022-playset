@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialInstrumentQuantity1
 
 class OpeningBalance3Choice(base_types._BaseFieldType):

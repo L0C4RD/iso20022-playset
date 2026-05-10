@@ -1,23 +1,23 @@
-import base_types
-import BlockChainAddressWallet11
+from . import base_types
 import IBAN2007Identifier
+import BlockChainAddressWallet11
 import RestrictedFINX2Max34Text
 
 class CashAccountIdentification10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_BlckChainCshWllt", "_IBAN"]
+	__slots__ = ["_IBAN", "_BlckChainCshWllt", "_Prtry"]
 	@property
-	def Prtry(self):
-		return self._Prtry
+	def IBAN(self):
+		return self._IBAN
 
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+	@IBAN.setter
+	def IBAN(self, value):
+		self._IBAN = value if type(value) != auto else self.make_default("IBAN")
 
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
+	@IBAN.deleter
+	def IBAN(self):
+		del self._IBAN
+		self._IBAN = None
 
 	@property
 	def BlckChainCshWllt(self):
@@ -33,21 +33,21 @@ class CashAccountIdentification10Choice(base_types._BaseFieldType):
 		self._BlckChainCshWllt = None
 
 	@property
-	def IBAN(self):
-		return self._IBAN
+	def Prtry(self):
+		return self._Prtry
 
-	@IBAN.setter
-	def IBAN(self, value):
-		self._IBAN = value if type(value) != auto else self.make_default("IBAN")
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
 
-	@IBAN.deleter
-	def IBAN(self):
-		del self._IBAN
-		self._IBAN = None
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtry', type=RestrictedFINX2Max34Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='BlckChainCshWllt', type=BlockChainAddressWallet11, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BlckChainCshWllt', type=BlockChainAddressWallet11, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=RestrictedFINX2Max34Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

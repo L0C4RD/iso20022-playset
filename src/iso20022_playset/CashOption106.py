@@ -1,65 +1,26 @@
-import base_types
-import CreditDebitCode
+from . import base_types
 import DateFormat43Choice
-import CashAccountIdentification9Choice
-import RateAndAmountFormat55Choice
-import ActiveCurrencyAndAmount
 import DateAndDateTime2Choice
+import CreditDebitCode
+import RateAndAmountFormat55Choice
+import CashAccountIdentification9Choice
+import ActiveCurrencyAndAmount
 
 class CashOption106(base_types._BaseFieldType):
 
-	__slots__ = ["_WhldgTaxAmt", "_NetCshAmt", "_CshAcctId", "_CdtDbtInd", "_PmtDt", "_EntitldAmt", "_EarlstPmtDt", "_WhldgTaxRate", "_GrssCshAmt"]
+	__slots__ = ["_GrssCshAmt", "_PmtDt", "_CdtDbtInd", "_EntitldAmt", "_WhldgTaxAmt", "_CshAcctId", "_EarlstPmtDt", "_WhldgTaxRate", "_NetCshAmt"]
 	@property
-	def WhldgTaxAmt(self):
-		return self._WhldgTaxAmt
+	def GrssCshAmt(self):
+		return self._GrssCshAmt
 
-	@WhldgTaxAmt.setter
-	def WhldgTaxAmt(self, value):
-		self._WhldgTaxAmt = value if type(value) != auto else self.make_default("WhldgTaxAmt")
+	@GrssCshAmt.setter
+	def GrssCshAmt(self, value):
+		self._GrssCshAmt = value if type(value) != auto else self.make_default("GrssCshAmt")
 
-	@WhldgTaxAmt.deleter
-	def WhldgTaxAmt(self):
-		del self._WhldgTaxAmt
-		self._WhldgTaxAmt = None
-
-	@property
-	def NetCshAmt(self):
-		return self._NetCshAmt
-
-	@NetCshAmt.setter
-	def NetCshAmt(self, value):
-		self._NetCshAmt = value if type(value) != auto else self.make_default("NetCshAmt")
-
-	@NetCshAmt.deleter
-	def NetCshAmt(self):
-		del self._NetCshAmt
-		self._NetCshAmt = None
-
-	@property
-	def CshAcctId(self):
-		return self._CshAcctId
-
-	@CshAcctId.setter
-	def CshAcctId(self, value):
-		self._CshAcctId = value if type(value) != auto else self.make_default("CshAcctId")
-
-	@CshAcctId.deleter
-	def CshAcctId(self):
-		del self._CshAcctId
-		self._CshAcctId = None
-
-	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
-
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
-
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
+	@GrssCshAmt.deleter
+	def GrssCshAmt(self):
+		del self._GrssCshAmt
+		self._GrssCshAmt = None
 
 	@property
 	def PmtDt(self):
@@ -75,6 +36,19 @@ class CashOption106(base_types._BaseFieldType):
 		self._PmtDt = None
 
 	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
+
+	@property
 	def EntitldAmt(self):
 		return self._EntitldAmt
 
@@ -86,6 +60,32 @@ class CashOption106(base_types._BaseFieldType):
 	def EntitldAmt(self):
 		del self._EntitldAmt
 		self._EntitldAmt = None
+
+	@property
+	def WhldgTaxAmt(self):
+		return self._WhldgTaxAmt
+
+	@WhldgTaxAmt.setter
+	def WhldgTaxAmt(self, value):
+		self._WhldgTaxAmt = value if type(value) != auto else self.make_default("WhldgTaxAmt")
+
+	@WhldgTaxAmt.deleter
+	def WhldgTaxAmt(self):
+		del self._WhldgTaxAmt
+		self._WhldgTaxAmt = None
+
+	@property
+	def CshAcctId(self):
+		return self._CshAcctId
+
+	@CshAcctId.setter
+	def CshAcctId(self, value):
+		self._CshAcctId = value if type(value) != auto else self.make_default("CshAcctId")
+
+	@CshAcctId.deleter
+	def CshAcctId(self):
+		del self._CshAcctId
+		self._CshAcctId = None
 
 	@property
 	def EarlstPmtDt(self):
@@ -114,27 +114,27 @@ class CashOption106(base_types._BaseFieldType):
 		self._WhldgTaxRate = None
 
 	@property
-	def GrssCshAmt(self):
-		return self._GrssCshAmt
+	def NetCshAmt(self):
+		return self._NetCshAmt
 
-	@GrssCshAmt.setter
-	def GrssCshAmt(self, value):
-		self._GrssCshAmt = value if type(value) != auto else self.make_default("GrssCshAmt")
+	@NetCshAmt.setter
+	def NetCshAmt(self, value):
+		self._NetCshAmt = value if type(value) != auto else self.make_default("NetCshAmt")
 
-	@GrssCshAmt.deleter
-	def GrssCshAmt(self):
-		del self._GrssCshAmt
-		self._GrssCshAmt = None
+	@NetCshAmt.deleter
+	def NetCshAmt(self):
+		del self._NetCshAmt
+		self._NetCshAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='WhldgTaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetCshAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctId', type=CashAccountIdentification9Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrssCshAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtDt', type=DateFormat43Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EntitldAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WhldgTaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctId', type=CashAccountIdentification9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EarlstPmtDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WhldgTaxRate', type=RateAndAmountFormat55Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GrssCshAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetCshAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

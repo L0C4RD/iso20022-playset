@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PaymentCodeOrOther1Choice
 import AmountOrPercentage2Choice
 

@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import PaymentSearch10
-import SystemSearch5
 import CashAccountEntrySearch8
+import SystemSearch5
 
 class TransactionSearchCriteria11(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctNtrySch", "_PmtFr", "_PmtTo", "_PmtSch"]
+	__slots__ = ["_PmtSch", "_PmtFr", "_PmtTo", "_AcctNtrySch"]
 	@property
-	def AcctNtrySch(self):
-		return self._AcctNtrySch
+	def PmtSch(self):
+		return self._PmtSch
 
-	@AcctNtrySch.setter
-	def AcctNtrySch(self, value):
-		self._AcctNtrySch = value if type(value) != auto else self.make_default("AcctNtrySch")
+	@PmtSch.setter
+	def PmtSch(self, value):
+		self._PmtSch = value if type(value) != auto else self.make_default("PmtSch")
 
-	@AcctNtrySch.deleter
-	def AcctNtrySch(self):
-		del self._AcctNtrySch
-		self._AcctNtrySch = None
+	@PmtSch.deleter
+	def PmtSch(self):
+		del self._PmtSch
+		self._PmtSch = None
 
 	@property
 	def PmtFr(self):
@@ -46,22 +46,22 @@ class TransactionSearchCriteria11(base_types._BaseFieldType):
 		self._PmtTo = None
 
 	@property
-	def PmtSch(self):
-		return self._PmtSch
+	def AcctNtrySch(self):
+		return self._AcctNtrySch
 
-	@PmtSch.setter
-	def PmtSch(self, value):
-		self._PmtSch = value if type(value) != auto else self.make_default("PmtSch")
+	@AcctNtrySch.setter
+	def AcctNtrySch(self, value):
+		self._AcctNtrySch = value if type(value) != auto else self.make_default("AcctNtrySch")
 
-	@PmtSch.deleter
-	def PmtSch(self):
-		del self._PmtSch
-		self._PmtSch = None
+	@AcctNtrySch.deleter
+	def AcctNtrySch(self):
+		del self._AcctNtrySch
+		self._AcctNtrySch = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctNtrySch', type=CashAccountEntrySearch8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtSch', type=PaymentSearch10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtFr', type=SystemSearch5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PmtTo', type=SystemSearch5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PmtSch', type=PaymentSearch10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctNtrySch', type=CashAccountEntrySearch8, min=0, max=1, mutex_group=None, array=False),
 	))
 

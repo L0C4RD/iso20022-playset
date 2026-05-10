@@ -1,11 +1,11 @@
-import base_types
-import PledgeeTypeAndAnyBICIdentifier2
+from . import base_types
 import GenericIdentification80
+import PledgeeTypeAndAnyBICIdentifier2
 import PledgeeTypeAndText1
 
 class PledgeeFormat5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Id", "_TpAndId"]
+	__slots__ = ["_Prtry", "_TpAndId", "_Id"]
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -20,19 +20,6 @@ class PledgeeFormat5Choice(base_types._BaseFieldType):
 		self._Prtry = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def TpAndId(self):
 		return self._TpAndId
 
@@ -45,9 +32,22 @@ class PledgeeFormat5Choice(base_types._BaseFieldType):
 		del self._TpAndId
 		self._TpAndId = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification80, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Id', type=PledgeeTypeAndText1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TpAndId', type=PledgeeTypeAndAnyBICIdentifier2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Id', type=PledgeeTypeAndText1, min=0, max=1, mutex_group=1, array=False),
 	))
 

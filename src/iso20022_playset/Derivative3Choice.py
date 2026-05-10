@@ -1,28 +1,15 @@
-import base_types
-import EquityDerivative2
-import ContractForDifference2
-import CommodityDerivative4
-import EmissionAllowanceProductType1Code
-import InterestRateDerivative5
-import CreditDefaultSwapsDerivative4Choice
+from . import base_types
 import ForeignExchangeDerivative2
+import CommodityDerivative4
+import ContractForDifference2
+import EmissionAllowanceProductType1Code
+import EquityDerivative2
+import CreditDefaultSwapsDerivative4Choice
+import InterestRateDerivative5
 
 class Derivative3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrstRate", "_FX", "_Cdt", "_Cmmdty", "_EmssnAllwnc", "_CtrctForDiff", "_Eqty"]
-	@property
-	def IntrstRate(self):
-		return self._IntrstRate
-
-	@IntrstRate.setter
-	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != auto else self.make_default("IntrstRate")
-
-	@IntrstRate.deleter
-	def IntrstRate(self):
-		del self._IntrstRate
-		self._IntrstRate = None
-
+	__slots__ = ["_FX", "_Cdt", "_EmssnAllwnc", "_CtrctForDiff", "_Cmmdty", "_IntrstRate", "_Eqty"]
 	@property
 	def FX(self):
 		return self._FX
@@ -48,19 +35,6 @@ class Derivative3Choice(base_types._BaseFieldType):
 	def Cdt(self):
 		del self._Cdt
 		self._Cdt = None
-
-	@property
-	def Cmmdty(self):
-		return self._Cmmdty
-
-	@Cmmdty.setter
-	def Cmmdty(self, value):
-		self._Cmmdty = value if type(value) != auto else self.make_default("Cmmdty")
-
-	@Cmmdty.deleter
-	def Cmmdty(self):
-		del self._Cmmdty
-		self._Cmmdty = None
 
 	@property
 	def EmssnAllwnc(self):
@@ -89,6 +63,32 @@ class Derivative3Choice(base_types._BaseFieldType):
 		self._CtrctForDiff = None
 
 	@property
+	def Cmmdty(self):
+		return self._Cmmdty
+
+	@Cmmdty.setter
+	def Cmmdty(self, value):
+		self._Cmmdty = value if type(value) != auto else self.make_default("Cmmdty")
+
+	@Cmmdty.deleter
+	def Cmmdty(self):
+		del self._Cmmdty
+		self._Cmmdty = None
+
+	@property
+	def IntrstRate(self):
+		return self._IntrstRate
+
+	@IntrstRate.setter
+	def IntrstRate(self, value):
+		self._IntrstRate = value if type(value) != auto else self.make_default("IntrstRate")
+
+	@IntrstRate.deleter
+	def IntrstRate(self):
+		del self._IntrstRate
+		self._IntrstRate = None
+
+	@property
 	def Eqty(self):
 		return self._Eqty
 
@@ -102,12 +102,12 @@ class Derivative3Choice(base_types._BaseFieldType):
 		self._Eqty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntrstRate', type=InterestRateDerivative5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FX', type=ForeignExchangeDerivative2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cdt', type=CreditDefaultSwapsDerivative4Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cmmdty', type=CommodityDerivative4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='EmssnAllwnc', type=EmissionAllowanceProductType1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CtrctForDiff', type=ContractForDifference2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cmmdty', type=CommodityDerivative4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IntrstRate', type=InterestRateDerivative5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Eqty', type=EquityDerivative2, min=0, max=1, mutex_group=1, array=False),
 	))
 

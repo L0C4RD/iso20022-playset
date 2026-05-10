@@ -1,39 +1,13 @@
-import base_types
-import Max35Text
+from . import base_types
 import ExternalAuthenticationMethod1Code
-import Max70Text
-import Authority1
 import ISOYearMonth
+import Authority1
+import Max35Text
+import Max70Text
 
 class Credentials3(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_Assgnr", "_OthrTp", "_SubTp", "_Tp", "_XpryDt"]
-	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
-
-	@property
-	def Assgnr(self):
-		return self._Assgnr
-
-	@Assgnr.setter
-	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
-
-	@Assgnr.deleter
-	def Assgnr(self):
-		del self._Assgnr
-		self._Assgnr = None
-
+	__slots__ = ["_OthrTp", "_SubTp", "_XpryDt", "_Assgnr", "_Val", "_Tp"]
 	@property
 	def OthrTp(self):
 		return self._OthrTp
@@ -61,19 +35,6 @@ class Credentials3(base_types._BaseFieldType):
 		self._SubTp = None
 
 	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
 	def XpryDt(self):
 		return self._XpryDt
 
@@ -86,12 +47,51 @@ class Credentials3(base_types._BaseFieldType):
 		del self._XpryDt
 		self._XpryDt = None
 
+	@property
+	def Assgnr(self):
+		return self._Assgnr
+
+	@Assgnr.setter
+	def Assgnr(self, value):
+		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
+
+	@Assgnr.deleter
+	def Assgnr(self):
+		del self._Assgnr
+		self._Assgnr = None
+
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Val', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnr', type=Authority1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ExternalAuthenticationMethod1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnr', type=Authority1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ExternalAuthenticationMethod1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

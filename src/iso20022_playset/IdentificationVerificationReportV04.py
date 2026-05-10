@@ -1,6 +1,6 @@
-import base_types
-import IdentificationAssignment4
+from . import base_types
 import MessageIdentification8
+import IdentificationAssignment4
 import SupplementaryData1
 import VerificationReport5
 

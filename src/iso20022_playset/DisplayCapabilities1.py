@@ -1,23 +1,10 @@
-import base_types
-import Max3NumericText
+from . import base_types
 import UserInterface2Code
+import Max3NumericText
 
 class DisplayCapabilities1(base_types._BaseFieldType):
 
-	__slots__ = ["_LineWidth", "_NbOfLines", "_DispTp"]
-	@property
-	def LineWidth(self):
-		return self._LineWidth
-
-	@LineWidth.setter
-	def LineWidth(self, value):
-		self._LineWidth = value if type(value) != auto else self.make_default("LineWidth")
-
-	@LineWidth.deleter
-	def LineWidth(self):
-		del self._LineWidth
-		self._LineWidth = None
-
+	__slots__ = ["_NbOfLines", "_DispTp", "_LineWidth"]
 	@property
 	def NbOfLines(self):
 		return self._NbOfLines
@@ -44,9 +31,22 @@ class DisplayCapabilities1(base_types._BaseFieldType):
 		del self._DispTp
 		self._DispTp = None
 
+	@property
+	def LineWidth(self):
+		return self._LineWidth
+
+	@LineWidth.setter
+	def LineWidth(self, value):
+		self._LineWidth = value if type(value) != auto else self.make_default("LineWidth")
+
+	@LineWidth.deleter
+	def LineWidth(self):
+		del self._LineWidth
+		self._LineWidth = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LineWidth', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfLines', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DispTp', type=UserInterface2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LineWidth', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

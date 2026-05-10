@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BICIdentification1
 
 class RequiredSubmission2(base_types._BaseFieldType):

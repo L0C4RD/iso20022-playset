@@ -1,6 +1,6 @@
-import base_types
-import DocumentNumber6Choice
+from . import base_types
 import RestrictedFINXMax16Text
+import DocumentNumber6Choice
 
 class GenericDocumentIdentification5(base_types._BaseFieldType):
 

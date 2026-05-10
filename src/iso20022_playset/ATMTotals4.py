@@ -1,12 +1,12 @@
-import base_types
-import ATMMediaType4Code
-import ImpliedCurrencyAndAmount
+from . import base_types
 import Number
 import ActiveCurrencyCode
+import ATMMediaType4Code
+import ImpliedCurrencyAndAmount
 
 class ATMTotals4(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMBalNb", "_ATMCurNb", "_ATMBal", "_Ccy", "_ATMCur", "_MdiaTp"]
+	__slots__ = ["_ATMBalNb", "_ATMCurNb", "_ATMCur", "_ATMBal", "_MdiaTp", "_Ccy"]
 	@property
 	def ATMBalNb(self):
 		return self._ATMBalNb
@@ -34,32 +34,6 @@ class ATMTotals4(base_types._BaseFieldType):
 		self._ATMCurNb = None
 
 	@property
-	def ATMBal(self):
-		return self._ATMBal
-
-	@ATMBal.setter
-	def ATMBal(self, value):
-		self._ATMBal = value if type(value) != auto else self.make_default("ATMBal")
-
-	@ATMBal.deleter
-	def ATMBal(self):
-		del self._ATMBal
-		self._ATMBal = None
-
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
 	def ATMCur(self):
 		return self._ATMCur
 
@@ -71,6 +45,19 @@ class ATMTotals4(base_types._BaseFieldType):
 	def ATMCur(self):
 		del self._ATMCur
 		self._ATMCur = None
+
+	@property
+	def ATMBal(self):
+		return self._ATMBal
+
+	@ATMBal.setter
+	def ATMBal(self, value):
+		self._ATMBal = value if type(value) != auto else self.make_default("ATMBal")
+
+	@ATMBal.deleter
+	def ATMBal(self):
+		del self._ATMBal
+		self._ATMBal = None
 
 	@property
 	def MdiaTp(self):
@@ -85,12 +72,25 @@ class ATMTotals4(base_types._BaseFieldType):
 		del self._MdiaTp
 		self._MdiaTp = None
 
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMBalNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMCurNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMBal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMCur', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMBal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MdiaTp', type=ATMMediaType4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

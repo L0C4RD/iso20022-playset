@@ -1,13 +1,26 @@
-import base_types
-import Pagination1
-import Max100Text
-import OrganisationIdentification15Choice
+from . import base_types
 import ISODate
 import Number
+import Max100Text
+import OrganisationIdentification15Choice
+import Pagination1
 
 class TradeReportHeader4(base_types._BaseFieldType):
 
-	__slots__ = ["_NbRcrds", "_CmptntAuthrty", "_MsgPgntn", "_NewTradRpstryIdr", "_RptExctnDt", "_RptgPurp"]
+	__slots__ = ["_RptExctnDt", "_NbRcrds", "_CmptntAuthrty", "_NewTradRpstryIdr", "_RptgPurp", "_MsgPgntn"]
+	@property
+	def RptExctnDt(self):
+		return self._RptExctnDt
+
+	@RptExctnDt.setter
+	def RptExctnDt(self, value):
+		self._RptExctnDt = value if type(value) != auto else self.make_default("RptExctnDt")
+
+	@RptExctnDt.deleter
+	def RptExctnDt(self):
+		del self._RptExctnDt
+		self._RptExctnDt = None
+
 	@property
 	def NbRcrds(self):
 		return self._NbRcrds
@@ -35,19 +48,6 @@ class TradeReportHeader4(base_types._BaseFieldType):
 		self._CmptntAuthrty = None
 
 	@property
-	def MsgPgntn(self):
-		return self._MsgPgntn
-
-	@MsgPgntn.setter
-	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
-
-	@MsgPgntn.deleter
-	def MsgPgntn(self):
-		del self._MsgPgntn
-		self._MsgPgntn = None
-
-	@property
 	def NewTradRpstryIdr(self):
 		return self._NewTradRpstryIdr
 
@@ -59,19 +59,6 @@ class TradeReportHeader4(base_types._BaseFieldType):
 	def NewTradRpstryIdr(self):
 		del self._NewTradRpstryIdr
 		self._NewTradRpstryIdr = None
-
-	@property
-	def RptExctnDt(self):
-		return self._RptExctnDt
-
-	@RptExctnDt.setter
-	def RptExctnDt(self, value):
-		self._RptExctnDt = value if type(value) != auto else self.make_default("RptExctnDt")
-
-	@RptExctnDt.deleter
-	def RptExctnDt(self):
-		del self._RptExctnDt
-		self._RptExctnDt = None
 
 	@property
 	def RptgPurp(self):
@@ -86,12 +73,25 @@ class TradeReportHeader4(base_types._BaseFieldType):
 		del self._RptgPurp
 		self._RptgPurp = None
 
+	@property
+	def MsgPgntn(self):
+		return self._MsgPgntn
+
+	@MsgPgntn.setter
+	def MsgPgntn(self, value):
+		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
+
+	@MsgPgntn.deleter
+	def MsgPgntn(self):
+		del self._MsgPgntn
+		self._MsgPgntn = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RptExctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbRcrds', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmptntAuthrty', type=Max100Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewTradRpstryIdr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptExctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgPurp', type=Max100Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 	))
 

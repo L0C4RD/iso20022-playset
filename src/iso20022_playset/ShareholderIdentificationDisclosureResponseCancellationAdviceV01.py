@@ -1,24 +1,24 @@
-import base_types
-import Max35Text
+from . import base_types
+import DisclosureRequestIdentification1
 import SupplementaryData1
 import PartyIdentification215
-import DisclosureRequestIdentification1
+import Max35Text
 
 class ShareholderIdentificationDisclosureResponseCancellationAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_DsclsrRspnId", "_RspndgIntrmy", "_SplmtryData", "_IssrDsclsrReqRef"]
+	__slots__ = ["_SplmtryData", "_RspndgIntrmy", "_DsclsrRspnId", "_IssrDsclsrReqRef"]
 	@property
-	def DsclsrRspnId(self):
-		return self._DsclsrRspnId
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@DsclsrRspnId.setter
-	def DsclsrRspnId(self, value):
-		self._DsclsrRspnId = value if type(value) != auto else self.make_default("DsclsrRspnId")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@DsclsrRspnId.deleter
-	def DsclsrRspnId(self):
-		del self._DsclsrRspnId
-		self._DsclsrRspnId = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def RspndgIntrmy(self):
@@ -34,17 +34,17 @@ class ShareholderIdentificationDisclosureResponseCancellationAdviceV01(base_type
 		self._RspndgIntrmy = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def DsclsrRspnId(self):
+		return self._DsclsrRspnId
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@DsclsrRspnId.setter
+	def DsclsrRspnId(self, value):
+		self._DsclsrRspnId = value if type(value) != auto else self.make_default("DsclsrRspnId")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@DsclsrRspnId.deleter
+	def DsclsrRspnId(self):
+		del self._DsclsrRspnId
+		self._DsclsrRspnId = None
 
 	@property
 	def IssrDsclsrReqRef(self):
@@ -60,9 +60,9 @@ class ShareholderIdentificationDisclosureResponseCancellationAdviceV01(base_type
 		self._IssrDsclsrReqRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DsclsrRspnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspndgIntrmy', type=PartyIdentification215, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RspndgIntrmy', type=PartyIdentification215, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DsclsrRspnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrDsclsrReqRef', type=DisclosureRequestIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

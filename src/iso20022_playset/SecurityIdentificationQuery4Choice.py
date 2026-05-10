@@ -1,27 +1,14 @@
-import base_types
+from . import base_types
 import NotAvailable1Code
 import SecurityIdentification20Choice
-import BasketQuery1
-import ISINOct2015Identifier
 import Max52Text
+import ISINOct2015Identifier
+import BasketQuery1
 import NotReported1Code
 
 class SecurityIdentificationQuery4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ISIN", "_NotRptd", "_Indx", "_UnqPdctIdr", "_AltrntvInstrmId", "_NotAvlbl", "_Bskt"]
-	@property
-	def ISIN(self):
-		return self._ISIN
-
-	@ISIN.setter
-	def ISIN(self, value):
-		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
-
-	@ISIN.deleter
-	def ISIN(self):
-		del self._ISIN
-		self._ISIN = None
-
+	__slots__ = ["_NotRptd", "_UnqPdctIdr", "_Indx", "_Bskt", "_ISIN", "_NotAvlbl", "_AltrntvInstrmId"]
 	@property
 	def NotRptd(self):
 		return self._NotRptd
@@ -34,19 +21,6 @@ class SecurityIdentificationQuery4Choice(base_types._BaseFieldType):
 	def NotRptd(self):
 		del self._NotRptd
 		self._NotRptd = None
-
-	@property
-	def Indx(self):
-		return self._Indx
-
-	@Indx.setter
-	def Indx(self, value):
-		self._Indx = value if type(value) != auto else self.make_default("Indx")
-
-	@Indx.deleter
-	def Indx(self):
-		del self._Indx
-		self._Indx = None
 
 	@property
 	def UnqPdctIdr(self):
@@ -62,17 +36,43 @@ class SecurityIdentificationQuery4Choice(base_types._BaseFieldType):
 		self._UnqPdctIdr = None
 
 	@property
-	def AltrntvInstrmId(self):
-		return self._AltrntvInstrmId
+	def Indx(self):
+		return self._Indx
 
-	@AltrntvInstrmId.setter
-	def AltrntvInstrmId(self, value):
-		self._AltrntvInstrmId = value if type(value) != auto else self.make_default("AltrntvInstrmId")
+	@Indx.setter
+	def Indx(self, value):
+		self._Indx = value if type(value) != auto else self.make_default("Indx")
 
-	@AltrntvInstrmId.deleter
-	def AltrntvInstrmId(self):
-		del self._AltrntvInstrmId
-		self._AltrntvInstrmId = None
+	@Indx.deleter
+	def Indx(self):
+		del self._Indx
+		self._Indx = None
+
+	@property
+	def Bskt(self):
+		return self._Bskt
+
+	@Bskt.setter
+	def Bskt(self, value):
+		self._Bskt = value if type(value) != auto else self.make_default("Bskt")
+
+	@Bskt.deleter
+	def Bskt(self):
+		del self._Bskt
+		self._Bskt = None
+
+	@property
+	def ISIN(self):
+		return self._ISIN
+
+	@ISIN.setter
+	def ISIN(self, value):
+		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
+
+	@ISIN.deleter
+	def ISIN(self):
+		del self._ISIN
+		self._ISIN = None
 
 	@property
 	def NotAvlbl(self):
@@ -88,25 +88,25 @@ class SecurityIdentificationQuery4Choice(base_types._BaseFieldType):
 		self._NotAvlbl = None
 
 	@property
-	def Bskt(self):
-		return self._Bskt
+	def AltrntvInstrmId(self):
+		return self._AltrntvInstrmId
 
-	@Bskt.setter
-	def Bskt(self, value):
-		self._Bskt = value if type(value) != auto else self.make_default("Bskt")
+	@AltrntvInstrmId.setter
+	def AltrntvInstrmId(self, value):
+		self._AltrntvInstrmId = value if type(value) != auto else self.make_default("AltrntvInstrmId")
 
-	@Bskt.deleter
-	def Bskt(self):
-		del self._Bskt
-		self._Bskt = None
+	@AltrntvInstrmId.deleter
+	def AltrntvInstrmId(self):
+		del self._AltrntvInstrmId
+		self._AltrntvInstrmId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Indx', type=SecurityIdentification20Choice, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='UnqPdctIdr', type=Max52Text, min=1, max=None, mutex_group=1, array=True),
-		base_types.FieldEntry(name='AltrntvInstrmId', type=Max52Text, min=1, max=None, mutex_group=1, array=True),
-		base_types.FieldEntry(name='NotAvlbl', type=NotAvailable1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Indx', type=SecurityIdentification20Choice, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Bskt', type=BasketQuery1, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='NotAvlbl', type=NotAvailable1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AltrntvInstrmId', type=Max52Text, min=1, max=None, mutex_group=1, array=True),
 	))
 

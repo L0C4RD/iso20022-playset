@@ -1,37 +1,11 @@
-import base_types
+from . import base_types
+import PendingStatus74Choice
 import NoSpecifiedReason1
 import ProprietaryStatusAndReason6
-import PendingStatus74Choice
 
 class EventProcessingStatus7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtrySts", "_Pdg", "_Rcncld", "_Cmplt"]
-	@property
-	def PrtrySts(self):
-		return self._PrtrySts
-
-	@PrtrySts.setter
-	def PrtrySts(self, value):
-		self._PrtrySts = value if type(value) != auto else self.make_default("PrtrySts")
-
-	@PrtrySts.deleter
-	def PrtrySts(self):
-		del self._PrtrySts
-		self._PrtrySts = None
-
-	@property
-	def Pdg(self):
-		return self._Pdg
-
-	@Pdg.setter
-	def Pdg(self, value):
-		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
-
-	@Pdg.deleter
-	def Pdg(self):
-		del self._Pdg
-		self._Pdg = None
-
+	__slots__ = ["_Rcncld", "_PrtrySts", "_Cmplt", "_Pdg"]
 	@property
 	def Rcncld(self):
 		return self._Rcncld
@@ -46,6 +20,19 @@ class EventProcessingStatus7Choice(base_types._BaseFieldType):
 		self._Rcncld = None
 
 	@property
+	def PrtrySts(self):
+		return self._PrtrySts
+
+	@PrtrySts.setter
+	def PrtrySts(self, value):
+		self._PrtrySts = value if type(value) != auto else self.make_default("PrtrySts")
+
+	@PrtrySts.deleter
+	def PrtrySts(self):
+		del self._PrtrySts
+		self._PrtrySts = None
+
+	@property
 	def Cmplt(self):
 		return self._Cmplt
 
@@ -58,10 +45,23 @@ class EventProcessingStatus7Choice(base_types._BaseFieldType):
 		del self._Cmplt
 		self._Cmplt = None
 
+	@property
+	def Pdg(self):
+		return self._Pdg
+
+	@Pdg.setter
+	def Pdg(self, value):
+		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
+
+	@Pdg.deleter
+	def Pdg(self):
+		del self._Pdg
+		self._Pdg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pdg', type=PendingStatus74Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rcncld', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cmplt', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pdg', type=PendingStatus74Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

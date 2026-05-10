@@ -1,22 +1,9 @@
-import base_types
+from . import base_types
 import ISOTime
 
 class SettlementTimeRequest2(base_types._BaseFieldType):
 
-	__slots__ = ["_CLSTm", "_FrTm", "_RjctTm", "_TillTm"]
-	@property
-	def CLSTm(self):
-		return self._CLSTm
-
-	@CLSTm.setter
-	def CLSTm(self, value):
-		self._CLSTm = value if type(value) != auto else self.make_default("CLSTm")
-
-	@CLSTm.deleter
-	def CLSTm(self):
-		del self._CLSTm
-		self._CLSTm = None
-
+	__slots__ = ["_FrTm", "_RjctTm", "_TillTm", "_CLSTm"]
 	@property
 	def FrTm(self):
 		return self._FrTm
@@ -56,10 +43,23 @@ class SettlementTimeRequest2(base_types._BaseFieldType):
 		del self._TillTm
 		self._TillTm = None
 
+	@property
+	def CLSTm(self):
+		return self._CLSTm
+
+	@CLSTm.setter
+	def CLSTm(self, value):
+		self._CLSTm = value if type(value) != auto else self.make_default("CLSTm")
+
+	@CLSTm.deleter
+	def CLSTm(self):
+		del self._CLSTm
+		self._CLSTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CLSTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TillTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CLSTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

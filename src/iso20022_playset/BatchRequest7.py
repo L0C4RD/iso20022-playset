@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import TransactionIdentifier1
-import TrueFalseIndicator
 import TransactionToPerform7Choice
+import TrueFalseIndicator
 
 class BatchRequest7(base_types._BaseFieldType):
 
-	__slots__ = ["_RmvAllFlg", "_SaleBtchId", "_TxToPrfrm"]
+	__slots__ = ["_TxToPrfrm", "_SaleBtchId", "_RmvAllFlg"]
 	@property
-	def RmvAllFlg(self):
-		return self._RmvAllFlg
+	def TxToPrfrm(self):
+		return self._TxToPrfrm
 
-	@RmvAllFlg.setter
-	def RmvAllFlg(self, value):
-		self._RmvAllFlg = value if type(value) != auto else self.make_default("RmvAllFlg")
+	@TxToPrfrm.setter
+	def TxToPrfrm(self, value):
+		self._TxToPrfrm = value if type(value) != auto else self.make_default("TxToPrfrm")
 
-	@RmvAllFlg.deleter
-	def RmvAllFlg(self):
-		del self._RmvAllFlg
-		self._RmvAllFlg = None
+	@TxToPrfrm.deleter
+	def TxToPrfrm(self):
+		del self._TxToPrfrm
+		self._TxToPrfrm = None
 
 	@property
 	def SaleBtchId(self):
@@ -33,21 +33,21 @@ class BatchRequest7(base_types._BaseFieldType):
 		self._SaleBtchId = None
 
 	@property
-	def TxToPrfrm(self):
-		return self._TxToPrfrm
+	def RmvAllFlg(self):
+		return self._RmvAllFlg
 
-	@TxToPrfrm.setter
-	def TxToPrfrm(self, value):
-		self._TxToPrfrm = value if type(value) != auto else self.make_default("TxToPrfrm")
+	@RmvAllFlg.setter
+	def RmvAllFlg(self, value):
+		self._RmvAllFlg = value if type(value) != auto else self.make_default("RmvAllFlg")
 
-	@TxToPrfrm.deleter
-	def TxToPrfrm(self):
-		del self._TxToPrfrm
-		self._TxToPrfrm = None
+	@RmvAllFlg.deleter
+	def RmvAllFlg(self):
+		del self._RmvAllFlg
+		self._RmvAllFlg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RmvAllFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleBtchId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxToPrfrm', type=TransactionToPerform7Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SaleBtchId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmvAllFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BatchTransferInitiationV03
 
 class CAAD_003_001_03():

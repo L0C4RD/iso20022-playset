@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import LiquidityCreditTransferV07
 
 class CAMT_050_001_07():

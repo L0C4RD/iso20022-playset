@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import PercentageRate
+import Max35Text
 
 class RateType4Choice(base_types._BaseFieldType):
 

@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
+import OtherAsset2Choice
 import Max35Text
 import AdditionalInformation15
-import OtherAsset2Choice
 
 class OtherAsset2(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_OthrId", "_OthrAsstTp", "_AddtlInf", "_Nm", "_Id"]
+	__slots__ = ["_OthrAsstTp", "_OthrId", "_Id", "_Desc", "_Nm", "_AddtlInf"]
 	@property
-	def Desc(self):
-		return self._Desc
+	def OthrAsstTp(self):
+		return self._OthrAsstTp
 
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+	@OthrAsstTp.setter
+	def OthrAsstTp(self, value):
+		self._OthrAsstTp = value if type(value) != auto else self.make_default("OthrAsstTp")
 
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
+	@OthrAsstTp.deleter
+	def OthrAsstTp(self):
+		del self._OthrAsstTp
+		self._OthrAsstTp = None
 
 	@property
 	def OthrId(self):
@@ -33,30 +33,30 @@ class OtherAsset2(base_types._BaseFieldType):
 		self._OthrId = None
 
 	@property
-	def OthrAsstTp(self):
-		return self._OthrAsstTp
+	def Id(self):
+		return self._Id
 
-	@OthrAsstTp.setter
-	def OthrAsstTp(self, value):
-		self._OthrAsstTp = value if type(value) != auto else self.make_default("OthrAsstTp")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@OthrAsstTp.deleter
-	def OthrAsstTp(self):
-		del self._OthrAsstTp
-		self._OthrAsstTp = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def Desc(self):
+		return self._Desc
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
 
 	@property
 	def Nm(self):
@@ -72,24 +72,24 @@ class OtherAsset2(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Desc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrId', type=Max35Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrAsstTp', type=OtherAsset2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrId', type=Max35Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 	))
 

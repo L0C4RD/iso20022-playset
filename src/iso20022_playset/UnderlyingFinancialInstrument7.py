@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialInstrumentAttributes124
 import SecurityIdentification19
 

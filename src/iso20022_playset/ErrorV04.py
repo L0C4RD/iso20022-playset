@@ -1,62 +1,36 @@
-import base_types
-import Jurisdiction2
-import PartyIdentification286
-import ProtectedData2
-import ISODateTime
-import Header71
-import AdditionalFee3
-import Reconciliation4
-import Exact12Text
-import Max12NumericText
-import SupplementaryData1
-import Exact15Text
-import SettlementService6
-import Max100KBinary
-import ContentInformationType41
+from . import base_types
 import ErrorDetails3
+import Jurisdiction2
+import AdditionalFee3
+import ISODateTime
+import SettlementService6
+import Exact15Text
+import ProtectedData2
+import PartyIdentification286
+import Max100KBinary
+import SupplementaryData1
+import Reconciliation4
+import ContentInformationType41
+import Max12NumericText
+import Header71
 import AdditionalData2
+import Exact12Text
 
 class ErrorV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Sndr", "_SttlmSvc", "_SysTracAudtNb", "_ErrDtl", "_Rcvr", "_OrgnlMsg", "_Rcncltn", "_Dstn", "_AddtlData", "_Jursdctn", "_LifeCyclId", "_RtrvlRefNb", "_SctyTrlr", "_Hdr", "_TrnsmssnDtTm", "_AddtlFee", "_PrtctdData", "_SplmtryData", "_Orgtr"]
+	__slots__ = ["_Hdr", "_ErrDtl", "_Dstn", "_PrtctdData", "_SysTracAudtNb", "_Rcvr", "_Jursdctn", "_Sndr", "_RtrvlRefNb", "_TrnsmssnDtTm", "_AddtlFee", "_Rcncltn", "_SplmtryData", "_OrgnlMsg", "_AddtlData", "_SttlmSvc", "_LifeCyclId", "_Orgtr", "_SctyTrlr"]
 	@property
-	def Sndr(self):
-		return self._Sndr
+	def Hdr(self):
+		return self._Hdr
 
-	@Sndr.setter
-	def Sndr(self, value):
-		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
 
-	@Sndr.deleter
-	def Sndr(self):
-		del self._Sndr
-		self._Sndr = None
-
-	@property
-	def SttlmSvc(self):
-		return self._SttlmSvc
-
-	@SttlmSvc.setter
-	def SttlmSvc(self, value):
-		self._SttlmSvc = value if type(value) != auto else self.make_default("SttlmSvc")
-
-	@SttlmSvc.deleter
-	def SttlmSvc(self):
-		del self._SttlmSvc
-		self._SttlmSvc = None
-
-	@property
-	def SysTracAudtNb(self):
-		return self._SysTracAudtNb
-
-	@SysTracAudtNb.setter
-	def SysTracAudtNb(self, value):
-		self._SysTracAudtNb = value if type(value) != auto else self.make_default("SysTracAudtNb")
-
-	@SysTracAudtNb.deleter
-	def SysTracAudtNb(self):
-		del self._SysTracAudtNb
-		self._SysTracAudtNb = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def ErrDtl(self):
@@ -72,45 +46,6 @@ class ErrorV04(base_types._BaseFieldType):
 		self._ErrDtl = None
 
 	@property
-	def Rcvr(self):
-		return self._Rcvr
-
-	@Rcvr.setter
-	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != auto else self.make_default("Rcvr")
-
-	@Rcvr.deleter
-	def Rcvr(self):
-		del self._Rcvr
-		self._Rcvr = None
-
-	@property
-	def OrgnlMsg(self):
-		return self._OrgnlMsg
-
-	@OrgnlMsg.setter
-	def OrgnlMsg(self, value):
-		self._OrgnlMsg = value if type(value) != auto else self.make_default("OrgnlMsg")
-
-	@OrgnlMsg.deleter
-	def OrgnlMsg(self):
-		del self._OrgnlMsg
-		self._OrgnlMsg = None
-
-	@property
-	def Rcncltn(self):
-		return self._Rcncltn
-
-	@Rcncltn.setter
-	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != auto else self.make_default("Rcncltn")
-
-	@Rcncltn.deleter
-	def Rcncltn(self):
-		del self._Rcncltn
-		self._Rcncltn = None
-
-	@property
 	def Dstn(self):
 		return self._Dstn
 
@@ -124,17 +59,43 @@ class ErrorV04(base_types._BaseFieldType):
 		self._Dstn = None
 
 	@property
-	def AddtlData(self):
-		return self._AddtlData
+	def PrtctdData(self):
+		return self._PrtctdData
 
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+	@PrtctdData.setter
+	def PrtctdData(self, value):
+		self._PrtctdData = value if type(value) != auto else self.make_default("PrtctdData")
 
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
+	@PrtctdData.deleter
+	def PrtctdData(self):
+		del self._PrtctdData
+		self._PrtctdData = None
+
+	@property
+	def SysTracAudtNb(self):
+		return self._SysTracAudtNb
+
+	@SysTracAudtNb.setter
+	def SysTracAudtNb(self, value):
+		self._SysTracAudtNb = value if type(value) != auto else self.make_default("SysTracAudtNb")
+
+	@SysTracAudtNb.deleter
+	def SysTracAudtNb(self):
+		del self._SysTracAudtNb
+		self._SysTracAudtNb = None
+
+	@property
+	def Rcvr(self):
+		return self._Rcvr
+
+	@Rcvr.setter
+	def Rcvr(self, value):
+		self._Rcvr = value if type(value) != auto else self.make_default("Rcvr")
+
+	@Rcvr.deleter
+	def Rcvr(self):
+		del self._Rcvr
+		self._Rcvr = None
 
 	@property
 	def Jursdctn(self):
@@ -150,17 +111,17 @@ class ErrorV04(base_types._BaseFieldType):
 		self._Jursdctn = None
 
 	@property
-	def LifeCyclId(self):
-		return self._LifeCyclId
+	def Sndr(self):
+		return self._Sndr
 
-	@LifeCyclId.setter
-	def LifeCyclId(self, value):
-		self._LifeCyclId = value if type(value) != auto else self.make_default("LifeCyclId")
+	@Sndr.setter
+	def Sndr(self, value):
+		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
 
-	@LifeCyclId.deleter
-	def LifeCyclId(self):
-		del self._LifeCyclId
-		self._LifeCyclId = None
+	@Sndr.deleter
+	def Sndr(self):
+		del self._Sndr
+		self._Sndr = None
 
 	@property
 	def RtrvlRefNb(self):
@@ -174,32 +135,6 @@ class ErrorV04(base_types._BaseFieldType):
 	def RtrvlRefNb(self):
 		del self._RtrvlRefNb
 		self._RtrvlRefNb = None
-
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
 
 	@property
 	def TrnsmssnDtTm(self):
@@ -228,17 +163,17 @@ class ErrorV04(base_types._BaseFieldType):
 		self._AddtlFee = None
 
 	@property
-	def PrtctdData(self):
-		return self._PrtctdData
+	def Rcncltn(self):
+		return self._Rcncltn
 
-	@PrtctdData.setter
-	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != auto else self.make_default("PrtctdData")
+	@Rcncltn.setter
+	def Rcncltn(self, value):
+		self._Rcncltn = value if type(value) != auto else self.make_default("Rcncltn")
 
-	@PrtctdData.deleter
-	def PrtctdData(self):
-		del self._PrtctdData
-		self._PrtctdData = None
+	@Rcncltn.deleter
+	def Rcncltn(self):
+		del self._Rcncltn
+		self._Rcncltn = None
 
 	@property
 	def SplmtryData(self):
@@ -254,6 +189,58 @@ class ErrorV04(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def OrgnlMsg(self):
+		return self._OrgnlMsg
+
+	@OrgnlMsg.setter
+	def OrgnlMsg(self, value):
+		self._OrgnlMsg = value if type(value) != auto else self.make_default("OrgnlMsg")
+
+	@OrgnlMsg.deleter
+	def OrgnlMsg(self):
+		del self._OrgnlMsg
+		self._OrgnlMsg = None
+
+	@property
+	def AddtlData(self):
+		return self._AddtlData
+
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
+
+	@property
+	def SttlmSvc(self):
+		return self._SttlmSvc
+
+	@SttlmSvc.setter
+	def SttlmSvc(self, value):
+		self._SttlmSvc = value if type(value) != auto else self.make_default("SttlmSvc")
+
+	@SttlmSvc.deleter
+	def SttlmSvc(self):
+		del self._SttlmSvc
+		self._SttlmSvc = None
+
+	@property
+	def LifeCyclId(self):
+		return self._LifeCyclId
+
+	@LifeCyclId.setter
+	def LifeCyclId(self, value):
+		self._LifeCyclId = value if type(value) != auto else self.make_default("LifeCyclId")
+
+	@LifeCyclId.deleter
+	def LifeCyclId(self):
+		del self._LifeCyclId
+		self._LifeCyclId = None
+
+	@property
 	def Orgtr(self):
 		return self._Orgtr
 
@@ -266,25 +253,38 @@ class ErrorV04(base_types._BaseFieldType):
 		del self._Orgtr
 		self._Orgtr = None
 
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sndr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmSvc', type=SettlementService6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysTracAudtNb', type=Max12NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ErrDtl', type=ErrorDetails3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rcvr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlMsg', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcncltn', type=Reconciliation4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dstn', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Jursdctn', type=Jurisdiction2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType41, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header71, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ErrDtl', type=ErrorDetails3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Dstn', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SysTracAudtNb', type=Max12NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcvr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Jursdctn', type=Jurisdiction2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sndr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrnsmssnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlFee', type=AdditionalFee3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rcncltn', type=Reconciliation4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlMsg', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmSvc', type=SettlementService6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Orgtr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType41, min=0, max=1, mutex_group=None, array=False),
 	))
 

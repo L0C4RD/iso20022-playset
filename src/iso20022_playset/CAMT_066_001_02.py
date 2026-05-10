@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import IntraBalanceMovementInstructionV02
 
 class CAMT_066_001_02():

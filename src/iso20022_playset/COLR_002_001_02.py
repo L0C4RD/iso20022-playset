@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CollateralValueReportV02
 
 class COLR_002_001_02():

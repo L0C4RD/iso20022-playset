@@ -1,6 +1,6 @@
-import base_types
-import RejectedElement1
+from . import base_types
 import Reason2
+import RejectedElement1
 
 class RejectionReason1Choice(base_types._BaseFieldType):
 

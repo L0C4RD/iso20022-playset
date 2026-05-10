@@ -1,13 +1,26 @@
-import base_types
-import Max35Text
-import CreditDebitCode
-import SecuritiesBalanceType6FormatChoice
-import FormOfSecurity1Code
+from . import base_types
 import PartyIdentification2Choice
+import CreditDebitCode
+import FormOfSecurity1Code
+import SecuritiesBalanceType6FormatChoice
+import Max35Text
 
 class SecuritiesAccount12(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyHldgForm", "_AcctId", "_CdtDbtInd", "_BalTp", "_AcctOwnrId"]
+	__slots__ = ["_AcctOwnrId", "_SctyHldgForm", "_CdtDbtInd", "_AcctId", "_BalTp"]
+	@property
+	def AcctOwnrId(self):
+		return self._AcctOwnrId
+
+	@AcctOwnrId.setter
+	def AcctOwnrId(self, value):
+		self._AcctOwnrId = value if type(value) != auto else self.make_default("AcctOwnrId")
+
+	@AcctOwnrId.deleter
+	def AcctOwnrId(self):
+		del self._AcctOwnrId
+		self._AcctOwnrId = None
+
 	@property
 	def SctyHldgForm(self):
 		return self._SctyHldgForm
@@ -20,19 +33,6 @@ class SecuritiesAccount12(base_types._BaseFieldType):
 	def SctyHldgForm(self):
 		del self._SctyHldgForm
 		self._SctyHldgForm = None
-
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
 
 	@property
 	def CdtDbtInd(self):
@@ -48,6 +48,19 @@ class SecuritiesAccount12(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
+	@property
 	def BalTp(self):
 		return self._BalTp
 
@@ -60,24 +73,11 @@ class SecuritiesAccount12(base_types._BaseFieldType):
 		del self._BalTp
 		self._BalTp = None
 
-	@property
-	def AcctOwnrId(self):
-		return self._AcctOwnrId
-
-	@AcctOwnrId.setter
-	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != auto else self.make_default("AcctOwnrId")
-
-	@AcctOwnrId.deleter
-	def AcctOwnrId(self):
-		del self._AcctOwnrId
-		self._AcctOwnrId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyHldgForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalTp', type=SecuritiesBalanceType6FormatChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyHldgForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTp', type=SecuritiesBalanceType6FormatChoice, min=0, max=1, mutex_group=None, array=False),
 	))
 

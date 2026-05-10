@@ -1,29 +1,16 @@
-import base_types
-import CopyInformation5
-import MarketPracticeVersion1
+from . import base_types
 import MessageIdentification1
-import AdditionalReference11
 import TransferReference16
-import TransferInFunction2Code
 import Max35Text
 import AdditionalReference10
+import CopyInformation5
+import MarketPracticeVersion1
+import TransferInFunction2Code
+import AdditionalReference11
 
 class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 
-	__slots__ = ["_Fctn", "_RvslRefs", "_CpyDtls", "_MstrRef", "_PrvsRef", "_MktPrctcVrsn", "_PoolRef", "_RltdRef", "_MsgId"]
-	@property
-	def Fctn(self):
-		return self._Fctn
-
-	@Fctn.setter
-	def Fctn(self, value):
-		self._Fctn = value if type(value) != auto else self.make_default("Fctn")
-
-	@Fctn.deleter
-	def Fctn(self):
-		del self._Fctn
-		self._Fctn = None
-
+	__slots__ = ["_RvslRefs", "_MktPrctcVrsn", "_RltdRef", "_MstrRef", "_MsgId", "_PoolRef", "_PrvsRef", "_CpyDtls", "_Fctn"]
 	@property
 	def RvslRefs(self):
 		return self._RvslRefs
@@ -36,45 +23,6 @@ class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 	def RvslRefs(self):
 		del self._RvslRefs
 		self._RvslRefs = None
-
-	@property
-	def CpyDtls(self):
-		return self._CpyDtls
-
-	@CpyDtls.setter
-	def CpyDtls(self, value):
-		self._CpyDtls = value if type(value) != auto else self.make_default("CpyDtls")
-
-	@CpyDtls.deleter
-	def CpyDtls(self):
-		del self._CpyDtls
-		self._CpyDtls = None
-
-	@property
-	def MstrRef(self):
-		return self._MstrRef
-
-	@MstrRef.setter
-	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
-
-	@MstrRef.deleter
-	def MstrRef(self):
-		del self._MstrRef
-		self._MstrRef = None
-
-	@property
-	def PrvsRef(self):
-		return self._PrvsRef
-
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
-
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
 
 	@property
 	def MktPrctcVrsn(self):
@@ -90,19 +38,6 @@ class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 		self._MktPrctcVrsn = None
 
 	@property
-	def PoolRef(self):
-		return self._PoolRef
-
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
-
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
-
-	@property
 	def RltdRef(self):
 		return self._RltdRef
 
@@ -114,6 +49,19 @@ class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 	def RltdRef(self):
 		del self._RltdRef
 		self._RltdRef = None
+
+	@property
+	def MstrRef(self):
+		return self._MstrRef
+
+	@MstrRef.setter
+	def MstrRef(self, value):
+		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
+
+	@MstrRef.deleter
+	def MstrRef(self):
+		del self._MstrRef
+		self._MstrRef = None
 
 	@property
 	def MsgId(self):
@@ -128,15 +76,67 @@ class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 		del self._MsgId
 		self._MsgId = None
 
+	@property
+	def PoolRef(self):
+		return self._PoolRef
+
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
+
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
+
+	@property
+	def PrvsRef(self):
+		return self._PrvsRef
+
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
+
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
+
+	@property
+	def CpyDtls(self):
+		return self._CpyDtls
+
+	@CpyDtls.setter
+	def CpyDtls(self, value):
+		self._CpyDtls = value if type(value) != auto else self.make_default("CpyDtls")
+
+	@CpyDtls.deleter
+	def CpyDtls(self):
+		del self._CpyDtls
+		self._CpyDtls = None
+
+	@property
+	def Fctn(self):
+		return self._Fctn
+
+	@Fctn.setter
+	def Fctn(self, value):
+		self._Fctn = value if type(value) != auto else self.make_default("Fctn")
+
+	@Fctn.deleter
+	def Fctn(self):
+		del self._Fctn
+		self._Fctn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Fctn', type=TransferInFunction2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RvslRefs', type=TransferReference16, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CpyDtls', type=CopyInformation5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpyDtls', type=CopyInformation5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fctn', type=TransferInFunction2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

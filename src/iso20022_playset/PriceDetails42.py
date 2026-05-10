@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
+import PriceFormat90Choice
 import PriceFormat88Choice
 import PriceFormat89Choice
-import PriceFormat90Choice
 
 class PriceDetails42(base_types._BaseFieldType):
 
-	__slots__ = ["_GncCshPricRcvdPerPdct", "_CshInLieuOfShrPric", "_GncCshPricPdPerPdct"]
-	@property
-	def GncCshPricRcvdPerPdct(self):
-		return self._GncCshPricRcvdPerPdct
-
-	@GncCshPricRcvdPerPdct.setter
-	def GncCshPricRcvdPerPdct(self, value):
-		self._GncCshPricRcvdPerPdct = value if type(value) != auto else self.make_default("GncCshPricRcvdPerPdct")
-
-	@GncCshPricRcvdPerPdct.deleter
-	def GncCshPricRcvdPerPdct(self):
-		del self._GncCshPricRcvdPerPdct
-		self._GncCshPricRcvdPerPdct = None
-
+	__slots__ = ["_CshInLieuOfShrPric", "_GncCshPricRcvdPerPdct", "_GncCshPricPdPerPdct"]
 	@property
 	def CshInLieuOfShrPric(self):
 		return self._CshInLieuOfShrPric
@@ -31,6 +18,19 @@ class PriceDetails42(base_types._BaseFieldType):
 	def CshInLieuOfShrPric(self):
 		del self._CshInLieuOfShrPric
 		self._CshInLieuOfShrPric = None
+
+	@property
+	def GncCshPricRcvdPerPdct(self):
+		return self._GncCshPricRcvdPerPdct
+
+	@GncCshPricRcvdPerPdct.setter
+	def GncCshPricRcvdPerPdct(self, value):
+		self._GncCshPricRcvdPerPdct = value if type(value) != auto else self.make_default("GncCshPricRcvdPerPdct")
+
+	@GncCshPricRcvdPerPdct.deleter
+	def GncCshPricRcvdPerPdct(self):
+		del self._GncCshPricRcvdPerPdct
+		self._GncCshPricRcvdPerPdct = None
 
 	@property
 	def GncCshPricPdPerPdct(self):
@@ -46,8 +46,8 @@ class PriceDetails42(base_types._BaseFieldType):
 		self._GncCshPricPdPerPdct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GncCshPricRcvdPerPdct', type=PriceFormat90Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat88Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GncCshPricRcvdPerPdct', type=PriceFormat90Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat89Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

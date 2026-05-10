@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SaleToPOIAdministrativeResponseV07
 
 class CASP_008_001_07():

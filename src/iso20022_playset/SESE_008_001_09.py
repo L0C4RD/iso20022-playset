@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReversalOfTransferInConfirmationV09
 
 class SESE_008_001_09():

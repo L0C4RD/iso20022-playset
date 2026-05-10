@@ -1,38 +1,12 @@
-import base_types
-import Max35Text
-import DocumentIdentification28
+from . import base_types
 import ISODate
 import Max1025Text
+import DocumentIdentification28
+import Max35Text
 
 class RegisteredContractAmendment1(base_types._BaseFieldType):
 
-	__slots__ = ["_StartDt", "_AmdmntRsn", "_AddtlInf", "_AmdmntDt", "_Doc"]
-	@property
-	def StartDt(self):
-		return self._StartDt
-
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
-
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
-
-	@property
-	def AmdmntRsn(self):
-		return self._AmdmntRsn
-
-	@AmdmntRsn.setter
-	def AmdmntRsn(self, value):
-		self._AmdmntRsn = value if type(value) != auto else self.make_default("AmdmntRsn")
-
-	@AmdmntRsn.deleter
-	def AmdmntRsn(self):
-		del self._AmdmntRsn
-		self._AmdmntRsn = None
-
+	__slots__ = ["_AddtlInf", "_AmdmntDt", "_AmdmntRsn", "_StartDt", "_Doc"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -60,6 +34,32 @@ class RegisteredContractAmendment1(base_types._BaseFieldType):
 		self._AmdmntDt = None
 
 	@property
+	def AmdmntRsn(self):
+		return self._AmdmntRsn
+
+	@AmdmntRsn.setter
+	def AmdmntRsn(self, value):
+		self._AmdmntRsn = value if type(value) != auto else self.make_default("AmdmntRsn")
+
+	@AmdmntRsn.deleter
+	def AmdmntRsn(self):
+		del self._AmdmntRsn
+		self._AmdmntRsn = None
+
+	@property
+	def StartDt(self):
+		return self._StartDt
+
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
+
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
+
+	@property
 	def Doc(self):
 		return self._Doc
 
@@ -73,10 +73,10 @@ class RegisteredContractAmendment1(base_types._BaseFieldType):
 		self._Doc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmdmntRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmdmntDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmdmntRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Doc', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
 	))
 

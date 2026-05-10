@@ -1,39 +1,39 @@
-import base_types
-import Max35Text
+from . import base_types
+import SecuritiesBalanceType9FormatChoice
+import PartyIdentification2Choice
 import NationalityCode
 import CreditDebitCode
 import FormOfSecurity1Code
-import PartyIdentification2Choice
-import SecuritiesBalanceType9FormatChoice
+import Max35Text
 
 class SecuritiesAccount10(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrNtlty", "_AcctId", "_SctyHldgForm", "_CdtDbtInd", "_AcctOwnrId", "_BalTp"]
+	__slots__ = ["_BalTp", "_AcctOwnrId", "_SctyHldgForm", "_CdtDbtInd", "_AcctId", "_AcctOwnrNtlty"]
 	@property
-	def AcctOwnrNtlty(self):
-		return self._AcctOwnrNtlty
+	def BalTp(self):
+		return self._BalTp
 
-	@AcctOwnrNtlty.setter
-	def AcctOwnrNtlty(self, value):
-		self._AcctOwnrNtlty = value if type(value) != auto else self.make_default("AcctOwnrNtlty")
+	@BalTp.setter
+	def BalTp(self, value):
+		self._BalTp = value if type(value) != auto else self.make_default("BalTp")
 
-	@AcctOwnrNtlty.deleter
-	def AcctOwnrNtlty(self):
-		del self._AcctOwnrNtlty
-		self._AcctOwnrNtlty = None
+	@BalTp.deleter
+	def BalTp(self):
+		del self._BalTp
+		self._BalTp = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
+	def AcctOwnrId(self):
+		return self._AcctOwnrId
 
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+	@AcctOwnrId.setter
+	def AcctOwnrId(self, value):
+		self._AcctOwnrId = value if type(value) != auto else self.make_default("AcctOwnrId")
 
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
+	@AcctOwnrId.deleter
+	def AcctOwnrId(self):
+		del self._AcctOwnrId
+		self._AcctOwnrId = None
 
 	@property
 	def SctyHldgForm(self):
@@ -62,37 +62,37 @@ class SecuritiesAccount10(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
-	def AcctOwnrId(self):
-		return self._AcctOwnrId
+	def AcctId(self):
+		return self._AcctId
 
-	@AcctOwnrId.setter
-	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != auto else self.make_default("AcctOwnrId")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
 
-	@AcctOwnrId.deleter
-	def AcctOwnrId(self):
-		del self._AcctOwnrId
-		self._AcctOwnrId = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
-	def BalTp(self):
-		return self._BalTp
+	def AcctOwnrNtlty(self):
+		return self._AcctOwnrNtlty
 
-	@BalTp.setter
-	def BalTp(self, value):
-		self._BalTp = value if type(value) != auto else self.make_default("BalTp")
+	@AcctOwnrNtlty.setter
+	def AcctOwnrNtlty(self, value):
+		self._AcctOwnrNtlty = value if type(value) != auto else self.make_default("AcctOwnrNtlty")
 
-	@BalTp.deleter
-	def BalTp(self):
-		del self._BalTp
-		self._BalTp = None
+	@AcctOwnrNtlty.deleter
+	def AcctOwnrNtlty(self):
+		del self._AcctOwnrNtlty
+		self._AcctOwnrNtlty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnrNtlty', type=NationalityCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTp', type=SecuritiesBalanceType9FormatChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyHldgForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalTp', type=SecuritiesBalanceType9FormatChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrNtlty', type=NationalityCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

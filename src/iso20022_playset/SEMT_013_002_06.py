@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import IntraPositionMovementInstruction002V06
 
 class SEMT_013_002_06():

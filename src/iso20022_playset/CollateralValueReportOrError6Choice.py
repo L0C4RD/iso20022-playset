@@ -1,6 +1,6 @@
-import base_types
-import CollateralValuePosition3
+from . import base_types
 import ErrorHandling5
+import CollateralValuePosition3
 
 class CollateralValueReportOrError6Choice(base_types._BaseFieldType):
 

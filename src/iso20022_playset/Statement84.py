@@ -1,13 +1,13 @@
-import base_types
+from . import base_types
+import StatementType6Choice
 import DateAndPeriod3Choice
 import StatementBasis9Choice
 import UpdateType16Choice
 import Frequency26Choice
-import StatementType6Choice
 
 class Statement84(base_types._BaseFieldType):
 
-	__slots__ = ["_Frqcy", "_StmtTp", "_StmtDtOrPrd", "_StmtBsis", "_UpdTp"]
+	__slots__ = ["_Frqcy", "_StmtBsis", "_StmtTp", "_StmtDtOrPrd", "_UpdTp"]
 	@property
 	def Frqcy(self):
 		return self._Frqcy
@@ -20,6 +20,19 @@ class Statement84(base_types._BaseFieldType):
 	def Frqcy(self):
 		del self._Frqcy
 		self._Frqcy = None
+
+	@property
+	def StmtBsis(self):
+		return self._StmtBsis
+
+	@StmtBsis.setter
+	def StmtBsis(self, value):
+		self._StmtBsis = value if type(value) != auto else self.make_default("StmtBsis")
+
+	@StmtBsis.deleter
+	def StmtBsis(self):
+		del self._StmtBsis
+		self._StmtBsis = None
 
 	@property
 	def StmtTp(self):
@@ -48,19 +61,6 @@ class Statement84(base_types._BaseFieldType):
 		self._StmtDtOrPrd = None
 
 	@property
-	def StmtBsis(self):
-		return self._StmtBsis
-
-	@StmtBsis.setter
-	def StmtBsis(self, value):
-		self._StmtBsis = value if type(value) != auto else self.make_default("StmtBsis")
-
-	@StmtBsis.deleter
-	def StmtBsis(self):
-		del self._StmtBsis
-		self._StmtBsis = None
-
-	@property
 	def UpdTp(self):
 		return self._UpdTp
 
@@ -75,9 +75,9 @@ class Statement84(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Frqcy', type=Frequency26Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtBsis', type=StatementBasis9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtTp', type=StatementType6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtDtOrPrd', type=DateAndPeriod3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtBsis', type=StatementBasis9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

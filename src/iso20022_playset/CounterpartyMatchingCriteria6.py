@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import CompareOrganisationIdentification6
 import CompareLegDirection2
 import CompareOrganisationIdentification7
 
 class CounterpartyMatchingCriteria6(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrCtrPty", "_DrctnOrSd", "_RptgCtrPty"]
-	@property
-	def OthrCtrPty(self):
-		return self._OthrCtrPty
-
-	@OthrCtrPty.setter
-	def OthrCtrPty(self, value):
-		self._OthrCtrPty = value if type(value) != auto else self.make_default("OthrCtrPty")
-
-	@OthrCtrPty.deleter
-	def OthrCtrPty(self):
-		del self._OthrCtrPty
-		self._OthrCtrPty = None
-
+	__slots__ = ["_DrctnOrSd", "_RptgCtrPty", "_OthrCtrPty"]
 	@property
 	def DrctnOrSd(self):
 		return self._DrctnOrSd
@@ -45,9 +32,22 @@ class CounterpartyMatchingCriteria6(base_types._BaseFieldType):
 		del self._RptgCtrPty
 		self._RptgCtrPty = None
 
+	@property
+	def OthrCtrPty(self):
+		return self._OthrCtrPty
+
+	@OthrCtrPty.setter
+	def OthrCtrPty(self, value):
+		self._OthrCtrPty = value if type(value) != auto else self.make_default("OthrCtrPty")
+
+	@OthrCtrPty.deleter
+	def OthrCtrPty(self):
+		del self._OthrCtrPty
+		self._OthrCtrPty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrCtrPty', type=CompareOrganisationIdentification7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrctnOrSd', type=CompareLegDirection2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=CompareOrganisationIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrCtrPty', type=CompareOrganisationIdentification7, min=0, max=1, mutex_group=None, array=False),
 	))
 

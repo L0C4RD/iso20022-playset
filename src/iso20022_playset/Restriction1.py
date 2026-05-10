@@ -1,10 +1,23 @@
-import base_types
-import ISODateTime
+from . import base_types
 import CodeOrProprietary1Choice
+import ISODateTime
 
 class Restriction1(base_types._BaseFieldType):
 
-	__slots__ = ["_VldFr", "_VldUntil", "_RstrctnTp"]
+	__slots__ = ["_RstrctnTp", "_VldFr", "_VldUntil"]
+	@property
+	def RstrctnTp(self):
+		return self._RstrctnTp
+
+	@RstrctnTp.setter
+	def RstrctnTp(self, value):
+		self._RstrctnTp = value if type(value) != auto else self.make_default("RstrctnTp")
+
+	@RstrctnTp.deleter
+	def RstrctnTp(self):
+		del self._RstrctnTp
+		self._RstrctnTp = None
+
 	@property
 	def VldFr(self):
 		return self._VldFr
@@ -31,22 +44,9 @@ class Restriction1(base_types._BaseFieldType):
 		del self._VldUntil
 		self._VldUntil = None
 
-	@property
-	def RstrctnTp(self):
-		return self._RstrctnTp
-
-	@RstrctnTp.setter
-	def RstrctnTp(self, value):
-		self._RstrctnTp = value if type(value) != auto else self.make_default("RstrctnTp")
-
-	@RstrctnTp.deleter
-	def RstrctnTp(self):
-		del self._RstrctnTp
-		self._RstrctnTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RstrctnTp', type=CodeOrProprietary1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldFr', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldUntil', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RstrctnTp', type=CodeOrProprietary1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

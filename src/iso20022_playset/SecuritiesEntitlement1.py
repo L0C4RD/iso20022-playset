@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import UnitOrFaceAmount1Choice
 import SecurityIdentification7
 
 class SecuritiesEntitlement1(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyId", "_EntitldSctiesQty"]
-	@property
-	def SctyId(self):
-		return self._SctyId
-
-	@SctyId.setter
-	def SctyId(self, value):
-		self._SctyId = value if type(value) != auto else self.make_default("SctyId")
-
-	@SctyId.deleter
-	def SctyId(self):
-		del self._SctyId
-		self._SctyId = None
-
+	__slots__ = ["_EntitldSctiesQty", "_SctyId"]
 	@property
 	def EntitldSctiesQty(self):
 		return self._EntitldSctiesQty
@@ -31,8 +18,21 @@ class SecuritiesEntitlement1(base_types._BaseFieldType):
 		del self._EntitldSctiesQty
 		self._EntitldSctiesQty = None
 
+	@property
+	def SctyId(self):
+		return self._SctyId
+
+	@SctyId.setter
+	def SctyId(self, value):
+		self._SctyId = value if type(value) != auto else self.make_default("SctyId")
+
+	@SctyId.deleter
+	def SctyId(self):
+		del self._SctyId
+		self._SctyId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EntitldSctiesQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
 	))
 

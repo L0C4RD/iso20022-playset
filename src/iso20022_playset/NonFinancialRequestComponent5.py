@@ -1,25 +1,12 @@
-import base_types
-import PaymentContext30
+from . import base_types
 import CardPaymentEnvironment81
 import SupplementaryData1
 import NonFinancialRequestContentComponent5
+import PaymentContext30
 
 class NonFinancialRequestComponent5(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_SplmtryData", "_NonFinReqCntt"]
-	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
-
+	__slots__ = ["_Cntxt", "_NonFinReqCntt", "_SplmtryData", "_Envt"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt
@@ -32,6 +19,19 @@ class NonFinancialRequestComponent5(base_types._BaseFieldType):
 	def Cntxt(self):
 		del self._Cntxt
 		self._Cntxt = None
+
+	@property
+	def NonFinReqCntt(self):
+		return self._NonFinReqCntt
+
+	@NonFinReqCntt.setter
+	def NonFinReqCntt(self, value):
+		self._NonFinReqCntt = value if type(value) != auto else self.make_default("NonFinReqCntt")
+
+	@NonFinReqCntt.deleter
+	def NonFinReqCntt(self):
+		del self._NonFinReqCntt
+		self._NonFinReqCntt = None
 
 	@property
 	def SplmtryData(self):
@@ -47,22 +47,22 @@ class NonFinancialRequestComponent5(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def NonFinReqCntt(self):
-		return self._NonFinReqCntt
+	def Envt(self):
+		return self._Envt
 
-	@NonFinReqCntt.setter
-	def NonFinReqCntt(self, value):
-		self._NonFinReqCntt = value if type(value) != auto else self.make_default("NonFinReqCntt")
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
 
-	@NonFinReqCntt.deleter
-	def NonFinReqCntt(self):
-		del self._NonFinReqCntt
-		self._NonFinReqCntt = None
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NonFinReqCntt', type=NonFinancialRequestContentComponent5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 	))
 

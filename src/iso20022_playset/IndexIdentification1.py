@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import Max350Text
-import ISINOct2015Identifier
 import ExternalBenchmarkCurveName1Code
+import ISINOct2015Identifier
 
 class IndexIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Indx", "_Nm", "_ISIN"]
-	@property
-	def Indx(self):
-		return self._Indx
-
-	@Indx.setter
-	def Indx(self, value):
-		self._Indx = value if type(value) != auto else self.make_default("Indx")
-
-	@Indx.deleter
-	def Indx(self):
-		del self._Indx
-		self._Indx = None
-
+	__slots__ = ["_Nm", "_ISIN", "_Indx"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -45,9 +32,22 @@ class IndexIdentification1(base_types._BaseFieldType):
 		del self._ISIN
 		self._ISIN = None
 
+	@property
+	def Indx(self):
+		return self._Indx
+
+	@Indx.setter
+	def Indx(self, value):
+		self._Indx = value if type(value) != auto else self.make_default("Indx")
+
+	@Indx.deleter
+	def Indx(self):
+		del self._Indx
+		self._Indx = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Indx', type=ExternalBenchmarkCurveName1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Indx', type=ExternalBenchmarkCurveName1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

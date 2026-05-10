@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import ISODate
 import YesNoIndicator
 
 class MoneyPurchaseAnnualAllowance1(base_types._BaseFieldType):
 
-	__slots__ = ["_TrggrdDt", "_Trggrd"]
-	@property
-	def TrggrdDt(self):
-		return self._TrggrdDt
-
-	@TrggrdDt.setter
-	def TrggrdDt(self, value):
-		self._TrggrdDt = value if type(value) != auto else self.make_default("TrggrdDt")
-
-	@TrggrdDt.deleter
-	def TrggrdDt(self):
-		del self._TrggrdDt
-		self._TrggrdDt = None
-
+	__slots__ = ["_Trggrd", "_TrggrdDt"]
 	@property
 	def Trggrd(self):
 		return self._Trggrd
@@ -31,8 +18,21 @@ class MoneyPurchaseAnnualAllowance1(base_types._BaseFieldType):
 		del self._Trggrd
 		self._Trggrd = None
 
+	@property
+	def TrggrdDt(self):
+		return self._TrggrdDt
+
+	@TrggrdDt.setter
+	def TrggrdDt(self, value):
+		self._TrggrdDt = value if type(value) != auto else self.make_default("TrggrdDt")
+
+	@TrggrdDt.deleter
+	def TrggrdDt(self):
+		del self._TrggrdDt
+		self._TrggrdDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrggrdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trggrd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrggrdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

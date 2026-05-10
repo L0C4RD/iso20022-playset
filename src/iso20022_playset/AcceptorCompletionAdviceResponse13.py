@@ -1,12 +1,25 @@
-import base_types
-import TMSTrigger1
-import CardPaymentEnvironment81
+from . import base_types
 import CardPaymentTransactionAdviceResponse8
+import CardPaymentEnvironment81
 import SupplementaryData1
+import TMSTrigger1
 
 class AcceptorCompletionAdviceResponse13(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_Envt", "_SplmtryData", "_TMSTrggr"]
+	__slots__ = ["_SplmtryData", "_Tx", "_Envt", "_TMSTrggr"]
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	@property
 	def Tx(self):
 		return self._Tx
@@ -34,19 +47,6 @@ class AcceptorCompletionAdviceResponse13(base_types._BaseFieldType):
 		self._Envt = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def TMSTrggr(self):
 		return self._TMSTrggr
 
@@ -60,9 +60,9 @@ class AcceptorCompletionAdviceResponse13(base_types._BaseFieldType):
 		self._TMSTrggr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransactionAdviceResponse8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TMSTrggr', type=TMSTrigger1, min=0, max=1, mutex_group=None, array=False),
 	))
 

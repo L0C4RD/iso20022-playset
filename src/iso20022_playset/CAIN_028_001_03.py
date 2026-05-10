@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ChargeBackResponseV03
 
 class CAIN_028_001_03():

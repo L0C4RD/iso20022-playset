@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialInstrumentReportingReferenceDataDeltaReportV03
 
 class AUTH_036_001_03():

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AcceptorAuthorisationRequestV14
 
 class CAAA_001_001_14():

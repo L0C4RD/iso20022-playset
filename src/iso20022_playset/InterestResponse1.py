@@ -1,24 +1,24 @@
-import base_types
+from . import base_types
+import RejectionReason21FormatChoice
 import Max140Text
 import Max35Text
-import RejectionReason21FormatChoice
 import Status4Code
 
 class InterestResponse1(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctnRsnInf", "_RjctnRsn", "_RspnTp", "_IntrstPmtReqId"]
+	__slots__ = ["_RspnTp", "_RjctnRsn", "_IntrstPmtReqId", "_RjctnRsnInf"]
 	@property
-	def RjctnRsnInf(self):
-		return self._RjctnRsnInf
+	def RspnTp(self):
+		return self._RspnTp
 
-	@RjctnRsnInf.setter
-	def RjctnRsnInf(self, value):
-		self._RjctnRsnInf = value if type(value) != auto else self.make_default("RjctnRsnInf")
+	@RspnTp.setter
+	def RspnTp(self, value):
+		self._RspnTp = value if type(value) != auto else self.make_default("RspnTp")
 
-	@RjctnRsnInf.deleter
-	def RjctnRsnInf(self):
-		del self._RjctnRsnInf
-		self._RjctnRsnInf = None
+	@RspnTp.deleter
+	def RspnTp(self):
+		del self._RspnTp
+		self._RspnTp = None
 
 	@property
 	def RjctnRsn(self):
@@ -34,19 +34,6 @@ class InterestResponse1(base_types._BaseFieldType):
 		self._RjctnRsn = None
 
 	@property
-	def RspnTp(self):
-		return self._RspnTp
-
-	@RspnTp.setter
-	def RspnTp(self, value):
-		self._RspnTp = value if type(value) != auto else self.make_default("RspnTp")
-
-	@RspnTp.deleter
-	def RspnTp(self):
-		del self._RspnTp
-		self._RspnTp = None
-
-	@property
 	def IntrstPmtReqId(self):
 		return self._IntrstPmtReqId
 
@@ -59,10 +46,23 @@ class InterestResponse1(base_types._BaseFieldType):
 		del self._IntrstPmtReqId
 		self._IntrstPmtReqId = None
 
+	@property
+	def RjctnRsnInf(self):
+		return self._RjctnRsnInf
+
+	@RjctnRsnInf.setter
+	def RjctnRsnInf(self, value):
+		self._RjctnRsnInf = value if type(value) != auto else self.make_default("RjctnRsnInf")
+
+	@RjctnRsnInf.deleter
+	def RjctnRsnInf(self):
+		del self._RjctnRsnInf
+		self._RjctnRsnInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RjctnRsnInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason21FormatChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnTp', type=Status4Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason21FormatChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstPmtReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnRsnInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

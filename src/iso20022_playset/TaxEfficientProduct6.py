@@ -1,25 +1,25 @@
-import base_types
-import TaxEfficientProductType2Choice
-import AdditionalInformation15
-import PreviousYear4
+from . import base_types
 import YesNoIndicator
 import SubscriptionInformation2
+import TaxEfficientProductType2Choice
+import PreviousYear4
+import AdditionalInformation15
 
 class TaxEfficientProduct6(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsYrs", "_TaxEffcntPdctTp", "_AddtlInf", "_CurYr", "_CurYrSbcptDtls", "_CshCmpntInd"]
+	__slots__ = ["_CurYrSbcptDtls", "_TaxEffcntPdctTp", "_CshCmpntInd", "_CurYr", "_AddtlInf", "_PrvsYrs"]
 	@property
-	def PrvsYrs(self):
-		return self._PrvsYrs
+	def CurYrSbcptDtls(self):
+		return self._CurYrSbcptDtls
 
-	@PrvsYrs.setter
-	def PrvsYrs(self, value):
-		self._PrvsYrs = value if type(value) != auto else self.make_default("PrvsYrs")
+	@CurYrSbcptDtls.setter
+	def CurYrSbcptDtls(self, value):
+		self._CurYrSbcptDtls = value if type(value) != auto else self.make_default("CurYrSbcptDtls")
 
-	@PrvsYrs.deleter
-	def PrvsYrs(self):
-		del self._PrvsYrs
-		self._PrvsYrs = None
+	@CurYrSbcptDtls.deleter
+	def CurYrSbcptDtls(self):
+		del self._CurYrSbcptDtls
+		self._CurYrSbcptDtls = None
 
 	@property
 	def TaxEffcntPdctTp(self):
@@ -35,17 +35,17 @@ class TaxEfficientProduct6(base_types._BaseFieldType):
 		self._TaxEffcntPdctTp = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def CshCmpntInd(self):
+		return self._CshCmpntInd
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@CshCmpntInd.setter
+	def CshCmpntInd(self, value):
+		self._CshCmpntInd = value if type(value) != auto else self.make_default("CshCmpntInd")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@CshCmpntInd.deleter
+	def CshCmpntInd(self):
+		del self._CshCmpntInd
+		self._CshCmpntInd = None
 
 	@property
 	def CurYr(self):
@@ -61,37 +61,37 @@ class TaxEfficientProduct6(base_types._BaseFieldType):
 		self._CurYr = None
 
 	@property
-	def CurYrSbcptDtls(self):
-		return self._CurYrSbcptDtls
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@CurYrSbcptDtls.setter
-	def CurYrSbcptDtls(self, value):
-		self._CurYrSbcptDtls = value if type(value) != auto else self.make_default("CurYrSbcptDtls")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@CurYrSbcptDtls.deleter
-	def CurYrSbcptDtls(self):
-		del self._CurYrSbcptDtls
-		self._CurYrSbcptDtls = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
-	def CshCmpntInd(self):
-		return self._CshCmpntInd
+	def PrvsYrs(self):
+		return self._PrvsYrs
 
-	@CshCmpntInd.setter
-	def CshCmpntInd(self, value):
-		self._CshCmpntInd = value if type(value) != auto else self.make_default("CshCmpntInd")
+	@PrvsYrs.setter
+	def PrvsYrs(self, value):
+		self._PrvsYrs = value if type(value) != auto else self.make_default("PrvsYrs")
 
-	@CshCmpntInd.deleter
-	def CshCmpntInd(self):
-		del self._CshCmpntInd
-		self._CshCmpntInd = None
+	@PrvsYrs.deleter
+	def PrvsYrs(self):
+		del self._PrvsYrs
+		self._PrvsYrs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrvsYrs', type=PreviousYear4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxEffcntPdctTp', type=TaxEfficientProductType2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CurYr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurYrSbcptDtls', type=SubscriptionInformation2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxEffcntPdctTp', type=TaxEfficientProductType2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshCmpntInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurYr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrvsYrs', type=PreviousYear4, min=0, max=1, mutex_group=None, array=False),
 	))
 

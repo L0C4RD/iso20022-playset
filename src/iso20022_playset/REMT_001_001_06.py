@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RemittanceAdviceV06
 
 class REMT_001_001_06():

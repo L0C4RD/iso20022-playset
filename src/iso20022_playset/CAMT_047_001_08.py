@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReturnReservationV08
 
 class CAMT_047_001_08():

@@ -1,14 +1,14 @@
-import base_types
-import Max8000Text
-import QRCodeEncodingMode1Code
+from . import base_types
 import Max16Text
 import BarcodeType1Code
-import QRCodeErrorCorrection1Code
+import QRCodeEncodingMode1Code
 import Max3000Binary
+import Max8000Text
+import QRCodeErrorCorrection1Code
 
 class OutputBarcode2(base_types._BaseFieldType):
 
-	__slots__ = ["_QRCdVrsn", "_QRCdErrCrrctn", "_QRCdNcodgMd", "_QRCdBinryVal", "_BrcdTp", "_BrcdVal"]
+	__slots__ = ["_QRCdVrsn", "_BrcdTp", "_BrcdVal", "_QRCdNcodgMd", "_QRCdErrCrrctn", "_QRCdBinryVal"]
 	@property
 	def QRCdVrsn(self):
 		return self._QRCdVrsn
@@ -21,45 +21,6 @@ class OutputBarcode2(base_types._BaseFieldType):
 	def QRCdVrsn(self):
 		del self._QRCdVrsn
 		self._QRCdVrsn = None
-
-	@property
-	def QRCdErrCrrctn(self):
-		return self._QRCdErrCrrctn
-
-	@QRCdErrCrrctn.setter
-	def QRCdErrCrrctn(self, value):
-		self._QRCdErrCrrctn = value if type(value) != auto else self.make_default("QRCdErrCrrctn")
-
-	@QRCdErrCrrctn.deleter
-	def QRCdErrCrrctn(self):
-		del self._QRCdErrCrrctn
-		self._QRCdErrCrrctn = None
-
-	@property
-	def QRCdNcodgMd(self):
-		return self._QRCdNcodgMd
-
-	@QRCdNcodgMd.setter
-	def QRCdNcodgMd(self, value):
-		self._QRCdNcodgMd = value if type(value) != auto else self.make_default("QRCdNcodgMd")
-
-	@QRCdNcodgMd.deleter
-	def QRCdNcodgMd(self):
-		del self._QRCdNcodgMd
-		self._QRCdNcodgMd = None
-
-	@property
-	def QRCdBinryVal(self):
-		return self._QRCdBinryVal
-
-	@QRCdBinryVal.setter
-	def QRCdBinryVal(self, value):
-		self._QRCdBinryVal = value if type(value) != auto else self.make_default("QRCdBinryVal")
-
-	@QRCdBinryVal.deleter
-	def QRCdBinryVal(self):
-		del self._QRCdBinryVal
-		self._QRCdBinryVal = None
 
 	@property
 	def BrcdTp(self):
@@ -87,12 +48,51 @@ class OutputBarcode2(base_types._BaseFieldType):
 		del self._BrcdVal
 		self._BrcdVal = None
 
+	@property
+	def QRCdNcodgMd(self):
+		return self._QRCdNcodgMd
+
+	@QRCdNcodgMd.setter
+	def QRCdNcodgMd(self, value):
+		self._QRCdNcodgMd = value if type(value) != auto else self.make_default("QRCdNcodgMd")
+
+	@QRCdNcodgMd.deleter
+	def QRCdNcodgMd(self):
+		del self._QRCdNcodgMd
+		self._QRCdNcodgMd = None
+
+	@property
+	def QRCdErrCrrctn(self):
+		return self._QRCdErrCrrctn
+
+	@QRCdErrCrrctn.setter
+	def QRCdErrCrrctn(self, value):
+		self._QRCdErrCrrctn = value if type(value) != auto else self.make_default("QRCdErrCrrctn")
+
+	@QRCdErrCrrctn.deleter
+	def QRCdErrCrrctn(self):
+		del self._QRCdErrCrrctn
+		self._QRCdErrCrrctn = None
+
+	@property
+	def QRCdBinryVal(self):
+		return self._QRCdBinryVal
+
+	@QRCdBinryVal.setter
+	def QRCdBinryVal(self, value):
+		self._QRCdBinryVal = value if type(value) != auto else self.make_default("QRCdBinryVal")
+
+	@QRCdBinryVal.deleter
+	def QRCdBinryVal(self):
+		del self._QRCdBinryVal
+		self._QRCdBinryVal = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QRCdVrsn', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QRCdErrCrrctn', type=QRCodeErrorCorrection1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QRCdNcodgMd', type=QRCodeEncodingMode1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QRCdBinryVal', type=Max3000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BrcdTp', type=BarcodeType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BrcdVal', type=Max8000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QRCdNcodgMd', type=QRCodeEncodingMode1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QRCdErrCrrctn', type=QRCodeErrorCorrection1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QRCdBinryVal', type=Max3000Binary, min=0, max=1, mutex_group=None, array=False),
 	))
 

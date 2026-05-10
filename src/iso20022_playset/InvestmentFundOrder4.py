@@ -1,22 +1,9 @@
-import base_types
+from . import base_types
 import Max35Text
 
 class InvestmentFundOrder4(base_types._BaseFieldType):
 
-	__slots__ = ["_MstrRef", "_OrdrRef"]
-	@property
-	def MstrRef(self):
-		return self._MstrRef
-
-	@MstrRef.setter
-	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
-
-	@MstrRef.deleter
-	def MstrRef(self):
-		del self._MstrRef
-		self._MstrRef = None
-
+	__slots__ = ["_OrdrRef", "_MstrRef"]
 	@property
 	def OrdrRef(self):
 		return self._OrdrRef
@@ -30,8 +17,21 @@ class InvestmentFundOrder4(base_types._BaseFieldType):
 		del self._OrdrRef
 		self._OrdrRef = None
 
+	@property
+	def MstrRef(self):
+		return self._MstrRef
+
+	@MstrRef.setter
+	def MstrRef(self, value):
+		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
+
+	@MstrRef.deleter
+	def MstrRef(self):
+		del self._MstrRef
+		self._MstrRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

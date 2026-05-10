@@ -1,6 +1,6 @@
-import base_types
-import CorporateActionReversalReason10Choice
+from . import base_types
 import Max256Text
+import CorporateActionReversalReason10Choice
 
 class CorporateActionReversalReason8(base_types._BaseFieldType):
 

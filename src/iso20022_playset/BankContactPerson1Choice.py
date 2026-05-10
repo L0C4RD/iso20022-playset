@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ContactIdentification1
 
 class BankContactPerson1Choice(base_types._BaseFieldType):

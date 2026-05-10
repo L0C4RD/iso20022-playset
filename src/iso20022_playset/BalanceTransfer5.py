@@ -1,7 +1,7 @@
-import base_types
-import BalanceTransferReference1
-import SettlementMethod5Choice
+from . import base_types
 import BalanceTransferFundingLimit1
+import SettlementMethod5Choice
+import BalanceTransferReference1
 
 class BalanceTransfer5(base_types._BaseFieldType):
 

@@ -1,7 +1,7 @@
-import base_types
-import DigitalTokenAmount2
+from . import base_types
 import ActiveOrHistoricCurrencyCode
 import PriceStatus1Code
+import DigitalTokenAmount2
 
 class SecuritiesTransactionPrice6(base_types._BaseFieldType):
 

@@ -1,23 +1,10 @@
-import base_types
-import ShipmentDateRange2
+from . import base_types
 import ShipmentDateRange1
+import ShipmentDateRange2
 
 class ShipmentSchedule2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ShipmntDtRg", "_ShipmntSubSchdl"]
-	@property
-	def ShipmntDtRg(self):
-		return self._ShipmntDtRg
-
-	@ShipmntDtRg.setter
-	def ShipmntDtRg(self, value):
-		self._ShipmntDtRg = value if type(value) != auto else self.make_default("ShipmntDtRg")
-
-	@ShipmntDtRg.deleter
-	def ShipmntDtRg(self):
-		del self._ShipmntDtRg
-		self._ShipmntDtRg = None
-
+	__slots__ = ["_ShipmntSubSchdl", "_ShipmntDtRg"]
 	@property
 	def ShipmntSubSchdl(self):
 		return self._ShipmntSubSchdl
@@ -31,8 +18,21 @@ class ShipmentSchedule2Choice(base_types._BaseFieldType):
 		del self._ShipmntSubSchdl
 		self._ShipmntSubSchdl = None
 
+	@property
+	def ShipmntDtRg(self):
+		return self._ShipmntDtRg
+
+	@ShipmntDtRg.setter
+	def ShipmntDtRg(self, value):
+		self._ShipmntDtRg = value if type(value) != auto else self.make_default("ShipmntDtRg")
+
+	@ShipmntDtRg.deleter
+	def ShipmntDtRg(self):
+		del self._ShipmntDtRg
+		self._ShipmntDtRg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ShipmntDtRg', type=ShipmentDateRange1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ShipmntSubSchdl', type=ShipmentDateRange2, min=2, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='ShipmntDtRg', type=ShipmentDateRange1, min=0, max=1, mutex_group=1, array=False),
 	))
 

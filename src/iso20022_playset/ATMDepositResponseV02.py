@@ -1,25 +1,12 @@
-import base_types
-import ATMDepositResponse2
+from . import base_types
 import Header31
-import ContentInformationType10
+import ATMDepositResponse2
 import ContentInformationType15
+import ContentInformationType10
 
 class ATMDepositResponseV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMDpstRspn", "_SctyTrlr", "_PrtctdATMDpstRspn", "_Hdr"]
-	@property
-	def ATMDpstRspn(self):
-		return self._ATMDpstRspn
-
-	@ATMDpstRspn.setter
-	def ATMDpstRspn(self, value):
-		self._ATMDpstRspn = value if type(value) != auto else self.make_default("ATMDpstRspn")
-
-	@ATMDpstRspn.deleter
-	def ATMDpstRspn(self):
-		del self._ATMDpstRspn
-		self._ATMDpstRspn = None
-
+	__slots__ = ["_SctyTrlr", "_ATMDpstRspn", "_PrtctdATMDpstRspn", "_Hdr"]
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
@@ -32,6 +19,19 @@ class ATMDepositResponseV02(base_types._BaseFieldType):
 	def SctyTrlr(self):
 		del self._SctyTrlr
 		self._SctyTrlr = None
+
+	@property
+	def ATMDpstRspn(self):
+		return self._ATMDpstRspn
+
+	@ATMDpstRspn.setter
+	def ATMDpstRspn(self, value):
+		self._ATMDpstRspn = value if type(value) != auto else self.make_default("ATMDpstRspn")
+
+	@ATMDpstRspn.deleter
+	def ATMDpstRspn(self):
+		del self._ATMDpstRspn
+		self._ATMDpstRspn = None
 
 	@property
 	def PrtctdATMDpstRspn(self):
@@ -60,8 +60,8 @@ class ATMDepositResponseV02(base_types._BaseFieldType):
 		self._Hdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ATMDpstRspn', type=ATMDepositResponse2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMDpstRspn', type=ATMDepositResponse2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMDpstRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
 	))

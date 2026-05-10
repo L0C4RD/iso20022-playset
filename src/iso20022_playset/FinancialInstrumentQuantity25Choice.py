@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import DecimalNumber
 import ActiveOrHistoricCurrencyAndAmount
 
 class FinancialInstrumentQuantity25Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NmnlVal", "_Unit", "_MntryVal"]
-	@property
-	def NmnlVal(self):
-		return self._NmnlVal
-
-	@NmnlVal.setter
-	def NmnlVal(self, value):
-		self._NmnlVal = value if type(value) != auto else self.make_default("NmnlVal")
-
-	@NmnlVal.deleter
-	def NmnlVal(self):
-		del self._NmnlVal
-		self._NmnlVal = None
-
+	__slots__ = ["_Unit", "_NmnlVal", "_MntryVal"]
 	@property
 	def Unit(self):
 		return self._Unit
@@ -30,6 +17,19 @@ class FinancialInstrumentQuantity25Choice(base_types._BaseFieldType):
 	def Unit(self):
 		del self._Unit
 		self._Unit = None
+
+	@property
+	def NmnlVal(self):
+		return self._NmnlVal
+
+	@NmnlVal.setter
+	def NmnlVal(self, value):
+		self._NmnlVal = value if type(value) != auto else self.make_default("NmnlVal")
+
+	@NmnlVal.deleter
+	def NmnlVal(self):
+		del self._NmnlVal
+		self._NmnlVal = None
 
 	@property
 	def MntryVal(self):
@@ -45,8 +45,8 @@ class FinancialInstrumentQuantity25Choice(base_types._BaseFieldType):
 		self._MntryVal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NmnlVal', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Unit', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NmnlVal', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MntryVal', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

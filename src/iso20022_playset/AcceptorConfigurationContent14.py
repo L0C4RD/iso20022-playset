@@ -1,19 +1,45 @@
-import base_types
-import PaymentTerminalParameters8
+from . import base_types
 import TerminalPackageType5
 import AcquirerProtocolParameters17
+import MerchantConfigurationParameters6
+import PaymentTerminalParameters8
 import ServiceProviderParameters4
-import SaleToPOIProtocolParameter3
-import SecurityParameters16
 import HostCommunicationParameter7
 import TMSProtocolParameters7
-import ApplicationParameters13
+import SaleToPOIProtocolParameter3
 import TrueFalseIndicator
-import MerchantConfigurationParameters6
+import ApplicationParameters13
+import SecurityParameters16
 
 class AcceptorConfigurationContent14(base_types._BaseFieldType):
 
-	__slots__ = ["_ApplParams", "_MrchntParams", "_TMSPrtcolParams", "_AcqrrPrtcolParams", "_SvcPrvdrParams", "_TermnlPackg", "_SaleToPOIParams", "_SctyParams", "_RplcCfgtn", "_HstComParams", "_TermnlParams"]
+	__slots__ = ["_TermnlParams", "_TMSPrtcolParams", "_ApplParams", "_SaleToPOIParams", "_AcqrrPrtcolParams", "_SvcPrvdrParams", "_TermnlPackg", "_MrchntParams", "_HstComParams", "_SctyParams", "_RplcCfgtn"]
+	@property
+	def TermnlParams(self):
+		return self._TermnlParams
+
+	@TermnlParams.setter
+	def TermnlParams(self, value):
+		self._TermnlParams = value if type(value) != auto else self.make_default("TermnlParams")
+
+	@TermnlParams.deleter
+	def TermnlParams(self):
+		del self._TermnlParams
+		self._TermnlParams = None
+
+	@property
+	def TMSPrtcolParams(self):
+		return self._TMSPrtcolParams
+
+	@TMSPrtcolParams.setter
+	def TMSPrtcolParams(self, value):
+		self._TMSPrtcolParams = value if type(value) != auto else self.make_default("TMSPrtcolParams")
+
+	@TMSPrtcolParams.deleter
+	def TMSPrtcolParams(self):
+		del self._TMSPrtcolParams
+		self._TMSPrtcolParams = None
+
 	@property
 	def ApplParams(self):
 		return self._ApplParams
@@ -28,30 +54,17 @@ class AcceptorConfigurationContent14(base_types._BaseFieldType):
 		self._ApplParams = None
 
 	@property
-	def MrchntParams(self):
-		return self._MrchntParams
+	def SaleToPOIParams(self):
+		return self._SaleToPOIParams
 
-	@MrchntParams.setter
-	def MrchntParams(self, value):
-		self._MrchntParams = value if type(value) != auto else self.make_default("MrchntParams")
+	@SaleToPOIParams.setter
+	def SaleToPOIParams(self, value):
+		self._SaleToPOIParams = value if type(value) != auto else self.make_default("SaleToPOIParams")
 
-	@MrchntParams.deleter
-	def MrchntParams(self):
-		del self._MrchntParams
-		self._MrchntParams = None
-
-	@property
-	def TMSPrtcolParams(self):
-		return self._TMSPrtcolParams
-
-	@TMSPrtcolParams.setter
-	def TMSPrtcolParams(self, value):
-		self._TMSPrtcolParams = value if type(value) != auto else self.make_default("TMSPrtcolParams")
-
-	@TMSPrtcolParams.deleter
-	def TMSPrtcolParams(self):
-		del self._TMSPrtcolParams
-		self._TMSPrtcolParams = None
+	@SaleToPOIParams.deleter
+	def SaleToPOIParams(self):
+		del self._SaleToPOIParams
+		self._SaleToPOIParams = None
 
 	@property
 	def AcqrrPrtcolParams(self):
@@ -93,17 +106,30 @@ class AcceptorConfigurationContent14(base_types._BaseFieldType):
 		self._TermnlPackg = None
 
 	@property
-	def SaleToPOIParams(self):
-		return self._SaleToPOIParams
+	def MrchntParams(self):
+		return self._MrchntParams
 
-	@SaleToPOIParams.setter
-	def SaleToPOIParams(self, value):
-		self._SaleToPOIParams = value if type(value) != auto else self.make_default("SaleToPOIParams")
+	@MrchntParams.setter
+	def MrchntParams(self, value):
+		self._MrchntParams = value if type(value) != auto else self.make_default("MrchntParams")
 
-	@SaleToPOIParams.deleter
-	def SaleToPOIParams(self):
-		del self._SaleToPOIParams
-		self._SaleToPOIParams = None
+	@MrchntParams.deleter
+	def MrchntParams(self):
+		del self._MrchntParams
+		self._MrchntParams = None
+
+	@property
+	def HstComParams(self):
+		return self._HstComParams
+
+	@HstComParams.setter
+	def HstComParams(self, value):
+		self._HstComParams = value if type(value) != auto else self.make_default("HstComParams")
+
+	@HstComParams.deleter
+	def HstComParams(self):
+		del self._HstComParams
+		self._HstComParams = None
 
 	@property
 	def SctyParams(self):
@@ -131,43 +157,17 @@ class AcceptorConfigurationContent14(base_types._BaseFieldType):
 		del self._RplcCfgtn
 		self._RplcCfgtn = None
 
-	@property
-	def HstComParams(self):
-		return self._HstComParams
-
-	@HstComParams.setter
-	def HstComParams(self, value):
-		self._HstComParams = value if type(value) != auto else self.make_default("HstComParams")
-
-	@HstComParams.deleter
-	def HstComParams(self):
-		del self._HstComParams
-		self._HstComParams = None
-
-	@property
-	def TermnlParams(self):
-		return self._TermnlParams
-
-	@TermnlParams.setter
-	def TermnlParams(self, value):
-		self._TermnlParams = value if type(value) != auto else self.make_default("TermnlParams")
-
-	@TermnlParams.deleter
-	def TermnlParams(self):
-		del self._TermnlParams
-		self._TermnlParams = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ApplParams', type=ApplicationParameters13, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MrchntParams', type=MerchantConfigurationParameters6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TermnlParams', type=PaymentTerminalParameters8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TMSPrtcolParams', type=TMSProtocolParameters7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ApplParams', type=ApplicationParameters13, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SaleToPOIParams', type=SaleToPOIProtocolParameter3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcqrrPrtcolParams', type=AcquirerProtocolParameters17, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SvcPrvdrParams', type=ServiceProviderParameters4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TermnlPackg', type=TerminalPackageType5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SaleToPOIParams', type=SaleToPOIProtocolParameter3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MrchntParams', type=MerchantConfigurationParameters6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='HstComParams', type=HostCommunicationParameter7, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctyParams', type=SecurityParameters16, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RplcCfgtn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HstComParams', type=HostCommunicationParameter7, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TermnlParams', type=PaymentTerminalParameters8, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import Exact4AlphaNumericText
-import Max8Text
 import Number
+import Max8Text
 
 class GenericIdentification6(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AcceptorBatchTransferResponseV13
 
 class CAAA_012_001_13():

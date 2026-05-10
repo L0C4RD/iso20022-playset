@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ChargesPaymentNotificationV03
 
 class CAMT_105_001_03():

@@ -1,13 +1,26 @@
-import base_types
+from . import base_types
+import ISODate
 import Amount2Choice
 import CashAccount40
-import ISODate
 import PaymentIdentification8
 import BranchAndFinancialInstitutionIdentification8
 
 class LiquidityCreditTransfer4(base_types._BaseFieldType):
 
-	__slots__ = ["_DbtrAcct", "_TrfdAmt", "_Cdtr", "_SttlmDt", "_CdtrAcct", "_Dbtr", "_LqdtyTrfId"]
+	__slots__ = ["_SttlmDt", "_DbtrAcct", "_LqdtyTrfId", "_CdtrAcct", "_TrfdAmt", "_Cdtr", "_Dbtr"]
+	@property
+	def SttlmDt(self):
+		return self._SttlmDt
+
+	@SttlmDt.setter
+	def SttlmDt(self, value):
+		self._SttlmDt = value if type(value) != auto else self.make_default("SttlmDt")
+
+	@SttlmDt.deleter
+	def SttlmDt(self):
+		del self._SttlmDt
+		self._SttlmDt = None
+
 	@property
 	def DbtrAcct(self):
 		return self._DbtrAcct
@@ -20,6 +33,32 @@ class LiquidityCreditTransfer4(base_types._BaseFieldType):
 	def DbtrAcct(self):
 		del self._DbtrAcct
 		self._DbtrAcct = None
+
+	@property
+	def LqdtyTrfId(self):
+		return self._LqdtyTrfId
+
+	@LqdtyTrfId.setter
+	def LqdtyTrfId(self, value):
+		self._LqdtyTrfId = value if type(value) != auto else self.make_default("LqdtyTrfId")
+
+	@LqdtyTrfId.deleter
+	def LqdtyTrfId(self):
+		del self._LqdtyTrfId
+		self._LqdtyTrfId = None
+
+	@property
+	def CdtrAcct(self):
+		return self._CdtrAcct
+
+	@CdtrAcct.setter
+	def CdtrAcct(self, value):
+		self._CdtrAcct = value if type(value) != auto else self.make_default("CdtrAcct")
+
+	@CdtrAcct.deleter
+	def CdtrAcct(self):
+		del self._CdtrAcct
+		self._CdtrAcct = None
 
 	@property
 	def TrfdAmt(self):
@@ -48,32 +87,6 @@ class LiquidityCreditTransfer4(base_types._BaseFieldType):
 		self._Cdtr = None
 
 	@property
-	def SttlmDt(self):
-		return self._SttlmDt
-
-	@SttlmDt.setter
-	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != auto else self.make_default("SttlmDt")
-
-	@SttlmDt.deleter
-	def SttlmDt(self):
-		del self._SttlmDt
-		self._SttlmDt = None
-
-	@property
-	def CdtrAcct(self):
-		return self._CdtrAcct
-
-	@CdtrAcct.setter
-	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != auto else self.make_default("CdtrAcct")
-
-	@CdtrAcct.deleter
-	def CdtrAcct(self):
-		del self._CdtrAcct
-		self._CdtrAcct = None
-
-	@property
 	def Dbtr(self):
 		return self._Dbtr
 
@@ -86,26 +99,13 @@ class LiquidityCreditTransfer4(base_types._BaseFieldType):
 		del self._Dbtr
 		self._Dbtr = None
 
-	@property
-	def LqdtyTrfId(self):
-		return self._LqdtyTrfId
-
-	@LqdtyTrfId.setter
-	def LqdtyTrfId(self, value):
-		self._LqdtyTrfId = value if type(value) != auto else self.make_default("LqdtyTrfId")
-
-	@LqdtyTrfId.deleter
-	def LqdtyTrfId(self):
-		del self._LqdtyTrfId
-		self._LqdtyTrfId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LqdtyTrfId', type=PaymentIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfdAmt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cdtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dbtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LqdtyTrfId', type=PaymentIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

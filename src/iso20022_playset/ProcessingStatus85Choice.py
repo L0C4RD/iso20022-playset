@@ -1,14 +1,53 @@
-import base_types
-import RejectionOrRepairStatus42Choice
-import AcknowledgedAcceptedStatus21Choice
+from . import base_types
+import ProprietaryReason4
 import PendingStatus38Choice
 import DeniedStatus15Choice
 import ProprietaryStatusAndReason6
-import ProprietaryReason4
+import RejectionOrRepairStatus42Choice
+import AcknowledgedAcceptedStatus21Choice
 
 class ProcessingStatus85Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Rjctd", "_AckdAccptd", "_Dnd", "_Pdg", "_Cmpltd"]
+	__slots__ = ["_AckdAccptd", "_Cmpltd", "_Pdg", "_Prtry", "_Rjctd", "_Dnd"]
+	@property
+	def AckdAccptd(self):
+		return self._AckdAccptd
+
+	@AckdAccptd.setter
+	def AckdAccptd(self, value):
+		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
+
+	@AckdAccptd.deleter
+	def AckdAccptd(self):
+		del self._AckdAccptd
+		self._AckdAccptd = None
+
+	@property
+	def Cmpltd(self):
+		return self._Cmpltd
+
+	@Cmpltd.setter
+	def Cmpltd(self, value):
+		self._Cmpltd = value if type(value) != auto else self.make_default("Cmpltd")
+
+	@Cmpltd.deleter
+	def Cmpltd(self):
+		del self._Cmpltd
+		self._Cmpltd = None
+
+	@property
+	def Pdg(self):
+		return self._Pdg
+
+	@Pdg.setter
+	def Pdg(self, value):
+		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
+
+	@Pdg.deleter
+	def Pdg(self):
+		del self._Pdg
+		self._Pdg = None
+
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -36,19 +75,6 @@ class ProcessingStatus85Choice(base_types._BaseFieldType):
 		self._Rjctd = None
 
 	@property
-	def AckdAccptd(self):
-		return self._AckdAccptd
-
-	@AckdAccptd.setter
-	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
-
-	@AckdAccptd.deleter
-	def AckdAccptd(self):
-		del self._AckdAccptd
-		self._AckdAccptd = None
-
-	@property
 	def Dnd(self):
 		return self._Dnd
 
@@ -61,38 +87,12 @@ class ProcessingStatus85Choice(base_types._BaseFieldType):
 		del self._Dnd
 		self._Dnd = None
 
-	@property
-	def Pdg(self):
-		return self._Pdg
-
-	@Pdg.setter
-	def Pdg(self, value):
-		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
-
-	@Pdg.deleter
-	def Pdg(self):
-		del self._Pdg
-		self._Pdg = None
-
-	@property
-	def Cmpltd(self):
-		return self._Cmpltd
-
-	@Cmpltd.setter
-	def Cmpltd(self, value):
-		self._Cmpltd = value if type(value) != auto else self.make_default("Cmpltd")
-
-	@Cmpltd.deleter
-	def Cmpltd(self):
-		del self._Cmpltd
-		self._Cmpltd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cmpltd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pdg', type=PendingStatus38Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectionOrRepairStatus42Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dnd', type=DeniedStatus15Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pdg', type=PendingStatus38Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cmpltd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 	))
 

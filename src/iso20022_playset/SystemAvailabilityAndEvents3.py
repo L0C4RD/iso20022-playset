@@ -1,12 +1,25 @@
-import base_types
-import SystemClosure2
-import ActiveCurrencyCode
+from . import base_types
 import TimePeriod1
 import SystemEvent3
+import ActiveCurrencyCode
+import SystemClosure2
 
 class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 
-	__slots__ = ["_SysCcy", "_Evt", "_ClsrInf", "_SsnPrd"]
+	__slots__ = ["_ClsrInf", "_SysCcy", "_Evt", "_SsnPrd"]
+	@property
+	def ClsrInf(self):
+		return self._ClsrInf
+
+	@ClsrInf.setter
+	def ClsrInf(self, value):
+		self._ClsrInf = value if type(value) != auto else self.make_default("ClsrInf")
+
+	@ClsrInf.deleter
+	def ClsrInf(self):
+		del self._ClsrInf
+		self._ClsrInf = None
+
 	@property
 	def SysCcy(self):
 		return self._SysCcy
@@ -34,19 +47,6 @@ class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 		self._Evt = None
 
 	@property
-	def ClsrInf(self):
-		return self._ClsrInf
-
-	@ClsrInf.setter
-	def ClsrInf(self, value):
-		self._ClsrInf = value if type(value) != auto else self.make_default("ClsrInf")
-
-	@ClsrInf.deleter
-	def ClsrInf(self):
-		del self._ClsrInf
-		self._ClsrInf = None
-
-	@property
 	def SsnPrd(self):
 		return self._SsnPrd
 
@@ -60,9 +60,9 @@ class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 		self._SsnPrd = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ClsrInf', type=SystemClosure2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SysCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Evt', type=SystemEvent3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ClsrInf', type=SystemClosure2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SsnPrd', type=TimePeriod1, min=0, max=1, mutex_group=None, array=False),
 	))
 

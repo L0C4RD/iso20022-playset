@@ -1,11 +1,24 @@
-import base_types
-import TrackerHeader6
-import TrackerStatusAndTransaction19
+from . import base_types
 import SupplementaryData1
+import TrackerStatusAndTransaction19
+import TrackerHeader6
 
 class PaymentStatusTrackerUpdateV04(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_TrckrStsAndTx", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_GrpHdr", "_TrckrStsAndTx"]
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr
@@ -32,22 +45,9 @@ class PaymentStatusTrackerUpdateV04(base_types._BaseFieldType):
 		del self._TrckrStsAndTx
 		self._TrckrStsAndTx = None
 
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=TrackerHeader6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrckrStsAndTx', type=TrackerStatusAndTransaction19, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

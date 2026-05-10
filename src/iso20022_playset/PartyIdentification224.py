@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import PartyIdentification198Choice
-import Max256Text
 import PersonName2
+import Max256Text
 
 class PartyIdentification224(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_EmailAdr", "_Id"]
+	__slots__ = ["_Id", "_EmailAdr", "_NmAndAdr"]
 	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
+	def Id(self):
+		return self._Id
 
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def EmailAdr(self):
@@ -33,21 +33,21 @@ class PartyIdentification224(base_types._BaseFieldType):
 		self._EmailAdr = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def NmAndAdr(self):
+		return self._NmAndAdr
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NmAndAdr', type=PersonName2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification198Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=PersonName2, min=1, max=1, mutex_group=None, array=False),
 	))
 

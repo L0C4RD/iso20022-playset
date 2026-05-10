@@ -1,51 +1,25 @@
-import base_types
-import SecuritiesFinancingTransactionDetails46
-import SettlementParties105
+from . import base_types
 import SettlementDetails152
-import QuantityAndAccount104
-import OtherAmounts43
-import Linkages65
-import FinancialInstrumentAttributes122
 import RestrictedFINXMax16Text
-import NumberCount2Choice
-import SupplementaryData1
-import TransactionTypeAndAdditionalParameters18
-import SecurityIdentification20
-import CashParties38
 import SecuritiesTradeDetails125
 import OtherParties44
+import NumberCount2Choice
+import TransactionTypeAndAdditionalParameters18
 import AmountAndDirection96
+import FinancialInstrumentAttributes122
+import QuantityAndAccount104
+import CashParties38
+import SettlementParties105
+import SupplementaryData1
+import OtherAmounts43
+import SecurityIdentification20
 import StandingSettlementInstruction19
+import SecuritiesFinancingTransactionDetails46
+import Linkages65
 
 class SecuritiesFinancingInstruction002V11(base_types._BaseFieldType):
 
-	__slots__ = ["_CshPties", "_SttlmParams", "_TxTpAndAddtlParams", "_OpngSttlmAmt", "_SctiesFincgDtls", "_FinInstrmId", "_OthrBizPties", "_NbCounts", "_OthrAmts", "_RcvgSttlmPties", "_FinInstrmAttrbts", "_DlvrgSttlmPties", "_TradDtls", "_Lnkgs", "_QtyAndAcctDtls", "_TxId", "_StgSttlmInstrDtls", "_SplmtryData"]
-	@property
-	def CshPties(self):
-		return self._CshPties
-
-	@CshPties.setter
-	def CshPties(self, value):
-		self._CshPties = value if type(value) != auto else self.make_default("CshPties")
-
-	@CshPties.deleter
-	def CshPties(self):
-		del self._CshPties
-		self._CshPties = None
-
-	@property
-	def SttlmParams(self):
-		return self._SttlmParams
-
-	@SttlmParams.setter
-	def SttlmParams(self, value):
-		self._SttlmParams = value if type(value) != auto else self.make_default("SttlmParams")
-
-	@SttlmParams.deleter
-	def SttlmParams(self):
-		del self._SttlmParams
-		self._SttlmParams = None
-
+	__slots__ = ["_TxTpAndAddtlParams", "_TradDtls", "_OpngSttlmAmt", "_QtyAndAcctDtls", "_FinInstrmId", "_SttlmParams", "_StgSttlmInstrDtls", "_RcvgSttlmPties", "_OthrBizPties", "_FinInstrmAttrbts", "_SplmtryData", "_NbCounts", "_OthrAmts", "_CshPties", "_SctiesFincgDtls", "_Lnkgs", "_TxId", "_DlvrgSttlmPties"]
 	@property
 	def TxTpAndAddtlParams(self):
 		return self._TxTpAndAddtlParams
@@ -58,6 +32,19 @@ class SecuritiesFinancingInstruction002V11(base_types._BaseFieldType):
 	def TxTpAndAddtlParams(self):
 		del self._TxTpAndAddtlParams
 		self._TxTpAndAddtlParams = None
+
+	@property
+	def TradDtls(self):
+		return self._TradDtls
+
+	@TradDtls.setter
+	def TradDtls(self, value):
+		self._TradDtls = value if type(value) != auto else self.make_default("TradDtls")
+
+	@TradDtls.deleter
+	def TradDtls(self):
+		del self._TradDtls
+		self._TradDtls = None
 
 	@property
 	def OpngSttlmAmt(self):
@@ -73,17 +60,17 @@ class SecuritiesFinancingInstruction002V11(base_types._BaseFieldType):
 		self._OpngSttlmAmt = None
 
 	@property
-	def SctiesFincgDtls(self):
-		return self._SctiesFincgDtls
+	def QtyAndAcctDtls(self):
+		return self._QtyAndAcctDtls
 
-	@SctiesFincgDtls.setter
-	def SctiesFincgDtls(self, value):
-		self._SctiesFincgDtls = value if type(value) != auto else self.make_default("SctiesFincgDtls")
+	@QtyAndAcctDtls.setter
+	def QtyAndAcctDtls(self, value):
+		self._QtyAndAcctDtls = value if type(value) != auto else self.make_default("QtyAndAcctDtls")
 
-	@SctiesFincgDtls.deleter
-	def SctiesFincgDtls(self):
-		del self._SctiesFincgDtls
-		self._SctiesFincgDtls = None
+	@QtyAndAcctDtls.deleter
+	def QtyAndAcctDtls(self):
+		del self._QtyAndAcctDtls
+		self._QtyAndAcctDtls = None
 
 	@property
 	def FinInstrmId(self):
@@ -99,6 +86,45 @@ class SecuritiesFinancingInstruction002V11(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
+	def SttlmParams(self):
+		return self._SttlmParams
+
+	@SttlmParams.setter
+	def SttlmParams(self, value):
+		self._SttlmParams = value if type(value) != auto else self.make_default("SttlmParams")
+
+	@SttlmParams.deleter
+	def SttlmParams(self):
+		del self._SttlmParams
+		self._SttlmParams = None
+
+	@property
+	def StgSttlmInstrDtls(self):
+		return self._StgSttlmInstrDtls
+
+	@StgSttlmInstrDtls.setter
+	def StgSttlmInstrDtls(self, value):
+		self._StgSttlmInstrDtls = value if type(value) != auto else self.make_default("StgSttlmInstrDtls")
+
+	@StgSttlmInstrDtls.deleter
+	def StgSttlmInstrDtls(self):
+		del self._StgSttlmInstrDtls
+		self._StgSttlmInstrDtls = None
+
+	@property
+	def RcvgSttlmPties(self):
+		return self._RcvgSttlmPties
+
+	@RcvgSttlmPties.setter
+	def RcvgSttlmPties(self, value):
+		self._RcvgSttlmPties = value if type(value) != auto else self.make_default("RcvgSttlmPties")
+
+	@RcvgSttlmPties.deleter
+	def RcvgSttlmPties(self):
+		del self._RcvgSttlmPties
+		self._RcvgSttlmPties = None
+
+	@property
 	def OthrBizPties(self):
 		return self._OthrBizPties
 
@@ -110,6 +136,32 @@ class SecuritiesFinancingInstruction002V11(base_types._BaseFieldType):
 	def OthrBizPties(self):
 		del self._OthrBizPties
 		self._OthrBizPties = None
+
+	@property
+	def FinInstrmAttrbts(self):
+		return self._FinInstrmAttrbts
+
+	@FinInstrmAttrbts.setter
+	def FinInstrmAttrbts(self, value):
+		self._FinInstrmAttrbts = value if type(value) != auto else self.make_default("FinInstrmAttrbts")
+
+	@FinInstrmAttrbts.deleter
+	def FinInstrmAttrbts(self):
+		del self._FinInstrmAttrbts
+		self._FinInstrmAttrbts = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def NbCounts(self):
@@ -138,56 +190,30 @@ class SecuritiesFinancingInstruction002V11(base_types._BaseFieldType):
 		self._OthrAmts = None
 
 	@property
-	def RcvgSttlmPties(self):
-		return self._RcvgSttlmPties
+	def CshPties(self):
+		return self._CshPties
 
-	@RcvgSttlmPties.setter
-	def RcvgSttlmPties(self, value):
-		self._RcvgSttlmPties = value if type(value) != auto else self.make_default("RcvgSttlmPties")
+	@CshPties.setter
+	def CshPties(self, value):
+		self._CshPties = value if type(value) != auto else self.make_default("CshPties")
 
-	@RcvgSttlmPties.deleter
-	def RcvgSttlmPties(self):
-		del self._RcvgSttlmPties
-		self._RcvgSttlmPties = None
-
-	@property
-	def FinInstrmAttrbts(self):
-		return self._FinInstrmAttrbts
-
-	@FinInstrmAttrbts.setter
-	def FinInstrmAttrbts(self, value):
-		self._FinInstrmAttrbts = value if type(value) != auto else self.make_default("FinInstrmAttrbts")
-
-	@FinInstrmAttrbts.deleter
-	def FinInstrmAttrbts(self):
-		del self._FinInstrmAttrbts
-		self._FinInstrmAttrbts = None
+	@CshPties.deleter
+	def CshPties(self):
+		del self._CshPties
+		self._CshPties = None
 
 	@property
-	def DlvrgSttlmPties(self):
-		return self._DlvrgSttlmPties
+	def SctiesFincgDtls(self):
+		return self._SctiesFincgDtls
 
-	@DlvrgSttlmPties.setter
-	def DlvrgSttlmPties(self, value):
-		self._DlvrgSttlmPties = value if type(value) != auto else self.make_default("DlvrgSttlmPties")
+	@SctiesFincgDtls.setter
+	def SctiesFincgDtls(self, value):
+		self._SctiesFincgDtls = value if type(value) != auto else self.make_default("SctiesFincgDtls")
 
-	@DlvrgSttlmPties.deleter
-	def DlvrgSttlmPties(self):
-		del self._DlvrgSttlmPties
-		self._DlvrgSttlmPties = None
-
-	@property
-	def TradDtls(self):
-		return self._TradDtls
-
-	@TradDtls.setter
-	def TradDtls(self, value):
-		self._TradDtls = value if type(value) != auto else self.make_default("TradDtls")
-
-	@TradDtls.deleter
-	def TradDtls(self):
-		del self._TradDtls
-		self._TradDtls = None
+	@SctiesFincgDtls.deleter
+	def SctiesFincgDtls(self):
+		del self._SctiesFincgDtls
+		self._SctiesFincgDtls = None
 
 	@property
 	def Lnkgs(self):
@@ -203,19 +229,6 @@ class SecuritiesFinancingInstruction002V11(base_types._BaseFieldType):
 		self._Lnkgs = None
 
 	@property
-	def QtyAndAcctDtls(self):
-		return self._QtyAndAcctDtls
-
-	@QtyAndAcctDtls.setter
-	def QtyAndAcctDtls(self, value):
-		self._QtyAndAcctDtls = value if type(value) != auto else self.make_default("QtyAndAcctDtls")
-
-	@QtyAndAcctDtls.deleter
-	def QtyAndAcctDtls(self):
-		del self._QtyAndAcctDtls
-		self._QtyAndAcctDtls = None
-
-	@property
 	def TxId(self):
 		return self._TxId
 
@@ -229,49 +242,36 @@ class SecuritiesFinancingInstruction002V11(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def StgSttlmInstrDtls(self):
-		return self._StgSttlmInstrDtls
+	def DlvrgSttlmPties(self):
+		return self._DlvrgSttlmPties
 
-	@StgSttlmInstrDtls.setter
-	def StgSttlmInstrDtls(self, value):
-		self._StgSttlmInstrDtls = value if type(value) != auto else self.make_default("StgSttlmInstrDtls")
+	@DlvrgSttlmPties.setter
+	def DlvrgSttlmPties(self, value):
+		self._DlvrgSttlmPties = value if type(value) != auto else self.make_default("DlvrgSttlmPties")
 
-	@StgSttlmInstrDtls.deleter
-	def StgSttlmInstrDtls(self):
-		del self._StgSttlmInstrDtls
-		self._StgSttlmInstrDtls = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@DlvrgSttlmPties.deleter
+	def DlvrgSttlmPties(self):
+		del self._DlvrgSttlmPties
+		self._DlvrgSttlmPties = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshPties', type=CashParties38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmParams', type=SettlementDetails152, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTpAndAddtlParams', type=TransactionTypeAndAdditionalParameters18, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDtls', type=SecuritiesTradeDetails125, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OpngSttlmAmt', type=AmountAndDirection96, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesFincgDtls', type=SecuritiesFinancingTransactionDetails46, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtyAndAcctDtls', type=QuantityAndAccount104, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmParams', type=SettlementDetails152, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StgSttlmInstrDtls', type=StandingSettlementInstruction19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvgSttlmPties', type=SettlementParties105, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrBizPties', type=OtherParties44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmAttrbts', type=FinancialInstrumentAttributes122, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NbCounts', type=NumberCount2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrAmts', type=OtherAmounts43, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcvgSttlmPties', type=SettlementParties105, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmAttrbts', type=FinancialInstrumentAttributes122, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvrgSttlmPties', type=SettlementParties105, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDtls', type=SecuritiesTradeDetails125, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshPties', type=CashParties38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesFincgDtls', type=SecuritiesFinancingTransactionDetails46, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lnkgs', type=Linkages65, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='QtyAndAcctDtls', type=QuantityAndAccount104, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StgSttlmInstrDtls', type=StandingSettlementInstruction19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DlvrgSttlmPties', type=SettlementParties105, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,8 +1,8 @@
-import base_types
-import Max35Text
-import WithdrawalReason1
+from . import base_types
 import Exact4AlphaNumericText
 import SupplementaryData1
+import Max35Text
+import WithdrawalReason1
 
 class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import InterestComputationMethod1Code
+import Max35Text
 
 class InterestComputationMethodFormat6Choice(base_types._BaseFieldType):
 

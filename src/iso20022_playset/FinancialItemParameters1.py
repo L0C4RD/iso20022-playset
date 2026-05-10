@@ -1,41 +1,28 @@
-import base_types
-import xs:IDREF
-import TradeMarket1Choice
+from . import base_types
 import ISODate
-import Max35Text
-import LanguageCode
-import CurrencyCode
 import AccountIdentification4Choice
 import ExternalDocumentPurpose1Code
+import TradeMarket1Choice
+import Max35Text
+import LanguageCode
+import xs:IDREF
+import CurrencyCode
 
 class FinancialItemParameters1(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdItm", "_LglCntxt", "_SellrFinAgt", "_DocPurp", "_Issr", "_LangCd", "_DbtAcct", "_Sellr", "_Rcpt", "_CdtAcct", "_Ccy", "_TradMkt", "_BuyrFinAgt", "_IsseDt", "_Buyr", "_Idr", "_GovngCtrct"]
+	__slots__ = ["_Rcpt", "_SellrFinAgt", "_IsseDt", "_CdtAcct", "_Ccy", "_DocPurp", "_TradMkt", "_Sellr", "_Issr", "_DbtAcct", "_BuyrFinAgt", "_Idr", "_RltdItm", "_Buyr", "_GovngCtrct", "_LglCntxt", "_LangCd"]
 	@property
-	def RltdItm(self):
-		return self._RltdItm
+	def Rcpt(self):
+		return self._Rcpt
 
-	@RltdItm.setter
-	def RltdItm(self, value):
-		self._RltdItm = value if type(value) != auto else self.make_default("RltdItm")
+	@Rcpt.setter
+	def Rcpt(self, value):
+		self._Rcpt = value if type(value) != auto else self.make_default("Rcpt")
 
-	@RltdItm.deleter
-	def RltdItm(self):
-		del self._RltdItm
-		self._RltdItm = None
-
-	@property
-	def LglCntxt(self):
-		return self._LglCntxt
-
-	@LglCntxt.setter
-	def LglCntxt(self, value):
-		self._LglCntxt = value if type(value) != auto else self.make_default("LglCntxt")
-
-	@LglCntxt.deleter
-	def LglCntxt(self):
-		del self._LglCntxt
-		self._LglCntxt = None
+	@Rcpt.deleter
+	def Rcpt(self):
+		del self._Rcpt
+		self._Rcpt = None
 
 	@property
 	def SellrFinAgt(self):
@@ -51,82 +38,17 @@ class FinancialItemParameters1(base_types._BaseFieldType):
 		self._SellrFinAgt = None
 
 	@property
-	def DocPurp(self):
-		return self._DocPurp
+	def IsseDt(self):
+		return self._IsseDt
 
-	@DocPurp.setter
-	def DocPurp(self, value):
-		self._DocPurp = value if type(value) != auto else self.make_default("DocPurp")
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
 
-	@DocPurp.deleter
-	def DocPurp(self):
-		del self._DocPurp
-		self._DocPurp = None
-
-	@property
-	def Issr(self):
-		return self._Issr
-
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
-
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
-
-	@property
-	def LangCd(self):
-		return self._LangCd
-
-	@LangCd.setter
-	def LangCd(self, value):
-		self._LangCd = value if type(value) != auto else self.make_default("LangCd")
-
-	@LangCd.deleter
-	def LangCd(self):
-		del self._LangCd
-		self._LangCd = None
-
-	@property
-	def DbtAcct(self):
-		return self._DbtAcct
-
-	@DbtAcct.setter
-	def DbtAcct(self, value):
-		self._DbtAcct = value if type(value) != auto else self.make_default("DbtAcct")
-
-	@DbtAcct.deleter
-	def DbtAcct(self):
-		del self._DbtAcct
-		self._DbtAcct = None
-
-	@property
-	def Sellr(self):
-		return self._Sellr
-
-	@Sellr.setter
-	def Sellr(self, value):
-		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
-
-	@Sellr.deleter
-	def Sellr(self):
-		del self._Sellr
-		self._Sellr = None
-
-	@property
-	def Rcpt(self):
-		return self._Rcpt
-
-	@Rcpt.setter
-	def Rcpt(self, value):
-		self._Rcpt = value if type(value) != auto else self.make_default("Rcpt")
-
-	@Rcpt.deleter
-	def Rcpt(self):
-		del self._Rcpt
-		self._Rcpt = None
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
 
 	@property
 	def CdtAcct(self):
@@ -155,6 +77,19 @@ class FinancialItemParameters1(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
+	def DocPurp(self):
+		return self._DocPurp
+
+	@DocPurp.setter
+	def DocPurp(self, value):
+		self._DocPurp = value if type(value) != auto else self.make_default("DocPurp")
+
+	@DocPurp.deleter
+	def DocPurp(self):
+		del self._DocPurp
+		self._DocPurp = None
+
+	@property
 	def TradMkt(self):
 		return self._TradMkt
 
@@ -166,6 +101,45 @@ class FinancialItemParameters1(base_types._BaseFieldType):
 	def TradMkt(self):
 		del self._TradMkt
 		self._TradMkt = None
+
+	@property
+	def Sellr(self):
+		return self._Sellr
+
+	@Sellr.setter
+	def Sellr(self, value):
+		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
+
+	@Sellr.deleter
+	def Sellr(self):
+		del self._Sellr
+		self._Sellr = None
+
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
+	@property
+	def DbtAcct(self):
+		return self._DbtAcct
+
+	@DbtAcct.setter
+	def DbtAcct(self, value):
+		self._DbtAcct = value if type(value) != auto else self.make_default("DbtAcct")
+
+	@DbtAcct.deleter
+	def DbtAcct(self):
+		del self._DbtAcct
+		self._DbtAcct = None
 
 	@property
 	def BuyrFinAgt(self):
@@ -181,17 +155,30 @@ class FinancialItemParameters1(base_types._BaseFieldType):
 		self._BuyrFinAgt = None
 
 	@property
-	def IsseDt(self):
-		return self._IsseDt
+	def Idr(self):
+		return self._Idr
 
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
+	@Idr.setter
+	def Idr(self, value):
+		self._Idr = value if type(value) != auto else self.make_default("Idr")
 
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
+	@Idr.deleter
+	def Idr(self):
+		del self._Idr
+		self._Idr = None
+
+	@property
+	def RltdItm(self):
+		return self._RltdItm
+
+	@RltdItm.setter
+	def RltdItm(self, value):
+		self._RltdItm = value if type(value) != auto else self.make_default("RltdItm")
+
+	@RltdItm.deleter
+	def RltdItm(self):
+		del self._RltdItm
+		self._RltdItm = None
 
 	@property
 	def Buyr(self):
@@ -207,19 +194,6 @@ class FinancialItemParameters1(base_types._BaseFieldType):
 		self._Buyr = None
 
 	@property
-	def Idr(self):
-		return self._Idr
-
-	@Idr.setter
-	def Idr(self, value):
-		self._Idr = value if type(value) != auto else self.make_default("Idr")
-
-	@Idr.deleter
-	def Idr(self):
-		del self._Idr
-		self._Idr = None
-
-	@property
 	def GovngCtrct(self):
 		return self._GovngCtrct
 
@@ -232,23 +206,49 @@ class FinancialItemParameters1(base_types._BaseFieldType):
 		del self._GovngCtrct
 		self._GovngCtrct = None
 
+	@property
+	def LglCntxt(self):
+		return self._LglCntxt
+
+	@LglCntxt.setter
+	def LglCntxt(self, value):
+		self._LglCntxt = value if type(value) != auto else self.make_default("LglCntxt")
+
+	@LglCntxt.deleter
+	def LglCntxt(self):
+		del self._LglCntxt
+		self._LglCntxt = None
+
+	@property
+	def LangCd(self):
+		return self._LangCd
+
+	@LangCd.setter
+	def LangCd(self, value):
+		self._LangCd = value if type(value) != auto else self.make_default("LangCd")
+
+	@LangCd.deleter
+	def LangCd(self):
+		del self._LangCd
+		self._LangCd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdItm', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LglCntxt', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SellrFinAgt', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocPurp', type=ExternalDocumentPurpose1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LangCd', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtAcct', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sellr', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcpt', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrFinAgt', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtAcct', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=CurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocPurp', type=ExternalDocumentPurpose1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradMkt', type=TradeMarket1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sellr', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtAcct', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyrFinAgt', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Buyr', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Idr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdItm', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Buyr', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GovngCtrct', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LglCntxt', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LangCd', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

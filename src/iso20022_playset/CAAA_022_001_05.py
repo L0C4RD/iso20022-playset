@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AcceptorNonFinancialRequestV05
 
 class CAAA_022_001_05():

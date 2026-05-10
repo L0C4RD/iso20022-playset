@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import ISODate
-import ActiveCurrencyAndAmount
 import LEIIdentifier
+import ActiveCurrencyAndAmount
 
 class Deposit1(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_CtrPtyId", "_MtrtyDt"]
+	__slots__ = ["_MtrtyDt", "_CtrPtyId", "_Val"]
 	@property
-	def Val(self):
-		return self._Val
+	def MtrtyDt(self):
+		return self._MtrtyDt
 
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
+	@MtrtyDt.setter
+	def MtrtyDt(self, value):
+		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
 
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
+	@MtrtyDt.deleter
+	def MtrtyDt(self):
+		del self._MtrtyDt
+		self._MtrtyDt = None
 
 	@property
 	def CtrPtyId(self):
@@ -33,21 +33,21 @@ class Deposit1(base_types._BaseFieldType):
 		self._CtrPtyId = None
 
 	@property
-	def MtrtyDt(self):
-		return self._MtrtyDt
+	def Val(self):
+		return self._Val
 
-	@MtrtyDt.setter
-	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != auto else self.make_default("Val")
 
-	@MtrtyDt.deleter
-	def MtrtyDt(self):
-		del self._MtrtyDt
-		self._MtrtyDt = None
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Val', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyId', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyId', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

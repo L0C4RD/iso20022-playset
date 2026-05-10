@@ -1,10 +1,23 @@
-import base_types
-import Max35Text
+from . import base_types
 import Max350Text
+import Max35Text
 
 class UpdateLogProprietary1(base_types._BaseFieldType):
 
-	__slots__ = ["_NewFldVal", "_OdFldVal", "_FldNm"]
+	__slots__ = ["_FldNm", "_NewFldVal", "_OdFldVal"]
+	@property
+	def FldNm(self):
+		return self._FldNm
+
+	@FldNm.setter
+	def FldNm(self, value):
+		self._FldNm = value if type(value) != auto else self.make_default("FldNm")
+
+	@FldNm.deleter
+	def FldNm(self):
+		del self._FldNm
+		self._FldNm = None
+
 	@property
 	def NewFldVal(self):
 		return self._NewFldVal
@@ -31,22 +44,9 @@ class UpdateLogProprietary1(base_types._BaseFieldType):
 		del self._OdFldVal
 		self._OdFldVal = None
 
-	@property
-	def FldNm(self):
-		return self._FldNm
-
-	@FldNm.setter
-	def FldNm(self, value):
-		self._FldNm = value if type(value) != auto else self.make_default("FldNm")
-
-	@FldNm.deleter
-	def FldNm(self):
-		del self._FldNm
-		self._FldNm = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='FldNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewFldVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OdFldVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FldNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

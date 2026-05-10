@@ -1,25 +1,12 @@
-import base_types
-import Max35Text
+from . import base_types
 import TaxReportingStatus2Code
-import GenericValidationRuleIdentification1
 import SupplementaryData1
+import Max35Text
+import GenericValidationRuleIdentification1
 
 class InvoiceTaxReportTransactionStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxRptId", "_SplmtryData", "_VldtnRule", "_Sts"]
-	@property
-	def TaxRptId(self):
-		return self._TaxRptId
-
-	@TaxRptId.setter
-	def TaxRptId(self, value):
-		self._TaxRptId = value if type(value) != auto else self.make_default("TaxRptId")
-
-	@TaxRptId.deleter
-	def TaxRptId(self):
-		del self._TaxRptId
-		self._TaxRptId = None
-
+	__slots__ = ["_SplmtryData", "_VldtnRule", "_Sts", "_TaxRptId"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -59,10 +46,23 @@ class InvoiceTaxReportTransactionStatus1(base_types._BaseFieldType):
 		del self._Sts
 		self._Sts = None
 
+	@property
+	def TaxRptId(self):
+		return self._TaxRptId
+
+	@TaxRptId.setter
+	def TaxRptId(self, value):
+		self._TaxRptId = value if type(value) != auto else self.make_default("TaxRptId")
+
+	@TaxRptId.deleter
+	def TaxRptId(self):
+		del self._TaxRptId
+		self._TaxRptId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxRptId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=TaxReportingStatus2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRptId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

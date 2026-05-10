@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class Exact2UpperCaseAlphaText(base_types._BaseDataType_String):
 

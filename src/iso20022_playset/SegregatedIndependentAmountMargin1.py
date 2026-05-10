@@ -1,10 +1,10 @@
-import base_types
-import ActiveCurrencyAndAmount
+from . import base_types
 import RoundingMethod1Code
+import ActiveCurrencyAndAmount
 
 class SegregatedIndependentAmountMargin1(base_types._BaseFieldType):
 
-	__slots__ = ["_RndgAmt", "_RndgMtd", "_MinTrfAmt"]
+	__slots__ = ["_RndgAmt", "_MinTrfAmt", "_RndgMtd"]
 	@property
 	def RndgAmt(self):
 		return self._RndgAmt
@@ -19,19 +19,6 @@ class SegregatedIndependentAmountMargin1(base_types._BaseFieldType):
 		self._RndgAmt = None
 
 	@property
-	def RndgMtd(self):
-		return self._RndgMtd
-
-	@RndgMtd.setter
-	def RndgMtd(self, value):
-		self._RndgMtd = value if type(value) != auto else self.make_default("RndgMtd")
-
-	@RndgMtd.deleter
-	def RndgMtd(self):
-		del self._RndgMtd
-		self._RndgMtd = None
-
-	@property
 	def MinTrfAmt(self):
 		return self._MinTrfAmt
 
@@ -44,9 +31,22 @@ class SegregatedIndependentAmountMargin1(base_types._BaseFieldType):
 		del self._MinTrfAmt
 		self._MinTrfAmt = None
 
+	@property
+	def RndgMtd(self):
+		return self._RndgMtd
+
+	@RndgMtd.setter
+	def RndgMtd(self, value):
+		self._RndgMtd = value if type(value) != auto else self.make_default("RndgMtd")
+
+	@RndgMtd.deleter
+	def RndgMtd(self):
+		del self._RndgMtd
+		self._RndgMtd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RndgAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RndgMtd', type=RoundingMethod1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinTrfAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RndgMtd', type=RoundingMethod1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

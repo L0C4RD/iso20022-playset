@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ForwardDataSetSubmissionReportV05
 
 class TSMT_017_001_05():

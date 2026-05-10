@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class ISO8583ResponseCode(base_types._BaseDataType_String):
 

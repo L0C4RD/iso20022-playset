@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class Max9999HexBinaryText(base_types._BaseDataType_String):
 

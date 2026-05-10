@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
 import NonEquityAssetClass1Code
 import NonEquitySubClass1
 import NonEquityInstrumentReportingClassification1Code
 
 class AssetClassAndSubClassIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmClssfctn", "_AsstClss", "_DerivSubClss"]
+	__slots__ = ["_DerivSubClss", "_FinInstrmClssfctn", "_AsstClss"]
+	@property
+	def DerivSubClss(self):
+		return self._DerivSubClss
+
+	@DerivSubClss.setter
+	def DerivSubClss(self, value):
+		self._DerivSubClss = value if type(value) != auto else self.make_default("DerivSubClss")
+
+	@DerivSubClss.deleter
+	def DerivSubClss(self):
+		del self._DerivSubClss
+		self._DerivSubClss = None
+
 	@property
 	def FinInstrmClssfctn(self):
 		return self._FinInstrmClssfctn
@@ -32,22 +45,9 @@ class AssetClassAndSubClassIdentification2(base_types._BaseFieldType):
 		del self._AsstClss
 		self._AsstClss = None
 
-	@property
-	def DerivSubClss(self):
-		return self._DerivSubClss
-
-	@DerivSubClss.setter
-	def DerivSubClss(self, value):
-		self._DerivSubClss = value if type(value) != auto else self.make_default("DerivSubClss")
-
-	@DerivSubClss.deleter
-	def DerivSubClss(self):
-		del self._DerivSubClss
-		self._DerivSubClss = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DerivSubClss', type=NonEquitySubClass1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmClssfctn', type=NonEquityInstrumentReportingClassification1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AsstClss', type=NonEquityAssetClass1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DerivSubClss', type=NonEquitySubClass1, min=0, max=1, mutex_group=None, array=False),
 	))
 

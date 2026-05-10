@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BaselineMatchReportV03
 
 class TSMT_010_001_03():

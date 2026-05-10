@@ -1,38 +1,25 @@
-import base_types
-import Max35Text
-import Max140Text
+from . import base_types
 import CardPaymentTransactionDetails53
-import Max70Text
+import Max140Text
 import TransactionIdentifier1
+import Max35Text
+import Max70Text
 
 class CardPaymentTransaction137(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRefId", "_InitrTxId", "_TxDtls", "_IntrchngData", "_RcptTxId", "_RcncltnId", "_TxId", "_MrchntRefData"]
+	__slots__ = ["_MrchntRefData", "_TxDtls", "_IntrchngData", "_RcptTxId", "_TxId", "_SaleRefId", "_RcncltnId", "_InitrTxId"]
 	@property
-	def SaleRefId(self):
-		return self._SaleRefId
+	def MrchntRefData(self):
+		return self._MrchntRefData
 
-	@SaleRefId.setter
-	def SaleRefId(self, value):
-		self._SaleRefId = value if type(value) != auto else self.make_default("SaleRefId")
+	@MrchntRefData.setter
+	def MrchntRefData(self, value):
+		self._MrchntRefData = value if type(value) != auto else self.make_default("MrchntRefData")
 
-	@SaleRefId.deleter
-	def SaleRefId(self):
-		del self._SaleRefId
-		self._SaleRefId = None
-
-	@property
-	def InitrTxId(self):
-		return self._InitrTxId
-
-	@InitrTxId.setter
-	def InitrTxId(self, value):
-		self._InitrTxId = value if type(value) != auto else self.make_default("InitrTxId")
-
-	@InitrTxId.deleter
-	def InitrTxId(self):
-		del self._InitrTxId
-		self._InitrTxId = None
+	@MrchntRefData.deleter
+	def MrchntRefData(self):
+		del self._MrchntRefData
+		self._MrchntRefData = None
 
 	@property
 	def TxDtls(self):
@@ -74,19 +61,6 @@ class CardPaymentTransaction137(base_types._BaseFieldType):
 		self._RcptTxId = None
 
 	@property
-	def RcncltnId(self):
-		return self._RcncltnId
-
-	@RcncltnId.setter
-	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
-
-	@RcncltnId.deleter
-	def RcncltnId(self):
-		del self._RcncltnId
-		self._RcncltnId = None
-
-	@property
 	def TxId(self):
 		return self._TxId
 
@@ -100,26 +74,52 @@ class CardPaymentTransaction137(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def MrchntRefData(self):
-		return self._MrchntRefData
+	def SaleRefId(self):
+		return self._SaleRefId
 
-	@MrchntRefData.setter
-	def MrchntRefData(self, value):
-		self._MrchntRefData = value if type(value) != auto else self.make_default("MrchntRefData")
+	@SaleRefId.setter
+	def SaleRefId(self, value):
+		self._SaleRefId = value if type(value) != auto else self.make_default("SaleRefId")
 
-	@MrchntRefData.deleter
-	def MrchntRefData(self):
-		del self._MrchntRefData
-		self._MrchntRefData = None
+	@SaleRefId.deleter
+	def SaleRefId(self):
+		del self._SaleRefId
+		self._SaleRefId = None
+
+	@property
+	def RcncltnId(self):
+		return self._RcncltnId
+
+	@RcncltnId.setter
+	def RcncltnId(self, value):
+		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
+
+	@RcncltnId.deleter
+	def RcncltnId(self):
+		del self._RcncltnId
+		self._RcncltnId = None
+
+	@property
+	def InitrTxId(self):
+		return self._InitrTxId
+
+	@InitrTxId.setter
+	def InitrTxId(self, value):
+		self._InitrTxId = value if type(value) != auto else self.make_default("InitrTxId")
+
+	@InitrTxId.deleter
+	def InitrTxId(self):
+		del self._InitrTxId
+		self._InitrTxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrchntRefData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtls', type=CardPaymentTransactionDetails53, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrchngData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptTxId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrchntRefData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

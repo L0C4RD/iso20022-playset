@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import Percentage14Rate
 import PriceRateType3Code
 
 class PercentagePrice2(base_types._BaseFieldType):
 
-	__slots__ = ["_PricVal", "_PctgPricTp"]
-	@property
-	def PricVal(self):
-		return self._PricVal
-
-	@PricVal.setter
-	def PricVal(self, value):
-		self._PricVal = value if type(value) != auto else self.make_default("PricVal")
-
-	@PricVal.deleter
-	def PricVal(self):
-		del self._PricVal
-		self._PricVal = None
-
+	__slots__ = ["_PctgPricTp", "_PricVal"]
 	@property
 	def PctgPricTp(self):
 		return self._PctgPricTp
@@ -31,8 +18,21 @@ class PercentagePrice2(base_types._BaseFieldType):
 		del self._PctgPricTp
 		self._PctgPricTp = None
 
+	@property
+	def PricVal(self):
+		return self._PricVal
+
+	@PricVal.setter
+	def PricVal(self, value):
+		self._PricVal = value if type(value) != auto else self.make_default("PricVal")
+
+	@PricVal.deleter
+	def PricVal(self):
+		del self._PricVal
+		self._PricVal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PricVal', type=Percentage14Rate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PctgPricTp', type=PriceRateType3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricVal', type=Percentage14Rate, min=1, max=1, mutex_group=None, array=False),
 	))
 

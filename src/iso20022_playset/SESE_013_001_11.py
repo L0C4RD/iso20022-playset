@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PortfolioTransferConfirmationV11
 
 class SESE_013_001_11():

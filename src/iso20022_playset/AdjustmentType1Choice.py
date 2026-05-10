@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import AdjustmentType2Code
+import Max35Text
 
 class AdjustmentType1Choice(base_types._BaseFieldType):
 

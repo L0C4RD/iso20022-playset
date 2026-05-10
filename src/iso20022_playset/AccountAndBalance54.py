@@ -1,11 +1,24 @@
-import base_types
-import RestrictedFINXMax35Text
-import BalanceFormat14Choice
+from . import base_types
 import RestrictedFINXMax140Text
+import BalanceFormat14Choice
+import RestrictedFINXMax35Text
 
 class AccountAndBalance54(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgAcct", "_BlckChainAdrOrWllt", "_ConfdBal"]
+	__slots__ = ["_ConfdBal", "_SfkpgAcct", "_BlckChainAdrOrWllt"]
+	@property
+	def ConfdBal(self):
+		return self._ConfdBal
+
+	@ConfdBal.setter
+	def ConfdBal(self, value):
+		self._ConfdBal = value if type(value) != auto else self.make_default("ConfdBal")
+
+	@ConfdBal.deleter
+	def ConfdBal(self):
+		del self._ConfdBal
+		self._ConfdBal = None
+
 	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
@@ -32,22 +45,9 @@ class AccountAndBalance54(base_types._BaseFieldType):
 		del self._BlckChainAdrOrWllt
 		self._BlckChainAdrOrWllt = None
 
-	@property
-	def ConfdBal(self):
-		return self._ConfdBal
-
-	@ConfdBal.setter
-	def ConfdBal(self, value):
-		self._ConfdBal = value if type(value) != auto else self.make_default("ConfdBal")
-
-	@ConfdBal.deleter
-	def ConfdBal(self):
-		del self._ConfdBal
-		self._ConfdBal = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ConfdBal', type=BalanceFormat14Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConfdBal', type=BalanceFormat14Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

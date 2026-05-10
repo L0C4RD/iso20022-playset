@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DateType8Code
 import Period11
 

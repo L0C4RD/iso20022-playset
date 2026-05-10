@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ATMWithdrawalRequestV03
 
 class CATP_001_001_03():

@@ -1,22 +1,22 @@
-import base_types
-import Max35Text
+from . import base_types
 import CorporateActionNarrative3Choice
+import Max35Text
 
 class CorporateActionGeneralInformation92(base_types._BaseFieldType):
 
-	__slots__ = ["_OffclCorpActnEvtId", "_NrrtvTp", "_CorpActnEvtId"]
+	__slots__ = ["_CorpActnEvtId", "_NrrtvTp", "_OffclCorpActnEvtId"]
 	@property
-	def OffclCorpActnEvtId(self):
-		return self._OffclCorpActnEvtId
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
 
-	@OffclCorpActnEvtId.setter
-	def OffclCorpActnEvtId(self, value):
-		self._OffclCorpActnEvtId = value if type(value) != auto else self.make_default("OffclCorpActnEvtId")
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
 
-	@OffclCorpActnEvtId.deleter
-	def OffclCorpActnEvtId(self):
-		del self._OffclCorpActnEvtId
-		self._OffclCorpActnEvtId = None
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
 
 	@property
 	def NrrtvTp(self):
@@ -32,21 +32,21 @@ class CorporateActionGeneralInformation92(base_types._BaseFieldType):
 		self._NrrtvTp = None
 
 	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
+	def OffclCorpActnEvtId(self):
+		return self._OffclCorpActnEvtId
 
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
+	@OffclCorpActnEvtId.setter
+	def OffclCorpActnEvtId(self, value):
+		self._OffclCorpActnEvtId = value if type(value) != auto else self.make_default("OffclCorpActnEvtId")
 
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
+	@OffclCorpActnEvtId.deleter
+	def OffclCorpActnEvtId(self):
+		del self._OffclCorpActnEvtId
+		self._OffclCorpActnEvtId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NrrtvTp', type=CorporateActionNarrative3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NrrtvTp', type=CorporateActionNarrative3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

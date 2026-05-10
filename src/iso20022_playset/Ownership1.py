@@ -1,22 +1,22 @@
-import base_types
+from . import base_types
 import OwnershipType3Choice
 import PercentageRate
 
 class Ownership1(base_types._BaseFieldType):
 
-	__slots__ = ["_OwnrshTp", "_UsfrctPctg", "_OwnrshPctg"]
+	__slots__ = ["_OwnrshPctg", "_UsfrctPctg", "_OwnrshTp"]
 	@property
-	def OwnrshTp(self):
-		return self._OwnrshTp
+	def OwnrshPctg(self):
+		return self._OwnrshPctg
 
-	@OwnrshTp.setter
-	def OwnrshTp(self, value):
-		self._OwnrshTp = value if type(value) != auto else self.make_default("OwnrshTp")
+	@OwnrshPctg.setter
+	def OwnrshPctg(self, value):
+		self._OwnrshPctg = value if type(value) != auto else self.make_default("OwnrshPctg")
 
-	@OwnrshTp.deleter
-	def OwnrshTp(self):
-		del self._OwnrshTp
-		self._OwnrshTp = None
+	@OwnrshPctg.deleter
+	def OwnrshPctg(self):
+		del self._OwnrshPctg
+		self._OwnrshPctg = None
 
 	@property
 	def UsfrctPctg(self):
@@ -32,21 +32,21 @@ class Ownership1(base_types._BaseFieldType):
 		self._UsfrctPctg = None
 
 	@property
-	def OwnrshPctg(self):
-		return self._OwnrshPctg
+	def OwnrshTp(self):
+		return self._OwnrshTp
 
-	@OwnrshPctg.setter
-	def OwnrshPctg(self, value):
-		self._OwnrshPctg = value if type(value) != auto else self.make_default("OwnrshPctg")
+	@OwnrshTp.setter
+	def OwnrshTp(self, value):
+		self._OwnrshTp = value if type(value) != auto else self.make_default("OwnrshTp")
 
-	@OwnrshPctg.deleter
-	def OwnrshPctg(self):
-		del self._OwnrshPctg
-		self._OwnrshPctg = None
+	@OwnrshTp.deleter
+	def OwnrshTp(self):
+		del self._OwnrshTp
+		self._OwnrshTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OwnrshTp', type=OwnershipType3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UsfrctPctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OwnrshPctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsfrctPctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OwnrshTp', type=OwnershipType3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

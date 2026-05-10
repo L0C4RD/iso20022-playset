@@ -1,25 +1,25 @@
-import base_types
+from . import base_types
+import TradeDateTimeQueryCriteria2
 import TrueFalseIndicator
 import TradePartyQueryCriteria5
 import TradeTypeQueryCriteria2
 import TradeAdditionalQueryCriteria7
-import TradeDateTimeQueryCriteria2
 
 class TradeQueryCriteria10(base_types._BaseFieldType):
 
-	__slots__ = ["_OutsdngTradInd", "_TradTpCrit", "_OthrCrit", "_TradPtyCrit", "_TmCrit", "_TradLifeCyclHstry"]
+	__slots__ = ["_TmCrit", "_TradTpCrit", "_OutsdngTradInd", "_TradLifeCyclHstry", "_TradPtyCrit", "_OthrCrit"]
 	@property
-	def OutsdngTradInd(self):
-		return self._OutsdngTradInd
+	def TmCrit(self):
+		return self._TmCrit
 
-	@OutsdngTradInd.setter
-	def OutsdngTradInd(self, value):
-		self._OutsdngTradInd = value if type(value) != auto else self.make_default("OutsdngTradInd")
+	@TmCrit.setter
+	def TmCrit(self, value):
+		self._TmCrit = value if type(value) != auto else self.make_default("TmCrit")
 
-	@OutsdngTradInd.deleter
-	def OutsdngTradInd(self):
-		del self._OutsdngTradInd
-		self._OutsdngTradInd = None
+	@TmCrit.deleter
+	def TmCrit(self):
+		del self._TmCrit
+		self._TmCrit = None
 
 	@property
 	def TradTpCrit(self):
@@ -35,17 +35,30 @@ class TradeQueryCriteria10(base_types._BaseFieldType):
 		self._TradTpCrit = None
 
 	@property
-	def OthrCrit(self):
-		return self._OthrCrit
+	def OutsdngTradInd(self):
+		return self._OutsdngTradInd
 
-	@OthrCrit.setter
-	def OthrCrit(self, value):
-		self._OthrCrit = value if type(value) != auto else self.make_default("OthrCrit")
+	@OutsdngTradInd.setter
+	def OutsdngTradInd(self, value):
+		self._OutsdngTradInd = value if type(value) != auto else self.make_default("OutsdngTradInd")
 
-	@OthrCrit.deleter
-	def OthrCrit(self):
-		del self._OthrCrit
-		self._OthrCrit = None
+	@OutsdngTradInd.deleter
+	def OutsdngTradInd(self):
+		del self._OutsdngTradInd
+		self._OutsdngTradInd = None
+
+	@property
+	def TradLifeCyclHstry(self):
+		return self._TradLifeCyclHstry
+
+	@TradLifeCyclHstry.setter
+	def TradLifeCyclHstry(self, value):
+		self._TradLifeCyclHstry = value if type(value) != auto else self.make_default("TradLifeCyclHstry")
+
+	@TradLifeCyclHstry.deleter
+	def TradLifeCyclHstry(self):
+		del self._TradLifeCyclHstry
+		self._TradLifeCyclHstry = None
 
 	@property
 	def TradPtyCrit(self):
@@ -61,37 +74,24 @@ class TradeQueryCriteria10(base_types._BaseFieldType):
 		self._TradPtyCrit = None
 
 	@property
-	def TmCrit(self):
-		return self._TmCrit
+	def OthrCrit(self):
+		return self._OthrCrit
 
-	@TmCrit.setter
-	def TmCrit(self, value):
-		self._TmCrit = value if type(value) != auto else self.make_default("TmCrit")
+	@OthrCrit.setter
+	def OthrCrit(self, value):
+		self._OthrCrit = value if type(value) != auto else self.make_default("OthrCrit")
 
-	@TmCrit.deleter
-	def TmCrit(self):
-		del self._TmCrit
-		self._TmCrit = None
-
-	@property
-	def TradLifeCyclHstry(self):
-		return self._TradLifeCyclHstry
-
-	@TradLifeCyclHstry.setter
-	def TradLifeCyclHstry(self, value):
-		self._TradLifeCyclHstry = value if type(value) != auto else self.make_default("TradLifeCyclHstry")
-
-	@TradLifeCyclHstry.deleter
-	def TradLifeCyclHstry(self):
-		del self._TradLifeCyclHstry
-		self._TradLifeCyclHstry = None
+	@OthrCrit.deleter
+	def OthrCrit(self):
+		del self._OthrCrit
+		self._OthrCrit = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OutsdngTradInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradTpCrit', type=TradeTypeQueryCriteria2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrCrit', type=TradeAdditionalQueryCriteria7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradPtyCrit', type=TradePartyQueryCriteria5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmCrit', type=TradeDateTimeQueryCriteria2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradTpCrit', type=TradeTypeQueryCriteria2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OutsdngTradInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradLifeCyclHstry', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradPtyCrit', type=TradePartyQueryCriteria5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrCrit', type=TradeAdditionalQueryCriteria7, min=0, max=1, mutex_group=None, array=False),
 	))
 

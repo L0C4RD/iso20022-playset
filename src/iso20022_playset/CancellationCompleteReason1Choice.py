@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CancelledStatusReason1Code
 import GenericIdentification36
 

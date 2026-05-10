@@ -1,13 +1,13 @@
-import base_types
-import ISODateTime
-import BaseOneRate
-import ActiveOrHistoricCurrencyCode
-import Max70Text
+from . import base_types
 import Max40Text
+import ISODateTime
+import ActiveOrHistoricCurrencyCode
+import BaseOneRate
+import Max70Text
 
 class CurrencyExchange6(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_UnitCcy", "_QtnDt", "_Cmnts", "_XchgRate", "_SrcCcy", "_TrgtCcy"]
+	__slots__ = ["_Desc", "_SrcCcy", "_QtnDt", "_XchgRate", "_UnitCcy", "_TrgtCcy", "_Cmnts"]
 	@property
 	def Desc(self):
 		return self._Desc
@@ -20,58 +20,6 @@ class CurrencyExchange6(base_types._BaseFieldType):
 	def Desc(self):
 		del self._Desc
 		self._Desc = None
-
-	@property
-	def UnitCcy(self):
-		return self._UnitCcy
-
-	@UnitCcy.setter
-	def UnitCcy(self, value):
-		self._UnitCcy = value if type(value) != auto else self.make_default("UnitCcy")
-
-	@UnitCcy.deleter
-	def UnitCcy(self):
-		del self._UnitCcy
-		self._UnitCcy = None
-
-	@property
-	def QtnDt(self):
-		return self._QtnDt
-
-	@QtnDt.setter
-	def QtnDt(self, value):
-		self._QtnDt = value if type(value) != auto else self.make_default("QtnDt")
-
-	@QtnDt.deleter
-	def QtnDt(self):
-		del self._QtnDt
-		self._QtnDt = None
-
-	@property
-	def Cmnts(self):
-		return self._Cmnts
-
-	@Cmnts.setter
-	def Cmnts(self, value):
-		self._Cmnts = value if type(value) != auto else self.make_default("Cmnts")
-
-	@Cmnts.deleter
-	def Cmnts(self):
-		del self._Cmnts
-		self._Cmnts = None
-
-	@property
-	def XchgRate(self):
-		return self._XchgRate
-
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
-
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
 
 	@property
 	def SrcCcy(self):
@@ -87,6 +35,45 @@ class CurrencyExchange6(base_types._BaseFieldType):
 		self._SrcCcy = None
 
 	@property
+	def QtnDt(self):
+		return self._QtnDt
+
+	@QtnDt.setter
+	def QtnDt(self, value):
+		self._QtnDt = value if type(value) != auto else self.make_default("QtnDt")
+
+	@QtnDt.deleter
+	def QtnDt(self):
+		del self._QtnDt
+		self._QtnDt = None
+
+	@property
+	def XchgRate(self):
+		return self._XchgRate
+
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
+
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
+
+	@property
+	def UnitCcy(self):
+		return self._UnitCcy
+
+	@UnitCcy.setter
+	def UnitCcy(self, value):
+		self._UnitCcy = value if type(value) != auto else self.make_default("UnitCcy")
+
+	@UnitCcy.deleter
+	def UnitCcy(self):
+		del self._UnitCcy
+		self._UnitCcy = None
+
+	@property
 	def TrgtCcy(self):
 		return self._TrgtCcy
 
@@ -99,13 +86,26 @@ class CurrencyExchange6(base_types._BaseFieldType):
 		del self._TrgtCcy
 		self._TrgtCcy = None
 
+	@property
+	def Cmnts(self):
+		return self._Cmnts
+
+	@Cmnts.setter
+	def Cmnts(self, value):
+		self._Cmnts = value if type(value) != auto else self.make_default("Cmnts")
+
+	@Cmnts.deleter
+	def Cmnts(self):
+		del self._Cmnts
+		self._Cmnts = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max40Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cmnts', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrcCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrgtCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cmnts', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

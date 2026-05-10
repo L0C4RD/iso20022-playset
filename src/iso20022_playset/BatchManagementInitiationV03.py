@@ -1,109 +1,122 @@
-import base_types
-import Max70Text
-import ProgrammeMode5
-import Jurisdiction2
-import ProtectedData2
-import PartyIdentification286
-import Number
-import Max35Text
-import ISODateTime
-import Header71
-import Reconciliation4
-import BatchManagementType2Code
-import Max35Binary
-import TrueFalseIndicator
-import Exact12Text
-import CorrectionIdentification1
-import Max12NumericText
-import SupplementaryData1
-import ISO8583ResponseCode
-import Exact15Text
+from . import base_types
 import SettlementService6
-import ContentInformationType41
+import Jurisdiction2
+import ISODateTime
+import Max35Binary
+import Max35Text
+import ProgrammeMode5
 import Max15NumericText
-import AdditionalData2
+import Exact15Text
+import TrueFalseIndicator
+import ProtectedData2
+import ISO8583ResponseCode
+import PartyIdentification286
+import Exact12Text
+import SupplementaryData1
+import Reconciliation4
+import Max70Text
+import ContentInformationType41
+import Number
 import ProcessingResult26
+import Max12NumericText
+import CorrectionIdentification1
+import Header71
+import AdditionalData2
+import BatchManagementType2Code
 
 class BatchManagementInitiationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_NbOfBtchsInColltn", "_ReqAck", "_TrnsmssnDtTm", "_OrgnlBtchId", "_OthrBtchMgmtTp", "_OrgnlRspnCd", "_BtchIdList", "_BtchMgmtTp", "_ColltnChcksm", "_MsgSeqNb", "_Crrctn", "_Dstn", "_AddtlData", "_LifeCyclId", "_ColltnSz", "_PostvAck", "_Hdr", "_SctyTrlr", "_Orgtr", "_Sndr", "_Prgrmm", "_SttlmSvc", "_ColltnIdList", "_Conttn", "_Rcvr", "_BtchId", "_NbOfMsgs", "_SysTracAudtNb", "_Rcncltn", "_Jursdctn", "_RtrvlRefNb", "_BtchChcksm", "_PrcgRslt", "_OrgnlColltnId", "_MsgsBfrAck", "_PrtctdData", "_ChckptId", "_ColltnId", "_RmngMsgsInColltn"]
+	__slots__ = ["_BtchIdList", "_PrtctdData", "_BtchChcksm", "_RmngMsgsInColltn", "_ChckptId", "_RtrvlRefNb", "_NbOfMsgs", "_OrgnlRspnCd", "_ColltnId", "_Rcncltn", "_AddtlData", "_SttlmSvc", "_ColltnChcksm", "_Prgrmm", "_ReqAck", "_PrcgRslt", "_NbOfBtchsInColltn", "_Hdr", "_BtchMgmtTp", "_Dstn", "_Rcvr", "_Crrctn", "_Jursdctn", "_Sndr", "_ColltnIdList", "_Conttn", "_SplmtryData", "_ColltnSz", "_OrgnlColltnId", "_MsgsBfrAck", "_OthrBtchMgmtTp", "_BtchId", "_OrgnlBtchId", "_TrnsmssnDtTm", "_LifeCyclId", "_SysTracAudtNb", "_Orgtr", "_MsgSeqNb", "_SctyTrlr", "_PostvAck"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def BtchIdList(self):
+		return self._BtchIdList
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@BtchIdList.setter
+	def BtchIdList(self, value):
+		self._BtchIdList = value if type(value) != auto else self.make_default("BtchIdList")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def NbOfBtchsInColltn(self):
-		return self._NbOfBtchsInColltn
-
-	@NbOfBtchsInColltn.setter
-	def NbOfBtchsInColltn(self, value):
-		self._NbOfBtchsInColltn = value if type(value) != auto else self.make_default("NbOfBtchsInColltn")
-
-	@NbOfBtchsInColltn.deleter
-	def NbOfBtchsInColltn(self):
-		del self._NbOfBtchsInColltn
-		self._NbOfBtchsInColltn = None
+	@BtchIdList.deleter
+	def BtchIdList(self):
+		del self._BtchIdList
+		self._BtchIdList = None
 
 	@property
-	def ReqAck(self):
-		return self._ReqAck
+	def PrtctdData(self):
+		return self._PrtctdData
 
-	@ReqAck.setter
-	def ReqAck(self, value):
-		self._ReqAck = value if type(value) != auto else self.make_default("ReqAck")
+	@PrtctdData.setter
+	def PrtctdData(self, value):
+		self._PrtctdData = value if type(value) != auto else self.make_default("PrtctdData")
 
-	@ReqAck.deleter
-	def ReqAck(self):
-		del self._ReqAck
-		self._ReqAck = None
-
-	@property
-	def TrnsmssnDtTm(self):
-		return self._TrnsmssnDtTm
-
-	@TrnsmssnDtTm.setter
-	def TrnsmssnDtTm(self, value):
-		self._TrnsmssnDtTm = value if type(value) != auto else self.make_default("TrnsmssnDtTm")
-
-	@TrnsmssnDtTm.deleter
-	def TrnsmssnDtTm(self):
-		del self._TrnsmssnDtTm
-		self._TrnsmssnDtTm = None
+	@PrtctdData.deleter
+	def PrtctdData(self):
+		del self._PrtctdData
+		self._PrtctdData = None
 
 	@property
-	def OrgnlBtchId(self):
-		return self._OrgnlBtchId
+	def BtchChcksm(self):
+		return self._BtchChcksm
 
-	@OrgnlBtchId.setter
-	def OrgnlBtchId(self, value):
-		self._OrgnlBtchId = value if type(value) != auto else self.make_default("OrgnlBtchId")
+	@BtchChcksm.setter
+	def BtchChcksm(self, value):
+		self._BtchChcksm = value if type(value) != auto else self.make_default("BtchChcksm")
 
-	@OrgnlBtchId.deleter
-	def OrgnlBtchId(self):
-		del self._OrgnlBtchId
-		self._OrgnlBtchId = None
+	@BtchChcksm.deleter
+	def BtchChcksm(self):
+		del self._BtchChcksm
+		self._BtchChcksm = None
 
 	@property
-	def OthrBtchMgmtTp(self):
-		return self._OthrBtchMgmtTp
+	def RmngMsgsInColltn(self):
+		return self._RmngMsgsInColltn
 
-	@OthrBtchMgmtTp.setter
-	def OthrBtchMgmtTp(self, value):
-		self._OthrBtchMgmtTp = value if type(value) != auto else self.make_default("OthrBtchMgmtTp")
+	@RmngMsgsInColltn.setter
+	def RmngMsgsInColltn(self, value):
+		self._RmngMsgsInColltn = value if type(value) != auto else self.make_default("RmngMsgsInColltn")
 
-	@OthrBtchMgmtTp.deleter
-	def OthrBtchMgmtTp(self):
-		del self._OthrBtchMgmtTp
-		self._OthrBtchMgmtTp = None
+	@RmngMsgsInColltn.deleter
+	def RmngMsgsInColltn(self):
+		del self._RmngMsgsInColltn
+		self._RmngMsgsInColltn = None
+
+	@property
+	def ChckptId(self):
+		return self._ChckptId
+
+	@ChckptId.setter
+	def ChckptId(self, value):
+		self._ChckptId = value if type(value) != auto else self.make_default("ChckptId")
+
+	@ChckptId.deleter
+	def ChckptId(self):
+		del self._ChckptId
+		self._ChckptId = None
+
+	@property
+	def RtrvlRefNb(self):
+		return self._RtrvlRefNb
+
+	@RtrvlRefNb.setter
+	def RtrvlRefNb(self, value):
+		self._RtrvlRefNb = value if type(value) != auto else self.make_default("RtrvlRefNb")
+
+	@RtrvlRefNb.deleter
+	def RtrvlRefNb(self):
+		del self._RtrvlRefNb
+		self._RtrvlRefNb = None
+
+	@property
+	def NbOfMsgs(self):
+		return self._NbOfMsgs
+
+	@NbOfMsgs.setter
+	def NbOfMsgs(self, value):
+		self._NbOfMsgs = value if type(value) != auto else self.make_default("NbOfMsgs")
+
+	@NbOfMsgs.deleter
+	def NbOfMsgs(self):
+		del self._NbOfMsgs
+		self._NbOfMsgs = None
 
 	@property
 	def OrgnlRspnCd(self):
@@ -119,82 +132,30 @@ class BatchManagementInitiationV03(base_types._BaseFieldType):
 		self._OrgnlRspnCd = None
 
 	@property
-	def BtchIdList(self):
-		return self._BtchIdList
+	def ColltnId(self):
+		return self._ColltnId
 
-	@BtchIdList.setter
-	def BtchIdList(self, value):
-		self._BtchIdList = value if type(value) != auto else self.make_default("BtchIdList")
+	@ColltnId.setter
+	def ColltnId(self, value):
+		self._ColltnId = value if type(value) != auto else self.make_default("ColltnId")
 
-	@BtchIdList.deleter
-	def BtchIdList(self):
-		del self._BtchIdList
-		self._BtchIdList = None
-
-	@property
-	def BtchMgmtTp(self):
-		return self._BtchMgmtTp
-
-	@BtchMgmtTp.setter
-	def BtchMgmtTp(self, value):
-		self._BtchMgmtTp = value if type(value) != auto else self.make_default("BtchMgmtTp")
-
-	@BtchMgmtTp.deleter
-	def BtchMgmtTp(self):
-		del self._BtchMgmtTp
-		self._BtchMgmtTp = None
+	@ColltnId.deleter
+	def ColltnId(self):
+		del self._ColltnId
+		self._ColltnId = None
 
 	@property
-	def ColltnChcksm(self):
-		return self._ColltnChcksm
+	def Rcncltn(self):
+		return self._Rcncltn
 
-	@ColltnChcksm.setter
-	def ColltnChcksm(self, value):
-		self._ColltnChcksm = value if type(value) != auto else self.make_default("ColltnChcksm")
+	@Rcncltn.setter
+	def Rcncltn(self, value):
+		self._Rcncltn = value if type(value) != auto else self.make_default("Rcncltn")
 
-	@ColltnChcksm.deleter
-	def ColltnChcksm(self):
-		del self._ColltnChcksm
-		self._ColltnChcksm = None
-
-	@property
-	def MsgSeqNb(self):
-		return self._MsgSeqNb
-
-	@MsgSeqNb.setter
-	def MsgSeqNb(self, value):
-		self._MsgSeqNb = value if type(value) != auto else self.make_default("MsgSeqNb")
-
-	@MsgSeqNb.deleter
-	def MsgSeqNb(self):
-		del self._MsgSeqNb
-		self._MsgSeqNb = None
-
-	@property
-	def Crrctn(self):
-		return self._Crrctn
-
-	@Crrctn.setter
-	def Crrctn(self, value):
-		self._Crrctn = value if type(value) != auto else self.make_default("Crrctn")
-
-	@Crrctn.deleter
-	def Crrctn(self):
-		del self._Crrctn
-		self._Crrctn = None
-
-	@property
-	def Dstn(self):
-		return self._Dstn
-
-	@Dstn.setter
-	def Dstn(self, value):
-		self._Dstn = value if type(value) != auto else self.make_default("Dstn")
-
-	@Dstn.deleter
-	def Dstn(self):
-		del self._Dstn
-		self._Dstn = None
+	@Rcncltn.deleter
+	def Rcncltn(self):
+		del self._Rcncltn
+		self._Rcncltn = None
 
 	@property
 	def AddtlData(self):
@@ -210,95 +171,30 @@ class BatchManagementInitiationV03(base_types._BaseFieldType):
 		self._AddtlData = None
 
 	@property
-	def LifeCyclId(self):
-		return self._LifeCyclId
+	def SttlmSvc(self):
+		return self._SttlmSvc
 
-	@LifeCyclId.setter
-	def LifeCyclId(self, value):
-		self._LifeCyclId = value if type(value) != auto else self.make_default("LifeCyclId")
+	@SttlmSvc.setter
+	def SttlmSvc(self, value):
+		self._SttlmSvc = value if type(value) != auto else self.make_default("SttlmSvc")
 
-	@LifeCyclId.deleter
-	def LifeCyclId(self):
-		del self._LifeCyclId
-		self._LifeCyclId = None
-
-	@property
-	def ColltnSz(self):
-		return self._ColltnSz
-
-	@ColltnSz.setter
-	def ColltnSz(self, value):
-		self._ColltnSz = value if type(value) != auto else self.make_default("ColltnSz")
-
-	@ColltnSz.deleter
-	def ColltnSz(self):
-		del self._ColltnSz
-		self._ColltnSz = None
+	@SttlmSvc.deleter
+	def SttlmSvc(self):
+		del self._SttlmSvc
+		self._SttlmSvc = None
 
 	@property
-	def PostvAck(self):
-		return self._PostvAck
+	def ColltnChcksm(self):
+		return self._ColltnChcksm
 
-	@PostvAck.setter
-	def PostvAck(self, value):
-		self._PostvAck = value if type(value) != auto else self.make_default("PostvAck")
+	@ColltnChcksm.setter
+	def ColltnChcksm(self, value):
+		self._ColltnChcksm = value if type(value) != auto else self.make_default("ColltnChcksm")
 
-	@PostvAck.deleter
-	def PostvAck(self):
-		del self._PostvAck
-		self._PostvAck = None
-
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
-	@property
-	def Orgtr(self):
-		return self._Orgtr
-
-	@Orgtr.setter
-	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
-
-	@Orgtr.deleter
-	def Orgtr(self):
-		del self._Orgtr
-		self._Orgtr = None
-
-	@property
-	def Sndr(self):
-		return self._Sndr
-
-	@Sndr.setter
-	def Sndr(self, value):
-		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
-
-	@Sndr.deleter
-	def Sndr(self):
-		del self._Sndr
-		self._Sndr = None
+	@ColltnChcksm.deleter
+	def ColltnChcksm(self):
+		del self._ColltnChcksm
+		self._ColltnChcksm = None
 
 	@property
 	def Prgrmm(self):
@@ -314,17 +210,134 @@ class BatchManagementInitiationV03(base_types._BaseFieldType):
 		self._Prgrmm = None
 
 	@property
-	def SttlmSvc(self):
-		return self._SttlmSvc
+	def ReqAck(self):
+		return self._ReqAck
 
-	@SttlmSvc.setter
-	def SttlmSvc(self, value):
-		self._SttlmSvc = value if type(value) != auto else self.make_default("SttlmSvc")
+	@ReqAck.setter
+	def ReqAck(self, value):
+		self._ReqAck = value if type(value) != auto else self.make_default("ReqAck")
 
-	@SttlmSvc.deleter
-	def SttlmSvc(self):
-		del self._SttlmSvc
-		self._SttlmSvc = None
+	@ReqAck.deleter
+	def ReqAck(self):
+		del self._ReqAck
+		self._ReqAck = None
+
+	@property
+	def PrcgRslt(self):
+		return self._PrcgRslt
+
+	@PrcgRslt.setter
+	def PrcgRslt(self, value):
+		self._PrcgRslt = value if type(value) != auto else self.make_default("PrcgRslt")
+
+	@PrcgRslt.deleter
+	def PrcgRslt(self):
+		del self._PrcgRslt
+		self._PrcgRslt = None
+
+	@property
+	def NbOfBtchsInColltn(self):
+		return self._NbOfBtchsInColltn
+
+	@NbOfBtchsInColltn.setter
+	def NbOfBtchsInColltn(self, value):
+		self._NbOfBtchsInColltn = value if type(value) != auto else self.make_default("NbOfBtchsInColltn")
+
+	@NbOfBtchsInColltn.deleter
+	def NbOfBtchsInColltn(self):
+		del self._NbOfBtchsInColltn
+		self._NbOfBtchsInColltn = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
+
+	@property
+	def BtchMgmtTp(self):
+		return self._BtchMgmtTp
+
+	@BtchMgmtTp.setter
+	def BtchMgmtTp(self, value):
+		self._BtchMgmtTp = value if type(value) != auto else self.make_default("BtchMgmtTp")
+
+	@BtchMgmtTp.deleter
+	def BtchMgmtTp(self):
+		del self._BtchMgmtTp
+		self._BtchMgmtTp = None
+
+	@property
+	def Dstn(self):
+		return self._Dstn
+
+	@Dstn.setter
+	def Dstn(self, value):
+		self._Dstn = value if type(value) != auto else self.make_default("Dstn")
+
+	@Dstn.deleter
+	def Dstn(self):
+		del self._Dstn
+		self._Dstn = None
+
+	@property
+	def Rcvr(self):
+		return self._Rcvr
+
+	@Rcvr.setter
+	def Rcvr(self, value):
+		self._Rcvr = value if type(value) != auto else self.make_default("Rcvr")
+
+	@Rcvr.deleter
+	def Rcvr(self):
+		del self._Rcvr
+		self._Rcvr = None
+
+	@property
+	def Crrctn(self):
+		return self._Crrctn
+
+	@Crrctn.setter
+	def Crrctn(self, value):
+		self._Crrctn = value if type(value) != auto else self.make_default("Crrctn")
+
+	@Crrctn.deleter
+	def Crrctn(self):
+		del self._Crrctn
+		self._Crrctn = None
+
+	@property
+	def Jursdctn(self):
+		return self._Jursdctn
+
+	@Jursdctn.setter
+	def Jursdctn(self, value):
+		self._Jursdctn = value if type(value) != auto else self.make_default("Jursdctn")
+
+	@Jursdctn.deleter
+	def Jursdctn(self):
+		del self._Jursdctn
+		self._Jursdctn = None
+
+	@property
+	def Sndr(self):
+		return self._Sndr
+
+	@Sndr.setter
+	def Sndr(self, value):
+		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
+
+	@Sndr.deleter
+	def Sndr(self):
+		del self._Sndr
+		self._Sndr = None
 
 	@property
 	def ColltnIdList(self):
@@ -353,121 +366,30 @@ class BatchManagementInitiationV03(base_types._BaseFieldType):
 		self._Conttn = None
 
 	@property
-	def Rcvr(self):
-		return self._Rcvr
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Rcvr.setter
-	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != auto else self.make_default("Rcvr")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@Rcvr.deleter
-	def Rcvr(self):
-		del self._Rcvr
-		self._Rcvr = None
-
-	@property
-	def BtchId(self):
-		return self._BtchId
-
-	@BtchId.setter
-	def BtchId(self, value):
-		self._BtchId = value if type(value) != auto else self.make_default("BtchId")
-
-	@BtchId.deleter
-	def BtchId(self):
-		del self._BtchId
-		self._BtchId = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
-	def NbOfMsgs(self):
-		return self._NbOfMsgs
+	def ColltnSz(self):
+		return self._ColltnSz
 
-	@NbOfMsgs.setter
-	def NbOfMsgs(self, value):
-		self._NbOfMsgs = value if type(value) != auto else self.make_default("NbOfMsgs")
+	@ColltnSz.setter
+	def ColltnSz(self, value):
+		self._ColltnSz = value if type(value) != auto else self.make_default("ColltnSz")
 
-	@NbOfMsgs.deleter
-	def NbOfMsgs(self):
-		del self._NbOfMsgs
-		self._NbOfMsgs = None
-
-	@property
-	def SysTracAudtNb(self):
-		return self._SysTracAudtNb
-
-	@SysTracAudtNb.setter
-	def SysTracAudtNb(self, value):
-		self._SysTracAudtNb = value if type(value) != auto else self.make_default("SysTracAudtNb")
-
-	@SysTracAudtNb.deleter
-	def SysTracAudtNb(self):
-		del self._SysTracAudtNb
-		self._SysTracAudtNb = None
-
-	@property
-	def Rcncltn(self):
-		return self._Rcncltn
-
-	@Rcncltn.setter
-	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != auto else self.make_default("Rcncltn")
-
-	@Rcncltn.deleter
-	def Rcncltn(self):
-		del self._Rcncltn
-		self._Rcncltn = None
-
-	@property
-	def Jursdctn(self):
-		return self._Jursdctn
-
-	@Jursdctn.setter
-	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != auto else self.make_default("Jursdctn")
-
-	@Jursdctn.deleter
-	def Jursdctn(self):
-		del self._Jursdctn
-		self._Jursdctn = None
-
-	@property
-	def RtrvlRefNb(self):
-		return self._RtrvlRefNb
-
-	@RtrvlRefNb.setter
-	def RtrvlRefNb(self, value):
-		self._RtrvlRefNb = value if type(value) != auto else self.make_default("RtrvlRefNb")
-
-	@RtrvlRefNb.deleter
-	def RtrvlRefNb(self):
-		del self._RtrvlRefNb
-		self._RtrvlRefNb = None
-
-	@property
-	def BtchChcksm(self):
-		return self._BtchChcksm
-
-	@BtchChcksm.setter
-	def BtchChcksm(self, value):
-		self._BtchChcksm = value if type(value) != auto else self.make_default("BtchChcksm")
-
-	@BtchChcksm.deleter
-	def BtchChcksm(self):
-		del self._BtchChcksm
-		self._BtchChcksm = None
-
-	@property
-	def PrcgRslt(self):
-		return self._PrcgRslt
-
-	@PrcgRslt.setter
-	def PrcgRslt(self, value):
-		self._PrcgRslt = value if type(value) != auto else self.make_default("PrcgRslt")
-
-	@PrcgRslt.deleter
-	def PrcgRslt(self):
-		del self._PrcgRslt
-		self._PrcgRslt = None
+	@ColltnSz.deleter
+	def ColltnSz(self):
+		del self._ColltnSz
+		self._ColltnSz = None
 
 	@property
 	def OrgnlColltnId(self):
@@ -496,97 +418,175 @@ class BatchManagementInitiationV03(base_types._BaseFieldType):
 		self._MsgsBfrAck = None
 
 	@property
-	def PrtctdData(self):
-		return self._PrtctdData
+	def OthrBtchMgmtTp(self):
+		return self._OthrBtchMgmtTp
 
-	@PrtctdData.setter
-	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != auto else self.make_default("PrtctdData")
+	@OthrBtchMgmtTp.setter
+	def OthrBtchMgmtTp(self, value):
+		self._OthrBtchMgmtTp = value if type(value) != auto else self.make_default("OthrBtchMgmtTp")
 
-	@PrtctdData.deleter
-	def PrtctdData(self):
-		del self._PrtctdData
-		self._PrtctdData = None
-
-	@property
-	def ChckptId(self):
-		return self._ChckptId
-
-	@ChckptId.setter
-	def ChckptId(self, value):
-		self._ChckptId = value if type(value) != auto else self.make_default("ChckptId")
-
-	@ChckptId.deleter
-	def ChckptId(self):
-		del self._ChckptId
-		self._ChckptId = None
+	@OthrBtchMgmtTp.deleter
+	def OthrBtchMgmtTp(self):
+		del self._OthrBtchMgmtTp
+		self._OthrBtchMgmtTp = None
 
 	@property
-	def ColltnId(self):
-		return self._ColltnId
+	def BtchId(self):
+		return self._BtchId
 
-	@ColltnId.setter
-	def ColltnId(self, value):
-		self._ColltnId = value if type(value) != auto else self.make_default("ColltnId")
+	@BtchId.setter
+	def BtchId(self, value):
+		self._BtchId = value if type(value) != auto else self.make_default("BtchId")
 
-	@ColltnId.deleter
-	def ColltnId(self):
-		del self._ColltnId
-		self._ColltnId = None
+	@BtchId.deleter
+	def BtchId(self):
+		del self._BtchId
+		self._BtchId = None
 
 	@property
-	def RmngMsgsInColltn(self):
-		return self._RmngMsgsInColltn
+	def OrgnlBtchId(self):
+		return self._OrgnlBtchId
 
-	@RmngMsgsInColltn.setter
-	def RmngMsgsInColltn(self, value):
-		self._RmngMsgsInColltn = value if type(value) != auto else self.make_default("RmngMsgsInColltn")
+	@OrgnlBtchId.setter
+	def OrgnlBtchId(self, value):
+		self._OrgnlBtchId = value if type(value) != auto else self.make_default("OrgnlBtchId")
 
-	@RmngMsgsInColltn.deleter
-	def RmngMsgsInColltn(self):
-		del self._RmngMsgsInColltn
-		self._RmngMsgsInColltn = None
+	@OrgnlBtchId.deleter
+	def OrgnlBtchId(self):
+		del self._OrgnlBtchId
+		self._OrgnlBtchId = None
+
+	@property
+	def TrnsmssnDtTm(self):
+		return self._TrnsmssnDtTm
+
+	@TrnsmssnDtTm.setter
+	def TrnsmssnDtTm(self, value):
+		self._TrnsmssnDtTm = value if type(value) != auto else self.make_default("TrnsmssnDtTm")
+
+	@TrnsmssnDtTm.deleter
+	def TrnsmssnDtTm(self):
+		del self._TrnsmssnDtTm
+		self._TrnsmssnDtTm = None
+
+	@property
+	def LifeCyclId(self):
+		return self._LifeCyclId
+
+	@LifeCyclId.setter
+	def LifeCyclId(self, value):
+		self._LifeCyclId = value if type(value) != auto else self.make_default("LifeCyclId")
+
+	@LifeCyclId.deleter
+	def LifeCyclId(self):
+		del self._LifeCyclId
+		self._LifeCyclId = None
+
+	@property
+	def SysTracAudtNb(self):
+		return self._SysTracAudtNb
+
+	@SysTracAudtNb.setter
+	def SysTracAudtNb(self, value):
+		self._SysTracAudtNb = value if type(value) != auto else self.make_default("SysTracAudtNb")
+
+	@SysTracAudtNb.deleter
+	def SysTracAudtNb(self):
+		del self._SysTracAudtNb
+		self._SysTracAudtNb = None
+
+	@property
+	def Orgtr(self):
+		return self._Orgtr
+
+	@Orgtr.setter
+	def Orgtr(self, value):
+		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
+
+	@Orgtr.deleter
+	def Orgtr(self):
+		del self._Orgtr
+		self._Orgtr = None
+
+	@property
+	def MsgSeqNb(self):
+		return self._MsgSeqNb
+
+	@MsgSeqNb.setter
+	def MsgSeqNb(self, value):
+		self._MsgSeqNb = value if type(value) != auto else self.make_default("MsgSeqNb")
+
+	@MsgSeqNb.deleter
+	def MsgSeqNb(self):
+		del self._MsgSeqNb
+		self._MsgSeqNb = None
+
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
+	@property
+	def PostvAck(self):
+		return self._PostvAck
+
+	@PostvAck.setter
+	def PostvAck(self, value):
+		self._PostvAck = value if type(value) != auto else self.make_default("PostvAck")
+
+	@PostvAck.deleter
+	def PostvAck(self):
+		del self._PostvAck
+		self._PostvAck = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NbOfBtchsInColltn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqAck', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrnsmssnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlBtchId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrBtchMgmtTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlRspnCd', type=ISO8583ResponseCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BtchIdList', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BtchMgmtTp', type=BatchManagementType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ColltnChcksm', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgSeqNb', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Crrctn', type=CorrectionIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dstn', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BtchChcksm', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmngMsgsInColltn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChckptId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfMsgs', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlRspnCd', type=ISO8583ResponseCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ColltnId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcncltn', type=Reconciliation4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ColltnSz', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PostvAck', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header71, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType41, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Orgtr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sndr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prgrmm', type=ProgrammeMode5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SttlmSvc', type=SettlementService6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ColltnChcksm', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prgrmm', type=ProgrammeMode5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ReqAck', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgRslt', type=ProcessingResult26, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfBtchsInColltn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header71, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BtchMgmtTp', type=BatchManagementType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dstn', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcvr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Crrctn', type=CorrectionIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Jursdctn', type=Jurisdiction2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sndr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ColltnIdList', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Conttn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcvr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BtchId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfMsgs', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysTracAudtNb', type=Max12NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcncltn', type=Reconciliation4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Jursdctn', type=Jurisdiction2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BtchChcksm', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgRslt', type=ProcessingResult26, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ColltnSz', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlColltnId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgsBfrAck', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ChckptId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ColltnId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmngMsgsInColltn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrBtchMgmtTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BtchId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlBtchId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrnsmssnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysTracAudtNb', type=Max12NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Orgtr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgSeqNb', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType41, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PostvAck', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

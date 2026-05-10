@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ATMDeviceControlV04
 
 class CAAM_002_001_04():

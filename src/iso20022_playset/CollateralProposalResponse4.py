@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CollateralProposalResponseType4
 
 class CollateralProposalResponse4(base_types._BaseFieldType):

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RetrievalFulfilmentResponseV03
 
 class CAIN_015_001_03():

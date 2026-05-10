@@ -1,11 +1,24 @@
-import base_types
-import Max35Text
+from . import base_types
 import Party50Choice
+import Max35Text
 import ISODateTime
 
 class GroupHeader117(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_CreDtTm", "_MsgSndr"]
+	__slots__ = ["_MsgSndr", "_MsgId", "_CreDtTm"]
+	@property
+	def MsgSndr(self):
+		return self._MsgSndr
+
+	@MsgSndr.setter
+	def MsgSndr(self, value):
+		self._MsgSndr = value if type(value) != auto else self.make_default("MsgSndr")
+
+	@MsgSndr.deleter
+	def MsgSndr(self):
+		del self._MsgSndr
+		self._MsgSndr = None
+
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -32,22 +45,9 @@ class GroupHeader117(base_types._BaseFieldType):
 		del self._CreDtTm
 		self._CreDtTm = None
 
-	@property
-	def MsgSndr(self):
-		return self._MsgSndr
-
-	@MsgSndr.setter
-	def MsgSndr(self, value):
-		self._MsgSndr = value if type(value) != auto else self.make_default("MsgSndr")
-
-	@MsgSndr.deleter
-	def MsgSndr(self):
-		del self._MsgSndr
-		self._MsgSndr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MsgSndr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgSndr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

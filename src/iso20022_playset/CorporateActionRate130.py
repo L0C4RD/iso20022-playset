@@ -1,24 +1,11 @@
-import base_types
-import RateAndAmountFormat65Choice
+from . import base_types
 import Percentage14Rate
+import RateAndAmountFormat65Choice
 import RateAndAmountFormat64Choice
 
 class CorporateActionRate130(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqdScndLvlTaxRate", "_ReqdWhldgTaxRate", "_OvrsbcptRate", "_PropsdRate"]
-	@property
-	def ReqdScndLvlTaxRate(self):
-		return self._ReqdScndLvlTaxRate
-
-	@ReqdScndLvlTaxRate.setter
-	def ReqdScndLvlTaxRate(self, value):
-		self._ReqdScndLvlTaxRate = value if type(value) != auto else self.make_default("ReqdScndLvlTaxRate")
-
-	@ReqdScndLvlTaxRate.deleter
-	def ReqdScndLvlTaxRate(self):
-		del self._ReqdScndLvlTaxRate
-		self._ReqdScndLvlTaxRate = None
-
+	__slots__ = ["_ReqdWhldgTaxRate", "_OvrsbcptRate", "_ReqdScndLvlTaxRate", "_PropsdRate"]
 	@property
 	def ReqdWhldgTaxRate(self):
 		return self._ReqdWhldgTaxRate
@@ -46,6 +33,19 @@ class CorporateActionRate130(base_types._BaseFieldType):
 		self._OvrsbcptRate = None
 
 	@property
+	def ReqdScndLvlTaxRate(self):
+		return self._ReqdScndLvlTaxRate
+
+	@ReqdScndLvlTaxRate.setter
+	def ReqdScndLvlTaxRate(self, value):
+		self._ReqdScndLvlTaxRate = value if type(value) != auto else self.make_default("ReqdScndLvlTaxRate")
+
+	@ReqdScndLvlTaxRate.deleter
+	def ReqdScndLvlTaxRate(self):
+		del self._ReqdScndLvlTaxRate
+		self._ReqdScndLvlTaxRate = None
+
+	@property
 	def PropsdRate(self):
 		return self._PropsdRate
 
@@ -59,9 +59,9 @@ class CorporateActionRate130(base_types._BaseFieldType):
 		self._PropsdRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqdScndLvlTaxRate', type=RateAndAmountFormat65Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ReqdWhldgTaxRate', type=RateAndAmountFormat65Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OvrsbcptRate', type=RateAndAmountFormat64Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdScndLvlTaxRate', type=RateAndAmountFormat65Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PropsdRate', type=Percentage14Rate, min=0, max=1, mutex_group=None, array=False),
 	))
 

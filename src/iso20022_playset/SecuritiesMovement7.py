@@ -1,13 +1,13 @@
-import base_types
-import Max35Text
-import CollateralEntryType1Code
-import FinancialInstrumentQuantity33Choice
+from . import base_types
 import YesNoIndicator
 import SecurityIdentification19
+import FinancialInstrumentQuantity33Choice
+import Max35Text
+import CollateralEntryType1Code
 
 class SecuritiesMovement7(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_SctiesMvmntTp", "_TrptyAgtSvcPrvdrSctiesMvmntId", "_CollMvmnt", "_FinInstrmId", "_ClntSctiesMvmntId"]
+	__slots__ = ["_Qty", "_ClntSctiesMvmntId", "_TrptyAgtSvcPrvdrSctiesMvmntId", "_CollMvmnt", "_SctiesMvmntTp", "_FinInstrmId"]
 	@property
 	def Qty(self):
 		return self._Qty
@@ -22,17 +22,17 @@ class SecuritiesMovement7(base_types._BaseFieldType):
 		self._Qty = None
 
 	@property
-	def SctiesMvmntTp(self):
-		return self._SctiesMvmntTp
+	def ClntSctiesMvmntId(self):
+		return self._ClntSctiesMvmntId
 
-	@SctiesMvmntTp.setter
-	def SctiesMvmntTp(self, value):
-		self._SctiesMvmntTp = value if type(value) != auto else self.make_default("SctiesMvmntTp")
+	@ClntSctiesMvmntId.setter
+	def ClntSctiesMvmntId(self, value):
+		self._ClntSctiesMvmntId = value if type(value) != auto else self.make_default("ClntSctiesMvmntId")
 
-	@SctiesMvmntTp.deleter
-	def SctiesMvmntTp(self):
-		del self._SctiesMvmntTp
-		self._SctiesMvmntTp = None
+	@ClntSctiesMvmntId.deleter
+	def ClntSctiesMvmntId(self):
+		del self._ClntSctiesMvmntId
+		self._ClntSctiesMvmntId = None
 
 	@property
 	def TrptyAgtSvcPrvdrSctiesMvmntId(self):
@@ -61,6 +61,19 @@ class SecuritiesMovement7(base_types._BaseFieldType):
 		self._CollMvmnt = None
 
 	@property
+	def SctiesMvmntTp(self):
+		return self._SctiesMvmntTp
+
+	@SctiesMvmntTp.setter
+	def SctiesMvmntTp(self, value):
+		self._SctiesMvmntTp = value if type(value) != auto else self.make_default("SctiesMvmntTp")
+
+	@SctiesMvmntTp.deleter
+	def SctiesMvmntTp(self):
+		del self._SctiesMvmntTp
+		self._SctiesMvmntTp = None
+
+	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
 
@@ -73,25 +86,12 @@ class SecuritiesMovement7(base_types._BaseFieldType):
 		del self._FinInstrmId
 		self._FinInstrmId = None
 
-	@property
-	def ClntSctiesMvmntId(self):
-		return self._ClntSctiesMvmntId
-
-	@ClntSctiesMvmntId.setter
-	def ClntSctiesMvmntId(self, value):
-		self._ClntSctiesMvmntId = value if type(value) != auto else self.make_default("ClntSctiesMvmntId")
-
-	@ClntSctiesMvmntId.deleter
-	def ClntSctiesMvmntId(self):
-		del self._ClntSctiesMvmntId
-		self._ClntSctiesMvmntId = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesMvmntTp', type=CollateralEntryType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntSctiesMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtSvcPrvdrSctiesMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollMvmnt', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesMvmntTp', type=CollateralEntryType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntSctiesMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

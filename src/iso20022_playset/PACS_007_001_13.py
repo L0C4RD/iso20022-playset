@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FIToFIPaymentReversalV13
 
 class PACS_007_001_13():

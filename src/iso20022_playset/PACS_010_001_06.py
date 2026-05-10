@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialInstitutionDirectDebitV06
 
 class PACS_010_001_06():

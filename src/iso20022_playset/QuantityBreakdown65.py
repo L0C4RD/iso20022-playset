@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
+import GenericIdentification47
 import GenericIdentification39
 import FinancialInstrumentQuantity36Choice
-import GenericIdentification47
 
 class QuantityBreakdown65(base_types._BaseFieldType):
 
-	__slots__ = ["_LotNb", "_LotQty", "_SctiesSubBalTp"]
+	__slots__ = ["_SctiesSubBalTp", "_LotQty", "_LotNb"]
 	@property
-	def LotNb(self):
-		return self._LotNb
+	def SctiesSubBalTp(self):
+		return self._SctiesSubBalTp
 
-	@LotNb.setter
-	def LotNb(self, value):
-		self._LotNb = value if type(value) != auto else self.make_default("LotNb")
+	@SctiesSubBalTp.setter
+	def SctiesSubBalTp(self, value):
+		self._SctiesSubBalTp = value if type(value) != auto else self.make_default("SctiesSubBalTp")
 
-	@LotNb.deleter
-	def LotNb(self):
-		del self._LotNb
-		self._LotNb = None
+	@SctiesSubBalTp.deleter
+	def SctiesSubBalTp(self):
+		del self._SctiesSubBalTp
+		self._SctiesSubBalTp = None
 
 	@property
 	def LotQty(self):
@@ -33,21 +33,21 @@ class QuantityBreakdown65(base_types._BaseFieldType):
 		self._LotQty = None
 
 	@property
-	def SctiesSubBalTp(self):
-		return self._SctiesSubBalTp
+	def LotNb(self):
+		return self._LotNb
 
-	@SctiesSubBalTp.setter
-	def SctiesSubBalTp(self, value):
-		self._SctiesSubBalTp = value if type(value) != auto else self.make_default("SctiesSubBalTp")
+	@LotNb.setter
+	def LotNb(self, value):
+		self._LotNb = value if type(value) != auto else self.make_default("LotNb")
 
-	@SctiesSubBalTp.deleter
-	def SctiesSubBalTp(self):
-		del self._SctiesSubBalTp
-		self._SctiesSubBalTp = None
+	@LotNb.deleter
+	def LotNb(self):
+		del self._LotNb
+		self._LotNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LotNb', type=GenericIdentification39, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LotQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesSubBalTp', type=GenericIdentification47, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LotQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LotNb', type=GenericIdentification39, min=0, max=1, mutex_group=None, array=False),
 	))
 

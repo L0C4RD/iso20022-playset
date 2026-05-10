@@ -1,11 +1,11 @@
-import base_types
-import FinancialInstrument87
+from . import base_types
 import ActiveOrHistoricCurrencyCode
+import FinancialInstrument87
 import UnitsOrAmountOrPercentage1Choice
 
 class Repartition6(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyOfPlan", "_Qty", "_FinInstrm"]
+	__slots__ = ["_CcyOfPlan", "_FinInstrm", "_Qty"]
 	@property
 	def CcyOfPlan(self):
 		return self._CcyOfPlan
@@ -20,19 +20,6 @@ class Repartition6(base_types._BaseFieldType):
 		self._CcyOfPlan = None
 
 	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
-
-	@property
 	def FinInstrm(self):
 		return self._FinInstrm
 
@@ -45,9 +32,22 @@ class Repartition6(base_types._BaseFieldType):
 		del self._FinInstrm
 		self._FinInstrm = None
 
+	@property
+	def Qty(self):
+		return self._Qty
+
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != auto else self.make_default("Qty")
+
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CcyOfPlan', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=UnitsOrAmountOrPercentage1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrm', type=FinancialInstrument87, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qty', type=UnitsOrAmountOrPercentage1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

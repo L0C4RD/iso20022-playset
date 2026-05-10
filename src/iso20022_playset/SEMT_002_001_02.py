@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CustodyStatementOfHoldingsV02
 
 class SEMT_002_001_02():

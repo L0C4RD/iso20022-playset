@@ -1,23 +1,10 @@
-import base_types
-import Max35Text
+from . import base_types
 import AirportName1Choice
+import Max35Text
 
 class TransportByAir2(base_types._BaseFieldType):
 
-	__slots__ = ["_AirCrrierNm", "_DprtureAirprt", "_DstnAirprt"]
-	@property
-	def AirCrrierNm(self):
-		return self._AirCrrierNm
-
-	@AirCrrierNm.setter
-	def AirCrrierNm(self, value):
-		self._AirCrrierNm = value if type(value) != auto else self.make_default("AirCrrierNm")
-
-	@AirCrrierNm.deleter
-	def AirCrrierNm(self):
-		del self._AirCrrierNm
-		self._AirCrrierNm = None
-
+	__slots__ = ["_DprtureAirprt", "_DstnAirprt", "_AirCrrierNm"]
 	@property
 	def DprtureAirprt(self):
 		return self._DprtureAirprt
@@ -44,9 +31,22 @@ class TransportByAir2(base_types._BaseFieldType):
 		del self._DstnAirprt
 		self._DstnAirprt = None
 
+	@property
+	def AirCrrierNm(self):
+		return self._AirCrrierNm
+
+	@AirCrrierNm.setter
+	def AirCrrierNm(self, value):
+		self._AirCrrierNm = value if type(value) != auto else self.make_default("AirCrrierNm")
+
+	@AirCrrierNm.deleter
+	def AirCrrierNm(self):
+		del self._AirCrrierNm
+		self._AirCrrierNm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AirCrrierNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DprtureAirprt', type=AirportName1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DstnAirprt', type=AirportName1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AirCrrierNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

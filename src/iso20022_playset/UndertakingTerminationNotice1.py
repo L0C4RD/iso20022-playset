@@ -1,38 +1,12 @@
-import base_types
-import Undertaking9
-import Document9
+from . import base_types
 import Max2000Text
 import UndertakingTermination3
+import Document9
+import Undertaking9
 
 class UndertakingTerminationNotice1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_NclsdFile", "_TermntnDtls", "_UdrtkgId"]
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def NclsdFile(self):
-		return self._NclsdFile
-
-	@NclsdFile.setter
-	def NclsdFile(self, value):
-		self._NclsdFile = value if type(value) != auto else self.make_default("NclsdFile")
-
-	@NclsdFile.deleter
-	def NclsdFile(self):
-		del self._NclsdFile
-		self._NclsdFile = None
-
+	__slots__ = ["_TermntnDtls", "_AddtlInf", "_UdrtkgId", "_NclsdFile"]
 	@property
 	def TermntnDtls(self):
 		return self._TermntnDtls
@@ -47,6 +21,19 @@ class UndertakingTerminationNotice1(base_types._BaseFieldType):
 		self._TermntnDtls = None
 
 	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
 	def UdrtkgId(self):
 		return self._UdrtkgId
 
@@ -59,10 +46,23 @@ class UndertakingTerminationNotice1(base_types._BaseFieldType):
 		del self._UdrtkgId
 		self._UdrtkgId = None
 
+	@property
+	def NclsdFile(self):
+		return self._NclsdFile
+
+	@NclsdFile.setter
+	def NclsdFile(self, value):
+		self._NclsdFile = value if type(value) != auto else self.make_default("NclsdFile")
+
+	@NclsdFile.deleter
+	def NclsdFile(self):
+		del self._NclsdFile
+		self._NclsdFile = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NclsdFile', type=Document9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TermntnDtls', type=UndertakingTermination3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NclsdFile', type=Document9, min=0, max=None, mutex_group=None, array=True),
 	))
 

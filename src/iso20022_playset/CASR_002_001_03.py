@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SettlementReportingResponseV03
 
 class CASR_002_001_03():

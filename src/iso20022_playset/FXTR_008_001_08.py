@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ForeignExchangeTradeStatusNotificationV08
 
 class FXTR_008_001_08():

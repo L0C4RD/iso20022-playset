@@ -1,13 +1,78 @@
-import base_types
-import InstructionProcessingReason3Choice
-import PendingProcessing2Choice
-import InstructionProcessingReason4Choice
-import ProprietaryStatusAndReason6
+from . import base_types
 import ProprietaryReason4
+import InstructionProcessingReason3Choice
+import ProprietaryStatusAndReason6
+import InstructionProcessingReason4Choice
+import PendingProcessing2Choice
 
 class ProcessingStatus98Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FullyExctdConfSnt", "_StgInstr", "_Trtd", "_ForcdRjctn", "_Done", "_OpnOrdr", "_PrtrySts", "_NoInstr", "_Futr", "_DfltActn", "_TradgSspdByStockXchg", "_Rjctd", "_AckdAccptd", "_InRpr", "_PdgPrcg", "_RcvdAtIntrmy", "_AlrdyMtchdAndAffrmd", "_Gnrtd", "_SttlmInstrSnt"]
+	__slots__ = ["_PrtrySts", "_Gnrtd", "_AlrdyMtchdAndAffrmd", "_InRpr", "_OpnOrdr", "_FullyExctdConfSnt", "_AckdAccptd", "_RcvdAtIntrmy", "_ForcdRjctn", "_Done", "_Futr", "_StgInstr", "_NoInstr", "_Trtd", "_TradgSspdByStockXchg", "_SttlmInstrSnt", "_PdgPrcg", "_DfltActn", "_Rjctd"]
+	@property
+	def PrtrySts(self):
+		return self._PrtrySts
+
+	@PrtrySts.setter
+	def PrtrySts(self, value):
+		self._PrtrySts = value if type(value) != auto else self.make_default("PrtrySts")
+
+	@PrtrySts.deleter
+	def PrtrySts(self):
+		del self._PrtrySts
+		self._PrtrySts = None
+
+	@property
+	def Gnrtd(self):
+		return self._Gnrtd
+
+	@Gnrtd.setter
+	def Gnrtd(self, value):
+		self._Gnrtd = value if type(value) != auto else self.make_default("Gnrtd")
+
+	@Gnrtd.deleter
+	def Gnrtd(self):
+		del self._Gnrtd
+		self._Gnrtd = None
+
+	@property
+	def AlrdyMtchdAndAffrmd(self):
+		return self._AlrdyMtchdAndAffrmd
+
+	@AlrdyMtchdAndAffrmd.setter
+	def AlrdyMtchdAndAffrmd(self, value):
+		self._AlrdyMtchdAndAffrmd = value if type(value) != auto else self.make_default("AlrdyMtchdAndAffrmd")
+
+	@AlrdyMtchdAndAffrmd.deleter
+	def AlrdyMtchdAndAffrmd(self):
+		del self._AlrdyMtchdAndAffrmd
+		self._AlrdyMtchdAndAffrmd = None
+
+	@property
+	def InRpr(self):
+		return self._InRpr
+
+	@InRpr.setter
+	def InRpr(self, value):
+		self._InRpr = value if type(value) != auto else self.make_default("InRpr")
+
+	@InRpr.deleter
+	def InRpr(self):
+		del self._InRpr
+		self._InRpr = None
+
+	@property
+	def OpnOrdr(self):
+		return self._OpnOrdr
+
+	@OpnOrdr.setter
+	def OpnOrdr(self, value):
+		self._OpnOrdr = value if type(value) != auto else self.make_default("OpnOrdr")
+
+	@OpnOrdr.deleter
+	def OpnOrdr(self):
+		del self._OpnOrdr
+		self._OpnOrdr = None
+
 	@property
 	def FullyExctdConfSnt(self):
 		return self._FullyExctdConfSnt
@@ -22,30 +87,30 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 		self._FullyExctdConfSnt = None
 
 	@property
-	def StgInstr(self):
-		return self._StgInstr
+	def AckdAccptd(self):
+		return self._AckdAccptd
 
-	@StgInstr.setter
-	def StgInstr(self, value):
-		self._StgInstr = value if type(value) != auto else self.make_default("StgInstr")
+	@AckdAccptd.setter
+	def AckdAccptd(self, value):
+		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
 
-	@StgInstr.deleter
-	def StgInstr(self):
-		del self._StgInstr
-		self._StgInstr = None
+	@AckdAccptd.deleter
+	def AckdAccptd(self):
+		del self._AckdAccptd
+		self._AckdAccptd = None
 
 	@property
-	def Trtd(self):
-		return self._Trtd
+	def RcvdAtIntrmy(self):
+		return self._RcvdAtIntrmy
 
-	@Trtd.setter
-	def Trtd(self, value):
-		self._Trtd = value if type(value) != auto else self.make_default("Trtd")
+	@RcvdAtIntrmy.setter
+	def RcvdAtIntrmy(self, value):
+		self._RcvdAtIntrmy = value if type(value) != auto else self.make_default("RcvdAtIntrmy")
 
-	@Trtd.deleter
-	def Trtd(self):
-		del self._Trtd
-		self._Trtd = None
+	@RcvdAtIntrmy.deleter
+	def RcvdAtIntrmy(self):
+		del self._RcvdAtIntrmy
+		self._RcvdAtIntrmy = None
 
 	@property
 	def ForcdRjctn(self):
@@ -74,30 +139,30 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 		self._Done = None
 
 	@property
-	def OpnOrdr(self):
-		return self._OpnOrdr
+	def Futr(self):
+		return self._Futr
 
-	@OpnOrdr.setter
-	def OpnOrdr(self, value):
-		self._OpnOrdr = value if type(value) != auto else self.make_default("OpnOrdr")
+	@Futr.setter
+	def Futr(self, value):
+		self._Futr = value if type(value) != auto else self.make_default("Futr")
 
-	@OpnOrdr.deleter
-	def OpnOrdr(self):
-		del self._OpnOrdr
-		self._OpnOrdr = None
+	@Futr.deleter
+	def Futr(self):
+		del self._Futr
+		self._Futr = None
 
 	@property
-	def PrtrySts(self):
-		return self._PrtrySts
+	def StgInstr(self):
+		return self._StgInstr
 
-	@PrtrySts.setter
-	def PrtrySts(self, value):
-		self._PrtrySts = value if type(value) != auto else self.make_default("PrtrySts")
+	@StgInstr.setter
+	def StgInstr(self, value):
+		self._StgInstr = value if type(value) != auto else self.make_default("StgInstr")
 
-	@PrtrySts.deleter
-	def PrtrySts(self):
-		del self._PrtrySts
-		self._PrtrySts = None
+	@StgInstr.deleter
+	def StgInstr(self):
+		del self._StgInstr
+		self._StgInstr = None
 
 	@property
 	def NoInstr(self):
@@ -113,30 +178,17 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 		self._NoInstr = None
 
 	@property
-	def Futr(self):
-		return self._Futr
+	def Trtd(self):
+		return self._Trtd
 
-	@Futr.setter
-	def Futr(self, value):
-		self._Futr = value if type(value) != auto else self.make_default("Futr")
+	@Trtd.setter
+	def Trtd(self, value):
+		self._Trtd = value if type(value) != auto else self.make_default("Trtd")
 
-	@Futr.deleter
-	def Futr(self):
-		del self._Futr
-		self._Futr = None
-
-	@property
-	def DfltActn(self):
-		return self._DfltActn
-
-	@DfltActn.setter
-	def DfltActn(self, value):
-		self._DfltActn = value if type(value) != auto else self.make_default("DfltActn")
-
-	@DfltActn.deleter
-	def DfltActn(self):
-		del self._DfltActn
-		self._DfltActn = None
+	@Trtd.deleter
+	def Trtd(self):
+		del self._Trtd
+		self._Trtd = None
 
 	@property
 	def TradgSspdByStockXchg(self):
@@ -152,43 +204,17 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 		self._TradgSspdByStockXchg = None
 
 	@property
-	def Rjctd(self):
-		return self._Rjctd
+	def SttlmInstrSnt(self):
+		return self._SttlmInstrSnt
 
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+	@SttlmInstrSnt.setter
+	def SttlmInstrSnt(self, value):
+		self._SttlmInstrSnt = value if type(value) != auto else self.make_default("SttlmInstrSnt")
 
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
-
-	@property
-	def AckdAccptd(self):
-		return self._AckdAccptd
-
-	@AckdAccptd.setter
-	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
-
-	@AckdAccptd.deleter
-	def AckdAccptd(self):
-		del self._AckdAccptd
-		self._AckdAccptd = None
-
-	@property
-	def InRpr(self):
-		return self._InRpr
-
-	@InRpr.setter
-	def InRpr(self, value):
-		self._InRpr = value if type(value) != auto else self.make_default("InRpr")
-
-	@InRpr.deleter
-	def InRpr(self):
-		del self._InRpr
-		self._InRpr = None
+	@SttlmInstrSnt.deleter
+	def SttlmInstrSnt(self):
+		del self._SttlmInstrSnt
+		self._SttlmInstrSnt = None
 
 	@property
 	def PdgPrcg(self):
@@ -204,76 +230,50 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 		self._PdgPrcg = None
 
 	@property
-	def RcvdAtIntrmy(self):
-		return self._RcvdAtIntrmy
+	def DfltActn(self):
+		return self._DfltActn
 
-	@RcvdAtIntrmy.setter
-	def RcvdAtIntrmy(self, value):
-		self._RcvdAtIntrmy = value if type(value) != auto else self.make_default("RcvdAtIntrmy")
+	@DfltActn.setter
+	def DfltActn(self, value):
+		self._DfltActn = value if type(value) != auto else self.make_default("DfltActn")
 
-	@RcvdAtIntrmy.deleter
-	def RcvdAtIntrmy(self):
-		del self._RcvdAtIntrmy
-		self._RcvdAtIntrmy = None
-
-	@property
-	def AlrdyMtchdAndAffrmd(self):
-		return self._AlrdyMtchdAndAffrmd
-
-	@AlrdyMtchdAndAffrmd.setter
-	def AlrdyMtchdAndAffrmd(self, value):
-		self._AlrdyMtchdAndAffrmd = value if type(value) != auto else self.make_default("AlrdyMtchdAndAffrmd")
-
-	@AlrdyMtchdAndAffrmd.deleter
-	def AlrdyMtchdAndAffrmd(self):
-		del self._AlrdyMtchdAndAffrmd
-		self._AlrdyMtchdAndAffrmd = None
+	@DfltActn.deleter
+	def DfltActn(self):
+		del self._DfltActn
+		self._DfltActn = None
 
 	@property
-	def Gnrtd(self):
-		return self._Gnrtd
+	def Rjctd(self):
+		return self._Rjctd
 
-	@Gnrtd.setter
-	def Gnrtd(self, value):
-		self._Gnrtd = value if type(value) != auto else self.make_default("Gnrtd")
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
 
-	@Gnrtd.deleter
-	def Gnrtd(self):
-		del self._Gnrtd
-		self._Gnrtd = None
-
-	@property
-	def SttlmInstrSnt(self):
-		return self._SttlmInstrSnt
-
-	@SttlmInstrSnt.setter
-	def SttlmInstrSnt(self, value):
-		self._SttlmInstrSnt = value if type(value) != auto else self.make_default("SttlmInstrSnt")
-
-	@SttlmInstrSnt.deleter
-	def SttlmInstrSnt(self):
-		del self._SttlmInstrSnt
-		self._SttlmInstrSnt = None
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Gnrtd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AlrdyMtchdAndAffrmd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='InRpr', type=InstructionProcessingReason4Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OpnOrdr', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FullyExctdConfSnt', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='StgInstr', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Trtd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AckdAccptd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RcvdAtIntrmy', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ForcdRjctn', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Done', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='OpnOrdr', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NoInstr', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Futr', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='DfltActn', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='StgInstr', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NoInstr', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Trtd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TradgSspdByStockXchg', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=InstructionProcessingReason3Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AckdAccptd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='InRpr', type=InstructionProcessingReason4Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PdgPrcg', type=PendingProcessing2Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RcvdAtIntrmy', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AlrdyMtchdAndAffrmd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Gnrtd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SttlmInstrSnt', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PdgPrcg', type=PendingProcessing2Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DfltActn', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=InstructionProcessingReason3Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

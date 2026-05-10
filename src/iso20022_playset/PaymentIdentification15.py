@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import Max35Text
 import UUIDv4Identifier
 import BranchAndFinancialInstitutionIdentification8
 
 class PaymentIdentification15(base_types._BaseFieldType):
 
-	__slots__ = ["_UETR", "_FrstAgt", "_TxId", "_InstrId", "_ClrSysRef", "_EndToEndId"]
-	@property
-	def UETR(self):
-		return self._UETR
-
-	@UETR.setter
-	def UETR(self, value):
-		self._UETR = value if type(value) != auto else self.make_default("UETR")
-
-	@UETR.deleter
-	def UETR(self):
-		del self._UETR
-		self._UETR = None
-
+	__slots__ = ["_FrstAgt", "_TxId", "_EndToEndId", "_ClrSysRef", "_UETR", "_InstrId"]
 	@property
 	def FrstAgt(self):
 		return self._FrstAgt
@@ -46,17 +33,17 @@ class PaymentIdentification15(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def InstrId(self):
-		return self._InstrId
+	def EndToEndId(self):
+		return self._EndToEndId
 
-	@InstrId.setter
-	def InstrId(self, value):
-		self._InstrId = value if type(value) != auto else self.make_default("InstrId")
+	@EndToEndId.setter
+	def EndToEndId(self, value):
+		self._EndToEndId = value if type(value) != auto else self.make_default("EndToEndId")
 
-	@InstrId.deleter
-	def InstrId(self):
-		del self._InstrId
-		self._InstrId = None
+	@EndToEndId.deleter
+	def EndToEndId(self):
+		del self._EndToEndId
+		self._EndToEndId = None
 
 	@property
 	def ClrSysRef(self):
@@ -72,24 +59,37 @@ class PaymentIdentification15(base_types._BaseFieldType):
 		self._ClrSysRef = None
 
 	@property
-	def EndToEndId(self):
-		return self._EndToEndId
+	def UETR(self):
+		return self._UETR
 
-	@EndToEndId.setter
-	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != auto else self.make_default("EndToEndId")
+	@UETR.setter
+	def UETR(self, value):
+		self._UETR = value if type(value) != auto else self.make_default("UETR")
 
-	@EndToEndId.deleter
-	def EndToEndId(self):
-		del self._EndToEndId
-		self._EndToEndId = None
+	@UETR.deleter
+	def UETR(self):
+		del self._UETR
+		self._UETR = None
+
+	@property
+	def InstrId(self):
+		return self._InstrId
+
+	@InstrId.setter
+	def InstrId(self, value):
+		self._InstrId = value if type(value) != auto else self.make_default("InstrId")
+
+	@InstrId.deleter
+	def InstrId(self):
+		del self._InstrId
+		self._InstrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrSysRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrSysRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

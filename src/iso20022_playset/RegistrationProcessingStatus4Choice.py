@@ -1,6 +1,6 @@
-import base_types
-import RegistrationProcessingStatus1Code
+from . import base_types
 import GenericIdentification47
+import RegistrationProcessingStatus1Code
 
 class RegistrationProcessingStatus4Choice(base_types._BaseFieldType):
 

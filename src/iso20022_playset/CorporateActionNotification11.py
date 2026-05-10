@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
 import CorporateActionProcessingStatus6Choice
-import RestrictedFINXMax16Text
 import CorporateActionNotificationType1Code
+import RestrictedFINXMax16Text
 
 class CorporateActionNotification11(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgSts", "_NtfctnId", "_NtfctnTp"]
+	__slots__ = ["_NtfctnTp", "_PrcgSts", "_NtfctnId"]
+	@property
+	def NtfctnTp(self):
+		return self._NtfctnTp
+
+	@NtfctnTp.setter
+	def NtfctnTp(self, value):
+		self._NtfctnTp = value if type(value) != auto else self.make_default("NtfctnTp")
+
+	@NtfctnTp.deleter
+	def NtfctnTp(self):
+		del self._NtfctnTp
+		self._NtfctnTp = None
+
 	@property
 	def PrcgSts(self):
 		return self._PrcgSts
@@ -32,22 +45,9 @@ class CorporateActionNotification11(base_types._BaseFieldType):
 		del self._NtfctnId
 		self._NtfctnId = None
 
-	@property
-	def NtfctnTp(self):
-		return self._NtfctnTp
-
-	@NtfctnTp.setter
-	def NtfctnTp(self, value):
-		self._NtfctnTp = value if type(value) != auto else self.make_default("NtfctnTp")
-
-	@NtfctnTp.deleter
-	def NtfctnTp(self):
-		del self._NtfctnTp
-		self._NtfctnTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NtfctnTp', type=CorporateActionNotificationType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=CorporateActionProcessingStatus6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnTp', type=CorporateActionNotificationType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialInstrumentReportingEquityTransparencyDataReportV01
 
 class AUTH_032_001_01():

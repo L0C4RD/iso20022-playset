@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecurityCSDLinkMaintenanceRequestV01
 
 class REDA_046_001_01():

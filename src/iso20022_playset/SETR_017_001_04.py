@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import OrderCancellationStatusReportV04
 
 class SETR_017_001_04():

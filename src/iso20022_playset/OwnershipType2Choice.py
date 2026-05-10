@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountOwnershipType4Code
 import GenericIdentification47
 

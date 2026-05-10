@@ -1,26 +1,13 @@
-import base_types
+from . import base_types
 import DateTimePeriod2
-import LegalRestrictions5Choice
 import SecurityRestrictionType2Choice
-import InvestorRestrictionType3Choice
+import LegalRestrictions5Choice
 import InvestorType3Choice
+import InvestorRestrictionType3Choice
 
 class SecurityRestriction3(base_types._BaseFieldType):
 
-	__slots__ = ["_FctvPrd", "_InvstrRstrctnTp", "_LglRstrctnTp", "_InvstrTp", "_RstrctnTp"]
-	@property
-	def FctvPrd(self):
-		return self._FctvPrd
-
-	@FctvPrd.setter
-	def FctvPrd(self, value):
-		self._FctvPrd = value if type(value) != auto else self.make_default("FctvPrd")
-
-	@FctvPrd.deleter
-	def FctvPrd(self):
-		del self._FctvPrd
-		self._FctvPrd = None
-
+	__slots__ = ["_InvstrRstrctnTp", "_LglRstrctnTp", "_InvstrTp", "_RstrctnTp", "_FctvPrd"]
 	@property
 	def InvstrRstrctnTp(self):
 		return self._InvstrRstrctnTp
@@ -73,11 +60,24 @@ class SecurityRestriction3(base_types._BaseFieldType):
 		del self._RstrctnTp
 		self._RstrctnTp = None
 
+	@property
+	def FctvPrd(self):
+		return self._FctvPrd
+
+	@FctvPrd.setter
+	def FctvPrd(self, value):
+		self._FctvPrd = value if type(value) != auto else self.make_default("FctvPrd")
+
+	@FctvPrd.deleter
+	def FctvPrd(self):
+		del self._FctvPrd
+		self._FctvPrd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FctvPrd', type=DateTimePeriod2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstrRstrctnTp', type=InvestorRestrictionType3Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LglRstrctnTp', type=LegalRestrictions5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstrTp', type=InvestorType3Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RstrctnTp', type=SecurityRestrictionType2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FctvPrd', type=DateTimePeriod2, min=0, max=1, mutex_group=None, array=False),
 	))
 

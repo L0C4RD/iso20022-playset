@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CustomerPaymentStatusReportV14
 
 class PAIN_002_001_14():

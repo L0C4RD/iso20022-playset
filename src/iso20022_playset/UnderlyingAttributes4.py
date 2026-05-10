@@ -1,14 +1,14 @@
-import base_types
-import Max35Text
-import SettlementType3Choice
+from . import base_types
 import PercentageRate
 import UnitOrFaceAmount1Choice
+import SettlementType3Choice
 import Price8
+import Max35Text
 import ActiveCurrencyAndAmount
 
 class UnderlyingAttributes4(base_types._BaseFieldType):
 
-	__slots__ = ["_Pric", "_SttlmTp", "_XchgRate", "_CapVal", "_StartVal", "_CurVal", "_EndPric", "_AdjstdQty", "_Qty", "_AllcnPctg", "_CshAmt", "_CshTp", "_DrtyPric", "_EndVal"]
+	__slots__ = ["_Pric", "_CshAmt", "_SttlmTp", "_DrtyPric", "_EndPric", "_EndVal", "_AdjstdQty", "_StartVal", "_CurVal", "_Qty", "_XchgRate", "_AllcnPctg", "_CapVal", "_CshTp"]
 	@property
 	def Pric(self):
 		return self._Pric
@@ -21,6 +21,19 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 	def Pric(self):
 		del self._Pric
 		self._Pric = None
+
+	@property
+	def CshAmt(self):
+		return self._CshAmt
+
+	@CshAmt.setter
+	def CshAmt(self, value):
+		self._CshAmt = value if type(value) != auto else self.make_default("CshAmt")
+
+	@CshAmt.deleter
+	def CshAmt(self):
+		del self._CshAmt
+		self._CshAmt = None
 
 	@property
 	def SttlmTp(self):
@@ -36,30 +49,56 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 		self._SttlmTp = None
 
 	@property
-	def XchgRate(self):
-		return self._XchgRate
+	def DrtyPric(self):
+		return self._DrtyPric
 
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
+	@DrtyPric.setter
+	def DrtyPric(self, value):
+		self._DrtyPric = value if type(value) != auto else self.make_default("DrtyPric")
 
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
+	@DrtyPric.deleter
+	def DrtyPric(self):
+		del self._DrtyPric
+		self._DrtyPric = None
 
 	@property
-	def CapVal(self):
-		return self._CapVal
+	def EndPric(self):
+		return self._EndPric
 
-	@CapVal.setter
-	def CapVal(self, value):
-		self._CapVal = value if type(value) != auto else self.make_default("CapVal")
+	@EndPric.setter
+	def EndPric(self, value):
+		self._EndPric = value if type(value) != auto else self.make_default("EndPric")
 
-	@CapVal.deleter
-	def CapVal(self):
-		del self._CapVal
-		self._CapVal = None
+	@EndPric.deleter
+	def EndPric(self):
+		del self._EndPric
+		self._EndPric = None
+
+	@property
+	def EndVal(self):
+		return self._EndVal
+
+	@EndVal.setter
+	def EndVal(self, value):
+		self._EndVal = value if type(value) != auto else self.make_default("EndVal")
+
+	@EndVal.deleter
+	def EndVal(self):
+		del self._EndVal
+		self._EndVal = None
+
+	@property
+	def AdjstdQty(self):
+		return self._AdjstdQty
+
+	@AdjstdQty.setter
+	def AdjstdQty(self, value):
+		self._AdjstdQty = value if type(value) != auto else self.make_default("AdjstdQty")
+
+	@AdjstdQty.deleter
+	def AdjstdQty(self):
+		del self._AdjstdQty
+		self._AdjstdQty = None
 
 	@property
 	def StartVal(self):
@@ -88,32 +127,6 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 		self._CurVal = None
 
 	@property
-	def EndPric(self):
-		return self._EndPric
-
-	@EndPric.setter
-	def EndPric(self, value):
-		self._EndPric = value if type(value) != auto else self.make_default("EndPric")
-
-	@EndPric.deleter
-	def EndPric(self):
-		del self._EndPric
-		self._EndPric = None
-
-	@property
-	def AdjstdQty(self):
-		return self._AdjstdQty
-
-	@AdjstdQty.setter
-	def AdjstdQty(self, value):
-		self._AdjstdQty = value if type(value) != auto else self.make_default("AdjstdQty")
-
-	@AdjstdQty.deleter
-	def AdjstdQty(self):
-		del self._AdjstdQty
-		self._AdjstdQty = None
-
-	@property
 	def Qty(self):
 		return self._Qty
 
@@ -125,6 +138,19 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 	def Qty(self):
 		del self._Qty
 		self._Qty = None
+
+	@property
+	def XchgRate(self):
+		return self._XchgRate
+
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
+
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
 
 	@property
 	def AllcnPctg(self):
@@ -140,17 +166,17 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 		self._AllcnPctg = None
 
 	@property
-	def CshAmt(self):
-		return self._CshAmt
+	def CapVal(self):
+		return self._CapVal
 
-	@CshAmt.setter
-	def CshAmt(self, value):
-		self._CshAmt = value if type(value) != auto else self.make_default("CshAmt")
+	@CapVal.setter
+	def CapVal(self, value):
+		self._CapVal = value if type(value) != auto else self.make_default("CapVal")
 
-	@CshAmt.deleter
-	def CshAmt(self):
-		del self._CshAmt
-		self._CshAmt = None
+	@CapVal.deleter
+	def CapVal(self):
+		del self._CapVal
+		self._CapVal = None
 
 	@property
 	def CshTp(self):
@@ -165,46 +191,20 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 		del self._CshTp
 		self._CshTp = None
 
-	@property
-	def DrtyPric(self):
-		return self._DrtyPric
-
-	@DrtyPric.setter
-	def DrtyPric(self, value):
-		self._DrtyPric = value if type(value) != auto else self.make_default("DrtyPric")
-
-	@DrtyPric.deleter
-	def DrtyPric(self):
-		del self._DrtyPric
-		self._DrtyPric = None
-
-	@property
-	def EndVal(self):
-		return self._EndVal
-
-	@EndVal.setter
-	def EndVal(self, value):
-		self._EndVal = value if type(value) != auto else self.make_default("EndVal")
-
-	@EndVal.deleter
-	def EndVal(self):
-		del self._EndVal
-		self._EndVal = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Pric', type=Price8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmTp', type=SettlementType3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CapVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrtyPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdjstdQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdjstdQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AllcnPctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CapVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrtyPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,26 +1,13 @@
-import base_types
-import GenericIdentification1
-import Max35Text
+from . import base_types
 import Max350Text
 import ClassificationType32Choice
+import GenericIdentification1
 import SecurityIdentification25Choice
+import Max35Text
 
 class FinancialInstrumentIdentification4(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Id", "_ClssfctnTp", "_AltrnSctyTp", "_ShrtNm"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
+	__slots__ = ["_Id", "_Nm", "_ClssfctnTp", "_AltrnSctyTp", "_ShrtNm"]
 	@property
 	def Id(self):
 		return self._Id
@@ -33,6 +20,19 @@ class FinancialInstrumentIdentification4(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def ClssfctnTp(self):
@@ -74,8 +74,8 @@ class FinancialInstrumentIdentification4(base_types._BaseFieldType):
 		self._ShrtNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=SecurityIdentification25Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType32Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnSctyTp', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

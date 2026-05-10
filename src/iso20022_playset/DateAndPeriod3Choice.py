@@ -1,23 +1,10 @@
-import base_types
-import Period7Choice
+from . import base_types
 import DateAndDateTime2Choice
+import Period7Choice
 
 class DateAndPeriod3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtDt", "_StmtPrd"]
-	@property
-	def StmtDt(self):
-		return self._StmtDt
-
-	@StmtDt.setter
-	def StmtDt(self, value):
-		self._StmtDt = value if type(value) != auto else self.make_default("StmtDt")
-
-	@StmtDt.deleter
-	def StmtDt(self):
-		del self._StmtDt
-		self._StmtDt = None
-
+	__slots__ = ["_StmtPrd", "_StmtDt"]
 	@property
 	def StmtPrd(self):
 		return self._StmtPrd
@@ -31,8 +18,21 @@ class DateAndPeriod3Choice(base_types._BaseFieldType):
 		del self._StmtPrd
 		self._StmtPrd = None
 
+	@property
+	def StmtDt(self):
+		return self._StmtDt
+
+	@StmtDt.setter
+	def StmtDt(self, value):
+		self._StmtDt = value if type(value) != auto else self.make_default("StmtDt")
+
+	@StmtDt.deleter
+	def StmtDt(self):
+		del self._StmtDt
+		self._StmtDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StmtDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='StmtPrd', type=Period7Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='StmtDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

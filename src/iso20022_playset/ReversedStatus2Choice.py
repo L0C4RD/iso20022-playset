@@ -1,24 +1,11 @@
-import base_types
-import NoReasonCode
+from . import base_types
 import Max350Text
 import GenericIdentification1
+import NoReasonCode
 
 class ReversedStatus2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoSpcfdRsn", "_DataSrcSchme", "_Rsn"]
-	@property
-	def NoSpcfdRsn(self):
-		return self._NoSpcfdRsn
-
-	@NoSpcfdRsn.setter
-	def NoSpcfdRsn(self, value):
-		self._NoSpcfdRsn = value if type(value) != auto else self.make_default("NoSpcfdRsn")
-
-	@NoSpcfdRsn.deleter
-	def NoSpcfdRsn(self):
-		del self._NoSpcfdRsn
-		self._NoSpcfdRsn = None
-
+	__slots__ = ["_DataSrcSchme", "_Rsn", "_NoSpcfdRsn"]
 	@property
 	def DataSrcSchme(self):
 		return self._DataSrcSchme
@@ -45,9 +32,22 @@ class ReversedStatus2Choice(base_types._BaseFieldType):
 		del self._Rsn
 		self._Rsn = None
 
+	@property
+	def NoSpcfdRsn(self):
+		return self._NoSpcfdRsn
+
+	@NoSpcfdRsn.setter
+	def NoSpcfdRsn(self, value):
+		self._NoSpcfdRsn = value if type(value) != auto else self.make_default("NoSpcfdRsn")
+
+	@NoSpcfdRsn.deleter
+	def NoSpcfdRsn(self):
+		del self._NoSpcfdRsn
+		self._NoSpcfdRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DataSrcSchme', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rsn', type=Max350Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 	))
 

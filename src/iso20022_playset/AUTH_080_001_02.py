@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesFinancingReportingReconciliationStatusAdviceV02
 
 class AUTH_080_001_02():

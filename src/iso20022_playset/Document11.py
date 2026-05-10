@@ -1,11 +1,24 @@
-import base_types
-import Max20000Text
+from . import base_types
 import PresentationDocumentFormat1Choice
 import Presentation3
+import Max20000Text
 
 class Document11(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Wrdg", "_ElctrncDtls"]
+	__slots__ = ["_ElctrncDtls", "_Tp", "_Wrdg"]
+	@property
+	def ElctrncDtls(self):
+		return self._ElctrncDtls
+
+	@ElctrncDtls.setter
+	def ElctrncDtls(self, value):
+		self._ElctrncDtls = value if type(value) != auto else self.make_default("ElctrncDtls")
+
+	@ElctrncDtls.deleter
+	def ElctrncDtls(self):
+		del self._ElctrncDtls
+		self._ElctrncDtls = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -32,22 +45,9 @@ class Document11(base_types._BaseFieldType):
 		del self._Wrdg
 		self._Wrdg = None
 
-	@property
-	def ElctrncDtls(self):
-		return self._ElctrncDtls
-
-	@ElctrncDtls.setter
-	def ElctrncDtls(self, value):
-		self._ElctrncDtls = value if type(value) != auto else self.make_default("ElctrncDtls")
-
-	@ElctrncDtls.deleter
-	def ElctrncDtls(self):
-		del self._ElctrncDtls
-		self._ElctrncDtls = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ElctrncDtls', type=Presentation3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tp', type=PresentationDocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Wrdg', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ElctrncDtls', type=Presentation3, min=0, max=None, mutex_group=None, array=True),
 	))
 

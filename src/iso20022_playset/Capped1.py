@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
 import ActiveCurrencyAnd13DecimalAmount
-import AdditionalInformation15
 import ISODate
+import AdditionalInformation15
 
 class Capped1(base_types._BaseFieldType):
 
-	__slots__ = ["_IncmLmtNxtPrd", "_AddtlInf", "_IncmCurPrd", "_StartDt", "_IncmLmtCurPrd"]
+	__slots__ = ["_IncmCurPrd", "_IncmLmtNxtPrd", "_IncmLmtCurPrd", "_StartDt", "_AddtlInf"]
+	@property
+	def IncmCurPrd(self):
+		return self._IncmCurPrd
+
+	@IncmCurPrd.setter
+	def IncmCurPrd(self, value):
+		self._IncmCurPrd = value if type(value) != auto else self.make_default("IncmCurPrd")
+
+	@IncmCurPrd.deleter
+	def IncmCurPrd(self):
+		del self._IncmCurPrd
+		self._IncmCurPrd = None
+
 	@property
 	def IncmLmtNxtPrd(self):
 		return self._IncmLmtNxtPrd
@@ -20,30 +33,17 @@ class Capped1(base_types._BaseFieldType):
 		self._IncmLmtNxtPrd = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def IncmLmtCurPrd(self):
+		return self._IncmLmtCurPrd
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@IncmLmtCurPrd.setter
+	def IncmLmtCurPrd(self, value):
+		self._IncmLmtCurPrd = value if type(value) != auto else self.make_default("IncmLmtCurPrd")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def IncmCurPrd(self):
-		return self._IncmCurPrd
-
-	@IncmCurPrd.setter
-	def IncmCurPrd(self, value):
-		self._IncmCurPrd = value if type(value) != auto else self.make_default("IncmCurPrd")
-
-	@IncmCurPrd.deleter
-	def IncmCurPrd(self):
-		del self._IncmCurPrd
-		self._IncmCurPrd = None
+	@IncmLmtCurPrd.deleter
+	def IncmLmtCurPrd(self):
+		del self._IncmLmtCurPrd
+		self._IncmLmtCurPrd = None
 
 	@property
 	def StartDt(self):
@@ -59,23 +59,23 @@ class Capped1(base_types._BaseFieldType):
 		self._StartDt = None
 
 	@property
-	def IncmLmtCurPrd(self):
-		return self._IncmLmtCurPrd
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@IncmLmtCurPrd.setter
-	def IncmLmtCurPrd(self, value):
-		self._IncmLmtCurPrd = value if type(value) != auto else self.make_default("IncmLmtCurPrd")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@IncmLmtCurPrd.deleter
-	def IncmLmtCurPrd(self):
-		del self._IncmLmtCurPrd
-		self._IncmLmtCurPrd = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IncmLmtNxtPrd', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IncmCurPrd', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IncmLmtNxtPrd', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IncmLmtCurPrd', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 	))
 

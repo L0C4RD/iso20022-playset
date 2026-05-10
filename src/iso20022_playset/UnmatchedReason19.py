@@ -1,6 +1,6 @@
-import base_types
-import UnmatchedReason26Choice
+from . import base_types
 import RestrictedFINXMax210Text
+import UnmatchedReason26Choice
 
 class UnmatchedReason19(base_types._BaseFieldType):
 

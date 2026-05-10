@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Modification1Code
 import Max70Text
 

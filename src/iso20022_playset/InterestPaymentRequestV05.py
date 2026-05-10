@@ -1,26 +1,26 @@
-import base_types
-import Max35Text
-import SupplementaryData1
+from . import base_types
 import InterestAmount4
 import Agreement4
 import InterestResult1
 import Obligation9
+import SupplementaryData1
+import Max35Text
 
 class InterestPaymentRequestV05(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrstDueToA", "_IntrstDueToB", "_SplmtryData", "_Agrmt", "_NetAmtDtls", "_TxId", "_Oblgtn"]
+	__slots__ = ["_Agrmt", "_IntrstDueToB", "_TxId", "_SplmtryData", "_NetAmtDtls", "_IntrstDueToA", "_Oblgtn"]
 	@property
-	def IntrstDueToA(self):
-		return self._IntrstDueToA
+	def Agrmt(self):
+		return self._Agrmt
 
-	@IntrstDueToA.setter
-	def IntrstDueToA(self, value):
-		self._IntrstDueToA = value if type(value) != auto else self.make_default("IntrstDueToA")
+	@Agrmt.setter
+	def Agrmt(self, value):
+		self._Agrmt = value if type(value) != auto else self.make_default("Agrmt")
 
-	@IntrstDueToA.deleter
-	def IntrstDueToA(self):
-		del self._IntrstDueToA
-		self._IntrstDueToA = None
+	@Agrmt.deleter
+	def Agrmt(self):
+		del self._Agrmt
+		self._Agrmt = None
 
 	@property
 	def IntrstDueToB(self):
@@ -36,6 +36,19 @@ class InterestPaymentRequestV05(base_types._BaseFieldType):
 		self._IntrstDueToB = None
 
 	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -47,19 +60,6 @@ class InterestPaymentRequestV05(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
-
-	@property
-	def Agrmt(self):
-		return self._Agrmt
-
-	@Agrmt.setter
-	def Agrmt(self, value):
-		self._Agrmt = value if type(value) != auto else self.make_default("Agrmt")
-
-	@Agrmt.deleter
-	def Agrmt(self):
-		del self._Agrmt
-		self._Agrmt = None
 
 	@property
 	def NetAmtDtls(self):
@@ -75,17 +75,17 @@ class InterestPaymentRequestV05(base_types._BaseFieldType):
 		self._NetAmtDtls = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def IntrstDueToA(self):
+		return self._IntrstDueToA
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@IntrstDueToA.setter
+	def IntrstDueToA(self, value):
+		self._IntrstDueToA = value if type(value) != auto else self.make_default("IntrstDueToA")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@IntrstDueToA.deleter
+	def IntrstDueToA(self):
+		del self._IntrstDueToA
+		self._IntrstDueToA = None
 
 	@property
 	def Oblgtn(self):
@@ -101,12 +101,12 @@ class InterestPaymentRequestV05(base_types._BaseFieldType):
 		self._Oblgtn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntrstDueToA', type=InterestAmount4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstDueToB', type=InterestAmount4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetAmtDtls', type=InterestResult1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstDueToB', type=InterestAmount4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NetAmtDtls', type=InterestResult1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstDueToA', type=InterestAmount4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
 	))
 

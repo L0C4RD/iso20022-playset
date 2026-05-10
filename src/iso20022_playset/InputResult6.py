@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import InformationQualify1Code
-import InputResultData6
 import SaleCapabilities2Code
+import InputResultData6
 
 class InputResult6(base_types._BaseFieldType):
 
-	__slots__ = ["_InptRsltData", "_DvcTp", "_InfQlfr"]
-	@property
-	def InptRsltData(self):
-		return self._InptRsltData
-
-	@InptRsltData.setter
-	def InptRsltData(self, value):
-		self._InptRsltData = value if type(value) != auto else self.make_default("InptRsltData")
-
-	@InptRsltData.deleter
-	def InptRsltData(self):
-		del self._InptRsltData
-		self._InptRsltData = None
-
+	__slots__ = ["_DvcTp", "_InfQlfr", "_InptRsltData"]
 	@property
 	def DvcTp(self):
 		return self._DvcTp
@@ -45,9 +32,22 @@ class InputResult6(base_types._BaseFieldType):
 		del self._InfQlfr
 		self._InfQlfr = None
 
+	@property
+	def InptRsltData(self):
+		return self._InptRsltData
+
+	@InptRsltData.setter
+	def InptRsltData(self, value):
+		self._InptRsltData = value if type(value) != auto else self.make_default("InptRsltData")
+
+	@InptRsltData.deleter
+	def InptRsltData(self):
+		del self._InptRsltData
+		self._InptRsltData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InptRsltData', type=InputResultData6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DvcTp', type=SaleCapabilities2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InfQlfr', type=InformationQualify1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InptRsltData', type=InputResultData6, min=1, max=1, mutex_group=None, array=False),
 	))
 

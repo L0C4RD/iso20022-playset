@@ -1,11 +1,24 @@
-import base_types
-import EncryptedDataElement2
+from . import base_types
 import AlgorithmIdentification25
 import ContentType2Code
+import EncryptedDataElement2
 
 class EncryptedContent8(base_types._BaseFieldType):
 
-	__slots__ = ["_CnttNcrptnAlgo", "_NcrptdDataElmt", "_CnttTp"]
+	__slots__ = ["_CnttTp", "_CnttNcrptnAlgo", "_NcrptdDataElmt"]
+	@property
+	def CnttTp(self):
+		return self._CnttTp
+
+	@CnttTp.setter
+	def CnttTp(self, value):
+		self._CnttTp = value if type(value) != auto else self.make_default("CnttTp")
+
+	@CnttTp.deleter
+	def CnttTp(self):
+		del self._CnttTp
+		self._CnttTp = None
+
 	@property
 	def CnttNcrptnAlgo(self):
 		return self._CnttNcrptnAlgo
@@ -32,22 +45,9 @@ class EncryptedContent8(base_types._BaseFieldType):
 		del self._NcrptdDataElmt
 		self._NcrptdDataElmt = None
 
-	@property
-	def CnttTp(self):
-		return self._CnttTp
-
-	@CnttTp.setter
-	def CnttTp(self, value):
-		self._CnttTp = value if type(value) != auto else self.make_default("CnttTp")
-
-	@CnttTp.deleter
-	def CnttTp(self):
-		del self._CnttTp
-		self._CnttTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CnttNcrptnAlgo', type=AlgorithmIdentification25, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdDataElmt', type=EncryptedDataElement2, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
-import base_types
-import TransactionType2Choice
+from . import base_types
 import CorporateAction1Choice
+import TransactionType2Choice
 
 class TransactionType1Choice(base_types._BaseFieldType):
 

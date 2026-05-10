@@ -1,27 +1,27 @@
-import base_types
-import Max140Text
-import CountryCode
-import Max35Text
+from . import base_types
 import PartyIdentification120Choice
+import CountryCode
+import Max140Text
 import PartyTextInformation1
-import AlternatePartyIdentification7
+import Max35Text
 import LEIIdentifier
+import AlternatePartyIdentification7
 
 class PartyIdentificationAndAccount197(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_SfkpgAcct", "_AddtlInf", "_Ntlty", "_PrcgId", "_LEI", "_Id", "_AltrnId"]
+	__slots__ = ["_LEI", "_SfkpgAcct", "_AddtlInf", "_Ntlty", "_AltrnId", "_Id", "_BlckChainAdrOrWllt", "_PrcgId"]
 	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
+	def LEI(self):
+		return self._LEI
 
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
 
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	@property
 	def SfkpgAcct(self):
@@ -63,30 +63,17 @@ class PartyIdentificationAndAccount197(base_types._BaseFieldType):
 		self._Ntlty = None
 
 	@property
-	def PrcgId(self):
-		return self._PrcgId
+	def AltrnId(self):
+		return self._AltrnId
 
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
 
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
-
-	@property
-	def LEI(self):
-		return self._LEI
-
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
-
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
 
 	@property
 	def Id(self):
@@ -102,26 +89,39 @@ class PartyIdentificationAndAccount197(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def AltrnId(self):
-		return self._AltrnId
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
 
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
 
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
+
+	@property
+	def PrcgId(self):
+		return self._PrcgId
+
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ntlty', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

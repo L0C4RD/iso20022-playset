@@ -1,6 +1,6 @@
-import base_types
-import CommodityDerivative6
+from . import base_types
 import CommodityDerivative5
+import CommodityDerivative6
 
 class CommodityDerivative2Choice(base_types._BaseFieldType):
 

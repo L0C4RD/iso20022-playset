@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import GetAccountV08
 
 class CAMT_003_001_08():

@@ -1,6 +1,6 @@
-import base_types
-import PortfolioCode3Choice
+from . import base_types
 import MarginPortfolio4
+import PortfolioCode3Choice
 
 class CollateralPortfolioCode6Choice(base_types._BaseFieldType):
 

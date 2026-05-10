@@ -1,27 +1,27 @@
-import base_types
-import FundingSource3
+from . import base_types
+import ISODate
 import Max140Text
 import ISODateTime
-import SupplementaryData1
 import CounterpartyData87
-import ISODate
+import SupplementaryData1
+import FundingSource3
 import CollateralType19
 
 class ReuseDataReportNew6(base_types._BaseFieldType):
 
-	__slots__ = ["_CollCmpnt", "_FndgSrc", "_RptgDtTm", "_TechRcrdId", "_SplmtryData", "_EvtDay", "_CtrPty"]
+	__slots__ = ["_EvtDay", "_FndgSrc", "_CollCmpnt", "_TechRcrdId", "_SplmtryData", "_RptgDtTm", "_CtrPty"]
 	@property
-	def CollCmpnt(self):
-		return self._CollCmpnt
+	def EvtDay(self):
+		return self._EvtDay
 
-	@CollCmpnt.setter
-	def CollCmpnt(self, value):
-		self._CollCmpnt = value if type(value) != auto else self.make_default("CollCmpnt")
+	@EvtDay.setter
+	def EvtDay(self, value):
+		self._EvtDay = value if type(value) != auto else self.make_default("EvtDay")
 
-	@CollCmpnt.deleter
-	def CollCmpnt(self):
-		del self._CollCmpnt
-		self._CollCmpnt = None
+	@EvtDay.deleter
+	def EvtDay(self):
+		del self._EvtDay
+		self._EvtDay = None
 
 	@property
 	def FndgSrc(self):
@@ -37,17 +37,17 @@ class ReuseDataReportNew6(base_types._BaseFieldType):
 		self._FndgSrc = None
 
 	@property
-	def RptgDtTm(self):
-		return self._RptgDtTm
+	def CollCmpnt(self):
+		return self._CollCmpnt
 
-	@RptgDtTm.setter
-	def RptgDtTm(self, value):
-		self._RptgDtTm = value if type(value) != auto else self.make_default("RptgDtTm")
+	@CollCmpnt.setter
+	def CollCmpnt(self, value):
+		self._CollCmpnt = value if type(value) != auto else self.make_default("CollCmpnt")
 
-	@RptgDtTm.deleter
-	def RptgDtTm(self):
-		del self._RptgDtTm
-		self._RptgDtTm = None
+	@CollCmpnt.deleter
+	def CollCmpnt(self):
+		del self._CollCmpnt
+		self._CollCmpnt = None
 
 	@property
 	def TechRcrdId(self):
@@ -76,17 +76,17 @@ class ReuseDataReportNew6(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def EvtDay(self):
-		return self._EvtDay
+	def RptgDtTm(self):
+		return self._RptgDtTm
 
-	@EvtDay.setter
-	def EvtDay(self, value):
-		self._EvtDay = value if type(value) != auto else self.make_default("EvtDay")
+	@RptgDtTm.setter
+	def RptgDtTm(self, value):
+		self._RptgDtTm = value if type(value) != auto else self.make_default("RptgDtTm")
 
-	@EvtDay.deleter
-	def EvtDay(self):
-		del self._EvtDay
-		self._EvtDay = None
+	@RptgDtTm.deleter
+	def RptgDtTm(self):
+		del self._RptgDtTm
+		self._RptgDtTm = None
 
 	@property
 	def CtrPty(self):
@@ -102,12 +102,12 @@ class ReuseDataReportNew6(base_types._BaseFieldType):
 		self._CtrPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollCmpnt', type=CollateralType19, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EvtDay', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FndgSrc', type=FundingSource3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptgDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollCmpnt', type=CollateralType19, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='EvtDay', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPty', type=CounterpartyData87, min=1, max=1, mutex_group=None, array=False),
 	))
 

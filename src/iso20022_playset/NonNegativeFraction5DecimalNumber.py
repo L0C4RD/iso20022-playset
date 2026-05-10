@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class NonNegativeFraction5DecimalNumber(base_types._BaseDataType_Decimal):
 

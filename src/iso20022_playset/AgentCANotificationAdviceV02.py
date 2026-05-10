@@ -1,67 +1,28 @@
-import base_types
-import CorporateAction83
-import DocumentIdentification31
-import CorporateActionNarrative2
+from . import base_types
 import CorporateActionGeneralInformation172
+import CorporateAction83
 import Pagination1
+import DocumentIdentification31
 import CorporateActionAgent2
 import CorporateActionNotification12
+import CorporateActionNarrative2
 import CorporateActionOption235
 
 class AgentCANotificationAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnGnlInf", "_Pgntn", "_PrvsNtfctnId", "_CorpActnDtls", "_CorpActnOptnDtls", "_CorpActnGnlInf", "_AddtlInf", "_AgtInf"]
+	__slots__ = ["_AddtlInf", "_CorpActnOptnDtls", "_PrvsNtfctnId", "_Pgntn", "_CorpActnGnlInf", "_NtfctnGnlInf", "_AgtInf", "_CorpActnDtls"]
 	@property
-	def NtfctnGnlInf(self):
-		return self._NtfctnGnlInf
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@NtfctnGnlInf.setter
-	def NtfctnGnlInf(self, value):
-		self._NtfctnGnlInf = value if type(value) != auto else self.make_default("NtfctnGnlInf")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@NtfctnGnlInf.deleter
-	def NtfctnGnlInf(self):
-		del self._NtfctnGnlInf
-		self._NtfctnGnlInf = None
-
-	@property
-	def Pgntn(self):
-		return self._Pgntn
-
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
-
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
-
-	@property
-	def PrvsNtfctnId(self):
-		return self._PrvsNtfctnId
-
-	@PrvsNtfctnId.setter
-	def PrvsNtfctnId(self, value):
-		self._PrvsNtfctnId = value if type(value) != auto else self.make_default("PrvsNtfctnId")
-
-	@PrvsNtfctnId.deleter
-	def PrvsNtfctnId(self):
-		del self._PrvsNtfctnId
-		self._PrvsNtfctnId = None
-
-	@property
-	def CorpActnDtls(self):
-		return self._CorpActnDtls
-
-	@CorpActnDtls.setter
-	def CorpActnDtls(self, value):
-		self._CorpActnDtls = value if type(value) != auto else self.make_default("CorpActnDtls")
-
-	@CorpActnDtls.deleter
-	def CorpActnDtls(self):
-		del self._CorpActnDtls
-		self._CorpActnDtls = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def CorpActnOptnDtls(self):
@@ -77,6 +38,32 @@ class AgentCANotificationAdviceV02(base_types._BaseFieldType):
 		self._CorpActnOptnDtls = None
 
 	@property
+	def PrvsNtfctnId(self):
+		return self._PrvsNtfctnId
+
+	@PrvsNtfctnId.setter
+	def PrvsNtfctnId(self, value):
+		self._PrvsNtfctnId = value if type(value) != auto else self.make_default("PrvsNtfctnId")
+
+	@PrvsNtfctnId.deleter
+	def PrvsNtfctnId(self):
+		del self._PrvsNtfctnId
+		self._PrvsNtfctnId = None
+
+	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
+
+	@property
 	def CorpActnGnlInf(self):
 		return self._CorpActnGnlInf
 
@@ -90,17 +77,17 @@ class AgentCANotificationAdviceV02(base_types._BaseFieldType):
 		self._CorpActnGnlInf = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def NtfctnGnlInf(self):
+		return self._NtfctnGnlInf
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@NtfctnGnlInf.setter
+	def NtfctnGnlInf(self, value):
+		self._NtfctnGnlInf = value if type(value) != auto else self.make_default("NtfctnGnlInf")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@NtfctnGnlInf.deleter
+	def NtfctnGnlInf(self):
+		del self._NtfctnGnlInf
+		self._NtfctnGnlInf = None
 
 	@property
 	def AgtInf(self):
@@ -115,14 +102,27 @@ class AgentCANotificationAdviceV02(base_types._BaseFieldType):
 		del self._AgtInf
 		self._AgtInf = None
 
+	@property
+	def CorpActnDtls(self):
+		return self._CorpActnDtls
+
+	@CorpActnDtls.setter
+	def CorpActnDtls(self, value):
+		self._CorpActnDtls = value if type(value) != auto else self.make_default("CorpActnDtls")
+
+	@CorpActnDtls.deleter
+	def CorpActnDtls(self):
+		del self._CorpActnDtls
+		self._CorpActnDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtfctnGnlInf', type=CorporateActionNotification12, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsNtfctnId', type=DocumentIdentification31, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnDtls', type=CorporateAction83, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnOptnDtls', type=CorporateActionOption235, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation172, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnOptnDtls', type=CorporateActionOption235, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrvsNtfctnId', type=DocumentIdentification31, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation172, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnGnlInf', type=CorporateActionNotification12, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtInf', type=CorporateActionAgent2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CorpActnDtls', type=CorporateAction83, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
+import UniqueTransactionIdentifier3
 import Max35Text
 import PartyIdentification242Choice
-import UniqueTransactionIdentifier3
 
 class CounterpartySideTransactionReporting3(base_types._BaseFieldType):
 

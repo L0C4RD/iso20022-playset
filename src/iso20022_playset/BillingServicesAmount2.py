@@ -1,21 +1,21 @@
-import base_types
+from . import base_types
 import AmountAndDirection34
 
 class BillingServicesAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmAmt", "_PricgAmt", "_HstAmt"]
+	__slots__ = ["_HstAmt", "_PricgAmt", "_SttlmAmt"]
 	@property
-	def SttlmAmt(self):
-		return self._SttlmAmt
+	def HstAmt(self):
+		return self._HstAmt
 
-	@SttlmAmt.setter
-	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != auto else self.make_default("SttlmAmt")
+	@HstAmt.setter
+	def HstAmt(self, value):
+		self._HstAmt = value if type(value) != auto else self.make_default("HstAmt")
 
-	@SttlmAmt.deleter
-	def SttlmAmt(self):
-		del self._SttlmAmt
-		self._SttlmAmt = None
+	@HstAmt.deleter
+	def HstAmt(self):
+		del self._HstAmt
+		self._HstAmt = None
 
 	@property
 	def PricgAmt(self):
@@ -31,21 +31,21 @@ class BillingServicesAmount2(base_types._BaseFieldType):
 		self._PricgAmt = None
 
 	@property
-	def HstAmt(self):
-		return self._HstAmt
+	def SttlmAmt(self):
+		return self._SttlmAmt
 
-	@HstAmt.setter
-	def HstAmt(self, value):
-		self._HstAmt = value if type(value) != auto else self.make_default("HstAmt")
+	@SttlmAmt.setter
+	def SttlmAmt(self, value):
+		self._SttlmAmt = value if type(value) != auto else self.make_default("SttlmAmt")
 
-	@HstAmt.deleter
-	def HstAmt(self):
-		del self._HstAmt
-		self._HstAmt = None
+	@SttlmAmt.deleter
+	def SttlmAmt(self):
+		del self._SttlmAmt
+		self._SttlmAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricgAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricgAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
 	))
 

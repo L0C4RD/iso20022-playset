@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import CountryCode
-import GenericIdentification37
 import SecurityIdentification19
+import GenericIdentification37
 
 class RemovalProcessing2Choice(base_types._BaseFieldType):
 

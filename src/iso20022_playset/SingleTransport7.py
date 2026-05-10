@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
+import TransportByRoad5
 import TransportByAir5
 import TransportByRail5
-import TransportByRoad5
 import TransportBySea6
 
 class SingleTransport7(base_types._BaseFieldType):
 
-	__slots__ = ["_TrnsprtByRail", "_TrnsprtByAir", "_TrnsprtByRoad", "_TrnsprtBySea"]
+	__slots__ = ["_TrnsprtByRail", "_TrnsprtByAir", "_TrnsprtBySea", "_TrnsprtByRoad"]
 	@property
 	def TrnsprtByRail(self):
 		return self._TrnsprtByRail
@@ -34,19 +34,6 @@ class SingleTransport7(base_types._BaseFieldType):
 		self._TrnsprtByAir = None
 
 	@property
-	def TrnsprtByRoad(self):
-		return self._TrnsprtByRoad
-
-	@TrnsprtByRoad.setter
-	def TrnsprtByRoad(self, value):
-		self._TrnsprtByRoad = value if type(value) != auto else self.make_default("TrnsprtByRoad")
-
-	@TrnsprtByRoad.deleter
-	def TrnsprtByRoad(self):
-		del self._TrnsprtByRoad
-		self._TrnsprtByRoad = None
-
-	@property
 	def TrnsprtBySea(self):
 		return self._TrnsprtBySea
 
@@ -59,10 +46,23 @@ class SingleTransport7(base_types._BaseFieldType):
 		del self._TrnsprtBySea
 		self._TrnsprtBySea = None
 
+	@property
+	def TrnsprtByRoad(self):
+		return self._TrnsprtByRoad
+
+	@TrnsprtByRoad.setter
+	def TrnsprtByRoad(self, value):
+		self._TrnsprtByRoad = value if type(value) != auto else self.make_default("TrnsprtByRoad")
+
+	@TrnsprtByRoad.deleter
+	def TrnsprtByRoad(self):
+		del self._TrnsprtByRoad
+		self._TrnsprtByRoad = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TrnsprtByRail', type=TransportByRail5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TrnsprtByAir', type=TransportByAir5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TrnsprtByRoad', type=TransportByRoad5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TrnsprtBySea', type=TransportBySea6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TrnsprtByRoad', type=TransportByRoad5, min=0, max=None, mutex_group=None, array=True),
 	))
 

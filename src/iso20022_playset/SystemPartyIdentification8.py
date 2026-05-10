@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PartyIdentification136
 
 class SystemPartyIdentification8(base_types._BaseFieldType):

@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import ATMConfigurationControlComponent1
-import ContentInformationType15
 import Header31
+import ContentInformationType15
 import ContentInformationType10
 
 class ATMConfigurationControlV01(base_types._BaseFieldType):

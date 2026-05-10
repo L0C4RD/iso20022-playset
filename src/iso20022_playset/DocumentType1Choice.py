@@ -1,6 +1,6 @@
-import base_types
-import GenericIdentification1
+from . import base_types
 import ExternalDocumentType1Code
+import GenericIdentification1
 
 class DocumentType1Choice(base_types._BaseFieldType):
 

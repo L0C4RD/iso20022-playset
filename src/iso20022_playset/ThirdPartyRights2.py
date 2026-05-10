@@ -1,14 +1,14 @@
-import base_types
-import Max35Text
-import ISODateTime
+from . import base_types
 import Max350Text
-import ActiveCurrencyAndAmount
 import PartyIdentification125Choice
+import ISODateTime
+import Max35Text
 import LEIIdentifier
+import ActiveCurrencyAndAmount
 
 class ThirdPartyRights2(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Tp", "_Hldr", "_Amt", "_DtTm", "_LglNttyIdr"]
+	__slots__ = ["_Desc", "_DtTm", "_Hldr", "_Tp", "_LglNttyIdr", "_Amt"]
 	@property
 	def Desc(self):
 		return self._Desc
@@ -21,45 +21,6 @@ class ThirdPartyRights2(base_types._BaseFieldType):
 	def Desc(self):
 		del self._Desc
 		self._Desc = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def Hldr(self):
-		return self._Hldr
-
-	@Hldr.setter
-	def Hldr(self, value):
-		self._Hldr = value if type(value) != auto else self.make_default("Hldr")
-
-	@Hldr.deleter
-	def Hldr(self):
-		del self._Hldr
-		self._Hldr = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
 
 	@property
 	def DtTm(self):
@@ -75,6 +36,32 @@ class ThirdPartyRights2(base_types._BaseFieldType):
 		self._DtTm = None
 
 	@property
+	def Hldr(self):
+		return self._Hldr
+
+	@Hldr.setter
+	def Hldr(self, value):
+		self._Hldr = value if type(value) != auto else self.make_default("Hldr")
+
+	@Hldr.deleter
+	def Hldr(self):
+		del self._Hldr
+		self._Hldr = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
 	def LglNttyIdr(self):
 		return self._LglNttyIdr
 
@@ -87,12 +74,25 @@ class ThirdPartyRights2(base_types._BaseFieldType):
 		del self._LglNttyIdr
 		self._LglNttyIdr = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hldr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hldr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

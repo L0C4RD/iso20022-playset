@@ -1,67 +1,15 @@
-import base_types
-import Max140Text
-import PartyIdentification272
-import ReferredDocumentInformation8
-import RemittanceAmount4
-import TaxData1
+from . import base_types
 import Garnishment4
+import PartyIdentification272
+import TaxData1
+import Max140Text
+import ReferredDocumentInformation8
 import CreditorReferenceInformation3
+import RemittanceAmount4
 
 class StructuredRemittanceInformation18(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrRefInf", "_GrnshmtRmt", "_RfrdDocAmt", "_Invcr", "_TaxRmt", "_AddtlRmtInf", "_RfrdDocInf", "_Invcee"]
-	@property
-	def CdtrRefInf(self):
-		return self._CdtrRefInf
-
-	@CdtrRefInf.setter
-	def CdtrRefInf(self, value):
-		self._CdtrRefInf = value if type(value) != auto else self.make_default("CdtrRefInf")
-
-	@CdtrRefInf.deleter
-	def CdtrRefInf(self):
-		del self._CdtrRefInf
-		self._CdtrRefInf = None
-
-	@property
-	def GrnshmtRmt(self):
-		return self._GrnshmtRmt
-
-	@GrnshmtRmt.setter
-	def GrnshmtRmt(self, value):
-		self._GrnshmtRmt = value if type(value) != auto else self.make_default("GrnshmtRmt")
-
-	@GrnshmtRmt.deleter
-	def GrnshmtRmt(self):
-		del self._GrnshmtRmt
-		self._GrnshmtRmt = None
-
-	@property
-	def RfrdDocAmt(self):
-		return self._RfrdDocAmt
-
-	@RfrdDocAmt.setter
-	def RfrdDocAmt(self, value):
-		self._RfrdDocAmt = value if type(value) != auto else self.make_default("RfrdDocAmt")
-
-	@RfrdDocAmt.deleter
-	def RfrdDocAmt(self):
-		del self._RfrdDocAmt
-		self._RfrdDocAmt = None
-
-	@property
-	def Invcr(self):
-		return self._Invcr
-
-	@Invcr.setter
-	def Invcr(self, value):
-		self._Invcr = value if type(value) != auto else self.make_default("Invcr")
-
-	@Invcr.deleter
-	def Invcr(self):
-		del self._Invcr
-		self._Invcr = None
-
+	__slots__ = ["_TaxRmt", "_Invcee", "_AddtlRmtInf", "_RfrdDocAmt", "_CdtrRefInf", "_Invcr", "_GrnshmtRmt", "_RfrdDocInf"]
 	@property
 	def TaxRmt(self):
 		return self._TaxRmt
@@ -74,6 +22,19 @@ class StructuredRemittanceInformation18(base_types._BaseFieldType):
 	def TaxRmt(self):
 		del self._TaxRmt
 		self._TaxRmt = None
+
+	@property
+	def Invcee(self):
+		return self._Invcee
+
+	@Invcee.setter
+	def Invcee(self, value):
+		self._Invcee = value if type(value) != auto else self.make_default("Invcee")
+
+	@Invcee.deleter
+	def Invcee(self):
+		del self._Invcee
+		self._Invcee = None
 
 	@property
 	def AddtlRmtInf(self):
@@ -89,6 +50,58 @@ class StructuredRemittanceInformation18(base_types._BaseFieldType):
 		self._AddtlRmtInf = None
 
 	@property
+	def RfrdDocAmt(self):
+		return self._RfrdDocAmt
+
+	@RfrdDocAmt.setter
+	def RfrdDocAmt(self, value):
+		self._RfrdDocAmt = value if type(value) != auto else self.make_default("RfrdDocAmt")
+
+	@RfrdDocAmt.deleter
+	def RfrdDocAmt(self):
+		del self._RfrdDocAmt
+		self._RfrdDocAmt = None
+
+	@property
+	def CdtrRefInf(self):
+		return self._CdtrRefInf
+
+	@CdtrRefInf.setter
+	def CdtrRefInf(self, value):
+		self._CdtrRefInf = value if type(value) != auto else self.make_default("CdtrRefInf")
+
+	@CdtrRefInf.deleter
+	def CdtrRefInf(self):
+		del self._CdtrRefInf
+		self._CdtrRefInf = None
+
+	@property
+	def Invcr(self):
+		return self._Invcr
+
+	@Invcr.setter
+	def Invcr(self, value):
+		self._Invcr = value if type(value) != auto else self.make_default("Invcr")
+
+	@Invcr.deleter
+	def Invcr(self):
+		del self._Invcr
+		self._Invcr = None
+
+	@property
+	def GrnshmtRmt(self):
+		return self._GrnshmtRmt
+
+	@GrnshmtRmt.setter
+	def GrnshmtRmt(self, value):
+		self._GrnshmtRmt = value if type(value) != auto else self.make_default("GrnshmtRmt")
+
+	@GrnshmtRmt.deleter
+	def GrnshmtRmt(self):
+		del self._GrnshmtRmt
+		self._GrnshmtRmt = None
+
+	@property
 	def RfrdDocInf(self):
 		return self._RfrdDocInf
 
@@ -101,27 +114,14 @@ class StructuredRemittanceInformation18(base_types._BaseFieldType):
 		del self._RfrdDocInf
 		self._RfrdDocInf = None
 
-	@property
-	def Invcee(self):
-		return self._Invcee
-
-	@Invcee.setter
-	def Invcee(self, value):
-		self._Invcee = value if type(value) != auto else self.make_default("Invcee")
-
-	@Invcee.deleter
-	def Invcee(self):
-		del self._Invcee
-		self._Invcee = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtrRefInf', type=CreditorReferenceInformation3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrnshmtRmt', type=Garnishment4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RfrdDocAmt', type=RemittanceAmount4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Invcr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxRmt', type=TaxData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlRmtInf', type=Max140Text, min=0, max=3, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RfrdDocInf', type=ReferredDocumentInformation8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Invcee', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlRmtInf', type=Max140Text, min=0, max=3, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RfrdDocAmt', type=RemittanceAmount4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrRefInf', type=CreditorReferenceInformation3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Invcr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrnshmtRmt', type=Garnishment4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RfrdDocInf', type=ReferredDocumentInformation8, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import OptionParty3Code
 
 class Direction2(base_types._BaseFieldType):

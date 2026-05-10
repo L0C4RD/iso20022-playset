@@ -1,25 +1,12 @@
-import base_types
+from . import base_types
+import CommunicationCharacteristics5
+import Number
 import CryptographicKey18
 import MemoryCharacteristics1
-import Number
-import CommunicationCharacteristics5
 
 class PointOfInteractionComponentCharacteristics10(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyAccsMdls", "_Com", "_Mmry", "_SbcbrIdntyMdls", "_SctyElmt"]
-	@property
-	def SctyAccsMdls(self):
-		return self._SctyAccsMdls
-
-	@SctyAccsMdls.setter
-	def SctyAccsMdls(self, value):
-		self._SctyAccsMdls = value if type(value) != auto else self.make_default("SctyAccsMdls")
-
-	@SctyAccsMdls.deleter
-	def SctyAccsMdls(self):
-		del self._SctyAccsMdls
-		self._SctyAccsMdls = None
-
+	__slots__ = ["_Com", "_SctyElmt", "_SbcbrIdntyMdls", "_Mmry", "_SctyAccsMdls"]
 	@property
 	def Com(self):
 		return self._Com
@@ -34,17 +21,17 @@ class PointOfInteractionComponentCharacteristics10(base_types._BaseFieldType):
 		self._Com = None
 
 	@property
-	def Mmry(self):
-		return self._Mmry
+	def SctyElmt(self):
+		return self._SctyElmt
 
-	@Mmry.setter
-	def Mmry(self, value):
-		self._Mmry = value if type(value) != auto else self.make_default("Mmry")
+	@SctyElmt.setter
+	def SctyElmt(self, value):
+		self._SctyElmt = value if type(value) != auto else self.make_default("SctyElmt")
 
-	@Mmry.deleter
-	def Mmry(self):
-		del self._Mmry
-		self._Mmry = None
+	@SctyElmt.deleter
+	def SctyElmt(self):
+		del self._SctyElmt
+		self._SctyElmt = None
 
 	@property
 	def SbcbrIdntyMdls(self):
@@ -60,23 +47,36 @@ class PointOfInteractionComponentCharacteristics10(base_types._BaseFieldType):
 		self._SbcbrIdntyMdls = None
 
 	@property
-	def SctyElmt(self):
-		return self._SctyElmt
+	def Mmry(self):
+		return self._Mmry
 
-	@SctyElmt.setter
-	def SctyElmt(self, value):
-		self._SctyElmt = value if type(value) != auto else self.make_default("SctyElmt")
+	@Mmry.setter
+	def Mmry(self, value):
+		self._Mmry = value if type(value) != auto else self.make_default("Mmry")
 
-	@SctyElmt.deleter
-	def SctyElmt(self):
-		del self._SctyElmt
-		self._SctyElmt = None
+	@Mmry.deleter
+	def Mmry(self):
+		del self._Mmry
+		self._Mmry = None
+
+	@property
+	def SctyAccsMdls(self):
+		return self._SctyAccsMdls
+
+	@SctyAccsMdls.setter
+	def SctyAccsMdls(self, value):
+		self._SctyAccsMdls = value if type(value) != auto else self.make_default("SctyAccsMdls")
+
+	@SctyAccsMdls.deleter
+	def SctyAccsMdls(self):
+		del self._SctyAccsMdls
+		self._SctyAccsMdls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyAccsMdls', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Com', type=CommunicationCharacteristics5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Mmry', type=MemoryCharacteristics1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SbcbrIdntyMdls', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyElmt', type=CryptographicKey18, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SbcbrIdntyMdls', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mmry', type=MemoryCharacteristics1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SctyAccsMdls', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,12 @@
-import base_types
-import ISODateTime
+from . import base_types
+import ExchangeRateBasis1Choice
 import ActiveOrHistoricCurrencyCode
 import BaseOne18Rate
-import ExchangeRateBasis1Choice
+import ISODateTime
 
 class CurrencyExchange22(base_types._BaseFieldType):
 
-	__slots__ = ["_FwdXchgRate", "_DlvrblCrossCcy", "_XchgRateBsis", "_XchgRate", "_FxgDt"]
+	__slots__ = ["_FwdXchgRate", "_FxgDt", "_XchgRateBsis", "_DlvrblCrossCcy", "_XchgRate"]
 	@property
 	def FwdXchgRate(self):
 		return self._FwdXchgRate
@@ -21,17 +21,17 @@ class CurrencyExchange22(base_types._BaseFieldType):
 		self._FwdXchgRate = None
 
 	@property
-	def DlvrblCrossCcy(self):
-		return self._DlvrblCrossCcy
+	def FxgDt(self):
+		return self._FxgDt
 
-	@DlvrblCrossCcy.setter
-	def DlvrblCrossCcy(self, value):
-		self._DlvrblCrossCcy = value if type(value) != auto else self.make_default("DlvrblCrossCcy")
+	@FxgDt.setter
+	def FxgDt(self, value):
+		self._FxgDt = value if type(value) != auto else self.make_default("FxgDt")
 
-	@DlvrblCrossCcy.deleter
-	def DlvrblCrossCcy(self):
-		del self._DlvrblCrossCcy
-		self._DlvrblCrossCcy = None
+	@FxgDt.deleter
+	def FxgDt(self):
+		del self._FxgDt
+		self._FxgDt = None
 
 	@property
 	def XchgRateBsis(self):
@@ -47,6 +47,19 @@ class CurrencyExchange22(base_types._BaseFieldType):
 		self._XchgRateBsis = None
 
 	@property
+	def DlvrblCrossCcy(self):
+		return self._DlvrblCrossCcy
+
+	@DlvrblCrossCcy.setter
+	def DlvrblCrossCcy(self, value):
+		self._DlvrblCrossCcy = value if type(value) != auto else self.make_default("DlvrblCrossCcy")
+
+	@DlvrblCrossCcy.deleter
+	def DlvrblCrossCcy(self):
+		del self._DlvrblCrossCcy
+		self._DlvrblCrossCcy = None
+
+	@property
 	def XchgRate(self):
 		return self._XchgRate
 
@@ -59,24 +72,11 @@ class CurrencyExchange22(base_types._BaseFieldType):
 		del self._XchgRate
 		self._XchgRate = None
 
-	@property
-	def FxgDt(self):
-		return self._FxgDt
-
-	@FxgDt.setter
-	def FxgDt(self, value):
-		self._FxgDt = value if type(value) != auto else self.make_default("FxgDt")
-
-	@FxgDt.deleter
-	def FxgDt(self):
-		del self._FxgDt
-		self._FxgDt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FwdXchgRate', type=BaseOne18Rate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvrblCrossCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRateBsis', type=ExchangeRateBasis1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOne18Rate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FxgDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRateBsis', type=ExchangeRateBasis1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrblCrossCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOne18Rate, min=0, max=1, mutex_group=None, array=False),
 	))
 

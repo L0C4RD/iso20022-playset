@@ -1,12 +1,12 @@
-import base_types
-import Max35Text
-import Amount5
+from . import base_types
 import PercentageRate
 import InstalmentAmountDetailsType1Code
+import Max35Text
+import Amount5
 
 class InstalmentAmountDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_Pctg", "_Tp", "_Amt", "_OthrTp", "_SubTp"]
+	__slots__ = ["_Pctg", "_Tp", "_OthrTp", "_SubTp", "_Amt"]
 	@property
 	def Pctg(self):
 		return self._Pctg
@@ -34,19 +34,6 @@ class InstalmentAmountDetails1(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
 	def OthrTp(self):
 		return self._OthrTp
 
@@ -72,11 +59,24 @@ class InstalmentAmountDetails1(base_types._BaseFieldType):
 		del self._SubTp
 		self._SubTp = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=InstalmentAmountDetailsType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=Amount5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=Amount5, min=0, max=1, mutex_group=None, array=False),
 	))
 

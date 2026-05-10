@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import GenericIdentification47
 import PersonIdentificationType5Code
 

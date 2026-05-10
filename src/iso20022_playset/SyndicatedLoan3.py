@@ -1,12 +1,12 @@
-import base_types
-import ExchangeRate1
+from . import base_types
 import PercentageRate
 import TradeParty6
+import ExchangeRate1
 import ActiveCurrencyAndAmount
 
 class SyndicatedLoan3(base_types._BaseFieldType):
 
-	__slots__ = ["_Brrwr", "_XchgRateInf", "_Amt", "_Shr", "_Lndr"]
+	__slots__ = ["_Brrwr", "_Lndr", "_Amt", "_XchgRateInf", "_Shr"]
 	@property
 	def Brrwr(self):
 		return self._Brrwr
@@ -21,17 +21,17 @@ class SyndicatedLoan3(base_types._BaseFieldType):
 		self._Brrwr = None
 
 	@property
-	def XchgRateInf(self):
-		return self._XchgRateInf
+	def Lndr(self):
+		return self._Lndr
 
-	@XchgRateInf.setter
-	def XchgRateInf(self, value):
-		self._XchgRateInf = value if type(value) != auto else self.make_default("XchgRateInf")
+	@Lndr.setter
+	def Lndr(self, value):
+		self._Lndr = value if type(value) != auto else self.make_default("Lndr")
 
-	@XchgRateInf.deleter
-	def XchgRateInf(self):
-		del self._XchgRateInf
-		self._XchgRateInf = None
+	@Lndr.deleter
+	def Lndr(self):
+		del self._Lndr
+		self._Lndr = None
 
 	@property
 	def Amt(self):
@@ -47,6 +47,19 @@ class SyndicatedLoan3(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
+	def XchgRateInf(self):
+		return self._XchgRateInf
+
+	@XchgRateInf.setter
+	def XchgRateInf(self, value):
+		self._XchgRateInf = value if type(value) != auto else self.make_default("XchgRateInf")
+
+	@XchgRateInf.deleter
+	def XchgRateInf(self):
+		del self._XchgRateInf
+		self._XchgRateInf = None
+
+	@property
 	def Shr(self):
 		return self._Shr
 
@@ -59,24 +72,11 @@ class SyndicatedLoan3(base_types._BaseFieldType):
 		del self._Shr
 		self._Shr = None
 
-	@property
-	def Lndr(self):
-		return self._Lndr
-
-	@Lndr.setter
-	def Lndr(self, value):
-		self._Lndr = value if type(value) != auto else self.make_default("Lndr")
-
-	@Lndr.deleter
-	def Lndr(self):
-		del self._Lndr
-		self._Lndr = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Brrwr', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRateInf', type=ExchangeRate1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Shr', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lndr', type=TradeParty6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRateInf', type=ExchangeRate1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Shr', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

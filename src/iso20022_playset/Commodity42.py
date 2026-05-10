@@ -1,26 +1,13 @@
-import base_types
-import CompareAmountAndDirection2
+from . import base_types
+import CompareUnitOfMeasure3
+import CompareDecimalNumber3
 import CompareUnitPrice6
 import CompareCommodityAssetClass3
-import CompareDecimalNumber3
-import CompareUnitOfMeasure3
+import CompareAmountAndDirection2
 
 class Commodity42(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitOfMeasr", "_MktVal", "_Clssfctn", "_Qty", "_UnitPric"]
-	@property
-	def UnitOfMeasr(self):
-		return self._UnitOfMeasr
-
-	@UnitOfMeasr.setter
-	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
-
-	@UnitOfMeasr.deleter
-	def UnitOfMeasr(self):
-		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
-
+	__slots__ = ["_MktVal", "_UnitOfMeasr", "_Qty", "_Clssfctn", "_UnitPric"]
 	@property
 	def MktVal(self):
 		return self._MktVal
@@ -35,17 +22,17 @@ class Commodity42(base_types._BaseFieldType):
 		self._MktVal = None
 
 	@property
-	def Clssfctn(self):
-		return self._Clssfctn
+	def UnitOfMeasr(self):
+		return self._UnitOfMeasr
 
-	@Clssfctn.setter
-	def Clssfctn(self, value):
-		self._Clssfctn = value if type(value) != auto else self.make_default("Clssfctn")
+	@UnitOfMeasr.setter
+	def UnitOfMeasr(self, value):
+		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
 
-	@Clssfctn.deleter
-	def Clssfctn(self):
-		del self._Clssfctn
-		self._Clssfctn = None
+	@UnitOfMeasr.deleter
+	def UnitOfMeasr(self):
+		del self._UnitOfMeasr
+		self._UnitOfMeasr = None
 
 	@property
 	def Qty(self):
@@ -61,6 +48,19 @@ class Commodity42(base_types._BaseFieldType):
 		self._Qty = None
 
 	@property
+	def Clssfctn(self):
+		return self._Clssfctn
+
+	@Clssfctn.setter
+	def Clssfctn(self, value):
+		self._Clssfctn = value if type(value) != auto else self.make_default("Clssfctn")
+
+	@Clssfctn.deleter
+	def Clssfctn(self):
+		del self._Clssfctn
+		self._Clssfctn = None
+
+	@property
 	def UnitPric(self):
 		return self._UnitPric
 
@@ -74,10 +74,10 @@ class Commodity42(base_types._BaseFieldType):
 		self._UnitPric = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitOfMeasr', type=CompareUnitOfMeasure3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktVal', type=CompareAmountAndDirection2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Clssfctn', type=CompareCommodityAssetClass3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfMeasr', type=CompareUnitOfMeasure3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=CompareDecimalNumber3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Clssfctn', type=CompareCommodityAssetClass3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitPric', type=CompareUnitPrice6, min=0, max=1, mutex_group=None, array=False),
 	))
 

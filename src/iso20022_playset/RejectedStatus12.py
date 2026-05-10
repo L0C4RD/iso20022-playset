@@ -1,6 +1,6 @@
-import base_types
-import RejectedStatus61Choice
+from . import base_types
 import Quantity54Choice
+import RejectedStatus61Choice
 
 class RejectedStatus12(base_types._BaseFieldType):
 

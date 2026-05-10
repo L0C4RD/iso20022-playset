@@ -1,25 +1,12 @@
-import base_types
+from . import base_types
 import InstalmentFinancingInformation1
 import OriginalInvoiceInformation1
-import FinancingResult1
 import PartyIdentification8
+import FinancingResult1
 
 class InvoiceFinancingDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlInvcInf", "_InstlmtFincgInf", "_InvcFincgRslt", "_Spplr"]
-	@property
-	def OrgnlInvcInf(self):
-		return self._OrgnlInvcInf
-
-	@OrgnlInvcInf.setter
-	def OrgnlInvcInf(self, value):
-		self._OrgnlInvcInf = value if type(value) != auto else self.make_default("OrgnlInvcInf")
-
-	@OrgnlInvcInf.deleter
-	def OrgnlInvcInf(self):
-		del self._OrgnlInvcInf
-		self._OrgnlInvcInf = None
-
+	__slots__ = ["_InstlmtFincgInf", "_Spplr", "_InvcFincgRslt", "_OrgnlInvcInf"]
 	@property
 	def InstlmtFincgInf(self):
 		return self._InstlmtFincgInf
@@ -32,6 +19,19 @@ class InvoiceFinancingDetails1(base_types._BaseFieldType):
 	def InstlmtFincgInf(self):
 		del self._InstlmtFincgInf
 		self._InstlmtFincgInf = None
+
+	@property
+	def Spplr(self):
+		return self._Spplr
+
+	@Spplr.setter
+	def Spplr(self, value):
+		self._Spplr = value if type(value) != auto else self.make_default("Spplr")
+
+	@Spplr.deleter
+	def Spplr(self):
+		del self._Spplr
+		self._Spplr = None
 
 	@property
 	def InvcFincgRslt(self):
@@ -47,22 +47,22 @@ class InvoiceFinancingDetails1(base_types._BaseFieldType):
 		self._InvcFincgRslt = None
 
 	@property
-	def Spplr(self):
-		return self._Spplr
+	def OrgnlInvcInf(self):
+		return self._OrgnlInvcInf
 
-	@Spplr.setter
-	def Spplr(self, value):
-		self._Spplr = value if type(value) != auto else self.make_default("Spplr")
+	@OrgnlInvcInf.setter
+	def OrgnlInvcInf(self, value):
+		self._OrgnlInvcInf = value if type(value) != auto else self.make_default("OrgnlInvcInf")
 
-	@Spplr.deleter
-	def Spplr(self):
-		del self._Spplr
-		self._Spplr = None
+	@OrgnlInvcInf.deleter
+	def OrgnlInvcInf(self):
+		del self._OrgnlInvcInf
+		self._OrgnlInvcInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlInvcInf', type=OriginalInvoiceInformation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstlmtFincgInf', type=InstalmentFinancingInformation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InvcFincgRslt', type=FinancingResult1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Spplr', type=PartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvcFincgRslt', type=FinancingResult1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlInvcInf', type=OriginalInvoiceInformation1, min=1, max=1, mutex_group=None, array=False),
 	))
 

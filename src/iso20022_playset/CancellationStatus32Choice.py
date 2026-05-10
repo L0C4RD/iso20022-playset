@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
+import PendingCancellationStatus12Choice
 import CancellationProcessingStatus2
 import RejectedStatus31Choice
-import PendingCancellationStatus12Choice
 
 class CancellationStatus32Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgCxl", "_Rjctd", "_PrcgSts"]
+	__slots__ = ["_PrcgSts", "_Rjctd", "_PdgCxl"]
 	@property
-	def PdgCxl(self):
-		return self._PdgCxl
+	def PrcgSts(self):
+		return self._PrcgSts
 
-	@PdgCxl.setter
-	def PdgCxl(self, value):
-		self._PdgCxl = value if type(value) != auto else self.make_default("PdgCxl")
+	@PrcgSts.setter
+	def PrcgSts(self, value):
+		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
 
-	@PdgCxl.deleter
-	def PdgCxl(self):
-		del self._PdgCxl
-		self._PdgCxl = None
+	@PrcgSts.deleter
+	def PrcgSts(self):
+		del self._PrcgSts
+		self._PrcgSts = None
 
 	@property
 	def Rjctd(self):
@@ -33,21 +33,21 @@ class CancellationStatus32Choice(base_types._BaseFieldType):
 		self._Rjctd = None
 
 	@property
-	def PrcgSts(self):
-		return self._PrcgSts
+	def PdgCxl(self):
+		return self._PdgCxl
 
-	@PrcgSts.setter
-	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+	@PdgCxl.setter
+	def PdgCxl(self, value):
+		self._PdgCxl = value if type(value) != auto else self.make_default("PdgCxl")
 
-	@PrcgSts.deleter
-	def PrcgSts(self):
-		del self._PrcgSts
-		self._PrcgSts = None
+	@PdgCxl.deleter
+	def PdgCxl(self):
+		del self._PdgCxl
+		self._PdgCxl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PdgCxl', type=PendingCancellationStatus12Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=RejectedStatus31Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=CancellationProcessingStatus2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=RejectedStatus31Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PdgCxl', type=PendingCancellationStatus12Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

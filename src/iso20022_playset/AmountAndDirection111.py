@@ -1,7 +1,7 @@
-import base_types
-import CurrencyAndAmount
+from . import base_types
 import ISODate
 import PlusOrMinusIndicator
+import CurrencyAndAmount
 import Max70Text
 
 class AmountAndDirection111(base_types._BaseFieldType):

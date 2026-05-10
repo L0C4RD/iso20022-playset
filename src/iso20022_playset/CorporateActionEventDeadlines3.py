@@ -1,10 +1,10 @@
-import base_types
+from . import base_types
 import DateFormat43Choice
 import DateFormat44Choice
 
 class CorporateActionEventDeadlines3(base_types._BaseFieldType):
 
-	__slots__ = ["_CoverPrtctDdln", "_EarlyRspnDdln", "_RspnDdln", "_PrtctDdln", "_MktDdln"]
+	__slots__ = ["_CoverPrtctDdln", "_PrtctDdln", "_MktDdln", "_RspnDdln", "_EarlyRspnDdln"]
 	@property
 	def CoverPrtctDdln(self):
 		return self._CoverPrtctDdln
@@ -17,32 +17,6 @@ class CorporateActionEventDeadlines3(base_types._BaseFieldType):
 	def CoverPrtctDdln(self):
 		del self._CoverPrtctDdln
 		self._CoverPrtctDdln = None
-
-	@property
-	def EarlyRspnDdln(self):
-		return self._EarlyRspnDdln
-
-	@EarlyRspnDdln.setter
-	def EarlyRspnDdln(self, value):
-		self._EarlyRspnDdln = value if type(value) != auto else self.make_default("EarlyRspnDdln")
-
-	@EarlyRspnDdln.deleter
-	def EarlyRspnDdln(self):
-		del self._EarlyRspnDdln
-		self._EarlyRspnDdln = None
-
-	@property
-	def RspnDdln(self):
-		return self._RspnDdln
-
-	@RspnDdln.setter
-	def RspnDdln(self, value):
-		self._RspnDdln = value if type(value) != auto else self.make_default("RspnDdln")
-
-	@RspnDdln.deleter
-	def RspnDdln(self):
-		del self._RspnDdln
-		self._RspnDdln = None
 
 	@property
 	def PrtctDdln(self):
@@ -70,11 +44,37 @@ class CorporateActionEventDeadlines3(base_types._BaseFieldType):
 		del self._MktDdln
 		self._MktDdln = None
 
+	@property
+	def RspnDdln(self):
+		return self._RspnDdln
+
+	@RspnDdln.setter
+	def RspnDdln(self, value):
+		self._RspnDdln = value if type(value) != auto else self.make_default("RspnDdln")
+
+	@RspnDdln.deleter
+	def RspnDdln(self):
+		del self._RspnDdln
+		self._RspnDdln = None
+
+	@property
+	def EarlyRspnDdln(self):
+		return self._EarlyRspnDdln
+
+	@EarlyRspnDdln.setter
+	def EarlyRspnDdln(self, value):
+		self._EarlyRspnDdln = value if type(value) != auto else self.make_default("EarlyRspnDdln")
+
+	@EarlyRspnDdln.deleter
+	def EarlyRspnDdln(self):
+		del self._EarlyRspnDdln
+		self._EarlyRspnDdln = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CoverPrtctDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlyRspnDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnDdln', type=DateFormat44Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnDdln', type=DateFormat44Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlyRspnDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

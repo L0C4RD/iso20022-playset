@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ProprietaryFormatInvestigationV06
 
 class CAMT_035_001_06():

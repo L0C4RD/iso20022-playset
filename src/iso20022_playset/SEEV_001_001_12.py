@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MeetingNotificationV12
 
 class SEEV_001_001_12():

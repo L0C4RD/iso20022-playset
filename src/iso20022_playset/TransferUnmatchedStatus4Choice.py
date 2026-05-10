@@ -1,24 +1,24 @@
-import base_types
-import NoReasonCode
-import Extended350Code
-import TransferUnmatchedReason3Code
+from . import base_types
 import GenericIdentification1
+import NoReasonCode
+import TransferUnmatchedReason3Code
+import Extended350Code
 
 class TransferUnmatchedStatus4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_XtndedRsn", "_NoSpcfdRsn", "_DataSrcSchme", "_Rsn"]
+	__slots__ = ["_DataSrcSchme", "_NoSpcfdRsn", "_XtndedRsn", "_Rsn"]
 	@property
-	def XtndedRsn(self):
-		return self._XtndedRsn
+	def DataSrcSchme(self):
+		return self._DataSrcSchme
 
-	@XtndedRsn.setter
-	def XtndedRsn(self, value):
-		self._XtndedRsn = value if type(value) != auto else self.make_default("XtndedRsn")
+	@DataSrcSchme.setter
+	def DataSrcSchme(self, value):
+		self._DataSrcSchme = value if type(value) != auto else self.make_default("DataSrcSchme")
 
-	@XtndedRsn.deleter
-	def XtndedRsn(self):
-		del self._XtndedRsn
-		self._XtndedRsn = None
+	@DataSrcSchme.deleter
+	def DataSrcSchme(self):
+		del self._DataSrcSchme
+		self._DataSrcSchme = None
 
 	@property
 	def NoSpcfdRsn(self):
@@ -34,17 +34,17 @@ class TransferUnmatchedStatus4Choice(base_types._BaseFieldType):
 		self._NoSpcfdRsn = None
 
 	@property
-	def DataSrcSchme(self):
-		return self._DataSrcSchme
+	def XtndedRsn(self):
+		return self._XtndedRsn
 
-	@DataSrcSchme.setter
-	def DataSrcSchme(self, value):
-		self._DataSrcSchme = value if type(value) != auto else self.make_default("DataSrcSchme")
+	@XtndedRsn.setter
+	def XtndedRsn(self, value):
+		self._XtndedRsn = value if type(value) != auto else self.make_default("XtndedRsn")
 
-	@DataSrcSchme.deleter
-	def DataSrcSchme(self):
-		del self._DataSrcSchme
-		self._DataSrcSchme = None
+	@XtndedRsn.deleter
+	def XtndedRsn(self):
+		del self._XtndedRsn
+		self._XtndedRsn = None
 
 	@property
 	def Rsn(self):
@@ -60,9 +60,9 @@ class TransferUnmatchedStatus4Choice(base_types._BaseFieldType):
 		self._Rsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XtndedRsn', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DataSrcSchme', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='XtndedRsn', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rsn', type=TransferUnmatchedReason3Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

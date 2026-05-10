@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import OrderReport2Choice
 import SupplementaryData1
 import SecuritiesMarketReportHeader3

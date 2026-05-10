@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesSettlementTransactionCounterpartyResponse002V04
 
 class SESE_040_002_04():

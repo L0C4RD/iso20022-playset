@@ -1,6 +1,6 @@
-import base_types
-import Max210Text
+from . import base_types
 import DeniedReason15Choice
+import Max210Text
 
 class DeniedReason10(base_types._BaseFieldType):
 

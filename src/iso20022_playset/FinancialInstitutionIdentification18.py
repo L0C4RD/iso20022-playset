@@ -1,27 +1,14 @@
-import base_types
+from . import base_types
+import GenericFinancialIdentification1
+import ClearingSystemMemberIdentification2
 import Max140Text
 import BICFIDec2014Identifier
-import ClearingSystemMemberIdentification2
 import PostalAddress24
-import GenericFinancialIdentification1
 import LEIIdentifier
 
 class FinancialInstitutionIdentification18(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_LEI", "_PstlAdr", "_Othr", "_BICFI", "_ClrSysMmbId"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
+	__slots__ = ["_LEI", "_PstlAdr", "_Nm", "_Othr", "_BICFI", "_ClrSysMmbId"]
 	@property
 	def LEI(self):
 		return self._LEI
@@ -47,6 +34,19 @@ class FinancialInstitutionIdentification18(base_types._BaseFieldType):
 	def PstlAdr(self):
 		del self._PstlAdr
 		self._PstlAdr = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def Othr(self):
@@ -88,9 +88,9 @@ class FinancialInstitutionIdentification18(base_types._BaseFieldType):
 		self._ClrSysMmbId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress24, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericFinancialIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2, min=0, max=1, mutex_group=None, array=False),

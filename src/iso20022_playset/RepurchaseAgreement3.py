@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import ProductClassification1
-import RepurchaseAgreementType1Choice
 import LEIIdentifier
+import RepurchaseAgreementType1Choice
 
 class RepurchaseAgreement3(base_types._BaseFieldType):
 

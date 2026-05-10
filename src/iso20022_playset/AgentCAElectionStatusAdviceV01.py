@@ -1,13 +1,13 @@
-import base_types
-import ElectionAmendmentStatus1Choice
+from . import base_types
 import DocumentIdentification8
-import ElectionCancellationStatus1Choice
 import ElectionAdviceStatus1Choice
 import CorporateActionInformation1
+import ElectionAmendmentStatus1Choice
+import ElectionCancellationStatus1Choice
 
 class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnGnlInf", "_AgtCAElctnAdvcId", "_ElctnCxlReqSts", "_ElctnAmdmntReqSts", "_Id", "_AgtCAElctnCxlReqId", "_ElctnAdvcSts", "_AgtCAElctnAmdmntReqId"]
+	__slots__ = ["_CorpActnGnlInf", "_ElctnAmdmntReqSts", "_Id", "_ElctnCxlReqSts", "_AgtCAElctnAdvcId", "_AgtCAElctnCxlReqId", "_AgtCAElctnAmdmntReqId", "_ElctnAdvcSts"]
 	@property
 	def CorpActnGnlInf(self):
 		return self._CorpActnGnlInf
@@ -20,32 +20,6 @@ class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
 		self._CorpActnGnlInf = None
-
-	@property
-	def AgtCAElctnAdvcId(self):
-		return self._AgtCAElctnAdvcId
-
-	@AgtCAElctnAdvcId.setter
-	def AgtCAElctnAdvcId(self, value):
-		self._AgtCAElctnAdvcId = value if type(value) != auto else self.make_default("AgtCAElctnAdvcId")
-
-	@AgtCAElctnAdvcId.deleter
-	def AgtCAElctnAdvcId(self):
-		del self._AgtCAElctnAdvcId
-		self._AgtCAElctnAdvcId = None
-
-	@property
-	def ElctnCxlReqSts(self):
-		return self._ElctnCxlReqSts
-
-	@ElctnCxlReqSts.setter
-	def ElctnCxlReqSts(self, value):
-		self._ElctnCxlReqSts = value if type(value) != auto else self.make_default("ElctnCxlReqSts")
-
-	@ElctnCxlReqSts.deleter
-	def ElctnCxlReqSts(self):
-		del self._ElctnCxlReqSts
-		self._ElctnCxlReqSts = None
 
 	@property
 	def ElctnAmdmntReqSts(self):
@@ -74,6 +48,32 @@ class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def ElctnCxlReqSts(self):
+		return self._ElctnCxlReqSts
+
+	@ElctnCxlReqSts.setter
+	def ElctnCxlReqSts(self, value):
+		self._ElctnCxlReqSts = value if type(value) != auto else self.make_default("ElctnCxlReqSts")
+
+	@ElctnCxlReqSts.deleter
+	def ElctnCxlReqSts(self):
+		del self._ElctnCxlReqSts
+		self._ElctnCxlReqSts = None
+
+	@property
+	def AgtCAElctnAdvcId(self):
+		return self._AgtCAElctnAdvcId
+
+	@AgtCAElctnAdvcId.setter
+	def AgtCAElctnAdvcId(self, value):
+		self._AgtCAElctnAdvcId = value if type(value) != auto else self.make_default("AgtCAElctnAdvcId")
+
+	@AgtCAElctnAdvcId.deleter
+	def AgtCAElctnAdvcId(self):
+		del self._AgtCAElctnAdvcId
+		self._AgtCAElctnAdvcId = None
+
+	@property
 	def AgtCAElctnCxlReqId(self):
 		return self._AgtCAElctnCxlReqId
 
@@ -85,19 +85,6 @@ class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 	def AgtCAElctnCxlReqId(self):
 		del self._AgtCAElctnCxlReqId
 		self._AgtCAElctnCxlReqId = None
-
-	@property
-	def ElctnAdvcSts(self):
-		return self._ElctnAdvcSts
-
-	@ElctnAdvcSts.setter
-	def ElctnAdvcSts(self, value):
-		self._ElctnAdvcSts = value if type(value) != auto else self.make_default("ElctnAdvcSts")
-
-	@ElctnAdvcSts.deleter
-	def ElctnAdvcSts(self):
-		del self._ElctnAdvcSts
-		self._ElctnAdvcSts = None
 
 	@property
 	def AgtCAElctnAmdmntReqId(self):
@@ -112,14 +99,27 @@ class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 		del self._AgtCAElctnAmdmntReqId
 		self._AgtCAElctnAmdmntReqId = None
 
+	@property
+	def ElctnAdvcSts(self):
+		return self._ElctnAdvcSts
+
+	@ElctnAdvcSts.setter
+	def ElctnAdvcSts(self, value):
+		self._ElctnAdvcSts = value if type(value) != auto else self.make_default("ElctnAdvcSts")
+
+	@ElctnAdvcSts.deleter
+	def ElctnAdvcSts(self):
+		del self._ElctnAdvcSts
+		self._ElctnAdvcSts = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtCAElctnAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ElctnCxlReqSts', type=ElectionCancellationStatus1Choice, min=0, max=1, mutex_group=2, array=False),
 		base_types.FieldEntry(name='ElctnAmdmntReqSts', type=ElectionAmendmentStatus1Choice, min=0, max=1, mutex_group=2, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElctnCxlReqSts', type=ElectionCancellationStatus1Choice, min=0, max=1, mutex_group=2, array=False),
+		base_types.FieldEntry(name='AgtCAElctnAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AgtCAElctnCxlReqId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ElctnAdvcSts', type=ElectionAdviceStatus1Choice, min=0, max=1, mutex_group=2, array=False),
 		base_types.FieldEntry(name='AgtCAElctnAmdmntReqId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ElctnAdvcSts', type=ElectionAdviceStatus1Choice, min=0, max=1, mutex_group=2, array=False),
 	))
 

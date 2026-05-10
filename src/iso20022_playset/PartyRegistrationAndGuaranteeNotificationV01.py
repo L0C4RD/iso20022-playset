@@ -1,25 +1,25 @@
-import base_types
-import FinancingAgreementList1
+from . import base_types
 import Max15NumericText
-import DecimalNumber
 import BusinessLetter1
+import FinancingAgreementList1
 import EncapsulatedBusinessMessage1
+import DecimalNumber
 
 class PartyRegistrationAndGuaranteeNotificationV01(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnList", "_Hdr", "_ItmCnt", "_NtfctnCnt", "_AttchdMsg", "_CtrlSum"]
+	__slots__ = ["_ItmCnt", "_Hdr", "_NtfctnList", "_AttchdMsg", "_CtrlSum", "_NtfctnCnt"]
 	@property
-	def NtfctnList(self):
-		return self._NtfctnList
+	def ItmCnt(self):
+		return self._ItmCnt
 
-	@NtfctnList.setter
-	def NtfctnList(self, value):
-		self._NtfctnList = value if type(value) != auto else self.make_default("NtfctnList")
+	@ItmCnt.setter
+	def ItmCnt(self, value):
+		self._ItmCnt = value if type(value) != auto else self.make_default("ItmCnt")
 
-	@NtfctnList.deleter
-	def NtfctnList(self):
-		del self._NtfctnList
-		self._NtfctnList = None
+	@ItmCnt.deleter
+	def ItmCnt(self):
+		del self._ItmCnt
+		self._ItmCnt = None
 
 	@property
 	def Hdr(self):
@@ -35,30 +35,17 @@ class PartyRegistrationAndGuaranteeNotificationV01(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def ItmCnt(self):
-		return self._ItmCnt
+	def NtfctnList(self):
+		return self._NtfctnList
 
-	@ItmCnt.setter
-	def ItmCnt(self, value):
-		self._ItmCnt = value if type(value) != auto else self.make_default("ItmCnt")
+	@NtfctnList.setter
+	def NtfctnList(self, value):
+		self._NtfctnList = value if type(value) != auto else self.make_default("NtfctnList")
 
-	@ItmCnt.deleter
-	def ItmCnt(self):
-		del self._ItmCnt
-		self._ItmCnt = None
-
-	@property
-	def NtfctnCnt(self):
-		return self._NtfctnCnt
-
-	@NtfctnCnt.setter
-	def NtfctnCnt(self, value):
-		self._NtfctnCnt = value if type(value) != auto else self.make_default("NtfctnCnt")
-
-	@NtfctnCnt.deleter
-	def NtfctnCnt(self):
-		del self._NtfctnCnt
-		self._NtfctnCnt = None
+	@NtfctnList.deleter
+	def NtfctnList(self):
+		del self._NtfctnList
+		self._NtfctnList = None
 
 	@property
 	def AttchdMsg(self):
@@ -86,12 +73,25 @@ class PartyRegistrationAndGuaranteeNotificationV01(base_types._BaseFieldType):
 		del self._CtrlSum
 		self._CtrlSum = None
 
+	@property
+	def NtfctnCnt(self):
+		return self._NtfctnCnt
+
+	@NtfctnCnt.setter
+	def NtfctnCnt(self, value):
+		self._NtfctnCnt = value if type(value) != auto else self.make_default("NtfctnCnt")
+
+	@NtfctnCnt.deleter
+	def NtfctnCnt(self):
+		del self._NtfctnCnt
+		self._NtfctnCnt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtfctnList', type=FinancingAgreementList1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnList', type=FinancingAgreementList1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

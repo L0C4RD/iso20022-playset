@@ -1,22 +1,9 @@
-import base_types
+from . import base_types
 import Max35Text
 
 class Acquirer7(base_types._BaseFieldType):
 
-	__slots__ = ["_AcqrgInstn", "_Brnch"]
-	@property
-	def AcqrgInstn(self):
-		return self._AcqrgInstn
-
-	@AcqrgInstn.setter
-	def AcqrgInstn(self, value):
-		self._AcqrgInstn = value if type(value) != auto else self.make_default("AcqrgInstn")
-
-	@AcqrgInstn.deleter
-	def AcqrgInstn(self):
-		del self._AcqrgInstn
-		self._AcqrgInstn = None
-
+	__slots__ = ["_Brnch", "_AcqrgInstn"]
 	@property
 	def Brnch(self):
 		return self._Brnch
@@ -30,8 +17,21 @@ class Acquirer7(base_types._BaseFieldType):
 		del self._Brnch
 		self._Brnch = None
 
+	@property
+	def AcqrgInstn(self):
+		return self._AcqrgInstn
+
+	@AcqrgInstn.setter
+	def AcqrgInstn(self, value):
+		self._AcqrgInstn = value if type(value) != auto else self.make_default("AcqrgInstn")
+
+	@AcqrgInstn.deleter
+	def AcqrgInstn(self):
+		del self._AcqrgInstn
+		self._AcqrgInstn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcqrgInstn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Brnch', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcqrgInstn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

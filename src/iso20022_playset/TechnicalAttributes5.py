@@ -1,7 +1,7 @@
-import base_types
-import ISODateTime
-import Reconciliation3Code
+from . import base_types
 import Max140Text
+import Reconciliation3Code
+import ISODateTime
 
 class TechnicalAttributes5(base_types._BaseFieldType):
 

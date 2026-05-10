@@ -1,40 +1,27 @@
-import base_types
-import Max35Text
-import Max15NumericText
-import DecimalNumber
+from . import base_types
 import PaymentTransaction160
+import Max15NumericText
 import ExternalPaymentGroupStatus1Code
-import StatusReasonInformation14
+import Max35Text
+import DecimalNumber
 import NumberOfTransactionsPerStatus5
+import StatusReasonInformation14
 
 class OriginalPaymentInstruction51(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRsnInf", "_OrgnlPmtInfId", "_OrgnlCtrlSum", "_PmtInfSts", "_NbOfTxsPerSts", "_TxInfAndSts", "_OrgnlNbOfTxs"]
+	__slots__ = ["_OrgnlNbOfTxs", "_OrgnlCtrlSum", "_OrgnlPmtInfId", "_PmtInfSts", "_NbOfTxsPerSts", "_StsRsnInf", "_TxInfAndSts"]
 	@property
-	def StsRsnInf(self):
-		return self._StsRsnInf
+	def OrgnlNbOfTxs(self):
+		return self._OrgnlNbOfTxs
 
-	@StsRsnInf.setter
-	def StsRsnInf(self, value):
-		self._StsRsnInf = value if type(value) != auto else self.make_default("StsRsnInf")
+	@OrgnlNbOfTxs.setter
+	def OrgnlNbOfTxs(self, value):
+		self._OrgnlNbOfTxs = value if type(value) != auto else self.make_default("OrgnlNbOfTxs")
 
-	@StsRsnInf.deleter
-	def StsRsnInf(self):
-		del self._StsRsnInf
-		self._StsRsnInf = None
-
-	@property
-	def OrgnlPmtInfId(self):
-		return self._OrgnlPmtInfId
-
-	@OrgnlPmtInfId.setter
-	def OrgnlPmtInfId(self, value):
-		self._OrgnlPmtInfId = value if type(value) != auto else self.make_default("OrgnlPmtInfId")
-
-	@OrgnlPmtInfId.deleter
-	def OrgnlPmtInfId(self):
-		del self._OrgnlPmtInfId
-		self._OrgnlPmtInfId = None
+	@OrgnlNbOfTxs.deleter
+	def OrgnlNbOfTxs(self):
+		del self._OrgnlNbOfTxs
+		self._OrgnlNbOfTxs = None
 
 	@property
 	def OrgnlCtrlSum(self):
@@ -48,6 +35,19 @@ class OriginalPaymentInstruction51(base_types._BaseFieldType):
 	def OrgnlCtrlSum(self):
 		del self._OrgnlCtrlSum
 		self._OrgnlCtrlSum = None
+
+	@property
+	def OrgnlPmtInfId(self):
+		return self._OrgnlPmtInfId
+
+	@OrgnlPmtInfId.setter
+	def OrgnlPmtInfId(self, value):
+		self._OrgnlPmtInfId = value if type(value) != auto else self.make_default("OrgnlPmtInfId")
+
+	@OrgnlPmtInfId.deleter
+	def OrgnlPmtInfId(self):
+		del self._OrgnlPmtInfId
+		self._OrgnlPmtInfId = None
 
 	@property
 	def PmtInfSts(self):
@@ -76,6 +76,19 @@ class OriginalPaymentInstruction51(base_types._BaseFieldType):
 		self._NbOfTxsPerSts = None
 
 	@property
+	def StsRsnInf(self):
+		return self._StsRsnInf
+
+	@StsRsnInf.setter
+	def StsRsnInf(self, value):
+		self._StsRsnInf = value if type(value) != auto else self.make_default("StsRsnInf")
+
+	@StsRsnInf.deleter
+	def StsRsnInf(self):
+		del self._StsRsnInf
+		self._StsRsnInf = None
+
+	@property
 	def TxInfAndSts(self):
 		return self._TxInfAndSts
 
@@ -88,26 +101,13 @@ class OriginalPaymentInstruction51(base_types._BaseFieldType):
 		del self._TxInfAndSts
 		self._TxInfAndSts = None
 
-	@property
-	def OrgnlNbOfTxs(self):
-		return self._OrgnlNbOfTxs
-
-	@OrgnlNbOfTxs.setter
-	def OrgnlNbOfTxs(self, value):
-		self._OrgnlNbOfTxs = value if type(value) != auto else self.make_default("OrgnlNbOfTxs")
-
-	@OrgnlNbOfTxs.deleter
-	def OrgnlNbOfTxs(self):
-		del self._OrgnlNbOfTxs
-		self._OrgnlNbOfTxs = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StsRsnInf', type=StatusReasonInformation14, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlPmtInfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlNbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlCtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlPmtInfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtInfSts', type=ExternalPaymentGroupStatus1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfTxsPerSts', type=NumberOfTransactionsPerStatus5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsRsnInf', type=StatusReasonInformation14, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxInfAndSts', type=PaymentTransaction160, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlNbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

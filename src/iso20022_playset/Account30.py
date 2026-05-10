@@ -1,6 +1,6 @@
-import base_types
-import PartyIdentification137Choice
+from . import base_types
 import AccountIdentification4
+import PartyIdentification137Choice
 
 class Account30(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AdministrativeResponseV02
 
 class CAAD_009_001_02():

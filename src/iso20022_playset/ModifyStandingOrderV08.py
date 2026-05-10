@@ -1,12 +1,12 @@
-import base_types
-import StandingOrder10
+from . import base_types
 import MessageHeader1
 import SupplementaryData1
 import StandingOrderIdentification8
+import StandingOrder10
 
 class ModifyStandingOrderV08(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgHdr", "_StgOrdrId", "_NewStgOrdrValSet"]
+	__slots__ = ["_SplmtryData", "_MsgHdr", "_NewStgOrdrValSet", "_StgOrdrId"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -34,19 +34,6 @@ class ModifyStandingOrderV08(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	@property
-	def StgOrdrId(self):
-		return self._StgOrdrId
-
-	@StgOrdrId.setter
-	def StgOrdrId(self, value):
-		self._StgOrdrId = value if type(value) != auto else self.make_default("StgOrdrId")
-
-	@StgOrdrId.deleter
-	def StgOrdrId(self):
-		del self._StgOrdrId
-		self._StgOrdrId = None
-
-	@property
 	def NewStgOrdrValSet(self):
 		return self._NewStgOrdrValSet
 
@@ -59,10 +46,23 @@ class ModifyStandingOrderV08(base_types._BaseFieldType):
 		del self._NewStgOrdrValSet
 		self._NewStgOrdrValSet = None
 
+	@property
+	def StgOrdrId(self):
+		return self._StgOrdrId
+
+	@StgOrdrId.setter
+	def StgOrdrId(self, value):
+		self._StgOrdrId = value if type(value) != auto else self.make_default("StgOrdrId")
+
+	@StgOrdrId.deleter
+	def StgOrdrId(self):
+		del self._StgOrdrId
+		self._StgOrdrId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StgOrdrId', type=StandingOrderIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewStgOrdrValSet', type=StandingOrder10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StgOrdrId', type=StandingOrderIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

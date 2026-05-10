@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PartyIdentificationAndAccount196
 
 class Counterparty15Choice(base_types._BaseFieldType):

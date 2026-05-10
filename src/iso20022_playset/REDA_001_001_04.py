@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PriceReportV04
 
 class REDA_001_001_04():

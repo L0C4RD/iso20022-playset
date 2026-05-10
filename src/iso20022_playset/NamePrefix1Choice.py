@@ -1,6 +1,6 @@
-import base_types
-import NamePrefix1Code
+from . import base_types
 import GenericIdentification47
+import NamePrefix1Code
 
 class NamePrefix1Choice(base_types._BaseFieldType):
 

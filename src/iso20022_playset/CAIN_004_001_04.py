@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialResponseV04
 
 class CAIN_004_001_04():

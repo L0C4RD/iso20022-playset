@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import GenericIdentification36
 import AnyBICDec2014Identifier
 import LEIIdentifier
 
 class PartyIdentification195Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AnyBIC", "_LEI", "_PrtryId"]
+	__slots__ = ["_PrtryId", "_LEI", "_AnyBIC"]
 	@property
-	def AnyBIC(self):
-		return self._AnyBIC
+	def PrtryId(self):
+		return self._PrtryId
 
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
 
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
 
 	@property
 	def LEI(self):
@@ -33,21 +33,21 @@ class PartyIdentification195Choice(base_types._BaseFieldType):
 		self._LEI = None
 
 	@property
-	def PrtryId(self):
-		return self._PrtryId
+	def AnyBIC(self):
+		return self._AnyBIC
 
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
 
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryId', type=GenericIdentification36, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

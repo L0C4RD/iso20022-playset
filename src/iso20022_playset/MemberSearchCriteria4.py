@@ -1,7 +1,7 @@
-import base_types
-import SystemMemberType1Choice
+from . import base_types
 import MemberIdentification3Choice
 import SystemMemberStatus1Choice
+import SystemMemberType1Choice
 
 class MemberSearchCriteria4(base_types._BaseFieldType):
 

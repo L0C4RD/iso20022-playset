@@ -1,15 +1,15 @@
-import base_types
-import Max35Text
+from . import base_types
 import DebtInstrument2
-import DerivativeInstrument5
-import SecurityInstrumentDescription17
 import RecordTechnicalData4
+import SecurityInstrumentDescription17
 import TradingVenueAttributes2
+import DerivativeInstrument5
+import Max35Text
 import LEIIdentifier
 
 class SecuritiesReferenceDataReport7(base_types._BaseFieldType):
 
-	__slots__ = ["_TechAttrbts", "_TechRcrdId", "_DebtInstrmAttrbts", "_Issr", "_DerivInstrmAttrbts", "_TradgVnRltdAttrbts", "_FinInstrmGnlAttrbts"]
+	__slots__ = ["_TechAttrbts", "_TechRcrdId", "_TradgVnRltdAttrbts", "_DebtInstrmAttrbts", "_FinInstrmGnlAttrbts", "_DerivInstrmAttrbts", "_Issr"]
 	@property
 	def TechAttrbts(self):
 		return self._TechAttrbts
@@ -37,6 +37,19 @@ class SecuritiesReferenceDataReport7(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	@property
+	def TradgVnRltdAttrbts(self):
+		return self._TradgVnRltdAttrbts
+
+	@TradgVnRltdAttrbts.setter
+	def TradgVnRltdAttrbts(self, value):
+		self._TradgVnRltdAttrbts = value if type(value) != auto else self.make_default("TradgVnRltdAttrbts")
+
+	@TradgVnRltdAttrbts.deleter
+	def TradgVnRltdAttrbts(self):
+		del self._TradgVnRltdAttrbts
+		self._TradgVnRltdAttrbts = None
+
+	@property
 	def DebtInstrmAttrbts(self):
 		return self._DebtInstrmAttrbts
 
@@ -50,17 +63,17 @@ class SecuritiesReferenceDataReport7(base_types._BaseFieldType):
 		self._DebtInstrmAttrbts = None
 
 	@property
-	def Issr(self):
-		return self._Issr
+	def FinInstrmGnlAttrbts(self):
+		return self._FinInstrmGnlAttrbts
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@FinInstrmGnlAttrbts.setter
+	def FinInstrmGnlAttrbts(self, value):
+		self._FinInstrmGnlAttrbts = value if type(value) != auto else self.make_default("FinInstrmGnlAttrbts")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@FinInstrmGnlAttrbts.deleter
+	def FinInstrmGnlAttrbts(self):
+		del self._FinInstrmGnlAttrbts
+		self._FinInstrmGnlAttrbts = None
 
 	@property
 	def DerivInstrmAttrbts(self):
@@ -76,38 +89,25 @@ class SecuritiesReferenceDataReport7(base_types._BaseFieldType):
 		self._DerivInstrmAttrbts = None
 
 	@property
-	def TradgVnRltdAttrbts(self):
-		return self._TradgVnRltdAttrbts
+	def Issr(self):
+		return self._Issr
 
-	@TradgVnRltdAttrbts.setter
-	def TradgVnRltdAttrbts(self, value):
-		self._TradgVnRltdAttrbts = value if type(value) != auto else self.make_default("TradgVnRltdAttrbts")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@TradgVnRltdAttrbts.deleter
-	def TradgVnRltdAttrbts(self):
-		del self._TradgVnRltdAttrbts
-		self._TradgVnRltdAttrbts = None
-
-	@property
-	def FinInstrmGnlAttrbts(self):
-		return self._FinInstrmGnlAttrbts
-
-	@FinInstrmGnlAttrbts.setter
-	def FinInstrmGnlAttrbts(self, value):
-		self._FinInstrmGnlAttrbts = value if type(value) != auto else self.make_default("FinInstrmGnlAttrbts")
-
-	@FinInstrmGnlAttrbts.deleter
-	def FinInstrmGnlAttrbts(self):
-		del self._FinInstrmGnlAttrbts
-		self._FinInstrmGnlAttrbts = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TechAttrbts', type=RecordTechnicalData4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DebtInstrmAttrbts', type=DebtInstrument2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DerivInstrmAttrbts', type=DerivativeInstrument5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgVnRltdAttrbts', type=TradingVenueAttributes2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DebtInstrmAttrbts', type=DebtInstrument2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmGnlAttrbts', type=SecurityInstrumentDescription17, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DerivInstrmAttrbts', type=DerivativeInstrument5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

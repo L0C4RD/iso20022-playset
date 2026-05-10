@@ -1,6 +1,6 @@
-import base_types
-import InvestorType4Code
+from . import base_types
 import TargetMarket1Code
+import InvestorType4Code
 
 class TargetMarket5Choice(base_types._BaseFieldType):
 

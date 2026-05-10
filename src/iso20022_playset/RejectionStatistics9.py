@@ -1,23 +1,23 @@
-import base_types
-import DetailedTransactionStatistics7Choice
-import DetailedReportStatistics7
+from . import base_types
 import CounterpartyData92
+import DetailedReportStatistics7
+import DetailedTransactionStatistics7Choice
 
 class RejectionStatistics9(base_types._BaseFieldType):
 
-	__slots__ = ["_RptSttstcs", "_CtrPtyId", "_DerivSttstcs"]
+	__slots__ = ["_DerivSttstcs", "_CtrPtyId", "_RptSttstcs"]
 	@property
-	def RptSttstcs(self):
-		return self._RptSttstcs
+	def DerivSttstcs(self):
+		return self._DerivSttstcs
 
-	@RptSttstcs.setter
-	def RptSttstcs(self, value):
-		self._RptSttstcs = value if type(value) != auto else self.make_default("RptSttstcs")
+	@DerivSttstcs.setter
+	def DerivSttstcs(self, value):
+		self._DerivSttstcs = value if type(value) != auto else self.make_default("DerivSttstcs")
 
-	@RptSttstcs.deleter
-	def RptSttstcs(self):
-		del self._RptSttstcs
-		self._RptSttstcs = None
+	@DerivSttstcs.deleter
+	def DerivSttstcs(self):
+		del self._DerivSttstcs
+		self._DerivSttstcs = None
 
 	@property
 	def CtrPtyId(self):
@@ -33,21 +33,21 @@ class RejectionStatistics9(base_types._BaseFieldType):
 		self._CtrPtyId = None
 
 	@property
-	def DerivSttstcs(self):
-		return self._DerivSttstcs
+	def RptSttstcs(self):
+		return self._RptSttstcs
 
-	@DerivSttstcs.setter
-	def DerivSttstcs(self, value):
-		self._DerivSttstcs = value if type(value) != auto else self.make_default("DerivSttstcs")
+	@RptSttstcs.setter
+	def RptSttstcs(self, value):
+		self._RptSttstcs = value if type(value) != auto else self.make_default("RptSttstcs")
 
-	@DerivSttstcs.deleter
-	def DerivSttstcs(self):
-		del self._DerivSttstcs
-		self._DerivSttstcs = None
+	@RptSttstcs.deleter
+	def RptSttstcs(self):
+		del self._RptSttstcs
+		self._RptSttstcs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptSttstcs', type=DetailedReportStatistics7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyData92, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DerivSttstcs', type=DetailedTransactionStatistics7Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyData92, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptSttstcs', type=DetailedReportStatistics7, min=1, max=1, mutex_group=None, array=False),
 	))
 

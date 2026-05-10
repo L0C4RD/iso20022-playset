@@ -1,11 +1,11 @@
-import base_types
-import Undertaking3
-import PartyAndSignature2
+from . import base_types
 import Max2000Text
+import PartyAndSignature2
+import Undertaking3
 
 class UndertakingIssuanceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_BkToBnfcryInf", "_DgtlSgntr", "_BkToBkInf", "_UdrtkgIssncDtls"]
+	__slots__ = ["_BkToBnfcryInf", "_UdrtkgIssncDtls", "_BkToBkInf", "_DgtlSgntr"]
 	@property
 	def BkToBnfcryInf(self):
 		return self._BkToBnfcryInf
@@ -20,17 +20,17 @@ class UndertakingIssuanceV01(base_types._BaseFieldType):
 		self._BkToBnfcryInf = None
 
 	@property
-	def DgtlSgntr(self):
-		return self._DgtlSgntr
+	def UdrtkgIssncDtls(self):
+		return self._UdrtkgIssncDtls
 
-	@DgtlSgntr.setter
-	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
+	@UdrtkgIssncDtls.setter
+	def UdrtkgIssncDtls(self, value):
+		self._UdrtkgIssncDtls = value if type(value) != auto else self.make_default("UdrtkgIssncDtls")
 
-	@DgtlSgntr.deleter
-	def DgtlSgntr(self):
-		del self._DgtlSgntr
-		self._DgtlSgntr = None
+	@UdrtkgIssncDtls.deleter
+	def UdrtkgIssncDtls(self):
+		del self._UdrtkgIssncDtls
+		self._UdrtkgIssncDtls = None
 
 	@property
 	def BkToBkInf(self):
@@ -46,22 +46,22 @@ class UndertakingIssuanceV01(base_types._BaseFieldType):
 		self._BkToBkInf = None
 
 	@property
-	def UdrtkgIssncDtls(self):
-		return self._UdrtkgIssncDtls
+	def DgtlSgntr(self):
+		return self._DgtlSgntr
 
-	@UdrtkgIssncDtls.setter
-	def UdrtkgIssncDtls(self, value):
-		self._UdrtkgIssncDtls = value if type(value) != auto else self.make_default("UdrtkgIssncDtls")
+	@DgtlSgntr.setter
+	def DgtlSgntr(self, value):
+		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
 
-	@UdrtkgIssncDtls.deleter
-	def UdrtkgIssncDtls(self):
-		del self._UdrtkgIssncDtls
-		self._UdrtkgIssncDtls = None
+	@DgtlSgntr.deleter
+	def DgtlSgntr(self):
+		del self._DgtlSgntr
+		self._DgtlSgntr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BkToBnfcryInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BkToBkInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UdrtkgIssncDtls', type=Undertaking3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BkToBkInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=None, mutex_group=None, array=True),
 	))
 

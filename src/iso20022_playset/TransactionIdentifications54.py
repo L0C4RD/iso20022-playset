@@ -1,23 +1,10 @@
-import base_types
-import Max35Text
+from . import base_types
 import UTIIdentifier
+import Max35Text
 
 class TransactionIdentifications54(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcrTxId", "_UnqTxIdr", "_AcctOwnrTxId", "_AcctSvcrTxId", "_MktInfrstrctrTxId", "_TradId"]
-	@property
-	def PrcrTxId(self):
-		return self._PrcrTxId
-
-	@PrcrTxId.setter
-	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != auto else self.make_default("PrcrTxId")
-
-	@PrcrTxId.deleter
-	def PrcrTxId(self):
-		del self._PrcrTxId
-		self._PrcrTxId = None
-
+	__slots__ = ["_UnqTxIdr", "_AcctSvcrTxId", "_TradId", "_PrcrTxId", "_MktInfrstrctrTxId", "_AcctOwnrTxId"]
 	@property
 	def UnqTxIdr(self):
 		return self._UnqTxIdr
@@ -30,19 +17,6 @@ class TransactionIdentifications54(base_types._BaseFieldType):
 	def UnqTxIdr(self):
 		del self._UnqTxIdr
 		self._UnqTxIdr = None
-
-	@property
-	def AcctOwnrTxId(self):
-		return self._AcctOwnrTxId
-
-	@AcctOwnrTxId.setter
-	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != auto else self.make_default("AcctOwnrTxId")
-
-	@AcctOwnrTxId.deleter
-	def AcctOwnrTxId(self):
-		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
 
 	@property
 	def AcctSvcrTxId(self):
@@ -58,6 +32,32 @@ class TransactionIdentifications54(base_types._BaseFieldType):
 		self._AcctSvcrTxId = None
 
 	@property
+	def TradId(self):
+		return self._TradId
+
+	@TradId.setter
+	def TradId(self, value):
+		self._TradId = value if type(value) != auto else self.make_default("TradId")
+
+	@TradId.deleter
+	def TradId(self):
+		del self._TradId
+		self._TradId = None
+
+	@property
+	def PrcrTxId(self):
+		return self._PrcrTxId
+
+	@PrcrTxId.setter
+	def PrcrTxId(self, value):
+		self._PrcrTxId = value if type(value) != auto else self.make_default("PrcrTxId")
+
+	@PrcrTxId.deleter
+	def PrcrTxId(self):
+		del self._PrcrTxId
+		self._PrcrTxId = None
+
+	@property
 	def MktInfrstrctrTxId(self):
 		return self._MktInfrstrctrTxId
 
@@ -71,24 +71,24 @@ class TransactionIdentifications54(base_types._BaseFieldType):
 		self._MktInfrstrctrTxId = None
 
 	@property
-	def TradId(self):
-		return self._TradId
+	def AcctOwnrTxId(self):
+		return self._AcctOwnrTxId
 
-	@TradId.setter
-	def TradId(self, value):
-		self._TradId = value if type(value) != auto else self.make_default("TradId")
+	@AcctOwnrTxId.setter
+	def AcctOwnrTxId(self, value):
+		self._AcctOwnrTxId = value if type(value) != auto else self.make_default("AcctOwnrTxId")
 
-	@TradId.deleter
-	def TradId(self):
-		del self._TradId
-		self._TradId = None
+	@AcctOwnrTxId.deleter
+	def AcctOwnrTxId(self):
+		del self._AcctOwnrTxId
+		self._AcctOwnrTxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqTxIdr', type=UTIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

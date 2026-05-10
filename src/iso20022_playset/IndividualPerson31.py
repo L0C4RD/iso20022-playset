@@ -1,13 +1,13 @@
-import base_types
-import GenericIdentification164
-import CountryAndResidentialStatusType2
-import BeneficiaryCertificationCompletion1Code
+from . import base_types
 import Max350Text
 import ISODate
+import BeneficiaryCertificationCompletion1Code
+import GenericIdentification164
+import CountryAndResidentialStatusType2
 
 class IndividualPerson31(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_CtryAndResdtlSts", "_OthrId", "_BnfcryCertfctnCmpltn", "_BirthDt"]
+	__slots__ = ["_Nm", "_OthrId", "_BnfcryCertfctnCmpltn", "_BirthDt", "_CtryAndResdtlSts"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -20,19 +20,6 @@ class IndividualPerson31(base_types._BaseFieldType):
 	def Nm(self):
 		del self._Nm
 		self._Nm = None
-
-	@property
-	def CtryAndResdtlSts(self):
-		return self._CtryAndResdtlSts
-
-	@CtryAndResdtlSts.setter
-	def CtryAndResdtlSts(self, value):
-		self._CtryAndResdtlSts = value if type(value) != auto else self.make_default("CtryAndResdtlSts")
-
-	@CtryAndResdtlSts.deleter
-	def CtryAndResdtlSts(self):
-		del self._CtryAndResdtlSts
-		self._CtryAndResdtlSts = None
 
 	@property
 	def OthrId(self):
@@ -73,11 +60,24 @@ class IndividualPerson31(base_types._BaseFieldType):
 		del self._BirthDt
 		self._BirthDt = None
 
+	@property
+	def CtryAndResdtlSts(self):
+		return self._CtryAndResdtlSts
+
+	@CtryAndResdtlSts.setter
+	def CtryAndResdtlSts(self, value):
+		self._CtryAndResdtlSts = value if type(value) != auto else self.make_default("CtryAndResdtlSts")
+
+	@CtryAndResdtlSts.deleter
+	def CtryAndResdtlSts(self):
+		del self._CtryAndResdtlSts
+		self._CtryAndResdtlSts = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryAndResdtlSts', type=CountryAndResidentialStatusType2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrId', type=GenericIdentification164, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BnfcryCertfctnCmpltn', type=BeneficiaryCertificationCompletion1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryAndResdtlSts', type=CountryAndResidentialStatusType2, min=0, max=1, mutex_group=None, array=False),
 	))
 

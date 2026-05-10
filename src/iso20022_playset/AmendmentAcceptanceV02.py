@@ -1,37 +1,11 @@
-import base_types
+from . import base_types
+import MessageIdentification1
 import Count1
 import SimpleIdentificationInformation
-import MessageIdentification1
 
 class AmendmentAcceptanceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_AccptdAmdmntNb", "_TxId", "_SubmitrTxRef", "_AccptncId", "_DltaRptRef"]
-	@property
-	def AccptdAmdmntNb(self):
-		return self._AccptdAmdmntNb
-
-	@AccptdAmdmntNb.setter
-	def AccptdAmdmntNb(self, value):
-		self._AccptdAmdmntNb = value if type(value) != auto else self.make_default("AccptdAmdmntNb")
-
-	@AccptdAmdmntNb.deleter
-	def AccptdAmdmntNb(self):
-		del self._AccptdAmdmntNb
-		self._AccptdAmdmntNb = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
+	__slots__ = ["_SubmitrTxRef", "_AccptdAmdmntNb", "_AccptncId", "_DltaRptRef", "_TxId"]
 	@property
 	def SubmitrTxRef(self):
 		return self._SubmitrTxRef
@@ -44,6 +18,19 @@ class AmendmentAcceptanceV02(base_types._BaseFieldType):
 	def SubmitrTxRef(self):
 		del self._SubmitrTxRef
 		self._SubmitrTxRef = None
+
+	@property
+	def AccptdAmdmntNb(self):
+		return self._AccptdAmdmntNb
+
+	@AccptdAmdmntNb.setter
+	def AccptdAmdmntNb(self, value):
+		self._AccptdAmdmntNb = value if type(value) != auto else self.make_default("AccptdAmdmntNb")
+
+	@AccptdAmdmntNb.deleter
+	def AccptdAmdmntNb(self):
+		del self._AccptdAmdmntNb
+		self._AccptdAmdmntNb = None
 
 	@property
 	def AccptncId(self):
@@ -71,11 +58,24 @@ class AmendmentAcceptanceV02(base_types._BaseFieldType):
 		del self._DltaRptRef
 		self._DltaRptRef = None
 
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AccptdAmdmntNb', type=Count1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AccptdAmdmntNb', type=Count1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptncId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DltaRptRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 	))
 

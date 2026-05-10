@@ -1,24 +1,24 @@
-import base_types
-import BillingChargeMethod1Code
+from . import base_types
 import ActiveOrHistoricCurrencyCode
+import BillingChargeMethod1Code
 import Max20Text
 import AmountAndDirection34
 
 class BillingPrice1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rule", "_Mtd", "_UnitPric", "_Ccy"]
+	__slots__ = ["_UnitPric", "_Mtd", "_Rule", "_Ccy"]
 	@property
-	def Rule(self):
-		return self._Rule
+	def UnitPric(self):
+		return self._UnitPric
 
-	@Rule.setter
-	def Rule(self, value):
-		self._Rule = value if type(value) != auto else self.make_default("Rule")
+	@UnitPric.setter
+	def UnitPric(self, value):
+		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
 
-	@Rule.deleter
-	def Rule(self):
-		del self._Rule
-		self._Rule = None
+	@UnitPric.deleter
+	def UnitPric(self):
+		del self._UnitPric
+		self._UnitPric = None
 
 	@property
 	def Mtd(self):
@@ -34,17 +34,17 @@ class BillingPrice1(base_types._BaseFieldType):
 		self._Mtd = None
 
 	@property
-	def UnitPric(self):
-		return self._UnitPric
+	def Rule(self):
+		return self._Rule
 
-	@UnitPric.setter
-	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
+	@Rule.setter
+	def Rule(self, value):
+		self._Rule = value if type(value) != auto else self.make_default("Rule")
 
-	@UnitPric.deleter
-	def UnitPric(self):
-		del self._UnitPric
-		self._UnitPric = None
+	@Rule.deleter
+	def Rule(self):
+		del self._Rule
+		self._Rule = None
 
 	@property
 	def Ccy(self):
@@ -60,9 +60,9 @@ class BillingPrice1(base_types._BaseFieldType):
 		self._Ccy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rule', type=Max20Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mtd', type=BillingChargeMethod1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitPric', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mtd', type=BillingChargeMethod1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rule', type=Max20Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

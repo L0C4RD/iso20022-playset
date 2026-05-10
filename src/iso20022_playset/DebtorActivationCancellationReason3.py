@@ -1,11 +1,24 @@
-import base_types
-import Max105Text
+from . import base_types
 import RTPPartyIdentification2
 import DebtorActivationCancellationReason1Choice
+import Max105Text
 
 class DebtorActivationCancellationReason3(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_AddtlInf", "_Orgtr"]
+	__slots__ = ["_Orgtr", "_Rsn", "_AddtlInf"]
+	@property
+	def Orgtr(self):
+		return self._Orgtr
+
+	@Orgtr.setter
+	def Orgtr(self, value):
+		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
+
+	@Orgtr.deleter
+	def Orgtr(self):
+		del self._Orgtr
+		self._Orgtr = None
+
 	@property
 	def Rsn(self):
 		return self._Rsn
@@ -32,22 +45,9 @@ class DebtorActivationCancellationReason3(base_types._BaseFieldType):
 		del self._AddtlInf
 		self._AddtlInf = None
 
-	@property
-	def Orgtr(self):
-		return self._Orgtr
-
-	@Orgtr.setter
-	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
-
-	@Orgtr.deleter
-	def Orgtr(self):
-		del self._Orgtr
-		self._Orgtr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Orgtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=DebtorActivationCancellationReason1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Orgtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 	))
 

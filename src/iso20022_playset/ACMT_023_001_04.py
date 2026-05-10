@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import IdentificationVerificationRequestV04
 
 class ACMT_023_001_04():

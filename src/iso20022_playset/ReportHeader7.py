@@ -1,37 +1,11 @@
-import base_types
-import ISODateTime
-import Max35Text
+from . import base_types
 import Party50Choice
+import Max35Text
+import ISODateTime
 
 class ReportHeader7(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_Id", "_To", "_Fr"]
-	@property
-	def CreDtTm(self):
-		return self._CreDtTm
-
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
-
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_To", "_CreDtTm", "_Fr", "_Id"]
 	@property
 	def To(self):
 		return self._To
@@ -46,6 +20,19 @@ class ReportHeader7(base_types._BaseFieldType):
 		self._To = None
 
 	@property
+	def CreDtTm(self):
+		return self._CreDtTm
+
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
+
+	@property
 	def Fr(self):
 		return self._Fr
 
@@ -58,10 +45,23 @@ class ReportHeader7(base_types._BaseFieldType):
 		del self._Fr
 		self._Fr = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='To', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

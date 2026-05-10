@@ -1,26 +1,13 @@
-import base_types
-import Max35Text
+from . import base_types
 import Max15NumericText
-import ISODateTime
 import Party50Choice
+import ISODateTime
+import Max35Text
 import BranchAndFinancialInstitutionIdentification8
 
 class CurrencyControlHeader9(base_types._BaseFieldType):
 
-	__slots__ = ["_InitgPty", "_MsgId", "_FwdgAgt", "_NbOfItms", "_CreDtTm"]
-	@property
-	def InitgPty(self):
-		return self._InitgPty
-
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
-
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
-
+	__slots__ = ["_MsgId", "_FwdgAgt", "_NbOfItms", "_InitgPty", "_CreDtTm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -61,6 +48,19 @@ class CurrencyControlHeader9(base_types._BaseFieldType):
 		self._NbOfItms = None
 
 	@property
+	def InitgPty(self):
+		return self._InitgPty
+
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
+
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
+
+	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -74,10 +74,10 @@ class CurrencyControlHeader9(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InitgPty', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FwdgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfItms', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitgPty', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

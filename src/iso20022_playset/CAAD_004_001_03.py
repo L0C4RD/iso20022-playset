@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BatchTransferResponseV03
 
 class CAAD_004_001_03():

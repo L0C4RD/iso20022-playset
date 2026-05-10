@@ -1,8 +1,8 @@
-import base_types
+from . import base_types
+import PeriodUnit3Code
 import Max4NumericText
 import Max35Text
 import ImpliedCurrencyAndAmount
-import PeriodUnit3Code
 
 class RentalRate1(base_types._BaseFieldType):
 

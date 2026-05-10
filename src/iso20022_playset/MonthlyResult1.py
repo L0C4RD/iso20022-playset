@@ -1,25 +1,25 @@
-import base_types
+from . import base_types
+import NonNegativeNumber
+import PositiveNumber
 import BaseOneRate
 import GenericIdentification165
-import PositiveNumber
-import NonNegativeNumber
 import ActiveCurrencyAndAmount
 
 class MonthlyResult1(base_types._BaseFieldType):
 
-	__slots__ = ["_AvrgXcptn", "_LrgstXcptnId", "_LrgstXcptn", "_NbOfObsrvtns", "_Cvrg", "_NbOfXcptns"]
+	__slots__ = ["_NbOfXcptns", "_LrgstXcptnId", "_Cvrg", "_LrgstXcptn", "_NbOfObsrvtns", "_AvrgXcptn"]
 	@property
-	def AvrgXcptn(self):
-		return self._AvrgXcptn
+	def NbOfXcptns(self):
+		return self._NbOfXcptns
 
-	@AvrgXcptn.setter
-	def AvrgXcptn(self, value):
-		self._AvrgXcptn = value if type(value) != auto else self.make_default("AvrgXcptn")
+	@NbOfXcptns.setter
+	def NbOfXcptns(self, value):
+		self._NbOfXcptns = value if type(value) != auto else self.make_default("NbOfXcptns")
 
-	@AvrgXcptn.deleter
-	def AvrgXcptn(self):
-		del self._AvrgXcptn
-		self._AvrgXcptn = None
+	@NbOfXcptns.deleter
+	def NbOfXcptns(self):
+		del self._NbOfXcptns
+		self._NbOfXcptns = None
 
 	@property
 	def LrgstXcptnId(self):
@@ -33,6 +33,19 @@ class MonthlyResult1(base_types._BaseFieldType):
 	def LrgstXcptnId(self):
 		del self._LrgstXcptnId
 		self._LrgstXcptnId = None
+
+	@property
+	def Cvrg(self):
+		return self._Cvrg
+
+	@Cvrg.setter
+	def Cvrg(self, value):
+		self._Cvrg = value if type(value) != auto else self.make_default("Cvrg")
+
+	@Cvrg.deleter
+	def Cvrg(self):
+		del self._Cvrg
+		self._Cvrg = None
 
 	@property
 	def LrgstXcptn(self):
@@ -61,37 +74,24 @@ class MonthlyResult1(base_types._BaseFieldType):
 		self._NbOfObsrvtns = None
 
 	@property
-	def Cvrg(self):
-		return self._Cvrg
+	def AvrgXcptn(self):
+		return self._AvrgXcptn
 
-	@Cvrg.setter
-	def Cvrg(self, value):
-		self._Cvrg = value if type(value) != auto else self.make_default("Cvrg")
+	@AvrgXcptn.setter
+	def AvrgXcptn(self, value):
+		self._AvrgXcptn = value if type(value) != auto else self.make_default("AvrgXcptn")
 
-	@Cvrg.deleter
-	def Cvrg(self):
-		del self._Cvrg
-		self._Cvrg = None
-
-	@property
-	def NbOfXcptns(self):
-		return self._NbOfXcptns
-
-	@NbOfXcptns.setter
-	def NbOfXcptns(self, value):
-		self._NbOfXcptns = value if type(value) != auto else self.make_default("NbOfXcptns")
-
-	@NbOfXcptns.deleter
-	def NbOfXcptns(self):
-		del self._NbOfXcptns
-		self._NbOfXcptns = None
+	@AvrgXcptn.deleter
+	def AvrgXcptn(self):
+		del self._AvrgXcptn
+		self._AvrgXcptn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AvrgXcptn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfXcptns', type=NonNegativeNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LrgstXcptnId', type=GenericIdentification165, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cvrg', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LrgstXcptn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfObsrvtns', type=PositiveNumber, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cvrg', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfXcptns', type=NonNegativeNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AvrgXcptn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

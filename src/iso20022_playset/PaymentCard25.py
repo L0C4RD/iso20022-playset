@@ -1,26 +1,13 @@
-import base_types
-import Max35Text
-import Max3Text
-import CardType1Code
+from . import base_types
 import PartyIdentification113
 import ISOYearMonth
+import CardType1Code
+import Max35Text
+import Max3Text
 
 class PaymentCard25(base_types._BaseFieldType):
 
-	__slots__ = ["_HldrNm", "_Nb", "_XpryDt", "_CardIssrNm", "_Tp", "_CardIssrId", "_SctyCd", "_StartDt", "_SeqNb"]
-	@property
-	def HldrNm(self):
-		return self._HldrNm
-
-	@HldrNm.setter
-	def HldrNm(self, value):
-		self._HldrNm = value if type(value) != auto else self.make_default("HldrNm")
-
-	@HldrNm.deleter
-	def HldrNm(self):
-		del self._HldrNm
-		self._HldrNm = None
-
+	__slots__ = ["_Nb", "_Tp", "_SctyCd", "_StartDt", "_XpryDt", "_CardIssrId", "_HldrNm", "_SeqNb", "_CardIssrNm"]
 	@property
 	def Nb(self):
 		return self._Nb
@@ -35,32 +22,6 @@ class PaymentCard25(base_types._BaseFieldType):
 		self._Nb = None
 
 	@property
-	def XpryDt(self):
-		return self._XpryDt
-
-	@XpryDt.setter
-	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
-
-	@XpryDt.deleter
-	def XpryDt(self):
-		del self._XpryDt
-		self._XpryDt = None
-
-	@property
-	def CardIssrNm(self):
-		return self._CardIssrNm
-
-	@CardIssrNm.setter
-	def CardIssrNm(self, value):
-		self._CardIssrNm = value if type(value) != auto else self.make_default("CardIssrNm")
-
-	@CardIssrNm.deleter
-	def CardIssrNm(self):
-		del self._CardIssrNm
-		self._CardIssrNm = None
-
-	@property
 	def Tp(self):
 		return self._Tp
 
@@ -72,19 +33,6 @@ class PaymentCard25(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
-
-	@property
-	def CardIssrId(self):
-		return self._CardIssrId
-
-	@CardIssrId.setter
-	def CardIssrId(self, value):
-		self._CardIssrId = value if type(value) != auto else self.make_default("CardIssrId")
-
-	@CardIssrId.deleter
-	def CardIssrId(self):
-		del self._CardIssrId
-		self._CardIssrId = None
 
 	@property
 	def SctyCd(self):
@@ -113,6 +61,45 @@ class PaymentCard25(base_types._BaseFieldType):
 		self._StartDt = None
 
 	@property
+	def XpryDt(self):
+		return self._XpryDt
+
+	@XpryDt.setter
+	def XpryDt(self, value):
+		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
+
+	@XpryDt.deleter
+	def XpryDt(self):
+		del self._XpryDt
+		self._XpryDt = None
+
+	@property
+	def CardIssrId(self):
+		return self._CardIssrId
+
+	@CardIssrId.setter
+	def CardIssrId(self, value):
+		self._CardIssrId = value if type(value) != auto else self.make_default("CardIssrId")
+
+	@CardIssrId.deleter
+	def CardIssrId(self):
+		del self._CardIssrId
+		self._CardIssrId = None
+
+	@property
+	def HldrNm(self):
+		return self._HldrNm
+
+	@HldrNm.setter
+	def HldrNm(self, value):
+		self._HldrNm = value if type(value) != auto else self.make_default("HldrNm")
+
+	@HldrNm.deleter
+	def HldrNm(self):
+		del self._HldrNm
+		self._HldrNm = None
+
+	@property
 	def SeqNb(self):
 		return self._SeqNb
 
@@ -125,15 +112,28 @@ class PaymentCard25(base_types._BaseFieldType):
 		del self._SeqNb
 		self._SeqNb = None
 
+	@property
+	def CardIssrNm(self):
+		return self._CardIssrNm
+
+	@CardIssrNm.setter
+	def CardIssrNm(self, value):
+		self._CardIssrNm = value if type(value) != auto else self.make_default("CardIssrNm")
+
+	@CardIssrNm.deleter
+	def CardIssrNm(self):
+		del self._CardIssrNm
+		self._CardIssrNm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='HldrNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpryDt', type=ISOYearMonth, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardIssrNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CardType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardIssrId', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpryDt', type=ISOYearMonth, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardIssrId', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HldrNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Max3Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardIssrNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

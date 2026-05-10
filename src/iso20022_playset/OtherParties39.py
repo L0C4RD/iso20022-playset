@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import PartyIdentification136
 import PartyIdentification149
 
 class OtherParties39(base_types._BaseFieldType):
 
-	__slots__ = ["_TradRgltr", "_StockXchg", "_Invstr"]
-	@property
-	def TradRgltr(self):
-		return self._TradRgltr
-
-	@TradRgltr.setter
-	def TradRgltr(self, value):
-		self._TradRgltr = value if type(value) != auto else self.make_default("TradRgltr")
-
-	@TradRgltr.deleter
-	def TradRgltr(self):
-		del self._TradRgltr
-		self._TradRgltr = None
-
+	__slots__ = ["_StockXchg", "_TradRgltr", "_Invstr"]
 	@property
 	def StockXchg(self):
 		return self._StockXchg
@@ -30,6 +17,19 @@ class OtherParties39(base_types._BaseFieldType):
 	def StockXchg(self):
 		del self._StockXchg
 		self._StockXchg = None
+
+	@property
+	def TradRgltr(self):
+		return self._TradRgltr
+
+	@TradRgltr.setter
+	def TradRgltr(self, value):
+		self._TradRgltr = value if type(value) != auto else self.make_default("TradRgltr")
+
+	@TradRgltr.deleter
+	def TradRgltr(self):
+		del self._TradRgltr
+		self._TradRgltr = None
 
 	@property
 	def Invstr(self):
@@ -45,8 +45,8 @@ class OtherParties39(base_types._BaseFieldType):
 		self._Invstr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradRgltr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StockXchg', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradRgltr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Invstr', type=PartyIdentification149, min=0, max=1, mutex_group=None, array=False),
 	))
 

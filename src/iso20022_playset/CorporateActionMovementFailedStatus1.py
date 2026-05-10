@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
+import FailedMovement1
 import Max35Text
 import PartyIdentification2Choice
-import FailedMovement1
 
 class CorporateActionMovementFailedStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_RsrcDtls", "_ClntAcctId", "_AcctOwnrId", "_AgtAcctId"]
-	@property
-	def RsrcDtls(self):
-		return self._RsrcDtls
-
-	@RsrcDtls.setter
-	def RsrcDtls(self, value):
-		self._RsrcDtls = value if type(value) != auto else self.make_default("RsrcDtls")
-
-	@RsrcDtls.deleter
-	def RsrcDtls(self):
-		del self._RsrcDtls
-		self._RsrcDtls = None
-
+	__slots__ = ["_ClntAcctId", "_AcctOwnrId", "_AgtAcctId", "_RsrcDtls"]
 	@property
 	def ClntAcctId(self):
 		return self._ClntAcctId
@@ -58,10 +45,23 @@ class CorporateActionMovementFailedStatus1(base_types._BaseFieldType):
 		del self._AgtAcctId
 		self._AgtAcctId = None
 
+	@property
+	def RsrcDtls(self):
+		return self._RsrcDtls
+
+	@RsrcDtls.setter
+	def RsrcDtls(self, value):
+		self._RsrcDtls = value if type(value) != auto else self.make_default("RsrcDtls")
+
+	@RsrcDtls.deleter
+	def RsrcDtls(self):
+		del self._RsrcDtls
+		self._RsrcDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RsrcDtls', type=FailedMovement1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClntAcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtAcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsrcDtls', type=FailedMovement1, min=1, max=None, mutex_group=None, array=True),
 	))
 

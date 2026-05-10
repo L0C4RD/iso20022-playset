@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
+import DecimalNumber
 import TransactionIndividualStatus1Code
 import Max15NumericText
-import DecimalNumber
 
 class NumberOfTransactionsPerStatus1(base_types._BaseFieldType):
 

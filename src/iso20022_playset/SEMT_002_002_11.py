@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesBalanceCustodyReport002V11
 
 class SEMT_002_002_11():

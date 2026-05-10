@@ -1,6 +1,6 @@
-import base_types
-import PartyRole1Code
+from . import base_types
 import GenericIdentification47
+import PartyRole1Code
 
 class PartyRole5Choice(base_types._BaseFieldType):
 

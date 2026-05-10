@@ -1,23 +1,23 @@
-import base_types
-import Max140Text
+from . import base_types
 import ISODate
 import PaymentPeriod3
+import Max140Text
 
 class PaymentCodeOrOther1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtCd", "_PmtDueDt", "_OthrPmtTerms"]
+	__slots__ = ["_OthrPmtTerms", "_PmtDueDt", "_PmtCd"]
 	@property
-	def PmtCd(self):
-		return self._PmtCd
+	def OthrPmtTerms(self):
+		return self._OthrPmtTerms
 
-	@PmtCd.setter
-	def PmtCd(self, value):
-		self._PmtCd = value if type(value) != auto else self.make_default("PmtCd")
+	@OthrPmtTerms.setter
+	def OthrPmtTerms(self, value):
+		self._OthrPmtTerms = value if type(value) != auto else self.make_default("OthrPmtTerms")
 
-	@PmtCd.deleter
-	def PmtCd(self):
-		del self._PmtCd
-		self._PmtCd = None
+	@OthrPmtTerms.deleter
+	def OthrPmtTerms(self):
+		del self._OthrPmtTerms
+		self._OthrPmtTerms = None
 
 	@property
 	def PmtDueDt(self):
@@ -33,21 +33,21 @@ class PaymentCodeOrOther1Choice(base_types._BaseFieldType):
 		self._PmtDueDt = None
 
 	@property
-	def OthrPmtTerms(self):
-		return self._OthrPmtTerms
+	def PmtCd(self):
+		return self._PmtCd
 
-	@OthrPmtTerms.setter
-	def OthrPmtTerms(self, value):
-		self._OthrPmtTerms = value if type(value) != auto else self.make_default("OthrPmtTerms")
+	@PmtCd.setter
+	def PmtCd(self, value):
+		self._PmtCd = value if type(value) != auto else self.make_default("PmtCd")
 
-	@OthrPmtTerms.deleter
-	def OthrPmtTerms(self):
-		del self._OthrPmtTerms
-		self._OthrPmtTerms = None
+	@PmtCd.deleter
+	def PmtCd(self):
+		del self._PmtCd
+		self._PmtCd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtCd', type=PaymentPeriod3, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PmtDueDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OthrPmtTerms', type=Max140Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PmtDueDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PmtCd', type=PaymentPeriod3, min=0, max=1, mutex_group=1, array=False),
 	))
 

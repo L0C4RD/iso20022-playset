@@ -1,6 +1,6 @@
-import base_types
-import PaymentTransaction165
+from . import base_types
 import LoyaltyRequestData3
+import PaymentTransaction165
 
 class PaymentRequest7(base_types._BaseFieldType):
 

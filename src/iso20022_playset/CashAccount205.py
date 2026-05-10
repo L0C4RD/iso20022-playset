@@ -1,10 +1,10 @@
-import base_types
+from . import base_types
 import ActiveCurrencyCode
 import CashAccount206
 
 class CashAccount205(base_types._BaseFieldType):
 
-	__slots__ = ["_PmryAcct", "_Ccy", "_ScndryAcct"]
+	__slots__ = ["_PmryAcct", "_ScndryAcct", "_Ccy"]
 	@property
 	def PmryAcct(self):
 		return self._PmryAcct
@@ -19,19 +19,6 @@ class CashAccount205(base_types._BaseFieldType):
 		self._PmryAcct = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
 	def ScndryAcct(self):
 		return self._ScndryAcct
 
@@ -44,9 +31,22 @@ class CashAccount205(base_types._BaseFieldType):
 		del self._ScndryAcct
 		self._ScndryAcct = None
 
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PmryAcct', type=CashAccount206, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ScndryAcct', type=CashAccount206, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

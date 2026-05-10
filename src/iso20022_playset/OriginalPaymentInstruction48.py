@@ -1,68 +1,29 @@
-import base_types
-import CancellationStatusReason5
-import PaymentTransaction153
-import DecimalNumber
-import GroupCancellationStatus1Code
+from . import base_types
 import OriginalGroupInformation29
+import CancellationStatusReason5
+import DecimalNumber
 import Max35Text
-import Max15NumericText
 import NumberOfCancellationsPerStatus1
+import PaymentTransaction153
+import Max15NumericText
+import GroupCancellationStatus1Code
 import Case6
 
 class OriginalPaymentInstruction48(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlCtrlSum", "_RslvdCase", "_OrgnlGrpInf", "_OrgnlNbOfTxs", "_CxlStsRsnInf", "_OrgnlPmtInfId", "_PmtInfCxlSts", "_TxInfAndSts", "_NbOfTxsPerCxlSts", "_OrgnlPmtInfCxlId"]
+	__slots__ = ["_OrgnlPmtInfId", "_CxlStsRsnInf", "_OrgnlPmtInfCxlId", "_OrgnlGrpInf", "_RslvdCase", "_OrgnlNbOfTxs", "_OrgnlCtrlSum", "_TxInfAndSts", "_PmtInfCxlSts", "_NbOfTxsPerCxlSts"]
 	@property
-	def OrgnlCtrlSum(self):
-		return self._OrgnlCtrlSum
+	def OrgnlPmtInfId(self):
+		return self._OrgnlPmtInfId
 
-	@OrgnlCtrlSum.setter
-	def OrgnlCtrlSum(self, value):
-		self._OrgnlCtrlSum = value if type(value) != auto else self.make_default("OrgnlCtrlSum")
+	@OrgnlPmtInfId.setter
+	def OrgnlPmtInfId(self, value):
+		self._OrgnlPmtInfId = value if type(value) != auto else self.make_default("OrgnlPmtInfId")
 
-	@OrgnlCtrlSum.deleter
-	def OrgnlCtrlSum(self):
-		del self._OrgnlCtrlSum
-		self._OrgnlCtrlSum = None
-
-	@property
-	def RslvdCase(self):
-		return self._RslvdCase
-
-	@RslvdCase.setter
-	def RslvdCase(self, value):
-		self._RslvdCase = value if type(value) != auto else self.make_default("RslvdCase")
-
-	@RslvdCase.deleter
-	def RslvdCase(self):
-		del self._RslvdCase
-		self._RslvdCase = None
-
-	@property
-	def OrgnlGrpInf(self):
-		return self._OrgnlGrpInf
-
-	@OrgnlGrpInf.setter
-	def OrgnlGrpInf(self, value):
-		self._OrgnlGrpInf = value if type(value) != auto else self.make_default("OrgnlGrpInf")
-
-	@OrgnlGrpInf.deleter
-	def OrgnlGrpInf(self):
-		del self._OrgnlGrpInf
-		self._OrgnlGrpInf = None
-
-	@property
-	def OrgnlNbOfTxs(self):
-		return self._OrgnlNbOfTxs
-
-	@OrgnlNbOfTxs.setter
-	def OrgnlNbOfTxs(self, value):
-		self._OrgnlNbOfTxs = value if type(value) != auto else self.make_default("OrgnlNbOfTxs")
-
-	@OrgnlNbOfTxs.deleter
-	def OrgnlNbOfTxs(self):
-		del self._OrgnlNbOfTxs
-		self._OrgnlNbOfTxs = None
+	@OrgnlPmtInfId.deleter
+	def OrgnlPmtInfId(self):
+		del self._OrgnlPmtInfId
+		self._OrgnlPmtInfId = None
 
 	@property
 	def CxlStsRsnInf(self):
@@ -78,30 +39,69 @@ class OriginalPaymentInstruction48(base_types._BaseFieldType):
 		self._CxlStsRsnInf = None
 
 	@property
-	def OrgnlPmtInfId(self):
-		return self._OrgnlPmtInfId
+	def OrgnlPmtInfCxlId(self):
+		return self._OrgnlPmtInfCxlId
 
-	@OrgnlPmtInfId.setter
-	def OrgnlPmtInfId(self, value):
-		self._OrgnlPmtInfId = value if type(value) != auto else self.make_default("OrgnlPmtInfId")
+	@OrgnlPmtInfCxlId.setter
+	def OrgnlPmtInfCxlId(self, value):
+		self._OrgnlPmtInfCxlId = value if type(value) != auto else self.make_default("OrgnlPmtInfCxlId")
 
-	@OrgnlPmtInfId.deleter
-	def OrgnlPmtInfId(self):
-		del self._OrgnlPmtInfId
-		self._OrgnlPmtInfId = None
+	@OrgnlPmtInfCxlId.deleter
+	def OrgnlPmtInfCxlId(self):
+		del self._OrgnlPmtInfCxlId
+		self._OrgnlPmtInfCxlId = None
 
 	@property
-	def PmtInfCxlSts(self):
-		return self._PmtInfCxlSts
+	def OrgnlGrpInf(self):
+		return self._OrgnlGrpInf
 
-	@PmtInfCxlSts.setter
-	def PmtInfCxlSts(self, value):
-		self._PmtInfCxlSts = value if type(value) != auto else self.make_default("PmtInfCxlSts")
+	@OrgnlGrpInf.setter
+	def OrgnlGrpInf(self, value):
+		self._OrgnlGrpInf = value if type(value) != auto else self.make_default("OrgnlGrpInf")
 
-	@PmtInfCxlSts.deleter
-	def PmtInfCxlSts(self):
-		del self._PmtInfCxlSts
-		self._PmtInfCxlSts = None
+	@OrgnlGrpInf.deleter
+	def OrgnlGrpInf(self):
+		del self._OrgnlGrpInf
+		self._OrgnlGrpInf = None
+
+	@property
+	def RslvdCase(self):
+		return self._RslvdCase
+
+	@RslvdCase.setter
+	def RslvdCase(self, value):
+		self._RslvdCase = value if type(value) != auto else self.make_default("RslvdCase")
+
+	@RslvdCase.deleter
+	def RslvdCase(self):
+		del self._RslvdCase
+		self._RslvdCase = None
+
+	@property
+	def OrgnlNbOfTxs(self):
+		return self._OrgnlNbOfTxs
+
+	@OrgnlNbOfTxs.setter
+	def OrgnlNbOfTxs(self, value):
+		self._OrgnlNbOfTxs = value if type(value) != auto else self.make_default("OrgnlNbOfTxs")
+
+	@OrgnlNbOfTxs.deleter
+	def OrgnlNbOfTxs(self):
+		del self._OrgnlNbOfTxs
+		self._OrgnlNbOfTxs = None
+
+	@property
+	def OrgnlCtrlSum(self):
+		return self._OrgnlCtrlSum
+
+	@OrgnlCtrlSum.setter
+	def OrgnlCtrlSum(self, value):
+		self._OrgnlCtrlSum = value if type(value) != auto else self.make_default("OrgnlCtrlSum")
+
+	@OrgnlCtrlSum.deleter
+	def OrgnlCtrlSum(self):
+		del self._OrgnlCtrlSum
+		self._OrgnlCtrlSum = None
 
 	@property
 	def TxInfAndSts(self):
@@ -117,6 +117,19 @@ class OriginalPaymentInstruction48(base_types._BaseFieldType):
 		self._TxInfAndSts = None
 
 	@property
+	def PmtInfCxlSts(self):
+		return self._PmtInfCxlSts
+
+	@PmtInfCxlSts.setter
+	def PmtInfCxlSts(self, value):
+		self._PmtInfCxlSts = value if type(value) != auto else self.make_default("PmtInfCxlSts")
+
+	@PmtInfCxlSts.deleter
+	def PmtInfCxlSts(self):
+		del self._PmtInfCxlSts
+		self._PmtInfCxlSts = None
+
+	@property
 	def NbOfTxsPerCxlSts(self):
 		return self._NbOfTxsPerCxlSts
 
@@ -129,29 +142,16 @@ class OriginalPaymentInstruction48(base_types._BaseFieldType):
 		del self._NbOfTxsPerCxlSts
 		self._NbOfTxsPerCxlSts = None
 
-	@property
-	def OrgnlPmtInfCxlId(self):
-		return self._OrgnlPmtInfCxlId
-
-	@OrgnlPmtInfCxlId.setter
-	def OrgnlPmtInfCxlId(self, value):
-		self._OrgnlPmtInfCxlId = value if type(value) != auto else self.make_default("OrgnlPmtInfCxlId")
-
-	@OrgnlPmtInfCxlId.deleter
-	def OrgnlPmtInfCxlId(self):
-		del self._OrgnlPmtInfCxlId
-		self._OrgnlPmtInfCxlId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlCtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RslvdCase', type=Case6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupInformation29, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlNbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlStsRsnInf', type=CancellationStatusReason5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlPmtInfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtInfCxlSts', type=GroupCancellationStatus1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxInfAndSts', type=PaymentTransaction153, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NbOfTxsPerCxlSts', type=NumberOfCancellationsPerStatus1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CxlStsRsnInf', type=CancellationStatusReason5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlPmtInfCxlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupInformation29, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RslvdCase', type=Case6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlNbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxInfAndSts', type=PaymentTransaction153, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PmtInfCxlSts', type=GroupCancellationStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfTxsPerCxlSts', type=NumberOfCancellationsPerStatus1, min=0, max=None, mutex_group=None, array=True),
 	))
 

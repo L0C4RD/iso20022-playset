@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Event2
 
 class SystemEventNotificationV02(base_types._BaseFieldType):

@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import Max35Text
-import ISOMax3ALanguageCode
 import Max40KText
+import ISOMax3ALanguageCode
 
 class LocalData17(base_types._BaseFieldType):
 

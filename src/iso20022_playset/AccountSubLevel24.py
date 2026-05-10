@@ -1,10 +1,23 @@
-import base_types
+from . import base_types
 import AccountSubLevel25
 import FinancialInstrumentQuantity18Choice
 
 class AccountSubLevel24(base_types._BaseFieldType):
 
-	__slots__ = ["_Dsclsr", "_BlwThrshldShrhldgQty", "_NonDscldShrhldgQty"]
+	__slots__ = ["_NonDscldShrhldgQty", "_Dsclsr", "_BlwThrshldShrhldgQty"]
+	@property
+	def NonDscldShrhldgQty(self):
+		return self._NonDscldShrhldgQty
+
+	@NonDscldShrhldgQty.setter
+	def NonDscldShrhldgQty(self, value):
+		self._NonDscldShrhldgQty = value if type(value) != auto else self.make_default("NonDscldShrhldgQty")
+
+	@NonDscldShrhldgQty.deleter
+	def NonDscldShrhldgQty(self):
+		del self._NonDscldShrhldgQty
+		self._NonDscldShrhldgQty = None
+
 	@property
 	def Dsclsr(self):
 		return self._Dsclsr
@@ -31,22 +44,9 @@ class AccountSubLevel24(base_types._BaseFieldType):
 		del self._BlwThrshldShrhldgQty
 		self._BlwThrshldShrhldgQty = None
 
-	@property
-	def NonDscldShrhldgQty(self):
-		return self._NonDscldShrhldgQty
-
-	@NonDscldShrhldgQty.setter
-	def NonDscldShrhldgQty(self, value):
-		self._NonDscldShrhldgQty = value if type(value) != auto else self.make_default("NonDscldShrhldgQty")
-
-	@NonDscldShrhldgQty.deleter
-	def NonDscldShrhldgQty(self):
-		del self._NonDscldShrhldgQty
-		self._NonDscldShrhldgQty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NonDscldShrhldgQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsclsr', type=AccountSubLevel25, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BlwThrshldShrhldgQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonDscldShrhldgQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,16 +1,42 @@
-import base_types
-import CreditDebitCode
-import TaxCharges2
-import ChargeIncludedIndicator
-import ActiveOrHistoricCurrencyAndAmount
+from . import base_types
 import PercentageRate
-import ChargeType3Choice
-import ChargeBearerType1Code
+import ChargeIncludedIndicator
+import TaxCharges2
 import BranchAndFinancialInstitutionIdentification8
+import ChargeBearerType1Code
+import CreditDebitCode
+import ChargeType3Choice
+import ActiveOrHistoricCurrencyAndAmount
 
 class ChargesRecord8(base_types._BaseFieldType):
 
-	__slots__ = ["_Agt", "_Br", "_Amt", "_CdtDbtInd", "_Tax", "_ChrgInclInd", "_Rate", "_Tp"]
+	__slots__ = ["_ChrgInclInd", "_Tp", "_Agt", "_Rate", "_Tax", "_Amt", "_CdtDbtInd", "_Br"]
+	@property
+	def ChrgInclInd(self):
+		return self._ChrgInclInd
+
+	@ChrgInclInd.setter
+	def ChrgInclInd(self, value):
+		self._ChrgInclInd = value if type(value) != auto else self.make_default("ChrgInclInd")
+
+	@ChrgInclInd.deleter
+	def ChrgInclInd(self):
+		del self._ChrgInclInd
+		self._ChrgInclInd = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	@property
 	def Agt(self):
 		return self._Agt
@@ -25,17 +51,30 @@ class ChargesRecord8(base_types._BaseFieldType):
 		self._Agt = None
 
 	@property
-	def Br(self):
-		return self._Br
+	def Rate(self):
+		return self._Rate
 
-	@Br.setter
-	def Br(self, value):
-		self._Br = value if type(value) != auto else self.make_default("Br")
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != auto else self.make_default("Rate")
 
-	@Br.deleter
-	def Br(self):
-		del self._Br
-		self._Br = None
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
+
+	@property
+	def Tax(self):
+		return self._Tax
+
+	@Tax.setter
+	def Tax(self, value):
+		self._Tax = value if type(value) != auto else self.make_default("Tax")
+
+	@Tax.deleter
+	def Tax(self):
+		del self._Tax
+		self._Tax = None
 
 	@property
 	def Amt(self):
@@ -64,65 +103,26 @@ class ChargesRecord8(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
-	def Tax(self):
-		return self._Tax
+	def Br(self):
+		return self._Br
 
-	@Tax.setter
-	def Tax(self, value):
-		self._Tax = value if type(value) != auto else self.make_default("Tax")
+	@Br.setter
+	def Br(self, value):
+		self._Br = value if type(value) != auto else self.make_default("Br")
 
-	@Tax.deleter
-	def Tax(self):
-		del self._Tax
-		self._Tax = None
-
-	@property
-	def ChrgInclInd(self):
-		return self._ChrgInclInd
-
-	@ChrgInclInd.setter
-	def ChrgInclInd(self, value):
-		self._ChrgInclInd = value if type(value) != auto else self.make_default("ChrgInclInd")
-
-	@ChrgInclInd.deleter
-	def ChrgInclInd(self):
-		del self._ChrgInclInd
-		self._ChrgInclInd = None
-
-	@property
-	def Rate(self):
-		return self._Rate
-
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
-
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Br.deleter
+	def Br(self):
+		del self._Br
+		self._Br = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ChrgInclInd', type=ChargeIncludedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ChargeType3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Br', type=ChargeBearerType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tax', type=TaxCharges2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tax', type=TaxCharges2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgInclInd', type=ChargeIncludedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ChargeType3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Br', type=ChargeBearerType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

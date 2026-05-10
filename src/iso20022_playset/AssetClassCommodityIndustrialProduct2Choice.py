@@ -1,6 +1,6 @@
-import base_types
-import IndustrialProductCommodityConstruction2
+from . import base_types
 import IndustrialProductCommodityManufacturing2
+import IndustrialProductCommodityConstruction2
 
 class AssetClassCommodityIndustrialProduct2Choice(base_types._BaseFieldType):
 

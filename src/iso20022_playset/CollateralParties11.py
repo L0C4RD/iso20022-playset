@@ -1,12 +1,12 @@
-import base_types
-import BlockChainAddressWallet3
+from . import base_types
 import PartyIdentification136
 import PartyIdentification232
+import BlockChainAddressWallet3
 import SecuritiesAccount19
 
 class CollateralParties11(base_types._BaseFieldType):
 
-	__slots__ = ["_CollAcct", "_BlckChainAdrOrWllt", "_TrptyAgt", "_PtyB", "_ClntPtyB"]
+	__slots__ = ["_CollAcct", "_BlckChainAdrOrWllt", "_TrptyAgt", "_ClntPtyB", "_PtyB"]
 	@property
 	def CollAcct(self):
 		return self._CollAcct
@@ -47,19 +47,6 @@ class CollateralParties11(base_types._BaseFieldType):
 		self._TrptyAgt = None
 
 	@property
-	def PtyB(self):
-		return self._PtyB
-
-	@PtyB.setter
-	def PtyB(self, value):
-		self._PtyB = value if type(value) != auto else self.make_default("PtyB")
-
-	@PtyB.deleter
-	def PtyB(self):
-		del self._PtyB
-		self._PtyB = None
-
-	@property
 	def ClntPtyB(self):
 		return self._ClntPtyB
 
@@ -72,11 +59,24 @@ class CollateralParties11(base_types._BaseFieldType):
 		del self._ClntPtyB
 		self._ClntPtyB = None
 
+	@property
+	def PtyB(self):
+		return self._PtyB
+
+	@PtyB.setter
+	def PtyB(self, value):
+		self._PtyB = value if type(value) != auto else self.make_default("PtyB")
+
+	@PtyB.deleter
+	def PtyB(self):
+		del self._PtyB
+		self._PtyB = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyB', type=PartyIdentification232, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntPtyB', type=PartyIdentification232, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyB', type=PartyIdentification232, min=1, max=1, mutex_group=None, array=False),
 	))
 

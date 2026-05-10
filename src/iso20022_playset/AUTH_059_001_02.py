@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CCPIncomeStatementAndCapitalAdequacyReportV02
 
 class AUTH_059_001_02():

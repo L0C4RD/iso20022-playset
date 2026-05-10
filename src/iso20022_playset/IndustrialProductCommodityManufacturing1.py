@@ -1,6 +1,6 @@
-import base_types
-import AssetClassProductType6Code
+from . import base_types
 import AssetClassSubProductType34Code
+import AssetClassProductType6Code
 
 class IndustrialProductCommodityManufacturing1(base_types._BaseFieldType):
 

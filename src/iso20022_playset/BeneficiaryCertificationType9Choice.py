@@ -1,6 +1,6 @@
-import base_types
-import BeneficiaryCertificationType4Code
+from . import base_types
 import GenericIdentification30
+import BeneficiaryCertificationType4Code
 
 class BeneficiaryCertificationType9Choice(base_types._BaseFieldType):
 

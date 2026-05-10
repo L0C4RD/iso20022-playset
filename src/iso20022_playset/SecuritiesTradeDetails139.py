@@ -1,37 +1,37 @@
-import base_types
-import AmountAndDirection57
-import SettlementDetails103
-import SettlementParties104
+from . import base_types
+import Quantity49
 import RestrictedFINXMax16Text
-import TradeDate9Choice
-import FinancialInstrumentAttributes122
+import DeliveryReceiptType2Code
 import OtherParties42
+import SettlementParties104
 import OtherAmounts33
+import ReceiveDelivery1Code
+import FinancialInstrumentAttributes122
+import TradeDate9Choice
+import Max3Number
 import PortfolioTransferStatus2Choice
 import SupplementaryData1
-import ReceiveDelivery1Code
-import SecurityIdentification20
-import Reporting8Choice
 import SettlementDate20Choice
-import DeliveryReceiptType2Code
-import Quantity49
-import Max3Number
+import SecurityIdentification20
+import SettlementDetails103
+import Reporting8Choice
+import AmountAndDirection57
 
 class SecuritiesTradeDetails139(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvrgSttlmPties", "_OthrBizPties", "_Rptg", "_FinInstrmId", "_SttlmDt", "_SttlmParams", "_TradDt", "_FinInstrmAttrbts", "_Sts", "_CmonId", "_SctiesMvmntTp", "_RcvgSttlmPties", "_OthrAmts", "_Pmt", "_SttlmAmt", "_NbOfDaysAcrd", "_NtfctnRcvrTxId", "_QtyDtls", "_NtfctnSndrTxId", "_SplmtryData"]
+	__slots__ = ["_QtyDtls", "_OthrBizPties", "_Sts", "_SttlmDt", "_SttlmParams", "_NtfctnSndrTxId", "_FinInstrmId", "_DlvrgSttlmPties", "_OthrAmts", "_SctiesMvmntTp", "_NtfctnRcvrTxId", "_Pmt", "_NbOfDaysAcrd", "_FinInstrmAttrbts", "_SplmtryData", "_SttlmAmt", "_TradDt", "_Rptg", "_RcvgSttlmPties", "_CmonId"]
 	@property
-	def DlvrgSttlmPties(self):
-		return self._DlvrgSttlmPties
+	def QtyDtls(self):
+		return self._QtyDtls
 
-	@DlvrgSttlmPties.setter
-	def DlvrgSttlmPties(self, value):
-		self._DlvrgSttlmPties = value if type(value) != auto else self.make_default("DlvrgSttlmPties")
+	@QtyDtls.setter
+	def QtyDtls(self, value):
+		self._QtyDtls = value if type(value) != auto else self.make_default("QtyDtls")
 
-	@DlvrgSttlmPties.deleter
-	def DlvrgSttlmPties(self):
-		del self._DlvrgSttlmPties
-		self._DlvrgSttlmPties = None
+	@QtyDtls.deleter
+	def QtyDtls(self):
+		del self._QtyDtls
+		self._QtyDtls = None
 
 	@property
 	def OthrBizPties(self):
@@ -47,30 +47,17 @@ class SecuritiesTradeDetails139(base_types._BaseFieldType):
 		self._OthrBizPties = None
 
 	@property
-	def Rptg(self):
-		return self._Rptg
+	def Sts(self):
+		return self._Sts
 
-	@Rptg.setter
-	def Rptg(self, value):
-		self._Rptg = value if type(value) != auto else self.make_default("Rptg")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
 
-	@Rptg.deleter
-	def Rptg(self):
-		del self._Rptg
-		self._Rptg = None
-
-	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	@property
 	def SttlmDt(self):
@@ -99,82 +86,43 @@ class SecuritiesTradeDetails139(base_types._BaseFieldType):
 		self._SttlmParams = None
 
 	@property
-	def TradDt(self):
-		return self._TradDt
+	def NtfctnSndrTxId(self):
+		return self._NtfctnSndrTxId
 
-	@TradDt.setter
-	def TradDt(self, value):
-		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
+	@NtfctnSndrTxId.setter
+	def NtfctnSndrTxId(self, value):
+		self._NtfctnSndrTxId = value if type(value) != auto else self.make_default("NtfctnSndrTxId")
 
-	@TradDt.deleter
-	def TradDt(self):
-		del self._TradDt
-		self._TradDt = None
-
-	@property
-	def FinInstrmAttrbts(self):
-		return self._FinInstrmAttrbts
-
-	@FinInstrmAttrbts.setter
-	def FinInstrmAttrbts(self, value):
-		self._FinInstrmAttrbts = value if type(value) != auto else self.make_default("FinInstrmAttrbts")
-
-	@FinInstrmAttrbts.deleter
-	def FinInstrmAttrbts(self):
-		del self._FinInstrmAttrbts
-		self._FinInstrmAttrbts = None
+	@NtfctnSndrTxId.deleter
+	def NtfctnSndrTxId(self):
+		del self._NtfctnSndrTxId
+		self._NtfctnSndrTxId = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def FinInstrmId(self):
+		return self._FinInstrmId
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
-	@property
-	def CmonId(self):
-		return self._CmonId
-
-	@CmonId.setter
-	def CmonId(self, value):
-		self._CmonId = value if type(value) != auto else self.make_default("CmonId")
-
-	@CmonId.deleter
-	def CmonId(self):
-		del self._CmonId
-		self._CmonId = None
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
 
 	@property
-	def SctiesMvmntTp(self):
-		return self._SctiesMvmntTp
+	def DlvrgSttlmPties(self):
+		return self._DlvrgSttlmPties
 
-	@SctiesMvmntTp.setter
-	def SctiesMvmntTp(self, value):
-		self._SctiesMvmntTp = value if type(value) != auto else self.make_default("SctiesMvmntTp")
+	@DlvrgSttlmPties.setter
+	def DlvrgSttlmPties(self, value):
+		self._DlvrgSttlmPties = value if type(value) != auto else self.make_default("DlvrgSttlmPties")
 
-	@SctiesMvmntTp.deleter
-	def SctiesMvmntTp(self):
-		del self._SctiesMvmntTp
-		self._SctiesMvmntTp = None
-
-	@property
-	def RcvgSttlmPties(self):
-		return self._RcvgSttlmPties
-
-	@RcvgSttlmPties.setter
-	def RcvgSttlmPties(self, value):
-		self._RcvgSttlmPties = value if type(value) != auto else self.make_default("RcvgSttlmPties")
-
-	@RcvgSttlmPties.deleter
-	def RcvgSttlmPties(self):
-		del self._RcvgSttlmPties
-		self._RcvgSttlmPties = None
+	@DlvrgSttlmPties.deleter
+	def DlvrgSttlmPties(self):
+		del self._DlvrgSttlmPties
+		self._DlvrgSttlmPties = None
 
 	@property
 	def OthrAmts(self):
@@ -190,43 +138,17 @@ class SecuritiesTradeDetails139(base_types._BaseFieldType):
 		self._OthrAmts = None
 
 	@property
-	def Pmt(self):
-		return self._Pmt
+	def SctiesMvmntTp(self):
+		return self._SctiesMvmntTp
 
-	@Pmt.setter
-	def Pmt(self, value):
-		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
+	@SctiesMvmntTp.setter
+	def SctiesMvmntTp(self, value):
+		self._SctiesMvmntTp = value if type(value) != auto else self.make_default("SctiesMvmntTp")
 
-	@Pmt.deleter
-	def Pmt(self):
-		del self._Pmt
-		self._Pmt = None
-
-	@property
-	def SttlmAmt(self):
-		return self._SttlmAmt
-
-	@SttlmAmt.setter
-	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != auto else self.make_default("SttlmAmt")
-
-	@SttlmAmt.deleter
-	def SttlmAmt(self):
-		del self._SttlmAmt
-		self._SttlmAmt = None
-
-	@property
-	def NbOfDaysAcrd(self):
-		return self._NbOfDaysAcrd
-
-	@NbOfDaysAcrd.setter
-	def NbOfDaysAcrd(self, value):
-		self._NbOfDaysAcrd = value if type(value) != auto else self.make_default("NbOfDaysAcrd")
-
-	@NbOfDaysAcrd.deleter
-	def NbOfDaysAcrd(self):
-		del self._NbOfDaysAcrd
-		self._NbOfDaysAcrd = None
+	@SctiesMvmntTp.deleter
+	def SctiesMvmntTp(self):
+		del self._SctiesMvmntTp
+		self._SctiesMvmntTp = None
 
 	@property
 	def NtfctnRcvrTxId(self):
@@ -242,30 +164,43 @@ class SecuritiesTradeDetails139(base_types._BaseFieldType):
 		self._NtfctnRcvrTxId = None
 
 	@property
-	def QtyDtls(self):
-		return self._QtyDtls
+	def Pmt(self):
+		return self._Pmt
 
-	@QtyDtls.setter
-	def QtyDtls(self, value):
-		self._QtyDtls = value if type(value) != auto else self.make_default("QtyDtls")
+	@Pmt.setter
+	def Pmt(self, value):
+		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
 
-	@QtyDtls.deleter
-	def QtyDtls(self):
-		del self._QtyDtls
-		self._QtyDtls = None
+	@Pmt.deleter
+	def Pmt(self):
+		del self._Pmt
+		self._Pmt = None
 
 	@property
-	def NtfctnSndrTxId(self):
-		return self._NtfctnSndrTxId
+	def NbOfDaysAcrd(self):
+		return self._NbOfDaysAcrd
 
-	@NtfctnSndrTxId.setter
-	def NtfctnSndrTxId(self, value):
-		self._NtfctnSndrTxId = value if type(value) != auto else self.make_default("NtfctnSndrTxId")
+	@NbOfDaysAcrd.setter
+	def NbOfDaysAcrd(self, value):
+		self._NbOfDaysAcrd = value if type(value) != auto else self.make_default("NbOfDaysAcrd")
 
-	@NtfctnSndrTxId.deleter
-	def NtfctnSndrTxId(self):
-		del self._NtfctnSndrTxId
-		self._NtfctnSndrTxId = None
+	@NbOfDaysAcrd.deleter
+	def NbOfDaysAcrd(self):
+		del self._NbOfDaysAcrd
+		self._NbOfDaysAcrd = None
+
+	@property
+	def FinInstrmAttrbts(self):
+		return self._FinInstrmAttrbts
+
+	@FinInstrmAttrbts.setter
+	def FinInstrmAttrbts(self, value):
+		self._FinInstrmAttrbts = value if type(value) != auto else self.make_default("FinInstrmAttrbts")
+
+	@FinInstrmAttrbts.deleter
+	def FinInstrmAttrbts(self):
+		del self._FinInstrmAttrbts
+		self._FinInstrmAttrbts = None
 
 	@property
 	def SplmtryData(self):
@@ -280,26 +215,91 @@ class SecuritiesTradeDetails139(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def SttlmAmt(self):
+		return self._SttlmAmt
+
+	@SttlmAmt.setter
+	def SttlmAmt(self, value):
+		self._SttlmAmt = value if type(value) != auto else self.make_default("SttlmAmt")
+
+	@SttlmAmt.deleter
+	def SttlmAmt(self):
+		del self._SttlmAmt
+		self._SttlmAmt = None
+
+	@property
+	def TradDt(self):
+		return self._TradDt
+
+	@TradDt.setter
+	def TradDt(self, value):
+		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
+
+	@TradDt.deleter
+	def TradDt(self):
+		del self._TradDt
+		self._TradDt = None
+
+	@property
+	def Rptg(self):
+		return self._Rptg
+
+	@Rptg.setter
+	def Rptg(self, value):
+		self._Rptg = value if type(value) != auto else self.make_default("Rptg")
+
+	@Rptg.deleter
+	def Rptg(self):
+		del self._Rptg
+		self._Rptg = None
+
+	@property
+	def RcvgSttlmPties(self):
+		return self._RcvgSttlmPties
+
+	@RcvgSttlmPties.setter
+	def RcvgSttlmPties(self, value):
+		self._RcvgSttlmPties = value if type(value) != auto else self.make_default("RcvgSttlmPties")
+
+	@RcvgSttlmPties.deleter
+	def RcvgSttlmPties(self):
+		del self._RcvgSttlmPties
+		self._RcvgSttlmPties = None
+
+	@property
+	def CmonId(self):
+		return self._CmonId
+
+	@CmonId.setter
+	def CmonId(self, value):
+		self._CmonId = value if type(value) != auto else self.make_default("CmonId")
+
+	@CmonId.deleter
+	def CmonId(self):
+		del self._CmonId
+		self._CmonId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DlvrgSttlmPties', type=SettlementParties104, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtyDtls', type=Quantity49, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrBizPties', type=OtherParties42, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rptg', type=Reporting8Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=PortfolioTransferStatus2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmDt', type=SettlementDate20Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmParams', type=SettlementDetails103, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDt', type=TradeDate9Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmAttrbts', type=FinancialInstrumentAttributes122, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=PortfolioTransferStatus2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcvgSttlmPties', type=SettlementParties104, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrAmts', type=OtherAmounts33, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection57, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfDaysAcrd', type=Max3Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnRcvrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtyDtls', type=Quantity49, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnSndrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrgSttlmPties', type=SettlementParties104, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrAmts', type=OtherAmounts33, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnRcvrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfDaysAcrd', type=Max3Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmAttrbts', type=FinancialInstrumentAttributes122, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection57, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=TradeDate9Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rptg', type=Reporting8Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RcvgSttlmPties', type=SettlementParties104, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

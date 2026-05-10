@@ -1,6 +1,6 @@
-import base_types
-import VotingParticipationMethod3Code
+from . import base_types
 import GenericIdentification30
+import VotingParticipationMethod3Code
 
 class ParticipationMethod3Choice(base_types._BaseFieldType):
 

@@ -1,13 +1,26 @@
-import base_types
-import Algorithm15Code
-import EncryptionFormat1Code
-import Algorithm7Code
+from . import base_types
 import Algorithm13Code
+import Algorithm7Code
+import Algorithm15Code
 import TrueFalseIndicator
+import EncryptionFormat1Code
 
 class ATMSecurityConfiguration3(base_types._BaseFieldType):
 
-	__slots__ = ["_AsmmtrcKeyStdId", "_SmmtrcNcrptnAlgo", "_AsmmtrcNcrptn", "_SmmtrcTrnsprtKeyAlgo", "_SmmtrcTrnsprtKey", "_NcrptnFrmt", "_AsmmtrcNcrptnAlgo"]
+	__slots__ = ["_SmmtrcTrnsprtKey", "_AsmmtrcKeyStdId", "_AsmmtrcNcrptnAlgo", "_NcrptnFrmt", "_AsmmtrcNcrptn", "_SmmtrcNcrptnAlgo", "_SmmtrcTrnsprtKeyAlgo"]
+	@property
+	def SmmtrcTrnsprtKey(self):
+		return self._SmmtrcTrnsprtKey
+
+	@SmmtrcTrnsprtKey.setter
+	def SmmtrcTrnsprtKey(self, value):
+		self._SmmtrcTrnsprtKey = value if type(value) != auto else self.make_default("SmmtrcTrnsprtKey")
+
+	@SmmtrcTrnsprtKey.deleter
+	def SmmtrcTrnsprtKey(self):
+		del self._SmmtrcTrnsprtKey
+		self._SmmtrcTrnsprtKey = None
+
 	@property
 	def AsmmtrcKeyStdId(self):
 		return self._AsmmtrcKeyStdId
@@ -22,56 +35,17 @@ class ATMSecurityConfiguration3(base_types._BaseFieldType):
 		self._AsmmtrcKeyStdId = None
 
 	@property
-	def SmmtrcNcrptnAlgo(self):
-		return self._SmmtrcNcrptnAlgo
+	def AsmmtrcNcrptnAlgo(self):
+		return self._AsmmtrcNcrptnAlgo
 
-	@SmmtrcNcrptnAlgo.setter
-	def SmmtrcNcrptnAlgo(self, value):
-		self._SmmtrcNcrptnAlgo = value if type(value) != auto else self.make_default("SmmtrcNcrptnAlgo")
+	@AsmmtrcNcrptnAlgo.setter
+	def AsmmtrcNcrptnAlgo(self, value):
+		self._AsmmtrcNcrptnAlgo = value if type(value) != auto else self.make_default("AsmmtrcNcrptnAlgo")
 
-	@SmmtrcNcrptnAlgo.deleter
-	def SmmtrcNcrptnAlgo(self):
-		del self._SmmtrcNcrptnAlgo
-		self._SmmtrcNcrptnAlgo = None
-
-	@property
-	def AsmmtrcNcrptn(self):
-		return self._AsmmtrcNcrptn
-
-	@AsmmtrcNcrptn.setter
-	def AsmmtrcNcrptn(self, value):
-		self._AsmmtrcNcrptn = value if type(value) != auto else self.make_default("AsmmtrcNcrptn")
-
-	@AsmmtrcNcrptn.deleter
-	def AsmmtrcNcrptn(self):
-		del self._AsmmtrcNcrptn
-		self._AsmmtrcNcrptn = None
-
-	@property
-	def SmmtrcTrnsprtKeyAlgo(self):
-		return self._SmmtrcTrnsprtKeyAlgo
-
-	@SmmtrcTrnsprtKeyAlgo.setter
-	def SmmtrcTrnsprtKeyAlgo(self, value):
-		self._SmmtrcTrnsprtKeyAlgo = value if type(value) != auto else self.make_default("SmmtrcTrnsprtKeyAlgo")
-
-	@SmmtrcTrnsprtKeyAlgo.deleter
-	def SmmtrcTrnsprtKeyAlgo(self):
-		del self._SmmtrcTrnsprtKeyAlgo
-		self._SmmtrcTrnsprtKeyAlgo = None
-
-	@property
-	def SmmtrcTrnsprtKey(self):
-		return self._SmmtrcTrnsprtKey
-
-	@SmmtrcTrnsprtKey.setter
-	def SmmtrcTrnsprtKey(self, value):
-		self._SmmtrcTrnsprtKey = value if type(value) != auto else self.make_default("SmmtrcTrnsprtKey")
-
-	@SmmtrcTrnsprtKey.deleter
-	def SmmtrcTrnsprtKey(self):
-		del self._SmmtrcTrnsprtKey
-		self._SmmtrcTrnsprtKey = None
+	@AsmmtrcNcrptnAlgo.deleter
+	def AsmmtrcNcrptnAlgo(self):
+		del self._AsmmtrcNcrptnAlgo
+		self._AsmmtrcNcrptnAlgo = None
 
 	@property
 	def NcrptnFrmt(self):
@@ -87,25 +61,51 @@ class ATMSecurityConfiguration3(base_types._BaseFieldType):
 		self._NcrptnFrmt = None
 
 	@property
-	def AsmmtrcNcrptnAlgo(self):
-		return self._AsmmtrcNcrptnAlgo
+	def AsmmtrcNcrptn(self):
+		return self._AsmmtrcNcrptn
 
-	@AsmmtrcNcrptnAlgo.setter
-	def AsmmtrcNcrptnAlgo(self, value):
-		self._AsmmtrcNcrptnAlgo = value if type(value) != auto else self.make_default("AsmmtrcNcrptnAlgo")
+	@AsmmtrcNcrptn.setter
+	def AsmmtrcNcrptn(self, value):
+		self._AsmmtrcNcrptn = value if type(value) != auto else self.make_default("AsmmtrcNcrptn")
 
-	@AsmmtrcNcrptnAlgo.deleter
-	def AsmmtrcNcrptnAlgo(self):
-		del self._AsmmtrcNcrptnAlgo
-		self._AsmmtrcNcrptnAlgo = None
+	@AsmmtrcNcrptn.deleter
+	def AsmmtrcNcrptn(self):
+		del self._AsmmtrcNcrptn
+		self._AsmmtrcNcrptn = None
+
+	@property
+	def SmmtrcNcrptnAlgo(self):
+		return self._SmmtrcNcrptnAlgo
+
+	@SmmtrcNcrptnAlgo.setter
+	def SmmtrcNcrptnAlgo(self, value):
+		self._SmmtrcNcrptnAlgo = value if type(value) != auto else self.make_default("SmmtrcNcrptnAlgo")
+
+	@SmmtrcNcrptnAlgo.deleter
+	def SmmtrcNcrptnAlgo(self):
+		del self._SmmtrcNcrptnAlgo
+		self._SmmtrcNcrptnAlgo = None
+
+	@property
+	def SmmtrcTrnsprtKeyAlgo(self):
+		return self._SmmtrcTrnsprtKeyAlgo
+
+	@SmmtrcTrnsprtKeyAlgo.setter
+	def SmmtrcTrnsprtKeyAlgo(self, value):
+		self._SmmtrcTrnsprtKeyAlgo = value if type(value) != auto else self.make_default("SmmtrcTrnsprtKeyAlgo")
+
+	@SmmtrcTrnsprtKeyAlgo.deleter
+	def SmmtrcTrnsprtKeyAlgo(self):
+		del self._SmmtrcTrnsprtKeyAlgo
+		self._SmmtrcTrnsprtKeyAlgo = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AsmmtrcKeyStdId', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SmmtrcNcrptnAlgo', type=Algorithm15Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AsmmtrcNcrptn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SmmtrcTrnsprtKeyAlgo', type=Algorithm13Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SmmtrcTrnsprtKey', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NcrptnFrmt', type=EncryptionFormat1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AsmmtrcKeyStdId', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AsmmtrcNcrptnAlgo', type=Algorithm7Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NcrptnFrmt', type=EncryptionFormat1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AsmmtrcNcrptn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SmmtrcNcrptnAlgo', type=Algorithm15Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SmmtrcTrnsprtKeyAlgo', type=Algorithm13Code, min=0, max=None, mutex_group=None, array=True),
 	))
 

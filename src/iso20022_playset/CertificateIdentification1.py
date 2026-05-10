@@ -1,36 +1,10 @@
-import base_types
-import Max35Text
+from . import base_types
 import ProprietaryReference1
+import Max35Text
 
 class CertificateIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcrRef", "_Prtry", "_MsgId", "_PmtInfId", "_EndToEndId", "_InstrId"]
-	@property
-	def AcctSvcrRef(self):
-		return self._AcctSvcrRef
-
-	@AcctSvcrRef.setter
-	def AcctSvcrRef(self, value):
-		self._AcctSvcrRef = value if type(value) != auto else self.make_default("AcctSvcrRef")
-
-	@AcctSvcrRef.deleter
-	def AcctSvcrRef(self):
-		del self._AcctSvcrRef
-		self._AcctSvcrRef = None
-
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
+	__slots__ = ["_MsgId", "_AcctSvcrRef", "_PmtInfId", "_EndToEndId", "_InstrId", "_Prtry"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -43,6 +17,19 @@ class CertificateIdentification1(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
+
+	@property
+	def AcctSvcrRef(self):
+		return self._AcctSvcrRef
+
+	@AcctSvcrRef.setter
+	def AcctSvcrRef(self, value):
+		self._AcctSvcrRef = value if type(value) != auto else self.make_default("AcctSvcrRef")
+
+	@AcctSvcrRef.deleter
+	def AcctSvcrRef(self):
+		del self._AcctSvcrRef
+		self._AcctSvcrRef = None
 
 	@property
 	def PmtInfId(self):
@@ -83,12 +70,25 @@ class CertificateIdentification1(base_types._BaseFieldType):
 		del self._InstrId
 		self._InstrId = None
 
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prtry', type=ProprietaryReference1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryReference1, min=0, max=1, mutex_group=None, array=False),
 	))
 

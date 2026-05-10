@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
+import FromToAmountRange1
 import AmountRangeBoundary1
 import ImpliedCurrencyAndAmount
-import FromToAmountRange1
 
 class ImpliedCurrencyAmountRange1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NEQAmt", "_EQAmt", "_ToAmt", "_FrAmt", "_FrToAmt"]
+	__slots__ = ["_EQAmt", "_NEQAmt", "_FrToAmt", "_ToAmt", "_FrAmt"]
+	@property
+	def EQAmt(self):
+		return self._EQAmt
+
+	@EQAmt.setter
+	def EQAmt(self, value):
+		self._EQAmt = value if type(value) != auto else self.make_default("EQAmt")
+
+	@EQAmt.deleter
+	def EQAmt(self):
+		del self._EQAmt
+		self._EQAmt = None
+
 	@property
 	def NEQAmt(self):
 		return self._NEQAmt
@@ -20,17 +33,17 @@ class ImpliedCurrencyAmountRange1Choice(base_types._BaseFieldType):
 		self._NEQAmt = None
 
 	@property
-	def EQAmt(self):
-		return self._EQAmt
+	def FrToAmt(self):
+		return self._FrToAmt
 
-	@EQAmt.setter
-	def EQAmt(self, value):
-		self._EQAmt = value if type(value) != auto else self.make_default("EQAmt")
+	@FrToAmt.setter
+	def FrToAmt(self, value):
+		self._FrToAmt = value if type(value) != auto else self.make_default("FrToAmt")
 
-	@EQAmt.deleter
-	def EQAmt(self):
-		del self._EQAmt
-		self._EQAmt = None
+	@FrToAmt.deleter
+	def FrToAmt(self):
+		del self._FrToAmt
+		self._FrToAmt = None
 
 	@property
 	def ToAmt(self):
@@ -58,24 +71,11 @@ class ImpliedCurrencyAmountRange1Choice(base_types._BaseFieldType):
 		del self._FrAmt
 		self._FrAmt = None
 
-	@property
-	def FrToAmt(self):
-		return self._FrToAmt
-
-	@FrToAmt.setter
-	def FrToAmt(self, value):
-		self._FrToAmt = value if type(value) != auto else self.make_default("FrToAmt")
-
-	@FrToAmt.deleter
-	def FrToAmt(self):
-		del self._FrToAmt
-		self._FrToAmt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NEQAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='EQAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NEQAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FrToAmt', type=FromToAmountRange1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ToAmt', type=AmountRangeBoundary1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FrAmt', type=AmountRangeBoundary1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='FrToAmt', type=FromToAmountRange1, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BaselineStatus2Code
 
 class TransactionStatus3(base_types._BaseFieldType):

@@ -1,23 +1,23 @@
-import base_types
-import Max35Text
+from . import base_types
 import PartyType32Code
 import DisputeIdentification1
+import Max35Text
 
 class DisputeReference1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrAssgnrNtty", "_AssgnrNtty", "_DsptId"]
+	__slots__ = ["_DsptId", "_AssgnrNtty", "_OthrAssgnrNtty"]
 	@property
-	def OthrAssgnrNtty(self):
-		return self._OthrAssgnrNtty
+	def DsptId(self):
+		return self._DsptId
 
-	@OthrAssgnrNtty.setter
-	def OthrAssgnrNtty(self, value):
-		self._OthrAssgnrNtty = value if type(value) != auto else self.make_default("OthrAssgnrNtty")
+	@DsptId.setter
+	def DsptId(self, value):
+		self._DsptId = value if type(value) != auto else self.make_default("DsptId")
 
-	@OthrAssgnrNtty.deleter
-	def OthrAssgnrNtty(self):
-		del self._OthrAssgnrNtty
-		self._OthrAssgnrNtty = None
+	@DsptId.deleter
+	def DsptId(self):
+		del self._DsptId
+		self._DsptId = None
 
 	@property
 	def AssgnrNtty(self):
@@ -33,21 +33,21 @@ class DisputeReference1(base_types._BaseFieldType):
 		self._AssgnrNtty = None
 
 	@property
-	def DsptId(self):
-		return self._DsptId
+	def OthrAssgnrNtty(self):
+		return self._OthrAssgnrNtty
 
-	@DsptId.setter
-	def DsptId(self, value):
-		self._DsptId = value if type(value) != auto else self.make_default("DsptId")
+	@OthrAssgnrNtty.setter
+	def OthrAssgnrNtty(self, value):
+		self._OthrAssgnrNtty = value if type(value) != auto else self.make_default("OthrAssgnrNtty")
 
-	@DsptId.deleter
-	def DsptId(self):
-		del self._DsptId
-		self._DsptId = None
+	@OthrAssgnrNtty.deleter
+	def OthrAssgnrNtty(self):
+		del self._OthrAssgnrNtty
+		self._OthrAssgnrNtty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrAssgnrNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AssgnrNtty', type=PartyType32Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsptId', type=DisputeIdentification1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AssgnrNtty', type=PartyType32Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrAssgnrNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

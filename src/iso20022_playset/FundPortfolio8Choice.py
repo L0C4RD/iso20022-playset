@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import Pension6
 import TaxEfficientProduct6
 import GeneralInvestment2
 
 class FundPortfolio8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxEffcntPdct", "_Pnsn", "_GnlInvstmt"]
-	@property
-	def TaxEffcntPdct(self):
-		return self._TaxEffcntPdct
-
-	@TaxEffcntPdct.setter
-	def TaxEffcntPdct(self, value):
-		self._TaxEffcntPdct = value if type(value) != auto else self.make_default("TaxEffcntPdct")
-
-	@TaxEffcntPdct.deleter
-	def TaxEffcntPdct(self):
-		del self._TaxEffcntPdct
-		self._TaxEffcntPdct = None
-
+	__slots__ = ["_Pnsn", "_TaxEffcntPdct", "_GnlInvstmt"]
 	@property
 	def Pnsn(self):
 		return self._Pnsn
@@ -31,6 +18,19 @@ class FundPortfolio8Choice(base_types._BaseFieldType):
 	def Pnsn(self):
 		del self._Pnsn
 		self._Pnsn = None
+
+	@property
+	def TaxEffcntPdct(self):
+		return self._TaxEffcntPdct
+
+	@TaxEffcntPdct.setter
+	def TaxEffcntPdct(self, value):
+		self._TaxEffcntPdct = value if type(value) != auto else self.make_default("TaxEffcntPdct")
+
+	@TaxEffcntPdct.deleter
+	def TaxEffcntPdct(self):
+		del self._TaxEffcntPdct
+		self._TaxEffcntPdct = None
 
 	@property
 	def GnlInvstmt(self):
@@ -46,8 +46,8 @@ class FundPortfolio8Choice(base_types._BaseFieldType):
 		self._GnlInvstmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxEffcntPdct', type=TaxEfficientProduct6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pnsn', type=Pension6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TaxEffcntPdct', type=TaxEfficientProduct6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='GnlInvstmt', type=GeneralInvestment2, min=0, max=1, mutex_group=1, array=False),
 	))
 

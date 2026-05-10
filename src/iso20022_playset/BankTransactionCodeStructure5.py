@@ -1,6 +1,6 @@
-import base_types
-import ExternalBankTransactionDomain1Code
+from . import base_types
 import BankTransactionCodeStructure6
+import ExternalBankTransactionDomain1Code
 
 class BankTransactionCodeStructure5(base_types._BaseFieldType):
 

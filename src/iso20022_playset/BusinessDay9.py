@@ -1,11 +1,11 @@
-import base_types
-import SystemAvailabilityAndEvents3
+from . import base_types
 import SystemStatus3
 import DateAndDateTime2Choice
+import SystemAvailabilityAndEvents3
 
 class BusinessDay9(base_types._BaseFieldType):
 
-	__slots__ = ["_SysInfPerCcy", "_SysDt", "_SysSts"]
+	__slots__ = ["_SysInfPerCcy", "_SysSts", "_SysDt"]
 	@property
 	def SysInfPerCcy(self):
 		return self._SysInfPerCcy
@@ -20,19 +20,6 @@ class BusinessDay9(base_types._BaseFieldType):
 		self._SysInfPerCcy = None
 
 	@property
-	def SysDt(self):
-		return self._SysDt
-
-	@SysDt.setter
-	def SysDt(self, value):
-		self._SysDt = value if type(value) != auto else self.make_default("SysDt")
-
-	@SysDt.deleter
-	def SysDt(self):
-		del self._SysDt
-		self._SysDt = None
-
-	@property
 	def SysSts(self):
 		return self._SysSts
 
@@ -45,9 +32,22 @@ class BusinessDay9(base_types._BaseFieldType):
 		del self._SysSts
 		self._SysSts = None
 
+	@property
+	def SysDt(self):
+		return self._SysDt
+
+	@SysDt.setter
+	def SysDt(self, value):
+		self._SysDt = value if type(value) != auto else self.make_default("SysDt")
+
+	@SysDt.deleter
+	def SysDt(self):
+		del self._SysDt
+		self._SysDt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SysInfPerCcy', type=SystemAvailabilityAndEvents3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SysDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysSts', type=SystemStatus3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

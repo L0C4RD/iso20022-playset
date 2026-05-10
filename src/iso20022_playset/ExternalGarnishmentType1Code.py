@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class ExternalGarnishmentType1Code(base_types._BaseDataType_String):
 

@@ -1,9 +1,9 @@
-import base_types
+from . import base_types
 import Max35Text
 
 class References36Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PoolId", "_AcctOwnrTxId", "_MktInfrstrctrTxId", "_CorpActnEvtId", "_AcctSvcrTxId", "_PrcrTxId"]
+	__slots__ = ["_PoolId", "_AcctSvcrTxId", "_MktInfrstrctrTxId", "_CorpActnEvtId", "_PrcrTxId", "_AcctOwnrTxId"]
 	@property
 	def PoolId(self):
 		return self._PoolId
@@ -18,17 +18,17 @@ class References36Choice(base_types._BaseFieldType):
 		self._PoolId = None
 
 	@property
-	def AcctOwnrTxId(self):
-		return self._AcctOwnrTxId
+	def AcctSvcrTxId(self):
+		return self._AcctSvcrTxId
 
-	@AcctOwnrTxId.setter
-	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != auto else self.make_default("AcctOwnrTxId")
+	@AcctSvcrTxId.setter
+	def AcctSvcrTxId(self, value):
+		self._AcctSvcrTxId = value if type(value) != auto else self.make_default("AcctSvcrTxId")
 
-	@AcctOwnrTxId.deleter
-	def AcctOwnrTxId(self):
-		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
+	@AcctSvcrTxId.deleter
+	def AcctSvcrTxId(self):
+		del self._AcctSvcrTxId
+		self._AcctSvcrTxId = None
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -57,19 +57,6 @@ class References36Choice(base_types._BaseFieldType):
 		self._CorpActnEvtId = None
 
 	@property
-	def AcctSvcrTxId(self):
-		return self._AcctSvcrTxId
-
-	@AcctSvcrTxId.setter
-	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != auto else self.make_default("AcctSvcrTxId")
-
-	@AcctSvcrTxId.deleter
-	def AcctSvcrTxId(self):
-		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
-
-	@property
 	def PrcrTxId(self):
 		return self._PrcrTxId
 
@@ -82,12 +69,25 @@ class References36Choice(base_types._BaseFieldType):
 		del self._PrcrTxId
 		self._PrcrTxId = None
 
+	@property
+	def AcctOwnrTxId(self):
+		return self._AcctOwnrTxId
+
+	@AcctOwnrTxId.setter
+	def AcctOwnrTxId(self, value):
+		self._AcctOwnrTxId = value if type(value) != auto else self.make_default("AcctOwnrTxId")
+
+	@AcctOwnrTxId.deleter
+	def AcctOwnrTxId(self):
+		del self._AcctOwnrTxId
+		self._AcctOwnrTxId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

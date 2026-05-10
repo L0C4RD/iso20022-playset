@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import NettingCutOffReferenceDataUpdateRequestV02
 
 class REDA_060_001_02():

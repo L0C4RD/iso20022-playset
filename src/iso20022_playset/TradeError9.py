@@ -1,12 +1,25 @@
-import base_types
-import Max140Text
+from . import base_types
 import LoanData86
-import SupplementaryData1
 import CounterpartyData88
+import SupplementaryData1
+import Max140Text
 
 class TradeError9(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtySpcfcData", "_SplmtryData", "_TechRcrdId", "_LnData"]
+	__slots__ = ["_LnData", "_CtrPtySpcfcData", "_SplmtryData", "_TechRcrdId"]
+	@property
+	def LnData(self):
+		return self._LnData
+
+	@LnData.setter
+	def LnData(self, value):
+		self._LnData = value if type(value) != auto else self.make_default("LnData")
+
+	@LnData.deleter
+	def LnData(self):
+		del self._LnData
+		self._LnData = None
+
 	@property
 	def CtrPtySpcfcData(self):
 		return self._CtrPtySpcfcData
@@ -46,23 +59,10 @@ class TradeError9(base_types._BaseFieldType):
 		del self._TechRcrdId
 		self._TechRcrdId = None
 
-	@property
-	def LnData(self):
-		return self._LnData
-
-	@LnData.setter
-	def LnData(self, value):
-		self._LnData = value if type(value) != auto else self.make_default("LnData")
-
-	@LnData.deleter
-	def LnData(self):
-		del self._LnData
-		self._LnData = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='LnData', type=LoanData86, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartyData88, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LnData', type=LoanData86, min=1, max=1, mutex_group=None, array=False),
 	))
 

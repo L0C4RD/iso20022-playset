@@ -1,8 +1,8 @@
-import base_types
-import TransactionDetails173
-import ResponseStatus6Choice
-import SupplementaryData1
+from . import base_types
 import TransactionIdentification6
+import SupplementaryData1
+import ResponseStatus6Choice
+import TransactionDetails173
 
 class SecuritiesSettlementTransactionCounterpartyResponseV05(base_types._BaseFieldType):
 

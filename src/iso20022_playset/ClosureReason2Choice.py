@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SystemClosureReason1Code
 import Max35Text
 

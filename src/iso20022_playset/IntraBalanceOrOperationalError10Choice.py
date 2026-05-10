@@ -1,6 +1,6 @@
-import base_types
-import IntraBalanceCancellation7
+from . import base_types
 import ErrorHandling5
+import IntraBalanceCancellation7
 
 class IntraBalanceOrOperationalError10Choice(base_types._BaseFieldType):
 

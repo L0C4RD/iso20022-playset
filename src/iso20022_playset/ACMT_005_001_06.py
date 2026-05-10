@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RequestForAccountManagementStatusReportV06
 
 class ACMT_005_001_06():

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Cleared4Choice
 
 class CompareClearingStatus3(base_types._BaseFieldType):

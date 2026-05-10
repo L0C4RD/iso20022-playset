@@ -1,6 +1,6 @@
-import base_types
-import TimeUnit1Code
+from . import base_types
 import GenericIdentification30
+import TimeUnit1Code
 
 class TimeUnit3Choice(base_types._BaseFieldType):
 

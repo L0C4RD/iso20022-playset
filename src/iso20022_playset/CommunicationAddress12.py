@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Max2048Text
 
 class CommunicationAddress12(base_types._BaseFieldType):

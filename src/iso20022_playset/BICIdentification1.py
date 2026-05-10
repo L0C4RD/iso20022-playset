@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BICIdentifier
 
 class BICIdentification1(base_types._BaseFieldType):

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ModalityOfCounting1Code
 import GenericIdentification30
 

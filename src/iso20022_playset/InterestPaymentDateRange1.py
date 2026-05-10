@@ -1,10 +1,10 @@
-import base_types
-import Max35Text
+from . import base_types
 import ISODate
+import Max35Text
 
 class InterestPaymentDateRange1(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrstSchdlId", "_XpctdDt", "_DueDt"]
+	__slots__ = ["_IntrstSchdlId", "_DueDt", "_XpctdDt"]
 	@property
 	def IntrstSchdlId(self):
 		return self._IntrstSchdlId
@@ -19,19 +19,6 @@ class InterestPaymentDateRange1(base_types._BaseFieldType):
 		self._IntrstSchdlId = None
 
 	@property
-	def XpctdDt(self):
-		return self._XpctdDt
-
-	@XpctdDt.setter
-	def XpctdDt(self, value):
-		self._XpctdDt = value if type(value) != auto else self.make_default("XpctdDt")
-
-	@XpctdDt.deleter
-	def XpctdDt(self):
-		del self._XpctdDt
-		self._XpctdDt = None
-
-	@property
 	def DueDt(self):
 		return self._DueDt
 
@@ -44,9 +31,22 @@ class InterestPaymentDateRange1(base_types._BaseFieldType):
 		del self._DueDt
 		self._DueDt = None
 
+	@property
+	def XpctdDt(self):
+		return self._XpctdDt
+
+	@XpctdDt.setter
+	def XpctdDt(self, value):
+		self._XpctdDt = value if type(value) != auto else self.make_default("XpctdDt")
+
+	@XpctdDt.deleter
+	def XpctdDt(self):
+		del self._XpctdDt
+		self._XpctdDt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IntrstSchdlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DueDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

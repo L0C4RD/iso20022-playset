@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SaleToPOIDeviceResponseV07
 
 class CASP_017_001_07():

@@ -1,12 +1,12 @@
-import base_types
-import FundPortfolio9Choice
-import Max35Text
+from . import base_types
 import AdditionalInformation15
+import Max35Text
+import FundPortfolio9Choice
 import FinancialInstrument101
 
 class PortfolioTransfer12(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtfl", "_MstrRef", "_AddtlInf", "_TrfId", "_FinInstrmAsstForTrf"]
+	__slots__ = ["_Prtfl", "_FinInstrmAsstForTrf", "_MstrRef", "_TrfId", "_AddtlInf"]
 	@property
 	def Prtfl(self):
 		return self._Prtfl
@@ -19,6 +19,19 @@ class PortfolioTransfer12(base_types._BaseFieldType):
 	def Prtfl(self):
 		del self._Prtfl
 		self._Prtfl = None
+
+	@property
+	def FinInstrmAsstForTrf(self):
+		return self._FinInstrmAsstForTrf
+
+	@FinInstrmAsstForTrf.setter
+	def FinInstrmAsstForTrf(self, value):
+		self._FinInstrmAsstForTrf = value if type(value) != auto else self.make_default("FinInstrmAsstForTrf")
+
+	@FinInstrmAsstForTrf.deleter
+	def FinInstrmAsstForTrf(self):
+		del self._FinInstrmAsstForTrf
+		self._FinInstrmAsstForTrf = None
 
 	@property
 	def MstrRef(self):
@@ -34,19 +47,6 @@ class PortfolioTransfer12(base_types._BaseFieldType):
 		self._MstrRef = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
 	def TrfId(self):
 		return self._TrfId
 
@@ -60,23 +60,23 @@ class PortfolioTransfer12(base_types._BaseFieldType):
 		self._TrfId = None
 
 	@property
-	def FinInstrmAsstForTrf(self):
-		return self._FinInstrmAsstForTrf
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@FinInstrmAsstForTrf.setter
-	def FinInstrmAsstForTrf(self, value):
-		self._FinInstrmAsstForTrf = value if type(value) != auto else self.make_default("FinInstrmAsstForTrf")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@FinInstrmAsstForTrf.deleter
-	def FinInstrmAsstForTrf(self):
-		del self._FinInstrmAsstForTrf
-		self._FinInstrmAsstForTrf = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prtfl', type=FundPortfolio9Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TrfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmAsstForTrf', type=FinancialInstrument101, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 	))
 

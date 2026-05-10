@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CCPAvailableFinancialResourcesReportV02
 
 class AUTH_064_001_02():

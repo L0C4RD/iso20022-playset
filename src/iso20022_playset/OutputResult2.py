@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
+import UserInterface4Code
 import InformationQualify1Code
 import ResponseType11
-import UserInterface4Code
 
 class OutputResult2(base_types._BaseFieldType):
 
-	__slots__ = ["_Rspn", "_DvcTp", "_InfQlfr"]
+	__slots__ = ["_InfQlfr", "_DvcTp", "_Rspn"]
 	@property
-	def Rspn(self):
-		return self._Rspn
+	def InfQlfr(self):
+		return self._InfQlfr
 
-	@Rspn.setter
-	def Rspn(self, value):
-		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
+	@InfQlfr.setter
+	def InfQlfr(self, value):
+		self._InfQlfr = value if type(value) != auto else self.make_default("InfQlfr")
 
-	@Rspn.deleter
-	def Rspn(self):
-		del self._Rspn
-		self._Rspn = None
+	@InfQlfr.deleter
+	def InfQlfr(self):
+		del self._InfQlfr
+		self._InfQlfr = None
 
 	@property
 	def DvcTp(self):
@@ -33,21 +33,21 @@ class OutputResult2(base_types._BaseFieldType):
 		self._DvcTp = None
 
 	@property
-	def InfQlfr(self):
-		return self._InfQlfr
+	def Rspn(self):
+		return self._Rspn
 
-	@InfQlfr.setter
-	def InfQlfr(self, value):
-		self._InfQlfr = value if type(value) != auto else self.make_default("InfQlfr")
+	@Rspn.setter
+	def Rspn(self, value):
+		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
 
-	@InfQlfr.deleter
-	def InfQlfr(self):
-		del self._InfQlfr
-		self._InfQlfr = None
+	@Rspn.deleter
+	def Rspn(self):
+		del self._Rspn
+		self._Rspn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DvcTp', type=UserInterface4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InfQlfr', type=InformationQualify1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DvcTp', type=UserInterface4Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,38 +1,12 @@
-import base_types
+from . import base_types
 import CurrencyAndAmount
-import Max35Text
 import DocumentIdentification7
 import Adjustment6
+import Max35Text
 
 class ReportLine7(base_types._BaseFieldType):
 
-	__slots__ = ["_NetAmt", "_TxId", "_PurchsOrdrRef", "_Adjstmnt"]
-	@property
-	def NetAmt(self):
-		return self._NetAmt
-
-	@NetAmt.setter
-	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != auto else self.make_default("NetAmt")
-
-	@NetAmt.deleter
-	def NetAmt(self):
-		del self._NetAmt
-		self._NetAmt = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
+	__slots__ = ["_PurchsOrdrRef", "_Adjstmnt", "_TxId", "_NetAmt"]
 	@property
 	def PurchsOrdrRef(self):
 		return self._PurchsOrdrRef
@@ -59,10 +33,36 @@ class ReportLine7(base_types._BaseFieldType):
 		del self._Adjstmnt
 		self._Adjstmnt = None
 
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def NetAmt(self):
+		return self._NetAmt
+
+	@NetAmt.setter
+	def NetAmt(self, value):
+		self._NetAmt = value if type(value) != auto else self.make_default("NetAmt")
+
+	@NetAmt.deleter
+	def NetAmt(self):
+		del self._NetAmt
+		self._NetAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Adjstmnt', type=Adjustment6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import ISODate
 import Max2000Text
 
 class BankInstructions1(base_types._BaseFieldType):
 
-	__slots__ = ["_LastDtForRspn", "_Txt"]
-	@property
-	def LastDtForRspn(self):
-		return self._LastDtForRspn
-
-	@LastDtForRspn.setter
-	def LastDtForRspn(self, value):
-		self._LastDtForRspn = value if type(value) != auto else self.make_default("LastDtForRspn")
-
-	@LastDtForRspn.deleter
-	def LastDtForRspn(self):
-		del self._LastDtForRspn
-		self._LastDtForRspn = None
-
+	__slots__ = ["_Txt", "_LastDtForRspn"]
 	@property
 	def Txt(self):
 		return self._Txt
@@ -31,8 +18,21 @@ class BankInstructions1(base_types._BaseFieldType):
 		del self._Txt
 		self._Txt = None
 
+	@property
+	def LastDtForRspn(self):
+		return self._LastDtForRspn
+
+	@LastDtForRspn.setter
+	def LastDtForRspn(self, value):
+		self._LastDtForRspn = value if type(value) != auto else self.make_default("LastDtForRspn")
+
+	@LastDtForRspn.deleter
+	def LastDtForRspn(self):
+		del self._LastDtForRspn
+		self._LastDtForRspn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LastDtForRspn', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Txt', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LastDtForRspn', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

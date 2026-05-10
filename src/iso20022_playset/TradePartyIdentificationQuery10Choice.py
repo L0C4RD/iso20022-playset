@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import PartyIdentification248Choice
 import NotReported1Code
 
 class TradePartyIdentificationQuery10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_NotRptd"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_NotRptd", "_Id"]
 	@property
 	def NotRptd(self):
 		return self._NotRptd
@@ -31,8 +18,21 @@ class TradePartyIdentificationQuery10Choice(base_types._BaseFieldType):
 		del self._NotRptd
 		self._NotRptd = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=PartyIdentification248Choice, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification248Choice, min=1, max=None, mutex_group=1, array=True),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MarketClaimCreationV03
 
 class SEEV_050_001_03():

@@ -1,24 +1,11 @@
-import base_types
-import Max35Text
-import CountryCode
+from . import base_types
 import ISODate
+import CountryCode
+import Max35Text
 
 class DateAndPlaceOfBirth(base_types._BaseFieldType):
 
-	__slots__ = ["_CtryOfBirth", "_BirthDt", "_CityOfBirth", "_PrvcOfBirth"]
-	@property
-	def CtryOfBirth(self):
-		return self._CtryOfBirth
-
-	@CtryOfBirth.setter
-	def CtryOfBirth(self, value):
-		self._CtryOfBirth = value if type(value) != auto else self.make_default("CtryOfBirth")
-
-	@CtryOfBirth.deleter
-	def CtryOfBirth(self):
-		del self._CtryOfBirth
-		self._CtryOfBirth = None
-
+	__slots__ = ["_BirthDt", "_PrvcOfBirth", "_CityOfBirth", "_CtryOfBirth"]
 	@property
 	def BirthDt(self):
 		return self._BirthDt
@@ -31,6 +18,19 @@ class DateAndPlaceOfBirth(base_types._BaseFieldType):
 	def BirthDt(self):
 		del self._BirthDt
 		self._BirthDt = None
+
+	@property
+	def PrvcOfBirth(self):
+		return self._PrvcOfBirth
+
+	@PrvcOfBirth.setter
+	def PrvcOfBirth(self, value):
+		self._PrvcOfBirth = value if type(value) != auto else self.make_default("PrvcOfBirth")
+
+	@PrvcOfBirth.deleter
+	def PrvcOfBirth(self):
+		del self._PrvcOfBirth
+		self._PrvcOfBirth = None
 
 	@property
 	def CityOfBirth(self):
@@ -46,22 +46,22 @@ class DateAndPlaceOfBirth(base_types._BaseFieldType):
 		self._CityOfBirth = None
 
 	@property
-	def PrvcOfBirth(self):
-		return self._PrvcOfBirth
+	def CtryOfBirth(self):
+		return self._CtryOfBirth
 
-	@PrvcOfBirth.setter
-	def PrvcOfBirth(self, value):
-		self._PrvcOfBirth = value if type(value) != auto else self.make_default("PrvcOfBirth")
+	@CtryOfBirth.setter
+	def CtryOfBirth(self, value):
+		self._CtryOfBirth = value if type(value) != auto else self.make_default("CtryOfBirth")
 
-	@PrvcOfBirth.deleter
-	def PrvcOfBirth(self):
-		del self._PrvcOfBirth
-		self._PrvcOfBirth = None
+	@CtryOfBirth.deleter
+	def CtryOfBirth(self):
+		del self._CtryOfBirth
+		self._CtryOfBirth = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtryOfBirth', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BirthDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CityOfBirth', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvcOfBirth', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CityOfBirth', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfBirth', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TransactionOperationType11Code
 
 class ContractModification8(base_types._BaseFieldType):

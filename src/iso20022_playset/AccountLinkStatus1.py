@@ -1,6 +1,6 @@
-import base_types
-import Status6Code
+from . import base_types
 import StatusReasonInformation10
+import Status6Code
 
 class AccountLinkStatus1(base_types._BaseFieldType):
 

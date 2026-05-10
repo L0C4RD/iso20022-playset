@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import CreditDebitCode
-import AccountIdentification2Choice
 import PartyIdentification2Choice
+import AccountIdentification2Choice
 
 class CashAccount19(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_AcctId", "_AcctOwnrId"]
+	__slots__ = ["_AcctOwnrId", "_AcctId", "_CdtDbtInd"]
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
+	def AcctOwnrId(self):
+		return self._AcctOwnrId
 
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+	@AcctOwnrId.setter
+	def AcctOwnrId(self, value):
+		self._AcctOwnrId = value if type(value) != auto else self.make_default("AcctOwnrId")
 
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
+	@AcctOwnrId.deleter
+	def AcctOwnrId(self):
+		del self._AcctOwnrId
+		self._AcctOwnrId = None
 
 	@property
 	def AcctId(self):
@@ -33,21 +33,21 @@ class CashAccount19(base_types._BaseFieldType):
 		self._AcctId = None
 
 	@property
-	def AcctOwnrId(self):
-		return self._AcctOwnrId
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
 
-	@AcctOwnrId.setter
-	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != auto else self.make_default("AcctOwnrId")
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
 
-	@AcctOwnrId.deleter
-	def AcctOwnrId(self):
-		del self._AcctOwnrId
-		self._AcctOwnrId = None
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=AccountIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=AccountIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

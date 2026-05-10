@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import HostToATMAcknowledgementV01
 
 class CAAM_008_001_01():

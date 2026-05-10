@@ -1,6 +1,6 @@
-import base_types
-import BasketDescription3
+from . import base_types
 import FinancialInstrumentIdentification6Choice
+import BasketDescription3
 
 class FinancialInstrumentIdentification7Choice(base_types._BaseFieldType):
 

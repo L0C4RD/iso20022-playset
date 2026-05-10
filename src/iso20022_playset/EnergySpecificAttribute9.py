@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
+import EnergyDeliveryAttribute10
 import EnergyLoadType1Code
 import DeliveryInterconnectionPoint1Choice
-import EnergyDeliveryAttribute10
 
 class EnergySpecificAttribute9(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvryAttr", "_LdTp", "_DlvryPtOrZone", "_IntrCnnctnPt"]
+	__slots__ = ["_DlvryAttr", "_IntrCnnctnPt", "_LdTp", "_DlvryPtOrZone"]
 	@property
 	def DlvryAttr(self):
 		return self._DlvryAttr
@@ -18,6 +18,19 @@ class EnergySpecificAttribute9(base_types._BaseFieldType):
 	def DlvryAttr(self):
 		del self._DlvryAttr
 		self._DlvryAttr = None
+
+	@property
+	def IntrCnnctnPt(self):
+		return self._IntrCnnctnPt
+
+	@IntrCnnctnPt.setter
+	def IntrCnnctnPt(self, value):
+		self._IntrCnnctnPt = value if type(value) != auto else self.make_default("IntrCnnctnPt")
+
+	@IntrCnnctnPt.deleter
+	def IntrCnnctnPt(self):
+		del self._IntrCnnctnPt
+		self._IntrCnnctnPt = None
 
 	@property
 	def LdTp(self):
@@ -45,23 +58,10 @@ class EnergySpecificAttribute9(base_types._BaseFieldType):
 		del self._DlvryPtOrZone
 		self._DlvryPtOrZone = None
 
-	@property
-	def IntrCnnctnPt(self):
-		return self._IntrCnnctnPt
-
-	@IntrCnnctnPt.setter
-	def IntrCnnctnPt(self, value):
-		self._IntrCnnctnPt = value if type(value) != auto else self.make_default("IntrCnnctnPt")
-
-	@IntrCnnctnPt.deleter
-	def IntrCnnctnPt(self):
-		del self._IntrCnnctnPt
-		self._IntrCnnctnPt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlvryAttr', type=EnergyDeliveryAttribute10, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IntrCnnctnPt', type=DeliveryInterconnectionPoint1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LdTp', type=EnergyLoadType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryPtOrZone', type=DeliveryInterconnectionPoint1Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IntrCnnctnPt', type=DeliveryInterconnectionPoint1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

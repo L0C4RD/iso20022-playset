@@ -1,25 +1,25 @@
-import base_types
-import GenericIdentification1
-import UnderlyingStatementEntry5
-import UnderlyingPaymentTransaction7
+from . import base_types
 import CashAccount40
+import GenericIdentification1
 import UnderlyingPaymentInstruction8
+import UnderlyingPaymentTransaction7
+import UnderlyingStatementEntry5
 
 class UnderlyingData2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrBk", "_Initn", "_StmtNtry", "_Othr", "_Acct"]
+	__slots__ = ["_Acct", "_Initn", "_StmtNtry", "_Othr", "_IntrBk"]
 	@property
-	def IntrBk(self):
-		return self._IntrBk
+	def Acct(self):
+		return self._Acct
 
-	@IntrBk.setter
-	def IntrBk(self, value):
-		self._IntrBk = value if type(value) != auto else self.make_default("IntrBk")
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
 
-	@IntrBk.deleter
-	def IntrBk(self):
-		del self._IntrBk
-		self._IntrBk = None
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
 
 	@property
 	def Initn(self):
@@ -61,23 +61,23 @@ class UnderlyingData2Choice(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def Acct(self):
-		return self._Acct
+	def IntrBk(self):
+		return self._IntrBk
 
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
+	@IntrBk.setter
+	def IntrBk(self, value):
+		self._IntrBk = value if type(value) != auto else self.make_default("IntrBk")
 
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
+	@IntrBk.deleter
+	def IntrBk(self):
+		del self._IntrBk
+		self._IntrBk = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntrBk', type=UnderlyingPaymentTransaction7, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Initn', type=UnderlyingPaymentInstruction8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='StmtNtry', type=UnderlyingStatementEntry5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IntrBk', type=UnderlyingPaymentTransaction7, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class PendingReason9Code(base_types._BaseDataType_String):
 

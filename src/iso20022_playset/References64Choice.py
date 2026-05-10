@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AdditionalReference10
 
 class References64Choice(base_types._BaseFieldType):

@@ -1,44 +1,18 @@
-import base_types
-import FormOfSecurity1Code
-import YesNoIndicator
-import BeneficiaryCertificationCompletion1Code
-import SubAccount5
+from . import base_types
 import Intermediary43
+import YesNoIndicator
 import IncomePreference2Code
-import FundSettlementParameters15
-import Max35Text
 import PartyIdentification139
 import SafekeepingPlaceFormat28Choice
+import Max35Text
+import SubAccount5
+import BeneficiaryCertificationCompletion1Code
+import FundSettlementParameters15
+import FormOfSecurity1Code
 
 class InvestmentAccount70(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_IncmPref", "_AcctSvcr", "_BnfcryCertfctnCmpltn", "_OwnrId", "_AcctDsgnt", "_SctiesForm", "_AcctNm", "_DmtrlsdInd", "_SubAcctDtls", "_SttlmPtiesDtls", "_IntrmyInf", "_SfkpgPlc"]
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
-	@property
-	def IncmPref(self):
-		return self._IncmPref
-
-	@IncmPref.setter
-	def IncmPref(self, value):
-		self._IncmPref = value if type(value) != auto else self.make_default("IncmPref")
-
-	@IncmPref.deleter
-	def IncmPref(self):
-		del self._IncmPref
-		self._IncmPref = None
-
+	__slots__ = ["_AcctSvcr", "_SctiesForm", "_SubAcctDtls", "_AcctId", "_IntrmyInf", "_SfkpgPlc", "_AcctNm", "_OwnrId", "_DmtrlsdInd", "_SttlmPtiesDtls", "_BnfcryCertfctnCmpltn", "_AcctDsgnt", "_IncmPref"]
 	@property
 	def AcctSvcr(self):
 		return self._AcctSvcr
@@ -51,45 +25,6 @@ class InvestmentAccount70(base_types._BaseFieldType):
 	def AcctSvcr(self):
 		del self._AcctSvcr
 		self._AcctSvcr = None
-
-	@property
-	def BnfcryCertfctnCmpltn(self):
-		return self._BnfcryCertfctnCmpltn
-
-	@BnfcryCertfctnCmpltn.setter
-	def BnfcryCertfctnCmpltn(self, value):
-		self._BnfcryCertfctnCmpltn = value if type(value) != auto else self.make_default("BnfcryCertfctnCmpltn")
-
-	@BnfcryCertfctnCmpltn.deleter
-	def BnfcryCertfctnCmpltn(self):
-		del self._BnfcryCertfctnCmpltn
-		self._BnfcryCertfctnCmpltn = None
-
-	@property
-	def OwnrId(self):
-		return self._OwnrId
-
-	@OwnrId.setter
-	def OwnrId(self, value):
-		self._OwnrId = value if type(value) != auto else self.make_default("OwnrId")
-
-	@OwnrId.deleter
-	def OwnrId(self):
-		del self._OwnrId
-		self._OwnrId = None
-
-	@property
-	def AcctDsgnt(self):
-		return self._AcctDsgnt
-
-	@AcctDsgnt.setter
-	def AcctDsgnt(self, value):
-		self._AcctDsgnt = value if type(value) != auto else self.make_default("AcctDsgnt")
-
-	@AcctDsgnt.deleter
-	def AcctDsgnt(self):
-		del self._AcctDsgnt
-		self._AcctDsgnt = None
 
 	@property
 	def SctiesForm(self):
@@ -105,32 +40,6 @@ class InvestmentAccount70(base_types._BaseFieldType):
 		self._SctiesForm = None
 
 	@property
-	def AcctNm(self):
-		return self._AcctNm
-
-	@AcctNm.setter
-	def AcctNm(self, value):
-		self._AcctNm = value if type(value) != auto else self.make_default("AcctNm")
-
-	@AcctNm.deleter
-	def AcctNm(self):
-		del self._AcctNm
-		self._AcctNm = None
-
-	@property
-	def DmtrlsdInd(self):
-		return self._DmtrlsdInd
-
-	@DmtrlsdInd.setter
-	def DmtrlsdInd(self, value):
-		self._DmtrlsdInd = value if type(value) != auto else self.make_default("DmtrlsdInd")
-
-	@DmtrlsdInd.deleter
-	def DmtrlsdInd(self):
-		del self._DmtrlsdInd
-		self._DmtrlsdInd = None
-
-	@property
 	def SubAcctDtls(self):
 		return self._SubAcctDtls
 
@@ -144,17 +53,17 @@ class InvestmentAccount70(base_types._BaseFieldType):
 		self._SubAcctDtls = None
 
 	@property
-	def SttlmPtiesDtls(self):
-		return self._SttlmPtiesDtls
+	def AcctId(self):
+		return self._AcctId
 
-	@SttlmPtiesDtls.setter
-	def SttlmPtiesDtls(self, value):
-		self._SttlmPtiesDtls = value if type(value) != auto else self.make_default("SttlmPtiesDtls")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
 
-	@SttlmPtiesDtls.deleter
-	def SttlmPtiesDtls(self):
-		del self._SttlmPtiesDtls
-		self._SttlmPtiesDtls = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def IntrmyInf(self):
@@ -182,19 +91,110 @@ class InvestmentAccount70(base_types._BaseFieldType):
 		del self._SfkpgPlc
 		self._SfkpgPlc = None
 
+	@property
+	def AcctNm(self):
+		return self._AcctNm
+
+	@AcctNm.setter
+	def AcctNm(self, value):
+		self._AcctNm = value if type(value) != auto else self.make_default("AcctNm")
+
+	@AcctNm.deleter
+	def AcctNm(self):
+		del self._AcctNm
+		self._AcctNm = None
+
+	@property
+	def OwnrId(self):
+		return self._OwnrId
+
+	@OwnrId.setter
+	def OwnrId(self, value):
+		self._OwnrId = value if type(value) != auto else self.make_default("OwnrId")
+
+	@OwnrId.deleter
+	def OwnrId(self):
+		del self._OwnrId
+		self._OwnrId = None
+
+	@property
+	def DmtrlsdInd(self):
+		return self._DmtrlsdInd
+
+	@DmtrlsdInd.setter
+	def DmtrlsdInd(self, value):
+		self._DmtrlsdInd = value if type(value) != auto else self.make_default("DmtrlsdInd")
+
+	@DmtrlsdInd.deleter
+	def DmtrlsdInd(self):
+		del self._DmtrlsdInd
+		self._DmtrlsdInd = None
+
+	@property
+	def SttlmPtiesDtls(self):
+		return self._SttlmPtiesDtls
+
+	@SttlmPtiesDtls.setter
+	def SttlmPtiesDtls(self, value):
+		self._SttlmPtiesDtls = value if type(value) != auto else self.make_default("SttlmPtiesDtls")
+
+	@SttlmPtiesDtls.deleter
+	def SttlmPtiesDtls(self):
+		del self._SttlmPtiesDtls
+		self._SttlmPtiesDtls = None
+
+	@property
+	def BnfcryCertfctnCmpltn(self):
+		return self._BnfcryCertfctnCmpltn
+
+	@BnfcryCertfctnCmpltn.setter
+	def BnfcryCertfctnCmpltn(self, value):
+		self._BnfcryCertfctnCmpltn = value if type(value) != auto else self.make_default("BnfcryCertfctnCmpltn")
+
+	@BnfcryCertfctnCmpltn.deleter
+	def BnfcryCertfctnCmpltn(self):
+		del self._BnfcryCertfctnCmpltn
+		self._BnfcryCertfctnCmpltn = None
+
+	@property
+	def AcctDsgnt(self):
+		return self._AcctDsgnt
+
+	@AcctDsgnt.setter
+	def AcctDsgnt(self, value):
+		self._AcctDsgnt = value if type(value) != auto else self.make_default("AcctDsgnt")
+
+	@AcctDsgnt.deleter
+	def AcctDsgnt(self):
+		del self._AcctDsgnt
+		self._AcctDsgnt = None
+
+	@property
+	def IncmPref(self):
+		return self._IncmPref
+
+	@IncmPref.setter
+	def IncmPref(self, value):
+		self._IncmPref = value if type(value) != auto else self.make_default("IncmPref")
+
+	@IncmPref.deleter
+	def IncmPref(self):
+		del self._IncmPref
+		self._IncmPref = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IncmPref', type=IncomePreference2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BnfcryCertfctnCmpltn', type=BeneficiaryCertificationCompletion1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OwnrId', type=PartyIdentification139, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctDsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DmtrlsdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubAcctDtls', type=SubAccount5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmPtiesDtls', type=FundSettlementParameters15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmyInf', type=Intermediary43, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat28Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OwnrId', type=PartyIdentification139, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DmtrlsdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPtiesDtls', type=FundSettlementParameters15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BnfcryCertfctnCmpltn', type=BeneficiaryCertificationCompletion1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IncmPref', type=IncomePreference2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

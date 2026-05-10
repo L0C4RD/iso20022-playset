@@ -1,15 +1,28 @@
-import base_types
-import DocumentIdentification54
-import SupplementaryData1
+from . import base_types
 import PartyIdentification144
-import SecuritiesAccount19
 import BlockChainAddressWallet3
+import DocumentIdentification54
 import ProcessingStatus89Choice
+import SupplementaryData1
 import StatusOrStatement13Choice
+import SecuritiesAccount19
 
 class SecuritiesStatusOrStatementQueryStatusAdviceV07(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_StsOrStmtReqd", "_SfkpgAcct", "_AcctOwnr", "_PrcgSts", "_SplmtryData", "_QryDtls"]
+	__slots__ = ["_QryDtls", "_BlckChainAdrOrWllt", "_StsOrStmtReqd", "_AcctOwnr", "_PrcgSts", "_SfkpgAcct", "_SplmtryData"]
+	@property
+	def QryDtls(self):
+		return self._QryDtls
+
+	@QryDtls.setter
+	def QryDtls(self, value):
+		self._QryDtls = value if type(value) != auto else self.make_default("QryDtls")
+
+	@QryDtls.deleter
+	def QryDtls(self):
+		del self._QryDtls
+		self._QryDtls = None
+
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -35,19 +48,6 @@ class SecuritiesStatusOrStatementQueryStatusAdviceV07(base_types._BaseFieldType)
 	def StsOrStmtReqd(self):
 		del self._StsOrStmtReqd
 		self._StsOrStmtReqd = None
-
-	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
 
 	@property
 	def AcctOwnr(self):
@@ -76,6 +76,19 @@ class SecuritiesStatusOrStatementQueryStatusAdviceV07(base_types._BaseFieldType)
 		self._PrcgSts = None
 
 	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
+	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -88,26 +101,13 @@ class SecuritiesStatusOrStatementQueryStatusAdviceV07(base_types._BaseFieldType)
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def QryDtls(self):
-		return self._QryDtls
-
-	@QryDtls.setter
-	def QryDtls(self, value):
-		self._QryDtls = value if type(value) != auto else self.make_default("QryDtls")
-
-	@QryDtls.deleter
-	def QryDtls(self):
-		del self._QryDtls
-		self._QryDtls = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='QryDtls', type=DocumentIdentification54, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsOrStmtReqd', type=StatusOrStatement13Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus89Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='QryDtls', type=DocumentIdentification54, min=1, max=1, mutex_group=None, array=False),
 	))
 

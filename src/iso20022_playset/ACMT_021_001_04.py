@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountClosingAdditionalInformationRequestV04
 
 class ACMT_021_001_04():

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ForeignExchangeTradeConfirmationStatusAdviceV02
 
 class FXTR_037_001_02():

@@ -1,40 +1,27 @@
-import base_types
-import Max35Text
+from . import base_types
 import DebtInstrument2
-import DerivativeInstrument5
-import LEIIdentifier
 import RecordTechnicalData4
 import SecurityInstrumentDescription9
 import TradingVenueAttributes1
+import DerivativeInstrument5
+import Max35Text
+import LEIIdentifier
 
 class SecuritiesReferenceDataReport6(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgVnRltdAttrbts", "_Issr", "_TechAttrbts", "_TechRcrdId", "_DebtInstrmAttrbts", "_DerivInstrmAttrbts", "_FinInstrmGnlAttrbts"]
+	__slots__ = ["_FinInstrmGnlAttrbts", "_TechAttrbts", "_TechRcrdId", "_DebtInstrmAttrbts", "_DerivInstrmAttrbts", "_TradgVnRltdAttrbts", "_Issr"]
 	@property
-	def TradgVnRltdAttrbts(self):
-		return self._TradgVnRltdAttrbts
+	def FinInstrmGnlAttrbts(self):
+		return self._FinInstrmGnlAttrbts
 
-	@TradgVnRltdAttrbts.setter
-	def TradgVnRltdAttrbts(self, value):
-		self._TradgVnRltdAttrbts = value if type(value) != auto else self.make_default("TradgVnRltdAttrbts")
+	@FinInstrmGnlAttrbts.setter
+	def FinInstrmGnlAttrbts(self, value):
+		self._FinInstrmGnlAttrbts = value if type(value) != auto else self.make_default("FinInstrmGnlAttrbts")
 
-	@TradgVnRltdAttrbts.deleter
-	def TradgVnRltdAttrbts(self):
-		del self._TradgVnRltdAttrbts
-		self._TradgVnRltdAttrbts = None
-
-	@property
-	def Issr(self):
-		return self._Issr
-
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
-
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@FinInstrmGnlAttrbts.deleter
+	def FinInstrmGnlAttrbts(self):
+		del self._FinInstrmGnlAttrbts
+		self._FinInstrmGnlAttrbts = None
 
 	@property
 	def TechAttrbts(self):
@@ -89,25 +76,38 @@ class SecuritiesReferenceDataReport6(base_types._BaseFieldType):
 		self._DerivInstrmAttrbts = None
 
 	@property
-	def FinInstrmGnlAttrbts(self):
-		return self._FinInstrmGnlAttrbts
+	def TradgVnRltdAttrbts(self):
+		return self._TradgVnRltdAttrbts
 
-	@FinInstrmGnlAttrbts.setter
-	def FinInstrmGnlAttrbts(self, value):
-		self._FinInstrmGnlAttrbts = value if type(value) != auto else self.make_default("FinInstrmGnlAttrbts")
+	@TradgVnRltdAttrbts.setter
+	def TradgVnRltdAttrbts(self, value):
+		self._TradgVnRltdAttrbts = value if type(value) != auto else self.make_default("TradgVnRltdAttrbts")
 
-	@FinInstrmGnlAttrbts.deleter
-	def FinInstrmGnlAttrbts(self):
-		del self._FinInstrmGnlAttrbts
-		self._FinInstrmGnlAttrbts = None
+	@TradgVnRltdAttrbts.deleter
+	def TradgVnRltdAttrbts(self):
+		del self._TradgVnRltdAttrbts
+		self._TradgVnRltdAttrbts = None
+
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradgVnRltdAttrbts', type=TradingVenueAttributes1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Issr', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmGnlAttrbts', type=SecurityInstrumentDescription9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechAttrbts', type=RecordTechnicalData4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DebtInstrmAttrbts', type=DebtInstrument2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DerivInstrmAttrbts', type=DerivativeInstrument5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmGnlAttrbts', type=SecurityInstrumentDescription9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgVnRltdAttrbts', type=TradingVenueAttributes1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Issr', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 	))
 

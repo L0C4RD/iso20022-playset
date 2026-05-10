@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
+import UseCases1Code
 import Max35Text
 import MessageIdentification1
-import UseCases1Code
 import Max70Text
 
 class References5(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_PrcId", "_AckdMsgId", "_ReqTp", "_AttchdDocNm", "_MsgId"]
+	__slots__ = ["_Sts", "_PrcId", "_AckdMsgId", "_MsgId", "_AttchdDocNm", "_ReqTp"]
 	@property
 	def Sts(self):
 		return self._Sts
@@ -47,17 +47,17 @@ class References5(base_types._BaseFieldType):
 		self._AckdMsgId = None
 
 	@property
-	def ReqTp(self):
-		return self._ReqTp
+	def MsgId(self):
+		return self._MsgId
 
-	@ReqTp.setter
-	def ReqTp(self, value):
-		self._ReqTp = value if type(value) != auto else self.make_default("ReqTp")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@ReqTp.deleter
-	def ReqTp(self):
-		del self._ReqTp
-		self._ReqTp = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def AttchdDocNm(self):
@@ -73,24 +73,24 @@ class References5(base_types._BaseFieldType):
 		self._AttchdDocNm = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def ReqTp(self):
+		return self._ReqTp
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@ReqTp.setter
+	def ReqTp(self, value):
+		self._ReqTp = value if type(value) != auto else self.make_default("ReqTp")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@ReqTp.deleter
+	def ReqTp(self):
+		del self._ReqTp
+		self._ReqTp = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sts', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AckdMsgId', type=MessageIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqTp', type=UseCases1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AttchdDocNm', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AttchdDocNm', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ReqTp', type=UseCases1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

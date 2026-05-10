@@ -1,23 +1,10 @@
-import base_types
-import Max35Text
+from . import base_types
 import ProductCharacteristics1Code
+import Max35Text
 
 class ProductCharacteristics1(base_types._BaseFieldType):
 
-	__slots__ = ["_Chrtcs", "_Tp"]
-	@property
-	def Chrtcs(self):
-		return self._Chrtcs
-
-	@Chrtcs.setter
-	def Chrtcs(self, value):
-		self._Chrtcs = value if type(value) != auto else self.make_default("Chrtcs")
-
-	@Chrtcs.deleter
-	def Chrtcs(self):
-		del self._Chrtcs
-		self._Chrtcs = None
-
+	__slots__ = ["_Tp", "_Chrtcs"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -31,8 +18,21 @@ class ProductCharacteristics1(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Chrtcs(self):
+		return self._Chrtcs
+
+	@Chrtcs.setter
+	def Chrtcs(self, value):
+		self._Chrtcs = value if type(value) != auto else self.make_default("Chrtcs")
+
+	@Chrtcs.deleter
+	def Chrtcs(self):
+		del self._Chrtcs
+		self._Chrtcs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Chrtcs', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ProductCharacteristics1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Chrtcs', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

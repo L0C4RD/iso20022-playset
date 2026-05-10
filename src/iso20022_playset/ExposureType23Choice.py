@@ -1,6 +1,6 @@
-import base_types
-import ExposureType14Code
+from . import base_types
 import GenericIdentification30
+import ExposureType14Code
 
 class ExposureType23Choice(base_types._BaseFieldType):
 

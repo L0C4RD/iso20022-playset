@@ -1,25 +1,12 @@
-import base_types
-import LongFraction19DecimalNumber
+from . import base_types
 import UnitOfMeasure8Choice
 import Max3Number
+import LongFraction19DecimalNumber
 import Frequency19Code
 
 class QuantityTerm1(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_TmUnit", "_UnitOfMeasr", "_Qty"]
-	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
-
+	__slots__ = ["_TmUnit", "_UnitOfMeasr", "_Qty", "_Val"]
 	@property
 	def TmUnit(self):
 		return self._TmUnit
@@ -59,10 +46,23 @@ class QuantityTerm1(base_types._BaseFieldType):
 		del self._Qty
 		self._Qty = None
 
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Val', type=Max3Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmUnit', type=Frequency19Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=Max3Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

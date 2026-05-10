@@ -1,15 +1,28 @@
-import base_types
+from . import base_types
+import ISODate
+import Status25Choice
+import Account23
+import BlockedStatusReason2Choice
 import AccountStatus2
 import Max35Text
 import AcceptedStatusReason1Choice
-import Account23
-import Status25Choice
-import BlockedStatusReason2Choice
-import ISODate
 
 class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 
-	__slots__ = ["_ExstgAcctId", "_FATCARptgDt", "_AcctId", "_Sts", "_AcctApplId", "_AcctSts", "_CRSRptgDt", "_StsRsn", "_BlckdSts"]
+	__slots__ = ["_StsRsn", "_ExstgAcctId", "_FATCARptgDt", "_Sts", "_AcctApplId", "_AcctId", "_CRSRptgDt", "_BlckdSts", "_AcctSts"]
+	@property
+	def StsRsn(self):
+		return self._StsRsn
+
+	@StsRsn.setter
+	def StsRsn(self, value):
+		self._StsRsn = value if type(value) != auto else self.make_default("StsRsn")
+
+	@StsRsn.deleter
+	def StsRsn(self):
+		del self._StsRsn
+		self._StsRsn = None
+
 	@property
 	def ExstgAcctId(self):
 		return self._ExstgAcctId
@@ -35,19 +48,6 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 	def FATCARptgDt(self):
 		del self._FATCARptgDt
 		self._FATCARptgDt = None
-
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
 
 	@property
 	def Sts(self):
@@ -76,17 +76,17 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 		self._AcctApplId = None
 
 	@property
-	def AcctSts(self):
-		return self._AcctSts
+	def AcctId(self):
+		return self._AcctId
 
-	@AcctSts.setter
-	def AcctSts(self, value):
-		self._AcctSts = value if type(value) != auto else self.make_default("AcctSts")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
 
-	@AcctSts.deleter
-	def AcctSts(self):
-		del self._AcctSts
-		self._AcctSts = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def CRSRptgDt(self):
@@ -102,19 +102,6 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 		self._CRSRptgDt = None
 
 	@property
-	def StsRsn(self):
-		return self._StsRsn
-
-	@StsRsn.setter
-	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != auto else self.make_default("StsRsn")
-
-	@StsRsn.deleter
-	def StsRsn(self):
-		del self._StsRsn
-		self._StsRsn = None
-
-	@property
 	def BlckdSts(self):
 		return self._BlckdSts
 
@@ -127,15 +114,28 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 		del self._BlckdSts
 		self._BlckdSts = None
 
+	@property
+	def AcctSts(self):
+		return self._AcctSts
+
+	@AcctSts.setter
+	def AcctSts(self, value):
+		self._AcctSts = value if type(value) != auto else self.make_default("AcctSts")
+
+	@AcctSts.deleter
+	def AcctSts(self):
+		del self._AcctSts
+		self._AcctSts = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='StsRsn', type=AcceptedStatusReason1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ExstgAcctId', type=Account23, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FATCARptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=Status25Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctApplId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSts', type=AccountStatus2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CRSRptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsRsn', type=AcceptedStatusReason1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BlckdSts', type=BlockedStatusReason2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSts', type=AccountStatus2, min=0, max=1, mutex_group=None, array=False),
 	))
 

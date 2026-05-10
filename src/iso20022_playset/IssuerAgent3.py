@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AgentRole1Code
 import PartyIdentification129Choice
 

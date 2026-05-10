@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FailingReason17Choice
 import RestrictedFINXMax210Text
 

@@ -1,12 +1,38 @@
-import base_types
-import Max35Text
-import ISINOct2015Identifier
+from . import base_types
 import ActiveOrHistoricCurrencyCode
+import ISINOct2015Identifier
+import Max35Text
 import ImpliedCurrencyAndAmount
 
 class VolumeCapReport2(base_types._BaseFieldType):
 
-	__slots__ = ["_TechRcrdId", "_Ccy", "_Id", "_TtlNgtdTxsTradgVol", "_TtlTradgVol", "_TtlRefPricTradgVol"]
+	__slots__ = ["_TtlNgtdTxsTradgVol", "_TtlRefPricTradgVol", "_TechRcrdId", "_TtlTradgVol", "_Ccy", "_Id"]
+	@property
+	def TtlNgtdTxsTradgVol(self):
+		return self._TtlNgtdTxsTradgVol
+
+	@TtlNgtdTxsTradgVol.setter
+	def TtlNgtdTxsTradgVol(self, value):
+		self._TtlNgtdTxsTradgVol = value if type(value) != auto else self.make_default("TtlNgtdTxsTradgVol")
+
+	@TtlNgtdTxsTradgVol.deleter
+	def TtlNgtdTxsTradgVol(self):
+		del self._TtlNgtdTxsTradgVol
+		self._TtlNgtdTxsTradgVol = None
+
+	@property
+	def TtlRefPricTradgVol(self):
+		return self._TtlRefPricTradgVol
+
+	@TtlRefPricTradgVol.setter
+	def TtlRefPricTradgVol(self, value):
+		self._TtlRefPricTradgVol = value if type(value) != auto else self.make_default("TtlRefPricTradgVol")
+
+	@TtlRefPricTradgVol.deleter
+	def TtlRefPricTradgVol(self):
+		del self._TtlRefPricTradgVol
+		self._TtlRefPricTradgVol = None
+
 	@property
 	def TechRcrdId(self):
 		return self._TechRcrdId
@@ -19,6 +45,19 @@ class VolumeCapReport2(base_types._BaseFieldType):
 	def TechRcrdId(self):
 		del self._TechRcrdId
 		self._TechRcrdId = None
+
+	@property
+	def TtlTradgVol(self):
+		return self._TtlTradgVol
+
+	@TtlTradgVol.setter
+	def TtlTradgVol(self, value):
+		self._TtlTradgVol = value if type(value) != auto else self.make_default("TtlTradgVol")
+
+	@TtlTradgVol.deleter
+	def TtlTradgVol(self):
+		del self._TtlTradgVol
+		self._TtlTradgVol = None
 
 	@property
 	def Ccy(self):
@@ -46,51 +85,12 @@ class VolumeCapReport2(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
-	@property
-	def TtlNgtdTxsTradgVol(self):
-		return self._TtlNgtdTxsTradgVol
-
-	@TtlNgtdTxsTradgVol.setter
-	def TtlNgtdTxsTradgVol(self, value):
-		self._TtlNgtdTxsTradgVol = value if type(value) != auto else self.make_default("TtlNgtdTxsTradgVol")
-
-	@TtlNgtdTxsTradgVol.deleter
-	def TtlNgtdTxsTradgVol(self):
-		del self._TtlNgtdTxsTradgVol
-		self._TtlNgtdTxsTradgVol = None
-
-	@property
-	def TtlTradgVol(self):
-		return self._TtlTradgVol
-
-	@TtlTradgVol.setter
-	def TtlTradgVol(self, value):
-		self._TtlTradgVol = value if type(value) != auto else self.make_default("TtlTradgVol")
-
-	@TtlTradgVol.deleter
-	def TtlTradgVol(self):
-		del self._TtlTradgVol
-		self._TtlTradgVol = None
-
-	@property
-	def TtlRefPricTradgVol(self):
-		return self._TtlRefPricTradgVol
-
-	@TtlRefPricTradgVol.setter
-	def TtlRefPricTradgVol(self, value):
-		self._TtlRefPricTradgVol = value if type(value) != auto else self.make_default("TtlRefPricTradgVol")
-
-	@TtlRefPricTradgVol.deleter
-	def TtlRefPricTradgVol(self):
-		del self._TtlRefPricTradgVol
-		self._TtlRefPricTradgVol = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TtlNgtdTxsTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlRefPricTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNgtdTxsTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlRefPricTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

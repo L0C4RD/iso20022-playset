@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AssetClassSubProductType19Code
 
 class ForeignExchangeDerivative2(base_types._BaseFieldType):

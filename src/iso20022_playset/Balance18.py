@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BalanceQuantity14Choice
 import ShortLong1Code
 

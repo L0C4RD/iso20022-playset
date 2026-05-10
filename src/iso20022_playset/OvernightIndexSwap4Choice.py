@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import OvernightIndexSwapTransaction4
 import ReportPeriodActivity3Code
 

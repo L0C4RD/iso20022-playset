@@ -1,12 +1,25 @@
-import base_types
-import Max4Text
-import TrueFalseIndicator
+from . import base_types
 import AttestationValue1Code
 import Exemption2
+import Max4Text
+import TrueFalseIndicator
 
 class StrongCustomerAuthentication2(base_types._BaseFieldType):
 
-	__slots__ = ["_Wvr", "_Xmptn", "_RsnAuthntcnNotPrfrmd", "_SbjtToSCA", "_DlgtdAuthrty"]
+	__slots__ = ["_RsnAuthntcnNotPrfrmd", "_Wvr", "_Xmptn", "_DlgtdAuthrty", "_SbjtToSCA"]
+	@property
+	def RsnAuthntcnNotPrfrmd(self):
+		return self._RsnAuthntcnNotPrfrmd
+
+	@RsnAuthntcnNotPrfrmd.setter
+	def RsnAuthntcnNotPrfrmd(self, value):
+		self._RsnAuthntcnNotPrfrmd = value if type(value) != auto else self.make_default("RsnAuthntcnNotPrfrmd")
+
+	@RsnAuthntcnNotPrfrmd.deleter
+	def RsnAuthntcnNotPrfrmd(self):
+		del self._RsnAuthntcnNotPrfrmd
+		self._RsnAuthntcnNotPrfrmd = None
+
 	@property
 	def Wvr(self):
 		return self._Wvr
@@ -34,17 +47,17 @@ class StrongCustomerAuthentication2(base_types._BaseFieldType):
 		self._Xmptn = None
 
 	@property
-	def RsnAuthntcnNotPrfrmd(self):
-		return self._RsnAuthntcnNotPrfrmd
+	def DlgtdAuthrty(self):
+		return self._DlgtdAuthrty
 
-	@RsnAuthntcnNotPrfrmd.setter
-	def RsnAuthntcnNotPrfrmd(self, value):
-		self._RsnAuthntcnNotPrfrmd = value if type(value) != auto else self.make_default("RsnAuthntcnNotPrfrmd")
+	@DlgtdAuthrty.setter
+	def DlgtdAuthrty(self, value):
+		self._DlgtdAuthrty = value if type(value) != auto else self.make_default("DlgtdAuthrty")
 
-	@RsnAuthntcnNotPrfrmd.deleter
-	def RsnAuthntcnNotPrfrmd(self):
-		del self._RsnAuthntcnNotPrfrmd
-		self._RsnAuthntcnNotPrfrmd = None
+	@DlgtdAuthrty.deleter
+	def DlgtdAuthrty(self):
+		del self._DlgtdAuthrty
+		self._DlgtdAuthrty = None
 
 	@property
 	def SbjtToSCA(self):
@@ -59,24 +72,11 @@ class StrongCustomerAuthentication2(base_types._BaseFieldType):
 		del self._SbjtToSCA
 		self._SbjtToSCA = None
 
-	@property
-	def DlgtdAuthrty(self):
-		return self._DlgtdAuthrty
-
-	@DlgtdAuthrty.setter
-	def DlgtdAuthrty(self, value):
-		self._DlgtdAuthrty = value if type(value) != auto else self.make_default("DlgtdAuthrty")
-
-	@DlgtdAuthrty.deleter
-	def DlgtdAuthrty(self):
-		del self._DlgtdAuthrty
-		self._DlgtdAuthrty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RsnAuthntcnNotPrfrmd', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Wvr', type=AttestationValue1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xmptn', type=Exemption2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RsnAuthntcnNotPrfrmd', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SbjtToSCA', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlgtdAuthrty', type=AttestationValue1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SbjtToSCA', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

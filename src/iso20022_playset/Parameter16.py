@@ -1,25 +1,12 @@
-import base_types
-import Max140Text
-import Algorithm26Code
+from . import base_types
 import AlgorithmIdentification34
 import Number
+import Algorithm26Code
+import Max140Text
 
 class Parameter16(base_types._BaseFieldType):
 
-	__slots__ = ["_OIDCrvNm", "_SaltLngth", "_DgstAlgo", "_MskGnrtrAlgo", "_TrlrFld"]
-	@property
-	def OIDCrvNm(self):
-		return self._OIDCrvNm
-
-	@OIDCrvNm.setter
-	def OIDCrvNm(self, value):
-		self._OIDCrvNm = value if type(value) != auto else self.make_default("OIDCrvNm")
-
-	@OIDCrvNm.deleter
-	def OIDCrvNm(self):
-		del self._OIDCrvNm
-		self._OIDCrvNm = None
-
+	__slots__ = ["_SaltLngth", "_DgstAlgo", "_OIDCrvNm", "_MskGnrtrAlgo", "_TrlrFld"]
 	@property
 	def SaltLngth(self):
 		return self._SaltLngth
@@ -45,6 +32,19 @@ class Parameter16(base_types._BaseFieldType):
 	def DgstAlgo(self):
 		del self._DgstAlgo
 		self._DgstAlgo = None
+
+	@property
+	def OIDCrvNm(self):
+		return self._OIDCrvNm
+
+	@OIDCrvNm.setter
+	def OIDCrvNm(self, value):
+		self._OIDCrvNm = value if type(value) != auto else self.make_default("OIDCrvNm")
+
+	@OIDCrvNm.deleter
+	def OIDCrvNm(self):
+		del self._OIDCrvNm
+		self._OIDCrvNm = None
 
 	@property
 	def MskGnrtrAlgo(self):
@@ -73,9 +73,9 @@ class Parameter16(base_types._BaseFieldType):
 		self._TrlrFld = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OIDCrvNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaltLngth', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgstAlgo', type=Algorithm26Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OIDCrvNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MskGnrtrAlgo', type=AlgorithmIdentification34, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrlrFld', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))

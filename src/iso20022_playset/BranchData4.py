@@ -1,22 +1,22 @@
-import base_types
-import PostalAddress1
+from . import base_types
 import Max35Text
+import PostalAddress1
 
 class BranchData4(base_types._BaseFieldType):
 
-	__slots__ = ["_PstlAdr", "_Id", "_Nm"]
+	__slots__ = ["_Nm", "_Id", "_PstlAdr"]
 	@property
-	def PstlAdr(self):
-		return self._PstlAdr
+	def Nm(self):
+		return self._Nm
 
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def Id(self):
@@ -32,21 +32,21 @@ class BranchData4(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Nm(self):
-		return self._Nm
+	def PstlAdr(self):
+		return self._PstlAdr
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
 	))
 

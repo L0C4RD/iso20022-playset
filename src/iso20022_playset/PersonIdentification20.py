@@ -1,24 +1,11 @@
-import base_types
-import GenericPersonIdentification2
+from . import base_types
 import Max256Text
+import GenericPersonIdentification2
 import DateAndPlaceOfBirth1
 
 class PersonIdentification20(base_types._BaseFieldType):
 
-	__slots__ = ["_DtAndPlcOfBirth", "_Othr", "_EmailAdr"]
-	@property
-	def DtAndPlcOfBirth(self):
-		return self._DtAndPlcOfBirth
-
-	@DtAndPlcOfBirth.setter
-	def DtAndPlcOfBirth(self, value):
-		self._DtAndPlcOfBirth = value if type(value) != auto else self.make_default("DtAndPlcOfBirth")
-
-	@DtAndPlcOfBirth.deleter
-	def DtAndPlcOfBirth(self):
-		del self._DtAndPlcOfBirth
-		self._DtAndPlcOfBirth = None
-
+	__slots__ = ["_Othr", "_EmailAdr", "_DtAndPlcOfBirth"]
 	@property
 	def Othr(self):
 		return self._Othr
@@ -45,9 +32,22 @@ class PersonIdentification20(base_types._BaseFieldType):
 		del self._EmailAdr
 		self._EmailAdr = None
 
+	@property
+	def DtAndPlcOfBirth(self):
+		return self._DtAndPlcOfBirth
+
+	@DtAndPlcOfBirth.setter
+	def DtAndPlcOfBirth(self, value):
+		self._DtAndPlcOfBirth = value if type(value) != auto else self.make_default("DtAndPlcOfBirth")
+
+	@DtAndPlcOfBirth.deleter
+	def DtAndPlcOfBirth(self):
+		del self._DtAndPlcOfBirth
+		self._DtAndPlcOfBirth = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtAndPlcOfBirth', type=DateAndPlaceOfBirth1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericPersonIdentification2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtAndPlcOfBirth', type=DateAndPlaceOfBirth1, min=0, max=1, mutex_group=None, array=False),
 	))
 

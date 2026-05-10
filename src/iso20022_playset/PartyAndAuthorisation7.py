@@ -1,23 +1,23 @@
-import base_types
-import Max15PlusSignedNumericText
-import Authorisation2
+from . import base_types
 import PartyOrGroup3Choice
+import Authorisation2
+import Max15PlusSignedNumericText
 
 class PartyAndAuthorisation7(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyOrGrp", "_SgntrOrdr", "_Authstn"]
+	__slots__ = ["_Authstn", "_SgntrOrdr", "_PtyOrGrp"]
 	@property
-	def PtyOrGrp(self):
-		return self._PtyOrGrp
+	def Authstn(self):
+		return self._Authstn
 
-	@PtyOrGrp.setter
-	def PtyOrGrp(self, value):
-		self._PtyOrGrp = value if type(value) != auto else self.make_default("PtyOrGrp")
+	@Authstn.setter
+	def Authstn(self, value):
+		self._Authstn = value if type(value) != auto else self.make_default("Authstn")
 
-	@PtyOrGrp.deleter
-	def PtyOrGrp(self):
-		del self._PtyOrGrp
-		self._PtyOrGrp = None
+	@Authstn.deleter
+	def Authstn(self):
+		del self._Authstn
+		self._Authstn = None
 
 	@property
 	def SgntrOrdr(self):
@@ -33,21 +33,21 @@ class PartyAndAuthorisation7(base_types._BaseFieldType):
 		self._SgntrOrdr = None
 
 	@property
-	def Authstn(self):
-		return self._Authstn
+	def PtyOrGrp(self):
+		return self._PtyOrGrp
 
-	@Authstn.setter
-	def Authstn(self, value):
-		self._Authstn = value if type(value) != auto else self.make_default("Authstn")
+	@PtyOrGrp.setter
+	def PtyOrGrp(self, value):
+		self._PtyOrGrp = value if type(value) != auto else self.make_default("PtyOrGrp")
 
-	@Authstn.deleter
-	def Authstn(self):
-		del self._Authstn
-		self._Authstn = None
+	@PtyOrGrp.deleter
+	def PtyOrGrp(self):
+		del self._PtyOrGrp
+		self._PtyOrGrp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PtyOrGrp', type=PartyOrGroup3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgntrOrdr', type=Max15PlusSignedNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Authstn', type=Authorisation2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgntrOrdr', type=Max15PlusSignedNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyOrGrp', type=PartyOrGroup3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
+import BillingMethod2
 import BillingMethod1
 import BillingMethod3
-import BillingMethod2
 
 class BillingMethod1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MtdD", "_MtdA", "_MtdB"]
+	__slots__ = ["_MtdD", "_MtdB", "_MtdA"]
 	@property
 	def MtdD(self):
 		return self._MtdD
@@ -20,19 +20,6 @@ class BillingMethod1Choice(base_types._BaseFieldType):
 		self._MtdD = None
 
 	@property
-	def MtdA(self):
-		return self._MtdA
-
-	@MtdA.setter
-	def MtdA(self, value):
-		self._MtdA = value if type(value) != auto else self.make_default("MtdA")
-
-	@MtdA.deleter
-	def MtdA(self):
-		del self._MtdA
-		self._MtdA = None
-
-	@property
 	def MtdB(self):
 		return self._MtdB
 
@@ -45,9 +32,22 @@ class BillingMethod1Choice(base_types._BaseFieldType):
 		del self._MtdB
 		self._MtdB = None
 
+	@property
+	def MtdA(self):
+		return self._MtdA
+
+	@MtdA.setter
+	def MtdA(self, value):
+		self._MtdA = value if type(value) != auto else self.make_default("MtdA")
+
+	@MtdA.deleter
+	def MtdA(self):
+		del self._MtdA
+		self._MtdA = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MtdD', type=BillingMethod3, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MtdA', type=BillingMethod1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MtdB', type=BillingMethod2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MtdA', type=BillingMethod1, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import UUIDv4Identifier
 
 class RelatedTransactionData1(base_types._BaseFieldType):

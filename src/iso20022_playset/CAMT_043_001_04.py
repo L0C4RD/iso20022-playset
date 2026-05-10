@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FundDetailedConfirmedCashForecastReportV04
 
 class CAMT_043_001_04():

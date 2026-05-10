@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SectorAndLocation1
 import NameAndLocation1
 import LEIIdentifier

@@ -1,13 +1,13 @@
-import base_types
-import RestrictedFINMax15Text
-import FinancialInstrumentQuantity31Choice
-import ProtectInstructionStatus4Code
+from . import base_types
 import ISODate
+import RestrictedFINMax15Text
 import ProtectTransactionType3Code
+import ProtectInstructionStatus4Code
+import FinancialInstrumentQuantity31Choice
 
 class ProtectInstruction8(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctDt", "_TxTp", "_UcvrdPrtctQty", "_TxId", "_PrtctTxSts"]
+	__slots__ = ["_PrtctDt", "_TxTp", "_TxId", "_PrtctTxSts", "_UcvrdPrtctQty"]
 	@property
 	def PrtctDt(self):
 		return self._PrtctDt
@@ -35,19 +35,6 @@ class ProtectInstruction8(base_types._BaseFieldType):
 		self._TxTp = None
 
 	@property
-	def UcvrdPrtctQty(self):
-		return self._UcvrdPrtctQty
-
-	@UcvrdPrtctQty.setter
-	def UcvrdPrtctQty(self, value):
-		self._UcvrdPrtctQty = value if type(value) != auto else self.make_default("UcvrdPrtctQty")
-
-	@UcvrdPrtctQty.deleter
-	def UcvrdPrtctQty(self):
-		del self._UcvrdPrtctQty
-		self._UcvrdPrtctQty = None
-
-	@property
 	def TxId(self):
 		return self._TxId
 
@@ -73,11 +60,24 @@ class ProtectInstruction8(base_types._BaseFieldType):
 		del self._PrtctTxSts
 		self._PrtctTxSts = None
 
+	@property
+	def UcvrdPrtctQty(self):
+		return self._UcvrdPrtctQty
+
+	@UcvrdPrtctQty.setter
+	def UcvrdPrtctQty(self, value):
+		self._UcvrdPrtctQty = value if type(value) != auto else self.make_default("UcvrdPrtctQty")
+
+	@UcvrdPrtctQty.deleter
+	def UcvrdPrtctQty(self):
+		del self._UcvrdPrtctQty
+		self._UcvrdPrtctQty = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=ProtectTransactionType3Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UcvrdPrtctQty', type=FinancialInstrumentQuantity31Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=RestrictedFINMax15Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctTxSts', type=ProtectInstructionStatus4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UcvrdPrtctQty', type=FinancialInstrumentQuantity31Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

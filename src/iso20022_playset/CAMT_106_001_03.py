@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ChargesPaymentRequestV03
 
 class CAMT_106_001_03():

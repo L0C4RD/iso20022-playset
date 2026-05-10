@@ -1,6 +1,6 @@
-import base_types
-import MailType1Code
+from . import base_types
 import GenericIdentification47
+import MailType1Code
 
 class MailType1Choice(base_types._BaseFieldType):
 

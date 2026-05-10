@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FIToFIPaymentCancellationRequestV11
 
 class CAMT_056_001_11():

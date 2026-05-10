@@ -1,26 +1,26 @@
-import base_types
+from . import base_types
+import CashAccountType2Choice
 import PartyIdentification272
+import CashBalance14
+import AccountIdentificationSearchCriteria2Choice
 import ActiveOrHistoricCurrencyCode
 import BranchAndFinancialInstitutionIdentification8
-import CashBalance14
-import CashAccountType2Choice
-import AccountIdentificationSearchCriteria2Choice
 
 class CashAccountSearchCriteria8(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_Bal", "_Tp", "_AcctSvcr", "_AcctId", "_AcctOwnr"]
+	__slots__ = ["_AcctId", "_Bal", "_Tp", "_AcctSvcr", "_Ccy", "_AcctOwnr"]
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def AcctId(self):
+		return self._AcctId
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def Bal(self):
@@ -62,17 +62,17 @@ class CashAccountSearchCriteria8(base_types._BaseFieldType):
 		self._AcctSvcr = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
+	def Ccy(self):
+		return self._Ccy
 
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
 
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def AcctOwnr(self):
@@ -88,11 +88,11 @@ class CashAccountSearchCriteria8(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctId', type=AccountIdentificationSearchCriteria2Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Bal', type=CashBalance14, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tp', type=CashAccountType2Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=AccountIdentificationSearchCriteria2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 	))
 

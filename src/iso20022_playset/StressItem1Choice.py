@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Strategy1
 import RiskFactor1
 import StressedProduct1

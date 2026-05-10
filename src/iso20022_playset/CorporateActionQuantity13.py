@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialInstrumentQuantity43Choice
 
 class CorporateActionQuantity13(base_types._BaseFieldType):

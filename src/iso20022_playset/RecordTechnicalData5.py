@@ -1,6 +1,6 @@
-import base_types
-import ISODateTime
+from . import base_types
 import ExternalAuthorityExchangeReason1Code
+import ISODateTime
 
 class RecordTechnicalData5(base_types._BaseFieldType):
 

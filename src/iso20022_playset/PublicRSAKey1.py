@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Max5000Binary
 
 class PublicRSAKey1(base_types._BaseFieldType):

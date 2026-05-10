@@ -1,6 +1,6 @@
-import base_types
-import AmountOrRate4Choice
+from . import base_types
 import PlusOrMinusIndicator
+import AmountOrRate4Choice
 import FXAmountType1Choice
 
 class FXCommissionOrFee1(base_types._BaseFieldType):

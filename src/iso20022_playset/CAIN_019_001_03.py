@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import VerificationResponseV03
 
 class CAIN_019_001_03():

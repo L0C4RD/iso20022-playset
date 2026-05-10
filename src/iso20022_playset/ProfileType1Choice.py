@@ -1,6 +1,6 @@
-import base_types
-import GenericIdentification47
+from . import base_types
 import ProfileType1Code
+import GenericIdentification47
 
 class ProfileType1Choice(base_types._BaseFieldType):
 

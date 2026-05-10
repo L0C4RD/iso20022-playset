@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ActiveCurrencyAndAmount
 
 class MarginResult1Choice(base_types._BaseFieldType):

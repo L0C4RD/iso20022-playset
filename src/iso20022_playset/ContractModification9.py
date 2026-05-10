@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ModificationLevel1Code
 import TransactionOperationType10Code
 

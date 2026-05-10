@@ -1,6 +1,6 @@
-import base_types
-import SettlementSystemMethod1Code
+from . import base_types
 import GenericIdentification30
+import SettlementSystemMethod1Code
 
 class SettlementSystemMethod4Choice(base_types._BaseFieldType):
 

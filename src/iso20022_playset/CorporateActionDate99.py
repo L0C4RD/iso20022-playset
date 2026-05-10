@@ -1,22 +1,22 @@
-import base_types
+from . import base_types
 import ISODate
 import DateAndDateTime2Choice
 
 class CorporateActionDate99(base_types._BaseFieldType):
 
-	__slots__ = ["_EarlstPmtDt", "_ValDt", "_PmtDt", "_FXRateFxgDt", "_PstngDt"]
+	__slots__ = ["_FXRateFxgDt", "_ValDt", "_PstngDt", "_PmtDt", "_EarlstPmtDt"]
 	@property
-	def EarlstPmtDt(self):
-		return self._EarlstPmtDt
+	def FXRateFxgDt(self):
+		return self._FXRateFxgDt
 
-	@EarlstPmtDt.setter
-	def EarlstPmtDt(self, value):
-		self._EarlstPmtDt = value if type(value) != auto else self.make_default("EarlstPmtDt")
+	@FXRateFxgDt.setter
+	def FXRateFxgDt(self, value):
+		self._FXRateFxgDt = value if type(value) != auto else self.make_default("FXRateFxgDt")
 
-	@EarlstPmtDt.deleter
-	def EarlstPmtDt(self):
-		del self._EarlstPmtDt
-		self._EarlstPmtDt = None
+	@FXRateFxgDt.deleter
+	def FXRateFxgDt(self):
+		del self._FXRateFxgDt
+		self._FXRateFxgDt = None
 
 	@property
 	def ValDt(self):
@@ -32,6 +32,19 @@ class CorporateActionDate99(base_types._BaseFieldType):
 		self._ValDt = None
 
 	@property
+	def PstngDt(self):
+		return self._PstngDt
+
+	@PstngDt.setter
+	def PstngDt(self, value):
+		self._PstngDt = value if type(value) != auto else self.make_default("PstngDt")
+
+	@PstngDt.deleter
+	def PstngDt(self):
+		del self._PstngDt
+		self._PstngDt = None
+
+	@property
 	def PmtDt(self):
 		return self._PmtDt
 
@@ -45,36 +58,23 @@ class CorporateActionDate99(base_types._BaseFieldType):
 		self._PmtDt = None
 
 	@property
-	def FXRateFxgDt(self):
-		return self._FXRateFxgDt
+	def EarlstPmtDt(self):
+		return self._EarlstPmtDt
 
-	@FXRateFxgDt.setter
-	def FXRateFxgDt(self, value):
-		self._FXRateFxgDt = value if type(value) != auto else self.make_default("FXRateFxgDt")
+	@EarlstPmtDt.setter
+	def EarlstPmtDt(self, value):
+		self._EarlstPmtDt = value if type(value) != auto else self.make_default("EarlstPmtDt")
 
-	@FXRateFxgDt.deleter
-	def FXRateFxgDt(self):
-		del self._FXRateFxgDt
-		self._FXRateFxgDt = None
-
-	@property
-	def PstngDt(self):
-		return self._PstngDt
-
-	@PstngDt.setter
-	def PstngDt(self, value):
-		self._PstngDt = value if type(value) != auto else self.make_default("PstngDt")
-
-	@PstngDt.deleter
-	def PstngDt(self):
-		del self._PstngDt
-		self._PstngDt = None
+	@EarlstPmtDt.deleter
+	def EarlstPmtDt(self):
+		del self._EarlstPmtDt
+		self._EarlstPmtDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EarlstPmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FXRateFxgDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlstPmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

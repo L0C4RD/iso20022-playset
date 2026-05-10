@@ -1,40 +1,14 @@
-import base_types
-import ProcessRetry3
-import ImpliedCurrencyAndAmount
-import TrueFalseIndicator
+from . import base_types
+import ExchangePolicy2Code
 import ProcessTiming6
 import Number
-import ExchangePolicy2Code
+import TrueFalseIndicator
+import ProcessRetry3
+import ImpliedCurrencyAndAmount
 
 class ExchangeConfiguration10(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgPlcy", "_XchgDclnd", "_MaxNb", "_XchgFaild", "_MaxAmt", "_ReTry", "_TmCond"]
-	@property
-	def XchgPlcy(self):
-		return self._XchgPlcy
-
-	@XchgPlcy.setter
-	def XchgPlcy(self, value):
-		self._XchgPlcy = value if type(value) != auto else self.make_default("XchgPlcy")
-
-	@XchgPlcy.deleter
-	def XchgPlcy(self):
-		del self._XchgPlcy
-		self._XchgPlcy = None
-
-	@property
-	def XchgDclnd(self):
-		return self._XchgDclnd
-
-	@XchgDclnd.setter
-	def XchgDclnd(self, value):
-		self._XchgDclnd = value if type(value) != auto else self.make_default("XchgDclnd")
-
-	@XchgDclnd.deleter
-	def XchgDclnd(self):
-		del self._XchgDclnd
-		self._XchgDclnd = None
-
+	__slots__ = ["_MaxNb", "_XchgFaild", "_XchgDclnd", "_MaxAmt", "_TmCond", "_ReTry", "_XchgPlcy"]
 	@property
 	def MaxNb(self):
 		return self._MaxNb
@@ -62,6 +36,19 @@ class ExchangeConfiguration10(base_types._BaseFieldType):
 		self._XchgFaild = None
 
 	@property
+	def XchgDclnd(self):
+		return self._XchgDclnd
+
+	@XchgDclnd.setter
+	def XchgDclnd(self, value):
+		self._XchgDclnd = value if type(value) != auto else self.make_default("XchgDclnd")
+
+	@XchgDclnd.deleter
+	def XchgDclnd(self):
+		del self._XchgDclnd
+		self._XchgDclnd = None
+
+	@property
 	def MaxAmt(self):
 		return self._MaxAmt
 
@@ -73,6 +60,19 @@ class ExchangeConfiguration10(base_types._BaseFieldType):
 	def MaxAmt(self):
 		del self._MaxAmt
 		self._MaxAmt = None
+
+	@property
+	def TmCond(self):
+		return self._TmCond
+
+	@TmCond.setter
+	def TmCond(self, value):
+		self._TmCond = value if type(value) != auto else self.make_default("TmCond")
+
+	@TmCond.deleter
+	def TmCond(self):
+		del self._TmCond
+		self._TmCond = None
 
 	@property
 	def ReTry(self):
@@ -88,25 +88,25 @@ class ExchangeConfiguration10(base_types._BaseFieldType):
 		self._ReTry = None
 
 	@property
-	def TmCond(self):
-		return self._TmCond
+	def XchgPlcy(self):
+		return self._XchgPlcy
 
-	@TmCond.setter
-	def TmCond(self, value):
-		self._TmCond = value if type(value) != auto else self.make_default("TmCond")
+	@XchgPlcy.setter
+	def XchgPlcy(self, value):
+		self._XchgPlcy = value if type(value) != auto else self.make_default("XchgPlcy")
 
-	@TmCond.deleter
-	def TmCond(self):
-		del self._TmCond
-		self._TmCond = None
+	@XchgPlcy.deleter
+	def XchgPlcy(self):
+		del self._XchgPlcy
+		self._XchgPlcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XchgPlcy', type=ExchangePolicy2Code, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='XchgDclnd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgFaild', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgDclnd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReTry', type=ProcessRetry3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmCond', type=ProcessTiming6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReTry', type=ProcessRetry3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgPlcy', type=ExchangePolicy2Code, min=1, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class Max2Fraction1NonNegativeNumber(base_types._BaseDataType_Decimal):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReservationIdentification4
 
 class CurrentOrDefaultReservation4Choice(base_types._BaseFieldType):

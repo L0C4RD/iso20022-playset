@@ -1,24 +1,24 @@
-import base_types
-import Max35Text
-import ShortLong1Code
+from . import base_types
 import Exact4AlphaNumericText
 import DecimalNumber
+import ShortLong1Code
+import Max35Text
 
 class ProprietaryQuantity7(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtLngPos", "_Issr", "_SchmeNm", "_QtyTp", "_Qty"]
+	__slots__ = ["_QtyTp", "_Issr", "_SchmeNm", "_Qty", "_ShrtLngPos"]
 	@property
-	def ShrtLngPos(self):
-		return self._ShrtLngPos
+	def QtyTp(self):
+		return self._QtyTp
 
-	@ShrtLngPos.setter
-	def ShrtLngPos(self, value):
-		self._ShrtLngPos = value if type(value) != auto else self.make_default("ShrtLngPos")
+	@QtyTp.setter
+	def QtyTp(self, value):
+		self._QtyTp = value if type(value) != auto else self.make_default("QtyTp")
 
-	@ShrtLngPos.deleter
-	def ShrtLngPos(self):
-		del self._ShrtLngPos
-		self._ShrtLngPos = None
+	@QtyTp.deleter
+	def QtyTp(self):
+		del self._QtyTp
+		self._QtyTp = None
 
 	@property
 	def Issr(self):
@@ -47,19 +47,6 @@ class ProprietaryQuantity7(base_types._BaseFieldType):
 		self._SchmeNm = None
 
 	@property
-	def QtyTp(self):
-		return self._QtyTp
-
-	@QtyTp.setter
-	def QtyTp(self, value):
-		self._QtyTp = value if type(value) != auto else self.make_default("QtyTp")
-
-	@QtyTp.deleter
-	def QtyTp(self):
-		del self._QtyTp
-		self._QtyTp = None
-
-	@property
 	def Qty(self):
 		return self._Qty
 
@@ -72,11 +59,24 @@ class ProprietaryQuantity7(base_types._BaseFieldType):
 		del self._Qty
 		self._Qty = None
 
+	@property
+	def ShrtLngPos(self):
+		return self._ShrtLngPos
+
+	@ShrtLngPos.setter
+	def ShrtLngPos(self, value):
+		self._ShrtLngPos = value if type(value) != auto else self.make_default("ShrtLngPos")
+
+	@ShrtLngPos.deleter
+	def ShrtLngPos(self):
+		del self._ShrtLngPos
+		self._ShrtLngPos = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ShrtLngPos', type=ShortLong1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtyTp', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtyTp', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtLngPos', type=ShortLong1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

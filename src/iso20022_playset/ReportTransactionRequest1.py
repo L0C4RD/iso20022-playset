@@ -1,12 +1,25 @@
-import base_types
+from . import base_types
 import SearchCriteria1
 import SearchOutputOrder1
-import TrueFalseIndicator
 import PositiveNumber
+import TrueFalseIndicator
 
 class ReportTransactionRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_SchOutptOrdr", "_DscndgOrdr", "_BlckStop", "_SchCrit", "_BlckStart"]
+	__slots__ = ["_BlckStop", "_SchOutptOrdr", "_DscndgOrdr", "_SchCrit", "_BlckStart"]
+	@property
+	def BlckStop(self):
+		return self._BlckStop
+
+	@BlckStop.setter
+	def BlckStop(self, value):
+		self._BlckStop = value if type(value) != auto else self.make_default("BlckStop")
+
+	@BlckStop.deleter
+	def BlckStop(self):
+		del self._BlckStop
+		self._BlckStop = None
+
 	@property
 	def SchOutptOrdr(self):
 		return self._SchOutptOrdr
@@ -32,19 +45,6 @@ class ReportTransactionRequest1(base_types._BaseFieldType):
 	def DscndgOrdr(self):
 		del self._DscndgOrdr
 		self._DscndgOrdr = None
-
-	@property
-	def BlckStop(self):
-		return self._BlckStop
-
-	@BlckStop.setter
-	def BlckStop(self, value):
-		self._BlckStop = value if type(value) != auto else self.make_default("BlckStop")
-
-	@BlckStop.deleter
-	def BlckStop(self):
-		del self._BlckStop
-		self._BlckStop = None
 
 	@property
 	def SchCrit(self):
@@ -73,9 +73,9 @@ class ReportTransactionRequest1(base_types._BaseFieldType):
 		self._BlckStart = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BlckStop', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchOutptOrdr', type=SearchOutputOrder1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DscndgOrdr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckStop', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=SearchCriteria1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BlckStart', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 	))

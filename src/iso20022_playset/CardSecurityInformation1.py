@@ -1,23 +1,10 @@
-import base_types
-import CSCManagement1Code
+from . import base_types
 import Min3Max4NumericText
+import CSCManagement1Code
 
 class CardSecurityInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_CSCVal", "_CSCMgmt"]
-	@property
-	def CSCVal(self):
-		return self._CSCVal
-
-	@CSCVal.setter
-	def CSCVal(self, value):
-		self._CSCVal = value if type(value) != auto else self.make_default("CSCVal")
-
-	@CSCVal.deleter
-	def CSCVal(self):
-		del self._CSCVal
-		self._CSCVal = None
-
+	__slots__ = ["_CSCMgmt", "_CSCVal"]
 	@property
 	def CSCMgmt(self):
 		return self._CSCMgmt
@@ -31,8 +18,21 @@ class CardSecurityInformation1(base_types._BaseFieldType):
 		del self._CSCMgmt
 		self._CSCMgmt = None
 
+	@property
+	def CSCVal(self):
+		return self._CSCVal
+
+	@CSCVal.setter
+	def CSCVal(self, value):
+		self._CSCVal = value if type(value) != auto else self.make_default("CSCVal")
+
+	@CSCVal.deleter
+	def CSCVal(self):
+		del self._CSCVal
+		self._CSCVal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CSCVal', type=Min3Max4NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CSCMgmt', type=CSCManagement1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CSCVal', type=Min3Max4NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

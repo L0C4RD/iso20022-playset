@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class ExternalInvestigationActionReason1Code(base_types._BaseDataType_String):
 

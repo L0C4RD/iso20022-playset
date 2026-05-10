@@ -1,6 +1,6 @@
-import base_types
-import ModifiedStatusReason1Code
+from . import base_types
 import GenericIdentification30
+import ModifiedStatusReason1Code
 
 class ModificationReason4Choice(base_types._BaseFieldType):
 

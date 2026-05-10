@@ -1,25 +1,12 @@
-import base_types
-import PartyIdentification129Choice
+from . import base_types
+import DisclosureRequestIdentification1
 import SupplementaryData1
 import DisclosureRequestCancellationReason1Code
-import DisclosureRequestIdentification1
+import PartyIdentification129Choice
 
 class ShareholdersIdentificationDisclosureRequestCancellationAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_SplmtryData", "_Issr", "_IssrDsclsrReqRef"]
-	@property
-	def CxlRsn(self):
-		return self._CxlRsn
-
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
-
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
-
+	__slots__ = ["_SplmtryData", "_CxlRsn", "_IssrDsclsrReqRef", "_Issr"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -34,17 +21,17 @@ class ShareholdersIdentificationDisclosureRequestCancellationAdviceV01(base_type
 		self._SplmtryData = None
 
 	@property
-	def Issr(self):
-		return self._Issr
+	def CxlRsn(self):
+		return self._CxlRsn
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
 
 	@property
 	def IssrDsclsrReqRef(self):
@@ -59,10 +46,23 @@ class ShareholdersIdentificationDisclosureRequestCancellationAdviceV01(base_type
 		del self._IssrDsclsrReqRef
 		self._IssrDsclsrReqRef = None
 
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlRsn', type=DisclosureRequestCancellationReason1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Issr', type=PartyIdentification129Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=DisclosureRequestCancellationReason1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrDsclsrReqRef', type=DisclosureRequestIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=PartyIdentification129Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

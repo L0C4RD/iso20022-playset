@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TotalAmountAndCurrency1
 
 class StandingOrderTotalAmount1(base_types._BaseFieldType):

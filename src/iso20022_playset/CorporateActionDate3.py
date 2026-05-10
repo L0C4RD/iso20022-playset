@@ -1,21 +1,34 @@
-import base_types
+from . import base_types
 import DateFormat4Choice
 
 class CorporateActionDate3(base_types._BaseFieldType):
 
-	__slots__ = ["_EarlstPmtDt", "_PrpssDt", "_PmtDt", "_AvlblDt", "_FrstDealgDt", "_DvddRnkgDt"]
+	__slots__ = ["_AvlblDt", "_FrstDealgDt", "_PrpssDt", "_PmtDt", "_DvddRnkgDt", "_EarlstPmtDt"]
 	@property
-	def EarlstPmtDt(self):
-		return self._EarlstPmtDt
+	def AvlblDt(self):
+		return self._AvlblDt
 
-	@EarlstPmtDt.setter
-	def EarlstPmtDt(self, value):
-		self._EarlstPmtDt = value if type(value) != auto else self.make_default("EarlstPmtDt")
+	@AvlblDt.setter
+	def AvlblDt(self, value):
+		self._AvlblDt = value if type(value) != auto else self.make_default("AvlblDt")
 
-	@EarlstPmtDt.deleter
-	def EarlstPmtDt(self):
-		del self._EarlstPmtDt
-		self._EarlstPmtDt = None
+	@AvlblDt.deleter
+	def AvlblDt(self):
+		del self._AvlblDt
+		self._AvlblDt = None
+
+	@property
+	def FrstDealgDt(self):
+		return self._FrstDealgDt
+
+	@FrstDealgDt.setter
+	def FrstDealgDt(self, value):
+		self._FrstDealgDt = value if type(value) != auto else self.make_default("FrstDealgDt")
+
+	@FrstDealgDt.deleter
+	def FrstDealgDt(self):
+		del self._FrstDealgDt
+		self._FrstDealgDt = None
 
 	@property
 	def PrpssDt(self):
@@ -44,32 +57,6 @@ class CorporateActionDate3(base_types._BaseFieldType):
 		self._PmtDt = None
 
 	@property
-	def AvlblDt(self):
-		return self._AvlblDt
-
-	@AvlblDt.setter
-	def AvlblDt(self, value):
-		self._AvlblDt = value if type(value) != auto else self.make_default("AvlblDt")
-
-	@AvlblDt.deleter
-	def AvlblDt(self):
-		del self._AvlblDt
-		self._AvlblDt = None
-
-	@property
-	def FrstDealgDt(self):
-		return self._FrstDealgDt
-
-	@FrstDealgDt.setter
-	def FrstDealgDt(self, value):
-		self._FrstDealgDt = value if type(value) != auto else self.make_default("FrstDealgDt")
-
-	@FrstDealgDt.deleter
-	def FrstDealgDt(self):
-		del self._FrstDealgDt
-		self._FrstDealgDt = None
-
-	@property
 	def DvddRnkgDt(self):
 		return self._DvddRnkgDt
 
@@ -82,12 +69,25 @@ class CorporateActionDate3(base_types._BaseFieldType):
 		del self._DvddRnkgDt
 		self._DvddRnkgDt = None
 
+	@property
+	def EarlstPmtDt(self):
+		return self._EarlstPmtDt
+
+	@EarlstPmtDt.setter
+	def EarlstPmtDt(self, value):
+		self._EarlstPmtDt = value if type(value) != auto else self.make_default("EarlstPmtDt")
+
+	@EarlstPmtDt.deleter
+	def EarlstPmtDt(self):
+		del self._EarlstPmtDt
+		self._EarlstPmtDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EarlstPmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrpssDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AvlblDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstDealgDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrpssDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DvddRnkgDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlstPmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

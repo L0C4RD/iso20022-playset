@@ -1,24 +1,11 @@
-import base_types
-import CoverTwoDefaulters1
-import LiquidityRequiredAndAvailable1
+from . import base_types
 import Max256Text
+import LiquidityRequiredAndAvailable1
+import CoverTwoDefaulters1
 
 class LiquidityStressTestResult1(base_types._BaseFieldType):
 
-	__slots__ = ["_ScnroDfltrs", "_Id", "_LqdtyReqrdAndAvlbl"]
-	@property
-	def ScnroDfltrs(self):
-		return self._ScnroDfltrs
-
-	@ScnroDfltrs.setter
-	def ScnroDfltrs(self, value):
-		self._ScnroDfltrs = value if type(value) != auto else self.make_default("ScnroDfltrs")
-
-	@ScnroDfltrs.deleter
-	def ScnroDfltrs(self):
-		del self._ScnroDfltrs
-		self._ScnroDfltrs = None
-
+	__slots__ = ["_Id", "_ScnroDfltrs", "_LqdtyReqrdAndAvlbl"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,6 +18,19 @@ class LiquidityStressTestResult1(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def ScnroDfltrs(self):
+		return self._ScnroDfltrs
+
+	@ScnroDfltrs.setter
+	def ScnroDfltrs(self, value):
+		self._ScnroDfltrs = value if type(value) != auto else self.make_default("ScnroDfltrs")
+
+	@ScnroDfltrs.deleter
+	def ScnroDfltrs(self):
+		del self._ScnroDfltrs
+		self._ScnroDfltrs = None
 
 	@property
 	def LqdtyReqrdAndAvlbl(self):
@@ -46,8 +46,8 @@ class LiquidityStressTestResult1(base_types._BaseFieldType):
 		self._LqdtyReqrdAndAvlbl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ScnroDfltrs', type=CoverTwoDefaulters1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScnroDfltrs', type=CoverTwoDefaulters1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LqdtyReqrdAndAvlbl', type=LiquidityRequiredAndAvailable1, min=6, max=6, mutex_group=None, array=False),
 	))
 

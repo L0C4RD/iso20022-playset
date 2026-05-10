@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountSwitchTerminationSwitchV01
 
 class ACMT_036_001_01():

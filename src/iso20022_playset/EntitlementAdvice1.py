@@ -1,12 +1,12 @@
-import base_types
-import Exact3NumericText
+from . import base_types
 import CorporateActionOption1FormatChoice
 import Entitlement1
 import DateFormat4Choice
+import Exact3NumericText
 
 class EntitlementAdvice1(base_types._BaseFieldType):
 
-	__slots__ = ["_RcrdDt", "_AcctAndDstrbtnDtls", "_PmtDt", "_OptnTp", "_OptnNb"]
+	__slots__ = ["_RcrdDt", "_AcctAndDstrbtnDtls", "_OptnTp", "_PmtDt", "_OptnNb"]
 	@property
 	def RcrdDt(self):
 		return self._RcrdDt
@@ -34,19 +34,6 @@ class EntitlementAdvice1(base_types._BaseFieldType):
 		self._AcctAndDstrbtnDtls = None
 
 	@property
-	def PmtDt(self):
-		return self._PmtDt
-
-	@PmtDt.setter
-	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
-
-	@PmtDt.deleter
-	def PmtDt(self):
-		del self._PmtDt
-		self._PmtDt = None
-
-	@property
 	def OptnTp(self):
 		return self._OptnTp
 
@@ -58,6 +45,19 @@ class EntitlementAdvice1(base_types._BaseFieldType):
 	def OptnTp(self):
 		del self._OptnTp
 		self._OptnTp = None
+
+	@property
+	def PmtDt(self):
+		return self._PmtDt
+
+	@PmtDt.setter
+	def PmtDt(self, value):
+		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
+
+	@PmtDt.deleter
+	def PmtDt(self):
+		del self._PmtDt
+		self._PmtDt = None
 
 	@property
 	def OptnNb(self):
@@ -75,8 +75,8 @@ class EntitlementAdvice1(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RcrdDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctAndDstrbtnDtls', type=Entitlement1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

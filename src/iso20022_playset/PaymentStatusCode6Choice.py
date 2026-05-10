@@ -1,12 +1,12 @@
-import base_types
-import Max35Text
-import Max4AlphaNumericText
+from . import base_types
 import FinalStatus1Code
+import Max4AlphaNumericText
 import PendingStatus4Code
+import Max35Text
 
 class PaymentStatusCode6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Sttlm", "_RTGS", "_Pdg", "_Fnl", "_Prtry"]
+	__slots__ = ["_Sttlm", "_Prtry", "_Pdg", "_RTGS", "_Fnl"]
 	@property
 	def Sttlm(self):
 		return self._Sttlm
@@ -21,17 +21,17 @@ class PaymentStatusCode6Choice(base_types._BaseFieldType):
 		self._Sttlm = None
 
 	@property
-	def RTGS(self):
-		return self._RTGS
+	def Prtry(self):
+		return self._Prtry
 
-	@RTGS.setter
-	def RTGS(self, value):
-		self._RTGS = value if type(value) != auto else self.make_default("RTGS")
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
 
-	@RTGS.deleter
-	def RTGS(self):
-		del self._RTGS
-		self._RTGS = None
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	@property
 	def Pdg(self):
@@ -47,6 +47,19 @@ class PaymentStatusCode6Choice(base_types._BaseFieldType):
 		self._Pdg = None
 
 	@property
+	def RTGS(self):
+		return self._RTGS
+
+	@RTGS.setter
+	def RTGS(self, value):
+		self._RTGS = value if type(value) != auto else self.make_default("RTGS")
+
+	@RTGS.deleter
+	def RTGS(self):
+		del self._RTGS
+		self._RTGS = None
+
+	@property
 	def Fnl(self):
 		return self._Fnl
 
@@ -59,24 +72,11 @@ class PaymentStatusCode6Choice(base_types._BaseFieldType):
 		del self._Fnl
 		self._Fnl = None
 
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sttlm', type=Max4AlphaNumericText, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RTGS', type=Max4AlphaNumericText, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pdg', type=PendingStatus4Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Fnl', type=FinalStatus1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pdg', type=PendingStatus4Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RTGS', type=Max4AlphaNumericText, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Fnl', type=FinalStatus1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

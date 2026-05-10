@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesSettlementAllegementRemovalAdviceV07
 
 class SESE_029_001_07():

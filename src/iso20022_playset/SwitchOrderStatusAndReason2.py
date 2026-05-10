@@ -1,14 +1,27 @@
-import base_types
-import Max35Text
+from . import base_types
 import ExpectedExecutionDetails2
-import PartyIdentification113
-import FundOrderData6
-import SwitchLegReferences2
 import OrderStatus4Choice
+import SwitchLegReferences2
+import PartyIdentification113
+import Max35Text
+import FundOrderData6
 
 class SwitchOrderStatusAndReason2(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrData", "_OrdrRef", "_DealRef", "_MstrRef", "_NewDtls", "_CxlRef", "_ClntRef", "_LegInf", "_StsInitr", "_OrdrSts"]
+	__slots__ = ["_ClntRef", "_OrdrData", "_MstrRef", "_OrdrRef", "_LegInf", "_NewDtls", "_OrdrSts", "_CxlRef", "_StsInitr", "_DealRef"]
+	@property
+	def ClntRef(self):
+		return self._ClntRef
+
+	@ClntRef.setter
+	def ClntRef(self, value):
+		self._ClntRef = value if type(value) != auto else self.make_default("ClntRef")
+
+	@ClntRef.deleter
+	def ClntRef(self):
+		del self._ClntRef
+		self._ClntRef = None
+
 	@property
 	def OrdrData(self):
 		return self._OrdrData
@@ -21,32 +34,6 @@ class SwitchOrderStatusAndReason2(base_types._BaseFieldType):
 	def OrdrData(self):
 		del self._OrdrData
 		self._OrdrData = None
-
-	@property
-	def OrdrRef(self):
-		return self._OrdrRef
-
-	@OrdrRef.setter
-	def OrdrRef(self, value):
-		self._OrdrRef = value if type(value) != auto else self.make_default("OrdrRef")
-
-	@OrdrRef.deleter
-	def OrdrRef(self):
-		del self._OrdrRef
-		self._OrdrRef = None
-
-	@property
-	def DealRef(self):
-		return self._DealRef
-
-	@DealRef.setter
-	def DealRef(self, value):
-		self._DealRef = value if type(value) != auto else self.make_default("DealRef")
-
-	@DealRef.deleter
-	def DealRef(self):
-		del self._DealRef
-		self._DealRef = None
 
 	@property
 	def MstrRef(self):
@@ -62,43 +49,17 @@ class SwitchOrderStatusAndReason2(base_types._BaseFieldType):
 		self._MstrRef = None
 
 	@property
-	def NewDtls(self):
-		return self._NewDtls
+	def OrdrRef(self):
+		return self._OrdrRef
 
-	@NewDtls.setter
-	def NewDtls(self, value):
-		self._NewDtls = value if type(value) != auto else self.make_default("NewDtls")
+	@OrdrRef.setter
+	def OrdrRef(self, value):
+		self._OrdrRef = value if type(value) != auto else self.make_default("OrdrRef")
 
-	@NewDtls.deleter
-	def NewDtls(self):
-		del self._NewDtls
-		self._NewDtls = None
-
-	@property
-	def CxlRef(self):
-		return self._CxlRef
-
-	@CxlRef.setter
-	def CxlRef(self, value):
-		self._CxlRef = value if type(value) != auto else self.make_default("CxlRef")
-
-	@CxlRef.deleter
-	def CxlRef(self):
-		del self._CxlRef
-		self._CxlRef = None
-
-	@property
-	def ClntRef(self):
-		return self._ClntRef
-
-	@ClntRef.setter
-	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != auto else self.make_default("ClntRef")
-
-	@ClntRef.deleter
-	def ClntRef(self):
-		del self._ClntRef
-		self._ClntRef = None
+	@OrdrRef.deleter
+	def OrdrRef(self):
+		del self._OrdrRef
+		self._OrdrRef = None
 
 	@property
 	def LegInf(self):
@@ -114,17 +75,17 @@ class SwitchOrderStatusAndReason2(base_types._BaseFieldType):
 		self._LegInf = None
 
 	@property
-	def StsInitr(self):
-		return self._StsInitr
+	def NewDtls(self):
+		return self._NewDtls
 
-	@StsInitr.setter
-	def StsInitr(self, value):
-		self._StsInitr = value if type(value) != auto else self.make_default("StsInitr")
+	@NewDtls.setter
+	def NewDtls(self, value):
+		self._NewDtls = value if type(value) != auto else self.make_default("NewDtls")
 
-	@StsInitr.deleter
-	def StsInitr(self):
-		del self._StsInitr
-		self._StsInitr = None
+	@NewDtls.deleter
+	def NewDtls(self):
+		del self._NewDtls
+		self._NewDtls = None
 
 	@property
 	def OrdrSts(self):
@@ -139,16 +100,55 @@ class SwitchOrderStatusAndReason2(base_types._BaseFieldType):
 		del self._OrdrSts
 		self._OrdrSts = None
 
+	@property
+	def CxlRef(self):
+		return self._CxlRef
+
+	@CxlRef.setter
+	def CxlRef(self, value):
+		self._CxlRef = value if type(value) != auto else self.make_default("CxlRef")
+
+	@CxlRef.deleter
+	def CxlRef(self):
+		del self._CxlRef
+		self._CxlRef = None
+
+	@property
+	def StsInitr(self):
+		return self._StsInitr
+
+	@StsInitr.setter
+	def StsInitr(self, value):
+		self._StsInitr = value if type(value) != auto else self.make_default("StsInitr")
+
+	@StsInitr.deleter
+	def StsInitr(self):
+		del self._StsInitr
+		self._StsInitr = None
+
+	@property
+	def DealRef(self):
+		return self._DealRef
+
+	@DealRef.setter
+	def DealRef(self, value):
+		self._DealRef = value if type(value) != auto else self.make_default("DealRef")
+
+	@DealRef.deleter
+	def DealRef(self):
+		del self._DealRef
+		self._DealRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrdrData', type=FundOrderData6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewDtls', type=ExpectedExecutionDetails2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrData', type=FundOrderData6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LegInf', type=SwitchLegReferences2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewDtls', type=ExpectedExecutionDetails2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrSts', type=OrderStatus4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

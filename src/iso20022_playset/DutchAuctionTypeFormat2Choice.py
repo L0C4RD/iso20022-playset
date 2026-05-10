@@ -1,6 +1,6 @@
-import base_types
-import GenericIdentification47
+from . import base_types
 import DutchAuctionType1Code
+import GenericIdentification47
 
 class DutchAuctionTypeFormat2Choice(base_types._BaseFieldType):
 

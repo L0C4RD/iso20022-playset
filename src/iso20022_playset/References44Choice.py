@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import Max35Text
 import SettlementTypeAndIdentification18
 import GenericDocumentIdentification4
 
 class References44Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTxId", "_IntraPosMvmntId", "_SctiesSttlmTxId", "_SctiesFincgTxId"]
+	__slots__ = ["_SctiesFincgTxId", "_IntraPosMvmntId", "_SctiesSttlmTxId", "_OthrTxId"]
 	@property
-	def OthrTxId(self):
-		return self._OthrTxId
+	def SctiesFincgTxId(self):
+		return self._SctiesFincgTxId
 
-	@OthrTxId.setter
-	def OthrTxId(self, value):
-		self._OthrTxId = value if type(value) != auto else self.make_default("OthrTxId")
+	@SctiesFincgTxId.setter
+	def SctiesFincgTxId(self, value):
+		self._SctiesFincgTxId = value if type(value) != auto else self.make_default("SctiesFincgTxId")
 
-	@OthrTxId.deleter
-	def OthrTxId(self):
-		del self._OthrTxId
-		self._OthrTxId = None
+	@SctiesFincgTxId.deleter
+	def SctiesFincgTxId(self):
+		del self._SctiesFincgTxId
+		self._SctiesFincgTxId = None
 
 	@property
 	def IntraPosMvmntId(self):
@@ -46,22 +46,22 @@ class References44Choice(base_types._BaseFieldType):
 		self._SctiesSttlmTxId = None
 
 	@property
-	def SctiesFincgTxId(self):
-		return self._SctiesFincgTxId
+	def OthrTxId(self):
+		return self._OthrTxId
 
-	@SctiesFincgTxId.setter
-	def SctiesFincgTxId(self, value):
-		self._SctiesFincgTxId = value if type(value) != auto else self.make_default("SctiesFincgTxId")
+	@OthrTxId.setter
+	def OthrTxId(self, value):
+		self._OthrTxId = value if type(value) != auto else self.make_default("OthrTxId")
 
-	@SctiesFincgTxId.deleter
-	def SctiesFincgTxId(self):
-		del self._SctiesFincgTxId
-		self._SctiesFincgTxId = None
+	@OthrTxId.deleter
+	def OthrTxId(self):
+		del self._OthrTxId
+		self._OthrTxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrTxId', type=GenericDocumentIdentification4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesFincgTxId', type=SettlementTypeAndIdentification18, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IntraPosMvmntId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesSttlmTxId', type=SettlementTypeAndIdentification18, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SctiesFincgTxId', type=SettlementTypeAndIdentification18, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OthrTxId', type=GenericDocumentIdentification4, min=0, max=1, mutex_group=1, array=False),
 	))
 

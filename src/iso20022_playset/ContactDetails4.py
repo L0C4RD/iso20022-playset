@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
+import PhoneNumber
 import Max140Text
 import Max2048Text
-import PhoneNumber
 
 class ContactDetails4(base_types._BaseFieldType):
 

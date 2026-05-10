@@ -1,66 +1,27 @@
-import base_types
-import OutcomeOfPRINValueAssessmentOrReviewUKType1Code
-import OutcomeOfCOLLAssessmentOfValueUKType1Code
+from . import base_types
+import ISODate
+import Max350Text
 import EMTDataReportingVFMUKType1Code
 import OtherReviewRelatedToValueAndOrChargesUKType1Code
-import Max350Text
-import ISODate
+import OutcomeOfCOLLAssessmentOfValueUKType1Code
+import OutcomeOfPRINValueAssessmentOrReviewUKType1Code
 import AssessmentOfValueRequiredUnderCOLLUKType1Code
 
 class ValueForMoney1(base_types._BaseFieldType):
 
-	__slots__ = ["_AssmntOfValReqrdUdrCOLLUK", "_RvwDtUK", "_OutcmOfCOLLAssmntOfValUK", "_FrthrInfUK", "_OthrRvwRltdToValAndOrChrgsUK", "_RvwNxtDueUK", "_EMTDataRptgVFMUK", "_OutcmOfPRINValAssmntOrRvwUK"]
+	__slots__ = ["_RvwNxtDueUK", "_OthrRvwRltdToValAndOrChrgsUK", "_EMTDataRptgVFMUK", "_FrthrInfUK", "_RvwDtUK", "_AssmntOfValReqrdUdrCOLLUK", "_OutcmOfPRINValAssmntOrRvwUK", "_OutcmOfCOLLAssmntOfValUK"]
 	@property
-	def AssmntOfValReqrdUdrCOLLUK(self):
-		return self._AssmntOfValReqrdUdrCOLLUK
+	def RvwNxtDueUK(self):
+		return self._RvwNxtDueUK
 
-	@AssmntOfValReqrdUdrCOLLUK.setter
-	def AssmntOfValReqrdUdrCOLLUK(self, value):
-		self._AssmntOfValReqrdUdrCOLLUK = value if type(value) != auto else self.make_default("AssmntOfValReqrdUdrCOLLUK")
+	@RvwNxtDueUK.setter
+	def RvwNxtDueUK(self, value):
+		self._RvwNxtDueUK = value if type(value) != auto else self.make_default("RvwNxtDueUK")
 
-	@AssmntOfValReqrdUdrCOLLUK.deleter
-	def AssmntOfValReqrdUdrCOLLUK(self):
-		del self._AssmntOfValReqrdUdrCOLLUK
-		self._AssmntOfValReqrdUdrCOLLUK = None
-
-	@property
-	def RvwDtUK(self):
-		return self._RvwDtUK
-
-	@RvwDtUK.setter
-	def RvwDtUK(self, value):
-		self._RvwDtUK = value if type(value) != auto else self.make_default("RvwDtUK")
-
-	@RvwDtUK.deleter
-	def RvwDtUK(self):
-		del self._RvwDtUK
-		self._RvwDtUK = None
-
-	@property
-	def OutcmOfCOLLAssmntOfValUK(self):
-		return self._OutcmOfCOLLAssmntOfValUK
-
-	@OutcmOfCOLLAssmntOfValUK.setter
-	def OutcmOfCOLLAssmntOfValUK(self, value):
-		self._OutcmOfCOLLAssmntOfValUK = value if type(value) != auto else self.make_default("OutcmOfCOLLAssmntOfValUK")
-
-	@OutcmOfCOLLAssmntOfValUK.deleter
-	def OutcmOfCOLLAssmntOfValUK(self):
-		del self._OutcmOfCOLLAssmntOfValUK
-		self._OutcmOfCOLLAssmntOfValUK = None
-
-	@property
-	def FrthrInfUK(self):
-		return self._FrthrInfUK
-
-	@FrthrInfUK.setter
-	def FrthrInfUK(self, value):
-		self._FrthrInfUK = value if type(value) != auto else self.make_default("FrthrInfUK")
-
-	@FrthrInfUK.deleter
-	def FrthrInfUK(self):
-		del self._FrthrInfUK
-		self._FrthrInfUK = None
+	@RvwNxtDueUK.deleter
+	def RvwNxtDueUK(self):
+		del self._RvwNxtDueUK
+		self._RvwNxtDueUK = None
 
 	@property
 	def OthrRvwRltdToValAndOrChrgsUK(self):
@@ -76,19 +37,6 @@ class ValueForMoney1(base_types._BaseFieldType):
 		self._OthrRvwRltdToValAndOrChrgsUK = None
 
 	@property
-	def RvwNxtDueUK(self):
-		return self._RvwNxtDueUK
-
-	@RvwNxtDueUK.setter
-	def RvwNxtDueUK(self, value):
-		self._RvwNxtDueUK = value if type(value) != auto else self.make_default("RvwNxtDueUK")
-
-	@RvwNxtDueUK.deleter
-	def RvwNxtDueUK(self):
-		del self._RvwNxtDueUK
-		self._RvwNxtDueUK = None
-
-	@property
 	def EMTDataRptgVFMUK(self):
 		return self._EMTDataRptgVFMUK
 
@@ -100,6 +48,45 @@ class ValueForMoney1(base_types._BaseFieldType):
 	def EMTDataRptgVFMUK(self):
 		del self._EMTDataRptgVFMUK
 		self._EMTDataRptgVFMUK = None
+
+	@property
+	def FrthrInfUK(self):
+		return self._FrthrInfUK
+
+	@FrthrInfUK.setter
+	def FrthrInfUK(self, value):
+		self._FrthrInfUK = value if type(value) != auto else self.make_default("FrthrInfUK")
+
+	@FrthrInfUK.deleter
+	def FrthrInfUK(self):
+		del self._FrthrInfUK
+		self._FrthrInfUK = None
+
+	@property
+	def RvwDtUK(self):
+		return self._RvwDtUK
+
+	@RvwDtUK.setter
+	def RvwDtUK(self, value):
+		self._RvwDtUK = value if type(value) != auto else self.make_default("RvwDtUK")
+
+	@RvwDtUK.deleter
+	def RvwDtUK(self):
+		del self._RvwDtUK
+		self._RvwDtUK = None
+
+	@property
+	def AssmntOfValReqrdUdrCOLLUK(self):
+		return self._AssmntOfValReqrdUdrCOLLUK
+
+	@AssmntOfValReqrdUdrCOLLUK.setter
+	def AssmntOfValReqrdUdrCOLLUK(self, value):
+		self._AssmntOfValReqrdUdrCOLLUK = value if type(value) != auto else self.make_default("AssmntOfValReqrdUdrCOLLUK")
+
+	@AssmntOfValReqrdUdrCOLLUK.deleter
+	def AssmntOfValReqrdUdrCOLLUK(self):
+		del self._AssmntOfValReqrdUdrCOLLUK
+		self._AssmntOfValReqrdUdrCOLLUK = None
 
 	@property
 	def OutcmOfPRINValAssmntOrRvwUK(self):
@@ -114,14 +101,27 @@ class ValueForMoney1(base_types._BaseFieldType):
 		del self._OutcmOfPRINValAssmntOrRvwUK
 		self._OutcmOfPRINValAssmntOrRvwUK = None
 
+	@property
+	def OutcmOfCOLLAssmntOfValUK(self):
+		return self._OutcmOfCOLLAssmntOfValUK
+
+	@OutcmOfCOLLAssmntOfValUK.setter
+	def OutcmOfCOLLAssmntOfValUK(self, value):
+		self._OutcmOfCOLLAssmntOfValUK = value if type(value) != auto else self.make_default("OutcmOfCOLLAssmntOfValUK")
+
+	@OutcmOfCOLLAssmntOfValUK.deleter
+	def OutcmOfCOLLAssmntOfValUK(self):
+		del self._OutcmOfCOLLAssmntOfValUK
+		self._OutcmOfCOLLAssmntOfValUK = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AssmntOfValReqrdUdrCOLLUK', type=AssessmentOfValueRequiredUnderCOLLUKType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RvwDtUK', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OutcmOfCOLLAssmntOfValUK', type=OutcomeOfCOLLAssessmentOfValueUKType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrthrInfUK', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrRvwRltdToValAndOrChrgsUK', type=OtherReviewRelatedToValueAndOrChargesUKType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RvwNxtDueUK', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrRvwRltdToValAndOrChrgsUK', type=OtherReviewRelatedToValueAndOrChargesUKType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EMTDataRptgVFMUK', type=EMTDataReportingVFMUKType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrthrInfUK', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RvwDtUK', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AssmntOfValReqrdUdrCOLLUK', type=AssessmentOfValueRequiredUnderCOLLUKType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OutcmOfPRINValAssmntOrRvwUK', type=OutcomeOfPRINValueAssessmentOrReviewUKType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OutcmOfCOLLAssmntOfValUK', type=OutcomeOfCOLLAssessmentOfValueUKType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

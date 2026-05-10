@@ -1,26 +1,13 @@
-import base_types
-import Max140Text
-import ClearingSystemMemberIdentification2
-import BICIdentifier
+from . import base_types
 import GenericFinancialIdentification1
+import ClearingSystemMemberIdentification2
+import Max140Text
+import BICIdentifier
 import PostalAddress6
 
 class FinancialInstitutionIdentification7(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Othr", "_BIC", "_PstlAdr", "_ClrSysMmbId"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
+	__slots__ = ["_Othr", "_BIC", "_Nm", "_ClrSysMmbId", "_PstlAdr"]
 	@property
 	def Othr(self):
 		return self._Othr
@@ -48,17 +35,17 @@ class FinancialInstitutionIdentification7(base_types._BaseFieldType):
 		self._BIC = None
 
 	@property
-	def PstlAdr(self):
-		return self._PstlAdr
+	def Nm(self):
+		return self._Nm
 
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def ClrSysMmbId(self):
@@ -73,11 +60,24 @@ class FinancialInstitutionIdentification7(base_types._BaseFieldType):
 		del self._ClrSysMmbId
 		self._ClrSysMmbId = None
 
+	@property
+	def PstlAdr(self):
+		return self._PstlAdr
+
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericFinancialIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BIC', type=BICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
 	))
 

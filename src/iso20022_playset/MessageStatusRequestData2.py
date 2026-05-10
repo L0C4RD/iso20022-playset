@@ -1,12 +1,25 @@
-import base_types
-import Max35Text
+from . import base_types
 import TrueFalseIndicator
 import DocumentType7Code
+import Max35Text
 import GenericIdentification177
 
 class MessageStatusRequestData2(base_types._BaseFieldType):
 
-	__slots__ = ["_RctRprntFlg", "_XchgId", "_DocQlfr", "_InitgPty"]
+	__slots__ = ["_InitgPty", "_RctRprntFlg", "_XchgId", "_DocQlfr"]
+	@property
+	def InitgPty(self):
+		return self._InitgPty
+
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
+
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
+
 	@property
 	def RctRprntFlg(self):
 		return self._RctRprntFlg
@@ -46,23 +59,10 @@ class MessageStatusRequestData2(base_types._BaseFieldType):
 		del self._DocQlfr
 		self._DocQlfr = None
 
-	@property
-	def InitgPty(self):
-		return self._InitgPty
-
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
-
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='InitgPty', type=GenericIdentification177, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RctRprntFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocQlfr', type=DocumentType7Code, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InitgPty', type=GenericIdentification177, min=1, max=1, mutex_group=None, array=False),
 	))
 

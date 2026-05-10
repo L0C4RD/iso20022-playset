@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import BusinessInformationCriteria1
+import Max35Text
 
 class GeneralBusinessInformationCriteriaDefinition1Choice(base_types._BaseFieldType):
 

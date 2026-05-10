@@ -1,25 +1,38 @@
-import base_types
-import Max35Text
+from . import base_types
 import ImpliedCurrencyAndAmount
-import CreditDebit3Code
 import TrueFalseIndicator
+import CreditDebit3Code
+import Max35Text
 import CarRentalServiceType2Code
 
 class Amount21(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Tp", "_OthrTp", "_CstmrNtfd", "_CdtDbt"]
+	__slots__ = ["_OthrTp", "_CdtDbt", "_Tp", "_Amt", "_CstmrNtfd"]
 	@property
-	def Amt(self):
-		return self._Amt
+	def OthrTp(self):
+		return self._OthrTp
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
+
+	@property
+	def CdtDbt(self):
+		return self._CdtDbt
+
+	@CdtDbt.setter
+	def CdtDbt(self, value):
+		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+
+	@CdtDbt.deleter
+	def CdtDbt(self):
+		del self._CdtDbt
+		self._CdtDbt = None
 
 	@property
 	def Tp(self):
@@ -35,17 +48,17 @@ class Amount21(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def OthrTp(self):
-		return self._OthrTp
+	def Amt(self):
+		return self._Amt
 
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def CstmrNtfd(self):
@@ -60,24 +73,11 @@ class Amount21(base_types._BaseFieldType):
 		del self._CstmrNtfd
 		self._CstmrNtfd = None
 
-	@property
-	def CdtDbt(self):
-		return self._CdtDbt
-
-	@CdtDbt.setter
-	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
-
-	@CdtDbt.deleter
-	def CdtDbt(self):
-		del self._CdtDbt
-		self._CdtDbt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=CarRentalServiceType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrNtfd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CarRentalServiceType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrNtfd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
+import Mandate23
 import GroupHeader110
 import SupplementaryData1
-import Mandate23
 
 class MandateInitiationRequestV08(base_types._BaseFieldType):
 
-	__slots__ = ["_Mndt", "_GrpHdr", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_Mndt", "_GrpHdr"]
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	@property
 	def Mndt(self):
 		return self._Mndt
@@ -32,22 +45,9 @@ class MandateInitiationRequestV08(base_types._BaseFieldType):
 		del self._GrpHdr
 		self._GrpHdr = None
 
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Mndt', type=Mandate23, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader110, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

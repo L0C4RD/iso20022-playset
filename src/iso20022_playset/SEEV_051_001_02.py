@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MarketClaimCancellationRequestV02
 
 class SEEV_051_001_02():

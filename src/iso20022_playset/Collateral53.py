@@ -1,25 +1,12 @@
-import base_types
+from . import base_types
 import Summary3
+import CollateralValuation13
 import CollateralAccount3
 import BlockChainAddressWallet5
-import CollateralValuation13
 
 class Collateral53(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_RptSummry", "_AcctId", "_CollValtn"]
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
+	__slots__ = ["_RptSummry", "_BlckChainAdrOrWllt", "_AcctId", "_CollValtn"]
 	@property
 	def RptSummry(self):
 		return self._RptSummry
@@ -32,6 +19,19 @@ class Collateral53(base_types._BaseFieldType):
 	def RptSummry(self):
 		del self._RptSummry
 		self._RptSummry = None
+
+	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
 
 	@property
 	def AcctId(self):
@@ -60,8 +60,8 @@ class Collateral53(base_types._BaseFieldType):
 		self._CollValtn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptSummry', type=Summary3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=CollateralAccount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollValtn', type=CollateralValuation13, min=0, max=None, mutex_group=None, array=True),
 	))

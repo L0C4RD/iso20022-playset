@@ -1,9 +1,9 @@
-import base_types
+from . import base_types
 import Max35Text
 
 class References73Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IntraPosMvmntId", "_IntraBalMvmntId", "_AcctSvcrTxId", "_PoolId", "_SctiesSttlmTxId", "_OthrTxId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId"]
+	__slots__ = ["_IntraPosMvmntId", "_CtrPtyMktInfrstrctrTxId", "_IntraBalMvmntId", "_MktInfrstrctrTxId", "_AcctSvcrTxId", "_PoolId", "_SctiesSttlmTxId", "_OthrTxId"]
 	@property
 	def IntraPosMvmntId(self):
 		return self._IntraPosMvmntId
@@ -18,6 +18,19 @@ class References73Choice(base_types._BaseFieldType):
 		self._IntraPosMvmntId = None
 
 	@property
+	def CtrPtyMktInfrstrctrTxId(self):
+		return self._CtrPtyMktInfrstrctrTxId
+
+	@CtrPtyMktInfrstrctrTxId.setter
+	def CtrPtyMktInfrstrctrTxId(self, value):
+		self._CtrPtyMktInfrstrctrTxId = value if type(value) != auto else self.make_default("CtrPtyMktInfrstrctrTxId")
+
+	@CtrPtyMktInfrstrctrTxId.deleter
+	def CtrPtyMktInfrstrctrTxId(self):
+		del self._CtrPtyMktInfrstrctrTxId
+		self._CtrPtyMktInfrstrctrTxId = None
+
+	@property
 	def IntraBalMvmntId(self):
 		return self._IntraBalMvmntId
 
@@ -29,6 +42,19 @@ class References73Choice(base_types._BaseFieldType):
 	def IntraBalMvmntId(self):
 		del self._IntraBalMvmntId
 		self._IntraBalMvmntId = None
+
+	@property
+	def MktInfrstrctrTxId(self):
+		return self._MktInfrstrctrTxId
+
+	@MktInfrstrctrTxId.setter
+	def MktInfrstrctrTxId(self, value):
+		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
+
+	@MktInfrstrctrTxId.deleter
+	def MktInfrstrctrTxId(self):
+		del self._MktInfrstrctrTxId
+		self._MktInfrstrctrTxId = None
 
 	@property
 	def AcctSvcrTxId(self):
@@ -82,40 +108,14 @@ class References73Choice(base_types._BaseFieldType):
 		del self._OthrTxId
 		self._OthrTxId = None
 
-	@property
-	def CtrPtyMktInfrstrctrTxId(self):
-		return self._CtrPtyMktInfrstrctrTxId
-
-	@CtrPtyMktInfrstrctrTxId.setter
-	def CtrPtyMktInfrstrctrTxId(self, value):
-		self._CtrPtyMktInfrstrctrTxId = value if type(value) != auto else self.make_default("CtrPtyMktInfrstrctrTxId")
-
-	@CtrPtyMktInfrstrctrTxId.deleter
-	def CtrPtyMktInfrstrctrTxId(self):
-		del self._CtrPtyMktInfrstrctrTxId
-		self._CtrPtyMktInfrstrctrTxId = None
-
-	@property
-	def MktInfrstrctrTxId(self):
-		return self._MktInfrstrctrTxId
-
-	@MktInfrstrctrTxId.setter
-	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
-
-	@MktInfrstrctrTxId.deleter
-	def MktInfrstrctrTxId(self):
-		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IntraPosMvmntId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IntraBalMvmntId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesSttlmTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OthrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

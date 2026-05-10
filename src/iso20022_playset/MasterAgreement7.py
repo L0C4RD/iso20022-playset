@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import Max350Text
 import AgreementType2Choice
 import Max50Text
 
 class MasterAgreement7(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrMstrAgrmtDtls", "_Tp", "_Vrsn"]
+	__slots__ = ["_Vrsn", "_Tp", "_OthrMstrAgrmtDtls"]
 	@property
-	def OthrMstrAgrmtDtls(self):
-		return self._OthrMstrAgrmtDtls
+	def Vrsn(self):
+		return self._Vrsn
 
-	@OthrMstrAgrmtDtls.setter
-	def OthrMstrAgrmtDtls(self, value):
-		self._OthrMstrAgrmtDtls = value if type(value) != auto else self.make_default("OthrMstrAgrmtDtls")
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
 
-	@OthrMstrAgrmtDtls.deleter
-	def OthrMstrAgrmtDtls(self):
-		del self._OthrMstrAgrmtDtls
-		self._OthrMstrAgrmtDtls = None
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	@property
 	def Tp(self):
@@ -33,21 +33,21 @@ class MasterAgreement7(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def OthrMstrAgrmtDtls(self):
+		return self._OthrMstrAgrmtDtls
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+	@OthrMstrAgrmtDtls.setter
+	def OthrMstrAgrmtDtls(self, value):
+		self._OthrMstrAgrmtDtls = value if type(value) != auto else self.make_default("OthrMstrAgrmtDtls")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@OthrMstrAgrmtDtls.deleter
+	def OthrMstrAgrmtDtls(self):
+		del self._OthrMstrAgrmtDtls
+		self._OthrMstrAgrmtDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrMstrAgrmtDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=AgreementType2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=AgreementType2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrMstrAgrmtDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

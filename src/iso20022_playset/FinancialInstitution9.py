@@ -1,13 +1,26 @@
-import base_types
-import Max35Text
-import AdditionalData1
-import ISO3NumericCountryCode
+from . import base_types
 import LocalData14
+import AdditionalData1
 import Max99Text
+import Max35Text
+import ISO3NumericCountryCode
 
 class FinancialInstitution9(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctNb", "_Assgnr", "_Id", "_LglCorpNm", "_AddtlId", "_ShrtNm", "_Ctry", "_LclData"]
+	__slots__ = ["_Ctry", "_AcctNb", "_LglCorpNm", "_Assgnr", "_Id", "_AddtlId", "_ShrtNm", "_LclData"]
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
 	@property
 	def AcctNb(self):
 		return self._AcctNb
@@ -20,6 +33,19 @@ class FinancialInstitution9(base_types._BaseFieldType):
 	def AcctNb(self):
 		del self._AcctNb
 		self._AcctNb = None
+
+	@property
+	def LglCorpNm(self):
+		return self._LglCorpNm
+
+	@LglCorpNm.setter
+	def LglCorpNm(self, value):
+		self._LglCorpNm = value if type(value) != auto else self.make_default("LglCorpNm")
+
+	@LglCorpNm.deleter
+	def LglCorpNm(self):
+		del self._LglCorpNm
+		self._LglCorpNm = None
 
 	@property
 	def Assgnr(self):
@@ -48,19 +74,6 @@ class FinancialInstitution9(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def LglCorpNm(self):
-		return self._LglCorpNm
-
-	@LglCorpNm.setter
-	def LglCorpNm(self, value):
-		self._LglCorpNm = value if type(value) != auto else self.make_default("LglCorpNm")
-
-	@LglCorpNm.deleter
-	def LglCorpNm(self):
-		del self._LglCorpNm
-		self._LglCorpNm = None
-
-	@property
 	def AddtlId(self):
 		return self._AddtlId
 
@@ -87,19 +100,6 @@ class FinancialInstitution9(base_types._BaseFieldType):
 		self._ShrtNm = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
-	@property
 	def LclData(self):
 		return self._LclData
 
@@ -113,13 +113,13 @@ class FinancialInstitution9(base_types._BaseFieldType):
 		self._LclData = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Ctry', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglCorpNm', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglCorpNm', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlId', type=AdditionalData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LclData', type=LocalData14, min=0, max=1, mutex_group=None, array=False),
 	))
 

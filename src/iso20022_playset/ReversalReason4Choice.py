@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ExternalReversalReason1Code
 import Max35Text
 

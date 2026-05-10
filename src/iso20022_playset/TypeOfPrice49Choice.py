@@ -1,6 +1,6 @@
-import base_types
-import TypeOfPrice17Code
+from . import base_types
 import GenericIdentification47
+import TypeOfPrice17Code
 
 class TypeOfPrice49Choice(base_types._BaseFieldType):
 

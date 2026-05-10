@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import OptionMultipleBarrierLevels1
 import SecuritiesTransactionPrice23Choice
 

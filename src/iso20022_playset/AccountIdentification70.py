@@ -1,24 +1,11 @@
-import base_types
-import Max35Text
+from . import base_types
 import PartyIdentification127Choice
 import SafekeepingPlaceFormat42Choice
+import Max35Text
 
 class AccountIdentification70(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgAcct", "_AcctOwnr", "_SfkpgPlc"]
-	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
-
+	__slots__ = ["_AcctOwnr", "_SfkpgAcct", "_SfkpgPlc"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
@@ -31,6 +18,19 @@ class AccountIdentification70(base_types._BaseFieldType):
 	def AcctOwnr(self):
 		del self._AcctOwnr
 		self._AcctOwnr = None
+
+	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
 
 	@property
 	def SfkpgPlc(self):
@@ -46,8 +46,8 @@ class AccountIdentification70(base_types._BaseFieldType):
 		self._SfkpgPlc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat42Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

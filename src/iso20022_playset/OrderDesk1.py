@@ -1,11 +1,11 @@
-import base_types
-import ContactAttributes5
-import AdditionalInformation15
+from . import base_types
 import ISODate
+import AdditionalInformation15
+import ContactAttributes5
 
 class OrderDesk1(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrDsk", "_AddtlInf", "_ClsrDts"]
+	__slots__ = ["_OrdrDsk", "_ClsrDts", "_AddtlInf"]
 	@property
 	def OrdrDsk(self):
 		return self._OrdrDsk
@@ -20,19 +20,6 @@ class OrderDesk1(base_types._BaseFieldType):
 		self._OrdrDsk = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
 	def ClsrDts(self):
 		return self._ClsrDts
 
@@ -45,9 +32,22 @@ class OrderDesk1(base_types._BaseFieldType):
 		del self._ClsrDts
 		self._ClsrDts = None
 
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrdrDsk', type=ContactAttributes5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClsrDts', type=ISODate, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 	))
 

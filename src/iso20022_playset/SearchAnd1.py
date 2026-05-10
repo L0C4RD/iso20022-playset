@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Operator1Code
 import Max500Text
 

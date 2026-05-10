@@ -1,13 +1,13 @@
-import base_types
-import Max35Text
-import AlternatePartyIdentification8
+from . import base_types
+import PartyIdentification240Choice
 import YesNoIndicator
 import PartyTextInformation5
-import PartyIdentification240Choice
+import Max35Text
+import AlternatePartyIdentification8
 
 class ConfirmationPartyDetails13(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgId", "_AddtlInf", "_AltrnId", "_InvstrPrtcnAssoctnMmbsh", "_Id"]
+	__slots__ = ["_PrcgId", "_InvstrPrtcnAssoctnMmbsh", "_Id", "_AddtlInf", "_AltrnId"]
 	@property
 	def PrcgId(self):
 		return self._PrcgId
@@ -20,32 +20,6 @@ class ConfirmationPartyDetails13(base_types._BaseFieldType):
 	def PrcgId(self):
 		del self._PrcgId
 		self._PrcgId = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def AltrnId(self):
-		return self._AltrnId
-
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
-
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
 
 	@property
 	def InvstrPrtcnAssoctnMmbsh(self):
@@ -73,11 +47,37 @@ class ConfirmationPartyDetails13(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def AltrnId(self):
+		return self._AltrnId
+
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstrPrtcnAssoctnMmbsh', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification240Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

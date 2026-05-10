@@ -1,6 +1,6 @@
-import base_types
-import MessageIdentification1
+from . import base_types
 import ReportSpecification4
+import MessageIdentification1
 
 class TransactionReportRequestV03(base_types._BaseFieldType):
 

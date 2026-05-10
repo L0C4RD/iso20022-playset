@@ -1,23 +1,10 @@
-import base_types
-import ClearedProduct2
+from . import base_types
 import SupplementaryData1
+import ClearedProduct2
 
 class CCPClearedProductReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrdPdct", "_SplmtryData"]
-	@property
-	def ClrdPdct(self):
-		return self._ClrdPdct
-
-	@ClrdPdct.setter
-	def ClrdPdct(self, value):
-		self._ClrdPdct = value if type(value) != auto else self.make_default("ClrdPdct")
-
-	@ClrdPdct.deleter
-	def ClrdPdct(self):
-		del self._ClrdPdct
-		self._ClrdPdct = None
-
+	__slots__ = ["_SplmtryData", "_ClrdPdct"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -31,8 +18,21 @@ class CCPClearedProductReportV02(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def ClrdPdct(self):
+		return self._ClrdPdct
+
+	@ClrdPdct.setter
+	def ClrdPdct(self, value):
+		self._ClrdPdct = value if type(value) != auto else self.make_default("ClrdPdct")
+
+	@ClrdPdct.deleter
+	def ClrdPdct(self):
+		del self._ClrdPdct
+		self._ClrdPdct = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrdPdct', type=ClearedProduct2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClrdPdct', type=ClearedProduct2, min=1, max=None, mutex_group=None, array=True),
 	))
 

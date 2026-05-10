@@ -1,6 +1,6 @@
-import base_types
-import PartyIdentification236Choice
+from . import base_types
 import CountryCode
+import PartyIdentification236Choice
 
 class Branch6Choice(base_types._BaseFieldType):
 

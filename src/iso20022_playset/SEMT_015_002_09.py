@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import IntraPositionMovementConfirmation002V09
 
 class SEMT_015_002_09():

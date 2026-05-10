@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Period4Choice
 import Period8Choice
 

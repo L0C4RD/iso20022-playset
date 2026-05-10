@@ -1,6 +1,6 @@
-import base_types
-import ExternalBalanceType1Code
+from . import base_types
 import GenericIdentification30
+import ExternalBalanceType1Code
 
 class CashBalanceType3Choice(base_types._BaseFieldType):
 

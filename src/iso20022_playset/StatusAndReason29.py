@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import MatchingStatus32Choice
 import SettlementStatus22Choice
 import ProcessingStatus62Choice
 
 class StatusAndReason29(base_types._BaseFieldType):
 
-	__slots__ = ["_IfrrdMtchgSts", "_SttlmSts", "_PrcgSts", "_MtchgSts"]
+	__slots__ = ["_MtchgSts", "_SttlmSts", "_IfrrdMtchgSts", "_PrcgSts"]
 	@property
-	def IfrrdMtchgSts(self):
-		return self._IfrrdMtchgSts
+	def MtchgSts(self):
+		return self._MtchgSts
 
-	@IfrrdMtchgSts.setter
-	def IfrrdMtchgSts(self, value):
-		self._IfrrdMtchgSts = value if type(value) != auto else self.make_default("IfrrdMtchgSts")
+	@MtchgSts.setter
+	def MtchgSts(self, value):
+		self._MtchgSts = value if type(value) != auto else self.make_default("MtchgSts")
 
-	@IfrrdMtchgSts.deleter
-	def IfrrdMtchgSts(self):
-		del self._IfrrdMtchgSts
-		self._IfrrdMtchgSts = None
+	@MtchgSts.deleter
+	def MtchgSts(self):
+		del self._MtchgSts
+		self._MtchgSts = None
 
 	@property
 	def SttlmSts(self):
@@ -33,6 +33,19 @@ class StatusAndReason29(base_types._BaseFieldType):
 		self._SttlmSts = None
 
 	@property
+	def IfrrdMtchgSts(self):
+		return self._IfrrdMtchgSts
+
+	@IfrrdMtchgSts.setter
+	def IfrrdMtchgSts(self, value):
+		self._IfrrdMtchgSts = value if type(value) != auto else self.make_default("IfrrdMtchgSts")
+
+	@IfrrdMtchgSts.deleter
+	def IfrrdMtchgSts(self):
+		del self._IfrrdMtchgSts
+		self._IfrrdMtchgSts = None
+
+	@property
 	def PrcgSts(self):
 		return self._PrcgSts
 
@@ -45,23 +58,10 @@ class StatusAndReason29(base_types._BaseFieldType):
 		del self._PrcgSts
 		self._PrcgSts = None
 
-	@property
-	def MtchgSts(self):
-		return self._MtchgSts
-
-	@MtchgSts.setter
-	def MtchgSts(self, value):
-		self._MtchgSts = value if type(value) != auto else self.make_default("MtchgSts")
-
-	@MtchgSts.deleter
-	def MtchgSts(self):
-		del self._MtchgSts
-		self._MtchgSts = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus22Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus62Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus22Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus62Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import InvoiceFinancingCancellationRequestV01
 
 class TSIN_003_001_01():

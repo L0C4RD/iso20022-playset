@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesTransactionCancellationRequestV08
 
 class SESE_020_001_08():

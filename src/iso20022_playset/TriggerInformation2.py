@@ -1,25 +1,12 @@
-import base_types
+from . import base_types
 import PartyType5Code
+import ExchangePolicy2Code
 import Max35Text
 import Max70Text
-import ExchangePolicy2Code
 
 class TriggerInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_TrggrSrc", "_TrggrTp", "_SrcId"]
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
+	__slots__ = ["_TrggrSrc", "_AddtlInf", "_TrggrTp", "_SrcId"]
 	@property
 	def TrggrSrc(self):
 		return self._TrggrSrc
@@ -32,6 +19,19 @@ class TriggerInformation2(base_types._BaseFieldType):
 	def TrggrSrc(self):
 		del self._TrggrSrc
 		self._TrggrSrc = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def TrggrTp(self):
@@ -60,8 +60,8 @@ class TriggerInformation2(base_types._BaseFieldType):
 		self._SrcId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInf', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrggrSrc', type=PartyType5Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrggrTp', type=ExchangePolicy2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrcId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))

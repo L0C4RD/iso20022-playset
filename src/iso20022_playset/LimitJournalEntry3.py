@@ -1,78 +1,13 @@
-import base_types
-import Max35Text
-import CreditDebitCode
-import Max500Text
+from . import base_types
 import Amount2Choice
 import DateAndDateTime2Choice
+import CreditDebitCode
+import Max500Text
+import Max35Text
 
 class LimitJournalEntry3(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcrRef", "_JrnlDt", "_MktInfrstrctrTxId", "_Amt", "_PrcrTxId", "_AddtlNtryInf", "_CdtDbtInd", "_TxId"]
-	@property
-	def AcctSvcrRef(self):
-		return self._AcctSvcrRef
-
-	@AcctSvcrRef.setter
-	def AcctSvcrRef(self, value):
-		self._AcctSvcrRef = value if type(value) != auto else self.make_default("AcctSvcrRef")
-
-	@AcctSvcrRef.deleter
-	def AcctSvcrRef(self):
-		del self._AcctSvcrRef
-		self._AcctSvcrRef = None
-
-	@property
-	def JrnlDt(self):
-		return self._JrnlDt
-
-	@JrnlDt.setter
-	def JrnlDt(self, value):
-		self._JrnlDt = value if type(value) != auto else self.make_default("JrnlDt")
-
-	@JrnlDt.deleter
-	def JrnlDt(self):
-		del self._JrnlDt
-		self._JrnlDt = None
-
-	@property
-	def MktInfrstrctrTxId(self):
-		return self._MktInfrstrctrTxId
-
-	@MktInfrstrctrTxId.setter
-	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
-
-	@MktInfrstrctrTxId.deleter
-	def MktInfrstrctrTxId(self):
-		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
-	def PrcrTxId(self):
-		return self._PrcrTxId
-
-	@PrcrTxId.setter
-	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != auto else self.make_default("PrcrTxId")
-
-	@PrcrTxId.deleter
-	def PrcrTxId(self):
-		del self._PrcrTxId
-		self._PrcrTxId = None
-
+	__slots__ = ["_AddtlNtryInf", "_CdtDbtInd", "_TxId", "_AcctSvcrRef", "_PrcrTxId", "_Amt", "_MktInfrstrctrTxId", "_JrnlDt"]
 	@property
 	def AddtlNtryInf(self):
 		return self._AddtlNtryInf
@@ -112,14 +47,79 @@ class LimitJournalEntry3(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
+	@property
+	def AcctSvcrRef(self):
+		return self._AcctSvcrRef
+
+	@AcctSvcrRef.setter
+	def AcctSvcrRef(self, value):
+		self._AcctSvcrRef = value if type(value) != auto else self.make_default("AcctSvcrRef")
+
+	@AcctSvcrRef.deleter
+	def AcctSvcrRef(self):
+		del self._AcctSvcrRef
+		self._AcctSvcrRef = None
+
+	@property
+	def PrcrTxId(self):
+		return self._PrcrTxId
+
+	@PrcrTxId.setter
+	def PrcrTxId(self, value):
+		self._PrcrTxId = value if type(value) != auto else self.make_default("PrcrTxId")
+
+	@PrcrTxId.deleter
+	def PrcrTxId(self):
+		del self._PrcrTxId
+		self._PrcrTxId = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def MktInfrstrctrTxId(self):
+		return self._MktInfrstrctrTxId
+
+	@MktInfrstrctrTxId.setter
+	def MktInfrstrctrTxId(self, value):
+		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
+
+	@MktInfrstrctrTxId.deleter
+	def MktInfrstrctrTxId(self):
+		del self._MktInfrstrctrTxId
+		self._MktInfrstrctrTxId = None
+
+	@property
+	def JrnlDt(self):
+		return self._JrnlDt
+
+	@JrnlDt.setter
+	def JrnlDt(self, value):
+		self._JrnlDt = value if type(value) != auto else self.make_default("JrnlDt")
+
+	@JrnlDt.deleter
+	def JrnlDt(self):
+		del self._JrnlDt
+		self._JrnlDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='JrnlDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlNtryInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='JrnlDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

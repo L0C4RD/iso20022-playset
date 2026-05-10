@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Exact3NumericText
 
 class TotalNumber1(base_types._BaseFieldType):

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AgentCAElectionStatusAdviceV01
 
 class SEEV_015_001_01():

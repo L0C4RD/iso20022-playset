@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class ChargeType9Code(base_types._BaseDataType_String):
 

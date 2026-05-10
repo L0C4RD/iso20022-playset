@@ -1,6 +1,6 @@
-import base_types
-import BalanceType13Code
+from . import base_types
 import GenericIdentification30
+import BalanceType13Code
 
 class BalanceType6Choice(base_types._BaseFieldType):
 

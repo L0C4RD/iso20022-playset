@@ -1,39 +1,13 @@
-import base_types
-import Max35Text
-import SupplementaryData1
-import ReturnIndicator2
-import SearchCriteria2Choice
+from . import base_types
 import StatusResponse1Code
+import ReturnIndicator2
+import SupplementaryData1
+import Max35Text
+import SearchCriteria2Choice
 
 class InformationRequestResponseV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RtrInd", "_RspnSts", "_RspnId", "_SchCrit", "_SplmtryData", "_InvstgtnId"]
-	@property
-	def RtrInd(self):
-		return self._RtrInd
-
-	@RtrInd.setter
-	def RtrInd(self, value):
-		self._RtrInd = value if type(value) != auto else self.make_default("RtrInd")
-
-	@RtrInd.deleter
-	def RtrInd(self):
-		del self._RtrInd
-		self._RtrInd = None
-
-	@property
-	def RspnSts(self):
-		return self._RspnSts
-
-	@RspnSts.setter
-	def RspnSts(self, value):
-		self._RspnSts = value if type(value) != auto else self.make_default("RspnSts")
-
-	@RspnSts.deleter
-	def RspnSts(self):
-		del self._RspnSts
-		self._RspnSts = None
-
+	__slots__ = ["_RspnId", "_SchCrit", "_SplmtryData", "_RtrInd", "_InvstgtnId", "_RspnSts"]
 	@property
 	def RspnId(self):
 		return self._RspnId
@@ -74,6 +48,19 @@ class InformationRequestResponseV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def RtrInd(self):
+		return self._RtrInd
+
+	@RtrInd.setter
+	def RtrInd(self, value):
+		self._RtrInd = value if type(value) != auto else self.make_default("RtrInd")
+
+	@RtrInd.deleter
+	def RtrInd(self):
+		del self._RtrInd
+		self._RtrInd = None
+
+	@property
 	def InvstgtnId(self):
 		return self._InvstgtnId
 
@@ -86,12 +73,25 @@ class InformationRequestResponseV02(base_types._BaseFieldType):
 		del self._InvstgtnId
 		self._InvstgtnId = None
 
+	@property
+	def RspnSts(self):
+		return self._RspnSts
+
+	@RspnSts.setter
+	def RspnSts(self, value):
+		self._RspnSts = value if type(value) != auto else self.make_default("RspnSts")
+
+	@RspnSts.deleter
+	def RspnSts(self):
+		del self._RspnSts
+		self._RspnSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RtrInd', type=ReturnIndicator2, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RspnSts', type=StatusResponse1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=SearchCriteria2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RtrInd', type=ReturnIndicator2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InvstgtnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnSts', type=StatusResponse1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

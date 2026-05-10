@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import LiquidityStressScenarioDefinition1
 import SupplementaryData1
 

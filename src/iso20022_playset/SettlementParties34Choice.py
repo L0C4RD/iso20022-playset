@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import OrganisationIdentification15Choice
 
 class SettlementParties34Choice(base_types._BaseFieldType):

@@ -1,27 +1,14 @@
-import base_types
-import Max35Text
-import ShortPaymentIdentification4
-import Max70Text
-import QueueTransactionIdentification1
-import UUIDv4Identifier
+from . import base_types
 import LongPaymentIdentification4
+import Max70Text
+import ShortPaymentIdentification4
+import UUIDv4Identifier
+import Max35Text
+import QueueTransactionIdentification1
 
 class PaymentIdentification8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_QId", "_LngBizId", "_PrtryId", "_ShrtBizId", "_UETR"]
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
+	__slots__ = ["_QId", "_LngBizId", "_ShrtBizId", "_UETR", "_PrtryId", "_TxId"]
 	@property
 	def QId(self):
 		return self._QId
@@ -49,19 +36,6 @@ class PaymentIdentification8Choice(base_types._BaseFieldType):
 		self._LngBizId = None
 
 	@property
-	def PrtryId(self):
-		return self._PrtryId
-
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
-
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
-
-	@property
 	def ShrtBizId(self):
 		return self._ShrtBizId
 
@@ -87,12 +61,38 @@ class PaymentIdentification8Choice(base_types._BaseFieldType):
 		del self._UETR
 		self._UETR = None
 
+	@property
+	def PrtryId(self):
+		return self._PrtryId
+
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
+
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='QId', type=QueueTransactionIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LngBizId', type=LongPaymentIdentification4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtryId', type=Max70Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ShrtBizId', type=ShortPaymentIdentification4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtryId', type=Max70Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

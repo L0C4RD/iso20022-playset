@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ISODate
 
 class Period15(base_types._BaseFieldType):

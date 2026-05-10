@@ -1,13 +1,13 @@
-import base_types
-import PaymentAccount3
-import PaymentReceipt6
-import TransactionIdentifier1
-import StoredValueAccount2
+from . import base_types
 import LoyaltyAccount3
+import PaymentReceipt6
+import StoredValueAccount2
+import TransactionIdentifier1
+import PaymentAccount3
 
 class BalanceInquiryResponse6(base_types._BaseFieldType):
 
-	__slots__ = ["_Rct", "_LltyAcct", "_StordValAcct", "_SaleTxId", "_POITxId", "_PmtAcct"]
+	__slots__ = ["_Rct", "_StordValAcct", "_SaleTxId", "_PmtAcct", "_POITxId", "_LltyAcct"]
 	@property
 	def Rct(self):
 		return self._Rct
@@ -20,19 +20,6 @@ class BalanceInquiryResponse6(base_types._BaseFieldType):
 	def Rct(self):
 		del self._Rct
 		self._Rct = None
-
-	@property
-	def LltyAcct(self):
-		return self._LltyAcct
-
-	@LltyAcct.setter
-	def LltyAcct(self, value):
-		self._LltyAcct = value if type(value) != auto else self.make_default("LltyAcct")
-
-	@LltyAcct.deleter
-	def LltyAcct(self):
-		del self._LltyAcct
-		self._LltyAcct = None
 
 	@property
 	def StordValAcct(self):
@@ -61,6 +48,19 @@ class BalanceInquiryResponse6(base_types._BaseFieldType):
 		self._SaleTxId = None
 
 	@property
+	def PmtAcct(self):
+		return self._PmtAcct
+
+	@PmtAcct.setter
+	def PmtAcct(self, value):
+		self._PmtAcct = value if type(value) != auto else self.make_default("PmtAcct")
+
+	@PmtAcct.deleter
+	def PmtAcct(self):
+		del self._PmtAcct
+		self._PmtAcct = None
+
+	@property
 	def POITxId(self):
 		return self._POITxId
 
@@ -74,24 +74,24 @@ class BalanceInquiryResponse6(base_types._BaseFieldType):
 		self._POITxId = None
 
 	@property
-	def PmtAcct(self):
-		return self._PmtAcct
+	def LltyAcct(self):
+		return self._LltyAcct
 
-	@PmtAcct.setter
-	def PmtAcct(self, value):
-		self._PmtAcct = value if type(value) != auto else self.make_default("PmtAcct")
+	@LltyAcct.setter
+	def LltyAcct(self, value):
+		self._LltyAcct = value if type(value) != auto else self.make_default("LltyAcct")
 
-	@PmtAcct.deleter
-	def PmtAcct(self):
-		del self._PmtAcct
-		self._PmtAcct = None
+	@LltyAcct.deleter
+	def LltyAcct(self):
+		del self._LltyAcct
+		self._LltyAcct = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rct', type=PaymentReceipt6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LltyAcct', type=LoyaltyAccount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StordValAcct', type=StoredValueAccount2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POITxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtAcct', type=PaymentAccount3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POITxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LltyAcct', type=LoyaltyAccount3, min=0, max=1, mutex_group=None, array=False),
 	))
 

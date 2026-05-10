@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import StatementOfInvestmentFundTransactionsV03
 
 class SEMT_006_001_03():

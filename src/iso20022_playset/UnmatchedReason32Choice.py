@@ -1,6 +1,6 @@
-import base_types
-import UnmatchedReason4Code
+from . import base_types
 import GenericIdentification30
+import UnmatchedReason4Code
 
 class UnmatchedReason32Choice(base_types._BaseFieldType):
 

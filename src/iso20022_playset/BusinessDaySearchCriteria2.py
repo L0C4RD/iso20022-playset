@@ -1,39 +1,13 @@
-import base_types
-import DateTimePeriod1Choice
-import SystemEventType2Choice
-import SystemIdentification2Choice
-import ActiveCurrencyCode
+from . import base_types
 import ISODate
+import DateTimePeriod1Choice
+import SystemIdentification2Choice
+import SystemEventType2Choice
+import ActiveCurrencyCode
 
 class BusinessDaySearchCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_ClsrPrd", "_SysCcy", "_SysDt", "_EvtTp", "_SysId"]
-	@property
-	def ClsrPrd(self):
-		return self._ClsrPrd
-
-	@ClsrPrd.setter
-	def ClsrPrd(self, value):
-		self._ClsrPrd = value if type(value) != auto else self.make_default("ClsrPrd")
-
-	@ClsrPrd.deleter
-	def ClsrPrd(self):
-		del self._ClsrPrd
-		self._ClsrPrd = None
-
-	@property
-	def SysCcy(self):
-		return self._SysCcy
-
-	@SysCcy.setter
-	def SysCcy(self, value):
-		self._SysCcy = value if type(value) != auto else self.make_default("SysCcy")
-
-	@SysCcy.deleter
-	def SysCcy(self):
-		del self._SysCcy
-		self._SysCcy = None
-
+	__slots__ = ["_SysDt", "_EvtTp", "_SysId", "_SysCcy", "_ClsrPrd"]
 	@property
 	def SysDt(self):
 		return self._SysDt
@@ -73,11 +47,37 @@ class BusinessDaySearchCriteria2(base_types._BaseFieldType):
 		del self._SysId
 		self._SysId = None
 
+	@property
+	def SysCcy(self):
+		return self._SysCcy
+
+	@SysCcy.setter
+	def SysCcy(self, value):
+		self._SysCcy = value if type(value) != auto else self.make_default("SysCcy")
+
+	@SysCcy.deleter
+	def SysCcy(self):
+		del self._SysCcy
+		self._SysCcy = None
+
+	@property
+	def ClsrPrd(self):
+		return self._ClsrPrd
+
+	@ClsrPrd.setter
+	def ClsrPrd(self, value):
+		self._ClsrPrd = value if type(value) != auto else self.make_default("ClsrPrd")
+
+	@ClsrPrd.deleter
+	def ClsrPrd(self):
+		del self._ClsrPrd
+		self._ClsrPrd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClsrPrd', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysCcy', type=ActiveCurrencyCode, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SysDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTp', type=SystemEventType2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SysCcy', type=ActiveCurrencyCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClsrPrd', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

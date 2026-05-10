@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
+import Option14
 import DerivativeUnderlyingLeg1
 import DerivativeClassification1
-import Option14
 
 class Derivative3(base_types._BaseFieldType):
 
-	__slots__ = ["_DerivClssfctn", "_DerivUndrlygLeg", "_OptnAttrbts"]
+	__slots__ = ["_OptnAttrbts", "_DerivUndrlygLeg", "_DerivClssfctn"]
 	@property
-	def DerivClssfctn(self):
-		return self._DerivClssfctn
+	def OptnAttrbts(self):
+		return self._OptnAttrbts
 
-	@DerivClssfctn.setter
-	def DerivClssfctn(self, value):
-		self._DerivClssfctn = value if type(value) != auto else self.make_default("DerivClssfctn")
+	@OptnAttrbts.setter
+	def OptnAttrbts(self, value):
+		self._OptnAttrbts = value if type(value) != auto else self.make_default("OptnAttrbts")
 
-	@DerivClssfctn.deleter
-	def DerivClssfctn(self):
-		del self._DerivClssfctn
-		self._DerivClssfctn = None
+	@OptnAttrbts.deleter
+	def OptnAttrbts(self):
+		del self._OptnAttrbts
+		self._OptnAttrbts = None
 
 	@property
 	def DerivUndrlygLeg(self):
@@ -33,21 +33,21 @@ class Derivative3(base_types._BaseFieldType):
 		self._DerivUndrlygLeg = None
 
 	@property
-	def OptnAttrbts(self):
-		return self._OptnAttrbts
+	def DerivClssfctn(self):
+		return self._DerivClssfctn
 
-	@OptnAttrbts.setter
-	def OptnAttrbts(self, value):
-		self._OptnAttrbts = value if type(value) != auto else self.make_default("OptnAttrbts")
+	@DerivClssfctn.setter
+	def DerivClssfctn(self, value):
+		self._DerivClssfctn = value if type(value) != auto else self.make_default("DerivClssfctn")
 
-	@OptnAttrbts.deleter
-	def OptnAttrbts(self):
-		del self._OptnAttrbts
-		self._OptnAttrbts = None
+	@DerivClssfctn.deleter
+	def DerivClssfctn(self):
+		del self._DerivClssfctn
+		self._DerivClssfctn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DerivClssfctn', type=DerivativeClassification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DerivUndrlygLeg', type=DerivativeUnderlyingLeg1, min=1, max=2, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnAttrbts', type=Option14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DerivUndrlygLeg', type=DerivativeUnderlyingLeg1, min=1, max=2, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DerivClssfctn', type=DerivativeClassification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

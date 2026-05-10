@@ -1,26 +1,26 @@
-import base_types
+from . import base_types
 import TrackData1
-import Min8Max28NumericText
-import Min2Max3NumericText
-import ISOYearMonth
-import Exact3NumericText
 import CardSecurityInformation1
+import Min2Max3NumericText
+import Exact3NumericText
+import Min8Max28NumericText
+import ISOYearMonth
 
 class PlainCardData1(base_types._BaseFieldType):
 
-	__slots__ = ["_CardSeqNb", "_TrckData", "_CardSctyCd", "_XpryDt", "_SvcCd", "_PAN", "_FctvDt"]
+	__slots__ = ["_XpryDt", "_TrckData", "_CardSeqNb", "_SvcCd", "_FctvDt", "_CardSctyCd", "_PAN"]
 	@property
-	def CardSeqNb(self):
-		return self._CardSeqNb
+	def XpryDt(self):
+		return self._XpryDt
 
-	@CardSeqNb.setter
-	def CardSeqNb(self, value):
-		self._CardSeqNb = value if type(value) != auto else self.make_default("CardSeqNb")
+	@XpryDt.setter
+	def XpryDt(self, value):
+		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
 
-	@CardSeqNb.deleter
-	def CardSeqNb(self):
-		del self._CardSeqNb
-		self._CardSeqNb = None
+	@XpryDt.deleter
+	def XpryDt(self):
+		del self._XpryDt
+		self._XpryDt = None
 
 	@property
 	def TrckData(self):
@@ -36,30 +36,17 @@ class PlainCardData1(base_types._BaseFieldType):
 		self._TrckData = None
 
 	@property
-	def CardSctyCd(self):
-		return self._CardSctyCd
+	def CardSeqNb(self):
+		return self._CardSeqNb
 
-	@CardSctyCd.setter
-	def CardSctyCd(self, value):
-		self._CardSctyCd = value if type(value) != auto else self.make_default("CardSctyCd")
+	@CardSeqNb.setter
+	def CardSeqNb(self, value):
+		self._CardSeqNb = value if type(value) != auto else self.make_default("CardSeqNb")
 
-	@CardSctyCd.deleter
-	def CardSctyCd(self):
-		del self._CardSctyCd
-		self._CardSctyCd = None
-
-	@property
-	def XpryDt(self):
-		return self._XpryDt
-
-	@XpryDt.setter
-	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
-
-	@XpryDt.deleter
-	def XpryDt(self):
-		del self._XpryDt
-		self._XpryDt = None
+	@CardSeqNb.deleter
+	def CardSeqNb(self):
+		del self._CardSeqNb
+		self._CardSeqNb = None
 
 	@property
 	def SvcCd(self):
@@ -75,19 +62,6 @@ class PlainCardData1(base_types._BaseFieldType):
 		self._SvcCd = None
 
 	@property
-	def PAN(self):
-		return self._PAN
-
-	@PAN.setter
-	def PAN(self, value):
-		self._PAN = value if type(value) != auto else self.make_default("PAN")
-
-	@PAN.deleter
-	def PAN(self):
-		del self._PAN
-		self._PAN = None
-
-	@property
 	def FctvDt(self):
 		return self._FctvDt
 
@@ -100,13 +74,39 @@ class PlainCardData1(base_types._BaseFieldType):
 		del self._FctvDt
 		self._FctvDt = None
 
+	@property
+	def CardSctyCd(self):
+		return self._CardSctyCd
+
+	@CardSctyCd.setter
+	def CardSctyCd(self, value):
+		self._CardSctyCd = value if type(value) != auto else self.make_default("CardSctyCd")
+
+	@CardSctyCd.deleter
+	def CardSctyCd(self):
+		del self._CardSctyCd
+		self._CardSctyCd = None
+
+	@property
+	def PAN(self):
+		return self._PAN
+
+	@PAN.setter
+	def PAN(self, value):
+		self._PAN = value if type(value) != auto else self.make_default("PAN")
+
+	@PAN.deleter
+	def PAN(self):
+		del self._PAN
+		self._PAN = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CardSeqNb', type=Min2Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrckData', type=TrackData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CardSctyCd', type=CardSecurityInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDt', type=ISOYearMonth, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrckData', type=TrackData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CardSeqNb', type=Min2Max3NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcCd', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PAN', type=Min8Max28NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FctvDt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardSctyCd', type=CardSecurityInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PAN', type=Min8Max28NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

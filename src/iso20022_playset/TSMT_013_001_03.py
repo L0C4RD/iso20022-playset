@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DataSetMatchReportV03
 
 class TSMT_013_001_03():

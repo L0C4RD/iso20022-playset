@@ -1,82 +1,121 @@
-import base_types
-import PartyIdentification288
-import SpecialProgrammeQualification2
-import Jurisdiction2
-import CardData11
-import AccountDetails4
-import Cardholder22
-import ProtectedData2
+from . import base_types
 import SettlementService5
-import Header71
-import AdditionalFee3
-import Reconciliation4
-import SupplementaryData1
-import ISO8583ResponseCode
-import Instalment6
-import DateTime2
-import Verification6
-import AdditionalService2
-import ProcessingResult27
-import TransactionCharacteristics2
-import ContentInformationType41
-import Max10KHexBinaryText
-import StrongCustomerAuthentication2
-import AdditionalData2
-import Wallet3
-import TransactionAmounts4
-import TransactionIdentification54
-import PartyIdentification286
 import Terminal7
+import AdditionalFee3
+import ProcessingResult27
+import CardData11
 import Token2
-import RiskContext3
-import CustomerDevice5
-import AdditionalAmounts4
+import TransactionAmounts4
+import SpecialProgrammeQualification2
+import Cardholder22
 import ExchangeRateInformation5
-import ProgrammeMode4
-import Context23
 import PointOfInteractionComponent16
+import Context23
+import ISO8583ResponseCode
+import PartyIdentification286
+import StrongCustomerAuthentication2
+import ProgrammeMode4
+import SupplementaryData1
+import CustomerDevice5
+import RiskContext3
+import PartyIdentification288
+import Header71
+import AdditionalData2
+import DateTime2
+import Jurisdiction2
+import TransactionIdentification54
+import TransactionCharacteristics2
+import Wallet3
+import AccountDetails4
+import ProtectedData2
+import Instalment6
+import Max10KHexBinaryText
+import Reconciliation4
+import ContentInformationType41
+import AdditionalAmounts4
+import AdditionalService2
+import Verification6
 
 class InquiryInitiationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsk", "_OrgnlRspnCd", "_Card", "_AddtlSvc", "_ICCRltdData", "_Termnl", "_StrngCstmrAuthntcn", "_TxId", "_Dstn", "_AddtlData", "_PrcgRslt", "_Acqrr", "_Hdr", "_SctyTrlr", "_AddtlAmt", "_AddtlFee", "_Issr", "_Accptr", "_Orgtr", "_Sndr", "_TxChrtcs", "_SpclPrgrmmQlfctn", "_AcctFr", "_Instlmt", "_Wllt", "_Rcvr", "_Vrfctn", "_XchgRate", "_ConvsDtTm", "_Cntxt", "_Rcncltn", "_Jursdctn", "_Tkn", "_CstmrDvc", "_POICmpnt", "_Crdhldr", "_PrtctdData", "_TxAmts", "_SttlmSvc", "_Prgrmm", "_SplmtryData"]
+	__slots__ = ["_Instlmt", "_CstmrDvc", "_TxAmts", "_PrtctdData", "_TxChrtcs", "_Cntxt", "_AddtlSvc", "_Crdhldr", "_Accptr", "_Prgrmm", "_ConvsDtTm", "_ICCRltdData", "_OrgnlRspnCd", "_SpclPrgrmmQlfctn", "_Rcncltn", "_AddtlData", "_Issr", "_XchgRate", "_Wllt", "_Acqrr", "_Hdr", "_Dstn", "_PrcgRslt", "_Termnl", "_Rcvr", "_Jursdctn", "_SttlmSvc", "_Sndr", "_Rsk", "_Card", "_POICmpnt", "_AddtlFee", "_SplmtryData", "_AcctFr", "_Tkn", "_Orgtr", "_AddtlAmt", "_Vrfctn", "_TxId", "_SctyTrlr", "_StrngCstmrAuthntcn"]
 	@property
-	def Rsk(self):
-		return self._Rsk
+	def Instlmt(self):
+		return self._Instlmt
 
-	@Rsk.setter
-	def Rsk(self, value):
-		self._Rsk = value if type(value) != auto else self.make_default("Rsk")
+	@Instlmt.setter
+	def Instlmt(self, value):
+		self._Instlmt = value if type(value) != auto else self.make_default("Instlmt")
 
-	@Rsk.deleter
-	def Rsk(self):
-		del self._Rsk
-		self._Rsk = None
-
-	@property
-	def OrgnlRspnCd(self):
-		return self._OrgnlRspnCd
-
-	@OrgnlRspnCd.setter
-	def OrgnlRspnCd(self, value):
-		self._OrgnlRspnCd = value if type(value) != auto else self.make_default("OrgnlRspnCd")
-
-	@OrgnlRspnCd.deleter
-	def OrgnlRspnCd(self):
-		del self._OrgnlRspnCd
-		self._OrgnlRspnCd = None
+	@Instlmt.deleter
+	def Instlmt(self):
+		del self._Instlmt
+		self._Instlmt = None
 
 	@property
-	def Card(self):
-		return self._Card
+	def CstmrDvc(self):
+		return self._CstmrDvc
 
-	@Card.setter
-	def Card(self, value):
-		self._Card = value if type(value) != auto else self.make_default("Card")
+	@CstmrDvc.setter
+	def CstmrDvc(self, value):
+		self._CstmrDvc = value if type(value) != auto else self.make_default("CstmrDvc")
 
-	@Card.deleter
-	def Card(self):
-		del self._Card
-		self._Card = None
+	@CstmrDvc.deleter
+	def CstmrDvc(self):
+		del self._CstmrDvc
+		self._CstmrDvc = None
+
+	@property
+	def TxAmts(self):
+		return self._TxAmts
+
+	@TxAmts.setter
+	def TxAmts(self, value):
+		self._TxAmts = value if type(value) != auto else self.make_default("TxAmts")
+
+	@TxAmts.deleter
+	def TxAmts(self):
+		del self._TxAmts
+		self._TxAmts = None
+
+	@property
+	def PrtctdData(self):
+		return self._PrtctdData
+
+	@PrtctdData.setter
+	def PrtctdData(self, value):
+		self._PrtctdData = value if type(value) != auto else self.make_default("PrtctdData")
+
+	@PrtctdData.deleter
+	def PrtctdData(self):
+		del self._PrtctdData
+		self._PrtctdData = None
+
+	@property
+	def TxChrtcs(self):
+		return self._TxChrtcs
+
+	@TxChrtcs.setter
+	def TxChrtcs(self, value):
+		self._TxChrtcs = value if type(value) != auto else self.make_default("TxChrtcs")
+
+	@TxChrtcs.deleter
+	def TxChrtcs(self):
+		del self._TxChrtcs
+		self._TxChrtcs = None
+
+	@property
+	def Cntxt(self):
+		return self._Cntxt
+
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
 
 	@property
 	def AddtlSvc(self):
@@ -92,6 +131,58 @@ class InquiryInitiationV03(base_types._BaseFieldType):
 		self._AddtlSvc = None
 
 	@property
+	def Crdhldr(self):
+		return self._Crdhldr
+
+	@Crdhldr.setter
+	def Crdhldr(self, value):
+		self._Crdhldr = value if type(value) != auto else self.make_default("Crdhldr")
+
+	@Crdhldr.deleter
+	def Crdhldr(self):
+		del self._Crdhldr
+		self._Crdhldr = None
+
+	@property
+	def Accptr(self):
+		return self._Accptr
+
+	@Accptr.setter
+	def Accptr(self, value):
+		self._Accptr = value if type(value) != auto else self.make_default("Accptr")
+
+	@Accptr.deleter
+	def Accptr(self):
+		del self._Accptr
+		self._Accptr = None
+
+	@property
+	def Prgrmm(self):
+		return self._Prgrmm
+
+	@Prgrmm.setter
+	def Prgrmm(self, value):
+		self._Prgrmm = value if type(value) != auto else self.make_default("Prgrmm")
+
+	@Prgrmm.deleter
+	def Prgrmm(self):
+		del self._Prgrmm
+		self._Prgrmm = None
+
+	@property
+	def ConvsDtTm(self):
+		return self._ConvsDtTm
+
+	@ConvsDtTm.setter
+	def ConvsDtTm(self, value):
+		self._ConvsDtTm = value if type(value) != auto else self.make_default("ConvsDtTm")
+
+	@ConvsDtTm.deleter
+	def ConvsDtTm(self):
+		del self._ConvsDtTm
+		self._ConvsDtTm = None
+
+	@property
 	def ICCRltdData(self):
 		return self._ICCRltdData
 
@@ -105,56 +196,43 @@ class InquiryInitiationV03(base_types._BaseFieldType):
 		self._ICCRltdData = None
 
 	@property
-	def Termnl(self):
-		return self._Termnl
+	def OrgnlRspnCd(self):
+		return self._OrgnlRspnCd
 
-	@Termnl.setter
-	def Termnl(self, value):
-		self._Termnl = value if type(value) != auto else self.make_default("Termnl")
+	@OrgnlRspnCd.setter
+	def OrgnlRspnCd(self, value):
+		self._OrgnlRspnCd = value if type(value) != auto else self.make_default("OrgnlRspnCd")
 
-	@Termnl.deleter
-	def Termnl(self):
-		del self._Termnl
-		self._Termnl = None
-
-	@property
-	def StrngCstmrAuthntcn(self):
-		return self._StrngCstmrAuthntcn
-
-	@StrngCstmrAuthntcn.setter
-	def StrngCstmrAuthntcn(self, value):
-		self._StrngCstmrAuthntcn = value if type(value) != auto else self.make_default("StrngCstmrAuthntcn")
-
-	@StrngCstmrAuthntcn.deleter
-	def StrngCstmrAuthntcn(self):
-		del self._StrngCstmrAuthntcn
-		self._StrngCstmrAuthntcn = None
+	@OrgnlRspnCd.deleter
+	def OrgnlRspnCd(self):
+		del self._OrgnlRspnCd
+		self._OrgnlRspnCd = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def SpclPrgrmmQlfctn(self):
+		return self._SpclPrgrmmQlfctn
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@SpclPrgrmmQlfctn.setter
+	def SpclPrgrmmQlfctn(self, value):
+		self._SpclPrgrmmQlfctn = value if type(value) != auto else self.make_default("SpclPrgrmmQlfctn")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@SpclPrgrmmQlfctn.deleter
+	def SpclPrgrmmQlfctn(self):
+		del self._SpclPrgrmmQlfctn
+		self._SpclPrgrmmQlfctn = None
 
 	@property
-	def Dstn(self):
-		return self._Dstn
+	def Rcncltn(self):
+		return self._Rcncltn
 
-	@Dstn.setter
-	def Dstn(self, value):
-		self._Dstn = value if type(value) != auto else self.make_default("Dstn")
+	@Rcncltn.setter
+	def Rcncltn(self, value):
+		self._Rcncltn = value if type(value) != auto else self.make_default("Rcncltn")
 
-	@Dstn.deleter
-	def Dstn(self):
-		del self._Dstn
-		self._Dstn = None
+	@Rcncltn.deleter
+	def Rcncltn(self):
+		del self._Rcncltn
+		self._Rcncltn = None
 
 	@property
 	def AddtlData(self):
@@ -170,17 +248,43 @@ class InquiryInitiationV03(base_types._BaseFieldType):
 		self._AddtlData = None
 
 	@property
-	def PrcgRslt(self):
-		return self._PrcgRslt
+	def Issr(self):
+		return self._Issr
 
-	@PrcgRslt.setter
-	def PrcgRslt(self, value):
-		self._PrcgRslt = value if type(value) != auto else self.make_default("PrcgRslt")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@PrcgRslt.deleter
-	def PrcgRslt(self):
-		del self._PrcgRslt
-		self._PrcgRslt = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
+	@property
+	def XchgRate(self):
+		return self._XchgRate
+
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
+
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
+
+	@property
+	def Wllt(self):
+		return self._Wllt
+
+	@Wllt.setter
+	def Wllt(self, value):
+		self._Wllt = value if type(value) != auto else self.make_default("Wllt")
+
+	@Wllt.deleter
+	def Wllt(self):
+		del self._Wllt
+		self._Wllt = None
 
 	@property
 	def Acqrr(self):
@@ -209,160 +313,43 @@ class InquiryInitiationV03(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def Dstn(self):
+		return self._Dstn
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+	@Dstn.setter
+	def Dstn(self, value):
+		self._Dstn = value if type(value) != auto else self.make_default("Dstn")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
-	@property
-	def AddtlAmt(self):
-		return self._AddtlAmt
-
-	@AddtlAmt.setter
-	def AddtlAmt(self, value):
-		self._AddtlAmt = value if type(value) != auto else self.make_default("AddtlAmt")
-
-	@AddtlAmt.deleter
-	def AddtlAmt(self):
-		del self._AddtlAmt
-		self._AddtlAmt = None
+	@Dstn.deleter
+	def Dstn(self):
+		del self._Dstn
+		self._Dstn = None
 
 	@property
-	def AddtlFee(self):
-		return self._AddtlFee
+	def PrcgRslt(self):
+		return self._PrcgRslt
 
-	@AddtlFee.setter
-	def AddtlFee(self, value):
-		self._AddtlFee = value if type(value) != auto else self.make_default("AddtlFee")
+	@PrcgRslt.setter
+	def PrcgRslt(self, value):
+		self._PrcgRslt = value if type(value) != auto else self.make_default("PrcgRslt")
 
-	@AddtlFee.deleter
-	def AddtlFee(self):
-		del self._AddtlFee
-		self._AddtlFee = None
-
-	@property
-	def Issr(self):
-		return self._Issr
-
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
-
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@PrcgRslt.deleter
+	def PrcgRslt(self):
+		del self._PrcgRslt
+		self._PrcgRslt = None
 
 	@property
-	def Accptr(self):
-		return self._Accptr
+	def Termnl(self):
+		return self._Termnl
 
-	@Accptr.setter
-	def Accptr(self, value):
-		self._Accptr = value if type(value) != auto else self.make_default("Accptr")
+	@Termnl.setter
+	def Termnl(self, value):
+		self._Termnl = value if type(value) != auto else self.make_default("Termnl")
 
-	@Accptr.deleter
-	def Accptr(self):
-		del self._Accptr
-		self._Accptr = None
-
-	@property
-	def Orgtr(self):
-		return self._Orgtr
-
-	@Orgtr.setter
-	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
-
-	@Orgtr.deleter
-	def Orgtr(self):
-		del self._Orgtr
-		self._Orgtr = None
-
-	@property
-	def Sndr(self):
-		return self._Sndr
-
-	@Sndr.setter
-	def Sndr(self, value):
-		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
-
-	@Sndr.deleter
-	def Sndr(self):
-		del self._Sndr
-		self._Sndr = None
-
-	@property
-	def TxChrtcs(self):
-		return self._TxChrtcs
-
-	@TxChrtcs.setter
-	def TxChrtcs(self, value):
-		self._TxChrtcs = value if type(value) != auto else self.make_default("TxChrtcs")
-
-	@TxChrtcs.deleter
-	def TxChrtcs(self):
-		del self._TxChrtcs
-		self._TxChrtcs = None
-
-	@property
-	def SpclPrgrmmQlfctn(self):
-		return self._SpclPrgrmmQlfctn
-
-	@SpclPrgrmmQlfctn.setter
-	def SpclPrgrmmQlfctn(self, value):
-		self._SpclPrgrmmQlfctn = value if type(value) != auto else self.make_default("SpclPrgrmmQlfctn")
-
-	@SpclPrgrmmQlfctn.deleter
-	def SpclPrgrmmQlfctn(self):
-		del self._SpclPrgrmmQlfctn
-		self._SpclPrgrmmQlfctn = None
-
-	@property
-	def AcctFr(self):
-		return self._AcctFr
-
-	@AcctFr.setter
-	def AcctFr(self, value):
-		self._AcctFr = value if type(value) != auto else self.make_default("AcctFr")
-
-	@AcctFr.deleter
-	def AcctFr(self):
-		del self._AcctFr
-		self._AcctFr = None
-
-	@property
-	def Instlmt(self):
-		return self._Instlmt
-
-	@Instlmt.setter
-	def Instlmt(self, value):
-		self._Instlmt = value if type(value) != auto else self.make_default("Instlmt")
-
-	@Instlmt.deleter
-	def Instlmt(self):
-		del self._Instlmt
-		self._Instlmt = None
-
-	@property
-	def Wllt(self):
-		return self._Wllt
-
-	@Wllt.setter
-	def Wllt(self, value):
-		self._Wllt = value if type(value) != auto else self.make_default("Wllt")
-
-	@Wllt.deleter
-	def Wllt(self):
-		del self._Wllt
-		self._Wllt = None
+	@Termnl.deleter
+	def Termnl(self):
+		del self._Termnl
+		self._Termnl = None
 
 	@property
 	def Rcvr(self):
@@ -378,71 +365,6 @@ class InquiryInitiationV03(base_types._BaseFieldType):
 		self._Rcvr = None
 
 	@property
-	def Vrfctn(self):
-		return self._Vrfctn
-
-	@Vrfctn.setter
-	def Vrfctn(self, value):
-		self._Vrfctn = value if type(value) != auto else self.make_default("Vrfctn")
-
-	@Vrfctn.deleter
-	def Vrfctn(self):
-		del self._Vrfctn
-		self._Vrfctn = None
-
-	@property
-	def XchgRate(self):
-		return self._XchgRate
-
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
-
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
-
-	@property
-	def ConvsDtTm(self):
-		return self._ConvsDtTm
-
-	@ConvsDtTm.setter
-	def ConvsDtTm(self, value):
-		self._ConvsDtTm = value if type(value) != auto else self.make_default("ConvsDtTm")
-
-	@ConvsDtTm.deleter
-	def ConvsDtTm(self):
-		del self._ConvsDtTm
-		self._ConvsDtTm = None
-
-	@property
-	def Cntxt(self):
-		return self._Cntxt
-
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
-
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
-
-	@property
-	def Rcncltn(self):
-		return self._Rcncltn
-
-	@Rcncltn.setter
-	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != auto else self.make_default("Rcncltn")
-
-	@Rcncltn.deleter
-	def Rcncltn(self):
-		del self._Rcncltn
-		self._Rcncltn = None
-
-	@property
 	def Jursdctn(self):
 		return self._Jursdctn
 
@@ -454,84 +376,6 @@ class InquiryInitiationV03(base_types._BaseFieldType):
 	def Jursdctn(self):
 		del self._Jursdctn
 		self._Jursdctn = None
-
-	@property
-	def Tkn(self):
-		return self._Tkn
-
-	@Tkn.setter
-	def Tkn(self, value):
-		self._Tkn = value if type(value) != auto else self.make_default("Tkn")
-
-	@Tkn.deleter
-	def Tkn(self):
-		del self._Tkn
-		self._Tkn = None
-
-	@property
-	def CstmrDvc(self):
-		return self._CstmrDvc
-
-	@CstmrDvc.setter
-	def CstmrDvc(self, value):
-		self._CstmrDvc = value if type(value) != auto else self.make_default("CstmrDvc")
-
-	@CstmrDvc.deleter
-	def CstmrDvc(self):
-		del self._CstmrDvc
-		self._CstmrDvc = None
-
-	@property
-	def POICmpnt(self):
-		return self._POICmpnt
-
-	@POICmpnt.setter
-	def POICmpnt(self, value):
-		self._POICmpnt = value if type(value) != auto else self.make_default("POICmpnt")
-
-	@POICmpnt.deleter
-	def POICmpnt(self):
-		del self._POICmpnt
-		self._POICmpnt = None
-
-	@property
-	def Crdhldr(self):
-		return self._Crdhldr
-
-	@Crdhldr.setter
-	def Crdhldr(self, value):
-		self._Crdhldr = value if type(value) != auto else self.make_default("Crdhldr")
-
-	@Crdhldr.deleter
-	def Crdhldr(self):
-		del self._Crdhldr
-		self._Crdhldr = None
-
-	@property
-	def PrtctdData(self):
-		return self._PrtctdData
-
-	@PrtctdData.setter
-	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != auto else self.make_default("PrtctdData")
-
-	@PrtctdData.deleter
-	def PrtctdData(self):
-		del self._PrtctdData
-		self._PrtctdData = None
-
-	@property
-	def TxAmts(self):
-		return self._TxAmts
-
-	@TxAmts.setter
-	def TxAmts(self, value):
-		self._TxAmts = value if type(value) != auto else self.make_default("TxAmts")
-
-	@TxAmts.deleter
-	def TxAmts(self):
-		del self._TxAmts
-		self._TxAmts = None
 
 	@property
 	def SttlmSvc(self):
@@ -547,17 +391,69 @@ class InquiryInitiationV03(base_types._BaseFieldType):
 		self._SttlmSvc = None
 
 	@property
-	def Prgrmm(self):
-		return self._Prgrmm
+	def Sndr(self):
+		return self._Sndr
 
-	@Prgrmm.setter
-	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != auto else self.make_default("Prgrmm")
+	@Sndr.setter
+	def Sndr(self, value):
+		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
 
-	@Prgrmm.deleter
-	def Prgrmm(self):
-		del self._Prgrmm
-		self._Prgrmm = None
+	@Sndr.deleter
+	def Sndr(self):
+		del self._Sndr
+		self._Sndr = None
+
+	@property
+	def Rsk(self):
+		return self._Rsk
+
+	@Rsk.setter
+	def Rsk(self, value):
+		self._Rsk = value if type(value) != auto else self.make_default("Rsk")
+
+	@Rsk.deleter
+	def Rsk(self):
+		del self._Rsk
+		self._Rsk = None
+
+	@property
+	def Card(self):
+		return self._Card
+
+	@Card.setter
+	def Card(self, value):
+		self._Card = value if type(value) != auto else self.make_default("Card")
+
+	@Card.deleter
+	def Card(self):
+		del self._Card
+		self._Card = None
+
+	@property
+	def POICmpnt(self):
+		return self._POICmpnt
+
+	@POICmpnt.setter
+	def POICmpnt(self, value):
+		self._POICmpnt = value if type(value) != auto else self.make_default("POICmpnt")
+
+	@POICmpnt.deleter
+	def POICmpnt(self):
+		del self._POICmpnt
+		self._POICmpnt = None
+
+	@property
+	def AddtlFee(self):
+		return self._AddtlFee
+
+	@AddtlFee.setter
+	def AddtlFee(self, value):
+		self._AddtlFee = value if type(value) != auto else self.make_default("AddtlFee")
+
+	@AddtlFee.deleter
+	def AddtlFee(self):
+		del self._AddtlFee
+		self._AddtlFee = None
 
 	@property
 	def SplmtryData(self):
@@ -572,47 +468,151 @@ class InquiryInitiationV03(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def AcctFr(self):
+		return self._AcctFr
+
+	@AcctFr.setter
+	def AcctFr(self, value):
+		self._AcctFr = value if type(value) != auto else self.make_default("AcctFr")
+
+	@AcctFr.deleter
+	def AcctFr(self):
+		del self._AcctFr
+		self._AcctFr = None
+
+	@property
+	def Tkn(self):
+		return self._Tkn
+
+	@Tkn.setter
+	def Tkn(self, value):
+		self._Tkn = value if type(value) != auto else self.make_default("Tkn")
+
+	@Tkn.deleter
+	def Tkn(self):
+		del self._Tkn
+		self._Tkn = None
+
+	@property
+	def Orgtr(self):
+		return self._Orgtr
+
+	@Orgtr.setter
+	def Orgtr(self, value):
+		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
+
+	@Orgtr.deleter
+	def Orgtr(self):
+		del self._Orgtr
+		self._Orgtr = None
+
+	@property
+	def AddtlAmt(self):
+		return self._AddtlAmt
+
+	@AddtlAmt.setter
+	def AddtlAmt(self, value):
+		self._AddtlAmt = value if type(value) != auto else self.make_default("AddtlAmt")
+
+	@AddtlAmt.deleter
+	def AddtlAmt(self):
+		del self._AddtlAmt
+		self._AddtlAmt = None
+
+	@property
+	def Vrfctn(self):
+		return self._Vrfctn
+
+	@Vrfctn.setter
+	def Vrfctn(self, value):
+		self._Vrfctn = value if type(value) != auto else self.make_default("Vrfctn")
+
+	@Vrfctn.deleter
+	def Vrfctn(self):
+		del self._Vrfctn
+		self._Vrfctn = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
+	@property
+	def StrngCstmrAuthntcn(self):
+		return self._StrngCstmrAuthntcn
+
+	@StrngCstmrAuthntcn.setter
+	def StrngCstmrAuthntcn(self, value):
+		self._StrngCstmrAuthntcn = value if type(value) != auto else self.make_default("StrngCstmrAuthntcn")
+
+	@StrngCstmrAuthntcn.deleter
+	def StrngCstmrAuthntcn(self):
+		del self._StrngCstmrAuthntcn
+		self._StrngCstmrAuthntcn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rsk', type=RiskContext3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlRspnCd', type=ISO8583ResponseCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Card', type=CardData11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Instlmt', type=Instalment6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrDvc', type=CustomerDevice5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxAmts', type=TransactionAmounts4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxChrtcs', type=TransactionCharacteristics2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntxt', type=Context23, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlSvc', type=AdditionalService2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Crdhldr', type=Cardholder22, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Accptr', type=PartyIdentification288, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prgrmm', type=ProgrammeMode4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConvsDtTm', type=DateTime2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ICCRltdData', type=Max10KHexBinaryText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Termnl', type=Terminal7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StrngCstmrAuthntcn', type=StrongCustomerAuthentication2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=TransactionIdentification54, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dstn', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlRspnCd', type=ISO8583ResponseCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpclPrgrmmQlfctn', type=SpecialProgrammeQualification2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rcncltn', type=Reconciliation4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrcgRslt', type=ProcessingResult27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=ExchangeRateInformation5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Wllt', type=Wallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acqrr', type=PartyIdentification286, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header71, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType41, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlAmt', type=AdditionalAmounts4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlFee', type=AdditionalFee3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Issr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Accptr', type=PartyIdentification288, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Orgtr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sndr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxChrtcs', type=TransactionCharacteristics2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SpclPrgrmmQlfctn', type=SpecialProgrammeQualification2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctFr', type=AccountDetails4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Instlmt', type=Instalment6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Wllt', type=Wallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dstn', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgRslt', type=ProcessingResult27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Termnl', type=Terminal7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcvr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrfctn', type=Verification6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='XchgRate', type=ExchangeRateInformation5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ConvsDtTm', type=DateTime2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cntxt', type=Context23, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcncltn', type=Reconciliation4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Jursdctn', type=Jurisdiction2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tkn', type=Token2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrDvc', type=CustomerDevice5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POICmpnt', type=PointOfInteractionComponent16, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Crdhldr', type=Cardholder22, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxAmts', type=TransactionAmounts4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmSvc', type=SettlementService5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prgrmm', type=ProgrammeMode4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sndr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsk', type=RiskContext3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Card', type=CardData11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POICmpnt', type=PointOfInteractionComponent16, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlFee', type=AdditionalFee3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctFr', type=AccountDetails4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tkn', type=Token2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Orgtr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlAmt', type=AdditionalAmounts4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Vrfctn', type=Verification6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentification54, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType41, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrngCstmrAuthntcn', type=StrongCustomerAuthentication2, min=0, max=1, mutex_group=None, array=False),
 	))
 

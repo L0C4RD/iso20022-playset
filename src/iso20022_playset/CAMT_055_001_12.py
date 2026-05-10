@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CustomerPaymentCancellationRequestV12
 
 class CAMT_055_001_12():

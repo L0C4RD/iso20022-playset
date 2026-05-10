@@ -1,27 +1,27 @@
-import base_types
-import Value
-import Max35Text
-import ISODateTime
-import CallIn1Code
-import Exact4AlphaNumericText
+from . import base_types
 import ISODate
 import PayInCallItem
+import CallIn1Code
+import ISODateTime
+import Exact4AlphaNumericText
+import Max35Text
+import Value
 
 class ReportData5(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_ValDt", "_MsgId", "_PayInCallAmt", "_DtAndTmStmp", "_SttlmSsnIdr", "_AcctVal"]
+	__slots__ = ["_MsgId", "_ValDt", "_Tp", "_SttlmSsnIdr", "_PayInCallAmt", "_AcctVal", "_DtAndTmStmp"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def MsgId(self):
+		return self._MsgId
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def ValDt(self):
@@ -37,43 +37,17 @@ class ReportData5(base_types._BaseFieldType):
 		self._ValDt = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def Tp(self):
+		return self._Tp
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
-	@property
-	def PayInCallAmt(self):
-		return self._PayInCallAmt
-
-	@PayInCallAmt.setter
-	def PayInCallAmt(self, value):
-		self._PayInCallAmt = value if type(value) != auto else self.make_default("PayInCallAmt")
-
-	@PayInCallAmt.deleter
-	def PayInCallAmt(self):
-		del self._PayInCallAmt
-		self._PayInCallAmt = None
-
-	@property
-	def DtAndTmStmp(self):
-		return self._DtAndTmStmp
-
-	@DtAndTmStmp.setter
-	def DtAndTmStmp(self, value):
-		self._DtAndTmStmp = value if type(value) != auto else self.make_default("DtAndTmStmp")
-
-	@DtAndTmStmp.deleter
-	def DtAndTmStmp(self):
-		del self._DtAndTmStmp
-		self._DtAndTmStmp = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def SttlmSsnIdr(self):
@@ -89,6 +63,19 @@ class ReportData5(base_types._BaseFieldType):
 		self._SttlmSsnIdr = None
 
 	@property
+	def PayInCallAmt(self):
+		return self._PayInCallAmt
+
+	@PayInCallAmt.setter
+	def PayInCallAmt(self, value):
+		self._PayInCallAmt = value if type(value) != auto else self.make_default("PayInCallAmt")
+
+	@PayInCallAmt.deleter
+	def PayInCallAmt(self):
+		del self._PayInCallAmt
+		self._PayInCallAmt = None
+
+	@property
 	def AcctVal(self):
 		return self._AcctVal
 
@@ -101,13 +88,26 @@ class ReportData5(base_types._BaseFieldType):
 		del self._AcctVal
 		self._AcctVal = None
 
+	@property
+	def DtAndTmStmp(self):
+		return self._DtAndTmStmp
+
+	@DtAndTmStmp.setter
+	def DtAndTmStmp(self, value):
+		self._DtAndTmStmp = value if type(value) != auto else self.make_default("DtAndTmStmp")
+
+	@DtAndTmStmp.deleter
+	def DtAndTmStmp(self):
+		del self._DtAndTmStmp
+		self._DtAndTmStmp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=CallIn1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PayInCallAmt', type=PayInCallItem, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DtAndTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CallIn1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PayInCallAmt', type=PayInCallItem, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctVal', type=Value, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtAndTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

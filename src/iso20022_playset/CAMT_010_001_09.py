@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReturnLimitV09
 
 class CAMT_010_001_09():

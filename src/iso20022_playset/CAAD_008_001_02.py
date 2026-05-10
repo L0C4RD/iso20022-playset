@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AdministrativeInitiationV02
 
 class CAAD_008_001_02():

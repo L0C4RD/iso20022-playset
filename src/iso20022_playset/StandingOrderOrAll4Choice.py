@@ -1,6 +1,6 @@
-import base_types
-import StandingOrderIdentification9
+from . import base_types
 import StandingOrderIdentification8
+import StandingOrderIdentification9
 
 class StandingOrderOrAll4Choice(base_types._BaseFieldType):
 

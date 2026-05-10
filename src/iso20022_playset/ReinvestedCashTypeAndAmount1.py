@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import ReinvestmentType1Code
 import ActiveOrHistoricCurrencyAndAmount
 
 class ReinvestedCashTypeAndAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_RinvstdCshAmt", "_Tp"]
-	@property
-	def RinvstdCshAmt(self):
-		return self._RinvstdCshAmt
-
-	@RinvstdCshAmt.setter
-	def RinvstdCshAmt(self, value):
-		self._RinvstdCshAmt = value if type(value) != auto else self.make_default("RinvstdCshAmt")
-
-	@RinvstdCshAmt.deleter
-	def RinvstdCshAmt(self):
-		del self._RinvstdCshAmt
-		self._RinvstdCshAmt = None
-
+	__slots__ = ["_Tp", "_RinvstdCshAmt"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -31,8 +18,21 @@ class ReinvestedCashTypeAndAmount1(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def RinvstdCshAmt(self):
+		return self._RinvstdCshAmt
+
+	@RinvstdCshAmt.setter
+	def RinvstdCshAmt(self, value):
+		self._RinvstdCshAmt = value if type(value) != auto else self.make_default("RinvstdCshAmt")
+
+	@RinvstdCshAmt.deleter
+	def RinvstdCshAmt(self):
+		del self._RinvstdCshAmt
+		self._RinvstdCshAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RinvstdCshAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ReinvestmentType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RinvstdCshAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

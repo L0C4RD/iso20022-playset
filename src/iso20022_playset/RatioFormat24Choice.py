@@ -1,12 +1,12 @@
-import base_types
-import QuantityToQuantityRatio2
+from . import base_types
 import AmountAndQuantityRatio5
+import QuantityToQuantityRatio2
 import AmountToAmountRatio3
 import RateValueType7Code
 
 class RatioFormat24Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_QtyToAmt", "_NotSpcfdRate", "_QtyToQty", "_AmtToQty", "_AmtToAmt"]
+	__slots__ = ["_QtyToAmt", "_NotSpcfdRate", "_AmtToQty", "_AmtToAmt", "_QtyToQty"]
 	@property
 	def QtyToAmt(self):
 		return self._QtyToAmt
@@ -34,19 +34,6 @@ class RatioFormat24Choice(base_types._BaseFieldType):
 		self._NotSpcfdRate = None
 
 	@property
-	def QtyToQty(self):
-		return self._QtyToQty
-
-	@QtyToQty.setter
-	def QtyToQty(self, value):
-		self._QtyToQty = value if type(value) != auto else self.make_default("QtyToQty")
-
-	@QtyToQty.deleter
-	def QtyToQty(self):
-		del self._QtyToQty
-		self._QtyToQty = None
-
-	@property
 	def AmtToQty(self):
 		return self._AmtToQty
 
@@ -72,11 +59,24 @@ class RatioFormat24Choice(base_types._BaseFieldType):
 		del self._AmtToAmt
 		self._AmtToAmt = None
 
+	@property
+	def QtyToQty(self):
+		return self._QtyToQty
+
+	@QtyToQty.setter
+	def QtyToQty(self, value):
+		self._QtyToQty = value if type(value) != auto else self.make_default("QtyToQty")
+
+	@QtyToQty.deleter
+	def QtyToQty(self):
+		del self._QtyToQty
+		self._QtyToQty = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QtyToAmt', type=AmountAndQuantityRatio5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='QtyToQty', type=QuantityToQuantityRatio2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtToQty', type=AmountAndQuantityRatio5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtToAmt', type=AmountToAmountRatio3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='QtyToQty', type=QuantityToQuantityRatio2, min=0, max=1, mutex_group=1, array=False),
 	))
 

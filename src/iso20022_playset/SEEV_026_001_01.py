@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AgentCAStandingInstructionCancellationRequestV01
 
 class SEEV_026_001_01():

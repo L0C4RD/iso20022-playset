@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
+import Extension1
 import Fund4
 import NetCashForecast3
 import FundCashForecast6
-import Extension1
 
 class FundDetailedConfirmedCashForecastReport3(base_types._BaseFieldType):
 
-	__slots__ = ["_FndOrSubFndDtls", "_CnsltdNetCshFcst", "_Xtnsn", "_FndCshFcstDtls"]
+	__slots__ = ["_FndOrSubFndDtls", "_FndCshFcstDtls", "_CnsltdNetCshFcst", "_Xtnsn"]
 	@property
 	def FndOrSubFndDtls(self):
 		return self._FndOrSubFndDtls
@@ -19,6 +19,19 @@ class FundDetailedConfirmedCashForecastReport3(base_types._BaseFieldType):
 	def FndOrSubFndDtls(self):
 		del self._FndOrSubFndDtls
 		self._FndOrSubFndDtls = None
+
+	@property
+	def FndCshFcstDtls(self):
+		return self._FndCshFcstDtls
+
+	@FndCshFcstDtls.setter
+	def FndCshFcstDtls(self, value):
+		self._FndCshFcstDtls = value if type(value) != auto else self.make_default("FndCshFcstDtls")
+
+	@FndCshFcstDtls.deleter
+	def FndCshFcstDtls(self):
+		del self._FndCshFcstDtls
+		self._FndCshFcstDtls = None
 
 	@property
 	def CnsltdNetCshFcst(self):
@@ -46,23 +59,10 @@ class FundDetailedConfirmedCashForecastReport3(base_types._BaseFieldType):
 		del self._Xtnsn
 		self._Xtnsn = None
 
-	@property
-	def FndCshFcstDtls(self):
-		return self._FndCshFcstDtls
-
-	@FndCshFcstDtls.setter
-	def FndCshFcstDtls(self, value):
-		self._FndCshFcstDtls = value if type(value) != auto else self.make_default("FndCshFcstDtls")
-
-	@FndCshFcstDtls.deleter
-	def FndCshFcstDtls(self):
-		del self._FndCshFcstDtls
-		self._FndCshFcstDtls = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FndOrSubFndDtls', type=Fund4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FndCshFcstDtls', type=FundCashForecast6, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CnsltdNetCshFcst', type=NetCashForecast3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FndCshFcstDtls', type=FundCashForecast6, min=1, max=None, mutex_group=None, array=True),
 	))
 

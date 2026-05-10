@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TimeOutNotificationV03
 
 class TSMT_040_001_03():

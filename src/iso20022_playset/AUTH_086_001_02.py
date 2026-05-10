@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesFinancingReportingReusedCollateralDataTransactionStateReportV02
 
 class AUTH_086_001_02():

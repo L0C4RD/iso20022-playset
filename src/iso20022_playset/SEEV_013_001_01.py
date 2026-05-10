@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AgentCAElectionAmendmentRequestV01
 
 class SEEV_013_001_01():

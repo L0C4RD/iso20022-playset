@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DemandWithdrawalNotificationV01
 
 class TSRV_017_001_01():

@@ -1,15 +1,15 @@
-import base_types
-import ProductCharacteristics1Choice
-import ProductIdentifier2Choice
+from . import base_types
 import PercentageTolerance1
-import Max70Text
-import Quantity9
 import CurrencyAndAmount
+import ProductCharacteristics1Choice
+import Max70Text
+import ProductIdentifier2Choice
+import Quantity9
 import ProductCategory1Choice
 
 class LineItemDetails12(base_types._BaseFieldType):
 
-	__slots__ = ["_OutsdngQty", "_AccptdQty", "_PdctCtgy", "_PdgAmt", "_PricTlrnce", "_PdctChrtcs", "_OutsdngAmt", "_OrdrdQty", "_PdgQty", "_PdctIdr", "_QtyTlrnce", "_OrdrdAmt", "_PdctNm", "_LineItmId", "_AccptdAmt"]
+	__slots__ = ["_OutsdngQty", "_PdgAmt", "_PdctChrtcs", "_QtyTlrnce", "_LineItmId", "_PdctNm", "_PdctCtgy", "_PdgQty", "_PricTlrnce", "_OutsdngAmt", "_OrdrdQty", "_AccptdAmt", "_AccptdQty", "_OrdrdAmt", "_PdctIdr"]
 	@property
 	def OutsdngQty(self):
 		return self._OutsdngQty
@@ -22,32 +22,6 @@ class LineItemDetails12(base_types._BaseFieldType):
 	def OutsdngQty(self):
 		del self._OutsdngQty
 		self._OutsdngQty = None
-
-	@property
-	def AccptdQty(self):
-		return self._AccptdQty
-
-	@AccptdQty.setter
-	def AccptdQty(self, value):
-		self._AccptdQty = value if type(value) != auto else self.make_default("AccptdQty")
-
-	@AccptdQty.deleter
-	def AccptdQty(self):
-		del self._AccptdQty
-		self._AccptdQty = None
-
-	@property
-	def PdctCtgy(self):
-		return self._PdctCtgy
-
-	@PdctCtgy.setter
-	def PdctCtgy(self, value):
-		self._PdctCtgy = value if type(value) != auto else self.make_default("PdctCtgy")
-
-	@PdctCtgy.deleter
-	def PdctCtgy(self):
-		del self._PdctCtgy
-		self._PdctCtgy = None
 
 	@property
 	def PdgAmt(self):
@@ -63,19 +37,6 @@ class LineItemDetails12(base_types._BaseFieldType):
 		self._PdgAmt = None
 
 	@property
-	def PricTlrnce(self):
-		return self._PricTlrnce
-
-	@PricTlrnce.setter
-	def PricTlrnce(self, value):
-		self._PricTlrnce = value if type(value) != auto else self.make_default("PricTlrnce")
-
-	@PricTlrnce.deleter
-	def PricTlrnce(self):
-		del self._PricTlrnce
-		self._PricTlrnce = None
-
-	@property
 	def PdctChrtcs(self):
 		return self._PdctChrtcs
 
@@ -87,6 +48,84 @@ class LineItemDetails12(base_types._BaseFieldType):
 	def PdctChrtcs(self):
 		del self._PdctChrtcs
 		self._PdctChrtcs = None
+
+	@property
+	def QtyTlrnce(self):
+		return self._QtyTlrnce
+
+	@QtyTlrnce.setter
+	def QtyTlrnce(self, value):
+		self._QtyTlrnce = value if type(value) != auto else self.make_default("QtyTlrnce")
+
+	@QtyTlrnce.deleter
+	def QtyTlrnce(self):
+		del self._QtyTlrnce
+		self._QtyTlrnce = None
+
+	@property
+	def LineItmId(self):
+		return self._LineItmId
+
+	@LineItmId.setter
+	def LineItmId(self, value):
+		self._LineItmId = value if type(value) != auto else self.make_default("LineItmId")
+
+	@LineItmId.deleter
+	def LineItmId(self):
+		del self._LineItmId
+		self._LineItmId = None
+
+	@property
+	def PdctNm(self):
+		return self._PdctNm
+
+	@PdctNm.setter
+	def PdctNm(self, value):
+		self._PdctNm = value if type(value) != auto else self.make_default("PdctNm")
+
+	@PdctNm.deleter
+	def PdctNm(self):
+		del self._PdctNm
+		self._PdctNm = None
+
+	@property
+	def PdctCtgy(self):
+		return self._PdctCtgy
+
+	@PdctCtgy.setter
+	def PdctCtgy(self, value):
+		self._PdctCtgy = value if type(value) != auto else self.make_default("PdctCtgy")
+
+	@PdctCtgy.deleter
+	def PdctCtgy(self):
+		del self._PdctCtgy
+		self._PdctCtgy = None
+
+	@property
+	def PdgQty(self):
+		return self._PdgQty
+
+	@PdgQty.setter
+	def PdgQty(self, value):
+		self._PdgQty = value if type(value) != auto else self.make_default("PdgQty")
+
+	@PdgQty.deleter
+	def PdgQty(self):
+		del self._PdgQty
+		self._PdgQty = None
+
+	@property
+	def PricTlrnce(self):
+		return self._PricTlrnce
+
+	@PricTlrnce.setter
+	def PricTlrnce(self, value):
+		self._PricTlrnce = value if type(value) != auto else self.make_default("PricTlrnce")
+
+	@PricTlrnce.deleter
+	def PricTlrnce(self):
+		del self._PricTlrnce
+		self._PricTlrnce = None
 
 	@property
 	def OutsdngAmt(self):
@@ -115,43 +154,30 @@ class LineItemDetails12(base_types._BaseFieldType):
 		self._OrdrdQty = None
 
 	@property
-	def PdgQty(self):
-		return self._PdgQty
+	def AccptdAmt(self):
+		return self._AccptdAmt
 
-	@PdgQty.setter
-	def PdgQty(self, value):
-		self._PdgQty = value if type(value) != auto else self.make_default("PdgQty")
+	@AccptdAmt.setter
+	def AccptdAmt(self, value):
+		self._AccptdAmt = value if type(value) != auto else self.make_default("AccptdAmt")
 
-	@PdgQty.deleter
-	def PdgQty(self):
-		del self._PdgQty
-		self._PdgQty = None
-
-	@property
-	def PdctIdr(self):
-		return self._PdctIdr
-
-	@PdctIdr.setter
-	def PdctIdr(self, value):
-		self._PdctIdr = value if type(value) != auto else self.make_default("PdctIdr")
-
-	@PdctIdr.deleter
-	def PdctIdr(self):
-		del self._PdctIdr
-		self._PdctIdr = None
+	@AccptdAmt.deleter
+	def AccptdAmt(self):
+		del self._AccptdAmt
+		self._AccptdAmt = None
 
 	@property
-	def QtyTlrnce(self):
-		return self._QtyTlrnce
+	def AccptdQty(self):
+		return self._AccptdQty
 
-	@QtyTlrnce.setter
-	def QtyTlrnce(self, value):
-		self._QtyTlrnce = value if type(value) != auto else self.make_default("QtyTlrnce")
+	@AccptdQty.setter
+	def AccptdQty(self, value):
+		self._AccptdQty = value if type(value) != auto else self.make_default("AccptdQty")
 
-	@QtyTlrnce.deleter
-	def QtyTlrnce(self):
-		del self._QtyTlrnce
-		self._QtyTlrnce = None
+	@AccptdQty.deleter
+	def AccptdQty(self):
+		del self._AccptdQty
+		self._AccptdQty = None
 
 	@property
 	def OrdrdAmt(self):
@@ -167,59 +193,33 @@ class LineItemDetails12(base_types._BaseFieldType):
 		self._OrdrdAmt = None
 
 	@property
-	def PdctNm(self):
-		return self._PdctNm
+	def PdctIdr(self):
+		return self._PdctIdr
 
-	@PdctNm.setter
-	def PdctNm(self, value):
-		self._PdctNm = value if type(value) != auto else self.make_default("PdctNm")
+	@PdctIdr.setter
+	def PdctIdr(self, value):
+		self._PdctIdr = value if type(value) != auto else self.make_default("PdctIdr")
 
-	@PdctNm.deleter
-	def PdctNm(self):
-		del self._PdctNm
-		self._PdctNm = None
-
-	@property
-	def LineItmId(self):
-		return self._LineItmId
-
-	@LineItmId.setter
-	def LineItmId(self, value):
-		self._LineItmId = value if type(value) != auto else self.make_default("LineItmId")
-
-	@LineItmId.deleter
-	def LineItmId(self):
-		del self._LineItmId
-		self._LineItmId = None
-
-	@property
-	def AccptdAmt(self):
-		return self._AccptdAmt
-
-	@AccptdAmt.setter
-	def AccptdAmt(self, value):
-		self._AccptdAmt = value if type(value) != auto else self.make_default("AccptdAmt")
-
-	@AccptdAmt.deleter
-	def AccptdAmt(self):
-		del self._AccptdAmt
-		self._AccptdAmt = None
+	@PdctIdr.deleter
+	def PdctIdr(self):
+		del self._PdctIdr
+		self._PdctIdr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OutsdngQty', type=Quantity9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AccptdQty', type=Quantity9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctCtgy', type=ProductCategory1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PdgAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricTlrnce', type=PercentageTolerance1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctChrtcs', type=ProductCharacteristics1Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='QtyTlrnce', type=PercentageTolerance1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LineItmId', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctCtgy', type=ProductCategory1Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PdgQty', type=Quantity9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricTlrnce', type=PercentageTolerance1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OutsdngAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrdQty', type=Quantity9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdgQty', type=Quantity9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctIdr', type=ProductIdentifier2Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='QtyTlrnce', type=PercentageTolerance1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrdAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LineItmId', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptdAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AccptdQty', type=Quantity9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrdAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctIdr', type=ProductIdentifier2Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

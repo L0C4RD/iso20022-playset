@@ -1,25 +1,12 @@
-import base_types
-import Max140Text
-import SupplementaryData1
-import CounterpartyData88
+from . import base_types
 import LoanData113
+import CounterpartyData88
+import SupplementaryData1
+import Max140Text
 
 class TradeValuationUpdate9(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtySpcfcData", "_SplmtryData", "_LnData", "_TechRcrdId"]
-	@property
-	def CtrPtySpcfcData(self):
-		return self._CtrPtySpcfcData
-
-	@CtrPtySpcfcData.setter
-	def CtrPtySpcfcData(self, value):
-		self._CtrPtySpcfcData = value if type(value) != auto else self.make_default("CtrPtySpcfcData")
-
-	@CtrPtySpcfcData.deleter
-	def CtrPtySpcfcData(self):
-		del self._CtrPtySpcfcData
-		self._CtrPtySpcfcData = None
-
+	__slots__ = ["_SplmtryData", "_CtrPtySpcfcData", "_LnData", "_TechRcrdId"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -32,6 +19,19 @@ class TradeValuationUpdate9(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def CtrPtySpcfcData(self):
+		return self._CtrPtySpcfcData
+
+	@CtrPtySpcfcData.setter
+	def CtrPtySpcfcData(self, value):
+		self._CtrPtySpcfcData = value if type(value) != auto else self.make_default("CtrPtySpcfcData")
+
+	@CtrPtySpcfcData.deleter
+	def CtrPtySpcfcData(self):
+		del self._CtrPtySpcfcData
+		self._CtrPtySpcfcData = None
 
 	@property
 	def LnData(self):
@@ -60,8 +60,8 @@ class TradeValuationUpdate9(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartyData88, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartyData88, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LnData', type=LoanData113, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))

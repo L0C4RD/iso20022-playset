@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CCPInteroperabilityReportV01
 
 class AUTH_112_001_01():

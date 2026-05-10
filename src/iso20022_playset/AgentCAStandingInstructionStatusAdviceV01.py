@@ -1,38 +1,12 @@
-import base_types
-import StandingInstructionCancellationStatus1Choice
-import DocumentIdentification8
-import StandingInstructionStatus1Choice
+from . import base_types
 import CorporateActionStandingInstructionGeneralInformation1
+import StandingInstructionStatus1Choice
+import DocumentIdentification8
+import StandingInstructionCancellationStatus1Choice
 
 class AgentCAStandingInstructionStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_StgInstrReqSts", "_Id", "_AgtCAStgInstrCxlReqId", "_AgtCAStgInstrReqId", "_StgInstrCxlReqSts", "_StgInstrGnlInf"]
-	@property
-	def StgInstrReqSts(self):
-		return self._StgInstrReqSts
-
-	@StgInstrReqSts.setter
-	def StgInstrReqSts(self, value):
-		self._StgInstrReqSts = value if type(value) != auto else self.make_default("StgInstrReqSts")
-
-	@StgInstrReqSts.deleter
-	def StgInstrReqSts(self):
-		del self._StgInstrReqSts
-		self._StgInstrReqSts = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_AgtCAStgInstrCxlReqId", "_StgInstrGnlInf", "_StgInstrCxlReqSts", "_Id", "_AgtCAStgInstrReqId", "_StgInstrReqSts"]
 	@property
 	def AgtCAStgInstrCxlReqId(self):
 		return self._AgtCAStgInstrCxlReqId
@@ -47,17 +21,17 @@ class AgentCAStandingInstructionStatusAdviceV01(base_types._BaseFieldType):
 		self._AgtCAStgInstrCxlReqId = None
 
 	@property
-	def AgtCAStgInstrReqId(self):
-		return self._AgtCAStgInstrReqId
+	def StgInstrGnlInf(self):
+		return self._StgInstrGnlInf
 
-	@AgtCAStgInstrReqId.setter
-	def AgtCAStgInstrReqId(self, value):
-		self._AgtCAStgInstrReqId = value if type(value) != auto else self.make_default("AgtCAStgInstrReqId")
+	@StgInstrGnlInf.setter
+	def StgInstrGnlInf(self, value):
+		self._StgInstrGnlInf = value if type(value) != auto else self.make_default("StgInstrGnlInf")
 
-	@AgtCAStgInstrReqId.deleter
-	def AgtCAStgInstrReqId(self):
-		del self._AgtCAStgInstrReqId
-		self._AgtCAStgInstrReqId = None
+	@StgInstrGnlInf.deleter
+	def StgInstrGnlInf(self):
+		del self._StgInstrGnlInf
+		self._StgInstrGnlInf = None
 
 	@property
 	def StgInstrCxlReqSts(self):
@@ -73,24 +47,50 @@ class AgentCAStandingInstructionStatusAdviceV01(base_types._BaseFieldType):
 		self._StgInstrCxlReqSts = None
 
 	@property
-	def StgInstrGnlInf(self):
-		return self._StgInstrGnlInf
+	def Id(self):
+		return self._Id
 
-	@StgInstrGnlInf.setter
-	def StgInstrGnlInf(self, value):
-		self._StgInstrGnlInf = value if type(value) != auto else self.make_default("StgInstrGnlInf")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@StgInstrGnlInf.deleter
-	def StgInstrGnlInf(self):
-		del self._StgInstrGnlInf
-		self._StgInstrGnlInf = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def AgtCAStgInstrReqId(self):
+		return self._AgtCAStgInstrReqId
+
+	@AgtCAStgInstrReqId.setter
+	def AgtCAStgInstrReqId(self, value):
+		self._AgtCAStgInstrReqId = value if type(value) != auto else self.make_default("AgtCAStgInstrReqId")
+
+	@AgtCAStgInstrReqId.deleter
+	def AgtCAStgInstrReqId(self):
+		del self._AgtCAStgInstrReqId
+		self._AgtCAStgInstrReqId = None
+
+	@property
+	def StgInstrReqSts(self):
+		return self._StgInstrReqSts
+
+	@StgInstrReqSts.setter
+	def StgInstrReqSts(self, value):
+		self._StgInstrReqSts = value if type(value) != auto else self.make_default("StgInstrReqSts")
+
+	@StgInstrReqSts.deleter
+	def StgInstrReqSts(self):
+		del self._StgInstrReqSts
+		self._StgInstrReqSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StgInstrReqSts', type=StandingInstructionStatus1Choice, min=0, max=1, mutex_group=2, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtCAStgInstrCxlReqId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AgtCAStgInstrReqId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='StgInstrCxlReqSts', type=StandingInstructionCancellationStatus1Choice, min=0, max=1, mutex_group=2, array=False),
 		base_types.FieldEntry(name='StgInstrGnlInf', type=CorporateActionStandingInstructionGeneralInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StgInstrCxlReqSts', type=StandingInstructionCancellationStatus1Choice, min=0, max=1, mutex_group=2, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgtCAStgInstrReqId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='StgInstrReqSts', type=StandingInstructionStatus1Choice, min=0, max=1, mutex_group=2, array=False),
 	))
 

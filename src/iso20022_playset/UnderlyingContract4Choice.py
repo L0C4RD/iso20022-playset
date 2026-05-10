@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TradeContract4
 import LoanContract4
 

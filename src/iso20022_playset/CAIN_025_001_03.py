@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AddendumInitiationV03
 
 class CAIN_025_001_03():

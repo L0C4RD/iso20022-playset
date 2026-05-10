@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AmendmentV03
 
 class CAIN_020_001_03():

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CorporateActionNotification002V15
 
 class SEEV_031_002_15():

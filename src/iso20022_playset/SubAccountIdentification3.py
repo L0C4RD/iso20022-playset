@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import AccountIdentificationFormatChoice
-import AggregateBalanceInformation3
 import YesNoIndicator
+import AggregateBalanceInformation3
 
 class SubAccountIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_FngbInd", "_Id", "_BalForSubAcct"]
+	__slots__ = ["_Id", "_FngbInd", "_ActvtyInd", "_BalForSubAcct"]
 	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
+	def Id(self):
+		return self._Id
 
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def FngbInd(self):
@@ -33,17 +33,17 @@ class SubAccountIdentification3(base_types._BaseFieldType):
 		self._FngbInd = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def ActvtyInd(self):
+		return self._ActvtyInd
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
 
 	@property
 	def BalForSubAcct(self):
@@ -59,9 +59,9 @@ class SubAccountIdentification3(base_types._BaseFieldType):
 		self._BalForSubAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FngbInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentificationFormatChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FngbInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalForSubAcct', type=AggregateBalanceInformation3, min=0, max=None, mutex_group=None, array=True),
 	))
 

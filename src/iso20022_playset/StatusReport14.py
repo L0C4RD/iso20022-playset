@@ -1,7 +1,7 @@
-import base_types
-import GenericIdentification176
+from . import base_types
 import StatusReportDataSetRequest6
 import TriggerInformation2
+import GenericIdentification176
 
 class StatusReport14(base_types._BaseFieldType):
 

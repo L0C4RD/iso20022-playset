@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MoneyMarketForeignExchangeSwapsStatisticalReportV02
 
 class AUTH_014_001_02():

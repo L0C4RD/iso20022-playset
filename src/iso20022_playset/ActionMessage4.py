@@ -1,26 +1,13 @@
-import base_types
-import OutputFormat2Code
-import Max20000Text
-import Max35Text
+from . import base_types
 import ATMDevice1Code
+import OutputFormat2Code
+import Max35Text
+import Max20000Text
 import Max35Binary
 
 class ActionMessage4(base_types._BaseFieldType):
 
-	__slots__ = ["_Dvc", "_Msg", "_MsgCnttSgntr", "_Ref", "_Frmt"]
-	@property
-	def Dvc(self):
-		return self._Dvc
-
-	@Dvc.setter
-	def Dvc(self, value):
-		self._Dvc = value if type(value) != auto else self.make_default("Dvc")
-
-	@Dvc.deleter
-	def Dvc(self):
-		del self._Dvc
-		self._Dvc = None
-
+	__slots__ = ["_Msg", "_Ref", "_MsgCnttSgntr", "_Frmt", "_Dvc"]
 	@property
 	def Msg(self):
 		return self._Msg
@@ -33,19 +20,6 @@ class ActionMessage4(base_types._BaseFieldType):
 	def Msg(self):
 		del self._Msg
 		self._Msg = None
-
-	@property
-	def MsgCnttSgntr(self):
-		return self._MsgCnttSgntr
-
-	@MsgCnttSgntr.setter
-	def MsgCnttSgntr(self, value):
-		self._MsgCnttSgntr = value if type(value) != auto else self.make_default("MsgCnttSgntr")
-
-	@MsgCnttSgntr.deleter
-	def MsgCnttSgntr(self):
-		del self._MsgCnttSgntr
-		self._MsgCnttSgntr = None
 
 	@property
 	def Ref(self):
@@ -61,6 +35,19 @@ class ActionMessage4(base_types._BaseFieldType):
 		self._Ref = None
 
 	@property
+	def MsgCnttSgntr(self):
+		return self._MsgCnttSgntr
+
+	@MsgCnttSgntr.setter
+	def MsgCnttSgntr(self, value):
+		self._MsgCnttSgntr = value if type(value) != auto else self.make_default("MsgCnttSgntr")
+
+	@MsgCnttSgntr.deleter
+	def MsgCnttSgntr(self):
+		del self._MsgCnttSgntr
+		self._MsgCnttSgntr = None
+
+	@property
 	def Frmt(self):
 		return self._Frmt
 
@@ -73,11 +60,24 @@ class ActionMessage4(base_types._BaseFieldType):
 		del self._Frmt
 		self._Frmt = None
 
+	@property
+	def Dvc(self):
+		return self._Dvc
+
+	@Dvc.setter
+	def Dvc(self, value):
+		self._Dvc = value if type(value) != auto else self.make_default("Dvc")
+
+	@Dvc.deleter
+	def Dvc(self):
+		del self._Dvc
+		self._Dvc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dvc', type=ATMDevice1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Msg', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgCnttSgntr', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgCnttSgntr', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frmt', type=OutputFormat2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dvc', type=ATMDevice1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

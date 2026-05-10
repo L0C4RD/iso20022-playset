@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import LEIIdentifier
 import SafekeepingPlaceFormat41Choice
 

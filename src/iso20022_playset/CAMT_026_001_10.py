@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import UnableToApplyV10
 
 class CAMT_026_001_10():

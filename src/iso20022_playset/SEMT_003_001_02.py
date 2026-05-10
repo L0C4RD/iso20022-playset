@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountingStatementOfHoldingsV02
 
 class SEMT_003_001_02():

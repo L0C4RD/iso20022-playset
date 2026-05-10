@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PositionSetTotal2
 
 class PositionSetBuyerAndSeller2(base_types._BaseFieldType):

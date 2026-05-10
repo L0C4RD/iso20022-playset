@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import OnLinePIN11
 
 class DeviceSecureInputResponse6(base_types._BaseFieldType):

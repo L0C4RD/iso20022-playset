@@ -1,34 +1,21 @@
-import base_types
+from . import base_types
 import SettlementDailyFailureReason1Choice
 
 class SettlementFailsDailyInstructionType3(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtFreeOfDlvry", "_DlvryWthPmt", "_FreeOfPmt", "_DlvryVrssPmt"]
+	__slots__ = ["_DlvryVrssPmt", "_FreeOfPmt", "_DlvryWthPmt", "_PmtFreeOfDlvry"]
 	@property
-	def PmtFreeOfDlvry(self):
-		return self._PmtFreeOfDlvry
+	def DlvryVrssPmt(self):
+		return self._DlvryVrssPmt
 
-	@PmtFreeOfDlvry.setter
-	def PmtFreeOfDlvry(self, value):
-		self._PmtFreeOfDlvry = value if type(value) != auto else self.make_default("PmtFreeOfDlvry")
+	@DlvryVrssPmt.setter
+	def DlvryVrssPmt(self, value):
+		self._DlvryVrssPmt = value if type(value) != auto else self.make_default("DlvryVrssPmt")
 
-	@PmtFreeOfDlvry.deleter
-	def PmtFreeOfDlvry(self):
-		del self._PmtFreeOfDlvry
-		self._PmtFreeOfDlvry = None
-
-	@property
-	def DlvryWthPmt(self):
-		return self._DlvryWthPmt
-
-	@DlvryWthPmt.setter
-	def DlvryWthPmt(self, value):
-		self._DlvryWthPmt = value if type(value) != auto else self.make_default("DlvryWthPmt")
-
-	@DlvryWthPmt.deleter
-	def DlvryWthPmt(self):
-		del self._DlvryWthPmt
-		self._DlvryWthPmt = None
+	@DlvryVrssPmt.deleter
+	def DlvryVrssPmt(self):
+		del self._DlvryVrssPmt
+		self._DlvryVrssPmt = None
 
 	@property
 	def FreeOfPmt(self):
@@ -44,22 +31,35 @@ class SettlementFailsDailyInstructionType3(base_types._BaseFieldType):
 		self._FreeOfPmt = None
 
 	@property
-	def DlvryVrssPmt(self):
-		return self._DlvryVrssPmt
+	def DlvryWthPmt(self):
+		return self._DlvryWthPmt
 
-	@DlvryVrssPmt.setter
-	def DlvryVrssPmt(self, value):
-		self._DlvryVrssPmt = value if type(value) != auto else self.make_default("DlvryVrssPmt")
+	@DlvryWthPmt.setter
+	def DlvryWthPmt(self, value):
+		self._DlvryWthPmt = value if type(value) != auto else self.make_default("DlvryWthPmt")
 
-	@DlvryVrssPmt.deleter
-	def DlvryVrssPmt(self):
-		del self._DlvryVrssPmt
-		self._DlvryVrssPmt = None
+	@DlvryWthPmt.deleter
+	def DlvryWthPmt(self):
+		del self._DlvryWthPmt
+		self._DlvryWthPmt = None
+
+	@property
+	def PmtFreeOfDlvry(self):
+		return self._PmtFreeOfDlvry
+
+	@PmtFreeOfDlvry.setter
+	def PmtFreeOfDlvry(self, value):
+		self._PmtFreeOfDlvry = value if type(value) != auto else self.make_default("PmtFreeOfDlvry")
+
+	@PmtFreeOfDlvry.deleter
+	def PmtFreeOfDlvry(self):
+		del self._PmtFreeOfDlvry
+		self._PmtFreeOfDlvry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtFreeOfDlvry', type=SettlementDailyFailureReason1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryWthPmt', type=SettlementDailyFailureReason1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FreeOfPmt', type=SettlementDailyFailureReason1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryVrssPmt', type=SettlementDailyFailureReason1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FreeOfPmt', type=SettlementDailyFailureReason1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryWthPmt', type=SettlementDailyFailureReason1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtFreeOfDlvry', type=SettlementDailyFailureReason1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

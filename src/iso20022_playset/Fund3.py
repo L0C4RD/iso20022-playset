@@ -1,66 +1,40 @@
-import base_types
-import FinancialInstrumentQuantity1
-import ActiveOrHistoricCurrencyCode
-import PercentageRate
-import ActiveOrHistoricCurrencyAndAmount
+from . import base_types
 import Max350Text
+import PercentageRate
+import FinancialInstrumentQuantity1
 import OtherIdentification4
+import ActiveOrHistoricCurrencyCode
 import LEIIdentifier
+import ActiveOrHistoricCurrencyAndAmount
 
 class Fund3(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_LglNttyIdr", "_EstmtdPctgOfFndTtlNAV", "_Nm", "_Ccy", "_EstmtdTtlNAV", "_PrvsTtlUnitsNb", "_EstmtdTtlUnitsNb", "_PrvsTtlNAV"]
+	__slots__ = ["_PrvsTtlUnitsNb", "_PrvsTtlNAV", "_Ccy", "_Id", "_EstmtdTtlUnitsNb", "_Nm", "_EstmtdPctgOfFndTtlNAV", "_LglNttyIdr", "_EstmtdTtlNAV"]
 	@property
-	def Id(self):
-		return self._Id
+	def PrvsTtlUnitsNb(self):
+		return self._PrvsTtlUnitsNb
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@PrvsTtlUnitsNb.setter
+	def PrvsTtlUnitsNb(self, value):
+		self._PrvsTtlUnitsNb = value if type(value) != auto else self.make_default("PrvsTtlUnitsNb")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def LglNttyIdr(self):
-		return self._LglNttyIdr
-
-	@LglNttyIdr.setter
-	def LglNttyIdr(self, value):
-		self._LglNttyIdr = value if type(value) != auto else self.make_default("LglNttyIdr")
-
-	@LglNttyIdr.deleter
-	def LglNttyIdr(self):
-		del self._LglNttyIdr
-		self._LglNttyIdr = None
+	@PrvsTtlUnitsNb.deleter
+	def PrvsTtlUnitsNb(self):
+		del self._PrvsTtlUnitsNb
+		self._PrvsTtlUnitsNb = None
 
 	@property
-	def EstmtdPctgOfFndTtlNAV(self):
-		return self._EstmtdPctgOfFndTtlNAV
+	def PrvsTtlNAV(self):
+		return self._PrvsTtlNAV
 
-	@EstmtdPctgOfFndTtlNAV.setter
-	def EstmtdPctgOfFndTtlNAV(self, value):
-		self._EstmtdPctgOfFndTtlNAV = value if type(value) != auto else self.make_default("EstmtdPctgOfFndTtlNAV")
+	@PrvsTtlNAV.setter
+	def PrvsTtlNAV(self, value):
+		self._PrvsTtlNAV = value if type(value) != auto else self.make_default("PrvsTtlNAV")
 
-	@EstmtdPctgOfFndTtlNAV.deleter
-	def EstmtdPctgOfFndTtlNAV(self):
-		del self._EstmtdPctgOfFndTtlNAV
-		self._EstmtdPctgOfFndTtlNAV = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@PrvsTtlNAV.deleter
+	def PrvsTtlNAV(self):
+		del self._PrvsTtlNAV
+		self._PrvsTtlNAV = None
 
 	@property
 	def Ccy(self):
@@ -76,30 +50,17 @@ class Fund3(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def EstmtdTtlNAV(self):
-		return self._EstmtdTtlNAV
+	def Id(self):
+		return self._Id
 
-	@EstmtdTtlNAV.setter
-	def EstmtdTtlNAV(self, value):
-		self._EstmtdTtlNAV = value if type(value) != auto else self.make_default("EstmtdTtlNAV")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@EstmtdTtlNAV.deleter
-	def EstmtdTtlNAV(self):
-		del self._EstmtdTtlNAV
-		self._EstmtdTtlNAV = None
-
-	@property
-	def PrvsTtlUnitsNb(self):
-		return self._PrvsTtlUnitsNb
-
-	@PrvsTtlUnitsNb.setter
-	def PrvsTtlUnitsNb(self, value):
-		self._PrvsTtlUnitsNb = value if type(value) != auto else self.make_default("PrvsTtlUnitsNb")
-
-	@PrvsTtlUnitsNb.deleter
-	def PrvsTtlUnitsNb(self):
-		del self._PrvsTtlUnitsNb
-		self._PrvsTtlUnitsNb = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def EstmtdTtlUnitsNb(self):
@@ -115,27 +76,66 @@ class Fund3(base_types._BaseFieldType):
 		self._EstmtdTtlUnitsNb = None
 
 	@property
-	def PrvsTtlNAV(self):
-		return self._PrvsTtlNAV
+	def Nm(self):
+		return self._Nm
 
-	@PrvsTtlNAV.setter
-	def PrvsTtlNAV(self, value):
-		self._PrvsTtlNAV = value if type(value) != auto else self.make_default("PrvsTtlNAV")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@PrvsTtlNAV.deleter
-	def PrvsTtlNAV(self):
-		del self._PrvsTtlNAV
-		self._PrvsTtlNAV = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def EstmtdPctgOfFndTtlNAV(self):
+		return self._EstmtdPctgOfFndTtlNAV
+
+	@EstmtdPctgOfFndTtlNAV.setter
+	def EstmtdPctgOfFndTtlNAV(self, value):
+		self._EstmtdPctgOfFndTtlNAV = value if type(value) != auto else self.make_default("EstmtdPctgOfFndTtlNAV")
+
+	@EstmtdPctgOfFndTtlNAV.deleter
+	def EstmtdPctgOfFndTtlNAV(self):
+		del self._EstmtdPctgOfFndTtlNAV
+		self._EstmtdPctgOfFndTtlNAV = None
+
+	@property
+	def LglNttyIdr(self):
+		return self._LglNttyIdr
+
+	@LglNttyIdr.setter
+	def LglNttyIdr(self, value):
+		self._LglNttyIdr = value if type(value) != auto else self.make_default("LglNttyIdr")
+
+	@LglNttyIdr.deleter
+	def LglNttyIdr(self):
+		del self._LglNttyIdr
+		self._LglNttyIdr = None
+
+	@property
+	def EstmtdTtlNAV(self):
+		return self._EstmtdTtlNAV
+
+	@EstmtdTtlNAV.setter
+	def EstmtdTtlNAV(self, value):
+		self._EstmtdTtlNAV = value if type(value) != auto else self.make_default("EstmtdTtlNAV")
+
+	@EstmtdTtlNAV.deleter
+	def EstmtdTtlNAV(self):
+		del self._EstmtdTtlNAV
+		self._EstmtdTtlNAV = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=OtherIdentification4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstmtdPctgOfFndTtlNAV', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstmtdTtlNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstmtdTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsTtlNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=OtherIdentification4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstmtdTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstmtdPctgOfFndTtlNAV', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstmtdTtlNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

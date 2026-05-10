@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import EnrolmentStatus3
-import SupplementaryData1
 import EnrolmentHeader3
+import SupplementaryData1
 
 class RequestToPayCreditorEnrolmentStatusReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Hdr", "_OrgnlEnrlmntAndSts"]
+	__slots__ = ["_OrgnlEnrlmntAndSts", "_Hdr", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def OrgnlEnrlmntAndSts(self):
+		return self._OrgnlEnrlmntAndSts
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@OrgnlEnrlmntAndSts.setter
+	def OrgnlEnrlmntAndSts(self, value):
+		self._OrgnlEnrlmntAndSts = value if type(value) != auto else self.make_default("OrgnlEnrlmntAndSts")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@OrgnlEnrlmntAndSts.deleter
+	def OrgnlEnrlmntAndSts(self):
+		del self._OrgnlEnrlmntAndSts
+		self._OrgnlEnrlmntAndSts = None
 
 	@property
 	def Hdr(self):
@@ -33,21 +33,21 @@ class RequestToPayCreditorEnrolmentStatusReportV02(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def OrgnlEnrlmntAndSts(self):
-		return self._OrgnlEnrlmntAndSts
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@OrgnlEnrlmntAndSts.setter
-	def OrgnlEnrlmntAndSts(self, value):
-		self._OrgnlEnrlmntAndSts = value if type(value) != auto else self.make_default("OrgnlEnrlmntAndSts")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@OrgnlEnrlmntAndSts.deleter
-	def OrgnlEnrlmntAndSts(self):
-		del self._OrgnlEnrlmntAndSts
-		self._OrgnlEnrlmntAndSts = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Hdr', type=EnrolmentHeader3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlEnrlmntAndSts', type=EnrolmentStatus3, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Hdr', type=EnrolmentHeader3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

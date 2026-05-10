@@ -1,6 +1,6 @@
-import base_types
-import CorporateActionReversalReason3Code
+from . import base_types
 import GenericIdentification30
+import CorporateActionReversalReason3Code
 
 class CorporateActionReversalReason10Choice(base_types._BaseFieldType):
 

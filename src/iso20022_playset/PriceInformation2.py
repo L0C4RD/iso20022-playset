@@ -1,28 +1,15 @@
-import base_types
-import PriceValueType2Code
-import DateAndDateTimeChoice
-import YesNoIndicator
-import PriceSourceFormatChoice
+from . import base_types
 import TypeOfPrice11Code
-import PriceRateOrAmountOrUnknownChoice
 import Extended350Code
+import YesNoIndicator
+import PriceValueType2Code
+import PriceSourceFormatChoice
+import DateAndDateTimeChoice
+import PriceRateOrAmountOrUnknownChoice
 
 class PriceInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_ValTp", "_SrcOfPric", "_XtndedTp", "_QtnDt", "_Val", "_Yldd"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_ValTp", "_XtndedTp", "_Yldd", "_Tp", "_SrcOfPric", "_Val", "_QtnDt"]
 	@property
 	def ValTp(self):
 		return self._ValTp
@@ -35,19 +22,6 @@ class PriceInformation2(base_types._BaseFieldType):
 	def ValTp(self):
 		del self._ValTp
 		self._ValTp = None
-
-	@property
-	def SrcOfPric(self):
-		return self._SrcOfPric
-
-	@SrcOfPric.setter
-	def SrcOfPric(self, value):
-		self._SrcOfPric = value if type(value) != auto else self.make_default("SrcOfPric")
-
-	@SrcOfPric.deleter
-	def SrcOfPric(self):
-		del self._SrcOfPric
-		self._SrcOfPric = None
 
 	@property
 	def XtndedTp(self):
@@ -63,17 +37,43 @@ class PriceInformation2(base_types._BaseFieldType):
 		self._XtndedTp = None
 
 	@property
-	def QtnDt(self):
-		return self._QtnDt
+	def Yldd(self):
+		return self._Yldd
 
-	@QtnDt.setter
-	def QtnDt(self, value):
-		self._QtnDt = value if type(value) != auto else self.make_default("QtnDt")
+	@Yldd.setter
+	def Yldd(self, value):
+		self._Yldd = value if type(value) != auto else self.make_default("Yldd")
 
-	@QtnDt.deleter
-	def QtnDt(self):
-		del self._QtnDt
-		self._QtnDt = None
+	@Yldd.deleter
+	def Yldd(self):
+		del self._Yldd
+		self._Yldd = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def SrcOfPric(self):
+		return self._SrcOfPric
+
+	@SrcOfPric.setter
+	def SrcOfPric(self, value):
+		self._SrcOfPric = value if type(value) != auto else self.make_default("SrcOfPric")
+
+	@SrcOfPric.deleter
+	def SrcOfPric(self):
+		del self._SrcOfPric
+		self._SrcOfPric = None
 
 	@property
 	def Val(self):
@@ -89,25 +89,25 @@ class PriceInformation2(base_types._BaseFieldType):
 		self._Val = None
 
 	@property
-	def Yldd(self):
-		return self._Yldd
+	def QtnDt(self):
+		return self._QtnDt
 
-	@Yldd.setter
-	def Yldd(self, value):
-		self._Yldd = value if type(value) != auto else self.make_default("Yldd")
+	@QtnDt.setter
+	def QtnDt(self, value):
+		self._QtnDt = value if type(value) != auto else self.make_default("QtnDt")
 
-	@Yldd.deleter
-	def Yldd(self):
-		del self._Yldd
-		self._Yldd = None
+	@QtnDt.deleter
+	def QtnDt(self):
+		del self._QtnDt
+		self._QtnDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=TypeOfPrice11Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ValTp', type=PriceValueType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrcOfPric', type=PriceSourceFormatChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XtndedTp', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='QtnDt', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Val', type=PriceRateOrAmountOrUnknownChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Yldd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TypeOfPrice11Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SrcOfPric', type=PriceSourceFormatChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=PriceRateOrAmountOrUnknownChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtnDt', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
 	))
 

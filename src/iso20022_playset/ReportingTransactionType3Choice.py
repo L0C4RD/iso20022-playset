@@ -1,23 +1,23 @@
-import base_types
-import SecuritiesTransactionReport7
+from . import base_types
 import SecuritiesTransactionReport2
 import SupplementaryData1
+import SecuritiesTransactionReport7
 
 class ReportingTransactionType3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_New", "_Cxl"]
+	__slots__ = ["_Cxl", "_New", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Cxl(self):
+		return self._Cxl
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@Cxl.setter
+	def Cxl(self, value):
+		self._Cxl = value if type(value) != auto else self.make_default("Cxl")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@Cxl.deleter
+	def Cxl(self):
+		del self._Cxl
+		self._Cxl = None
 
 	@property
 	def New(self):
@@ -33,21 +33,21 @@ class ReportingTransactionType3Choice(base_types._BaseFieldType):
 		self._New = None
 
 	@property
-	def Cxl(self):
-		return self._Cxl
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Cxl.setter
-	def Cxl(self, value):
-		self._Cxl = value if type(value) != auto else self.make_default("Cxl")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@Cxl.deleter
-	def Cxl(self):
-		del self._Cxl
-		self._Cxl = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=1, array=True),
-		base_types.FieldEntry(name='New', type=SecuritiesTransactionReport7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cxl', type=SecuritiesTransactionReport2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='New', type=SecuritiesTransactionReport7, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=1, array=True),
 	))
 

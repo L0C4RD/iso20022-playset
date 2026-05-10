@@ -1,6 +1,6 @@
-import base_types
-import CorporateActionDeactivationCancellationProcessingStatus1
+from . import base_types
 import CorporateActionDeactivationCancellationRejectionStatus1
+import CorporateActionDeactivationCancellationProcessingStatus1
 
 class CorporateActionDeactivationCancellationStatus1Choice(base_types._BaseFieldType):
 

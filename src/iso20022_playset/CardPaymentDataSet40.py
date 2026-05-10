@@ -1,14 +1,53 @@
-import base_types
-import GenericIdentification176
+from . import base_types
 import TransactionTotals12
-import DataSetIdentification5
-import CommonData14
-import CardPaymentDataSetTransaction13Choice
 import Traceability8
+import CommonData14
+import DataSetIdentification5
+import GenericIdentification176
+import CardPaymentDataSetTransaction13Choice
 
 class CardPaymentDataSet40(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_TxTtls", "_DataSetInitr", "_DataSetId", "_CmonData", "_Tracblt"]
+	__slots__ = ["_DataSetInitr", "_Tracblt", "_DataSetId", "_Tx", "_TxTtls", "_CmonData"]
+	@property
+	def DataSetInitr(self):
+		return self._DataSetInitr
+
+	@DataSetInitr.setter
+	def DataSetInitr(self, value):
+		self._DataSetInitr = value if type(value) != auto else self.make_default("DataSetInitr")
+
+	@DataSetInitr.deleter
+	def DataSetInitr(self):
+		del self._DataSetInitr
+		self._DataSetInitr = None
+
+	@property
+	def Tracblt(self):
+		return self._Tracblt
+
+	@Tracblt.setter
+	def Tracblt(self, value):
+		self._Tracblt = value if type(value) != auto else self.make_default("Tracblt")
+
+	@Tracblt.deleter
+	def Tracblt(self):
+		del self._Tracblt
+		self._Tracblt = None
+
+	@property
+	def DataSetId(self):
+		return self._DataSetId
+
+	@DataSetId.setter
+	def DataSetId(self, value):
+		self._DataSetId = value if type(value) != auto else self.make_default("DataSetId")
+
+	@DataSetId.deleter
+	def DataSetId(self):
+		del self._DataSetId
+		self._DataSetId = None
+
 	@property
 	def Tx(self):
 		return self._Tx
@@ -36,32 +75,6 @@ class CardPaymentDataSet40(base_types._BaseFieldType):
 		self._TxTtls = None
 
 	@property
-	def DataSetInitr(self):
-		return self._DataSetInitr
-
-	@DataSetInitr.setter
-	def DataSetInitr(self, value):
-		self._DataSetInitr = value if type(value) != auto else self.make_default("DataSetInitr")
-
-	@DataSetInitr.deleter
-	def DataSetInitr(self):
-		del self._DataSetInitr
-		self._DataSetInitr = None
-
-	@property
-	def DataSetId(self):
-		return self._DataSetId
-
-	@DataSetId.setter
-	def DataSetId(self, value):
-		self._DataSetId = value if type(value) != auto else self.make_default("DataSetId")
-
-	@DataSetId.deleter
-	def DataSetId(self):
-		del self._DataSetId
-		self._DataSetId = None
-
-	@property
 	def CmonData(self):
 		return self._CmonData
 
@@ -74,25 +87,12 @@ class CardPaymentDataSet40(base_types._BaseFieldType):
 		del self._CmonData
 		self._CmonData = None
 
-	@property
-	def Tracblt(self):
-		return self._Tracblt
-
-	@Tracblt.setter
-	def Tracblt(self, value):
-		self._Tracblt = value if type(value) != auto else self.make_default("Tracblt")
-
-	@Tracblt.deleter
-	def Tracblt(self):
-		del self._Tracblt
-		self._Tracblt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DataSetInitr', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tracblt', type=Traceability8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DataSetId', type=DataSetIdentification5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardPaymentDataSetTransaction13Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxTtls', type=TransactionTotals12, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DataSetInitr', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DataSetId', type=DataSetIdentification5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonData', type=CommonData14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tracblt', type=Traceability8, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,7 +1,7 @@
-import base_types
-import Max35Text
-import CashAccount40
+from . import base_types
 import BranchAndFinancialInstitutionIdentification8
+import CashAccount40
+import Max35Text
 
 class StandingOrderIdentification8(base_types._BaseFieldType):
 

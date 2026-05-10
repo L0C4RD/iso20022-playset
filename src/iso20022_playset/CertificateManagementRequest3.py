@@ -1,30 +1,56 @@
-import base_types
-import GenericIdentification176
-import CertificationRequest1
-import Max70Text
-import Max20000Text
-import ISODateTime
-import CardPaymentServiceType10Code
-import PointOfInteraction6
+from . import base_types
 import Max140Binary
+import ISODateTime
+import CertificationRequest1
+import CardPaymentServiceType10Code
 import Max10KBinary
+import PointOfInteraction6
 import KeyUsage1Code
+import Max20000Text
+import GenericIdentification176
+import Max70Text
 
 class CertificateManagementRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_POIChllngVal", "_POIId", "_SctyDomn", "_ClntCert", "_KeyFctn", "_CertfctnReq", "_TMId", "_BinryCertfctnReq", "_WhtListId", "_POIDtTm", "_CertSvc"]
+	__slots__ = ["_CertfctnReq", "_CertSvc", "_BinryCertfctnReq", "_POIId", "_SctyDomn", "_KeyFctn", "_TMId", "_ClntCert", "_POIChllngVal", "_POIDtTm", "_WhtListId"]
 	@property
-	def POIChllngVal(self):
-		return self._POIChllngVal
+	def CertfctnReq(self):
+		return self._CertfctnReq
 
-	@POIChllngVal.setter
-	def POIChllngVal(self, value):
-		self._POIChllngVal = value if type(value) != auto else self.make_default("POIChllngVal")
+	@CertfctnReq.setter
+	def CertfctnReq(self, value):
+		self._CertfctnReq = value if type(value) != auto else self.make_default("CertfctnReq")
 
-	@POIChllngVal.deleter
-	def POIChllngVal(self):
-		del self._POIChllngVal
-		self._POIChllngVal = None
+	@CertfctnReq.deleter
+	def CertfctnReq(self):
+		del self._CertfctnReq
+		self._CertfctnReq = None
+
+	@property
+	def CertSvc(self):
+		return self._CertSvc
+
+	@CertSvc.setter
+	def CertSvc(self, value):
+		self._CertSvc = value if type(value) != auto else self.make_default("CertSvc")
+
+	@CertSvc.deleter
+	def CertSvc(self):
+		del self._CertSvc
+		self._CertSvc = None
+
+	@property
+	def BinryCertfctnReq(self):
+		return self._BinryCertfctnReq
+
+	@BinryCertfctnReq.setter
+	def BinryCertfctnReq(self, value):
+		self._BinryCertfctnReq = value if type(value) != auto else self.make_default("BinryCertfctnReq")
+
+	@BinryCertfctnReq.deleter
+	def BinryCertfctnReq(self):
+		del self._BinryCertfctnReq
+		self._BinryCertfctnReq = None
 
 	@property
 	def POIId(self):
@@ -53,19 +79,6 @@ class CertificateManagementRequest3(base_types._BaseFieldType):
 		self._SctyDomn = None
 
 	@property
-	def ClntCert(self):
-		return self._ClntCert
-
-	@ClntCert.setter
-	def ClntCert(self, value):
-		self._ClntCert = value if type(value) != auto else self.make_default("ClntCert")
-
-	@ClntCert.deleter
-	def ClntCert(self):
-		del self._ClntCert
-		self._ClntCert = None
-
-	@property
 	def KeyFctn(self):
 		return self._KeyFctn
 
@@ -77,19 +90,6 @@ class CertificateManagementRequest3(base_types._BaseFieldType):
 	def KeyFctn(self):
 		del self._KeyFctn
 		self._KeyFctn = None
-
-	@property
-	def CertfctnReq(self):
-		return self._CertfctnReq
-
-	@CertfctnReq.setter
-	def CertfctnReq(self, value):
-		self._CertfctnReq = value if type(value) != auto else self.make_default("CertfctnReq")
-
-	@CertfctnReq.deleter
-	def CertfctnReq(self):
-		del self._CertfctnReq
-		self._CertfctnReq = None
 
 	@property
 	def TMId(self):
@@ -105,30 +105,30 @@ class CertificateManagementRequest3(base_types._BaseFieldType):
 		self._TMId = None
 
 	@property
-	def BinryCertfctnReq(self):
-		return self._BinryCertfctnReq
+	def ClntCert(self):
+		return self._ClntCert
 
-	@BinryCertfctnReq.setter
-	def BinryCertfctnReq(self, value):
-		self._BinryCertfctnReq = value if type(value) != auto else self.make_default("BinryCertfctnReq")
+	@ClntCert.setter
+	def ClntCert(self, value):
+		self._ClntCert = value if type(value) != auto else self.make_default("ClntCert")
 
-	@BinryCertfctnReq.deleter
-	def BinryCertfctnReq(self):
-		del self._BinryCertfctnReq
-		self._BinryCertfctnReq = None
+	@ClntCert.deleter
+	def ClntCert(self):
+		del self._ClntCert
+		self._ClntCert = None
 
 	@property
-	def WhtListId(self):
-		return self._WhtListId
+	def POIChllngVal(self):
+		return self._POIChllngVal
 
-	@WhtListId.setter
-	def WhtListId(self, value):
-		self._WhtListId = value if type(value) != auto else self.make_default("WhtListId")
+	@POIChllngVal.setter
+	def POIChllngVal(self, value):
+		self._POIChllngVal = value if type(value) != auto else self.make_default("POIChllngVal")
 
-	@WhtListId.deleter
-	def WhtListId(self):
-		del self._WhtListId
-		self._WhtListId = None
+	@POIChllngVal.deleter
+	def POIChllngVal(self):
+		del self._POIChllngVal
+		self._POIChllngVal = None
 
 	@property
 	def POIDtTm(self):
@@ -144,29 +144,29 @@ class CertificateManagementRequest3(base_types._BaseFieldType):
 		self._POIDtTm = None
 
 	@property
-	def CertSvc(self):
-		return self._CertSvc
+	def WhtListId(self):
+		return self._WhtListId
 
-	@CertSvc.setter
-	def CertSvc(self, value):
-		self._CertSvc = value if type(value) != auto else self.make_default("CertSvc")
+	@WhtListId.setter
+	def WhtListId(self, value):
+		self._WhtListId = value if type(value) != auto else self.make_default("WhtListId")
 
-	@CertSvc.deleter
-	def CertSvc(self):
-		del self._CertSvc
-		self._CertSvc = None
+	@WhtListId.deleter
+	def WhtListId(self):
+		del self._WhtListId
+		self._WhtListId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='POIChllngVal', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertfctnReq', type=CertificationRequest1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertSvc', type=CardPaymentServiceType10Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BinryCertfctnReq', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIId', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyDomn', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntCert', type=Max10KBinary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyFctn', type=KeyUsage1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CertfctnReq', type=CertificationRequest1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMId', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BinryCertfctnReq', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WhtListId', type=PointOfInteraction6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntCert', type=Max10KBinary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POIChllngVal', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertSvc', type=CardPaymentServiceType10Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WhtListId', type=PointOfInteraction6, min=0, max=1, mutex_group=None, array=False),
 	))
 

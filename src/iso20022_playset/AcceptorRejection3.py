@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
+import RejectReason2Code
 import Max500Text
 import Max100KBinary
-import RejectReason2Code
 
 class AcceptorRejection3(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_MsgInErr", "_RjctRsn"]
+	__slots__ = ["_AddtlInf", "_RjctRsn", "_MsgInErr"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -20,19 +20,6 @@ class AcceptorRejection3(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def MsgInErr(self):
-		return self._MsgInErr
-
-	@MsgInErr.setter
-	def MsgInErr(self, value):
-		self._MsgInErr = value if type(value) != auto else self.make_default("MsgInErr")
-
-	@MsgInErr.deleter
-	def MsgInErr(self):
-		del self._MsgInErr
-		self._MsgInErr = None
-
-	@property
 	def RjctRsn(self):
 		return self._RjctRsn
 
@@ -45,9 +32,22 @@ class AcceptorRejection3(base_types._BaseFieldType):
 		del self._RjctRsn
 		self._RjctRsn = None
 
+	@property
+	def MsgInErr(self):
+		return self._MsgInErr
+
+	@MsgInErr.setter
+	def MsgInErr(self, value):
+		self._MsgInErr = value if type(value) != auto else self.make_default("MsgInErr")
+
+	@MsgInErr.deleter
+	def MsgInErr(self):
+		del self._MsgInErr
+		self._MsgInErr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgInErr', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctRsn', type=RejectReason2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgInErr', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
 	))
 

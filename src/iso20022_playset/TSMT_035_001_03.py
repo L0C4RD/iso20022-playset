@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import StatusExtensionRequestV03
 
 class TSMT_035_001_03():

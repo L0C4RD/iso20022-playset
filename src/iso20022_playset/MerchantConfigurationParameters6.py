@@ -1,15 +1,41 @@
-import base_types
-import Max35Text
-import Max8Text
-import PositiveNumber
-import Max10000Binary
-import TerminalManagementAction3Code
-import Max256Text
+from . import base_types
 import NetworkParameters8
+import Max256Text
+import Max8Text
+import TerminalManagementAction3Code
+import Max10000Binary
+import Max35Text
+import PositiveNumber
 
 class MerchantConfigurationParameters6(base_types._BaseFieldType):
 
-	__slots__ = ["_ActnTp", "_OthrParamsLngth", "_Vrsn", "_MrchntId", "_Prxy", "_OffsetEnd", "_OthrParams", "_OffsetStart", "_ParamFrmtIdr"]
+	__slots__ = ["_ParamFrmtIdr", "_Prxy", "_ActnTp", "_OthrParamsLngth", "_OffsetStart", "_OffsetEnd", "_Vrsn", "_OthrParams", "_MrchntId"]
+	@property
+	def ParamFrmtIdr(self):
+		return self._ParamFrmtIdr
+
+	@ParamFrmtIdr.setter
+	def ParamFrmtIdr(self, value):
+		self._ParamFrmtIdr = value if type(value) != auto else self.make_default("ParamFrmtIdr")
+
+	@ParamFrmtIdr.deleter
+	def ParamFrmtIdr(self):
+		del self._ParamFrmtIdr
+		self._ParamFrmtIdr = None
+
+	@property
+	def Prxy(self):
+		return self._Prxy
+
+	@Prxy.setter
+	def Prxy(self, value):
+		self._Prxy = value if type(value) != auto else self.make_default("Prxy")
+
+	@Prxy.deleter
+	def Prxy(self):
+		del self._Prxy
+		self._Prxy = None
+
 	@property
 	def ActnTp(self):
 		return self._ActnTp
@@ -37,43 +63,17 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 		self._OthrParamsLngth = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def OffsetStart(self):
+		return self._OffsetStart
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+	@OffsetStart.setter
+	def OffsetStart(self, value):
+		self._OffsetStart = value if type(value) != auto else self.make_default("OffsetStart")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
-	@property
-	def MrchntId(self):
-		return self._MrchntId
-
-	@MrchntId.setter
-	def MrchntId(self, value):
-		self._MrchntId = value if type(value) != auto else self.make_default("MrchntId")
-
-	@MrchntId.deleter
-	def MrchntId(self):
-		del self._MrchntId
-		self._MrchntId = None
-
-	@property
-	def Prxy(self):
-		return self._Prxy
-
-	@Prxy.setter
-	def Prxy(self, value):
-		self._Prxy = value if type(value) != auto else self.make_default("Prxy")
-
-	@Prxy.deleter
-	def Prxy(self):
-		del self._Prxy
-		self._Prxy = None
+	@OffsetStart.deleter
+	def OffsetStart(self):
+		del self._OffsetStart
+		self._OffsetStart = None
 
 	@property
 	def OffsetEnd(self):
@@ -89,6 +89,19 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 		self._OffsetEnd = None
 
 	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
+	@property
 	def OthrParams(self):
 		return self._OthrParams
 
@@ -102,40 +115,27 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 		self._OthrParams = None
 
 	@property
-	def OffsetStart(self):
-		return self._OffsetStart
+	def MrchntId(self):
+		return self._MrchntId
 
-	@OffsetStart.setter
-	def OffsetStart(self, value):
-		self._OffsetStart = value if type(value) != auto else self.make_default("OffsetStart")
+	@MrchntId.setter
+	def MrchntId(self, value):
+		self._MrchntId = value if type(value) != auto else self.make_default("MrchntId")
 
-	@OffsetStart.deleter
-	def OffsetStart(self):
-		del self._OffsetStart
-		self._OffsetStart = None
-
-	@property
-	def ParamFrmtIdr(self):
-		return self._ParamFrmtIdr
-
-	@ParamFrmtIdr.setter
-	def ParamFrmtIdr(self, value):
-		self._ParamFrmtIdr = value if type(value) != auto else self.make_default("ParamFrmtIdr")
-
-	@ParamFrmtIdr.deleter
-	def ParamFrmtIdr(self):
-		del self._ParamFrmtIdr
-		self._ParamFrmtIdr = None
+	@MrchntId.deleter
+	def MrchntId(self):
+		del self._MrchntId
+		self._MrchntId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ParamFrmtIdr', type=Max8Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prxy', type=NetworkParameters8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrParamsLngth', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrchntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prxy', type=NetworkParameters8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OffsetEnd', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrParams', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffsetStart', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ParamFrmtIdr', type=Max8Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffsetEnd', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrParams', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrchntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

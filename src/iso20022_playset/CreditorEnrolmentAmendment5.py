@@ -1,13 +1,13 @@
-import base_types
-import CreditorEnrolmentAmendmentReason3
+from . import base_types
 import OriginalBusinessInstruction1
-import SupplementaryData1
 import CreditorEnrolmentAmendment6
+import CreditorEnrolmentAmendmentReason3
 import OriginalEnrolment3Choice
+import SupplementaryData1
 
 class CreditorEnrolmentAmendment5(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlEnrlmnt", "_AmdmntRsn", "_Amdmnt", "_OrgnlBizInstr", "_SplmtryData"]
+	__slots__ = ["_OrgnlEnrlmnt", "_AmdmntRsn", "_OrgnlBizInstr", "_Amdmnt", "_SplmtryData"]
 	@property
 	def OrgnlEnrlmnt(self):
 		return self._OrgnlEnrlmnt
@@ -35,19 +35,6 @@ class CreditorEnrolmentAmendment5(base_types._BaseFieldType):
 		self._AmdmntRsn = None
 
 	@property
-	def Amdmnt(self):
-		return self._Amdmnt
-
-	@Amdmnt.setter
-	def Amdmnt(self, value):
-		self._Amdmnt = value if type(value) != auto else self.make_default("Amdmnt")
-
-	@Amdmnt.deleter
-	def Amdmnt(self):
-		del self._Amdmnt
-		self._Amdmnt = None
-
-	@property
 	def OrgnlBizInstr(self):
 		return self._OrgnlBizInstr
 
@@ -59,6 +46,19 @@ class CreditorEnrolmentAmendment5(base_types._BaseFieldType):
 	def OrgnlBizInstr(self):
 		del self._OrgnlBizInstr
 		self._OrgnlBizInstr = None
+
+	@property
+	def Amdmnt(self):
+		return self._Amdmnt
+
+	@Amdmnt.setter
+	def Amdmnt(self, value):
+		self._Amdmnt = value if type(value) != auto else self.make_default("Amdmnt")
+
+	@Amdmnt.deleter
+	def Amdmnt(self):
+		del self._Amdmnt
+		self._Amdmnt = None
 
 	@property
 	def SplmtryData(self):
@@ -76,8 +76,8 @@ class CreditorEnrolmentAmendment5(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlEnrlmnt', type=OriginalEnrolment3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmdmntRsn', type=CreditorEnrolmentAmendmentReason3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amdmnt', type=CreditorEnrolmentAmendment6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlBizInstr', type=OriginalBusinessInstruction1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amdmnt', type=CreditorEnrolmentAmendment6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,24 +1,11 @@
-import base_types
-import Max100KBinary
+from . import base_types
 import Number
 import NetworkParameters7
+import Max100KBinary
 
 class DeviceTransmitMessageRequest2(base_types._BaseFieldType):
 
-	__slots__ = ["_DstnAdr", "_MsgToSnd", "_MaxTrnsmssnTm", "_MaxWtgTm"]
-	@property
-	def DstnAdr(self):
-		return self._DstnAdr
-
-	@DstnAdr.setter
-	def DstnAdr(self, value):
-		self._DstnAdr = value if type(value) != auto else self.make_default("DstnAdr")
-
-	@DstnAdr.deleter
-	def DstnAdr(self):
-		del self._DstnAdr
-		self._DstnAdr = None
-
+	__slots__ = ["_MsgToSnd", "_DstnAdr", "_MaxTrnsmssnTm", "_MaxWtgTm"]
 	@property
 	def MsgToSnd(self):
 		return self._MsgToSnd
@@ -31,6 +18,19 @@ class DeviceTransmitMessageRequest2(base_types._BaseFieldType):
 	def MsgToSnd(self):
 		del self._MsgToSnd
 		self._MsgToSnd = None
+
+	@property
+	def DstnAdr(self):
+		return self._DstnAdr
+
+	@DstnAdr.setter
+	def DstnAdr(self, value):
+		self._DstnAdr = value if type(value) != auto else self.make_default("DstnAdr")
+
+	@DstnAdr.deleter
+	def DstnAdr(self):
+		del self._DstnAdr
+		self._DstnAdr = None
 
 	@property
 	def MaxTrnsmssnTm(self):
@@ -59,8 +59,8 @@ class DeviceTransmitMessageRequest2(base_types._BaseFieldType):
 		self._MaxWtgTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DstnAdr', type=NetworkParameters7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgToSnd', type=Max100KBinary, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstnAdr', type=NetworkParameters7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxTrnsmssnTm', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxWtgTm', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))

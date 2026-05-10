@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
+import EnvironmentCommodityOther1
 import EnvironmentalCommodityWeather1
 import EnvironmentalCommodityEmission2
-import EnvironmentCommodityOther1
 import EnvironmentalCommodityCarbonRelated1
 
 class AssetClassCommodityEnvironmental2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Wthr", "_Emssns", "_Othr", "_CrbnRltd"]
+	__slots__ = ["_Wthr", "_Emssns", "_CrbnRltd", "_Othr"]
 	@property
 	def Wthr(self):
 		return self._Wthr
@@ -34,19 +34,6 @@ class AssetClassCommodityEnvironmental2Choice(base_types._BaseFieldType):
 		self._Emssns = None
 
 	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
-	@property
 	def CrbnRltd(self):
 		return self._CrbnRltd
 
@@ -59,10 +46,23 @@ class AssetClassCommodityEnvironmental2Choice(base_types._BaseFieldType):
 		del self._CrbnRltd
 		self._CrbnRltd = None
 
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Wthr', type=EnvironmentalCommodityWeather1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Emssns', type=EnvironmentalCommodityEmission2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Othr', type=EnvironmentCommodityOther1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CrbnRltd', type=EnvironmentalCommodityCarbonRelated1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Othr', type=EnvironmentCommodityOther1, min=0, max=1, mutex_group=1, array=False),
 	))
 

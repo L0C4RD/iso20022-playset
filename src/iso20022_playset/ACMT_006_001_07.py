@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountManagementStatusReportV07
 
 class ACMT_006_001_07():

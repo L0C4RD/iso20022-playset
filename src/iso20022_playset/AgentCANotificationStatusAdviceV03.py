@@ -1,6 +1,6 @@
-import base_types
-import AgentDocumentIdentificationAndStatus1Choice
+from . import base_types
 import CorporateActionGeneralInformation175
+import AgentDocumentIdentificationAndStatus1Choice
 
 class AgentCANotificationStatusAdviceV03(base_types._BaseFieldType):
 

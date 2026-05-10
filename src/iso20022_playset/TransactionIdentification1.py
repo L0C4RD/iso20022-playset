@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RestrictedFINMax35Text
 
 class TransactionIdentification1(base_types._BaseFieldType):

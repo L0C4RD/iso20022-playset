@@ -1,26 +1,26 @@
-import base_types
+from . import base_types
 import PendingStatus46Choice
-import RepairStatus16Choice
 import ProprietaryStatusAndReason7
 import ProprietaryReason5
-import PendingProcessingStatus15Choice
 import AcknowledgedAcceptedStatus25Choice
+import RepairStatus16Choice
+import PendingProcessingStatus15Choice
 
 class ProcessingStatus62Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlReqd", "_PdgPrcg", "_Prtry", "_AckdAccptd", "_Rpr", "_PdgCxl"]
+	__slots__ = ["_Rpr", "_PdgPrcg", "_Prtry", "_AckdAccptd", "_PdgCxl", "_CxlReqd"]
 	@property
-	def CxlReqd(self):
-		return self._CxlReqd
+	def Rpr(self):
+		return self._Rpr
 
-	@CxlReqd.setter
-	def CxlReqd(self, value):
-		self._CxlReqd = value if type(value) != auto else self.make_default("CxlReqd")
+	@Rpr.setter
+	def Rpr(self, value):
+		self._Rpr = value if type(value) != auto else self.make_default("Rpr")
 
-	@CxlReqd.deleter
-	def CxlReqd(self):
-		del self._CxlReqd
-		self._CxlReqd = None
+	@Rpr.deleter
+	def Rpr(self):
+		del self._Rpr
+		self._Rpr = None
 
 	@property
 	def PdgPrcg(self):
@@ -62,19 +62,6 @@ class ProcessingStatus62Choice(base_types._BaseFieldType):
 		self._AckdAccptd = None
 
 	@property
-	def Rpr(self):
-		return self._Rpr
-
-	@Rpr.setter
-	def Rpr(self, value):
-		self._Rpr = value if type(value) != auto else self.make_default("Rpr")
-
-	@Rpr.deleter
-	def Rpr(self):
-		del self._Rpr
-		self._Rpr = None
-
-	@property
 	def PdgCxl(self):
 		return self._PdgCxl
 
@@ -87,12 +74,25 @@ class ProcessingStatus62Choice(base_types._BaseFieldType):
 		del self._PdgCxl
 		self._PdgCxl = None
 
+	@property
+	def CxlReqd(self):
+		return self._CxlReqd
+
+	@CxlReqd.setter
+	def CxlReqd(self, value):
+		self._CxlReqd = value if type(value) != auto else self.make_default("CxlReqd")
+
+	@CxlReqd.deleter
+	def CxlReqd(self):
+		del self._CxlReqd
+		self._CxlReqd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlReqd', type=ProprietaryReason5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rpr', type=RepairStatus16Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgPrcg', type=PendingProcessingStatus15Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus25Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rpr', type=RepairStatus16Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgCxl', type=PendingStatus46Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CxlReqd', type=ProprietaryReason5, min=0, max=1, mutex_group=1, array=False),
 	))
 

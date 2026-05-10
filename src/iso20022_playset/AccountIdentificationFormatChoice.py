@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import AccountIdentification3
 import AccountIdentification1
 import AccountIdentificationAndPurpose
 
 class AccountIdentificationFormatChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_SmplId", "_IdAndPurp", "_IdAsDSS"]
+	__slots__ = ["_IdAsDSS", "_IdAndPurp", "_SmplId"]
 	@property
-	def SmplId(self):
-		return self._SmplId
+	def IdAsDSS(self):
+		return self._IdAsDSS
 
-	@SmplId.setter
-	def SmplId(self, value):
-		self._SmplId = value if type(value) != auto else self.make_default("SmplId")
+	@IdAsDSS.setter
+	def IdAsDSS(self, value):
+		self._IdAsDSS = value if type(value) != auto else self.make_default("IdAsDSS")
 
-	@SmplId.deleter
-	def SmplId(self):
-		del self._SmplId
-		self._SmplId = None
+	@IdAsDSS.deleter
+	def IdAsDSS(self):
+		del self._IdAsDSS
+		self._IdAsDSS = None
 
 	@property
 	def IdAndPurp(self):
@@ -33,21 +33,21 @@ class AccountIdentificationFormatChoice(base_types._BaseFieldType):
 		self._IdAndPurp = None
 
 	@property
-	def IdAsDSS(self):
-		return self._IdAsDSS
+	def SmplId(self):
+		return self._SmplId
 
-	@IdAsDSS.setter
-	def IdAsDSS(self, value):
-		self._IdAsDSS = value if type(value) != auto else self.make_default("IdAsDSS")
+	@SmplId.setter
+	def SmplId(self, value):
+		self._SmplId = value if type(value) != auto else self.make_default("SmplId")
 
-	@IdAsDSS.deleter
-	def IdAsDSS(self):
-		del self._IdAsDSS
-		self._IdAsDSS = None
+	@SmplId.deleter
+	def SmplId(self):
+		del self._SmplId
+		self._SmplId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SmplId', type=AccountIdentification1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IdAndPurp', type=AccountIdentificationAndPurpose, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IdAsDSS', type=AccountIdentification3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IdAndPurp', type=AccountIdentificationAndPurpose, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SmplId', type=AccountIdentification1, min=0, max=1, mutex_group=1, array=False),
 	))
 

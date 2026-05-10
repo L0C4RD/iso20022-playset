@@ -1,26 +1,26 @@
-import base_types
-import FinancialInstrumentIdentification4
-import Max35Text
-import YesNoIndicator
+from . import base_types
 import Max350Text
 import ClassificationType32Choice
+import YesNoIndicator
+import Max35Text
 import SecurityIdentification25Choice
+import FinancialInstrumentIdentification4
 
 class FinancialInstrumentIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_RstrctdInd", "_Nm", "_Id", "_ClssfctnTp", "_AltrnScty", "_ShrtNm"]
+	__slots__ = ["_Id", "_Nm", "_RstrctdInd", "_ClssfctnTp", "_AltrnScty", "_ShrtNm"]
 	@property
-	def RstrctdInd(self):
-		return self._RstrctdInd
+	def Id(self):
+		return self._Id
 
-	@RstrctdInd.setter
-	def RstrctdInd(self, value):
-		self._RstrctdInd = value if type(value) != auto else self.make_default("RstrctdInd")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@RstrctdInd.deleter
-	def RstrctdInd(self):
-		del self._RstrctdInd
-		self._RstrctdInd = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Nm(self):
@@ -36,17 +36,17 @@ class FinancialInstrumentIdentification3(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def RstrctdInd(self):
+		return self._RstrctdInd
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@RstrctdInd.setter
+	def RstrctdInd(self, value):
+		self._RstrctdInd = value if type(value) != auto else self.make_default("RstrctdInd")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@RstrctdInd.deleter
+	def RstrctdInd(self):
+		del self._RstrctdInd
+		self._RstrctdInd = None
 
 	@property
 	def ClssfctnTp(self):
@@ -88,9 +88,9 @@ class FinancialInstrumentIdentification3(base_types._BaseFieldType):
 		self._ShrtNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RstrctdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=SecurityIdentification25Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RstrctdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType32Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnScty', type=FinancialInstrumentIdentification4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

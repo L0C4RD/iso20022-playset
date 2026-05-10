@@ -1,38 +1,12 @@
-import base_types
-import Max35Text
+from . import base_types
 import CopyDuplicate1Code
-import Party9Choice
 import ISONormalisedDateTime
+import Party9Choice
+import Max35Text
 
 class OriginalMessage1(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgDefIdr", "_To", "_BizMsgIdr", "_CreDt", "_CpyDplct", "_Fr"]
-	@property
-	def MsgDefIdr(self):
-		return self._MsgDefIdr
-
-	@MsgDefIdr.setter
-	def MsgDefIdr(self, value):
-		self._MsgDefIdr = value if type(value) != auto else self.make_default("MsgDefIdr")
-
-	@MsgDefIdr.deleter
-	def MsgDefIdr(self):
-		del self._MsgDefIdr
-		self._MsgDefIdr = None
-
-	@property
-	def To(self):
-		return self._To
-
-	@To.setter
-	def To(self, value):
-		self._To = value if type(value) != auto else self.make_default("To")
-
-	@To.deleter
-	def To(self):
-		del self._To
-		self._To = None
-
+	__slots__ = ["_BizMsgIdr", "_MsgDefIdr", "_CpyDplct", "_Fr", "_To", "_CreDt"]
 	@property
 	def BizMsgIdr(self):
 		return self._BizMsgIdr
@@ -47,17 +21,17 @@ class OriginalMessage1(base_types._BaseFieldType):
 		self._BizMsgIdr = None
 
 	@property
-	def CreDt(self):
-		return self._CreDt
+	def MsgDefIdr(self):
+		return self._MsgDefIdr
 
-	@CreDt.setter
-	def CreDt(self, value):
-		self._CreDt = value if type(value) != auto else self.make_default("CreDt")
+	@MsgDefIdr.setter
+	def MsgDefIdr(self, value):
+		self._MsgDefIdr = value if type(value) != auto else self.make_default("MsgDefIdr")
 
-	@CreDt.deleter
-	def CreDt(self):
-		del self._CreDt
-		self._CreDt = None
+	@MsgDefIdr.deleter
+	def MsgDefIdr(self):
+		del self._MsgDefIdr
+		self._MsgDefIdr = None
 
 	@property
 	def CpyDplct(self):
@@ -85,12 +59,38 @@ class OriginalMessage1(base_types._BaseFieldType):
 		del self._Fr
 		self._Fr = None
 
+	@property
+	def To(self):
+		return self._To
+
+	@To.setter
+	def To(self, value):
+		self._To = value if type(value) != auto else self.make_default("To")
+
+	@To.deleter
+	def To(self):
+		del self._To
+		self._To = None
+
+	@property
+	def CreDt(self):
+		return self._CreDt
+
+	@CreDt.setter
+	def CreDt(self, value):
+		self._CreDt = value if type(value) != auto else self.make_default("CreDt")
+
+	@CreDt.deleter
+	def CreDt(self):
+		del self._CreDt
+		self._CreDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgDefIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='To', type=Party9Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BizMsgIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDt', type=ISONormalisedDateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgDefIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpyDplct', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fr', type=Party9Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='To', type=Party9Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDt', type=ISONormalisedDateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

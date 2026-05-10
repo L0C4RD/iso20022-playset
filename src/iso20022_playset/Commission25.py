@@ -1,15 +1,28 @@
-import base_types
-import BaseOneRate
+from . import base_types
+import ISODate
+import AmountOrRate2Choice
 import PartyIdentification267
 import AmountAndDirection29
-import ISODate
-import ActiveCurrencyAndAmount
 import CommissionType6Choice
-import AmountOrRate2Choice
+import BaseOneRate
+import ActiveCurrencyAndAmount
 
 class Commission25(base_types._BaseFieldType):
 
-	__slots__ = ["_Comssn", "_Tp", "_ClctnDt", "_RcptId", "_TtlComssn", "_TtlVATAmt", "_VATRate"]
+	__slots__ = ["_RcptId", "_Comssn", "_Tp", "_TtlVATAmt", "_ClctnDt", "_TtlComssn", "_VATRate"]
+	@property
+	def RcptId(self):
+		return self._RcptId
+
+	@RcptId.setter
+	def RcptId(self, value):
+		self._RcptId = value if type(value) != auto else self.make_default("RcptId")
+
+	@RcptId.deleter
+	def RcptId(self):
+		del self._RcptId
+		self._RcptId = None
+
 	@property
 	def Comssn(self):
 		return self._Comssn
@@ -37,6 +50,19 @@ class Commission25(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
+	def TtlVATAmt(self):
+		return self._TtlVATAmt
+
+	@TtlVATAmt.setter
+	def TtlVATAmt(self, value):
+		self._TtlVATAmt = value if type(value) != auto else self.make_default("TtlVATAmt")
+
+	@TtlVATAmt.deleter
+	def TtlVATAmt(self):
+		del self._TtlVATAmt
+		self._TtlVATAmt = None
+
+	@property
 	def ClctnDt(self):
 		return self._ClctnDt
 
@@ -48,19 +74,6 @@ class Commission25(base_types._BaseFieldType):
 	def ClctnDt(self):
 		del self._ClctnDt
 		self._ClctnDt = None
-
-	@property
-	def RcptId(self):
-		return self._RcptId
-
-	@RcptId.setter
-	def RcptId(self, value):
-		self._RcptId = value if type(value) != auto else self.make_default("RcptId")
-
-	@RcptId.deleter
-	def RcptId(self):
-		del self._RcptId
-		self._RcptId = None
 
 	@property
 	def TtlComssn(self):
@@ -76,19 +89,6 @@ class Commission25(base_types._BaseFieldType):
 		self._TtlComssn = None
 
 	@property
-	def TtlVATAmt(self):
-		return self._TtlVATAmt
-
-	@TtlVATAmt.setter
-	def TtlVATAmt(self, value):
-		self._TtlVATAmt = value if type(value) != auto else self.make_default("TtlVATAmt")
-
-	@TtlVATAmt.deleter
-	def TtlVATAmt(self):
-		del self._TtlVATAmt
-		self._TtlVATAmt = None
-
-	@property
 	def VATRate(self):
 		return self._VATRate
 
@@ -102,12 +102,12 @@ class Commission25(base_types._BaseFieldType):
 		self._VATRate = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RcptId', type=PartyIdentification267, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Comssn', type=AmountOrRate2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CommissionType6Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcptId', type=PartyIdentification267, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlComssn', type=AmountAndDirection29, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlVATAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlComssn', type=AmountAndDirection29, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VATRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

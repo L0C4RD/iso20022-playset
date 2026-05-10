@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import UndertakingAmendmentResponseV01
 
 class TSRV_008_001_01():

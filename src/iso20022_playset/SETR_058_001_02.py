@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RequestForOrderConfirmationStatusReportV02
 
 class SETR_058_001_02():

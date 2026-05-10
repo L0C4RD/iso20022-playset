@@ -1,6 +1,6 @@
-import base_types
-import Status6Code
+from . import base_types
 import StatusReasonInformation10
+import Status6Code
 import SystemPartyIdentification8
 
 class PartyStatus2(base_types._BaseFieldType):

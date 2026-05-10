@@ -1,23 +1,23 @@
-import base_types
-import Max140Text
+from . import base_types
 import PartyIdentification125Choice
 import CommunicationMethod3Choice
+import Max140Text
 
 class DocumentToSend4(base_types._BaseFieldType):
 
-	__slots__ = ["_MtdOfTrnsmssn", "_Rcpt", "_Tp"]
+	__slots__ = ["_Tp", "_Rcpt", "_MtdOfTrnsmssn"]
 	@property
-	def MtdOfTrnsmssn(self):
-		return self._MtdOfTrnsmssn
+	def Tp(self):
+		return self._Tp
 
-	@MtdOfTrnsmssn.setter
-	def MtdOfTrnsmssn(self, value):
-		self._MtdOfTrnsmssn = value if type(value) != auto else self.make_default("MtdOfTrnsmssn")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@MtdOfTrnsmssn.deleter
-	def MtdOfTrnsmssn(self):
-		del self._MtdOfTrnsmssn
-		self._MtdOfTrnsmssn = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Rcpt(self):
@@ -33,21 +33,21 @@ class DocumentToSend4(base_types._BaseFieldType):
 		self._Rcpt = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def MtdOfTrnsmssn(self):
+		return self._MtdOfTrnsmssn
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@MtdOfTrnsmssn.setter
+	def MtdOfTrnsmssn(self, value):
+		self._MtdOfTrnsmssn = value if type(value) != auto else self.make_default("MtdOfTrnsmssn")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@MtdOfTrnsmssn.deleter
+	def MtdOfTrnsmssn(self):
+		del self._MtdOfTrnsmssn
+		self._MtdOfTrnsmssn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MtdOfTrnsmssn', type=CommunicationMethod3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcpt', type=PartyIdentification125Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcpt', type=PartyIdentification125Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtdOfTrnsmssn', type=CommunicationMethod3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

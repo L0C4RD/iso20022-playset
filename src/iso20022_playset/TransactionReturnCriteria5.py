@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
+import AccountCashEntryReturnCriteria3
 import PaymentReturnCriteria4
 import SystemReturnCriteria2
-import AccountCashEntryReturnCriteria3
 
 class TransactionReturnCriteria5(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtFrRtrCrit", "_AcctCshNtryRtrCrit", "_PmtToRtrCrit", "_PmtRtrCrit"]
+	__slots__ = ["_PmtFrRtrCrit", "_PmtToRtrCrit", "_AcctCshNtryRtrCrit", "_PmtRtrCrit"]
 	@property
 	def PmtFrRtrCrit(self):
 		return self._PmtFrRtrCrit
@@ -20,19 +20,6 @@ class TransactionReturnCriteria5(base_types._BaseFieldType):
 		self._PmtFrRtrCrit = None
 
 	@property
-	def AcctCshNtryRtrCrit(self):
-		return self._AcctCshNtryRtrCrit
-
-	@AcctCshNtryRtrCrit.setter
-	def AcctCshNtryRtrCrit(self, value):
-		self._AcctCshNtryRtrCrit = value if type(value) != auto else self.make_default("AcctCshNtryRtrCrit")
-
-	@AcctCshNtryRtrCrit.deleter
-	def AcctCshNtryRtrCrit(self):
-		del self._AcctCshNtryRtrCrit
-		self._AcctCshNtryRtrCrit = None
-
-	@property
 	def PmtToRtrCrit(self):
 		return self._PmtToRtrCrit
 
@@ -44,6 +31,19 @@ class TransactionReturnCriteria5(base_types._BaseFieldType):
 	def PmtToRtrCrit(self):
 		del self._PmtToRtrCrit
 		self._PmtToRtrCrit = None
+
+	@property
+	def AcctCshNtryRtrCrit(self):
+		return self._AcctCshNtryRtrCrit
+
+	@AcctCshNtryRtrCrit.setter
+	def AcctCshNtryRtrCrit(self, value):
+		self._AcctCshNtryRtrCrit = value if type(value) != auto else self.make_default("AcctCshNtryRtrCrit")
+
+	@AcctCshNtryRtrCrit.deleter
+	def AcctCshNtryRtrCrit(self):
+		del self._AcctCshNtryRtrCrit
+		self._AcctCshNtryRtrCrit = None
 
 	@property
 	def PmtRtrCrit(self):
@@ -60,8 +60,8 @@ class TransactionReturnCriteria5(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PmtFrRtrCrit', type=SystemReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctCshNtryRtrCrit', type=AccountCashEntryReturnCriteria3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtToRtrCrit', type=SystemReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctCshNtryRtrCrit', type=AccountCashEntryReturnCriteria3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtRtrCrit', type=PaymentReturnCriteria4, min=0, max=1, mutex_group=None, array=False),
 	))
 

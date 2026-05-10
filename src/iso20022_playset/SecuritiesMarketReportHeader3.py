@@ -1,26 +1,26 @@
-import base_types
+from . import base_types
+import Number
+import TradingVenueIdentification1Choice
+import ISINOct2015Identifier
 import ISODateTime
 import Pagination1
 import Period11Choice
-import ISINOct2015Identifier
-import TradingVenueIdentification1Choice
-import Number
 
 class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 
-	__slots__ = ["_ISIN", "_SubmissnDtTm", "_NbRcrds", "_RptgNtty", "_RptgPrd", "_MsgPgntn"]
+	__slots__ = ["_RptgPrd", "_SubmissnDtTm", "_NbRcrds", "_RptgNtty", "_ISIN", "_MsgPgntn"]
 	@property
-	def ISIN(self):
-		return self._ISIN
+	def RptgPrd(self):
+		return self._RptgPrd
 
-	@ISIN.setter
-	def ISIN(self, value):
-		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
+	@RptgPrd.setter
+	def RptgPrd(self, value):
+		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
 
-	@ISIN.deleter
-	def ISIN(self):
-		del self._ISIN
-		self._ISIN = None
+	@RptgPrd.deleter
+	def RptgPrd(self):
+		del self._RptgPrd
+		self._RptgPrd = None
 
 	@property
 	def SubmissnDtTm(self):
@@ -62,17 +62,17 @@ class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 		self._RptgNtty = None
 
 	@property
-	def RptgPrd(self):
-		return self._RptgPrd
+	def ISIN(self):
+		return self._ISIN
 
-	@RptgPrd.setter
-	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
+	@ISIN.setter
+	def ISIN(self, value):
+		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
 
-	@RptgPrd.deleter
-	def RptgPrd(self):
-		del self._RptgPrd
-		self._RptgPrd = None
+	@ISIN.deleter
+	def ISIN(self):
+		del self._ISIN
+		self._ISIN = None
 
 	@property
 	def MsgPgntn(self):
@@ -88,11 +88,11 @@ class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 		self._MsgPgntn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptgPrd', type=Period11Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmissnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbRcrds', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgNtty', type=TradingVenueIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgPrd', type=Period11Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 	))
 

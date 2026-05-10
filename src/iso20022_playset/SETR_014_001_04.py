@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SwitchOrderCancellationRequestV04
 
 class SETR_014_001_04():

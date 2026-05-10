@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ATMEnvironment18
 import ATMTransaction38
 import ATMContext18

@@ -1,8 +1,8 @@
-import base_types
-import ISINOct2015Identifier
-import UniqueProductIdentifier1Choice
-import GenericIdentification184
+from . import base_types
 import Max52Text
+import GenericIdentification184
+import UniqueProductIdentifier1Choice
+import ISINOct2015Identifier
 
 class InstrumentIdentification6Choice(base_types._BaseFieldType):
 

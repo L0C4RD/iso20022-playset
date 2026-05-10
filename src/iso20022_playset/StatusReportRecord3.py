@@ -1,12 +1,12 @@
-import base_types
-import Max140Text
-import SupplementaryData1
+from . import base_types
 import ReportingRecordStatus1Code
+import SupplementaryData1
+import Max140Text
 import GenericValidationRuleIdentification1
 
 class StatusReportRecord3(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlRcrdId", "_Sts", "_SplmtryData", "_VldtnRule"]
+	__slots__ = ["_OrgnlRcrdId", "_VldtnRule", "_Sts", "_SplmtryData"]
 	@property
 	def OrgnlRcrdId(self):
 		return self._OrgnlRcrdId
@@ -19,6 +19,19 @@ class StatusReportRecord3(base_types._BaseFieldType):
 	def OrgnlRcrdId(self):
 		del self._OrgnlRcrdId
 		self._OrgnlRcrdId = None
+
+	@property
+	def VldtnRule(self):
+		return self._VldtnRule
+
+	@VldtnRule.setter
+	def VldtnRule(self, value):
+		self._VldtnRule = value if type(value) != auto else self.make_default("VldtnRule")
+
+	@VldtnRule.deleter
+	def VldtnRule(self):
+		del self._VldtnRule
+		self._VldtnRule = None
 
 	@property
 	def Sts(self):
@@ -46,23 +59,10 @@ class StatusReportRecord3(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def VldtnRule(self):
-		return self._VldtnRule
-
-	@VldtnRule.setter
-	def VldtnRule(self, value):
-		self._VldtnRule = value if type(value) != auto else self.make_default("VldtnRule")
-
-	@VldtnRule.deleter
-	def VldtnRule(self):
-		del self._VldtnRule
-		self._VldtnRule = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlRcrdId', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=ReportingRecordStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 	))
 

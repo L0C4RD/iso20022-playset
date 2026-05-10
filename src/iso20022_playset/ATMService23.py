@@ -1,22 +1,35 @@
-import base_types
-import Max35Text
+from . import base_types
 import ATMServiceType9Code
+import Max35Text
 
 class ATMService23(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcRef", "_SvcVarntId", "_ATMSvcCd", "_SvcTp", "_HstSvcCd"]
+	__slots__ = ["_HstSvcCd", "_SvcTp", "_SvcVarntId", "_ATMSvcCd", "_SvcRef"]
 	@property
-	def SvcRef(self):
-		return self._SvcRef
+	def HstSvcCd(self):
+		return self._HstSvcCd
 
-	@SvcRef.setter
-	def SvcRef(self, value):
-		self._SvcRef = value if type(value) != auto else self.make_default("SvcRef")
+	@HstSvcCd.setter
+	def HstSvcCd(self, value):
+		self._HstSvcCd = value if type(value) != auto else self.make_default("HstSvcCd")
 
-	@SvcRef.deleter
-	def SvcRef(self):
-		del self._SvcRef
-		self._SvcRef = None
+	@HstSvcCd.deleter
+	def HstSvcCd(self):
+		del self._HstSvcCd
+		self._HstSvcCd = None
+
+	@property
+	def SvcTp(self):
+		return self._SvcTp
+
+	@SvcTp.setter
+	def SvcTp(self, value):
+		self._SvcTp = value if type(value) != auto else self.make_default("SvcTp")
+
+	@SvcTp.deleter
+	def SvcTp(self):
+		del self._SvcTp
+		self._SvcTp = None
 
 	@property
 	def SvcVarntId(self):
@@ -45,36 +58,23 @@ class ATMService23(base_types._BaseFieldType):
 		self._ATMSvcCd = None
 
 	@property
-	def SvcTp(self):
-		return self._SvcTp
+	def SvcRef(self):
+		return self._SvcRef
 
-	@SvcTp.setter
-	def SvcTp(self, value):
-		self._SvcTp = value if type(value) != auto else self.make_default("SvcTp")
+	@SvcRef.setter
+	def SvcRef(self, value):
+		self._SvcRef = value if type(value) != auto else self.make_default("SvcRef")
 
-	@SvcTp.deleter
-	def SvcTp(self):
-		del self._SvcTp
-		self._SvcTp = None
-
-	@property
-	def HstSvcCd(self):
-		return self._HstSvcCd
-
-	@HstSvcCd.setter
-	def HstSvcCd(self, value):
-		self._HstSvcCd = value if type(value) != auto else self.make_default("HstSvcCd")
-
-	@HstSvcCd.deleter
-	def HstSvcCd(self):
-		del self._HstSvcCd
-		self._HstSvcCd = None
+	@SvcRef.deleter
+	def SvcRef(self):
+		del self._SvcRef
+		self._SvcRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SvcRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HstSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcTp', type=ATMServiceType9Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcVarntId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ATMSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcTp', type=ATMServiceType9Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HstSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

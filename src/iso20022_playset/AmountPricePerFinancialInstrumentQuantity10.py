@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
 import ActiveCurrencyAnd13DecimalAmount
 import FinancialInstrumentQuantity33Choice
 import AmountPriceType1Code
 
 class AmountPricePerFinancialInstrumentQuantity10(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtPricTp", "_FinInstrmQty", "_PricVal"]
+	__slots__ = ["_AmtPricTp", "_PricVal", "_FinInstrmQty"]
 	@property
 	def AmtPricTp(self):
 		return self._AmtPricTp
@@ -20,19 +20,6 @@ class AmountPricePerFinancialInstrumentQuantity10(base_types._BaseFieldType):
 		self._AmtPricTp = None
 
 	@property
-	def FinInstrmQty(self):
-		return self._FinInstrmQty
-
-	@FinInstrmQty.setter
-	def FinInstrmQty(self, value):
-		self._FinInstrmQty = value if type(value) != auto else self.make_default("FinInstrmQty")
-
-	@FinInstrmQty.deleter
-	def FinInstrmQty(self):
-		del self._FinInstrmQty
-		self._FinInstrmQty = None
-
-	@property
 	def PricVal(self):
 		return self._PricVal
 
@@ -45,9 +32,22 @@ class AmountPricePerFinancialInstrumentQuantity10(base_types._BaseFieldType):
 		del self._PricVal
 		self._PricVal = None
 
+	@property
+	def FinInstrmQty(self):
+		return self._FinInstrmQty
+
+	@FinInstrmQty.setter
+	def FinInstrmQty(self, value):
+		self._FinInstrmQty = value if type(value) != auto else self.make_default("FinInstrmQty")
+
+	@FinInstrmQty.deleter
+	def FinInstrmQty(self):
+		del self._FinInstrmQty
+		self._FinInstrmQty = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtPricTp', type=AmountPriceType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmQty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricVal', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmQty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

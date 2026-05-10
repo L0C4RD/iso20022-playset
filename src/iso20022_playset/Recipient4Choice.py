@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import KEK4
-import KEKIdentifier2
 import KeyTransport4
+import KEKIdentifier2
 
 class Recipient4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_KEK", "_KeyIdr", "_KeyTrnsprt"]
-	@property
-	def KEK(self):
-		return self._KEK
-
-	@KEK.setter
-	def KEK(self, value):
-		self._KEK = value if type(value) != auto else self.make_default("KEK")
-
-	@KEK.deleter
-	def KEK(self):
-		del self._KEK
-		self._KEK = None
-
+	__slots__ = ["_KeyIdr", "_KeyTrnsprt", "_KEK"]
 	@property
 	def KeyIdr(self):
 		return self._KeyIdr
@@ -45,9 +32,22 @@ class Recipient4Choice(base_types._BaseFieldType):
 		del self._KeyTrnsprt
 		self._KeyTrnsprt = None
 
+	@property
+	def KEK(self):
+		return self._KEK
+
+	@KEK.setter
+	def KEK(self, value):
+		self._KEK = value if type(value) != auto else self.make_default("KEK")
+
+	@KEK.deleter
+	def KEK(self):
+		del self._KEK
+		self._KEK = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='KEK', type=KEK4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='KeyIdr', type=KEKIdentifier2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='KeyTrnsprt', type=KeyTransport4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='KEK', type=KEK4, min=0, max=1, mutex_group=1, array=False),
 	))
 

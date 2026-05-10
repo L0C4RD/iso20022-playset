@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class LongFraction19DecimalNumber(base_types._BaseDataType_Decimal):
 

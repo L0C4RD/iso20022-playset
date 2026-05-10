@@ -1,13 +1,26 @@
-import base_types
-import Max35Text
-import ISODateTime
-import PartyType18Code
+from . import base_types
 import ISOMax3ACountryCode
 import PartyType17Code
+import ISODateTime
+import PartyType18Code
+import Max35Text
 
 class Traceability10(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_OthrTp", "_Id", "_ShrtNm", "_DtTmOut", "_Assgnr", "_DtTmIn", "_Ctry"]
+	__slots__ = ["_DtTmIn", "_Tp", "_Assgnr", "_OthrTp", "_Id", "_DtTmOut", "_Ctry", "_ShrtNm"]
+	@property
+	def DtTmIn(self):
+		return self._DtTmIn
+
+	@DtTmIn.setter
+	def DtTmIn(self, value):
+		self._DtTmIn = value if type(value) != auto else self.make_default("DtTmIn")
+
+	@DtTmIn.deleter
+	def DtTmIn(self):
+		del self._DtTmIn
+		self._DtTmIn = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -20,6 +33,19 @@ class Traceability10(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
+
+	@property
+	def Assgnr(self):
+		return self._Assgnr
+
+	@Assgnr.setter
+	def Assgnr(self, value):
+		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
+
+	@Assgnr.deleter
+	def Assgnr(self):
+		del self._Assgnr
+		self._Assgnr = None
 
 	@property
 	def OthrTp(self):
@@ -48,19 +74,6 @@ class Traceability10(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def ShrtNm(self):
-		return self._ShrtNm
-
-	@ShrtNm.setter
-	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
-
-	@ShrtNm.deleter
-	def ShrtNm(self):
-		del self._ShrtNm
-		self._ShrtNm = None
-
-	@property
 	def DtTmOut(self):
 		return self._DtTmOut
 
@@ -72,32 +85,6 @@ class Traceability10(base_types._BaseFieldType):
 	def DtTmOut(self):
 		del self._DtTmOut
 		self._DtTmOut = None
-
-	@property
-	def Assgnr(self):
-		return self._Assgnr
-
-	@Assgnr.setter
-	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
-
-	@Assgnr.deleter
-	def Assgnr(self):
-		del self._Assgnr
-		self._Assgnr = None
-
-	@property
-	def DtTmIn(self):
-		return self._DtTmIn
-
-	@DtTmIn.setter
-	def DtTmIn(self, value):
-		self._DtTmIn = value if type(value) != auto else self.make_default("DtTmIn")
-
-	@DtTmIn.deleter
-	def DtTmIn(self):
-		del self._DtTmIn
-		self._DtTmIn = None
 
 	@property
 	def Ctry(self):
@@ -112,14 +99,27 @@ class Traceability10(base_types._BaseFieldType):
 		del self._Ctry
 		self._Ctry = None
 
+	@property
+	def ShrtNm(self):
+		return self._ShrtNm
+
+	@ShrtNm.setter
+	def ShrtNm(self, value):
+		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
+
+	@ShrtNm.deleter
+	def ShrtNm(self):
+		del self._ShrtNm
+		self._ShrtNm = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DtTmIn', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PartyType17Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnr', type=PartyType18Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtTmOut', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnr', type=PartyType18Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtTmIn', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import PercentageRate
-import ActiveCurrencyAndAmount
 import RateType12FormatChoice
+import ActiveCurrencyAndAmount
 
 class RateAndAmountFormat1Choice(base_types._BaseFieldType):
 

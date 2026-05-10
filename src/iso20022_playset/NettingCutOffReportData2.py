@@ -1,53 +1,14 @@
-import base_types
+from . import base_types
+import ISODate
 import Max4Text
+import ISODateTime
 import PartyIdentification242Choice
 import Max35Text
 import Pagination1
-import ISODateTime
-import ISODate
 
 class NettingCutOffReportData2(base_types._BaseFieldType):
 
-	__slots__ = ["_RptTp", "_ActvtnDt", "_MsgPgntn", "_MsgId", "_NetSvcPtcptId", "_RptSvcr", "_NetSvcTp", "_CreDtTm"]
-	@property
-	def RptTp(self):
-		return self._RptTp
-
-	@RptTp.setter
-	def RptTp(self, value):
-		self._RptTp = value if type(value) != auto else self.make_default("RptTp")
-
-	@RptTp.deleter
-	def RptTp(self):
-		del self._RptTp
-		self._RptTp = None
-
-	@property
-	def ActvtnDt(self):
-		return self._ActvtnDt
-
-	@ActvtnDt.setter
-	def ActvtnDt(self, value):
-		self._ActvtnDt = value if type(value) != auto else self.make_default("ActvtnDt")
-
-	@ActvtnDt.deleter
-	def ActvtnDt(self):
-		del self._ActvtnDt
-		self._ActvtnDt = None
-
-	@property
-	def MsgPgntn(self):
-		return self._MsgPgntn
-
-	@MsgPgntn.setter
-	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
-
-	@MsgPgntn.deleter
-	def MsgPgntn(self):
-		del self._MsgPgntn
-		self._MsgPgntn = None
-
+	__slots__ = ["_MsgId", "_RptTp", "_NetSvcPtcptId", "_RptSvcr", "_ActvtnDt", "_NetSvcTp", "_CreDtTm", "_MsgPgntn"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -60,6 +21,19 @@ class NettingCutOffReportData2(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
+
+	@property
+	def RptTp(self):
+		return self._RptTp
+
+	@RptTp.setter
+	def RptTp(self, value):
+		self._RptTp = value if type(value) != auto else self.make_default("RptTp")
+
+	@RptTp.deleter
+	def RptTp(self):
+		del self._RptTp
+		self._RptTp = None
 
 	@property
 	def NetSvcPtcptId(self):
@@ -88,6 +62,19 @@ class NettingCutOffReportData2(base_types._BaseFieldType):
 		self._RptSvcr = None
 
 	@property
+	def ActvtnDt(self):
+		return self._ActvtnDt
+
+	@ActvtnDt.setter
+	def ActvtnDt(self, value):
+		self._ActvtnDt = value if type(value) != auto else self.make_default("ActvtnDt")
+
+	@ActvtnDt.deleter
+	def ActvtnDt(self):
+		del self._ActvtnDt
+		self._ActvtnDt = None
+
+	@property
 	def NetSvcTp(self):
 		return self._NetSvcTp
 
@@ -113,14 +100,27 @@ class NettingCutOffReportData2(base_types._BaseFieldType):
 		del self._CreDtTm
 		self._CreDtTm = None
 
+	@property
+	def MsgPgntn(self):
+		return self._MsgPgntn
+
+	@MsgPgntn.setter
+	def MsgPgntn(self, value):
+		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
+
+	@MsgPgntn.deleter
+	def MsgPgntn(self):
+		del self._MsgPgntn
+		self._MsgPgntn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptTp', type=Max4Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActvtnDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptTp', type=Max4Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetSvcPtcptId', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptSvcr', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtnDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetSvcTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 	))
 

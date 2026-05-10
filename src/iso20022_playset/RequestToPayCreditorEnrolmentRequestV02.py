@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CreditorEnrolment5
 import SupplementaryData1
 import CreditorInvoice6

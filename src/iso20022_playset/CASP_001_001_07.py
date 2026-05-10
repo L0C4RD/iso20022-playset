@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SaleToPOIServiceRequestV07
 
 class CASP_001_001_07():

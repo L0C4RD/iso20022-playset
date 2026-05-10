@@ -1,6 +1,6 @@
-import base_types
-import SecuritiesFinancing12
+from . import base_types
 import FutureOrOptionDetails3
+import SecuritiesFinancing12
 
 class TwoLegTransactionType4Choice(base_types._BaseFieldType):
 

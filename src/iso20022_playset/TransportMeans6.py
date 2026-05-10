@@ -1,6 +1,6 @@
-import base_types
-import SingleTransport8
+from . import base_types
 import MultimodalTransport3
+import SingleTransport8
 
 class TransportMeans6(base_types._BaseFieldType):
 

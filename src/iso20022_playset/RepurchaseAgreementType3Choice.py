@@ -1,6 +1,6 @@
-import base_types
-import GeneralCollateral3
+from . import base_types
 import SpecificCollateral2
+import GeneralCollateral3
 
 class RepurchaseAgreementType3Choice(base_types._BaseFieldType):
 

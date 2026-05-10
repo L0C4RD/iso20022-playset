@@ -1,9 +1,9 @@
-import base_types
+from . import base_types
 import RestrictedFINXMax16Text
 
 class References58Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTxId", "_AcctSvcrTxId", "_SctiesSttlmTxId", "_PoolId", "_IntraPosMvmntId"]
+	__slots__ = ["_OthrTxId", "_SctiesSttlmTxId", "_IntraPosMvmntId", "_AcctSvcrTxId", "_PoolId"]
 	@property
 	def OthrTxId(self):
 		return self._OthrTxId
@@ -16,19 +16,6 @@ class References58Choice(base_types._BaseFieldType):
 	def OthrTxId(self):
 		del self._OthrTxId
 		self._OthrTxId = None
-
-	@property
-	def AcctSvcrTxId(self):
-		return self._AcctSvcrTxId
-
-	@AcctSvcrTxId.setter
-	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != auto else self.make_default("AcctSvcrTxId")
-
-	@AcctSvcrTxId.deleter
-	def AcctSvcrTxId(self):
-		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
 
 	@property
 	def SctiesSttlmTxId(self):
@@ -44,19 +31,6 @@ class References58Choice(base_types._BaseFieldType):
 		self._SctiesSttlmTxId = None
 
 	@property
-	def PoolId(self):
-		return self._PoolId
-
-	@PoolId.setter
-	def PoolId(self, value):
-		self._PoolId = value if type(value) != auto else self.make_default("PoolId")
-
-	@PoolId.deleter
-	def PoolId(self):
-		del self._PoolId
-		self._PoolId = None
-
-	@property
 	def IntraPosMvmntId(self):
 		return self._IntraPosMvmntId
 
@@ -69,11 +43,37 @@ class References58Choice(base_types._BaseFieldType):
 		del self._IntraPosMvmntId
 		self._IntraPosMvmntId = None
 
+	@property
+	def AcctSvcrTxId(self):
+		return self._AcctSvcrTxId
+
+	@AcctSvcrTxId.setter
+	def AcctSvcrTxId(self, value):
+		self._AcctSvcrTxId = value if type(value) != auto else self.make_default("AcctSvcrTxId")
+
+	@AcctSvcrTxId.deleter
+	def AcctSvcrTxId(self):
+		del self._AcctSvcrTxId
+		self._AcctSvcrTxId = None
+
+	@property
+	def PoolId(self):
+		return self._PoolId
+
+	@PoolId.setter
+	def PoolId(self, value):
+		self._PoolId = value if type(value) != auto else self.make_default("PoolId")
+
+	@PoolId.deleter
+	def PoolId(self):
+		del self._PoolId
+		self._PoolId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesSttlmTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PoolId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IntraPosMvmntId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PoolId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

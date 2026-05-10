@@ -1,11 +1,11 @@
-import base_types
-import RestrictedFINXMax350Text
+from . import base_types
 import RestrictedFINZMax2048Text
+import RestrictedFINXMax350Text
 import UpdatedURLlnformation7
 
 class CorporateActionNarrative63(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtPrcgWebSiteAdr", "_URLAdr", "_NewCpnyNm", "_Offerr"]
+	__slots__ = ["_EvtPrcgWebSiteAdr", "_NewCpnyNm", "_URLAdr", "_Offerr"]
 	@property
 	def EvtPrcgWebSiteAdr(self):
 		return self._EvtPrcgWebSiteAdr
@@ -20,19 +20,6 @@ class CorporateActionNarrative63(base_types._BaseFieldType):
 		self._EvtPrcgWebSiteAdr = None
 
 	@property
-	def URLAdr(self):
-		return self._URLAdr
-
-	@URLAdr.setter
-	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != auto else self.make_default("URLAdr")
-
-	@URLAdr.deleter
-	def URLAdr(self):
-		del self._URLAdr
-		self._URLAdr = None
-
-	@property
 	def NewCpnyNm(self):
 		return self._NewCpnyNm
 
@@ -44,6 +31,19 @@ class CorporateActionNarrative63(base_types._BaseFieldType):
 	def NewCpnyNm(self):
 		del self._NewCpnyNm
 		self._NewCpnyNm = None
+
+	@property
+	def URLAdr(self):
+		return self._URLAdr
+
+	@URLAdr.setter
+	def URLAdr(self, value):
+		self._URLAdr = value if type(value) != auto else self.make_default("URLAdr")
+
+	@URLAdr.deleter
+	def URLAdr(self):
+		del self._URLAdr
+		self._URLAdr = None
 
 	@property
 	def Offerr(self):
@@ -60,8 +60,8 @@ class CorporateActionNarrative63(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EvtPrcgWebSiteAdr', type=RestrictedFINZMax2048Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='URLAdr', type=UpdatedURLlnformation7, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NewCpnyNm', type=RestrictedFINXMax350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='URLAdr', type=UpdatedURLlnformation7, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Offerr', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

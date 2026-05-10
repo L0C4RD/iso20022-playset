@@ -1,6 +1,6 @@
-import base_types
-import RejectionReason48Choice
+from . import base_types
 import RestrictedFINXMax210Text
+import RejectionReason48Choice
 
 class RejectionReason63(base_types._BaseFieldType):
 

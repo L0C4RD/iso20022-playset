@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReportQueryRequestV02
 
 class ADMI_005_001_02():

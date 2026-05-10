@@ -1,27 +1,27 @@
-import base_types
-import PaymentContext30
-import CardPaymentEnvironment81
-import SupplementaryData1
-import RetailerService7Code
-import ResponseType11
+from . import base_types
 import ReportGetTotalsResponse2
+import CardPaymentEnvironment81
+import PaymentContext30
+import RetailerService7Code
 import ReportTransactionResponse7
+import ResponseType11
+import SupplementaryData1
 
 class ReportResponse8(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_RptTxRspn", "_Rspn", "_SvcCntt", "_SplmtryData", "_RptGetTtlsRspn"]
+	__slots__ = ["_SvcCntt", "_Cntxt", "_RptTxRspn", "_Envt", "_SplmtryData", "_RptGetTtlsRspn", "_Rspn"]
 	@property
-	def Envt(self):
-		return self._Envt
+	def SvcCntt(self):
+		return self._SvcCntt
 
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+	@SvcCntt.setter
+	def SvcCntt(self, value):
+		self._SvcCntt = value if type(value) != auto else self.make_default("SvcCntt")
 
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
+	@SvcCntt.deleter
+	def SvcCntt(self):
+		del self._SvcCntt
+		self._SvcCntt = None
 
 	@property
 	def Cntxt(self):
@@ -50,30 +50,17 @@ class ReportResponse8(base_types._BaseFieldType):
 		self._RptTxRspn = None
 
 	@property
-	def Rspn(self):
-		return self._Rspn
+	def Envt(self):
+		return self._Envt
 
-	@Rspn.setter
-	def Rspn(self, value):
-		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
 
-	@Rspn.deleter
-	def Rspn(self):
-		del self._Rspn
-		self._Rspn = None
-
-	@property
-	def SvcCntt(self):
-		return self._SvcCntt
-
-	@SvcCntt.setter
-	def SvcCntt(self, value):
-		self._SvcCntt = value if type(value) != auto else self.make_default("SvcCntt")
-
-	@SvcCntt.deleter
-	def SvcCntt(self):
-		del self._SvcCntt
-		self._SvcCntt = None
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
 
 	@property
 	def SplmtryData(self):
@@ -101,13 +88,26 @@ class ReportResponse8(base_types._BaseFieldType):
 		del self._RptGetTtlsRspn
 		self._RptGetTtlsRspn = None
 
+	@property
+	def Rspn(self):
+		return self._Rspn
+
+	@Rspn.setter
+	def Rspn(self, value):
+		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
+
+	@Rspn.deleter
+	def Rspn(self):
+		del self._Rspn
+		self._Rspn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcCntt', type=RetailerService7Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptTxRspn', type=ReportTransactionResponse7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcCntt', type=RetailerService7Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptGetTtlsRspn', type=ReportGetTotalsResponse2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
 	))
 

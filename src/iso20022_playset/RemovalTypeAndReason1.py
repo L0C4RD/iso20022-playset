@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import GenericIdentification30
-import Removal1Choice
 import DateOrDateTimePeriod3Choice
+import Removal1Choice
 
 class RemovalTypeAndReason1(base_types._BaseFieldType):
 
-	__slots__ = ["_ExclsnPrd", "_RmvlTp", "_Rsn"]
+	__slots__ = ["_Rsn", "_RmvlTp", "_ExclsnPrd"]
 	@property
-	def ExclsnPrd(self):
-		return self._ExclsnPrd
+	def Rsn(self):
+		return self._Rsn
 
-	@ExclsnPrd.setter
-	def ExclsnPrd(self, value):
-		self._ExclsnPrd = value if type(value) != auto else self.make_default("ExclsnPrd")
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
 
-	@ExclsnPrd.deleter
-	def ExclsnPrd(self):
-		del self._ExclsnPrd
-		self._ExclsnPrd = None
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
 	def RmvlTp(self):
@@ -33,21 +33,21 @@ class RemovalTypeAndReason1(base_types._BaseFieldType):
 		self._RmvlTp = None
 
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def ExclsnPrd(self):
+		return self._ExclsnPrd
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+	@ExclsnPrd.setter
+	def ExclsnPrd(self, value):
+		self._ExclsnPrd = value if type(value) != auto else self.make_default("ExclsnPrd")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@ExclsnPrd.deleter
+	def ExclsnPrd(self):
+		del self._ExclsnPrd
+		self._ExclsnPrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ExclsnPrd', type=DateOrDateTimePeriod3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmvlTp', type=Removal1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmvlTp', type=Removal1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExclsnPrd', type=DateOrDateTimePeriod3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

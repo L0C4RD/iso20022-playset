@@ -1,37 +1,24 @@
-import base_types
-import Max15PlusSignedNumericText
-import Authorisation2
+from . import base_types
 import PartyOrGroup3Choice
+import Authorisation2
 import Modification1Code
+import Max15PlusSignedNumericText
 
 class PartyAndAuthorisation6(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyOrGrp", "_SgntrOrdr", "_ModCd", "_Authstn"]
+	__slots__ = ["_Authstn", "_ModCd", "_SgntrOrdr", "_PtyOrGrp"]
 	@property
-	def PtyOrGrp(self):
-		return self._PtyOrGrp
+	def Authstn(self):
+		return self._Authstn
 
-	@PtyOrGrp.setter
-	def PtyOrGrp(self, value):
-		self._PtyOrGrp = value if type(value) != auto else self.make_default("PtyOrGrp")
+	@Authstn.setter
+	def Authstn(self, value):
+		self._Authstn = value if type(value) != auto else self.make_default("Authstn")
 
-	@PtyOrGrp.deleter
-	def PtyOrGrp(self):
-		del self._PtyOrGrp
-		self._PtyOrGrp = None
-
-	@property
-	def SgntrOrdr(self):
-		return self._SgntrOrdr
-
-	@SgntrOrdr.setter
-	def SgntrOrdr(self, value):
-		self._SgntrOrdr = value if type(value) != auto else self.make_default("SgntrOrdr")
-
-	@SgntrOrdr.deleter
-	def SgntrOrdr(self):
-		del self._SgntrOrdr
-		self._SgntrOrdr = None
+	@Authstn.deleter
+	def Authstn(self):
+		del self._Authstn
+		self._Authstn = None
 
 	@property
 	def ModCd(self):
@@ -47,22 +34,35 @@ class PartyAndAuthorisation6(base_types._BaseFieldType):
 		self._ModCd = None
 
 	@property
-	def Authstn(self):
-		return self._Authstn
+	def SgntrOrdr(self):
+		return self._SgntrOrdr
 
-	@Authstn.setter
-	def Authstn(self, value):
-		self._Authstn = value if type(value) != auto else self.make_default("Authstn")
+	@SgntrOrdr.setter
+	def SgntrOrdr(self, value):
+		self._SgntrOrdr = value if type(value) != auto else self.make_default("SgntrOrdr")
 
-	@Authstn.deleter
-	def Authstn(self):
-		del self._Authstn
-		self._Authstn = None
+	@SgntrOrdr.deleter
+	def SgntrOrdr(self):
+		del self._SgntrOrdr
+		self._SgntrOrdr = None
+
+	@property
+	def PtyOrGrp(self):
+		return self._PtyOrGrp
+
+	@PtyOrGrp.setter
+	def PtyOrGrp(self, value):
+		self._PtyOrGrp = value if type(value) != auto else self.make_default("PtyOrGrp")
+
+	@PtyOrGrp.deleter
+	def PtyOrGrp(self):
+		del self._PtyOrGrp
+		self._PtyOrGrp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PtyOrGrp', type=PartyOrGroup3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgntrOrdr', type=Max15PlusSignedNumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Authstn', type=Authorisation2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgntrOrdr', type=Max15PlusSignedNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyOrGrp', type=PartyOrGroup3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

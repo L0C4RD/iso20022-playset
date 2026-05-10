@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialSupervisedPartyIdentityReportV01
 
 class AUTH_076_001_01():

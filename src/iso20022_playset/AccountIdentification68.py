@@ -1,26 +1,13 @@
-import base_types
-import Max140Text
+from . import base_types
 import PartyIdentification127Choice
-import Max35Text
+import Max140Text
 import CorporateActionEventAndBalance26
 import SafekeepingPlaceFormat42Choice
+import Max35Text
 
 class AccountIdentification68(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_AcctOwnr", "_SfkpgPlc", "_SfkpgAcct", "_CorpActnEvtAndBal"]
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
+	__slots__ = ["_AcctOwnr", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_SfkpgPlc", "_CorpActnEvtAndBal"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
@@ -35,17 +22,17 @@ class AccountIdentification68(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
 
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
 
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
 
 	@property
 	def SfkpgAcct(self):
@@ -61,6 +48,19 @@ class AccountIdentification68(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
+
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
+
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
+
+	@property
 	def CorpActnEvtAndBal(self):
 		return self._CorpActnEvtAndBal
 
@@ -74,10 +74,10 @@ class AccountIdentification68(base_types._BaseFieldType):
 		self._CorpActnEvtAndBal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat42Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat42Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtAndBal', type=CorporateActionEventAndBalance26, min=0, max=None, mutex_group=None, array=True),
 	))
 

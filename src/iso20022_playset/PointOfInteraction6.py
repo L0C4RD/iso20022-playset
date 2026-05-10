@@ -1,21 +1,21 @@
-import base_types
+from . import base_types
 import Max35Text
 
 class PointOfInteraction6(base_types._BaseFieldType):
 
-	__slots__ = ["_Mdl", "_ManfctrIdr", "_SrlNb"]
+	__slots__ = ["_SrlNb", "_ManfctrIdr", "_Mdl"]
 	@property
-	def Mdl(self):
-		return self._Mdl
+	def SrlNb(self):
+		return self._SrlNb
 
-	@Mdl.setter
-	def Mdl(self, value):
-		self._Mdl = value if type(value) != auto else self.make_default("Mdl")
+	@SrlNb.setter
+	def SrlNb(self, value):
+		self._SrlNb = value if type(value) != auto else self.make_default("SrlNb")
 
-	@Mdl.deleter
-	def Mdl(self):
-		del self._Mdl
-		self._Mdl = None
+	@SrlNb.deleter
+	def SrlNb(self):
+		del self._SrlNb
+		self._SrlNb = None
 
 	@property
 	def ManfctrIdr(self):
@@ -31,21 +31,21 @@ class PointOfInteraction6(base_types._BaseFieldType):
 		self._ManfctrIdr = None
 
 	@property
-	def SrlNb(self):
-		return self._SrlNb
+	def Mdl(self):
+		return self._Mdl
 
-	@SrlNb.setter
-	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != auto else self.make_default("SrlNb")
+	@Mdl.setter
+	def Mdl(self, value):
+		self._Mdl = value if type(value) != auto else self.make_default("Mdl")
 
-	@SrlNb.deleter
-	def SrlNb(self):
-		del self._SrlNb
-		self._SrlNb = None
+	@Mdl.deleter
+	def Mdl(self):
+		del self._Mdl
+		self._Mdl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mdl', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ManfctrIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ManfctrIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mdl', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

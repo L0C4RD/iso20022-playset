@@ -1,6 +1,6 @@
-import base_types
-import TrueFalseIndicator
+from . import base_types
 import LEIIdentifier
+import TrueFalseIndicator
 
 class SecuritiesTransactionTransmission2(base_types._BaseFieldType):
 

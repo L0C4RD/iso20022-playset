@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PortfolioTransferCancellationRequestV09
 
 class SESE_014_001_09():

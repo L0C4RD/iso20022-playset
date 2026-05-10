@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class CorporateActionEventType35Code(base_types._BaseDataType_String):
 

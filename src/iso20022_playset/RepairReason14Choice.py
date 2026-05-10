@@ -1,6 +1,6 @@
-import base_types
-import GenericIdentification47
+from . import base_types
 import RepairReason4Code
+import GenericIdentification47
 
 class RepairReason14Choice(base_types._BaseFieldType):
 

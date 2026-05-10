@@ -1,6 +1,6 @@
-import base_types
-import ProprietaryQuantity7
+from . import base_types
 import Quantity50Choice
+import ProprietaryQuantity7
 
 class Quantity49Choice(base_types._BaseFieldType):
 

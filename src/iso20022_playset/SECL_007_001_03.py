@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BuyInNotificationV03
 
 class SECL_007_001_03():

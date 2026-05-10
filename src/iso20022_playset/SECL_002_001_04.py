@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TradeLegNotificationCancellationV04
 
 class SECL_002_001_04():

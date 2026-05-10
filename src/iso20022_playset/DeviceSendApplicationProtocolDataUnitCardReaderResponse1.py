@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Min1Max256Binary
 
 class DeviceSendApplicationProtocolDataUnitCardReaderResponse1(base_types._BaseFieldType):

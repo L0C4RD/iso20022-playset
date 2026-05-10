@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CCPLiquidityStressTestingResultReportV01
 
 class AUTH_063_001_01():

@@ -1,6 +1,6 @@
-import base_types
-import Max210Text
+from . import base_types
 import AllegementReason2Choice
+import Max210Text
 
 class AllegementMatchingReason2(base_types._BaseFieldType):
 

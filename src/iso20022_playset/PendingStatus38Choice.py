@@ -1,6 +1,6 @@
-import base_types
-import NoReasonCode
+from . import base_types
 import PendingReason16
+import NoReasonCode
 
 class PendingStatus38Choice(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReversalResponseV04
 
 class CAIN_006_001_04():

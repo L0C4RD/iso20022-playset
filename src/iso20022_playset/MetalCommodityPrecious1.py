@@ -1,24 +1,11 @@
-import base_types
-import AssetClassProductType7Code
+from . import base_types
 import AssetClassSubProductType16Code
 import AssetClassDetailedSubProductType11Code
+import AssetClassProductType7Code
 
 class MetalCommodityPrecious1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlSubPdct", "_BasePdct", "_SubPdct"]
-	@property
-	def AddtlSubPdct(self):
-		return self._AddtlSubPdct
-
-	@AddtlSubPdct.setter
-	def AddtlSubPdct(self, value):
-		self._AddtlSubPdct = value if type(value) != auto else self.make_default("AddtlSubPdct")
-
-	@AddtlSubPdct.deleter
-	def AddtlSubPdct(self):
-		del self._AddtlSubPdct
-		self._AddtlSubPdct = None
-
+	__slots__ = ["_BasePdct", "_SubPdct", "_AddtlSubPdct"]
 	@property
 	def BasePdct(self):
 		return self._BasePdct
@@ -45,9 +32,22 @@ class MetalCommodityPrecious1(base_types._BaseFieldType):
 		del self._SubPdct
 		self._SubPdct = None
 
+	@property
+	def AddtlSubPdct(self):
+		return self._AddtlSubPdct
+
+	@AddtlSubPdct.setter
+	def AddtlSubPdct(self, value):
+		self._AddtlSubPdct = value if type(value) != auto else self.make_default("AddtlSubPdct")
+
+	@AddtlSubPdct.deleter
+	def AddtlSubPdct(self):
+		del self._AddtlSubPdct
+		self._AddtlSubPdct = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlSubPdct', type=AssetClassDetailedSubProductType11Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType7Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubPdct', type=AssetClassSubProductType16Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlSubPdct', type=AssetClassDetailedSubProductType11Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

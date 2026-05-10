@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesTradeConfirmationResponseV03
 
 class SETR_030_001_03():

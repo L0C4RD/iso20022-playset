@@ -1,25 +1,12 @@
-import base_types
+from . import base_types
+import CashAccount40
+import ActiveOrHistoricCurrencyAndAmount
 import BranchAndFinancialInstitutionIdentification8
 import ChargeType3Choice
-import ActiveOrHistoricCurrencyAndAmount
-import CashAccount40
 
 class Charges14(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_AgtAcct", "_Agt", "_Amt"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_AgtAcct", "_Tp", "_Amt", "_Agt"]
 	@property
 	def AgtAcct(self):
 		return self._AgtAcct
@@ -34,17 +21,17 @@ class Charges14(base_types._BaseFieldType):
 		self._AgtAcct = None
 
 	@property
-	def Agt(self):
-		return self._Agt
+	def Tp(self):
+		return self._Tp
 
-	@Agt.setter
-	def Agt(self, value):
-		self._Agt = value if type(value) != auto else self.make_default("Agt")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@Agt.deleter
-	def Agt(self):
-		del self._Agt
-		self._Agt = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Amt(self):
@@ -59,10 +46,23 @@ class Charges14(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def Agt(self):
+		return self._Agt
+
+	@Agt.setter
+	def Agt(self, value):
+		self._Agt = value if type(value) != auto else self.make_default("Agt")
+
+	@Agt.deleter
+	def Agt(self):
+		del self._Agt
+		self._Agt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=ChargeType3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ChargeType3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

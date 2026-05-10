@@ -1,6 +1,6 @@
-import base_types
-import RateBasis1Code
+from . import base_types
 import Max3Number
+import RateBasis1Code
 
 class InterestRateContractTerm2(base_types._BaseFieldType):
 

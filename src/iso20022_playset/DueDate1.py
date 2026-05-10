@@ -1,23 +1,10 @@
-import base_types
-import Max140Text
+from . import base_types
 import ISODate
+import Max140Text
 
 class DueDate1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_DueDt"]
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
+	__slots__ = ["_DueDt", "_AddtlInf"]
 	@property
 	def DueDt(self):
 		return self._DueDt
@@ -31,8 +18,21 @@ class DueDate1(base_types._BaseFieldType):
 		del self._DueDt
 		self._DueDt = None
 
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DueDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

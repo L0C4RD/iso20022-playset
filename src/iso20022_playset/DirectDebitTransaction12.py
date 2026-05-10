@@ -1,38 +1,12 @@
-import base_types
-import Max35Text
-import PartyIdentification272
+from . import base_types
 import ISODate
+import PartyIdentification272
+import Max35Text
 import MandateRelatedInformation16
 
 class DirectDebitTransaction12(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrSchmeId", "_PreNtfctnDt", "_PreNtfctnId", "_MndtRltdInf"]
-	@property
-	def CdtrSchmeId(self):
-		return self._CdtrSchmeId
-
-	@CdtrSchmeId.setter
-	def CdtrSchmeId(self, value):
-		self._CdtrSchmeId = value if type(value) != auto else self.make_default("CdtrSchmeId")
-
-	@CdtrSchmeId.deleter
-	def CdtrSchmeId(self):
-		del self._CdtrSchmeId
-		self._CdtrSchmeId = None
-
-	@property
-	def PreNtfctnDt(self):
-		return self._PreNtfctnDt
-
-	@PreNtfctnDt.setter
-	def PreNtfctnDt(self, value):
-		self._PreNtfctnDt = value if type(value) != auto else self.make_default("PreNtfctnDt")
-
-	@PreNtfctnDt.deleter
-	def PreNtfctnDt(self):
-		del self._PreNtfctnDt
-		self._PreNtfctnDt = None
-
+	__slots__ = ["_PreNtfctnId", "_MndtRltdInf", "_CdtrSchmeId", "_PreNtfctnDt"]
 	@property
 	def PreNtfctnId(self):
 		return self._PreNtfctnId
@@ -59,10 +33,36 @@ class DirectDebitTransaction12(base_types._BaseFieldType):
 		del self._MndtRltdInf
 		self._MndtRltdInf = None
 
+	@property
+	def CdtrSchmeId(self):
+		return self._CdtrSchmeId
+
+	@CdtrSchmeId.setter
+	def CdtrSchmeId(self, value):
+		self._CdtrSchmeId = value if type(value) != auto else self.make_default("CdtrSchmeId")
+
+	@CdtrSchmeId.deleter
+	def CdtrSchmeId(self):
+		del self._CdtrSchmeId
+		self._CdtrSchmeId = None
+
+	@property
+	def PreNtfctnDt(self):
+		return self._PreNtfctnDt
+
+	@PreNtfctnDt.setter
+	def PreNtfctnDt(self, value):
+		self._PreNtfctnDt = value if type(value) != auto else self.make_default("PreNtfctnDt")
+
+	@PreNtfctnDt.deleter
+	def PreNtfctnDt(self):
+		del self._PreNtfctnDt
+		self._PreNtfctnDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtrSchmeId', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PreNtfctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PreNtfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MndtRltdInf', type=MandateRelatedInformation16, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrSchmeId', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PreNtfctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

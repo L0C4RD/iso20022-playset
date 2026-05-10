@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import EnvelopedData11
 import ContentType2Code
 
 class ContentInformationType40(base_types._BaseFieldType):
 
-	__slots__ = ["_EnvlpdData", "_CnttTp"]
-	@property
-	def EnvlpdData(self):
-		return self._EnvlpdData
-
-	@EnvlpdData.setter
-	def EnvlpdData(self, value):
-		self._EnvlpdData = value if type(value) != auto else self.make_default("EnvlpdData")
-
-	@EnvlpdData.deleter
-	def EnvlpdData(self):
-		del self._EnvlpdData
-		self._EnvlpdData = None
-
+	__slots__ = ["_CnttTp", "_EnvlpdData"]
 	@property
 	def CnttTp(self):
 		return self._CnttTp
@@ -31,8 +18,21 @@ class ContentInformationType40(base_types._BaseFieldType):
 		del self._CnttTp
 		self._CnttTp = None
 
+	@property
+	def EnvlpdData(self):
+		return self._EnvlpdData
+
+	@EnvlpdData.setter
+	def EnvlpdData(self, value):
+		self._EnvlpdData = value if type(value) != auto else self.make_default("EnvlpdData")
+
+	@EnvlpdData.deleter
+	def EnvlpdData(self):
+		del self._EnvlpdData
+		self._EnvlpdData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EnvlpdData', type=EnvelopedData11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EnvlpdData', type=EnvelopedData11, min=1, max=1, mutex_group=None, array=False),
 	))
 

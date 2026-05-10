@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesProceeds1
 import TaxVoucher1
 import CashProceeds1

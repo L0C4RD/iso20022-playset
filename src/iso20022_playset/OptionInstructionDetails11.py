@@ -1,55 +1,42 @@
-import base_types
-import InstructionProcessingStatus56Choice
-import Max3NumericText
-import Max350Text
+from . import base_types
 import ISODate
-import Max15Text
-import FinancialInstrumentQuantity33Choice
-import ProtectTransactionType2Code
-import PriceFormat74Choice
+import Max350Text
+import Max3NumericText
 import Max50Text
+import PriceFormat74Choice
+import FinancialInstrumentQuantity33Choice
+import Max15Text
+import InstructionProcessingStatus56Choice
+import ProtectTransactionType2Code
 
 class OptionInstructionDetails11(base_types._BaseFieldType):
 
-	__slots__ = ["_CoverPrtctDt", "_InstrDt", "_InstrSeqNb", "_InstrSts", "_BidPric", "_CstmrRef", "_PrtctDt", "_InstrNrrtv", "_InstrQty", "_InstrId", "_PrtctInd", "_CondlQty"]
+	__slots__ = ["_PrtctDt", "_CstmrRef", "_InstrSts", "_BidPric", "_CoverPrtctDt", "_InstrSeqNb", "_CondlQty", "_InstrDt", "_InstrQty", "_InstrId", "_PrtctInd", "_InstrNrrtv"]
 	@property
-	def CoverPrtctDt(self):
-		return self._CoverPrtctDt
+	def PrtctDt(self):
+		return self._PrtctDt
 
-	@CoverPrtctDt.setter
-	def CoverPrtctDt(self, value):
-		self._CoverPrtctDt = value if type(value) != auto else self.make_default("CoverPrtctDt")
+	@PrtctDt.setter
+	def PrtctDt(self, value):
+		self._PrtctDt = value if type(value) != auto else self.make_default("PrtctDt")
 
-	@CoverPrtctDt.deleter
-	def CoverPrtctDt(self):
-		del self._CoverPrtctDt
-		self._CoverPrtctDt = None
-
-	@property
-	def InstrDt(self):
-		return self._InstrDt
-
-	@InstrDt.setter
-	def InstrDt(self, value):
-		self._InstrDt = value if type(value) != auto else self.make_default("InstrDt")
-
-	@InstrDt.deleter
-	def InstrDt(self):
-		del self._InstrDt
-		self._InstrDt = None
+	@PrtctDt.deleter
+	def PrtctDt(self):
+		del self._PrtctDt
+		self._PrtctDt = None
 
 	@property
-	def InstrSeqNb(self):
-		return self._InstrSeqNb
+	def CstmrRef(self):
+		return self._CstmrRef
 
-	@InstrSeqNb.setter
-	def InstrSeqNb(self, value):
-		self._InstrSeqNb = value if type(value) != auto else self.make_default("InstrSeqNb")
+	@CstmrRef.setter
+	def CstmrRef(self, value):
+		self._CstmrRef = value if type(value) != auto else self.make_default("CstmrRef")
 
-	@InstrSeqNb.deleter
-	def InstrSeqNb(self):
-		del self._InstrSeqNb
-		self._InstrSeqNb = None
+	@CstmrRef.deleter
+	def CstmrRef(self):
+		del self._CstmrRef
+		self._CstmrRef = None
 
 	@property
 	def InstrSts(self):
@@ -78,43 +65,56 @@ class OptionInstructionDetails11(base_types._BaseFieldType):
 		self._BidPric = None
 
 	@property
-	def CstmrRef(self):
-		return self._CstmrRef
+	def CoverPrtctDt(self):
+		return self._CoverPrtctDt
 
-	@CstmrRef.setter
-	def CstmrRef(self, value):
-		self._CstmrRef = value if type(value) != auto else self.make_default("CstmrRef")
+	@CoverPrtctDt.setter
+	def CoverPrtctDt(self, value):
+		self._CoverPrtctDt = value if type(value) != auto else self.make_default("CoverPrtctDt")
 
-	@CstmrRef.deleter
-	def CstmrRef(self):
-		del self._CstmrRef
-		self._CstmrRef = None
-
-	@property
-	def PrtctDt(self):
-		return self._PrtctDt
-
-	@PrtctDt.setter
-	def PrtctDt(self, value):
-		self._PrtctDt = value if type(value) != auto else self.make_default("PrtctDt")
-
-	@PrtctDt.deleter
-	def PrtctDt(self):
-		del self._PrtctDt
-		self._PrtctDt = None
+	@CoverPrtctDt.deleter
+	def CoverPrtctDt(self):
+		del self._CoverPrtctDt
+		self._CoverPrtctDt = None
 
 	@property
-	def InstrNrrtv(self):
-		return self._InstrNrrtv
+	def InstrSeqNb(self):
+		return self._InstrSeqNb
 
-	@InstrNrrtv.setter
-	def InstrNrrtv(self, value):
-		self._InstrNrrtv = value if type(value) != auto else self.make_default("InstrNrrtv")
+	@InstrSeqNb.setter
+	def InstrSeqNb(self, value):
+		self._InstrSeqNb = value if type(value) != auto else self.make_default("InstrSeqNb")
 
-	@InstrNrrtv.deleter
-	def InstrNrrtv(self):
-		del self._InstrNrrtv
-		self._InstrNrrtv = None
+	@InstrSeqNb.deleter
+	def InstrSeqNb(self):
+		del self._InstrSeqNb
+		self._InstrSeqNb = None
+
+	@property
+	def CondlQty(self):
+		return self._CondlQty
+
+	@CondlQty.setter
+	def CondlQty(self, value):
+		self._CondlQty = value if type(value) != auto else self.make_default("CondlQty")
+
+	@CondlQty.deleter
+	def CondlQty(self):
+		del self._CondlQty
+		self._CondlQty = None
+
+	@property
+	def InstrDt(self):
+		return self._InstrDt
+
+	@InstrDt.setter
+	def InstrDt(self, value):
+		self._InstrDt = value if type(value) != auto else self.make_default("InstrDt")
+
+	@InstrDt.deleter
+	def InstrDt(self):
+		del self._InstrDt
+		self._InstrDt = None
 
 	@property
 	def InstrQty(self):
@@ -156,30 +156,30 @@ class OptionInstructionDetails11(base_types._BaseFieldType):
 		self._PrtctInd = None
 
 	@property
-	def CondlQty(self):
-		return self._CondlQty
+	def InstrNrrtv(self):
+		return self._InstrNrrtv
 
-	@CondlQty.setter
-	def CondlQty(self, value):
-		self._CondlQty = value if type(value) != auto else self.make_default("CondlQty")
+	@InstrNrrtv.setter
+	def InstrNrrtv(self, value):
+		self._InstrNrrtv = value if type(value) != auto else self.make_default("InstrNrrtv")
 
-	@CondlQty.deleter
-	def CondlQty(self):
-		del self._CondlQty
-		self._CondlQty = None
+	@InstrNrrtv.deleter
+	def InstrNrrtv(self):
+		del self._InstrNrrtv
+		self._InstrNrrtv = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CoverPrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrSeqNb', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrRef', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrSts', type=InstructionProcessingStatus56Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BidPric', type=PriceFormat74Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrRef', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrNrrtv', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CoverPrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrSeqNb', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CondlQty', type=FinancialInstrumentQuantity33Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrQty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrId', type=Max15Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctInd', type=ProtectTransactionType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CondlQty', type=FinancialInstrumentQuantity33Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrNrrtv', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

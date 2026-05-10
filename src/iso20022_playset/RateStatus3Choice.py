@@ -1,6 +1,6 @@
-import base_types
-import RateStatus1Code
+from . import base_types
 import GenericIdentification30
+import RateStatus1Code
 
 class RateStatus3Choice(base_types._BaseFieldType):
 

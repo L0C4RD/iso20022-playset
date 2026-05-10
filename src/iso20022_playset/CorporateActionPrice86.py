@@ -1,10 +1,23 @@
-import base_types
-import PriceFormat61Choice
+from . import base_types
 import PriceFormat74Choice
+import PriceFormat61Choice
 
 class CorporateActionPrice86(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxCshToInst", "_CshInLieuOfShrPric", "_MinMltplCshToInst", "_MinCshToInst", "_OverSbcptDpstPric"]
+	__slots__ = ["_MinMltplCshToInst", "_MaxCshToInst", "_OverSbcptDpstPric", "_CshInLieuOfShrPric", "_MinCshToInst"]
+	@property
+	def MinMltplCshToInst(self):
+		return self._MinMltplCshToInst
+
+	@MinMltplCshToInst.setter
+	def MinMltplCshToInst(self, value):
+		self._MinMltplCshToInst = value if type(value) != auto else self.make_default("MinMltplCshToInst")
+
+	@MinMltplCshToInst.deleter
+	def MinMltplCshToInst(self):
+		del self._MinMltplCshToInst
+		self._MinMltplCshToInst = None
+
 	@property
 	def MaxCshToInst(self):
 		return self._MaxCshToInst
@@ -17,6 +30,19 @@ class CorporateActionPrice86(base_types._BaseFieldType):
 	def MaxCshToInst(self):
 		del self._MaxCshToInst
 		self._MaxCshToInst = None
+
+	@property
+	def OverSbcptDpstPric(self):
+		return self._OverSbcptDpstPric
+
+	@OverSbcptDpstPric.setter
+	def OverSbcptDpstPric(self, value):
+		self._OverSbcptDpstPric = value if type(value) != auto else self.make_default("OverSbcptDpstPric")
+
+	@OverSbcptDpstPric.deleter
+	def OverSbcptDpstPric(self):
+		del self._OverSbcptDpstPric
+		self._OverSbcptDpstPric = None
 
 	@property
 	def CshInLieuOfShrPric(self):
@@ -32,19 +58,6 @@ class CorporateActionPrice86(base_types._BaseFieldType):
 		self._CshInLieuOfShrPric = None
 
 	@property
-	def MinMltplCshToInst(self):
-		return self._MinMltplCshToInst
-
-	@MinMltplCshToInst.setter
-	def MinMltplCshToInst(self, value):
-		self._MinMltplCshToInst = value if type(value) != auto else self.make_default("MinMltplCshToInst")
-
-	@MinMltplCshToInst.deleter
-	def MinMltplCshToInst(self):
-		del self._MinMltplCshToInst
-		self._MinMltplCshToInst = None
-
-	@property
 	def MinCshToInst(self):
 		return self._MinCshToInst
 
@@ -57,24 +70,11 @@ class CorporateActionPrice86(base_types._BaseFieldType):
 		del self._MinCshToInst
 		self._MinCshToInst = None
 
-	@property
-	def OverSbcptDpstPric(self):
-		return self._OverSbcptDpstPric
-
-	@OverSbcptDpstPric.setter
-	def OverSbcptDpstPric(self, value):
-		self._OverSbcptDpstPric = value if type(value) != auto else self.make_default("OverSbcptDpstPric")
-
-	@OverSbcptDpstPric.deleter
-	def OverSbcptDpstPric(self):
-		del self._OverSbcptDpstPric
-		self._OverSbcptDpstPric = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MaxCshToInst', type=PriceFormat61Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat74Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinMltplCshToInst', type=PriceFormat61Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinCshToInst', type=PriceFormat61Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxCshToInst', type=PriceFormat61Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OverSbcptDpstPric', type=PriceFormat74Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat74Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinCshToInst', type=PriceFormat61Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

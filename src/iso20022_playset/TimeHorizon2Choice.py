@@ -1,6 +1,6 @@
-import base_types
-import DecimalNumber
+from . import base_types
 import TimeFrame9Choice
+import DecimalNumber
 
 class TimeHorizon2Choice(base_types._BaseFieldType):
 

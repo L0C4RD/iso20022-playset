@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CaseStatusReportRequestV05
 
 class CAMT_038_001_05():

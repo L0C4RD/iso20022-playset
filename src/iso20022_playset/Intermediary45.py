@@ -1,24 +1,11 @@
-import base_types
-import Account30
+from . import base_types
 import PartyIdentification157
 import Role7Choice
+import Account30
 
 class Intermediary45(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_Role", "_Id"]
-	@property
-	def Acct(self):
-		return self._Acct
-
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
-
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
-
+	__slots__ = ["_Role", "_Acct", "_Id"]
 	@property
 	def Role(self):
 		return self._Role
@@ -31,6 +18,19 @@ class Intermediary45(base_types._BaseFieldType):
 	def Role(self):
 		del self._Role
 		self._Role = None
+
+	@property
+	def Acct(self):
+		return self._Acct
+
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
+
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
 
 	@property
 	def Id(self):
@@ -46,8 +46,8 @@ class Intermediary45(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Acct', type=Account30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Role', type=Role7Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Acct', type=Account30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification157, min=1, max=1, mutex_group=None, array=False),
 	))
 

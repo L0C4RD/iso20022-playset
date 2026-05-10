@@ -1,11 +1,11 @@
-import base_types
-import ISODateTime
-import Max35Text
+from . import base_types
 import GenericIdentification77
+import Max35Text
+import ISODateTime
 
 class Traceability4(base_types._BaseFieldType):
 
-	__slots__ = ["_TracDtTmIn", "_RlayId", "_TracDtTmOut", "_SeqNb"]
+	__slots__ = ["_TracDtTmIn", "_TracDtTmOut", "_SeqNb", "_RlayId"]
 	@property
 	def TracDtTmIn(self):
 		return self._TracDtTmIn
@@ -18,19 +18,6 @@ class Traceability4(base_types._BaseFieldType):
 	def TracDtTmIn(self):
 		del self._TracDtTmIn
 		self._TracDtTmIn = None
-
-	@property
-	def RlayId(self):
-		return self._RlayId
-
-	@RlayId.setter
-	def RlayId(self, value):
-		self._RlayId = value if type(value) != auto else self.make_default("RlayId")
-
-	@RlayId.deleter
-	def RlayId(self):
-		del self._RlayId
-		self._RlayId = None
 
 	@property
 	def TracDtTmOut(self):
@@ -58,10 +45,23 @@ class Traceability4(base_types._BaseFieldType):
 		del self._SeqNb
 		self._SeqNb = None
 
+	@property
+	def RlayId(self):
+		return self._RlayId
+
+	@RlayId.setter
+	def RlayId(self, value):
+		self._RlayId = value if type(value) != auto else self.make_default("RlayId")
+
+	@RlayId.deleter
+	def RlayId(self):
+		del self._RlayId
+		self._RlayId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TracDtTmIn', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RlayId', type=GenericIdentification77, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TracDtTmOut', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RlayId', type=GenericIdentification77, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,10 @@
-import base_types
-import NoReasonCode
+from . import base_types
 import SafekeepingAccount17
+import NoReasonCode
 
 class Disclosure3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoDsclsr", "_SfkpgAcctAndHldgs"]
-	@property
-	def NoDsclsr(self):
-		return self._NoDsclsr
-
-	@NoDsclsr.setter
-	def NoDsclsr(self, value):
-		self._NoDsclsr = value if type(value) != auto else self.make_default("NoDsclsr")
-
-	@NoDsclsr.deleter
-	def NoDsclsr(self):
-		del self._NoDsclsr
-		self._NoDsclsr = None
-
+	__slots__ = ["_SfkpgAcctAndHldgs", "_NoDsclsr"]
 	@property
 	def SfkpgAcctAndHldgs(self):
 		return self._SfkpgAcctAndHldgs
@@ -31,8 +18,21 @@ class Disclosure3Choice(base_types._BaseFieldType):
 		del self._SfkpgAcctAndHldgs
 		self._SfkpgAcctAndHldgs = None
 
+	@property
+	def NoDsclsr(self):
+		return self._NoDsclsr
+
+	@NoDsclsr.setter
+	def NoDsclsr(self, value):
+		self._NoDsclsr = value if type(value) != auto else self.make_default("NoDsclsr")
+
+	@NoDsclsr.deleter
+	def NoDsclsr(self):
+		del self._NoDsclsr
+		self._NoDsclsr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NoDsclsr', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SfkpgAcctAndHldgs', type=SafekeepingAccount17, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='NoDsclsr', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 	))
 

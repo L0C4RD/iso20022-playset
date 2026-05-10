@@ -1,12 +1,38 @@
-import base_types
-import Max35Text
-import YesNoIndicator
+from . import base_types
 import SecuritiesFinancingTransactionType2Code
+import YesNoIndicator
+import Max35Text
 import DeliveryReceiptType2Code
 
 class TransactionTypeAndAdditionalParameters21(base_types._BaseFieldType):
 
-	__slots__ = ["_Pmt", "_CmonId", "_RcncltnInd", "_NonceId", "_SctiesFincgTxTp"]
+	__slots__ = ["_NonceId", "_SctiesFincgTxTp", "_Pmt", "_CmonId", "_RcncltnInd"]
+	@property
+	def NonceId(self):
+		return self._NonceId
+
+	@NonceId.setter
+	def NonceId(self, value):
+		self._NonceId = value if type(value) != auto else self.make_default("NonceId")
+
+	@NonceId.deleter
+	def NonceId(self):
+		del self._NonceId
+		self._NonceId = None
+
+	@property
+	def SctiesFincgTxTp(self):
+		return self._SctiesFincgTxTp
+
+	@SctiesFincgTxTp.setter
+	def SctiesFincgTxTp(self, value):
+		self._SctiesFincgTxTp = value if type(value) != auto else self.make_default("SctiesFincgTxTp")
+
+	@SctiesFincgTxTp.deleter
+	def SctiesFincgTxTp(self):
+		del self._SctiesFincgTxTp
+		self._SctiesFincgTxTp = None
+
 	@property
 	def Pmt(self):
 		return self._Pmt
@@ -46,37 +72,11 @@ class TransactionTypeAndAdditionalParameters21(base_types._BaseFieldType):
 		del self._RcncltnInd
 		self._RcncltnInd = None
 
-	@property
-	def NonceId(self):
-		return self._NonceId
-
-	@NonceId.setter
-	def NonceId(self, value):
-		self._NonceId = value if type(value) != auto else self.make_default("NonceId")
-
-	@NonceId.deleter
-	def NonceId(self):
-		del self._NonceId
-		self._NonceId = None
-
-	@property
-	def SctiesFincgTxTp(self):
-		return self._SctiesFincgTxTp
-
-	@SctiesFincgTxTp.setter
-	def SctiesFincgTxTp(self, value):
-		self._SctiesFincgTxTp = value if type(value) != auto else self.make_default("SctiesFincgTxTp")
-
-	@SctiesFincgTxTp.deleter
-	def SctiesFincgTxTp(self):
-		del self._SctiesFincgTxTp
-		self._SctiesFincgTxTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NonceId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesFincgTxTp', type=SecuritiesFinancingTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonceId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesFincgTxTp', type=SecuritiesFinancingTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

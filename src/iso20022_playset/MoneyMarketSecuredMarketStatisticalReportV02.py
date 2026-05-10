@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
+import SupplementaryData1
 import SecuredMarketReport4Choice
 import MoneyMarketReportHeader1
-import SupplementaryData1
 
 class MoneyMarketSecuredMarketStatisticalReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ScrdMktRpt", "_RptHdr", "_SplmtryData"]
-	@property
-	def ScrdMktRpt(self):
-		return self._ScrdMktRpt
-
-	@ScrdMktRpt.setter
-	def ScrdMktRpt(self, value):
-		self._ScrdMktRpt = value if type(value) != auto else self.make_default("ScrdMktRpt")
-
-	@ScrdMktRpt.deleter
-	def ScrdMktRpt(self):
-		del self._ScrdMktRpt
-		self._ScrdMktRpt = None
-
+	__slots__ = ["_RptHdr", "_ScrdMktRpt", "_SplmtryData"]
 	@property
 	def RptHdr(self):
 		return self._RptHdr
@@ -31,6 +18,19 @@ class MoneyMarketSecuredMarketStatisticalReportV02(base_types._BaseFieldType):
 	def RptHdr(self):
 		del self._RptHdr
 		self._RptHdr = None
+
+	@property
+	def ScrdMktRpt(self):
+		return self._ScrdMktRpt
+
+	@ScrdMktRpt.setter
+	def ScrdMktRpt(self, value):
+		self._ScrdMktRpt = value if type(value) != auto else self.make_default("ScrdMktRpt")
+
+	@ScrdMktRpt.deleter
+	def ScrdMktRpt(self):
+		del self._ScrdMktRpt
+		self._ScrdMktRpt = None
 
 	@property
 	def SplmtryData(self):
@@ -46,8 +46,8 @@ class MoneyMarketSecuredMarketStatisticalReportV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ScrdMktRpt', type=SecuredMarketReport4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptHdr', type=MoneyMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScrdMktRpt', type=SecuredMarketReport4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

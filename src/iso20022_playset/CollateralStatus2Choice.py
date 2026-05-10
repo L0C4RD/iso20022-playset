@@ -1,6 +1,6 @@
-import base_types
-import ExecutionStatus1Code
+from . import base_types
 import GenericIdentification30
+import ExecutionStatus1Code
 
 class CollateralStatus2Choice(base_types._BaseFieldType):
 

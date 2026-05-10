@@ -1,42 +1,16 @@
-import base_types
+from . import base_types
 import PartyIdentification272
-import SupplementaryData1
 import DocumentAmendment1
-import ContractRegistrationReference2Choice
-import SupportingDocumentEntry2
+import SupplementaryData1
 import Max35Text
-import DocumentIdentification28
 import BranchAndFinancialInstitutionIdentification8
+import SupportingDocumentEntry2
+import DocumentIdentification28
+import ContractRegistrationReference2Choice
 
 class SupportingDocument4(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_AcctSvcr", "_CtrctRef", "_Amdmnt", "_Cert", "_SpprtgDocId", "_Ntry", "_SplmtryData", "_OrgnlReqId"]
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
-	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
-
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
-
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
-
+	__slots__ = ["_CtrctRef", "_Cert", "_SplmtryData", "_Amdmnt", "_AcctOwnr", "_Ntry", "_OrgnlReqId", "_AcctSvcr", "_SpprtgDocId"]
 	@property
 	def CtrctRef(self):
 		return self._CtrctRef
@@ -49,19 +23,6 @@ class SupportingDocument4(base_types._BaseFieldType):
 	def CtrctRef(self):
 		del self._CtrctRef
 		self._CtrctRef = None
-
-	@property
-	def Amdmnt(self):
-		return self._Amdmnt
-
-	@Amdmnt.setter
-	def Amdmnt(self, value):
-		self._Amdmnt = value if type(value) != auto else self.make_default("Amdmnt")
-
-	@Amdmnt.deleter
-	def Amdmnt(self):
-		del self._Amdmnt
-		self._Amdmnt = None
 
 	@property
 	def Cert(self):
@@ -77,17 +38,43 @@ class SupportingDocument4(base_types._BaseFieldType):
 		self._Cert = None
 
 	@property
-	def SpprtgDocId(self):
-		return self._SpprtgDocId
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@SpprtgDocId.setter
-	def SpprtgDocId(self, value):
-		self._SpprtgDocId = value if type(value) != auto else self.make_default("SpprtgDocId")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@SpprtgDocId.deleter
-	def SpprtgDocId(self):
-		del self._SpprtgDocId
-		self._SpprtgDocId = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def Amdmnt(self):
+		return self._Amdmnt
+
+	@Amdmnt.setter
+	def Amdmnt(self, value):
+		self._Amdmnt = value if type(value) != auto else self.make_default("Amdmnt")
+
+	@Amdmnt.deleter
+	def Amdmnt(self):
+		del self._Amdmnt
+		self._Amdmnt = None
+
+	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
 
 	@property
 	def Ntry(self):
@@ -103,19 +90,6 @@ class SupportingDocument4(base_types._BaseFieldType):
 		self._Ntry = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def OrgnlReqId(self):
 		return self._OrgnlReqId
 
@@ -128,15 +102,41 @@ class SupportingDocument4(base_types._BaseFieldType):
 		del self._OrgnlReqId
 		self._OrgnlReqId = None
 
+	@property
+	def AcctSvcr(self):
+		return self._AcctSvcr
+
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
+
+	@property
+	def SpprtgDocId(self):
+		return self._SpprtgDocId
+
+	@SpprtgDocId.setter
+	def SpprtgDocId(self, value):
+		self._SpprtgDocId = value if type(value) != auto else self.make_default("SpprtgDocId")
+
+	@SpprtgDocId.deleter
+	def SpprtgDocId(self):
+		del self._SpprtgDocId
+		self._SpprtgDocId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctRef', type=ContractRegistrationReference2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amdmnt', type=DocumentAmendment1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cert', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SpprtgDocId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ntry', type=SupportingDocumentEntry2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Amdmnt', type=DocumentAmendment1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ntry', type=SupportingDocumentEntry2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlReqId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpprtgDocId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

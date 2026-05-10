@@ -1,24 +1,11 @@
-import base_types
-import MessageHeader3
-import SupplementaryData1
+from . import base_types
 import CollateralValueCriteriaDefinition4Choice
+import SupplementaryData1
+import MessageHeader3
 
 class CollateralValueQueryV02(base_types._BaseFieldType):
 
-	__slots__ = ["_CollValQryDef", "_SplmtryData", "_MsgHdr"]
-	@property
-	def CollValQryDef(self):
-		return self._CollValQryDef
-
-	@CollValQryDef.setter
-	def CollValQryDef(self, value):
-		self._CollValQryDef = value if type(value) != auto else self.make_default("CollValQryDef")
-
-	@CollValQryDef.deleter
-	def CollValQryDef(self):
-		del self._CollValQryDef
-		self._CollValQryDef = None
-
+	__slots__ = ["_SplmtryData", "_MsgHdr", "_CollValQryDef"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -45,9 +32,22 @@ class CollateralValueQueryV02(base_types._BaseFieldType):
 		del self._MsgHdr
 		self._MsgHdr = None
 
+	@property
+	def CollValQryDef(self):
+		return self._CollValQryDef
+
+	@CollValQryDef.setter
+	def CollValQryDef(self, value):
+		self._CollValQryDef = value if type(value) != auto else self.make_default("CollValQryDef")
+
+	@CollValQryDef.deleter
+	def CollValQryDef(self):
+		del self._CollValQryDef
+		self._CollValQryDef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollValQryDef', type=CollateralValueCriteriaDefinition4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollValQryDef', type=CollateralValueCriteriaDefinition4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

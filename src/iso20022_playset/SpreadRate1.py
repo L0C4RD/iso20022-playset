@@ -1,6 +1,6 @@
-import base_types
-import AmountOrRate1Choice
+from . import base_types
 import PlusOrMinusIndicator
+import AmountOrRate1Choice
 
 class SpreadRate1(base_types._BaseFieldType):
 

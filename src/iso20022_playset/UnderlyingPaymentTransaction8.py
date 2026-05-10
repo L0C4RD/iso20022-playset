@@ -1,15 +1,15 @@
-import base_types
-import ServiceLevel8Choice
-import Max35Text
-import OriginalTransactionReference42
-import ActiveOrHistoricCurrencyAndAmount
-import UUIDv4Identifier
+from . import base_types
 import ISODate
 import UnderlyingGroupInformation1
+import ServiceLevel8Choice
+import ActiveOrHistoricCurrencyAndAmount
+import UUIDv4Identifier
+import Max35Text
+import OriginalTransactionReference42
 
 class UnderlyingPaymentTransaction8(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlEndToEndId", "_OrgnlIntrBkSttlmAmt", "_OrgnlIntrBkSttlmDt", "_OrgnlInstrId", "_OrgnlUETR", "_OrgnlTxRef", "_OrgnlSvcLvl", "_OrgnlTxId", "_OrgnlGrpInf"]
+	__slots__ = ["_OrgnlEndToEndId", "_OrgnlSvcLvl", "_OrgnlIntrBkSttlmAmt", "_OrgnlInstrId", "_OrgnlTxId", "_OrgnlGrpInf", "_OrgnlUETR", "_OrgnlIntrBkSttlmDt", "_OrgnlTxRef"]
 	@property
 	def OrgnlEndToEndId(self):
 		return self._OrgnlEndToEndId
@@ -22,6 +22,19 @@ class UnderlyingPaymentTransaction8(base_types._BaseFieldType):
 	def OrgnlEndToEndId(self):
 		del self._OrgnlEndToEndId
 		self._OrgnlEndToEndId = None
+
+	@property
+	def OrgnlSvcLvl(self):
+		return self._OrgnlSvcLvl
+
+	@OrgnlSvcLvl.setter
+	def OrgnlSvcLvl(self, value):
+		self._OrgnlSvcLvl = value if type(value) != auto else self.make_default("OrgnlSvcLvl")
+
+	@OrgnlSvcLvl.deleter
+	def OrgnlSvcLvl(self):
+		del self._OrgnlSvcLvl
+		self._OrgnlSvcLvl = None
 
 	@property
 	def OrgnlIntrBkSttlmAmt(self):
@@ -37,19 +50,6 @@ class UnderlyingPaymentTransaction8(base_types._BaseFieldType):
 		self._OrgnlIntrBkSttlmAmt = None
 
 	@property
-	def OrgnlIntrBkSttlmDt(self):
-		return self._OrgnlIntrBkSttlmDt
-
-	@OrgnlIntrBkSttlmDt.setter
-	def OrgnlIntrBkSttlmDt(self, value):
-		self._OrgnlIntrBkSttlmDt = value if type(value) != auto else self.make_default("OrgnlIntrBkSttlmDt")
-
-	@OrgnlIntrBkSttlmDt.deleter
-	def OrgnlIntrBkSttlmDt(self):
-		del self._OrgnlIntrBkSttlmDt
-		self._OrgnlIntrBkSttlmDt = None
-
-	@property
 	def OrgnlInstrId(self):
 		return self._OrgnlInstrId
 
@@ -61,45 +61,6 @@ class UnderlyingPaymentTransaction8(base_types._BaseFieldType):
 	def OrgnlInstrId(self):
 		del self._OrgnlInstrId
 		self._OrgnlInstrId = None
-
-	@property
-	def OrgnlUETR(self):
-		return self._OrgnlUETR
-
-	@OrgnlUETR.setter
-	def OrgnlUETR(self, value):
-		self._OrgnlUETR = value if type(value) != auto else self.make_default("OrgnlUETR")
-
-	@OrgnlUETR.deleter
-	def OrgnlUETR(self):
-		del self._OrgnlUETR
-		self._OrgnlUETR = None
-
-	@property
-	def OrgnlTxRef(self):
-		return self._OrgnlTxRef
-
-	@OrgnlTxRef.setter
-	def OrgnlTxRef(self, value):
-		self._OrgnlTxRef = value if type(value) != auto else self.make_default("OrgnlTxRef")
-
-	@OrgnlTxRef.deleter
-	def OrgnlTxRef(self):
-		del self._OrgnlTxRef
-		self._OrgnlTxRef = None
-
-	@property
-	def OrgnlSvcLvl(self):
-		return self._OrgnlSvcLvl
-
-	@OrgnlSvcLvl.setter
-	def OrgnlSvcLvl(self, value):
-		self._OrgnlSvcLvl = value if type(value) != auto else self.make_default("OrgnlSvcLvl")
-
-	@OrgnlSvcLvl.deleter
-	def OrgnlSvcLvl(self):
-		del self._OrgnlSvcLvl
-		self._OrgnlSvcLvl = None
 
 	@property
 	def OrgnlTxId(self):
@@ -127,15 +88,54 @@ class UnderlyingPaymentTransaction8(base_types._BaseFieldType):
 		del self._OrgnlGrpInf
 		self._OrgnlGrpInf = None
 
+	@property
+	def OrgnlUETR(self):
+		return self._OrgnlUETR
+
+	@OrgnlUETR.setter
+	def OrgnlUETR(self, value):
+		self._OrgnlUETR = value if type(value) != auto else self.make_default("OrgnlUETR")
+
+	@OrgnlUETR.deleter
+	def OrgnlUETR(self):
+		del self._OrgnlUETR
+		self._OrgnlUETR = None
+
+	@property
+	def OrgnlIntrBkSttlmDt(self):
+		return self._OrgnlIntrBkSttlmDt
+
+	@OrgnlIntrBkSttlmDt.setter
+	def OrgnlIntrBkSttlmDt(self, value):
+		self._OrgnlIntrBkSttlmDt = value if type(value) != auto else self.make_default("OrgnlIntrBkSttlmDt")
+
+	@OrgnlIntrBkSttlmDt.deleter
+	def OrgnlIntrBkSttlmDt(self):
+		del self._OrgnlIntrBkSttlmDt
+		self._OrgnlIntrBkSttlmDt = None
+
+	@property
+	def OrgnlTxRef(self):
+		return self._OrgnlTxRef
+
+	@OrgnlTxRef.setter
+	def OrgnlTxRef(self, value):
+		self._OrgnlTxRef = value if type(value) != auto else self.make_default("OrgnlTxRef")
+
+	@OrgnlTxRef.deleter
+	def OrgnlTxRef(self):
+		del self._OrgnlTxRef
+		self._OrgnlTxRef = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlEndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlIntrBkSttlmAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlIntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlUETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlTxRef', type=OriginalTransactionReference42, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlSvcLvl', type=ServiceLevel8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlIntrBkSttlmAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlGrpInf', type=UnderlyingGroupInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlUETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlIntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlTxRef', type=OriginalTransactionReference42, min=0, max=1, mutex_group=None, array=False),
 	))
 

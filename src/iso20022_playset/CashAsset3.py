@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import CashAssetType1Choice
-import ActiveCurrencyCode
 import AdditionalInformation15
+import ActiveCurrencyCode
 
 class CashAsset3(base_types._BaseFieldType):
 
-	__slots__ = ["_TrfCcy", "_CshAsstTp", "_AddtlInf", "_HldgCcy"]
+	__slots__ = ["_HldgCcy", "_CshAsstTp", "_AddtlInf", "_TrfCcy"]
 	@property
-	def TrfCcy(self):
-		return self._TrfCcy
+	def HldgCcy(self):
+		return self._HldgCcy
 
-	@TrfCcy.setter
-	def TrfCcy(self, value):
-		self._TrfCcy = value if type(value) != auto else self.make_default("TrfCcy")
+	@HldgCcy.setter
+	def HldgCcy(self, value):
+		self._HldgCcy = value if type(value) != auto else self.make_default("HldgCcy")
 
-	@TrfCcy.deleter
-	def TrfCcy(self):
-		del self._TrfCcy
-		self._TrfCcy = None
+	@HldgCcy.deleter
+	def HldgCcy(self):
+		del self._HldgCcy
+		self._HldgCcy = None
 
 	@property
 	def CshAsstTp(self):
@@ -46,22 +46,22 @@ class CashAsset3(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def HldgCcy(self):
-		return self._HldgCcy
+	def TrfCcy(self):
+		return self._TrfCcy
 
-	@HldgCcy.setter
-	def HldgCcy(self, value):
-		self._HldgCcy = value if type(value) != auto else self.make_default("HldgCcy")
+	@TrfCcy.setter
+	def TrfCcy(self, value):
+		self._TrfCcy = value if type(value) != auto else self.make_default("TrfCcy")
 
-	@HldgCcy.deleter
-	def HldgCcy(self):
-		del self._HldgCcy
-		self._HldgCcy = None
+	@TrfCcy.deleter
+	def TrfCcy(self):
+		del self._TrfCcy
+		self._TrfCcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrfCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HldgCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAsstTp', type=CashAssetType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HldgCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import RequestType1Code
-import RequestType2Code
 import GenericIdentification1
+import RequestType2Code
 
 class RequestType2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Enqry", "_PmtCtrl", "_Prtry"]
-	@property
-	def Enqry(self):
-		return self._Enqry
-
-	@Enqry.setter
-	def Enqry(self, value):
-		self._Enqry = value if type(value) != auto else self.make_default("Enqry")
-
-	@Enqry.deleter
-	def Enqry(self):
-		del self._Enqry
-		self._Enqry = None
-
+	__slots__ = ["_PmtCtrl", "_Prtry", "_Enqry"]
 	@property
 	def PmtCtrl(self):
 		return self._PmtCtrl
@@ -45,9 +32,22 @@ class RequestType2Choice(base_types._BaseFieldType):
 		del self._Prtry
 		self._Prtry = None
 
+	@property
+	def Enqry(self):
+		return self._Enqry
+
+	@Enqry.setter
+	def Enqry(self, value):
+		self._Enqry = value if type(value) != auto else self.make_default("Enqry")
+
+	@Enqry.deleter
+	def Enqry(self):
+		del self._Enqry
+		self._Enqry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Enqry', type=RequestType2Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PmtCtrl', type=RequestType1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Enqry', type=RequestType2Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

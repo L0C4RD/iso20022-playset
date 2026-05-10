@@ -1,25 +1,12 @@
-import base_types
+from . import base_types
+import Recipient15Choice
 import OriginatorInformation1
 import EncryptedContent7
 import Number
-import Recipient15Choice
 
 class EnvelopedData11(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_Rcpt", "_OrgtrInf", "_NcrptdCntt"]
-	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
+	__slots__ = ["_Rcpt", "_OrgtrInf", "_NcrptdCntt", "_Vrsn"]
 	@property
 	def Rcpt(self):
 		return self._Rcpt
@@ -59,10 +46,23 @@ class EnvelopedData11(base_types._BaseFieldType):
 		del self._NcrptdCntt
 		self._NcrptdCntt = None
 
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcpt', type=Recipient15Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgtrInf', type=OriginatorInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdCntt', type=EncryptedContent7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

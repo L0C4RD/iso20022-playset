@@ -1,26 +1,26 @@
-import base_types
-import Max35Text
-import Max140Text
+from . import base_types
 import ContactIdentification2
-import SubAccount5
 import PartyIdentification178Choice
+import Max140Text
 import DateAndDateTime2Choice
+import Max35Text
+import SubAccount5
 
 class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgId", "_BlckChainAdrOrWllt", "_SubAcct", "_PrcgDt", "_AcctId", "_PtyId", "_CtctPrsn"]
+	__slots__ = ["_CtctPrsn", "_BlckChainAdrOrWllt", "_AcctId", "_PrcgId", "_PrcgDt", "_PtyId", "_SubAcct"]
 	@property
-	def PrcgId(self):
-		return self._PrcgId
+	def CtctPrsn(self):
+		return self._CtctPrsn
 
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+	@CtctPrsn.setter
+	def CtctPrsn(self, value):
+		self._CtctPrsn = value if type(value) != auto else self.make_default("CtctPrsn")
 
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
+	@CtctPrsn.deleter
+	def CtctPrsn(self):
+		del self._CtctPrsn
+		self._CtctPrsn = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -36,17 +36,30 @@ class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def SubAcct(self):
-		return self._SubAcct
+	def AcctId(self):
+		return self._AcctId
 
-	@SubAcct.setter
-	def SubAcct(self, value):
-		self._SubAcct = value if type(value) != auto else self.make_default("SubAcct")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
 
-	@SubAcct.deleter
-	def SubAcct(self):
-		del self._SubAcct
-		self._SubAcct = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
+	@property
+	def PrcgId(self):
+		return self._PrcgId
+
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
 
 	@property
 	def PrcgDt(self):
@@ -62,19 +75,6 @@ class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 		self._PrcgDt = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
-	@property
 	def PtyId(self):
 		return self._PtyId
 
@@ -88,25 +88,25 @@ class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 		self._PtyId = None
 
 	@property
-	def CtctPrsn(self):
-		return self._CtctPrsn
+	def SubAcct(self):
+		return self._SubAcct
 
-	@CtctPrsn.setter
-	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != auto else self.make_default("CtctPrsn")
+	@SubAcct.setter
+	def SubAcct(self, value):
+		self._SubAcct = value if type(value) != auto else self.make_default("SubAcct")
 
-	@CtctPrsn.deleter
-	def CtctPrsn(self):
-		del self._CtctPrsn
-		self._CtctPrsn = None
+	@SubAcct.deleter
+	def SubAcct(self):
+		del self._SubAcct
+		self._SubAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubAcct', type=SubAccount5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyId', type=PartyIdentification178Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyId', type=PartyIdentification178Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubAcct', type=SubAccount5, min=0, max=1, mutex_group=None, array=False),
 	))
 

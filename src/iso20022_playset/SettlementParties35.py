@@ -1,23 +1,23 @@
-import base_types
-import GenericIdentification49
-import SettlementParties32
+from . import base_types
 import PartyIdentification99Choice
+import SettlementParties32
+import GenericIdentification49
 
 class SettlementParties35(base_types._BaseFieldType):
 
-	__slots__ = ["_LclMktId", "_StgSttlmPties", "_RegnDtls"]
+	__slots__ = ["_RegnDtls", "_StgSttlmPties", "_LclMktId"]
 	@property
-	def LclMktId(self):
-		return self._LclMktId
+	def RegnDtls(self):
+		return self._RegnDtls
 
-	@LclMktId.setter
-	def LclMktId(self, value):
-		self._LclMktId = value if type(value) != auto else self.make_default("LclMktId")
+	@RegnDtls.setter
+	def RegnDtls(self, value):
+		self._RegnDtls = value if type(value) != auto else self.make_default("RegnDtls")
 
-	@LclMktId.deleter
-	def LclMktId(self):
-		del self._LclMktId
-		self._LclMktId = None
+	@RegnDtls.deleter
+	def RegnDtls(self):
+		del self._RegnDtls
+		self._RegnDtls = None
 
 	@property
 	def StgSttlmPties(self):
@@ -33,21 +33,21 @@ class SettlementParties35(base_types._BaseFieldType):
 		self._StgSttlmPties = None
 
 	@property
-	def RegnDtls(self):
-		return self._RegnDtls
+	def LclMktId(self):
+		return self._LclMktId
 
-	@RegnDtls.setter
-	def RegnDtls(self, value):
-		self._RegnDtls = value if type(value) != auto else self.make_default("RegnDtls")
+	@LclMktId.setter
+	def LclMktId(self, value):
+		self._LclMktId = value if type(value) != auto else self.make_default("LclMktId")
 
-	@RegnDtls.deleter
-	def RegnDtls(self):
-		del self._RegnDtls
-		self._RegnDtls = None
+	@LclMktId.deleter
+	def LclMktId(self):
+		del self._LclMktId
+		self._LclMktId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LclMktId', type=GenericIdentification49, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StgSttlmPties', type=SettlementParties32, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnDtls', type=PartyIdentification99Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StgSttlmPties', type=SettlementParties32, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LclMktId', type=GenericIdentification49, min=0, max=None, mutex_group=None, array=True),
 	))
 

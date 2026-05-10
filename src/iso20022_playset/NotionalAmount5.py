@@ -1,6 +1,6 @@
-import base_types
-import AmountAndDirection106
+from . import base_types
 import Schedule11
+import AmountAndDirection106
 
 class NotionalAmount5(base_types._BaseFieldType):
 

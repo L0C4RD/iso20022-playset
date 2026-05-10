@@ -1,25 +1,25 @@
-import base_types
-import Max35Text
-import ISODateTime
+from . import base_types
 import StatusAndSubStatus2
+import ISODateTime
+import Max35Text
 import StatusSubType2Code
 import Status28Choice
 
 class TradeData16(base_types._BaseFieldType):
 
-	__slots__ = ["_CurSts", "_MtchgSysUnqRef", "_CurStsDtTm", "_MtchgSysMtchgRef", "_StsOrgtr", "_PrvsStsSubTp", "_PrvsSts", "_CurStsSubTp", "_MtchgSysMtchdSdRef"]
+	__slots__ = ["_MtchgSysMtchdSdRef", "_MtchgSysUnqRef", "_CurStsSubTp", "_PrvsStsSubTp", "_CurSts", "_StsOrgtr", "_MtchgSysMtchgRef", "_PrvsSts", "_CurStsDtTm"]
 	@property
-	def CurSts(self):
-		return self._CurSts
+	def MtchgSysMtchdSdRef(self):
+		return self._MtchgSysMtchdSdRef
 
-	@CurSts.setter
-	def CurSts(self, value):
-		self._CurSts = value if type(value) != auto else self.make_default("CurSts")
+	@MtchgSysMtchdSdRef.setter
+	def MtchgSysMtchdSdRef(self, value):
+		self._MtchgSysMtchdSdRef = value if type(value) != auto else self.make_default("MtchgSysMtchdSdRef")
 
-	@CurSts.deleter
-	def CurSts(self):
-		del self._CurSts
-		self._CurSts = None
+	@MtchgSysMtchdSdRef.deleter
+	def MtchgSysMtchdSdRef(self):
+		del self._MtchgSysMtchdSdRef
+		self._MtchgSysMtchdSdRef = None
 
 	@property
 	def MtchgSysUnqRef(self):
@@ -35,43 +35,17 @@ class TradeData16(base_types._BaseFieldType):
 		self._MtchgSysUnqRef = None
 
 	@property
-	def CurStsDtTm(self):
-		return self._CurStsDtTm
+	def CurStsSubTp(self):
+		return self._CurStsSubTp
 
-	@CurStsDtTm.setter
-	def CurStsDtTm(self, value):
-		self._CurStsDtTm = value if type(value) != auto else self.make_default("CurStsDtTm")
+	@CurStsSubTp.setter
+	def CurStsSubTp(self, value):
+		self._CurStsSubTp = value if type(value) != auto else self.make_default("CurStsSubTp")
 
-	@CurStsDtTm.deleter
-	def CurStsDtTm(self):
-		del self._CurStsDtTm
-		self._CurStsDtTm = None
-
-	@property
-	def MtchgSysMtchgRef(self):
-		return self._MtchgSysMtchgRef
-
-	@MtchgSysMtchgRef.setter
-	def MtchgSysMtchgRef(self, value):
-		self._MtchgSysMtchgRef = value if type(value) != auto else self.make_default("MtchgSysMtchgRef")
-
-	@MtchgSysMtchgRef.deleter
-	def MtchgSysMtchgRef(self):
-		del self._MtchgSysMtchgRef
-		self._MtchgSysMtchgRef = None
-
-	@property
-	def StsOrgtr(self):
-		return self._StsOrgtr
-
-	@StsOrgtr.setter
-	def StsOrgtr(self, value):
-		self._StsOrgtr = value if type(value) != auto else self.make_default("StsOrgtr")
-
-	@StsOrgtr.deleter
-	def StsOrgtr(self):
-		del self._StsOrgtr
-		self._StsOrgtr = None
+	@CurStsSubTp.deleter
+	def CurStsSubTp(self):
+		del self._CurStsSubTp
+		self._CurStsSubTp = None
 
 	@property
 	def PrvsStsSubTp(self):
@@ -87,6 +61,45 @@ class TradeData16(base_types._BaseFieldType):
 		self._PrvsStsSubTp = None
 
 	@property
+	def CurSts(self):
+		return self._CurSts
+
+	@CurSts.setter
+	def CurSts(self, value):
+		self._CurSts = value if type(value) != auto else self.make_default("CurSts")
+
+	@CurSts.deleter
+	def CurSts(self):
+		del self._CurSts
+		self._CurSts = None
+
+	@property
+	def StsOrgtr(self):
+		return self._StsOrgtr
+
+	@StsOrgtr.setter
+	def StsOrgtr(self, value):
+		self._StsOrgtr = value if type(value) != auto else self.make_default("StsOrgtr")
+
+	@StsOrgtr.deleter
+	def StsOrgtr(self):
+		del self._StsOrgtr
+		self._StsOrgtr = None
+
+	@property
+	def MtchgSysMtchgRef(self):
+		return self._MtchgSysMtchgRef
+
+	@MtchgSysMtchgRef.setter
+	def MtchgSysMtchgRef(self, value):
+		self._MtchgSysMtchgRef = value if type(value) != auto else self.make_default("MtchgSysMtchgRef")
+
+	@MtchgSysMtchgRef.deleter
+	def MtchgSysMtchgRef(self):
+		del self._MtchgSysMtchgRef
+		self._MtchgSysMtchgRef = None
+
+	@property
 	def PrvsSts(self):
 		return self._PrvsSts
 
@@ -100,40 +113,27 @@ class TradeData16(base_types._BaseFieldType):
 		self._PrvsSts = None
 
 	@property
-	def CurStsSubTp(self):
-		return self._CurStsSubTp
+	def CurStsDtTm(self):
+		return self._CurStsDtTm
 
-	@CurStsSubTp.setter
-	def CurStsSubTp(self, value):
-		self._CurStsSubTp = value if type(value) != auto else self.make_default("CurStsSubTp")
+	@CurStsDtTm.setter
+	def CurStsDtTm(self, value):
+		self._CurStsDtTm = value if type(value) != auto else self.make_default("CurStsDtTm")
 
-	@CurStsSubTp.deleter
-	def CurStsSubTp(self):
-		del self._CurStsSubTp
-		self._CurStsSubTp = None
-
-	@property
-	def MtchgSysMtchdSdRef(self):
-		return self._MtchgSysMtchdSdRef
-
-	@MtchgSysMtchdSdRef.setter
-	def MtchgSysMtchdSdRef(self, value):
-		self._MtchgSysMtchdSdRef = value if type(value) != auto else self.make_default("MtchgSysMtchdSdRef")
-
-	@MtchgSysMtchdSdRef.deleter
-	def MtchgSysMtchdSdRef(self):
-		del self._MtchgSysMtchdSdRef
-		self._MtchgSysMtchdSdRef = None
+	@CurStsDtTm.deleter
+	def CurStsDtTm(self):
+		del self._CurStsDtTm
+		self._CurStsDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CurSts', type=StatusAndSubStatus2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtchgSysUnqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CurStsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtchgSysMtchgRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsOrgtr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsStsSubTp', type=StatusSubType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsSts', type=Status28Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CurStsSubTp', type=StatusSubType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchgSysMtchdSdRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtchgSysUnqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurStsSubTp', type=StatusSubType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsStsSubTp', type=StatusSubType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurSts', type=StatusAndSubStatus2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsOrgtr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtchgSysMtchgRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsSts', type=Status28Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurStsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

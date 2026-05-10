@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MisMatchAcceptanceNotificationV03
 
 class TSMT_021_001_03():

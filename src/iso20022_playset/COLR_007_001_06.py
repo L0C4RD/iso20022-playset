@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CollateralProposalV06
 
 class COLR_007_001_06():

@@ -1,6 +1,6 @@
-import base_types
-import ImpliedCurrencyAndAmount
+from . import base_types
 import ActiveCurrencyAndAmount
+import ImpliedCurrencyAndAmount
 
 class Amount2Choice(base_types._BaseFieldType):
 

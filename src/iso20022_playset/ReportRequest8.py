@@ -1,27 +1,14 @@
-import base_types
-import PaymentContext30
-import ReportTransactionRequest1
+from . import base_types
 import CardPaymentEnvironment81
-import RetailerService6Code
-import SupplementaryData1
+import PaymentContext30
 import ReportGetTotalsRequest1
+import SupplementaryData1
+import ReportTransactionRequest1
+import RetailerService6Code
 
 class ReportRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_RptGetTtlsReq", "_RptTxReq", "_SplmtryData", "_SvcCntt"]
-	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
-
+	__slots__ = ["_Cntxt", "_RptTxReq", "_Envt", "_RptGetTtlsReq", "_SplmtryData", "_SvcCntt"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt
@@ -36,19 +23,6 @@ class ReportRequest8(base_types._BaseFieldType):
 		self._Cntxt = None
 
 	@property
-	def RptGetTtlsReq(self):
-		return self._RptGetTtlsReq
-
-	@RptGetTtlsReq.setter
-	def RptGetTtlsReq(self, value):
-		self._RptGetTtlsReq = value if type(value) != auto else self.make_default("RptGetTtlsReq")
-
-	@RptGetTtlsReq.deleter
-	def RptGetTtlsReq(self):
-		del self._RptGetTtlsReq
-		self._RptGetTtlsReq = None
-
-	@property
 	def RptTxReq(self):
 		return self._RptTxReq
 
@@ -60,6 +34,32 @@ class ReportRequest8(base_types._BaseFieldType):
 	def RptTxReq(self):
 		del self._RptTxReq
 		self._RptTxReq = None
+
+	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
+
+	@property
+	def RptGetTtlsReq(self):
+		return self._RptGetTtlsReq
+
+	@RptGetTtlsReq.setter
+	def RptGetTtlsReq(self, value):
+		self._RptGetTtlsReq = value if type(value) != auto else self.make_default("RptGetTtlsReq")
+
+	@RptGetTtlsReq.deleter
+	def RptGetTtlsReq(self):
+		del self._RptGetTtlsReq
+		self._RptGetTtlsReq = None
 
 	@property
 	def SplmtryData(self):
@@ -88,10 +88,10 @@ class ReportRequest8(base_types._BaseFieldType):
 		self._SvcCntt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptGetTtlsReq', type=ReportGetTotalsRequest1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptTxReq', type=ReportTransactionRequest1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptGetTtlsReq', type=ReportGetTotalsRequest1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SvcCntt', type=RetailerService6Code, min=1, max=1, mutex_group=None, array=False),
 	))

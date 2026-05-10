@@ -1,10 +1,10 @@
-import base_types
-import PartyIdentificationAndAccount202
+from . import base_types
 import PartyIdentification136
+import PartyIdentificationAndAccount202
 
 class CollateralParties9(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntPtyA", "_PtyA", "_TrptyAgt"]
+	__slots__ = ["_ClntPtyA", "_TrptyAgt", "_PtyA"]
 	@property
 	def ClntPtyA(self):
 		return self._ClntPtyA
@@ -19,19 +19,6 @@ class CollateralParties9(base_types._BaseFieldType):
 		self._ClntPtyA = None
 
 	@property
-	def PtyA(self):
-		return self._PtyA
-
-	@PtyA.setter
-	def PtyA(self, value):
-		self._PtyA = value if type(value) != auto else self.make_default("PtyA")
-
-	@PtyA.deleter
-	def PtyA(self):
-		del self._PtyA
-		self._PtyA = None
-
-	@property
 	def TrptyAgt(self):
 		return self._TrptyAgt
 
@@ -44,9 +31,22 @@ class CollateralParties9(base_types._BaseFieldType):
 		del self._TrptyAgt
 		self._TrptyAgt = None
 
+	@property
+	def PtyA(self):
+		return self._PtyA
+
+	@PtyA.setter
+	def PtyA(self, value):
+		self._PtyA = value if type(value) != auto else self.make_default("PtyA")
+
+	@PtyA.deleter
+	def PtyA(self):
+		del self._PtyA
+		self._PtyA = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntPtyA', type=PartyIdentificationAndAccount202, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyA', type=PartyIdentificationAndAccount202, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyA', type=PartyIdentificationAndAccount202, min=0, max=1, mutex_group=None, array=False),
 	))
 

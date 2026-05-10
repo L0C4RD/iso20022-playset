@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountModificationInstructionV08
 
 class ACMT_003_001_08():

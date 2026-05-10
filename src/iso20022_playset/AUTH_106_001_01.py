@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DerivativesTradeWarningsReportV01
 
 class AUTH_106_001_01():

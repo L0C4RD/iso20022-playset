@@ -4,7 +4,7 @@
 import os
 import sys
 
-import iso20022
+import iso20022_playset as iso20022
 
 def demo_1():
 

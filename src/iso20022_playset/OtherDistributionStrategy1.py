@@ -1,24 +1,11 @@
-import base_types
-import Max35Text
+from . import base_types
 import DistributionStrategy1Choice
+import Max35Text
 import AdditionalInformation15
 
 class OtherDistributionStrategy1(base_types._BaseFieldType):
 
-	__slots__ = ["_DstrbtnStrtgyTp", "_AddtlInf", "_Trgt"]
-	@property
-	def DstrbtnStrtgyTp(self):
-		return self._DstrbtnStrtgyTp
-
-	@DstrbtnStrtgyTp.setter
-	def DstrbtnStrtgyTp(self, value):
-		self._DstrbtnStrtgyTp = value if type(value) != auto else self.make_default("DstrbtnStrtgyTp")
-
-	@DstrbtnStrtgyTp.deleter
-	def DstrbtnStrtgyTp(self):
-		del self._DstrbtnStrtgyTp
-		self._DstrbtnStrtgyTp = None
-
+	__slots__ = ["_AddtlInf", "_Trgt", "_DstrbtnStrtgyTp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -45,9 +32,22 @@ class OtherDistributionStrategy1(base_types._BaseFieldType):
 		del self._Trgt
 		self._Trgt = None
 
+	@property
+	def DstrbtnStrtgyTp(self):
+		return self._DstrbtnStrtgyTp
+
+	@DstrbtnStrtgyTp.setter
+	def DstrbtnStrtgyTp(self, value):
+		self._DstrbtnStrtgyTp = value if type(value) != auto else self.make_default("DstrbtnStrtgyTp")
+
+	@DstrbtnStrtgyTp.deleter
+	def DstrbtnStrtgyTp(self):
+		del self._DstrbtnStrtgyTp
+		self._DstrbtnStrtgyTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DstrbtnStrtgyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trgt', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstrbtnStrtgyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

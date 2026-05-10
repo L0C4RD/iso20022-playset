@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import Max350Text
 import OrderWaiverReason3Choice
 
 class OrderWaiver1(base_types._BaseFieldType):
 
-	__slots__ = ["_InfVal", "_OrdrWvrRsn"]
-	@property
-	def InfVal(self):
-		return self._InfVal
-
-	@InfVal.setter
-	def InfVal(self, value):
-		self._InfVal = value if type(value) != auto else self.make_default("InfVal")
-
-	@InfVal.deleter
-	def InfVal(self):
-		del self._InfVal
-		self._InfVal = None
-
+	__slots__ = ["_OrdrWvrRsn", "_InfVal"]
 	@property
 	def OrdrWvrRsn(self):
 		return self._OrdrWvrRsn
@@ -31,8 +18,21 @@ class OrderWaiver1(base_types._BaseFieldType):
 		del self._OrdrWvrRsn
 		self._OrdrWvrRsn = None
 
+	@property
+	def InfVal(self):
+		return self._InfVal
+
+	@InfVal.setter
+	def InfVal(self, value):
+		self._InfVal = value if type(value) != auto else self.make_default("InfVal")
+
+	@InfVal.deleter
+	def InfVal(self):
+		del self._InfVal
+		self._InfVal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InfVal', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrWvrRsn', type=OrderWaiverReason3Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InfVal', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

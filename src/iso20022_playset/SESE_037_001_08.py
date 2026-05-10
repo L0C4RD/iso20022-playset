@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PortfolioTransferNotificationV08
 
 class SESE_037_001_08():

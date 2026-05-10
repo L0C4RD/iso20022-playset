@@ -1,21 +1,21 @@
-import base_types
+from . import base_types
 import Max35Text
 
 class TotalFilter1(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleId", "_CshrId", "_TtlsGrpId", "_POIId", "_ShftNb"]
+	__slots__ = ["_ShftNb", "_CshrId", "_POIId", "_SaleId", "_TtlsGrpId"]
 	@property
-	def SaleId(self):
-		return self._SaleId
+	def ShftNb(self):
+		return self._ShftNb
 
-	@SaleId.setter
-	def SaleId(self, value):
-		self._SaleId = value if type(value) != auto else self.make_default("SaleId")
+	@ShftNb.setter
+	def ShftNb(self, value):
+		self._ShftNb = value if type(value) != auto else self.make_default("ShftNb")
 
-	@SaleId.deleter
-	def SaleId(self):
-		del self._SaleId
-		self._SaleId = None
+	@ShftNb.deleter
+	def ShftNb(self):
+		del self._ShftNb
+		self._ShftNb = None
 
 	@property
 	def CshrId(self):
@@ -31,19 +31,6 @@ class TotalFilter1(base_types._BaseFieldType):
 		self._CshrId = None
 
 	@property
-	def TtlsGrpId(self):
-		return self._TtlsGrpId
-
-	@TtlsGrpId.setter
-	def TtlsGrpId(self, value):
-		self._TtlsGrpId = value if type(value) != auto else self.make_default("TtlsGrpId")
-
-	@TtlsGrpId.deleter
-	def TtlsGrpId(self):
-		del self._TtlsGrpId
-		self._TtlsGrpId = None
-
-	@property
 	def POIId(self):
 		return self._POIId
 
@@ -57,23 +44,36 @@ class TotalFilter1(base_types._BaseFieldType):
 		self._POIId = None
 
 	@property
-	def ShftNb(self):
-		return self._ShftNb
+	def SaleId(self):
+		return self._SaleId
 
-	@ShftNb.setter
-	def ShftNb(self, value):
-		self._ShftNb = value if type(value) != auto else self.make_default("ShftNb")
+	@SaleId.setter
+	def SaleId(self, value):
+		self._SaleId = value if type(value) != auto else self.make_default("SaleId")
 
-	@ShftNb.deleter
-	def ShftNb(self):
-		del self._ShftNb
-		self._ShftNb = None
+	@SaleId.deleter
+	def SaleId(self):
+		del self._SaleId
+		self._SaleId = None
+
+	@property
+	def TtlsGrpId(self):
+		return self._TtlsGrpId
+
+	@TtlsGrpId.setter
+	def TtlsGrpId(self, value):
+		self._TtlsGrpId = value if type(value) != auto else self.make_default("TtlsGrpId")
+
+	@TtlsGrpId.deleter
+	def TtlsGrpId(self):
+		del self._TtlsGrpId
+		self._TtlsGrpId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SaleId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlsGrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POIId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShftNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POIId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlsGrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

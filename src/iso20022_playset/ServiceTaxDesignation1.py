@@ -1,24 +1,11 @@
-import base_types
-import Max35Text
+from . import base_types
 import TaxReason1
+import Max35Text
 import ServiceTaxDesignation1Code
 
 class ServiceTaxDesignation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rgn", "_TaxRsn", "_Cd"]
-	@property
-	def Rgn(self):
-		return self._Rgn
-
-	@Rgn.setter
-	def Rgn(self, value):
-		self._Rgn = value if type(value) != auto else self.make_default("Rgn")
-
-	@Rgn.deleter
-	def Rgn(self):
-		del self._Rgn
-		self._Rgn = None
-
+	__slots__ = ["_TaxRsn", "_Cd", "_Rgn"]
 	@property
 	def TaxRsn(self):
 		return self._TaxRsn
@@ -45,9 +32,22 @@ class ServiceTaxDesignation1(base_types._BaseFieldType):
 		del self._Cd
 		self._Cd = None
 
+	@property
+	def Rgn(self):
+		return self._Rgn
+
+	@Rgn.setter
+	def Rgn(self, value):
+		self._Rgn = value if type(value) != auto else self.make_default("Rgn")
+
+	@Rgn.deleter
+	def Rgn(self):
+		del self._Rgn
+		self._Rgn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rgn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxRsn', type=TaxReason1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Cd', type=ServiceTaxDesignation1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rgn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

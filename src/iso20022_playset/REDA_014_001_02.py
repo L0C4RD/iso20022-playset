@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PartyCreationRequestV02
 
 class REDA_014_001_02():

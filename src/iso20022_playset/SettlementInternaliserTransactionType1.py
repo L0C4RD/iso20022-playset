@@ -1,22 +1,9 @@
-import base_types
+from . import base_types
 import InternalisationData1
 
 class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesBuyOrSell", "_CollMgmtOpr", "_OthrTxs", "_RpAgrmt", "_SctiesLndgOrBrrwg"]
-	@property
-	def SctiesBuyOrSell(self):
-		return self._SctiesBuyOrSell
-
-	@SctiesBuyOrSell.setter
-	def SctiesBuyOrSell(self, value):
-		self._SctiesBuyOrSell = value if type(value) != auto else self.make_default("SctiesBuyOrSell")
-
-	@SctiesBuyOrSell.deleter
-	def SctiesBuyOrSell(self):
-		del self._SctiesBuyOrSell
-		self._SctiesBuyOrSell = None
-
+	__slots__ = ["_CollMgmtOpr", "_RpAgrmt", "_SctiesLndgOrBrrwg", "_OthrTxs", "_SctiesBuyOrSell"]
 	@property
 	def CollMgmtOpr(self):
 		return self._CollMgmtOpr
@@ -29,19 +16,6 @@ class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 	def CollMgmtOpr(self):
 		del self._CollMgmtOpr
 		self._CollMgmtOpr = None
-
-	@property
-	def OthrTxs(self):
-		return self._OthrTxs
-
-	@OthrTxs.setter
-	def OthrTxs(self, value):
-		self._OthrTxs = value if type(value) != auto else self.make_default("OthrTxs")
-
-	@OthrTxs.deleter
-	def OthrTxs(self):
-		del self._OthrTxs
-		self._OthrTxs = None
 
 	@property
 	def RpAgrmt(self):
@@ -69,11 +43,37 @@ class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 		del self._SctiesLndgOrBrrwg
 		self._SctiesLndgOrBrrwg = None
 
+	@property
+	def OthrTxs(self):
+		return self._OthrTxs
+
+	@OthrTxs.setter
+	def OthrTxs(self, value):
+		self._OthrTxs = value if type(value) != auto else self.make_default("OthrTxs")
+
+	@OthrTxs.deleter
+	def OthrTxs(self):
+		del self._OthrTxs
+		self._OthrTxs = None
+
+	@property
+	def SctiesBuyOrSell(self):
+		return self._SctiesBuyOrSell
+
+	@SctiesBuyOrSell.setter
+	def SctiesBuyOrSell(self, value):
+		self._SctiesBuyOrSell = value if type(value) != auto else self.make_default("SctiesBuyOrSell")
+
+	@SctiesBuyOrSell.deleter
+	def SctiesBuyOrSell(self):
+		del self._SctiesBuyOrSell
+		self._SctiesBuyOrSell = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesBuyOrSell', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollMgmtOpr', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTxs', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RpAgrmt', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesLndgOrBrrwg', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTxs', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesBuyOrSell', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 	))
 

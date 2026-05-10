@@ -1,6 +1,6 @@
-import base_types
-import InternalisationData2
+from . import base_types
 import InternalisationDataRate1
+import InternalisationData2
 
 class InternalisationData1(base_types._BaseFieldType):
 

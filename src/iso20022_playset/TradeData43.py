@@ -1,39 +1,26 @@
-import base_types
+from . import base_types
 import CommonTradeDataReport71
 import SupplementaryData1
-import ModificationLevel1Code
-import DisseminationData1
 import TechnicalAttributes5
+import ModificationLevel1Code
 import CounterpartySpecificData36
+import DisseminationData1
 
 class TradeData43(base_types._BaseFieldType):
 
-	__slots__ = ["_PblcDssmntnData", "_CtrPtySpcfcData", "_TechAttrbts", "_CmonTradData", "_Lvl", "_SplmtryData"]
+	__slots__ = ["_CmonTradData", "_TechAttrbts", "_PblcDssmntnData", "_SplmtryData", "_Lvl", "_CtrPtySpcfcData"]
 	@property
-	def PblcDssmntnData(self):
-		return self._PblcDssmntnData
+	def CmonTradData(self):
+		return self._CmonTradData
 
-	@PblcDssmntnData.setter
-	def PblcDssmntnData(self, value):
-		self._PblcDssmntnData = value if type(value) != auto else self.make_default("PblcDssmntnData")
+	@CmonTradData.setter
+	def CmonTradData(self, value):
+		self._CmonTradData = value if type(value) != auto else self.make_default("CmonTradData")
 
-	@PblcDssmntnData.deleter
-	def PblcDssmntnData(self):
-		del self._PblcDssmntnData
-		self._PblcDssmntnData = None
-
-	@property
-	def CtrPtySpcfcData(self):
-		return self._CtrPtySpcfcData
-
-	@CtrPtySpcfcData.setter
-	def CtrPtySpcfcData(self, value):
-		self._CtrPtySpcfcData = value if type(value) != auto else self.make_default("CtrPtySpcfcData")
-
-	@CtrPtySpcfcData.deleter
-	def CtrPtySpcfcData(self):
-		del self._CtrPtySpcfcData
-		self._CtrPtySpcfcData = None
+	@CmonTradData.deleter
+	def CmonTradData(self):
+		del self._CmonTradData
+		self._CmonTradData = None
 
 	@property
 	def TechAttrbts(self):
@@ -49,17 +36,30 @@ class TradeData43(base_types._BaseFieldType):
 		self._TechAttrbts = None
 
 	@property
-	def CmonTradData(self):
-		return self._CmonTradData
+	def PblcDssmntnData(self):
+		return self._PblcDssmntnData
 
-	@CmonTradData.setter
-	def CmonTradData(self, value):
-		self._CmonTradData = value if type(value) != auto else self.make_default("CmonTradData")
+	@PblcDssmntnData.setter
+	def PblcDssmntnData(self, value):
+		self._PblcDssmntnData = value if type(value) != auto else self.make_default("PblcDssmntnData")
 
-	@CmonTradData.deleter
-	def CmonTradData(self):
-		del self._CmonTradData
-		self._CmonTradData = None
+	@PblcDssmntnData.deleter
+	def PblcDssmntnData(self):
+		del self._PblcDssmntnData
+		self._PblcDssmntnData = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Lvl(self):
@@ -75,24 +75,24 @@ class TradeData43(base_types._BaseFieldType):
 		self._Lvl = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def CtrPtySpcfcData(self):
+		return self._CtrPtySpcfcData
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@CtrPtySpcfcData.setter
+	def CtrPtySpcfcData(self, value):
+		self._CtrPtySpcfcData = value if type(value) != auto else self.make_default("CtrPtySpcfcData")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@CtrPtySpcfcData.deleter
+	def CtrPtySpcfcData(self):
+		del self._CtrPtySpcfcData
+		self._CtrPtySpcfcData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PblcDssmntnData', type=DisseminationData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartySpecificData36, min=1, max=2, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechAttrbts', type=TechnicalAttributes5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonTradData', type=CommonTradeDataReport71, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lvl', type=ModificationLevel1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechAttrbts', type=TechnicalAttributes5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PblcDssmntnData', type=DisseminationData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Lvl', type=ModificationLevel1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartySpecificData36, min=1, max=2, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PaymentStatusTrackerUpdateV04
 
 class TRCK_001_001_04():

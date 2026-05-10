@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import ContentInformationType38
-import Header41
 import MessageStatusRequest8
+import Header41
 
 class SaleToPOIMessageStatusRequestV07(base_types._BaseFieldType):
 

@@ -1,7 +1,7 @@
-import base_types
-import TaxRecordPeriod1Code
+from . import base_types
 import ISODate
 import DatePeriod2
+import TaxRecordPeriod1Code
 
 class TaxPeriod2(base_types._BaseFieldType):
 

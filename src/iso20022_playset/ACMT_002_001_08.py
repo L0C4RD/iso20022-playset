@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountDetailsConfirmationV08
 
 class ACMT_002_001_08():

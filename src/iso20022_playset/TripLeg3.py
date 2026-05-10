@@ -1,35 +1,22 @@
-import base_types
-import Max35NumericText
-import AdditionalData1
-import Max4NumericText
-import Max70Text
-import TransportType1Code
-import DocumentReference1
+from . import base_types
 import ISODate
-import DepartureOrArrival1
-import AmountDetails3
-import Max35Text
-import Max140Text
-import Max4Text
 import LoyaltyProgramme4
 import TrueFalseIndicator
+import Max140Text
+import DocumentReference1
+import Max35Text
+import AmountDetails3
+import Max35NumericText
+import Max4NumericText
+import DepartureOrArrival1
+import TransportType1Code
+import AdditionalData1
+import Max4Text
+import Max70Text
 
 class TripLeg3(base_types._BaseFieldType):
 
-	__slots__ = ["_TcktIssr", "_TrnsprtTp", "_CnjnctnTcktNb", "_TcktIsseLctn", "_OpnTckt", "_CmmdtyCd", "_NonDrctRouteCd", "_TcktIsseDt", "_OrgnlRsvatnNb", "_RsvatnSys", "_IATACd", "_Doc", "_CdtRsnCd", "_TcktNb", "_FairBsisCd", "_Insrnc", "_OrgnlRsvatnSys", "_OthrTrnsprtTp", "_StopOver", "_CrrierCd", "_AddtlData", "_SeqNb", "_RstrctdTckt", "_RsvatnNb", "_RcrdLctrNb", "_SvcClss", "_TcktRstrctns", "_Arrvl", "_PrcdrId", "_CrrierNm", "_Dprture", "_Amt", "_RouteNb", "_LltyPrgrmm", "_XchgdTckt", "_Drtn", "_XchgdTcktNb"]
-	@property
-	def TcktIssr(self):
-		return self._TcktIssr
-
-	@TcktIssr.setter
-	def TcktIssr(self, value):
-		self._TcktIssr = value if type(value) != auto else self.make_default("TcktIssr")
-
-	@TcktIssr.deleter
-	def TcktIssr(self):
-		del self._TcktIssr
-		self._TcktIssr = None
-
+	__slots__ = ["_TrnsprtTp", "_SeqNb", "_TcktRstrctns", "_Dprture", "_RouteNb", "_Doc", "_CnjnctnTcktNb", "_RsvatnNb", "_AddtlData", "_CdtRsnCd", "_OrgnlRsvatnSys", "_CmmdtyCd", "_PrcdrId", "_XchgdTckt", "_TcktIsseDt", "_OrgnlRsvatnNb", "_TcktIssr", "_CrrierCd", "_CrrierNm", "_RstrctdTckt", "_XchgdTcktNb", "_FairBsisCd", "_SvcClss", "_OpnTckt", "_Drtn", "_NonDrctRouteCd", "_StopOver", "_OthrTrnsprtTp", "_LltyPrgrmm", "_TcktIsseLctn", "_RsvatnSys", "_RcrdLctrNb", "_IATACd", "_Amt", "_Insrnc", "_Arrvl", "_TcktNb"]
 	@property
 	def TrnsprtTp(self):
 		return self._TrnsprtTp
@@ -42,6 +29,71 @@ class TripLeg3(base_types._BaseFieldType):
 	def TrnsprtTp(self):
 		del self._TrnsprtTp
 		self._TrnsprtTp = None
+
+	@property
+	def SeqNb(self):
+		return self._SeqNb
+
+	@SeqNb.setter
+	def SeqNb(self, value):
+		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
+
+	@SeqNb.deleter
+	def SeqNb(self):
+		del self._SeqNb
+		self._SeqNb = None
+
+	@property
+	def TcktRstrctns(self):
+		return self._TcktRstrctns
+
+	@TcktRstrctns.setter
+	def TcktRstrctns(self, value):
+		self._TcktRstrctns = value if type(value) != auto else self.make_default("TcktRstrctns")
+
+	@TcktRstrctns.deleter
+	def TcktRstrctns(self):
+		del self._TcktRstrctns
+		self._TcktRstrctns = None
+
+	@property
+	def Dprture(self):
+		return self._Dprture
+
+	@Dprture.setter
+	def Dprture(self, value):
+		self._Dprture = value if type(value) != auto else self.make_default("Dprture")
+
+	@Dprture.deleter
+	def Dprture(self):
+		del self._Dprture
+		self._Dprture = None
+
+	@property
+	def RouteNb(self):
+		return self._RouteNb
+
+	@RouteNb.setter
+	def RouteNb(self, value):
+		self._RouteNb = value if type(value) != auto else self.make_default("RouteNb")
+
+	@RouteNb.deleter
+	def RouteNb(self):
+		del self._RouteNb
+		self._RouteNb = None
+
+	@property
+	def Doc(self):
+		return self._Doc
+
+	@Doc.setter
+	def Doc(self, value):
+		self._Doc = value if type(value) != auto else self.make_default("Doc")
+
+	@Doc.deleter
+	def Doc(self):
+		del self._Doc
+		self._Doc = None
 
 	@property
 	def CnjnctnTcktNb(self):
@@ -57,30 +109,56 @@ class TripLeg3(base_types._BaseFieldType):
 		self._CnjnctnTcktNb = None
 
 	@property
-	def TcktIsseLctn(self):
-		return self._TcktIsseLctn
+	def RsvatnNb(self):
+		return self._RsvatnNb
 
-	@TcktIsseLctn.setter
-	def TcktIsseLctn(self, value):
-		self._TcktIsseLctn = value if type(value) != auto else self.make_default("TcktIsseLctn")
+	@RsvatnNb.setter
+	def RsvatnNb(self, value):
+		self._RsvatnNb = value if type(value) != auto else self.make_default("RsvatnNb")
 
-	@TcktIsseLctn.deleter
-	def TcktIsseLctn(self):
-		del self._TcktIsseLctn
-		self._TcktIsseLctn = None
+	@RsvatnNb.deleter
+	def RsvatnNb(self):
+		del self._RsvatnNb
+		self._RsvatnNb = None
 
 	@property
-	def OpnTckt(self):
-		return self._OpnTckt
+	def AddtlData(self):
+		return self._AddtlData
 
-	@OpnTckt.setter
-	def OpnTckt(self, value):
-		self._OpnTckt = value if type(value) != auto else self.make_default("OpnTckt")
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
 
-	@OpnTckt.deleter
-	def OpnTckt(self):
-		del self._OpnTckt
-		self._OpnTckt = None
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
+
+	@property
+	def CdtRsnCd(self):
+		return self._CdtRsnCd
+
+	@CdtRsnCd.setter
+	def CdtRsnCd(self, value):
+		self._CdtRsnCd = value if type(value) != auto else self.make_default("CdtRsnCd")
+
+	@CdtRsnCd.deleter
+	def CdtRsnCd(self):
+		del self._CdtRsnCd
+		self._CdtRsnCd = None
+
+	@property
+	def OrgnlRsvatnSys(self):
+		return self._OrgnlRsvatnSys
+
+	@OrgnlRsvatnSys.setter
+	def OrgnlRsvatnSys(self, value):
+		self._OrgnlRsvatnSys = value if type(value) != auto else self.make_default("OrgnlRsvatnSys")
+
+	@OrgnlRsvatnSys.deleter
+	def OrgnlRsvatnSys(self):
+		del self._OrgnlRsvatnSys
+		self._OrgnlRsvatnSys = None
 
 	@property
 	def CmmdtyCd(self):
@@ -96,17 +174,30 @@ class TripLeg3(base_types._BaseFieldType):
 		self._CmmdtyCd = None
 
 	@property
-	def NonDrctRouteCd(self):
-		return self._NonDrctRouteCd
+	def PrcdrId(self):
+		return self._PrcdrId
 
-	@NonDrctRouteCd.setter
-	def NonDrctRouteCd(self, value):
-		self._NonDrctRouteCd = value if type(value) != auto else self.make_default("NonDrctRouteCd")
+	@PrcdrId.setter
+	def PrcdrId(self, value):
+		self._PrcdrId = value if type(value) != auto else self.make_default("PrcdrId")
 
-	@NonDrctRouteCd.deleter
-	def NonDrctRouteCd(self):
-		del self._NonDrctRouteCd
-		self._NonDrctRouteCd = None
+	@PrcdrId.deleter
+	def PrcdrId(self):
+		del self._PrcdrId
+		self._PrcdrId = None
+
+	@property
+	def XchgdTckt(self):
+		return self._XchgdTckt
+
+	@XchgdTckt.setter
+	def XchgdTckt(self, value):
+		self._XchgdTckt = value if type(value) != auto else self.make_default("XchgdTckt")
+
+	@XchgdTckt.deleter
+	def XchgdTckt(self):
+		del self._XchgdTckt
+		self._XchgdTckt = None
 
 	@property
 	def TcktIsseDt(self):
@@ -135,134 +226,17 @@ class TripLeg3(base_types._BaseFieldType):
 		self._OrgnlRsvatnNb = None
 
 	@property
-	def RsvatnSys(self):
-		return self._RsvatnSys
+	def TcktIssr(self):
+		return self._TcktIssr
 
-	@RsvatnSys.setter
-	def RsvatnSys(self, value):
-		self._RsvatnSys = value if type(value) != auto else self.make_default("RsvatnSys")
+	@TcktIssr.setter
+	def TcktIssr(self, value):
+		self._TcktIssr = value if type(value) != auto else self.make_default("TcktIssr")
 
-	@RsvatnSys.deleter
-	def RsvatnSys(self):
-		del self._RsvatnSys
-		self._RsvatnSys = None
-
-	@property
-	def IATACd(self):
-		return self._IATACd
-
-	@IATACd.setter
-	def IATACd(self, value):
-		self._IATACd = value if type(value) != auto else self.make_default("IATACd")
-
-	@IATACd.deleter
-	def IATACd(self):
-		del self._IATACd
-		self._IATACd = None
-
-	@property
-	def Doc(self):
-		return self._Doc
-
-	@Doc.setter
-	def Doc(self, value):
-		self._Doc = value if type(value) != auto else self.make_default("Doc")
-
-	@Doc.deleter
-	def Doc(self):
-		del self._Doc
-		self._Doc = None
-
-	@property
-	def CdtRsnCd(self):
-		return self._CdtRsnCd
-
-	@CdtRsnCd.setter
-	def CdtRsnCd(self, value):
-		self._CdtRsnCd = value if type(value) != auto else self.make_default("CdtRsnCd")
-
-	@CdtRsnCd.deleter
-	def CdtRsnCd(self):
-		del self._CdtRsnCd
-		self._CdtRsnCd = None
-
-	@property
-	def TcktNb(self):
-		return self._TcktNb
-
-	@TcktNb.setter
-	def TcktNb(self, value):
-		self._TcktNb = value if type(value) != auto else self.make_default("TcktNb")
-
-	@TcktNb.deleter
-	def TcktNb(self):
-		del self._TcktNb
-		self._TcktNb = None
-
-	@property
-	def FairBsisCd(self):
-		return self._FairBsisCd
-
-	@FairBsisCd.setter
-	def FairBsisCd(self, value):
-		self._FairBsisCd = value if type(value) != auto else self.make_default("FairBsisCd")
-
-	@FairBsisCd.deleter
-	def FairBsisCd(self):
-		del self._FairBsisCd
-		self._FairBsisCd = None
-
-	@property
-	def Insrnc(self):
-		return self._Insrnc
-
-	@Insrnc.setter
-	def Insrnc(self, value):
-		self._Insrnc = value if type(value) != auto else self.make_default("Insrnc")
-
-	@Insrnc.deleter
-	def Insrnc(self):
-		del self._Insrnc
-		self._Insrnc = None
-
-	@property
-	def OrgnlRsvatnSys(self):
-		return self._OrgnlRsvatnSys
-
-	@OrgnlRsvatnSys.setter
-	def OrgnlRsvatnSys(self, value):
-		self._OrgnlRsvatnSys = value if type(value) != auto else self.make_default("OrgnlRsvatnSys")
-
-	@OrgnlRsvatnSys.deleter
-	def OrgnlRsvatnSys(self):
-		del self._OrgnlRsvatnSys
-		self._OrgnlRsvatnSys = None
-
-	@property
-	def OthrTrnsprtTp(self):
-		return self._OthrTrnsprtTp
-
-	@OthrTrnsprtTp.setter
-	def OthrTrnsprtTp(self, value):
-		self._OthrTrnsprtTp = value if type(value) != auto else self.make_default("OthrTrnsprtTp")
-
-	@OthrTrnsprtTp.deleter
-	def OthrTrnsprtTp(self):
-		del self._OthrTrnsprtTp
-		self._OthrTrnsprtTp = None
-
-	@property
-	def StopOver(self):
-		return self._StopOver
-
-	@StopOver.setter
-	def StopOver(self, value):
-		self._StopOver = value if type(value) != auto else self.make_default("StopOver")
-
-	@StopOver.deleter
-	def StopOver(self):
-		del self._StopOver
-		self._StopOver = None
+	@TcktIssr.deleter
+	def TcktIssr(self):
+		del self._TcktIssr
+		self._TcktIssr = None
 
 	@property
 	def CrrierCd(self):
@@ -278,30 +252,17 @@ class TripLeg3(base_types._BaseFieldType):
 		self._CrrierCd = None
 
 	@property
-	def AddtlData(self):
-		return self._AddtlData
+	def CrrierNm(self):
+		return self._CrrierNm
 
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+	@CrrierNm.setter
+	def CrrierNm(self, value):
+		self._CrrierNm = value if type(value) != auto else self.make_default("CrrierNm")
 
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
-
-	@property
-	def SeqNb(self):
-		return self._SeqNb
-
-	@SeqNb.setter
-	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
-
-	@SeqNb.deleter
-	def SeqNb(self):
-		del self._SeqNb
-		self._SeqNb = None
+	@CrrierNm.deleter
+	def CrrierNm(self):
+		del self._CrrierNm
+		self._CrrierNm = None
 
 	@property
 	def RstrctdTckt(self):
@@ -317,30 +278,30 @@ class TripLeg3(base_types._BaseFieldType):
 		self._RstrctdTckt = None
 
 	@property
-	def RsvatnNb(self):
-		return self._RsvatnNb
+	def XchgdTcktNb(self):
+		return self._XchgdTcktNb
 
-	@RsvatnNb.setter
-	def RsvatnNb(self, value):
-		self._RsvatnNb = value if type(value) != auto else self.make_default("RsvatnNb")
+	@XchgdTcktNb.setter
+	def XchgdTcktNb(self, value):
+		self._XchgdTcktNb = value if type(value) != auto else self.make_default("XchgdTcktNb")
 
-	@RsvatnNb.deleter
-	def RsvatnNb(self):
-		del self._RsvatnNb
-		self._RsvatnNb = None
+	@XchgdTcktNb.deleter
+	def XchgdTcktNb(self):
+		del self._XchgdTcktNb
+		self._XchgdTcktNb = None
 
 	@property
-	def RcrdLctrNb(self):
-		return self._RcrdLctrNb
+	def FairBsisCd(self):
+		return self._FairBsisCd
 
-	@RcrdLctrNb.setter
-	def RcrdLctrNb(self, value):
-		self._RcrdLctrNb = value if type(value) != auto else self.make_default("RcrdLctrNb")
+	@FairBsisCd.setter
+	def FairBsisCd(self, value):
+		self._FairBsisCd = value if type(value) != auto else self.make_default("FairBsisCd")
 
-	@RcrdLctrNb.deleter
-	def RcrdLctrNb(self):
-		del self._RcrdLctrNb
-		self._RcrdLctrNb = None
+	@FairBsisCd.deleter
+	def FairBsisCd(self):
+		del self._FairBsisCd
+		self._FairBsisCd = None
 
 	@property
 	def SvcClss(self):
@@ -356,121 +317,17 @@ class TripLeg3(base_types._BaseFieldType):
 		self._SvcClss = None
 
 	@property
-	def TcktRstrctns(self):
-		return self._TcktRstrctns
+	def OpnTckt(self):
+		return self._OpnTckt
 
-	@TcktRstrctns.setter
-	def TcktRstrctns(self, value):
-		self._TcktRstrctns = value if type(value) != auto else self.make_default("TcktRstrctns")
+	@OpnTckt.setter
+	def OpnTckt(self, value):
+		self._OpnTckt = value if type(value) != auto else self.make_default("OpnTckt")
 
-	@TcktRstrctns.deleter
-	def TcktRstrctns(self):
-		del self._TcktRstrctns
-		self._TcktRstrctns = None
-
-	@property
-	def Arrvl(self):
-		return self._Arrvl
-
-	@Arrvl.setter
-	def Arrvl(self, value):
-		self._Arrvl = value if type(value) != auto else self.make_default("Arrvl")
-
-	@Arrvl.deleter
-	def Arrvl(self):
-		del self._Arrvl
-		self._Arrvl = None
-
-	@property
-	def PrcdrId(self):
-		return self._PrcdrId
-
-	@PrcdrId.setter
-	def PrcdrId(self, value):
-		self._PrcdrId = value if type(value) != auto else self.make_default("PrcdrId")
-
-	@PrcdrId.deleter
-	def PrcdrId(self):
-		del self._PrcdrId
-		self._PrcdrId = None
-
-	@property
-	def CrrierNm(self):
-		return self._CrrierNm
-
-	@CrrierNm.setter
-	def CrrierNm(self, value):
-		self._CrrierNm = value if type(value) != auto else self.make_default("CrrierNm")
-
-	@CrrierNm.deleter
-	def CrrierNm(self):
-		del self._CrrierNm
-		self._CrrierNm = None
-
-	@property
-	def Dprture(self):
-		return self._Dprture
-
-	@Dprture.setter
-	def Dprture(self, value):
-		self._Dprture = value if type(value) != auto else self.make_default("Dprture")
-
-	@Dprture.deleter
-	def Dprture(self):
-		del self._Dprture
-		self._Dprture = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
-	def RouteNb(self):
-		return self._RouteNb
-
-	@RouteNb.setter
-	def RouteNb(self, value):
-		self._RouteNb = value if type(value) != auto else self.make_default("RouteNb")
-
-	@RouteNb.deleter
-	def RouteNb(self):
-		del self._RouteNb
-		self._RouteNb = None
-
-	@property
-	def LltyPrgrmm(self):
-		return self._LltyPrgrmm
-
-	@LltyPrgrmm.setter
-	def LltyPrgrmm(self, value):
-		self._LltyPrgrmm = value if type(value) != auto else self.make_default("LltyPrgrmm")
-
-	@LltyPrgrmm.deleter
-	def LltyPrgrmm(self):
-		del self._LltyPrgrmm
-		self._LltyPrgrmm = None
-
-	@property
-	def XchgdTckt(self):
-		return self._XchgdTckt
-
-	@XchgdTckt.setter
-	def XchgdTckt(self, value):
-		self._XchgdTckt = value if type(value) != auto else self.make_default("XchgdTckt")
-
-	@XchgdTckt.deleter
-	def XchgdTckt(self):
-		del self._XchgdTckt
-		self._XchgdTckt = None
+	@OpnTckt.deleter
+	def OpnTckt(self):
+		del self._OpnTckt
+		self._OpnTckt = None
 
 	@property
 	def Drtn(self):
@@ -486,55 +343,198 @@ class TripLeg3(base_types._BaseFieldType):
 		self._Drtn = None
 
 	@property
-	def XchgdTcktNb(self):
-		return self._XchgdTcktNb
+	def NonDrctRouteCd(self):
+		return self._NonDrctRouteCd
 
-	@XchgdTcktNb.setter
-	def XchgdTcktNb(self, value):
-		self._XchgdTcktNb = value if type(value) != auto else self.make_default("XchgdTcktNb")
+	@NonDrctRouteCd.setter
+	def NonDrctRouteCd(self, value):
+		self._NonDrctRouteCd = value if type(value) != auto else self.make_default("NonDrctRouteCd")
 
-	@XchgdTcktNb.deleter
-	def XchgdTcktNb(self):
-		del self._XchgdTcktNb
-		self._XchgdTcktNb = None
+	@NonDrctRouteCd.deleter
+	def NonDrctRouteCd(self):
+		del self._NonDrctRouteCd
+		self._NonDrctRouteCd = None
+
+	@property
+	def StopOver(self):
+		return self._StopOver
+
+	@StopOver.setter
+	def StopOver(self, value):
+		self._StopOver = value if type(value) != auto else self.make_default("StopOver")
+
+	@StopOver.deleter
+	def StopOver(self):
+		del self._StopOver
+		self._StopOver = None
+
+	@property
+	def OthrTrnsprtTp(self):
+		return self._OthrTrnsprtTp
+
+	@OthrTrnsprtTp.setter
+	def OthrTrnsprtTp(self, value):
+		self._OthrTrnsprtTp = value if type(value) != auto else self.make_default("OthrTrnsprtTp")
+
+	@OthrTrnsprtTp.deleter
+	def OthrTrnsprtTp(self):
+		del self._OthrTrnsprtTp
+		self._OthrTrnsprtTp = None
+
+	@property
+	def LltyPrgrmm(self):
+		return self._LltyPrgrmm
+
+	@LltyPrgrmm.setter
+	def LltyPrgrmm(self, value):
+		self._LltyPrgrmm = value if type(value) != auto else self.make_default("LltyPrgrmm")
+
+	@LltyPrgrmm.deleter
+	def LltyPrgrmm(self):
+		del self._LltyPrgrmm
+		self._LltyPrgrmm = None
+
+	@property
+	def TcktIsseLctn(self):
+		return self._TcktIsseLctn
+
+	@TcktIsseLctn.setter
+	def TcktIsseLctn(self, value):
+		self._TcktIsseLctn = value if type(value) != auto else self.make_default("TcktIsseLctn")
+
+	@TcktIsseLctn.deleter
+	def TcktIsseLctn(self):
+		del self._TcktIsseLctn
+		self._TcktIsseLctn = None
+
+	@property
+	def RsvatnSys(self):
+		return self._RsvatnSys
+
+	@RsvatnSys.setter
+	def RsvatnSys(self, value):
+		self._RsvatnSys = value if type(value) != auto else self.make_default("RsvatnSys")
+
+	@RsvatnSys.deleter
+	def RsvatnSys(self):
+		del self._RsvatnSys
+		self._RsvatnSys = None
+
+	@property
+	def RcrdLctrNb(self):
+		return self._RcrdLctrNb
+
+	@RcrdLctrNb.setter
+	def RcrdLctrNb(self, value):
+		self._RcrdLctrNb = value if type(value) != auto else self.make_default("RcrdLctrNb")
+
+	@RcrdLctrNb.deleter
+	def RcrdLctrNb(self):
+		del self._RcrdLctrNb
+		self._RcrdLctrNb = None
+
+	@property
+	def IATACd(self):
+		return self._IATACd
+
+	@IATACd.setter
+	def IATACd(self, value):
+		self._IATACd = value if type(value) != auto else self.make_default("IATACd")
+
+	@IATACd.deleter
+	def IATACd(self):
+		del self._IATACd
+		self._IATACd = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def Insrnc(self):
+		return self._Insrnc
+
+	@Insrnc.setter
+	def Insrnc(self, value):
+		self._Insrnc = value if type(value) != auto else self.make_default("Insrnc")
+
+	@Insrnc.deleter
+	def Insrnc(self):
+		del self._Insrnc
+		self._Insrnc = None
+
+	@property
+	def Arrvl(self):
+		return self._Arrvl
+
+	@Arrvl.setter
+	def Arrvl(self, value):
+		self._Arrvl = value if type(value) != auto else self.make_default("Arrvl")
+
+	@Arrvl.deleter
+	def Arrvl(self):
+		del self._Arrvl
+		self._Arrvl = None
+
+	@property
+	def TcktNb(self):
+		return self._TcktNb
+
+	@TcktNb.setter
+	def TcktNb(self, value):
+		self._TcktNb = value if type(value) != auto else self.make_default("TcktNb")
+
+	@TcktNb.deleter
+	def TcktNb(self):
+		del self._TcktNb
+		self._TcktNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TcktIssr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrnsprtTp', type=TransportType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TcktRstrctns', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dprture', type=DepartureOrArrival1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RouteNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Doc', type=DocumentReference1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CnjnctnTcktNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TcktIsseLctn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OpnTckt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsvatnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CdtRsnCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlRsvatnSys', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmmdtyCd', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonDrctRouteCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcdrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgdTckt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TcktIsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlRsvatnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsvatnSys', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IATACd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Doc', type=DocumentReference1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CdtRsnCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TcktNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FairBsisCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlRsvatnSys', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTrnsprtTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StopOver', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TcktIssr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrrierCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SeqNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RstrctdTckt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsvatnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcrdLctrNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcClss', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TcktRstrctns', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Arrvl', type=DepartureOrArrival1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcdrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrrierNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dprture', type=DepartureOrArrival1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=AmountDetails3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RouteNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LltyPrgrmm', type=LoyaltyProgramme4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgdTckt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Drtn', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RstrctdTckt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgdTcktNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FairBsisCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcClss', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OpnTckt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Drtn', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonDrctRouteCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StopOver', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTrnsprtTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LltyPrgrmm', type=LoyaltyProgramme4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TcktIsseLctn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsvatnSys', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcrdLctrNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IATACd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=AmountDetails3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Arrvl', type=DepartureOrArrival1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TcktNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

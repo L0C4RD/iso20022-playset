@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DutchAuctionType1Code
 import GenericIdentification30
 

@@ -1,6 +1,6 @@
-import base_types
-import NetworkType1Code
+from . import base_types
 import Max500Text
+import NetworkType1Code
 
 class NetworkParameters9(base_types._BaseFieldType):
 

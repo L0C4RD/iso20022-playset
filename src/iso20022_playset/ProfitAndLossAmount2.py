@@ -1,6 +1,6 @@
-import base_types
-import ActiveCurrencyAndAmount
+from . import base_types
 import PlusOrMinusIndicator
+import ActiveCurrencyAndAmount
 
 class ProfitAndLossAmount2(base_types._BaseFieldType):
 

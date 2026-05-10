@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class BICFIDec2014Identifier(base_types._BaseDataType_String):
 

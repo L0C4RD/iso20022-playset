@@ -1,11 +1,24 @@
-import base_types
-import InvestorType2Code
-import GenericIdentification47
+from . import base_types
 import TargetMarket1Code
+import GenericIdentification47
+import InvestorType2Code
 
 class TargetMarket3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Prtry", "_Othr"]
+	__slots__ = ["_Othr", "_Tp", "_Prtry"]
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -32,22 +45,9 @@ class TargetMarket3Choice(base_types._BaseFieldType):
 		del self._Prtry
 		self._Prtry = None
 
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Othr', type=TargetMarket1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Tp', type=InvestorType2Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification47, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Othr', type=TargetMarket1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

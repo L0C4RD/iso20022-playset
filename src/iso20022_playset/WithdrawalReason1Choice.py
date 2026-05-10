@@ -1,6 +1,6 @@
-import base_types
-import PortfolioWithdrawalReason1Code
+from . import base_types
 import GenericIdentification36
+import PortfolioWithdrawalReason1Code
 
 class WithdrawalReason1Choice(base_types._BaseFieldType):
 

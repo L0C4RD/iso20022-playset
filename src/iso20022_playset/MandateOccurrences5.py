@@ -1,24 +1,24 @@
-import base_types
-import DatePeriod3
-import Frequency36Choice
+from . import base_types
 import ISODate
+import DatePeriod3
 import SequenceType2Code
+import Frequency36Choice
 
 class MandateOccurrences5(base_types._BaseFieldType):
 
-	__slots__ = ["_FnlColltnDt", "_Drtn", "_SeqTp", "_Frqcy", "_FrstColltnDt"]
+	__slots__ = ["_FrstColltnDt", "_Drtn", "_SeqTp", "_FnlColltnDt", "_Frqcy"]
 	@property
-	def FnlColltnDt(self):
-		return self._FnlColltnDt
+	def FrstColltnDt(self):
+		return self._FrstColltnDt
 
-	@FnlColltnDt.setter
-	def FnlColltnDt(self, value):
-		self._FnlColltnDt = value if type(value) != auto else self.make_default("FnlColltnDt")
+	@FrstColltnDt.setter
+	def FrstColltnDt(self, value):
+		self._FrstColltnDt = value if type(value) != auto else self.make_default("FrstColltnDt")
 
-	@FnlColltnDt.deleter
-	def FnlColltnDt(self):
-		del self._FnlColltnDt
-		self._FnlColltnDt = None
+	@FrstColltnDt.deleter
+	def FrstColltnDt(self):
+		del self._FrstColltnDt
+		self._FrstColltnDt = None
 
 	@property
 	def Drtn(self):
@@ -47,6 +47,19 @@ class MandateOccurrences5(base_types._BaseFieldType):
 		self._SeqTp = None
 
 	@property
+	def FnlColltnDt(self):
+		return self._FnlColltnDt
+
+	@FnlColltnDt.setter
+	def FnlColltnDt(self, value):
+		self._FnlColltnDt = value if type(value) != auto else self.make_default("FnlColltnDt")
+
+	@FnlColltnDt.deleter
+	def FnlColltnDt(self):
+		del self._FnlColltnDt
+		self._FnlColltnDt = None
+
+	@property
 	def Frqcy(self):
 		return self._Frqcy
 
@@ -59,24 +72,11 @@ class MandateOccurrences5(base_types._BaseFieldType):
 		del self._Frqcy
 		self._Frqcy = None
 
-	@property
-	def FrstColltnDt(self):
-		return self._FrstColltnDt
-
-	@FrstColltnDt.setter
-	def FrstColltnDt(self, value):
-		self._FrstColltnDt = value if type(value) != auto else self.make_default("FrstColltnDt")
-
-	@FrstColltnDt.deleter
-	def FrstColltnDt(self):
-		del self._FrstColltnDt
-		self._FrstColltnDt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FnlColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Drtn', type=DatePeriod3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqTp', type=SequenceType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FnlColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency36Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrstColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

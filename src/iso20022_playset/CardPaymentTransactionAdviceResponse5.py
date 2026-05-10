@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import TransactionIdentifier1
+import Max35Text
 import Response1Code
 
 class CardPaymentTransactionAdviceResponse5(base_types._BaseFieldType):

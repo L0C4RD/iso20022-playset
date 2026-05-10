@@ -1,24 +1,24 @@
-import base_types
-import BaseOneRate
+from . import base_types
 import AmountAndDirection107
-import DecimalNumber
 import PercentageRate
+import DecimalNumber
+import BaseOneRate
 
 class SecuritiesTransactionPrice18Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_BsisPts", "_MntryVal", "_Pctg", "_Dcml"]
+	__slots__ = ["_Dcml", "_MntryVal", "_Pctg", "_BsisPts"]
 	@property
-	def BsisPts(self):
-		return self._BsisPts
+	def Dcml(self):
+		return self._Dcml
 
-	@BsisPts.setter
-	def BsisPts(self, value):
-		self._BsisPts = value if type(value) != auto else self.make_default("BsisPts")
+	@Dcml.setter
+	def Dcml(self, value):
+		self._Dcml = value if type(value) != auto else self.make_default("Dcml")
 
-	@BsisPts.deleter
-	def BsisPts(self):
-		del self._BsisPts
-		self._BsisPts = None
+	@Dcml.deleter
+	def Dcml(self):
+		del self._Dcml
+		self._Dcml = None
 
 	@property
 	def MntryVal(self):
@@ -47,22 +47,22 @@ class SecuritiesTransactionPrice18Choice(base_types._BaseFieldType):
 		self._Pctg = None
 
 	@property
-	def Dcml(self):
-		return self._Dcml
+	def BsisPts(self):
+		return self._BsisPts
 
-	@Dcml.setter
-	def Dcml(self, value):
-		self._Dcml = value if type(value) != auto else self.make_default("Dcml")
+	@BsisPts.setter
+	def BsisPts(self, value):
+		self._BsisPts = value if type(value) != auto else self.make_default("BsisPts")
 
-	@Dcml.deleter
-	def Dcml(self):
-		del self._Dcml
-		self._Dcml = None
+	@BsisPts.deleter
+	def BsisPts(self):
+		del self._BsisPts
+		self._BsisPts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BsisPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Dcml', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MntryVal', type=AmountAndDirection107, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Dcml', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BsisPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 	))
 

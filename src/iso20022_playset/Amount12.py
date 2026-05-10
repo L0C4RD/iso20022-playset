@@ -1,38 +1,12 @@
-import base_types
+from . import base_types
 import Max35Text
 import Max6NumericText
-import ImpliedCurrencyAndAmount
 import TemporaryServicesCharge1Code
+import ImpliedCurrencyAndAmount
 
 class Amount12(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTp", "_Hrs", "_Tp", "_Rate"]
-	@property
-	def OthrTp(self):
-		return self._OthrTp
-
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
-
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
-
-	@property
-	def Hrs(self):
-		return self._Hrs
-
-	@Hrs.setter
-	def Hrs(self, value):
-		self._Hrs = value if type(value) != auto else self.make_default("Hrs")
-
-	@Hrs.deleter
-	def Hrs(self):
-		del self._Hrs
-		self._Hrs = None
-
+	__slots__ = ["_Tp", "_Rate", "_OthrTp", "_Hrs"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -59,10 +33,36 @@ class Amount12(base_types._BaseFieldType):
 		del self._Rate
 		self._Rate = None
 
+	@property
+	def OthrTp(self):
+		return self._OthrTp
+
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
+
+	@property
+	def Hrs(self):
+		return self._Hrs
+
+	@Hrs.setter
+	def Hrs(self, value):
+		self._Hrs = value if type(value) != auto else self.make_default("Hrs")
+
+	@Hrs.deleter
+	def Hrs(self):
+		del self._Hrs
+		self._Hrs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hrs', type=Max6NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=TemporaryServicesCharge1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hrs', type=Max6NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

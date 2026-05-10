@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountOpeningAdditionalInformationRequestV04
 
 class ACMT_009_001_04():

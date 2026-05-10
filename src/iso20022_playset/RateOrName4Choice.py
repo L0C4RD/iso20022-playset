@@ -1,6 +1,6 @@
-import base_types
-import PercentageRate
+from . import base_types
 import RateTypeAndLookback2
+import PercentageRate
 
 class RateOrName4Choice(base_types._BaseFieldType):
 

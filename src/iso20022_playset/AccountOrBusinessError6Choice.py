@@ -1,6 +1,6 @@
-import base_types
-import CashAccountData1
+from . import base_types
 import ErrorHandling5
+import CashAccountData1
 
 class AccountOrBusinessError6Choice(base_types._BaseFieldType):
 

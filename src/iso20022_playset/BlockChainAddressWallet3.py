@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
+import GenericIdentification30
 import Max140Text
 import Max70Text
-import GenericIdentification30
 
 class BlockChainAddressWallet3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Nm", "_Id"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_Nm", "_Tp", "_Id"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -31,6 +18,19 @@ class BlockChainAddressWallet3(base_types._BaseFieldType):
 	def Nm(self):
 		del self._Nm
 		self._Nm = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Id(self):
@@ -46,8 +46,8 @@ class BlockChainAddressWallet3(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

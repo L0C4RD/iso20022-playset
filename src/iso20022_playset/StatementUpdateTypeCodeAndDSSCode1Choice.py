@@ -1,6 +1,6 @@
-import base_types
-import StatementUpdateType1Code
+from . import base_types
 import GenericIdentification7
+import StatementUpdateType1Code
 
 class StatementUpdateTypeCodeAndDSSCode1Choice(base_types._BaseFieldType):
 

@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import RestrictedFINXMax35Text
-import Max70Text
 import PurposeCode8Choice
+import Max70Text
 
 class SecuritiesAccount34(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
-import base_types
-import ExternalFinancialInstrumentIdentificationType1Code
+from . import base_types
 import RestrictedFINExact2Text
+import ExternalFinancialInstrumentIdentificationType1Code
 
 class IdentificationSource4Choice(base_types._BaseFieldType):
 

@@ -1,25 +1,12 @@
-import base_types
-import BillingStatement5
-import PartyIdentification273
+from . import base_types
 import Contact13
+import BillingStatement5
 import Max35Text
+import PartyIdentification273
 
 class StatementGroup5(base_types._BaseFieldType):
 
-	__slots__ = ["_BllgStmt", "_SndrIndvCtct", "_RcvrIndvCtct", "_Rcvr", "_Sndr", "_GrpId"]
-	@property
-	def BllgStmt(self):
-		return self._BllgStmt
-
-	@BllgStmt.setter
-	def BllgStmt(self, value):
-		self._BllgStmt = value if type(value) != auto else self.make_default("BllgStmt")
-
-	@BllgStmt.deleter
-	def BllgStmt(self):
-		del self._BllgStmt
-		self._BllgStmt = None
-
+	__slots__ = ["_SndrIndvCtct", "_Sndr", "_RcvrIndvCtct", "_Rcvr", "_BllgStmt", "_GrpId"]
 	@property
 	def SndrIndvCtct(self):
 		return self._SndrIndvCtct
@@ -32,6 +19,19 @@ class StatementGroup5(base_types._BaseFieldType):
 	def SndrIndvCtct(self):
 		del self._SndrIndvCtct
 		self._SndrIndvCtct = None
+
+	@property
+	def Sndr(self):
+		return self._Sndr
+
+	@Sndr.setter
+	def Sndr(self, value):
+		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
+
+	@Sndr.deleter
+	def Sndr(self):
+		del self._Sndr
+		self._Sndr = None
 
 	@property
 	def RcvrIndvCtct(self):
@@ -60,17 +60,17 @@ class StatementGroup5(base_types._BaseFieldType):
 		self._Rcvr = None
 
 	@property
-	def Sndr(self):
-		return self._Sndr
+	def BllgStmt(self):
+		return self._BllgStmt
 
-	@Sndr.setter
-	def Sndr(self, value):
-		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
+	@BllgStmt.setter
+	def BllgStmt(self, value):
+		self._BllgStmt = value if type(value) != auto else self.make_default("BllgStmt")
 
-	@Sndr.deleter
-	def Sndr(self):
-		del self._Sndr
-		self._Sndr = None
+	@BllgStmt.deleter
+	def BllgStmt(self):
+		del self._BllgStmt
+		self._BllgStmt = None
 
 	@property
 	def GrpId(self):
@@ -86,11 +86,11 @@ class StatementGroup5(base_types._BaseFieldType):
 		self._GrpId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BllgStmt', type=BillingStatement5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SndrIndvCtct', type=Contact13, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sndr', type=PartyIdentification273, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvrIndvCtct', type=Contact13, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rcvr', type=PartyIdentification273, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sndr', type=PartyIdentification273, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BllgStmt', type=BillingStatement5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

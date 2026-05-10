@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CCPInvestmentsReportV02
 
 class AUTH_061_001_02():

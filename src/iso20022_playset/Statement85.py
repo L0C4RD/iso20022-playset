@@ -1,25 +1,12 @@
-import base_types
+from . import base_types
 import Max35Text
-import DateAndDateTime2Choice
-import YesNoIndicator
 import Frequency1Code
+import YesNoIndicator
+import DateAndDateTime2Choice
 
 class Statement85(base_types._BaseFieldType):
 
-	__slots__ = ["_Frqcy", "_StmtDtTm", "_ActvtyInd", "_StmtId"]
-	@property
-	def Frqcy(self):
-		return self._Frqcy
-
-	@Frqcy.setter
-	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != auto else self.make_default("Frqcy")
-
-	@Frqcy.deleter
-	def Frqcy(self):
-		del self._Frqcy
-		self._Frqcy = None
-
+	__slots__ = ["_StmtDtTm", "_ActvtyInd", "_StmtId", "_Frqcy"]
 	@property
 	def StmtDtTm(self):
 		return self._StmtDtTm
@@ -59,10 +46,23 @@ class Statement85(base_types._BaseFieldType):
 		del self._StmtId
 		self._StmtId = None
 
+	@property
+	def Frqcy(self):
+		return self._Frqcy
+
+	@Frqcy.setter
+	def Frqcy(self, value):
+		self._Frqcy = value if type(value) != auto else self.make_default("Frqcy")
+
+	@Frqcy.deleter
+	def Frqcy(self):
+		del self._Frqcy
+		self._Frqcy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Frqcy', type=Frequency1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frqcy', type=Frequency1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

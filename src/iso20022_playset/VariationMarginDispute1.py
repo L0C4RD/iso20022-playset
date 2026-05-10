@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DisputeResolutionType2Choice
 import Dispute1
 

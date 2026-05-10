@@ -1,25 +1,25 @@
-import base_types
-import Max35Text
-import ImpliedCurrencyAndAmount
-import CreditDebit3Code
+from . import base_types
 import TypeTypeOfAmount23Code
 import Tax41
+import CreditDebit3Code
+import Max35Text
+import ImpliedCurrencyAndAmount
 
 class AmountDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_OthrTp", "_Tax", "_CdtDbt", "_Tp"]
+	__slots__ = ["_Tp", "_OthrTp", "_Tax", "_CdtDbt", "_Amt"]
 	@property
-	def Amt(self):
-		return self._Amt
+	def Tp(self):
+		return self._Tp
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def OthrTp(self):
@@ -61,23 +61,23 @@ class AmountDetails3(base_types._BaseFieldType):
 		self._CdtDbt = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def Amt(self):
+		return self._Amt
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TypeTypeOfAmount23Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=TypeTypeOfAmount23Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

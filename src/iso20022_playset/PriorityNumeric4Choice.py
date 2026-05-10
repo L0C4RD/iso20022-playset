@@ -1,6 +1,6 @@
-import base_types
-import Exact4NumericText
+from . import base_types
 import GenericIdentification30
+import Exact4NumericText
 
 class PriorityNumeric4Choice(base_types._BaseFieldType):
 

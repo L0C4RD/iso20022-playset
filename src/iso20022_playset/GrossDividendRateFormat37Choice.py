@@ -1,11 +1,11 @@
-import base_types
-import ActiveCurrencyAnd13DecimalAmount
+from . import base_types
 import RateTypeAndAmountAndStatus57
 import AmountAndRateStatus1
+import ActiveCurrencyAnd13DecimalAmount
 
 class GrossDividendRateFormat37Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtAndRateSts", "_Amt", "_RateTpAndAmtAndRateSts"]
+	__slots__ = ["_AmtAndRateSts", "_RateTpAndAmtAndRateSts", "_Amt"]
 	@property
 	def AmtAndRateSts(self):
 		return self._AmtAndRateSts
@@ -20,19 +20,6 @@ class GrossDividendRateFormat37Choice(base_types._BaseFieldType):
 		self._AmtAndRateSts = None
 
 	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
 	def RateTpAndAmtAndRateSts(self):
 		return self._RateTpAndAmtAndRateSts
 
@@ -45,9 +32,22 @@ class GrossDividendRateFormat37Choice(base_types._BaseFieldType):
 		del self._RateTpAndAmtAndRateSts
 		self._RateTpAndAmtAndRateSts = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtAndRateSts', type=AmountAndRateStatus1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RateTpAndAmtAndRateSts', type=RateTypeAndAmountAndStatus57, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

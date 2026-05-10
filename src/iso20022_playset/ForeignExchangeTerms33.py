@@ -1,13 +1,13 @@
-import base_types
+from . import base_types
+import PartyIdentification113
 import ISODateTime
 import BaseOneRate
-import PartyIdentification113
 import ActiveCurrencyCode
 import ActiveCurrencyAndAmount
 
 class ForeignExchangeTerms33(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitCcy", "_QtdCcy", "_ToAmt", "_FrAmt", "_QtnDt", "_QtgInstn", "_XchgRate"]
+	__slots__ = ["_UnitCcy", "_QtnDt", "_FrAmt", "_XchgRate", "_ToAmt", "_QtgInstn", "_QtdCcy"]
 	@property
 	def UnitCcy(self):
 		return self._UnitCcy
@@ -20,45 +20,6 @@ class ForeignExchangeTerms33(base_types._BaseFieldType):
 	def UnitCcy(self):
 		del self._UnitCcy
 		self._UnitCcy = None
-
-	@property
-	def QtdCcy(self):
-		return self._QtdCcy
-
-	@QtdCcy.setter
-	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != auto else self.make_default("QtdCcy")
-
-	@QtdCcy.deleter
-	def QtdCcy(self):
-		del self._QtdCcy
-		self._QtdCcy = None
-
-	@property
-	def ToAmt(self):
-		return self._ToAmt
-
-	@ToAmt.setter
-	def ToAmt(self, value):
-		self._ToAmt = value if type(value) != auto else self.make_default("ToAmt")
-
-	@ToAmt.deleter
-	def ToAmt(self):
-		del self._ToAmt
-		self._ToAmt = None
-
-	@property
-	def FrAmt(self):
-		return self._FrAmt
-
-	@FrAmt.setter
-	def FrAmt(self, value):
-		self._FrAmt = value if type(value) != auto else self.make_default("FrAmt")
-
-	@FrAmt.deleter
-	def FrAmt(self):
-		del self._FrAmt
-		self._FrAmt = None
 
 	@property
 	def QtnDt(self):
@@ -74,17 +35,17 @@ class ForeignExchangeTerms33(base_types._BaseFieldType):
 		self._QtnDt = None
 
 	@property
-	def QtgInstn(self):
-		return self._QtgInstn
+	def FrAmt(self):
+		return self._FrAmt
 
-	@QtgInstn.setter
-	def QtgInstn(self, value):
-		self._QtgInstn = value if type(value) != auto else self.make_default("QtgInstn")
+	@FrAmt.setter
+	def FrAmt(self, value):
+		self._FrAmt = value if type(value) != auto else self.make_default("FrAmt")
 
-	@QtgInstn.deleter
-	def QtgInstn(self):
-		del self._QtgInstn
-		self._QtgInstn = None
+	@FrAmt.deleter
+	def FrAmt(self):
+		del self._FrAmt
+		self._FrAmt = None
 
 	@property
 	def XchgRate(self):
@@ -99,13 +60,52 @@ class ForeignExchangeTerms33(base_types._BaseFieldType):
 		del self._XchgRate
 		self._XchgRate = None
 
+	@property
+	def ToAmt(self):
+		return self._ToAmt
+
+	@ToAmt.setter
+	def ToAmt(self, value):
+		self._ToAmt = value if type(value) != auto else self.make_default("ToAmt")
+
+	@ToAmt.deleter
+	def ToAmt(self):
+		del self._ToAmt
+		self._ToAmt = None
+
+	@property
+	def QtgInstn(self):
+		return self._QtgInstn
+
+	@QtgInstn.setter
+	def QtgInstn(self, value):
+		self._QtgInstn = value if type(value) != auto else self.make_default("QtgInstn")
+
+	@QtgInstn.deleter
+	def QtgInstn(self):
+		del self._QtgInstn
+		self._QtgInstn = None
+
+	@property
+	def QtdCcy(self):
+		return self._QtdCcy
+
+	@QtdCcy.setter
+	def QtdCcy(self, value):
+		self._QtdCcy = value if type(value) != auto else self.make_default("QtdCcy")
+
+	@QtdCcy.deleter
+	def QtdCcy(self):
+		del self._QtdCcy
+		self._QtdCcy = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ToAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtgInstn', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ToAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtgInstn', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

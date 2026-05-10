@@ -1,22 +1,22 @@
-import base_types
+from . import base_types
 import Number
 import Algorithm14Code
 
 class ATMSecurityConfiguration4(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxSgntrs", "_DgtlSgntrAlgo", "_MaxCerts"]
+	__slots__ = ["_MaxCerts", "_DgtlSgntrAlgo", "_MaxSgntrs"]
 	@property
-	def MaxSgntrs(self):
-		return self._MaxSgntrs
+	def MaxCerts(self):
+		return self._MaxCerts
 
-	@MaxSgntrs.setter
-	def MaxSgntrs(self, value):
-		self._MaxSgntrs = value if type(value) != auto else self.make_default("MaxSgntrs")
+	@MaxCerts.setter
+	def MaxCerts(self, value):
+		self._MaxCerts = value if type(value) != auto else self.make_default("MaxCerts")
 
-	@MaxSgntrs.deleter
-	def MaxSgntrs(self):
-		del self._MaxSgntrs
-		self._MaxSgntrs = None
+	@MaxCerts.deleter
+	def MaxCerts(self):
+		del self._MaxCerts
+		self._MaxCerts = None
 
 	@property
 	def DgtlSgntrAlgo(self):
@@ -32,21 +32,21 @@ class ATMSecurityConfiguration4(base_types._BaseFieldType):
 		self._DgtlSgntrAlgo = None
 
 	@property
-	def MaxCerts(self):
-		return self._MaxCerts
+	def MaxSgntrs(self):
+		return self._MaxSgntrs
 
-	@MaxCerts.setter
-	def MaxCerts(self, value):
-		self._MaxCerts = value if type(value) != auto else self.make_default("MaxCerts")
+	@MaxSgntrs.setter
+	def MaxSgntrs(self, value):
+		self._MaxSgntrs = value if type(value) != auto else self.make_default("MaxSgntrs")
 
-	@MaxCerts.deleter
-	def MaxCerts(self):
-		del self._MaxCerts
-		self._MaxCerts = None
+	@MaxSgntrs.deleter
+	def MaxSgntrs(self):
+		del self._MaxSgntrs
+		self._MaxSgntrs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MaxSgntrs', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgtlSgntrAlgo', type=Algorithm14Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MaxCerts', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgtlSgntrAlgo', type=Algorithm14Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MaxSgntrs', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

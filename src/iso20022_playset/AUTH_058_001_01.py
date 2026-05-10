@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CCPPortfolioStressTestingResultReportV01
 
 class AUTH_058_001_01():

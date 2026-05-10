@@ -1,6 +1,6 @@
-import base_types
-import Max500Text
+from . import base_types
 import AuthorityRequestType1
+import Max500Text
 import Min8Max28NumericText
 
 class PaymentInstrumentType1(base_types._BaseFieldType):

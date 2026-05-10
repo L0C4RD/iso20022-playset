@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import VolumeMetrics5
 
 class PositionSetMetrics7(base_types._BaseFieldType):

@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
 import LoyaltyTransaction7
 import LoyaltyRequestData3
 import CustomerOrder1
 
 class LoyaltyRequest7(base_types._BaseFieldType):
 
-	__slots__ = ["_Data", "_CstmrOrdr", "_Tx"]
+	__slots__ = ["_Tx", "_Data", "_CstmrOrdr"]
+	@property
+	def Tx(self):
+		return self._Tx
+
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != auto else self.make_default("Tx")
+
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
+
 	@property
 	def Data(self):
 		return self._Data
@@ -32,22 +45,9 @@ class LoyaltyRequest7(base_types._BaseFieldType):
 		del self._CstmrOrdr
 		self._CstmrOrdr = None
 
-	@property
-	def Tx(self):
-		return self._Tx
-
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
-
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Tx', type=LoyaltyTransaction7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Data', type=LoyaltyRequestData3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CstmrOrdr', type=CustomerOrder1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tx', type=LoyaltyTransaction7, min=1, max=1, mutex_group=None, array=False),
 	))
 

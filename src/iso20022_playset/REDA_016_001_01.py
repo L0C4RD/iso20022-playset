@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PartyStatusAdviceV01
 
 class REDA_016_001_01():

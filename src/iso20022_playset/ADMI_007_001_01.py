@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReceiptAcknowledgementV01
 
 class ADMI_007_001_01():

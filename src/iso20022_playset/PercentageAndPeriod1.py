@@ -1,10 +1,23 @@
-import base_types
-import PercentageBoundedRate
+from . import base_types
 import ISODate
+import PercentageBoundedRate
 
 class PercentageAndPeriod1(base_types._BaseFieldType):
 
-	__slots__ = ["_StartDt", "_EndDt", "_Pctg"]
+	__slots__ = ["_Pctg", "_StartDt", "_EndDt"]
+	@property
+	def Pctg(self):
+		return self._Pctg
+
+	@Pctg.setter
+	def Pctg(self, value):
+		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+
+	@Pctg.deleter
+	def Pctg(self):
+		del self._Pctg
+		self._Pctg = None
+
 	@property
 	def StartDt(self):
 		return self._StartDt
@@ -31,22 +44,9 @@ class PercentageAndPeriod1(base_types._BaseFieldType):
 		del self._EndDt
 		self._EndDt = None
 
-	@property
-	def Pctg(self):
-		return self._Pctg
-
-	@Pctg.setter
-	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
-
-	@Pctg.deleter
-	def Pctg(self):
-		del self._Pctg
-		self._Pctg = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Pctg', type=PercentageBoundedRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pctg', type=PercentageBoundedRate, min=1, max=1, mutex_group=None, array=False),
 	))
 

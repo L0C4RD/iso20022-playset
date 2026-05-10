@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import PartyIdentification232
 import GenericIdentification37
 
 class CollateralParties4(base_types._BaseFieldType):
 
-	__slots__ = ["_ElgbltySetPrfl", "_PtyB", "_ClntPtyB"]
-	@property
-	def ElgbltySetPrfl(self):
-		return self._ElgbltySetPrfl
-
-	@ElgbltySetPrfl.setter
-	def ElgbltySetPrfl(self, value):
-		self._ElgbltySetPrfl = value if type(value) != auto else self.make_default("ElgbltySetPrfl")
-
-	@ElgbltySetPrfl.deleter
-	def ElgbltySetPrfl(self):
-		del self._ElgbltySetPrfl
-		self._ElgbltySetPrfl = None
-
+	__slots__ = ["_PtyB", "_ElgbltySetPrfl", "_ClntPtyB"]
 	@property
 	def PtyB(self):
 		return self._PtyB
@@ -30,6 +17,19 @@ class CollateralParties4(base_types._BaseFieldType):
 	def PtyB(self):
 		del self._PtyB
 		self._PtyB = None
+
+	@property
+	def ElgbltySetPrfl(self):
+		return self._ElgbltySetPrfl
+
+	@ElgbltySetPrfl.setter
+	def ElgbltySetPrfl(self, value):
+		self._ElgbltySetPrfl = value if type(value) != auto else self.make_default("ElgbltySetPrfl")
+
+	@ElgbltySetPrfl.deleter
+	def ElgbltySetPrfl(self):
+		del self._ElgbltySetPrfl
+		self._ElgbltySetPrfl = None
 
 	@property
 	def ClntPtyB(self):
@@ -45,8 +45,8 @@ class CollateralParties4(base_types._BaseFieldType):
 		self._ClntPtyB = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ElgbltySetPrfl', type=GenericIdentification37, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyB', type=PartyIdentification232, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElgbltySetPrfl', type=GenericIdentification37, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntPtyB', type=PartyIdentification232, min=0, max=1, mutex_group=None, array=False),
 	))
 

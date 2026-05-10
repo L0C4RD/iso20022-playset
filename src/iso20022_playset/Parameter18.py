@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Algorithm26Code
 
 class Parameter18(base_types._BaseFieldType):

@@ -1,23 +1,23 @@
-import base_types
-import ICCResetData1
+from . import base_types
 import CardDataReading8Code
+import ICCResetData1
 import Max10000Binary
 
 class DeviceInitialisationCardReaderResponse2(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_CardNtryMd", "_ICCRstData"]
+	__slots__ = ["_ICCRstData", "_CardNtryMd", "_AddtlInf"]
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def ICCRstData(self):
+		return self._ICCRstData
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@ICCRstData.setter
+	def ICCRstData(self, value):
+		self._ICCRstData = value if type(value) != auto else self.make_default("ICCRstData")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@ICCRstData.deleter
+	def ICCRstData(self):
+		del self._ICCRstData
+		self._ICCRstData = None
 
 	@property
 	def CardNtryMd(self):
@@ -33,21 +33,21 @@ class DeviceInitialisationCardReaderResponse2(base_types._BaseFieldType):
 		self._CardNtryMd = None
 
 	@property
-	def ICCRstData(self):
-		return self._ICCRstData
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@ICCRstData.setter
-	def ICCRstData(self, value):
-		self._ICCRstData = value if type(value) != auto else self.make_default("ICCRstData")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@ICCRstData.deleter
-	def ICCRstData(self):
-		del self._ICCRstData
-		self._ICCRstData = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInf', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardNtryMd', type=CardDataReading8Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ICCRstData', type=ICCResetData1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardNtryMd', type=CardDataReading8Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 	))
 

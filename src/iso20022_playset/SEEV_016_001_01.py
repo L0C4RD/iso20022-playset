@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AgentCADistributionBreakdownAdviceV01
 
 class SEEV_016_001_01():

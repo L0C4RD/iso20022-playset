@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MarginCallRequestV05
 
 class COLR_003_001_05():

@@ -1,26 +1,13 @@
-import base_types
-import PaymentContext30
+from . import base_types
 import CardPaymentEnvironment81
-import SupplementaryData1
+import PaymentContext30
 import ResponseType11
+import SupplementaryData1
 import ReconciliationResponseData2
 
 class ReconciliationResponse10(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_RcncltnRspnData", "_Rspn", "_SplmtryData"]
-	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
-
+	__slots__ = ["_Cntxt", "_RcncltnRspnData", "_Envt", "_SplmtryData", "_Rspn"]
 	@property
 	def Cntxt(self):
 		return self._Cntxt
@@ -48,17 +35,17 @@ class ReconciliationResponse10(base_types._BaseFieldType):
 		self._RcncltnRspnData = None
 
 	@property
-	def Rspn(self):
-		return self._Rspn
+	def Envt(self):
+		return self._Envt
 
-	@Rspn.setter
-	def Rspn(self, value):
-		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
 
-	@Rspn.deleter
-	def Rspn(self):
-		del self._Rspn
-		self._Rspn = None
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
 
 	@property
 	def SplmtryData(self):
@@ -73,11 +60,24 @@ class ReconciliationResponse10(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def Rspn(self):
+		return self._Rspn
+
+	@Rspn.setter
+	def Rspn(self, value):
+		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
+
+	@Rspn.deleter
+	def Rspn(self):
+		del self._Rspn
+		self._Rspn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnRspnData', type=ReconciliationResponseData2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
 	))
 

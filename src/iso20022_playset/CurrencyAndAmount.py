@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CurrencyCode
 
 class CurrencyAndAmount(base_types._BaseDataType_Decimal):

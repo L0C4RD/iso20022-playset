@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesTransactionPostingReport002V12
 
 class SEMT_017_002_12():

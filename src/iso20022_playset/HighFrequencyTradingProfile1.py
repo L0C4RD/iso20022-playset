@@ -1,23 +1,23 @@
-import base_types
-import ConsolidationType1Choice
-import SettlementFrequency1Choice
+from . import base_types
 import ISODate
+import SettlementFrequency1Choice
+import ConsolidationType1Choice
 
 class HighFrequencyTradingProfile1(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmFrqcy", "_Dt", "_CnsldtnTp"]
+	__slots__ = ["_CnsldtnTp", "_Dt", "_SttlmFrqcy"]
 	@property
-	def SttlmFrqcy(self):
-		return self._SttlmFrqcy
+	def CnsldtnTp(self):
+		return self._CnsldtnTp
 
-	@SttlmFrqcy.setter
-	def SttlmFrqcy(self, value):
-		self._SttlmFrqcy = value if type(value) != auto else self.make_default("SttlmFrqcy")
+	@CnsldtnTp.setter
+	def CnsldtnTp(self, value):
+		self._CnsldtnTp = value if type(value) != auto else self.make_default("CnsldtnTp")
 
-	@SttlmFrqcy.deleter
-	def SttlmFrqcy(self):
-		del self._SttlmFrqcy
-		self._SttlmFrqcy = None
+	@CnsldtnTp.deleter
+	def CnsldtnTp(self):
+		del self._CnsldtnTp
+		self._CnsldtnTp = None
 
 	@property
 	def Dt(self):
@@ -33,21 +33,21 @@ class HighFrequencyTradingProfile1(base_types._BaseFieldType):
 		self._Dt = None
 
 	@property
-	def CnsldtnTp(self):
-		return self._CnsldtnTp
+	def SttlmFrqcy(self):
+		return self._SttlmFrqcy
 
-	@CnsldtnTp.setter
-	def CnsldtnTp(self, value):
-		self._CnsldtnTp = value if type(value) != auto else self.make_default("CnsldtnTp")
+	@SttlmFrqcy.setter
+	def SttlmFrqcy(self, value):
+		self._SttlmFrqcy = value if type(value) != auto else self.make_default("SttlmFrqcy")
 
-	@CnsldtnTp.deleter
-	def CnsldtnTp(self):
-		del self._CnsldtnTp
-		self._CnsldtnTp = None
+	@SttlmFrqcy.deleter
+	def SttlmFrqcy(self):
+		del self._SttlmFrqcy
+		self._SttlmFrqcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmFrqcy', type=SettlementFrequency1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CnsldtnTp', type=ConsolidationType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmFrqcy', type=SettlementFrequency1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

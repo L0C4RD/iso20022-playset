@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CurrencyControlSupportingDocumentDeliveryV04
 
 class AUTH_025_001_04():

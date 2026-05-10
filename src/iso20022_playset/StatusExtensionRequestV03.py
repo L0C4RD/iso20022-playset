@@ -1,37 +1,11 @@
-import base_types
-import SimpleIdentificationInformation
-import MessageIdentification1
+from . import base_types
 import TransactionStatus5
+import MessageIdentification1
+import SimpleIdentificationInformation
 
 class StatusExtensionRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_StsToBeXtnded", "_TxId", "_SubmitrTxRef", "_ReqId"]
-	@property
-	def StsToBeXtnded(self):
-		return self._StsToBeXtnded
-
-	@StsToBeXtnded.setter
-	def StsToBeXtnded(self, value):
-		self._StsToBeXtnded = value if type(value) != auto else self.make_default("StsToBeXtnded")
-
-	@StsToBeXtnded.deleter
-	def StsToBeXtnded(self):
-		del self._StsToBeXtnded
-		self._StsToBeXtnded = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
+	__slots__ = ["_SubmitrTxRef", "_ReqId", "_TxId", "_StsToBeXtnded"]
 	@property
 	def SubmitrTxRef(self):
 		return self._SubmitrTxRef
@@ -58,10 +32,36 @@ class StatusExtensionRequestV03(base_types._BaseFieldType):
 		del self._ReqId
 		self._ReqId = None
 
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def StsToBeXtnded(self):
+		return self._StsToBeXtnded
+
+	@StsToBeXtnded.setter
+	def StsToBeXtnded(self, value):
+		self._StsToBeXtnded = value if type(value) != auto else self.make_default("StsToBeXtnded")
+
+	@StsToBeXtnded.deleter
+	def StsToBeXtnded(self):
+		del self._StsToBeXtnded
+		self._StsToBeXtnded = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StsToBeXtnded', type=TransactionStatus5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsToBeXtnded', type=TransactionStatus5, min=1, max=1, mutex_group=None, array=False),
 	))
 

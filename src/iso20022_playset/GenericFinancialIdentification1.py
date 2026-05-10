@@ -1,10 +1,10 @@
-import base_types
+from . import base_types
 import Max35Text
 import FinancialIdentificationSchemeName1Choice
 
 class GenericFinancialIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_SchmeNm", "_Id", "_Issr"]
+	__slots__ = ["_SchmeNm", "_Issr", "_Id"]
 	@property
 	def SchmeNm(self):
 		return self._SchmeNm
@@ -19,19 +19,6 @@ class GenericFinancialIdentification1(base_types._BaseFieldType):
 		self._SchmeNm = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def Issr(self):
 		return self._Issr
 
@@ -44,9 +31,22 @@ class GenericFinancialIdentification1(base_types._BaseFieldType):
 		del self._Issr
 		self._Issr = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SchmeNm', type=FinancialIdentificationSchemeName1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

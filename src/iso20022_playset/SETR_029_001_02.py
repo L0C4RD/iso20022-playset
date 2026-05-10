@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesTradeConfirmationCancellationV02
 
 class SETR_029_001_02():

@@ -1,24 +1,11 @@
-import base_types
-import Number
+from . import base_types
 import Algorithm11Code
+import Number
 import AlgorithmIdentification12
 
 class Parameter8(base_types._BaseFieldType):
 
-	__slots__ = ["_SaltLngth", "_DgstAlgo", "_MskGnrtrAlgo", "_TrlrFld"]
-	@property
-	def SaltLngth(self):
-		return self._SaltLngth
-
-	@SaltLngth.setter
-	def SaltLngth(self, value):
-		self._SaltLngth = value if type(value) != auto else self.make_default("SaltLngth")
-
-	@SaltLngth.deleter
-	def SaltLngth(self):
-		del self._SaltLngth
-		self._SaltLngth = None
-
+	__slots__ = ["_DgstAlgo", "_SaltLngth", "_MskGnrtrAlgo", "_TrlrFld"]
 	@property
 	def DgstAlgo(self):
 		return self._DgstAlgo
@@ -31,6 +18,19 @@ class Parameter8(base_types._BaseFieldType):
 	def DgstAlgo(self):
 		del self._DgstAlgo
 		self._DgstAlgo = None
+
+	@property
+	def SaltLngth(self):
+		return self._SaltLngth
+
+	@SaltLngth.setter
+	def SaltLngth(self, value):
+		self._SaltLngth = value if type(value) != auto else self.make_default("SaltLngth")
+
+	@SaltLngth.deleter
+	def SaltLngth(self):
+		del self._SaltLngth
+		self._SaltLngth = None
 
 	@property
 	def MskGnrtrAlgo(self):
@@ -59,8 +59,8 @@ class Parameter8(base_types._BaseFieldType):
 		self._TrlrFld = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SaltLngth', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgstAlgo', type=Algorithm11Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaltLngth', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MskGnrtrAlgo', type=AlgorithmIdentification12, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrlrFld', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))

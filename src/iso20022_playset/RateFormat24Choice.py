@@ -1,6 +1,6 @@
-import base_types
-import RateType5Code
+from . import base_types
 import Percentage14Rate
+import RateType5Code
 
 class RateFormat24Choice(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ForeignExchangeTradeWithdrawalNotificationV03
 
 class FXTR_013_001_03():

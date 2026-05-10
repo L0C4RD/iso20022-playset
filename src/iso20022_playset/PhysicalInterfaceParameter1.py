@@ -1,37 +1,24 @@
-import base_types
-import Max35Text
-import Max35Binary
+from . import base_types
 import Max2KBinary
 import POICommunicationType2Code
+import Max35Binary
+import Max35Text
 
 class PhysicalInterfaceParameter1(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrfcNm", "_AccsCd", "_SctyPrfl", "_UsrNm", "_AddtlParams", "_IntrfcTp"]
+	__slots__ = ["_IntrfcTp", "_SctyPrfl", "_UsrNm", "_AccsCd", "_IntrfcNm", "_AddtlParams"]
 	@property
-	def IntrfcNm(self):
-		return self._IntrfcNm
+	def IntrfcTp(self):
+		return self._IntrfcTp
 
-	@IntrfcNm.setter
-	def IntrfcNm(self, value):
-		self._IntrfcNm = value if type(value) != auto else self.make_default("IntrfcNm")
+	@IntrfcTp.setter
+	def IntrfcTp(self, value):
+		self._IntrfcTp = value if type(value) != auto else self.make_default("IntrfcTp")
 
-	@IntrfcNm.deleter
-	def IntrfcNm(self):
-		del self._IntrfcNm
-		self._IntrfcNm = None
-
-	@property
-	def AccsCd(self):
-		return self._AccsCd
-
-	@AccsCd.setter
-	def AccsCd(self, value):
-		self._AccsCd = value if type(value) != auto else self.make_default("AccsCd")
-
-	@AccsCd.deleter
-	def AccsCd(self):
-		del self._AccsCd
-		self._AccsCd = None
+	@IntrfcTp.deleter
+	def IntrfcTp(self):
+		del self._IntrfcTp
+		self._IntrfcTp = None
 
 	@property
 	def SctyPrfl(self):
@@ -60,6 +47,32 @@ class PhysicalInterfaceParameter1(base_types._BaseFieldType):
 		self._UsrNm = None
 
 	@property
+	def AccsCd(self):
+		return self._AccsCd
+
+	@AccsCd.setter
+	def AccsCd(self, value):
+		self._AccsCd = value if type(value) != auto else self.make_default("AccsCd")
+
+	@AccsCd.deleter
+	def AccsCd(self):
+		del self._AccsCd
+		self._AccsCd = None
+
+	@property
+	def IntrfcNm(self):
+		return self._IntrfcNm
+
+	@IntrfcNm.setter
+	def IntrfcNm(self, value):
+		self._IntrfcNm = value if type(value) != auto else self.make_default("IntrfcNm")
+
+	@IntrfcNm.deleter
+	def IntrfcNm(self):
+		del self._IntrfcNm
+		self._IntrfcNm = None
+
+	@property
 	def AddtlParams(self):
 		return self._AddtlParams
 
@@ -72,25 +85,12 @@ class PhysicalInterfaceParameter1(base_types._BaseFieldType):
 		del self._AddtlParams
 		self._AddtlParams = None
 
-	@property
-	def IntrfcTp(self):
-		return self._IntrfcTp
-
-	@IntrfcTp.setter
-	def IntrfcTp(self, value):
-		self._IntrfcTp = value if type(value) != auto else self.make_default("IntrfcTp")
-
-	@IntrfcTp.deleter
-	def IntrfcTp(self):
-		del self._IntrfcTp
-		self._IntrfcTp = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntrfcNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AccsCd', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrfcTp', type=POICommunicationType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsrNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AccsCd', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrfcNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlParams', type=Max2KBinary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrfcTp', type=POICommunicationType2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

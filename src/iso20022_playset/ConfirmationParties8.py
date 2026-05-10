@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
 import ConfirmationPartyDetails12
-import ConfirmationPartyDetails14
 import ConfirmationPartyDetails15
+import ConfirmationPartyDetails14
 
 class ConfirmationParties8(base_types._BaseFieldType):
 
-	__slots__ = ["_Brrwr", "_Lndr", "_TradBnfcryPty", "_AffrmgPty", "_Sellr", "_Buyr"]
+	__slots__ = ["_Brrwr", "_Lndr", "_Sellr", "_TradBnfcryPty", "_AffrmgPty", "_Buyr"]
 	@property
 	def Brrwr(self):
 		return self._Brrwr
@@ -31,6 +31,19 @@ class ConfirmationParties8(base_types._BaseFieldType):
 	def Lndr(self):
 		del self._Lndr
 		self._Lndr = None
+
+	@property
+	def Sellr(self):
+		return self._Sellr
+
+	@Sellr.setter
+	def Sellr(self, value):
+		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
+
+	@Sellr.deleter
+	def Sellr(self):
+		del self._Sellr
+		self._Sellr = None
 
 	@property
 	def TradBnfcryPty(self):
@@ -59,19 +72,6 @@ class ConfirmationParties8(base_types._BaseFieldType):
 		self._AffrmgPty = None
 
 	@property
-	def Sellr(self):
-		return self._Sellr
-
-	@Sellr.setter
-	def Sellr(self, value):
-		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
-
-	@Sellr.deleter
-	def Sellr(self):
-		del self._Sellr
-		self._Sellr = None
-
-	@property
 	def Buyr(self):
 		return self._Buyr
 
@@ -87,9 +87,9 @@ class ConfirmationParties8(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Brrwr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lndr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sellr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradBnfcryPty', type=ConfirmationPartyDetails14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AffrmgPty', type=ConfirmationPartyDetails15, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sellr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Buyr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
 	))
 

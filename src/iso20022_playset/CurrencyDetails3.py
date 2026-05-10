@@ -1,24 +1,24 @@
-import base_types
+from . import base_types
+import Number
 import Max35Text
 import ActiveCurrencyCode
-import Number
 import Exact3NumericText
 
 class CurrencyDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_Dcml", "_Nm", "_AlphaCd", "_NmrcCd"]
+	__slots__ = ["_NmrcCd", "_Nm", "_AlphaCd", "_Dcml"]
 	@property
-	def Dcml(self):
-		return self._Dcml
+	def NmrcCd(self):
+		return self._NmrcCd
 
-	@Dcml.setter
-	def Dcml(self, value):
-		self._Dcml = value if type(value) != auto else self.make_default("Dcml")
+	@NmrcCd.setter
+	def NmrcCd(self, value):
+		self._NmrcCd = value if type(value) != auto else self.make_default("NmrcCd")
 
-	@Dcml.deleter
-	def Dcml(self):
-		del self._Dcml
-		self._Dcml = None
+	@NmrcCd.deleter
+	def NmrcCd(self):
+		del self._NmrcCd
+		self._NmrcCd = None
 
 	@property
 	def Nm(self):
@@ -47,22 +47,22 @@ class CurrencyDetails3(base_types._BaseFieldType):
 		self._AlphaCd = None
 
 	@property
-	def NmrcCd(self):
-		return self._NmrcCd
+	def Dcml(self):
+		return self._Dcml
 
-	@NmrcCd.setter
-	def NmrcCd(self, value):
-		self._NmrcCd = value if type(value) != auto else self.make_default("NmrcCd")
+	@Dcml.setter
+	def Dcml(self, value):
+		self._Dcml = value if type(value) != auto else self.make_default("Dcml")
 
-	@NmrcCd.deleter
-	def NmrcCd(self):
-		del self._NmrcCd
-		self._NmrcCd = None
+	@Dcml.deleter
+	def Dcml(self):
+		del self._Dcml
+		self._Dcml = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dcml', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmrcCd', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AlphaCd', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmrcCd', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dcml', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AcceptorCancellationRequestV14
 
 class CAAA_005_001_14():

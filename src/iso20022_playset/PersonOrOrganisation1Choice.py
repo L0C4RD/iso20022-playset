@@ -1,12 +1,25 @@
-import base_types
+from . import base_types
 import MICIdentifier
 import PersonIdentification10
-import InternalPartyRole1Code
 import LEIIdentifier
+import InternalPartyRole1Code
 
 class PersonOrOrganisation1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_MIC", "_Prsn", "_Intl"]
+	__slots__ = ["_Prsn", "_LEI", "_MIC", "_Intl"]
+	@property
+	def Prsn(self):
+		return self._Prsn
+
+	@Prsn.setter
+	def Prsn(self, value):
+		self._Prsn = value if type(value) != auto else self.make_default("Prsn")
+
+	@Prsn.deleter
+	def Prsn(self):
+		del self._Prsn
+		self._Prsn = None
+
 	@property
 	def LEI(self):
 		return self._LEI
@@ -34,19 +47,6 @@ class PersonOrOrganisation1Choice(base_types._BaseFieldType):
 		self._MIC = None
 
 	@property
-	def Prsn(self):
-		return self._Prsn
-
-	@Prsn.setter
-	def Prsn(self, value):
-		self._Prsn = value if type(value) != auto else self.make_default("Prsn")
-
-	@Prsn.deleter
-	def Prsn(self):
-		del self._Prsn
-		self._Prsn = None
-
-	@property
 	def Intl(self):
 		return self._Intl
 
@@ -60,9 +60,9 @@ class PersonOrOrganisation1Choice(base_types._BaseFieldType):
 		self._Intl = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Prsn', type=PersonIdentification10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MIC', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Prsn', type=PersonIdentification10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Intl', type=InternalPartyRole1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

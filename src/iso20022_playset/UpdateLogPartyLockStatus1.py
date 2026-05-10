@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PartyLockStatus1
 
 class UpdateLogPartyLockStatus1(base_types._BaseFieldType):

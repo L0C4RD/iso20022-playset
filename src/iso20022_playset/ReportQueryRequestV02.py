@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
+import MessageHeader7
 import ReportQueryCriteria3
 import SupplementaryData1
-import MessageHeader7
 
 class ReportQueryRequestV02(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import Max140Text
+import Max35Text
 
 class UserDefinedInformation1(base_types._BaseFieldType):
 

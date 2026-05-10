@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import StatusReportV14
 
 class CATM_001_001_14():

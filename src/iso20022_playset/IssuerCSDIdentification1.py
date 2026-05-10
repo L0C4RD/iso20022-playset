@@ -1,6 +1,6 @@
-import base_types
-import CountryCode
+from . import base_types
 import Exact2UpperCaseAlphaText
+import CountryCode
 import LEIIdentifier
 
 class IssuerCSDIdentification1(base_types._BaseFieldType):

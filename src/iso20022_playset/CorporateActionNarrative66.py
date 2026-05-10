@@ -1,10 +1,23 @@
-import base_types
+from . import base_types
 import UpdatedAdditionalInformation19
 import UpdatedAdditionalInformation21
 
 class CorporateActionNarrative66(base_types._BaseFieldType):
 
-	__slots__ = ["_NrrtvVrsn", "_SctyRstrctn", "_TaxtnConds", "_CertfctnBrkdwn", "_InfToCmplyWth", "_AddtlTxt", "_InfConds"]
+	__slots__ = ["_InfConds", "_NrrtvVrsn", "_SctyRstrctn", "_TaxtnConds", "_InfToCmplyWth", "_AddtlTxt", "_CertfctnBrkdwn"]
+	@property
+	def InfConds(self):
+		return self._InfConds
+
+	@InfConds.setter
+	def InfConds(self, value):
+		self._InfConds = value if type(value) != auto else self.make_default("InfConds")
+
+	@InfConds.deleter
+	def InfConds(self):
+		del self._InfConds
+		self._InfConds = None
+
 	@property
 	def NrrtvVrsn(self):
 		return self._NrrtvVrsn
@@ -45,19 +58,6 @@ class CorporateActionNarrative66(base_types._BaseFieldType):
 		self._TaxtnConds = None
 
 	@property
-	def CertfctnBrkdwn(self):
-		return self._CertfctnBrkdwn
-
-	@CertfctnBrkdwn.setter
-	def CertfctnBrkdwn(self, value):
-		self._CertfctnBrkdwn = value if type(value) != auto else self.make_default("CertfctnBrkdwn")
-
-	@CertfctnBrkdwn.deleter
-	def CertfctnBrkdwn(self):
-		del self._CertfctnBrkdwn
-		self._CertfctnBrkdwn = None
-
-	@property
 	def InfToCmplyWth(self):
 		return self._InfToCmplyWth
 
@@ -84,25 +84,25 @@ class CorporateActionNarrative66(base_types._BaseFieldType):
 		self._AddtlTxt = None
 
 	@property
-	def InfConds(self):
-		return self._InfConds
+	def CertfctnBrkdwn(self):
+		return self._CertfctnBrkdwn
 
-	@InfConds.setter
-	def InfConds(self, value):
-		self._InfConds = value if type(value) != auto else self.make_default("InfConds")
+	@CertfctnBrkdwn.setter
+	def CertfctnBrkdwn(self, value):
+		self._CertfctnBrkdwn = value if type(value) != auto else self.make_default("CertfctnBrkdwn")
 
-	@InfConds.deleter
-	def InfConds(self):
-		del self._InfConds
-		self._InfConds = None
+	@CertfctnBrkdwn.deleter
+	def CertfctnBrkdwn(self):
+		del self._CertfctnBrkdwn
+		self._CertfctnBrkdwn = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='InfConds', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NrrtvVrsn', type=UpdatedAdditionalInformation19, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctyRstrctn', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TaxtnConds', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CertfctnBrkdwn', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InfToCmplyWth', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlTxt', type=UpdatedAdditionalInformation19, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InfConds', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CertfctnBrkdwn', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
 	))
 

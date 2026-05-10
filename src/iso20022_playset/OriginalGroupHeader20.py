@@ -1,11 +1,11 @@
-import base_types
-import Max35Text
+from . import base_types
 import PaymentReversalReason10
+import Max35Text
 import ISODateTime
 
 class OriginalGroupHeader20(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgNmId", "_OrgnlMsgId", "_OrgnlCreDtTm", "_RvslRsnInf"]
+	__slots__ = ["_OrgnlMsgNmId", "_OrgnlCreDtTm", "_RvslRsnInf", "_OrgnlMsgId"]
 	@property
 	def OrgnlMsgNmId(self):
 		return self._OrgnlMsgNmId
@@ -18,19 +18,6 @@ class OriginalGroupHeader20(base_types._BaseFieldType):
 	def OrgnlMsgNmId(self):
 		del self._OrgnlMsgNmId
 		self._OrgnlMsgNmId = None
-
-	@property
-	def OrgnlMsgId(self):
-		return self._OrgnlMsgId
-
-	@OrgnlMsgId.setter
-	def OrgnlMsgId(self, value):
-		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
-
-	@OrgnlMsgId.deleter
-	def OrgnlMsgId(self):
-		del self._OrgnlMsgId
-		self._OrgnlMsgId = None
 
 	@property
 	def OrgnlCreDtTm(self):
@@ -58,10 +45,23 @@ class OriginalGroupHeader20(base_types._BaseFieldType):
 		del self._RvslRsnInf
 		self._RvslRsnInf = None
 
+	@property
+	def OrgnlMsgId(self):
+		return self._OrgnlMsgId
+
+	@OrgnlMsgId.setter
+	def OrgnlMsgId(self, value):
+		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
+
+	@OrgnlMsgId.deleter
+	def OrgnlMsgId(self):
+		del self._OrgnlMsgId
+		self._OrgnlMsgId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RvslRsnInf', type=PaymentReversalReason10, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

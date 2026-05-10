@@ -1,8 +1,8 @@
-import base_types
+from . import base_types
 import Max350Text
+import IncentivePremiumType2Choice
 import DateFormat3Choice
 import PriceRateOrAmount8Choice
-import IncentivePremiumType2Choice
 
 class IncentivePremium6(base_types._BaseFieldType):
 

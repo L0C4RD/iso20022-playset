@@ -1,38 +1,12 @@
-import base_types
-import ISODate
+from . import base_types
 import Max350Text
-import ImpliedCurrencyAndAmount
+import ISODate
 import ISOTime
+import ImpliedCurrencyAndAmount
 
 class AuthorisedAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Tm", "_Amt", "_Dt"]
-	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
-	@property
-	def Tm(self):
-		return self._Tm
-
-	@Tm.setter
-	def Tm(self, value):
-		self._Tm = value if type(value) != auto else self.make_default("Tm")
-
-	@Tm.deleter
-	def Tm(self):
-		del self._Tm
-		self._Tm = None
-
+	__slots__ = ["_Amt", "_Desc", "_Dt", "_Tm"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -47,6 +21,19 @@ class AuthorisedAmount2(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
+	@property
 	def Dt(self):
 		return self._Dt
 
@@ -59,10 +46,23 @@ class AuthorisedAmount2(base_types._BaseFieldType):
 		del self._Dt
 		self._Dt = None
 
+	@property
+	def Tm(self):
+		return self._Tm
+
+	@Tm.setter
+	def Tm(self, value):
+		self._Tm = value if type(value) != auto else self.make_default("Tm")
+
+	@Tm.deleter
+	def Tm(self):
+		del self._Tm
+		self._Tm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

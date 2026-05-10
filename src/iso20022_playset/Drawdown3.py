@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import EmploymentDetails1
 import AdditionalInformation15
 

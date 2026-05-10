@@ -1,10 +1,23 @@
-import base_types
-import ISODateTime
+from . import base_types
 import ISODate
+import ISODateTime
 
 class AdditionalDateTime1(base_types._BaseFieldType):
 
-	__slots__ = ["_AccptncDtTm", "_XpryDtTm", "_PoolgAdjstmntDt"]
+	__slots__ = ["_PoolgAdjstmntDt", "_AccptncDtTm", "_XpryDtTm"]
+	@property
+	def PoolgAdjstmntDt(self):
+		return self._PoolgAdjstmntDt
+
+	@PoolgAdjstmntDt.setter
+	def PoolgAdjstmntDt(self, value):
+		self._PoolgAdjstmntDt = value if type(value) != auto else self.make_default("PoolgAdjstmntDt")
+
+	@PoolgAdjstmntDt.deleter
+	def PoolgAdjstmntDt(self):
+		del self._PoolgAdjstmntDt
+		self._PoolgAdjstmntDt = None
+
 	@property
 	def AccptncDtTm(self):
 		return self._AccptncDtTm
@@ -31,22 +44,9 @@ class AdditionalDateTime1(base_types._BaseFieldType):
 		del self._XpryDtTm
 		self._XpryDtTm = None
 
-	@property
-	def PoolgAdjstmntDt(self):
-		return self._PoolgAdjstmntDt
-
-	@PoolgAdjstmntDt.setter
-	def PoolgAdjstmntDt(self, value):
-		self._PoolgAdjstmntDt = value if type(value) != auto else self.make_default("PoolgAdjstmntDt")
-
-	@PoolgAdjstmntDt.deleter
-	def PoolgAdjstmntDt(self):
-		del self._PoolgAdjstmntDt
-		self._PoolgAdjstmntDt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PoolgAdjstmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptncDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolgAdjstmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

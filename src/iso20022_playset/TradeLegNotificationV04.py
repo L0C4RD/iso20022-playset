@@ -1,29 +1,16 @@
-import base_types
+from . import base_types
+import TradeLeg11
+import PartyIdentificationAndAccount227
 import PartyIdentification253Choice
 import SupplementaryData1
-import TradeLeg11
+import SecuritiesAccount19
 import Clearing7
 import Settlement2
 import SecuritiesAccount18
-import PartyIdentificationAndAccount227
-import SecuritiesAccount19
 
 class TradeLegNotificationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_TradLegDtls", "_ClrAcct", "_DlvryAcct", "_ClrDtls", "_NonClrMmb", "_SttlmDtls", "_ClrMmb", "_SplmtryData"]
-	@property
-	def TradLegDtls(self):
-		return self._TradLegDtls
-
-	@TradLegDtls.setter
-	def TradLegDtls(self, value):
-		self._TradLegDtls = value if type(value) != auto else self.make_default("TradLegDtls")
-
-	@TradLegDtls.deleter
-	def TradLegDtls(self):
-		del self._TradLegDtls
-		self._TradLegDtls = None
-
+	__slots__ = ["_ClrAcct", "_DlvryAcct", "_SplmtryData", "_ClrMmb", "_TradLegDtls", "_ClrDtls", "_NonClrMmb", "_SttlmDtls"]
 	@property
 	def ClrAcct(self):
 		return self._ClrAcct
@@ -49,6 +36,45 @@ class TradeLegNotificationV04(base_types._BaseFieldType):
 	def DlvryAcct(self):
 		del self._DlvryAcct
 		self._DlvryAcct = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def ClrMmb(self):
+		return self._ClrMmb
+
+	@ClrMmb.setter
+	def ClrMmb(self, value):
+		self._ClrMmb = value if type(value) != auto else self.make_default("ClrMmb")
+
+	@ClrMmb.deleter
+	def ClrMmb(self):
+		del self._ClrMmb
+		self._ClrMmb = None
+
+	@property
+	def TradLegDtls(self):
+		return self._TradLegDtls
+
+	@TradLegDtls.setter
+	def TradLegDtls(self, value):
+		self._TradLegDtls = value if type(value) != auto else self.make_default("TradLegDtls")
+
+	@TradLegDtls.deleter
+	def TradLegDtls(self):
+		del self._TradLegDtls
+		self._TradLegDtls = None
 
 	@property
 	def ClrDtls(self):
@@ -89,40 +115,14 @@ class TradeLegNotificationV04(base_types._BaseFieldType):
 		del self._SttlmDtls
 		self._SttlmDtls = None
 
-	@property
-	def ClrMmb(self):
-		return self._ClrMmb
-
-	@ClrMmb.setter
-	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != auto else self.make_default("ClrMmb")
-
-	@ClrMmb.deleter
-	def ClrMmb(self):
-		del self._ClrMmb
-		self._ClrMmb = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradLegDtls', type=TradeLeg11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount18, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradLegDtls', type=TradeLeg11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrDtls', type=Clearing7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount227, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmDtls', type=Settlement2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

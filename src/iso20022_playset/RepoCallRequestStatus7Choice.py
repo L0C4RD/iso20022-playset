@@ -1,7 +1,7 @@
-import base_types
-import ProprietaryStatusAndReason6
+from . import base_types
 import AcknowledgedAcceptedStatus22Choice
 import DeniedStatus17Choice
+import ProprietaryStatusAndReason6
 
 class RepoCallRequestStatus7Choice(base_types._BaseFieldType):
 

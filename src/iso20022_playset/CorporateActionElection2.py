@@ -1,24 +1,24 @@
-import base_types
-import Exact3NumericText
+from . import base_types
 import Max350Text
-import UnitOrFaceAmount1Choice
 import CorporateActionOption1FormatChoice
+import UnitOrFaceAmount1Choice
+import Exact3NumericText
 
 class CorporateActionElection2(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_OptnTp", "_OptnNb", "_NewInstdQty"]
+	__slots__ = ["_OptnNb", "_OptnTp", "_NewInstdQty", "_Rsn"]
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def OptnNb(self):
+		return self._OptnNb
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+	@OptnNb.setter
+	def OptnNb(self, value):
+		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@OptnNb.deleter
+	def OptnNb(self):
+		del self._OptnNb
+		self._OptnNb = None
 
 	@property
 	def OptnTp(self):
@@ -34,19 +34,6 @@ class CorporateActionElection2(base_types._BaseFieldType):
 		self._OptnTp = None
 
 	@property
-	def OptnNb(self):
-		return self._OptnNb
-
-	@OptnNb.setter
-	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
-
-	@OptnNb.deleter
-	def OptnNb(self):
-		del self._OptnNb
-		self._OptnNb = None
-
-	@property
 	def NewInstdQty(self):
 		return self._NewInstdQty
 
@@ -59,10 +46,23 @@ class CorporateActionElection2(base_types._BaseFieldType):
 		del self._NewInstdQty
 		self._NewInstdQty = None
 
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewInstdQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

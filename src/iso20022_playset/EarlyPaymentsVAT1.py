@@ -1,7 +1,7 @@
-import base_types
-import Max4Text
-import CurrencyAndAmount
+from . import base_types
 import PercentageRate
+import CurrencyAndAmount
+import Max4Text
 
 class EarlyPaymentsVAT1(base_types._BaseFieldType):
 

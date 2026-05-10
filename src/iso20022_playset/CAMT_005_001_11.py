@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import GetTransactionV11
 
 class CAMT_005_001_11():

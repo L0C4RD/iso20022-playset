@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SystemEventNotificationV02
 
 class ADMI_004_001_02():

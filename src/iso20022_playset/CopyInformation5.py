@@ -1,6 +1,6 @@
-import base_types
-import AnyBICDec2014Identifier
+from . import base_types
 import YesNoIndicator
+import AnyBICDec2014Identifier
 
 class CopyInformation5(base_types._BaseFieldType):
 

@@ -1,26 +1,13 @@
-import base_types
-import ISODateTime
+from . import base_types
 import Max140Text
+import ISODateTime
 import TerminalManagementActionResult2Code
-import ATMCommand5Code
 import ATMCommandIdentification1
+import ATMCommand5Code
 
 class ATMCommand8(base_types._BaseFieldType):
 
-	__slots__ = ["_Rslt", "_Tp", "_CmdId", "_ReqrdDtTm", "_PrcdDtTm", "_AddtlErrInf"]
-	@property
-	def Rslt(self):
-		return self._Rslt
-
-	@Rslt.setter
-	def Rslt(self, value):
-		self._Rslt = value if type(value) != auto else self.make_default("Rslt")
-
-	@Rslt.deleter
-	def Rslt(self):
-		del self._Rslt
-		self._Rslt = None
-
+	__slots__ = ["_Tp", "_PrcdDtTm", "_AddtlErrInf", "_ReqrdDtTm", "_CmdId", "_Rslt"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -33,32 +20,6 @@ class ATMCommand8(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
-
-	@property
-	def CmdId(self):
-		return self._CmdId
-
-	@CmdId.setter
-	def CmdId(self, value):
-		self._CmdId = value if type(value) != auto else self.make_default("CmdId")
-
-	@CmdId.deleter
-	def CmdId(self):
-		del self._CmdId
-		self._CmdId = None
-
-	@property
-	def ReqrdDtTm(self):
-		return self._ReqrdDtTm
-
-	@ReqrdDtTm.setter
-	def ReqrdDtTm(self, value):
-		self._ReqrdDtTm = value if type(value) != auto else self.make_default("ReqrdDtTm")
-
-	@ReqrdDtTm.deleter
-	def ReqrdDtTm(self):
-		del self._ReqrdDtTm
-		self._ReqrdDtTm = None
 
 	@property
 	def PrcdDtTm(self):
@@ -86,12 +47,51 @@ class ATMCommand8(base_types._BaseFieldType):
 		del self._AddtlErrInf
 		self._AddtlErrInf = None
 
+	@property
+	def ReqrdDtTm(self):
+		return self._ReqrdDtTm
+
+	@ReqrdDtTm.setter
+	def ReqrdDtTm(self, value):
+		self._ReqrdDtTm = value if type(value) != auto else self.make_default("ReqrdDtTm")
+
+	@ReqrdDtTm.deleter
+	def ReqrdDtTm(self):
+		del self._ReqrdDtTm
+		self._ReqrdDtTm = None
+
+	@property
+	def CmdId(self):
+		return self._CmdId
+
+	@CmdId.setter
+	def CmdId(self, value):
+		self._CmdId = value if type(value) != auto else self.make_default("CmdId")
+
+	@CmdId.deleter
+	def CmdId(self):
+		del self._CmdId
+		self._CmdId = None
+
+	@property
+	def Rslt(self):
+		return self._Rslt
+
+	@Rslt.setter
+	def Rslt(self, value):
+		self._Rslt = value if type(value) != auto else self.make_default("Rslt")
+
+	@Rslt.deleter
+	def Rslt(self):
+		del self._Rslt
+		self._Rslt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rslt', type=TerminalManagementActionResult2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ATMCommand5Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmdId', type=ATMCommandIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqrdDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcdDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlErrInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqrdDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmdId', type=ATMCommandIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rslt', type=TerminalManagementActionResult2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

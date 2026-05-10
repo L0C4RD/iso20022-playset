@@ -1,35 +1,22 @@
-import base_types
-import RequestedIndicator
+from . import base_types
 import CashBalanceReturnCriteria2
+import RequestedIndicator
 
 class CashAccountReturnCriteria5(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrInd", "_NmInd", "_TpInd", "_StgOrdrInd", "_AcctSvcrInd", "_BilLmtInd", "_BilBalRtrCrit", "_MulLmtInd", "_CcyInd", "_MulBalRtrCrit"]
+	__slots__ = ["_StgOrdrInd", "_TpInd", "_MulBalRtrCrit", "_CcyInd", "_AcctOwnrInd", "_AcctSvcrInd", "_NmInd", "_BilBalRtrCrit", "_MulLmtInd", "_BilLmtInd"]
 	@property
-	def AcctOwnrInd(self):
-		return self._AcctOwnrInd
+	def StgOrdrInd(self):
+		return self._StgOrdrInd
 
-	@AcctOwnrInd.setter
-	def AcctOwnrInd(self, value):
-		self._AcctOwnrInd = value if type(value) != auto else self.make_default("AcctOwnrInd")
+	@StgOrdrInd.setter
+	def StgOrdrInd(self, value):
+		self._StgOrdrInd = value if type(value) != auto else self.make_default("StgOrdrInd")
 
-	@AcctOwnrInd.deleter
-	def AcctOwnrInd(self):
-		del self._AcctOwnrInd
-		self._AcctOwnrInd = None
-
-	@property
-	def NmInd(self):
-		return self._NmInd
-
-	@NmInd.setter
-	def NmInd(self, value):
-		self._NmInd = value if type(value) != auto else self.make_default("NmInd")
-
-	@NmInd.deleter
-	def NmInd(self):
-		del self._NmInd
-		self._NmInd = None
+	@StgOrdrInd.deleter
+	def StgOrdrInd(self):
+		del self._StgOrdrInd
+		self._StgOrdrInd = None
 
 	@property
 	def TpInd(self):
@@ -45,17 +32,43 @@ class CashAccountReturnCriteria5(base_types._BaseFieldType):
 		self._TpInd = None
 
 	@property
-	def StgOrdrInd(self):
-		return self._StgOrdrInd
+	def MulBalRtrCrit(self):
+		return self._MulBalRtrCrit
 
-	@StgOrdrInd.setter
-	def StgOrdrInd(self, value):
-		self._StgOrdrInd = value if type(value) != auto else self.make_default("StgOrdrInd")
+	@MulBalRtrCrit.setter
+	def MulBalRtrCrit(self, value):
+		self._MulBalRtrCrit = value if type(value) != auto else self.make_default("MulBalRtrCrit")
 
-	@StgOrdrInd.deleter
-	def StgOrdrInd(self):
-		del self._StgOrdrInd
-		self._StgOrdrInd = None
+	@MulBalRtrCrit.deleter
+	def MulBalRtrCrit(self):
+		del self._MulBalRtrCrit
+		self._MulBalRtrCrit = None
+
+	@property
+	def CcyInd(self):
+		return self._CcyInd
+
+	@CcyInd.setter
+	def CcyInd(self, value):
+		self._CcyInd = value if type(value) != auto else self.make_default("CcyInd")
+
+	@CcyInd.deleter
+	def CcyInd(self):
+		del self._CcyInd
+		self._CcyInd = None
+
+	@property
+	def AcctOwnrInd(self):
+		return self._AcctOwnrInd
+
+	@AcctOwnrInd.setter
+	def AcctOwnrInd(self, value):
+		self._AcctOwnrInd = value if type(value) != auto else self.make_default("AcctOwnrInd")
+
+	@AcctOwnrInd.deleter
+	def AcctOwnrInd(self):
+		del self._AcctOwnrInd
+		self._AcctOwnrInd = None
 
 	@property
 	def AcctSvcrInd(self):
@@ -71,17 +84,17 @@ class CashAccountReturnCriteria5(base_types._BaseFieldType):
 		self._AcctSvcrInd = None
 
 	@property
-	def BilLmtInd(self):
-		return self._BilLmtInd
+	def NmInd(self):
+		return self._NmInd
 
-	@BilLmtInd.setter
-	def BilLmtInd(self, value):
-		self._BilLmtInd = value if type(value) != auto else self.make_default("BilLmtInd")
+	@NmInd.setter
+	def NmInd(self, value):
+		self._NmInd = value if type(value) != auto else self.make_default("NmInd")
 
-	@BilLmtInd.deleter
-	def BilLmtInd(self):
-		del self._BilLmtInd
-		self._BilLmtInd = None
+	@NmInd.deleter
+	def NmInd(self):
+		del self._NmInd
+		self._NmInd = None
 
 	@property
 	def BilBalRtrCrit(self):
@@ -110,41 +123,28 @@ class CashAccountReturnCriteria5(base_types._BaseFieldType):
 		self._MulLmtInd = None
 
 	@property
-	def CcyInd(self):
-		return self._CcyInd
+	def BilLmtInd(self):
+		return self._BilLmtInd
 
-	@CcyInd.setter
-	def CcyInd(self, value):
-		self._CcyInd = value if type(value) != auto else self.make_default("CcyInd")
+	@BilLmtInd.setter
+	def BilLmtInd(self, value):
+		self._BilLmtInd = value if type(value) != auto else self.make_default("BilLmtInd")
 
-	@CcyInd.deleter
-	def CcyInd(self):
-		del self._CcyInd
-		self._CcyInd = None
-
-	@property
-	def MulBalRtrCrit(self):
-		return self._MulBalRtrCrit
-
-	@MulBalRtrCrit.setter
-	def MulBalRtrCrit(self, value):
-		self._MulBalRtrCrit = value if type(value) != auto else self.make_default("MulBalRtrCrit")
-
-	@MulBalRtrCrit.deleter
-	def MulBalRtrCrit(self):
-		del self._MulBalRtrCrit
-		self._MulBalRtrCrit = None
+	@BilLmtInd.deleter
+	def BilLmtInd(self):
+		del self._BilLmtInd
+		self._BilLmtInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StgOrdrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MulBalRtrCrit', type=CashBalanceReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BilLmtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BilBalRtrCrit', type=CashBalanceReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MulLmtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CcyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MulBalRtrCrit', type=CashBalanceReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BilLmtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

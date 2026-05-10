@@ -1,31 +1,57 @@
-import base_types
-import CollateralParameters10
-import SupplementaryData1
-import TransactionIdentifications45
-import CashMovement8
-import DealTransactionDetails5
-import OtherParties38
-import Linkages58
-import Pagination1
-import CollateralDate2
-import CollateralParties10
+from . import base_types
 import SecuritiesMovement9
+import CollateralParties10
+import TransactionIdentifications45
+import DealTransactionDetails5
+import SupplementaryData1
+import Pagination1
+import CashMovement8
+import OtherParties38
+import CollateralParameters10
+import Linkages58
+import CollateralDate2
 
 class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_CshMvmnt", "_SctiesMvmnt", "_OthrPties", "_Lnkgs", "_DealTxDtls", "_TxInstrId", "_DealTxDt", "_Pgntn", "_GnlParams", "_CollPties"]
+	__slots__ = ["_TxInstrId", "_Lnkgs", "_CollPties", "_CshMvmnt", "_SctiesMvmnt", "_OthrPties", "_SplmtryData", "_GnlParams", "_DealTxDtls", "_DealTxDt", "_Pgntn"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def TxInstrId(self):
+		return self._TxInstrId
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@TxInstrId.setter
+	def TxInstrId(self, value):
+		self._TxInstrId = value if type(value) != auto else self.make_default("TxInstrId")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@TxInstrId.deleter
+	def TxInstrId(self):
+		del self._TxInstrId
+		self._TxInstrId = None
+
+	@property
+	def Lnkgs(self):
+		return self._Lnkgs
+
+	@Lnkgs.setter
+	def Lnkgs(self, value):
+		self._Lnkgs = value if type(value) != auto else self.make_default("Lnkgs")
+
+	@Lnkgs.deleter
+	def Lnkgs(self):
+		del self._Lnkgs
+		self._Lnkgs = None
+
+	@property
+	def CollPties(self):
+		return self._CollPties
+
+	@CollPties.setter
+	def CollPties(self, value):
+		self._CollPties = value if type(value) != auto else self.make_default("CollPties")
+
+	@CollPties.deleter
+	def CollPties(self):
+		del self._CollPties
+		self._CollPties = None
 
 	@property
 	def CshMvmnt(self):
@@ -67,17 +93,30 @@ class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 		self._OthrPties = None
 
 	@property
-	def Lnkgs(self):
-		return self._Lnkgs
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Lnkgs.setter
-	def Lnkgs(self, value):
-		self._Lnkgs = value if type(value) != auto else self.make_default("Lnkgs")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@Lnkgs.deleter
-	def Lnkgs(self):
-		del self._Lnkgs
-		self._Lnkgs = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def GnlParams(self):
+		return self._GnlParams
+
+	@GnlParams.setter
+	def GnlParams(self, value):
+		self._GnlParams = value if type(value) != auto else self.make_default("GnlParams")
+
+	@GnlParams.deleter
+	def GnlParams(self):
+		del self._GnlParams
+		self._GnlParams = None
 
 	@property
 	def DealTxDtls(self):
@@ -91,19 +130,6 @@ class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 	def DealTxDtls(self):
 		del self._DealTxDtls
 		self._DealTxDtls = None
-
-	@property
-	def TxInstrId(self):
-		return self._TxInstrId
-
-	@TxInstrId.setter
-	def TxInstrId(self, value):
-		self._TxInstrId = value if type(value) != auto else self.make_default("TxInstrId")
-
-	@TxInstrId.deleter
-	def TxInstrId(self):
-		del self._TxInstrId
-		self._TxInstrId = None
 
 	@property
 	def DealTxDt(self):
@@ -131,43 +157,17 @@ class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 		del self._Pgntn
 		self._Pgntn = None
 
-	@property
-	def GnlParams(self):
-		return self._GnlParams
-
-	@GnlParams.setter
-	def GnlParams(self, value):
-		self._GnlParams = value if type(value) != auto else self.make_default("GnlParams")
-
-	@GnlParams.deleter
-	def GnlParams(self):
-		del self._GnlParams
-		self._GnlParams = None
-
-	@property
-	def CollPties(self):
-		return self._CollPties
-
-	@CollPties.setter
-	def CollPties(self, value):
-		self._CollPties = value if type(value) != auto else self.make_default("CollPties")
-
-	@CollPties.deleter
-	def CollPties(self):
-		del self._CollPties
-		self._CollPties = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxInstrId', type=TransactionIdentifications45, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lnkgs', type=Linkages58, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CollPties', type=CollateralParties10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshMvmnt', type=CashMovement8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctiesMvmnt', type=SecuritiesMovement9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrPties', type=OtherParties38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lnkgs', type=Linkages58, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GnlParams', type=CollateralParameters10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DealTxDtls', type=DealTransactionDetails5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxInstrId', type=TransactionIdentifications45, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DealTxDt', type=CollateralDate2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GnlParams', type=CollateralParameters10, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollPties', type=CollateralParties10, min=1, max=1, mutex_group=None, array=False),
 	))
 

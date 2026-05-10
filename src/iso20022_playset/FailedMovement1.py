@@ -1,12 +1,25 @@
-import base_types
-import FailedSettlementReason1FormatChoice
-import ActiveCurrencyAndAmount
-import UnitOrFaceAmount1Choice
+from . import base_types
 import SecurityIdentification7
+import FailedSettlementReason1FormatChoice
+import UnitOrFaceAmount1Choice
+import ActiveCurrencyAndAmount
 
 class FailedMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_SctiesQty", "_SctyId", "_CshAmt"]
+	__slots__ = ["_CshAmt", "_Rsn", "_SctiesQty", "_SctyId"]
+	@property
+	def CshAmt(self):
+		return self._CshAmt
+
+	@CshAmt.setter
+	def CshAmt(self, value):
+		self._CshAmt = value if type(value) != auto else self.make_default("CshAmt")
+
+	@CshAmt.deleter
+	def CshAmt(self):
+		del self._CshAmt
+		self._CshAmt = None
+
 	@property
 	def Rsn(self):
 		return self._Rsn
@@ -46,23 +59,10 @@ class FailedMovement1(base_types._BaseFieldType):
 		del self._SctyId
 		self._SctyId = None
 
-	@property
-	def CshAmt(self):
-		return self._CshAmt
-
-	@CshAmt.setter
-	def CshAmt(self, value):
-		self._CshAmt = value if type(value) != auto else self.make_default("CshAmt")
-
-	@CshAmt.deleter
-	def CshAmt(self):
-		del self._CshAmt
-		self._CshAmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CshAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rsn', type=FailedSettlementReason1FormatChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

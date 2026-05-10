@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RejectInvestigationV07
 
 class CAMT_031_001_07():

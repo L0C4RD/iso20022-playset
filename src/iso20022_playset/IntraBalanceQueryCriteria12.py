@@ -1,27 +1,14 @@
-import base_types
+from . import base_types
 import Max35Text
-import SystemPartyIdentification8
-import BranchAndFinancialInstitutionIdentification8
-import ModificationProcessingStatus9Choice
 import DateAndDateTimeSearch5Choice
 import AccountIdentificationSearchCriteria2Choice
+import ModificationProcessingStatus9Choice
+import BranchAndFinancialInstitutionIdentification8
+import SystemPartyIdentification8
 
 class IntraBalanceQueryCriteria12(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcct", "_PrcgSts", "_CreDtTm", "_CshAcctOwnr", "_ModReqId", "_CshAcctSvcr", "_MsgOrgtr"]
-	@property
-	def CshAcct(self):
-		return self._CshAcct
-
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
-
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
-
+	__slots__ = ["_PrcgSts", "_MsgOrgtr", "_CreDtTm", "_CshAcctSvcr", "_CshAcctOwnr", "_CshAcct", "_ModReqId"]
 	@property
 	def PrcgSts(self):
 		return self._PrcgSts
@@ -34,6 +21,19 @@ class IntraBalanceQueryCriteria12(base_types._BaseFieldType):
 	def PrcgSts(self):
 		del self._PrcgSts
 		self._PrcgSts = None
+
+	@property
+	def MsgOrgtr(self):
+		return self._MsgOrgtr
+
+	@MsgOrgtr.setter
+	def MsgOrgtr(self, value):
+		self._MsgOrgtr = value if type(value) != auto else self.make_default("MsgOrgtr")
+
+	@MsgOrgtr.deleter
+	def MsgOrgtr(self):
+		del self._MsgOrgtr
+		self._MsgOrgtr = None
 
 	@property
 	def CreDtTm(self):
@@ -49,6 +49,19 @@ class IntraBalanceQueryCriteria12(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	@property
+	def CshAcctSvcr(self):
+		return self._CshAcctSvcr
+
+	@CshAcctSvcr.setter
+	def CshAcctSvcr(self, value):
+		self._CshAcctSvcr = value if type(value) != auto else self.make_default("CshAcctSvcr")
+
+	@CshAcctSvcr.deleter
+	def CshAcctSvcr(self):
+		del self._CshAcctSvcr
+		self._CshAcctSvcr = None
+
+	@property
 	def CshAcctOwnr(self):
 		return self._CshAcctOwnr
 
@@ -60,6 +73,19 @@ class IntraBalanceQueryCriteria12(base_types._BaseFieldType):
 	def CshAcctOwnr(self):
 		del self._CshAcctOwnr
 		self._CshAcctOwnr = None
+
+	@property
+	def CshAcct(self):
+		return self._CshAcct
+
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
 
 	@property
 	def ModReqId(self):
@@ -74,39 +100,13 @@ class IntraBalanceQueryCriteria12(base_types._BaseFieldType):
 		del self._ModReqId
 		self._ModReqId = None
 
-	@property
-	def CshAcctSvcr(self):
-		return self._CshAcctSvcr
-
-	@CshAcctSvcr.setter
-	def CshAcctSvcr(self, value):
-		self._CshAcctSvcr = value if type(value) != auto else self.make_default("CshAcctSvcr")
-
-	@CshAcctSvcr.deleter
-	def CshAcctSvcr(self):
-		del self._CshAcctSvcr
-		self._CshAcctSvcr = None
-
-	@property
-	def MsgOrgtr(self):
-		return self._MsgOrgtr
-
-	@MsgOrgtr.setter
-	def MsgOrgtr(self, value):
-		self._MsgOrgtr = value if type(value) != auto else self.make_default("MsgOrgtr")
-
-	@MsgOrgtr.deleter
-	def MsgOrgtr(self):
-		del self._MsgOrgtr
-		self._MsgOrgtr = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshAcct', type=AccountIdentificationSearchCriteria2Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrcgSts', type=ModificationProcessingStatus9Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTimeSearch5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ModReqId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgOrgtr', type=SystemPartyIdentification8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTimeSearch5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshAcct', type=AccountIdentificationSearchCriteria2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ModReqId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,25 +1,12 @@
-import base_types
-import SignedQuantityFormat14
+from . import base_types
 import ISODate
-import SecuritiesEntryType2Code
 import SafekeepingPlaceFormat42Choice
+import SignedQuantityFormat14
+import SecuritiesEntryType2Code
 
 class HoldingBalance14(base_types._BaseFieldType):
 
-	__slots__ = ["_BalTp", "_SfkpgPlc", "_Dt", "_Bal"]
-	@property
-	def BalTp(self):
-		return self._BalTp
-
-	@BalTp.setter
-	def BalTp(self, value):
-		self._BalTp = value if type(value) != auto else self.make_default("BalTp")
-
-	@BalTp.deleter
-	def BalTp(self):
-		del self._BalTp
-		self._BalTp = None
-
+	__slots__ = ["_SfkpgPlc", "_Bal", "_Dt", "_BalTp"]
 	@property
 	def SfkpgPlc(self):
 		return self._SfkpgPlc
@@ -32,6 +19,19 @@ class HoldingBalance14(base_types._BaseFieldType):
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
 		self._SfkpgPlc = None
+
+	@property
+	def Bal(self):
+		return self._Bal
+
+	@Bal.setter
+	def Bal(self, value):
+		self._Bal = value if type(value) != auto else self.make_default("Bal")
+
+	@Bal.deleter
+	def Bal(self):
+		del self._Bal
+		self._Bal = None
 
 	@property
 	def Dt(self):
@@ -47,22 +47,22 @@ class HoldingBalance14(base_types._BaseFieldType):
 		self._Dt = None
 
 	@property
-	def Bal(self):
-		return self._Bal
+	def BalTp(self):
+		return self._BalTp
 
-	@Bal.setter
-	def Bal(self, value):
-		self._Bal = value if type(value) != auto else self.make_default("Bal")
+	@BalTp.setter
+	def BalTp(self, value):
+		self._BalTp = value if type(value) != auto else self.make_default("BalTp")
 
-	@Bal.deleter
-	def Bal(self):
-		del self._Bal
-		self._Bal = None
+	@BalTp.deleter
+	def BalTp(self):
+		del self._BalTp
+		self._BalTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BalTp', type=SecuritiesEntryType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat42Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bal', type=SignedQuantityFormat14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTp', type=SecuritiesEntryType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

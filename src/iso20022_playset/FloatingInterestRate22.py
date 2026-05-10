@@ -1,25 +1,38 @@
-import base_types
-import SecuritiesTransactionPrice18Choice
+from . import base_types
 import BenchmarkCurveName10Choice
-import RateAdjustment1
 import InterestComputationMethodFormat6Choice
+import SecuritiesTransactionPrice18Choice
 import InterestRateContractTerm2
+import RateAdjustment1
 
 class FloatingInterestRate22(base_types._BaseFieldType):
 
-	__slots__ = ["_Term", "_RateAdjstmnt", "_DayCntBsis", "_PmtFrqcy", "_RefRate", "_RstFrqcy", "_Sprd"]
+	__slots__ = ["_RstFrqcy", "_RefRate", "_RateAdjstmnt", "_DayCntBsis", "_PmtFrqcy", "_Term", "_Sprd"]
 	@property
-	def Term(self):
-		return self._Term
+	def RstFrqcy(self):
+		return self._RstFrqcy
 
-	@Term.setter
-	def Term(self, value):
-		self._Term = value if type(value) != auto else self.make_default("Term")
+	@RstFrqcy.setter
+	def RstFrqcy(self, value):
+		self._RstFrqcy = value if type(value) != auto else self.make_default("RstFrqcy")
 
-	@Term.deleter
-	def Term(self):
-		del self._Term
-		self._Term = None
+	@RstFrqcy.deleter
+	def RstFrqcy(self):
+		del self._RstFrqcy
+		self._RstFrqcy = None
+
+	@property
+	def RefRate(self):
+		return self._RefRate
+
+	@RefRate.setter
+	def RefRate(self, value):
+		self._RefRate = value if type(value) != auto else self.make_default("RefRate")
+
+	@RefRate.deleter
+	def RefRate(self):
+		del self._RefRate
+		self._RefRate = None
 
 	@property
 	def RateAdjstmnt(self):
@@ -61,30 +74,17 @@ class FloatingInterestRate22(base_types._BaseFieldType):
 		self._PmtFrqcy = None
 
 	@property
-	def RefRate(self):
-		return self._RefRate
+	def Term(self):
+		return self._Term
 
-	@RefRate.setter
-	def RefRate(self, value):
-		self._RefRate = value if type(value) != auto else self.make_default("RefRate")
+	@Term.setter
+	def Term(self, value):
+		self._Term = value if type(value) != auto else self.make_default("Term")
 
-	@RefRate.deleter
-	def RefRate(self):
-		del self._RefRate
-		self._RefRate = None
-
-	@property
-	def RstFrqcy(self):
-		return self._RstFrqcy
-
-	@RstFrqcy.setter
-	def RstFrqcy(self, value):
-		self._RstFrqcy = value if type(value) != auto else self.make_default("RstFrqcy")
-
-	@RstFrqcy.deleter
-	def RstFrqcy(self):
-		del self._RstFrqcy
-		self._RstFrqcy = None
+	@Term.deleter
+	def Term(self):
+		del self._Term
+		self._Term = None
 
 	@property
 	def Sprd(self):
@@ -100,12 +100,12 @@ class FloatingInterestRate22(base_types._BaseFieldType):
 		self._Sprd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Term', type=InterestRateContractTerm2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RstFrqcy', type=InterestRateContractTerm2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefRate', type=BenchmarkCurveName10Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RateAdjstmnt', type=RateAdjustment1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DayCntBsis', type=InterestComputationMethodFormat6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtFrqcy', type=InterestRateContractTerm2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefRate', type=BenchmarkCurveName10Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RstFrqcy', type=InterestRateContractTerm2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Term', type=InterestRateContractTerm2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sprd', type=SecuritiesTransactionPrice18Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

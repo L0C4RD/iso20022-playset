@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
+import ISODate
 import Max140Text
 import AgreementFramework1Choice
 import ActiveCurrencyCode
-import ISODate
 
 class Agreement4(base_types._BaseFieldType):
 
-	__slots__ = ["_BaseCcy", "_AgrmtFrmwk", "_AgrmtDtls", "_AgrmtId", "_AgrmtDt"]
+	__slots__ = ["_BaseCcy", "_AgrmtDtls", "_AgrmtFrmwk", "_AgrmtId", "_AgrmtDt"]
 	@property
 	def BaseCcy(self):
 		return self._BaseCcy
@@ -21,19 +21,6 @@ class Agreement4(base_types._BaseFieldType):
 		self._BaseCcy = None
 
 	@property
-	def AgrmtFrmwk(self):
-		return self._AgrmtFrmwk
-
-	@AgrmtFrmwk.setter
-	def AgrmtFrmwk(self, value):
-		self._AgrmtFrmwk = value if type(value) != auto else self.make_default("AgrmtFrmwk")
-
-	@AgrmtFrmwk.deleter
-	def AgrmtFrmwk(self):
-		del self._AgrmtFrmwk
-		self._AgrmtFrmwk = None
-
-	@property
 	def AgrmtDtls(self):
 		return self._AgrmtDtls
 
@@ -45,6 +32,19 @@ class Agreement4(base_types._BaseFieldType):
 	def AgrmtDtls(self):
 		del self._AgrmtDtls
 		self._AgrmtDtls = None
+
+	@property
+	def AgrmtFrmwk(self):
+		return self._AgrmtFrmwk
+
+	@AgrmtFrmwk.setter
+	def AgrmtFrmwk(self, value):
+		self._AgrmtFrmwk = value if type(value) != auto else self.make_default("AgrmtFrmwk")
+
+	@AgrmtFrmwk.deleter
+	def AgrmtFrmwk(self):
+		del self._AgrmtFrmwk
+		self._AgrmtFrmwk = None
 
 	@property
 	def AgrmtId(self):
@@ -74,8 +74,8 @@ class Agreement4(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgrmtFrmwk', type=AgreementFramework1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgrmtDtls', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgrmtFrmwk', type=AgreementFramework1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgrmtId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgrmtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))

@@ -1,11 +1,11 @@
-import base_types
-import Max35Text
-import DecimalNumber
+from . import base_types
 import Exact4AlphaNumericText
+import DecimalNumber
+import Max35Text
 
 class ProprietaryQuantity8(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_SchmeNm", "_Issr", "_QtyTp"]
+	__slots__ = ["_Qty", "_QtyTp", "_Issr", "_SchmeNm"]
 	@property
 	def Qty(self):
 		return self._Qty
@@ -20,17 +20,17 @@ class ProprietaryQuantity8(base_types._BaseFieldType):
 		self._Qty = None
 
 	@property
-	def SchmeNm(self):
-		return self._SchmeNm
+	def QtyTp(self):
+		return self._QtyTp
 
-	@SchmeNm.setter
-	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != auto else self.make_default("SchmeNm")
+	@QtyTp.setter
+	def QtyTp(self, value):
+		self._QtyTp = value if type(value) != auto else self.make_default("QtyTp")
 
-	@SchmeNm.deleter
-	def SchmeNm(self):
-		del self._SchmeNm
-		self._SchmeNm = None
+	@QtyTp.deleter
+	def QtyTp(self):
+		del self._QtyTp
+		self._QtyTp = None
 
 	@property
 	def Issr(self):
@@ -46,22 +46,22 @@ class ProprietaryQuantity8(base_types._BaseFieldType):
 		self._Issr = None
 
 	@property
-	def QtyTp(self):
-		return self._QtyTp
+	def SchmeNm(self):
+		return self._SchmeNm
 
-	@QtyTp.setter
-	def QtyTp(self, value):
-		self._QtyTp = value if type(value) != auto else self.make_default("QtyTp")
+	@SchmeNm.setter
+	def SchmeNm(self, value):
+		self._SchmeNm = value if type(value) != auto else self.make_default("SchmeNm")
 
-	@QtyTp.deleter
-	def QtyTp(self):
-		del self._QtyTp
-		self._QtyTp = None
+	@SchmeNm.deleter
+	def SchmeNm(self):
+		del self._SchmeNm
+		self._SchmeNm = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qty', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SchmeNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtyTp', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchmeNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

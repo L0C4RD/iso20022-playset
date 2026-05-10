@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesFinancingReportingMissingCollateralRequestV02
 
 class AUTH_083_001_02():

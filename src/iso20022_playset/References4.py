@@ -1,22 +1,22 @@
-import base_types
+from . import base_types
 import MessageIdentification1
 import Max70Text
 
 class References4(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcId", "_AttchdDocNm", "_MsgId"]
+	__slots__ = ["_MsgId", "_AttchdDocNm", "_PrcId"]
 	@property
-	def PrcId(self):
-		return self._PrcId
+	def MsgId(self):
+		return self._MsgId
 
-	@PrcId.setter
-	def PrcId(self, value):
-		self._PrcId = value if type(value) != auto else self.make_default("PrcId")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@PrcId.deleter
-	def PrcId(self):
-		del self._PrcId
-		self._PrcId = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def AttchdDocNm(self):
@@ -32,21 +32,21 @@ class References4(base_types._BaseFieldType):
 		self._AttchdDocNm = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def PrcId(self):
+		return self._PrcId
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@PrcId.setter
+	def PrcId(self, value):
+		self._PrcId = value if type(value) != auto else self.make_default("PrcId")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@PrcId.deleter
+	def PrcId(self):
+		del self._PrcId
+		self._PrcId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AttchdDocNm', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AttchdDocNm', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrcId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

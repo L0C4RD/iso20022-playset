@@ -1,38 +1,25 @@
-import base_types
-import DateTimeSearch2Choice
-import ReservationType2Choice
-import SystemIdentification2Choice
+from . import base_types
 import AccountIdentification4Choice
+import SystemIdentification2Choice
+import ReservationType2Choice
 import BranchAndFinancialInstitutionIdentification8
+import DateTimeSearch2Choice
 
 class ReservationSearchCriteria6(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_DtTm", "_AcctOwnr", "_SysId", "_CurRsvatnTp", "_DfltRsvatnTp"]
+	__slots__ = ["_CurRsvatnTp", "_AcctOwnr", "_AcctId", "_SysId", "_DtTm", "_DfltRsvatnTp"]
 	@property
-	def AcctId(self):
-		return self._AcctId
+	def CurRsvatnTp(self):
+		return self._CurRsvatnTp
 
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+	@CurRsvatnTp.setter
+	def CurRsvatnTp(self, value):
+		self._CurRsvatnTp = value if type(value) != auto else self.make_default("CurRsvatnTp")
 
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
-	@property
-	def DtTm(self):
-		return self._DtTm
-
-	@DtTm.setter
-	def DtTm(self, value):
-		self._DtTm = value if type(value) != auto else self.make_default("DtTm")
-
-	@DtTm.deleter
-	def DtTm(self):
-		del self._DtTm
-		self._DtTm = None
+	@CurRsvatnTp.deleter
+	def CurRsvatnTp(self):
+		del self._CurRsvatnTp
+		self._CurRsvatnTp = None
 
 	@property
 	def AcctOwnr(self):
@@ -48,6 +35,19 @@ class ReservationSearchCriteria6(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
+	@property
 	def SysId(self):
 		return self._SysId
 
@@ -61,17 +61,17 @@ class ReservationSearchCriteria6(base_types._BaseFieldType):
 		self._SysId = None
 
 	@property
-	def CurRsvatnTp(self):
-		return self._CurRsvatnTp
+	def DtTm(self):
+		return self._DtTm
 
-	@CurRsvatnTp.setter
-	def CurRsvatnTp(self, value):
-		self._CurRsvatnTp = value if type(value) != auto else self.make_default("CurRsvatnTp")
+	@DtTm.setter
+	def DtTm(self, value):
+		self._DtTm = value if type(value) != auto else self.make_default("DtTm")
 
-	@CurRsvatnTp.deleter
-	def CurRsvatnTp(self):
-		del self._CurRsvatnTp
-		self._CurRsvatnTp = None
+	@DtTm.deleter
+	def DtTm(self):
+		del self._DtTm
+		self._DtTm = None
 
 	@property
 	def DfltRsvatnTp(self):
@@ -87,11 +87,11 @@ class ReservationSearchCriteria6(base_types._BaseFieldType):
 		self._DfltRsvatnTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtTm', type=DateTimeSearch2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurRsvatnTp', type=ReservationType2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtTm', type=DateTimeSearch2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DfltRsvatnTp', type=ReservationType2Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

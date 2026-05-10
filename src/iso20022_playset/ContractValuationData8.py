@@ -1,12 +1,12 @@
-import base_types
-import ISODateTime
-import AmountAndDirection109
+from . import base_types
 import LongFraction19DecimalNumber
+import AmountAndDirection109
 import ValuationType1Code
+import ISODateTime
 
 class ContractValuationData8(base_types._BaseFieldType):
 
-	__slots__ = ["_Dlta", "_CtrctVal", "_Tp", "_TmStmp"]
+	__slots__ = ["_Dlta", "_TmStmp", "_CtrctVal", "_Tp"]
 	@property
 	def Dlta(self):
 		return self._Dlta
@@ -19,6 +19,19 @@ class ContractValuationData8(base_types._BaseFieldType):
 	def Dlta(self):
 		del self._Dlta
 		self._Dlta = None
+
+	@property
+	def TmStmp(self):
+		return self._TmStmp
+
+	@TmStmp.setter
+	def TmStmp(self, value):
+		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
+
+	@TmStmp.deleter
+	def TmStmp(self):
+		del self._TmStmp
+		self._TmStmp = None
 
 	@property
 	def CtrctVal(self):
@@ -46,23 +59,10 @@ class ContractValuationData8(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
-	@property
-	def TmStmp(self):
-		return self._TmStmp
-
-	@TmStmp.setter
-	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
-
-	@TmStmp.deleter
-	def TmStmp(self):
-		del self._TmStmp
-		self._TmStmp = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dlta', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctVal', type=AmountAndDirection109, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ValuationType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

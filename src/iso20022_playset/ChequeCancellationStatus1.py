@@ -1,11 +1,24 @@
-import base_types
-import Max140Text
+from . import base_types
 import ChequePartyRole1Code
+import Max140Text
 import ChequeCancellationStatus1Choice
 
 class ChequeCancellationStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_AddtlInf", "_Orgtr"]
+	__slots__ = ["_Orgtr", "_Sts", "_AddtlInf"]
+	@property
+	def Orgtr(self):
+		return self._Orgtr
+
+	@Orgtr.setter
+	def Orgtr(self, value):
+		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
+
+	@Orgtr.deleter
+	def Orgtr(self):
+		del self._Orgtr
+		self._Orgtr = None
+
 	@property
 	def Sts(self):
 		return self._Sts
@@ -32,22 +45,9 @@ class ChequeCancellationStatus1(base_types._BaseFieldType):
 		del self._AddtlInf
 		self._AddtlInf = None
 
-	@property
-	def Orgtr(self):
-		return self._Orgtr
-
-	@Orgtr.setter
-	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
-
-	@Orgtr.deleter
-	def Orgtr(self):
-		del self._Orgtr
-		self._Orgtr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Orgtr', type=ChequePartyRole1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=ChequeCancellationStatus1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Orgtr', type=ChequePartyRole1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

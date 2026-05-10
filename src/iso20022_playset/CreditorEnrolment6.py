@@ -1,13 +1,39 @@
-import base_types
+from . import base_types
+import Max10KBinary
 import Max140Text
+import MerchantCategoryCodeIdentifier
 import CreditorServiceEnrolment1
 import RTPPartyIdentification2
-import MerchantCategoryCodeIdentifier
-import Max10KBinary
 
 class CreditorEnrolment6(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrTradgNm", "_Enrlmnt", "_CdtrLogo", "_MrchntCtgyCd", "_Cdtr", "_UltmtCdtr"]
+	__slots__ = ["_Cdtr", "_CdtrLogo", "_CdtrTradgNm", "_Enrlmnt", "_UltmtCdtr", "_MrchntCtgyCd"]
+	@property
+	def Cdtr(self):
+		return self._Cdtr
+
+	@Cdtr.setter
+	def Cdtr(self, value):
+		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
+
+	@Cdtr.deleter
+	def Cdtr(self):
+		del self._Cdtr
+		self._Cdtr = None
+
+	@property
+	def CdtrLogo(self):
+		return self._CdtrLogo
+
+	@CdtrLogo.setter
+	def CdtrLogo(self, value):
+		self._CdtrLogo = value if type(value) != auto else self.make_default("CdtrLogo")
+
+	@CdtrLogo.deleter
+	def CdtrLogo(self):
+		del self._CdtrLogo
+		self._CdtrLogo = None
+
 	@property
 	def CdtrTradgNm(self):
 		return self._CdtrTradgNm
@@ -35,17 +61,17 @@ class CreditorEnrolment6(base_types._BaseFieldType):
 		self._Enrlmnt = None
 
 	@property
-	def CdtrLogo(self):
-		return self._CdtrLogo
+	def UltmtCdtr(self):
+		return self._UltmtCdtr
 
-	@CdtrLogo.setter
-	def CdtrLogo(self, value):
-		self._CdtrLogo = value if type(value) != auto else self.make_default("CdtrLogo")
+	@UltmtCdtr.setter
+	def UltmtCdtr(self, value):
+		self._UltmtCdtr = value if type(value) != auto else self.make_default("UltmtCdtr")
 
-	@CdtrLogo.deleter
-	def CdtrLogo(self):
-		del self._CdtrLogo
-		self._CdtrLogo = None
+	@UltmtCdtr.deleter
+	def UltmtCdtr(self):
+		del self._UltmtCdtr
+		self._UltmtCdtr = None
 
 	@property
 	def MrchntCtgyCd(self):
@@ -60,38 +86,12 @@ class CreditorEnrolment6(base_types._BaseFieldType):
 		del self._MrchntCtgyCd
 		self._MrchntCtgyCd = None
 
-	@property
-	def Cdtr(self):
-		return self._Cdtr
-
-	@Cdtr.setter
-	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
-
-	@Cdtr.deleter
-	def Cdtr(self):
-		del self._Cdtr
-		self._Cdtr = None
-
-	@property
-	def UltmtCdtr(self):
-		return self._UltmtCdtr
-
-	@UltmtCdtr.setter
-	def UltmtCdtr(self, value):
-		self._UltmtCdtr = value if type(value) != auto else self.make_default("UltmtCdtr")
-
-	@UltmtCdtr.deleter
-	def UltmtCdtr(self):
-		del self._UltmtCdtr
-		self._UltmtCdtr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Cdtr', type=RTPPartyIdentification2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrLogo', type=Max10KBinary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrTradgNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Enrlmnt', type=CreditorServiceEnrolment1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrLogo', type=Max10KBinary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrchntCtgyCd', type=MerchantCategoryCodeIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cdtr', type=RTPPartyIdentification2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UltmtCdtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrchntCtgyCd', type=MerchantCategoryCodeIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

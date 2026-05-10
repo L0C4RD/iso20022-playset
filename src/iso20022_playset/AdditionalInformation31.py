@@ -1,10 +1,23 @@
-import base_types
-import Max35NumericText
+from . import base_types
 import Max350Text
+import Max35NumericText
 
 class AdditionalInformation31(base_types._BaseFieldType):
 
-	__slots__ = ["_AlphaNmrc", "_Nmrc", "_AddtlData"]
+	__slots__ = ["_AddtlData", "_AlphaNmrc", "_Nmrc"]
+	@property
+	def AddtlData(self):
+		return self._AddtlData
+
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
+
 	@property
 	def AlphaNmrc(self):
 		return self._AlphaNmrc
@@ -31,22 +44,9 @@ class AdditionalInformation31(base_types._BaseFieldType):
 		del self._Nmrc
 		self._Nmrc = None
 
-	@property
-	def AddtlData(self):
-		return self._AddtlData
-
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
-
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlData', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AlphaNmrc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nmrc', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

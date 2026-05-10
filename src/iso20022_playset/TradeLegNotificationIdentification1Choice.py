@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import UTIIdentifier
+import Max35Text
 
 class TradeLegNotificationIdentification1Choice(base_types._BaseFieldType):
 

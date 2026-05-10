@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import ISODate
+import Max35Text
 
 class EndPoint1Choice(base_types._BaseFieldType):
 

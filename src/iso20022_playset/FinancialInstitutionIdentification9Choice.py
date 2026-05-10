@@ -1,8 +1,8 @@
-import base_types
-import Max35Text
+from . import base_types
 import NameAndAddress5
-import ClearingSystemMemberIdentification4Choice
 import BICFIIdentifier
+import ClearingSystemMemberIdentification4Choice
+import Max35Text
 
 class FinancialInstitutionIdentification9Choice(base_types._BaseFieldType):
 

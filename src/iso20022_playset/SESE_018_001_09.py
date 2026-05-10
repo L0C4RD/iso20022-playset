@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountHoldingInformationV09
 
 class SESE_018_001_09():

@@ -1,7 +1,7 @@
-import base_types
-import AssetClassProductType7Code
-import AssetClassSubProductType15Code
+from . import base_types
 import AssetClassDetailedSubProductType10Code
+import AssetClassSubProductType15Code
+import AssetClassProductType7Code
 
 class MetalCommodityNonPrecious1(base_types._BaseFieldType):
 

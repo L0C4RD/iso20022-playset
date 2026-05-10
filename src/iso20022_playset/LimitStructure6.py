@@ -1,8 +1,8 @@
-import base_types
-import CreditDebitCode
-import DateAndDateTime2Choice
-import LimitIdentification8
+from . import base_types
 import Amount2Choice
+import LimitIdentification8
+import DateAndDateTime2Choice
+import CreditDebitCode
 
 class LimitStructure6(base_types._BaseFieldType):
 

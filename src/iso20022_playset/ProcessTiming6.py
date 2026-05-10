@@ -1,11 +1,11 @@
-import base_types
-import ISODateTime
+from . import base_types
 import Max9NumericText
 import TimeUnit1Code
+import ISODateTime
 
 class ProcessTiming6(base_types._BaseFieldType):
 
-	__slots__ = ["_StartTm", "_UnitOfTm", "_EndTm", "_Prd"]
+	__slots__ = ["_StartTm", "_EndTm", "_Prd", "_UnitOfTm"]
 	@property
 	def StartTm(self):
 		return self._StartTm
@@ -18,19 +18,6 @@ class ProcessTiming6(base_types._BaseFieldType):
 	def StartTm(self):
 		del self._StartTm
 		self._StartTm = None
-
-	@property
-	def UnitOfTm(self):
-		return self._UnitOfTm
-
-	@UnitOfTm.setter
-	def UnitOfTm(self, value):
-		self._UnitOfTm = value if type(value) != auto else self.make_default("UnitOfTm")
-
-	@UnitOfTm.deleter
-	def UnitOfTm(self):
-		del self._UnitOfTm
-		self._UnitOfTm = None
 
 	@property
 	def EndTm(self):
@@ -58,10 +45,23 @@ class ProcessTiming6(base_types._BaseFieldType):
 		del self._Prd
 		self._Prd = None
 
+	@property
+	def UnitOfTm(self):
+		return self._UnitOfTm
+
+	@UnitOfTm.setter
+	def UnitOfTm(self, value):
+		self._UnitOfTm = value if type(value) != auto else self.make_default("UnitOfTm")
+
+	@UnitOfTm.deleter
+	def UnitOfTm(self):
+		del self._UnitOfTm
+		self._UnitOfTm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='StartTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitOfTm', type=TimeUnit1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prd', type=Max9NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfTm', type=TimeUnit1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

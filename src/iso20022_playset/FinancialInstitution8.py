@@ -1,77 +1,25 @@
-import base_types
+from . import base_types
+import Address2
+import Max256Text
+import LocalData10
 import Max35Text
 import Max70Text
-import Address2
-import LocalData10
-import Max256Text
 
 class FinancialInstitution8(base_types._BaseFieldType):
 
-	__slots__ = ["_Email", "_Adr", "_LclData", "_Phne", "_AddtlCtct", "_CstmrSvc", "_Nm", "_URL", "_Id"]
+	__slots__ = ["_URL", "_CstmrSvc", "_Id", "_AddtlCtct", "_Adr", "_Email", "_Phne", "_Nm", "_LclData"]
 	@property
-	def Email(self):
-		return self._Email
+	def URL(self):
+		return self._URL
 
-	@Email.setter
-	def Email(self, value):
-		self._Email = value if type(value) != auto else self.make_default("Email")
+	@URL.setter
+	def URL(self, value):
+		self._URL = value if type(value) != auto else self.make_default("URL")
 
-	@Email.deleter
-	def Email(self):
-		del self._Email
-		self._Email = None
-
-	@property
-	def Adr(self):
-		return self._Adr
-
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
-
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
-
-	@property
-	def LclData(self):
-		return self._LclData
-
-	@LclData.setter
-	def LclData(self, value):
-		self._LclData = value if type(value) != auto else self.make_default("LclData")
-
-	@LclData.deleter
-	def LclData(self):
-		del self._LclData
-		self._LclData = None
-
-	@property
-	def Phne(self):
-		return self._Phne
-
-	@Phne.setter
-	def Phne(self, value):
-		self._Phne = value if type(value) != auto else self.make_default("Phne")
-
-	@Phne.deleter
-	def Phne(self):
-		del self._Phne
-		self._Phne = None
-
-	@property
-	def AddtlCtct(self):
-		return self._AddtlCtct
-
-	@AddtlCtct.setter
-	def AddtlCtct(self, value):
-		self._AddtlCtct = value if type(value) != auto else self.make_default("AddtlCtct")
-
-	@AddtlCtct.deleter
-	def AddtlCtct(self):
-		del self._AddtlCtct
-		self._AddtlCtct = None
+	@URL.deleter
+	def URL(self):
+		del self._URL
+		self._URL = None
 
 	@property
 	def CstmrSvc(self):
@@ -87,6 +35,71 @@ class FinancialInstitution8(base_types._BaseFieldType):
 		self._CstmrSvc = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def AddtlCtct(self):
+		return self._AddtlCtct
+
+	@AddtlCtct.setter
+	def AddtlCtct(self, value):
+		self._AddtlCtct = value if type(value) != auto else self.make_default("AddtlCtct")
+
+	@AddtlCtct.deleter
+	def AddtlCtct(self):
+		del self._AddtlCtct
+		self._AddtlCtct = None
+
+	@property
+	def Adr(self):
+		return self._Adr
+
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != auto else self.make_default("Adr")
+
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
+
+	@property
+	def Email(self):
+		return self._Email
+
+	@Email.setter
+	def Email(self, value):
+		self._Email = value if type(value) != auto else self.make_default("Email")
+
+	@Email.deleter
+	def Email(self):
+		del self._Email
+		self._Email = None
+
+	@property
+	def Phne(self):
+		return self._Phne
+
+	@Phne.setter
+	def Phne(self, value):
+		self._Phne = value if type(value) != auto else self.make_default("Phne")
+
+	@Phne.deleter
+	def Phne(self):
+		del self._Phne
+		self._Phne = None
+
+	@property
 	def Nm(self):
 		return self._Nm
 
@@ -100,40 +113,27 @@ class FinancialInstitution8(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def URL(self):
-		return self._URL
+	def LclData(self):
+		return self._LclData
 
-	@URL.setter
-	def URL(self, value):
-		self._URL = value if type(value) != auto else self.make_default("URL")
+	@LclData.setter
+	def LclData(self, value):
+		self._LclData = value if type(value) != auto else self.make_default("LclData")
 
-	@URL.deleter
-	def URL(self):
-		del self._URL
-		self._URL = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@LclData.deleter
+	def LclData(self):
+		del self._LclData
+		self._LclData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LclData', type=LocalData10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Phne', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlCtct', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrSvc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrSvc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlCtct', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Phne', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LclData', type=LocalData10, min=0, max=1, mutex_group=None, array=False),
 	))
 

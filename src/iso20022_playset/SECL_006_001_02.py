@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DefaultFundContributionReportV02
 
 class SECL_006_001_02():

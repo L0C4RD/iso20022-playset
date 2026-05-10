@@ -1,13 +1,39 @@
-import base_types
-import Max35Text
-import OriginalMessageInformation1
+from . import base_types
 import MandateSuspensionReason3
+import OriginalMessageInformation1
 import SupplementaryData1
+import Max35Text
 import OriginalMandate10Choice
 
 class MandateSuspension4(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgInf", "_SspnsnReqId", "_OrgnlMndt", "_SspnsnRsn", "_SplmtryData"]
+	__slots__ = ["_OrgnlMndt", "_SplmtryData", "_OrgnlMsgInf", "_SspnsnReqId", "_SspnsnRsn"]
+	@property
+	def OrgnlMndt(self):
+		return self._OrgnlMndt
+
+	@OrgnlMndt.setter
+	def OrgnlMndt(self, value):
+		self._OrgnlMndt = value if type(value) != auto else self.make_default("OrgnlMndt")
+
+	@OrgnlMndt.deleter
+	def OrgnlMndt(self):
+		del self._OrgnlMndt
+		self._OrgnlMndt = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	@property
 	def OrgnlMsgInf(self):
 		return self._OrgnlMsgInf
@@ -35,19 +61,6 @@ class MandateSuspension4(base_types._BaseFieldType):
 		self._SspnsnReqId = None
 
 	@property
-	def OrgnlMndt(self):
-		return self._OrgnlMndt
-
-	@OrgnlMndt.setter
-	def OrgnlMndt(self, value):
-		self._OrgnlMndt = value if type(value) != auto else self.make_default("OrgnlMndt")
-
-	@OrgnlMndt.deleter
-	def OrgnlMndt(self):
-		del self._OrgnlMndt
-		self._OrgnlMndt = None
-
-	@property
 	def SspnsnRsn(self):
 		return self._SspnsnRsn
 
@@ -60,24 +73,11 @@ class MandateSuspension4(base_types._BaseFieldType):
 		del self._SspnsnRsn
 		self._SspnsnRsn = None
 
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OrgnlMndt', type=OriginalMandate10Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlMsgInf', type=OriginalMessageInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SspnsnReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlMndt', type=OriginalMandate10Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SspnsnRsn', type=MandateSuspensionReason3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,38 +1,12 @@
-import base_types
+from . import base_types
 import Max350Text
+import Number
 import BusinessDayConvention1Code
 import ReferToFundOrderDesk1Code
-import Number
 
 class TimeFrame10(base_types._BaseFieldType):
 
-	__slots__ = ["_RefrToOrdrDsk", "_OthrTmFrameDesc", "_TPlus", "_NonWorkgDayAdjstmnt"]
-	@property
-	def RefrToOrdrDsk(self):
-		return self._RefrToOrdrDsk
-
-	@RefrToOrdrDsk.setter
-	def RefrToOrdrDsk(self, value):
-		self._RefrToOrdrDsk = value if type(value) != auto else self.make_default("RefrToOrdrDsk")
-
-	@RefrToOrdrDsk.deleter
-	def RefrToOrdrDsk(self):
-		del self._RefrToOrdrDsk
-		self._RefrToOrdrDsk = None
-
-	@property
-	def OthrTmFrameDesc(self):
-		return self._OthrTmFrameDesc
-
-	@OthrTmFrameDesc.setter
-	def OthrTmFrameDesc(self, value):
-		self._OthrTmFrameDesc = value if type(value) != auto else self.make_default("OthrTmFrameDesc")
-
-	@OthrTmFrameDesc.deleter
-	def OthrTmFrameDesc(self):
-		del self._OthrTmFrameDesc
-		self._OthrTmFrameDesc = None
-
+	__slots__ = ["_TPlus", "_NonWorkgDayAdjstmnt", "_RefrToOrdrDsk", "_OthrTmFrameDesc"]
 	@property
 	def TPlus(self):
 		return self._TPlus
@@ -59,10 +33,36 @@ class TimeFrame10(base_types._BaseFieldType):
 		del self._NonWorkgDayAdjstmnt
 		self._NonWorkgDayAdjstmnt = None
 
+	@property
+	def RefrToOrdrDsk(self):
+		return self._RefrToOrdrDsk
+
+	@RefrToOrdrDsk.setter
+	def RefrToOrdrDsk(self, value):
+		self._RefrToOrdrDsk = value if type(value) != auto else self.make_default("RefrToOrdrDsk")
+
+	@RefrToOrdrDsk.deleter
+	def RefrToOrdrDsk(self):
+		del self._RefrToOrdrDsk
+		self._RefrToOrdrDsk = None
+
+	@property
+	def OthrTmFrameDesc(self):
+		return self._OthrTmFrameDesc
+
+	@OthrTmFrameDesc.setter
+	def OthrTmFrameDesc(self, value):
+		self._OthrTmFrameDesc = value if type(value) != auto else self.make_default("OthrTmFrameDesc")
+
+	@OthrTmFrameDesc.deleter
+	def OthrTmFrameDesc(self):
+		del self._OthrTmFrameDesc
+		self._OthrTmFrameDesc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RefrToOrdrDsk', type=ReferToFundOrderDesk1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTmFrameDesc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TPlus', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonWorkgDayAdjstmnt', type=BusinessDayConvention1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefrToOrdrDsk', type=ReferToFundOrderDesk1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTmFrameDesc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,10 @@
-import base_types
-import IBAN2007Identifier
+from . import base_types
 import GenericAccountIdentification1
+import IBAN2007Identifier
 
 class AccountIdentification4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_IBAN"]
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
+	__slots__ = ["_IBAN", "_Othr"]
 	@property
 	def IBAN(self):
 		return self._IBAN
@@ -31,8 +18,21 @@ class AccountIdentification4Choice(base_types._BaseFieldType):
 		del self._IBAN
 		self._IBAN = None
 
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=GenericAccountIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Othr', type=GenericAccountIdentification1, min=0, max=1, mutex_group=1, array=False),
 	))
 

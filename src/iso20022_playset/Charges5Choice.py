@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ChargesRecord11
 import ChargesPerType5
 import ChargesPerTransaction5

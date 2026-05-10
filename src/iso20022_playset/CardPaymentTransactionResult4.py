@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import GenericIdentification90
-import Min6Max8Text
 import ResponseType10
+import Min6Max8Text
 
 class CardPaymentTransactionResult4(base_types._BaseFieldType):
 
-	__slots__ = ["_AuthstnNtty", "_RspnToAuthstn", "_AuthstnCd"]
+	__slots__ = ["_AuthstnCd", "_RspnToAuthstn", "_AuthstnNtty"]
 	@property
-	def AuthstnNtty(self):
-		return self._AuthstnNtty
+	def AuthstnCd(self):
+		return self._AuthstnCd
 
-	@AuthstnNtty.setter
-	def AuthstnNtty(self, value):
-		self._AuthstnNtty = value if type(value) != auto else self.make_default("AuthstnNtty")
+	@AuthstnCd.setter
+	def AuthstnCd(self, value):
+		self._AuthstnCd = value if type(value) != auto else self.make_default("AuthstnCd")
 
-	@AuthstnNtty.deleter
-	def AuthstnNtty(self):
-		del self._AuthstnNtty
-		self._AuthstnNtty = None
+	@AuthstnCd.deleter
+	def AuthstnCd(self):
+		del self._AuthstnCd
+		self._AuthstnCd = None
 
 	@property
 	def RspnToAuthstn(self):
@@ -33,21 +33,21 @@ class CardPaymentTransactionResult4(base_types._BaseFieldType):
 		self._RspnToAuthstn = None
 
 	@property
-	def AuthstnCd(self):
-		return self._AuthstnCd
+	def AuthstnNtty(self):
+		return self._AuthstnNtty
 
-	@AuthstnCd.setter
-	def AuthstnCd(self, value):
-		self._AuthstnCd = value if type(value) != auto else self.make_default("AuthstnCd")
+	@AuthstnNtty.setter
+	def AuthstnNtty(self, value):
+		self._AuthstnNtty = value if type(value) != auto else self.make_default("AuthstnNtty")
 
-	@AuthstnCd.deleter
-	def AuthstnCd(self):
-		del self._AuthstnCd
-		self._AuthstnCd = None
+	@AuthstnNtty.deleter
+	def AuthstnNtty(self):
+		del self._AuthstnNtty
+		self._AuthstnNtty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AuthstnNtty', type=GenericIdentification90, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnToAuthstn', type=ResponseType10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthstnCd', type=Min6Max8Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnToAuthstn', type=ResponseType10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthstnNtty', type=GenericIdentification90, min=0, max=1, mutex_group=None, array=False),
 	))
 

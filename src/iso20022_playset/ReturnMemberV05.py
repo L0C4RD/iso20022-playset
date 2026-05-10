@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MessageHeader7
 import SupplementaryData1
 import MemberReportOrError7Choice

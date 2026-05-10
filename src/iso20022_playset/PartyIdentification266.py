@@ -1,13 +1,13 @@
-import base_types
+from . import base_types
+import PartyIdentification265
+import ClearingSystemIdentification2Choice
+import Max34Text
 import Max105Text
 import LEIIdentifier
-import ClearingSystemIdentification2Choice
-import PartyIdentification265
-import Max34Text
 
 class PartyIdentification266(base_types._BaseFieldType):
 
-	__slots__ = ["_Adr", "_ClrSysId", "_AnyBIC", "_AcctNb", "_LglNttyIdr", "_PtyNm"]
+	__slots__ = ["_Adr", "_PtyNm", "_LglNttyIdr", "_ClrSysId", "_AnyBIC", "_AcctNb"]
 	@property
 	def Adr(self):
 		return self._Adr
@@ -20,6 +20,32 @@ class PartyIdentification266(base_types._BaseFieldType):
 	def Adr(self):
 		del self._Adr
 		self._Adr = None
+
+	@property
+	def PtyNm(self):
+		return self._PtyNm
+
+	@PtyNm.setter
+	def PtyNm(self, value):
+		self._PtyNm = value if type(value) != auto else self.make_default("PtyNm")
+
+	@PtyNm.deleter
+	def PtyNm(self):
+		del self._PtyNm
+		self._PtyNm = None
+
+	@property
+	def LglNttyIdr(self):
+		return self._LglNttyIdr
+
+	@LglNttyIdr.setter
+	def LglNttyIdr(self, value):
+		self._LglNttyIdr = value if type(value) != auto else self.make_default("LglNttyIdr")
+
+	@LglNttyIdr.deleter
+	def LglNttyIdr(self):
+		del self._LglNttyIdr
+		self._LglNttyIdr = None
 
 	@property
 	def ClrSysId(self):
@@ -60,38 +86,12 @@ class PartyIdentification266(base_types._BaseFieldType):
 		del self._AcctNb
 		self._AcctNb = None
 
-	@property
-	def LglNttyIdr(self):
-		return self._LglNttyIdr
-
-	@LglNttyIdr.setter
-	def LglNttyIdr(self, value):
-		self._LglNttyIdr = value if type(value) != auto else self.make_default("LglNttyIdr")
-
-	@LglNttyIdr.deleter
-	def LglNttyIdr(self):
-		del self._LglNttyIdr
-		self._LglNttyIdr = None
-
-	@property
-	def PtyNm(self):
-		return self._PtyNm
-
-	@PtyNm.setter
-	def PtyNm(self, value):
-		self._PtyNm = value if type(value) != auto else self.make_default("PtyNm")
-
-	@PtyNm.deleter
-	def PtyNm(self):
-		del self._PtyNm
-		self._PtyNm = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyNm', type=Max34Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSysId', type=ClearingSystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=PartyIdentification265, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctNb', type=Max34Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyNm', type=Max34Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

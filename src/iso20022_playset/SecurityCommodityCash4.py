@@ -1,6 +1,6 @@
-import base_types
-import CashCompare3
+from . import base_types
 import Commodity42
+import CashCompare3
 import Security48
 
 class SecurityCommodityCash4(base_types._BaseFieldType):

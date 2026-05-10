@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import UndertakingTerminationNotificationV01
 
 class TSRV_012_001_01():

@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
 import PartyIdentification44
-import NameAndAddress8
 import PartyIdentification59
+import NameAndAddress8
 
 class PartyIdentification73Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AnyBIC", "_PtyId", "_NmAndAdr"]
+	__slots__ = ["_NmAndAdr", "_AnyBIC", "_PtyId"]
+	@property
+	def NmAndAdr(self):
+		return self._NmAndAdr
+
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
+
 	@property
 	def AnyBIC(self):
 		return self._AnyBIC
@@ -32,22 +45,9 @@ class PartyIdentification73Choice(base_types._BaseFieldType):
 		del self._PtyId
 		self._PtyId = None
 
-	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
-
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
-
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=PartyIdentification44, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PtyId', type=PartyIdentification59, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress8, min=0, max=1, mutex_group=1, array=False),
 	))
 

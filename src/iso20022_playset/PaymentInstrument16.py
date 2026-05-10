@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
 import FundOrderType5Choice
-import FundPaymentType1Choice
 import AdditionalInformation15
+import FundPaymentType1Choice
 
 class PaymentInstrument16(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrTp", "_InstrmTp", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_OrdrTp", "_InstrmTp"]
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	@property
 	def OrdrTp(self):
 		return self._OrdrTp
@@ -32,22 +45,9 @@ class PaymentInstrument16(base_types._BaseFieldType):
 		del self._InstrmTp
 		self._InstrmTp = None
 
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrdrTp', type=FundOrderType5Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrmTp', type=FundPaymentType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 	))
 

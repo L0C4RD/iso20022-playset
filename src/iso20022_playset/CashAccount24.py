@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountIdentification4Choice
 import ActiveOrHistoricCurrencyCode
 import CashAccountType2Choice
@@ -6,7 +6,7 @@ import Max70Text
 
 class CashAccount24(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Id", "_Ccy", "_Tp"]
+	__slots__ = ["_Nm", "_Id", "_Tp", "_Ccy"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -34,19 +34,6 @@ class CashAccount24(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
 	def Tp(self):
 		return self._Tp
 
@@ -59,10 +46,23 @@ class CashAccount24(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CashAccountType2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

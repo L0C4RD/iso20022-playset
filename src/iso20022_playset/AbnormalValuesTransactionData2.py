@@ -1,24 +1,11 @@
-import base_types
-import TradeTransactionIdentification24
+from . import base_types
 import NotionalAmountLegs5
+import TradeTransactionIdentification24
 import NotionalQuantityLegs5
 
 class AbnormalValuesTransactionData2(base_types._BaseFieldType):
 
-	__slots__ = ["_NtnlAmt", "_TxId", "_NtnlQty"]
-	@property
-	def NtnlAmt(self):
-		return self._NtnlAmt
-
-	@NtnlAmt.setter
-	def NtnlAmt(self, value):
-		self._NtnlAmt = value if type(value) != auto else self.make_default("NtnlAmt")
-
-	@NtnlAmt.deleter
-	def NtnlAmt(self):
-		del self._NtnlAmt
-		self._NtnlAmt = None
-
+	__slots__ = ["_TxId", "_NtnlQty", "_NtnlAmt"]
 	@property
 	def TxId(self):
 		return self._TxId
@@ -45,9 +32,22 @@ class AbnormalValuesTransactionData2(base_types._BaseFieldType):
 		del self._NtnlQty
 		self._NtnlQty = None
 
+	@property
+	def NtnlAmt(self):
+		return self._NtnlAmt
+
+	@NtnlAmt.setter
+	def NtnlAmt(self, value):
+		self._NtnlAmt = value if type(value) != auto else self.make_default("NtnlAmt")
+
+	@NtnlAmt.deleter
+	def NtnlAmt(self):
+		del self._NtnlAmt
+		self._NtnlAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtnlAmt', type=NotionalAmountLegs5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification24, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtnlQty', type=NotionalQuantityLegs5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlAmt', type=NotionalAmountLegs5, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BaselineReportV04
 
 class TSMT_011_001_04():

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BackupPaymentV07
 
 class CAMT_023_001_07():

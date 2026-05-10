@@ -1,7 +1,7 @@
-import base_types
-import Max105Text
-import PartyIdentification135
+from . import base_types
 import InvestigationActionReason1Choice
+import PartyIdentification135
+import Max105Text
 
 class InvestigationActionReason1(base_types._BaseFieldType):
 

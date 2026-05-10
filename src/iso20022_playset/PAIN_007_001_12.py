@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CustomerPaymentReversalV12
 
 class PAIN_007_001_12():

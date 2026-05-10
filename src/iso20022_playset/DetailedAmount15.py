@@ -1,35 +1,22 @@
-import base_types
+from . import base_types
 import DetailedAmount4
 import ImpliedCurrencyAndAmount
 
 class DetailedAmount15(base_types._BaseFieldType):
 
-	__slots__ = ["_Fees", "_Srchrg", "_AmtGoodsAndSvcs", "_Grtty", "_ValAddedTax", "_Rbt", "_CshBck"]
+	__slots__ = ["_Grtty", "_AmtGoodsAndSvcs", "_Fees", "_CshBck", "_Srchrg", "_Rbt", "_ValAddedTax"]
 	@property
-	def Fees(self):
-		return self._Fees
+	def Grtty(self):
+		return self._Grtty
 
-	@Fees.setter
-	def Fees(self, value):
-		self._Fees = value if type(value) != auto else self.make_default("Fees")
+	@Grtty.setter
+	def Grtty(self, value):
+		self._Grtty = value if type(value) != auto else self.make_default("Grtty")
 
-	@Fees.deleter
-	def Fees(self):
-		del self._Fees
-		self._Fees = None
-
-	@property
-	def Srchrg(self):
-		return self._Srchrg
-
-	@Srchrg.setter
-	def Srchrg(self, value):
-		self._Srchrg = value if type(value) != auto else self.make_default("Srchrg")
-
-	@Srchrg.deleter
-	def Srchrg(self):
-		del self._Srchrg
-		self._Srchrg = None
+	@Grtty.deleter
+	def Grtty(self):
+		del self._Grtty
+		self._Grtty = None
 
 	@property
 	def AmtGoodsAndSvcs(self):
@@ -45,30 +32,43 @@ class DetailedAmount15(base_types._BaseFieldType):
 		self._AmtGoodsAndSvcs = None
 
 	@property
-	def Grtty(self):
-		return self._Grtty
+	def Fees(self):
+		return self._Fees
 
-	@Grtty.setter
-	def Grtty(self, value):
-		self._Grtty = value if type(value) != auto else self.make_default("Grtty")
+	@Fees.setter
+	def Fees(self, value):
+		self._Fees = value if type(value) != auto else self.make_default("Fees")
 
-	@Grtty.deleter
-	def Grtty(self):
-		del self._Grtty
-		self._Grtty = None
+	@Fees.deleter
+	def Fees(self):
+		del self._Fees
+		self._Fees = None
 
 	@property
-	def ValAddedTax(self):
-		return self._ValAddedTax
+	def CshBck(self):
+		return self._CshBck
 
-	@ValAddedTax.setter
-	def ValAddedTax(self, value):
-		self._ValAddedTax = value if type(value) != auto else self.make_default("ValAddedTax")
+	@CshBck.setter
+	def CshBck(self, value):
+		self._CshBck = value if type(value) != auto else self.make_default("CshBck")
 
-	@ValAddedTax.deleter
-	def ValAddedTax(self):
-		del self._ValAddedTax
-		self._ValAddedTax = None
+	@CshBck.deleter
+	def CshBck(self):
+		del self._CshBck
+		self._CshBck = None
+
+	@property
+	def Srchrg(self):
+		return self._Srchrg
+
+	@Srchrg.setter
+	def Srchrg(self, value):
+		self._Srchrg = value if type(value) != auto else self.make_default("Srchrg")
+
+	@Srchrg.deleter
+	def Srchrg(self):
+		del self._Srchrg
+		self._Srchrg = None
 
 	@property
 	def Rbt(self):
@@ -84,25 +84,25 @@ class DetailedAmount15(base_types._BaseFieldType):
 		self._Rbt = None
 
 	@property
-	def CshBck(self):
-		return self._CshBck
+	def ValAddedTax(self):
+		return self._ValAddedTax
 
-	@CshBck.setter
-	def CshBck(self, value):
-		self._CshBck = value if type(value) != auto else self.make_default("CshBck")
+	@ValAddedTax.setter
+	def ValAddedTax(self, value):
+		self._ValAddedTax = value if type(value) != auto else self.make_default("ValAddedTax")
 
-	@CshBck.deleter
-	def CshBck(self):
-		del self._CshBck
-		self._CshBck = None
+	@ValAddedTax.deleter
+	def ValAddedTax(self):
+		del self._ValAddedTax
+		self._ValAddedTax = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Fees', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Srchrg', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AmtGoodsAndSvcs', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Grtty', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValAddedTax', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rbt', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AmtGoodsAndSvcs', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fees', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshBck', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Srchrg', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rbt', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ValAddedTax', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
 	))
 

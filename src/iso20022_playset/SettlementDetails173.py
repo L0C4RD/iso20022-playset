@@ -1,23 +1,36 @@
-import base_types
-import MarketClientSide7Choice
-import BeneficialOwnership5Choice
-import GenericIdentification47
-import YesNoIndicator
-import CentralCounterPartyEligibility5Choice
-import CashSettlementSystem5Choice
-import BlockTrade5Choice
-import SettlingCapacity8Choice
-import TaxCapacityParty5Choice
-import SettlementSystemMethod5Choice
-import Restriction6Choice
+from . import base_types
 import NettingEligibility5Choice
-import SettlementTransactionCondition5Code
-import SettlementTransactionCondition22Choice
+import TaxCapacityParty5Choice
+import Restriction6Choice
+import YesNoIndicator
+import CashSettlementSystem5Choice
+import CentralCounterPartyEligibility5Choice
+import SettlementSystemMethod5Choice
+import GenericIdentification47
+import MarketClientSide7Choice
 import SecuritiesRTGS5Choice
+import BeneficialOwnership5Choice
+import SettlementTransactionCondition5Code
+import SettlingCapacity8Choice
+import SettlementTransactionCondition22Choice
+import BlockTrade5Choice
 
 class SettlementDetails173(base_types._BaseFieldType):
 
-	__slots__ = ["_StmpDtyTaxBsis", "_HldInd", "_ElgblForColl", "_TaxCpcty", "_BnfclOwnrsh", "_SttlgCpcty", "_NetgElgblty", "_MktClntSd", "_SctiesRTGS", "_SttlmSysMtd", "_SttlmTxCond", "_PrtlSttlmInd", "_CshClrSys", "_LglRstrctns", "_CCPElgblty", "_BlckTrad"]
+	__slots__ = ["_SttlmSysMtd", "_StmpDtyTaxBsis", "_HldInd", "_NetgElgblty", "_SttlmTxCond", "_BnfclOwnrsh", "_CshClrSys", "_SctiesRTGS", "_TaxCpcty", "_PrtlSttlmInd", "_BlckTrad", "_MktClntSd", "_LglRstrctns", "_ElgblForColl", "_SttlgCpcty", "_CCPElgblty"]
+	@property
+	def SttlmSysMtd(self):
+		return self._SttlmSysMtd
+
+	@SttlmSysMtd.setter
+	def SttlmSysMtd(self, value):
+		self._SttlmSysMtd = value if type(value) != auto else self.make_default("SttlmSysMtd")
+
+	@SttlmSysMtd.deleter
+	def SttlmSysMtd(self):
+		del self._SttlmSysMtd
+		self._SttlmSysMtd = None
+
 	@property
 	def StmpDtyTaxBsis(self):
 		return self._StmpDtyTaxBsis
@@ -45,58 +58,6 @@ class SettlementDetails173(base_types._BaseFieldType):
 		self._HldInd = None
 
 	@property
-	def ElgblForColl(self):
-		return self._ElgblForColl
-
-	@ElgblForColl.setter
-	def ElgblForColl(self, value):
-		self._ElgblForColl = value if type(value) != auto else self.make_default("ElgblForColl")
-
-	@ElgblForColl.deleter
-	def ElgblForColl(self):
-		del self._ElgblForColl
-		self._ElgblForColl = None
-
-	@property
-	def TaxCpcty(self):
-		return self._TaxCpcty
-
-	@TaxCpcty.setter
-	def TaxCpcty(self, value):
-		self._TaxCpcty = value if type(value) != auto else self.make_default("TaxCpcty")
-
-	@TaxCpcty.deleter
-	def TaxCpcty(self):
-		del self._TaxCpcty
-		self._TaxCpcty = None
-
-	@property
-	def BnfclOwnrsh(self):
-		return self._BnfclOwnrsh
-
-	@BnfclOwnrsh.setter
-	def BnfclOwnrsh(self, value):
-		self._BnfclOwnrsh = value if type(value) != auto else self.make_default("BnfclOwnrsh")
-
-	@BnfclOwnrsh.deleter
-	def BnfclOwnrsh(self):
-		del self._BnfclOwnrsh
-		self._BnfclOwnrsh = None
-
-	@property
-	def SttlgCpcty(self):
-		return self._SttlgCpcty
-
-	@SttlgCpcty.setter
-	def SttlgCpcty(self, value):
-		self._SttlgCpcty = value if type(value) != auto else self.make_default("SttlgCpcty")
-
-	@SttlgCpcty.deleter
-	def SttlgCpcty(self):
-		del self._SttlgCpcty
-		self._SttlgCpcty = None
-
-	@property
 	def NetgElgblty(self):
 		return self._NetgElgblty
 
@@ -108,45 +69,6 @@ class SettlementDetails173(base_types._BaseFieldType):
 	def NetgElgblty(self):
 		del self._NetgElgblty
 		self._NetgElgblty = None
-
-	@property
-	def MktClntSd(self):
-		return self._MktClntSd
-
-	@MktClntSd.setter
-	def MktClntSd(self, value):
-		self._MktClntSd = value if type(value) != auto else self.make_default("MktClntSd")
-
-	@MktClntSd.deleter
-	def MktClntSd(self):
-		del self._MktClntSd
-		self._MktClntSd = None
-
-	@property
-	def SctiesRTGS(self):
-		return self._SctiesRTGS
-
-	@SctiesRTGS.setter
-	def SctiesRTGS(self, value):
-		self._SctiesRTGS = value if type(value) != auto else self.make_default("SctiesRTGS")
-
-	@SctiesRTGS.deleter
-	def SctiesRTGS(self):
-		del self._SctiesRTGS
-		self._SctiesRTGS = None
-
-	@property
-	def SttlmSysMtd(self):
-		return self._SttlmSysMtd
-
-	@SttlmSysMtd.setter
-	def SttlmSysMtd(self, value):
-		self._SttlmSysMtd = value if type(value) != auto else self.make_default("SttlmSysMtd")
-
-	@SttlmSysMtd.deleter
-	def SttlmSysMtd(self):
-		del self._SttlmSysMtd
-		self._SttlmSysMtd = None
 
 	@property
 	def SttlmTxCond(self):
@@ -162,17 +84,17 @@ class SettlementDetails173(base_types._BaseFieldType):
 		self._SttlmTxCond = None
 
 	@property
-	def PrtlSttlmInd(self):
-		return self._PrtlSttlmInd
+	def BnfclOwnrsh(self):
+		return self._BnfclOwnrsh
 
-	@PrtlSttlmInd.setter
-	def PrtlSttlmInd(self, value):
-		self._PrtlSttlmInd = value if type(value) != auto else self.make_default("PrtlSttlmInd")
+	@BnfclOwnrsh.setter
+	def BnfclOwnrsh(self, value):
+		self._BnfclOwnrsh = value if type(value) != auto else self.make_default("BnfclOwnrsh")
 
-	@PrtlSttlmInd.deleter
-	def PrtlSttlmInd(self):
-		del self._PrtlSttlmInd
-		self._PrtlSttlmInd = None
+	@BnfclOwnrsh.deleter
+	def BnfclOwnrsh(self):
+		del self._BnfclOwnrsh
+		self._BnfclOwnrsh = None
 
 	@property
 	def CshClrSys(self):
@@ -188,30 +110,43 @@ class SettlementDetails173(base_types._BaseFieldType):
 		self._CshClrSys = None
 
 	@property
-	def LglRstrctns(self):
-		return self._LglRstrctns
+	def SctiesRTGS(self):
+		return self._SctiesRTGS
 
-	@LglRstrctns.setter
-	def LglRstrctns(self, value):
-		self._LglRstrctns = value if type(value) != auto else self.make_default("LglRstrctns")
+	@SctiesRTGS.setter
+	def SctiesRTGS(self, value):
+		self._SctiesRTGS = value if type(value) != auto else self.make_default("SctiesRTGS")
 
-	@LglRstrctns.deleter
-	def LglRstrctns(self):
-		del self._LglRstrctns
-		self._LglRstrctns = None
+	@SctiesRTGS.deleter
+	def SctiesRTGS(self):
+		del self._SctiesRTGS
+		self._SctiesRTGS = None
 
 	@property
-	def CCPElgblty(self):
-		return self._CCPElgblty
+	def TaxCpcty(self):
+		return self._TaxCpcty
 
-	@CCPElgblty.setter
-	def CCPElgblty(self, value):
-		self._CCPElgblty = value if type(value) != auto else self.make_default("CCPElgblty")
+	@TaxCpcty.setter
+	def TaxCpcty(self, value):
+		self._TaxCpcty = value if type(value) != auto else self.make_default("TaxCpcty")
 
-	@CCPElgblty.deleter
-	def CCPElgblty(self):
-		del self._CCPElgblty
-		self._CCPElgblty = None
+	@TaxCpcty.deleter
+	def TaxCpcty(self):
+		del self._TaxCpcty
+		self._TaxCpcty = None
+
+	@property
+	def PrtlSttlmInd(self):
+		return self._PrtlSttlmInd
+
+	@PrtlSttlmInd.setter
+	def PrtlSttlmInd(self, value):
+		self._PrtlSttlmInd = value if type(value) != auto else self.make_default("PrtlSttlmInd")
+
+	@PrtlSttlmInd.deleter
+	def PrtlSttlmInd(self):
+		del self._PrtlSttlmInd
+		self._PrtlSttlmInd = None
 
 	@property
 	def BlckTrad(self):
@@ -226,22 +161,87 @@ class SettlementDetails173(base_types._BaseFieldType):
 		del self._BlckTrad
 		self._BlckTrad = None
 
+	@property
+	def MktClntSd(self):
+		return self._MktClntSd
+
+	@MktClntSd.setter
+	def MktClntSd(self, value):
+		self._MktClntSd = value if type(value) != auto else self.make_default("MktClntSd")
+
+	@MktClntSd.deleter
+	def MktClntSd(self):
+		del self._MktClntSd
+		self._MktClntSd = None
+
+	@property
+	def LglRstrctns(self):
+		return self._LglRstrctns
+
+	@LglRstrctns.setter
+	def LglRstrctns(self, value):
+		self._LglRstrctns = value if type(value) != auto else self.make_default("LglRstrctns")
+
+	@LglRstrctns.deleter
+	def LglRstrctns(self):
+		del self._LglRstrctns
+		self._LglRstrctns = None
+
+	@property
+	def ElgblForColl(self):
+		return self._ElgblForColl
+
+	@ElgblForColl.setter
+	def ElgblForColl(self, value):
+		self._ElgblForColl = value if type(value) != auto else self.make_default("ElgblForColl")
+
+	@ElgblForColl.deleter
+	def ElgblForColl(self):
+		del self._ElgblForColl
+		self._ElgblForColl = None
+
+	@property
+	def SttlgCpcty(self):
+		return self._SttlgCpcty
+
+	@SttlgCpcty.setter
+	def SttlgCpcty(self, value):
+		self._SttlgCpcty = value if type(value) != auto else self.make_default("SttlgCpcty")
+
+	@SttlgCpcty.deleter
+	def SttlgCpcty(self):
+		del self._SttlgCpcty
+		self._SttlgCpcty = None
+
+	@property
+	def CCPElgblty(self):
+		return self._CCPElgblty
+
+	@CCPElgblty.setter
+	def CCPElgblty(self, value):
+		self._CCPElgblty = value if type(value) != auto else self.make_default("CCPElgblty")
+
+	@CCPElgblty.deleter
+	def CCPElgblty(self):
+		del self._CCPElgblty
+		self._CCPElgblty = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SttlmSysMtd', type=SettlementSystemMethod5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmpDtyTaxBsis', type=GenericIdentification47, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HldInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ElgblForColl', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxCpcty', type=TaxCapacityParty5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BnfclOwnrsh', type=BeneficialOwnership5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlgCpcty', type=SettlingCapacity8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetgElgblty', type=NettingEligibility5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktClntSd', type=MarketClientSide7Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesRTGS', type=SecuritiesRTGS5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmSysMtd', type=SettlementSystemMethod5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmTxCond', type=SettlementTransactionCondition22Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrtlSttlmInd', type=SettlementTransactionCondition5Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BnfclOwnrsh', type=BeneficialOwnership5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshClrSys', type=CashSettlementSystem5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglRstrctns', type=Restriction6Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CCPElgblty', type=CentralCounterPartyEligibility5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesRTGS', type=SecuritiesRTGS5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxCpcty', type=TaxCapacityParty5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtlSttlmInd', type=SettlementTransactionCondition5Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckTrad', type=BlockTrade5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktClntSd', type=MarketClientSide7Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglRstrctns', type=Restriction6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElgblForColl', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlgCpcty', type=SettlingCapacity8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CCPElgblty', type=CentralCounterPartyEligibility5Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

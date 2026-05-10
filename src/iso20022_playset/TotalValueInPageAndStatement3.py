@@ -1,22 +1,9 @@
-import base_types
+from . import base_types
 import AmountAndDirection14
 
 class TotalValueInPageAndStatement3(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlElgblCollVal", "_TtlBookValOfStmt", "_TtlHldgsValOfStmt", "_TtlHldgsValOfPg"]
-	@property
-	def TtlElgblCollVal(self):
-		return self._TtlElgblCollVal
-
-	@TtlElgblCollVal.setter
-	def TtlElgblCollVal(self, value):
-		self._TtlElgblCollVal = value if type(value) != auto else self.make_default("TtlElgblCollVal")
-
-	@TtlElgblCollVal.deleter
-	def TtlElgblCollVal(self):
-		del self._TtlElgblCollVal
-		self._TtlElgblCollVal = None
-
+	__slots__ = ["_TtlBookValOfStmt", "_TtlElgblCollVal", "_TtlHldgsValOfPg", "_TtlHldgsValOfStmt"]
 	@property
 	def TtlBookValOfStmt(self):
 		return self._TtlBookValOfStmt
@@ -31,17 +18,17 @@ class TotalValueInPageAndStatement3(base_types._BaseFieldType):
 		self._TtlBookValOfStmt = None
 
 	@property
-	def TtlHldgsValOfStmt(self):
-		return self._TtlHldgsValOfStmt
+	def TtlElgblCollVal(self):
+		return self._TtlElgblCollVal
 
-	@TtlHldgsValOfStmt.setter
-	def TtlHldgsValOfStmt(self, value):
-		self._TtlHldgsValOfStmt = value if type(value) != auto else self.make_default("TtlHldgsValOfStmt")
+	@TtlElgblCollVal.setter
+	def TtlElgblCollVal(self, value):
+		self._TtlElgblCollVal = value if type(value) != auto else self.make_default("TtlElgblCollVal")
 
-	@TtlHldgsValOfStmt.deleter
-	def TtlHldgsValOfStmt(self):
-		del self._TtlHldgsValOfStmt
-		self._TtlHldgsValOfStmt = None
+	@TtlElgblCollVal.deleter
+	def TtlElgblCollVal(self):
+		del self._TtlElgblCollVal
+		self._TtlElgblCollVal = None
 
 	@property
 	def TtlHldgsValOfPg(self):
@@ -56,10 +43,23 @@ class TotalValueInPageAndStatement3(base_types._BaseFieldType):
 		del self._TtlHldgsValOfPg
 		self._TtlHldgsValOfPg = None
 
+	@property
+	def TtlHldgsValOfStmt(self):
+		return self._TtlHldgsValOfStmt
+
+	@TtlHldgsValOfStmt.setter
+	def TtlHldgsValOfStmt(self, value):
+		self._TtlHldgsValOfStmt = value if type(value) != auto else self.make_default("TtlHldgsValOfStmt")
+
+	@TtlHldgsValOfStmt.deleter
+	def TtlHldgsValOfStmt(self):
+		del self._TtlHldgsValOfStmt
+		self._TtlHldgsValOfStmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlElgblCollVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlBookValOfStmt', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlHldgsValOfStmt', type=AmountAndDirection14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlElgblCollVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlHldgsValOfPg', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlHldgsValOfStmt', type=AmountAndDirection14, min=1, max=1, mutex_group=None, array=False),
 	))
 

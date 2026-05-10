@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MarginCallResponseV05
 
 class COLR_004_001_05():

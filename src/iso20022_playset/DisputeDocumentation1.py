@@ -1,24 +1,11 @@
-import base_types
-import Max35Text
+from . import base_types
 import Max20KText
 import OutputFormat4Code
+import Max35Text
 
 class DisputeDocumentation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_OthrFrmt", "_Frmt", "_Val"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_OthrFrmt", "_Tp", "_Frmt", "_Val"]
 	@property
 	def OthrFrmt(self):
 		return self._OthrFrmt
@@ -31,6 +18,19 @@ class DisputeDocumentation1(base_types._BaseFieldType):
 	def OthrFrmt(self):
 		del self._OthrFrmt
 		self._OthrFrmt = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Frmt(self):
@@ -59,8 +59,8 @@ class DisputeDocumentation1(base_types._BaseFieldType):
 		self._Val = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frmt', type=OutputFormat4Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=Max20KText, min=1, max=1, mutex_group=None, array=False),
 	))

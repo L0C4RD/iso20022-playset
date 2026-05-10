@@ -1,13 +1,26 @@
-import base_types
-import Exact1NumericText
-import YesNoIndicator
+from . import base_types
 import ISODate
-import ActiveCurrencyAndAmount
 import Number
+import YesNoIndicator
+import Exact1NumericText
+import ActiveCurrencyAndAmount
 
 class LoanContractTranche1(base_types._BaseFieldType):
 
-	__slots__ = ["_DrtnCd", "_LastTrchInd", "_TrchNb", "_Amt", "_XpctdDt", "_DueDt"]
+	__slots__ = ["_Amt", "_DrtnCd", "_TrchNb", "_XpctdDt", "_DueDt", "_LastTrchInd"]
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	@property
 	def DrtnCd(self):
 		return self._DrtnCd
@@ -22,19 +35,6 @@ class LoanContractTranche1(base_types._BaseFieldType):
 		self._DrtnCd = None
 
 	@property
-	def LastTrchInd(self):
-		return self._LastTrchInd
-
-	@LastTrchInd.setter
-	def LastTrchInd(self, value):
-		self._LastTrchInd = value if type(value) != auto else self.make_default("LastTrchInd")
-
-	@LastTrchInd.deleter
-	def LastTrchInd(self):
-		del self._LastTrchInd
-		self._LastTrchInd = None
-
-	@property
 	def TrchNb(self):
 		return self._TrchNb
 
@@ -46,19 +46,6 @@ class LoanContractTranche1(base_types._BaseFieldType):
 	def TrchNb(self):
 		del self._TrchNb
 		self._TrchNb = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
 
 	@property
 	def XpctdDt(self):
@@ -86,12 +73,25 @@ class LoanContractTranche1(base_types._BaseFieldType):
 		del self._DueDt
 		self._DueDt = None
 
+	@property
+	def LastTrchInd(self):
+		return self._LastTrchInd
+
+	@LastTrchInd.setter
+	def LastTrchInd(self, value):
+		self._LastTrchInd = value if type(value) != auto else self.make_default("LastTrchInd")
+
+	@LastTrchInd.deleter
+	def LastTrchInd(self):
+		del self._LastTrchInd
+		self._LastTrchInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DrtnCd', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastTrchInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrchNb', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrtnCd', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrchNb', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DueDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastTrchInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

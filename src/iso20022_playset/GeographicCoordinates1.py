@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Max16Text
 
 class GeographicCoordinates1(base_types._BaseFieldType):

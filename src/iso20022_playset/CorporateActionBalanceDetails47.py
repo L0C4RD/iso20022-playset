@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RestrictedFINImpliedCurrencyAndAmount
 
 class CorporateActionBalanceDetails47(base_types._BaseFieldType):

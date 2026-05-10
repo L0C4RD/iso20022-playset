@@ -1,23 +1,10 @@
-import base_types
-import CountryCode
+from . import base_types
 import ExternalTypeOfParty1Code
+import CountryCode
 
 class PlaceOfPresentation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_Plc"]
-	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
+	__slots__ = ["_Plc", "_Ctry"]
 	@property
 	def Plc(self):
 		return self._Plc
@@ -31,8 +18,21 @@ class PlaceOfPresentation1(base_types._BaseFieldType):
 		del self._Plc
 		self._Plc = None
 
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Plc', type=ExternalTypeOfParty1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

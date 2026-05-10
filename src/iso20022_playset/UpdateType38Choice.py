@@ -1,6 +1,6 @@
-import base_types
-import SecuritiesSettlementTransactionDetails54
+from . import base_types
 import SecuritiesSettlementTransactionDetails55
+import SecuritiesSettlementTransactionDetails54
 import SecuritiesSettlementTransactionDetails53
 
 class UpdateType38Choice(base_types._BaseFieldType):

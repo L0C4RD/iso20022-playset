@@ -1,34 +1,21 @@
-import base_types
+from . import base_types
 import RequestedIndicator
 
 class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrInd", "_AcctSvcrInd", "_AcctCcyInd", "_NtryRefInd", "_AcctTpInd", "_NtryStsInd", "_NtryAmtInd", "_NtryDtInd"]
+	__slots__ = ["_NtryDtInd", "_AcctCcyInd", "_AcctSvcrInd", "_AcctOwnrInd", "_NtryAmtInd", "_AcctTpInd", "_NtryRefInd", "_NtryStsInd"]
 	@property
-	def AcctOwnrInd(self):
-		return self._AcctOwnrInd
+	def NtryDtInd(self):
+		return self._NtryDtInd
 
-	@AcctOwnrInd.setter
-	def AcctOwnrInd(self, value):
-		self._AcctOwnrInd = value if type(value) != auto else self.make_default("AcctOwnrInd")
+	@NtryDtInd.setter
+	def NtryDtInd(self, value):
+		self._NtryDtInd = value if type(value) != auto else self.make_default("NtryDtInd")
 
-	@AcctOwnrInd.deleter
-	def AcctOwnrInd(self):
-		del self._AcctOwnrInd
-		self._AcctOwnrInd = None
-
-	@property
-	def AcctSvcrInd(self):
-		return self._AcctSvcrInd
-
-	@AcctSvcrInd.setter
-	def AcctSvcrInd(self, value):
-		self._AcctSvcrInd = value if type(value) != auto else self.make_default("AcctSvcrInd")
-
-	@AcctSvcrInd.deleter
-	def AcctSvcrInd(self):
-		del self._AcctSvcrInd
-		self._AcctSvcrInd = None
+	@NtryDtInd.deleter
+	def NtryDtInd(self):
+		del self._NtryDtInd
+		self._NtryDtInd = None
 
 	@property
 	def AcctCcyInd(self):
@@ -44,43 +31,30 @@ class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 		self._AcctCcyInd = None
 
 	@property
-	def NtryRefInd(self):
-		return self._NtryRefInd
+	def AcctSvcrInd(self):
+		return self._AcctSvcrInd
 
-	@NtryRefInd.setter
-	def NtryRefInd(self, value):
-		self._NtryRefInd = value if type(value) != auto else self.make_default("NtryRefInd")
+	@AcctSvcrInd.setter
+	def AcctSvcrInd(self, value):
+		self._AcctSvcrInd = value if type(value) != auto else self.make_default("AcctSvcrInd")
 
-	@NtryRefInd.deleter
-	def NtryRefInd(self):
-		del self._NtryRefInd
-		self._NtryRefInd = None
-
-	@property
-	def AcctTpInd(self):
-		return self._AcctTpInd
-
-	@AcctTpInd.setter
-	def AcctTpInd(self, value):
-		self._AcctTpInd = value if type(value) != auto else self.make_default("AcctTpInd")
-
-	@AcctTpInd.deleter
-	def AcctTpInd(self):
-		del self._AcctTpInd
-		self._AcctTpInd = None
+	@AcctSvcrInd.deleter
+	def AcctSvcrInd(self):
+		del self._AcctSvcrInd
+		self._AcctSvcrInd = None
 
 	@property
-	def NtryStsInd(self):
-		return self._NtryStsInd
+	def AcctOwnrInd(self):
+		return self._AcctOwnrInd
 
-	@NtryStsInd.setter
-	def NtryStsInd(self, value):
-		self._NtryStsInd = value if type(value) != auto else self.make_default("NtryStsInd")
+	@AcctOwnrInd.setter
+	def AcctOwnrInd(self, value):
+		self._AcctOwnrInd = value if type(value) != auto else self.make_default("AcctOwnrInd")
 
-	@NtryStsInd.deleter
-	def NtryStsInd(self):
-		del self._NtryStsInd
-		self._NtryStsInd = None
+	@AcctOwnrInd.deleter
+	def AcctOwnrInd(self):
+		del self._AcctOwnrInd
+		self._AcctOwnrInd = None
 
 	@property
 	def NtryAmtInd(self):
@@ -96,26 +70,52 @@ class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 		self._NtryAmtInd = None
 
 	@property
-	def NtryDtInd(self):
-		return self._NtryDtInd
+	def AcctTpInd(self):
+		return self._AcctTpInd
 
-	@NtryDtInd.setter
-	def NtryDtInd(self, value):
-		self._NtryDtInd = value if type(value) != auto else self.make_default("NtryDtInd")
+	@AcctTpInd.setter
+	def AcctTpInd(self, value):
+		self._AcctTpInd = value if type(value) != auto else self.make_default("AcctTpInd")
 
-	@NtryDtInd.deleter
-	def NtryDtInd(self):
-		del self._NtryDtInd
-		self._NtryDtInd = None
+	@AcctTpInd.deleter
+	def AcctTpInd(self):
+		del self._AcctTpInd
+		self._AcctTpInd = None
+
+	@property
+	def NtryRefInd(self):
+		return self._NtryRefInd
+
+	@NtryRefInd.setter
+	def NtryRefInd(self, value):
+		self._NtryRefInd = value if type(value) != auto else self.make_default("NtryRefInd")
+
+	@NtryRefInd.deleter
+	def NtryRefInd(self):
+		del self._NtryRefInd
+		self._NtryRefInd = None
+
+	@property
+	def NtryStsInd(self):
+		return self._NtryStsInd
+
+	@NtryStsInd.setter
+	def NtryStsInd(self, value):
+		self._NtryStsInd = value if type(value) != auto else self.make_default("NtryStsInd")
+
+	@NtryStsInd.deleter
+	def NtryStsInd(self):
+		del self._NtryStsInd
+		self._NtryStsInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctCcyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtryRefInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctTpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtryStsInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtryAmtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtryDtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctCcyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtryAmtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctTpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtryRefInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtryStsInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

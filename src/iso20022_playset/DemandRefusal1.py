@@ -1,26 +1,26 @@
-import base_types
-import Max35Text
-import Undertaking9
+from . import base_types
 import Discrepancy1
-import Max2000Text
 import Refused7Text
+import Undertaking9
 import Demand2
+import Max2000Text
+import Max35Text
 
 class DemandRefusal1(base_types._BaseFieldType):
 
-	__slots__ = ["_ScndAdvsgPtyRefNb", "_AdvsgPtyRefNb", "_DspstnOfDocs", "_DmndDtls", "_AddtlInf", "_UdrtkgId", "_CnfrmrRefNb", "_Dscrpncy", "_Sts"]
+	__slots__ = ["_Sts", "_AdvsgPtyRefNb", "_Dscrpncy", "_CnfrmrRefNb", "_DspstnOfDocs", "_UdrtkgId", "_AddtlInf", "_ScndAdvsgPtyRefNb", "_DmndDtls"]
 	@property
-	def ScndAdvsgPtyRefNb(self):
-		return self._ScndAdvsgPtyRefNb
+	def Sts(self):
+		return self._Sts
 
-	@ScndAdvsgPtyRefNb.setter
-	def ScndAdvsgPtyRefNb(self, value):
-		self._ScndAdvsgPtyRefNb = value if type(value) != auto else self.make_default("ScndAdvsgPtyRefNb")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
 
-	@ScndAdvsgPtyRefNb.deleter
-	def ScndAdvsgPtyRefNb(self):
-		del self._ScndAdvsgPtyRefNb
-		self._ScndAdvsgPtyRefNb = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	@property
 	def AdvsgPtyRefNb(self):
@@ -36,56 +36,17 @@ class DemandRefusal1(base_types._BaseFieldType):
 		self._AdvsgPtyRefNb = None
 
 	@property
-	def DspstnOfDocs(self):
-		return self._DspstnOfDocs
+	def Dscrpncy(self):
+		return self._Dscrpncy
 
-	@DspstnOfDocs.setter
-	def DspstnOfDocs(self, value):
-		self._DspstnOfDocs = value if type(value) != auto else self.make_default("DspstnOfDocs")
+	@Dscrpncy.setter
+	def Dscrpncy(self, value):
+		self._Dscrpncy = value if type(value) != auto else self.make_default("Dscrpncy")
 
-	@DspstnOfDocs.deleter
-	def DspstnOfDocs(self):
-		del self._DspstnOfDocs
-		self._DspstnOfDocs = None
-
-	@property
-	def DmndDtls(self):
-		return self._DmndDtls
-
-	@DmndDtls.setter
-	def DmndDtls(self, value):
-		self._DmndDtls = value if type(value) != auto else self.make_default("DmndDtls")
-
-	@DmndDtls.deleter
-	def DmndDtls(self):
-		del self._DmndDtls
-		self._DmndDtls = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def UdrtkgId(self):
-		return self._UdrtkgId
-
-	@UdrtkgId.setter
-	def UdrtkgId(self, value):
-		self._UdrtkgId = value if type(value) != auto else self.make_default("UdrtkgId")
-
-	@UdrtkgId.deleter
-	def UdrtkgId(self):
-		del self._UdrtkgId
-		self._UdrtkgId = None
+	@Dscrpncy.deleter
+	def Dscrpncy(self):
+		del self._Dscrpncy
+		self._Dscrpncy = None
 
 	@property
 	def CnfrmrRefNb(self):
@@ -101,40 +62,79 @@ class DemandRefusal1(base_types._BaseFieldType):
 		self._CnfrmrRefNb = None
 
 	@property
-	def Dscrpncy(self):
-		return self._Dscrpncy
+	def DspstnOfDocs(self):
+		return self._DspstnOfDocs
 
-	@Dscrpncy.setter
-	def Dscrpncy(self, value):
-		self._Dscrpncy = value if type(value) != auto else self.make_default("Dscrpncy")
+	@DspstnOfDocs.setter
+	def DspstnOfDocs(self, value):
+		self._DspstnOfDocs = value if type(value) != auto else self.make_default("DspstnOfDocs")
 
-	@Dscrpncy.deleter
-	def Dscrpncy(self):
-		del self._Dscrpncy
-		self._Dscrpncy = None
+	@DspstnOfDocs.deleter
+	def DspstnOfDocs(self):
+		del self._DspstnOfDocs
+		self._DspstnOfDocs = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def UdrtkgId(self):
+		return self._UdrtkgId
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@UdrtkgId.setter
+	def UdrtkgId(self, value):
+		self._UdrtkgId = value if type(value) != auto else self.make_default("UdrtkgId")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@UdrtkgId.deleter
+	def UdrtkgId(self):
+		del self._UdrtkgId
+		self._UdrtkgId = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def ScndAdvsgPtyRefNb(self):
+		return self._ScndAdvsgPtyRefNb
+
+	@ScndAdvsgPtyRefNb.setter
+	def ScndAdvsgPtyRefNb(self, value):
+		self._ScndAdvsgPtyRefNb = value if type(value) != auto else self.make_default("ScndAdvsgPtyRefNb")
+
+	@ScndAdvsgPtyRefNb.deleter
+	def ScndAdvsgPtyRefNb(self):
+		del self._ScndAdvsgPtyRefNb
+		self._ScndAdvsgPtyRefNb = None
+
+	@property
+	def DmndDtls(self):
+		return self._DmndDtls
+
+	@DmndDtls.setter
+	def DmndDtls(self, value):
+		self._DmndDtls = value if type(value) != auto else self.make_default("DmndDtls")
+
+	@DmndDtls.deleter
+	def DmndDtls(self):
+		del self._DmndDtls
+		self._DmndDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ScndAdvsgPtyRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdvsgPtyRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DspstnOfDocs', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DmndDtls', type=Demand2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CnfrmrRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dscrpncy', type=Discrepancy1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=Refused7Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdvsgPtyRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dscrpncy', type=Discrepancy1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CnfrmrRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DspstnOfDocs', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ScndAdvsgPtyRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DmndDtls', type=Demand2, min=1, max=1, mutex_group=None, array=False),
 	))
 

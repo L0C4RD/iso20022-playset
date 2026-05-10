@@ -1,25 +1,12 @@
-import base_types
-import ExternalInvestigationExecutionConfirmation1Code
+from . import base_types
 import Case6
 import YesNoIndicator
 import ModificationStatusReason1Choice
+import ExternalInvestigationExecutionConfirmation1Code
 
 class InvestigationStatus6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AssgnmtCxlConf", "_DplctOf", "_RjctdMod", "_Conf"]
-	@property
-	def AssgnmtCxlConf(self):
-		return self._AssgnmtCxlConf
-
-	@AssgnmtCxlConf.setter
-	def AssgnmtCxlConf(self, value):
-		self._AssgnmtCxlConf = value if type(value) != auto else self.make_default("AssgnmtCxlConf")
-
-	@AssgnmtCxlConf.deleter
-	def AssgnmtCxlConf(self):
-		del self._AssgnmtCxlConf
-		self._AssgnmtCxlConf = None
-
+	__slots__ = ["_DplctOf", "_RjctdMod", "_Conf", "_AssgnmtCxlConf"]
 	@property
 	def DplctOf(self):
 		return self._DplctOf
@@ -59,10 +46,23 @@ class InvestigationStatus6Choice(base_types._BaseFieldType):
 		del self._Conf
 		self._Conf = None
 
+	@property
+	def AssgnmtCxlConf(self):
+		return self._AssgnmtCxlConf
+
+	@AssgnmtCxlConf.setter
+	def AssgnmtCxlConf(self, value):
+		self._AssgnmtCxlConf = value if type(value) != auto else self.make_default("AssgnmtCxlConf")
+
+	@AssgnmtCxlConf.deleter
+	def AssgnmtCxlConf(self):
+		del self._AssgnmtCxlConf
+		self._AssgnmtCxlConf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AssgnmtCxlConf', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DplctOf', type=Case6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RjctdMod', type=ModificationStatusReason1Choice, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Conf', type=ExternalInvestigationExecutionConfirmation1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AssgnmtCxlConf', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import GetLimitV08
 
 class CAMT_009_001_08():

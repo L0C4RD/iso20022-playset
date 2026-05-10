@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DocumentNumber6Choice
 import Identification29
 

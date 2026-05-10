@@ -1,6 +1,6 @@
-import base_types
-import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from . import base_types
 import AmountPriceType3Code
+import RestrictedFINActiveCurrencyAnd13DecimalAmount
 
 class AmountPrice7(base_types._BaseFieldType):
 

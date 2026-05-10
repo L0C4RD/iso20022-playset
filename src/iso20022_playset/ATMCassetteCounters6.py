@@ -1,13 +1,13 @@
-import base_types
-import ATMMediaType3Code
+from . import base_types
+import Number
 import ImpliedCurrencyAndAmount
 import ATMCassetteCounters5
+import ATMMediaType3Code
 import ActiveCurrencyCode
-import Number
 
 class ATMCassetteCounters6(base_types._BaseFieldType):
 
-	__slots__ = ["_FlowTtls", "_MdiaCtgy", "_CurNb", "_CurAmt", "_Ccy", "_UnitVal", "_InitlCnt"]
+	__slots__ = ["_FlowTtls", "_UnitVal", "_MdiaCtgy", "_CurNb", "_Ccy", "_CurAmt", "_InitlCnt"]
 	@property
 	def FlowTtls(self):
 		return self._FlowTtls
@@ -20,6 +20,19 @@ class ATMCassetteCounters6(base_types._BaseFieldType):
 	def FlowTtls(self):
 		del self._FlowTtls
 		self._FlowTtls = None
+
+	@property
+	def UnitVal(self):
+		return self._UnitVal
+
+	@UnitVal.setter
+	def UnitVal(self, value):
+		self._UnitVal = value if type(value) != auto else self.make_default("UnitVal")
+
+	@UnitVal.deleter
+	def UnitVal(self):
+		del self._UnitVal
+		self._UnitVal = None
 
 	@property
 	def MdiaCtgy(self):
@@ -48,19 +61,6 @@ class ATMCassetteCounters6(base_types._BaseFieldType):
 		self._CurNb = None
 
 	@property
-	def CurAmt(self):
-		return self._CurAmt
-
-	@CurAmt.setter
-	def CurAmt(self, value):
-		self._CurAmt = value if type(value) != auto else self.make_default("CurAmt")
-
-	@CurAmt.deleter
-	def CurAmt(self):
-		del self._CurAmt
-		self._CurAmt = None
-
-	@property
 	def Ccy(self):
 		return self._Ccy
 
@@ -74,17 +74,17 @@ class ATMCassetteCounters6(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def UnitVal(self):
-		return self._UnitVal
+	def CurAmt(self):
+		return self._CurAmt
 
-	@UnitVal.setter
-	def UnitVal(self, value):
-		self._UnitVal = value if type(value) != auto else self.make_default("UnitVal")
+	@CurAmt.setter
+	def CurAmt(self, value):
+		self._CurAmt = value if type(value) != auto else self.make_default("CurAmt")
 
-	@UnitVal.deleter
-	def UnitVal(self):
-		del self._UnitVal
-		self._UnitVal = None
+	@CurAmt.deleter
+	def CurAmt(self):
+		del self._CurAmt
+		self._CurAmt = None
 
 	@property
 	def InitlCnt(self):
@@ -101,11 +101,11 @@ class ATMCassetteCounters6(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FlowTtls', type=ATMCassetteCounters5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UnitVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MdiaCtgy', type=ATMMediaType3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurNb', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CurAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitlCnt', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

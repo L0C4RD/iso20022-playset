@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Document11
 import Max2000Text
 import PresentationMedium1Choice

@@ -1,6 +1,6 @@
-import base_types
-import UnsecuredMarketTransaction4
+from . import base_types
 import ReportPeriodActivity3Code
+import UnsecuredMarketTransaction4
 
 class UnsecuredMarketReport4Choice(base_types._BaseFieldType):
 

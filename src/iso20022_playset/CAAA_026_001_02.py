@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AcceptorToAcquirerBatchFileExchangeV02
 
 class CAAA_026_001_02():

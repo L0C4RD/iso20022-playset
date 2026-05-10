@@ -1,20 +1,20 @@
-import base_types
-import Max70Text
-import CurrencyAndAmount
-import Max350Text
-import SingleTransport3
-import InsuranceClauses1Code
+from . import base_types
 import ISODate
+import Max350Text
 import PostalAddress5
-import Max35Text
 import PartyIdentification29Choice
+import InsuranceClauses1Code
 import PartyIdentification26
-import CurrencyCode
 import DocumentIdentification1
+import SingleTransport3
+import Max35Text
+import CurrencyCode
+import CurrencyAndAmount
+import Max70Text
 
 class InsuranceDataSet1(base_types._BaseFieldType):
 
-	__slots__ = ["_Assrd", "_InsrncClauses", "_Trnsprt", "_InsrncConds", "_DataSetId", "_InsrdAmt", "_InsrncDocId", "_PlcOfIsse", "_IsseDt", "_InsrdGoodsDesc", "_ClmsPyblIn", "_Issr", "_ClmsPyblAt", "_FctvDt"]
+	__slots__ = ["_Assrd", "_DataSetId", "_ClmsPyblIn", "_Issr", "_ClmsPyblAt", "_Trnsprt", "_FctvDt", "_InsrdAmt", "_PlcOfIsse", "_IsseDt", "_InsrdGoodsDesc", "_InsrncClauses", "_InsrncConds", "_InsrncDocId"]
 	@property
 	def Assrd(self):
 		return self._Assrd
@@ -29,45 +29,6 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 		self._Assrd = None
 
 	@property
-	def InsrncClauses(self):
-		return self._InsrncClauses
-
-	@InsrncClauses.setter
-	def InsrncClauses(self, value):
-		self._InsrncClauses = value if type(value) != auto else self.make_default("InsrncClauses")
-
-	@InsrncClauses.deleter
-	def InsrncClauses(self):
-		del self._InsrncClauses
-		self._InsrncClauses = None
-
-	@property
-	def Trnsprt(self):
-		return self._Trnsprt
-
-	@Trnsprt.setter
-	def Trnsprt(self, value):
-		self._Trnsprt = value if type(value) != auto else self.make_default("Trnsprt")
-
-	@Trnsprt.deleter
-	def Trnsprt(self):
-		del self._Trnsprt
-		self._Trnsprt = None
-
-	@property
-	def InsrncConds(self):
-		return self._InsrncConds
-
-	@InsrncConds.setter
-	def InsrncConds(self, value):
-		self._InsrncConds = value if type(value) != auto else self.make_default("InsrncConds")
-
-	@InsrncConds.deleter
-	def InsrncConds(self):
-		del self._InsrncConds
-		self._InsrncConds = None
-
-	@property
 	def DataSetId(self):
 		return self._DataSetId
 
@@ -79,71 +40,6 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 	def DataSetId(self):
 		del self._DataSetId
 		self._DataSetId = None
-
-	@property
-	def InsrdAmt(self):
-		return self._InsrdAmt
-
-	@InsrdAmt.setter
-	def InsrdAmt(self, value):
-		self._InsrdAmt = value if type(value) != auto else self.make_default("InsrdAmt")
-
-	@InsrdAmt.deleter
-	def InsrdAmt(self):
-		del self._InsrdAmt
-		self._InsrdAmt = None
-
-	@property
-	def InsrncDocId(self):
-		return self._InsrncDocId
-
-	@InsrncDocId.setter
-	def InsrncDocId(self, value):
-		self._InsrncDocId = value if type(value) != auto else self.make_default("InsrncDocId")
-
-	@InsrncDocId.deleter
-	def InsrncDocId(self):
-		del self._InsrncDocId
-		self._InsrncDocId = None
-
-	@property
-	def PlcOfIsse(self):
-		return self._PlcOfIsse
-
-	@PlcOfIsse.setter
-	def PlcOfIsse(self, value):
-		self._PlcOfIsse = value if type(value) != auto else self.make_default("PlcOfIsse")
-
-	@PlcOfIsse.deleter
-	def PlcOfIsse(self):
-		del self._PlcOfIsse
-		self._PlcOfIsse = None
-
-	@property
-	def IsseDt(self):
-		return self._IsseDt
-
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
-
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
-
-	@property
-	def InsrdGoodsDesc(self):
-		return self._InsrdGoodsDesc
-
-	@InsrdGoodsDesc.setter
-	def InsrdGoodsDesc(self, value):
-		self._InsrdGoodsDesc = value if type(value) != auto else self.make_default("InsrdGoodsDesc")
-
-	@InsrdGoodsDesc.deleter
-	def InsrdGoodsDesc(self):
-		del self._InsrdGoodsDesc
-		self._InsrdGoodsDesc = None
 
 	@property
 	def ClmsPyblIn(self):
@@ -185,6 +81,19 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 		self._ClmsPyblAt = None
 
 	@property
+	def Trnsprt(self):
+		return self._Trnsprt
+
+	@Trnsprt.setter
+	def Trnsprt(self, value):
+		self._Trnsprt = value if type(value) != auto else self.make_default("Trnsprt")
+
+	@Trnsprt.deleter
+	def Trnsprt(self):
+		del self._Trnsprt
+		self._Trnsprt = None
+
+	@property
 	def FctvDt(self):
 		return self._FctvDt
 
@@ -197,20 +106,111 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 		del self._FctvDt
 		self._FctvDt = None
 
+	@property
+	def InsrdAmt(self):
+		return self._InsrdAmt
+
+	@InsrdAmt.setter
+	def InsrdAmt(self, value):
+		self._InsrdAmt = value if type(value) != auto else self.make_default("InsrdAmt")
+
+	@InsrdAmt.deleter
+	def InsrdAmt(self):
+		del self._InsrdAmt
+		self._InsrdAmt = None
+
+	@property
+	def PlcOfIsse(self):
+		return self._PlcOfIsse
+
+	@PlcOfIsse.setter
+	def PlcOfIsse(self, value):
+		self._PlcOfIsse = value if type(value) != auto else self.make_default("PlcOfIsse")
+
+	@PlcOfIsse.deleter
+	def PlcOfIsse(self):
+		del self._PlcOfIsse
+		self._PlcOfIsse = None
+
+	@property
+	def IsseDt(self):
+		return self._IsseDt
+
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
+
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
+
+	@property
+	def InsrdGoodsDesc(self):
+		return self._InsrdGoodsDesc
+
+	@InsrdGoodsDesc.setter
+	def InsrdGoodsDesc(self, value):
+		self._InsrdGoodsDesc = value if type(value) != auto else self.make_default("InsrdGoodsDesc")
+
+	@InsrdGoodsDesc.deleter
+	def InsrdGoodsDesc(self):
+		del self._InsrdGoodsDesc
+		self._InsrdGoodsDesc = None
+
+	@property
+	def InsrncClauses(self):
+		return self._InsrncClauses
+
+	@InsrncClauses.setter
+	def InsrncClauses(self, value):
+		self._InsrncClauses = value if type(value) != auto else self.make_default("InsrncClauses")
+
+	@InsrncClauses.deleter
+	def InsrncClauses(self):
+		del self._InsrncClauses
+		self._InsrncClauses = None
+
+	@property
+	def InsrncConds(self):
+		return self._InsrncConds
+
+	@InsrncConds.setter
+	def InsrncConds(self, value):
+		self._InsrncConds = value if type(value) != auto else self.make_default("InsrncConds")
+
+	@InsrncConds.deleter
+	def InsrncConds(self):
+		del self._InsrncConds
+		self._InsrncConds = None
+
+	@property
+	def InsrncDocId(self):
+		return self._InsrncDocId
+
+	@InsrncDocId.setter
+	def InsrncDocId(self, value):
+		self._InsrncDocId = value if type(value) != auto else self.make_default("InsrncDocId")
+
+	@InsrncDocId.deleter
+	def InsrncDocId(self):
+		del self._InsrncDocId
+		self._InsrncDocId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assrd', type=PartyIdentification29Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InsrncClauses', type=InsuranceClauses1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Trnsprt', type=SingleTransport3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InsrncConds', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DataSetId', type=DocumentIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InsrdAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InsrncDocId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PlcOfIsse', type=PostalAddress5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InsrdGoodsDesc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClmsPyblIn', type=CurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClmsPyblAt', type=PostalAddress5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trnsprt', type=SingleTransport3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FctvDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InsrdAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfIsse', type=PostalAddress5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InsrdGoodsDesc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InsrncClauses', type=InsuranceClauses1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InsrncConds', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InsrncDocId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

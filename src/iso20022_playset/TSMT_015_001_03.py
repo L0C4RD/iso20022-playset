@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DeltaReportV03
 
 class TSMT_015_001_03():

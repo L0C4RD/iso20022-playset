@@ -1,12 +1,12 @@
-import base_types
-import UnderlyingEquityType3Code
-import UnderlyingEquityType4Code
+from . import base_types
 import UnderlyingEquityType6Code
 import UnderlyingEquityType5Code
+import UnderlyingEquityType3Code
+import UnderlyingEquityType4Code
 
 class EquityDerivative3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Indx", "_Othr", "_Bskt", "_SnglNm"]
+	__slots__ = ["_Indx", "_Othr", "_SnglNm", "_Bskt"]
 	@property
 	def Indx(self):
 		return self._Indx
@@ -34,19 +34,6 @@ class EquityDerivative3Choice(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def Bskt(self):
-		return self._Bskt
-
-	@Bskt.setter
-	def Bskt(self, value):
-		self._Bskt = value if type(value) != auto else self.make_default("Bskt")
-
-	@Bskt.deleter
-	def Bskt(self):
-		del self._Bskt
-		self._Bskt = None
-
-	@property
 	def SnglNm(self):
 		return self._SnglNm
 
@@ -59,10 +46,23 @@ class EquityDerivative3Choice(base_types._BaseFieldType):
 		del self._SnglNm
 		self._SnglNm = None
 
+	@property
+	def Bskt(self):
+		return self._Bskt
+
+	@Bskt.setter
+	def Bskt(self, value):
+		self._Bskt = value if type(value) != auto else self.make_default("Bskt")
+
+	@Bskt.deleter
+	def Bskt(self):
+		del self._Bskt
+		self._Bskt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Indx', type=UnderlyingEquityType4Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=UnderlyingEquityType6Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Bskt', type=UnderlyingEquityType3Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SnglNm', type=UnderlyingEquityType5Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Bskt', type=UnderlyingEquityType3Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

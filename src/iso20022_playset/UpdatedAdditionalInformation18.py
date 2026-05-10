@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Max350Text
 
 class UpdatedAdditionalInformation18(base_types._BaseFieldType):

@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import Max35Text
 import AdditionalReference10
 
 class TransferReference16(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRef", "_ClntRef", "_RvslRsn", "_TrfRef", "_CtrPtyRef", "_TrfConfRef"]
-	@property
-	def CxlRef(self):
-		return self._CxlRef
-
-	@CxlRef.setter
-	def CxlRef(self, value):
-		self._CxlRef = value if type(value) != auto else self.make_default("CxlRef")
-
-	@CxlRef.deleter
-	def CxlRef(self):
-		del self._CxlRef
-		self._CxlRef = None
-
+	__slots__ = ["_ClntRef", "_TrfRef", "_CxlRef", "_CtrPtyRef", "_TrfConfRef", "_RvslRsn"]
 	@property
 	def ClntRef(self):
 		return self._ClntRef
@@ -32,19 +19,6 @@ class TransferReference16(base_types._BaseFieldType):
 		self._ClntRef = None
 
 	@property
-	def RvslRsn(self):
-		return self._RvslRsn
-
-	@RvslRsn.setter
-	def RvslRsn(self, value):
-		self._RvslRsn = value if type(value) != auto else self.make_default("RvslRsn")
-
-	@RvslRsn.deleter
-	def RvslRsn(self):
-		del self._RvslRsn
-		self._RvslRsn = None
-
-	@property
 	def TrfRef(self):
 		return self._TrfRef
 
@@ -56,6 +30,19 @@ class TransferReference16(base_types._BaseFieldType):
 	def TrfRef(self):
 		del self._TrfRef
 		self._TrfRef = None
+
+	@property
+	def CxlRef(self):
+		return self._CxlRef
+
+	@CxlRef.setter
+	def CxlRef(self, value):
+		self._CxlRef = value if type(value) != auto else self.make_default("CxlRef")
+
+	@CxlRef.deleter
+	def CxlRef(self):
+		del self._CxlRef
+		self._CxlRef = None
 
 	@property
 	def CtrPtyRef(self):
@@ -83,12 +70,25 @@ class TransferReference16(base_types._BaseFieldType):
 		del self._TrfConfRef
 		self._TrfConfRef = None
 
+	@property
+	def RvslRsn(self):
+		return self._RvslRsn
+
+	@RvslRsn.setter
+	def RvslRsn(self, value):
+		self._RvslRsn = value if type(value) != auto else self.make_default("RvslRsn")
+
+	@RvslRsn.deleter
+	def RvslRsn(self):
+		del self._RvslRsn
+		self._RvslRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RvslRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfConfRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RvslRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

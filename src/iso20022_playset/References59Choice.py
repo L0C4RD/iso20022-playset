@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
+import RestrictedFINXMax16Text
 import GenericDocumentIdentification5
 import SettlementTypeAndIdentification22
-import RestrictedFINXMax16Text
 
 class References59Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTxId", "_SctiesSttlmTxId", "_IntraPosMvmntId", "_SctiesFincgTxId"]
+	__slots__ = ["_IntraPosMvmntId", "_OthrTxId", "_SctiesSttlmTxId", "_SctiesFincgTxId"]
+	@property
+	def IntraPosMvmntId(self):
+		return self._IntraPosMvmntId
+
+	@IntraPosMvmntId.setter
+	def IntraPosMvmntId(self, value):
+		self._IntraPosMvmntId = value if type(value) != auto else self.make_default("IntraPosMvmntId")
+
+	@IntraPosMvmntId.deleter
+	def IntraPosMvmntId(self):
+		del self._IntraPosMvmntId
+		self._IntraPosMvmntId = None
+
 	@property
 	def OthrTxId(self):
 		return self._OthrTxId
@@ -33,19 +46,6 @@ class References59Choice(base_types._BaseFieldType):
 		self._SctiesSttlmTxId = None
 
 	@property
-	def IntraPosMvmntId(self):
-		return self._IntraPosMvmntId
-
-	@IntraPosMvmntId.setter
-	def IntraPosMvmntId(self, value):
-		self._IntraPosMvmntId = value if type(value) != auto else self.make_default("IntraPosMvmntId")
-
-	@IntraPosMvmntId.deleter
-	def IntraPosMvmntId(self):
-		del self._IntraPosMvmntId
-		self._IntraPosMvmntId = None
-
-	@property
 	def SctiesFincgTxId(self):
 		return self._SctiesFincgTxId
 
@@ -59,9 +59,9 @@ class References59Choice(base_types._BaseFieldType):
 		self._SctiesFincgTxId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='IntraPosMvmntId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OthrTxId', type=GenericDocumentIdentification5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesSttlmTxId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IntraPosMvmntId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesFincgTxId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
 	))
 

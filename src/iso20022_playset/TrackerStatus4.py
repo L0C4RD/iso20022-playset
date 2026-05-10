@@ -1,25 +1,25 @@
-import base_types
-import PaymentRejectReturnReason1
+from . import base_types
 import AmountConsistencyType1Code
-import ExternalPaymentTransactionStatus1Code
 import DateAndDateTime2Choice
+import ExternalPaymentTransactionStatus1Code
+import PaymentRejectReturnReason1
 import PaymentStatusReason1
 
 class TrackerStatus4(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtIncnsstncy", "_Sts", "_StsRsn", "_Dt", "_RjctRtrRsn"]
+	__slots__ = ["_Dt", "_Sts", "_RjctRtrRsn", "_StsRsn", "_AmtIncnsstncy"]
 	@property
-	def AmtIncnsstncy(self):
-		return self._AmtIncnsstncy
+	def Dt(self):
+		return self._Dt
 
-	@AmtIncnsstncy.setter
-	def AmtIncnsstncy(self, value):
-		self._AmtIncnsstncy = value if type(value) != auto else self.make_default("AmtIncnsstncy")
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != auto else self.make_default("Dt")
 
-	@AmtIncnsstncy.deleter
-	def AmtIncnsstncy(self):
-		del self._AmtIncnsstncy
-		self._AmtIncnsstncy = None
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
 
 	@property
 	def Sts(self):
@@ -35,6 +35,19 @@ class TrackerStatus4(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
+	def RjctRtrRsn(self):
+		return self._RjctRtrRsn
+
+	@RjctRtrRsn.setter
+	def RjctRtrRsn(self, value):
+		self._RjctRtrRsn = value if type(value) != auto else self.make_default("RjctRtrRsn")
+
+	@RjctRtrRsn.deleter
+	def RjctRtrRsn(self):
+		del self._RjctRtrRsn
+		self._RjctRtrRsn = None
+
+	@property
 	def StsRsn(self):
 		return self._StsRsn
 
@@ -48,36 +61,23 @@ class TrackerStatus4(base_types._BaseFieldType):
 		self._StsRsn = None
 
 	@property
-	def Dt(self):
-		return self._Dt
+	def AmtIncnsstncy(self):
+		return self._AmtIncnsstncy
 
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
+	@AmtIncnsstncy.setter
+	def AmtIncnsstncy(self, value):
+		self._AmtIncnsstncy = value if type(value) != auto else self.make_default("AmtIncnsstncy")
 
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
-	@property
-	def RjctRtrRsn(self):
-		return self._RjctRtrRsn
-
-	@RjctRtrRsn.setter
-	def RjctRtrRsn(self, value):
-		self._RjctRtrRsn = value if type(value) != auto else self.make_default("RjctRtrRsn")
-
-	@RjctRtrRsn.deleter
-	def RjctRtrRsn(self):
-		del self._RjctRtrRsn
-		self._RjctRtrRsn = None
+	@AmtIncnsstncy.deleter
+	def AmtIncnsstncy(self):
+		del self._AmtIncnsstncy
+		self._AmtIncnsstncy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmtIncnsstncy', type=AmountConsistencyType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=ExternalPaymentTransactionStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsRsn', type=PaymentStatusReason1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=ExternalPaymentTransactionStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctRtrRsn', type=PaymentRejectReturnReason1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsRsn', type=PaymentStatusReason1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AmtIncnsstncy', type=AmountConsistencyType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

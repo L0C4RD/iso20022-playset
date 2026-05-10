@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReturnGeneralBusinessInformationV06
 
 class CAMT_021_001_06():

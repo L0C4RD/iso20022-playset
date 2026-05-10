@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecurityMaintenanceRequestV01
 
 class REDA_007_001_01():

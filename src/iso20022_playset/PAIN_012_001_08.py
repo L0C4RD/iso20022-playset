@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MandateAcceptanceReportV08
 
 class PAIN_012_001_08():

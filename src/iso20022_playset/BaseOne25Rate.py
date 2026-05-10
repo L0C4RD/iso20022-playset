@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class BaseOne25Rate(base_types._BaseDataType_Decimal):
 

@@ -1,21 +1,21 @@
-import base_types
+from . import base_types
 import Max35Text
 
 class RegulatoryInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_Sctr", "_Grp", "_Brnch"]
+	__slots__ = ["_Grp", "_Sctr", "_Othr", "_Brnch"]
 	@property
-	def Othr(self):
-		return self._Othr
+	def Grp(self):
+		return self._Grp
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+	@Grp.setter
+	def Grp(self, value):
+		self._Grp = value if type(value) != auto else self.make_default("Grp")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@Grp.deleter
+	def Grp(self):
+		del self._Grp
+		self._Grp = None
 
 	@property
 	def Sctr(self):
@@ -31,17 +31,17 @@ class RegulatoryInformation1(base_types._BaseFieldType):
 		self._Sctr = None
 
 	@property
-	def Grp(self):
-		return self._Grp
+	def Othr(self):
+		return self._Othr
 
-	@Grp.setter
-	def Grp(self, value):
-		self._Grp = value if type(value) != auto else self.make_default("Grp")
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
 
-	@Grp.deleter
-	def Grp(self):
-		del self._Grp
-		self._Grp = None
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
 
 	@property
 	def Brnch(self):
@@ -57,9 +57,9 @@ class RegulatoryInformation1(base_types._BaseFieldType):
 		self._Brnch = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sctr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Grp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sctr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Brnch', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

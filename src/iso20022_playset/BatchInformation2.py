@@ -1,12 +1,51 @@
-import base_types
+from . import base_types
+import Max15NumericText
 import Max35Text
 import CreditDebitCode
 import ActiveOrHistoricCurrencyAndAmount
-import Max15NumericText
 
 class BatchInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtInfId", "_CdtDbtInd", "_NbOfTxs", "_TtlAmt", "_MsgId"]
+	__slots__ = ["_MsgId", "_TtlAmt", "_NbOfTxs", "_PmtInfId", "_CdtDbtInd"]
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
+	@property
+	def TtlAmt(self):
+		return self._TtlAmt
+
+	@TtlAmt.setter
+	def TtlAmt(self, value):
+		self._TtlAmt = value if type(value) != auto else self.make_default("TtlAmt")
+
+	@TtlAmt.deleter
+	def TtlAmt(self):
+		del self._TtlAmt
+		self._TtlAmt = None
+
+	@property
+	def NbOfTxs(self):
+		return self._NbOfTxs
+
+	@NbOfTxs.setter
+	def NbOfTxs(self, value):
+		self._NbOfTxs = value if type(value) != auto else self.make_default("NbOfTxs")
+
+	@NbOfTxs.deleter
+	def NbOfTxs(self):
+		del self._NbOfTxs
+		self._NbOfTxs = None
+
 	@property
 	def PmtInfId(self):
 		return self._PmtInfId
@@ -33,50 +72,11 @@ class BatchInformation2(base_types._BaseFieldType):
 		del self._CdtDbtInd
 		self._CdtDbtInd = None
 
-	@property
-	def NbOfTxs(self):
-		return self._NbOfTxs
-
-	@NbOfTxs.setter
-	def NbOfTxs(self, value):
-		self._NbOfTxs = value if type(value) != auto else self.make_default("NbOfTxs")
-
-	@NbOfTxs.deleter
-	def NbOfTxs(self):
-		del self._NbOfTxs
-		self._NbOfTxs = None
-
-	@property
-	def TtlAmt(self):
-		return self._TtlAmt
-
-	@TtlAmt.setter
-	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != auto else self.make_default("TtlAmt")
-
-	@TtlAmt.deleter
-	def TtlAmt(self):
-		del self._TtlAmt
-		self._TtlAmt = None
-
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

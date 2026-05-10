@@ -1,23 +1,10 @@
-import base_types
-import AcknowledgementReason18Choice
+from . import base_types
 import RestrictedFINXMax210Text
+import AcknowledgementReason18Choice
 
 class AcknowledgementReason15(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlRsnInf", "_Cd"]
-	@property
-	def AddtlRsnInf(self):
-		return self._AddtlRsnInf
-
-	@AddtlRsnInf.setter
-	def AddtlRsnInf(self, value):
-		self._AddtlRsnInf = value if type(value) != auto else self.make_default("AddtlRsnInf")
-
-	@AddtlRsnInf.deleter
-	def AddtlRsnInf(self):
-		del self._AddtlRsnInf
-		self._AddtlRsnInf = None
-
+	__slots__ = ["_Cd", "_AddtlRsnInf"]
 	@property
 	def Cd(self):
 		return self._Cd
@@ -31,8 +18,21 @@ class AcknowledgementReason15(base_types._BaseFieldType):
 		del self._Cd
 		self._Cd = None
 
+	@property
+	def AddtlRsnInf(self):
+		return self._AddtlRsnInf
+
+	@AddtlRsnInf.setter
+	def AddtlRsnInf(self, value):
+		self._AddtlRsnInf = value if type(value) != auto else self.make_default("AddtlRsnInf")
+
+	@AddtlRsnInf.deleter
+	def AddtlRsnInf(self):
+		del self._AddtlRsnInf
+		self._AddtlRsnInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlRsnInf', type=RestrictedFINXMax210Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cd', type=AcknowledgementReason18Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlRsnInf', type=RestrictedFINXMax210Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

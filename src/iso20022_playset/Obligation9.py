@@ -1,77 +1,25 @@
-import base_types
-import CollateralAccount3
-import ExposureType11Code
+from . import base_types
 import PartyIdentification178Choice
-import BlockChainAddressWallet5
 import DateAndDateTime2Choice
+import ExposureType11Code
+import CollateralAccount3
+import BlockChainAddressWallet5
 
 class Obligation9(base_types._BaseFieldType):
 
-	__slots__ = ["_CollAcctId", "_XpsrTp", "_BlckChainAdrOrWllt", "_ValtnDt", "_SvcgPtyB", "_PtyB", "_SvcgPtyA", "_PtyA"]
+	__slots__ = ["_PtyA", "_PtyB", "_CollAcctId", "_SvcgPtyA", "_SvcgPtyB", "_ValtnDt", "_BlckChainAdrOrWllt", "_XpsrTp"]
 	@property
-	def CollAcctId(self):
-		return self._CollAcctId
+	def PtyA(self):
+		return self._PtyA
 
-	@CollAcctId.setter
-	def CollAcctId(self, value):
-		self._CollAcctId = value if type(value) != auto else self.make_default("CollAcctId")
+	@PtyA.setter
+	def PtyA(self, value):
+		self._PtyA = value if type(value) != auto else self.make_default("PtyA")
 
-	@CollAcctId.deleter
-	def CollAcctId(self):
-		del self._CollAcctId
-		self._CollAcctId = None
-
-	@property
-	def XpsrTp(self):
-		return self._XpsrTp
-
-	@XpsrTp.setter
-	def XpsrTp(self, value):
-		self._XpsrTp = value if type(value) != auto else self.make_default("XpsrTp")
-
-	@XpsrTp.deleter
-	def XpsrTp(self):
-		del self._XpsrTp
-		self._XpsrTp = None
-
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
-	@property
-	def ValtnDt(self):
-		return self._ValtnDt
-
-	@ValtnDt.setter
-	def ValtnDt(self, value):
-		self._ValtnDt = value if type(value) != auto else self.make_default("ValtnDt")
-
-	@ValtnDt.deleter
-	def ValtnDt(self):
-		del self._ValtnDt
-		self._ValtnDt = None
-
-	@property
-	def SvcgPtyB(self):
-		return self._SvcgPtyB
-
-	@SvcgPtyB.setter
-	def SvcgPtyB(self, value):
-		self._SvcgPtyB = value if type(value) != auto else self.make_default("SvcgPtyB")
-
-	@SvcgPtyB.deleter
-	def SvcgPtyB(self):
-		del self._SvcgPtyB
-		self._SvcgPtyB = None
+	@PtyA.deleter
+	def PtyA(self):
+		del self._PtyA
+		self._PtyA = None
 
 	@property
 	def PtyB(self):
@@ -87,6 +35,19 @@ class Obligation9(base_types._BaseFieldType):
 		self._PtyB = None
 
 	@property
+	def CollAcctId(self):
+		return self._CollAcctId
+
+	@CollAcctId.setter
+	def CollAcctId(self, value):
+		self._CollAcctId = value if type(value) != auto else self.make_default("CollAcctId")
+
+	@CollAcctId.deleter
+	def CollAcctId(self):
+		del self._CollAcctId
+		self._CollAcctId = None
+
+	@property
 	def SvcgPtyA(self):
 		return self._SvcgPtyA
 
@@ -100,26 +61,65 @@ class Obligation9(base_types._BaseFieldType):
 		self._SvcgPtyA = None
 
 	@property
-	def PtyA(self):
-		return self._PtyA
+	def SvcgPtyB(self):
+		return self._SvcgPtyB
 
-	@PtyA.setter
-	def PtyA(self, value):
-		self._PtyA = value if type(value) != auto else self.make_default("PtyA")
+	@SvcgPtyB.setter
+	def SvcgPtyB(self, value):
+		self._SvcgPtyB = value if type(value) != auto else self.make_default("SvcgPtyB")
 
-	@PtyA.deleter
-	def PtyA(self):
-		del self._PtyA
-		self._PtyA = None
+	@SvcgPtyB.deleter
+	def SvcgPtyB(self):
+		del self._SvcgPtyB
+		self._SvcgPtyB = None
+
+	@property
+	def ValtnDt(self):
+		return self._ValtnDt
+
+	@ValtnDt.setter
+	def ValtnDt(self, value):
+		self._ValtnDt = value if type(value) != auto else self.make_default("ValtnDt")
+
+	@ValtnDt.deleter
+	def ValtnDt(self):
+		del self._ValtnDt
+		self._ValtnDt = None
+
+	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
+
+	@property
+	def XpsrTp(self):
+		return self._XpsrTp
+
+	@XpsrTp.setter
+	def XpsrTp(self, value):
+		self._XpsrTp = value if type(value) != auto else self.make_default("XpsrTp")
+
+	@XpsrTp.deleter
+	def XpsrTp(self):
+		del self._XpsrTp
+		self._XpsrTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollAcctId', type=CollateralAccount3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpsrTp', type=ExposureType11Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcgPtyB', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyB', type=PartyIdentification178Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcgPtyA', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyA', type=PartyIdentification178Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyB', type=PartyIdentification178Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollAcctId', type=CollateralAccount3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcgPtyA', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcgPtyB', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpsrTp', type=ExposureType11Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

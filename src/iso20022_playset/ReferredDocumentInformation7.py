@@ -1,25 +1,12 @@
-import base_types
-import Max35Text
-import ISODate
-import ReferredDocumentType4
+from . import base_types
 import DocumentLineInformation1
+import ReferredDocumentType4
+import ISODate
+import Max35Text
 
 class ReferredDocumentInformation7(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Nb", "_RltdDt", "_LineDtls"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_Nb", "_Tp", "_LineDtls", "_RltdDt"]
 	@property
 	def Nb(self):
 		return self._Nb
@@ -34,17 +21,17 @@ class ReferredDocumentInformation7(base_types._BaseFieldType):
 		self._Nb = None
 
 	@property
-	def RltdDt(self):
-		return self._RltdDt
+	def Tp(self):
+		return self._Tp
 
-	@RltdDt.setter
-	def RltdDt(self, value):
-		self._RltdDt = value if type(value) != auto else self.make_default("RltdDt")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@RltdDt.deleter
-	def RltdDt(self):
-		del self._RltdDt
-		self._RltdDt = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def LineDtls(self):
@@ -59,10 +46,23 @@ class ReferredDocumentInformation7(base_types._BaseFieldType):
 		del self._LineDtls
 		self._LineDtls = None
 
+	@property
+	def RltdDt(self):
+		return self._RltdDt
+
+	@RltdDt.setter
+	def RltdDt(self, value):
+		self._RltdDt = value if type(value) != auto else self.make_default("RltdDt")
+
+	@RltdDt.deleter
+	def RltdDt(self):
+		del self._RltdDt
+		self._RltdDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=ReferredDocumentType4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ReferredDocumentType4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LineDtls', type=DocumentLineInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RltdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

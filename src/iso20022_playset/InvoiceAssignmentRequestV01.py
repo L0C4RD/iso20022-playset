@@ -1,26 +1,13 @@
-import base_types
+from . import base_types
 import Max15NumericText
-import EncapsulatedBusinessMessage1
-import DecimalNumber
 import BusinessLetter1
 import FinancingItemList1
+import EncapsulatedBusinessMessage1
+import DecimalNumber
 
 class InvoiceAssignmentRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AssgnmtList", "_ItmCnt", "_Hdr", "_AttchdMsg", "_AssgnmtCnt", "_CtrlSum"]
-	@property
-	def AssgnmtList(self):
-		return self._AssgnmtList
-
-	@AssgnmtList.setter
-	def AssgnmtList(self, value):
-		self._AssgnmtList = value if type(value) != auto else self.make_default("AssgnmtList")
-
-	@AssgnmtList.deleter
-	def AssgnmtList(self):
-		del self._AssgnmtList
-		self._AssgnmtList = None
-
+	__slots__ = ["_ItmCnt", "_AssgnmtList", "_Hdr", "_AssgnmtCnt", "_CtrlSum", "_AttchdMsg"]
 	@property
 	def ItmCnt(self):
 		return self._ItmCnt
@@ -35,6 +22,19 @@ class InvoiceAssignmentRequestV01(base_types._BaseFieldType):
 		self._ItmCnt = None
 
 	@property
+	def AssgnmtList(self):
+		return self._AssgnmtList
+
+	@AssgnmtList.setter
+	def AssgnmtList(self, value):
+		self._AssgnmtList = value if type(value) != auto else self.make_default("AssgnmtList")
+
+	@AssgnmtList.deleter
+	def AssgnmtList(self):
+		del self._AssgnmtList
+		self._AssgnmtList = None
+
+	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -46,19 +46,6 @@ class InvoiceAssignmentRequestV01(base_types._BaseFieldType):
 	def Hdr(self):
 		del self._Hdr
 		self._Hdr = None
-
-	@property
-	def AttchdMsg(self):
-		return self._AttchdMsg
-
-	@AttchdMsg.setter
-	def AttchdMsg(self, value):
-		self._AttchdMsg = value if type(value) != auto else self.make_default("AttchdMsg")
-
-	@AttchdMsg.deleter
-	def AttchdMsg(self):
-		del self._AttchdMsg
-		self._AttchdMsg = None
 
 	@property
 	def AssgnmtCnt(self):
@@ -86,12 +73,25 @@ class InvoiceAssignmentRequestV01(base_types._BaseFieldType):
 		del self._CtrlSum
 		self._CtrlSum = None
 
+	@property
+	def AttchdMsg(self):
+		return self._AttchdMsg
+
+	@AttchdMsg.setter
+	def AttchdMsg(self, value):
+		self._AttchdMsg = value if type(value) != auto else self.make_default("AttchdMsg")
+
+	@AttchdMsg.deleter
+	def AttchdMsg(self):
+		del self._AttchdMsg
+		self._AttchdMsg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AssgnmtList', type=FinancingItemList1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AssgnmtList', type=FinancingItemList1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AssgnmtCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),
 	))
 

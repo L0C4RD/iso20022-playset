@@ -1,12 +1,25 @@
-import base_types
-import ContentInformationType15
+from . import base_types
 import Header32
 import ContentInformationType10
 import ATMReconciliationAdvice3
+import ContentInformationType15
 
 class ATMReconciliationAdviceV03(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMRcncltnAdvc", "_SctyTrlr", "_Hdr", "_PrtctdATMRcncltnAdvc"]
+	__slots__ = ["_Hdr", "_ATMRcncltnAdvc", "_SctyTrlr", "_PrtctdATMRcncltnAdvc"]
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
+
 	@property
 	def ATMRcncltnAdvc(self):
 		return self._ATMRcncltnAdvc
@@ -34,19 +47,6 @@ class ATMReconciliationAdviceV03(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
-	@property
 	def PrtctdATMRcncltnAdvc(self):
 		return self._PrtctdATMRcncltnAdvc
 
@@ -60,9 +60,9 @@ class ATMReconciliationAdviceV03(base_types._BaseFieldType):
 		self._PrtctdATMRcncltnAdvc = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMRcncltnAdvc', type=ATMReconciliationAdvice3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMRcncltnAdvc', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 	))
 

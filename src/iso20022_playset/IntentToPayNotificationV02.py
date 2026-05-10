@@ -1,38 +1,12 @@
-import base_types
-import MessageIdentification1
-import SimpleIdentificationInformation
-import IntentToPay2
+from . import base_types
 import BICIdentification1
+import MessageIdentification1
+import IntentToPay2
+import SimpleIdentificationInformation
 
 class IntentToPayNotificationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_InttToPay", "_TxId", "_SubmitrTxRef", "_NtfctnId", "_BuyrBk", "_SellrBk"]
-	@property
-	def InttToPay(self):
-		return self._InttToPay
-
-	@InttToPay.setter
-	def InttToPay(self, value):
-		self._InttToPay = value if type(value) != auto else self.make_default("InttToPay")
-
-	@InttToPay.deleter
-	def InttToPay(self):
-		del self._InttToPay
-		self._InttToPay = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
+	__slots__ = ["_SubmitrTxRef", "_SellrBk", "_BuyrBk", "_InttToPay", "_NtfctnId", "_TxId"]
 	@property
 	def SubmitrTxRef(self):
 		return self._SubmitrTxRef
@@ -47,17 +21,17 @@ class IntentToPayNotificationV02(base_types._BaseFieldType):
 		self._SubmitrTxRef = None
 
 	@property
-	def NtfctnId(self):
-		return self._NtfctnId
+	def SellrBk(self):
+		return self._SellrBk
 
-	@NtfctnId.setter
-	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
+	@SellrBk.setter
+	def SellrBk(self, value):
+		self._SellrBk = value if type(value) != auto else self.make_default("SellrBk")
 
-	@NtfctnId.deleter
-	def NtfctnId(self):
-		del self._NtfctnId
-		self._NtfctnId = None
+	@SellrBk.deleter
+	def SellrBk(self):
+		del self._SellrBk
+		self._SellrBk = None
 
 	@property
 	def BuyrBk(self):
@@ -73,24 +47,50 @@ class IntentToPayNotificationV02(base_types._BaseFieldType):
 		self._BuyrBk = None
 
 	@property
-	def SellrBk(self):
-		return self._SellrBk
+	def InttToPay(self):
+		return self._InttToPay
 
-	@SellrBk.setter
-	def SellrBk(self, value):
-		self._SellrBk = value if type(value) != auto else self.make_default("SellrBk")
+	@InttToPay.setter
+	def InttToPay(self, value):
+		self._InttToPay = value if type(value) != auto else self.make_default("InttToPay")
 
-	@SellrBk.deleter
-	def SellrBk(self):
-		del self._SellrBk
-		self._SellrBk = None
+	@InttToPay.deleter
+	def InttToPay(self):
+		del self._InttToPay
+		self._InttToPay = None
+
+	@property
+	def NtfctnId(self):
+		return self._NtfctnId
+
+	@NtfctnId.setter
+	def NtfctnId(self, value):
+		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
+
+	@NtfctnId.deleter
+	def NtfctnId(self):
+		del self._NtfctnId
+		self._NtfctnId = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InttToPay', type=IntentToPay2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InttToPay', type=IntentToPay2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 	))
 

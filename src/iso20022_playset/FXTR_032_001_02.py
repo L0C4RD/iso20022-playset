@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ForeignExchangeTradeCaptureReportRequestV02
 
 class FXTR_032_001_02():

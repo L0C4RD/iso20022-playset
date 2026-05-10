@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import EventConfirmationStatus1Code
 import EventCompletenessStatus1Code
 

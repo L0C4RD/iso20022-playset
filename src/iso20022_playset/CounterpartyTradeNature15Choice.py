@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
+import NonFinancialInstitutionSector10
 import NoReasonCode
 import FinancialInstitutionSector1
-import NonFinancialInstitutionSector10
 
 class CounterpartyTradeNature15Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_NFI", "_CntrlCntrPty", "_FI"]
+	__slots__ = ["_Othr", "_CntrlCntrPty", "_FI", "_NFI"]
 	@property
 	def Othr(self):
 		return self._Othr
@@ -18,19 +18,6 @@ class CounterpartyTradeNature15Choice(base_types._BaseFieldType):
 	def Othr(self):
 		del self._Othr
 		self._Othr = None
-
-	@property
-	def NFI(self):
-		return self._NFI
-
-	@NFI.setter
-	def NFI(self, value):
-		self._NFI = value if type(value) != auto else self.make_default("NFI")
-
-	@NFI.deleter
-	def NFI(self):
-		del self._NFI
-		self._NFI = None
 
 	@property
 	def CntrlCntrPty(self):
@@ -58,10 +45,23 @@ class CounterpartyTradeNature15Choice(base_types._BaseFieldType):
 		del self._FI
 		self._FI = None
 
+	@property
+	def NFI(self):
+		return self._NFI
+
+	@NFI.setter
+	def NFI(self, value):
+		self._NFI = value if type(value) != auto else self.make_default("NFI")
+
+	@NFI.deleter
+	def NFI(self):
+		del self._NFI
+		self._NFI = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Othr', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NFI', type=NonFinancialInstitutionSector10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CntrlCntrPty', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FI', type=FinancialInstitutionSector1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NFI', type=NonFinancialInstitutionSector10, min=0, max=1, mutex_group=1, array=False),
 	))
 

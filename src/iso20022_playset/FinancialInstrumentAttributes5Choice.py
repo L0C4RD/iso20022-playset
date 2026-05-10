@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
 import SecurityInstrumentDescription22
-import ISINOct2015Identifier
 import SecurityIdentification19
+import ISINOct2015Identifier
 
 class FinancialInstrumentAttributes5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_AltrnId", "_Id"]
+	__slots__ = ["_Othr", "_Id", "_AltrnId"]
 	@property
 	def Othr(self):
 		return self._Othr
@@ -20,19 +20,6 @@ class FinancialInstrumentAttributes5Choice(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def AltrnId(self):
-		return self._AltrnId
-
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
-
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -45,9 +32,22 @@ class FinancialInstrumentAttributes5Choice(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def AltrnId(self):
+		return self._AltrnId
+
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Othr', type=SecurityInstrumentDescription22, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AltrnId', type=SecurityIdentification19, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AltrnId', type=SecurityIdentification19, min=0, max=1, mutex_group=1, array=False),
 	))
 

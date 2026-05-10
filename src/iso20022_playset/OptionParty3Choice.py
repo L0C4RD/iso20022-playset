@@ -1,6 +1,6 @@
-import base_types
-import OptionParty1Code
+from . import base_types
 import GenericIdentification30
+import OptionParty1Code
 
 class OptionParty3Choice(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import UndertakingIssuanceV01
 
 class TSRV_001_001_01():

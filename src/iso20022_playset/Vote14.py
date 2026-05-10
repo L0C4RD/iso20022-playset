@@ -1,37 +1,11 @@
-import base_types
+from . import base_types
 import Max35Text
-import QuantityOrCode1Choice
 import ProprietaryVote1
+import QuantityOrCode1Choice
 
 class Vote14(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrLabl", "_Wthhld", "_Abstn", "_NoActn", "_WthMgmt", "_Prtry", "_OneYr", "_ListgGrpRsltnLabl", "_For", "_AgnstMgmt", "_ThreeYrs", "_Dscrtnry", "_Blnk", "_Agnst", "_TwoYrs"]
-	@property
-	def IssrLabl(self):
-		return self._IssrLabl
-
-	@IssrLabl.setter
-	def IssrLabl(self, value):
-		self._IssrLabl = value if type(value) != auto else self.make_default("IssrLabl")
-
-	@IssrLabl.deleter
-	def IssrLabl(self):
-		del self._IssrLabl
-		self._IssrLabl = None
-
-	@property
-	def Wthhld(self):
-		return self._Wthhld
-
-	@Wthhld.setter
-	def Wthhld(self, value):
-		self._Wthhld = value if type(value) != auto else self.make_default("Wthhld")
-
-	@Wthhld.deleter
-	def Wthhld(self):
-		del self._Wthhld
-		self._Wthhld = None
-
+	__slots__ = ["_Abstn", "_Wthhld", "_ListgGrpRsltnLabl", "_For", "_Agnst", "_IssrLabl", "_TwoYrs", "_ThreeYrs", "_OneYr", "_Blnk", "_WthMgmt", "_Dscrtnry", "_NoActn", "_AgnstMgmt", "_Prtry"]
 	@property
 	def Abstn(self):
 		return self._Abstn
@@ -46,56 +20,17 @@ class Vote14(base_types._BaseFieldType):
 		self._Abstn = None
 
 	@property
-	def NoActn(self):
-		return self._NoActn
+	def Wthhld(self):
+		return self._Wthhld
 
-	@NoActn.setter
-	def NoActn(self, value):
-		self._NoActn = value if type(value) != auto else self.make_default("NoActn")
+	@Wthhld.setter
+	def Wthhld(self, value):
+		self._Wthhld = value if type(value) != auto else self.make_default("Wthhld")
 
-	@NoActn.deleter
-	def NoActn(self):
-		del self._NoActn
-		self._NoActn = None
-
-	@property
-	def WthMgmt(self):
-		return self._WthMgmt
-
-	@WthMgmt.setter
-	def WthMgmt(self, value):
-		self._WthMgmt = value if type(value) != auto else self.make_default("WthMgmt")
-
-	@WthMgmt.deleter
-	def WthMgmt(self):
-		del self._WthMgmt
-		self._WthMgmt = None
-
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
-	@property
-	def OneYr(self):
-		return self._OneYr
-
-	@OneYr.setter
-	def OneYr(self, value):
-		self._OneYr = value if type(value) != auto else self.make_default("OneYr")
-
-	@OneYr.deleter
-	def OneYr(self):
-		del self._OneYr
-		self._OneYr = None
+	@Wthhld.deleter
+	def Wthhld(self):
+		del self._Wthhld
+		self._Wthhld = None
 
 	@property
 	def ListgGrpRsltnLabl(self):
@@ -124,17 +59,43 @@ class Vote14(base_types._BaseFieldType):
 		self._For = None
 
 	@property
-	def AgnstMgmt(self):
-		return self._AgnstMgmt
+	def Agnst(self):
+		return self._Agnst
 
-	@AgnstMgmt.setter
-	def AgnstMgmt(self, value):
-		self._AgnstMgmt = value if type(value) != auto else self.make_default("AgnstMgmt")
+	@Agnst.setter
+	def Agnst(self, value):
+		self._Agnst = value if type(value) != auto else self.make_default("Agnst")
 
-	@AgnstMgmt.deleter
-	def AgnstMgmt(self):
-		del self._AgnstMgmt
-		self._AgnstMgmt = None
+	@Agnst.deleter
+	def Agnst(self):
+		del self._Agnst
+		self._Agnst = None
+
+	@property
+	def IssrLabl(self):
+		return self._IssrLabl
+
+	@IssrLabl.setter
+	def IssrLabl(self, value):
+		self._IssrLabl = value if type(value) != auto else self.make_default("IssrLabl")
+
+	@IssrLabl.deleter
+	def IssrLabl(self):
+		del self._IssrLabl
+		self._IssrLabl = None
+
+	@property
+	def TwoYrs(self):
+		return self._TwoYrs
+
+	@TwoYrs.setter
+	def TwoYrs(self, value):
+		self._TwoYrs = value if type(value) != auto else self.make_default("TwoYrs")
+
+	@TwoYrs.deleter
+	def TwoYrs(self):
+		del self._TwoYrs
+		self._TwoYrs = None
 
 	@property
 	def ThreeYrs(self):
@@ -150,17 +111,17 @@ class Vote14(base_types._BaseFieldType):
 		self._ThreeYrs = None
 
 	@property
-	def Dscrtnry(self):
-		return self._Dscrtnry
+	def OneYr(self):
+		return self._OneYr
 
-	@Dscrtnry.setter
-	def Dscrtnry(self, value):
-		self._Dscrtnry = value if type(value) != auto else self.make_default("Dscrtnry")
+	@OneYr.setter
+	def OneYr(self, value):
+		self._OneYr = value if type(value) != auto else self.make_default("OneYr")
 
-	@Dscrtnry.deleter
-	def Dscrtnry(self):
-		del self._Dscrtnry
-		self._Dscrtnry = None
+	@OneYr.deleter
+	def OneYr(self):
+		del self._OneYr
+		self._OneYr = None
 
 	@property
 	def Blnk(self):
@@ -176,46 +137,85 @@ class Vote14(base_types._BaseFieldType):
 		self._Blnk = None
 
 	@property
-	def Agnst(self):
-		return self._Agnst
+	def WthMgmt(self):
+		return self._WthMgmt
 
-	@Agnst.setter
-	def Agnst(self, value):
-		self._Agnst = value if type(value) != auto else self.make_default("Agnst")
+	@WthMgmt.setter
+	def WthMgmt(self, value):
+		self._WthMgmt = value if type(value) != auto else self.make_default("WthMgmt")
 
-	@Agnst.deleter
-	def Agnst(self):
-		del self._Agnst
-		self._Agnst = None
+	@WthMgmt.deleter
+	def WthMgmt(self):
+		del self._WthMgmt
+		self._WthMgmt = None
 
 	@property
-	def TwoYrs(self):
-		return self._TwoYrs
+	def Dscrtnry(self):
+		return self._Dscrtnry
 
-	@TwoYrs.setter
-	def TwoYrs(self, value):
-		self._TwoYrs = value if type(value) != auto else self.make_default("TwoYrs")
+	@Dscrtnry.setter
+	def Dscrtnry(self, value):
+		self._Dscrtnry = value if type(value) != auto else self.make_default("Dscrtnry")
 
-	@TwoYrs.deleter
-	def TwoYrs(self):
-		del self._TwoYrs
-		self._TwoYrs = None
+	@Dscrtnry.deleter
+	def Dscrtnry(self):
+		del self._Dscrtnry
+		self._Dscrtnry = None
+
+	@property
+	def NoActn(self):
+		return self._NoActn
+
+	@NoActn.setter
+	def NoActn(self, value):
+		self._NoActn = value if type(value) != auto else self.make_default("NoActn")
+
+	@NoActn.deleter
+	def NoActn(self):
+		del self._NoActn
+		self._NoActn = None
+
+	@property
+	def AgnstMgmt(self):
+		return self._AgnstMgmt
+
+	@AgnstMgmt.setter
+	def AgnstMgmt(self, value):
+		self._AgnstMgmt = value if type(value) != auto else self.make_default("AgnstMgmt")
+
+	@AgnstMgmt.deleter
+	def AgnstMgmt(self):
+		del self._AgnstMgmt
+		self._AgnstMgmt = None
+
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IssrLabl', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Wthhld', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Abstn', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NoActn', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WthMgmt', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prtry', type=ProprietaryVote1, min=0, max=4, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OneYr', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Wthhld', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ListgGrpRsltnLabl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='For', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgnstMgmt', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ThreeYrs', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dscrtnry', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Blnk', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Agnst', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrLabl', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TwoYrs', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ThreeYrs', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OneYr', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Blnk', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WthMgmt', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dscrtnry', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NoActn', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgnstMgmt', type=QuantityOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryVote1, min=0, max=4, mutex_group=None, array=True),
 	))
 

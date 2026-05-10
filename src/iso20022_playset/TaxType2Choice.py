@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Max35Text
 import TaxType9Code
 

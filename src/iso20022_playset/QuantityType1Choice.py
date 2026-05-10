@@ -1,6 +1,6 @@
-import base_types
-import OrderQuantityType2Code
+from . import base_types
 import GenericIdentification47
+import OrderQuantityType2Code
 
 class QuantityType1Choice(base_types._BaseFieldType):
 

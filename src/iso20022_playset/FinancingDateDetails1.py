@@ -1,21 +1,21 @@
-import base_types
+from . import base_types
 import ISODate
 
 class FinancingDateDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_DbtDt", "_CdtDt", "_BookDt"]
+	__slots__ = ["_BookDt", "_CdtDt", "_DbtDt"]
 	@property
-	def DbtDt(self):
-		return self._DbtDt
+	def BookDt(self):
+		return self._BookDt
 
-	@DbtDt.setter
-	def DbtDt(self, value):
-		self._DbtDt = value if type(value) != auto else self.make_default("DbtDt")
+	@BookDt.setter
+	def BookDt(self, value):
+		self._BookDt = value if type(value) != auto else self.make_default("BookDt")
 
-	@DbtDt.deleter
-	def DbtDt(self):
-		del self._DbtDt
-		self._DbtDt = None
+	@BookDt.deleter
+	def BookDt(self):
+		del self._BookDt
+		self._BookDt = None
 
 	@property
 	def CdtDt(self):
@@ -31,21 +31,21 @@ class FinancingDateDetails1(base_types._BaseFieldType):
 		self._CdtDt = None
 
 	@property
-	def BookDt(self):
-		return self._BookDt
+	def DbtDt(self):
+		return self._DbtDt
 
-	@BookDt.setter
-	def BookDt(self, value):
-		self._BookDt = value if type(value) != auto else self.make_default("BookDt")
+	@DbtDt.setter
+	def DbtDt(self, value):
+		self._DbtDt = value if type(value) != auto else self.make_default("DbtDt")
 
-	@BookDt.deleter
-	def BookDt(self):
-		del self._BookDt
-		self._BookDt = None
+	@DbtDt.deleter
+	def DbtDt(self):
+		del self._DbtDt
+		self._DbtDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DbtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BookDt', type=ISODate, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CdtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

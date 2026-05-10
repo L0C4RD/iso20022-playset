@@ -1,19 +1,58 @@
-import base_types
-import SafekeepingPlaceFormat7Choice
-import AmountAndDirection27
-import PartyIdentification34Choice
+from . import base_types
 import ISODate
-import FinancialInstrumentQuantity1Choice
-import PartyIdentificationAndAccount31
-import Max35Text
 import PartyIdentification35Choice
+import PartyIdentificationAndAccount31
 import Price4
-import SecurityIdentification14
+import AmountAndDirection27
+import SafekeepingPlaceFormat7Choice
+import Max35Text
+import PartyIdentification34Choice
 import SecuritiesAccount19
+import SecurityIdentification14
+import FinancialInstrumentQuantity1Choice
 
 class SettlementObligation7(base_types._BaseFieldType):
 
-	__slots__ = ["_NonClrMmb", "_FinInstrmId", "_Qty", "_SttlmAmt", "_PrvsBuyInId", "_DlvryAcct", "_IntnddSttlmDt", "_RmngQtyToBeSttld", "_Dpstry", "_DealPric", "_TradDt", "_SfkpgPlc", "_CSDTxId", "_SfkpgAcct", "_CntrlCtrPtyTxId", "_ClrSgmt", "_RmngAmtToBeSttld"]
+	__slots__ = ["_ClrSgmt", "_DealPric", "_SfkpgAcct", "_NonClrMmb", "_PrvsBuyInId", "_IntnddSttlmDt", "_SttlmAmt", "_CSDTxId", "_RmngQtyToBeSttld", "_Dpstry", "_FinInstrmId", "_RmngAmtToBeSttld", "_TradDt", "_DlvryAcct", "_Qty", "_CntrlCtrPtyTxId", "_SfkpgPlc"]
+	@property
+	def ClrSgmt(self):
+		return self._ClrSgmt
+
+	@ClrSgmt.setter
+	def ClrSgmt(self, value):
+		self._ClrSgmt = value if type(value) != auto else self.make_default("ClrSgmt")
+
+	@ClrSgmt.deleter
+	def ClrSgmt(self):
+		del self._ClrSgmt
+		self._ClrSgmt = None
+
+	@property
+	def DealPric(self):
+		return self._DealPric
+
+	@DealPric.setter
+	def DealPric(self, value):
+		self._DealPric = value if type(value) != auto else self.make_default("DealPric")
+
+	@DealPric.deleter
+	def DealPric(self):
+		del self._DealPric
+		self._DealPric = None
+
+	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
 	@property
 	def NonClrMmb(self):
 		return self._NonClrMmb
@@ -26,45 +65,6 @@ class SettlementObligation7(base_types._BaseFieldType):
 	def NonClrMmb(self):
 		del self._NonClrMmb
 		self._NonClrMmb = None
-
-	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
-	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
-
-	@property
-	def SttlmAmt(self):
-		return self._SttlmAmt
-
-	@SttlmAmt.setter
-	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != auto else self.make_default("SttlmAmt")
-
-	@SttlmAmt.deleter
-	def SttlmAmt(self):
-		del self._SttlmAmt
-		self._SttlmAmt = None
 
 	@property
 	def PrvsBuyInId(self):
@@ -80,19 +80,6 @@ class SettlementObligation7(base_types._BaseFieldType):
 		self._PrvsBuyInId = None
 
 	@property
-	def DlvryAcct(self):
-		return self._DlvryAcct
-
-	@DlvryAcct.setter
-	def DlvryAcct(self, value):
-		self._DlvryAcct = value if type(value) != auto else self.make_default("DlvryAcct")
-
-	@DlvryAcct.deleter
-	def DlvryAcct(self):
-		del self._DlvryAcct
-		self._DlvryAcct = None
-
-	@property
 	def IntnddSttlmDt(self):
 		return self._IntnddSttlmDt
 
@@ -104,6 +91,32 @@ class SettlementObligation7(base_types._BaseFieldType):
 	def IntnddSttlmDt(self):
 		del self._IntnddSttlmDt
 		self._IntnddSttlmDt = None
+
+	@property
+	def SttlmAmt(self):
+		return self._SttlmAmt
+
+	@SttlmAmt.setter
+	def SttlmAmt(self, value):
+		self._SttlmAmt = value if type(value) != auto else self.make_default("SttlmAmt")
+
+	@SttlmAmt.deleter
+	def SttlmAmt(self):
+		del self._SttlmAmt
+		self._SttlmAmt = None
+
+	@property
+	def CSDTxId(self):
+		return self._CSDTxId
+
+	@CSDTxId.setter
+	def CSDTxId(self, value):
+		self._CSDTxId = value if type(value) != auto else self.make_default("CSDTxId")
+
+	@CSDTxId.deleter
+	def CSDTxId(self):
+		del self._CSDTxId
+		self._CSDTxId = None
 
 	@property
 	def RmngQtyToBeSttld(self):
@@ -132,17 +145,30 @@ class SettlementObligation7(base_types._BaseFieldType):
 		self._Dpstry = None
 
 	@property
-	def DealPric(self):
-		return self._DealPric
+	def FinInstrmId(self):
+		return self._FinInstrmId
 
-	@DealPric.setter
-	def DealPric(self, value):
-		self._DealPric = value if type(value) != auto else self.make_default("DealPric")
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
 
-	@DealPric.deleter
-	def DealPric(self):
-		del self._DealPric
-		self._DealPric = None
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
+	@property
+	def RmngAmtToBeSttld(self):
+		return self._RmngAmtToBeSttld
+
+	@RmngAmtToBeSttld.setter
+	def RmngAmtToBeSttld(self, value):
+		self._RmngAmtToBeSttld = value if type(value) != auto else self.make_default("RmngAmtToBeSttld")
+
+	@RmngAmtToBeSttld.deleter
+	def RmngAmtToBeSttld(self):
+		del self._RmngAmtToBeSttld
+		self._RmngAmtToBeSttld = None
 
 	@property
 	def TradDt(self):
@@ -158,43 +184,30 @@ class SettlementObligation7(base_types._BaseFieldType):
 		self._TradDt = None
 
 	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
+	def DlvryAcct(self):
+		return self._DlvryAcct
 
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
+	@DlvryAcct.setter
+	def DlvryAcct(self, value):
+		self._DlvryAcct = value if type(value) != auto else self.make_default("DlvryAcct")
 
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
-
-	@property
-	def CSDTxId(self):
-		return self._CSDTxId
-
-	@CSDTxId.setter
-	def CSDTxId(self, value):
-		self._CSDTxId = value if type(value) != auto else self.make_default("CSDTxId")
-
-	@CSDTxId.deleter
-	def CSDTxId(self):
-		del self._CSDTxId
-		self._CSDTxId = None
+	@DlvryAcct.deleter
+	def DlvryAcct(self):
+		del self._DlvryAcct
+		self._DlvryAcct = None
 
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
+	def Qty(self):
+		return self._Qty
 
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != auto else self.make_default("Qty")
 
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
 
 	@property
 	def CntrlCtrPtyTxId(self):
@@ -210,48 +223,35 @@ class SettlementObligation7(base_types._BaseFieldType):
 		self._CntrlCtrPtyTxId = None
 
 	@property
-	def ClrSgmt(self):
-		return self._ClrSgmt
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
 
-	@ClrSgmt.setter
-	def ClrSgmt(self, value):
-		self._ClrSgmt = value if type(value) != auto else self.make_default("ClrSgmt")
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
 
-	@ClrSgmt.deleter
-	def ClrSgmt(self):
-		del self._ClrSgmt
-		self._ClrSgmt = None
-
-	@property
-	def RmngAmtToBeSttld(self):
-		return self._RmngAmtToBeSttld
-
-	@RmngAmtToBeSttld.setter
-	def RmngAmtToBeSttld(self, value):
-		self._RmngAmtToBeSttld = value if type(value) != auto else self.make_default("RmngAmtToBeSttld")
-
-	@RmngAmtToBeSttld.deleter
-	def RmngAmtToBeSttld(self):
-		del self._RmngAmtToBeSttld
-		self._RmngAmtToBeSttld = None
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ClrSgmt', type=PartyIdentification35Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealPric', type=Price4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount31, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification14, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection27, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsBuyInId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntnddSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection27, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CSDTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmngQtyToBeSttld', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dpstry', type=PartyIdentification34Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealPric', type=Price4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat7Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CSDTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CntrlCtrPtyTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrSgmt', type=PartyIdentification35Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmngAmtToBeSttld', type=AmountAndDirection27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CntrlCtrPtyTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat7Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

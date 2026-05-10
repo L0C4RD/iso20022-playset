@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import Max140Text
 import MeetingCancellationReason1Choice
 
 class MeetingCancellationReason2(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_CxlRsnCd"]
-	@property
-	def CxlRsn(self):
-		return self._CxlRsn
-
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
-
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
-
+	__slots__ = ["_CxlRsnCd", "_CxlRsn"]
 	@property
 	def CxlRsnCd(self):
 		return self._CxlRsnCd
@@ -31,8 +18,21 @@ class MeetingCancellationReason2(base_types._BaseFieldType):
 		del self._CxlRsnCd
 		self._CxlRsnCd = None
 
+	@property
+	def CxlRsn(self):
+		return self._CxlRsn
+
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlRsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRsnCd', type=MeetingCancellationReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

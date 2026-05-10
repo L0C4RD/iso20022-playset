@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
+import Status19Choice
 import Reason19Choice
 import SecurityIdentification19
-import Status19Choice
 
 class AdditionalQueryParameters13(base_types._BaseFieldType):
 

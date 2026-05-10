@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import StatementBasis3Code
 import GenericIdentification30
 

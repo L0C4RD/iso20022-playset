@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import PriceValueChange1
 import PriceValue5
 
 class StatisticsByPredefinedTimePeriods2(base_types._BaseFieldType):
 
-	__slots__ = ["_FiveYrPricChng", "_LwstPricVal12Mnths", "_HghstPricVal12Mnths", "_ThreeYrPricChng", "_OneYrPricChng"]
-	@property
-	def FiveYrPricChng(self):
-		return self._FiveYrPricChng
-
-	@FiveYrPricChng.setter
-	def FiveYrPricChng(self, value):
-		self._FiveYrPricChng = value if type(value) != auto else self.make_default("FiveYrPricChng")
-
-	@FiveYrPricChng.deleter
-	def FiveYrPricChng(self):
-		del self._FiveYrPricChng
-		self._FiveYrPricChng = None
-
+	__slots__ = ["_LwstPricVal12Mnths", "_OneYrPricChng", "_HghstPricVal12Mnths", "_ThreeYrPricChng", "_FiveYrPricChng"]
 	@property
 	def LwstPricVal12Mnths(self):
 		return self._LwstPricVal12Mnths
@@ -30,6 +17,19 @@ class StatisticsByPredefinedTimePeriods2(base_types._BaseFieldType):
 	def LwstPricVal12Mnths(self):
 		del self._LwstPricVal12Mnths
 		self._LwstPricVal12Mnths = None
+
+	@property
+	def OneYrPricChng(self):
+		return self._OneYrPricChng
+
+	@OneYrPricChng.setter
+	def OneYrPricChng(self, value):
+		self._OneYrPricChng = value if type(value) != auto else self.make_default("OneYrPricChng")
+
+	@OneYrPricChng.deleter
+	def OneYrPricChng(self):
+		del self._OneYrPricChng
+		self._OneYrPricChng = None
 
 	@property
 	def HghstPricVal12Mnths(self):
@@ -58,23 +58,23 @@ class StatisticsByPredefinedTimePeriods2(base_types._BaseFieldType):
 		self._ThreeYrPricChng = None
 
 	@property
-	def OneYrPricChng(self):
-		return self._OneYrPricChng
+	def FiveYrPricChng(self):
+		return self._FiveYrPricChng
 
-	@OneYrPricChng.setter
-	def OneYrPricChng(self, value):
-		self._OneYrPricChng = value if type(value) != auto else self.make_default("OneYrPricChng")
+	@FiveYrPricChng.setter
+	def FiveYrPricChng(self, value):
+		self._FiveYrPricChng = value if type(value) != auto else self.make_default("FiveYrPricChng")
 
-	@OneYrPricChng.deleter
-	def OneYrPricChng(self):
-		del self._OneYrPricChng
-		self._OneYrPricChng = None
+	@FiveYrPricChng.deleter
+	def FiveYrPricChng(self):
+		del self._FiveYrPricChng
+		self._FiveYrPricChng = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FiveYrPricChng', type=PriceValueChange1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LwstPricVal12Mnths', type=PriceValue5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OneYrPricChng', type=PriceValueChange1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HghstPricVal12Mnths', type=PriceValue5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ThreeYrPricChng', type=PriceValueChange1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OneYrPricChng', type=PriceValueChange1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FiveYrPricChng', type=PriceValueChange1, min=0, max=1, mutex_group=None, array=False),
 	))
 

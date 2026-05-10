@@ -1,10 +1,23 @@
-import base_types
+from . import base_types
 import Max35Text
 import CardDataReading5Code
 
 class Vehicle2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Data", "_NtryMd"]
+	__slots__ = ["_NtryMd", "_Tp", "_Data"]
+	@property
+	def NtryMd(self):
+		return self._NtryMd
+
+	@NtryMd.setter
+	def NtryMd(self, value):
+		self._NtryMd = value if type(value) != auto else self.make_default("NtryMd")
+
+	@NtryMd.deleter
+	def NtryMd(self):
+		del self._NtryMd
+		self._NtryMd = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -31,22 +44,9 @@ class Vehicle2(base_types._BaseFieldType):
 		del self._Data
 		self._Data = None
 
-	@property
-	def NtryMd(self):
-		return self._NtryMd
-
-	@NtryMd.setter
-	def NtryMd(self, value):
-		self._NtryMd = value if type(value) != auto else self.make_default("NtryMd")
-
-	@NtryMd.deleter
-	def NtryMd(self):
-		del self._NtryMd
-		self._NtryMd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NtryMd', type=CardDataReading5Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Data', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtryMd', type=CardDataReading5Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

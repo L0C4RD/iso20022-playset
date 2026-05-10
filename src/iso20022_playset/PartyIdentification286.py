@@ -1,40 +1,14 @@
-import base_types
-import Max35Text
+from . import base_types
 import Max11NumericText
-import AdditionalData1
-import ISO3NumericCountryCode
 import LocalData14
 import Max99Text
+import Max35Text
+import ISO3NumericCountryCode
+import AdditionalData1
 
 class PartyIdentification286(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnr", "_LclData", "_Id", "_Ctry", "_LglCorpNm", "_AddtlId", "_ShrtNm"]
-	@property
-	def Assgnr(self):
-		return self._Assgnr
-
-	@Assgnr.setter
-	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
-
-	@Assgnr.deleter
-	def Assgnr(self):
-		del self._Assgnr
-		self._Assgnr = None
-
-	@property
-	def LclData(self):
-		return self._LclData
-
-	@LclData.setter
-	def LclData(self, value):
-		self._LclData = value if type(value) != auto else self.make_default("LclData")
-
-	@LclData.deleter
-	def LclData(self):
-		del self._LclData
-		self._LclData = None
-
+	__slots__ = ["_Id", "_Assgnr", "_Ctry", "_ShrtNm", "_AddtlId", "_LglCorpNm", "_LclData"]
 	@property
 	def Id(self):
 		return self._Id
@@ -47,6 +21,19 @@ class PartyIdentification286(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def Assgnr(self):
+		return self._Assgnr
+
+	@Assgnr.setter
+	def Assgnr(self, value):
+		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
+
+	@Assgnr.deleter
+	def Assgnr(self):
+		del self._Assgnr
+		self._Assgnr = None
 
 	@property
 	def Ctry(self):
@@ -62,17 +49,17 @@ class PartyIdentification286(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
-	def LglCorpNm(self):
-		return self._LglCorpNm
+	def ShrtNm(self):
+		return self._ShrtNm
 
-	@LglCorpNm.setter
-	def LglCorpNm(self, value):
-		self._LglCorpNm = value if type(value) != auto else self.make_default("LglCorpNm")
+	@ShrtNm.setter
+	def ShrtNm(self, value):
+		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
 
-	@LglCorpNm.deleter
-	def LglCorpNm(self):
-		del self._LglCorpNm
-		self._LglCorpNm = None
+	@ShrtNm.deleter
+	def ShrtNm(self):
+		del self._ShrtNm
+		self._ShrtNm = None
 
 	@property
 	def AddtlId(self):
@@ -88,25 +75,38 @@ class PartyIdentification286(base_types._BaseFieldType):
 		self._AddtlId = None
 
 	@property
-	def ShrtNm(self):
-		return self._ShrtNm
+	def LglCorpNm(self):
+		return self._LglCorpNm
 
-	@ShrtNm.setter
-	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
+	@LglCorpNm.setter
+	def LglCorpNm(self, value):
+		self._LglCorpNm = value if type(value) != auto else self.make_default("LglCorpNm")
 
-	@ShrtNm.deleter
-	def ShrtNm(self):
-		del self._ShrtNm
-		self._ShrtNm = None
+	@LglCorpNm.deleter
+	def LglCorpNm(self):
+		del self._LglCorpNm
+		self._LglCorpNm = None
+
+	@property
+	def LclData(self):
+		return self._LclData
+
+	@LclData.setter
+	def LclData(self, value):
+		self._LclData = value if type(value) != auto else self.make_default("LclData")
+
+	@LclData.deleter
+	def LclData(self):
+		del self._LclData
+		self._LclData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LclData', type=LocalData14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max11NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglCorpNm', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlId', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlId', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LglCorpNm', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LclData', type=LocalData14, min=0, max=1, mutex_group=None, array=False),
 	))
 

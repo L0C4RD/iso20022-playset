@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
 import GroupHeader123
 import PaymentTransaction163
-import OriginalGroupHeader19
 import SupplementaryData1
+import OriginalGroupHeader19
 
 class PaymentReturnV14(base_types._BaseFieldType):
 
-	__slots__ = ["_TxInf", "_SplmtryData", "_OrgnlGrpInf", "_GrpHdr"]
+	__slots__ = ["_TxInf", "_OrgnlGrpInf", "_GrpHdr", "_SplmtryData"]
 	@property
 	def TxInf(self):
 		return self._TxInf
@@ -19,19 +19,6 @@ class PaymentReturnV14(base_types._BaseFieldType):
 	def TxInf(self):
 		del self._TxInf
 		self._TxInf = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
 
 	@property
 	def OrgnlGrpInf(self):
@@ -59,10 +46,23 @@ class PaymentReturnV14(base_types._BaseFieldType):
 		del self._GrpHdr
 		self._GrpHdr = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TxInf', type=PaymentTransaction163, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupHeader19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader123, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

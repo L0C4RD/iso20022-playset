@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
+import CashAccount40
+import PartyIdentification272
 import MandateRelatedInformation17
 import ContentInformationType39
-import PartyIdentification272
-import CashAccount40
 
 class DirectDebitContext1(base_types._BaseFieldType):
 
-	__slots__ = ["_DbtrAcct", "_Dbtr", "_MndtRltdInf", "_Cdtr", "_CdtrAcct", "_PrtctdDbtrAcct", "_PrtctdCdtrAcct"]
+	__slots__ = ["_DbtrAcct", "_MndtRltdInf", "_PrtctdCdtrAcct", "_CdtrAcct", "_Dbtr", "_PrtctdDbtrAcct", "_Cdtr"]
 	@property
 	def DbtrAcct(self):
 		return self._DbtrAcct
@@ -19,19 +19,6 @@ class DirectDebitContext1(base_types._BaseFieldType):
 	def DbtrAcct(self):
 		del self._DbtrAcct
 		self._DbtrAcct = None
-
-	@property
-	def Dbtr(self):
-		return self._Dbtr
-
-	@Dbtr.setter
-	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != auto else self.make_default("Dbtr")
-
-	@Dbtr.deleter
-	def Dbtr(self):
-		del self._Dbtr
-		self._Dbtr = None
 
 	@property
 	def MndtRltdInf(self):
@@ -47,17 +34,17 @@ class DirectDebitContext1(base_types._BaseFieldType):
 		self._MndtRltdInf = None
 
 	@property
-	def Cdtr(self):
-		return self._Cdtr
+	def PrtctdCdtrAcct(self):
+		return self._PrtctdCdtrAcct
 
-	@Cdtr.setter
-	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
+	@PrtctdCdtrAcct.setter
+	def PrtctdCdtrAcct(self, value):
+		self._PrtctdCdtrAcct = value if type(value) != auto else self.make_default("PrtctdCdtrAcct")
 
-	@Cdtr.deleter
-	def Cdtr(self):
-		del self._Cdtr
-		self._Cdtr = None
+	@PrtctdCdtrAcct.deleter
+	def PrtctdCdtrAcct(self):
+		del self._PrtctdCdtrAcct
+		self._PrtctdCdtrAcct = None
 
 	@property
 	def CdtrAcct(self):
@@ -73,6 +60,19 @@ class DirectDebitContext1(base_types._BaseFieldType):
 		self._CdtrAcct = None
 
 	@property
+	def Dbtr(self):
+		return self._Dbtr
+
+	@Dbtr.setter
+	def Dbtr(self, value):
+		self._Dbtr = value if type(value) != auto else self.make_default("Dbtr")
+
+	@Dbtr.deleter
+	def Dbtr(self):
+		del self._Dbtr
+		self._Dbtr = None
+
+	@property
 	def PrtctdDbtrAcct(self):
 		return self._PrtctdDbtrAcct
 
@@ -86,25 +86,25 @@ class DirectDebitContext1(base_types._BaseFieldType):
 		self._PrtctdDbtrAcct = None
 
 	@property
-	def PrtctdCdtrAcct(self):
-		return self._PrtctdCdtrAcct
+	def Cdtr(self):
+		return self._Cdtr
 
-	@PrtctdCdtrAcct.setter
-	def PrtctdCdtrAcct(self, value):
-		self._PrtctdCdtrAcct = value if type(value) != auto else self.make_default("PrtctdCdtrAcct")
+	@Cdtr.setter
+	def Cdtr(self, value):
+		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
 
-	@PrtctdCdtrAcct.deleter
-	def PrtctdCdtrAcct(self):
-		del self._PrtctdCdtrAcct
-		self._PrtctdCdtrAcct = None
+	@Cdtr.deleter
+	def Cdtr(self):
+		del self._Cdtr
+		self._Cdtr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MndtRltdInf', type=MandateRelatedInformation17, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdDbtrAcct', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdCdtrAcct', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdDbtrAcct', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 	))
 

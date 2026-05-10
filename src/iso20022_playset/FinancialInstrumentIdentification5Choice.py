@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialInstrument53
 import FinancialInstrument48Choice
 

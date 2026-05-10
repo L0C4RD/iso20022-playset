@@ -1,25 +1,25 @@
-import base_types
-import Max35Text
+from . import base_types
+import ISODate
 import CountryCode
 import OtherIdentification3Choice
+import Max35Text
 import Max70Text
-import ISODate
 
 class GenericIdentification82(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_XpryDt", "_IsseDt", "_IssrCtry", "_Id", "_Tp", "_Stat"]
+	__slots__ = ["_Stat", "_XpryDt", "_Id", "_IssrCtry", "_Issr", "_Tp", "_IsseDt"]
 	@property
-	def Issr(self):
-		return self._Issr
+	def Stat(self):
+		return self._Stat
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@Stat.setter
+	def Stat(self, value):
+		self._Stat = value if type(value) != auto else self.make_default("Stat")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@Stat.deleter
+	def Stat(self):
+		del self._Stat
+		self._Stat = None
 
 	@property
 	def XpryDt(self):
@@ -35,17 +35,17 @@ class GenericIdentification82(base_types._BaseFieldType):
 		self._XpryDt = None
 
 	@property
-	def IsseDt(self):
-		return self._IsseDt
+	def Id(self):
+		return self._Id
 
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def IssrCtry(self):
@@ -61,17 +61,17 @@ class GenericIdentification82(base_types._BaseFieldType):
 		self._IssrCtry = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def Issr(self):
+		return self._Issr
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	@property
 	def Tp(self):
@@ -87,25 +87,25 @@ class GenericIdentification82(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Stat(self):
-		return self._Stat
+	def IsseDt(self):
+		return self._IsseDt
 
-	@Stat.setter
-	def Stat(self, value):
-		self._Stat = value if type(value) != auto else self.make_default("Stat")
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
 
-	@Stat.deleter
-	def Stat(self):
-		del self._Stat
-		self._Stat = None
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=OtherIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Stat', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=OtherIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,40 +1,14 @@
-import base_types
-import Max35Text
-import ATMCassetteStatus1Code
-import ATMCassetteCounters6
-import ATMNoteType1Code
+from . import base_types
 import ATMMediaType4Code
+import ATMCassetteCounters6
+import ATMCassetteStatus1Code
+import ATMNoteType1Code
+import Max35Text
 import ATMCassetteType1Code
 
 class ATMCassette3(base_types._BaseFieldType):
 
-	__slots__ = ["_LogclId", "_SubTp", "_SrlNb", "_CssttSts", "_MdiaCntrs", "_PhysId", "_MdiaTp", "_Tp"]
-	@property
-	def LogclId(self):
-		return self._LogclId
-
-	@LogclId.setter
-	def LogclId(self, value):
-		self._LogclId = value if type(value) != auto else self.make_default("LogclId")
-
-	@LogclId.deleter
-	def LogclId(self):
-		del self._LogclId
-		self._LogclId = None
-
-	@property
-	def SubTp(self):
-		return self._SubTp
-
-	@SubTp.setter
-	def SubTp(self, value):
-		self._SubTp = value if type(value) != auto else self.make_default("SubTp")
-
-	@SubTp.deleter
-	def SubTp(self):
-		del self._SubTp
-		self._SubTp = None
-
+	__slots__ = ["_SrlNb", "_CssttSts", "_Tp", "_MdiaTp", "_LogclId", "_SubTp", "_MdiaCntrs", "_PhysId"]
 	@property
 	def SrlNb(self):
 		return self._SrlNb
@@ -62,6 +36,58 @@ class ATMCassette3(base_types._BaseFieldType):
 		self._CssttSts = None
 
 	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def MdiaTp(self):
+		return self._MdiaTp
+
+	@MdiaTp.setter
+	def MdiaTp(self, value):
+		self._MdiaTp = value if type(value) != auto else self.make_default("MdiaTp")
+
+	@MdiaTp.deleter
+	def MdiaTp(self):
+		del self._MdiaTp
+		self._MdiaTp = None
+
+	@property
+	def LogclId(self):
+		return self._LogclId
+
+	@LogclId.setter
+	def LogclId(self, value):
+		self._LogclId = value if type(value) != auto else self.make_default("LogclId")
+
+	@LogclId.deleter
+	def LogclId(self):
+		del self._LogclId
+		self._LogclId = None
+
+	@property
+	def SubTp(self):
+		return self._SubTp
+
+	@SubTp.setter
+	def SubTp(self, value):
+		self._SubTp = value if type(value) != auto else self.make_default("SubTp")
+
+	@SubTp.deleter
+	def SubTp(self):
+		del self._SubTp
+		self._SubTp = None
+
+	@property
 	def MdiaCntrs(self):
 		return self._MdiaCntrs
 
@@ -87,40 +113,14 @@ class ATMCassette3(base_types._BaseFieldType):
 		del self._PhysId
 		self._PhysId = None
 
-	@property
-	def MdiaTp(self):
-		return self._MdiaTp
-
-	@MdiaTp.setter
-	def MdiaTp(self, value):
-		self._MdiaTp = value if type(value) != auto else self.make_default("MdiaTp")
-
-	@MdiaTp.deleter
-	def MdiaTp(self):
-		del self._MdiaTp
-		self._MdiaTp = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LogclId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubTp', type=ATMNoteType1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CssttSts', type=ATMCassetteStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ATMCassetteType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MdiaTp', type=ATMMediaType4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LogclId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubTp', type=ATMNoteType1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MdiaCntrs', type=ATMCassetteCounters6, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PhysId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MdiaTp', type=ATMMediaType4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ATMCassetteType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

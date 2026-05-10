@@ -1,6 +1,6 @@
-import base_types
-import DataModification1Code
+from . import base_types
 import InvestmentPlan16
+import DataModification1Code
 
 class ModificationScope41(base_types._BaseFieldType):
 

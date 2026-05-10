@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CalendarReportV02
 
 class REDA_065_001_02():

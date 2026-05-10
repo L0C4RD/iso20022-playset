@@ -1,6 +1,6 @@
-import base_types
-import ATMAccountStatement2
+from . import base_types
 import AccountIdentification80Choice
+import ATMAccountStatement2
 import Max70Text
 
 class ATMAccountStatement3(base_types._BaseFieldType):

@@ -1,22 +1,22 @@
-import base_types
+from . import base_types
 import Max16Text
 import Number
 
 class UTMCoordinates1(base_types._BaseFieldType):
 
-	__slots__ = ["_UTMEstwrd", "_UTMNrthwrd", "_UTMZone"]
+	__slots__ = ["_UTMZone", "_UTMNrthwrd", "_UTMEstwrd"]
 	@property
-	def UTMEstwrd(self):
-		return self._UTMEstwrd
+	def UTMZone(self):
+		return self._UTMZone
 
-	@UTMEstwrd.setter
-	def UTMEstwrd(self, value):
-		self._UTMEstwrd = value if type(value) != auto else self.make_default("UTMEstwrd")
+	@UTMZone.setter
+	def UTMZone(self, value):
+		self._UTMZone = value if type(value) != auto else self.make_default("UTMZone")
 
-	@UTMEstwrd.deleter
-	def UTMEstwrd(self):
-		del self._UTMEstwrd
-		self._UTMEstwrd = None
+	@UTMZone.deleter
+	def UTMZone(self):
+		del self._UTMZone
+		self._UTMZone = None
 
 	@property
 	def UTMNrthwrd(self):
@@ -32,21 +32,21 @@ class UTMCoordinates1(base_types._BaseFieldType):
 		self._UTMNrthwrd = None
 
 	@property
-	def UTMZone(self):
-		return self._UTMZone
+	def UTMEstwrd(self):
+		return self._UTMEstwrd
 
-	@UTMZone.setter
-	def UTMZone(self, value):
-		self._UTMZone = value if type(value) != auto else self.make_default("UTMZone")
+	@UTMEstwrd.setter
+	def UTMEstwrd(self, value):
+		self._UTMEstwrd = value if type(value) != auto else self.make_default("UTMEstwrd")
 
-	@UTMZone.deleter
-	def UTMZone(self):
-		del self._UTMZone
-		self._UTMZone = None
+	@UTMEstwrd.deleter
+	def UTMEstwrd(self):
+		del self._UTMEstwrd
+		self._UTMEstwrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UTMEstwrd', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UTMNrthwrd', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UTMZone', type=Max16Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UTMNrthwrd', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UTMEstwrd', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
 

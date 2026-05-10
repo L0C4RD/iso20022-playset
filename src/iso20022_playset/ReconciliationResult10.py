@@ -1,22 +1,22 @@
-import base_types
+from . import base_types
 import MatchingCriteria10
 import OrganisationIdentification15Choice
 
 class ReconciliationResult10(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPty1", "_CtrPty2", "_MtchgCrit"]
+	__slots__ = ["_MtchgCrit", "_CtrPty2", "_CtrPty1"]
 	@property
-	def CtrPty1(self):
-		return self._CtrPty1
+	def MtchgCrit(self):
+		return self._MtchgCrit
 
-	@CtrPty1.setter
-	def CtrPty1(self, value):
-		self._CtrPty1 = value if type(value) != auto else self.make_default("CtrPty1")
+	@MtchgCrit.setter
+	def MtchgCrit(self, value):
+		self._MtchgCrit = value if type(value) != auto else self.make_default("MtchgCrit")
 
-	@CtrPty1.deleter
-	def CtrPty1(self):
-		del self._CtrPty1
-		self._CtrPty1 = None
+	@MtchgCrit.deleter
+	def MtchgCrit(self):
+		del self._MtchgCrit
+		self._MtchgCrit = None
 
 	@property
 	def CtrPty2(self):
@@ -32,21 +32,21 @@ class ReconciliationResult10(base_types._BaseFieldType):
 		self._CtrPty2 = None
 
 	@property
-	def MtchgCrit(self):
-		return self._MtchgCrit
+	def CtrPty1(self):
+		return self._CtrPty1
 
-	@MtchgCrit.setter
-	def MtchgCrit(self, value):
-		self._MtchgCrit = value if type(value) != auto else self.make_default("MtchgCrit")
+	@CtrPty1.setter
+	def CtrPty1(self, value):
+		self._CtrPty1 = value if type(value) != auto else self.make_default("CtrPty1")
 
-	@MtchgCrit.deleter
-	def MtchgCrit(self):
-		del self._MtchgCrit
-		self._MtchgCrit = None
+	@CtrPty1.deleter
+	def CtrPty1(self):
+		del self._CtrPty1
+		self._CtrPty1 = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPty1', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPty2', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchgCrit', type=MatchingCriteria10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPty2', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPty1', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

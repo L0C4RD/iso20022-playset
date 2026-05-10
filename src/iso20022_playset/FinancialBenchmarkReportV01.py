@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BenchmarkReport1Choice
 import SupplementaryData1
 

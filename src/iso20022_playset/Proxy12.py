@@ -1,6 +1,6 @@
-import base_types
-import IndividualPerson42
+from . import base_types
 import ProxyType3Code
+import IndividualPerson42
 
 class Proxy12(base_types._BaseFieldType):
 

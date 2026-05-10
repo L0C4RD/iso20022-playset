@@ -1,21 +1,21 @@
-import base_types
+from . import base_types
 import DateFormat4Choice
 
 class CorporateActionDate5(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_FXRateFxgDt", "_EarlstPmtDt", "_PmtDt"]
+	__slots__ = ["_EarlstPmtDt", "_FXRateFxgDt", "_ValDt", "_PmtDt"]
 	@property
-	def ValDt(self):
-		return self._ValDt
+	def EarlstPmtDt(self):
+		return self._EarlstPmtDt
 
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+	@EarlstPmtDt.setter
+	def EarlstPmtDt(self, value):
+		self._EarlstPmtDt = value if type(value) != auto else self.make_default("EarlstPmtDt")
 
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
+	@EarlstPmtDt.deleter
+	def EarlstPmtDt(self):
+		del self._EarlstPmtDt
+		self._EarlstPmtDt = None
 
 	@property
 	def FXRateFxgDt(self):
@@ -31,17 +31,17 @@ class CorporateActionDate5(base_types._BaseFieldType):
 		self._FXRateFxgDt = None
 
 	@property
-	def EarlstPmtDt(self):
-		return self._EarlstPmtDt
+	def ValDt(self):
+		return self._ValDt
 
-	@EarlstPmtDt.setter
-	def EarlstPmtDt(self, value):
-		self._EarlstPmtDt = value if type(value) != auto else self.make_default("EarlstPmtDt")
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
 
-	@EarlstPmtDt.deleter
-	def EarlstPmtDt(self):
-		del self._EarlstPmtDt
-		self._EarlstPmtDt = None
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
 
 	@property
 	def PmtDt(self):
@@ -57,9 +57,9 @@ class CorporateActionDate5(base_types._BaseFieldType):
 		self._PmtDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FXRateFxgDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EarlstPmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXRateFxgDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

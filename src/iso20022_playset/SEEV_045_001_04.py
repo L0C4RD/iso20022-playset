@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ShareholdersIdentificationDisclosureRequestV04
 
 class SEEV_045_001_04():

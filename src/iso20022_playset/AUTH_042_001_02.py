@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialInstrumentReportingInvalidReferenceDataReportV02
 
 class AUTH_042_001_02():

@@ -1,11 +1,24 @@
-import base_types
-import Max35Text
+from . import base_types
 import SupplementaryData1
 import YesNoIndicator
+import Max35Text
 
 class InformationRequestStatusChangeNotificationV01(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlBizQry", "_CnfdtltySts", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_OrgnlBizQry", "_CnfdtltySts"]
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	@property
 	def OrgnlBizQry(self):
 		return self._OrgnlBizQry
@@ -32,22 +45,9 @@ class InformationRequestStatusChangeNotificationV01(base_types._BaseFieldType):
 		del self._CnfdtltySts
 		self._CnfdtltySts = None
 
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlBizQry', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CnfdtltySts', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

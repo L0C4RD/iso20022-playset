@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TMSContactLevel1Code
 import Max35Text
 import ISODateTime

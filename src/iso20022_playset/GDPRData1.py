@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ISODate
 import YesNoIndicator
 import GDPRDataConsent1Choice

@@ -1,25 +1,12 @@
-import base_types
-import Max35Text
-import ImpliedCurrencyAndAmount
+from . import base_types
 import Max70Text
+import Max35Text
 import ActiveCurrencyCode
+import ImpliedCurrencyAndAmount
 
 class ATMTransactionAmounts7(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Amt", "_Labl", "_Ccy"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_Amt", "_Ccy", "_Labl", "_Tp"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -32,6 +19,19 @@ class ATMTransactionAmounts7(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def Labl(self):
@@ -47,22 +47,22 @@ class ATMTransactionAmounts7(base_types._BaseFieldType):
 		self._Labl = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def Tp(self):
+		return self._Tp
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Labl', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Labl', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

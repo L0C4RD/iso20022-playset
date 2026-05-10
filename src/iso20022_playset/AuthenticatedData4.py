@@ -1,52 +1,13 @@
-import base_types
-import AlgorithmIdentification15
-import Number
+from . import base_types
 import EncapsulatedContent3
+import Number
 import Max140Binary
 import Recipient4Choice
+import AlgorithmIdentification15
 
 class AuthenticatedData4(base_types._BaseFieldType):
 
-	__slots__ = ["_MAC", "_MACAlgo", "_NcpsltdCntt", "_Vrsn", "_Rcpt"]
-	@property
-	def MAC(self):
-		return self._MAC
-
-	@MAC.setter
-	def MAC(self, value):
-		self._MAC = value if type(value) != auto else self.make_default("MAC")
-
-	@MAC.deleter
-	def MAC(self):
-		del self._MAC
-		self._MAC = None
-
-	@property
-	def MACAlgo(self):
-		return self._MACAlgo
-
-	@MACAlgo.setter
-	def MACAlgo(self, value):
-		self._MACAlgo = value if type(value) != auto else self.make_default("MACAlgo")
-
-	@MACAlgo.deleter
-	def MACAlgo(self):
-		del self._MACAlgo
-		self._MACAlgo = None
-
-	@property
-	def NcpsltdCntt(self):
-		return self._NcpsltdCntt
-
-	@NcpsltdCntt.setter
-	def NcpsltdCntt(self, value):
-		self._NcpsltdCntt = value if type(value) != auto else self.make_default("NcpsltdCntt")
-
-	@NcpsltdCntt.deleter
-	def NcpsltdCntt(self):
-		del self._NcpsltdCntt
-		self._NcpsltdCntt = None
-
+	__slots__ = ["_Vrsn", "_Rcpt", "_NcpsltdCntt", "_MAC", "_MACAlgo"]
 	@property
 	def Vrsn(self):
 		return self._Vrsn
@@ -73,11 +34,50 @@ class AuthenticatedData4(base_types._BaseFieldType):
 		del self._Rcpt
 		self._Rcpt = None
 
+	@property
+	def NcpsltdCntt(self):
+		return self._NcpsltdCntt
+
+	@NcpsltdCntt.setter
+	def NcpsltdCntt(self, value):
+		self._NcpsltdCntt = value if type(value) != auto else self.make_default("NcpsltdCntt")
+
+	@NcpsltdCntt.deleter
+	def NcpsltdCntt(self):
+		del self._NcpsltdCntt
+		self._NcpsltdCntt = None
+
+	@property
+	def MAC(self):
+		return self._MAC
+
+	@MAC.setter
+	def MAC(self, value):
+		self._MAC = value if type(value) != auto else self.make_default("MAC")
+
+	@MAC.deleter
+	def MAC(self):
+		del self._MAC
+		self._MAC = None
+
+	@property
+	def MACAlgo(self):
+		return self._MACAlgo
+
+	@MACAlgo.setter
+	def MACAlgo(self, value):
+		self._MACAlgo = value if type(value) != auto else self.make_default("MACAlgo")
+
+	@MACAlgo.deleter
+	def MACAlgo(self):
+		del self._MACAlgo
+		self._MACAlgo = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MAC', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MACAlgo', type=AlgorithmIdentification15, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcpt', type=Recipient4Choice, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MAC', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MACAlgo', type=AlgorithmIdentification15, min=1, max=1, mutex_group=None, array=False),
 	))
 

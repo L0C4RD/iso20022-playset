@@ -1,6 +1,6 @@
-import base_types
-import Max140Text
+from . import base_types
 import Number
+import Max140Text
 
 class RejectedElement1(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CreateReservationV03
 
 class CAMT_103_001_03():

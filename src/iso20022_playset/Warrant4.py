@@ -1,12 +1,25 @@
-import base_types
+from . import base_types
+import Organisation38
+import Price8
 import BaseOneRate
 import WarrantStyle3Choice
-import Price8
-import Organisation38
 
 class Warrant4(base_types._BaseFieldType):
 
-	__slots__ = ["_SbcptPric", "_Tp", "_WarrtAgt", "_Mltplr"]
+	__slots__ = ["_Mltplr", "_SbcptPric", "_Tp", "_WarrtAgt"]
+	@property
+	def Mltplr(self):
+		return self._Mltplr
+
+	@Mltplr.setter
+	def Mltplr(self, value):
+		self._Mltplr = value if type(value) != auto else self.make_default("Mltplr")
+
+	@Mltplr.deleter
+	def Mltplr(self):
+		del self._Mltplr
+		self._Mltplr = None
+
 	@property
 	def SbcptPric(self):
 		return self._SbcptPric
@@ -46,23 +59,10 @@ class Warrant4(base_types._BaseFieldType):
 		del self._WarrtAgt
 		self._WarrtAgt = None
 
-	@property
-	def Mltplr(self):
-		return self._Mltplr
-
-	@Mltplr.setter
-	def Mltplr(self, value):
-		self._Mltplr = value if type(value) != auto else self.make_default("Mltplr")
-
-	@Mltplr.deleter
-	def Mltplr(self):
-		del self._Mltplr
-		self._Mltplr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Mltplr', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SbcptPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=WarrantStyle3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WarrtAgt', type=Organisation38, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Mltplr', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

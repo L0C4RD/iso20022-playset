@@ -1,24 +1,24 @@
-import base_types
-import BranchAndFinancialInstitutionIdentification8
-import ActiveCurrencyAndAmount
-import CompensationReason1Choice
+from . import base_types
 import CashAccount40
+import BranchAndFinancialInstitutionIdentification8
+import CompensationReason1Choice
+import ActiveCurrencyAndAmount
 
 class Compensation5(base_types._BaseFieldType):
 
-	__slots__ = ["_DbtrAgtAcct", "_Rsn", "_DbtrAgt", "_CdtrAgtAcct", "_CdtrAgt", "_Amt"]
+	__slots__ = ["_Amt", "_Rsn", "_DbtrAgt", "_DbtrAgtAcct", "_CdtrAgtAcct", "_CdtrAgt"]
 	@property
-	def DbtrAgtAcct(self):
-		return self._DbtrAgtAcct
+	def Amt(self):
+		return self._Amt
 
-	@DbtrAgtAcct.setter
-	def DbtrAgtAcct(self, value):
-		self._DbtrAgtAcct = value if type(value) != auto else self.make_default("DbtrAgtAcct")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@DbtrAgtAcct.deleter
-	def DbtrAgtAcct(self):
-		del self._DbtrAgtAcct
-		self._DbtrAgtAcct = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Rsn(self):
@@ -47,6 +47,19 @@ class Compensation5(base_types._BaseFieldType):
 		self._DbtrAgt = None
 
 	@property
+	def DbtrAgtAcct(self):
+		return self._DbtrAgtAcct
+
+	@DbtrAgtAcct.setter
+	def DbtrAgtAcct(self, value):
+		self._DbtrAgtAcct = value if type(value) != auto else self.make_default("DbtrAgtAcct")
+
+	@DbtrAgtAcct.deleter
+	def DbtrAgtAcct(self):
+		del self._DbtrAgtAcct
+		self._DbtrAgtAcct = None
+
+	@property
 	def CdtrAgtAcct(self):
 		return self._CdtrAgtAcct
 
@@ -72,25 +85,12 @@ class Compensation5(base_types._BaseFieldType):
 		del self._CdtrAgt
 		self._CdtrAgt = None
 
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DbtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=CompensationReason1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

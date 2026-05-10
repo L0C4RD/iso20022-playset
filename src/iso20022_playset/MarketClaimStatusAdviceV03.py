@@ -1,15 +1,15 @@
-import base_types
+from . import base_types
 import CorporateActionOption234
+import DocumentIdentification9
 import References26
 import SupplementaryData1
+import MarketClaimProcessingStatus1Choice
 import AccountIdentification70
 import CorporateActionGeneralInformation181
-import MarketClaimProcessingStatus1Choice
-import DocumentIdentification9
 
 class MarketClaimStatusAdviceV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MktClmPrcgSts", "_AcctDtls", "_TxRef", "_MktClmDtls", "_CorpActnGnlInf", "_SplmtryData", "_MktClmCreId"]
+	__slots__ = ["_MktClmPrcgSts", "_MktClmDtls", "_CorpActnGnlInf", "_SplmtryData", "_MktClmCreId", "_AcctDtls", "_TxRef"]
 	@property
 	def MktClmPrcgSts(self):
 		return self._MktClmPrcgSts
@@ -22,32 +22,6 @@ class MarketClaimStatusAdviceV03(base_types._BaseFieldType):
 	def MktClmPrcgSts(self):
 		del self._MktClmPrcgSts
 		self._MktClmPrcgSts = None
-
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
-	@property
-	def TxRef(self):
-		return self._TxRef
-
-	@TxRef.setter
-	def TxRef(self, value):
-		self._TxRef = value if type(value) != auto else self.make_default("TxRef")
-
-	@TxRef.deleter
-	def TxRef(self):
-		del self._TxRef
-		self._TxRef = None
 
 	@property
 	def MktClmDtls(self):
@@ -101,13 +75,39 @@ class MarketClaimStatusAdviceV03(base_types._BaseFieldType):
 		del self._MktClmCreId
 		self._MktClmCreId = None
 
+	@property
+	def AcctDtls(self):
+		return self._AcctDtls
+
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
+
+	@property
+	def TxRef(self):
+		return self._TxRef
+
+	@TxRef.setter
+	def TxRef(self, value):
+		self._TxRef = value if type(value) != auto else self.make_default("TxRef")
+
+	@TxRef.deleter
+	def TxRef(self):
+		del self._TxRef
+		self._TxRef = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MktClmPrcgSts', type=MarketClaimProcessingStatus1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification70, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxRef', type=References26, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktClmDtls', type=CorporateActionOption234, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation181, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MktClmCreId', type=DocumentIdentification9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification70, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxRef', type=References26, min=1, max=1, mutex_group=None, array=False),
 	))
 

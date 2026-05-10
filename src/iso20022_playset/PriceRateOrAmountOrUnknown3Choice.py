@@ -1,7 +1,7 @@
-import base_types
-import RestrictedFINActiveOrHistoricCurrencyAnd13DecimalAmount
+from . import base_types
 import PercentageRate
 import YesNoIndicator
+import RestrictedFINActiveOrHistoricCurrencyAnd13DecimalAmount
 
 class PriceRateOrAmountOrUnknown3Choice(base_types._BaseFieldType):
 

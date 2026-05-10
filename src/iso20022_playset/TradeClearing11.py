@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
+import Cleared23Choice
 import ClearingObligationType1Code
 import TrueFalseIndicator
-import Cleared23Choice
 
 class TradeClearing11(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrOblgtn", "_IntraGrp", "_ClrSts"]
+	__slots__ = ["_ClrSts", "_IntraGrp", "_ClrOblgtn"]
 	@property
-	def ClrOblgtn(self):
-		return self._ClrOblgtn
+	def ClrSts(self):
+		return self._ClrSts
 
-	@ClrOblgtn.setter
-	def ClrOblgtn(self, value):
-		self._ClrOblgtn = value if type(value) != auto else self.make_default("ClrOblgtn")
+	@ClrSts.setter
+	def ClrSts(self, value):
+		self._ClrSts = value if type(value) != auto else self.make_default("ClrSts")
 
-	@ClrOblgtn.deleter
-	def ClrOblgtn(self):
-		del self._ClrOblgtn
-		self._ClrOblgtn = None
+	@ClrSts.deleter
+	def ClrSts(self):
+		del self._ClrSts
+		self._ClrSts = None
 
 	@property
 	def IntraGrp(self):
@@ -33,21 +33,21 @@ class TradeClearing11(base_types._BaseFieldType):
 		self._IntraGrp = None
 
 	@property
-	def ClrSts(self):
-		return self._ClrSts
+	def ClrOblgtn(self):
+		return self._ClrOblgtn
 
-	@ClrSts.setter
-	def ClrSts(self, value):
-		self._ClrSts = value if type(value) != auto else self.make_default("ClrSts")
+	@ClrOblgtn.setter
+	def ClrOblgtn(self, value):
+		self._ClrOblgtn = value if type(value) != auto else self.make_default("ClrOblgtn")
 
-	@ClrSts.deleter
-	def ClrSts(self):
-		del self._ClrSts
-		self._ClrSts = None
+	@ClrOblgtn.deleter
+	def ClrOblgtn(self):
+		del self._ClrOblgtn
+		self._ClrOblgtn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrOblgtn', type=ClearingObligationType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntraGrp', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSts', type=Cleared23Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntraGrp', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrOblgtn', type=ClearingObligationType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,22 +1,35 @@
-import base_types
-import Max35Text
+from . import base_types
 import SequenceRange1
+import Max35Text
 
 class SequenceRange1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FrSeq", "_NEQSeq", "_ToSeq", "_EQSeq", "_FrToSeq"]
+	__slots__ = ["_FrToSeq", "_EQSeq", "_NEQSeq", "_ToSeq", "_FrSeq"]
 	@property
-	def FrSeq(self):
-		return self._FrSeq
+	def FrToSeq(self):
+		return self._FrToSeq
 
-	@FrSeq.setter
-	def FrSeq(self, value):
-		self._FrSeq = value if type(value) != auto else self.make_default("FrSeq")
+	@FrToSeq.setter
+	def FrToSeq(self, value):
+		self._FrToSeq = value if type(value) != auto else self.make_default("FrToSeq")
 
-	@FrSeq.deleter
-	def FrSeq(self):
-		del self._FrSeq
-		self._FrSeq = None
+	@FrToSeq.deleter
+	def FrToSeq(self):
+		del self._FrToSeq
+		self._FrToSeq = None
+
+	@property
+	def EQSeq(self):
+		return self._EQSeq
+
+	@EQSeq.setter
+	def EQSeq(self, value):
+		self._EQSeq = value if type(value) != auto else self.make_default("EQSeq")
+
+	@EQSeq.deleter
+	def EQSeq(self):
+		del self._EQSeq
+		self._EQSeq = None
 
 	@property
 	def NEQSeq(self):
@@ -45,36 +58,23 @@ class SequenceRange1Choice(base_types._BaseFieldType):
 		self._ToSeq = None
 
 	@property
-	def EQSeq(self):
-		return self._EQSeq
+	def FrSeq(self):
+		return self._FrSeq
 
-	@EQSeq.setter
-	def EQSeq(self, value):
-		self._EQSeq = value if type(value) != auto else self.make_default("EQSeq")
+	@FrSeq.setter
+	def FrSeq(self, value):
+		self._FrSeq = value if type(value) != auto else self.make_default("FrSeq")
 
-	@EQSeq.deleter
-	def EQSeq(self):
-		del self._EQSeq
-		self._EQSeq = None
-
-	@property
-	def FrToSeq(self):
-		return self._FrToSeq
-
-	@FrToSeq.setter
-	def FrToSeq(self, value):
-		self._FrToSeq = value if type(value) != auto else self.make_default("FrToSeq")
-
-	@FrToSeq.deleter
-	def FrToSeq(self):
-		del self._FrToSeq
-		self._FrToSeq = None
+	@FrSeq.deleter
+	def FrSeq(self):
+		del self._FrSeq
+		self._FrSeq = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FrSeq', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FrToSeq', type=SequenceRange1, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='EQSeq', type=Max35Text, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='NEQSeq', type=Max35Text, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='ToSeq', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='EQSeq', type=Max35Text, min=1, max=None, mutex_group=1, array=True),
-		base_types.FieldEntry(name='FrToSeq', type=SequenceRange1, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='FrSeq', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

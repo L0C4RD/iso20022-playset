@@ -1,26 +1,13 @@
-import base_types
+from . import base_types
+import ReportHeader7
 import CaseForwardingNotification3
+import Case6
 import SupplementaryData1
 import CaseAssignment6
-import ReportHeader7
-import Case6
 
 class NotificationOfCaseAssignmentV06(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnmt", "_Ntfctn", "_Case", "_SplmtryData", "_Hdr"]
-	@property
-	def Assgnmt(self):
-		return self._Assgnmt
-
-	@Assgnmt.setter
-	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
-
-	@Assgnmt.deleter
-	def Assgnmt(self):
-		del self._Assgnmt
-		self._Assgnmt = None
-
+	__slots__ = ["_Ntfctn", "_Assgnmt", "_SplmtryData", "_Case", "_Hdr"]
 	@property
 	def Ntfctn(self):
 		return self._Ntfctn
@@ -35,17 +22,17 @@ class NotificationOfCaseAssignmentV06(base_types._BaseFieldType):
 		self._Ntfctn = None
 
 	@property
-	def Case(self):
-		return self._Case
+	def Assgnmt(self):
+		return self._Assgnmt
 
-	@Case.setter
-	def Case(self, value):
-		self._Case = value if type(value) != auto else self.make_default("Case")
+	@Assgnmt.setter
+	def Assgnmt(self, value):
+		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
 
-	@Case.deleter
-	def Case(self):
-		del self._Case
-		self._Case = None
+	@Assgnmt.deleter
+	def Assgnmt(self):
+		del self._Assgnmt
+		self._Assgnmt = None
 
 	@property
 	def SplmtryData(self):
@@ -61,6 +48,19 @@ class NotificationOfCaseAssignmentV06(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def Case(self):
+		return self._Case
+
+	@Case.setter
+	def Case(self, value):
+		self._Case = value if type(value) != auto else self.make_default("Case")
+
+	@Case.deleter
+	def Case(self):
+		del self._Case
+		self._Case = None
+
+	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -74,10 +74,10 @@ class NotificationOfCaseAssignmentV06(base_types._BaseFieldType):
 		self._Hdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ntfctn', type=CaseForwardingNotification3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Case', type=Case6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Case', type=Case6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=ReportHeader7, min=1, max=1, mutex_group=None, array=False),
 	))
 

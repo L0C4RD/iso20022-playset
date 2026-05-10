@@ -1,6 +1,6 @@
-import base_types
-import ActiveCurrencyAndAmount
+from . import base_types
 import PercentageRate
+import ActiveCurrencyAndAmount
 
 class TaxAmountOrRate4Choice(base_types._BaseFieldType):
 

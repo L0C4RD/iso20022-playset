@@ -1,6 +1,6 @@
-import base_types
-import ActiveCurrencyAndAmount
+from . import base_types
 import InitialMarginExposure1
+import ActiveCurrencyAndAmount
 
 class InitialMarginRequirement1(base_types._BaseFieldType):
 

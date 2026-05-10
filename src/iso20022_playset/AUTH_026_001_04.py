@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CurrencyControlRequestOrLetterV04
 
 class AUTH_026_001_04():

@@ -1,24 +1,11 @@
-import base_types
-import TrueFalseIndicator
-import MissingOrIncorrectData1
+from . import base_types
 import YesNoIndicator
+import MissingOrIncorrectData1
+import TrueFalseIndicator
 
 class UnableToApplyJustification4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MssngOrIncrrctInf", "_PssblDplctInstr", "_AnyInf"]
-	@property
-	def MssngOrIncrrctInf(self):
-		return self._MssngOrIncrrctInf
-
-	@MssngOrIncrrctInf.setter
-	def MssngOrIncrrctInf(self, value):
-		self._MssngOrIncrrctInf = value if type(value) != auto else self.make_default("MssngOrIncrrctInf")
-
-	@MssngOrIncrrctInf.deleter
-	def MssngOrIncrrctInf(self):
-		del self._MssngOrIncrrctInf
-		self._MssngOrIncrrctInf = None
-
+	__slots__ = ["_PssblDplctInstr", "_AnyInf", "_MssngOrIncrrctInf"]
 	@property
 	def PssblDplctInstr(self):
 		return self._PssblDplctInstr
@@ -45,9 +32,22 @@ class UnableToApplyJustification4Choice(base_types._BaseFieldType):
 		del self._AnyInf
 		self._AnyInf = None
 
+	@property
+	def MssngOrIncrrctInf(self):
+		return self._MssngOrIncrrctInf
+
+	@MssngOrIncrrctInf.setter
+	def MssngOrIncrrctInf(self, value):
+		self._MssngOrIncrrctInf = value if type(value) != auto else self.make_default("MssngOrIncrrctInf")
+
+	@MssngOrIncrrctInf.deleter
+	def MssngOrIncrrctInf(self):
+		del self._MssngOrIncrrctInf
+		self._MssngOrIncrrctInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MssngOrIncrrctInf', type=MissingOrIncorrectData1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PssblDplctInstr', type=TrueFalseIndicator, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AnyInf', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MssngOrIncrrctInf', type=MissingOrIncorrectData1, min=0, max=1, mutex_group=1, array=False),
 	))
 

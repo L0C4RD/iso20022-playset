@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import IntraBalanceMovementStatusAdviceV02
 
 class CAMT_067_001_02():

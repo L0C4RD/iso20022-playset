@@ -1,11 +1,11 @@
-import base_types
-import Max35Text
+from . import base_types
 import Max350Text
+import Max35Text
 import InformationQualifierType1
 
 class GeneralBusinessInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Qlfr", "_Sbjt", "_SbjtDtls"]
+	__slots__ = ["_Qlfr", "_SbjtDtls", "_Sbjt"]
 	@property
 	def Qlfr(self):
 		return self._Qlfr
@@ -20,19 +20,6 @@ class GeneralBusinessInformation1(base_types._BaseFieldType):
 		self._Qlfr = None
 
 	@property
-	def Sbjt(self):
-		return self._Sbjt
-
-	@Sbjt.setter
-	def Sbjt(self, value):
-		self._Sbjt = value if type(value) != auto else self.make_default("Sbjt")
-
-	@Sbjt.deleter
-	def Sbjt(self):
-		del self._Sbjt
-		self._Sbjt = None
-
-	@property
 	def SbjtDtls(self):
 		return self._SbjtDtls
 
@@ -45,9 +32,22 @@ class GeneralBusinessInformation1(base_types._BaseFieldType):
 		del self._SbjtDtls
 		self._SbjtDtls = None
 
+	@property
+	def Sbjt(self):
+		return self._Sbjt
+
+	@Sbjt.setter
+	def Sbjt(self, value):
+		self._Sbjt = value if type(value) != auto else self.make_default("Sbjt")
+
+	@Sbjt.deleter
+	def Sbjt(self):
+		del self._Sbjt
+		self._Sbjt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qlfr', type=InformationQualifierType1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sbjt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SbjtDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sbjt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

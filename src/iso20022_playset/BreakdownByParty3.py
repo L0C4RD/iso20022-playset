@@ -1,13 +1,13 @@
-import base_types
-import CashInForecast5
-import InvestmentAccount42
-import AdditionalParameters1
-import CashOutForecast5
+from . import base_types
 import NetCashForecast4
+import AdditionalParameters1
+import CashInForecast5
+import CashOutForecast5
+import InvestmentAccount42
 
 class BreakdownByParty3(base_types._BaseFieldType):
 
-	__slots__ = ["_CshOutFcst", "_CshInFcst", "_NetCshFcst", "_AddtlParams", "_Pty"]
+	__slots__ = ["_CshOutFcst", "_AddtlParams", "_CshInFcst", "_Pty", "_NetCshFcst"]
 	@property
 	def CshOutFcst(self):
 		return self._CshOutFcst
@@ -20,32 +20,6 @@ class BreakdownByParty3(base_types._BaseFieldType):
 	def CshOutFcst(self):
 		del self._CshOutFcst
 		self._CshOutFcst = None
-
-	@property
-	def CshInFcst(self):
-		return self._CshInFcst
-
-	@CshInFcst.setter
-	def CshInFcst(self, value):
-		self._CshInFcst = value if type(value) != auto else self.make_default("CshInFcst")
-
-	@CshInFcst.deleter
-	def CshInFcst(self):
-		del self._CshInFcst
-		self._CshInFcst = None
-
-	@property
-	def NetCshFcst(self):
-		return self._NetCshFcst
-
-	@NetCshFcst.setter
-	def NetCshFcst(self, value):
-		self._NetCshFcst = value if type(value) != auto else self.make_default("NetCshFcst")
-
-	@NetCshFcst.deleter
-	def NetCshFcst(self):
-		del self._NetCshFcst
-		self._NetCshFcst = None
 
 	@property
 	def AddtlParams(self):
@@ -61,6 +35,19 @@ class BreakdownByParty3(base_types._BaseFieldType):
 		self._AddtlParams = None
 
 	@property
+	def CshInFcst(self):
+		return self._CshInFcst
+
+	@CshInFcst.setter
+	def CshInFcst(self, value):
+		self._CshInFcst = value if type(value) != auto else self.make_default("CshInFcst")
+
+	@CshInFcst.deleter
+	def CshInFcst(self):
+		del self._CshInFcst
+		self._CshInFcst = None
+
+	@property
 	def Pty(self):
 		return self._Pty
 
@@ -73,11 +60,24 @@ class BreakdownByParty3(base_types._BaseFieldType):
 		del self._Pty
 		self._Pty = None
 
+	@property
+	def NetCshFcst(self):
+		return self._NetCshFcst
+
+	@NetCshFcst.setter
+	def NetCshFcst(self, value):
+		self._NetCshFcst = value if type(value) != auto else self.make_default("NetCshFcst")
+
+	@NetCshFcst.deleter
+	def NetCshFcst(self):
+		del self._NetCshFcst
+		self._NetCshFcst = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshOutFcst', type=CashOutForecast5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CshInFcst', type=CashInForecast5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NetCshFcst', type=NetCashForecast4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlParams', type=AdditionalParameters1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshInFcst', type=CashInForecast5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Pty', type=InvestmentAccount42, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetCshFcst', type=NetCashForecast4, min=0, max=None, mutex_group=None, array=True),
 	))
 

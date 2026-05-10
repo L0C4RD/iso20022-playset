@@ -1,13 +1,26 @@
-import base_types
+from . import base_types
+import Number
 import Max5000Binary
 import AlgorithmIdentification16
 import EncapsulatedContent3
 import Signer3
-import Number
 
 class SignedData4(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_NcpsltdCntt", "_DgstAlgo", "_Cert", "_Sgnr"]
+	__slots__ = ["_Cert", "_Vrsn", "_DgstAlgo", "_NcpsltdCntt", "_Sgnr"]
+	@property
+	def Cert(self):
+		return self._Cert
+
+	@Cert.setter
+	def Cert(self, value):
+		self._Cert = value if type(value) != auto else self.make_default("Cert")
+
+	@Cert.deleter
+	def Cert(self):
+		del self._Cert
+		self._Cert = None
+
 	@property
 	def Vrsn(self):
 		return self._Vrsn
@@ -20,19 +33,6 @@ class SignedData4(base_types._BaseFieldType):
 	def Vrsn(self):
 		del self._Vrsn
 		self._Vrsn = None
-
-	@property
-	def NcpsltdCntt(self):
-		return self._NcpsltdCntt
-
-	@NcpsltdCntt.setter
-	def NcpsltdCntt(self, value):
-		self._NcpsltdCntt = value if type(value) != auto else self.make_default("NcpsltdCntt")
-
-	@NcpsltdCntt.deleter
-	def NcpsltdCntt(self):
-		del self._NcpsltdCntt
-		self._NcpsltdCntt = None
 
 	@property
 	def DgstAlgo(self):
@@ -48,17 +48,17 @@ class SignedData4(base_types._BaseFieldType):
 		self._DgstAlgo = None
 
 	@property
-	def Cert(self):
-		return self._Cert
+	def NcpsltdCntt(self):
+		return self._NcpsltdCntt
 
-	@Cert.setter
-	def Cert(self, value):
-		self._Cert = value if type(value) != auto else self.make_default("Cert")
+	@NcpsltdCntt.setter
+	def NcpsltdCntt(self, value):
+		self._NcpsltdCntt = value if type(value) != auto else self.make_default("NcpsltdCntt")
 
-	@Cert.deleter
-	def Cert(self):
-		del self._Cert
-		self._Cert = None
+	@NcpsltdCntt.deleter
+	def NcpsltdCntt(self):
+		del self._NcpsltdCntt
+		self._NcpsltdCntt = None
 
 	@property
 	def Sgnr(self):
@@ -74,10 +74,10 @@ class SignedData4(base_types._BaseFieldType):
 		self._Sgnr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification16, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Cert', type=Max5000Binary, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification16, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sgnr', type=Signer3, min=1, max=None, mutex_group=None, array=True),
 	))
 

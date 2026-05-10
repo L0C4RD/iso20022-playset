@@ -1,23 +1,10 @@
-import base_types
-import DateCode26Choice
+from . import base_types
 import ISOTime
+import DateCode26Choice
 
 class DateCodeAndTimeFormat4(base_types._BaseFieldType):
 
-	__slots__ = ["_DtCd", "_Tm"]
-	@property
-	def DtCd(self):
-		return self._DtCd
-
-	@DtCd.setter
-	def DtCd(self, value):
-		self._DtCd = value if type(value) != auto else self.make_default("DtCd")
-
-	@DtCd.deleter
-	def DtCd(self):
-		del self._DtCd
-		self._DtCd = None
-
+	__slots__ = ["_Tm", "_DtCd"]
 	@property
 	def Tm(self):
 		return self._Tm
@@ -31,8 +18,21 @@ class DateCodeAndTimeFormat4(base_types._BaseFieldType):
 		del self._Tm
 		self._Tm = None
 
+	@property
+	def DtCd(self):
+		return self._DtCd
+
+	@DtCd.setter
+	def DtCd(self, value):
+		self._DtCd = value if type(value) != auto else self.make_default("DtCd")
+
+	@DtCd.deleter
+	def DtCd(self):
+		del self._DtCd
+		self._DtCd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtCd', type=DateCode26Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tm', type=ISOTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtCd', type=DateCode26Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,45 +1,19 @@
-import base_types
-import PlaceOfTradeIdentification1Choice
+from . import base_types
 import ISODate
-import ActiveCurrencyAndAmount
-import CancellationRight1Choice
-import Max35Text
-import DateAndDateTimeChoice
+import PlaceOfTradeIdentification1Choice
 import IndividualPerson32
-import PaymentTransaction72
+import RedemptionOrder14
 import ISODateTime
 import InvestmentAccount58
-import RedemptionOrder14
+import DateAndDateTimeChoice
+import Max35Text
+import ActiveCurrencyAndAmount
+import PaymentTransaction72
+import CancellationRight1Choice
 
 class RedemptionMultipleOrder6(base_types._BaseFieldType):
 
-	__slots__ = ["_XpryDtTm", "_ReqdFutrTradDt", "_CxlRght", "_IndvOrdrDtls", "_TtlSttlmAmt", "_MstrRef", "_InvstmtAcctDtls", "_BnfcryDtls", "_PlcOfTrad", "_BlkCshSttlmDtls", "_OrdrDtTm"]
-	@property
-	def XpryDtTm(self):
-		return self._XpryDtTm
-
-	@XpryDtTm.setter
-	def XpryDtTm(self, value):
-		self._XpryDtTm = value if type(value) != auto else self.make_default("XpryDtTm")
-
-	@XpryDtTm.deleter
-	def XpryDtTm(self):
-		del self._XpryDtTm
-		self._XpryDtTm = None
-
-	@property
-	def ReqdFutrTradDt(self):
-		return self._ReqdFutrTradDt
-
-	@ReqdFutrTradDt.setter
-	def ReqdFutrTradDt(self, value):
-		self._ReqdFutrTradDt = value if type(value) != auto else self.make_default("ReqdFutrTradDt")
-
-	@ReqdFutrTradDt.deleter
-	def ReqdFutrTradDt(self):
-		del self._ReqdFutrTradDt
-		self._ReqdFutrTradDt = None
-
+	__slots__ = ["_CxlRght", "_BlkCshSttlmDtls", "_MstrRef", "_InvstmtAcctDtls", "_TtlSttlmAmt", "_OrdrDtTm", "_ReqdFutrTradDt", "_XpryDtTm", "_PlcOfTrad", "_BnfcryDtls", "_IndvOrdrDtls"]
 	@property
 	def CxlRght(self):
 		return self._CxlRght
@@ -54,30 +28,17 @@ class RedemptionMultipleOrder6(base_types._BaseFieldType):
 		self._CxlRght = None
 
 	@property
-	def IndvOrdrDtls(self):
-		return self._IndvOrdrDtls
+	def BlkCshSttlmDtls(self):
+		return self._BlkCshSttlmDtls
 
-	@IndvOrdrDtls.setter
-	def IndvOrdrDtls(self, value):
-		self._IndvOrdrDtls = value if type(value) != auto else self.make_default("IndvOrdrDtls")
+	@BlkCshSttlmDtls.setter
+	def BlkCshSttlmDtls(self, value):
+		self._BlkCshSttlmDtls = value if type(value) != auto else self.make_default("BlkCshSttlmDtls")
 
-	@IndvOrdrDtls.deleter
-	def IndvOrdrDtls(self):
-		del self._IndvOrdrDtls
-		self._IndvOrdrDtls = None
-
-	@property
-	def TtlSttlmAmt(self):
-		return self._TtlSttlmAmt
-
-	@TtlSttlmAmt.setter
-	def TtlSttlmAmt(self, value):
-		self._TtlSttlmAmt = value if type(value) != auto else self.make_default("TtlSttlmAmt")
-
-	@TtlSttlmAmt.deleter
-	def TtlSttlmAmt(self):
-		del self._TtlSttlmAmt
-		self._TtlSttlmAmt = None
+	@BlkCshSttlmDtls.deleter
+	def BlkCshSttlmDtls(self):
+		del self._BlkCshSttlmDtls
+		self._BlkCshSttlmDtls = None
 
 	@property
 	def MstrRef(self):
@@ -106,17 +67,56 @@ class RedemptionMultipleOrder6(base_types._BaseFieldType):
 		self._InvstmtAcctDtls = None
 
 	@property
-	def BnfcryDtls(self):
-		return self._BnfcryDtls
+	def TtlSttlmAmt(self):
+		return self._TtlSttlmAmt
 
-	@BnfcryDtls.setter
-	def BnfcryDtls(self, value):
-		self._BnfcryDtls = value if type(value) != auto else self.make_default("BnfcryDtls")
+	@TtlSttlmAmt.setter
+	def TtlSttlmAmt(self, value):
+		self._TtlSttlmAmt = value if type(value) != auto else self.make_default("TtlSttlmAmt")
 
-	@BnfcryDtls.deleter
-	def BnfcryDtls(self):
-		del self._BnfcryDtls
-		self._BnfcryDtls = None
+	@TtlSttlmAmt.deleter
+	def TtlSttlmAmt(self):
+		del self._TtlSttlmAmt
+		self._TtlSttlmAmt = None
+
+	@property
+	def OrdrDtTm(self):
+		return self._OrdrDtTm
+
+	@OrdrDtTm.setter
+	def OrdrDtTm(self, value):
+		self._OrdrDtTm = value if type(value) != auto else self.make_default("OrdrDtTm")
+
+	@OrdrDtTm.deleter
+	def OrdrDtTm(self):
+		del self._OrdrDtTm
+		self._OrdrDtTm = None
+
+	@property
+	def ReqdFutrTradDt(self):
+		return self._ReqdFutrTradDt
+
+	@ReqdFutrTradDt.setter
+	def ReqdFutrTradDt(self, value):
+		self._ReqdFutrTradDt = value if type(value) != auto else self.make_default("ReqdFutrTradDt")
+
+	@ReqdFutrTradDt.deleter
+	def ReqdFutrTradDt(self):
+		del self._ReqdFutrTradDt
+		self._ReqdFutrTradDt = None
+
+	@property
+	def XpryDtTm(self):
+		return self._XpryDtTm
+
+	@XpryDtTm.setter
+	def XpryDtTm(self, value):
+		self._XpryDtTm = value if type(value) != auto else self.make_default("XpryDtTm")
+
+	@XpryDtTm.deleter
+	def XpryDtTm(self):
+		del self._XpryDtTm
+		self._XpryDtTm = None
 
 	@property
 	def PlcOfTrad(self):
@@ -132,42 +132,42 @@ class RedemptionMultipleOrder6(base_types._BaseFieldType):
 		self._PlcOfTrad = None
 
 	@property
-	def BlkCshSttlmDtls(self):
-		return self._BlkCshSttlmDtls
+	def BnfcryDtls(self):
+		return self._BnfcryDtls
 
-	@BlkCshSttlmDtls.setter
-	def BlkCshSttlmDtls(self, value):
-		self._BlkCshSttlmDtls = value if type(value) != auto else self.make_default("BlkCshSttlmDtls")
+	@BnfcryDtls.setter
+	def BnfcryDtls(self, value):
+		self._BnfcryDtls = value if type(value) != auto else self.make_default("BnfcryDtls")
 
-	@BlkCshSttlmDtls.deleter
-	def BlkCshSttlmDtls(self):
-		del self._BlkCshSttlmDtls
-		self._BlkCshSttlmDtls = None
+	@BnfcryDtls.deleter
+	def BnfcryDtls(self):
+		del self._BnfcryDtls
+		self._BnfcryDtls = None
 
 	@property
-	def OrdrDtTm(self):
-		return self._OrdrDtTm
+	def IndvOrdrDtls(self):
+		return self._IndvOrdrDtls
 
-	@OrdrDtTm.setter
-	def OrdrDtTm(self, value):
-		self._OrdrDtTm = value if type(value) != auto else self.make_default("OrdrDtTm")
+	@IndvOrdrDtls.setter
+	def IndvOrdrDtls(self, value):
+		self._IndvOrdrDtls = value if type(value) != auto else self.make_default("IndvOrdrDtls")
 
-	@OrdrDtTm.deleter
-	def OrdrDtTm(self):
-		del self._OrdrDtTm
-		self._OrdrDtTm = None
+	@IndvOrdrDtls.deleter
+	def IndvOrdrDtls(self):
+		del self._IndvOrdrDtls
+		self._IndvOrdrDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XpryDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdFutrTradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRght', type=CancellationRight1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IndvOrdrDtls', type=RedemptionOrder14, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlSttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlkCshSttlmDtls', type=PaymentTransaction72, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BnfcryDtls', type=IndividualPerson32, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PlcOfTrad', type=PlaceOfTradeIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlkCshSttlmDtls', type=PaymentTransaction72, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlSttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdFutrTradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpryDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfTrad', type=PlaceOfTradeIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BnfcryDtls', type=IndividualPerson32, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IndvOrdrDtls', type=RedemptionOrder14, min=1, max=None, mutex_group=None, array=True),
 	))
 

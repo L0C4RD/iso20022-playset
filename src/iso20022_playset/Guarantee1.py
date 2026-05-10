@@ -1,6 +1,6 @@
-import base_types
-import ActiveCurrencyAndAmount
+from . import base_types
 import PartyIdentification118Choice
+import ActiveCurrencyAndAmount
 
 class Guarantee1(base_types._BaseFieldType):
 

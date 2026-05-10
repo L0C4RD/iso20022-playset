@@ -1,6 +1,6 @@
-import base_types
-import RejectionAndRepairReason42Choice
+from . import base_types
 import RestrictedFINXMax210Text
+import RejectionAndRepairReason42Choice
 
 class RejectionOrRepairReason42(base_types._BaseFieldType):
 

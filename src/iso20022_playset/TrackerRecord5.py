@@ -1,12 +1,25 @@
-import base_types
+from . import base_types
+import BranchAndFinancialInstitutionIdentification8
 import CurrencyExchange13
 import ChargeBearerType1Code
 import ActiveCurrencyAndAmount
-import BranchAndFinancialInstitutionIdentification8
 
 class TrackerRecord5(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgBr", "_ChrgsAmt", "_XchgRateData", "_Agt"]
+	__slots__ = ["_XchgRateData", "_ChrgBr", "_ChrgsAmt", "_Agt"]
+	@property
+	def XchgRateData(self):
+		return self._XchgRateData
+
+	@XchgRateData.setter
+	def XchgRateData(self, value):
+		self._XchgRateData = value if type(value) != auto else self.make_default("XchgRateData")
+
+	@XchgRateData.deleter
+	def XchgRateData(self):
+		del self._XchgRateData
+		self._XchgRateData = None
+
 	@property
 	def ChrgBr(self):
 		return self._ChrgBr
@@ -34,19 +47,6 @@ class TrackerRecord5(base_types._BaseFieldType):
 		self._ChrgsAmt = None
 
 	@property
-	def XchgRateData(self):
-		return self._XchgRateData
-
-	@XchgRateData.setter
-	def XchgRateData(self, value):
-		self._XchgRateData = value if type(value) != auto else self.make_default("XchgRateData")
-
-	@XchgRateData.deleter
-	def XchgRateData(self):
-		del self._XchgRateData
-		self._XchgRateData = None
-
-	@property
 	def Agt(self):
 		return self._Agt
 
@@ -60,9 +60,9 @@ class TrackerRecord5(base_types._BaseFieldType):
 		self._Agt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='XchgRateData', type=CurrencyExchange13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgBr', type=ChargeBearerType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgsAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRateData', type=CurrencyExchange13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

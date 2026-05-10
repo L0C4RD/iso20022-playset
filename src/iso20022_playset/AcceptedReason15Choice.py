@@ -1,6 +1,6 @@
-import base_types
-import AcknowledgementReason7Code
+from . import base_types
 import GenericIdentification47
+import AcknowledgementReason7Code
 
 class AcceptedReason15Choice(base_types._BaseFieldType):
 

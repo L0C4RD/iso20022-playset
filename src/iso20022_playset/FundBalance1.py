@@ -1,10 +1,10 @@
-import base_types
+from . import base_types
 import FinancialInstrumentQuantity1
 import ActiveOrHistoricCurrencyAndAmount
 
 class FundBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlUnitsFrUnitOrdrs", "_TtlCshFrUnitOrdrs", "_TtlCshFrCshOrdrs", "_TtlUnitsFrCshOrdrs"]
+	__slots__ = ["_TtlUnitsFrUnitOrdrs", "_TtlUnitsFrCshOrdrs", "_TtlCshFrUnitOrdrs", "_TtlCshFrCshOrdrs"]
 	@property
 	def TtlUnitsFrUnitOrdrs(self):
 		return self._TtlUnitsFrUnitOrdrs
@@ -17,6 +17,19 @@ class FundBalance1(base_types._BaseFieldType):
 	def TtlUnitsFrUnitOrdrs(self):
 		del self._TtlUnitsFrUnitOrdrs
 		self._TtlUnitsFrUnitOrdrs = None
+
+	@property
+	def TtlUnitsFrCshOrdrs(self):
+		return self._TtlUnitsFrCshOrdrs
+
+	@TtlUnitsFrCshOrdrs.setter
+	def TtlUnitsFrCshOrdrs(self, value):
+		self._TtlUnitsFrCshOrdrs = value if type(value) != auto else self.make_default("TtlUnitsFrCshOrdrs")
+
+	@TtlUnitsFrCshOrdrs.deleter
+	def TtlUnitsFrCshOrdrs(self):
+		del self._TtlUnitsFrCshOrdrs
+		self._TtlUnitsFrCshOrdrs = None
 
 	@property
 	def TtlCshFrUnitOrdrs(self):
@@ -44,23 +57,10 @@ class FundBalance1(base_types._BaseFieldType):
 		del self._TtlCshFrCshOrdrs
 		self._TtlCshFrCshOrdrs = None
 
-	@property
-	def TtlUnitsFrCshOrdrs(self):
-		return self._TtlUnitsFrCshOrdrs
-
-	@TtlUnitsFrCshOrdrs.setter
-	def TtlUnitsFrCshOrdrs(self, value):
-		self._TtlUnitsFrCshOrdrs = value if type(value) != auto else self.make_default("TtlUnitsFrCshOrdrs")
-
-	@TtlUnitsFrCshOrdrs.deleter
-	def TtlUnitsFrCshOrdrs(self):
-		del self._TtlUnitsFrCshOrdrs
-		self._TtlUnitsFrCshOrdrs = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TtlUnitsFrUnitOrdrs', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlUnitsFrCshOrdrs', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlCshFrUnitOrdrs', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlCshFrCshOrdrs', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlUnitsFrCshOrdrs', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 	))
 

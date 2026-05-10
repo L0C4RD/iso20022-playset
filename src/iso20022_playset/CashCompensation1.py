@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import ISODate
 import AmountAndDirection20
 
 class CashCompensation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Fees", "_SttlmAmt", "_ValDt"]
-	@property
-	def Fees(self):
-		return self._Fees
-
-	@Fees.setter
-	def Fees(self, value):
-		self._Fees = value if type(value) != auto else self.make_default("Fees")
-
-	@Fees.deleter
-	def Fees(self):
-		del self._Fees
-		self._Fees = None
-
+	__slots__ = ["_SttlmAmt", "_Fees", "_ValDt"]
 	@property
 	def SttlmAmt(self):
 		return self._SttlmAmt
@@ -30,6 +17,19 @@ class CashCompensation1(base_types._BaseFieldType):
 	def SttlmAmt(self):
 		del self._SttlmAmt
 		self._SttlmAmt = None
+
+	@property
+	def Fees(self):
+		return self._Fees
+
+	@Fees.setter
+	def Fees(self, value):
+		self._Fees = value if type(value) != auto else self.make_default("Fees")
+
+	@Fees.deleter
+	def Fees(self):
+		del self._Fees
+		self._Fees = None
 
 	@property
 	def ValDt(self):
@@ -45,8 +45,8 @@ class CashCompensation1(base_types._BaseFieldType):
 		self._ValDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Fees', type=AmountAndDirection20, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection20, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fees', type=AmountAndDirection20, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

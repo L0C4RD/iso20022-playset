@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
+import DTI2024Identifier
 import CountryCode
 import AnyBICDec2014Identifier
-import DTI2024Identifier
 import NameAndAddress12
 
 class PartyIdentification258Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_AnyBIC", "_Ctry", "_DgtlLdgrId"]
+	__slots__ = ["_NmAndAdr", "_AnyBIC", "_DgtlLdgrId", "_Ctry"]
 	@property
 	def NmAndAdr(self):
 		return self._NmAndAdr
@@ -34,19 +34,6 @@ class PartyIdentification258Choice(base_types._BaseFieldType):
 		self._AnyBIC = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
-	@property
 	def DgtlLdgrId(self):
 		return self._DgtlLdgrId
 
@@ -59,10 +46,23 @@ class PartyIdentification258Choice(base_types._BaseFieldType):
 		del self._DgtlLdgrId
 		self._DgtlLdgrId = None
 
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress12, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DgtlLdgrId', type=DTI2024Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 	))
 

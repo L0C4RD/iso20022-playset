@@ -1,104 +1,26 @@
-import base_types
-import RemittanceLocation8
-import CashAccount40
+from . import base_types
 import Party50Choice
+import CashAccount40
 import RemittanceInformation22
-import Purpose2Choice
+import RemittanceLocation8
 import BranchAndFinancialInstitutionIdentification8
+import Purpose2Choice
 
 class OriginalItemReference7(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_Acct", "_IntrmyAgt", "_Dbtr", "_RltdAcct", "_RmtInf", "_AcctSvcr", "_RltdRmtInf", "_DbtrAgt", "_Purp"]
+	__slots__ = ["_Purp", "_RltdRmtInf", "_AcctOwnr", "_RltdAcct", "_AcctSvcr", "_DbtrAgt", "_Acct", "_RmtInf", "_Dbtr", "_IntrmyAgt"]
 	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
+	def Purp(self):
+		return self._Purp
 
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+	@Purp.setter
+	def Purp(self, value):
+		self._Purp = value if type(value) != auto else self.make_default("Purp")
 
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
-	@property
-	def Acct(self):
-		return self._Acct
-
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
-
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
-
-	@property
-	def IntrmyAgt(self):
-		return self._IntrmyAgt
-
-	@IntrmyAgt.setter
-	def IntrmyAgt(self, value):
-		self._IntrmyAgt = value if type(value) != auto else self.make_default("IntrmyAgt")
-
-	@IntrmyAgt.deleter
-	def IntrmyAgt(self):
-		del self._IntrmyAgt
-		self._IntrmyAgt = None
-
-	@property
-	def Dbtr(self):
-		return self._Dbtr
-
-	@Dbtr.setter
-	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != auto else self.make_default("Dbtr")
-
-	@Dbtr.deleter
-	def Dbtr(self):
-		del self._Dbtr
-		self._Dbtr = None
-
-	@property
-	def RltdAcct(self):
-		return self._RltdAcct
-
-	@RltdAcct.setter
-	def RltdAcct(self, value):
-		self._RltdAcct = value if type(value) != auto else self.make_default("RltdAcct")
-
-	@RltdAcct.deleter
-	def RltdAcct(self):
-		del self._RltdAcct
-		self._RltdAcct = None
-
-	@property
-	def RmtInf(self):
-		return self._RmtInf
-
-	@RmtInf.setter
-	def RmtInf(self, value):
-		self._RmtInf = value if type(value) != auto else self.make_default("RmtInf")
-
-	@RmtInf.deleter
-	def RmtInf(self):
-		del self._RmtInf
-		self._RmtInf = None
-
-	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
-
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
-
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
+	@Purp.deleter
+	def Purp(self):
+		del self._Purp
+		self._Purp = None
 
 	@property
 	def RltdRmtInf(self):
@@ -114,6 +36,45 @@ class OriginalItemReference7(base_types._BaseFieldType):
 		self._RltdRmtInf = None
 
 	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
+	@property
+	def RltdAcct(self):
+		return self._RltdAcct
+
+	@RltdAcct.setter
+	def RltdAcct(self, value):
+		self._RltdAcct = value if type(value) != auto else self.make_default("RltdAcct")
+
+	@RltdAcct.deleter
+	def RltdAcct(self):
+		del self._RltdAcct
+		self._RltdAcct = None
+
+	@property
+	def AcctSvcr(self):
+		return self._AcctSvcr
+
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
+
+	@property
 	def DbtrAgt(self):
 		return self._DbtrAgt
 
@@ -127,28 +88,67 @@ class OriginalItemReference7(base_types._BaseFieldType):
 		self._DbtrAgt = None
 
 	@property
-	def Purp(self):
-		return self._Purp
+	def Acct(self):
+		return self._Acct
 
-	@Purp.setter
-	def Purp(self, value):
-		self._Purp = value if type(value) != auto else self.make_default("Purp")
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
 
-	@Purp.deleter
-	def Purp(self):
-		del self._Purp
-		self._Purp = None
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
+
+	@property
+	def RmtInf(self):
+		return self._RmtInf
+
+	@RmtInf.setter
+	def RmtInf(self, value):
+		self._RmtInf = value if type(value) != auto else self.make_default("RmtInf")
+
+	@RmtInf.deleter
+	def RmtInf(self):
+		del self._RmtInf
+		self._RmtInf = None
+
+	@property
+	def Dbtr(self):
+		return self._Dbtr
+
+	@Dbtr.setter
+	def Dbtr(self, value):
+		self._Dbtr = value if type(value) != auto else self.make_default("Dbtr")
+
+	@Dbtr.deleter
+	def Dbtr(self):
+		del self._Dbtr
+		self._Dbtr = None
+
+	@property
+	def IntrmyAgt(self):
+		return self._IntrmyAgt
+
+	@IntrmyAgt.setter
+	def IntrmyAgt(self, value):
+		self._IntrmyAgt = value if type(value) != auto else self.make_default("IntrmyAgt")
+
+	@IntrmyAgt.deleter
+	def IntrmyAgt(self):
+		del self._IntrmyAgt
+		self._IntrmyAgt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrmyAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dbtr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmtInf', type=RemittanceInformation22, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRmtInf', type=RemittanceLocation8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Purp', type=Purpose2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRmtInf', type=RemittanceLocation8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmtInf', type=RemittanceInformation22, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrmyAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

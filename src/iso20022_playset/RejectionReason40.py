@@ -1,6 +1,6 @@
-import base_types
-import ConsentOrRejectionReason5Choice
+from . import base_types
 import RestrictedFINXMax210Text
+import ConsentOrRejectionReason5Choice
 
 class RejectionReason40(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SettlementObligationReportV04
 
 class SECL_010_001_04():

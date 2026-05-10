@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import CardPaymentEnvironment81
-import CardPaymentTransaction117
 import CardPaymentTransaction145
+import CardPaymentTransaction117
 
 class AcceptorCancellationResponse13(base_types._BaseFieldType):
 

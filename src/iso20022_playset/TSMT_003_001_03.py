@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ActivityReportRequestV03
 
 class TSMT_003_001_03():

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesAccountModification2Choice
 import DataModification1Code
 

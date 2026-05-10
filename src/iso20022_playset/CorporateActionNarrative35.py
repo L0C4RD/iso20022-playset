@@ -1,9 +1,9 @@
-import base_types
+from . import base_types
 import RestrictedFINXMax350Text
 
 class CorporateActionNarrative35(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxtnConds", "_PtyCtctNrrtv", "_AddtlTxt", "_NrrtvVrsn"]
+	__slots__ = ["_TaxtnConds", "_PtyCtctNrrtv", "_NrrtvVrsn", "_AddtlTxt"]
 	@property
 	def TaxtnConds(self):
 		return self._TaxtnConds
@@ -31,19 +31,6 @@ class CorporateActionNarrative35(base_types._BaseFieldType):
 		self._PtyCtctNrrtv = None
 
 	@property
-	def AddtlTxt(self):
-		return self._AddtlTxt
-
-	@AddtlTxt.setter
-	def AddtlTxt(self, value):
-		self._AddtlTxt = value if type(value) != auto else self.make_default("AddtlTxt")
-
-	@AddtlTxt.deleter
-	def AddtlTxt(self):
-		del self._AddtlTxt
-		self._AddtlTxt = None
-
-	@property
 	def NrrtvVrsn(self):
 		return self._NrrtvVrsn
 
@@ -56,10 +43,23 @@ class CorporateActionNarrative35(base_types._BaseFieldType):
 		del self._NrrtvVrsn
 		self._NrrtvVrsn = None
 
+	@property
+	def AddtlTxt(self):
+		return self._AddtlTxt
+
+	@AddtlTxt.setter
+	def AddtlTxt(self, value):
+		self._AddtlTxt = value if type(value) != auto else self.make_default("AddtlTxt")
+
+	@AddtlTxt.deleter
+	def AddtlTxt(self):
+		del self._AddtlTxt
+		self._AddtlTxt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TaxtnConds', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PtyCtctNrrtv', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlTxt', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NrrtvVrsn', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlTxt', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

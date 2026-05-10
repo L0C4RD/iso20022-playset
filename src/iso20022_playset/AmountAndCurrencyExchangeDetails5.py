@@ -1,6 +1,6 @@
-import base_types
-import ActiveOrHistoricCurrencyAndAmount
+from . import base_types
 import CurrencyExchange24
+import ActiveOrHistoricCurrencyAndAmount
 
 class AmountAndCurrencyExchangeDetails5(base_types._BaseFieldType):
 

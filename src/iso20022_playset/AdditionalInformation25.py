@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
 import Max350Text
 import RejectedReason33Choice
 import GenericIdentification36
 
 class AdditionalInformation25(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctnRsn", "_QryTp", "_Qry", "_QryRsn"]
+	__slots__ = ["_QryRsn", "_RjctnRsn", "_QryTp", "_Qry"]
+	@property
+	def QryRsn(self):
+		return self._QryRsn
+
+	@QryRsn.setter
+	def QryRsn(self, value):
+		self._QryRsn = value if type(value) != auto else self.make_default("QryRsn")
+
+	@QryRsn.deleter
+	def QryRsn(self):
+		del self._QryRsn
+		self._QryRsn = None
+
 	@property
 	def RjctnRsn(self):
 		return self._RjctnRsn
@@ -45,23 +58,10 @@ class AdditionalInformation25(base_types._BaseFieldType):
 		del self._Qry
 		self._Qry = None
 
-	@property
-	def QryRsn(self):
-		return self._QryRsn
-
-	@QryRsn.setter
-	def QryRsn(self, value):
-		self._QryRsn = value if type(value) != auto else self.make_default("QryRsn")
-
-	@QryRsn.deleter
-	def QryRsn(self):
-		del self._QryRsn
-		self._QryRsn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='QryRsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnRsn', type=RejectedReason33Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryTp', type=GenericIdentification36, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qry', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryRsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

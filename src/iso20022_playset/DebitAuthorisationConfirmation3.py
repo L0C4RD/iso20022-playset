@@ -1,26 +1,52 @@
-import base_types
+from . import base_types
+import ISODate
 import Max140Text
+import Max52Text
 import TrueFalseIndicator
 import CashAccount40
-import ISODate
 import ActiveCurrencyAndAmount
-import Max52Text
 
 class DebitAuthorisationConfirmation3(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtToDbt", "_Acct", "_Rsn", "_CmonTxId", "_ValDtToDbt", "_DbtAuthstn"]
+	__slots__ = ["_DbtAuthstn", "_ValDtToDbt", "_CmonTxId", "_Acct", "_Rsn", "_AmtToDbt"]
 	@property
-	def AmtToDbt(self):
-		return self._AmtToDbt
+	def DbtAuthstn(self):
+		return self._DbtAuthstn
 
-	@AmtToDbt.setter
-	def AmtToDbt(self, value):
-		self._AmtToDbt = value if type(value) != auto else self.make_default("AmtToDbt")
+	@DbtAuthstn.setter
+	def DbtAuthstn(self, value):
+		self._DbtAuthstn = value if type(value) != auto else self.make_default("DbtAuthstn")
 
-	@AmtToDbt.deleter
-	def AmtToDbt(self):
-		del self._AmtToDbt
-		self._AmtToDbt = None
+	@DbtAuthstn.deleter
+	def DbtAuthstn(self):
+		del self._DbtAuthstn
+		self._DbtAuthstn = None
+
+	@property
+	def ValDtToDbt(self):
+		return self._ValDtToDbt
+
+	@ValDtToDbt.setter
+	def ValDtToDbt(self, value):
+		self._ValDtToDbt = value if type(value) != auto else self.make_default("ValDtToDbt")
+
+	@ValDtToDbt.deleter
+	def ValDtToDbt(self):
+		del self._ValDtToDbt
+		self._ValDtToDbt = None
+
+	@property
+	def CmonTxId(self):
+		return self._CmonTxId
+
+	@CmonTxId.setter
+	def CmonTxId(self, value):
+		self._CmonTxId = value if type(value) != auto else self.make_default("CmonTxId")
+
+	@CmonTxId.deleter
+	def CmonTxId(self):
+		del self._CmonTxId
+		self._CmonTxId = None
 
 	@property
 	def Acct(self):
@@ -49,50 +75,24 @@ class DebitAuthorisationConfirmation3(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
-	def CmonTxId(self):
-		return self._CmonTxId
+	def AmtToDbt(self):
+		return self._AmtToDbt
 
-	@CmonTxId.setter
-	def CmonTxId(self, value):
-		self._CmonTxId = value if type(value) != auto else self.make_default("CmonTxId")
+	@AmtToDbt.setter
+	def AmtToDbt(self, value):
+		self._AmtToDbt = value if type(value) != auto else self.make_default("AmtToDbt")
 
-	@CmonTxId.deleter
-	def CmonTxId(self):
-		del self._CmonTxId
-		self._CmonTxId = None
-
-	@property
-	def ValDtToDbt(self):
-		return self._ValDtToDbt
-
-	@ValDtToDbt.setter
-	def ValDtToDbt(self, value):
-		self._ValDtToDbt = value if type(value) != auto else self.make_default("ValDtToDbt")
-
-	@ValDtToDbt.deleter
-	def ValDtToDbt(self):
-		del self._ValDtToDbt
-		self._ValDtToDbt = None
-
-	@property
-	def DbtAuthstn(self):
-		return self._DbtAuthstn
-
-	@DbtAuthstn.setter
-	def DbtAuthstn(self, value):
-		self._DbtAuthstn = value if type(value) != auto else self.make_default("DbtAuthstn")
-
-	@DbtAuthstn.deleter
-	def DbtAuthstn(self):
-		del self._DbtAuthstn
-		self._DbtAuthstn = None
+	@AmtToDbt.deleter
+	def AmtToDbt(self):
+		del self._AmtToDbt
+		self._AmtToDbt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmtToDbt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtAuthstn', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDtToDbt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonTxId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmonTxId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDtToDbt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtAuthstn', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtToDbt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

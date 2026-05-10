@@ -1,6 +1,6 @@
-import base_types
-import CountryCode
+from . import base_types
 import MarketInfrastructureIdentification1Choice
+import CountryCode
 
 class SystemIdentification2Choice(base_types._BaseFieldType):
 

@@ -1,7 +1,7 @@
-import base_types
-import ISODateTime
+from . import base_types
 import BICIdentification1
 import Activity1
+import ISODateTime
 
 class ActivityDetails1(base_types._BaseFieldType):
 

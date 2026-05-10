@@ -1,38 +1,12 @@
-import base_types
-import PaymentInstrumentType1
+from . import base_types
 import AccountAndParties3
-import RequestType1
+import PaymentInstrumentType1
 import CustomerIdentification2
+import RequestType1
 
 class SearchCriteria2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_PmtInstrm", "_CstmrId", "_OrgnlTxNb"]
-	@property
-	def Acct(self):
-		return self._Acct
-
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
-
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
-
-	@property
-	def PmtInstrm(self):
-		return self._PmtInstrm
-
-	@PmtInstrm.setter
-	def PmtInstrm(self, value):
-		self._PmtInstrm = value if type(value) != auto else self.make_default("PmtInstrm")
-
-	@PmtInstrm.deleter
-	def PmtInstrm(self):
-		del self._PmtInstrm
-		self._PmtInstrm = None
-
+	__slots__ = ["_CstmrId", "_Acct", "_OrgnlTxNb", "_PmtInstrm"]
 	@property
 	def CstmrId(self):
 		return self._CstmrId
@@ -47,6 +21,19 @@ class SearchCriteria2Choice(base_types._BaseFieldType):
 		self._CstmrId = None
 
 	@property
+	def Acct(self):
+		return self._Acct
+
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
+
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
+
+	@property
 	def OrgnlTxNb(self):
 		return self._OrgnlTxNb
 
@@ -59,10 +46,23 @@ class SearchCriteria2Choice(base_types._BaseFieldType):
 		del self._OrgnlTxNb
 		self._OrgnlTxNb = None
 
+	@property
+	def PmtInstrm(self):
+		return self._PmtInstrm
+
+	@PmtInstrm.setter
+	def PmtInstrm(self, value):
+		self._PmtInstrm = value if type(value) != auto else self.make_default("PmtInstrm")
+
+	@PmtInstrm.deleter
+	def PmtInstrm(self):
+		del self._PmtInstrm
+		self._PmtInstrm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Acct', type=AccountAndParties3, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PmtInstrm', type=PaymentInstrumentType1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CstmrId', type=CustomerIdentification2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Acct', type=AccountAndParties3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OrgnlTxNb', type=RequestType1, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='PmtInstrm', type=PaymentInstrumentType1, min=0, max=1, mutex_group=1, array=False),
 	))
 

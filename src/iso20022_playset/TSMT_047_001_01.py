@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SpecialRequestV01
 
 class TSMT_047_001_01():

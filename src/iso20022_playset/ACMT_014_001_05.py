@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountReportV05
 
 class ACMT_014_001_05():

@@ -1,12 +1,12 @@
-import base_types
-import Max35Text
+from . import base_types
 import OriginalBusinessQuery1
 import RequestType4Choice
+import Max35Text
 import ISODateTime
 
 class MessageHeader7(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_ReqTp", "_CreDtTm", "_QryNm", "_OrgnlBizQry"]
+	__slots__ = ["_MsgId", "_OrgnlBizQry", "_QryNm", "_ReqTp", "_CreDtTm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -19,6 +19,32 @@ class MessageHeader7(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
+
+	@property
+	def OrgnlBizQry(self):
+		return self._OrgnlBizQry
+
+	@OrgnlBizQry.setter
+	def OrgnlBizQry(self, value):
+		self._OrgnlBizQry = value if type(value) != auto else self.make_default("OrgnlBizQry")
+
+	@OrgnlBizQry.deleter
+	def OrgnlBizQry(self):
+		del self._OrgnlBizQry
+		self._OrgnlBizQry = None
+
+	@property
+	def QryNm(self):
+		return self._QryNm
+
+	@QryNm.setter
+	def QryNm(self, value):
+		self._QryNm = value if type(value) != auto else self.make_default("QryNm")
+
+	@QryNm.deleter
+	def QryNm(self):
+		del self._QryNm
+		self._QryNm = None
 
 	@property
 	def ReqTp(self):
@@ -46,37 +72,11 @@ class MessageHeader7(base_types._BaseFieldType):
 		del self._CreDtTm
 		self._CreDtTm = None
 
-	@property
-	def QryNm(self):
-		return self._QryNm
-
-	@QryNm.setter
-	def QryNm(self, value):
-		self._QryNm = value if type(value) != auto else self.make_default("QryNm")
-
-	@QryNm.deleter
-	def QryNm(self):
-		del self._QryNm
-		self._QryNm = None
-
-	@property
-	def OrgnlBizQry(self):
-		return self._OrgnlBizQry
-
-	@OrgnlBizQry.setter
-	def OrgnlBizQry(self, value):
-		self._OrgnlBizQry = value if type(value) != auto else self.make_default("OrgnlBizQry")
-
-	@OrgnlBizQry.deleter
-	def OrgnlBizQry(self):
-		del self._OrgnlBizQry
-		self._OrgnlBizQry = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlBizQry', type=OriginalBusinessQuery1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqTp', type=RequestType4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlBizQry', type=OriginalBusinessQuery1, min=0, max=1, mutex_group=None, array=False),
 	))
 

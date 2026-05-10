@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CustodyStatementOfHoldingsCancellationV02
 
 class SEMT_004_001_02():

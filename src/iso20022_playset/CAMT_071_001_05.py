@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DeleteStandingOrderV05
 
 class CAMT_071_001_05():

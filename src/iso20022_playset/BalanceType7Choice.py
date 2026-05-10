@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
 import FinancialAssetBalanceType1Code
-import AccountIdentification5
 import GenericIdentification30
+import AccountIdentification5
 
 class BalanceType7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cd", "_Acct"]
+	__slots__ = ["_Acct", "_Prtry", "_Cd"]
+	@property
+	def Acct(self):
+		return self._Acct
+
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
+
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
+
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -32,22 +45,9 @@ class BalanceType7Choice(base_types._BaseFieldType):
 		del self._Cd
 		self._Cd = None
 
-	@property
-	def Acct(self):
-		return self._Acct
-
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
-
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Acct', type=AccountIdentification5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification30, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cd', type=FinancialAssetBalanceType1Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Acct', type=AccountIdentification5, min=0, max=1, mutex_group=1, array=False),
 	))
 

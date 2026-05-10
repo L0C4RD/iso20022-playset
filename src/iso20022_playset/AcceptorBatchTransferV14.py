@@ -1,23 +1,23 @@
-import base_types
-import ContentInformationType37
+from . import base_types
 import CardPaymentBatchTransfer13
 import Header56
+import ContentInformationType37
 
 class AcceptorBatchTransferV14(base_types._BaseFieldType):
 
-	__slots__ = ["_BtchTrf", "_SctyTrlr", "_Hdr"]
+	__slots__ = ["_Hdr", "_SctyTrlr", "_BtchTrf"]
 	@property
-	def BtchTrf(self):
-		return self._BtchTrf
+	def Hdr(self):
+		return self._Hdr
 
-	@BtchTrf.setter
-	def BtchTrf(self, value):
-		self._BtchTrf = value if type(value) != auto else self.make_default("BtchTrf")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
 
-	@BtchTrf.deleter
-	def BtchTrf(self):
-		del self._BtchTrf
-		self._BtchTrf = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def SctyTrlr(self):
@@ -33,21 +33,21 @@ class AcceptorBatchTransferV14(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def BtchTrf(self):
+		return self._BtchTrf
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+	@BtchTrf.setter
+	def BtchTrf(self, value):
+		self._BtchTrf = value if type(value) != auto else self.make_default("BtchTrf")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@BtchTrf.deleter
+	def BtchTrf(self):
+		del self._BtchTrf
+		self._BtchTrf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BtchTrf', type=CardPaymentBatchTransfer13, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header56, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BtchTrf', type=CardPaymentBatchTransfer13, min=1, max=1, mutex_group=None, array=False),
 	))
 

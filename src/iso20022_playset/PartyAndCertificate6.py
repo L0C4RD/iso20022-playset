@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PartyIdentification272
 import Max10KBinary
 

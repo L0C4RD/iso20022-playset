@@ -1,6 +1,6 @@
-import base_types
-import ReturnedStatus1Code
+from . import base_types
 import GenericIdentification30
+import ReturnedStatus1Code
 
 class ReturnedReason2Choice(base_types._BaseFieldType):
 

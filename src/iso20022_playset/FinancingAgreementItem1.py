@@ -1,41 +1,28 @@
-import base_types
+from . import base_types
 import YesNoIndicator
-import FinancialItemParameters1
+import PaymentInstrumentCode
+import AgreementItemAction1Code
 import GuaranteeDetails1
 import ValidationStatusInformation1
-import PaymentInstrumentCode
-import Max2000Text
 import xs:IDREF
-import AgreementItemAction1Code
+import Max2000Text
+import FinancialItemParameters1
 
 class FinancingAgreementItem1(base_types._BaseFieldType):
 
-	__slots__ = ["_Grnt", "_Ratg", "_ItmCntxt", "_PmtInstrm", "_VldtnStsInf", "_ItmActn", "_ReopIndctn", "_RltdGrntLttr", "_AddtlInf", "_GrntSts", "_AssoctdDoc"]
+	__slots__ = ["_GrntSts", "_ItmCntxt", "_ReopIndctn", "_Ratg", "_ItmActn", "_AssoctdDoc", "_AddtlInf", "_Grnt", "_VldtnStsInf", "_RltdGrntLttr", "_PmtInstrm"]
 	@property
-	def Grnt(self):
-		return self._Grnt
+	def GrntSts(self):
+		return self._GrntSts
 
-	@Grnt.setter
-	def Grnt(self, value):
-		self._Grnt = value if type(value) != auto else self.make_default("Grnt")
+	@GrntSts.setter
+	def GrntSts(self, value):
+		self._GrntSts = value if type(value) != auto else self.make_default("GrntSts")
 
-	@Grnt.deleter
-	def Grnt(self):
-		del self._Grnt
-		self._Grnt = None
-
-	@property
-	def Ratg(self):
-		return self._Ratg
-
-	@Ratg.setter
-	def Ratg(self, value):
-		self._Ratg = value if type(value) != auto else self.make_default("Ratg")
-
-	@Ratg.deleter
-	def Ratg(self):
-		del self._Ratg
-		self._Ratg = None
+	@GrntSts.deleter
+	def GrntSts(self):
+		del self._GrntSts
+		self._GrntSts = None
 
 	@property
 	def ItmCntxt(self):
@@ -51,30 +38,30 @@ class FinancingAgreementItem1(base_types._BaseFieldType):
 		self._ItmCntxt = None
 
 	@property
-	def PmtInstrm(self):
-		return self._PmtInstrm
+	def ReopIndctn(self):
+		return self._ReopIndctn
 
-	@PmtInstrm.setter
-	def PmtInstrm(self, value):
-		self._PmtInstrm = value if type(value) != auto else self.make_default("PmtInstrm")
+	@ReopIndctn.setter
+	def ReopIndctn(self, value):
+		self._ReopIndctn = value if type(value) != auto else self.make_default("ReopIndctn")
 
-	@PmtInstrm.deleter
-	def PmtInstrm(self):
-		del self._PmtInstrm
-		self._PmtInstrm = None
+	@ReopIndctn.deleter
+	def ReopIndctn(self):
+		del self._ReopIndctn
+		self._ReopIndctn = None
 
 	@property
-	def VldtnStsInf(self):
-		return self._VldtnStsInf
+	def Ratg(self):
+		return self._Ratg
 
-	@VldtnStsInf.setter
-	def VldtnStsInf(self, value):
-		self._VldtnStsInf = value if type(value) != auto else self.make_default("VldtnStsInf")
+	@Ratg.setter
+	def Ratg(self, value):
+		self._Ratg = value if type(value) != auto else self.make_default("Ratg")
 
-	@VldtnStsInf.deleter
-	def VldtnStsInf(self):
-		del self._VldtnStsInf
-		self._VldtnStsInf = None
+	@Ratg.deleter
+	def Ratg(self):
+		del self._Ratg
+		self._Ratg = None
 
 	@property
 	def ItmActn(self):
@@ -90,30 +77,17 @@ class FinancingAgreementItem1(base_types._BaseFieldType):
 		self._ItmActn = None
 
 	@property
-	def ReopIndctn(self):
-		return self._ReopIndctn
+	def AssoctdDoc(self):
+		return self._AssoctdDoc
 
-	@ReopIndctn.setter
-	def ReopIndctn(self, value):
-		self._ReopIndctn = value if type(value) != auto else self.make_default("ReopIndctn")
+	@AssoctdDoc.setter
+	def AssoctdDoc(self, value):
+		self._AssoctdDoc = value if type(value) != auto else self.make_default("AssoctdDoc")
 
-	@ReopIndctn.deleter
-	def ReopIndctn(self):
-		del self._ReopIndctn
-		self._ReopIndctn = None
-
-	@property
-	def RltdGrntLttr(self):
-		return self._RltdGrntLttr
-
-	@RltdGrntLttr.setter
-	def RltdGrntLttr(self, value):
-		self._RltdGrntLttr = value if type(value) != auto else self.make_default("RltdGrntLttr")
-
-	@RltdGrntLttr.deleter
-	def RltdGrntLttr(self):
-		del self._RltdGrntLttr
-		self._RltdGrntLttr = None
+	@AssoctdDoc.deleter
+	def AssoctdDoc(self):
+		del self._AssoctdDoc
+		self._AssoctdDoc = None
 
 	@property
 	def AddtlInf(self):
@@ -129,42 +103,68 @@ class FinancingAgreementItem1(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def GrntSts(self):
-		return self._GrntSts
+	def Grnt(self):
+		return self._Grnt
 
-	@GrntSts.setter
-	def GrntSts(self, value):
-		self._GrntSts = value if type(value) != auto else self.make_default("GrntSts")
+	@Grnt.setter
+	def Grnt(self, value):
+		self._Grnt = value if type(value) != auto else self.make_default("Grnt")
 
-	@GrntSts.deleter
-	def GrntSts(self):
-		del self._GrntSts
-		self._GrntSts = None
+	@Grnt.deleter
+	def Grnt(self):
+		del self._Grnt
+		self._Grnt = None
 
 	@property
-	def AssoctdDoc(self):
-		return self._AssoctdDoc
+	def VldtnStsInf(self):
+		return self._VldtnStsInf
 
-	@AssoctdDoc.setter
-	def AssoctdDoc(self, value):
-		self._AssoctdDoc = value if type(value) != auto else self.make_default("AssoctdDoc")
+	@VldtnStsInf.setter
+	def VldtnStsInf(self, value):
+		self._VldtnStsInf = value if type(value) != auto else self.make_default("VldtnStsInf")
 
-	@AssoctdDoc.deleter
-	def AssoctdDoc(self):
-		del self._AssoctdDoc
-		self._AssoctdDoc = None
+	@VldtnStsInf.deleter
+	def VldtnStsInf(self):
+		del self._VldtnStsInf
+		self._VldtnStsInf = None
+
+	@property
+	def RltdGrntLttr(self):
+		return self._RltdGrntLttr
+
+	@RltdGrntLttr.setter
+	def RltdGrntLttr(self, value):
+		self._RltdGrntLttr = value if type(value) != auto else self.make_default("RltdGrntLttr")
+
+	@RltdGrntLttr.deleter
+	def RltdGrntLttr(self):
+		del self._RltdGrntLttr
+		self._RltdGrntLttr = None
+
+	@property
+	def PmtInstrm(self):
+		return self._PmtInstrm
+
+	@PmtInstrm.setter
+	def PmtInstrm(self, value):
+		self._PmtInstrm = value if type(value) != auto else self.make_default("PmtInstrm")
+
+	@PmtInstrm.deleter
+	def PmtInstrm(self):
+		del self._PmtInstrm
+		self._PmtInstrm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Grnt', type=GuaranteeDetails1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ratg', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ItmCntxt', type=FinancialItemParameters1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtInstrm', type=PaymentInstrumentCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtnStsInf', type=ValidationStatusInformation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ItmActn', type=AgreementItemAction1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReopIndctn', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdGrntLttr', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrntSts', type=ValidationStatusInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ItmCntxt', type=FinancialItemParameters1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReopIndctn', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ratg', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ItmActn', type=AgreementItemAction1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AssoctdDoc', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Grnt', type=GuaranteeDetails1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='VldtnStsInf', type=ValidationStatusInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdGrntLttr', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInstrm', type=PaymentInstrumentCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

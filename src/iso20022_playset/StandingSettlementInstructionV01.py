@@ -1,27 +1,27 @@
-import base_types
+from . import base_types
 import EffectiveDate1
-import Max35Text
-import SupplementaryData1
 import AccountIdentification26
 import SecuritiesOrCash1Choice
-import ActiveCurrencyCode
+import SupplementaryData1
 import MarketIdentificationOrCashPurpose1Choice
+import Max35Text
+import ActiveCurrencyCode
 
 class StandingSettlementInstructionV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MktId", "_SttlmDtls", "_FctvDtDtls", "_SttlmCcy", "_SplmtryData", "_MsgRefId", "_AcctId"]
+	__slots__ = ["_MsgRefId", "_SttlmDtls", "_SttlmCcy", "_MktId", "_AcctId", "_SplmtryData", "_FctvDtDtls"]
 	@property
-	def MktId(self):
-		return self._MktId
+	def MsgRefId(self):
+		return self._MsgRefId
 
-	@MktId.setter
-	def MktId(self, value):
-		self._MktId = value if type(value) != auto else self.make_default("MktId")
+	@MsgRefId.setter
+	def MsgRefId(self, value):
+		self._MsgRefId = value if type(value) != auto else self.make_default("MsgRefId")
 
-	@MktId.deleter
-	def MktId(self):
-		del self._MktId
-		self._MktId = None
+	@MsgRefId.deleter
+	def MsgRefId(self):
+		del self._MsgRefId
+		self._MsgRefId = None
 
 	@property
 	def SttlmDtls(self):
@@ -37,19 +37,6 @@ class StandingSettlementInstructionV01(base_types._BaseFieldType):
 		self._SttlmDtls = None
 
 	@property
-	def FctvDtDtls(self):
-		return self._FctvDtDtls
-
-	@FctvDtDtls.setter
-	def FctvDtDtls(self, value):
-		self._FctvDtDtls = value if type(value) != auto else self.make_default("FctvDtDtls")
-
-	@FctvDtDtls.deleter
-	def FctvDtDtls(self):
-		del self._FctvDtDtls
-		self._FctvDtDtls = None
-
-	@property
 	def SttlmCcy(self):
 		return self._SttlmCcy
 
@@ -61,6 +48,32 @@ class StandingSettlementInstructionV01(base_types._BaseFieldType):
 	def SttlmCcy(self):
 		del self._SttlmCcy
 		self._SttlmCcy = None
+
+	@property
+	def MktId(self):
+		return self._MktId
+
+	@MktId.setter
+	def MktId(self, value):
+		self._MktId = value if type(value) != auto else self.make_default("MktId")
+
+	@MktId.deleter
+	def MktId(self):
+		del self._MktId
+		self._MktId = None
+
+	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def SplmtryData(self):
@@ -76,38 +89,25 @@ class StandingSettlementInstructionV01(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def MsgRefId(self):
-		return self._MsgRefId
+	def FctvDtDtls(self):
+		return self._FctvDtDtls
 
-	@MsgRefId.setter
-	def MsgRefId(self, value):
-		self._MsgRefId = value if type(value) != auto else self.make_default("MsgRefId")
+	@FctvDtDtls.setter
+	def FctvDtDtls(self, value):
+		self._FctvDtDtls = value if type(value) != auto else self.make_default("FctvDtDtls")
 
-	@MsgRefId.deleter
-	def MsgRefId(self):
-		del self._MsgRefId
-		self._MsgRefId = None
-
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
+	@FctvDtDtls.deleter
+	def FctvDtDtls(self):
+		del self._FctvDtDtls
+		self._FctvDtDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MktId', type=MarketIdentificationOrCashPurpose1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDtls', type=SecuritiesOrCash1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FctvDtDtls', type=EffectiveDate1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgRefId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDtls', type=SecuritiesOrCash1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktId', type=MarketIdentificationOrCashPurpose1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification26, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FctvDtDtls', type=EffectiveDate1, min=0, max=1, mutex_group=None, array=False),
 	))
 

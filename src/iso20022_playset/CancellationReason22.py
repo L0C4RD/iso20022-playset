@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CancellationReason36Choice
 import Max210Text
 

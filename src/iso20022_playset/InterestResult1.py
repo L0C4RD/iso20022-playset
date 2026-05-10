@@ -1,37 +1,24 @@
-import base_types
-import ActiveCurrencyAndAmount
+from . import base_types
 import ISODate
-import CollateralBalance1
 import InterestMethod1Code
+import CollateralBalance1
+import ActiveCurrencyAndAmount
 
 class InterestResult1(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_ClsgCollBal", "_IntrstDueToA", "_OpngCollBal", "_IntrstDueToB", "_IntrstMtd"]
+	__slots__ = ["_IntrstDueToB", "_IntrstDueToA", "_OpngCollBal", "_ValDt", "_ClsgCollBal", "_IntrstMtd"]
 	@property
-	def ValDt(self):
-		return self._ValDt
+	def IntrstDueToB(self):
+		return self._IntrstDueToB
 
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+	@IntrstDueToB.setter
+	def IntrstDueToB(self, value):
+		self._IntrstDueToB = value if type(value) != auto else self.make_default("IntrstDueToB")
 
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
-
-	@property
-	def ClsgCollBal(self):
-		return self._ClsgCollBal
-
-	@ClsgCollBal.setter
-	def ClsgCollBal(self, value):
-		self._ClsgCollBal = value if type(value) != auto else self.make_default("ClsgCollBal")
-
-	@ClsgCollBal.deleter
-	def ClsgCollBal(self):
-		del self._ClsgCollBal
-		self._ClsgCollBal = None
+	@IntrstDueToB.deleter
+	def IntrstDueToB(self):
+		del self._IntrstDueToB
+		self._IntrstDueToB = None
 
 	@property
 	def IntrstDueToA(self):
@@ -60,17 +47,30 @@ class InterestResult1(base_types._BaseFieldType):
 		self._OpngCollBal = None
 
 	@property
-	def IntrstDueToB(self):
-		return self._IntrstDueToB
+	def ValDt(self):
+		return self._ValDt
 
-	@IntrstDueToB.setter
-	def IntrstDueToB(self, value):
-		self._IntrstDueToB = value if type(value) != auto else self.make_default("IntrstDueToB")
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
 
-	@IntrstDueToB.deleter
-	def IntrstDueToB(self):
-		del self._IntrstDueToB
-		self._IntrstDueToB = None
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
+
+	@property
+	def ClsgCollBal(self):
+		return self._ClsgCollBal
+
+	@ClsgCollBal.setter
+	def ClsgCollBal(self, value):
+		self._ClsgCollBal = value if type(value) != auto else self.make_default("ClsgCollBal")
+
+	@ClsgCollBal.deleter
+	def ClsgCollBal(self):
+		del self._ClsgCollBal
+		self._ClsgCollBal = None
 
 	@property
 	def IntrstMtd(self):
@@ -86,11 +86,11 @@ class InterestResult1(base_types._BaseFieldType):
 		self._IntrstMtd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsgCollBal', type=CollateralBalance1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstDueToB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstDueToA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OpngCollBal', type=CollateralBalance1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstDueToB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsgCollBal', type=CollateralBalance1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstMtd', type=InterestMethod1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

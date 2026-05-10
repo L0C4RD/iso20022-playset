@@ -1,7 +1,7 @@
-import base_types
-import PriceFormat72Choice
-import PriceFormat74Choice
+from . import base_types
 import PriceFormat73Choice
+import PriceFormat74Choice
+import PriceFormat72Choice
 
 class PriceDetails39(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SaleToPOIMessageStatusResponseV07
 
 class CASP_015_001_07():

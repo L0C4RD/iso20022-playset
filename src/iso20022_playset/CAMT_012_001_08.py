@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DeleteLimitV08
 
 class CAMT_012_001_08():

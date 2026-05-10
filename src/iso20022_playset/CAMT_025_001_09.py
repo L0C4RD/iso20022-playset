@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReceiptV09
 
 class CAMT_025_001_09():

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesFinancingReportingTransactionMarginDataReportV02
 
 class AUTH_070_001_02():

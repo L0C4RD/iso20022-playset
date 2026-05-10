@@ -1,51 +1,25 @@
-import base_types
+from . import base_types
+import ISODate
+import CertificateReference2
 import Exact1NumericText
 import Exact5NumericText
-import ISODate
 import ActiveCurrencyAndAmount
-import CertificateReference2
 
 class TransactionCertificate5(base_types._BaseFieldType):
 
-	__slots__ = ["_TxTp", "_RfrdDoc", "_LclInstrm", "_Amt", "_TxDt"]
+	__slots__ = ["_TxDt", "_Amt", "_LclInstrm", "_RfrdDoc", "_TxTp"]
 	@property
-	def TxTp(self):
-		return self._TxTp
+	def TxDt(self):
+		return self._TxDt
 
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+	@TxDt.setter
+	def TxDt(self, value):
+		self._TxDt = value if type(value) != auto else self.make_default("TxDt")
 
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
-
-	@property
-	def RfrdDoc(self):
-		return self._RfrdDoc
-
-	@RfrdDoc.setter
-	def RfrdDoc(self, value):
-		self._RfrdDoc = value if type(value) != auto else self.make_default("RfrdDoc")
-
-	@RfrdDoc.deleter
-	def RfrdDoc(self):
-		del self._RfrdDoc
-		self._RfrdDoc = None
-
-	@property
-	def LclInstrm(self):
-		return self._LclInstrm
-
-	@LclInstrm.setter
-	def LclInstrm(self, value):
-		self._LclInstrm = value if type(value) != auto else self.make_default("LclInstrm")
-
-	@LclInstrm.deleter
-	def LclInstrm(self):
-		del self._LclInstrm
-		self._LclInstrm = None
+	@TxDt.deleter
+	def TxDt(self):
+		del self._TxDt
+		self._TxDt = None
 
 	@property
 	def Amt(self):
@@ -61,23 +35,49 @@ class TransactionCertificate5(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def TxDt(self):
-		return self._TxDt
+	def LclInstrm(self):
+		return self._LclInstrm
 
-	@TxDt.setter
-	def TxDt(self, value):
-		self._TxDt = value if type(value) != auto else self.make_default("TxDt")
+	@LclInstrm.setter
+	def LclInstrm(self, value):
+		self._LclInstrm = value if type(value) != auto else self.make_default("LclInstrm")
 
-	@TxDt.deleter
-	def TxDt(self):
-		del self._TxDt
-		self._TxDt = None
+	@LclInstrm.deleter
+	def LclInstrm(self):
+		del self._LclInstrm
+		self._LclInstrm = None
+
+	@property
+	def RfrdDoc(self):
+		return self._RfrdDoc
+
+	@RfrdDoc.setter
+	def RfrdDoc(self, value):
+		self._RfrdDoc = value if type(value) != auto else self.make_default("RfrdDoc")
+
+	@RfrdDoc.deleter
+	def RfrdDoc(self):
+		del self._RfrdDoc
+		self._RfrdDoc = None
+
+	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxTp', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RfrdDoc', type=CertificateReference2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LclInstrm', type=Exact5NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LclInstrm', type=Exact5NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RfrdDoc', type=CertificateReference2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTp', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

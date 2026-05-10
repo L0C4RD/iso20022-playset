@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DateCode34Choice
 import DateAndDateTime2Choice
 

@@ -1,24 +1,11 @@
-import base_types
-import CountrySubDivisionCode
+from . import base_types
 import CountryCode
+import CountrySubDivisionCode
 import LEIIdentifier
 
 class DerivativePartyIdentification1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrySubDvsn", "_LEI", "_Ctry"]
-	@property
-	def CtrySubDvsn(self):
-		return self._CtrySubDvsn
-
-	@CtrySubDvsn.setter
-	def CtrySubDvsn(self, value):
-		self._CtrySubDvsn = value if type(value) != auto else self.make_default("CtrySubDvsn")
-
-	@CtrySubDvsn.deleter
-	def CtrySubDvsn(self):
-		del self._CtrySubDvsn
-		self._CtrySubDvsn = None
-
+	__slots__ = ["_LEI", "_CtrySubDvsn", "_Ctry"]
 	@property
 	def LEI(self):
 		return self._LEI
@@ -31,6 +18,19 @@ class DerivativePartyIdentification1Choice(base_types._BaseFieldType):
 	def LEI(self):
 		del self._LEI
 		self._LEI = None
+
+	@property
+	def CtrySubDvsn(self):
+		return self._CtrySubDvsn
+
+	@CtrySubDvsn.setter
+	def CtrySubDvsn(self, value):
+		self._CtrySubDvsn = value if type(value) != auto else self.make_default("CtrySubDvsn")
+
+	@CtrySubDvsn.deleter
+	def CtrySubDvsn(self):
+		del self._CtrySubDvsn
+		self._CtrySubDvsn = None
 
 	@property
 	def Ctry(self):
@@ -46,8 +46,8 @@ class DerivativePartyIdentification1Choice(base_types._BaseFieldType):
 		self._Ctry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrySubDvsn', type=CountrySubDivisionCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CtrySubDvsn', type=CountrySubDivisionCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 	))
 

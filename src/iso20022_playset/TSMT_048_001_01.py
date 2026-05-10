@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SpecialNotificationV01
 
 class TSMT_048_001_01():

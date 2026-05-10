@@ -1,67 +1,28 @@
-import base_types
-import Period7Choice
-import YesNoIndicator
+from . import base_types
 import Frequency22Choice
+import YesNoIndicator
 import DateAndDateTime2Choice
+import Number3Choice
 import Max35Text
 import UpdateType15Choice
+import Period7Choice
 import MovementResponseType1Code
-import Number3Choice
 
 class IntraBalanceReport5(base_types._BaseFieldType):
 
-	__slots__ = ["_QryRef", "_RptDtTm", "_RptId", "_Frqcy", "_RptPrd", "_QryTp", "_ActvtyInd", "_RptNb", "_UpdTp"]
+	__slots__ = ["_ActvtyInd", "_RptPrd", "_RptDtTm", "_Frqcy", "_RptId", "_QryRef", "_QryTp", "_RptNb", "_UpdTp"]
 	@property
-	def QryRef(self):
-		return self._QryRef
+	def ActvtyInd(self):
+		return self._ActvtyInd
 
-	@QryRef.setter
-	def QryRef(self, value):
-		self._QryRef = value if type(value) != auto else self.make_default("QryRef")
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
 
-	@QryRef.deleter
-	def QryRef(self):
-		del self._QryRef
-		self._QryRef = None
-
-	@property
-	def RptDtTm(self):
-		return self._RptDtTm
-
-	@RptDtTm.setter
-	def RptDtTm(self, value):
-		self._RptDtTm = value if type(value) != auto else self.make_default("RptDtTm")
-
-	@RptDtTm.deleter
-	def RptDtTm(self):
-		del self._RptDtTm
-		self._RptDtTm = None
-
-	@property
-	def RptId(self):
-		return self._RptId
-
-	@RptId.setter
-	def RptId(self, value):
-		self._RptId = value if type(value) != auto else self.make_default("RptId")
-
-	@RptId.deleter
-	def RptId(self):
-		del self._RptId
-		self._RptId = None
-
-	@property
-	def Frqcy(self):
-		return self._Frqcy
-
-	@Frqcy.setter
-	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != auto else self.make_default("Frqcy")
-
-	@Frqcy.deleter
-	def Frqcy(self):
-		del self._Frqcy
-		self._Frqcy = None
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
 
 	@property
 	def RptPrd(self):
@@ -77,6 +38,58 @@ class IntraBalanceReport5(base_types._BaseFieldType):
 		self._RptPrd = None
 
 	@property
+	def RptDtTm(self):
+		return self._RptDtTm
+
+	@RptDtTm.setter
+	def RptDtTm(self, value):
+		self._RptDtTm = value if type(value) != auto else self.make_default("RptDtTm")
+
+	@RptDtTm.deleter
+	def RptDtTm(self):
+		del self._RptDtTm
+		self._RptDtTm = None
+
+	@property
+	def Frqcy(self):
+		return self._Frqcy
+
+	@Frqcy.setter
+	def Frqcy(self, value):
+		self._Frqcy = value if type(value) != auto else self.make_default("Frqcy")
+
+	@Frqcy.deleter
+	def Frqcy(self):
+		del self._Frqcy
+		self._Frqcy = None
+
+	@property
+	def RptId(self):
+		return self._RptId
+
+	@RptId.setter
+	def RptId(self, value):
+		self._RptId = value if type(value) != auto else self.make_default("RptId")
+
+	@RptId.deleter
+	def RptId(self):
+		del self._RptId
+		self._RptId = None
+
+	@property
+	def QryRef(self):
+		return self._QryRef
+
+	@QryRef.setter
+	def QryRef(self, value):
+		self._QryRef = value if type(value) != auto else self.make_default("QryRef")
+
+	@QryRef.deleter
+	def QryRef(self):
+		del self._QryRef
+		self._QryRef = None
+
+	@property
 	def QryTp(self):
 		return self._QryTp
 
@@ -88,19 +101,6 @@ class IntraBalanceReport5(base_types._BaseFieldType):
 	def QryTp(self):
 		del self._QryTp
 		self._QryTp = None
-
-	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
-
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
-
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
 
 	@property
 	def RptNb(self):
@@ -129,13 +129,13 @@ class IntraBalanceReport5(base_types._BaseFieldType):
 		self._UpdTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frqcy', type=Frequency22Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptPrd', type=Period7Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryTp', type=MovementResponseType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptPrd', type=Period7Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frqcy', type=Frequency22Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryTp', type=MovementResponseType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptNb', type=Number3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=UpdateType15Choice, min=1, max=1, mutex_group=None, array=False),
 	))

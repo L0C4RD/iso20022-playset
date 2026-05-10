@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import PercentageRate
 import DecimalNumber
 import ActiveOrHistoricCurrencyAndAmount
 
 class FinancialInstrumentQuantity29Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NetAmt", "_PctgOfTtlSbcptAmt", "_HldgsRedRate", "_GrssAmt", "_UnitsNb"]
-	@property
-	def NetAmt(self):
-		return self._NetAmt
-
-	@NetAmt.setter
-	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != auto else self.make_default("NetAmt")
-
-	@NetAmt.deleter
-	def NetAmt(self):
-		del self._NetAmt
-		self._NetAmt = None
-
+	__slots__ = ["_PctgOfTtlSbcptAmt", "_NetAmt", "_HldgsRedRate", "_GrssAmt", "_UnitsNb"]
 	@property
 	def PctgOfTtlSbcptAmt(self):
 		return self._PctgOfTtlSbcptAmt
@@ -31,6 +18,19 @@ class FinancialInstrumentQuantity29Choice(base_types._BaseFieldType):
 	def PctgOfTtlSbcptAmt(self):
 		del self._PctgOfTtlSbcptAmt
 		self._PctgOfTtlSbcptAmt = None
+
+	@property
+	def NetAmt(self):
+		return self._NetAmt
+
+	@NetAmt.setter
+	def NetAmt(self, value):
+		self._NetAmt = value if type(value) != auto else self.make_default("NetAmt")
+
+	@NetAmt.deleter
+	def NetAmt(self):
+		del self._NetAmt
+		self._NetAmt = None
 
 	@property
 	def HldgsRedRate(self):
@@ -72,8 +72,8 @@ class FinancialInstrumentQuantity29Choice(base_types._BaseFieldType):
 		self._UnitsNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NetAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PctgOfTtlSbcptAmt', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NetAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='HldgsRedRate', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='GrssAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UnitsNb', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),

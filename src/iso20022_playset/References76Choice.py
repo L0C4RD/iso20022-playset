@@ -1,75 +1,10 @@
-import base_types
-import RestrictedFINXMax52Text
+from . import base_types
 import RestrictedFINXMax16Text
+import RestrictedFINXMax52Text
 
 class References76Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CmonId", "_OthrTxId", "_AcctSvcrTxId", "_CtrPtyMktInfrstrctrTxId", "_IntraBalMvmntId", "_TradId", "_SctiesSttlmTxId", "_PoolId", "_MktInfrstrctrTxId", "_IntraPosMvmntId"]
-	@property
-	def CmonId(self):
-		return self._CmonId
-
-	@CmonId.setter
-	def CmonId(self, value):
-		self._CmonId = value if type(value) != auto else self.make_default("CmonId")
-
-	@CmonId.deleter
-	def CmonId(self):
-		del self._CmonId
-		self._CmonId = None
-
-	@property
-	def OthrTxId(self):
-		return self._OthrTxId
-
-	@OthrTxId.setter
-	def OthrTxId(self, value):
-		self._OthrTxId = value if type(value) != auto else self.make_default("OthrTxId")
-
-	@OthrTxId.deleter
-	def OthrTxId(self):
-		del self._OthrTxId
-		self._OthrTxId = None
-
-	@property
-	def AcctSvcrTxId(self):
-		return self._AcctSvcrTxId
-
-	@AcctSvcrTxId.setter
-	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != auto else self.make_default("AcctSvcrTxId")
-
-	@AcctSvcrTxId.deleter
-	def AcctSvcrTxId(self):
-		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
-
-	@property
-	def CtrPtyMktInfrstrctrTxId(self):
-		return self._CtrPtyMktInfrstrctrTxId
-
-	@CtrPtyMktInfrstrctrTxId.setter
-	def CtrPtyMktInfrstrctrTxId(self, value):
-		self._CtrPtyMktInfrstrctrTxId = value if type(value) != auto else self.make_default("CtrPtyMktInfrstrctrTxId")
-
-	@CtrPtyMktInfrstrctrTxId.deleter
-	def CtrPtyMktInfrstrctrTxId(self):
-		del self._CtrPtyMktInfrstrctrTxId
-		self._CtrPtyMktInfrstrctrTxId = None
-
-	@property
-	def IntraBalMvmntId(self):
-		return self._IntraBalMvmntId
-
-	@IntraBalMvmntId.setter
-	def IntraBalMvmntId(self, value):
-		self._IntraBalMvmntId = value if type(value) != auto else self.make_default("IntraBalMvmntId")
-
-	@IntraBalMvmntId.deleter
-	def IntraBalMvmntId(self):
-		del self._IntraBalMvmntId
-		self._IntraBalMvmntId = None
-
+	__slots__ = ["_TradId", "_SctiesSttlmTxId", "_CtrPtyMktInfrstrctrTxId", "_IntraPosMvmntId", "_PoolId", "_MktInfrstrctrTxId", "_OthrTxId", "_IntraBalMvmntId", "_CmonId", "_AcctSvcrTxId"]
 	@property
 	def TradId(self):
 		return self._TradId
@@ -95,6 +30,32 @@ class References76Choice(base_types._BaseFieldType):
 	def SctiesSttlmTxId(self):
 		del self._SctiesSttlmTxId
 		self._SctiesSttlmTxId = None
+
+	@property
+	def CtrPtyMktInfrstrctrTxId(self):
+		return self._CtrPtyMktInfrstrctrTxId
+
+	@CtrPtyMktInfrstrctrTxId.setter
+	def CtrPtyMktInfrstrctrTxId(self, value):
+		self._CtrPtyMktInfrstrctrTxId = value if type(value) != auto else self.make_default("CtrPtyMktInfrstrctrTxId")
+
+	@CtrPtyMktInfrstrctrTxId.deleter
+	def CtrPtyMktInfrstrctrTxId(self):
+		del self._CtrPtyMktInfrstrctrTxId
+		self._CtrPtyMktInfrstrctrTxId = None
+
+	@property
+	def IntraPosMvmntId(self):
+		return self._IntraPosMvmntId
+
+	@IntraPosMvmntId.setter
+	def IntraPosMvmntId(self, value):
+		self._IntraPosMvmntId = value if type(value) != auto else self.make_default("IntraPosMvmntId")
+
+	@IntraPosMvmntId.deleter
+	def IntraPosMvmntId(self):
+		del self._IntraPosMvmntId
+		self._IntraPosMvmntId = None
 
 	@property
 	def PoolId(self):
@@ -123,28 +84,67 @@ class References76Choice(base_types._BaseFieldType):
 		self._MktInfrstrctrTxId = None
 
 	@property
-	def IntraPosMvmntId(self):
-		return self._IntraPosMvmntId
+	def OthrTxId(self):
+		return self._OthrTxId
 
-	@IntraPosMvmntId.setter
-	def IntraPosMvmntId(self, value):
-		self._IntraPosMvmntId = value if type(value) != auto else self.make_default("IntraPosMvmntId")
+	@OthrTxId.setter
+	def OthrTxId(self, value):
+		self._OthrTxId = value if type(value) != auto else self.make_default("OthrTxId")
 
-	@IntraPosMvmntId.deleter
-	def IntraPosMvmntId(self):
-		del self._IntraPosMvmntId
-		self._IntraPosMvmntId = None
+	@OthrTxId.deleter
+	def OthrTxId(self):
+		del self._OthrTxId
+		self._OthrTxId = None
+
+	@property
+	def IntraBalMvmntId(self):
+		return self._IntraBalMvmntId
+
+	@IntraBalMvmntId.setter
+	def IntraBalMvmntId(self, value):
+		self._IntraBalMvmntId = value if type(value) != auto else self.make_default("IntraBalMvmntId")
+
+	@IntraBalMvmntId.deleter
+	def IntraBalMvmntId(self):
+		del self._IntraBalMvmntId
+		self._IntraBalMvmntId = None
+
+	@property
+	def CmonId(self):
+		return self._CmonId
+
+	@CmonId.setter
+	def CmonId(self, value):
+		self._CmonId = value if type(value) != auto else self.make_default("CmonId")
+
+	@CmonId.deleter
+	def CmonId(self):
+		del self._CmonId
+		self._CmonId = None
+
+	@property
+	def AcctSvcrTxId(self):
+		return self._AcctSvcrTxId
+
+	@AcctSvcrTxId.setter
+	def AcctSvcrTxId(self, value):
+		self._AcctSvcrTxId = value if type(value) != auto else self.make_default("AcctSvcrTxId")
+
+	@AcctSvcrTxId.deleter
+	def AcctSvcrTxId(self):
+		del self._AcctSvcrTxId
+		self._AcctSvcrTxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='OthrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IntraBalMvmntId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TradId', type=RestrictedFINXMax52Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesSttlmTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IntraPosMvmntId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PoolId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IntraPosMvmntId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OthrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IntraBalMvmntId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

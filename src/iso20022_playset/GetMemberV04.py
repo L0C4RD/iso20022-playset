@@ -1,7 +1,7 @@
-import base_types
-import MessageHeader9
+from . import base_types
 import MemberQueryDefinition4
 import SupplementaryData1
+import MessageHeader9
 
 class GetMemberV04(base_types._BaseFieldType):
 

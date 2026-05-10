@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReservationReport8
 
 class CurrentAndDefaultReservation6(base_types._BaseFieldType):

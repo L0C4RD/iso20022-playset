@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
 import DateAndDateTimeSearch4Choice
-import BranchAndFinancialInstitutionIdentification8
 import BalanceType11Choice
 import BalanceCounterparty1Code
+import BranchAndFinancialInstitutionIdentification8
 
 class CashBalance14(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyTp", "_Tp", "_PrcgDt", "_ValDt", "_CtrPtyId"]
+	__slots__ = ["_CtrPtyTp", "_ValDt", "_PrcgDt", "_Tp", "_CtrPtyId"]
 	@property
 	def CtrPtyTp(self):
 		return self._CtrPtyTp
@@ -21,17 +21,17 @@ class CashBalance14(base_types._BaseFieldType):
 		self._CtrPtyTp = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def ValDt(self):
+		return self._ValDt
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
 
 	@property
 	def PrcgDt(self):
@@ -47,17 +47,17 @@ class CashBalance14(base_types._BaseFieldType):
 		self._PrcgDt = None
 
 	@property
-	def ValDt(self):
-		return self._ValDt
+	def Tp(self):
+		return self._Tp
 
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def CtrPtyId(self):
@@ -74,9 +74,9 @@ class CashBalance14(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPtyTp', type=BalanceCounterparty1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=BalanceType11Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrcgDt', type=DateAndDateTimeSearch4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=DateAndDateTimeSearch4Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrcgDt', type=DateAndDateTimeSearch4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=BalanceType11Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrPtyId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=None, mutex_group=None, array=True),
 	))
 

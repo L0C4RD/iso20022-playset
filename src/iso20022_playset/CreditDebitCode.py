@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class CreditDebitCode(base_types._BaseDataType_String):
 

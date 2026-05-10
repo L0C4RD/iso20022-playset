@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Algorithm11Code
 
 class AlgorithmIdentification16(base_types._BaseFieldType):

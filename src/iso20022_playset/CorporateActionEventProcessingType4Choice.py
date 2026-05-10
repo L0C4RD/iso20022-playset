@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CorporateActionEventProcessingType2Code
 import GenericIdentification30
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AcceptorRejectionV06
 
 class CAAA_015_001_06():

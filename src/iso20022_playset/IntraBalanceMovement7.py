@@ -1,104 +1,39 @@
-import base_types
-import Max35Text
-import SystemPartyIdentification8
-import IntraBalanceMovement6
-import CashAccount40
+from . import base_types
 import IntraBalanceStatusAndReason2
+import CashAccount40
+import IntraBalanceMovement6
+import Max35Text
 import BranchAndFinancialInstitutionIdentification8
+import SystemPartyIdentification8
 
 class IntraBalanceMovement7(base_types._BaseFieldType):
 
-	__slots__ = ["_StsAndRsn", "_PoolId", "_CshAcct", "_MvmntDtls", "_CshAcctSvcr", "_MktInfrstrctrTxId", "_PrcrTxId", "_AcctOwnrTxId", "_AcctSvcrTxId", "_CorpActnEvtId", "_CshAcctOwnr"]
+	__slots__ = ["_AcctSvcrTxId", "_CshAcctOwnr", "_AcctOwnrTxId", "_MvmntDtls", "_PoolId", "_CshAcctSvcr", "_PrcrTxId", "_CshAcct", "_CorpActnEvtId", "_MktInfrstrctrTxId", "_StsAndRsn"]
 	@property
-	def StsAndRsn(self):
-		return self._StsAndRsn
+	def AcctSvcrTxId(self):
+		return self._AcctSvcrTxId
 
-	@StsAndRsn.setter
-	def StsAndRsn(self, value):
-		self._StsAndRsn = value if type(value) != auto else self.make_default("StsAndRsn")
+	@AcctSvcrTxId.setter
+	def AcctSvcrTxId(self, value):
+		self._AcctSvcrTxId = value if type(value) != auto else self.make_default("AcctSvcrTxId")
 
-	@StsAndRsn.deleter
-	def StsAndRsn(self):
-		del self._StsAndRsn
-		self._StsAndRsn = None
-
-	@property
-	def PoolId(self):
-		return self._PoolId
-
-	@PoolId.setter
-	def PoolId(self, value):
-		self._PoolId = value if type(value) != auto else self.make_default("PoolId")
-
-	@PoolId.deleter
-	def PoolId(self):
-		del self._PoolId
-		self._PoolId = None
+	@AcctSvcrTxId.deleter
+	def AcctSvcrTxId(self):
+		del self._AcctSvcrTxId
+		self._AcctSvcrTxId = None
 
 	@property
-	def CshAcct(self):
-		return self._CshAcct
+	def CshAcctOwnr(self):
+		return self._CshAcctOwnr
 
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+	@CshAcctOwnr.setter
+	def CshAcctOwnr(self, value):
+		self._CshAcctOwnr = value if type(value) != auto else self.make_default("CshAcctOwnr")
 
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
-
-	@property
-	def MvmntDtls(self):
-		return self._MvmntDtls
-
-	@MvmntDtls.setter
-	def MvmntDtls(self, value):
-		self._MvmntDtls = value if type(value) != auto else self.make_default("MvmntDtls")
-
-	@MvmntDtls.deleter
-	def MvmntDtls(self):
-		del self._MvmntDtls
-		self._MvmntDtls = None
-
-	@property
-	def CshAcctSvcr(self):
-		return self._CshAcctSvcr
-
-	@CshAcctSvcr.setter
-	def CshAcctSvcr(self, value):
-		self._CshAcctSvcr = value if type(value) != auto else self.make_default("CshAcctSvcr")
-
-	@CshAcctSvcr.deleter
-	def CshAcctSvcr(self):
-		del self._CshAcctSvcr
-		self._CshAcctSvcr = None
-
-	@property
-	def MktInfrstrctrTxId(self):
-		return self._MktInfrstrctrTxId
-
-	@MktInfrstrctrTxId.setter
-	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
-
-	@MktInfrstrctrTxId.deleter
-	def MktInfrstrctrTxId(self):
-		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
-
-	@property
-	def PrcrTxId(self):
-		return self._PrcrTxId
-
-	@PrcrTxId.setter
-	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != auto else self.make_default("PrcrTxId")
-
-	@PrcrTxId.deleter
-	def PrcrTxId(self):
-		del self._PrcrTxId
-		self._PrcrTxId = None
+	@CshAcctOwnr.deleter
+	def CshAcctOwnr(self):
+		del self._CshAcctOwnr
+		self._CshAcctOwnr = None
 
 	@property
 	def AcctOwnrTxId(self):
@@ -114,17 +49,69 @@ class IntraBalanceMovement7(base_types._BaseFieldType):
 		self._AcctOwnrTxId = None
 
 	@property
-	def AcctSvcrTxId(self):
-		return self._AcctSvcrTxId
+	def MvmntDtls(self):
+		return self._MvmntDtls
 
-	@AcctSvcrTxId.setter
-	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != auto else self.make_default("AcctSvcrTxId")
+	@MvmntDtls.setter
+	def MvmntDtls(self, value):
+		self._MvmntDtls = value if type(value) != auto else self.make_default("MvmntDtls")
 
-	@AcctSvcrTxId.deleter
-	def AcctSvcrTxId(self):
-		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
+	@MvmntDtls.deleter
+	def MvmntDtls(self):
+		del self._MvmntDtls
+		self._MvmntDtls = None
+
+	@property
+	def PoolId(self):
+		return self._PoolId
+
+	@PoolId.setter
+	def PoolId(self, value):
+		self._PoolId = value if type(value) != auto else self.make_default("PoolId")
+
+	@PoolId.deleter
+	def PoolId(self):
+		del self._PoolId
+		self._PoolId = None
+
+	@property
+	def CshAcctSvcr(self):
+		return self._CshAcctSvcr
+
+	@CshAcctSvcr.setter
+	def CshAcctSvcr(self, value):
+		self._CshAcctSvcr = value if type(value) != auto else self.make_default("CshAcctSvcr")
+
+	@CshAcctSvcr.deleter
+	def CshAcctSvcr(self):
+		del self._CshAcctSvcr
+		self._CshAcctSvcr = None
+
+	@property
+	def PrcrTxId(self):
+		return self._PrcrTxId
+
+	@PrcrTxId.setter
+	def PrcrTxId(self, value):
+		self._PrcrTxId = value if type(value) != auto else self.make_default("PrcrTxId")
+
+	@PrcrTxId.deleter
+	def PrcrTxId(self):
+		del self._PrcrTxId
+		self._PrcrTxId = None
+
+	@property
+	def CshAcct(self):
+		return self._CshAcct
+
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
 
 	@property
 	def CorpActnEvtId(self):
@@ -140,29 +127,42 @@ class IntraBalanceMovement7(base_types._BaseFieldType):
 		self._CorpActnEvtId = None
 
 	@property
-	def CshAcctOwnr(self):
-		return self._CshAcctOwnr
+	def MktInfrstrctrTxId(self):
+		return self._MktInfrstrctrTxId
 
-	@CshAcctOwnr.setter
-	def CshAcctOwnr(self, value):
-		self._CshAcctOwnr = value if type(value) != auto else self.make_default("CshAcctOwnr")
+	@MktInfrstrctrTxId.setter
+	def MktInfrstrctrTxId(self, value):
+		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
 
-	@CshAcctOwnr.deleter
-	def CshAcctOwnr(self):
-		del self._CshAcctOwnr
-		self._CshAcctOwnr = None
+	@MktInfrstrctrTxId.deleter
+	def MktInfrstrctrTxId(self):
+		del self._MktInfrstrctrTxId
+		self._MktInfrstrctrTxId = None
+
+	@property
+	def StsAndRsn(self):
+		return self._StsAndRsn
+
+	@StsAndRsn.setter
+	def StsAndRsn(self, value):
+		self._StsAndRsn = value if type(value) != auto else self.make_default("StsAndRsn")
+
+	@StsAndRsn.deleter
+	def StsAndRsn(self):
+		del self._StsAndRsn
+		self._StsAndRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StsAndRsn', type=IntraBalanceStatusAndReason2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MvmntDtls', type=IntraBalanceMovement6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MvmntDtls', type=IntraBalanceMovement6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsAndRsn', type=IntraBalanceStatusAndReason2, min=0, max=1, mutex_group=None, array=False),
 	))
 

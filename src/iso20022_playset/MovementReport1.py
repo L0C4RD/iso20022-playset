@@ -1,11 +1,24 @@
-import base_types
-import Max35Text
-import YesNoIndicator
+from . import base_types
 import MovementResponseType1Code
+import YesNoIndicator
+import Max35Text
 
 class MovementReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_QryRef", "_QryTp", "_ActvtyInd", "_RptId"]
+	__slots__ = ["_ActvtyInd", "_QryRef", "_QryTp", "_RptId"]
+	@property
+	def ActvtyInd(self):
+		return self._ActvtyInd
+
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
+
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
+
 	@property
 	def QryRef(self):
 		return self._QryRef
@@ -33,19 +46,6 @@ class MovementReport1(base_types._BaseFieldType):
 		self._QryTp = None
 
 	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
-
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
-
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
-
-	@property
 	def RptId(self):
 		return self._RptId
 
@@ -59,9 +59,9 @@ class MovementReport1(base_types._BaseFieldType):
 		self._RptId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryTp', type=MovementResponseType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

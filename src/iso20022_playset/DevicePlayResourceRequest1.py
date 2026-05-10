@@ -1,14 +1,27 @@
-import base_types
+from . import base_types
+import ProcessingPosition2Code
+import PercentageRate
+import ResponseMode2Code
+import ResourceContent1
 import ResourceAction1Code
 import Max35Text
-import PercentageRate
-import ProcessingPosition2Code
-import ResourceContent1
-import ResponseMode2Code
 
 class DevicePlayResourceRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_RsrcActn", "_RspnMd", "_DispRsltn", "_SoundVol", "_Rsrc", "_TmgSlot"]
+	__slots__ = ["_TmgSlot", "_RsrcActn", "_DispRsltn", "_Rsrc", "_SoundVol", "_RspnMd"]
+	@property
+	def TmgSlot(self):
+		return self._TmgSlot
+
+	@TmgSlot.setter
+	def TmgSlot(self, value):
+		self._TmgSlot = value if type(value) != auto else self.make_default("TmgSlot")
+
+	@TmgSlot.deleter
+	def TmgSlot(self):
+		del self._TmgSlot
+		self._TmgSlot = None
+
 	@property
 	def RsrcActn(self):
 		return self._RsrcActn
@@ -21,19 +34,6 @@ class DevicePlayResourceRequest1(base_types._BaseFieldType):
 	def RsrcActn(self):
 		del self._RsrcActn
 		self._RsrcActn = None
-
-	@property
-	def RspnMd(self):
-		return self._RspnMd
-
-	@RspnMd.setter
-	def RspnMd(self, value):
-		self._RspnMd = value if type(value) != auto else self.make_default("RspnMd")
-
-	@RspnMd.deleter
-	def RspnMd(self):
-		del self._RspnMd
-		self._RspnMd = None
 
 	@property
 	def DispRsltn(self):
@@ -49,19 +49,6 @@ class DevicePlayResourceRequest1(base_types._BaseFieldType):
 		self._DispRsltn = None
 
 	@property
-	def SoundVol(self):
-		return self._SoundVol
-
-	@SoundVol.setter
-	def SoundVol(self, value):
-		self._SoundVol = value if type(value) != auto else self.make_default("SoundVol")
-
-	@SoundVol.deleter
-	def SoundVol(self):
-		del self._SoundVol
-		self._SoundVol = None
-
-	@property
 	def Rsrc(self):
 		return self._Rsrc
 
@@ -75,24 +62,37 @@ class DevicePlayResourceRequest1(base_types._BaseFieldType):
 		self._Rsrc = None
 
 	@property
-	def TmgSlot(self):
-		return self._TmgSlot
+	def SoundVol(self):
+		return self._SoundVol
 
-	@TmgSlot.setter
-	def TmgSlot(self, value):
-		self._TmgSlot = value if type(value) != auto else self.make_default("TmgSlot")
+	@SoundVol.setter
+	def SoundVol(self, value):
+		self._SoundVol = value if type(value) != auto else self.make_default("SoundVol")
 
-	@TmgSlot.deleter
-	def TmgSlot(self):
-		del self._TmgSlot
-		self._TmgSlot = None
+	@SoundVol.deleter
+	def SoundVol(self):
+		del self._SoundVol
+		self._SoundVol = None
+
+	@property
+	def RspnMd(self):
+		return self._RspnMd
+
+	@RspnMd.setter
+	def RspnMd(self, value):
+		self._RspnMd = value if type(value) != auto else self.make_default("RspnMd")
+
+	@RspnMd.deleter
+	def RspnMd(self):
+		del self._RspnMd
+		self._RspnMd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RsrcActn', type=ResourceAction1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnMd', type=ResponseMode2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DispRsltn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SoundVol', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsrc', type=ResourceContent1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmgSlot', type=ProcessingPosition2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsrcActn', type=ResourceAction1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DispRsltn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsrc', type=ResourceContent1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SoundVol', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnMd', type=ResponseMode2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

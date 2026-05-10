@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RestrictedFINMax30Text
 import RestrictedFINMax8Text
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import InvoicePaymentReconciliationAdviceV01
 
 class TSMT_053_001_01():

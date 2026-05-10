@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RedemptionOrderConfirmationV05
 
 class SETR_006_001_05():

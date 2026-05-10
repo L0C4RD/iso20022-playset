@@ -1,11 +1,37 @@
-import base_types
+from . import base_types
 import ImpliedCurrencyAndAmount
-import ATMTransactionAmounts7
 import ActiveCurrencyCode
+import ATMTransactionAmounts7
 
 class ATMTransactionAmounts6(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxPssblAmt", "_MinPssblAmt", "_Ccy", "_AddtlAmt"]
+	__slots__ = ["_AddtlAmt", "_Ccy", "_MaxPssblAmt", "_MinPssblAmt"]
+	@property
+	def AddtlAmt(self):
+		return self._AddtlAmt
+
+	@AddtlAmt.setter
+	def AddtlAmt(self, value):
+		self._AddtlAmt = value if type(value) != auto else self.make_default("AddtlAmt")
+
+	@AddtlAmt.deleter
+	def AddtlAmt(self):
+		del self._AddtlAmt
+		self._AddtlAmt = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
 	@property
 	def MaxPssblAmt(self):
 		return self._MaxPssblAmt
@@ -32,36 +58,10 @@ class ATMTransactionAmounts6(base_types._BaseFieldType):
 		del self._MinPssblAmt
 		self._MinPssblAmt = None
 
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
-	def AddtlAmt(self):
-		return self._AddtlAmt
-
-	@AddtlAmt.setter
-	def AddtlAmt(self, value):
-		self._AddtlAmt = value if type(value) != auto else self.make_default("AddtlAmt")
-
-	@AddtlAmt.deleter
-	def AddtlAmt(self):
-		del self._AddtlAmt
-		self._AddtlAmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlAmt', type=ATMTransactionAmounts7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxPssblAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinPssblAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlAmt', type=ATMTransactionAmounts7, min=0, max=None, mutex_group=None, array=True),
 	))
 

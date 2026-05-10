@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RoleAndBaselineAcceptanceV01
 
 class TSMT_049_001_01():

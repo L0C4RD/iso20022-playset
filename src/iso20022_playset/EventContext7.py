@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import RetailerService1Code
+import Max35Text
 import PointOfInteractionComponent17
 
 class EventContext7(base_types._BaseFieldType):

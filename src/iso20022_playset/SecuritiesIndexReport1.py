@@ -1,25 +1,12 @@
-import base_types
-import Max35Text
-import CountryCode
-import FinancialInstrument46Choice
+from . import base_types
 import Period4Choice
+import CountryCode
+import Max35Text
+import FinancialInstrument46Choice
 
 class SecuritiesIndexReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_Indx", "_RqstngNtty", "_TechRcrdId", "_VldtyPrd"]
-	@property
-	def Indx(self):
-		return self._Indx
-
-	@Indx.setter
-	def Indx(self, value):
-		self._Indx = value if type(value) != auto else self.make_default("Indx")
-
-	@Indx.deleter
-	def Indx(self):
-		del self._Indx
-		self._Indx = None
-
+	__slots__ = ["_RqstngNtty", "_TechRcrdId", "_VldtyPrd", "_Indx"]
 	@property
 	def RqstngNtty(self):
 		return self._RqstngNtty
@@ -59,10 +46,23 @@ class SecuritiesIndexReport1(base_types._BaseFieldType):
 		del self._VldtyPrd
 		self._VldtyPrd = None
 
+	@property
+	def Indx(self):
+		return self._Indx
+
+	@Indx.setter
+	def Indx(self, value):
+		self._Indx = value if type(value) != auto else self.make_default("Indx")
+
+	@Indx.deleter
+	def Indx(self):
+		del self._Indx
+		self._Indx = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Indx', type=FinancialInstrument46Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RqstngNtty', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Indx', type=FinancialInstrument46Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

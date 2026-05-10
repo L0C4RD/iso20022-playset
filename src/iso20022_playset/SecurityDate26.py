@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import DateAndDateTime2Choice
 import DateFormat41Choice
 
 class SecurityDate26(base_types._BaseFieldType):
 
-	__slots__ = ["_EarlstPmtDt", "_AvlblDt", "_DvddRnkgDt", "_PstngDt", "_PrpssDt", "_PmtDt"]
-	@property
-	def EarlstPmtDt(self):
-		return self._EarlstPmtDt
-
-	@EarlstPmtDt.setter
-	def EarlstPmtDt(self, value):
-		self._EarlstPmtDt = value if type(value) != auto else self.make_default("EarlstPmtDt")
-
-	@EarlstPmtDt.deleter
-	def EarlstPmtDt(self):
-		del self._EarlstPmtDt
-		self._EarlstPmtDt = None
-
+	__slots__ = ["_AvlblDt", "_PstngDt", "_EarlstPmtDt", "_DvddRnkgDt", "_PrpssDt", "_PmtDt"]
 	@property
 	def AvlblDt(self):
 		return self._AvlblDt
@@ -32,19 +19,6 @@ class SecurityDate26(base_types._BaseFieldType):
 		self._AvlblDt = None
 
 	@property
-	def DvddRnkgDt(self):
-		return self._DvddRnkgDt
-
-	@DvddRnkgDt.setter
-	def DvddRnkgDt(self, value):
-		self._DvddRnkgDt = value if type(value) != auto else self.make_default("DvddRnkgDt")
-
-	@DvddRnkgDt.deleter
-	def DvddRnkgDt(self):
-		del self._DvddRnkgDt
-		self._DvddRnkgDt = None
-
-	@property
 	def PstngDt(self):
 		return self._PstngDt
 
@@ -56,6 +30,32 @@ class SecurityDate26(base_types._BaseFieldType):
 	def PstngDt(self):
 		del self._PstngDt
 		self._PstngDt = None
+
+	@property
+	def EarlstPmtDt(self):
+		return self._EarlstPmtDt
+
+	@EarlstPmtDt.setter
+	def EarlstPmtDt(self, value):
+		self._EarlstPmtDt = value if type(value) != auto else self.make_default("EarlstPmtDt")
+
+	@EarlstPmtDt.deleter
+	def EarlstPmtDt(self):
+		del self._EarlstPmtDt
+		self._EarlstPmtDt = None
+
+	@property
+	def DvddRnkgDt(self):
+		return self._DvddRnkgDt
+
+	@DvddRnkgDt.setter
+	def DvddRnkgDt(self, value):
+		self._DvddRnkgDt = value if type(value) != auto else self.make_default("DvddRnkgDt")
+
+	@DvddRnkgDt.deleter
+	def DvddRnkgDt(self):
+		del self._DvddRnkgDt
+		self._DvddRnkgDt = None
 
 	@property
 	def PrpssDt(self):
@@ -84,10 +84,10 @@ class SecurityDate26(base_types._BaseFieldType):
 		self._PmtDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EarlstPmtDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AvlblDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DvddRnkgDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlstPmtDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DvddRnkgDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrpssDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
 	))

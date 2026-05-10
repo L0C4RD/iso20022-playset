@@ -1,6 +1,6 @@
-import base_types
-import Appearance1Code
+from . import base_types
 import GenericIdentification30
+import Appearance1Code
 
 class Appearance3Choice(base_types._BaseFieldType):
 

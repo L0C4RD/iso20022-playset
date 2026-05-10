@@ -1,15 +1,15 @@
-import base_types
+from . import base_types
+import CompareDatePeriod2
+import CompareWeekDay1
+import CompareDurationType1
 import CompareAmountAndDirection3
+import CompareTimePeriod2
 import CompareEnergyQuantityUnit1
 import CompareLongFraction19DecimalNumber1
-import CompareWeekDay1
-import CompareTimePeriod2
-import CompareDurationType1
-import CompareDatePeriod2
 
 class CompareEnergyDeliveryAttribute1(base_types._BaseFieldType):
 
-	__slots__ = ["_NrgyDt", "_NrgyDrtn", "_NrgyPricTmIntrvlQty", "_NrgyQtyUnit", "_NrgyWkDay", "_NrgyDlvryCpcty", "_NrgyDlvryIntrvl"]
+	__slots__ = ["_NrgyDt", "_NrgyDlvryIntrvl", "_NrgyDrtn", "_NrgyQtyUnit", "_NrgyWkDay", "_NrgyDlvryCpcty", "_NrgyPricTmIntrvlQty"]
 	@property
 	def NrgyDt(self):
 		return self._NrgyDt
@@ -24,6 +24,19 @@ class CompareEnergyDeliveryAttribute1(base_types._BaseFieldType):
 		self._NrgyDt = None
 
 	@property
+	def NrgyDlvryIntrvl(self):
+		return self._NrgyDlvryIntrvl
+
+	@NrgyDlvryIntrvl.setter
+	def NrgyDlvryIntrvl(self, value):
+		self._NrgyDlvryIntrvl = value if type(value) != auto else self.make_default("NrgyDlvryIntrvl")
+
+	@NrgyDlvryIntrvl.deleter
+	def NrgyDlvryIntrvl(self):
+		del self._NrgyDlvryIntrvl
+		self._NrgyDlvryIntrvl = None
+
+	@property
 	def NrgyDrtn(self):
 		return self._NrgyDrtn
 
@@ -35,19 +48,6 @@ class CompareEnergyDeliveryAttribute1(base_types._BaseFieldType):
 	def NrgyDrtn(self):
 		del self._NrgyDrtn
 		self._NrgyDrtn = None
-
-	@property
-	def NrgyPricTmIntrvlQty(self):
-		return self._NrgyPricTmIntrvlQty
-
-	@NrgyPricTmIntrvlQty.setter
-	def NrgyPricTmIntrvlQty(self, value):
-		self._NrgyPricTmIntrvlQty = value if type(value) != auto else self.make_default("NrgyPricTmIntrvlQty")
-
-	@NrgyPricTmIntrvlQty.deleter
-	def NrgyPricTmIntrvlQty(self):
-		del self._NrgyPricTmIntrvlQty
-		self._NrgyPricTmIntrvlQty = None
 
 	@property
 	def NrgyQtyUnit(self):
@@ -89,25 +89,25 @@ class CompareEnergyDeliveryAttribute1(base_types._BaseFieldType):
 		self._NrgyDlvryCpcty = None
 
 	@property
-	def NrgyDlvryIntrvl(self):
-		return self._NrgyDlvryIntrvl
+	def NrgyPricTmIntrvlQty(self):
+		return self._NrgyPricTmIntrvlQty
 
-	@NrgyDlvryIntrvl.setter
-	def NrgyDlvryIntrvl(self, value):
-		self._NrgyDlvryIntrvl = value if type(value) != auto else self.make_default("NrgyDlvryIntrvl")
+	@NrgyPricTmIntrvlQty.setter
+	def NrgyPricTmIntrvlQty(self, value):
+		self._NrgyPricTmIntrvlQty = value if type(value) != auto else self.make_default("NrgyPricTmIntrvlQty")
 
-	@NrgyDlvryIntrvl.deleter
-	def NrgyDlvryIntrvl(self):
-		del self._NrgyDlvryIntrvl
-		self._NrgyDlvryIntrvl = None
+	@NrgyPricTmIntrvlQty.deleter
+	def NrgyPricTmIntrvlQty(self):
+		del self._NrgyPricTmIntrvlQty
+		self._NrgyPricTmIntrvlQty = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NrgyDt', type=CompareDatePeriod2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NrgyDlvryIntrvl', type=CompareTimePeriod2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NrgyDrtn', type=CompareDurationType1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NrgyPricTmIntrvlQty', type=CompareAmountAndDirection3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NrgyQtyUnit', type=CompareEnergyQuantityUnit1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NrgyWkDay', type=CompareWeekDay1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NrgyDlvryCpcty', type=CompareLongFraction19DecimalNumber1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NrgyDlvryIntrvl', type=CompareTimePeriod2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NrgyPricTmIntrvlQty', type=CompareAmountAndDirection3, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,25 @@
-import base_types
-import SettlementInternaliserReportHeader1
-import SupplementaryData1
+from . import base_types
 import IssuerCSDReport1
 import SettlementInternaliser1
+import SupplementaryData1
+import SettlementInternaliserReportHeader1
 
 class SettlementInternaliserReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RptHdr", "_SttlmIntlr", "_SplmtryData", "_IssrCSD"]
+	__slots__ = ["_SplmtryData", "_RptHdr", "_SttlmIntlr", "_IssrCSD"]
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	@property
 	def RptHdr(self):
 		return self._RptHdr
@@ -34,19 +47,6 @@ class SettlementInternaliserReportV01(base_types._BaseFieldType):
 		self._SttlmIntlr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def IssrCSD(self):
 		return self._IssrCSD
 
@@ -60,9 +60,9 @@ class SettlementInternaliserReportV01(base_types._BaseFieldType):
 		self._IssrCSD = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptHdr', type=SettlementInternaliserReportHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmIntlr', type=SettlementInternaliser1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IssrCSD', type=IssuerCSDReport1, min=1, max=None, mutex_group=None, array=True),
 	))
 

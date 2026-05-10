@@ -1,21 +1,21 @@
-import base_types
-import SettlementDetails206
-import YesNoIndicator
-import SecurityIdentification19
+from . import base_types
 import ISODate
-import ActiveCurrencyAndAmount
-import DateAndDateTime2Choice
-import Max35Text
-import FinancialInstrumentQuantity33Choice
 import PercentageRate
-import Price7
+import YesNoIndicator
+import DateAndDateTime2Choice
 import BlockChainAddressWallet3
+import FinancialInstrumentQuantity33Choice
+import Max35Text
 import SafekeepingPlaceFormat29Choice
 import SecuritiesAccount19
+import ActiveCurrencyAndAmount
+import SettlementDetails206
+import SecurityIdentification19
+import Price7
 
 class SecuritiesCollateral12(base_types._BaseFieldType):
 
-	__slots__ = ["_CollId", "_MtrtyDt", "_SctyId", "_Qty", "_ValDt", "_BlckChainAdrOrWllt", "_SfkpgPlc", "_Pric", "_SfkpgAcct", "_SttlmParams", "_MktVal", "_CollVal", "_Hrcut", "_LtdCvrgInd"]
+	__slots__ = ["_CollId", "_MktVal", "_ValDt", "_SctyId", "_SfkpgAcct", "_LtdCvrgInd", "_Qty", "_MtrtyDt", "_Hrcut", "_BlckChainAdrOrWllt", "_SfkpgPlc", "_CollVal", "_Pric", "_SttlmParams"]
 	@property
 	def CollId(self):
 		return self._CollId
@@ -30,17 +30,30 @@ class SecuritiesCollateral12(base_types._BaseFieldType):
 		self._CollId = None
 
 	@property
-	def MtrtyDt(self):
-		return self._MtrtyDt
+	def MktVal(self):
+		return self._MktVal
 
-	@MtrtyDt.setter
-	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+	@MktVal.setter
+	def MktVal(self, value):
+		self._MktVal = value if type(value) != auto else self.make_default("MktVal")
 
-	@MtrtyDt.deleter
-	def MtrtyDt(self):
-		del self._MtrtyDt
-		self._MtrtyDt = None
+	@MktVal.deleter
+	def MktVal(self):
+		del self._MktVal
+		self._MktVal = None
+
+	@property
+	def ValDt(self):
+		return self._ValDt
+
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
 
 	@property
 	def SctyId(self):
@@ -56,6 +69,32 @@ class SecuritiesCollateral12(base_types._BaseFieldType):
 		self._SctyId = None
 
 	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
+	@property
+	def LtdCvrgInd(self):
+		return self._LtdCvrgInd
+
+	@LtdCvrgInd.setter
+	def LtdCvrgInd(self, value):
+		self._LtdCvrgInd = value if type(value) != auto else self.make_default("LtdCvrgInd")
+
+	@LtdCvrgInd.deleter
+	def LtdCvrgInd(self):
+		del self._LtdCvrgInd
+		self._LtdCvrgInd = None
+
+	@property
 	def Qty(self):
 		return self._Qty
 
@@ -69,17 +108,30 @@ class SecuritiesCollateral12(base_types._BaseFieldType):
 		self._Qty = None
 
 	@property
-	def ValDt(self):
-		return self._ValDt
+	def MtrtyDt(self):
+		return self._MtrtyDt
 
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+	@MtrtyDt.setter
+	def MtrtyDt(self, value):
+		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
 
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
+	@MtrtyDt.deleter
+	def MtrtyDt(self):
+		del self._MtrtyDt
+		self._MtrtyDt = None
+
+	@property
+	def Hrcut(self):
+		return self._Hrcut
+
+	@Hrcut.setter
+	def Hrcut(self, value):
+		self._Hrcut = value if type(value) != auto else self.make_default("Hrcut")
+
+	@Hrcut.deleter
+	def Hrcut(self):
+		del self._Hrcut
+		self._Hrcut = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -108,6 +160,19 @@ class SecuritiesCollateral12(base_types._BaseFieldType):
 		self._SfkpgPlc = None
 
 	@property
+	def CollVal(self):
+		return self._CollVal
+
+	@CollVal.setter
+	def CollVal(self, value):
+		self._CollVal = value if type(value) != auto else self.make_default("CollVal")
+
+	@CollVal.deleter
+	def CollVal(self):
+		del self._CollVal
+		self._CollVal = None
+
+	@property
 	def Pric(self):
 		return self._Pric
 
@@ -119,19 +184,6 @@ class SecuritiesCollateral12(base_types._BaseFieldType):
 	def Pric(self):
 		del self._Pric
 		self._Pric = None
-
-	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
 
 	@property
 	def SttlmParams(self):
@@ -146,72 +198,20 @@ class SecuritiesCollateral12(base_types._BaseFieldType):
 		del self._SttlmParams
 		self._SttlmParams = None
 
-	@property
-	def MktVal(self):
-		return self._MktVal
-
-	@MktVal.setter
-	def MktVal(self, value):
-		self._MktVal = value if type(value) != auto else self.make_default("MktVal")
-
-	@MktVal.deleter
-	def MktVal(self):
-		del self._MktVal
-		self._MktVal = None
-
-	@property
-	def CollVal(self):
-		return self._CollVal
-
-	@CollVal.setter
-	def CollVal(self, value):
-		self._CollVal = value if type(value) != auto else self.make_default("CollVal")
-
-	@CollVal.deleter
-	def CollVal(self):
-		del self._CollVal
-		self._CollVal = None
-
-	@property
-	def Hrcut(self):
-		return self._Hrcut
-
-	@Hrcut.setter
-	def Hrcut(self, value):
-		self._Hrcut = value if type(value) != auto else self.make_default("Hrcut")
-
-	@Hrcut.deleter
-	def Hrcut(self):
-		del self._Hrcut
-		self._Hrcut = None
-
-	@property
-	def LtdCvrgInd(self):
-		return self._LtdCvrgInd
-
-	@LtdCvrgInd.setter
-	def LtdCvrgInd(self, value):
-		self._LtdCvrgInd = value if type(value) != auto else self.make_default("LtdCvrgInd")
-
-	@LtdCvrgInd.deleter
-	def LtdCvrgInd(self):
-		del self._LtdCvrgInd
-		self._LtdCvrgInd = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtrtyDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LtdCvrgInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hrcut', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat29Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pric', type=Price7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmParams', type=SettlementDetails206, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hrcut', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LtdCvrgInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pric', type=Price7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmParams', type=SettlementDetails206, min=0, max=1, mutex_group=None, array=False),
 	))
 

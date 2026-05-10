@@ -1,27 +1,14 @@
-import base_types
-import Max35Text
+from . import base_types
+import Max350Text
+import DistributionPolicy1Code
 import Max140Text
 import FormOfSecurity1Code
-import DistributionPolicy1Code
-import Max350Text
 import SecurityIdentification19
+import Max35Text
 
 class FinancialInstrument71(base_types._BaseFieldType):
 
-	__slots__ = ["_DstrbtnPlcy", "_ClssTp", "_SplmtryId", "_ShrtNm", "_Id", "_Nm", "_SctiesForm", "_PdctGrp"]
-	@property
-	def DstrbtnPlcy(self):
-		return self._DstrbtnPlcy
-
-	@DstrbtnPlcy.setter
-	def DstrbtnPlcy(self, value):
-		self._DstrbtnPlcy = value if type(value) != auto else self.make_default("DstrbtnPlcy")
-
-	@DstrbtnPlcy.deleter
-	def DstrbtnPlcy(self):
-		del self._DstrbtnPlcy
-		self._DstrbtnPlcy = None
-
+	__slots__ = ["_ClssTp", "_Id", "_Nm", "_PdctGrp", "_SplmtryId", "_ShrtNm", "_SctiesForm", "_DstrbtnPlcy"]
 	@property
 	def ClssTp(self):
 		return self._ClssTp
@@ -34,32 +21,6 @@ class FinancialInstrument71(base_types._BaseFieldType):
 	def ClssTp(self):
 		del self._ClssTp
 		self._ClssTp = None
-
-	@property
-	def SplmtryId(self):
-		return self._SplmtryId
-
-	@SplmtryId.setter
-	def SplmtryId(self, value):
-		self._SplmtryId = value if type(value) != auto else self.make_default("SplmtryId")
-
-	@SplmtryId.deleter
-	def SplmtryId(self):
-		del self._SplmtryId
-		self._SplmtryId = None
-
-	@property
-	def ShrtNm(self):
-		return self._ShrtNm
-
-	@ShrtNm.setter
-	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
-
-	@ShrtNm.deleter
-	def ShrtNm(self):
-		del self._ShrtNm
-		self._ShrtNm = None
 
 	@property
 	def Id(self):
@@ -88,6 +49,45 @@ class FinancialInstrument71(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
+	def PdctGrp(self):
+		return self._PdctGrp
+
+	@PdctGrp.setter
+	def PdctGrp(self, value):
+		self._PdctGrp = value if type(value) != auto else self.make_default("PdctGrp")
+
+	@PdctGrp.deleter
+	def PdctGrp(self):
+		del self._PdctGrp
+		self._PdctGrp = None
+
+	@property
+	def SplmtryId(self):
+		return self._SplmtryId
+
+	@SplmtryId.setter
+	def SplmtryId(self, value):
+		self._SplmtryId = value if type(value) != auto else self.make_default("SplmtryId")
+
+	@SplmtryId.deleter
+	def SplmtryId(self):
+		del self._SplmtryId
+		self._SplmtryId = None
+
+	@property
+	def ShrtNm(self):
+		return self._ShrtNm
+
+	@ShrtNm.setter
+	def ShrtNm(self, value):
+		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
+
+	@ShrtNm.deleter
+	def ShrtNm(self):
+		del self._ShrtNm
+		self._ShrtNm = None
+
+	@property
 	def SctiesForm(self):
 		return self._SctiesForm
 
@@ -101,26 +101,26 @@ class FinancialInstrument71(base_types._BaseFieldType):
 		self._SctiesForm = None
 
 	@property
-	def PdctGrp(self):
-		return self._PdctGrp
+	def DstrbtnPlcy(self):
+		return self._DstrbtnPlcy
 
-	@PdctGrp.setter
-	def PdctGrp(self, value):
-		self._PdctGrp = value if type(value) != auto else self.make_default("PdctGrp")
+	@DstrbtnPlcy.setter
+	def DstrbtnPlcy(self, value):
+		self._DstrbtnPlcy = value if type(value) != auto else self.make_default("DstrbtnPlcy")
 
-	@PdctGrp.deleter
-	def PdctGrp(self):
-		del self._PdctGrp
-		self._PdctGrp = None
+	@DstrbtnPlcy.deleter
+	def DstrbtnPlcy(self):
+		del self._DstrbtnPlcy
+		self._DstrbtnPlcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DstrbtnPlcy', type=DistributionPolicy1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctGrp', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstrbtnPlcy', type=DistributionPolicy1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

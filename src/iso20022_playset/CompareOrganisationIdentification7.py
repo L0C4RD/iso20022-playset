@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PartyIdentification236Choice
 
 class CompareOrganisationIdentification7(base_types._BaseFieldType):

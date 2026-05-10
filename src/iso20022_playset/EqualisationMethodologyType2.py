@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RelatedSubscription1
 import EqualisationMethodologyType1Code
 

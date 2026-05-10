@@ -1,51 +1,25 @@
-import base_types
+from . import base_types
+import ISODate
+import DateAndDateTime2Choice
 import CreditDebitCode
 import Account10Choice
-import ISODate
 import ActiveCurrencyAndAmount
-import DateAndDateTime2Choice
 
 class CashOption109(base_types._BaseFieldType):
 
-	__slots__ = ["_PstngAmt", "_CdtDbtInd", "_ValDt", "_OrgnlPstngDt", "_PstngDt", "_Acct"]
+	__slots__ = ["_Acct", "_OrgnlPstngDt", "_ValDt", "_PstngDt", "_CdtDbtInd", "_PstngAmt"]
 	@property
-	def PstngAmt(self):
-		return self._PstngAmt
+	def Acct(self):
+		return self._Acct
 
-	@PstngAmt.setter
-	def PstngAmt(self, value):
-		self._PstngAmt = value if type(value) != auto else self.make_default("PstngAmt")
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
 
-	@PstngAmt.deleter
-	def PstngAmt(self):
-		del self._PstngAmt
-		self._PstngAmt = None
-
-	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
-
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
-
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
-
-	@property
-	def ValDt(self):
-		return self._ValDt
-
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
-
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
 
 	@property
 	def OrgnlPstngDt(self):
@@ -61,6 +35,19 @@ class CashOption109(base_types._BaseFieldType):
 		self._OrgnlPstngDt = None
 
 	@property
+	def ValDt(self):
+		return self._ValDt
+
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
+
+	@property
 	def PstngDt(self):
 		return self._PstngDt
 
@@ -74,24 +61,37 @@ class CashOption109(base_types._BaseFieldType):
 		self._PstngDt = None
 
 	@property
-	def Acct(self):
-		return self._Acct
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
 
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
 
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
+
+	@property
+	def PstngAmt(self):
+		return self._PstngAmt
+
+	@PstngAmt.setter
+	def PstngAmt(self, value):
+		self._PstngAmt = value if type(value) != auto else self.make_default("PstngAmt")
+
+	@PstngAmt.deleter
+	def PstngAmt(self):
+		del self._PstngAmt
+		self._PstngAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstngAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlPstngDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=Account10Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlPstngDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstngAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

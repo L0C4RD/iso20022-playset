@@ -1,24 +1,11 @@
-import base_types
-import DetailedReportStatistics5
-import SupplementaryData1
+from . import base_types
 import DetailedTransactionStatistics2Choice
+import SupplementaryData1
+import DetailedReportStatistics5
 
 class TradeData29(base_types._BaseFieldType):
 
-	__slots__ = ["_RptSttstcs", "_SplmtryData", "_TxSttstcs"]
-	@property
-	def RptSttstcs(self):
-		return self._RptSttstcs
-
-	@RptSttstcs.setter
-	def RptSttstcs(self, value):
-		self._RptSttstcs = value if type(value) != auto else self.make_default("RptSttstcs")
-
-	@RptSttstcs.deleter
-	def RptSttstcs(self):
-		del self._RptSttstcs
-		self._RptSttstcs = None
-
+	__slots__ = ["_SplmtryData", "_RptSttstcs", "_TxSttstcs"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -31,6 +18,19 @@ class TradeData29(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def RptSttstcs(self):
+		return self._RptSttstcs
+
+	@RptSttstcs.setter
+	def RptSttstcs(self, value):
+		self._RptSttstcs = value if type(value) != auto else self.make_default("RptSttstcs")
+
+	@RptSttstcs.deleter
+	def RptSttstcs(self):
+		del self._RptSttstcs
+		self._RptSttstcs = None
 
 	@property
 	def TxSttstcs(self):
@@ -46,8 +46,8 @@ class TradeData29(base_types._BaseFieldType):
 		self._TxSttstcs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptSttstcs', type=DetailedReportStatistics5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptSttstcs', type=DetailedReportStatistics5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxSttstcs', type=DetailedTransactionStatistics2Choice, min=1, max=None, mutex_group=None, array=True),
 	))
 

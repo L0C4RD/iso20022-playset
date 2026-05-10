@@ -1,6 +1,6 @@
-import base_types
-import ProxyNotAllowed1Code
+from . import base_types
 import ProxyAppointmentInformation6
+import ProxyNotAllowed1Code
 
 class Proxy5Choice(base_types._BaseFieldType):
 

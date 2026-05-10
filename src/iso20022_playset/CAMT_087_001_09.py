@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RequestToModifyPaymentV09
 
 class CAMT_087_001_09():

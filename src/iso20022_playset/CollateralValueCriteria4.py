@@ -1,11 +1,24 @@
-import base_types
-import Max35Text
+from . import base_types
 import CollateralValueReturnCriteria1
+import Max35Text
 import CollateralValueSearchCriteria4
 
 class CollateralValueCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_QryNm", "_RtrCrit", "_SchCrit"]
+	__slots__ = ["_SchCrit", "_QryNm", "_RtrCrit"]
+	@property
+	def SchCrit(self):
+		return self._SchCrit
+
+	@SchCrit.setter
+	def SchCrit(self, value):
+		self._SchCrit = value if type(value) != auto else self.make_default("SchCrit")
+
+	@SchCrit.deleter
+	def SchCrit(self):
+		del self._SchCrit
+		self._SchCrit = None
+
 	@property
 	def QryNm(self):
 		return self._QryNm
@@ -32,22 +45,9 @@ class CollateralValueCriteria4(base_types._BaseFieldType):
 		del self._RtrCrit
 		self._RtrCrit = None
 
-	@property
-	def SchCrit(self):
-		return self._SchCrit
-
-	@SchCrit.setter
-	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != auto else self.make_default("SchCrit")
-
-	@SchCrit.deleter
-	def SchCrit(self):
-		del self._SchCrit
-		self._SchCrit = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SchCrit', type=CollateralValueSearchCriteria4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtrCrit', type=CollateralValueReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SchCrit', type=CollateralValueSearchCriteria4, min=0, max=1, mutex_group=None, array=False),
 	))
 

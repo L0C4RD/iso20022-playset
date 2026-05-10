@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CorporateActionInstructionCancellationRequestStatusAdviceV14
 
 class SEEV_041_001_14():

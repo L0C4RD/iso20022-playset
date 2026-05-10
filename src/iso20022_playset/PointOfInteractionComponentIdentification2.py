@@ -1,10 +1,10 @@
-import base_types
-import Max35Text
+from . import base_types
 import Max256Text
+import Max35Text
 
 class PointOfInteractionComponentIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_ItmNb", "_Id", "_SrlNb", "_PrvdrId"]
+	__slots__ = ["_ItmNb", "_SrlNb", "_Id", "_PrvdrId"]
 	@property
 	def ItmNb(self):
 		return self._ItmNb
@@ -19,19 +19,6 @@ class PointOfInteractionComponentIdentification2(base_types._BaseFieldType):
 		self._ItmNb = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def SrlNb(self):
 		return self._SrlNb
 
@@ -43,6 +30,19 @@ class PointOfInteractionComponentIdentification2(base_types._BaseFieldType):
 	def SrlNb(self):
 		del self._SrlNb
 		self._SrlNb = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def PrvdrId(self):
@@ -59,8 +59,8 @@ class PointOfInteractionComponentIdentification2(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ItmNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrlNb', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvdrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
-import base_types
-import FinancialInstrumentRemoval1Code
+from . import base_types
 import GenericIdentification30
+import FinancialInstrumentRemoval1Code
 
 class Removal1Choice(base_types._BaseFieldType):
 

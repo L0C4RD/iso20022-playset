@@ -1,12 +1,12 @@
-import base_types
-import Max35Text
-import UUIDv4Identifier
+from . import base_types
 import ISODate
+import UUIDv4Identifier
+import Max35Text
 import BranchAndFinancialInstitutionIdentification8
 
 class ShortPaymentIdentification4(base_types._BaseFieldType):
 
-	__slots__ = ["_UETR", "_TxId", "_InstgAgt", "_IntrBkSttlmDt"]
+	__slots__ = ["_UETR", "_TxId", "_IntrBkSttlmDt", "_InstgAgt"]
 	@property
 	def UETR(self):
 		return self._UETR
@@ -34,19 +34,6 @@ class ShortPaymentIdentification4(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def InstgAgt(self):
-		return self._InstgAgt
-
-	@InstgAgt.setter
-	def InstgAgt(self, value):
-		self._InstgAgt = value if type(value) != auto else self.make_default("InstgAgt")
-
-	@InstgAgt.deleter
-	def InstgAgt(self):
-		del self._InstgAgt
-		self._InstgAgt = None
-
-	@property
 	def IntrBkSttlmDt(self):
 		return self._IntrBkSttlmDt
 
@@ -59,10 +46,23 @@ class ShortPaymentIdentification4(base_types._BaseFieldType):
 		del self._IntrBkSttlmDt
 		self._IntrBkSttlmDt = None
 
+	@property
+	def InstgAgt(self):
+		return self._InstgAgt
+
+	@InstgAgt.setter
+	def InstgAgt(self, value):
+		self._InstgAgt = value if type(value) != auto else self.make_default("InstgAgt")
+
+	@InstgAgt.deleter
+	def InstgAgt(self):
+		del self._InstgAgt
+		self._InstgAgt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

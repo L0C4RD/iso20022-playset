@@ -1,15 +1,28 @@
-import base_types
-import Pagination
+from . import base_types
 import Extension1
-import AdditionalReference9
-import AdditionalReference8
 import MessageIdentification1
+import AdditionalReference8
 import CopyInformation4
 import SwitchOrder7
+import Pagination
+import AdditionalReference9
 
 class SwitchOrderV04(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgPgntn", "_CpyDtls", "_SwtchOrdrDtls", "_PrvsRef", "_PoolRef", "_Xtnsn", "_MsgId"]
+	__slots__ = ["_Xtnsn", "_MsgPgntn", "_MsgId", "_CpyDtls", "_SwtchOrdrDtls", "_PoolRef", "_PrvsRef"]
+	@property
+	def Xtnsn(self):
+		return self._Xtnsn
+
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
+
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
+
 	@property
 	def MsgPgntn(self):
 		return self._MsgPgntn
@@ -22,6 +35,19 @@ class SwitchOrderV04(base_types._BaseFieldType):
 	def MsgPgntn(self):
 		del self._MsgPgntn
 		self._MsgPgntn = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def CpyDtls(self):
@@ -50,19 +76,6 @@ class SwitchOrderV04(base_types._BaseFieldType):
 		self._SwtchOrdrDtls = None
 
 	@property
-	def PrvsRef(self):
-		return self._PrvsRef
-
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
-
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
-
-	@property
 	def PoolRef(self):
 		return self._PoolRef
 
@@ -76,38 +89,25 @@ class SwitchOrderV04(base_types._BaseFieldType):
 		self._PoolRef = None
 
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
+	def PrvsRef(self):
+		return self._PrvsRef
 
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
 
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
-
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpyDtls', type=CopyInformation4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SwtchOrdrDtls', type=SwitchOrder7, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PoolRef', type=AdditionalReference9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference8, min=0, max=None, mutex_group=None, array=True),
 	))
 

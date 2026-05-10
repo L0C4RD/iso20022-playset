@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialInstrumentReportingCancellationReportV01
 
 class AUTH_102_001_01():

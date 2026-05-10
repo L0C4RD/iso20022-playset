@@ -1,25 +1,25 @@
-import base_types
-import Max35Text
-import InterestType1Choice
-import TaxCharges2
+from . import base_types
 import DateTimePeriod1
+import Max35Text
+import TaxCharges2
+import InterestType1Choice
 import Rate4
 
 class AccountInterest4(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_Rsn", "_Tp", "_Tax", "_FrToDt"]
+	__slots__ = ["_Tp", "_Rsn", "_Rate", "_Tax", "_FrToDt"]
 	@property
-	def Rate(self):
-		return self._Rate
+	def Tp(self):
+		return self._Tp
 
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Rsn(self):
@@ -35,17 +35,17 @@ class AccountInterest4(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def Rate(self):
+		return self._Rate
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != auto else self.make_default("Rate")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
 
 	@property
 	def Tax(self):
@@ -74,9 +74,9 @@ class AccountInterest4(base_types._BaseFieldType):
 		self._FrToDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rate', type=Rate4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=InterestType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=Rate4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tax', type=TaxCharges2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrToDt', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
 	))

@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import Max350Text
+import Max35Text
 
 class ResponseDetails1(base_types._BaseFieldType):
 

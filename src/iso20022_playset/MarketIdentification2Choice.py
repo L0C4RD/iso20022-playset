@@ -1,6 +1,6 @@
-import base_types
-import RestrictedFINXMax30Text
+from . import base_types
 import MICIdentifier
+import RestrictedFINXMax30Text
 
 class MarketIdentification2Choice(base_types._BaseFieldType):
 

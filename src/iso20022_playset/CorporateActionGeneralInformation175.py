@@ -1,52 +1,39 @@
-import base_types
-import Max35Text
+from . import base_types
 import FinancialInstrumentDescription5
-import CorporateActionEventProcessingType4Choice
 import CorporateActionMandatoryVoluntary3Choice
-import CorporateActionEventType107Choice
+import CorporateActionEventProcessingType4Choice
 import PartyIdentification129Choice
+import CorporateActionEventType107Choice
+import Max35Text
 
 class CorporateActionGeneralInformation175(base_types._BaseFieldType):
 
-	__slots__ = ["_MndtryVlntryEvtTp", "_AgtId", "_EvtTp", "_UndrlygScty", "_CorpActnEvtId", "_OffclCorpActnEvtId", "_EvtPrcgTp"]
+	__slots__ = ["_CorpActnEvtId", "_EvtPrcgTp", "_UndrlygScty", "_MndtryVlntryEvtTp", "_OffclCorpActnEvtId", "_EvtTp", "_AgtId"]
 	@property
-	def MndtryVlntryEvtTp(self):
-		return self._MndtryVlntryEvtTp
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
 
-	@MndtryVlntryEvtTp.setter
-	def MndtryVlntryEvtTp(self, value):
-		self._MndtryVlntryEvtTp = value if type(value) != auto else self.make_default("MndtryVlntryEvtTp")
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
 
-	@MndtryVlntryEvtTp.deleter
-	def MndtryVlntryEvtTp(self):
-		del self._MndtryVlntryEvtTp
-		self._MndtryVlntryEvtTp = None
-
-	@property
-	def AgtId(self):
-		return self._AgtId
-
-	@AgtId.setter
-	def AgtId(self, value):
-		self._AgtId = value if type(value) != auto else self.make_default("AgtId")
-
-	@AgtId.deleter
-	def AgtId(self):
-		del self._AgtId
-		self._AgtId = None
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
 
 	@property
-	def EvtTp(self):
-		return self._EvtTp
+	def EvtPrcgTp(self):
+		return self._EvtPrcgTp
 
-	@EvtTp.setter
-	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != auto else self.make_default("EvtTp")
+	@EvtPrcgTp.setter
+	def EvtPrcgTp(self, value):
+		self._EvtPrcgTp = value if type(value) != auto else self.make_default("EvtPrcgTp")
 
-	@EvtTp.deleter
-	def EvtTp(self):
-		del self._EvtTp
-		self._EvtTp = None
+	@EvtPrcgTp.deleter
+	def EvtPrcgTp(self):
+		del self._EvtPrcgTp
+		self._EvtPrcgTp = None
 
 	@property
 	def UndrlygScty(self):
@@ -62,17 +49,17 @@ class CorporateActionGeneralInformation175(base_types._BaseFieldType):
 		self._UndrlygScty = None
 
 	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
+	def MndtryVlntryEvtTp(self):
+		return self._MndtryVlntryEvtTp
 
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
+	@MndtryVlntryEvtTp.setter
+	def MndtryVlntryEvtTp(self, value):
+		self._MndtryVlntryEvtTp = value if type(value) != auto else self.make_default("MndtryVlntryEvtTp")
 
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
+	@MndtryVlntryEvtTp.deleter
+	def MndtryVlntryEvtTp(self):
+		del self._MndtryVlntryEvtTp
+		self._MndtryVlntryEvtTp = None
 
 	@property
 	def OffclCorpActnEvtId(self):
@@ -88,25 +75,38 @@ class CorporateActionGeneralInformation175(base_types._BaseFieldType):
 		self._OffclCorpActnEvtId = None
 
 	@property
-	def EvtPrcgTp(self):
-		return self._EvtPrcgTp
+	def EvtTp(self):
+		return self._EvtTp
 
-	@EvtPrcgTp.setter
-	def EvtPrcgTp(self, value):
-		self._EvtPrcgTp = value if type(value) != auto else self.make_default("EvtPrcgTp")
+	@EvtTp.setter
+	def EvtTp(self, value):
+		self._EvtTp = value if type(value) != auto else self.make_default("EvtTp")
 
-	@EvtPrcgTp.deleter
-	def EvtPrcgTp(self):
-		del self._EvtPrcgTp
-		self._EvtPrcgTp = None
+	@EvtTp.deleter
+	def EvtTp(self):
+		del self._EvtTp
+		self._EvtTp = None
+
+	@property
+	def AgtId(self):
+		return self._AgtId
+
+	@AgtId.setter
+	def AgtId(self, value):
+		self._AgtId = value if type(value) != auto else self.make_default("AgtId")
+
+	@AgtId.deleter
+	def AgtId(self):
+		del self._AgtId
+		self._AgtId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MndtryVlntryEvtTp', type=CorporateActionMandatoryVoluntary3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtId', type=PartyIdentification129Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType107Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygScty', type=FinancialInstrumentDescription5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtPrcgTp', type=CorporateActionEventProcessingType4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygScty', type=FinancialInstrumentDescription5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MndtryVlntryEvtTp', type=CorporateActionMandatoryVoluntary3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType107Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgtId', type=PartyIdentification129Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

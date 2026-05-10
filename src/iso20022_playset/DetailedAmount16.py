@@ -1,25 +1,12 @@
-import base_types
-import ActiveCurrencyCode
-import ImpliedCurrencyAndAmount
+from . import base_types
 import Number
 import DetailedAmount13
+import ActiveCurrencyCode
+import ImpliedCurrencyAndAmount
 
 class DetailedAmount16(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSeqNb", "_CshBckAmt", "_Dontn", "_Fees", "_Ccy", "_AmtToDpst"]
-	@property
-	def AcctSeqNb(self):
-		return self._AcctSeqNb
-
-	@AcctSeqNb.setter
-	def AcctSeqNb(self, value):
-		self._AcctSeqNb = value if type(value) != auto else self.make_default("AcctSeqNb")
-
-	@AcctSeqNb.deleter
-	def AcctSeqNb(self):
-		del self._AcctSeqNb
-		self._AcctSeqNb = None
-
+	__slots__ = ["_CshBckAmt", "_Dontn", "_Fees", "_AcctSeqNb", "_AmtToDpst", "_Ccy"]
 	@property
 	def CshBckAmt(self):
 		return self._CshBckAmt
@@ -60,17 +47,17 @@ class DetailedAmount16(base_types._BaseFieldType):
 		self._Fees = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def AcctSeqNb(self):
+		return self._AcctSeqNb
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@AcctSeqNb.setter
+	def AcctSeqNb(self, value):
+		self._AcctSeqNb = value if type(value) != auto else self.make_default("AcctSeqNb")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@AcctSeqNb.deleter
+	def AcctSeqNb(self):
+		del self._AcctSeqNb
+		self._AcctSeqNb = None
 
 	@property
 	def AmtToDpst(self):
@@ -85,12 +72,25 @@ class DetailedAmount16(base_types._BaseFieldType):
 		del self._AmtToDpst
 		self._AmtToDpst = None
 
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshBckAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dontn', type=DetailedAmount13, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Fees', type=DetailedAmount13, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtToDpst', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

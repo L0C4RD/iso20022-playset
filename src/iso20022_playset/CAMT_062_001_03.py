@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PayInScheduleV03
 
 class CAMT_062_001_03():

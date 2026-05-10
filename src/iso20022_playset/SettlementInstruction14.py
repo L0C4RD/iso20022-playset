@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
+import CashAccount40
 import SettlementMethod2Code
 import ClearingSystemIdentification3Choice
-import CashAccount40
 
 class SettlementInstruction14(base_types._BaseFieldType):
 

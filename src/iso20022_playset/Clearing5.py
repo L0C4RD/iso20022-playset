@@ -1,6 +1,6 @@
-import base_types
-import PartyIdentification127Choice
+from . import base_types
 import PartyIdentificationAndAccount149
+import PartyIdentification127Choice
 
 class Clearing5(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
-import base_types
-import DateTimePeriod1
+from . import base_types
 import LEIIdentifier
+import DateTimePeriod1
 
 class MoneyMarketReportHeader1(base_types._BaseFieldType):
 

@@ -1,9 +1,9 @@
-import base_types
-import SupplementaryData1
+from . import base_types
+import SecuritiesAccount22
 import PartyIdentification144
 import BlockChainAddressWallet3
 import DocumentNumber20
-import SecuritiesAccount22
+import SupplementaryData1
 
 class SecuritiesTransactionStatusQueryV07(base_types._BaseFieldType):
 

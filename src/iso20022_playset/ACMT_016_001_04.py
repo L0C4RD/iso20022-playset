@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountExcludedMandateMaintenanceAmendmentRequestV04
 
 class ACMT_016_001_04():

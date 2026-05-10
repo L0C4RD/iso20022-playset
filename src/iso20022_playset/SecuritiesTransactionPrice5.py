@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import LongFraction19DecimalNumber
+import Max35Text
 
 class SecuritiesTransactionPrice5(base_types._BaseFieldType):
 

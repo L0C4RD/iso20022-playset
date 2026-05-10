@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
+import EnrolmentHeader3
 import SupplementaryData1
 import CreditorEnrolmentAmendment5
-import EnrolmentHeader3
 
 class RequestToPayCreditorEnrolmentAmendmentRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_AmdmntData", "_Hdr", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_Hdr", "_AmdmntData"]
 	@property
-	def AmdmntData(self):
-		return self._AmdmntData
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@AmdmntData.setter
-	def AmdmntData(self, value):
-		self._AmdmntData = value if type(value) != auto else self.make_default("AmdmntData")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@AmdmntData.deleter
-	def AmdmntData(self):
-		del self._AmdmntData
-		self._AmdmntData = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Hdr(self):
@@ -33,21 +33,21 @@ class RequestToPayCreditorEnrolmentAmendmentRequestV02(base_types._BaseFieldType
 		self._Hdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def AmdmntData(self):
+		return self._AmdmntData
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@AmdmntData.setter
+	def AmdmntData(self, value):
+		self._AmdmntData = value if type(value) != auto else self.make_default("AmdmntData")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@AmdmntData.deleter
+	def AmdmntData(self):
+		del self._AmdmntData
+		self._AmdmntData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmdmntData', type=CreditorEnrolmentAmendment5, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Hdr', type=EnrolmentHeader3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Hdr', type=EnrolmentHeader3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmdmntData', type=CreditorEnrolmentAmendment5, min=1, max=None, mutex_group=None, array=True),
 	))
 

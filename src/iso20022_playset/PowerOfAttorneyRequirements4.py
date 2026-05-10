@@ -1,11 +1,11 @@
-import base_types
-import DateFormat58Choice
+from . import base_types
 import Max350Text
 import PowerOfAttorneyLegalisation1Code
+import DateFormat58Choice
 
 class PowerOfAttorneyRequirements4(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrDcmnttn", "_LglRqrmnt", "_DocSubmissnDdln"]
+	__slots__ = ["_OthrDcmnttn", "_DocSubmissnDdln", "_LglRqrmnt"]
 	@property
 	def OthrDcmnttn(self):
 		return self._OthrDcmnttn
@@ -20,19 +20,6 @@ class PowerOfAttorneyRequirements4(base_types._BaseFieldType):
 		self._OthrDcmnttn = None
 
 	@property
-	def LglRqrmnt(self):
-		return self._LglRqrmnt
-
-	@LglRqrmnt.setter
-	def LglRqrmnt(self, value):
-		self._LglRqrmnt = value if type(value) != auto else self.make_default("LglRqrmnt")
-
-	@LglRqrmnt.deleter
-	def LglRqrmnt(self):
-		del self._LglRqrmnt
-		self._LglRqrmnt = None
-
-	@property
 	def DocSubmissnDdln(self):
 		return self._DocSubmissnDdln
 
@@ -45,9 +32,22 @@ class PowerOfAttorneyRequirements4(base_types._BaseFieldType):
 		del self._DocSubmissnDdln
 		self._DocSubmissnDdln = None
 
+	@property
+	def LglRqrmnt(self):
+		return self._LglRqrmnt
+
+	@LglRqrmnt.setter
+	def LglRqrmnt(self, value):
+		self._LglRqrmnt = value if type(value) != auto else self.make_default("LglRqrmnt")
+
+	@LglRqrmnt.deleter
+	def LglRqrmnt(self):
+		del self._LglRqrmnt
+		self._LglRqrmnt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrDcmnttn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglRqrmnt', type=PowerOfAttorneyLegalisation1Code, min=0, max=4, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DocSubmissnDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglRqrmnt', type=PowerOfAttorneyLegalisation1Code, min=0, max=4, mutex_group=None, array=True),
 	))
 

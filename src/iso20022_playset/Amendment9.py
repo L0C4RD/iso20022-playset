@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import UndertakingAmendmentResponseMessage1
 
 class Amendment9(base_types._BaseFieldType):

@@ -1,12 +1,12 @@
-import base_types
-import AmountAndDirection86
-import ImpliedCurrencyAndAmount
+from . import base_types
 import Max10NumericText
+import AmountAndDirection86
 import ActiveCurrencyCode
+import ImpliedCurrencyAndAmount
 
 class PaymentAccount4(base_types._BaseFieldType):
 
-	__slots__ = ["_GrssDbts", "_GrssCdts", "_NetPmt", "_LatePmtConf", "_Ccy"]
+	__slots__ = ["_GrssDbts", "_Ccy", "_NetPmt", "_GrssCdts", "_LatePmtConf"]
 	@property
 	def GrssDbts(self):
 		return self._GrssDbts
@@ -21,17 +21,17 @@ class PaymentAccount4(base_types._BaseFieldType):
 		self._GrssDbts = None
 
 	@property
-	def GrssCdts(self):
-		return self._GrssCdts
+	def Ccy(self):
+		return self._Ccy
 
-	@GrssCdts.setter
-	def GrssCdts(self, value):
-		self._GrssCdts = value if type(value) != auto else self.make_default("GrssCdts")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
 
-	@GrssCdts.deleter
-	def GrssCdts(self):
-		del self._GrssCdts
-		self._GrssCdts = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def NetPmt(self):
@@ -47,6 +47,19 @@ class PaymentAccount4(base_types._BaseFieldType):
 		self._NetPmt = None
 
 	@property
+	def GrssCdts(self):
+		return self._GrssCdts
+
+	@GrssCdts.setter
+	def GrssCdts(self, value):
+		self._GrssCdts = value if type(value) != auto else self.make_default("GrssCdts")
+
+	@GrssCdts.deleter
+	def GrssCdts(self):
+		del self._GrssCdts
+		self._GrssCdts = None
+
+	@property
 	def LatePmtConf(self):
 		return self._LatePmtConf
 
@@ -59,24 +72,11 @@ class PaymentAccount4(base_types._BaseFieldType):
 		del self._LatePmtConf
 		self._LatePmtConf = None
 
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrssDbts', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrssCdts', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetPmt', type=AmountAndDirection86, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LatePmtConf', type=Max10NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetPmt', type=AmountAndDirection86, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrssCdts', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LatePmtConf', type=Max10NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

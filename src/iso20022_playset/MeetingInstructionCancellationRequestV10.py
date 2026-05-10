@@ -1,13 +1,13 @@
-import base_types
+from . import base_types
 import CancelInstruction5
-import Max35Text
-import SupplementaryData1
-import MeetingReference10
 import SecurityIdentification19
+import MeetingReference10
+import SupplementaryData1
+import Max35Text
 
 class MeetingInstructionCancellationRequestV10(base_types._BaseFieldType):
 
-	__slots__ = ["_MtgRef", "_ToBeCancInstr", "_MtgInstrId", "_FinInstrmId", "_SplmtryData"]
+	__slots__ = ["_MtgRef", "_ToBeCancInstr", "_MtgInstrId", "_SplmtryData", "_FinInstrmId"]
 	@property
 	def MtgRef(self):
 		return self._MtgRef
@@ -48,19 +48,6 @@ class MeetingInstructionCancellationRequestV10(base_types._BaseFieldType):
 		self._MtgInstrId = None
 
 	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -73,11 +60,24 @@ class MeetingInstructionCancellationRequestV10(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def FinInstrmId(self):
+		return self._FinInstrmId
+
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MtgRef', type=MeetingReference10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ToBeCancInstr', type=CancelInstruction5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MtgInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 	))
 

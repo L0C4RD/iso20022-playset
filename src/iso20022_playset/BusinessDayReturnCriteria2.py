@@ -1,21 +1,21 @@
-import base_types
+from . import base_types
 import RequestedIndicator
 
 class BusinessDayReturnCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_SysStsInd", "_EvtInd", "_ClsrPrdInd", "_SysDtInd", "_EvtTpInd", "_SysCcyInd", "_SsnPrdInd"]
+	__slots__ = ["_ClsrPrdInd", "_EvtInd", "_SysStsInd", "_SsnPrdInd", "_SysDtInd", "_EvtTpInd", "_SysCcyInd"]
 	@property
-	def SysStsInd(self):
-		return self._SysStsInd
+	def ClsrPrdInd(self):
+		return self._ClsrPrdInd
 
-	@SysStsInd.setter
-	def SysStsInd(self, value):
-		self._SysStsInd = value if type(value) != auto else self.make_default("SysStsInd")
+	@ClsrPrdInd.setter
+	def ClsrPrdInd(self, value):
+		self._ClsrPrdInd = value if type(value) != auto else self.make_default("ClsrPrdInd")
 
-	@SysStsInd.deleter
-	def SysStsInd(self):
-		del self._SysStsInd
-		self._SysStsInd = None
+	@ClsrPrdInd.deleter
+	def ClsrPrdInd(self):
+		del self._ClsrPrdInd
+		self._ClsrPrdInd = None
 
 	@property
 	def EvtInd(self):
@@ -31,17 +31,30 @@ class BusinessDayReturnCriteria2(base_types._BaseFieldType):
 		self._EvtInd = None
 
 	@property
-	def ClsrPrdInd(self):
-		return self._ClsrPrdInd
+	def SysStsInd(self):
+		return self._SysStsInd
 
-	@ClsrPrdInd.setter
-	def ClsrPrdInd(self, value):
-		self._ClsrPrdInd = value if type(value) != auto else self.make_default("ClsrPrdInd")
+	@SysStsInd.setter
+	def SysStsInd(self, value):
+		self._SysStsInd = value if type(value) != auto else self.make_default("SysStsInd")
 
-	@ClsrPrdInd.deleter
-	def ClsrPrdInd(self):
-		del self._ClsrPrdInd
-		self._ClsrPrdInd = None
+	@SysStsInd.deleter
+	def SysStsInd(self):
+		del self._SysStsInd
+		self._SysStsInd = None
+
+	@property
+	def SsnPrdInd(self):
+		return self._SsnPrdInd
+
+	@SsnPrdInd.setter
+	def SsnPrdInd(self, value):
+		self._SsnPrdInd = value if type(value) != auto else self.make_default("SsnPrdInd")
+
+	@SsnPrdInd.deleter
+	def SsnPrdInd(self):
+		del self._SsnPrdInd
+		self._SsnPrdInd = None
 
 	@property
 	def SysDtInd(self):
@@ -82,26 +95,13 @@ class BusinessDayReturnCriteria2(base_types._BaseFieldType):
 		del self._SysCcyInd
 		self._SysCcyInd = None
 
-	@property
-	def SsnPrdInd(self):
-		return self._SsnPrdInd
-
-	@SsnPrdInd.setter
-	def SsnPrdInd(self, value):
-		self._SsnPrdInd = value if type(value) != auto else self.make_default("SsnPrdInd")
-
-	@SsnPrdInd.deleter
-	def SsnPrdInd(self):
-		del self._SsnPrdInd
-		self._SsnPrdInd = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SysStsInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsrPrdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysStsInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SsnPrdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysDtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysCcyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SsnPrdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,11 @@
-import base_types
-import Max140Text
-import Min5Max16Binary
+from . import base_types
 import Number
+import Min5Max16Binary
+import Max140Text
 
 class KEKIdentifier6(base_types._BaseFieldType):
 
-	__slots__ = ["_SeqNb", "_DerivtnId", "_KeyId", "_KeyVrsn"]
+	__slots__ = ["_SeqNb", "_KeyVrsn", "_DerivtnId", "_KeyId"]
 	@property
 	def SeqNb(self):
 		return self._SeqNb
@@ -18,6 +18,19 @@ class KEKIdentifier6(base_types._BaseFieldType):
 	def SeqNb(self):
 		del self._SeqNb
 		self._SeqNb = None
+
+	@property
+	def KeyVrsn(self):
+		return self._KeyVrsn
+
+	@KeyVrsn.setter
+	def KeyVrsn(self, value):
+		self._KeyVrsn = value if type(value) != auto else self.make_default("KeyVrsn")
+
+	@KeyVrsn.deleter
+	def KeyVrsn(self):
+		del self._KeyVrsn
+		self._KeyVrsn = None
 
 	@property
 	def DerivtnId(self):
@@ -45,23 +58,10 @@ class KEKIdentifier6(base_types._BaseFieldType):
 		del self._KeyId
 		self._KeyId = None
 
-	@property
-	def KeyVrsn(self):
-		return self._KeyVrsn
-
-	@KeyVrsn.setter
-	def KeyVrsn(self, value):
-		self._KeyVrsn = value if type(value) != auto else self.make_default("KeyVrsn")
-
-	@KeyVrsn.deleter
-	def KeyVrsn(self):
-		del self._KeyVrsn
-		self._KeyVrsn = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DerivtnId', type=Min5Max16Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyId', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
-import base_types
-import SystemPartyIdentification8
+from . import base_types
 import DatePeriod3Choice
 import PartyAuditTrailOrError4Choice
+import SystemPartyIdentification8
 
 class PartyAuditTrailReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyAudtTrlOrErr", "_DtPrd", "_PtyId"]
-	@property
-	def PtyAudtTrlOrErr(self):
-		return self._PtyAudtTrlOrErr
-
-	@PtyAudtTrlOrErr.setter
-	def PtyAudtTrlOrErr(self, value):
-		self._PtyAudtTrlOrErr = value if type(value) != auto else self.make_default("PtyAudtTrlOrErr")
-
-	@PtyAudtTrlOrErr.deleter
-	def PtyAudtTrlOrErr(self):
-		del self._PtyAudtTrlOrErr
-		self._PtyAudtTrlOrErr = None
-
+	__slots__ = ["_DtPrd", "_PtyAudtTrlOrErr", "_PtyId"]
 	@property
 	def DtPrd(self):
 		return self._DtPrd
@@ -31,6 +18,19 @@ class PartyAuditTrailReport4(base_types._BaseFieldType):
 	def DtPrd(self):
 		del self._DtPrd
 		self._DtPrd = None
+
+	@property
+	def PtyAudtTrlOrErr(self):
+		return self._PtyAudtTrlOrErr
+
+	@PtyAudtTrlOrErr.setter
+	def PtyAudtTrlOrErr(self, value):
+		self._PtyAudtTrlOrErr = value if type(value) != auto else self.make_default("PtyAudtTrlOrErr")
+
+	@PtyAudtTrlOrErr.deleter
+	def PtyAudtTrlOrErr(self):
+		del self._PtyAudtTrlOrErr
+		self._PtyAudtTrlOrErr = None
 
 	@property
 	def PtyId(self):
@@ -46,8 +46,8 @@ class PartyAuditTrailReport4(base_types._BaseFieldType):
 		self._PtyId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PtyAudtTrlOrErr', type=PartyAuditTrailOrError4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtPrd', type=DatePeriod3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyAudtTrlOrErr', type=PartyAuditTrailOrError4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyId', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

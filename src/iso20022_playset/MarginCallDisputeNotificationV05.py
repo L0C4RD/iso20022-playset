@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import DisputeNotification2Choice
-import Max35Text
 import SupplementaryData1
+import Max35Text
 import Obligation9
 
 class MarginCallDisputeNotificationV05(base_types._BaseFieldType):

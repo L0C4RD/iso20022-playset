@@ -1,6 +1,6 @@
-import base_types
-import SecuritiesAuditTrailReport4
+from . import base_types
 import ErrorHandling5
+import SecuritiesAuditTrailReport4
 
 class SecuritiesAuditTrailOrOperationalError4Choice(base_types._BaseFieldType):
 

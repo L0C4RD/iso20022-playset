@@ -1,12 +1,12 @@
-import base_types
-import DecimalNumber
-import ImpliedCurrencyAndAmount
-import Quantity5Code
+from . import base_types
 import Max30DecimalNumber
+import DecimalNumber
+import Quantity5Code
+import ImpliedCurrencyAndAmount
 
 class FinancialInstrumentQuantity35Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Unit", "_DgtlTknUnit", "_AmtsdVal", "_Cd", "_FaceAmt"]
+	__slots__ = ["_Unit", "_AmtsdVal", "_Cd", "_DgtlTknUnit", "_FaceAmt"]
 	@property
 	def Unit(self):
 		return self._Unit
@@ -19,19 +19,6 @@ class FinancialInstrumentQuantity35Choice(base_types._BaseFieldType):
 	def Unit(self):
 		del self._Unit
 		self._Unit = None
-
-	@property
-	def DgtlTknUnit(self):
-		return self._DgtlTknUnit
-
-	@DgtlTknUnit.setter
-	def DgtlTknUnit(self, value):
-		self._DgtlTknUnit = value if type(value) != auto else self.make_default("DgtlTknUnit")
-
-	@DgtlTknUnit.deleter
-	def DgtlTknUnit(self):
-		del self._DgtlTknUnit
-		self._DgtlTknUnit = None
 
 	@property
 	def AmtsdVal(self):
@@ -60,6 +47,19 @@ class FinancialInstrumentQuantity35Choice(base_types._BaseFieldType):
 		self._Cd = None
 
 	@property
+	def DgtlTknUnit(self):
+		return self._DgtlTknUnit
+
+	@DgtlTknUnit.setter
+	def DgtlTknUnit(self, value):
+		self._DgtlTknUnit = value if type(value) != auto else self.make_default("DgtlTknUnit")
+
+	@DgtlTknUnit.deleter
+	def DgtlTknUnit(self):
+		del self._DgtlTknUnit
+		self._DgtlTknUnit = None
+
+	@property
 	def FaceAmt(self):
 		return self._FaceAmt
 
@@ -74,9 +74,9 @@ class FinancialInstrumentQuantity35Choice(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Unit', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='DgtlTknUnit', type=Max30DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtsdVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cd', type=Quantity5Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DgtlTknUnit', type=Max30DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FaceAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

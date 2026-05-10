@@ -1,11 +1,11 @@
-import base_types
-import SwitchOrderStatusAndReason2
+from . import base_types
 import IndividualOrderStatusAndReason7
 import OrderStatusAndReason10
+import SwitchOrderStatusAndReason2
 
 class Status24Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IndvOrdrDtlsRpt", "_SwtchOrdrDtlsRpt", "_OrdrDtlsRpt"]
+	__slots__ = ["_IndvOrdrDtlsRpt", "_OrdrDtlsRpt", "_SwtchOrdrDtlsRpt"]
 	@property
 	def IndvOrdrDtlsRpt(self):
 		return self._IndvOrdrDtlsRpt
@@ -20,19 +20,6 @@ class Status24Choice(base_types._BaseFieldType):
 		self._IndvOrdrDtlsRpt = None
 
 	@property
-	def SwtchOrdrDtlsRpt(self):
-		return self._SwtchOrdrDtlsRpt
-
-	@SwtchOrdrDtlsRpt.setter
-	def SwtchOrdrDtlsRpt(self, value):
-		self._SwtchOrdrDtlsRpt = value if type(value) != auto else self.make_default("SwtchOrdrDtlsRpt")
-
-	@SwtchOrdrDtlsRpt.deleter
-	def SwtchOrdrDtlsRpt(self):
-		del self._SwtchOrdrDtlsRpt
-		self._SwtchOrdrDtlsRpt = None
-
-	@property
 	def OrdrDtlsRpt(self):
 		return self._OrdrDtlsRpt
 
@@ -45,9 +32,22 @@ class Status24Choice(base_types._BaseFieldType):
 		del self._OrdrDtlsRpt
 		self._OrdrDtlsRpt = None
 
+	@property
+	def SwtchOrdrDtlsRpt(self):
+		return self._SwtchOrdrDtlsRpt
+
+	@SwtchOrdrDtlsRpt.setter
+	def SwtchOrdrDtlsRpt(self, value):
+		self._SwtchOrdrDtlsRpt = value if type(value) != auto else self.make_default("SwtchOrdrDtlsRpt")
+
+	@SwtchOrdrDtlsRpt.deleter
+	def SwtchOrdrDtlsRpt(self):
+		del self._SwtchOrdrDtlsRpt
+		self._SwtchOrdrDtlsRpt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IndvOrdrDtlsRpt', type=IndividualOrderStatusAndReason7, min=1, max=None, mutex_group=1, array=True),
-		base_types.FieldEntry(name='SwtchOrdrDtlsRpt', type=SwitchOrderStatusAndReason2, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='OrdrDtlsRpt', type=OrderStatusAndReason10, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SwtchOrdrDtlsRpt', type=SwitchOrderStatusAndReason2, min=1, max=None, mutex_group=1, array=True),
 	))
 

@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
+import CompareSecurityIdentification4
 import SecurityCommodityCash4
 import CompareDate3
-import CompareSecurityIdentification4
 import CompareTrueFalseIndicator3
 
 class CollateralMatchingCriteria6(base_types._BaseFieldType):
 
-	__slots__ = ["_CollValDt", "_NetXpsrCollstnInd", "_BsktIdr", "_UncollsdFlg", "_AsstTp"]
+	__slots__ = ["_CollValDt", "_BsktIdr", "_AsstTp", "_UncollsdFlg", "_NetXpsrCollstnInd"]
 	@property
 	def CollValDt(self):
 		return self._CollValDt
@@ -19,19 +19,6 @@ class CollateralMatchingCriteria6(base_types._BaseFieldType):
 	def CollValDt(self):
 		del self._CollValDt
 		self._CollValDt = None
-
-	@property
-	def NetXpsrCollstnInd(self):
-		return self._NetXpsrCollstnInd
-
-	@NetXpsrCollstnInd.setter
-	def NetXpsrCollstnInd(self, value):
-		self._NetXpsrCollstnInd = value if type(value) != auto else self.make_default("NetXpsrCollstnInd")
-
-	@NetXpsrCollstnInd.deleter
-	def NetXpsrCollstnInd(self):
-		del self._NetXpsrCollstnInd
-		self._NetXpsrCollstnInd = None
 
 	@property
 	def BsktIdr(self):
@@ -47,6 +34,19 @@ class CollateralMatchingCriteria6(base_types._BaseFieldType):
 		self._BsktIdr = None
 
 	@property
+	def AsstTp(self):
+		return self._AsstTp
+
+	@AsstTp.setter
+	def AsstTp(self, value):
+		self._AsstTp = value if type(value) != auto else self.make_default("AsstTp")
+
+	@AsstTp.deleter
+	def AsstTp(self):
+		del self._AsstTp
+		self._AsstTp = None
+
+	@property
 	def UncollsdFlg(self):
 		return self._UncollsdFlg
 
@@ -60,23 +60,23 @@ class CollateralMatchingCriteria6(base_types._BaseFieldType):
 		self._UncollsdFlg = None
 
 	@property
-	def AsstTp(self):
-		return self._AsstTp
+	def NetXpsrCollstnInd(self):
+		return self._NetXpsrCollstnInd
 
-	@AsstTp.setter
-	def AsstTp(self, value):
-		self._AsstTp = value if type(value) != auto else self.make_default("AsstTp")
+	@NetXpsrCollstnInd.setter
+	def NetXpsrCollstnInd(self, value):
+		self._NetXpsrCollstnInd = value if type(value) != auto else self.make_default("NetXpsrCollstnInd")
 
-	@AsstTp.deleter
-	def AsstTp(self):
-		del self._AsstTp
-		self._AsstTp = None
+	@NetXpsrCollstnInd.deleter
+	def NetXpsrCollstnInd(self):
+		del self._NetXpsrCollstnInd
+		self._NetXpsrCollstnInd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollValDt', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetXpsrCollstnInd', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BsktIdr', type=CompareSecurityIdentification4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UncollsdFlg', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AsstTp', type=SecurityCommodityCash4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UncollsdFlg', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetXpsrCollstnInd', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
 	))
 

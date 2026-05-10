@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import InquiryInitiationV03
 
 class CAIN_016_001_03():

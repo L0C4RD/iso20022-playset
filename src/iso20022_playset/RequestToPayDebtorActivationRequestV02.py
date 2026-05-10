@@ -1,8 +1,8 @@
-import base_types
-import ElectronicInvoice1
-import ActivationHeader3
-import SupplementaryData1
+from . import base_types
 import DebtorActivation5
+import ElectronicInvoice1
+import SupplementaryData1
+import ActivationHeader3
 
 class RequestToPayDebtorActivationRequestV02(base_types._BaseFieldType):
 

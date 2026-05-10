@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SubscriptionBulkOrderV04
 
 class SETR_007_001_04():

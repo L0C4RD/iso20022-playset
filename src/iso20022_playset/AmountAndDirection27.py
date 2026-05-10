@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
+import ForeignExchangeTerms17
+import ActiveOrHistoricCurrencyAndAmount
 import CreditDebitCode
 import ActiveCurrencyAndAmount
-import ActiveOrHistoricCurrencyAndAmount
-import ForeignExchangeTerms17
 
 class AmountAndDirection27(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_OrgnlCcyAndOrdrdAmt", "_Amt", "_FXDtls"]
+	__slots__ = ["_CdtDbtInd", "_Amt", "_FXDtls", "_OrgnlCcyAndOrdrdAmt"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
@@ -19,19 +19,6 @@ class AmountAndDirection27(base_types._BaseFieldType):
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
 		self._CdtDbtInd = None
-
-	@property
-	def OrgnlCcyAndOrdrdAmt(self):
-		return self._OrgnlCcyAndOrdrdAmt
-
-	@OrgnlCcyAndOrdrdAmt.setter
-	def OrgnlCcyAndOrdrdAmt(self, value):
-		self._OrgnlCcyAndOrdrdAmt = value if type(value) != auto else self.make_default("OrgnlCcyAndOrdrdAmt")
-
-	@OrgnlCcyAndOrdrdAmt.deleter
-	def OrgnlCcyAndOrdrdAmt(self):
-		del self._OrgnlCcyAndOrdrdAmt
-		self._OrgnlCcyAndOrdrdAmt = None
 
 	@property
 	def Amt(self):
@@ -59,10 +46,23 @@ class AmountAndDirection27(base_types._BaseFieldType):
 		del self._FXDtls
 		self._FXDtls = None
 
+	@property
+	def OrgnlCcyAndOrdrdAmt(self):
+		return self._OrgnlCcyAndOrdrdAmt
+
+	@OrgnlCcyAndOrdrdAmt.setter
+	def OrgnlCcyAndOrdrdAmt(self, value):
+		self._OrgnlCcyAndOrdrdAmt = value if type(value) != auto else self.make_default("OrgnlCcyAndOrdrdAmt")
+
+	@OrgnlCcyAndOrdrdAmt.deleter
+	def OrgnlCcyAndOrdrdAmt(self):
+		del self._OrgnlCcyAndOrdrdAmt
+		self._OrgnlCcyAndOrdrdAmt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlCcyAndOrdrdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms17, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCcyAndOrdrdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

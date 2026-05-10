@@ -1,25 +1,25 @@
-import base_types
+from . import base_types
+import ISODate
+import YesNoIndicator
+import Exact4AlphaNumericText
 import Max35Text
 import Max4Text
-import Exact4AlphaNumericText
-import YesNoIndicator
-import ISODate
 
 class TradeAgreement12(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmSsnIdr", "_CmonRef", "_AmdOrCclRsn", "_OprScp", "_OprTp", "_PmtVrssPmtInd", "_TradDt", "_MsgId", "_SpltTradInd", "_OrgtrRef", "_PdctTp", "_RltdRef"]
+	__slots__ = ["_MsgId", "_CmonRef", "_RltdRef", "_PmtVrssPmtInd", "_TradDt", "_OprScp", "_AmdOrCclRsn", "_OprTp", "_OrgtrRef", "_SttlmSsnIdr", "_PdctTp", "_SpltTradInd"]
 	@property
-	def SttlmSsnIdr(self):
-		return self._SttlmSsnIdr
+	def MsgId(self):
+		return self._MsgId
 
-	@SttlmSsnIdr.setter
-	def SttlmSsnIdr(self, value):
-		self._SttlmSsnIdr = value if type(value) != auto else self.make_default("SttlmSsnIdr")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@SttlmSsnIdr.deleter
-	def SttlmSsnIdr(self):
-		del self._SttlmSsnIdr
-		self._SttlmSsnIdr = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def CmonRef(self):
@@ -35,43 +35,17 @@ class TradeAgreement12(base_types._BaseFieldType):
 		self._CmonRef = None
 
 	@property
-	def AmdOrCclRsn(self):
-		return self._AmdOrCclRsn
+	def RltdRef(self):
+		return self._RltdRef
 
-	@AmdOrCclRsn.setter
-	def AmdOrCclRsn(self, value):
-		self._AmdOrCclRsn = value if type(value) != auto else self.make_default("AmdOrCclRsn")
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
 
-	@AmdOrCclRsn.deleter
-	def AmdOrCclRsn(self):
-		del self._AmdOrCclRsn
-		self._AmdOrCclRsn = None
-
-	@property
-	def OprScp(self):
-		return self._OprScp
-
-	@OprScp.setter
-	def OprScp(self, value):
-		self._OprScp = value if type(value) != auto else self.make_default("OprScp")
-
-	@OprScp.deleter
-	def OprScp(self):
-		del self._OprScp
-		self._OprScp = None
-
-	@property
-	def OprTp(self):
-		return self._OprTp
-
-	@OprTp.setter
-	def OprTp(self, value):
-		self._OprTp = value if type(value) != auto else self.make_default("OprTp")
-
-	@OprTp.deleter
-	def OprTp(self):
-		del self._OprTp
-		self._OprTp = None
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
 
 	@property
 	def PmtVrssPmtInd(self):
@@ -100,30 +74,43 @@ class TradeAgreement12(base_types._BaseFieldType):
 		self._TradDt = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def OprScp(self):
+		return self._OprScp
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@OprScp.setter
+	def OprScp(self, value):
+		self._OprScp = value if type(value) != auto else self.make_default("OprScp")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@OprScp.deleter
+	def OprScp(self):
+		del self._OprScp
+		self._OprScp = None
 
 	@property
-	def SpltTradInd(self):
-		return self._SpltTradInd
+	def AmdOrCclRsn(self):
+		return self._AmdOrCclRsn
 
-	@SpltTradInd.setter
-	def SpltTradInd(self, value):
-		self._SpltTradInd = value if type(value) != auto else self.make_default("SpltTradInd")
+	@AmdOrCclRsn.setter
+	def AmdOrCclRsn(self, value):
+		self._AmdOrCclRsn = value if type(value) != auto else self.make_default("AmdOrCclRsn")
 
-	@SpltTradInd.deleter
-	def SpltTradInd(self):
-		del self._SpltTradInd
-		self._SpltTradInd = None
+	@AmdOrCclRsn.deleter
+	def AmdOrCclRsn(self):
+		del self._AmdOrCclRsn
+		self._AmdOrCclRsn = None
+
+	@property
+	def OprTp(self):
+		return self._OprTp
+
+	@OprTp.setter
+	def OprTp(self, value):
+		self._OprTp = value if type(value) != auto else self.make_default("OprTp")
+
+	@OprTp.deleter
+	def OprTp(self):
+		del self._OprTp
+		self._OprTp = None
 
 	@property
 	def OrgtrRef(self):
@@ -139,6 +126,19 @@ class TradeAgreement12(base_types._BaseFieldType):
 		self._OrgtrRef = None
 
 	@property
+	def SttlmSsnIdr(self):
+		return self._SttlmSsnIdr
+
+	@SttlmSsnIdr.setter
+	def SttlmSsnIdr(self, value):
+		self._SttlmSsnIdr = value if type(value) != auto else self.make_default("SttlmSsnIdr")
+
+	@SttlmSsnIdr.deleter
+	def SttlmSsnIdr(self):
+		del self._SttlmSsnIdr
+		self._SttlmSsnIdr = None
+
+	@property
 	def PdctTp(self):
 		return self._PdctTp
 
@@ -152,30 +152,30 @@ class TradeAgreement12(base_types._BaseFieldType):
 		self._PdctTp = None
 
 	@property
-	def RltdRef(self):
-		return self._RltdRef
+	def SpltTradInd(self):
+		return self._SpltTradInd
 
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+	@SpltTradInd.setter
+	def SpltTradInd(self, value):
+		self._SpltTradInd = value if type(value) != auto else self.make_default("SpltTradInd")
 
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
+	@SpltTradInd.deleter
+	def SpltTradInd(self):
+		del self._SpltTradInd
+		self._SpltTradInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmdOrCclRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OprScp', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OprTp', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtVrssPmtInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SpltTradInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OprScp', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmdOrCclRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OprTp', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgtrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpltTradInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

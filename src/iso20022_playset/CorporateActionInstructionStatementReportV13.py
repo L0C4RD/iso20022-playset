@@ -1,12 +1,25 @@
-import base_types
-import Pagination1
-import SupplementaryData1
+from . import base_types
 import Statement72
+import SupplementaryData1
 import AccountIdentification68
+import Pagination1
 
 class CorporateActionInstructionStatementReportV13(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtGnlDtls", "_AcctAndStmtDtls", "_SplmtryData", "_Pgntn"]
+	__slots__ = ["_SplmtryData", "_StmtGnlDtls", "_AcctAndStmtDtls", "_Pgntn"]
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	@property
 	def StmtGnlDtls(self):
 		return self._StmtGnlDtls
@@ -34,19 +47,6 @@ class CorporateActionInstructionStatementReportV13(base_types._BaseFieldType):
 		self._AcctAndStmtDtls = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def Pgntn(self):
 		return self._Pgntn
 
@@ -60,9 +60,9 @@ class CorporateActionInstructionStatementReportV13(base_types._BaseFieldType):
 		self._Pgntn = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement72, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctAndStmtDtls', type=AccountIdentification68, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 	))
 

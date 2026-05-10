@@ -1,12 +1,25 @@
-import base_types
-import TrueFalseIndicator
+from . import base_types
 import ActiveOrHistoricCurrencyAndAmount
 import CreditLineType1Choice
 import DateAndDateTime2Choice
+import TrueFalseIndicator
 
 class CreditLine3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Incl", "_Dt", "_Amt"]
+	__slots__ = ["_Dt", "_Tp", "_Incl", "_Amt"]
+	@property
+	def Dt(self):
+		return self._Dt
+
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != auto else self.make_default("Dt")
+
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -34,19 +47,6 @@ class CreditLine3(base_types._BaseFieldType):
 		self._Incl = None
 
 	@property
-	def Dt(self):
-		return self._Dt
-
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
-
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
-	@property
 	def Amt(self):
 		return self._Amt
 
@@ -60,9 +60,9 @@ class CreditLine3(base_types._BaseFieldType):
 		self._Amt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CreditLineType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Incl', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

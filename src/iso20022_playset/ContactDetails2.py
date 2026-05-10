@@ -1,38 +1,25 @@
-import base_types
-import PhoneNumber
+from . import base_types
 import Max140Text
 import Max2048Text
-import Max35Text
 import NamePrefix1Code
+import PhoneNumber
+import Max35Text
 
 class ContactDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_FaxNb", "_Nm", "_NmPrfx", "_EmailAdr", "_PhneNb", "_Othr", "_MobNb"]
+	__slots__ = ["_EmailAdr", "_NmPrfx", "_FaxNb", "_PhneNb", "_Nm", "_Othr", "_MobNb"]
 	@property
-	def FaxNb(self):
-		return self._FaxNb
+	def EmailAdr(self):
+		return self._EmailAdr
 
-	@FaxNb.setter
-	def FaxNb(self, value):
-		self._FaxNb = value if type(value) != auto else self.make_default("FaxNb")
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
 
-	@FaxNb.deleter
-	def FaxNb(self):
-		del self._FaxNb
-		self._FaxNb = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
 
 	@property
 	def NmPrfx(self):
@@ -48,17 +35,17 @@ class ContactDetails2(base_types._BaseFieldType):
 		self._NmPrfx = None
 
 	@property
-	def EmailAdr(self):
-		return self._EmailAdr
+	def FaxNb(self):
+		return self._FaxNb
 
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+	@FaxNb.setter
+	def FaxNb(self, value):
+		self._FaxNb = value if type(value) != auto else self.make_default("FaxNb")
 
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
+	@FaxNb.deleter
+	def FaxNb(self):
+		del self._FaxNb
+		self._FaxNb = None
 
 	@property
 	def PhneNb(self):
@@ -72,6 +59,19 @@ class ContactDetails2(base_types._BaseFieldType):
 	def PhneNb(self):
 		del self._PhneNb
 		self._PhneNb = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def Othr(self):
@@ -100,11 +100,11 @@ class ContactDetails2(base_types._BaseFieldType):
 		self._MobNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmailAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MobNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 	))

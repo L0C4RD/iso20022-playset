@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PackageType5
 import PointOfInteractionComponentIdentification2
 

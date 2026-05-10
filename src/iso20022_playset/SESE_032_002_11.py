@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesSettlementTransactionGenerationNotification002V11
 
 class SESE_032_002_11():

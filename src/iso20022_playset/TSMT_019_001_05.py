@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import InitialBaselineSubmissionV05
 
 class TSMT_019_001_05():

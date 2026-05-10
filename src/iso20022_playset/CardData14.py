@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
 import Max19NumericText
 import Max35Text
 import Min2Max3NumericText
 
 class CardData14(base_types._BaseFieldType):
 
-	__slots__ = ["_PAN", "_PmtAcctRef", "_CardSeqNb", "_PrtflIdr"]
+	__slots__ = ["_PAN", "_PrtflIdr", "_PmtAcctRef", "_CardSeqNb"]
 	@property
 	def PAN(self):
 		return self._PAN
@@ -18,6 +18,19 @@ class CardData14(base_types._BaseFieldType):
 	def PAN(self):
 		del self._PAN
 		self._PAN = None
+
+	@property
+	def PrtflIdr(self):
+		return self._PrtflIdr
+
+	@PrtflIdr.setter
+	def PrtflIdr(self, value):
+		self._PrtflIdr = value if type(value) != auto else self.make_default("PrtflIdr")
+
+	@PrtflIdr.deleter
+	def PrtflIdr(self):
+		del self._PrtflIdr
+		self._PrtflIdr = None
 
 	@property
 	def PmtAcctRef(self):
@@ -45,23 +58,10 @@ class CardData14(base_types._BaseFieldType):
 		del self._CardSeqNb
 		self._CardSeqNb = None
 
-	@property
-	def PrtflIdr(self):
-		return self._PrtflIdr
-
-	@PrtflIdr.setter
-	def PrtflIdr(self, value):
-		self._PrtflIdr = value if type(value) != auto else self.make_default("PrtflIdr")
-
-	@PrtflIdr.deleter
-	def PrtflIdr(self):
-		del self._PrtflIdr
-		self._PrtflIdr = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PAN', type=Max19NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtflIdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtAcctRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardSeqNb', type=Min2Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtflIdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

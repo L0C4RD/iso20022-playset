@@ -1,26 +1,13 @@
-import base_types
-import TMSTrigger1
+from . import base_types
 import GenericIdentification90
 import Max8Text
-import ResponseType10
 import TrueFalseIndicator
+import ResponseType10
+import TMSTrigger1
 
 class AuthorisationResult17(base_types._BaseFieldType):
 
-	__slots__ = ["_AuthstnCd", "_RspnToAuthstn", "_TMSTrggr", "_AuthstnNtty", "_CmpltnReqrd"]
-	@property
-	def AuthstnCd(self):
-		return self._AuthstnCd
-
-	@AuthstnCd.setter
-	def AuthstnCd(self, value):
-		self._AuthstnCd = value if type(value) != auto else self.make_default("AuthstnCd")
-
-	@AuthstnCd.deleter
-	def AuthstnCd(self):
-		del self._AuthstnCd
-		self._AuthstnCd = None
-
+	__slots__ = ["_RspnToAuthstn", "_CmpltnReqrd", "_AuthstnCd", "_AuthstnNtty", "_TMSTrggr"]
 	@property
 	def RspnToAuthstn(self):
 		return self._RspnToAuthstn
@@ -35,17 +22,30 @@ class AuthorisationResult17(base_types._BaseFieldType):
 		self._RspnToAuthstn = None
 
 	@property
-	def TMSTrggr(self):
-		return self._TMSTrggr
+	def CmpltnReqrd(self):
+		return self._CmpltnReqrd
 
-	@TMSTrggr.setter
-	def TMSTrggr(self, value):
-		self._TMSTrggr = value if type(value) != auto else self.make_default("TMSTrggr")
+	@CmpltnReqrd.setter
+	def CmpltnReqrd(self, value):
+		self._CmpltnReqrd = value if type(value) != auto else self.make_default("CmpltnReqrd")
 
-	@TMSTrggr.deleter
-	def TMSTrggr(self):
-		del self._TMSTrggr
-		self._TMSTrggr = None
+	@CmpltnReqrd.deleter
+	def CmpltnReqrd(self):
+		del self._CmpltnReqrd
+		self._CmpltnReqrd = None
+
+	@property
+	def AuthstnCd(self):
+		return self._AuthstnCd
+
+	@AuthstnCd.setter
+	def AuthstnCd(self, value):
+		self._AuthstnCd = value if type(value) != auto else self.make_default("AuthstnCd")
+
+	@AuthstnCd.deleter
+	def AuthstnCd(self):
+		del self._AuthstnCd
+		self._AuthstnCd = None
 
 	@property
 	def AuthstnNtty(self):
@@ -61,23 +61,23 @@ class AuthorisationResult17(base_types._BaseFieldType):
 		self._AuthstnNtty = None
 
 	@property
-	def CmpltnReqrd(self):
-		return self._CmpltnReqrd
+	def TMSTrggr(self):
+		return self._TMSTrggr
 
-	@CmpltnReqrd.setter
-	def CmpltnReqrd(self, value):
-		self._CmpltnReqrd = value if type(value) != auto else self.make_default("CmpltnReqrd")
+	@TMSTrggr.setter
+	def TMSTrggr(self, value):
+		self._TMSTrggr = value if type(value) != auto else self.make_default("TMSTrggr")
 
-	@CmpltnReqrd.deleter
-	def CmpltnReqrd(self):
-		del self._CmpltnReqrd
-		self._CmpltnReqrd = None
+	@TMSTrggr.deleter
+	def TMSTrggr(self):
+		del self._TMSTrggr
+		self._TMSTrggr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AuthstnCd', type=Max8Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnToAuthstn', type=ResponseType10, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TMSTrggr', type=TMSTrigger1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthstnNtty', type=GenericIdentification90, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmpltnReqrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthstnCd', type=Max8Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthstnNtty', type=GenericIdentification90, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TMSTrggr', type=TMSTrigger1, min=0, max=1, mutex_group=None, array=False),
 	))
 

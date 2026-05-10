@@ -1,6 +1,6 @@
-import base_types
-import ATMCommandIdentification1
+from . import base_types
 import ATMCommand7Code
+import ATMCommandIdentification1
 
 class ATMCommand16(base_types._BaseFieldType):
 

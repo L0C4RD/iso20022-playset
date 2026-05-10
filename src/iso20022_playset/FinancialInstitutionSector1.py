@@ -1,6 +1,6 @@
-import base_types
-import TrueFalseIndicator
+from . import base_types
 import FinancialPartyClassification2Choice
+import TrueFalseIndicator
 
 class FinancialInstitutionSector1(base_types._BaseFieldType):
 

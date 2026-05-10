@@ -1,23 +1,23 @@
-import base_types
-import Max35Text
-import Max4AlphaNumericText
+from . import base_types
 import Number
+import Max4AlphaNumericText
+import Max35Text
 
 class GenericIdentification15(base_types._BaseFieldType):
 
-	__slots__ = ["_Bal", "_Id", "_Issr", "_SchmeNm"]
+	__slots__ = ["_Issr", "_Id", "_Bal", "_SchmeNm"]
 	@property
-	def Bal(self):
-		return self._Bal
+	def Issr(self):
+		return self._Issr
 
-	@Bal.setter
-	def Bal(self, value):
-		self._Bal = value if type(value) != auto else self.make_default("Bal")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@Bal.deleter
-	def Bal(self):
-		del self._Bal
-		self._Bal = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	@property
 	def Id(self):
@@ -33,17 +33,17 @@ class GenericIdentification15(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Issr(self):
-		return self._Issr
+	def Bal(self):
+		return self._Bal
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@Bal.setter
+	def Bal(self, value):
+		self._Bal = value if type(value) != auto else self.make_default("Bal")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@Bal.deleter
+	def Bal(self):
+		del self._Bal
+		self._Bal = None
 
 	@property
 	def SchmeNm(self):
@@ -59,9 +59,9 @@ class GenericIdentification15(base_types._BaseFieldType):
 		self._SchmeNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Bal', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Bal', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

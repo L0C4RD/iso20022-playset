@@ -1,6 +1,6 @@
-import base_types
-import ExtendOrPayQuery1
+from . import base_types
 import PartyAndSignature2
+import ExtendOrPayQuery1
 
 class ExtendOrPayRequestV01(base_types._BaseFieldType):
 

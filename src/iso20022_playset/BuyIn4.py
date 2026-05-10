@@ -1,7 +1,7 @@
-import base_types
-import DateFormat15Choice
-import YesNoIndicator
+from . import base_types
 import ISODate
+import YesNoIndicator
+import DateFormat15Choice
 
 class BuyIn4(base_types._BaseFieldType):
 

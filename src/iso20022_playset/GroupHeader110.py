@@ -1,13 +1,13 @@
-import base_types
-import Max35Text
-import ISODateTime
+from . import base_types
 import PartyIdentification272
-import Authorisation1Choice
+import ISODateTime
+import Max35Text
 import BranchAndFinancialInstitutionIdentification8
+import Authorisation1Choice
 
 class GroupHeader110(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_InstdAgt", "_InstgAgt", "_Authstn", "_InitgPty", "_CreDtTm"]
+	__slots__ = ["_MsgId", "_InstgAgt", "_Authstn", "_InitgPty", "_InstdAgt", "_CreDtTm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -20,19 +20,6 @@ class GroupHeader110(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
-
-	@property
-	def InstdAgt(self):
-		return self._InstdAgt
-
-	@InstdAgt.setter
-	def InstdAgt(self, value):
-		self._InstdAgt = value if type(value) != auto else self.make_default("InstdAgt")
-
-	@InstdAgt.deleter
-	def InstdAgt(self):
-		del self._InstdAgt
-		self._InstdAgt = None
 
 	@property
 	def InstgAgt(self):
@@ -74,6 +61,19 @@ class GroupHeader110(base_types._BaseFieldType):
 		self._InitgPty = None
 
 	@property
+	def InstdAgt(self):
+		return self._InstdAgt
+
+	@InstdAgt.setter
+	def InstdAgt(self, value):
+		self._InstdAgt = value if type(value) != auto else self.make_default("InstdAgt")
+
+	@InstdAgt.deleter
+	def InstdAgt(self):
+		del self._InstdAgt
+		self._InstdAgt = None
+
+	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -88,10 +88,10 @@ class GroupHeader110(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Authstn', type=Authorisation1Choice, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

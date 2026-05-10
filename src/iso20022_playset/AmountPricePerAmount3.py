@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RestrictedFINActiveCurrencyAnd13DecimalAmount
 import AmountPriceType1Code
 

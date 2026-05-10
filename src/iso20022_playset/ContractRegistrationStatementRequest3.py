@@ -1,14 +1,14 @@
-import base_types
-import Max35Text
+from . import base_types
 import TradeParty6
-import SupplementaryData1
 import ReportingPeriod4
-import ContractRegistrationStatementCriteria1
+import Max35Text
+import SupplementaryData1
 import BranchAndFinancialInstitutionIdentification8
+import ContractRegistrationStatementCriteria1
 
 class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgPrd", "_StmtReqId", "_RegnAgt", "_RtrCrit", "_SplmtryData", "_RegdCtrctId", "_RptgPty"]
+	__slots__ = ["_RptgPrd", "_StmtReqId", "_SplmtryData", "_RegdCtrctId", "_RegnAgt", "_RtrCrit", "_RptgPty"]
 	@property
 	def RptgPrd(self):
 		return self._RptgPrd
@@ -34,32 +34,6 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 	def StmtReqId(self):
 		del self._StmtReqId
 		self._StmtReqId = None
-
-	@property
-	def RegnAgt(self):
-		return self._RegnAgt
-
-	@RegnAgt.setter
-	def RegnAgt(self, value):
-		self._RegnAgt = value if type(value) != auto else self.make_default("RegnAgt")
-
-	@RegnAgt.deleter
-	def RegnAgt(self):
-		del self._RegnAgt
-		self._RegnAgt = None
-
-	@property
-	def RtrCrit(self):
-		return self._RtrCrit
-
-	@RtrCrit.setter
-	def RtrCrit(self, value):
-		self._RtrCrit = value if type(value) != auto else self.make_default("RtrCrit")
-
-	@RtrCrit.deleter
-	def RtrCrit(self):
-		del self._RtrCrit
-		self._RtrCrit = None
 
 	@property
 	def SplmtryData(self):
@@ -88,6 +62,32 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 		self._RegdCtrctId = None
 
 	@property
+	def RegnAgt(self):
+		return self._RegnAgt
+
+	@RegnAgt.setter
+	def RegnAgt(self, value):
+		self._RegnAgt = value if type(value) != auto else self.make_default("RegnAgt")
+
+	@RegnAgt.deleter
+	def RegnAgt(self):
+		del self._RegnAgt
+		self._RegnAgt = None
+
+	@property
+	def RtrCrit(self):
+		return self._RtrCrit
+
+	@RtrCrit.setter
+	def RtrCrit(self, value):
+		self._RtrCrit = value if type(value) != auto else self.make_default("RtrCrit")
+
+	@RtrCrit.deleter
+	def RtrCrit(self):
+		del self._RtrCrit
+		self._RtrCrit = None
+
+	@property
 	def RptgPty(self):
 		return self._RptgPty
 
@@ -103,10 +103,10 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RptgPrd', type=ReportingPeriod4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrCrit', type=ContractRegistrationStatementCriteria1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RegdCtrctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrCrit', type=ContractRegistrationStatementCriteria1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgPty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
 	))
 

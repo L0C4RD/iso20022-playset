@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TransferInConfirmationV09
 
 class SESE_007_001_09():

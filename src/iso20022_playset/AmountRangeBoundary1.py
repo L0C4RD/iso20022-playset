@@ -1,6 +1,6 @@
-import base_types
-import ImpliedCurrencyAndAmount
+from . import base_types
 import YesNoIndicator
+import ImpliedCurrencyAndAmount
 
 class AmountRangeBoundary1(base_types._BaseFieldType):
 

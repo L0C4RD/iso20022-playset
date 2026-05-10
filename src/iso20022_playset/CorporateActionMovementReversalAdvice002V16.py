@@ -1,176 +1,20 @@
-import base_types
-import PartyIdentification137Choice
-import CorporateAction78
-import SupplementaryData1
-import CorporateActionReversalReason10
-import CorporateActionNarrative35
-import CorporateActionEventReference4
+from . import base_types
 import DocumentIdentification38
 import CorporateActionOption246
 import CorporateActionGeneralInformation193
 import TransactionIdentification1
 import AccountAndBalance54
 import DocumentIdentification37
+import SupplementaryData1
+import CorporateActionReversalReason10
+import CorporateAction78
+import CorporateActionEventReference4
+import CorporateActionNarrative35
+import PartyIdentification137Choice
 
 class CorporateActionMovementReversalAdvice002V16(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MvmntConfId", "_IssrAgt", "_AcctDtls", "_CorpActnConfDtls", "_CorpActnGnlInf", "_PngAgt", "_OthrDocId", "_TxId", "_RvslRsn", "_CorpActnDtls", "_AddtlInf", "_EvtsLkg", "_SubPngAgt"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def MvmntConfId(self):
-		return self._MvmntConfId
-
-	@MvmntConfId.setter
-	def MvmntConfId(self, value):
-		self._MvmntConfId = value if type(value) != auto else self.make_default("MvmntConfId")
-
-	@MvmntConfId.deleter
-	def MvmntConfId(self):
-		del self._MvmntConfId
-		self._MvmntConfId = None
-
-	@property
-	def IssrAgt(self):
-		return self._IssrAgt
-
-	@IssrAgt.setter
-	def IssrAgt(self, value):
-		self._IssrAgt = value if type(value) != auto else self.make_default("IssrAgt")
-
-	@IssrAgt.deleter
-	def IssrAgt(self):
-		del self._IssrAgt
-		self._IssrAgt = None
-
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
-	@property
-	def CorpActnConfDtls(self):
-		return self._CorpActnConfDtls
-
-	@CorpActnConfDtls.setter
-	def CorpActnConfDtls(self, value):
-		self._CorpActnConfDtls = value if type(value) != auto else self.make_default("CorpActnConfDtls")
-
-	@CorpActnConfDtls.deleter
-	def CorpActnConfDtls(self):
-		del self._CorpActnConfDtls
-		self._CorpActnConfDtls = None
-
-	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
-
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
-
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
-
-	@property
-	def PngAgt(self):
-		return self._PngAgt
-
-	@PngAgt.setter
-	def PngAgt(self, value):
-		self._PngAgt = value if type(value) != auto else self.make_default("PngAgt")
-
-	@PngAgt.deleter
-	def PngAgt(self):
-		del self._PngAgt
-		self._PngAgt = None
-
-	@property
-	def OthrDocId(self):
-		return self._OthrDocId
-
-	@OthrDocId.setter
-	def OthrDocId(self, value):
-		self._OthrDocId = value if type(value) != auto else self.make_default("OthrDocId")
-
-	@OthrDocId.deleter
-	def OthrDocId(self):
-		del self._OthrDocId
-		self._OthrDocId = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def RvslRsn(self):
-		return self._RvslRsn
-
-	@RvslRsn.setter
-	def RvslRsn(self, value):
-		self._RvslRsn = value if type(value) != auto else self.make_default("RvslRsn")
-
-	@RvslRsn.deleter
-	def RvslRsn(self):
-		del self._RvslRsn
-		self._RvslRsn = None
-
-	@property
-	def CorpActnDtls(self):
-		return self._CorpActnDtls
-
-	@CorpActnDtls.setter
-	def CorpActnDtls(self, value):
-		self._CorpActnDtls = value if type(value) != auto else self.make_default("CorpActnDtls")
-
-	@CorpActnDtls.deleter
-	def CorpActnDtls(self):
-		del self._CorpActnDtls
-		self._CorpActnDtls = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
+	__slots__ = ["_EvtsLkg", "_SubPngAgt", "_SplmtryData", "_PngAgt", "_AcctDtls", "_CorpActnDtls", "_MvmntConfId", "_TxId", "_CorpActnGnlInf", "_CorpActnConfDtls", "_RvslRsn", "_AddtlInf", "_OthrDocId", "_IssrAgt"]
 	@property
 	def EvtsLkg(self):
 		return self._EvtsLkg
@@ -197,20 +41,176 @@ class CorporateActionMovementReversalAdvice002V16(base_types._BaseFieldType):
 		del self._SubPngAgt
 		self._SubPngAgt = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def PngAgt(self):
+		return self._PngAgt
+
+	@PngAgt.setter
+	def PngAgt(self, value):
+		self._PngAgt = value if type(value) != auto else self.make_default("PngAgt")
+
+	@PngAgt.deleter
+	def PngAgt(self):
+		del self._PngAgt
+		self._PngAgt = None
+
+	@property
+	def AcctDtls(self):
+		return self._AcctDtls
+
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
+
+	@property
+	def CorpActnDtls(self):
+		return self._CorpActnDtls
+
+	@CorpActnDtls.setter
+	def CorpActnDtls(self, value):
+		self._CorpActnDtls = value if type(value) != auto else self.make_default("CorpActnDtls")
+
+	@CorpActnDtls.deleter
+	def CorpActnDtls(self):
+		del self._CorpActnDtls
+		self._CorpActnDtls = None
+
+	@property
+	def MvmntConfId(self):
+		return self._MvmntConfId
+
+	@MvmntConfId.setter
+	def MvmntConfId(self, value):
+		self._MvmntConfId = value if type(value) != auto else self.make_default("MvmntConfId")
+
+	@MvmntConfId.deleter
+	def MvmntConfId(self):
+		del self._MvmntConfId
+		self._MvmntConfId = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
+
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
+
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
+
+	@property
+	def CorpActnConfDtls(self):
+		return self._CorpActnConfDtls
+
+	@CorpActnConfDtls.setter
+	def CorpActnConfDtls(self, value):
+		self._CorpActnConfDtls = value if type(value) != auto else self.make_default("CorpActnConfDtls")
+
+	@CorpActnConfDtls.deleter
+	def CorpActnConfDtls(self):
+		del self._CorpActnConfDtls
+		self._CorpActnConfDtls = None
+
+	@property
+	def RvslRsn(self):
+		return self._RvslRsn
+
+	@RvslRsn.setter
+	def RvslRsn(self, value):
+		self._RvslRsn = value if type(value) != auto else self.make_default("RvslRsn")
+
+	@RvslRsn.deleter
+	def RvslRsn(self):
+		del self._RvslRsn
+		self._RvslRsn = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def OthrDocId(self):
+		return self._OthrDocId
+
+	@OthrDocId.setter
+	def OthrDocId(self, value):
+		self._OthrDocId = value if type(value) != auto else self.make_default("OthrDocId")
+
+	@OthrDocId.deleter
+	def OthrDocId(self):
+		del self._OthrDocId
+		self._OthrDocId = None
+
+	@property
+	def IssrAgt(self):
+		return self._IssrAgt
+
+	@IssrAgt.setter
+	def IssrAgt(self, value):
+		self._IssrAgt = value if type(value) != auto else self.make_default("IssrAgt")
+
+	@IssrAgt.deleter
+	def IssrAgt(self):
+		del self._IssrAgt
+		self._IssrAgt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MvmntConfId', type=DocumentIdentification37, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrAgt', type=PartyIdentification137Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctDtls', type=AccountAndBalance54, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnConfDtls', type=CorporateActionOption246, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation193, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PngAgt', type=PartyIdentification137Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrDocId', type=DocumentIdentification38, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxId', type=TransactionIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RvslRsn', type=CorporateActionReversalReason10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnDtls', type=CorporateAction78, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative35, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtsLkg', type=CorporateActionEventReference4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SubPngAgt', type=PartyIdentification137Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PngAgt', type=PartyIdentification137Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctDtls', type=AccountAndBalance54, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnDtls', type=CorporateAction78, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MvmntConfId', type=DocumentIdentification37, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation193, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnConfDtls', type=CorporateActionOption246, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RvslRsn', type=CorporateActionReversalReason10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative35, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrDocId', type=DocumentIdentification38, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IssrAgt', type=PartyIdentification137Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

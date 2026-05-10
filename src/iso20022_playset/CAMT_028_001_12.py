@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AdditionalPaymentInformationV12
 
 class CAMT_028_001_12():

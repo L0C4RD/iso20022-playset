@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SimpleIdentificationInformation
 
 class AccountIdentification1(base_types._BaseFieldType):

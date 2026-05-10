@@ -1,21 +1,21 @@
-import base_types
+from . import base_types
 import AmountAndDirection14
 
 class BalanceAmounts4(base_types._BaseFieldType):
 
-	__slots__ = ["_ElgblCollVal", "_BookVal", "_HldgVal", "_AcrdIntrstAmt", "_PrvsHldgVal"]
+	__slots__ = ["_HldgVal", "_BookVal", "_AcrdIntrstAmt", "_ElgblCollVal", "_PrvsHldgVal"]
 	@property
-	def ElgblCollVal(self):
-		return self._ElgblCollVal
+	def HldgVal(self):
+		return self._HldgVal
 
-	@ElgblCollVal.setter
-	def ElgblCollVal(self, value):
-		self._ElgblCollVal = value if type(value) != auto else self.make_default("ElgblCollVal")
+	@HldgVal.setter
+	def HldgVal(self, value):
+		self._HldgVal = value if type(value) != auto else self.make_default("HldgVal")
 
-	@ElgblCollVal.deleter
-	def ElgblCollVal(self):
-		del self._ElgblCollVal
-		self._ElgblCollVal = None
+	@HldgVal.deleter
+	def HldgVal(self):
+		del self._HldgVal
+		self._HldgVal = None
 
 	@property
 	def BookVal(self):
@@ -31,19 +31,6 @@ class BalanceAmounts4(base_types._BaseFieldType):
 		self._BookVal = None
 
 	@property
-	def HldgVal(self):
-		return self._HldgVal
-
-	@HldgVal.setter
-	def HldgVal(self, value):
-		self._HldgVal = value if type(value) != auto else self.make_default("HldgVal")
-
-	@HldgVal.deleter
-	def HldgVal(self):
-		del self._HldgVal
-		self._HldgVal = None
-
-	@property
 	def AcrdIntrstAmt(self):
 		return self._AcrdIntrstAmt
 
@@ -55,6 +42,19 @@ class BalanceAmounts4(base_types._BaseFieldType):
 	def AcrdIntrstAmt(self):
 		del self._AcrdIntrstAmt
 		self._AcrdIntrstAmt = None
+
+	@property
+	def ElgblCollVal(self):
+		return self._ElgblCollVal
+
+	@ElgblCollVal.setter
+	def ElgblCollVal(self, value):
+		self._ElgblCollVal = value if type(value) != auto else self.make_default("ElgblCollVal")
+
+	@ElgblCollVal.deleter
+	def ElgblCollVal(self):
+		del self._ElgblCollVal
+		self._ElgblCollVal = None
 
 	@property
 	def PrvsHldgVal(self):
@@ -70,10 +70,10 @@ class BalanceAmounts4(base_types._BaseFieldType):
 		self._PrvsHldgVal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ElgblCollVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BookVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HldgVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BookVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElgblCollVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsHldgVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 	))
 

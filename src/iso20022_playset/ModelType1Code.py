@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class ModelType1Code(base_types._BaseDataType_String):
 

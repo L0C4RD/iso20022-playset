@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import ISODate
 import YesNoIndicator
 
 class AccountContract2(base_types._BaseFieldType):
 
-	__slots__ = ["_TrgtClsgDt", "_TrgtGoLiveDt", "_UrgcyFlg"]
-	@property
-	def TrgtClsgDt(self):
-		return self._TrgtClsgDt
-
-	@TrgtClsgDt.setter
-	def TrgtClsgDt(self, value):
-		self._TrgtClsgDt = value if type(value) != auto else self.make_default("TrgtClsgDt")
-
-	@TrgtClsgDt.deleter
-	def TrgtClsgDt(self):
-		del self._TrgtClsgDt
-		self._TrgtClsgDt = None
-
+	__slots__ = ["_TrgtGoLiveDt", "_UrgcyFlg", "_TrgtClsgDt"]
 	@property
 	def TrgtGoLiveDt(self):
 		return self._TrgtGoLiveDt
@@ -44,9 +31,22 @@ class AccountContract2(base_types._BaseFieldType):
 		del self._UrgcyFlg
 		self._UrgcyFlg = None
 
+	@property
+	def TrgtClsgDt(self):
+		return self._TrgtClsgDt
+
+	@TrgtClsgDt.setter
+	def TrgtClsgDt(self, value):
+		self._TrgtClsgDt = value if type(value) != auto else self.make_default("TrgtClsgDt")
+
+	@TrgtClsgDt.deleter
+	def TrgtClsgDt(self):
+		del self._TrgtClsgDt
+		self._TrgtClsgDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrgtClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrgtGoLiveDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UrgcyFlg', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrgtClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

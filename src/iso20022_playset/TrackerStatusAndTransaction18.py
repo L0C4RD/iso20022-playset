@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TrackerPaymentTransaction14
 import TrackerStatus4
 

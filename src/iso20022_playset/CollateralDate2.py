@@ -1,22 +1,22 @@
-import base_types
+from . import base_types
 import ISODate
 import DateAndDateTime2Choice
 
 class CollateralDate2(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqdExctnDt", "_SttlmDt", "_TradDt"]
+	__slots__ = ["_TradDt", "_SttlmDt", "_ReqdExctnDt"]
 	@property
-	def ReqdExctnDt(self):
-		return self._ReqdExctnDt
+	def TradDt(self):
+		return self._TradDt
 
-	@ReqdExctnDt.setter
-	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != auto else self.make_default("ReqdExctnDt")
+	@TradDt.setter
+	def TradDt(self, value):
+		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
 
-	@ReqdExctnDt.deleter
-	def ReqdExctnDt(self):
-		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
+	@TradDt.deleter
+	def TradDt(self):
+		del self._TradDt
+		self._TradDt = None
 
 	@property
 	def SttlmDt(self):
@@ -32,21 +32,21 @@ class CollateralDate2(base_types._BaseFieldType):
 		self._SttlmDt = None
 
 	@property
-	def TradDt(self):
-		return self._TradDt
+	def ReqdExctnDt(self):
+		return self._ReqdExctnDt
 
-	@TradDt.setter
-	def TradDt(self, value):
-		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
+	@ReqdExctnDt.setter
+	def ReqdExctnDt(self, value):
+		self._ReqdExctnDt = value if type(value) != auto else self.make_default("ReqdExctnDt")
 
-	@TradDt.deleter
-	def TradDt(self):
-		del self._TradDt
-		self._TradDt = None
+	@ReqdExctnDt.deleter
+	def ReqdExctnDt(self):
+		del self._ReqdExctnDt
+		self._ReqdExctnDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

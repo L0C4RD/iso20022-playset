@@ -1,6 +1,6 @@
-import base_types
-import AffirmationStatus1Code
+from . import base_types
 import GenericIdentification30
+import AffirmationStatus1Code
 
 class AffirmationStatus8Choice(base_types._BaseFieldType):
 

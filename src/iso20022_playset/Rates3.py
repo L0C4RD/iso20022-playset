@@ -1,22 +1,22 @@
-import base_types
-import PercentageRate
+from . import base_types
 import SecuritiesTransactionPrice18Choice
+import PercentageRate
 
 class Rates3(base_types._BaseFieldType):
 
-	__slots__ = ["_Fxd", "_Fltg", "_BuySellBck"]
+	__slots__ = ["_BuySellBck", "_Fltg", "_Fxd"]
 	@property
-	def Fxd(self):
-		return self._Fxd
+	def BuySellBck(self):
+		return self._BuySellBck
 
-	@Fxd.setter
-	def Fxd(self, value):
-		self._Fxd = value if type(value) != auto else self.make_default("Fxd")
+	@BuySellBck.setter
+	def BuySellBck(self, value):
+		self._BuySellBck = value if type(value) != auto else self.make_default("BuySellBck")
 
-	@Fxd.deleter
-	def Fxd(self):
-		del self._Fxd
-		self._Fxd = None
+	@BuySellBck.deleter
+	def BuySellBck(self):
+		del self._BuySellBck
+		self._BuySellBck = None
 
 	@property
 	def Fltg(self):
@@ -32,21 +32,21 @@ class Rates3(base_types._BaseFieldType):
 		self._Fltg = None
 
 	@property
-	def BuySellBck(self):
-		return self._BuySellBck
+	def Fxd(self):
+		return self._Fxd
 
-	@BuySellBck.setter
-	def BuySellBck(self, value):
-		self._BuySellBck = value if type(value) != auto else self.make_default("BuySellBck")
+	@Fxd.setter
+	def Fxd(self, value):
+		self._Fxd = value if type(value) != auto else self.make_default("Fxd")
 
-	@BuySellBck.deleter
-	def BuySellBck(self):
-		del self._BuySellBck
-		self._BuySellBck = None
+	@Fxd.deleter
+	def Fxd(self):
+		del self._Fxd
+		self._Fxd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Fxd', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fltg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuySellBck', type=SecuritiesTransactionPrice18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fltg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fxd', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

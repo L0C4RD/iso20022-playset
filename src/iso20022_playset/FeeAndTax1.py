@@ -1,23 +1,23 @@
-import base_types
-import Max35Text
-import Fee1
+from . import base_types
 import Tax30
+import Fee1
+import Max35Text
 
 class FeeAndTax1(base_types._BaseFieldType):
 
-	__slots__ = ["_IndvTax", "_ComrclAgrmtRef", "_IndvFee"]
+	__slots__ = ["_IndvFee", "_ComrclAgrmtRef", "_IndvTax"]
 	@property
-	def IndvTax(self):
-		return self._IndvTax
+	def IndvFee(self):
+		return self._IndvFee
 
-	@IndvTax.setter
-	def IndvTax(self, value):
-		self._IndvTax = value if type(value) != auto else self.make_default("IndvTax")
+	@IndvFee.setter
+	def IndvFee(self, value):
+		self._IndvFee = value if type(value) != auto else self.make_default("IndvFee")
 
-	@IndvTax.deleter
-	def IndvTax(self):
-		del self._IndvTax
-		self._IndvTax = None
+	@IndvFee.deleter
+	def IndvFee(self):
+		del self._IndvFee
+		self._IndvFee = None
 
 	@property
 	def ComrclAgrmtRef(self):
@@ -33,21 +33,21 @@ class FeeAndTax1(base_types._BaseFieldType):
 		self._ComrclAgrmtRef = None
 
 	@property
-	def IndvFee(self):
-		return self._IndvFee
+	def IndvTax(self):
+		return self._IndvTax
 
-	@IndvFee.setter
-	def IndvFee(self, value):
-		self._IndvFee = value if type(value) != auto else self.make_default("IndvFee")
+	@IndvTax.setter
+	def IndvTax(self, value):
+		self._IndvTax = value if type(value) != auto else self.make_default("IndvTax")
 
-	@IndvFee.deleter
-	def IndvFee(self):
-		del self._IndvFee
-		self._IndvFee = None
+	@IndvTax.deleter
+	def IndvTax(self):
+		del self._IndvTax
+		self._IndvTax = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IndvTax', type=Tax30, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndvFee', type=Fee1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndvTax', type=Tax30, min=0, max=None, mutex_group=None, array=True),
 	))
 

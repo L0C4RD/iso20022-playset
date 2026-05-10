@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class Max20MbBinary(base_types._BaseDataType_B64Binary):
 

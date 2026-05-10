@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
 import ImpliedCurrencyAndAmount
 import DetailedAmount18
 import ActiveCurrencyCode
 
 class DetailedAmount17(base_types._BaseFieldType):
 
-	__slots__ = ["_Fees", "_AmtToTrf", "_Ccy", "_Dontn"]
+	__slots__ = ["_Fees", "_Dontn", "_Ccy", "_AmtToTrf"]
 	@property
 	def Fees(self):
 		return self._Fees
@@ -20,17 +20,17 @@ class DetailedAmount17(base_types._BaseFieldType):
 		self._Fees = None
 
 	@property
-	def AmtToTrf(self):
-		return self._AmtToTrf
+	def Dontn(self):
+		return self._Dontn
 
-	@AmtToTrf.setter
-	def AmtToTrf(self, value):
-		self._AmtToTrf = value if type(value) != auto else self.make_default("AmtToTrf")
+	@Dontn.setter
+	def Dontn(self, value):
+		self._Dontn = value if type(value) != auto else self.make_default("Dontn")
 
-	@AmtToTrf.deleter
-	def AmtToTrf(self):
-		del self._AmtToTrf
-		self._AmtToTrf = None
+	@Dontn.deleter
+	def Dontn(self):
+		del self._Dontn
+		self._Dontn = None
 
 	@property
 	def Ccy(self):
@@ -46,22 +46,22 @@ class DetailedAmount17(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def Dontn(self):
-		return self._Dontn
+	def AmtToTrf(self):
+		return self._AmtToTrf
 
-	@Dontn.setter
-	def Dontn(self, value):
-		self._Dontn = value if type(value) != auto else self.make_default("Dontn")
+	@AmtToTrf.setter
+	def AmtToTrf(self, value):
+		self._AmtToTrf = value if type(value) != auto else self.make_default("AmtToTrf")
 
-	@Dontn.deleter
-	def Dontn(self):
-		del self._Dontn
-		self._Dontn = None
+	@AmtToTrf.deleter
+	def AmtToTrf(self):
+		del self._AmtToTrf
+		self._AmtToTrf = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Fees', type=DetailedAmount18, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AmtToTrf', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dontn', type=DetailedAmount18, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtToTrf', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

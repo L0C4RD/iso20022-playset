@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
+import Number
 import EncapsulatedContent3
 import Max140Binary
 import AlgorithmIdentification36
-import Number
 
 class DigestedData6(base_types._BaseFieldType):
 
-	__slots__ = ["_Dgst", "_Vrsn", "_NcpsltdCntt", "_DgstAlgo"]
+	__slots__ = ["_Dgst", "_NcpsltdCntt", "_Vrsn", "_DgstAlgo"]
 	@property
 	def Dgst(self):
 		return self._Dgst
@@ -21,19 +21,6 @@ class DigestedData6(base_types._BaseFieldType):
 		self._Dgst = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
-	@property
 	def NcpsltdCntt(self):
 		return self._NcpsltdCntt
 
@@ -45,6 +32,19 @@ class DigestedData6(base_types._BaseFieldType):
 	def NcpsltdCntt(self):
 		del self._NcpsltdCntt
 		self._NcpsltdCntt = None
+
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	@property
 	def DgstAlgo(self):
@@ -61,8 +61,8 @@ class DigestedData6(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dgst', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification36, min=1, max=1, mutex_group=None, array=False),
 	))
 

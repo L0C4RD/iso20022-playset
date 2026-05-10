@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MaturityTerm2
 
 class TimeToMaturityPeriod2(base_types._BaseFieldType):

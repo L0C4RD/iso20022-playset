@@ -1,6 +1,6 @@
-import base_types
-import Commodity43
+from . import base_types
 import Security51
+import Commodity43
 
 class SecurityCommodity9(base_types._BaseFieldType):
 

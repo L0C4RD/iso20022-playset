@@ -1,25 +1,12 @@
-import base_types
-import ContentInformationType15
+from . import base_types
 import Header32
-import ContentInformationType10
 import ATMWithdrawalCompletionAcknowledgement3
+import ContentInformationType10
+import ContentInformationType15
 
 class ATMWithdrawalCompletionAcknowledgementV03(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMWdrwlCmpltnAck", "_PrtctdATMWdrwlCmpltnAck", "_SctyTrlr", "_Hdr"]
-	@property
-	def ATMWdrwlCmpltnAck(self):
-		return self._ATMWdrwlCmpltnAck
-
-	@ATMWdrwlCmpltnAck.setter
-	def ATMWdrwlCmpltnAck(self, value):
-		self._ATMWdrwlCmpltnAck = value if type(value) != auto else self.make_default("ATMWdrwlCmpltnAck")
-
-	@ATMWdrwlCmpltnAck.deleter
-	def ATMWdrwlCmpltnAck(self):
-		del self._ATMWdrwlCmpltnAck
-		self._ATMWdrwlCmpltnAck = None
-
+	__slots__ = ["_PrtctdATMWdrwlCmpltnAck", "_SctyTrlr", "_Hdr", "_ATMWdrwlCmpltnAck"]
 	@property
 	def PrtctdATMWdrwlCmpltnAck(self):
 		return self._PrtctdATMWdrwlCmpltnAck
@@ -59,10 +46,23 @@ class ATMWithdrawalCompletionAcknowledgementV03(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def ATMWdrwlCmpltnAck(self):
+		return self._ATMWdrwlCmpltnAck
+
+	@ATMWdrwlCmpltnAck.setter
+	def ATMWdrwlCmpltnAck(self, value):
+		self._ATMWdrwlCmpltnAck = value if type(value) != auto else self.make_default("ATMWdrwlCmpltnAck")
+
+	@ATMWdrwlCmpltnAck.deleter
+	def ATMWdrwlCmpltnAck(self):
+		del self._ATMWdrwlCmpltnAck
+		self._ATMWdrwlCmpltnAck = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ATMWdrwlCmpltnAck', type=ATMWithdrawalCompletionAcknowledgement3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMWdrwlCmpltnAck', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMWdrwlCmpltnAck', type=ATMWithdrawalCompletionAcknowledgement3, min=0, max=1, mutex_group=None, array=False),
 	))
 

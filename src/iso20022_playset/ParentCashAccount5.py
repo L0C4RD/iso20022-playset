@@ -1,24 +1,11 @@
-import base_types
-import AccountLevel1Code
+from . import base_types
 import CashAccount40
+import AccountLevel1Code
 import BranchAndFinancialInstitutionIdentification8
 
 class ParentCashAccount5(base_types._BaseFieldType):
 
-	__slots__ = ["_Svcr", "_Lvl", "_Id"]
-	@property
-	def Svcr(self):
-		return self._Svcr
-
-	@Svcr.setter
-	def Svcr(self, value):
-		self._Svcr = value if type(value) != auto else self.make_default("Svcr")
-
-	@Svcr.deleter
-	def Svcr(self):
-		del self._Svcr
-		self._Svcr = None
-
+	__slots__ = ["_Lvl", "_Id", "_Svcr"]
 	@property
 	def Lvl(self):
 		return self._Lvl
@@ -45,9 +32,22 @@ class ParentCashAccount5(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def Svcr(self):
+		return self._Svcr
+
+	@Svcr.setter
+	def Svcr(self, value):
+		self._Svcr = value if type(value) != auto else self.make_default("Svcr")
+
+	@Svcr.deleter
+	def Svcr(self):
+		del self._Svcr
+		self._Svcr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Svcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lvl', type=AccountLevel1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Svcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

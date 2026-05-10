@@ -1,24 +1,24 @@
-import base_types
-import Max35Text
-import CorporateActionEventType112Choice
-import CorporateActionMandatoryVoluntary3Choice
+from . import base_types
 import NotificationIdentification5
+import CorporateActionMandatoryVoluntary3Choice
+import CorporateActionEventType112Choice
+import Max35Text
 
 class EventInformation17(base_types._BaseFieldType):
 
-	__slots__ = ["_LastNtfctnId", "_EvtTp", "_MndtryVlntryEvtTp", "_CorpActnEvtId", "_OffclCorpActnEvtId"]
+	__slots__ = ["_CorpActnEvtId", "_EvtTp", "_MndtryVlntryEvtTp", "_OffclCorpActnEvtId", "_LastNtfctnId"]
 	@property
-	def LastNtfctnId(self):
-		return self._LastNtfctnId
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
 
-	@LastNtfctnId.setter
-	def LastNtfctnId(self, value):
-		self._LastNtfctnId = value if type(value) != auto else self.make_default("LastNtfctnId")
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
 
-	@LastNtfctnId.deleter
-	def LastNtfctnId(self):
-		del self._LastNtfctnId
-		self._LastNtfctnId = None
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
 
 	@property
 	def EvtTp(self):
@@ -47,19 +47,6 @@ class EventInformation17(base_types._BaseFieldType):
 		self._MndtryVlntryEvtTp = None
 
 	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
-
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
-
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
-
-	@property
 	def OffclCorpActnEvtId(self):
 		return self._OffclCorpActnEvtId
 
@@ -72,11 +59,24 @@ class EventInformation17(base_types._BaseFieldType):
 		del self._OffclCorpActnEvtId
 		self._OffclCorpActnEvtId = None
 
+	@property
+	def LastNtfctnId(self):
+		return self._LastNtfctnId
+
+	@LastNtfctnId.setter
+	def LastNtfctnId(self, value):
+		self._LastNtfctnId = value if type(value) != auto else self.make_default("LastNtfctnId")
+
+	@LastNtfctnId.deleter
+	def LastNtfctnId(self):
+		del self._LastNtfctnId
+		self._LastNtfctnId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LastNtfctnId', type=NotificationIdentification5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType112Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MndtryVlntryEvtTp', type=CorporateActionMandatoryVoluntary3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastNtfctnId', type=NotificationIdentification5, min=0, max=1, mutex_group=None, array=False),
 	))
 

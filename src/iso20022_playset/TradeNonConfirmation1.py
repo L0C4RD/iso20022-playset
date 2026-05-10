@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TradeConfirmationType2Code
 
 class TradeNonConfirmation1(base_types._BaseFieldType):

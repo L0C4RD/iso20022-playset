@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReportPeriodActivity1Code
 import TradeReport21Choice
 

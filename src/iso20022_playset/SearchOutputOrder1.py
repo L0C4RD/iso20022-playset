@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CriteriaOrder1
 
 class SearchOutputOrder1(base_types._BaseFieldType):

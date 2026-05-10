@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import EquityReturnParameter1Code
 import EquityDerivative3Choice
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TransferInInstructionV09
 
 class SESE_005_001_09():

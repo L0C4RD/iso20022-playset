@@ -1,23 +1,10 @@
-import base_types
-import ReportPeriodActivity1Code
+from . import base_types
 import SettlementDailyFailureReason3
+import ReportPeriodActivity1Code
 
 class SettlementDailyFailureReason1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Data", "_DataSetActn"]
-	@property
-	def Data(self):
-		return self._Data
-
-	@Data.setter
-	def Data(self, value):
-		self._Data = value if type(value) != auto else self.make_default("Data")
-
-	@Data.deleter
-	def Data(self):
-		del self._Data
-		self._Data = None
-
+	__slots__ = ["_DataSetActn", "_Data"]
 	@property
 	def DataSetActn(self):
 		return self._DataSetActn
@@ -31,8 +18,21 @@ class SettlementDailyFailureReason1Choice(base_types._BaseFieldType):
 		del self._DataSetActn
 		self._DataSetActn = None
 
+	@property
+	def Data(self):
+		return self._Data
+
+	@Data.setter
+	def Data(self, value):
+		self._Data = value if type(value) != auto else self.make_default("Data")
+
+	@Data.deleter
+	def Data(self):
+		del self._Data
+		self._Data = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Data', type=SettlementDailyFailureReason3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DataSetActn', type=ReportPeriodActivity1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Data', type=SettlementDailyFailureReason3, min=0, max=1, mutex_group=1, array=False),
 	))
 

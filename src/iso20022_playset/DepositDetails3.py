@@ -1,12 +1,12 @@
-import base_types
-import Max35Text
-import CreditDebit3Code
-import CardDepositType1Code
+from . import base_types
 import ImpliedCurrencyAndAmount
+import CreditDebit3Code
+import Max35Text
+import CardDepositType1Code
 
 class DepositDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTp", "_Amt", "_Tp", "_CdtDbt"]
+	__slots__ = ["_OthrTp", "_Tp", "_Amt", "_CdtDbt"]
 	@property
 	def OthrTp(self):
 		return self._OthrTp
@@ -21,19 +21,6 @@ class DepositDetails3(base_types._BaseFieldType):
 		self._OthrTp = None
 
 	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
 	def Tp(self):
 		return self._Tp
 
@@ -45,6 +32,19 @@ class DepositDetails3(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def CdtDbt(self):
@@ -61,8 +61,8 @@ class DepositDetails3(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CardDepositType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

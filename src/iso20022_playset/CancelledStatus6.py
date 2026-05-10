@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CancelledStatus17Choice
 import Quantity54Choice
 

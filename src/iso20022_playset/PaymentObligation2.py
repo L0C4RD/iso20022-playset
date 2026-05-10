@@ -1,29 +1,29 @@
-import base_types
+from . import base_types
+import ISODate
+import BPOApplicableRules1Choice
 import CountryCode
 import SettlementTerms3
 import AmountOrPercentage2Choice
-import ISODate
+import PaymentTerms4
+import Location2
 import Charges5
 import BICIdentification1
-import Location2
-import PaymentTerms4
-import BPOApplicableRules1Choice
 
 class PaymentObligation2(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmTerms", "_PlcOfJursdctn", "_PmtTerms", "_Chrgs", "_AplblLaw", "_AplblRules", "_RcptBk", "_OblgrBk", "_XpryDt", "_PmtOblgtnAmt"]
+	__slots__ = ["_AplblLaw", "_PlcOfJursdctn", "_XpryDt", "_SttlmTerms", "_Chrgs", "_RcptBk", "_PmtOblgtnAmt", "_OblgrBk", "_AplblRules", "_PmtTerms"]
 	@property
-	def SttlmTerms(self):
-		return self._SttlmTerms
+	def AplblLaw(self):
+		return self._AplblLaw
 
-	@SttlmTerms.setter
-	def SttlmTerms(self, value):
-		self._SttlmTerms = value if type(value) != auto else self.make_default("SttlmTerms")
+	@AplblLaw.setter
+	def AplblLaw(self, value):
+		self._AplblLaw = value if type(value) != auto else self.make_default("AplblLaw")
 
-	@SttlmTerms.deleter
-	def SttlmTerms(self):
-		del self._SttlmTerms
-		self._SttlmTerms = None
+	@AplblLaw.deleter
+	def AplblLaw(self):
+		del self._AplblLaw
+		self._AplblLaw = None
 
 	@property
 	def PlcOfJursdctn(self):
@@ -39,17 +39,30 @@ class PaymentObligation2(base_types._BaseFieldType):
 		self._PlcOfJursdctn = None
 
 	@property
-	def PmtTerms(self):
-		return self._PmtTerms
+	def XpryDt(self):
+		return self._XpryDt
 
-	@PmtTerms.setter
-	def PmtTerms(self, value):
-		self._PmtTerms = value if type(value) != auto else self.make_default("PmtTerms")
+	@XpryDt.setter
+	def XpryDt(self, value):
+		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
 
-	@PmtTerms.deleter
-	def PmtTerms(self):
-		del self._PmtTerms
-		self._PmtTerms = None
+	@XpryDt.deleter
+	def XpryDt(self):
+		del self._XpryDt
+		self._XpryDt = None
+
+	@property
+	def SttlmTerms(self):
+		return self._SttlmTerms
+
+	@SttlmTerms.setter
+	def SttlmTerms(self, value):
+		self._SttlmTerms = value if type(value) != auto else self.make_default("SttlmTerms")
+
+	@SttlmTerms.deleter
+	def SttlmTerms(self):
+		del self._SttlmTerms
+		self._SttlmTerms = None
 
 	@property
 	def Chrgs(self):
@@ -65,32 +78,6 @@ class PaymentObligation2(base_types._BaseFieldType):
 		self._Chrgs = None
 
 	@property
-	def AplblLaw(self):
-		return self._AplblLaw
-
-	@AplblLaw.setter
-	def AplblLaw(self, value):
-		self._AplblLaw = value if type(value) != auto else self.make_default("AplblLaw")
-
-	@AplblLaw.deleter
-	def AplblLaw(self):
-		del self._AplblLaw
-		self._AplblLaw = None
-
-	@property
-	def AplblRules(self):
-		return self._AplblRules
-
-	@AplblRules.setter
-	def AplblRules(self, value):
-		self._AplblRules = value if type(value) != auto else self.make_default("AplblRules")
-
-	@AplblRules.deleter
-	def AplblRules(self):
-		del self._AplblRules
-		self._AplblRules = None
-
-	@property
 	def RcptBk(self):
 		return self._RcptBk
 
@@ -102,6 +89,19 @@ class PaymentObligation2(base_types._BaseFieldType):
 	def RcptBk(self):
 		del self._RcptBk
 		self._RcptBk = None
+
+	@property
+	def PmtOblgtnAmt(self):
+		return self._PmtOblgtnAmt
+
+	@PmtOblgtnAmt.setter
+	def PmtOblgtnAmt(self, value):
+		self._PmtOblgtnAmt = value if type(value) != auto else self.make_default("PmtOblgtnAmt")
+
+	@PmtOblgtnAmt.deleter
+	def PmtOblgtnAmt(self):
+		del self._PmtOblgtnAmt
+		self._PmtOblgtnAmt = None
 
 	@property
 	def OblgrBk(self):
@@ -117,41 +117,41 @@ class PaymentObligation2(base_types._BaseFieldType):
 		self._OblgrBk = None
 
 	@property
-	def XpryDt(self):
-		return self._XpryDt
+	def AplblRules(self):
+		return self._AplblRules
 
-	@XpryDt.setter
-	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
+	@AplblRules.setter
+	def AplblRules(self, value):
+		self._AplblRules = value if type(value) != auto else self.make_default("AplblRules")
 
-	@XpryDt.deleter
-	def XpryDt(self):
-		del self._XpryDt
-		self._XpryDt = None
+	@AplblRules.deleter
+	def AplblRules(self):
+		del self._AplblRules
+		self._AplblRules = None
 
 	@property
-	def PmtOblgtnAmt(self):
-		return self._PmtOblgtnAmt
+	def PmtTerms(self):
+		return self._PmtTerms
 
-	@PmtOblgtnAmt.setter
-	def PmtOblgtnAmt(self, value):
-		self._PmtOblgtnAmt = value if type(value) != auto else self.make_default("PmtOblgtnAmt")
+	@PmtTerms.setter
+	def PmtTerms(self, value):
+		self._PmtTerms = value if type(value) != auto else self.make_default("PmtTerms")
 
-	@PmtOblgtnAmt.deleter
-	def PmtOblgtnAmt(self):
-		del self._PmtOblgtnAmt
-		self._PmtOblgtnAmt = None
+	@PmtTerms.deleter
+	def PmtTerms(self):
+		del self._PmtTerms
+		self._PmtTerms = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmTerms', type=SettlementTerms3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PlcOfJursdctn', type=Location2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtTerms', type=PaymentTerms4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Chrgs', type=Charges5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AplblLaw', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AplblRules', type=BPOApplicableRules1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcptBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OblgrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfJursdctn', type=Location2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmTerms', type=SettlementTerms3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Chrgs', type=Charges5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RcptBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtOblgtnAmt', type=AmountOrPercentage2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OblgrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AplblRules', type=BPOApplicableRules1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtTerms', type=PaymentTerms4, min=0, max=None, mutex_group=None, array=True),
 	))
 

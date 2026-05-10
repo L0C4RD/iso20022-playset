@@ -1,51 +1,25 @@
-import base_types
-import ActiveOrHistoricCurrencyCode
-import Max70Text
-import AccountIdentification4Choice
+from . import base_types
 import ProxyAccountIdentification1
+import AccountIdentification4Choice
+import ActiveOrHistoricCurrencyCode
 import CashAccountType2Choice
+import Max70Text
 
 class CashAccount38(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_Tp", "_Id", "_Nm", "_Prxy"]
+	__slots__ = ["_Prxy", "_Nm", "_Id", "_Tp", "_Ccy"]
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def Prxy(self):
+		return self._Prxy
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@Prxy.setter
+	def Prxy(self, value):
+		self._Prxy = value if type(value) != auto else self.make_default("Prxy")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Prxy.deleter
+	def Prxy(self):
+		del self._Prxy
+		self._Prxy = None
 
 	@property
 	def Nm(self):
@@ -61,23 +35,49 @@ class CashAccount38(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def Prxy(self):
-		return self._Prxy
+	def Id(self):
+		return self._Id
 
-	@Prxy.setter
-	def Prxy(self, value):
-		self._Prxy = value if type(value) != auto else self.make_default("Prxy")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@Prxy.deleter
-	def Prxy(self):
-		del self._Prxy
-		self._Prxy = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=CashAccountType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=AccountIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prxy', type=ProxyAccountIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=AccountIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CashAccountType2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

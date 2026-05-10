@@ -1,14 +1,27 @@
-import base_types
-import SupplementaryData1
-import TotalPortfolioValuation1
-import Pagination
-import PortfolioBalance1
-import SecuritiesAccount21
+from . import base_types
 import Report4
+import PortfolioBalance1
+import TotalPortfolioValuation1
+import SupplementaryData1
+import Pagination
+import SecuritiesAccount21
 
 class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlPrtflValtn", "_SplmtryData", "_Pgntn", "_Bal", "_RptGnlDtls", "_AcctDtls"]
+	__slots__ = ["_Pgntn", "_TtlPrtflValtn", "_SplmtryData", "_AcctDtls", "_Bal", "_RptGnlDtls"]
+	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
+
 	@property
 	def TtlPrtflValtn(self):
 		return self._TtlPrtflValtn
@@ -36,17 +49,17 @@ class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def AcctDtls(self):
+		return self._AcctDtls
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
 
 	@property
 	def Bal(self):
@@ -74,25 +87,12 @@ class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 		del self._RptGnlDtls
 		self._RptGnlDtls = None
 
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Pgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlPrtflValtn', type=TotalPortfolioValuation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount21, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bal', type=PortfolioBalance1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptGnlDtls', type=Report4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount21, min=1, max=1, mutex_group=None, array=False),
 	))
 

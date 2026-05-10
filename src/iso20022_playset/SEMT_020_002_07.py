@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesMessageCancellationAdvice002V07
 
 class SEMT_020_002_07():

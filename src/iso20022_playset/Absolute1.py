@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import Number
+import Max35Text
 
 class Absolute1(base_types._BaseFieldType):
 

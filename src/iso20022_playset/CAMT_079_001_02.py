@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import IntraBalanceMovementQueryResponseV02
 
 class CAMT_079_001_02():

@@ -1,29 +1,42 @@
-import base_types
-import SupplementaryData1
-import CollateralParties8
-import ExposureType23Choice
+from . import base_types
+import AmountAndDirection49
 import DateAndDateTime2Choice
-import GenericIdentification1
-import CollateralRole1Code
+import SupplementaryData1
 import CollateralTransactionType1Choice
 import TransactionIdentifications44
-import AmountAndDirection49
+import CollateralRole1Code
+import GenericIdentification1
+import CollateralParties8
+import ExposureType23Choice
 
 class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_XpsrTp", "_SplmtryData", "_TxInstrId", "_CollPties", "_TxAmt", "_CollTxTp", "_ElgbltySetPrfl", "_ReqdExctnDt", "_CollSd"]
+	__slots__ = ["_TxInstrId", "_TxAmt", "_SplmtryData", "_CollSd", "_ReqdExctnDt", "_CollPties", "_CollTxTp", "_ElgbltySetPrfl", "_XpsrTp"]
 	@property
-	def XpsrTp(self):
-		return self._XpsrTp
+	def TxInstrId(self):
+		return self._TxInstrId
 
-	@XpsrTp.setter
-	def XpsrTp(self, value):
-		self._XpsrTp = value if type(value) != auto else self.make_default("XpsrTp")
+	@TxInstrId.setter
+	def TxInstrId(self, value):
+		self._TxInstrId = value if type(value) != auto else self.make_default("TxInstrId")
 
-	@XpsrTp.deleter
-	def XpsrTp(self):
-		del self._XpsrTp
-		self._XpsrTp = None
+	@TxInstrId.deleter
+	def TxInstrId(self):
+		del self._TxInstrId
+		self._TxInstrId = None
+
+	@property
+	def TxAmt(self):
+		return self._TxAmt
+
+	@TxAmt.setter
+	def TxAmt(self, value):
+		self._TxAmt = value if type(value) != auto else self.make_default("TxAmt")
+
+	@TxAmt.deleter
+	def TxAmt(self):
+		del self._TxAmt
+		self._TxAmt = None
 
 	@property
 	def SplmtryData(self):
@@ -39,17 +52,30 @@ class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._
 		self._SplmtryData = None
 
 	@property
-	def TxInstrId(self):
-		return self._TxInstrId
+	def CollSd(self):
+		return self._CollSd
 
-	@TxInstrId.setter
-	def TxInstrId(self, value):
-		self._TxInstrId = value if type(value) != auto else self.make_default("TxInstrId")
+	@CollSd.setter
+	def CollSd(self, value):
+		self._CollSd = value if type(value) != auto else self.make_default("CollSd")
 
-	@TxInstrId.deleter
-	def TxInstrId(self):
-		del self._TxInstrId
-		self._TxInstrId = None
+	@CollSd.deleter
+	def CollSd(self):
+		del self._CollSd
+		self._CollSd = None
+
+	@property
+	def ReqdExctnDt(self):
+		return self._ReqdExctnDt
+
+	@ReqdExctnDt.setter
+	def ReqdExctnDt(self, value):
+		self._ReqdExctnDt = value if type(value) != auto else self.make_default("ReqdExctnDt")
+
+	@ReqdExctnDt.deleter
+	def ReqdExctnDt(self):
+		del self._ReqdExctnDt
+		self._ReqdExctnDt = None
 
 	@property
 	def CollPties(self):
@@ -63,19 +89,6 @@ class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._
 	def CollPties(self):
 		del self._CollPties
 		self._CollPties = None
-
-	@property
-	def TxAmt(self):
-		return self._TxAmt
-
-	@TxAmt.setter
-	def TxAmt(self, value):
-		self._TxAmt = value if type(value) != auto else self.make_default("TxAmt")
-
-	@TxAmt.deleter
-	def TxAmt(self):
-		del self._TxAmt
-		self._TxAmt = None
 
 	@property
 	def CollTxTp(self):
@@ -104,40 +117,27 @@ class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._
 		self._ElgbltySetPrfl = None
 
 	@property
-	def ReqdExctnDt(self):
-		return self._ReqdExctnDt
+	def XpsrTp(self):
+		return self._XpsrTp
 
-	@ReqdExctnDt.setter
-	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != auto else self.make_default("ReqdExctnDt")
+	@XpsrTp.setter
+	def XpsrTp(self, value):
+		self._XpsrTp = value if type(value) != auto else self.make_default("XpsrTp")
 
-	@ReqdExctnDt.deleter
-	def ReqdExctnDt(self):
-		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
-
-	@property
-	def CollSd(self):
-		return self._CollSd
-
-	@CollSd.setter
-	def CollSd(self, value):
-		self._CollSd = value if type(value) != auto else self.make_default("CollSd")
-
-	@CollSd.deleter
-	def CollSd(self):
-		del self._CollSd
-		self._CollSd = None
+	@XpsrTp.deleter
+	def XpsrTp(self):
+		del self._XpsrTp
+		self._XpsrTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XpsrTp', type=ExposureType23Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxInstrId', type=TransactionIdentifications44, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollPties', type=CollateralParties8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxAmt', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollSd', type=CollateralRole1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollPties', type=CollateralParties8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollTxTp', type=CollateralTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElgbltySetPrfl', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollSd', type=CollateralRole1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpsrTp', type=ExposureType23Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

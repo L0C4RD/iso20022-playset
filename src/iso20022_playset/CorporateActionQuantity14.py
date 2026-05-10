@@ -1,35 +1,22 @@
-import base_types
+from . import base_types
 import FinancialInstrumentQuantity43Choice
 import FinancialInstrumentQuantity44Choice
 
 class CorporateActionQuantity14(base_types._BaseFieldType):
 
-	__slots__ = ["_MinQtySght", "_NewDnmtnQty", "_BaseDnmtn", "_MaxQty", "_IncrmtlDnmtn", "_NewBrdLotQty"]
+	__slots__ = ["_IncrmtlDnmtn", "_BaseDnmtn", "_MaxQty", "_NewDnmtnQty", "_MinQtySght", "_NewBrdLotQty"]
 	@property
-	def MinQtySght(self):
-		return self._MinQtySght
+	def IncrmtlDnmtn(self):
+		return self._IncrmtlDnmtn
 
-	@MinQtySght.setter
-	def MinQtySght(self, value):
-		self._MinQtySght = value if type(value) != auto else self.make_default("MinQtySght")
+	@IncrmtlDnmtn.setter
+	def IncrmtlDnmtn(self, value):
+		self._IncrmtlDnmtn = value if type(value) != auto else self.make_default("IncrmtlDnmtn")
 
-	@MinQtySght.deleter
-	def MinQtySght(self):
-		del self._MinQtySght
-		self._MinQtySght = None
-
-	@property
-	def NewDnmtnQty(self):
-		return self._NewDnmtnQty
-
-	@NewDnmtnQty.setter
-	def NewDnmtnQty(self, value):
-		self._NewDnmtnQty = value if type(value) != auto else self.make_default("NewDnmtnQty")
-
-	@NewDnmtnQty.deleter
-	def NewDnmtnQty(self):
-		del self._NewDnmtnQty
-		self._NewDnmtnQty = None
+	@IncrmtlDnmtn.deleter
+	def IncrmtlDnmtn(self):
+		del self._IncrmtlDnmtn
+		self._IncrmtlDnmtn = None
 
 	@property
 	def BaseDnmtn(self):
@@ -58,17 +45,30 @@ class CorporateActionQuantity14(base_types._BaseFieldType):
 		self._MaxQty = None
 
 	@property
-	def IncrmtlDnmtn(self):
-		return self._IncrmtlDnmtn
+	def NewDnmtnQty(self):
+		return self._NewDnmtnQty
 
-	@IncrmtlDnmtn.setter
-	def IncrmtlDnmtn(self, value):
-		self._IncrmtlDnmtn = value if type(value) != auto else self.make_default("IncrmtlDnmtn")
+	@NewDnmtnQty.setter
+	def NewDnmtnQty(self, value):
+		self._NewDnmtnQty = value if type(value) != auto else self.make_default("NewDnmtnQty")
 
-	@IncrmtlDnmtn.deleter
-	def IncrmtlDnmtn(self):
-		del self._IncrmtlDnmtn
-		self._IncrmtlDnmtn = None
+	@NewDnmtnQty.deleter
+	def NewDnmtnQty(self):
+		del self._NewDnmtnQty
+		self._NewDnmtnQty = None
+
+	@property
+	def MinQtySght(self):
+		return self._MinQtySght
+
+	@MinQtySght.setter
+	def MinQtySght(self, value):
+		self._MinQtySght = value if type(value) != auto else self.make_default("MinQtySght")
+
+	@MinQtySght.deleter
+	def MinQtySght(self):
+		del self._MinQtySght
+		self._MinQtySght = None
 
 	@property
 	def NewBrdLotQty(self):
@@ -84,11 +84,11 @@ class CorporateActionQuantity14(base_types._BaseFieldType):
 		self._NewBrdLotQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MinQtySght', type=FinancialInstrumentQuantity44Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewDnmtnQty', type=FinancialInstrumentQuantity43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IncrmtlDnmtn', type=FinancialInstrumentQuantity43Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BaseDnmtn', type=FinancialInstrumentQuantity43Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxQty', type=FinancialInstrumentQuantity44Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IncrmtlDnmtn', type=FinancialInstrumentQuantity43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewDnmtnQty', type=FinancialInstrumentQuantity43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinQtySght', type=FinancialInstrumentQuantity44Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewBrdLotQty', type=FinancialInstrumentQuantity43Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

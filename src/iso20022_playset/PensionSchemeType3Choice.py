@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PensionSchemeType3Code
 import GenericIdentification36
 

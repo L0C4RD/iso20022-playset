@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SaleToPOIReconciliationResponseV07
 
 class CASP_004_001_07():

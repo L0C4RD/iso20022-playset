@@ -1,22 +1,22 @@
-import base_types
+from . import base_types
 import BaseOneRate
 import ActiveCurrencyCode
 
 class CurrencyExchange15(base_types._BaseFieldType):
 
-	__slots__ = ["_TrgtCcy", "_XchgRate", "_UnitCcy", "_SrcCcy"]
+	__slots__ = ["_UnitCcy", "_XchgRate", "_TrgtCcy", "_SrcCcy"]
 	@property
-	def TrgtCcy(self):
-		return self._TrgtCcy
+	def UnitCcy(self):
+		return self._UnitCcy
 
-	@TrgtCcy.setter
-	def TrgtCcy(self, value):
-		self._TrgtCcy = value if type(value) != auto else self.make_default("TrgtCcy")
+	@UnitCcy.setter
+	def UnitCcy(self, value):
+		self._UnitCcy = value if type(value) != auto else self.make_default("UnitCcy")
 
-	@TrgtCcy.deleter
-	def TrgtCcy(self):
-		del self._TrgtCcy
-		self._TrgtCcy = None
+	@UnitCcy.deleter
+	def UnitCcy(self):
+		del self._UnitCcy
+		self._UnitCcy = None
 
 	@property
 	def XchgRate(self):
@@ -32,17 +32,17 @@ class CurrencyExchange15(base_types._BaseFieldType):
 		self._XchgRate = None
 
 	@property
-	def UnitCcy(self):
-		return self._UnitCcy
+	def TrgtCcy(self):
+		return self._TrgtCcy
 
-	@UnitCcy.setter
-	def UnitCcy(self, value):
-		self._UnitCcy = value if type(value) != auto else self.make_default("UnitCcy")
+	@TrgtCcy.setter
+	def TrgtCcy(self, value):
+		self._TrgtCcy = value if type(value) != auto else self.make_default("TrgtCcy")
 
-	@UnitCcy.deleter
-	def UnitCcy(self):
-		del self._UnitCcy
-		self._UnitCcy = None
+	@TrgtCcy.deleter
+	def TrgtCcy(self):
+		del self._TrgtCcy
+		self._TrgtCcy = None
 
 	@property
 	def SrcCcy(self):
@@ -58,9 +58,9 @@ class CurrencyExchange15(base_types._BaseFieldType):
 		self._SrcCcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrgtCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrgtCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrcCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

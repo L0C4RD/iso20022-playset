@@ -1,12 +1,25 @@
-import base_types
-import ReportData5
+from . import base_types
 import Exact4AlphaNumericText
+import ReportData5
 import SupplementaryData1
 import PartyIdentification73Choice
 
 class PayInCallV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmSsnIdr", "_SplmtryData", "_RptData", "_PtyId"]
+	__slots__ = ["_RptData", "_SttlmSsnIdr", "_SplmtryData", "_PtyId"]
+	@property
+	def RptData(self):
+		return self._RptData
+
+	@RptData.setter
+	def RptData(self, value):
+		self._RptData = value if type(value) != auto else self.make_default("RptData")
+
+	@RptData.deleter
+	def RptData(self):
+		del self._RptData
+		self._RptData = None
+
 	@property
 	def SttlmSsnIdr(self):
 		return self._SttlmSsnIdr
@@ -34,19 +47,6 @@ class PayInCallV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def RptData(self):
-		return self._RptData
-
-	@RptData.setter
-	def RptData(self, value):
-		self._RptData = value if type(value) != auto else self.make_default("RptData")
-
-	@RptData.deleter
-	def RptData(self):
-		del self._RptData
-		self._RptData = None
-
-	@property
 	def PtyId(self):
 		return self._PtyId
 
@@ -60,9 +60,9 @@ class PayInCallV02(base_types._BaseFieldType):
 		self._PtyId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RptData', type=ReportData5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptData', type=ReportData5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyId', type=PartyIdentification73Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

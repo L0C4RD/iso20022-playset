@@ -1,24 +1,24 @@
-import base_types
-import ActiveCurrencyAnd13DecimalAmount
-import Max35Text
-import PaymentInstrument25Choice
+from . import base_types
 import ISODate
+import Max35Text
+import ActiveCurrencyAnd13DecimalAmount
+import PaymentInstrument25Choice
 
 class PaymentInstrument18(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_CshSttlmDtls", "_Ref", "_PmtDt"]
+	__slots__ = ["_PmtDt", "_CshSttlmDtls", "_Amt", "_Ref"]
 	@property
-	def Amt(self):
-		return self._Amt
+	def PmtDt(self):
+		return self._PmtDt
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@PmtDt.setter
+	def PmtDt(self, value):
+		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@PmtDt.deleter
+	def PmtDt(self):
+		del self._PmtDt
+		self._PmtDt = None
 
 	@property
 	def CshSttlmDtls(self):
@@ -34,6 +34,19 @@ class PaymentInstrument18(base_types._BaseFieldType):
 		self._CshSttlmDtls = None
 
 	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
 	def Ref(self):
 		return self._Ref
 
@@ -46,23 +59,10 @@ class PaymentInstrument18(base_types._BaseFieldType):
 		del self._Ref
 		self._Ref = None
 
-	@property
-	def PmtDt(self):
-		return self._PmtDt
-
-	@PmtDt.setter
-	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
-
-	@PmtDt.deleter
-	def PmtDt(self):
-		del self._PmtDt
-		self._PmtDt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshSttlmDtls', type=PaymentInstrument25Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshSttlmDtls', type=PaymentInstrument25Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

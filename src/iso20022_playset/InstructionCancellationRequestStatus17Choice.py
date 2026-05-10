@@ -1,6 +1,6 @@
-import base_types
-import NoSpecifiedReason1
+from . import base_types
 import PendingCancellationStatus13Choice
+import NoSpecifiedReason1
 import ProprietaryStatusAndReason6
 import CancelledStatus11Choice
 import RejectedStatus53Choice

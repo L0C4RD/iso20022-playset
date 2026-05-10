@@ -1,24 +1,11 @@
-import base_types
-import CreditDebitCode
+from . import base_types
 import CashAvailabilityDate1Choice
+import CreditDebitCode
 import ActiveOrHistoricCurrencyAndAmount
 
 class CashAvailability1(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_Dt", "_Amt"]
-	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
-
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
-
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
-
+	__slots__ = ["_Dt", "_Amt", "_CdtDbtInd"]
 	@property
 	def Dt(self):
 		return self._Dt
@@ -45,9 +32,22 @@ class CashAvailability1(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=CashAvailabilityDate1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

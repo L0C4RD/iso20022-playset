@@ -1,124 +1,20 @@
-import base_types
-import PaymentTypeInformation28
-import SettlementTimeRequest2
+from . import base_types
 import ISODate
-import ActiveCurrencyAndAmount
-import Priority3Code
-import RemittanceInformation2
 import PaymentIdentification13
-import CashAccount40
-import SettlementDateTimeIndication1
+import Priority3Code
 import Max210Text
-import Purpose2Choice
 import BranchAndFinancialInstitutionIdentification8
+import Purpose2Choice
+import ActiveCurrencyAndAmount
+import SettlementTimeRequest2
+import SettlementDateTimeIndication1
+import CashAccount40
+import PaymentTypeInformation28
+import RemittanceInformation2
 
 class DirectDebitTransactionInformation33(base_types._BaseFieldType):
 
-	__slots__ = ["_DbtrAgtAcct", "_DbtrAgt", "_Purp", "_PmtId", "_IntrBkSttlmAmt", "_Dbtr", "_RmtInf", "_SttlmPrty", "_SttlmTmIndctn", "_DbtrAcct", "_SttlmTmReq", "_InstrForDbtrAgt", "_PmtTpInf", "_UltmtDbtr", "_IntrBkSttlmDt"]
-	@property
-	def DbtrAgtAcct(self):
-		return self._DbtrAgtAcct
-
-	@DbtrAgtAcct.setter
-	def DbtrAgtAcct(self, value):
-		self._DbtrAgtAcct = value if type(value) != auto else self.make_default("DbtrAgtAcct")
-
-	@DbtrAgtAcct.deleter
-	def DbtrAgtAcct(self):
-		del self._DbtrAgtAcct
-		self._DbtrAgtAcct = None
-
-	@property
-	def DbtrAgt(self):
-		return self._DbtrAgt
-
-	@DbtrAgt.setter
-	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != auto else self.make_default("DbtrAgt")
-
-	@DbtrAgt.deleter
-	def DbtrAgt(self):
-		del self._DbtrAgt
-		self._DbtrAgt = None
-
-	@property
-	def Purp(self):
-		return self._Purp
-
-	@Purp.setter
-	def Purp(self, value):
-		self._Purp = value if type(value) != auto else self.make_default("Purp")
-
-	@Purp.deleter
-	def Purp(self):
-		del self._Purp
-		self._Purp = None
-
-	@property
-	def PmtId(self):
-		return self._PmtId
-
-	@PmtId.setter
-	def PmtId(self, value):
-		self._PmtId = value if type(value) != auto else self.make_default("PmtId")
-
-	@PmtId.deleter
-	def PmtId(self):
-		del self._PmtId
-		self._PmtId = None
-
-	@property
-	def IntrBkSttlmAmt(self):
-		return self._IntrBkSttlmAmt
-
-	@IntrBkSttlmAmt.setter
-	def IntrBkSttlmAmt(self, value):
-		self._IntrBkSttlmAmt = value if type(value) != auto else self.make_default("IntrBkSttlmAmt")
-
-	@IntrBkSttlmAmt.deleter
-	def IntrBkSttlmAmt(self):
-		del self._IntrBkSttlmAmt
-		self._IntrBkSttlmAmt = None
-
-	@property
-	def Dbtr(self):
-		return self._Dbtr
-
-	@Dbtr.setter
-	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != auto else self.make_default("Dbtr")
-
-	@Dbtr.deleter
-	def Dbtr(self):
-		del self._Dbtr
-		self._Dbtr = None
-
-	@property
-	def RmtInf(self):
-		return self._RmtInf
-
-	@RmtInf.setter
-	def RmtInf(self, value):
-		self._RmtInf = value if type(value) != auto else self.make_default("RmtInf")
-
-	@RmtInf.deleter
-	def RmtInf(self):
-		del self._RmtInf
-		self._RmtInf = None
-
-	@property
-	def SttlmPrty(self):
-		return self._SttlmPrty
-
-	@SttlmPrty.setter
-	def SttlmPrty(self, value):
-		self._SttlmPrty = value if type(value) != auto else self.make_default("SttlmPrty")
-
-	@SttlmPrty.deleter
-	def SttlmPrty(self):
-		del self._SttlmPrty
-		self._SttlmPrty = None
-
+	__slots__ = ["_SttlmTmIndctn", "_DbtrAcct", "_Purp", "_IntrBkSttlmDt", "_SttlmTmReq", "_DbtrAgtAcct", "_PmtTpInf", "_IntrBkSttlmAmt", "_SttlmPrty", "_DbtrAgt", "_RmtInf", "_UltmtDbtr", "_PmtId", "_Dbtr", "_InstrForDbtrAgt"]
 	@property
 	def SttlmTmIndctn(self):
 		return self._SttlmTmIndctn
@@ -146,6 +42,32 @@ class DirectDebitTransactionInformation33(base_types._BaseFieldType):
 		self._DbtrAcct = None
 
 	@property
+	def Purp(self):
+		return self._Purp
+
+	@Purp.setter
+	def Purp(self, value):
+		self._Purp = value if type(value) != auto else self.make_default("Purp")
+
+	@Purp.deleter
+	def Purp(self):
+		del self._Purp
+		self._Purp = None
+
+	@property
+	def IntrBkSttlmDt(self):
+		return self._IntrBkSttlmDt
+
+	@IntrBkSttlmDt.setter
+	def IntrBkSttlmDt(self, value):
+		self._IntrBkSttlmDt = value if type(value) != auto else self.make_default("IntrBkSttlmDt")
+
+	@IntrBkSttlmDt.deleter
+	def IntrBkSttlmDt(self):
+		del self._IntrBkSttlmDt
+		self._IntrBkSttlmDt = None
+
+	@property
 	def SttlmTmReq(self):
 		return self._SttlmTmReq
 
@@ -159,17 +81,17 @@ class DirectDebitTransactionInformation33(base_types._BaseFieldType):
 		self._SttlmTmReq = None
 
 	@property
-	def InstrForDbtrAgt(self):
-		return self._InstrForDbtrAgt
+	def DbtrAgtAcct(self):
+		return self._DbtrAgtAcct
 
-	@InstrForDbtrAgt.setter
-	def InstrForDbtrAgt(self, value):
-		self._InstrForDbtrAgt = value if type(value) != auto else self.make_default("InstrForDbtrAgt")
+	@DbtrAgtAcct.setter
+	def DbtrAgtAcct(self, value):
+		self._DbtrAgtAcct = value if type(value) != auto else self.make_default("DbtrAgtAcct")
 
-	@InstrForDbtrAgt.deleter
-	def InstrForDbtrAgt(self):
-		del self._InstrForDbtrAgt
-		self._InstrForDbtrAgt = None
+	@DbtrAgtAcct.deleter
+	def DbtrAgtAcct(self):
+		del self._DbtrAgtAcct
+		self._DbtrAgtAcct = None
 
 	@property
 	def PmtTpInf(self):
@@ -185,6 +107,58 @@ class DirectDebitTransactionInformation33(base_types._BaseFieldType):
 		self._PmtTpInf = None
 
 	@property
+	def IntrBkSttlmAmt(self):
+		return self._IntrBkSttlmAmt
+
+	@IntrBkSttlmAmt.setter
+	def IntrBkSttlmAmt(self, value):
+		self._IntrBkSttlmAmt = value if type(value) != auto else self.make_default("IntrBkSttlmAmt")
+
+	@IntrBkSttlmAmt.deleter
+	def IntrBkSttlmAmt(self):
+		del self._IntrBkSttlmAmt
+		self._IntrBkSttlmAmt = None
+
+	@property
+	def SttlmPrty(self):
+		return self._SttlmPrty
+
+	@SttlmPrty.setter
+	def SttlmPrty(self, value):
+		self._SttlmPrty = value if type(value) != auto else self.make_default("SttlmPrty")
+
+	@SttlmPrty.deleter
+	def SttlmPrty(self):
+		del self._SttlmPrty
+		self._SttlmPrty = None
+
+	@property
+	def DbtrAgt(self):
+		return self._DbtrAgt
+
+	@DbtrAgt.setter
+	def DbtrAgt(self, value):
+		self._DbtrAgt = value if type(value) != auto else self.make_default("DbtrAgt")
+
+	@DbtrAgt.deleter
+	def DbtrAgt(self):
+		del self._DbtrAgt
+		self._DbtrAgt = None
+
+	@property
+	def RmtInf(self):
+		return self._RmtInf
+
+	@RmtInf.setter
+	def RmtInf(self, value):
+		self._RmtInf = value if type(value) != auto else self.make_default("RmtInf")
+
+	@RmtInf.deleter
+	def RmtInf(self):
+		del self._RmtInf
+		self._RmtInf = None
+
+	@property
 	def UltmtDbtr(self):
 		return self._UltmtDbtr
 
@@ -198,33 +172,59 @@ class DirectDebitTransactionInformation33(base_types._BaseFieldType):
 		self._UltmtDbtr = None
 
 	@property
-	def IntrBkSttlmDt(self):
-		return self._IntrBkSttlmDt
+	def PmtId(self):
+		return self._PmtId
 
-	@IntrBkSttlmDt.setter
-	def IntrBkSttlmDt(self, value):
-		self._IntrBkSttlmDt = value if type(value) != auto else self.make_default("IntrBkSttlmDt")
+	@PmtId.setter
+	def PmtId(self, value):
+		self._PmtId = value if type(value) != auto else self.make_default("PmtId")
 
-	@IntrBkSttlmDt.deleter
-	def IntrBkSttlmDt(self):
-		del self._IntrBkSttlmDt
-		self._IntrBkSttlmDt = None
+	@PmtId.deleter
+	def PmtId(self):
+		del self._PmtId
+		self._PmtId = None
+
+	@property
+	def Dbtr(self):
+		return self._Dbtr
+
+	@Dbtr.setter
+	def Dbtr(self, value):
+		self._Dbtr = value if type(value) != auto else self.make_default("Dbtr")
+
+	@Dbtr.deleter
+	def Dbtr(self):
+		del self._Dbtr
+		self._Dbtr = None
+
+	@property
+	def InstrForDbtrAgt(self):
+		return self._InstrForDbtrAgt
+
+	@InstrForDbtrAgt.setter
+	def InstrForDbtrAgt(self, value):
+		self._InstrForDbtrAgt = value if type(value) != auto else self.make_default("InstrForDbtrAgt")
+
+	@InstrForDbtrAgt.deleter
+	def InstrForDbtrAgt(self):
+		del self._InstrForDbtrAgt
+		self._InstrForDbtrAgt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DbtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Purp', type=Purpose2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtId', type=PaymentIdentification13, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrBkSttlmAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dbtr', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmtInf', type=RemittanceInformation2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmPrty', type=Priority3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmTmIndctn', type=SettlementDateTimeIndication1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmTmReq', type=SettlementTimeRequest2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrForDbtrAgt', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtTpInf', type=PaymentTypeInformation28, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UltmtDbtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Purp', type=Purpose2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmTmReq', type=SettlementTimeRequest2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtTpInf', type=PaymentTypeInformation28, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrBkSttlmAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPrty', type=Priority3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmtInf', type=RemittanceInformation2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UltmtDbtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtId', type=PaymentIdentification13, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrForDbtrAgt', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

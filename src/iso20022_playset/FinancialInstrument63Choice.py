@@ -1,24 +1,11 @@
-import base_types
-import FinancialInstrumentIdentification2
+from . import base_types
 import CashAsset3
+import FinancialInstrumentIdentification2
 import OtherAsset2
 
 class FinancialInstrument63Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrAsst", "_CshAsst", "_Scty"]
-	@property
-	def OthrAsst(self):
-		return self._OthrAsst
-
-	@OthrAsst.setter
-	def OthrAsst(self, value):
-		self._OthrAsst = value if type(value) != auto else self.make_default("OthrAsst")
-
-	@OthrAsst.deleter
-	def OthrAsst(self):
-		del self._OthrAsst
-		self._OthrAsst = None
-
+	__slots__ = ["_CshAsst", "_OthrAsst", "_Scty"]
 	@property
 	def CshAsst(self):
 		return self._CshAsst
@@ -31,6 +18,19 @@ class FinancialInstrument63Choice(base_types._BaseFieldType):
 	def CshAsst(self):
 		del self._CshAsst
 		self._CshAsst = None
+
+	@property
+	def OthrAsst(self):
+		return self._OthrAsst
+
+	@OthrAsst.setter
+	def OthrAsst(self, value):
+		self._OthrAsst = value if type(value) != auto else self.make_default("OthrAsst")
+
+	@OthrAsst.deleter
+	def OthrAsst(self):
+		del self._OthrAsst
+		self._OthrAsst = None
 
 	@property
 	def Scty(self):
@@ -46,8 +46,8 @@ class FinancialInstrument63Choice(base_types._BaseFieldType):
 		self._Scty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrAsst', type=OtherAsset2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CshAsst', type=CashAsset3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OthrAsst', type=OtherAsset2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Scty', type=FinancialInstrumentIdentification2, min=0, max=1, mutex_group=1, array=False),
 	))
 

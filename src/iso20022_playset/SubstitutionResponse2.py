@@ -1,11 +1,11 @@
-import base_types
-import CollateralSubstitutionResponse1
+from . import base_types
 import CollateralSubstitutionResponse3
+import CollateralSubstitutionResponse1
 import Status4Code
 
 class SubstitutionResponse2(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnTp", "_CollSbstitnAccptncDtls", "_CollSbstitnRjctnDtls"]
+	__slots__ = ["_RspnTp", "_CollSbstitnRjctnDtls", "_CollSbstitnAccptncDtls"]
 	@property
 	def RspnTp(self):
 		return self._RspnTp
@@ -20,19 +20,6 @@ class SubstitutionResponse2(base_types._BaseFieldType):
 		self._RspnTp = None
 
 	@property
-	def CollSbstitnAccptncDtls(self):
-		return self._CollSbstitnAccptncDtls
-
-	@CollSbstitnAccptncDtls.setter
-	def CollSbstitnAccptncDtls(self, value):
-		self._CollSbstitnAccptncDtls = value if type(value) != auto else self.make_default("CollSbstitnAccptncDtls")
-
-	@CollSbstitnAccptncDtls.deleter
-	def CollSbstitnAccptncDtls(self):
-		del self._CollSbstitnAccptncDtls
-		self._CollSbstitnAccptncDtls = None
-
-	@property
 	def CollSbstitnRjctnDtls(self):
 		return self._CollSbstitnRjctnDtls
 
@@ -45,9 +32,22 @@ class SubstitutionResponse2(base_types._BaseFieldType):
 		del self._CollSbstitnRjctnDtls
 		self._CollSbstitnRjctnDtls = None
 
+	@property
+	def CollSbstitnAccptncDtls(self):
+		return self._CollSbstitnAccptncDtls
+
+	@CollSbstitnAccptncDtls.setter
+	def CollSbstitnAccptncDtls(self, value):
+		self._CollSbstitnAccptncDtls = value if type(value) != auto else self.make_default("CollSbstitnAccptncDtls")
+
+	@CollSbstitnAccptncDtls.deleter
+	def CollSbstitnAccptncDtls(self):
+		del self._CollSbstitnAccptncDtls
+		self._CollSbstitnAccptncDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RspnTp', type=Status4Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollSbstitnAccptncDtls', type=CollateralSubstitutionResponse1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollSbstitnRjctnDtls', type=CollateralSubstitutionResponse3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollSbstitnAccptncDtls', type=CollateralSubstitutionResponse1, min=0, max=1, mutex_group=None, array=False),
 	))
 

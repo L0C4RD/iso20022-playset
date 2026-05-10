@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesStatementQueryV08
 
 class SEMT_021_001_08():

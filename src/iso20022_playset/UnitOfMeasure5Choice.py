@@ -1,6 +1,6 @@
-import base_types
-import UnitOfMeasure8Code
+from . import base_types
 import GenericIdentification36
+import UnitOfMeasure8Code
 
 class UnitOfMeasure5Choice(base_types._BaseFieldType):
 

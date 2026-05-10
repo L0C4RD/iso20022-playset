@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class SmallNetworkIdentifier(base_types._BaseDataType_String):
 

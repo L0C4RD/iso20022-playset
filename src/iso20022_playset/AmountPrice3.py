@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ActiveCurrencyAnd13DecimalAmount
 import AmountPriceType1Code
 

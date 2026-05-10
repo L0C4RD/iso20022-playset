@@ -1,6 +1,6 @@
-import base_types
-import ISODateTime
+from . import base_types
 import PositiveNumber
+import ISODateTime
 
 class OrderPriority1(base_types._BaseFieldType):
 

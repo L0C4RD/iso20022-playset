@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import TransactionReport8
-import NumberAndSumOfTransactions2
 import PaymentCommon6
+import NumberAndSumOfTransactions2
 
 class Transactions11(base_types._BaseFieldType):
 
-	__slots__ = ["_TxRpt", "_PmtCmonInf", "_TxsSummry"]
-	@property
-	def TxRpt(self):
-		return self._TxRpt
-
-	@TxRpt.setter
-	def TxRpt(self, value):
-		self._TxRpt = value if type(value) != auto else self.make_default("TxRpt")
-
-	@TxRpt.deleter
-	def TxRpt(self):
-		del self._TxRpt
-		self._TxRpt = None
-
+	__slots__ = ["_PmtCmonInf", "_TxRpt", "_TxsSummry"]
 	@property
 	def PmtCmonInf(self):
 		return self._PmtCmonInf
@@ -31,6 +18,19 @@ class Transactions11(base_types._BaseFieldType):
 	def PmtCmonInf(self):
 		del self._PmtCmonInf
 		self._PmtCmonInf = None
+
+	@property
+	def TxRpt(self):
+		return self._TxRpt
+
+	@TxRpt.setter
+	def TxRpt(self, value):
+		self._TxRpt = value if type(value) != auto else self.make_default("TxRpt")
+
+	@TxRpt.deleter
+	def TxRpt(self):
+		del self._TxRpt
+		self._TxRpt = None
 
 	@property
 	def TxsSummry(self):
@@ -46,8 +46,8 @@ class Transactions11(base_types._BaseFieldType):
 		self._TxsSummry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxRpt', type=TransactionReport8, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PmtCmonInf', type=PaymentCommon6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxRpt', type=TransactionReport8, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxsSummry', type=NumberAndSumOfTransactions2, min=0, max=1, mutex_group=None, array=False),
 	))
 

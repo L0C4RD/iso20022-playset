@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReturnCurrencyExchangeRateV05
 
 class CAMT_017_001_05():

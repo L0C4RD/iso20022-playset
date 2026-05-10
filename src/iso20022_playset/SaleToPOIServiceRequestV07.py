@@ -1,6 +1,6 @@
-import base_types
-import ContentInformationType38
+from . import base_types
 import ServiceRequest8
+import ContentInformationType38
 import Header41
 
 class SaleToPOIServiceRequestV07(base_types._BaseFieldType):

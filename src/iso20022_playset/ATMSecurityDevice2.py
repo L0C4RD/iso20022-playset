@@ -1,51 +1,25 @@
-import base_types
+from . import base_types
 import ATMStatus2Code
-import TR34Status1Code
 import FailureReason5Code
-import ATMEquipment2
 import ATMSecurityConfiguration1
+import ATMEquipment2
+import TR34Status1Code
 
 class ATMSecurityDevice2(base_types._BaseFieldType):
 
-	__slots__ = ["_CurCfgtn", "_Incdnt", "_DvcPrprty", "_SpprtdCfgtn", "_CurSts", "_BndgStat"]
+	__slots__ = ["_CurSts", "_SpprtdCfgtn", "_CurCfgtn", "_DvcPrprty", "_BndgStat", "_Incdnt"]
 	@property
-	def CurCfgtn(self):
-		return self._CurCfgtn
+	def CurSts(self):
+		return self._CurSts
 
-	@CurCfgtn.setter
-	def CurCfgtn(self, value):
-		self._CurCfgtn = value if type(value) != auto else self.make_default("CurCfgtn")
+	@CurSts.setter
+	def CurSts(self, value):
+		self._CurSts = value if type(value) != auto else self.make_default("CurSts")
 
-	@CurCfgtn.deleter
-	def CurCfgtn(self):
-		del self._CurCfgtn
-		self._CurCfgtn = None
-
-	@property
-	def Incdnt(self):
-		return self._Incdnt
-
-	@Incdnt.setter
-	def Incdnt(self, value):
-		self._Incdnt = value if type(value) != auto else self.make_default("Incdnt")
-
-	@Incdnt.deleter
-	def Incdnt(self):
-		del self._Incdnt
-		self._Incdnt = None
-
-	@property
-	def DvcPrprty(self):
-		return self._DvcPrprty
-
-	@DvcPrprty.setter
-	def DvcPrprty(self, value):
-		self._DvcPrprty = value if type(value) != auto else self.make_default("DvcPrprty")
-
-	@DvcPrprty.deleter
-	def DvcPrprty(self):
-		del self._DvcPrprty
-		self._DvcPrprty = None
+	@CurSts.deleter
+	def CurSts(self):
+		del self._CurSts
+		self._CurSts = None
 
 	@property
 	def SpprtdCfgtn(self):
@@ -61,17 +35,30 @@ class ATMSecurityDevice2(base_types._BaseFieldType):
 		self._SpprtdCfgtn = None
 
 	@property
-	def CurSts(self):
-		return self._CurSts
+	def CurCfgtn(self):
+		return self._CurCfgtn
 
-	@CurSts.setter
-	def CurSts(self, value):
-		self._CurSts = value if type(value) != auto else self.make_default("CurSts")
+	@CurCfgtn.setter
+	def CurCfgtn(self, value):
+		self._CurCfgtn = value if type(value) != auto else self.make_default("CurCfgtn")
 
-	@CurSts.deleter
-	def CurSts(self):
-		del self._CurSts
-		self._CurSts = None
+	@CurCfgtn.deleter
+	def CurCfgtn(self):
+		del self._CurCfgtn
+		self._CurCfgtn = None
+
+	@property
+	def DvcPrprty(self):
+		return self._DvcPrprty
+
+	@DvcPrprty.setter
+	def DvcPrprty(self, value):
+		self._DvcPrprty = value if type(value) != auto else self.make_default("DvcPrprty")
+
+	@DvcPrprty.deleter
+	def DvcPrprty(self):
+		del self._DvcPrprty
+		self._DvcPrprty = None
 
 	@property
 	def BndgStat(self):
@@ -86,12 +73,25 @@ class ATMSecurityDevice2(base_types._BaseFieldType):
 		del self._BndgStat
 		self._BndgStat = None
 
+	@property
+	def Incdnt(self):
+		return self._Incdnt
+
+	@Incdnt.setter
+	def Incdnt(self, value):
+		self._Incdnt = value if type(value) != auto else self.make_default("Incdnt")
+
+	@Incdnt.deleter
+	def Incdnt(self):
+		del self._Incdnt
+		self._Incdnt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CurCfgtn', type=ATMSecurityConfiguration1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Incdnt', type=FailureReason5Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DvcPrprty', type=ATMEquipment2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SpprtdCfgtn', type=ATMSecurityConfiguration1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurSts', type=ATMStatus2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpprtdCfgtn', type=ATMSecurityConfiguration1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurCfgtn', type=ATMSecurityConfiguration1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DvcPrprty', type=ATMEquipment2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BndgStat', type=TR34Status1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Incdnt', type=FailureReason5Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

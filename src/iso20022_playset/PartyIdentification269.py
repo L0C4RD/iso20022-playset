@@ -1,13 +1,13 @@
-import base_types
-import Max35Text
-import CountryCode
+from . import base_types
 import PartyIdentification198Choice
-import Max256Text
 import PersonName2
+import CountryCode
+import Max256Text
+import Max35Text
 
 class PartyIdentification269(base_types._BaseFieldType):
 
-	__slots__ = ["_CpnyRegrShrhldrId", "_NmAndAdr", "_CtryOfIncorprtn", "_EmailAdr", "_Id"]
+	__slots__ = ["_CpnyRegrShrhldrId", "_Id", "_EmailAdr", "_NmAndAdr", "_CtryOfIncorprtn"]
 	@property
 	def CpnyRegrShrhldrId(self):
 		return self._CpnyRegrShrhldrId
@@ -20,6 +20,32 @@ class PartyIdentification269(base_types._BaseFieldType):
 	def CpnyRegrShrhldrId(self):
 		del self._CpnyRegrShrhldrId
 		self._CpnyRegrShrhldrId = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def EmailAdr(self):
+		return self._EmailAdr
+
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
 
 	@property
 	def NmAndAdr(self):
@@ -47,37 +73,11 @@ class PartyIdentification269(base_types._BaseFieldType):
 		del self._CtryOfIncorprtn
 		self._CtryOfIncorprtn = None
 
-	@property
-	def EmailAdr(self):
-		return self._EmailAdr
-
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
-
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CpnyRegrShrhldrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification198Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=PersonName2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryOfIncorprtn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification198Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

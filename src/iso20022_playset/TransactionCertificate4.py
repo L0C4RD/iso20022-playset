@@ -1,28 +1,15 @@
-import base_types
-import Max35Text
-import CountryCode
-import TransactionCertificateRecord2
-import SupplementaryData1
-import CashAccount40
+from . import base_types
 import DocumentIdentification28
+import CountryCode
 import DocumentAmendment1
+import TransactionCertificateRecord2
+import CashAccount40
+import SupplementaryData1
+import Max35Text
 
 class TransactionCertificate4(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Acct", "_TxId", "_Amdmnt", "_Cert", "_BkAcctDmcltnCtry", "_CertRcrd"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_Acct", "_TxId", "_Cert", "_SplmtryData", "_Amdmnt", "_CertRcrd", "_BkAcctDmcltnCtry"]
 	@property
 	def Acct(self):
 		return self._Acct
@@ -50,19 +37,6 @@ class TransactionCertificate4(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def Amdmnt(self):
-		return self._Amdmnt
-
-	@Amdmnt.setter
-	def Amdmnt(self, value):
-		self._Amdmnt = value if type(value) != auto else self.make_default("Amdmnt")
-
-	@Amdmnt.deleter
-	def Amdmnt(self):
-		del self._Amdmnt
-		self._Amdmnt = None
-
-	@property
 	def Cert(self):
 		return self._Cert
 
@@ -76,17 +50,30 @@ class TransactionCertificate4(base_types._BaseFieldType):
 		self._Cert = None
 
 	@property
-	def BkAcctDmcltnCtry(self):
-		return self._BkAcctDmcltnCtry
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@BkAcctDmcltnCtry.setter
-	def BkAcctDmcltnCtry(self, value):
-		self._BkAcctDmcltnCtry = value if type(value) != auto else self.make_default("BkAcctDmcltnCtry")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@BkAcctDmcltnCtry.deleter
-	def BkAcctDmcltnCtry(self):
-		del self._BkAcctDmcltnCtry
-		self._BkAcctDmcltnCtry = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def Amdmnt(self):
+		return self._Amdmnt
+
+	@Amdmnt.setter
+	def Amdmnt(self, value):
+		self._Amdmnt = value if type(value) != auto else self.make_default("Amdmnt")
+
+	@Amdmnt.deleter
+	def Amdmnt(self):
+		del self._Amdmnt
+		self._Amdmnt = None
 
 	@property
 	def CertRcrd(self):
@@ -101,13 +88,26 @@ class TransactionCertificate4(base_types._BaseFieldType):
 		del self._CertRcrd
 		self._CertRcrd = None
 
+	@property
+	def BkAcctDmcltnCtry(self):
+		return self._BkAcctDmcltnCtry
+
+	@BkAcctDmcltnCtry.setter
+	def BkAcctDmcltnCtry(self, value):
+		self._BkAcctDmcltnCtry = value if type(value) != auto else self.make_default("BkAcctDmcltnCtry")
+
+	@BkAcctDmcltnCtry.deleter
+	def BkAcctDmcltnCtry(self):
+		del self._BkAcctDmcltnCtry
+		self._BkAcctDmcltnCtry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amdmnt', type=DocumentAmendment1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cert', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BkAcctDmcltnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Amdmnt', type=DocumentAmendment1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CertRcrd', type=TransactionCertificateRecord2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BkAcctDmcltnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

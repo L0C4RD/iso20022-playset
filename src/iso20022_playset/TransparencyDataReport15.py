@@ -1,40 +1,27 @@
-import base_types
-import Max35Text
-import TransactionsBin2
-import ISINOct2015Identifier
+from . import base_types
 import ISODate
-import TrueFalseIndicator
 import Number
 import MICIdentifier
+import TrueFalseIndicator
+import ISINOct2015Identifier
+import Max35Text
+import TransactionsBin2
 
 class TransparencyDataReport15(base_types._BaseFieldType):
 
-	__slots__ = ["_Sspnsn", "_AggtdQttvData", "_TechRcrdId", "_NbTxs", "_Id", "_RptgDt", "_TradgVn"]
+	__slots__ = ["_NbTxs", "_TechRcrdId", "_Sspnsn", "_TradgVn", "_RptgDt", "_Id", "_AggtdQttvData"]
 	@property
-	def Sspnsn(self):
-		return self._Sspnsn
+	def NbTxs(self):
+		return self._NbTxs
 
-	@Sspnsn.setter
-	def Sspnsn(self, value):
-		self._Sspnsn = value if type(value) != auto else self.make_default("Sspnsn")
+	@NbTxs.setter
+	def NbTxs(self, value):
+		self._NbTxs = value if type(value) != auto else self.make_default("NbTxs")
 
-	@Sspnsn.deleter
-	def Sspnsn(self):
-		del self._Sspnsn
-		self._Sspnsn = None
-
-	@property
-	def AggtdQttvData(self):
-		return self._AggtdQttvData
-
-	@AggtdQttvData.setter
-	def AggtdQttvData(self, value):
-		self._AggtdQttvData = value if type(value) != auto else self.make_default("AggtdQttvData")
-
-	@AggtdQttvData.deleter
-	def AggtdQttvData(self):
-		del self._AggtdQttvData
-		self._AggtdQttvData = None
+	@NbTxs.deleter
+	def NbTxs(self):
+		del self._NbTxs
+		self._NbTxs = None
 
 	@property
 	def TechRcrdId(self):
@@ -50,30 +37,30 @@ class TransparencyDataReport15(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	@property
-	def NbTxs(self):
-		return self._NbTxs
+	def Sspnsn(self):
+		return self._Sspnsn
 
-	@NbTxs.setter
-	def NbTxs(self, value):
-		self._NbTxs = value if type(value) != auto else self.make_default("NbTxs")
+	@Sspnsn.setter
+	def Sspnsn(self, value):
+		self._Sspnsn = value if type(value) != auto else self.make_default("Sspnsn")
 
-	@NbTxs.deleter
-	def NbTxs(self):
-		del self._NbTxs
-		self._NbTxs = None
+	@Sspnsn.deleter
+	def Sspnsn(self):
+		del self._Sspnsn
+		self._Sspnsn = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def TradgVn(self):
+		return self._TradgVn
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@TradgVn.setter
+	def TradgVn(self, value):
+		self._TradgVn = value if type(value) != auto else self.make_default("TradgVn")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@TradgVn.deleter
+	def TradgVn(self):
+		del self._TradgVn
+		self._TradgVn = None
 
 	@property
 	def RptgDt(self):
@@ -89,25 +76,38 @@ class TransparencyDataReport15(base_types._BaseFieldType):
 		self._RptgDt = None
 
 	@property
-	def TradgVn(self):
-		return self._TradgVn
+	def Id(self):
+		return self._Id
 
-	@TradgVn.setter
-	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != auto else self.make_default("TradgVn")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@TradgVn.deleter
-	def TradgVn(self):
-		del self._TradgVn
-		self._TradgVn = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def AggtdQttvData(self):
+		return self._AggtdQttvData
+
+	@AggtdQttvData.setter
+	def AggtdQttvData(self, value):
+		self._AggtdQttvData = value if type(value) != auto else self.make_default("AggtdQttvData")
+
+	@AggtdQttvData.deleter
+	def AggtdQttvData(self):
+		del self._AggtdQttvData
+		self._AggtdQttvData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sspnsn', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AggtdQttvData', type=TransactionsBin2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbTxs', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sspnsn', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AggtdQttvData', type=TransactionsBin2, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import NonClearingReason2
 
 class ClearingExceptionOrExemption2(base_types._BaseFieldType):

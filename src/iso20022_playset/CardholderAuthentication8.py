@@ -1,13 +1,52 @@
-import base_types
-import AuthenticationMethod7Code
+from . import base_types
 import Max5000Binary
-import OnLinePIN5
-import TrueFalseIndicator
 import ContentInformationType10
+import TrueFalseIndicator
+import OnLinePIN5
+import AuthenticationMethod7Code
 
 class CardholderAuthentication8(base_types._BaseFieldType):
 
-	__slots__ = ["_TknReqd", "_AuthntcnVal", "_CrdhldrOnLinePIN", "_AuthntcnMtd", "_PrtctdAuthntcnVal"]
+	__slots__ = ["_AuthntcnMtd", "_CrdhldrOnLinePIN", "_PrtctdAuthntcnVal", "_TknReqd", "_AuthntcnVal"]
+	@property
+	def AuthntcnMtd(self):
+		return self._AuthntcnMtd
+
+	@AuthntcnMtd.setter
+	def AuthntcnMtd(self, value):
+		self._AuthntcnMtd = value if type(value) != auto else self.make_default("AuthntcnMtd")
+
+	@AuthntcnMtd.deleter
+	def AuthntcnMtd(self):
+		del self._AuthntcnMtd
+		self._AuthntcnMtd = None
+
+	@property
+	def CrdhldrOnLinePIN(self):
+		return self._CrdhldrOnLinePIN
+
+	@CrdhldrOnLinePIN.setter
+	def CrdhldrOnLinePIN(self, value):
+		self._CrdhldrOnLinePIN = value if type(value) != auto else self.make_default("CrdhldrOnLinePIN")
+
+	@CrdhldrOnLinePIN.deleter
+	def CrdhldrOnLinePIN(self):
+		del self._CrdhldrOnLinePIN
+		self._CrdhldrOnLinePIN = None
+
+	@property
+	def PrtctdAuthntcnVal(self):
+		return self._PrtctdAuthntcnVal
+
+	@PrtctdAuthntcnVal.setter
+	def PrtctdAuthntcnVal(self, value):
+		self._PrtctdAuthntcnVal = value if type(value) != auto else self.make_default("PrtctdAuthntcnVal")
+
+	@PrtctdAuthntcnVal.deleter
+	def PrtctdAuthntcnVal(self):
+		del self._PrtctdAuthntcnVal
+		self._PrtctdAuthntcnVal = None
+
 	@property
 	def TknReqd(self):
 		return self._TknReqd
@@ -34,50 +73,11 @@ class CardholderAuthentication8(base_types._BaseFieldType):
 		del self._AuthntcnVal
 		self._AuthntcnVal = None
 
-	@property
-	def CrdhldrOnLinePIN(self):
-		return self._CrdhldrOnLinePIN
-
-	@CrdhldrOnLinePIN.setter
-	def CrdhldrOnLinePIN(self, value):
-		self._CrdhldrOnLinePIN = value if type(value) != auto else self.make_default("CrdhldrOnLinePIN")
-
-	@CrdhldrOnLinePIN.deleter
-	def CrdhldrOnLinePIN(self):
-		del self._CrdhldrOnLinePIN
-		self._CrdhldrOnLinePIN = None
-
-	@property
-	def AuthntcnMtd(self):
-		return self._AuthntcnMtd
-
-	@AuthntcnMtd.setter
-	def AuthntcnMtd(self, value):
-		self._AuthntcnMtd = value if type(value) != auto else self.make_default("AuthntcnMtd")
-
-	@AuthntcnMtd.deleter
-	def AuthntcnMtd(self):
-		del self._AuthntcnMtd
-		self._AuthntcnMtd = None
-
-	@property
-	def PrtctdAuthntcnVal(self):
-		return self._PrtctdAuthntcnVal
-
-	@PrtctdAuthntcnVal.setter
-	def PrtctdAuthntcnVal(self, value):
-		self._PrtctdAuthntcnVal = value if type(value) != auto else self.make_default("PrtctdAuthntcnVal")
-
-	@PrtctdAuthntcnVal.deleter
-	def PrtctdAuthntcnVal(self):
-		del self._PrtctdAuthntcnVal
-		self._PrtctdAuthntcnVal = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AuthntcnMtd', type=AuthenticationMethod7Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrdhldrOnLinePIN', type=OnLinePIN5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdAuthntcnVal', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TknReqd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthntcnVal', type=Max5000Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrdhldrOnLinePIN', type=OnLinePIN5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthntcnMtd', type=AuthenticationMethod7Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdAuthntcnVal', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 	))
 

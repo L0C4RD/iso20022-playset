@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesSettlementTransactionAuditTrailReportV06
 
 class SEMT_022_001_06():

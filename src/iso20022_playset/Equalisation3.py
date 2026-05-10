@@ -1,24 +1,37 @@
-import base_types
-import ActiveCurrencyAndAmount
+from . import base_types
+import EqualisationMethodologyType2
 import PercentageRate
 import ActiveOrHistoricCurrencyAndAmount
-import EqualisationMethodologyType2
+import ActiveCurrencyAndAmount
 
 class Equalisation3(base_types._BaseFieldType):
 
-	__slots__ = ["_GrssAsstVal", "_Amt", "_HghWtrmrk", "_Rate", "_EqulstnMthdlgyTp"]
+	__slots__ = ["_EqulstnMthdlgyTp", "_Rate", "_Amt", "_HghWtrmrk", "_GrssAsstVal"]
 	@property
-	def GrssAsstVal(self):
-		return self._GrssAsstVal
+	def EqulstnMthdlgyTp(self):
+		return self._EqulstnMthdlgyTp
 
-	@GrssAsstVal.setter
-	def GrssAsstVal(self, value):
-		self._GrssAsstVal = value if type(value) != auto else self.make_default("GrssAsstVal")
+	@EqulstnMthdlgyTp.setter
+	def EqulstnMthdlgyTp(self, value):
+		self._EqulstnMthdlgyTp = value if type(value) != auto else self.make_default("EqulstnMthdlgyTp")
 
-	@GrssAsstVal.deleter
-	def GrssAsstVal(self):
-		del self._GrssAsstVal
-		self._GrssAsstVal = None
+	@EqulstnMthdlgyTp.deleter
+	def EqulstnMthdlgyTp(self):
+		del self._EqulstnMthdlgyTp
+		self._EqulstnMthdlgyTp = None
+
+	@property
+	def Rate(self):
+		return self._Rate
+
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != auto else self.make_default("Rate")
+
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
 
 	@property
 	def Amt(self):
@@ -47,36 +60,23 @@ class Equalisation3(base_types._BaseFieldType):
 		self._HghWtrmrk = None
 
 	@property
-	def Rate(self):
-		return self._Rate
+	def GrssAsstVal(self):
+		return self._GrssAsstVal
 
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+	@GrssAsstVal.setter
+	def GrssAsstVal(self, value):
+		self._GrssAsstVal = value if type(value) != auto else self.make_default("GrssAsstVal")
 
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
-
-	@property
-	def EqulstnMthdlgyTp(self):
-		return self._EqulstnMthdlgyTp
-
-	@EqulstnMthdlgyTp.setter
-	def EqulstnMthdlgyTp(self, value):
-		self._EqulstnMthdlgyTp = value if type(value) != auto else self.make_default("EqulstnMthdlgyTp")
-
-	@EqulstnMthdlgyTp.deleter
-	def EqulstnMthdlgyTp(self):
-		del self._EqulstnMthdlgyTp
-		self._EqulstnMthdlgyTp = None
+	@GrssAsstVal.deleter
+	def GrssAsstVal(self):
+		del self._GrssAsstVal
+		self._GrssAsstVal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GrssAsstVal', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EqulstnMthdlgyTp', type=EqualisationMethodologyType2, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HghWtrmrk', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EqulstnMthdlgyTp', type=EqualisationMethodologyType2, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrssAsstVal', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

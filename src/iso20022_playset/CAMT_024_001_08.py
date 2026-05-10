@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ModifyStandingOrderV08
 
 class CAMT_024_001_08():

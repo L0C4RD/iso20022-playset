@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ActiveOrHistoricCurrencyAnd13DecimalAmount
 
 class PriceValue5(base_types._BaseFieldType):

@@ -1,26 +1,26 @@
-import base_types
-import Max35Text
-import CreditDebitCode
-import ActiveOrHistoricCurrencyAndAmount
-import CashAccount40
-import Purpose2Choice
+from . import base_types
 import References74Choice
+import CreditDebitCode
+import CashAccount40
+import ActiveOrHistoricCurrencyAndAmount
+import Max35Text
+import Purpose2Choice
 
 class TransactionAllocation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Purp", "_CdtDbtInd", "_Ref", "_Acct", "_RltdRefs", "_Amt"]
+	__slots__ = ["_Ref", "_CdtDbtInd", "_Amt", "_RltdRefs", "_Purp", "_Acct"]
 	@property
-	def Purp(self):
-		return self._Purp
+	def Ref(self):
+		return self._Ref
 
-	@Purp.setter
-	def Purp(self, value):
-		self._Purp = value if type(value) != auto else self.make_default("Purp")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
 
-	@Purp.deleter
-	def Purp(self):
-		del self._Purp
-		self._Purp = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	@property
 	def CdtDbtInd(self):
@@ -36,30 +36,17 @@ class TransactionAllocation1(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
-	def Ref(self):
-		return self._Ref
+	def Amt(self):
+		return self._Amt
 
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
-	@property
-	def Acct(self):
-		return self._Acct
-
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
-
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def RltdRefs(self):
@@ -75,24 +62,37 @@ class TransactionAllocation1(base_types._BaseFieldType):
 		self._RltdRefs = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def Purp(self):
+		return self._Purp
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@Purp.setter
+	def Purp(self, value):
+		self._Purp = value if type(value) != auto else self.make_default("Purp")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Purp.deleter
+	def Purp(self):
+		del self._Purp
+		self._Purp = None
+
+	@property
+	def Acct(self):
+		return self._Acct
+
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
+
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Purp', type=Purpose2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRefs', type=References74Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRefs', type=References74Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Purp', type=Purpose2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Acct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
 	))
 

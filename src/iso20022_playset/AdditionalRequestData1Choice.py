@@ -1,25 +1,12 @@
-import base_types
+from . import base_types
+import DebitAuthorisation3
+import CompensationRequest1
 import AdjustmentRequest1
 import Max500Text
-import CompensationRequest1
-import DebitAuthorisation3
 
 class AdditionalRequestData1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqNrrtv", "_ReqdCompstn", "_ReqdDbtAuthstn", "_ReqdValtn"]
-	@property
-	def ReqNrrtv(self):
-		return self._ReqNrrtv
-
-	@ReqNrrtv.setter
-	def ReqNrrtv(self, value):
-		self._ReqNrrtv = value if type(value) != auto else self.make_default("ReqNrrtv")
-
-	@ReqNrrtv.deleter
-	def ReqNrrtv(self):
-		del self._ReqNrrtv
-		self._ReqNrrtv = None
-
+	__slots__ = ["_ReqdCompstn", "_ReqNrrtv", "_ReqdValtn", "_ReqdDbtAuthstn"]
 	@property
 	def ReqdCompstn(self):
 		return self._ReqdCompstn
@@ -34,17 +21,17 @@ class AdditionalRequestData1Choice(base_types._BaseFieldType):
 		self._ReqdCompstn = None
 
 	@property
-	def ReqdDbtAuthstn(self):
-		return self._ReqdDbtAuthstn
+	def ReqNrrtv(self):
+		return self._ReqNrrtv
 
-	@ReqdDbtAuthstn.setter
-	def ReqdDbtAuthstn(self, value):
-		self._ReqdDbtAuthstn = value if type(value) != auto else self.make_default("ReqdDbtAuthstn")
+	@ReqNrrtv.setter
+	def ReqNrrtv(self, value):
+		self._ReqNrrtv = value if type(value) != auto else self.make_default("ReqNrrtv")
 
-	@ReqdDbtAuthstn.deleter
-	def ReqdDbtAuthstn(self):
-		del self._ReqdDbtAuthstn
-		self._ReqdDbtAuthstn = None
+	@ReqNrrtv.deleter
+	def ReqNrrtv(self):
+		del self._ReqNrrtv
+		self._ReqNrrtv = None
 
 	@property
 	def ReqdValtn(self):
@@ -59,10 +46,23 @@ class AdditionalRequestData1Choice(base_types._BaseFieldType):
 		del self._ReqdValtn
 		self._ReqdValtn = None
 
+	@property
+	def ReqdDbtAuthstn(self):
+		return self._ReqdDbtAuthstn
+
+	@ReqdDbtAuthstn.setter
+	def ReqdDbtAuthstn(self, value):
+		self._ReqdDbtAuthstn = value if type(value) != auto else self.make_default("ReqdDbtAuthstn")
+
+	@ReqdDbtAuthstn.deleter
+	def ReqdDbtAuthstn(self):
+		del self._ReqdDbtAuthstn
+		self._ReqdDbtAuthstn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqNrrtv', type=Max500Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ReqdCompstn', type=CompensationRequest1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ReqdDbtAuthstn', type=DebitAuthorisation3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ReqNrrtv', type=Max500Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ReqdValtn', type=AdjustmentRequest1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ReqdDbtAuthstn', type=DebitAuthorisation3, min=0, max=1, mutex_group=1, array=False),
 	))
 

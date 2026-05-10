@@ -1,6 +1,6 @@
-import base_types
-import ActiveCurrencyAndAmount
+from . import base_types
 import PlusOrMinusIndicator
+import ActiveCurrencyAndAmount
 
 class AmountAndDirection102(base_types._BaseFieldType):
 

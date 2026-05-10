@@ -1,15 +1,41 @@
-import base_types
-import Max35Text
-import SecuritiesAccount35
-import AlternatePartyIdentification8
-import PartyIdentification117Choice
+from . import base_types
 import AccountIdentification55Choice
+import PartyIdentification117Choice
 import TradingPartyCapacity3Choice
 import PartyTextInformation5
+import AlternatePartyIdentification8
+import Max35Text
+import SecuritiesAccount35
 
 class ConfirmationPartyDetails10(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgId", "_AddtlInf", "_PtyCpcty", "_SfkpgAcct", "_AltrnId", "_CshDtls", "_Id"]
+	__slots__ = ["_Id", "_CshDtls", "_PrcgId", "_SfkpgAcct", "_AddtlInf", "_PtyCpcty", "_AltrnId"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def CshDtls(self):
+		return self._CshDtls
+
+	@CshDtls.setter
+	def CshDtls(self, value):
+		self._CshDtls = value if type(value) != auto else self.make_default("CshDtls")
+
+	@CshDtls.deleter
+	def CshDtls(self):
+		del self._CshDtls
+		self._CshDtls = None
+
 	@property
 	def PrcgId(self):
 		return self._PrcgId
@@ -22,6 +48,19 @@ class ConfirmationPartyDetails10(base_types._BaseFieldType):
 	def PrcgId(self):
 		del self._PrcgId
 		self._PrcgId = None
+
+	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
 
 	@property
 	def AddtlInf(self):
@@ -50,19 +89,6 @@ class ConfirmationPartyDetails10(base_types._BaseFieldType):
 		self._PtyCpcty = None
 
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
-
-	@property
 	def AltrnId(self):
 		return self._AltrnId
 
@@ -75,39 +101,13 @@ class ConfirmationPartyDetails10(base_types._BaseFieldType):
 		del self._AltrnId
 		self._AltrnId = None
 
-	@property
-	def CshDtls(self):
-		return self._CshDtls
-
-	@CshDtls.setter
-	def CshDtls(self, value):
-		self._CshDtls = value if type(value) != auto else self.make_default("CshDtls")
-
-	@CshDtls.deleter
-	def CshDtls(self):
-		del self._CshDtls
-		self._CshDtls = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Id', type=PartyIdentification117Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshDtls', type=AccountIdentification55Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount35, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyCpcty', type=TradingPartyCapacity3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount35, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshDtls', type=AccountIdentification55Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification117Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

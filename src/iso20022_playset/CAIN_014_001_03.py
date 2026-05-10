@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RetrievalFulfilmentInitiationV03
 
 class CAIN_014_001_03():

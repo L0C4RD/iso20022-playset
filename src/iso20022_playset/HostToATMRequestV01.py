@@ -1,12 +1,12 @@
-import base_types
-import HostToATMRequest1
+from . import base_types
 import Header20
-import ContentInformationType15
+import HostToATMRequest1
 import ContentInformationType10
+import ContentInformationType15
 
 class HostToATMRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdHstToATMReq", "_SctyTrlr", "_Hdr", "_HstToATMReq"]
+	__slots__ = ["_PrtctdHstToATMReq", "_HstToATMReq", "_SctyTrlr", "_Hdr"]
 	@property
 	def PrtctdHstToATMReq(self):
 		return self._PrtctdHstToATMReq
@@ -19,6 +19,19 @@ class HostToATMRequestV01(base_types._BaseFieldType):
 	def PrtctdHstToATMReq(self):
 		del self._PrtctdHstToATMReq
 		self._PrtctdHstToATMReq = None
+
+	@property
+	def HstToATMReq(self):
+		return self._HstToATMReq
+
+	@HstToATMReq.setter
+	def HstToATMReq(self, value):
+		self._HstToATMReq = value if type(value) != auto else self.make_default("HstToATMReq")
+
+	@HstToATMReq.deleter
+	def HstToATMReq(self):
+		del self._HstToATMReq
+		self._HstToATMReq = None
 
 	@property
 	def SctyTrlr(self):
@@ -46,23 +59,10 @@ class HostToATMRequestV01(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
-	@property
-	def HstToATMReq(self):
-		return self._HstToATMReq
-
-	@HstToATMReq.setter
-	def HstToATMReq(self, value):
-		self._HstToATMReq = value if type(value) != auto else self.make_default("HstToATMReq")
-
-	@HstToATMReq.deleter
-	def HstToATMReq(self):
-		del self._HstToATMReq
-		self._HstToATMReq = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtctdHstToATMReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HstToATMReq', type=HostToATMRequest1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header20, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HstToATMReq', type=HostToATMRequest1, min=0, max=1, mutex_group=None, array=False),
 	))
 

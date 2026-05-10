@@ -1,23 +1,23 @@
-import base_types
-import AcceptorCancellationAdviceResponse13
-import AcceptorCompletionAdviceResponse13
+from . import base_types
 import CardPaymentBatchTransferResponse12
+import AcceptorCompletionAdviceResponse13
+import AcceptorCancellationAdviceResponse13
 
 class AcquirerToAcceptorFileBody2(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRspn", "_CmpltnAdvcRspn", "_BtchTrfRspn"]
+	__slots__ = ["_BtchTrfRspn", "_CmpltnAdvcRspn", "_CxlRspn"]
 	@property
-	def CxlRspn(self):
-		return self._CxlRspn
+	def BtchTrfRspn(self):
+		return self._BtchTrfRspn
 
-	@CxlRspn.setter
-	def CxlRspn(self, value):
-		self._CxlRspn = value if type(value) != auto else self.make_default("CxlRspn")
+	@BtchTrfRspn.setter
+	def BtchTrfRspn(self, value):
+		self._BtchTrfRspn = value if type(value) != auto else self.make_default("BtchTrfRspn")
 
-	@CxlRspn.deleter
-	def CxlRspn(self):
-		del self._CxlRspn
-		self._CxlRspn = None
+	@BtchTrfRspn.deleter
+	def BtchTrfRspn(self):
+		del self._BtchTrfRspn
+		self._BtchTrfRspn = None
 
 	@property
 	def CmpltnAdvcRspn(self):
@@ -33,21 +33,21 @@ class AcquirerToAcceptorFileBody2(base_types._BaseFieldType):
 		self._CmpltnAdvcRspn = None
 
 	@property
-	def BtchTrfRspn(self):
-		return self._BtchTrfRspn
+	def CxlRspn(self):
+		return self._CxlRspn
 
-	@BtchTrfRspn.setter
-	def BtchTrfRspn(self, value):
-		self._BtchTrfRspn = value if type(value) != auto else self.make_default("BtchTrfRspn")
+	@CxlRspn.setter
+	def CxlRspn(self, value):
+		self._CxlRspn = value if type(value) != auto else self.make_default("CxlRspn")
 
-	@BtchTrfRspn.deleter
-	def BtchTrfRspn(self):
-		del self._BtchTrfRspn
-		self._BtchTrfRspn = None
+	@CxlRspn.deleter
+	def CxlRspn(self):
+		del self._CxlRspn
+		self._CxlRspn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlRspn', type=AcceptorCancellationAdviceResponse13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmpltnAdvcRspn', type=AcceptorCompletionAdviceResponse13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BtchTrfRspn', type=CardPaymentBatchTransferResponse12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmpltnAdvcRspn', type=AcceptorCompletionAdviceResponse13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRspn', type=AcceptorCancellationAdviceResponse13, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class Percentage14Rate(base_types._BaseDataType_Decimal):
 

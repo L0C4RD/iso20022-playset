@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RestrictedFINXMax350Text
 
 class UpdatedAdditionalInformation22(base_types._BaseFieldType):

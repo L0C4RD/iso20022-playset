@@ -1,13 +1,26 @@
-import base_types
+from . import base_types
+import LoyaltyAccount3
+import TransactionIdentifier1
 import Max35Text
 import CustomerOrder1
 import LanguageCode
-import TransactionIdentifier1
-import LoyaltyAccount3
 
 class CardAcquisitionResponse3(base_types._BaseFieldType):
 
-	__slots__ = ["_CstmrOrdr", "_CstmrLang", "_LltyAcct", "_SaleTxId", "_PmtBrnd", "_POITxId"]
+	__slots__ = ["_POITxId", "_CstmrOrdr", "_CstmrLang", "_PmtBrnd", "_SaleTxId", "_LltyAcct"]
+	@property
+	def POITxId(self):
+		return self._POITxId
+
+	@POITxId.setter
+	def POITxId(self, value):
+		self._POITxId = value if type(value) != auto else self.make_default("POITxId")
+
+	@POITxId.deleter
+	def POITxId(self):
+		del self._POITxId
+		self._POITxId = None
+
 	@property
 	def CstmrOrdr(self):
 		return self._CstmrOrdr
@@ -35,17 +48,17 @@ class CardAcquisitionResponse3(base_types._BaseFieldType):
 		self._CstmrLang = None
 
 	@property
-	def LltyAcct(self):
-		return self._LltyAcct
+	def PmtBrnd(self):
+		return self._PmtBrnd
 
-	@LltyAcct.setter
-	def LltyAcct(self, value):
-		self._LltyAcct = value if type(value) != auto else self.make_default("LltyAcct")
+	@PmtBrnd.setter
+	def PmtBrnd(self, value):
+		self._PmtBrnd = value if type(value) != auto else self.make_default("PmtBrnd")
 
-	@LltyAcct.deleter
-	def LltyAcct(self):
-		del self._LltyAcct
-		self._LltyAcct = None
+	@PmtBrnd.deleter
+	def PmtBrnd(self):
+		del self._PmtBrnd
+		self._PmtBrnd = None
 
 	@property
 	def SaleTxId(self):
@@ -61,37 +74,24 @@ class CardAcquisitionResponse3(base_types._BaseFieldType):
 		self._SaleTxId = None
 
 	@property
-	def PmtBrnd(self):
-		return self._PmtBrnd
+	def LltyAcct(self):
+		return self._LltyAcct
 
-	@PmtBrnd.setter
-	def PmtBrnd(self, value):
-		self._PmtBrnd = value if type(value) != auto else self.make_default("PmtBrnd")
+	@LltyAcct.setter
+	def LltyAcct(self, value):
+		self._LltyAcct = value if type(value) != auto else self.make_default("LltyAcct")
 
-	@PmtBrnd.deleter
-	def PmtBrnd(self):
-		del self._PmtBrnd
-		self._PmtBrnd = None
-
-	@property
-	def POITxId(self):
-		return self._POITxId
-
-	@POITxId.setter
-	def POITxId(self, value):
-		self._POITxId = value if type(value) != auto else self.make_default("POITxId")
-
-	@POITxId.deleter
-	def POITxId(self):
-		del self._POITxId
-		self._POITxId = None
+	@LltyAcct.deleter
+	def LltyAcct(self):
+		del self._LltyAcct
+		self._LltyAcct = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='POITxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrOrdr', type=CustomerOrder1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CstmrLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LltyAcct', type=LoyaltyAccount3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtBrnd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='POITxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LltyAcct', type=LoyaltyAccount3, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,11 +1,11 @@
-import base_types
-import CurrencyControlHeader9
+from . import base_types
 import SupportingDocumentRequestOrLetter4
 import SupplementaryData1
+import CurrencyControlHeader9
 
 class CurrencyControlRequestOrLetterV04(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_ReqOrLttr", "_GrpHdr"]
+	__slots__ = ["_SplmtryData", "_GrpHdr", "_ReqOrLttr"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -20,19 +20,6 @@ class CurrencyControlRequestOrLetterV04(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def ReqOrLttr(self):
-		return self._ReqOrLttr
-
-	@ReqOrLttr.setter
-	def ReqOrLttr(self, value):
-		self._ReqOrLttr = value if type(value) != auto else self.make_default("ReqOrLttr")
-
-	@ReqOrLttr.deleter
-	def ReqOrLttr(self):
-		del self._ReqOrLttr
-		self._ReqOrLttr = None
-
-	@property
 	def GrpHdr(self):
 		return self._GrpHdr
 
@@ -45,9 +32,22 @@ class CurrencyControlRequestOrLetterV04(base_types._BaseFieldType):
 		del self._GrpHdr
 		self._GrpHdr = None
 
+	@property
+	def ReqOrLttr(self):
+		return self._ReqOrLttr
+
+	@ReqOrLttr.setter
+	def ReqOrLttr(self, value):
+		self._ReqOrLttr = value if type(value) != auto else self.make_default("ReqOrLttr")
+
+	@ReqOrLttr.deleter
+	def ReqOrLttr(self):
+		del self._ReqOrLttr
+		self._ReqOrLttr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqOrLttr', type=SupportingDocumentRequestOrLetter4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqOrLttr', type=SupportingDocumentRequestOrLetter4, min=1, max=None, mutex_group=None, array=True),
 	))
 

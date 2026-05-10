@@ -1,24 +1,11 @@
-import base_types
-import Max35Text
+from . import base_types
 import ISODate
 import Max140Text
+import Max35Text
 
 class LegalOrganisation2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_RegnDt", "_Nm", "_EstblishmtDt"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_RegnDt", "_Nm", "_Id", "_EstblishmtDt"]
 	@property
 	def RegnDt(self):
 		return self._RegnDt
@@ -46,6 +33,19 @@ class LegalOrganisation2(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
 	def EstblishmtDt(self):
 		return self._EstblishmtDt
 
@@ -59,9 +59,9 @@ class LegalOrganisation2(base_types._BaseFieldType):
 		self._EstblishmtDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EstblishmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
+import Max140Text
 import ReportingMessageStatus1Code
 import GenericValidationRuleIdentification1
-import Max140Text
 
 class RejectionReason45(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_DtldVldtnRule", "_MsgRptId"]
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
+	__slots__ = ["_DtldVldtnRule", "_MsgRptId", "_Sts"]
 	@property
 	def DtldVldtnRule(self):
 		return self._DtldVldtnRule
@@ -45,9 +32,22 @@ class RejectionReason45(base_types._BaseFieldType):
 		del self._MsgRptId
 		self._MsgRptId = None
 
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=ReportingMessageStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtldVldtnRule', type=GenericValidationRuleIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgRptId', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=ReportingMessageStatus1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesFinancingReportingPairingRequestV02
 
 class AUTH_078_001_02():

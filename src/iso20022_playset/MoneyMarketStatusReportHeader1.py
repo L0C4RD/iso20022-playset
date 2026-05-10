@@ -1,25 +1,12 @@
-import base_types
-import GenericValidationRuleIdentification1
+from . import base_types
 import StatisticalReportingStatus1Code
-import DateTimePeriod1
 import LEIIdentifier
+import GenericValidationRuleIdentification1
+import DateTimePeriod1
 
 class MoneyMarketStatusReportHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgAgt", "_RptSts", "_VldtnRule", "_RptgPrd"]
-	@property
-	def RptgAgt(self):
-		return self._RptgAgt
-
-	@RptgAgt.setter
-	def RptgAgt(self, value):
-		self._RptgAgt = value if type(value) != auto else self.make_default("RptgAgt")
-
-	@RptgAgt.deleter
-	def RptgAgt(self):
-		del self._RptgAgt
-		self._RptgAgt = None
-
+	__slots__ = ["_RptSts", "_VldtnRule", "_RptgPrd", "_RptgAgt"]
 	@property
 	def RptSts(self):
 		return self._RptSts
@@ -59,10 +46,23 @@ class MoneyMarketStatusReportHeader1(base_types._BaseFieldType):
 		del self._RptgPrd
 		self._RptgPrd = None
 
+	@property
+	def RptgAgt(self):
+		return self._RptgAgt
+
+	@RptgAgt.setter
+	def RptgAgt(self, value):
+		self._RptgAgt = value if type(value) != auto else self.make_default("RptgAgt")
+
+	@RptgAgt.deleter
+	def RptgAgt(self):
+		del self._RptgAgt
+		self._RptgAgt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgAgt', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptSts', type=StatisticalReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptgPrd', type=DateTimePeriod1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgAgt', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 	))
 

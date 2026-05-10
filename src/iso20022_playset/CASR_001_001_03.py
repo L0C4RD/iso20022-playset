@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SettlementReportingInitiationV03
 
 class CASR_001_001_03():

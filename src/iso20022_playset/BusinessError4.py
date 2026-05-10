@@ -1,6 +1,6 @@
-import base_types
-import SecurityIdentification39
+from . import base_types
 import ErrorHandling5
+import SecurityIdentification39
 
 class BusinessError4(base_types._BaseFieldType):
 

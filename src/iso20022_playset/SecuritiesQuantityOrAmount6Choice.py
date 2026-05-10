@@ -1,6 +1,6 @@
-import base_types
-import ActiveCurrencyAndAmount
+from . import base_types
 import SecuritiesOption79
+import ActiveCurrencyAndAmount
 
 class SecuritiesQuantityOrAmount6Choice(base_types._BaseFieldType):
 

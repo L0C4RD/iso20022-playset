@@ -1,10 +1,23 @@
-import base_types
+from . import base_types
 import UpdatedAdditionalInformation19
 import UpdatedAdditionalInformation21
 
 class CorporateActionNarrative59(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyRstrctn", "_TaxtnConds", "_AddtlTxt", "_InfConds", "_NrrtvVrsn", "_Dsclmr", "_CertfctnBrkdwn", "_InfToCmplyWth"]
+	__slots__ = ["_InfConds", "_SctyRstrctn", "_TaxtnConds", "_Dsclmr", "_NrrtvVrsn", "_CertfctnBrkdwn", "_InfToCmplyWth", "_AddtlTxt"]
+	@property
+	def InfConds(self):
+		return self._InfConds
+
+	@InfConds.setter
+	def InfConds(self, value):
+		self._InfConds = value if type(value) != auto else self.make_default("InfConds")
+
+	@InfConds.deleter
+	def InfConds(self):
+		del self._InfConds
+		self._InfConds = None
+
 	@property
 	def SctyRstrctn(self):
 		return self._SctyRstrctn
@@ -32,30 +45,17 @@ class CorporateActionNarrative59(base_types._BaseFieldType):
 		self._TaxtnConds = None
 
 	@property
-	def AddtlTxt(self):
-		return self._AddtlTxt
+	def Dsclmr(self):
+		return self._Dsclmr
 
-	@AddtlTxt.setter
-	def AddtlTxt(self, value):
-		self._AddtlTxt = value if type(value) != auto else self.make_default("AddtlTxt")
+	@Dsclmr.setter
+	def Dsclmr(self, value):
+		self._Dsclmr = value if type(value) != auto else self.make_default("Dsclmr")
 
-	@AddtlTxt.deleter
-	def AddtlTxt(self):
-		del self._AddtlTxt
-		self._AddtlTxt = None
-
-	@property
-	def InfConds(self):
-		return self._InfConds
-
-	@InfConds.setter
-	def InfConds(self, value):
-		self._InfConds = value if type(value) != auto else self.make_default("InfConds")
-
-	@InfConds.deleter
-	def InfConds(self):
-		del self._InfConds
-		self._InfConds = None
+	@Dsclmr.deleter
+	def Dsclmr(self):
+		del self._Dsclmr
+		self._Dsclmr = None
 
 	@property
 	def NrrtvVrsn(self):
@@ -69,19 +69,6 @@ class CorporateActionNarrative59(base_types._BaseFieldType):
 	def NrrtvVrsn(self):
 		del self._NrrtvVrsn
 		self._NrrtvVrsn = None
-
-	@property
-	def Dsclmr(self):
-		return self._Dsclmr
-
-	@Dsclmr.setter
-	def Dsclmr(self, value):
-		self._Dsclmr = value if type(value) != auto else self.make_default("Dsclmr")
-
-	@Dsclmr.deleter
-	def Dsclmr(self):
-		del self._Dsclmr
-		self._Dsclmr = None
 
 	@property
 	def CertfctnBrkdwn(self):
@@ -109,14 +96,27 @@ class CorporateActionNarrative59(base_types._BaseFieldType):
 		del self._InfToCmplyWth
 		self._InfToCmplyWth = None
 
+	@property
+	def AddtlTxt(self):
+		return self._AddtlTxt
+
+	@AddtlTxt.setter
+	def AddtlTxt(self, value):
+		self._AddtlTxt = value if type(value) != auto else self.make_default("AddtlTxt")
+
+	@AddtlTxt.deleter
+	def AddtlTxt(self):
+		del self._AddtlTxt
+		self._AddtlTxt = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='InfConds', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctyRstrctn', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TaxtnConds', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlTxt', type=UpdatedAdditionalInformation19, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InfConds', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NrrtvVrsn', type=UpdatedAdditionalInformation19, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Dsclmr', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NrrtvVrsn', type=UpdatedAdditionalInformation19, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CertfctnBrkdwn', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InfToCmplyWth', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlTxt', type=UpdatedAdditionalInformation19, min=0, max=None, mutex_group=None, array=True),
 	))
 

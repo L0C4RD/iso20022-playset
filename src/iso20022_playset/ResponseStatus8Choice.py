@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import RejectionStatus27Choice
-import PendingStatus20Choice
 import ConsentStatus5Choice
+import PendingStatus20Choice
 
 class ResponseStatus8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Pdg", "_Cnsntd", "_Rjctd"]
+	__slots__ = ["_Rjctd", "_Cnsntd", "_Pdg"]
 	@property
-	def Pdg(self):
-		return self._Pdg
+	def Rjctd(self):
+		return self._Rjctd
 
-	@Pdg.setter
-	def Pdg(self, value):
-		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
 
-	@Pdg.deleter
-	def Pdg(self):
-		del self._Pdg
-		self._Pdg = None
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
 
 	@property
 	def Cnsntd(self):
@@ -33,21 +33,21 @@ class ResponseStatus8Choice(base_types._BaseFieldType):
 		self._Cnsntd = None
 
 	@property
-	def Rjctd(self):
-		return self._Rjctd
+	def Pdg(self):
+		return self._Pdg
 
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+	@Pdg.setter
+	def Pdg(self, value):
+		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
 
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
+	@Pdg.deleter
+	def Pdg(self):
+		del self._Pdg
+		self._Pdg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pdg', type=PendingStatus20Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cnsntd', type=ConsentStatus5Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectionStatus27Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cnsntd', type=ConsentStatus5Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pdg', type=PendingStatus20Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

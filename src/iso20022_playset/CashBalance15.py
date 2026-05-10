@@ -1,13 +1,13 @@
-import base_types
-import ActiveOrHistoricCurrencyAndAmount
+from . import base_types
 import CashAccountIdentification5Choice
 import ValuationsDetails2
 import GenericIdentification178
 import ForeignExchangeTerms19
+import ActiveOrHistoricCurrencyAndAmount
 
 class CashBalance15(base_types._BaseFieldType):
 
-	__slots__ = ["_FXDtls", "_TxLotNb", "_CshAcct", "_ValtnDtls", "_Amt"]
+	__slots__ = ["_FXDtls", "_Amt", "_CshAcct", "_ValtnDtls", "_TxLotNb"]
 	@property
 	def FXDtls(self):
 		return self._FXDtls
@@ -22,17 +22,17 @@ class CashBalance15(base_types._BaseFieldType):
 		self._FXDtls = None
 
 	@property
-	def TxLotNb(self):
-		return self._TxLotNb
+	def Amt(self):
+		return self._Amt
 
-	@TxLotNb.setter
-	def TxLotNb(self, value):
-		self._TxLotNb = value if type(value) != auto else self.make_default("TxLotNb")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@TxLotNb.deleter
-	def TxLotNb(self):
-		del self._TxLotNb
-		self._TxLotNb = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def CshAcct(self):
@@ -61,23 +61,23 @@ class CashBalance15(base_types._BaseFieldType):
 		self._ValtnDtls = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def TxLotNb(self):
+		return self._TxLotNb
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@TxLotNb.setter
+	def TxLotNb(self, value):
+		self._TxLotNb = value if type(value) != auto else self.make_default("TxLotNb")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@TxLotNb.deleter
+	def TxLotNb(self):
+		del self._TxLotNb
+		self._TxLotNb = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxLotNb', type=GenericIdentification178, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnDtls', type=ValuationsDetails2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxLotNb', type=GenericIdentification178, min=0, max=None, mutex_group=None, array=True),
 	))
 

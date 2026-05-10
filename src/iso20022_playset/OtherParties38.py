@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import PartyIdentification136
 import PartyIdentification149
 
 class OtherParties38(base_types._BaseFieldType):
 
-	__slots__ = ["_Invstr", "_Issr"]
-	@property
-	def Invstr(self):
-		return self._Invstr
-
-	@Invstr.setter
-	def Invstr(self, value):
-		self._Invstr = value if type(value) != auto else self.make_default("Invstr")
-
-	@Invstr.deleter
-	def Invstr(self):
-		del self._Invstr
-		self._Invstr = None
-
+	__slots__ = ["_Issr", "_Invstr"]
 	@property
 	def Issr(self):
 		return self._Issr
@@ -31,8 +18,21 @@ class OtherParties38(base_types._BaseFieldType):
 		del self._Issr
 		self._Issr = None
 
+	@property
+	def Invstr(self):
+		return self._Invstr
+
+	@Invstr.setter
+	def Invstr(self, value):
+		self._Invstr = value if type(value) != auto else self.make_default("Invstr")
+
+	@Invstr.deleter
+	def Invstr(self):
+		del self._Invstr
+		self._Invstr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Invstr', type=PartyIdentification149, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Issr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Invstr', type=PartyIdentification149, min=0, max=None, mutex_group=None, array=True),
 	))
 

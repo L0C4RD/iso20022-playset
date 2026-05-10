@@ -1,6 +1,6 @@
-import base_types
-import SystemEventType2Code
+from . import base_types
 import GenericIdentification1
+import SystemEventType2Code
 
 class SystemEventType2Choice(base_types._BaseFieldType):
 

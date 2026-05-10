@@ -1,6 +1,6 @@
-import base_types
-import Modification1Code
+from . import base_types
 import Restriction1
+import Modification1Code
 
 class RestrictionModification1(base_types._BaseFieldType):
 

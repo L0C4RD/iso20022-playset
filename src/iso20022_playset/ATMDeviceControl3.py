@@ -1,23 +1,10 @@
-import base_types
-import ATMCommand14
+from . import base_types
 import ATMEnvironment7
+import ATMCommand14
 
 class ATMDeviceControl3(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmd", "_Envt"]
-	@property
-	def Cmd(self):
-		return self._Cmd
-
-	@Cmd.setter
-	def Cmd(self, value):
-		self._Cmd = value if type(value) != auto else self.make_default("Cmd")
-
-	@Cmd.deleter
-	def Cmd(self):
-		del self._Cmd
-		self._Cmd = None
-
+	__slots__ = ["_Envt", "_Cmd"]
 	@property
 	def Envt(self):
 		return self._Envt
@@ -31,8 +18,21 @@ class ATMDeviceControl3(base_types._BaseFieldType):
 		del self._Envt
 		self._Envt = None
 
+	@property
+	def Cmd(self):
+		return self._Cmd
+
+	@Cmd.setter
+	def Cmd(self, value):
+		self._Cmd = value if type(value) != auto else self.make_default("Cmd")
+
+	@Cmd.deleter
+	def Cmd(self):
+		del self._Cmd
+		self._Cmd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cmd', type=ATMCommand14, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cmd', type=ATMCommand14, min=0, max=None, mutex_group=None, array=True),
 	))
 

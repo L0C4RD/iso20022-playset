@@ -1,8 +1,8 @@
-import base_types
-import Max35Text
+from . import base_types
+import TerminalHosting1
 import AutomatedTellerMachine6
 import Acquirer7
-import TerminalHosting1
+import Max35Text
 
 class ATMEnvironment15(base_types._BaseFieldType):
 

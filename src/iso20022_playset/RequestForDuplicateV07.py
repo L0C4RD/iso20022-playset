@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import Case6
 import SupplementaryData1
 import CaseAssignment6
 
 class RequestForDuplicateV07(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnmt", "_SplmtryData", "_Case"]
+	__slots__ = ["_Case", "_SplmtryData", "_Assgnmt"]
 	@property
-	def Assgnmt(self):
-		return self._Assgnmt
+	def Case(self):
+		return self._Case
 
-	@Assgnmt.setter
-	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
+	@Case.setter
+	def Case(self, value):
+		self._Case = value if type(value) != auto else self.make_default("Case")
 
-	@Assgnmt.deleter
-	def Assgnmt(self):
-		del self._Assgnmt
-		self._Assgnmt = None
+	@Case.deleter
+	def Case(self):
+		del self._Case
+		self._Case = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class RequestForDuplicateV07(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Case(self):
-		return self._Case
+	def Assgnmt(self):
+		return self._Assgnmt
 
-	@Case.setter
-	def Case(self, value):
-		self._Case = value if type(value) != auto else self.make_default("Case")
+	@Assgnmt.setter
+	def Assgnmt(self, value):
+		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
 
-	@Case.deleter
-	def Case(self):
-		del self._Case
-		self._Case = None
+	@Assgnmt.deleter
+	def Assgnmt(self):
+		del self._Assgnmt
+		self._Assgnmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 	))
 

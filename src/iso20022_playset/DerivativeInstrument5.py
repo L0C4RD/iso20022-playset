@@ -1,16 +1,29 @@
-import base_types
-import PhysicalTransferType4Code
-import FinancialInstrumentIdentification5Choice
-import AssetClass2
+from . import base_types
 import ISODate
-import SecuritiesTransactionPrice4Choice
-import OptionStyle7Code
-import OptionType2Code
+import PhysicalTransferType4Code
 import NonNegativeDecimalNumber
+import OptionStyle7Code
+import SecuritiesTransactionPrice4Choice
+import AssetClass2
+import FinancialInstrumentIdentification5Choice
+import OptionType2Code
 
 class DerivativeInstrument5(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygInstrm", "_PricMltplr", "_XpryDt", "_DlvryTp", "_AsstClssSpcfcAttrbts", "_OptnExrcStyle", "_OptnTp", "_StrkPric"]
+	__slots__ = ["_OptnTp", "_UndrlygInstrm", "_DlvryTp", "_OptnExrcStyle", "_XpryDt", "_PricMltplr", "_StrkPric", "_AsstClssSpcfcAttrbts"]
+	@property
+	def OptnTp(self):
+		return self._OptnTp
+
+	@OptnTp.setter
+	def OptnTp(self, value):
+		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
+
+	@OptnTp.deleter
+	def OptnTp(self):
+		del self._OptnTp
+		self._OptnTp = None
+
 	@property
 	def UndrlygInstrm(self):
 		return self._UndrlygInstrm
@@ -23,32 +36,6 @@ class DerivativeInstrument5(base_types._BaseFieldType):
 	def UndrlygInstrm(self):
 		del self._UndrlygInstrm
 		self._UndrlygInstrm = None
-
-	@property
-	def PricMltplr(self):
-		return self._PricMltplr
-
-	@PricMltplr.setter
-	def PricMltplr(self, value):
-		self._PricMltplr = value if type(value) != auto else self.make_default("PricMltplr")
-
-	@PricMltplr.deleter
-	def PricMltplr(self):
-		del self._PricMltplr
-		self._PricMltplr = None
-
-	@property
-	def XpryDt(self):
-		return self._XpryDt
-
-	@XpryDt.setter
-	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
-
-	@XpryDt.deleter
-	def XpryDt(self):
-		del self._XpryDt
-		self._XpryDt = None
 
 	@property
 	def DlvryTp(self):
@@ -64,19 +51,6 @@ class DerivativeInstrument5(base_types._BaseFieldType):
 		self._DlvryTp = None
 
 	@property
-	def AsstClssSpcfcAttrbts(self):
-		return self._AsstClssSpcfcAttrbts
-
-	@AsstClssSpcfcAttrbts.setter
-	def AsstClssSpcfcAttrbts(self, value):
-		self._AsstClssSpcfcAttrbts = value if type(value) != auto else self.make_default("AsstClssSpcfcAttrbts")
-
-	@AsstClssSpcfcAttrbts.deleter
-	def AsstClssSpcfcAttrbts(self):
-		del self._AsstClssSpcfcAttrbts
-		self._AsstClssSpcfcAttrbts = None
-
-	@property
 	def OptnExrcStyle(self):
 		return self._OptnExrcStyle
 
@@ -90,17 +64,30 @@ class DerivativeInstrument5(base_types._BaseFieldType):
 		self._OptnExrcStyle = None
 
 	@property
-	def OptnTp(self):
-		return self._OptnTp
+	def XpryDt(self):
+		return self._XpryDt
 
-	@OptnTp.setter
-	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
+	@XpryDt.setter
+	def XpryDt(self, value):
+		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
 
-	@OptnTp.deleter
-	def OptnTp(self):
-		del self._OptnTp
-		self._OptnTp = None
+	@XpryDt.deleter
+	def XpryDt(self):
+		del self._XpryDt
+		self._XpryDt = None
+
+	@property
+	def PricMltplr(self):
+		return self._PricMltplr
+
+	@PricMltplr.setter
+	def PricMltplr(self, value):
+		self._PricMltplr = value if type(value) != auto else self.make_default("PricMltplr")
+
+	@PricMltplr.deleter
+	def PricMltplr(self):
+		del self._PricMltplr
+		self._PricMltplr = None
 
 	@property
 	def StrkPric(self):
@@ -115,14 +102,27 @@ class DerivativeInstrument5(base_types._BaseFieldType):
 		del self._StrkPric
 		self._StrkPric = None
 
+	@property
+	def AsstClssSpcfcAttrbts(self):
+		return self._AsstClssSpcfcAttrbts
+
+	@AsstClssSpcfcAttrbts.setter
+	def AsstClssSpcfcAttrbts(self, value):
+		self._AsstClssSpcfcAttrbts = value if type(value) != auto else self.make_default("AsstClssSpcfcAttrbts")
+
+	@AsstClssSpcfcAttrbts.deleter
+	def AsstClssSpcfcAttrbts(self):
+		del self._AsstClssSpcfcAttrbts
+		self._AsstClssSpcfcAttrbts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygInstrm', type=FinancialInstrumentIdentification5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricMltplr', type=NonNegativeDecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryTp', type=PhysicalTransferType4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AsstClssSpcfcAttrbts', type=AssetClass2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnExrcStyle', type=OptionStyle7Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnTp', type=OptionType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygInstrm', type=FinancialInstrumentIdentification5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryTp', type=PhysicalTransferType4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnExrcStyle', type=OptionStyle7Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricMltplr', type=NonNegativeDecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StrkPric', type=SecuritiesTransactionPrice4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AsstClssSpcfcAttrbts', type=AssetClass2, min=0, max=1, mutex_group=None, array=False),
 	))
 

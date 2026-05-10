@@ -1,23 +1,23 @@
-import base_types
-import ISINOct2015Identifier
-import OtherIdentification2
+from . import base_types
 import RestrictedFINXMax140Text
+import OtherIdentification2
+import ISINOct2015Identifier
 
 class SecurityIdentification21(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_OthrId", "_ISIN"]
+	__slots__ = ["_ISIN", "_OthrId", "_Desc"]
 	@property
-	def Desc(self):
-		return self._Desc
+	def ISIN(self):
+		return self._ISIN
 
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+	@ISIN.setter
+	def ISIN(self, value):
+		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
 
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
+	@ISIN.deleter
+	def ISIN(self):
+		del self._ISIN
+		self._ISIN = None
 
 	@property
 	def OthrId(self):
@@ -33,21 +33,21 @@ class SecurityIdentification21(base_types._BaseFieldType):
 		self._OthrId = None
 
 	@property
-	def ISIN(self):
-		return self._ISIN
+	def Desc(self):
+		return self._Desc
 
-	@ISIN.setter
-	def ISIN(self, value):
-		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
 
-	@ISIN.deleter
-	def ISIN(self):
-		del self._ISIN
-		self._ISIN = None
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Desc', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrId', type=OtherIdentification2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrId', type=OtherIdentification2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Desc', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

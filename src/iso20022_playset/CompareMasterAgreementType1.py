@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AgreementType2Choice
 
 class CompareMasterAgreementType1(base_types._BaseFieldType):

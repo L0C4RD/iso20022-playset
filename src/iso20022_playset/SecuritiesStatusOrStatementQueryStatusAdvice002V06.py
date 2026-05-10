@@ -1,15 +1,15 @@
-import base_types
-import SecuritiesAccount30
-import SupplementaryData1
-import PartyIdentification156
+from . import base_types
 import BlockChainAddressWallet7
 import StatusOrStatement12Choice
-import DocumentIdentification55
+import SecuritiesAccount30
+import PartyIdentification156
 import ProcessingStatus95Choice
+import DocumentIdentification55
+import SupplementaryData1
 
 class SecuritiesStatusOrStatementQueryStatusAdvice002V06(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_StsOrStmtReqd", "_AcctOwnr", "_QryDtls", "_SfkpgAcct", "_PrcgSts", "_SplmtryData"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_QryDtls", "_PrcgSts", "_AcctOwnr", "_SplmtryData", "_StsOrStmtReqd", "_SfkpgAcct"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -22,32 +22,6 @@ class SecuritiesStatusOrStatementQueryStatusAdvice002V06(base_types._BaseFieldTy
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
 		self._BlckChainAdrOrWllt = None
-
-	@property
-	def StsOrStmtReqd(self):
-		return self._StsOrStmtReqd
-
-	@StsOrStmtReqd.setter
-	def StsOrStmtReqd(self, value):
-		self._StsOrStmtReqd = value if type(value) != auto else self.make_default("StsOrStmtReqd")
-
-	@StsOrStmtReqd.deleter
-	def StsOrStmtReqd(self):
-		del self._StsOrStmtReqd
-		self._StsOrStmtReqd = None
-
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
 
 	@property
 	def QryDtls(self):
@@ -63,19 +37,6 @@ class SecuritiesStatusOrStatementQueryStatusAdvice002V06(base_types._BaseFieldTy
 		self._QryDtls = None
 
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
-
-	@property
 	def PrcgSts(self):
 		return self._PrcgSts
 
@@ -87,6 +48,19 @@ class SecuritiesStatusOrStatementQueryStatusAdvice002V06(base_types._BaseFieldTy
 	def PrcgSts(self):
 		del self._PrcgSts
 		self._PrcgSts = None
+
+	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
 
 	@property
 	def SplmtryData(self):
@@ -101,13 +75,39 @@ class SecuritiesStatusOrStatementQueryStatusAdvice002V06(base_types._BaseFieldTy
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def StsOrStmtReqd(self):
+		return self._StsOrStmtReqd
+
+	@StsOrStmtReqd.setter
+	def StsOrStmtReqd(self, value):
+		self._StsOrStmtReqd = value if type(value) != auto else self.make_default("StsOrStmtReqd")
+
+	@StsOrStmtReqd.deleter
+	def StsOrStmtReqd(self):
+		del self._StsOrStmtReqd
+		self._StsOrStmtReqd = None
+
+	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsOrStmtReqd', type=StatusOrStatement12Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryDtls', type=DocumentIdentification55, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus95Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsOrStmtReqd', type=StatusOrStatement12Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
 	))
 

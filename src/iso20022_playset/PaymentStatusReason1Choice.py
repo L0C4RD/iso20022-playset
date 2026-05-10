@@ -1,27 +1,27 @@
-import base_types
-import UnmatchedStatusReason1Code
-import Max35Text
-import PendingSettlement2Code
+from . import base_types
 import CancelledStatusReason1Code
+import UnmatchedStatusReason1Code
+import PendingSettlement2Code
 import ProprietaryStatusJustification2
+import Max35Text
 import SuspendedStatusReason1Code
 import PendingFailingSettlement1Code
 
 class PaymentStatusReason1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Sspd", "_Canc", "_Umtchd", "_PdgSttlm", "_PdgFlngSttlm", "_PrtryRjctn", "_Prtry"]
+	__slots__ = ["_PdgSttlm", "_Canc", "_Prtry", "_Umtchd", "_PdgFlngSttlm", "_PrtryRjctn", "_Sspd"]
 	@property
-	def Sspd(self):
-		return self._Sspd
+	def PdgSttlm(self):
+		return self._PdgSttlm
 
-	@Sspd.setter
-	def Sspd(self, value):
-		self._Sspd = value if type(value) != auto else self.make_default("Sspd")
+	@PdgSttlm.setter
+	def PdgSttlm(self, value):
+		self._PdgSttlm = value if type(value) != auto else self.make_default("PdgSttlm")
 
-	@Sspd.deleter
-	def Sspd(self):
-		del self._Sspd
-		self._Sspd = None
+	@PdgSttlm.deleter
+	def PdgSttlm(self):
+		del self._PdgSttlm
+		self._PdgSttlm = None
 
 	@property
 	def Canc(self):
@@ -37,6 +37,19 @@ class PaymentStatusReason1Choice(base_types._BaseFieldType):
 		self._Canc = None
 
 	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
+
+	@property
 	def Umtchd(self):
 		return self._Umtchd
 
@@ -48,19 +61,6 @@ class PaymentStatusReason1Choice(base_types._BaseFieldType):
 	def Umtchd(self):
 		del self._Umtchd
 		self._Umtchd = None
-
-	@property
-	def PdgSttlm(self):
-		return self._PdgSttlm
-
-	@PdgSttlm.setter
-	def PdgSttlm(self, value):
-		self._PdgSttlm = value if type(value) != auto else self.make_default("PdgSttlm")
-
-	@PdgSttlm.deleter
-	def PdgSttlm(self):
-		del self._PdgSttlm
-		self._PdgSttlm = None
 
 	@property
 	def PdgFlngSttlm(self):
@@ -89,25 +89,25 @@ class PaymentStatusReason1Choice(base_types._BaseFieldType):
 		self._PrtryRjctn = None
 
 	@property
-	def Prtry(self):
-		return self._Prtry
+	def Sspd(self):
+		return self._Sspd
 
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+	@Sspd.setter
+	def Sspd(self, value):
+		self._Sspd = value if type(value) != auto else self.make_default("Sspd")
 
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
+	@Sspd.deleter
+	def Sspd(self):
+		del self._Sspd
+		self._Sspd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sspd', type=SuspendedStatusReason1Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Canc', type=CancelledStatusReason1Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Umtchd', type=UnmatchedStatusReason1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgSttlm', type=PendingSettlement2Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Canc', type=CancelledStatusReason1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Umtchd', type=UnmatchedStatusReason1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgFlngSttlm', type=PendingFailingSettlement1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryRjctn', type=ProprietaryStatusJustification2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Prtry', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Sspd', type=SuspendedStatusReason1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

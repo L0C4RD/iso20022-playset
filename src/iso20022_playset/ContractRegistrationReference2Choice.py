@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import DocumentIdentification35
+import Max35Text
 
 class ContractRegistrationReference2Choice(base_types._BaseFieldType):
 

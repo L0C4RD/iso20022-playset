@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SubscriptionBulkOrderConfirmationCancellationInstructionV02
 
 class SETR_049_001_02():

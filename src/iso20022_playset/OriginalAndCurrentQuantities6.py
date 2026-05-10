@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import ShortLong1Code
 import ImpliedCurrencyAndAmount
 
 class OriginalAndCurrentQuantities6(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtLngPos", "_FaceAmt", "_AmtsdVal"]
-	@property
-	def ShrtLngPos(self):
-		return self._ShrtLngPos
-
-	@ShrtLngPos.setter
-	def ShrtLngPos(self, value):
-		self._ShrtLngPos = value if type(value) != auto else self.make_default("ShrtLngPos")
-
-	@ShrtLngPos.deleter
-	def ShrtLngPos(self):
-		del self._ShrtLngPos
-		self._ShrtLngPos = None
-
+	__slots__ = ["_FaceAmt", "_ShrtLngPos", "_AmtsdVal"]
 	@property
 	def FaceAmt(self):
 		return self._FaceAmt
@@ -30,6 +17,19 @@ class OriginalAndCurrentQuantities6(base_types._BaseFieldType):
 	def FaceAmt(self):
 		del self._FaceAmt
 		self._FaceAmt = None
+
+	@property
+	def ShrtLngPos(self):
+		return self._ShrtLngPos
+
+	@ShrtLngPos.setter
+	def ShrtLngPos(self, value):
+		self._ShrtLngPos = value if type(value) != auto else self.make_default("ShrtLngPos")
+
+	@ShrtLngPos.deleter
+	def ShrtLngPos(self):
+		del self._ShrtLngPos
+		self._ShrtLngPos = None
 
 	@property
 	def AmtsdVal(self):
@@ -45,8 +45,8 @@ class OriginalAndCurrentQuantities6(base_types._BaseFieldType):
 		self._AmtsdVal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ShrtLngPos', type=ShortLong1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FaceAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtLngPos', type=ShortLong1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtsdVal', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

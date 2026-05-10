@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BankServicesBillingStatementV05
 
 class CAMT_086_001_05():

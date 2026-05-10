@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BatchManagementInitiationV03
 
 class CAAD_001_001_03():

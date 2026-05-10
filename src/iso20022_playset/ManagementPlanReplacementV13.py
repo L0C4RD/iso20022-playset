@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import ContentInformationType38
 import TMSHeader1
 import ManagementPlan13
 
 class ManagementPlanReplacementV13(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_MgmtPlan", "_SctyTrlr"]
+	__slots__ = ["_SctyTrlr", "_MgmtPlan", "_Hdr"]
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	@property
 	def MgmtPlan(self):
@@ -33,21 +33,21 @@ class ManagementPlanReplacementV13(base_types._BaseFieldType):
 		self._MgmtPlan = None
 
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def Hdr(self):
+		return self._Hdr
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hdr', type=TMSHeader1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MgmtPlan', type=ManagementPlan13, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MgmtPlan', type=ManagementPlan13, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=TMSHeader1, min=1, max=1, mutex_group=None, array=False),
 	))
 

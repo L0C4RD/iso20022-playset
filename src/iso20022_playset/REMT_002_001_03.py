@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RemittanceLocationAdviceV03
 
 class REMT_002_001_03():

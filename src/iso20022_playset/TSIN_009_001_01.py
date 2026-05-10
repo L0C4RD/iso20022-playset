@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PartyRegistrationAndGuaranteeRequestV01
 
 class TSIN_009_001_01():

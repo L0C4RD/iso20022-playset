@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class TemporaryServicesCharge1Code(base_types._BaseDataType_String):
 

@@ -1,11 +1,11 @@
-import base_types
-import SettlementTypeAndIdentification22
-import GenericDocumentIdentification6
+from . import base_types
 import RestrictedFINXMax16Text
+import GenericDocumentIdentification6
+import SettlementTypeAndIdentification22
 
 class References60Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTxId", "_SctiesSttlmTxId", "_IntraPosMvmntId", "_SctiesFincgTxId"]
+	__slots__ = ["_OthrTxId", "_IntraPosMvmntId", "_SctiesSttlmTxId", "_SctiesFincgTxId"]
 	@property
 	def OthrTxId(self):
 		return self._OthrTxId
@@ -20,19 +20,6 @@ class References60Choice(base_types._BaseFieldType):
 		self._OthrTxId = None
 
 	@property
-	def SctiesSttlmTxId(self):
-		return self._SctiesSttlmTxId
-
-	@SctiesSttlmTxId.setter
-	def SctiesSttlmTxId(self, value):
-		self._SctiesSttlmTxId = value if type(value) != auto else self.make_default("SctiesSttlmTxId")
-
-	@SctiesSttlmTxId.deleter
-	def SctiesSttlmTxId(self):
-		del self._SctiesSttlmTxId
-		self._SctiesSttlmTxId = None
-
-	@property
 	def IntraPosMvmntId(self):
 		return self._IntraPosMvmntId
 
@@ -44,6 +31,19 @@ class References60Choice(base_types._BaseFieldType):
 	def IntraPosMvmntId(self):
 		del self._IntraPosMvmntId
 		self._IntraPosMvmntId = None
+
+	@property
+	def SctiesSttlmTxId(self):
+		return self._SctiesSttlmTxId
+
+	@SctiesSttlmTxId.setter
+	def SctiesSttlmTxId(self, value):
+		self._SctiesSttlmTxId = value if type(value) != auto else self.make_default("SctiesSttlmTxId")
+
+	@SctiesSttlmTxId.deleter
+	def SctiesSttlmTxId(self):
+		del self._SctiesSttlmTxId
+		self._SctiesSttlmTxId = None
 
 	@property
 	def SctiesFincgTxId(self):
@@ -60,8 +60,8 @@ class References60Choice(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrTxId', type=GenericDocumentIdentification6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SctiesSttlmTxId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IntraPosMvmntId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesSttlmTxId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesFincgTxId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
 	))
 

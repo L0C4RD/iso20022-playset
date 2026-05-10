@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PartyIdentification272
 import LegalOrganisation2
 import TaxParty4

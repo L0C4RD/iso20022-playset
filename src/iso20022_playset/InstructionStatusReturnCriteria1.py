@@ -1,22 +1,9 @@
-import base_types
+from . import base_types
 import RequestedIndicator
 
 class InstructionStatusReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtInstrStsInd", "_PmtInstrStsRsnInd", "_PmtInstrStsDtTmInd"]
-	@property
-	def PmtInstrStsInd(self):
-		return self._PmtInstrStsInd
-
-	@PmtInstrStsInd.setter
-	def PmtInstrStsInd(self, value):
-		self._PmtInstrStsInd = value if type(value) != auto else self.make_default("PmtInstrStsInd")
-
-	@PmtInstrStsInd.deleter
-	def PmtInstrStsInd(self):
-		del self._PmtInstrStsInd
-		self._PmtInstrStsInd = None
-
+	__slots__ = ["_PmtInstrStsRsnInd", "_PmtInstrStsDtTmInd", "_PmtInstrStsInd"]
 	@property
 	def PmtInstrStsRsnInd(self):
 		return self._PmtInstrStsRsnInd
@@ -43,9 +30,22 @@ class InstructionStatusReturnCriteria1(base_types._BaseFieldType):
 		del self._PmtInstrStsDtTmInd
 		self._PmtInstrStsDtTmInd = None
 
+	@property
+	def PmtInstrStsInd(self):
+		return self._PmtInstrStsInd
+
+	@PmtInstrStsInd.setter
+	def PmtInstrStsInd(self, value):
+		self._PmtInstrStsInd = value if type(value) != auto else self.make_default("PmtInstrStsInd")
+
+	@PmtInstrStsInd.deleter
+	def PmtInstrStsInd(self):
+		del self._PmtInstrStsInd
+		self._PmtInstrStsInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtInstrStsInd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtInstrStsRsnInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtInstrStsDtTmInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInstrStsInd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

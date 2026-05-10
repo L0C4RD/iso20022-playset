@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class UnderlyingEquityType4Code(base_types._BaseDataType_String):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountSwitchTechnicalRejectionV02
 
 class ACMT_037_001_02():

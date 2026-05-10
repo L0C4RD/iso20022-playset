@@ -1,12 +1,12 @@
-import base_types
-import DebtInstrumentSeniorityType1Code
+from . import base_types
 import ISODate
-import ActiveOrHistoricCurrencyAndAmount
 import InterestRate6Choice
+import DebtInstrumentSeniorityType1Code
+import ActiveOrHistoricCurrencyAndAmount
 
 class DebtInstrument2(base_types._BaseFieldType):
 
-	__slots__ = ["_NmnlValPerUnit", "_MtrtyDt", "_DebtSnrty", "_IntrstRate", "_TtlIssdNmnlAmt"]
+	__slots__ = ["_NmnlValPerUnit", "_TtlIssdNmnlAmt", "_MtrtyDt", "_DebtSnrty", "_IntrstRate"]
 	@property
 	def NmnlValPerUnit(self):
 		return self._NmnlValPerUnit
@@ -19,6 +19,19 @@ class DebtInstrument2(base_types._BaseFieldType):
 	def NmnlValPerUnit(self):
 		del self._NmnlValPerUnit
 		self._NmnlValPerUnit = None
+
+	@property
+	def TtlIssdNmnlAmt(self):
+		return self._TtlIssdNmnlAmt
+
+	@TtlIssdNmnlAmt.setter
+	def TtlIssdNmnlAmt(self, value):
+		self._TtlIssdNmnlAmt = value if type(value) != auto else self.make_default("TtlIssdNmnlAmt")
+
+	@TtlIssdNmnlAmt.deleter
+	def TtlIssdNmnlAmt(self):
+		del self._TtlIssdNmnlAmt
+		self._TtlIssdNmnlAmt = None
 
 	@property
 	def MtrtyDt(self):
@@ -59,24 +72,11 @@ class DebtInstrument2(base_types._BaseFieldType):
 		del self._IntrstRate
 		self._IntrstRate = None
 
-	@property
-	def TtlIssdNmnlAmt(self):
-		return self._TtlIssdNmnlAmt
-
-	@TtlIssdNmnlAmt.setter
-	def TtlIssdNmnlAmt(self, value):
-		self._TtlIssdNmnlAmt = value if type(value) != auto else self.make_default("TtlIssdNmnlAmt")
-
-	@TtlIssdNmnlAmt.deleter
-	def TtlIssdNmnlAmt(self):
-		del self._TtlIssdNmnlAmt
-		self._TtlIssdNmnlAmt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NmnlValPerUnit', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlIssdNmnlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DebtSnrty', type=DebtInstrumentSeniorityType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstRate', type=InterestRate6Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlIssdNmnlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,38 +1,12 @@
-import base_types
+from . import base_types
 import CorporateActionSecuritiesMovement1
+import CorporateActionInformation1
 import DocumentIdentification8
 import CashMovement3
-import CorporateActionInformation1
 
 class AgentCAMovementConfirmationV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AgtCAMvmntInstrId", "_AgtCAGblDstrbtnStsAdvcId", "_CorpActnGnlInf", "_SctiesMvmntDtls", "_AgtCAElctnStsAdvcId", "_CshMvmntDtls"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def AgtCAMvmntInstrId(self):
-		return self._AgtCAMvmntInstrId
-
-	@AgtCAMvmntInstrId.setter
-	def AgtCAMvmntInstrId(self, value):
-		self._AgtCAMvmntInstrId = value if type(value) != auto else self.make_default("AgtCAMvmntInstrId")
-
-	@AgtCAMvmntInstrId.deleter
-	def AgtCAMvmntInstrId(self):
-		del self._AgtCAMvmntInstrId
-		self._AgtCAMvmntInstrId = None
-
+	__slots__ = ["_AgtCAGblDstrbtnStsAdvcId", "_AgtCAElctnStsAdvcId", "_CorpActnGnlInf", "_SctiesMvmntDtls", "_CshMvmntDtls", "_AgtCAMvmntInstrId", "_Id"]
 	@property
 	def AgtCAGblDstrbtnStsAdvcId(self):
 		return self._AgtCAGblDstrbtnStsAdvcId
@@ -45,6 +19,19 @@ class AgentCAMovementConfirmationV01(base_types._BaseFieldType):
 	def AgtCAGblDstrbtnStsAdvcId(self):
 		del self._AgtCAGblDstrbtnStsAdvcId
 		self._AgtCAGblDstrbtnStsAdvcId = None
+
+	@property
+	def AgtCAElctnStsAdvcId(self):
+		return self._AgtCAElctnStsAdvcId
+
+	@AgtCAElctnStsAdvcId.setter
+	def AgtCAElctnStsAdvcId(self, value):
+		self._AgtCAElctnStsAdvcId = value if type(value) != auto else self.make_default("AgtCAElctnStsAdvcId")
+
+	@AgtCAElctnStsAdvcId.deleter
+	def AgtCAElctnStsAdvcId(self):
+		del self._AgtCAElctnStsAdvcId
+		self._AgtCAElctnStsAdvcId = None
 
 	@property
 	def CorpActnGnlInf(self):
@@ -73,19 +60,6 @@ class AgentCAMovementConfirmationV01(base_types._BaseFieldType):
 		self._SctiesMvmntDtls = None
 
 	@property
-	def AgtCAElctnStsAdvcId(self):
-		return self._AgtCAElctnStsAdvcId
-
-	@AgtCAElctnStsAdvcId.setter
-	def AgtCAElctnStsAdvcId(self, value):
-		self._AgtCAElctnStsAdvcId = value if type(value) != auto else self.make_default("AgtCAElctnStsAdvcId")
-
-	@AgtCAElctnStsAdvcId.deleter
-	def AgtCAElctnStsAdvcId(self):
-		del self._AgtCAElctnStsAdvcId
-		self._AgtCAElctnStsAdvcId = None
-
-	@property
 	def CshMvmntDtls(self):
 		return self._CshMvmntDtls
 
@@ -98,13 +72,39 @@ class AgentCAMovementConfirmationV01(base_types._BaseFieldType):
 		del self._CshMvmntDtls
 		self._CshMvmntDtls = None
 
+	@property
+	def AgtCAMvmntInstrId(self):
+		return self._AgtCAMvmntInstrId
+
+	@AgtCAMvmntInstrId.setter
+	def AgtCAMvmntInstrId(self, value):
+		self._AgtCAMvmntInstrId = value if type(value) != auto else self.make_default("AgtCAMvmntInstrId")
+
+	@AgtCAMvmntInstrId.deleter
+	def AgtCAMvmntInstrId(self):
+		del self._AgtCAMvmntInstrId
+		self._AgtCAMvmntInstrId = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtCAMvmntInstrId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AgtCAGblDstrbtnStsAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AgtCAElctnStsAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesMvmntDtls', type=CorporateActionSecuritiesMovement1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AgtCAElctnStsAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CshMvmntDtls', type=CashMovement3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AgtCAMvmntInstrId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

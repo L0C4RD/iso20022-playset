@@ -1,16 +1,55 @@
-import base_types
-import InvestigationReasonSubType1Choice
-import InvestigationReason1Choice
+from . import base_types
 import RelatedInvestigationData1
-import InvestigationDataRecord7Choice
 import Document12
-import FileData1
 import Party40Choice
 import Max3Number
+import InvestigationReasonSubType1Choice
+import FileData1
+import InvestigationDataRecord7Choice
+import InvestigationReason1Choice
 
 class InvestigationData6(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnData", "_NclsdFile", "_RspnOrgtr", "_OrgnlInvstgtnRsnSubTp", "_OrgnlInvstgtnRsn", "_RltdInvstgtnData", "_RltdFileData", "_OrgnlInvstgtnSeq"]
+	__slots__ = ["_OrgnlInvstgtnRsn", "_OrgnlInvstgtnSeq", "_RltdInvstgtnData", "_RspnData", "_NclsdFile", "_RltdFileData", "_OrgnlInvstgtnRsnSubTp", "_RspnOrgtr"]
+	@property
+	def OrgnlInvstgtnRsn(self):
+		return self._OrgnlInvstgtnRsn
+
+	@OrgnlInvstgtnRsn.setter
+	def OrgnlInvstgtnRsn(self, value):
+		self._OrgnlInvstgtnRsn = value if type(value) != auto else self.make_default("OrgnlInvstgtnRsn")
+
+	@OrgnlInvstgtnRsn.deleter
+	def OrgnlInvstgtnRsn(self):
+		del self._OrgnlInvstgtnRsn
+		self._OrgnlInvstgtnRsn = None
+
+	@property
+	def OrgnlInvstgtnSeq(self):
+		return self._OrgnlInvstgtnSeq
+
+	@OrgnlInvstgtnSeq.setter
+	def OrgnlInvstgtnSeq(self, value):
+		self._OrgnlInvstgtnSeq = value if type(value) != auto else self.make_default("OrgnlInvstgtnSeq")
+
+	@OrgnlInvstgtnSeq.deleter
+	def OrgnlInvstgtnSeq(self):
+		del self._OrgnlInvstgtnSeq
+		self._OrgnlInvstgtnSeq = None
+
+	@property
+	def RltdInvstgtnData(self):
+		return self._RltdInvstgtnData
+
+	@RltdInvstgtnData.setter
+	def RltdInvstgtnData(self, value):
+		self._RltdInvstgtnData = value if type(value) != auto else self.make_default("RltdInvstgtnData")
+
+	@RltdInvstgtnData.deleter
+	def RltdInvstgtnData(self):
+		del self._RltdInvstgtnData
+		self._RltdInvstgtnData = None
+
 	@property
 	def RspnData(self):
 		return self._RspnData
@@ -38,17 +77,17 @@ class InvestigationData6(base_types._BaseFieldType):
 		self._NclsdFile = None
 
 	@property
-	def RspnOrgtr(self):
-		return self._RspnOrgtr
+	def RltdFileData(self):
+		return self._RltdFileData
 
-	@RspnOrgtr.setter
-	def RspnOrgtr(self, value):
-		self._RspnOrgtr = value if type(value) != auto else self.make_default("RspnOrgtr")
+	@RltdFileData.setter
+	def RltdFileData(self, value):
+		self._RltdFileData = value if type(value) != auto else self.make_default("RltdFileData")
 
-	@RspnOrgtr.deleter
-	def RspnOrgtr(self):
-		del self._RspnOrgtr
-		self._RspnOrgtr = None
+	@RltdFileData.deleter
+	def RltdFileData(self):
+		del self._RltdFileData
+		self._RltdFileData = None
 
 	@property
 	def OrgnlInvstgtnRsnSubTp(self):
@@ -64,65 +103,26 @@ class InvestigationData6(base_types._BaseFieldType):
 		self._OrgnlInvstgtnRsnSubTp = None
 
 	@property
-	def OrgnlInvstgtnRsn(self):
-		return self._OrgnlInvstgtnRsn
+	def RspnOrgtr(self):
+		return self._RspnOrgtr
 
-	@OrgnlInvstgtnRsn.setter
-	def OrgnlInvstgtnRsn(self, value):
-		self._OrgnlInvstgtnRsn = value if type(value) != auto else self.make_default("OrgnlInvstgtnRsn")
+	@RspnOrgtr.setter
+	def RspnOrgtr(self, value):
+		self._RspnOrgtr = value if type(value) != auto else self.make_default("RspnOrgtr")
 
-	@OrgnlInvstgtnRsn.deleter
-	def OrgnlInvstgtnRsn(self):
-		del self._OrgnlInvstgtnRsn
-		self._OrgnlInvstgtnRsn = None
-
-	@property
-	def RltdInvstgtnData(self):
-		return self._RltdInvstgtnData
-
-	@RltdInvstgtnData.setter
-	def RltdInvstgtnData(self, value):
-		self._RltdInvstgtnData = value if type(value) != auto else self.make_default("RltdInvstgtnData")
-
-	@RltdInvstgtnData.deleter
-	def RltdInvstgtnData(self):
-		del self._RltdInvstgtnData
-		self._RltdInvstgtnData = None
-
-	@property
-	def RltdFileData(self):
-		return self._RltdFileData
-
-	@RltdFileData.setter
-	def RltdFileData(self, value):
-		self._RltdFileData = value if type(value) != auto else self.make_default("RltdFileData")
-
-	@RltdFileData.deleter
-	def RltdFileData(self):
-		del self._RltdFileData
-		self._RltdFileData = None
-
-	@property
-	def OrgnlInvstgtnSeq(self):
-		return self._OrgnlInvstgtnSeq
-
-	@OrgnlInvstgtnSeq.setter
-	def OrgnlInvstgtnSeq(self, value):
-		self._OrgnlInvstgtnSeq = value if type(value) != auto else self.make_default("OrgnlInvstgtnSeq")
-
-	@OrgnlInvstgtnSeq.deleter
-	def OrgnlInvstgtnSeq(self):
-		del self._OrgnlInvstgtnSeq
-		self._OrgnlInvstgtnSeq = None
+	@RspnOrgtr.deleter
+	def RspnOrgtr(self):
+		del self._RspnOrgtr
+		self._RspnOrgtr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OrgnlInvstgtnRsn', type=InvestigationReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlInvstgtnSeq', type=Max3Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdInvstgtnData', type=RelatedInvestigationData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnData', type=InvestigationDataRecord7Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NclsdFile', type=Document12, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RspnOrgtr', type=Party40Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlInvstgtnRsnSubTp', type=InvestigationReasonSubType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlInvstgtnRsn', type=InvestigationReason1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdInvstgtnData', type=RelatedInvestigationData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdFileData', type=FileData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlInvstgtnSeq', type=Max3Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlInvstgtnRsnSubTp', type=InvestigationReasonSubType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnOrgtr', type=Party40Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

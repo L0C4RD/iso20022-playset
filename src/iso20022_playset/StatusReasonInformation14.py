@@ -1,11 +1,11 @@
-import base_types
-import Max105Text
-import PartyIdentification272
+from . import base_types
 import StatusReason6Choice
+import PartyIdentification272
+import Max105Text
 
 class StatusReasonInformation14(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Rsn", "_Orgtr"]
+	__slots__ = ["_AddtlInf", "_Orgtr", "_Rsn"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -20,19 +20,6 @@ class StatusReasonInformation14(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
-
-	@property
 	def Orgtr(self):
 		return self._Orgtr
 
@@ -45,9 +32,22 @@ class StatusReasonInformation14(base_types._BaseFieldType):
 		del self._Orgtr
 		self._Orgtr = None
 
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rsn', type=StatusReason6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Orgtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=StatusReason6Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

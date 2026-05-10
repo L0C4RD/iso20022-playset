@@ -1,278 +1,44 @@
-import base_types
-import TEFRARules3Choice
-import PartyIdentification136
-import DateAndDateTime2Choice
-import Max35Text
-import ActiveOrHistoricCurrencyCode
-import FinancialInstrumentForm2
-import PutType3Choice
-import InitialPhysicalForm3Choice
-import Max3NumericText
-import CallType3Choice
-import FinancialInstrumentQuantity1Choice
-import LegalRestrictions4Choice
-import ClassificationType2
-import BenchmarkCurve6
+from . import base_types
 import Max16Text
-import TradingParameters2
-import SettlementInformation17
-import SecurityStatus3Choice
-import Number
-import ISODateTime
-import Max256Text
-import SecurityWithHoldingTax1
+import DateAndDateTime2Choice
 import Issuance5
-import InitialPhysicalForm4Choice
-import MaturityRedemptionType3Choice
-import YesNoIndicator
-import Max350Text
-import ActiveCurrencyCode
-import SecuritiesPaymentStatus5Choice
-import DateTimePeriod1
-import ISODate
-import Max15NumericText
-import AnyBICDec2014Identifier
-import UnitOrFaceAmount1Choice
+import Max3NumericText
+import InitialPhysicalForm3Choice
+import SecurityStatus3Choice
+import ClassificationType2
+import SettlementInformation17
+import BenchmarkCurve6
 import SecurityRestriction3
+import InitialPhysicalForm4Choice
+import SecurityWithHoldingTax1
+import SecuritiesPaymentStatus5Choice
+import LegalRestrictions4Choice
+import UnitOrFaceAmount1Choice
+import CallType3Choice
+import Number
+import FinancialInstrumentForm2
+import ActiveOrHistoricCurrencyCode
+import PartyIdentification136
+import FinancialInstrumentQuantity1Choice
+import TEFRARules3Choice
+import ISODate
+import YesNoIndicator
+import ISODateTime
+import Max35Text
+import ActiveCurrencyCode
+import Max15NumericText
+import TradingParameters2
+import Max350Text
+import PutType3Choice
+import Max256Text
+import MaturityRedemptionType3Choice
 import Organisation38
+import DateTimePeriod1
+import AnyBICDec2014Identifier
 
 class CommonFinancialInstrumentAttributes10(base_types._BaseFieldType):
 
-	__slots__ = ["_Cnfdtl", "_TEFRARule", "_Rstrctn", "_PmryPlcOfDpst", "_LeadMgr", "_UndrlygRsk", "_PutTp", "_ConvsRatioDnmtr", "_RedPmtCcy", "_PmtSts", "_WhldgTaxRgm", "_SctySts", "_Issnc", "_LglRstrctns", "_FngbInd", "_CertNb", "_ClssfctnTp", "_ConvsPrd", "_FinInstrmForm", "_RcrdDt", "_ConvtblInd", "_AftrXchgPhysForm", "_Clss", "_NearTermPosLmt", "_TradgMkt", "_InitlPhysForm", "_DnmtnCcy", "_PoolNb", "_CallTp", "_ListgDt", "_NmVldFr", "_CvrdInd", "_SrNb", "_TaxLotNb", "_RedTp", "_PrncplPngAgt", "_PrvtPlcmnt", "_PngAgt", "_Purp", "_PosLmt", "_CpnAttchdNb", "_ConvsRatioNmrtr", "_XpryDt", "_SprdAndBchmkCrv", "_CmonSfkpr", "_ISOSctyLngNm", "_SttlmInf", "_TradgMtd", "_ISOSctyShrtNm", "_CtrctVrsnNb", "_CtctNm", "_Dpstry"]
-	@property
-	def Cnfdtl(self):
-		return self._Cnfdtl
-
-	@Cnfdtl.setter
-	def Cnfdtl(self, value):
-		self._Cnfdtl = value if type(value) != auto else self.make_default("Cnfdtl")
-
-	@Cnfdtl.deleter
-	def Cnfdtl(self):
-		del self._Cnfdtl
-		self._Cnfdtl = None
-
-	@property
-	def TEFRARule(self):
-		return self._TEFRARule
-
-	@TEFRARule.setter
-	def TEFRARule(self, value):
-		self._TEFRARule = value if type(value) != auto else self.make_default("TEFRARule")
-
-	@TEFRARule.deleter
-	def TEFRARule(self):
-		del self._TEFRARule
-		self._TEFRARule = None
-
-	@property
-	def Rstrctn(self):
-		return self._Rstrctn
-
-	@Rstrctn.setter
-	def Rstrctn(self, value):
-		self._Rstrctn = value if type(value) != auto else self.make_default("Rstrctn")
-
-	@Rstrctn.deleter
-	def Rstrctn(self):
-		del self._Rstrctn
-		self._Rstrctn = None
-
-	@property
-	def PmryPlcOfDpst(self):
-		return self._PmryPlcOfDpst
-
-	@PmryPlcOfDpst.setter
-	def PmryPlcOfDpst(self, value):
-		self._PmryPlcOfDpst = value if type(value) != auto else self.make_default("PmryPlcOfDpst")
-
-	@PmryPlcOfDpst.deleter
-	def PmryPlcOfDpst(self):
-		del self._PmryPlcOfDpst
-		self._PmryPlcOfDpst = None
-
-	@property
-	def LeadMgr(self):
-		return self._LeadMgr
-
-	@LeadMgr.setter
-	def LeadMgr(self, value):
-		self._LeadMgr = value if type(value) != auto else self.make_default("LeadMgr")
-
-	@LeadMgr.deleter
-	def LeadMgr(self):
-		del self._LeadMgr
-		self._LeadMgr = None
-
-	@property
-	def UndrlygRsk(self):
-		return self._UndrlygRsk
-
-	@UndrlygRsk.setter
-	def UndrlygRsk(self, value):
-		self._UndrlygRsk = value if type(value) != auto else self.make_default("UndrlygRsk")
-
-	@UndrlygRsk.deleter
-	def UndrlygRsk(self):
-		del self._UndrlygRsk
-		self._UndrlygRsk = None
-
-	@property
-	def PutTp(self):
-		return self._PutTp
-
-	@PutTp.setter
-	def PutTp(self, value):
-		self._PutTp = value if type(value) != auto else self.make_default("PutTp")
-
-	@PutTp.deleter
-	def PutTp(self):
-		del self._PutTp
-		self._PutTp = None
-
-	@property
-	def ConvsRatioDnmtr(self):
-		return self._ConvsRatioDnmtr
-
-	@ConvsRatioDnmtr.setter
-	def ConvsRatioDnmtr(self, value):
-		self._ConvsRatioDnmtr = value if type(value) != auto else self.make_default("ConvsRatioDnmtr")
-
-	@ConvsRatioDnmtr.deleter
-	def ConvsRatioDnmtr(self):
-		del self._ConvsRatioDnmtr
-		self._ConvsRatioDnmtr = None
-
-	@property
-	def RedPmtCcy(self):
-		return self._RedPmtCcy
-
-	@RedPmtCcy.setter
-	def RedPmtCcy(self, value):
-		self._RedPmtCcy = value if type(value) != auto else self.make_default("RedPmtCcy")
-
-	@RedPmtCcy.deleter
-	def RedPmtCcy(self):
-		del self._RedPmtCcy
-		self._RedPmtCcy = None
-
-	@property
-	def PmtSts(self):
-		return self._PmtSts
-
-	@PmtSts.setter
-	def PmtSts(self, value):
-		self._PmtSts = value if type(value) != auto else self.make_default("PmtSts")
-
-	@PmtSts.deleter
-	def PmtSts(self):
-		del self._PmtSts
-		self._PmtSts = None
-
-	@property
-	def WhldgTaxRgm(self):
-		return self._WhldgTaxRgm
-
-	@WhldgTaxRgm.setter
-	def WhldgTaxRgm(self, value):
-		self._WhldgTaxRgm = value if type(value) != auto else self.make_default("WhldgTaxRgm")
-
-	@WhldgTaxRgm.deleter
-	def WhldgTaxRgm(self):
-		del self._WhldgTaxRgm
-		self._WhldgTaxRgm = None
-
-	@property
-	def SctySts(self):
-		return self._SctySts
-
-	@SctySts.setter
-	def SctySts(self, value):
-		self._SctySts = value if type(value) != auto else self.make_default("SctySts")
-
-	@SctySts.deleter
-	def SctySts(self):
-		del self._SctySts
-		self._SctySts = None
-
-	@property
-	def Issnc(self):
-		return self._Issnc
-
-	@Issnc.setter
-	def Issnc(self, value):
-		self._Issnc = value if type(value) != auto else self.make_default("Issnc")
-
-	@Issnc.deleter
-	def Issnc(self):
-		del self._Issnc
-		self._Issnc = None
-
-	@property
-	def LglRstrctns(self):
-		return self._LglRstrctns
-
-	@LglRstrctns.setter
-	def LglRstrctns(self, value):
-		self._LglRstrctns = value if type(value) != auto else self.make_default("LglRstrctns")
-
-	@LglRstrctns.deleter
-	def LglRstrctns(self):
-		del self._LglRstrctns
-		self._LglRstrctns = None
-
-	@property
-	def FngbInd(self):
-		return self._FngbInd
-
-	@FngbInd.setter
-	def FngbInd(self, value):
-		self._FngbInd = value if type(value) != auto else self.make_default("FngbInd")
-
-	@FngbInd.deleter
-	def FngbInd(self):
-		del self._FngbInd
-		self._FngbInd = None
-
-	@property
-	def CertNb(self):
-		return self._CertNb
-
-	@CertNb.setter
-	def CertNb(self, value):
-		self._CertNb = value if type(value) != auto else self.make_default("CertNb")
-
-	@CertNb.deleter
-	def CertNb(self):
-		del self._CertNb
-		self._CertNb = None
-
-	@property
-	def ClssfctnTp(self):
-		return self._ClssfctnTp
-
-	@ClssfctnTp.setter
-	def ClssfctnTp(self, value):
-		self._ClssfctnTp = value if type(value) != auto else self.make_default("ClssfctnTp")
-
-	@ClssfctnTp.deleter
-	def ClssfctnTp(self):
-		del self._ClssfctnTp
-		self._ClssfctnTp = None
-
-	@property
-	def ConvsPrd(self):
-		return self._ConvsPrd
-
-	@ConvsPrd.setter
-	def ConvsPrd(self, value):
-		self._ConvsPrd = value if type(value) != auto else self.make_default("ConvsPrd")
-
-	@ConvsPrd.deleter
-	def ConvsPrd(self):
-		del self._ConvsPrd
-		self._ConvsPrd = None
-
+	__slots__ = ["_FinInstrmForm", "_SprdAndBchmkCrv", "_PrncplPngAgt", "_ListgDt", "_RedTp", "_PrvtPlcmnt", "_TradgMkt", "_InitlPhysForm", "_RcrdDt", "_SttlmInf", "_CallTp", "_NmVldFr", "_TaxLotNb", "_PoolNb", "_LglRstrctns", "_Clss", "_NearTermPosLmt", "_ConvsRatioDnmtr", "_ConvtblInd", "_CtctNm", "_FngbInd", "_WhldgTaxRgm", "_CmonSfkpr", "_DnmtnCcy", "_PngAgt", "_UndrlygRsk", "_Issnc", "_PutTp", "_LeadMgr", "_AftrXchgPhysForm", "_CtrctVrsnNb", "_SctySts", "_Rstrctn", "_CpnAttchdNb", "_Purp", "_ISOSctyLngNm", "_ConvsPrd", "_PmtSts", "_XpryDt", "_Cnfdtl", "_ConvsRatioNmrtr", "_ISOSctyShrtNm", "_PosLmt", "_TradgMtd", "_PmryPlcOfDpst", "_ClssfctnTp", "_RedPmtCcy", "_CvrdInd", "_TEFRARule", "_Dpstry", "_SrNb", "_CertNb"]
 	@property
 	def FinInstrmForm(self):
 		return self._FinInstrmForm
@@ -287,69 +53,69 @@ class CommonFinancialInstrumentAttributes10(base_types._BaseFieldType):
 		self._FinInstrmForm = None
 
 	@property
-	def RcrdDt(self):
-		return self._RcrdDt
+	def SprdAndBchmkCrv(self):
+		return self._SprdAndBchmkCrv
 
-	@RcrdDt.setter
-	def RcrdDt(self, value):
-		self._RcrdDt = value if type(value) != auto else self.make_default("RcrdDt")
+	@SprdAndBchmkCrv.setter
+	def SprdAndBchmkCrv(self, value):
+		self._SprdAndBchmkCrv = value if type(value) != auto else self.make_default("SprdAndBchmkCrv")
 
-	@RcrdDt.deleter
-	def RcrdDt(self):
-		del self._RcrdDt
-		self._RcrdDt = None
-
-	@property
-	def ConvtblInd(self):
-		return self._ConvtblInd
-
-	@ConvtblInd.setter
-	def ConvtblInd(self, value):
-		self._ConvtblInd = value if type(value) != auto else self.make_default("ConvtblInd")
-
-	@ConvtblInd.deleter
-	def ConvtblInd(self):
-		del self._ConvtblInd
-		self._ConvtblInd = None
+	@SprdAndBchmkCrv.deleter
+	def SprdAndBchmkCrv(self):
+		del self._SprdAndBchmkCrv
+		self._SprdAndBchmkCrv = None
 
 	@property
-	def AftrXchgPhysForm(self):
-		return self._AftrXchgPhysForm
+	def PrncplPngAgt(self):
+		return self._PrncplPngAgt
 
-	@AftrXchgPhysForm.setter
-	def AftrXchgPhysForm(self, value):
-		self._AftrXchgPhysForm = value if type(value) != auto else self.make_default("AftrXchgPhysForm")
+	@PrncplPngAgt.setter
+	def PrncplPngAgt(self, value):
+		self._PrncplPngAgt = value if type(value) != auto else self.make_default("PrncplPngAgt")
 
-	@AftrXchgPhysForm.deleter
-	def AftrXchgPhysForm(self):
-		del self._AftrXchgPhysForm
-		self._AftrXchgPhysForm = None
-
-	@property
-	def Clss(self):
-		return self._Clss
-
-	@Clss.setter
-	def Clss(self, value):
-		self._Clss = value if type(value) != auto else self.make_default("Clss")
-
-	@Clss.deleter
-	def Clss(self):
-		del self._Clss
-		self._Clss = None
+	@PrncplPngAgt.deleter
+	def PrncplPngAgt(self):
+		del self._PrncplPngAgt
+		self._PrncplPngAgt = None
 
 	@property
-	def NearTermPosLmt(self):
-		return self._NearTermPosLmt
+	def ListgDt(self):
+		return self._ListgDt
 
-	@NearTermPosLmt.setter
-	def NearTermPosLmt(self, value):
-		self._NearTermPosLmt = value if type(value) != auto else self.make_default("NearTermPosLmt")
+	@ListgDt.setter
+	def ListgDt(self, value):
+		self._ListgDt = value if type(value) != auto else self.make_default("ListgDt")
 
-	@NearTermPosLmt.deleter
-	def NearTermPosLmt(self):
-		del self._NearTermPosLmt
-		self._NearTermPosLmt = None
+	@ListgDt.deleter
+	def ListgDt(self):
+		del self._ListgDt
+		self._ListgDt = None
+
+	@property
+	def RedTp(self):
+		return self._RedTp
+
+	@RedTp.setter
+	def RedTp(self, value):
+		self._RedTp = value if type(value) != auto else self.make_default("RedTp")
+
+	@RedTp.deleter
+	def RedTp(self):
+		del self._RedTp
+		self._RedTp = None
+
+	@property
+	def PrvtPlcmnt(self):
+		return self._PrvtPlcmnt
+
+	@PrvtPlcmnt.setter
+	def PrvtPlcmnt(self, value):
+		self._PrvtPlcmnt = value if type(value) != auto else self.make_default("PrvtPlcmnt")
+
+	@PrvtPlcmnt.deleter
+	def PrvtPlcmnt(self):
+		del self._PrvtPlcmnt
+		self._PrvtPlcmnt = None
 
 	@property
 	def TradgMkt(self):
@@ -378,264 +144,17 @@ class CommonFinancialInstrumentAttributes10(base_types._BaseFieldType):
 		self._InitlPhysForm = None
 
 	@property
-	def DnmtnCcy(self):
-		return self._DnmtnCcy
+	def RcrdDt(self):
+		return self._RcrdDt
 
-	@DnmtnCcy.setter
-	def DnmtnCcy(self, value):
-		self._DnmtnCcy = value if type(value) != auto else self.make_default("DnmtnCcy")
+	@RcrdDt.setter
+	def RcrdDt(self, value):
+		self._RcrdDt = value if type(value) != auto else self.make_default("RcrdDt")
 
-	@DnmtnCcy.deleter
-	def DnmtnCcy(self):
-		del self._DnmtnCcy
-		self._DnmtnCcy = None
-
-	@property
-	def PoolNb(self):
-		return self._PoolNb
-
-	@PoolNb.setter
-	def PoolNb(self, value):
-		self._PoolNb = value if type(value) != auto else self.make_default("PoolNb")
-
-	@PoolNb.deleter
-	def PoolNb(self):
-		del self._PoolNb
-		self._PoolNb = None
-
-	@property
-	def CallTp(self):
-		return self._CallTp
-
-	@CallTp.setter
-	def CallTp(self, value):
-		self._CallTp = value if type(value) != auto else self.make_default("CallTp")
-
-	@CallTp.deleter
-	def CallTp(self):
-		del self._CallTp
-		self._CallTp = None
-
-	@property
-	def ListgDt(self):
-		return self._ListgDt
-
-	@ListgDt.setter
-	def ListgDt(self, value):
-		self._ListgDt = value if type(value) != auto else self.make_default("ListgDt")
-
-	@ListgDt.deleter
-	def ListgDt(self):
-		del self._ListgDt
-		self._ListgDt = None
-
-	@property
-	def NmVldFr(self):
-		return self._NmVldFr
-
-	@NmVldFr.setter
-	def NmVldFr(self, value):
-		self._NmVldFr = value if type(value) != auto else self.make_default("NmVldFr")
-
-	@NmVldFr.deleter
-	def NmVldFr(self):
-		del self._NmVldFr
-		self._NmVldFr = None
-
-	@property
-	def CvrdInd(self):
-		return self._CvrdInd
-
-	@CvrdInd.setter
-	def CvrdInd(self, value):
-		self._CvrdInd = value if type(value) != auto else self.make_default("CvrdInd")
-
-	@CvrdInd.deleter
-	def CvrdInd(self):
-		del self._CvrdInd
-		self._CvrdInd = None
-
-	@property
-	def SrNb(self):
-		return self._SrNb
-
-	@SrNb.setter
-	def SrNb(self, value):
-		self._SrNb = value if type(value) != auto else self.make_default("SrNb")
-
-	@SrNb.deleter
-	def SrNb(self):
-		del self._SrNb
-		self._SrNb = None
-
-	@property
-	def TaxLotNb(self):
-		return self._TaxLotNb
-
-	@TaxLotNb.setter
-	def TaxLotNb(self, value):
-		self._TaxLotNb = value if type(value) != auto else self.make_default("TaxLotNb")
-
-	@TaxLotNb.deleter
-	def TaxLotNb(self):
-		del self._TaxLotNb
-		self._TaxLotNb = None
-
-	@property
-	def RedTp(self):
-		return self._RedTp
-
-	@RedTp.setter
-	def RedTp(self, value):
-		self._RedTp = value if type(value) != auto else self.make_default("RedTp")
-
-	@RedTp.deleter
-	def RedTp(self):
-		del self._RedTp
-		self._RedTp = None
-
-	@property
-	def PrncplPngAgt(self):
-		return self._PrncplPngAgt
-
-	@PrncplPngAgt.setter
-	def PrncplPngAgt(self, value):
-		self._PrncplPngAgt = value if type(value) != auto else self.make_default("PrncplPngAgt")
-
-	@PrncplPngAgt.deleter
-	def PrncplPngAgt(self):
-		del self._PrncplPngAgt
-		self._PrncplPngAgt = None
-
-	@property
-	def PrvtPlcmnt(self):
-		return self._PrvtPlcmnt
-
-	@PrvtPlcmnt.setter
-	def PrvtPlcmnt(self, value):
-		self._PrvtPlcmnt = value if type(value) != auto else self.make_default("PrvtPlcmnt")
-
-	@PrvtPlcmnt.deleter
-	def PrvtPlcmnt(self):
-		del self._PrvtPlcmnt
-		self._PrvtPlcmnt = None
-
-	@property
-	def PngAgt(self):
-		return self._PngAgt
-
-	@PngAgt.setter
-	def PngAgt(self, value):
-		self._PngAgt = value if type(value) != auto else self.make_default("PngAgt")
-
-	@PngAgt.deleter
-	def PngAgt(self):
-		del self._PngAgt
-		self._PngAgt = None
-
-	@property
-	def Purp(self):
-		return self._Purp
-
-	@Purp.setter
-	def Purp(self, value):
-		self._Purp = value if type(value) != auto else self.make_default("Purp")
-
-	@Purp.deleter
-	def Purp(self):
-		del self._Purp
-		self._Purp = None
-
-	@property
-	def PosLmt(self):
-		return self._PosLmt
-
-	@PosLmt.setter
-	def PosLmt(self, value):
-		self._PosLmt = value if type(value) != auto else self.make_default("PosLmt")
-
-	@PosLmt.deleter
-	def PosLmt(self):
-		del self._PosLmt
-		self._PosLmt = None
-
-	@property
-	def CpnAttchdNb(self):
-		return self._CpnAttchdNb
-
-	@CpnAttchdNb.setter
-	def CpnAttchdNb(self, value):
-		self._CpnAttchdNb = value if type(value) != auto else self.make_default("CpnAttchdNb")
-
-	@CpnAttchdNb.deleter
-	def CpnAttchdNb(self):
-		del self._CpnAttchdNb
-		self._CpnAttchdNb = None
-
-	@property
-	def ConvsRatioNmrtr(self):
-		return self._ConvsRatioNmrtr
-
-	@ConvsRatioNmrtr.setter
-	def ConvsRatioNmrtr(self, value):
-		self._ConvsRatioNmrtr = value if type(value) != auto else self.make_default("ConvsRatioNmrtr")
-
-	@ConvsRatioNmrtr.deleter
-	def ConvsRatioNmrtr(self):
-		del self._ConvsRatioNmrtr
-		self._ConvsRatioNmrtr = None
-
-	@property
-	def XpryDt(self):
-		return self._XpryDt
-
-	@XpryDt.setter
-	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
-
-	@XpryDt.deleter
-	def XpryDt(self):
-		del self._XpryDt
-		self._XpryDt = None
-
-	@property
-	def SprdAndBchmkCrv(self):
-		return self._SprdAndBchmkCrv
-
-	@SprdAndBchmkCrv.setter
-	def SprdAndBchmkCrv(self, value):
-		self._SprdAndBchmkCrv = value if type(value) != auto else self.make_default("SprdAndBchmkCrv")
-
-	@SprdAndBchmkCrv.deleter
-	def SprdAndBchmkCrv(self):
-		del self._SprdAndBchmkCrv
-		self._SprdAndBchmkCrv = None
-
-	@property
-	def CmonSfkpr(self):
-		return self._CmonSfkpr
-
-	@CmonSfkpr.setter
-	def CmonSfkpr(self, value):
-		self._CmonSfkpr = value if type(value) != auto else self.make_default("CmonSfkpr")
-
-	@CmonSfkpr.deleter
-	def CmonSfkpr(self):
-		del self._CmonSfkpr
-		self._CmonSfkpr = None
-
-	@property
-	def ISOSctyLngNm(self):
-		return self._ISOSctyLngNm
-
-	@ISOSctyLngNm.setter
-	def ISOSctyLngNm(self, value):
-		self._ISOSctyLngNm = value if type(value) != auto else self.make_default("ISOSctyLngNm")
-
-	@ISOSctyLngNm.deleter
-	def ISOSctyLngNm(self):
-		del self._ISOSctyLngNm
-		self._ISOSctyLngNm = None
+	@RcrdDt.deleter
+	def RcrdDt(self):
+		del self._RcrdDt
+		self._RcrdDt = None
 
 	@property
 	def SttlmInf(self):
@@ -651,43 +170,121 @@ class CommonFinancialInstrumentAttributes10(base_types._BaseFieldType):
 		self._SttlmInf = None
 
 	@property
-	def TradgMtd(self):
-		return self._TradgMtd
+	def CallTp(self):
+		return self._CallTp
 
-	@TradgMtd.setter
-	def TradgMtd(self, value):
-		self._TradgMtd = value if type(value) != auto else self.make_default("TradgMtd")
+	@CallTp.setter
+	def CallTp(self, value):
+		self._CallTp = value if type(value) != auto else self.make_default("CallTp")
 
-	@TradgMtd.deleter
-	def TradgMtd(self):
-		del self._TradgMtd
-		self._TradgMtd = None
-
-	@property
-	def ISOSctyShrtNm(self):
-		return self._ISOSctyShrtNm
-
-	@ISOSctyShrtNm.setter
-	def ISOSctyShrtNm(self, value):
-		self._ISOSctyShrtNm = value if type(value) != auto else self.make_default("ISOSctyShrtNm")
-
-	@ISOSctyShrtNm.deleter
-	def ISOSctyShrtNm(self):
-		del self._ISOSctyShrtNm
-		self._ISOSctyShrtNm = None
+	@CallTp.deleter
+	def CallTp(self):
+		del self._CallTp
+		self._CallTp = None
 
 	@property
-	def CtrctVrsnNb(self):
-		return self._CtrctVrsnNb
+	def NmVldFr(self):
+		return self._NmVldFr
 
-	@CtrctVrsnNb.setter
-	def CtrctVrsnNb(self, value):
-		self._CtrctVrsnNb = value if type(value) != auto else self.make_default("CtrctVrsnNb")
+	@NmVldFr.setter
+	def NmVldFr(self, value):
+		self._NmVldFr = value if type(value) != auto else self.make_default("NmVldFr")
 
-	@CtrctVrsnNb.deleter
-	def CtrctVrsnNb(self):
-		del self._CtrctVrsnNb
-		self._CtrctVrsnNb = None
+	@NmVldFr.deleter
+	def NmVldFr(self):
+		del self._NmVldFr
+		self._NmVldFr = None
+
+	@property
+	def TaxLotNb(self):
+		return self._TaxLotNb
+
+	@TaxLotNb.setter
+	def TaxLotNb(self, value):
+		self._TaxLotNb = value if type(value) != auto else self.make_default("TaxLotNb")
+
+	@TaxLotNb.deleter
+	def TaxLotNb(self):
+		del self._TaxLotNb
+		self._TaxLotNb = None
+
+	@property
+	def PoolNb(self):
+		return self._PoolNb
+
+	@PoolNb.setter
+	def PoolNb(self, value):
+		self._PoolNb = value if type(value) != auto else self.make_default("PoolNb")
+
+	@PoolNb.deleter
+	def PoolNb(self):
+		del self._PoolNb
+		self._PoolNb = None
+
+	@property
+	def LglRstrctns(self):
+		return self._LglRstrctns
+
+	@LglRstrctns.setter
+	def LglRstrctns(self, value):
+		self._LglRstrctns = value if type(value) != auto else self.make_default("LglRstrctns")
+
+	@LglRstrctns.deleter
+	def LglRstrctns(self):
+		del self._LglRstrctns
+		self._LglRstrctns = None
+
+	@property
+	def Clss(self):
+		return self._Clss
+
+	@Clss.setter
+	def Clss(self, value):
+		self._Clss = value if type(value) != auto else self.make_default("Clss")
+
+	@Clss.deleter
+	def Clss(self):
+		del self._Clss
+		self._Clss = None
+
+	@property
+	def NearTermPosLmt(self):
+		return self._NearTermPosLmt
+
+	@NearTermPosLmt.setter
+	def NearTermPosLmt(self, value):
+		self._NearTermPosLmt = value if type(value) != auto else self.make_default("NearTermPosLmt")
+
+	@NearTermPosLmt.deleter
+	def NearTermPosLmt(self):
+		del self._NearTermPosLmt
+		self._NearTermPosLmt = None
+
+	@property
+	def ConvsRatioDnmtr(self):
+		return self._ConvsRatioDnmtr
+
+	@ConvsRatioDnmtr.setter
+	def ConvsRatioDnmtr(self, value):
+		self._ConvsRatioDnmtr = value if type(value) != auto else self.make_default("ConvsRatioDnmtr")
+
+	@ConvsRatioDnmtr.deleter
+	def ConvsRatioDnmtr(self):
+		del self._ConvsRatioDnmtr
+		self._ConvsRatioDnmtr = None
+
+	@property
+	def ConvtblInd(self):
+		return self._ConvtblInd
+
+	@ConvtblInd.setter
+	def ConvtblInd(self, value):
+		self._ConvtblInd = value if type(value) != auto else self.make_default("ConvtblInd")
+
+	@ConvtblInd.deleter
+	def ConvtblInd(self):
+		del self._ConvtblInd
+		self._ConvtblInd = None
 
 	@property
 	def CtctNm(self):
@@ -703,6 +300,383 @@ class CommonFinancialInstrumentAttributes10(base_types._BaseFieldType):
 		self._CtctNm = None
 
 	@property
+	def FngbInd(self):
+		return self._FngbInd
+
+	@FngbInd.setter
+	def FngbInd(self, value):
+		self._FngbInd = value if type(value) != auto else self.make_default("FngbInd")
+
+	@FngbInd.deleter
+	def FngbInd(self):
+		del self._FngbInd
+		self._FngbInd = None
+
+	@property
+	def WhldgTaxRgm(self):
+		return self._WhldgTaxRgm
+
+	@WhldgTaxRgm.setter
+	def WhldgTaxRgm(self, value):
+		self._WhldgTaxRgm = value if type(value) != auto else self.make_default("WhldgTaxRgm")
+
+	@WhldgTaxRgm.deleter
+	def WhldgTaxRgm(self):
+		del self._WhldgTaxRgm
+		self._WhldgTaxRgm = None
+
+	@property
+	def CmonSfkpr(self):
+		return self._CmonSfkpr
+
+	@CmonSfkpr.setter
+	def CmonSfkpr(self, value):
+		self._CmonSfkpr = value if type(value) != auto else self.make_default("CmonSfkpr")
+
+	@CmonSfkpr.deleter
+	def CmonSfkpr(self):
+		del self._CmonSfkpr
+		self._CmonSfkpr = None
+
+	@property
+	def DnmtnCcy(self):
+		return self._DnmtnCcy
+
+	@DnmtnCcy.setter
+	def DnmtnCcy(self, value):
+		self._DnmtnCcy = value if type(value) != auto else self.make_default("DnmtnCcy")
+
+	@DnmtnCcy.deleter
+	def DnmtnCcy(self):
+		del self._DnmtnCcy
+		self._DnmtnCcy = None
+
+	@property
+	def PngAgt(self):
+		return self._PngAgt
+
+	@PngAgt.setter
+	def PngAgt(self, value):
+		self._PngAgt = value if type(value) != auto else self.make_default("PngAgt")
+
+	@PngAgt.deleter
+	def PngAgt(self):
+		del self._PngAgt
+		self._PngAgt = None
+
+	@property
+	def UndrlygRsk(self):
+		return self._UndrlygRsk
+
+	@UndrlygRsk.setter
+	def UndrlygRsk(self, value):
+		self._UndrlygRsk = value if type(value) != auto else self.make_default("UndrlygRsk")
+
+	@UndrlygRsk.deleter
+	def UndrlygRsk(self):
+		del self._UndrlygRsk
+		self._UndrlygRsk = None
+
+	@property
+	def Issnc(self):
+		return self._Issnc
+
+	@Issnc.setter
+	def Issnc(self, value):
+		self._Issnc = value if type(value) != auto else self.make_default("Issnc")
+
+	@Issnc.deleter
+	def Issnc(self):
+		del self._Issnc
+		self._Issnc = None
+
+	@property
+	def PutTp(self):
+		return self._PutTp
+
+	@PutTp.setter
+	def PutTp(self, value):
+		self._PutTp = value if type(value) != auto else self.make_default("PutTp")
+
+	@PutTp.deleter
+	def PutTp(self):
+		del self._PutTp
+		self._PutTp = None
+
+	@property
+	def LeadMgr(self):
+		return self._LeadMgr
+
+	@LeadMgr.setter
+	def LeadMgr(self, value):
+		self._LeadMgr = value if type(value) != auto else self.make_default("LeadMgr")
+
+	@LeadMgr.deleter
+	def LeadMgr(self):
+		del self._LeadMgr
+		self._LeadMgr = None
+
+	@property
+	def AftrXchgPhysForm(self):
+		return self._AftrXchgPhysForm
+
+	@AftrXchgPhysForm.setter
+	def AftrXchgPhysForm(self, value):
+		self._AftrXchgPhysForm = value if type(value) != auto else self.make_default("AftrXchgPhysForm")
+
+	@AftrXchgPhysForm.deleter
+	def AftrXchgPhysForm(self):
+		del self._AftrXchgPhysForm
+		self._AftrXchgPhysForm = None
+
+	@property
+	def CtrctVrsnNb(self):
+		return self._CtrctVrsnNb
+
+	@CtrctVrsnNb.setter
+	def CtrctVrsnNb(self, value):
+		self._CtrctVrsnNb = value if type(value) != auto else self.make_default("CtrctVrsnNb")
+
+	@CtrctVrsnNb.deleter
+	def CtrctVrsnNb(self):
+		del self._CtrctVrsnNb
+		self._CtrctVrsnNb = None
+
+	@property
+	def SctySts(self):
+		return self._SctySts
+
+	@SctySts.setter
+	def SctySts(self, value):
+		self._SctySts = value if type(value) != auto else self.make_default("SctySts")
+
+	@SctySts.deleter
+	def SctySts(self):
+		del self._SctySts
+		self._SctySts = None
+
+	@property
+	def Rstrctn(self):
+		return self._Rstrctn
+
+	@Rstrctn.setter
+	def Rstrctn(self, value):
+		self._Rstrctn = value if type(value) != auto else self.make_default("Rstrctn")
+
+	@Rstrctn.deleter
+	def Rstrctn(self):
+		del self._Rstrctn
+		self._Rstrctn = None
+
+	@property
+	def CpnAttchdNb(self):
+		return self._CpnAttchdNb
+
+	@CpnAttchdNb.setter
+	def CpnAttchdNb(self, value):
+		self._CpnAttchdNb = value if type(value) != auto else self.make_default("CpnAttchdNb")
+
+	@CpnAttchdNb.deleter
+	def CpnAttchdNb(self):
+		del self._CpnAttchdNb
+		self._CpnAttchdNb = None
+
+	@property
+	def Purp(self):
+		return self._Purp
+
+	@Purp.setter
+	def Purp(self, value):
+		self._Purp = value if type(value) != auto else self.make_default("Purp")
+
+	@Purp.deleter
+	def Purp(self):
+		del self._Purp
+		self._Purp = None
+
+	@property
+	def ISOSctyLngNm(self):
+		return self._ISOSctyLngNm
+
+	@ISOSctyLngNm.setter
+	def ISOSctyLngNm(self, value):
+		self._ISOSctyLngNm = value if type(value) != auto else self.make_default("ISOSctyLngNm")
+
+	@ISOSctyLngNm.deleter
+	def ISOSctyLngNm(self):
+		del self._ISOSctyLngNm
+		self._ISOSctyLngNm = None
+
+	@property
+	def ConvsPrd(self):
+		return self._ConvsPrd
+
+	@ConvsPrd.setter
+	def ConvsPrd(self, value):
+		self._ConvsPrd = value if type(value) != auto else self.make_default("ConvsPrd")
+
+	@ConvsPrd.deleter
+	def ConvsPrd(self):
+		del self._ConvsPrd
+		self._ConvsPrd = None
+
+	@property
+	def PmtSts(self):
+		return self._PmtSts
+
+	@PmtSts.setter
+	def PmtSts(self, value):
+		self._PmtSts = value if type(value) != auto else self.make_default("PmtSts")
+
+	@PmtSts.deleter
+	def PmtSts(self):
+		del self._PmtSts
+		self._PmtSts = None
+
+	@property
+	def XpryDt(self):
+		return self._XpryDt
+
+	@XpryDt.setter
+	def XpryDt(self, value):
+		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
+
+	@XpryDt.deleter
+	def XpryDt(self):
+		del self._XpryDt
+		self._XpryDt = None
+
+	@property
+	def Cnfdtl(self):
+		return self._Cnfdtl
+
+	@Cnfdtl.setter
+	def Cnfdtl(self, value):
+		self._Cnfdtl = value if type(value) != auto else self.make_default("Cnfdtl")
+
+	@Cnfdtl.deleter
+	def Cnfdtl(self):
+		del self._Cnfdtl
+		self._Cnfdtl = None
+
+	@property
+	def ConvsRatioNmrtr(self):
+		return self._ConvsRatioNmrtr
+
+	@ConvsRatioNmrtr.setter
+	def ConvsRatioNmrtr(self, value):
+		self._ConvsRatioNmrtr = value if type(value) != auto else self.make_default("ConvsRatioNmrtr")
+
+	@ConvsRatioNmrtr.deleter
+	def ConvsRatioNmrtr(self):
+		del self._ConvsRatioNmrtr
+		self._ConvsRatioNmrtr = None
+
+	@property
+	def ISOSctyShrtNm(self):
+		return self._ISOSctyShrtNm
+
+	@ISOSctyShrtNm.setter
+	def ISOSctyShrtNm(self, value):
+		self._ISOSctyShrtNm = value if type(value) != auto else self.make_default("ISOSctyShrtNm")
+
+	@ISOSctyShrtNm.deleter
+	def ISOSctyShrtNm(self):
+		del self._ISOSctyShrtNm
+		self._ISOSctyShrtNm = None
+
+	@property
+	def PosLmt(self):
+		return self._PosLmt
+
+	@PosLmt.setter
+	def PosLmt(self, value):
+		self._PosLmt = value if type(value) != auto else self.make_default("PosLmt")
+
+	@PosLmt.deleter
+	def PosLmt(self):
+		del self._PosLmt
+		self._PosLmt = None
+
+	@property
+	def TradgMtd(self):
+		return self._TradgMtd
+
+	@TradgMtd.setter
+	def TradgMtd(self, value):
+		self._TradgMtd = value if type(value) != auto else self.make_default("TradgMtd")
+
+	@TradgMtd.deleter
+	def TradgMtd(self):
+		del self._TradgMtd
+		self._TradgMtd = None
+
+	@property
+	def PmryPlcOfDpst(self):
+		return self._PmryPlcOfDpst
+
+	@PmryPlcOfDpst.setter
+	def PmryPlcOfDpst(self, value):
+		self._PmryPlcOfDpst = value if type(value) != auto else self.make_default("PmryPlcOfDpst")
+
+	@PmryPlcOfDpst.deleter
+	def PmryPlcOfDpst(self):
+		del self._PmryPlcOfDpst
+		self._PmryPlcOfDpst = None
+
+	@property
+	def ClssfctnTp(self):
+		return self._ClssfctnTp
+
+	@ClssfctnTp.setter
+	def ClssfctnTp(self, value):
+		self._ClssfctnTp = value if type(value) != auto else self.make_default("ClssfctnTp")
+
+	@ClssfctnTp.deleter
+	def ClssfctnTp(self):
+		del self._ClssfctnTp
+		self._ClssfctnTp = None
+
+	@property
+	def RedPmtCcy(self):
+		return self._RedPmtCcy
+
+	@RedPmtCcy.setter
+	def RedPmtCcy(self, value):
+		self._RedPmtCcy = value if type(value) != auto else self.make_default("RedPmtCcy")
+
+	@RedPmtCcy.deleter
+	def RedPmtCcy(self):
+		del self._RedPmtCcy
+		self._RedPmtCcy = None
+
+	@property
+	def CvrdInd(self):
+		return self._CvrdInd
+
+	@CvrdInd.setter
+	def CvrdInd(self, value):
+		self._CvrdInd = value if type(value) != auto else self.make_default("CvrdInd")
+
+	@CvrdInd.deleter
+	def CvrdInd(self):
+		del self._CvrdInd
+		self._CvrdInd = None
+
+	@property
+	def TEFRARule(self):
+		return self._TEFRARule
+
+	@TEFRARule.setter
+	def TEFRARule(self, value):
+		self._TEFRARule = value if type(value) != auto else self.make_default("TEFRARule")
+
+	@TEFRARule.deleter
+	def TEFRARule(self):
+		del self._TEFRARule
+		self._TEFRARule = None
+
+	@property
 	def Dpstry(self):
 		return self._Dpstry
 
@@ -715,58 +689,84 @@ class CommonFinancialInstrumentAttributes10(base_types._BaseFieldType):
 		del self._Dpstry
 		self._Dpstry = None
 
+	@property
+	def SrNb(self):
+		return self._SrNb
+
+	@SrNb.setter
+	def SrNb(self, value):
+		self._SrNb = value if type(value) != auto else self.make_default("SrNb")
+
+	@SrNb.deleter
+	def SrNb(self):
+		del self._SrNb
+		self._SrNb = None
+
+	@property
+	def CertNb(self):
+		return self._CertNb
+
+	@CertNb.setter
+	def CertNb(self, value):
+		self._CertNb = value if type(value) != auto else self.make_default("CertNb")
+
+	@CertNb.deleter
+	def CertNb(self):
+		del self._CertNb
+		self._CertNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cnfdtl', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TEFRARule', type=TEFRARules3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rstrctn', type=SecurityRestriction3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PmryPlcOfDpst', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LeadMgr', type=Organisation38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygRsk', type=Organisation38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PutTp', type=PutType3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConvsRatioDnmtr', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RedPmtCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtSts', type=SecuritiesPaymentStatus5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WhldgTaxRgm', type=SecurityWithHoldingTax1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SctySts', type=SecurityStatus3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issnc', type=Issuance5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglRstrctns', type=LegalRestrictions4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FngbInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConvsPrd', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmForm', type=FinancialInstrumentForm2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcrdDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConvtblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AftrXchgPhysForm', type=InitialPhysicalForm3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Clss', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NearTermPosLmt', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SprdAndBchmkCrv', type=BenchmarkCurve6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrncplPngAgt', type=Organisation38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ListgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RedTp', type=MaturityRedemptionType3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvtPlcmnt', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgMkt', type=TradingParameters2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InitlPhysForm', type=InitialPhysicalForm4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DnmtnCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolNb', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CallTp', type=CallType3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ListgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmVldFr', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CvrdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrNb', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxLotNb', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RedTp', type=MaturityRedemptionType3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrncplPngAgt', type=Organisation38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvtPlcmnt', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PngAgt', type=Organisation38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Purp', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PosLmt', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CpnAttchdNb', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConvsRatioNmrtr', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SprdAndBchmkCrv', type=BenchmarkCurve6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CmonSfkpr', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ISOSctyLngNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcrdDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmInf', type=SettlementInformation17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TradgMtd', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ISOSctyShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctVrsnNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CallTp', type=CallType3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmVldFr', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxLotNb', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolNb', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglRstrctns', type=LegalRestrictions4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Clss', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NearTermPosLmt', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConvsRatioDnmtr', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConvtblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctNm', type=Organisation38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FngbInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WhldgTaxRgm', type=SecurityWithHoldingTax1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CmonSfkpr', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DnmtnCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PngAgt', type=Organisation38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygRsk', type=Organisation38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issnc', type=Issuance5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PutTp', type=PutType3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LeadMgr', type=Organisation38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AftrXchgPhysForm', type=InitialPhysicalForm3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctVrsnNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctySts', type=SecurityStatus3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rstrctn', type=SecurityRestriction3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CpnAttchdNb', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Purp', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ISOSctyLngNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConvsPrd', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtSts', type=SecuritiesPaymentStatus5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cnfdtl', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConvsRatioNmrtr', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ISOSctyShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PosLmt', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgMtd', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmryPlcOfDpst', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RedPmtCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CvrdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TEFRARule', type=TEFRARules3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dpstry', type=Organisation38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrNb', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

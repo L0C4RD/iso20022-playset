@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BuyInRegulatoryAdviceResponseV02
 
 class SESE_042_001_02():

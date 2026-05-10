@@ -1,39 +1,26 @@
-import base_types
-import GenericIdentification168
-import NonNegativeNumber
-import Product1Choice
+from . import base_types
 import ActiveCurrencyAnd24Amount
-import OpenInterest1
+import Product1Choice
 import MICIdentifier
+import NonNegativeNumber
+import OpenInterest1
+import GenericIdentification168
 
 class ClearedProduct2(base_types._BaseFieldType):
 
-	__slots__ = ["_TrdsClrd", "_OpnIntrst", "_UvrslPdctId", "_TradgVn", "_Pdct", "_CCPPdctId", "_ClrdGrssNtnlAmt"]
+	__slots__ = ["_CCPPdctId", "_UvrslPdctId", "_ClrdGrssNtnlAmt", "_Pdct", "_OpnIntrst", "_TradgVn", "_TrdsClrd"]
 	@property
-	def TrdsClrd(self):
-		return self._TrdsClrd
+	def CCPPdctId(self):
+		return self._CCPPdctId
 
-	@TrdsClrd.setter
-	def TrdsClrd(self, value):
-		self._TrdsClrd = value if type(value) != auto else self.make_default("TrdsClrd")
+	@CCPPdctId.setter
+	def CCPPdctId(self, value):
+		self._CCPPdctId = value if type(value) != auto else self.make_default("CCPPdctId")
 
-	@TrdsClrd.deleter
-	def TrdsClrd(self):
-		del self._TrdsClrd
-		self._TrdsClrd = None
-
-	@property
-	def OpnIntrst(self):
-		return self._OpnIntrst
-
-	@OpnIntrst.setter
-	def OpnIntrst(self, value):
-		self._OpnIntrst = value if type(value) != auto else self.make_default("OpnIntrst")
-
-	@OpnIntrst.deleter
-	def OpnIntrst(self):
-		del self._OpnIntrst
-		self._OpnIntrst = None
+	@CCPPdctId.deleter
+	def CCPPdctId(self):
+		del self._CCPPdctId
+		self._CCPPdctId = None
 
 	@property
 	def UvrslPdctId(self):
@@ -49,17 +36,17 @@ class ClearedProduct2(base_types._BaseFieldType):
 		self._UvrslPdctId = None
 
 	@property
-	def TradgVn(self):
-		return self._TradgVn
+	def ClrdGrssNtnlAmt(self):
+		return self._ClrdGrssNtnlAmt
 
-	@TradgVn.setter
-	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != auto else self.make_default("TradgVn")
+	@ClrdGrssNtnlAmt.setter
+	def ClrdGrssNtnlAmt(self, value):
+		self._ClrdGrssNtnlAmt = value if type(value) != auto else self.make_default("ClrdGrssNtnlAmt")
 
-	@TradgVn.deleter
-	def TradgVn(self):
-		del self._TradgVn
-		self._TradgVn = None
+	@ClrdGrssNtnlAmt.deleter
+	def ClrdGrssNtnlAmt(self):
+		del self._ClrdGrssNtnlAmt
+		self._ClrdGrssNtnlAmt = None
 
 	@property
 	def Pdct(self):
@@ -75,38 +62,51 @@ class ClearedProduct2(base_types._BaseFieldType):
 		self._Pdct = None
 
 	@property
-	def CCPPdctId(self):
-		return self._CCPPdctId
+	def OpnIntrst(self):
+		return self._OpnIntrst
 
-	@CCPPdctId.setter
-	def CCPPdctId(self, value):
-		self._CCPPdctId = value if type(value) != auto else self.make_default("CCPPdctId")
+	@OpnIntrst.setter
+	def OpnIntrst(self, value):
+		self._OpnIntrst = value if type(value) != auto else self.make_default("OpnIntrst")
 
-	@CCPPdctId.deleter
-	def CCPPdctId(self):
-		del self._CCPPdctId
-		self._CCPPdctId = None
+	@OpnIntrst.deleter
+	def OpnIntrst(self):
+		del self._OpnIntrst
+		self._OpnIntrst = None
 
 	@property
-	def ClrdGrssNtnlAmt(self):
-		return self._ClrdGrssNtnlAmt
+	def TradgVn(self):
+		return self._TradgVn
 
-	@ClrdGrssNtnlAmt.setter
-	def ClrdGrssNtnlAmt(self, value):
-		self._ClrdGrssNtnlAmt = value if type(value) != auto else self.make_default("ClrdGrssNtnlAmt")
+	@TradgVn.setter
+	def TradgVn(self, value):
+		self._TradgVn = value if type(value) != auto else self.make_default("TradgVn")
 
-	@ClrdGrssNtnlAmt.deleter
-	def ClrdGrssNtnlAmt(self):
-		del self._ClrdGrssNtnlAmt
-		self._ClrdGrssNtnlAmt = None
+	@TradgVn.deleter
+	def TradgVn(self):
+		del self._TradgVn
+		self._TradgVn = None
+
+	@property
+	def TrdsClrd(self):
+		return self._TrdsClrd
+
+	@TrdsClrd.setter
+	def TrdsClrd(self, value):
+		self._TrdsClrd = value if type(value) != auto else self.make_default("TrdsClrd")
+
+	@TrdsClrd.deleter
+	def TrdsClrd(self):
+		del self._TrdsClrd
+		self._TrdsClrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrdsClrd', type=NonNegativeNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OpnIntrst', type=OpenInterest1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UvrslPdctId', type=GenericIdentification168, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Pdct', type=Product1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CCPPdctId', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UvrslPdctId', type=GenericIdentification168, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrdGrssNtnlAmt', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pdct', type=Product1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OpnIntrst', type=OpenInterest1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TrdsClrd', type=NonNegativeNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

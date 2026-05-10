@@ -1,6 +1,6 @@
-import base_types
-import GenericIdentification47
+from . import base_types
 import FundCashAccount4Code
+import GenericIdentification47
 
 class AccountType2Choice(base_types._BaseFieldType):
 

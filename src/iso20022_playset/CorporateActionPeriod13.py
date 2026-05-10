@@ -1,9 +1,9 @@
-import base_types
+from . import base_types
 import Period11
 
 class CorporateActionPeriod13(base_types._BaseFieldType):
 
-	__slots__ = ["_PricClctnPrd", "_ActnPrd", "_ParllTradgPrd"]
+	__slots__ = ["_PricClctnPrd", "_ParllTradgPrd", "_ActnPrd"]
 	@property
 	def PricClctnPrd(self):
 		return self._PricClctnPrd
@@ -18,19 +18,6 @@ class CorporateActionPeriod13(base_types._BaseFieldType):
 		self._PricClctnPrd = None
 
 	@property
-	def ActnPrd(self):
-		return self._ActnPrd
-
-	@ActnPrd.setter
-	def ActnPrd(self, value):
-		self._ActnPrd = value if type(value) != auto else self.make_default("ActnPrd")
-
-	@ActnPrd.deleter
-	def ActnPrd(self):
-		del self._ActnPrd
-		self._ActnPrd = None
-
-	@property
 	def ParllTradgPrd(self):
 		return self._ParllTradgPrd
 
@@ -43,9 +30,22 @@ class CorporateActionPeriod13(base_types._BaseFieldType):
 		del self._ParllTradgPrd
 		self._ParllTradgPrd = None
 
+	@property
+	def ActnPrd(self):
+		return self._ActnPrd
+
+	@ActnPrd.setter
+	def ActnPrd(self, value):
+		self._ActnPrd = value if type(value) != auto else self.make_default("ActnPrd")
+
+	@ActnPrd.deleter
+	def ActnPrd(self):
+		del self._ActnPrd
+		self._ActnPrd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PricClctnPrd', type=Period11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActnPrd', type=Period11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ParllTradgPrd', type=Period11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActnPrd', type=Period11, min=0, max=1, mutex_group=None, array=False),
 	))
 

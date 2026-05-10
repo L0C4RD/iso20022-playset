@@ -1,6 +1,6 @@
-import base_types
-import RenounceableStatus1Code
+from . import base_types
 import GenericIdentification30
+import RenounceableStatus1Code
 
 class RenounceableEntitlementStatusTypeFormat3Choice(base_types._BaseFieldType):
 

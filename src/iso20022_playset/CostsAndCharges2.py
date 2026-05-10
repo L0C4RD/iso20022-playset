@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import ISODate
-import AdditionalInformation15
 import IndividualCostOrCharge2
+import AdditionalInformation15
 
 class CostsAndCharges2(base_types._BaseFieldType):
 
-	__slots__ = ["_ExAnteRefDt", "_AddtlInf", "_IndvCostOrChrg"]
+	__slots__ = ["_IndvCostOrChrg", "_AddtlInf", "_ExAnteRefDt"]
 	@property
-	def ExAnteRefDt(self):
-		return self._ExAnteRefDt
+	def IndvCostOrChrg(self):
+		return self._IndvCostOrChrg
 
-	@ExAnteRefDt.setter
-	def ExAnteRefDt(self, value):
-		self._ExAnteRefDt = value if type(value) != auto else self.make_default("ExAnteRefDt")
+	@IndvCostOrChrg.setter
+	def IndvCostOrChrg(self, value):
+		self._IndvCostOrChrg = value if type(value) != auto else self.make_default("IndvCostOrChrg")
 
-	@ExAnteRefDt.deleter
-	def ExAnteRefDt(self):
-		del self._ExAnteRefDt
-		self._ExAnteRefDt = None
+	@IndvCostOrChrg.deleter
+	def IndvCostOrChrg(self):
+		del self._IndvCostOrChrg
+		self._IndvCostOrChrg = None
 
 	@property
 	def AddtlInf(self):
@@ -33,21 +33,21 @@ class CostsAndCharges2(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def IndvCostOrChrg(self):
-		return self._IndvCostOrChrg
+	def ExAnteRefDt(self):
+		return self._ExAnteRefDt
 
-	@IndvCostOrChrg.setter
-	def IndvCostOrChrg(self, value):
-		self._IndvCostOrChrg = value if type(value) != auto else self.make_default("IndvCostOrChrg")
+	@ExAnteRefDt.setter
+	def ExAnteRefDt(self, value):
+		self._ExAnteRefDt = value if type(value) != auto else self.make_default("ExAnteRefDt")
 
-	@IndvCostOrChrg.deleter
-	def IndvCostOrChrg(self):
-		del self._IndvCostOrChrg
-		self._IndvCostOrChrg = None
+	@ExAnteRefDt.deleter
+	def ExAnteRefDt(self):
+		del self._ExAnteRefDt
+		self._ExAnteRefDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ExAnteRefDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndvCostOrChrg', type=IndividualCostOrCharge2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExAnteRefDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

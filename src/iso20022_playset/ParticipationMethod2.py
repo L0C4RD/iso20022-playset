@@ -1,11 +1,11 @@
-import base_types
-import DateFormat58Choice
+from . import base_types
 import ParticipationMethod3Choice
 import YesNoIndicator
+import DateFormat58Choice
 
 class ParticipationMethod2(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrDdlnForVtng", "_SpprtdByAcctSvcr", "_PrtcptnMtd", "_RspnDdlnForVtng"]
+	__slots__ = ["_IssrDdlnForVtng", "_PrtcptnMtd", "_RspnDdlnForVtng", "_SpprtdByAcctSvcr"]
 	@property
 	def IssrDdlnForVtng(self):
 		return self._IssrDdlnForVtng
@@ -18,19 +18,6 @@ class ParticipationMethod2(base_types._BaseFieldType):
 	def IssrDdlnForVtng(self):
 		del self._IssrDdlnForVtng
 		self._IssrDdlnForVtng = None
-
-	@property
-	def SpprtdByAcctSvcr(self):
-		return self._SpprtdByAcctSvcr
-
-	@SpprtdByAcctSvcr.setter
-	def SpprtdByAcctSvcr(self, value):
-		self._SpprtdByAcctSvcr = value if type(value) != auto else self.make_default("SpprtdByAcctSvcr")
-
-	@SpprtdByAcctSvcr.deleter
-	def SpprtdByAcctSvcr(self):
-		del self._SpprtdByAcctSvcr
-		self._SpprtdByAcctSvcr = None
 
 	@property
 	def PrtcptnMtd(self):
@@ -58,10 +45,23 @@ class ParticipationMethod2(base_types._BaseFieldType):
 		del self._RspnDdlnForVtng
 		self._RspnDdlnForVtng = None
 
+	@property
+	def SpprtdByAcctSvcr(self):
+		return self._SpprtdByAcctSvcr
+
+	@SpprtdByAcctSvcr.setter
+	def SpprtdByAcctSvcr(self, value):
+		self._SpprtdByAcctSvcr = value if type(value) != auto else self.make_default("SpprtdByAcctSvcr")
+
+	@SpprtdByAcctSvcr.deleter
+	def SpprtdByAcctSvcr(self):
+		del self._SpprtdByAcctSvcr
+		self._SpprtdByAcctSvcr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IssrDdlnForVtng', type=DateFormat58Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SpprtdByAcctSvcr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtcptnMtd', type=ParticipationMethod3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnDdlnForVtng', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpprtdByAcctSvcr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

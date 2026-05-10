@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SaleToPOISessionManagementResponseV07
 
 class CASP_006_001_07():

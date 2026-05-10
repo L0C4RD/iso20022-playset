@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class UUIDv4Identifier(base_types._BaseDataType_String):
 

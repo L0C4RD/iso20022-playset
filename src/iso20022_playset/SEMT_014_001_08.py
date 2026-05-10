@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import IntraPositionMovementStatusAdviceV08
 
 class SEMT_014_001_08():

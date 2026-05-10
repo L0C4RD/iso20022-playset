@@ -1,6 +1,6 @@
-import base_types
-import NoReasonCode
+from . import base_types
 import SuspendedStatusReason4
+import NoReasonCode
 
 class SuspendedStatusReason4Choice(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountSwitchInformationResponseV05
 
 class ACMT_028_001_05():

@@ -1,36 +1,23 @@
-import base_types
-import TrueFalseIndicator
+from . import base_types
 import PartyIdentification118Choice
 import MarginAccount1
+import TrueFalseIndicator
 
 class CollateralAccount5(base_types._BaseFieldType):
 
-	__slots__ = ["_CollSgrtnByVal", "_RltdMrgnAcct", "_TitlTrfCollArrgmnt", "_Id"]
+	__slots__ = ["_Id", "_TitlTrfCollArrgmnt", "_RltdMrgnAcct", "_CollSgrtnByVal"]
 	@property
-	def CollSgrtnByVal(self):
-		return self._CollSgrtnByVal
+	def Id(self):
+		return self._Id
 
-	@CollSgrtnByVal.setter
-	def CollSgrtnByVal(self, value):
-		self._CollSgrtnByVal = value if type(value) != auto else self.make_default("CollSgrtnByVal")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@CollSgrtnByVal.deleter
-	def CollSgrtnByVal(self):
-		del self._CollSgrtnByVal
-		self._CollSgrtnByVal = None
-
-	@property
-	def RltdMrgnAcct(self):
-		return self._RltdMrgnAcct
-
-	@RltdMrgnAcct.setter
-	def RltdMrgnAcct(self, value):
-		self._RltdMrgnAcct = value if type(value) != auto else self.make_default("RltdMrgnAcct")
-
-	@RltdMrgnAcct.deleter
-	def RltdMrgnAcct(self):
-		del self._RltdMrgnAcct
-		self._RltdMrgnAcct = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def TitlTrfCollArrgmnt(self):
@@ -46,22 +33,35 @@ class CollateralAccount5(base_types._BaseFieldType):
 		self._TitlTrfCollArrgmnt = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def RltdMrgnAcct(self):
+		return self._RltdMrgnAcct
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@RltdMrgnAcct.setter
+	def RltdMrgnAcct(self, value):
+		self._RltdMrgnAcct = value if type(value) != auto else self.make_default("RltdMrgnAcct")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@RltdMrgnAcct.deleter
+	def RltdMrgnAcct(self):
+		del self._RltdMrgnAcct
+		self._RltdMrgnAcct = None
+
+	@property
+	def CollSgrtnByVal(self):
+		return self._CollSgrtnByVal
+
+	@CollSgrtnByVal.setter
+	def CollSgrtnByVal(self, value):
+		self._CollSgrtnByVal = value if type(value) != auto else self.make_default("CollSgrtnByVal")
+
+	@CollSgrtnByVal.deleter
+	def CollSgrtnByVal(self):
+		del self._CollSgrtnByVal
+		self._CollSgrtnByVal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollSgrtnByVal', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdMrgnAcct', type=MarginAccount1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TitlTrfCollArrgmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification118Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TitlTrfCollArrgmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdMrgnAcct', type=MarginAccount1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CollSgrtnByVal', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
 import SecuritiesMarketReportHeader1
-import SecuritiesReferenceDataReport7
 import SupplementaryData1
+import SecuritiesReferenceDataReport7
 
 class FinancialInstrumentReportingCancellationReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlData", "_SplmtryData", "_RptHdr"]
+	__slots__ = ["_RptHdr", "_CxlData", "_SplmtryData"]
+	@property
+	def RptHdr(self):
+		return self._RptHdr
+
+	@RptHdr.setter
+	def RptHdr(self, value):
+		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
+
+	@RptHdr.deleter
+	def RptHdr(self):
+		del self._RptHdr
+		self._RptHdr = None
+
 	@property
 	def CxlData(self):
 		return self._CxlData
@@ -32,22 +45,9 @@ class FinancialInstrumentReportingCancellationReportV01(base_types._BaseFieldTyp
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def RptHdr(self):
-		return self._RptHdr
-
-	@RptHdr.setter
-	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
-
-	@RptHdr.deleter
-	def RptHdr(self):
-		del self._RptHdr
-		self._RptHdr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RptHdr', type=SecuritiesMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlData', type=SecuritiesReferenceDataReport7, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptHdr', type=SecuritiesMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
 	))
 

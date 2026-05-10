@@ -1,23 +1,10 @@
-import base_types
-import Max4AlphaNumericText
+from . import base_types
 import PartyAndCertificate6
+import Max4AlphaNumericText
 
 class PartyOrGroup3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpId", "_Pty"]
-	@property
-	def GrpId(self):
-		return self._GrpId
-
-	@GrpId.setter
-	def GrpId(self, value):
-		self._GrpId = value if type(value) != auto else self.make_default("GrpId")
-
-	@GrpId.deleter
-	def GrpId(self):
-		del self._GrpId
-		self._GrpId = None
-
+	__slots__ = ["_Pty", "_GrpId"]
 	@property
 	def Pty(self):
 		return self._Pty
@@ -31,8 +18,21 @@ class PartyOrGroup3Choice(base_types._BaseFieldType):
 		del self._Pty
 		self._Pty = None
 
+	@property
+	def GrpId(self):
+		return self._GrpId
+
+	@GrpId.setter
+	def GrpId(self, value):
+		self._GrpId = value if type(value) != auto else self.make_default("GrpId")
+
+	@GrpId.deleter
+	def GrpId(self):
+		del self._GrpId
+		self._GrpId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GrpId', type=Max4AlphaNumericText, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pty', type=PartyAndCertificate6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='GrpId', type=Max4AlphaNumericText, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,23 +1,10 @@
-import base_types
-import FinancialInstrumentQuantity36Choice
+from . import base_types
 import Quantity55Choice
+import FinancialInstrumentQuantity36Choice
 
 class SecuritiesOption88(base_types._BaseFieldType):
 
-	__slots__ = ["_CondlQty", "_AddtlRndUpQty", "_InstdQty"]
-	@property
-	def CondlQty(self):
-		return self._CondlQty
-
-	@CondlQty.setter
-	def CondlQty(self, value):
-		self._CondlQty = value if type(value) != auto else self.make_default("CondlQty")
-
-	@CondlQty.deleter
-	def CondlQty(self):
-		del self._CondlQty
-		self._CondlQty = None
-
+	__slots__ = ["_AddtlRndUpQty", "_CondlQty", "_InstdQty"]
 	@property
 	def AddtlRndUpQty(self):
 		return self._AddtlRndUpQty
@@ -30,6 +17,19 @@ class SecuritiesOption88(base_types._BaseFieldType):
 	def AddtlRndUpQty(self):
 		del self._AddtlRndUpQty
 		self._AddtlRndUpQty = None
+
+	@property
+	def CondlQty(self):
+		return self._CondlQty
+
+	@CondlQty.setter
+	def CondlQty(self, value):
+		self._CondlQty = value if type(value) != auto else self.make_default("CondlQty")
+
+	@CondlQty.deleter
+	def CondlQty(self):
+		del self._CondlQty
+		self._CondlQty = None
 
 	@property
 	def InstdQty(self):
@@ -45,8 +45,8 @@ class SecuritiesOption88(base_types._BaseFieldType):
 		self._InstdQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CondlQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlRndUpQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CondlQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdQty', type=Quantity55Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

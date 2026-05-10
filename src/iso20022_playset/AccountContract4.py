@@ -1,10 +1,10 @@
-import base_types
+from . import base_types
 import ISODate
 import YesNoIndicator
 
 class AccountContract4(base_types._BaseFieldType):
 
-	__slots__ = ["_UrgcyFlg", "_TrgtClsgDt", "_RmvlInd"]
+	__slots__ = ["_UrgcyFlg", "_RmvlInd", "_TrgtClsgDt"]
 	@property
 	def UrgcyFlg(self):
 		return self._UrgcyFlg
@@ -19,19 +19,6 @@ class AccountContract4(base_types._BaseFieldType):
 		self._UrgcyFlg = None
 
 	@property
-	def TrgtClsgDt(self):
-		return self._TrgtClsgDt
-
-	@TrgtClsgDt.setter
-	def TrgtClsgDt(self, value):
-		self._TrgtClsgDt = value if type(value) != auto else self.make_default("TrgtClsgDt")
-
-	@TrgtClsgDt.deleter
-	def TrgtClsgDt(self):
-		del self._TrgtClsgDt
-		self._TrgtClsgDt = None
-
-	@property
 	def RmvlInd(self):
 		return self._RmvlInd
 
@@ -44,9 +31,22 @@ class AccountContract4(base_types._BaseFieldType):
 		del self._RmvlInd
 		self._RmvlInd = None
 
+	@property
+	def TrgtClsgDt(self):
+		return self._TrgtClsgDt
+
+	@TrgtClsgDt.setter
+	def TrgtClsgDt(self, value):
+		self._TrgtClsgDt = value if type(value) != auto else self.make_default("TrgtClsgDt")
+
+	@TrgtClsgDt.deleter
+	def TrgtClsgDt(self):
+		del self._TrgtClsgDt
+		self._TrgtClsgDt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UrgcyFlg', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrgtClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmvlInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrgtClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

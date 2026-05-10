@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import DateOrBlankQuery2Choice
 import DateTimePeriod1
 
 class TradeDateTimeQueryCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_MtrtyDt", "_ExctnDtTm", "_TermntnDt", "_RptgDtTm"]
-	@property
-	def MtrtyDt(self):
-		return self._MtrtyDt
-
-	@MtrtyDt.setter
-	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
-
-	@MtrtyDt.deleter
-	def MtrtyDt(self):
-		del self._MtrtyDt
-		self._MtrtyDt = None
-
+	__slots__ = ["_ExctnDtTm", "_MtrtyDt", "_RptgDtTm", "_TermntnDt"]
 	@property
 	def ExctnDtTm(self):
 		return self._ExctnDtTm
@@ -32,17 +19,17 @@ class TradeDateTimeQueryCriteria2(base_types._BaseFieldType):
 		self._ExctnDtTm = None
 
 	@property
-	def TermntnDt(self):
-		return self._TermntnDt
+	def MtrtyDt(self):
+		return self._MtrtyDt
 
-	@TermntnDt.setter
-	def TermntnDt(self, value):
-		self._TermntnDt = value if type(value) != auto else self.make_default("TermntnDt")
+	@MtrtyDt.setter
+	def MtrtyDt(self, value):
+		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
 
-	@TermntnDt.deleter
-	def TermntnDt(self):
-		del self._TermntnDt
-		self._TermntnDt = None
+	@MtrtyDt.deleter
+	def MtrtyDt(self):
+		del self._MtrtyDt
+		self._MtrtyDt = None
 
 	@property
 	def RptgDtTm(self):
@@ -57,10 +44,23 @@ class TradeDateTimeQueryCriteria2(base_types._BaseFieldType):
 		del self._RptgDtTm
 		self._RptgDtTm = None
 
+	@property
+	def TermntnDt(self):
+		return self._TermntnDt
+
+	@TermntnDt.setter
+	def TermntnDt(self, value):
+		self._TermntnDt = value if type(value) != auto else self.make_default("TermntnDt")
+
+	@TermntnDt.deleter
+	def TermntnDt(self):
+		del self._TermntnDt
+		self._TermntnDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MtrtyDt', type=DateOrBlankQuery2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExctnDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TermntnDt', type=DateOrBlankQuery2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDt', type=DateOrBlankQuery2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TermntnDt', type=DateOrBlankQuery2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import Max35Text
 import PartyIdentification113
 import CancellationStatus22Choice
 
 class OrderStatusAndReason9(base_types._BaseFieldType):
 
-	__slots__ = ["_MstrRef", "_StsInitr", "_CxlSts"]
+	__slots__ = ["_CxlSts", "_StsInitr", "_MstrRef"]
 	@property
-	def MstrRef(self):
-		return self._MstrRef
+	def CxlSts(self):
+		return self._CxlSts
 
-	@MstrRef.setter
-	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
+	@CxlSts.setter
+	def CxlSts(self, value):
+		self._CxlSts = value if type(value) != auto else self.make_default("CxlSts")
 
-	@MstrRef.deleter
-	def MstrRef(self):
-		del self._MstrRef
-		self._MstrRef = None
+	@CxlSts.deleter
+	def CxlSts(self):
+		del self._CxlSts
+		self._CxlSts = None
 
 	@property
 	def StsInitr(self):
@@ -33,21 +33,21 @@ class OrderStatusAndReason9(base_types._BaseFieldType):
 		self._StsInitr = None
 
 	@property
-	def CxlSts(self):
-		return self._CxlSts
+	def MstrRef(self):
+		return self._MstrRef
 
-	@CxlSts.setter
-	def CxlSts(self, value):
-		self._CxlSts = value if type(value) != auto else self.make_default("CxlSts")
+	@MstrRef.setter
+	def MstrRef(self, value):
+		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
 
-	@CxlSts.deleter
-	def CxlSts(self):
-		del self._CxlSts
-		self._CxlSts = None
+	@MstrRef.deleter
+	def MstrRef(self):
+		del self._MstrRef
+		self._MstrRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlSts', type=CancellationStatus22Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

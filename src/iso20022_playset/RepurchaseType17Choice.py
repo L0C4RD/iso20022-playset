@@ -1,6 +1,6 @@
-import base_types
-import RepurchaseType6Code
+from . import base_types
 import GenericIdentification47
+import RepurchaseType6Code
 
 class RepurchaseType17Choice(base_types._BaseFieldType):
 

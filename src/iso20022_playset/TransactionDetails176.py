@@ -1,92 +1,14 @@
-import base_types
+from . import base_types
+import PartyIdentification144
+import TransactionDetails172
+import BlockChainAddressWallet3
 import Max35Text
 import SettlementTypeAndIdentification18
-import TransactionDetails172
-import PartyIdentification144
-import BlockChainAddressWallet3
 import SecuritiesAccount19
 
 class TransactionDetails176(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_OthrTxId", "_SfkpgAcct", "_PrcrTxId", "_MktInfrstrctrTxId", "_TxDtls", "_AcctSvcrTxId", "_AcctOwnrTxId", "_AcctOwnr"]
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
-	@property
-	def OthrTxId(self):
-		return self._OthrTxId
-
-	@OthrTxId.setter
-	def OthrTxId(self, value):
-		self._OthrTxId = value if type(value) != auto else self.make_default("OthrTxId")
-
-	@OthrTxId.deleter
-	def OthrTxId(self):
-		del self._OthrTxId
-		self._OthrTxId = None
-
-	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
-
-	@property
-	def PrcrTxId(self):
-		return self._PrcrTxId
-
-	@PrcrTxId.setter
-	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != auto else self.make_default("PrcrTxId")
-
-	@PrcrTxId.deleter
-	def PrcrTxId(self):
-		del self._PrcrTxId
-		self._PrcrTxId = None
-
-	@property
-	def MktInfrstrctrTxId(self):
-		return self._MktInfrstrctrTxId
-
-	@MktInfrstrctrTxId.setter
-	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
-
-	@MktInfrstrctrTxId.deleter
-	def MktInfrstrctrTxId(self):
-		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
-
-	@property
-	def TxDtls(self):
-		return self._TxDtls
-
-	@TxDtls.setter
-	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != auto else self.make_default("TxDtls")
-
-	@TxDtls.deleter
-	def TxDtls(self):
-		del self._TxDtls
-		self._TxDtls = None
-
+	__slots__ = ["_AcctSvcrTxId", "_AcctOwnrTxId", "_SfkpgAcct", "_BlckChainAdrOrWllt", "_AcctOwnr", "_PrcrTxId", "_TxDtls", "_MktInfrstrctrTxId", "_OthrTxId"]
 	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId
@@ -114,6 +36,32 @@ class TransactionDetails176(base_types._BaseFieldType):
 		self._AcctOwnrTxId = None
 
 	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
+	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
+
+	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
 
@@ -126,15 +74,67 @@ class TransactionDetails176(base_types._BaseFieldType):
 		del self._AcctOwnr
 		self._AcctOwnr = None
 
+	@property
+	def PrcrTxId(self):
+		return self._PrcrTxId
+
+	@PrcrTxId.setter
+	def PrcrTxId(self, value):
+		self._PrcrTxId = value if type(value) != auto else self.make_default("PrcrTxId")
+
+	@PrcrTxId.deleter
+	def PrcrTxId(self):
+		del self._PrcrTxId
+		self._PrcrTxId = None
+
+	@property
+	def TxDtls(self):
+		return self._TxDtls
+
+	@TxDtls.setter
+	def TxDtls(self, value):
+		self._TxDtls = value if type(value) != auto else self.make_default("TxDtls")
+
+	@TxDtls.deleter
+	def TxDtls(self):
+		del self._TxDtls
+		self._TxDtls = None
+
+	@property
+	def MktInfrstrctrTxId(self):
+		return self._MktInfrstrctrTxId
+
+	@MktInfrstrctrTxId.setter
+	def MktInfrstrctrTxId(self, value):
+		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
+
+	@MktInfrstrctrTxId.deleter
+	def MktInfrstrctrTxId(self):
+		del self._MktInfrstrctrTxId
+		self._MktInfrstrctrTxId = None
+
+	@property
+	def OthrTxId(self):
+		return self._OthrTxId
+
+	@OthrTxId.setter
+	def OthrTxId(self, value):
+		self._OthrTxId = value if type(value) != auto else self.make_default("OthrTxId")
+
+	@OthrTxId.deleter
+	def OthrTxId(self):
+		del self._OthrTxId
+		self._OthrTxId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxDtls', type=TransactionDetails172, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrTxId', type=SettlementTypeAndIdentification18, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxDtls', type=TransactionDetails172, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

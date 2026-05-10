@@ -1,23 +1,23 @@
-import base_types
-import MessageHeader9
-import SupplementaryData1
+from . import base_types
 import BusinessDayQuery2
+import SupplementaryData1
+import MessageHeader9
 
 class GetBusinessDayInformationV05(base_types._BaseFieldType):
 
-	__slots__ = ["_BizDayInfQryDef", "_MsgHdr", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_MsgHdr", "_BizDayInfQryDef"]
 	@property
-	def BizDayInfQryDef(self):
-		return self._BizDayInfQryDef
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@BizDayInfQryDef.setter
-	def BizDayInfQryDef(self, value):
-		self._BizDayInfQryDef = value if type(value) != auto else self.make_default("BizDayInfQryDef")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@BizDayInfQryDef.deleter
-	def BizDayInfQryDef(self):
-		del self._BizDayInfQryDef
-		self._BizDayInfQryDef = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def MsgHdr(self):
@@ -33,21 +33,21 @@ class GetBusinessDayInformationV05(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def BizDayInfQryDef(self):
+		return self._BizDayInfQryDef
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@BizDayInfQryDef.setter
+	def BizDayInfQryDef(self, value):
+		self._BizDayInfQryDef = value if type(value) != auto else self.make_default("BizDayInfQryDef")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@BizDayInfQryDef.deleter
+	def BizDayInfQryDef(self):
+		del self._BizDayInfQryDef
+		self._BizDayInfQryDef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BizDayInfQryDef', type=BusinessDayQuery2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BizDayInfQryDef', type=BusinessDayQuery2, min=0, max=1, mutex_group=None, array=False),
 	))
 

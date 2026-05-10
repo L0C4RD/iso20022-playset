@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
+import TransactionVerificationResult5
 import ATMCustomerProfile6
 import LanguageCode
-import TransactionVerificationResult5
 
 class ATMCustomer7(base_types._BaseFieldType):
 
-	__slots__ = ["_SelctdLang", "_Prfl", "_AuthntcnRslt"]
+	__slots__ = ["_AuthntcnRslt", "_SelctdLang", "_Prfl"]
+	@property
+	def AuthntcnRslt(self):
+		return self._AuthntcnRslt
+
+	@AuthntcnRslt.setter
+	def AuthntcnRslt(self, value):
+		self._AuthntcnRslt = value if type(value) != auto else self.make_default("AuthntcnRslt")
+
+	@AuthntcnRslt.deleter
+	def AuthntcnRslt(self):
+		del self._AuthntcnRslt
+		self._AuthntcnRslt = None
+
 	@property
 	def SelctdLang(self):
 		return self._SelctdLang
@@ -32,22 +45,9 @@ class ATMCustomer7(base_types._BaseFieldType):
 		del self._Prfl
 		self._Prfl = None
 
-	@property
-	def AuthntcnRslt(self):
-		return self._AuthntcnRslt
-
-	@AuthntcnRslt.setter
-	def AuthntcnRslt(self, value):
-		self._AuthntcnRslt = value if type(value) != auto else self.make_default("AuthntcnRslt")
-
-	@AuthntcnRslt.deleter
-	def AuthntcnRslt(self):
-		del self._AuthntcnRslt
-		self._AuthntcnRslt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AuthntcnRslt', type=TransactionVerificationResult5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SelctdLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prfl', type=ATMCustomerProfile6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthntcnRslt', type=TransactionVerificationResult5, min=1, max=None, mutex_group=None, array=True),
 	))
 

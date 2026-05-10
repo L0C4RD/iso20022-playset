@@ -1,7 +1,7 @@
-import base_types
-import Max35Text
+from . import base_types
 import ExchangeRateType1Code
 import BaseOneRate
+import Max35Text
 
 class ExchangeRateInformation1(base_types._BaseFieldType):
 

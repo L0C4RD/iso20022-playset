@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReconciliationResponseV04
 
 class CAAD_006_001_04():

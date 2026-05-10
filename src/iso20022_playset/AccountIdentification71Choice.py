@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountAndBalance60
 import AccountIdentification10
 

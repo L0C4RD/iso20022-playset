@@ -1,6 +1,6 @@
-import base_types
-import TrueFalseIndicator
+from . import base_types
 import FinancialInstrumentQuantity25Choice
+import TrueFalseIndicator
 
 class MinimumExecutable1(base_types._BaseFieldType):
 

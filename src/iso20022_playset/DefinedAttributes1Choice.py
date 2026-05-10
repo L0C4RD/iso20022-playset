@@ -1,6 +1,6 @@
-import base_types
-import FinancialInstrumentAttributes89
+from . import base_types
 import FinancialInstrumentAttributes90
+import FinancialInstrumentAttributes89
 
 class DefinedAttributes1Choice(base_types._BaseFieldType):
 

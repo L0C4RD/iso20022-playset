@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountSwitchPaymentResponseV02
 
 class ACMT_035_001_02():

@@ -1,23 +1,23 @@
-import base_types
-import ClearingExceptionOrExemption3Choice
-import ClearingPartyAndTime22Choice
+from . import base_types
 import ClearingPartyAndTime21Choice
+import ClearingPartyAndTime22Choice
+import ClearingExceptionOrExemption3Choice
 
 class Cleared23Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NonClrd", "_Clrd", "_IntndToClear"]
+	__slots__ = ["_IntndToClear", "_Clrd", "_NonClrd"]
 	@property
-	def NonClrd(self):
-		return self._NonClrd
+	def IntndToClear(self):
+		return self._IntndToClear
 
-	@NonClrd.setter
-	def NonClrd(self, value):
-		self._NonClrd = value if type(value) != auto else self.make_default("NonClrd")
+	@IntndToClear.setter
+	def IntndToClear(self, value):
+		self._IntndToClear = value if type(value) != auto else self.make_default("IntndToClear")
 
-	@NonClrd.deleter
-	def NonClrd(self):
-		del self._NonClrd
-		self._NonClrd = None
+	@IntndToClear.deleter
+	def IntndToClear(self):
+		del self._IntndToClear
+		self._IntndToClear = None
 
 	@property
 	def Clrd(self):
@@ -33,21 +33,21 @@ class Cleared23Choice(base_types._BaseFieldType):
 		self._Clrd = None
 
 	@property
-	def IntndToClear(self):
-		return self._IntndToClear
+	def NonClrd(self):
+		return self._NonClrd
 
-	@IntndToClear.setter
-	def IntndToClear(self, value):
-		self._IntndToClear = value if type(value) != auto else self.make_default("IntndToClear")
+	@NonClrd.setter
+	def NonClrd(self, value):
+		self._NonClrd = value if type(value) != auto else self.make_default("NonClrd")
 
-	@IntndToClear.deleter
-	def IntndToClear(self):
-		del self._IntndToClear
-		self._IntndToClear = None
+	@NonClrd.deleter
+	def NonClrd(self):
+		del self._NonClrd
+		self._NonClrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NonClrd', type=ClearingExceptionOrExemption3Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Clrd', type=ClearingPartyAndTime21Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IntndToClear', type=ClearingPartyAndTime22Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Clrd', type=ClearingPartyAndTime21Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NonClrd', type=ClearingExceptionOrExemption3Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

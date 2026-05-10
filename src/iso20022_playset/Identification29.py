@@ -1,36 +1,10 @@
-import base_types
-import RestrictedFINXMax52Text
+from . import base_types
 import RestrictedFINXMax16Text
+import RestrictedFINXMax52Text
 
 class Identification29(base_types._BaseFieldType):
 
-	__slots__ = ["_ListId", "_CorpActnEvtId", "_AcctOwnrTxId", "_AcctSvcrTxId", "_PrcrTxId", "_BsktId", "_PrgmId", "_PoolId", "_CtrPtyMktInfrstrctrTxId", "_IndxId", "_MstrId", "_TradId", "_CmonId", "_MktInfrstrctrTxId"]
-	@property
-	def ListId(self):
-		return self._ListId
-
-	@ListId.setter
-	def ListId(self, value):
-		self._ListId = value if type(value) != auto else self.make_default("ListId")
-
-	@ListId.deleter
-	def ListId(self):
-		del self._ListId
-		self._ListId = None
-
-	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
-
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
-
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
-
+	__slots__ = ["_AcctOwnrTxId", "_PoolId", "_PrcrTxId", "_BsktId", "_PrgmId", "_MktInfrstrctrTxId", "_CtrPtyMktInfrstrctrTxId", "_ListId", "_TradId", "_MstrId", "_CorpActnEvtId", "_AcctSvcrTxId", "_CmonId", "_IndxId"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId
@@ -45,17 +19,17 @@ class Identification29(base_types._BaseFieldType):
 		self._AcctOwnrTxId = None
 
 	@property
-	def AcctSvcrTxId(self):
-		return self._AcctSvcrTxId
+	def PoolId(self):
+		return self._PoolId
 
-	@AcctSvcrTxId.setter
-	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != auto else self.make_default("AcctSvcrTxId")
+	@PoolId.setter
+	def PoolId(self, value):
+		self._PoolId = value if type(value) != auto else self.make_default("PoolId")
 
-	@AcctSvcrTxId.deleter
-	def AcctSvcrTxId(self):
-		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
+	@PoolId.deleter
+	def PoolId(self):
+		del self._PoolId
+		self._PoolId = None
 
 	@property
 	def PrcrTxId(self):
@@ -97,17 +71,17 @@ class Identification29(base_types._BaseFieldType):
 		self._PrgmId = None
 
 	@property
-	def PoolId(self):
-		return self._PoolId
+	def MktInfrstrctrTxId(self):
+		return self._MktInfrstrctrTxId
 
-	@PoolId.setter
-	def PoolId(self, value):
-		self._PoolId = value if type(value) != auto else self.make_default("PoolId")
+	@MktInfrstrctrTxId.setter
+	def MktInfrstrctrTxId(self, value):
+		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
 
-	@PoolId.deleter
-	def PoolId(self):
-		del self._PoolId
-		self._PoolId = None
+	@MktInfrstrctrTxId.deleter
+	def MktInfrstrctrTxId(self):
+		del self._MktInfrstrctrTxId
+		self._MktInfrstrctrTxId = None
 
 	@property
 	def CtrPtyMktInfrstrctrTxId(self):
@@ -123,30 +97,17 @@ class Identification29(base_types._BaseFieldType):
 		self._CtrPtyMktInfrstrctrTxId = None
 
 	@property
-	def IndxId(self):
-		return self._IndxId
+	def ListId(self):
+		return self._ListId
 
-	@IndxId.setter
-	def IndxId(self, value):
-		self._IndxId = value if type(value) != auto else self.make_default("IndxId")
+	@ListId.setter
+	def ListId(self, value):
+		self._ListId = value if type(value) != auto else self.make_default("ListId")
 
-	@IndxId.deleter
-	def IndxId(self):
-		del self._IndxId
-		self._IndxId = None
-
-	@property
-	def MstrId(self):
-		return self._MstrId
-
-	@MstrId.setter
-	def MstrId(self, value):
-		self._MstrId = value if type(value) != auto else self.make_default("MstrId")
-
-	@MstrId.deleter
-	def MstrId(self):
-		del self._MstrId
-		self._MstrId = None
+	@ListId.deleter
+	def ListId(self):
+		del self._ListId
+		self._ListId = None
 
 	@property
 	def TradId(self):
@@ -162,6 +123,45 @@ class Identification29(base_types._BaseFieldType):
 		self._TradId = None
 
 	@property
+	def MstrId(self):
+		return self._MstrId
+
+	@MstrId.setter
+	def MstrId(self, value):
+		self._MstrId = value if type(value) != auto else self.make_default("MstrId")
+
+	@MstrId.deleter
+	def MstrId(self):
+		del self._MstrId
+		self._MstrId = None
+
+	@property
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
+
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
+
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
+
+	@property
+	def AcctSvcrTxId(self):
+		return self._AcctSvcrTxId
+
+	@AcctSvcrTxId.setter
+	def AcctSvcrTxId(self, value):
+		self._AcctSvcrTxId = value if type(value) != auto else self.make_default("AcctSvcrTxId")
+
+	@AcctSvcrTxId.deleter
+	def AcctSvcrTxId(self):
+		del self._AcctSvcrTxId
+		self._AcctSvcrTxId = None
+
+	@property
 	def CmonId(self):
 		return self._CmonId
 
@@ -175,32 +175,32 @@ class Identification29(base_types._BaseFieldType):
 		self._CmonId = None
 
 	@property
-	def MktInfrstrctrTxId(self):
-		return self._MktInfrstrctrTxId
+	def IndxId(self):
+		return self._IndxId
 
-	@MktInfrstrctrTxId.setter
-	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
+	@IndxId.setter
+	def IndxId(self, value):
+		self._IndxId = value if type(value) != auto else self.make_default("IndxId")
 
-	@MktInfrstrctrTxId.deleter
-	def MktInfrstrctrTxId(self):
-		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
+	@IndxId.deleter
+	def IndxId(self):
+		del self._IndxId
+		self._IndxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ListId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BsktId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrgmId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IndxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradId', type=RestrictedFINXMax52Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ListId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradId', type=RestrictedFINXMax52Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MstrId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

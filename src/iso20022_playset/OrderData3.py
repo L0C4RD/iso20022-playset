@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import OrderIdentification2
-import AuctionData2
 import OrderData4
+import AuctionData2
 
 class OrderData3(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrIdData", "_AuctnData", "_OrdrData"]
+	__slots__ = ["_OrdrData", "_AuctnData", "_OrdrIdData"]
 	@property
-	def OrdrIdData(self):
-		return self._OrdrIdData
+	def OrdrData(self):
+		return self._OrdrData
 
-	@OrdrIdData.setter
-	def OrdrIdData(self, value):
-		self._OrdrIdData = value if type(value) != auto else self.make_default("OrdrIdData")
+	@OrdrData.setter
+	def OrdrData(self, value):
+		self._OrdrData = value if type(value) != auto else self.make_default("OrdrData")
 
-	@OrdrIdData.deleter
-	def OrdrIdData(self):
-		del self._OrdrIdData
-		self._OrdrIdData = None
+	@OrdrData.deleter
+	def OrdrData(self):
+		del self._OrdrData
+		self._OrdrData = None
 
 	@property
 	def AuctnData(self):
@@ -33,21 +33,21 @@ class OrderData3(base_types._BaseFieldType):
 		self._AuctnData = None
 
 	@property
-	def OrdrData(self):
-		return self._OrdrData
+	def OrdrIdData(self):
+		return self._OrdrIdData
 
-	@OrdrData.setter
-	def OrdrData(self, value):
-		self._OrdrData = value if type(value) != auto else self.make_default("OrdrData")
+	@OrdrIdData.setter
+	def OrdrIdData(self, value):
+		self._OrdrIdData = value if type(value) != auto else self.make_default("OrdrIdData")
 
-	@OrdrData.deleter
-	def OrdrData(self):
-		del self._OrdrData
-		self._OrdrData = None
+	@OrdrIdData.deleter
+	def OrdrIdData(self):
+		del self._OrdrIdData
+		self._OrdrIdData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrdrIdData', type=OrderIdentification2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuctnData', type=AuctionData2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrData', type=OrderData4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuctnData', type=AuctionData2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrIdData', type=OrderIdentification2, min=1, max=1, mutex_group=None, array=False),
 	))
 

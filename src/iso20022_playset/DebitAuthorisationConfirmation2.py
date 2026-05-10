@@ -1,25 +1,12 @@
-import base_types
-import Max140Text
+from . import base_types
 import ISODate
-import ActiveCurrencyAndAmount
 import YesNoIndicator
+import Max140Text
+import ActiveCurrencyAndAmount
 
 class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtToDbt", "_ValDtToDbt", "_Rsn", "_DbtAuthstn"]
-	@property
-	def AmtToDbt(self):
-		return self._AmtToDbt
-
-	@AmtToDbt.setter
-	def AmtToDbt(self, value):
-		self._AmtToDbt = value if type(value) != auto else self.make_default("AmtToDbt")
-
-	@AmtToDbt.deleter
-	def AmtToDbt(self):
-		del self._AmtToDbt
-		self._AmtToDbt = None
-
+	__slots__ = ["_ValDtToDbt", "_Rsn", "_AmtToDbt", "_DbtAuthstn"]
 	@property
 	def ValDtToDbt(self):
 		return self._ValDtToDbt
@@ -47,6 +34,19 @@ class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
+	def AmtToDbt(self):
+		return self._AmtToDbt
+
+	@AmtToDbt.setter
+	def AmtToDbt(self, value):
+		self._AmtToDbt = value if type(value) != auto else self.make_default("AmtToDbt")
+
+	@AmtToDbt.deleter
+	def AmtToDbt(self):
+		del self._AmtToDbt
+		self._AmtToDbt = None
+
+	@property
 	def DbtAuthstn(self):
 		return self._DbtAuthstn
 
@@ -60,9 +60,9 @@ class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 		self._DbtAuthstn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmtToDbt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDtToDbt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtToDbt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtAuthstn', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

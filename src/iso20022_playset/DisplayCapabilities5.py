@@ -1,25 +1,12 @@
-import base_types
-import UserInterface5Code
-import LanguageCode
+from . import base_types
 import Number
 import OutputFormat1Code
+import UserInterface5Code
+import LanguageCode
 
 class DisplayCapabilities5(base_types._BaseFieldType):
 
-	__slots__ = ["_LineWidth", "_AvlblLang", "_NbOfLines", "_AvlblFrmt", "_Dstn"]
-	@property
-	def LineWidth(self):
-		return self._LineWidth
-
-	@LineWidth.setter
-	def LineWidth(self, value):
-		self._LineWidth = value if type(value) != auto else self.make_default("LineWidth")
-
-	@LineWidth.deleter
-	def LineWidth(self):
-		del self._LineWidth
-		self._LineWidth = None
-
+	__slots__ = ["_AvlblLang", "_NbOfLines", "_AvlblFrmt", "_Dstn", "_LineWidth"]
 	@property
 	def AvlblLang(self):
 		return self._AvlblLang
@@ -72,11 +59,24 @@ class DisplayCapabilities5(base_types._BaseFieldType):
 		del self._Dstn
 		self._Dstn = None
 
+	@property
+	def LineWidth(self):
+		return self._LineWidth
+
+	@LineWidth.setter
+	def LineWidth(self, value):
+		self._LineWidth = value if type(value) != auto else self.make_default("LineWidth")
+
+	@LineWidth.deleter
+	def LineWidth(self):
+		del self._LineWidth
+		self._LineWidth = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LineWidth', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AvlblLang', type=LanguageCode, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NbOfLines', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AvlblFrmt', type=OutputFormat1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Dstn', type=UserInterface5Code, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LineWidth', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

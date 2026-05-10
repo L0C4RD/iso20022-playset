@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
+import DateAndDateTime2Choice
 import TrackerRecord5
 import ActiveCurrencyAndAmount
-import DateAndDateTime2Choice
 
 class TrackerData7(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfdDt", "_ConfdAmt", "_TrckrRcrd"]
+	__slots__ = ["_TrckrRcrd", "_ConfdAmt", "_ConfdDt"]
 	@property
-	def ConfdDt(self):
-		return self._ConfdDt
+	def TrckrRcrd(self):
+		return self._TrckrRcrd
 
-	@ConfdDt.setter
-	def ConfdDt(self, value):
-		self._ConfdDt = value if type(value) != auto else self.make_default("ConfdDt")
+	@TrckrRcrd.setter
+	def TrckrRcrd(self, value):
+		self._TrckrRcrd = value if type(value) != auto else self.make_default("TrckrRcrd")
 
-	@ConfdDt.deleter
-	def ConfdDt(self):
-		del self._ConfdDt
-		self._ConfdDt = None
+	@TrckrRcrd.deleter
+	def TrckrRcrd(self):
+		del self._TrckrRcrd
+		self._TrckrRcrd = None
 
 	@property
 	def ConfdAmt(self):
@@ -33,21 +33,21 @@ class TrackerData7(base_types._BaseFieldType):
 		self._ConfdAmt = None
 
 	@property
-	def TrckrRcrd(self):
-		return self._TrckrRcrd
+	def ConfdDt(self):
+		return self._ConfdDt
 
-	@TrckrRcrd.setter
-	def TrckrRcrd(self, value):
-		self._TrckrRcrd = value if type(value) != auto else self.make_default("TrckrRcrd")
+	@ConfdDt.setter
+	def ConfdDt(self, value):
+		self._ConfdDt = value if type(value) != auto else self.make_default("ConfdDt")
 
-	@TrckrRcrd.deleter
-	def TrckrRcrd(self):
-		del self._TrckrRcrd
-		self._TrckrRcrd = None
+	@ConfdDt.deleter
+	def ConfdDt(self):
+		del self._ConfdDt
+		self._ConfdDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ConfdDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConfdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrckrRcrd', type=TrackerRecord5, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ConfdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfdDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

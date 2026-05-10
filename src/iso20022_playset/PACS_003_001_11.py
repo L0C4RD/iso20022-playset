@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FIToFICustomerDirectDebitV11
 
 class PACS_003_001_11():

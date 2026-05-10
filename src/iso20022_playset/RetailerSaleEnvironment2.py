@@ -1,13 +1,26 @@
-import base_types
-import ImpliedCurrencyAndAmount
+from . import base_types
 import SaleCapabilities1Code
-import ActiveCurrencyCode
+import ImpliedCurrencyAndAmount
 import TrueFalseIndicator
 import LoyaltyHandling1Code
+import ActiveCurrencyCode
 
 class RetailerSaleEnvironment2(base_types._BaseFieldType):
 
-	__slots__ = ["_MinSpltAmt", "_MaxCshBckAmt", "_SaleCpblties", "_DbtPrefrdFlg", "_LltyHdlg", "_MinAmtToDlvr", "_Ccy"]
+	__slots__ = ["_LltyHdlg", "_MinSpltAmt", "_MaxCshBckAmt", "_MinAmtToDlvr", "_Ccy", "_SaleCpblties", "_DbtPrefrdFlg"]
+	@property
+	def LltyHdlg(self):
+		return self._LltyHdlg
+
+	@LltyHdlg.setter
+	def LltyHdlg(self, value):
+		self._LltyHdlg = value if type(value) != auto else self.make_default("LltyHdlg")
+
+	@LltyHdlg.deleter
+	def LltyHdlg(self):
+		del self._LltyHdlg
+		self._LltyHdlg = None
+
 	@property
 	def MinSpltAmt(self):
 		return self._MinSpltAmt
@@ -35,45 +48,6 @@ class RetailerSaleEnvironment2(base_types._BaseFieldType):
 		self._MaxCshBckAmt = None
 
 	@property
-	def SaleCpblties(self):
-		return self._SaleCpblties
-
-	@SaleCpblties.setter
-	def SaleCpblties(self, value):
-		self._SaleCpblties = value if type(value) != auto else self.make_default("SaleCpblties")
-
-	@SaleCpblties.deleter
-	def SaleCpblties(self):
-		del self._SaleCpblties
-		self._SaleCpblties = None
-
-	@property
-	def DbtPrefrdFlg(self):
-		return self._DbtPrefrdFlg
-
-	@DbtPrefrdFlg.setter
-	def DbtPrefrdFlg(self, value):
-		self._DbtPrefrdFlg = value if type(value) != auto else self.make_default("DbtPrefrdFlg")
-
-	@DbtPrefrdFlg.deleter
-	def DbtPrefrdFlg(self):
-		del self._DbtPrefrdFlg
-		self._DbtPrefrdFlg = None
-
-	@property
-	def LltyHdlg(self):
-		return self._LltyHdlg
-
-	@LltyHdlg.setter
-	def LltyHdlg(self, value):
-		self._LltyHdlg = value if type(value) != auto else self.make_default("LltyHdlg")
-
-	@LltyHdlg.deleter
-	def LltyHdlg(self):
-		del self._LltyHdlg
-		self._LltyHdlg = None
-
-	@property
 	def MinAmtToDlvr(self):
 		return self._MinAmtToDlvr
 
@@ -99,13 +73,39 @@ class RetailerSaleEnvironment2(base_types._BaseFieldType):
 		del self._Ccy
 		self._Ccy = None
 
+	@property
+	def SaleCpblties(self):
+		return self._SaleCpblties
+
+	@SaleCpblties.setter
+	def SaleCpblties(self, value):
+		self._SaleCpblties = value if type(value) != auto else self.make_default("SaleCpblties")
+
+	@SaleCpblties.deleter
+	def SaleCpblties(self):
+		del self._SaleCpblties
+		self._SaleCpblties = None
+
+	@property
+	def DbtPrefrdFlg(self):
+		return self._DbtPrefrdFlg
+
+	@DbtPrefrdFlg.setter
+	def DbtPrefrdFlg(self, value):
+		self._DbtPrefrdFlg = value if type(value) != auto else self.make_default("DbtPrefrdFlg")
+
+	@DbtPrefrdFlg.deleter
+	def DbtPrefrdFlg(self):
+		del self._DbtPrefrdFlg
+		self._DbtPrefrdFlg = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='LltyHdlg', type=LoyaltyHandling1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinSpltAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxCshBckAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleCpblties', type=SaleCapabilities1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DbtPrefrdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LltyHdlg', type=LoyaltyHandling1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinAmtToDlvr', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleCpblties', type=SaleCapabilities1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DbtPrefrdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

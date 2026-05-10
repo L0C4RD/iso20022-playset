@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PayInEventAcknowledgementV02
 
 class CAMT_063_001_02():

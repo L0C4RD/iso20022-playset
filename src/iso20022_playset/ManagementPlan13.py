@@ -1,6 +1,6 @@
-import base_types
-import GenericIdentification176
+from . import base_types
 import TerminalManagementDataSet34
+import GenericIdentification176
 
 class ManagementPlan13(base_types._BaseFieldType):
 

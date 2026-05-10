@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
+import AssetClassAttributes1
 import DerivativeForeignExchange2
 import DerivativeInterest2
-import AssetClassAttributes1
 
 class AssetClassAttributes1Choice(base_types._BaseFieldType):
 

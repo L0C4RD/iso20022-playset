@@ -1,6 +1,6 @@
-import base_types
-import DetailedInstructionStatus21
+from . import base_types
 import CancellationStatus31Choice
+import DetailedInstructionStatus21
 
 class InstructionTypeStatus7Choice(base_types._BaseFieldType):
 

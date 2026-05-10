@@ -1,25 +1,25 @@
-import base_types
-import DateOrBlankQuery2Choice
-import DateTimeOrBlankQuery1Choice
+from . import base_types
 import ISODate
 import DateTimePeriod1
+import DateOrBlankQuery2Choice
 import DatePeriod1
+import DateTimeOrBlankQuery1Choice
 
 class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 
-	__slots__ = ["_ExctnDtTm", "_XprtnDt", "_MtrtyDt", "_HstrclAsOfDt", "_FctvDt", "_EarlyTermntnDt", "_ValtnDtTm", "_CollTmStmp", "_RptgDtTm"]
+	__slots__ = ["_RptgDtTm", "_XprtnDt", "_ExctnDtTm", "_HstrclAsOfDt", "_CollTmStmp", "_EarlyTermntnDt", "_FctvDt", "_MtrtyDt", "_ValtnDtTm"]
 	@property
-	def ExctnDtTm(self):
-		return self._ExctnDtTm
+	def RptgDtTm(self):
+		return self._RptgDtTm
 
-	@ExctnDtTm.setter
-	def ExctnDtTm(self, value):
-		self._ExctnDtTm = value if type(value) != auto else self.make_default("ExctnDtTm")
+	@RptgDtTm.setter
+	def RptgDtTm(self, value):
+		self._RptgDtTm = value if type(value) != auto else self.make_default("RptgDtTm")
 
-	@ExctnDtTm.deleter
-	def ExctnDtTm(self):
-		del self._ExctnDtTm
-		self._ExctnDtTm = None
+	@RptgDtTm.deleter
+	def RptgDtTm(self):
+		del self._RptgDtTm
+		self._RptgDtTm = None
 
 	@property
 	def XprtnDt(self):
@@ -35,17 +35,17 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 		self._XprtnDt = None
 
 	@property
-	def MtrtyDt(self):
-		return self._MtrtyDt
+	def ExctnDtTm(self):
+		return self._ExctnDtTm
 
-	@MtrtyDt.setter
-	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+	@ExctnDtTm.setter
+	def ExctnDtTm(self, value):
+		self._ExctnDtTm = value if type(value) != auto else self.make_default("ExctnDtTm")
 
-	@MtrtyDt.deleter
-	def MtrtyDt(self):
-		del self._MtrtyDt
-		self._MtrtyDt = None
+	@ExctnDtTm.deleter
+	def ExctnDtTm(self):
+		del self._ExctnDtTm
+		self._ExctnDtTm = None
 
 	@property
 	def HstrclAsOfDt(self):
@@ -61,17 +61,17 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 		self._HstrclAsOfDt = None
 
 	@property
-	def FctvDt(self):
-		return self._FctvDt
+	def CollTmStmp(self):
+		return self._CollTmStmp
 
-	@FctvDt.setter
-	def FctvDt(self, value):
-		self._FctvDt = value if type(value) != auto else self.make_default("FctvDt")
+	@CollTmStmp.setter
+	def CollTmStmp(self, value):
+		self._CollTmStmp = value if type(value) != auto else self.make_default("CollTmStmp")
 
-	@FctvDt.deleter
-	def FctvDt(self):
-		del self._FctvDt
-		self._FctvDt = None
+	@CollTmStmp.deleter
+	def CollTmStmp(self):
+		del self._CollTmStmp
+		self._CollTmStmp = None
 
 	@property
 	def EarlyTermntnDt(self):
@@ -87,6 +87,32 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 		self._EarlyTermntnDt = None
 
 	@property
+	def FctvDt(self):
+		return self._FctvDt
+
+	@FctvDt.setter
+	def FctvDt(self, value):
+		self._FctvDt = value if type(value) != auto else self.make_default("FctvDt")
+
+	@FctvDt.deleter
+	def FctvDt(self):
+		del self._FctvDt
+		self._FctvDt = None
+
+	@property
+	def MtrtyDt(self):
+		return self._MtrtyDt
+
+	@MtrtyDt.setter
+	def MtrtyDt(self, value):
+		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+
+	@MtrtyDt.deleter
+	def MtrtyDt(self):
+		del self._MtrtyDt
+		self._MtrtyDt = None
+
+	@property
 	def ValtnDtTm(self):
 		return self._ValtnDtTm
 
@@ -99,41 +125,15 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 		del self._ValtnDtTm
 		self._ValtnDtTm = None
 
-	@property
-	def CollTmStmp(self):
-		return self._CollTmStmp
-
-	@CollTmStmp.setter
-	def CollTmStmp(self, value):
-		self._CollTmStmp = value if type(value) != auto else self.make_default("CollTmStmp")
-
-	@CollTmStmp.deleter
-	def CollTmStmp(self):
-		del self._CollTmStmp
-		self._CollTmStmp = None
-
-	@property
-	def RptgDtTm(self):
-		return self._RptgDtTm
-
-	@RptgDtTm.setter
-	def RptgDtTm(self, value):
-		self._RptgDtTm = value if type(value) != auto else self.make_default("RptgDtTm")
-
-	@RptgDtTm.deleter
-	def RptgDtTm(self):
-		del self._RptgDtTm
-		self._RptgDtTm = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ExctnDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XprtnDt', type=DateOrBlankQuery2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtrtyDt', type=DateOrBlankQuery2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HstrclAsOfDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FctvDt', type=DatePeriod1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlyTermntnDt', type=DatePeriod1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollTmStmp', type=DateTimeOrBlankQuery1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XprtnDt', type=DateOrBlankQuery2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctnDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HstrclAsOfDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollTmStmp', type=DateTimeOrBlankQuery1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlyTermntnDt', type=DatePeriod1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FctvDt', type=DatePeriod1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDt', type=DateOrBlankQuery2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
 	))
 

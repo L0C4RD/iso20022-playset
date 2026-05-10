@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import ISODate
-import Frequency3Code
 import Number
+import Frequency3Code
 
 class RecurringTransaction3(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfOcrncs", "_EndDt", "_PrdUnit", "_StartDt", "_IntrvlDay"]
+	__slots__ = ["_IntrvlDay", "_EndDt", "_PrdUnit", "_StartDt", "_NbOfOcrncs"]
 	@property
-	def NbOfOcrncs(self):
-		return self._NbOfOcrncs
+	def IntrvlDay(self):
+		return self._IntrvlDay
 
-	@NbOfOcrncs.setter
-	def NbOfOcrncs(self, value):
-		self._NbOfOcrncs = value if type(value) != auto else self.make_default("NbOfOcrncs")
+	@IntrvlDay.setter
+	def IntrvlDay(self, value):
+		self._IntrvlDay = value if type(value) != auto else self.make_default("IntrvlDay")
 
-	@NbOfOcrncs.deleter
-	def NbOfOcrncs(self):
-		del self._NbOfOcrncs
-		self._NbOfOcrncs = None
+	@IntrvlDay.deleter
+	def IntrvlDay(self):
+		del self._IntrvlDay
+		self._IntrvlDay = None
 
 	@property
 	def EndDt(self):
@@ -59,23 +59,23 @@ class RecurringTransaction3(base_types._BaseFieldType):
 		self._StartDt = None
 
 	@property
-	def IntrvlDay(self):
-		return self._IntrvlDay
+	def NbOfOcrncs(self):
+		return self._NbOfOcrncs
 
-	@IntrvlDay.setter
-	def IntrvlDay(self, value):
-		self._IntrvlDay = value if type(value) != auto else self.make_default("IntrvlDay")
+	@NbOfOcrncs.setter
+	def NbOfOcrncs(self, value):
+		self._NbOfOcrncs = value if type(value) != auto else self.make_default("NbOfOcrncs")
 
-	@IntrvlDay.deleter
-	def IntrvlDay(self):
-		del self._IntrvlDay
-		self._IntrvlDay = None
+	@NbOfOcrncs.deleter
+	def NbOfOcrncs(self):
+		del self._NbOfOcrncs
+		self._NbOfOcrncs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfOcrncs', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrvlDay', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrdUnit', type=Frequency3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrvlDay', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfOcrncs', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

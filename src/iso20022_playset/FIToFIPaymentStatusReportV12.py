@@ -1,12 +1,12 @@
-import base_types
-import GroupHeader101
-import PaymentTransaction130
+from . import base_types
 import OriginalGroupHeader17
+import PaymentTransaction130
 import SupplementaryData1
+import GroupHeader101
 
 class FIToFIPaymentStatusReportV12(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_GrpHdr", "_TxInfAndSts", "_OrgnlGrpInfAndSts"]
+	__slots__ = ["_SplmtryData", "_TxInfAndSts", "_GrpHdr", "_OrgnlGrpInfAndSts"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -21,19 +21,6 @@ class FIToFIPaymentStatusReportV12(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def GrpHdr(self):
-		return self._GrpHdr
-
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
-
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
-
-	@property
 	def TxInfAndSts(self):
 		return self._TxInfAndSts
 
@@ -45,6 +32,19 @@ class FIToFIPaymentStatusReportV12(base_types._BaseFieldType):
 	def TxInfAndSts(self):
 		del self._TxInfAndSts
 		self._TxInfAndSts = None
+
+	@property
+	def GrpHdr(self):
+		return self._GrpHdr
+
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
 
 	@property
 	def OrgnlGrpInfAndSts(self):
@@ -61,8 +61,8 @@ class FIToFIPaymentStatusReportV12(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader101, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxInfAndSts', type=PaymentTransaction130, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader101, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlGrpInfAndSts', type=OriginalGroupHeader17, min=0, max=None, mutex_group=None, array=True),
 	))
 

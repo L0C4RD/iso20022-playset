@@ -1,6 +1,6 @@
-import base_types
-import Dispute1
+from . import base_types
 import DisputeResolutionType1Choice
+import Dispute1
 
 class SegregatedIndependentAmountDispute2(base_types._BaseFieldType):
 

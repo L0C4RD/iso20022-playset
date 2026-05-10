@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import OrganisationIdentification15Choice
 import NotReported1Code
 

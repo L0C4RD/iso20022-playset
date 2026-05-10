@@ -1,26 +1,39 @@
-import base_types
-import Max35Text
-import CancellationProcessingStatus9Choice
-import SystemPartyIdentification8
+from . import base_types
 import BranchAndFinancialInstitutionIdentification8
 import DateAndDateTimeSearch5Choice
+import CancellationProcessingStatus9Choice
 import AccountIdentificationSearchCriteria2Choice
+import Max35Text
+import SystemPartyIdentification8
 
 class IntraBalanceQueryCriteria10(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcct", "_CxlReqId", "_CshAcctOwnr", "_MsgOrgtr", "_CshAcctSvcr", "_CreDtTm", "_PrcgSts"]
+	__slots__ = ["_MsgOrgtr", "_CreDtTm", "_CxlReqId", "_CshAcctOwnr", "_CshAcct", "_CshAcctSvcr", "_PrcgSts"]
 	@property
-	def CshAcct(self):
-		return self._CshAcct
+	def MsgOrgtr(self):
+		return self._MsgOrgtr
 
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+	@MsgOrgtr.setter
+	def MsgOrgtr(self, value):
+		self._MsgOrgtr = value if type(value) != auto else self.make_default("MsgOrgtr")
 
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
+	@MsgOrgtr.deleter
+	def MsgOrgtr(self):
+		del self._MsgOrgtr
+		self._MsgOrgtr = None
+
+	@property
+	def CreDtTm(self):
+		return self._CreDtTm
+
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
 
 	@property
 	def CxlReqId(self):
@@ -49,17 +62,17 @@ class IntraBalanceQueryCriteria10(base_types._BaseFieldType):
 		self._CshAcctOwnr = None
 
 	@property
-	def MsgOrgtr(self):
-		return self._MsgOrgtr
+	def CshAcct(self):
+		return self._CshAcct
 
-	@MsgOrgtr.setter
-	def MsgOrgtr(self, value):
-		self._MsgOrgtr = value if type(value) != auto else self.make_default("MsgOrgtr")
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
 
-	@MsgOrgtr.deleter
-	def MsgOrgtr(self):
-		del self._MsgOrgtr
-		self._MsgOrgtr = None
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
 
 	@property
 	def CshAcctSvcr(self):
@@ -75,19 +88,6 @@ class IntraBalanceQueryCriteria10(base_types._BaseFieldType):
 		self._CshAcctSvcr = None
 
 	@property
-	def CreDtTm(self):
-		return self._CreDtTm
-
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
-
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
-
-	@property
 	def PrcgSts(self):
 		return self._PrcgSts
 
@@ -101,12 +101,12 @@ class IntraBalanceQueryCriteria10(base_types._BaseFieldType):
 		self._PrcgSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshAcct', type=AccountIdentificationSearchCriteria2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgOrgtr', type=SystemPartyIdentification8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTimeSearch5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlReqId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgOrgtr', type=SystemPartyIdentification8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshAcct', type=AccountIdentificationSearchCriteria2Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTimeSearch5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=CancellationProcessingStatus9Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

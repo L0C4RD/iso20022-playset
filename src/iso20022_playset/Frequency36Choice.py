@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import Frequency6Code
 import FrequencyPeriod1
 import FrequencyAndMoment1
 
 class Frequency36Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_PtInTm", "_Prd"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_PtInTm", "_Prd", "_Tp"]
 	@property
 	def PtInTm(self):
 		return self._PtInTm
@@ -45,9 +32,22 @@ class Frequency36Choice(base_types._BaseFieldType):
 		del self._Prd
 		self._Prd = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=Frequency6Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PtInTm', type=FrequencyAndMoment1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prd', type=FrequencyPeriod1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Tp', type=Frequency6Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

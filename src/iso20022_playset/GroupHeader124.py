@@ -1,28 +1,41 @@
-import base_types
+from . import base_types
 import PartyIdentification272
-import DecimalNumber
-import Authorisation1Choice
-import Max35Text
 import ISODateTime
+import BranchAndFinancialInstitutionIdentification8
+import Max35Text
 import Max15NumericText
 import TrueFalseIndicator
-import BranchAndFinancialInstitutionIdentification8
+import DecimalNumber
+import Authorisation1Choice
 
 class GroupHeader124(base_types._BaseFieldType):
 
-	__slots__ = ["_DbtrAgt", "_FwdgAgt", "_Authstn", "_CtrlSum", "_InitgPty", "_MsgId", "_GrpRvsl", "_CdtrAgt", "_CreDtTm", "_NbOfTxs"]
+	__slots__ = ["_MsgId", "_NbOfTxs", "_FwdgAgt", "_CtrlSum", "_GrpRvsl", "_DbtrAgt", "_Authstn", "_InitgPty", "_CdtrAgt", "_CreDtTm"]
 	@property
-	def DbtrAgt(self):
-		return self._DbtrAgt
+	def MsgId(self):
+		return self._MsgId
 
-	@DbtrAgt.setter
-	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != auto else self.make_default("DbtrAgt")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@DbtrAgt.deleter
-	def DbtrAgt(self):
-		del self._DbtrAgt
-		self._DbtrAgt = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
+	@property
+	def NbOfTxs(self):
+		return self._NbOfTxs
+
+	@NbOfTxs.setter
+	def NbOfTxs(self, value):
+		self._NbOfTxs = value if type(value) != auto else self.make_default("NbOfTxs")
+
+	@NbOfTxs.deleter
+	def NbOfTxs(self):
+		del self._NbOfTxs
+		self._NbOfTxs = None
 
 	@property
 	def FwdgAgt(self):
@@ -38,19 +51,6 @@ class GroupHeader124(base_types._BaseFieldType):
 		self._FwdgAgt = None
 
 	@property
-	def Authstn(self):
-		return self._Authstn
-
-	@Authstn.setter
-	def Authstn(self, value):
-		self._Authstn = value if type(value) != auto else self.make_default("Authstn")
-
-	@Authstn.deleter
-	def Authstn(self):
-		del self._Authstn
-		self._Authstn = None
-
-	@property
 	def CtrlSum(self):
 		return self._CtrlSum
 
@@ -64,32 +64,6 @@ class GroupHeader124(base_types._BaseFieldType):
 		self._CtrlSum = None
 
 	@property
-	def InitgPty(self):
-		return self._InitgPty
-
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
-
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
-
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
-	@property
 	def GrpRvsl(self):
 		return self._GrpRvsl
 
@@ -101,6 +75,45 @@ class GroupHeader124(base_types._BaseFieldType):
 	def GrpRvsl(self):
 		del self._GrpRvsl
 		self._GrpRvsl = None
+
+	@property
+	def DbtrAgt(self):
+		return self._DbtrAgt
+
+	@DbtrAgt.setter
+	def DbtrAgt(self, value):
+		self._DbtrAgt = value if type(value) != auto else self.make_default("DbtrAgt")
+
+	@DbtrAgt.deleter
+	def DbtrAgt(self):
+		del self._DbtrAgt
+		self._DbtrAgt = None
+
+	@property
+	def Authstn(self):
+		return self._Authstn
+
+	@Authstn.setter
+	def Authstn(self, value):
+		self._Authstn = value if type(value) != auto else self.make_default("Authstn")
+
+	@Authstn.deleter
+	def Authstn(self):
+		del self._Authstn
+		self._Authstn = None
+
+	@property
+	def InitgPty(self):
+		return self._InitgPty
+
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
+
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
 
 	@property
 	def CdtrAgt(self):
@@ -128,29 +141,16 @@ class GroupHeader124(base_types._BaseFieldType):
 		del self._CreDtTm
 		self._CreDtTm = None
 
-	@property
-	def NbOfTxs(self):
-		return self._NbOfTxs
-
-	@NbOfTxs.setter
-	def NbOfTxs(self, value):
-		self._NbOfTxs = value if type(value) != auto else self.make_default("NbOfTxs")
-
-	@NbOfTxs.deleter
-	def NbOfTxs(self):
-		del self._NbOfTxs
-		self._NbOfTxs = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FwdgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Authstn', type=Authorisation1Choice, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FwdgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrpRvsl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Authstn', type=Authorisation1Choice, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

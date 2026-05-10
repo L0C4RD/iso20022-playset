@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesStatusOrStatementQueryStatusAdviceV07
 
 class SESE_022_001_07():

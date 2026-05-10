@@ -1,23 +1,23 @@
-import base_types
-import CorporateActionMovementPreliminaryAdviceFunction1Code
-import CorporateActionPreliminaryAdviceType1Code
+from . import base_types
 import RestrictedFINXMax16Text
+import CorporateActionPreliminaryAdviceType1Code
+import CorporateActionMovementPreliminaryAdviceFunction1Code
 
 class CorporateActionPreliminaryAdviceType5(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_MvmntPrlimryAdvcId", "_Fctn"]
+	__slots__ = ["_Fctn", "_MvmntPrlimryAdvcId", "_Tp"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def Fctn(self):
+		return self._Fctn
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@Fctn.setter
+	def Fctn(self, value):
+		self._Fctn = value if type(value) != auto else self.make_default("Fctn")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Fctn.deleter
+	def Fctn(self):
+		del self._Fctn
+		self._Fctn = None
 
 	@property
 	def MvmntPrlimryAdvcId(self):
@@ -33,21 +33,21 @@ class CorporateActionPreliminaryAdviceType5(base_types._BaseFieldType):
 		self._MvmntPrlimryAdvcId = None
 
 	@property
-	def Fctn(self):
-		return self._Fctn
+	def Tp(self):
+		return self._Tp
 
-	@Fctn.setter
-	def Fctn(self, value):
-		self._Fctn = value if type(value) != auto else self.make_default("Fctn")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@Fctn.deleter
-	def Fctn(self):
-		del self._Fctn
-		self._Fctn = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=CorporateActionPreliminaryAdviceType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MvmntPrlimryAdvcId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fctn', type=CorporateActionMovementPreliminaryAdviceFunction1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MvmntPrlimryAdvcId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CorporateActionPreliminaryAdviceType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

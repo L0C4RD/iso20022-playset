@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import StandingOrderOrError10Choice
 import StandingOrderIdentification8
 

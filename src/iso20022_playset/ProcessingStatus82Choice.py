@@ -1,13 +1,26 @@
-import base_types
-import ProprietaryStatusAndReason6
-import PendingStatus56Choice
+from . import base_types
 import RejectionStatus33Choice
+import PendingStatus56Choice
 import ProprietaryReason4
+import ProprietaryStatusAndReason6
 import CancellationStatus29Choice
 
 class ProcessingStatus82Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Futr", "_CxlReq", "_Canc", "_Prcd", "_Prtry", "_PdgCxl", "_Rjctd"]
+	__slots__ = ["_PdgCxl", "_Futr", "_Prcd", "_CxlReq", "_Prtry", "_Rjctd", "_Canc"]
+	@property
+	def PdgCxl(self):
+		return self._PdgCxl
+
+	@PdgCxl.setter
+	def PdgCxl(self, value):
+		self._PdgCxl = value if type(value) != auto else self.make_default("PdgCxl")
+
+	@PdgCxl.deleter
+	def PdgCxl(self):
+		del self._PdgCxl
+		self._PdgCxl = None
+
 	@property
 	def Futr(self):
 		return self._Futr
@@ -20,32 +33,6 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 	def Futr(self):
 		del self._Futr
 		self._Futr = None
-
-	@property
-	def CxlReq(self):
-		return self._CxlReq
-
-	@CxlReq.setter
-	def CxlReq(self, value):
-		self._CxlReq = value if type(value) != auto else self.make_default("CxlReq")
-
-	@CxlReq.deleter
-	def CxlReq(self):
-		del self._CxlReq
-		self._CxlReq = None
-
-	@property
-	def Canc(self):
-		return self._Canc
-
-	@Canc.setter
-	def Canc(self, value):
-		self._Canc = value if type(value) != auto else self.make_default("Canc")
-
-	@Canc.deleter
-	def Canc(self):
-		del self._Canc
-		self._Canc = None
 
 	@property
 	def Prcd(self):
@@ -61,6 +48,19 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 		self._Prcd = None
 
 	@property
+	def CxlReq(self):
+		return self._CxlReq
+
+	@CxlReq.setter
+	def CxlReq(self, value):
+		self._CxlReq = value if type(value) != auto else self.make_default("CxlReq")
+
+	@CxlReq.deleter
+	def CxlReq(self):
+		del self._CxlReq
+		self._CxlReq = None
+
+	@property
 	def Prtry(self):
 		return self._Prtry
 
@@ -72,19 +72,6 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 	def Prtry(self):
 		del self._Prtry
 		self._Prtry = None
-
-	@property
-	def PdgCxl(self):
-		return self._PdgCxl
-
-	@PdgCxl.setter
-	def PdgCxl(self, value):
-		self._PdgCxl = value if type(value) != auto else self.make_default("PdgCxl")
-
-	@PdgCxl.deleter
-	def PdgCxl(self):
-		del self._PdgCxl
-		self._PdgCxl = None
 
 	@property
 	def Rjctd(self):
@@ -99,13 +86,26 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 		del self._Rjctd
 		self._Rjctd = None
 
+	@property
+	def Canc(self):
+		return self._Canc
+
+	@Canc.setter
+	def Canc(self, value):
+		self._Canc = value if type(value) != auto else self.make_default("Canc")
+
+	@Canc.deleter
+	def Canc(self):
+		del self._Canc
+		self._Canc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Futr', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CxlReq', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Canc', type=CancellationStatus29Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Prcd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgCxl', type=PendingStatus56Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Futr', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prcd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CxlReq', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectionStatus33Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Canc', type=CancellationStatus29Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

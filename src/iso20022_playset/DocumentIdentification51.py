@@ -1,24 +1,24 @@
-import base_types
-import Max35Text
+from . import base_types
 import CopyDuplicate1Code
 import PartyIdentification136
 import DateAndDateTime2Choice
+import Max35Text
 
 class DocumentIdentification51(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_CpyDplct", "_Id", "_MsgOrgtr", "_MsgRcpt"]
+	__slots__ = ["_MsgOrgtr", "_CpyDplct", "_Id", "_MsgRcpt", "_CreDtTm"]
 	@property
-	def CreDtTm(self):
-		return self._CreDtTm
+	def MsgOrgtr(self):
+		return self._MsgOrgtr
 
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+	@MsgOrgtr.setter
+	def MsgOrgtr(self, value):
+		self._MsgOrgtr = value if type(value) != auto else self.make_default("MsgOrgtr")
 
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
+	@MsgOrgtr.deleter
+	def MsgOrgtr(self):
+		del self._MsgOrgtr
+		self._MsgOrgtr = None
 
 	@property
 	def CpyDplct(self):
@@ -47,19 +47,6 @@ class DocumentIdentification51(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def MsgOrgtr(self):
-		return self._MsgOrgtr
-
-	@MsgOrgtr.setter
-	def MsgOrgtr(self, value):
-		self._MsgOrgtr = value if type(value) != auto else self.make_default("MsgOrgtr")
-
-	@MsgOrgtr.deleter
-	def MsgOrgtr(self):
-		del self._MsgOrgtr
-		self._MsgOrgtr = None
-
-	@property
 	def MsgRcpt(self):
 		return self._MsgRcpt
 
@@ -72,11 +59,24 @@ class DocumentIdentification51(base_types._BaseFieldType):
 		del self._MsgRcpt
 		self._MsgRcpt = None
 
+	@property
+	def CreDtTm(self):
+		return self._CreDtTm
+
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgOrgtr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpyDplct', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgOrgtr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgRcpt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

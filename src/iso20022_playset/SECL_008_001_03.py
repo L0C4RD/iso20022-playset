@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BuyInResponseV03
 
 class SECL_008_001_03():

@@ -1,7 +1,7 @@
-import base_types
-import DateAndDateTime2Choice
-import ReservationStatus1Choice
+from . import base_types
 import Amount2Choice
+import ReservationStatus1Choice
+import DateAndDateTime2Choice
 
 class Reservation3(base_types._BaseFieldType):
 

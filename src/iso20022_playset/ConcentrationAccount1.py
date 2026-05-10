@@ -1,25 +1,12 @@
-import base_types
+from . import base_types
 import Max10NumericText
-import ActiveCurrencyAndAmount
 import Flows1
 import AmountAndDirection102
+import ActiveCurrencyAndAmount
 
 class ConcentrationAccount1(base_types._BaseFieldType):
 
-	__slots__ = ["_InFlow", "_PeakCdt", "_OutFlow", "_PeakDbt", "_LatePmtConf", "_EndOfDay"]
-	@property
-	def InFlow(self):
-		return self._InFlow
-
-	@InFlow.setter
-	def InFlow(self, value):
-		self._InFlow = value if type(value) != auto else self.make_default("InFlow")
-
-	@InFlow.deleter
-	def InFlow(self):
-		del self._InFlow
-		self._InFlow = None
-
+	__slots__ = ["_PeakCdt", "_OutFlow", "_EndOfDay", "_InFlow", "_LatePmtConf", "_PeakDbt"]
 	@property
 	def PeakCdt(self):
 		return self._PeakCdt
@@ -47,17 +34,30 @@ class ConcentrationAccount1(base_types._BaseFieldType):
 		self._OutFlow = None
 
 	@property
-	def PeakDbt(self):
-		return self._PeakDbt
+	def EndOfDay(self):
+		return self._EndOfDay
 
-	@PeakDbt.setter
-	def PeakDbt(self, value):
-		self._PeakDbt = value if type(value) != auto else self.make_default("PeakDbt")
+	@EndOfDay.setter
+	def EndOfDay(self, value):
+		self._EndOfDay = value if type(value) != auto else self.make_default("EndOfDay")
 
-	@PeakDbt.deleter
-	def PeakDbt(self):
-		del self._PeakDbt
-		self._PeakDbt = None
+	@EndOfDay.deleter
+	def EndOfDay(self):
+		del self._EndOfDay
+		self._EndOfDay = None
+
+	@property
+	def InFlow(self):
+		return self._InFlow
+
+	@InFlow.setter
+	def InFlow(self, value):
+		self._InFlow = value if type(value) != auto else self.make_default("InFlow")
+
+	@InFlow.deleter
+	def InFlow(self):
+		del self._InFlow
+		self._InFlow = None
 
 	@property
 	def LatePmtConf(self):
@@ -73,24 +73,24 @@ class ConcentrationAccount1(base_types._BaseFieldType):
 		self._LatePmtConf = None
 
 	@property
-	def EndOfDay(self):
-		return self._EndOfDay
+	def PeakDbt(self):
+		return self._PeakDbt
 
-	@EndOfDay.setter
-	def EndOfDay(self, value):
-		self._EndOfDay = value if type(value) != auto else self.make_default("EndOfDay")
+	@PeakDbt.setter
+	def PeakDbt(self, value):
+		self._PeakDbt = value if type(value) != auto else self.make_default("PeakDbt")
 
-	@EndOfDay.deleter
-	def EndOfDay(self):
-		del self._EndOfDay
-		self._EndOfDay = None
+	@PeakDbt.deleter
+	def PeakDbt(self):
+		del self._PeakDbt
+		self._PeakDbt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InFlow', type=Flows1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PeakCdt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OutFlow', type=Flows1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PeakDbt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LatePmtConf', type=Max10NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndOfDay', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InFlow', type=Flows1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LatePmtConf', type=Max10NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PeakDbt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class FundPaymentType1Code(base_types._BaseDataType_String):
 

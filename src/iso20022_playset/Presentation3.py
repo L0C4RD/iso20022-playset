@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
+import Max256Text
 import Channel1Choice
 import DocumentFormat1Choice
-import Max256Text
 
 class Presentation3(base_types._BaseFieldType):
 

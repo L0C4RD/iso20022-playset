@@ -1,13 +1,13 @@
-import base_types
+from . import base_types
 import ISODateTime
-import BaseOneRate
 import ActiveOrHistoricCurrencyCode
 import UUIDv4Identifier
+import BaseOneRate
 import BranchAndFinancialInstitutionIdentification8
 
 class CurrencyExchange26(base_types._BaseFieldType):
 
-	__slots__ = ["_QtdCcy", "_QtnDtTm", "_QtId", "_FXAgt", "_UnitCcy", "_PreAgrdXchgRate"]
+	__slots__ = ["_QtdCcy", "_FXAgt", "_QtnDtTm", "_PreAgrdXchgRate", "_UnitCcy", "_QtId"]
 	@property
 	def QtdCcy(self):
 		return self._QtdCcy
@@ -20,32 +20,6 @@ class CurrencyExchange26(base_types._BaseFieldType):
 	def QtdCcy(self):
 		del self._QtdCcy
 		self._QtdCcy = None
-
-	@property
-	def QtnDtTm(self):
-		return self._QtnDtTm
-
-	@QtnDtTm.setter
-	def QtnDtTm(self, value):
-		self._QtnDtTm = value if type(value) != auto else self.make_default("QtnDtTm")
-
-	@QtnDtTm.deleter
-	def QtnDtTm(self):
-		del self._QtnDtTm
-		self._QtnDtTm = None
-
-	@property
-	def QtId(self):
-		return self._QtId
-
-	@QtId.setter
-	def QtId(self, value):
-		self._QtId = value if type(value) != auto else self.make_default("QtId")
-
-	@QtId.deleter
-	def QtId(self):
-		del self._QtId
-		self._QtId = None
 
 	@property
 	def FXAgt(self):
@@ -61,17 +35,17 @@ class CurrencyExchange26(base_types._BaseFieldType):
 		self._FXAgt = None
 
 	@property
-	def UnitCcy(self):
-		return self._UnitCcy
+	def QtnDtTm(self):
+		return self._QtnDtTm
 
-	@UnitCcy.setter
-	def UnitCcy(self, value):
-		self._UnitCcy = value if type(value) != auto else self.make_default("UnitCcy")
+	@QtnDtTm.setter
+	def QtnDtTm(self, value):
+		self._QtnDtTm = value if type(value) != auto else self.make_default("QtnDtTm")
 
-	@UnitCcy.deleter
-	def UnitCcy(self):
-		del self._UnitCcy
-		self._UnitCcy = None
+	@QtnDtTm.deleter
+	def QtnDtTm(self):
+		del self._QtnDtTm
+		self._QtnDtTm = None
 
 	@property
 	def PreAgrdXchgRate(self):
@@ -86,12 +60,38 @@ class CurrencyExchange26(base_types._BaseFieldType):
 		del self._PreAgrdXchgRate
 		self._PreAgrdXchgRate = None
 
+	@property
+	def UnitCcy(self):
+		return self._UnitCcy
+
+	@UnitCcy.setter
+	def UnitCcy(self, value):
+		self._UnitCcy = value if type(value) != auto else self.make_default("UnitCcy")
+
+	@UnitCcy.deleter
+	def UnitCcy(self):
+		del self._UnitCcy
+		self._UnitCcy = None
+
+	@property
+	def QtId(self):
+		return self._QtId
+
+	@QtId.setter
+	def QtId(self, value):
+		self._QtId = value if type(value) != auto else self.make_default("QtId")
+
+	@QtId.deleter
+	def QtId(self):
+		del self._QtId
+		self._QtId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QtdCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtId', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FXAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PreAgrdXchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtId', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountStatusUpdateRequestReason1Code
 import GenericIdentification36
 

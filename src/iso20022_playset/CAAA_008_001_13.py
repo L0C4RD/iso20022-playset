@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AcceptorCancellationAdviceResponseV13
 
 class CAAA_008_001_13():

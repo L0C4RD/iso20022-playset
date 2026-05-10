@@ -1,60 +1,34 @@
-import base_types
-import PreviousYear4
-import YesNoIndicator
-import OtherAmount3
+from . import base_types
 import ISODate
+import InnovativeFinance1
+import YesNoIndicator
+import BonusWithdrawal2
+import SubscriptionInformation2
+import TaxEfficientProductType2Choice
+import PreviousYear4
+import Max35Text
 import ActiveCurrencyAndAmount
 import ActiveCurrencyAnd13DecimalAmount
-import BonusWithdrawal2
-import Max35Text
-import TaxEfficientProductType2Choice
-import AdditionalInformation15
-import DateAndAmount2
-import SubscriptionInformation2
 import TaxReference2
-import InnovativeFinance1
+import DateAndAmount2
+import OtherAmount3
+import AdditionalInformation15
 
 class TaxEfficientProduct7(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsYrs", "_WdrwlForResdtlPurchsPrgrs", "_BnsOrWdrwl", "_PrvsYrSbcptAmt", "_CurYrSbcptDtls", "_TrfrAltrnId", "_DtFrstQlfygAddtn", "_InvstmtsToFllwVal", "_InnvtvFinc", "_TaxEffcntPdctTp", "_AddtlInf", "_EstmtdVal", "_CurYr", "_InvstrTaxRef", "_OthrAmt", "_PrvsYrsSbcptAmt", "_LwstInvstdAmtCurYr", "_DtOfFrstSbcpt", "_TtlSbcptAmt", "_CurInvstmtAmt", "_TaxClctnBase", "_UusdTaxDdctn", "_CshCmpntInd"]
+	__slots__ = ["_TrfrAltrnId", "_PrvsYrSbcptAmt", "_UusdTaxDdctn", "_CurYrSbcptDtls", "_InvstmtsToFllwVal", "_InvstrTaxRef", "_AddtlInf", "_InnvtvFinc", "_TaxEffcntPdctTp", "_CurInvstmtAmt", "_CurYr", "_EstmtdVal", "_WdrwlForResdtlPurchsPrgrs", "_LwstInvstdAmtCurYr", "_DtOfFrstSbcpt", "_TaxClctnBase", "_DtFrstQlfygAddtn", "_OthrAmt", "_PrvsYrsSbcptAmt", "_CshCmpntInd", "_TtlSbcptAmt", "_BnsOrWdrwl", "_PrvsYrs"]
 	@property
-	def PrvsYrs(self):
-		return self._PrvsYrs
+	def TrfrAltrnId(self):
+		return self._TrfrAltrnId
 
-	@PrvsYrs.setter
-	def PrvsYrs(self, value):
-		self._PrvsYrs = value if type(value) != auto else self.make_default("PrvsYrs")
+	@TrfrAltrnId.setter
+	def TrfrAltrnId(self, value):
+		self._TrfrAltrnId = value if type(value) != auto else self.make_default("TrfrAltrnId")
 
-	@PrvsYrs.deleter
-	def PrvsYrs(self):
-		del self._PrvsYrs
-		self._PrvsYrs = None
-
-	@property
-	def WdrwlForResdtlPurchsPrgrs(self):
-		return self._WdrwlForResdtlPurchsPrgrs
-
-	@WdrwlForResdtlPurchsPrgrs.setter
-	def WdrwlForResdtlPurchsPrgrs(self, value):
-		self._WdrwlForResdtlPurchsPrgrs = value if type(value) != auto else self.make_default("WdrwlForResdtlPurchsPrgrs")
-
-	@WdrwlForResdtlPurchsPrgrs.deleter
-	def WdrwlForResdtlPurchsPrgrs(self):
-		del self._WdrwlForResdtlPurchsPrgrs
-		self._WdrwlForResdtlPurchsPrgrs = None
-
-	@property
-	def BnsOrWdrwl(self):
-		return self._BnsOrWdrwl
-
-	@BnsOrWdrwl.setter
-	def BnsOrWdrwl(self, value):
-		self._BnsOrWdrwl = value if type(value) != auto else self.make_default("BnsOrWdrwl")
-
-	@BnsOrWdrwl.deleter
-	def BnsOrWdrwl(self):
-		del self._BnsOrWdrwl
-		self._BnsOrWdrwl = None
+	@TrfrAltrnId.deleter
+	def TrfrAltrnId(self):
+		del self._TrfrAltrnId
+		self._TrfrAltrnId = None
 
 	@property
 	def PrvsYrSbcptAmt(self):
@@ -70,6 +44,19 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 		self._PrvsYrSbcptAmt = None
 
 	@property
+	def UusdTaxDdctn(self):
+		return self._UusdTaxDdctn
+
+	@UusdTaxDdctn.setter
+	def UusdTaxDdctn(self, value):
+		self._UusdTaxDdctn = value if type(value) != auto else self.make_default("UusdTaxDdctn")
+
+	@UusdTaxDdctn.deleter
+	def UusdTaxDdctn(self):
+		del self._UusdTaxDdctn
+		self._UusdTaxDdctn = None
+
+	@property
 	def CurYrSbcptDtls(self):
 		return self._CurYrSbcptDtls
 
@@ -83,32 +70,6 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 		self._CurYrSbcptDtls = None
 
 	@property
-	def TrfrAltrnId(self):
-		return self._TrfrAltrnId
-
-	@TrfrAltrnId.setter
-	def TrfrAltrnId(self, value):
-		self._TrfrAltrnId = value if type(value) != auto else self.make_default("TrfrAltrnId")
-
-	@TrfrAltrnId.deleter
-	def TrfrAltrnId(self):
-		del self._TrfrAltrnId
-		self._TrfrAltrnId = None
-
-	@property
-	def DtFrstQlfygAddtn(self):
-		return self._DtFrstQlfygAddtn
-
-	@DtFrstQlfygAddtn.setter
-	def DtFrstQlfygAddtn(self, value):
-		self._DtFrstQlfygAddtn = value if type(value) != auto else self.make_default("DtFrstQlfygAddtn")
-
-	@DtFrstQlfygAddtn.deleter
-	def DtFrstQlfygAddtn(self):
-		del self._DtFrstQlfygAddtn
-		self._DtFrstQlfygAddtn = None
-
-	@property
 	def InvstmtsToFllwVal(self):
 		return self._InvstmtsToFllwVal
 
@@ -120,6 +81,32 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 	def InvstmtsToFllwVal(self):
 		del self._InvstmtsToFllwVal
 		self._InvstmtsToFllwVal = None
+
+	@property
+	def InvstrTaxRef(self):
+		return self._InvstrTaxRef
+
+	@InvstrTaxRef.setter
+	def InvstrTaxRef(self, value):
+		self._InvstrTaxRef = value if type(value) != auto else self.make_default("InvstrTaxRef")
+
+	@InvstrTaxRef.deleter
+	def InvstrTaxRef(self):
+		del self._InvstrTaxRef
+		self._InvstrTaxRef = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def InnvtvFinc(self):
@@ -148,30 +135,17 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 		self._TaxEffcntPdctTp = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def CurInvstmtAmt(self):
+		return self._CurInvstmtAmt
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@CurInvstmtAmt.setter
+	def CurInvstmtAmt(self, value):
+		self._CurInvstmtAmt = value if type(value) != auto else self.make_default("CurInvstmtAmt")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def EstmtdVal(self):
-		return self._EstmtdVal
-
-	@EstmtdVal.setter
-	def EstmtdVal(self, value):
-		self._EstmtdVal = value if type(value) != auto else self.make_default("EstmtdVal")
-
-	@EstmtdVal.deleter
-	def EstmtdVal(self):
-		del self._EstmtdVal
-		self._EstmtdVal = None
+	@CurInvstmtAmt.deleter
+	def CurInvstmtAmt(self):
+		del self._CurInvstmtAmt
+		self._CurInvstmtAmt = None
 
 	@property
 	def CurYr(self):
@@ -187,43 +161,30 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 		self._CurYr = None
 
 	@property
-	def InvstrTaxRef(self):
-		return self._InvstrTaxRef
+	def EstmtdVal(self):
+		return self._EstmtdVal
 
-	@InvstrTaxRef.setter
-	def InvstrTaxRef(self, value):
-		self._InvstrTaxRef = value if type(value) != auto else self.make_default("InvstrTaxRef")
+	@EstmtdVal.setter
+	def EstmtdVal(self, value):
+		self._EstmtdVal = value if type(value) != auto else self.make_default("EstmtdVal")
 
-	@InvstrTaxRef.deleter
-	def InvstrTaxRef(self):
-		del self._InvstrTaxRef
-		self._InvstrTaxRef = None
-
-	@property
-	def OthrAmt(self):
-		return self._OthrAmt
-
-	@OthrAmt.setter
-	def OthrAmt(self, value):
-		self._OthrAmt = value if type(value) != auto else self.make_default("OthrAmt")
-
-	@OthrAmt.deleter
-	def OthrAmt(self):
-		del self._OthrAmt
-		self._OthrAmt = None
+	@EstmtdVal.deleter
+	def EstmtdVal(self):
+		del self._EstmtdVal
+		self._EstmtdVal = None
 
 	@property
-	def PrvsYrsSbcptAmt(self):
-		return self._PrvsYrsSbcptAmt
+	def WdrwlForResdtlPurchsPrgrs(self):
+		return self._WdrwlForResdtlPurchsPrgrs
 
-	@PrvsYrsSbcptAmt.setter
-	def PrvsYrsSbcptAmt(self, value):
-		self._PrvsYrsSbcptAmt = value if type(value) != auto else self.make_default("PrvsYrsSbcptAmt")
+	@WdrwlForResdtlPurchsPrgrs.setter
+	def WdrwlForResdtlPurchsPrgrs(self, value):
+		self._WdrwlForResdtlPurchsPrgrs = value if type(value) != auto else self.make_default("WdrwlForResdtlPurchsPrgrs")
 
-	@PrvsYrsSbcptAmt.deleter
-	def PrvsYrsSbcptAmt(self):
-		del self._PrvsYrsSbcptAmt
-		self._PrvsYrsSbcptAmt = None
+	@WdrwlForResdtlPurchsPrgrs.deleter
+	def WdrwlForResdtlPurchsPrgrs(self):
+		del self._WdrwlForResdtlPurchsPrgrs
+		self._WdrwlForResdtlPurchsPrgrs = None
 
 	@property
 	def LwstInvstdAmtCurYr(self):
@@ -252,32 +213,6 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 		self._DtOfFrstSbcpt = None
 
 	@property
-	def TtlSbcptAmt(self):
-		return self._TtlSbcptAmt
-
-	@TtlSbcptAmt.setter
-	def TtlSbcptAmt(self, value):
-		self._TtlSbcptAmt = value if type(value) != auto else self.make_default("TtlSbcptAmt")
-
-	@TtlSbcptAmt.deleter
-	def TtlSbcptAmt(self):
-		del self._TtlSbcptAmt
-		self._TtlSbcptAmt = None
-
-	@property
-	def CurInvstmtAmt(self):
-		return self._CurInvstmtAmt
-
-	@CurInvstmtAmt.setter
-	def CurInvstmtAmt(self, value):
-		self._CurInvstmtAmt = value if type(value) != auto else self.make_default("CurInvstmtAmt")
-
-	@CurInvstmtAmt.deleter
-	def CurInvstmtAmt(self):
-		del self._CurInvstmtAmt
-		self._CurInvstmtAmt = None
-
-	@property
 	def TaxClctnBase(self):
 		return self._TaxClctnBase
 
@@ -291,17 +226,43 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 		self._TaxClctnBase = None
 
 	@property
-	def UusdTaxDdctn(self):
-		return self._UusdTaxDdctn
+	def DtFrstQlfygAddtn(self):
+		return self._DtFrstQlfygAddtn
 
-	@UusdTaxDdctn.setter
-	def UusdTaxDdctn(self, value):
-		self._UusdTaxDdctn = value if type(value) != auto else self.make_default("UusdTaxDdctn")
+	@DtFrstQlfygAddtn.setter
+	def DtFrstQlfygAddtn(self, value):
+		self._DtFrstQlfygAddtn = value if type(value) != auto else self.make_default("DtFrstQlfygAddtn")
 
-	@UusdTaxDdctn.deleter
-	def UusdTaxDdctn(self):
-		del self._UusdTaxDdctn
-		self._UusdTaxDdctn = None
+	@DtFrstQlfygAddtn.deleter
+	def DtFrstQlfygAddtn(self):
+		del self._DtFrstQlfygAddtn
+		self._DtFrstQlfygAddtn = None
+
+	@property
+	def OthrAmt(self):
+		return self._OthrAmt
+
+	@OthrAmt.setter
+	def OthrAmt(self, value):
+		self._OthrAmt = value if type(value) != auto else self.make_default("OthrAmt")
+
+	@OthrAmt.deleter
+	def OthrAmt(self):
+		del self._OthrAmt
+		self._OthrAmt = None
+
+	@property
+	def PrvsYrsSbcptAmt(self):
+		return self._PrvsYrsSbcptAmt
+
+	@PrvsYrsSbcptAmt.setter
+	def PrvsYrsSbcptAmt(self, value):
+		self._PrvsYrsSbcptAmt = value if type(value) != auto else self.make_default("PrvsYrsSbcptAmt")
+
+	@PrvsYrsSbcptAmt.deleter
+	def PrvsYrsSbcptAmt(self):
+		del self._PrvsYrsSbcptAmt
+		self._PrvsYrsSbcptAmt = None
 
 	@property
 	def CshCmpntInd(self):
@@ -316,29 +277,68 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 		del self._CshCmpntInd
 		self._CshCmpntInd = None
 
+	@property
+	def TtlSbcptAmt(self):
+		return self._TtlSbcptAmt
+
+	@TtlSbcptAmt.setter
+	def TtlSbcptAmt(self, value):
+		self._TtlSbcptAmt = value if type(value) != auto else self.make_default("TtlSbcptAmt")
+
+	@TtlSbcptAmt.deleter
+	def TtlSbcptAmt(self):
+		del self._TtlSbcptAmt
+		self._TtlSbcptAmt = None
+
+	@property
+	def BnsOrWdrwl(self):
+		return self._BnsOrWdrwl
+
+	@BnsOrWdrwl.setter
+	def BnsOrWdrwl(self, value):
+		self._BnsOrWdrwl = value if type(value) != auto else self.make_default("BnsOrWdrwl")
+
+	@BnsOrWdrwl.deleter
+	def BnsOrWdrwl(self):
+		del self._BnsOrWdrwl
+		self._BnsOrWdrwl = None
+
+	@property
+	def PrvsYrs(self):
+		return self._PrvsYrs
+
+	@PrvsYrs.setter
+	def PrvsYrs(self, value):
+		self._PrvsYrs = value if type(value) != auto else self.make_default("PrvsYrs")
+
+	@PrvsYrs.deleter
+	def PrvsYrs(self):
+		del self._PrvsYrs
+		self._PrvsYrs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrvsYrs', type=PreviousYear4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WdrwlForResdtlPurchsPrgrs', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BnsOrWdrwl', type=BonusWithdrawal2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrvsYrSbcptAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CurYrSbcptDtls', type=SubscriptionInformation2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfrAltrnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtFrstQlfygAddtn', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsYrSbcptAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UusdTaxDdctn', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurYrSbcptDtls', type=SubscriptionInformation2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstmtsToFllwVal', type=DateAndAmount2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InvstrTaxRef', type=TaxReference2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InnvtvFinc', type=InnovativeFinance1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TaxEffcntPdctTp', type=TaxEfficientProductType2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='EstmtdVal', type=DateAndAmount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurInvstmtAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurYr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstrTaxRef', type=TaxReference2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrAmt', type=OtherAmount3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrvsYrsSbcptAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstmtdVal', type=DateAndAmount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WdrwlForResdtlPurchsPrgrs', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LwstInvstdAmtCurYr', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtOfFrstSbcpt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlSbcptAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CurInvstmtAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxClctnBase', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UusdTaxDdctn', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtFrstQlfygAddtn', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrAmt', type=OtherAmount3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrvsYrsSbcptAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshCmpntInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlSbcptAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BnsOrWdrwl', type=BonusWithdrawal2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrvsYrs', type=PreviousYear4, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,22 +1,9 @@
-import base_types
+from . import base_types
 import Max35Text
 
 class GeolocationGeographicCoordinates1(base_types._BaseFieldType):
 
-	__slots__ = ["_Lat", "_Long"]
-	@property
-	def Lat(self):
-		return self._Lat
-
-	@Lat.setter
-	def Lat(self, value):
-		self._Lat = value if type(value) != auto else self.make_default("Lat")
-
-	@Lat.deleter
-	def Lat(self):
-		del self._Lat
-		self._Lat = None
-
+	__slots__ = ["_Long", "_Lat"]
 	@property
 	def Long(self):
 		return self._Long
@@ -30,8 +17,21 @@ class GeolocationGeographicCoordinates1(base_types._BaseFieldType):
 		del self._Long
 		self._Long = None
 
+	@property
+	def Lat(self):
+		return self._Lat
+
+	@Lat.setter
+	def Lat(self, value):
+		self._Lat = value if type(value) != auto else self.make_default("Lat")
+
+	@Lat.deleter
+	def Lat(self):
+		del self._Lat
+		self._Lat = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Lat', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Long', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lat', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

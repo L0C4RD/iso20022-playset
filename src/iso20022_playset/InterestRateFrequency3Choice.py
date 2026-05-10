@@ -1,6 +1,6 @@
-import base_types
-import InterestRateContractTerm4
+from . import base_types
 import Max52Text
+import InterestRateContractTerm4
 
 class InterestRateFrequency3Choice(base_types._BaseFieldType):
 

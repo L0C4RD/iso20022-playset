@@ -1,17 +1,17 @@
-import base_types
-import PrincipalAmount3
-import SecuritiesTransactionPrice19Choice
-import Cleared16Choice
+from . import base_types
 import ISODate
+import MICIdentifier
+import Max52Text
 import ISODateTime
 import SpecialCollateral1Code
-import Max52Text
+import Cleared16Choice
 import MasterAgreement7
-import MICIdentifier
+import PrincipalAmount3
+import SecuritiesTransactionPrice19Choice
 
 class LoanData136(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_ClrSts", "_ExctnDtTm", "_TradgVn", "_UnqTradIdr", "_EvtDt", "_GnlColl", "_MtrtyDt", "_PrncplAmt", "_TermntnDt", "_MstrAgrmt", "_UnitPric"]
+	__slots__ = ["_ValDt", "_ExctnDtTm", "_MtrtyDt", "_TradgVn", "_UnqTradIdr", "_ClrSts", "_TermntnDt", "_MstrAgrmt", "_EvtDt", "_PrncplAmt", "_UnitPric", "_GnlColl"]
 	@property
 	def ValDt(self):
 		return self._ValDt
@@ -26,19 +26,6 @@ class LoanData136(base_types._BaseFieldType):
 		self._ValDt = None
 
 	@property
-	def ClrSts(self):
-		return self._ClrSts
-
-	@ClrSts.setter
-	def ClrSts(self, value):
-		self._ClrSts = value if type(value) != auto else self.make_default("ClrSts")
-
-	@ClrSts.deleter
-	def ClrSts(self):
-		del self._ClrSts
-		self._ClrSts = None
-
-	@property
 	def ExctnDtTm(self):
 		return self._ExctnDtTm
 
@@ -50,6 +37,19 @@ class LoanData136(base_types._BaseFieldType):
 	def ExctnDtTm(self):
 		del self._ExctnDtTm
 		self._ExctnDtTm = None
+
+	@property
+	def MtrtyDt(self):
+		return self._MtrtyDt
+
+	@MtrtyDt.setter
+	def MtrtyDt(self, value):
+		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+
+	@MtrtyDt.deleter
+	def MtrtyDt(self):
+		del self._MtrtyDt
+		self._MtrtyDt = None
 
 	@property
 	def TradgVn(self):
@@ -78,56 +78,17 @@ class LoanData136(base_types._BaseFieldType):
 		self._UnqTradIdr = None
 
 	@property
-	def EvtDt(self):
-		return self._EvtDt
+	def ClrSts(self):
+		return self._ClrSts
 
-	@EvtDt.setter
-	def EvtDt(self, value):
-		self._EvtDt = value if type(value) != auto else self.make_default("EvtDt")
+	@ClrSts.setter
+	def ClrSts(self, value):
+		self._ClrSts = value if type(value) != auto else self.make_default("ClrSts")
 
-	@EvtDt.deleter
-	def EvtDt(self):
-		del self._EvtDt
-		self._EvtDt = None
-
-	@property
-	def GnlColl(self):
-		return self._GnlColl
-
-	@GnlColl.setter
-	def GnlColl(self, value):
-		self._GnlColl = value if type(value) != auto else self.make_default("GnlColl")
-
-	@GnlColl.deleter
-	def GnlColl(self):
-		del self._GnlColl
-		self._GnlColl = None
-
-	@property
-	def MtrtyDt(self):
-		return self._MtrtyDt
-
-	@MtrtyDt.setter
-	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
-
-	@MtrtyDt.deleter
-	def MtrtyDt(self):
-		del self._MtrtyDt
-		self._MtrtyDt = None
-
-	@property
-	def PrncplAmt(self):
-		return self._PrncplAmt
-
-	@PrncplAmt.setter
-	def PrncplAmt(self, value):
-		self._PrncplAmt = value if type(value) != auto else self.make_default("PrncplAmt")
-
-	@PrncplAmt.deleter
-	def PrncplAmt(self):
-		del self._PrncplAmt
-		self._PrncplAmt = None
+	@ClrSts.deleter
+	def ClrSts(self):
+		del self._ClrSts
+		self._ClrSts = None
 
 	@property
 	def TermntnDt(self):
@@ -156,6 +117,32 @@ class LoanData136(base_types._BaseFieldType):
 		self._MstrAgrmt = None
 
 	@property
+	def EvtDt(self):
+		return self._EvtDt
+
+	@EvtDt.setter
+	def EvtDt(self, value):
+		self._EvtDt = value if type(value) != auto else self.make_default("EvtDt")
+
+	@EvtDt.deleter
+	def EvtDt(self):
+		del self._EvtDt
+		self._EvtDt = None
+
+	@property
+	def PrncplAmt(self):
+		return self._PrncplAmt
+
+	@PrncplAmt.setter
+	def PrncplAmt(self, value):
+		self._PrncplAmt = value if type(value) != auto else self.make_default("PrncplAmt")
+
+	@PrncplAmt.deleter
+	def PrncplAmt(self):
+		del self._PrncplAmt
+		self._PrncplAmt = None
+
+	@property
 	def UnitPric(self):
 		return self._UnitPric
 
@@ -168,18 +155,31 @@ class LoanData136(base_types._BaseFieldType):
 		del self._UnitPric
 		self._UnitPric = None
 
+	@property
+	def GnlColl(self):
+		return self._GnlColl
+
+	@GnlColl.setter
+	def GnlColl(self, value):
+		self._GnlColl = value if type(value) != auto else self.make_default("GnlColl")
+
+	@GnlColl.deleter
+	def GnlColl(self):
+		del self._GnlColl
+		self._GnlColl = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrSts', type=Cleared16Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExctnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqTradIdr', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GnlColl', type=SpecialCollateral1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrncplAmt', type=PrincipalAmount3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrSts', type=Cleared16Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TermntnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrncplAmt', type=PrincipalAmount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitPric', type=SecuritiesTransactionPrice19Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GnlColl', type=SpecialCollateral1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

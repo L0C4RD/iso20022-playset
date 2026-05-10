@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PayInCallV02
 
 class CAMT_061_001_02():

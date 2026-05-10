@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import OptionType2Code
 
 class CompareOptionType1(base_types._BaseFieldType):

@@ -1,15 +1,28 @@
-import base_types
-import Max35Text
-import ContentInformationType40
-import Max8Text
-import PositiveNumber
-import TerminalManagementAction3Code
-import Max100KBinary
+from . import base_types
 import Max256Text
+import Max8Text
+import Max100KBinary
+import ContentInformationType40
+import TerminalManagementAction3Code
+import Max35Text
+import PositiveNumber
 
 class ApplicationParameters13(base_types._BaseFieldType):
 
-	__slots__ = ["_ActnTp", "_Vrsn", "_ParamsLngth", "_ApplId", "_OffsetEnd", "_Params", "_OffsetStart", "_NcrptdParams", "_ParamFrmtIdr"]
+	__slots__ = ["_ParamFrmtIdr", "_ActnTp", "_Params", "_NcrptdParams", "_Vrsn", "_OffsetStart", "_OffsetEnd", "_ParamsLngth", "_ApplId"]
+	@property
+	def ParamFrmtIdr(self):
+		return self._ParamFrmtIdr
+
+	@ParamFrmtIdr.setter
+	def ParamFrmtIdr(self, value):
+		self._ParamFrmtIdr = value if type(value) != auto else self.make_default("ParamFrmtIdr")
+
+	@ParamFrmtIdr.deleter
+	def ParamFrmtIdr(self):
+		del self._ParamFrmtIdr
+		self._ParamFrmtIdr = None
+
 	@property
 	def ActnTp(self):
 		return self._ActnTp
@@ -24,6 +37,32 @@ class ApplicationParameters13(base_types._BaseFieldType):
 		self._ActnTp = None
 
 	@property
+	def Params(self):
+		return self._Params
+
+	@Params.setter
+	def Params(self, value):
+		self._Params = value if type(value) != auto else self.make_default("Params")
+
+	@Params.deleter
+	def Params(self):
+		del self._Params
+		self._Params = None
+
+	@property
+	def NcrptdParams(self):
+		return self._NcrptdParams
+
+	@NcrptdParams.setter
+	def NcrptdParams(self, value):
+		self._NcrptdParams = value if type(value) != auto else self.make_default("NcrptdParams")
+
+	@NcrptdParams.deleter
+	def NcrptdParams(self):
+		del self._NcrptdParams
+		self._NcrptdParams = None
+
+	@property
 	def Vrsn(self):
 		return self._Vrsn
 
@@ -35,6 +74,32 @@ class ApplicationParameters13(base_types._BaseFieldType):
 	def Vrsn(self):
 		del self._Vrsn
 		self._Vrsn = None
+
+	@property
+	def OffsetStart(self):
+		return self._OffsetStart
+
+	@OffsetStart.setter
+	def OffsetStart(self, value):
+		self._OffsetStart = value if type(value) != auto else self.make_default("OffsetStart")
+
+	@OffsetStart.deleter
+	def OffsetStart(self):
+		del self._OffsetStart
+		self._OffsetStart = None
+
+	@property
+	def OffsetEnd(self):
+		return self._OffsetEnd
+
+	@OffsetEnd.setter
+	def OffsetEnd(self, value):
+		self._OffsetEnd = value if type(value) != auto else self.make_default("OffsetEnd")
+
+	@OffsetEnd.deleter
+	def OffsetEnd(self):
+		del self._OffsetEnd
+		self._OffsetEnd = None
 
 	@property
 	def ParamsLngth(self):
@@ -62,80 +127,15 @@ class ApplicationParameters13(base_types._BaseFieldType):
 		del self._ApplId
 		self._ApplId = None
 
-	@property
-	def OffsetEnd(self):
-		return self._OffsetEnd
-
-	@OffsetEnd.setter
-	def OffsetEnd(self, value):
-		self._OffsetEnd = value if type(value) != auto else self.make_default("OffsetEnd")
-
-	@OffsetEnd.deleter
-	def OffsetEnd(self):
-		del self._OffsetEnd
-		self._OffsetEnd = None
-
-	@property
-	def Params(self):
-		return self._Params
-
-	@Params.setter
-	def Params(self, value):
-		self._Params = value if type(value) != auto else self.make_default("Params")
-
-	@Params.deleter
-	def Params(self):
-		del self._Params
-		self._Params = None
-
-	@property
-	def OffsetStart(self):
-		return self._OffsetStart
-
-	@OffsetStart.setter
-	def OffsetStart(self, value):
-		self._OffsetStart = value if type(value) != auto else self.make_default("OffsetStart")
-
-	@OffsetStart.deleter
-	def OffsetStart(self):
-		del self._OffsetStart
-		self._OffsetStart = None
-
-	@property
-	def NcrptdParams(self):
-		return self._NcrptdParams
-
-	@NcrptdParams.setter
-	def NcrptdParams(self, value):
-		self._NcrptdParams = value if type(value) != auto else self.make_default("NcrptdParams")
-
-	@NcrptdParams.deleter
-	def NcrptdParams(self):
-		del self._NcrptdParams
-		self._NcrptdParams = None
-
-	@property
-	def ParamFrmtIdr(self):
-		return self._ParamFrmtIdr
-
-	@ParamFrmtIdr.setter
-	def ParamFrmtIdr(self, value):
-		self._ParamFrmtIdr = value if type(value) != auto else self.make_default("ParamFrmtIdr")
-
-	@ParamFrmtIdr.deleter
-	def ParamFrmtIdr(self):
-		del self._ParamFrmtIdr
-		self._ParamFrmtIdr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ParamFrmtIdr', type=Max8Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Params', type=Max100KBinary, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NcrptdParams', type=ContentInformationType40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffsetStart', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffsetEnd', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ParamsLngth', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApplId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OffsetEnd', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Params', type=Max100KBinary, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OffsetStart', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NcrptdParams', type=ContentInformationType40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ParamFrmtIdr', type=Max8Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

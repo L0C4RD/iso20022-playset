@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import GetBusinessDayInformationV05
 
 class CAMT_018_001_05():

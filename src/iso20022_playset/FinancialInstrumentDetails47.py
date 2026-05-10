@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
 import IntraPositionDetails66
-import SecurityIdentification19
 import FinancialInstrumentAttributes112
+import SecurityIdentification19
 
 class FinancialInstrumentDetails47(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmAttrbts", "_FinInstrmId", "_SubBal"]
+	__slots__ = ["_FinInstrmAttrbts", "_SubBal", "_FinInstrmId"]
 	@property
 	def FinInstrmAttrbts(self):
 		return self._FinInstrmAttrbts
@@ -20,19 +20,6 @@ class FinancialInstrumentDetails47(base_types._BaseFieldType):
 		self._FinInstrmAttrbts = None
 
 	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
-	@property
 	def SubBal(self):
 		return self._SubBal
 
@@ -45,9 +32,22 @@ class FinancialInstrumentDetails47(base_types._BaseFieldType):
 		del self._SubBal
 		self._SubBal = None
 
+	@property
+	def FinInstrmId(self):
+		return self._FinInstrmId
+
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmAttrbts', type=FinancialInstrumentAttributes112, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubBal', type=IntraPositionDetails66, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 	))
 

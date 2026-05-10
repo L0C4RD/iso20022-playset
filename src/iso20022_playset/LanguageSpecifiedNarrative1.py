@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ISO2ALanguageCode
 import Max8000Text
 

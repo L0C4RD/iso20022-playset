@@ -1,37 +1,37 @@
-import base_types
-import ISO3NumericCurrencyCode
-import ImpliedCurrencyAndAmount
+from . import base_types
 import CreditDebit3Code
 import Number
+import ISO3NumericCurrencyCode
+import ImpliedCurrencyAndAmount
 
 class SettlementCategoryTotal3(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_IntrchngFeeCcy", "_IntrchngFeeCdtDbt", "_PrcgFeeCcy", "_IntrchngFeeAmt", "_PrcgFeeAmt", "_Cnt", "_Ccy", "_PrcgFeeCdtDbt", "_CdtDbt"]
+	__slots__ = ["_PrcgFeeAmt", "_Cnt", "_IntrchngFeeCdtDbt", "_PrcgFeeCcy", "_IntrchngFeeCcy", "_CdtDbt", "_PrcgFeeCdtDbt", "_Amt", "_IntrchngFeeAmt", "_Ccy"]
 	@property
-	def Amt(self):
-		return self._Amt
+	def PrcgFeeAmt(self):
+		return self._PrcgFeeAmt
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@PrcgFeeAmt.setter
+	def PrcgFeeAmt(self, value):
+		self._PrcgFeeAmt = value if type(value) != auto else self.make_default("PrcgFeeAmt")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@PrcgFeeAmt.deleter
+	def PrcgFeeAmt(self):
+		del self._PrcgFeeAmt
+		self._PrcgFeeAmt = None
 
 	@property
-	def IntrchngFeeCcy(self):
-		return self._IntrchngFeeCcy
+	def Cnt(self):
+		return self._Cnt
 
-	@IntrchngFeeCcy.setter
-	def IntrchngFeeCcy(self, value):
-		self._IntrchngFeeCcy = value if type(value) != auto else self.make_default("IntrchngFeeCcy")
+	@Cnt.setter
+	def Cnt(self, value):
+		self._Cnt = value if type(value) != auto else self.make_default("Cnt")
 
-	@IntrchngFeeCcy.deleter
-	def IntrchngFeeCcy(self):
-		del self._IntrchngFeeCcy
-		self._IntrchngFeeCcy = None
+	@Cnt.deleter
+	def Cnt(self):
+		del self._Cnt
+		self._Cnt = None
 
 	@property
 	def IntrchngFeeCdtDbt(self):
@@ -60,56 +60,30 @@ class SettlementCategoryTotal3(base_types._BaseFieldType):
 		self._PrcgFeeCcy = None
 
 	@property
-	def IntrchngFeeAmt(self):
-		return self._IntrchngFeeAmt
+	def IntrchngFeeCcy(self):
+		return self._IntrchngFeeCcy
 
-	@IntrchngFeeAmt.setter
-	def IntrchngFeeAmt(self, value):
-		self._IntrchngFeeAmt = value if type(value) != auto else self.make_default("IntrchngFeeAmt")
+	@IntrchngFeeCcy.setter
+	def IntrchngFeeCcy(self, value):
+		self._IntrchngFeeCcy = value if type(value) != auto else self.make_default("IntrchngFeeCcy")
 
-	@IntrchngFeeAmt.deleter
-	def IntrchngFeeAmt(self):
-		del self._IntrchngFeeAmt
-		self._IntrchngFeeAmt = None
-
-	@property
-	def PrcgFeeAmt(self):
-		return self._PrcgFeeAmt
-
-	@PrcgFeeAmt.setter
-	def PrcgFeeAmt(self, value):
-		self._PrcgFeeAmt = value if type(value) != auto else self.make_default("PrcgFeeAmt")
-
-	@PrcgFeeAmt.deleter
-	def PrcgFeeAmt(self):
-		del self._PrcgFeeAmt
-		self._PrcgFeeAmt = None
+	@IntrchngFeeCcy.deleter
+	def IntrchngFeeCcy(self):
+		del self._IntrchngFeeCcy
+		self._IntrchngFeeCcy = None
 
 	@property
-	def Cnt(self):
-		return self._Cnt
+	def CdtDbt(self):
+		return self._CdtDbt
 
-	@Cnt.setter
-	def Cnt(self, value):
-		self._Cnt = value if type(value) != auto else self.make_default("Cnt")
+	@CdtDbt.setter
+	def CdtDbt(self, value):
+		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
 
-	@Cnt.deleter
-	def Cnt(self):
-		del self._Cnt
-		self._Cnt = None
-
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@CdtDbt.deleter
+	def CdtDbt(self):
+		del self._CdtDbt
+		self._CdtDbt = None
 
 	@property
 	def PrcgFeeCdtDbt(self):
@@ -125,28 +99,54 @@ class SettlementCategoryTotal3(base_types._BaseFieldType):
 		self._PrcgFeeCdtDbt = None
 
 	@property
-	def CdtDbt(self):
-		return self._CdtDbt
+	def Amt(self):
+		return self._Amt
 
-	@CdtDbt.setter
-	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@CdtDbt.deleter
-	def CdtDbt(self):
-		del self._CdtDbt
-		self._CdtDbt = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def IntrchngFeeAmt(self):
+		return self._IntrchngFeeAmt
+
+	@IntrchngFeeAmt.setter
+	def IntrchngFeeAmt(self, value):
+		self._IntrchngFeeAmt = value if type(value) != auto else self.make_default("IntrchngFeeAmt")
+
+	@IntrchngFeeAmt.deleter
+	def IntrchngFeeAmt(self):
+		del self._IntrchngFeeAmt
+		self._IntrchngFeeAmt = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrchngFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrchngFeeCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrchngFeeAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgFeeAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cnt', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgFeeCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrchngFeeCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrchngFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgFeeCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrchngFeeAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

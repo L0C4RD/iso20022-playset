@@ -1,6 +1,6 @@
-import base_types
-import BaseOneRate
+from . import base_types
 import ISODate
+import BaseOneRate
 
 class ResetDateAndValue1(base_types._BaseFieldType):
 

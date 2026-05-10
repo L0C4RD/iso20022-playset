@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
+import CorporateActionInformation1
 import DocumentIdentification8
 import EntitlementAdvice1
-import CorporateActionInformation1
 
 class AgentCADistributionBreakdownAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnDstrbtnDtls", "_Id", "_CorpActnGnlInf"]
+	__slots__ = ["_CorpActnGnlInf", "_CorpActnDstrbtnDtls", "_Id"]
+	@property
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
+
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
+
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
+
 	@property
 	def CorpActnDstrbtnDtls(self):
 		return self._CorpActnDstrbtnDtls
@@ -32,22 +45,9 @@ class AgentCADistributionBreakdownAdviceV01(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
-	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
-
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
-
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnDstrbtnDtls', type=EntitlementAdvice1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
 	))
 

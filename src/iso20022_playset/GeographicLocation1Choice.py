@@ -1,6 +1,6 @@
-import base_types
-import GeographicCoordinates1
+from . import base_types
 import UTMCoordinates1
+import GeographicCoordinates1
 
 class GeographicLocation1Choice(base_types._BaseFieldType):
 

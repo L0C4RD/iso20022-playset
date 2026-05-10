@@ -1,25 +1,25 @@
-import base_types
-import Max35Text
+from . import base_types
 import ATMSignature2Choice
-import CryptographicKey12
 import Max5000Binary
 import Max140Binary
+import Max35Text
+import CryptographicKey12
 
 class SecurityParameters9(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqdKey", "_SgntrChc", "_Cert", "_ATMChllng", "_Key"]
+	__slots__ = ["_Cert", "_SgntrChc", "_Key", "_ReqdKey", "_ATMChllng"]
 	@property
-	def ReqdKey(self):
-		return self._ReqdKey
+	def Cert(self):
+		return self._Cert
 
-	@ReqdKey.setter
-	def ReqdKey(self, value):
-		self._ReqdKey = value if type(value) != auto else self.make_default("ReqdKey")
+	@Cert.setter
+	def Cert(self, value):
+		self._Cert = value if type(value) != auto else self.make_default("Cert")
 
-	@ReqdKey.deleter
-	def ReqdKey(self):
-		del self._ReqdKey
-		self._ReqdKey = None
+	@Cert.deleter
+	def Cert(self):
+		del self._Cert
+		self._Cert = None
 
 	@property
 	def SgntrChc(self):
@@ -35,17 +35,30 @@ class SecurityParameters9(base_types._BaseFieldType):
 		self._SgntrChc = None
 
 	@property
-	def Cert(self):
-		return self._Cert
+	def Key(self):
+		return self._Key
 
-	@Cert.setter
-	def Cert(self, value):
-		self._Cert = value if type(value) != auto else self.make_default("Cert")
+	@Key.setter
+	def Key(self, value):
+		self._Key = value if type(value) != auto else self.make_default("Key")
 
-	@Cert.deleter
-	def Cert(self):
-		del self._Cert
-		self._Cert = None
+	@Key.deleter
+	def Key(self):
+		del self._Key
+		self._Key = None
+
+	@property
+	def ReqdKey(self):
+		return self._ReqdKey
+
+	@ReqdKey.setter
+	def ReqdKey(self, value):
+		self._ReqdKey = value if type(value) != auto else self.make_default("ReqdKey")
+
+	@ReqdKey.deleter
+	def ReqdKey(self):
+		del self._ReqdKey
+		self._ReqdKey = None
 
 	@property
 	def ATMChllng(self):
@@ -60,24 +73,11 @@ class SecurityParameters9(base_types._BaseFieldType):
 		del self._ATMChllng
 		self._ATMChllng = None
 
-	@property
-	def Key(self):
-		return self._Key
-
-	@Key.setter
-	def Key(self, value):
-		self._Key = value if type(value) != auto else self.make_default("Key")
-
-	@Key.deleter
-	def Key(self):
-		del self._Key
-		self._Key = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqdKey', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgntrChc', type=ATMSignature2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cert', type=Max5000Binary, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ATMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgntrChc', type=ATMSignature2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Key', type=CryptographicKey12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdKey', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 	))
 

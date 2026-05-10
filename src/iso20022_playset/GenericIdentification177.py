@@ -1,26 +1,13 @@
-import base_types
-import Max35Text
-import PartyType33Code
+from . import base_types
 import Geolocation1
 import NetworkParameters7
 import Min2Max3AlphaText
+import PartyType33Code
+import Max35Text
 
 class GenericIdentification177(base_types._BaseFieldType):
 
-	__slots__ = ["_Glctn", "_Tp", "_Ctry", "_Id", "_RmotAccs", "_Issr", "_ShrtNm"]
-	@property
-	def Glctn(self):
-		return self._Glctn
-
-	@Glctn.setter
-	def Glctn(self, value):
-		self._Glctn = value if type(value) != auto else self.make_default("Glctn")
-
-	@Glctn.deleter
-	def Glctn(self):
-		del self._Glctn
-		self._Glctn = None
-
+	__slots__ = ["_Tp", "_RmotAccs", "_Id", "_ShrtNm", "_Glctn", "_Ctry", "_Issr"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -33,32 +20,6 @@ class GenericIdentification177(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
-
-	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
 
 	@property
 	def RmotAccs(self):
@@ -74,17 +35,17 @@ class GenericIdentification177(base_types._BaseFieldType):
 		self._RmotAccs = None
 
 	@property
-	def Issr(self):
-		return self._Issr
+	def Id(self):
+		return self._Id
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def ShrtNm(self):
@@ -99,13 +60,52 @@ class GenericIdentification177(base_types._BaseFieldType):
 		del self._ShrtNm
 		self._ShrtNm = None
 
+	@property
+	def Glctn(self):
+		return self._Glctn
+
+	@Glctn.setter
+	def Glctn(self, value):
+		self._Glctn = value if type(value) != auto else self.make_default("Glctn")
+
+	@Glctn.deleter
+	def Glctn(self):
+		del self._Glctn
+		self._Glctn = None
+
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Glctn', type=Geolocation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PartyType33Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=Min2Max3AlphaText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmotAccs', type=NetworkParameters7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=PartyType33Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Glctn', type=Geolocation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=Min2Max3AlphaText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=PartyType33Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

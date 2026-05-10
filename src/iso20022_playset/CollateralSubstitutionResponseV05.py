@@ -1,13 +1,39 @@
-import base_types
-import Max35Text
-import SupplementaryData1
+from . import base_types
 import Agreement4
 import SubstitutionResponse2
 import Obligation9
+import SupplementaryData1
+import Max35Text
 
 class CollateralSubstitutionResponseV05(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_SbstitnRspn", "_TxId", "_Oblgtn", "_Agrmt"]
+	__slots__ = ["_Agrmt", "_TxId", "_SplmtryData", "_SbstitnRspn", "_Oblgtn"]
+	@property
+	def Agrmt(self):
+		return self._Agrmt
+
+	@Agrmt.setter
+	def Agrmt(self, value):
+		self._Agrmt = value if type(value) != auto else self.make_default("Agrmt")
+
+	@Agrmt.deleter
+	def Agrmt(self):
+		del self._Agrmt
+		self._Agrmt = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -35,19 +61,6 @@ class CollateralSubstitutionResponseV05(base_types._BaseFieldType):
 		self._SbstitnRspn = None
 
 	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
 	def Oblgtn(self):
 		return self._Oblgtn
 
@@ -60,24 +73,11 @@ class CollateralSubstitutionResponseV05(base_types._BaseFieldType):
 		del self._Oblgtn
 		self._Oblgtn = None
 
-	@property
-	def Agrmt(self):
-		return self._Agrmt
-
-	@Agrmt.setter
-	def Agrmt(self, value):
-		self._Agrmt = value if type(value) != auto else self.make_default("Agrmt")
-
-	@Agrmt.deleter
-	def Agrmt(self):
-		del self._Agrmt
-		self._Agrmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SbstitnRspn', type=SubstitutionResponse2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
 	))
 

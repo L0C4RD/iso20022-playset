@@ -1,23 +1,23 @@
-import base_types
-import Header70
-import ContentInformationType37
+from . import base_types
 import AcceptorCompletionAdvice14
+import ContentInformationType37
+import Header70
 
 class TransactionAdviceV06(base_types._BaseFieldType):
 
-	__slots__ = ["_TxAdvc", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_SctyTrlr", "_Hdr", "_TxAdvc"]
 	@property
-	def TxAdvc(self):
-		return self._TxAdvc
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@TxAdvc.setter
-	def TxAdvc(self, value):
-		self._TxAdvc = value if type(value) != auto else self.make_default("TxAdvc")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
 
-	@TxAdvc.deleter
-	def TxAdvc(self):
-		del self._TxAdvc
-		self._TxAdvc = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	@property
 	def Hdr(self):
@@ -33,21 +33,21 @@ class TransactionAdviceV06(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def TxAdvc(self):
+		return self._TxAdvc
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+	@TxAdvc.setter
+	def TxAdvc(self, value):
+		self._TxAdvc = value if type(value) != auto else self.make_default("TxAdvc")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@TxAdvc.deleter
+	def TxAdvc(self):
+		del self._TxAdvc
+		self._TxAdvc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxAdvc', type=AcceptorCompletionAdvice14, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxAdvc', type=AcceptorCompletionAdvice14, min=1, max=1, mutex_group=None, array=False),
 	))
 

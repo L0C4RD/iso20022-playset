@@ -1,6 +1,6 @@
-import base_types
-import Amount1Choice
+from . import base_types
 import Max2000Text
+import Amount1Choice
 
 class UndertakingAmount2(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DocumentType7Code
 
 class DevicePrintResponse1(base_types._BaseFieldType):

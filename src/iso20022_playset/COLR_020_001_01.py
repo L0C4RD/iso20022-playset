@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TripartyCollateralTransactionInstructionProcessingStatusAdviceV01
 
 class COLR_020_001_01():

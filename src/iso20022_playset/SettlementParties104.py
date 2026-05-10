@@ -1,36 +1,10 @@
-import base_types
+from . import base_types
 import PartyIdentificationAndAccount206
 import PartyIdentification162
 
 class SettlementParties104(base_types._BaseFieldType):
 
-	__slots__ = ["_Dpstry", "_Pty2", "_Pty4", "_Pty3", "_Pty1", "_Pty5"]
-	@property
-	def Dpstry(self):
-		return self._Dpstry
-
-	@Dpstry.setter
-	def Dpstry(self, value):
-		self._Dpstry = value if type(value) != auto else self.make_default("Dpstry")
-
-	@Dpstry.deleter
-	def Dpstry(self):
-		del self._Dpstry
-		self._Dpstry = None
-
-	@property
-	def Pty2(self):
-		return self._Pty2
-
-	@Pty2.setter
-	def Pty2(self, value):
-		self._Pty2 = value if type(value) != auto else self.make_default("Pty2")
-
-	@Pty2.deleter
-	def Pty2(self):
-		del self._Pty2
-		self._Pty2 = None
-
+	__slots__ = ["_Pty4", "_Dpstry", "_Pty3", "_Pty2", "_Pty1", "_Pty5"]
 	@property
 	def Pty4(self):
 		return self._Pty4
@@ -45,6 +19,19 @@ class SettlementParties104(base_types._BaseFieldType):
 		self._Pty4 = None
 
 	@property
+	def Dpstry(self):
+		return self._Dpstry
+
+	@Dpstry.setter
+	def Dpstry(self, value):
+		self._Dpstry = value if type(value) != auto else self.make_default("Dpstry")
+
+	@Dpstry.deleter
+	def Dpstry(self):
+		del self._Dpstry
+		self._Dpstry = None
+
+	@property
 	def Pty3(self):
 		return self._Pty3
 
@@ -56,6 +43,19 @@ class SettlementParties104(base_types._BaseFieldType):
 	def Pty3(self):
 		del self._Pty3
 		self._Pty3 = None
+
+	@property
+	def Pty2(self):
+		return self._Pty2
+
+	@Pty2.setter
+	def Pty2(self, value):
+		self._Pty2 = value if type(value) != auto else self.make_default("Pty2")
+
+	@Pty2.deleter
+	def Pty2(self):
+		del self._Pty2
+		self._Pty2 = None
 
 	@property
 	def Pty1(self):
@@ -84,10 +84,10 @@ class SettlementParties104(base_types._BaseFieldType):
 		self._Pty5 = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dpstry', type=PartyIdentification162, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pty2', type=PartyIdentificationAndAccount206, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty4', type=PartyIdentificationAndAccount206, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dpstry', type=PartyIdentification162, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty3', type=PartyIdentificationAndAccount206, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pty2', type=PartyIdentificationAndAccount206, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty1', type=PartyIdentificationAndAccount206, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty5', type=PartyIdentificationAndAccount206, min=0, max=1, mutex_group=None, array=False),
 	))

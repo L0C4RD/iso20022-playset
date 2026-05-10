@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesAccountQueryV01
 
 class REDA_019_001_01():

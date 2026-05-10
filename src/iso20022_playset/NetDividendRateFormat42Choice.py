@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import RateTypeAndAmountAndStatus62
-import RestrictedFINActiveCurrencyAnd13DecimalAmount
 import AmountAndRateStatus2
+import RestrictedFINActiveCurrencyAnd13DecimalAmount
 
 class NetDividendRateFormat42Choice(base_types._BaseFieldType):
 

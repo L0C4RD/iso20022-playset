@@ -1,12 +1,12 @@
-import base_types
-import SettlementStandingInstructionDatabase4Choice
+from . import base_types
+import PartyIdentification136
 import SettlementParties126
 import Counterparty15Choice
-import PartyIdentification136
+import SettlementStandingInstructionDatabase4Choice
 
 class StandingSettlementInstruction20(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmStgInstrDB", "_CtrPty", "_Vndr", "_OthrDlvrgSttlmPties", "_OthrRcvgSttlmPties"]
+	__slots__ = ["_SttlmStgInstrDB", "_CtrPty", "_OthrDlvrgSttlmPties", "_Vndr", "_OthrRcvgSttlmPties"]
 	@property
 	def SttlmStgInstrDB(self):
 		return self._SttlmStgInstrDB
@@ -34,19 +34,6 @@ class StandingSettlementInstruction20(base_types._BaseFieldType):
 		self._CtrPty = None
 
 	@property
-	def Vndr(self):
-		return self._Vndr
-
-	@Vndr.setter
-	def Vndr(self, value):
-		self._Vndr = value if type(value) != auto else self.make_default("Vndr")
-
-	@Vndr.deleter
-	def Vndr(self):
-		del self._Vndr
-		self._Vndr = None
-
-	@property
 	def OthrDlvrgSttlmPties(self):
 		return self._OthrDlvrgSttlmPties
 
@@ -58,6 +45,19 @@ class StandingSettlementInstruction20(base_types._BaseFieldType):
 	def OthrDlvrgSttlmPties(self):
 		del self._OthrDlvrgSttlmPties
 		self._OthrDlvrgSttlmPties = None
+
+	@property
+	def Vndr(self):
+		return self._Vndr
+
+	@Vndr.setter
+	def Vndr(self, value):
+		self._Vndr = value if type(value) != auto else self.make_default("Vndr")
+
+	@Vndr.deleter
+	def Vndr(self):
+		del self._Vndr
+		self._Vndr = None
 
 	@property
 	def OthrRcvgSttlmPties(self):
@@ -75,8 +75,8 @@ class StandingSettlementInstruction20(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SttlmStgInstrDB', type=SettlementStandingInstructionDatabase4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPty', type=Counterparty15Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vndr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrDlvrgSttlmPties', type=SettlementParties126, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vndr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrRcvgSttlmPties', type=SettlementParties126, min=0, max=1, mutex_group=None, array=False),
 	))
 

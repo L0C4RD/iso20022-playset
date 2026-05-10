@@ -1,6 +1,6 @@
-import base_types
-import ReportContent2Choice
+from . import base_types
 import Max10NumericText
+import ReportContent2Choice
 
 class ReportContent2(base_types._BaseFieldType):
 

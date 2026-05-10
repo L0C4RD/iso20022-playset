@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Frequency6Code
 import Exact2NumericText
 

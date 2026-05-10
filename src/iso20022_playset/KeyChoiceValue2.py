@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TRRelatedData2
 import ContentInformationType10
 

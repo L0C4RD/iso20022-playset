@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import OwnershipLegalRestrictions1Code
 import GenericIdentification30
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import UniqueProductIdentifier2Choice
 
 class CompareUniqueProductIdentifier2(base_types._BaseFieldType):

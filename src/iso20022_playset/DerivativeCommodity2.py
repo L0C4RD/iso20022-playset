@@ -1,24 +1,11 @@
-import base_types
-import AssetPriceType1Code
+from . import base_types
 import AssetClassTransactionType1Code
 import AssetClassCommodity3Choice
+import AssetPriceType1Code
 
 class DerivativeCommodity2(base_types._BaseFieldType):
 
-	__slots__ = ["_Pdct", "_TxTp", "_FnlPricTp"]
-	@property
-	def Pdct(self):
-		return self._Pdct
-
-	@Pdct.setter
-	def Pdct(self, value):
-		self._Pdct = value if type(value) != auto else self.make_default("Pdct")
-
-	@Pdct.deleter
-	def Pdct(self):
-		del self._Pdct
-		self._Pdct = None
-
+	__slots__ = ["_TxTp", "_Pdct", "_FnlPricTp"]
 	@property
 	def TxTp(self):
 		return self._TxTp
@@ -31,6 +18,19 @@ class DerivativeCommodity2(base_types._BaseFieldType):
 	def TxTp(self):
 		del self._TxTp
 		self._TxTp = None
+
+	@property
+	def Pdct(self):
+		return self._Pdct
+
+	@Pdct.setter
+	def Pdct(self, value):
+		self._Pdct = value if type(value) != auto else self.make_default("Pdct")
+
+	@Pdct.deleter
+	def Pdct(self):
+		del self._Pdct
+		self._Pdct = None
 
 	@property
 	def FnlPricTp(self):
@@ -46,8 +46,8 @@ class DerivativeCommodity2(base_types._BaseFieldType):
 		self._FnlPricTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pdct', type=AssetClassCommodity3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=AssetClassTransactionType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pdct', type=AssetClassCommodity3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FnlPricTp', type=AssetPriceType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

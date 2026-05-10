@@ -1,25 +1,12 @@
-import base_types
-import Debt5
+from . import base_types
 import Warrant4
-import Equity3
 import Derivative4
+import Equity3
+import Debt5
 
 class FinancialInstrument97(base_types._BaseFieldType):
 
-	__slots__ = ["_Eqty", "_Warrt", "_Deriv", "_Debt"]
-	@property
-	def Eqty(self):
-		return self._Eqty
-
-	@Eqty.setter
-	def Eqty(self, value):
-		self._Eqty = value if type(value) != auto else self.make_default("Eqty")
-
-	@Eqty.deleter
-	def Eqty(self):
-		del self._Eqty
-		self._Eqty = None
-
+	__slots__ = ["_Warrt", "_Eqty", "_Debt", "_Deriv"]
 	@property
 	def Warrt(self):
 		return self._Warrt
@@ -34,17 +21,17 @@ class FinancialInstrument97(base_types._BaseFieldType):
 		self._Warrt = None
 
 	@property
-	def Deriv(self):
-		return self._Deriv
+	def Eqty(self):
+		return self._Eqty
 
-	@Deriv.setter
-	def Deriv(self, value):
-		self._Deriv = value if type(value) != auto else self.make_default("Deriv")
+	@Eqty.setter
+	def Eqty(self, value):
+		self._Eqty = value if type(value) != auto else self.make_default("Eqty")
 
-	@Deriv.deleter
-	def Deriv(self):
-		del self._Deriv
-		self._Deriv = None
+	@Eqty.deleter
+	def Eqty(self):
+		del self._Eqty
+		self._Eqty = None
 
 	@property
 	def Debt(self):
@@ -59,10 +46,23 @@ class FinancialInstrument97(base_types._BaseFieldType):
 		del self._Debt
 		self._Debt = None
 
+	@property
+	def Deriv(self):
+		return self._Deriv
+
+	@Deriv.setter
+	def Deriv(self, value):
+		self._Deriv = value if type(value) != auto else self.make_default("Deriv")
+
+	@Deriv.deleter
+	def Deriv(self):
+		del self._Deriv
+		self._Deriv = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Eqty', type=Equity3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Warrt', type=Warrant4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Deriv', type=Derivative4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Eqty', type=Equity3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Debt', type=Debt5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Deriv', type=Derivative4, min=0, max=1, mutex_group=None, array=False),
 	))
 

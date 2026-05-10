@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ATMPINManagementRequestV03
 
 class CATP_010_001_03():

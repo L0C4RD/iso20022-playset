@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CorporateActionNarrative002V09
 
 class SEEV_038_002_09():

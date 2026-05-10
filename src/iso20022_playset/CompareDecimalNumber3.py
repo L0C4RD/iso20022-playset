@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DecimalNumber
 
 class CompareDecimalNumber3(base_types._BaseFieldType):

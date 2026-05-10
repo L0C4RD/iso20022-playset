@@ -1,26 +1,13 @@
-import base_types
-import PartyIdentification137Choice
+from . import base_types
 import AlternatePartyIdentification9
+import PartyIdentification137Choice
 import PartyTextInformation3
 import RestrictedFINXMax16Text
 import LEIIdentifier
 
 class PartyIdentificationAndAccount181(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgId", "_AddtlInf", "_LEI", "_Id", "_AltrnId"]
-	@property
-	def PrcgId(self):
-		return self._PrcgId
-
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
-
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
-
+	__slots__ = ["_AddtlInf", "_LEI", "_Id", "_PrcgId", "_AltrnId"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -61,6 +48,19 @@ class PartyIdentificationAndAccount181(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def PrcgId(self):
+		return self._PrcgId
+
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
+
+	@property
 	def AltrnId(self):
 		return self._AltrnId
 
@@ -74,10 +74,10 @@ class PartyIdentificationAndAccount181(base_types._BaseFieldType):
 		self._AltrnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
 	))
 

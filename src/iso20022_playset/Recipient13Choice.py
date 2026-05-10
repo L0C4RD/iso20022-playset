@@ -1,6 +1,6 @@
-import base_types
-import Max140Binary
+from . import base_types
 import IssuerAndSerialNumber2
+import Max140Binary
 
 class Recipient13Choice(base_types._BaseFieldType):
 

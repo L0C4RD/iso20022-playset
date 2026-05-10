@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ATMDiagnosticResponseV02
 
 class CAAM_006_001_02():

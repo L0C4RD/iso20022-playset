@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TripartyCollateralUnilateralRemovalRequestV01
 
 class REDA_074_001_01():

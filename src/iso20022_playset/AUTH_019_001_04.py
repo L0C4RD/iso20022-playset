@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ContractRegistrationConfirmationV04
 
 class AUTH_019_001_04():

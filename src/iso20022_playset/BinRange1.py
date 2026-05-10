@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Max15NumericText
 
 class BinRange1(base_types._BaseFieldType):

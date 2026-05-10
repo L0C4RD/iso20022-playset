@@ -1,23 +1,36 @@
-import base_types
-import PostalAddress1
-import Max35Text
+from . import base_types
 import PartyIdentification132
+import Max35Text
+import PostalAddress1
 
 class Account34(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnAdr", "_AcctDsgnt", "_AcctSvcr", "_AcctNm", "_AcctId"]
+	__slots__ = ["_AcctSvcr", "_AcctId", "_AcctDsgnt", "_RegnAdr", "_AcctNm"]
 	@property
-	def RegnAdr(self):
-		return self._RegnAdr
+	def AcctSvcr(self):
+		return self._AcctSvcr
 
-	@RegnAdr.setter
-	def RegnAdr(self, value):
-		self._RegnAdr = value if type(value) != auto else self.make_default("RegnAdr")
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
 
-	@RegnAdr.deleter
-	def RegnAdr(self):
-		del self._RegnAdr
-		self._RegnAdr = None
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
+
+	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def AcctDsgnt(self):
@@ -33,17 +46,17 @@ class Account34(base_types._BaseFieldType):
 		self._AcctDsgnt = None
 
 	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
+	def RegnAdr(self):
+		return self._RegnAdr
 
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+	@RegnAdr.setter
+	def RegnAdr(self, value):
+		self._RegnAdr = value if type(value) != auto else self.make_default("RegnAdr")
 
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
+	@RegnAdr.deleter
+	def RegnAdr(self):
+		del self._RegnAdr
+		self._RegnAdr = None
 
 	@property
 	def AcctNm(self):
@@ -58,24 +71,11 @@ class Account34(base_types._BaseFieldType):
 		del self._AcctNm
 		self._AcctNm = None
 
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RegnAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctDsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification132, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

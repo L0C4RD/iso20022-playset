@@ -1,6 +1,6 @@
-import base_types
-import Max3NumericText
+from . import base_types
 import FrequencyRateFixing1Code
+import Max3NumericText
 
 class FrequencyRateFixing1Choice(base_types._BaseFieldType):
 

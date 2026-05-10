@@ -1,6 +1,6 @@
-import base_types
-import ActiveCurrencyAndAmount
+from . import base_types
 import Number
+import ActiveCurrencyAndAmount
 
 class InitialAmount1Choice(base_types._BaseFieldType):
 

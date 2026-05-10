@@ -1,78 +1,26 @@
-import base_types
-import GenericIdentification176
+from . import base_types
 import TransactionTotals12
-import DataSetIdentification5
-import ResponseType10
-import CardPaymentDataSet38
 import TrueFalseIndicator
+import CardPaymentDataSet38
+import DataSetIdentification5
+import GenericIdentification176
+import ResponseType10
 
 class CardPaymentDataSet39(base_types._BaseFieldType):
 
-	__slots__ = ["_RsmdRjctn", "_TxTtls", "_DataSetInitr", "_RmvDataSet", "_RjctdTx", "_RsmdApprvl", "_DataSetId", "_SspdTx", "_DataSetRslt"]
+	__slots__ = ["_SspdTx", "_RsmdApprvl", "_DataSetId", "_RsmdRjctn", "_RjctdTx", "_DataSetInitr", "_DataSetRslt", "_TxTtls", "_RmvDataSet"]
 	@property
-	def RsmdRjctn(self):
-		return self._RsmdRjctn
+	def SspdTx(self):
+		return self._SspdTx
 
-	@RsmdRjctn.setter
-	def RsmdRjctn(self, value):
-		self._RsmdRjctn = value if type(value) != auto else self.make_default("RsmdRjctn")
+	@SspdTx.setter
+	def SspdTx(self, value):
+		self._SspdTx = value if type(value) != auto else self.make_default("SspdTx")
 
-	@RsmdRjctn.deleter
-	def RsmdRjctn(self):
-		del self._RsmdRjctn
-		self._RsmdRjctn = None
-
-	@property
-	def TxTtls(self):
-		return self._TxTtls
-
-	@TxTtls.setter
-	def TxTtls(self, value):
-		self._TxTtls = value if type(value) != auto else self.make_default("TxTtls")
-
-	@TxTtls.deleter
-	def TxTtls(self):
-		del self._TxTtls
-		self._TxTtls = None
-
-	@property
-	def DataSetInitr(self):
-		return self._DataSetInitr
-
-	@DataSetInitr.setter
-	def DataSetInitr(self, value):
-		self._DataSetInitr = value if type(value) != auto else self.make_default("DataSetInitr")
-
-	@DataSetInitr.deleter
-	def DataSetInitr(self):
-		del self._DataSetInitr
-		self._DataSetInitr = None
-
-	@property
-	def RmvDataSet(self):
-		return self._RmvDataSet
-
-	@RmvDataSet.setter
-	def RmvDataSet(self, value):
-		self._RmvDataSet = value if type(value) != auto else self.make_default("RmvDataSet")
-
-	@RmvDataSet.deleter
-	def RmvDataSet(self):
-		del self._RmvDataSet
-		self._RmvDataSet = None
-
-	@property
-	def RjctdTx(self):
-		return self._RjctdTx
-
-	@RjctdTx.setter
-	def RjctdTx(self, value):
-		self._RjctdTx = value if type(value) != auto else self.make_default("RjctdTx")
-
-	@RjctdTx.deleter
-	def RjctdTx(self):
-		del self._RjctdTx
-		self._RjctdTx = None
+	@SspdTx.deleter
+	def SspdTx(self):
+		del self._SspdTx
+		self._SspdTx = None
 
 	@property
 	def RsmdApprvl(self):
@@ -101,17 +49,43 @@ class CardPaymentDataSet39(base_types._BaseFieldType):
 		self._DataSetId = None
 
 	@property
-	def SspdTx(self):
-		return self._SspdTx
+	def RsmdRjctn(self):
+		return self._RsmdRjctn
 
-	@SspdTx.setter
-	def SspdTx(self, value):
-		self._SspdTx = value if type(value) != auto else self.make_default("SspdTx")
+	@RsmdRjctn.setter
+	def RsmdRjctn(self, value):
+		self._RsmdRjctn = value if type(value) != auto else self.make_default("RsmdRjctn")
 
-	@SspdTx.deleter
-	def SspdTx(self):
-		del self._SspdTx
-		self._SspdTx = None
+	@RsmdRjctn.deleter
+	def RsmdRjctn(self):
+		del self._RsmdRjctn
+		self._RsmdRjctn = None
+
+	@property
+	def RjctdTx(self):
+		return self._RjctdTx
+
+	@RjctdTx.setter
+	def RjctdTx(self, value):
+		self._RjctdTx = value if type(value) != auto else self.make_default("RjctdTx")
+
+	@RjctdTx.deleter
+	def RjctdTx(self):
+		del self._RjctdTx
+		self._RjctdTx = None
+
+	@property
+	def DataSetInitr(self):
+		return self._DataSetInitr
+
+	@DataSetInitr.setter
+	def DataSetInitr(self, value):
+		self._DataSetInitr = value if type(value) != auto else self.make_default("DataSetInitr")
+
+	@DataSetInitr.deleter
+	def DataSetInitr(self):
+		del self._DataSetInitr
+		self._DataSetInitr = None
 
 	@property
 	def DataSetRslt(self):
@@ -126,15 +100,41 @@ class CardPaymentDataSet39(base_types._BaseFieldType):
 		del self._DataSetRslt
 		self._DataSetRslt = None
 
+	@property
+	def TxTtls(self):
+		return self._TxTtls
+
+	@TxTtls.setter
+	def TxTtls(self, value):
+		self._TxTtls = value if type(value) != auto else self.make_default("TxTtls")
+
+	@TxTtls.deleter
+	def TxTtls(self):
+		del self._TxTtls
+		self._TxTtls = None
+
+	@property
+	def RmvDataSet(self):
+		return self._RmvDataSet
+
+	@RmvDataSet.setter
+	def RmvDataSet(self, value):
+		self._RmvDataSet = value if type(value) != auto else self.make_default("RmvDataSet")
+
+	@RmvDataSet.deleter
+	def RmvDataSet(self):
+		del self._RmvDataSet
+		self._RmvDataSet = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RsmdRjctn', type=CardPaymentDataSet38, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxTtls', type=TransactionTotals12, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DataSetInitr', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmvDataSet', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctdTx', type=CardPaymentDataSet38, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SspdTx', type=CardPaymentDataSet38, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RsmdApprvl', type=CardPaymentDataSet38, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DataSetId', type=DataSetIdentification5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SspdTx', type=CardPaymentDataSet38, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RsmdRjctn', type=CardPaymentDataSet38, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RjctdTx', type=CardPaymentDataSet38, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DataSetInitr', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DataSetRslt', type=ResponseType10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTtls', type=TransactionTotals12, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RmvDataSet', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

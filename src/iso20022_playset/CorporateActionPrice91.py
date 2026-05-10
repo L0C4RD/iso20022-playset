@@ -1,11 +1,24 @@
-import base_types
-import IndicativeOrMarketPrice15Choice
-import PriceFormat84Choice
+from . import base_types
 import PriceFormat83Choice
+import PriceFormat84Choice
+import IndicativeOrMarketPrice15Choice
 
 class CorporateActionPrice91(base_types._BaseFieldType):
 
-	__slots__ = ["_GncCshPricRcvdPerPdct", "_IssePric", "_IndctvOrMktPric", "_GncCshPricPdPerPdct"]
+	__slots__ = ["_GncCshPricPdPerPdct", "_GncCshPricRcvdPerPdct", "_IssePric", "_IndctvOrMktPric"]
+	@property
+	def GncCshPricPdPerPdct(self):
+		return self._GncCshPricPdPerPdct
+
+	@GncCshPricPdPerPdct.setter
+	def GncCshPricPdPerPdct(self, value):
+		self._GncCshPricPdPerPdct = value if type(value) != auto else self.make_default("GncCshPricPdPerPdct")
+
+	@GncCshPricPdPerPdct.deleter
+	def GncCshPricPdPerPdct(self):
+		del self._GncCshPricPdPerPdct
+		self._GncCshPricPdPerPdct = None
+
 	@property
 	def GncCshPricRcvdPerPdct(self):
 		return self._GncCshPricRcvdPerPdct
@@ -45,23 +58,10 @@ class CorporateActionPrice91(base_types._BaseFieldType):
 		del self._IndctvOrMktPric
 		self._IndctvOrMktPric = None
 
-	@property
-	def GncCshPricPdPerPdct(self):
-		return self._GncCshPricPdPerPdct
-
-	@GncCshPricPdPerPdct.setter
-	def GncCshPricPdPerPdct(self, value):
-		self._GncCshPricPdPerPdct = value if type(value) != auto else self.make_default("GncCshPricPdPerPdct")
-
-	@GncCshPricPdPerPdct.deleter
-	def GncCshPricPdPerPdct(self):
-		del self._GncCshPricPdPerPdct
-		self._GncCshPricPdPerPdct = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat83Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GncCshPricRcvdPerPdct', type=PriceFormat84Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssePric', type=PriceFormat83Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndctvOrMktPric', type=IndicativeOrMarketPrice15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat83Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

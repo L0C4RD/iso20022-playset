@@ -1,25 +1,12 @@
-import base_types
+from . import base_types
 import ATMDepositRequest2
-import ContentInformationType15
 import Header31
 import ContentInformationType10
+import ContentInformationType15
 
 class ATMDepositRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_PrtctdATMDpstReq", "_ATMDpstReq", "_Hdr"]
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
+	__slots__ = ["_PrtctdATMDpstReq", "_SctyTrlr", "_Hdr", "_ATMDpstReq"]
 	@property
 	def PrtctdATMDpstReq(self):
 		return self._PrtctdATMDpstReq
@@ -34,17 +21,17 @@ class ATMDepositRequestV02(base_types._BaseFieldType):
 		self._PrtctdATMDpstReq = None
 
 	@property
-	def ATMDpstReq(self):
-		return self._ATMDpstReq
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@ATMDpstReq.setter
-	def ATMDpstReq(self, value):
-		self._ATMDpstReq = value if type(value) != auto else self.make_default("ATMDpstReq")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
 
-	@ATMDpstReq.deleter
-	def ATMDpstReq(self):
-		del self._ATMDpstReq
-		self._ATMDpstReq = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	@property
 	def Hdr(self):
@@ -59,10 +46,23 @@ class ATMDepositRequestV02(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def ATMDpstReq(self):
+		return self._ATMDpstReq
+
+	@ATMDpstReq.setter
+	def ATMDpstReq(self, value):
+		self._ATMDpstReq = value if type(value) != auto else self.make_default("ATMDpstReq")
+
+	@ATMDpstReq.deleter
+	def ATMDpstReq(self):
+		del self._ATMDpstReq
+		self._ATMDpstReq = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMDpstReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMDpstReq', type=ATMDepositRequest2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMDpstReq', type=ATMDepositRequest2, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import StandingSettlementInstructionV01
 
 class REDA_056_001_01():

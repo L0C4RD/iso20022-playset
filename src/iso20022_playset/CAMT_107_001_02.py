@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ChequePresentmentNotificationV02
 
 class CAMT_107_001_02():

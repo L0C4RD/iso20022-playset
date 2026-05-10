@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesAuditTrailQueryV01
 
 class REDA_033_001_01():

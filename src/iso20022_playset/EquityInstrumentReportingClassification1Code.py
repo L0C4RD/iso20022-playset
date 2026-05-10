@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class EquityInstrumentReportingClassification1Code(base_types._BaseDataType_String):
 

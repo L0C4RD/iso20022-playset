@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TransferInCancellationRequestV09
 
 class SESE_006_001_09():

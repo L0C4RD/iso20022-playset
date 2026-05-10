@@ -1,11 +1,24 @@
-import base_types
-import Max35Text
-import ATMEnvironment7
+from . import base_types
 import ATMVersionReport1
+import ATMEnvironment7
+import Max35Text
 
 class ATMConfigurationReportComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvVrsn", "_NonActvVrsn", "_Envt"]
+	__slots__ = ["_Envt", "_ActvVrsn", "_NonActvVrsn"]
+	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
+
 	@property
 	def ActvVrsn(self):
 		return self._ActvVrsn
@@ -32,22 +45,9 @@ class ATMConfigurationReportComponent1(base_types._BaseFieldType):
 		del self._NonActvVrsn
 		self._NonActvVrsn = None
 
-	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Envt', type=ATMEnvironment7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActvVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonActvVrsn', type=ATMVersionReport1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Envt', type=ATMEnvironment7, min=1, max=1, mutex_group=None, array=False),
 	))
 

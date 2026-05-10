@@ -1,24 +1,11 @@
-import base_types
-import PostalAddress1
+from . import base_types
 import Max350Text
 import Max140Text
+import PostalAddress1
 
 class PartyTextInformation6(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnAdr", "_PtyCtctDtls", "_DclrtnDtls", "_RegnDtls"]
-	@property
-	def RegnAdr(self):
-		return self._RegnAdr
-
-	@RegnAdr.setter
-	def RegnAdr(self, value):
-		self._RegnAdr = value if type(value) != auto else self.make_default("RegnAdr")
-
-	@RegnAdr.deleter
-	def RegnAdr(self):
-		del self._RegnAdr
-		self._RegnAdr = None
-
+	__slots__ = ["_PtyCtctDtls", "_RegnAdr", "_DclrtnDtls", "_RegnDtls"]
 	@property
 	def PtyCtctDtls(self):
 		return self._PtyCtctDtls
@@ -31,6 +18,19 @@ class PartyTextInformation6(base_types._BaseFieldType):
 	def PtyCtctDtls(self):
 		del self._PtyCtctDtls
 		self._PtyCtctDtls = None
+
+	@property
+	def RegnAdr(self):
+		return self._RegnAdr
+
+	@RegnAdr.setter
+	def RegnAdr(self, value):
+		self._RegnAdr = value if type(value) != auto else self.make_default("RegnAdr")
+
+	@RegnAdr.deleter
+	def RegnAdr(self):
+		del self._RegnAdr
+		self._RegnAdr = None
 
 	@property
 	def DclrtnDtls(self):
@@ -59,8 +59,8 @@ class PartyTextInformation6(base_types._BaseFieldType):
 		self._RegnDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RegnAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyCtctDtls', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DclrtnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))

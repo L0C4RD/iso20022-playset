@@ -1,11 +1,24 @@
-import base_types
-import ATMTransaction45
+from . import base_types
 import ATMContext13
+import ATMTransaction45
 import AutomatedTellerMachine3
 
 class ATMCompletionAcknowledgement3(base_types._BaseFieldType):
 
-	__slots__ = ["_Cntxt", "_Tx", "_ATM"]
+	__slots__ = ["_ATM", "_Cntxt", "_Tx"]
+	@property
+	def ATM(self):
+		return self._ATM
+
+	@ATM.setter
+	def ATM(self, value):
+		self._ATM = value if type(value) != auto else self.make_default("ATM")
+
+	@ATM.deleter
+	def ATM(self):
+		del self._ATM
+		self._ATM = None
+
 	@property
 	def Cntxt(self):
 		return self._Cntxt
@@ -32,22 +45,9 @@ class ATMCompletionAcknowledgement3(base_types._BaseFieldType):
 		del self._Tx
 		self._Tx = None
 
-	@property
-	def ATM(self):
-		return self._ATM
-
-	@ATM.setter
-	def ATM(self, value):
-		self._ATM = value if type(value) != auto else self.make_default("ATM")
-
-	@ATM.deleter
-	def ATM(self):
-		del self._ATM
-		self._ATM = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=ATMContext13, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=ATMTransaction45, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine3, min=1, max=1, mutex_group=None, array=False),
 	))
 

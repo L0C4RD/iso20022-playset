@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AssetClassSubProductType50Code
 import AssetClassProductType8Code
 

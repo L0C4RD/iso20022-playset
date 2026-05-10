@@ -1,77 +1,25 @@
-import base_types
-import Price14
-import MarketIdentification97
+from . import base_types
 import QuantityOrAmount2Choice
-import Quantity6Choice
 import TradeDate7Choice
+import Price14
+import Quantity6Choice
+import MarketIdentification97
 
 class PartialFill4(base_types._BaseFieldType):
 
-	__slots__ = ["_RmngQty", "_MtchIncrmtQty", "_ConfQty", "_OrgnlOrdrdQty", "_TradDt", "_PlcOfTrad", "_DealPric", "_PrevslyExctdQty"]
+	__slots__ = ["_DealPric", "_PlcOfTrad", "_MtchIncrmtQty", "_OrgnlOrdrdQty", "_ConfQty", "_RmngQty", "_TradDt", "_PrevslyExctdQty"]
 	@property
-	def RmngQty(self):
-		return self._RmngQty
+	def DealPric(self):
+		return self._DealPric
 
-	@RmngQty.setter
-	def RmngQty(self, value):
-		self._RmngQty = value if type(value) != auto else self.make_default("RmngQty")
+	@DealPric.setter
+	def DealPric(self, value):
+		self._DealPric = value if type(value) != auto else self.make_default("DealPric")
 
-	@RmngQty.deleter
-	def RmngQty(self):
-		del self._RmngQty
-		self._RmngQty = None
-
-	@property
-	def MtchIncrmtQty(self):
-		return self._MtchIncrmtQty
-
-	@MtchIncrmtQty.setter
-	def MtchIncrmtQty(self, value):
-		self._MtchIncrmtQty = value if type(value) != auto else self.make_default("MtchIncrmtQty")
-
-	@MtchIncrmtQty.deleter
-	def MtchIncrmtQty(self):
-		del self._MtchIncrmtQty
-		self._MtchIncrmtQty = None
-
-	@property
-	def ConfQty(self):
-		return self._ConfQty
-
-	@ConfQty.setter
-	def ConfQty(self, value):
-		self._ConfQty = value if type(value) != auto else self.make_default("ConfQty")
-
-	@ConfQty.deleter
-	def ConfQty(self):
-		del self._ConfQty
-		self._ConfQty = None
-
-	@property
-	def OrgnlOrdrdQty(self):
-		return self._OrgnlOrdrdQty
-
-	@OrgnlOrdrdQty.setter
-	def OrgnlOrdrdQty(self, value):
-		self._OrgnlOrdrdQty = value if type(value) != auto else self.make_default("OrgnlOrdrdQty")
-
-	@OrgnlOrdrdQty.deleter
-	def OrgnlOrdrdQty(self):
-		del self._OrgnlOrdrdQty
-		self._OrgnlOrdrdQty = None
-
-	@property
-	def TradDt(self):
-		return self._TradDt
-
-	@TradDt.setter
-	def TradDt(self, value):
-		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
-
-	@TradDt.deleter
-	def TradDt(self):
-		del self._TradDt
-		self._TradDt = None
+	@DealPric.deleter
+	def DealPric(self):
+		del self._DealPric
+		self._DealPric = None
 
 	@property
 	def PlcOfTrad(self):
@@ -87,17 +35,69 @@ class PartialFill4(base_types._BaseFieldType):
 		self._PlcOfTrad = None
 
 	@property
-	def DealPric(self):
-		return self._DealPric
+	def MtchIncrmtQty(self):
+		return self._MtchIncrmtQty
 
-	@DealPric.setter
-	def DealPric(self, value):
-		self._DealPric = value if type(value) != auto else self.make_default("DealPric")
+	@MtchIncrmtQty.setter
+	def MtchIncrmtQty(self, value):
+		self._MtchIncrmtQty = value if type(value) != auto else self.make_default("MtchIncrmtQty")
 
-	@DealPric.deleter
-	def DealPric(self):
-		del self._DealPric
-		self._DealPric = None
+	@MtchIncrmtQty.deleter
+	def MtchIncrmtQty(self):
+		del self._MtchIncrmtQty
+		self._MtchIncrmtQty = None
+
+	@property
+	def OrgnlOrdrdQty(self):
+		return self._OrgnlOrdrdQty
+
+	@OrgnlOrdrdQty.setter
+	def OrgnlOrdrdQty(self, value):
+		self._OrgnlOrdrdQty = value if type(value) != auto else self.make_default("OrgnlOrdrdQty")
+
+	@OrgnlOrdrdQty.deleter
+	def OrgnlOrdrdQty(self):
+		del self._OrgnlOrdrdQty
+		self._OrgnlOrdrdQty = None
+
+	@property
+	def ConfQty(self):
+		return self._ConfQty
+
+	@ConfQty.setter
+	def ConfQty(self, value):
+		self._ConfQty = value if type(value) != auto else self.make_default("ConfQty")
+
+	@ConfQty.deleter
+	def ConfQty(self):
+		del self._ConfQty
+		self._ConfQty = None
+
+	@property
+	def RmngQty(self):
+		return self._RmngQty
+
+	@RmngQty.setter
+	def RmngQty(self, value):
+		self._RmngQty = value if type(value) != auto else self.make_default("RmngQty")
+
+	@RmngQty.deleter
+	def RmngQty(self):
+		del self._RmngQty
+		self._RmngQty = None
+
+	@property
+	def TradDt(self):
+		return self._TradDt
+
+	@TradDt.setter
+	def TradDt(self, value):
+		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
+
+	@TradDt.deleter
+	def TradDt(self):
+		del self._TradDt
+		self._TradDt = None
 
 	@property
 	def PrevslyExctdQty(self):
@@ -113,13 +113,13 @@ class PartialFill4(base_types._BaseFieldType):
 		self._PrevslyExctdQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RmngQty', type=QuantityOrAmount2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtchIncrmtQty', type=QuantityOrAmount2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConfQty', type=Quantity6Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlOrdrdQty', type=QuantityOrAmount2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDt', type=TradeDate7Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PlcOfTrad', type=MarketIdentification97, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DealPric', type=Price14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfTrad', type=MarketIdentification97, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtchIncrmtQty', type=QuantityOrAmount2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlOrdrdQty', type=QuantityOrAmount2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfQty', type=Quantity6Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmngQty', type=QuantityOrAmount2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=TradeDate7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrevslyExctdQty', type=QuantityOrAmount2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

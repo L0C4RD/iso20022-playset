@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import InterestRate33Choice
 
 class InterestRateLegs14(base_types._BaseFieldType):

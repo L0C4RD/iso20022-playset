@@ -1,11 +1,24 @@
-import base_types
-import Max35Text
-import DecimalNumber
+from . import base_types
 import Holding1Code
+import DecimalNumber
+import Max35Text
 
 class BlockedHoldingDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtlHldgUnits", "_HldgCertNb", "_BlckdHldg"]
+	__slots__ = ["_BlckdHldg", "_PrtlHldgUnits", "_HldgCertNb"]
+	@property
+	def BlckdHldg(self):
+		return self._BlckdHldg
+
+	@BlckdHldg.setter
+	def BlckdHldg(self, value):
+		self._BlckdHldg = value if type(value) != auto else self.make_default("BlckdHldg")
+
+	@BlckdHldg.deleter
+	def BlckdHldg(self):
+		del self._BlckdHldg
+		self._BlckdHldg = None
+
 	@property
 	def PrtlHldgUnits(self):
 		return self._PrtlHldgUnits
@@ -32,22 +45,9 @@ class BlockedHoldingDetails2(base_types._BaseFieldType):
 		del self._HldgCertNb
 		self._HldgCertNb = None
 
-	@property
-	def BlckdHldg(self):
-		return self._BlckdHldg
-
-	@BlckdHldg.setter
-	def BlckdHldg(self, value):
-		self._BlckdHldg = value if type(value) != auto else self.make_default("BlckdHldg")
-
-	@BlckdHldg.deleter
-	def BlckdHldg(self):
-		del self._BlckdHldg
-		self._BlckdHldg = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BlckdHldg', type=Holding1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtlHldgUnits', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HldgCertNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckdHldg', type=Holding1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

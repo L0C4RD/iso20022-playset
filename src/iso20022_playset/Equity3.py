@@ -1,12 +1,12 @@
-import base_types
-import PreferenceToIncome5Choice
-import ActiveCurrencyAndAmount
+from . import base_types
 import Number
 import ISODateTime
+import PreferenceToIncome5Choice
+import ActiveCurrencyAndAmount
 
 class Equity3(base_types._BaseFieldType):
 
-	__slots__ = ["_ParVal", "_VtngRghtsPerShr", "_PrefToIncm", "_NonPdAmt", "_MtrtyDt"]
+	__slots__ = ["_ParVal", "_MtrtyDt", "_VtngRghtsPerShr", "_NonPdAmt", "_PrefToIncm"]
 	@property
 	def ParVal(self):
 		return self._ParVal
@@ -19,6 +19,19 @@ class Equity3(base_types._BaseFieldType):
 	def ParVal(self):
 		del self._ParVal
 		self._ParVal = None
+
+	@property
+	def MtrtyDt(self):
+		return self._MtrtyDt
+
+	@MtrtyDt.setter
+	def MtrtyDt(self, value):
+		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+
+	@MtrtyDt.deleter
+	def MtrtyDt(self):
+		del self._MtrtyDt
+		self._MtrtyDt = None
 
 	@property
 	def VtngRghtsPerShr(self):
@@ -34,19 +47,6 @@ class Equity3(base_types._BaseFieldType):
 		self._VtngRghtsPerShr = None
 
 	@property
-	def PrefToIncm(self):
-		return self._PrefToIncm
-
-	@PrefToIncm.setter
-	def PrefToIncm(self, value):
-		self._PrefToIncm = value if type(value) != auto else self.make_default("PrefToIncm")
-
-	@PrefToIncm.deleter
-	def PrefToIncm(self):
-		del self._PrefToIncm
-		self._PrefToIncm = None
-
-	@property
 	def NonPdAmt(self):
 		return self._NonPdAmt
 
@@ -60,23 +60,23 @@ class Equity3(base_types._BaseFieldType):
 		self._NonPdAmt = None
 
 	@property
-	def MtrtyDt(self):
-		return self._MtrtyDt
+	def PrefToIncm(self):
+		return self._PrefToIncm
 
-	@MtrtyDt.setter
-	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+	@PrefToIncm.setter
+	def PrefToIncm(self, value):
+		self._PrefToIncm = value if type(value) != auto else self.make_default("PrefToIncm")
 
-	@MtrtyDt.deleter
-	def MtrtyDt(self):
-		del self._MtrtyDt
-		self._MtrtyDt = None
+	@PrefToIncm.deleter
+	def PrefToIncm(self):
+		del self._PrefToIncm
+		self._PrefToIncm = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ParVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VtngRghtsPerShr', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrefToIncm', type=PreferenceToIncome5Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonPdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtrtyDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VtngRghtsPerShr', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonPdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrefToIncm', type=PreferenceToIncome5Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

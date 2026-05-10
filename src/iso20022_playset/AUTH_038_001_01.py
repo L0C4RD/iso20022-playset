@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import InvoiceTaxReportStatusAdviceV01
 
 class AUTH_038_001_01():

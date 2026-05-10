@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
+import Max70Text
 import ActiveCurrencyCode
 import ImpliedCurrencyAndAmount
-import Max70Text
 
 class DetailedAmount13(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_Amt", "_Labl"]
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
+	__slots__ = ["_Amt", "_Ccy", "_Labl"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -31,6 +18,19 @@ class DetailedAmount13(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def Labl(self):
@@ -46,8 +46,8 @@ class DetailedAmount13(base_types._BaseFieldType):
 		self._Labl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Labl', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

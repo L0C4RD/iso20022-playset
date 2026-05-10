@@ -1,8 +1,8 @@
-import base_types
-import Max140Text
-import TradeTransactionIdentification19
+from . import base_types
 import TrueFalseIndicator
+import Max140Text
 import ReconciliationStatus8Choice
+import TradeTransactionIdentification19
 
 class ReconciliationReport8(base_types._BaseFieldType):
 

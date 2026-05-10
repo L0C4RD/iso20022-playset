@@ -1,24 +1,11 @@
-import base_types
-import Max35Text
+from . import base_types
 import AcceptorConfigurationDataSet6
+import Max35Text
 import GenericIdentification176
 
 class AcceptorConfiguration14(base_types._BaseFieldType):
 
-	__slots__ = ["_POIGrpId", "_DataSet", "_TermnlMgrId"]
-	@property
-	def POIGrpId(self):
-		return self._POIGrpId
-
-	@POIGrpId.setter
-	def POIGrpId(self, value):
-		self._POIGrpId = value if type(value) != auto else self.make_default("POIGrpId")
-
-	@POIGrpId.deleter
-	def POIGrpId(self):
-		del self._POIGrpId
-		self._POIGrpId = None
-
+	__slots__ = ["_DataSet", "_POIGrpId", "_TermnlMgrId"]
 	@property
 	def DataSet(self):
 		return self._DataSet
@@ -31,6 +18,19 @@ class AcceptorConfiguration14(base_types._BaseFieldType):
 	def DataSet(self):
 		del self._DataSet
 		self._DataSet = None
+
+	@property
+	def POIGrpId(self):
+		return self._POIGrpId
+
+	@POIGrpId.setter
+	def POIGrpId(self, value):
+		self._POIGrpId = value if type(value) != auto else self.make_default("POIGrpId")
+
+	@POIGrpId.deleter
+	def POIGrpId(self):
+		del self._POIGrpId
+		self._POIGrpId = None
 
 	@property
 	def TermnlMgrId(self):
@@ -46,8 +46,8 @@ class AcceptorConfiguration14(base_types._BaseFieldType):
 		self._TermnlMgrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='POIGrpId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DataSet', type=AcceptorConfigurationDataSet6, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='POIGrpId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TermnlMgrId', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
 	))
 

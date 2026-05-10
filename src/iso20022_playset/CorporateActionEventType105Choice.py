@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ExtendedEventType7Code
 import CorporateActionEventType35Code
 

@@ -1,6 +1,6 @@
-import base_types
-import InstrumentSubStructureType1Code
+from . import base_types
 import GenericIdentification30
+import InstrumentSubStructureType1Code
 
 class InstrumentSubStructureType2Choice(base_types._BaseFieldType):
 

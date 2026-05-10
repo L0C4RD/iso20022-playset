@@ -1,11 +1,24 @@
-import base_types
-import AlgorithmIdentification14
+from . import base_types
 import Max100KBinary
 import ContentType2Code
+import AlgorithmIdentification14
 
 class EncryptedContent3(base_types._BaseFieldType):
 
-	__slots__ = ["_CnttNcrptnAlgo", "_NcrptdData", "_CnttTp"]
+	__slots__ = ["_CnttTp", "_CnttNcrptnAlgo", "_NcrptdData"]
+	@property
+	def CnttTp(self):
+		return self._CnttTp
+
+	@CnttTp.setter
+	def CnttTp(self, value):
+		self._CnttTp = value if type(value) != auto else self.make_default("CnttTp")
+
+	@CnttTp.deleter
+	def CnttTp(self):
+		del self._CnttTp
+		self._CnttTp = None
+
 	@property
 	def CnttNcrptnAlgo(self):
 		return self._CnttNcrptnAlgo
@@ -32,22 +45,9 @@ class EncryptedContent3(base_types._BaseFieldType):
 		del self._NcrptdData
 		self._NcrptdData = None
 
-	@property
-	def CnttTp(self):
-		return self._CnttTp
-
-	@CnttTp.setter
-	def CnttTp(self, value):
-		self._CnttTp = value if type(value) != auto else self.make_default("CnttTp")
-
-	@CnttTp.deleter
-	def CnttTp(self):
-		del self._CnttTp
-		self._CnttTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CnttNcrptnAlgo', type=AlgorithmIdentification14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdData', type=Max100KBinary, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

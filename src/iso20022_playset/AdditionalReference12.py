@@ -1,23 +1,10 @@
-import base_types
-import PartyIdentification192
+from . import base_types
 import RestrictedFINXMax35Text
+import PartyIdentification192
 
 class AdditionalReference12(base_types._BaseFieldType):
 
-	__slots__ = ["_RefIssr", "_Ref", "_MsgNm"]
-	@property
-	def RefIssr(self):
-		return self._RefIssr
-
-	@RefIssr.setter
-	def RefIssr(self, value):
-		self._RefIssr = value if type(value) != auto else self.make_default("RefIssr")
-
-	@RefIssr.deleter
-	def RefIssr(self):
-		del self._RefIssr
-		self._RefIssr = None
-
+	__slots__ = ["_Ref", "_RefIssr", "_MsgNm"]
 	@property
 	def Ref(self):
 		return self._Ref
@@ -30,6 +17,19 @@ class AdditionalReference12(base_types._BaseFieldType):
 	def Ref(self):
 		del self._Ref
 		self._Ref = None
+
+	@property
+	def RefIssr(self):
+		return self._RefIssr
+
+	@RefIssr.setter
+	def RefIssr(self, value):
+		self._RefIssr = value if type(value) != auto else self.make_default("RefIssr")
+
+	@RefIssr.deleter
+	def RefIssr(self):
+		del self._RefIssr
+		self._RefIssr = None
 
 	@property
 	def MsgNm(self):
@@ -45,8 +45,8 @@ class AdditionalReference12(base_types._BaseFieldType):
 		self._MsgNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RefIssr', type=PartyIdentification192, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=RestrictedFINXMax35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefIssr', type=PartyIdentification192, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgNm', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
-import base_types
-import ExpiryTerms1
+from . import base_types
 import Max2000Text
+import ExpiryTerms1
 
 class ExpiryDetails1(base_types._BaseFieldType):
 

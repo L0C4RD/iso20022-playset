@@ -1,67 +1,28 @@
-import base_types
-import SupplementaryData1
-import Trade8
-import Header23
-import MessageIdentification1
-import Confirmation1
-import AdditionalReferences2
+from . import base_types
 import TradePartyIdentification9
+import MessageIdentification1
+import Trade8
+import SupplementaryData1
 import TradePartyIdentification10
+import Header23
+import AdditionalReferences2
+import Confirmation1
 
 class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_SplmtryData", "_TradgSdId", "_AdvcId", "_TradDtl", "_ConfInf", "_Hdr", "_CtrPtySdId"]
+	__slots__ = ["_Hdr", "_TradDtl", "_TradgSdId", "_ConfInf", "_SplmtryData", "_CtrPtySdId", "_Ref", "_AdvcId"]
 	@property
-	def Ref(self):
-		return self._Ref
+	def Hdr(self):
+		return self._Hdr
 
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
 
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def TradgSdId(self):
-		return self._TradgSdId
-
-	@TradgSdId.setter
-	def TradgSdId(self, value):
-		self._TradgSdId = value if type(value) != auto else self.make_default("TradgSdId")
-
-	@TradgSdId.deleter
-	def TradgSdId(self):
-		del self._TradgSdId
-		self._TradgSdId = None
-
-	@property
-	def AdvcId(self):
-		return self._AdvcId
-
-	@AdvcId.setter
-	def AdvcId(self, value):
-		self._AdvcId = value if type(value) != auto else self.make_default("AdvcId")
-
-	@AdvcId.deleter
-	def AdvcId(self):
-		del self._AdvcId
-		self._AdvcId = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def TradDtl(self):
@@ -77,6 +38,19 @@ class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType)
 		self._TradDtl = None
 
 	@property
+	def TradgSdId(self):
+		return self._TradgSdId
+
+	@TradgSdId.setter
+	def TradgSdId(self, value):
+		self._TradgSdId = value if type(value) != auto else self.make_default("TradgSdId")
+
+	@TradgSdId.deleter
+	def TradgSdId(self):
+		del self._TradgSdId
+		self._TradgSdId = None
+
+	@property
 	def ConfInf(self):
 		return self._ConfInf
 
@@ -90,17 +64,17 @@ class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType)
 		self._ConfInf = None
 
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def CtrPtySdId(self):
@@ -115,14 +89,40 @@ class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType)
 		del self._CtrPtySdId
 		self._CtrPtySdId = None
 
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
+	@property
+	def AdvcId(self):
+		return self._AdvcId
+
+	@AdvcId.setter
+	def AdvcId(self, value):
+		self._AdvcId = value if type(value) != auto else self.make_default("AdvcId")
+
+	@AdvcId.deleter
+	def AdvcId(self):
+		del self._AdvcId
+		self._AdvcId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ref', type=AdditionalReferences2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TradgSdId', type=TradePartyIdentification9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdvcId', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDtl', type=Trade8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConfInf', type=Confirmation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header23, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDtl', type=Trade8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgSdId', type=TradePartyIdentification9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfInf', type=Confirmation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrPtySdId', type=TradePartyIdentification10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=AdditionalReferences2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdvcId', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

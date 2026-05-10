@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PartyIdentification224
 import PartyIdentification222
 

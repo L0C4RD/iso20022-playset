@@ -1,23 +1,23 @@
-import base_types
-import Header70
-import ContentInformationType37
+from . import base_types
 import AcceptorCurrencyConversionResponse12
+import ContentInformationType37
+import Header70
 
 class AcceptorCurrencyConversionResponseV12(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_SctyTrlr", "_CcyConvsRspn"]
+	__slots__ = ["_CcyConvsRspn", "_SctyTrlr", "_Hdr"]
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def CcyConvsRspn(self):
+		return self._CcyConvsRspn
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+	@CcyConvsRspn.setter
+	def CcyConvsRspn(self, value):
+		self._CcyConvsRspn = value if type(value) != auto else self.make_default("CcyConvsRspn")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@CcyConvsRspn.deleter
+	def CcyConvsRspn(self):
+		del self._CcyConvsRspn
+		self._CcyConvsRspn = None
 
 	@property
 	def SctyTrlr(self):
@@ -33,21 +33,21 @@ class AcceptorCurrencyConversionResponseV12(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def CcyConvsRspn(self):
-		return self._CcyConvsRspn
+	def Hdr(self):
+		return self._Hdr
 
-	@CcyConvsRspn.setter
-	def CcyConvsRspn(self, value):
-		self._CcyConvsRspn = value if type(value) != auto else self.make_default("CcyConvsRspn")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
 
-	@CcyConvsRspn.deleter
-	def CcyConvsRspn(self):
-		del self._CcyConvsRspn
-		self._CcyConvsRspn = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CcyConvsRspn', type=AcceptorCurrencyConversionResponse12, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
 	))
 

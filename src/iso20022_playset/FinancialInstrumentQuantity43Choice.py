@@ -1,25 +1,12 @@
-import base_types
-import RestrictedFINDecimalNumber
-import RestrictedFINImpliedCurrencyAndAmount
-import Quantity5Code
+from . import base_types
 import Max30DecimalNumber
+import RestrictedFINDecimalNumber
+import Quantity5Code
+import RestrictedFINImpliedCurrencyAndAmount
 
 class FinancialInstrumentQuantity43Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FaceAmt", "_Unit", "_DgtlTknUnit", "_AmtsdVal", "_Cd"]
-	@property
-	def FaceAmt(self):
-		return self._FaceAmt
-
-	@FaceAmt.setter
-	def FaceAmt(self, value):
-		self._FaceAmt = value if type(value) != auto else self.make_default("FaceAmt")
-
-	@FaceAmt.deleter
-	def FaceAmt(self):
-		del self._FaceAmt
-		self._FaceAmt = None
-
+	__slots__ = ["_Unit", "_Cd", "_AmtsdVal", "_DgtlTknUnit", "_FaceAmt"]
 	@property
 	def Unit(self):
 		return self._Unit
@@ -34,17 +21,17 @@ class FinancialInstrumentQuantity43Choice(base_types._BaseFieldType):
 		self._Unit = None
 
 	@property
-	def DgtlTknUnit(self):
-		return self._DgtlTknUnit
+	def Cd(self):
+		return self._Cd
 
-	@DgtlTknUnit.setter
-	def DgtlTknUnit(self, value):
-		self._DgtlTknUnit = value if type(value) != auto else self.make_default("DgtlTknUnit")
+	@Cd.setter
+	def Cd(self, value):
+		self._Cd = value if type(value) != auto else self.make_default("Cd")
 
-	@DgtlTknUnit.deleter
-	def DgtlTknUnit(self):
-		del self._DgtlTknUnit
-		self._DgtlTknUnit = None
+	@Cd.deleter
+	def Cd(self):
+		del self._Cd
+		self._Cd = None
 
 	@property
 	def AmtsdVal(self):
@@ -60,23 +47,36 @@ class FinancialInstrumentQuantity43Choice(base_types._BaseFieldType):
 		self._AmtsdVal = None
 
 	@property
-	def Cd(self):
-		return self._Cd
+	def DgtlTknUnit(self):
+		return self._DgtlTknUnit
 
-	@Cd.setter
-	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+	@DgtlTknUnit.setter
+	def DgtlTknUnit(self, value):
+		self._DgtlTknUnit = value if type(value) != auto else self.make_default("DgtlTknUnit")
 
-	@Cd.deleter
-	def Cd(self):
-		del self._Cd
-		self._Cd = None
+	@DgtlTknUnit.deleter
+	def DgtlTknUnit(self):
+		del self._DgtlTknUnit
+		self._DgtlTknUnit = None
+
+	@property
+	def FaceAmt(self):
+		return self._FaceAmt
+
+	@FaceAmt.setter
+	def FaceAmt(self, value):
+		self._FaceAmt = value if type(value) != auto else self.make_default("FaceAmt")
+
+	@FaceAmt.deleter
+	def FaceAmt(self):
+		del self._FaceAmt
+		self._FaceAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FaceAmt', type=RestrictedFINImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Unit', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='DgtlTknUnit', type=Max30DecimalNumber, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AmtsdVal', type=RestrictedFINImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cd', type=Quantity5Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtsdVal', type=RestrictedFINImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DgtlTknUnit', type=Max30DecimalNumber, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FaceAmt', type=RestrictedFINImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

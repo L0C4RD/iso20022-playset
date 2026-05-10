@@ -1,39 +1,26 @@
-import base_types
+from . import base_types
+import ForeignExchangeTerms18
+import YesNoIndicator
 import CreditDebitCode
 import ActiveOrHistoricCurrencyAndAmount
-import YesNoIndicator
 import DateAndDateTime1Choice
 import ActiveCurrencyAndAmount
-import ForeignExchangeTerms18
 
 class AmountAndDirection28(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlCcyAndOrdrdAmt", "_CdtDbtInd", "_ValDt", "_Amt", "_FXDtls", "_AcrdIntrstInd", "_StmpDtyInd"]
+	__slots__ = ["_StmpDtyInd", "_ValDt", "_Amt", "_AcrdIntrstInd", "_CdtDbtInd", "_FXDtls", "_OrgnlCcyAndOrdrdAmt"]
 	@property
-	def OrgnlCcyAndOrdrdAmt(self):
-		return self._OrgnlCcyAndOrdrdAmt
+	def StmpDtyInd(self):
+		return self._StmpDtyInd
 
-	@OrgnlCcyAndOrdrdAmt.setter
-	def OrgnlCcyAndOrdrdAmt(self, value):
-		self._OrgnlCcyAndOrdrdAmt = value if type(value) != auto else self.make_default("OrgnlCcyAndOrdrdAmt")
+	@StmpDtyInd.setter
+	def StmpDtyInd(self, value):
+		self._StmpDtyInd = value if type(value) != auto else self.make_default("StmpDtyInd")
 
-	@OrgnlCcyAndOrdrdAmt.deleter
-	def OrgnlCcyAndOrdrdAmt(self):
-		del self._OrgnlCcyAndOrdrdAmt
-		self._OrgnlCcyAndOrdrdAmt = None
-
-	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
-
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
-
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
+	@StmpDtyInd.deleter
+	def StmpDtyInd(self):
+		del self._StmpDtyInd
+		self._StmpDtyInd = None
 
 	@property
 	def ValDt(self):
@@ -62,19 +49,6 @@ class AmountAndDirection28(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def FXDtls(self):
-		return self._FXDtls
-
-	@FXDtls.setter
-	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != auto else self.make_default("FXDtls")
-
-	@FXDtls.deleter
-	def FXDtls(self):
-		del self._FXDtls
-		self._FXDtls = None
-
-	@property
 	def AcrdIntrstInd(self):
 		return self._AcrdIntrstInd
 
@@ -88,25 +62,51 @@ class AmountAndDirection28(base_types._BaseFieldType):
 		self._AcrdIntrstInd = None
 
 	@property
-	def StmpDtyInd(self):
-		return self._StmpDtyInd
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
 
-	@StmpDtyInd.setter
-	def StmpDtyInd(self, value):
-		self._StmpDtyInd = value if type(value) != auto else self.make_default("StmpDtyInd")
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
 
-	@StmpDtyInd.deleter
-	def StmpDtyInd(self):
-		del self._StmpDtyInd
-		self._StmpDtyInd = None
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
+
+	@property
+	def FXDtls(self):
+		return self._FXDtls
+
+	@FXDtls.setter
+	def FXDtls(self, value):
+		self._FXDtls = value if type(value) != auto else self.make_default("FXDtls")
+
+	@FXDtls.deleter
+	def FXDtls(self):
+		del self._FXDtls
+		self._FXDtls = None
+
+	@property
+	def OrgnlCcyAndOrdrdAmt(self):
+		return self._OrgnlCcyAndOrdrdAmt
+
+	@OrgnlCcyAndOrdrdAmt.setter
+	def OrgnlCcyAndOrdrdAmt(self, value):
+		self._OrgnlCcyAndOrdrdAmt = value if type(value) != auto else self.make_default("OrgnlCcyAndOrdrdAmt")
+
+	@OrgnlCcyAndOrdrdAmt.deleter
+	def OrgnlCcyAndOrdrdAmt(self):
+		del self._OrgnlCcyAndOrdrdAmt
+		self._OrgnlCcyAndOrdrdAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlCcyAndOrdrdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmpDtyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms18, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcrdIntrstInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmpDtyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms18, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCcyAndOrdrdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

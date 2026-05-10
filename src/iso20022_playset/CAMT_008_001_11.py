@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CancelTransactionV11
 
 class CAMT_008_001_11():

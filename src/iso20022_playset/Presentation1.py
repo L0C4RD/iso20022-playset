@@ -1,12 +1,12 @@
-import base_types
-import Document8
-import PlaceOrUnderConfirmationChoice1
+from . import base_types
 import Max2000Text
 import PresentationMedium1Choice
+import Document8
+import PlaceOrUnderConfirmationChoice1
 
 class Presentation1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_PlcOfPresntnOrUdrConfChc", "_Mdm", "_Doc"]
+	__slots__ = ["_AddtlInf", "_PlcOfPresntnOrUdrConfChc", "_Doc", "_Mdm"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -34,19 +34,6 @@ class Presentation1(base_types._BaseFieldType):
 		self._PlcOfPresntnOrUdrConfChc = None
 
 	@property
-	def Mdm(self):
-		return self._Mdm
-
-	@Mdm.setter
-	def Mdm(self, value):
-		self._Mdm = value if type(value) != auto else self.make_default("Mdm")
-
-	@Mdm.deleter
-	def Mdm(self):
-		del self._Mdm
-		self._Mdm = None
-
-	@property
 	def Doc(self):
 		return self._Doc
 
@@ -59,10 +46,23 @@ class Presentation1(base_types._BaseFieldType):
 		del self._Doc
 		self._Doc = None
 
+	@property
+	def Mdm(self):
+		return self._Mdm
+
+	@Mdm.setter
+	def Mdm(self, value):
+		self._Mdm = value if type(value) != auto else self.make_default("Mdm")
+
+	@Mdm.deleter
+	def Mdm(self):
+		del self._Mdm
+		self._Mdm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PlcOfPresntnOrUdrConfChc', type=PlaceOrUnderConfirmationChoice1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mdm', type=PresentationMedium1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Doc', type=Document8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Mdm', type=PresentationMedium1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

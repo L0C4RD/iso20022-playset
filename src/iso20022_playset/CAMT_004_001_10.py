@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReturnAccountV10
 
 class CAMT_004_001_10():

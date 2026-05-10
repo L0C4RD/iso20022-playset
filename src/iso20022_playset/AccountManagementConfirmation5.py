@@ -1,38 +1,12 @@
-import base_types
-import Max35Text
+from . import base_types
 import ConfirmationType1Choice
-import AdditionalReference13
 import Account23
+import Max35Text
+import AdditionalReference13
 
 class AccountManagementConfirmation5(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyRef", "_AcctApplId", "_ExstgAcctId", "_ClntRef", "_ConfTp"]
-	@property
-	def CtrPtyRef(self):
-		return self._CtrPtyRef
-
-	@CtrPtyRef.setter
-	def CtrPtyRef(self, value):
-		self._CtrPtyRef = value if type(value) != auto else self.make_default("CtrPtyRef")
-
-	@CtrPtyRef.deleter
-	def CtrPtyRef(self):
-		del self._CtrPtyRef
-		self._CtrPtyRef = None
-
-	@property
-	def AcctApplId(self):
-		return self._AcctApplId
-
-	@AcctApplId.setter
-	def AcctApplId(self, value):
-		self._AcctApplId = value if type(value) != auto else self.make_default("AcctApplId")
-
-	@AcctApplId.deleter
-	def AcctApplId(self):
-		del self._AcctApplId
-		self._AcctApplId = None
-
+	__slots__ = ["_ExstgAcctId", "_ClntRef", "_CtrPtyRef", "_ConfTp", "_AcctApplId"]
 	@property
 	def ExstgAcctId(self):
 		return self._ExstgAcctId
@@ -60,6 +34,19 @@ class AccountManagementConfirmation5(base_types._BaseFieldType):
 		self._ClntRef = None
 
 	@property
+	def CtrPtyRef(self):
+		return self._CtrPtyRef
+
+	@CtrPtyRef.setter
+	def CtrPtyRef(self, value):
+		self._CtrPtyRef = value if type(value) != auto else self.make_default("CtrPtyRef")
+
+	@CtrPtyRef.deleter
+	def CtrPtyRef(self):
+		del self._CtrPtyRef
+		self._CtrPtyRef = None
+
+	@property
 	def ConfTp(self):
 		return self._ConfTp
 
@@ -72,11 +59,24 @@ class AccountManagementConfirmation5(base_types._BaseFieldType):
 		del self._ConfTp
 		self._ConfTp = None
 
+	@property
+	def AcctApplId(self):
+		return self._AcctApplId
+
+	@AcctApplId.setter
+	def AcctApplId(self, value):
+		self._AcctApplId = value if type(value) != auto else self.make_default("AcctApplId")
+
+	@AcctApplId.deleter
+	def AcctApplId(self):
+		del self._AcctApplId
+		self._AcctApplId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctApplId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExstgAcctId', type=Account23, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfTp', type=ConfirmationType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctApplId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,37 @@
-import base_types
-import Max35Text
+from . import base_types
 import PartialSettlement2Code
 import PreConfirmation1Code
+import Max35Text
 
 class AdditionalParameters30(base_types._BaseFieldType):
 
-	__slots__ = ["_TrptyAgtSvcPrvdrCollTxId", "_PrtlSttlm", "_ClntTrptyCollTxId", "_PreConf"]
+	__slots__ = ["_PreConf", "_ClntTrptyCollTxId", "_TrptyAgtSvcPrvdrCollTxId", "_PrtlSttlm"]
+	@property
+	def PreConf(self):
+		return self._PreConf
+
+	@PreConf.setter
+	def PreConf(self, value):
+		self._PreConf = value if type(value) != auto else self.make_default("PreConf")
+
+	@PreConf.deleter
+	def PreConf(self):
+		del self._PreConf
+		self._PreConf = None
+
+	@property
+	def ClntTrptyCollTxId(self):
+		return self._ClntTrptyCollTxId
+
+	@ClntTrptyCollTxId.setter
+	def ClntTrptyCollTxId(self, value):
+		self._ClntTrptyCollTxId = value if type(value) != auto else self.make_default("ClntTrptyCollTxId")
+
+	@ClntTrptyCollTxId.deleter
+	def ClntTrptyCollTxId(self):
+		del self._ClntTrptyCollTxId
+		self._ClntTrptyCollTxId = None
+
 	@property
 	def TrptyAgtSvcPrvdrCollTxId(self):
 		return self._TrptyAgtSvcPrvdrCollTxId
@@ -32,36 +58,10 @@ class AdditionalParameters30(base_types._BaseFieldType):
 		del self._PrtlSttlm
 		self._PrtlSttlm = None
 
-	@property
-	def ClntTrptyCollTxId(self):
-		return self._ClntTrptyCollTxId
-
-	@ClntTrptyCollTxId.setter
-	def ClntTrptyCollTxId(self, value):
-		self._ClntTrptyCollTxId = value if type(value) != auto else self.make_default("ClntTrptyCollTxId")
-
-	@ClntTrptyCollTxId.deleter
-	def ClntTrptyCollTxId(self):
-		del self._ClntTrptyCollTxId
-		self._ClntTrptyCollTxId = None
-
-	@property
-	def PreConf(self):
-		return self._PreConf
-
-	@PreConf.setter
-	def PreConf(self, value):
-		self._PreConf = value if type(value) != auto else self.make_default("PreConf")
-
-	@PreConf.deleter
-	def PreConf(self):
-		del self._PreConf
-		self._PreConf = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PreConf', type=PreConfirmation1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntTrptyCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtlSttlm', type=PartialSettlement2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntTrptyCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PreConf', type=PreConfirmation1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

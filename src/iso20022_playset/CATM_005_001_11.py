@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MaintenanceDelegationRequestV11
 
 class CATM_005_001_11():

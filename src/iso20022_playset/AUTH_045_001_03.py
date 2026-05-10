@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialInstrumentReportingNonEquityTradingActivityResultV03
 
 class AUTH_045_001_03():

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialInstrumentReportingCountryCodeReportV01
 
 class AUTH_047_001_01():

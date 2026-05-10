@@ -1,6 +1,6 @@
-import base_types
-import UndertakingDemandWithdrawal1
+from . import base_types
 import PartyAndSignature2
+import UndertakingDemandWithdrawal1
 
 class DemandWithdrawalNotificationV01(base_types._BaseFieldType):
 

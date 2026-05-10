@@ -1,23 +1,10 @@
-import base_types
-import Max35Text
+from . import base_types
 import ProprietaryData6
+import Max35Text
 
 class ProprietaryData7(base_types._BaseFieldType):
 
-	__slots__ = ["_Data", "_Tp"]
-	@property
-	def Data(self):
-		return self._Data
-
-	@Data.setter
-	def Data(self, value):
-		self._Data = value if type(value) != auto else self.make_default("Data")
-
-	@Data.deleter
-	def Data(self):
-		del self._Data
-		self._Data = None
-
+	__slots__ = ["_Tp", "_Data"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -31,8 +18,21 @@ class ProprietaryData7(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Data(self):
+		return self._Data
+
+	@Data.setter
+	def Data(self, value):
+		self._Data = value if type(value) != auto else self.make_default("Data")
+
+	@Data.deleter
+	def Data(self):
+		del self._Data
+		self._Data = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Data', type=ProprietaryData6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Data', type=ProprietaryData6, min=1, max=1, mutex_group=None, array=False),
 	))
 

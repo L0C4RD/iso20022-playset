@@ -1,6 +1,6 @@
-import base_types
-import Max20000Text
+from . import base_types
 import OutputFormat1Code
+import Max20000Text
 
 class ActionMessage5(base_types._BaseFieldType):
 

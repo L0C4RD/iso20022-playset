@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesSettlementTransactionModificationRequestV10
 
 class SESE_038_001_10():

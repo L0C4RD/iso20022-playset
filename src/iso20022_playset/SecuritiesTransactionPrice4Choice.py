@@ -1,6 +1,6 @@
-import base_types
-import SecuritiesTransactionPrice2Choice
+from . import base_types
 import SecuritiesTransactionPrice1
+import SecuritiesTransactionPrice2Choice
 
 class SecuritiesTransactionPrice4Choice(base_types._BaseFieldType):
 

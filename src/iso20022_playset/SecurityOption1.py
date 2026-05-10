@@ -1,18 +1,31 @@
-import base_types
-import CreditDebitCode
+from . import base_types
 import CorporateActionDate3
 import YesNoIndicator
+import UnitOrFaceAmount1Choice
 import FractionDispositionType1FormatChoice
+import ShareRanking1FormatChoice
 import CorporateActionPrice4
 import QuantityToQuantityRatio1
+import CreditDebitCode
 import Period1
-import UnitOrFaceAmount1Choice
-import ShareRanking1FormatChoice
 import FinancialInstrumentDescription3
 
 class SecurityOption1(base_types._BaseFieldType):
 
-	__slots__ = ["_MinExrcblSctiesQty", "_ShrRnkg", "_TradgPrd", "_SctiesQty", "_NewDnmtnSctiesQty", "_TempFinInstrmInd", "_SctyId", "_MinExrcblMltplSctiesQty", "_PricDtls", "_CdtDbtInd", "_NewBrdLotSctiesQty", "_AddtlQtyForExstgScties", "_FrctnDspstn", "_AddtlQtyForSbcbdRsltntScties", "_DtDtls"]
+	__slots__ = ["_FrctnDspstn", "_MinExrcblSctiesQty", "_SctiesQty", "_CdtDbtInd", "_NewDnmtnSctiesQty", "_AddtlQtyForSbcbdRsltntScties", "_TradgPrd", "_DtDtls", "_PricDtls", "_TempFinInstrmInd", "_SctyId", "_ShrRnkg", "_AddtlQtyForExstgScties", "_MinExrcblMltplSctiesQty", "_NewBrdLotSctiesQty"]
+	@property
+	def FrctnDspstn(self):
+		return self._FrctnDspstn
+
+	@FrctnDspstn.setter
+	def FrctnDspstn(self, value):
+		self._FrctnDspstn = value if type(value) != auto else self.make_default("FrctnDspstn")
+
+	@FrctnDspstn.deleter
+	def FrctnDspstn(self):
+		del self._FrctnDspstn
+		self._FrctnDspstn = None
+
 	@property
 	def MinExrcblSctiesQty(self):
 		return self._MinExrcblSctiesQty
@@ -25,32 +38,6 @@ class SecurityOption1(base_types._BaseFieldType):
 	def MinExrcblSctiesQty(self):
 		del self._MinExrcblSctiesQty
 		self._MinExrcblSctiesQty = None
-
-	@property
-	def ShrRnkg(self):
-		return self._ShrRnkg
-
-	@ShrRnkg.setter
-	def ShrRnkg(self, value):
-		self._ShrRnkg = value if type(value) != auto else self.make_default("ShrRnkg")
-
-	@ShrRnkg.deleter
-	def ShrRnkg(self):
-		del self._ShrRnkg
-		self._ShrRnkg = None
-
-	@property
-	def TradgPrd(self):
-		return self._TradgPrd
-
-	@TradgPrd.setter
-	def TradgPrd(self, value):
-		self._TradgPrd = value if type(value) != auto else self.make_default("TradgPrd")
-
-	@TradgPrd.deleter
-	def TradgPrd(self):
-		del self._TradgPrd
-		self._TradgPrd = None
 
 	@property
 	def SctiesQty(self):
@@ -66,6 +53,19 @@ class SecurityOption1(base_types._BaseFieldType):
 		self._SctiesQty = None
 
 	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
+
+	@property
 	def NewDnmtnSctiesQty(self):
 		return self._NewDnmtnSctiesQty
 
@@ -77,6 +77,58 @@ class SecurityOption1(base_types._BaseFieldType):
 	def NewDnmtnSctiesQty(self):
 		del self._NewDnmtnSctiesQty
 		self._NewDnmtnSctiesQty = None
+
+	@property
+	def AddtlQtyForSbcbdRsltntScties(self):
+		return self._AddtlQtyForSbcbdRsltntScties
+
+	@AddtlQtyForSbcbdRsltntScties.setter
+	def AddtlQtyForSbcbdRsltntScties(self, value):
+		self._AddtlQtyForSbcbdRsltntScties = value if type(value) != auto else self.make_default("AddtlQtyForSbcbdRsltntScties")
+
+	@AddtlQtyForSbcbdRsltntScties.deleter
+	def AddtlQtyForSbcbdRsltntScties(self):
+		del self._AddtlQtyForSbcbdRsltntScties
+		self._AddtlQtyForSbcbdRsltntScties = None
+
+	@property
+	def TradgPrd(self):
+		return self._TradgPrd
+
+	@TradgPrd.setter
+	def TradgPrd(self, value):
+		self._TradgPrd = value if type(value) != auto else self.make_default("TradgPrd")
+
+	@TradgPrd.deleter
+	def TradgPrd(self):
+		del self._TradgPrd
+		self._TradgPrd = None
+
+	@property
+	def DtDtls(self):
+		return self._DtDtls
+
+	@DtDtls.setter
+	def DtDtls(self, value):
+		self._DtDtls = value if type(value) != auto else self.make_default("DtDtls")
+
+	@DtDtls.deleter
+	def DtDtls(self):
+		del self._DtDtls
+		self._DtDtls = None
+
+	@property
+	def PricDtls(self):
+		return self._PricDtls
+
+	@PricDtls.setter
+	def PricDtls(self, value):
+		self._PricDtls = value if type(value) != auto else self.make_default("PricDtls")
+
+	@PricDtls.deleter
+	def PricDtls(self):
+		del self._PricDtls
+		self._PricDtls = None
 
 	@property
 	def TempFinInstrmInd(self):
@@ -105,56 +157,17 @@ class SecurityOption1(base_types._BaseFieldType):
 		self._SctyId = None
 
 	@property
-	def MinExrcblMltplSctiesQty(self):
-		return self._MinExrcblMltplSctiesQty
+	def ShrRnkg(self):
+		return self._ShrRnkg
 
-	@MinExrcblMltplSctiesQty.setter
-	def MinExrcblMltplSctiesQty(self, value):
-		self._MinExrcblMltplSctiesQty = value if type(value) != auto else self.make_default("MinExrcblMltplSctiesQty")
+	@ShrRnkg.setter
+	def ShrRnkg(self, value):
+		self._ShrRnkg = value if type(value) != auto else self.make_default("ShrRnkg")
 
-	@MinExrcblMltplSctiesQty.deleter
-	def MinExrcblMltplSctiesQty(self):
-		del self._MinExrcblMltplSctiesQty
-		self._MinExrcblMltplSctiesQty = None
-
-	@property
-	def PricDtls(self):
-		return self._PricDtls
-
-	@PricDtls.setter
-	def PricDtls(self, value):
-		self._PricDtls = value if type(value) != auto else self.make_default("PricDtls")
-
-	@PricDtls.deleter
-	def PricDtls(self):
-		del self._PricDtls
-		self._PricDtls = None
-
-	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
-
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
-
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
-
-	@property
-	def NewBrdLotSctiesQty(self):
-		return self._NewBrdLotSctiesQty
-
-	@NewBrdLotSctiesQty.setter
-	def NewBrdLotSctiesQty(self, value):
-		self._NewBrdLotSctiesQty = value if type(value) != auto else self.make_default("NewBrdLotSctiesQty")
-
-	@NewBrdLotSctiesQty.deleter
-	def NewBrdLotSctiesQty(self):
-		del self._NewBrdLotSctiesQty
-		self._NewBrdLotSctiesQty = None
+	@ShrRnkg.deleter
+	def ShrRnkg(self):
+		del self._ShrRnkg
+		self._ShrRnkg = None
 
 	@property
 	def AddtlQtyForExstgScties(self):
@@ -170,59 +183,46 @@ class SecurityOption1(base_types._BaseFieldType):
 		self._AddtlQtyForExstgScties = None
 
 	@property
-	def FrctnDspstn(self):
-		return self._FrctnDspstn
+	def MinExrcblMltplSctiesQty(self):
+		return self._MinExrcblMltplSctiesQty
 
-	@FrctnDspstn.setter
-	def FrctnDspstn(self, value):
-		self._FrctnDspstn = value if type(value) != auto else self.make_default("FrctnDspstn")
+	@MinExrcblMltplSctiesQty.setter
+	def MinExrcblMltplSctiesQty(self, value):
+		self._MinExrcblMltplSctiesQty = value if type(value) != auto else self.make_default("MinExrcblMltplSctiesQty")
 
-	@FrctnDspstn.deleter
-	def FrctnDspstn(self):
-		del self._FrctnDspstn
-		self._FrctnDspstn = None
-
-	@property
-	def AddtlQtyForSbcbdRsltntScties(self):
-		return self._AddtlQtyForSbcbdRsltntScties
-
-	@AddtlQtyForSbcbdRsltntScties.setter
-	def AddtlQtyForSbcbdRsltntScties(self, value):
-		self._AddtlQtyForSbcbdRsltntScties = value if type(value) != auto else self.make_default("AddtlQtyForSbcbdRsltntScties")
-
-	@AddtlQtyForSbcbdRsltntScties.deleter
-	def AddtlQtyForSbcbdRsltntScties(self):
-		del self._AddtlQtyForSbcbdRsltntScties
-		self._AddtlQtyForSbcbdRsltntScties = None
+	@MinExrcblMltplSctiesQty.deleter
+	def MinExrcblMltplSctiesQty(self):
+		del self._MinExrcblMltplSctiesQty
+		self._MinExrcblMltplSctiesQty = None
 
 	@property
-	def DtDtls(self):
-		return self._DtDtls
+	def NewBrdLotSctiesQty(self):
+		return self._NewBrdLotSctiesQty
 
-	@DtDtls.setter
-	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != auto else self.make_default("DtDtls")
+	@NewBrdLotSctiesQty.setter
+	def NewBrdLotSctiesQty(self, value):
+		self._NewBrdLotSctiesQty = value if type(value) != auto else self.make_default("NewBrdLotSctiesQty")
 
-	@DtDtls.deleter
-	def DtDtls(self):
-		del self._DtDtls
-		self._DtDtls = None
+	@NewBrdLotSctiesQty.deleter
+	def NewBrdLotSctiesQty(self):
+		del self._NewBrdLotSctiesQty
+		self._NewBrdLotSctiesQty = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='FrctnDspstn', type=FractionDispositionType1FormatChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinExrcblSctiesQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrRnkg', type=ShareRanking1FormatChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewDnmtnSctiesQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlQtyForSbcbdRsltntScties', type=QuantityToQuantityRatio1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricDtls', type=CorporateActionPrice4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TempFinInstrmInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyId', type=FinancialInstrumentDescription3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinExrcblMltplSctiesQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricDtls', type=CorporateActionPrice4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewBrdLotSctiesQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrRnkg', type=ShareRanking1FormatChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlQtyForExstgScties', type=QuantityToQuantityRatio1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrctnDspstn', type=FractionDispositionType1FormatChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlQtyForSbcbdRsltntScties', type=QuantityToQuantityRatio1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinExrcblMltplSctiesQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewBrdLotSctiesQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

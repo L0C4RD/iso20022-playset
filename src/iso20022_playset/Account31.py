@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
+import PartyIdentification139
 import Max35Text
 import SubAccount5
-import PartyIdentification139
 
 class Account31(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctNm", "_SubAcctDtls", "_Dsgnt", "_Id", "_Svcr"]
+	__slots__ = ["_Id", "_SubAcctDtls", "_Dsgnt", "_Svcr", "_AcctNm"]
 	@property
-	def AcctNm(self):
-		return self._AcctNm
+	def Id(self):
+		return self._Id
 
-	@AcctNm.setter
-	def AcctNm(self, value):
-		self._AcctNm = value if type(value) != auto else self.make_default("AcctNm")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@AcctNm.deleter
-	def AcctNm(self):
-		del self._AcctNm
-		self._AcctNm = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def SubAcctDtls(self):
@@ -46,19 +46,6 @@ class Account31(base_types._BaseFieldType):
 		self._Dsgnt = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def Svcr(self):
 		return self._Svcr
 
@@ -71,11 +58,24 @@ class Account31(base_types._BaseFieldType):
 		del self._Svcr
 		self._Svcr = None
 
+	@property
+	def AcctNm(self):
+		return self._AcctNm
+
+	@AcctNm.setter
+	def AcctNm(self, value):
+		self._AcctNm = value if type(value) != auto else self.make_default("AcctNm")
+
+	@AcctNm.deleter
+	def AcctNm(self):
+		del self._AcctNm
+		self._AcctNm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubAcctDtls', type=SubAccount5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Svcr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

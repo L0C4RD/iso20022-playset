@@ -1,7 +1,7 @@
-import base_types
-import CardPaymentTransaction137
-import CardPaymentEnvironment81
+from . import base_types
 import CurrencyConversion31
+import CardPaymentEnvironment81
+import CardPaymentTransaction137
 
 class AcceptorCurrencyConversionResponse12(base_types._BaseFieldType):
 

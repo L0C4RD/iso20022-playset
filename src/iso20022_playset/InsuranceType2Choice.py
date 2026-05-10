@@ -1,6 +1,6 @@
-import base_types
-import Insurance1Code
+from . import base_types
 import GenericIdentification47
+import Insurance1Code
 
 class InsuranceType2Choice(base_types._BaseFieldType):
 

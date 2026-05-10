@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesTransactionStatusQuery002V06
 
 class SESE_021_002_06():

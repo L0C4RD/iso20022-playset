@@ -1,25 +1,25 @@
-import base_types
+from . import base_types
+import xs:IDREF
 import ISODateTime
+import Max2000Text
 import Max35Text
 import LanguageCode
-import Max2000Text
-import xs:IDREF
 
 class EventDescription1(base_types._BaseFieldType):
 
-	__slots__ = ["_LglCntxt", "_OthrPty", "_RltdDoc", "_RltdLttr", "_LangCd", "_GovngCtrct", "_RltdMsg", "_Dt", "_Advsr", "_Rcpt", "_Idr", "_Desc", "_AssoctdDoc"]
+	__slots__ = ["_RltdDoc", "_OthrPty", "_Desc", "_Rcpt", "_Advsr", "_AssoctdDoc", "_Idr", "_RltdLttr", "_GovngCtrct", "_LglCntxt", "_LangCd", "_RltdMsg", "_Dt"]
 	@property
-	def LglCntxt(self):
-		return self._LglCntxt
+	def RltdDoc(self):
+		return self._RltdDoc
 
-	@LglCntxt.setter
-	def LglCntxt(self, value):
-		self._LglCntxt = value if type(value) != auto else self.make_default("LglCntxt")
+	@RltdDoc.setter
+	def RltdDoc(self, value):
+		self._RltdDoc = value if type(value) != auto else self.make_default("RltdDoc")
 
-	@LglCntxt.deleter
-	def LglCntxt(self):
-		del self._LglCntxt
-		self._LglCntxt = None
+	@RltdDoc.deleter
+	def RltdDoc(self):
+		del self._RltdDoc
+		self._RltdDoc = None
 
 	@property
 	def OthrPty(self):
@@ -35,17 +35,69 @@ class EventDescription1(base_types._BaseFieldType):
 		self._OthrPty = None
 
 	@property
-	def RltdDoc(self):
-		return self._RltdDoc
+	def Desc(self):
+		return self._Desc
 
-	@RltdDoc.setter
-	def RltdDoc(self, value):
-		self._RltdDoc = value if type(value) != auto else self.make_default("RltdDoc")
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
 
-	@RltdDoc.deleter
-	def RltdDoc(self):
-		del self._RltdDoc
-		self._RltdDoc = None
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
+	@property
+	def Rcpt(self):
+		return self._Rcpt
+
+	@Rcpt.setter
+	def Rcpt(self, value):
+		self._Rcpt = value if type(value) != auto else self.make_default("Rcpt")
+
+	@Rcpt.deleter
+	def Rcpt(self):
+		del self._Rcpt
+		self._Rcpt = None
+
+	@property
+	def Advsr(self):
+		return self._Advsr
+
+	@Advsr.setter
+	def Advsr(self, value):
+		self._Advsr = value if type(value) != auto else self.make_default("Advsr")
+
+	@Advsr.deleter
+	def Advsr(self):
+		del self._Advsr
+		self._Advsr = None
+
+	@property
+	def AssoctdDoc(self):
+		return self._AssoctdDoc
+
+	@AssoctdDoc.setter
+	def AssoctdDoc(self, value):
+		self._AssoctdDoc = value if type(value) != auto else self.make_default("AssoctdDoc")
+
+	@AssoctdDoc.deleter
+	def AssoctdDoc(self):
+		del self._AssoctdDoc
+		self._AssoctdDoc = None
+
+	@property
+	def Idr(self):
+		return self._Idr
+
+	@Idr.setter
+	def Idr(self, value):
+		self._Idr = value if type(value) != auto else self.make_default("Idr")
+
+	@Idr.deleter
+	def Idr(self):
+		del self._Idr
+		self._Idr = None
 
 	@property
 	def RltdLttr(self):
@@ -61,19 +113,6 @@ class EventDescription1(base_types._BaseFieldType):
 		self._RltdLttr = None
 
 	@property
-	def LangCd(self):
-		return self._LangCd
-
-	@LangCd.setter
-	def LangCd(self, value):
-		self._LangCd = value if type(value) != auto else self.make_default("LangCd")
-
-	@LangCd.deleter
-	def LangCd(self):
-		del self._LangCd
-		self._LangCd = None
-
-	@property
 	def GovngCtrct(self):
 		return self._GovngCtrct
 
@@ -85,6 +124,32 @@ class EventDescription1(base_types._BaseFieldType):
 	def GovngCtrct(self):
 		del self._GovngCtrct
 		self._GovngCtrct = None
+
+	@property
+	def LglCntxt(self):
+		return self._LglCntxt
+
+	@LglCntxt.setter
+	def LglCntxt(self, value):
+		self._LglCntxt = value if type(value) != auto else self.make_default("LglCntxt")
+
+	@LglCntxt.deleter
+	def LglCntxt(self):
+		del self._LglCntxt
+		self._LglCntxt = None
+
+	@property
+	def LangCd(self):
+		return self._LangCd
+
+	@LangCd.setter
+	def LangCd(self, value):
+		self._LangCd = value if type(value) != auto else self.make_default("LangCd")
+
+	@LangCd.deleter
+	def LangCd(self):
+		del self._LangCd
+		self._LangCd = None
 
 	@property
 	def RltdMsg(self):
@@ -112,84 +177,19 @@ class EventDescription1(base_types._BaseFieldType):
 		del self._Dt
 		self._Dt = None
 
-	@property
-	def Advsr(self):
-		return self._Advsr
-
-	@Advsr.setter
-	def Advsr(self, value):
-		self._Advsr = value if type(value) != auto else self.make_default("Advsr")
-
-	@Advsr.deleter
-	def Advsr(self):
-		del self._Advsr
-		self._Advsr = None
-
-	@property
-	def Rcpt(self):
-		return self._Rcpt
-
-	@Rcpt.setter
-	def Rcpt(self, value):
-		self._Rcpt = value if type(value) != auto else self.make_default("Rcpt")
-
-	@Rcpt.deleter
-	def Rcpt(self):
-		del self._Rcpt
-		self._Rcpt = None
-
-	@property
-	def Idr(self):
-		return self._Idr
-
-	@Idr.setter
-	def Idr(self, value):
-		self._Idr = value if type(value) != auto else self.make_default("Idr")
-
-	@Idr.deleter
-	def Idr(self):
-		del self._Idr
-		self._Idr = None
-
-	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
-	@property
-	def AssoctdDoc(self):
-		return self._AssoctdDoc
-
-	@AssoctdDoc.setter
-	def AssoctdDoc(self, value):
-		self._AssoctdDoc = value if type(value) != auto else self.make_default("AssoctdDoc")
-
-	@AssoctdDoc.deleter
-	def AssoctdDoc(self):
-		del self._AssoctdDoc
-		self._AssoctdDoc = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LglCntxt', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrPty', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RltdDoc', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrPty', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Desc', type=Max2000Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcpt', type=XS_IDREF, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Advsr', type=XS_IDREF, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AssoctdDoc', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Idr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdLttr', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LangCd', type=LanguageCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GovngCtrct', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LglCntxt', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LangCd', type=LanguageCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdMsg', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Dt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Advsr', type=XS_IDREF, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcpt', type=XS_IDREF, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Idr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max2000Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AssoctdDoc', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
 	))
 

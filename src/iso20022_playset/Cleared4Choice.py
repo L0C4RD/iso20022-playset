@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import NoReasonCode
 
 class Cleared4Choice(base_types._BaseFieldType):

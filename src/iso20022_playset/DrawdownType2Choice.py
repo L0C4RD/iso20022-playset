@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DrawdownType2Code
 import GenericIdentification36
 

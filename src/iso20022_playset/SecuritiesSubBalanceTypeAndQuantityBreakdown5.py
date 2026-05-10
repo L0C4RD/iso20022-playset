@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import QuantityBreakdown61
 import SecuritiesBalanceType6Choice
 

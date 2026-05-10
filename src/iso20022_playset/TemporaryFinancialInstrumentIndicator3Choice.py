@@ -1,6 +1,6 @@
-import base_types
-import YesNoIndicator
+from . import base_types
 import GenericIdentification30
+import YesNoIndicator
 
 class TemporaryFinancialInstrumentIndicator3Choice(base_types._BaseFieldType):
 

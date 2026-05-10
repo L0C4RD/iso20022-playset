@@ -1,40 +1,27 @@
-import base_types
-import LossBearing2
-import InvestorRequirements4
+from . import base_types
+import ISODate
+import InvestorType2
 import OtherTargetMarket1
 import RiskTolerance1
-import ISODate
+import InvestorRequirements4
+import LossBearing2
 import InvestorKnowledge1
-import InvestorType2
 
 class TargetMarket4(base_types._BaseFieldType):
 
-	__slots__ = ["_RefDt", "_RskTlrnce", "_AbltyToBearLosses", "_KnwldgAndOrExprnc", "_Othr", "_InvstrTp", "_ClntObjctvsAndNeeds"]
+	__slots__ = ["_ClntObjctvsAndNeeds", "_AbltyToBearLosses", "_RskTlrnce", "_KnwldgAndOrExprnc", "_RefDt", "_Othr", "_InvstrTp"]
 	@property
-	def RefDt(self):
-		return self._RefDt
+	def ClntObjctvsAndNeeds(self):
+		return self._ClntObjctvsAndNeeds
 
-	@RefDt.setter
-	def RefDt(self, value):
-		self._RefDt = value if type(value) != auto else self.make_default("RefDt")
+	@ClntObjctvsAndNeeds.setter
+	def ClntObjctvsAndNeeds(self, value):
+		self._ClntObjctvsAndNeeds = value if type(value) != auto else self.make_default("ClntObjctvsAndNeeds")
 
-	@RefDt.deleter
-	def RefDt(self):
-		del self._RefDt
-		self._RefDt = None
-
-	@property
-	def RskTlrnce(self):
-		return self._RskTlrnce
-
-	@RskTlrnce.setter
-	def RskTlrnce(self, value):
-		self._RskTlrnce = value if type(value) != auto else self.make_default("RskTlrnce")
-
-	@RskTlrnce.deleter
-	def RskTlrnce(self):
-		del self._RskTlrnce
-		self._RskTlrnce = None
+	@ClntObjctvsAndNeeds.deleter
+	def ClntObjctvsAndNeeds(self):
+		del self._ClntObjctvsAndNeeds
+		self._ClntObjctvsAndNeeds = None
 
 	@property
 	def AbltyToBearLosses(self):
@@ -50,6 +37,19 @@ class TargetMarket4(base_types._BaseFieldType):
 		self._AbltyToBearLosses = None
 
 	@property
+	def RskTlrnce(self):
+		return self._RskTlrnce
+
+	@RskTlrnce.setter
+	def RskTlrnce(self, value):
+		self._RskTlrnce = value if type(value) != auto else self.make_default("RskTlrnce")
+
+	@RskTlrnce.deleter
+	def RskTlrnce(self):
+		del self._RskTlrnce
+		self._RskTlrnce = None
+
+	@property
 	def KnwldgAndOrExprnc(self):
 		return self._KnwldgAndOrExprnc
 
@@ -61,6 +61,19 @@ class TargetMarket4(base_types._BaseFieldType):
 	def KnwldgAndOrExprnc(self):
 		del self._KnwldgAndOrExprnc
 		self._KnwldgAndOrExprnc = None
+
+	@property
+	def RefDt(self):
+		return self._RefDt
+
+	@RefDt.setter
+	def RefDt(self, value):
+		self._RefDt = value if type(value) != auto else self.make_default("RefDt")
+
+	@RefDt.deleter
+	def RefDt(self):
+		del self._RefDt
+		self._RefDt = None
 
 	@property
 	def Othr(self):
@@ -88,26 +101,13 @@ class TargetMarket4(base_types._BaseFieldType):
 		del self._InvstrTp
 		self._InvstrTp = None
 
-	@property
-	def ClntObjctvsAndNeeds(self):
-		return self._ClntObjctvsAndNeeds
-
-	@ClntObjctvsAndNeeds.setter
-	def ClntObjctvsAndNeeds(self, value):
-		self._ClntObjctvsAndNeeds = value if type(value) != auto else self.make_default("ClntObjctvsAndNeeds")
-
-	@ClntObjctvsAndNeeds.deleter
-	def ClntObjctvsAndNeeds(self):
-		del self._ClntObjctvsAndNeeds
-		self._ClntObjctvsAndNeeds = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RefDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RskTlrnce', type=RiskTolerance1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntObjctvsAndNeeds', type=InvestorRequirements4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AbltyToBearLosses', type=LossBearing2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RskTlrnce', type=RiskTolerance1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KnwldgAndOrExprnc', type=InvestorKnowledge1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=OtherTargetMarket1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InvstrTp', type=InvestorType2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntObjctvsAndNeeds', type=InvestorRequirements4, min=0, max=1, mutex_group=None, array=False),
 	))
 

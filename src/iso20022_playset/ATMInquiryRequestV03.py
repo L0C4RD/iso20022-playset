@@ -1,8 +1,8 @@
-import base_types
-import ContentInformationType15
-import Header31
+from . import base_types
 import ATMInquiryRequest3
+import Header31
 import ContentInformationType10
+import ContentInformationType15
 
 class ATMInquiryRequestV03(base_types._BaseFieldType):
 

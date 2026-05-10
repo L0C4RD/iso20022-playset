@@ -1,26 +1,39 @@
-import base_types
+from . import base_types
+import Max2NumericText
+import Max5NumericText
 import Max4NumericText
 import Exact1HexBinaryText
 import Max32HexBinaryText
-import Max2NumericText
-import Max5NumericText
 import Max8NumericText
 
 class MACData1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctrl", "_PddgMtd", "_KeyLngth", "_DrvdInf", "_KeyIndx", "_KeyPrtcn", "_InitlstnVctr", "_KeySetIdr", "_Algo"]
+	__slots__ = ["_KeySetIdr", "_KeyPrtcn", "_PddgMtd", "_Algo", "_DrvdInf", "_KeyIndx", "_Ctrl", "_InitlstnVctr", "_KeyLngth"]
 	@property
-	def Ctrl(self):
-		return self._Ctrl
+	def KeySetIdr(self):
+		return self._KeySetIdr
 
-	@Ctrl.setter
-	def Ctrl(self, value):
-		self._Ctrl = value if type(value) != auto else self.make_default("Ctrl")
+	@KeySetIdr.setter
+	def KeySetIdr(self, value):
+		self._KeySetIdr = value if type(value) != auto else self.make_default("KeySetIdr")
 
-	@Ctrl.deleter
-	def Ctrl(self):
-		del self._Ctrl
-		self._Ctrl = None
+	@KeySetIdr.deleter
+	def KeySetIdr(self):
+		del self._KeySetIdr
+		self._KeySetIdr = None
+
+	@property
+	def KeyPrtcn(self):
+		return self._KeyPrtcn
+
+	@KeyPrtcn.setter
+	def KeyPrtcn(self, value):
+		self._KeyPrtcn = value if type(value) != auto else self.make_default("KeyPrtcn")
+
+	@KeyPrtcn.deleter
+	def KeyPrtcn(self):
+		del self._KeyPrtcn
+		self._KeyPrtcn = None
 
 	@property
 	def PddgMtd(self):
@@ -36,17 +49,17 @@ class MACData1(base_types._BaseFieldType):
 		self._PddgMtd = None
 
 	@property
-	def KeyLngth(self):
-		return self._KeyLngth
+	def Algo(self):
+		return self._Algo
 
-	@KeyLngth.setter
-	def KeyLngth(self, value):
-		self._KeyLngth = value if type(value) != auto else self.make_default("KeyLngth")
+	@Algo.setter
+	def Algo(self, value):
+		self._Algo = value if type(value) != auto else self.make_default("Algo")
 
-	@KeyLngth.deleter
-	def KeyLngth(self):
-		del self._KeyLngth
-		self._KeyLngth = None
+	@Algo.deleter
+	def Algo(self):
+		del self._Algo
+		self._Algo = None
 
 	@property
 	def DrvdInf(self):
@@ -75,17 +88,17 @@ class MACData1(base_types._BaseFieldType):
 		self._KeyIndx = None
 
 	@property
-	def KeyPrtcn(self):
-		return self._KeyPrtcn
+	def Ctrl(self):
+		return self._Ctrl
 
-	@KeyPrtcn.setter
-	def KeyPrtcn(self, value):
-		self._KeyPrtcn = value if type(value) != auto else self.make_default("KeyPrtcn")
+	@Ctrl.setter
+	def Ctrl(self, value):
+		self._Ctrl = value if type(value) != auto else self.make_default("Ctrl")
 
-	@KeyPrtcn.deleter
-	def KeyPrtcn(self):
-		del self._KeyPrtcn
-		self._KeyPrtcn = None
+	@Ctrl.deleter
+	def Ctrl(self):
+		del self._Ctrl
+		self._Ctrl = None
 
 	@property
 	def InitlstnVctr(self):
@@ -101,40 +114,27 @@ class MACData1(base_types._BaseFieldType):
 		self._InitlstnVctr = None
 
 	@property
-	def KeySetIdr(self):
-		return self._KeySetIdr
+	def KeyLngth(self):
+		return self._KeyLngth
 
-	@KeySetIdr.setter
-	def KeySetIdr(self, value):
-		self._KeySetIdr = value if type(value) != auto else self.make_default("KeySetIdr")
+	@KeyLngth.setter
+	def KeyLngth(self, value):
+		self._KeyLngth = value if type(value) != auto else self.make_default("KeyLngth")
 
-	@KeySetIdr.deleter
-	def KeySetIdr(self):
-		del self._KeySetIdr
-		self._KeySetIdr = None
-
-	@property
-	def Algo(self):
-		return self._Algo
-
-	@Algo.setter
-	def Algo(self, value):
-		self._Algo = value if type(value) != auto else self.make_default("Algo")
-
-	@Algo.deleter
-	def Algo(self):
-		del self._Algo
-		self._Algo = None
+	@KeyLngth.deleter
+	def KeyLngth(self):
+		del self._KeyLngth
+		self._KeyLngth = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctrl', type=Exact1HexBinaryText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeySetIdr', type=Max8NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyPrtcn', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PddgMtd', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyLngth', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Algo', type=Max2NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrvdInf', type=Max32HexBinaryText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyIndx', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyPrtcn', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctrl', type=Exact1HexBinaryText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitlstnVctr', type=Max32HexBinaryText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeySetIdr', type=Max8NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Algo', type=Max2NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyLngth', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TransactionDetails176
 import UpdateType39Choice
 

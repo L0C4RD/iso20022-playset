@@ -1,23 +1,23 @@
-import base_types
-import ISO2ALanguageCode
+from . import base_types
 import ModelFormIdentification1
 import Narrative1
+import ISO2ALanguageCode
 
 class UndertakingWording1(base_types._BaseFieldType):
 
-	__slots__ = ["_MdlForm", "_ReqdWrdgLang", "_UdrtkgTermsAndConds"]
+	__slots__ = ["_UdrtkgTermsAndConds", "_ReqdWrdgLang", "_MdlForm"]
 	@property
-	def MdlForm(self):
-		return self._MdlForm
+	def UdrtkgTermsAndConds(self):
+		return self._UdrtkgTermsAndConds
 
-	@MdlForm.setter
-	def MdlForm(self, value):
-		self._MdlForm = value if type(value) != auto else self.make_default("MdlForm")
+	@UdrtkgTermsAndConds.setter
+	def UdrtkgTermsAndConds(self, value):
+		self._UdrtkgTermsAndConds = value if type(value) != auto else self.make_default("UdrtkgTermsAndConds")
 
-	@MdlForm.deleter
-	def MdlForm(self):
-		del self._MdlForm
-		self._MdlForm = None
+	@UdrtkgTermsAndConds.deleter
+	def UdrtkgTermsAndConds(self):
+		del self._UdrtkgTermsAndConds
+		self._UdrtkgTermsAndConds = None
 
 	@property
 	def ReqdWrdgLang(self):
@@ -33,21 +33,21 @@ class UndertakingWording1(base_types._BaseFieldType):
 		self._ReqdWrdgLang = None
 
 	@property
-	def UdrtkgTermsAndConds(self):
-		return self._UdrtkgTermsAndConds
+	def MdlForm(self):
+		return self._MdlForm
 
-	@UdrtkgTermsAndConds.setter
-	def UdrtkgTermsAndConds(self, value):
-		self._UdrtkgTermsAndConds = value if type(value) != auto else self.make_default("UdrtkgTermsAndConds")
+	@MdlForm.setter
+	def MdlForm(self, value):
+		self._MdlForm = value if type(value) != auto else self.make_default("MdlForm")
 
-	@UdrtkgTermsAndConds.deleter
-	def UdrtkgTermsAndConds(self):
-		del self._UdrtkgTermsAndConds
-		self._UdrtkgTermsAndConds = None
+	@MdlForm.deleter
+	def MdlForm(self):
+		del self._MdlForm
+		self._MdlForm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MdlForm', type=ModelFormIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdWrdgLang', type=ISO2ALanguageCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgTermsAndConds', type=Narrative1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ReqdWrdgLang', type=ISO2ALanguageCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MdlForm', type=ModelFormIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

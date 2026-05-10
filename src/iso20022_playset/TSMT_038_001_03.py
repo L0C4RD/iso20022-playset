@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import StatusReportRequestV03
 
 class TSMT_038_001_03():

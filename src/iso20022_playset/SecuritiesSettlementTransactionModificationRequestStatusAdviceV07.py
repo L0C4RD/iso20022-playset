@@ -1,28 +1,28 @@
-import base_types
-import TransactionDetails171
-import SupplementaryData1
-import TransactionIdentifications33
-import Max35Text
-import PartyIdentification144
+from . import base_types
 import BlockChainAddressWallet3
 import ModificationProcessingStatus10Choice
+import SupplementaryData1
+import Max35Text
+import TransactionDetails171
 import SecuritiesAccount19
+import PartyIdentification144
+import TransactionIdentifications33
 
 class SecuritiesSettlementTransactionModificationRequestStatusAdviceV07(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_SfkpgAcct", "_ModReqRef", "_ModPrcgSts", "_AcctOwnr", "_TxDtls", "_TxId", "_SplmtryData"]
+	__slots__ = ["_ModPrcgSts", "_SfkpgAcct", "_SplmtryData", "_BlckChainAdrOrWllt", "_AcctOwnr", "_TxDtls", "_TxId", "_ModReqRef"]
 	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
+	def ModPrcgSts(self):
+		return self._ModPrcgSts
 
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+	@ModPrcgSts.setter
+	def ModPrcgSts(self, value):
+		self._ModPrcgSts = value if type(value) != auto else self.make_default("ModPrcgSts")
 
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+	@ModPrcgSts.deleter
+	def ModPrcgSts(self):
+		del self._ModPrcgSts
+		self._ModPrcgSts = None
 
 	@property
 	def SfkpgAcct(self):
@@ -38,30 +38,30 @@ class SecuritiesSettlementTransactionModificationRequestStatusAdviceV07(base_typ
 		self._SfkpgAcct = None
 
 	@property
-	def ModReqRef(self):
-		return self._ModReqRef
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@ModReqRef.setter
-	def ModReqRef(self, value):
-		self._ModReqRef = value if type(value) != auto else self.make_default("ModReqRef")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@ModReqRef.deleter
-	def ModReqRef(self):
-		del self._ModReqRef
-		self._ModReqRef = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
-	def ModPrcgSts(self):
-		return self._ModPrcgSts
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
 
-	@ModPrcgSts.setter
-	def ModPrcgSts(self, value):
-		self._ModPrcgSts = value if type(value) != auto else self.make_default("ModPrcgSts")
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
 
-	@ModPrcgSts.deleter
-	def ModPrcgSts(self):
-		del self._ModPrcgSts
-		self._ModPrcgSts = None
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
 
 	@property
 	def AcctOwnr(self):
@@ -103,26 +103,26 @@ class SecuritiesSettlementTransactionModificationRequestStatusAdviceV07(base_typ
 		self._TxId = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def ModReqRef(self):
+		return self._ModReqRef
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@ModReqRef.setter
+	def ModReqRef(self, value):
+		self._ModReqRef = value if type(value) != auto else self.make_default("ModReqRef")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@ModReqRef.deleter
+	def ModReqRef(self):
+		del self._ModReqRef
+		self._ModReqRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ModReqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModPrcgSts', type=ModificationProcessingStatus10Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtls', type=TransactionDetails171, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifications33, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ModReqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

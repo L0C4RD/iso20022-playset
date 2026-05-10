@@ -1,21 +1,21 @@
-import base_types
+from . import base_types
 import SecurityAttributes12
 
 class UpdateType35Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Modfy", "_Del", "_Add"]
+	__slots__ = ["_Add", "_Del", "_Modfy"]
 	@property
-	def Modfy(self):
-		return self._Modfy
+	def Add(self):
+		return self._Add
 
-	@Modfy.setter
-	def Modfy(self, value):
-		self._Modfy = value if type(value) != auto else self.make_default("Modfy")
+	@Add.setter
+	def Add(self, value):
+		self._Add = value if type(value) != auto else self.make_default("Add")
 
-	@Modfy.deleter
-	def Modfy(self):
-		del self._Modfy
-		self._Modfy = None
+	@Add.deleter
+	def Add(self):
+		del self._Add
+		self._Add = None
 
 	@property
 	def Del(self):
@@ -31,21 +31,21 @@ class UpdateType35Choice(base_types._BaseFieldType):
 		self._Del = None
 
 	@property
-	def Add(self):
-		return self._Add
+	def Modfy(self):
+		return self._Modfy
 
-	@Add.setter
-	def Add(self, value):
-		self._Add = value if type(value) != auto else self.make_default("Add")
+	@Modfy.setter
+	def Modfy(self, value):
+		self._Modfy = value if type(value) != auto else self.make_default("Modfy")
 
-	@Add.deleter
-	def Add(self):
-		del self._Add
-		self._Add = None
+	@Modfy.deleter
+	def Modfy(self):
+		del self._Modfy
+		self._Modfy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Modfy', type=SecurityAttributes12, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Del', type=SecurityAttributes12, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Add', type=SecurityAttributes12, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Del', type=SecurityAttributes12, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Modfy', type=SecurityAttributes12, min=0, max=1, mutex_group=1, array=False),
 	))
 

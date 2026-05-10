@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountOpeningRequestV05
 
 class ACMT_007_001_05():

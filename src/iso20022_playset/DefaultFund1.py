@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
 import AccountIdentification4Choice
 import Contribution1
 import ActiveCurrencyAndAmount
 
 class DefaultFund1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlDfltFndAmt", "_DfltFndAcct", "_IncrCvrgAmt", "_Cntrbtn"]
+	__slots__ = ["_Cntrbtn", "_TtlDfltFndAmt", "_IncrCvrgAmt", "_DfltFndAcct"]
+	@property
+	def Cntrbtn(self):
+		return self._Cntrbtn
+
+	@Cntrbtn.setter
+	def Cntrbtn(self, value):
+		self._Cntrbtn = value if type(value) != auto else self.make_default("Cntrbtn")
+
+	@Cntrbtn.deleter
+	def Cntrbtn(self):
+		del self._Cntrbtn
+		self._Cntrbtn = None
+
 	@property
 	def TtlDfltFndAmt(self):
 		return self._TtlDfltFndAmt
@@ -18,19 +31,6 @@ class DefaultFund1(base_types._BaseFieldType):
 	def TtlDfltFndAmt(self):
 		del self._TtlDfltFndAmt
 		self._TtlDfltFndAmt = None
-
-	@property
-	def DfltFndAcct(self):
-		return self._DfltFndAcct
-
-	@DfltFndAcct.setter
-	def DfltFndAcct(self, value):
-		self._DfltFndAcct = value if type(value) != auto else self.make_default("DfltFndAcct")
-
-	@DfltFndAcct.deleter
-	def DfltFndAcct(self):
-		del self._DfltFndAcct
-		self._DfltFndAcct = None
 
 	@property
 	def IncrCvrgAmt(self):
@@ -46,22 +46,22 @@ class DefaultFund1(base_types._BaseFieldType):
 		self._IncrCvrgAmt = None
 
 	@property
-	def Cntrbtn(self):
-		return self._Cntrbtn
+	def DfltFndAcct(self):
+		return self._DfltFndAcct
 
-	@Cntrbtn.setter
-	def Cntrbtn(self, value):
-		self._Cntrbtn = value if type(value) != auto else self.make_default("Cntrbtn")
+	@DfltFndAcct.setter
+	def DfltFndAcct(self, value):
+		self._DfltFndAcct = value if type(value) != auto else self.make_default("DfltFndAcct")
 
-	@Cntrbtn.deleter
-	def Cntrbtn(self):
-		del self._Cntrbtn
-		self._Cntrbtn = None
+	@DfltFndAcct.deleter
+	def DfltFndAcct(self):
+		del self._DfltFndAcct
+		self._DfltFndAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlDfltFndAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DfltFndAcct', type=AccountIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IncrCvrgAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntrbtn', type=Contribution1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlDfltFndAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IncrCvrgAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DfltFndAcct', type=AccountIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

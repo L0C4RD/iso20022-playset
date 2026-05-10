@@ -1,24 +1,24 @@
-import base_types
-import ISODateTime
-import ExchangeRateOrPercentage1Choice
+from . import base_types
 import ActiveOrHistoricCurrencyCode
+import ExchangeRateOrPercentage1Choice
 import BaseOneRate
+import ISODateTime
 
 class CurrencyExchange20(base_types._BaseFieldType):
 
-	__slots__ = ["_QtnDt", "_XchgRate", "_LwLmt", "_QtdCcy", "_HghLmt"]
+	__slots__ = ["_QtdCcy", "_XchgRate", "_LwLmt", "_HghLmt", "_QtnDt"]
 	@property
-	def QtnDt(self):
-		return self._QtnDt
+	def QtdCcy(self):
+		return self._QtdCcy
 
-	@QtnDt.setter
-	def QtnDt(self, value):
-		self._QtnDt = value if type(value) != auto else self.make_default("QtnDt")
+	@QtdCcy.setter
+	def QtdCcy(self, value):
+		self._QtdCcy = value if type(value) != auto else self.make_default("QtdCcy")
 
-	@QtnDt.deleter
-	def QtnDt(self):
-		del self._QtnDt
-		self._QtnDt = None
+	@QtdCcy.deleter
+	def QtdCcy(self):
+		del self._QtdCcy
+		self._QtdCcy = None
 
 	@property
 	def XchgRate(self):
@@ -47,19 +47,6 @@ class CurrencyExchange20(base_types._BaseFieldType):
 		self._LwLmt = None
 
 	@property
-	def QtdCcy(self):
-		return self._QtdCcy
-
-	@QtdCcy.setter
-	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != auto else self.make_default("QtdCcy")
-
-	@QtdCcy.deleter
-	def QtdCcy(self):
-		del self._QtdCcy
-		self._QtdCcy = None
-
-	@property
 	def HghLmt(self):
 		return self._HghLmt
 
@@ -72,11 +59,24 @@ class CurrencyExchange20(base_types._BaseFieldType):
 		del self._HghLmt
 		self._HghLmt = None
 
+	@property
+	def QtnDt(self):
+		return self._QtnDt
+
+	@QtnDt.setter
+	def QtnDt(self, value):
+		self._QtnDt = value if type(value) != auto else self.make_default("QtnDt")
+
+	@QtnDt.deleter
+	def QtnDt(self):
+		del self._QtnDt
+		self._QtnDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtdCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LwLmt', type=ExchangeRateOrPercentage1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtdCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HghLmt', type=ExchangeRateOrPercentage1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

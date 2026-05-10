@@ -1,24 +1,24 @@
-import base_types
-import Exact3NumericText
+from . import base_types
+import CorporateActionOption1FormatChoice
 import CorporateActionDeactivationInstructionProcessingStatus1
 import CorporateActionDeactivationInstructionRejectionStatus1
-import CorporateActionOption1FormatChoice
+import Exact3NumericText
 
 class CorporateActionDeactivationInstructionStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnTp", "_PrcdSts", "_RjctdSts", "_OptnNb"]
+	__slots__ = ["_OptnNb", "_PrcdSts", "_RjctdSts", "_OptnTp"]
 	@property
-	def OptnTp(self):
-		return self._OptnTp
+	def OptnNb(self):
+		return self._OptnNb
 
-	@OptnTp.setter
-	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
+	@OptnNb.setter
+	def OptnNb(self, value):
+		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
 
-	@OptnTp.deleter
-	def OptnTp(self):
-		del self._OptnTp
-		self._OptnTp = None
+	@OptnNb.deleter
+	def OptnNb(self):
+		del self._OptnNb
+		self._OptnNb = None
 
 	@property
 	def PrcdSts(self):
@@ -47,22 +47,22 @@ class CorporateActionDeactivationInstructionStatus1(base_types._BaseFieldType):
 		self._RjctdSts = None
 
 	@property
-	def OptnNb(self):
-		return self._OptnNb
+	def OptnTp(self):
+		return self._OptnTp
 
-	@OptnNb.setter
-	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
+	@OptnTp.setter
+	def OptnTp(self, value):
+		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
 
-	@OptnNb.deleter
-	def OptnNb(self):
-		del self._OptnNb
-		self._OptnNb = None
+	@OptnTp.deleter
+	def OptnTp(self):
+		del self._OptnTp
+		self._OptnTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcdSts', type=CorporateActionDeactivationInstructionProcessingStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RjctdSts', type=CorporateActionDeactivationInstructionRejectionStatus1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=0, max=1, mutex_group=None, array=False),
 	))
 

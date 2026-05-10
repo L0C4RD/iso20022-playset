@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FileActionInitiationV03
 
 class CAFM_001_001_03():

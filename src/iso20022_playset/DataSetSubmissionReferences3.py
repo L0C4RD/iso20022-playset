@@ -1,23 +1,23 @@
-import base_types
-import Max35Text
+from . import base_types
 import DocumentIdentification7
 import YesNoIndicator
+import Max35Text
 
 class DataSetSubmissionReferences3(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_PurchsOrdrRef", "_ForcdMtch", "_SubmitrTxRef"]
+	__slots__ = ["_SubmitrTxRef", "_PurchsOrdrRef", "_ForcdMtch", "_TxId"]
 	@property
-	def TxId(self):
-		return self._TxId
+	def SubmitrTxRef(self):
+		return self._SubmitrTxRef
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@SubmitrTxRef.setter
+	def SubmitrTxRef(self, value):
+		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@SubmitrTxRef.deleter
+	def SubmitrTxRef(self):
+		del self._SubmitrTxRef
+		self._SubmitrTxRef = None
 
 	@property
 	def PurchsOrdrRef(self):
@@ -46,22 +46,22 @@ class DataSetSubmissionReferences3(base_types._BaseFieldType):
 		self._ForcdMtch = None
 
 	@property
-	def SubmitrTxRef(self):
-		return self._SubmitrTxRef
+	def TxId(self):
+		return self._TxId
 
-	@SubmitrTxRef.setter
-	def SubmitrTxRef(self, value):
-		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@SubmitrTxRef.deleter
-	def SubmitrTxRef(self):
-		del self._SubmitrTxRef
-		self._SubmitrTxRef = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitrTxRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ForcdMtch', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubmitrTxRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

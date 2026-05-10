@@ -1,25 +1,12 @@
-import base_types
-import Max35Text
+from . import base_types
 import InstalmentPeriod1Code
 import BaseOneRate
+import Max35Text
 import InterestRate1Code
 
 class InterestRateDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTp", "_Rate", "_Prd", "_Tp"]
-	@property
-	def OthrTp(self):
-		return self._OthrTp
-
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
-
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
-
+	__slots__ = ["_Rate", "_OthrTp", "_Tp", "_Prd"]
 	@property
 	def Rate(self):
 		return self._Rate
@@ -34,17 +21,17 @@ class InterestRateDetails2(base_types._BaseFieldType):
 		self._Rate = None
 
 	@property
-	def Prd(self):
-		return self._Prd
+	def OthrTp(self):
+		return self._OthrTp
 
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
 
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
 
 	@property
 	def Tp(self):
@@ -59,10 +46,23 @@ class InterestRateDetails2(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Prd(self):
+		return self._Prd
+
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != auto else self.make_default("Prd")
+
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prd', type=InstalmentPeriod1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=InterestRate1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prd', type=InstalmentPeriod1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

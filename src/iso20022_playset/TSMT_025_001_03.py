@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import StatusChangeNotificationV03
 
 class TSMT_025_001_03():

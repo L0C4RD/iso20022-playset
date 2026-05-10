@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ATMExceptionAdviceV02
 
 class CAAM_011_001_02():

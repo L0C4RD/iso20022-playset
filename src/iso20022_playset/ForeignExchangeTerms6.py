@@ -1,24 +1,24 @@
-import base_types
-import ISODateTime
+from . import base_types
 import ActiveOrHistoricCurrencyCode
-import PartyIdentification2Choice
 import BaseOneRate
+import PartyIdentification2Choice
+import ISODateTime
 
 class ForeignExchangeTerms6(base_types._BaseFieldType):
 
-	__slots__ = ["_QtgInstn", "_QtnDt", "_XchgRate", "_UnitCcy", "_QtdCcy"]
+	__slots__ = ["_QtdCcy", "_QtnDt", "_QtgInstn", "_XchgRate", "_UnitCcy"]
 	@property
-	def QtgInstn(self):
-		return self._QtgInstn
+	def QtdCcy(self):
+		return self._QtdCcy
 
-	@QtgInstn.setter
-	def QtgInstn(self, value):
-		self._QtgInstn = value if type(value) != auto else self.make_default("QtgInstn")
+	@QtdCcy.setter
+	def QtdCcy(self, value):
+		self._QtdCcy = value if type(value) != auto else self.make_default("QtdCcy")
 
-	@QtgInstn.deleter
-	def QtgInstn(self):
-		del self._QtgInstn
-		self._QtgInstn = None
+	@QtdCcy.deleter
+	def QtdCcy(self):
+		del self._QtdCcy
+		self._QtdCcy = None
 
 	@property
 	def QtnDt(self):
@@ -32,6 +32,19 @@ class ForeignExchangeTerms6(base_types._BaseFieldType):
 	def QtnDt(self):
 		del self._QtnDt
 		self._QtnDt = None
+
+	@property
+	def QtgInstn(self):
+		return self._QtgInstn
+
+	@QtgInstn.setter
+	def QtgInstn(self, value):
+		self._QtgInstn = value if type(value) != auto else self.make_default("QtgInstn")
+
+	@QtgInstn.deleter
+	def QtgInstn(self):
+		del self._QtgInstn
+		self._QtgInstn = None
 
 	@property
 	def XchgRate(self):
@@ -59,24 +72,11 @@ class ForeignExchangeTerms6(base_types._BaseFieldType):
 		del self._UnitCcy
 		self._UnitCcy = None
 
-	@property
-	def QtdCcy(self):
-		return self._QtdCcy
-
-	@QtdCcy.setter
-	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != auto else self.make_default("QtdCcy")
-
-	@QtdCcy.deleter
-	def QtdCcy(self):
-		del self._QtdCcy
-		self._QtdCcy = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QtgInstn', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtdCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtgInstn', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtdCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

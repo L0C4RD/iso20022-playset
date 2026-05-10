@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import RejectionStatus20Choice
-import PendingStatus20Choice
 import ConsentStatus4Choice
+import PendingStatus20Choice
 
 class ResponseStatus6Choice(base_types._BaseFieldType):
 

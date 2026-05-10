@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CollateralManagementCancellationRequestV06
 
 class COLR_005_001_06():

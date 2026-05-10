@@ -1,24 +1,24 @@
-import base_types
+from . import base_types
 import ISODate
-import ActiveCurrencyAndAmount
 import RepurchaseAgreementType3Choice
 import LEIIdentifier
+import ActiveCurrencyAndAmount
 
 class RepurchaseAgreement2(base_types._BaseFieldType):
 
-	__slots__ = ["_ScndLegPric", "_RpAgrmtTp", "_CollMktVal", "_MtrtyDt", "_TrptyAgtId", "_CtrPty"]
+	__slots__ = ["_MtrtyDt", "_RpAgrmtTp", "_CollMktVal", "_ScndLegPric", "_TrptyAgtId", "_CtrPty"]
 	@property
-	def ScndLegPric(self):
-		return self._ScndLegPric
+	def MtrtyDt(self):
+		return self._MtrtyDt
 
-	@ScndLegPric.setter
-	def ScndLegPric(self, value):
-		self._ScndLegPric = value if type(value) != auto else self.make_default("ScndLegPric")
+	@MtrtyDt.setter
+	def MtrtyDt(self, value):
+		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
 
-	@ScndLegPric.deleter
-	def ScndLegPric(self):
-		del self._ScndLegPric
-		self._ScndLegPric = None
+	@MtrtyDt.deleter
+	def MtrtyDt(self):
+		del self._MtrtyDt
+		self._MtrtyDt = None
 
 	@property
 	def RpAgrmtTp(self):
@@ -47,17 +47,17 @@ class RepurchaseAgreement2(base_types._BaseFieldType):
 		self._CollMktVal = None
 
 	@property
-	def MtrtyDt(self):
-		return self._MtrtyDt
+	def ScndLegPric(self):
+		return self._ScndLegPric
 
-	@MtrtyDt.setter
-	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+	@ScndLegPric.setter
+	def ScndLegPric(self, value):
+		self._ScndLegPric = value if type(value) != auto else self.make_default("ScndLegPric")
 
-	@MtrtyDt.deleter
-	def MtrtyDt(self):
-		del self._MtrtyDt
-		self._MtrtyDt = None
+	@ScndLegPric.deleter
+	def ScndLegPric(self):
+		del self._ScndLegPric
+		self._ScndLegPric = None
 
 	@property
 	def TrptyAgtId(self):
@@ -86,10 +86,10 @@ class RepurchaseAgreement2(base_types._BaseFieldType):
 		self._CtrPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ScndLegPric', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RpAgrmtTp', type=RepurchaseAgreementType3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollMktVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScndLegPric', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 	))

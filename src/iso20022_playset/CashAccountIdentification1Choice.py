@@ -1,25 +1,12 @@
-import base_types
-import UPICIdentifier
-import SimpleIdentificationInformation
+from . import base_types
 import IBANIdentifier
+import UPICIdentifier
 import BBANIdentifier
+import SimpleIdentificationInformation
 
 class CashAccountIdentification1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DmstAcct", "_IBAN", "_BBAN", "_UPIC"]
-	@property
-	def DmstAcct(self):
-		return self._DmstAcct
-
-	@DmstAcct.setter
-	def DmstAcct(self, value):
-		self._DmstAcct = value if type(value) != auto else self.make_default("DmstAcct")
-
-	@DmstAcct.deleter
-	def DmstAcct(self):
-		del self._DmstAcct
-		self._DmstAcct = None
-
+	__slots__ = ["_IBAN", "_BBAN", "_DmstAcct", "_UPIC"]
 	@property
 	def IBAN(self):
 		return self._IBAN
@@ -47,6 +34,19 @@ class CashAccountIdentification1Choice(base_types._BaseFieldType):
 		self._BBAN = None
 
 	@property
+	def DmstAcct(self):
+		return self._DmstAcct
+
+	@DmstAcct.setter
+	def DmstAcct(self, value):
+		self._DmstAcct = value if type(value) != auto else self.make_default("DmstAcct")
+
+	@DmstAcct.deleter
+	def DmstAcct(self):
+		del self._DmstAcct
+		self._DmstAcct = None
+
+	@property
 	def UPIC(self):
 		return self._UPIC
 
@@ -60,9 +60,9 @@ class CashAccountIdentification1Choice(base_types._BaseFieldType):
 		self._UPIC = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DmstAcct', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IBAN', type=IBANIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BBAN', type=BBANIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DmstAcct', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UPIC', type=UPICIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

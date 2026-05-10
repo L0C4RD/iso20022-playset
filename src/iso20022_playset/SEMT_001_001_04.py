@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesMessageRejectionV04
 
 class SEMT_001_001_04():

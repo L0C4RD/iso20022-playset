@@ -1,6 +1,6 @@
-import base_types
-import CancelledStatusReason13Code
+from . import base_types
 import GenericIdentification30
+import CancelledStatusReason13Code
 
 class CancellationReason19Choice(base_types._BaseFieldType):
 

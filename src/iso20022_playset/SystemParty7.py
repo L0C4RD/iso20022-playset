@@ -1,19 +1,45 @@
-import base_types
-import MarketSpecificAttribute1
-import PostalAddress28
-import SystemPartyIdentification9
-import PartyLockStatus1
-import TechnicalIdentification2Choice
-import PartyName4
+from . import base_types
 import ISODate
+import SystemPartyIdentification9
 import SystemPartyType1Choice
-import Contact14
+import PartyLockStatus1
 import SystemRestriction1
+import MarketSpecificAttribute1
+import TechnicalIdentification2Choice
 import ResidenceType1Code
+import PartyName4
+import PostalAddress28
+import Contact14
 
 class SystemParty7(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctDtls", "_TechAdr", "_MktSpcfcAttr", "_Adr", "_PtyId", "_ResTp", "_LckSts", "_Rstrctn", "_Nm", "_OpngDt", "_Tp", "_ClsgDt"]
+	__slots__ = ["_Adr", "_OpngDt", "_CtctDtls", "_TechAdr", "_MktSpcfcAttr", "_ResTp", "_Tp", "_LckSts", "_PtyId", "_Rstrctn", "_Nm", "_ClsgDt"]
+	@property
+	def Adr(self):
+		return self._Adr
+
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != auto else self.make_default("Adr")
+
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
+
+	@property
+	def OpngDt(self):
+		return self._OpngDt
+
+	@OpngDt.setter
+	def OpngDt(self, value):
+		self._OpngDt = value if type(value) != auto else self.make_default("OpngDt")
+
+	@OpngDt.deleter
+	def OpngDt(self):
+		del self._OpngDt
+		self._OpngDt = None
+
 	@property
 	def CtctDtls(self):
 		return self._CtctDtls
@@ -54,32 +80,6 @@ class SystemParty7(base_types._BaseFieldType):
 		self._MktSpcfcAttr = None
 
 	@property
-	def Adr(self):
-		return self._Adr
-
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
-
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
-
-	@property
-	def PtyId(self):
-		return self._PtyId
-
-	@PtyId.setter
-	def PtyId(self, value):
-		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
-
-	@PtyId.deleter
-	def PtyId(self):
-		del self._PtyId
-		self._PtyId = None
-
-	@property
 	def ResTp(self):
 		return self._ResTp
 
@@ -93,6 +93,19 @@ class SystemParty7(base_types._BaseFieldType):
 		self._ResTp = None
 
 	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
 	def LckSts(self):
 		return self._LckSts
 
@@ -104,6 +117,19 @@ class SystemParty7(base_types._BaseFieldType):
 	def LckSts(self):
 		del self._LckSts
 		self._LckSts = None
+
+	@property
+	def PtyId(self):
+		return self._PtyId
+
+	@PtyId.setter
+	def PtyId(self, value):
+		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
+
+	@PtyId.deleter
+	def PtyId(self):
+		del self._PtyId
+		self._PtyId = None
 
 	@property
 	def Rstrctn(self):
@@ -132,32 +158,6 @@ class SystemParty7(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def OpngDt(self):
-		return self._OpngDt
-
-	@OpngDt.setter
-	def OpngDt(self, value):
-		self._OpngDt = value if type(value) != auto else self.make_default("OpngDt")
-
-	@OpngDt.deleter
-	def OpngDt(self):
-		del self._OpngDt
-		self._OpngDt = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
 	def ClsgDt(self):
 		return self._ClsgDt
 
@@ -171,17 +171,17 @@ class SystemParty7(base_types._BaseFieldType):
 		self._ClsgDt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Adr', type=PostalAddress28, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OpngDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctDtls', type=Contact14, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TechAdr', type=TechnicalIdentification2Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MktSpcfcAttr', type=MarketSpecificAttribute1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Adr', type=PostalAddress28, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PtyId', type=SystemPartyIdentification9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ResTp', type=ResidenceType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=SystemPartyType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LckSts', type=PartyLockStatus1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyId', type=SystemPartyIdentification9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rstrctn', type=SystemRestriction1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Nm', type=PartyName4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OpngDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=SystemPartyType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

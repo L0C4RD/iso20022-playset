@@ -1,11 +1,37 @@
-import base_types
+from . import base_types
 import ContentInformationType39
 import Max1025Text
 import Max100KBinary
 
 class ExternallyDefinedData5(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Id", "_PrtctdVal", "_Val"]
+	__slots__ = ["_Val", "_PrtctdVal", "_Tp", "_Id"]
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
+
+	@property
+	def PrtctdVal(self):
+		return self._PrtctdVal
+
+	@PrtctdVal.setter
+	def PrtctdVal(self, value):
+		self._PrtctdVal = value if type(value) != auto else self.make_default("PrtctdVal")
+
+	@PrtctdVal.deleter
+	def PrtctdVal(self):
+		del self._PrtctdVal
+		self._PrtctdVal = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -32,36 +58,10 @@ class ExternallyDefinedData5(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
-	@property
-	def PrtctdVal(self):
-		return self._PrtctdVal
-
-	@PrtctdVal.setter
-	def PrtctdVal(self, value):
-		self._PrtctdVal = value if type(value) != auto else self.make_default("PrtctdVal")
-
-	@PrtctdVal.deleter
-	def PrtctdVal(self):
-		del self._PrtctdVal
-		self._PrtctdVal = None
-
-	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Val', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdVal', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max1025Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdVal', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Val', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
 	))
 

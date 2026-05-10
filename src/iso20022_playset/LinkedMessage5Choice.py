@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AdditionalReference13
 
 class LinkedMessage5Choice(base_types._BaseFieldType):

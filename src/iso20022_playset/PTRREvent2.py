@@ -1,6 +1,6 @@
-import base_types
-import RiskReductionService1Code
+from . import base_types
 import OrganisationIdentification15Choice
+import RiskReductionService1Code
 
 class PTRREvent2(base_types._BaseFieldType):
 

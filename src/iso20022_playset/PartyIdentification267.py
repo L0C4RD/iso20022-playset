@@ -1,7 +1,7 @@
-import base_types
-import AnyBICDec2014Identifier
+from . import base_types
 import NameAndAddress13
 import GenericIdentification36
+import AnyBICDec2014Identifier
 
 class PartyIdentification267(base_types._BaseFieldType):
 

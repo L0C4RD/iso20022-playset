@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MeetingCancellationV10
 
 class SEEV_002_001_10():

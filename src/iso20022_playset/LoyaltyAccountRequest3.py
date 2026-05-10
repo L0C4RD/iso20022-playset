@@ -1,6 +1,6 @@
-import base_types
-import CustomerOrder1
+from . import base_types
 import LoyaltyAccount3
+import CustomerOrder1
 
 class LoyaltyAccountRequest3(base_types._BaseFieldType):
 

@@ -1,24 +1,24 @@
-import base_types
+from . import base_types
+import RestrictedFINMax23Text
 import RestrictedFINMax35Text
 import CountryCode
-import RestrictedFINMax23Text
 import RestrictedFINMax8Text
 
 class PostalAddress7(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_PstCd", "_TwnNm", "_AdrLine"]
+	__slots__ = ["_TwnNm", "_PstCd", "_Ctry", "_AdrLine"]
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def TwnNm(self):
+		return self._TwnNm
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+	@TwnNm.setter
+	def TwnNm(self, value):
+		self._TwnNm = value if type(value) != auto else self.make_default("TwnNm")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
+	@TwnNm.deleter
+	def TwnNm(self):
+		del self._TwnNm
+		self._TwnNm = None
 
 	@property
 	def PstCd(self):
@@ -34,17 +34,17 @@ class PostalAddress7(base_types._BaseFieldType):
 		self._PstCd = None
 
 	@property
-	def TwnNm(self):
-		return self._TwnNm
+	def Ctry(self):
+		return self._Ctry
 
-	@TwnNm.setter
-	def TwnNm(self, value):
-		self._TwnNm = value if type(value) != auto else self.make_default("TwnNm")
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
 
-	@TwnNm.deleter
-	def TwnNm(self):
-		del self._TwnNm
-		self._TwnNm = None
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
 
 	@property
 	def AdrLine(self):
@@ -60,9 +60,9 @@ class PostalAddress7(base_types._BaseFieldType):
 		self._AdrLine = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstCd', type=RestrictedFINMax8Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TwnNm', type=RestrictedFINMax23Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstCd', type=RestrictedFINMax8Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AdrLine', type=RestrictedFINMax35Text, min=0, max=2, mutex_group=None, array=True),
 	))
 

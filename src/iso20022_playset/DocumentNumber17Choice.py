@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
+import GenericIdentification30
 import ISO20022MessageIdentificationText
 import Exact3NumericText
-import GenericIdentification30
 
 class DocumentNumber17Choice(base_types._BaseFieldType):
 

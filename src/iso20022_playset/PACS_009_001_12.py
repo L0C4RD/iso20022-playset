@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialInstitutionCreditTransferV12
 
 class PACS_009_001_12():

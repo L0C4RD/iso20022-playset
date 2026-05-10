@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class AnyBICIdentifier(base_types._BaseDataType_String):
 

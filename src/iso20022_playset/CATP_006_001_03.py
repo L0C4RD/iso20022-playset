@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ATMInquiryRequestV03
 
 class CATP_006_001_03():

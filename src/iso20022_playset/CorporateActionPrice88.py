@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
+import IndicativeOrMarketPrice13Choice
 import PriceFormat77Choice
 import PriceFormat78Choice
-import IndicativeOrMarketPrice13Choice
 
 class CorporateActionPrice88(base_types._BaseFieldType):
 
-	__slots__ = ["_GncCshPricPdPerPdct", "_IssePric", "_IndctvOrMktPric", "_GncCshPricRcvdPerPdct"]
+	__slots__ = ["_GncCshPricRcvdPerPdct", "_IssePric", "_IndctvOrMktPric", "_GncCshPricPdPerPdct"]
 	@property
-	def GncCshPricPdPerPdct(self):
-		return self._GncCshPricPdPerPdct
+	def GncCshPricRcvdPerPdct(self):
+		return self._GncCshPricRcvdPerPdct
 
-	@GncCshPricPdPerPdct.setter
-	def GncCshPricPdPerPdct(self, value):
-		self._GncCshPricPdPerPdct = value if type(value) != auto else self.make_default("GncCshPricPdPerPdct")
+	@GncCshPricRcvdPerPdct.setter
+	def GncCshPricRcvdPerPdct(self, value):
+		self._GncCshPricRcvdPerPdct = value if type(value) != auto else self.make_default("GncCshPricRcvdPerPdct")
 
-	@GncCshPricPdPerPdct.deleter
-	def GncCshPricPdPerPdct(self):
-		del self._GncCshPricPdPerPdct
-		self._GncCshPricPdPerPdct = None
+	@GncCshPricRcvdPerPdct.deleter
+	def GncCshPricRcvdPerPdct(self):
+		del self._GncCshPricRcvdPerPdct
+		self._GncCshPricRcvdPerPdct = None
 
 	@property
 	def IssePric(self):
@@ -46,22 +46,22 @@ class CorporateActionPrice88(base_types._BaseFieldType):
 		self._IndctvOrMktPric = None
 
 	@property
-	def GncCshPricRcvdPerPdct(self):
-		return self._GncCshPricRcvdPerPdct
+	def GncCshPricPdPerPdct(self):
+		return self._GncCshPricPdPerPdct
 
-	@GncCshPricRcvdPerPdct.setter
-	def GncCshPricRcvdPerPdct(self, value):
-		self._GncCshPricRcvdPerPdct = value if type(value) != auto else self.make_default("GncCshPricRcvdPerPdct")
+	@GncCshPricPdPerPdct.setter
+	def GncCshPricPdPerPdct(self, value):
+		self._GncCshPricPdPerPdct = value if type(value) != auto else self.make_default("GncCshPricPdPerPdct")
 
-	@GncCshPricRcvdPerPdct.deleter
-	def GncCshPricRcvdPerPdct(self):
-		del self._GncCshPricRcvdPerPdct
-		self._GncCshPricRcvdPerPdct = None
+	@GncCshPricPdPerPdct.deleter
+	def GncCshPricPdPerPdct(self):
+		del self._GncCshPricPdPerPdct
+		self._GncCshPricPdPerPdct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat77Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GncCshPricRcvdPerPdct', type=PriceFormat78Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssePric', type=PriceFormat77Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndctvOrMktPric', type=IndicativeOrMarketPrice13Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GncCshPricRcvdPerPdct', type=PriceFormat78Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat77Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

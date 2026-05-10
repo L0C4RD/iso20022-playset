@@ -1,6 +1,6 @@
-import base_types
-import NoReasonCode
+from . import base_types
 import AwaitingCancellationReason2
+import NoReasonCode
 
 class CancellationReason39Choice(base_types._BaseFieldType):
 

@@ -1,26 +1,13 @@
-import base_types
-import Max35Text
+from . import base_types
+import ISODate
 import ISODateTime
 import Exact4AlphaNumericText
 import Entry2Code
-import ISODate
+import Max35Text
 
 class ReportData4(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_MsgId", "_Tp", "_DtAndTmStmp", "_SttlmSsnIdr", "_SchdlTp"]
-	@property
-	def ValDt(self):
-		return self._ValDt
-
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
-
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
-
+	__slots__ = ["_MsgId", "_SchdlTp", "_SttlmSsnIdr", "_Tp", "_ValDt", "_DtAndTmStmp"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -35,30 +22,17 @@ class ReportData4(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def SchdlTp(self):
+		return self._SchdlTp
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@SchdlTp.setter
+	def SchdlTp(self, value):
+		self._SchdlTp = value if type(value) != auto else self.make_default("SchdlTp")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def DtAndTmStmp(self):
-		return self._DtAndTmStmp
-
-	@DtAndTmStmp.setter
-	def DtAndTmStmp(self, value):
-		self._DtAndTmStmp = value if type(value) != auto else self.make_default("DtAndTmStmp")
-
-	@DtAndTmStmp.deleter
-	def DtAndTmStmp(self):
-		del self._DtAndTmStmp
-		self._DtAndTmStmp = None
+	@SchdlTp.deleter
+	def SchdlTp(self):
+		del self._SchdlTp
+		self._SchdlTp = None
 
 	@property
 	def SttlmSsnIdr(self):
@@ -74,24 +48,50 @@ class ReportData4(base_types._BaseFieldType):
 		self._SttlmSsnIdr = None
 
 	@property
-	def SchdlTp(self):
-		return self._SchdlTp
+	def Tp(self):
+		return self._Tp
 
-	@SchdlTp.setter
-	def SchdlTp(self, value):
-		self._SchdlTp = value if type(value) != auto else self.make_default("SchdlTp")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@SchdlTp.deleter
-	def SchdlTp(self):
-		del self._SchdlTp
-		self._SchdlTp = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def ValDt(self):
+		return self._ValDt
+
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
+
+	@property
+	def DtAndTmStmp(self):
+		return self._DtAndTmStmp
+
+	@DtAndTmStmp.setter
+	def DtAndTmStmp(self, value):
+		self._DtAndTmStmp = value if type(value) != auto else self.make_default("DtAndTmStmp")
+
+	@DtAndTmStmp.deleter
+	def DtAndTmStmp(self):
+		del self._DtAndTmStmp
+		self._DtAndTmStmp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=Entry2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtAndTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchdlTp', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Entry2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtAndTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

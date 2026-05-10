@@ -1,39 +1,13 @@
-import base_types
-import CopyInformation5
+from . import base_types
 import Extension1
-import AdditionalReference10
+import CopyInformation5
 import MessageIdentification1
 import RedemptionMultipleExecution6
+import AdditionalReference10
 
 class RedemptionOrderConfirmationV05(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_CpyDtls", "_PrvsRef", "_RltdRef", "_Xtnsn", "_PoolRef", "_MltplExctnDtls"]
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
-	@property
-	def CpyDtls(self):
-		return self._CpyDtls
-
-	@CpyDtls.setter
-	def CpyDtls(self, value):
-		self._CpyDtls = value if type(value) != auto else self.make_default("CpyDtls")
-
-	@CpyDtls.deleter
-	def CpyDtls(self):
-		del self._CpyDtls
-		self._CpyDtls = None
-
+	__slots__ = ["_PrvsRef", "_Xtnsn", "_RltdRef", "_PoolRef", "_CpyDtls", "_MsgId", "_MltplExctnDtls"]
 	@property
 	def PrvsRef(self):
 		return self._PrvsRef
@@ -46,19 +20,6 @@ class RedemptionOrderConfirmationV05(base_types._BaseFieldType):
 	def PrvsRef(self):
 		del self._PrvsRef
 		self._PrvsRef = None
-
-	@property
-	def RltdRef(self):
-		return self._RltdRef
-
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
-
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
 
 	@property
 	def Xtnsn(self):
@@ -74,6 +35,19 @@ class RedemptionOrderConfirmationV05(base_types._BaseFieldType):
 		self._Xtnsn = None
 
 	@property
+	def RltdRef(self):
+		return self._RltdRef
+
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
+
+	@property
 	def PoolRef(self):
 		return self._PoolRef
 
@@ -85,6 +59,32 @@ class RedemptionOrderConfirmationV05(base_types._BaseFieldType):
 	def PoolRef(self):
 		del self._PoolRef
 		self._PoolRef = None
+
+	@property
+	def CpyDtls(self):
+		return self._CpyDtls
+
+	@CpyDtls.setter
+	def CpyDtls(self, value):
+		self._CpyDtls = value if type(value) != auto else self.make_default("CpyDtls")
+
+	@CpyDtls.deleter
+	def CpyDtls(self):
+		del self._CpyDtls
+		self._CpyDtls = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def MltplExctnDtls(self):
@@ -100,12 +100,12 @@ class RedemptionOrderConfirmationV05(base_types._BaseFieldType):
 		self._MltplExctnDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CpyDtls', type=CopyInformation5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PoolRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpyDtls', type=CopyInformation5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MltplExctnDtls', type=RedemptionMultipleExecution6, min=1, max=1, mutex_group=None, array=False),
 	))
 

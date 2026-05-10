@@ -1,24 +1,37 @@
-import base_types
-import YesNoIndicator
-import ReceiveDelivery1Code
+from . import base_types
 import RestrictedFINXMax16Text
+import ReceiveDelivery1Code
+import YesNoIndicator
 import DeliveryReceiptType2Code
 
 class SettlementTypeAndAdditionalParameters22(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesMvmntTp", "_ClntTrptyCollTxId", "_RcncltnInd", "_Pmt", "_TrptyAgtSvcPrvdrCollTxId", "_ClntCollInstrId", "_CorpActnEvtId", "_TrptyAgtSvcPrvdrCollInstrId", "_CmonId"]
+	__slots__ = ["_Pmt", "_ClntCollInstrId", "_ClntTrptyCollTxId", "_RcncltnInd", "_TrptyAgtSvcPrvdrCollTxId", "_CorpActnEvtId", "_TrptyAgtSvcPrvdrCollInstrId", "_CmonId", "_SctiesMvmntTp"]
 	@property
-	def SctiesMvmntTp(self):
-		return self._SctiesMvmntTp
+	def Pmt(self):
+		return self._Pmt
 
-	@SctiesMvmntTp.setter
-	def SctiesMvmntTp(self, value):
-		self._SctiesMvmntTp = value if type(value) != auto else self.make_default("SctiesMvmntTp")
+	@Pmt.setter
+	def Pmt(self, value):
+		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
 
-	@SctiesMvmntTp.deleter
-	def SctiesMvmntTp(self):
-		del self._SctiesMvmntTp
-		self._SctiesMvmntTp = None
+	@Pmt.deleter
+	def Pmt(self):
+		del self._Pmt
+		self._Pmt = None
+
+	@property
+	def ClntCollInstrId(self):
+		return self._ClntCollInstrId
+
+	@ClntCollInstrId.setter
+	def ClntCollInstrId(self, value):
+		self._ClntCollInstrId = value if type(value) != auto else self.make_default("ClntCollInstrId")
+
+	@ClntCollInstrId.deleter
+	def ClntCollInstrId(self):
+		del self._ClntCollInstrId
+		self._ClntCollInstrId = None
 
 	@property
 	def ClntTrptyCollTxId(self):
@@ -47,19 +60,6 @@ class SettlementTypeAndAdditionalParameters22(base_types._BaseFieldType):
 		self._RcncltnInd = None
 
 	@property
-	def Pmt(self):
-		return self._Pmt
-
-	@Pmt.setter
-	def Pmt(self, value):
-		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
-
-	@Pmt.deleter
-	def Pmt(self):
-		del self._Pmt
-		self._Pmt = None
-
-	@property
 	def TrptyAgtSvcPrvdrCollTxId(self):
 		return self._TrptyAgtSvcPrvdrCollTxId
 
@@ -71,19 +71,6 @@ class SettlementTypeAndAdditionalParameters22(base_types._BaseFieldType):
 	def TrptyAgtSvcPrvdrCollTxId(self):
 		del self._TrptyAgtSvcPrvdrCollTxId
 		self._TrptyAgtSvcPrvdrCollTxId = None
-
-	@property
-	def ClntCollInstrId(self):
-		return self._ClntCollInstrId
-
-	@ClntCollInstrId.setter
-	def ClntCollInstrId(self, value):
-		self._ClntCollInstrId = value if type(value) != auto else self.make_default("ClntCollInstrId")
-
-	@ClntCollInstrId.deleter
-	def ClntCollInstrId(self):
-		del self._ClntCollInstrId
-		self._ClntCollInstrId = None
 
 	@property
 	def CorpActnEvtId(self):
@@ -124,15 +111,28 @@ class SettlementTypeAndAdditionalParameters22(base_types._BaseFieldType):
 		del self._CmonId
 		self._CmonId = None
 
+	@property
+	def SctiesMvmntTp(self):
+		return self._SctiesMvmntTp
+
+	@SctiesMvmntTp.setter
+	def SctiesMvmntTp(self, value):
+		self._SctiesMvmntTp = value if type(value) != auto else self.make_default("SctiesMvmntTp")
+
+	@SctiesMvmntTp.deleter
+	def SctiesMvmntTp(self):
+		del self._SctiesMvmntTp
+		self._SctiesMvmntTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntCollInstrId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntTrptyCollTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntCollInstrId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollInstrId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

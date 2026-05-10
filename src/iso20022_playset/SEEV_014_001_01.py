@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AgentCAElectionCancellationRequestV01
 
 class SEEV_014_001_01():

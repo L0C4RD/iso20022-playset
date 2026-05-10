@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import ActiveCurrencyAnd13DecimalAmount
-import AmountAndQuantityRatio4
 import Percentage14Rate
+import AmountAndQuantityRatio4
 
 class SolicitationFeeRateFormat12Choice(base_types._BaseFieldType):
 

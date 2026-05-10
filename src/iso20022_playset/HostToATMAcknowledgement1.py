@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ATMEnvironment9
 
 class HostToATMAcknowledgement1(base_types._BaseFieldType):

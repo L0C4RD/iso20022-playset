@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import MessageHeader7
-import SupplementaryData1
 import AccountOrOperationalError6Choice
+import SupplementaryData1
 
 class ReturnAccountV10(base_types._BaseFieldType):
 

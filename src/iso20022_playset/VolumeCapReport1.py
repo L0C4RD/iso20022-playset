@@ -1,11 +1,24 @@
-import base_types
-import MICIdentifier
+from . import base_types
 import Period4Choice
+import MICIdentifier
 import VolumeCapReport2
 
 class VolumeCapReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrmRpt", "_TradgVn", "_RptgPrd"]
+	__slots__ = ["_RptgPrd", "_InstrmRpt", "_TradgVn"]
+	@property
+	def RptgPrd(self):
+		return self._RptgPrd
+
+	@RptgPrd.setter
+	def RptgPrd(self, value):
+		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
+
+	@RptgPrd.deleter
+	def RptgPrd(self):
+		del self._RptgPrd
+		self._RptgPrd = None
+
 	@property
 	def InstrmRpt(self):
 		return self._InstrmRpt
@@ -32,22 +45,9 @@ class VolumeCapReport1(base_types._BaseFieldType):
 		del self._TradgVn
 		self._TradgVn = None
 
-	@property
-	def RptgPrd(self):
-		return self._RptgPrd
-
-	@RptgPrd.setter
-	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
-
-	@RptgPrd.deleter
-	def RptgPrd(self):
-		del self._RptgPrd
-		self._RptgPrd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrmRpt', type=VolumeCapReport2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

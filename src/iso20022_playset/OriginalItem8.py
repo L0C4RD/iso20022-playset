@@ -1,13 +1,13 @@
-import base_types
-import Max35Text
-import ActiveOrHistoricCurrencyAndAmount
-import UUIDv4Identifier
+from . import base_types
 import ISODate
 import OriginalItemReference7
+import UUIDv4Identifier
+import Max35Text
+import ActiveOrHistoricCurrencyAndAmount
 
 class OriginalItem8(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlEndToEndId", "_XpctdValDt", "_UETR", "_OrgnlItmRef", "_OrgnlItmId", "_Amt"]
+	__slots__ = ["_OrgnlEndToEndId", "_Amt", "_OrgnlItmRef", "_UETR", "_XpctdValDt", "_OrgnlItmId"]
 	@property
 	def OrgnlEndToEndId(self):
 		return self._OrgnlEndToEndId
@@ -22,30 +22,17 @@ class OriginalItem8(base_types._BaseFieldType):
 		self._OrgnlEndToEndId = None
 
 	@property
-	def XpctdValDt(self):
-		return self._XpctdValDt
+	def Amt(self):
+		return self._Amt
 
-	@XpctdValDt.setter
-	def XpctdValDt(self, value):
-		self._XpctdValDt = value if type(value) != auto else self.make_default("XpctdValDt")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@XpctdValDt.deleter
-	def XpctdValDt(self):
-		del self._XpctdValDt
-		self._XpctdValDt = None
-
-	@property
-	def UETR(self):
-		return self._UETR
-
-	@UETR.setter
-	def UETR(self, value):
-		self._UETR = value if type(value) != auto else self.make_default("UETR")
-
-	@UETR.deleter
-	def UETR(self):
-		del self._UETR
-		self._UETR = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def OrgnlItmRef(self):
@@ -61,6 +48,32 @@ class OriginalItem8(base_types._BaseFieldType):
 		self._OrgnlItmRef = None
 
 	@property
+	def UETR(self):
+		return self._UETR
+
+	@UETR.setter
+	def UETR(self, value):
+		self._UETR = value if type(value) != auto else self.make_default("UETR")
+
+	@UETR.deleter
+	def UETR(self):
+		del self._UETR
+		self._UETR = None
+
+	@property
+	def XpctdValDt(self):
+		return self._XpctdValDt
+
+	@XpctdValDt.setter
+	def XpctdValDt(self, value):
+		self._XpctdValDt = value if type(value) != auto else self.make_default("XpctdValDt")
+
+	@XpctdValDt.deleter
+	def XpctdValDt(self):
+		del self._XpctdValDt
+		self._XpctdValDt = None
+
+	@property
 	def OrgnlItmId(self):
 		return self._OrgnlItmId
 
@@ -73,25 +86,12 @@ class OriginalItem8(base_types._BaseFieldType):
 		del self._OrgnlItmId
 		self._OrgnlItmId = None
 
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlEndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlItmRef', type=OriginalItemReference7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlItmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlItmRef', type=OriginalItemReference7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlItmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

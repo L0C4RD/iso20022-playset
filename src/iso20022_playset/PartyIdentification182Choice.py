@@ -1,25 +1,12 @@
-import base_types
-import GenericIdentification1
-import Max35Text
+from . import base_types
 import AnyBICDec2014Identifier
+import GenericIdentification1
 import NameAndAddress15
+import Max35Text
 
 class PartyIdentification182Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AnyBIC", "_PrtryId", "_TaxIdNb", "_NtlRegnNb", "_NmAndAdr"]
-	@property
-	def AnyBIC(self):
-		return self._AnyBIC
-
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
-
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
-
+	__slots__ = ["_PrtryId", "_TaxIdNb", "_NtlRegnNb", "_NmAndAdr", "_AnyBIC"]
 	@property
 	def PrtryId(self):
 		return self._PrtryId
@@ -72,11 +59,24 @@ class PartyIdentification182Choice(base_types._BaseFieldType):
 		del self._NmAndAdr
 		self._NmAndAdr = None
 
+	@property
+	def AnyBIC(self):
+		return self._AnyBIC
+
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
+
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NtlRegnNb', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress15, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

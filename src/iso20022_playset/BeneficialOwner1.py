@@ -1,42 +1,16 @@
-import base_types
+from . import base_types
+import Max350Text
 import CountryCode
 import YesNoIndicator
-import Max350Text
-import BeneficiaryCertificationType1FormatChoice
-import PartyIdentification2Choice
 import UnitOrFaceAmount1Choice
+import PartyIdentification2Choice
+import BeneficiaryCertificationType1FormatChoice
 import GenericIdentification16
 import SecurityIdentification7
 
 class BeneficialOwner1(base_types._BaseFieldType):
 
-	__slots__ = ["_ElctdSctiesQty", "_SctyId", "_DmclCtry", "_BnfclOwnrId", "_AddtlId", "_Ntlty", "_CertfctnInd", "_CertfctnTp", "_DclrtnDtls", "_NonDmclCtry"]
-	@property
-	def ElctdSctiesQty(self):
-		return self._ElctdSctiesQty
-
-	@ElctdSctiesQty.setter
-	def ElctdSctiesQty(self, value):
-		self._ElctdSctiesQty = value if type(value) != auto else self.make_default("ElctdSctiesQty")
-
-	@ElctdSctiesQty.deleter
-	def ElctdSctiesQty(self):
-		del self._ElctdSctiesQty
-		self._ElctdSctiesQty = None
-
-	@property
-	def SctyId(self):
-		return self._SctyId
-
-	@SctyId.setter
-	def SctyId(self, value):
-		self._SctyId = value if type(value) != auto else self.make_default("SctyId")
-
-	@SctyId.deleter
-	def SctyId(self):
-		del self._SctyId
-		self._SctyId = None
-
+	__slots__ = ["_DmclCtry", "_DclrtnDtls", "_NonDmclCtry", "_SctyId", "_ElctdSctiesQty", "_Ntlty", "_AddtlId", "_CertfctnTp", "_BnfclOwnrId", "_CertfctnInd"]
 	@property
 	def DmclCtry(self):
 		return self._DmclCtry
@@ -49,71 +23,6 @@ class BeneficialOwner1(base_types._BaseFieldType):
 	def DmclCtry(self):
 		del self._DmclCtry
 		self._DmclCtry = None
-
-	@property
-	def BnfclOwnrId(self):
-		return self._BnfclOwnrId
-
-	@BnfclOwnrId.setter
-	def BnfclOwnrId(self, value):
-		self._BnfclOwnrId = value if type(value) != auto else self.make_default("BnfclOwnrId")
-
-	@BnfclOwnrId.deleter
-	def BnfclOwnrId(self):
-		del self._BnfclOwnrId
-		self._BnfclOwnrId = None
-
-	@property
-	def AddtlId(self):
-		return self._AddtlId
-
-	@AddtlId.setter
-	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
-
-	@AddtlId.deleter
-	def AddtlId(self):
-		del self._AddtlId
-		self._AddtlId = None
-
-	@property
-	def Ntlty(self):
-		return self._Ntlty
-
-	@Ntlty.setter
-	def Ntlty(self, value):
-		self._Ntlty = value if type(value) != auto else self.make_default("Ntlty")
-
-	@Ntlty.deleter
-	def Ntlty(self):
-		del self._Ntlty
-		self._Ntlty = None
-
-	@property
-	def CertfctnInd(self):
-		return self._CertfctnInd
-
-	@CertfctnInd.setter
-	def CertfctnInd(self, value):
-		self._CertfctnInd = value if type(value) != auto else self.make_default("CertfctnInd")
-
-	@CertfctnInd.deleter
-	def CertfctnInd(self):
-		del self._CertfctnInd
-		self._CertfctnInd = None
-
-	@property
-	def CertfctnTp(self):
-		return self._CertfctnTp
-
-	@CertfctnTp.setter
-	def CertfctnTp(self, value):
-		self._CertfctnTp = value if type(value) != auto else self.make_default("CertfctnTp")
-
-	@CertfctnTp.deleter
-	def CertfctnTp(self):
-		del self._CertfctnTp
-		self._CertfctnTp = None
 
 	@property
 	def DclrtnDtls(self):
@@ -141,16 +50,107 @@ class BeneficialOwner1(base_types._BaseFieldType):
 		del self._NonDmclCtry
 		self._NonDmclCtry = None
 
+	@property
+	def SctyId(self):
+		return self._SctyId
+
+	@SctyId.setter
+	def SctyId(self, value):
+		self._SctyId = value if type(value) != auto else self.make_default("SctyId")
+
+	@SctyId.deleter
+	def SctyId(self):
+		del self._SctyId
+		self._SctyId = None
+
+	@property
+	def ElctdSctiesQty(self):
+		return self._ElctdSctiesQty
+
+	@ElctdSctiesQty.setter
+	def ElctdSctiesQty(self, value):
+		self._ElctdSctiesQty = value if type(value) != auto else self.make_default("ElctdSctiesQty")
+
+	@ElctdSctiesQty.deleter
+	def ElctdSctiesQty(self):
+		del self._ElctdSctiesQty
+		self._ElctdSctiesQty = None
+
+	@property
+	def Ntlty(self):
+		return self._Ntlty
+
+	@Ntlty.setter
+	def Ntlty(self, value):
+		self._Ntlty = value if type(value) != auto else self.make_default("Ntlty")
+
+	@Ntlty.deleter
+	def Ntlty(self):
+		del self._Ntlty
+		self._Ntlty = None
+
+	@property
+	def AddtlId(self):
+		return self._AddtlId
+
+	@AddtlId.setter
+	def AddtlId(self, value):
+		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
+
+	@AddtlId.deleter
+	def AddtlId(self):
+		del self._AddtlId
+		self._AddtlId = None
+
+	@property
+	def CertfctnTp(self):
+		return self._CertfctnTp
+
+	@CertfctnTp.setter
+	def CertfctnTp(self, value):
+		self._CertfctnTp = value if type(value) != auto else self.make_default("CertfctnTp")
+
+	@CertfctnTp.deleter
+	def CertfctnTp(self):
+		del self._CertfctnTp
+		self._CertfctnTp = None
+
+	@property
+	def BnfclOwnrId(self):
+		return self._BnfclOwnrId
+
+	@BnfclOwnrId.setter
+	def BnfclOwnrId(self, value):
+		self._BnfclOwnrId = value if type(value) != auto else self.make_default("BnfclOwnrId")
+
+	@BnfclOwnrId.deleter
+	def BnfclOwnrId(self):
+		del self._BnfclOwnrId
+		self._BnfclOwnrId = None
+
+	@property
+	def CertfctnInd(self):
+		return self._CertfctnInd
+
+	@CertfctnInd.setter
+	def CertfctnInd(self, value):
+		self._CertfctnInd = value if type(value) != auto else self.make_default("CertfctnInd")
+
+	@CertfctnInd.deleter
+	def CertfctnInd(self):
+		del self._CertfctnInd
+		self._CertfctnInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ElctdSctiesQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DmclCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BnfclOwnrId', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlId', type=GenericIdentification16, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ntlty', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertfctnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertfctnTp', type=BeneficiaryCertificationType1FormatChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DclrtnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonDmclCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElctdSctiesQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ntlty', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlId', type=GenericIdentification16, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertfctnTp', type=BeneficiaryCertificationType1FormatChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BnfclOwnrId', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertfctnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

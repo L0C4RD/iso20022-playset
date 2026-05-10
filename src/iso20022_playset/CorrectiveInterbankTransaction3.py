@@ -1,51 +1,25 @@
-import base_types
+from . import base_types
+import ISODate
+import UUIDv4Identifier
 import Max35Text
 import CorrectiveGroupInformation1
 import ActiveOrHistoricCurrencyAndAmount
-import UUIDv4Identifier
-import ISODate
 
 class CorrectiveInterbankTransaction3(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_UETR", "_IntrBkSttlmDt", "_TxId", "_IntrBkSttlmAmt", "_EndToEndId", "_InstrId"]
+	__slots__ = ["_IntrBkSttlmAmt", "_TxId", "_IntrBkSttlmDt", "_GrpHdr", "_EndToEndId", "_InstrId", "_UETR"]
 	@property
-	def GrpHdr(self):
-		return self._GrpHdr
+	def IntrBkSttlmAmt(self):
+		return self._IntrBkSttlmAmt
 
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+	@IntrBkSttlmAmt.setter
+	def IntrBkSttlmAmt(self, value):
+		self._IntrBkSttlmAmt = value if type(value) != auto else self.make_default("IntrBkSttlmAmt")
 
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
-
-	@property
-	def UETR(self):
-		return self._UETR
-
-	@UETR.setter
-	def UETR(self, value):
-		self._UETR = value if type(value) != auto else self.make_default("UETR")
-
-	@UETR.deleter
-	def UETR(self):
-		del self._UETR
-		self._UETR = None
-
-	@property
-	def IntrBkSttlmDt(self):
-		return self._IntrBkSttlmDt
-
-	@IntrBkSttlmDt.setter
-	def IntrBkSttlmDt(self, value):
-		self._IntrBkSttlmDt = value if type(value) != auto else self.make_default("IntrBkSttlmDt")
-
-	@IntrBkSttlmDt.deleter
-	def IntrBkSttlmDt(self):
-		del self._IntrBkSttlmDt
-		self._IntrBkSttlmDt = None
+	@IntrBkSttlmAmt.deleter
+	def IntrBkSttlmAmt(self):
+		del self._IntrBkSttlmAmt
+		self._IntrBkSttlmAmt = None
 
 	@property
 	def TxId(self):
@@ -61,17 +35,30 @@ class CorrectiveInterbankTransaction3(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def IntrBkSttlmAmt(self):
-		return self._IntrBkSttlmAmt
+	def IntrBkSttlmDt(self):
+		return self._IntrBkSttlmDt
 
-	@IntrBkSttlmAmt.setter
-	def IntrBkSttlmAmt(self, value):
-		self._IntrBkSttlmAmt = value if type(value) != auto else self.make_default("IntrBkSttlmAmt")
+	@IntrBkSttlmDt.setter
+	def IntrBkSttlmDt(self, value):
+		self._IntrBkSttlmDt = value if type(value) != auto else self.make_default("IntrBkSttlmDt")
 
-	@IntrBkSttlmAmt.deleter
-	def IntrBkSttlmAmt(self):
-		del self._IntrBkSttlmAmt
-		self._IntrBkSttlmAmt = None
+	@IntrBkSttlmDt.deleter
+	def IntrBkSttlmDt(self):
+		del self._IntrBkSttlmDt
+		self._IntrBkSttlmDt = None
+
+	@property
+	def GrpHdr(self):
+		return self._GrpHdr
+
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
 
 	@property
 	def EndToEndId(self):
@@ -99,13 +86,26 @@ class CorrectiveInterbankTransaction3(base_types._BaseFieldType):
 		del self._InstrId
 		self._InstrId = None
 
+	@property
+	def UETR(self):
+		return self._UETR
+
+	@UETR.setter
+	def UETR(self, value):
+		self._UETR = value if type(value) != auto else self.make_default("UETR")
+
+	@UETR.deleter
+	def UETR(self):
+		del self._UETR
+		self._UETR = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GrpHdr', type=CorrectiveGroupInformation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrBkSttlmAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrpHdr', type=CorrectiveGroupInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

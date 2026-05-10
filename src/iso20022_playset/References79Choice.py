@@ -1,74 +1,22 @@
-import base_types
-import SettlementTypeAndIdentification22
+from . import base_types
 import RestrictedFINXMax16Text
+import SettlementTypeAndIdentification22
 
 class References79Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesSttlmTxGnrtnNtfctnId", "_SctiesTxPdgRptId", "_SctiesSttlmTxConfId", "_IntraPosMvmntConfId", "_SctiesFincgConfId", "_IntraPosMvmntPstngRptId", "_SctiesBalAcctgRptId", "_TrptyCollTxInstrPrcgStsAdvcId", "_TrptyCollStsAdvcId", "_OthrMsgId", "_SctiesBalCtdyRptId", "_SctiesTxPstngRptId", "_TrptyCollAndXpsrRptId", "_PrtflTrfNtfctnId", "_SctiesSttlmTxAllgmtRptId", "_TtlPrtflValtnRptId", "_SctiesSttlmTxAllgmtNtfctnTxId"]
+	__slots__ = ["_TrptyCollTxInstrPrcgStsAdvcId", "_IntraPosMvmntPstngRptId", "_SctiesBalCtdyRptId", "_TtlPrtflValtnRptId", "_OthrMsgId", "_SctiesSttlmTxConfId", "_SctiesTxPdgRptId", "_TrptyCollStsAdvcId", "_PrtflTrfNtfctnId", "_TrptyCollAndXpsrRptId", "_SctiesBalAcctgRptId", "_SctiesFincgConfId", "_SctiesSttlmTxGnrtnNtfctnId", "_SctiesSttlmTxAllgmtNtfctnTxId", "_IntraPosMvmntConfId", "_SctiesSttlmTxAllgmtRptId", "_SctiesTxPstngRptId"]
 	@property
-	def SctiesSttlmTxGnrtnNtfctnId(self):
-		return self._SctiesSttlmTxGnrtnNtfctnId
+	def TrptyCollTxInstrPrcgStsAdvcId(self):
+		return self._TrptyCollTxInstrPrcgStsAdvcId
 
-	@SctiesSttlmTxGnrtnNtfctnId.setter
-	def SctiesSttlmTxGnrtnNtfctnId(self, value):
-		self._SctiesSttlmTxGnrtnNtfctnId = value if type(value) != auto else self.make_default("SctiesSttlmTxGnrtnNtfctnId")
+	@TrptyCollTxInstrPrcgStsAdvcId.setter
+	def TrptyCollTxInstrPrcgStsAdvcId(self, value):
+		self._TrptyCollTxInstrPrcgStsAdvcId = value if type(value) != auto else self.make_default("TrptyCollTxInstrPrcgStsAdvcId")
 
-	@SctiesSttlmTxGnrtnNtfctnId.deleter
-	def SctiesSttlmTxGnrtnNtfctnId(self):
-		del self._SctiesSttlmTxGnrtnNtfctnId
-		self._SctiesSttlmTxGnrtnNtfctnId = None
-
-	@property
-	def SctiesTxPdgRptId(self):
-		return self._SctiesTxPdgRptId
-
-	@SctiesTxPdgRptId.setter
-	def SctiesTxPdgRptId(self, value):
-		self._SctiesTxPdgRptId = value if type(value) != auto else self.make_default("SctiesTxPdgRptId")
-
-	@SctiesTxPdgRptId.deleter
-	def SctiesTxPdgRptId(self):
-		del self._SctiesTxPdgRptId
-		self._SctiesTxPdgRptId = None
-
-	@property
-	def SctiesSttlmTxConfId(self):
-		return self._SctiesSttlmTxConfId
-
-	@SctiesSttlmTxConfId.setter
-	def SctiesSttlmTxConfId(self, value):
-		self._SctiesSttlmTxConfId = value if type(value) != auto else self.make_default("SctiesSttlmTxConfId")
-
-	@SctiesSttlmTxConfId.deleter
-	def SctiesSttlmTxConfId(self):
-		del self._SctiesSttlmTxConfId
-		self._SctiesSttlmTxConfId = None
-
-	@property
-	def IntraPosMvmntConfId(self):
-		return self._IntraPosMvmntConfId
-
-	@IntraPosMvmntConfId.setter
-	def IntraPosMvmntConfId(self, value):
-		self._IntraPosMvmntConfId = value if type(value) != auto else self.make_default("IntraPosMvmntConfId")
-
-	@IntraPosMvmntConfId.deleter
-	def IntraPosMvmntConfId(self):
-		del self._IntraPosMvmntConfId
-		self._IntraPosMvmntConfId = None
-
-	@property
-	def SctiesFincgConfId(self):
-		return self._SctiesFincgConfId
-
-	@SctiesFincgConfId.setter
-	def SctiesFincgConfId(self, value):
-		self._SctiesFincgConfId = value if type(value) != auto else self.make_default("SctiesFincgConfId")
-
-	@SctiesFincgConfId.deleter
-	def SctiesFincgConfId(self):
-		del self._SctiesFincgConfId
-		self._SctiesFincgConfId = None
+	@TrptyCollTxInstrPrcgStsAdvcId.deleter
+	def TrptyCollTxInstrPrcgStsAdvcId(self):
+		del self._TrptyCollTxInstrPrcgStsAdvcId
+		self._TrptyCollTxInstrPrcgStsAdvcId = None
 
 	@property
 	def IntraPosMvmntPstngRptId(self):
@@ -84,58 +32,6 @@ class References79Choice(base_types._BaseFieldType):
 		self._IntraPosMvmntPstngRptId = None
 
 	@property
-	def SctiesBalAcctgRptId(self):
-		return self._SctiesBalAcctgRptId
-
-	@SctiesBalAcctgRptId.setter
-	def SctiesBalAcctgRptId(self, value):
-		self._SctiesBalAcctgRptId = value if type(value) != auto else self.make_default("SctiesBalAcctgRptId")
-
-	@SctiesBalAcctgRptId.deleter
-	def SctiesBalAcctgRptId(self):
-		del self._SctiesBalAcctgRptId
-		self._SctiesBalAcctgRptId = None
-
-	@property
-	def TrptyCollTxInstrPrcgStsAdvcId(self):
-		return self._TrptyCollTxInstrPrcgStsAdvcId
-
-	@TrptyCollTxInstrPrcgStsAdvcId.setter
-	def TrptyCollTxInstrPrcgStsAdvcId(self, value):
-		self._TrptyCollTxInstrPrcgStsAdvcId = value if type(value) != auto else self.make_default("TrptyCollTxInstrPrcgStsAdvcId")
-
-	@TrptyCollTxInstrPrcgStsAdvcId.deleter
-	def TrptyCollTxInstrPrcgStsAdvcId(self):
-		del self._TrptyCollTxInstrPrcgStsAdvcId
-		self._TrptyCollTxInstrPrcgStsAdvcId = None
-
-	@property
-	def TrptyCollStsAdvcId(self):
-		return self._TrptyCollStsAdvcId
-
-	@TrptyCollStsAdvcId.setter
-	def TrptyCollStsAdvcId(self, value):
-		self._TrptyCollStsAdvcId = value if type(value) != auto else self.make_default("TrptyCollStsAdvcId")
-
-	@TrptyCollStsAdvcId.deleter
-	def TrptyCollStsAdvcId(self):
-		del self._TrptyCollStsAdvcId
-		self._TrptyCollStsAdvcId = None
-
-	@property
-	def OthrMsgId(self):
-		return self._OthrMsgId
-
-	@OthrMsgId.setter
-	def OthrMsgId(self, value):
-		self._OthrMsgId = value if type(value) != auto else self.make_default("OthrMsgId")
-
-	@OthrMsgId.deleter
-	def OthrMsgId(self):
-		del self._OthrMsgId
-		self._OthrMsgId = None
-
-	@property
 	def SctiesBalCtdyRptId(self):
 		return self._SctiesBalCtdyRptId
 
@@ -147,58 +43,6 @@ class References79Choice(base_types._BaseFieldType):
 	def SctiesBalCtdyRptId(self):
 		del self._SctiesBalCtdyRptId
 		self._SctiesBalCtdyRptId = None
-
-	@property
-	def SctiesTxPstngRptId(self):
-		return self._SctiesTxPstngRptId
-
-	@SctiesTxPstngRptId.setter
-	def SctiesTxPstngRptId(self, value):
-		self._SctiesTxPstngRptId = value if type(value) != auto else self.make_default("SctiesTxPstngRptId")
-
-	@SctiesTxPstngRptId.deleter
-	def SctiesTxPstngRptId(self):
-		del self._SctiesTxPstngRptId
-		self._SctiesTxPstngRptId = None
-
-	@property
-	def TrptyCollAndXpsrRptId(self):
-		return self._TrptyCollAndXpsrRptId
-
-	@TrptyCollAndXpsrRptId.setter
-	def TrptyCollAndXpsrRptId(self, value):
-		self._TrptyCollAndXpsrRptId = value if type(value) != auto else self.make_default("TrptyCollAndXpsrRptId")
-
-	@TrptyCollAndXpsrRptId.deleter
-	def TrptyCollAndXpsrRptId(self):
-		del self._TrptyCollAndXpsrRptId
-		self._TrptyCollAndXpsrRptId = None
-
-	@property
-	def PrtflTrfNtfctnId(self):
-		return self._PrtflTrfNtfctnId
-
-	@PrtflTrfNtfctnId.setter
-	def PrtflTrfNtfctnId(self, value):
-		self._PrtflTrfNtfctnId = value if type(value) != auto else self.make_default("PrtflTrfNtfctnId")
-
-	@PrtflTrfNtfctnId.deleter
-	def PrtflTrfNtfctnId(self):
-		del self._PrtflTrfNtfctnId
-		self._PrtflTrfNtfctnId = None
-
-	@property
-	def SctiesSttlmTxAllgmtRptId(self):
-		return self._SctiesSttlmTxAllgmtRptId
-
-	@SctiesSttlmTxAllgmtRptId.setter
-	def SctiesSttlmTxAllgmtRptId(self, value):
-		self._SctiesSttlmTxAllgmtRptId = value if type(value) != auto else self.make_default("SctiesSttlmTxAllgmtRptId")
-
-	@SctiesSttlmTxAllgmtRptId.deleter
-	def SctiesSttlmTxAllgmtRptId(self):
-		del self._SctiesSttlmTxAllgmtRptId
-		self._SctiesSttlmTxAllgmtRptId = None
 
 	@property
 	def TtlPrtflValtnRptId(self):
@@ -214,6 +58,123 @@ class References79Choice(base_types._BaseFieldType):
 		self._TtlPrtflValtnRptId = None
 
 	@property
+	def OthrMsgId(self):
+		return self._OthrMsgId
+
+	@OthrMsgId.setter
+	def OthrMsgId(self, value):
+		self._OthrMsgId = value if type(value) != auto else self.make_default("OthrMsgId")
+
+	@OthrMsgId.deleter
+	def OthrMsgId(self):
+		del self._OthrMsgId
+		self._OthrMsgId = None
+
+	@property
+	def SctiesSttlmTxConfId(self):
+		return self._SctiesSttlmTxConfId
+
+	@SctiesSttlmTxConfId.setter
+	def SctiesSttlmTxConfId(self, value):
+		self._SctiesSttlmTxConfId = value if type(value) != auto else self.make_default("SctiesSttlmTxConfId")
+
+	@SctiesSttlmTxConfId.deleter
+	def SctiesSttlmTxConfId(self):
+		del self._SctiesSttlmTxConfId
+		self._SctiesSttlmTxConfId = None
+
+	@property
+	def SctiesTxPdgRptId(self):
+		return self._SctiesTxPdgRptId
+
+	@SctiesTxPdgRptId.setter
+	def SctiesTxPdgRptId(self, value):
+		self._SctiesTxPdgRptId = value if type(value) != auto else self.make_default("SctiesTxPdgRptId")
+
+	@SctiesTxPdgRptId.deleter
+	def SctiesTxPdgRptId(self):
+		del self._SctiesTxPdgRptId
+		self._SctiesTxPdgRptId = None
+
+	@property
+	def TrptyCollStsAdvcId(self):
+		return self._TrptyCollStsAdvcId
+
+	@TrptyCollStsAdvcId.setter
+	def TrptyCollStsAdvcId(self, value):
+		self._TrptyCollStsAdvcId = value if type(value) != auto else self.make_default("TrptyCollStsAdvcId")
+
+	@TrptyCollStsAdvcId.deleter
+	def TrptyCollStsAdvcId(self):
+		del self._TrptyCollStsAdvcId
+		self._TrptyCollStsAdvcId = None
+
+	@property
+	def PrtflTrfNtfctnId(self):
+		return self._PrtflTrfNtfctnId
+
+	@PrtflTrfNtfctnId.setter
+	def PrtflTrfNtfctnId(self, value):
+		self._PrtflTrfNtfctnId = value if type(value) != auto else self.make_default("PrtflTrfNtfctnId")
+
+	@PrtflTrfNtfctnId.deleter
+	def PrtflTrfNtfctnId(self):
+		del self._PrtflTrfNtfctnId
+		self._PrtflTrfNtfctnId = None
+
+	@property
+	def TrptyCollAndXpsrRptId(self):
+		return self._TrptyCollAndXpsrRptId
+
+	@TrptyCollAndXpsrRptId.setter
+	def TrptyCollAndXpsrRptId(self, value):
+		self._TrptyCollAndXpsrRptId = value if type(value) != auto else self.make_default("TrptyCollAndXpsrRptId")
+
+	@TrptyCollAndXpsrRptId.deleter
+	def TrptyCollAndXpsrRptId(self):
+		del self._TrptyCollAndXpsrRptId
+		self._TrptyCollAndXpsrRptId = None
+
+	@property
+	def SctiesBalAcctgRptId(self):
+		return self._SctiesBalAcctgRptId
+
+	@SctiesBalAcctgRptId.setter
+	def SctiesBalAcctgRptId(self, value):
+		self._SctiesBalAcctgRptId = value if type(value) != auto else self.make_default("SctiesBalAcctgRptId")
+
+	@SctiesBalAcctgRptId.deleter
+	def SctiesBalAcctgRptId(self):
+		del self._SctiesBalAcctgRptId
+		self._SctiesBalAcctgRptId = None
+
+	@property
+	def SctiesFincgConfId(self):
+		return self._SctiesFincgConfId
+
+	@SctiesFincgConfId.setter
+	def SctiesFincgConfId(self, value):
+		self._SctiesFincgConfId = value if type(value) != auto else self.make_default("SctiesFincgConfId")
+
+	@SctiesFincgConfId.deleter
+	def SctiesFincgConfId(self):
+		del self._SctiesFincgConfId
+		self._SctiesFincgConfId = None
+
+	@property
+	def SctiesSttlmTxGnrtnNtfctnId(self):
+		return self._SctiesSttlmTxGnrtnNtfctnId
+
+	@SctiesSttlmTxGnrtnNtfctnId.setter
+	def SctiesSttlmTxGnrtnNtfctnId(self, value):
+		self._SctiesSttlmTxGnrtnNtfctnId = value if type(value) != auto else self.make_default("SctiesSttlmTxGnrtnNtfctnId")
+
+	@SctiesSttlmTxGnrtnNtfctnId.deleter
+	def SctiesSttlmTxGnrtnNtfctnId(self):
+		del self._SctiesSttlmTxGnrtnNtfctnId
+		self._SctiesSttlmTxGnrtnNtfctnId = None
+
+	@property
 	def SctiesSttlmTxAllgmtNtfctnTxId(self):
 		return self._SctiesSttlmTxAllgmtNtfctnTxId
 
@@ -226,23 +187,62 @@ class References79Choice(base_types._BaseFieldType):
 		del self._SctiesSttlmTxAllgmtNtfctnTxId
 		self._SctiesSttlmTxAllgmtNtfctnTxId = None
 
+	@property
+	def IntraPosMvmntConfId(self):
+		return self._IntraPosMvmntConfId
+
+	@IntraPosMvmntConfId.setter
+	def IntraPosMvmntConfId(self, value):
+		self._IntraPosMvmntConfId = value if type(value) != auto else self.make_default("IntraPosMvmntConfId")
+
+	@IntraPosMvmntConfId.deleter
+	def IntraPosMvmntConfId(self):
+		del self._IntraPosMvmntConfId
+		self._IntraPosMvmntConfId = None
+
+	@property
+	def SctiesSttlmTxAllgmtRptId(self):
+		return self._SctiesSttlmTxAllgmtRptId
+
+	@SctiesSttlmTxAllgmtRptId.setter
+	def SctiesSttlmTxAllgmtRptId(self, value):
+		self._SctiesSttlmTxAllgmtRptId = value if type(value) != auto else self.make_default("SctiesSttlmTxAllgmtRptId")
+
+	@SctiesSttlmTxAllgmtRptId.deleter
+	def SctiesSttlmTxAllgmtRptId(self):
+		del self._SctiesSttlmTxAllgmtRptId
+		self._SctiesSttlmTxAllgmtRptId = None
+
+	@property
+	def SctiesTxPstngRptId(self):
+		return self._SctiesTxPstngRptId
+
+	@SctiesTxPstngRptId.setter
+	def SctiesTxPstngRptId(self, value):
+		self._SctiesTxPstngRptId = value if type(value) != auto else self.make_default("SctiesTxPstngRptId")
+
+	@SctiesTxPstngRptId.deleter
+	def SctiesTxPstngRptId(self):
+		del self._SctiesTxPstngRptId
+		self._SctiesTxPstngRptId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesSttlmTxGnrtnNtfctnId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SctiesTxPdgRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SctiesSttlmTxConfId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IntraPosMvmntConfId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SctiesFincgConfId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IntraPosMvmntPstngRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SctiesBalAcctgRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TrptyCollTxInstrPrcgStsAdvcId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TrptyCollStsAdvcId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='OthrMsgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IntraPosMvmntPstngRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesBalCtdyRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SctiesTxPstngRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TrptyCollAndXpsrRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtflTrfNtfctnId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SctiesSttlmTxAllgmtRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TtlPrtflValtnRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OthrMsgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesSttlmTxConfId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesTxPdgRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TrptyCollStsAdvcId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtflTrfNtfctnId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TrptyCollAndXpsrRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesBalAcctgRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesFincgConfId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesSttlmTxGnrtnNtfctnId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesSttlmTxAllgmtNtfctnTxId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IntraPosMvmntConfId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesSttlmTxAllgmtRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesTxPstngRptId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

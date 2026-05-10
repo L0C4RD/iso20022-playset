@@ -1,11 +1,24 @@
-import base_types
-import Max140Text
+from . import base_types
 import PhoneNumber
 import Max256Text
+import Max140Text
 
 class Contact9(base_types._BaseFieldType):
 
-	__slots__ = ["_Fctn", "_PhneNb", "_EmailAdr", "_Nm"]
+	__slots__ = ["_EmailAdr", "_Fctn", "_PhneNb", "_Nm"]
+	@property
+	def EmailAdr(self):
+		return self._EmailAdr
+
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
+
 	@property
 	def Fctn(self):
 		return self._Fctn
@@ -33,19 +46,6 @@ class Contact9(base_types._BaseFieldType):
 		self._PhneNb = None
 
 	@property
-	def EmailAdr(self):
-		return self._EmailAdr
-
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
-
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
-
-	@property
 	def Nm(self):
 		return self._Nm
 
@@ -59,9 +59,9 @@ class Contact9(base_types._BaseFieldType):
 		self._Nm = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fctn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

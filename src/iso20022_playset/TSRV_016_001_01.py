@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DemandRefusalNotificationV01
 
 class TSRV_016_001_01():

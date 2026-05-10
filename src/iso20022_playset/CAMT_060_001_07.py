@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountReportingRequestV07
 
 class CAMT_060_001_07():

@@ -1,52 +1,26 @@
-import base_types
-import SystemPartyIdentification2Choice
+from . import base_types
 import IssuerOrInvestor2Choice
+import DateAndDateTime2Choice
+import TrueFalseIndicator
 import IssuanceAccount3
 import SecurityIdentification19
-import TrueFalseIndicator
-import DateAndDateTime2Choice
+import SystemPartyIdentification2Choice
 
 class SecurityCSDLink12(base_types._BaseFieldType):
 
-	__slots__ = ["_VldTo", "_VldFr", "_IssrInvstrCSD", "_FinInstrmId", "_IssncAcct", "_SctyMntnc", "_DfltLk", "_TechIssrCSD"]
+	__slots__ = ["_TechIssrCSD", "_FinInstrmId", "_VldTo", "_IssrInvstrCSD", "_VldFr", "_SctyMntnc", "_IssncAcct", "_DfltLk"]
 	@property
-	def VldTo(self):
-		return self._VldTo
+	def TechIssrCSD(self):
+		return self._TechIssrCSD
 
-	@VldTo.setter
-	def VldTo(self, value):
-		self._VldTo = value if type(value) != auto else self.make_default("VldTo")
+	@TechIssrCSD.setter
+	def TechIssrCSD(self, value):
+		self._TechIssrCSD = value if type(value) != auto else self.make_default("TechIssrCSD")
 
-	@VldTo.deleter
-	def VldTo(self):
-		del self._VldTo
-		self._VldTo = None
-
-	@property
-	def VldFr(self):
-		return self._VldFr
-
-	@VldFr.setter
-	def VldFr(self, value):
-		self._VldFr = value if type(value) != auto else self.make_default("VldFr")
-
-	@VldFr.deleter
-	def VldFr(self):
-		del self._VldFr
-		self._VldFr = None
-
-	@property
-	def IssrInvstrCSD(self):
-		return self._IssrInvstrCSD
-
-	@IssrInvstrCSD.setter
-	def IssrInvstrCSD(self, value):
-		self._IssrInvstrCSD = value if type(value) != auto else self.make_default("IssrInvstrCSD")
-
-	@IssrInvstrCSD.deleter
-	def IssrInvstrCSD(self):
-		del self._IssrInvstrCSD
-		self._IssrInvstrCSD = None
+	@TechIssrCSD.deleter
+	def TechIssrCSD(self):
+		del self._TechIssrCSD
+		self._TechIssrCSD = None
 
 	@property
 	def FinInstrmId(self):
@@ -62,17 +36,43 @@ class SecurityCSDLink12(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def IssncAcct(self):
-		return self._IssncAcct
+	def VldTo(self):
+		return self._VldTo
 
-	@IssncAcct.setter
-	def IssncAcct(self, value):
-		self._IssncAcct = value if type(value) != auto else self.make_default("IssncAcct")
+	@VldTo.setter
+	def VldTo(self, value):
+		self._VldTo = value if type(value) != auto else self.make_default("VldTo")
 
-	@IssncAcct.deleter
-	def IssncAcct(self):
-		del self._IssncAcct
-		self._IssncAcct = None
+	@VldTo.deleter
+	def VldTo(self):
+		del self._VldTo
+		self._VldTo = None
+
+	@property
+	def IssrInvstrCSD(self):
+		return self._IssrInvstrCSD
+
+	@IssrInvstrCSD.setter
+	def IssrInvstrCSD(self, value):
+		self._IssrInvstrCSD = value if type(value) != auto else self.make_default("IssrInvstrCSD")
+
+	@IssrInvstrCSD.deleter
+	def IssrInvstrCSD(self):
+		del self._IssrInvstrCSD
+		self._IssrInvstrCSD = None
+
+	@property
+	def VldFr(self):
+		return self._VldFr
+
+	@VldFr.setter
+	def VldFr(self, value):
+		self._VldFr = value if type(value) != auto else self.make_default("VldFr")
+
+	@VldFr.deleter
+	def VldFr(self):
+		del self._VldFr
+		self._VldFr = None
 
 	@property
 	def SctyMntnc(self):
@@ -88,6 +88,19 @@ class SecurityCSDLink12(base_types._BaseFieldType):
 		self._SctyMntnc = None
 
 	@property
+	def IssncAcct(self):
+		return self._IssncAcct
+
+	@IssncAcct.setter
+	def IssncAcct(self, value):
+		self._IssncAcct = value if type(value) != auto else self.make_default("IssncAcct")
+
+	@IssncAcct.deleter
+	def IssncAcct(self):
+		del self._IssncAcct
+		self._IssncAcct = None
+
+	@property
 	def DfltLk(self):
 		return self._DfltLk
 
@@ -100,27 +113,14 @@ class SecurityCSDLink12(base_types._BaseFieldType):
 		del self._DfltLk
 		self._DfltLk = None
 
-	@property
-	def TechIssrCSD(self):
-		return self._TechIssrCSD
-
-	@TechIssrCSD.setter
-	def TechIssrCSD(self, value):
-		self._TechIssrCSD = value if type(value) != auto else self.make_default("TechIssrCSD")
-
-	@TechIssrCSD.deleter
-	def TechIssrCSD(self):
-		del self._TechIssrCSD
-		self._TechIssrCSD = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VldTo', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrInvstrCSD', type=IssuerOrInvestor2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssncAcct', type=IssuanceAccount3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SctyMntnc', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DfltLk', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechIssrCSD', type=SystemPartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldTo', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrInvstrCSD', type=IssuerOrInvestor2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyMntnc', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssncAcct', type=IssuanceAccount3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DfltLk', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

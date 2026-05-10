@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import ExternalCreditorReferenceType1Code
+import Max35Text
 
 class CreditorReferenceType2Choice(base_types._BaseFieldType):
 

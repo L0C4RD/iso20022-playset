@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AgentNotificationCancellationIdentificationAndStatus1
 import AgentNotificationIdentificationAndStatus1
 

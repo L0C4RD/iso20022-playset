@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import IntraBalanceMovementCancellationQueryV02
 
 class CAMT_082_001_02():

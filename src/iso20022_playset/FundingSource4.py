@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import FundingSourceType3Code
+import Max35Text
 
 class FundingSource4(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ATMCompletionAdviceV03
 
 class CATP_008_001_03():

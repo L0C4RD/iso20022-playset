@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import InterestPaymentResponseV05
 
 class COLR_014_001_05():

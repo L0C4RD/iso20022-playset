@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MandateSuspensionRequestV04
 
 class PAIN_018_001_04():

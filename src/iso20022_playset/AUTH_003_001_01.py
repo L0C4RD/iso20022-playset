@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import InformationRequestStatusChangeNotificationV01
 
 class AUTH_003_001_01():

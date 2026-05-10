@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CollateralValueQueryV02
 
 class COLR_001_001_02():

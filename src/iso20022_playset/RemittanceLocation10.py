@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import TransactionReferences8
+import Max35Text
 import RemittanceLocationData2
 
 class RemittanceLocation10(base_types._BaseFieldType):

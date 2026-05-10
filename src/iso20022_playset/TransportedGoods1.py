@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
 import DocumentIdentification7
-import Max70Text
 import UserDefinedInformation1
+import Max70Text
 
 class TransportedGoods1(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrDfndInf", "_PurchsOrdrRef", "_SellrDfndInf", "_GoodsDesc"]
+	__slots__ = ["_BuyrDfndInf", "_PurchsOrdrRef", "_GoodsDesc", "_SellrDfndInf"]
 	@property
 	def BuyrDfndInf(self):
 		return self._BuyrDfndInf
@@ -33,19 +33,6 @@ class TransportedGoods1(base_types._BaseFieldType):
 		self._PurchsOrdrRef = None
 
 	@property
-	def SellrDfndInf(self):
-		return self._SellrDfndInf
-
-	@SellrDfndInf.setter
-	def SellrDfndInf(self, value):
-		self._SellrDfndInf = value if type(value) != auto else self.make_default("SellrDfndInf")
-
-	@SellrDfndInf.deleter
-	def SellrDfndInf(self):
-		del self._SellrDfndInf
-		self._SellrDfndInf = None
-
-	@property
 	def GoodsDesc(self):
 		return self._GoodsDesc
 
@@ -58,10 +45,23 @@ class TransportedGoods1(base_types._BaseFieldType):
 		del self._GoodsDesc
 		self._GoodsDesc = None
 
+	@property
+	def SellrDfndInf(self):
+		return self._SellrDfndInf
+
+	@SellrDfndInf.setter
+	def SellrDfndInf(self, value):
+		self._SellrDfndInf = value if type(value) != auto else self.make_default("SellrDfndInf")
+
+	@SellrDfndInf.deleter
+	def SellrDfndInf(self):
+		del self._SellrDfndInf
+		self._SellrDfndInf = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BuyrDfndInf', type=UserDefinedInformation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SellrDfndInf', type=UserDefinedInformation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GoodsDesc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrDfndInf', type=UserDefinedInformation1, min=0, max=None, mutex_group=None, array=True),
 	))
 

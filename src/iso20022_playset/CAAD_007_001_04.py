@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ErrorV04
 
 class CAAD_007_001_04():

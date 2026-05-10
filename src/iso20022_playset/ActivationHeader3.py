@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
+import RTPPartyIdentification2
 import Max35Text
 import ISODateTime
-import RTPPartyIdentification2
 
 class ActivationHeader3(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_MsgRcpt", "_MsgOrgtr", "_InitgPty", "_CreDtTm"]
+	__slots__ = ["_MsgId", "_InitgPty", "_MsgRcpt", "_MsgOrgtr", "_CreDtTm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -18,6 +18,19 @@ class ActivationHeader3(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
+
+	@property
+	def InitgPty(self):
+		return self._InitgPty
+
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
+
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
 
 	@property
 	def MsgRcpt(self):
@@ -46,19 +59,6 @@ class ActivationHeader3(base_types._BaseFieldType):
 		self._MsgOrgtr = None
 
 	@property
-	def InitgPty(self):
-		return self._InitgPty
-
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
-
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
-
-	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -73,9 +73,9 @@ class ActivationHeader3(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitgPty', type=RTPPartyIdentification2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgRcpt', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgOrgtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitgPty', type=RTPPartyIdentification2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
 import OrganisationType2
-import RequestedIndicator
 import PersonType2
+import RequestedIndicator
 
 class CustomerTypeRequest2(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvtTp", "_OrgTp", "_Reqd"]
+	__slots__ = ["_PrvtTp", "_Reqd", "_OrgTp"]
 	@property
 	def PrvtTp(self):
 		return self._PrvtTp
@@ -20,19 +20,6 @@ class CustomerTypeRequest2(base_types._BaseFieldType):
 		self._PrvtTp = None
 
 	@property
-	def OrgTp(self):
-		return self._OrgTp
-
-	@OrgTp.setter
-	def OrgTp(self, value):
-		self._OrgTp = value if type(value) != auto else self.make_default("OrgTp")
-
-	@OrgTp.deleter
-	def OrgTp(self):
-		del self._OrgTp
-		self._OrgTp = None
-
-	@property
 	def Reqd(self):
 		return self._Reqd
 
@@ -45,9 +32,22 @@ class CustomerTypeRequest2(base_types._BaseFieldType):
 		del self._Reqd
 		self._Reqd = None
 
+	@property
+	def OrgTp(self):
+		return self._OrgTp
+
+	@OrgTp.setter
+	def OrgTp(self, value):
+		self._OrgTp = value if type(value) != auto else self.make_default("OrgTp")
+
+	@OrgTp.deleter
+	def OrgTp(self):
+		del self._OrgTp
+		self._OrgTp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrvtTp', type=PersonType2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgTp', type=OrganisationType2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Reqd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgTp', type=OrganisationType2, min=0, max=1, mutex_group=None, array=False),
 	))
 

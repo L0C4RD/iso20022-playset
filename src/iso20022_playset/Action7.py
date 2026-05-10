@@ -1,7 +1,7 @@
-import base_types
-import ActionType6Code
+from . import base_types
 import ActionMessage4
 import MessageFunction11Code
+import ActionType6Code
 
 class Action7(base_types._BaseFieldType):
 

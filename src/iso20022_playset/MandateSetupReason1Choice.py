@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ExternalMandateSetupReason1Code
 import Max70Text
 

@@ -1,8 +1,8 @@
-import base_types
+from . import base_types
 import ATMReconciliationAcknowledgement3
-import ContentInformationType15
 import Header32
 import ContentInformationType10
+import ContentInformationType15
 
 class ATMReconciliationAcknowledgementV03(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MessageHeader1
 import SupplementaryData1
 import AccountLink7

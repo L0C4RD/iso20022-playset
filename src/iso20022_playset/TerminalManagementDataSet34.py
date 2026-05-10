@@ -1,38 +1,12 @@
-import base_types
+from . import base_types
 import DataSetIdentification11
-import TrueFalseIndicator
 import Max9NumericText
 import ManagementPlanContent13
+import TrueFalseIndicator
 
 class TerminalManagementDataSet34(base_types._BaseFieldType):
 
-	__slots__ = ["_SeqCntr", "_Cntt", "_Id", "_LastSeq"]
-	@property
-	def SeqCntr(self):
-		return self._SeqCntr
-
-	@SeqCntr.setter
-	def SeqCntr(self, value):
-		self._SeqCntr = value if type(value) != auto else self.make_default("SeqCntr")
-
-	@SeqCntr.deleter
-	def SeqCntr(self):
-		del self._SeqCntr
-		self._SeqCntr = None
-
-	@property
-	def Cntt(self):
-		return self._Cntt
-
-	@Cntt.setter
-	def Cntt(self, value):
-		self._Cntt = value if type(value) != auto else self.make_default("Cntt")
-
-	@Cntt.deleter
-	def Cntt(self):
-		del self._Cntt
-		self._Cntt = None
-
+	__slots__ = ["_Id", "_LastSeq", "_SeqCntr", "_Cntt"]
 	@property
 	def Id(self):
 		return self._Id
@@ -59,10 +33,36 @@ class TerminalManagementDataSet34(base_types._BaseFieldType):
 		del self._LastSeq
 		self._LastSeq = None
 
+	@property
+	def SeqCntr(self):
+		return self._SeqCntr
+
+	@SeqCntr.setter
+	def SeqCntr(self, value):
+		self._SeqCntr = value if type(value) != auto else self.make_default("SeqCntr")
+
+	@SeqCntr.deleter
+	def SeqCntr(self):
+		del self._SeqCntr
+		self._SeqCntr = None
+
+	@property
+	def Cntt(self):
+		return self._Cntt
+
+	@Cntt.setter
+	def Cntt(self, value):
+		self._Cntt = value if type(value) != auto else self.make_default("Cntt")
+
+	@Cntt.deleter
+	def Cntt(self):
+		del self._Cntt
+		self._Cntt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SeqCntr', type=Max9NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cntt', type=ManagementPlanContent13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DataSetIdentification11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastSeq', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqCntr', type=Max9NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntt', type=ManagementPlanContent13, min=0, max=1, mutex_group=None, array=False),
 	))
 

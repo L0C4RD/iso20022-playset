@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
+import PartyIdentification113
 import Max35Text
 import OrderStatus3Choice
-import PartyIdentification113
 
 class OrderStatusAndReason10(base_types._BaseFieldType):
 
-	__slots__ = ["_MstrRef", "_OrdrSts", "_StsInitr"]
+	__slots__ = ["_StsInitr", "_MstrRef", "_OrdrSts"]
+	@property
+	def StsInitr(self):
+		return self._StsInitr
+
+	@StsInitr.setter
+	def StsInitr(self, value):
+		self._StsInitr = value if type(value) != auto else self.make_default("StsInitr")
+
+	@StsInitr.deleter
+	def StsInitr(self):
+		del self._StsInitr
+		self._StsInitr = None
+
 	@property
 	def MstrRef(self):
 		return self._MstrRef
@@ -32,22 +45,9 @@ class OrderStatusAndReason10(base_types._BaseFieldType):
 		del self._OrdrSts
 		self._OrdrSts = None
 
-	@property
-	def StsInitr(self):
-		return self._StsInitr
-
-	@StsInitr.setter
-	def StsInitr(self, value):
-		self._StsInitr = value if type(value) != auto else self.make_default("StsInitr")
-
-	@StsInitr.deleter
-	def StsInitr(self):
-		del self._StsInitr
-		self._StsInitr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrSts', type=OrderStatus3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
 	))
 

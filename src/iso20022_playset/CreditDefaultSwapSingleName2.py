@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import DerivativePartyIdentification1Choice
 import ActiveOrHistoricCurrencyCode
 import TrueFalseIndicator
 
 class CreditDefaultSwapSingleName2(base_types._BaseFieldType):
 
-	__slots__ = ["_SvrgnIssr", "_NtnlCcy", "_RefPty"]
-	@property
-	def SvrgnIssr(self):
-		return self._SvrgnIssr
-
-	@SvrgnIssr.setter
-	def SvrgnIssr(self, value):
-		self._SvrgnIssr = value if type(value) != auto else self.make_default("SvrgnIssr")
-
-	@SvrgnIssr.deleter
-	def SvrgnIssr(self):
-		del self._SvrgnIssr
-		self._SvrgnIssr = None
-
+	__slots__ = ["_NtnlCcy", "_SvrgnIssr", "_RefPty"]
 	@property
 	def NtnlCcy(self):
 		return self._NtnlCcy
@@ -31,6 +18,19 @@ class CreditDefaultSwapSingleName2(base_types._BaseFieldType):
 	def NtnlCcy(self):
 		del self._NtnlCcy
 		self._NtnlCcy = None
+
+	@property
+	def SvrgnIssr(self):
+		return self._SvrgnIssr
+
+	@SvrgnIssr.setter
+	def SvrgnIssr(self, value):
+		self._SvrgnIssr = value if type(value) != auto else self.make_default("SvrgnIssr")
+
+	@SvrgnIssr.deleter
+	def SvrgnIssr(self):
+		del self._SvrgnIssr
+		self._SvrgnIssr = None
 
 	@property
 	def RefPty(self):
@@ -46,8 +46,8 @@ class CreditDefaultSwapSingleName2(base_types._BaseFieldType):
 		self._RefPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SvrgnIssr', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvrgnIssr', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefPty', type=DerivativePartyIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

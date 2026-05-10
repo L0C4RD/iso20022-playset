@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MeetingEntitlementNotificationV10
 
 class SEEV_003_001_10():

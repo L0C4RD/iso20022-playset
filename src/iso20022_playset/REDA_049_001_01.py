@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountLinkCreationRequestV01
 
 class REDA_049_001_01():

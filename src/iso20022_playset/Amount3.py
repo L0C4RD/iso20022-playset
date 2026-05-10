@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ActiveCurrencyAndAmount
 
 class Amount3(base_types._BaseFieldType):

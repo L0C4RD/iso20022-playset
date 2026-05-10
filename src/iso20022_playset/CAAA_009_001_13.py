@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AcceptorReconciliationRequestV13
 
 class CAAA_009_001_13():

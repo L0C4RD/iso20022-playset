@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AgentCAGlobalDistributionAuthorisationRequestV01
 
 class SEEV_017_001_01():

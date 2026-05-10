@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import UniqueTransactionIdentifier2Choice
 
 class CompareUniqueTransactionIdentifier2(base_types._BaseFieldType):

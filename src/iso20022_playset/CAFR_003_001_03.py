@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FraudDispositionInitiationV03
 
 class CAFR_003_001_03():

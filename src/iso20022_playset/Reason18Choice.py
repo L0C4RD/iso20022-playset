@@ -1,6 +1,6 @@
-import base_types
-import NoReasonCode
+from . import base_types
 import ProprietaryReason4
+import NoReasonCode
 
 class Reason18Choice(base_types._BaseFieldType):
 

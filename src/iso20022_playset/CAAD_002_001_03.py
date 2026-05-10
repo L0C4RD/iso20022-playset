@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BatchManagementResponseV03
 
 class CAAD_002_001_03():

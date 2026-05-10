@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Percentage14Rate
 import ActiveOrHistoricCurrencyAnd13DecimalAmount
 

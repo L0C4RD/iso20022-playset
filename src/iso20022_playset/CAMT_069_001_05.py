@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import GetStandingOrderV05
 
 class CAMT_069_001_05():

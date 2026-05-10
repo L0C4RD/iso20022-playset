@@ -1,23 +1,23 @@
-import base_types
-import PriceValueAndRate4
+from . import base_types
 import TypeOfPrice27Choice
 import ActiveOrHistoricCurrencyAnd13DecimalAmount
+import PriceValueAndRate4
 
 class PriceInformation10(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_AmtOfChng", "_CurPric", "_PrvsPric"]
+	__slots__ = ["_CurPric", "_AmtOfChng", "_PrvsPric", "_Tp"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def CurPric(self):
+		return self._CurPric
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@CurPric.setter
+	def CurPric(self, value):
+		self._CurPric = value if type(value) != auto else self.make_default("CurPric")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@CurPric.deleter
+	def CurPric(self):
+		del self._CurPric
+		self._CurPric = None
 
 	@property
 	def AmtOfChng(self):
@@ -33,19 +33,6 @@ class PriceInformation10(base_types._BaseFieldType):
 		self._AmtOfChng = None
 
 	@property
-	def CurPric(self):
-		return self._CurPric
-
-	@CurPric.setter
-	def CurPric(self, value):
-		self._CurPric = value if type(value) != auto else self.make_default("CurPric")
-
-	@CurPric.deleter
-	def CurPric(self):
-		del self._CurPric
-		self._CurPric = None
-
-	@property
 	def PrvsPric(self):
 		return self._PrvsPric
 
@@ -58,10 +45,23 @@ class PriceInformation10(base_types._BaseFieldType):
 		del self._PrvsPric
 		self._PrvsPric = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=TypeOfPrice27Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmtOfChng', type=PriceValueAndRate4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurPric', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtOfChng', type=PriceValueAndRate4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsPric', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TypeOfPrice27Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

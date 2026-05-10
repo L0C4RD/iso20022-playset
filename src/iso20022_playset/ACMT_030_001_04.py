@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountSwitchRequestRedirectionV04
 
 class ACMT_030_001_04():

@@ -1,6 +1,6 @@
-import base_types
-import StandingOrderQueryType1Code
+from . import base_types
 import GenericIdentification1
+import StandingOrderQueryType1Code
 
 class RequestType3Choice(base_types._BaseFieldType):
 

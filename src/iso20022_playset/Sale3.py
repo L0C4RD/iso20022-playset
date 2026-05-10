@@ -1,25 +1,12 @@
-import base_types
-import Max35Text
-import Adjustment13
+from . import base_types
 import LoyaltyProgramme4
+import Adjustment13
+import Max35Text
 import SaleItem4
 
 class Sale3(base_types._BaseFieldType):
 
-	__slots__ = ["_Adjstmnt", "_SummryCmmdtyId", "_LineItm", "_LltyPrgrmm"]
-	@property
-	def Adjstmnt(self):
-		return self._Adjstmnt
-
-	@Adjstmnt.setter
-	def Adjstmnt(self, value):
-		self._Adjstmnt = value if type(value) != auto else self.make_default("Adjstmnt")
-
-	@Adjstmnt.deleter
-	def Adjstmnt(self):
-		del self._Adjstmnt
-		self._Adjstmnt = None
-
+	__slots__ = ["_SummryCmmdtyId", "_LineItm", "_LltyPrgrmm", "_Adjstmnt"]
 	@property
 	def SummryCmmdtyId(self):
 		return self._SummryCmmdtyId
@@ -59,10 +46,23 @@ class Sale3(base_types._BaseFieldType):
 		del self._LltyPrgrmm
 		self._LltyPrgrmm = None
 
+	@property
+	def Adjstmnt(self):
+		return self._Adjstmnt
+
+	@Adjstmnt.setter
+	def Adjstmnt(self, value):
+		self._Adjstmnt = value if type(value) != auto else self.make_default("Adjstmnt")
+
+	@Adjstmnt.deleter
+	def Adjstmnt(self):
+		del self._Adjstmnt
+		self._Adjstmnt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Adjstmnt', type=Adjustment13, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SummryCmmdtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LineItm', type=SaleItem4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LltyPrgrmm', type=LoyaltyProgramme4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adjstmnt', type=Adjustment13, min=0, max=None, mutex_group=None, array=True),
 	))
 

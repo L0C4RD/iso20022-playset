@@ -1,14 +1,14 @@
-import base_types
-import MarketClaimCancellationRequestStatus2Choice
+from . import base_types
 import CorporateActionOption234
+import DocumentIdentification9
+import MarketClaimCancellationRequestStatus2Choice
 import References26
 import SupplementaryData1
 import CorporateActionGeneralInformation181
-import DocumentIdentification9
 
 class MarketClaimCancellationRequestStatusAdviceV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MktClmCxlReqSts", "_TxRef", "_MktClmDtls", "_MktClmCxlReqId", "_CorpActnGnlInf", "_SplmtryData"]
+	__slots__ = ["_MktClmCxlReqSts", "_MktClmDtls", "_CorpActnGnlInf", "_SplmtryData", "_MktClmCxlReqId", "_TxRef"]
 	@property
 	def MktClmCxlReqSts(self):
 		return self._MktClmCxlReqSts
@@ -23,19 +23,6 @@ class MarketClaimCancellationRequestStatusAdviceV03(base_types._BaseFieldType):
 		self._MktClmCxlReqSts = None
 
 	@property
-	def TxRef(self):
-		return self._TxRef
-
-	@TxRef.setter
-	def TxRef(self, value):
-		self._TxRef = value if type(value) != auto else self.make_default("TxRef")
-
-	@TxRef.deleter
-	def TxRef(self):
-		del self._TxRef
-		self._TxRef = None
-
-	@property
 	def MktClmDtls(self):
 		return self._MktClmDtls
 
@@ -47,19 +34,6 @@ class MarketClaimCancellationRequestStatusAdviceV03(base_types._BaseFieldType):
 	def MktClmDtls(self):
 		del self._MktClmDtls
 		self._MktClmDtls = None
-
-	@property
-	def MktClmCxlReqId(self):
-		return self._MktClmCxlReqId
-
-	@MktClmCxlReqId.setter
-	def MktClmCxlReqId(self, value):
-		self._MktClmCxlReqId = value if type(value) != auto else self.make_default("MktClmCxlReqId")
-
-	@MktClmCxlReqId.deleter
-	def MktClmCxlReqId(self):
-		del self._MktClmCxlReqId
-		self._MktClmCxlReqId = None
 
 	@property
 	def CorpActnGnlInf(self):
@@ -87,12 +61,38 @@ class MarketClaimCancellationRequestStatusAdviceV03(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def MktClmCxlReqId(self):
+		return self._MktClmCxlReqId
+
+	@MktClmCxlReqId.setter
+	def MktClmCxlReqId(self, value):
+		self._MktClmCxlReqId = value if type(value) != auto else self.make_default("MktClmCxlReqId")
+
+	@MktClmCxlReqId.deleter
+	def MktClmCxlReqId(self):
+		del self._MktClmCxlReqId
+		self._MktClmCxlReqId = None
+
+	@property
+	def TxRef(self):
+		return self._TxRef
+
+	@TxRef.setter
+	def TxRef(self, value):
+		self._TxRef = value if type(value) != auto else self.make_default("TxRef")
+
+	@TxRef.deleter
+	def TxRef(self):
+		del self._TxRef
+		self._TxRef = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MktClmCxlReqSts', type=MarketClaimCancellationRequestStatus2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxRef', type=References26, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktClmDtls', type=CorporateActionOption234, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktClmCxlReqId', type=DocumentIdentification9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation181, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MktClmCxlReqId', type=DocumentIdentification9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxRef', type=References26, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import OrganisationIdentification15Choice
 
 class CompareOrganisationIdentification6(base_types._BaseFieldType):

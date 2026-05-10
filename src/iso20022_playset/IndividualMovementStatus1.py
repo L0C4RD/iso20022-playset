@@ -1,24 +1,11 @@
-import base_types
-import Max35Text
+from . import base_types
 import MovementProcessingStatus1
 import DistributionRejectionStatus1
+import Max35Text
 
 class IndividualMovementStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_MvmntId", "_PrcdSts", "_RjctdSts"]
-	@property
-	def MvmntId(self):
-		return self._MvmntId
-
-	@MvmntId.setter
-	def MvmntId(self, value):
-		self._MvmntId = value if type(value) != auto else self.make_default("MvmntId")
-
-	@MvmntId.deleter
-	def MvmntId(self):
-		del self._MvmntId
-		self._MvmntId = None
-
+	__slots__ = ["_PrcdSts", "_MvmntId", "_RjctdSts"]
 	@property
 	def PrcdSts(self):
 		return self._PrcdSts
@@ -31,6 +18,19 @@ class IndividualMovementStatus1(base_types._BaseFieldType):
 	def PrcdSts(self):
 		del self._PrcdSts
 		self._PrcdSts = None
+
+	@property
+	def MvmntId(self):
+		return self._MvmntId
+
+	@MvmntId.setter
+	def MvmntId(self, value):
+		self._MvmntId = value if type(value) != auto else self.make_default("MvmntId")
+
+	@MvmntId.deleter
+	def MvmntId(self):
+		del self._MvmntId
+		self._MvmntId = None
 
 	@property
 	def RjctdSts(self):
@@ -46,8 +46,8 @@ class IndividualMovementStatus1(base_types._BaseFieldType):
 		self._RjctdSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcdSts', type=MovementProcessingStatus1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctdSts', type=DistributionRejectionStatus1, min=0, max=1, mutex_group=1, array=False),
 	))
 

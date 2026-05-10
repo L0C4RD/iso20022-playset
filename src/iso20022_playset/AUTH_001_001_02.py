@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import InformationRequestOpeningV02
 
 class AUTH_001_001_02():

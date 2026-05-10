@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
+import GenericIdentification86
 import ISO20022MessageIdentificationText
 import Exact3NumericText
-import GenericIdentification86
 
 class DocumentNumber6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryNb", "_ShrtNb", "_LngNb"]
-	@property
-	def PrtryNb(self):
-		return self._PrtryNb
-
-	@PrtryNb.setter
-	def PrtryNb(self, value):
-		self._PrtryNb = value if type(value) != auto else self.make_default("PrtryNb")
-
-	@PrtryNb.deleter
-	def PrtryNb(self):
-		del self._PrtryNb
-		self._PrtryNb = None
-
+	__slots__ = ["_ShrtNb", "_PrtryNb", "_LngNb"]
 	@property
 	def ShrtNb(self):
 		return self._ShrtNb
@@ -31,6 +18,19 @@ class DocumentNumber6Choice(base_types._BaseFieldType):
 	def ShrtNb(self):
 		del self._ShrtNb
 		self._ShrtNb = None
+
+	@property
+	def PrtryNb(self):
+		return self._PrtryNb
+
+	@PrtryNb.setter
+	def PrtryNb(self, value):
+		self._PrtryNb = value if type(value) != auto else self.make_default("PrtryNb")
+
+	@PrtryNb.deleter
+	def PrtryNb(self):
+		del self._PrtryNb
+		self._PrtryNb = None
 
 	@property
 	def LngNb(self):
@@ -46,8 +46,8 @@ class DocumentNumber6Choice(base_types._BaseFieldType):
 		self._LngNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtryNb', type=GenericIdentification86, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ShrtNb', type=Exact3NumericText, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtryNb', type=GenericIdentification86, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LngNb', type=ISO20022MessageIdentificationText, min=0, max=1, mutex_group=1, array=False),
 	))
 

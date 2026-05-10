@@ -1,24 +1,11 @@
-import base_types
-import PositionSet22
+from . import base_types
 import ISODate
 import PositionSet21
+import PositionSet22
 
 class PositionSetAggregated4(base_types._BaseFieldType):
 
-	__slots__ = ["_RefDt", "_PosSet", "_CcyPosSet", "_CcyCollPosSet", "_CollPosSet"]
-	@property
-	def RefDt(self):
-		return self._RefDt
-
-	@RefDt.setter
-	def RefDt(self, value):
-		self._RefDt = value if type(value) != auto else self.make_default("RefDt")
-
-	@RefDt.deleter
-	def RefDt(self):
-		del self._RefDt
-		self._RefDt = None
-
+	__slots__ = ["_PosSet", "_RefDt", "_CcyPosSet", "_CcyCollPosSet", "_CollPosSet"]
 	@property
 	def PosSet(self):
 		return self._PosSet
@@ -31,6 +18,19 @@ class PositionSetAggregated4(base_types._BaseFieldType):
 	def PosSet(self):
 		del self._PosSet
 		self._PosSet = None
+
+	@property
+	def RefDt(self):
+		return self._RefDt
+
+	@RefDt.setter
+	def RefDt(self, value):
+		self._RefDt = value if type(value) != auto else self.make_default("RefDt")
+
+	@RefDt.deleter
+	def RefDt(self):
+		del self._RefDt
+		self._RefDt = None
 
 	@property
 	def CcyPosSet(self):
@@ -72,8 +72,8 @@ class PositionSetAggregated4(base_types._BaseFieldType):
 		self._CollPosSet = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PosSet', type=PositionSet21, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CcyPosSet', type=PositionSet21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CcyCollPosSet', type=PositionSet22, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CollPosSet', type=PositionSet22, min=0, max=None, mutex_group=None, array=True),

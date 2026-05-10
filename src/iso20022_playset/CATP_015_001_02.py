@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ATMDepositCompletionAcknowledgementV02
 
 class CATP_015_001_02():

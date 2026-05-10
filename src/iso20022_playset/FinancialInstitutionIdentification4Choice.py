@@ -1,6 +1,6 @@
-import base_types
-import NameAndAddress6
+from . import base_types
 import BICIdentifier
+import NameAndAddress6
 
 class FinancialInstitutionIdentification4Choice(base_types._BaseFieldType):
 

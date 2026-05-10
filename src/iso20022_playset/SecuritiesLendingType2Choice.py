@@ -1,6 +1,6 @@
-import base_types
-import SecuritiesLendingType1Code
+from . import base_types
 import GenericIdentification30
+import SecuritiesLendingType1Code
 
 class SecuritiesLendingType2Choice(base_types._BaseFieldType):
 

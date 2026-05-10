@@ -1,13 +1,13 @@
-import base_types
+from . import base_types
 import PartyIdentification100
-import SupplementaryData1
 import BeneficialOwner2
+import SupplementaryData1
 import AggregateHoldingBalance3
 import SecuritiesAccount19
 
 class AccountSubLevel19(base_types._BaseFieldType):
 
-	__slots__ = ["_BalDtls", "_AcctOwnr", "_AcctId", "_AcctSvcr", "_SplmtryData", "_BnfclOwnr"]
+	__slots__ = ["_BalDtls", "_AcctSvcr", "_SplmtryData", "_BnfclOwnr", "_AcctOwnr", "_AcctId"]
 	@property
 	def BalDtls(self):
 		return self._BalDtls
@@ -20,32 +20,6 @@ class AccountSubLevel19(base_types._BaseFieldType):
 	def BalDtls(self):
 		del self._BalDtls
 		self._BalDtls = None
-
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
 
 	@property
 	def AcctSvcr(self):
@@ -86,12 +60,38 @@ class AccountSubLevel19(base_types._BaseFieldType):
 		del self._BnfclOwnr
 		self._BnfclOwnr = None
 
+	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
+	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalDtls', type=AggregateHoldingBalance3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BnfclOwnr', type=BeneficialOwner2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
 	))
 

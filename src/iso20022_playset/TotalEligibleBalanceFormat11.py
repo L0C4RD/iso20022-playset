@@ -1,6 +1,6 @@
-import base_types
-import Quantity80Choice
+from . import base_types
 import SignedQuantityFormat13
+import Quantity80Choice
 
 class TotalEligibleBalanceFormat11(base_types._BaseFieldType):
 

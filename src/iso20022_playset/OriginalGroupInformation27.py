@@ -1,25 +1,12 @@
-import base_types
-import Max35Text
+from . import base_types
 import Max15NumericText
 import DecimalNumber
+import Max35Text
 import ISODateTime
 
 class OriginalGroupInformation27(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlCtrlSum", "_OrgnlNbOfTxs", "_OrgnlMsgNmId", "_OrgnlMsgId", "_OrgnlCreDtTm"]
-	@property
-	def OrgnlCtrlSum(self):
-		return self._OrgnlCtrlSum
-
-	@OrgnlCtrlSum.setter
-	def OrgnlCtrlSum(self, value):
-		self._OrgnlCtrlSum = value if type(value) != auto else self.make_default("OrgnlCtrlSum")
-
-	@OrgnlCtrlSum.deleter
-	def OrgnlCtrlSum(self):
-		del self._OrgnlCtrlSum
-		self._OrgnlCtrlSum = None
-
+	__slots__ = ["_OrgnlNbOfTxs", "_OrgnlCtrlSum", "_OrgnlMsgNmId", "_OrgnlCreDtTm", "_OrgnlMsgId"]
 	@property
 	def OrgnlNbOfTxs(self):
 		return self._OrgnlNbOfTxs
@@ -32,6 +19,19 @@ class OriginalGroupInformation27(base_types._BaseFieldType):
 	def OrgnlNbOfTxs(self):
 		del self._OrgnlNbOfTxs
 		self._OrgnlNbOfTxs = None
+
+	@property
+	def OrgnlCtrlSum(self):
+		return self._OrgnlCtrlSum
+
+	@OrgnlCtrlSum.setter
+	def OrgnlCtrlSum(self, value):
+		self._OrgnlCtrlSum = value if type(value) != auto else self.make_default("OrgnlCtrlSum")
+
+	@OrgnlCtrlSum.deleter
+	def OrgnlCtrlSum(self):
+		del self._OrgnlCtrlSum
+		self._OrgnlCtrlSum = None
 
 	@property
 	def OrgnlMsgNmId(self):
@@ -47,19 +47,6 @@ class OriginalGroupInformation27(base_types._BaseFieldType):
 		self._OrgnlMsgNmId = None
 
 	@property
-	def OrgnlMsgId(self):
-		return self._OrgnlMsgId
-
-	@OrgnlMsgId.setter
-	def OrgnlMsgId(self, value):
-		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
-
-	@OrgnlMsgId.deleter
-	def OrgnlMsgId(self):
-		del self._OrgnlMsgId
-		self._OrgnlMsgId = None
-
-	@property
 	def OrgnlCreDtTm(self):
 		return self._OrgnlCreDtTm
 
@@ -72,11 +59,24 @@ class OriginalGroupInformation27(base_types._BaseFieldType):
 		del self._OrgnlCreDtTm
 		self._OrgnlCreDtTm = None
 
+	@property
+	def OrgnlMsgId(self):
+		return self._OrgnlMsgId
+
+	@OrgnlMsgId.setter
+	def OrgnlMsgId(self, value):
+		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
+
+	@OrgnlMsgId.deleter
+	def OrgnlMsgId(self):
+		del self._OrgnlMsgId
+		self._OrgnlMsgId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlCtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlNbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

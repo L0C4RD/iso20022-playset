@@ -1,27 +1,14 @@
-import base_types
+from . import base_types
 import AccountForAction1
-import SupplementaryData1
 import OrganisationIdentification39
 import PartyAndSignature4
 import References5
+import SupplementaryData1
 import BranchAndFinancialInstitutionIdentification8
 
 class AccountRequestAcknowledgementV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Refs", "_AcctId", "_DgtlSgntr", "_AcctSvcrId", "_OrgId", "_SplmtryData", "_Fr"]
-	@property
-	def Refs(self):
-		return self._Refs
-
-	@Refs.setter
-	def Refs(self, value):
-		self._Refs = value if type(value) != auto else self.make_default("Refs")
-
-	@Refs.deleter
-	def Refs(self):
-		del self._Refs
-		self._Refs = None
-
+	__slots__ = ["_AcctId", "_OrgId", "_Refs", "_AcctSvcrId", "_DgtlSgntr", "_SplmtryData", "_Fr"]
 	@property
 	def AcctId(self):
 		return self._AcctId
@@ -36,17 +23,30 @@ class AccountRequestAcknowledgementV04(base_types._BaseFieldType):
 		self._AcctId = None
 
 	@property
-	def DgtlSgntr(self):
-		return self._DgtlSgntr
+	def OrgId(self):
+		return self._OrgId
 
-	@DgtlSgntr.setter
-	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
+	@OrgId.setter
+	def OrgId(self, value):
+		self._OrgId = value if type(value) != auto else self.make_default("OrgId")
 
-	@DgtlSgntr.deleter
-	def DgtlSgntr(self):
-		del self._DgtlSgntr
-		self._DgtlSgntr = None
+	@OrgId.deleter
+	def OrgId(self):
+		del self._OrgId
+		self._OrgId = None
+
+	@property
+	def Refs(self):
+		return self._Refs
+
+	@Refs.setter
+	def Refs(self, value):
+		self._Refs = value if type(value) != auto else self.make_default("Refs")
+
+	@Refs.deleter
+	def Refs(self):
+		del self._Refs
+		self._Refs = None
 
 	@property
 	def AcctSvcrId(self):
@@ -62,17 +62,17 @@ class AccountRequestAcknowledgementV04(base_types._BaseFieldType):
 		self._AcctSvcrId = None
 
 	@property
-	def OrgId(self):
-		return self._OrgId
+	def DgtlSgntr(self):
+		return self._DgtlSgntr
 
-	@OrgId.setter
-	def OrgId(self, value):
-		self._OrgId = value if type(value) != auto else self.make_default("OrgId")
+	@DgtlSgntr.setter
+	def DgtlSgntr(self, value):
+		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
 
-	@OrgId.deleter
-	def OrgId(self):
-		del self._OrgId
-		self._OrgId = None
+	@DgtlSgntr.deleter
+	def DgtlSgntr(self):
+		del self._DgtlSgntr
+		self._DgtlSgntr = None
 
 	@property
 	def SplmtryData(self):
@@ -101,11 +101,11 @@ class AccountRequestAcknowledgementV04(base_types._BaseFieldType):
 		self._Fr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Refs', type=References5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=AccountForAction1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgId', type=OrganisationIdentification39, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Refs', type=References5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Fr', type=OrganisationIdentification39, min=0, max=1, mutex_group=None, array=False),
 	))

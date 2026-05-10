@@ -1,27 +1,14 @@
-import base_types
+from . import base_types
+import RemovalTypeAndReason1
+import RemovalProcessing2Choice
+import BlockChainAddressWallet3
+import Reference21
 import CollateralParties4
 import SecuritiesAccount19
-import BlockChainAddressWallet3
-import RemovalProcessing2Choice
-import RemovalTypeAndReason1
-import Reference21
 
 class RequestDetails28(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPty", "_BlckChainAdrOrWllt", "_Ref", "_SfkpgAcct", "_Rmvl", "_FinInstrmAndAttrbts"]
-	@property
-	def CtrPty(self):
-		return self._CtrPty
-
-	@CtrPty.setter
-	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != auto else self.make_default("CtrPty")
-
-	@CtrPty.deleter
-	def CtrPty(self):
-		del self._CtrPty
-		self._CtrPty = None
-
+	__slots__ = ["_BlckChainAdrOrWllt", "_FinInstrmAndAttrbts", "_Ref", "_SfkpgAcct", "_CtrPty", "_Rmvl"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -34,6 +21,19 @@ class RequestDetails28(base_types._BaseFieldType):
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
 		self._BlckChainAdrOrWllt = None
+
+	@property
+	def FinInstrmAndAttrbts(self):
+		return self._FinInstrmAndAttrbts
+
+	@FinInstrmAndAttrbts.setter
+	def FinInstrmAndAttrbts(self, value):
+		self._FinInstrmAndAttrbts = value if type(value) != auto else self.make_default("FinInstrmAndAttrbts")
+
+	@FinInstrmAndAttrbts.deleter
+	def FinInstrmAndAttrbts(self):
+		del self._FinInstrmAndAttrbts
+		self._FinInstrmAndAttrbts = None
 
 	@property
 	def Ref(self):
@@ -62,6 +62,19 @@ class RequestDetails28(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
+	def CtrPty(self):
+		return self._CtrPty
+
+	@CtrPty.setter
+	def CtrPty(self, value):
+		self._CtrPty = value if type(value) != auto else self.make_default("CtrPty")
+
+	@CtrPty.deleter
+	def CtrPty(self):
+		del self._CtrPty
+		self._CtrPty = None
+
+	@property
 	def Rmvl(self):
 		return self._Rmvl
 
@@ -74,25 +87,12 @@ class RequestDetails28(base_types._BaseFieldType):
 		del self._Rmvl
 		self._Rmvl = None
 
-	@property
-	def FinInstrmAndAttrbts(self):
-		return self._FinInstrmAndAttrbts
-
-	@FinInstrmAndAttrbts.setter
-	def FinInstrmAndAttrbts(self, value):
-		self._FinInstrmAndAttrbts = value if type(value) != auto else self.make_default("FinInstrmAndAttrbts")
-
-	@FinInstrmAndAttrbts.deleter
-	def FinInstrmAndAttrbts(self):
-		del self._FinInstrmAndAttrbts
-		self._FinInstrmAndAttrbts = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPty', type=CollateralParties4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmAndAttrbts', type=RemovalProcessing2Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ref', type=Reference21, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPty', type=CollateralParties4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rmvl', type=RemovalTypeAndReason1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmAndAttrbts', type=RemovalProcessing2Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

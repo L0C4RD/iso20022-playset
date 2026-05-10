@@ -1,12 +1,12 @@
-import base_types
-import ReportingMessageStatus1Code
-import GenericValidationRuleIdentification1
+from . import base_types
 import ISODate
+import ReportingMessageStatus1Code
 import OriginalReportStatistics3
+import GenericValidationRuleIdentification1
 
 class StatusAdviceReport3(base_types._BaseFieldType):
 
-	__slots__ = ["_Sttstcs", "_VldtnRule", "_Sts", "_MsgDt"]
+	__slots__ = ["_Sttstcs", "_VldtnRule", "_MsgDt", "_Sts"]
 	@property
 	def Sttstcs(self):
 		return self._Sttstcs
@@ -34,19 +34,6 @@ class StatusAdviceReport3(base_types._BaseFieldType):
 		self._VldtnRule = None
 
 	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
-	@property
 	def MsgDt(self):
 		return self._MsgDt
 
@@ -59,10 +46,23 @@ class StatusAdviceReport3(base_types._BaseFieldType):
 		del self._MsgDt
 		self._MsgDt = None
 
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sttstcs', type=OriginalReportStatistics3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sts', type=ReportingMessageStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=ReportingMessageStatus1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReturnMemberV05
 
 class CAMT_014_001_05():

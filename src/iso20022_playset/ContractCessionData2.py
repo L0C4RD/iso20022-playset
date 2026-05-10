@@ -1,24 +1,11 @@
-import base_types
-import Max35Text
-import TradeParty6
+from . import base_types
 import ISODate
+import TradeParty6
+import Max35Text
 
 class ContractCessionData2(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty", "_DocNb", "_DocDt"]
-	@property
-	def Pty(self):
-		return self._Pty
-
-	@Pty.setter
-	def Pty(self, value):
-		self._Pty = value if type(value) != auto else self.make_default("Pty")
-
-	@Pty.deleter
-	def Pty(self):
-		del self._Pty
-		self._Pty = None
-
+	__slots__ = ["_DocNb", "_DocDt", "_Pty"]
 	@property
 	def DocNb(self):
 		return self._DocNb
@@ -45,9 +32,22 @@ class ContractCessionData2(base_types._BaseFieldType):
 		del self._DocDt
 		self._DocDt = None
 
+	@property
+	def Pty(self):
+		return self._Pty
+
+	@Pty.setter
+	def Pty(self, value):
+		self._Pty = value if type(value) != auto else self.make_default("Pty")
+
+	@Pty.deleter
+	def Pty(self):
+		del self._Pty
+		self._Pty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
 	))
 

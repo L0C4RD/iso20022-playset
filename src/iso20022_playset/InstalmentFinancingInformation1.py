@@ -1,7 +1,7 @@
-import base_types
-import FinancingResult1
+from . import base_types
 import ActiveCurrencyAndAmount
 import Max70Text
+import FinancingResult1
 
 class InstalmentFinancingInformation1(base_types._BaseFieldType):
 

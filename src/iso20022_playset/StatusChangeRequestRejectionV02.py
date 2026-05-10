@@ -1,24 +1,24 @@
-import base_types
-import TransactionStatus3
-import SimpleIdentificationInformation
-import MessageIdentification1
+from . import base_types
 import Reason2
+import TransactionStatus3
+import MessageIdentification1
+import SimpleIdentificationInformation
 
 class StatusChangeRequestRejectionV02(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_RjctdStsChng", "_SubmitrTxRef", "_RjctnId", "_RjctnRsn"]
+	__slots__ = ["_SubmitrTxRef", "_RjctdStsChng", "_RjctnId", "_RjctnRsn", "_TxId"]
 	@property
-	def TxId(self):
-		return self._TxId
+	def SubmitrTxRef(self):
+		return self._SubmitrTxRef
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@SubmitrTxRef.setter
+	def SubmitrTxRef(self, value):
+		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@SubmitrTxRef.deleter
+	def SubmitrTxRef(self):
+		del self._SubmitrTxRef
+		self._SubmitrTxRef = None
 
 	@property
 	def RjctdStsChng(self):
@@ -32,19 +32,6 @@ class StatusChangeRequestRejectionV02(base_types._BaseFieldType):
 	def RjctdStsChng(self):
 		del self._RjctdStsChng
 		self._RjctdStsChng = None
-
-	@property
-	def SubmitrTxRef(self):
-		return self._SubmitrTxRef
-
-	@SubmitrTxRef.setter
-	def SubmitrTxRef(self, value):
-		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
-
-	@SubmitrTxRef.deleter
-	def SubmitrTxRef(self):
-		del self._SubmitrTxRef
-		self._SubmitrTxRef = None
 
 	@property
 	def RjctnId(self):
@@ -72,11 +59,24 @@ class StatusChangeRequestRejectionV02(base_types._BaseFieldType):
 		del self._RjctnRsn
 		self._RjctnRsn = None
 
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctdStsChng', type=TransactionStatus3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctdStsChng', type=TransactionStatus3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnRsn', type=Reason2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 	))
 

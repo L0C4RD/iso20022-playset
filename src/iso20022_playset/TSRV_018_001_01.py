@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TradeStatusReportV01
 
 class TSRV_018_001_01():

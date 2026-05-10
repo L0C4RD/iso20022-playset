@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TradeLegStatementV04
 
 class SECL_003_001_04():

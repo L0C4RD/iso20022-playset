@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
 import PercentageRate
 import DecimalNumber
 import ActiveOrHistoricCurrencyAndAmount
 
 class FinancialInstrumentQuantity26Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NetAmt", "_GrssAmt", "_PctgOfTtlRedAmt", "_UnitsNb"]
+	__slots__ = ["_NetAmt", "_PctgOfTtlRedAmt", "_GrssAmt", "_UnitsNb"]
 	@property
 	def NetAmt(self):
 		return self._NetAmt
@@ -20,19 +20,6 @@ class FinancialInstrumentQuantity26Choice(base_types._BaseFieldType):
 		self._NetAmt = None
 
 	@property
-	def GrssAmt(self):
-		return self._GrssAmt
-
-	@GrssAmt.setter
-	def GrssAmt(self, value):
-		self._GrssAmt = value if type(value) != auto else self.make_default("GrssAmt")
-
-	@GrssAmt.deleter
-	def GrssAmt(self):
-		del self._GrssAmt
-		self._GrssAmt = None
-
-	@property
 	def PctgOfTtlRedAmt(self):
 		return self._PctgOfTtlRedAmt
 
@@ -44,6 +31,19 @@ class FinancialInstrumentQuantity26Choice(base_types._BaseFieldType):
 	def PctgOfTtlRedAmt(self):
 		del self._PctgOfTtlRedAmt
 		self._PctgOfTtlRedAmt = None
+
+	@property
+	def GrssAmt(self):
+		return self._GrssAmt
+
+	@GrssAmt.setter
+	def GrssAmt(self, value):
+		self._GrssAmt = value if type(value) != auto else self.make_default("GrssAmt")
+
+	@GrssAmt.deleter
+	def GrssAmt(self):
+		del self._GrssAmt
+		self._GrssAmt = None
 
 	@property
 	def UnitsNb(self):
@@ -60,8 +60,8 @@ class FinancialInstrumentQuantity26Choice(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NetAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='GrssAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PctgOfTtlRedAmt', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='GrssAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UnitsNb', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,39 +1,26 @@
-import base_types
-import Max35Text
-import ContentInformationType40
+from . import base_types
 import Geolocation1
 import SensitiveMobileData1
 import Min2Max3NumericText
+import ContentInformationType40
 import Min2Max3AlphaText
+import Max35Text
 
 class MobileData6(base_types._BaseFieldType):
 
-	__slots__ = ["_Glctn", "_MobMskdMSISDN", "_PrtctdMobData", "_SnstvMobData", "_MobCtryCd", "_MobNtwkCd"]
+	__slots__ = ["_MobNtwkCd", "_PrtctdMobData", "_MobMskdMSISDN", "_MobCtryCd", "_Glctn", "_SnstvMobData"]
 	@property
-	def Glctn(self):
-		return self._Glctn
+	def MobNtwkCd(self):
+		return self._MobNtwkCd
 
-	@Glctn.setter
-	def Glctn(self, value):
-		self._Glctn = value if type(value) != auto else self.make_default("Glctn")
+	@MobNtwkCd.setter
+	def MobNtwkCd(self, value):
+		self._MobNtwkCd = value if type(value) != auto else self.make_default("MobNtwkCd")
 
-	@Glctn.deleter
-	def Glctn(self):
-		del self._Glctn
-		self._Glctn = None
-
-	@property
-	def MobMskdMSISDN(self):
-		return self._MobMskdMSISDN
-
-	@MobMskdMSISDN.setter
-	def MobMskdMSISDN(self, value):
-		self._MobMskdMSISDN = value if type(value) != auto else self.make_default("MobMskdMSISDN")
-
-	@MobMskdMSISDN.deleter
-	def MobMskdMSISDN(self):
-		del self._MobMskdMSISDN
-		self._MobMskdMSISDN = None
+	@MobNtwkCd.deleter
+	def MobNtwkCd(self):
+		del self._MobNtwkCd
+		self._MobNtwkCd = None
 
 	@property
 	def PrtctdMobData(self):
@@ -49,17 +36,17 @@ class MobileData6(base_types._BaseFieldType):
 		self._PrtctdMobData = None
 
 	@property
-	def SnstvMobData(self):
-		return self._SnstvMobData
+	def MobMskdMSISDN(self):
+		return self._MobMskdMSISDN
 
-	@SnstvMobData.setter
-	def SnstvMobData(self, value):
-		self._SnstvMobData = value if type(value) != auto else self.make_default("SnstvMobData")
+	@MobMskdMSISDN.setter
+	def MobMskdMSISDN(self, value):
+		self._MobMskdMSISDN = value if type(value) != auto else self.make_default("MobMskdMSISDN")
 
-	@SnstvMobData.deleter
-	def SnstvMobData(self):
-		del self._SnstvMobData
-		self._SnstvMobData = None
+	@MobMskdMSISDN.deleter
+	def MobMskdMSISDN(self):
+		del self._MobMskdMSISDN
+		self._MobMskdMSISDN = None
 
 	@property
 	def MobCtryCd(self):
@@ -75,24 +62,37 @@ class MobileData6(base_types._BaseFieldType):
 		self._MobCtryCd = None
 
 	@property
-	def MobNtwkCd(self):
-		return self._MobNtwkCd
+	def Glctn(self):
+		return self._Glctn
 
-	@MobNtwkCd.setter
-	def MobNtwkCd(self, value):
-		self._MobNtwkCd = value if type(value) != auto else self.make_default("MobNtwkCd")
+	@Glctn.setter
+	def Glctn(self, value):
+		self._Glctn = value if type(value) != auto else self.make_default("Glctn")
 
-	@MobNtwkCd.deleter
-	def MobNtwkCd(self):
-		del self._MobNtwkCd
-		self._MobNtwkCd = None
+	@Glctn.deleter
+	def Glctn(self):
+		del self._Glctn
+		self._Glctn = None
+
+	@property
+	def SnstvMobData(self):
+		return self._SnstvMobData
+
+	@SnstvMobData.setter
+	def SnstvMobData(self, value):
+		self._SnstvMobData = value if type(value) != auto else self.make_default("SnstvMobData")
+
+	@SnstvMobData.deleter
+	def SnstvMobData(self):
+		del self._SnstvMobData
+		self._SnstvMobData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Glctn', type=Geolocation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MobMskdMSISDN', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdMobData', type=ContentInformationType40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SnstvMobData', type=SensitiveMobileData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MobCtryCd', type=Min2Max3AlphaText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MobNtwkCd', type=Min2Max3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdMobData', type=ContentInformationType40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MobMskdMSISDN', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MobCtryCd', type=Min2Max3AlphaText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Glctn', type=Geolocation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SnstvMobData', type=SensitiveMobileData1, min=0, max=1, mutex_group=None, array=False),
 	))
 

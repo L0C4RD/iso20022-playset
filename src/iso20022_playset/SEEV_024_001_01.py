@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AgentCAInformationStatusAdviceV01
 
 class SEEV_024_001_01():

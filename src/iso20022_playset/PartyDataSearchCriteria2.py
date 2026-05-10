@@ -1,67 +1,15 @@
-import base_types
+from . import base_types
+import DateAndDateTimeSearch4Choice
+import ResidenceType1Code
+import PartyLockStatus1
+import PartyIdentification136
+import SystemPartyType1Choice
 import Max35Text
 import DatePeriodSearch1Choice
-import SystemPartyType1Choice
-import PartyLockStatus1
-import DateAndDateTimeSearch4Choice
-import PartyIdentification136
-import ResidenceType1Code
 
 class PartyDataSearchCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_ClsgDt", "_RstrctnId", "_PtyId", "_LckSts", "_Tp", "_RstrctnIsseDt", "_OpngDt", "_RspnsblPtyId", "_ResTp"]
-	@property
-	def ClsgDt(self):
-		return self._ClsgDt
-
-	@ClsgDt.setter
-	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
-
-	@ClsgDt.deleter
-	def ClsgDt(self):
-		del self._ClsgDt
-		self._ClsgDt = None
-
-	@property
-	def RstrctnId(self):
-		return self._RstrctnId
-
-	@RstrctnId.setter
-	def RstrctnId(self, value):
-		self._RstrctnId = value if type(value) != auto else self.make_default("RstrctnId")
-
-	@RstrctnId.deleter
-	def RstrctnId(self):
-		del self._RstrctnId
-		self._RstrctnId = None
-
-	@property
-	def PtyId(self):
-		return self._PtyId
-
-	@PtyId.setter
-	def PtyId(self, value):
-		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
-
-	@PtyId.deleter
-	def PtyId(self):
-		del self._PtyId
-		self._PtyId = None
-
-	@property
-	def LckSts(self):
-		return self._LckSts
-
-	@LckSts.setter
-	def LckSts(self, value):
-		self._LckSts = value if type(value) != auto else self.make_default("LckSts")
-
-	@LckSts.deleter
-	def LckSts(self):
-		del self._LckSts
-		self._LckSts = None
-
+	__slots__ = ["_Tp", "_ClsgDt", "_RstrctnIsseDt", "_OpngDt", "_RspnsblPtyId", "_PtyId", "_ResTp", "_RstrctnId", "_LckSts"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -74,6 +22,19 @@ class PartyDataSearchCriteria2(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
+
+	@property
+	def ClsgDt(self):
+		return self._ClsgDt
+
+	@ClsgDt.setter
+	def ClsgDt(self, value):
+		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
+
+	@ClsgDt.deleter
+	def ClsgDt(self):
+		del self._ClsgDt
+		self._ClsgDt = None
 
 	@property
 	def RstrctnIsseDt(self):
@@ -115,6 +76,19 @@ class PartyDataSearchCriteria2(base_types._BaseFieldType):
 		self._RspnsblPtyId = None
 
 	@property
+	def PtyId(self):
+		return self._PtyId
+
+	@PtyId.setter
+	def PtyId(self, value):
+		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
+
+	@PtyId.deleter
+	def PtyId(self):
+		del self._PtyId
+		self._PtyId = None
+
+	@property
 	def ResTp(self):
 		return self._ResTp
 
@@ -127,15 +101,41 @@ class PartyDataSearchCriteria2(base_types._BaseFieldType):
 		del self._ResTp
 		self._ResTp = None
 
+	@property
+	def RstrctnId(self):
+		return self._RstrctnId
+
+	@RstrctnId.setter
+	def RstrctnId(self, value):
+		self._RstrctnId = value if type(value) != auto else self.make_default("RstrctnId")
+
+	@RstrctnId.deleter
+	def RstrctnId(self):
+		del self._RstrctnId
+		self._RstrctnId = None
+
+	@property
+	def LckSts(self):
+		return self._LckSts
+
+	@LckSts.setter
+	def LckSts(self, value):
+		self._LckSts = value if type(value) != auto else self.make_default("LckSts")
+
+	@LckSts.deleter
+	def LckSts(self):
+		del self._LckSts
+		self._LckSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClsgDt', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RstrctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyId', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LckSts', type=PartyLockStatus1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=SystemPartyType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsgDt', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RstrctnIsseDt', type=DateAndDateTimeSearch4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OpngDt', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnsblPtyId', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyId', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ResTp', type=ResidenceType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RstrctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LckSts', type=PartyLockStatus1, min=0, max=1, mutex_group=None, array=False),
 	))
 

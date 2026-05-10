@@ -1,28 +1,15 @@
-import base_types
-import ISINOct2015Identifier
-import PercentageRate
-import TradingUnderWaiversPercentage1
+from . import base_types
+import ISODate
 import Max350Text
+import PercentageRate
+import ISINOct2015Identifier
+import TradingUnderWaiversPercentage1
 import Period4Choice
 import ActiveCurrencyAndAmount
-import ISODate
 
 class VolumeCapResult1(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgPrd", "_LastUpdDt", "_TradgUdrWvrBrkdwn", "_Dsclmr", "_Id", "_TradgUdrWvrPctg", "_TtlTradgVol"]
-	@property
-	def RptgPrd(self):
-		return self._RptgPrd
-
-	@RptgPrd.setter
-	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
-
-	@RptgPrd.deleter
-	def RptgPrd(self):
-		del self._RptgPrd
-		self._RptgPrd = None
-
+	__slots__ = ["_LastUpdDt", "_RptgPrd", "_TradgUdrWvrPctg", "_TtlTradgVol", "_Dsclmr", "_TradgUdrWvrBrkdwn", "_Id"]
 	@property
 	def LastUpdDt(self):
 		return self._LastUpdDt
@@ -37,43 +24,17 @@ class VolumeCapResult1(base_types._BaseFieldType):
 		self._LastUpdDt = None
 
 	@property
-	def TradgUdrWvrBrkdwn(self):
-		return self._TradgUdrWvrBrkdwn
+	def RptgPrd(self):
+		return self._RptgPrd
 
-	@TradgUdrWvrBrkdwn.setter
-	def TradgUdrWvrBrkdwn(self, value):
-		self._TradgUdrWvrBrkdwn = value if type(value) != auto else self.make_default("TradgUdrWvrBrkdwn")
+	@RptgPrd.setter
+	def RptgPrd(self, value):
+		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
 
-	@TradgUdrWvrBrkdwn.deleter
-	def TradgUdrWvrBrkdwn(self):
-		del self._TradgUdrWvrBrkdwn
-		self._TradgUdrWvrBrkdwn = None
-
-	@property
-	def Dsclmr(self):
-		return self._Dsclmr
-
-	@Dsclmr.setter
-	def Dsclmr(self, value):
-		self._Dsclmr = value if type(value) != auto else self.make_default("Dsclmr")
-
-	@Dsclmr.deleter
-	def Dsclmr(self):
-		del self._Dsclmr
-		self._Dsclmr = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@RptgPrd.deleter
+	def RptgPrd(self):
+		del self._RptgPrd
+		self._RptgPrd = None
 
 	@property
 	def TradgUdrWvrPctg(self):
@@ -101,13 +62,52 @@ class VolumeCapResult1(base_types._BaseFieldType):
 		del self._TtlTradgVol
 		self._TtlTradgVol = None
 
+	@property
+	def Dsclmr(self):
+		return self._Dsclmr
+
+	@Dsclmr.setter
+	def Dsclmr(self, value):
+		self._Dsclmr = value if type(value) != auto else self.make_default("Dsclmr")
+
+	@Dsclmr.deleter
+	def Dsclmr(self):
+		del self._Dsclmr
+		self._Dsclmr = None
+
+	@property
+	def TradgUdrWvrBrkdwn(self):
+		return self._TradgUdrWvrBrkdwn
+
+	@TradgUdrWvrBrkdwn.setter
+	def TradgUdrWvrBrkdwn(self, value):
+		self._TradgUdrWvrBrkdwn = value if type(value) != auto else self.make_default("TradgUdrWvrBrkdwn")
+
+	@TradgUdrWvrBrkdwn.deleter
+	def TradgUdrWvrBrkdwn(self):
+		del self._TradgUdrWvrBrkdwn
+		self._TradgUdrWvrBrkdwn = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastUpdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgUdrWvrBrkdwn', type=TradingUnderWaiversPercentage1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Dsclmr', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgUdrWvrPctg', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlTradgVol', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dsclmr', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgUdrWvrBrkdwn', type=TradingUnderWaiversPercentage1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 	))
 

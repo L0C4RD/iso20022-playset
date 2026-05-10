@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ATMTransferRequestV02
 
 class CATP_016_001_02():

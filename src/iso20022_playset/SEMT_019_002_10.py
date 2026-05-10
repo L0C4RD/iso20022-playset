@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesSettlementTransactionAllegementReport002V10
 
 class SEMT_019_002_10():

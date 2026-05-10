@@ -1,6 +1,6 @@
-import base_types
-import ExternalModelFormIdentification1Code
+from . import base_types
 import GenericIdentification1
+import ExternalModelFormIdentification1Code
 
 class ModelFormIdentification1Choice(base_types._BaseFieldType):
 

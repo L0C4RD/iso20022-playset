@@ -1,24 +1,11 @@
-import base_types
-import BaseOneRate
+from . import base_types
 import ActiveOrHistoricCurrencyCode
 import DecimalNumber
+import BaseOneRate
 
 class ForeignExchange1(base_types._BaseFieldType):
 
-	__slots__ = ["_FrgnCcy", "_XchgSpotRate", "_XchgFwdPt"]
-	@property
-	def FrgnCcy(self):
-		return self._FrgnCcy
-
-	@FrgnCcy.setter
-	def FrgnCcy(self, value):
-		self._FrgnCcy = value if type(value) != auto else self.make_default("FrgnCcy")
-
-	@FrgnCcy.deleter
-	def FrgnCcy(self):
-		del self._FrgnCcy
-		self._FrgnCcy = None
-
+	__slots__ = ["_XchgSpotRate", "_XchgFwdPt", "_FrgnCcy"]
 	@property
 	def XchgSpotRate(self):
 		return self._XchgSpotRate
@@ -45,9 +32,22 @@ class ForeignExchange1(base_types._BaseFieldType):
 		del self._XchgFwdPt
 		self._XchgFwdPt = None
 
+	@property
+	def FrgnCcy(self):
+		return self._FrgnCcy
+
+	@FrgnCcy.setter
+	def FrgnCcy(self, value):
+		self._FrgnCcy = value if type(value) != auto else self.make_default("FrgnCcy")
+
+	@FrgnCcy.deleter
+	def FrgnCcy(self):
+		del self._FrgnCcy
+		self._FrgnCcy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FrgnCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgSpotRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgFwdPt', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrgnCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

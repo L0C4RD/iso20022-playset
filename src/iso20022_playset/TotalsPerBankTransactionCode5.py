@@ -1,16 +1,16 @@
-import base_types
-import NumberAndSumOfTransactions1
-import DecimalNumber
-import AmountAndDirection35
+from . import base_types
 import DateAndDateTime2Choice
+import NumberAndSumOfTransactions1
+import AmountAndDirection35
 import Max15NumericText
 import CashAvailability1
-import BankTransactionCodeStructure4
 import TrueFalseIndicator
+import DecimalNumber
+import BankTransactionCodeStructure4
 
 class TotalsPerBankTransactionCode5(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_BkTxCd", "_DbtNtries", "_NbOfNtries", "_Avlbty", "_Sum", "_FcstInd", "_CdtNtries", "_TtlNetNtry"]
+	__slots__ = ["_Dt", "_Sum", "_NbOfNtries", "_Avlbty", "_DbtNtries", "_TtlNetNtry", "_CdtNtries", "_BkTxCd", "_FcstInd"]
 	@property
 	def Dt(self):
 		return self._Dt
@@ -25,30 +25,17 @@ class TotalsPerBankTransactionCode5(base_types._BaseFieldType):
 		self._Dt = None
 
 	@property
-	def BkTxCd(self):
-		return self._BkTxCd
+	def Sum(self):
+		return self._Sum
 
-	@BkTxCd.setter
-	def BkTxCd(self, value):
-		self._BkTxCd = value if type(value) != auto else self.make_default("BkTxCd")
+	@Sum.setter
+	def Sum(self, value):
+		self._Sum = value if type(value) != auto else self.make_default("Sum")
 
-	@BkTxCd.deleter
-	def BkTxCd(self):
-		del self._BkTxCd
-		self._BkTxCd = None
-
-	@property
-	def DbtNtries(self):
-		return self._DbtNtries
-
-	@DbtNtries.setter
-	def DbtNtries(self, value):
-		self._DbtNtries = value if type(value) != auto else self.make_default("DbtNtries")
-
-	@DbtNtries.deleter
-	def DbtNtries(self):
-		del self._DbtNtries
-		self._DbtNtries = None
+	@Sum.deleter
+	def Sum(self):
+		del self._Sum
+		self._Sum = None
 
 	@property
 	def NbOfNtries(self):
@@ -77,30 +64,30 @@ class TotalsPerBankTransactionCode5(base_types._BaseFieldType):
 		self._Avlbty = None
 
 	@property
-	def Sum(self):
-		return self._Sum
+	def DbtNtries(self):
+		return self._DbtNtries
 
-	@Sum.setter
-	def Sum(self, value):
-		self._Sum = value if type(value) != auto else self.make_default("Sum")
+	@DbtNtries.setter
+	def DbtNtries(self, value):
+		self._DbtNtries = value if type(value) != auto else self.make_default("DbtNtries")
 
-	@Sum.deleter
-	def Sum(self):
-		del self._Sum
-		self._Sum = None
+	@DbtNtries.deleter
+	def DbtNtries(self):
+		del self._DbtNtries
+		self._DbtNtries = None
 
 	@property
-	def FcstInd(self):
-		return self._FcstInd
+	def TtlNetNtry(self):
+		return self._TtlNetNtry
 
-	@FcstInd.setter
-	def FcstInd(self, value):
-		self._FcstInd = value if type(value) != auto else self.make_default("FcstInd")
+	@TtlNetNtry.setter
+	def TtlNetNtry(self, value):
+		self._TtlNetNtry = value if type(value) != auto else self.make_default("TtlNetNtry")
 
-	@FcstInd.deleter
-	def FcstInd(self):
-		del self._FcstInd
-		self._FcstInd = None
+	@TtlNetNtry.deleter
+	def TtlNetNtry(self):
+		del self._TtlNetNtry
+		self._TtlNetNtry = None
 
 	@property
 	def CdtNtries(self):
@@ -116,27 +103,40 @@ class TotalsPerBankTransactionCode5(base_types._BaseFieldType):
 		self._CdtNtries = None
 
 	@property
-	def TtlNetNtry(self):
-		return self._TtlNetNtry
+	def BkTxCd(self):
+		return self._BkTxCd
 
-	@TtlNetNtry.setter
-	def TtlNetNtry(self, value):
-		self._TtlNetNtry = value if type(value) != auto else self.make_default("TtlNetNtry")
+	@BkTxCd.setter
+	def BkTxCd(self, value):
+		self._BkTxCd = value if type(value) != auto else self.make_default("BkTxCd")
 
-	@TtlNetNtry.deleter
-	def TtlNetNtry(self):
-		del self._TtlNetNtry
-		self._TtlNetNtry = None
+	@BkTxCd.deleter
+	def BkTxCd(self):
+		del self._BkTxCd
+		self._BkTxCd = None
+
+	@property
+	def FcstInd(self):
+		return self._FcstInd
+
+	@FcstInd.setter
+	def FcstInd(self, value):
+		self._FcstInd = value if type(value) != auto else self.make_default("FcstInd")
+
+	@FcstInd.deleter
+	def FcstInd(self):
+		del self._FcstInd
+		self._FcstInd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BkTxCd', type=BankTransactionCodeStructure4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtNtries', type=NumberAndSumOfTransactions1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfNtries', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Avlbty', type=CashAvailability1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FcstInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtNtries', type=NumberAndSumOfTransactions1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtNtries', type=NumberAndSumOfTransactions1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNetNtry', type=AmountAndDirection35, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtNtries', type=NumberAndSumOfTransactions1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BkTxCd', type=BankTransactionCodeStructure4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FcstInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

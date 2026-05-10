@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DerivativesTradeReconciliationStatisticalReportV03
 
 class AUTH_091_001_03():

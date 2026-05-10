@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
+import PartyIdentification255Choice
 import Max35Text
 import PartyIdentificationAndAccount229
-import PartyIdentification255Choice
 
 class ReceivingPartiesAndAccount22(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty1", "_SctiesSttlmSys", "_Pty2", "_Dpstry"]
+	__slots__ = ["_Pty1", "_SctiesSttlmSys", "_Dpstry", "_Pty2"]
 	@property
 	def Pty1(self):
 		return self._Pty1
@@ -33,19 +33,6 @@ class ReceivingPartiesAndAccount22(base_types._BaseFieldType):
 		self._SctiesSttlmSys = None
 
 	@property
-	def Pty2(self):
-		return self._Pty2
-
-	@Pty2.setter
-	def Pty2(self, value):
-		self._Pty2 = value if type(value) != auto else self.make_default("Pty2")
-
-	@Pty2.deleter
-	def Pty2(self):
-		del self._Pty2
-		self._Pty2 = None
-
-	@property
 	def Dpstry(self):
 		return self._Dpstry
 
@@ -58,10 +45,23 @@ class ReceivingPartiesAndAccount22(base_types._BaseFieldType):
 		del self._Dpstry
 		self._Dpstry = None
 
+	@property
+	def Pty2(self):
+		return self._Pty2
+
+	@Pty2.setter
+	def Pty2(self, value):
+		self._Pty2 = value if type(value) != auto else self.make_default("Pty2")
+
+	@Pty2.deleter
+	def Pty2(self):
+		del self._Pty2
+		self._Pty2 = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Pty1', type=PartyIdentificationAndAccount229, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesSttlmSys', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pty2', type=PartyIdentificationAndAccount229, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dpstry', type=PartyIdentification255Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pty2', type=PartyIdentificationAndAccount229, min=0, max=1, mutex_group=None, array=False),
 	))
 

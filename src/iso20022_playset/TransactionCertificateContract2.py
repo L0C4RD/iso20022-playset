@@ -1,12 +1,38 @@
-import base_types
-import ActiveCurrencyAndAmount
+from . import base_types
 import ISODate
 import Max1025Text
 import ContractRegistrationReference2Choice
+import ActiveCurrencyAndAmount
 
 class TransactionCertificateContract2(base_types._BaseFieldType):
 
-	__slots__ = ["_XpctdShipmntDt", "_CtrctRef", "_AddtlInf", "_TxAmtInCtrctCcy", "_XpctdAdvncPmtRtrDt"]
+	__slots__ = ["_TxAmtInCtrctCcy", "_AddtlInf", "_XpctdShipmntDt", "_CtrctRef", "_XpctdAdvncPmtRtrDt"]
+	@property
+	def TxAmtInCtrctCcy(self):
+		return self._TxAmtInCtrctCcy
+
+	@TxAmtInCtrctCcy.setter
+	def TxAmtInCtrctCcy(self, value):
+		self._TxAmtInCtrctCcy = value if type(value) != auto else self.make_default("TxAmtInCtrctCcy")
+
+	@TxAmtInCtrctCcy.deleter
+	def TxAmtInCtrctCcy(self):
+		del self._TxAmtInCtrctCcy
+		self._TxAmtInCtrctCcy = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	@property
 	def XpctdShipmntDt(self):
 		return self._XpctdShipmntDt
@@ -34,32 +60,6 @@ class TransactionCertificateContract2(base_types._BaseFieldType):
 		self._CtrctRef = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def TxAmtInCtrctCcy(self):
-		return self._TxAmtInCtrctCcy
-
-	@TxAmtInCtrctCcy.setter
-	def TxAmtInCtrctCcy(self, value):
-		self._TxAmtInCtrctCcy = value if type(value) != auto else self.make_default("TxAmtInCtrctCcy")
-
-	@TxAmtInCtrctCcy.deleter
-	def TxAmtInCtrctCcy(self):
-		del self._TxAmtInCtrctCcy
-		self._TxAmtInCtrctCcy = None
-
-	@property
 	def XpctdAdvncPmtRtrDt(self):
 		return self._XpctdAdvncPmtRtrDt
 
@@ -73,10 +73,10 @@ class TransactionCertificateContract2(base_types._BaseFieldType):
 		self._XpctdAdvncPmtRtrDt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TxAmtInCtrctCcy', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdShipmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctRef', type=ContractRegistrationReference2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxAmtInCtrctCcy', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdAdvncPmtRtrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

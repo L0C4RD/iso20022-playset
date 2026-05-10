@@ -1,35 +1,9 @@
-import base_types
+from . import base_types
 import BaseOneRate
 
 class ValuationFactorBreakdown1(base_types._BaseFieldType):
 
-	__slots__ = ["_InfltnFctr", "_ValtnFctr", "_PoolFctr", "_Hrcut"]
-	@property
-	def InfltnFctr(self):
-		return self._InfltnFctr
-
-	@InfltnFctr.setter
-	def InfltnFctr(self, value):
-		self._InfltnFctr = value if type(value) != auto else self.make_default("InfltnFctr")
-
-	@InfltnFctr.deleter
-	def InfltnFctr(self):
-		del self._InfltnFctr
-		self._InfltnFctr = None
-
-	@property
-	def ValtnFctr(self):
-		return self._ValtnFctr
-
-	@ValtnFctr.setter
-	def ValtnFctr(self, value):
-		self._ValtnFctr = value if type(value) != auto else self.make_default("ValtnFctr")
-
-	@ValtnFctr.deleter
-	def ValtnFctr(self):
-		del self._ValtnFctr
-		self._ValtnFctr = None
-
+	__slots__ = ["_PoolFctr", "_InfltnFctr", "_Hrcut", "_ValtnFctr"]
 	@property
 	def PoolFctr(self):
 		return self._PoolFctr
@@ -44,6 +18,19 @@ class ValuationFactorBreakdown1(base_types._BaseFieldType):
 		self._PoolFctr = None
 
 	@property
+	def InfltnFctr(self):
+		return self._InfltnFctr
+
+	@InfltnFctr.setter
+	def InfltnFctr(self, value):
+		self._InfltnFctr = value if type(value) != auto else self.make_default("InfltnFctr")
+
+	@InfltnFctr.deleter
+	def InfltnFctr(self):
+		del self._InfltnFctr
+		self._InfltnFctr = None
+
+	@property
 	def Hrcut(self):
 		return self._Hrcut
 
@@ -56,10 +43,23 @@ class ValuationFactorBreakdown1(base_types._BaseFieldType):
 		del self._Hrcut
 		self._Hrcut = None
 
+	@property
+	def ValtnFctr(self):
+		return self._ValtnFctr
+
+	@ValtnFctr.setter
+	def ValtnFctr(self, value):
+		self._ValtnFctr = value if type(value) != auto else self.make_default("ValtnFctr")
+
+	@ValtnFctr.deleter
+	def ValtnFctr(self):
+		del self._ValtnFctr
+		self._ValtnFctr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InfltnFctr', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnFctr', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PoolFctr', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InfltnFctr', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hrcut', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnFctr', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import EnergyLoadType1Code
 
 class CompareEnergyLoadType1(base_types._BaseFieldType):

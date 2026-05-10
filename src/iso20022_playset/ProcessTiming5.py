@@ -1,12 +1,12 @@
-import base_types
-import ISODateTime
+from . import base_types
 import Max9NumericText
 import Number
 import TimeUnit1Code
+import ISODateTime
 
 class ProcessTiming5(base_types._BaseFieldType):
 
-	__slots__ = ["_StartTm", "_Prd", "_MaxNb", "_WtgTm", "_UnitOfTm", "_EndTm"]
+	__slots__ = ["_StartTm", "_Prd", "_MaxNb", "_WtgTm", "_EndTm", "_UnitOfTm"]
 	@property
 	def StartTm(self):
 		return self._StartTm
@@ -60,19 +60,6 @@ class ProcessTiming5(base_types._BaseFieldType):
 		self._WtgTm = None
 
 	@property
-	def UnitOfTm(self):
-		return self._UnitOfTm
-
-	@UnitOfTm.setter
-	def UnitOfTm(self, value):
-		self._UnitOfTm = value if type(value) != auto else self.make_default("UnitOfTm")
-
-	@UnitOfTm.deleter
-	def UnitOfTm(self):
-		del self._UnitOfTm
-		self._UnitOfTm = None
-
-	@property
 	def EndTm(self):
 		return self._EndTm
 
@@ -85,12 +72,25 @@ class ProcessTiming5(base_types._BaseFieldType):
 		del self._EndTm
 		self._EndTm = None
 
+	@property
+	def UnitOfTm(self):
+		return self._UnitOfTm
+
+	@UnitOfTm.setter
+	def UnitOfTm(self, value):
+		self._UnitOfTm = value if type(value) != auto else self.make_default("UnitOfTm")
+
+	@UnitOfTm.deleter
+	def UnitOfTm(self):
+		del self._UnitOfTm
+		self._UnitOfTm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='StartTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prd', type=Max9NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WtgTm', type=Max9NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitOfTm', type=TimeUnit1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfTm', type=TimeUnit1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

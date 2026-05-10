@@ -1,13 +1,13 @@
-import base_types
-import CountryCode
-import PercentageRate
-import CashAccount204
+from . import base_types
 import Max350Text
 import PartyIdentification125Choice
+import CashAccount204
+import CountryCode
+import PercentageRate
 
 class TaxReporting3(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_TaxtnCtry", "_TaxPyer", "_TaxRcpt", "_CshAcctDtls", "_TaxRate"]
+	__slots__ = ["_Desc", "_TaxRcpt", "_CshAcctDtls", "_TaxRate", "_TaxtnCtry", "_TaxPyer"]
 	@property
 	def Desc(self):
 		return self._Desc
@@ -20,32 +20,6 @@ class TaxReporting3(base_types._BaseFieldType):
 	def Desc(self):
 		del self._Desc
 		self._Desc = None
-
-	@property
-	def TaxtnCtry(self):
-		return self._TaxtnCtry
-
-	@TaxtnCtry.setter
-	def TaxtnCtry(self, value):
-		self._TaxtnCtry = value if type(value) != auto else self.make_default("TaxtnCtry")
-
-	@TaxtnCtry.deleter
-	def TaxtnCtry(self):
-		del self._TaxtnCtry
-		self._TaxtnCtry = None
-
-	@property
-	def TaxPyer(self):
-		return self._TaxPyer
-
-	@TaxPyer.setter
-	def TaxPyer(self, value):
-		self._TaxPyer = value if type(value) != auto else self.make_default("TaxPyer")
-
-	@TaxPyer.deleter
-	def TaxPyer(self):
-		del self._TaxPyer
-		self._TaxPyer = None
 
 	@property
 	def TaxRcpt(self):
@@ -86,12 +60,38 @@ class TaxReporting3(base_types._BaseFieldType):
 		del self._TaxRate
 		self._TaxRate = None
 
+	@property
+	def TaxtnCtry(self):
+		return self._TaxtnCtry
+
+	@TaxtnCtry.setter
+	def TaxtnCtry(self, value):
+		self._TaxtnCtry = value if type(value) != auto else self.make_default("TaxtnCtry")
+
+	@TaxtnCtry.deleter
+	def TaxtnCtry(self):
+		del self._TaxtnCtry
+		self._TaxtnCtry = None
+
+	@property
+	def TaxPyer(self):
+		return self._TaxPyer
+
+	@TaxPyer.setter
+	def TaxPyer(self, value):
+		self._TaxPyer = value if type(value) != auto else self.make_default("TaxPyer")
+
+	@TaxPyer.deleter
+	def TaxPyer(self):
+		del self._TaxPyer
+		self._TaxPyer = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxtnCtry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxPyer', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxRcpt', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctDtls', type=CashAccount204, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxtnCtry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxPyer', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

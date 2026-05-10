@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ConsentOrRejectionReason4Choice
 import Max210Text
 

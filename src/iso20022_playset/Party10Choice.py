@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import OrganisationIdentification7
 import PersonIdentification5
 

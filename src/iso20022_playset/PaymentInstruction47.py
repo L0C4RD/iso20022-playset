@@ -1,47 +1,34 @@
-import base_types
-import DateTimePeriod1Choice
-import PaymentStatus6
-import Amount3Choice
-import Amount2Choice
-import PaymentType4Choice
-import Max10Text
+from . import base_types
 import ISODate
+import PaymentType4Choice
+import DateTimePeriod1Choice
 import DateAndDateTime2Choice
-import Max20000Text
+import Max10Text
+import Amount3Choice
+import PaymentStatus6
 import Max35Text
-import PaymentOrigin1Choice
 import PaymentTransactionParty4
-import TrueFalseIndicator
+import PaymentOrigin1Choice
 import Priority1Choice
+import Amount2Choice
+import TrueFalseIndicator
+import Max20000Text
 
 class PaymentInstruction47(base_types._BaseFieldType):
 
-	__slots__ = ["_Prty", "_PrcgVldtyTm", "_IntrBkSttlmAmt", "_Pties", "_Purp", "_PmtMtd", "_IntrBkSttlmDt", "_InstrCpy", "_EndToEndId", "_Sts", "_InstdAmt", "_ReqdExctnDt", "_TxId", "_Tp", "_GnrtdOrdr", "_MsgId"]
+	__slots__ = ["_ReqdExctnDt", "_IntrBkSttlmAmt", "_Prty", "_EndToEndId", "_Pties", "_PmtMtd", "_Sts", "_MsgId", "_Purp", "_PrcgVldtyTm", "_IntrBkSttlmDt", "_InstrCpy", "_InstdAmt", "_TxId", "_Tp", "_GnrtdOrdr"]
 	@property
-	def Prty(self):
-		return self._Prty
+	def ReqdExctnDt(self):
+		return self._ReqdExctnDt
 
-	@Prty.setter
-	def Prty(self, value):
-		self._Prty = value if type(value) != auto else self.make_default("Prty")
+	@ReqdExctnDt.setter
+	def ReqdExctnDt(self, value):
+		self._ReqdExctnDt = value if type(value) != auto else self.make_default("ReqdExctnDt")
 
-	@Prty.deleter
-	def Prty(self):
-		del self._Prty
-		self._Prty = None
-
-	@property
-	def PrcgVldtyTm(self):
-		return self._PrcgVldtyTm
-
-	@PrcgVldtyTm.setter
-	def PrcgVldtyTm(self, value):
-		self._PrcgVldtyTm = value if type(value) != auto else self.make_default("PrcgVldtyTm")
-
-	@PrcgVldtyTm.deleter
-	def PrcgVldtyTm(self):
-		del self._PrcgVldtyTm
-		self._PrcgVldtyTm = None
+	@ReqdExctnDt.deleter
+	def ReqdExctnDt(self):
+		del self._ReqdExctnDt
+		self._ReqdExctnDt = None
 
 	@property
 	def IntrBkSttlmAmt(self):
@@ -57,6 +44,32 @@ class PaymentInstruction47(base_types._BaseFieldType):
 		self._IntrBkSttlmAmt = None
 
 	@property
+	def Prty(self):
+		return self._Prty
+
+	@Prty.setter
+	def Prty(self, value):
+		self._Prty = value if type(value) != auto else self.make_default("Prty")
+
+	@Prty.deleter
+	def Prty(self):
+		del self._Prty
+		self._Prty = None
+
+	@property
+	def EndToEndId(self):
+		return self._EndToEndId
+
+	@EndToEndId.setter
+	def EndToEndId(self, value):
+		self._EndToEndId = value if type(value) != auto else self.make_default("EndToEndId")
+
+	@EndToEndId.deleter
+	def EndToEndId(self):
+		del self._EndToEndId
+		self._EndToEndId = None
+
+	@property
 	def Pties(self):
 		return self._Pties
 
@@ -68,6 +81,45 @@ class PaymentInstruction47(base_types._BaseFieldType):
 	def Pties(self):
 		del self._Pties
 		self._Pties = None
+
+	@property
+	def PmtMtd(self):
+		return self._PmtMtd
+
+	@PmtMtd.setter
+	def PmtMtd(self, value):
+		self._PmtMtd = value if type(value) != auto else self.make_default("PmtMtd")
+
+	@PmtMtd.deleter
+	def PmtMtd(self):
+		del self._PmtMtd
+		self._PmtMtd = None
+
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def Purp(self):
@@ -83,17 +135,17 @@ class PaymentInstruction47(base_types._BaseFieldType):
 		self._Purp = None
 
 	@property
-	def PmtMtd(self):
-		return self._PmtMtd
+	def PrcgVldtyTm(self):
+		return self._PrcgVldtyTm
 
-	@PmtMtd.setter
-	def PmtMtd(self, value):
-		self._PmtMtd = value if type(value) != auto else self.make_default("PmtMtd")
+	@PrcgVldtyTm.setter
+	def PrcgVldtyTm(self, value):
+		self._PrcgVldtyTm = value if type(value) != auto else self.make_default("PrcgVldtyTm")
 
-	@PmtMtd.deleter
-	def PmtMtd(self):
-		del self._PmtMtd
-		self._PmtMtd = None
+	@PrcgVldtyTm.deleter
+	def PrcgVldtyTm(self):
+		del self._PrcgVldtyTm
+		self._PrcgVldtyTm = None
 
 	@property
 	def IntrBkSttlmDt(self):
@@ -122,32 +174,6 @@ class PaymentInstruction47(base_types._BaseFieldType):
 		self._InstrCpy = None
 
 	@property
-	def EndToEndId(self):
-		return self._EndToEndId
-
-	@EndToEndId.setter
-	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != auto else self.make_default("EndToEndId")
-
-	@EndToEndId.deleter
-	def EndToEndId(self):
-		del self._EndToEndId
-		self._EndToEndId = None
-
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
-	@property
 	def InstdAmt(self):
 		return self._InstdAmt
 
@@ -159,19 +185,6 @@ class PaymentInstruction47(base_types._BaseFieldType):
 	def InstdAmt(self):
 		del self._InstdAmt
 		self._InstdAmt = None
-
-	@property
-	def ReqdExctnDt(self):
-		return self._ReqdExctnDt
-
-	@ReqdExctnDt.setter
-	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != auto else self.make_default("ReqdExctnDt")
-
-	@ReqdExctnDt.deleter
-	def ReqdExctnDt(self):
-		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
 
 	@property
 	def TxId(self):
@@ -212,35 +225,22 @@ class PaymentInstruction47(base_types._BaseFieldType):
 		del self._GnrtdOrdr
 		self._GnrtdOrdr = None
 
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prty', type=Priority1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgVldtyTm', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrBkSttlmAmt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prty', type=Priority1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pties', type=PaymentTransactionParty4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Purp', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtMtd', type=PaymentOrigin1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=PaymentStatus6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Purp', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgVldtyTm', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrCpy', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=PaymentStatus6, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InstdAmt', type=Amount3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PaymentType4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GnrtdOrdr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

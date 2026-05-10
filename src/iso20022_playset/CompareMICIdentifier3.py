@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MICIdentifier
 
 class CompareMICIdentifier3(base_types._BaseFieldType):

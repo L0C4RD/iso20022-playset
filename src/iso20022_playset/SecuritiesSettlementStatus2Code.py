@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class SecuritiesSettlementStatus2Code(base_types._BaseDataType_String):
 

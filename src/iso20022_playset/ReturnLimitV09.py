@@ -1,7 +1,7 @@
-import base_types
-import LimitReportOrError5Choice
-import SupplementaryData1
+from . import base_types
 import MessageHeader7
+import SupplementaryData1
+import LimitReportOrError5Choice
 
 class ReturnLimitV09(base_types._BaseFieldType):
 

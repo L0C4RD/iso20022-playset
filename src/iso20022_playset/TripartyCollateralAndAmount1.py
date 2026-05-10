@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CollateralType22Choice
 import ActiveCurrencyAndAmount
 

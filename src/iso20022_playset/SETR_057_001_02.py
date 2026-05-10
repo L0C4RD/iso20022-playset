@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import OrderConfirmationStatusReportV02
 
 class SETR_057_001_02():

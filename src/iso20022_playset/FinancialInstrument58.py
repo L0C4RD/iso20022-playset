@@ -1,6 +1,6 @@
-import base_types
-import ISINOct2015Identifier
+from . import base_types
 import FloatingInterestRate8
+import ISINOct2015Identifier
 
 class FinancialInstrument58(base_types._BaseFieldType):
 

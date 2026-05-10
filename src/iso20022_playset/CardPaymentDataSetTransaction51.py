@@ -1,26 +1,13 @@
-import base_types
-import PaymentContext30
-import CardPaymentEnvironment81
+from . import base_types
 import Max9NumericText
-import CardPaymentTransaction140
+import CardPaymentEnvironment81
+import PaymentContext30
 import Traceability8
+import CardPaymentTransaction140
 
 class CardPaymentDataSetTransaction51(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Tx", "_Cntxt", "_TxSeqCntr", "_Tracblt"]
-	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
-
+	__slots__ = ["_Tx", "_Tracblt", "_Envt", "_TxSeqCntr", "_Cntxt"]
 	@property
 	def Tx(self):
 		return self._Tx
@@ -35,17 +22,30 @@ class CardPaymentDataSetTransaction51(base_types._BaseFieldType):
 		self._Tx = None
 
 	@property
-	def Cntxt(self):
-		return self._Cntxt
+	def Tracblt(self):
+		return self._Tracblt
 
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+	@Tracblt.setter
+	def Tracblt(self, value):
+		self._Tracblt = value if type(value) != auto else self.make_default("Tracblt")
 
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
+	@Tracblt.deleter
+	def Tracblt(self):
+		del self._Tracblt
+		self._Tracblt = None
+
+	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
 
 	@property
 	def TxSeqCntr(self):
@@ -61,23 +61,23 @@ class CardPaymentDataSetTransaction51(base_types._BaseFieldType):
 		self._TxSeqCntr = None
 
 	@property
-	def Tracblt(self):
-		return self._Tracblt
+	def Cntxt(self):
+		return self._Cntxt
 
-	@Tracblt.setter
-	def Tracblt(self, value):
-		self._Tracblt = value if type(value) != auto else self.make_default("Tracblt")
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
 
-	@Tracblt.deleter
-	def Tracblt(self):
-		del self._Tracblt
-		self._Tracblt = None
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction140, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxSeqCntr', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tracblt', type=Traceability8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSeqCntr', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=0, max=1, mutex_group=None, array=False),
 	))
 

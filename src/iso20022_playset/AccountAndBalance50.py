@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import Max140Text
-import BalanceFormat11Choice
 import Max35Text
+import BalanceFormat11Choice
 
 class AccountAndBalance50(base_types._BaseFieldType):
 

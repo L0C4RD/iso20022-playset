@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ModifyReservationV07
 
 class CAMT_048_001_07():

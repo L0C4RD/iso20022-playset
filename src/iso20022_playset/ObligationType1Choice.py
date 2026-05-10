@@ -1,6 +1,6 @@
-import base_types
-import ObligationType1Code
+from . import base_types
 import GenericIdentification30
+import ObligationType1Code
 
 class ObligationType1Choice(base_types._BaseFieldType):
 

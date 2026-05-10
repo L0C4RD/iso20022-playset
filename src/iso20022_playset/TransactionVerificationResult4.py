@@ -1,25 +1,12 @@
-import base_types
-import Verification1Code
+from . import base_types
 import Max500Text
-import AuthenticationEntity2Code
 import AuthenticationMethod6Code
+import Verification1Code
+import AuthenticationEntity2Code
 
 class TransactionVerificationResult4(base_types._BaseFieldType):
 
-	__slots__ = ["_Mtd", "_AddtlRslt", "_Rslt", "_VrfctnNtty"]
-	@property
-	def Mtd(self):
-		return self._Mtd
-
-	@Mtd.setter
-	def Mtd(self, value):
-		self._Mtd = value if type(value) != auto else self.make_default("Mtd")
-
-	@Mtd.deleter
-	def Mtd(self):
-		del self._Mtd
-		self._Mtd = None
-
+	__slots__ = ["_AddtlRslt", "_Mtd", "_VrfctnNtty", "_Rslt"]
 	@property
 	def AddtlRslt(self):
 		return self._AddtlRslt
@@ -34,17 +21,17 @@ class TransactionVerificationResult4(base_types._BaseFieldType):
 		self._AddtlRslt = None
 
 	@property
-	def Rslt(self):
-		return self._Rslt
+	def Mtd(self):
+		return self._Mtd
 
-	@Rslt.setter
-	def Rslt(self, value):
-		self._Rslt = value if type(value) != auto else self.make_default("Rslt")
+	@Mtd.setter
+	def Mtd(self, value):
+		self._Mtd = value if type(value) != auto else self.make_default("Mtd")
 
-	@Rslt.deleter
-	def Rslt(self):
-		del self._Rslt
-		self._Rslt = None
+	@Mtd.deleter
+	def Mtd(self):
+		del self._Mtd
+		self._Mtd = None
 
 	@property
 	def VrfctnNtty(self):
@@ -59,10 +46,23 @@ class TransactionVerificationResult4(base_types._BaseFieldType):
 		del self._VrfctnNtty
 		self._VrfctnNtty = None
 
+	@property
+	def Rslt(self):
+		return self._Rslt
+
+	@Rslt.setter
+	def Rslt(self, value):
+		self._Rslt = value if type(value) != auto else self.make_default("Rslt")
+
+	@Rslt.deleter
+	def Rslt(self):
+		del self._Rslt
+		self._Rslt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mtd', type=AuthenticationMethod6Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlRslt', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rslt', type=Verification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mtd', type=AuthenticationMethod6Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VrfctnNtty', type=AuthenticationEntity2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rslt', type=Verification1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

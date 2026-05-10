@@ -1,23 +1,23 @@
-import base_types
-import ISODateTime
+from . import base_types
 import PercentageRate
 import Max256Text
+import ISODateTime
 
 class ATMExchangeRateComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgRate", "_AddtlInf", "_PblshDt"]
+	__slots__ = ["_PblshDt", "_AddtlInf", "_XchgRate"]
 	@property
-	def XchgRate(self):
-		return self._XchgRate
+	def PblshDt(self):
+		return self._PblshDt
 
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
+	@PblshDt.setter
+	def PblshDt(self, value):
+		self._PblshDt = value if type(value) != auto else self.make_default("PblshDt")
 
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
+	@PblshDt.deleter
+	def PblshDt(self):
+		del self._PblshDt
+		self._PblshDt = None
 
 	@property
 	def AddtlInf(self):
@@ -33,21 +33,21 @@ class ATMExchangeRateComponent1(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def PblshDt(self):
-		return self._PblshDt
+	def XchgRate(self):
+		return self._XchgRate
 
-	@PblshDt.setter
-	def PblshDt(self, value):
-		self._PblshDt = value if type(value) != auto else self.make_default("PblshDt")
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
 
-	@PblshDt.deleter
-	def PblshDt(self):
-		del self._PblshDt
-		self._PblshDt = None
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XchgRate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PblshDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 	))
 

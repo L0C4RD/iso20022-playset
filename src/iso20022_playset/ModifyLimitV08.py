@@ -1,23 +1,23 @@
-import base_types
-import LimitStructure5
-import SupplementaryData1
+from . import base_types
 import MessageHeader1
+import SupplementaryData1
+import LimitStructure5
 
 class ModifyLimitV08(base_types._BaseFieldType):
 
-	__slots__ = ["_LmtDtls", "_MsgHdr", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_MsgHdr", "_LmtDtls"]
 	@property
-	def LmtDtls(self):
-		return self._LmtDtls
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@LmtDtls.setter
-	def LmtDtls(self, value):
-		self._LmtDtls = value if type(value) != auto else self.make_default("LmtDtls")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@LmtDtls.deleter
-	def LmtDtls(self):
-		del self._LmtDtls
-		self._LmtDtls = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def MsgHdr(self):
@@ -33,21 +33,21 @@ class ModifyLimitV08(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def LmtDtls(self):
+		return self._LmtDtls
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@LmtDtls.setter
+	def LmtDtls(self, value):
+		self._LmtDtls = value if type(value) != auto else self.make_default("LmtDtls")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@LmtDtls.deleter
+	def LmtDtls(self):
+		del self._LmtDtls
+		self._LmtDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LmtDtls', type=LimitStructure5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LmtDtls', type=LimitStructure5, min=0, max=None, mutex_group=None, array=True),
 	))
 

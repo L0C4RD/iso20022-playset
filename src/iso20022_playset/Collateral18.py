@@ -1,7 +1,7 @@
-import base_types
-import PercentageRate
+from . import base_types
 import SpecialCollateral2Code
 import SecuredCollateral2Choice
+import PercentageRate
 
 class Collateral18(base_types._BaseFieldType):
 

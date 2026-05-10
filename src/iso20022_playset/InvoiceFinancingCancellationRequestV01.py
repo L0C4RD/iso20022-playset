@@ -1,6 +1,6 @@
-import base_types
-import MessageIdentification1
+from . import base_types
 import CancellationRequestInformation1
+import MessageIdentification1
 
 class InvoiceFinancingCancellationRequestV01(base_types._BaseFieldType):
 

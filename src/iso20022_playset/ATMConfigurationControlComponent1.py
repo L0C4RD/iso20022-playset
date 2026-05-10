@@ -1,26 +1,13 @@
-import base_types
-import ISODateTime
-import Max35Text
-import ATMEnvironment7
+from . import base_types
 import ATMActionType1Code
 import ATMPropertyComponent1
+import ISODateTime
+import ATMEnvironment7
+import Max35Text
 
 class ATMConfigurationControlComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtnDt", "_CfgtnVrsn", "_Prprty", "_Envt", "_ActnReqrd"]
-	@property
-	def ActvtnDt(self):
-		return self._ActvtnDt
-
-	@ActvtnDt.setter
-	def ActvtnDt(self, value):
-		self._ActvtnDt = value if type(value) != auto else self.make_default("ActvtnDt")
-
-	@ActvtnDt.deleter
-	def ActvtnDt(self):
-		del self._ActvtnDt
-		self._ActvtnDt = None
-
+	__slots__ = ["_CfgtnVrsn", "_ActnReqrd", "_Envt", "_Prprty", "_ActvtnDt"]
 	@property
 	def CfgtnVrsn(self):
 		return self._CfgtnVrsn
@@ -35,17 +22,17 @@ class ATMConfigurationControlComponent1(base_types._BaseFieldType):
 		self._CfgtnVrsn = None
 
 	@property
-	def Prprty(self):
-		return self._Prprty
+	def ActnReqrd(self):
+		return self._ActnReqrd
 
-	@Prprty.setter
-	def Prprty(self, value):
-		self._Prprty = value if type(value) != auto else self.make_default("Prprty")
+	@ActnReqrd.setter
+	def ActnReqrd(self, value):
+		self._ActnReqrd = value if type(value) != auto else self.make_default("ActnReqrd")
 
-	@Prprty.deleter
-	def Prprty(self):
-		del self._Prprty
-		self._Prprty = None
+	@ActnReqrd.deleter
+	def ActnReqrd(self):
+		del self._ActnReqrd
+		self._ActnReqrd = None
 
 	@property
 	def Envt(self):
@@ -61,23 +48,36 @@ class ATMConfigurationControlComponent1(base_types._BaseFieldType):
 		self._Envt = None
 
 	@property
-	def ActnReqrd(self):
-		return self._ActnReqrd
+	def Prprty(self):
+		return self._Prprty
 
-	@ActnReqrd.setter
-	def ActnReqrd(self, value):
-		self._ActnReqrd = value if type(value) != auto else self.make_default("ActnReqrd")
+	@Prprty.setter
+	def Prprty(self, value):
+		self._Prprty = value if type(value) != auto else self.make_default("Prprty")
 
-	@ActnReqrd.deleter
-	def ActnReqrd(self):
-		del self._ActnReqrd
-		self._ActnReqrd = None
+	@Prprty.deleter
+	def Prprty(self):
+		del self._Prprty
+		self._Prprty = None
+
+	@property
+	def ActvtnDt(self):
+		return self._ActvtnDt
+
+	@ActvtnDt.setter
+	def ActvtnDt(self, value):
+		self._ActvtnDt = value if type(value) != auto else self.make_default("ActvtnDt")
+
+	@ActvtnDt.deleter
+	def ActvtnDt(self):
+		del self._ActvtnDt
+		self._ActvtnDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActvtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CfgtnVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prprty', type=ATMPropertyComponent1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Envt', type=ATMEnvironment7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActnReqrd', type=ATMActionType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=ATMEnvironment7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prprty', type=ATMPropertyComponent1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ActvtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import NotificationToReceiveStatusReportV08
 
 class CAMT_059_001_08():

@@ -1,40 +1,27 @@
-import base_types
-import Max4NumericText
+from . import base_types
+import ServiceStartEnd3
 import ISO3NumericCurrencyCode
+import Max4NumericText
 import ISODateTime
 import ImpliedCurrencyAndAmount
-import ServiceStartEnd3
 import PeriodUnit2Code
 import Max70Text
 
 class RentalDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_TmPrdUnit", "_TmPrdRate", "_DtTm", "_Start", "_TmPrd", "_Rtr", "_Ccy", "_Id"]
+	__slots__ = ["_Start", "_DtTm", "_Id", "_TmPrdRate", "_TmPrd", "_TmPrdUnit", "_Rtr", "_Ccy"]
 	@property
-	def TmPrdUnit(self):
-		return self._TmPrdUnit
+	def Start(self):
+		return self._Start
 
-	@TmPrdUnit.setter
-	def TmPrdUnit(self, value):
-		self._TmPrdUnit = value if type(value) != auto else self.make_default("TmPrdUnit")
+	@Start.setter
+	def Start(self, value):
+		self._Start = value if type(value) != auto else self.make_default("Start")
 
-	@TmPrdUnit.deleter
-	def TmPrdUnit(self):
-		del self._TmPrdUnit
-		self._TmPrdUnit = None
-
-	@property
-	def TmPrdRate(self):
-		return self._TmPrdRate
-
-	@TmPrdRate.setter
-	def TmPrdRate(self, value):
-		self._TmPrdRate = value if type(value) != auto else self.make_default("TmPrdRate")
-
-	@TmPrdRate.deleter
-	def TmPrdRate(self):
-		del self._TmPrdRate
-		self._TmPrdRate = None
+	@Start.deleter
+	def Start(self):
+		del self._Start
+		self._Start = None
 
 	@property
 	def DtTm(self):
@@ -50,17 +37,30 @@ class RentalDetails3(base_types._BaseFieldType):
 		self._DtTm = None
 
 	@property
-	def Start(self):
-		return self._Start
+	def Id(self):
+		return self._Id
 
-	@Start.setter
-	def Start(self, value):
-		self._Start = value if type(value) != auto else self.make_default("Start")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@Start.deleter
-	def Start(self):
-		del self._Start
-		self._Start = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def TmPrdRate(self):
+		return self._TmPrdRate
+
+	@TmPrdRate.setter
+	def TmPrdRate(self, value):
+		self._TmPrdRate = value if type(value) != auto else self.make_default("TmPrdRate")
+
+	@TmPrdRate.deleter
+	def TmPrdRate(self):
+		del self._TmPrdRate
+		self._TmPrdRate = None
 
 	@property
 	def TmPrd(self):
@@ -74,6 +74,19 @@ class RentalDetails3(base_types._BaseFieldType):
 	def TmPrd(self):
 		del self._TmPrd
 		self._TmPrd = None
+
+	@property
+	def TmPrdUnit(self):
+		return self._TmPrdUnit
+
+	@TmPrdUnit.setter
+	def TmPrdUnit(self, value):
+		self._TmPrdUnit = value if type(value) != auto else self.make_default("TmPrdUnit")
+
+	@TmPrdUnit.deleter
+	def TmPrdUnit(self):
+		del self._TmPrdUnit
+		self._TmPrdUnit = None
 
 	@property
 	def Rtr(self):
@@ -101,27 +114,14 @@ class RentalDetails3(base_types._BaseFieldType):
 		del self._Ccy
 		self._Ccy = None
 
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TmPrdUnit', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TmPrdRate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Start', type=ServiceStartEnd3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TmPrdRate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmPrd', type=PeriodUnit2Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TmPrdUnit', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rtr', type=ServiceStartEnd3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
-import base_types
-import ReversalReason4Choice
+from . import base_types
 import PartyIdentification272
 import Max105Text
+import ReversalReason4Choice
 
 class PaymentReversalReason10(base_types._BaseFieldType):
 

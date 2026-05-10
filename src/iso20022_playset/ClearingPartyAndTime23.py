@@ -1,11 +1,37 @@
-import base_types
-import ISODateTime
+from . import base_types
 import OrganisationIdentification15Choice
 import UniqueTransactionIdentifier1Choice
+import ISODateTime
 
 class ClearingPartyAndTime23(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlTradRpstryIdr", "_ClrDtTm", "_OrgnlIdr", "_ClrRctDtTm", "_CCP", "_ClrIdr"]
+	__slots__ = ["_ClrRctDtTm", "_ClrIdr", "_OrgnlTradRpstryIdr", "_ClrDtTm", "_OrgnlIdr", "_CCP"]
+	@property
+	def ClrRctDtTm(self):
+		return self._ClrRctDtTm
+
+	@ClrRctDtTm.setter
+	def ClrRctDtTm(self, value):
+		self._ClrRctDtTm = value if type(value) != auto else self.make_default("ClrRctDtTm")
+
+	@ClrRctDtTm.deleter
+	def ClrRctDtTm(self):
+		del self._ClrRctDtTm
+		self._ClrRctDtTm = None
+
+	@property
+	def ClrIdr(self):
+		return self._ClrIdr
+
+	@ClrIdr.setter
+	def ClrIdr(self, value):
+		self._ClrIdr = value if type(value) != auto else self.make_default("ClrIdr")
+
+	@ClrIdr.deleter
+	def ClrIdr(self):
+		del self._ClrIdr
+		self._ClrIdr = None
+
 	@property
 	def OrgnlTradRpstryIdr(self):
 		return self._OrgnlTradRpstryIdr
@@ -46,19 +72,6 @@ class ClearingPartyAndTime23(base_types._BaseFieldType):
 		self._OrgnlIdr = None
 
 	@property
-	def ClrRctDtTm(self):
-		return self._ClrRctDtTm
-
-	@ClrRctDtTm.setter
-	def ClrRctDtTm(self, value):
-		self._ClrRctDtTm = value if type(value) != auto else self.make_default("ClrRctDtTm")
-
-	@ClrRctDtTm.deleter
-	def ClrRctDtTm(self):
-		del self._ClrRctDtTm
-		self._ClrRctDtTm = None
-
-	@property
 	def CCP(self):
 		return self._CCP
 
@@ -71,25 +84,12 @@ class ClearingPartyAndTime23(base_types._BaseFieldType):
 		del self._CCP
 		self._CCP = None
 
-	@property
-	def ClrIdr(self):
-		return self._ClrIdr
-
-	@ClrIdr.setter
-	def ClrIdr(self, value):
-		self._ClrIdr = value if type(value) != auto else self.make_default("ClrIdr")
-
-	@ClrIdr.deleter
-	def ClrIdr(self):
-		del self._ClrIdr
-		self._ClrIdr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ClrRctDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrIdr', type=UniqueTransactionIdentifier1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlTradRpstryIdr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlIdr', type=UniqueTransactionIdentifier1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrRctDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CCP', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrIdr', type=UniqueTransactionIdentifier1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

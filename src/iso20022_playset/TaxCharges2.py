@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import PercentageRate
+import Max35Text
 import ActiveOrHistoricCurrencyAndAmount
 
 class TaxCharges2(base_types._BaseFieldType):

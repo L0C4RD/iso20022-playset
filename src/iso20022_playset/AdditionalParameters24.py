@@ -1,23 +1,23 @@
-import base_types
-import Max35Text
+from . import base_types
 import PartialSettlement2Code
 import PreConfirmation1Code
+import Max35Text
 
 class AdditionalParameters24(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtlSttlm", "_PrvsPrtlConfId", "_PreConf"]
+	__slots__ = ["_PreConf", "_PrvsPrtlConfId", "_PrtlSttlm"]
 	@property
-	def PrtlSttlm(self):
-		return self._PrtlSttlm
+	def PreConf(self):
+		return self._PreConf
 
-	@PrtlSttlm.setter
-	def PrtlSttlm(self, value):
-		self._PrtlSttlm = value if type(value) != auto else self.make_default("PrtlSttlm")
+	@PreConf.setter
+	def PreConf(self, value):
+		self._PreConf = value if type(value) != auto else self.make_default("PreConf")
 
-	@PrtlSttlm.deleter
-	def PrtlSttlm(self):
-		del self._PrtlSttlm
-		self._PrtlSttlm = None
+	@PreConf.deleter
+	def PreConf(self):
+		del self._PreConf
+		self._PreConf = None
 
 	@property
 	def PrvsPrtlConfId(self):
@@ -33,21 +33,21 @@ class AdditionalParameters24(base_types._BaseFieldType):
 		self._PrvsPrtlConfId = None
 
 	@property
-	def PreConf(self):
-		return self._PreConf
+	def PrtlSttlm(self):
+		return self._PrtlSttlm
 
-	@PreConf.setter
-	def PreConf(self, value):
-		self._PreConf = value if type(value) != auto else self.make_default("PreConf")
+	@PrtlSttlm.setter
+	def PrtlSttlm(self, value):
+		self._PrtlSttlm = value if type(value) != auto else self.make_default("PrtlSttlm")
 
-	@PreConf.deleter
-	def PreConf(self):
-		del self._PreConf
-		self._PreConf = None
+	@PrtlSttlm.deleter
+	def PrtlSttlm(self):
+		del self._PrtlSttlm
+		self._PrtlSttlm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtlSttlm', type=PartialSettlement2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsPrtlConfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PreConf', type=PreConfirmation1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsPrtlConfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtlSttlm', type=PartialSettlement2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

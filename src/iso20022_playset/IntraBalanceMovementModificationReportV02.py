@@ -1,13 +1,13 @@
-import base_types
-import Pagination1
-import SupplementaryData1
-import IntraBalanceReport5
+from . import base_types
 import DocumentIdentification51
+import IntraBalanceReport5
+import SupplementaryData1
 import IntraBalanceOrOperationalError12Choice
+import Pagination1
 
 class IntraBalanceMovementModificationReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RptGnlDtls", "_RptOrErr", "_Pgntn", "_SplmtryData", "_Id"]
+	__slots__ = ["_RptGnlDtls", "_SplmtryData", "_Id", "_RptOrErr", "_Pgntn"]
 	@property
 	def RptGnlDtls(self):
 		return self._RptGnlDtls
@@ -20,32 +20,6 @@ class IntraBalanceMovementModificationReportV02(base_types._BaseFieldType):
 	def RptGnlDtls(self):
 		del self._RptGnlDtls
 		self._RptGnlDtls = None
-
-	@property
-	def RptOrErr(self):
-		return self._RptOrErr
-
-	@RptOrErr.setter
-	def RptOrErr(self, value):
-		self._RptOrErr = value if type(value) != auto else self.make_default("RptOrErr")
-
-	@RptOrErr.deleter
-	def RptOrErr(self):
-		del self._RptOrErr
-		self._RptOrErr = None
-
-	@property
-	def Pgntn(self):
-		return self._Pgntn
-
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
-
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
 
 	@property
 	def SplmtryData(self):
@@ -73,11 +47,37 @@ class IntraBalanceMovementModificationReportV02(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def RptOrErr(self):
+		return self._RptOrErr
+
+	@RptOrErr.setter
+	def RptOrErr(self, value):
+		self._RptOrErr = value if type(value) != auto else self.make_default("RptOrErr")
+
+	@RptOrErr.deleter
+	def RptOrErr(self):
+		del self._RptOrErr
+		self._RptOrErr = None
+
+	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RptGnlDtls', type=IntraBalanceReport5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptOrErr', type=IntraBalanceOrOperationalError12Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptOrErr', type=IntraBalanceOrOperationalError12Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 	))
 

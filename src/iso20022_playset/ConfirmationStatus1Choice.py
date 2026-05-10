@@ -1,23 +1,10 @@
-import base_types
-import ConfirmationRejectedStatus2
+from . import base_types
 import OrderConfirmationStatus1Code
+import ConfirmationRejectedStatus2
 
 class ConfirmationStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfRjctd", "_Sts", "_AmdmntRjctd"]
-	@property
-	def ConfRjctd(self):
-		return self._ConfRjctd
-
-	@ConfRjctd.setter
-	def ConfRjctd(self, value):
-		self._ConfRjctd = value if type(value) != auto else self.make_default("ConfRjctd")
-
-	@ConfRjctd.deleter
-	def ConfRjctd(self):
-		del self._ConfRjctd
-		self._ConfRjctd = None
-
+	__slots__ = ["_Sts", "_ConfRjctd", "_AmdmntRjctd"]
 	@property
 	def Sts(self):
 		return self._Sts
@@ -30,6 +17,19 @@ class ConfirmationStatus1Choice(base_types._BaseFieldType):
 	def Sts(self):
 		del self._Sts
 		self._Sts = None
+
+	@property
+	def ConfRjctd(self):
+		return self._ConfRjctd
+
+	@ConfRjctd.setter
+	def ConfRjctd(self, value):
+		self._ConfRjctd = value if type(value) != auto else self.make_default("ConfRjctd")
+
+	@ConfRjctd.deleter
+	def ConfRjctd(self):
+		del self._ConfRjctd
+		self._ConfRjctd = None
 
 	@property
 	def AmdmntRjctd(self):
@@ -45,8 +45,8 @@ class ConfirmationStatus1Choice(base_types._BaseFieldType):
 		self._AmdmntRjctd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ConfRjctd', type=ConfirmationRejectedStatus2, min=1, max=10, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Sts', type=OrderConfirmationStatus1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ConfRjctd', type=ConfirmationRejectedStatus2, min=1, max=10, mutex_group=1, array=True),
 		base_types.FieldEntry(name='AmdmntRjctd', type=ConfirmationRejectedStatus2, min=1, max=10, mutex_group=1, array=True),
 	))
 

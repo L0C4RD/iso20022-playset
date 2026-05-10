@@ -1,10 +1,10 @@
-import base_types
-import SignedQuantityFormat10
+from . import base_types
 import Quantity49Choice
+import SignedQuantityFormat10
 
 class TotalEligibleBalanceFormat10(base_types._BaseFieldType):
 
-	__slots__ = ["_Bal", "_PartWayPrdUnits", "_FullPrdUnits"]
+	__slots__ = ["_Bal", "_FullPrdUnits", "_PartWayPrdUnits"]
 	@property
 	def Bal(self):
 		return self._Bal
@@ -19,19 +19,6 @@ class TotalEligibleBalanceFormat10(base_types._BaseFieldType):
 		self._Bal = None
 
 	@property
-	def PartWayPrdUnits(self):
-		return self._PartWayPrdUnits
-
-	@PartWayPrdUnits.setter
-	def PartWayPrdUnits(self, value):
-		self._PartWayPrdUnits = value if type(value) != auto else self.make_default("PartWayPrdUnits")
-
-	@PartWayPrdUnits.deleter
-	def PartWayPrdUnits(self):
-		del self._PartWayPrdUnits
-		self._PartWayPrdUnits = None
-
-	@property
 	def FullPrdUnits(self):
 		return self._FullPrdUnits
 
@@ -44,9 +31,22 @@ class TotalEligibleBalanceFormat10(base_types._BaseFieldType):
 		del self._FullPrdUnits
 		self._FullPrdUnits = None
 
+	@property
+	def PartWayPrdUnits(self):
+		return self._PartWayPrdUnits
+
+	@PartWayPrdUnits.setter
+	def PartWayPrdUnits(self, value):
+		self._PartWayPrdUnits = value if type(value) != auto else self.make_default("PartWayPrdUnits")
+
+	@PartWayPrdUnits.deleter
+	def PartWayPrdUnits(self):
+		del self._PartWayPrdUnits
+		self._PartWayPrdUnits = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Bal', type=Quantity49Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PartWayPrdUnits', type=SignedQuantityFormat10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FullPrdUnits', type=SignedQuantityFormat10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PartWayPrdUnits', type=SignedQuantityFormat10, min=0, max=1, mutex_group=None, array=False),
 	))
 

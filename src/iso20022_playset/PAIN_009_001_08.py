@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MandateInitiationRequestV08
 
 class PAIN_009_001_08():

@@ -1,6 +1,6 @@
-import base_types
-import DocumentNumber5Choice
+from . import base_types
 import References70Choice
+import DocumentNumber5Choice
 
 class Linkages58(base_types._BaseFieldType):
 

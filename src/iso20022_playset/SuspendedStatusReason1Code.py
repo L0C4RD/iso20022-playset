@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class SuspendedStatusReason1Code(base_types._BaseDataType_String):
 

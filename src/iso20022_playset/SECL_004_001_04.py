@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import NetPositionV04
 
 class SECL_004_001_04():

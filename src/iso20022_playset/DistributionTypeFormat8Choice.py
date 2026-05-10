@@ -1,6 +1,6 @@
-import base_types
-import DistributionType3Code
+from . import base_types
 import GenericIdentification47
+import DistributionType3Code
 
 class DistributionTypeFormat8Choice(base_types._BaseFieldType):
 

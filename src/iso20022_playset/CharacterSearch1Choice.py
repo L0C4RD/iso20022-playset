@@ -1,21 +1,21 @@
-import base_types
+from . import base_types
 import Max35Text
 
 class CharacterSearch1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CT", "_NCT", "_NEQ", "_EQ"]
+	__slots__ = ["_NEQ", "_NCT", "_EQ", "_CT"]
 	@property
-	def CT(self):
-		return self._CT
+	def NEQ(self):
+		return self._NEQ
 
-	@CT.setter
-	def CT(self, value):
-		self._CT = value if type(value) != auto else self.make_default("CT")
+	@NEQ.setter
+	def NEQ(self, value):
+		self._NEQ = value if type(value) != auto else self.make_default("NEQ")
 
-	@CT.deleter
-	def CT(self):
-		del self._CT
-		self._CT = None
+	@NEQ.deleter
+	def NEQ(self):
+		del self._NEQ
+		self._NEQ = None
 
 	@property
 	def NCT(self):
@@ -31,19 +31,6 @@ class CharacterSearch1Choice(base_types._BaseFieldType):
 		self._NCT = None
 
 	@property
-	def NEQ(self):
-		return self._NEQ
-
-	@NEQ.setter
-	def NEQ(self, value):
-		self._NEQ = value if type(value) != auto else self.make_default("NEQ")
-
-	@NEQ.deleter
-	def NEQ(self):
-		del self._NEQ
-		self._NEQ = None
-
-	@property
 	def EQ(self):
 		return self._EQ
 
@@ -56,10 +43,23 @@ class CharacterSearch1Choice(base_types._BaseFieldType):
 		del self._EQ
 		self._EQ = None
 
+	@property
+	def CT(self):
+		return self._CT
+
+	@CT.setter
+	def CT(self, value):
+		self._CT = value if type(value) != auto else self.make_default("CT")
+
+	@CT.deleter
+	def CT(self):
+		del self._CT
+		self._CT = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CT', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NCT', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NEQ', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NCT', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='EQ', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CT', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

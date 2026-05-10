@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import TradeStatus6Code
+import Max35Text
 
 class Status27Choice(base_types._BaseFieldType):
 

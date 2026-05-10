@@ -1,23 +1,23 @@
-import base_types
-import BillingRateIdentification1Choice
-import PercentageRate
+from . import base_types
 import Number
+import PercentageRate
+import BillingRateIdentification1Choice
 
 class BillingRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_DaysInYr", "_Val", "_DaysInPrd"]
+	__slots__ = ["_DaysInPrd", "_DaysInYr", "_Val", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def DaysInPrd(self):
+		return self._DaysInPrd
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@DaysInPrd.setter
+	def DaysInPrd(self, value):
+		self._DaysInPrd = value if type(value) != auto else self.make_default("DaysInPrd")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@DaysInPrd.deleter
+	def DaysInPrd(self):
+		del self._DaysInPrd
+		self._DaysInPrd = None
 
 	@property
 	def DaysInYr(self):
@@ -46,22 +46,22 @@ class BillingRate1(base_types._BaseFieldType):
 		self._Val = None
 
 	@property
-	def DaysInPrd(self):
-		return self._DaysInPrd
+	def Id(self):
+		return self._Id
 
-	@DaysInPrd.setter
-	def DaysInPrd(self, value):
-		self._DaysInPrd = value if type(value) != auto else self.make_default("DaysInPrd")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@DaysInPrd.deleter
-	def DaysInPrd(self):
-		del self._DaysInPrd
-		self._DaysInPrd = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=BillingRateIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DaysInPrd', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DaysInYr', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DaysInPrd', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=BillingRateIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

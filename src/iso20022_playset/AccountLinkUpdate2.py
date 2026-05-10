@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DateAndDateTime2Choice
 
 class AccountLinkUpdate2(base_types._BaseFieldType):

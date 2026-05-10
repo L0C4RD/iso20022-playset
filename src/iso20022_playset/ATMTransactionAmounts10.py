@@ -1,12 +1,12 @@
-import base_types
-import ATMMediaType4Code
-import TrueFalseIndicator
+from . import base_types
 import Number
 import ActiveCurrencyCode
+import ATMMediaType4Code
+import TrueFalseIndicator
 
 class ATMTransactionAmounts10(base_types._BaseFieldType):
 
-	__slots__ = ["_DispFlg", "_MinNb", "_MaxNb", "_Ccy", "_MdiaTp"]
+	__slots__ = ["_DispFlg", "_MaxNb", "_MdiaTp", "_Ccy", "_MinNb"]
 	@property
 	def DispFlg(self):
 		return self._DispFlg
@@ -19,19 +19,6 @@ class ATMTransactionAmounts10(base_types._BaseFieldType):
 	def DispFlg(self):
 		del self._DispFlg
 		self._DispFlg = None
-
-	@property
-	def MinNb(self):
-		return self._MinNb
-
-	@MinNb.setter
-	def MinNb(self, value):
-		self._MinNb = value if type(value) != auto else self.make_default("MinNb")
-
-	@MinNb.deleter
-	def MinNb(self):
-		del self._MinNb
-		self._MinNb = None
 
 	@property
 	def MaxNb(self):
@@ -47,6 +34,19 @@ class ATMTransactionAmounts10(base_types._BaseFieldType):
 		self._MaxNb = None
 
 	@property
+	def MdiaTp(self):
+		return self._MdiaTp
+
+	@MdiaTp.setter
+	def MdiaTp(self, value):
+		self._MdiaTp = value if type(value) != auto else self.make_default("MdiaTp")
+
+	@MdiaTp.deleter
+	def MdiaTp(self):
+		del self._MdiaTp
+		self._MdiaTp = None
+
+	@property
 	def Ccy(self):
 		return self._Ccy
 
@@ -60,23 +60,23 @@ class ATMTransactionAmounts10(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def MdiaTp(self):
-		return self._MdiaTp
+	def MinNb(self):
+		return self._MinNb
 
-	@MdiaTp.setter
-	def MdiaTp(self, value):
-		self._MdiaTp = value if type(value) != auto else self.make_default("MdiaTp")
+	@MinNb.setter
+	def MinNb(self, value):
+		self._MinNb = value if type(value) != auto else self.make_default("MinNb")
 
-	@MdiaTp.deleter
-	def MdiaTp(self):
-		del self._MdiaTp
-		self._MdiaTp = None
+	@MinNb.deleter
+	def MinNb(self):
+		del self._MinNb
+		self._MinNb = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DispFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MdiaTp', type=ATMMediaType4Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

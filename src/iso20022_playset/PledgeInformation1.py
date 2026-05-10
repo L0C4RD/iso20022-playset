@@ -1,24 +1,24 @@
-import base_types
-import GenericIdentification36
+from . import base_types
 import ThirdPartyIdentification1
+import GenericIdentification36
 import YesNoIndicator
 import PartyIdentification232Choice
 
 class PledgeInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Pldgr", "_RtrSctiesInd", "_ThrdPty", "_PldgTp"]
+	__slots__ = ["_ThrdPty", "_RtrSctiesInd", "_PldgTp", "_Pldgr"]
 	@property
-	def Pldgr(self):
-		return self._Pldgr
+	def ThrdPty(self):
+		return self._ThrdPty
 
-	@Pldgr.setter
-	def Pldgr(self, value):
-		self._Pldgr = value if type(value) != auto else self.make_default("Pldgr")
+	@ThrdPty.setter
+	def ThrdPty(self, value):
+		self._ThrdPty = value if type(value) != auto else self.make_default("ThrdPty")
 
-	@Pldgr.deleter
-	def Pldgr(self):
-		del self._Pldgr
-		self._Pldgr = None
+	@ThrdPty.deleter
+	def ThrdPty(self):
+		del self._ThrdPty
+		self._ThrdPty = None
 
 	@property
 	def RtrSctiesInd(self):
@@ -34,19 +34,6 @@ class PledgeInformation1(base_types._BaseFieldType):
 		self._RtrSctiesInd = None
 
 	@property
-	def ThrdPty(self):
-		return self._ThrdPty
-
-	@ThrdPty.setter
-	def ThrdPty(self, value):
-		self._ThrdPty = value if type(value) != auto else self.make_default("ThrdPty")
-
-	@ThrdPty.deleter
-	def ThrdPty(self):
-		del self._ThrdPty
-		self._ThrdPty = None
-
-	@property
 	def PldgTp(self):
 		return self._PldgTp
 
@@ -59,10 +46,23 @@ class PledgeInformation1(base_types._BaseFieldType):
 		del self._PldgTp
 		self._PldgTp = None
 
+	@property
+	def Pldgr(self):
+		return self._Pldgr
+
+	@Pldgr.setter
+	def Pldgr(self, value):
+		self._Pldgr = value if type(value) != auto else self.make_default("Pldgr")
+
+	@Pldgr.deleter
+	def Pldgr(self):
+		del self._Pldgr
+		self._Pldgr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pldgr', type=PartyIdentification232Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrSctiesInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ThrdPty', type=ThirdPartyIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrSctiesInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PldgTp', type=GenericIdentification36, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pldgr', type=PartyIdentification232Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

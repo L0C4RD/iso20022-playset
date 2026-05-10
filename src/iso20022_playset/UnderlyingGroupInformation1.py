@@ -1,10 +1,10 @@
-import base_types
+from . import base_types
 import Max35Text
 import ISODateTime
 
 class UnderlyingGroupInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgNmId", "_OrgnlMsgDlvryChanl", "_OrgnlMsgId", "_OrgnlCreDtTm"]
+	__slots__ = ["_OrgnlMsgNmId", "_OrgnlCreDtTm", "_OrgnlMsgDlvryChanl", "_OrgnlMsgId"]
 	@property
 	def OrgnlMsgNmId(self):
 		return self._OrgnlMsgNmId
@@ -17,6 +17,19 @@ class UnderlyingGroupInformation1(base_types._BaseFieldType):
 	def OrgnlMsgNmId(self):
 		del self._OrgnlMsgNmId
 		self._OrgnlMsgNmId = None
+
+	@property
+	def OrgnlCreDtTm(self):
+		return self._OrgnlCreDtTm
+
+	@OrgnlCreDtTm.setter
+	def OrgnlCreDtTm(self, value):
+		self._OrgnlCreDtTm = value if type(value) != auto else self.make_default("OrgnlCreDtTm")
+
+	@OrgnlCreDtTm.deleter
+	def OrgnlCreDtTm(self):
+		del self._OrgnlCreDtTm
+		self._OrgnlCreDtTm = None
 
 	@property
 	def OrgnlMsgDlvryChanl(self):
@@ -44,23 +57,10 @@ class UnderlyingGroupInformation1(base_types._BaseFieldType):
 		del self._OrgnlMsgId
 		self._OrgnlMsgId = None
 
-	@property
-	def OrgnlCreDtTm(self):
-		return self._OrgnlCreDtTm
-
-	@OrgnlCreDtTm.setter
-	def OrgnlCreDtTm(self, value):
-		self._OrgnlCreDtTm = value if type(value) != auto else self.make_default("OrgnlCreDtTm")
-
-	@OrgnlCreDtTm.deleter
-	def OrgnlCreDtTm(self):
-		del self._OrgnlCreDtTm
-		self._OrgnlCreDtTm = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgDlvryChanl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,27 +1,14 @@
-import base_types
-import Max35Text
-import BaseOneRate
-import PercentageRate
+from . import base_types
 import ISODate
-import ActiveCurrencyAndAmount
+import PercentageRate
 import DepositType1Code
+import BaseOneRate
+import Max35Text
+import ActiveCurrencyAndAmount
 
 class CashCollateral4(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_AsstNb", "_BlckdAmt", "_MtrtyDt", "_DpstTp", "_CollVal", "_XchgRate", "_Hrcut", "_DpstAmt"]
-	@property
-	def ValDt(self):
-		return self._ValDt
-
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
-
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
-
+	__slots__ = ["_AsstNb", "_DpstAmt", "_ValDt", "_MtrtyDt", "_DpstTp", "_CollVal", "_Hrcut", "_BlckdAmt", "_XchgRate"]
 	@property
 	def AsstNb(self):
 		return self._AsstNb
@@ -36,17 +23,30 @@ class CashCollateral4(base_types._BaseFieldType):
 		self._AsstNb = None
 
 	@property
-	def BlckdAmt(self):
-		return self._BlckdAmt
+	def DpstAmt(self):
+		return self._DpstAmt
 
-	@BlckdAmt.setter
-	def BlckdAmt(self, value):
-		self._BlckdAmt = value if type(value) != auto else self.make_default("BlckdAmt")
+	@DpstAmt.setter
+	def DpstAmt(self, value):
+		self._DpstAmt = value if type(value) != auto else self.make_default("DpstAmt")
 
-	@BlckdAmt.deleter
-	def BlckdAmt(self):
-		del self._BlckdAmt
-		self._BlckdAmt = None
+	@DpstAmt.deleter
+	def DpstAmt(self):
+		del self._DpstAmt
+		self._DpstAmt = None
+
+	@property
+	def ValDt(self):
+		return self._ValDt
+
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
 
 	@property
 	def MtrtyDt(self):
@@ -88,19 +88,6 @@ class CashCollateral4(base_types._BaseFieldType):
 		self._CollVal = None
 
 	@property
-	def XchgRate(self):
-		return self._XchgRate
-
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
-
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
-
-	@property
 	def Hrcut(self):
 		return self._Hrcut
 
@@ -114,27 +101,40 @@ class CashCollateral4(base_types._BaseFieldType):
 		self._Hrcut = None
 
 	@property
-	def DpstAmt(self):
-		return self._DpstAmt
+	def BlckdAmt(self):
+		return self._BlckdAmt
 
-	@DpstAmt.setter
-	def DpstAmt(self, value):
-		self._DpstAmt = value if type(value) != auto else self.make_default("DpstAmt")
+	@BlckdAmt.setter
+	def BlckdAmt(self, value):
+		self._BlckdAmt = value if type(value) != auto else self.make_default("BlckdAmt")
 
-	@DpstAmt.deleter
-	def DpstAmt(self):
-		del self._DpstAmt
-		self._DpstAmt = None
+	@BlckdAmt.deleter
+	def BlckdAmt(self):
+		del self._BlckdAmt
+		self._BlckdAmt = None
+
+	@property
+	def XchgRate(self):
+		return self._XchgRate
+
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
+
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AsstNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DpstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DpstTp', type=DepositType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hrcut', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DpstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

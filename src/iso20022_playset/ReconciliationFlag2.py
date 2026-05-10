@@ -1,35 +1,35 @@
-import base_types
+from . import base_types
 import TradeRepositoryReportingType1Code
 import TrueFalseIndicator
 
 class ReconciliationFlag2(base_types._BaseFieldType):
 
-	__slots__ = ["_LnRcncltnSts", "_PairdSts", "_CollRcncltnSts", "_ModSts", "_BothCtrPtiesRptg", "_RptTp"]
+	__slots__ = ["_ModSts", "_RptTp", "_CollRcncltnSts", "_PairdSts", "_LnRcncltnSts", "_BothCtrPtiesRptg"]
 	@property
-	def LnRcncltnSts(self):
-		return self._LnRcncltnSts
+	def ModSts(self):
+		return self._ModSts
 
-	@LnRcncltnSts.setter
-	def LnRcncltnSts(self, value):
-		self._LnRcncltnSts = value if type(value) != auto else self.make_default("LnRcncltnSts")
+	@ModSts.setter
+	def ModSts(self, value):
+		self._ModSts = value if type(value) != auto else self.make_default("ModSts")
 
-	@LnRcncltnSts.deleter
-	def LnRcncltnSts(self):
-		del self._LnRcncltnSts
-		self._LnRcncltnSts = None
+	@ModSts.deleter
+	def ModSts(self):
+		del self._ModSts
+		self._ModSts = None
 
 	@property
-	def PairdSts(self):
-		return self._PairdSts
+	def RptTp(self):
+		return self._RptTp
 
-	@PairdSts.setter
-	def PairdSts(self, value):
-		self._PairdSts = value if type(value) != auto else self.make_default("PairdSts")
+	@RptTp.setter
+	def RptTp(self, value):
+		self._RptTp = value if type(value) != auto else self.make_default("RptTp")
 
-	@PairdSts.deleter
-	def PairdSts(self):
-		del self._PairdSts
-		self._PairdSts = None
+	@RptTp.deleter
+	def RptTp(self):
+		del self._RptTp
+		self._RptTp = None
 
 	@property
 	def CollRcncltnSts(self):
@@ -45,17 +45,30 @@ class ReconciliationFlag2(base_types._BaseFieldType):
 		self._CollRcncltnSts = None
 
 	@property
-	def ModSts(self):
-		return self._ModSts
+	def PairdSts(self):
+		return self._PairdSts
 
-	@ModSts.setter
-	def ModSts(self, value):
-		self._ModSts = value if type(value) != auto else self.make_default("ModSts")
+	@PairdSts.setter
+	def PairdSts(self, value):
+		self._PairdSts = value if type(value) != auto else self.make_default("PairdSts")
 
-	@ModSts.deleter
-	def ModSts(self):
-		del self._ModSts
-		self._ModSts = None
+	@PairdSts.deleter
+	def PairdSts(self):
+		del self._PairdSts
+		self._PairdSts = None
+
+	@property
+	def LnRcncltnSts(self):
+		return self._LnRcncltnSts
+
+	@LnRcncltnSts.setter
+	def LnRcncltnSts(self, value):
+		self._LnRcncltnSts = value if type(value) != auto else self.make_default("LnRcncltnSts")
+
+	@LnRcncltnSts.deleter
+	def LnRcncltnSts(self):
+		del self._LnRcncltnSts
+		self._LnRcncltnSts = None
 
 	@property
 	def BothCtrPtiesRptg(self):
@@ -70,25 +83,12 @@ class ReconciliationFlag2(base_types._BaseFieldType):
 		del self._BothCtrPtiesRptg
 		self._BothCtrPtiesRptg = None
 
-	@property
-	def RptTp(self):
-		return self._RptTp
-
-	@RptTp.setter
-	def RptTp(self, value):
-		self._RptTp = value if type(value) != auto else self.make_default("RptTp")
-
-	@RptTp.deleter
-	def RptTp(self):
-		del self._RptTp
-		self._RptTp = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LnRcncltnSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PairdSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollRcncltnSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BothCtrPtiesRptg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptTp', type=TradeRepositoryReportingType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollRcncltnSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PairdSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LnRcncltnSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BothCtrPtiesRptg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

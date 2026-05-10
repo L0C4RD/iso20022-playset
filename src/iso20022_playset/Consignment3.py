@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Quantity10
 
 class Consignment3(base_types._BaseFieldType):

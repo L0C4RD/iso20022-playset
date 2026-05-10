@@ -1,6 +1,6 @@
-import base_types
-import ActiveOrHistoricCurrencyAndAmount
+from . import base_types
 import ChargesRecord8
+import ActiveOrHistoricCurrencyAndAmount
 
 class Charges15(base_types._BaseFieldType):
 

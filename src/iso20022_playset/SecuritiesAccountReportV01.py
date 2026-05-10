@@ -1,8 +1,8 @@
-import base_types
-import MessageHeader3
-import SupplementaryData1
-import Pagination1
+from . import base_types
 import SecuritiesAccountOrOperationalError3Choice
+import SupplementaryData1
+import MessageHeader3
+import Pagination1
 
 class SecuritiesAccountReportV01(base_types._BaseFieldType):
 

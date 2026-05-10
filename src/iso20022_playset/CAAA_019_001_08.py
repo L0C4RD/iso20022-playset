@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AcceptorCurrencyConversionAdviceResponseV08
 
 class CAAA_019_001_08():

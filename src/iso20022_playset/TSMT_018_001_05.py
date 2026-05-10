@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FullPushThroughReportV05
 
 class TSMT_018_001_05():

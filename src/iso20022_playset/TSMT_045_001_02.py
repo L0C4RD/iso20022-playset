@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ForwardIntentToPayNotificationV02
 
 class TSMT_045_001_02():

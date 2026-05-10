@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DateType4Code
 import GenericIdentification30
 

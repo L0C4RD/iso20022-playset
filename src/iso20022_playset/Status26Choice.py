@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import IndividualOrderStatusAndReason8
 import OrderStatusAndReason9
 

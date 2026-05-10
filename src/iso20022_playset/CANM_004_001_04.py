@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import KeyExchangeResponseV04
 
 class CANM_004_001_04():

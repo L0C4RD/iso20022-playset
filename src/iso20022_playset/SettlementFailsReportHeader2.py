@@ -1,25 +1,38 @@
-import base_types
+from . import base_types
+import TransactionOperationType4Code
 import ISODateTime
 import DatePeriod2
-import TransactionOperationType4Code
 import SecuritiesSettlementSystemIdentification2
 import ActiveCurrencyCode
 
 class SettlementFailsReportHeader2(base_types._BaseFieldType):
 
-	__slots__ = ["_RptSts", "_SctiesSttlmSys", "_RptgPrd", "_CreDtTm", "_Ccy"]
+	__slots__ = ["_RptgPrd", "_Ccy", "_SctiesSttlmSys", "_RptSts", "_CreDtTm"]
 	@property
-	def RptSts(self):
-		return self._RptSts
+	def RptgPrd(self):
+		return self._RptgPrd
 
-	@RptSts.setter
-	def RptSts(self, value):
-		self._RptSts = value if type(value) != auto else self.make_default("RptSts")
+	@RptgPrd.setter
+	def RptgPrd(self, value):
+		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
 
-	@RptSts.deleter
-	def RptSts(self):
-		del self._RptSts
-		self._RptSts = None
+	@RptgPrd.deleter
+	def RptgPrd(self):
+		del self._RptgPrd
+		self._RptgPrd = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def SctiesSttlmSys(self):
@@ -35,17 +48,17 @@ class SettlementFailsReportHeader2(base_types._BaseFieldType):
 		self._SctiesSttlmSys = None
 
 	@property
-	def RptgPrd(self):
-		return self._RptgPrd
+	def RptSts(self):
+		return self._RptSts
 
-	@RptgPrd.setter
-	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
+	@RptSts.setter
+	def RptSts(self, value):
+		self._RptSts = value if type(value) != auto else self.make_default("RptSts")
 
-	@RptgPrd.deleter
-	def RptgPrd(self):
-		del self._RptgPrd
-		self._RptgPrd = None
+	@RptSts.deleter
+	def RptSts(self):
+		del self._RptSts
+		self._RptSts = None
 
 	@property
 	def CreDtTm(self):
@@ -60,24 +73,11 @@ class SettlementFailsReportHeader2(base_types._BaseFieldType):
 		del self._CreDtTm
 		self._CreDtTm = None
 
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptSts', type=TransactionOperationType4Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesSttlmSys', type=SecuritiesSettlementSystemIdentification2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgPrd', type=DatePeriod2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesSttlmSys', type=SecuritiesSettlementSystemIdentification2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptSts', type=TransactionOperationType4Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

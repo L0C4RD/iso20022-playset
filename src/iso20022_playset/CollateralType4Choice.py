@@ -1,6 +1,6 @@
-import base_types
-import CollateralType3Code
+from . import base_types
 import GenericIdentification30
+import CollateralType3Code
 
 class CollateralType4Choice(base_types._BaseFieldType):
 

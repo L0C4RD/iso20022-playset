@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MisMatchRejectionV02
 
 class TSMT_022_001_02():

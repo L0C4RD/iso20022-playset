@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
+import InvestigationStatus2
+import Party40Choice
 import Max35Text
 import InvestigationData6
-import Party40Choice
-import InvestigationStatus2
 
 class InvestigationResponse9(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_RspndrInvstgtnId", "_InvstgtnData", "_NxtRspndr", "_InvstgtnSts"]
+	__slots__ = ["_MsgId", "_NxtRspndr", "_InvstgtnData", "_InvstgtnSts", "_RspndrInvstgtnId"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -19,32 +19,6 @@ class InvestigationResponse9(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
-
-	@property
-	def RspndrInvstgtnId(self):
-		return self._RspndrInvstgtnId
-
-	@RspndrInvstgtnId.setter
-	def RspndrInvstgtnId(self, value):
-		self._RspndrInvstgtnId = value if type(value) != auto else self.make_default("RspndrInvstgtnId")
-
-	@RspndrInvstgtnId.deleter
-	def RspndrInvstgtnId(self):
-		del self._RspndrInvstgtnId
-		self._RspndrInvstgtnId = None
-
-	@property
-	def InvstgtnData(self):
-		return self._InvstgtnData
-
-	@InvstgtnData.setter
-	def InvstgtnData(self, value):
-		self._InvstgtnData = value if type(value) != auto else self.make_default("InvstgtnData")
-
-	@InvstgtnData.deleter
-	def InvstgtnData(self):
-		del self._InvstgtnData
-		self._InvstgtnData = None
 
 	@property
 	def NxtRspndr(self):
@@ -60,6 +34,19 @@ class InvestigationResponse9(base_types._BaseFieldType):
 		self._NxtRspndr = None
 
 	@property
+	def InvstgtnData(self):
+		return self._InvstgtnData
+
+	@InvstgtnData.setter
+	def InvstgtnData(self, value):
+		self._InvstgtnData = value if type(value) != auto else self.make_default("InvstgtnData")
+
+	@InvstgtnData.deleter
+	def InvstgtnData(self):
+		del self._InvstgtnData
+		self._InvstgtnData = None
+
+	@property
 	def InvstgtnSts(self):
 		return self._InvstgtnSts
 
@@ -72,11 +59,24 @@ class InvestigationResponse9(base_types._BaseFieldType):
 		del self._InvstgtnSts
 		self._InvstgtnSts = None
 
+	@property
+	def RspndrInvstgtnId(self):
+		return self._RspndrInvstgtnId
+
+	@RspndrInvstgtnId.setter
+	def RspndrInvstgtnId(self, value):
+		self._RspndrInvstgtnId = value if type(value) != auto else self.make_default("RspndrInvstgtnId")
+
+	@RspndrInvstgtnId.deleter
+	def RspndrInvstgtnId(self):
+		del self._RspndrInvstgtnId
+		self._RspndrInvstgtnId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspndrInvstgtnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstgtnData', type=InvestigationData6, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NxtRspndr', type=Party40Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstgtnData', type=InvestigationData6, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InvstgtnSts', type=InvestigationStatus2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspndrInvstgtnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

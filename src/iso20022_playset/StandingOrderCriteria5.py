@@ -1,23 +1,23 @@
-import base_types
-import StandingOrderReturnCriteria1
+from . import base_types
 import Max35Text
 import StandingOrderSearchCriteria5
+import StandingOrderReturnCriteria1
 
 class StandingOrderCriteria5(base_types._BaseFieldType):
 
-	__slots__ = ["_RtrCrit", "_SchCrit", "_NewQryNm"]
+	__slots__ = ["_NewQryNm", "_SchCrit", "_RtrCrit"]
 	@property
-	def RtrCrit(self):
-		return self._RtrCrit
+	def NewQryNm(self):
+		return self._NewQryNm
 
-	@RtrCrit.setter
-	def RtrCrit(self, value):
-		self._RtrCrit = value if type(value) != auto else self.make_default("RtrCrit")
+	@NewQryNm.setter
+	def NewQryNm(self, value):
+		self._NewQryNm = value if type(value) != auto else self.make_default("NewQryNm")
 
-	@RtrCrit.deleter
-	def RtrCrit(self):
-		del self._RtrCrit
-		self._RtrCrit = None
+	@NewQryNm.deleter
+	def NewQryNm(self):
+		del self._NewQryNm
+		self._NewQryNm = None
 
 	@property
 	def SchCrit(self):
@@ -33,21 +33,21 @@ class StandingOrderCriteria5(base_types._BaseFieldType):
 		self._SchCrit = None
 
 	@property
-	def NewQryNm(self):
-		return self._NewQryNm
+	def RtrCrit(self):
+		return self._RtrCrit
 
-	@NewQryNm.setter
-	def NewQryNm(self, value):
-		self._NewQryNm = value if type(value) != auto else self.make_default("NewQryNm")
+	@RtrCrit.setter
+	def RtrCrit(self, value):
+		self._RtrCrit = value if type(value) != auto else self.make_default("RtrCrit")
 
-	@NewQryNm.deleter
-	def NewQryNm(self):
-		del self._NewQryNm
-		self._NewQryNm = None
+	@RtrCrit.deleter
+	def RtrCrit(self):
+		del self._RtrCrit
+		self._RtrCrit = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RtrCrit', type=StandingOrderReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SchCrit', type=StandingOrderSearchCriteria5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchCrit', type=StandingOrderSearchCriteria5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RtrCrit', type=StandingOrderReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
 	))
 

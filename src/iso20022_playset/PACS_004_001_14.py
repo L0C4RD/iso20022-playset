@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PaymentReturnV14
 
 class PACS_004_001_14():

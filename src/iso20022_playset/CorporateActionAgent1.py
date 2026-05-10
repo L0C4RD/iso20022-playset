@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import NameAndAddress5
-import PartyIdentification2Choice
 import AgentRole1FormatChoice
+import PartyIdentification2Choice
 
 class CorporateActionAgent1(base_types._BaseFieldType):
 

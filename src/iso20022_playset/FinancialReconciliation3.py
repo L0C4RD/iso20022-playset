@@ -1,13 +1,13 @@
-import base_types
+from . import base_types
+import Number
+import ReconciliationImpact1Code
+import ReconciliationCategory1Code
 import Max35Text
 import ImpliedCurrencyAndAmount
-import ReconciliationImpact1Code
-import Number
-import ReconciliationCategory1Code
 
 class FinancialReconciliation3(base_types._BaseFieldType):
 
-	__slots__ = ["_Cnt", "_Amt", "_Impct", "_OthrTp", "_Tp"]
+	__slots__ = ["_Cnt", "_Impct", "_OthrTp", "_Tp", "_Amt"]
 	@property
 	def Cnt(self):
 		return self._Cnt
@@ -20,19 +20,6 @@ class FinancialReconciliation3(base_types._BaseFieldType):
 	def Cnt(self):
 		del self._Cnt
 		self._Cnt = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
 
 	@property
 	def Impct(self):
@@ -73,11 +60,24 @@ class FinancialReconciliation3(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cnt', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Impct', type=ReconciliationImpact1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ReconciliationCategory1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
-import base_types
-import Max140Text
+from . import base_types
 import FinancialInstrumentQuantity33Choice
+import Max140Text
 
 class OtherTypeOfCollateral3(base_types._BaseFieldType):
 

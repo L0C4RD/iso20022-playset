@@ -1,6 +1,6 @@
-import base_types
-import SettleStyle1Code
+from . import base_types
 import GenericIdentification30
+import SettleStyle1Code
 
 class SettleStyle2Choice(base_types._BaseFieldType):
 

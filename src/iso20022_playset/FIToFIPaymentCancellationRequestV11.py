@@ -1,25 +1,25 @@
-import base_types
-import SupplementaryData1
+from . import base_types
 import UnderlyingTransaction34
-import CaseAssignment6
 import ControlData1
 import Case6
+import SupplementaryData1
+import CaseAssignment6
 
 class FIToFIPaymentCancellationRequestV11(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrlData", "_Assgnmt", "_Case", "_SplmtryData", "_Undrlyg"]
+	__slots__ = ["_Case", "_Assgnmt", "_SplmtryData", "_CtrlData", "_Undrlyg"]
 	@property
-	def CtrlData(self):
-		return self._CtrlData
+	def Case(self):
+		return self._Case
 
-	@CtrlData.setter
-	def CtrlData(self, value):
-		self._CtrlData = value if type(value) != auto else self.make_default("CtrlData")
+	@Case.setter
+	def Case(self, value):
+		self._Case = value if type(value) != auto else self.make_default("Case")
 
-	@CtrlData.deleter
-	def CtrlData(self):
-		del self._CtrlData
-		self._CtrlData = None
+	@Case.deleter
+	def Case(self):
+		del self._Case
+		self._Case = None
 
 	@property
 	def Assgnmt(self):
@@ -35,19 +35,6 @@ class FIToFIPaymentCancellationRequestV11(base_types._BaseFieldType):
 		self._Assgnmt = None
 
 	@property
-	def Case(self):
-		return self._Case
-
-	@Case.setter
-	def Case(self, value):
-		self._Case = value if type(value) != auto else self.make_default("Case")
-
-	@Case.deleter
-	def Case(self):
-		del self._Case
-		self._Case = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -59,6 +46,19 @@ class FIToFIPaymentCancellationRequestV11(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def CtrlData(self):
+		return self._CtrlData
+
+	@CtrlData.setter
+	def CtrlData(self, value):
+		self._CtrlData = value if type(value) != auto else self.make_default("CtrlData")
+
+	@CtrlData.deleter
+	def CtrlData(self):
+		del self._CtrlData
+		self._CtrlData = None
 
 	@property
 	def Undrlyg(self):
@@ -74,10 +74,10 @@ class FIToFIPaymentCancellationRequestV11(base_types._BaseFieldType):
 		self._Undrlyg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrlData', type=ControlData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrlData', type=ControlData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction34, min=1, max=None, mutex_group=None, array=True),
 	))
 

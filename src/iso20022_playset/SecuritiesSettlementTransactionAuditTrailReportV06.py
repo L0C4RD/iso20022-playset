@@ -1,15 +1,15 @@
-import base_types
+from . import base_types
+import SecuritiesAccount22
+import PartyIdentification144
+import BlockChainAddressWallet3
+import StatusTrail12
+import TransactionIdentifications54
 import Max35Text
 import Pagination1
-import StatusTrail12
-import PartyIdentification144
-import SecuritiesAccount22
-import BlockChainAddressWallet3
-import TransactionIdentifications54
 
 class SecuritiesSettlementTransactionAuditTrailReportV06(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgAcct", "_QryRef", "_BlckChainAdrOrWllt", "_Pgntn", "_AcctOwnr", "_TxId", "_StsTrl"]
+	__slots__ = ["_SfkpgAcct", "_BlckChainAdrOrWllt", "_AcctOwnr", "_StsTrl", "_TxId", "_QryRef", "_Pgntn"]
 	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
@@ -22,19 +22,6 @@ class SecuritiesSettlementTransactionAuditTrailReportV06(base_types._BaseFieldTy
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
-
-	@property
-	def QryRef(self):
-		return self._QryRef
-
-	@QryRef.setter
-	def QryRef(self, value):
-		self._QryRef = value if type(value) != auto else self.make_default("QryRef")
-
-	@QryRef.deleter
-	def QryRef(self):
-		del self._QryRef
-		self._QryRef = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -50,19 +37,6 @@ class SecuritiesSettlementTransactionAuditTrailReportV06(base_types._BaseFieldTy
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
-
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
-
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
-
-	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
 
@@ -74,6 +48,19 @@ class SecuritiesSettlementTransactionAuditTrailReportV06(base_types._BaseFieldTy
 	def AcctOwnr(self):
 		del self._AcctOwnr
 		self._AcctOwnr = None
+
+	@property
+	def StsTrl(self):
+		return self._StsTrl
+
+	@StsTrl.setter
+	def StsTrl(self, value):
+		self._StsTrl = value if type(value) != auto else self.make_default("StsTrl")
+
+	@StsTrl.deleter
+	def StsTrl(self):
+		del self._StsTrl
+		self._StsTrl = None
 
 	@property
 	def TxId(self):
@@ -89,25 +76,38 @@ class SecuritiesSettlementTransactionAuditTrailReportV06(base_types._BaseFieldTy
 		self._TxId = None
 
 	@property
-	def StsTrl(self):
-		return self._StsTrl
+	def QryRef(self):
+		return self._QryRef
 
-	@StsTrl.setter
-	def StsTrl(self, value):
-		self._StsTrl = value if type(value) != auto else self.make_default("StsTrl")
+	@QryRef.setter
+	def QryRef(self, value):
+		self._QryRef = value if type(value) != auto else self.make_default("QryRef")
 
-	@StsTrl.deleter
-	def StsTrl(self):
-		del self._StsTrl
-		self._StsTrl = None
+	@QryRef.deleter
+	def QryRef(self):
+		del self._QryRef
+		self._QryRef = None
+
+	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount22, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=TransactionIdentifications54, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsTrl', type=StatusTrail12, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentifications54, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 	))
 

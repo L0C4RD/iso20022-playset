@@ -1,23 +1,10 @@
-import base_types
-import CountryCode
+from . import base_types
 import RateAndAmountFormat1Choice
+import CountryCode
 
 class SecurityWithHoldingTax1(base_types._BaseFieldType):
 
-	__slots__ = ["_WhldgTaxVal", "_Ctry"]
-	@property
-	def WhldgTaxVal(self):
-		return self._WhldgTaxVal
-
-	@WhldgTaxVal.setter
-	def WhldgTaxVal(self, value):
-		self._WhldgTaxVal = value if type(value) != auto else self.make_default("WhldgTaxVal")
-
-	@WhldgTaxVal.deleter
-	def WhldgTaxVal(self):
-		del self._WhldgTaxVal
-		self._WhldgTaxVal = None
-
+	__slots__ = ["_Ctry", "_WhldgTaxVal"]
 	@property
 	def Ctry(self):
 		return self._Ctry
@@ -31,8 +18,21 @@ class SecurityWithHoldingTax1(base_types._BaseFieldType):
 		del self._Ctry
 		self._Ctry = None
 
+	@property
+	def WhldgTaxVal(self):
+		return self._WhldgTaxVal
+
+	@WhldgTaxVal.setter
+	def WhldgTaxVal(self, value):
+		self._WhldgTaxVal = value if type(value) != auto else self.make_default("WhldgTaxVal")
+
+	@WhldgTaxVal.deleter
+	def WhldgTaxVal(self):
+		del self._WhldgTaxVal
+		self._WhldgTaxVal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='WhldgTaxVal', type=RateAndAmountFormat1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WhldgTaxVal', type=RateAndAmountFormat1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

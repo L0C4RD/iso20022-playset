@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import Max35Text
 import LEIIdentifier
 import NameAndAddress8
 
 class PartyIdentification60(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_LglNttyIdr", "_FndId"]
-	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
-
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
-
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
-
+	__slots__ = ["_LglNttyIdr", "_FndId", "_NmAndAdr"]
 	@property
 	def LglNttyIdr(self):
 		return self._LglNttyIdr
@@ -45,9 +32,22 @@ class PartyIdentification60(base_types._BaseFieldType):
 		del self._FndId
 		self._FndId = None
 
+	@property
+	def NmAndAdr(self):
+		return self._NmAndAdr
+
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FndId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress8, min=0, max=1, mutex_group=None, array=False),
 	))
 

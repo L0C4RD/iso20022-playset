@@ -1,25 +1,12 @@
-import base_types
+from . import base_types
+import NotificationType3Code
+import YesNoIndicator
 import Max35Text
 import EventStatus1
-import YesNoIndicator
-import NotificationType3Code
 
 class NotificationGeneralInformation4(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfOfHldgReqrd", "_NtfctnSts", "_NtfctnTp", "_NtfctnId", "_ShrhldrRghtsDrctvInd"]
-	@property
-	def ConfOfHldgReqrd(self):
-		return self._ConfOfHldgReqrd
-
-	@ConfOfHldgReqrd.setter
-	def ConfOfHldgReqrd(self, value):
-		self._ConfOfHldgReqrd = value if type(value) != auto else self.make_default("ConfOfHldgReqrd")
-
-	@ConfOfHldgReqrd.deleter
-	def ConfOfHldgReqrd(self):
-		del self._ConfOfHldgReqrd
-		self._ConfOfHldgReqrd = None
-
+	__slots__ = ["_NtfctnSts", "_NtfctnId", "_ShrhldrRghtsDrctvInd", "_NtfctnTp", "_ConfOfHldgReqrd"]
 	@property
 	def NtfctnSts(self):
 		return self._NtfctnSts
@@ -32,19 +19,6 @@ class NotificationGeneralInformation4(base_types._BaseFieldType):
 	def NtfctnSts(self):
 		del self._NtfctnSts
 		self._NtfctnSts = None
-
-	@property
-	def NtfctnTp(self):
-		return self._NtfctnTp
-
-	@NtfctnTp.setter
-	def NtfctnTp(self, value):
-		self._NtfctnTp = value if type(value) != auto else self.make_default("NtfctnTp")
-
-	@NtfctnTp.deleter
-	def NtfctnTp(self):
-		del self._NtfctnTp
-		self._NtfctnTp = None
 
 	@property
 	def NtfctnId(self):
@@ -72,11 +46,37 @@ class NotificationGeneralInformation4(base_types._BaseFieldType):
 		del self._ShrhldrRghtsDrctvInd
 		self._ShrhldrRghtsDrctvInd = None
 
+	@property
+	def NtfctnTp(self):
+		return self._NtfctnTp
+
+	@NtfctnTp.setter
+	def NtfctnTp(self, value):
+		self._NtfctnTp = value if type(value) != auto else self.make_default("NtfctnTp")
+
+	@NtfctnTp.deleter
+	def NtfctnTp(self):
+		del self._NtfctnTp
+		self._NtfctnTp = None
+
+	@property
+	def ConfOfHldgReqrd(self):
+		return self._ConfOfHldgReqrd
+
+	@ConfOfHldgReqrd.setter
+	def ConfOfHldgReqrd(self, value):
+		self._ConfOfHldgReqrd = value if type(value) != auto else self.make_default("ConfOfHldgReqrd")
+
+	@ConfOfHldgReqrd.deleter
+	def ConfOfHldgReqrd(self):
+		del self._ConfOfHldgReqrd
+		self._ConfOfHldgReqrd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ConfOfHldgReqrd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnSts', type=EventStatus1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnTp', type=NotificationType3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrhldrRghtsDrctvInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnTp', type=NotificationType3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfOfHldgReqrd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

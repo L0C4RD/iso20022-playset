@@ -1,27 +1,27 @@
-import base_types
-import Max35Text
-import PartyType19Code
-import OutputFormat4Code
-import Address2
+from . import base_types
 import Max20KText
-import UserInterface8Code
+import PartyType19Code
+import Address2
 import ContactBusiness1
+import OutputFormat4Code
+import Max35Text
+import UserInterface8Code
 
 class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_ReqdMtd", "_Rcpt", "_Frmt", "_Val", "_PstlAdr", "_EstblishdMtd", "_Ctct", "_Trgt", "_ActlDlvryMtd"]
+	__slots__ = ["_EstblishdMtd", "_ReqdMtd", "_Rcpt", "_Trgt", "_PstlAdr", "_Frmt", "_Tp", "_Ctct", "_ActlDlvryMtd", "_Val"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def EstblishdMtd(self):
+		return self._EstblishdMtd
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@EstblishdMtd.setter
+	def EstblishdMtd(self, value):
+		self._EstblishdMtd = value if type(value) != auto else self.make_default("EstblishdMtd")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@EstblishdMtd.deleter
+	def EstblishdMtd(self):
+		del self._EstblishdMtd
+		self._EstblishdMtd = None
 
 	@property
 	def ReqdMtd(self):
@@ -50,30 +50,17 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 		self._Rcpt = None
 
 	@property
-	def Frmt(self):
-		return self._Frmt
+	def Trgt(self):
+		return self._Trgt
 
-	@Frmt.setter
-	def Frmt(self, value):
-		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
+	@Trgt.setter
+	def Trgt(self, value):
+		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
 
-	@Frmt.deleter
-	def Frmt(self):
-		del self._Frmt
-		self._Frmt = None
-
-	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
+	@Trgt.deleter
+	def Trgt(self):
+		del self._Trgt
+		self._Trgt = None
 
 	@property
 	def PstlAdr(self):
@@ -89,17 +76,30 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 		self._PstlAdr = None
 
 	@property
-	def EstblishdMtd(self):
-		return self._EstblishdMtd
+	def Frmt(self):
+		return self._Frmt
 
-	@EstblishdMtd.setter
-	def EstblishdMtd(self, value):
-		self._EstblishdMtd = value if type(value) != auto else self.make_default("EstblishdMtd")
+	@Frmt.setter
+	def Frmt(self, value):
+		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
 
-	@EstblishdMtd.deleter
-	def EstblishdMtd(self):
-		del self._EstblishdMtd
-		self._EstblishdMtd = None
+	@Frmt.deleter
+	def Frmt(self):
+		del self._Frmt
+		self._Frmt = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Ctct(self):
@@ -115,19 +115,6 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 		self._Ctct = None
 
 	@property
-	def Trgt(self):
-		return self._Trgt
-
-	@Trgt.setter
-	def Trgt(self, value):
-		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
-
-	@Trgt.deleter
-	def Trgt(self):
-		del self._Trgt
-		self._Trgt = None
-
-	@property
 	def ActlDlvryMtd(self):
 		return self._ActlDlvryMtd
 
@@ -140,16 +127,29 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 		del self._ActlDlvryMtd
 		self._ActlDlvryMtd = None
 
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstblishdMtd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ReqdMtd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rcpt', type=PartyType19Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frmt', type=OutputFormat4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Val', type=Max20KText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstlAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstblishdMtd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ctct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trgt', type=UserInterface8Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PstlAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frmt', type=OutputFormat4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActlDlvryMtd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=Max20KText, min=1, max=1, mutex_group=None, array=False),
 	))
 

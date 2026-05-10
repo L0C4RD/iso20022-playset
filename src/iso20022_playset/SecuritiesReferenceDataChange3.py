@@ -1,25 +1,12 @@
-import base_types
-import ISODateTime
-import SecurityIdentification39
+from . import base_types
 import Max350Text
+import SecurityIdentification39
 import Max35Text
+import ISODateTime
 
 class SecuritiesReferenceDataChange3(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_OdFldVal", "_OprTmStmp", "_NewFldVal", "_FldNm"]
-	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
+	__slots__ = ["_OdFldVal", "_FldNm", "_NewFldVal", "_FinInstrmId", "_OprTmStmp"]
 	@property
 	def OdFldVal(self):
 		return self._OdFldVal
@@ -34,17 +21,17 @@ class SecuritiesReferenceDataChange3(base_types._BaseFieldType):
 		self._OdFldVal = None
 
 	@property
-	def OprTmStmp(self):
-		return self._OprTmStmp
+	def FldNm(self):
+		return self._FldNm
 
-	@OprTmStmp.setter
-	def OprTmStmp(self, value):
-		self._OprTmStmp = value if type(value) != auto else self.make_default("OprTmStmp")
+	@FldNm.setter
+	def FldNm(self, value):
+		self._FldNm = value if type(value) != auto else self.make_default("FldNm")
 
-	@OprTmStmp.deleter
-	def OprTmStmp(self):
-		del self._OprTmStmp
-		self._OprTmStmp = None
+	@FldNm.deleter
+	def FldNm(self):
+		del self._FldNm
+		self._FldNm = None
 
 	@property
 	def NewFldVal(self):
@@ -60,23 +47,36 @@ class SecuritiesReferenceDataChange3(base_types._BaseFieldType):
 		self._NewFldVal = None
 
 	@property
-	def FldNm(self):
-		return self._FldNm
+	def FinInstrmId(self):
+		return self._FinInstrmId
 
-	@FldNm.setter
-	def FldNm(self, value):
-		self._FldNm = value if type(value) != auto else self.make_default("FldNm")
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
 
-	@FldNm.deleter
-	def FldNm(self):
-		del self._FldNm
-		self._FldNm = None
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
+	@property
+	def OprTmStmp(self):
+		return self._OprTmStmp
+
+	@OprTmStmp.setter
+	def OprTmStmp(self, value):
+		self._OprTmStmp = value if type(value) != auto else self.make_default("OprTmStmp")
+
+	@OprTmStmp.deleter
+	def OprTmStmp(self):
+		del self._OprTmStmp
+		self._OprTmStmp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification39, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OdFldVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OprTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewFldVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FldNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewFldVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification39, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OprTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

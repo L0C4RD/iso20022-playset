@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import QuantityAndAvailability4
-import GenericIdentification144
 import FinancialInstrumentQuantity36Choice
+import GenericIdentification144
 
 class SubBalanceQuantity9Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_QtyAndAvlbty", "_Qty"]
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
+	__slots__ = ["_QtyAndAvlbty", "_Prtry", "_Qty"]
 	@property
 	def QtyAndAvlbty(self):
 		return self._QtyAndAvlbty
@@ -31,6 +18,19 @@ class SubBalanceQuantity9Choice(base_types._BaseFieldType):
 	def QtyAndAvlbty(self):
 		del self._QtyAndAvlbty
 		self._QtyAndAvlbty = None
+
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	@property
 	def Qty(self):
@@ -46,8 +46,8 @@ class SubBalanceQuantity9Choice(base_types._BaseFieldType):
 		self._Qty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtry', type=GenericIdentification144, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='QtyAndAvlbty', type=QuantityAndAvailability4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=GenericIdentification144, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

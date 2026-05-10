@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CCPBackTestingResultReportV01
 
 class AUTH_066_001_01():

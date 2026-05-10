@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PaymentInstrument26Choice
 
 class PaymentTransaction151(base_types._BaseFieldType):

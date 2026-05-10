@@ -1,15 +1,15 @@
-import base_types
-import Max35Text
-import CountryCode
-import Max140Text
-import CommunicationAddress3
-import PostalAddress3
-import PartyIdentification177Choice
+from . import base_types
 import ISODate
+import PostalAddress3
+import CountryCode
+import CommunicationAddress3
+import Max140Text
+import Max35Text
+import PartyIdentification177Choice
 
 class Organisation38(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnDt", "_TaxIdNb", "_Id", "_TaxtnCtry", "_ScndryComAdr", "_PstlAdr", "_RegnCtry", "_Nm", "_NtlRegnNb", "_PmryComAdr", "_Purp"]
+	__slots__ = ["_RegnDt", "_TaxIdNb", "_Id", "_NtlRegnNb", "_PmryComAdr", "_ScndryComAdr", "_RegnCtry", "_PstlAdr", "_Nm", "_Purp", "_TaxtnCtry"]
 	@property
 	def RegnDt(self):
 		return self._RegnDt
@@ -50,71 +50,6 @@ class Organisation38(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def TaxtnCtry(self):
-		return self._TaxtnCtry
-
-	@TaxtnCtry.setter
-	def TaxtnCtry(self, value):
-		self._TaxtnCtry = value if type(value) != auto else self.make_default("TaxtnCtry")
-
-	@TaxtnCtry.deleter
-	def TaxtnCtry(self):
-		del self._TaxtnCtry
-		self._TaxtnCtry = None
-
-	@property
-	def ScndryComAdr(self):
-		return self._ScndryComAdr
-
-	@ScndryComAdr.setter
-	def ScndryComAdr(self, value):
-		self._ScndryComAdr = value if type(value) != auto else self.make_default("ScndryComAdr")
-
-	@ScndryComAdr.deleter
-	def ScndryComAdr(self):
-		del self._ScndryComAdr
-		self._ScndryComAdr = None
-
-	@property
-	def PstlAdr(self):
-		return self._PstlAdr
-
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
-
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
-
-	@property
-	def RegnCtry(self):
-		return self._RegnCtry
-
-	@RegnCtry.setter
-	def RegnCtry(self, value):
-		self._RegnCtry = value if type(value) != auto else self.make_default("RegnCtry")
-
-	@RegnCtry.deleter
-	def RegnCtry(self):
-		del self._RegnCtry
-		self._RegnCtry = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
 	def NtlRegnNb(self):
 		return self._NtlRegnNb
 
@@ -141,6 +76,58 @@ class Organisation38(base_types._BaseFieldType):
 		self._PmryComAdr = None
 
 	@property
+	def ScndryComAdr(self):
+		return self._ScndryComAdr
+
+	@ScndryComAdr.setter
+	def ScndryComAdr(self, value):
+		self._ScndryComAdr = value if type(value) != auto else self.make_default("ScndryComAdr")
+
+	@ScndryComAdr.deleter
+	def ScndryComAdr(self):
+		del self._ScndryComAdr
+		self._ScndryComAdr = None
+
+	@property
+	def RegnCtry(self):
+		return self._RegnCtry
+
+	@RegnCtry.setter
+	def RegnCtry(self, value):
+		self._RegnCtry = value if type(value) != auto else self.make_default("RegnCtry")
+
+	@RegnCtry.deleter
+	def RegnCtry(self):
+		del self._RegnCtry
+		self._RegnCtry = None
+
+	@property
+	def PstlAdr(self):
+		return self._PstlAdr
+
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
 	def Purp(self):
 		return self._Purp
 
@@ -153,17 +140,30 @@ class Organisation38(base_types._BaseFieldType):
 		del self._Purp
 		self._Purp = None
 
+	@property
+	def TaxtnCtry(self):
+		return self._TaxtnCtry
+
+	@TaxtnCtry.setter
+	def TaxtnCtry(self, value):
+		self._TaxtnCtry = value if type(value) != auto else self.make_default("TaxtnCtry")
+
+	@TaxtnCtry.deleter
+	def TaxtnCtry(self):
+		del self._TaxtnCtry
+		self._TaxtnCtry = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RegnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification177Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxtnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ScndryComAdr', type=CommunicationAddress3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress3, min=1, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RegnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtlRegnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmryComAdr', type=CommunicationAddress3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScndryComAdr', type=CommunicationAddress3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress3, min=1, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Purp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxtnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

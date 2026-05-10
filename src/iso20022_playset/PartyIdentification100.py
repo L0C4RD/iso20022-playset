@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PartyIdentification71Choice
 import LEIIdentifier
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ProprietaryQuantity9
 import FinancialInstrumentQuantity36Choice
 

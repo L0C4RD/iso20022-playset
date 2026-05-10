@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesAuditTrailReportV01
 
 class REDA_034_001_01():

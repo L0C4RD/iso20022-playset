@@ -1,35 +1,9 @@
-import base_types
+from . import base_types
 import PartyIdentificationAndAccount222
 
 class DeliveringPartiesAndAccount20(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvrrsIntrmy2Dtls", "_DlvrrsCtdnDtls", "_DlvrrsIntrmy1Dtls", "_DlvrgAgtDtls"]
-	@property
-	def DlvrrsIntrmy2Dtls(self):
-		return self._DlvrrsIntrmy2Dtls
-
-	@DlvrrsIntrmy2Dtls.setter
-	def DlvrrsIntrmy2Dtls(self, value):
-		self._DlvrrsIntrmy2Dtls = value if type(value) != auto else self.make_default("DlvrrsIntrmy2Dtls")
-
-	@DlvrrsIntrmy2Dtls.deleter
-	def DlvrrsIntrmy2Dtls(self):
-		del self._DlvrrsIntrmy2Dtls
-		self._DlvrrsIntrmy2Dtls = None
-
-	@property
-	def DlvrrsCtdnDtls(self):
-		return self._DlvrrsCtdnDtls
-
-	@DlvrrsCtdnDtls.setter
-	def DlvrrsCtdnDtls(self, value):
-		self._DlvrrsCtdnDtls = value if type(value) != auto else self.make_default("DlvrrsCtdnDtls")
-
-	@DlvrrsCtdnDtls.deleter
-	def DlvrrsCtdnDtls(self):
-		del self._DlvrrsCtdnDtls
-		self._DlvrrsCtdnDtls = None
-
+	__slots__ = ["_DlvrrsIntrmy1Dtls", "_DlvrgAgtDtls", "_DlvrrsCtdnDtls", "_DlvrrsIntrmy2Dtls"]
 	@property
 	def DlvrrsIntrmy1Dtls(self):
 		return self._DlvrrsIntrmy1Dtls
@@ -56,10 +30,36 @@ class DeliveringPartiesAndAccount20(base_types._BaseFieldType):
 		del self._DlvrgAgtDtls
 		self._DlvrgAgtDtls = None
 
+	@property
+	def DlvrrsCtdnDtls(self):
+		return self._DlvrrsCtdnDtls
+
+	@DlvrrsCtdnDtls.setter
+	def DlvrrsCtdnDtls(self, value):
+		self._DlvrrsCtdnDtls = value if type(value) != auto else self.make_default("DlvrrsCtdnDtls")
+
+	@DlvrrsCtdnDtls.deleter
+	def DlvrrsCtdnDtls(self):
+		del self._DlvrrsCtdnDtls
+		self._DlvrrsCtdnDtls = None
+
+	@property
+	def DlvrrsIntrmy2Dtls(self):
+		return self._DlvrrsIntrmy2Dtls
+
+	@DlvrrsIntrmy2Dtls.setter
+	def DlvrrsIntrmy2Dtls(self, value):
+		self._DlvrrsIntrmy2Dtls = value if type(value) != auto else self.make_default("DlvrrsIntrmy2Dtls")
+
+	@DlvrrsIntrmy2Dtls.deleter
+	def DlvrrsIntrmy2Dtls(self):
+		del self._DlvrrsIntrmy2Dtls
+		self._DlvrrsIntrmy2Dtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DlvrrsIntrmy2Dtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvrrsCtdnDtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvrrsIntrmy1Dtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvrgAgtDtls', type=PartyIdentificationAndAccount222, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrrsCtdnDtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrrsIntrmy2Dtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
 	))
 

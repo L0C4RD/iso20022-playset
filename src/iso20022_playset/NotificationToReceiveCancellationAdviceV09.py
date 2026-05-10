@@ -1,25 +1,12 @@
-import base_types
+from . import base_types
 import GroupHeader117
-import OriginalNotification16
 import SupplementaryData1
 import NotificationCancellationReason2
+import OriginalNotification16
 
 class NotificationToReceiveCancellationAdviceV09(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_GrpHdr", "_SplmtryData", "_OrgnlNtfctn"]
-	@property
-	def CxlRsn(self):
-		return self._CxlRsn
-
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
-
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
-
+	__slots__ = ["_GrpHdr", "_CxlRsn", "_OrgnlNtfctn", "_SplmtryData"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr
@@ -34,17 +21,17 @@ class NotificationToReceiveCancellationAdviceV09(base_types._BaseFieldType):
 		self._GrpHdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def CxlRsn(self):
+		return self._CxlRsn
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
 
 	@property
 	def OrgnlNtfctn(self):
@@ -59,10 +46,23 @@ class NotificationToReceiveCancellationAdviceV09(base_types._BaseFieldType):
 		del self._OrgnlNtfctn
 		self._OrgnlNtfctn = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlRsn', type=NotificationCancellationReason2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader117, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CxlRsn', type=NotificationCancellationReason2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlNtfctn', type=OriginalNotification16, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

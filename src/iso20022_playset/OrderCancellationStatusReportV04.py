@@ -1,38 +1,12 @@
-import base_types
-import MessageIdentification1
-import Status26Choice
+from . import base_types
 import Extension1
+import Status26Choice
+import MessageIdentification1
 import References61Choice
 
 class OrderCancellationStatusReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Xtnsn", "_Ref", "_StsRpt", "_MsgId"]
-	@property
-	def Xtnsn(self):
-		return self._Xtnsn
-
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
-
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
-
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
+	__slots__ = ["_StsRpt", "_MsgId", "_Xtnsn", "_Ref"]
 	@property
 	def StsRpt(self):
 		return self._StsRpt
@@ -59,10 +33,36 @@ class OrderCancellationStatusReportV04(base_types._BaseFieldType):
 		del self._MsgId
 		self._MsgId = None
 
+	@property
+	def Xtnsn(self):
+		return self._Xtnsn
+
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
+
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
+
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ref', type=References61Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRpt', type=Status26Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ref', type=References61Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

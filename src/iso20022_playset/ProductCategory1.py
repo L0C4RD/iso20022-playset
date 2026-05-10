@@ -1,6 +1,6 @@
-import base_types
-import Max35Text
+from . import base_types
 import ProductCategory1Code
+import Max35Text
 
 class ProductCategory1(base_types._BaseFieldType):
 

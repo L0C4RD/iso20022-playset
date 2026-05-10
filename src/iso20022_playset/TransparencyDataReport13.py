@@ -1,27 +1,14 @@
-import base_types
-import Max35Text
-import NumberAndVolume2
-import ISINOct2015Identifier
+from . import base_types
 import ISODate
-import TrueFalseIndicator
 import MICIdentifier
+import TrueFalseIndicator
+import ISINOct2015Identifier
+import NumberAndVolume2
+import Max35Text
 
 class TransparencyDataReport13(base_types._BaseFieldType):
 
-	__slots__ = ["_Sspnsn", "_TxsExctd", "_TechRcrdId", "_RptgDt", "_TxsExctdExclgPstTradLrgInScaleWvr", "_TradgVn", "_Id", "_TxsExctdExclgPreTradWvr"]
-	@property
-	def Sspnsn(self):
-		return self._Sspnsn
-
-	@Sspnsn.setter
-	def Sspnsn(self, value):
-		self._Sspnsn = value if type(value) != auto else self.make_default("Sspnsn")
-
-	@Sspnsn.deleter
-	def Sspnsn(self):
-		del self._Sspnsn
-		self._Sspnsn = None
-
+	__slots__ = ["_TxsExctd", "_TradgVn", "_Id", "_TxsExctdExclgPreTradWvr", "_TechRcrdId", "_RptgDt", "_Sspnsn", "_TxsExctdExclgPstTradLrgInScaleWvr"]
 	@property
 	def TxsExctd(self):
 		return self._TxsExctd
@@ -34,45 +21,6 @@ class TransparencyDataReport13(base_types._BaseFieldType):
 	def TxsExctd(self):
 		del self._TxsExctd
 		self._TxsExctd = None
-
-	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
-
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
-
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
-
-	@property
-	def RptgDt(self):
-		return self._RptgDt
-
-	@RptgDt.setter
-	def RptgDt(self, value):
-		self._RptgDt = value if type(value) != auto else self.make_default("RptgDt")
-
-	@RptgDt.deleter
-	def RptgDt(self):
-		del self._RptgDt
-		self._RptgDt = None
-
-	@property
-	def TxsExctdExclgPstTradLrgInScaleWvr(self):
-		return self._TxsExctdExclgPstTradLrgInScaleWvr
-
-	@TxsExctdExclgPstTradLrgInScaleWvr.setter
-	def TxsExctdExclgPstTradLrgInScaleWvr(self, value):
-		self._TxsExctdExclgPstTradLrgInScaleWvr = value if type(value) != auto else self.make_default("TxsExctdExclgPstTradLrgInScaleWvr")
-
-	@TxsExctdExclgPstTradLrgInScaleWvr.deleter
-	def TxsExctdExclgPstTradLrgInScaleWvr(self):
-		del self._TxsExctdExclgPstTradLrgInScaleWvr
-		self._TxsExctdExclgPstTradLrgInScaleWvr = None
 
 	@property
 	def TradgVn(self):
@@ -113,14 +61,66 @@ class TransparencyDataReport13(base_types._BaseFieldType):
 		del self._TxsExctdExclgPreTradWvr
 		self._TxsExctdExclgPreTradWvr = None
 
+	@property
+	def TechRcrdId(self):
+		return self._TechRcrdId
+
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
+
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
+
+	@property
+	def RptgDt(self):
+		return self._RptgDt
+
+	@RptgDt.setter
+	def RptgDt(self, value):
+		self._RptgDt = value if type(value) != auto else self.make_default("RptgDt")
+
+	@RptgDt.deleter
+	def RptgDt(self):
+		del self._RptgDt
+		self._RptgDt = None
+
+	@property
+	def Sspnsn(self):
+		return self._Sspnsn
+
+	@Sspnsn.setter
+	def Sspnsn(self, value):
+		self._Sspnsn = value if type(value) != auto else self.make_default("Sspnsn")
+
+	@Sspnsn.deleter
+	def Sspnsn(self):
+		del self._Sspnsn
+		self._Sspnsn = None
+
+	@property
+	def TxsExctdExclgPstTradLrgInScaleWvr(self):
+		return self._TxsExctdExclgPstTradLrgInScaleWvr
+
+	@TxsExctdExclgPstTradLrgInScaleWvr.setter
+	def TxsExctdExclgPstTradLrgInScaleWvr(self, value):
+		self._TxsExctdExclgPstTradLrgInScaleWvr = value if type(value) != auto else self.make_default("TxsExctdExclgPstTradLrgInScaleWvr")
+
+	@TxsExctdExclgPstTradLrgInScaleWvr.deleter
+	def TxsExctdExclgPstTradLrgInScaleWvr(self):
+		del self._TxsExctdExclgPstTradLrgInScaleWvr
+		self._TxsExctdExclgPstTradLrgInScaleWvr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sspnsn', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxsExctd', type=NumberAndVolume2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxsExctdExclgPstTradLrgInScaleWvr', type=NumberAndVolume2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxsExctdExclgPreTradWvr', type=NumberAndVolume2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sspnsn', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxsExctdExclgPstTradLrgInScaleWvr', type=NumberAndVolume2, min=1, max=1, mutex_group=None, array=False),
 	))
 

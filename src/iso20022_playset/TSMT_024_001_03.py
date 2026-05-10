@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ActionReminderV03
 
 class TSMT_024_001_03():

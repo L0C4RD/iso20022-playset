@@ -1,6 +1,6 @@
-import base_types
-import NaturalPersonIdentification2
+from . import base_types
 import OrganisationIdentification15Choice
+import NaturalPersonIdentification2
 
 class PartyIdentification236Choice(base_types._BaseFieldType):
 

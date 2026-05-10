@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class ProcessingType1Code(base_types._BaseDataType_String):
 

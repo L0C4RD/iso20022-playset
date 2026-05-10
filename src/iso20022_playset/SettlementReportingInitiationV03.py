@@ -1,33 +1,163 @@
-import base_types
-import ISO8583MessageReasonCode
+from . import base_types
 import FinancialInstitution9
-import ProgrammeMode5
-import Jurisdiction2
-import ProtectedData2
-import PartyIdentification286
-import SettlementReportType1Code
-import Max35Text
-import ISODateTime
-import Header71
-import AdditionalFee3
-import Reconciliation4
-import Exact12Text
-import SettlementCategoryTotal3
-import SupplementaryData1
-import Exact15Text
 import SettlementService6
-import Max12NumericText
+import AdditionalFee3
+import Jurisdiction2
 import Amount17
-import PartyIdentification285
+import ISODateTime
+import Max35Text
+import ProgrammeMode5
+import SettlementReportType1Code
+import Exact15Text
+import ISO8583MessageReasonCode
+import ProtectedData2
 import SettlementCategoryTotal2
-import ContentInformationType41
-import Max1000Text
-import AdditionalData2
+import PartyIdentification286
 import Max256Text
+import SettlementCategoryTotal3
+import Max1000Text
+import SupplementaryData1
+import Reconciliation4
+import PartyIdentification285
+import ContentInformationType41
+import Max12NumericText
+import Header71
+import AdditionalData2
+import Exact12Text
 
 class SettlementReportingInitiationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Sndr", "_Prgrmm", "_SttlmSvc", "_SysTracAudtNb", "_SttlmInstn", "_OthrInstn", "_FndsTrfAmt", "_IssrSttlmTtls", "_AltrnMsgRsn", "_AcqrrSttlmTtls", "_TtlSttlmAmt", "_Rcvr", "_FI", "_Rcncltn", "_Dstn", "_OthrSttlmRptTp", "_AddtlData", "_Jursdctn", "_LifeCyclId", "_RtrvlRefNb", "_SctyTrlr", "_Hdr", "_TrnsmssnDtTm", "_TxDesc", "_MsgRsn", "_AddtlFee", "_PrtctdData", "_OthrSttlmTtls", "_SttlmRptTp", "_SplmtryData", "_Orgtr"]
+	__slots__ = ["_Hdr", "_TtlSttlmAmt", "_Dstn", "_FndsTrfAmt", "_PrtctdData", "_SysTracAudtNb", "_TxDesc", "_Rcvr", "_Jursdctn", "_IssrSttlmTtls", "_Sndr", "_OthrSttlmTtls", "_RtrvlRefNb", "_SttlmInstn", "_OthrInstn", "_TrnsmssnDtTm", "_AcqrrSttlmTtls", "_AddtlFee", "_Rcncltn", "_SplmtryData", "_AddtlData", "_SttlmSvc", "_LifeCyclId", "_AltrnMsgRsn", "_MsgRsn", "_Prgrmm", "_SttlmRptTp", "_Orgtr", "_FI", "_SctyTrlr", "_OthrSttlmRptTp"]
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
+
+	@property
+	def TtlSttlmAmt(self):
+		return self._TtlSttlmAmt
+
+	@TtlSttlmAmt.setter
+	def TtlSttlmAmt(self, value):
+		self._TtlSttlmAmt = value if type(value) != auto else self.make_default("TtlSttlmAmt")
+
+	@TtlSttlmAmt.deleter
+	def TtlSttlmAmt(self):
+		del self._TtlSttlmAmt
+		self._TtlSttlmAmt = None
+
+	@property
+	def Dstn(self):
+		return self._Dstn
+
+	@Dstn.setter
+	def Dstn(self, value):
+		self._Dstn = value if type(value) != auto else self.make_default("Dstn")
+
+	@Dstn.deleter
+	def Dstn(self):
+		del self._Dstn
+		self._Dstn = None
+
+	@property
+	def FndsTrfAmt(self):
+		return self._FndsTrfAmt
+
+	@FndsTrfAmt.setter
+	def FndsTrfAmt(self, value):
+		self._FndsTrfAmt = value if type(value) != auto else self.make_default("FndsTrfAmt")
+
+	@FndsTrfAmt.deleter
+	def FndsTrfAmt(self):
+		del self._FndsTrfAmt
+		self._FndsTrfAmt = None
+
+	@property
+	def PrtctdData(self):
+		return self._PrtctdData
+
+	@PrtctdData.setter
+	def PrtctdData(self, value):
+		self._PrtctdData = value if type(value) != auto else self.make_default("PrtctdData")
+
+	@PrtctdData.deleter
+	def PrtctdData(self):
+		del self._PrtctdData
+		self._PrtctdData = None
+
+	@property
+	def SysTracAudtNb(self):
+		return self._SysTracAudtNb
+
+	@SysTracAudtNb.setter
+	def SysTracAudtNb(self, value):
+		self._SysTracAudtNb = value if type(value) != auto else self.make_default("SysTracAudtNb")
+
+	@SysTracAudtNb.deleter
+	def SysTracAudtNb(self):
+		del self._SysTracAudtNb
+		self._SysTracAudtNb = None
+
+	@property
+	def TxDesc(self):
+		return self._TxDesc
+
+	@TxDesc.setter
+	def TxDesc(self, value):
+		self._TxDesc = value if type(value) != auto else self.make_default("TxDesc")
+
+	@TxDesc.deleter
+	def TxDesc(self):
+		del self._TxDesc
+		self._TxDesc = None
+
+	@property
+	def Rcvr(self):
+		return self._Rcvr
+
+	@Rcvr.setter
+	def Rcvr(self, value):
+		self._Rcvr = value if type(value) != auto else self.make_default("Rcvr")
+
+	@Rcvr.deleter
+	def Rcvr(self):
+		del self._Rcvr
+		self._Rcvr = None
+
+	@property
+	def Jursdctn(self):
+		return self._Jursdctn
+
+	@Jursdctn.setter
+	def Jursdctn(self, value):
+		self._Jursdctn = value if type(value) != auto else self.make_default("Jursdctn")
+
+	@Jursdctn.deleter
+	def Jursdctn(self):
+		del self._Jursdctn
+		self._Jursdctn = None
+
+	@property
+	def IssrSttlmTtls(self):
+		return self._IssrSttlmTtls
+
+	@IssrSttlmTtls.setter
+	def IssrSttlmTtls(self, value):
+		self._IssrSttlmTtls = value if type(value) != auto else self.make_default("IssrSttlmTtls")
+
+	@IssrSttlmTtls.deleter
+	def IssrSttlmTtls(self):
+		del self._IssrSttlmTtls
+		self._IssrSttlmTtls = None
+
 	@property
 	def Sndr(self):
 		return self._Sndr
@@ -42,43 +172,30 @@ class SettlementReportingInitiationV03(base_types._BaseFieldType):
 		self._Sndr = None
 
 	@property
-	def Prgrmm(self):
-		return self._Prgrmm
+	def OthrSttlmTtls(self):
+		return self._OthrSttlmTtls
 
-	@Prgrmm.setter
-	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != auto else self.make_default("Prgrmm")
+	@OthrSttlmTtls.setter
+	def OthrSttlmTtls(self, value):
+		self._OthrSttlmTtls = value if type(value) != auto else self.make_default("OthrSttlmTtls")
 
-	@Prgrmm.deleter
-	def Prgrmm(self):
-		del self._Prgrmm
-		self._Prgrmm = None
-
-	@property
-	def SttlmSvc(self):
-		return self._SttlmSvc
-
-	@SttlmSvc.setter
-	def SttlmSvc(self, value):
-		self._SttlmSvc = value if type(value) != auto else self.make_default("SttlmSvc")
-
-	@SttlmSvc.deleter
-	def SttlmSvc(self):
-		del self._SttlmSvc
-		self._SttlmSvc = None
+	@OthrSttlmTtls.deleter
+	def OthrSttlmTtls(self):
+		del self._OthrSttlmTtls
+		self._OthrSttlmTtls = None
 
 	@property
-	def SysTracAudtNb(self):
-		return self._SysTracAudtNb
+	def RtrvlRefNb(self):
+		return self._RtrvlRefNb
 
-	@SysTracAudtNb.setter
-	def SysTracAudtNb(self, value):
-		self._SysTracAudtNb = value if type(value) != auto else self.make_default("SysTracAudtNb")
+	@RtrvlRefNb.setter
+	def RtrvlRefNb(self, value):
+		self._RtrvlRefNb = value if type(value) != auto else self.make_default("RtrvlRefNb")
 
-	@SysTracAudtNb.deleter
-	def SysTracAudtNb(self):
-		del self._SysTracAudtNb
-		self._SysTracAudtNb = None
+	@RtrvlRefNb.deleter
+	def RtrvlRefNb(self):
+		del self._RtrvlRefNb
+		self._RtrvlRefNb = None
 
 	@property
 	def SttlmInstn(self):
@@ -107,43 +224,17 @@ class SettlementReportingInitiationV03(base_types._BaseFieldType):
 		self._OthrInstn = None
 
 	@property
-	def FndsTrfAmt(self):
-		return self._FndsTrfAmt
+	def TrnsmssnDtTm(self):
+		return self._TrnsmssnDtTm
 
-	@FndsTrfAmt.setter
-	def FndsTrfAmt(self, value):
-		self._FndsTrfAmt = value if type(value) != auto else self.make_default("FndsTrfAmt")
+	@TrnsmssnDtTm.setter
+	def TrnsmssnDtTm(self, value):
+		self._TrnsmssnDtTm = value if type(value) != auto else self.make_default("TrnsmssnDtTm")
 
-	@FndsTrfAmt.deleter
-	def FndsTrfAmt(self):
-		del self._FndsTrfAmt
-		self._FndsTrfAmt = None
-
-	@property
-	def IssrSttlmTtls(self):
-		return self._IssrSttlmTtls
-
-	@IssrSttlmTtls.setter
-	def IssrSttlmTtls(self, value):
-		self._IssrSttlmTtls = value if type(value) != auto else self.make_default("IssrSttlmTtls")
-
-	@IssrSttlmTtls.deleter
-	def IssrSttlmTtls(self):
-		del self._IssrSttlmTtls
-		self._IssrSttlmTtls = None
-
-	@property
-	def AltrnMsgRsn(self):
-		return self._AltrnMsgRsn
-
-	@AltrnMsgRsn.setter
-	def AltrnMsgRsn(self, value):
-		self._AltrnMsgRsn = value if type(value) != auto else self.make_default("AltrnMsgRsn")
-
-	@AltrnMsgRsn.deleter
-	def AltrnMsgRsn(self):
-		del self._AltrnMsgRsn
-		self._AltrnMsgRsn = None
+	@TrnsmssnDtTm.deleter
+	def TrnsmssnDtTm(self):
+		del self._TrnsmssnDtTm
+		self._TrnsmssnDtTm = None
 
 	@property
 	def AcqrrSttlmTtls(self):
@@ -159,43 +250,17 @@ class SettlementReportingInitiationV03(base_types._BaseFieldType):
 		self._AcqrrSttlmTtls = None
 
 	@property
-	def TtlSttlmAmt(self):
-		return self._TtlSttlmAmt
+	def AddtlFee(self):
+		return self._AddtlFee
 
-	@TtlSttlmAmt.setter
-	def TtlSttlmAmt(self, value):
-		self._TtlSttlmAmt = value if type(value) != auto else self.make_default("TtlSttlmAmt")
+	@AddtlFee.setter
+	def AddtlFee(self, value):
+		self._AddtlFee = value if type(value) != auto else self.make_default("AddtlFee")
 
-	@TtlSttlmAmt.deleter
-	def TtlSttlmAmt(self):
-		del self._TtlSttlmAmt
-		self._TtlSttlmAmt = None
-
-	@property
-	def Rcvr(self):
-		return self._Rcvr
-
-	@Rcvr.setter
-	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != auto else self.make_default("Rcvr")
-
-	@Rcvr.deleter
-	def Rcvr(self):
-		del self._Rcvr
-		self._Rcvr = None
-
-	@property
-	def FI(self):
-		return self._FI
-
-	@FI.setter
-	def FI(self, value):
-		self._FI = value if type(value) != auto else self.make_default("FI")
-
-	@FI.deleter
-	def FI(self):
-		del self._FI
-		self._FI = None
+	@AddtlFee.deleter
+	def AddtlFee(self):
+		del self._AddtlFee
+		self._AddtlFee = None
 
 	@property
 	def Rcncltn(self):
@@ -211,30 +276,17 @@ class SettlementReportingInitiationV03(base_types._BaseFieldType):
 		self._Rcncltn = None
 
 	@property
-	def Dstn(self):
-		return self._Dstn
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Dstn.setter
-	def Dstn(self, value):
-		self._Dstn = value if type(value) != auto else self.make_default("Dstn")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@Dstn.deleter
-	def Dstn(self):
-		del self._Dstn
-		self._Dstn = None
-
-	@property
-	def OthrSttlmRptTp(self):
-		return self._OthrSttlmRptTp
-
-	@OthrSttlmRptTp.setter
-	def OthrSttlmRptTp(self, value):
-		self._OthrSttlmRptTp = value if type(value) != auto else self.make_default("OthrSttlmRptTp")
-
-	@OthrSttlmRptTp.deleter
-	def OthrSttlmRptTp(self):
-		del self._OthrSttlmRptTp
-		self._OthrSttlmRptTp = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def AddtlData(self):
@@ -250,17 +302,17 @@ class SettlementReportingInitiationV03(base_types._BaseFieldType):
 		self._AddtlData = None
 
 	@property
-	def Jursdctn(self):
-		return self._Jursdctn
+	def SttlmSvc(self):
+		return self._SttlmSvc
 
-	@Jursdctn.setter
-	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != auto else self.make_default("Jursdctn")
+	@SttlmSvc.setter
+	def SttlmSvc(self, value):
+		self._SttlmSvc = value if type(value) != auto else self.make_default("SttlmSvc")
 
-	@Jursdctn.deleter
-	def Jursdctn(self):
-		del self._Jursdctn
-		self._Jursdctn = None
+	@SttlmSvc.deleter
+	def SttlmSvc(self):
+		del self._SttlmSvc
+		self._SttlmSvc = None
 
 	@property
 	def LifeCyclId(self):
@@ -276,69 +328,17 @@ class SettlementReportingInitiationV03(base_types._BaseFieldType):
 		self._LifeCyclId = None
 
 	@property
-	def RtrvlRefNb(self):
-		return self._RtrvlRefNb
+	def AltrnMsgRsn(self):
+		return self._AltrnMsgRsn
 
-	@RtrvlRefNb.setter
-	def RtrvlRefNb(self, value):
-		self._RtrvlRefNb = value if type(value) != auto else self.make_default("RtrvlRefNb")
+	@AltrnMsgRsn.setter
+	def AltrnMsgRsn(self, value):
+		self._AltrnMsgRsn = value if type(value) != auto else self.make_default("AltrnMsgRsn")
 
-	@RtrvlRefNb.deleter
-	def RtrvlRefNb(self):
-		del self._RtrvlRefNb
-		self._RtrvlRefNb = None
-
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
-	@property
-	def TrnsmssnDtTm(self):
-		return self._TrnsmssnDtTm
-
-	@TrnsmssnDtTm.setter
-	def TrnsmssnDtTm(self, value):
-		self._TrnsmssnDtTm = value if type(value) != auto else self.make_default("TrnsmssnDtTm")
-
-	@TrnsmssnDtTm.deleter
-	def TrnsmssnDtTm(self):
-		del self._TrnsmssnDtTm
-		self._TrnsmssnDtTm = None
-
-	@property
-	def TxDesc(self):
-		return self._TxDesc
-
-	@TxDesc.setter
-	def TxDesc(self, value):
-		self._TxDesc = value if type(value) != auto else self.make_default("TxDesc")
-
-	@TxDesc.deleter
-	def TxDesc(self):
-		del self._TxDesc
-		self._TxDesc = None
+	@AltrnMsgRsn.deleter
+	def AltrnMsgRsn(self):
+		del self._AltrnMsgRsn
+		self._AltrnMsgRsn = None
 
 	@property
 	def MsgRsn(self):
@@ -354,43 +354,17 @@ class SettlementReportingInitiationV03(base_types._BaseFieldType):
 		self._MsgRsn = None
 
 	@property
-	def AddtlFee(self):
-		return self._AddtlFee
+	def Prgrmm(self):
+		return self._Prgrmm
 
-	@AddtlFee.setter
-	def AddtlFee(self, value):
-		self._AddtlFee = value if type(value) != auto else self.make_default("AddtlFee")
+	@Prgrmm.setter
+	def Prgrmm(self, value):
+		self._Prgrmm = value if type(value) != auto else self.make_default("Prgrmm")
 
-	@AddtlFee.deleter
-	def AddtlFee(self):
-		del self._AddtlFee
-		self._AddtlFee = None
-
-	@property
-	def PrtctdData(self):
-		return self._PrtctdData
-
-	@PrtctdData.setter
-	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != auto else self.make_default("PrtctdData")
-
-	@PrtctdData.deleter
-	def PrtctdData(self):
-		del self._PrtctdData
-		self._PrtctdData = None
-
-	@property
-	def OthrSttlmTtls(self):
-		return self._OthrSttlmTtls
-
-	@OthrSttlmTtls.setter
-	def OthrSttlmTtls(self, value):
-		self._OthrSttlmTtls = value if type(value) != auto else self.make_default("OthrSttlmTtls")
-
-	@OthrSttlmTtls.deleter
-	def OthrSttlmTtls(self):
-		del self._OthrSttlmTtls
-		self._OthrSttlmTtls = None
+	@Prgrmm.deleter
+	def Prgrmm(self):
+		del self._Prgrmm
+		self._Prgrmm = None
 
 	@property
 	def SttlmRptTp(self):
@@ -406,19 +380,6 @@ class SettlementReportingInitiationV03(base_types._BaseFieldType):
 		self._SttlmRptTp = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def Orgtr(self):
 		return self._Orgtr
 
@@ -431,37 +392,76 @@ class SettlementReportingInitiationV03(base_types._BaseFieldType):
 		del self._Orgtr
 		self._Orgtr = None
 
+	@property
+	def FI(self):
+		return self._FI
+
+	@FI.setter
+	def FI(self, value):
+		self._FI = value if type(value) != auto else self.make_default("FI")
+
+	@FI.deleter
+	def FI(self):
+		del self._FI
+		self._FI = None
+
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
+	@property
+	def OthrSttlmRptTp(self):
+		return self._OthrSttlmRptTp
+
+	@OthrSttlmRptTp.setter
+	def OthrSttlmRptTp(self, value):
+		self._OthrSttlmRptTp = value if type(value) != auto else self.make_default("OthrSttlmRptTp")
+
+	@OthrSttlmRptTp.deleter
+	def OthrSttlmRptTp(self):
+		del self._OthrSttlmRptTp
+		self._OthrSttlmRptTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sndr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prgrmm', type=ProgrammeMode5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SttlmSvc', type=SettlementService6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header71, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlSttlmAmt', type=SettlementCategoryTotal2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dstn', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FndsTrfAmt', type=Amount17, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SysTracAudtNb', type=Max12NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxDesc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcvr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Jursdctn', type=Jurisdiction2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrSttlmTtls', type=SettlementCategoryTotal3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sndr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrSttlmTtls', type=SettlementCategoryTotal3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmInstn', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrInstn', type=PartyIdentification285, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FndsTrfAmt', type=Amount17, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrSttlmTtls', type=SettlementCategoryTotal3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnMsgRsn', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcqrrSttlmTtls', type=SettlementCategoryTotal3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlSttlmAmt', type=SettlementCategoryTotal2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcvr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FI', type=FinancialInstitution9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcncltn', type=Reconciliation4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dstn', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrSttlmRptTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Jursdctn', type=Jurisdiction2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType41, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header71, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrnsmssnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxDesc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgRsn', type=ISO8583MessageReasonCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcqrrSttlmTtls', type=SettlementCategoryTotal3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlFee', type=AdditionalFee3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrSttlmTtls', type=SettlementCategoryTotal3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmRptTp', type=SettlementReportType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcncltn', type=Reconciliation4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmSvc', type=SettlementService6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnMsgRsn', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgRsn', type=ISO8583MessageReasonCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Prgrmm', type=ProgrammeMode5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmRptTp', type=SettlementReportType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Orgtr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FI', type=FinancialInstitution9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType41, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrSttlmRptTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

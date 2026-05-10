@@ -1,9 +1,22 @@
-import base_types
+from . import base_types
 import SettlementFailsDailyCSD1Choice
 
 class SettlementFailsDailyTransactionType3(base_types._BaseFieldType):
 
-	__slots__ = ["_RpAgrmt", "_SctiesBuyOrSell", "_SctiesLndgOrBrrwg", "_CollMgmtOpr", "_Othr"]
+	__slots__ = ["_CollMgmtOpr", "_RpAgrmt", "_SctiesLndgOrBrrwg", "_SctiesBuyOrSell", "_Othr"]
+	@property
+	def CollMgmtOpr(self):
+		return self._CollMgmtOpr
+
+	@CollMgmtOpr.setter
+	def CollMgmtOpr(self, value):
+		self._CollMgmtOpr = value if type(value) != auto else self.make_default("CollMgmtOpr")
+
+	@CollMgmtOpr.deleter
+	def CollMgmtOpr(self):
+		del self._CollMgmtOpr
+		self._CollMgmtOpr = None
+
 	@property
 	def RpAgrmt(self):
 		return self._RpAgrmt
@@ -16,19 +29,6 @@ class SettlementFailsDailyTransactionType3(base_types._BaseFieldType):
 	def RpAgrmt(self):
 		del self._RpAgrmt
 		self._RpAgrmt = None
-
-	@property
-	def SctiesBuyOrSell(self):
-		return self._SctiesBuyOrSell
-
-	@SctiesBuyOrSell.setter
-	def SctiesBuyOrSell(self, value):
-		self._SctiesBuyOrSell = value if type(value) != auto else self.make_default("SctiesBuyOrSell")
-
-	@SctiesBuyOrSell.deleter
-	def SctiesBuyOrSell(self):
-		del self._SctiesBuyOrSell
-		self._SctiesBuyOrSell = None
 
 	@property
 	def SctiesLndgOrBrrwg(self):
@@ -44,17 +44,17 @@ class SettlementFailsDailyTransactionType3(base_types._BaseFieldType):
 		self._SctiesLndgOrBrrwg = None
 
 	@property
-	def CollMgmtOpr(self):
-		return self._CollMgmtOpr
+	def SctiesBuyOrSell(self):
+		return self._SctiesBuyOrSell
 
-	@CollMgmtOpr.setter
-	def CollMgmtOpr(self, value):
-		self._CollMgmtOpr = value if type(value) != auto else self.make_default("CollMgmtOpr")
+	@SctiesBuyOrSell.setter
+	def SctiesBuyOrSell(self, value):
+		self._SctiesBuyOrSell = value if type(value) != auto else self.make_default("SctiesBuyOrSell")
 
-	@CollMgmtOpr.deleter
-	def CollMgmtOpr(self):
-		del self._CollMgmtOpr
-		self._CollMgmtOpr = None
+	@SctiesBuyOrSell.deleter
+	def SctiesBuyOrSell(self):
+		del self._SctiesBuyOrSell
+		self._SctiesBuyOrSell = None
 
 	@property
 	def Othr(self):
@@ -70,10 +70,10 @@ class SettlementFailsDailyTransactionType3(base_types._BaseFieldType):
 		self._Othr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RpAgrmt', type=SettlementFailsDailyCSD1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesBuyOrSell', type=SettlementFailsDailyCSD1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesLndgOrBrrwg', type=SettlementFailsDailyCSD1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollMgmtOpr', type=SettlementFailsDailyCSD1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RpAgrmt', type=SettlementFailsDailyCSD1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesLndgOrBrrwg', type=SettlementFailsDailyCSD1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesBuyOrSell', type=SettlementFailsDailyCSD1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=SettlementFailsDailyCSD1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

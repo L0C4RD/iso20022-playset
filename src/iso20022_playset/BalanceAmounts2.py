@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AmountAndDirection6
 
 class BalanceAmounts2(base_types._BaseFieldType):

@@ -1,40 +1,14 @@
-import base_types
-import Max35Text
+from . import base_types
 import EventFrequency6Code
 import YesNoIndicator
-import Exact5NumericText
 import DateAndDateTime2Choice
 import StatementUpdateType1Code
+import Exact5NumericText
+import Max35Text
 
 class ReportParameters7(base_types._BaseFieldType):
 
-	__slots__ = ["_NetPosId", "_RptDtAndTm", "_ActvtyInd", "_Frqcy", "_RptNb", "_UpdTp"]
-	@property
-	def NetPosId(self):
-		return self._NetPosId
-
-	@NetPosId.setter
-	def NetPosId(self, value):
-		self._NetPosId = value if type(value) != auto else self.make_default("NetPosId")
-
-	@NetPosId.deleter
-	def NetPosId(self):
-		del self._NetPosId
-		self._NetPosId = None
-
-	@property
-	def RptDtAndTm(self):
-		return self._RptDtAndTm
-
-	@RptDtAndTm.setter
-	def RptDtAndTm(self, value):
-		self._RptDtAndTm = value if type(value) != auto else self.make_default("RptDtAndTm")
-
-	@RptDtAndTm.deleter
-	def RptDtAndTm(self):
-		del self._RptDtAndTm
-		self._RptDtAndTm = None
-
+	__slots__ = ["_ActvtyInd", "_Frqcy", "_RptDtAndTm", "_UpdTp", "_RptNb", "_NetPosId"]
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd
@@ -62,17 +36,17 @@ class ReportParameters7(base_types._BaseFieldType):
 		self._Frqcy = None
 
 	@property
-	def RptNb(self):
-		return self._RptNb
+	def RptDtAndTm(self):
+		return self._RptDtAndTm
 
-	@RptNb.setter
-	def RptNb(self, value):
-		self._RptNb = value if type(value) != auto else self.make_default("RptNb")
+	@RptDtAndTm.setter
+	def RptDtAndTm(self, value):
+		self._RptDtAndTm = value if type(value) != auto else self.make_default("RptDtAndTm")
 
-	@RptNb.deleter
-	def RptNb(self):
-		del self._RptNb
-		self._RptNb = None
+	@RptDtAndTm.deleter
+	def RptDtAndTm(self):
+		del self._RptDtAndTm
+		self._RptDtAndTm = None
 
 	@property
 	def UpdTp(self):
@@ -87,12 +61,38 @@ class ReportParameters7(base_types._BaseFieldType):
 		del self._UpdTp
 		self._UpdTp = None
 
+	@property
+	def RptNb(self):
+		return self._RptNb
+
+	@RptNb.setter
+	def RptNb(self, value):
+		self._RptNb = value if type(value) != auto else self.make_default("RptNb")
+
+	@RptNb.deleter
+	def RptNb(self):
+		del self._RptNb
+		self._RptNb = None
+
+	@property
+	def NetPosId(self):
+		return self._NetPosId
+
+	@NetPosId.setter
+	def NetPosId(self, value):
+		self._NetPosId = value if type(value) != auto else self.make_default("NetPosId")
+
+	@NetPosId.deleter
+	def NetPosId(self):
+		del self._NetPosId
+		self._NetPosId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NetPosId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptDtAndTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=EventFrequency6Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptNb', type=Exact5NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptDtAndTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=StatementUpdateType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptNb', type=Exact5NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetPosId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

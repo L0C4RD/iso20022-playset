@@ -1,35 +1,22 @@
-import base_types
+from . import base_types
 import ISODate
 import YesNoIndicator
 
 class AccountContract3(base_types._BaseFieldType):
 
-	__slots__ = ["_TrgtClsgDt", "_TrgtGoLiveDt", "_UrgcyFlg", "_RmvlInd", "_GoLiveDt", "_ClsgDt"]
+	__slots__ = ["_ClsgDt", "_UrgcyFlg", "_RmvlInd", "_TrgtGoLiveDt", "_GoLiveDt", "_TrgtClsgDt"]
 	@property
-	def TrgtClsgDt(self):
-		return self._TrgtClsgDt
+	def ClsgDt(self):
+		return self._ClsgDt
 
-	@TrgtClsgDt.setter
-	def TrgtClsgDt(self, value):
-		self._TrgtClsgDt = value if type(value) != auto else self.make_default("TrgtClsgDt")
+	@ClsgDt.setter
+	def ClsgDt(self, value):
+		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
 
-	@TrgtClsgDt.deleter
-	def TrgtClsgDt(self):
-		del self._TrgtClsgDt
-		self._TrgtClsgDt = None
-
-	@property
-	def TrgtGoLiveDt(self):
-		return self._TrgtGoLiveDt
-
-	@TrgtGoLiveDt.setter
-	def TrgtGoLiveDt(self, value):
-		self._TrgtGoLiveDt = value if type(value) != auto else self.make_default("TrgtGoLiveDt")
-
-	@TrgtGoLiveDt.deleter
-	def TrgtGoLiveDt(self):
-		del self._TrgtGoLiveDt
-		self._TrgtGoLiveDt = None
+	@ClsgDt.deleter
+	def ClsgDt(self):
+		del self._ClsgDt
+		self._ClsgDt = None
 
 	@property
 	def UrgcyFlg(self):
@@ -58,6 +45,19 @@ class AccountContract3(base_types._BaseFieldType):
 		self._RmvlInd = None
 
 	@property
+	def TrgtGoLiveDt(self):
+		return self._TrgtGoLiveDt
+
+	@TrgtGoLiveDt.setter
+	def TrgtGoLiveDt(self, value):
+		self._TrgtGoLiveDt = value if type(value) != auto else self.make_default("TrgtGoLiveDt")
+
+	@TrgtGoLiveDt.deleter
+	def TrgtGoLiveDt(self):
+		del self._TrgtGoLiveDt
+		self._TrgtGoLiveDt = None
+
+	@property
 	def GoLiveDt(self):
 		return self._GoLiveDt
 
@@ -71,24 +71,24 @@ class AccountContract3(base_types._BaseFieldType):
 		self._GoLiveDt = None
 
 	@property
-	def ClsgDt(self):
-		return self._ClsgDt
+	def TrgtClsgDt(self):
+		return self._TrgtClsgDt
 
-	@ClsgDt.setter
-	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
+	@TrgtClsgDt.setter
+	def TrgtClsgDt(self, value):
+		self._TrgtClsgDt = value if type(value) != auto else self.make_default("TrgtClsgDt")
 
-	@ClsgDt.deleter
-	def ClsgDt(self):
-		del self._ClsgDt
-		self._ClsgDt = None
+	@TrgtClsgDt.deleter
+	def TrgtClsgDt(self):
+		del self._TrgtClsgDt
+		self._TrgtClsgDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrgtClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrgtGoLiveDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UrgcyFlg', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmvlInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrgtGoLiveDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GoLiveDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrgtClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

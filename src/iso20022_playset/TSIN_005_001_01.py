@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import UndertakingApplicationV01
 
 class TSIN_005_001_01():

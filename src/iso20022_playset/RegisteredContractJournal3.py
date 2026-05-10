@@ -1,12 +1,25 @@
-import base_types
-import ContractClosureReason1Choice
-import DocumentIdentification28
+from . import base_types
 import ISODate
+import DocumentIdentification28
+import ContractClosureReason1Choice
 import BranchAndFinancialInstitutionIdentification8
 
 class RegisteredContractJournal3(base_types._BaseFieldType):
 
-	__slots__ = ["_ClsrDt", "_UnqId", "_ClsrRsn", "_RegnAgt"]
+	__slots__ = ["_RegnAgt", "_ClsrDt", "_UnqId", "_ClsrRsn"]
+	@property
+	def RegnAgt(self):
+		return self._RegnAgt
+
+	@RegnAgt.setter
+	def RegnAgt(self, value):
+		self._RegnAgt = value if type(value) != auto else self.make_default("RegnAgt")
+
+	@RegnAgt.deleter
+	def RegnAgt(self):
+		del self._RegnAgt
+		self._RegnAgt = None
+
 	@property
 	def ClsrDt(self):
 		return self._ClsrDt
@@ -46,23 +59,10 @@ class RegisteredContractJournal3(base_types._BaseFieldType):
 		del self._ClsrRsn
 		self._ClsrRsn = None
 
-	@property
-	def RegnAgt(self):
-		return self._RegnAgt
-
-	@RegnAgt.setter
-	def RegnAgt(self, value):
-		self._RegnAgt = value if type(value) != auto else self.make_default("RegnAgt")
-
-	@RegnAgt.deleter
-	def RegnAgt(self):
-		del self._RegnAgt
-		self._RegnAgt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsrDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqId', type=DocumentIdentification28, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsrRsn', type=ContractClosureReason1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

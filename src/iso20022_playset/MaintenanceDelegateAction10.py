@@ -1,92 +1,27 @@
-import base_types
-import Max35Text
-import ProcessRetry3
-import NetworkParameters7
-import TMSAction13
-import TrueFalseIndicator
+from . import base_types
 import DataSetIdentification11
+import TrueFalseIndicator
+import NetworkParameters7
 import Max3000Binary
+import ProcessRetry3
+import TMSAction13
+import Max35Text
 
 class MaintenanceDelegateAction10(base_types._BaseFieldType):
 
-	__slots__ = ["_TMSPrtcol", "_TMRmotAccs", "_Actn", "_AddtlInf", "_DataSetId", "_PrdcActn", "_ReTry", "_TMSPrtcolVrsn"]
+	__slots__ = ["_TMSPrtcolVrsn", "_ReTry", "_Actn", "_PrdcActn", "_TMRmotAccs", "_DataSetId", "_AddtlInf", "_TMSPrtcol"]
 	@property
-	def TMSPrtcol(self):
-		return self._TMSPrtcol
+	def TMSPrtcolVrsn(self):
+		return self._TMSPrtcolVrsn
 
-	@TMSPrtcol.setter
-	def TMSPrtcol(self, value):
-		self._TMSPrtcol = value if type(value) != auto else self.make_default("TMSPrtcol")
+	@TMSPrtcolVrsn.setter
+	def TMSPrtcolVrsn(self, value):
+		self._TMSPrtcolVrsn = value if type(value) != auto else self.make_default("TMSPrtcolVrsn")
 
-	@TMSPrtcol.deleter
-	def TMSPrtcol(self):
-		del self._TMSPrtcol
-		self._TMSPrtcol = None
-
-	@property
-	def TMRmotAccs(self):
-		return self._TMRmotAccs
-
-	@TMRmotAccs.setter
-	def TMRmotAccs(self, value):
-		self._TMRmotAccs = value if type(value) != auto else self.make_default("TMRmotAccs")
-
-	@TMRmotAccs.deleter
-	def TMRmotAccs(self):
-		del self._TMRmotAccs
-		self._TMRmotAccs = None
-
-	@property
-	def Actn(self):
-		return self._Actn
-
-	@Actn.setter
-	def Actn(self, value):
-		self._Actn = value if type(value) != auto else self.make_default("Actn")
-
-	@Actn.deleter
-	def Actn(self):
-		del self._Actn
-		self._Actn = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def DataSetId(self):
-		return self._DataSetId
-
-	@DataSetId.setter
-	def DataSetId(self, value):
-		self._DataSetId = value if type(value) != auto else self.make_default("DataSetId")
-
-	@DataSetId.deleter
-	def DataSetId(self):
-		del self._DataSetId
-		self._DataSetId = None
-
-	@property
-	def PrdcActn(self):
-		return self._PrdcActn
-
-	@PrdcActn.setter
-	def PrdcActn(self, value):
-		self._PrdcActn = value if type(value) != auto else self.make_default("PrdcActn")
-
-	@PrdcActn.deleter
-	def PrdcActn(self):
-		del self._PrdcActn
-		self._PrdcActn = None
+	@TMSPrtcolVrsn.deleter
+	def TMSPrtcolVrsn(self):
+		del self._TMSPrtcolVrsn
+		self._TMSPrtcolVrsn = None
 
 	@property
 	def ReTry(self):
@@ -102,26 +37,91 @@ class MaintenanceDelegateAction10(base_types._BaseFieldType):
 		self._ReTry = None
 
 	@property
-	def TMSPrtcolVrsn(self):
-		return self._TMSPrtcolVrsn
+	def Actn(self):
+		return self._Actn
 
-	@TMSPrtcolVrsn.setter
-	def TMSPrtcolVrsn(self, value):
-		self._TMSPrtcolVrsn = value if type(value) != auto else self.make_default("TMSPrtcolVrsn")
+	@Actn.setter
+	def Actn(self, value):
+		self._Actn = value if type(value) != auto else self.make_default("Actn")
 
-	@TMSPrtcolVrsn.deleter
-	def TMSPrtcolVrsn(self):
-		del self._TMSPrtcolVrsn
-		self._TMSPrtcolVrsn = None
+	@Actn.deleter
+	def Actn(self):
+		del self._Actn
+		self._Actn = None
+
+	@property
+	def PrdcActn(self):
+		return self._PrdcActn
+
+	@PrdcActn.setter
+	def PrdcActn(self, value):
+		self._PrdcActn = value if type(value) != auto else self.make_default("PrdcActn")
+
+	@PrdcActn.deleter
+	def PrdcActn(self):
+		del self._PrdcActn
+		self._PrdcActn = None
+
+	@property
+	def TMRmotAccs(self):
+		return self._TMRmotAccs
+
+	@TMRmotAccs.setter
+	def TMRmotAccs(self, value):
+		self._TMRmotAccs = value if type(value) != auto else self.make_default("TMRmotAccs")
+
+	@TMRmotAccs.deleter
+	def TMRmotAccs(self):
+		del self._TMRmotAccs
+		self._TMRmotAccs = None
+
+	@property
+	def DataSetId(self):
+		return self._DataSetId
+
+	@DataSetId.setter
+	def DataSetId(self, value):
+		self._DataSetId = value if type(value) != auto else self.make_default("DataSetId")
+
+	@DataSetId.deleter
+	def DataSetId(self):
+		del self._DataSetId
+		self._DataSetId = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def TMSPrtcol(self):
+		return self._TMSPrtcol
+
+	@TMSPrtcol.setter
+	def TMSPrtcol(self, value):
+		self._TMSPrtcol = value if type(value) != auto else self.make_default("TMSPrtcol")
+
+	@TMSPrtcol.deleter
+	def TMSPrtcol(self):
+		del self._TMSPrtcol
+		self._TMSPrtcol = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TMSPrtcol', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TMRmotAccs', type=NetworkParameters7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Actn', type=TMSAction13, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlInf', type=Max3000Binary, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DataSetId', type=DataSetIdentification11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrdcActn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReTry', type=ProcessRetry3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMSPrtcolVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReTry', type=ProcessRetry3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Actn', type=TMSAction13, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrdcActn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TMRmotAccs', type=NetworkParameters7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DataSetId', type=DataSetIdentification11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max3000Binary, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TMSPrtcol', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

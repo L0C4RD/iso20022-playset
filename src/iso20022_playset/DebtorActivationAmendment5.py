@@ -1,8 +1,8 @@
-import base_types
-import DebtorActivationAmendmentReason3
-import SupplementaryData1
-import OriginalActivation3Choice
+from . import base_types
 import OriginalBusinessInstruction1
+import DebtorActivationAmendmentReason3
+import OriginalActivation3Choice
+import SupplementaryData1
 import DebtorActivationAmendment6
 
 class DebtorActivationAmendment5(base_types._BaseFieldType):

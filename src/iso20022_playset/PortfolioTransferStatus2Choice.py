@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
+import PendingProcessingStatus17Choice
 import RejectionStatus30Choice
 import ProprietaryStatusAndReason6
 import AcknowledgedAcceptedStatus32Choice
-import PendingProcessingStatus17Choice
 
 class PortfolioTransferStatus2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgPrcg", "_Rjctd", "_AckdAccptd", "_Prtry"]
+	__slots__ = ["_PdgPrcg", "_Prtry", "_AckdAccptd", "_Rjctd"]
 	@property
 	def PdgPrcg(self):
 		return self._PdgPrcg
@@ -21,17 +21,17 @@ class PortfolioTransferStatus2Choice(base_types._BaseFieldType):
 		self._PdgPrcg = None
 
 	@property
-	def Rjctd(self):
-		return self._Rjctd
+	def Prtry(self):
+		return self._Prtry
 
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
 
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	@property
 	def AckdAccptd(self):
@@ -47,22 +47,22 @@ class PortfolioTransferStatus2Choice(base_types._BaseFieldType):
 		self._AckdAccptd = None
 
 	@property
-	def Prtry(self):
-		return self._Prtry
+	def Rjctd(self):
+		return self._Rjctd
 
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
 
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PdgPrcg', type=PendingProcessingStatus17Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=RejectionStatus30Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus32Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus32Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=RejectionStatus30Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

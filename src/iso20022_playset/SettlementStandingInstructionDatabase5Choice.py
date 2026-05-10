@@ -1,6 +1,6 @@
-import base_types
-import SettlementStandingInstructionDatabase1Code
+from . import base_types
 import GenericIdentification47
+import SettlementStandingInstructionDatabase1Code
 
 class SettlementStandingInstructionDatabase5Choice(base_types._BaseFieldType):
 

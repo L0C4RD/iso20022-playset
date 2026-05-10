@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AcceptorDiagnosticResponseV12
 
 class CAAA_014_001_12():

@@ -1,26 +1,26 @@
-import base_types
+from . import base_types
+import Obligation9
 import Max35Text
 import CollateralSubstitution7
-import SupplementaryData1
 import Agreement4
 import CollateralSubstitution8
-import Obligation9
+import SupplementaryData1
 
 class CollateralSubstitutionRequestV05(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_CollSbstitnDlvr", "_CollSbstitnRtr", "_TxId", "_Oblgtn", "_Agrmt"]
+	__slots__ = ["_Agrmt", "_CollSbstitnDlvr", "_TxId", "_CollSbstitnRtr", "_SplmtryData", "_Oblgtn"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Agrmt(self):
+		return self._Agrmt
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@Agrmt.setter
+	def Agrmt(self, value):
+		self._Agrmt = value if type(value) != auto else self.make_default("Agrmt")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@Agrmt.deleter
+	def Agrmt(self):
+		del self._Agrmt
+		self._Agrmt = None
 
 	@property
 	def CollSbstitnDlvr(self):
@@ -36,6 +36,19 @@ class CollateralSubstitutionRequestV05(base_types._BaseFieldType):
 		self._CollSbstitnDlvr = None
 
 	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
 	def CollSbstitnRtr(self):
 		return self._CollSbstitnRtr
 
@@ -49,17 +62,17 @@ class CollateralSubstitutionRequestV05(base_types._BaseFieldType):
 		self._CollSbstitnRtr = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Oblgtn(self):
@@ -74,25 +87,12 @@ class CollateralSubstitutionRequestV05(base_types._BaseFieldType):
 		del self._Oblgtn
 		self._Oblgtn = None
 
-	@property
-	def Agrmt(self):
-		return self._Agrmt
-
-	@Agrmt.setter
-	def Agrmt(self, value):
-		self._Agrmt = value if type(value) != auto else self.make_default("Agrmt")
-
-	@Agrmt.deleter
-	def Agrmt(self):
-		del self._Agrmt
-		self._Agrmt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CollSbstitnDlvr', type=CollateralSubstitution8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollSbstitnRtr', type=CollateralSubstitution7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollSbstitnDlvr', type=CollateralSubstitution8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollSbstitnRtr', type=CollateralSubstitution7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
 	))
 

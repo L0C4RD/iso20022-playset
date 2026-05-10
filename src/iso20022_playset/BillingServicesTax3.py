@@ -1,12 +1,12 @@
-import base_types
-import Max35Text
-import DecimalNumber
+from . import base_types
 import Max40Text
+import DecimalNumber
+import Max35Text
 import AmountAndDirection34
 
 class BillingServicesTax3(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_TtlTaxAmt", "_Rate", "_Nb"]
+	__slots__ = ["_Desc", "_Nb", "_Rate", "_TtlTaxAmt"]
 	@property
 	def Desc(self):
 		return self._Desc
@@ -21,17 +21,17 @@ class BillingServicesTax3(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
-	def TtlTaxAmt(self):
-		return self._TtlTaxAmt
+	def Nb(self):
+		return self._Nb
 
-	@TtlTaxAmt.setter
-	def TtlTaxAmt(self, value):
-		self._TtlTaxAmt = value if type(value) != auto else self.make_default("TtlTaxAmt")
+	@Nb.setter
+	def Nb(self, value):
+		self._Nb = value if type(value) != auto else self.make_default("Nb")
 
-	@TtlTaxAmt.deleter
-	def TtlTaxAmt(self):
-		del self._TtlTaxAmt
-		self._TtlTaxAmt = None
+	@Nb.deleter
+	def Nb(self):
+		del self._Nb
+		self._Nb = None
 
 	@property
 	def Rate(self):
@@ -47,22 +47,22 @@ class BillingServicesTax3(base_types._BaseFieldType):
 		self._Rate = None
 
 	@property
-	def Nb(self):
-		return self._Nb
+	def TtlTaxAmt(self):
+		return self._TtlTaxAmt
 
-	@Nb.setter
-	def Nb(self, value):
-		self._Nb = value if type(value) != auto else self.make_default("Nb")
+	@TtlTaxAmt.setter
+	def TtlTaxAmt(self, value):
+		self._TtlTaxAmt = value if type(value) != auto else self.make_default("TtlTaxAmt")
 
-	@Nb.deleter
-	def Nb(self):
-		del self._Nb
-		self._Nb = None
+	@TtlTaxAmt.deleter
+	def TtlTaxAmt(self):
+		del self._TtlTaxAmt
+		self._TtlTaxAmt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max40Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlTaxAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rate', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlTaxAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 	))
 

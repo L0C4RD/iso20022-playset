@@ -1,12 +1,25 @@
-import base_types
-import DecimalNumber
-import Unit13
+from . import base_types
 import AdditionalInformation15
+import DecimalNumber
 import FinancialInstrumentIdentification1
+import Unit13
 
 class Conversion2(base_types._BaseFieldType):
 
-	__slots__ = ["_SrcScty", "_AddtlInf", "_TtlUnitsNb", "_UnitsDtls"]
+	__slots__ = ["_UnitsDtls", "_SrcScty", "_AddtlInf", "_TtlUnitsNb"]
+	@property
+	def UnitsDtls(self):
+		return self._UnitsDtls
+
+	@UnitsDtls.setter
+	def UnitsDtls(self, value):
+		self._UnitsDtls = value if type(value) != auto else self.make_default("UnitsDtls")
+
+	@UnitsDtls.deleter
+	def UnitsDtls(self):
+		del self._UnitsDtls
+		self._UnitsDtls = None
+
 	@property
 	def SrcScty(self):
 		return self._SrcScty
@@ -46,23 +59,10 @@ class Conversion2(base_types._BaseFieldType):
 		del self._TtlUnitsNb
 		self._TtlUnitsNb = None
 
-	@property
-	def UnitsDtls(self):
-		return self._UnitsDtls
-
-	@UnitsDtls.setter
-	def UnitsDtls(self, value):
-		self._UnitsDtls = value if type(value) != auto else self.make_default("UnitsDtls")
-
-	@UnitsDtls.deleter
-	def UnitsDtls(self):
-		del self._UnitsDtls
-		self._UnitsDtls = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='UnitsDtls', type=Unit13, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SrcScty', type=FinancialInstrumentIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlUnitsNb', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitsDtls', type=Unit13, min=0, max=None, mutex_group=None, array=True),
 	))
 

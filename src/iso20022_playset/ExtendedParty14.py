@@ -1,6 +1,6 @@
-import base_types
-import InvestmentAccountOwnershipInformation16
+from . import base_types
 import Extended350Code
+import InvestmentAccountOwnershipInformation16
 
 class ExtendedParty14(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PartyReportV02
 
 class REDA_017_001_02():

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecurityReportV01
 
 class REDA_012_001_01():

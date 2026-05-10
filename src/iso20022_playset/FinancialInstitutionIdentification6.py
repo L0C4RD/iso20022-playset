@@ -1,23 +1,23 @@
-import base_types
-import ClearingSystemMemberIdentification2Choice
-import BICIdentifier
+from . import base_types
 import GenericIdentification4
+import BICIdentifier
+import ClearingSystemMemberIdentification2Choice
 
 class FinancialInstitutionIdentification6(base_types._BaseFieldType):
 
-	__slots__ = ["_BIC", "_ClrSysMmbId", "_PrtryId"]
+	__slots__ = ["_PrtryId", "_ClrSysMmbId", "_BIC"]
 	@property
-	def BIC(self):
-		return self._BIC
+	def PrtryId(self):
+		return self._PrtryId
 
-	@BIC.setter
-	def BIC(self, value):
-		self._BIC = value if type(value) != auto else self.make_default("BIC")
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
 
-	@BIC.deleter
-	def BIC(self):
-		del self._BIC
-		self._BIC = None
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
 
 	@property
 	def ClrSysMmbId(self):
@@ -33,21 +33,21 @@ class FinancialInstitutionIdentification6(base_types._BaseFieldType):
 		self._ClrSysMmbId = None
 
 	@property
-	def PrtryId(self):
-		return self._PrtryId
+	def BIC(self):
+		return self._BIC
 
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
+	@BIC.setter
+	def BIC(self, value):
+		self._BIC = value if type(value) != auto else self.make_default("BIC")
 
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
+	@BIC.deleter
+	def BIC(self):
+		del self._BIC
+		self._BIC = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BIC', type=BICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtryId', type=GenericIdentification4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BIC', type=BICIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

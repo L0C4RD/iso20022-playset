@@ -1,54 +1,28 @@
-import base_types
-import OtherCollateral11
-import CollateralSubstitutionSequence1Code
-import CashCollateral5
-import CollateralSubstitutionType1Code
-import ActiveCurrencyAndAmount
+from . import base_types
 import Reference17
 import Max140Text
+import CollateralSubstitutionType1Code
+import CashCollateral5
+import ActiveCurrencyAndAmount
 import SecuritiesCollateral11
+import CollateralSubstitutionSequence1Code
+import OtherCollateral11
 
 class CollateralSubstitution7(base_types._BaseFieldType):
 
-	__slots__ = ["_StdSttlmInstrs", "_OthrColl", "_CollSbstitnTp", "_CollSbstitnSeq", "_CshColl", "_LkdRefs", "_SctiesColl", "_SbstitnRqrmnt"]
+	__slots__ = ["_SctiesColl", "_CollSbstitnSeq", "_LkdRefs", "_CollSbstitnTp", "_StdSttlmInstrs", "_CshColl", "_SbstitnRqrmnt", "_OthrColl"]
 	@property
-	def StdSttlmInstrs(self):
-		return self._StdSttlmInstrs
+	def SctiesColl(self):
+		return self._SctiesColl
 
-	@StdSttlmInstrs.setter
-	def StdSttlmInstrs(self, value):
-		self._StdSttlmInstrs = value if type(value) != auto else self.make_default("StdSttlmInstrs")
+	@SctiesColl.setter
+	def SctiesColl(self, value):
+		self._SctiesColl = value if type(value) != auto else self.make_default("SctiesColl")
 
-	@StdSttlmInstrs.deleter
-	def StdSttlmInstrs(self):
-		del self._StdSttlmInstrs
-		self._StdSttlmInstrs = None
-
-	@property
-	def OthrColl(self):
-		return self._OthrColl
-
-	@OthrColl.setter
-	def OthrColl(self, value):
-		self._OthrColl = value if type(value) != auto else self.make_default("OthrColl")
-
-	@OthrColl.deleter
-	def OthrColl(self):
-		del self._OthrColl
-		self._OthrColl = None
-
-	@property
-	def CollSbstitnTp(self):
-		return self._CollSbstitnTp
-
-	@CollSbstitnTp.setter
-	def CollSbstitnTp(self, value):
-		self._CollSbstitnTp = value if type(value) != auto else self.make_default("CollSbstitnTp")
-
-	@CollSbstitnTp.deleter
-	def CollSbstitnTp(self):
-		del self._CollSbstitnTp
-		self._CollSbstitnTp = None
+	@SctiesColl.deleter
+	def SctiesColl(self):
+		del self._SctiesColl
+		self._SctiesColl = None
 
 	@property
 	def CollSbstitnSeq(self):
@@ -64,19 +38,6 @@ class CollateralSubstitution7(base_types._BaseFieldType):
 		self._CollSbstitnSeq = None
 
 	@property
-	def CshColl(self):
-		return self._CshColl
-
-	@CshColl.setter
-	def CshColl(self, value):
-		self._CshColl = value if type(value) != auto else self.make_default("CshColl")
-
-	@CshColl.deleter
-	def CshColl(self):
-		del self._CshColl
-		self._CshColl = None
-
-	@property
 	def LkdRefs(self):
 		return self._LkdRefs
 
@@ -90,17 +51,43 @@ class CollateralSubstitution7(base_types._BaseFieldType):
 		self._LkdRefs = None
 
 	@property
-	def SctiesColl(self):
-		return self._SctiesColl
+	def CollSbstitnTp(self):
+		return self._CollSbstitnTp
 
-	@SctiesColl.setter
-	def SctiesColl(self, value):
-		self._SctiesColl = value if type(value) != auto else self.make_default("SctiesColl")
+	@CollSbstitnTp.setter
+	def CollSbstitnTp(self, value):
+		self._CollSbstitnTp = value if type(value) != auto else self.make_default("CollSbstitnTp")
 
-	@SctiesColl.deleter
-	def SctiesColl(self):
-		del self._SctiesColl
-		self._SctiesColl = None
+	@CollSbstitnTp.deleter
+	def CollSbstitnTp(self):
+		del self._CollSbstitnTp
+		self._CollSbstitnTp = None
+
+	@property
+	def StdSttlmInstrs(self):
+		return self._StdSttlmInstrs
+
+	@StdSttlmInstrs.setter
+	def StdSttlmInstrs(self, value):
+		self._StdSttlmInstrs = value if type(value) != auto else self.make_default("StdSttlmInstrs")
+
+	@StdSttlmInstrs.deleter
+	def StdSttlmInstrs(self):
+		del self._StdSttlmInstrs
+		self._StdSttlmInstrs = None
+
+	@property
+	def CshColl(self):
+		return self._CshColl
+
+	@CshColl.setter
+	def CshColl(self, value):
+		self._CshColl = value if type(value) != auto else self.make_default("CshColl")
+
+	@CshColl.deleter
+	def CshColl(self):
+		del self._CshColl
+		self._CshColl = None
 
 	@property
 	def SbstitnRqrmnt(self):
@@ -115,14 +102,27 @@ class CollateralSubstitution7(base_types._BaseFieldType):
 		del self._SbstitnRqrmnt
 		self._SbstitnRqrmnt = None
 
+	@property
+	def OthrColl(self):
+		return self._OthrColl
+
+	@OthrColl.setter
+	def OthrColl(self, value):
+		self._OthrColl = value if type(value) != auto else self.make_default("OthrColl")
+
+	@OthrColl.deleter
+	def OthrColl(self):
+		del self._OthrColl
+		self._OthrColl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StdSttlmInstrs', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrColl', type=OtherCollateral11, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CollSbstitnTp', type=CollateralSubstitutionType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollSbstitnSeq', type=CollateralSubstitutionSequence1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshColl', type=CashCollateral5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LkdRefs', type=Reference17, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesColl', type=SecuritiesCollateral11, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CollSbstitnSeq', type=CollateralSubstitutionSequence1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LkdRefs', type=Reference17, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollSbstitnTp', type=CollateralSubstitutionType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StdSttlmInstrs', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshColl', type=CashCollateral5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SbstitnRqrmnt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrColl', type=OtherCollateral11, min=0, max=None, mutex_group=None, array=True),
 	))
 

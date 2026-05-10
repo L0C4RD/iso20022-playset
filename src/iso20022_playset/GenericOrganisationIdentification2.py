@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import RestrictedFINXMax35Text
 import OrganisationIdentificationSchemeName2Choice
 
 class GenericOrganisationIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Issr", "_SchmeNm"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Issr", "_SchmeNm", "_Id"]
 	@property
 	def Issr(self):
 		return self._Issr
@@ -44,9 +31,22 @@ class GenericOrganisationIdentification2(base_types._BaseFieldType):
 		del self._SchmeNm
 		self._SchmeNm = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=RestrictedFINXMax35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=OrganisationIdentificationSchemeName2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=RestrictedFINXMax35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

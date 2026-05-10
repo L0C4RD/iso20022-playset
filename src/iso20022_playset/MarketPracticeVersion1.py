@@ -1,22 +1,22 @@
-import base_types
+from . import base_types
 import Max35Text
 import ISOYearMonth
 
 class MarketPracticeVersion1(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_Nb", "_Nm"]
+	__slots__ = ["_Nm", "_Nb", "_Dt"]
 	@property
-	def Dt(self):
-		return self._Dt
+	def Nm(self):
+		return self._Nm
 
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def Nb(self):
@@ -32,21 +32,21 @@ class MarketPracticeVersion1(base_types._BaseFieldType):
 		self._Nb = None
 
 	@property
-	def Nm(self):
-		return self._Nm
+	def Dt(self):
+		return self._Dt
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != auto else self.make_default("Dt")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
 	))
 

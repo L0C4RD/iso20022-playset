@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import InterestRate8Choice
-import FloatingInterestRate8
 import ActiveOrHistoricCurrencyCode
+import FloatingInterestRate8
 
 class DerivativeInterest3(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrstRate", "_OthrNtnlCcy", "_FrstLegIntrstRate", "_OthrLegIntrstRate"]
-	@property
-	def IntrstRate(self):
-		return self._IntrstRate
-
-	@IntrstRate.setter
-	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != auto else self.make_default("IntrstRate")
-
-	@IntrstRate.deleter
-	def IntrstRate(self):
-		del self._IntrstRate
-		self._IntrstRate = None
-
+	__slots__ = ["_OthrNtnlCcy", "_FrstLegIntrstRate", "_IntrstRate", "_OthrLegIntrstRate"]
 	@property
 	def OthrNtnlCcy(self):
 		return self._OthrNtnlCcy
@@ -46,6 +33,19 @@ class DerivativeInterest3(base_types._BaseFieldType):
 		self._FrstLegIntrstRate = None
 
 	@property
+	def IntrstRate(self):
+		return self._IntrstRate
+
+	@IntrstRate.setter
+	def IntrstRate(self, value):
+		self._IntrstRate = value if type(value) != auto else self.make_default("IntrstRate")
+
+	@IntrstRate.deleter
+	def IntrstRate(self):
+		del self._IntrstRate
+		self._IntrstRate = None
+
+	@property
 	def OthrLegIntrstRate(self):
 		return self._OthrLegIntrstRate
 
@@ -59,9 +59,9 @@ class DerivativeInterest3(base_types._BaseFieldType):
 		self._OthrLegIntrstRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntrstRate', type=FloatingInterestRate8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrNtnlCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstLegIntrstRate', type=InterestRate8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstRate', type=FloatingInterestRate8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrLegIntrstRate', type=InterestRate8Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

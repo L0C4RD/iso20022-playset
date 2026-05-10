@@ -1,13 +1,13 @@
-import base_types
-import ReconciliationStatus1Code
+from . import base_types
 import ReconciliationStatus2Code
 import YesNoIndicator
 import TradeRepositoryReportingType1Code
+import ReconciliationStatus1Code
 import PairingStatus1Code
 
 class ReconciliationCategory5(base_types._BaseFieldType):
 
-	__slots__ = ["_Pairg", "_Rvvd", "_ValtnRcncltn", "_RptgTp", "_FrthrMod", "_Rcncltn"]
+	__slots__ = ["_Pairg", "_FrthrMod", "_Rvvd", "_RptgTp", "_ValtnRcncltn", "_Rcncltn"]
 	@property
 	def Pairg(self):
 		return self._Pairg
@@ -20,6 +20,19 @@ class ReconciliationCategory5(base_types._BaseFieldType):
 	def Pairg(self):
 		del self._Pairg
 		self._Pairg = None
+
+	@property
+	def FrthrMod(self):
+		return self._FrthrMod
+
+	@FrthrMod.setter
+	def FrthrMod(self, value):
+		self._FrthrMod = value if type(value) != auto else self.make_default("FrthrMod")
+
+	@FrthrMod.deleter
+	def FrthrMod(self):
+		del self._FrthrMod
+		self._FrthrMod = None
 
 	@property
 	def Rvvd(self):
@@ -35,19 +48,6 @@ class ReconciliationCategory5(base_types._BaseFieldType):
 		self._Rvvd = None
 
 	@property
-	def ValtnRcncltn(self):
-		return self._ValtnRcncltn
-
-	@ValtnRcncltn.setter
-	def ValtnRcncltn(self, value):
-		self._ValtnRcncltn = value if type(value) != auto else self.make_default("ValtnRcncltn")
-
-	@ValtnRcncltn.deleter
-	def ValtnRcncltn(self):
-		del self._ValtnRcncltn
-		self._ValtnRcncltn = None
-
-	@property
 	def RptgTp(self):
 		return self._RptgTp
 
@@ -61,17 +61,17 @@ class ReconciliationCategory5(base_types._BaseFieldType):
 		self._RptgTp = None
 
 	@property
-	def FrthrMod(self):
-		return self._FrthrMod
+	def ValtnRcncltn(self):
+		return self._ValtnRcncltn
 
-	@FrthrMod.setter
-	def FrthrMod(self, value):
-		self._FrthrMod = value if type(value) != auto else self.make_default("FrthrMod")
+	@ValtnRcncltn.setter
+	def ValtnRcncltn(self, value):
+		self._ValtnRcncltn = value if type(value) != auto else self.make_default("ValtnRcncltn")
 
-	@FrthrMod.deleter
-	def FrthrMod(self):
-		del self._FrthrMod
-		self._FrthrMod = None
+	@ValtnRcncltn.deleter
+	def ValtnRcncltn(self):
+		del self._ValtnRcncltn
+		self._ValtnRcncltn = None
 
 	@property
 	def Rcncltn(self):
@@ -88,10 +88,10 @@ class ReconciliationCategory5(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Pairg', type=PairingStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rvvd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnRcncltn', type=ReconciliationStatus2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgTp', type=TradeRepositoryReportingType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrthrMod', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rvvd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgTp', type=TradeRepositoryReportingType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnRcncltn', type=ReconciliationStatus2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcncltn', type=ReconciliationStatus1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

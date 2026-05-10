@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
+import Cheque17
 import SupplementaryData1
 import GroupHeader103
-import Cheque17
 
 class ChequePresentmentNotificationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_Chq"]
+	__slots__ = ["_Chq", "_GrpHdr", "_SplmtryData"]
+	@property
+	def Chq(self):
+		return self._Chq
+
+	@Chq.setter
+	def Chq(self, value):
+		self._Chq = value if type(value) != auto else self.make_default("Chq")
+
+	@Chq.deleter
+	def Chq(self):
+		del self._Chq
+		self._Chq = None
+
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr
@@ -32,22 +45,9 @@ class ChequePresentmentNotificationV02(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def Chq(self):
-		return self._Chq
-
-	@Chq.setter
-	def Chq(self, value):
-		self._Chq = value if type(value) != auto else self.make_default("Chq")
-
-	@Chq.deleter
-	def Chq(self):
-		del self._Chq
-		self._Chq = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Chq', type=Cheque17, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader103, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Chq', type=Cheque17, min=1, max=None, mutex_group=None, array=True),
 	))
 

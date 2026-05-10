@@ -1,6 +1,6 @@
-import base_types
-import SecuritiesNonTradingDay1
+from . import base_types
 import TradingVenueIdentification1Choice
+import SecuritiesNonTradingDay1
 
 class SecuritiesNonTradingDayReport1(base_types._BaseFieldType):
 

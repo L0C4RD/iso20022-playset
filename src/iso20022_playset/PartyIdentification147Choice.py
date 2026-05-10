@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import BICFIDec2014Identifier
-import GenericIdentification84
 import NameAndAddress12
+import GenericIdentification84
 
 class PartyIdentification147Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_BICFI", "_PrtryId"]
+	__slots__ = ["_PrtryId", "_BICFI", "_NmAndAdr"]
 	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
+	def PrtryId(self):
+		return self._PrtryId
 
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
 
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
 
 	@property
 	def BICFI(self):
@@ -33,21 +33,21 @@ class PartyIdentification147Choice(base_types._BaseFieldType):
 		self._BICFI = None
 
 	@property
-	def PrtryId(self):
-		return self._PrtryId
+	def NmAndAdr(self):
+		return self._NmAndAdr
 
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
 
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress12, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryId', type=GenericIdentification84, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress12, min=0, max=1, mutex_group=1, array=False),
 	))
 

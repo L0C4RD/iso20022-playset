@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AgentCAMovementInstructionV01
 
 class SEEV_019_001_01():

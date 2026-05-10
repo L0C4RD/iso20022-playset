@@ -1,9 +1,9 @@
-import base_types
+from . import base_types
 import Max35Text
 
 class TransportBySea4(base_types._BaseFieldType):
 
-	__slots__ = ["_VsslNm", "_PortOfLoadng", "_PortOfDschrge", "_SeaCrrierNm"]
+	__slots__ = ["_VsslNm", "_SeaCrrierNm", "_PortOfLoadng", "_PortOfDschrge"]
 	@property
 	def VsslNm(self):
 		return self._VsslNm
@@ -16,6 +16,19 @@ class TransportBySea4(base_types._BaseFieldType):
 	def VsslNm(self):
 		del self._VsslNm
 		self._VsslNm = None
+
+	@property
+	def SeaCrrierNm(self):
+		return self._SeaCrrierNm
+
+	@SeaCrrierNm.setter
+	def SeaCrrierNm(self, value):
+		self._SeaCrrierNm = value if type(value) != auto else self.make_default("SeaCrrierNm")
+
+	@SeaCrrierNm.deleter
+	def SeaCrrierNm(self):
+		del self._SeaCrrierNm
+		self._SeaCrrierNm = None
 
 	@property
 	def PortOfLoadng(self):
@@ -43,23 +56,10 @@ class TransportBySea4(base_types._BaseFieldType):
 		del self._PortOfDschrge
 		self._PortOfDschrge = None
 
-	@property
-	def SeaCrrierNm(self):
-		return self._SeaCrrierNm
-
-	@SeaCrrierNm.setter
-	def SeaCrrierNm(self, value):
-		self._SeaCrrierNm = value if type(value) != auto else self.make_default("SeaCrrierNm")
-
-	@SeaCrrierNm.deleter
-	def SeaCrrierNm(self):
-		del self._SeaCrrierNm
-		self._SeaCrrierNm = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='VsslNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeaCrrierNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PortOfLoadng', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PortOfDschrge', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SeaCrrierNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

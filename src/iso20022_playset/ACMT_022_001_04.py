@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import IdentificationModificationAdviceV04
 
 class ACMT_022_001_04():

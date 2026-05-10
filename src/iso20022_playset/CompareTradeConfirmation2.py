@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TradeConfirmation3Choice
 
 class CompareTradeConfirmation2(base_types._BaseFieldType):

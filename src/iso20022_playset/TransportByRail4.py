@@ -1,49 +1,23 @@
-import base_types
-import Max35Text
+from . import base_types
 import CountryCode
+import Max35Text
 import Max70Text
 
 class TransportByRail4(base_types._BaseFieldType):
 
-	__slots__ = ["_PlcOfDlvry", "_RailCrrierCtry", "_RailCrrierNm", "_CrrierAgtNm", "_CrrierAgtCtry", "_PlcOfRct"]
+	__slots__ = ["_PlcOfRct", "_CrrierAgtNm", "_CrrierAgtCtry", "_PlcOfDlvry", "_RailCrrierNm", "_RailCrrierCtry"]
 	@property
-	def PlcOfDlvry(self):
-		return self._PlcOfDlvry
+	def PlcOfRct(self):
+		return self._PlcOfRct
 
-	@PlcOfDlvry.setter
-	def PlcOfDlvry(self, value):
-		self._PlcOfDlvry = value if type(value) != auto else self.make_default("PlcOfDlvry")
+	@PlcOfRct.setter
+	def PlcOfRct(self, value):
+		self._PlcOfRct = value if type(value) != auto else self.make_default("PlcOfRct")
 
-	@PlcOfDlvry.deleter
-	def PlcOfDlvry(self):
-		del self._PlcOfDlvry
-		self._PlcOfDlvry = None
-
-	@property
-	def RailCrrierCtry(self):
-		return self._RailCrrierCtry
-
-	@RailCrrierCtry.setter
-	def RailCrrierCtry(self, value):
-		self._RailCrrierCtry = value if type(value) != auto else self.make_default("RailCrrierCtry")
-
-	@RailCrrierCtry.deleter
-	def RailCrrierCtry(self):
-		del self._RailCrrierCtry
-		self._RailCrrierCtry = None
-
-	@property
-	def RailCrrierNm(self):
-		return self._RailCrrierNm
-
-	@RailCrrierNm.setter
-	def RailCrrierNm(self, value):
-		self._RailCrrierNm = value if type(value) != auto else self.make_default("RailCrrierNm")
-
-	@RailCrrierNm.deleter
-	def RailCrrierNm(self):
-		del self._RailCrrierNm
-		self._RailCrrierNm = None
+	@PlcOfRct.deleter
+	def PlcOfRct(self):
+		del self._PlcOfRct
+		self._PlcOfRct = None
 
 	@property
 	def CrrierAgtNm(self):
@@ -72,24 +46,50 @@ class TransportByRail4(base_types._BaseFieldType):
 		self._CrrierAgtCtry = None
 
 	@property
-	def PlcOfRct(self):
-		return self._PlcOfRct
+	def PlcOfDlvry(self):
+		return self._PlcOfDlvry
 
-	@PlcOfRct.setter
-	def PlcOfRct(self, value):
-		self._PlcOfRct = value if type(value) != auto else self.make_default("PlcOfRct")
+	@PlcOfDlvry.setter
+	def PlcOfDlvry(self, value):
+		self._PlcOfDlvry = value if type(value) != auto else self.make_default("PlcOfDlvry")
 
-	@PlcOfRct.deleter
-	def PlcOfRct(self):
-		del self._PlcOfRct
-		self._PlcOfRct = None
+	@PlcOfDlvry.deleter
+	def PlcOfDlvry(self):
+		del self._PlcOfDlvry
+		self._PlcOfDlvry = None
+
+	@property
+	def RailCrrierNm(self):
+		return self._RailCrrierNm
+
+	@RailCrrierNm.setter
+	def RailCrrierNm(self, value):
+		self._RailCrrierNm = value if type(value) != auto else self.make_default("RailCrrierNm")
+
+	@RailCrrierNm.deleter
+	def RailCrrierNm(self):
+		del self._RailCrrierNm
+		self._RailCrrierNm = None
+
+	@property
+	def RailCrrierCtry(self):
+		return self._RailCrrierCtry
+
+	@RailCrrierCtry.setter
+	def RailCrrierCtry(self, value):
+		self._RailCrrierCtry = value if type(value) != auto else self.make_default("RailCrrierCtry")
+
+	@RailCrrierCtry.deleter
+	def RailCrrierCtry(self):
+		del self._RailCrrierCtry
+		self._RailCrrierCtry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PlcOfDlvry', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RailCrrierCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RailCrrierNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfRct', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrrierAgtNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrrierAgtCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PlcOfRct', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfDlvry', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RailCrrierNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RailCrrierCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

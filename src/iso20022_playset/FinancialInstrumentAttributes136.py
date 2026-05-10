@@ -1,19 +1,58 @@
-import base_types
-import RateFormat24Choice
-import FinancialInstrumentQuantity36Choice
+from . import base_types
 import ISODate
 import MarketIdentification4Choice
+import ClassificationType33Choice
+import FinancialInstrumentQuantity36Choice
+import RateFormat24Choice
 import SecurityIdentification20
+import RateFormat12Choice
 import InterestComputationMethodFormat5Choice
 import OptionStyle9Choice
-import ClassificationType33Choice
 import ActiveOrHistoricCurrencyCode
-import RateFormat12Choice
 import QuantityToQuantityRatio2
 
 class FinancialInstrumentAttributes136(base_types._BaseFieldType):
 
-	__slots__ = ["_DayCntBsis", "_DtdDt", "_FinInstrmId", "_PlcOfListg", "_IntrstRate", "_NxtFctr", "_MtrtyDt", "_IsseDt", "_DnmtnCcy", "_NxtCpnDt", "_PctgOfDebtClm", "_OptnStyle", "_PutblDt", "_NxtIntrstRate", "_XpryDt", "_MinNmnlQty", "_PrvsFctr", "_NxtCllblDt", "_WarrtParity", "_ConvsDt", "_ClssfctnTp", "_FltgRateFxgDt", "_CtrctSz"]
+	__slots__ = ["_MinNmnlQty", "_MtrtyDt", "_DtdDt", "_DayCntBsis", "_CtrctSz", "_NxtCllblDt", "_ClssfctnTp", "_OptnStyle", "_XpryDt", "_PctgOfDebtClm", "_FinInstrmId", "_PlcOfListg", "_NxtIntrstRate", "_WarrtParity", "_ConvsDt", "_NxtCpnDt", "_IsseDt", "_NxtFctr", "_PutblDt", "_FltgRateFxgDt", "_PrvsFctr", "_IntrstRate", "_DnmtnCcy"]
+	@property
+	def MinNmnlQty(self):
+		return self._MinNmnlQty
+
+	@MinNmnlQty.setter
+	def MinNmnlQty(self, value):
+		self._MinNmnlQty = value if type(value) != auto else self.make_default("MinNmnlQty")
+
+	@MinNmnlQty.deleter
+	def MinNmnlQty(self):
+		del self._MinNmnlQty
+		self._MinNmnlQty = None
+
+	@property
+	def MtrtyDt(self):
+		return self._MtrtyDt
+
+	@MtrtyDt.setter
+	def MtrtyDt(self, value):
+		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+
+	@MtrtyDt.deleter
+	def MtrtyDt(self):
+		del self._MtrtyDt
+		self._MtrtyDt = None
+
+	@property
+	def DtdDt(self):
+		return self._DtdDt
+
+	@DtdDt.setter
+	def DtdDt(self, value):
+		self._DtdDt = value if type(value) != auto else self.make_default("DtdDt")
+
+	@DtdDt.deleter
+	def DtdDt(self):
+		del self._DtdDt
+		self._DtdDt = None
+
 	@property
 	def DayCntBsis(self):
 		return self._DayCntBsis
@@ -28,17 +67,82 @@ class FinancialInstrumentAttributes136(base_types._BaseFieldType):
 		self._DayCntBsis = None
 
 	@property
-	def DtdDt(self):
-		return self._DtdDt
+	def CtrctSz(self):
+		return self._CtrctSz
 
-	@DtdDt.setter
-	def DtdDt(self, value):
-		self._DtdDt = value if type(value) != auto else self.make_default("DtdDt")
+	@CtrctSz.setter
+	def CtrctSz(self, value):
+		self._CtrctSz = value if type(value) != auto else self.make_default("CtrctSz")
 
-	@DtdDt.deleter
-	def DtdDt(self):
-		del self._DtdDt
-		self._DtdDt = None
+	@CtrctSz.deleter
+	def CtrctSz(self):
+		del self._CtrctSz
+		self._CtrctSz = None
+
+	@property
+	def NxtCllblDt(self):
+		return self._NxtCllblDt
+
+	@NxtCllblDt.setter
+	def NxtCllblDt(self, value):
+		self._NxtCllblDt = value if type(value) != auto else self.make_default("NxtCllblDt")
+
+	@NxtCllblDt.deleter
+	def NxtCllblDt(self):
+		del self._NxtCllblDt
+		self._NxtCllblDt = None
+
+	@property
+	def ClssfctnTp(self):
+		return self._ClssfctnTp
+
+	@ClssfctnTp.setter
+	def ClssfctnTp(self, value):
+		self._ClssfctnTp = value if type(value) != auto else self.make_default("ClssfctnTp")
+
+	@ClssfctnTp.deleter
+	def ClssfctnTp(self):
+		del self._ClssfctnTp
+		self._ClssfctnTp = None
+
+	@property
+	def OptnStyle(self):
+		return self._OptnStyle
+
+	@OptnStyle.setter
+	def OptnStyle(self, value):
+		self._OptnStyle = value if type(value) != auto else self.make_default("OptnStyle")
+
+	@OptnStyle.deleter
+	def OptnStyle(self):
+		del self._OptnStyle
+		self._OptnStyle = None
+
+	@property
+	def XpryDt(self):
+		return self._XpryDt
+
+	@XpryDt.setter
+	def XpryDt(self, value):
+		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
+
+	@XpryDt.deleter
+	def XpryDt(self):
+		del self._XpryDt
+		self._XpryDt = None
+
+	@property
+	def PctgOfDebtClm(self):
+		return self._PctgOfDebtClm
+
+	@PctgOfDebtClm.setter
+	def PctgOfDebtClm(self, value):
+		self._PctgOfDebtClm = value if type(value) != auto else self.make_default("PctgOfDebtClm")
+
+	@PctgOfDebtClm.deleter
+	def PctgOfDebtClm(self):
+		del self._PctgOfDebtClm
+		self._PctgOfDebtClm = None
 
 	@property
 	def FinInstrmId(self):
@@ -67,123 +171,6 @@ class FinancialInstrumentAttributes136(base_types._BaseFieldType):
 		self._PlcOfListg = None
 
 	@property
-	def IntrstRate(self):
-		return self._IntrstRate
-
-	@IntrstRate.setter
-	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != auto else self.make_default("IntrstRate")
-
-	@IntrstRate.deleter
-	def IntrstRate(self):
-		del self._IntrstRate
-		self._IntrstRate = None
-
-	@property
-	def NxtFctr(self):
-		return self._NxtFctr
-
-	@NxtFctr.setter
-	def NxtFctr(self, value):
-		self._NxtFctr = value if type(value) != auto else self.make_default("NxtFctr")
-
-	@NxtFctr.deleter
-	def NxtFctr(self):
-		del self._NxtFctr
-		self._NxtFctr = None
-
-	@property
-	def MtrtyDt(self):
-		return self._MtrtyDt
-
-	@MtrtyDt.setter
-	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
-
-	@MtrtyDt.deleter
-	def MtrtyDt(self):
-		del self._MtrtyDt
-		self._MtrtyDt = None
-
-	@property
-	def IsseDt(self):
-		return self._IsseDt
-
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
-
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
-
-	@property
-	def DnmtnCcy(self):
-		return self._DnmtnCcy
-
-	@DnmtnCcy.setter
-	def DnmtnCcy(self, value):
-		self._DnmtnCcy = value if type(value) != auto else self.make_default("DnmtnCcy")
-
-	@DnmtnCcy.deleter
-	def DnmtnCcy(self):
-		del self._DnmtnCcy
-		self._DnmtnCcy = None
-
-	@property
-	def NxtCpnDt(self):
-		return self._NxtCpnDt
-
-	@NxtCpnDt.setter
-	def NxtCpnDt(self, value):
-		self._NxtCpnDt = value if type(value) != auto else self.make_default("NxtCpnDt")
-
-	@NxtCpnDt.deleter
-	def NxtCpnDt(self):
-		del self._NxtCpnDt
-		self._NxtCpnDt = None
-
-	@property
-	def PctgOfDebtClm(self):
-		return self._PctgOfDebtClm
-
-	@PctgOfDebtClm.setter
-	def PctgOfDebtClm(self, value):
-		self._PctgOfDebtClm = value if type(value) != auto else self.make_default("PctgOfDebtClm")
-
-	@PctgOfDebtClm.deleter
-	def PctgOfDebtClm(self):
-		del self._PctgOfDebtClm
-		self._PctgOfDebtClm = None
-
-	@property
-	def OptnStyle(self):
-		return self._OptnStyle
-
-	@OptnStyle.setter
-	def OptnStyle(self, value):
-		self._OptnStyle = value if type(value) != auto else self.make_default("OptnStyle")
-
-	@OptnStyle.deleter
-	def OptnStyle(self):
-		del self._OptnStyle
-		self._OptnStyle = None
-
-	@property
-	def PutblDt(self):
-		return self._PutblDt
-
-	@PutblDt.setter
-	def PutblDt(self, value):
-		self._PutblDt = value if type(value) != auto else self.make_default("PutblDt")
-
-	@PutblDt.deleter
-	def PutblDt(self):
-		del self._PutblDt
-		self._PutblDt = None
-
-	@property
 	def NxtIntrstRate(self):
 		return self._NxtIntrstRate
 
@@ -195,58 +182,6 @@ class FinancialInstrumentAttributes136(base_types._BaseFieldType):
 	def NxtIntrstRate(self):
 		del self._NxtIntrstRate
 		self._NxtIntrstRate = None
-
-	@property
-	def XpryDt(self):
-		return self._XpryDt
-
-	@XpryDt.setter
-	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
-
-	@XpryDt.deleter
-	def XpryDt(self):
-		del self._XpryDt
-		self._XpryDt = None
-
-	@property
-	def MinNmnlQty(self):
-		return self._MinNmnlQty
-
-	@MinNmnlQty.setter
-	def MinNmnlQty(self, value):
-		self._MinNmnlQty = value if type(value) != auto else self.make_default("MinNmnlQty")
-
-	@MinNmnlQty.deleter
-	def MinNmnlQty(self):
-		del self._MinNmnlQty
-		self._MinNmnlQty = None
-
-	@property
-	def PrvsFctr(self):
-		return self._PrvsFctr
-
-	@PrvsFctr.setter
-	def PrvsFctr(self, value):
-		self._PrvsFctr = value if type(value) != auto else self.make_default("PrvsFctr")
-
-	@PrvsFctr.deleter
-	def PrvsFctr(self):
-		del self._PrvsFctr
-		self._PrvsFctr = None
-
-	@property
-	def NxtCllblDt(self):
-		return self._NxtCllblDt
-
-	@NxtCllblDt.setter
-	def NxtCllblDt(self, value):
-		self._NxtCllblDt = value if type(value) != auto else self.make_default("NxtCllblDt")
-
-	@NxtCllblDt.deleter
-	def NxtCllblDt(self):
-		del self._NxtCllblDt
-		self._NxtCllblDt = None
 
 	@property
 	def WarrtParity(self):
@@ -275,17 +210,56 @@ class FinancialInstrumentAttributes136(base_types._BaseFieldType):
 		self._ConvsDt = None
 
 	@property
-	def ClssfctnTp(self):
-		return self._ClssfctnTp
+	def NxtCpnDt(self):
+		return self._NxtCpnDt
 
-	@ClssfctnTp.setter
-	def ClssfctnTp(self, value):
-		self._ClssfctnTp = value if type(value) != auto else self.make_default("ClssfctnTp")
+	@NxtCpnDt.setter
+	def NxtCpnDt(self, value):
+		self._NxtCpnDt = value if type(value) != auto else self.make_default("NxtCpnDt")
 
-	@ClssfctnTp.deleter
-	def ClssfctnTp(self):
-		del self._ClssfctnTp
-		self._ClssfctnTp = None
+	@NxtCpnDt.deleter
+	def NxtCpnDt(self):
+		del self._NxtCpnDt
+		self._NxtCpnDt = None
+
+	@property
+	def IsseDt(self):
+		return self._IsseDt
+
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
+
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
+
+	@property
+	def NxtFctr(self):
+		return self._NxtFctr
+
+	@NxtFctr.setter
+	def NxtFctr(self, value):
+		self._NxtFctr = value if type(value) != auto else self.make_default("NxtFctr")
+
+	@NxtFctr.deleter
+	def NxtFctr(self):
+		del self._NxtFctr
+		self._NxtFctr = None
+
+	@property
+	def PutblDt(self):
+		return self._PutblDt
+
+	@PutblDt.setter
+	def PutblDt(self, value):
+		self._PutblDt = value if type(value) != auto else self.make_default("PutblDt")
+
+	@PutblDt.deleter
+	def PutblDt(self):
+		del self._PutblDt
+		self._PutblDt = None
 
 	@property
 	def FltgRateFxgDt(self):
@@ -301,41 +275,67 @@ class FinancialInstrumentAttributes136(base_types._BaseFieldType):
 		self._FltgRateFxgDt = None
 
 	@property
-	def CtrctSz(self):
-		return self._CtrctSz
+	def PrvsFctr(self):
+		return self._PrvsFctr
 
-	@CtrctSz.setter
-	def CtrctSz(self, value):
-		self._CtrctSz = value if type(value) != auto else self.make_default("CtrctSz")
+	@PrvsFctr.setter
+	def PrvsFctr(self, value):
+		self._PrvsFctr = value if type(value) != auto else self.make_default("PrvsFctr")
 
-	@CtrctSz.deleter
-	def CtrctSz(self):
-		del self._CtrctSz
-		self._CtrctSz = None
+	@PrvsFctr.deleter
+	def PrvsFctr(self):
+		del self._PrvsFctr
+		self._PrvsFctr = None
+
+	@property
+	def IntrstRate(self):
+		return self._IntrstRate
+
+	@IntrstRate.setter
+	def IntrstRate(self, value):
+		self._IntrstRate = value if type(value) != auto else self.make_default("IntrstRate")
+
+	@IntrstRate.deleter
+	def IntrstRate(self):
+		del self._IntrstRate
+		self._IntrstRate = None
+
+	@property
+	def DnmtnCcy(self):
+		return self._DnmtnCcy
+
+	@DnmtnCcy.setter
+	def DnmtnCcy(self, value):
+		self._DnmtnCcy = value if type(value) != auto else self.make_default("DnmtnCcy")
+
+	@DnmtnCcy.deleter
+	def DnmtnCcy(self):
+		del self._DnmtnCcy
+		self._DnmtnCcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DayCntBsis', type=InterestComputationMethodFormat5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinNmnlQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DayCntBsis', type=InterestComputationMethodFormat5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctSz', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NxtCllblDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType33Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnStyle', type=OptionStyle9Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PctgOfDebtClm', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlcOfListg', type=MarketIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstRate', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NxtFctr', type=RateFormat12Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DnmtnCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NxtCpnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PctgOfDebtClm', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnStyle', type=OptionStyle9Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PutblDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NxtIntrstRate', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinNmnlQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsFctr', type=RateFormat12Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NxtCllblDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WarrtParity', type=QuantityToQuantityRatio2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConvsDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType33Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NxtCpnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NxtFctr', type=RateFormat12Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PutblDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FltgRateFxgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctSz', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsFctr', type=RateFormat12Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstRate', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DnmtnCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,23 @@
-import base_types
-import Max35Text
-import IBAN2007Identifier
+from . import base_types
 import GenericAccountIdentification1
+import IBAN2007Identifier
+import Max35Text
 
 class AccountIdentificationAndName6(base_types._BaseFieldType):
 
-	__slots__ = ["_IBAN", "_Othr", "_Nm"]
+	__slots__ = ["_Nm", "_Othr", "_IBAN"]
 	@property
-	def IBAN(self):
-		return self._IBAN
+	def Nm(self):
+		return self._Nm
 
-	@IBAN.setter
-	def IBAN(self, value):
-		self._IBAN = value if type(value) != auto else self.make_default("IBAN")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@IBAN.deleter
-	def IBAN(self):
-		del self._IBAN
-		self._IBAN = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def Othr(self):
@@ -33,21 +33,21 @@ class AccountIdentificationAndName6(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def Nm(self):
-		return self._Nm
+	def IBAN(self):
+		return self._IBAN
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@IBAN.setter
+	def IBAN(self, value):
+		self._IBAN = value if type(value) != auto else self.make_default("IBAN")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@IBAN.deleter
+	def IBAN(self):
+		del self._IBAN
+		self._IBAN = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Othr', type=GenericAccountIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=GenericAccountIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

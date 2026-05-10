@@ -1,6 +1,6 @@
-import base_types
-import DateType3Code
+from . import base_types
 import GenericIdentification30
+import DateType3Code
 
 class TradeDateCode3Choice(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TripartyCollateralStatusAdviceV01
 
 class COLR_023_001_01():

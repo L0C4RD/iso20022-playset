@@ -1,25 +1,12 @@
-import base_types
-import OriginalMandate11Choice
+from . import base_types
+import AcceptanceResult6
 import OriginalMessageInformation1
 import SupplementaryData1
-import AcceptanceResult6
+import OriginalMandate11Choice
 
 class MandateAcceptance8(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgInf", "_SplmtryData", "_OrgnlMndt", "_AccptncRslt"]
-	@property
-	def OrgnlMsgInf(self):
-		return self._OrgnlMsgInf
-
-	@OrgnlMsgInf.setter
-	def OrgnlMsgInf(self, value):
-		self._OrgnlMsgInf = value if type(value) != auto else self.make_default("OrgnlMsgInf")
-
-	@OrgnlMsgInf.deleter
-	def OrgnlMsgInf(self):
-		del self._OrgnlMsgInf
-		self._OrgnlMsgInf = None
-
+	__slots__ = ["_SplmtryData", "_OrgnlMsgInf", "_OrgnlMndt", "_AccptncRslt"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -32,6 +19,19 @@ class MandateAcceptance8(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def OrgnlMsgInf(self):
+		return self._OrgnlMsgInf
+
+	@OrgnlMsgInf.setter
+	def OrgnlMsgInf(self, value):
+		self._OrgnlMsgInf = value if type(value) != auto else self.make_default("OrgnlMsgInf")
+
+	@OrgnlMsgInf.deleter
+	def OrgnlMsgInf(self):
+		del self._OrgnlMsgInf
+		self._OrgnlMsgInf = None
 
 	@property
 	def OrgnlMndt(self):
@@ -60,8 +60,8 @@ class MandateAcceptance8(base_types._BaseFieldType):
 		self._AccptncRslt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlMsgInf', type=OriginalMessageInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlMsgInf', type=OriginalMessageInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMndt', type=OriginalMandate11Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptncRslt', type=AcceptanceResult6, min=1, max=1, mutex_group=None, array=False),
 	))

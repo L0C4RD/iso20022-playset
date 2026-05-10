@@ -1,24 +1,11 @@
-import base_types
-import BlockChainAddressWallet3
-import IBAN2007Identifier
+from . import base_types
 import Max34Text
+import IBAN2007Identifier
+import BlockChainAddressWallet3
 
 class CashAccountIdentification9Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_IBAN", "_BlckChainCshWllt"]
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
+	__slots__ = ["_IBAN", "_BlckChainCshWllt", "_Prtry"]
 	@property
 	def IBAN(self):
 		return self._IBAN
@@ -45,9 +32,22 @@ class CashAccountIdentification9Choice(base_types._BaseFieldType):
 		del self._BlckChainCshWllt
 		self._BlckChainCshWllt = None
 
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtry', type=Max34Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BlckChainCshWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=Max34Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,6 +1,6 @@
-import base_types
-import InvoiceRequestInformation1
+from . import base_types
 import RequestGroupInformation1
+import InvoiceRequestInformation1
 
 class InvoiceFinancingRequestV01(base_types._BaseFieldType):
 

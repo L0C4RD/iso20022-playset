@@ -1,25 +1,12 @@
-import base_types
-import CashMovement2
+from . import base_types
 import ProceedsMovement1
+import CashMovement2
 import CorporateActionMovement1
 import UnderlyingSecurityMovement1
 
 class MovementInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_MvmntGnlInf", "_UndrlygCshMvmntDtls", "_PrcdsMvmntDtls", "_UndrlygSctiesMvmntDtls"]
-	@property
-	def MvmntGnlInf(self):
-		return self._MvmntGnlInf
-
-	@MvmntGnlInf.setter
-	def MvmntGnlInf(self, value):
-		self._MvmntGnlInf = value if type(value) != auto else self.make_default("MvmntGnlInf")
-
-	@MvmntGnlInf.deleter
-	def MvmntGnlInf(self):
-		del self._MvmntGnlInf
-		self._MvmntGnlInf = None
-
+	__slots__ = ["_UndrlygCshMvmntDtls", "_PrcdsMvmntDtls", "_UndrlygSctiesMvmntDtls", "_MvmntGnlInf"]
 	@property
 	def UndrlygCshMvmntDtls(self):
 		return self._UndrlygCshMvmntDtls
@@ -59,10 +46,23 @@ class MovementInstruction1(base_types._BaseFieldType):
 		del self._UndrlygSctiesMvmntDtls
 		self._UndrlygSctiesMvmntDtls = None
 
+	@property
+	def MvmntGnlInf(self):
+		return self._MvmntGnlInf
+
+	@MvmntGnlInf.setter
+	def MvmntGnlInf(self, value):
+		self._MvmntGnlInf = value if type(value) != auto else self.make_default("MvmntGnlInf")
+
+	@MvmntGnlInf.deleter
+	def MvmntGnlInf(self):
+		del self._MvmntGnlInf
+		self._MvmntGnlInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MvmntGnlInf', type=CorporateActionMovement1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygCshMvmntDtls', type=CashMovement2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrcdsMvmntDtls', type=ProceedsMovement1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UndrlygSctiesMvmntDtls', type=UnderlyingSecurityMovement1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MvmntGnlInf', type=CorporateActionMovement1, min=1, max=1, mutex_group=None, array=False),
 	))
 

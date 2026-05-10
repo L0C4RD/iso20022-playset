@@ -1,11 +1,11 @@
-import base_types
-import Max35Text
+from . import base_types
 import POIComponentAssessment1Code
+import Max35Text
 import ISODateTime
 
 class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 
-	__slots__ = ["_Nb", "_Tp", "_XprtnDt", "_DlvryDt", "_Assgnr"]
+	__slots__ = ["_Nb", "_XprtnDt", "_DlvryDt", "_Tp", "_Assgnr"]
 	@property
 	def Nb(self):
 		return self._Nb
@@ -18,19 +18,6 @@ class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 	def Nb(self):
 		del self._Nb
 		self._Nb = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
 
 	@property
 	def XprtnDt(self):
@@ -59,6 +46,19 @@ class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 		self._DlvryDt = None
 
 	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
 	def Assgnr(self):
 		return self._Assgnr
 
@@ -73,9 +73,9 @@ class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=POIComponentAssessment1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XprtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=POIComponentAssessment1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
 	))
 

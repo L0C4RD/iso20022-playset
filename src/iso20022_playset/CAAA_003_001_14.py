@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AcceptorCompletionAdviceV14
 
 class CAAA_003_001_14():

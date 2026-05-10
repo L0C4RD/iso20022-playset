@@ -1,22 +1,22 @@
-import base_types
+from . import base_types
 import SettlementDataVolume2
 import SettlementDataRate2
 
 class SettlementTotalData1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ttl", "_FaildRate", "_Faild", "_Sttld"]
+	__slots__ = ["_Sttld", "_FaildRate", "_Ttl", "_Faild"]
 	@property
-	def Ttl(self):
-		return self._Ttl
+	def Sttld(self):
+		return self._Sttld
 
-	@Ttl.setter
-	def Ttl(self, value):
-		self._Ttl = value if type(value) != auto else self.make_default("Ttl")
+	@Sttld.setter
+	def Sttld(self, value):
+		self._Sttld = value if type(value) != auto else self.make_default("Sttld")
 
-	@Ttl.deleter
-	def Ttl(self):
-		del self._Ttl
-		self._Ttl = None
+	@Sttld.deleter
+	def Sttld(self):
+		del self._Sttld
+		self._Sttld = None
 
 	@property
 	def FaildRate(self):
@@ -32,6 +32,19 @@ class SettlementTotalData1(base_types._BaseFieldType):
 		self._FaildRate = None
 
 	@property
+	def Ttl(self):
+		return self._Ttl
+
+	@Ttl.setter
+	def Ttl(self, value):
+		self._Ttl = value if type(value) != auto else self.make_default("Ttl")
+
+	@Ttl.deleter
+	def Ttl(self):
+		del self._Ttl
+		self._Ttl = None
+
+	@property
 	def Faild(self):
 		return self._Faild
 
@@ -44,23 +57,10 @@ class SettlementTotalData1(base_types._BaseFieldType):
 		del self._Faild
 		self._Faild = None
 
-	@property
-	def Sttld(self):
-		return self._Sttld
-
-	@Sttld.setter
-	def Sttld(self, value):
-		self._Sttld = value if type(value) != auto else self.make_default("Sttld")
-
-	@Sttld.deleter
-	def Sttld(self):
-		del self._Sttld
-		self._Sttld = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ttl', type=SettlementDataVolume2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FaildRate', type=SettlementDataRate2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Faild', type=SettlementDataVolume2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sttld', type=SettlementDataVolume2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FaildRate', type=SettlementDataRate2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ttl', type=SettlementDataVolume2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Faild', type=SettlementDataVolume2, min=1, max=1, mutex_group=None, array=False),
 	))
 

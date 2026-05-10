@@ -1,24 +1,24 @@
-import base_types
-import BaseOneRate
-import PercentageRate
-import AmountAndDirection106
+from . import base_types
 import Number
+import PercentageRate
+import BaseOneRate
+import AmountAndDirection106
 
 class SecuritiesTransactionPrice20Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_BsisPtSprd", "_MntryVal", "_Pctg", "_Dcml"]
+	__slots__ = ["_Dcml", "_MntryVal", "_BsisPtSprd", "_Pctg"]
 	@property
-	def BsisPtSprd(self):
-		return self._BsisPtSprd
+	def Dcml(self):
+		return self._Dcml
 
-	@BsisPtSprd.setter
-	def BsisPtSprd(self, value):
-		self._BsisPtSprd = value if type(value) != auto else self.make_default("BsisPtSprd")
+	@Dcml.setter
+	def Dcml(self, value):
+		self._Dcml = value if type(value) != auto else self.make_default("Dcml")
 
-	@BsisPtSprd.deleter
-	def BsisPtSprd(self):
-		del self._BsisPtSprd
-		self._BsisPtSprd = None
+	@Dcml.deleter
+	def Dcml(self):
+		del self._Dcml
+		self._Dcml = None
 
 	@property
 	def MntryVal(self):
@@ -34,6 +34,19 @@ class SecuritiesTransactionPrice20Choice(base_types._BaseFieldType):
 		self._MntryVal = None
 
 	@property
+	def BsisPtSprd(self):
+		return self._BsisPtSprd
+
+	@BsisPtSprd.setter
+	def BsisPtSprd(self, value):
+		self._BsisPtSprd = value if type(value) != auto else self.make_default("BsisPtSprd")
+
+	@BsisPtSprd.deleter
+	def BsisPtSprd(self):
+		del self._BsisPtSprd
+		self._BsisPtSprd = None
+
+	@property
 	def Pctg(self):
 		return self._Pctg
 
@@ -46,23 +59,10 @@ class SecuritiesTransactionPrice20Choice(base_types._BaseFieldType):
 		del self._Pctg
 		self._Pctg = None
 
-	@property
-	def Dcml(self):
-		return self._Dcml
-
-	@Dcml.setter
-	def Dcml(self, value):
-		self._Dcml = value if type(value) != auto else self.make_default("Dcml")
-
-	@Dcml.deleter
-	def Dcml(self):
-		del self._Dcml
-		self._Dcml = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BsisPtSprd', type=Number, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MntryVal', type=AmountAndDirection106, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dcml', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MntryVal', type=AmountAndDirection106, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BsisPtSprd', type=Number, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 	))
 

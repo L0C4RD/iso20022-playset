@@ -1,16 +1,29 @@
-import base_types
+from . import base_types
+import Max140Text
 import PartyAndSignature3
 import DateAndDateTime2Choice
-import Max140Text
-import Max35Text
-import Max10MbBinary
-import LanguageCode
 import DocumentFormat1Choice
+import Max35Text
+import LanguageCode
+import Max10MbBinary
 import DocumentType1Choice
 
 class Document12(base_types._BaseFieldType):
 
-	__slots__ = ["_Frmt", "_Nm", "_Tp", "_Id", "_LangCd", "_Nclsr", "_FileNm", "_DgtlSgntr", "_IsseDt"]
+	__slots__ = ["_LangCd", "_Frmt", "_Tp", "_FileNm", "_Id", "_DgtlSgntr", "_Nm", "_IsseDt", "_Nclsr"]
+	@property
+	def LangCd(self):
+		return self._LangCd
+
+	@LangCd.setter
+	def LangCd(self, value):
+		self._LangCd = value if type(value) != auto else self.make_default("LangCd")
+
+	@LangCd.deleter
+	def LangCd(self):
+		del self._LangCd
+		self._LangCd = None
+
 	@property
 	def Frmt(self):
 		return self._Frmt
@@ -23,19 +36,6 @@ class Document12(base_types._BaseFieldType):
 	def Frmt(self):
 		del self._Frmt
 		self._Frmt = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
 
 	@property
 	def Tp(self):
@@ -51,45 +51,6 @@ class Document12(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def LangCd(self):
-		return self._LangCd
-
-	@LangCd.setter
-	def LangCd(self, value):
-		self._LangCd = value if type(value) != auto else self.make_default("LangCd")
-
-	@LangCd.deleter
-	def LangCd(self):
-		del self._LangCd
-		self._LangCd = None
-
-	@property
-	def Nclsr(self):
-		return self._Nclsr
-
-	@Nclsr.setter
-	def Nclsr(self, value):
-		self._Nclsr = value if type(value) != auto else self.make_default("Nclsr")
-
-	@Nclsr.deleter
-	def Nclsr(self):
-		del self._Nclsr
-		self._Nclsr = None
-
-	@property
 	def FileNm(self):
 		return self._FileNm
 
@@ -101,6 +62,19 @@ class Document12(base_types._BaseFieldType):
 	def FileNm(self):
 		del self._FileNm
 		self._FileNm = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def DgtlSgntr(self):
@@ -116,6 +90,19 @@ class Document12(base_types._BaseFieldType):
 		self._DgtlSgntr = None
 
 	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
 	def IsseDt(self):
 		return self._IsseDt
 
@@ -128,15 +115,28 @@ class Document12(base_types._BaseFieldType):
 		del self._IsseDt
 		self._IsseDt = None
 
+	@property
+	def Nclsr(self):
+		return self._Nclsr
+
+	@Nclsr.setter
+	def Nclsr(self, value):
+		self._Nclsr = value if type(value) != auto else self.make_default("Nclsr")
+
+	@Nclsr.deleter
+	def Nclsr(self):
+		del self._Nclsr
+		self._Nclsr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Frmt', type=DocumentFormat1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=DocumentType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LangCd', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nclsr', type=Max10MbBinary, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frmt', type=DocumentFormat1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=DocumentType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FileNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IsseDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nclsr', type=Max10MbBinary, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RequestToPayCreditorEnrolmentStatusReportV02
 
 class REDA_069_001_02():

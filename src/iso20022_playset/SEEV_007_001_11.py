@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import MeetingVoteExecutionConfirmationV11
 
 class SEEV_007_001_11():

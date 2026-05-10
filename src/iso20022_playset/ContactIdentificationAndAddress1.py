@@ -1,24 +1,11 @@
-import base_types
-import Max35Text
-import PaymentRole1Code
+from . import base_types
 import CommunicationAddress8
+import PaymentRole1Code
+import Max35Text
 
 class ContactIdentificationAndAddress1(base_types._BaseFieldType):
 
-	__slots__ = ["_ComAdr", "_Role", "_Nm"]
-	@property
-	def ComAdr(self):
-		return self._ComAdr
-
-	@ComAdr.setter
-	def ComAdr(self, value):
-		self._ComAdr = value if type(value) != auto else self.make_default("ComAdr")
-
-	@ComAdr.deleter
-	def ComAdr(self):
-		del self._ComAdr
-		self._ComAdr = None
-
+	__slots__ = ["_Role", "_Nm", "_ComAdr"]
 	@property
 	def Role(self):
 		return self._Role
@@ -45,9 +32,22 @@ class ContactIdentificationAndAddress1(base_types._BaseFieldType):
 		del self._Nm
 		self._Nm = None
 
+	@property
+	def ComAdr(self):
+		return self._ComAdr
+
+	@ComAdr.setter
+	def ComAdr(self, value):
+		self._ComAdr = value if type(value) != auto else self.make_default("ComAdr")
+
+	@ComAdr.deleter
+	def ComAdr(self):
+		del self._ComAdr
+		self._ComAdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ComAdr', type=CommunicationAddress8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Role', type=PaymentRole1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ComAdr', type=CommunicationAddress8, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,12 @@
-import base_types
-import TransactionMatchingCriteria7
-import ContractMatchingCriteria3
+from . import base_types
 import CounterpartyMatchingCriteria6
+import TransactionMatchingCriteria7
 import ValuationMatchingCriteria1
+import ContractMatchingCriteria3
 
 class MatchingCriteria17(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctMtchgCrit", "_TxMtchgCrit", "_CtrPtyMtchgCrit", "_ValtnMtchgCrit"]
+	__slots__ = ["_CtrctMtchgCrit", "_CtrPtyMtchgCrit", "_ValtnMtchgCrit", "_TxMtchgCrit"]
 	@property
 	def CtrctMtchgCrit(self):
 		return self._CtrctMtchgCrit
@@ -19,19 +19,6 @@ class MatchingCriteria17(base_types._BaseFieldType):
 	def CtrctMtchgCrit(self):
 		del self._CtrctMtchgCrit
 		self._CtrctMtchgCrit = None
-
-	@property
-	def TxMtchgCrit(self):
-		return self._TxMtchgCrit
-
-	@TxMtchgCrit.setter
-	def TxMtchgCrit(self, value):
-		self._TxMtchgCrit = value if type(value) != auto else self.make_default("TxMtchgCrit")
-
-	@TxMtchgCrit.deleter
-	def TxMtchgCrit(self):
-		del self._TxMtchgCrit
-		self._TxMtchgCrit = None
 
 	@property
 	def CtrPtyMtchgCrit(self):
@@ -59,10 +46,23 @@ class MatchingCriteria17(base_types._BaseFieldType):
 		del self._ValtnMtchgCrit
 		self._ValtnMtchgCrit = None
 
+	@property
+	def TxMtchgCrit(self):
+		return self._TxMtchgCrit
+
+	@TxMtchgCrit.setter
+	def TxMtchgCrit(self, value):
+		self._TxMtchgCrit = value if type(value) != auto else self.make_default("TxMtchgCrit")
+
+	@TxMtchgCrit.deleter
+	def TxMtchgCrit(self):
+		del self._TxMtchgCrit
+		self._TxMtchgCrit = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrctMtchgCrit', type=ContractMatchingCriteria3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxMtchgCrit', type=TransactionMatchingCriteria7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyMtchgCrit', type=CounterpartyMatchingCriteria6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnMtchgCrit', type=ValuationMatchingCriteria1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxMtchgCrit', type=TransactionMatchingCriteria7, min=0, max=1, mutex_group=None, array=False),
 	))
 

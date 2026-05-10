@@ -1,7 +1,7 @@
-import base_types
-import ISODateTime
+from . import base_types
 import SettlementParties35Choice
 import CollateralOwnership4
+import ISODateTime
 
 class SettlementDetails205(base_types._BaseFieldType):
 

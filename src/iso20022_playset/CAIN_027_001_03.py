@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ChargeBackInitiationV03
 
 class CAIN_027_001_03():

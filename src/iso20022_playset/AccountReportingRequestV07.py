@@ -1,7 +1,7 @@
-import base_types
+from . import base_types
 import GroupHeader117
-import SupplementaryData1
 import ReportingRequest7
+import SupplementaryData1
 
 class AccountReportingRequestV07(base_types._BaseFieldType):
 

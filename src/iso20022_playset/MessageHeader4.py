@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
+import RequestType3Choice
 import Max35Text
 import ISODateTime
-import RequestType3Choice
 
 class MessageHeader4(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqTp", "_MsgId", "_CreDtTm"]
-	@property
-	def ReqTp(self):
-		return self._ReqTp
-
-	@ReqTp.setter
-	def ReqTp(self, value):
-		self._ReqTp = value if type(value) != auto else self.make_default("ReqTp")
-
-	@ReqTp.deleter
-	def ReqTp(self):
-		del self._ReqTp
-		self._ReqTp = None
-
+	__slots__ = ["_MsgId", "_ReqTp", "_CreDtTm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -31,6 +18,19 @@ class MessageHeader4(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
+
+	@property
+	def ReqTp(self):
+		return self._ReqTp
+
+	@ReqTp.setter
+	def ReqTp(self, value):
+		self._ReqTp = value if type(value) != auto else self.make_default("ReqTp")
+
+	@ReqTp.deleter
+	def ReqTp(self):
+		del self._ReqTp
+		self._ReqTp = None
 
 	@property
 	def CreDtTm(self):
@@ -46,8 +46,8 @@ class MessageHeader4(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqTp', type=RequestType3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqTp', type=RequestType3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

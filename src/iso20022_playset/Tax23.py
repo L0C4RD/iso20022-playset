@@ -1,6 +1,6 @@
-import base_types
-import AmountOrPercentage2Choice
+from . import base_types
 import TaxType2Choice
+import AmountOrPercentage2Choice
 
 class Tax23(base_types._BaseFieldType):
 

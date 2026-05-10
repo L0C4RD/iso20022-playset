@@ -1,13 +1,13 @@
-import base_types
-import Pagination1
-import SupplementaryData1
+from . import base_types
 import PartyIdentificationAndAccount220
 import ConfirmationParties7
 import Report6
+import SupplementaryData1
+import Pagination1
 
 class SecuritiesEndOfProcessReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Invstr", "_Pgntn", "_ConfPties", "_SplmtryData", "_RptGnlDtls"]
+	__slots__ = ["_Invstr", "_RptGnlDtls", "_ConfPties", "_SplmtryData", "_Pgntn"]
 	@property
 	def Invstr(self):
 		return self._Invstr
@@ -22,17 +22,17 @@ class SecuritiesEndOfProcessReportV02(base_types._BaseFieldType):
 		self._Invstr = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def RptGnlDtls(self):
+		return self._RptGnlDtls
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+	@RptGnlDtls.setter
+	def RptGnlDtls(self, value):
+		self._RptGnlDtls = value if type(value) != auto else self.make_default("RptGnlDtls")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@RptGnlDtls.deleter
+	def RptGnlDtls(self):
+		del self._RptGnlDtls
+		self._RptGnlDtls = None
 
 	@property
 	def ConfPties(self):
@@ -61,23 +61,23 @@ class SecuritiesEndOfProcessReportV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def RptGnlDtls(self):
-		return self._RptGnlDtls
+	def Pgntn(self):
+		return self._Pgntn
 
-	@RptGnlDtls.setter
-	def RptGnlDtls(self, value):
-		self._RptGnlDtls = value if type(value) != auto else self.make_default("RptGnlDtls")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
 
-	@RptGnlDtls.deleter
-	def RptGnlDtls(self):
-		del self._RptGnlDtls
-		self._RptGnlDtls = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Invstr', type=PartyIdentificationAndAccount220, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptGnlDtls', type=Report6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfPties', type=ConfirmationParties7, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptGnlDtls', type=Report6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=None, mutex_group=None, array=True),
 	))
 

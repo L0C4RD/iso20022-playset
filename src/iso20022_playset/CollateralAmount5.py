@@ -1,22 +1,9 @@
-import base_types
+from . import base_types
 import AmountAndDirection44
 
 class CollateralAmount5(base_types._BaseFieldType):
 
-	__slots__ = ["_RmngCollsd", "_ReqrdMrgn", "_Collsd", "_Sttld", "_RmngSttlm"]
-	@property
-	def RmngCollsd(self):
-		return self._RmngCollsd
-
-	@RmngCollsd.setter
-	def RmngCollsd(self, value):
-		self._RmngCollsd = value if type(value) != auto else self.make_default("RmngCollsd")
-
-	@RmngCollsd.deleter
-	def RmngCollsd(self):
-		del self._RmngCollsd
-		self._RmngCollsd = None
-
+	__slots__ = ["_ReqrdMrgn", "_Collsd", "_Sttld", "_RmngSttlm", "_RmngCollsd"]
 	@property
 	def ReqrdMrgn(self):
 		return self._ReqrdMrgn
@@ -69,11 +56,24 @@ class CollateralAmount5(base_types._BaseFieldType):
 		del self._RmngSttlm
 		self._RmngSttlm = None
 
+	@property
+	def RmngCollsd(self):
+		return self._RmngCollsd
+
+	@RmngCollsd.setter
+	def RmngCollsd(self, value):
+		self._RmngCollsd = value if type(value) != auto else self.make_default("RmngCollsd")
+
+	@RmngCollsd.deleter
+	def RmngCollsd(self):
+		del self._RmngCollsd
+		self._RmngCollsd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RmngCollsd', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqrdMrgn', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Collsd', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sttld', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmngSttlm', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmngCollsd', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
 	))
 

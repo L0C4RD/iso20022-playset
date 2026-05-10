@@ -1,7 +1,7 @@
-import base_types
-import Max35Text
+from . import base_types
 import Max350Text
 import NamePrefix1Choice
+import Max35Text
 import PostalAddress21
 
 class IndividualPerson29(base_types._BaseFieldType):

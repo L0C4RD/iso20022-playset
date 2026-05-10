@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RestrictedFINXMax16Text
 import RestrictionReference1Code
 

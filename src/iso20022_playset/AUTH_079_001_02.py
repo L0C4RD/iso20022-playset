@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesFinancingReportingTransactionStateReportV02
 
 class AUTH_079_001_02():

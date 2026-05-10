@@ -1,38 +1,12 @@
-import base_types
+from . import base_types
 import GenericIdentification176
-import Max140Binary
 import MaintenanceDelegation19
+import Max140Binary
 import ISODateTime
 
 class MaintenanceDelegationRequest11(base_types._BaseFieldType):
 
-	__slots__ = ["_MstrTMId", "_TMId", "_TMChllngVal", "_TMDtTm", "_ReqdDlgtn"]
-	@property
-	def MstrTMId(self):
-		return self._MstrTMId
-
-	@MstrTMId.setter
-	def MstrTMId(self, value):
-		self._MstrTMId = value if type(value) != auto else self.make_default("MstrTMId")
-
-	@MstrTMId.deleter
-	def MstrTMId(self):
-		del self._MstrTMId
-		self._MstrTMId = None
-
-	@property
-	def TMId(self):
-		return self._TMId
-
-	@TMId.setter
-	def TMId(self, value):
-		self._TMId = value if type(value) != auto else self.make_default("TMId")
-
-	@TMId.deleter
-	def TMId(self):
-		del self._TMId
-		self._TMId = None
-
+	__slots__ = ["_TMChllngVal", "_TMDtTm", "_ReqdDlgtn", "_MstrTMId", "_TMId"]
 	@property
 	def TMChllngVal(self):
 		return self._TMChllngVal
@@ -72,11 +46,37 @@ class MaintenanceDelegationRequest11(base_types._BaseFieldType):
 		del self._ReqdDlgtn
 		self._ReqdDlgtn = None
 
+	@property
+	def MstrTMId(self):
+		return self._MstrTMId
+
+	@MstrTMId.setter
+	def MstrTMId(self, value):
+		self._MstrTMId = value if type(value) != auto else self.make_default("MstrTMId")
+
+	@MstrTMId.deleter
+	def MstrTMId(self):
+		del self._MstrTMId
+		self._MstrTMId = None
+
+	@property
+	def TMId(self):
+		return self._TMId
+
+	@TMId.setter
+	def TMId(self, value):
+		self._TMId = value if type(value) != auto else self.make_default("TMId")
+
+	@TMId.deleter
+	def TMId(self):
+		del self._TMId
+		self._TMId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MstrTMId', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TMId', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMChllngVal', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdDlgtn', type=MaintenanceDelegation19, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MstrTMId', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TMId', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
 	))
 

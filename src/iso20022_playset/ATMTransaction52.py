@@ -1,28 +1,15 @@
-import base_types
-import Max35Text
-import TransactionIdentifier3
+from . import base_types
 import ATMCommand7
-import ATMCassette3
+import TransactionIdentifier3
 import ResponseType12
 import ATMTotals4
 import ATMOperation2Code
+import Max35Text
+import ATMCassette3
 
 class ATMTransaction52(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMTtls", "_TpOfOpr", "_Csstt", "_TxId", "_Cmd", "_TxRspn", "_RcncltnId"]
-	@property
-	def ATMTtls(self):
-		return self._ATMTtls
-
-	@ATMTtls.setter
-	def ATMTtls(self, value):
-		self._ATMTtls = value if type(value) != auto else self.make_default("ATMTtls")
-
-	@ATMTtls.deleter
-	def ATMTtls(self):
-		del self._ATMTtls
-		self._ATMTtls = None
-
+	__slots__ = ["_TpOfOpr", "_TxId", "_Csstt", "_ATMTtls", "_RcncltnId", "_Cmd", "_TxRspn"]
 	@property
 	def TpOfOpr(self):
 		return self._TpOfOpr
@@ -35,6 +22,19 @@ class ATMTransaction52(base_types._BaseFieldType):
 	def TpOfOpr(self):
 		del self._TpOfOpr
 		self._TpOfOpr = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def Csstt(self):
@@ -50,17 +50,30 @@ class ATMTransaction52(base_types._BaseFieldType):
 		self._Csstt = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def ATMTtls(self):
+		return self._ATMTtls
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@ATMTtls.setter
+	def ATMTtls(self, value):
+		self._ATMTtls = value if type(value) != auto else self.make_default("ATMTtls")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@ATMTtls.deleter
+	def ATMTtls(self):
+		del self._ATMTtls
+		self._ATMTtls = None
+
+	@property
+	def RcncltnId(self):
+		return self._RcncltnId
+
+	@RcncltnId.setter
+	def RcncltnId(self, value):
+		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
+
+	@RcncltnId.deleter
+	def RcncltnId(self):
+		del self._RcncltnId
+		self._RcncltnId = None
 
 	@property
 	def Cmd(self):
@@ -88,26 +101,13 @@ class ATMTransaction52(base_types._BaseFieldType):
 		del self._TxRspn
 		self._TxRspn = None
 
-	@property
-	def RcncltnId(self):
-		return self._RcncltnId
-
-	@RcncltnId.setter
-	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
-
-	@RcncltnId.deleter
-	def RcncltnId(self):
-		del self._RcncltnId
-		self._RcncltnId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ATMTtls', type=ATMTotals4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TpOfOpr', type=ATMOperation2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Csstt', type=ATMCassette3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Csstt', type=ATMCassette3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ATMTtls', type=ATMTotals4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cmd', type=ATMCommand7, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxRspn', type=ResponseType12, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

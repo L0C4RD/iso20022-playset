@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesSettlementTransactionStatusAdvice002V12
 
 class SESE_024_002_12():

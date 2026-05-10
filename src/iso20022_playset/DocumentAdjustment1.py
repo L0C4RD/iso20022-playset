@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
+import Max4Text
 import Max140Text
 import CreditDebitCode
 import ActiveOrHistoricCurrencyAndAmount
-import Max4Text
 
 class DocumentAdjustment1(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_AddtlInf", "_Rsn", "_Amt"]
+	__slots__ = ["_CdtDbtInd", "_Rsn", "_Amt", "_AddtlInf"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
@@ -19,19 +19,6 @@ class DocumentAdjustment1(base_types._BaseFieldType):
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
 		self._CdtDbtInd = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
 
 	@property
 	def Rsn(self):
@@ -59,10 +46,23 @@ class DocumentAdjustment1(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

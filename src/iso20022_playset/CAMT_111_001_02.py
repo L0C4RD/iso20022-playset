@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import InvestigationResponseV02
 
 class CAMT_111_001_02():

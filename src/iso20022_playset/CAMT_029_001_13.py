@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ResolutionOfInvestigationV13
 
 class CAMT_029_001_13():

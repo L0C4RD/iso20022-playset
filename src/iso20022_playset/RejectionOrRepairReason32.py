@@ -1,6 +1,6 @@
-import base_types
-import RejectionAndRepairReason32Choice
+from . import base_types
 import Max210Text
+import RejectionAndRepairReason32Choice
 
 class RejectionOrRepairReason32(base_types._BaseFieldType):
 

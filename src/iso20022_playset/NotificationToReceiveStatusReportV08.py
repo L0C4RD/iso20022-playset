@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
+import OriginalNotification15
 import SupplementaryData1
 import GroupHeader121
-import OriginalNotification15
 
 class NotificationToReceiveStatusReportV08(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlNtfctnAndSts", "_GrpHdr", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_GrpHdr", "_OrgnlNtfctnAndSts"]
 	@property
-	def OrgnlNtfctnAndSts(self):
-		return self._OrgnlNtfctnAndSts
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@OrgnlNtfctnAndSts.setter
-	def OrgnlNtfctnAndSts(self, value):
-		self._OrgnlNtfctnAndSts = value if type(value) != auto else self.make_default("OrgnlNtfctnAndSts")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@OrgnlNtfctnAndSts.deleter
-	def OrgnlNtfctnAndSts(self):
-		del self._OrgnlNtfctnAndSts
-		self._OrgnlNtfctnAndSts = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def GrpHdr(self):
@@ -33,21 +33,21 @@ class NotificationToReceiveStatusReportV08(base_types._BaseFieldType):
 		self._GrpHdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def OrgnlNtfctnAndSts(self):
+		return self._OrgnlNtfctnAndSts
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@OrgnlNtfctnAndSts.setter
+	def OrgnlNtfctnAndSts(self, value):
+		self._OrgnlNtfctnAndSts = value if type(value) != auto else self.make_default("OrgnlNtfctnAndSts")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@OrgnlNtfctnAndSts.deleter
+	def OrgnlNtfctnAndSts(self):
+		del self._OrgnlNtfctnAndSts
+		self._OrgnlNtfctnAndSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlNtfctnAndSts', type=OriginalNotification15, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader121, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader121, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlNtfctnAndSts', type=OriginalNotification15, min=1, max=1, mutex_group=None, array=False),
 	))
 

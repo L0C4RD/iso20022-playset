@@ -1,6 +1,6 @@
-import base_types
-import ActiveOrHistoricCurrencyAndAmount
+from . import base_types
 import TaxPeriod2
+import ActiveOrHistoricCurrencyAndAmount
 
 class TaxRecordDetails2(base_types._BaseFieldType):
 

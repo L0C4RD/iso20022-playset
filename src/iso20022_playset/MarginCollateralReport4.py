@@ -1,23 +1,23 @@
-import base_types
-import ISODateTime
+from . import base_types
 import CollateralisationType3Code
 import CollateralPortfolioCode5Choice
+import ISODateTime
 
 class MarginCollateralReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_CollstnCtgy", "_CollPrtflCd", "_TmStmp"]
+	__slots__ = ["_TmStmp", "_CollPrtflCd", "_CollstnCtgy"]
 	@property
-	def CollstnCtgy(self):
-		return self._CollstnCtgy
+	def TmStmp(self):
+		return self._TmStmp
 
-	@CollstnCtgy.setter
-	def CollstnCtgy(self, value):
-		self._CollstnCtgy = value if type(value) != auto else self.make_default("CollstnCtgy")
+	@TmStmp.setter
+	def TmStmp(self, value):
+		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
 
-	@CollstnCtgy.deleter
-	def CollstnCtgy(self):
-		del self._CollstnCtgy
-		self._CollstnCtgy = None
+	@TmStmp.deleter
+	def TmStmp(self):
+		del self._TmStmp
+		self._TmStmp = None
 
 	@property
 	def CollPrtflCd(self):
@@ -33,21 +33,21 @@ class MarginCollateralReport4(base_types._BaseFieldType):
 		self._CollPrtflCd = None
 
 	@property
-	def TmStmp(self):
-		return self._TmStmp
+	def CollstnCtgy(self):
+		return self._CollstnCtgy
 
-	@TmStmp.setter
-	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
+	@CollstnCtgy.setter
+	def CollstnCtgy(self, value):
+		self._CollstnCtgy = value if type(value) != auto else self.make_default("CollstnCtgy")
 
-	@TmStmp.deleter
-	def TmStmp(self):
-		del self._TmStmp
-		self._TmStmp = None
+	@CollstnCtgy.deleter
+	def CollstnCtgy(self):
+		del self._CollstnCtgy
+		self._CollstnCtgy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollstnCtgy', type=CollateralisationType3Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollPrtflCd', type=CollateralPortfolioCode5Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollPrtflCd', type=CollateralPortfolioCode5Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollstnCtgy', type=CollateralisationType3Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

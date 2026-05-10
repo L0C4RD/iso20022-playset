@@ -1,14 +1,14 @@
-import base_types
-import AmountAndDirection30
+from . import base_types
+import SecurityIdentification14
 import Max35Text
+import AmountAndDirection30
 import DecimalNumber
 import SupplementaryData1
 import PriceInformation10
-import SecurityIdentification14
 
 class InvestmentFund1(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_Pric", "_ClssTp", "_TtlVal", "_SplmtryData", "_TtlUnitsOutsdng", "_TxnlUnits"]
+	__slots__ = ["_FinInstrmId", "_ClssTp", "_TtlUnitsOutsdng", "_TxnlUnits", "_SplmtryData", "_TtlVal", "_Pric"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
@@ -23,19 +23,6 @@ class InvestmentFund1(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def Pric(self):
-		return self._Pric
-
-	@Pric.setter
-	def Pric(self, value):
-		self._Pric = value if type(value) != auto else self.make_default("Pric")
-
-	@Pric.deleter
-	def Pric(self):
-		del self._Pric
-		self._Pric = None
-
-	@property
 	def ClssTp(self):
 		return self._ClssTp
 
@@ -47,32 +34,6 @@ class InvestmentFund1(base_types._BaseFieldType):
 	def ClssTp(self):
 		del self._ClssTp
 		self._ClssTp = None
-
-	@property
-	def TtlVal(self):
-		return self._TtlVal
-
-	@TtlVal.setter
-	def TtlVal(self, value):
-		self._TtlVal = value if type(value) != auto else self.make_default("TtlVal")
-
-	@TtlVal.deleter
-	def TtlVal(self):
-		del self._TtlVal
-		self._TtlVal = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
 
 	@property
 	def TtlUnitsOutsdng(self):
@@ -100,13 +61,52 @@ class InvestmentFund1(base_types._BaseFieldType):
 		del self._TxnlUnits
 		self._TxnlUnits = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def TtlVal(self):
+		return self._TtlVal
+
+	@TtlVal.setter
+	def TtlVal(self, value):
+		self._TtlVal = value if type(value) != auto else self.make_default("TtlVal")
+
+	@TtlVal.deleter
+	def TtlVal(self):
+		del self._TtlVal
+		self._TtlVal = None
+
+	@property
+	def Pric(self):
+		return self._Pric
+
+	@Pric.setter
+	def Pric(self, value):
+		self._Pric = value if type(value) != auto else self.make_default("Pric")
+
+	@Pric.deleter
+	def Pric(self):
+		del self._Pric
+		self._Pric = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pric', type=PriceInformation10, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlVal', type=AmountAndDirection30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlUnitsOutsdng', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxnlUnits', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlVal', type=AmountAndDirection30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pric', type=PriceInformation10, min=0, max=None, mutex_group=None, array=True),
 	))
 

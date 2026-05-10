@@ -1,11 +1,11 @@
-import base_types
-import Max35Text
-import AnyBICDec2014Identifier
+from . import base_types
 import AccountIdentificationAndName7
+import AnyBICDec2014Identifier
+import Max35Text
 
 class CashAccount206(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_AcctTpDesc", "_Svcr"]
+	__slots__ = ["_AcctId", "_Svcr", "_AcctTpDesc"]
 	@property
 	def AcctId(self):
 		return self._AcctId
@@ -20,19 +20,6 @@ class CashAccount206(base_types._BaseFieldType):
 		self._AcctId = None
 
 	@property
-	def AcctTpDesc(self):
-		return self._AcctTpDesc
-
-	@AcctTpDesc.setter
-	def AcctTpDesc(self, value):
-		self._AcctTpDesc = value if type(value) != auto else self.make_default("AcctTpDesc")
-
-	@AcctTpDesc.deleter
-	def AcctTpDesc(self):
-		del self._AcctTpDesc
-		self._AcctTpDesc = None
-
-	@property
 	def Svcr(self):
 		return self._Svcr
 
@@ -45,9 +32,22 @@ class CashAccount206(base_types._BaseFieldType):
 		del self._Svcr
 		self._Svcr = None
 
+	@property
+	def AcctTpDesc(self):
+		return self._AcctTpDesc
+
+	@AcctTpDesc.setter
+	def AcctTpDesc(self, value):
+		self._AcctTpDesc = value if type(value) != auto else self.make_default("AcctTpDesc")
+
+	@AcctTpDesc.deleter
+	def AcctTpDesc(self):
+		del self._AcctTpDesc
+		self._AcctTpDesc = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountIdentificationAndName7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctTpDesc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Svcr', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctTpDesc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

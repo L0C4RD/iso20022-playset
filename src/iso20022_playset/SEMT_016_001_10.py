@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import IntraPositionMovementPostingReportV10
 
 class SEMT_016_001_10():

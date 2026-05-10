@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AddendumResponseV03
 
 class CAIN_026_001_03():

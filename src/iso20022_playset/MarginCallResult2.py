@@ -1,22 +1,9 @@
-import base_types
+from . import base_types
 import Result1
 
 class MarginCallResult2(base_types._BaseFieldType):
 
-	__slots__ = ["_VartnMrgnRslt", "_SgrtdIndpdntAmt"]
-	@property
-	def VartnMrgnRslt(self):
-		return self._VartnMrgnRslt
-
-	@VartnMrgnRslt.setter
-	def VartnMrgnRslt(self, value):
-		self._VartnMrgnRslt = value if type(value) != auto else self.make_default("VartnMrgnRslt")
-
-	@VartnMrgnRslt.deleter
-	def VartnMrgnRslt(self):
-		del self._VartnMrgnRslt
-		self._VartnMrgnRslt = None
-
+	__slots__ = ["_SgrtdIndpdntAmt", "_VartnMrgnRslt"]
 	@property
 	def SgrtdIndpdntAmt(self):
 		return self._SgrtdIndpdntAmt
@@ -30,8 +17,21 @@ class MarginCallResult2(base_types._BaseFieldType):
 		del self._SgrtdIndpdntAmt
 		self._SgrtdIndpdntAmt = None
 
+	@property
+	def VartnMrgnRslt(self):
+		return self._VartnMrgnRslt
+
+	@VartnMrgnRslt.setter
+	def VartnMrgnRslt(self, value):
+		self._VartnMrgnRslt = value if type(value) != auto else self.make_default("VartnMrgnRslt")
+
+	@VartnMrgnRslt.deleter
+	def VartnMrgnRslt(self):
+		del self._VartnMrgnRslt
+		self._VartnMrgnRslt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VartnMrgnRslt', type=Result1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SgrtdIndpdntAmt', type=Result1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VartnMrgnRslt', type=Result1, min=1, max=1, mutex_group=None, array=False),
 	))
 

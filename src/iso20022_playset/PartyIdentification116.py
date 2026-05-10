@@ -1,7 +1,7 @@
-import base_types
-import LegalOrganisation1
-import TaxParty1
+from . import base_types
 import OrganisationIdentification28
+import TaxParty1
+import LegalOrganisation1
 
 class PartyIdentification116(base_types._BaseFieldType):
 

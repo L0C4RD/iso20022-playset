@@ -1,6 +1,6 @@
-import base_types
-import MarketType17Choice
+from . import base_types
 import MarketIdentification2Choice
+import MarketType17Choice
 
 class MarketIdentification91(base_types._BaseFieldType):
 

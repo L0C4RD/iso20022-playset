@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import BytePadding1Code
 import EncryptionFormat3Code
 import Max500Binary
 
 class Parameter14(base_types._BaseFieldType):
 
-	__slots__ = ["_BPddg", "_InitlstnVctr", "_NcrptnFrmt"]
+	__slots__ = ["_NcrptnFrmt", "_InitlstnVctr", "_BPddg"]
 	@property
-	def BPddg(self):
-		return self._BPddg
+	def NcrptnFrmt(self):
+		return self._NcrptnFrmt
 
-	@BPddg.setter
-	def BPddg(self, value):
-		self._BPddg = value if type(value) != auto else self.make_default("BPddg")
+	@NcrptnFrmt.setter
+	def NcrptnFrmt(self, value):
+		self._NcrptnFrmt = value if type(value) != auto else self.make_default("NcrptnFrmt")
 
-	@BPddg.deleter
-	def BPddg(self):
-		del self._BPddg
-		self._BPddg = None
+	@NcrptnFrmt.deleter
+	def NcrptnFrmt(self):
+		del self._NcrptnFrmt
+		self._NcrptnFrmt = None
 
 	@property
 	def InitlstnVctr(self):
@@ -33,21 +33,21 @@ class Parameter14(base_types._BaseFieldType):
 		self._InitlstnVctr = None
 
 	@property
-	def NcrptnFrmt(self):
-		return self._NcrptnFrmt
+	def BPddg(self):
+		return self._BPddg
 
-	@NcrptnFrmt.setter
-	def NcrptnFrmt(self, value):
-		self._NcrptnFrmt = value if type(value) != auto else self.make_default("NcrptnFrmt")
+	@BPddg.setter
+	def BPddg(self, value):
+		self._BPddg = value if type(value) != auto else self.make_default("BPddg")
 
-	@NcrptnFrmt.deleter
-	def NcrptnFrmt(self):
-		del self._NcrptnFrmt
-		self._NcrptnFrmt = None
+	@BPddg.deleter
+	def BPddg(self):
+		del self._BPddg
+		self._BPddg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BPddg', type=BytePadding1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitlstnVctr', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptnFrmt', type=EncryptionFormat3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitlstnVctr', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BPddg', type=BytePadding1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

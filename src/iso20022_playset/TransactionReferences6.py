@@ -1,36 +1,23 @@
-import base_types
-import Max35Text
-import UUIDv4Identifier
+from . import base_types
 import ProprietaryReference1
+import UUIDv4Identifier
+import Max35Text
 
 class TransactionReferences6(base_types._BaseFieldType):
 
-	__slots__ = ["_ChqNb", "_AcctSvcrRef", "_AcctOwnrTxId", "_UETR", "_MktInfrstrctrTxId", "_EndToEndId", "_InstrId", "_PrcgId", "_Prtry", "_TxId", "_PmtInfId", "_AcctSvcrTxId", "_MndtId", "_MsgId", "_ClrSysRef"]
+	__slots__ = ["_Prtry", "_AcctOwnrTxId", "_MsgId", "_MndtId", "_AcctSvcrTxId", "_ClrSysRef", "_PmtInfId", "_EndToEndId", "_InstrId", "_ChqNb", "_TxId", "_PrcgId", "_AcctSvcrRef", "_UETR", "_MktInfrstrctrTxId"]
 	@property
-	def ChqNb(self):
-		return self._ChqNb
+	def Prtry(self):
+		return self._Prtry
 
-	@ChqNb.setter
-	def ChqNb(self, value):
-		self._ChqNb = value if type(value) != auto else self.make_default("ChqNb")
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
 
-	@ChqNb.deleter
-	def ChqNb(self):
-		del self._ChqNb
-		self._ChqNb = None
-
-	@property
-	def AcctSvcrRef(self):
-		return self._AcctSvcrRef
-
-	@AcctSvcrRef.setter
-	def AcctSvcrRef(self, value):
-		self._AcctSvcrRef = value if type(value) != auto else self.make_default("AcctSvcrRef")
-
-	@AcctSvcrRef.deleter
-	def AcctSvcrRef(self):
-		del self._AcctSvcrRef
-		self._AcctSvcrRef = None
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	@property
 	def AcctOwnrTxId(self):
@@ -46,30 +33,69 @@ class TransactionReferences6(base_types._BaseFieldType):
 		self._AcctOwnrTxId = None
 
 	@property
-	def UETR(self):
-		return self._UETR
+	def MsgId(self):
+		return self._MsgId
 
-	@UETR.setter
-	def UETR(self, value):
-		self._UETR = value if type(value) != auto else self.make_default("UETR")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@UETR.deleter
-	def UETR(self):
-		del self._UETR
-		self._UETR = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
-	def MktInfrstrctrTxId(self):
-		return self._MktInfrstrctrTxId
+	def MndtId(self):
+		return self._MndtId
 
-	@MktInfrstrctrTxId.setter
-	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
+	@MndtId.setter
+	def MndtId(self, value):
+		self._MndtId = value if type(value) != auto else self.make_default("MndtId")
 
-	@MktInfrstrctrTxId.deleter
-	def MktInfrstrctrTxId(self):
-		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
+	@MndtId.deleter
+	def MndtId(self):
+		del self._MndtId
+		self._MndtId = None
+
+	@property
+	def AcctSvcrTxId(self):
+		return self._AcctSvcrTxId
+
+	@AcctSvcrTxId.setter
+	def AcctSvcrTxId(self, value):
+		self._AcctSvcrTxId = value if type(value) != auto else self.make_default("AcctSvcrTxId")
+
+	@AcctSvcrTxId.deleter
+	def AcctSvcrTxId(self):
+		del self._AcctSvcrTxId
+		self._AcctSvcrTxId = None
+
+	@property
+	def ClrSysRef(self):
+		return self._ClrSysRef
+
+	@ClrSysRef.setter
+	def ClrSysRef(self, value):
+		self._ClrSysRef = value if type(value) != auto else self.make_default("ClrSysRef")
+
+	@ClrSysRef.deleter
+	def ClrSysRef(self):
+		del self._ClrSysRef
+		self._ClrSysRef = None
+
+	@property
+	def PmtInfId(self):
+		return self._PmtInfId
+
+	@PmtInfId.setter
+	def PmtInfId(self, value):
+		self._PmtInfId = value if type(value) != auto else self.make_default("PmtInfId")
+
+	@PmtInfId.deleter
+	def PmtInfId(self):
+		del self._PmtInfId
+		self._PmtInfId = None
 
 	@property
 	def EndToEndId(self):
@@ -98,30 +124,17 @@ class TransactionReferences6(base_types._BaseFieldType):
 		self._InstrId = None
 
 	@property
-	def PrcgId(self):
-		return self._PrcgId
+	def ChqNb(self):
+		return self._ChqNb
 
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+	@ChqNb.setter
+	def ChqNb(self, value):
+		self._ChqNb = value if type(value) != auto else self.make_default("ChqNb")
 
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
-
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
+	@ChqNb.deleter
+	def ChqNb(self):
+		del self._ChqNb
+		self._ChqNb = None
 
 	@property
 	def TxId(self):
@@ -137,85 +150,72 @@ class TransactionReferences6(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def PmtInfId(self):
-		return self._PmtInfId
+	def PrcgId(self):
+		return self._PrcgId
 
-	@PmtInfId.setter
-	def PmtInfId(self, value):
-		self._PmtInfId = value if type(value) != auto else self.make_default("PmtInfId")
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
 
-	@PmtInfId.deleter
-	def PmtInfId(self):
-		del self._PmtInfId
-		self._PmtInfId = None
-
-	@property
-	def AcctSvcrTxId(self):
-		return self._AcctSvcrTxId
-
-	@AcctSvcrTxId.setter
-	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != auto else self.make_default("AcctSvcrTxId")
-
-	@AcctSvcrTxId.deleter
-	def AcctSvcrTxId(self):
-		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
 
 	@property
-	def MndtId(self):
-		return self._MndtId
+	def AcctSvcrRef(self):
+		return self._AcctSvcrRef
 
-	@MndtId.setter
-	def MndtId(self, value):
-		self._MndtId = value if type(value) != auto else self.make_default("MndtId")
+	@AcctSvcrRef.setter
+	def AcctSvcrRef(self, value):
+		self._AcctSvcrRef = value if type(value) != auto else self.make_default("AcctSvcrRef")
 
-	@MndtId.deleter
-	def MndtId(self):
-		del self._MndtId
-		self._MndtId = None
-
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@AcctSvcrRef.deleter
+	def AcctSvcrRef(self):
+		del self._AcctSvcrRef
+		self._AcctSvcrRef = None
 
 	@property
-	def ClrSysRef(self):
-		return self._ClrSysRef
+	def UETR(self):
+		return self._UETR
 
-	@ClrSysRef.setter
-	def ClrSysRef(self, value):
-		self._ClrSysRef = value if type(value) != auto else self.make_default("ClrSysRef")
+	@UETR.setter
+	def UETR(self, value):
+		self._UETR = value if type(value) != auto else self.make_default("UETR")
 
-	@ClrSysRef.deleter
-	def ClrSysRef(self):
-		del self._ClrSysRef
-		self._ClrSysRef = None
+	@UETR.deleter
+	def UETR(self):
+		del self._UETR
+		self._UETR = None
+
+	@property
+	def MktInfrstrctrTxId(self):
+		return self._MktInfrstrctrTxId
+
+	@MktInfrstrctrTxId.setter
+	def MktInfrstrctrTxId(self, value):
+		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
+
+	@MktInfrstrctrTxId.deleter
+	def MktInfrstrctrTxId(self):
+		del self._MktInfrstrctrTxId
+		self._MktInfrstrctrTxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ChqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryReference1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MndtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrSysRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prtry', type=ProprietaryReference1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ChqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MndtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrSysRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

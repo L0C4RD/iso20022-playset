@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialInstrumentReportingNonWorkingDayReportV01
 
 class AUTH_039_001_01():

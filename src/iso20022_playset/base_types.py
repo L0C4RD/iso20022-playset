@@ -2,8 +2,8 @@ import re
 import base64
 from collections import namedtuple
 
-from exceptions import ParseError, ValidateError, XMLError, GenerateError
-import gen_utils
+from .exceptions import ParseError, ValidateError, XMLError, GenerateError
+from . import gen_utils
 
 FieldEntry = namedtuple("FieldEntry", ["name", "type", "min", "max", "mutex_group", "array"])
 

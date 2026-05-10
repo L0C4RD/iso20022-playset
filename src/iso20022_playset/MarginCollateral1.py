@@ -1,9 +1,35 @@
-import base_types
+from . import base_types
 import ActiveCurrencyAndAmount
 
 class MarginCollateral1(base_types._BaseFieldType):
 
-	__slots__ = ["_InTrnstToPtyB", "_InTrnstToPtyA", "_PrrAgrdToPtyA", "_HeldByPtyB", "_PrrAgrdToPtyB", "_HeldByPtyA"]
+	__slots__ = ["_HeldByPtyA", "_PrrAgrdToPtyB", "_InTrnstToPtyB", "_PrrAgrdToPtyA", "_HeldByPtyB", "_InTrnstToPtyA"]
+	@property
+	def HeldByPtyA(self):
+		return self._HeldByPtyA
+
+	@HeldByPtyA.setter
+	def HeldByPtyA(self, value):
+		self._HeldByPtyA = value if type(value) != auto else self.make_default("HeldByPtyA")
+
+	@HeldByPtyA.deleter
+	def HeldByPtyA(self):
+		del self._HeldByPtyA
+		self._HeldByPtyA = None
+
+	@property
+	def PrrAgrdToPtyB(self):
+		return self._PrrAgrdToPtyB
+
+	@PrrAgrdToPtyB.setter
+	def PrrAgrdToPtyB(self, value):
+		self._PrrAgrdToPtyB = value if type(value) != auto else self.make_default("PrrAgrdToPtyB")
+
+	@PrrAgrdToPtyB.deleter
+	def PrrAgrdToPtyB(self):
+		del self._PrrAgrdToPtyB
+		self._PrrAgrdToPtyB = None
+
 	@property
 	def InTrnstToPtyB(self):
 		return self._InTrnstToPtyB
@@ -16,19 +42,6 @@ class MarginCollateral1(base_types._BaseFieldType):
 	def InTrnstToPtyB(self):
 		del self._InTrnstToPtyB
 		self._InTrnstToPtyB = None
-
-	@property
-	def InTrnstToPtyA(self):
-		return self._InTrnstToPtyA
-
-	@InTrnstToPtyA.setter
-	def InTrnstToPtyA(self, value):
-		self._InTrnstToPtyA = value if type(value) != auto else self.make_default("InTrnstToPtyA")
-
-	@InTrnstToPtyA.deleter
-	def InTrnstToPtyA(self):
-		del self._InTrnstToPtyA
-		self._InTrnstToPtyA = None
 
 	@property
 	def PrrAgrdToPtyA(self):
@@ -57,37 +70,24 @@ class MarginCollateral1(base_types._BaseFieldType):
 		self._HeldByPtyB = None
 
 	@property
-	def PrrAgrdToPtyB(self):
-		return self._PrrAgrdToPtyB
+	def InTrnstToPtyA(self):
+		return self._InTrnstToPtyA
 
-	@PrrAgrdToPtyB.setter
-	def PrrAgrdToPtyB(self, value):
-		self._PrrAgrdToPtyB = value if type(value) != auto else self.make_default("PrrAgrdToPtyB")
+	@InTrnstToPtyA.setter
+	def InTrnstToPtyA(self, value):
+		self._InTrnstToPtyA = value if type(value) != auto else self.make_default("InTrnstToPtyA")
 
-	@PrrAgrdToPtyB.deleter
-	def PrrAgrdToPtyB(self):
-		del self._PrrAgrdToPtyB
-		self._PrrAgrdToPtyB = None
-
-	@property
-	def HeldByPtyA(self):
-		return self._HeldByPtyA
-
-	@HeldByPtyA.setter
-	def HeldByPtyA(self, value):
-		self._HeldByPtyA = value if type(value) != auto else self.make_default("HeldByPtyA")
-
-	@HeldByPtyA.deleter
-	def HeldByPtyA(self):
-		del self._HeldByPtyA
-		self._HeldByPtyA = None
+	@InTrnstToPtyA.deleter
+	def InTrnstToPtyA(self):
+		del self._InTrnstToPtyA
+		self._InTrnstToPtyA = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='HeldByPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrrAgrdToPtyB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InTrnstToPtyB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InTrnstToPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrrAgrdToPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HeldByPtyB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrrAgrdToPtyB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HeldByPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InTrnstToPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReturnTransactionV11
 
 class CAMT_006_001_11():

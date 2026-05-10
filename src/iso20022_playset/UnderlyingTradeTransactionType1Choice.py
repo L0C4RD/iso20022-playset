@@ -1,6 +1,6 @@
-import base_types
-import GenericIdentification1
+from . import base_types
 import ExternalUnderlyingTradeTransactionType1Code
+import GenericIdentification1
 
 class UnderlyingTradeTransactionType1Choice(base_types._BaseFieldType):
 

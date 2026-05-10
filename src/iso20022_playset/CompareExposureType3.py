@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ExposureType10Code
 
 class CompareExposureType3(base_types._BaseFieldType):

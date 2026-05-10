@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ATMDiagnosticRequestV03
 
 class CAAM_005_001_03():

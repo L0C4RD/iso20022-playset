@@ -1,35 +1,22 @@
-import base_types
-import AmountAndDirection21
-import TradingCapacity5Code
-import Price14
+from . import base_types
 import ISODate
+import Price14
 import ReceiveDelivery1Code
-import FinancialInstrumentQuantity1Choice
-import TradeLeg13
-import SecurityIdentification48
-import DateFormat66Choice
-import MarketIdentification20
-import PartyIdentification255Choice
-import SecuritiesAccount18
 import PartyIdentificationAndAccount227
+import MarketIdentification20
+import TradeLeg13
+import DateFormat66Choice
 import SecuritiesAccount19
+import SecurityIdentification48
+import FinancialInstrumentQuantity1Choice
+import AmountAndDirection21
+import SecuritiesAccount18
+import TradingCapacity5Code
+import PartyIdentification255Choice
 
 class NetPosition4(base_types._BaseFieldType):
 
-	__slots__ = ["_PlcOfTrad", "_ClrAcct", "_TradgCpcty", "_SttlmDt", "_NonClrMmb", "_DlvryAcct", "_AcrdIntrstAmt", "_AvrgDealPric", "_TradDt", "_SctiesMvmntTp", "_NetPosAmt", "_Dpstry", "_NetQty", "_FinInstrmId", "_InitlPosAmt", "_TradLegDtls"]
-	@property
-	def PlcOfTrad(self):
-		return self._PlcOfTrad
-
-	@PlcOfTrad.setter
-	def PlcOfTrad(self, value):
-		self._PlcOfTrad = value if type(value) != auto else self.make_default("PlcOfTrad")
-
-	@PlcOfTrad.deleter
-	def PlcOfTrad(self):
-		del self._PlcOfTrad
-		self._PlcOfTrad = None
-
+	__slots__ = ["_ClrAcct", "_SttlmDt", "_TradLegDtls", "_AvrgDealPric", "_PlcOfTrad", "_NetPosAmt", "_TradgCpcty", "_SctiesMvmntTp", "_TradDt", "_DlvryAcct", "_InitlPosAmt", "_FinInstrmId", "_Dpstry", "_NetQty", "_NonClrMmb", "_AcrdIntrstAmt"]
 	@property
 	def ClrAcct(self):
 		return self._ClrAcct
@@ -42,19 +29,6 @@ class NetPosition4(base_types._BaseFieldType):
 	def ClrAcct(self):
 		del self._ClrAcct
 		self._ClrAcct = None
-
-	@property
-	def TradgCpcty(self):
-		return self._TradgCpcty
-
-	@TradgCpcty.setter
-	def TradgCpcty(self, value):
-		self._TradgCpcty = value if type(value) != auto else self.make_default("TradgCpcty")
-
-	@TradgCpcty.deleter
-	def TradgCpcty(self):
-		del self._TradgCpcty
-		self._TradgCpcty = None
 
 	@property
 	def SttlmDt(self):
@@ -70,43 +44,17 @@ class NetPosition4(base_types._BaseFieldType):
 		self._SttlmDt = None
 
 	@property
-	def NonClrMmb(self):
-		return self._NonClrMmb
+	def TradLegDtls(self):
+		return self._TradLegDtls
 
-	@NonClrMmb.setter
-	def NonClrMmb(self, value):
-		self._NonClrMmb = value if type(value) != auto else self.make_default("NonClrMmb")
+	@TradLegDtls.setter
+	def TradLegDtls(self, value):
+		self._TradLegDtls = value if type(value) != auto else self.make_default("TradLegDtls")
 
-	@NonClrMmb.deleter
-	def NonClrMmb(self):
-		del self._NonClrMmb
-		self._NonClrMmb = None
-
-	@property
-	def DlvryAcct(self):
-		return self._DlvryAcct
-
-	@DlvryAcct.setter
-	def DlvryAcct(self, value):
-		self._DlvryAcct = value if type(value) != auto else self.make_default("DlvryAcct")
-
-	@DlvryAcct.deleter
-	def DlvryAcct(self):
-		del self._DlvryAcct
-		self._DlvryAcct = None
-
-	@property
-	def AcrdIntrstAmt(self):
-		return self._AcrdIntrstAmt
-
-	@AcrdIntrstAmt.setter
-	def AcrdIntrstAmt(self, value):
-		self._AcrdIntrstAmt = value if type(value) != auto else self.make_default("AcrdIntrstAmt")
-
-	@AcrdIntrstAmt.deleter
-	def AcrdIntrstAmt(self):
-		del self._AcrdIntrstAmt
-		self._AcrdIntrstAmt = None
+	@TradLegDtls.deleter
+	def TradLegDtls(self):
+		del self._TradLegDtls
+		self._TradLegDtls = None
 
 	@property
 	def AvrgDealPric(self):
@@ -122,17 +70,43 @@ class NetPosition4(base_types._BaseFieldType):
 		self._AvrgDealPric = None
 
 	@property
-	def TradDt(self):
-		return self._TradDt
+	def PlcOfTrad(self):
+		return self._PlcOfTrad
 
-	@TradDt.setter
-	def TradDt(self, value):
-		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
+	@PlcOfTrad.setter
+	def PlcOfTrad(self, value):
+		self._PlcOfTrad = value if type(value) != auto else self.make_default("PlcOfTrad")
 
-	@TradDt.deleter
-	def TradDt(self):
-		del self._TradDt
-		self._TradDt = None
+	@PlcOfTrad.deleter
+	def PlcOfTrad(self):
+		del self._PlcOfTrad
+		self._PlcOfTrad = None
+
+	@property
+	def NetPosAmt(self):
+		return self._NetPosAmt
+
+	@NetPosAmt.setter
+	def NetPosAmt(self, value):
+		self._NetPosAmt = value if type(value) != auto else self.make_default("NetPosAmt")
+
+	@NetPosAmt.deleter
+	def NetPosAmt(self):
+		del self._NetPosAmt
+		self._NetPosAmt = None
+
+	@property
+	def TradgCpcty(self):
+		return self._TradgCpcty
+
+	@TradgCpcty.setter
+	def TradgCpcty(self, value):
+		self._TradgCpcty = value if type(value) != auto else self.make_default("TradgCpcty")
+
+	@TradgCpcty.deleter
+	def TradgCpcty(self):
+		del self._TradgCpcty
+		self._TradgCpcty = None
 
 	@property
 	def SctiesMvmntTp(self):
@@ -148,17 +122,56 @@ class NetPosition4(base_types._BaseFieldType):
 		self._SctiesMvmntTp = None
 
 	@property
-	def NetPosAmt(self):
-		return self._NetPosAmt
+	def TradDt(self):
+		return self._TradDt
 
-	@NetPosAmt.setter
-	def NetPosAmt(self, value):
-		self._NetPosAmt = value if type(value) != auto else self.make_default("NetPosAmt")
+	@TradDt.setter
+	def TradDt(self, value):
+		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
 
-	@NetPosAmt.deleter
-	def NetPosAmt(self):
-		del self._NetPosAmt
-		self._NetPosAmt = None
+	@TradDt.deleter
+	def TradDt(self):
+		del self._TradDt
+		self._TradDt = None
+
+	@property
+	def DlvryAcct(self):
+		return self._DlvryAcct
+
+	@DlvryAcct.setter
+	def DlvryAcct(self, value):
+		self._DlvryAcct = value if type(value) != auto else self.make_default("DlvryAcct")
+
+	@DlvryAcct.deleter
+	def DlvryAcct(self):
+		del self._DlvryAcct
+		self._DlvryAcct = None
+
+	@property
+	def InitlPosAmt(self):
+		return self._InitlPosAmt
+
+	@InitlPosAmt.setter
+	def InitlPosAmt(self, value):
+		self._InitlPosAmt = value if type(value) != auto else self.make_default("InitlPosAmt")
+
+	@InitlPosAmt.deleter
+	def InitlPosAmt(self):
+		del self._InitlPosAmt
+		self._InitlPosAmt = None
+
+	@property
+	def FinInstrmId(self):
+		return self._FinInstrmId
+
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
 
 	@property
 	def Dpstry(self):
@@ -187,60 +200,47 @@ class NetPosition4(base_types._BaseFieldType):
 		self._NetQty = None
 
 	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
+	def NonClrMmb(self):
+		return self._NonClrMmb
 
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+	@NonClrMmb.setter
+	def NonClrMmb(self, value):
+		self._NonClrMmb = value if type(value) != auto else self.make_default("NonClrMmb")
 
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
-	@property
-	def InitlPosAmt(self):
-		return self._InitlPosAmt
-
-	@InitlPosAmt.setter
-	def InitlPosAmt(self, value):
-		self._InitlPosAmt = value if type(value) != auto else self.make_default("InitlPosAmt")
-
-	@InitlPosAmt.deleter
-	def InitlPosAmt(self):
-		del self._InitlPosAmt
-		self._InitlPosAmt = None
+	@NonClrMmb.deleter
+	def NonClrMmb(self):
+		del self._NonClrMmb
+		self._NonClrMmb = None
 
 	@property
-	def TradLegDtls(self):
-		return self._TradLegDtls
+	def AcrdIntrstAmt(self):
+		return self._AcrdIntrstAmt
 
-	@TradLegDtls.setter
-	def TradLegDtls(self, value):
-		self._TradLegDtls = value if type(value) != auto else self.make_default("TradLegDtls")
+	@AcrdIntrstAmt.setter
+	def AcrdIntrstAmt(self, value):
+		self._AcrdIntrstAmt = value if type(value) != auto else self.make_default("AcrdIntrstAmt")
 
-	@TradLegDtls.deleter
-	def TradLegDtls(self):
-		del self._TradLegDtls
-		self._TradLegDtls = None
+	@AcrdIntrstAmt.deleter
+	def AcrdIntrstAmt(self):
+		del self._AcrdIntrstAmt
+		self._AcrdIntrstAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PlcOfTrad', type=MarketIdentification20, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount18, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgCpcty', type=TradingCapacity5Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmDt', type=DateFormat66Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount227, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection21, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradLegDtls', type=TradeLeg13, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AvrgDealPric', type=Price14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfTrad', type=MarketIdentification20, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetPosAmt', type=AmountAndDirection21, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgCpcty', type=TradingCapacity5Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitlPosAmt', type=AmountAndDirection21, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification48, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dpstry', type=PartyIdentification255Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification48, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitlPosAmt', type=AmountAndDirection21, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradLegDtls', type=TradeLeg13, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount227, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection21, min=0, max=1, mutex_group=None, array=False),
 	))
 

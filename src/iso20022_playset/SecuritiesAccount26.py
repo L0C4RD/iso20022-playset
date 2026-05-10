@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
+import PurposeCode7Choice
 import Max35Text
 import Max70Text
-import PurposeCode7Choice
 
 class SecuritiesAccount26(base_types._BaseFieldType):
 
-	__slots__ = ["_Dsgnt", "_Tp", "_Id", "_Nm"]
+	__slots__ = ["_Dsgnt", "_Nm", "_Id", "_Tp"]
 	@property
 	def Dsgnt(self):
 		return self._Dsgnt
@@ -20,17 +20,17 @@ class SecuritiesAccount26(base_types._BaseFieldType):
 		self._Dsgnt = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def Nm(self):
+		return self._Nm
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def Id(self):
@@ -46,22 +46,22 @@ class SecuritiesAccount26(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Nm(self):
-		return self._Nm
+	def Tp(self):
+		return self._Tp
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=PurposeCode7Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=PurposeCode7Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

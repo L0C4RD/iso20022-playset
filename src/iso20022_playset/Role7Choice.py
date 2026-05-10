@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import RestrictedFINXMax350Text
-import GenericIdentification47
 import InvestmentFundRole2Code
+import GenericIdentification47
 
 class Role7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Txt", "_Prtry"]
-	@property
-	def Cd(self):
-		return self._Cd
-
-	@Cd.setter
-	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
-
-	@Cd.deleter
-	def Cd(self):
-		del self._Cd
-		self._Cd = None
-
+	__slots__ = ["_Txt", "_Prtry", "_Cd"]
 	@property
 	def Txt(self):
 		return self._Txt
@@ -45,9 +32,22 @@ class Role7Choice(base_types._BaseFieldType):
 		del self._Prtry
 		self._Prtry = None
 
+	@property
+	def Cd(self):
+		return self._Cd
+
+	@Cd.setter
+	def Cd(self, value):
+		self._Cd = value if type(value) != auto else self.make_default("Cd")
+
+	@Cd.deleter
+	def Cd(self):
+		del self._Cd
+		self._Cd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cd', type=InvestmentFundRole2Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Txt', type=RestrictedFINXMax350Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification47, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cd', type=InvestmentFundRole2Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

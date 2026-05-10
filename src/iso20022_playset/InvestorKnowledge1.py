@@ -1,23 +1,10 @@
-import base_types
-import OtherTargetMarketInvestorKnowledge1
+from . import base_types
 import TargetMarket1Code
+import OtherTargetMarketInvestorKnowledge1
 
 class InvestorKnowledge1(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_InfrmdInvstr", "_AdvncdInvstr", "_BsicInvstr", "_ExprtInvstrDE"]
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
+	__slots__ = ["_InfrmdInvstr", "_Othr", "_AdvncdInvstr", "_BsicInvstr", "_ExprtInvstrDE"]
 	@property
 	def InfrmdInvstr(self):
 		return self._InfrmdInvstr
@@ -30,6 +17,19 @@ class InvestorKnowledge1(base_types._BaseFieldType):
 	def InfrmdInvstr(self):
 		del self._InfrmdInvstr
 		self._InfrmdInvstr = None
+
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
 
 	@property
 	def AdvncdInvstr(self):
@@ -71,8 +71,8 @@ class InvestorKnowledge1(base_types._BaseFieldType):
 		self._ExprtInvstrDE = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=OtherTargetMarketInvestorKnowledge1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InfrmdInvstr', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=OtherTargetMarketInvestorKnowledge1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AdvncdInvstr', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BsicInvstr', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExprtInvstrDE', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),

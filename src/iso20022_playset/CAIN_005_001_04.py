@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ReversalInitiationV04
 
 class CAIN_005_001_04():

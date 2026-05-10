@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import MarginCallResult2
 import Result1
 
 class MarginCallResult2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnCallRsltDtls", "_SgrtdIndpdntAmt", "_MrgnCallAmt"]
-	@property
-	def MrgnCallRsltDtls(self):
-		return self._MrgnCallRsltDtls
-
-	@MrgnCallRsltDtls.setter
-	def MrgnCallRsltDtls(self, value):
-		self._MrgnCallRsltDtls = value if type(value) != auto else self.make_default("MrgnCallRsltDtls")
-
-	@MrgnCallRsltDtls.deleter
-	def MrgnCallRsltDtls(self):
-		del self._MrgnCallRsltDtls
-		self._MrgnCallRsltDtls = None
-
+	__slots__ = ["_SgrtdIndpdntAmt", "_MrgnCallAmt", "_MrgnCallRsltDtls"]
 	@property
 	def SgrtdIndpdntAmt(self):
 		return self._SgrtdIndpdntAmt
@@ -44,9 +31,22 @@ class MarginCallResult2Choice(base_types._BaseFieldType):
 		del self._MrgnCallAmt
 		self._MrgnCallAmt = None
 
+	@property
+	def MrgnCallRsltDtls(self):
+		return self._MrgnCallRsltDtls
+
+	@MrgnCallRsltDtls.setter
+	def MrgnCallRsltDtls(self, value):
+		self._MrgnCallRsltDtls = value if type(value) != auto else self.make_default("MrgnCallRsltDtls")
+
+	@MrgnCallRsltDtls.deleter
+	def MrgnCallRsltDtls(self):
+		del self._MrgnCallRsltDtls
+		self._MrgnCallRsltDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MrgnCallRsltDtls', type=MarginCallResult2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SgrtdIndpdntAmt', type=Result1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MrgnCallAmt', type=Result1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MrgnCallRsltDtls', type=MarginCallResult2, min=0, max=1, mutex_group=1, array=False),
 	))
 

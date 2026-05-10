@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SubscriptionBulkOrderCancellationRequestV04
 
 class SETR_008_001_04():

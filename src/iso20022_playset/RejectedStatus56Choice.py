@@ -1,6 +1,6 @@
-import base_types
-import NoReasonCode
+from . import base_types
 import RejectedStatusReason56
+import NoReasonCode
 
 class RejectedStatus56Choice(base_types._BaseFieldType):
 

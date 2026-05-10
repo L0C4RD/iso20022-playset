@@ -1,12 +1,25 @@
-import base_types
-import AmountAndDirection34
+from . import base_types
 import BillingServicesTax1
-import BillingServicesAmount2
 import BillingServicesAmount1
+import BillingServicesAmount2
+import AmountAndDirection34
 
 class BillingMethod1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlChrg", "_TaxId", "_SvcTax", "_SvcChrgHstAmt"]
+	__slots__ = ["_SvcTax", "_TtlChrg", "_TaxId", "_SvcChrgHstAmt"]
+	@property
+	def SvcTax(self):
+		return self._SvcTax
+
+	@SvcTax.setter
+	def SvcTax(self, value):
+		self._SvcTax = value if type(value) != auto else self.make_default("SvcTax")
+
+	@SvcTax.deleter
+	def SvcTax(self):
+		del self._SvcTax
+		self._SvcTax = None
+
 	@property
 	def TtlChrg(self):
 		return self._TtlChrg
@@ -34,19 +47,6 @@ class BillingMethod1(base_types._BaseFieldType):
 		self._TaxId = None
 
 	@property
-	def SvcTax(self):
-		return self._SvcTax
-
-	@SvcTax.setter
-	def SvcTax(self, value):
-		self._SvcTax = value if type(value) != auto else self.make_default("SvcTax")
-
-	@SvcTax.deleter
-	def SvcTax(self):
-		del self._SvcTax
-		self._SvcTax = None
-
-	@property
 	def SvcChrgHstAmt(self):
 		return self._SvcChrgHstAmt
 
@@ -60,9 +60,9 @@ class BillingMethod1(base_types._BaseFieldType):
 		self._SvcChrgHstAmt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SvcTax', type=BillingServicesAmount1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlChrg', type=BillingServicesAmount2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxId', type=BillingServicesTax1, min=1, max=3, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SvcTax', type=BillingServicesAmount1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcChrgHstAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 	))
 

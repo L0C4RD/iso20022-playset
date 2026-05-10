@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
 import SecurityIdentification39
 import AuditTrailOrBusinessError6Choice
 import DatePeriodSearch1Choice
 
 class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesAudtTrlOrErr", "_FinInstrmId", "_DtPrd"]
-	@property
-	def SctiesAudtTrlOrErr(self):
-		return self._SctiesAudtTrlOrErr
-
-	@SctiesAudtTrlOrErr.setter
-	def SctiesAudtTrlOrErr(self, value):
-		self._SctiesAudtTrlOrErr = value if type(value) != auto else self.make_default("SctiesAudtTrlOrErr")
-
-	@SctiesAudtTrlOrErr.deleter
-	def SctiesAudtTrlOrErr(self):
-		del self._SctiesAudtTrlOrErr
-		self._SctiesAudtTrlOrErr = None
-
+	__slots__ = ["_FinInstrmId", "_SctiesAudtTrlOrErr", "_DtPrd"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
@@ -31,6 +18,19 @@ class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 	def FinInstrmId(self):
 		del self._FinInstrmId
 		self._FinInstrmId = None
+
+	@property
+	def SctiesAudtTrlOrErr(self):
+		return self._SctiesAudtTrlOrErr
+
+	@SctiesAudtTrlOrErr.setter
+	def SctiesAudtTrlOrErr(self, value):
+		self._SctiesAudtTrlOrErr = value if type(value) != auto else self.make_default("SctiesAudtTrlOrErr")
+
+	@SctiesAudtTrlOrErr.deleter
+	def SctiesAudtTrlOrErr(self):
+		del self._SctiesAudtTrlOrErr
+		self._SctiesAudtTrlOrErr = None
 
 	@property
 	def DtPrd(self):
@@ -46,8 +46,8 @@ class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 		self._DtPrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesAudtTrlOrErr', type=AuditTrailOrBusinessError6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification39, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesAudtTrlOrErr', type=AuditTrailOrBusinessError6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtPrd', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

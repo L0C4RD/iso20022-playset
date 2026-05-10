@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import FinancialInstrumentQuantity36Choice
 
 class PairedOrTurnedQuantity6Choice(base_types._BaseFieldType):

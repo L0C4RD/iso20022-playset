@@ -1,23 +1,23 @@
-import base_types
+from . import base_types
 import PartyIdentification117Choice
-import SettlementParties59
 import SettlementStandingInstructionDatabase4Choice
+import SettlementParties59
 
 class StandingSettlementInstruction13(base_types._BaseFieldType):
 
-	__slots__ = ["_Vndr", "_OthrRcvgSttlmPties", "_OthrDlvrgSttlmPties", "_SttlmStgInstrDB"]
+	__slots__ = ["_SttlmStgInstrDB", "_OthrRcvgSttlmPties", "_OthrDlvrgSttlmPties", "_Vndr"]
 	@property
-	def Vndr(self):
-		return self._Vndr
+	def SttlmStgInstrDB(self):
+		return self._SttlmStgInstrDB
 
-	@Vndr.setter
-	def Vndr(self, value):
-		self._Vndr = value if type(value) != auto else self.make_default("Vndr")
+	@SttlmStgInstrDB.setter
+	def SttlmStgInstrDB(self, value):
+		self._SttlmStgInstrDB = value if type(value) != auto else self.make_default("SttlmStgInstrDB")
 
-	@Vndr.deleter
-	def Vndr(self):
-		del self._Vndr
-		self._Vndr = None
+	@SttlmStgInstrDB.deleter
+	def SttlmStgInstrDB(self):
+		del self._SttlmStgInstrDB
+		self._SttlmStgInstrDB = None
 
 	@property
 	def OthrRcvgSttlmPties(self):
@@ -46,22 +46,22 @@ class StandingSettlementInstruction13(base_types._BaseFieldType):
 		self._OthrDlvrgSttlmPties = None
 
 	@property
-	def SttlmStgInstrDB(self):
-		return self._SttlmStgInstrDB
+	def Vndr(self):
+		return self._Vndr
 
-	@SttlmStgInstrDB.setter
-	def SttlmStgInstrDB(self, value):
-		self._SttlmStgInstrDB = value if type(value) != auto else self.make_default("SttlmStgInstrDB")
+	@Vndr.setter
+	def Vndr(self, value):
+		self._Vndr = value if type(value) != auto else self.make_default("Vndr")
 
-	@SttlmStgInstrDB.deleter
-	def SttlmStgInstrDB(self):
-		del self._SttlmStgInstrDB
-		self._SttlmStgInstrDB = None
+	@Vndr.deleter
+	def Vndr(self):
+		del self._Vndr
+		self._Vndr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Vndr', type=PartyIdentification117Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmStgInstrDB', type=SettlementStandingInstructionDatabase4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrRcvgSttlmPties', type=SettlementParties59, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrDlvrgSttlmPties', type=SettlementParties59, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmStgInstrDB', type=SettlementStandingInstructionDatabase4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vndr', type=PartyIdentification117Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

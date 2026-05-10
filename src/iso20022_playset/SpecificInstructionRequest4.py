@@ -1,6 +1,6 @@
-import base_types
-import ParticipationMethod3Choice
+from . import base_types
 import YesNoIndicator
+import ParticipationMethod3Choice
 
 class SpecificInstructionRequest4(base_types._BaseFieldType):
 

@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import PartyEventAdviceV01
 
 class TSMT_055_001_01():

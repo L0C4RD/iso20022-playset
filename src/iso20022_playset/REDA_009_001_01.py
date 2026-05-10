@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecurityActivityAdviceV01
 
 class REDA_009_001_01():

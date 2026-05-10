@@ -1,41 +1,41 @@
-import base_types
-import IncentivePremium6
-import YesNoIndicator
-import VoteMethods5
-import FinancialInstrumentQuantity18Choice
-import PostalAddress1
+from . import base_types
 import Max350Text
 import CommunicationAddress11
+import YesNoIndicator
+import IncentivePremium6
+import FinancialInstrumentQuantity18Choice
+import PostalAddress1
 import DateFormat58Choice
+import VoteMethods5
 
 class VoteParameters9(base_types._BaseFieldType):
 
-	__slots__ = ["_RvcbltyDdln", "_EarlyVoteWthPrmDdln", "_SpltVoteAllwd", "_VoteWthPrmDdln", "_VoteMthds", "_VtngBlltElctrncAdr", "_RvcbltyMktDdln", "_VoteMktDdln", "_IncntivPrm", "_VoteDdln", "_SctiesQtyReqrdToVote", "_PrvsInstrInvldtyInd", "_BnfclOwnrDsclsr", "_VtngBlltReqAdr", "_EarlyIncntivPrm", "_PrtlVoteAllwd", "_VoteWthPrmMktDdln", "_AddtlVtngRqrmnts"]
+	__slots__ = ["_VtngBlltReqAdr", "_AddtlVtngRqrmnts", "_SpltVoteAllwd", "_SctiesQtyReqrdToVote", "_RvcbltyMktDdln", "_PrvsInstrInvldtyInd", "_VoteDdln", "_VoteWthPrmMktDdln", "_VoteMktDdln", "_EarlyVoteWthPrmDdln", "_VoteWthPrmDdln", "_VtngBlltElctrncAdr", "_RvcbltyDdln", "_PrtlVoteAllwd", "_BnfclOwnrDsclsr", "_IncntivPrm", "_EarlyIncntivPrm", "_VoteMthds"]
 	@property
-	def RvcbltyDdln(self):
-		return self._RvcbltyDdln
+	def VtngBlltReqAdr(self):
+		return self._VtngBlltReqAdr
 
-	@RvcbltyDdln.setter
-	def RvcbltyDdln(self, value):
-		self._RvcbltyDdln = value if type(value) != auto else self.make_default("RvcbltyDdln")
+	@VtngBlltReqAdr.setter
+	def VtngBlltReqAdr(self, value):
+		self._VtngBlltReqAdr = value if type(value) != auto else self.make_default("VtngBlltReqAdr")
 
-	@RvcbltyDdln.deleter
-	def RvcbltyDdln(self):
-		del self._RvcbltyDdln
-		self._RvcbltyDdln = None
+	@VtngBlltReqAdr.deleter
+	def VtngBlltReqAdr(self):
+		del self._VtngBlltReqAdr
+		self._VtngBlltReqAdr = None
 
 	@property
-	def EarlyVoteWthPrmDdln(self):
-		return self._EarlyVoteWthPrmDdln
+	def AddtlVtngRqrmnts(self):
+		return self._AddtlVtngRqrmnts
 
-	@EarlyVoteWthPrmDdln.setter
-	def EarlyVoteWthPrmDdln(self, value):
-		self._EarlyVoteWthPrmDdln = value if type(value) != auto else self.make_default("EarlyVoteWthPrmDdln")
+	@AddtlVtngRqrmnts.setter
+	def AddtlVtngRqrmnts(self, value):
+		self._AddtlVtngRqrmnts = value if type(value) != auto else self.make_default("AddtlVtngRqrmnts")
 
-	@EarlyVoteWthPrmDdln.deleter
-	def EarlyVoteWthPrmDdln(self):
-		del self._EarlyVoteWthPrmDdln
-		self._EarlyVoteWthPrmDdln = None
+	@AddtlVtngRqrmnts.deleter
+	def AddtlVtngRqrmnts(self):
+		del self._AddtlVtngRqrmnts
+		self._AddtlVtngRqrmnts = None
 
 	@property
 	def SpltVoteAllwd(self):
@@ -51,43 +51,17 @@ class VoteParameters9(base_types._BaseFieldType):
 		self._SpltVoteAllwd = None
 
 	@property
-	def VoteWthPrmDdln(self):
-		return self._VoteWthPrmDdln
+	def SctiesQtyReqrdToVote(self):
+		return self._SctiesQtyReqrdToVote
 
-	@VoteWthPrmDdln.setter
-	def VoteWthPrmDdln(self, value):
-		self._VoteWthPrmDdln = value if type(value) != auto else self.make_default("VoteWthPrmDdln")
+	@SctiesQtyReqrdToVote.setter
+	def SctiesQtyReqrdToVote(self, value):
+		self._SctiesQtyReqrdToVote = value if type(value) != auto else self.make_default("SctiesQtyReqrdToVote")
 
-	@VoteWthPrmDdln.deleter
-	def VoteWthPrmDdln(self):
-		del self._VoteWthPrmDdln
-		self._VoteWthPrmDdln = None
-
-	@property
-	def VoteMthds(self):
-		return self._VoteMthds
-
-	@VoteMthds.setter
-	def VoteMthds(self, value):
-		self._VoteMthds = value if type(value) != auto else self.make_default("VoteMthds")
-
-	@VoteMthds.deleter
-	def VoteMthds(self):
-		del self._VoteMthds
-		self._VoteMthds = None
-
-	@property
-	def VtngBlltElctrncAdr(self):
-		return self._VtngBlltElctrncAdr
-
-	@VtngBlltElctrncAdr.setter
-	def VtngBlltElctrncAdr(self, value):
-		self._VtngBlltElctrncAdr = value if type(value) != auto else self.make_default("VtngBlltElctrncAdr")
-
-	@VtngBlltElctrncAdr.deleter
-	def VtngBlltElctrncAdr(self):
-		del self._VtngBlltElctrncAdr
-		self._VtngBlltElctrncAdr = None
+	@SctiesQtyReqrdToVote.deleter
+	def SctiesQtyReqrdToVote(self):
+		del self._SctiesQtyReqrdToVote
+		self._SctiesQtyReqrdToVote = None
 
 	@property
 	def RvcbltyMktDdln(self):
@@ -103,30 +77,17 @@ class VoteParameters9(base_types._BaseFieldType):
 		self._RvcbltyMktDdln = None
 
 	@property
-	def VoteMktDdln(self):
-		return self._VoteMktDdln
+	def PrvsInstrInvldtyInd(self):
+		return self._PrvsInstrInvldtyInd
 
-	@VoteMktDdln.setter
-	def VoteMktDdln(self, value):
-		self._VoteMktDdln = value if type(value) != auto else self.make_default("VoteMktDdln")
+	@PrvsInstrInvldtyInd.setter
+	def PrvsInstrInvldtyInd(self, value):
+		self._PrvsInstrInvldtyInd = value if type(value) != auto else self.make_default("PrvsInstrInvldtyInd")
 
-	@VoteMktDdln.deleter
-	def VoteMktDdln(self):
-		del self._VoteMktDdln
-		self._VoteMktDdln = None
-
-	@property
-	def IncntivPrm(self):
-		return self._IncntivPrm
-
-	@IncntivPrm.setter
-	def IncntivPrm(self, value):
-		self._IncntivPrm = value if type(value) != auto else self.make_default("IncntivPrm")
-
-	@IncntivPrm.deleter
-	def IncntivPrm(self):
-		del self._IncntivPrm
-		self._IncntivPrm = None
+	@PrvsInstrInvldtyInd.deleter
+	def PrvsInstrInvldtyInd(self):
+		del self._PrvsInstrInvldtyInd
+		self._PrvsInstrInvldtyInd = None
 
 	@property
 	def VoteDdln(self):
@@ -142,69 +103,82 @@ class VoteParameters9(base_types._BaseFieldType):
 		self._VoteDdln = None
 
 	@property
-	def SctiesQtyReqrdToVote(self):
-		return self._SctiesQtyReqrdToVote
+	def VoteWthPrmMktDdln(self):
+		return self._VoteWthPrmMktDdln
 
-	@SctiesQtyReqrdToVote.setter
-	def SctiesQtyReqrdToVote(self, value):
-		self._SctiesQtyReqrdToVote = value if type(value) != auto else self.make_default("SctiesQtyReqrdToVote")
+	@VoteWthPrmMktDdln.setter
+	def VoteWthPrmMktDdln(self, value):
+		self._VoteWthPrmMktDdln = value if type(value) != auto else self.make_default("VoteWthPrmMktDdln")
 
-	@SctiesQtyReqrdToVote.deleter
-	def SctiesQtyReqrdToVote(self):
-		del self._SctiesQtyReqrdToVote
-		self._SctiesQtyReqrdToVote = None
-
-	@property
-	def PrvsInstrInvldtyInd(self):
-		return self._PrvsInstrInvldtyInd
-
-	@PrvsInstrInvldtyInd.setter
-	def PrvsInstrInvldtyInd(self, value):
-		self._PrvsInstrInvldtyInd = value if type(value) != auto else self.make_default("PrvsInstrInvldtyInd")
-
-	@PrvsInstrInvldtyInd.deleter
-	def PrvsInstrInvldtyInd(self):
-		del self._PrvsInstrInvldtyInd
-		self._PrvsInstrInvldtyInd = None
+	@VoteWthPrmMktDdln.deleter
+	def VoteWthPrmMktDdln(self):
+		del self._VoteWthPrmMktDdln
+		self._VoteWthPrmMktDdln = None
 
 	@property
-	def BnfclOwnrDsclsr(self):
-		return self._BnfclOwnrDsclsr
+	def VoteMktDdln(self):
+		return self._VoteMktDdln
 
-	@BnfclOwnrDsclsr.setter
-	def BnfclOwnrDsclsr(self, value):
-		self._BnfclOwnrDsclsr = value if type(value) != auto else self.make_default("BnfclOwnrDsclsr")
+	@VoteMktDdln.setter
+	def VoteMktDdln(self, value):
+		self._VoteMktDdln = value if type(value) != auto else self.make_default("VoteMktDdln")
 
-	@BnfclOwnrDsclsr.deleter
-	def BnfclOwnrDsclsr(self):
-		del self._BnfclOwnrDsclsr
-		self._BnfclOwnrDsclsr = None
-
-	@property
-	def VtngBlltReqAdr(self):
-		return self._VtngBlltReqAdr
-
-	@VtngBlltReqAdr.setter
-	def VtngBlltReqAdr(self, value):
-		self._VtngBlltReqAdr = value if type(value) != auto else self.make_default("VtngBlltReqAdr")
-
-	@VtngBlltReqAdr.deleter
-	def VtngBlltReqAdr(self):
-		del self._VtngBlltReqAdr
-		self._VtngBlltReqAdr = None
+	@VoteMktDdln.deleter
+	def VoteMktDdln(self):
+		del self._VoteMktDdln
+		self._VoteMktDdln = None
 
 	@property
-	def EarlyIncntivPrm(self):
-		return self._EarlyIncntivPrm
+	def EarlyVoteWthPrmDdln(self):
+		return self._EarlyVoteWthPrmDdln
 
-	@EarlyIncntivPrm.setter
-	def EarlyIncntivPrm(self, value):
-		self._EarlyIncntivPrm = value if type(value) != auto else self.make_default("EarlyIncntivPrm")
+	@EarlyVoteWthPrmDdln.setter
+	def EarlyVoteWthPrmDdln(self, value):
+		self._EarlyVoteWthPrmDdln = value if type(value) != auto else self.make_default("EarlyVoteWthPrmDdln")
 
-	@EarlyIncntivPrm.deleter
-	def EarlyIncntivPrm(self):
-		del self._EarlyIncntivPrm
-		self._EarlyIncntivPrm = None
+	@EarlyVoteWthPrmDdln.deleter
+	def EarlyVoteWthPrmDdln(self):
+		del self._EarlyVoteWthPrmDdln
+		self._EarlyVoteWthPrmDdln = None
+
+	@property
+	def VoteWthPrmDdln(self):
+		return self._VoteWthPrmDdln
+
+	@VoteWthPrmDdln.setter
+	def VoteWthPrmDdln(self, value):
+		self._VoteWthPrmDdln = value if type(value) != auto else self.make_default("VoteWthPrmDdln")
+
+	@VoteWthPrmDdln.deleter
+	def VoteWthPrmDdln(self):
+		del self._VoteWthPrmDdln
+		self._VoteWthPrmDdln = None
+
+	@property
+	def VtngBlltElctrncAdr(self):
+		return self._VtngBlltElctrncAdr
+
+	@VtngBlltElctrncAdr.setter
+	def VtngBlltElctrncAdr(self, value):
+		self._VtngBlltElctrncAdr = value if type(value) != auto else self.make_default("VtngBlltElctrncAdr")
+
+	@VtngBlltElctrncAdr.deleter
+	def VtngBlltElctrncAdr(self):
+		del self._VtngBlltElctrncAdr
+		self._VtngBlltElctrncAdr = None
+
+	@property
+	def RvcbltyDdln(self):
+		return self._RvcbltyDdln
+
+	@RvcbltyDdln.setter
+	def RvcbltyDdln(self, value):
+		self._RvcbltyDdln = value if type(value) != auto else self.make_default("RvcbltyDdln")
+
+	@RvcbltyDdln.deleter
+	def RvcbltyDdln(self):
+		del self._RvcbltyDdln
+		self._RvcbltyDdln = None
 
 	@property
 	def PrtlVoteAllwd(self):
@@ -220,49 +194,75 @@ class VoteParameters9(base_types._BaseFieldType):
 		self._PrtlVoteAllwd = None
 
 	@property
-	def VoteWthPrmMktDdln(self):
-		return self._VoteWthPrmMktDdln
+	def BnfclOwnrDsclsr(self):
+		return self._BnfclOwnrDsclsr
 
-	@VoteWthPrmMktDdln.setter
-	def VoteWthPrmMktDdln(self, value):
-		self._VoteWthPrmMktDdln = value if type(value) != auto else self.make_default("VoteWthPrmMktDdln")
+	@BnfclOwnrDsclsr.setter
+	def BnfclOwnrDsclsr(self, value):
+		self._BnfclOwnrDsclsr = value if type(value) != auto else self.make_default("BnfclOwnrDsclsr")
 
-	@VoteWthPrmMktDdln.deleter
-	def VoteWthPrmMktDdln(self):
-		del self._VoteWthPrmMktDdln
-		self._VoteWthPrmMktDdln = None
+	@BnfclOwnrDsclsr.deleter
+	def BnfclOwnrDsclsr(self):
+		del self._BnfclOwnrDsclsr
+		self._BnfclOwnrDsclsr = None
 
 	@property
-	def AddtlVtngRqrmnts(self):
-		return self._AddtlVtngRqrmnts
+	def IncntivPrm(self):
+		return self._IncntivPrm
 
-	@AddtlVtngRqrmnts.setter
-	def AddtlVtngRqrmnts(self, value):
-		self._AddtlVtngRqrmnts = value if type(value) != auto else self.make_default("AddtlVtngRqrmnts")
+	@IncntivPrm.setter
+	def IncntivPrm(self, value):
+		self._IncntivPrm = value if type(value) != auto else self.make_default("IncntivPrm")
 
-	@AddtlVtngRqrmnts.deleter
-	def AddtlVtngRqrmnts(self):
-		del self._AddtlVtngRqrmnts
-		self._AddtlVtngRqrmnts = None
+	@IncntivPrm.deleter
+	def IncntivPrm(self):
+		del self._IncntivPrm
+		self._IncntivPrm = None
+
+	@property
+	def EarlyIncntivPrm(self):
+		return self._EarlyIncntivPrm
+
+	@EarlyIncntivPrm.setter
+	def EarlyIncntivPrm(self, value):
+		self._EarlyIncntivPrm = value if type(value) != auto else self.make_default("EarlyIncntivPrm")
+
+	@EarlyIncntivPrm.deleter
+	def EarlyIncntivPrm(self):
+		del self._EarlyIncntivPrm
+		self._EarlyIncntivPrm = None
+
+	@property
+	def VoteMthds(self):
+		return self._VoteMthds
+
+	@VoteMthds.setter
+	def VoteMthds(self, value):
+		self._VoteMthds = value if type(value) != auto else self.make_default("VoteMthds")
+
+	@VoteMthds.deleter
+	def VoteMthds(self):
+		del self._VoteMthds
+		self._VoteMthds = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RvcbltyDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlyVoteWthPrmDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SpltVoteAllwd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VoteWthPrmDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VoteMthds', type=VoteMethods5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VtngBlltElctrncAdr', type=CommunicationAddress11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RvcbltyMktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VoteMktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IncntivPrm', type=IncentivePremium6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VoteDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesQtyReqrdToVote', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsInstrInvldtyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BnfclOwnrDsclsr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VtngBlltReqAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlyIncntivPrm', type=IncentivePremium6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtlVoteAllwd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VoteWthPrmMktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlVtngRqrmnts', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpltVoteAllwd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesQtyReqrdToVote', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RvcbltyMktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsInstrInvldtyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VoteDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VoteWthPrmMktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VoteMktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlyVoteWthPrmDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VoteWthPrmDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VtngBlltElctrncAdr', type=CommunicationAddress11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RvcbltyDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtlVoteAllwd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BnfclOwnrDsclsr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IncntivPrm', type=IncentivePremium6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlyIncntivPrm', type=IncentivePremium6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VoteMthds', type=VoteMethods5, min=0, max=1, mutex_group=None, array=False),
 	))
 

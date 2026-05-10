@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
 import AttendanceCard3
-import PartyIdentification129Choice
 import VotingParticipationMethod2Code
+import PartyIdentification129Choice
 import PartyIdentification232Choice
 
 class IndividualPerson41(base_types._BaseFieldType):
 
-	__slots__ = ["_EmplngPty", "_PrtcptnMtd", "_AttndncCardDtls", "_Id"]
+	__slots__ = ["_EmplngPty", "_AttndncCardDtls", "_Id", "_PrtcptnMtd"]
 	@property
 	def EmplngPty(self):
 		return self._EmplngPty
@@ -19,19 +19,6 @@ class IndividualPerson41(base_types._BaseFieldType):
 	def EmplngPty(self):
 		del self._EmplngPty
 		self._EmplngPty = None
-
-	@property
-	def PrtcptnMtd(self):
-		return self._PrtcptnMtd
-
-	@PrtcptnMtd.setter
-	def PrtcptnMtd(self, value):
-		self._PrtcptnMtd = value if type(value) != auto else self.make_default("PrtcptnMtd")
-
-	@PrtcptnMtd.deleter
-	def PrtcptnMtd(self):
-		del self._PrtcptnMtd
-		self._PrtcptnMtd = None
 
 	@property
 	def AttndncCardDtls(self):
@@ -59,10 +46,23 @@ class IndividualPerson41(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def PrtcptnMtd(self):
+		return self._PrtcptnMtd
+
+	@PrtcptnMtd.setter
+	def PrtcptnMtd(self, value):
+		self._PrtcptnMtd = value if type(value) != auto else self.make_default("PrtcptnMtd")
+
+	@PrtcptnMtd.deleter
+	def PrtcptnMtd(self):
+		del self._PrtcptnMtd
+		self._PrtcptnMtd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EmplngPty', type=PartyIdentification129Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtcptnMtd', type=VotingParticipationMethod2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AttndncCardDtls', type=AttendanceCard3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification232Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtcptnMtd', type=VotingParticipationMethod2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

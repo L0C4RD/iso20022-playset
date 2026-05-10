@@ -1,40 +1,14 @@
-import base_types
-import AmountPrice3
-import DecimalNumber
-import AmountPricePerAmount2
+from . import base_types
 import PercentagePrice2
-import AmountPricePerFinancialInstrumentQuantity10
 import PriceValueType8Code
+import AmountPricePerAmount2
+import DecimalNumber
+import AmountPricePerFinancialInstrumentQuantity10
+import AmountPrice3
 
 class PriceFormat72Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtPric", "_NotSpcfdPric", "_PctgPric", "_AmtPricPerAmt", "_IndxPts", "_AmtPricPerFinInstrmQty"]
-	@property
-	def AmtPric(self):
-		return self._AmtPric
-
-	@AmtPric.setter
-	def AmtPric(self, value):
-		self._AmtPric = value if type(value) != auto else self.make_default("AmtPric")
-
-	@AmtPric.deleter
-	def AmtPric(self):
-		del self._AmtPric
-		self._AmtPric = None
-
-	@property
-	def NotSpcfdPric(self):
-		return self._NotSpcfdPric
-
-	@NotSpcfdPric.setter
-	def NotSpcfdPric(self, value):
-		self._NotSpcfdPric = value if type(value) != auto else self.make_default("NotSpcfdPric")
-
-	@NotSpcfdPric.deleter
-	def NotSpcfdPric(self):
-		del self._NotSpcfdPric
-		self._NotSpcfdPric = None
-
+	__slots__ = ["_PctgPric", "_IndxPts", "_NotSpcfdPric", "_AmtPric", "_AmtPricPerFinInstrmQty", "_AmtPricPerAmt"]
 	@property
 	def PctgPric(self):
 		return self._PctgPric
@@ -47,19 +21,6 @@ class PriceFormat72Choice(base_types._BaseFieldType):
 	def PctgPric(self):
 		del self._PctgPric
 		self._PctgPric = None
-
-	@property
-	def AmtPricPerAmt(self):
-		return self._AmtPricPerAmt
-
-	@AmtPricPerAmt.setter
-	def AmtPricPerAmt(self, value):
-		self._AmtPricPerAmt = value if type(value) != auto else self.make_default("AmtPricPerAmt")
-
-	@AmtPricPerAmt.deleter
-	def AmtPricPerAmt(self):
-		del self._AmtPricPerAmt
-		self._AmtPricPerAmt = None
 
 	@property
 	def IndxPts(self):
@@ -75,6 +36,32 @@ class PriceFormat72Choice(base_types._BaseFieldType):
 		self._IndxPts = None
 
 	@property
+	def NotSpcfdPric(self):
+		return self._NotSpcfdPric
+
+	@NotSpcfdPric.setter
+	def NotSpcfdPric(self, value):
+		self._NotSpcfdPric = value if type(value) != auto else self.make_default("NotSpcfdPric")
+
+	@NotSpcfdPric.deleter
+	def NotSpcfdPric(self):
+		del self._NotSpcfdPric
+		self._NotSpcfdPric = None
+
+	@property
+	def AmtPric(self):
+		return self._AmtPric
+
+	@AmtPric.setter
+	def AmtPric(self, value):
+		self._AmtPric = value if type(value) != auto else self.make_default("AmtPric")
+
+	@AmtPric.deleter
+	def AmtPric(self):
+		del self._AmtPric
+		self._AmtPric = None
+
+	@property
 	def AmtPricPerFinInstrmQty(self):
 		return self._AmtPricPerFinInstrmQty
 
@@ -87,12 +74,25 @@ class PriceFormat72Choice(base_types._BaseFieldType):
 		del self._AmtPricPerFinInstrmQty
 		self._AmtPricPerFinInstrmQty = None
 
+	@property
+	def AmtPricPerAmt(self):
+		return self._AmtPricPerAmt
+
+	@AmtPricPerAmt.setter
+	def AmtPricPerAmt(self, value):
+		self._AmtPricPerAmt = value if type(value) != auto else self.make_default("AmtPricPerAmt")
+
+	@AmtPricPerAmt.deleter
+	def AmtPricPerAmt(self):
+		del self._AmtPricPerAmt
+		self._AmtPricPerAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmtPric', type=AmountPrice3, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NotSpcfdPric', type=PriceValueType8Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PctgPric', type=PercentagePrice2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AmtPricPerAmt', type=AmountPricePerAmount2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IndxPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotSpcfdPric', type=PriceValueType8Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtPric', type=AmountPrice3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtPricPerFinInstrmQty', type=AmountPricePerFinancialInstrumentQuantity10, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtPricPerAmt', type=AmountPricePerAmount2, min=0, max=1, mutex_group=1, array=False),
 	))
 

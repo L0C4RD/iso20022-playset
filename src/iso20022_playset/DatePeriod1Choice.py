@@ -1,24 +1,11 @@
-import base_types
+from . import base_types
+import ISODate
 import Period2
 import ISOYearMonth
-import ISODate
 
 class DatePeriod1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FrDtToDt", "_Dt", "_DtMnth"]
-	@property
-	def FrDtToDt(self):
-		return self._FrDtToDt
-
-	@FrDtToDt.setter
-	def FrDtToDt(self, value):
-		self._FrDtToDt = value if type(value) != auto else self.make_default("FrDtToDt")
-
-	@FrDtToDt.deleter
-	def FrDtToDt(self):
-		del self._FrDtToDt
-		self._FrDtToDt = None
-
+	__slots__ = ["_Dt", "_FrDtToDt", "_DtMnth"]
 	@property
 	def Dt(self):
 		return self._Dt
@@ -31,6 +18,19 @@ class DatePeriod1Choice(base_types._BaseFieldType):
 	def Dt(self):
 		del self._Dt
 		self._Dt = None
+
+	@property
+	def FrDtToDt(self):
+		return self._FrDtToDt
+
+	@FrDtToDt.setter
+	def FrDtToDt(self, value):
+		self._FrDtToDt = value if type(value) != auto else self.make_default("FrDtToDt")
+
+	@FrDtToDt.deleter
+	def FrDtToDt(self):
+		del self._FrDtToDt
+		self._FrDtToDt = None
 
 	@property
 	def DtMnth(self):
@@ -46,8 +46,8 @@ class DatePeriod1Choice(base_types._BaseFieldType):
 		self._DtMnth = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FrDtToDt', type=Period2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FrDtToDt', type=Period2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DtMnth', type=ISOYearMonth, min=0, max=1, mutex_group=1, array=False),
 	))
 

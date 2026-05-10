@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import Parameter4
 import Algorithm7Code
 

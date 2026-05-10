@@ -1,11 +1,24 @@
-import base_types
-import PersonIdentification13
+from . import base_types
 import OrganisationIdentification29
 import FinancialInstitutionIdentification21
+import PersonIdentification13
 
 class TrackerParty2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvtId", "_OrgId", "_FinInstnId"]
+	__slots__ = ["_FinInstnId", "_PrvtId", "_OrgId"]
+	@property
+	def FinInstnId(self):
+		return self._FinInstnId
+
+	@FinInstnId.setter
+	def FinInstnId(self, value):
+		self._FinInstnId = value if type(value) != auto else self.make_default("FinInstnId")
+
+	@FinInstnId.deleter
+	def FinInstnId(self):
+		del self._FinInstnId
+		self._FinInstnId = None
+
 	@property
 	def PrvtId(self):
 		return self._PrvtId
@@ -32,22 +45,9 @@ class TrackerParty2Choice(base_types._BaseFieldType):
 		del self._OrgId
 		self._OrgId = None
 
-	@property
-	def FinInstnId(self):
-		return self._FinInstnId
-
-	@FinInstnId.setter
-	def FinInstnId(self, value):
-		self._FinInstnId = value if type(value) != auto else self.make_default("FinInstnId")
-
-	@FinInstnId.deleter
-	def FinInstnId(self):
-		del self._FinInstnId
-		self._FinInstnId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='FinInstnId', type=FinancialInstitutionIdentification21, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrvtId', type=PersonIdentification13, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OrgId', type=OrganisationIdentification29, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='FinInstnId', type=FinancialInstitutionIdentification21, min=0, max=1, mutex_group=1, array=False),
 	))
 

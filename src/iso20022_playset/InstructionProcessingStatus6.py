@@ -1,7 +1,7 @@
-import base_types
-import Max35Text
+from . import base_types
 import Max350Text
 import Status11Code
+import Max35Text
 
 class InstructionProcessingStatus6(base_types._BaseFieldType):
 

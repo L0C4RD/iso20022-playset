@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import IntentToPayNotificationV02
 
 class TSMT_044_001_02():

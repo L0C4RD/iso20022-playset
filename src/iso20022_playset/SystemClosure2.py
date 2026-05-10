@@ -1,6 +1,6 @@
-import base_types
-import DateTimePeriod1Choice
+from . import base_types
 import ClosureReason2Choice
+import DateTimePeriod1Choice
 
 class SystemClosure2(base_types._BaseFieldType):
 

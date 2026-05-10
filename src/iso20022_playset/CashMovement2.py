@@ -1,23 +1,10 @@
-import base_types
-import ActiveCurrencyAndAmount
+from . import base_types
 import CashAccount19
+import ActiveCurrencyAndAmount
 
 class CashMovement2(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_Amt"]
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
+	__slots__ = ["_Amt", "_AcctDtls"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -31,8 +18,21 @@ class CashMovement2(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def AcctDtls(self):
+		return self._AcctDtls
+
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctDtls', type=CashAccount19, min=1, max=2, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDtls', type=CashAccount19, min=1, max=2, mutex_group=None, array=False),
 	))
 

@@ -1,31 +1,18 @@
-import base_types
-import SupplementaryData1
-import SecurityIdentification19
+from . import base_types
 import IntraPositionDetails65
-import AdditionalParameters33
-import PartyIdentification127Choice
-import SafekeepingPlaceFormat41Choice
-import Linkages75
 import BlockChainAddressWallet3
-import FinancialInstrumentAttributes112
+import SupplementaryData1
+import AdditionalParameters33
 import SecuritiesAccount19
+import Linkages75
+import PartyIdentification127Choice
+import FinancialInstrumentAttributes112
+import SafekeepingPlaceFormat41Choice
+import SecurityIdentification19
 
 class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_AcctOwnr", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_FinInstrmAttrbts", "_FinInstrmId", "_IntraPosDtls", "_AddtlParams", "_Lkg", "_SfkpgPlc"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_AcctOwnr", "_FinInstrmAttrbts", "_SfkpgAcct", "_SplmtryData", "_FinInstrmId", "_SfkpgPlc", "_BlckChainAdrOrWllt", "_Lkg", "_IntraPosDtls", "_AddtlParams"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
@@ -38,32 +25,6 @@ class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 	def AcctOwnr(self):
 		del self._AcctOwnr
 		self._AcctOwnr = None
-
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
-	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
 
 	@property
 	def FinInstrmAttrbts(self):
@@ -79,6 +40,32 @@ class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 		self._FinInstrmAttrbts = None
 
 	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
 
@@ -90,6 +77,45 @@ class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 	def FinInstrmId(self):
 		del self._FinInstrmId
 		self._FinInstrmId = None
+
+	@property
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
+
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
+
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
+
+	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
+
+	@property
+	def Lkg(self):
+		return self._Lkg
+
+	@Lkg.setter
+	def Lkg(self, value):
+		self._Lkg = value if type(value) != auto else self.make_default("Lkg")
+
+	@Lkg.deleter
+	def Lkg(self):
+		del self._Lkg
+		self._Lkg = None
 
 	@property
 	def IntraPosDtls(self):
@@ -117,42 +143,16 @@ class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 		del self._AddtlParams
 		self._AddtlParams = None
 
-	@property
-	def Lkg(self):
-		return self._Lkg
-
-	@Lkg.setter
-	def Lkg(self, value):
-		self._Lkg = value if type(value) != auto else self.make_default("Lkg")
-
-	@Lkg.deleter
-	def Lkg(self):
-		del self._Lkg
-		self._Lkg = None
-
-	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
-
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
-
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmAttrbts', type=FinancialInstrumentAttributes112, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat41Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lkg', type=Linkages75, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntraPosDtls', type=IntraPositionDetails65, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlParams', type=AdditionalParameters33, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lkg', type=Linkages75, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat41Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

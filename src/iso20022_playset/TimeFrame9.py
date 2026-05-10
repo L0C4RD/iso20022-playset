@@ -1,12 +1,12 @@
-import base_types
+from . import base_types
 import Max350Text
+import Number
 import BusinessDayConvention1Code
 import ReferToFundOrderDesk1Code
-import Number
 
 class TimeFrame9(base_types._BaseFieldType):
 
-	__slots__ = ["_RefrToOrdrDsk", "_OthrTmFrameDesc", "_NonWorkgDayAdjstmnt", "_TMns"]
+	__slots__ = ["_RefrToOrdrDsk", "_NonWorkgDayAdjstmnt", "_TMns", "_OthrTmFrameDesc"]
 	@property
 	def RefrToOrdrDsk(self):
 		return self._RefrToOrdrDsk
@@ -19,19 +19,6 @@ class TimeFrame9(base_types._BaseFieldType):
 	def RefrToOrdrDsk(self):
 		del self._RefrToOrdrDsk
 		self._RefrToOrdrDsk = None
-
-	@property
-	def OthrTmFrameDesc(self):
-		return self._OthrTmFrameDesc
-
-	@OthrTmFrameDesc.setter
-	def OthrTmFrameDesc(self, value):
-		self._OthrTmFrameDesc = value if type(value) != auto else self.make_default("OthrTmFrameDesc")
-
-	@OthrTmFrameDesc.deleter
-	def OthrTmFrameDesc(self):
-		del self._OthrTmFrameDesc
-		self._OthrTmFrameDesc = None
 
 	@property
 	def NonWorkgDayAdjstmnt(self):
@@ -59,10 +46,23 @@ class TimeFrame9(base_types._BaseFieldType):
 		del self._TMns
 		self._TMns = None
 
+	@property
+	def OthrTmFrameDesc(self):
+		return self._OthrTmFrameDesc
+
+	@OthrTmFrameDesc.setter
+	def OthrTmFrameDesc(self, value):
+		self._OthrTmFrameDesc = value if type(value) != auto else self.make_default("OthrTmFrameDesc")
+
+	@OthrTmFrameDesc.deleter
+	def OthrTmFrameDesc(self):
+		del self._OthrTmFrameDesc
+		self._OthrTmFrameDesc = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RefrToOrdrDsk', type=ReferToFundOrderDesk1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTmFrameDesc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonWorkgDayAdjstmnt', type=BusinessDayConvention1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMns', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTmFrameDesc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

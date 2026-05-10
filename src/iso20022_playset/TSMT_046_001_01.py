@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import IntentToPayReportV01
 
 class TSMT_046_001_01():

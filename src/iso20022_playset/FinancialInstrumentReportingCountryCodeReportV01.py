@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import SupplementaryData1
 import SecuritiesCountryIdentification2
 
 class FinancialInstrumentReportingCountryCodeReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CtryData", "_SplmtryData"]
-	@property
-	def CtryData(self):
-		return self._CtryData
-
-	@CtryData.setter
-	def CtryData(self, value):
-		self._CtryData = value if type(value) != auto else self.make_default("CtryData")
-
-	@CtryData.deleter
-	def CtryData(self):
-		del self._CtryData
-		self._CtryData = None
-
+	__slots__ = ["_SplmtryData", "_CtryData"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -31,8 +18,21 @@ class FinancialInstrumentReportingCountryCodeReportV01(base_types._BaseFieldType
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def CtryData(self):
+		return self._CtryData
+
+	@CtryData.setter
+	def CtryData(self, value):
+		self._CtryData = value if type(value) != auto else self.make_default("CtryData")
+
+	@CtryData.deleter
+	def CtryData(self):
+		del self._CtryData
+		self._CtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtryData', type=SecuritiesCountryIdentification2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtryData', type=SecuritiesCountryIdentification2, min=1, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,154 +1,24 @@
-import base_types
-import AmountOrPercentageRange1
-import ISOYearMonth
-import ActiveCurrencyAndAmount
-import Number
-import Max35Text
-import ISODateTime
-import BICNonFIDec2014Identifier
+from . import base_types
 import DateTimePeriod2
 import YesNoIndicator
+import AmountOrPercentageRange1
+import ISODateTime
+import Max35Text
 import ActiveCurrencyCode
-import FinancialInstrumentQuantity1Choice
-import PercentageRate
-import TradeTransactionCondition2Code
+import ActiveCurrencyAndAmount
 import Rating1
-import Max256Text
 import Frequency1Code
+import PercentageRate
+import Max256Text
+import Number
+import BICNonFIDec2014Identifier
+import ISOYearMonth
+import TradeTransactionCondition2Code
+import FinancialInstrumentQuantity1Choice
 
 class FinancialInstrumentStipulations4(base_types._BaseFieldType):
 
-	__slots__ = ["_PerptlInd", "_RstrctdInd", "_PricRg", "_CpnRg", "_AmtsblInd", "_TxConds", "_AltrntvMinTaxInd", "_WhlPoolInd", "_IsseSz", "_IsseDt", "_Geogcs", "_MinQty", "_AutoRinvstmt", "_EscrwdInd", "_Ratg", "_YldRg", "_XprtnDt", "_CstmDt", "_LookBck", "_ConvtblInd", "_Pdctn", "_PmtFrqcy", "_PreFnddInd", "_MinDnmtn", "_PutblInd", "_InsrdInd", "_MinIncrmt", "_CllblInd", "_Hrcut", "_Sctr", "_IssrId", "_OverAlltmtRate", "_Purp", "_SbstitnLft", "_PricSrc", "_Ccy", "_MaxSbstitn", "_PricFrqcy", "_OverAlltmtAmt", "_MtrtyDt", "_SbstitnFrqcy"]
-	@property
-	def PerptlInd(self):
-		return self._PerptlInd
-
-	@PerptlInd.setter
-	def PerptlInd(self, value):
-		self._PerptlInd = value if type(value) != auto else self.make_default("PerptlInd")
-
-	@PerptlInd.deleter
-	def PerptlInd(self):
-		del self._PerptlInd
-		self._PerptlInd = None
-
-	@property
-	def RstrctdInd(self):
-		return self._RstrctdInd
-
-	@RstrctdInd.setter
-	def RstrctdInd(self, value):
-		self._RstrctdInd = value if type(value) != auto else self.make_default("RstrctdInd")
-
-	@RstrctdInd.deleter
-	def RstrctdInd(self):
-		del self._RstrctdInd
-		self._RstrctdInd = None
-
-	@property
-	def PricRg(self):
-		return self._PricRg
-
-	@PricRg.setter
-	def PricRg(self, value):
-		self._PricRg = value if type(value) != auto else self.make_default("PricRg")
-
-	@PricRg.deleter
-	def PricRg(self):
-		del self._PricRg
-		self._PricRg = None
-
-	@property
-	def CpnRg(self):
-		return self._CpnRg
-
-	@CpnRg.setter
-	def CpnRg(self, value):
-		self._CpnRg = value if type(value) != auto else self.make_default("CpnRg")
-
-	@CpnRg.deleter
-	def CpnRg(self):
-		del self._CpnRg
-		self._CpnRg = None
-
-	@property
-	def AmtsblInd(self):
-		return self._AmtsblInd
-
-	@AmtsblInd.setter
-	def AmtsblInd(self, value):
-		self._AmtsblInd = value if type(value) != auto else self.make_default("AmtsblInd")
-
-	@AmtsblInd.deleter
-	def AmtsblInd(self):
-		del self._AmtsblInd
-		self._AmtsblInd = None
-
-	@property
-	def TxConds(self):
-		return self._TxConds
-
-	@TxConds.setter
-	def TxConds(self, value):
-		self._TxConds = value if type(value) != auto else self.make_default("TxConds")
-
-	@TxConds.deleter
-	def TxConds(self):
-		del self._TxConds
-		self._TxConds = None
-
-	@property
-	def AltrntvMinTaxInd(self):
-		return self._AltrntvMinTaxInd
-
-	@AltrntvMinTaxInd.setter
-	def AltrntvMinTaxInd(self, value):
-		self._AltrntvMinTaxInd = value if type(value) != auto else self.make_default("AltrntvMinTaxInd")
-
-	@AltrntvMinTaxInd.deleter
-	def AltrntvMinTaxInd(self):
-		del self._AltrntvMinTaxInd
-		self._AltrntvMinTaxInd = None
-
-	@property
-	def WhlPoolInd(self):
-		return self._WhlPoolInd
-
-	@WhlPoolInd.setter
-	def WhlPoolInd(self, value):
-		self._WhlPoolInd = value if type(value) != auto else self.make_default("WhlPoolInd")
-
-	@WhlPoolInd.deleter
-	def WhlPoolInd(self):
-		del self._WhlPoolInd
-		self._WhlPoolInd = None
-
-	@property
-	def IsseSz(self):
-		return self._IsseSz
-
-	@IsseSz.setter
-	def IsseSz(self, value):
-		self._IsseSz = value if type(value) != auto else self.make_default("IsseSz")
-
-	@IsseSz.deleter
-	def IsseSz(self):
-		del self._IsseSz
-		self._IsseSz = None
-
-	@property
-	def IsseDt(self):
-		return self._IsseDt
-
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
-
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
-
+	__slots__ = ["_Geogcs", "_SbstitnLft", "_IssrId", "_InsrdInd", "_Ccy", "_PmtFrqcy", "_AltrntvMinTaxInd", "_Pdctn", "_LookBck", "_CllblInd", "_PricRg", "_ConvtblInd", "_CstmDt", "_MaxSbstitn", "_IsseSz", "_OverAlltmtAmt", "_Sctr", "_MinQty", "_PerptlInd", "_MinIncrmt", "_OverAlltmtRate", "_PutblInd", "_CpnRg", "_Purp", "_AmtsblInd", "_PricFrqcy", "_SbstitnFrqcy", "_WhlPoolInd", "_YldRg", "_IsseDt", "_MinDnmtn", "_PricSrc", "_Ratg", "_AutoRinvstmt", "_MtrtyDt", "_RstrctdInd", "_XprtnDt", "_Hrcut", "_PreFnddInd", "_EscrwdInd", "_TxConds"]
 	@property
 	def Geogcs(self):
 		return self._Geogcs
@@ -161,292 +31,6 @@ class FinancialInstrumentStipulations4(base_types._BaseFieldType):
 	def Geogcs(self):
 		del self._Geogcs
 		self._Geogcs = None
-
-	@property
-	def MinQty(self):
-		return self._MinQty
-
-	@MinQty.setter
-	def MinQty(self, value):
-		self._MinQty = value if type(value) != auto else self.make_default("MinQty")
-
-	@MinQty.deleter
-	def MinQty(self):
-		del self._MinQty
-		self._MinQty = None
-
-	@property
-	def AutoRinvstmt(self):
-		return self._AutoRinvstmt
-
-	@AutoRinvstmt.setter
-	def AutoRinvstmt(self, value):
-		self._AutoRinvstmt = value if type(value) != auto else self.make_default("AutoRinvstmt")
-
-	@AutoRinvstmt.deleter
-	def AutoRinvstmt(self):
-		del self._AutoRinvstmt
-		self._AutoRinvstmt = None
-
-	@property
-	def EscrwdInd(self):
-		return self._EscrwdInd
-
-	@EscrwdInd.setter
-	def EscrwdInd(self, value):
-		self._EscrwdInd = value if type(value) != auto else self.make_default("EscrwdInd")
-
-	@EscrwdInd.deleter
-	def EscrwdInd(self):
-		del self._EscrwdInd
-		self._EscrwdInd = None
-
-	@property
-	def Ratg(self):
-		return self._Ratg
-
-	@Ratg.setter
-	def Ratg(self, value):
-		self._Ratg = value if type(value) != auto else self.make_default("Ratg")
-
-	@Ratg.deleter
-	def Ratg(self):
-		del self._Ratg
-		self._Ratg = None
-
-	@property
-	def YldRg(self):
-		return self._YldRg
-
-	@YldRg.setter
-	def YldRg(self, value):
-		self._YldRg = value if type(value) != auto else self.make_default("YldRg")
-
-	@YldRg.deleter
-	def YldRg(self):
-		del self._YldRg
-		self._YldRg = None
-
-	@property
-	def XprtnDt(self):
-		return self._XprtnDt
-
-	@XprtnDt.setter
-	def XprtnDt(self, value):
-		self._XprtnDt = value if type(value) != auto else self.make_default("XprtnDt")
-
-	@XprtnDt.deleter
-	def XprtnDt(self):
-		del self._XprtnDt
-		self._XprtnDt = None
-
-	@property
-	def CstmDt(self):
-		return self._CstmDt
-
-	@CstmDt.setter
-	def CstmDt(self, value):
-		self._CstmDt = value if type(value) != auto else self.make_default("CstmDt")
-
-	@CstmDt.deleter
-	def CstmDt(self):
-		del self._CstmDt
-		self._CstmDt = None
-
-	@property
-	def LookBck(self):
-		return self._LookBck
-
-	@LookBck.setter
-	def LookBck(self, value):
-		self._LookBck = value if type(value) != auto else self.make_default("LookBck")
-
-	@LookBck.deleter
-	def LookBck(self):
-		del self._LookBck
-		self._LookBck = None
-
-	@property
-	def ConvtblInd(self):
-		return self._ConvtblInd
-
-	@ConvtblInd.setter
-	def ConvtblInd(self, value):
-		self._ConvtblInd = value if type(value) != auto else self.make_default("ConvtblInd")
-
-	@ConvtblInd.deleter
-	def ConvtblInd(self):
-		del self._ConvtblInd
-		self._ConvtblInd = None
-
-	@property
-	def Pdctn(self):
-		return self._Pdctn
-
-	@Pdctn.setter
-	def Pdctn(self, value):
-		self._Pdctn = value if type(value) != auto else self.make_default("Pdctn")
-
-	@Pdctn.deleter
-	def Pdctn(self):
-		del self._Pdctn
-		self._Pdctn = None
-
-	@property
-	def PmtFrqcy(self):
-		return self._PmtFrqcy
-
-	@PmtFrqcy.setter
-	def PmtFrqcy(self, value):
-		self._PmtFrqcy = value if type(value) != auto else self.make_default("PmtFrqcy")
-
-	@PmtFrqcy.deleter
-	def PmtFrqcy(self):
-		del self._PmtFrqcy
-		self._PmtFrqcy = None
-
-	@property
-	def PreFnddInd(self):
-		return self._PreFnddInd
-
-	@PreFnddInd.setter
-	def PreFnddInd(self, value):
-		self._PreFnddInd = value if type(value) != auto else self.make_default("PreFnddInd")
-
-	@PreFnddInd.deleter
-	def PreFnddInd(self):
-		del self._PreFnddInd
-		self._PreFnddInd = None
-
-	@property
-	def MinDnmtn(self):
-		return self._MinDnmtn
-
-	@MinDnmtn.setter
-	def MinDnmtn(self, value):
-		self._MinDnmtn = value if type(value) != auto else self.make_default("MinDnmtn")
-
-	@MinDnmtn.deleter
-	def MinDnmtn(self):
-		del self._MinDnmtn
-		self._MinDnmtn = None
-
-	@property
-	def PutblInd(self):
-		return self._PutblInd
-
-	@PutblInd.setter
-	def PutblInd(self, value):
-		self._PutblInd = value if type(value) != auto else self.make_default("PutblInd")
-
-	@PutblInd.deleter
-	def PutblInd(self):
-		del self._PutblInd
-		self._PutblInd = None
-
-	@property
-	def InsrdInd(self):
-		return self._InsrdInd
-
-	@InsrdInd.setter
-	def InsrdInd(self, value):
-		self._InsrdInd = value if type(value) != auto else self.make_default("InsrdInd")
-
-	@InsrdInd.deleter
-	def InsrdInd(self):
-		del self._InsrdInd
-		self._InsrdInd = None
-
-	@property
-	def MinIncrmt(self):
-		return self._MinIncrmt
-
-	@MinIncrmt.setter
-	def MinIncrmt(self, value):
-		self._MinIncrmt = value if type(value) != auto else self.make_default("MinIncrmt")
-
-	@MinIncrmt.deleter
-	def MinIncrmt(self):
-		del self._MinIncrmt
-		self._MinIncrmt = None
-
-	@property
-	def CllblInd(self):
-		return self._CllblInd
-
-	@CllblInd.setter
-	def CllblInd(self, value):
-		self._CllblInd = value if type(value) != auto else self.make_default("CllblInd")
-
-	@CllblInd.deleter
-	def CllblInd(self):
-		del self._CllblInd
-		self._CllblInd = None
-
-	@property
-	def Hrcut(self):
-		return self._Hrcut
-
-	@Hrcut.setter
-	def Hrcut(self, value):
-		self._Hrcut = value if type(value) != auto else self.make_default("Hrcut")
-
-	@Hrcut.deleter
-	def Hrcut(self):
-		del self._Hrcut
-		self._Hrcut = None
-
-	@property
-	def Sctr(self):
-		return self._Sctr
-
-	@Sctr.setter
-	def Sctr(self, value):
-		self._Sctr = value if type(value) != auto else self.make_default("Sctr")
-
-	@Sctr.deleter
-	def Sctr(self):
-		del self._Sctr
-		self._Sctr = None
-
-	@property
-	def IssrId(self):
-		return self._IssrId
-
-	@IssrId.setter
-	def IssrId(self, value):
-		self._IssrId = value if type(value) != auto else self.make_default("IssrId")
-
-	@IssrId.deleter
-	def IssrId(self):
-		del self._IssrId
-		self._IssrId = None
-
-	@property
-	def OverAlltmtRate(self):
-		return self._OverAlltmtRate
-
-	@OverAlltmtRate.setter
-	def OverAlltmtRate(self, value):
-		self._OverAlltmtRate = value if type(value) != auto else self.make_default("OverAlltmtRate")
-
-	@OverAlltmtRate.deleter
-	def OverAlltmtRate(self):
-		del self._OverAlltmtRate
-		self._OverAlltmtRate = None
-
-	@property
-	def Purp(self):
-		return self._Purp
-
-	@Purp.setter
-	def Purp(self, value):
-		self._Purp = value if type(value) != auto else self.make_default("Purp")
-
-	@Purp.deleter
-	def Purp(self):
-		del self._Purp
-		self._Purp = None
 
 	@property
 	def SbstitnLft(self):
@@ -462,17 +46,30 @@ class FinancialInstrumentStipulations4(base_types._BaseFieldType):
 		self._SbstitnLft = None
 
 	@property
-	def PricSrc(self):
-		return self._PricSrc
+	def IssrId(self):
+		return self._IssrId
 
-	@PricSrc.setter
-	def PricSrc(self, value):
-		self._PricSrc = value if type(value) != auto else self.make_default("PricSrc")
+	@IssrId.setter
+	def IssrId(self, value):
+		self._IssrId = value if type(value) != auto else self.make_default("IssrId")
 
-	@PricSrc.deleter
-	def PricSrc(self):
-		del self._PricSrc
-		self._PricSrc = None
+	@IssrId.deleter
+	def IssrId(self):
+		del self._IssrId
+		self._IssrId = None
+
+	@property
+	def InsrdInd(self):
+		return self._InsrdInd
+
+	@InsrdInd.setter
+	def InsrdInd(self, value):
+		self._InsrdInd = value if type(value) != auto else self.make_default("InsrdInd")
+
+	@InsrdInd.deleter
+	def InsrdInd(self):
+		del self._InsrdInd
+		self._InsrdInd = None
 
 	@property
 	def Ccy(self):
@@ -488,6 +85,110 @@ class FinancialInstrumentStipulations4(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
+	def PmtFrqcy(self):
+		return self._PmtFrqcy
+
+	@PmtFrqcy.setter
+	def PmtFrqcy(self, value):
+		self._PmtFrqcy = value if type(value) != auto else self.make_default("PmtFrqcy")
+
+	@PmtFrqcy.deleter
+	def PmtFrqcy(self):
+		del self._PmtFrqcy
+		self._PmtFrqcy = None
+
+	@property
+	def AltrntvMinTaxInd(self):
+		return self._AltrntvMinTaxInd
+
+	@AltrntvMinTaxInd.setter
+	def AltrntvMinTaxInd(self, value):
+		self._AltrntvMinTaxInd = value if type(value) != auto else self.make_default("AltrntvMinTaxInd")
+
+	@AltrntvMinTaxInd.deleter
+	def AltrntvMinTaxInd(self):
+		del self._AltrntvMinTaxInd
+		self._AltrntvMinTaxInd = None
+
+	@property
+	def Pdctn(self):
+		return self._Pdctn
+
+	@Pdctn.setter
+	def Pdctn(self, value):
+		self._Pdctn = value if type(value) != auto else self.make_default("Pdctn")
+
+	@Pdctn.deleter
+	def Pdctn(self):
+		del self._Pdctn
+		self._Pdctn = None
+
+	@property
+	def LookBck(self):
+		return self._LookBck
+
+	@LookBck.setter
+	def LookBck(self, value):
+		self._LookBck = value if type(value) != auto else self.make_default("LookBck")
+
+	@LookBck.deleter
+	def LookBck(self):
+		del self._LookBck
+		self._LookBck = None
+
+	@property
+	def CllblInd(self):
+		return self._CllblInd
+
+	@CllblInd.setter
+	def CllblInd(self, value):
+		self._CllblInd = value if type(value) != auto else self.make_default("CllblInd")
+
+	@CllblInd.deleter
+	def CllblInd(self):
+		del self._CllblInd
+		self._CllblInd = None
+
+	@property
+	def PricRg(self):
+		return self._PricRg
+
+	@PricRg.setter
+	def PricRg(self, value):
+		self._PricRg = value if type(value) != auto else self.make_default("PricRg")
+
+	@PricRg.deleter
+	def PricRg(self):
+		del self._PricRg
+		self._PricRg = None
+
+	@property
+	def ConvtblInd(self):
+		return self._ConvtblInd
+
+	@ConvtblInd.setter
+	def ConvtblInd(self, value):
+		self._ConvtblInd = value if type(value) != auto else self.make_default("ConvtblInd")
+
+	@ConvtblInd.deleter
+	def ConvtblInd(self):
+		del self._ConvtblInd
+		self._ConvtblInd = None
+
+	@property
+	def CstmDt(self):
+		return self._CstmDt
+
+	@CstmDt.setter
+	def CstmDt(self, value):
+		self._CstmDt = value if type(value) != auto else self.make_default("CstmDt")
+
+	@CstmDt.deleter
+	def CstmDt(self):
+		del self._CstmDt
+		self._CstmDt = None
+
+	@property
 	def MaxSbstitn(self):
 		return self._MaxSbstitn
 
@@ -501,17 +202,17 @@ class FinancialInstrumentStipulations4(base_types._BaseFieldType):
 		self._MaxSbstitn = None
 
 	@property
-	def PricFrqcy(self):
-		return self._PricFrqcy
+	def IsseSz(self):
+		return self._IsseSz
 
-	@PricFrqcy.setter
-	def PricFrqcy(self, value):
-		self._PricFrqcy = value if type(value) != auto else self.make_default("PricFrqcy")
+	@IsseSz.setter
+	def IsseSz(self, value):
+		self._IsseSz = value if type(value) != auto else self.make_default("IsseSz")
 
-	@PricFrqcy.deleter
-	def PricFrqcy(self):
-		del self._PricFrqcy
-		self._PricFrqcy = None
+	@IsseSz.deleter
+	def IsseSz(self):
+		del self._IsseSz
+		self._IsseSz = None
 
 	@property
 	def OverAlltmtAmt(self):
@@ -527,17 +228,134 @@ class FinancialInstrumentStipulations4(base_types._BaseFieldType):
 		self._OverAlltmtAmt = None
 
 	@property
-	def MtrtyDt(self):
-		return self._MtrtyDt
+	def Sctr(self):
+		return self._Sctr
 
-	@MtrtyDt.setter
-	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+	@Sctr.setter
+	def Sctr(self, value):
+		self._Sctr = value if type(value) != auto else self.make_default("Sctr")
 
-	@MtrtyDt.deleter
-	def MtrtyDt(self):
-		del self._MtrtyDt
-		self._MtrtyDt = None
+	@Sctr.deleter
+	def Sctr(self):
+		del self._Sctr
+		self._Sctr = None
+
+	@property
+	def MinQty(self):
+		return self._MinQty
+
+	@MinQty.setter
+	def MinQty(self, value):
+		self._MinQty = value if type(value) != auto else self.make_default("MinQty")
+
+	@MinQty.deleter
+	def MinQty(self):
+		del self._MinQty
+		self._MinQty = None
+
+	@property
+	def PerptlInd(self):
+		return self._PerptlInd
+
+	@PerptlInd.setter
+	def PerptlInd(self, value):
+		self._PerptlInd = value if type(value) != auto else self.make_default("PerptlInd")
+
+	@PerptlInd.deleter
+	def PerptlInd(self):
+		del self._PerptlInd
+		self._PerptlInd = None
+
+	@property
+	def MinIncrmt(self):
+		return self._MinIncrmt
+
+	@MinIncrmt.setter
+	def MinIncrmt(self, value):
+		self._MinIncrmt = value if type(value) != auto else self.make_default("MinIncrmt")
+
+	@MinIncrmt.deleter
+	def MinIncrmt(self):
+		del self._MinIncrmt
+		self._MinIncrmt = None
+
+	@property
+	def OverAlltmtRate(self):
+		return self._OverAlltmtRate
+
+	@OverAlltmtRate.setter
+	def OverAlltmtRate(self, value):
+		self._OverAlltmtRate = value if type(value) != auto else self.make_default("OverAlltmtRate")
+
+	@OverAlltmtRate.deleter
+	def OverAlltmtRate(self):
+		del self._OverAlltmtRate
+		self._OverAlltmtRate = None
+
+	@property
+	def PutblInd(self):
+		return self._PutblInd
+
+	@PutblInd.setter
+	def PutblInd(self, value):
+		self._PutblInd = value if type(value) != auto else self.make_default("PutblInd")
+
+	@PutblInd.deleter
+	def PutblInd(self):
+		del self._PutblInd
+		self._PutblInd = None
+
+	@property
+	def CpnRg(self):
+		return self._CpnRg
+
+	@CpnRg.setter
+	def CpnRg(self, value):
+		self._CpnRg = value if type(value) != auto else self.make_default("CpnRg")
+
+	@CpnRg.deleter
+	def CpnRg(self):
+		del self._CpnRg
+		self._CpnRg = None
+
+	@property
+	def Purp(self):
+		return self._Purp
+
+	@Purp.setter
+	def Purp(self, value):
+		self._Purp = value if type(value) != auto else self.make_default("Purp")
+
+	@Purp.deleter
+	def Purp(self):
+		del self._Purp
+		self._Purp = None
+
+	@property
+	def AmtsblInd(self):
+		return self._AmtsblInd
+
+	@AmtsblInd.setter
+	def AmtsblInd(self, value):
+		self._AmtsblInd = value if type(value) != auto else self.make_default("AmtsblInd")
+
+	@AmtsblInd.deleter
+	def AmtsblInd(self):
+		del self._AmtsblInd
+		self._AmtsblInd = None
+
+	@property
+	def PricFrqcy(self):
+		return self._PricFrqcy
+
+	@PricFrqcy.setter
+	def PricFrqcy(self, value):
+		self._PricFrqcy = value if type(value) != auto else self.make_default("PricFrqcy")
+
+	@PricFrqcy.deleter
+	def PricFrqcy(self):
+		del self._PricFrqcy
+		self._PricFrqcy = None
 
 	@property
 	def SbstitnFrqcy(self):
@@ -552,47 +370,229 @@ class FinancialInstrumentStipulations4(base_types._BaseFieldType):
 		del self._SbstitnFrqcy
 		self._SbstitnFrqcy = None
 
+	@property
+	def WhlPoolInd(self):
+		return self._WhlPoolInd
+
+	@WhlPoolInd.setter
+	def WhlPoolInd(self, value):
+		self._WhlPoolInd = value if type(value) != auto else self.make_default("WhlPoolInd")
+
+	@WhlPoolInd.deleter
+	def WhlPoolInd(self):
+		del self._WhlPoolInd
+		self._WhlPoolInd = None
+
+	@property
+	def YldRg(self):
+		return self._YldRg
+
+	@YldRg.setter
+	def YldRg(self, value):
+		self._YldRg = value if type(value) != auto else self.make_default("YldRg")
+
+	@YldRg.deleter
+	def YldRg(self):
+		del self._YldRg
+		self._YldRg = None
+
+	@property
+	def IsseDt(self):
+		return self._IsseDt
+
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
+
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
+
+	@property
+	def MinDnmtn(self):
+		return self._MinDnmtn
+
+	@MinDnmtn.setter
+	def MinDnmtn(self, value):
+		self._MinDnmtn = value if type(value) != auto else self.make_default("MinDnmtn")
+
+	@MinDnmtn.deleter
+	def MinDnmtn(self):
+		del self._MinDnmtn
+		self._MinDnmtn = None
+
+	@property
+	def PricSrc(self):
+		return self._PricSrc
+
+	@PricSrc.setter
+	def PricSrc(self, value):
+		self._PricSrc = value if type(value) != auto else self.make_default("PricSrc")
+
+	@PricSrc.deleter
+	def PricSrc(self):
+		del self._PricSrc
+		self._PricSrc = None
+
+	@property
+	def Ratg(self):
+		return self._Ratg
+
+	@Ratg.setter
+	def Ratg(self, value):
+		self._Ratg = value if type(value) != auto else self.make_default("Ratg")
+
+	@Ratg.deleter
+	def Ratg(self):
+		del self._Ratg
+		self._Ratg = None
+
+	@property
+	def AutoRinvstmt(self):
+		return self._AutoRinvstmt
+
+	@AutoRinvstmt.setter
+	def AutoRinvstmt(self, value):
+		self._AutoRinvstmt = value if type(value) != auto else self.make_default("AutoRinvstmt")
+
+	@AutoRinvstmt.deleter
+	def AutoRinvstmt(self):
+		del self._AutoRinvstmt
+		self._AutoRinvstmt = None
+
+	@property
+	def MtrtyDt(self):
+		return self._MtrtyDt
+
+	@MtrtyDt.setter
+	def MtrtyDt(self, value):
+		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+
+	@MtrtyDt.deleter
+	def MtrtyDt(self):
+		del self._MtrtyDt
+		self._MtrtyDt = None
+
+	@property
+	def RstrctdInd(self):
+		return self._RstrctdInd
+
+	@RstrctdInd.setter
+	def RstrctdInd(self, value):
+		self._RstrctdInd = value if type(value) != auto else self.make_default("RstrctdInd")
+
+	@RstrctdInd.deleter
+	def RstrctdInd(self):
+		del self._RstrctdInd
+		self._RstrctdInd = None
+
+	@property
+	def XprtnDt(self):
+		return self._XprtnDt
+
+	@XprtnDt.setter
+	def XprtnDt(self, value):
+		self._XprtnDt = value if type(value) != auto else self.make_default("XprtnDt")
+
+	@XprtnDt.deleter
+	def XprtnDt(self):
+		del self._XprtnDt
+		self._XprtnDt = None
+
+	@property
+	def Hrcut(self):
+		return self._Hrcut
+
+	@Hrcut.setter
+	def Hrcut(self, value):
+		self._Hrcut = value if type(value) != auto else self.make_default("Hrcut")
+
+	@Hrcut.deleter
+	def Hrcut(self):
+		del self._Hrcut
+		self._Hrcut = None
+
+	@property
+	def PreFnddInd(self):
+		return self._PreFnddInd
+
+	@PreFnddInd.setter
+	def PreFnddInd(self, value):
+		self._PreFnddInd = value if type(value) != auto else self.make_default("PreFnddInd")
+
+	@PreFnddInd.deleter
+	def PreFnddInd(self):
+		del self._PreFnddInd
+		self._PreFnddInd = None
+
+	@property
+	def EscrwdInd(self):
+		return self._EscrwdInd
+
+	@EscrwdInd.setter
+	def EscrwdInd(self, value):
+		self._EscrwdInd = value if type(value) != auto else self.make_default("EscrwdInd")
+
+	@EscrwdInd.deleter
+	def EscrwdInd(self):
+		del self._EscrwdInd
+		self._EscrwdInd = None
+
+	@property
+	def TxConds(self):
+		return self._TxConds
+
+	@TxConds.setter
+	def TxConds(self, value):
+		self._TxConds = value if type(value) != auto else self.make_default("TxConds")
+
+	@TxConds.deleter
+	def TxConds(self):
+		del self._TxConds
+		self._TxConds = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PerptlInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RstrctdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricRg', type=AmountOrPercentageRange1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CpnRg', type=AmountOrPercentageRange1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmtsblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxConds', type=TradeTransactionCondition2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrntvMinTaxInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WhlPoolInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseSz', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Geogcs', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinQty', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AutoRinvstmt', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EscrwdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ratg', type=Rating1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='YldRg', type=AmountOrPercentageRange1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XprtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmDt', type=DateTimePeriod2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LookBck', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConvtblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pdctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtFrqcy', type=Frequency1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PreFnddInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinDnmtn', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PutblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InsrdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinIncrmt', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CllblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hrcut', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sctr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrId', type=BICNonFIDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OverAlltmtRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Purp', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SbstitnLft', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricSrc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrId', type=BICNonFIDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InsrdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtFrqcy', type=Frequency1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrntvMinTaxInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pdctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LookBck', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CllblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricRg', type=AmountOrPercentageRange1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConvtblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmDt', type=DateTimePeriod2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxSbstitn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricFrqcy', type=Frequency1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseSz', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OverAlltmtAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtrtyDt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sctr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinQty', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PerptlInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinIncrmt', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OverAlltmtRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PutblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpnRg', type=AmountOrPercentageRange1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Purp', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtsblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricFrqcy', type=Frequency1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SbstitnFrqcy', type=Frequency1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WhlPoolInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='YldRg', type=AmountOrPercentageRange1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinDnmtn', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricSrc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ratg', type=Rating1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AutoRinvstmt', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RstrctdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XprtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hrcut', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PreFnddInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EscrwdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxConds', type=TradeTransactionCondition2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

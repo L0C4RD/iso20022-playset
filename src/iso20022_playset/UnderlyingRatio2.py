@@ -1,10 +1,23 @@
-import base_types
-import SecurityIdentification19
+from . import base_types
 import FinancialInstrumentQuantity1Choice
+import SecurityIdentification19
 
 class UnderlyingRatio2(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdFinInstrmId", "_UndrlygQtyDnmtr", "_UndrlygQtyNmrtr"]
+	__slots__ = ["_UndrlygQtyNmrtr", "_RltdFinInstrmId", "_UndrlygQtyDnmtr"]
+	@property
+	def UndrlygQtyNmrtr(self):
+		return self._UndrlygQtyNmrtr
+
+	@UndrlygQtyNmrtr.setter
+	def UndrlygQtyNmrtr(self, value):
+		self._UndrlygQtyNmrtr = value if type(value) != auto else self.make_default("UndrlygQtyNmrtr")
+
+	@UndrlygQtyNmrtr.deleter
+	def UndrlygQtyNmrtr(self):
+		del self._UndrlygQtyNmrtr
+		self._UndrlygQtyNmrtr = None
+
 	@property
 	def RltdFinInstrmId(self):
 		return self._RltdFinInstrmId
@@ -31,22 +44,9 @@ class UnderlyingRatio2(base_types._BaseFieldType):
 		del self._UndrlygQtyDnmtr
 		self._UndrlygQtyDnmtr = None
 
-	@property
-	def UndrlygQtyNmrtr(self):
-		return self._UndrlygQtyNmrtr
-
-	@UndrlygQtyNmrtr.setter
-	def UndrlygQtyNmrtr(self, value):
-		self._UndrlygQtyNmrtr = value if type(value) != auto else self.make_default("UndrlygQtyNmrtr")
-
-	@UndrlygQtyNmrtr.deleter
-	def UndrlygQtyNmrtr(self):
-		del self._UndrlygQtyNmrtr
-		self._UndrlygQtyNmrtr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='UndrlygQtyNmrtr', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdFinInstrmId', type=SecurityIdentification19, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UndrlygQtyDnmtr', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygQtyNmrtr', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

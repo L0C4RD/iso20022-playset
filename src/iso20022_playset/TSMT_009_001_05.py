@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import BaselineAmendmentRequestV05
 
 class TSMT_009_001_05():

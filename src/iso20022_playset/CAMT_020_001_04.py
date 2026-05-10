@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import GetGeneralBusinessInformationV04
 
 class CAMT_020_001_04():

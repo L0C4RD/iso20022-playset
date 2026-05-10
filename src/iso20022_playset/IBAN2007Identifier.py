@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 
 class IBAN2007Identifier(base_types._BaseDataType_String):
 

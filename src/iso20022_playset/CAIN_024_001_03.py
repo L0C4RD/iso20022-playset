@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CardManagementResponseV03
 
 class CAIN_024_001_03():

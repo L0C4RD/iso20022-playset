@@ -1,24 +1,11 @@
-import base_types
-import Max15NumericText
-import CancellationIndividualStatus1Code
+from . import base_types
 import DecimalNumber
+import CancellationIndividualStatus1Code
+import Max15NumericText
 
 class NumberOfCancellationsPerStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_DtldNbOfTxs", "_DtldCtrlSum", "_DtldSts"]
-	@property
-	def DtldNbOfTxs(self):
-		return self._DtldNbOfTxs
-
-	@DtldNbOfTxs.setter
-	def DtldNbOfTxs(self, value):
-		self._DtldNbOfTxs = value if type(value) != auto else self.make_default("DtldNbOfTxs")
-
-	@DtldNbOfTxs.deleter
-	def DtldNbOfTxs(self):
-		del self._DtldNbOfTxs
-		self._DtldNbOfTxs = None
-
+	__slots__ = ["_DtldCtrlSum", "_DtldNbOfTxs", "_DtldSts"]
 	@property
 	def DtldCtrlSum(self):
 		return self._DtldCtrlSum
@@ -31,6 +18,19 @@ class NumberOfCancellationsPerStatus1(base_types._BaseFieldType):
 	def DtldCtrlSum(self):
 		del self._DtldCtrlSum
 		self._DtldCtrlSum = None
+
+	@property
+	def DtldNbOfTxs(self):
+		return self._DtldNbOfTxs
+
+	@DtldNbOfTxs.setter
+	def DtldNbOfTxs(self, value):
+		self._DtldNbOfTxs = value if type(value) != auto else self.make_default("DtldNbOfTxs")
+
+	@DtldNbOfTxs.deleter
+	def DtldNbOfTxs(self):
+		del self._DtldNbOfTxs
+		self._DtldNbOfTxs = None
 
 	@property
 	def DtldSts(self):
@@ -46,8 +46,8 @@ class NumberOfCancellationsPerStatus1(base_types._BaseFieldType):
 		self._DtldSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtldNbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtldCtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtldNbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtldSts', type=CancellationIndividualStatus1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

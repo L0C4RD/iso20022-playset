@@ -1,24 +1,24 @@
-import base_types
-import Max35Text
-import Max140Text
-import Max70Text
+from . import base_types
 import GenericIdentification30
+import Max140Text
+import Max35Text
+import Max70Text
 
 class BlockChainAddressWallet4(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Nm", "_Dsgnt", "_Id"]
+	__slots__ = ["_Dsgnt", "_Nm", "_Tp", "_Id"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def Dsgnt(self):
+		return self._Dsgnt
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@Dsgnt.setter
+	def Dsgnt(self, value):
+		self._Dsgnt = value if type(value) != auto else self.make_default("Dsgnt")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Dsgnt.deleter
+	def Dsgnt(self):
+		del self._Dsgnt
+		self._Dsgnt = None
 
 	@property
 	def Nm(self):
@@ -34,17 +34,17 @@ class BlockChainAddressWallet4(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def Dsgnt(self):
-		return self._Dsgnt
+	def Tp(self):
+		return self._Tp
 
-	@Dsgnt.setter
-	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != auto else self.make_default("Dsgnt")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@Dsgnt.deleter
-	def Dsgnt(self):
-		del self._Dsgnt
-		self._Dsgnt = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Id(self):
@@ -60,9 +60,9 @@ class BlockChainAddressWallet4(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

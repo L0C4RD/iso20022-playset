@@ -1,7 +1,7 @@
-import base_types
-import TerminationReason1Choice
+from . import base_types
 import ISODate
 import Max2000Text
+import TerminationReason1Choice
 
 class UndertakingTermination3(base_types._BaseFieldType):
 

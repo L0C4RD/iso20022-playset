@@ -1,24 +1,11 @@
-import base_types
-import ReportResponse8
+from . import base_types
 import ContentInformationType38
 import Header41
+import ReportResponse8
 
 class SaleToPOIReportResponseV07(base_types._BaseFieldType):
 
-	__slots__ = ["_RptRspn", "_Hdr", "_SctyTrlr"]
-	@property
-	def RptRspn(self):
-		return self._RptRspn
-
-	@RptRspn.setter
-	def RptRspn(self, value):
-		self._RptRspn = value if type(value) != auto else self.make_default("RptRspn")
-
-	@RptRspn.deleter
-	def RptRspn(self):
-		del self._RptRspn
-		self._RptRspn = None
-
+	__slots__ = ["_Hdr", "_SctyTrlr", "_RptRspn"]
 	@property
 	def Hdr(self):
 		return self._Hdr
@@ -45,9 +32,22 @@ class SaleToPOIReportResponseV07(base_types._BaseFieldType):
 		del self._SctyTrlr
 		self._SctyTrlr = None
 
+	@property
+	def RptRspn(self):
+		return self._RptRspn
+
+	@RptRspn.setter
+	def RptRspn(self, value):
+		self._RptRspn = value if type(value) != auto else self.make_default("RptRspn")
+
+	@RptRspn.deleter
+	def RptRspn(self):
+		del self._RptRspn
+		self._RptRspn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptRspn', type=ReportResponse8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptRspn', type=ReportResponse8, min=1, max=1, mutex_group=None, array=False),
 	))
 

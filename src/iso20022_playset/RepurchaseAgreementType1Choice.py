@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import GeneralCollateral2
 import SpecificCollateral2
 

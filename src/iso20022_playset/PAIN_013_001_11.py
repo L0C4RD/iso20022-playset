@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CreditorPaymentActivationRequestV11
 
 class PAIN_013_001_11():

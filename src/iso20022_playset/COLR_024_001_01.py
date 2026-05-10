@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import TripartyCollateralAllegementNotificationCancellationAdviceV01
 
 class COLR_024_001_01():

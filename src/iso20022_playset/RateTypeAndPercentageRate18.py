@@ -1,6 +1,6 @@
-import base_types
-import RateType46Choice
+from . import base_types
 import Percentage14Rate
+import RateType46Choice
 
 class RateTypeAndPercentageRate18(base_types._BaseFieldType):
 

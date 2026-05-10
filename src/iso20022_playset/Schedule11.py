@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import ISODate
 import AmountAndDirection106
 
 class Schedule11(base_types._BaseFieldType):
 
-	__slots__ = ["_UadjstdEndDt", "_UadjstdFctvDt", "_Amt"]
-	@property
-	def UadjstdEndDt(self):
-		return self._UadjstdEndDt
-
-	@UadjstdEndDt.setter
-	def UadjstdEndDt(self, value):
-		self._UadjstdEndDt = value if type(value) != auto else self.make_default("UadjstdEndDt")
-
-	@UadjstdEndDt.deleter
-	def UadjstdEndDt(self):
-		del self._UadjstdEndDt
-		self._UadjstdEndDt = None
-
+	__slots__ = ["_UadjstdFctvDt", "_UadjstdEndDt", "_Amt"]
 	@property
 	def UadjstdFctvDt(self):
 		return self._UadjstdFctvDt
@@ -30,6 +17,19 @@ class Schedule11(base_types._BaseFieldType):
 	def UadjstdFctvDt(self):
 		del self._UadjstdFctvDt
 		self._UadjstdFctvDt = None
+
+	@property
+	def UadjstdEndDt(self):
+		return self._UadjstdEndDt
+
+	@UadjstdEndDt.setter
+	def UadjstdEndDt(self, value):
+		self._UadjstdEndDt = value if type(value) != auto else self.make_default("UadjstdEndDt")
+
+	@UadjstdEndDt.deleter
+	def UadjstdEndDt(self):
+		del self._UadjstdEndDt
+		self._UadjstdEndDt = None
 
 	@property
 	def Amt(self):
@@ -45,8 +45,8 @@ class Schedule11(base_types._BaseFieldType):
 		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UadjstdEndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UadjstdFctvDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UadjstdEndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=AmountAndDirection106, min=1, max=1, mutex_group=None, array=False),
 	))
 

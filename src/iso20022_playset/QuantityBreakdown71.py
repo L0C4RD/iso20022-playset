@@ -1,13 +1,26 @@
-import base_types
-import TypeOfPrice32Choice
-import Balance23
-import GenericIdentification39
-import DateAndDateTime2Choice
+from . import base_types
 import Price3
+import Balance23
+import DateAndDateTime2Choice
+import TypeOfPrice32Choice
+import GenericIdentification39
 
 class QuantityBreakdown71(base_types._BaseFieldType):
 
-	__slots__ = ["_LotPric", "_LotNb", "_LotDtTm", "_LotQty", "_TpOfPric"]
+	__slots__ = ["_TpOfPric", "_LotPric", "_LotNb", "_LotQty", "_LotDtTm"]
+	@property
+	def TpOfPric(self):
+		return self._TpOfPric
+
+	@TpOfPric.setter
+	def TpOfPric(self, value):
+		self._TpOfPric = value if type(value) != auto else self.make_default("TpOfPric")
+
+	@TpOfPric.deleter
+	def TpOfPric(self):
+		del self._TpOfPric
+		self._TpOfPric = None
+
 	@property
 	def LotPric(self):
 		return self._LotPric
@@ -35,19 +48,6 @@ class QuantityBreakdown71(base_types._BaseFieldType):
 		self._LotNb = None
 
 	@property
-	def LotDtTm(self):
-		return self._LotDtTm
-
-	@LotDtTm.setter
-	def LotDtTm(self, value):
-		self._LotDtTm = value if type(value) != auto else self.make_default("LotDtTm")
-
-	@LotDtTm.deleter
-	def LotDtTm(self):
-		del self._LotDtTm
-		self._LotDtTm = None
-
-	@property
 	def LotQty(self):
 		return self._LotQty
 
@@ -61,23 +61,23 @@ class QuantityBreakdown71(base_types._BaseFieldType):
 		self._LotQty = None
 
 	@property
-	def TpOfPric(self):
-		return self._TpOfPric
+	def LotDtTm(self):
+		return self._LotDtTm
 
-	@TpOfPric.setter
-	def TpOfPric(self, value):
-		self._TpOfPric = value if type(value) != auto else self.make_default("TpOfPric")
+	@LotDtTm.setter
+	def LotDtTm(self, value):
+		self._LotDtTm = value if type(value) != auto else self.make_default("LotDtTm")
 
-	@TpOfPric.deleter
-	def TpOfPric(self):
-		del self._TpOfPric
-		self._TpOfPric = None
+	@LotDtTm.deleter
+	def LotDtTm(self):
+		del self._LotDtTm
+		self._LotDtTm = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TpOfPric', type=TypeOfPrice32Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LotPric', type=Price3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LotNb', type=GenericIdentification39, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LotDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LotQty', type=Balance23, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TpOfPric', type=TypeOfPrice32Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LotDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

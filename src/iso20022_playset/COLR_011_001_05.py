@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import CollateralSubstitutionResponseV05
 
 class COLR_011_001_05():

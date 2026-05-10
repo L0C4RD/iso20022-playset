@@ -1,25 +1,12 @@
-import base_types
-import InstructionProcessingStatus45Choice
-import SettlementStatus31Choice
+from . import base_types
 import MatchingStatus32Choice
+import InstructionProcessingStatus45Choice
 import ProprietaryStatusAndReason7
+import SettlementStatus31Choice
 
 class Status39Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_MtchgSts", "_SttlmSts", "_IfrrdMtchgSts", "_InstrPrcgSts"]
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
+	__slots__ = ["_MtchgSts", "_SttlmSts", "_Prtry", "_IfrrdMtchgSts", "_InstrPrcgSts"]
 	@property
 	def MtchgSts(self):
 		return self._MtchgSts
@@ -45,6 +32,19 @@ class Status39Choice(base_types._BaseFieldType):
 	def SttlmSts(self):
 		del self._SttlmSts
 		self._SttlmSts = None
+
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	@property
 	def IfrrdMtchgSts(self):
@@ -73,9 +73,9 @@ class Status39Choice(base_types._BaseFieldType):
 		self._InstrPrcgSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus31Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='InstrPrcgSts', type=InstructionProcessingStatus45Choice, min=0, max=1, mutex_group=1, array=False),
 	))

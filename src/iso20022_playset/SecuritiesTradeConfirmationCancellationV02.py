@@ -1,12 +1,12 @@
-import base_types
-import Linkages52
-import SupplementaryData1
+from . import base_types
 import TransactiontIdentification4
 import OtherParties45
+import SupplementaryData1
+import Linkages52
 
 class SecuritiesTradeConfirmationCancellationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Id", "_OthrBizPties", "_Refs"]
+	__slots__ = ["_SplmtryData", "_Id", "_Refs", "_OthrBizPties"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -34,19 +34,6 @@ class SecuritiesTradeConfirmationCancellationV02(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def OthrBizPties(self):
-		return self._OthrBizPties
-
-	@OthrBizPties.setter
-	def OthrBizPties(self, value):
-		self._OthrBizPties = value if type(value) != auto else self.make_default("OthrBizPties")
-
-	@OthrBizPties.deleter
-	def OthrBizPties(self):
-		del self._OthrBizPties
-		self._OthrBizPties = None
-
-	@property
 	def Refs(self):
 		return self._Refs
 
@@ -59,10 +46,23 @@ class SecuritiesTradeConfirmationCancellationV02(base_types._BaseFieldType):
 		del self._Refs
 		self._Refs = None
 
+	@property
+	def OthrBizPties(self):
+		return self._OthrBizPties
+
+	@OthrBizPties.setter
+	def OthrBizPties(self, value):
+		self._OthrBizPties = value if type(value) != auto else self.make_default("OthrBizPties")
+
+	@OthrBizPties.deleter
+	def OthrBizPties(self):
+		del self._OthrBizPties
+		self._OthrBizPties = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=TransactiontIdentification4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrBizPties', type=OtherParties45, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Refs', type=Linkages52, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrBizPties', type=OtherParties45, min=0, max=1, mutex_group=None, array=False),
 	))
 

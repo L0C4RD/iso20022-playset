@@ -1,38 +1,12 @@
-import base_types
-import Modification1Code
-import Period4Choice
+from . import base_types
 import CFIOct2015Identifier
+import Period4Choice
 import ISODate
+import Modification1Code
 
 class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 
-	__slots__ = ["_VldtyPrd", "_LastUpdtd", "_Mod", "_Idr"]
-	@property
-	def VldtyPrd(self):
-		return self._VldtyPrd
-
-	@VldtyPrd.setter
-	def VldtyPrd(self, value):
-		self._VldtyPrd = value if type(value) != auto else self.make_default("VldtyPrd")
-
-	@VldtyPrd.deleter
-	def VldtyPrd(self):
-		del self._VldtyPrd
-		self._VldtyPrd = None
-
-	@property
-	def LastUpdtd(self):
-		return self._LastUpdtd
-
-	@LastUpdtd.setter
-	def LastUpdtd(self, value):
-		self._LastUpdtd = value if type(value) != auto else self.make_default("LastUpdtd")
-
-	@LastUpdtd.deleter
-	def LastUpdtd(self):
-		del self._LastUpdtd
-		self._LastUpdtd = None
-
+	__slots__ = ["_Mod", "_Idr", "_VldtyPrd", "_LastUpdtd"]
 	@property
 	def Mod(self):
 		return self._Mod
@@ -59,10 +33,36 @@ class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 		del self._Idr
 		self._Idr = None
 
+	@property
+	def VldtyPrd(self):
+		return self._VldtyPrd
+
+	@VldtyPrd.setter
+	def VldtyPrd(self, value):
+		self._VldtyPrd = value if type(value) != auto else self.make_default("VldtyPrd")
+
+	@VldtyPrd.deleter
+	def VldtyPrd(self):
+		del self._VldtyPrd
+		self._VldtyPrd = None
+
+	@property
+	def LastUpdtd(self):
+		return self._LastUpdtd
+
+	@LastUpdtd.setter
+	def LastUpdtd(self, value):
+		self._LastUpdtd = value if type(value) != auto else self.make_default("LastUpdtd")
+
+	@LastUpdtd.deleter
+	def LastUpdtd(self):
+		del self._LastUpdtd
+		self._LastUpdtd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastUpdtd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Idr', type=CFIOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastUpdtd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
-import base_types
-import RejectionAndRepairReason34Choice
+from . import base_types
 import Max210Text
+import RejectionAndRepairReason34Choice
 
 class RejectionOrRepairReason34(base_types._BaseFieldType):
 

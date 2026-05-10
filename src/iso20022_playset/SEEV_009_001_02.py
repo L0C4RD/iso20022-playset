@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AgentCANotificationAdviceV02
 
 class SEEV_009_001_02():

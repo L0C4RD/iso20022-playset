@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SearchAnd1
 
 class SearchOr1(base_types._BaseFieldType):

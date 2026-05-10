@@ -1,11 +1,11 @@
-import base_types
-import Max30Text
-import DTI2021Identifier
+from . import base_types
 import Max30DecimalNumber
+import DTI2021Identifier
+import Max30Text
 
 class DigitalTokenAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_Unit", "_Desc", "_Idr"]
+	__slots__ = ["_Unit", "_Idr", "_Desc"]
 	@property
 	def Unit(self):
 		return self._Unit
@@ -20,19 +20,6 @@ class DigitalTokenAmount2(base_types._BaseFieldType):
 		self._Unit = None
 
 	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
-	@property
 	def Idr(self):
 		return self._Idr
 
@@ -45,9 +32,22 @@ class DigitalTokenAmount2(base_types._BaseFieldType):
 		del self._Idr
 		self._Idr = None
 
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Unit', type=Max30DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max30Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Idr', type=DTI2021Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max30Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

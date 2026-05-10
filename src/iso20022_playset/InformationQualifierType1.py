@@ -1,6 +1,6 @@
-import base_types
-import YesNoIndicator
+from . import base_types
 import Priority1Code
+import YesNoIndicator
 
 class InformationQualifierType1(base_types._BaseFieldType):
 

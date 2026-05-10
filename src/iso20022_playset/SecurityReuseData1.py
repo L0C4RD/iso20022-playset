@@ -1,23 +1,10 @@
-import base_types
-import ISINOct2015Identifier
+from . import base_types
 import ReuseValue1Choice
+import ISINOct2015Identifier
 
 class SecurityReuseData1(base_types._BaseFieldType):
 
-	__slots__ = ["_ReuseVal", "_ISIN"]
-	@property
-	def ReuseVal(self):
-		return self._ReuseVal
-
-	@ReuseVal.setter
-	def ReuseVal(self, value):
-		self._ReuseVal = value if type(value) != auto else self.make_default("ReuseVal")
-
-	@ReuseVal.deleter
-	def ReuseVal(self):
-		del self._ReuseVal
-		self._ReuseVal = None
-
+	__slots__ = ["_ISIN", "_ReuseVal"]
 	@property
 	def ISIN(self):
 		return self._ISIN
@@ -31,8 +18,21 @@ class SecurityReuseData1(base_types._BaseFieldType):
 		del self._ISIN
 		self._ISIN = None
 
+	@property
+	def ReuseVal(self):
+		return self._ReuseVal
+
+	@ReuseVal.setter
+	def ReuseVal(self, value):
+		self._ReuseVal = value if type(value) != auto else self.make_default("ReuseVal")
+
+	@ReuseVal.deleter
+	def ReuseVal(self):
+		del self._ReuseVal
+		self._ReuseVal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReuseVal', type=ReuseValue1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReuseVal', type=ReuseValue1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

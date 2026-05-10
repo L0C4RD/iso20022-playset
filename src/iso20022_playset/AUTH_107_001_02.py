@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import DerivativesTradeStateReportV02
 
 class AUTH_107_001_02():

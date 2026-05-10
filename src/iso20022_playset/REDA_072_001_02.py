@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RequestToPayDebtorActivationCancellationRequestV02
 
 class REDA_072_001_02():

@@ -1,12 +1,12 @@
-import base_types
-import Max35Text
+from . import base_types
 import Fee5
-import ActiveCurrencyAndAmount
+import Max35Text
 import Tax35
+import ActiveCurrencyAndAmount
 
 class TotalFeesAndTaxes41(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlOvrhdApld", "_IndvTax", "_IndvFee", "_ComrclAgrmtRef", "_TtlFees", "_TtlTaxs"]
+	__slots__ = ["_TtlOvrhdApld", "_IndvTax", "_TtlTaxs", "_ComrclAgrmtRef", "_TtlFees", "_IndvFee"]
 	@property
 	def TtlOvrhdApld(self):
 		return self._TtlOvrhdApld
@@ -34,17 +34,17 @@ class TotalFeesAndTaxes41(base_types._BaseFieldType):
 		self._IndvTax = None
 
 	@property
-	def IndvFee(self):
-		return self._IndvFee
+	def TtlTaxs(self):
+		return self._TtlTaxs
 
-	@IndvFee.setter
-	def IndvFee(self, value):
-		self._IndvFee = value if type(value) != auto else self.make_default("IndvFee")
+	@TtlTaxs.setter
+	def TtlTaxs(self, value):
+		self._TtlTaxs = value if type(value) != auto else self.make_default("TtlTaxs")
 
-	@IndvFee.deleter
-	def IndvFee(self):
-		del self._IndvFee
-		self._IndvFee = None
+	@TtlTaxs.deleter
+	def TtlTaxs(self):
+		del self._TtlTaxs
+		self._TtlTaxs = None
 
 	@property
 	def ComrclAgrmtRef(self):
@@ -73,24 +73,24 @@ class TotalFeesAndTaxes41(base_types._BaseFieldType):
 		self._TtlFees = None
 
 	@property
-	def TtlTaxs(self):
-		return self._TtlTaxs
+	def IndvFee(self):
+		return self._IndvFee
 
-	@TtlTaxs.setter
-	def TtlTaxs(self, value):
-		self._TtlTaxs = value if type(value) != auto else self.make_default("TtlTaxs")
+	@IndvFee.setter
+	def IndvFee(self, value):
+		self._IndvFee = value if type(value) != auto else self.make_default("IndvFee")
 
-	@TtlTaxs.deleter
-	def TtlTaxs(self):
-		del self._TtlTaxs
-		self._TtlTaxs = None
+	@IndvFee.deleter
+	def IndvFee(self):
+		del self._IndvFee
+		self._IndvFee = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TtlOvrhdApld', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndvTax', type=Tax35, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IndvFee', type=Fee5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlTaxs', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlFees', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlTaxs', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndvFee', type=Fee5, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,24 +1,24 @@
-import base_types
-import Max35NumericText
-import Max35Text
+from . import base_types
 import ISODate
+import Max35NumericText
 import ISOTime
+import Max35Text
 
 class DepartureOrArrival2(base_types._BaseFieldType):
 
-	__slots__ = ["_RouteNb", "_Tm", "_Dt", "_CrrierCd"]
+	__slots__ = ["_Dt", "_Tm", "_CrrierCd", "_RouteNb"]
 	@property
-	def RouteNb(self):
-		return self._RouteNb
+	def Dt(self):
+		return self._Dt
 
-	@RouteNb.setter
-	def RouteNb(self, value):
-		self._RouteNb = value if type(value) != auto else self.make_default("RouteNb")
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != auto else self.make_default("Dt")
 
-	@RouteNb.deleter
-	def RouteNb(self):
-		del self._RouteNb
-		self._RouteNb = None
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
 
 	@property
 	def Tm(self):
@@ -34,19 +34,6 @@ class DepartureOrArrival2(base_types._BaseFieldType):
 		self._Tm = None
 
 	@property
-	def Dt(self):
-		return self._Dt
-
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
-
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
-	@property
 	def CrrierCd(self):
 		return self._CrrierCd
 
@@ -59,10 +46,23 @@ class DepartureOrArrival2(base_types._BaseFieldType):
 		del self._CrrierCd
 		self._CrrierCd = None
 
+	@property
+	def RouteNb(self):
+		return self._RouteNb
+
+	@RouteNb.setter
+	def RouteNb(self, value):
+		self._RouteNb = value if type(value) != auto else self.make_default("RouteNb")
+
+	@RouteNb.deleter
+	def RouteNb(self):
+		del self._RouteNb
+		self._RouteNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RouteNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrrierCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RouteNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

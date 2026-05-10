@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import RejectionReason62Code
 import GenericIdentification30
 

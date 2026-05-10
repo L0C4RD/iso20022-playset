@@ -1,11 +1,11 @@
-import base_types
+from . import base_types
 import SubBalanceQuantity1Choice
-import SecuritiesBalanceType2Code
 import Extended350Code
+import SecuritiesBalanceType2Code
 
 class AdditionalBalanceInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_SubBalTp", "_XtndedSubBalTp", "_Qty"]
+	__slots__ = ["_SubBalTp", "_Qty", "_XtndedSubBalTp"]
 	@property
 	def SubBalTp(self):
 		return self._SubBalTp
@@ -20,19 +20,6 @@ class AdditionalBalanceInformation2(base_types._BaseFieldType):
 		self._SubBalTp = None
 
 	@property
-	def XtndedSubBalTp(self):
-		return self._XtndedSubBalTp
-
-	@XtndedSubBalTp.setter
-	def XtndedSubBalTp(self, value):
-		self._XtndedSubBalTp = value if type(value) != auto else self.make_default("XtndedSubBalTp")
-
-	@XtndedSubBalTp.deleter
-	def XtndedSubBalTp(self):
-		del self._XtndedSubBalTp
-		self._XtndedSubBalTp = None
-
-	@property
 	def Qty(self):
 		return self._Qty
 
@@ -45,9 +32,22 @@ class AdditionalBalanceInformation2(base_types._BaseFieldType):
 		del self._Qty
 		self._Qty = None
 
+	@property
+	def XtndedSubBalTp(self):
+		return self._XtndedSubBalTp
+
+	@XtndedSubBalTp.setter
+	def XtndedSubBalTp(self, value):
+		self._XtndedSubBalTp = value if type(value) != auto else self.make_default("XtndedSubBalTp")
+
+	@XtndedSubBalTp.deleter
+	def XtndedSubBalTp(self):
+		del self._XtndedSubBalTp
+		self._XtndedSubBalTp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SubBalTp', type=SecuritiesBalanceType2Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='XtndedSubBalTp', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XtndedSubBalTp', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

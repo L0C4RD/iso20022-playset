@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import SecuritiesFinancingModificationInstruction002V08
 
 class SESE_036_002_08():

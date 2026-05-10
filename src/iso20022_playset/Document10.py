@@ -1,25 +1,12 @@
-import base_types
-import DocumentFormat1Choice
-import Channel1Choice
+from . import base_types
 import UndertakingDocumentType2Choice
 import YesNoIndicator
+import Channel1Choice
+import DocumentFormat1Choice
 
 class Document10(base_types._BaseFieldType):
 
-	__slots__ = ["_DocTp", "_PresntnChanl", "_SgndInd", "_CpyInd", "_DocFrmt"]
-	@property
-	def DocTp(self):
-		return self._DocTp
-
-	@DocTp.setter
-	def DocTp(self, value):
-		self._DocTp = value if type(value) != auto else self.make_default("DocTp")
-
-	@DocTp.deleter
-	def DocTp(self):
-		del self._DocTp
-		self._DocTp = None
-
+	__slots__ = ["_PresntnChanl", "_DocTp", "_CpyInd", "_SgndInd", "_DocFrmt"]
 	@property
 	def PresntnChanl(self):
 		return self._PresntnChanl
@@ -34,17 +21,17 @@ class Document10(base_types._BaseFieldType):
 		self._PresntnChanl = None
 
 	@property
-	def SgndInd(self):
-		return self._SgndInd
+	def DocTp(self):
+		return self._DocTp
 
-	@SgndInd.setter
-	def SgndInd(self, value):
-		self._SgndInd = value if type(value) != auto else self.make_default("SgndInd")
+	@DocTp.setter
+	def DocTp(self, value):
+		self._DocTp = value if type(value) != auto else self.make_default("DocTp")
 
-	@SgndInd.deleter
-	def SgndInd(self):
-		del self._SgndInd
-		self._SgndInd = None
+	@DocTp.deleter
+	def DocTp(self):
+		del self._DocTp
+		self._DocTp = None
 
 	@property
 	def CpyInd(self):
@@ -60,6 +47,19 @@ class Document10(base_types._BaseFieldType):
 		self._CpyInd = None
 
 	@property
+	def SgndInd(self):
+		return self._SgndInd
+
+	@SgndInd.setter
+	def SgndInd(self, value):
+		self._SgndInd = value if type(value) != auto else self.make_default("SgndInd")
+
+	@SgndInd.deleter
+	def SgndInd(self):
+		del self._SgndInd
+		self._SgndInd = None
+
+	@property
 	def DocFrmt(self):
 		return self._DocFrmt
 
@@ -73,10 +73,10 @@ class Document10(base_types._BaseFieldType):
 		self._DocFrmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DocTp', type=UndertakingDocumentType2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PresntnChanl', type=Channel1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgndInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocTp', type=UndertakingDocumentType2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgndInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocFrmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

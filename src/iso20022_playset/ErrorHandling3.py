@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ErrorHandling1Choice
 import Max140Text
 

@@ -1,12 +1,25 @@
-import base_types
+from . import base_types
 import MessageIdentification1
+import Pagination
 import AdditionalReference3
 import FundConfirmedCashForecastReport3
-import Pagination
 
 class FundConfirmedCashForecastReportCancellationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_CshFcstRptToBeCanc", "_RltdRef", "_PoolRef", "_MsgPgntn", "_PrvsRef", "_MsgId"]
+	__slots__ = ["_MsgPgntn", "_CshFcstRptToBeCanc", "_RltdRef", "_MsgId", "_PrvsRef", "_PoolRef"]
+	@property
+	def MsgPgntn(self):
+		return self._MsgPgntn
+
+	@MsgPgntn.setter
+	def MsgPgntn(self, value):
+		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
+
+	@MsgPgntn.deleter
+	def MsgPgntn(self):
+		del self._MsgPgntn
+		self._MsgPgntn = None
+
 	@property
 	def CshFcstRptToBeCanc(self):
 		return self._CshFcstRptToBeCanc
@@ -34,30 +47,17 @@ class FundConfirmedCashForecastReportCancellationV03(base_types._BaseFieldType):
 		self._RltdRef = None
 
 	@property
-	def PoolRef(self):
-		return self._PoolRef
+	def MsgId(self):
+		return self._MsgId
 
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
-
-	@property
-	def MsgPgntn(self):
-		return self._MsgPgntn
-
-	@MsgPgntn.setter
-	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
-
-	@MsgPgntn.deleter
-	def MsgPgntn(self):
-		del self._MsgPgntn
-		self._MsgPgntn = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def PrvsRef(self):
@@ -73,24 +73,24 @@ class FundConfirmedCashForecastReportCancellationV03(base_types._BaseFieldType):
 		self._PrvsRef = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def PoolRef(self):
+		return self._PoolRef
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshFcstRptToBeCanc', type=FundConfirmedCashForecastReport3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
 	))
 

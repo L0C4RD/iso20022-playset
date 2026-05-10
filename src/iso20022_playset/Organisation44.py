@@ -1,23 +1,10 @@
-import base_types
+from . import base_types
 import Max350Text
 import OrganisationIdentification39
 
 class Organisation44(base_types._BaseFieldType):
 
-	__slots__ = ["_FullLglNm", "_OrgId"]
-	@property
-	def FullLglNm(self):
-		return self._FullLglNm
-
-	@FullLglNm.setter
-	def FullLglNm(self, value):
-		self._FullLglNm = value if type(value) != auto else self.make_default("FullLglNm")
-
-	@FullLglNm.deleter
-	def FullLglNm(self):
-		del self._FullLglNm
-		self._FullLglNm = None
-
+	__slots__ = ["_OrgId", "_FullLglNm"]
 	@property
 	def OrgId(self):
 		return self._OrgId
@@ -31,8 +18,21 @@ class Organisation44(base_types._BaseFieldType):
 		del self._OrgId
 		self._OrgId = None
 
+	@property
+	def FullLglNm(self):
+		return self._FullLglNm
+
+	@FullLglNm.setter
+	def FullLglNm(self, value):
+		self._FullLglNm = value if type(value) != auto else self.make_default("FullLglNm")
+
+	@FullLglNm.deleter
+	def FullLglNm(self):
+		del self._FullLglNm
+		self._FullLglNm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FullLglNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgId', type=OrganisationIdentification39, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FullLglNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

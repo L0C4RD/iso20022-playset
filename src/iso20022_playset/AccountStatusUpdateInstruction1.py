@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import AccountStatusUpdateInstruction1Choice
 import AccountStatusUpdateInstructionReason1Choice
 

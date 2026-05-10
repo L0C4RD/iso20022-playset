@@ -1,23 +1,10 @@
-import base_types
-import Max35Text
+from . import base_types
 import Max52Text
+import Max35Text
 
 class Reference21(base_types._BaseFieldType):
 
-	__slots__ = ["_SndrCollTxId", "_RcvrCollCtrctId", "_CmonTxId", "_RcvrCollTxId", "_SndrCollCtrctId"]
-	@property
-	def SndrCollTxId(self):
-		return self._SndrCollTxId
-
-	@SndrCollTxId.setter
-	def SndrCollTxId(self, value):
-		self._SndrCollTxId = value if type(value) != auto else self.make_default("SndrCollTxId")
-
-	@SndrCollTxId.deleter
-	def SndrCollTxId(self):
-		del self._SndrCollTxId
-		self._SndrCollTxId = None
-
+	__slots__ = ["_RcvrCollCtrctId", "_CmonTxId", "_SndrCollTxId", "_RcvrCollTxId", "_SndrCollCtrctId"]
 	@property
 	def RcvrCollCtrctId(self):
 		return self._RcvrCollCtrctId
@@ -43,6 +30,19 @@ class Reference21(base_types._BaseFieldType):
 	def CmonTxId(self):
 		del self._CmonTxId
 		self._CmonTxId = None
+
+	@property
+	def SndrCollTxId(self):
+		return self._SndrCollTxId
+
+	@SndrCollTxId.setter
+	def SndrCollTxId(self, value):
+		self._SndrCollTxId = value if type(value) != auto else self.make_default("SndrCollTxId")
+
+	@SndrCollTxId.deleter
+	def SndrCollTxId(self):
+		del self._SndrCollTxId
+		self._SndrCollTxId = None
 
 	@property
 	def RcvrCollTxId(self):
@@ -71,9 +71,9 @@ class Reference21(base_types._BaseFieldType):
 		self._SndrCollCtrctId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SndrCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvrCollCtrctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonTxId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SndrCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvrCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SndrCollCtrctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))

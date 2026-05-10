@@ -1,23 +1,23 @@
-import base_types
-import ISODateTime
+from . import base_types
 import Max35Text
 import BranchAndFinancialInstitutionIdentification8
+import ISODateTime
 
 class MessageIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_MsgId", "_FrstAgt"]
+	__slots__ = ["_FrstAgt", "_MsgId", "_CreDtTm"]
 	@property
-	def CreDtTm(self):
-		return self._CreDtTm
+	def FrstAgt(self):
+		return self._FrstAgt
 
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+	@FrstAgt.setter
+	def FrstAgt(self, value):
+		self._FrstAgt = value if type(value) != auto else self.make_default("FrstAgt")
 
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
+	@FrstAgt.deleter
+	def FrstAgt(self):
+		del self._FrstAgt
+		self._FrstAgt = None
 
 	@property
 	def MsgId(self):
@@ -33,21 +33,21 @@ class MessageIdentification8(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def FrstAgt(self):
-		return self._FrstAgt
+	def CreDtTm(self):
+		return self._CreDtTm
 
-	@FrstAgt.setter
-	def FrstAgt(self, value):
-		self._FrstAgt = value if type(value) != auto else self.make_default("FrstAgt")
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
 
-	@FrstAgt.deleter
-	def FrstAgt(self):
-		del self._FrstAgt
-		self._FrstAgt = None
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

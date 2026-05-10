@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ChargeType4Choice
 import AmountOrRate3Choice
 

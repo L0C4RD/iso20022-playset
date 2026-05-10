@@ -1,6 +1,6 @@
-import base_types
-import DataModification1Code
+from . import base_types
 import NewIssueAllocation2
+import DataModification1Code
 
 class ModificationScope21(base_types._BaseFieldType):
 

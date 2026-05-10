@@ -1,6 +1,6 @@
-import base_types
-import FinancialInstrumentQuantity18Choice
+from . import base_types
 import GenericIdentification30
+import FinancialInstrumentQuantity18Choice
 
 class ProprietaryVote2(base_types._BaseFieldType):
 

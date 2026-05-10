@@ -1,11 +1,24 @@
-import base_types
+from . import base_types
+import NumberAndSumOfTransactions1
 import NumberAndSumOfTransactions4
 import TotalsPerBankTransactionCode5
-import NumberAndSumOfTransactions1
 
 class TotalTransactions6(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNtries", "_TtlDbtNtries", "_TtlCdtNtries", "_TtlNtriesPerBkTxCd"]
+	__slots__ = ["_TtlNtriesPerBkTxCd", "_TtlNtries", "_TtlDbtNtries", "_TtlCdtNtries"]
+	@property
+	def TtlNtriesPerBkTxCd(self):
+		return self._TtlNtriesPerBkTxCd
+
+	@TtlNtriesPerBkTxCd.setter
+	def TtlNtriesPerBkTxCd(self, value):
+		self._TtlNtriesPerBkTxCd = value if type(value) != auto else self.make_default("TtlNtriesPerBkTxCd")
+
+	@TtlNtriesPerBkTxCd.deleter
+	def TtlNtriesPerBkTxCd(self):
+		del self._TtlNtriesPerBkTxCd
+		self._TtlNtriesPerBkTxCd = None
+
 	@property
 	def TtlNtries(self):
 		return self._TtlNtries
@@ -45,23 +58,10 @@ class TotalTransactions6(base_types._BaseFieldType):
 		del self._TtlCdtNtries
 		self._TtlCdtNtries = None
 
-	@property
-	def TtlNtriesPerBkTxCd(self):
-		return self._TtlNtriesPerBkTxCd
-
-	@TtlNtriesPerBkTxCd.setter
-	def TtlNtriesPerBkTxCd(self, value):
-		self._TtlNtriesPerBkTxCd = value if type(value) != auto else self.make_default("TtlNtriesPerBkTxCd")
-
-	@TtlNtriesPerBkTxCd.deleter
-	def TtlNtriesPerBkTxCd(self):
-		del self._TtlNtriesPerBkTxCd
-		self._TtlNtriesPerBkTxCd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TtlNtriesPerBkTxCd', type=TotalsPerBankTransactionCode5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlNtries', type=NumberAndSumOfTransactions4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlDbtNtries', type=NumberAndSumOfTransactions1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlCdtNtries', type=NumberAndSumOfTransactions1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNtriesPerBkTxCd', type=TotalsPerBankTransactionCode5, min=0, max=None, mutex_group=None, array=True),
 	))
 

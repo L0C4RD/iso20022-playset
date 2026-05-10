@@ -1,59 +1,33 @@
-import base_types
-import Check1
-import ContentInformationType40
-import PointOfInteraction15
-import Cardholder21
-import Organisation41
-import RetailerSaleEnvironment2
-import Acquirer10
-import CustomerDevice3
-import Token1
-import PaymentCard35
-import StoredValueAccount2
+from . import base_types
 import MerchantToken2
+import Cardholder21
+import PointOfInteraction15
+import ContentInformationType40
 import LoyaltyAccount3
+import Acquirer10
+import RetailerSaleEnvironment2
+import Organisation41
+import PaymentCard35
+import Check1
+import Token1
+import StoredValueAccount2
+import CustomerDevice3
 
 class CardPaymentEnvironment81(base_types._BaseFieldType):
 
-	__slots__ = ["_LltyAcct", "_SaleEnvt", "_StordValAcct", "_POI", "_SvcPrvdr", "_Wllt", "_Crdhldr", "_MrchntTkn", "_Acqrr", "_PrtctdCrdhldrData", "_Chck", "_PmtTkn", "_Card", "_CstmrDvc", "_Mrchnt"]
+	__slots__ = ["_Chck", "_POI", "_PmtTkn", "_StordValAcct", "_Acqrr", "_CstmrDvc", "_PrtctdCrdhldrData", "_MrchntTkn", "_SvcPrvdr", "_SaleEnvt", "_LltyAcct", "_Wllt", "_Mrchnt", "_Card", "_Crdhldr"]
 	@property
-	def LltyAcct(self):
-		return self._LltyAcct
+	def Chck(self):
+		return self._Chck
 
-	@LltyAcct.setter
-	def LltyAcct(self, value):
-		self._LltyAcct = value if type(value) != auto else self.make_default("LltyAcct")
+	@Chck.setter
+	def Chck(self, value):
+		self._Chck = value if type(value) != auto else self.make_default("Chck")
 
-	@LltyAcct.deleter
-	def LltyAcct(self):
-		del self._LltyAcct
-		self._LltyAcct = None
-
-	@property
-	def SaleEnvt(self):
-		return self._SaleEnvt
-
-	@SaleEnvt.setter
-	def SaleEnvt(self, value):
-		self._SaleEnvt = value if type(value) != auto else self.make_default("SaleEnvt")
-
-	@SaleEnvt.deleter
-	def SaleEnvt(self):
-		del self._SaleEnvt
-		self._SaleEnvt = None
-
-	@property
-	def StordValAcct(self):
-		return self._StordValAcct
-
-	@StordValAcct.setter
-	def StordValAcct(self, value):
-		self._StordValAcct = value if type(value) != auto else self.make_default("StordValAcct")
-
-	@StordValAcct.deleter
-	def StordValAcct(self):
-		del self._StordValAcct
-		self._StordValAcct = None
+	@Chck.deleter
+	def Chck(self):
+		del self._Chck
+		self._Chck = None
 
 	@property
 	def POI(self):
@@ -69,56 +43,30 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 		self._POI = None
 
 	@property
-	def SvcPrvdr(self):
-		return self._SvcPrvdr
+	def PmtTkn(self):
+		return self._PmtTkn
 
-	@SvcPrvdr.setter
-	def SvcPrvdr(self, value):
-		self._SvcPrvdr = value if type(value) != auto else self.make_default("SvcPrvdr")
+	@PmtTkn.setter
+	def PmtTkn(self, value):
+		self._PmtTkn = value if type(value) != auto else self.make_default("PmtTkn")
 
-	@SvcPrvdr.deleter
-	def SvcPrvdr(self):
-		del self._SvcPrvdr
-		self._SvcPrvdr = None
-
-	@property
-	def Wllt(self):
-		return self._Wllt
-
-	@Wllt.setter
-	def Wllt(self, value):
-		self._Wllt = value if type(value) != auto else self.make_default("Wllt")
-
-	@Wllt.deleter
-	def Wllt(self):
-		del self._Wllt
-		self._Wllt = None
+	@PmtTkn.deleter
+	def PmtTkn(self):
+		del self._PmtTkn
+		self._PmtTkn = None
 
 	@property
-	def Crdhldr(self):
-		return self._Crdhldr
+	def StordValAcct(self):
+		return self._StordValAcct
 
-	@Crdhldr.setter
-	def Crdhldr(self, value):
-		self._Crdhldr = value if type(value) != auto else self.make_default("Crdhldr")
+	@StordValAcct.setter
+	def StordValAcct(self, value):
+		self._StordValAcct = value if type(value) != auto else self.make_default("StordValAcct")
 
-	@Crdhldr.deleter
-	def Crdhldr(self):
-		del self._Crdhldr
-		self._Crdhldr = None
-
-	@property
-	def MrchntTkn(self):
-		return self._MrchntTkn
-
-	@MrchntTkn.setter
-	def MrchntTkn(self, value):
-		self._MrchntTkn = value if type(value) != auto else self.make_default("MrchntTkn")
-
-	@MrchntTkn.deleter
-	def MrchntTkn(self):
-		del self._MrchntTkn
-		self._MrchntTkn = None
+	@StordValAcct.deleter
+	def StordValAcct(self):
+		del self._StordValAcct
+		self._StordValAcct = None
 
 	@property
 	def Acqrr(self):
@@ -134,6 +82,19 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 		self._Acqrr = None
 
 	@property
+	def CstmrDvc(self):
+		return self._CstmrDvc
+
+	@CstmrDvc.setter
+	def CstmrDvc(self, value):
+		self._CstmrDvc = value if type(value) != auto else self.make_default("CstmrDvc")
+
+	@CstmrDvc.deleter
+	def CstmrDvc(self):
+		del self._CstmrDvc
+		self._CstmrDvc = None
+
+	@property
 	def PrtctdCrdhldrData(self):
 		return self._PrtctdCrdhldrData
 
@@ -147,30 +108,82 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 		self._PrtctdCrdhldrData = None
 
 	@property
-	def Chck(self):
-		return self._Chck
+	def MrchntTkn(self):
+		return self._MrchntTkn
 
-	@Chck.setter
-	def Chck(self, value):
-		self._Chck = value if type(value) != auto else self.make_default("Chck")
+	@MrchntTkn.setter
+	def MrchntTkn(self, value):
+		self._MrchntTkn = value if type(value) != auto else self.make_default("MrchntTkn")
 
-	@Chck.deleter
-	def Chck(self):
-		del self._Chck
-		self._Chck = None
+	@MrchntTkn.deleter
+	def MrchntTkn(self):
+		del self._MrchntTkn
+		self._MrchntTkn = None
 
 	@property
-	def PmtTkn(self):
-		return self._PmtTkn
+	def SvcPrvdr(self):
+		return self._SvcPrvdr
 
-	@PmtTkn.setter
-	def PmtTkn(self, value):
-		self._PmtTkn = value if type(value) != auto else self.make_default("PmtTkn")
+	@SvcPrvdr.setter
+	def SvcPrvdr(self, value):
+		self._SvcPrvdr = value if type(value) != auto else self.make_default("SvcPrvdr")
 
-	@PmtTkn.deleter
-	def PmtTkn(self):
-		del self._PmtTkn
-		self._PmtTkn = None
+	@SvcPrvdr.deleter
+	def SvcPrvdr(self):
+		del self._SvcPrvdr
+		self._SvcPrvdr = None
+
+	@property
+	def SaleEnvt(self):
+		return self._SaleEnvt
+
+	@SaleEnvt.setter
+	def SaleEnvt(self, value):
+		self._SaleEnvt = value if type(value) != auto else self.make_default("SaleEnvt")
+
+	@SaleEnvt.deleter
+	def SaleEnvt(self):
+		del self._SaleEnvt
+		self._SaleEnvt = None
+
+	@property
+	def LltyAcct(self):
+		return self._LltyAcct
+
+	@LltyAcct.setter
+	def LltyAcct(self, value):
+		self._LltyAcct = value if type(value) != auto else self.make_default("LltyAcct")
+
+	@LltyAcct.deleter
+	def LltyAcct(self):
+		del self._LltyAcct
+		self._LltyAcct = None
+
+	@property
+	def Wllt(self):
+		return self._Wllt
+
+	@Wllt.setter
+	def Wllt(self, value):
+		self._Wllt = value if type(value) != auto else self.make_default("Wllt")
+
+	@Wllt.deleter
+	def Wllt(self):
+		del self._Wllt
+		self._Wllt = None
+
+	@property
+	def Mrchnt(self):
+		return self._Mrchnt
+
+	@Mrchnt.setter
+	def Mrchnt(self, value):
+		self._Mrchnt = value if type(value) != auto else self.make_default("Mrchnt")
+
+	@Mrchnt.deleter
+	def Mrchnt(self):
+		del self._Mrchnt
+		self._Mrchnt = None
 
 	@property
 	def Card(self):
@@ -186,46 +199,33 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 		self._Card = None
 
 	@property
-	def CstmrDvc(self):
-		return self._CstmrDvc
+	def Crdhldr(self):
+		return self._Crdhldr
 
-	@CstmrDvc.setter
-	def CstmrDvc(self, value):
-		self._CstmrDvc = value if type(value) != auto else self.make_default("CstmrDvc")
+	@Crdhldr.setter
+	def Crdhldr(self, value):
+		self._Crdhldr = value if type(value) != auto else self.make_default("Crdhldr")
 
-	@CstmrDvc.deleter
-	def CstmrDvc(self):
-		del self._CstmrDvc
-		self._CstmrDvc = None
-
-	@property
-	def Mrchnt(self):
-		return self._Mrchnt
-
-	@Mrchnt.setter
-	def Mrchnt(self, value):
-		self._Mrchnt = value if type(value) != auto else self.make_default("Mrchnt")
-
-	@Mrchnt.deleter
-	def Mrchnt(self):
-		del self._Mrchnt
-		self._Mrchnt = None
+	@Crdhldr.deleter
+	def Crdhldr(self):
+		del self._Crdhldr
+		self._Crdhldr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LltyAcct', type=LoyaltyAccount3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SaleEnvt', type=RetailerSaleEnvironment2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StordValAcct', type=StoredValueAccount2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='POI', type=PointOfInteraction15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcPrvdr', type=Acquirer10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Wllt', type=CustomerDevice3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Crdhldr', type=Cardholder21, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrchntTkn', type=MerchantToken2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acqrr', type=Acquirer10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdCrdhldrData', type=ContentInformationType40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Chck', type=Check1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POI', type=PointOfInteraction15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtTkn', type=Token1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Card', type=PaymentCard35, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StordValAcct', type=StoredValueAccount2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Acqrr', type=Acquirer10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrDvc', type=CustomerDevice3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdCrdhldrData', type=ContentInformationType40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrchntTkn', type=MerchantToken2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcPrvdr', type=Acquirer10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleEnvt', type=RetailerSaleEnvironment2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LltyAcct', type=LoyaltyAccount3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Wllt', type=CustomerDevice3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mrchnt', type=Organisation41, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Card', type=PaymentCard35, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Crdhldr', type=Cardholder21, min=0, max=1, mutex_group=None, array=False),
 	))
 

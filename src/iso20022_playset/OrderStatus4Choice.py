@@ -1,27 +1,27 @@
-import base_types
-import ConditionallyAcceptedStatus3Choice
-import SuspendedStatusReason4Choice
-import PartiallySettledStatus10
-import CancelledStatusReason16
+from . import base_types
 import OrderStatus4Code
-import InRepairStatusReason4Choice
 import RejectedStatus9
+import PartiallySettledStatus10
+import InRepairStatusReason4Choice
+import CancelledStatusReason16
+import SuspendedStatusReason4Choice
+import ConditionallyAcceptedStatus3Choice
 
 class OrderStatus4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CondlyAccptd", "_Sspd", "_Canc", "_PrtlySttld", "_InRpr", "_Sts", "_Rjctd"]
+	__slots__ = ["_PrtlySttld", "_Sspd", "_Canc", "_InRpr", "_CondlyAccptd", "_Rjctd", "_Sts"]
 	@property
-	def CondlyAccptd(self):
-		return self._CondlyAccptd
+	def PrtlySttld(self):
+		return self._PrtlySttld
 
-	@CondlyAccptd.setter
-	def CondlyAccptd(self, value):
-		self._CondlyAccptd = value if type(value) != auto else self.make_default("CondlyAccptd")
+	@PrtlySttld.setter
+	def PrtlySttld(self, value):
+		self._PrtlySttld = value if type(value) != auto else self.make_default("PrtlySttld")
 
-	@CondlyAccptd.deleter
-	def CondlyAccptd(self):
-		del self._CondlyAccptd
-		self._CondlyAccptd = None
+	@PrtlySttld.deleter
+	def PrtlySttld(self):
+		del self._PrtlySttld
+		self._PrtlySttld = None
 
 	@property
 	def Sspd(self):
@@ -50,19 +50,6 @@ class OrderStatus4Choice(base_types._BaseFieldType):
 		self._Canc = None
 
 	@property
-	def PrtlySttld(self):
-		return self._PrtlySttld
-
-	@PrtlySttld.setter
-	def PrtlySttld(self, value):
-		self._PrtlySttld = value if type(value) != auto else self.make_default("PrtlySttld")
-
-	@PrtlySttld.deleter
-	def PrtlySttld(self):
-		del self._PrtlySttld
-		self._PrtlySttld = None
-
-	@property
 	def InRpr(self):
 		return self._InRpr
 
@@ -76,17 +63,17 @@ class OrderStatus4Choice(base_types._BaseFieldType):
 		self._InRpr = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def CondlyAccptd(self):
+		return self._CondlyAccptd
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@CondlyAccptd.setter
+	def CondlyAccptd(self, value):
+		self._CondlyAccptd = value if type(value) != auto else self.make_default("CondlyAccptd")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@CondlyAccptd.deleter
+	def CondlyAccptd(self):
+		del self._CondlyAccptd
+		self._CondlyAccptd = None
 
 	@property
 	def Rjctd(self):
@@ -101,13 +88,26 @@ class OrderStatus4Choice(base_types._BaseFieldType):
 		del self._Rjctd
 		self._Rjctd = None
 
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CondlyAccptd', type=ConditionallyAcceptedStatus3Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtlySttld', type=PartiallySettledStatus10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Sspd', type=SuspendedStatusReason4Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Canc', type=CancelledStatusReason16, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtlySttld', type=PartiallySettledStatus10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='InRpr', type=InRepairStatusReason4Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Sts', type=OrderStatus4Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CondlyAccptd', type=ConditionallyAcceptedStatus3Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectedStatus9, min=1, max=10, mutex_group=1, array=True),
+		base_types.FieldEntry(name='Sts', type=OrderStatus4Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

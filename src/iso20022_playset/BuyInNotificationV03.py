@@ -1,26 +1,13 @@
-import base_types
-import Max35Text
-import SupplementaryData1
-import SettlementObligation7
+from . import base_types
 import PartyIdentification35Choice
 import BuyIn4
+import SettlementObligation7
+import SupplementaryData1
+import Max35Text
 
 class BuyInNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrMmb", "_TxId", "_NtfctnDtls", "_OrgnlSttlmOblgtn", "_SplmtryData"]
-	@property
-	def ClrMmb(self):
-		return self._ClrMmb
-
-	@ClrMmb.setter
-	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != auto else self.make_default("ClrMmb")
-
-	@ClrMmb.deleter
-	def ClrMmb(self):
-		del self._ClrMmb
-		self._ClrMmb = None
-
+	__slots__ = ["_TxId", "_OrgnlSttlmOblgtn", "_SplmtryData", "_NtfctnDtls", "_ClrMmb"]
 	@property
 	def TxId(self):
 		return self._TxId
@@ -33,19 +20,6 @@ class BuyInNotificationV03(base_types._BaseFieldType):
 	def TxId(self):
 		del self._TxId
 		self._TxId = None
-
-	@property
-	def NtfctnDtls(self):
-		return self._NtfctnDtls
-
-	@NtfctnDtls.setter
-	def NtfctnDtls(self, value):
-		self._NtfctnDtls = value if type(value) != auto else self.make_default("NtfctnDtls")
-
-	@NtfctnDtls.deleter
-	def NtfctnDtls(self):
-		del self._NtfctnDtls
-		self._NtfctnDtls = None
 
 	@property
 	def OrgnlSttlmOblgtn(self):
@@ -73,11 +47,37 @@ class BuyInNotificationV03(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def NtfctnDtls(self):
+		return self._NtfctnDtls
+
+	@NtfctnDtls.setter
+	def NtfctnDtls(self, value):
+		self._NtfctnDtls = value if type(value) != auto else self.make_default("NtfctnDtls")
+
+	@NtfctnDtls.deleter
+	def NtfctnDtls(self):
+		del self._NtfctnDtls
+		self._NtfctnDtls = None
+
+	@property
+	def ClrMmb(self):
+		return self._ClrMmb
+
+	@ClrMmb.setter
+	def ClrMmb(self, value):
+		self._ClrMmb = value if type(value) != auto else self.make_default("ClrMmb")
+
+	@ClrMmb.deleter
+	def ClrMmb(self):
+		del self._ClrMmb
+		self._ClrMmb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification35Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnDtls', type=BuyIn4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlSttlmOblgtn', type=SettlementObligation7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NtfctnDtls', type=BuyIn4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification35Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

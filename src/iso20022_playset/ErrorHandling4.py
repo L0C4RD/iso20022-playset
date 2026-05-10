@@ -1,6 +1,6 @@
-import base_types
-import Max140Text
+from . import base_types
 import ErrorHandling2Choice
+import Max140Text
 
 class ErrorHandling4(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
-import base_types
-import Max140Text
+from . import base_types
 import StatusReason6Choice
+import Max140Text
 
 class StatusReasonInformation10(base_types._BaseFieldType):
 

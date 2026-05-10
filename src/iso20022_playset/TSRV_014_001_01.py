@@ -1,4 +1,4 @@
-import base_types
+from . import base_types
 import ExtendOrPayRequestV01
 
 class TSRV_014_001_01():
