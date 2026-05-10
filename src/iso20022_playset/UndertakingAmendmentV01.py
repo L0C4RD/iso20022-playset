@@ -1,7 +1,7 @@
 from . import base_types
-import Max2000Text
-import PartyAndSignature2
-import Amendment1
+from .PartyAndSignature2 import PartyAndSignature2
+from .Amendment1 import Amendment1
+from .Max2000Text import Max2000Text
 
 class UndertakingAmendmentV01(base_types._BaseFieldType):
 

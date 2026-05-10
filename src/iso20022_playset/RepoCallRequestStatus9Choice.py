@@ -1,23 +1,23 @@
 from . import base_types
-import AcknowledgedAcceptedStatus27Choice
-import DeniedStatus18Choice
-import ProprietaryStatusAndReason7
+from .ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
+from .AcknowledgedAcceptedStatus27Choice import AcknowledgedAcceptedStatus27Choice
+from .DeniedStatus18Choice import DeniedStatus18Choice
 
 class RepoCallRequestStatus9Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Dnd", "_Prtry", "_AckdAccptd"]
+	__slots__ = ["_AckdAccptd", "_Prtry", "_Dnd"]
 	@property
-	def Dnd(self):
-		return self._Dnd
+	def AckdAccptd(self):
+		return self._AckdAccptd
 
-	@Dnd.setter
-	def Dnd(self, value):
-		self._Dnd = value if type(value) != auto else self.make_default("Dnd")
+	@AckdAccptd.setter
+	def AckdAccptd(self, value):
+		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
 
-	@Dnd.deleter
-	def Dnd(self):
-		del self._Dnd
-		self._Dnd = None
+	@AckdAccptd.deleter
+	def AckdAccptd(self):
+		del self._AckdAccptd
+		self._AckdAccptd = None
 
 	@property
 	def Prtry(self):
@@ -33,21 +33,21 @@ class RepoCallRequestStatus9Choice(base_types._BaseFieldType):
 		self._Prtry = None
 
 	@property
-	def AckdAccptd(self):
-		return self._AckdAccptd
+	def Dnd(self):
+		return self._Dnd
 
-	@AckdAccptd.setter
-	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
+	@Dnd.setter
+	def Dnd(self, value):
+		self._Dnd = value if type(value) != auto else self.make_default("Dnd")
 
-	@AckdAccptd.deleter
-	def AckdAccptd(self):
-		del self._AckdAccptd
-		self._AckdAccptd = None
+	@Dnd.deleter
+	def Dnd(self):
+		del self._Dnd
+		self._Dnd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dnd', type=DeniedStatus18Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus27Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Dnd', type=DeniedStatus18Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

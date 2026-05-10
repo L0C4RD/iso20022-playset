@@ -1,62 +1,36 @@
 from . import base_types
-import ISODate
-import DocumentGeneralInformation5
-import Max35Text
-import ActiveCurrencyAndAmount
-import ActiveCurrencyCode
-import PaymentSchedule1
-import Exact1NumericText
-import TrueFalseIndicator
-import LoanContractTranche1
-import ContractCollateral1
-import TradeParty6
-import SyndicatedLoan3
-import InterestPaymentSchedule1
-import DocumentIdentification22
-import SpecialCondition1
-import InterestRate2Choice
+from .Max35Text import Max35Text
+from .ISODate import ISODate
+from .InterestPaymentSchedule1 import InterestPaymentSchedule1
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .PaymentSchedule1 import PaymentSchedule1
+from .DocumentGeneralInformation5 import DocumentGeneralInformation5
+from .InterestRate2Choice import InterestRate2Choice
+from .TrueFalseIndicator import TrueFalseIndicator
+from .SpecialCondition1 import SpecialCondition1
+from .ContractCollateral1 import ContractCollateral1
+from .DocumentIdentification22 import DocumentIdentification22
+from .LoanContractTranche1 import LoanContractTranche1
+from .SyndicatedLoan3 import SyndicatedLoan3
+from .TradeParty6 import TradeParty6
+from .Exact1NumericText import Exact1NumericText
 
 class LoanContract4(base_types._BaseFieldType):
 
-	__slots__ = ["_Buyr", "_MtrtyDt", "_Coll", "_IntrstRate", "_Amt", "_IntrstSchdl", "_Sellr", "_SpclConds", "_LnTpId", "_CtrctDocId", "_SttlmCcy", "_DrtnCd", "_StartDt", "_Attchmnt", "_PrlngtnFlg", "_IntraCpnyLn", "_Trch", "_SndctdLn", "_PmtSchdl"]
+	__slots__ = ["_SndctdLn", "_IntrstRate", "_PmtSchdl", "_Amt", "_LnTpId", "_SpclConds", "_Coll", "_IntrstSchdl", "_MtrtyDt", "_SttlmCcy", "_DrtnCd", "_StartDt", "_Buyr", "_CtrctDocId", "_Sellr", "_Trch", "_Attchmnt", "_IntraCpnyLn", "_PrlngtnFlg"]
 	@property
-	def Buyr(self):
-		return self._Buyr
+	def SndctdLn(self):
+		return self._SndctdLn
 
-	@Buyr.setter
-	def Buyr(self, value):
-		self._Buyr = value if type(value) != auto else self.make_default("Buyr")
+	@SndctdLn.setter
+	def SndctdLn(self, value):
+		self._SndctdLn = value if type(value) != auto else self.make_default("SndctdLn")
 
-	@Buyr.deleter
-	def Buyr(self):
-		del self._Buyr
-		self._Buyr = None
-
-	@property
-	def MtrtyDt(self):
-		return self._MtrtyDt
-
-	@MtrtyDt.setter
-	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
-
-	@MtrtyDt.deleter
-	def MtrtyDt(self):
-		del self._MtrtyDt
-		self._MtrtyDt = None
-
-	@property
-	def Coll(self):
-		return self._Coll
-
-	@Coll.setter
-	def Coll(self, value):
-		self._Coll = value if type(value) != auto else self.make_default("Coll")
-
-	@Coll.deleter
-	def Coll(self):
-		del self._Coll
-		self._Coll = None
+	@SndctdLn.deleter
+	def SndctdLn(self):
+		del self._SndctdLn
+		self._SndctdLn = None
 
 	@property
 	def IntrstRate(self):
@@ -72,6 +46,19 @@ class LoanContract4(base_types._BaseFieldType):
 		self._IntrstRate = None
 
 	@property
+	def PmtSchdl(self):
+		return self._PmtSchdl
+
+	@PmtSchdl.setter
+	def PmtSchdl(self, value):
+		self._PmtSchdl = value if type(value) != auto else self.make_default("PmtSchdl")
+
+	@PmtSchdl.deleter
+	def PmtSchdl(self):
+		del self._PmtSchdl
+		self._PmtSchdl = None
+
+	@property
 	def Amt(self):
 		return self._Amt
 
@@ -83,45 +70,6 @@ class LoanContract4(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
-
-	@property
-	def IntrstSchdl(self):
-		return self._IntrstSchdl
-
-	@IntrstSchdl.setter
-	def IntrstSchdl(self, value):
-		self._IntrstSchdl = value if type(value) != auto else self.make_default("IntrstSchdl")
-
-	@IntrstSchdl.deleter
-	def IntrstSchdl(self):
-		del self._IntrstSchdl
-		self._IntrstSchdl = None
-
-	@property
-	def Sellr(self):
-		return self._Sellr
-
-	@Sellr.setter
-	def Sellr(self, value):
-		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
-
-	@Sellr.deleter
-	def Sellr(self):
-		del self._Sellr
-		self._Sellr = None
-
-	@property
-	def SpclConds(self):
-		return self._SpclConds
-
-	@SpclConds.setter
-	def SpclConds(self, value):
-		self._SpclConds = value if type(value) != auto else self.make_default("SpclConds")
-
-	@SpclConds.deleter
-	def SpclConds(self):
-		del self._SpclConds
-		self._SpclConds = None
 
 	@property
 	def LnTpId(self):
@@ -137,17 +85,56 @@ class LoanContract4(base_types._BaseFieldType):
 		self._LnTpId = None
 
 	@property
-	def CtrctDocId(self):
-		return self._CtrctDocId
+	def SpclConds(self):
+		return self._SpclConds
 
-	@CtrctDocId.setter
-	def CtrctDocId(self, value):
-		self._CtrctDocId = value if type(value) != auto else self.make_default("CtrctDocId")
+	@SpclConds.setter
+	def SpclConds(self, value):
+		self._SpclConds = value if type(value) != auto else self.make_default("SpclConds")
 
-	@CtrctDocId.deleter
-	def CtrctDocId(self):
-		del self._CtrctDocId
-		self._CtrctDocId = None
+	@SpclConds.deleter
+	def SpclConds(self):
+		del self._SpclConds
+		self._SpclConds = None
+
+	@property
+	def Coll(self):
+		return self._Coll
+
+	@Coll.setter
+	def Coll(self, value):
+		self._Coll = value if type(value) != auto else self.make_default("Coll")
+
+	@Coll.deleter
+	def Coll(self):
+		del self._Coll
+		self._Coll = None
+
+	@property
+	def IntrstSchdl(self):
+		return self._IntrstSchdl
+
+	@IntrstSchdl.setter
+	def IntrstSchdl(self, value):
+		self._IntrstSchdl = value if type(value) != auto else self.make_default("IntrstSchdl")
+
+	@IntrstSchdl.deleter
+	def IntrstSchdl(self):
+		del self._IntrstSchdl
+		self._IntrstSchdl = None
+
+	@property
+	def MtrtyDt(self):
+		return self._MtrtyDt
+
+	@MtrtyDt.setter
+	def MtrtyDt(self, value):
+		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+
+	@MtrtyDt.deleter
+	def MtrtyDt(self):
+		del self._MtrtyDt
+		self._MtrtyDt = None
 
 	@property
 	def SttlmCcy(self):
@@ -189,43 +176,43 @@ class LoanContract4(base_types._BaseFieldType):
 		self._StartDt = None
 
 	@property
-	def Attchmnt(self):
-		return self._Attchmnt
+	def Buyr(self):
+		return self._Buyr
 
-	@Attchmnt.setter
-	def Attchmnt(self, value):
-		self._Attchmnt = value if type(value) != auto else self.make_default("Attchmnt")
+	@Buyr.setter
+	def Buyr(self, value):
+		self._Buyr = value if type(value) != auto else self.make_default("Buyr")
 
-	@Attchmnt.deleter
-	def Attchmnt(self):
-		del self._Attchmnt
-		self._Attchmnt = None
-
-	@property
-	def PrlngtnFlg(self):
-		return self._PrlngtnFlg
-
-	@PrlngtnFlg.setter
-	def PrlngtnFlg(self, value):
-		self._PrlngtnFlg = value if type(value) != auto else self.make_default("PrlngtnFlg")
-
-	@PrlngtnFlg.deleter
-	def PrlngtnFlg(self):
-		del self._PrlngtnFlg
-		self._PrlngtnFlg = None
+	@Buyr.deleter
+	def Buyr(self):
+		del self._Buyr
+		self._Buyr = None
 
 	@property
-	def IntraCpnyLn(self):
-		return self._IntraCpnyLn
+	def CtrctDocId(self):
+		return self._CtrctDocId
 
-	@IntraCpnyLn.setter
-	def IntraCpnyLn(self, value):
-		self._IntraCpnyLn = value if type(value) != auto else self.make_default("IntraCpnyLn")
+	@CtrctDocId.setter
+	def CtrctDocId(self, value):
+		self._CtrctDocId = value if type(value) != auto else self.make_default("CtrctDocId")
 
-	@IntraCpnyLn.deleter
-	def IntraCpnyLn(self):
-		del self._IntraCpnyLn
-		self._IntraCpnyLn = None
+	@CtrctDocId.deleter
+	def CtrctDocId(self):
+		del self._CtrctDocId
+		self._CtrctDocId = None
+
+	@property
+	def Sellr(self):
+		return self._Sellr
+
+	@Sellr.setter
+	def Sellr(self, value):
+		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
+
+	@Sellr.deleter
+	def Sellr(self):
+		del self._Sellr
+		self._Sellr = None
 
 	@property
 	def Trch(self):
@@ -241,50 +228,63 @@ class LoanContract4(base_types._BaseFieldType):
 		self._Trch = None
 
 	@property
-	def SndctdLn(self):
-		return self._SndctdLn
+	def Attchmnt(self):
+		return self._Attchmnt
 
-	@SndctdLn.setter
-	def SndctdLn(self, value):
-		self._SndctdLn = value if type(value) != auto else self.make_default("SndctdLn")
+	@Attchmnt.setter
+	def Attchmnt(self, value):
+		self._Attchmnt = value if type(value) != auto else self.make_default("Attchmnt")
 
-	@SndctdLn.deleter
-	def SndctdLn(self):
-		del self._SndctdLn
-		self._SndctdLn = None
+	@Attchmnt.deleter
+	def Attchmnt(self):
+		del self._Attchmnt
+		self._Attchmnt = None
 
 	@property
-	def PmtSchdl(self):
-		return self._PmtSchdl
+	def IntraCpnyLn(self):
+		return self._IntraCpnyLn
 
-	@PmtSchdl.setter
-	def PmtSchdl(self, value):
-		self._PmtSchdl = value if type(value) != auto else self.make_default("PmtSchdl")
+	@IntraCpnyLn.setter
+	def IntraCpnyLn(self, value):
+		self._IntraCpnyLn = value if type(value) != auto else self.make_default("IntraCpnyLn")
 
-	@PmtSchdl.deleter
-	def PmtSchdl(self):
-		del self._PmtSchdl
-		self._PmtSchdl = None
+	@IntraCpnyLn.deleter
+	def IntraCpnyLn(self):
+		del self._IntraCpnyLn
+		self._IntraCpnyLn = None
+
+	@property
+	def PrlngtnFlg(self):
+		return self._PrlngtnFlg
+
+	@PrlngtnFlg.setter
+	def PrlngtnFlg(self, value):
+		self._PrlngtnFlg = value if type(value) != auto else self.make_default("PrlngtnFlg")
+
+	@PrlngtnFlg.deleter
+	def PrlngtnFlg(self):
+		del self._PrlngtnFlg
+		self._PrlngtnFlg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Buyr', type=TradeParty6, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Coll', type=ContractCollateral1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SndctdLn', type=SyndicatedLoan3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IntrstRate', type=InterestRate2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtSchdl', type=PaymentSchedule1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstSchdl', type=InterestPaymentSchedule1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sellr', type=TradeParty6, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SpclConds', type=SpecialCondition1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LnTpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctDocId', type=DocumentIdentification22, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpclConds', type=SpecialCondition1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Coll', type=ContractCollateral1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstSchdl', type=InterestPaymentSchedule1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrtnCd', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Attchmnt', type=DocumentGeneralInformation5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrlngtnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntraCpnyLn', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Buyr', type=TradeParty6, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrctDocId', type=DocumentIdentification22, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sellr', type=TradeParty6, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Trch', type=LoanContractTranche1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SndctdLn', type=SyndicatedLoan3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PmtSchdl', type=PaymentSchedule1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Attchmnt', type=DocumentGeneralInformation5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IntraCpnyLn', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrlngtnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

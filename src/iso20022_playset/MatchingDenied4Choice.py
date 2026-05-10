@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import MatchingProcess1Code
+from .GenericIdentification47 import GenericIdentification47
+from .MatchingProcess1Code import MatchingProcess1Code
 
 class MatchingDenied4Choice(base_types._BaseFieldType):
 

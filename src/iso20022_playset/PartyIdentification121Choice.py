@@ -1,24 +1,24 @@
 from . import base_types
-import GenericIdentification1
-import LEIIdentifier
-import AnyBICDec2014Identifier
-import NameAndAddress5
+from .GenericIdentification1 import GenericIdentification1
+from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from .NameAndAddress5 import NameAndAddress5
+from .LEIIdentifier import LEIIdentifier
 
 class PartyIdentification121Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryId", "_NmAndAdr", "_LglNttyIdr", "_AnyBIC"]
+	__slots__ = ["_LglNttyIdr", "_NmAndAdr", "_PrtryId", "_AnyBIC"]
 	@property
-	def PrtryId(self):
-		return self._PrtryId
+	def LglNttyIdr(self):
+		return self._LglNttyIdr
 
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
+	@LglNttyIdr.setter
+	def LglNttyIdr(self, value):
+		self._LglNttyIdr = value if type(value) != auto else self.make_default("LglNttyIdr")
 
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
+	@LglNttyIdr.deleter
+	def LglNttyIdr(self):
+		del self._LglNttyIdr
+		self._LglNttyIdr = None
 
 	@property
 	def NmAndAdr(self):
@@ -34,17 +34,17 @@ class PartyIdentification121Choice(base_types._BaseFieldType):
 		self._NmAndAdr = None
 
 	@property
-	def LglNttyIdr(self):
-		return self._LglNttyIdr
+	def PrtryId(self):
+		return self._PrtryId
 
-	@LglNttyIdr.setter
-	def LglNttyIdr(self, value):
-		self._LglNttyIdr = value if type(value) != auto else self.make_default("LglNttyIdr")
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
 
-	@LglNttyIdr.deleter
-	def LglNttyIdr(self):
-		del self._LglNttyIdr
-		self._LglNttyIdr = None
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
 
 	@property
 	def AnyBIC(self):
@@ -60,9 +60,9 @@ class PartyIdentification121Choice(base_types._BaseFieldType):
 		self._AnyBIC = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

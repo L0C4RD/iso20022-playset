@@ -1,12 +1,12 @@
 from . import base_types
-import Address2
-import Max99Text
-import Max35Text
-import Max70Text
+from .Max99Text import Max99Text
+from .Address2 import Address2
+from .Max70Text import Max70Text
+from .Max35Text import Max35Text
 
 class HiredVehicle3(base_types._BaseFieldType):
 
-	__slots__ = ["_DstnNmAndLctn", "_TpOfVhcl", "_VhclId", "_CpnyTp", "_CpnyNm", "_DrvrTaxId", "_DrvrId", "_DstnAdr"]
+	__slots__ = ["_DstnNmAndLctn", "_VhclId", "_CpnyTp", "_CpnyNm", "_TpOfVhcl", "_DrvrTaxId", "_DrvrId", "_DstnAdr"]
 	@property
 	def DstnNmAndLctn(self):
 		return self._DstnNmAndLctn
@@ -19,19 +19,6 @@ class HiredVehicle3(base_types._BaseFieldType):
 	def DstnNmAndLctn(self):
 		del self._DstnNmAndLctn
 		self._DstnNmAndLctn = None
-
-	@property
-	def TpOfVhcl(self):
-		return self._TpOfVhcl
-
-	@TpOfVhcl.setter
-	def TpOfVhcl(self, value):
-		self._TpOfVhcl = value if type(value) != auto else self.make_default("TpOfVhcl")
-
-	@TpOfVhcl.deleter
-	def TpOfVhcl(self):
-		del self._TpOfVhcl
-		self._TpOfVhcl = None
 
 	@property
 	def VhclId(self):
@@ -71,6 +58,19 @@ class HiredVehicle3(base_types._BaseFieldType):
 	def CpnyNm(self):
 		del self._CpnyNm
 		self._CpnyNm = None
+
+	@property
+	def TpOfVhcl(self):
+		return self._TpOfVhcl
+
+	@TpOfVhcl.setter
+	def TpOfVhcl(self, value):
+		self._TpOfVhcl = value if type(value) != auto else self.make_default("TpOfVhcl")
+
+	@TpOfVhcl.deleter
+	def TpOfVhcl(self):
+		del self._TpOfVhcl
+		self._TpOfVhcl = None
 
 	@property
 	def DrvrTaxId(self):
@@ -113,10 +113,10 @@ class HiredVehicle3(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DstnNmAndLctn', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TpOfVhcl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VhclId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpnyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpnyNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TpOfVhcl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrvrTaxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrvrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DstnAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),

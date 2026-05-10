@@ -1,24 +1,24 @@
 from . import base_types
-import PercentageRate
-import TradeParty6
-import ExchangeRate1
-import ActiveCurrencyAndAmount
+from .PercentageRate import PercentageRate
+from .ExchangeRate1 import ExchangeRate1
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .TradeParty6 import TradeParty6
 
 class SyndicatedLoan3(base_types._BaseFieldType):
 
-	__slots__ = ["_Brrwr", "_Lndr", "_Amt", "_XchgRateInf", "_Shr"]
+	__slots__ = ["_Shr", "_Lndr", "_XchgRateInf", "_Brrwr", "_Amt"]
 	@property
-	def Brrwr(self):
-		return self._Brrwr
+	def Shr(self):
+		return self._Shr
 
-	@Brrwr.setter
-	def Brrwr(self, value):
-		self._Brrwr = value if type(value) != auto else self.make_default("Brrwr")
+	@Shr.setter
+	def Shr(self, value):
+		self._Shr = value if type(value) != auto else self.make_default("Shr")
 
-	@Brrwr.deleter
-	def Brrwr(self):
-		del self._Brrwr
-		self._Brrwr = None
+	@Shr.deleter
+	def Shr(self):
+		del self._Shr
+		self._Shr = None
 
 	@property
 	def Lndr(self):
@@ -34,19 +34,6 @@ class SyndicatedLoan3(base_types._BaseFieldType):
 		self._Lndr = None
 
 	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
 	def XchgRateInf(self):
 		return self._XchgRateInf
 
@@ -60,23 +47,36 @@ class SyndicatedLoan3(base_types._BaseFieldType):
 		self._XchgRateInf = None
 
 	@property
-	def Shr(self):
-		return self._Shr
+	def Brrwr(self):
+		return self._Brrwr
 
-	@Shr.setter
-	def Shr(self, value):
-		self._Shr = value if type(value) != auto else self.make_default("Shr")
+	@Brrwr.setter
+	def Brrwr(self, value):
+		self._Brrwr = value if type(value) != auto else self.make_default("Brrwr")
 
-	@Shr.deleter
-	def Shr(self):
-		del self._Shr
-		self._Shr = None
+	@Brrwr.deleter
+	def Brrwr(self):
+		del self._Brrwr
+		self._Brrwr = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Brrwr', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lndr', type=TradeParty6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRateInf', type=ExchangeRate1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Shr', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lndr', type=TradeParty6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRateInf', type=ExchangeRate1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Brrwr', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

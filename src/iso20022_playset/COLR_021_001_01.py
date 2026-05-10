@@ -1,5 +1,5 @@
 from . import base_types
-import TripartyCollateralAllegementNotificationV01
+from .TripartyCollateralAllegementNotificationV01 import TripartyCollateralAllegementNotificationV01
 
 class COLR_021_001_01():
 

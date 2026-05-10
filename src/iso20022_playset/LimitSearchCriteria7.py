@@ -1,16 +1,29 @@
 from . import base_types
-import SystemIdentification2Choice
-import AccountIdentification4Choice
-import BranchAndFinancialInstitutionIdentification8
-import PercentageRange1Choice
-import ActiveCurrencyCode
-import LimitType1Choice
-import DateAndPeriod2Choice
-import ActiveAmountRange3Choice
+from .PercentageRange1Choice import PercentageRange1Choice
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .ActiveAmountRange3Choice import ActiveAmountRange3Choice
+from .SystemIdentification2Choice import SystemIdentification2Choice
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .LimitType1Choice import LimitType1Choice
+from .AccountIdentification4Choice import AccountIdentification4Choice
+from .DateAndPeriod2Choice import DateAndPeriod2Choice
 
 class LimitSearchCriteria7(base_types._BaseFieldType):
 
-	__slots__ = ["_CurLmtTp", "_SysId", "_LmtAmt", "_DfltLmtTp", "_UsdAmt", "_AcctOwnr", "_UsdPctg", "_AcctId", "_LmtCcy", "_BilLmtCtrPtyId", "_LmtVldAsOfDt"]
+	__slots__ = ["_BilLmtCtrPtyId", "_CurLmtTp", "_SysId", "_UsdAmt", "_UsdPctg", "_LmtAmt", "_DfltLmtTp", "_LmtVldAsOfDt", "_AcctOwnr", "_AcctId", "_LmtCcy"]
+	@property
+	def BilLmtCtrPtyId(self):
+		return self._BilLmtCtrPtyId
+
+	@BilLmtCtrPtyId.setter
+	def BilLmtCtrPtyId(self, value):
+		self._BilLmtCtrPtyId = value if type(value) != auto else self.make_default("BilLmtCtrPtyId")
+
+	@BilLmtCtrPtyId.deleter
+	def BilLmtCtrPtyId(self):
+		del self._BilLmtCtrPtyId
+		self._BilLmtCtrPtyId = None
+
 	@property
 	def CurLmtTp(self):
 		return self._CurLmtTp
@@ -36,6 +49,32 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 	def SysId(self):
 		del self._SysId
 		self._SysId = None
+
+	@property
+	def UsdAmt(self):
+		return self._UsdAmt
+
+	@UsdAmt.setter
+	def UsdAmt(self, value):
+		self._UsdAmt = value if type(value) != auto else self.make_default("UsdAmt")
+
+	@UsdAmt.deleter
+	def UsdAmt(self):
+		del self._UsdAmt
+		self._UsdAmt = None
+
+	@property
+	def UsdPctg(self):
+		return self._UsdPctg
+
+	@UsdPctg.setter
+	def UsdPctg(self, value):
+		self._UsdPctg = value if type(value) != auto else self.make_default("UsdPctg")
+
+	@UsdPctg.deleter
+	def UsdPctg(self):
+		del self._UsdPctg
+		self._UsdPctg = None
 
 	@property
 	def LmtAmt(self):
@@ -64,17 +103,17 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 		self._DfltLmtTp = None
 
 	@property
-	def UsdAmt(self):
-		return self._UsdAmt
+	def LmtVldAsOfDt(self):
+		return self._LmtVldAsOfDt
 
-	@UsdAmt.setter
-	def UsdAmt(self, value):
-		self._UsdAmt = value if type(value) != auto else self.make_default("UsdAmt")
+	@LmtVldAsOfDt.setter
+	def LmtVldAsOfDt(self, value):
+		self._LmtVldAsOfDt = value if type(value) != auto else self.make_default("LmtVldAsOfDt")
 
-	@UsdAmt.deleter
-	def UsdAmt(self):
-		del self._UsdAmt
-		self._UsdAmt = None
+	@LmtVldAsOfDt.deleter
+	def LmtVldAsOfDt(self):
+		del self._LmtVldAsOfDt
+		self._LmtVldAsOfDt = None
 
 	@property
 	def AcctOwnr(self):
@@ -88,19 +127,6 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 	def AcctOwnr(self):
 		del self._AcctOwnr
 		self._AcctOwnr = None
-
-	@property
-	def UsdPctg(self):
-		return self._UsdPctg
-
-	@UsdPctg.setter
-	def UsdPctg(self, value):
-		self._UsdPctg = value if type(value) != auto else self.make_default("UsdPctg")
-
-	@UsdPctg.deleter
-	def UsdPctg(self):
-		del self._UsdPctg
-		self._UsdPctg = None
 
 	@property
 	def AcctId(self):
@@ -128,43 +154,17 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 		del self._LmtCcy
 		self._LmtCcy = None
 
-	@property
-	def BilLmtCtrPtyId(self):
-		return self._BilLmtCtrPtyId
-
-	@BilLmtCtrPtyId.setter
-	def BilLmtCtrPtyId(self, value):
-		self._BilLmtCtrPtyId = value if type(value) != auto else self.make_default("BilLmtCtrPtyId")
-
-	@BilLmtCtrPtyId.deleter
-	def BilLmtCtrPtyId(self):
-		del self._BilLmtCtrPtyId
-		self._BilLmtCtrPtyId = None
-
-	@property
-	def LmtVldAsOfDt(self):
-		return self._LmtVldAsOfDt
-
-	@LmtVldAsOfDt.setter
-	def LmtVldAsOfDt(self, value):
-		self._LmtVldAsOfDt = value if type(value) != auto else self.make_default("LmtVldAsOfDt")
-
-	@LmtVldAsOfDt.deleter
-	def LmtVldAsOfDt(self):
-		del self._LmtVldAsOfDt
-		self._LmtVldAsOfDt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BilLmtCtrPtyId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CurLmtTp', type=LimitType1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsdAmt', type=ActiveAmountRange3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsdPctg', type=PercentageRange1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LmtAmt', type=ActiveAmountRange3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DfltLmtTp', type=LimitType1Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='UsdAmt', type=ActiveAmountRange3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LmtVldAsOfDt', type=DateAndPeriod2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UsdPctg', type=PercentageRange1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LmtCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BilLmtCtrPtyId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LmtVldAsOfDt', type=DateAndPeriod2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

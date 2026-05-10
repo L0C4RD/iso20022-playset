@@ -1,37 +1,24 @@
 from . import base_types
-import PercentageRate
-import InstalmentAmountDetailsType1Code
-import Max35Text
-import Amount5
+from .PercentageRate import PercentageRate
+from .Max35Text import Max35Text
+from .Amount5 import Amount5
+from .InstalmentAmountDetailsType1Code import InstalmentAmountDetailsType1Code
 
 class InstalmentAmountDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_Pctg", "_Tp", "_OthrTp", "_SubTp", "_Amt"]
+	__slots__ = ["_Amt", "_OthrTp", "_Tp", "_Pctg", "_SubTp"]
 	@property
-	def Pctg(self):
-		return self._Pctg
+	def Amt(self):
+		return self._Amt
 
-	@Pctg.setter
-	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@Pctg.deleter
-	def Pctg(self):
-		del self._Pctg
-		self._Pctg = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def OthrTp(self):
@@ -47,6 +34,32 @@ class InstalmentAmountDetails1(base_types._BaseFieldType):
 		self._OthrTp = None
 
 	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def Pctg(self):
+		return self._Pctg
+
+	@Pctg.setter
+	def Pctg(self, value):
+		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+
+	@Pctg.deleter
+	def Pctg(self):
+		del self._Pctg
+		self._Pctg = None
+
+	@property
 	def SubTp(self):
 		return self._SubTp
 
@@ -59,24 +72,11 @@ class InstalmentAmountDetails1(base_types._BaseFieldType):
 		del self._SubTp
 		self._SubTp = None
 
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=InstalmentAmountDetailsType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=Amount5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=InstalmentAmountDetailsType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

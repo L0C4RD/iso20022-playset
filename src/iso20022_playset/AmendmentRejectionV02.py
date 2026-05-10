@@ -1,24 +1,37 @@
 from . import base_types
-import RejectionReason1Choice
-import MessageIdentification1
-import Count1
-import SimpleIdentificationInformation
+from .RejectionReason1Choice import RejectionReason1Choice
+from .MessageIdentification1 import MessageIdentification1
+from .SimpleIdentificationInformation import SimpleIdentificationInformation
+from .Count1 import Count1
 
 class AmendmentRejectionV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmitrTxRef", "_TxId", "_RjctnId", "_DltaRptRef", "_RjctnRsn", "_RjctdAmdmntNb"]
+	__slots__ = ["_DltaRptRef", "_RjctdAmdmntNb", "_TxId", "_RjctnId", "_RjctnRsn", "_SubmitrTxRef"]
 	@property
-	def SubmitrTxRef(self):
-		return self._SubmitrTxRef
+	def DltaRptRef(self):
+		return self._DltaRptRef
 
-	@SubmitrTxRef.setter
-	def SubmitrTxRef(self, value):
-		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
+	@DltaRptRef.setter
+	def DltaRptRef(self, value):
+		self._DltaRptRef = value if type(value) != auto else self.make_default("DltaRptRef")
 
-	@SubmitrTxRef.deleter
-	def SubmitrTxRef(self):
-		del self._SubmitrTxRef
-		self._SubmitrTxRef = None
+	@DltaRptRef.deleter
+	def DltaRptRef(self):
+		del self._DltaRptRef
+		self._DltaRptRef = None
+
+	@property
+	def RjctdAmdmntNb(self):
+		return self._RjctdAmdmntNb
+
+	@RjctdAmdmntNb.setter
+	def RjctdAmdmntNb(self, value):
+		self._RjctdAmdmntNb = value if type(value) != auto else self.make_default("RjctdAmdmntNb")
+
+	@RjctdAmdmntNb.deleter
+	def RjctdAmdmntNb(self):
+		del self._RjctdAmdmntNb
+		self._RjctdAmdmntNb = None
 
 	@property
 	def TxId(self):
@@ -47,19 +60,6 @@ class AmendmentRejectionV02(base_types._BaseFieldType):
 		self._RjctnId = None
 
 	@property
-	def DltaRptRef(self):
-		return self._DltaRptRef
-
-	@DltaRptRef.setter
-	def DltaRptRef(self, value):
-		self._DltaRptRef = value if type(value) != auto else self.make_default("DltaRptRef")
-
-	@DltaRptRef.deleter
-	def DltaRptRef(self):
-		del self._DltaRptRef
-		self._DltaRptRef = None
-
-	@property
 	def RjctnRsn(self):
 		return self._RjctnRsn
 
@@ -73,24 +73,24 @@ class AmendmentRejectionV02(base_types._BaseFieldType):
 		self._RjctnRsn = None
 
 	@property
-	def RjctdAmdmntNb(self):
-		return self._RjctdAmdmntNb
+	def SubmitrTxRef(self):
+		return self._SubmitrTxRef
 
-	@RjctdAmdmntNb.setter
-	def RjctdAmdmntNb(self, value):
-		self._RjctdAmdmntNb = value if type(value) != auto else self.make_default("RjctdAmdmntNb")
+	@SubmitrTxRef.setter
+	def SubmitrTxRef(self, value):
+		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
 
-	@RjctdAmdmntNb.deleter
-	def RjctdAmdmntNb(self):
-		del self._RjctdAmdmntNb
-		self._RjctdAmdmntNb = None
+	@SubmitrTxRef.deleter
+	def SubmitrTxRef(self):
+		del self._SubmitrTxRef
+		self._SubmitrTxRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DltaRptRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctdAmdmntNb', type=Count1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DltaRptRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctdAmdmntNb', type=Count1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 	))
 

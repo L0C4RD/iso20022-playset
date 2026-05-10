@@ -1,26 +1,13 @@
 from . import base_types
-import DateAndDateTime2Choice
-import MarketIdentification98
-import PriceRateOrAmountOrUnknown2Choice
-import YieldedOrValueType1Choice
-import TypeOfPrice48Choice
+from .TypeOfPrice48Choice import TypeOfPrice48Choice
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .PriceRateOrAmountOrUnknown2Choice import PriceRateOrAmountOrUnknown2Choice
+from .MarketIdentification98 import MarketIdentification98
+from .YieldedOrValueType1Choice import YieldedOrValueType1Choice
 
 class PriceInformation30(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_ValTp", "_QtnDt", "_Tp", "_SrcOfPric"]
-	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
-
+	__slots__ = ["_ValTp", "_Val", "_Tp", "_SrcOfPric", "_QtnDt"]
 	@property
 	def ValTp(self):
 		return self._ValTp
@@ -35,17 +22,17 @@ class PriceInformation30(base_types._BaseFieldType):
 		self._ValTp = None
 
 	@property
-	def QtnDt(self):
-		return self._QtnDt
+	def Val(self):
+		return self._Val
 
-	@QtnDt.setter
-	def QtnDt(self, value):
-		self._QtnDt = value if type(value) != auto else self.make_default("QtnDt")
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != auto else self.make_default("Val")
 
-	@QtnDt.deleter
-	def QtnDt(self):
-		del self._QtnDt
-		self._QtnDt = None
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
 
 	@property
 	def Tp(self):
@@ -73,11 +60,24 @@ class PriceInformation30(base_types._BaseFieldType):
 		del self._SrcOfPric
 		self._SrcOfPric = None
 
+	@property
+	def QtnDt(self):
+		return self._QtnDt
+
+	@QtnDt.setter
+	def QtnDt(self, value):
+		self._QtnDt = value if type(value) != auto else self.make_default("QtnDt")
+
+	@QtnDt.deleter
+	def QtnDt(self):
+		del self._QtnDt
+		self._QtnDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Val', type=PriceRateOrAmountOrUnknown2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValTp', type=YieldedOrValueType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=PriceRateOrAmountOrUnknown2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=TypeOfPrice48Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrcOfPric', type=MarketIdentification98, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

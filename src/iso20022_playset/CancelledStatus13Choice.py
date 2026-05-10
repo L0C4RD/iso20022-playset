@@ -1,12 +1,12 @@
 from . import base_types
-import GenericIdentification1
-import NoReasonCode
-import CancelledStatusReason3Code
-import Extended350Code
+from .CancelledStatusReason3Code import CancelledStatusReason3Code
+from .Extended350Code import Extended350Code
+from .GenericIdentification1 import GenericIdentification1
+from .NoReasonCode import NoReasonCode
 
 class CancelledStatus13Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DataSrcSchme", "_NoSpcfdRsn", "_XtndedRsn", "_Rsn"]
+	__slots__ = ["_DataSrcSchme", "_XtndedRsn", "_NoSpcfdRsn", "_Rsn"]
 	@property
 	def DataSrcSchme(self):
 		return self._DataSrcSchme
@@ -21,19 +21,6 @@ class CancelledStatus13Choice(base_types._BaseFieldType):
 		self._DataSrcSchme = None
 
 	@property
-	def NoSpcfdRsn(self):
-		return self._NoSpcfdRsn
-
-	@NoSpcfdRsn.setter
-	def NoSpcfdRsn(self, value):
-		self._NoSpcfdRsn = value if type(value) != auto else self.make_default("NoSpcfdRsn")
-
-	@NoSpcfdRsn.deleter
-	def NoSpcfdRsn(self):
-		del self._NoSpcfdRsn
-		self._NoSpcfdRsn = None
-
-	@property
 	def XtndedRsn(self):
 		return self._XtndedRsn
 
@@ -45,6 +32,19 @@ class CancelledStatus13Choice(base_types._BaseFieldType):
 	def XtndedRsn(self):
 		del self._XtndedRsn
 		self._XtndedRsn = None
+
+	@property
+	def NoSpcfdRsn(self):
+		return self._NoSpcfdRsn
+
+	@NoSpcfdRsn.setter
+	def NoSpcfdRsn(self, value):
+		self._NoSpcfdRsn = value if type(value) != auto else self.make_default("NoSpcfdRsn")
+
+	@NoSpcfdRsn.deleter
+	def NoSpcfdRsn(self):
+		del self._NoSpcfdRsn
+		self._NoSpcfdRsn = None
 
 	@property
 	def Rsn(self):
@@ -61,8 +61,8 @@ class CancelledStatus13Choice(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DataSrcSchme', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='XtndedRsn', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rsn', type=CancelledStatusReason3Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

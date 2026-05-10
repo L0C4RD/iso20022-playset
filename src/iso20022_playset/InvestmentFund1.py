@@ -1,14 +1,40 @@
 from . import base_types
-import SecurityIdentification14
-import Max35Text
-import AmountAndDirection30
-import DecimalNumber
-import SupplementaryData1
-import PriceInformation10
+from .Max35Text import Max35Text
+from .SupplementaryData1 import SupplementaryData1
+from .AmountAndDirection30 import AmountAndDirection30
+from .SecurityIdentification14 import SecurityIdentification14
+from .PriceInformation10 import PriceInformation10
+from .DecimalNumber import DecimalNumber
 
 class InvestmentFund1(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_ClssTp", "_TtlUnitsOutsdng", "_TxnlUnits", "_SplmtryData", "_TtlVal", "_Pric"]
+	__slots__ = ["_TtlVal", "_Pric", "_FinInstrmId", "_ClssTp", "_SplmtryData", "_TtlUnitsOutsdng", "_TxnlUnits"]
+	@property
+	def TtlVal(self):
+		return self._TtlVal
+
+	@TtlVal.setter
+	def TtlVal(self, value):
+		self._TtlVal = value if type(value) != auto else self.make_default("TtlVal")
+
+	@TtlVal.deleter
+	def TtlVal(self):
+		del self._TtlVal
+		self._TtlVal = None
+
+	@property
+	def Pric(self):
+		return self._Pric
+
+	@Pric.setter
+	def Pric(self, value):
+		self._Pric = value if type(value) != auto else self.make_default("Pric")
+
+	@Pric.deleter
+	def Pric(self):
+		del self._Pric
+		self._Pric = None
+
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
@@ -36,6 +62,19 @@ class InvestmentFund1(base_types._BaseFieldType):
 		self._ClssTp = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def TtlUnitsOutsdng(self):
 		return self._TtlUnitsOutsdng
 
@@ -61,52 +100,13 @@ class InvestmentFund1(base_types._BaseFieldType):
 		del self._TxnlUnits
 		self._TxnlUnits = None
 
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def TtlVal(self):
-		return self._TtlVal
-
-	@TtlVal.setter
-	def TtlVal(self, value):
-		self._TtlVal = value if type(value) != auto else self.make_default("TtlVal")
-
-	@TtlVal.deleter
-	def TtlVal(self):
-		del self._TtlVal
-		self._TtlVal = None
-
-	@property
-	def Pric(self):
-		return self._Pric
-
-	@Pric.setter
-	def Pric(self, value):
-		self._Pric = value if type(value) != auto else self.make_default("Pric")
-
-	@Pric.deleter
-	def Pric(self):
-		del self._Pric
-		self._Pric = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlUnitsOutsdng', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxnlUnits', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlVal', type=AmountAndDirection30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pric', type=PriceInformation10, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlUnitsOutsdng', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxnlUnits', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

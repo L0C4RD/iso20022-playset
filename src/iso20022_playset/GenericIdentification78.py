@@ -1,23 +1,10 @@
 from . import base_types
-import GenericIdentification30
-import Max35Text
+from .Max35Text import Max35Text
+from .GenericIdentification30 import GenericIdentification30
 
 class GenericIdentification78(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Tp"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Tp", "_Id"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -31,8 +18,21 @@ class GenericIdentification78(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=GenericIdentification30, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

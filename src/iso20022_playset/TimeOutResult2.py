@@ -1,5 +1,5 @@
 from . import base_types
-import TransactionStatus5
+from .TransactionStatus5 import TransactionStatus5
 
 class TimeOutResult2(base_types._BaseFieldType):
 

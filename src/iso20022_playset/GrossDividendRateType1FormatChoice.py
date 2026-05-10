@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification13
-import GrossDividendRateType1Code
+from .GrossDividendRateType1Code import GrossDividendRateType1Code
+from .GenericIdentification13 import GenericIdentification13
 
 class GrossDividendRateType1FormatChoice(base_types._BaseFieldType):
 

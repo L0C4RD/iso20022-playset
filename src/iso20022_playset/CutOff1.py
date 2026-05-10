@@ -1,12 +1,25 @@
 from . import base_types
-import ISOTime
-import Max35Text
-import ActiveCurrencyCode
-import DateOffsetText
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .Max35Text import Max35Text
+from .DateOffsetText import DateOffsetText
+from .ISOTime import ISOTime
 
 class CutOff1(base_types._BaseFieldType):
 
-	__slots__ = ["_CutOffUpdId", "_ValDtOffset", "_CutOffTm", "_Ccy"]
+	__slots__ = ["_Ccy", "_CutOffUpdId", "_ValDtOffset", "_CutOffTm"]
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
 	@property
 	def CutOffUpdId(self):
 		return self._CutOffUpdId
@@ -46,23 +59,10 @@ class CutOff1(base_types._BaseFieldType):
 		del self._CutOffTm
 		self._CutOffTm = None
 
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CutOffUpdId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDtOffset', type=DateOffsetText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CutOffTm', type=ISOTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

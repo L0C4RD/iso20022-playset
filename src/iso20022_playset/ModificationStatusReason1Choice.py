@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalPaymentModificationRejection1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ExternalPaymentModificationRejection1Code import ExternalPaymentModificationRejection1Code
 
 class ModificationStatusReason1Choice(base_types._BaseFieldType):
 

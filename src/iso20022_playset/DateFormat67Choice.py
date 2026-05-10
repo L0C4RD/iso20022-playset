@@ -1,6 +1,6 @@
 from . import base_types
-import DateCode35Choice
-import DateAndDateTime2Choice
+from .DateCode35Choice import DateCode35Choice
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class DateFormat67Choice(base_types._BaseFieldType):
 

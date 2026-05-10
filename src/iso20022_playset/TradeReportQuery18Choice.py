@@ -1,6 +1,6 @@
 from . import base_types
-import TradeRecurrentQuery7
-import TradeQueryCriteria14
+from .TradeRecurrentQuery7 import TradeRecurrentQuery7
+from .TradeQueryCriteria14 import TradeQueryCriteria14
 
 class TradeReportQuery18Choice(base_types._BaseFieldType):
 

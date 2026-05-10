@@ -1,26 +1,13 @@
 from . import base_types
-import ClearingSystemIdentification2Choice
-import PartyIdentification44
-import Max34Text
-import Max105Text
-import LEIIdentifier
+from .Max34Text import Max34Text
+from .LEIIdentifier import LEIIdentifier
+from .ClearingSystemIdentification2Choice import ClearingSystemIdentification2Choice
+from .Max105Text import Max105Text
+from .PartyIdentification44 import PartyIdentification44
 
 class PartyIdentification59(base_types._BaseFieldType):
 
-	__slots__ = ["_Adr", "_PtyNm", "_LglNttyIdr", "_ClrSysId", "_AnyBIC", "_AcctNb"]
-	@property
-	def Adr(self):
-		return self._Adr
-
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
-
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
-
+	__slots__ = ["_PtyNm", "_LglNttyIdr", "_AcctNb", "_Adr", "_AnyBIC", "_ClrSysId"]
 	@property
 	def PtyNm(self):
 		return self._PtyNm
@@ -48,17 +35,30 @@ class PartyIdentification59(base_types._BaseFieldType):
 		self._LglNttyIdr = None
 
 	@property
-	def ClrSysId(self):
-		return self._ClrSysId
+	def AcctNb(self):
+		return self._AcctNb
 
-	@ClrSysId.setter
-	def ClrSysId(self, value):
-		self._ClrSysId = value if type(value) != auto else self.make_default("ClrSysId")
+	@AcctNb.setter
+	def AcctNb(self, value):
+		self._AcctNb = value if type(value) != auto else self.make_default("AcctNb")
 
-	@ClrSysId.deleter
-	def ClrSysId(self):
-		del self._ClrSysId
-		self._ClrSysId = None
+	@AcctNb.deleter
+	def AcctNb(self):
+		del self._AcctNb
+		self._AcctNb = None
+
+	@property
+	def Adr(self):
+		return self._Adr
+
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != auto else self.make_default("Adr")
+
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
 
 	@property
 	def AnyBIC(self):
@@ -74,24 +74,24 @@ class PartyIdentification59(base_types._BaseFieldType):
 		self._AnyBIC = None
 
 	@property
-	def AcctNb(self):
-		return self._AcctNb
+	def ClrSysId(self):
+		return self._ClrSysId
 
-	@AcctNb.setter
-	def AcctNb(self, value):
-		self._AcctNb = value if type(value) != auto else self.make_default("AcctNb")
+	@ClrSysId.setter
+	def ClrSysId(self, value):
+		self._ClrSysId = value if type(value) != auto else self.make_default("ClrSysId")
 
-	@AcctNb.deleter
-	def AcctNb(self):
-		del self._AcctNb
-		self._AcctNb = None
+	@ClrSysId.deleter
+	def ClrSysId(self):
+		del self._ClrSysId
+		self._ClrSysId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Adr', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyNm', type=Max34Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrSysId', type=ClearingSystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AnyBIC', type=PartyIdentification44, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctNb', type=Max34Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adr', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AnyBIC', type=PartyIdentification44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrSysId', type=ClearingSystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

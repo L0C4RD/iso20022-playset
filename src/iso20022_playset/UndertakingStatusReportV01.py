@@ -1,6 +1,6 @@
 from . import base_types
-import PartyAndSignature2
-import UndertakingStatusAdvice1
+from .PartyAndSignature2 import PartyAndSignature2
+from .UndertakingStatusAdvice1 import UndertakingStatusAdvice1
 
 class UndertakingStatusReportV01(base_types._BaseFieldType):
 

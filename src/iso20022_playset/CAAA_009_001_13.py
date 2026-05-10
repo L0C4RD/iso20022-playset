@@ -1,5 +1,5 @@
 from . import base_types
-import AcceptorReconciliationRequestV13
+from .AcceptorReconciliationRequestV13 import AcceptorReconciliationRequestV13
 
 class CAAA_009_001_13():
 

@@ -1,7 +1,7 @@
 from . import base_types
-import PartyIdentification113
-import Max35Text
-import OrderStatus3Choice
+from .PartyIdentification113 import PartyIdentification113
+from .OrderStatus3Choice import OrderStatus3Choice
+from .Max35Text import Max35Text
 
 class OrderStatusAndReason10(base_types._BaseFieldType):
 

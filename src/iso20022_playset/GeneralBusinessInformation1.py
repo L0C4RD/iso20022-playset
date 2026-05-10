@@ -1,23 +1,23 @@
 from . import base_types
-import Max350Text
-import Max35Text
-import InformationQualifierType1
+from .Max35Text import Max35Text
+from .InformationQualifierType1 import InformationQualifierType1
+from .Max350Text import Max350Text
 
 class GeneralBusinessInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Qlfr", "_SbjtDtls", "_Sbjt"]
+	__slots__ = ["_Sbjt", "_SbjtDtls", "_Qlfr"]
 	@property
-	def Qlfr(self):
-		return self._Qlfr
+	def Sbjt(self):
+		return self._Sbjt
 
-	@Qlfr.setter
-	def Qlfr(self, value):
-		self._Qlfr = value if type(value) != auto else self.make_default("Qlfr")
+	@Sbjt.setter
+	def Sbjt(self, value):
+		self._Sbjt = value if type(value) != auto else self.make_default("Sbjt")
 
-	@Qlfr.deleter
-	def Qlfr(self):
-		del self._Qlfr
-		self._Qlfr = None
+	@Sbjt.deleter
+	def Sbjt(self):
+		del self._Sbjt
+		self._Sbjt = None
 
 	@property
 	def SbjtDtls(self):
@@ -33,21 +33,21 @@ class GeneralBusinessInformation1(base_types._BaseFieldType):
 		self._SbjtDtls = None
 
 	@property
-	def Sbjt(self):
-		return self._Sbjt
+	def Qlfr(self):
+		return self._Qlfr
 
-	@Sbjt.setter
-	def Sbjt(self, value):
-		self._Sbjt = value if type(value) != auto else self.make_default("Sbjt")
+	@Qlfr.setter
+	def Qlfr(self, value):
+		self._Qlfr = value if type(value) != auto else self.make_default("Qlfr")
 
-	@Sbjt.deleter
-	def Sbjt(self):
-		del self._Sbjt
-		self._Sbjt = None
+	@Qlfr.deleter
+	def Qlfr(self):
+		del self._Qlfr
+		self._Qlfr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Qlfr', type=InformationQualifierType1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SbjtDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sbjt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SbjtDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qlfr', type=InformationQualifierType1, min=0, max=1, mutex_group=None, array=False),
 	))
 

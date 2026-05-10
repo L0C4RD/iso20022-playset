@@ -1,7 +1,7 @@
 from . import base_types
-import GenericIdentification175
-import Max500Text
-import Max105Text
+from .GenericIdentification175 import GenericIdentification175
+from .Max105Text import Max105Text
+from .Max500Text import Max500Text
 
 class OrganisationIdentification38(base_types._BaseFieldType):
 

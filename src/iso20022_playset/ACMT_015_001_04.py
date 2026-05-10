@@ -1,5 +1,5 @@
 from . import base_types
-import AccountExcludedMandateMaintenanceRequestV04
+from .AccountExcludedMandateMaintenanceRequestV04 import AccountExcludedMandateMaintenanceRequestV04
 
 class ACMT_015_001_04():
 

@@ -1,23 +1,23 @@
 from . import base_types
-import ISODate
-import ActiveCurrencyAndAmount
-import Max70Text
+from .Max70Text import Max70Text
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .ISODate import ISODate
 
 class Instalment1(base_types._BaseFieldType):
 
-	__slots__ = ["_SeqId", "_PmtDueDt", "_Amt"]
+	__slots__ = ["_Amt", "_PmtDueDt", "_SeqId"]
 	@property
-	def SeqId(self):
-		return self._SeqId
+	def Amt(self):
+		return self._Amt
 
-	@SeqId.setter
-	def SeqId(self, value):
-		self._SeqId = value if type(value) != auto else self.make_default("SeqId")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@SeqId.deleter
-	def SeqId(self):
-		del self._SeqId
-		self._SeqId = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def PmtDueDt(self):
@@ -33,21 +33,21 @@ class Instalment1(base_types._BaseFieldType):
 		self._PmtDueDt = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def SeqId(self):
+		return self._SeqId
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@SeqId.setter
+	def SeqId(self, value):
+		self._SeqId = value if type(value) != auto else self.make_default("SeqId")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@SeqId.deleter
+	def SeqId(self):
+		del self._SeqId
+		self._SeqId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SeqId', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtDueDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDueDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqId', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

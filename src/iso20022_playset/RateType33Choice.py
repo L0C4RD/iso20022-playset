@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import RateType7Code
+from .RateType7Code import RateType7Code
+from .GenericIdentification30 import GenericIdentification30
 
 class RateType33Choice(base_types._BaseFieldType):
 

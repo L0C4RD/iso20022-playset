@@ -1,23 +1,23 @@
 from . import base_types
-import LocationAmenity1Code
-import Max35Text
-import TrueFalseIndicator
+from .LocationAmenity1Code import LocationAmenity1Code
+from .Max35Text import Max35Text
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class LocalAmenity1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_AvlblInd", "_OthrTp"]
+	__slots__ = ["_OthrTp", "_AvlblInd", "_Tp"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def OthrTp(self):
+		return self._OthrTp
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
 
 	@property
 	def AvlblInd(self):
@@ -33,21 +33,21 @@ class LocalAmenity1(base_types._BaseFieldType):
 		self._AvlblInd = None
 
 	@property
-	def OthrTp(self):
-		return self._OthrTp
+	def Tp(self):
+		return self._Tp
 
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=LocationAmenity1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AvlblInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AvlblInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=LocationAmenity1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

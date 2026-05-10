@@ -1,12 +1,25 @@
 from . import base_types
-import Case6
-import SupplementaryData1
-import ProprietaryData7
-import CaseAssignment6
+from .ProprietaryData7 import ProprietaryData7
+from .CaseAssignment6 import CaseAssignment6
+from .SupplementaryData1 import SupplementaryData1
+from .Case6 import Case6
 
 class ProprietaryFormatInvestigationV06(base_types._BaseFieldType):
 
-	__slots__ = ["_Case", "_PrtryData", "_SplmtryData", "_Assgnmt"]
+	__slots__ = ["_Assgnmt", "_Case", "_SplmtryData", "_PrtryData"]
+	@property
+	def Assgnmt(self):
+		return self._Assgnmt
+
+	@Assgnmt.setter
+	def Assgnmt(self, value):
+		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
+
+	@Assgnmt.deleter
+	def Assgnmt(self):
+		del self._Assgnmt
+		self._Assgnmt = None
+
 	@property
 	def Case(self):
 		return self._Case
@@ -19,19 +32,6 @@ class ProprietaryFormatInvestigationV06(base_types._BaseFieldType):
 	def Case(self):
 		del self._Case
 		self._Case = None
-
-	@property
-	def PrtryData(self):
-		return self._PrtryData
-
-	@PrtryData.setter
-	def PrtryData(self, value):
-		self._PrtryData = value if type(value) != auto else self.make_default("PrtryData")
-
-	@PrtryData.deleter
-	def PrtryData(self):
-		del self._PrtryData
-		self._PrtryData = None
 
 	@property
 	def SplmtryData(self):
@@ -47,22 +47,22 @@ class ProprietaryFormatInvestigationV06(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Assgnmt(self):
-		return self._Assgnmt
+	def PrtryData(self):
+		return self._PrtryData
 
-	@Assgnmt.setter
-	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
+	@PrtryData.setter
+	def PrtryData(self, value):
+		self._PrtryData = value if type(value) != auto else self.make_default("PrtryData")
 
-	@Assgnmt.deleter
-	def Assgnmt(self):
-		del self._Assgnmt
-		self._Assgnmt = None
+	@PrtryData.deleter
+	def PrtryData(self):
+		del self._PrtryData
+		self._PrtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtryData', type=ProprietaryData7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrtryData', type=ProprietaryData7, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import CorporateActionTaxableIncomePerShareCalculated1Code
+from .GenericIdentification47 import GenericIdentification47
+from .CorporateActionTaxableIncomePerShareCalculated1Code import CorporateActionTaxableIncomePerShareCalculated1Code
 
 class TaxableIncomePerShareCalculatedFormat4Choice(base_types._BaseFieldType):
 

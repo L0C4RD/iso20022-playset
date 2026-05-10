@@ -1,38 +1,25 @@
 from . import base_types
-import POICommunicationType2Code
-import NetworkParameters7
-import TrueFalseIndicator
-import PhysicalInterfaceParameter1
-import PartyType7Code
+from .PhysicalInterfaceParameter1 import PhysicalInterfaceParameter1
+from .POICommunicationType2Code import POICommunicationType2Code
+from .PartyType7Code import PartyType7Code
+from .TrueFalseIndicator import TrueFalseIndicator
+from .NetworkParameters7 import NetworkParameters7
 
 class CommunicationCharacteristics5(base_types._BaseFieldType):
 
-	__slots__ = ["_Params", "_ComTp", "_Actv", "_RmotPty", "_PhysIntrfc"]
+	__slots__ = ["_PhysIntrfc", "_Actv", "_ComTp", "_Params", "_RmotPty"]
 	@property
-	def Params(self):
-		return self._Params
+	def PhysIntrfc(self):
+		return self._PhysIntrfc
 
-	@Params.setter
-	def Params(self, value):
-		self._Params = value if type(value) != auto else self.make_default("Params")
+	@PhysIntrfc.setter
+	def PhysIntrfc(self, value):
+		self._PhysIntrfc = value if type(value) != auto else self.make_default("PhysIntrfc")
 
-	@Params.deleter
-	def Params(self):
-		del self._Params
-		self._Params = None
-
-	@property
-	def ComTp(self):
-		return self._ComTp
-
-	@ComTp.setter
-	def ComTp(self, value):
-		self._ComTp = value if type(value) != auto else self.make_default("ComTp")
-
-	@ComTp.deleter
-	def ComTp(self):
-		del self._ComTp
-		self._ComTp = None
+	@PhysIntrfc.deleter
+	def PhysIntrfc(self):
+		del self._PhysIntrfc
+		self._PhysIntrfc = None
 
 	@property
 	def Actv(self):
@@ -48,6 +35,32 @@ class CommunicationCharacteristics5(base_types._BaseFieldType):
 		self._Actv = None
 
 	@property
+	def ComTp(self):
+		return self._ComTp
+
+	@ComTp.setter
+	def ComTp(self, value):
+		self._ComTp = value if type(value) != auto else self.make_default("ComTp")
+
+	@ComTp.deleter
+	def ComTp(self):
+		del self._ComTp
+		self._ComTp = None
+
+	@property
+	def Params(self):
+		return self._Params
+
+	@Params.setter
+	def Params(self, value):
+		self._Params = value if type(value) != auto else self.make_default("Params")
+
+	@Params.deleter
+	def Params(self):
+		del self._Params
+		self._Params = None
+
+	@property
 	def RmotPty(self):
 		return self._RmotPty
 
@@ -60,24 +73,11 @@ class CommunicationCharacteristics5(base_types._BaseFieldType):
 		del self._RmotPty
 		self._RmotPty = None
 
-	@property
-	def PhysIntrfc(self):
-		return self._PhysIntrfc
-
-	@PhysIntrfc.setter
-	def PhysIntrfc(self, value):
-		self._PhysIntrfc = value if type(value) != auto else self.make_default("PhysIntrfc")
-
-	@PhysIntrfc.deleter
-	def PhysIntrfc(self):
-		del self._PhysIntrfc
-		self._PhysIntrfc = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Params', type=NetworkParameters7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ComTp', type=POICommunicationType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Actv', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmotPty', type=PartyType7Code, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PhysIntrfc', type=PhysicalInterfaceParameter1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Actv', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ComTp', type=POICommunicationType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Params', type=NetworkParameters7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmotPty', type=PartyType7Code, min=1, max=None, mutex_group=None, array=True),
 	))
 

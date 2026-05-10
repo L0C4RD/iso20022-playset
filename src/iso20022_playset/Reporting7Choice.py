@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import Reporting1Code
+from .GenericIdentification30 import GenericIdentification30
+from .Reporting1Code import Reporting1Code
 
 class Reporting7Choice(base_types._BaseFieldType):
 

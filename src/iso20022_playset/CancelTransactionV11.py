@@ -1,38 +1,25 @@
 from . import base_types
-import PaymentCancellationReason6
-import CashAccount40
-import SupplementaryData1
-import PaymentIdentification8Choice
-import MessageHeader9
+from .MessageHeader9 import MessageHeader9
+from .SupplementaryData1 import SupplementaryData1
+from .CashAccount40 import CashAccount40
+from .PaymentIdentification8Choice import PaymentIdentification8Choice
+from .PaymentCancellationReason6 import PaymentCancellationReason6
 
 class CancelTransactionV11(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_PmtId", "_SplmtryData", "_MsgHdr", "_CshAcct"]
+	__slots__ = ["_CshAcct", "_SplmtryData", "_MsgHdr", "_CxlRsn", "_PmtId"]
 	@property
-	def CxlRsn(self):
-		return self._CxlRsn
+	def CshAcct(self):
+		return self._CshAcct
 
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
 
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
-
-	@property
-	def PmtId(self):
-		return self._PmtId
-
-	@PmtId.setter
-	def PmtId(self, value):
-		self._PmtId = value if type(value) != auto else self.make_default("PmtId")
-
-	@PmtId.deleter
-	def PmtId(self):
-		del self._PmtId
-		self._PmtId = None
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
 
 	@property
 	def SplmtryData(self):
@@ -61,23 +48,36 @@ class CancelTransactionV11(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	@property
-	def CshAcct(self):
-		return self._CshAcct
+	def CxlRsn(self):
+		return self._CxlRsn
 
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
 
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
+
+	@property
+	def PmtId(self):
+		return self._PmtId
+
+	@PmtId.setter
+	def PmtId(self, value):
+		self._PmtId = value if type(value) != auto else self.make_default("PmtId")
+
+	@PmtId.deleter
+	def PmtId(self):
+		del self._PmtId
+		self._PmtId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlRsn', type=PaymentCancellationReason6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtId', type=PaymentIdentification8Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=PaymentCancellationReason6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtId', type=PaymentIdentification8Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,12 @@
 from . import base_types
-import InvestmentFundRole2Code
-import Extended350Code
-import PartyIdentification2Choice
-import Account7
+from .Extended350Code import Extended350Code
+from .InvestmentFundRole2Code import InvestmentFundRole2Code
+from .PartyIdentification2Choice import PartyIdentification2Choice
+from .Account7 import Account7
 
 class Intermediary11(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_Id", "_XtndedRole", "_Role"]
+	__slots__ = ["_Acct", "_XtndedRole", "_Id", "_Role"]
 	@property
 	def Acct(self):
 		return self._Acct
@@ -21,19 +21,6 @@ class Intermediary11(base_types._BaseFieldType):
 		self._Acct = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def XtndedRole(self):
 		return self._XtndedRole
 
@@ -45,6 +32,19 @@ class Intermediary11(base_types._BaseFieldType):
 	def XtndedRole(self):
 		del self._XtndedRole
 		self._XtndedRole = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Role(self):
@@ -61,8 +61,8 @@ class Intermediary11(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=Account7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XtndedRole', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Role', type=InvestmentFundRole2Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

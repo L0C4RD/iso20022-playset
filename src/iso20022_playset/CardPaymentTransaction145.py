@@ -1,6 +1,6 @@
 from . import base_types
-import Action17
-import AuthorisationResult19
+from .Action17 import Action17
+from .AuthorisationResult19 import AuthorisationResult19
 
 class CardPaymentTransaction145(base_types._BaseFieldType):
 

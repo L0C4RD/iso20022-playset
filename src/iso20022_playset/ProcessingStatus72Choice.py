@@ -1,24 +1,11 @@
 from . import base_types
-import Reason4
-import ProprietaryStatusAndReason6
-import Reason18Choice
+from .Reason18Choice import Reason18Choice
+from .Reason4 import Reason4
+from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 
 class ProcessingStatus72Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Cmpltd", "_AckdAccptd", "_Rjctd", "_PdgPrcg"]
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
+	__slots__ = ["_Cmpltd", "_Rjctd", "_AckdAccptd", "_Prtry", "_PdgPrcg"]
 	@property
 	def Cmpltd(self):
 		return self._Cmpltd
@@ -31,19 +18,6 @@ class ProcessingStatus72Choice(base_types._BaseFieldType):
 	def Cmpltd(self):
 		del self._Cmpltd
 		self._Cmpltd = None
-
-	@property
-	def AckdAccptd(self):
-		return self._AckdAccptd
-
-	@AckdAccptd.setter
-	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
-
-	@AckdAccptd.deleter
-	def AckdAccptd(self):
-		del self._AckdAccptd
-		self._AckdAccptd = None
 
 	@property
 	def Rjctd(self):
@@ -59,6 +33,32 @@ class ProcessingStatus72Choice(base_types._BaseFieldType):
 		self._Rjctd = None
 
 	@property
+	def AckdAccptd(self):
+		return self._AckdAccptd
+
+	@AckdAccptd.setter
+	def AckdAccptd(self, value):
+		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
+
+	@AckdAccptd.deleter
+	def AckdAccptd(self):
+		del self._AckdAccptd
+		self._AckdAccptd = None
+
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
+
+	@property
 	def PdgPrcg(self):
 		return self._PdgPrcg
 
@@ -72,10 +72,10 @@ class ProcessingStatus72Choice(base_types._BaseFieldType):
 		self._PdgPrcg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cmpltd', type=Reason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AckdAccptd', type=Reason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=Reason18Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AckdAccptd', type=Reason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgPrcg', type=Reason18Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,7 +1,7 @@
 from . import base_types
-import AssetClassSubProductType5Code
-import AssetClassProductType1Code
-import AssetClassDetailedSubProductType30Code
+from .AssetClassDetailedSubProductType30Code import AssetClassDetailedSubProductType30Code
+from .AssetClassProductType1Code import AssetClassProductType1Code
+from .AssetClassSubProductType5Code import AssetClassSubProductType5Code
 
 class AgriculturalCommodityGrain3(base_types._BaseFieldType):
 

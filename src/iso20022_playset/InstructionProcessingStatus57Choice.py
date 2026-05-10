@@ -1,27 +1,14 @@
 from . import base_types
-import PendingStatus72Choice
-import NoSpecifiedReason1
-import ReturnedStatus1Choice
-import PendingCancellationStatus16Choice
-import CancelledStatus15Choice
-import RejectedStatus59Choice
+from .ReturnedStatus1Choice import ReturnedStatus1Choice
+from .NoSpecifiedReason1 import NoSpecifiedReason1
+from .PendingCancellationStatus16Choice import PendingCancellationStatus16Choice
+from .CancelledStatus15Choice import CancelledStatus15Choice
+from .PendingStatus72Choice import PendingStatus72Choice
+from .RejectedStatus59Choice import RejectedStatus59Choice
 
 class InstructionProcessingStatus57Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cvrd", "_Ucvrd", "_Canc", "_Rjctd", "_Pdg", "_Accptd", "_AccptdForFrthrPrcg", "_Rtrd", "_PdgCxl"]
-	@property
-	def Cvrd(self):
-		return self._Cvrd
-
-	@Cvrd.setter
-	def Cvrd(self, value):
-		self._Cvrd = value if type(value) != auto else self.make_default("Cvrd")
-
-	@Cvrd.deleter
-	def Cvrd(self):
-		del self._Cvrd
-		self._Cvrd = None
-
+	__slots__ = ["_Ucvrd", "_PdgCxl", "_Canc", "_Accptd", "_Cvrd", "_Rtrd", "_AccptdForFrthrPrcg", "_Rjctd", "_Pdg"]
 	@property
 	def Ucvrd(self):
 		return self._Ucvrd
@@ -36,6 +23,19 @@ class InstructionProcessingStatus57Choice(base_types._BaseFieldType):
 		self._Ucvrd = None
 
 	@property
+	def PdgCxl(self):
+		return self._PdgCxl
+
+	@PdgCxl.setter
+	def PdgCxl(self, value):
+		self._PdgCxl = value if type(value) != auto else self.make_default("PdgCxl")
+
+	@PdgCxl.deleter
+	def PdgCxl(self):
+		del self._PdgCxl
+		self._PdgCxl = None
+
+	@property
 	def Canc(self):
 		return self._Canc
 
@@ -47,6 +47,58 @@ class InstructionProcessingStatus57Choice(base_types._BaseFieldType):
 	def Canc(self):
 		del self._Canc
 		self._Canc = None
+
+	@property
+	def Accptd(self):
+		return self._Accptd
+
+	@Accptd.setter
+	def Accptd(self, value):
+		self._Accptd = value if type(value) != auto else self.make_default("Accptd")
+
+	@Accptd.deleter
+	def Accptd(self):
+		del self._Accptd
+		self._Accptd = None
+
+	@property
+	def Cvrd(self):
+		return self._Cvrd
+
+	@Cvrd.setter
+	def Cvrd(self, value):
+		self._Cvrd = value if type(value) != auto else self.make_default("Cvrd")
+
+	@Cvrd.deleter
+	def Cvrd(self):
+		del self._Cvrd
+		self._Cvrd = None
+
+	@property
+	def Rtrd(self):
+		return self._Rtrd
+
+	@Rtrd.setter
+	def Rtrd(self, value):
+		self._Rtrd = value if type(value) != auto else self.make_default("Rtrd")
+
+	@Rtrd.deleter
+	def Rtrd(self):
+		del self._Rtrd
+		self._Rtrd = None
+
+	@property
+	def AccptdForFrthrPrcg(self):
+		return self._AccptdForFrthrPrcg
+
+	@AccptdForFrthrPrcg.setter
+	def AccptdForFrthrPrcg(self, value):
+		self._AccptdForFrthrPrcg = value if type(value) != auto else self.make_default("AccptdForFrthrPrcg")
+
+	@AccptdForFrthrPrcg.deleter
+	def AccptdForFrthrPrcg(self):
+		del self._AccptdForFrthrPrcg
+		self._AccptdForFrthrPrcg = None
 
 	@property
 	def Rjctd(self):
@@ -74,67 +126,15 @@ class InstructionProcessingStatus57Choice(base_types._BaseFieldType):
 		del self._Pdg
 		self._Pdg = None
 
-	@property
-	def Accptd(self):
-		return self._Accptd
-
-	@Accptd.setter
-	def Accptd(self, value):
-		self._Accptd = value if type(value) != auto else self.make_default("Accptd")
-
-	@Accptd.deleter
-	def Accptd(self):
-		del self._Accptd
-		self._Accptd = None
-
-	@property
-	def AccptdForFrthrPrcg(self):
-		return self._AccptdForFrthrPrcg
-
-	@AccptdForFrthrPrcg.setter
-	def AccptdForFrthrPrcg(self, value):
-		self._AccptdForFrthrPrcg = value if type(value) != auto else self.make_default("AccptdForFrthrPrcg")
-
-	@AccptdForFrthrPrcg.deleter
-	def AccptdForFrthrPrcg(self):
-		del self._AccptdForFrthrPrcg
-		self._AccptdForFrthrPrcg = None
-
-	@property
-	def Rtrd(self):
-		return self._Rtrd
-
-	@Rtrd.setter
-	def Rtrd(self, value):
-		self._Rtrd = value if type(value) != auto else self.make_default("Rtrd")
-
-	@Rtrd.deleter
-	def Rtrd(self):
-		del self._Rtrd
-		self._Rtrd = None
-
-	@property
-	def PdgCxl(self):
-		return self._PdgCxl
-
-	@PdgCxl.setter
-	def PdgCxl(self, value):
-		self._PdgCxl = value if type(value) != auto else self.make_default("PdgCxl")
-
-	@PdgCxl.deleter
-	def PdgCxl(self):
-		del self._PdgCxl
-		self._PdgCxl = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cvrd', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ucvrd', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PdgCxl', type=PendingCancellationStatus16Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Canc', type=CancelledStatus15Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Accptd', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cvrd', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rtrd', type=ReturnedStatus1Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AccptdForFrthrPrcg', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectedStatus59Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pdg', type=PendingStatus72Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Accptd', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AccptdForFrthrPrcg', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rtrd', type=ReturnedStatus1Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PdgCxl', type=PendingCancellationStatus16Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

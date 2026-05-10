@@ -1,40 +1,14 @@
 from . import base_types
-import ATMConfigurationParameter1
-import ATMConfigurationParameter2
-import MessageFunction8Code
-import ATMCommandParameters1
-import ATMSecurityScheme4Code
-import ATMStatus1Code
+from .ATMConfigurationParameter1 import ATMConfigurationParameter1
+from .ATMSecurityScheme4Code import ATMSecurityScheme4Code
+from .ATMConfigurationParameter2 import ATMConfigurationParameter2
+from .ATMCommandParameters1 import ATMCommandParameters1
+from .ATMStatus1Code import ATMStatus1Code
+from .MessageFunction8Code import MessageFunction8Code
 
 class ATMCommandParameters3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyDvc", "_ReqrdCfgtnParam", "_Key", "_XpctdMsgFctn", "_ReqrdSctySchme", "_ATMReqrdGblSts"]
-	@property
-	def SctyDvc(self):
-		return self._SctyDvc
-
-	@SctyDvc.setter
-	def SctyDvc(self, value):
-		self._SctyDvc = value if type(value) != auto else self.make_default("SctyDvc")
-
-	@SctyDvc.deleter
-	def SctyDvc(self):
-		del self._SctyDvc
-		self._SctyDvc = None
-
-	@property
-	def ReqrdCfgtnParam(self):
-		return self._ReqrdCfgtnParam
-
-	@ReqrdCfgtnParam.setter
-	def ReqrdCfgtnParam(self, value):
-		self._ReqrdCfgtnParam = value if type(value) != auto else self.make_default("ReqrdCfgtnParam")
-
-	@ReqrdCfgtnParam.deleter
-	def ReqrdCfgtnParam(self):
-		del self._ReqrdCfgtnParam
-		self._ReqrdCfgtnParam = None
-
+	__slots__ = ["_Key", "_SctyDvc", "_XpctdMsgFctn", "_ReqrdSctySchme", "_ReqrdCfgtnParam", "_ATMReqrdGblSts"]
 	@property
 	def Key(self):
 		return self._Key
@@ -47,6 +21,19 @@ class ATMCommandParameters3Choice(base_types._BaseFieldType):
 	def Key(self):
 		del self._Key
 		self._Key = None
+
+	@property
+	def SctyDvc(self):
+		return self._SctyDvc
+
+	@SctyDvc.setter
+	def SctyDvc(self, value):
+		self._SctyDvc = value if type(value) != auto else self.make_default("SctyDvc")
+
+	@SctyDvc.deleter
+	def SctyDvc(self):
+		del self._SctyDvc
+		self._SctyDvc = None
 
 	@property
 	def XpctdMsgFctn(self):
@@ -75,6 +62,19 @@ class ATMCommandParameters3Choice(base_types._BaseFieldType):
 		self._ReqrdSctySchme = None
 
 	@property
+	def ReqrdCfgtnParam(self):
+		return self._ReqrdCfgtnParam
+
+	@ReqrdCfgtnParam.setter
+	def ReqrdCfgtnParam(self, value):
+		self._ReqrdCfgtnParam = value if type(value) != auto else self.make_default("ReqrdCfgtnParam")
+
+	@ReqrdCfgtnParam.deleter
+	def ReqrdCfgtnParam(self):
+		del self._ReqrdCfgtnParam
+		self._ReqrdCfgtnParam = None
+
+	@property
 	def ATMReqrdGblSts(self):
 		return self._ATMReqrdGblSts
 
@@ -88,11 +88,11 @@ class ATMCommandParameters3Choice(base_types._BaseFieldType):
 		self._ATMReqrdGblSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyDvc', type=ATMCommandParameters1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ReqrdCfgtnParam', type=ATMConfigurationParameter1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Key', type=ATMConfigurationParameter2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctyDvc', type=ATMCommandParameters1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='XpctdMsgFctn', type=MessageFunction8Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ReqrdSctySchme', type=ATMSecurityScheme4Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ReqrdCfgtnParam', type=ATMConfigurationParameter1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ATMReqrdGblSts', type=ATMStatus1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

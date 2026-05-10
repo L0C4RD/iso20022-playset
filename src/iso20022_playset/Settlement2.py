@@ -1,6 +1,6 @@
 from . import base_types
-import AmountAndDirection27
-import PartyIdentification255Choice
+from .AmountAndDirection27 import AmountAndDirection27
+from .PartyIdentification255Choice import PartyIdentification255Choice
 
 class Settlement2(base_types._BaseFieldType):
 

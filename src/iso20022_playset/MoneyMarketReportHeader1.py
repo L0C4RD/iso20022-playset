@@ -1,23 +1,10 @@
 from . import base_types
-import LEIIdentifier
-import DateTimePeriod1
+from .DateTimePeriod1 import DateTimePeriod1
+from .LEIIdentifier import LEIIdentifier
 
 class MoneyMarketReportHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_RefPrd", "_RptgAgt"]
-	@property
-	def RefPrd(self):
-		return self._RefPrd
-
-	@RefPrd.setter
-	def RefPrd(self, value):
-		self._RefPrd = value if type(value) != auto else self.make_default("RefPrd")
-
-	@RefPrd.deleter
-	def RefPrd(self):
-		del self._RefPrd
-		self._RefPrd = None
-
+	__slots__ = ["_RptgAgt", "_RefPrd"]
 	@property
 	def RptgAgt(self):
 		return self._RptgAgt
@@ -31,8 +18,21 @@ class MoneyMarketReportHeader1(base_types._BaseFieldType):
 		del self._RptgAgt
 		self._RptgAgt = None
 
+	@property
+	def RefPrd(self):
+		return self._RefPrd
+
+	@RefPrd.setter
+	def RefPrd(self, value):
+		self._RefPrd = value if type(value) != auto else self.make_default("RefPrd")
+
+	@RefPrd.deleter
+	def RefPrd(self):
+		del self._RefPrd
+		self._RefPrd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RefPrd', type=DateTimePeriod1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgAgt', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefPrd', type=DateTimePeriod1, min=1, max=1, mutex_group=None, array=False),
 	))
 

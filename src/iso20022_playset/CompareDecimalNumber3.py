@@ -1,5 +1,5 @@
 from . import base_types
-import DecimalNumber
+from .DecimalNumber import DecimalNumber
 
 class CompareDecimalNumber3(base_types._BaseFieldType):
 

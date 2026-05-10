@@ -1,6 +1,6 @@
 from . import base_types
-import TaxWrapperAmountType1Code
-import GenericIdentification36
+from .GenericIdentification36 import GenericIdentification36
+from .TaxWrapperAmountType1Code import TaxWrapperAmountType1Code
 
 class TypeOfAmount1Choice(base_types._BaseFieldType):
 

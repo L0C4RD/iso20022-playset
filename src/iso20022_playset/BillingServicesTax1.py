@@ -1,24 +1,24 @@
 from . import base_types
-import Max40Text
-import DecimalNumber
-import Max35Text
-import AmountAndDirection34
+from .Max35Text import Max35Text
+from .AmountAndDirection34 import AmountAndDirection34
+from .DecimalNumber import DecimalNumber
+from .Max40Text import Max40Text
 
 class BillingServicesTax1(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Nb", "_Rate", "_PricgAmt", "_HstAmt"]
+	__slots__ = ["_PricgAmt", "_Nb", "_Desc", "_Rate", "_HstAmt"]
 	@property
-	def Desc(self):
-		return self._Desc
+	def PricgAmt(self):
+		return self._PricgAmt
 
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+	@PricgAmt.setter
+	def PricgAmt(self, value):
+		self._PricgAmt = value if type(value) != auto else self.make_default("PricgAmt")
 
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
+	@PricgAmt.deleter
+	def PricgAmt(self):
+		del self._PricgAmt
+		self._PricgAmt = None
 
 	@property
 	def Nb(self):
@@ -34,6 +34,19 @@ class BillingServicesTax1(base_types._BaseFieldType):
 		self._Nb = None
 
 	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
+	@property
 	def Rate(self):
 		return self._Rate
 
@@ -45,19 +58,6 @@ class BillingServicesTax1(base_types._BaseFieldType):
 	def Rate(self):
 		del self._Rate
 		self._Rate = None
-
-	@property
-	def PricgAmt(self):
-		return self._PricgAmt
-
-	@PricgAmt.setter
-	def PricgAmt(self, value):
-		self._PricgAmt = value if type(value) != auto else self.make_default("PricgAmt")
-
-	@PricgAmt.deleter
-	def PricgAmt(self):
-		del self._PricgAmt
-		self._PricgAmt = None
 
 	@property
 	def HstAmt(self):
@@ -73,10 +73,10 @@ class BillingServicesTax1(base_types._BaseFieldType):
 		self._HstAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Desc', type=Max40Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rate', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricgAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max40Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 	))
 

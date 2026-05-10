@@ -1,11 +1,11 @@
 from . import base_types
-import ATMContext13
-import ATMTransaction47
-import ATMEnvironment19
+from .ATMContext13 import ATMContext13
+from .ATMEnvironment19 import ATMEnvironment19
+from .ATMTransaction47 import ATMTransaction47
 
 class ATMCompletionAdvice3(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_Tx"]
+	__slots__ = ["_Envt", "_Tx", "_Cntxt"]
 	@property
 	def Envt(self):
 		return self._Envt
@@ -20,19 +20,6 @@ class ATMCompletionAdvice3(base_types._BaseFieldType):
 		self._Envt = None
 
 	@property
-	def Cntxt(self):
-		return self._Cntxt
-
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
-
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
-
-	@property
 	def Tx(self):
 		return self._Tx
 
@@ -45,9 +32,22 @@ class ATMCompletionAdvice3(base_types._BaseFieldType):
 		del self._Tx
 		self._Tx = None
 
+	@property
+	def Cntxt(self):
+		return self._Cntxt
+
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cntxt', type=ATMContext13, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=ATMTransaction47, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntxt', type=ATMContext13, min=1, max=1, mutex_group=None, array=False),
 	))
 

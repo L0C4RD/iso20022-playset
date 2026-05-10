@@ -1,6 +1,6 @@
 from . import base_types
-import CollateralValueCriteria4
-import Max35Text
+from .Max35Text import Max35Text
+from .CollateralValueCriteria4 import CollateralValueCriteria4
 
 class CollateralValueCriteriaDefinition4Choice(base_types._BaseFieldType):
 

@@ -1,26 +1,26 @@
 from . import base_types
-import NotAvailable1Code
-import SecurityIdentification20Choice
-import Max52Text
-import ISINOct2015Identifier
-import BasketQuery1
-import NotReported1Code
+from .SecurityIdentification20Choice import SecurityIdentification20Choice
+from .NotReported1Code import NotReported1Code
+from .ISINOct2015Identifier import ISINOct2015Identifier
+from .Max52Text import Max52Text
+from .NotAvailable1Code import NotAvailable1Code
+from .BasketQuery1 import BasketQuery1
 
 class SecurityIdentificationQuery4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotRptd", "_UnqPdctIdr", "_Indx", "_Bskt", "_ISIN", "_NotAvlbl", "_AltrntvInstrmId"]
+	__slots__ = ["_AltrntvInstrmId", "_UnqPdctIdr", "_Bskt", "_ISIN", "_NotRptd", "_NotAvlbl", "_Indx"]
 	@property
-	def NotRptd(self):
-		return self._NotRptd
+	def AltrntvInstrmId(self):
+		return self._AltrntvInstrmId
 
-	@NotRptd.setter
-	def NotRptd(self, value):
-		self._NotRptd = value if type(value) != auto else self.make_default("NotRptd")
+	@AltrntvInstrmId.setter
+	def AltrntvInstrmId(self, value):
+		self._AltrntvInstrmId = value if type(value) != auto else self.make_default("AltrntvInstrmId")
 
-	@NotRptd.deleter
-	def NotRptd(self):
-		del self._NotRptd
-		self._NotRptd = None
+	@AltrntvInstrmId.deleter
+	def AltrntvInstrmId(self):
+		del self._AltrntvInstrmId
+		self._AltrntvInstrmId = None
 
 	@property
 	def UnqPdctIdr(self):
@@ -34,19 +34,6 @@ class SecurityIdentificationQuery4Choice(base_types._BaseFieldType):
 	def UnqPdctIdr(self):
 		del self._UnqPdctIdr
 		self._UnqPdctIdr = None
-
-	@property
-	def Indx(self):
-		return self._Indx
-
-	@Indx.setter
-	def Indx(self, value):
-		self._Indx = value if type(value) != auto else self.make_default("Indx")
-
-	@Indx.deleter
-	def Indx(self):
-		del self._Indx
-		self._Indx = None
 
 	@property
 	def Bskt(self):
@@ -75,6 +62,19 @@ class SecurityIdentificationQuery4Choice(base_types._BaseFieldType):
 		self._ISIN = None
 
 	@property
+	def NotRptd(self):
+		return self._NotRptd
+
+	@NotRptd.setter
+	def NotRptd(self, value):
+		self._NotRptd = value if type(value) != auto else self.make_default("NotRptd")
+
+	@NotRptd.deleter
+	def NotRptd(self):
+		del self._NotRptd
+		self._NotRptd = None
+
+	@property
 	def NotAvlbl(self):
 		return self._NotAvlbl
 
@@ -88,25 +88,25 @@ class SecurityIdentificationQuery4Choice(base_types._BaseFieldType):
 		self._NotAvlbl = None
 
 	@property
-	def AltrntvInstrmId(self):
-		return self._AltrntvInstrmId
+	def Indx(self):
+		return self._Indx
 
-	@AltrntvInstrmId.setter
-	def AltrntvInstrmId(self, value):
-		self._AltrntvInstrmId = value if type(value) != auto else self.make_default("AltrntvInstrmId")
+	@Indx.setter
+	def Indx(self, value):
+		self._Indx = value if type(value) != auto else self.make_default("Indx")
 
-	@AltrntvInstrmId.deleter
-	def AltrntvInstrmId(self):
-		del self._AltrntvInstrmId
-		self._AltrntvInstrmId = None
+	@Indx.deleter
+	def Indx(self):
+		del self._Indx
+		self._Indx = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AltrntvInstrmId', type=Max52Text, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='UnqPdctIdr', type=Max52Text, min=1, max=None, mutex_group=1, array=True),
-		base_types.FieldEntry(name='Indx', type=SecurityIdentification20Choice, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Bskt', type=BasketQuery1, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotAvlbl', type=NotAvailable1Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AltrntvInstrmId', type=Max52Text, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='Indx', type=SecurityIdentification20Choice, min=1, max=None, mutex_group=1, array=True),
 	))
 

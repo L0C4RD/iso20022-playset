@@ -1,23 +1,10 @@
 from . import base_types
-import PriceRate1
-import AmountPrice1
+from .AmountPrice1 import AmountPrice1
+from .PriceRate1 import PriceRate1
 
 class PriceFormat3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Rate"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_Rate", "_Amt"]
 	@property
 	def Rate(self):
 		return self._Rate
@@ -31,8 +18,21 @@ class PriceFormat3Choice(base_types._BaseFieldType):
 		del self._Rate
 		self._Rate = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=AmountPrice1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rate', type=PriceRate1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Amt', type=AmountPrice1, min=0, max=1, mutex_group=1, array=False),
 	))
 

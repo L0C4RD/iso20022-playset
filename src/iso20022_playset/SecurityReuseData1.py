@@ -1,6 +1,6 @@
 from . import base_types
-import ReuseValue1Choice
-import ISINOct2015Identifier
+from .ReuseValue1Choice import ReuseValue1Choice
+from .ISINOct2015Identifier import ISINOct2015Identifier
 
 class SecurityReuseData1(base_types._BaseFieldType):
 

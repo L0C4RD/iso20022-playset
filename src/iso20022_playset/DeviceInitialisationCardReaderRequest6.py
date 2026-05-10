@@ -1,12 +1,12 @@
 from . import base_types
-import CardDataReading8Code
-import Number
-import ActionMessage11
-import TrueFalseIndicator
+from .CardDataReading8Code import CardDataReading8Code
+from .TrueFalseIndicator import TrueFalseIndicator
+from .Number import Number
+from .ActionMessage11 import ActionMessage11
 
 class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_DispOutpt", "_WarmRstFlg", "_ForceNtryMd", "_LeavCardFlg", "_MaxWtgTm"]
+	__slots__ = ["_DispOutpt", "_WarmRstFlg", "_ForceNtryMd", "_MaxWtgTm", "_LeavCardFlg"]
 	@property
 	def DispOutpt(self):
 		return self._DispOutpt
@@ -47,19 +47,6 @@ class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 		self._ForceNtryMd = None
 
 	@property
-	def LeavCardFlg(self):
-		return self._LeavCardFlg
-
-	@LeavCardFlg.setter
-	def LeavCardFlg(self, value):
-		self._LeavCardFlg = value if type(value) != auto else self.make_default("LeavCardFlg")
-
-	@LeavCardFlg.deleter
-	def LeavCardFlg(self):
-		del self._LeavCardFlg
-		self._LeavCardFlg = None
-
-	@property
 	def MaxWtgTm(self):
 		return self._MaxWtgTm
 
@@ -72,11 +59,24 @@ class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 		del self._MaxWtgTm
 		self._MaxWtgTm = None
 
+	@property
+	def LeavCardFlg(self):
+		return self._LeavCardFlg
+
+	@LeavCardFlg.setter
+	def LeavCardFlg(self, value):
+		self._LeavCardFlg = value if type(value) != auto else self.make_default("LeavCardFlg")
+
+	@LeavCardFlg.deleter
+	def LeavCardFlg(self):
+		del self._LeavCardFlg
+		self._LeavCardFlg = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DispOutpt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WarmRstFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ForceNtryMd', type=CardDataReading8Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LeavCardFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxWtgTm', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LeavCardFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

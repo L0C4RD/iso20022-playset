@@ -1,52 +1,26 @@
 from . import base_types
-import PercentageRate
-import AddendumTaxType3Code
-import TrueFalseIndicator
-import ImpliedCurrencyAndAmount
-import Max35Text
-import CreditDebit3Code
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .Max35Text import Max35Text
+from .AddendumTaxType3Code import AddendumTaxType3Code
+from .CreditDebit3Code import CreditDebit3Code
+from .PercentageRate import PercentageRate
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class Tax41(base_types._BaseFieldType):
 
-	__slots__ = ["_InclInTtl", "_Xmptn", "_Amt", "_XmptRsn", "_OthrTp", "_Rate", "_CdtDbt", "_Desc", "_Tp"]
+	__slots__ = ["_OthrTp", "_XmptRsn", "_Tp", "_InclInTtl", "_CdtDbt", "_Xmptn", "_Desc", "_Amt", "_Rate"]
 	@property
-	def InclInTtl(self):
-		return self._InclInTtl
+	def OthrTp(self):
+		return self._OthrTp
 
-	@InclInTtl.setter
-	def InclInTtl(self, value):
-		self._InclInTtl = value if type(value) != auto else self.make_default("InclInTtl")
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
 
-	@InclInTtl.deleter
-	def InclInTtl(self):
-		del self._InclInTtl
-		self._InclInTtl = None
-
-	@property
-	def Xmptn(self):
-		return self._Xmptn
-
-	@Xmptn.setter
-	def Xmptn(self, value):
-		self._Xmptn = value if type(value) != auto else self.make_default("Xmptn")
-
-	@Xmptn.deleter
-	def Xmptn(self):
-		del self._Xmptn
-		self._Xmptn = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
 
 	@property
 	def XmptRsn(self):
@@ -62,30 +36,30 @@ class Tax41(base_types._BaseFieldType):
 		self._XmptRsn = None
 
 	@property
-	def OthrTp(self):
-		return self._OthrTp
+	def Tp(self):
+		return self._Tp
 
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
-	def Rate(self):
-		return self._Rate
+	def InclInTtl(self):
+		return self._InclInTtl
 
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+	@InclInTtl.setter
+	def InclInTtl(self, value):
+		self._InclInTtl = value if type(value) != auto else self.make_default("InclInTtl")
 
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
+	@InclInTtl.deleter
+	def InclInTtl(self):
+		del self._InclInTtl
+		self._InclInTtl = None
 
 	@property
 	def CdtDbt(self):
@@ -101,6 +75,19 @@ class Tax41(base_types._BaseFieldType):
 		self._CdtDbt = None
 
 	@property
+	def Xmptn(self):
+		return self._Xmptn
+
+	@Xmptn.setter
+	def Xmptn(self, value):
+		self._Xmptn = value if type(value) != auto else self.make_default("Xmptn")
+
+	@Xmptn.deleter
+	def Xmptn(self):
+		del self._Xmptn
+		self._Xmptn = None
+
+	@property
 	def Desc(self):
 		return self._Desc
 
@@ -114,27 +101,40 @@ class Tax41(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def Amt(self):
+		return self._Amt
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def Rate(self):
+		return self._Rate
+
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != auto else self.make_default("Rate")
+
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InclInTtl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Xmptn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XmptRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XmptRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=AddendumTaxType3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InclInTtl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xmptn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

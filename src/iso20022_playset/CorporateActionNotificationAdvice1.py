@@ -1,23 +1,10 @@
 from . import base_types
-import CorporateAction2
-import CorporateActionOption1
+from .CorporateActionOption1 import CorporateActionOption1
+from .CorporateAction2 import CorporateAction2
 
 class CorporateActionNotificationAdvice1(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnDtls", "_CorpActnOptnDtls"]
-	@property
-	def CorpActnDtls(self):
-		return self._CorpActnDtls
-
-	@CorpActnDtls.setter
-	def CorpActnDtls(self, value):
-		self._CorpActnDtls = value if type(value) != auto else self.make_default("CorpActnDtls")
-
-	@CorpActnDtls.deleter
-	def CorpActnDtls(self):
-		del self._CorpActnDtls
-		self._CorpActnDtls = None
-
+	__slots__ = ["_CorpActnOptnDtls", "_CorpActnDtls"]
 	@property
 	def CorpActnOptnDtls(self):
 		return self._CorpActnOptnDtls
@@ -31,8 +18,21 @@ class CorporateActionNotificationAdvice1(base_types._BaseFieldType):
 		del self._CorpActnOptnDtls
 		self._CorpActnOptnDtls = None
 
+	@property
+	def CorpActnDtls(self):
+		return self._CorpActnDtls
+
+	@CorpActnDtls.setter
+	def CorpActnDtls(self, value):
+		self._CorpActnDtls = value if type(value) != auto else self.make_default("CorpActnDtls")
+
+	@CorpActnDtls.deleter
+	def CorpActnDtls(self):
+		del self._CorpActnDtls
+		self._CorpActnDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CorpActnDtls', type=CorporateAction2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnOptnDtls', type=CorporateActionOption1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CorpActnDtls', type=CorporateAction2, min=1, max=1, mutex_group=None, array=False),
 	))
 

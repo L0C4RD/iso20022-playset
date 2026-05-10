@@ -1,22 +1,22 @@
 from . import base_types
-import ISODate
-import AmountAndDirection20
+from .ISODate import ISODate
+from .AmountAndDirection20 import AmountAndDirection20
 
 class CashCompensation1(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmAmt", "_Fees", "_ValDt"]
+	__slots__ = ["_ValDt", "_Fees", "_SttlmAmt"]
 	@property
-	def SttlmAmt(self):
-		return self._SttlmAmt
+	def ValDt(self):
+		return self._ValDt
 
-	@SttlmAmt.setter
-	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != auto else self.make_default("SttlmAmt")
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
 
-	@SttlmAmt.deleter
-	def SttlmAmt(self):
-		del self._SttlmAmt
-		self._SttlmAmt = None
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
 
 	@property
 	def Fees(self):
@@ -32,21 +32,21 @@ class CashCompensation1(base_types._BaseFieldType):
 		self._Fees = None
 
 	@property
-	def ValDt(self):
-		return self._ValDt
+	def SttlmAmt(self):
+		return self._SttlmAmt
 
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+	@SttlmAmt.setter
+	def SttlmAmt(self, value):
+		self._SttlmAmt = value if type(value) != auto else self.make_default("SttlmAmt")
 
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
+	@SttlmAmt.deleter
+	def SttlmAmt(self):
+		del self._SttlmAmt
+		self._SttlmAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection20, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fees', type=AmountAndDirection20, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fees', type=AmountAndDirection20, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection20, min=1, max=1, mutex_group=None, array=False),
 	))
 

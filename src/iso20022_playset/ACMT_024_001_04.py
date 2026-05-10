@@ -1,5 +1,5 @@
 from . import base_types
-import IdentificationVerificationReportV04
+from .IdentificationVerificationReportV04 import IdentificationVerificationReportV04
 
 class ACMT_024_001_04():
 

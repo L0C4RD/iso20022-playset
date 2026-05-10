@@ -1,7 +1,7 @@
 from . import base_types
-import ProcessingStatus52Choice
-import MatchingStatus24Choice
-import SettlementStatus32Choice
+from .ProcessingStatus52Choice import ProcessingStatus52Choice
+from .MatchingStatus24Choice import MatchingStatus24Choice
+from .SettlementStatus32Choice import SettlementStatus32Choice
 
 class StatusAndReason48(base_types._BaseFieldType):
 

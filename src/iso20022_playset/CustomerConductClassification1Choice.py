@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import ConductClassification1Code
+from .GenericIdentification47 import GenericIdentification47
+from .ConductClassification1Code import ConductClassification1Code
 
 class CustomerConductClassification1Choice(base_types._BaseFieldType):
 

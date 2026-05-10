@@ -1,11 +1,24 @@
 from . import base_types
-import FailedMovement1
-import Max35Text
-import PartyIdentification2Choice
+from .FailedMovement1 import FailedMovement1
+from .Max35Text import Max35Text
+from .PartyIdentification2Choice import PartyIdentification2Choice
 
 class CorporateActionMovementFailedStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntAcctId", "_AcctOwnrId", "_AgtAcctId", "_RsrcDtls"]
+	__slots__ = ["_AgtAcctId", "_ClntAcctId", "_AcctOwnrId", "_RsrcDtls"]
+	@property
+	def AgtAcctId(self):
+		return self._AgtAcctId
+
+	@AgtAcctId.setter
+	def AgtAcctId(self, value):
+		self._AgtAcctId = value if type(value) != auto else self.make_default("AgtAcctId")
+
+	@AgtAcctId.deleter
+	def AgtAcctId(self):
+		del self._AgtAcctId
+		self._AgtAcctId = None
+
 	@property
 	def ClntAcctId(self):
 		return self._ClntAcctId
@@ -33,19 +46,6 @@ class CorporateActionMovementFailedStatus1(base_types._BaseFieldType):
 		self._AcctOwnrId = None
 
 	@property
-	def AgtAcctId(self):
-		return self._AgtAcctId
-
-	@AgtAcctId.setter
-	def AgtAcctId(self, value):
-		self._AgtAcctId = value if type(value) != auto else self.make_default("AgtAcctId")
-
-	@AgtAcctId.deleter
-	def AgtAcctId(self):
-		del self._AgtAcctId
-		self._AgtAcctId = None
-
-	@property
 	def RsrcDtls(self):
 		return self._RsrcDtls
 
@@ -59,9 +59,9 @@ class CorporateActionMovementFailedStatus1(base_types._BaseFieldType):
 		self._RsrcDtls = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AgtAcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntAcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtAcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RsrcDtls', type=FailedMovement1, min=1, max=None, mutex_group=None, array=True),
 	))
 

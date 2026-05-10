@@ -1,5 +1,5 @@
 from . import base_types
-import Cheque4
+from .Cheque4 import Cheque4
 
 class PaymentInstrument19Choice(base_types._BaseFieldType):
 

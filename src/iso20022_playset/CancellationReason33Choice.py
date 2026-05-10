@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalCancellationReason1Code
-import Max35Text
+from .ExternalCancellationReason1Code import ExternalCancellationReason1Code
+from .Max35Text import Max35Text
 
 class CancellationReason33Choice(base_types._BaseFieldType):
 

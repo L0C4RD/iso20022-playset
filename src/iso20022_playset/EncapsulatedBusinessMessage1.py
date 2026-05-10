@@ -1,12 +1,12 @@
 from . import base_types
-import BusinessApplicationHeader1
-import xs:ID
-import YesNoIndicator
-import StrictPayload
+from .YesNoIndicator import YesNoIndicator
+from .BusinessApplicationHeader1 import BusinessApplicationHeader1
+from .xs:ID import xs:ID
+from .StrictPayload import StrictPayload
 
 class EncapsulatedBusinessMessage1(base_types._BaseFieldType):
 
-	__slots__ = ["_Msg", "_Prtl", "_Prfx", "_Hdr"]
+	__slots__ = ["_Msg", "_Prfx", "_Prtl", "_Hdr"]
 	@property
 	def Msg(self):
 		return self._Msg
@@ -21,19 +21,6 @@ class EncapsulatedBusinessMessage1(base_types._BaseFieldType):
 		self._Msg = None
 
 	@property
-	def Prtl(self):
-		return self._Prtl
-
-	@Prtl.setter
-	def Prtl(self, value):
-		self._Prtl = value if type(value) != auto else self.make_default("Prtl")
-
-	@Prtl.deleter
-	def Prtl(self):
-		del self._Prtl
-		self._Prtl = None
-
-	@property
 	def Prfx(self):
 		return self._Prfx
 
@@ -45,6 +32,19 @@ class EncapsulatedBusinessMessage1(base_types._BaseFieldType):
 	def Prfx(self):
 		del self._Prfx
 		self._Prfx = None
+
+	@property
+	def Prtl(self):
+		return self._Prtl
+
+	@Prtl.setter
+	def Prtl(self, value):
+		self._Prtl = value if type(value) != auto else self.make_default("Prtl")
+
+	@Prtl.deleter
+	def Prtl(self):
+		del self._Prtl
+		self._Prtl = None
 
 	@property
 	def Hdr(self):
@@ -61,8 +61,8 @@ class EncapsulatedBusinessMessage1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Msg', type=StrictPayload, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prtl', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prfx', type=XS_ID, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prtl', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=BusinessApplicationHeader1, min=0, max=1, mutex_group=None, array=False),
 	))
 

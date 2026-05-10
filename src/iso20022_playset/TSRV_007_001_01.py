@@ -1,5 +1,5 @@
 from . import base_types
-import UndertakingAmendmentNotificationV01
+from .UndertakingAmendmentNotificationV01 import UndertakingAmendmentNotificationV01
 
 class TSRV_007_001_01():
 

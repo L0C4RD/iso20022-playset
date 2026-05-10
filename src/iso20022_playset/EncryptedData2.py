@@ -1,15 +1,15 @@
 from . import base_types
-import Max2NumericText
-import Max5NumericText
-import Max4NumericText
-import EncryptedDataElement2
-import Exact1HexBinaryText
-import Max32HexBinaryText
-import Max8NumericText
+from .Max2NumericText import Max2NumericText
+from .Max5NumericText import Max5NumericText
+from .Max4NumericText import Max4NumericText
+from .EncryptedDataElement2 import EncryptedDataElement2
+from .Exact1HexBinaryText import Exact1HexBinaryText
+from .Max32HexBinaryText import Max32HexBinaryText
+from .Max8NumericText import Max8NumericText
 
 class EncryptedData2(base_types._BaseFieldType):
 
-	__slots__ = ["_KeySetIdr", "_Algo", "_KeyPrtcn", "_PddgMtd", "_DrvdInf", "_NcrptdElmt", "_Ctrl", "_KeyIndx", "_NcrptdFrmt", "_KeyLngth"]
+	__slots__ = ["_KeySetIdr", "_NcrptdElmt", "_PddgMtd", "_KeyLngth", "_Ctrl", "_KeyIndx", "_Algo", "_NcrptdFrmt", "_DrvdInf", "_KeyPrtcn"]
 	@property
 	def KeySetIdr(self):
 		return self._KeySetIdr
@@ -24,30 +24,17 @@ class EncryptedData2(base_types._BaseFieldType):
 		self._KeySetIdr = None
 
 	@property
-	def Algo(self):
-		return self._Algo
+	def NcrptdElmt(self):
+		return self._NcrptdElmt
 
-	@Algo.setter
-	def Algo(self, value):
-		self._Algo = value if type(value) != auto else self.make_default("Algo")
+	@NcrptdElmt.setter
+	def NcrptdElmt(self, value):
+		self._NcrptdElmt = value if type(value) != auto else self.make_default("NcrptdElmt")
 
-	@Algo.deleter
-	def Algo(self):
-		del self._Algo
-		self._Algo = None
-
-	@property
-	def KeyPrtcn(self):
-		return self._KeyPrtcn
-
-	@KeyPrtcn.setter
-	def KeyPrtcn(self, value):
-		self._KeyPrtcn = value if type(value) != auto else self.make_default("KeyPrtcn")
-
-	@KeyPrtcn.deleter
-	def KeyPrtcn(self):
-		del self._KeyPrtcn
-		self._KeyPrtcn = None
+	@NcrptdElmt.deleter
+	def NcrptdElmt(self):
+		del self._NcrptdElmt
+		self._NcrptdElmt = None
 
 	@property
 	def PddgMtd(self):
@@ -63,30 +50,17 @@ class EncryptedData2(base_types._BaseFieldType):
 		self._PddgMtd = None
 
 	@property
-	def DrvdInf(self):
-		return self._DrvdInf
+	def KeyLngth(self):
+		return self._KeyLngth
 
-	@DrvdInf.setter
-	def DrvdInf(self, value):
-		self._DrvdInf = value if type(value) != auto else self.make_default("DrvdInf")
+	@KeyLngth.setter
+	def KeyLngth(self, value):
+		self._KeyLngth = value if type(value) != auto else self.make_default("KeyLngth")
 
-	@DrvdInf.deleter
-	def DrvdInf(self):
-		del self._DrvdInf
-		self._DrvdInf = None
-
-	@property
-	def NcrptdElmt(self):
-		return self._NcrptdElmt
-
-	@NcrptdElmt.setter
-	def NcrptdElmt(self, value):
-		self._NcrptdElmt = value if type(value) != auto else self.make_default("NcrptdElmt")
-
-	@NcrptdElmt.deleter
-	def NcrptdElmt(self):
-		del self._NcrptdElmt
-		self._NcrptdElmt = None
+	@KeyLngth.deleter
+	def KeyLngth(self):
+		del self._KeyLngth
+		self._KeyLngth = None
 
 	@property
 	def Ctrl(self):
@@ -115,6 +89,19 @@ class EncryptedData2(base_types._BaseFieldType):
 		self._KeyIndx = None
 
 	@property
+	def Algo(self):
+		return self._Algo
+
+	@Algo.setter
+	def Algo(self, value):
+		self._Algo = value if type(value) != auto else self.make_default("Algo")
+
+	@Algo.deleter
+	def Algo(self):
+		del self._Algo
+		self._Algo = None
+
+	@property
 	def NcrptdFrmt(self):
 		return self._NcrptdFrmt
 
@@ -128,28 +115,41 @@ class EncryptedData2(base_types._BaseFieldType):
 		self._NcrptdFrmt = None
 
 	@property
-	def KeyLngth(self):
-		return self._KeyLngth
+	def DrvdInf(self):
+		return self._DrvdInf
 
-	@KeyLngth.setter
-	def KeyLngth(self, value):
-		self._KeyLngth = value if type(value) != auto else self.make_default("KeyLngth")
+	@DrvdInf.setter
+	def DrvdInf(self, value):
+		self._DrvdInf = value if type(value) != auto else self.make_default("DrvdInf")
 
-	@KeyLngth.deleter
-	def KeyLngth(self):
-		del self._KeyLngth
-		self._KeyLngth = None
+	@DrvdInf.deleter
+	def DrvdInf(self):
+		del self._DrvdInf
+		self._DrvdInf = None
+
+	@property
+	def KeyPrtcn(self):
+		return self._KeyPrtcn
+
+	@KeyPrtcn.setter
+	def KeyPrtcn(self, value):
+		self._KeyPrtcn = value if type(value) != auto else self.make_default("KeyPrtcn")
+
+	@KeyPrtcn.deleter
+	def KeyPrtcn(self):
+		del self._KeyPrtcn
+		self._KeyPrtcn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='KeySetIdr', type=Max8NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Algo', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyPrtcn', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PddgMtd', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrvdInf', type=Max32HexBinaryText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdElmt', type=EncryptedDataElement2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PddgMtd', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyLngth', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctrl', type=Exact1HexBinaryText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyIndx', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Algo', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdFrmt', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyLngth', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrvdInf', type=Max32HexBinaryText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyPrtcn', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

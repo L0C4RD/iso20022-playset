@@ -1,6 +1,6 @@
 from . import base_types
-import MessageIdentification1
-import SimpleIdentificationInformation
+from .SimpleIdentificationInformation import SimpleIdentificationInformation
+from .MessageIdentification1 import MessageIdentification1
 
 class MisMatchAcceptanceV02(base_types._BaseFieldType):
 

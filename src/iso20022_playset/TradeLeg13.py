@@ -1,144 +1,40 @@
 from . import base_types
-import ISODate
-import YesNoIndicator
-import PartyIdentification253Choice
-import MarketIdentification84
-import ISODateTime
-import PartyIdentificationAndAccount230
-import Max35Text
-import Side1Code
-import SecuritiesAccount19
-import TradePosting1Code
-import UTIIdentifier
-import SafekeepingPlaceFormat43Choice
-import Price14
-import MarketIdentification85
-import TradeType1Code
-import DateFormat66Choice
-import CurrencyCode
-import AmountAndDirection21
-import TradingCapacity5Code
-import FinancialInstrumentQuantity1Choice
+from .Max35Text import Max35Text
+from .MarketIdentification85 import MarketIdentification85
+from .YesNoIndicator import YesNoIndicator
+from .ISODate import ISODate
+from .SecuritiesAccount19 import SecuritiesAccount19
+from .FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from .PartyIdentificationAndAccount230 import PartyIdentificationAndAccount230
+from .UTIIdentifier import UTIIdentifier
+from .CurrencyCode import CurrencyCode
+from .TradeType1Code import TradeType1Code
+from .Price14 import Price14
+from .PartyIdentification253Choice import PartyIdentification253Choice
+from .TradingCapacity5Code import TradingCapacity5Code
+from .Side1Code import Side1Code
+from .TradePosting1Code import TradePosting1Code
+from .SafekeepingPlaceFormat43Choice import SafekeepingPlaceFormat43Choice
+from .AmountAndDirection21 import AmountAndDirection21
+from .DateFormat66Choice import DateFormat66Choice
+from .MarketIdentification84 import MarketIdentification84
+from .ISODateTime import ISODateTime
 
 class TradeLeg13(base_types._BaseFieldType):
 
-	__slots__ = ["_TradQty", "_GrssAmt", "_TradTp", "_Brkr", "_SfkpgAcct", "_OrdrId", "_TradDt", "_BuySellInd", "_UnqTxIdr", "_TradRegnOrgn", "_DerivRltdTrad", "_TradId", "_TradgCcy", "_TradgPty", "_TradgCpcty", "_TradPstngCd", "_DealPric", "_TxDtAndTm", "_TradLegId", "_TradgPtyAcct", "_SfkpgPlc", "_PlcOfTrad", "_TradExctnId", "_SttlmDt", "_PlcOfListg", "_AllcnId"]
+	__slots__ = ["_TradgCcy", "_TradRegnOrgn", "_TradExctnId", "_AllcnId", "_TradId", "_TxDtAndTm", "_UnqTxIdr", "_DerivRltdTrad", "_TradLegId", "_BuySellInd", "_GrssAmt", "_TradQty", "_TradgPtyAcct", "_TradgPty", "_TradTp", "_TradgCpcty", "_TradDt", "_SfkpgAcct", "_Brkr", "_TradPstngCd", "_PlcOfTrad", "_SttlmDt", "_OrdrId", "_DealPric", "_PlcOfListg", "_SfkpgPlc"]
 	@property
-	def TradQty(self):
-		return self._TradQty
+	def TradgCcy(self):
+		return self._TradgCcy
 
-	@TradQty.setter
-	def TradQty(self, value):
-		self._TradQty = value if type(value) != auto else self.make_default("TradQty")
+	@TradgCcy.setter
+	def TradgCcy(self, value):
+		self._TradgCcy = value if type(value) != auto else self.make_default("TradgCcy")
 
-	@TradQty.deleter
-	def TradQty(self):
-		del self._TradQty
-		self._TradQty = None
-
-	@property
-	def GrssAmt(self):
-		return self._GrssAmt
-
-	@GrssAmt.setter
-	def GrssAmt(self, value):
-		self._GrssAmt = value if type(value) != auto else self.make_default("GrssAmt")
-
-	@GrssAmt.deleter
-	def GrssAmt(self):
-		del self._GrssAmt
-		self._GrssAmt = None
-
-	@property
-	def TradTp(self):
-		return self._TradTp
-
-	@TradTp.setter
-	def TradTp(self, value):
-		self._TradTp = value if type(value) != auto else self.make_default("TradTp")
-
-	@TradTp.deleter
-	def TradTp(self):
-		del self._TradTp
-		self._TradTp = None
-
-	@property
-	def Brkr(self):
-		return self._Brkr
-
-	@Brkr.setter
-	def Brkr(self, value):
-		self._Brkr = value if type(value) != auto else self.make_default("Brkr")
-
-	@Brkr.deleter
-	def Brkr(self):
-		del self._Brkr
-		self._Brkr = None
-
-	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
-
-	@property
-	def OrdrId(self):
-		return self._OrdrId
-
-	@OrdrId.setter
-	def OrdrId(self, value):
-		self._OrdrId = value if type(value) != auto else self.make_default("OrdrId")
-
-	@OrdrId.deleter
-	def OrdrId(self):
-		del self._OrdrId
-		self._OrdrId = None
-
-	@property
-	def TradDt(self):
-		return self._TradDt
-
-	@TradDt.setter
-	def TradDt(self, value):
-		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
-
-	@TradDt.deleter
-	def TradDt(self):
-		del self._TradDt
-		self._TradDt = None
-
-	@property
-	def BuySellInd(self):
-		return self._BuySellInd
-
-	@BuySellInd.setter
-	def BuySellInd(self, value):
-		self._BuySellInd = value if type(value) != auto else self.make_default("BuySellInd")
-
-	@BuySellInd.deleter
-	def BuySellInd(self):
-		del self._BuySellInd
-		self._BuySellInd = None
-
-	@property
-	def UnqTxIdr(self):
-		return self._UnqTxIdr
-
-	@UnqTxIdr.setter
-	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != auto else self.make_default("UnqTxIdr")
-
-	@UnqTxIdr.deleter
-	def UnqTxIdr(self):
-		del self._UnqTxIdr
-		self._UnqTxIdr = None
+	@TradgCcy.deleter
+	def TradgCcy(self):
+		del self._TradgCcy
+		self._TradgCcy = None
 
 	@property
 	def TradRegnOrgn(self):
@@ -154,17 +50,30 @@ class TradeLeg13(base_types._BaseFieldType):
 		self._TradRegnOrgn = None
 
 	@property
-	def DerivRltdTrad(self):
-		return self._DerivRltdTrad
+	def TradExctnId(self):
+		return self._TradExctnId
 
-	@DerivRltdTrad.setter
-	def DerivRltdTrad(self, value):
-		self._DerivRltdTrad = value if type(value) != auto else self.make_default("DerivRltdTrad")
+	@TradExctnId.setter
+	def TradExctnId(self, value):
+		self._TradExctnId = value if type(value) != auto else self.make_default("TradExctnId")
 
-	@DerivRltdTrad.deleter
-	def DerivRltdTrad(self):
-		del self._DerivRltdTrad
-		self._DerivRltdTrad = None
+	@TradExctnId.deleter
+	def TradExctnId(self):
+		del self._TradExctnId
+		self._TradExctnId = None
+
+	@property
+	def AllcnId(self):
+		return self._AllcnId
+
+	@AllcnId.setter
+	def AllcnId(self, value):
+		self._AllcnId = value if type(value) != auto else self.make_default("AllcnId")
+
+	@AllcnId.deleter
+	def AllcnId(self):
+		del self._AllcnId
+		self._AllcnId = None
 
 	@property
 	def TradId(self):
@@ -180,71 +89,6 @@ class TradeLeg13(base_types._BaseFieldType):
 		self._TradId = None
 
 	@property
-	def TradgCcy(self):
-		return self._TradgCcy
-
-	@TradgCcy.setter
-	def TradgCcy(self, value):
-		self._TradgCcy = value if type(value) != auto else self.make_default("TradgCcy")
-
-	@TradgCcy.deleter
-	def TradgCcy(self):
-		del self._TradgCcy
-		self._TradgCcy = None
-
-	@property
-	def TradgPty(self):
-		return self._TradgPty
-
-	@TradgPty.setter
-	def TradgPty(self, value):
-		self._TradgPty = value if type(value) != auto else self.make_default("TradgPty")
-
-	@TradgPty.deleter
-	def TradgPty(self):
-		del self._TradgPty
-		self._TradgPty = None
-
-	@property
-	def TradgCpcty(self):
-		return self._TradgCpcty
-
-	@TradgCpcty.setter
-	def TradgCpcty(self, value):
-		self._TradgCpcty = value if type(value) != auto else self.make_default("TradgCpcty")
-
-	@TradgCpcty.deleter
-	def TradgCpcty(self):
-		del self._TradgCpcty
-		self._TradgCpcty = None
-
-	@property
-	def TradPstngCd(self):
-		return self._TradPstngCd
-
-	@TradPstngCd.setter
-	def TradPstngCd(self, value):
-		self._TradPstngCd = value if type(value) != auto else self.make_default("TradPstngCd")
-
-	@TradPstngCd.deleter
-	def TradPstngCd(self):
-		del self._TradPstngCd
-		self._TradPstngCd = None
-
-	@property
-	def DealPric(self):
-		return self._DealPric
-
-	@DealPric.setter
-	def DealPric(self, value):
-		self._DealPric = value if type(value) != auto else self.make_default("DealPric")
-
-	@DealPric.deleter
-	def DealPric(self):
-		del self._DealPric
-		self._DealPric = None
-
-	@property
 	def TxDtAndTm(self):
 		return self._TxDtAndTm
 
@@ -256,6 +100,32 @@ class TradeLeg13(base_types._BaseFieldType):
 	def TxDtAndTm(self):
 		del self._TxDtAndTm
 		self._TxDtAndTm = None
+
+	@property
+	def UnqTxIdr(self):
+		return self._UnqTxIdr
+
+	@UnqTxIdr.setter
+	def UnqTxIdr(self, value):
+		self._UnqTxIdr = value if type(value) != auto else self.make_default("UnqTxIdr")
+
+	@UnqTxIdr.deleter
+	def UnqTxIdr(self):
+		del self._UnqTxIdr
+		self._UnqTxIdr = None
+
+	@property
+	def DerivRltdTrad(self):
+		return self._DerivRltdTrad
+
+	@DerivRltdTrad.setter
+	def DerivRltdTrad(self, value):
+		self._DerivRltdTrad = value if type(value) != auto else self.make_default("DerivRltdTrad")
+
+	@DerivRltdTrad.deleter
+	def DerivRltdTrad(self):
+		del self._DerivRltdTrad
+		self._DerivRltdTrad = None
 
 	@property
 	def TradLegId(self):
@@ -271,6 +141,45 @@ class TradeLeg13(base_types._BaseFieldType):
 		self._TradLegId = None
 
 	@property
+	def BuySellInd(self):
+		return self._BuySellInd
+
+	@BuySellInd.setter
+	def BuySellInd(self, value):
+		self._BuySellInd = value if type(value) != auto else self.make_default("BuySellInd")
+
+	@BuySellInd.deleter
+	def BuySellInd(self):
+		del self._BuySellInd
+		self._BuySellInd = None
+
+	@property
+	def GrssAmt(self):
+		return self._GrssAmt
+
+	@GrssAmt.setter
+	def GrssAmt(self, value):
+		self._GrssAmt = value if type(value) != auto else self.make_default("GrssAmt")
+
+	@GrssAmt.deleter
+	def GrssAmt(self):
+		del self._GrssAmt
+		self._GrssAmt = None
+
+	@property
+	def TradQty(self):
+		return self._TradQty
+
+	@TradQty.setter
+	def TradQty(self, value):
+		self._TradQty = value if type(value) != auto else self.make_default("TradQty")
+
+	@TradQty.deleter
+	def TradQty(self):
+		del self._TradQty
+		self._TradQty = None
+
+	@property
 	def TradgPtyAcct(self):
 		return self._TradgPtyAcct
 
@@ -284,17 +193,95 @@ class TradeLeg13(base_types._BaseFieldType):
 		self._TradgPtyAcct = None
 
 	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
+	def TradgPty(self):
+		return self._TradgPty
 
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
+	@TradgPty.setter
+	def TradgPty(self, value):
+		self._TradgPty = value if type(value) != auto else self.make_default("TradgPty")
 
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
+	@TradgPty.deleter
+	def TradgPty(self):
+		del self._TradgPty
+		self._TradgPty = None
+
+	@property
+	def TradTp(self):
+		return self._TradTp
+
+	@TradTp.setter
+	def TradTp(self, value):
+		self._TradTp = value if type(value) != auto else self.make_default("TradTp")
+
+	@TradTp.deleter
+	def TradTp(self):
+		del self._TradTp
+		self._TradTp = None
+
+	@property
+	def TradgCpcty(self):
+		return self._TradgCpcty
+
+	@TradgCpcty.setter
+	def TradgCpcty(self, value):
+		self._TradgCpcty = value if type(value) != auto else self.make_default("TradgCpcty")
+
+	@TradgCpcty.deleter
+	def TradgCpcty(self):
+		del self._TradgCpcty
+		self._TradgCpcty = None
+
+	@property
+	def TradDt(self):
+		return self._TradDt
+
+	@TradDt.setter
+	def TradDt(self, value):
+		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
+
+	@TradDt.deleter
+	def TradDt(self):
+		del self._TradDt
+		self._TradDt = None
+
+	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
+	@property
+	def Brkr(self):
+		return self._Brkr
+
+	@Brkr.setter
+	def Brkr(self, value):
+		self._Brkr = value if type(value) != auto else self.make_default("Brkr")
+
+	@Brkr.deleter
+	def Brkr(self):
+		del self._Brkr
+		self._Brkr = None
+
+	@property
+	def TradPstngCd(self):
+		return self._TradPstngCd
+
+	@TradPstngCd.setter
+	def TradPstngCd(self, value):
+		self._TradPstngCd = value if type(value) != auto else self.make_default("TradPstngCd")
+
+	@TradPstngCd.deleter
+	def TradPstngCd(self):
+		del self._TradPstngCd
+		self._TradPstngCd = None
 
 	@property
 	def PlcOfTrad(self):
@@ -310,19 +297,6 @@ class TradeLeg13(base_types._BaseFieldType):
 		self._PlcOfTrad = None
 
 	@property
-	def TradExctnId(self):
-		return self._TradExctnId
-
-	@TradExctnId.setter
-	def TradExctnId(self, value):
-		self._TradExctnId = value if type(value) != auto else self.make_default("TradExctnId")
-
-	@TradExctnId.deleter
-	def TradExctnId(self):
-		del self._TradExctnId
-		self._TradExctnId = None
-
-	@property
 	def SttlmDt(self):
 		return self._SttlmDt
 
@@ -334,6 +308,32 @@ class TradeLeg13(base_types._BaseFieldType):
 	def SttlmDt(self):
 		del self._SttlmDt
 		self._SttlmDt = None
+
+	@property
+	def OrdrId(self):
+		return self._OrdrId
+
+	@OrdrId.setter
+	def OrdrId(self, value):
+		self._OrdrId = value if type(value) != auto else self.make_default("OrdrId")
+
+	@OrdrId.deleter
+	def OrdrId(self):
+		del self._OrdrId
+		self._OrdrId = None
+
+	@property
+	def DealPric(self):
+		return self._DealPric
+
+	@DealPric.setter
+	def DealPric(self, value):
+		self._DealPric = value if type(value) != auto else self.make_default("DealPric")
+
+	@DealPric.deleter
+	def DealPric(self):
+		del self._DealPric
+		self._DealPric = None
 
 	@property
 	def PlcOfListg(self):
@@ -349,44 +349,44 @@ class TradeLeg13(base_types._BaseFieldType):
 		self._PlcOfListg = None
 
 	@property
-	def AllcnId(self):
-		return self._AllcnId
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
 
-	@AllcnId.setter
-	def AllcnId(self, value):
-		self._AllcnId = value if type(value) != auto else self.make_default("AllcnId")
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
 
-	@AllcnId.deleter
-	def AllcnId(self):
-		del self._AllcnId
-		self._AllcnId = None
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrssAmt', type=AmountAndDirection21, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradTp', type=TradeType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Brkr', type=PartyIdentificationAndAccount230, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuySellInd', type=Side1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnqTxIdr', type=UTIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradRegnOrgn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DerivRltdTrad', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgCcy', type=CurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgPty', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgCpcty', type=TradingCapacity5Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradPstngCd', type=TradePosting1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealPric', type=Price14, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxDtAndTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradLegId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgPtyAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PlcOfTrad', type=MarketIdentification84, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradRegnOrgn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradExctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDt', type=DateFormat66Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PlcOfListg', type=MarketIdentification85, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AllcnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxDtAndTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnqTxIdr', type=UTIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DerivRltdTrad', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradLegId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuySellInd', type=Side1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrssAmt', type=AmountAndDirection21, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgPtyAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgPty', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradTp', type=TradeType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgCpcty', type=TradingCapacity5Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Brkr', type=PartyIdentificationAndAccount230, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradPstngCd', type=TradePosting1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfTrad', type=MarketIdentification84, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDt', type=DateFormat66Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealPric', type=Price14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfListg', type=MarketIdentification85, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat43Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

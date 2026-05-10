@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification36
-import HolderType1Code
+from .GenericIdentification36 import GenericIdentification36
+from .HolderType1Code import HolderType1Code
 
 class TaxReferenceParty1Choice(base_types._BaseFieldType):
 

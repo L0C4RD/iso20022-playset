@@ -1,11 +1,24 @@
 from . import base_types
-import AccountIdentification4Choice
-import Contribution1
-import ActiveCurrencyAndAmount
+from .Contribution1 import Contribution1
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .AccountIdentification4Choice import AccountIdentification4Choice
 
 class DefaultFund1(base_types._BaseFieldType):
 
-	__slots__ = ["_Cntrbtn", "_TtlDfltFndAmt", "_IncrCvrgAmt", "_DfltFndAcct"]
+	__slots__ = ["_DfltFndAcct", "_Cntrbtn", "_TtlDfltFndAmt", "_IncrCvrgAmt"]
+	@property
+	def DfltFndAcct(self):
+		return self._DfltFndAcct
+
+	@DfltFndAcct.setter
+	def DfltFndAcct(self, value):
+		self._DfltFndAcct = value if type(value) != auto else self.make_default("DfltFndAcct")
+
+	@DfltFndAcct.deleter
+	def DfltFndAcct(self):
+		del self._DfltFndAcct
+		self._DfltFndAcct = None
+
 	@property
 	def Cntrbtn(self):
 		return self._Cntrbtn
@@ -45,23 +58,10 @@ class DefaultFund1(base_types._BaseFieldType):
 		del self._IncrCvrgAmt
 		self._IncrCvrgAmt = None
 
-	@property
-	def DfltFndAcct(self):
-		return self._DfltFndAcct
-
-	@DfltFndAcct.setter
-	def DfltFndAcct(self, value):
-		self._DfltFndAcct = value if type(value) != auto else self.make_default("DfltFndAcct")
-
-	@DfltFndAcct.deleter
-	def DfltFndAcct(self):
-		del self._DfltFndAcct
-		self._DfltFndAcct = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DfltFndAcct', type=AccountIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntrbtn', type=Contribution1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlDfltFndAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IncrCvrgAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DfltFndAcct', type=AccountIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

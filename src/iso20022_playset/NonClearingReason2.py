@@ -1,6 +1,6 @@
 from . import base_types
-import Max350Text
-import ClearingExemptionException1Code
+from .ClearingExemptionException1Code import ClearingExemptionException1Code
+from .Max350Text import Max350Text
 
 class NonClearingReason2(base_types._BaseFieldType):
 

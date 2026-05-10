@@ -1,45 +1,32 @@
 from . import base_types
-import Max350Text
-import YesNoIndicator
-import ISOTime
-import TimeFrame10
-import TimeFrame9
-import RoundingDirection2Code
-import Forms1
-import ActiveCurrencyCode
-import MainFundOrderDeskLocation1
-import EventFrequency5Code
-import TimeFrame8Choice
-import AdditionalInformation15
+from .Forms1 import Forms1
+from .AdditionalInformation15 import AdditionalInformation15
+from .YesNoIndicator import YesNoIndicator
+from .ISOTime import ISOTime
+from .EventFrequency5Code import EventFrequency5Code
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .Max350Text import Max350Text
+from .TimeFrame10 import TimeFrame10
+from .MainFundOrderDeskLocation1 import MainFundOrderDeskLocation1
+from .TimeFrame8Choice import TimeFrame8Choice
+from .TimeFrame9 import TimeFrame9
+from .RoundingDirection2Code import RoundingDirection2Code
 
 class ProcessingCharacteristics12(base_types._BaseFieldType):
 
-	__slots__ = ["_DealgFrqcy", "_DealgCutOffTmFrame", "_AddtlInf", "_AmtInd", "_UnitsInd", "_DealgCutOffTm", "_RedAuthstn", "_MainFndOrdrDskLctn", "_DealConfTmFrame", "_DealgFrqcyDesc", "_DealConfTm", "_SttlmCycl", "_DealgCcyAccptd", "_LtdPrd", "_PctgInd", "_Rndg"]
+	__slots__ = ["_PctgInd", "_AddtlInf", "_DealgFrqcy", "_MainFndOrdrDskLctn", "_AmtInd", "_Rndg", "_DealgCutOffTmFrame", "_SttlmCycl", "_RedAuthstn", "_UnitsInd", "_DealgCcyAccptd", "_DealgCutOffTm", "_DealConfTm", "_DealgFrqcyDesc", "_LtdPrd", "_DealConfTmFrame"]
 	@property
-	def DealgFrqcy(self):
-		return self._DealgFrqcy
+	def PctgInd(self):
+		return self._PctgInd
 
-	@DealgFrqcy.setter
-	def DealgFrqcy(self, value):
-		self._DealgFrqcy = value if type(value) != auto else self.make_default("DealgFrqcy")
+	@PctgInd.setter
+	def PctgInd(self, value):
+		self._PctgInd = value if type(value) != auto else self.make_default("PctgInd")
 
-	@DealgFrqcy.deleter
-	def DealgFrqcy(self):
-		del self._DealgFrqcy
-		self._DealgFrqcy = None
-
-	@property
-	def DealgCutOffTmFrame(self):
-		return self._DealgCutOffTmFrame
-
-	@DealgCutOffTmFrame.setter
-	def DealgCutOffTmFrame(self, value):
-		self._DealgCutOffTmFrame = value if type(value) != auto else self.make_default("DealgCutOffTmFrame")
-
-	@DealgCutOffTmFrame.deleter
-	def DealgCutOffTmFrame(self):
-		del self._DealgCutOffTmFrame
-		self._DealgCutOffTmFrame = None
+	@PctgInd.deleter
+	def PctgInd(self):
+		del self._PctgInd
+		self._PctgInd = None
 
 	@property
 	def AddtlInf(self):
@@ -55,56 +42,17 @@ class ProcessingCharacteristics12(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def AmtInd(self):
-		return self._AmtInd
+	def DealgFrqcy(self):
+		return self._DealgFrqcy
 
-	@AmtInd.setter
-	def AmtInd(self, value):
-		self._AmtInd = value if type(value) != auto else self.make_default("AmtInd")
+	@DealgFrqcy.setter
+	def DealgFrqcy(self, value):
+		self._DealgFrqcy = value if type(value) != auto else self.make_default("DealgFrqcy")
 
-	@AmtInd.deleter
-	def AmtInd(self):
-		del self._AmtInd
-		self._AmtInd = None
-
-	@property
-	def UnitsInd(self):
-		return self._UnitsInd
-
-	@UnitsInd.setter
-	def UnitsInd(self, value):
-		self._UnitsInd = value if type(value) != auto else self.make_default("UnitsInd")
-
-	@UnitsInd.deleter
-	def UnitsInd(self):
-		del self._UnitsInd
-		self._UnitsInd = None
-
-	@property
-	def DealgCutOffTm(self):
-		return self._DealgCutOffTm
-
-	@DealgCutOffTm.setter
-	def DealgCutOffTm(self, value):
-		self._DealgCutOffTm = value if type(value) != auto else self.make_default("DealgCutOffTm")
-
-	@DealgCutOffTm.deleter
-	def DealgCutOffTm(self):
-		del self._DealgCutOffTm
-		self._DealgCutOffTm = None
-
-	@property
-	def RedAuthstn(self):
-		return self._RedAuthstn
-
-	@RedAuthstn.setter
-	def RedAuthstn(self, value):
-		self._RedAuthstn = value if type(value) != auto else self.make_default("RedAuthstn")
-
-	@RedAuthstn.deleter
-	def RedAuthstn(self):
-		del self._RedAuthstn
-		self._RedAuthstn = None
+	@DealgFrqcy.deleter
+	def DealgFrqcy(self):
+		del self._DealgFrqcy
+		self._DealgFrqcy = None
 
 	@property
 	def MainFndOrdrDskLctn(self):
@@ -120,43 +68,43 @@ class ProcessingCharacteristics12(base_types._BaseFieldType):
 		self._MainFndOrdrDskLctn = None
 
 	@property
-	def DealConfTmFrame(self):
-		return self._DealConfTmFrame
+	def AmtInd(self):
+		return self._AmtInd
 
-	@DealConfTmFrame.setter
-	def DealConfTmFrame(self, value):
-		self._DealConfTmFrame = value if type(value) != auto else self.make_default("DealConfTmFrame")
+	@AmtInd.setter
+	def AmtInd(self, value):
+		self._AmtInd = value if type(value) != auto else self.make_default("AmtInd")
 
-	@DealConfTmFrame.deleter
-	def DealConfTmFrame(self):
-		del self._DealConfTmFrame
-		self._DealConfTmFrame = None
-
-	@property
-	def DealgFrqcyDesc(self):
-		return self._DealgFrqcyDesc
-
-	@DealgFrqcyDesc.setter
-	def DealgFrqcyDesc(self, value):
-		self._DealgFrqcyDesc = value if type(value) != auto else self.make_default("DealgFrqcyDesc")
-
-	@DealgFrqcyDesc.deleter
-	def DealgFrqcyDesc(self):
-		del self._DealgFrqcyDesc
-		self._DealgFrqcyDesc = None
+	@AmtInd.deleter
+	def AmtInd(self):
+		del self._AmtInd
+		self._AmtInd = None
 
 	@property
-	def DealConfTm(self):
-		return self._DealConfTm
+	def Rndg(self):
+		return self._Rndg
 
-	@DealConfTm.setter
-	def DealConfTm(self, value):
-		self._DealConfTm = value if type(value) != auto else self.make_default("DealConfTm")
+	@Rndg.setter
+	def Rndg(self, value):
+		self._Rndg = value if type(value) != auto else self.make_default("Rndg")
 
-	@DealConfTm.deleter
-	def DealConfTm(self):
-		del self._DealConfTm
-		self._DealConfTm = None
+	@Rndg.deleter
+	def Rndg(self):
+		del self._Rndg
+		self._Rndg = None
+
+	@property
+	def DealgCutOffTmFrame(self):
+		return self._DealgCutOffTmFrame
+
+	@DealgCutOffTmFrame.setter
+	def DealgCutOffTmFrame(self, value):
+		self._DealgCutOffTmFrame = value if type(value) != auto else self.make_default("DealgCutOffTmFrame")
+
+	@DealgCutOffTmFrame.deleter
+	def DealgCutOffTmFrame(self):
+		del self._DealgCutOffTmFrame
+		self._DealgCutOffTmFrame = None
 
 	@property
 	def SttlmCycl(self):
@@ -172,6 +120,32 @@ class ProcessingCharacteristics12(base_types._BaseFieldType):
 		self._SttlmCycl = None
 
 	@property
+	def RedAuthstn(self):
+		return self._RedAuthstn
+
+	@RedAuthstn.setter
+	def RedAuthstn(self, value):
+		self._RedAuthstn = value if type(value) != auto else self.make_default("RedAuthstn")
+
+	@RedAuthstn.deleter
+	def RedAuthstn(self):
+		del self._RedAuthstn
+		self._RedAuthstn = None
+
+	@property
+	def UnitsInd(self):
+		return self._UnitsInd
+
+	@UnitsInd.setter
+	def UnitsInd(self, value):
+		self._UnitsInd = value if type(value) != auto else self.make_default("UnitsInd")
+
+	@UnitsInd.deleter
+	def UnitsInd(self):
+		del self._UnitsInd
+		self._UnitsInd = None
+
+	@property
 	def DealgCcyAccptd(self):
 		return self._DealgCcyAccptd
 
@@ -183,6 +157,45 @@ class ProcessingCharacteristics12(base_types._BaseFieldType):
 	def DealgCcyAccptd(self):
 		del self._DealgCcyAccptd
 		self._DealgCcyAccptd = None
+
+	@property
+	def DealgCutOffTm(self):
+		return self._DealgCutOffTm
+
+	@DealgCutOffTm.setter
+	def DealgCutOffTm(self, value):
+		self._DealgCutOffTm = value if type(value) != auto else self.make_default("DealgCutOffTm")
+
+	@DealgCutOffTm.deleter
+	def DealgCutOffTm(self):
+		del self._DealgCutOffTm
+		self._DealgCutOffTm = None
+
+	@property
+	def DealConfTm(self):
+		return self._DealConfTm
+
+	@DealConfTm.setter
+	def DealConfTm(self, value):
+		self._DealConfTm = value if type(value) != auto else self.make_default("DealConfTm")
+
+	@DealConfTm.deleter
+	def DealConfTm(self):
+		del self._DealConfTm
+		self._DealConfTm = None
+
+	@property
+	def DealgFrqcyDesc(self):
+		return self._DealgFrqcyDesc
+
+	@DealgFrqcyDesc.setter
+	def DealgFrqcyDesc(self, value):
+		self._DealgFrqcyDesc = value if type(value) != auto else self.make_default("DealgFrqcyDesc")
+
+	@DealgFrqcyDesc.deleter
+	def DealgFrqcyDesc(self):
+		del self._DealgFrqcyDesc
+		self._DealgFrqcyDesc = None
 
 	@property
 	def LtdPrd(self):
@@ -198,47 +211,34 @@ class ProcessingCharacteristics12(base_types._BaseFieldType):
 		self._LtdPrd = None
 
 	@property
-	def PctgInd(self):
-		return self._PctgInd
+	def DealConfTmFrame(self):
+		return self._DealConfTmFrame
 
-	@PctgInd.setter
-	def PctgInd(self, value):
-		self._PctgInd = value if type(value) != auto else self.make_default("PctgInd")
+	@DealConfTmFrame.setter
+	def DealConfTmFrame(self, value):
+		self._DealConfTmFrame = value if type(value) != auto else self.make_default("DealConfTmFrame")
 
-	@PctgInd.deleter
-	def PctgInd(self):
-		del self._PctgInd
-		self._PctgInd = None
-
-	@property
-	def Rndg(self):
-		return self._Rndg
-
-	@Rndg.setter
-	def Rndg(self, value):
-		self._Rndg = value if type(value) != auto else self.make_default("Rndg")
-
-	@Rndg.deleter
-	def Rndg(self):
-		del self._Rndg
-		self._Rndg = None
+	@DealConfTmFrame.deleter
+	def DealConfTmFrame(self):
+		del self._DealConfTmFrame
+		self._DealConfTmFrame = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DealgFrqcy', type=EventFrequency5Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealgCutOffTmFrame', type=TimeFrame9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AmtInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitsInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealgCutOffTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RedAuthstn', type=Forms1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MainFndOrdrDskLctn', type=MainFundOrderDeskLocation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealConfTmFrame', type=TimeFrame10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealgFrqcyDesc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealConfTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmCycl', type=TimeFrame8Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealgCcyAccptd', type=ActiveCurrencyCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LtdPrd', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PctgInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DealgFrqcy', type=EventFrequency5Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MainFndOrdrDskLctn', type=MainFundOrderDeskLocation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rndg', type=RoundingDirection2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealgCutOffTmFrame', type=TimeFrame9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmCycl', type=TimeFrame8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RedAuthstn', type=Forms1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitsInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealgCcyAccptd', type=ActiveCurrencyCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DealgCutOffTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealConfTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealgFrqcyDesc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LtdPrd', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealConfTmFrame', type=TimeFrame10, min=0, max=1, mutex_group=None, array=False),
 	))
 

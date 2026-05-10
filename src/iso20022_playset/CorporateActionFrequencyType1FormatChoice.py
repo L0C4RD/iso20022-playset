@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification13
-import CorporateActionFrequencyType1Code
+from .CorporateActionFrequencyType1Code import CorporateActionFrequencyType1Code
+from .GenericIdentification13 import GenericIdentification13
 
 class CorporateActionFrequencyType1FormatChoice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import AccountManagementType2Code
-import GenericIdentification47
+from .AccountManagementType2Code import AccountManagementType2Code
+from .GenericIdentification47 import GenericIdentification47
 
 class ConfirmationType1Choice(base_types._BaseFieldType):
 

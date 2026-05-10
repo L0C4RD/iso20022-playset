@@ -1,12 +1,25 @@
 from . import base_types
-import TransactionIdentifier1
-import Response9Code
-import Max140Text
-import Max35Text
+from .TransactionIdentifier1 import TransactionIdentifier1
+from .Max140Text import Max140Text
+from .Max35Text import Max35Text
+from .Response9Code import Response9Code
 
 class CardPaymentTransactionAdviceResponse8(base_types._BaseFieldType):
 
-	__slots__ = ["_RcptTxId", "_TxId", "_SaleRefId", "_RcncltnId", "_InitrTxId", "_Rspn"]
+	__slots__ = ["_Rspn", "_RcptTxId", "_TxId", "_SaleRefId", "_RcncltnId", "_InitrTxId"]
+	@property
+	def Rspn(self):
+		return self._Rspn
+
+	@Rspn.setter
+	def Rspn(self, value):
+		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
+
+	@Rspn.deleter
+	def Rspn(self):
+		del self._Rspn
+		self._Rspn = None
+
 	@property
 	def RcptTxId(self):
 		return self._RcptTxId
@@ -72,25 +85,12 @@ class CardPaymentTransactionAdviceResponse8(base_types._BaseFieldType):
 		del self._InitrTxId
 		self._InitrTxId = None
 
-	@property
-	def Rspn(self):
-		return self._Rspn
-
-	@Rspn.setter
-	def Rspn(self, value):
-		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
-
-	@Rspn.deleter
-	def Rspn(self):
-		del self._Rspn
-		self._Rspn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Rspn', type=Response9Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptTxId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rspn', type=Response9Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

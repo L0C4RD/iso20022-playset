@@ -1,6 +1,6 @@
 from . import base_types
-import RestrictedFINXMax16Text
-import RestrictionReference1Code
+from .RestrictionReference1Code import RestrictionReference1Code
+from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class RestrictionIdentification2(base_types._BaseFieldType):
 

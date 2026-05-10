@@ -1,6 +1,6 @@
 from . import base_types
-import CountryCode
-import Max35Text
+from .CountryCode import CountryCode
+from .Max35Text import Max35Text
 
 class PostalAddress12(base_types._BaseFieldType):
 

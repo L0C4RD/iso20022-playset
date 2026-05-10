@@ -1,12 +1,25 @@
 from . import base_types
-import CardPaymentTransaction140
-import CardPaymentEnvironment81
-import SupplementaryData1
-import PaymentContext30
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from .CardPaymentTransaction140 import CardPaymentTransaction140
+from .SupplementaryData1 import SupplementaryData1
+from .PaymentContext30 import PaymentContext30
 
 class AcceptorCompletionAdvice14(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Cntxt", "_Envt", "_Tx"]
+	__slots__ = ["_Tx", "_SplmtryData", "_Envt", "_Cntxt"]
+	@property
+	def Tx(self):
+		return self._Tx
+
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != auto else self.make_default("Tx")
+
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -19,19 +32,6 @@ class AcceptorCompletionAdvice14(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
-
-	@property
-	def Cntxt(self):
-		return self._Cntxt
-
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
-
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
 
 	@property
 	def Envt(self):
@@ -47,22 +47,22 @@ class AcceptorCompletionAdvice14(base_types._BaseFieldType):
 		self._Envt = None
 
 	@property
-	def Tx(self):
-		return self._Tx
+	def Cntxt(self):
+		return self._Cntxt
 
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
 
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction140, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=0, max=1, mutex_group=None, array=False),
 	))
 

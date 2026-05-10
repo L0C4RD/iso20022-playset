@@ -1,24 +1,11 @@
 from . import base_types
-import Max15NumericText
-import Max35Text
-import Max140Binary
+from .Max35Text import Max35Text
+from .Max15NumericText import Max15NumericText
+from .Max140Binary import Max140Binary
 
 class BatchManagementInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgChcksmInptVal", "_BtchId", "_ColltnId", "_MsgSeqNb"]
-	@property
-	def MsgChcksmInptVal(self):
-		return self._MsgChcksmInptVal
-
-	@MsgChcksmInptVal.setter
-	def MsgChcksmInptVal(self, value):
-		self._MsgChcksmInptVal = value if type(value) != auto else self.make_default("MsgChcksmInptVal")
-
-	@MsgChcksmInptVal.deleter
-	def MsgChcksmInptVal(self):
-		del self._MsgChcksmInptVal
-		self._MsgChcksmInptVal = None
-
+	__slots__ = ["_BtchId", "_MsgChcksmInptVal", "_MsgSeqNb", "_ColltnId"]
 	@property
 	def BtchId(self):
 		return self._BtchId
@@ -33,17 +20,17 @@ class BatchManagementInformation1(base_types._BaseFieldType):
 		self._BtchId = None
 
 	@property
-	def ColltnId(self):
-		return self._ColltnId
+	def MsgChcksmInptVal(self):
+		return self._MsgChcksmInptVal
 
-	@ColltnId.setter
-	def ColltnId(self, value):
-		self._ColltnId = value if type(value) != auto else self.make_default("ColltnId")
+	@MsgChcksmInptVal.setter
+	def MsgChcksmInptVal(self, value):
+		self._MsgChcksmInptVal = value if type(value) != auto else self.make_default("MsgChcksmInptVal")
 
-	@ColltnId.deleter
-	def ColltnId(self):
-		del self._ColltnId
-		self._ColltnId = None
+	@MsgChcksmInptVal.deleter
+	def MsgChcksmInptVal(self):
+		del self._MsgChcksmInptVal
+		self._MsgChcksmInptVal = None
 
 	@property
 	def MsgSeqNb(self):
@@ -58,10 +45,23 @@ class BatchManagementInformation1(base_types._BaseFieldType):
 		del self._MsgSeqNb
 		self._MsgSeqNb = None
 
+	@property
+	def ColltnId(self):
+		return self._ColltnId
+
+	@ColltnId.setter
+	def ColltnId(self, value):
+		self._ColltnId = value if type(value) != auto else self.make_default("ColltnId")
+
+	@ColltnId.deleter
+	def ColltnId(self):
+		del self._ColltnId
+		self._ColltnId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgChcksmInptVal', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BtchId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ColltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgChcksmInptVal', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgSeqNb', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ColltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

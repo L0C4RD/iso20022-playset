@@ -1,11 +1,24 @@
 from . import base_types
-import TargetMarket3Choice
-import Max35Text
-import AdditionalInformation15
+from .Max35Text import Max35Text
+from .AdditionalInformation15 import AdditionalInformation15
+from .TargetMarket3Choice import TargetMarket3Choice
 
 class OtherTargetMarketInvestor1(base_types._BaseFieldType):
 
-	__slots__ = ["_Trgt", "_AddtlInf", "_InvstrTp"]
+	__slots__ = ["_InvstrTp", "_Trgt", "_AddtlInf"]
+	@property
+	def InvstrTp(self):
+		return self._InvstrTp
+
+	@InvstrTp.setter
+	def InvstrTp(self, value):
+		self._InvstrTp = value if type(value) != auto else self.make_default("InvstrTp")
+
+	@InvstrTp.deleter
+	def InvstrTp(self):
+		del self._InvstrTp
+		self._InvstrTp = None
+
 	@property
 	def Trgt(self):
 		return self._Trgt
@@ -32,22 +45,9 @@ class OtherTargetMarketInvestor1(base_types._BaseFieldType):
 		del self._AddtlInf
 		self._AddtlInf = None
 
-	@property
-	def InvstrTp(self):
-		return self._InvstrTp
-
-	@InvstrTp.setter
-	def InvstrTp(self, value):
-		self._InvstrTp = value if type(value) != auto else self.make_default("InvstrTp")
-
-	@InvstrTp.deleter
-	def InvstrTp(self):
-		del self._InvstrTp
-		self._InvstrTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='InvstrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trgt', type=TargetMarket3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

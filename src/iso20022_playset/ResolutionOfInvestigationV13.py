@@ -1,18 +1,44 @@
 from . import base_types
-import StatementResolutionEntry5
-import UnderlyingTransaction32
-import SupplementaryData1
-import CorrectiveTransaction5Choice
-import CaseAssignment6
-import ResolutionData5
-import ClaimNonReceipt3Choice
-import PaymentTransaction157
-import Case6
-import InvestigationStatus6Choice
+from .PaymentTransaction157 import PaymentTransaction157
+from .UnderlyingTransaction32 import UnderlyingTransaction32
+from .InvestigationStatus6Choice import InvestigationStatus6Choice
+from .ResolutionData5 import ResolutionData5
+from .ClaimNonReceipt3Choice import ClaimNonReceipt3Choice
+from .CaseAssignment6 import CaseAssignment6
+from .CorrectiveTransaction5Choice import CorrectiveTransaction5Choice
+from .SupplementaryData1 import SupplementaryData1
+from .StatementResolutionEntry5 import StatementResolutionEntry5
+from .Case6 import Case6
 
 class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnmt", "_SplmtryData", "_RsltnRltdInf", "_CxlDtls", "_ClmNonRctDtls", "_ModDtls", "_Sts", "_RslvdCase", "_StmtDtls", "_CrrctnTx"]
+	__slots__ = ["_ClmNonRctDtls", "_Sts", "_Assgnmt", "_RsltnRltdInf", "_CxlDtls", "_CrrctnTx", "_SplmtryData", "_ModDtls", "_StmtDtls", "_RslvdCase"]
+	@property
+	def ClmNonRctDtls(self):
+		return self._ClmNonRctDtls
+
+	@ClmNonRctDtls.setter
+	def ClmNonRctDtls(self, value):
+		self._ClmNonRctDtls = value if type(value) != auto else self.make_default("ClmNonRctDtls")
+
+	@ClmNonRctDtls.deleter
+	def ClmNonRctDtls(self):
+		del self._ClmNonRctDtls
+		self._ClmNonRctDtls = None
+
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
 	@property
 	def Assgnmt(self):
 		return self._Assgnmt
@@ -25,19 +51,6 @@ class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 	def Assgnmt(self):
 		del self._Assgnmt
 		self._Assgnmt = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
 
 	@property
 	def RsltnRltdInf(self):
@@ -66,17 +79,30 @@ class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 		self._CxlDtls = None
 
 	@property
-	def ClmNonRctDtls(self):
-		return self._ClmNonRctDtls
+	def CrrctnTx(self):
+		return self._CrrctnTx
 
-	@ClmNonRctDtls.setter
-	def ClmNonRctDtls(self, value):
-		self._ClmNonRctDtls = value if type(value) != auto else self.make_default("ClmNonRctDtls")
+	@CrrctnTx.setter
+	def CrrctnTx(self, value):
+		self._CrrctnTx = value if type(value) != auto else self.make_default("CrrctnTx")
 
-	@ClmNonRctDtls.deleter
-	def ClmNonRctDtls(self):
-		del self._ClmNonRctDtls
-		self._ClmNonRctDtls = None
+	@CrrctnTx.deleter
+	def CrrctnTx(self):
+		del self._CrrctnTx
+		self._CrrctnTx = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def ModDtls(self):
@@ -92,17 +118,17 @@ class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 		self._ModDtls = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def StmtDtls(self):
+		return self._StmtDtls
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@StmtDtls.setter
+	def StmtDtls(self, value):
+		self._StmtDtls = value if type(value) != auto else self.make_default("StmtDtls")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@StmtDtls.deleter
+	def StmtDtls(self):
+		del self._StmtDtls
+		self._StmtDtls = None
 
 	@property
 	def RslvdCase(self):
@@ -117,42 +143,16 @@ class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 		del self._RslvdCase
 		self._RslvdCase = None
 
-	@property
-	def StmtDtls(self):
-		return self._StmtDtls
-
-	@StmtDtls.setter
-	def StmtDtls(self, value):
-		self._StmtDtls = value if type(value) != auto else self.make_default("StmtDtls")
-
-	@StmtDtls.deleter
-	def StmtDtls(self):
-		del self._StmtDtls
-		self._StmtDtls = None
-
-	@property
-	def CrrctnTx(self):
-		return self._CrrctnTx
-
-	@CrrctnTx.setter
-	def CrrctnTx(self, value):
-		self._CrrctnTx = value if type(value) != auto else self.make_default("CrrctnTx")
-
-	@CrrctnTx.deleter
-	def CrrctnTx(self):
-		del self._CrrctnTx
-		self._CrrctnTx = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ClmNonRctDtls', type=ClaimNonReceipt3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=InvestigationStatus6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RsltnRltdInf', type=ResolutionData5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlDtls', type=UnderlyingTransaction32, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ClmNonRctDtls', type=ClaimNonReceipt3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ModDtls', type=PaymentTransaction157, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=InvestigationStatus6Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RslvdCase', type=Case6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtDtls', type=StatementResolutionEntry5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrrctnTx', type=CorrectiveTransaction5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ModDtls', type=PaymentTransaction157, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtDtls', type=StatementResolutionEntry5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RslvdCase', type=Case6, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
-import ISODate
-import PaymentPeriod4
-import Max140Text
+from .Max140Text import Max140Text
+from .PaymentPeriod4 import PaymentPeriod4
+from .ISODate import ISODate
 
 class PaymentCodeOrOther2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrPmtTerms", "_PmtCd", "_PmtDueDt"]
-	@property
-	def OthrPmtTerms(self):
-		return self._OthrPmtTerms
-
-	@OthrPmtTerms.setter
-	def OthrPmtTerms(self, value):
-		self._OthrPmtTerms = value if type(value) != auto else self.make_default("OthrPmtTerms")
-
-	@OthrPmtTerms.deleter
-	def OthrPmtTerms(self):
-		del self._OthrPmtTerms
-		self._OthrPmtTerms = None
-
+	__slots__ = ["_PmtCd", "_OthrPmtTerms", "_PmtDueDt"]
 	@property
 	def PmtCd(self):
 		return self._PmtCd
@@ -31,6 +18,19 @@ class PaymentCodeOrOther2Choice(base_types._BaseFieldType):
 	def PmtCd(self):
 		del self._PmtCd
 		self._PmtCd = None
+
+	@property
+	def OthrPmtTerms(self):
+		return self._OthrPmtTerms
+
+	@OthrPmtTerms.setter
+	def OthrPmtTerms(self, value):
+		self._OthrPmtTerms = value if type(value) != auto else self.make_default("OthrPmtTerms")
+
+	@OthrPmtTerms.deleter
+	def OthrPmtTerms(self):
+		del self._OthrPmtTerms
+		self._OthrPmtTerms = None
 
 	@property
 	def PmtDueDt(self):
@@ -46,8 +46,8 @@ class PaymentCodeOrOther2Choice(base_types._BaseFieldType):
 		self._PmtDueDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrPmtTerms', type=Max140Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PmtCd', type=PaymentPeriod4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OthrPmtTerms', type=Max140Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PmtDueDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 	))
 

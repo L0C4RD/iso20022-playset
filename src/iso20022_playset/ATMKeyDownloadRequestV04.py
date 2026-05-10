@@ -1,24 +1,24 @@
 from . import base_types
-import ContentInformationType13
-import ATMKeyDownloadRequest5
-import ContentInformationType10
-import Header31
+from .ATMKeyDownloadRequest5 import ATMKeyDownloadRequest5
+from .ContentInformationType10 import ContentInformationType10
+from .Header31 import Header31
+from .ContentInformationType13 import ContentInformationType13
 
 class ATMKeyDownloadRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMKeyDwnldReq", "_SctyTrlr", "_PrtctdATMKeyDwnldReq", "_Hdr"]
+	__slots__ = ["_PrtctdATMKeyDwnldReq", "_SctyTrlr", "_Hdr", "_ATMKeyDwnldReq"]
 	@property
-	def ATMKeyDwnldReq(self):
-		return self._ATMKeyDwnldReq
+	def PrtctdATMKeyDwnldReq(self):
+		return self._PrtctdATMKeyDwnldReq
 
-	@ATMKeyDwnldReq.setter
-	def ATMKeyDwnldReq(self, value):
-		self._ATMKeyDwnldReq = value if type(value) != auto else self.make_default("ATMKeyDwnldReq")
+	@PrtctdATMKeyDwnldReq.setter
+	def PrtctdATMKeyDwnldReq(self, value):
+		self._PrtctdATMKeyDwnldReq = value if type(value) != auto else self.make_default("PrtctdATMKeyDwnldReq")
 
-	@ATMKeyDwnldReq.deleter
-	def ATMKeyDwnldReq(self):
-		del self._ATMKeyDwnldReq
-		self._ATMKeyDwnldReq = None
+	@PrtctdATMKeyDwnldReq.deleter
+	def PrtctdATMKeyDwnldReq(self):
+		del self._PrtctdATMKeyDwnldReq
+		self._PrtctdATMKeyDwnldReq = None
 
 	@property
 	def SctyTrlr(self):
@@ -34,19 +34,6 @@ class ATMKeyDownloadRequestV04(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def PrtctdATMKeyDwnldReq(self):
-		return self._PrtctdATMKeyDwnldReq
-
-	@PrtctdATMKeyDwnldReq.setter
-	def PrtctdATMKeyDwnldReq(self, value):
-		self._PrtctdATMKeyDwnldReq = value if type(value) != auto else self.make_default("PrtctdATMKeyDwnldReq")
-
-	@PrtctdATMKeyDwnldReq.deleter
-	def PrtctdATMKeyDwnldReq(self):
-		del self._PrtctdATMKeyDwnldReq
-		self._PrtctdATMKeyDwnldReq = None
-
-	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -59,10 +46,23 @@ class ATMKeyDownloadRequestV04(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def ATMKeyDwnldReq(self):
+		return self._ATMKeyDwnldReq
+
+	@ATMKeyDwnldReq.setter
+	def ATMKeyDwnldReq(self, value):
+		self._ATMKeyDwnldReq = value if type(value) != auto else self.make_default("ATMKeyDwnldReq")
+
+	@ATMKeyDwnldReq.deleter
+	def ATMKeyDwnldReq(self):
+		del self._ATMKeyDwnldReq
+		self._ATMKeyDwnldReq = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ATMKeyDwnldReq', type=ATMKeyDownloadRequest5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMKeyDwnldReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMKeyDwnldReq', type=ATMKeyDownloadRequest5, min=0, max=1, mutex_group=None, array=False),
 	))
 

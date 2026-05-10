@@ -1,51 +1,25 @@
 from . import base_types
-import SettlementTimeRequest2
-import Number
-import Priority3Code
-import MovementRecord2
-import Max35Text
+from .Max35Text import Max35Text
+from .MovementRecord2 import MovementRecord2
+from .Number import Number
+from .Priority3Code import Priority3Code
+from .SettlementTimeRequest2 import SettlementTimeRequest2
 
 class MultilateralSettlementRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrId", "_SttlmTmReq", "_MvmntRcrd", "_NbOfMvmntRcrds", "_SttlmCycl", "_InstrPrty", "_SttlmPrty"]
+	__slots__ = ["_SttlmCycl", "_NbOfMvmntRcrds", "_InstrPrty", "_SttlmPrty", "_MvmntRcrd", "_SttlmTmReq", "_InstrId"]
 	@property
-	def InstrId(self):
-		return self._InstrId
+	def SttlmCycl(self):
+		return self._SttlmCycl
 
-	@InstrId.setter
-	def InstrId(self, value):
-		self._InstrId = value if type(value) != auto else self.make_default("InstrId")
+	@SttlmCycl.setter
+	def SttlmCycl(self, value):
+		self._SttlmCycl = value if type(value) != auto else self.make_default("SttlmCycl")
 
-	@InstrId.deleter
-	def InstrId(self):
-		del self._InstrId
-		self._InstrId = None
-
-	@property
-	def SttlmTmReq(self):
-		return self._SttlmTmReq
-
-	@SttlmTmReq.setter
-	def SttlmTmReq(self, value):
-		self._SttlmTmReq = value if type(value) != auto else self.make_default("SttlmTmReq")
-
-	@SttlmTmReq.deleter
-	def SttlmTmReq(self):
-		del self._SttlmTmReq
-		self._SttlmTmReq = None
-
-	@property
-	def MvmntRcrd(self):
-		return self._MvmntRcrd
-
-	@MvmntRcrd.setter
-	def MvmntRcrd(self, value):
-		self._MvmntRcrd = value if type(value) != auto else self.make_default("MvmntRcrd")
-
-	@MvmntRcrd.deleter
-	def MvmntRcrd(self):
-		del self._MvmntRcrd
-		self._MvmntRcrd = None
+	@SttlmCycl.deleter
+	def SttlmCycl(self):
+		del self._SttlmCycl
+		self._SttlmCycl = None
 
 	@property
 	def NbOfMvmntRcrds(self):
@@ -59,19 +33,6 @@ class MultilateralSettlementRequest3(base_types._BaseFieldType):
 	def NbOfMvmntRcrds(self):
 		del self._NbOfMvmntRcrds
 		self._NbOfMvmntRcrds = None
-
-	@property
-	def SttlmCycl(self):
-		return self._SttlmCycl
-
-	@SttlmCycl.setter
-	def SttlmCycl(self, value):
-		self._SttlmCycl = value if type(value) != auto else self.make_default("SttlmCycl")
-
-	@SttlmCycl.deleter
-	def SttlmCycl(self):
-		del self._SttlmCycl
-		self._SttlmCycl = None
 
 	@property
 	def InstrPrty(self):
@@ -99,13 +60,52 @@ class MultilateralSettlementRequest3(base_types._BaseFieldType):
 		del self._SttlmPrty
 		self._SttlmPrty = None
 
+	@property
+	def MvmntRcrd(self):
+		return self._MvmntRcrd
+
+	@MvmntRcrd.setter
+	def MvmntRcrd(self, value):
+		self._MvmntRcrd = value if type(value) != auto else self.make_default("MvmntRcrd")
+
+	@MvmntRcrd.deleter
+	def MvmntRcrd(self):
+		del self._MvmntRcrd
+		self._MvmntRcrd = None
+
+	@property
+	def SttlmTmReq(self):
+		return self._SttlmTmReq
+
+	@SttlmTmReq.setter
+	def SttlmTmReq(self, value):
+		self._SttlmTmReq = value if type(value) != auto else self.make_default("SttlmTmReq")
+
+	@SttlmTmReq.deleter
+	def SttlmTmReq(self):
+		del self._SttlmTmReq
+		self._SttlmTmReq = None
+
+	@property
+	def InstrId(self):
+		return self._InstrId
+
+	@InstrId.setter
+	def InstrId(self, value):
+		self._InstrId = value if type(value) != auto else self.make_default("InstrId")
+
+	@InstrId.deleter
+	def InstrId(self):
+		del self._InstrId
+		self._InstrId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmTmReq', type=SettlementTimeRequest2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MvmntRcrd', type=MovementRecord2, min=2, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NbOfMvmntRcrds', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmCycl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfMvmntRcrds', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrPrty', type=Priority3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmPrty', type=Priority3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MvmntRcrd', type=MovementRecord2, min=2, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmTmReq', type=SettlementTimeRequest2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

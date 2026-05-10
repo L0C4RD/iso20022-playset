@@ -1,24 +1,11 @@
 from . import base_types
-import RestrictedFINXMax31Text
-import Max16Text
-import IdentificationSource4Choice
+from .Max16Text import Max16Text
+from .IdentificationSource4Choice import IdentificationSource4Choice
+from .RestrictedFINXMax31Text import RestrictedFINXMax31Text
 
 class OtherIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Sfx", "_Tp"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Sfx", "_Tp", "_Id"]
 	@property
 	def Sfx(self):
 		return self._Sfx
@@ -45,9 +32,22 @@ class OtherIdentification2(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=RestrictedFINXMax31Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sfx', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=IdentificationSource4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=RestrictedFINXMax31Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

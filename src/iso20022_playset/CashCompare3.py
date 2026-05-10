@@ -1,6 +1,6 @@
 from . import base_types
-import CompareAmountAndDirection2
-import ComparePercentageRate3
+from .ComparePercentageRate3 import ComparePercentageRate3
+from .CompareAmountAndDirection2 import CompareAmountAndDirection2
 
 class CashCompare3(base_types._BaseFieldType):
 

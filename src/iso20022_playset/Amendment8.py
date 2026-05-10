@@ -1,24 +1,11 @@
 from . import base_types
-import PartyIdentification43
-import Max4AlphaNumericText
-import Max35Text
+from .PartyIdentification43 import PartyIdentification43
+from .Max4AlphaNumericText import Max4AlphaNumericText
+from .Max35Text import Max35Text
 
 class Amendment8(base_types._BaseFieldType):
 
-	__slots__ = ["_SeqNb", "_Issr", "_Id", "_BnfcryRefNb"]
-	@property
-	def SeqNb(self):
-		return self._SeqNb
-
-	@SeqNb.setter
-	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
-
-	@SeqNb.deleter
-	def SeqNb(self):
-		del self._SeqNb
-		self._SeqNb = None
-
+	__slots__ = ["_Issr", "_SeqNb", "_BnfcryRefNb", "_Id"]
 	@property
 	def Issr(self):
 		return self._Issr
@@ -33,17 +20,17 @@ class Amendment8(base_types._BaseFieldType):
 		self._Issr = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def SeqNb(self):
+		return self._SeqNb
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@SeqNb.setter
+	def SeqNb(self, value):
+		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@SeqNb.deleter
+	def SeqNb(self):
+		del self._SeqNb
+		self._SeqNb = None
 
 	@property
 	def BnfcryRefNb(self):
@@ -58,10 +45,23 @@ class Amendment8(base_types._BaseFieldType):
 		del self._BnfcryRefNb
 		self._BnfcryRefNb = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SeqNb', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=PartyIdentification43, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqNb', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BnfcryRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

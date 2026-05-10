@@ -1,11 +1,24 @@
 from . import base_types
-import Max9NumericText
-import TimeUnit1Code
-import ISODateTime
+from .Max9NumericText import Max9NumericText
+from .TimeUnit1Code import TimeUnit1Code
+from .ISODateTime import ISODateTime
 
 class ProcessTiming6(base_types._BaseFieldType):
 
-	__slots__ = ["_StartTm", "_EndTm", "_Prd", "_UnitOfTm"]
+	__slots__ = ["_Prd", "_StartTm", "_EndTm", "_UnitOfTm"]
+	@property
+	def Prd(self):
+		return self._Prd
+
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != auto else self.make_default("Prd")
+
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
+
 	@property
 	def StartTm(self):
 		return self._StartTm
@@ -33,19 +46,6 @@ class ProcessTiming6(base_types._BaseFieldType):
 		self._EndTm = None
 
 	@property
-	def Prd(self):
-		return self._Prd
-
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
-
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
-
-	@property
 	def UnitOfTm(self):
 		return self._UnitOfTm
 
@@ -59,9 +59,9 @@ class ProcessTiming6(base_types._BaseFieldType):
 		self._UnitOfTm = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Prd', type=Max9NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prd', type=Max9NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfTm', type=TimeUnit1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

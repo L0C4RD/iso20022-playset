@@ -1,12 +1,12 @@
 from . import base_types
-import Number
-import PercentageRate
-import BaseOneRate
-import AmountAndDirection106
+from .PercentageRate import PercentageRate
+from .BaseOneRate import BaseOneRate
+from .AmountAndDirection106 import AmountAndDirection106
+from .Number import Number
 
 class SecuritiesTransactionPrice20Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Dcml", "_MntryVal", "_BsisPtSprd", "_Pctg"]
+	__slots__ = ["_Dcml", "_BsisPtSprd", "_Pctg", "_MntryVal"]
 	@property
 	def Dcml(self):
 		return self._Dcml
@@ -19,19 +19,6 @@ class SecuritiesTransactionPrice20Choice(base_types._BaseFieldType):
 	def Dcml(self):
 		del self._Dcml
 		self._Dcml = None
-
-	@property
-	def MntryVal(self):
-		return self._MntryVal
-
-	@MntryVal.setter
-	def MntryVal(self, value):
-		self._MntryVal = value if type(value) != auto else self.make_default("MntryVal")
-
-	@MntryVal.deleter
-	def MntryVal(self):
-		del self._MntryVal
-		self._MntryVal = None
 
 	@property
 	def BsisPtSprd(self):
@@ -59,10 +46,23 @@ class SecuritiesTransactionPrice20Choice(base_types._BaseFieldType):
 		del self._Pctg
 		self._Pctg = None
 
+	@property
+	def MntryVal(self):
+		return self._MntryVal
+
+	@MntryVal.setter
+	def MntryVal(self, value):
+		self._MntryVal = value if type(value) != auto else self.make_default("MntryVal")
+
+	@MntryVal.deleter
+	def MntryVal(self):
+		del self._MntryVal
+		self._MntryVal = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dcml', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MntryVal', type=AmountAndDirection106, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BsisPtSprd', type=Number, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MntryVal', type=AmountAndDirection106, min=0, max=1, mutex_group=1, array=False),
 	))
 

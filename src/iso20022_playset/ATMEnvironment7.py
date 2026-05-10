@@ -1,25 +1,12 @@
 from . import base_types
-import TerminalHosting1
-import Acquirer7
-import Acquirer8
-import AutomatedTellerMachine3
+from .AutomatedTellerMachine3 import AutomatedTellerMachine3
+from .Acquirer8 import Acquirer8
+from .Acquirer7 import Acquirer7
+from .TerminalHosting1 import TerminalHosting1
 
 class ATMEnvironment7(base_types._BaseFieldType):
 
-	__slots__ = ["_ATM", "_ATMMgr", "_Acqrr", "_HstgNtty"]
-	@property
-	def ATM(self):
-		return self._ATM
-
-	@ATM.setter
-	def ATM(self, value):
-		self._ATM = value if type(value) != auto else self.make_default("ATM")
-
-	@ATM.deleter
-	def ATM(self):
-		del self._ATM
-		self._ATM = None
-
+	__slots__ = ["_ATMMgr", "_ATM", "_HstgNtty", "_Acqrr"]
 	@property
 	def ATMMgr(self):
 		return self._ATMMgr
@@ -34,17 +21,17 @@ class ATMEnvironment7(base_types._BaseFieldType):
 		self._ATMMgr = None
 
 	@property
-	def Acqrr(self):
-		return self._Acqrr
+	def ATM(self):
+		return self._ATM
 
-	@Acqrr.setter
-	def Acqrr(self, value):
-		self._Acqrr = value if type(value) != auto else self.make_default("Acqrr")
+	@ATM.setter
+	def ATM(self, value):
+		self._ATM = value if type(value) != auto else self.make_default("ATM")
 
-	@Acqrr.deleter
-	def Acqrr(self):
-		del self._Acqrr
-		self._Acqrr = None
+	@ATM.deleter
+	def ATM(self):
+		del self._ATM
+		self._ATM = None
 
 	@property
 	def HstgNtty(self):
@@ -59,10 +46,23 @@ class ATMEnvironment7(base_types._BaseFieldType):
 		del self._HstgNtty
 		self._HstgNtty = None
 
+	@property
+	def Acqrr(self):
+		return self._Acqrr
+
+	@Acqrr.setter
+	def Acqrr(self, value):
+		self._Acqrr = value if type(value) != auto else self.make_default("Acqrr")
+
+	@Acqrr.deleter
+	def Acqrr(self):
+		del self._Acqrr
+		self._Acqrr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMMgr', type=Acquirer8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acqrr', type=Acquirer7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstgNtty', type=TerminalHosting1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Acqrr', type=Acquirer7, min=0, max=1, mutex_group=None, array=False),
 	))
 

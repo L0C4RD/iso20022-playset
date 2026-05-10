@@ -1,11 +1,24 @@
 from . import base_types
-import BaseOne14Rate
-import RestrictedFINActiveCurrencyAndAmount
-import ActiveCurrencyCode
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .BaseOne14Rate import BaseOne14Rate
+from .RestrictedFINActiveCurrencyAndAmount import RestrictedFINActiveCurrencyAndAmount
 
 class ForeignExchangeTerms42(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitCcy", "_XchgRate", "_QtdCcy", "_RsltgAmt"]
+	__slots__ = ["_RsltgAmt", "_UnitCcy", "_XchgRate", "_QtdCcy"]
+	@property
+	def RsltgAmt(self):
+		return self._RsltgAmt
+
+	@RsltgAmt.setter
+	def RsltgAmt(self, value):
+		self._RsltgAmt = value if type(value) != auto else self.make_default("RsltgAmt")
+
+	@RsltgAmt.deleter
+	def RsltgAmt(self):
+		del self._RsltgAmt
+		self._RsltgAmt = None
+
 	@property
 	def UnitCcy(self):
 		return self._UnitCcy
@@ -45,23 +58,10 @@ class ForeignExchangeTerms42(base_types._BaseFieldType):
 		del self._QtdCcy
 		self._QtdCcy = None
 
-	@property
-	def RsltgAmt(self):
-		return self._RsltgAmt
-
-	@RsltgAmt.setter
-	def RsltgAmt(self, value):
-		self._RsltgAmt = value if type(value) != auto else self.make_default("RsltgAmt")
-
-	@RsltgAmt.deleter
-	def RsltgAmt(self):
-		del self._RsltgAmt
-		self._RsltgAmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RsltgAmt', type=RestrictedFINActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=BaseOne14Rate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsltgAmt', type=RestrictedFINActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

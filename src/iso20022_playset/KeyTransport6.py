@@ -1,24 +1,24 @@
 from . import base_types
-import Number
-import AlgorithmIdentification27
-import Max5000Binary
-import Recipient5Choice
+from .AlgorithmIdentification27 import AlgorithmIdentification27
+from .Recipient5Choice import Recipient5Choice
+from .Max5000Binary import Max5000Binary
+from .Number import Number
 
 class KeyTransport6(base_types._BaseFieldType):
 
-	__slots__ = ["_NcrptdKey", "_KeyNcrptnAlgo", "_Vrsn", "_RcptId"]
+	__slots__ = ["_RcptId", "_KeyNcrptnAlgo", "_Vrsn", "_NcrptdKey"]
 	@property
-	def NcrptdKey(self):
-		return self._NcrptdKey
+	def RcptId(self):
+		return self._RcptId
 
-	@NcrptdKey.setter
-	def NcrptdKey(self, value):
-		self._NcrptdKey = value if type(value) != auto else self.make_default("NcrptdKey")
+	@RcptId.setter
+	def RcptId(self, value):
+		self._RcptId = value if type(value) != auto else self.make_default("RcptId")
 
-	@NcrptdKey.deleter
-	def NcrptdKey(self):
-		del self._NcrptdKey
-		self._NcrptdKey = None
+	@RcptId.deleter
+	def RcptId(self):
+		del self._RcptId
+		self._RcptId = None
 
 	@property
 	def KeyNcrptnAlgo(self):
@@ -47,22 +47,22 @@ class KeyTransport6(base_types._BaseFieldType):
 		self._Vrsn = None
 
 	@property
-	def RcptId(self):
-		return self._RcptId
+	def NcrptdKey(self):
+		return self._NcrptdKey
 
-	@RcptId.setter
-	def RcptId(self, value):
-		self._RcptId = value if type(value) != auto else self.make_default("RcptId")
+	@NcrptdKey.setter
+	def NcrptdKey(self, value):
+		self._NcrptdKey = value if type(value) != auto else self.make_default("NcrptdKey")
 
-	@RcptId.deleter
-	def RcptId(self):
-		del self._RcptId
-		self._RcptId = None
+	@NcrptdKey.deleter
+	def NcrptdKey(self):
+		del self._NcrptdKey
+		self._NcrptdKey = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NcrptdKey', type=Max5000Binary, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcptId', type=Recipient5Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification27, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcptId', type=Recipient5Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcrptdKey', type=Max5000Binary, min=1, max=1, mutex_group=None, array=False),
 	))
 

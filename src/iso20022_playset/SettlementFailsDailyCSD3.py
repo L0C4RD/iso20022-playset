@@ -1,5 +1,5 @@
 from . import base_types
-import SettlementFailsDailyInstructionType1Choice
+from .SettlementFailsDailyInstructionType1Choice import SettlementFailsDailyInstructionType1Choice
 
 class SettlementFailsDailyCSD3(base_types._BaseFieldType):
 

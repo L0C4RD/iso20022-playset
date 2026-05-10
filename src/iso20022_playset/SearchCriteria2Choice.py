@@ -1,12 +1,25 @@
 from . import base_types
-import AccountAndParties3
-import PaymentInstrumentType1
-import CustomerIdentification2
-import RequestType1
+from .CustomerIdentification2 import CustomerIdentification2
+from .RequestType1 import RequestType1
+from .AccountAndParties3 import AccountAndParties3
+from .PaymentInstrumentType1 import PaymentInstrumentType1
 
 class SearchCriteria2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CstmrId", "_Acct", "_OrgnlTxNb", "_PmtInstrm"]
+	__slots__ = ["_PmtInstrm", "_CstmrId", "_Acct", "_OrgnlTxNb"]
+	@property
+	def PmtInstrm(self):
+		return self._PmtInstrm
+
+	@PmtInstrm.setter
+	def PmtInstrm(self, value):
+		self._PmtInstrm = value if type(value) != auto else self.make_default("PmtInstrm")
+
+	@PmtInstrm.deleter
+	def PmtInstrm(self):
+		del self._PmtInstrm
+		self._PmtInstrm = None
+
 	@property
 	def CstmrId(self):
 		return self._CstmrId
@@ -46,23 +59,10 @@ class SearchCriteria2Choice(base_types._BaseFieldType):
 		del self._OrgnlTxNb
 		self._OrgnlTxNb = None
 
-	@property
-	def PmtInstrm(self):
-		return self._PmtInstrm
-
-	@PmtInstrm.setter
-	def PmtInstrm(self, value):
-		self._PmtInstrm = value if type(value) != auto else self.make_default("PmtInstrm")
-
-	@PmtInstrm.deleter
-	def PmtInstrm(self):
-		del self._PmtInstrm
-		self._PmtInstrm = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PmtInstrm', type=PaymentInstrumentType1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CstmrId', type=CustomerIdentification2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Acct', type=AccountAndParties3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OrgnlTxNb', type=RequestType1, min=1, max=None, mutex_group=1, array=True),
-		base_types.FieldEntry(name='PmtInstrm', type=PaymentInstrumentType1, min=0, max=1, mutex_group=1, array=False),
 	))
 

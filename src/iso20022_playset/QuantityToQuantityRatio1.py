@@ -1,5 +1,5 @@
 from . import base_types
-import DecimalNumber
+from .DecimalNumber import DecimalNumber
 
 class QuantityToQuantityRatio1(base_types._BaseFieldType):
 

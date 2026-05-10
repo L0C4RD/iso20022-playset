@@ -1,38 +1,25 @@
 from . import base_types
-import ISODate
-import PartyIdentification116
-import ExternalDocumentType1Code
-import Max35Text
-import LanguageCode
+from .Max35Text import Max35Text
+from .ExternalDocumentType1Code import ExternalDocumentType1Code
+from .LanguageCode import LanguageCode
+from .ISODate import ISODate
+from .PartyIdentification116 import PartyIdentification116
 
 class GroupHeader69(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrTaxRprtv", "_OrgnlId", "_TaxRptPurp", "_RptCtgy", "_Id", "_LangCd", "_SellrTaxRprtv", "_IssdDt"]
+	__slots__ = ["_Id", "_TaxRptPurp", "_BuyrTaxRprtv", "_RptCtgy", "_SellrTaxRprtv", "_LangCd", "_OrgnlId", "_IssdDt"]
 	@property
-	def BuyrTaxRprtv(self):
-		return self._BuyrTaxRprtv
+	def Id(self):
+		return self._Id
 
-	@BuyrTaxRprtv.setter
-	def BuyrTaxRprtv(self, value):
-		self._BuyrTaxRprtv = value if type(value) != auto else self.make_default("BuyrTaxRprtv")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@BuyrTaxRprtv.deleter
-	def BuyrTaxRprtv(self):
-		del self._BuyrTaxRprtv
-		self._BuyrTaxRprtv = None
-
-	@property
-	def OrgnlId(self):
-		return self._OrgnlId
-
-	@OrgnlId.setter
-	def OrgnlId(self, value):
-		self._OrgnlId = value if type(value) != auto else self.make_default("OrgnlId")
-
-	@OrgnlId.deleter
-	def OrgnlId(self):
-		del self._OrgnlId
-		self._OrgnlId = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def TaxRptPurp(self):
@@ -48,6 +35,19 @@ class GroupHeader69(base_types._BaseFieldType):
 		self._TaxRptPurp = None
 
 	@property
+	def BuyrTaxRprtv(self):
+		return self._BuyrTaxRprtv
+
+	@BuyrTaxRprtv.setter
+	def BuyrTaxRprtv(self, value):
+		self._BuyrTaxRprtv = value if type(value) != auto else self.make_default("BuyrTaxRprtv")
+
+	@BuyrTaxRprtv.deleter
+	def BuyrTaxRprtv(self):
+		del self._BuyrTaxRprtv
+		self._BuyrTaxRprtv = None
+
+	@property
 	def RptCtgy(self):
 		return self._RptCtgy
 
@@ -59,32 +59,6 @@ class GroupHeader69(base_types._BaseFieldType):
 	def RptCtgy(self):
 		del self._RptCtgy
 		self._RptCtgy = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def LangCd(self):
-		return self._LangCd
-
-	@LangCd.setter
-	def LangCd(self, value):
-		self._LangCd = value if type(value) != auto else self.make_default("LangCd")
-
-	@LangCd.deleter
-	def LangCd(self):
-		del self._LangCd
-		self._LangCd = None
 
 	@property
 	def SellrTaxRprtv(self):
@@ -100,6 +74,32 @@ class GroupHeader69(base_types._BaseFieldType):
 		self._SellrTaxRprtv = None
 
 	@property
+	def LangCd(self):
+		return self._LangCd
+
+	@LangCd.setter
+	def LangCd(self, value):
+		self._LangCd = value if type(value) != auto else self.make_default("LangCd")
+
+	@LangCd.deleter
+	def LangCd(self):
+		del self._LangCd
+		self._LangCd = None
+
+	@property
+	def OrgnlId(self):
+		return self._OrgnlId
+
+	@OrgnlId.setter
+	def OrgnlId(self, value):
+		self._OrgnlId = value if type(value) != auto else self.make_default("OrgnlId")
+
+	@OrgnlId.deleter
+	def OrgnlId(self):
+		del self._OrgnlId
+		self._OrgnlId = None
+
+	@property
 	def IssdDt(self):
 		return self._IssdDt
 
@@ -113,13 +113,13 @@ class GroupHeader69(base_types._BaseFieldType):
 		self._IssdDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BuyrTaxRprtv', type=PartyIdentification116, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxRptPurp', type=ExternalDocumentType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptCtgy', type=ExternalDocumentType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LangCd', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRptPurp', type=ExternalDocumentType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrTaxRprtv', type=PartyIdentification116, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptCtgy', type=ExternalDocumentType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SellrTaxRprtv', type=PartyIdentification116, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LangCd', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssdDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
-import DecimalNumber
-import Max35Text
-import MemoryUnit1Code
+from .MemoryUnit1Code import MemoryUnit1Code
+from .Max35Text import Max35Text
+from .DecimalNumber import DecimalNumber
 
 class MemoryCharacteristics1(base_types._BaseFieldType):
 
-	__slots__ = ["_FreeSz", "_TtlSz", "_Id", "_Unit"]
-	@property
-	def FreeSz(self):
-		return self._FreeSz
-
-	@FreeSz.setter
-	def FreeSz(self, value):
-		self._FreeSz = value if type(value) != auto else self.make_default("FreeSz")
-
-	@FreeSz.deleter
-	def FreeSz(self):
-		del self._FreeSz
-		self._FreeSz = None
-
+	__slots__ = ["_TtlSz", "_Id", "_FreeSz", "_Unit"]
 	@property
 	def TtlSz(self):
 		return self._TtlSz
@@ -46,6 +33,19 @@ class MemoryCharacteristics1(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def FreeSz(self):
+		return self._FreeSz
+
+	@FreeSz.setter
+	def FreeSz(self, value):
+		self._FreeSz = value if type(value) != auto else self.make_default("FreeSz")
+
+	@FreeSz.deleter
+	def FreeSz(self):
+		del self._FreeSz
+		self._FreeSz = None
+
+	@property
 	def Unit(self):
 		return self._Unit
 
@@ -59,9 +59,9 @@ class MemoryCharacteristics1(base_types._BaseFieldType):
 		self._Unit = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FreeSz', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlSz', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FreeSz', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Unit', type=MemoryUnit1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

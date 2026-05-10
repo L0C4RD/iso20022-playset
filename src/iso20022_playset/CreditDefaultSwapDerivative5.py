@@ -1,6 +1,6 @@
 from . import base_types
-import CreditDefaultSwapIndex3
-import ISINOct2015Identifier
+from .ISINOct2015Identifier import ISINOct2015Identifier
+from .CreditDefaultSwapIndex3 import CreditDefaultSwapIndex3
 
 class CreditDefaultSwapDerivative5(base_types._BaseFieldType):
 

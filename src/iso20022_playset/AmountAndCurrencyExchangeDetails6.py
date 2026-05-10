@@ -1,7 +1,7 @@
 from . import base_types
-import CurrencyExchange24
-import Max35Text
-import ActiveOrHistoricCurrencyAndAmount
+from .Max35Text import Max35Text
+from .CurrencyExchange24 import CurrencyExchange24
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class AmountAndCurrencyExchangeDetails6(base_types._BaseFieldType):
 

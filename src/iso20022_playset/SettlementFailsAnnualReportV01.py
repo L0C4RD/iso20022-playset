@@ -1,11 +1,24 @@
 from . import base_types
-import SettlementFailsReportHeader2
-import SupplementaryData1
-import SettlementFailsData4
+from .SettlementFailsData4 import SettlementFailsData4
+from .SettlementFailsReportHeader2 import SettlementFailsReportHeader2
+from .SupplementaryData1 import SupplementaryData1
 
 class SettlementFailsAnnualReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RptHdr", "_AnlAggt"]
+	__slots__ = ["_AnlAggt", "_SplmtryData", "_RptHdr"]
+	@property
+	def AnlAggt(self):
+		return self._AnlAggt
+
+	@AnlAggt.setter
+	def AnlAggt(self, value):
+		self._AnlAggt = value if type(value) != auto else self.make_default("AnlAggt")
+
+	@AnlAggt.deleter
+	def AnlAggt(self):
+		del self._AnlAggt
+		self._AnlAggt = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -32,22 +45,9 @@ class SettlementFailsAnnualReportV01(base_types._BaseFieldType):
 		del self._RptHdr
 		self._RptHdr = None
 
-	@property
-	def AnlAggt(self):
-		return self._AnlAggt
-
-	@AnlAggt.setter
-	def AnlAggt(self, value):
-		self._AnlAggt = value if type(value) != auto else self.make_default("AnlAggt")
-
-	@AnlAggt.deleter
-	def AnlAggt(self):
-		del self._AnlAggt
-		self._AnlAggt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AnlAggt', type=SettlementFailsData4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptHdr', type=SettlementFailsReportHeader2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AnlAggt', type=SettlementFailsData4, min=1, max=1, mutex_group=None, array=False),
 	))
 

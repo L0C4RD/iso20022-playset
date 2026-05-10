@@ -1,11 +1,11 @@
 from . import base_types
-import RTPPartyIdentification2
-import Max35Text
-import ISODateTime
+from .Max35Text import Max35Text
+from .ISODateTime import ISODateTime
+from .RTPPartyIdentification2 import RTPPartyIdentification2
 
 class EnrolmentHeader3(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_InitgPty", "_MsgRcpt", "_MsgOrgtr", "_CreDtTm"]
+	__slots__ = ["_MsgId", "_InitgPty", "_MsgOrgtr", "_MsgRcpt", "_CreDtTm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -33,19 +33,6 @@ class EnrolmentHeader3(base_types._BaseFieldType):
 		self._InitgPty = None
 
 	@property
-	def MsgRcpt(self):
-		return self._MsgRcpt
-
-	@MsgRcpt.setter
-	def MsgRcpt(self, value):
-		self._MsgRcpt = value if type(value) != auto else self.make_default("MsgRcpt")
-
-	@MsgRcpt.deleter
-	def MsgRcpt(self):
-		del self._MsgRcpt
-		self._MsgRcpt = None
-
-	@property
 	def MsgOrgtr(self):
 		return self._MsgOrgtr
 
@@ -57,6 +44,19 @@ class EnrolmentHeader3(base_types._BaseFieldType):
 	def MsgOrgtr(self):
 		del self._MsgOrgtr
 		self._MsgOrgtr = None
+
+	@property
+	def MsgRcpt(self):
+		return self._MsgRcpt
+
+	@MsgRcpt.setter
+	def MsgRcpt(self, value):
+		self._MsgRcpt = value if type(value) != auto else self.make_default("MsgRcpt")
+
+	@MsgRcpt.deleter
+	def MsgRcpt(self):
+		del self._MsgRcpt
+		self._MsgRcpt = None
 
 	@property
 	def CreDtTm(self):
@@ -74,8 +74,8 @@ class EnrolmentHeader3(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitgPty', type=RTPPartyIdentification2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgRcpt', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgOrgtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgRcpt', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,15 +1,15 @@
 from . import base_types
-import Number
-import MarketIdentification89
-import DateAndDateTime2Choice
-import ValuationFactorBreakdown1
-import Price7
-import ActiveOrHistoricCurrencyAndAmount
-import CollateralAmount4
+from .MarketIdentification89 import MarketIdentification89
+from .CollateralAmount4 import CollateralAmount4
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .Number import Number
+from .Price7 import Price7
+from .ValuationFactorBreakdown1 import ValuationFactorBreakdown1
 
 class ValuationsDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_ValtnFctrBrkdwn", "_SrcOfPric", "_SttlmDt", "_NbOfDaysAcrd", "_AcrdIntrst", "_CleanPric", "_QtnAge", "_MktPric", "_ValtnDtlsAmt"]
+	__slots__ = ["_ValtnFctrBrkdwn", "_AcrdIntrst", "_ValtnDtlsAmt", "_NbOfDaysAcrd", "_CleanPric", "_SttlmDt", "_SrcOfPric", "_QtnAge", "_MktPric"]
 	@property
 	def ValtnFctrBrkdwn(self):
 		return self._ValtnFctrBrkdwn
@@ -22,45 +22,6 @@ class ValuationsDetails1(base_types._BaseFieldType):
 	def ValtnFctrBrkdwn(self):
 		del self._ValtnFctrBrkdwn
 		self._ValtnFctrBrkdwn = None
-
-	@property
-	def SrcOfPric(self):
-		return self._SrcOfPric
-
-	@SrcOfPric.setter
-	def SrcOfPric(self, value):
-		self._SrcOfPric = value if type(value) != auto else self.make_default("SrcOfPric")
-
-	@SrcOfPric.deleter
-	def SrcOfPric(self):
-		del self._SrcOfPric
-		self._SrcOfPric = None
-
-	@property
-	def SttlmDt(self):
-		return self._SttlmDt
-
-	@SttlmDt.setter
-	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != auto else self.make_default("SttlmDt")
-
-	@SttlmDt.deleter
-	def SttlmDt(self):
-		del self._SttlmDt
-		self._SttlmDt = None
-
-	@property
-	def NbOfDaysAcrd(self):
-		return self._NbOfDaysAcrd
-
-	@NbOfDaysAcrd.setter
-	def NbOfDaysAcrd(self, value):
-		self._NbOfDaysAcrd = value if type(value) != auto else self.make_default("NbOfDaysAcrd")
-
-	@NbOfDaysAcrd.deleter
-	def NbOfDaysAcrd(self):
-		del self._NbOfDaysAcrd
-		self._NbOfDaysAcrd = None
 
 	@property
 	def AcrdIntrst(self):
@@ -76,6 +37,32 @@ class ValuationsDetails1(base_types._BaseFieldType):
 		self._AcrdIntrst = None
 
 	@property
+	def ValtnDtlsAmt(self):
+		return self._ValtnDtlsAmt
+
+	@ValtnDtlsAmt.setter
+	def ValtnDtlsAmt(self, value):
+		self._ValtnDtlsAmt = value if type(value) != auto else self.make_default("ValtnDtlsAmt")
+
+	@ValtnDtlsAmt.deleter
+	def ValtnDtlsAmt(self):
+		del self._ValtnDtlsAmt
+		self._ValtnDtlsAmt = None
+
+	@property
+	def NbOfDaysAcrd(self):
+		return self._NbOfDaysAcrd
+
+	@NbOfDaysAcrd.setter
+	def NbOfDaysAcrd(self, value):
+		self._NbOfDaysAcrd = value if type(value) != auto else self.make_default("NbOfDaysAcrd")
+
+	@NbOfDaysAcrd.deleter
+	def NbOfDaysAcrd(self):
+		del self._NbOfDaysAcrd
+		self._NbOfDaysAcrd = None
+
+	@property
 	def CleanPric(self):
 		return self._CleanPric
 
@@ -87,6 +74,32 @@ class ValuationsDetails1(base_types._BaseFieldType):
 	def CleanPric(self):
 		del self._CleanPric
 		self._CleanPric = None
+
+	@property
+	def SttlmDt(self):
+		return self._SttlmDt
+
+	@SttlmDt.setter
+	def SttlmDt(self, value):
+		self._SttlmDt = value if type(value) != auto else self.make_default("SttlmDt")
+
+	@SttlmDt.deleter
+	def SttlmDt(self):
+		del self._SttlmDt
+		self._SttlmDt = None
+
+	@property
+	def SrcOfPric(self):
+		return self._SrcOfPric
+
+	@SrcOfPric.setter
+	def SrcOfPric(self, value):
+		self._SrcOfPric = value if type(value) != auto else self.make_default("SrcOfPric")
+
+	@SrcOfPric.deleter
+	def SrcOfPric(self):
+		del self._SrcOfPric
+		self._SrcOfPric = None
 
 	@property
 	def QtnAge(self):
@@ -114,28 +127,15 @@ class ValuationsDetails1(base_types._BaseFieldType):
 		del self._MktPric
 		self._MktPric = None
 
-	@property
-	def ValtnDtlsAmt(self):
-		return self._ValtnDtlsAmt
-
-	@ValtnDtlsAmt.setter
-	def ValtnDtlsAmt(self, value):
-		self._ValtnDtlsAmt = value if type(value) != auto else self.make_default("ValtnDtlsAmt")
-
-	@ValtnDtlsAmt.deleter
-	def ValtnDtlsAmt(self):
-		del self._ValtnDtlsAmt
-		self._ValtnDtlsAmt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ValtnFctrBrkdwn', type=ValuationFactorBreakdown1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrcOfPric', type=MarketIdentification89, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfDaysAcrd', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcrdIntrst', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnDtlsAmt', type=CollateralAmount4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfDaysAcrd', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CleanPric', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrcOfPric', type=MarketIdentification89, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtnAge', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktPric', type=Price7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnDtlsAmt', type=CollateralAmount4, min=1, max=1, mutex_group=None, array=False),
 	))
 

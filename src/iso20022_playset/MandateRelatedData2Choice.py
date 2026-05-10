@@ -1,6 +1,6 @@
 from . import base_types
-import CreditTransferMandateData1
-import MandateRelatedInformation15
+from .CreditTransferMandateData1 import CreditTransferMandateData1
+from .MandateRelatedInformation15 import MandateRelatedInformation15
 
 class MandateRelatedData2Choice(base_types._BaseFieldType):
 

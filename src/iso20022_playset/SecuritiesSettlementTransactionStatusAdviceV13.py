@@ -1,41 +1,15 @@
 from . import base_types
-import Linkages41
-import MatchingStatus24Choice
-import TransactionDetails166
-import TransactionIdentifications47
-import SupplementaryData1
-import ProcessingStatus88Choice
-import SettlementStatus30Choice
+from .TransactionDetails166 import TransactionDetails166
+from .SupplementaryData1 import SupplementaryData1
+from .TransactionIdentifications47 import TransactionIdentifications47
+from .SettlementStatus30Choice import SettlementStatus30Choice
+from .MatchingStatus24Choice import MatchingStatus24Choice
+from .Linkages41 import Linkages41
+from .ProcessingStatus88Choice import ProcessingStatus88Choice
 
 class SecuritiesSettlementTransactionStatusAdviceV13(base_types._BaseFieldType):
 
-	__slots__ = ["_IfrrdMtchgSts", "_SplmtryData", "_Lnkgs", "_PrcgSts", "_SttlmSts", "_MtchgSts", "_TxId", "_TxDtls"]
-	@property
-	def IfrrdMtchgSts(self):
-		return self._IfrrdMtchgSts
-
-	@IfrrdMtchgSts.setter
-	def IfrrdMtchgSts(self, value):
-		self._IfrrdMtchgSts = value if type(value) != auto else self.make_default("IfrrdMtchgSts")
-
-	@IfrrdMtchgSts.deleter
-	def IfrrdMtchgSts(self):
-		del self._IfrrdMtchgSts
-		self._IfrrdMtchgSts = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_Lnkgs", "_IfrrdMtchgSts", "_PrcgSts", "_MtchgSts", "_SplmtryData", "_TxId", "_TxDtls", "_SttlmSts"]
 	@property
 	def Lnkgs(self):
 		return self._Lnkgs
@@ -48,6 +22,19 @@ class SecuritiesSettlementTransactionStatusAdviceV13(base_types._BaseFieldType):
 	def Lnkgs(self):
 		del self._Lnkgs
 		self._Lnkgs = None
+
+	@property
+	def IfrrdMtchgSts(self):
+		return self._IfrrdMtchgSts
+
+	@IfrrdMtchgSts.setter
+	def IfrrdMtchgSts(self, value):
+		self._IfrrdMtchgSts = value if type(value) != auto else self.make_default("IfrrdMtchgSts")
+
+	@IfrrdMtchgSts.deleter
+	def IfrrdMtchgSts(self):
+		del self._IfrrdMtchgSts
+		self._IfrrdMtchgSts = None
 
 	@property
 	def PrcgSts(self):
@@ -63,19 +50,6 @@ class SecuritiesSettlementTransactionStatusAdviceV13(base_types._BaseFieldType):
 		self._PrcgSts = None
 
 	@property
-	def SttlmSts(self):
-		return self._SttlmSts
-
-	@SttlmSts.setter
-	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != auto else self.make_default("SttlmSts")
-
-	@SttlmSts.deleter
-	def SttlmSts(self):
-		del self._SttlmSts
-		self._SttlmSts = None
-
-	@property
 	def MtchgSts(self):
 		return self._MtchgSts
 
@@ -87,6 +61,19 @@ class SecuritiesSettlementTransactionStatusAdviceV13(base_types._BaseFieldType):
 	def MtchgSts(self):
 		del self._MtchgSts
 		self._MtchgSts = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def TxId(self):
@@ -114,14 +101,27 @@ class SecuritiesSettlementTransactionStatusAdviceV13(base_types._BaseFieldType):
 		del self._TxDtls
 		self._TxDtls = None
 
+	@property
+	def SttlmSts(self):
+		return self._SttlmSts
+
+	@SttlmSts.setter
+	def SttlmSts(self, value):
+		self._SttlmSts = value if type(value) != auto else self.make_default("SttlmSts")
+
+	@SttlmSts.deleter
+	def SttlmSts(self):
+		del self._SttlmSts
+		self._SttlmSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus24Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Lnkgs', type=Linkages41, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus24Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus88Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus30Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus24Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifications47, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtls', type=TransactionDetails166, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus30Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

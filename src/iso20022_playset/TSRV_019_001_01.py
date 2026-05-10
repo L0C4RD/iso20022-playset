@@ -1,5 +1,5 @@
 from . import base_types
-import UndertakingStatusReportV01
+from .UndertakingStatusReportV01 import UndertakingStatusReportV01
 
 class TSRV_019_001_01():
 

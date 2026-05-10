@@ -1,27 +1,14 @@
 from . import base_types
-import ReportItemStatus1Choice
-import NumberOfItemsPerStatus1
-import MessageIdentification1
-import PartyIdentification100
-import StatementReference1
-import SupplementaryData1
+from .MessageIdentification1 import MessageIdentification1
+from .ReportItemStatus1Choice import ReportItemStatus1Choice
+from .SupplementaryData1 import SupplementaryData1
+from .PartyIdentification100 import PartyIdentification100
+from .StatementReference1 import StatementReference1
+from .NumberOfItemsPerStatus1 import NumberOfItemsPerStatus1
 
 class SecuritiesBalanceTransparencyReportStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RcvrId", "_RltdStmt", "_MsgId", "_SndrId", "_SplmtryData", "_NbOfItmsPerSts", "_Sts"]
-	@property
-	def RcvrId(self):
-		return self._RcvrId
-
-	@RcvrId.setter
-	def RcvrId(self, value):
-		self._RcvrId = value if type(value) != auto else self.make_default("RcvrId")
-
-	@RcvrId.deleter
-	def RcvrId(self):
-		del self._RcvrId
-		self._RcvrId = None
-
+	__slots__ = ["_RltdStmt", "_MsgId", "_SplmtryData", "_SndrId", "_RcvrId", "_Sts", "_NbOfItmsPerSts"]
 	@property
 	def RltdStmt(self):
 		return self._RltdStmt
@@ -49,19 +36,6 @@ class SecuritiesBalanceTransparencyReportStatusAdviceV01(base_types._BaseFieldTy
 		self._MsgId = None
 
 	@property
-	def SndrId(self):
-		return self._SndrId
-
-	@SndrId.setter
-	def SndrId(self, value):
-		self._SndrId = value if type(value) != auto else self.make_default("SndrId")
-
-	@SndrId.deleter
-	def SndrId(self):
-		del self._SndrId
-		self._SndrId = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -75,17 +49,30 @@ class SecuritiesBalanceTransparencyReportStatusAdviceV01(base_types._BaseFieldTy
 		self._SplmtryData = None
 
 	@property
-	def NbOfItmsPerSts(self):
-		return self._NbOfItmsPerSts
+	def SndrId(self):
+		return self._SndrId
 
-	@NbOfItmsPerSts.setter
-	def NbOfItmsPerSts(self, value):
-		self._NbOfItmsPerSts = value if type(value) != auto else self.make_default("NbOfItmsPerSts")
+	@SndrId.setter
+	def SndrId(self, value):
+		self._SndrId = value if type(value) != auto else self.make_default("SndrId")
 
-	@NbOfItmsPerSts.deleter
-	def NbOfItmsPerSts(self):
-		del self._NbOfItmsPerSts
-		self._NbOfItmsPerSts = None
+	@SndrId.deleter
+	def SndrId(self):
+		del self._SndrId
+		self._SndrId = None
+
+	@property
+	def RcvrId(self):
+		return self._RcvrId
+
+	@RcvrId.setter
+	def RcvrId(self, value):
+		self._RcvrId = value if type(value) != auto else self.make_default("RcvrId")
+
+	@RcvrId.deleter
+	def RcvrId(self):
+		del self._RcvrId
+		self._RcvrId = None
 
 	@property
 	def Sts(self):
@@ -100,13 +87,26 @@ class SecuritiesBalanceTransparencyReportStatusAdviceV01(base_types._BaseFieldTy
 		del self._Sts
 		self._Sts = None
 
+	@property
+	def NbOfItmsPerSts(self):
+		return self._NbOfItmsPerSts
+
+	@NbOfItmsPerSts.setter
+	def NbOfItmsPerSts(self, value):
+		self._NbOfItmsPerSts = value if type(value) != auto else self.make_default("NbOfItmsPerSts")
+
+	@NbOfItmsPerSts.deleter
+	def NbOfItmsPerSts(self):
+		del self._NbOfItmsPerSts
+		self._NbOfItmsPerSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcvrId', type=PartyIdentification100, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdStmt', type=StatementReference1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SndrId', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NbOfItmsPerSts', type=NumberOfItemsPerStatus1, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SndrId', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvrId', type=PartyIdentification100, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=ReportItemStatus1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfItmsPerSts', type=NumberOfItemsPerStatus1, min=0, max=2, mutex_group=None, array=True),
 	))
 

@@ -1,12 +1,12 @@
 from . import base_types
-import SecurityPosition23
-import SupplementaryData1
-import MeetingCancellationReason2
-import MeetingReference10
+from .MeetingReference10 import MeetingReference10
+from .MeetingCancellationReason2 import MeetingCancellationReason2
+from .SupplementaryData1 import SupplementaryData1
+from .SecurityPosition23 import SecurityPosition23
 
 class MeetingCancellationV10(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Scty", "_MtgRef", "_Rsn"]
+	__slots__ = ["_SplmtryData", "_MtgRef", "_Scty", "_Rsn"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -21,19 +21,6 @@ class MeetingCancellationV10(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Scty(self):
-		return self._Scty
-
-	@Scty.setter
-	def Scty(self, value):
-		self._Scty = value if type(value) != auto else self.make_default("Scty")
-
-	@Scty.deleter
-	def Scty(self):
-		del self._Scty
-		self._Scty = None
-
-	@property
 	def MtgRef(self):
 		return self._MtgRef
 
@@ -45,6 +32,19 @@ class MeetingCancellationV10(base_types._BaseFieldType):
 	def MtgRef(self):
 		del self._MtgRef
 		self._MtgRef = None
+
+	@property
+	def Scty(self):
+		return self._Scty
+
+	@Scty.setter
+	def Scty(self, value):
+		self._Scty = value if type(value) != auto else self.make_default("Scty")
+
+	@Scty.deleter
+	def Scty(self):
+		del self._Scty
+		self._Scty = None
 
 	@property
 	def Rsn(self):
@@ -61,8 +61,8 @@ class MeetingCancellationV10(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Scty', type=SecurityPosition23, min=1, max=200, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MtgRef', type=MeetingReference10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Scty', type=SecurityPosition23, min=1, max=200, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rsn', type=MeetingCancellationReason2, min=1, max=1, mutex_group=None, array=False),
 	))
 

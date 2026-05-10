@@ -1,24 +1,24 @@
 from . import base_types
-import ActiveOrHistoricCurrencyCode
-import PartyIdentification137Choice
-import BaseOneRate
-import ISODateTime
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .BaseOneRate import BaseOneRate
+from .ISODateTime import ISODateTime
+from .PartyIdentification137Choice import PartyIdentification137Choice
 
 class ForeignExchangeTerms35(base_types._BaseFieldType):
 
-	__slots__ = ["_QtdCcy", "_QtnDt", "_XchgRate", "_QtgInstn", "_UnitCcy"]
+	__slots__ = ["_QtgInstn", "_QtnDt", "_QtdCcy", "_XchgRate", "_UnitCcy"]
 	@property
-	def QtdCcy(self):
-		return self._QtdCcy
+	def QtgInstn(self):
+		return self._QtgInstn
 
-	@QtdCcy.setter
-	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != auto else self.make_default("QtdCcy")
+	@QtgInstn.setter
+	def QtgInstn(self, value):
+		self._QtgInstn = value if type(value) != auto else self.make_default("QtgInstn")
 
-	@QtdCcy.deleter
-	def QtdCcy(self):
-		del self._QtdCcy
-		self._QtdCcy = None
+	@QtgInstn.deleter
+	def QtgInstn(self):
+		del self._QtgInstn
+		self._QtgInstn = None
 
 	@property
 	def QtnDt(self):
@@ -34,6 +34,19 @@ class ForeignExchangeTerms35(base_types._BaseFieldType):
 		self._QtnDt = None
 
 	@property
+	def QtdCcy(self):
+		return self._QtdCcy
+
+	@QtdCcy.setter
+	def QtdCcy(self, value):
+		self._QtdCcy = value if type(value) != auto else self.make_default("QtdCcy")
+
+	@QtdCcy.deleter
+	def QtdCcy(self):
+		del self._QtdCcy
+		self._QtdCcy = None
+
+	@property
 	def XchgRate(self):
 		return self._XchgRate
 
@@ -45,19 +58,6 @@ class ForeignExchangeTerms35(base_types._BaseFieldType):
 	def XchgRate(self):
 		del self._XchgRate
 		self._XchgRate = None
-
-	@property
-	def QtgInstn(self):
-		return self._QtgInstn
-
-	@QtgInstn.setter
-	def QtgInstn(self, value):
-		self._QtgInstn = value if type(value) != auto else self.make_default("QtgInstn")
-
-	@QtgInstn.deleter
-	def QtgInstn(self):
-		del self._QtgInstn
-		self._QtgInstn = None
 
 	@property
 	def UnitCcy(self):
@@ -73,10 +73,10 @@ class ForeignExchangeTerms35(base_types._BaseFieldType):
 		self._UnitCcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QtdCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtgInstn', type=PartyIdentification137Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtdCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

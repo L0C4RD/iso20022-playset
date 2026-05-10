@@ -1,5 +1,5 @@
 from . import base_types
-import CCPDailyCashFlowsReportV02
+from .CCPDailyCashFlowsReportV02 import CCPDailyCashFlowsReportV02
 
 class AUTH_060_001_02():
 

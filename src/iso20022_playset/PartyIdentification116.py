@@ -1,23 +1,23 @@
 from . import base_types
-import OrganisationIdentification28
-import TaxParty1
-import LegalOrganisation1
+from .TaxParty1 import TaxParty1
+from .LegalOrganisation1 import LegalOrganisation1
+from .OrganisationIdentification28 import OrganisationIdentification28
 
 class PartyIdentification116(base_types._BaseFieldType):
 
-	__slots__ = ["_LglOrg", "_PtyId", "_TaxPty"]
+	__slots__ = ["_TaxPty", "_PtyId", "_LglOrg"]
 	@property
-	def LglOrg(self):
-		return self._LglOrg
+	def TaxPty(self):
+		return self._TaxPty
 
-	@LglOrg.setter
-	def LglOrg(self, value):
-		self._LglOrg = value if type(value) != auto else self.make_default("LglOrg")
+	@TaxPty.setter
+	def TaxPty(self, value):
+		self._TaxPty = value if type(value) != auto else self.make_default("TaxPty")
 
-	@LglOrg.deleter
-	def LglOrg(self):
-		del self._LglOrg
-		self._LglOrg = None
+	@TaxPty.deleter
+	def TaxPty(self):
+		del self._TaxPty
+		self._TaxPty = None
 
 	@property
 	def PtyId(self):
@@ -33,21 +33,21 @@ class PartyIdentification116(base_types._BaseFieldType):
 		self._PtyId = None
 
 	@property
-	def TaxPty(self):
-		return self._TaxPty
+	def LglOrg(self):
+		return self._LglOrg
 
-	@TaxPty.setter
-	def TaxPty(self, value):
-		self._TaxPty = value if type(value) != auto else self.make_default("TaxPty")
+	@LglOrg.setter
+	def LglOrg(self, value):
+		self._LglOrg = value if type(value) != auto else self.make_default("LglOrg")
 
-	@TaxPty.deleter
-	def TaxPty(self):
-		del self._TaxPty
-		self._TaxPty = None
+	@LglOrg.deleter
+	def LglOrg(self):
+		del self._LglOrg
+		self._LglOrg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LglOrg', type=LegalOrganisation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyId', type=OrganisationIdentification28, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxPty', type=TaxParty1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyId', type=OrganisationIdentification28, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglOrg', type=LegalOrganisation1, min=0, max=1, mutex_group=None, array=False),
 	))
 

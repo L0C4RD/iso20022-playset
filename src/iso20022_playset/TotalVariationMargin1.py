@@ -1,23 +1,10 @@
 from . import base_types
-import Amount2
-import ShortLong1Code
+from .ShortLong1Code import ShortLong1Code
+from .Amount2 import Amount2
 
 class TotalVariationMargin1(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtLngInd", "_AmtDtls"]
-	@property
-	def ShrtLngInd(self):
-		return self._ShrtLngInd
-
-	@ShrtLngInd.setter
-	def ShrtLngInd(self, value):
-		self._ShrtLngInd = value if type(value) != auto else self.make_default("ShrtLngInd")
-
-	@ShrtLngInd.deleter
-	def ShrtLngInd(self):
-		del self._ShrtLngInd
-		self._ShrtLngInd = None
-
+	__slots__ = ["_AmtDtls", "_ShrtLngInd"]
 	@property
 	def AmtDtls(self):
 		return self._AmtDtls
@@ -31,8 +18,21 @@ class TotalVariationMargin1(base_types._BaseFieldType):
 		del self._AmtDtls
 		self._AmtDtls = None
 
+	@property
+	def ShrtLngInd(self):
+		return self._ShrtLngInd
+
+	@ShrtLngInd.setter
+	def ShrtLngInd(self, value):
+		self._ShrtLngInd = value if type(value) != auto else self.make_default("ShrtLngInd")
+
+	@ShrtLngInd.deleter
+	def ShrtLngInd(self):
+		del self._ShrtLngInd
+		self._ShrtLngInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ShrtLngInd', type=ShortLong1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtDtls', type=Amount2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtLngInd', type=ShortLong1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

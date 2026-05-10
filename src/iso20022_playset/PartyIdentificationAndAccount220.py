@@ -1,14 +1,14 @@
 from . import base_types
-import CountryCode
-import CashAccountIdentification5Choice
-import PartyIdentification240Choice
-import PartyTextInformation1
-import Max35Text
-import AlternatePartyIdentification8
+from .CountryCode import CountryCode
+from .Max35Text import Max35Text
+from .PartyTextInformation1 import PartyTextInformation1
+from .CashAccountIdentification5Choice import CashAccountIdentification5Choice
+from .PartyIdentification240Choice import PartyIdentification240Choice
+from .AlternatePartyIdentification8 import AlternatePartyIdentification8
 
 class PartyIdentificationAndAccount220(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CtryOfRes", "_SfkpgAcct", "_PrcgId", "_CshAcct", "_AddtlInf", "_AltrnId"]
+	__slots__ = ["_Id", "_CtryOfRes", "_SfkpgAcct", "_CshAcct", "_PrcgId", "_AltrnId", "_AddtlInf"]
 	@property
 	def Id(self):
 		return self._Id
@@ -49,19 +49,6 @@ class PartyIdentificationAndAccount220(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
-	def PrcgId(self):
-		return self._PrcgId
-
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
-
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
-
-	@property
 	def CshAcct(self):
 		return self._CshAcct
 
@@ -75,17 +62,17 @@ class PartyIdentificationAndAccount220(base_types._BaseFieldType):
 		self._CshAcct = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def PrcgId(self):
+		return self._PrcgId
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
 
 	@property
 	def AltrnId(self):
@@ -100,13 +87,26 @@ class PartyIdentificationAndAccount220(base_types._BaseFieldType):
 		del self._AltrnId
 		self._AltrnId = None
 
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=PartyIdentification240Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation1, min=0, max=1, mutex_group=None, array=False),
 	))
 

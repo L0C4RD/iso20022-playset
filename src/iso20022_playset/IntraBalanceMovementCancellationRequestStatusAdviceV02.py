@@ -1,30 +1,17 @@
 from . import base_types
-import References14
-import DocumentIdentification51
-import IntraBalance5
-import SupplementaryData1
-import Max35Text
-import BranchAndFinancialInstitutionIdentification8
-import CashAccount40
-import ProcessingStatus69Choice
-import SystemPartyIdentification8
+from .References14 import References14
+from .Max35Text import Max35Text
+from .IntraBalance5 import IntraBalance5
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .DocumentIdentification51 import DocumentIdentification51
+from .SupplementaryData1 import SupplementaryData1
+from .SystemPartyIdentification8 import SystemPartyIdentification8
+from .ProcessingStatus69Choice import ProcessingStatus69Choice
+from .CashAccount40 import CashAccount40
 
 class IntraBalanceMovementCancellationRequestStatusAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqRef", "_UndrlygIntraBal", "_SplmtryData", "_Id", "_TxId", "_PrcgSts", "_CshAcctSvcr", "_CshAcct", "_CshAcctOwnr"]
-	@property
-	def ReqRef(self):
-		return self._ReqRef
-
-	@ReqRef.setter
-	def ReqRef(self, value):
-		self._ReqRef = value if type(value) != auto else self.make_default("ReqRef")
-
-	@ReqRef.deleter
-	def ReqRef(self):
-		del self._ReqRef
-		self._ReqRef = None
-
+	__slots__ = ["_UndrlygIntraBal", "_Id", "_TxId", "_PrcgSts", "_CshAcct", "_ReqRef", "_SplmtryData", "_CshAcctSvcr", "_CshAcctOwnr"]
 	@property
 	def UndrlygIntraBal(self):
 		return self._UndrlygIntraBal
@@ -37,19 +24,6 @@ class IntraBalanceMovementCancellationRequestStatusAdviceV02(base_types._BaseFie
 	def UndrlygIntraBal(self):
 		del self._UndrlygIntraBal
 		self._UndrlygIntraBal = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
 
 	@property
 	def Id(self):
@@ -91,19 +65,6 @@ class IntraBalanceMovementCancellationRequestStatusAdviceV02(base_types._BaseFie
 		self._PrcgSts = None
 
 	@property
-	def CshAcctSvcr(self):
-		return self._CshAcctSvcr
-
-	@CshAcctSvcr.setter
-	def CshAcctSvcr(self, value):
-		self._CshAcctSvcr = value if type(value) != auto else self.make_default("CshAcctSvcr")
-
-	@CshAcctSvcr.deleter
-	def CshAcctSvcr(self):
-		del self._CshAcctSvcr
-		self._CshAcctSvcr = None
-
-	@property
 	def CshAcct(self):
 		return self._CshAcct
 
@@ -115,6 +76,45 @@ class IntraBalanceMovementCancellationRequestStatusAdviceV02(base_types._BaseFie
 	def CshAcct(self):
 		del self._CshAcct
 		self._CshAcct = None
+
+	@property
+	def ReqRef(self):
+		return self._ReqRef
+
+	@ReqRef.setter
+	def ReqRef(self, value):
+		self._ReqRef = value if type(value) != auto else self.make_default("ReqRef")
+
+	@ReqRef.deleter
+	def ReqRef(self):
+		del self._ReqRef
+		self._ReqRef = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def CshAcctSvcr(self):
+		return self._CshAcctSvcr
+
+	@CshAcctSvcr.setter
+	def CshAcctSvcr(self, value):
+		self._CshAcctSvcr = value if type(value) != auto else self.make_default("CshAcctSvcr")
+
+	@CshAcctSvcr.deleter
+	def CshAcctSvcr(self):
+		del self._CshAcctSvcr
+		self._CshAcctSvcr = None
 
 	@property
 	def CshAcctOwnr(self):
@@ -130,14 +130,14 @@ class IntraBalanceMovementCancellationRequestStatusAdviceV02(base_types._BaseFie
 		self._CshAcctOwnr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygIntraBal', type=IntraBalance5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=References14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus69Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

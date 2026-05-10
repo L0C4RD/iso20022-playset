@@ -1,24 +1,24 @@
 from . import base_types
-import NetReportData2
-import SupplementaryData1
-import NetObligation3
-import PartyIdentification242Choice
+from .NetObligation3 import NetObligation3
+from .SupplementaryData1 import SupplementaryData1
+from .NetReportData2 import NetReportData2
+from .PartyIdentification242Choice import PartyIdentification242Choice
 
 class NetReportV03(base_types._BaseFieldType):
 
-	__slots__ = ["_NetSvcCtrPtyId", "_NetRptData", "_SplmtryData", "_NetOblgtn", "_NetSvcPtcptId"]
+	__slots__ = ["_NetOblgtn", "_NetRptData", "_SplmtryData", "_NetSvcPtcptId", "_NetSvcCtrPtyId"]
 	@property
-	def NetSvcCtrPtyId(self):
-		return self._NetSvcCtrPtyId
+	def NetOblgtn(self):
+		return self._NetOblgtn
 
-	@NetSvcCtrPtyId.setter
-	def NetSvcCtrPtyId(self, value):
-		self._NetSvcCtrPtyId = value if type(value) != auto else self.make_default("NetSvcCtrPtyId")
+	@NetOblgtn.setter
+	def NetOblgtn(self, value):
+		self._NetOblgtn = value if type(value) != auto else self.make_default("NetOblgtn")
 
-	@NetSvcCtrPtyId.deleter
-	def NetSvcCtrPtyId(self):
-		del self._NetSvcCtrPtyId
-		self._NetSvcCtrPtyId = None
+	@NetOblgtn.deleter
+	def NetOblgtn(self):
+		del self._NetOblgtn
+		self._NetOblgtn = None
 
 	@property
 	def NetRptData(self):
@@ -47,19 +47,6 @@ class NetReportV03(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def NetOblgtn(self):
-		return self._NetOblgtn
-
-	@NetOblgtn.setter
-	def NetOblgtn(self, value):
-		self._NetOblgtn = value if type(value) != auto else self.make_default("NetOblgtn")
-
-	@NetOblgtn.deleter
-	def NetOblgtn(self):
-		del self._NetOblgtn
-		self._NetOblgtn = None
-
-	@property
 	def NetSvcPtcptId(self):
 		return self._NetSvcPtcptId
 
@@ -72,11 +59,24 @@ class NetReportV03(base_types._BaseFieldType):
 		del self._NetSvcPtcptId
 		self._NetSvcPtcptId = None
 
+	@property
+	def NetSvcCtrPtyId(self):
+		return self._NetSvcCtrPtyId
+
+	@NetSvcCtrPtyId.setter
+	def NetSvcCtrPtyId(self, value):
+		self._NetSvcCtrPtyId = value if type(value) != auto else self.make_default("NetSvcCtrPtyId")
+
+	@NetSvcCtrPtyId.deleter
+	def NetSvcCtrPtyId(self):
+		del self._NetSvcCtrPtyId
+		self._NetSvcCtrPtyId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NetSvcCtrPtyId', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetOblgtn', type=NetObligation3, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NetRptData', type=NetReportData2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NetOblgtn', type=NetObligation3, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NetSvcPtcptId', type=PartyIdentification242Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetSvcCtrPtyId', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

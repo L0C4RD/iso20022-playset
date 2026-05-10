@@ -1,24 +1,11 @@
 from . import base_types
-import IBAN2007Identifier
-import BlockChainAddressWallet11
-import RestrictedFINX2Max34Text
+from .IBAN2007Identifier import IBAN2007Identifier
+from .BlockChainAddressWallet11 import BlockChainAddressWallet11
+from .RestrictedFINX2Max34Text import RestrictedFINX2Max34Text
 
 class CashAccountIdentification12Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IBAN", "_BlckChainCshWllt", "_Prtry"]
-	@property
-	def IBAN(self):
-		return self._IBAN
-
-	@IBAN.setter
-	def IBAN(self, value):
-		self._IBAN = value if type(value) != auto else self.make_default("IBAN")
-
-	@IBAN.deleter
-	def IBAN(self):
-		del self._IBAN
-		self._IBAN = None
-
+	__slots__ = ["_BlckChainCshWllt", "_IBAN", "_Prtry"]
 	@property
 	def BlckChainCshWllt(self):
 		return self._BlckChainCshWllt
@@ -31,6 +18,19 @@ class CashAccountIdentification12Choice(base_types._BaseFieldType):
 	def BlckChainCshWllt(self):
 		del self._BlckChainCshWllt
 		self._BlckChainCshWllt = None
+
+	@property
+	def IBAN(self):
+		return self._IBAN
+
+	@IBAN.setter
+	def IBAN(self, value):
+		self._IBAN = value if type(value) != auto else self.make_default("IBAN")
+
+	@IBAN.deleter
+	def IBAN(self):
+		del self._IBAN
+		self._IBAN = None
 
 	@property
 	def Prtry(self):
@@ -46,8 +46,8 @@ class CashAccountIdentification12Choice(base_types._BaseFieldType):
 		self._Prtry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BlckChainCshWllt', type=BlockChainAddressWallet11, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=RestrictedFINX2Max34Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,35 +1,61 @@
 from . import base_types
-import ISODate
-import PercentageRate
-import InterestRateType1Code
-import DateAndDateTimeChoice
-import Collateral18
-import SupplementaryData1
-import BrokeredDeal1Code
-import Max105Text
-import LEIIdentifier
-import ActiveCurrencyAndAmount
-import NovationStatus1Code
-import FloatingRateNote2
-import MoneyMarketTransactionType1Code
-import TransactionOperationType1Code
-import CounterpartyIdentification3Choice
+from .BrokeredDeal1Code import BrokeredDeal1Code
+from .NovationStatus1Code import NovationStatus1Code
+from .MoneyMarketTransactionType1Code import MoneyMarketTransactionType1Code
+from .ISODate import ISODate
+from .PercentageRate import PercentageRate
+from .DateAndDateTimeChoice import DateAndDateTimeChoice
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .InterestRateType1Code import InterestRateType1Code
+from .CounterpartyIdentification3Choice import CounterpartyIdentification3Choice
+from .FloatingRateNote2 import FloatingRateNote2
+from .SupplementaryData1 import SupplementaryData1
+from .LEIIdentifier import LEIIdentifier
+from .Collateral18 import Collateral18
+from .TransactionOperationType1Code import TransactionOperationType1Code
+from .Max105Text import Max105Text
 
 class SecuredMarketTransaction4(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyId", "_MtrtyDt", "_RateTp", "_NvtnSts", "_TradDt", "_CtrPtyPrtryTxId", "_DealRate", "_UnqTxIdr", "_RltdPrtryTxId", "_Coll", "_SplmtryData", "_PrtryTxId", "_BrkrdDeal", "_TrptyAgtId", "_TxNmnlAmt", "_BrnchId", "_FltgRateRpAgrmt", "_TxTp", "_SttlmDt", "_RptdTxSts"]
+	__slots__ = ["_BrkrdDeal", "_SttlmDt", "_TxNmnlAmt", "_MtrtyDt", "_CtrPtyPrtryTxId", "_NvtnSts", "_RateTp", "_BrnchId", "_DealRate", "_TradDt", "_TxTp", "_FltgRateRpAgrmt", "_RptdTxSts", "_PrtryTxId", "_CtrPtyId", "_Coll", "_SplmtryData", "_TrptyAgtId", "_RltdPrtryTxId", "_UnqTxIdr"]
 	@property
-	def CtrPtyId(self):
-		return self._CtrPtyId
+	def BrkrdDeal(self):
+		return self._BrkrdDeal
 
-	@CtrPtyId.setter
-	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != auto else self.make_default("CtrPtyId")
+	@BrkrdDeal.setter
+	def BrkrdDeal(self, value):
+		self._BrkrdDeal = value if type(value) != auto else self.make_default("BrkrdDeal")
 
-	@CtrPtyId.deleter
-	def CtrPtyId(self):
-		del self._CtrPtyId
-		self._CtrPtyId = None
+	@BrkrdDeal.deleter
+	def BrkrdDeal(self):
+		del self._BrkrdDeal
+		self._BrkrdDeal = None
+
+	@property
+	def SttlmDt(self):
+		return self._SttlmDt
+
+	@SttlmDt.setter
+	def SttlmDt(self, value):
+		self._SttlmDt = value if type(value) != auto else self.make_default("SttlmDt")
+
+	@SttlmDt.deleter
+	def SttlmDt(self):
+		del self._SttlmDt
+		self._SttlmDt = None
+
+	@property
+	def TxNmnlAmt(self):
+		return self._TxNmnlAmt
+
+	@TxNmnlAmt.setter
+	def TxNmnlAmt(self, value):
+		self._TxNmnlAmt = value if type(value) != auto else self.make_default("TxNmnlAmt")
+
+	@TxNmnlAmt.deleter
+	def TxNmnlAmt(self):
+		del self._TxNmnlAmt
+		self._TxNmnlAmt = None
 
 	@property
 	def MtrtyDt(self):
@@ -45,17 +71,17 @@ class SecuredMarketTransaction4(base_types._BaseFieldType):
 		self._MtrtyDt = None
 
 	@property
-	def RateTp(self):
-		return self._RateTp
+	def CtrPtyPrtryTxId(self):
+		return self._CtrPtyPrtryTxId
 
-	@RateTp.setter
-	def RateTp(self, value):
-		self._RateTp = value if type(value) != auto else self.make_default("RateTp")
+	@CtrPtyPrtryTxId.setter
+	def CtrPtyPrtryTxId(self, value):
+		self._CtrPtyPrtryTxId = value if type(value) != auto else self.make_default("CtrPtyPrtryTxId")
 
-	@RateTp.deleter
-	def RateTp(self):
-		del self._RateTp
-		self._RateTp = None
+	@CtrPtyPrtryTxId.deleter
+	def CtrPtyPrtryTxId(self):
+		del self._CtrPtyPrtryTxId
+		self._CtrPtyPrtryTxId = None
 
 	@property
 	def NvtnSts(self):
@@ -71,30 +97,30 @@ class SecuredMarketTransaction4(base_types._BaseFieldType):
 		self._NvtnSts = None
 
 	@property
-	def TradDt(self):
-		return self._TradDt
+	def RateTp(self):
+		return self._RateTp
 
-	@TradDt.setter
-	def TradDt(self, value):
-		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
+	@RateTp.setter
+	def RateTp(self, value):
+		self._RateTp = value if type(value) != auto else self.make_default("RateTp")
 
-	@TradDt.deleter
-	def TradDt(self):
-		del self._TradDt
-		self._TradDt = None
+	@RateTp.deleter
+	def RateTp(self):
+		del self._RateTp
+		self._RateTp = None
 
 	@property
-	def CtrPtyPrtryTxId(self):
-		return self._CtrPtyPrtryTxId
+	def BrnchId(self):
+		return self._BrnchId
 
-	@CtrPtyPrtryTxId.setter
-	def CtrPtyPrtryTxId(self, value):
-		self._CtrPtyPrtryTxId = value if type(value) != auto else self.make_default("CtrPtyPrtryTxId")
+	@BrnchId.setter
+	def BrnchId(self, value):
+		self._BrnchId = value if type(value) != auto else self.make_default("BrnchId")
 
-	@CtrPtyPrtryTxId.deleter
-	def CtrPtyPrtryTxId(self):
-		del self._CtrPtyPrtryTxId
-		self._CtrPtyPrtryTxId = None
+	@BrnchId.deleter
+	def BrnchId(self):
+		del self._BrnchId
+		self._BrnchId = None
 
 	@property
 	def DealRate(self):
@@ -110,30 +136,82 @@ class SecuredMarketTransaction4(base_types._BaseFieldType):
 		self._DealRate = None
 
 	@property
-	def UnqTxIdr(self):
-		return self._UnqTxIdr
+	def TradDt(self):
+		return self._TradDt
 
-	@UnqTxIdr.setter
-	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != auto else self.make_default("UnqTxIdr")
+	@TradDt.setter
+	def TradDt(self, value):
+		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
 
-	@UnqTxIdr.deleter
-	def UnqTxIdr(self):
-		del self._UnqTxIdr
-		self._UnqTxIdr = None
+	@TradDt.deleter
+	def TradDt(self):
+		del self._TradDt
+		self._TradDt = None
 
 	@property
-	def RltdPrtryTxId(self):
-		return self._RltdPrtryTxId
+	def TxTp(self):
+		return self._TxTp
 
-	@RltdPrtryTxId.setter
-	def RltdPrtryTxId(self, value):
-		self._RltdPrtryTxId = value if type(value) != auto else self.make_default("RltdPrtryTxId")
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
 
-	@RltdPrtryTxId.deleter
-	def RltdPrtryTxId(self):
-		del self._RltdPrtryTxId
-		self._RltdPrtryTxId = None
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
+	@property
+	def FltgRateRpAgrmt(self):
+		return self._FltgRateRpAgrmt
+
+	@FltgRateRpAgrmt.setter
+	def FltgRateRpAgrmt(self, value):
+		self._FltgRateRpAgrmt = value if type(value) != auto else self.make_default("FltgRateRpAgrmt")
+
+	@FltgRateRpAgrmt.deleter
+	def FltgRateRpAgrmt(self):
+		del self._FltgRateRpAgrmt
+		self._FltgRateRpAgrmt = None
+
+	@property
+	def RptdTxSts(self):
+		return self._RptdTxSts
+
+	@RptdTxSts.setter
+	def RptdTxSts(self, value):
+		self._RptdTxSts = value if type(value) != auto else self.make_default("RptdTxSts")
+
+	@RptdTxSts.deleter
+	def RptdTxSts(self):
+		del self._RptdTxSts
+		self._RptdTxSts = None
+
+	@property
+	def PrtryTxId(self):
+		return self._PrtryTxId
+
+	@PrtryTxId.setter
+	def PrtryTxId(self, value):
+		self._PrtryTxId = value if type(value) != auto else self.make_default("PrtryTxId")
+
+	@PrtryTxId.deleter
+	def PrtryTxId(self):
+		del self._PrtryTxId
+		self._PrtryTxId = None
+
+	@property
+	def CtrPtyId(self):
+		return self._CtrPtyId
+
+	@CtrPtyId.setter
+	def CtrPtyId(self, value):
+		self._CtrPtyId = value if type(value) != auto else self.make_default("CtrPtyId")
+
+	@CtrPtyId.deleter
+	def CtrPtyId(self):
+		del self._CtrPtyId
+		self._CtrPtyId = None
 
 	@property
 	def Coll(self):
@@ -162,32 +240,6 @@ class SecuredMarketTransaction4(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def PrtryTxId(self):
-		return self._PrtryTxId
-
-	@PrtryTxId.setter
-	def PrtryTxId(self, value):
-		self._PrtryTxId = value if type(value) != auto else self.make_default("PrtryTxId")
-
-	@PrtryTxId.deleter
-	def PrtryTxId(self):
-		del self._PrtryTxId
-		self._PrtryTxId = None
-
-	@property
-	def BrkrdDeal(self):
-		return self._BrkrdDeal
-
-	@BrkrdDeal.setter
-	def BrkrdDeal(self, value):
-		self._BrkrdDeal = value if type(value) != auto else self.make_default("BrkrdDeal")
-
-	@BrkrdDeal.deleter
-	def BrkrdDeal(self):
-		del self._BrkrdDeal
-		self._BrkrdDeal = None
-
-	@property
 	def TrptyAgtId(self):
 		return self._TrptyAgtId
 
@@ -201,103 +253,51 @@ class SecuredMarketTransaction4(base_types._BaseFieldType):
 		self._TrptyAgtId = None
 
 	@property
-	def TxNmnlAmt(self):
-		return self._TxNmnlAmt
+	def RltdPrtryTxId(self):
+		return self._RltdPrtryTxId
 
-	@TxNmnlAmt.setter
-	def TxNmnlAmt(self, value):
-		self._TxNmnlAmt = value if type(value) != auto else self.make_default("TxNmnlAmt")
+	@RltdPrtryTxId.setter
+	def RltdPrtryTxId(self, value):
+		self._RltdPrtryTxId = value if type(value) != auto else self.make_default("RltdPrtryTxId")
 
-	@TxNmnlAmt.deleter
-	def TxNmnlAmt(self):
-		del self._TxNmnlAmt
-		self._TxNmnlAmt = None
-
-	@property
-	def BrnchId(self):
-		return self._BrnchId
-
-	@BrnchId.setter
-	def BrnchId(self, value):
-		self._BrnchId = value if type(value) != auto else self.make_default("BrnchId")
-
-	@BrnchId.deleter
-	def BrnchId(self):
-		del self._BrnchId
-		self._BrnchId = None
+	@RltdPrtryTxId.deleter
+	def RltdPrtryTxId(self):
+		del self._RltdPrtryTxId
+		self._RltdPrtryTxId = None
 
 	@property
-	def FltgRateRpAgrmt(self):
-		return self._FltgRateRpAgrmt
+	def UnqTxIdr(self):
+		return self._UnqTxIdr
 
-	@FltgRateRpAgrmt.setter
-	def FltgRateRpAgrmt(self, value):
-		self._FltgRateRpAgrmt = value if type(value) != auto else self.make_default("FltgRateRpAgrmt")
+	@UnqTxIdr.setter
+	def UnqTxIdr(self, value):
+		self._UnqTxIdr = value if type(value) != auto else self.make_default("UnqTxIdr")
 
-	@FltgRateRpAgrmt.deleter
-	def FltgRateRpAgrmt(self):
-		del self._FltgRateRpAgrmt
-		self._FltgRateRpAgrmt = None
-
-	@property
-	def TxTp(self):
-		return self._TxTp
-
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
-
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
-
-	@property
-	def SttlmDt(self):
-		return self._SttlmDt
-
-	@SttlmDt.setter
-	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != auto else self.make_default("SttlmDt")
-
-	@SttlmDt.deleter
-	def SttlmDt(self):
-		del self._SttlmDt
-		self._SttlmDt = None
-
-	@property
-	def RptdTxSts(self):
-		return self._RptdTxSts
-
-	@RptdTxSts.setter
-	def RptdTxSts(self, value):
-		self._RptdTxSts = value if type(value) != auto else self.make_default("RptdTxSts")
-
-	@RptdTxSts.deleter
-	def RptdTxSts(self):
-		del self._RptdTxSts
-		self._RptdTxSts = None
+	@UnqTxIdr.deleter
+	def UnqTxIdr(self):
+		del self._UnqTxIdr
+		self._UnqTxIdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BrkrdDeal', type=BrokeredDeal1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxNmnlAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RateTp', type=InterestRateType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NvtnSts', type=NovationStatus1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDt', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyPrtryTxId', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NvtnSts', type=NovationStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RateTp', type=InterestRateType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BrnchId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DealRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnqTxIdr', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdPrtryTxId', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTp', type=MoneyMarketTransactionType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FltgRateRpAgrmt', type=FloatingRateNote2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptdTxSts', type=TransactionOperationType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtryTxId', type=Max105Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Coll', type=Collateral18, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrtryTxId', type=Max105Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BrkrdDeal', type=BrokeredDeal1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxNmnlAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BrnchId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FltgRateRpAgrmt', type=FloatingRateNote2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxTp', type=MoneyMarketTransactionType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptdTxSts', type=TransactionOperationType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdPrtryTxId', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnqTxIdr', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

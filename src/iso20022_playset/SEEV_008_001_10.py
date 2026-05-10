@@ -1,5 +1,5 @@
 from . import base_types
-import MeetingResultDisseminationV10
+from .MeetingResultDisseminationV10 import MeetingResultDisseminationV10
 
 class SEEV_008_001_10():
 

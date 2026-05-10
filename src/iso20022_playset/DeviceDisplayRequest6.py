@@ -1,5 +1,5 @@
 from . import base_types
-import ActionMessage11
+from .ActionMessage11 import ActionMessage11
 
 class DeviceDisplayRequest6(base_types._BaseFieldType):
 

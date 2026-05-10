@@ -1,11 +1,11 @@
 from . import base_types
-import GenericIdentification77
-import Max35Text
-import ISODateTime
+from .Max35Text import Max35Text
+from .ISODateTime import ISODateTime
+from .GenericIdentification77 import GenericIdentification77
 
 class Traceability4(base_types._BaseFieldType):
 
-	__slots__ = ["_TracDtTmIn", "_TracDtTmOut", "_SeqNb", "_RlayId"]
+	__slots__ = ["_TracDtTmIn", "_RlayId", "_SeqNb", "_TracDtTmOut"]
 	@property
 	def TracDtTmIn(self):
 		return self._TracDtTmIn
@@ -20,17 +20,17 @@ class Traceability4(base_types._BaseFieldType):
 		self._TracDtTmIn = None
 
 	@property
-	def TracDtTmOut(self):
-		return self._TracDtTmOut
+	def RlayId(self):
+		return self._RlayId
 
-	@TracDtTmOut.setter
-	def TracDtTmOut(self, value):
-		self._TracDtTmOut = value if type(value) != auto else self.make_default("TracDtTmOut")
+	@RlayId.setter
+	def RlayId(self, value):
+		self._RlayId = value if type(value) != auto else self.make_default("RlayId")
 
-	@TracDtTmOut.deleter
-	def TracDtTmOut(self):
-		del self._TracDtTmOut
-		self._TracDtTmOut = None
+	@RlayId.deleter
+	def RlayId(self):
+		del self._RlayId
+		self._RlayId = None
 
 	@property
 	def SeqNb(self):
@@ -46,22 +46,22 @@ class Traceability4(base_types._BaseFieldType):
 		self._SeqNb = None
 
 	@property
-	def RlayId(self):
-		return self._RlayId
+	def TracDtTmOut(self):
+		return self._TracDtTmOut
 
-	@RlayId.setter
-	def RlayId(self, value):
-		self._RlayId = value if type(value) != auto else self.make_default("RlayId")
+	@TracDtTmOut.setter
+	def TracDtTmOut(self, value):
+		self._TracDtTmOut = value if type(value) != auto else self.make_default("TracDtTmOut")
 
-	@RlayId.deleter
-	def RlayId(self):
-		del self._RlayId
-		self._RlayId = None
+	@TracDtTmOut.deleter
+	def TracDtTmOut(self):
+		del self._TracDtTmOut
+		self._TracDtTmOut = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TracDtTmIn', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TracDtTmOut', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RlayId', type=GenericIdentification77, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TracDtTmOut', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

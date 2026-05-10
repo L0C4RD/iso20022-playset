@@ -1,5 +1,5 @@
 from . import base_types
-import ATMKeyDownloadResponseV04
+from .ATMKeyDownloadResponseV04 import ATMKeyDownloadResponseV04
 
 class CAAM_004_001_04():
 

@@ -1,8 +1,8 @@
 from . import base_types
-import TrueFalseIndicator
-import DocumentType7Code
-import Max35Text
-import GenericIdentification177
+from .Max35Text import Max35Text
+from .GenericIdentification177 import GenericIdentification177
+from .TrueFalseIndicator import TrueFalseIndicator
+from .DocumentType7Code import DocumentType7Code
 
 class MessageStatusRequestData2(base_types._BaseFieldType):
 

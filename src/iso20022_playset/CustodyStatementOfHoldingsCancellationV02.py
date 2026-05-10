@@ -1,12 +1,25 @@
 from . import base_types
-import CustodyStatementOfHoldings2
-import Pagination
-import MessageIdentification1
-import AdditionalReference2
+from .MessageIdentification1 import MessageIdentification1
+from .CustodyStatementOfHoldings2 import CustodyStatementOfHoldings2
+from .Pagination import Pagination
+from .AdditionalReference2 import AdditionalReference2
 
 class CustodyStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgPgntn", "_RltdRef", "_PrvsRef", "_MsgId", "_StmtToBeCanc"]
+	__slots__ = ["_MsgId", "_MsgPgntn", "_PrvsRef", "_RltdRef", "_StmtToBeCanc"]
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
 	@property
 	def MsgPgntn(self):
 		return self._MsgPgntn
@@ -19,19 +32,6 @@ class CustodyStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 	def MsgPgntn(self):
 		del self._MsgPgntn
 		self._MsgPgntn = None
-
-	@property
-	def RltdRef(self):
-		return self._RltdRef
-
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
-
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
 
 	@property
 	def PrvsRef(self):
@@ -47,17 +47,17 @@ class CustodyStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 		self._PrvsRef = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def RltdRef(self):
+		return self._RltdRef
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
 
 	@property
 	def StmtToBeCanc(self):
@@ -73,10 +73,10 @@ class CustodyStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 		self._StmtToBeCanc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtToBeCanc', type=CustodyStatementOfHoldings2, min=0, max=1, mutex_group=None, array=False),
 	))
 

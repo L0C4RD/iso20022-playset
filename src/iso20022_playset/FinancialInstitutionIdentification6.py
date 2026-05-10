@@ -1,7 +1,7 @@
 from . import base_types
-import GenericIdentification4
-import BICIdentifier
-import ClearingSystemMemberIdentification2Choice
+from .ClearingSystemMemberIdentification2Choice import ClearingSystemMemberIdentification2Choice
+from .BICIdentifier import BICIdentifier
+from .GenericIdentification4 import GenericIdentification4
 
 class FinancialInstitutionIdentification6(base_types._BaseFieldType):
 

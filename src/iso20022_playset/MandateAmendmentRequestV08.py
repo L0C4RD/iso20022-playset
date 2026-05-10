@@ -1,11 +1,11 @@
 from . import base_types
-import MandateAmendment8
-import GroupHeader110
-import SupplementaryData1
+from .SupplementaryData1 import SupplementaryData1
+from .GroupHeader110 import GroupHeader110
+from .MandateAmendment8 import MandateAmendment8
 
 class MandateAmendmentRequestV08(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_GrpHdr", "_UndrlygAmdmntDtls"]
+	__slots__ = ["_SplmtryData", "_UndrlygAmdmntDtls", "_GrpHdr"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -20,19 +20,6 @@ class MandateAmendmentRequestV08(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def GrpHdr(self):
-		return self._GrpHdr
-
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
-
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
-
-	@property
 	def UndrlygAmdmntDtls(self):
 		return self._UndrlygAmdmntDtls
 
@@ -45,9 +32,22 @@ class MandateAmendmentRequestV08(base_types._BaseFieldType):
 		del self._UndrlygAmdmntDtls
 		self._UndrlygAmdmntDtls = None
 
+	@property
+	def GrpHdr(self):
+		return self._GrpHdr
+
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader110, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygAmdmntDtls', type=MandateAmendment8, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader110, min=1, max=1, mutex_group=None, array=False),
 	))
 

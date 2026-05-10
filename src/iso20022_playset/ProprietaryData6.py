@@ -1,5 +1,5 @@
 from . import base_types
-import SkipPayload
+from .SkipPayload import SkipPayload
 
 class ProprietaryData6(base_types._BaseFieldType):
 

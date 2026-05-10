@@ -1,25 +1,12 @@
 from . import base_types
-import PartyIdentification127Choice
-import References81Choice
-import DocumentNumber5Choice
-import ProcessingPosition8Choice
+from .ProcessingPosition8Choice import ProcessingPosition8Choice
+from .PartyIdentification127Choice import PartyIdentification127Choice
+from .DocumentNumber5Choice import DocumentNumber5Choice
+from .References81Choice import References81Choice
 
 class Linkages74(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_PrcgPos", "_MsgNb", "_RefOwnr"]
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
+	__slots__ = ["_PrcgPos", "_RefOwnr", "_Ref", "_MsgNb"]
 	@property
 	def PrcgPos(self):
 		return self._PrcgPos
@@ -34,19 +21,6 @@ class Linkages74(base_types._BaseFieldType):
 		self._PrcgPos = None
 
 	@property
-	def MsgNb(self):
-		return self._MsgNb
-
-	@MsgNb.setter
-	def MsgNb(self, value):
-		self._MsgNb = value if type(value) != auto else self.make_default("MsgNb")
-
-	@MsgNb.deleter
-	def MsgNb(self):
-		del self._MsgNb
-		self._MsgNb = None
-
-	@property
 	def RefOwnr(self):
 		return self._RefOwnr
 
@@ -59,10 +33,36 @@ class Linkages74(base_types._BaseFieldType):
 		del self._RefOwnr
 		self._RefOwnr = None
 
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
+	@property
+	def MsgNb(self):
+		return self._MsgNb
+
+	@MsgNb.setter
+	def MsgNb(self, value):
+		self._MsgNb = value if type(value) != auto else self.make_default("MsgNb")
+
+	@MsgNb.deleter
+	def MsgNb(self):
+		del self._MsgNb
+		self._MsgNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ref', type=References81Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition8Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgNb', type=DocumentNumber5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=References81Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgNb', type=DocumentNumber5Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

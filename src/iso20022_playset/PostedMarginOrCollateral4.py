@@ -1,21 +1,21 @@
 from . import base_types
-import ActiveOrHistoricCurrencyAndAmount
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class PostedMarginOrCollateral4(base_types._BaseFieldType):
 
-	__slots__ = ["_VartnMrgnPstd", "_XcssCollPstd", "_InitlMrgnPstd"]
+	__slots__ = ["_InitlMrgnPstd", "_XcssCollPstd", "_VartnMrgnPstd"]
 	@property
-	def VartnMrgnPstd(self):
-		return self._VartnMrgnPstd
+	def InitlMrgnPstd(self):
+		return self._InitlMrgnPstd
 
-	@VartnMrgnPstd.setter
-	def VartnMrgnPstd(self, value):
-		self._VartnMrgnPstd = value if type(value) != auto else self.make_default("VartnMrgnPstd")
+	@InitlMrgnPstd.setter
+	def InitlMrgnPstd(self, value):
+		self._InitlMrgnPstd = value if type(value) != auto else self.make_default("InitlMrgnPstd")
 
-	@VartnMrgnPstd.deleter
-	def VartnMrgnPstd(self):
-		del self._VartnMrgnPstd
-		self._VartnMrgnPstd = None
+	@InitlMrgnPstd.deleter
+	def InitlMrgnPstd(self):
+		del self._InitlMrgnPstd
+		self._InitlMrgnPstd = None
 
 	@property
 	def XcssCollPstd(self):
@@ -31,21 +31,21 @@ class PostedMarginOrCollateral4(base_types._BaseFieldType):
 		self._XcssCollPstd = None
 
 	@property
-	def InitlMrgnPstd(self):
-		return self._InitlMrgnPstd
+	def VartnMrgnPstd(self):
+		return self._VartnMrgnPstd
 
-	@InitlMrgnPstd.setter
-	def InitlMrgnPstd(self, value):
-		self._InitlMrgnPstd = value if type(value) != auto else self.make_default("InitlMrgnPstd")
+	@VartnMrgnPstd.setter
+	def VartnMrgnPstd(self, value):
+		self._VartnMrgnPstd = value if type(value) != auto else self.make_default("VartnMrgnPstd")
 
-	@InitlMrgnPstd.deleter
-	def InitlMrgnPstd(self):
-		del self._InitlMrgnPstd
-		self._InitlMrgnPstd = None
+	@VartnMrgnPstd.deleter
+	def VartnMrgnPstd(self):
+		del self._VartnMrgnPstd
+		self._VartnMrgnPstd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VartnMrgnPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XcssCollPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitlMrgnPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XcssCollPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VartnMrgnPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

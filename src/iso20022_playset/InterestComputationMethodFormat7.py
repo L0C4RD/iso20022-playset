@@ -1,6 +1,6 @@
 from . import base_types
-import Max1000Text
-import InterestComputationMethod4Code
+from .InterestComputationMethod4Code import InterestComputationMethod4Code
+from .Max1000Text import Max1000Text
 
 class InterestComputationMethodFormat7(base_types._BaseFieldType):
 

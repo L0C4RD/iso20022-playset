@@ -1,6 +1,6 @@
 from . import base_types
-import PartyAndSignature2
-import UndertakingAdvice2
+from .PartyAndSignature2 import PartyAndSignature2
+from .UndertakingAdvice2 import UndertakingAdvice2
 
 class UndertakingIssuanceNotificationV01(base_types._BaseFieldType):
 

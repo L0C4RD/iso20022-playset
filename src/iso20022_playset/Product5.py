@@ -1,25 +1,12 @@
 from . import base_types
-import ImpliedCurrencyAndAmount
-import DecimalNumber
-import UnitOfMeasure6Code
-import Max70Text
+from .UnitOfMeasure6Code import UnitOfMeasure6Code
+from .Max70Text import Max70Text
+from .DecimalNumber import DecimalNumber
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class Product5(base_types._BaseFieldType):
 
-	__slots__ = ["_QtyLmt", "_PdctCd", "_AddtlPdctCd", "_UnitOfMeasr", "_AmtLmt"]
-	@property
-	def QtyLmt(self):
-		return self._QtyLmt
-
-	@QtyLmt.setter
-	def QtyLmt(self, value):
-		self._QtyLmt = value if type(value) != auto else self.make_default("QtyLmt")
-
-	@QtyLmt.deleter
-	def QtyLmt(self):
-		del self._QtyLmt
-		self._QtyLmt = None
-
+	__slots__ = ["_PdctCd", "_AddtlPdctCd", "_QtyLmt", "_UnitOfMeasr", "_AmtLmt"]
 	@property
 	def PdctCd(self):
 		return self._PdctCd
@@ -45,6 +32,19 @@ class Product5(base_types._BaseFieldType):
 	def AddtlPdctCd(self):
 		del self._AddtlPdctCd
 		self._AddtlPdctCd = None
+
+	@property
+	def QtyLmt(self):
+		return self._QtyLmt
+
+	@QtyLmt.setter
+	def QtyLmt(self, value):
+		self._QtyLmt = value if type(value) != auto else self.make_default("QtyLmt")
+
+	@QtyLmt.deleter
+	def QtyLmt(self):
+		del self._QtyLmt
+		self._QtyLmt = None
 
 	@property
 	def UnitOfMeasr(self):
@@ -73,9 +73,9 @@ class Product5(base_types._BaseFieldType):
 		self._AmtLmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QtyLmt', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctCd', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlPdctCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtyLmt', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure6Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtLmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))

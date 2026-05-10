@@ -1,22 +1,35 @@
 from . import base_types
-import Max35Text
-import ATMServiceType11Code
+from .Max35Text import Max35Text
+from .ATMServiceType11Code import ATMServiceType11Code
 
 class ATMService27(base_types._BaseFieldType):
 
-	__slots__ = ["_HstSvcCd", "_SvcTp", "_SvcVarntId", "_ATMSvcCd", "_SvcRef"]
+	__slots__ = ["_SvcVarntId", "_SvcRef", "_SvcTp", "_HstSvcCd", "_ATMSvcCd"]
 	@property
-	def HstSvcCd(self):
-		return self._HstSvcCd
+	def SvcVarntId(self):
+		return self._SvcVarntId
 
-	@HstSvcCd.setter
-	def HstSvcCd(self, value):
-		self._HstSvcCd = value if type(value) != auto else self.make_default("HstSvcCd")
+	@SvcVarntId.setter
+	def SvcVarntId(self, value):
+		self._SvcVarntId = value if type(value) != auto else self.make_default("SvcVarntId")
 
-	@HstSvcCd.deleter
-	def HstSvcCd(self):
-		del self._HstSvcCd
-		self._HstSvcCd = None
+	@SvcVarntId.deleter
+	def SvcVarntId(self):
+		del self._SvcVarntId
+		self._SvcVarntId = None
+
+	@property
+	def SvcRef(self):
+		return self._SvcRef
+
+	@SvcRef.setter
+	def SvcRef(self, value):
+		self._SvcRef = value if type(value) != auto else self.make_default("SvcRef")
+
+	@SvcRef.deleter
+	def SvcRef(self):
+		del self._SvcRef
+		self._SvcRef = None
 
 	@property
 	def SvcTp(self):
@@ -32,17 +45,17 @@ class ATMService27(base_types._BaseFieldType):
 		self._SvcTp = None
 
 	@property
-	def SvcVarntId(self):
-		return self._SvcVarntId
+	def HstSvcCd(self):
+		return self._HstSvcCd
 
-	@SvcVarntId.setter
-	def SvcVarntId(self, value):
-		self._SvcVarntId = value if type(value) != auto else self.make_default("SvcVarntId")
+	@HstSvcCd.setter
+	def HstSvcCd(self, value):
+		self._HstSvcCd = value if type(value) != auto else self.make_default("HstSvcCd")
 
-	@SvcVarntId.deleter
-	def SvcVarntId(self):
-		del self._SvcVarntId
-		self._SvcVarntId = None
+	@HstSvcCd.deleter
+	def HstSvcCd(self):
+		del self._HstSvcCd
+		self._HstSvcCd = None
 
 	@property
 	def ATMSvcCd(self):
@@ -57,24 +70,11 @@ class ATMService27(base_types._BaseFieldType):
 		del self._ATMSvcCd
 		self._ATMSvcCd = None
 
-	@property
-	def SvcRef(self):
-		return self._SvcRef
-
-	@SvcRef.setter
-	def SvcRef(self, value):
-		self._SvcRef = value if type(value) != auto else self.make_default("SvcRef")
-
-	@SvcRef.deleter
-	def SvcRef(self):
-		del self._SvcRef
-		self._SvcRef = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='HstSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcTp', type=ATMServiceType11Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcVarntId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ATMSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcTp', type=ATMServiceType11Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HstSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

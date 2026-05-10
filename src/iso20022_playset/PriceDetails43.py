@@ -1,7 +1,7 @@
 from . import base_types
-import PriceFormat93Choice
-import PriceFormat92Choice
-import PriceFormat94Choice
+from .PriceFormat93Choice import PriceFormat93Choice
+from .PriceFormat92Choice import PriceFormat92Choice
+from .PriceFormat94Choice import PriceFormat94Choice
 
 class PriceDetails43(base_types._BaseFieldType):
 

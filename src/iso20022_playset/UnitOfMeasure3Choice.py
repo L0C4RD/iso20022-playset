@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import UnitOfMeasure4Code
+from .Max35Text import Max35Text
+from .UnitOfMeasure4Code import UnitOfMeasure4Code
 
 class UnitOfMeasure3Choice(base_types._BaseFieldType):
 

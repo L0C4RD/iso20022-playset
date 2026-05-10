@@ -1,12 +1,25 @@
 from . import base_types
-import CreditorEnrolment5
-import SupplementaryData1
-import CreditorInvoice6
-import EnrolmentHeader3
+from .CreditorEnrolment5 import CreditorEnrolment5
+from .CreditorInvoice6 import CreditorInvoice6
+from .SupplementaryData1 import SupplementaryData1
+from .EnrolmentHeader3 import EnrolmentHeader3
 
 class RequestToPayCreditorEnrolmentRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrEnrlmnt", "_Hdr", "_SplmtryData", "_ActvtnData"]
+	__slots__ = ["_ActvtnData", "_CdtrEnrlmnt", "_SplmtryData", "_Hdr"]
+	@property
+	def ActvtnData(self):
+		return self._ActvtnData
+
+	@ActvtnData.setter
+	def ActvtnData(self, value):
+		self._ActvtnData = value if type(value) != auto else self.make_default("ActvtnData")
+
+	@ActvtnData.deleter
+	def ActvtnData(self):
+		del self._ActvtnData
+		self._ActvtnData = None
+
 	@property
 	def CdtrEnrlmnt(self):
 		return self._CdtrEnrlmnt
@@ -19,19 +32,6 @@ class RequestToPayCreditorEnrolmentRequestV02(base_types._BaseFieldType):
 	def CdtrEnrlmnt(self):
 		del self._CdtrEnrlmnt
 		self._CdtrEnrlmnt = None
-
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
 
 	@property
 	def SplmtryData(self):
@@ -47,22 +47,22 @@ class RequestToPayCreditorEnrolmentRequestV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def ActvtnData(self):
-		return self._ActvtnData
+	def Hdr(self):
+		return self._Hdr
 
-	@ActvtnData.setter
-	def ActvtnData(self, value):
-		self._ActvtnData = value if type(value) != auto else self.make_default("ActvtnData")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
 
-	@ActvtnData.deleter
-	def ActvtnData(self):
-		del self._ActvtnData
-		self._ActvtnData = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtrEnrlmnt', type=CreditorEnrolment5, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Hdr', type=EnrolmentHeader3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ActvtnData', type=CreditorInvoice6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrEnrlmnt', type=CreditorEnrolment5, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Hdr', type=EnrolmentHeader3, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,24 @@
 from . import base_types
-import Reservation4
-import MessageHeader1
-import SupplementaryData1
-import CurrentOrDefaultReservation4Choice
+from .CurrentOrDefaultReservation4Choice import CurrentOrDefaultReservation4Choice
+from .Reservation4 import Reservation4
+from .MessageHeader1 import MessageHeader1
+from .SupplementaryData1 import SupplementaryData1
 
 class ModifyReservationV07(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgHdr", "_NewRsvatnValSet", "_RsvatnId"]
+	__slots__ = ["_NewRsvatnValSet", "_MsgHdr", "_SplmtryData", "_RsvatnId"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def NewRsvatnValSet(self):
+		return self._NewRsvatnValSet
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@NewRsvatnValSet.setter
+	def NewRsvatnValSet(self, value):
+		self._NewRsvatnValSet = value if type(value) != auto else self.make_default("NewRsvatnValSet")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@NewRsvatnValSet.deleter
+	def NewRsvatnValSet(self):
+		del self._NewRsvatnValSet
+		self._NewRsvatnValSet = None
 
 	@property
 	def MsgHdr(self):
@@ -34,17 +34,17 @@ class ModifyReservationV07(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	@property
-	def NewRsvatnValSet(self):
-		return self._NewRsvatnValSet
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@NewRsvatnValSet.setter
-	def NewRsvatnValSet(self, value):
-		self._NewRsvatnValSet = value if type(value) != auto else self.make_default("NewRsvatnValSet")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@NewRsvatnValSet.deleter
-	def NewRsvatnValSet(self):
-		del self._NewRsvatnValSet
-		self._NewRsvatnValSet = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def RsvatnId(self):
@@ -60,9 +60,9 @@ class ModifyReservationV07(base_types._BaseFieldType):
 		self._RsvatnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewRsvatnValSet', type=Reservation4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RsvatnId', type=CurrentOrDefaultReservation4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

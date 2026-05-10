@@ -1,7 +1,7 @@
 from . import base_types
-import CollateralResponse3
-import Max35Text
-import CollateralProposalResponse1Code
+from .Max35Text import Max35Text
+from .CollateralProposalResponse1Code import CollateralProposalResponse1Code
+from .CollateralResponse3 import CollateralResponse3
 
 class CollateralProposalResponseType4(base_types._BaseFieldType):
 

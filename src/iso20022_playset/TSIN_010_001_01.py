@@ -1,5 +1,5 @@
 from . import base_types
-import PartyRegistrationAndGuaranteeStatusV01
+from .PartyRegistrationAndGuaranteeStatusV01 import PartyRegistrationAndGuaranteeStatusV01
 
 class TSIN_010_001_01():
 

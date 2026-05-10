@@ -1,5 +1,5 @@
 from . import base_types
-import CurrencyControlStatusAdviceV04
+from .CurrencyControlStatusAdviceV04 import CurrencyControlStatusAdviceV04
 
 class AUTH_027_001_04():
 

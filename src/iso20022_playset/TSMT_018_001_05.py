@@ -1,5 +1,5 @@
 from . import base_types
-import FullPushThroughReportV05
+from .FullPushThroughReportV05 import FullPushThroughReportV05
 
 class TSMT_018_001_05():
 

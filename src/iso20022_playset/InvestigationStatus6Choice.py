@@ -1,25 +1,12 @@
 from . import base_types
-import Case6
-import YesNoIndicator
-import ModificationStatusReason1Choice
-import ExternalInvestigationExecutionConfirmation1Code
+from .ModificationStatusReason1Choice import ModificationStatusReason1Choice
+from .ExternalInvestigationExecutionConfirmation1Code import ExternalInvestigationExecutionConfirmation1Code
+from .YesNoIndicator import YesNoIndicator
+from .Case6 import Case6
 
 class InvestigationStatus6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DplctOf", "_RjctdMod", "_Conf", "_AssgnmtCxlConf"]
-	@property
-	def DplctOf(self):
-		return self._DplctOf
-
-	@DplctOf.setter
-	def DplctOf(self, value):
-		self._DplctOf = value if type(value) != auto else self.make_default("DplctOf")
-
-	@DplctOf.deleter
-	def DplctOf(self):
-		del self._DplctOf
-		self._DplctOf = None
-
+	__slots__ = ["_RjctdMod", "_DplctOf", "_Conf", "_AssgnmtCxlConf"]
 	@property
 	def RjctdMod(self):
 		return self._RjctdMod
@@ -32,6 +19,19 @@ class InvestigationStatus6Choice(base_types._BaseFieldType):
 	def RjctdMod(self):
 		del self._RjctdMod
 		self._RjctdMod = None
+
+	@property
+	def DplctOf(self):
+		return self._DplctOf
+
+	@DplctOf.setter
+	def DplctOf(self, value):
+		self._DplctOf = value if type(value) != auto else self.make_default("DplctOf")
+
+	@DplctOf.deleter
+	def DplctOf(self):
+		del self._DplctOf
+		self._DplctOf = None
 
 	@property
 	def Conf(self):
@@ -60,8 +60,8 @@ class InvestigationStatus6Choice(base_types._BaseFieldType):
 		self._AssgnmtCxlConf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DplctOf', type=Case6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RjctdMod', type=ModificationStatusReason1Choice, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='DplctOf', type=Case6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Conf', type=ExternalInvestigationExecutionConfirmation1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AssgnmtCxlConf', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
 	))

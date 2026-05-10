@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification1
-import Max140Text
+from .Max140Text import Max140Text
+from .GenericIdentification1 import GenericIdentification1
 
 class DataFormat2Choice(base_types._BaseFieldType):
 

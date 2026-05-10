@@ -1,5 +1,5 @@
 from . import base_types
-import RetrievalResponseV03
+from .RetrievalResponseV03 import RetrievalResponseV03
 
 class CAIN_022_001_03():
 

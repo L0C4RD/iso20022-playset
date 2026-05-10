@@ -1,13 +1,13 @@
 from . import base_types
-import LocalData14
-import AdditionalData1
-import Max99Text
-import Max35Text
-import ISO3NumericCountryCode
+from .LocalData14 import LocalData14
+from .Max35Text import Max35Text
+from .AdditionalData1 import AdditionalData1
+from .ISO3NumericCountryCode import ISO3NumericCountryCode
+from .Max99Text import Max99Text
 
 class PartyIdentification285(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnr", "_LclData", "_Id", "_Ctry", "_ShrtNm", "_AddtlId", "_LglCorpNm"]
+	__slots__ = ["_Assgnr", "_Id", "_LglCorpNm", "_LclData", "_Ctry", "_ShrtNm", "_AddtlId"]
 	@property
 	def Assgnr(self):
 		return self._Assgnr
@@ -22,19 +22,6 @@ class PartyIdentification285(base_types._BaseFieldType):
 		self._Assgnr = None
 
 	@property
-	def LclData(self):
-		return self._LclData
-
-	@LclData.setter
-	def LclData(self, value):
-		self._LclData = value if type(value) != auto else self.make_default("LclData")
-
-	@LclData.deleter
-	def LclData(self):
-		del self._LclData
-		self._LclData = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -46,6 +33,32 @@ class PartyIdentification285(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def LglCorpNm(self):
+		return self._LglCorpNm
+
+	@LglCorpNm.setter
+	def LglCorpNm(self, value):
+		self._LglCorpNm = value if type(value) != auto else self.make_default("LglCorpNm")
+
+	@LglCorpNm.deleter
+	def LglCorpNm(self):
+		del self._LglCorpNm
+		self._LglCorpNm = None
+
+	@property
+	def LclData(self):
+		return self._LclData
+
+	@LclData.setter
+	def LclData(self, value):
+		self._LclData = value if type(value) != auto else self.make_default("LclData")
+
+	@LclData.deleter
+	def LclData(self):
+		del self._LclData
+		self._LclData = None
 
 	@property
 	def Ctry(self):
@@ -86,26 +99,13 @@ class PartyIdentification285(base_types._BaseFieldType):
 		del self._AddtlId
 		self._AddtlId = None
 
-	@property
-	def LglCorpNm(self):
-		return self._LglCorpNm
-
-	@LglCorpNm.setter
-	def LglCorpNm(self, value):
-		self._LglCorpNm = value if type(value) != auto else self.make_default("LglCorpNm")
-
-	@LglCorpNm.deleter
-	def LglCorpNm(self):
-		del self._LglCorpNm
-		self._LglCorpNm = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LclData', type=LocalData14, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglCorpNm', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LclData', type=LocalData14, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ctry', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlId', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LglCorpNm', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

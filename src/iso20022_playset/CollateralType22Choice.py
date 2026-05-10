@@ -1,6 +1,6 @@
 from . import base_types
-import GeneralCollateral4
-import SpecificCollateral3
+from .GeneralCollateral4 import GeneralCollateral4
+from .SpecificCollateral3 import SpecificCollateral3
 
 class CollateralType22Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import SupplementaryData1
-import MonthlyResult1
+from .SupplementaryData1 import SupplementaryData1
+from .MonthlyResult1 import MonthlyResult1
 
 class CCPBackTestingResultReportV01(base_types._BaseFieldType):
 

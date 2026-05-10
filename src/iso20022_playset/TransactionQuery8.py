@@ -1,6 +1,6 @@
 from . import base_types
-import QueryType2Code
-import TransactionCriteria8Choice
+from .QueryType2Code import QueryType2Code
+from .TransactionCriteria8Choice import TransactionCriteria8Choice
 
 class TransactionQuery8(base_types._BaseFieldType):
 

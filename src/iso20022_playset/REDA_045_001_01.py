@@ -1,5 +1,5 @@
 from . import base_types
-import SecurityCSDLinkCreationRequestV01
+from .SecurityCSDLinkCreationRequestV01 import SecurityCSDLinkCreationRequestV01
 
 class REDA_045_001_01():
 

@@ -1,26 +1,26 @@
 from . import base_types
-import LocationFormat1Choice
-import MeetingDateStatus2Code
-import YesNoIndicator
-import Max2048Text
-import QuorumQuantity2Choice
-import DateFormat58Choice
+from .YesNoIndicator import YesNoIndicator
+from .QuorumQuantity2Choice import QuorumQuantity2Choice
+from .Max2048Text import Max2048Text
+from .LocationFormat1Choice import LocationFormat1Choice
+from .DateFormat58Choice import DateFormat58Choice
+from .MeetingDateStatus2Code import MeetingDateStatus2Code
 
 class Meeting7(base_types._BaseFieldType):
 
-	__slots__ = ["_QrmReqrd", "_URLAdr", "_Lctn", "_DtSts", "_DtAndTm", "_QrmQty"]
+	__slots__ = ["_Lctn", "_URLAdr", "_QrmReqrd", "_DtSts", "_QrmQty", "_DtAndTm"]
 	@property
-	def QrmReqrd(self):
-		return self._QrmReqrd
+	def Lctn(self):
+		return self._Lctn
 
-	@QrmReqrd.setter
-	def QrmReqrd(self, value):
-		self._QrmReqrd = value if type(value) != auto else self.make_default("QrmReqrd")
+	@Lctn.setter
+	def Lctn(self, value):
+		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
 
-	@QrmReqrd.deleter
-	def QrmReqrd(self):
-		del self._QrmReqrd
-		self._QrmReqrd = None
+	@Lctn.deleter
+	def Lctn(self):
+		del self._Lctn
+		self._Lctn = None
 
 	@property
 	def URLAdr(self):
@@ -36,17 +36,17 @@ class Meeting7(base_types._BaseFieldType):
 		self._URLAdr = None
 
 	@property
-	def Lctn(self):
-		return self._Lctn
+	def QrmReqrd(self):
+		return self._QrmReqrd
 
-	@Lctn.setter
-	def Lctn(self, value):
-		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
+	@QrmReqrd.setter
+	def QrmReqrd(self, value):
+		self._QrmReqrd = value if type(value) != auto else self.make_default("QrmReqrd")
 
-	@Lctn.deleter
-	def Lctn(self):
-		del self._Lctn
-		self._Lctn = None
+	@QrmReqrd.deleter
+	def QrmReqrd(self):
+		del self._QrmReqrd
+		self._QrmReqrd = None
 
 	@property
 	def DtSts(self):
@@ -62,19 +62,6 @@ class Meeting7(base_types._BaseFieldType):
 		self._DtSts = None
 
 	@property
-	def DtAndTm(self):
-		return self._DtAndTm
-
-	@DtAndTm.setter
-	def DtAndTm(self, value):
-		self._DtAndTm = value if type(value) != auto else self.make_default("DtAndTm")
-
-	@DtAndTm.deleter
-	def DtAndTm(self):
-		del self._DtAndTm
-		self._DtAndTm = None
-
-	@property
 	def QrmQty(self):
 		return self._QrmQty
 
@@ -87,12 +74,25 @@ class Meeting7(base_types._BaseFieldType):
 		del self._QrmQty
 		self._QrmQty = None
 
+	@property
+	def DtAndTm(self):
+		return self._DtAndTm
+
+	@DtAndTm.setter
+	def DtAndTm(self, value):
+		self._DtAndTm = value if type(value) != auto else self.make_default("DtAndTm")
+
+	@DtAndTm.deleter
+	def DtAndTm(self):
+		del self._DtAndTm
+		self._DtAndTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QrmReqrd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='URLAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lctn', type=LocationFormat1Choice, min=1, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='URLAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QrmReqrd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtSts', type=MeetingDateStatus2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtAndTm', type=DateFormat58Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QrmQty', type=QuorumQuantity2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtAndTm', type=DateFormat58Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

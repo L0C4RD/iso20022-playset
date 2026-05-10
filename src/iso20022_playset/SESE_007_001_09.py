@@ -1,5 +1,5 @@
 from . import base_types
-import TransferInConfirmationV09
+from .TransferInConfirmationV09 import TransferInConfirmationV09
 
 class SESE_007_001_09():
 

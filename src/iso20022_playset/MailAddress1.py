@@ -1,6 +1,6 @@
 from . import base_types
-import Max256Text
-import PostalAddress1
+from .PostalAddress1 import PostalAddress1
+from .Max256Text import Max256Text
 
 class MailAddress1(base_types._BaseFieldType):
 

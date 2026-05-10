@@ -1,7 +1,7 @@
 from . import base_types
-import ISODate
-import AdditionalInformation15
-import ContactAttributes5
+from .ContactAttributes5 import ContactAttributes5
+from .AdditionalInformation15 import AdditionalInformation15
+from .ISODate import ISODate
 
 class OrderDesk1(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import CardPaymentDataSet39
-import TransactionTotals12
+from .TransactionTotals12 import TransactionTotals12
+from .CardPaymentDataSet39 import CardPaymentDataSet39
 
 class CardPaymentBatchTransferResponse12(base_types._BaseFieldType):
 

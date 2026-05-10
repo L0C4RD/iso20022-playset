@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalBankTransactionSubFamily1Code
-import ExternalBankTransactionFamily1Code
+from .ExternalBankTransactionSubFamily1Code import ExternalBankTransactionSubFamily1Code
+from .ExternalBankTransactionFamily1Code import ExternalBankTransactionFamily1Code
 
 class BankTransactionCodeStructure6(base_types._BaseFieldType):
 

@@ -1,53 +1,14 @@
 from . import base_types
-import Max350Text
-import ClassificationType32Choice
-import YesNoIndicator
-import Max35Text
-import SecurityIdentification25Choice
-import FinancialInstrumentIdentification4
+from .Max35Text import Max35Text
+from .SecurityIdentification25Choice import SecurityIdentification25Choice
+from .YesNoIndicator import YesNoIndicator
+from .FinancialInstrumentIdentification4 import FinancialInstrumentIdentification4
+from .ClassificationType32Choice import ClassificationType32Choice
+from .Max350Text import Max350Text
 
 class FinancialInstrumentIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Nm", "_RstrctdInd", "_ClssfctnTp", "_AltrnScty", "_ShrtNm"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def RstrctdInd(self):
-		return self._RstrctdInd
-
-	@RstrctdInd.setter
-	def RstrctdInd(self, value):
-		self._RstrctdInd = value if type(value) != auto else self.make_default("RstrctdInd")
-
-	@RstrctdInd.deleter
-	def RstrctdInd(self):
-		del self._RstrctdInd
-		self._RstrctdInd = None
-
+	__slots__ = ["_ClssfctnTp", "_AltrnScty", "_ShrtNm", "_Nm", "_Id", "_RstrctdInd"]
 	@property
 	def ClssfctnTp(self):
 		return self._ClssfctnTp
@@ -87,12 +48,51 @@ class FinancialInstrumentIdentification3(base_types._BaseFieldType):
 		del self._ShrtNm
 		self._ShrtNm = None
 
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def RstrctdInd(self):
+		return self._RstrctdInd
+
+	@RstrctdInd.setter
+	def RstrctdInd(self, value):
+		self._RstrctdInd = value if type(value) != auto else self.make_default("RstrctdInd")
+
+	@RstrctdInd.deleter
+	def RstrctdInd(self):
+		del self._RstrctdInd
+		self._RstrctdInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=SecurityIdentification25Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RstrctdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType32Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnScty', type=FinancialInstrumentIdentification4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=SecurityIdentification25Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RstrctdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

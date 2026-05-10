@@ -1,7 +1,7 @@
 from . import base_types
-import ReportRequest8
-import ContentInformationType38
-import Header41
+from .ReportRequest8 import ReportRequest8
+from .Header41 import Header41
+from .ContentInformationType38 import ContentInformationType38
 
 class SaleToPOIReportRequestV07(base_types._BaseFieldType):
 

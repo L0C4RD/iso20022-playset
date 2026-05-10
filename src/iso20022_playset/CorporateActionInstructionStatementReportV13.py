@@ -1,12 +1,12 @@
 from . import base_types
-import Statement72
-import SupplementaryData1
-import AccountIdentification68
-import Pagination1
+from .AccountIdentification68 import AccountIdentification68
+from .Pagination1 import Pagination1
+from .SupplementaryData1 import SupplementaryData1
+from .Statement72 import Statement72
 
 class CorporateActionInstructionStatementReportV13(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_StmtGnlDtls", "_AcctAndStmtDtls", "_Pgntn"]
+	__slots__ = ["_SplmtryData", "_Pgntn", "_StmtGnlDtls", "_AcctAndStmtDtls"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -19,6 +19,19 @@ class CorporateActionInstructionStatementReportV13(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def StmtGnlDtls(self):
@@ -46,23 +59,10 @@ class CorporateActionInstructionStatementReportV13(base_types._BaseFieldType):
 		del self._AcctAndStmtDtls
 		self._AcctAndStmtDtls = None
 
-	@property
-	def Pgntn(self):
-		return self._Pgntn
-
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
-
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement72, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctAndStmtDtls', type=AccountIdentification68, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 	))
 

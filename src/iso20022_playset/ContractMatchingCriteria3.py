@@ -1,81 +1,29 @@
 from . import base_types
-import CompareUnderlyingInstrument3
-import CompareText1
-import CompareActiveOrHistoricCurrencyCode1
-import CompareFinancialInstrumentContractType1
-import CompareCFIIdentifier3
-import CompareUniqueProductIdentifier2
-import CompareTrueFalseIndicator3
-import CompareAssetClass1
-import CompareISINIdentifier2
+from .CompareISINIdentifier2 import CompareISINIdentifier2
+from .CompareText1 import CompareText1
+from .CompareUniqueProductIdentifier2 import CompareUniqueProductIdentifier2
+from .CompareFinancialInstrumentContractType1 import CompareFinancialInstrumentContractType1
+from .CompareUnderlyingInstrument3 import CompareUnderlyingInstrument3
+from .CompareCFIIdentifier3 import CompareCFIIdentifier3
+from .CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
+from .CompareAssetClass1 import CompareAssetClass1
+from .CompareActiveOrHistoricCurrencyCode1 import CompareActiveOrHistoricCurrencyCode1
 
 class ContractMatchingCriteria3(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctClssfctn", "_CtrctTp", "_UnqPdctIdr", "_ISIN", "_DerivBasedOnCrptAsst", "_SttlmCcyScndLeg", "_AsstClss", "_AltrntvInstrmId", "_UndrlygInstrm", "_SttlmCcy"]
+	__slots__ = ["_SttlmCcy", "_SttlmCcyScndLeg", "_PdctClssfctn", "_AsstClss", "_UndrlygInstrm", "_CtrctTp", "_DerivBasedOnCrptAsst", "_ISIN", "_AltrntvInstrmId", "_UnqPdctIdr"]
 	@property
-	def PdctClssfctn(self):
-		return self._PdctClssfctn
+	def SttlmCcy(self):
+		return self._SttlmCcy
 
-	@PdctClssfctn.setter
-	def PdctClssfctn(self, value):
-		self._PdctClssfctn = value if type(value) != auto else self.make_default("PdctClssfctn")
+	@SttlmCcy.setter
+	def SttlmCcy(self, value):
+		self._SttlmCcy = value if type(value) != auto else self.make_default("SttlmCcy")
 
-	@PdctClssfctn.deleter
-	def PdctClssfctn(self):
-		del self._PdctClssfctn
-		self._PdctClssfctn = None
-
-	@property
-	def CtrctTp(self):
-		return self._CtrctTp
-
-	@CtrctTp.setter
-	def CtrctTp(self, value):
-		self._CtrctTp = value if type(value) != auto else self.make_default("CtrctTp")
-
-	@CtrctTp.deleter
-	def CtrctTp(self):
-		del self._CtrctTp
-		self._CtrctTp = None
-
-	@property
-	def UnqPdctIdr(self):
-		return self._UnqPdctIdr
-
-	@UnqPdctIdr.setter
-	def UnqPdctIdr(self, value):
-		self._UnqPdctIdr = value if type(value) != auto else self.make_default("UnqPdctIdr")
-
-	@UnqPdctIdr.deleter
-	def UnqPdctIdr(self):
-		del self._UnqPdctIdr
-		self._UnqPdctIdr = None
-
-	@property
-	def ISIN(self):
-		return self._ISIN
-
-	@ISIN.setter
-	def ISIN(self, value):
-		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
-
-	@ISIN.deleter
-	def ISIN(self):
-		del self._ISIN
-		self._ISIN = None
-
-	@property
-	def DerivBasedOnCrptAsst(self):
-		return self._DerivBasedOnCrptAsst
-
-	@DerivBasedOnCrptAsst.setter
-	def DerivBasedOnCrptAsst(self, value):
-		self._DerivBasedOnCrptAsst = value if type(value) != auto else self.make_default("DerivBasedOnCrptAsst")
-
-	@DerivBasedOnCrptAsst.deleter
-	def DerivBasedOnCrptAsst(self):
-		del self._DerivBasedOnCrptAsst
-		self._DerivBasedOnCrptAsst = None
+	@SttlmCcy.deleter
+	def SttlmCcy(self):
+		del self._SttlmCcy
+		self._SttlmCcy = None
 
 	@property
 	def SttlmCcyScndLeg(self):
@@ -91,6 +39,19 @@ class ContractMatchingCriteria3(base_types._BaseFieldType):
 		self._SttlmCcyScndLeg = None
 
 	@property
+	def PdctClssfctn(self):
+		return self._PdctClssfctn
+
+	@PdctClssfctn.setter
+	def PdctClssfctn(self, value):
+		self._PdctClssfctn = value if type(value) != auto else self.make_default("PdctClssfctn")
+
+	@PdctClssfctn.deleter
+	def PdctClssfctn(self):
+		del self._PdctClssfctn
+		self._PdctClssfctn = None
+
+	@property
 	def AsstClss(self):
 		return self._AsstClss
 
@@ -102,19 +63,6 @@ class ContractMatchingCriteria3(base_types._BaseFieldType):
 	def AsstClss(self):
 		del self._AsstClss
 		self._AsstClss = None
-
-	@property
-	def AltrntvInstrmId(self):
-		return self._AltrntvInstrmId
-
-	@AltrntvInstrmId.setter
-	def AltrntvInstrmId(self, value):
-		self._AltrntvInstrmId = value if type(value) != auto else self.make_default("AltrntvInstrmId")
-
-	@AltrntvInstrmId.deleter
-	def AltrntvInstrmId(self):
-		del self._AltrntvInstrmId
-		self._AltrntvInstrmId = None
 
 	@property
 	def UndrlygInstrm(self):
@@ -130,28 +78,80 @@ class ContractMatchingCriteria3(base_types._BaseFieldType):
 		self._UndrlygInstrm = None
 
 	@property
-	def SttlmCcy(self):
-		return self._SttlmCcy
+	def CtrctTp(self):
+		return self._CtrctTp
 
-	@SttlmCcy.setter
-	def SttlmCcy(self, value):
-		self._SttlmCcy = value if type(value) != auto else self.make_default("SttlmCcy")
+	@CtrctTp.setter
+	def CtrctTp(self, value):
+		self._CtrctTp = value if type(value) != auto else self.make_default("CtrctTp")
 
-	@SttlmCcy.deleter
-	def SttlmCcy(self):
-		del self._SttlmCcy
-		self._SttlmCcy = None
+	@CtrctTp.deleter
+	def CtrctTp(self):
+		del self._CtrctTp
+		self._CtrctTp = None
+
+	@property
+	def DerivBasedOnCrptAsst(self):
+		return self._DerivBasedOnCrptAsst
+
+	@DerivBasedOnCrptAsst.setter
+	def DerivBasedOnCrptAsst(self, value):
+		self._DerivBasedOnCrptAsst = value if type(value) != auto else self.make_default("DerivBasedOnCrptAsst")
+
+	@DerivBasedOnCrptAsst.deleter
+	def DerivBasedOnCrptAsst(self):
+		del self._DerivBasedOnCrptAsst
+		self._DerivBasedOnCrptAsst = None
+
+	@property
+	def ISIN(self):
+		return self._ISIN
+
+	@ISIN.setter
+	def ISIN(self, value):
+		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
+
+	@ISIN.deleter
+	def ISIN(self):
+		del self._ISIN
+		self._ISIN = None
+
+	@property
+	def AltrntvInstrmId(self):
+		return self._AltrntvInstrmId
+
+	@AltrntvInstrmId.setter
+	def AltrntvInstrmId(self, value):
+		self._AltrntvInstrmId = value if type(value) != auto else self.make_default("AltrntvInstrmId")
+
+	@AltrntvInstrmId.deleter
+	def AltrntvInstrmId(self):
+		del self._AltrntvInstrmId
+		self._AltrntvInstrmId = None
+
+	@property
+	def UnqPdctIdr(self):
+		return self._UnqPdctIdr
+
+	@UnqPdctIdr.setter
+	def UnqPdctIdr(self, value):
+		self._UnqPdctIdr = value if type(value) != auto else self.make_default("UnqPdctIdr")
+
+	@UnqPdctIdr.deleter
+	def UnqPdctIdr(self):
+		del self._UnqPdctIdr
+		self._UnqPdctIdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PdctClssfctn', type=CompareCFIIdentifier3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctTp', type=CompareFinancialInstrumentContractType1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnqPdctIdr', type=CompareUniqueProductIdentifier2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ISIN', type=CompareISINIdentifier2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DerivBasedOnCrptAsst', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmCcyScndLeg', type=CompareActiveOrHistoricCurrencyCode1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AsstClss', type=CompareAssetClass1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrntvInstrmId', type=CompareText1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygInstrm', type=CompareUnderlyingInstrument3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmCcy', type=CompareActiveOrHistoricCurrencyCode1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmCcyScndLeg', type=CompareActiveOrHistoricCurrencyCode1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctClssfctn', type=CompareCFIIdentifier3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AsstClss', type=CompareAssetClass1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygInstrm', type=CompareUnderlyingInstrument3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctTp', type=CompareFinancialInstrumentContractType1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DerivBasedOnCrptAsst', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ISIN', type=CompareISINIdentifier2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrntvInstrmId', type=CompareText1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnqPdctIdr', type=CompareUniqueProductIdentifier2, min=0, max=1, mutex_group=None, array=False),
 	))
 

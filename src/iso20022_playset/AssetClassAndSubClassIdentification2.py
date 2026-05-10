@@ -1,7 +1,7 @@
 from . import base_types
-import NonEquityAssetClass1Code
-import NonEquitySubClass1
-import NonEquityInstrumentReportingClassification1Code
+from .NonEquityInstrumentReportingClassification1Code import NonEquityInstrumentReportingClassification1Code
+from .NonEquitySubClass1 import NonEquitySubClass1
+from .NonEquityAssetClass1Code import NonEquityAssetClass1Code
 
 class AssetClassAndSubClassIdentification2(base_types._BaseFieldType):
 

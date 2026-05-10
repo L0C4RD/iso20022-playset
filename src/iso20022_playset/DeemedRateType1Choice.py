@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import DeemedRateType1Code
+from .GenericIdentification30 import GenericIdentification30
+from .DeemedRateType1Code import DeemedRateType1Code
 
 class DeemedRateType1Choice(base_types._BaseFieldType):
 

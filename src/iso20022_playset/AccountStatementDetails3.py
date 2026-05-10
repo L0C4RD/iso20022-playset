@@ -1,28 +1,28 @@
 from . import base_types
-import ISODate
-import ISO3NumericCurrencyCode
-import Max256Text
-import Max99Text
-import TrueFalseIndicator
-import ImpliedCurrencyAndAmount
-import CreditDebit3Code
-import Max70Text
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .ISODate import ISODate
+from .CreditDebit3Code import CreditDebit3Code
+from .ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from .Max70Text import Max70Text
+from .Max256Text import Max256Text
+from .Max99Text import Max99Text
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class AccountStatementDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_TxDt", "_Pdg", "_CrdhldrBllgCcy", "_ShrtDesc", "_AccptrNmAndLctn", "_CrdhldrBllgAmt", "_LngDesc", "_PstngDt", "_CdtDbt", "_Amt", "_Ccy"]
+	__slots__ = ["_PstngDt", "_Pdg", "_ShrtDesc", "_CrdhldrBllgAmt", "_AccptrNmAndLctn", "_CdtDbt", "_LngDesc", "_Amt", "_Ccy", "_CrdhldrBllgCcy", "_TxDt"]
 	@property
-	def TxDt(self):
-		return self._TxDt
+	def PstngDt(self):
+		return self._PstngDt
 
-	@TxDt.setter
-	def TxDt(self, value):
-		self._TxDt = value if type(value) != auto else self.make_default("TxDt")
+	@PstngDt.setter
+	def PstngDt(self, value):
+		self._PstngDt = value if type(value) != auto else self.make_default("PstngDt")
 
-	@TxDt.deleter
-	def TxDt(self):
-		del self._TxDt
-		self._TxDt = None
+	@PstngDt.deleter
+	def PstngDt(self):
+		del self._PstngDt
+		self._PstngDt = None
 
 	@property
 	def Pdg(self):
@@ -38,19 +38,6 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 		self._Pdg = None
 
 	@property
-	def CrdhldrBllgCcy(self):
-		return self._CrdhldrBllgCcy
-
-	@CrdhldrBllgCcy.setter
-	def CrdhldrBllgCcy(self, value):
-		self._CrdhldrBllgCcy = value if type(value) != auto else self.make_default("CrdhldrBllgCcy")
-
-	@CrdhldrBllgCcy.deleter
-	def CrdhldrBllgCcy(self):
-		del self._CrdhldrBllgCcy
-		self._CrdhldrBllgCcy = None
-
-	@property
 	def ShrtDesc(self):
 		return self._ShrtDesc
 
@@ -62,19 +49,6 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 	def ShrtDesc(self):
 		del self._ShrtDesc
 		self._ShrtDesc = None
-
-	@property
-	def AccptrNmAndLctn(self):
-		return self._AccptrNmAndLctn
-
-	@AccptrNmAndLctn.setter
-	def AccptrNmAndLctn(self, value):
-		self._AccptrNmAndLctn = value if type(value) != auto else self.make_default("AccptrNmAndLctn")
-
-	@AccptrNmAndLctn.deleter
-	def AccptrNmAndLctn(self):
-		del self._AccptrNmAndLctn
-		self._AccptrNmAndLctn = None
 
 	@property
 	def CrdhldrBllgAmt(self):
@@ -90,30 +64,17 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 		self._CrdhldrBllgAmt = None
 
 	@property
-	def LngDesc(self):
-		return self._LngDesc
+	def AccptrNmAndLctn(self):
+		return self._AccptrNmAndLctn
 
-	@LngDesc.setter
-	def LngDesc(self, value):
-		self._LngDesc = value if type(value) != auto else self.make_default("LngDesc")
+	@AccptrNmAndLctn.setter
+	def AccptrNmAndLctn(self, value):
+		self._AccptrNmAndLctn = value if type(value) != auto else self.make_default("AccptrNmAndLctn")
 
-	@LngDesc.deleter
-	def LngDesc(self):
-		del self._LngDesc
-		self._LngDesc = None
-
-	@property
-	def PstngDt(self):
-		return self._PstngDt
-
-	@PstngDt.setter
-	def PstngDt(self, value):
-		self._PstngDt = value if type(value) != auto else self.make_default("PstngDt")
-
-	@PstngDt.deleter
-	def PstngDt(self):
-		del self._PstngDt
-		self._PstngDt = None
+	@AccptrNmAndLctn.deleter
+	def AccptrNmAndLctn(self):
+		del self._AccptrNmAndLctn
+		self._AccptrNmAndLctn = None
 
 	@property
 	def CdtDbt(self):
@@ -127,6 +88,19 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 	def CdtDbt(self):
 		del self._CdtDbt
 		self._CdtDbt = None
+
+	@property
+	def LngDesc(self):
+		return self._LngDesc
+
+	@LngDesc.setter
+	def LngDesc(self, value):
+		self._LngDesc = value if type(value) != auto else self.make_default("LngDesc")
+
+	@LngDesc.deleter
+	def LngDesc(self):
+		del self._LngDesc
+		self._LngDesc = None
 
 	@property
 	def Amt(self):
@@ -154,17 +128,43 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 		del self._Ccy
 		self._Ccy = None
 
+	@property
+	def CrdhldrBllgCcy(self):
+		return self._CrdhldrBllgCcy
+
+	@CrdhldrBllgCcy.setter
+	def CrdhldrBllgCcy(self, value):
+		self._CrdhldrBllgCcy = value if type(value) != auto else self.make_default("CrdhldrBllgCcy")
+
+	@CrdhldrBllgCcy.deleter
+	def CrdhldrBllgCcy(self):
+		del self._CrdhldrBllgCcy
+		self._CrdhldrBllgCcy = None
+
+	@property
+	def TxDt(self):
+		return self._TxDt
+
+	@TxDt.setter
+	def TxDt(self, value):
+		self._TxDt = value if type(value) != auto else self.make_default("TxDt")
+
+	@TxDt.deleter
+	def TxDt(self):
+		del self._TxDt
+		self._TxDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pdg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrdhldrBllgCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrtDesc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AccptrNmAndLctn', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrdhldrBllgAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LngDesc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pdg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtDesc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrdhldrBllgAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AccptrNmAndLctn', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LngDesc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrdhldrBllgCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,40 +1,14 @@
 from . import base_types
-import InformationQualify1Code
-import Number
-import ActionMessage11
-import SaleCapabilities2Code
-import TrueFalseIndicator
-import InputCommand1Code
+from .InputCommand1Code import InputCommand1Code
+from .SaleCapabilities2Code import SaleCapabilities2Code
+from .Number import Number
+from .InformationQualify1Code import InformationQualify1Code
+from .TrueFalseIndicator import TrueFalseIndicator
+from .ActionMessage11 import ActionMessage11
 
 class InputData6(base_types._BaseFieldType):
 
-	__slots__ = ["_ImdtRspnFlg", "_WaitUsrVldtnFlg", "_DsblVldFlg", "_DsblCrrctFlg", "_InfQlfr", "_InptTxt", "_DvcTp", "_NtfyCardInptFlg", "_DsblCclFlg", "_InptCmd", "_MenuBckFlg", "_MaxInptTm", "_GblCrrctnFlg", "_BeepKeyFlg"]
-	@property
-	def ImdtRspnFlg(self):
-		return self._ImdtRspnFlg
-
-	@ImdtRspnFlg.setter
-	def ImdtRspnFlg(self, value):
-		self._ImdtRspnFlg = value if type(value) != auto else self.make_default("ImdtRspnFlg")
-
-	@ImdtRspnFlg.deleter
-	def ImdtRspnFlg(self):
-		del self._ImdtRspnFlg
-		self._ImdtRspnFlg = None
-
-	@property
-	def WaitUsrVldtnFlg(self):
-		return self._WaitUsrVldtnFlg
-
-	@WaitUsrVldtnFlg.setter
-	def WaitUsrVldtnFlg(self, value):
-		self._WaitUsrVldtnFlg = value if type(value) != auto else self.make_default("WaitUsrVldtnFlg")
-
-	@WaitUsrVldtnFlg.deleter
-	def WaitUsrVldtnFlg(self):
-		del self._WaitUsrVldtnFlg
-		self._WaitUsrVldtnFlg = None
-
+	__slots__ = ["_DsblVldFlg", "_ImdtRspnFlg", "_GblCrrctnFlg", "_DsblCclFlg", "_DvcTp", "_MaxInptTm", "_BeepKeyFlg", "_WaitUsrVldtnFlg", "_DsblCrrctFlg", "_InptCmd", "_MenuBckFlg", "_NtfyCardInptFlg", "_InptTxt", "_InfQlfr"]
 	@property
 	def DsblVldFlg(self):
 		return self._DsblVldFlg
@@ -49,43 +23,43 @@ class InputData6(base_types._BaseFieldType):
 		self._DsblVldFlg = None
 
 	@property
-	def DsblCrrctFlg(self):
-		return self._DsblCrrctFlg
+	def ImdtRspnFlg(self):
+		return self._ImdtRspnFlg
 
-	@DsblCrrctFlg.setter
-	def DsblCrrctFlg(self, value):
-		self._DsblCrrctFlg = value if type(value) != auto else self.make_default("DsblCrrctFlg")
+	@ImdtRspnFlg.setter
+	def ImdtRspnFlg(self, value):
+		self._ImdtRspnFlg = value if type(value) != auto else self.make_default("ImdtRspnFlg")
 
-	@DsblCrrctFlg.deleter
-	def DsblCrrctFlg(self):
-		del self._DsblCrrctFlg
-		self._DsblCrrctFlg = None
-
-	@property
-	def InfQlfr(self):
-		return self._InfQlfr
-
-	@InfQlfr.setter
-	def InfQlfr(self, value):
-		self._InfQlfr = value if type(value) != auto else self.make_default("InfQlfr")
-
-	@InfQlfr.deleter
-	def InfQlfr(self):
-		del self._InfQlfr
-		self._InfQlfr = None
+	@ImdtRspnFlg.deleter
+	def ImdtRspnFlg(self):
+		del self._ImdtRspnFlg
+		self._ImdtRspnFlg = None
 
 	@property
-	def InptTxt(self):
-		return self._InptTxt
+	def GblCrrctnFlg(self):
+		return self._GblCrrctnFlg
 
-	@InptTxt.setter
-	def InptTxt(self, value):
-		self._InptTxt = value if type(value) != auto else self.make_default("InptTxt")
+	@GblCrrctnFlg.setter
+	def GblCrrctnFlg(self, value):
+		self._GblCrrctnFlg = value if type(value) != auto else self.make_default("GblCrrctnFlg")
 
-	@InptTxt.deleter
-	def InptTxt(self):
-		del self._InptTxt
-		self._InptTxt = None
+	@GblCrrctnFlg.deleter
+	def GblCrrctnFlg(self):
+		del self._GblCrrctnFlg
+		self._GblCrrctnFlg = None
+
+	@property
+	def DsblCclFlg(self):
+		return self._DsblCclFlg
+
+	@DsblCclFlg.setter
+	def DsblCclFlg(self, value):
+		self._DsblCclFlg = value if type(value) != auto else self.make_default("DsblCclFlg")
+
+	@DsblCclFlg.deleter
+	def DsblCclFlg(self):
+		del self._DsblCclFlg
+		self._DsblCclFlg = None
 
 	@property
 	def DvcTp(self):
@@ -101,30 +75,56 @@ class InputData6(base_types._BaseFieldType):
 		self._DvcTp = None
 
 	@property
-	def NtfyCardInptFlg(self):
-		return self._NtfyCardInptFlg
+	def MaxInptTm(self):
+		return self._MaxInptTm
 
-	@NtfyCardInptFlg.setter
-	def NtfyCardInptFlg(self, value):
-		self._NtfyCardInptFlg = value if type(value) != auto else self.make_default("NtfyCardInptFlg")
+	@MaxInptTm.setter
+	def MaxInptTm(self, value):
+		self._MaxInptTm = value if type(value) != auto else self.make_default("MaxInptTm")
 
-	@NtfyCardInptFlg.deleter
-	def NtfyCardInptFlg(self):
-		del self._NtfyCardInptFlg
-		self._NtfyCardInptFlg = None
+	@MaxInptTm.deleter
+	def MaxInptTm(self):
+		del self._MaxInptTm
+		self._MaxInptTm = None
 
 	@property
-	def DsblCclFlg(self):
-		return self._DsblCclFlg
+	def BeepKeyFlg(self):
+		return self._BeepKeyFlg
 
-	@DsblCclFlg.setter
-	def DsblCclFlg(self, value):
-		self._DsblCclFlg = value if type(value) != auto else self.make_default("DsblCclFlg")
+	@BeepKeyFlg.setter
+	def BeepKeyFlg(self, value):
+		self._BeepKeyFlg = value if type(value) != auto else self.make_default("BeepKeyFlg")
 
-	@DsblCclFlg.deleter
-	def DsblCclFlg(self):
-		del self._DsblCclFlg
-		self._DsblCclFlg = None
+	@BeepKeyFlg.deleter
+	def BeepKeyFlg(self):
+		del self._BeepKeyFlg
+		self._BeepKeyFlg = None
+
+	@property
+	def WaitUsrVldtnFlg(self):
+		return self._WaitUsrVldtnFlg
+
+	@WaitUsrVldtnFlg.setter
+	def WaitUsrVldtnFlg(self, value):
+		self._WaitUsrVldtnFlg = value if type(value) != auto else self.make_default("WaitUsrVldtnFlg")
+
+	@WaitUsrVldtnFlg.deleter
+	def WaitUsrVldtnFlg(self):
+		del self._WaitUsrVldtnFlg
+		self._WaitUsrVldtnFlg = None
+
+	@property
+	def DsblCrrctFlg(self):
+		return self._DsblCrrctFlg
+
+	@DsblCrrctFlg.setter
+	def DsblCrrctFlg(self, value):
+		self._DsblCrrctFlg = value if type(value) != auto else self.make_default("DsblCrrctFlg")
+
+	@DsblCrrctFlg.deleter
+	def DsblCrrctFlg(self):
+		del self._DsblCrrctFlg
+		self._DsblCrrctFlg = None
 
 	@property
 	def InptCmd(self):
@@ -153,58 +153,58 @@ class InputData6(base_types._BaseFieldType):
 		self._MenuBckFlg = None
 
 	@property
-	def MaxInptTm(self):
-		return self._MaxInptTm
+	def NtfyCardInptFlg(self):
+		return self._NtfyCardInptFlg
 
-	@MaxInptTm.setter
-	def MaxInptTm(self, value):
-		self._MaxInptTm = value if type(value) != auto else self.make_default("MaxInptTm")
+	@NtfyCardInptFlg.setter
+	def NtfyCardInptFlg(self, value):
+		self._NtfyCardInptFlg = value if type(value) != auto else self.make_default("NtfyCardInptFlg")
 
-	@MaxInptTm.deleter
-	def MaxInptTm(self):
-		del self._MaxInptTm
-		self._MaxInptTm = None
-
-	@property
-	def GblCrrctnFlg(self):
-		return self._GblCrrctnFlg
-
-	@GblCrrctnFlg.setter
-	def GblCrrctnFlg(self, value):
-		self._GblCrrctnFlg = value if type(value) != auto else self.make_default("GblCrrctnFlg")
-
-	@GblCrrctnFlg.deleter
-	def GblCrrctnFlg(self):
-		del self._GblCrrctnFlg
-		self._GblCrrctnFlg = None
+	@NtfyCardInptFlg.deleter
+	def NtfyCardInptFlg(self):
+		del self._NtfyCardInptFlg
+		self._NtfyCardInptFlg = None
 
 	@property
-	def BeepKeyFlg(self):
-		return self._BeepKeyFlg
+	def InptTxt(self):
+		return self._InptTxt
 
-	@BeepKeyFlg.setter
-	def BeepKeyFlg(self, value):
-		self._BeepKeyFlg = value if type(value) != auto else self.make_default("BeepKeyFlg")
+	@InptTxt.setter
+	def InptTxt(self, value):
+		self._InptTxt = value if type(value) != auto else self.make_default("InptTxt")
 
-	@BeepKeyFlg.deleter
-	def BeepKeyFlg(self):
-		del self._BeepKeyFlg
-		self._BeepKeyFlg = None
+	@InptTxt.deleter
+	def InptTxt(self):
+		del self._InptTxt
+		self._InptTxt = None
+
+	@property
+	def InfQlfr(self):
+		return self._InfQlfr
+
+	@InfQlfr.setter
+	def InfQlfr(self, value):
+		self._InfQlfr = value if type(value) != auto else self.make_default("InfQlfr")
+
+	@InfQlfr.deleter
+	def InfQlfr(self):
+		del self._InfQlfr
+		self._InfQlfr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ImdtRspnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WaitUsrVldtnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsblVldFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DsblCrrctFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InfQlfr', type=InformationQualify1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InptTxt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DvcTp', type=SaleCapabilities2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfyCardInptFlg', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ImdtRspnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GblCrrctnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsblCclFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DvcTp', type=SaleCapabilities2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxInptTm', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BeepKeyFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WaitUsrVldtnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DsblCrrctFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InptCmd', type=InputCommand1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MenuBckFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxInptTm', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GblCrrctnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BeepKeyFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfyCardInptFlg', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InptTxt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InfQlfr', type=InformationQualify1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

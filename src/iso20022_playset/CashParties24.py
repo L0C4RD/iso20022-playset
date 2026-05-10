@@ -1,36 +1,10 @@
 from . import base_types
-import PartyIdentificationAndAccount97
-import PartyIdentificationAndAccount96
+from .PartyIdentificationAndAccount97 import PartyIdentificationAndAccount97
+from .PartyIdentificationAndAccount96 import PartyIdentificationAndAccount96
 
 class CashParties24(base_types._BaseFieldType):
 
-	__slots__ = ["_Intrmy", "_CdtrAgt", "_Cdtr", "_Intrmy2"]
-	@property
-	def Intrmy(self):
-		return self._Intrmy
-
-	@Intrmy.setter
-	def Intrmy(self, value):
-		self._Intrmy = value if type(value) != auto else self.make_default("Intrmy")
-
-	@Intrmy.deleter
-	def Intrmy(self):
-		del self._Intrmy
-		self._Intrmy = None
-
-	@property
-	def CdtrAgt(self):
-		return self._CdtrAgt
-
-	@CdtrAgt.setter
-	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
-
-	@CdtrAgt.deleter
-	def CdtrAgt(self):
-		del self._CdtrAgt
-		self._CdtrAgt = None
-
+	__slots__ = ["_Cdtr", "_Intrmy2", "_CdtrAgt", "_Intrmy"]
 	@property
 	def Cdtr(self):
 		return self._Cdtr
@@ -57,10 +31,36 @@ class CashParties24(base_types._BaseFieldType):
 		del self._Intrmy2
 		self._Intrmy2 = None
 
+	@property
+	def CdtrAgt(self):
+		return self._CdtrAgt
+
+	@CdtrAgt.setter
+	def CdtrAgt(self, value):
+		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
+
+	@CdtrAgt.deleter
+	def CdtrAgt(self):
+		del self._CdtrAgt
+		self._CdtrAgt = None
+
+	@property
+	def Intrmy(self):
+		return self._Intrmy
+
+	@Intrmy.setter
+	def Intrmy(self, value):
+		self._Intrmy = value if type(value) != auto else self.make_default("Intrmy")
+
+	@Intrmy.deleter
+	def Intrmy(self):
+		del self._Intrmy
+		self._Intrmy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Intrmy', type=PartyIdentificationAndAccount97, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount97, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cdtr', type=PartyIdentificationAndAccount96, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Intrmy2', type=PartyIdentificationAndAccount97, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount97, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Intrmy', type=PartyIdentificationAndAccount97, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import PriceRateOrAmount3Choice
-import PriceValueType7Code
+from .PriceValueType7Code import PriceValueType7Code
+from .PriceRateOrAmount3Choice import PriceRateOrAmount3Choice
 
 class Price14(base_types._BaseFieldType):
 

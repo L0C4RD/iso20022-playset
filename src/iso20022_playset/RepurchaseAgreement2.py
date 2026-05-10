@@ -1,37 +1,24 @@
 from . import base_types
-import ISODate
-import RepurchaseAgreementType3Choice
-import LEIIdentifier
-import ActiveCurrencyAndAmount
+from .RepurchaseAgreementType3Choice import RepurchaseAgreementType3Choice
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .LEIIdentifier import LEIIdentifier
+from .ISODate import ISODate
 
 class RepurchaseAgreement2(base_types._BaseFieldType):
 
-	__slots__ = ["_MtrtyDt", "_RpAgrmtTp", "_CollMktVal", "_ScndLegPric", "_TrptyAgtId", "_CtrPty"]
+	__slots__ = ["_ScndLegPric", "_CollMktVal", "_TrptyAgtId", "_CtrPty", "_RpAgrmtTp", "_MtrtyDt"]
 	@property
-	def MtrtyDt(self):
-		return self._MtrtyDt
+	def ScndLegPric(self):
+		return self._ScndLegPric
 
-	@MtrtyDt.setter
-	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+	@ScndLegPric.setter
+	def ScndLegPric(self, value):
+		self._ScndLegPric = value if type(value) != auto else self.make_default("ScndLegPric")
 
-	@MtrtyDt.deleter
-	def MtrtyDt(self):
-		del self._MtrtyDt
-		self._MtrtyDt = None
-
-	@property
-	def RpAgrmtTp(self):
-		return self._RpAgrmtTp
-
-	@RpAgrmtTp.setter
-	def RpAgrmtTp(self, value):
-		self._RpAgrmtTp = value if type(value) != auto else self.make_default("RpAgrmtTp")
-
-	@RpAgrmtTp.deleter
-	def RpAgrmtTp(self):
-		del self._RpAgrmtTp
-		self._RpAgrmtTp = None
+	@ScndLegPric.deleter
+	def ScndLegPric(self):
+		del self._ScndLegPric
+		self._ScndLegPric = None
 
 	@property
 	def CollMktVal(self):
@@ -45,19 +32,6 @@ class RepurchaseAgreement2(base_types._BaseFieldType):
 	def CollMktVal(self):
 		del self._CollMktVal
 		self._CollMktVal = None
-
-	@property
-	def ScndLegPric(self):
-		return self._ScndLegPric
-
-	@ScndLegPric.setter
-	def ScndLegPric(self, value):
-		self._ScndLegPric = value if type(value) != auto else self.make_default("ScndLegPric")
-
-	@ScndLegPric.deleter
-	def ScndLegPric(self):
-		del self._ScndLegPric
-		self._ScndLegPric = None
 
 	@property
 	def TrptyAgtId(self):
@@ -85,12 +59,38 @@ class RepurchaseAgreement2(base_types._BaseFieldType):
 		del self._CtrPty
 		self._CtrPty = None
 
+	@property
+	def RpAgrmtTp(self):
+		return self._RpAgrmtTp
+
+	@RpAgrmtTp.setter
+	def RpAgrmtTp(self, value):
+		self._RpAgrmtTp = value if type(value) != auto else self.make_default("RpAgrmtTp")
+
+	@RpAgrmtTp.deleter
+	def RpAgrmtTp(self):
+		del self._RpAgrmtTp
+		self._RpAgrmtTp = None
+
+	@property
+	def MtrtyDt(self):
+		return self._MtrtyDt
+
+	@MtrtyDt.setter
+	def MtrtyDt(self, value):
+		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+
+	@MtrtyDt.deleter
+	def MtrtyDt(self):
+		del self._MtrtyDt
+		self._MtrtyDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RpAgrmtTp', type=RepurchaseAgreementType3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollMktVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ScndLegPric', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollMktVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RpAgrmtTp', type=RepurchaseAgreementType3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

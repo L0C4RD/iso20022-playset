@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import ExternalMandateReason1Code
+from .Max35Text import Max35Text
+from .ExternalMandateReason1Code import ExternalMandateReason1Code
 
 class MandateReason1Choice(base_types._BaseFieldType):
 

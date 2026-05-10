@@ -1,7 +1,7 @@
 from . import base_types
-import ATMCommand7
-import TransactionIdentifier3
-import Response2Code
+from .ATMCommand7 import ATMCommand7
+from .TransactionIdentifier3 import TransactionIdentifier3
+from .Response2Code import Response2Code
 
 class ATMTransaction41(base_types._BaseFieldType):
 

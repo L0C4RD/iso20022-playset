@@ -1,5 +1,5 @@
 from . import base_types
-import AssetClassProductType13Code
+from .AssetClassProductType13Code import AssetClassProductType13Code
 
 class AssetClassCommodityMultiCommodityExotic1(base_types._BaseFieldType):
 

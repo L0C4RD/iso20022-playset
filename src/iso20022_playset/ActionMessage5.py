@@ -1,23 +1,10 @@
 from . import base_types
-import OutputFormat1Code
-import Max20000Text
+from .OutputFormat1Code import OutputFormat1Code
+from .Max20000Text import Max20000Text
 
 class ActionMessage5(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgCntt", "_Frmt"]
-	@property
-	def MsgCntt(self):
-		return self._MsgCntt
-
-	@MsgCntt.setter
-	def MsgCntt(self, value):
-		self._MsgCntt = value if type(value) != auto else self.make_default("MsgCntt")
-
-	@MsgCntt.deleter
-	def MsgCntt(self):
-		del self._MsgCntt
-		self._MsgCntt = None
-
+	__slots__ = ["_Frmt", "_MsgCntt"]
 	@property
 	def Frmt(self):
 		return self._Frmt
@@ -31,8 +18,21 @@ class ActionMessage5(base_types._BaseFieldType):
 		del self._Frmt
 		self._Frmt = None
 
+	@property
+	def MsgCntt(self):
+		return self._MsgCntt
+
+	@MsgCntt.setter
+	def MsgCntt(self, value):
+		self._MsgCntt = value if type(value) != auto else self.make_default("MsgCntt")
+
+	@MsgCntt.deleter
+	def MsgCntt(self):
+		del self._MsgCntt
+		self._MsgCntt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgCntt', type=Max20000Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frmt', type=OutputFormat1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgCntt', type=Max20000Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

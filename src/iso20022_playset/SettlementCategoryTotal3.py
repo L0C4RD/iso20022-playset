@@ -1,64 +1,12 @@
 from . import base_types
-import CreditDebit3Code
-import Number
-import ISO3NumericCurrencyCode
-import ImpliedCurrencyAndAmount
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from .Number import Number
+from .CreditDebit3Code import CreditDebit3Code
 
 class SettlementCategoryTotal3(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgFeeAmt", "_Cnt", "_IntrchngFeeCdtDbt", "_PrcgFeeCcy", "_IntrchngFeeCcy", "_CdtDbt", "_PrcgFeeCdtDbt", "_Amt", "_IntrchngFeeAmt", "_Ccy"]
-	@property
-	def PrcgFeeAmt(self):
-		return self._PrcgFeeAmt
-
-	@PrcgFeeAmt.setter
-	def PrcgFeeAmt(self, value):
-		self._PrcgFeeAmt = value if type(value) != auto else self.make_default("PrcgFeeAmt")
-
-	@PrcgFeeAmt.deleter
-	def PrcgFeeAmt(self):
-		del self._PrcgFeeAmt
-		self._PrcgFeeAmt = None
-
-	@property
-	def Cnt(self):
-		return self._Cnt
-
-	@Cnt.setter
-	def Cnt(self, value):
-		self._Cnt = value if type(value) != auto else self.make_default("Cnt")
-
-	@Cnt.deleter
-	def Cnt(self):
-		del self._Cnt
-		self._Cnt = None
-
-	@property
-	def IntrchngFeeCdtDbt(self):
-		return self._IntrchngFeeCdtDbt
-
-	@IntrchngFeeCdtDbt.setter
-	def IntrchngFeeCdtDbt(self, value):
-		self._IntrchngFeeCdtDbt = value if type(value) != auto else self.make_default("IntrchngFeeCdtDbt")
-
-	@IntrchngFeeCdtDbt.deleter
-	def IntrchngFeeCdtDbt(self):
-		del self._IntrchngFeeCdtDbt
-		self._IntrchngFeeCdtDbt = None
-
-	@property
-	def PrcgFeeCcy(self):
-		return self._PrcgFeeCcy
-
-	@PrcgFeeCcy.setter
-	def PrcgFeeCcy(self, value):
-		self._PrcgFeeCcy = value if type(value) != auto else self.make_default("PrcgFeeCcy")
-
-	@PrcgFeeCcy.deleter
-	def PrcgFeeCcy(self):
-		del self._PrcgFeeCcy
-		self._PrcgFeeCcy = None
-
+	__slots__ = ["_IntrchngFeeCcy", "_CdtDbt", "_PrcgFeeAmt", "_PrcgFeeCdtDbt", "_IntrchngFeeAmt", "_Amt", "_PrcgFeeCcy", "_Ccy", "_Cnt", "_IntrchngFeeCdtDbt"]
 	@property
 	def IntrchngFeeCcy(self):
 		return self._IntrchngFeeCcy
@@ -86,6 +34,19 @@ class SettlementCategoryTotal3(base_types._BaseFieldType):
 		self._CdtDbt = None
 
 	@property
+	def PrcgFeeAmt(self):
+		return self._PrcgFeeAmt
+
+	@PrcgFeeAmt.setter
+	def PrcgFeeAmt(self, value):
+		self._PrcgFeeAmt = value if type(value) != auto else self.make_default("PrcgFeeAmt")
+
+	@PrcgFeeAmt.deleter
+	def PrcgFeeAmt(self):
+		del self._PrcgFeeAmt
+		self._PrcgFeeAmt = None
+
+	@property
 	def PrcgFeeCdtDbt(self):
 		return self._PrcgFeeCdtDbt
 
@@ -97,19 +58,6 @@ class SettlementCategoryTotal3(base_types._BaseFieldType):
 	def PrcgFeeCdtDbt(self):
 		del self._PrcgFeeCdtDbt
 		self._PrcgFeeCdtDbt = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
 
 	@property
 	def IntrchngFeeAmt(self):
@@ -125,6 +73,32 @@ class SettlementCategoryTotal3(base_types._BaseFieldType):
 		self._IntrchngFeeAmt = None
 
 	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def PrcgFeeCcy(self):
+		return self._PrcgFeeCcy
+
+	@PrcgFeeCcy.setter
+	def PrcgFeeCcy(self, value):
+		self._PrcgFeeCcy = value if type(value) != auto else self.make_default("PrcgFeeCcy")
+
+	@PrcgFeeCcy.deleter
+	def PrcgFeeCcy(self):
+		del self._PrcgFeeCcy
+		self._PrcgFeeCcy = None
+
+	@property
 	def Ccy(self):
 		return self._Ccy
 
@@ -137,16 +111,42 @@ class SettlementCategoryTotal3(base_types._BaseFieldType):
 		del self._Ccy
 		self._Ccy = None
 
+	@property
+	def Cnt(self):
+		return self._Cnt
+
+	@Cnt.setter
+	def Cnt(self, value):
+		self._Cnt = value if type(value) != auto else self.make_default("Cnt")
+
+	@Cnt.deleter
+	def Cnt(self):
+		del self._Cnt
+		self._Cnt = None
+
+	@property
+	def IntrchngFeeCdtDbt(self):
+		return self._IntrchngFeeCdtDbt
+
+	@IntrchngFeeCdtDbt.setter
+	def IntrchngFeeCdtDbt(self, value):
+		self._IntrchngFeeCdtDbt = value if type(value) != auto else self.make_default("IntrchngFeeCdtDbt")
+
+	@IntrchngFeeCdtDbt.deleter
+	def IntrchngFeeCdtDbt(self):
+		del self._IntrchngFeeCdtDbt
+		self._IntrchngFeeCdtDbt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgFeeAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cnt', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrchngFeeCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrchngFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgFeeAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgFeeCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrchngFeeAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cnt', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrchngFeeCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

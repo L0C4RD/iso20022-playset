@@ -1,7 +1,7 @@
 from . import base_types
-import CreditDebit3Code
-import ContractBalanceType1Choice
-import ActiveCurrencyAndAmount
+from .CreditDebit3Code import CreditDebit3Code
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .ContractBalanceType1Choice import ContractBalanceType1Choice
 
 class ContractBalance1(base_types._BaseFieldType):
 

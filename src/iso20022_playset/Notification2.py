@@ -1,23 +1,23 @@
 from . import base_types
-import YesNoIndicator
-import Max35Text
-import InformationDistribution1Choice
+from .Max35Text import Max35Text
+from .YesNoIndicator import YesNoIndicator
+from .InformationDistribution1Choice import InformationDistribution1Choice
 
 class Notification2(base_types._BaseFieldType):
 
-	__slots__ = ["_DstrbtnTp", "_NtfctnTp", "_Reqrd"]
+	__slots__ = ["_Reqrd", "_NtfctnTp", "_DstrbtnTp"]
 	@property
-	def DstrbtnTp(self):
-		return self._DstrbtnTp
+	def Reqrd(self):
+		return self._Reqrd
 
-	@DstrbtnTp.setter
-	def DstrbtnTp(self, value):
-		self._DstrbtnTp = value if type(value) != auto else self.make_default("DstrbtnTp")
+	@Reqrd.setter
+	def Reqrd(self, value):
+		self._Reqrd = value if type(value) != auto else self.make_default("Reqrd")
 
-	@DstrbtnTp.deleter
-	def DstrbtnTp(self):
-		del self._DstrbtnTp
-		self._DstrbtnTp = None
+	@Reqrd.deleter
+	def Reqrd(self):
+		del self._Reqrd
+		self._Reqrd = None
 
 	@property
 	def NtfctnTp(self):
@@ -33,21 +33,21 @@ class Notification2(base_types._BaseFieldType):
 		self._NtfctnTp = None
 
 	@property
-	def Reqrd(self):
-		return self._Reqrd
+	def DstrbtnTp(self):
+		return self._DstrbtnTp
 
-	@Reqrd.setter
-	def Reqrd(self, value):
-		self._Reqrd = value if type(value) != auto else self.make_default("Reqrd")
+	@DstrbtnTp.setter
+	def DstrbtnTp(self, value):
+		self._DstrbtnTp = value if type(value) != auto else self.make_default("DstrbtnTp")
 
-	@Reqrd.deleter
-	def Reqrd(self):
-		del self._Reqrd
-		self._Reqrd = None
+	@DstrbtnTp.deleter
+	def DstrbtnTp(self):
+		del self._DstrbtnTp
+		self._DstrbtnTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DstrbtnTp', type=InformationDistribution1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnTp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Reqrd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnTp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstrbtnTp', type=InformationDistribution1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

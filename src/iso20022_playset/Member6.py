@@ -1,23 +1,23 @@
 from . import base_types
-import MemberIdentification3Choice
-import CommunicationAddress8
-import ContactIdentificationAndAddress1
+from .MemberIdentification3Choice import MemberIdentification3Choice
+from .ContactIdentificationAndAddress1 import ContactIdentificationAndAddress1
+from .CommunicationAddress8 import CommunicationAddress8
 
 class Member6(base_types._BaseFieldType):
 
-	__slots__ = ["_MmbRtrAdr", "_ComAdr", "_CtctRef"]
+	__slots__ = ["_CtctRef", "_ComAdr", "_MmbRtrAdr"]
 	@property
-	def MmbRtrAdr(self):
-		return self._MmbRtrAdr
+	def CtctRef(self):
+		return self._CtctRef
 
-	@MmbRtrAdr.setter
-	def MmbRtrAdr(self, value):
-		self._MmbRtrAdr = value if type(value) != auto else self.make_default("MmbRtrAdr")
+	@CtctRef.setter
+	def CtctRef(self, value):
+		self._CtctRef = value if type(value) != auto else self.make_default("CtctRef")
 
-	@MmbRtrAdr.deleter
-	def MmbRtrAdr(self):
-		del self._MmbRtrAdr
-		self._MmbRtrAdr = None
+	@CtctRef.deleter
+	def CtctRef(self):
+		del self._CtctRef
+		self._CtctRef = None
 
 	@property
 	def ComAdr(self):
@@ -33,21 +33,21 @@ class Member6(base_types._BaseFieldType):
 		self._ComAdr = None
 
 	@property
-	def CtctRef(self):
-		return self._CtctRef
+	def MmbRtrAdr(self):
+		return self._MmbRtrAdr
 
-	@CtctRef.setter
-	def CtctRef(self, value):
-		self._CtctRef = value if type(value) != auto else self.make_default("CtctRef")
+	@MmbRtrAdr.setter
+	def MmbRtrAdr(self, value):
+		self._MmbRtrAdr = value if type(value) != auto else self.make_default("MmbRtrAdr")
 
-	@CtctRef.deleter
-	def CtctRef(self):
-		del self._CtctRef
-		self._CtctRef = None
+	@MmbRtrAdr.deleter
+	def MmbRtrAdr(self):
+		del self._MmbRtrAdr
+		self._MmbRtrAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MmbRtrAdr', type=MemberIdentification3Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ComAdr', type=CommunicationAddress8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctRef', type=ContactIdentificationAndAddress1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ComAdr', type=CommunicationAddress8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MmbRtrAdr', type=MemberIdentification3Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

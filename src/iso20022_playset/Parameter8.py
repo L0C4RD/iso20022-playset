@@ -1,23 +1,23 @@
 from . import base_types
-import Algorithm11Code
-import Number
-import AlgorithmIdentification12
+from .AlgorithmIdentification12 import AlgorithmIdentification12
+from .Algorithm11Code import Algorithm11Code
+from .Number import Number
 
 class Parameter8(base_types._BaseFieldType):
 
-	__slots__ = ["_DgstAlgo", "_SaltLngth", "_MskGnrtrAlgo", "_TrlrFld"]
+	__slots__ = ["_TrlrFld", "_SaltLngth", "_DgstAlgo", "_MskGnrtrAlgo"]
 	@property
-	def DgstAlgo(self):
-		return self._DgstAlgo
+	def TrlrFld(self):
+		return self._TrlrFld
 
-	@DgstAlgo.setter
-	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+	@TrlrFld.setter
+	def TrlrFld(self, value):
+		self._TrlrFld = value if type(value) != auto else self.make_default("TrlrFld")
 
-	@DgstAlgo.deleter
-	def DgstAlgo(self):
-		del self._DgstAlgo
-		self._DgstAlgo = None
+	@TrlrFld.deleter
+	def TrlrFld(self):
+		del self._TrlrFld
+		self._TrlrFld = None
 
 	@property
 	def SaltLngth(self):
@@ -33,6 +33,19 @@ class Parameter8(base_types._BaseFieldType):
 		self._SaltLngth = None
 
 	@property
+	def DgstAlgo(self):
+		return self._DgstAlgo
+
+	@DgstAlgo.setter
+	def DgstAlgo(self, value):
+		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+
+	@DgstAlgo.deleter
+	def DgstAlgo(self):
+		del self._DgstAlgo
+		self._DgstAlgo = None
+
+	@property
 	def MskGnrtrAlgo(self):
 		return self._MskGnrtrAlgo
 
@@ -45,23 +58,10 @@ class Parameter8(base_types._BaseFieldType):
 		del self._MskGnrtrAlgo
 		self._MskGnrtrAlgo = None
 
-	@property
-	def TrlrFld(self):
-		return self._TrlrFld
-
-	@TrlrFld.setter
-	def TrlrFld(self, value):
-		self._TrlrFld = value if type(value) != auto else self.make_default("TrlrFld")
-
-	@TrlrFld.deleter
-	def TrlrFld(self):
-		del self._TrlrFld
-		self._TrlrFld = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DgstAlgo', type=Algorithm11Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaltLngth', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MskGnrtrAlgo', type=AlgorithmIdentification12, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrlrFld', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaltLngth', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgstAlgo', type=Algorithm11Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MskGnrtrAlgo', type=AlgorithmIdentification12, min=1, max=1, mutex_group=None, array=False),
 	))
 

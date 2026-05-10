@@ -1,9 +1,9 @@
 from . import base_types
-import Max15NumericText
-import Party50Choice
-import ISODateTime
-import Max35Text
-import BranchAndFinancialInstitutionIdentification8
+from .Max35Text import Max35Text
+from .Party50Choice import Party50Choice
+from .Max15NumericText import Max15NumericText
+from .ISODateTime import ISODateTime
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class CurrencyControlHeader9(base_types._BaseFieldType):
 

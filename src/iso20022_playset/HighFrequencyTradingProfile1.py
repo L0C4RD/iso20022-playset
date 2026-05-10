@@ -1,24 +1,11 @@
 from . import base_types
-import ISODate
-import SettlementFrequency1Choice
-import ConsolidationType1Choice
+from .SettlementFrequency1Choice import SettlementFrequency1Choice
+from .ISODate import ISODate
+from .ConsolidationType1Choice import ConsolidationType1Choice
 
 class HighFrequencyTradingProfile1(base_types._BaseFieldType):
 
-	__slots__ = ["_CnsldtnTp", "_Dt", "_SttlmFrqcy"]
-	@property
-	def CnsldtnTp(self):
-		return self._CnsldtnTp
-
-	@CnsldtnTp.setter
-	def CnsldtnTp(self, value):
-		self._CnsldtnTp = value if type(value) != auto else self.make_default("CnsldtnTp")
-
-	@CnsldtnTp.deleter
-	def CnsldtnTp(self):
-		del self._CnsldtnTp
-		self._CnsldtnTp = None
-
+	__slots__ = ["_Dt", "_SttlmFrqcy", "_CnsldtnTp"]
 	@property
 	def Dt(self):
 		return self._Dt
@@ -45,9 +32,22 @@ class HighFrequencyTradingProfile1(base_types._BaseFieldType):
 		del self._SttlmFrqcy
 		self._SttlmFrqcy = None
 
+	@property
+	def CnsldtnTp(self):
+		return self._CnsldtnTp
+
+	@CnsldtnTp.setter
+	def CnsldtnTp(self, value):
+		self._CnsldtnTp = value if type(value) != auto else self.make_default("CnsldtnTp")
+
+	@CnsldtnTp.deleter
+	def CnsldtnTp(self):
+		del self._CnsldtnTp
+		self._CnsldtnTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CnsldtnTp', type=ConsolidationType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmFrqcy', type=SettlementFrequency1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CnsldtnTp', type=ConsolidationType1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

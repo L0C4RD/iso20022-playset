@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification36
-import NoReasonCode
+from .GenericIdentification36 import GenericIdentification36
+from .NoReasonCode import NoReasonCode
 
 class ProprietaryReason1Choice(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-import RestrictedFINImpliedCurrencyAndAmount
+from .RestrictedFINImpliedCurrencyAndAmount import RestrictedFINImpliedCurrencyAndAmount
 
 class OriginalAndCurrentQuantities4(base_types._BaseFieldType):
 

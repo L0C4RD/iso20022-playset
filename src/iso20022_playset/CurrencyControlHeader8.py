@@ -1,26 +1,13 @@
 from . import base_types
-import PartyIdentification272
-import Max15NumericText
-import ISODateTime
-import Max35Text
-import BranchAndFinancialInstitutionIdentification8
+from .Max35Text import Max35Text
+from .PartyIdentification272 import PartyIdentification272
+from .Max15NumericText import Max15NumericText
+from .ISODateTime import ISODateTime
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class CurrencyControlHeader8(base_types._BaseFieldType):
 
-	__slots__ = ["_InitgPty", "_MsgId", "_FwdgAgt", "_NbOfItms", "_CreDtTm"]
-	@property
-	def InitgPty(self):
-		return self._InitgPty
-
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
-
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
-
+	__slots__ = ["_MsgId", "_InitgPty", "_FwdgAgt", "_NbOfItms", "_CreDtTm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -33,6 +20,19 @@ class CurrencyControlHeader8(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
+
+	@property
+	def InitgPty(self):
+		return self._InitgPty
+
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
+
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
 
 	@property
 	def FwdgAgt(self):
@@ -74,8 +74,8 @@ class CurrencyControlHeader8(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FwdgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfItms', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),

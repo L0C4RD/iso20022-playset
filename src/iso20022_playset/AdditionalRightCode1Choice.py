@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification13
-import AdditionalRight1Code
+from .AdditionalRight1Code import AdditionalRight1Code
+from .GenericIdentification13 import GenericIdentification13
 
 class AdditionalRightCode1Choice(base_types._BaseFieldType):
 

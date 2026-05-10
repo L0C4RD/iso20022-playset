@@ -1,15 +1,15 @@
 from . import base_types
-import Max16Text
-import Max256Text
-import IBAN2007Identifier
-import BBANIdentifier
-import Max35Text
-import Min8Max28NumericText
-import UPICIdentifier
+from .Max35Text import Max35Text
+from .Max16Text import Max16Text
+from .IBAN2007Identifier import IBAN2007Identifier
+from .Max256Text import Max256Text
+from .UPICIdentifier import UPICIdentifier
+from .BBANIdentifier import BBANIdentifier
+from .Min8Max28NumericText import Min8Max28NumericText
 
 class AccountIdentification54Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IBAN", "_Dmst", "_Othr", "_MSISDN", "_UPIC", "_Card", "_EMail", "_BBAN"]
+	__slots__ = ["_IBAN", "_MSISDN", "_Dmst", "_Othr", "_EMail", "_UPIC", "_BBAN", "_Card"]
 	@property
 	def IBAN(self):
 		return self._IBAN
@@ -22,6 +22,19 @@ class AccountIdentification54Choice(base_types._BaseFieldType):
 	def IBAN(self):
 		del self._IBAN
 		self._IBAN = None
+
+	@property
+	def MSISDN(self):
+		return self._MSISDN
+
+	@MSISDN.setter
+	def MSISDN(self, value):
+		self._MSISDN = value if type(value) != auto else self.make_default("MSISDN")
+
+	@MSISDN.deleter
+	def MSISDN(self):
+		del self._MSISDN
+		self._MSISDN = None
 
 	@property
 	def Dmst(self):
@@ -50,17 +63,17 @@ class AccountIdentification54Choice(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def MSISDN(self):
-		return self._MSISDN
+	def EMail(self):
+		return self._EMail
 
-	@MSISDN.setter
-	def MSISDN(self, value):
-		self._MSISDN = value if type(value) != auto else self.make_default("MSISDN")
+	@EMail.setter
+	def EMail(self, value):
+		self._EMail = value if type(value) != auto else self.make_default("EMail")
 
-	@MSISDN.deleter
-	def MSISDN(self):
-		del self._MSISDN
-		self._MSISDN = None
+	@EMail.deleter
+	def EMail(self):
+		del self._EMail
+		self._EMail = None
 
 	@property
 	def UPIC(self):
@@ -76,32 +89,6 @@ class AccountIdentification54Choice(base_types._BaseFieldType):
 		self._UPIC = None
 
 	@property
-	def Card(self):
-		return self._Card
-
-	@Card.setter
-	def Card(self, value):
-		self._Card = value if type(value) != auto else self.make_default("Card")
-
-	@Card.deleter
-	def Card(self):
-		del self._Card
-		self._Card = None
-
-	@property
-	def EMail(self):
-		return self._EMail
-
-	@EMail.setter
-	def EMail(self, value):
-		self._EMail = value if type(value) != auto else self.make_default("EMail")
-
-	@EMail.deleter
-	def EMail(self):
-		del self._EMail
-		self._EMail = None
-
-	@property
 	def BBAN(self):
 		return self._BBAN
 
@@ -114,14 +101,27 @@ class AccountIdentification54Choice(base_types._BaseFieldType):
 		del self._BBAN
 		self._BBAN = None
 
+	@property
+	def Card(self):
+		return self._Card
+
+	@Card.setter
+	def Card(self, value):
+		self._Card = value if type(value) != auto else self.make_default("Card")
+
+	@Card.deleter
+	def Card(self):
+		del self._Card
+		self._Card = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MSISDN', type=Max16Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dmst', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MSISDN', type=Max16Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='UPIC', type=UPICIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Card', type=Min8Max28NumericText, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='EMail', type=Max256Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='UPIC', type=UPICIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BBAN', type=BBANIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Card', type=Min8Max28NumericText, min=0, max=1, mutex_group=1, array=False),
 	))
 

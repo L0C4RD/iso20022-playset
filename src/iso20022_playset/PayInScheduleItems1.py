@@ -1,6 +1,6 @@
 from . import base_types
-import ISODateTime
-import ActiveCurrencyAndAmount
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .ISODateTime import ISODateTime
 
 class PayInScheduleItems1(base_types._BaseFieldType):
 

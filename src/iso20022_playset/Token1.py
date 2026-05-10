@@ -1,39 +1,26 @@
 from . import base_types
-import Max2NumericText
-import Max11NumericText
-import Max140Text
-import TrueFalseIndicator
-import Max19NumericText
-import Exact4NumericText
+from .Max2NumericText import Max2NumericText
+from .Max140Text import Max140Text
+from .Max19NumericText import Max19NumericText
+from .TrueFalseIndicator import TrueFalseIndicator
+from .Max11NumericText import Max11NumericText
+from .Exact4NumericText import Exact4NumericText
 
 class Token1(base_types._BaseFieldType):
 
-	__slots__ = ["_TknRqstrId", "_TknInittdInd", "_TknAssrncData", "_TknXpryDt", "_PmtTkn", "_TknAssrncMtd"]
+	__slots__ = ["_TknAssrncMtd", "_TknAssrncData", "_TknInittdInd", "_TknRqstrId", "_PmtTkn", "_TknXpryDt"]
 	@property
-	def TknRqstrId(self):
-		return self._TknRqstrId
+	def TknAssrncMtd(self):
+		return self._TknAssrncMtd
 
-	@TknRqstrId.setter
-	def TknRqstrId(self, value):
-		self._TknRqstrId = value if type(value) != auto else self.make_default("TknRqstrId")
+	@TknAssrncMtd.setter
+	def TknAssrncMtd(self, value):
+		self._TknAssrncMtd = value if type(value) != auto else self.make_default("TknAssrncMtd")
 
-	@TknRqstrId.deleter
-	def TknRqstrId(self):
-		del self._TknRqstrId
-		self._TknRqstrId = None
-
-	@property
-	def TknInittdInd(self):
-		return self._TknInittdInd
-
-	@TknInittdInd.setter
-	def TknInittdInd(self, value):
-		self._TknInittdInd = value if type(value) != auto else self.make_default("TknInittdInd")
-
-	@TknInittdInd.deleter
-	def TknInittdInd(self):
-		del self._TknInittdInd
-		self._TknInittdInd = None
+	@TknAssrncMtd.deleter
+	def TknAssrncMtd(self):
+		del self._TknAssrncMtd
+		self._TknAssrncMtd = None
 
 	@property
 	def TknAssrncData(self):
@@ -49,17 +36,30 @@ class Token1(base_types._BaseFieldType):
 		self._TknAssrncData = None
 
 	@property
-	def TknXpryDt(self):
-		return self._TknXpryDt
+	def TknInittdInd(self):
+		return self._TknInittdInd
 
-	@TknXpryDt.setter
-	def TknXpryDt(self, value):
-		self._TknXpryDt = value if type(value) != auto else self.make_default("TknXpryDt")
+	@TknInittdInd.setter
+	def TknInittdInd(self, value):
+		self._TknInittdInd = value if type(value) != auto else self.make_default("TknInittdInd")
 
-	@TknXpryDt.deleter
-	def TknXpryDt(self):
-		del self._TknXpryDt
-		self._TknXpryDt = None
+	@TknInittdInd.deleter
+	def TknInittdInd(self):
+		del self._TknInittdInd
+		self._TknInittdInd = None
+
+	@property
+	def TknRqstrId(self):
+		return self._TknRqstrId
+
+	@TknRqstrId.setter
+	def TknRqstrId(self, value):
+		self._TknRqstrId = value if type(value) != auto else self.make_default("TknRqstrId")
+
+	@TknRqstrId.deleter
+	def TknRqstrId(self):
+		del self._TknRqstrId
+		self._TknRqstrId = None
 
 	@property
 	def PmtTkn(self):
@@ -75,24 +75,24 @@ class Token1(base_types._BaseFieldType):
 		self._PmtTkn = None
 
 	@property
-	def TknAssrncMtd(self):
-		return self._TknAssrncMtd
+	def TknXpryDt(self):
+		return self._TknXpryDt
 
-	@TknAssrncMtd.setter
-	def TknAssrncMtd(self, value):
-		self._TknAssrncMtd = value if type(value) != auto else self.make_default("TknAssrncMtd")
+	@TknXpryDt.setter
+	def TknXpryDt(self, value):
+		self._TknXpryDt = value if type(value) != auto else self.make_default("TknXpryDt")
 
-	@TknAssrncMtd.deleter
-	def TknAssrncMtd(self):
-		del self._TknAssrncMtd
-		self._TknAssrncMtd = None
+	@TknXpryDt.deleter
+	def TknXpryDt(self):
+		del self._TknXpryDt
+		self._TknXpryDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TknRqstrId', type=Max11NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknInittdInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknAssrncData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknXpryDt', type=Exact4NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtTkn', type=Max19NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TknAssrncMtd', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknAssrncData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknInittdInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknRqstrId', type=Max11NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtTkn', type=Max19NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknXpryDt', type=Exact4NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

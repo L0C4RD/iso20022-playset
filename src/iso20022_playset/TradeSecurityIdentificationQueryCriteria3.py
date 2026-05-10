@@ -1,39 +1,26 @@
 from . import base_types
-import Operation3Code
-import SecurityIdentificationQueryCriteria1
-import FinancialInstrumentContractType2Code
-import UPIQueryCriteria1
-import SecurityIdentificationQuery4Choice
-import ISINQueryCriteria1
+from .ISINQueryCriteria1 import ISINQueryCriteria1
+from .Operation3Code import Operation3Code
+from .UPIQueryCriteria1 import UPIQueryCriteria1
+from .SecurityIdentificationQueryCriteria1 import SecurityIdentificationQueryCriteria1
+from .SecurityIdentificationQuery4Choice import SecurityIdentificationQuery4Choice
+from .FinancialInstrumentContractType2Code import FinancialInstrumentContractType2Code
 
 class TradeSecurityIdentificationQueryCriteria3(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctTp", "_UndrlygInstrmId", "_Oprtr", "_ISIN", "_Id", "_UnqPdctIdr"]
+	__slots__ = ["_Id", "_Oprtr", "_UndrlygInstrmId", "_UnqPdctIdr", "_CtrctTp", "_ISIN"]
 	@property
-	def CtrctTp(self):
-		return self._CtrctTp
+	def Id(self):
+		return self._Id
 
-	@CtrctTp.setter
-	def CtrctTp(self, value):
-		self._CtrctTp = value if type(value) != auto else self.make_default("CtrctTp")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@CtrctTp.deleter
-	def CtrctTp(self):
-		del self._CtrctTp
-		self._CtrctTp = None
-
-	@property
-	def UndrlygInstrmId(self):
-		return self._UndrlygInstrmId
-
-	@UndrlygInstrmId.setter
-	def UndrlygInstrmId(self, value):
-		self._UndrlygInstrmId = value if type(value) != auto else self.make_default("UndrlygInstrmId")
-
-	@UndrlygInstrmId.deleter
-	def UndrlygInstrmId(self):
-		del self._UndrlygInstrmId
-		self._UndrlygInstrmId = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Oprtr(self):
@@ -49,30 +36,17 @@ class TradeSecurityIdentificationQueryCriteria3(base_types._BaseFieldType):
 		self._Oprtr = None
 
 	@property
-	def ISIN(self):
-		return self._ISIN
+	def UndrlygInstrmId(self):
+		return self._UndrlygInstrmId
 
-	@ISIN.setter
-	def ISIN(self, value):
-		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
+	@UndrlygInstrmId.setter
+	def UndrlygInstrmId(self, value):
+		self._UndrlygInstrmId = value if type(value) != auto else self.make_default("UndrlygInstrmId")
 
-	@ISIN.deleter
-	def ISIN(self):
-		del self._ISIN
-		self._ISIN = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@UndrlygInstrmId.deleter
+	def UndrlygInstrmId(self):
+		del self._UndrlygInstrmId
+		self._UndrlygInstrmId = None
 
 	@property
 	def UnqPdctIdr(self):
@@ -87,12 +61,38 @@ class TradeSecurityIdentificationQueryCriteria3(base_types._BaseFieldType):
 		del self._UnqPdctIdr
 		self._UnqPdctIdr = None
 
+	@property
+	def CtrctTp(self):
+		return self._CtrctTp
+
+	@CtrctTp.setter
+	def CtrctTp(self, value):
+		self._CtrctTp = value if type(value) != auto else self.make_default("CtrctTp")
+
+	@CtrctTp.deleter
+	def CtrctTp(self):
+		del self._CtrctTp
+		self._CtrctTp = None
+
+	@property
+	def ISIN(self):
+		return self._ISIN
+
+	@ISIN.setter
+	def ISIN(self, value):
+		self._ISIN = value if type(value) != auto else self.make_default("ISIN")
+
+	@ISIN.deleter
+	def ISIN(self):
+		del self._ISIN
+		self._ISIN = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrctTp', type=FinancialInstrumentContractType2Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='UndrlygInstrmId', type=SecurityIdentificationQuery4Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Oprtr', type=Operation3Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ISIN', type=ISINQueryCriteria1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=SecurityIdentificationQueryCriteria1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Oprtr', type=Operation3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygInstrmId', type=SecurityIdentificationQuery4Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UnqPdctIdr', type=UPIQueryCriteria1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrctTp', type=FinancialInstrumentContractType2Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ISIN', type=ISINQueryCriteria1, min=0, max=None, mutex_group=None, array=True),
 	))
 

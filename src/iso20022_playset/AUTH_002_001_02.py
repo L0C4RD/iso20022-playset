@@ -1,5 +1,5 @@
 from . import base_types
-import InformationRequestResponseV02
+from .InformationRequestResponseV02 import InformationRequestResponseV02
 
 class AUTH_002_001_02():
 

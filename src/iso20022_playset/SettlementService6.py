@@ -1,14 +1,40 @@
 from . import base_types
-import ISODate
-import TrueFalseIndicator
-import ISOTime
-import ISODateTime
-import AdditionalData1
-import Max35Text
+from .Max35Text import Max35Text
+from .AdditionalData1 import AdditionalData1
+from .ISOTime import ISOTime
+from .ISODateTime import ISODateTime
+from .ISODate import ISODate
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class SettlementService6(base_types._BaseFieldType):
 
-	__slots__ = ["_CutOffTm", "_Id", "_RptgNttyTp", "_RptgNttyId", "_Prd", "_Dt", "_AddtlInf", "_Tp", "_Dfrrd", "_Tm", "_ReqdDt"]
+	__slots__ = ["_AddtlInf", "_Tm", "_CutOffTm", "_RptgNttyId", "_Dt", "_Id", "_RptgNttyTp", "_ReqdDt", "_Tp", "_Prd", "_Dfrrd"]
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def Tm(self):
+		return self._Tm
+
+	@Tm.setter
+	def Tm(self, value):
+		self._Tm = value if type(value) != auto else self.make_default("Tm")
+
+	@Tm.deleter
+	def Tm(self):
+		del self._Tm
+		self._Tm = None
+
 	@property
 	def CutOffTm(self):
 		return self._CutOffTm
@@ -21,6 +47,32 @@ class SettlementService6(base_types._BaseFieldType):
 	def CutOffTm(self):
 		del self._CutOffTm
 		self._CutOffTm = None
+
+	@property
+	def RptgNttyId(self):
+		return self._RptgNttyId
+
+	@RptgNttyId.setter
+	def RptgNttyId(self, value):
+		self._RptgNttyId = value if type(value) != auto else self.make_default("RptgNttyId")
+
+	@RptgNttyId.deleter
+	def RptgNttyId(self):
+		del self._RptgNttyId
+		self._RptgNttyId = None
+
+	@property
+	def Dt(self):
+		return self._Dt
+
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != auto else self.make_default("Dt")
+
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
 
 	@property
 	def Id(self):
@@ -49,56 +101,17 @@ class SettlementService6(base_types._BaseFieldType):
 		self._RptgNttyTp = None
 
 	@property
-	def RptgNttyId(self):
-		return self._RptgNttyId
+	def ReqdDt(self):
+		return self._ReqdDt
 
-	@RptgNttyId.setter
-	def RptgNttyId(self, value):
-		self._RptgNttyId = value if type(value) != auto else self.make_default("RptgNttyId")
+	@ReqdDt.setter
+	def ReqdDt(self, value):
+		self._ReqdDt = value if type(value) != auto else self.make_default("ReqdDt")
 
-	@RptgNttyId.deleter
-	def RptgNttyId(self):
-		del self._RptgNttyId
-		self._RptgNttyId = None
-
-	@property
-	def Prd(self):
-		return self._Prd
-
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
-
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
-
-	@property
-	def Dt(self):
-		return self._Dt
-
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
-
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@ReqdDt.deleter
+	def ReqdDt(self):
+		del self._ReqdDt
+		self._ReqdDt = None
 
 	@property
 	def Tp(self):
@@ -114,6 +127,19 @@ class SettlementService6(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
+	def Prd(self):
+		return self._Prd
+
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != auto else self.make_default("Prd")
+
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
+
+	@property
 	def Dfrrd(self):
 		return self._Dfrrd
 
@@ -126,43 +152,17 @@ class SettlementService6(base_types._BaseFieldType):
 		del self._Dfrrd
 		self._Dfrrd = None
 
-	@property
-	def Tm(self):
-		return self._Tm
-
-	@Tm.setter
-	def Tm(self, value):
-		self._Tm = value if type(value) != auto else self.make_default("Tm")
-
-	@Tm.deleter
-	def Tm(self):
-		del self._Tm
-		self._Tm = None
-
-	@property
-	def ReqdDt(self):
-		return self._ReqdDt
-
-	@ReqdDt.setter
-	def ReqdDt(self, value):
-		self._ReqdDt = value if type(value) != auto else self.make_default("ReqdDt")
-
-	@ReqdDt.deleter
-	def ReqdDt(self):
-		del self._ReqdDt
-		self._ReqdDt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CutOffTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgNttyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgNttyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgNttyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dfrrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dfrrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

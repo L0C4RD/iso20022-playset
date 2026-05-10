@@ -1,26 +1,26 @@
 from . import base_types
-import PartyIdentification272
-import ISODateTime
-import Max35Text
-import CopyDuplicate1Code
-import BranchAndFinancialInstitutionIdentification8
-import Authorisation1Choice
+from .Max35Text import Max35Text
+from .PartyIdentification272 import PartyIdentification272
+from .CopyDuplicate1Code import CopyDuplicate1Code
+from .Authorisation1Choice import Authorisation1Choice
+from .ISODateTime import ISODateTime
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class GroupHeader122(base_types._BaseFieldType):
 
-	__slots__ = ["_InitgPty", "_MsgId", "_MsgRcpt", "_Authstn", "_FwdgAgt", "_CpyInd", "_CreDtTm"]
+	__slots__ = ["_MsgRcpt", "_MsgId", "_CpyInd", "_InitgPty", "_FwdgAgt", "_Authstn", "_CreDtTm"]
 	@property
-	def InitgPty(self):
-		return self._InitgPty
+	def MsgRcpt(self):
+		return self._MsgRcpt
 
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
+	@MsgRcpt.setter
+	def MsgRcpt(self, value):
+		self._MsgRcpt = value if type(value) != auto else self.make_default("MsgRcpt")
 
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
+	@MsgRcpt.deleter
+	def MsgRcpt(self):
+		del self._MsgRcpt
+		self._MsgRcpt = None
 
 	@property
 	def MsgId(self):
@@ -36,30 +36,30 @@ class GroupHeader122(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def MsgRcpt(self):
-		return self._MsgRcpt
+	def CpyInd(self):
+		return self._CpyInd
 
-	@MsgRcpt.setter
-	def MsgRcpt(self, value):
-		self._MsgRcpt = value if type(value) != auto else self.make_default("MsgRcpt")
+	@CpyInd.setter
+	def CpyInd(self, value):
+		self._CpyInd = value if type(value) != auto else self.make_default("CpyInd")
 
-	@MsgRcpt.deleter
-	def MsgRcpt(self):
-		del self._MsgRcpt
-		self._MsgRcpt = None
+	@CpyInd.deleter
+	def CpyInd(self):
+		del self._CpyInd
+		self._CpyInd = None
 
 	@property
-	def Authstn(self):
-		return self._Authstn
+	def InitgPty(self):
+		return self._InitgPty
 
-	@Authstn.setter
-	def Authstn(self, value):
-		self._Authstn = value if type(value) != auto else self.make_default("Authstn")
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
 
-	@Authstn.deleter
-	def Authstn(self):
-		del self._Authstn
-		self._Authstn = None
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
 
 	@property
 	def FwdgAgt(self):
@@ -75,17 +75,17 @@ class GroupHeader122(base_types._BaseFieldType):
 		self._FwdgAgt = None
 
 	@property
-	def CpyInd(self):
-		return self._CpyInd
+	def Authstn(self):
+		return self._Authstn
 
-	@CpyInd.setter
-	def CpyInd(self, value):
-		self._CpyInd = value if type(value) != auto else self.make_default("CpyInd")
+	@Authstn.setter
+	def Authstn(self, value):
+		self._Authstn = value if type(value) != auto else self.make_default("Authstn")
 
-	@CpyInd.deleter
-	def CpyInd(self):
-		del self._CpyInd
-		self._CpyInd = None
+	@Authstn.deleter
+	def Authstn(self):
+		del self._Authstn
+		self._Authstn = None
 
 	@property
 	def CreDtTm(self):
@@ -101,12 +101,12 @@ class GroupHeader122(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgRcpt', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Authstn', type=Authorisation1Choice, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FwdgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpyInd', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FwdgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Authstn', type=Authorisation1Choice, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

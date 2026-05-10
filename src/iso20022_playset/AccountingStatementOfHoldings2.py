@@ -1,26 +1,26 @@
 from . import base_types
-import Extension1
-import Statement6
-import SubAccountIdentification3
-import AggregateBalanceInformation3
-import TotalValueInPageAndStatement
-import SafekeepingAccount2
+from .TotalValueInPageAndStatement import TotalValueInPageAndStatement
+from .AggregateBalanceInformation3 import AggregateBalanceInformation3
+from .SubAccountIdentification3 import SubAccountIdentification3
+from .Extension1 import Extension1
+from .SafekeepingAccount2 import SafekeepingAccount2
+from .Statement6 import Statement6
 
 class AccountingStatementOfHoldings2(base_types._BaseFieldType):
 
-	__slots__ = ["_Xtnsn", "_TtlVals", "_StmtGnlDtls", "_BalForAcct", "_SubAcctDtls", "_AcctDtls"]
+	__slots__ = ["_BalForAcct", "_TtlVals", "_Xtnsn", "_AcctDtls", "_SubAcctDtls", "_StmtGnlDtls"]
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
+	def BalForAcct(self):
+		return self._BalForAcct
 
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
+	@BalForAcct.setter
+	def BalForAcct(self, value):
+		self._BalForAcct = value if type(value) != auto else self.make_default("BalForAcct")
 
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
+	@BalForAcct.deleter
+	def BalForAcct(self):
+		del self._BalForAcct
+		self._BalForAcct = None
 
 	@property
 	def TtlVals(self):
@@ -36,30 +36,30 @@ class AccountingStatementOfHoldings2(base_types._BaseFieldType):
 		self._TtlVals = None
 
 	@property
-	def StmtGnlDtls(self):
-		return self._StmtGnlDtls
+	def Xtnsn(self):
+		return self._Xtnsn
 
-	@StmtGnlDtls.setter
-	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != auto else self.make_default("StmtGnlDtls")
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
 
-	@StmtGnlDtls.deleter
-	def StmtGnlDtls(self):
-		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	@property
-	def BalForAcct(self):
-		return self._BalForAcct
+	def AcctDtls(self):
+		return self._AcctDtls
 
-	@BalForAcct.setter
-	def BalForAcct(self, value):
-		self._BalForAcct = value if type(value) != auto else self.make_default("BalForAcct")
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
 
-	@BalForAcct.deleter
-	def BalForAcct(self):
-		del self._BalForAcct
-		self._BalForAcct = None
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
 
 	@property
 	def SubAcctDtls(self):
@@ -75,24 +75,24 @@ class AccountingStatementOfHoldings2(base_types._BaseFieldType):
 		self._SubAcctDtls = None
 
 	@property
-	def AcctDtls(self):
-		return self._AcctDtls
+	def StmtGnlDtls(self):
+		return self._StmtGnlDtls
 
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+	@StmtGnlDtls.setter
+	def StmtGnlDtls(self, value):
+		self._StmtGnlDtls = value if type(value) != auto else self.make_default("StmtGnlDtls")
 
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
+	@StmtGnlDtls.deleter
+	def StmtGnlDtls(self):
+		del self._StmtGnlDtls
+		self._StmtGnlDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlVals', type=TotalValueInPageAndStatement, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtGnlDtls', type=Statement6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalForAcct', type=AggregateBalanceInformation3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlVals', type=TotalValueInPageAndStatement, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctDtls', type=SafekeepingAccount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StmtGnlDtls', type=Statement6, min=0, max=1, mutex_group=None, array=False),
 	))
 

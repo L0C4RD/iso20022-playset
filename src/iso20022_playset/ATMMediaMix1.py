@@ -1,6 +1,6 @@
 from . import base_types
-import Number
-import ImpliedCurrencyAndAmount
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .Number import Number
 
 class ATMMediaMix1(base_types._BaseFieldType):
 

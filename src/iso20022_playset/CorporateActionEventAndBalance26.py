@@ -1,38 +1,12 @@
 from . import base_types
-import CorporateActionBalance50
-import SupplementaryData1
-import EventInformation17
-import SecurityIdentification19
+from .SecurityIdentification19 import SecurityIdentification19
+from .EventInformation17 import EventInformation17
+from .SupplementaryData1 import SupplementaryData1
+from .CorporateActionBalance50 import CorporateActionBalance50
 
 class CorporateActionEventAndBalance26(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygScty", "_SplmtryData", "_Bal", "_GnlInf"]
-	@property
-	def UndrlygScty(self):
-		return self._UndrlygScty
-
-	@UndrlygScty.setter
-	def UndrlygScty(self, value):
-		self._UndrlygScty = value if type(value) != auto else self.make_default("UndrlygScty")
-
-	@UndrlygScty.deleter
-	def UndrlygScty(self):
-		del self._UndrlygScty
-		self._UndrlygScty = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_Bal", "_GnlInf", "_SplmtryData", "_UndrlygScty"]
 	@property
 	def Bal(self):
 		return self._Bal
@@ -59,10 +33,36 @@ class CorporateActionEventAndBalance26(base_types._BaseFieldType):
 		del self._GnlInf
 		self._GnlInf = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def UndrlygScty(self):
+		return self._UndrlygScty
+
+	@UndrlygScty.setter
+	def UndrlygScty(self, value):
+		self._UndrlygScty = value if type(value) != auto else self.make_default("UndrlygScty")
+
+	@UndrlygScty.deleter
+	def UndrlygScty(self):
+		del self._UndrlygScty
+		self._UndrlygScty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygScty', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Bal', type=CorporateActionBalance50, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GnlInf', type=EventInformation17, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UndrlygScty', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,11 @@
 from . import base_types
-import ATMSignature2Choice
-import Max140Binary
-import CryptographicKey12
+from .Max140Binary import Max140Binary
+from .ATMSignature2Choice import ATMSignature2Choice
+from .CryptographicKey12 import CryptographicKey12
 
 class SecurityParameters10(base_types._BaseFieldType):
 
-	__slots__ = ["_HstChllng", "_SgntrChc", "_Key"]
+	__slots__ = ["_HstChllng", "_Key", "_SgntrChc"]
 	@property
 	def HstChllng(self):
 		return self._HstChllng
@@ -20,19 +20,6 @@ class SecurityParameters10(base_types._BaseFieldType):
 		self._HstChllng = None
 
 	@property
-	def SgntrChc(self):
-		return self._SgntrChc
-
-	@SgntrChc.setter
-	def SgntrChc(self, value):
-		self._SgntrChc = value if type(value) != auto else self.make_default("SgntrChc")
-
-	@SgntrChc.deleter
-	def SgntrChc(self):
-		del self._SgntrChc
-		self._SgntrChc = None
-
-	@property
 	def Key(self):
 		return self._Key
 
@@ -45,9 +32,22 @@ class SecurityParameters10(base_types._BaseFieldType):
 		del self._Key
 		self._Key = None
 
+	@property
+	def SgntrChc(self):
+		return self._SgntrChc
+
+	@SgntrChc.setter
+	def SgntrChc(self, value):
+		self._SgntrChc = value if type(value) != auto else self.make_default("SgntrChc")
+
+	@SgntrChc.deleter
+	def SgntrChc(self):
+		del self._SgntrChc
+		self._SgntrChc = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='HstChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgntrChc', type=ATMSignature2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Key', type=CryptographicKey12, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SgntrChc', type=ATMSignature2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

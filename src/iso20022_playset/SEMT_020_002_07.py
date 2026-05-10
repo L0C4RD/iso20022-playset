@@ -1,5 +1,5 @@
 from . import base_types
-import SecuritiesMessageCancellationAdvice002V07
+from .SecuritiesMessageCancellationAdvice002V07 import SecuritiesMessageCancellationAdvice002V07
 
 class SEMT_020_002_07():
 

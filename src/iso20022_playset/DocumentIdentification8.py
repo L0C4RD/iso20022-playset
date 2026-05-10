@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import ISODateTime
+from .Max35Text import Max35Text
+from .ISODateTime import ISODateTime
 
 class DocumentIdentification8(base_types._BaseFieldType):
 

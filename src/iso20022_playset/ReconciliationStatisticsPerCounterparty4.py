@@ -1,8 +1,8 @@
 from . import base_types
-import ISODate
-import Number
-import ReconciliationCounterpartyPairStatistics7
-import ReportingRequirement3Choice
+from .ReconciliationCounterpartyPairStatistics7 import ReconciliationCounterpartyPairStatistics7
+from .ReportingRequirement3Choice import ReportingRequirement3Choice
+from .ISODate import ISODate
+from .Number import Number
 
 class ReconciliationStatisticsPerCounterparty4(base_types._BaseFieldType):
 

@@ -1,22 +1,22 @@
 from . import base_types
-import ActivityReportItems3
-import MessageIdentification1
+from .MessageIdentification1 import MessageIdentification1
+from .ActivityReportItems3 import ActivityReportItems3
 
 class ActivityReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_RptId", "_Rpt", "_RltdMsgRef"]
+	__slots__ = ["_RltdMsgRef", "_Rpt", "_RptId"]
 	@property
-	def RptId(self):
-		return self._RptId
+	def RltdMsgRef(self):
+		return self._RltdMsgRef
 
-	@RptId.setter
-	def RptId(self, value):
-		self._RptId = value if type(value) != auto else self.make_default("RptId")
+	@RltdMsgRef.setter
+	def RltdMsgRef(self, value):
+		self._RltdMsgRef = value if type(value) != auto else self.make_default("RltdMsgRef")
 
-	@RptId.deleter
-	def RptId(self):
-		del self._RptId
-		self._RptId = None
+	@RltdMsgRef.deleter
+	def RltdMsgRef(self):
+		del self._RltdMsgRef
+		self._RltdMsgRef = None
 
 	@property
 	def Rpt(self):
@@ -32,21 +32,21 @@ class ActivityReportV04(base_types._BaseFieldType):
 		self._Rpt = None
 
 	@property
-	def RltdMsgRef(self):
-		return self._RltdMsgRef
+	def RptId(self):
+		return self._RptId
 
-	@RltdMsgRef.setter
-	def RltdMsgRef(self, value):
-		self._RltdMsgRef = value if type(value) != auto else self.make_default("RltdMsgRef")
+	@RptId.setter
+	def RptId(self, value):
+		self._RptId = value if type(value) != auto else self.make_default("RptId")
 
-	@RltdMsgRef.deleter
-	def RltdMsgRef(self):
-		del self._RltdMsgRef
-		self._RltdMsgRef = None
+	@RptId.deleter
+	def RptId(self):
+		del self._RptId
+		self._RptId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rpt', type=ActivityReportItems3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RltdMsgRef', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rpt', type=ActivityReportItems3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

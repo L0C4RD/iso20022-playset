@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalCategoryPurpose1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ExternalCategoryPurpose1Code import ExternalCategoryPurpose1Code
 
 class CategoryPurpose1Choice(base_types._BaseFieldType):
 

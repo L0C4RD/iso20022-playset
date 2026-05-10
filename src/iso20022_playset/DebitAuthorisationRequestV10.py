@@ -1,13 +1,26 @@
 from . import base_types
-import DebitAuthorisation2
-import Case6
-import SupplementaryData1
-import UnderlyingTransaction8Choice
-import CaseAssignment6
+from .UnderlyingTransaction8Choice import UnderlyingTransaction8Choice
+from .SupplementaryData1 import SupplementaryData1
+from .DebitAuthorisation2 import DebitAuthorisation2
+from .CaseAssignment6 import CaseAssignment6
+from .Case6 import Case6
 
 class DebitAuthorisationRequestV10(base_types._BaseFieldType):
 
-	__slots__ = ["_Case", "_Assgnmt", "_SplmtryData", "_Dtl", "_Undrlyg"]
+	__slots__ = ["_Undrlyg", "_Case", "_SplmtryData", "_Dtl", "_Assgnmt"]
+	@property
+	def Undrlyg(self):
+		return self._Undrlyg
+
+	@Undrlyg.setter
+	def Undrlyg(self, value):
+		self._Undrlyg = value if type(value) != auto else self.make_default("Undrlyg")
+
+	@Undrlyg.deleter
+	def Undrlyg(self):
+		del self._Undrlyg
+		self._Undrlyg = None
+
 	@property
 	def Case(self):
 		return self._Case
@@ -20,19 +33,6 @@ class DebitAuthorisationRequestV10(base_types._BaseFieldType):
 	def Case(self):
 		del self._Case
 		self._Case = None
-
-	@property
-	def Assgnmt(self):
-		return self._Assgnmt
-
-	@Assgnmt.setter
-	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
-
-	@Assgnmt.deleter
-	def Assgnmt(self):
-		del self._Assgnmt
-		self._Assgnmt = None
 
 	@property
 	def SplmtryData(self):
@@ -61,23 +61,23 @@ class DebitAuthorisationRequestV10(base_types._BaseFieldType):
 		self._Dtl = None
 
 	@property
-	def Undrlyg(self):
-		return self._Undrlyg
+	def Assgnmt(self):
+		return self._Assgnmt
 
-	@Undrlyg.setter
-	def Undrlyg(self, value):
-		self._Undrlyg = value if type(value) != auto else self.make_default("Undrlyg")
+	@Assgnmt.setter
+	def Assgnmt(self, value):
+		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
 
-	@Undrlyg.deleter
-	def Undrlyg(self):
-		del self._Undrlyg
-		self._Undrlyg = None
+	@Assgnmt.deleter
+	def Assgnmt(self):
+		del self._Assgnmt
+		self._Assgnmt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Dtl', type=DebitAuthorisation2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction8Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 	))
 

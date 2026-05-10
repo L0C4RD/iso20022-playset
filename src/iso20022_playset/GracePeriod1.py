@@ -1,11 +1,24 @@
 from . import base_types
-import Max35Text
-import GracePeriodUnitType1Code
-import Max3NumericText
+from .Max3NumericText import Max3NumericText
+from .Max35Text import Max35Text
+from .GracePeriodUnitType1Code import GracePeriodUnitType1Code
 
 class GracePeriod1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tm", "_UnitTp", "_OthrUnitTp"]
+	__slots__ = ["_OthrUnitTp", "_Tm", "_UnitTp"]
+	@property
+	def OthrUnitTp(self):
+		return self._OthrUnitTp
+
+	@OthrUnitTp.setter
+	def OthrUnitTp(self, value):
+		self._OthrUnitTp = value if type(value) != auto else self.make_default("OthrUnitTp")
+
+	@OthrUnitTp.deleter
+	def OthrUnitTp(self):
+		del self._OthrUnitTp
+		self._OthrUnitTp = None
+
 	@property
 	def Tm(self):
 		return self._Tm
@@ -32,22 +45,9 @@ class GracePeriod1(base_types._BaseFieldType):
 		del self._UnitTp
 		self._UnitTp = None
 
-	@property
-	def OthrUnitTp(self):
-		return self._OthrUnitTp
-
-	@OthrUnitTp.setter
-	def OthrUnitTp(self, value):
-		self._OthrUnitTp = value if type(value) != auto else self.make_default("OthrUnitTp")
-
-	@OthrUnitTp.deleter
-	def OthrUnitTp(self):
-		del self._OthrUnitTp
-		self._OthrUnitTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OthrUnitTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tm', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitTp', type=GracePeriodUnitType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrUnitTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

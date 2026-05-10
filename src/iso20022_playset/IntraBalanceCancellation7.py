@@ -1,25 +1,25 @@
 from . import base_types
-import IntraBalanceCancellation8
-import CashAccount40
-import ProcessingStatus69Choice
-import BranchAndFinancialInstitutionIdentification8
-import SystemPartyIdentification8
+from .SystemPartyIdentification8 import SystemPartyIdentification8
+from .ProcessingStatus69Choice import ProcessingStatus69Choice
+from .IntraBalanceCancellation8 import IntraBalanceCancellation8
+from .CashAccount40 import CashAccount40
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class IntraBalanceCancellation7(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgSts", "_Cxl", "_CshAcctSvcr", "_CshAcctOwnr", "_CshAcct"]
+	__slots__ = ["_CshAcct", "_Cxl", "_PrcgSts", "_CshAcctSvcr", "_CshAcctOwnr"]
 	@property
-	def PrcgSts(self):
-		return self._PrcgSts
+	def CshAcct(self):
+		return self._CshAcct
 
-	@PrcgSts.setter
-	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
 
-	@PrcgSts.deleter
-	def PrcgSts(self):
-		del self._PrcgSts
-		self._PrcgSts = None
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
 
 	@property
 	def Cxl(self):
@@ -33,6 +33,19 @@ class IntraBalanceCancellation7(base_types._BaseFieldType):
 	def Cxl(self):
 		del self._Cxl
 		self._Cxl = None
+
+	@property
+	def PrcgSts(self):
+		return self._PrcgSts
+
+	@PrcgSts.setter
+	def PrcgSts(self, value):
+		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+
+	@PrcgSts.deleter
+	def PrcgSts(self):
+		del self._PrcgSts
+		self._PrcgSts = None
 
 	@property
 	def CshAcctSvcr(self):
@@ -60,24 +73,11 @@ class IntraBalanceCancellation7(base_types._BaseFieldType):
 		del self._CshAcctOwnr
 		self._CshAcctOwnr = None
 
-	@property
-	def CshAcct(self):
-		return self._CshAcct
-
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
-
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus69Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cxl', type=IntraBalanceCancellation8, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus69Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 	))
 

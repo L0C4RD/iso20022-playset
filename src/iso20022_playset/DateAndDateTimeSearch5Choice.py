@@ -1,6 +1,6 @@
 from . import base_types
-import DatePeriodSearch1Choice
-import DateTimeSearch2Choice
+from .DateTimeSearch2Choice import DateTimeSearch2Choice
+from .DatePeriodSearch1Choice import DatePeriodSearch1Choice
 
 class DateAndDateTimeSearch5Choice(base_types._BaseFieldType):
 

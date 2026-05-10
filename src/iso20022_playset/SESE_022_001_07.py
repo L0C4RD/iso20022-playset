@@ -1,5 +1,5 @@
 from . import base_types
-import SecuritiesStatusOrStatementQueryStatusAdviceV07
+from .SecuritiesStatusOrStatementQueryStatusAdviceV07 import SecuritiesStatusOrStatementQueryStatusAdviceV07
 
 class SESE_022_001_07():
 

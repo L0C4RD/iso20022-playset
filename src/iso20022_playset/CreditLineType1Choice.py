@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalCreditLineType1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ExternalCreditLineType1Code import ExternalCreditLineType1Code
 
 class CreditLineType1Choice(base_types._BaseFieldType):
 

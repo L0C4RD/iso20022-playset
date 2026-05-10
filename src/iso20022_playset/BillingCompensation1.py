@@ -1,11 +1,24 @@
 from . import base_types
-import BillingCurrencyType2Code
-import BillingCompensationType1Choice
-import AmountAndDirection34
+from .BillingCurrencyType2Code import BillingCurrencyType2Code
+from .AmountAndDirection34 import AmountAndDirection34
+from .BillingCompensationType1Choice import BillingCompensationType1Choice
 
 class BillingCompensation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Val", "_CcyTp"]
+	__slots__ = ["_CcyTp", "_Tp", "_Val"]
+	@property
+	def CcyTp(self):
+		return self._CcyTp
+
+	@CcyTp.setter
+	def CcyTp(self, value):
+		self._CcyTp = value if type(value) != auto else self.make_default("CcyTp")
+
+	@CcyTp.deleter
+	def CcyTp(self):
+		del self._CcyTp
+		self._CcyTp = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -32,22 +45,9 @@ class BillingCompensation1(base_types._BaseFieldType):
 		del self._Val
 		self._Val = None
 
-	@property
-	def CcyTp(self):
-		return self._CcyTp
-
-	@CcyTp.setter
-	def CcyTp(self, value):
-		self._CcyTp = value if type(value) != auto else self.make_default("CcyTp")
-
-	@CcyTp.deleter
-	def CcyTp(self):
-		del self._CcyTp
-		self._CcyTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CcyTp', type=BillingCurrencyType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=BillingCompensationType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CcyTp', type=BillingCurrencyType2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

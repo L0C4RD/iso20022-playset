@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import OpeningClosing1Code
+from .GenericIdentification30 import GenericIdentification30
+from .OpeningClosing1Code import OpeningClosing1Code
 
 class OpeningClosing3Choice(base_types._BaseFieldType):
 

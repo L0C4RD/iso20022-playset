@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalPostTradeEventType1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ExternalPostTradeEventType1Code import ExternalPostTradeEventType1Code
 
 class PostTradeEventType2Choice(base_types._BaseFieldType):
 

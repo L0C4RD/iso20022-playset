@@ -1,5 +1,5 @@
 from . import base_types
-import CCPCollateralReportV01
+from .CCPCollateralReportV01 import CCPCollateralReportV01
 
 class AUTH_067_001_01():
 

@@ -1,10 +1,36 @@
 from . import base_types
-import TargetMarket1Code
-import OtherTargetMarketInvestorKnowledge1
+from .TargetMarket1Code import TargetMarket1Code
+from .OtherTargetMarketInvestorKnowledge1 import OtherTargetMarketInvestorKnowledge1
 
 class InvestorKnowledge1(base_types._BaseFieldType):
 
-	__slots__ = ["_InfrmdInvstr", "_Othr", "_AdvncdInvstr", "_BsicInvstr", "_ExprtInvstrDE"]
+	__slots__ = ["_ExprtInvstrDE", "_BsicInvstr", "_InfrmdInvstr", "_Othr", "_AdvncdInvstr"]
+	@property
+	def ExprtInvstrDE(self):
+		return self._ExprtInvstrDE
+
+	@ExprtInvstrDE.setter
+	def ExprtInvstrDE(self, value):
+		self._ExprtInvstrDE = value if type(value) != auto else self.make_default("ExprtInvstrDE")
+
+	@ExprtInvstrDE.deleter
+	def ExprtInvstrDE(self):
+		del self._ExprtInvstrDE
+		self._ExprtInvstrDE = None
+
+	@property
+	def BsicInvstr(self):
+		return self._BsicInvstr
+
+	@BsicInvstr.setter
+	def BsicInvstr(self, value):
+		self._BsicInvstr = value if type(value) != auto else self.make_default("BsicInvstr")
+
+	@BsicInvstr.deleter
+	def BsicInvstr(self):
+		del self._BsicInvstr
+		self._BsicInvstr = None
+
 	@property
 	def InfrmdInvstr(self):
 		return self._InfrmdInvstr
@@ -44,37 +70,11 @@ class InvestorKnowledge1(base_types._BaseFieldType):
 		del self._AdvncdInvstr
 		self._AdvncdInvstr = None
 
-	@property
-	def BsicInvstr(self):
-		return self._BsicInvstr
-
-	@BsicInvstr.setter
-	def BsicInvstr(self, value):
-		self._BsicInvstr = value if type(value) != auto else self.make_default("BsicInvstr")
-
-	@BsicInvstr.deleter
-	def BsicInvstr(self):
-		del self._BsicInvstr
-		self._BsicInvstr = None
-
-	@property
-	def ExprtInvstrDE(self):
-		return self._ExprtInvstrDE
-
-	@ExprtInvstrDE.setter
-	def ExprtInvstrDE(self, value):
-		self._ExprtInvstrDE = value if type(value) != auto else self.make_default("ExprtInvstrDE")
-
-	@ExprtInvstrDE.deleter
-	def ExprtInvstrDE(self):
-		del self._ExprtInvstrDE
-		self._ExprtInvstrDE = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ExprtInvstrDE', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BsicInvstr', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InfrmdInvstr', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=OtherTargetMarketInvestorKnowledge1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AdvncdInvstr', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BsicInvstr', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExprtInvstrDE', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

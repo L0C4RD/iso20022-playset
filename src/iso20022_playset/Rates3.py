@@ -1,6 +1,6 @@
 from . import base_types
-import SecuritiesTransactionPrice18Choice
-import PercentageRate
+from .PercentageRate import PercentageRate
+from .SecuritiesTransactionPrice18Choice import SecuritiesTransactionPrice18Choice
 
 class Rates3(base_types._BaseFieldType):
 

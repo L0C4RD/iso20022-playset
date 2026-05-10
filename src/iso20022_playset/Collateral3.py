@@ -1,10 +1,23 @@
 from . import base_types
-import CollateralType2Code
-import ActiveCurrencyAndAmount
+from .CollateralType2Code import CollateralType2Code
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class Collateral3(base_types._BaseFieldType):
 
-	__slots__ = ["_MktVal", "_CollTp", "_PstHrcutVal"]
+	__slots__ = ["_PstHrcutVal", "_MktVal", "_CollTp"]
+	@property
+	def PstHrcutVal(self):
+		return self._PstHrcutVal
+
+	@PstHrcutVal.setter
+	def PstHrcutVal(self, value):
+		self._PstHrcutVal = value if type(value) != auto else self.make_default("PstHrcutVal")
+
+	@PstHrcutVal.deleter
+	def PstHrcutVal(self):
+		del self._PstHrcutVal
+		self._PstHrcutVal = None
+
 	@property
 	def MktVal(self):
 		return self._MktVal
@@ -31,22 +44,9 @@ class Collateral3(base_types._BaseFieldType):
 		del self._CollTp
 		self._CollTp = None
 
-	@property
-	def PstHrcutVal(self):
-		return self._PstHrcutVal
-
-	@PstHrcutVal.setter
-	def PstHrcutVal(self, value):
-		self._PstHrcutVal = value if type(value) != auto else self.make_default("PstHrcutVal")
-
-	@PstHrcutVal.deleter
-	def PstHrcutVal(self):
-		del self._PstHrcutVal
-		self._PstHrcutVal = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PstHrcutVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollTp', type=CollateralType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstHrcutVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

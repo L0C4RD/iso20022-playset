@@ -1,7 +1,7 @@
 from . import base_types
-import ISODate
-import Max16Text
-import AuthenticationChannel1Choice
+from .AuthenticationChannel1Choice import AuthenticationChannel1Choice
+from .Max16Text import Max16Text
+from .ISODate import ISODate
 
 class MandateAuthentication1(base_types._BaseFieldType):
 

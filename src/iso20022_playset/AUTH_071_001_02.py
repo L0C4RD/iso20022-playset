@@ -1,5 +1,5 @@
 from . import base_types
-import SecuritiesFinancingReportingTransactionReusedCollateralDataReportV02
+from .SecuritiesFinancingReportingTransactionReusedCollateralDataReportV02 import SecuritiesFinancingReportingTransactionReusedCollateralDataReportV02
 
 class AUTH_071_001_02():
 

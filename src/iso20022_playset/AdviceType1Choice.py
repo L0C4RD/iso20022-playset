@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import AdviceType1Code
+from .AdviceType1Code import AdviceType1Code
+from .Max35Text import Max35Text
 
 class AdviceType1Choice(base_types._BaseFieldType):
 

@@ -1,27 +1,27 @@
 from . import base_types
-import AccountIdentification55Choice
-import PartyIdentification117Choice
-import TradingPartyCapacity3Choice
-import PartyTextInformation5
-import AlternatePartyIdentification8
-import Max35Text
-import SecuritiesAccount35
+from .PartyTextInformation5 import PartyTextInformation5
+from .Max35Text import Max35Text
+from .SecuritiesAccount35 import SecuritiesAccount35
+from .PartyIdentification117Choice import PartyIdentification117Choice
+from .TradingPartyCapacity3Choice import TradingPartyCapacity3Choice
+from .AccountIdentification55Choice import AccountIdentification55Choice
+from .AlternatePartyIdentification8 import AlternatePartyIdentification8
 
 class ConfirmationPartyDetails10(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CshDtls", "_PrcgId", "_SfkpgAcct", "_AddtlInf", "_PtyCpcty", "_AltrnId"]
+	__slots__ = ["_AddtlInf", "_CshDtls", "_Id", "_SfkpgAcct", "_PtyCpcty", "_PrcgId", "_AltrnId"]
 	@property
-	def Id(self):
-		return self._Id
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def CshDtls(self):
@@ -37,17 +37,17 @@ class ConfirmationPartyDetails10(base_types._BaseFieldType):
 		self._CshDtls = None
 
 	@property
-	def PrcgId(self):
-		return self._PrcgId
+	def Id(self):
+		return self._Id
 
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def SfkpgAcct(self):
@@ -63,19 +63,6 @@ class ConfirmationPartyDetails10(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
 	def PtyCpcty(self):
 		return self._PtyCpcty
 
@@ -87,6 +74,19 @@ class ConfirmationPartyDetails10(base_types._BaseFieldType):
 	def PtyCpcty(self):
 		del self._PtyCpcty
 		self._PtyCpcty = None
+
+	@property
+	def PrcgId(self):
+		return self._PrcgId
+
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
 
 	@property
 	def AltrnId(self):
@@ -102,12 +102,12 @@ class ConfirmationPartyDetails10(base_types._BaseFieldType):
 		self._AltrnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=PartyIdentification117Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshDtls', type=AccountIdentification55Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount35, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshDtls', type=AccountIdentification55Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification117Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount35, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyCpcty', type=TradingPartyCapacity3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

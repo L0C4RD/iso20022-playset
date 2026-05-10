@@ -1,6 +1,6 @@
 from . import base_types
-import FinancialInstrumentQuantity36Choice
-import OriginalAndCurrentQuantities4
+from .OriginalAndCurrentQuantities4 import OriginalAndCurrentQuantities4
+from .FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
 
 class Quantity54Choice(base_types._BaseFieldType):
 

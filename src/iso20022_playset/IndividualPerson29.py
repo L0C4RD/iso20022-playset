@@ -1,25 +1,12 @@
 from . import base_types
-import Max350Text
-import NamePrefix1Choice
-import Max35Text
-import PostalAddress21
+from .PostalAddress21 import PostalAddress21
+from .Max35Text import Max35Text
+from .Max350Text import Max350Text
+from .NamePrefix1Choice import NamePrefix1Choice
 
 class IndividualPerson29(base_types._BaseFieldType):
 
-	__slots__ = ["_MddlNm", "_NmPrfx", "_GvnNm", "_Nm", "_PstlAdr"]
-	@property
-	def MddlNm(self):
-		return self._MddlNm
-
-	@MddlNm.setter
-	def MddlNm(self, value):
-		self._MddlNm = value if type(value) != auto else self.make_default("MddlNm")
-
-	@MddlNm.deleter
-	def MddlNm(self):
-		del self._MddlNm
-		self._MddlNm = None
-
+	__slots__ = ["_NmPrfx", "_MddlNm", "_GvnNm", "_Nm", "_PstlAdr"]
 	@property
 	def NmPrfx(self):
 		return self._NmPrfx
@@ -32,6 +19,19 @@ class IndividualPerson29(base_types._BaseFieldType):
 	def NmPrfx(self):
 		del self._NmPrfx
 		self._NmPrfx = None
+
+	@property
+	def MddlNm(self):
+		return self._MddlNm
+
+	@MddlNm.setter
+	def MddlNm(self, value):
+		self._MddlNm = value if type(value) != auto else self.make_default("MddlNm")
+
+	@MddlNm.deleter
+	def MddlNm(self):
+		del self._MddlNm
+		self._MddlNm = None
 
 	@property
 	def GvnNm(self):
@@ -73,8 +73,8 @@ class IndividualPerson29(base_types._BaseFieldType):
 		self._PstlAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress21, min=1, max=5, mutex_group=None, array=True),

@@ -1,5 +1,5 @@
 from . import base_types
-import SaleToPOIMessageStatusResponseV07
+from .SaleToPOIMessageStatusResponseV07 import SaleToPOIMessageStatusResponseV07
 
 class CASP_015_001_07():
 

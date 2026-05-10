@@ -1,6 +1,6 @@
 from . import base_types
-import Incoterms4Choice
-import Max70Text
+from .Incoterms4Choice import Incoterms4Choice
+from .Max70Text import Max70Text
 
 class Incoterms4(base_types._BaseFieldType):
 

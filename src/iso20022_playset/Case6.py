@@ -1,7 +1,7 @@
 from . import base_types
-import Party50Choice
-import YesNoIndicator
-import Max35Text
+from .Max35Text import Max35Text
+from .Party50Choice import Party50Choice
+from .YesNoIndicator import YesNoIndicator
 
 class Case6(base_types._BaseFieldType):
 

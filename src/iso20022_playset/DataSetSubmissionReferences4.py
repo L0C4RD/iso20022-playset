@@ -1,14 +1,14 @@
 from . import base_types
-import BaselineStatus3Code
-import YesNoIndicator
-import DocumentIdentification3
-import DocumentIdentification7
-import DocumentIdentification5
-import Max35Text
+from .Max35Text import Max35Text
+from .YesNoIndicator import YesNoIndicator
+from .DocumentIdentification5 import DocumentIdentification5
+from .DocumentIdentification7 import DocumentIdentification7
+from .BaselineStatus3Code import BaselineStatus3Code
+from .DocumentIdentification3 import DocumentIdentification3
 
 class DataSetSubmissionReferences4(base_types._BaseFieldType):
 
-	__slots__ = ["_PurchsOrdrRef", "_ForcdMtch", "_EstblishdBaselnId", "_TxSts", "_TxId", "_UsrTxRef"]
+	__slots__ = ["_PurchsOrdrRef", "_EstblishdBaselnId", "_ForcdMtch", "_TxId", "_TxSts", "_UsrTxRef"]
 	@property
 	def PurchsOrdrRef(self):
 		return self._PurchsOrdrRef
@@ -21,19 +21,6 @@ class DataSetSubmissionReferences4(base_types._BaseFieldType):
 	def PurchsOrdrRef(self):
 		del self._PurchsOrdrRef
 		self._PurchsOrdrRef = None
-
-	@property
-	def ForcdMtch(self):
-		return self._ForcdMtch
-
-	@ForcdMtch.setter
-	def ForcdMtch(self, value):
-		self._ForcdMtch = value if type(value) != auto else self.make_default("ForcdMtch")
-
-	@ForcdMtch.deleter
-	def ForcdMtch(self):
-		del self._ForcdMtch
-		self._ForcdMtch = None
 
 	@property
 	def EstblishdBaselnId(self):
@@ -49,17 +36,17 @@ class DataSetSubmissionReferences4(base_types._BaseFieldType):
 		self._EstblishdBaselnId = None
 
 	@property
-	def TxSts(self):
-		return self._TxSts
+	def ForcdMtch(self):
+		return self._ForcdMtch
 
-	@TxSts.setter
-	def TxSts(self, value):
-		self._TxSts = value if type(value) != auto else self.make_default("TxSts")
+	@ForcdMtch.setter
+	def ForcdMtch(self, value):
+		self._ForcdMtch = value if type(value) != auto else self.make_default("ForcdMtch")
 
-	@TxSts.deleter
-	def TxSts(self):
-		del self._TxSts
-		self._TxSts = None
+	@ForcdMtch.deleter
+	def ForcdMtch(self):
+		del self._ForcdMtch
+		self._ForcdMtch = None
 
 	@property
 	def TxId(self):
@@ -73,6 +60,19 @@ class DataSetSubmissionReferences4(base_types._BaseFieldType):
 	def TxId(self):
 		del self._TxId
 		self._TxId = None
+
+	@property
+	def TxSts(self):
+		return self._TxSts
+
+	@TxSts.setter
+	def TxSts(self, value):
+		self._TxSts = value if type(value) != auto else self.make_default("TxSts")
+
+	@TxSts.deleter
+	def TxSts(self):
+		del self._TxSts
+		self._TxSts = None
 
 	@property
 	def UsrTxRef(self):
@@ -89,10 +89,10 @@ class DataSetSubmissionReferences4(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ForcdMtch', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxSts', type=BaselineStatus3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ForcdMtch', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSts', type=BaselineStatus3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 	))
 

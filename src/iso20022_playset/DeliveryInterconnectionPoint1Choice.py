@@ -1,6 +1,6 @@
 from . import base_types
-import Max52Text
-import EICIdentifier
+from .EICIdentifier import EICIdentifier
+from .Max52Text import Max52Text
 
 class DeliveryInterconnectionPoint1Choice(base_types._BaseFieldType):
 

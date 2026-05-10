@@ -1,5 +1,5 @@
 from . import base_types
-import SecuritiesAccountReportV01
+from .SecuritiesAccountReportV01 import SecuritiesAccountReportV01
 
 class REDA_021_001_01():
 

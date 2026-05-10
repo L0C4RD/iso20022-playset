@@ -1,13 +1,13 @@
 from . import base_types
-import ISODate
-import NamePrefix1Code
-import PostalAddress1
-import GenderCode
-import Max35Text
+from .Max35Text import Max35Text
+from .ISODate import ISODate
+from .PostalAddress1 import PostalAddress1
+from .NamePrefix1Code import NamePrefix1Code
+from .GenderCode import GenderCode
 
 class IndividualPerson8(base_types._BaseFieldType):
 
-	__slots__ = ["_Gndr", "_NmPrfx", "_IndvInvstrAdr", "_NmSfx", "_BirthDt", "_SclSctyNb", "_GvnNm", "_Nm"]
+	__slots__ = ["_Gndr", "_Nm", "_NmSfx", "_BirthDt", "_NmPrfx", "_IndvInvstrAdr", "_SclSctyNb", "_GvnNm"]
 	@property
 	def Gndr(self):
 		return self._Gndr
@@ -22,30 +22,17 @@ class IndividualPerson8(base_types._BaseFieldType):
 		self._Gndr = None
 
 	@property
-	def NmPrfx(self):
-		return self._NmPrfx
+	def Nm(self):
+		return self._Nm
 
-	@NmPrfx.setter
-	def NmPrfx(self, value):
-		self._NmPrfx = value if type(value) != auto else self.make_default("NmPrfx")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@NmPrfx.deleter
-	def NmPrfx(self):
-		del self._NmPrfx
-		self._NmPrfx = None
-
-	@property
-	def IndvInvstrAdr(self):
-		return self._IndvInvstrAdr
-
-	@IndvInvstrAdr.setter
-	def IndvInvstrAdr(self, value):
-		self._IndvInvstrAdr = value if type(value) != auto else self.make_default("IndvInvstrAdr")
-
-	@IndvInvstrAdr.deleter
-	def IndvInvstrAdr(self):
-		del self._IndvInvstrAdr
-		self._IndvInvstrAdr = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def NmSfx(self):
@@ -74,6 +61,32 @@ class IndividualPerson8(base_types._BaseFieldType):
 		self._BirthDt = None
 
 	@property
+	def NmPrfx(self):
+		return self._NmPrfx
+
+	@NmPrfx.setter
+	def NmPrfx(self, value):
+		self._NmPrfx = value if type(value) != auto else self.make_default("NmPrfx")
+
+	@NmPrfx.deleter
+	def NmPrfx(self):
+		del self._NmPrfx
+		self._NmPrfx = None
+
+	@property
+	def IndvInvstrAdr(self):
+		return self._IndvInvstrAdr
+
+	@IndvInvstrAdr.setter
+	def IndvInvstrAdr(self, value):
+		self._IndvInvstrAdr = value if type(value) != auto else self.make_default("IndvInvstrAdr")
+
+	@IndvInvstrAdr.deleter
+	def IndvInvstrAdr(self):
+		del self._IndvInvstrAdr
+		self._IndvInvstrAdr = None
+
+	@property
 	def SclSctyNb(self):
 		return self._SclSctyNb
 
@@ -99,27 +112,14 @@ class IndividualPerson8(base_types._BaseFieldType):
 		del self._GvnNm
 		self._GvnNm = None
 
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Gndr', type=GenderCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IndvInvstrAdr', type=PostalAddress1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmSfx', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndvInvstrAdr', type=PostalAddress1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SclSctyNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

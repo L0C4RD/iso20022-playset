@@ -1,45 +1,45 @@
 from . import base_types
-import InvestmentPlanCharacteristics1
-import ProcessingCharacteristics11
-import ValuationDealingProcessingCharacteristics3
-import ISODate
-import ProcessingCharacteristics9
-import YesNoIndicator
-import ValueForMoney1
-import TargetMarket4
-import SecurityIdentification47
-import Max35Text
-import CashAccount205
-import OrderDesk1
-import InvestmentRestrictions3
-import Extension1
-import FinancialInstrument96
-import ContactAttributes5
-import CostsAndCharges2
-import FundParties1
-import PaymentInstrument16
-import MarketPracticeVersion1
-import ProcessingCharacteristics12
-import DistributionStrategy1
-import ContactAttributes6
-import AdditionalProductInformation3
-import LocalMarketAnnex6
+from .ContactAttributes6 import ContactAttributes6
+from .Max35Text import Max35Text
+from .YesNoIndicator import YesNoIndicator
+from .SecurityIdentification47 import SecurityIdentification47
+from .CashAccount205 import CashAccount205
+from .ISODate import ISODate
+from .ProcessingCharacteristics11 import ProcessingCharacteristics11
+from .ContactAttributes5 import ContactAttributes5
+from .Extension1 import Extension1
+from .InvestmentRestrictions3 import InvestmentRestrictions3
+from .AdditionalProductInformation3 import AdditionalProductInformation3
+from .TargetMarket4 import TargetMarket4
+from .OrderDesk1 import OrderDesk1
+from .FundParties1 import FundParties1
+from .InvestmentPlanCharacteristics1 import InvestmentPlanCharacteristics1
+from .ProcessingCharacteristics12 import ProcessingCharacteristics12
+from .MarketPracticeVersion1 import MarketPracticeVersion1
+from .CostsAndCharges2 import CostsAndCharges2
+from .DistributionStrategy1 import DistributionStrategy1
+from .ValuationDealingProcessingCharacteristics3 import ValuationDealingProcessingCharacteristics3
+from .FinancialInstrument96 import FinancialInstrument96
+from .ValueForMoney1 import ValueForMoney1
+from .PaymentInstrument16 import PaymentInstrument16
+from .LocalMarketAnnex6 import LocalMarketAnnex6
+from .ProcessingCharacteristics9 import ProcessingCharacteristics9
 
 class FundReferenceDataReport5(base_types._BaseFieldType):
 
-	__slots__ = ["_ValtnDealgChrtcs", "_CshSttlmDtls", "_CostsAndChrgs", "_Id", "_AuthrsdPrxy", "_ExPstInd", "_PlanChrtcs", "_SbcptPrcgChrtcs", "_PmtInstrm", "_GnlRefDt", "_Xtnsn", "_ExAnteInd", "_Vrsn", "_AddtlInfUKMkt", "_FndDtls", "_InvstmtRstrctns", "_RedPrcgChrtcs", "_TrgtMktInd", "_SwtchPrcgChrtcs", "_FndMgmtCpny", "_DstrbtnStrtgy", "_MainFndOrdrDsk", "_ValForMny", "_TrgtMkt", "_LclMktAnx", "_FndPties", "_SctyId"]
+	__slots__ = ["_ExAnteInd", "_CshSttlmDtls", "_Xtnsn", "_InvstmtRstrctns", "_ValForMny", "_CostsAndChrgs", "_DstrbtnStrtgy", "_LclMktAnx", "_ExPstInd", "_Vrsn", "_FndDtls", "_FndPties", "_SwtchPrcgChrtcs", "_TrgtMktInd", "_RedPrcgChrtcs", "_FndMgmtCpny", "_GnlRefDt", "_AddtlInfUKMkt", "_MainFndOrdrDsk", "_SbcptPrcgChrtcs", "_AuthrsdPrxy", "_Id", "_ValtnDealgChrtcs", "_TrgtMkt", "_PmtInstrm", "_SctyId", "_PlanChrtcs"]
 	@property
-	def ValtnDealgChrtcs(self):
-		return self._ValtnDealgChrtcs
+	def ExAnteInd(self):
+		return self._ExAnteInd
 
-	@ValtnDealgChrtcs.setter
-	def ValtnDealgChrtcs(self, value):
-		self._ValtnDealgChrtcs = value if type(value) != auto else self.make_default("ValtnDealgChrtcs")
+	@ExAnteInd.setter
+	def ExAnteInd(self, value):
+		self._ExAnteInd = value if type(value) != auto else self.make_default("ExAnteInd")
 
-	@ValtnDealgChrtcs.deleter
-	def ValtnDealgChrtcs(self):
-		del self._ValtnDealgChrtcs
-		self._ValtnDealgChrtcs = None
+	@ExAnteInd.deleter
+	def ExAnteInd(self):
+		del self._ExAnteInd
+		self._ExAnteInd = None
 
 	@property
 	def CshSttlmDtls(self):
@@ -55,110 +55,6 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 		self._CshSttlmDtls = None
 
 	@property
-	def CostsAndChrgs(self):
-		return self._CostsAndChrgs
-
-	@CostsAndChrgs.setter
-	def CostsAndChrgs(self, value):
-		self._CostsAndChrgs = value if type(value) != auto else self.make_default("CostsAndChrgs")
-
-	@CostsAndChrgs.deleter
-	def CostsAndChrgs(self):
-		del self._CostsAndChrgs
-		self._CostsAndChrgs = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def AuthrsdPrxy(self):
-		return self._AuthrsdPrxy
-
-	@AuthrsdPrxy.setter
-	def AuthrsdPrxy(self, value):
-		self._AuthrsdPrxy = value if type(value) != auto else self.make_default("AuthrsdPrxy")
-
-	@AuthrsdPrxy.deleter
-	def AuthrsdPrxy(self):
-		del self._AuthrsdPrxy
-		self._AuthrsdPrxy = None
-
-	@property
-	def ExPstInd(self):
-		return self._ExPstInd
-
-	@ExPstInd.setter
-	def ExPstInd(self, value):
-		self._ExPstInd = value if type(value) != auto else self.make_default("ExPstInd")
-
-	@ExPstInd.deleter
-	def ExPstInd(self):
-		del self._ExPstInd
-		self._ExPstInd = None
-
-	@property
-	def PlanChrtcs(self):
-		return self._PlanChrtcs
-
-	@PlanChrtcs.setter
-	def PlanChrtcs(self, value):
-		self._PlanChrtcs = value if type(value) != auto else self.make_default("PlanChrtcs")
-
-	@PlanChrtcs.deleter
-	def PlanChrtcs(self):
-		del self._PlanChrtcs
-		self._PlanChrtcs = None
-
-	@property
-	def SbcptPrcgChrtcs(self):
-		return self._SbcptPrcgChrtcs
-
-	@SbcptPrcgChrtcs.setter
-	def SbcptPrcgChrtcs(self, value):
-		self._SbcptPrcgChrtcs = value if type(value) != auto else self.make_default("SbcptPrcgChrtcs")
-
-	@SbcptPrcgChrtcs.deleter
-	def SbcptPrcgChrtcs(self):
-		del self._SbcptPrcgChrtcs
-		self._SbcptPrcgChrtcs = None
-
-	@property
-	def PmtInstrm(self):
-		return self._PmtInstrm
-
-	@PmtInstrm.setter
-	def PmtInstrm(self, value):
-		self._PmtInstrm = value if type(value) != auto else self.make_default("PmtInstrm")
-
-	@PmtInstrm.deleter
-	def PmtInstrm(self):
-		del self._PmtInstrm
-		self._PmtInstrm = None
-
-	@property
-	def GnlRefDt(self):
-		return self._GnlRefDt
-
-	@GnlRefDt.setter
-	def GnlRefDt(self, value):
-		self._GnlRefDt = value if type(value) != auto else self.make_default("GnlRefDt")
-
-	@GnlRefDt.deleter
-	def GnlRefDt(self):
-		del self._GnlRefDt
-		self._GnlRefDt = None
-
-	@property
 	def Xtnsn(self):
 		return self._Xtnsn
 
@@ -170,58 +66,6 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 	def Xtnsn(self):
 		del self._Xtnsn
 		self._Xtnsn = None
-
-	@property
-	def ExAnteInd(self):
-		return self._ExAnteInd
-
-	@ExAnteInd.setter
-	def ExAnteInd(self, value):
-		self._ExAnteInd = value if type(value) != auto else self.make_default("ExAnteInd")
-
-	@ExAnteInd.deleter
-	def ExAnteInd(self):
-		del self._ExAnteInd
-		self._ExAnteInd = None
-
-	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
-	@property
-	def AddtlInfUKMkt(self):
-		return self._AddtlInfUKMkt
-
-	@AddtlInfUKMkt.setter
-	def AddtlInfUKMkt(self, value):
-		self._AddtlInfUKMkt = value if type(value) != auto else self.make_default("AddtlInfUKMkt")
-
-	@AddtlInfUKMkt.deleter
-	def AddtlInfUKMkt(self):
-		del self._AddtlInfUKMkt
-		self._AddtlInfUKMkt = None
-
-	@property
-	def FndDtls(self):
-		return self._FndDtls
-
-	@FndDtls.setter
-	def FndDtls(self, value):
-		self._FndDtls = value if type(value) != auto else self.make_default("FndDtls")
-
-	@FndDtls.deleter
-	def FndDtls(self):
-		del self._FndDtls
-		self._FndDtls = None
 
 	@property
 	def InvstmtRstrctns(self):
@@ -237,56 +81,30 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 		self._InvstmtRstrctns = None
 
 	@property
-	def RedPrcgChrtcs(self):
-		return self._RedPrcgChrtcs
+	def ValForMny(self):
+		return self._ValForMny
 
-	@RedPrcgChrtcs.setter
-	def RedPrcgChrtcs(self, value):
-		self._RedPrcgChrtcs = value if type(value) != auto else self.make_default("RedPrcgChrtcs")
+	@ValForMny.setter
+	def ValForMny(self, value):
+		self._ValForMny = value if type(value) != auto else self.make_default("ValForMny")
 
-	@RedPrcgChrtcs.deleter
-	def RedPrcgChrtcs(self):
-		del self._RedPrcgChrtcs
-		self._RedPrcgChrtcs = None
-
-	@property
-	def TrgtMktInd(self):
-		return self._TrgtMktInd
-
-	@TrgtMktInd.setter
-	def TrgtMktInd(self, value):
-		self._TrgtMktInd = value if type(value) != auto else self.make_default("TrgtMktInd")
-
-	@TrgtMktInd.deleter
-	def TrgtMktInd(self):
-		del self._TrgtMktInd
-		self._TrgtMktInd = None
+	@ValForMny.deleter
+	def ValForMny(self):
+		del self._ValForMny
+		self._ValForMny = None
 
 	@property
-	def SwtchPrcgChrtcs(self):
-		return self._SwtchPrcgChrtcs
+	def CostsAndChrgs(self):
+		return self._CostsAndChrgs
 
-	@SwtchPrcgChrtcs.setter
-	def SwtchPrcgChrtcs(self, value):
-		self._SwtchPrcgChrtcs = value if type(value) != auto else self.make_default("SwtchPrcgChrtcs")
+	@CostsAndChrgs.setter
+	def CostsAndChrgs(self, value):
+		self._CostsAndChrgs = value if type(value) != auto else self.make_default("CostsAndChrgs")
 
-	@SwtchPrcgChrtcs.deleter
-	def SwtchPrcgChrtcs(self):
-		del self._SwtchPrcgChrtcs
-		self._SwtchPrcgChrtcs = None
-
-	@property
-	def FndMgmtCpny(self):
-		return self._FndMgmtCpny
-
-	@FndMgmtCpny.setter
-	def FndMgmtCpny(self, value):
-		self._FndMgmtCpny = value if type(value) != auto else self.make_default("FndMgmtCpny")
-
-	@FndMgmtCpny.deleter
-	def FndMgmtCpny(self):
-		del self._FndMgmtCpny
-		self._FndMgmtCpny = None
+	@CostsAndChrgs.deleter
+	def CostsAndChrgs(self):
+		del self._CostsAndChrgs
+		self._CostsAndChrgs = None
 
 	@property
 	def DstrbtnStrtgy(self):
@@ -302,45 +120,6 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 		self._DstrbtnStrtgy = None
 
 	@property
-	def MainFndOrdrDsk(self):
-		return self._MainFndOrdrDsk
-
-	@MainFndOrdrDsk.setter
-	def MainFndOrdrDsk(self, value):
-		self._MainFndOrdrDsk = value if type(value) != auto else self.make_default("MainFndOrdrDsk")
-
-	@MainFndOrdrDsk.deleter
-	def MainFndOrdrDsk(self):
-		del self._MainFndOrdrDsk
-		self._MainFndOrdrDsk = None
-
-	@property
-	def ValForMny(self):
-		return self._ValForMny
-
-	@ValForMny.setter
-	def ValForMny(self, value):
-		self._ValForMny = value if type(value) != auto else self.make_default("ValForMny")
-
-	@ValForMny.deleter
-	def ValForMny(self):
-		del self._ValForMny
-		self._ValForMny = None
-
-	@property
-	def TrgtMkt(self):
-		return self._TrgtMkt
-
-	@TrgtMkt.setter
-	def TrgtMkt(self, value):
-		self._TrgtMkt = value if type(value) != auto else self.make_default("TrgtMkt")
-
-	@TrgtMkt.deleter
-	def TrgtMkt(self):
-		del self._TrgtMkt
-		self._TrgtMkt = None
-
-	@property
 	def LclMktAnx(self):
 		return self._LclMktAnx
 
@@ -352,6 +131,45 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 	def LclMktAnx(self):
 		del self._LclMktAnx
 		self._LclMktAnx = None
+
+	@property
+	def ExPstInd(self):
+		return self._ExPstInd
+
+	@ExPstInd.setter
+	def ExPstInd(self, value):
+		self._ExPstInd = value if type(value) != auto else self.make_default("ExPstInd")
+
+	@ExPstInd.deleter
+	def ExPstInd(self):
+		del self._ExPstInd
+		self._ExPstInd = None
+
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
+	@property
+	def FndDtls(self):
+		return self._FndDtls
+
+	@FndDtls.setter
+	def FndDtls(self, value):
+		self._FndDtls = value if type(value) != auto else self.make_default("FndDtls")
+
+	@FndDtls.deleter
+	def FndDtls(self):
+		del self._FndDtls
+		self._FndDtls = None
 
 	@property
 	def FndPties(self):
@@ -367,6 +185,175 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 		self._FndPties = None
 
 	@property
+	def SwtchPrcgChrtcs(self):
+		return self._SwtchPrcgChrtcs
+
+	@SwtchPrcgChrtcs.setter
+	def SwtchPrcgChrtcs(self, value):
+		self._SwtchPrcgChrtcs = value if type(value) != auto else self.make_default("SwtchPrcgChrtcs")
+
+	@SwtchPrcgChrtcs.deleter
+	def SwtchPrcgChrtcs(self):
+		del self._SwtchPrcgChrtcs
+		self._SwtchPrcgChrtcs = None
+
+	@property
+	def TrgtMktInd(self):
+		return self._TrgtMktInd
+
+	@TrgtMktInd.setter
+	def TrgtMktInd(self, value):
+		self._TrgtMktInd = value if type(value) != auto else self.make_default("TrgtMktInd")
+
+	@TrgtMktInd.deleter
+	def TrgtMktInd(self):
+		del self._TrgtMktInd
+		self._TrgtMktInd = None
+
+	@property
+	def RedPrcgChrtcs(self):
+		return self._RedPrcgChrtcs
+
+	@RedPrcgChrtcs.setter
+	def RedPrcgChrtcs(self, value):
+		self._RedPrcgChrtcs = value if type(value) != auto else self.make_default("RedPrcgChrtcs")
+
+	@RedPrcgChrtcs.deleter
+	def RedPrcgChrtcs(self):
+		del self._RedPrcgChrtcs
+		self._RedPrcgChrtcs = None
+
+	@property
+	def FndMgmtCpny(self):
+		return self._FndMgmtCpny
+
+	@FndMgmtCpny.setter
+	def FndMgmtCpny(self, value):
+		self._FndMgmtCpny = value if type(value) != auto else self.make_default("FndMgmtCpny")
+
+	@FndMgmtCpny.deleter
+	def FndMgmtCpny(self):
+		del self._FndMgmtCpny
+		self._FndMgmtCpny = None
+
+	@property
+	def GnlRefDt(self):
+		return self._GnlRefDt
+
+	@GnlRefDt.setter
+	def GnlRefDt(self, value):
+		self._GnlRefDt = value if type(value) != auto else self.make_default("GnlRefDt")
+
+	@GnlRefDt.deleter
+	def GnlRefDt(self):
+		del self._GnlRefDt
+		self._GnlRefDt = None
+
+	@property
+	def AddtlInfUKMkt(self):
+		return self._AddtlInfUKMkt
+
+	@AddtlInfUKMkt.setter
+	def AddtlInfUKMkt(self, value):
+		self._AddtlInfUKMkt = value if type(value) != auto else self.make_default("AddtlInfUKMkt")
+
+	@AddtlInfUKMkt.deleter
+	def AddtlInfUKMkt(self):
+		del self._AddtlInfUKMkt
+		self._AddtlInfUKMkt = None
+
+	@property
+	def MainFndOrdrDsk(self):
+		return self._MainFndOrdrDsk
+
+	@MainFndOrdrDsk.setter
+	def MainFndOrdrDsk(self, value):
+		self._MainFndOrdrDsk = value if type(value) != auto else self.make_default("MainFndOrdrDsk")
+
+	@MainFndOrdrDsk.deleter
+	def MainFndOrdrDsk(self):
+		del self._MainFndOrdrDsk
+		self._MainFndOrdrDsk = None
+
+	@property
+	def SbcptPrcgChrtcs(self):
+		return self._SbcptPrcgChrtcs
+
+	@SbcptPrcgChrtcs.setter
+	def SbcptPrcgChrtcs(self, value):
+		self._SbcptPrcgChrtcs = value if type(value) != auto else self.make_default("SbcptPrcgChrtcs")
+
+	@SbcptPrcgChrtcs.deleter
+	def SbcptPrcgChrtcs(self):
+		del self._SbcptPrcgChrtcs
+		self._SbcptPrcgChrtcs = None
+
+	@property
+	def AuthrsdPrxy(self):
+		return self._AuthrsdPrxy
+
+	@AuthrsdPrxy.setter
+	def AuthrsdPrxy(self, value):
+		self._AuthrsdPrxy = value if type(value) != auto else self.make_default("AuthrsdPrxy")
+
+	@AuthrsdPrxy.deleter
+	def AuthrsdPrxy(self):
+		del self._AuthrsdPrxy
+		self._AuthrsdPrxy = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def ValtnDealgChrtcs(self):
+		return self._ValtnDealgChrtcs
+
+	@ValtnDealgChrtcs.setter
+	def ValtnDealgChrtcs(self, value):
+		self._ValtnDealgChrtcs = value if type(value) != auto else self.make_default("ValtnDealgChrtcs")
+
+	@ValtnDealgChrtcs.deleter
+	def ValtnDealgChrtcs(self):
+		del self._ValtnDealgChrtcs
+		self._ValtnDealgChrtcs = None
+
+	@property
+	def TrgtMkt(self):
+		return self._TrgtMkt
+
+	@TrgtMkt.setter
+	def TrgtMkt(self, value):
+		self._TrgtMkt = value if type(value) != auto else self.make_default("TrgtMkt")
+
+	@TrgtMkt.deleter
+	def TrgtMkt(self):
+		del self._TrgtMkt
+		self._TrgtMkt = None
+
+	@property
+	def PmtInstrm(self):
+		return self._PmtInstrm
+
+	@PmtInstrm.setter
+	def PmtInstrm(self, value):
+		self._PmtInstrm = value if type(value) != auto else self.make_default("PmtInstrm")
+
+	@PmtInstrm.deleter
+	def PmtInstrm(self):
+		del self._PmtInstrm
+		self._PmtInstrm = None
+
+	@property
 	def SctyId(self):
 		return self._SctyId
 
@@ -379,33 +366,46 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 		del self._SctyId
 		self._SctyId = None
 
+	@property
+	def PlanChrtcs(self):
+		return self._PlanChrtcs
+
+	@PlanChrtcs.setter
+	def PlanChrtcs(self, value):
+		self._PlanChrtcs = value if type(value) != auto else self.make_default("PlanChrtcs")
+
+	@PlanChrtcs.deleter
+	def PlanChrtcs(self):
+		del self._PlanChrtcs
+		self._PlanChrtcs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValtnDealgChrtcs', type=ValuationDealingProcessingCharacteristics3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshSttlmDtls', type=CashAccount205, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CostsAndChrgs', type=CostsAndCharges2, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthrsdPrxy', type=ContactAttributes6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExPstInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PlanChrtcs', type=InvestmentPlanCharacteristics1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SbcptPrcgChrtcs', type=ProcessingCharacteristics11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtInstrm', type=PaymentInstrument16, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GnlRefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ExAnteInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInfUKMkt', type=AdditionalProductInformation3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FndDtls', type=FinancialInstrument96, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshSttlmDtls', type=CashAccount205, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InvstmtRstrctns', type=InvestmentRestrictions3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RedPrcgChrtcs', type=ProcessingCharacteristics12, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrgtMktInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SwtchPrcgChrtcs', type=ProcessingCharacteristics9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FndMgmtCpny', type=ContactAttributes5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstrbtnStrtgy', type=DistributionStrategy1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MainFndOrdrDsk', type=OrderDesk1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValForMny', type=ValueForMoney1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrgtMkt', type=TargetMarket4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CostsAndChrgs', type=CostsAndCharges2, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DstrbtnStrtgy', type=DistributionStrategy1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LclMktAnx', type=LocalMarketAnnex6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ExPstInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FndDtls', type=FinancialInstrument96, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FndPties', type=FundParties1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SwtchPrcgChrtcs', type=ProcessingCharacteristics9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrgtMktInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RedPrcgChrtcs', type=ProcessingCharacteristics12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FndMgmtCpny', type=ContactAttributes5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GnlRefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInfUKMkt', type=AdditionalProductInformation3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MainFndOrdrDsk', type=OrderDesk1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SbcptPrcgChrtcs', type=ProcessingCharacteristics11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthrsdPrxy', type=ContactAttributes6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnDealgChrtcs', type=ValuationDealingProcessingCharacteristics3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrgtMkt', type=TargetMarket4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInstrm', type=PaymentInstrument16, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctyId', type=SecurityIdentification47, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlanChrtcs', type=InvestmentPlanCharacteristics1, min=0, max=None, mutex_group=None, array=True),
 	))
 

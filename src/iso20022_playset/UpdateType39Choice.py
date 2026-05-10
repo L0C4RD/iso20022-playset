@@ -1,24 +1,11 @@
 from . import base_types
-import SecuritiesSettlementTransactionDetails57
-import SecuritiesSettlementTransactionDetails56
-import SecuritiesSettlementTransactionDetails58
+from .SecuritiesSettlementTransactionDetails57 import SecuritiesSettlementTransactionDetails57
+from .SecuritiesSettlementTransactionDetails56 import SecuritiesSettlementTransactionDetails56
+from .SecuritiesSettlementTransactionDetails58 import SecuritiesSettlementTransactionDetails58
 
 class UpdateType39Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Addtn", "_Mod", "_Deltn"]
-	@property
-	def Addtn(self):
-		return self._Addtn
-
-	@Addtn.setter
-	def Addtn(self, value):
-		self._Addtn = value if type(value) != auto else self.make_default("Addtn")
-
-	@Addtn.deleter
-	def Addtn(self):
-		del self._Addtn
-		self._Addtn = None
-
+	__slots__ = ["_Mod", "_Addtn", "_Deltn"]
 	@property
 	def Mod(self):
 		return self._Mod
@@ -31,6 +18,19 @@ class UpdateType39Choice(base_types._BaseFieldType):
 	def Mod(self):
 		del self._Mod
 		self._Mod = None
+
+	@property
+	def Addtn(self):
+		return self._Addtn
+
+	@Addtn.setter
+	def Addtn(self, value):
+		self._Addtn = value if type(value) != auto else self.make_default("Addtn")
+
+	@Addtn.deleter
+	def Addtn(self):
+		del self._Addtn
+		self._Addtn = None
 
 	@property
 	def Deltn(self):
@@ -46,8 +46,8 @@ class UpdateType39Choice(base_types._BaseFieldType):
 		self._Deltn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Addtn', type=SecuritiesSettlementTransactionDetails56, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Mod', type=SecuritiesSettlementTransactionDetails57, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Addtn', type=SecuritiesSettlementTransactionDetails56, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Deltn', type=SecuritiesSettlementTransactionDetails58, min=0, max=1, mutex_group=1, array=False),
 	))
 

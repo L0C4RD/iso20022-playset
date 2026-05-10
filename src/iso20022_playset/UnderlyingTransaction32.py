@@ -1,23 +1,23 @@
 from . import base_types
-import OriginalPaymentInstruction48
-import OriginalGroupHeader23
-import PaymentTransaction152
+from .OriginalPaymentInstruction48 import OriginalPaymentInstruction48
+from .PaymentTransaction152 import PaymentTransaction152
+from .OriginalGroupHeader23 import OriginalGroupHeader23
 
 class UnderlyingTransaction32(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlGrpInfAndSts", "_OrgnlPmtInfAndSts", "_TxInfAndSts"]
+	__slots__ = ["_TxInfAndSts", "_OrgnlPmtInfAndSts", "_OrgnlGrpInfAndSts"]
 	@property
-	def OrgnlGrpInfAndSts(self):
-		return self._OrgnlGrpInfAndSts
+	def TxInfAndSts(self):
+		return self._TxInfAndSts
 
-	@OrgnlGrpInfAndSts.setter
-	def OrgnlGrpInfAndSts(self, value):
-		self._OrgnlGrpInfAndSts = value if type(value) != auto else self.make_default("OrgnlGrpInfAndSts")
+	@TxInfAndSts.setter
+	def TxInfAndSts(self, value):
+		self._TxInfAndSts = value if type(value) != auto else self.make_default("TxInfAndSts")
 
-	@OrgnlGrpInfAndSts.deleter
-	def OrgnlGrpInfAndSts(self):
-		del self._OrgnlGrpInfAndSts
-		self._OrgnlGrpInfAndSts = None
+	@TxInfAndSts.deleter
+	def TxInfAndSts(self):
+		del self._TxInfAndSts
+		self._TxInfAndSts = None
 
 	@property
 	def OrgnlPmtInfAndSts(self):
@@ -33,21 +33,21 @@ class UnderlyingTransaction32(base_types._BaseFieldType):
 		self._OrgnlPmtInfAndSts = None
 
 	@property
-	def TxInfAndSts(self):
-		return self._TxInfAndSts
+	def OrgnlGrpInfAndSts(self):
+		return self._OrgnlGrpInfAndSts
 
-	@TxInfAndSts.setter
-	def TxInfAndSts(self, value):
-		self._TxInfAndSts = value if type(value) != auto else self.make_default("TxInfAndSts")
+	@OrgnlGrpInfAndSts.setter
+	def OrgnlGrpInfAndSts(self, value):
+		self._OrgnlGrpInfAndSts = value if type(value) != auto else self.make_default("OrgnlGrpInfAndSts")
 
-	@TxInfAndSts.deleter
-	def TxInfAndSts(self):
-		del self._TxInfAndSts
-		self._TxInfAndSts = None
+	@OrgnlGrpInfAndSts.deleter
+	def OrgnlGrpInfAndSts(self):
+		del self._OrgnlGrpInfAndSts
+		self._OrgnlGrpInfAndSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlGrpInfAndSts', type=OriginalGroupHeader23, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlPmtInfAndSts', type=OriginalPaymentInstruction48, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxInfAndSts', type=PaymentTransaction152, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlPmtInfAndSts', type=OriginalPaymentInstruction48, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlGrpInfAndSts', type=OriginalGroupHeader23, min=0, max=1, mutex_group=None, array=False),
 	))
 

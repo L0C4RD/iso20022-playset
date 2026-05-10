@@ -1,12 +1,12 @@
 from . import base_types
-import Amount2Choice
-import LimitIdentification8
-import DateAndDateTime2Choice
-import CreditDebitCode
+from .LimitIdentification8 import LimitIdentification8
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .CreditDebitCode import CreditDebitCode
+from .Amount2Choice import Amount2Choice
 
 class LimitStructure6(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_LmtId", "_Amt", "_StartDtTm"]
+	__slots__ = ["_CdtDbtInd", "_StartDtTm", "_LmtId", "_Amt"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
@@ -19,6 +19,19 @@ class LimitStructure6(base_types._BaseFieldType):
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
 		self._CdtDbtInd = None
+
+	@property
+	def StartDtTm(self):
+		return self._StartDtTm
+
+	@StartDtTm.setter
+	def StartDtTm(self, value):
+		self._StartDtTm = value if type(value) != auto else self.make_default("StartDtTm")
+
+	@StartDtTm.deleter
+	def StartDtTm(self):
+		del self._StartDtTm
+		self._StartDtTm = None
 
 	@property
 	def LmtId(self):
@@ -46,23 +59,10 @@ class LimitStructure6(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
-	@property
-	def StartDtTm(self):
-		return self._StartDtTm
-
-	@StartDtTm.setter
-	def StartDtTm(self, value):
-		self._StartDtTm = value if type(value) != auto else self.make_default("StartDtTm")
-
-	@StartDtTm.deleter
-	def StartDtTm(self):
-		del self._StartDtTm
-		self._StartDtTm = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LmtId', type=LimitIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-import ATMEnvironment9
+from .ATMEnvironment9 import ATMEnvironment9
 
 class HostToATMAcknowledgement1(base_types._BaseFieldType):
 

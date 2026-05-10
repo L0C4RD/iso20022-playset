@@ -1,5 +1,5 @@
 from . import base_types
-import MarginCallResponseV05
+from .MarginCallResponseV05 import MarginCallResponseV05
 
 class COLR_004_001_05():
 

@@ -1,24 +1,11 @@
 from . import base_types
-import DecimalNumber
-import AdditionalReference11
-import ActiveOrHistoricCurrencyAndAmount
+from .DecimalNumber import DecimalNumber
+from .AdditionalReference11 import AdditionalReference11
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class RelatedSubscription1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_DprctnDpstPerUnit", "_RltdAmt", "_CntngntLqdtnPerUnit", "_RltdQty", "_EqulstnCdtPerUnit"]
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
+	__slots__ = ["_DprctnDpstPerUnit", "_RltdAmt", "_Ref", "_EqulstnCdtPerUnit", "_RltdQty", "_CntngntLqdtnPerUnit"]
 	@property
 	def DprctnDpstPerUnit(self):
 		return self._DprctnDpstPerUnit
@@ -46,17 +33,30 @@ class RelatedSubscription1(base_types._BaseFieldType):
 		self._RltdAmt = None
 
 	@property
-	def CntngntLqdtnPerUnit(self):
-		return self._CntngntLqdtnPerUnit
+	def Ref(self):
+		return self._Ref
 
-	@CntngntLqdtnPerUnit.setter
-	def CntngntLqdtnPerUnit(self, value):
-		self._CntngntLqdtnPerUnit = value if type(value) != auto else self.make_default("CntngntLqdtnPerUnit")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
 
-	@CntngntLqdtnPerUnit.deleter
-	def CntngntLqdtnPerUnit(self):
-		del self._CntngntLqdtnPerUnit
-		self._CntngntLqdtnPerUnit = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
+	@property
+	def EqulstnCdtPerUnit(self):
+		return self._EqulstnCdtPerUnit
+
+	@EqulstnCdtPerUnit.setter
+	def EqulstnCdtPerUnit(self, value):
+		self._EqulstnCdtPerUnit = value if type(value) != auto else self.make_default("EqulstnCdtPerUnit")
+
+	@EqulstnCdtPerUnit.deleter
+	def EqulstnCdtPerUnit(self):
+		del self._EqulstnCdtPerUnit
+		self._EqulstnCdtPerUnit = None
 
 	@property
 	def RltdQty(self):
@@ -72,24 +72,24 @@ class RelatedSubscription1(base_types._BaseFieldType):
 		self._RltdQty = None
 
 	@property
-	def EqulstnCdtPerUnit(self):
-		return self._EqulstnCdtPerUnit
+	def CntngntLqdtnPerUnit(self):
+		return self._CntngntLqdtnPerUnit
 
-	@EqulstnCdtPerUnit.setter
-	def EqulstnCdtPerUnit(self, value):
-		self._EqulstnCdtPerUnit = value if type(value) != auto else self.make_default("EqulstnCdtPerUnit")
+	@CntngntLqdtnPerUnit.setter
+	def CntngntLqdtnPerUnit(self, value):
+		self._CntngntLqdtnPerUnit = value if type(value) != auto else self.make_default("CntngntLqdtnPerUnit")
 
-	@EqulstnCdtPerUnit.deleter
-	def EqulstnCdtPerUnit(self):
-		del self._EqulstnCdtPerUnit
-		self._EqulstnCdtPerUnit = None
+	@CntngntLqdtnPerUnit.deleter
+	def CntngntLqdtnPerUnit(self):
+		del self._CntngntLqdtnPerUnit
+		self._CntngntLqdtnPerUnit = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ref', type=AdditionalReference11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DprctnDpstPerUnit', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CntngntLqdtnPerUnit', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdQty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=AdditionalReference11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EqulstnCdtPerUnit', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdQty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CntngntLqdtnPerUnit', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

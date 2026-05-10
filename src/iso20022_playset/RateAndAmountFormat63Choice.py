@@ -1,11 +1,11 @@
 from . import base_types
-import RateValueType7Code
-import Percentage14Rate
-import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from .RateValueType7Code import RateValueType7Code
+from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from .Percentage14Rate import Percentage14Rate
 
 class RateAndAmountFormat63Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Rate", "_NotSpcfdRate"]
+	__slots__ = ["_Amt", "_NotSpcfdRate", "_Rate"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -20,19 +20,6 @@ class RateAndAmountFormat63Choice(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Rate(self):
-		return self._Rate
-
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
-
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
-
-	@property
 	def NotSpcfdRate(self):
 		return self._NotSpcfdRate
 
@@ -45,9 +32,22 @@ class RateAndAmountFormat63Choice(base_types._BaseFieldType):
 		del self._NotSpcfdRate
 		self._NotSpcfdRate = None
 
+	@property
+	def Rate(self):
+		return self._Rate
+
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != auto else self.make_default("Rate")
+
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
 	))
 

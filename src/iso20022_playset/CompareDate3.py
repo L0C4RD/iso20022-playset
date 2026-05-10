@@ -1,5 +1,5 @@
 from . import base_types
-import ISODate
+from .ISODate import ISODate
 
 class CompareDate3(base_types._BaseFieldType):
 

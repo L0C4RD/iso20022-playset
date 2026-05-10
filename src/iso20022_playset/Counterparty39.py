@@ -1,6 +1,6 @@
 from . import base_types
-import OrganisationIdentification15Choice
-import PartyIdentification236Choice
+from .PartyIdentification236Choice import PartyIdentification236Choice
+from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class Counterparty39(base_types._BaseFieldType):
 

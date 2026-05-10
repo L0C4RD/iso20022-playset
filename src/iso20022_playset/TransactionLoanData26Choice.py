@@ -1,9 +1,22 @@
 from . import base_types
-import LoanData120
+from .LoanData120 import LoanData120
 
 class TransactionLoanData26Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RpTrad", "_BuySellBck", "_SctiesLndg", "_MrgnLndg"]
+	__slots__ = ["_SctiesLndg", "_RpTrad", "_BuySellBck", "_MrgnLndg"]
+	@property
+	def SctiesLndg(self):
+		return self._SctiesLndg
+
+	@SctiesLndg.setter
+	def SctiesLndg(self, value):
+		self._SctiesLndg = value if type(value) != auto else self.make_default("SctiesLndg")
+
+	@SctiesLndg.deleter
+	def SctiesLndg(self):
+		del self._SctiesLndg
+		self._SctiesLndg = None
+
 	@property
 	def RpTrad(self):
 		return self._RpTrad
@@ -31,19 +44,6 @@ class TransactionLoanData26Choice(base_types._BaseFieldType):
 		self._BuySellBck = None
 
 	@property
-	def SctiesLndg(self):
-		return self._SctiesLndg
-
-	@SctiesLndg.setter
-	def SctiesLndg(self, value):
-		self._SctiesLndg = value if type(value) != auto else self.make_default("SctiesLndg")
-
-	@SctiesLndg.deleter
-	def SctiesLndg(self):
-		del self._SctiesLndg
-		self._SctiesLndg = None
-
-	@property
 	def MrgnLndg(self):
 		return self._MrgnLndg
 
@@ -57,9 +57,9 @@ class TransactionLoanData26Choice(base_types._BaseFieldType):
 		self._MrgnLndg = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SctiesLndg', type=LoanData120, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RpTrad', type=LoanData120, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BuySellBck', type=LoanData120, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SctiesLndg', type=LoanData120, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MrgnLndg', type=LoanData120, min=0, max=1, mutex_group=1, array=False),
 	))
 

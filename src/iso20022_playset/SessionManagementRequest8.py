@@ -1,28 +1,15 @@
 from . import base_types
-import LogoutRequest1
-import CardPaymentEnvironment81
-import PaymentContext30
-import LoginRequest7
-import SupplementaryData1
-import RetailerService4Code
-import DiagnosisRequest1
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from .SupplementaryData1 import SupplementaryData1
+from .LogoutRequest1 import LogoutRequest1
+from .LoginRequest7 import LoginRequest7
+from .DiagnosisRequest1 import DiagnosisRequest1
+from .PaymentContext30 import PaymentContext30
+from .RetailerService4Code import RetailerService4Code
 
 class SessionManagementRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_Cntxt", "_DgnssReq", "_Envt", "_LgtReq", "_SvcCntt", "_SplmtryData", "_LgnReq"]
-	@property
-	def Cntxt(self):
-		return self._Cntxt
-
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
-
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
-
+	__slots__ = ["_DgnssReq", "_SplmtryData", "_LgtReq", "_SvcCntt", "_LgnReq", "_Envt", "_Cntxt"]
 	@property
 	def DgnssReq(self):
 		return self._DgnssReq
@@ -37,17 +24,17 @@ class SessionManagementRequest8(base_types._BaseFieldType):
 		self._DgnssReq = None
 
 	@property
-	def Envt(self):
-		return self._Envt
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def LgtReq(self):
@@ -76,19 +63,6 @@ class SessionManagementRequest8(base_types._BaseFieldType):
 		self._SvcCntt = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def LgnReq(self):
 		return self._LgnReq
 
@@ -101,13 +75,39 @@ class SessionManagementRequest8(base_types._BaseFieldType):
 		del self._LgnReq
 		self._LgnReq = None
 
+	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
+
+	@property
+	def Cntxt(self):
+		return self._Cntxt
+
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgnssReq', type=DiagnosisRequest1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LgtReq', type=LogoutRequest1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcCntt', type=RetailerService4Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LgnReq', type=LoginRequest7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
 	))
 

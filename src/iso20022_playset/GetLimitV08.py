@@ -1,11 +1,24 @@
 from . import base_types
-import LimitQuery5
-import SupplementaryData1
-import MessageHeader9
+from .MessageHeader9 import MessageHeader9
+from .SupplementaryData1 import SupplementaryData1
+from .LimitQuery5 import LimitQuery5
 
 class GetLimitV08(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgHdr", "_LmtQryDef"]
+	__slots__ = ["_LmtQryDef", "_SplmtryData", "_MsgHdr"]
+	@property
+	def LmtQryDef(self):
+		return self._LmtQryDef
+
+	@LmtQryDef.setter
+	def LmtQryDef(self, value):
+		self._LmtQryDef = value if type(value) != auto else self.make_default("LmtQryDef")
+
+	@LmtQryDef.deleter
+	def LmtQryDef(self):
+		del self._LmtQryDef
+		self._LmtQryDef = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -32,22 +45,9 @@ class GetLimitV08(base_types._BaseFieldType):
 		del self._MsgHdr
 		self._MsgHdr = None
 
-	@property
-	def LmtQryDef(self):
-		return self._LmtQryDef
-
-	@LmtQryDef.setter
-	def LmtQryDef(self, value):
-		self._LmtQryDef = value if type(value) != auto else self.make_default("LmtQryDef")
-
-	@LmtQryDef.deleter
-	def LmtQryDef(self):
-		del self._LmtQryDef
-		self._LmtQryDef = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='LmtQryDef', type=LimitQuery5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LmtQryDef', type=LimitQuery5, min=0, max=1, mutex_group=None, array=False),
 	))
 

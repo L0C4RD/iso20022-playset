@@ -1,25 +1,12 @@
 from . import base_types
-import ISODate
-import SafekeepingPlaceFormat42Choice
-import SignedQuantityFormat14
-import SecuritiesEntryType2Code
+from .SecuritiesEntryType2Code import SecuritiesEntryType2Code
+from .ISODate import ISODate
+from .SafekeepingPlaceFormat42Choice import SafekeepingPlaceFormat42Choice
+from .SignedQuantityFormat14 import SignedQuantityFormat14
 
 class HoldingBalance14(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgPlc", "_Bal", "_Dt", "_BalTp"]
-	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
-
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
-
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
-
+	__slots__ = ["_Bal", "_Dt", "_SfkpgPlc", "_BalTp"]
 	@property
 	def Bal(self):
 		return self._Bal
@@ -47,6 +34,19 @@ class HoldingBalance14(base_types._BaseFieldType):
 		self._Dt = None
 
 	@property
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
+
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
+
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
+
+	@property
 	def BalTp(self):
 		return self._BalTp
 
@@ -60,9 +60,9 @@ class HoldingBalance14(base_types._BaseFieldType):
 		self._BalTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat42Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bal', type=SignedQuantityFormat14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat42Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalTp', type=SecuritiesEntryType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

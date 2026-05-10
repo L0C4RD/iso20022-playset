@@ -1,5 +1,5 @@
 from . import base_types
-import ProductType4Code
+from .ProductType4Code import ProductType4Code
 
 class CompareAssetClass1(base_types._BaseFieldType):
 

@@ -1,21 +1,21 @@
 from . import base_types
-import SettlementTotalData1Choice
+from .SettlementTotalData1Choice import SettlementTotalData1Choice
 
 class SettlementFailsTransactionType2(base_types._BaseFieldType):
 
-	__slots__ = ["_RpAgrmt", "_CollMgmtOpr", "_SctiesBuyOrSell", "_SctiesLndgOrBrrwg", "_Othr"]
+	__slots__ = ["_SctiesBuyOrSell", "_CollMgmtOpr", "_Othr", "_SctiesLndgOrBrrwg", "_RpAgrmt"]
 	@property
-	def RpAgrmt(self):
-		return self._RpAgrmt
+	def SctiesBuyOrSell(self):
+		return self._SctiesBuyOrSell
 
-	@RpAgrmt.setter
-	def RpAgrmt(self, value):
-		self._RpAgrmt = value if type(value) != auto else self.make_default("RpAgrmt")
+	@SctiesBuyOrSell.setter
+	def SctiesBuyOrSell(self, value):
+		self._SctiesBuyOrSell = value if type(value) != auto else self.make_default("SctiesBuyOrSell")
 
-	@RpAgrmt.deleter
-	def RpAgrmt(self):
-		del self._RpAgrmt
-		self._RpAgrmt = None
+	@SctiesBuyOrSell.deleter
+	def SctiesBuyOrSell(self):
+		del self._SctiesBuyOrSell
+		self._SctiesBuyOrSell = None
 
 	@property
 	def CollMgmtOpr(self):
@@ -31,17 +31,17 @@ class SettlementFailsTransactionType2(base_types._BaseFieldType):
 		self._CollMgmtOpr = None
 
 	@property
-	def SctiesBuyOrSell(self):
-		return self._SctiesBuyOrSell
+	def Othr(self):
+		return self._Othr
 
-	@SctiesBuyOrSell.setter
-	def SctiesBuyOrSell(self, value):
-		self._SctiesBuyOrSell = value if type(value) != auto else self.make_default("SctiesBuyOrSell")
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
 
-	@SctiesBuyOrSell.deleter
-	def SctiesBuyOrSell(self):
-		del self._SctiesBuyOrSell
-		self._SctiesBuyOrSell = None
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
 
 	@property
 	def SctiesLndgOrBrrwg(self):
@@ -57,23 +57,23 @@ class SettlementFailsTransactionType2(base_types._BaseFieldType):
 		self._SctiesLndgOrBrrwg = None
 
 	@property
-	def Othr(self):
-		return self._Othr
+	def RpAgrmt(self):
+		return self._RpAgrmt
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+	@RpAgrmt.setter
+	def RpAgrmt(self, value):
+		self._RpAgrmt = value if type(value) != auto else self.make_default("RpAgrmt")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@RpAgrmt.deleter
+	def RpAgrmt(self):
+		del self._RpAgrmt
+		self._RpAgrmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RpAgrmt', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollMgmtOpr', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesBuyOrSell', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesLndgOrBrrwg', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollMgmtOpr', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesLndgOrBrrwg', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RpAgrmt', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

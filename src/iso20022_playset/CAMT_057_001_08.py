@@ -1,5 +1,5 @@
 from . import base_types
-import NotificationToReceiveV08
+from .NotificationToReceiveV08 import NotificationToReceiveV08
 
 class CAMT_057_001_08():
 

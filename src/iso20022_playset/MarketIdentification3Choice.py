@@ -1,23 +1,10 @@
 from . import base_types
-import MICIdentifier
-import Max35Text
+from .Max35Text import Max35Text
+from .MICIdentifier import MICIdentifier
 
 class MarketIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MktIdrCd", "_Desc"]
-	@property
-	def MktIdrCd(self):
-		return self._MktIdrCd
-
-	@MktIdrCd.setter
-	def MktIdrCd(self, value):
-		self._MktIdrCd = value if type(value) != auto else self.make_default("MktIdrCd")
-
-	@MktIdrCd.deleter
-	def MktIdrCd(self):
-		del self._MktIdrCd
-		self._MktIdrCd = None
-
+	__slots__ = ["_Desc", "_MktIdrCd"]
 	@property
 	def Desc(self):
 		return self._Desc
@@ -31,8 +18,21 @@ class MarketIdentification3Choice(base_types._BaseFieldType):
 		del self._Desc
 		self._Desc = None
 
+	@property
+	def MktIdrCd(self):
+		return self._MktIdrCd
+
+	@MktIdrCd.setter
+	def MktIdrCd(self, value):
+		self._MktIdrCd = value if type(value) != auto else self.make_default("MktIdrCd")
+
+	@MktIdrCd.deleter
+	def MktIdrCd(self):
+		del self._MktIdrCd
+		self._MktIdrCd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MktIdrCd', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Desc', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MktIdrCd', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-import TripartyCollateralAllegementNotificationCancellationAdviceV01
+from .TripartyCollateralAllegementNotificationCancellationAdviceV01 import TripartyCollateralAllegementNotificationCancellationAdviceV01
 
 class COLR_024_001_01():
 

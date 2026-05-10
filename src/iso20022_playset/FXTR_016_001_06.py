@@ -1,5 +1,5 @@
 from . import base_types
-import ForeignExchangeTradeInstructionCancellationV06
+from .ForeignExchangeTradeInstructionCancellationV06 import ForeignExchangeTradeInstructionCancellationV06
 
 class FXTR_016_001_06():
 

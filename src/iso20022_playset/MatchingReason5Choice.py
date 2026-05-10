@@ -1,6 +1,6 @@
 from . import base_types
-import AllegementMatchingReason2
-import NoReasonCode
+from .AllegementMatchingReason2 import AllegementMatchingReason2
+from .NoReasonCode import NoReasonCode
 
 class MatchingReason5Choice(base_types._BaseFieldType):
 

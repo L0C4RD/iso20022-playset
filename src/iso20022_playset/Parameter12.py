@@ -1,11 +1,11 @@
 from . import base_types
-import BytePadding1Code
-import Max500Binary
-import EncryptionFormat2Code
+from .EncryptionFormat2Code import EncryptionFormat2Code
+from .BytePadding1Code import BytePadding1Code
+from .Max500Binary import Max500Binary
 
 class Parameter12(base_types._BaseFieldType):
 
-	__slots__ = ["_InitlstnVctr", "_NcrptnFrmt", "_BPddg"]
+	__slots__ = ["_InitlstnVctr", "_BPddg", "_NcrptnFrmt"]
 	@property
 	def InitlstnVctr(self):
 		return self._InitlstnVctr
@@ -20,19 +20,6 @@ class Parameter12(base_types._BaseFieldType):
 		self._InitlstnVctr = None
 
 	@property
-	def NcrptnFrmt(self):
-		return self._NcrptnFrmt
-
-	@NcrptnFrmt.setter
-	def NcrptnFrmt(self, value):
-		self._NcrptnFrmt = value if type(value) != auto else self.make_default("NcrptnFrmt")
-
-	@NcrptnFrmt.deleter
-	def NcrptnFrmt(self):
-		del self._NcrptnFrmt
-		self._NcrptnFrmt = None
-
-	@property
 	def BPddg(self):
 		return self._BPddg
 
@@ -45,9 +32,22 @@ class Parameter12(base_types._BaseFieldType):
 		del self._BPddg
 		self._BPddg = None
 
+	@property
+	def NcrptnFrmt(self):
+		return self._NcrptnFrmt
+
+	@NcrptnFrmt.setter
+	def NcrptnFrmt(self, value):
+		self._NcrptnFrmt = value if type(value) != auto else self.make_default("NcrptnFrmt")
+
+	@NcrptnFrmt.deleter
+	def NcrptnFrmt(self):
+		del self._NcrptnFrmt
+		self._NcrptnFrmt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InitlstnVctr', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NcrptnFrmt', type=EncryptionFormat2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BPddg', type=BytePadding1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcrptnFrmt', type=EncryptionFormat2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

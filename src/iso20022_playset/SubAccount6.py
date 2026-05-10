@@ -1,9 +1,22 @@
 from . import base_types
-import Max35Text
+from .Max35Text import Max35Text
 
 class SubAccount6(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_AcctDsgnt", "_Id", "_Chrtc"]
+	__slots__ = ["_Chrtc", "_Nm", "_Id", "_AcctDsgnt"]
+	@property
+	def Chrtc(self):
+		return self._Chrtc
+
+	@Chrtc.setter
+	def Chrtc(self, value):
+		self._Chrtc = value if type(value) != auto else self.make_default("Chrtc")
+
+	@Chrtc.deleter
+	def Chrtc(self):
+		del self._Chrtc
+		self._Chrtc = None
+
 	@property
 	def Nm(self):
 		return self._Nm
@@ -16,19 +29,6 @@ class SubAccount6(base_types._BaseFieldType):
 	def Nm(self):
 		del self._Nm
 		self._Nm = None
-
-	@property
-	def AcctDsgnt(self):
-		return self._AcctDsgnt
-
-	@AcctDsgnt.setter
-	def AcctDsgnt(self, value):
-		self._AcctDsgnt = value if type(value) != auto else self.make_default("AcctDsgnt")
-
-	@AcctDsgnt.deleter
-	def AcctDsgnt(self):
-		del self._AcctDsgnt
-		self._AcctDsgnt = None
 
 	@property
 	def Id(self):
@@ -44,22 +44,22 @@ class SubAccount6(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Chrtc(self):
-		return self._Chrtc
+	def AcctDsgnt(self):
+		return self._AcctDsgnt
 
-	@Chrtc.setter
-	def Chrtc(self, value):
-		self._Chrtc = value if type(value) != auto else self.make_default("Chrtc")
+	@AcctDsgnt.setter
+	def AcctDsgnt(self, value):
+		self._AcctDsgnt = value if type(value) != auto else self.make_default("AcctDsgnt")
 
-	@Chrtc.deleter
-	def Chrtc(self):
-		del self._Chrtc
-		self._Chrtc = None
+	@AcctDsgnt.deleter
+	def AcctDsgnt(self):
+		del self._AcctDsgnt
+		self._AcctDsgnt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctDsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Chrtc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

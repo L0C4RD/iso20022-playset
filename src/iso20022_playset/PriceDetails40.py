@@ -1,24 +1,11 @@
 from . import base_types
-import PriceFormat81Choice
-import PriceFormat79Choice
-import PriceFormat80Choice
+from .PriceFormat81Choice import PriceFormat81Choice
+from .PriceFormat79Choice import PriceFormat79Choice
+from .PriceFormat80Choice import PriceFormat80Choice
 
 class PriceDetails40(base_types._BaseFieldType):
 
-	__slots__ = ["_GncCshPricPdPerPdct", "_CshInLieuOfShrPric", "_GncCshPricRcvdPerPdct"]
-	@property
-	def GncCshPricPdPerPdct(self):
-		return self._GncCshPricPdPerPdct
-
-	@GncCshPricPdPerPdct.setter
-	def GncCshPricPdPerPdct(self, value):
-		self._GncCshPricPdPerPdct = value if type(value) != auto else self.make_default("GncCshPricPdPerPdct")
-
-	@GncCshPricPdPerPdct.deleter
-	def GncCshPricPdPerPdct(self):
-		del self._GncCshPricPdPerPdct
-		self._GncCshPricPdPerPdct = None
-
+	__slots__ = ["_CshInLieuOfShrPric", "_GncCshPricRcvdPerPdct", "_GncCshPricPdPerPdct"]
 	@property
 	def CshInLieuOfShrPric(self):
 		return self._CshInLieuOfShrPric
@@ -45,9 +32,22 @@ class PriceDetails40(base_types._BaseFieldType):
 		del self._GncCshPricRcvdPerPdct
 		self._GncCshPricRcvdPerPdct = None
 
+	@property
+	def GncCshPricPdPerPdct(self):
+		return self._GncCshPricPdPerPdct
+
+	@GncCshPricPdPerPdct.setter
+	def GncCshPricPdPerPdct(self, value):
+		self._GncCshPricPdPerPdct = value if type(value) != auto else self.make_default("GncCshPricPdPerPdct")
+
+	@GncCshPricPdPerPdct.deleter
+	def GncCshPricPdPerPdct(self):
+		del self._GncCshPricPdPerPdct
+		self._GncCshPricPdPerPdct = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat80Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat81Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GncCshPricRcvdPerPdct', type=PriceFormat79Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat80Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

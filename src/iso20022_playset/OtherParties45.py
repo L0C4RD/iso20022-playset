@@ -1,12 +1,25 @@
 from . import base_types
-import PartyIdentificationAndAccount220
-import PartyIdentificationAndAccount221
-import PartyIdentificationAndAccount154
-import PartyIdentificationAndAccount152
+from .PartyIdentificationAndAccount221 import PartyIdentificationAndAccount221
+from .PartyIdentificationAndAccount154 import PartyIdentificationAndAccount154
+from .PartyIdentificationAndAccount152 import PartyIdentificationAndAccount152
+from .PartyIdentificationAndAccount220 import PartyIdentificationAndAccount220
 
 class OtherParties45(base_types._BaseFieldType):
 
-	__slots__ = ["_Invstr", "_QlfdFrgnIntrmy", "_StockXchg", "_TradRgltr", "_TrptyAgt"]
+	__slots__ = ["_TrptyAgt", "_Invstr", "_TradRgltr", "_StockXchg", "_QlfdFrgnIntrmy"]
+	@property
+	def TrptyAgt(self):
+		return self._TrptyAgt
+
+	@TrptyAgt.setter
+	def TrptyAgt(self, value):
+		self._TrptyAgt = value if type(value) != auto else self.make_default("TrptyAgt")
+
+	@TrptyAgt.deleter
+	def TrptyAgt(self):
+		del self._TrptyAgt
+		self._TrptyAgt = None
+
 	@property
 	def Invstr(self):
 		return self._Invstr
@@ -19,32 +32,6 @@ class OtherParties45(base_types._BaseFieldType):
 	def Invstr(self):
 		del self._Invstr
 		self._Invstr = None
-
-	@property
-	def QlfdFrgnIntrmy(self):
-		return self._QlfdFrgnIntrmy
-
-	@QlfdFrgnIntrmy.setter
-	def QlfdFrgnIntrmy(self, value):
-		self._QlfdFrgnIntrmy = value if type(value) != auto else self.make_default("QlfdFrgnIntrmy")
-
-	@QlfdFrgnIntrmy.deleter
-	def QlfdFrgnIntrmy(self):
-		del self._QlfdFrgnIntrmy
-		self._QlfdFrgnIntrmy = None
-
-	@property
-	def StockXchg(self):
-		return self._StockXchg
-
-	@StockXchg.setter
-	def StockXchg(self, value):
-		self._StockXchg = value if type(value) != auto else self.make_default("StockXchg")
-
-	@StockXchg.deleter
-	def StockXchg(self):
-		del self._StockXchg
-		self._StockXchg = None
 
 	@property
 	def TradRgltr(self):
@@ -60,23 +47,36 @@ class OtherParties45(base_types._BaseFieldType):
 		self._TradRgltr = None
 
 	@property
-	def TrptyAgt(self):
-		return self._TrptyAgt
+	def StockXchg(self):
+		return self._StockXchg
 
-	@TrptyAgt.setter
-	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != auto else self.make_default("TrptyAgt")
+	@StockXchg.setter
+	def StockXchg(self, value):
+		self._StockXchg = value if type(value) != auto else self.make_default("StockXchg")
 
-	@TrptyAgt.deleter
-	def TrptyAgt(self):
-		del self._TrptyAgt
-		self._TrptyAgt = None
+	@StockXchg.deleter
+	def StockXchg(self):
+		del self._StockXchg
+		self._StockXchg = None
+
+	@property
+	def QlfdFrgnIntrmy(self):
+		return self._QlfdFrgnIntrmy
+
+	@QlfdFrgnIntrmy.setter
+	def QlfdFrgnIntrmy(self, value):
+		self._QlfdFrgnIntrmy = value if type(value) != auto else self.make_default("QlfdFrgnIntrmy")
+
+	@QlfdFrgnIntrmy.deleter
+	def QlfdFrgnIntrmy(self):
+		del self._QlfdFrgnIntrmy
+		self._QlfdFrgnIntrmy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Invstr', type=PartyIdentificationAndAccount220, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='QlfdFrgnIntrmy', type=PartyIdentificationAndAccount221, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StockXchg', type=PartyIdentificationAndAccount152, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradRgltr', type=PartyIdentificationAndAccount152, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentificationAndAccount154, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Invstr', type=PartyIdentificationAndAccount220, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TradRgltr', type=PartyIdentificationAndAccount152, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StockXchg', type=PartyIdentificationAndAccount152, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QlfdFrgnIntrmy', type=PartyIdentificationAndAccount221, min=0, max=1, mutex_group=None, array=False),
 	))
 

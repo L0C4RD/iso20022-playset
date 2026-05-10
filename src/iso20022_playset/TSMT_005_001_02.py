@@ -1,5 +1,5 @@
 from . import base_types
-import AmendmentAcceptanceV02
+from .AmendmentAcceptanceV02 import AmendmentAcceptanceV02
 
 class TSMT_005_001_02():
 

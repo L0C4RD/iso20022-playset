@@ -1,24 +1,11 @@
 from . import base_types
-import SupplementaryData1
-import Max35Text
-import SecurityIdentification19
+from .SecurityIdentification19 import SecurityIdentification19
+from .SupplementaryData1 import SupplementaryData1
+from .Max35Text import Max35Text
 
 class BenchmarkCancellation1(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Id", "_TechRcrdId"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_Id", "_SplmtryData", "_TechRcrdId"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,6 +18,19 @@ class BenchmarkCancellation1(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def TechRcrdId(self):
@@ -46,8 +46,8 @@ class BenchmarkCancellation1(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

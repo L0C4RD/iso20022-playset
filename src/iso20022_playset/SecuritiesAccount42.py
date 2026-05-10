@@ -1,24 +1,11 @@
 from . import base_types
-import RestrictedFINXMax35Text
-import PurposeCode8Choice
-import Max70Text
+from .RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from .Max70Text import Max70Text
+from .PurposeCode8Choice import PurposeCode8Choice
 
 class SecuritiesAccount42(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Id", "_Dsgnt", "_Tp"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
+	__slots__ = ["_Id", "_Nm", "_Dsgnt", "_Tp"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,6 +18,19 @@ class SecuritiesAccount42(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def Dsgnt(self):
@@ -59,8 +59,8 @@ class SecuritiesAccount42(base_types._BaseFieldType):
 		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=RestrictedFINXMax35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsgnt', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PurposeCode8Choice, min=0, max=1, mutex_group=None, array=False),
 	))

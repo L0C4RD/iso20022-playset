@@ -1,11 +1,24 @@
 from . import base_types
-import RateAndAmountFormat1Choice
-import AmountAndRateFormat3Choice
-import RateFormat1Choice
+from .RateFormat1Choice import RateFormat1Choice
+from .RateAndAmountFormat1Choice import RateAndAmountFormat1Choice
+from .AmountAndRateFormat3Choice import AmountAndRateFormat3Choice
 
 class CorporateActionRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdIndx", "_PctgSght", "_RinvstmtDscntToMkt", "_Intrst", "_Sprd", "_Chrgs", "_BidIntrvl"]
+	__slots__ = ["_Chrgs", "_RltdIndx", "_Intrst", "_BidIntrvl", "_PctgSght", "_RinvstmtDscntToMkt", "_Sprd"]
+	@property
+	def Chrgs(self):
+		return self._Chrgs
+
+	@Chrgs.setter
+	def Chrgs(self, value):
+		self._Chrgs = value if type(value) != auto else self.make_default("Chrgs")
+
+	@Chrgs.deleter
+	def Chrgs(self):
+		del self._Chrgs
+		self._Chrgs = None
+
 	@property
 	def RltdIndx(self):
 		return self._RltdIndx
@@ -18,6 +31,32 @@ class CorporateActionRate1(base_types._BaseFieldType):
 	def RltdIndx(self):
 		del self._RltdIndx
 		self._RltdIndx = None
+
+	@property
+	def Intrst(self):
+		return self._Intrst
+
+	@Intrst.setter
+	def Intrst(self, value):
+		self._Intrst = value if type(value) != auto else self.make_default("Intrst")
+
+	@Intrst.deleter
+	def Intrst(self):
+		del self._Intrst
+		self._Intrst = None
+
+	@property
+	def BidIntrvl(self):
+		return self._BidIntrvl
+
+	@BidIntrvl.setter
+	def BidIntrvl(self, value):
+		self._BidIntrvl = value if type(value) != auto else self.make_default("BidIntrvl")
+
+	@BidIntrvl.deleter
+	def BidIntrvl(self):
+		del self._BidIntrvl
+		self._BidIntrvl = None
 
 	@property
 	def PctgSght(self):
@@ -46,19 +85,6 @@ class CorporateActionRate1(base_types._BaseFieldType):
 		self._RinvstmtDscntToMkt = None
 
 	@property
-	def Intrst(self):
-		return self._Intrst
-
-	@Intrst.setter
-	def Intrst(self, value):
-		self._Intrst = value if type(value) != auto else self.make_default("Intrst")
-
-	@Intrst.deleter
-	def Intrst(self):
-		del self._Intrst
-		self._Intrst = None
-
-	@property
 	def Sprd(self):
 		return self._Sprd
 
@@ -71,39 +97,13 @@ class CorporateActionRate1(base_types._BaseFieldType):
 		del self._Sprd
 		self._Sprd = None
 
-	@property
-	def Chrgs(self):
-		return self._Chrgs
-
-	@Chrgs.setter
-	def Chrgs(self, value):
-		self._Chrgs = value if type(value) != auto else self.make_default("Chrgs")
-
-	@Chrgs.deleter
-	def Chrgs(self):
-		del self._Chrgs
-		self._Chrgs = None
-
-	@property
-	def BidIntrvl(self):
-		return self._BidIntrvl
-
-	@BidIntrvl.setter
-	def BidIntrvl(self, value):
-		self._BidIntrvl = value if type(value) != auto else self.make_default("BidIntrvl")
-
-	@BidIntrvl.deleter
-	def BidIntrvl(self):
-		del self._BidIntrvl
-		self._BidIntrvl = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Chrgs', type=RateAndAmountFormat1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdIndx', type=RateFormat1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Intrst', type=RateAndAmountFormat1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BidIntrvl', type=AmountAndRateFormat3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PctgSght', type=RateFormat1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RinvstmtDscntToMkt', type=RateFormat1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Intrst', type=RateAndAmountFormat1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sprd', type=RateFormat1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Chrgs', type=RateAndAmountFormat1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BidIntrvl', type=AmountAndRateFormat3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

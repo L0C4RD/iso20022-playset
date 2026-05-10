@@ -1,22 +1,22 @@
 from . import base_types
-import ProprietaryReason4
-import ProprietaryStatusAndReason6
+from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from .ProprietaryReason4 import ProprietaryReason4
 
 class AllocationStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtlyAllctd", "_FullyAllctd", "_Prtry"]
+	__slots__ = ["_Prtry", "_FullyAllctd", "_PrtlyAllctd"]
 	@property
-	def PrtlyAllctd(self):
-		return self._PrtlyAllctd
+	def Prtry(self):
+		return self._Prtry
 
-	@PrtlyAllctd.setter
-	def PrtlyAllctd(self, value):
-		self._PrtlyAllctd = value if type(value) != auto else self.make_default("PrtlyAllctd")
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
 
-	@PrtlyAllctd.deleter
-	def PrtlyAllctd(self):
-		del self._PrtlyAllctd
-		self._PrtlyAllctd = None
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	@property
 	def FullyAllctd(self):
@@ -32,21 +32,21 @@ class AllocationStatus1Choice(base_types._BaseFieldType):
 		self._FullyAllctd = None
 
 	@property
-	def Prtry(self):
-		return self._Prtry
+	def PrtlyAllctd(self):
+		return self._PrtlyAllctd
 
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+	@PrtlyAllctd.setter
+	def PrtlyAllctd(self, value):
+		self._PrtlyAllctd = value if type(value) != auto else self.make_default("PrtlyAllctd")
 
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
+	@PrtlyAllctd.deleter
+	def PrtlyAllctd(self):
+		del self._PrtlyAllctd
+		self._PrtlyAllctd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtlyAllctd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='FullyAllctd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FullyAllctd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtlyAllctd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 	))
 

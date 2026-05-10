@@ -1,6 +1,6 @@
 from . import base_types
-import MissingData1Choice
-import Max140Text
+from .Max140Text import Max140Text
+from .MissingData1Choice import MissingData1Choice
 
 class UnableToApplyMissing2(base_types._BaseFieldType):
 

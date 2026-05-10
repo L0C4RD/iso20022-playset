@@ -1,6 +1,6 @@
 from . import base_types
-import IndividualPerson30
-import GenericIdentification81
+from .GenericIdentification81 import GenericIdentification81
+from .IndividualPerson30 import IndividualPerson30
 
 class IndividualPersonIdentification2Choice(base_types._BaseFieldType):
 

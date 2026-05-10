@@ -1,5 +1,5 @@
 from . import base_types
-import SaleToPOIAbortV07
+from .SaleToPOIAbortV07 import SaleToPOIAbortV07
 
 class CASP_011_001_07():
 

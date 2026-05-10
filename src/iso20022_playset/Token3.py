@@ -1,109 +1,31 @@
 from . import base_types
-import ProtectionMethod1Code
-import Max11NumericText
-import Max140Text
-import Max2NumericText
-import Token4
-import Max35Text
-import ISOYearMonth
-import TrueFalseIndicator
-import AdditionalData1
-import Max19NumericText
-import StorageLocation1Code
+from .Max35Text import Max35Text
+from .Token4 import Token4
+from .ProtectionMethod1Code import ProtectionMethod1Code
+from .Max19NumericText import Max19NumericText
+from .Max2NumericText import Max2NumericText
+from .Max140Text import Max140Text
+from .StorageLocation1Code import StorageLocation1Code
+from .ISOYearMonth import ISOYearMonth
+from .AdditionalData1 import AdditionalData1
+from .TrueFalseIndicator import TrueFalseIndicator
+from .Max11NumericText import Max11NumericText
 
 class Token3(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlTkn", "_PrtcnMtd", "_TknRqstrId", "_TknRefId", "_TknAssrncData", "_OthrStorgLctn", "_OthrPrtcnMtd", "_StorgLctn", "_PmtTkn", "_TknAssrncMtd", "_TknInittdInd", "_AddtlData", "_TknXpryDt"]
+	__slots__ = ["_TknInittdInd", "_StorgLctn", "_OthrPrtcnMtd", "_PmtTkn", "_TknAssrncData", "_TknAssrncMtd", "_TknXpryDt", "_TknRefId", "_AddtlData", "_OthrStorgLctn", "_TknRqstrId", "_PrtcnMtd", "_OrgnlTkn"]
 	@property
-	def OrgnlTkn(self):
-		return self._OrgnlTkn
+	def TknInittdInd(self):
+		return self._TknInittdInd
 
-	@OrgnlTkn.setter
-	def OrgnlTkn(self, value):
-		self._OrgnlTkn = value if type(value) != auto else self.make_default("OrgnlTkn")
+	@TknInittdInd.setter
+	def TknInittdInd(self, value):
+		self._TknInittdInd = value if type(value) != auto else self.make_default("TknInittdInd")
 
-	@OrgnlTkn.deleter
-	def OrgnlTkn(self):
-		del self._OrgnlTkn
-		self._OrgnlTkn = None
-
-	@property
-	def PrtcnMtd(self):
-		return self._PrtcnMtd
-
-	@PrtcnMtd.setter
-	def PrtcnMtd(self, value):
-		self._PrtcnMtd = value if type(value) != auto else self.make_default("PrtcnMtd")
-
-	@PrtcnMtd.deleter
-	def PrtcnMtd(self):
-		del self._PrtcnMtd
-		self._PrtcnMtd = None
-
-	@property
-	def TknRqstrId(self):
-		return self._TknRqstrId
-
-	@TknRqstrId.setter
-	def TknRqstrId(self, value):
-		self._TknRqstrId = value if type(value) != auto else self.make_default("TknRqstrId")
-
-	@TknRqstrId.deleter
-	def TknRqstrId(self):
-		del self._TknRqstrId
-		self._TknRqstrId = None
-
-	@property
-	def TknRefId(self):
-		return self._TknRefId
-
-	@TknRefId.setter
-	def TknRefId(self, value):
-		self._TknRefId = value if type(value) != auto else self.make_default("TknRefId")
-
-	@TknRefId.deleter
-	def TknRefId(self):
-		del self._TknRefId
-		self._TknRefId = None
-
-	@property
-	def TknAssrncData(self):
-		return self._TknAssrncData
-
-	@TknAssrncData.setter
-	def TknAssrncData(self, value):
-		self._TknAssrncData = value if type(value) != auto else self.make_default("TknAssrncData")
-
-	@TknAssrncData.deleter
-	def TknAssrncData(self):
-		del self._TknAssrncData
-		self._TknAssrncData = None
-
-	@property
-	def OthrStorgLctn(self):
-		return self._OthrStorgLctn
-
-	@OthrStorgLctn.setter
-	def OthrStorgLctn(self, value):
-		self._OthrStorgLctn = value if type(value) != auto else self.make_default("OthrStorgLctn")
-
-	@OthrStorgLctn.deleter
-	def OthrStorgLctn(self):
-		del self._OthrStorgLctn
-		self._OthrStorgLctn = None
-
-	@property
-	def OthrPrtcnMtd(self):
-		return self._OthrPrtcnMtd
-
-	@OthrPrtcnMtd.setter
-	def OthrPrtcnMtd(self, value):
-		self._OthrPrtcnMtd = value if type(value) != auto else self.make_default("OthrPrtcnMtd")
-
-	@OthrPrtcnMtd.deleter
-	def OthrPrtcnMtd(self):
-		del self._OthrPrtcnMtd
-		self._OthrPrtcnMtd = None
+	@TknInittdInd.deleter
+	def TknInittdInd(self):
+		del self._TknInittdInd
+		self._TknInittdInd = None
 
 	@property
 	def StorgLctn(self):
@@ -119,6 +41,19 @@ class Token3(base_types._BaseFieldType):
 		self._StorgLctn = None
 
 	@property
+	def OthrPrtcnMtd(self):
+		return self._OthrPrtcnMtd
+
+	@OthrPrtcnMtd.setter
+	def OthrPrtcnMtd(self, value):
+		self._OthrPrtcnMtd = value if type(value) != auto else self.make_default("OthrPrtcnMtd")
+
+	@OthrPrtcnMtd.deleter
+	def OthrPrtcnMtd(self):
+		del self._OthrPrtcnMtd
+		self._OthrPrtcnMtd = None
+
+	@property
 	def PmtTkn(self):
 		return self._PmtTkn
 
@@ -130,6 +65,19 @@ class Token3(base_types._BaseFieldType):
 	def PmtTkn(self):
 		del self._PmtTkn
 		self._PmtTkn = None
+
+	@property
+	def TknAssrncData(self):
+		return self._TknAssrncData
+
+	@TknAssrncData.setter
+	def TknAssrncData(self, value):
+		self._TknAssrncData = value if type(value) != auto else self.make_default("TknAssrncData")
+
+	@TknAssrncData.deleter
+	def TknAssrncData(self):
+		del self._TknAssrncData
+		self._TknAssrncData = None
 
 	@property
 	def TknAssrncMtd(self):
@@ -145,17 +93,30 @@ class Token3(base_types._BaseFieldType):
 		self._TknAssrncMtd = None
 
 	@property
-	def TknInittdInd(self):
-		return self._TknInittdInd
+	def TknXpryDt(self):
+		return self._TknXpryDt
 
-	@TknInittdInd.setter
-	def TknInittdInd(self, value):
-		self._TknInittdInd = value if type(value) != auto else self.make_default("TknInittdInd")
+	@TknXpryDt.setter
+	def TknXpryDt(self, value):
+		self._TknXpryDt = value if type(value) != auto else self.make_default("TknXpryDt")
 
-	@TknInittdInd.deleter
-	def TknInittdInd(self):
-		del self._TknInittdInd
-		self._TknInittdInd = None
+	@TknXpryDt.deleter
+	def TknXpryDt(self):
+		del self._TknXpryDt
+		self._TknXpryDt = None
+
+	@property
+	def TknRefId(self):
+		return self._TknRefId
+
+	@TknRefId.setter
+	def TknRefId(self, value):
+		self._TknRefId = value if type(value) != auto else self.make_default("TknRefId")
+
+	@TknRefId.deleter
+	def TknRefId(self):
+		del self._TknRefId
+		self._TknRefId = None
 
 	@property
 	def AddtlData(self):
@@ -171,31 +132,70 @@ class Token3(base_types._BaseFieldType):
 		self._AddtlData = None
 
 	@property
-	def TknXpryDt(self):
-		return self._TknXpryDt
+	def OthrStorgLctn(self):
+		return self._OthrStorgLctn
 
-	@TknXpryDt.setter
-	def TknXpryDt(self, value):
-		self._TknXpryDt = value if type(value) != auto else self.make_default("TknXpryDt")
+	@OthrStorgLctn.setter
+	def OthrStorgLctn(self, value):
+		self._OthrStorgLctn = value if type(value) != auto else self.make_default("OthrStorgLctn")
 
-	@TknXpryDt.deleter
-	def TknXpryDt(self):
-		del self._TknXpryDt
-		self._TknXpryDt = None
+	@OthrStorgLctn.deleter
+	def OthrStorgLctn(self):
+		del self._OthrStorgLctn
+		self._OthrStorgLctn = None
+
+	@property
+	def TknRqstrId(self):
+		return self._TknRqstrId
+
+	@TknRqstrId.setter
+	def TknRqstrId(self, value):
+		self._TknRqstrId = value if type(value) != auto else self.make_default("TknRqstrId")
+
+	@TknRqstrId.deleter
+	def TknRqstrId(self):
+		del self._TknRqstrId
+		self._TknRqstrId = None
+
+	@property
+	def PrtcnMtd(self):
+		return self._PrtcnMtd
+
+	@PrtcnMtd.setter
+	def PrtcnMtd(self, value):
+		self._PrtcnMtd = value if type(value) != auto else self.make_default("PrtcnMtd")
+
+	@PrtcnMtd.deleter
+	def PrtcnMtd(self):
+		del self._PrtcnMtd
+		self._PrtcnMtd = None
+
+	@property
+	def OrgnlTkn(self):
+		return self._OrgnlTkn
+
+	@OrgnlTkn.setter
+	def OrgnlTkn(self, value):
+		self._OrgnlTkn = value if type(value) != auto else self.make_default("OrgnlTkn")
+
+	@OrgnlTkn.deleter
+	def OrgnlTkn(self):
+		del self._OrgnlTkn
+		self._OrgnlTkn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlTkn', type=Token4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtcnMtd', type=ProtectionMethod1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknRqstrId', type=Max11NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknAssrncData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrStorgLctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrPrtcnMtd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StorgLctn', type=StorageLocation1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtTkn', type=Max19NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknAssrncMtd', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TknInittdInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StorgLctn', type=StorageLocation1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrPrtcnMtd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtTkn', type=Max19NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknAssrncData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknAssrncMtd', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TknXpryDt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrStorgLctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknRqstrId', type=Max11NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtcnMtd', type=ProtectionMethod1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlTkn', type=Token4, min=0, max=1, mutex_group=None, array=False),
 	))
 

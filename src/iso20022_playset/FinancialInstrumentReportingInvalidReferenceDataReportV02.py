@@ -1,12 +1,25 @@
 from . import base_types
-import Period4Choice
-import SupplementaryData1
-import Number
-import SecuritiesInvalidReferenceDataReport4
+from .Period4Choice import Period4Choice
+from .SupplementaryData1 import SupplementaryData1
+from .SecuritiesInvalidReferenceDataReport4 import SecuritiesInvalidReferenceDataReport4
+from .Number import Number
 
 class FinancialInstrumentReportingInvalidReferenceDataReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_DtPrd", "_FinInstrms", "_NbOfRcrds"]
+	__slots__ = ["_NbOfRcrds", "_SplmtryData", "_DtPrd", "_FinInstrms"]
+	@property
+	def NbOfRcrds(self):
+		return self._NbOfRcrds
+
+	@NbOfRcrds.setter
+	def NbOfRcrds(self, value):
+		self._NbOfRcrds = value if type(value) != auto else self.make_default("NbOfRcrds")
+
+	@NbOfRcrds.deleter
+	def NbOfRcrds(self):
+		del self._NbOfRcrds
+		self._NbOfRcrds = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -46,23 +59,10 @@ class FinancialInstrumentReportingInvalidReferenceDataReportV02(base_types._Base
 		del self._FinInstrms
 		self._FinInstrms = None
 
-	@property
-	def NbOfRcrds(self):
-		return self._NbOfRcrds
-
-	@NbOfRcrds.setter
-	def NbOfRcrds(self, value):
-		self._NbOfRcrds = value if type(value) != auto else self.make_default("NbOfRcrds")
-
-	@NbOfRcrds.deleter
-	def NbOfRcrds(self):
-		del self._NbOfRcrds
-		self._NbOfRcrds = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NbOfRcrds', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DtPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrms', type=SecuritiesInvalidReferenceDataReport4, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NbOfRcrds', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

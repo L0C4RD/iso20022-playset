@@ -1,12 +1,25 @@
 from . import base_types
-import RateTypeAndAmountAndStatus32
-import Percentage14Rate
-import RestrictedFINActiveCurrencyAnd13DecimalAmount
-import RateType13Code
+from .RateType13Code import RateType13Code
+from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from .Percentage14Rate import Percentage14Rate
+from .RateTypeAndAmountAndStatus32 import RateTypeAndAmountAndStatus32
 
 class InterestRateUsedForPaymentFormat18Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_RateTpAndAmtAndRateSts", "_Rate", "_NotSpcfdRate"]
+	__slots__ = ["_NotSpcfdRate", "_Amt", "_RateTpAndAmtAndRateSts", "_Rate"]
+	@property
+	def NotSpcfdRate(self):
+		return self._NotSpcfdRate
+
+	@NotSpcfdRate.setter
+	def NotSpcfdRate(self, value):
+		self._NotSpcfdRate = value if type(value) != auto else self.make_default("NotSpcfdRate")
+
+	@NotSpcfdRate.deleter
+	def NotSpcfdRate(self):
+		del self._NotSpcfdRate
+		self._NotSpcfdRate = None
+
 	@property
 	def Amt(self):
 		return self._Amt
@@ -46,23 +59,10 @@ class InterestRateUsedForPaymentFormat18Choice(base_types._BaseFieldType):
 		del self._Rate
 		self._Rate = None
 
-	@property
-	def NotSpcfdRate(self):
-		return self._NotSpcfdRate
-
-	@NotSpcfdRate.setter
-	def NotSpcfdRate(self, value):
-		self._NotSpcfdRate = value if type(value) != auto else self.make_default("NotSpcfdRate")
-
-	@NotSpcfdRate.deleter
-	def NotSpcfdRate(self):
-		del self._NotSpcfdRate
-		self._NotSpcfdRate = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NotSpcfdRate', type=RateType13Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RateTpAndAmtAndRateSts', type=RateTypeAndAmountAndStatus32, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NotSpcfdRate', type=RateType13Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

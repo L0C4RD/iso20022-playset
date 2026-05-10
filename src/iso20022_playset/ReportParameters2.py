@@ -1,26 +1,13 @@
 from . import base_types
-import EventFrequency6Code
-import CurrencyCode
-import ISODateTime
-import DateAndDateTimeChoice
-import Max35Text
+from .Max35Text import Max35Text
+from .EventFrequency6Code import EventFrequency6Code
+from .CurrencyCode import CurrencyCode
+from .DateAndDateTimeChoice import DateAndDateTimeChoice
+from .ISODateTime import ISODateTime
 
 class ReportParameters2(base_types._BaseFieldType):
 
-	__slots__ = ["_ClctnDt", "_RptId", "_Frqcy", "_RptDtAndTm", "_RptCcy"]
-	@property
-	def ClctnDt(self):
-		return self._ClctnDt
-
-	@ClctnDt.setter
-	def ClctnDt(self, value):
-		self._ClctnDt = value if type(value) != auto else self.make_default("ClctnDt")
-
-	@ClctnDt.deleter
-	def ClctnDt(self):
-		del self._ClctnDt
-		self._ClctnDt = None
-
+	__slots__ = ["_RptId", "_Frqcy", "_ClctnDt", "_RptCcy", "_RptDtAndTm"]
 	@property
 	def RptId(self):
 		return self._RptId
@@ -48,17 +35,17 @@ class ReportParameters2(base_types._BaseFieldType):
 		self._Frqcy = None
 
 	@property
-	def RptDtAndTm(self):
-		return self._RptDtAndTm
+	def ClctnDt(self):
+		return self._ClctnDt
 
-	@RptDtAndTm.setter
-	def RptDtAndTm(self, value):
-		self._RptDtAndTm = value if type(value) != auto else self.make_default("RptDtAndTm")
+	@ClctnDt.setter
+	def ClctnDt(self, value):
+		self._ClctnDt = value if type(value) != auto else self.make_default("ClctnDt")
 
-	@RptDtAndTm.deleter
-	def RptDtAndTm(self):
-		del self._RptDtAndTm
-		self._RptDtAndTm = None
+	@ClctnDt.deleter
+	def ClctnDt(self):
+		del self._ClctnDt
+		self._ClctnDt = None
 
 	@property
 	def RptCcy(self):
@@ -73,11 +60,24 @@ class ReportParameters2(base_types._BaseFieldType):
 		del self._RptCcy
 		self._RptCcy = None
 
+	@property
+	def RptDtAndTm(self):
+		return self._RptDtAndTm
+
+	@RptDtAndTm.setter
+	def RptDtAndTm(self, value):
+		self._RptDtAndTm = value if type(value) != auto else self.make_default("RptDtAndTm")
+
+	@RptDtAndTm.deleter
+	def RptDtAndTm(self):
+		del self._RptDtAndTm
+		self._RptDtAndTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClctnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=EventFrequency6Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptDtAndTm', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClctnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptCcy', type=CurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptDtAndTm', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
 	))
 

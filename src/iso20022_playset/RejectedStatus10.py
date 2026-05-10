@@ -1,6 +1,6 @@
 from . import base_types
-import Max350Text
-import RejectedReason21Choice
+from .Max350Text import Max350Text
+from .RejectedReason21Choice import RejectedReason21Choice
 
 class RejectedStatus10(base_types._BaseFieldType):
 

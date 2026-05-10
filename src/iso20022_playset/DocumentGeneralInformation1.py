@@ -1,13 +1,39 @@
 from . import base_types
-import ISODate
-import Max256Text
-import Max140Text
-import DocumentType4Code
-import Max35Text
+from .DocumentType4Code import DocumentType4Code
+from .Max35Text import Max35Text
+from .Max140Text import Max140Text
+from .Max256Text import Max256Text
+from .ISODate import ISODate
 
 class DocumentGeneralInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_URL", "_IsseDt", "_DocNb", "_SndrRcvrSeqId", "_DocTp"]
+	__slots__ = ["_SndrRcvrSeqId", "_DocTp", "_URL", "_IsseDt", "_DocNb"]
+	@property
+	def SndrRcvrSeqId(self):
+		return self._SndrRcvrSeqId
+
+	@SndrRcvrSeqId.setter
+	def SndrRcvrSeqId(self, value):
+		self._SndrRcvrSeqId = value if type(value) != auto else self.make_default("SndrRcvrSeqId")
+
+	@SndrRcvrSeqId.deleter
+	def SndrRcvrSeqId(self):
+		del self._SndrRcvrSeqId
+		self._SndrRcvrSeqId = None
+
+	@property
+	def DocTp(self):
+		return self._DocTp
+
+	@DocTp.setter
+	def DocTp(self, value):
+		self._DocTp = value if type(value) != auto else self.make_default("DocTp")
+
+	@DocTp.deleter
+	def DocTp(self):
+		del self._DocTp
+		self._DocTp = None
+
 	@property
 	def URL(self):
 		return self._URL
@@ -47,37 +73,11 @@ class DocumentGeneralInformation1(base_types._BaseFieldType):
 		del self._DocNb
 		self._DocNb = None
 
-	@property
-	def SndrRcvrSeqId(self):
-		return self._SndrRcvrSeqId
-
-	@SndrRcvrSeqId.setter
-	def SndrRcvrSeqId(self, value):
-		self._SndrRcvrSeqId = value if type(value) != auto else self.make_default("SndrRcvrSeqId")
-
-	@SndrRcvrSeqId.deleter
-	def SndrRcvrSeqId(self):
-		del self._SndrRcvrSeqId
-		self._SndrRcvrSeqId = None
-
-	@property
-	def DocTp(self):
-		return self._DocTp
-
-	@DocTp.setter
-	def DocTp(self, value):
-		self._DocTp = value if type(value) != auto else self.make_default("DocTp")
-
-	@DocTp.deleter
-	def DocTp(self):
-		del self._DocTp
-		self._DocTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SndrRcvrSeqId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocTp', type=DocumentType4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SndrRcvrSeqId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocTp', type=DocumentType4Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

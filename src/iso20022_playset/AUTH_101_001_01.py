@@ -1,5 +1,5 @@
 from . import base_types
-import SettlementFailsAnnualReportV01
+from .SettlementFailsAnnualReportV01 import SettlementFailsAnnualReportV01
 
 class AUTH_101_001_01():
 

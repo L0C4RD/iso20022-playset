@@ -1,38 +1,25 @@
 from . import base_types
-import ContactIdentification2
-import DateAndDateTime2Choice
-import SubAccount4
-import Max35Text
-import PartyIdentification254Choice
+from .Max35Text import Max35Text
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .SubAccount4 import SubAccount4
+from .PartyIdentification254Choice import PartyIdentification254Choice
+from .ContactIdentification2 import ContactIdentification2
 
 class PartyIdentificationAndAccount229(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctPrsn", "_AcctId", "_PtyId", "_PrcgId", "_PrcgDt", "_SubAcct"]
+	__slots__ = ["_SubAcct", "_PtyId", "_CtctPrsn", "_PrcgDt", "_AcctId", "_PrcgId"]
 	@property
-	def CtctPrsn(self):
-		return self._CtctPrsn
+	def SubAcct(self):
+		return self._SubAcct
 
-	@CtctPrsn.setter
-	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != auto else self.make_default("CtctPrsn")
+	@SubAcct.setter
+	def SubAcct(self, value):
+		self._SubAcct = value if type(value) != auto else self.make_default("SubAcct")
 
-	@CtctPrsn.deleter
-	def CtctPrsn(self):
-		del self._CtctPrsn
-		self._CtctPrsn = None
-
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
+	@SubAcct.deleter
+	def SubAcct(self):
+		del self._SubAcct
+		self._SubAcct = None
 
 	@property
 	def PtyId(self):
@@ -48,17 +35,17 @@ class PartyIdentificationAndAccount229(base_types._BaseFieldType):
 		self._PtyId = None
 
 	@property
-	def PrcgId(self):
-		return self._PrcgId
+	def CtctPrsn(self):
+		return self._CtctPrsn
 
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+	@CtctPrsn.setter
+	def CtctPrsn(self, value):
+		self._CtctPrsn = value if type(value) != auto else self.make_default("CtctPrsn")
 
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
+	@CtctPrsn.deleter
+	def CtctPrsn(self):
+		del self._CtctPrsn
+		self._CtctPrsn = None
 
 	@property
 	def PrcgDt(self):
@@ -74,24 +61,37 @@ class PartyIdentificationAndAccount229(base_types._BaseFieldType):
 		self._PrcgDt = None
 
 	@property
-	def SubAcct(self):
-		return self._SubAcct
+	def AcctId(self):
+		return self._AcctId
 
-	@SubAcct.setter
-	def SubAcct(self, value):
-		self._SubAcct = value if type(value) != auto else self.make_default("SubAcct")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
 
-	@SubAcct.deleter
-	def SubAcct(self):
-		del self._SubAcct
-		self._SubAcct = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
+	@property
+	def PrcgId(self):
+		return self._PrcgId
+
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyId', type=PartyIdentification254Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubAcct', type=SubAccount4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyId', type=PartyIdentification254Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

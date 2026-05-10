@@ -1,6 +1,6 @@
 from . import base_types
-import CardPaymentEnvironment81
-import TrueFalseIndicator
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class AcceptorDiagnosticRequest13(base_types._BaseFieldType):
 

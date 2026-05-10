@@ -1,27 +1,14 @@
 from . import base_types
-import ElectionAdviceFunction1
-import CorporateActionElection3
-import ContactPerson1
-import CorporateActionInformation1
-import DocumentIdentification8
-import CorporateActionAdditionalInformation1
+from .CorporateActionInformation1 import CorporateActionInformation1
+from .CorporateActionElection3 import CorporateActionElection3
+from .ContactPerson1 import ContactPerson1
+from .DocumentIdentification8 import DocumentIdentification8
+from .CorporateActionAdditionalInformation1 import CorporateActionAdditionalInformation1
+from .ElectionAdviceFunction1 import ElectionAdviceFunction1
 
 class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctDtls", "_CorpActnGnlInf", "_ElctnAdvcTpAndLkg", "_AddtlInf", "_ElctnDtls", "_Id"]
-	@property
-	def CtctDtls(self):
-		return self._CtctDtls
-
-	@CtctDtls.setter
-	def CtctDtls(self, value):
-		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
-
-	@CtctDtls.deleter
-	def CtctDtls(self):
-		del self._CtctDtls
-		self._CtctDtls = None
-
+	__slots__ = ["_CorpActnGnlInf", "_Id", "_CtctDtls", "_ElctnAdvcTpAndLkg", "_AddtlInf", "_ElctnDtls"]
 	@property
 	def CorpActnGnlInf(self):
 		return self._CorpActnGnlInf
@@ -34,6 +21,32 @@ class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
 		self._CorpActnGnlInf = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def CtctDtls(self):
+		return self._CtctDtls
+
+	@CtctDtls.setter
+	def CtctDtls(self, value):
+		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
+
+	@CtctDtls.deleter
+	def CtctDtls(self):
+		del self._CtctDtls
+		self._CtctDtls = None
 
 	@property
 	def ElctnAdvcTpAndLkg(self):
@@ -74,25 +87,12 @@ class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 		del self._ElctnDtls
 		self._ElctnDtls = None
 
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtctDtls', type=ContactPerson1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctDtls', type=ContactPerson1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElctnAdvcTpAndLkg', type=ElectionAdviceFunction1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=CorporateActionAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElctnDtls', type=CorporateActionElection3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

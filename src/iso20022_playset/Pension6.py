@@ -1,27 +1,27 @@
 from . import base_types
-import YesNoIndicator
-import PensionSchemeType3Choice
-import PensionTransferScope1Choice
-import TaxReference1
-import AdditionalInformation15
-import Max35Text
-import PensionPolicy1
+from .Max35Text import Max35Text
+from .AdditionalInformation15 import AdditionalInformation15
+from .YesNoIndicator import YesNoIndicator
+from .PensionTransferScope1Choice import PensionTransferScope1Choice
+from .PensionSchemeType3Choice import PensionSchemeType3Choice
+from .PensionPolicy1 import PensionPolicy1
+from .TaxReference1 import TaxReference1
 
 class Pension6(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxRef", "_DrwdwnTrchId", "_NonWrpprTrf", "_Id", "_TrfScp", "_Tp", "_AddtlInf"]
+	__slots__ = ["_TrfScp", "_DrwdwnTrchId", "_Id", "_NonWrpprTrf", "_Tp", "_TaxRef", "_AddtlInf"]
 	@property
-	def TaxRef(self):
-		return self._TaxRef
+	def TrfScp(self):
+		return self._TrfScp
 
-	@TaxRef.setter
-	def TaxRef(self, value):
-		self._TaxRef = value if type(value) != auto else self.make_default("TaxRef")
+	@TrfScp.setter
+	def TrfScp(self, value):
+		self._TrfScp = value if type(value) != auto else self.make_default("TrfScp")
 
-	@TaxRef.deleter
-	def TaxRef(self):
-		del self._TaxRef
-		self._TaxRef = None
+	@TrfScp.deleter
+	def TrfScp(self):
+		del self._TrfScp
+		self._TrfScp = None
 
 	@property
 	def DrwdwnTrchId(self):
@@ -37,19 +37,6 @@ class Pension6(base_types._BaseFieldType):
 		self._DrwdwnTrchId = None
 
 	@property
-	def NonWrpprTrf(self):
-		return self._NonWrpprTrf
-
-	@NonWrpprTrf.setter
-	def NonWrpprTrf(self, value):
-		self._NonWrpprTrf = value if type(value) != auto else self.make_default("NonWrpprTrf")
-
-	@NonWrpprTrf.deleter
-	def NonWrpprTrf(self):
-		del self._NonWrpprTrf
-		self._NonWrpprTrf = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -63,17 +50,17 @@ class Pension6(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def TrfScp(self):
-		return self._TrfScp
+	def NonWrpprTrf(self):
+		return self._NonWrpprTrf
 
-	@TrfScp.setter
-	def TrfScp(self, value):
-		self._TrfScp = value if type(value) != auto else self.make_default("TrfScp")
+	@NonWrpprTrf.setter
+	def NonWrpprTrf(self, value):
+		self._NonWrpprTrf = value if type(value) != auto else self.make_default("NonWrpprTrf")
 
-	@TrfScp.deleter
-	def TrfScp(self):
-		del self._TrfScp
-		self._TrfScp = None
+	@NonWrpprTrf.deleter
+	def NonWrpprTrf(self):
+		del self._NonWrpprTrf
+		self._NonWrpprTrf = None
 
 	@property
 	def Tp(self):
@@ -89,6 +76,19 @@ class Pension6(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
+	def TaxRef(self):
+		return self._TaxRef
+
+	@TaxRef.setter
+	def TaxRef(self, value):
+		self._TaxRef = value if type(value) != auto else self.make_default("TaxRef")
+
+	@TaxRef.deleter
+	def TaxRef(self):
+		del self._TaxRef
+		self._TaxRef = None
+
+	@property
 	def AddtlInf(self):
 		return self._AddtlInf
 
@@ -102,12 +102,12 @@ class Pension6(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxRef', type=TaxReference1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DrwdwnTrchId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonWrpprTrf', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PensionPolicy1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfScp', type=PensionTransferScope1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrwdwnTrchId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PensionPolicy1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonWrpprTrf', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PensionSchemeType3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRef', type=TaxReference1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 	))
 

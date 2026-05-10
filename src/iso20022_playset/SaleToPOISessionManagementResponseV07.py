@@ -1,7 +1,7 @@
 from . import base_types
-import ContentInformationType38
-import Header41
-import SessionManagementResponse8
+from .ContentInformationType38 import ContentInformationType38
+from .SessionManagementResponse8 import SessionManagementResponse8
+from .Header41 import Header41
 
 class SaleToPOISessionManagementResponseV07(base_types._BaseFieldType):
 

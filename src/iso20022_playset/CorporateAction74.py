@@ -1,25 +1,12 @@
 from . import base_types
-import AdditionalBusinessProcessFormat16Choice
-import CorporateActionDate89
-import CorporateActionEventStageFormat15Choice
-import LotteryTypeFormat5Choice
+from .LotteryTypeFormat5Choice import LotteryTypeFormat5Choice
+from .CorporateActionDate89 import CorporateActionDate89
+from .AdditionalBusinessProcessFormat16Choice import AdditionalBusinessProcessFormat16Choice
+from .CorporateActionEventStageFormat15Choice import CorporateActionEventStageFormat15Choice
 
 class CorporateAction74(base_types._BaseFieldType):
 
-	__slots__ = ["_DtDtls", "_AddtlBizPrcInd", "_LtryTp", "_EvtStag"]
-	@property
-	def DtDtls(self):
-		return self._DtDtls
-
-	@DtDtls.setter
-	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != auto else self.make_default("DtDtls")
-
-	@DtDtls.deleter
-	def DtDtls(self):
-		del self._DtDtls
-		self._DtDtls = None
-
+	__slots__ = ["_AddtlBizPrcInd", "_DtDtls", "_LtryTp", "_EvtStag"]
 	@property
 	def AddtlBizPrcInd(self):
 		return self._AddtlBizPrcInd
@@ -32,6 +19,19 @@ class CorporateAction74(base_types._BaseFieldType):
 	def AddtlBizPrcInd(self):
 		del self._AddtlBizPrcInd
 		self._AddtlBizPrcInd = None
+
+	@property
+	def DtDtls(self):
+		return self._DtDtls
+
+	@DtDtls.setter
+	def DtDtls(self, value):
+		self._DtDtls = value if type(value) != auto else self.make_default("DtDtls")
+
+	@DtDtls.deleter
+	def DtDtls(self):
+		del self._DtDtls
+		self._DtDtls = None
 
 	@property
 	def LtryTp(self):
@@ -60,8 +60,8 @@ class CorporateAction74(base_types._BaseFieldType):
 		self._EvtStag = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate89, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlBizPrcInd', type=AdditionalBusinessProcessFormat16Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate89, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtStag', type=CorporateActionEventStageFormat15Choice, min=0, max=1, mutex_group=None, array=False),
 	))

@@ -1,12 +1,12 @@
 from . import base_types
-import ISODate
-import YieldedOrValueType1Choice
-import PriceRateOrAmount3Choice
-import FinancialInstrumentQuantity1Choice
+from .PriceRateOrAmount3Choice import PriceRateOrAmount3Choice
+from .FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from .ISODate import ISODate
+from .YieldedOrValueType1Choice import YieldedOrValueType1Choice
 
 class AmountPricePerFinancialInstrumentQuantity9(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmQty", "_PricFxgDt", "_PricVal", "_AmtPricTp"]
+	__slots__ = ["_FinInstrmQty", "_PricVal", "_PricFxgDt", "_AmtPricTp"]
 	@property
 	def FinInstrmQty(self):
 		return self._FinInstrmQty
@@ -21,19 +21,6 @@ class AmountPricePerFinancialInstrumentQuantity9(base_types._BaseFieldType):
 		self._FinInstrmQty = None
 
 	@property
-	def PricFxgDt(self):
-		return self._PricFxgDt
-
-	@PricFxgDt.setter
-	def PricFxgDt(self, value):
-		self._PricFxgDt = value if type(value) != auto else self.make_default("PricFxgDt")
-
-	@PricFxgDt.deleter
-	def PricFxgDt(self):
-		del self._PricFxgDt
-		self._PricFxgDt = None
-
-	@property
 	def PricVal(self):
 		return self._PricVal
 
@@ -45,6 +32,19 @@ class AmountPricePerFinancialInstrumentQuantity9(base_types._BaseFieldType):
 	def PricVal(self):
 		del self._PricVal
 		self._PricVal = None
+
+	@property
+	def PricFxgDt(self):
+		return self._PricFxgDt
+
+	@PricFxgDt.setter
+	def PricFxgDt(self, value):
+		self._PricFxgDt = value if type(value) != auto else self.make_default("PricFxgDt")
+
+	@PricFxgDt.deleter
+	def PricFxgDt(self):
+		del self._PricFxgDt
+		self._PricFxgDt = None
 
 	@property
 	def AmtPricTp(self):
@@ -61,8 +61,8 @@ class AmountPricePerFinancialInstrumentQuantity9(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricFxgDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricVal', type=PriceRateOrAmount3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricFxgDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtPricTp', type=YieldedOrValueType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

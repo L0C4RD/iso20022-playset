@@ -1,7 +1,7 @@
 from . import base_types
-import CalendarSearchCriteria1
-import SupplementaryData1
-import MessageHeader9
+from .MessageHeader9 import MessageHeader9
+from .SupplementaryData1 import SupplementaryData1
+from .CalendarSearchCriteria1 import CalendarSearchCriteria1
 
 class CalendarQueryV02(base_types._BaseFieldType):
 

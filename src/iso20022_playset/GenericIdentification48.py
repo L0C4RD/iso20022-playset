@@ -1,21 +1,21 @@
 from . import base_types
-import Max35Text
+from .Max35Text import Max35Text
 
 class GenericIdentification48(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_Id", "_Vrsn"]
+	__slots__ = ["_Vrsn", "_Id", "_Issr"]
 	@property
-	def Issr(self):
-		return self._Issr
+	def Vrsn(self):
+		return self._Vrsn
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	@property
 	def Id(self):
@@ -31,21 +31,21 @@ class GenericIdentification48(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def Issr(self):
+		return self._Issr
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Issr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

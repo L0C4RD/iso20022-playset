@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification36
-import PensionOrderType1Code
+from .GenericIdentification36 import GenericIdentification36
+from .PensionOrderType1Code import PensionOrderType1Code
 
 class PensionOrderType1Choice(base_types._BaseFieldType):
 

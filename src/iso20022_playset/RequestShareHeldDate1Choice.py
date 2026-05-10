@@ -1,23 +1,10 @@
 from . import base_types
-import Max350Text
-import DateCalculationMethod1Code
+from .Max350Text import Max350Text
+from .DateCalculationMethod1Code import DateCalculationMethod1Code
 
 class RequestShareHeldDate1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DtClctnMtd", "_DtClctnDesc"]
-	@property
-	def DtClctnMtd(self):
-		return self._DtClctnMtd
-
-	@DtClctnMtd.setter
-	def DtClctnMtd(self, value):
-		self._DtClctnMtd = value if type(value) != auto else self.make_default("DtClctnMtd")
-
-	@DtClctnMtd.deleter
-	def DtClctnMtd(self):
-		del self._DtClctnMtd
-		self._DtClctnMtd = None
-
+	__slots__ = ["_DtClctnDesc", "_DtClctnMtd"]
 	@property
 	def DtClctnDesc(self):
 		return self._DtClctnDesc
@@ -31,8 +18,21 @@ class RequestShareHeldDate1Choice(base_types._BaseFieldType):
 		del self._DtClctnDesc
 		self._DtClctnDesc = None
 
+	@property
+	def DtClctnMtd(self):
+		return self._DtClctnMtd
+
+	@DtClctnMtd.setter
+	def DtClctnMtd(self, value):
+		self._DtClctnMtd = value if type(value) != auto else self.make_default("DtClctnMtd")
+
+	@DtClctnMtd.deleter
+	def DtClctnMtd(self):
+		del self._DtClctnMtd
+		self._DtClctnMtd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtClctnMtd', type=DateCalculationMethod1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DtClctnDesc', type=Max350Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DtClctnMtd', type=DateCalculationMethod1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import ErrorHandling5
-import AuditTrail1
+from .AuditTrail1 import AuditTrail1
+from .ErrorHandling5 import ErrorHandling5
 
 class AuditTrailOrBusinessError6Choice(base_types._BaseFieldType):
 

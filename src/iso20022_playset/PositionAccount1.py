@@ -1,5 +1,5 @@
 from . import base_types
-import PartyIdentification118Choice
+from .PartyIdentification118Choice import PartyIdentification118Choice
 
 class PositionAccount1(base_types._BaseFieldType):
 

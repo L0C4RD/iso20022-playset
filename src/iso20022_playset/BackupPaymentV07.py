@@ -1,25 +1,25 @@
 from . import base_types
-import Amount2Choice
-import MessageHeader1
-import SystemMember3
-import PaymentInstruction13
-import SupplementaryData1
+from .SupplementaryData1 import SupplementaryData1
+from .SystemMember3 import SystemMember3
+from .Amount2Choice import Amount2Choice
+from .MessageHeader1 import MessageHeader1
+from .PaymentInstruction13 import PaymentInstruction13
 
 class BackupPaymentV07(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrInf", "_Cdtr", "_SplmtryData", "_MsgHdr", "_TrfdAmt", "_OrgnlMsgId", "_DbtrAgt", "_CdtrAgt"]
+	__slots__ = ["_CdtrAgt", "_Cdtr", "_TrfdAmt", "_SplmtryData", "_OrgnlMsgId", "_MsgHdr", "_DbtrAgt", "_InstrInf"]
 	@property
-	def InstrInf(self):
-		return self._InstrInf
+	def CdtrAgt(self):
+		return self._CdtrAgt
 
-	@InstrInf.setter
-	def InstrInf(self, value):
-		self._InstrInf = value if type(value) != auto else self.make_default("InstrInf")
+	@CdtrAgt.setter
+	def CdtrAgt(self, value):
+		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
 
-	@InstrInf.deleter
-	def InstrInf(self):
-		del self._InstrInf
-		self._InstrInf = None
+	@CdtrAgt.deleter
+	def CdtrAgt(self):
+		del self._CdtrAgt
+		self._CdtrAgt = None
 
 	@property
 	def Cdtr(self):
@@ -35,32 +35,6 @@ class BackupPaymentV07(base_types._BaseFieldType):
 		self._Cdtr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def MsgHdr(self):
-		return self._MsgHdr
-
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
-
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
-
-	@property
 	def TrfdAmt(self):
 		return self._TrfdAmt
 
@@ -72,6 +46,19 @@ class BackupPaymentV07(base_types._BaseFieldType):
 	def TrfdAmt(self):
 		del self._TrfdAmt
 		self._TrfdAmt = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def OrgnlMsgId(self):
@@ -87,6 +74,19 @@ class BackupPaymentV07(base_types._BaseFieldType):
 		self._OrgnlMsgId = None
 
 	@property
+	def MsgHdr(self):
+		return self._MsgHdr
+
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
+
+	@property
 	def DbtrAgt(self):
 		return self._DbtrAgt
 
@@ -100,26 +100,26 @@ class BackupPaymentV07(base_types._BaseFieldType):
 		self._DbtrAgt = None
 
 	@property
-	def CdtrAgt(self):
-		return self._CdtrAgt
+	def InstrInf(self):
+		return self._InstrInf
 
-	@CdtrAgt.setter
-	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
+	@InstrInf.setter
+	def InstrInf(self, value):
+		self._InstrInf = value if type(value) != auto else self.make_default("InstrInf")
 
-	@CdtrAgt.deleter
-	def CdtrAgt(self):
-		del self._CdtrAgt
-		self._CdtrAgt = None
+	@InstrInf.deleter
+	def InstrInf(self):
+		del self._InstrInf
+		self._InstrInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstrInf', type=PaymentInstruction13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cdtr', type=SystemMember3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfdAmt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlMsgId', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgt', type=SystemMember3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrAgt', type=SystemMember3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cdtr', type=SystemMember3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfdAmt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlMsgId', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgt', type=SystemMember3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrInf', type=PaymentInstruction13, min=0, max=1, mutex_group=None, array=False),
 	))
 

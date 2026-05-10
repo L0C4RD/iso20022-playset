@@ -1,25 +1,12 @@
 from . import base_types
-import CardPaymentEnvironment81
-import SupplementaryData1
-import PaymentContext30
-import AbortData6
+from .PaymentContext30 import PaymentContext30
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from .SupplementaryData1 import SupplementaryData1
+from .AbortData6 import AbortData6
 
 class SystemAbort8(base_types._BaseFieldType):
 
-	__slots__ = ["_Cntxt", "_SysAbrt", "_SplmtryData", "_Envt"]
-	@property
-	def Cntxt(self):
-		return self._Cntxt
-
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
-
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
-
+	__slots__ = ["_SysAbrt", "_SplmtryData", "_Envt", "_Cntxt"]
 	@property
 	def SysAbrt(self):
 		return self._SysAbrt
@@ -59,10 +46,23 @@ class SystemAbort8(base_types._BaseFieldType):
 		del self._Envt
 		self._Envt = None
 
+	@property
+	def Cntxt(self):
+		return self._Cntxt
+
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysAbrt', type=AbortData6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
 	))
 

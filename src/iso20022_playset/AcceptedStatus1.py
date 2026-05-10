@@ -1,5 +1,5 @@
 from . import base_types
-import NoReasonCode
+from .NoReasonCode import NoReasonCode
 
 class AcceptedStatus1(base_types._BaseFieldType):
 

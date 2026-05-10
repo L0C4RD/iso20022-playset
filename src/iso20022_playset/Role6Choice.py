@@ -1,7 +1,7 @@
 from . import base_types
-import Max350Text
-import GenericIdentification30
-import InvestmentFundRole2Code
+from .GenericIdentification30 import GenericIdentification30
+from .Max350Text import Max350Text
+from .InvestmentFundRole2Code import InvestmentFundRole2Code
 
 class Role6Choice(base_types._BaseFieldType):
 

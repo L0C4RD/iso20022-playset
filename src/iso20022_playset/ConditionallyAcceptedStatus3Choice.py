@@ -1,23 +1,10 @@
 from . import base_types
-import NoReasonCode
-import ConditionallyAcceptedStatusReason3
+from .ConditionallyAcceptedStatusReason3 import ConditionallyAcceptedStatusReason3
+from .NoReasonCode import NoReasonCode
 
 class ConditionallyAcceptedStatus3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoSpcfdRsn", "_RsnDtls"]
-	@property
-	def NoSpcfdRsn(self):
-		return self._NoSpcfdRsn
-
-	@NoSpcfdRsn.setter
-	def NoSpcfdRsn(self, value):
-		self._NoSpcfdRsn = value if type(value) != auto else self.make_default("NoSpcfdRsn")
-
-	@NoSpcfdRsn.deleter
-	def NoSpcfdRsn(self):
-		del self._NoSpcfdRsn
-		self._NoSpcfdRsn = None
-
+	__slots__ = ["_RsnDtls", "_NoSpcfdRsn"]
 	@property
 	def RsnDtls(self):
 		return self._RsnDtls
@@ -31,8 +18,21 @@ class ConditionallyAcceptedStatus3Choice(base_types._BaseFieldType):
 		del self._RsnDtls
 		self._RsnDtls = None
 
+	@property
+	def NoSpcfdRsn(self):
+		return self._NoSpcfdRsn
+
+	@NoSpcfdRsn.setter
+	def NoSpcfdRsn(self, value):
+		self._NoSpcfdRsn = value if type(value) != auto else self.make_default("NoSpcfdRsn")
+
+	@NoSpcfdRsn.deleter
+	def NoSpcfdRsn(self):
+		del self._NoSpcfdRsn
+		self._NoSpcfdRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RsnDtls', type=ConditionallyAcceptedStatusReason3, min=1, max=5, mutex_group=1, array=True),
+		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 	))
 

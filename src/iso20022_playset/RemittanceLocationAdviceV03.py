@@ -1,23 +1,23 @@
 from . import base_types
-import GroupHeader122
-import SupplementaryData1
-import RemittanceLocation10
+from .GroupHeader122 import GroupHeader122
+from .RemittanceLocation10 import RemittanceLocation10
+from .SupplementaryData1 import SupplementaryData1
 
 class RemittanceLocationAdviceV03(base_types._BaseFieldType):
 
-	__slots__ = ["_RmtLctn", "_SplmtryData", "_GrpHdr"]
+	__slots__ = ["_GrpHdr", "_SplmtryData", "_RmtLctn"]
 	@property
-	def RmtLctn(self):
-		return self._RmtLctn
+	def GrpHdr(self):
+		return self._GrpHdr
 
-	@RmtLctn.setter
-	def RmtLctn(self, value):
-		self._RmtLctn = value if type(value) != auto else self.make_default("RmtLctn")
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
 
-	@RmtLctn.deleter
-	def RmtLctn(self):
-		del self._RmtLctn
-		self._RmtLctn = None
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class RemittanceLocationAdviceV03(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def GrpHdr(self):
-		return self._GrpHdr
+	def RmtLctn(self):
+		return self._RmtLctn
 
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+	@RmtLctn.setter
+	def RmtLctn(self, value):
+		self._RmtLctn = value if type(value) != auto else self.make_default("RmtLctn")
 
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
+	@RmtLctn.deleter
+	def RmtLctn(self):
+		del self._RmtLctn
+		self._RmtLctn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RmtLctn', type=RemittanceLocation10, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader122, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RmtLctn', type=RemittanceLocation10, min=1, max=None, mutex_group=None, array=True),
 	))
 

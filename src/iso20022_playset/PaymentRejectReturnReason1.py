@@ -1,6 +1,6 @@
 from . import base_types
-import Max105Text
-import ReturnReason5Choice
+from .ReturnReason5Choice import ReturnReason5Choice
+from .Max105Text import Max105Text
 
 class PaymentRejectReturnReason1(base_types._BaseFieldType):
 

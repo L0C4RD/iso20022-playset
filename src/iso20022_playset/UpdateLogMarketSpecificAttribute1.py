@@ -1,5 +1,5 @@
 from . import base_types
-import MarketSpecificAttribute1
+from .MarketSpecificAttribute1 import MarketSpecificAttribute1
 
 class UpdateLogMarketSpecificAttribute1(base_types._BaseFieldType):
 

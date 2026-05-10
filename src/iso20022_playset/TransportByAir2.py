@@ -1,22 +1,22 @@
 from . import base_types
-import AirportName1Choice
-import Max35Text
+from .Max35Text import Max35Text
+from .AirportName1Choice import AirportName1Choice
 
 class TransportByAir2(base_types._BaseFieldType):
 
-	__slots__ = ["_DprtureAirprt", "_DstnAirprt", "_AirCrrierNm"]
+	__slots__ = ["_AirCrrierNm", "_DstnAirprt", "_DprtureAirprt"]
 	@property
-	def DprtureAirprt(self):
-		return self._DprtureAirprt
+	def AirCrrierNm(self):
+		return self._AirCrrierNm
 
-	@DprtureAirprt.setter
-	def DprtureAirprt(self, value):
-		self._DprtureAirprt = value if type(value) != auto else self.make_default("DprtureAirprt")
+	@AirCrrierNm.setter
+	def AirCrrierNm(self, value):
+		self._AirCrrierNm = value if type(value) != auto else self.make_default("AirCrrierNm")
 
-	@DprtureAirprt.deleter
-	def DprtureAirprt(self):
-		del self._DprtureAirprt
-		self._DprtureAirprt = None
+	@AirCrrierNm.deleter
+	def AirCrrierNm(self):
+		del self._AirCrrierNm
+		self._AirCrrierNm = None
 
 	@property
 	def DstnAirprt(self):
@@ -32,21 +32,21 @@ class TransportByAir2(base_types._BaseFieldType):
 		self._DstnAirprt = None
 
 	@property
-	def AirCrrierNm(self):
-		return self._AirCrrierNm
+	def DprtureAirprt(self):
+		return self._DprtureAirprt
 
-	@AirCrrierNm.setter
-	def AirCrrierNm(self, value):
-		self._AirCrrierNm = value if type(value) != auto else self.make_default("AirCrrierNm")
+	@DprtureAirprt.setter
+	def DprtureAirprt(self, value):
+		self._DprtureAirprt = value if type(value) != auto else self.make_default("DprtureAirprt")
 
-	@AirCrrierNm.deleter
-	def AirCrrierNm(self):
-		del self._AirCrrierNm
-		self._AirCrrierNm = None
+	@DprtureAirprt.deleter
+	def DprtureAirprt(self):
+		del self._DprtureAirprt
+		self._DprtureAirprt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DprtureAirprt', type=AirportName1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstnAirprt', type=AirportName1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AirCrrierNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstnAirprt', type=AirportName1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DprtureAirprt', type=AirportName1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

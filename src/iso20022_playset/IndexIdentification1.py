@@ -1,7 +1,7 @@
 from . import base_types
-import Max350Text
-import ExternalBenchmarkCurveName1Code
-import ISINOct2015Identifier
+from .Max350Text import Max350Text
+from .ExternalBenchmarkCurveName1Code import ExternalBenchmarkCurveName1Code
+from .ISINOct2015Identifier import ISINOct2015Identifier
 
 class IndexIdentification1(base_types._BaseFieldType):
 

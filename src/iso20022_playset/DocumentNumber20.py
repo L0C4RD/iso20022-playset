@@ -1,6 +1,6 @@
 from . import base_types
-import Identification30
-import DocumentNumber5Choice
+from .DocumentNumber5Choice import DocumentNumber5Choice
+from .Identification30 import Identification30
 
 class DocumentNumber20(base_types._BaseFieldType):
 

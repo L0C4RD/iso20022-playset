@@ -1,11 +1,24 @@
 from . import base_types
-import PartyIdentification253Choice
-import ReceivingPartiesAndAccount22
-import DeliveringPartiesAndAccount22
+from .DeliveringPartiesAndAccount22 import DeliveringPartiesAndAccount22
+from .PartyIdentification253Choice import PartyIdentification253Choice
+from .ReceivingPartiesAndAccount22 import ReceivingPartiesAndAccount22
 
 class NonGuaranteedTrade4(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvrgPties", "_TradCtrPtyMmbId", "_TradCtrPtyClrMmbId", "_RcvgPties"]
+	__slots__ = ["_RcvgPties", "_DlvrgPties", "_TradCtrPtyClrMmbId", "_TradCtrPtyMmbId"]
+	@property
+	def RcvgPties(self):
+		return self._RcvgPties
+
+	@RcvgPties.setter
+	def RcvgPties(self, value):
+		self._RcvgPties = value if type(value) != auto else self.make_default("RcvgPties")
+
+	@RcvgPties.deleter
+	def RcvgPties(self):
+		del self._RcvgPties
+		self._RcvgPties = None
+
 	@property
 	def DlvrgPties(self):
 		return self._DlvrgPties
@@ -18,19 +31,6 @@ class NonGuaranteedTrade4(base_types._BaseFieldType):
 	def DlvrgPties(self):
 		del self._DlvrgPties
 		self._DlvrgPties = None
-
-	@property
-	def TradCtrPtyMmbId(self):
-		return self._TradCtrPtyMmbId
-
-	@TradCtrPtyMmbId.setter
-	def TradCtrPtyMmbId(self, value):
-		self._TradCtrPtyMmbId = value if type(value) != auto else self.make_default("TradCtrPtyMmbId")
-
-	@TradCtrPtyMmbId.deleter
-	def TradCtrPtyMmbId(self):
-		del self._TradCtrPtyMmbId
-		self._TradCtrPtyMmbId = None
 
 	@property
 	def TradCtrPtyClrMmbId(self):
@@ -46,22 +46,22 @@ class NonGuaranteedTrade4(base_types._BaseFieldType):
 		self._TradCtrPtyClrMmbId = None
 
 	@property
-	def RcvgPties(self):
-		return self._RcvgPties
+	def TradCtrPtyMmbId(self):
+		return self._TradCtrPtyMmbId
 
-	@RcvgPties.setter
-	def RcvgPties(self, value):
-		self._RcvgPties = value if type(value) != auto else self.make_default("RcvgPties")
+	@TradCtrPtyMmbId.setter
+	def TradCtrPtyMmbId(self, value):
+		self._TradCtrPtyMmbId = value if type(value) != auto else self.make_default("TradCtrPtyMmbId")
 
-	@RcvgPties.deleter
-	def RcvgPties(self):
-		del self._RcvgPties
-		self._RcvgPties = None
+	@TradCtrPtyMmbId.deleter
+	def TradCtrPtyMmbId(self):
+		del self._TradCtrPtyMmbId
+		self._TradCtrPtyMmbId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DlvrgPties', type=DeliveringPartiesAndAccount22, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradCtrPtyMmbId', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradCtrPtyClrMmbId', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvgPties', type=ReceivingPartiesAndAccount22, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrgPties', type=DeliveringPartiesAndAccount22, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradCtrPtyClrMmbId', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradCtrPtyMmbId', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

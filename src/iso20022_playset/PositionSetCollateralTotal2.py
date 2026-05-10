@@ -1,7 +1,7 @@
 from . import base_types
-import ReceivedMarginOrCollateral6
-import Max20PositiveNumber
-import PostedMarginOrCollateral6
+from .PostedMarginOrCollateral6 import PostedMarginOrCollateral6
+from .Max20PositiveNumber import Max20PositiveNumber
+from .ReceivedMarginOrCollateral6 import ReceivedMarginOrCollateral6
 
 class PositionSetCollateralTotal2(base_types._BaseFieldType):
 

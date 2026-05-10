@@ -1,22 +1,22 @@
 from . import base_types
-import PartyIdentification34Choice
-import AmountAndDirection20
+from .PartyIdentification34Choice import PartyIdentification34Choice
+from .AmountAndDirection20 import AmountAndDirection20
 
 class SecuritiesCompensation1(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmAmt", "_Fees", "_Dpstry"]
+	__slots__ = ["_Dpstry", "_Fees", "_SttlmAmt"]
 	@property
-	def SttlmAmt(self):
-		return self._SttlmAmt
+	def Dpstry(self):
+		return self._Dpstry
 
-	@SttlmAmt.setter
-	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != auto else self.make_default("SttlmAmt")
+	@Dpstry.setter
+	def Dpstry(self, value):
+		self._Dpstry = value if type(value) != auto else self.make_default("Dpstry")
 
-	@SttlmAmt.deleter
-	def SttlmAmt(self):
-		del self._SttlmAmt
-		self._SttlmAmt = None
+	@Dpstry.deleter
+	def Dpstry(self):
+		del self._Dpstry
+		self._Dpstry = None
 
 	@property
 	def Fees(self):
@@ -32,21 +32,21 @@ class SecuritiesCompensation1(base_types._BaseFieldType):
 		self._Fees = None
 
 	@property
-	def Dpstry(self):
-		return self._Dpstry
+	def SttlmAmt(self):
+		return self._SttlmAmt
 
-	@Dpstry.setter
-	def Dpstry(self, value):
-		self._Dpstry = value if type(value) != auto else self.make_default("Dpstry")
+	@SttlmAmt.setter
+	def SttlmAmt(self, value):
+		self._SttlmAmt = value if type(value) != auto else self.make_default("SttlmAmt")
 
-	@Dpstry.deleter
-	def Dpstry(self):
-		del self._Dpstry
-		self._Dpstry = None
+	@SttlmAmt.deleter
+	def SttlmAmt(self):
+		del self._SttlmAmt
+		self._SttlmAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection20, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fees', type=AmountAndDirection20, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dpstry', type=PartyIdentification34Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fees', type=AmountAndDirection20, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection20, min=1, max=1, mutex_group=None, array=False),
 	))
 

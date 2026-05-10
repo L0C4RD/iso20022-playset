@@ -1,6 +1,6 @@
 from . import base_types
-import ChargeType8Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ChargeType8Code import ChargeType8Code
 
 class ChargesType1Choice(base_types._BaseFieldType):
 

@@ -1,149 +1,32 @@
 from . import base_types
-import FinancialInstrumentQuantity25Choice
-import MICIdentifier
-import CountryCode
-import Max52Text
-import SecuritiesTransactionPrice22Choice
-import ISODateTime
-import VariationType1Code
-import Max35Text
-import RegulatoryTradingCapacity1Code
-import DigitalTokenAmount2
-import AmountAndDirection53
-import ImpliedCurrencyAndAmount
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .MICIdentifier import MICIdentifier
+from .VariationType1Code import VariationType1Code
+from .RegulatoryTradingCapacity1Code import RegulatoryTradingCapacity1Code
+from .Max35Text import Max35Text
+from .CountryCode import CountryCode
+from .AmountAndDirection53 import AmountAndDirection53
+from .FinancialInstrumentQuantity25Choice import FinancialInstrumentQuantity25Choice
+from .SecuritiesTransactionPrice22Choice import SecuritiesTransactionPrice22Choice
+from .DigitalTokenAmount2 import DigitalTokenAmount2
+from .Max52Text import Max52Text
+from .ISODateTime import ISODateTime
 
 class SecuritiesTransaction3(base_types._BaseFieldType):
 
-	__slots__ = ["_TradPlcMtchgId", "_DerivNtnlChng", "_CmplxTradCmpntId", "_NetAmt", "_Qty", "_TradVn", "_CtryOfBrnch", "_UpFrntPmt", "_TradgCpcty", "_DgtlTknQty", "_TradDt", "_Pric"]
+	__slots__ = ["_Pric", "_TradDt", "_NetAmt", "_TradVn", "_DerivNtnlChng", "_TradgCpcty", "_UpFrntPmt", "_DgtlTknQty", "_CmplxTradCmpntId", "_Qty", "_CtryOfBrnch", "_TradPlcMtchgId"]
 	@property
-	def TradPlcMtchgId(self):
-		return self._TradPlcMtchgId
+	def Pric(self):
+		return self._Pric
 
-	@TradPlcMtchgId.setter
-	def TradPlcMtchgId(self, value):
-		self._TradPlcMtchgId = value if type(value) != auto else self.make_default("TradPlcMtchgId")
+	@Pric.setter
+	def Pric(self, value):
+		self._Pric = value if type(value) != auto else self.make_default("Pric")
 
-	@TradPlcMtchgId.deleter
-	def TradPlcMtchgId(self):
-		del self._TradPlcMtchgId
-		self._TradPlcMtchgId = None
-
-	@property
-	def DerivNtnlChng(self):
-		return self._DerivNtnlChng
-
-	@DerivNtnlChng.setter
-	def DerivNtnlChng(self, value):
-		self._DerivNtnlChng = value if type(value) != auto else self.make_default("DerivNtnlChng")
-
-	@DerivNtnlChng.deleter
-	def DerivNtnlChng(self):
-		del self._DerivNtnlChng
-		self._DerivNtnlChng = None
-
-	@property
-	def CmplxTradCmpntId(self):
-		return self._CmplxTradCmpntId
-
-	@CmplxTradCmpntId.setter
-	def CmplxTradCmpntId(self, value):
-		self._CmplxTradCmpntId = value if type(value) != auto else self.make_default("CmplxTradCmpntId")
-
-	@CmplxTradCmpntId.deleter
-	def CmplxTradCmpntId(self):
-		del self._CmplxTradCmpntId
-		self._CmplxTradCmpntId = None
-
-	@property
-	def NetAmt(self):
-		return self._NetAmt
-
-	@NetAmt.setter
-	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != auto else self.make_default("NetAmt")
-
-	@NetAmt.deleter
-	def NetAmt(self):
-		del self._NetAmt
-		self._NetAmt = None
-
-	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
-
-	@property
-	def TradVn(self):
-		return self._TradVn
-
-	@TradVn.setter
-	def TradVn(self, value):
-		self._TradVn = value if type(value) != auto else self.make_default("TradVn")
-
-	@TradVn.deleter
-	def TradVn(self):
-		del self._TradVn
-		self._TradVn = None
-
-	@property
-	def CtryOfBrnch(self):
-		return self._CtryOfBrnch
-
-	@CtryOfBrnch.setter
-	def CtryOfBrnch(self, value):
-		self._CtryOfBrnch = value if type(value) != auto else self.make_default("CtryOfBrnch")
-
-	@CtryOfBrnch.deleter
-	def CtryOfBrnch(self):
-		del self._CtryOfBrnch
-		self._CtryOfBrnch = None
-
-	@property
-	def UpFrntPmt(self):
-		return self._UpFrntPmt
-
-	@UpFrntPmt.setter
-	def UpFrntPmt(self, value):
-		self._UpFrntPmt = value if type(value) != auto else self.make_default("UpFrntPmt")
-
-	@UpFrntPmt.deleter
-	def UpFrntPmt(self):
-		del self._UpFrntPmt
-		self._UpFrntPmt = None
-
-	@property
-	def TradgCpcty(self):
-		return self._TradgCpcty
-
-	@TradgCpcty.setter
-	def TradgCpcty(self, value):
-		self._TradgCpcty = value if type(value) != auto else self.make_default("TradgCpcty")
-
-	@TradgCpcty.deleter
-	def TradgCpcty(self):
-		del self._TradgCpcty
-		self._TradgCpcty = None
-
-	@property
-	def DgtlTknQty(self):
-		return self._DgtlTknQty
-
-	@DgtlTknQty.setter
-	def DgtlTknQty(self, value):
-		self._DgtlTknQty = value if type(value) != auto else self.make_default("DgtlTknQty")
-
-	@DgtlTknQty.deleter
-	def DgtlTknQty(self):
-		del self._DgtlTknQty
-		self._DgtlTknQty = None
+	@Pric.deleter
+	def Pric(self):
+		del self._Pric
+		self._Pric = None
 
 	@property
 	def TradDt(self):
@@ -159,30 +42,147 @@ class SecuritiesTransaction3(base_types._BaseFieldType):
 		self._TradDt = None
 
 	@property
-	def Pric(self):
-		return self._Pric
+	def NetAmt(self):
+		return self._NetAmt
 
-	@Pric.setter
-	def Pric(self, value):
-		self._Pric = value if type(value) != auto else self.make_default("Pric")
+	@NetAmt.setter
+	def NetAmt(self, value):
+		self._NetAmt = value if type(value) != auto else self.make_default("NetAmt")
 
-	@Pric.deleter
-	def Pric(self):
-		del self._Pric
-		self._Pric = None
+	@NetAmt.deleter
+	def NetAmt(self):
+		del self._NetAmt
+		self._NetAmt = None
+
+	@property
+	def TradVn(self):
+		return self._TradVn
+
+	@TradVn.setter
+	def TradVn(self, value):
+		self._TradVn = value if type(value) != auto else self.make_default("TradVn")
+
+	@TradVn.deleter
+	def TradVn(self):
+		del self._TradVn
+		self._TradVn = None
+
+	@property
+	def DerivNtnlChng(self):
+		return self._DerivNtnlChng
+
+	@DerivNtnlChng.setter
+	def DerivNtnlChng(self, value):
+		self._DerivNtnlChng = value if type(value) != auto else self.make_default("DerivNtnlChng")
+
+	@DerivNtnlChng.deleter
+	def DerivNtnlChng(self):
+		del self._DerivNtnlChng
+		self._DerivNtnlChng = None
+
+	@property
+	def TradgCpcty(self):
+		return self._TradgCpcty
+
+	@TradgCpcty.setter
+	def TradgCpcty(self, value):
+		self._TradgCpcty = value if type(value) != auto else self.make_default("TradgCpcty")
+
+	@TradgCpcty.deleter
+	def TradgCpcty(self):
+		del self._TradgCpcty
+		self._TradgCpcty = None
+
+	@property
+	def UpFrntPmt(self):
+		return self._UpFrntPmt
+
+	@UpFrntPmt.setter
+	def UpFrntPmt(self, value):
+		self._UpFrntPmt = value if type(value) != auto else self.make_default("UpFrntPmt")
+
+	@UpFrntPmt.deleter
+	def UpFrntPmt(self):
+		del self._UpFrntPmt
+		self._UpFrntPmt = None
+
+	@property
+	def DgtlTknQty(self):
+		return self._DgtlTknQty
+
+	@DgtlTknQty.setter
+	def DgtlTknQty(self, value):
+		self._DgtlTknQty = value if type(value) != auto else self.make_default("DgtlTknQty")
+
+	@DgtlTknQty.deleter
+	def DgtlTknQty(self):
+		del self._DgtlTknQty
+		self._DgtlTknQty = None
+
+	@property
+	def CmplxTradCmpntId(self):
+		return self._CmplxTradCmpntId
+
+	@CmplxTradCmpntId.setter
+	def CmplxTradCmpntId(self, value):
+		self._CmplxTradCmpntId = value if type(value) != auto else self.make_default("CmplxTradCmpntId")
+
+	@CmplxTradCmpntId.deleter
+	def CmplxTradCmpntId(self):
+		del self._CmplxTradCmpntId
+		self._CmplxTradCmpntId = None
+
+	@property
+	def Qty(self):
+		return self._Qty
+
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != auto else self.make_default("Qty")
+
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
+
+	@property
+	def CtryOfBrnch(self):
+		return self._CtryOfBrnch
+
+	@CtryOfBrnch.setter
+	def CtryOfBrnch(self, value):
+		self._CtryOfBrnch = value if type(value) != auto else self.make_default("CtryOfBrnch")
+
+	@CtryOfBrnch.deleter
+	def CtryOfBrnch(self):
+		del self._CtryOfBrnch
+		self._CtryOfBrnch = None
+
+	@property
+	def TradPlcMtchgId(self):
+		return self._TradPlcMtchgId
+
+	@TradPlcMtchgId.setter
+	def TradPlcMtchgId(self, value):
+		self._TradPlcMtchgId = value if type(value) != auto else self.make_default("TradPlcMtchgId")
+
+	@TradPlcMtchgId.deleter
+	def TradPlcMtchgId(self):
+		del self._TradPlcMtchgId
+		self._TradPlcMtchgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradPlcMtchgId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DerivNtnlChng', type=VariationType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmplxTradCmpntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity25Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradVn', type=MICIdentifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryOfBrnch', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UpFrntPmt', type=AmountAndDirection53, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgCpcty', type=RegulatoryTradingCapacity1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgtlTknQty', type=DigitalTokenAmount2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TradDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pric', type=SecuritiesTransactionPrice22Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradVn', type=MICIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DerivNtnlChng', type=VariationType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgCpcty', type=RegulatoryTradingCapacity1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpFrntPmt', type=AmountAndDirection53, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgtlTknQty', type=DigitalTokenAmount2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CmplxTradCmpntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity25Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfBrnch', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradPlcMtchgId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

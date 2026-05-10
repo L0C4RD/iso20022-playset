@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification36
-import AccountStatusUpdateInstruction1Code
+from .GenericIdentification36 import GenericIdentification36
+from .AccountStatusUpdateInstruction1Code import AccountStatusUpdateInstruction1Code
 
 class AccountStatusUpdateInstruction1Choice(base_types._BaseFieldType):
 

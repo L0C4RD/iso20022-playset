@@ -1,5 +1,5 @@
 from . import base_types
-import FinancialInstrumentReportingEquityTradingActivityResultV02
+from .FinancialInstrumentReportingEquityTradingActivityResultV02 import FinancialInstrumentReportingEquityTradingActivityResultV02
 
 class AUTH_044_001_02():
 

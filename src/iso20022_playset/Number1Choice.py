@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification7
-import Max3NumericText
+from .Max3NumericText import Max3NumericText
+from .GenericIdentification7 import GenericIdentification7
 
 class Number1Choice(base_types._BaseFieldType):
 

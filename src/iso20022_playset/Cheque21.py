@@ -1,24 +1,11 @@
 from . import base_types
-import PartyIdentification139
-import Max35Text
-import FinancialInstitutionIdentification15
+from .PartyIdentification139 import PartyIdentification139
+from .Max35Text import Max35Text
+from .FinancialInstitutionIdentification15 import FinancialInstitutionIdentification15
 
 class Cheque21(base_types._BaseFieldType):
 
-	__slots__ = ["_DrweeId", "_DrwrId", "_Nb", "_PyeeId"]
-	@property
-	def DrweeId(self):
-		return self._DrweeId
-
-	@DrweeId.setter
-	def DrweeId(self, value):
-		self._DrweeId = value if type(value) != auto else self.make_default("DrweeId")
-
-	@DrweeId.deleter
-	def DrweeId(self):
-		del self._DrweeId
-		self._DrweeId = None
-
+	__slots__ = ["_DrwrId", "_Nb", "_PyeeId", "_DrweeId"]
 	@property
 	def DrwrId(self):
 		return self._DrwrId
@@ -58,10 +45,23 @@ class Cheque21(base_types._BaseFieldType):
 		del self._PyeeId
 		self._PyeeId = None
 
+	@property
+	def DrweeId(self):
+		return self._DrweeId
+
+	@DrweeId.setter
+	def DrweeId(self, value):
+		self._DrweeId = value if type(value) != auto else self.make_default("DrweeId")
+
+	@DrweeId.deleter
+	def DrweeId(self):
+		del self._DrweeId
+		self._DrweeId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DrweeId', type=FinancialInstitutionIdentification15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrwrId', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PyeeId', type=PartyIdentification139, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrweeId', type=FinancialInstitutionIdentification15, min=0, max=1, mutex_group=None, array=False),
 	))
 

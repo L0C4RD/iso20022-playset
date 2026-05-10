@@ -1,5 +1,5 @@
 from . import base_types
-import ISOTime
+from .ISOTime import ISOTime
 
 class TimePeriod2(base_types._BaseFieldType):
 

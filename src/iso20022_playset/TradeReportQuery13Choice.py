@@ -1,6 +1,6 @@
 from . import base_types
-import TradeRecurrentQuery5
-import TradeQueryCriteria10
+from .TradeQueryCriteria10 import TradeQueryCriteria10
+from .TradeRecurrentQuery5 import TradeRecurrentQuery5
 
 class TradeReportQuery13Choice(base_types._BaseFieldType):
 

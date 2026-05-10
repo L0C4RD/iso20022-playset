@@ -1,11 +1,24 @@
 from . import base_types
-import AcceptorCompletionAdvice14
-import ContentInformationType37
-import Header70
+from .Header70 import Header70
+from .AcceptorCompletionAdvice14 import AcceptorCompletionAdvice14
+from .ContentInformationType37 import ContentInformationType37
 
 class TransactionAdviceV06(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_Hdr", "_TxAdvc"]
+	__slots__ = ["_TxAdvc", "_SctyTrlr", "_Hdr"]
+	@property
+	def TxAdvc(self):
+		return self._TxAdvc
+
+	@TxAdvc.setter
+	def TxAdvc(self, value):
+		self._TxAdvc = value if type(value) != auto else self.make_default("TxAdvc")
+
+	@TxAdvc.deleter
+	def TxAdvc(self):
+		del self._TxAdvc
+		self._TxAdvc = None
+
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
@@ -32,22 +45,9 @@ class TransactionAdviceV06(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
-	@property
-	def TxAdvc(self):
-		return self._TxAdvc
-
-	@TxAdvc.setter
-	def TxAdvc(self, value):
-		self._TxAdvc = value if type(value) != auto else self.make_default("TxAdvc")
-
-	@TxAdvc.deleter
-	def TxAdvc(self):
-		del self._TxAdvc
-		self._TxAdvc = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TxAdvc', type=AcceptorCompletionAdvice14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxAdvc', type=AcceptorCompletionAdvice14, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,23 @@
 from . import base_types
-import CardPaymentEnvironment81
-import CardPaymentTransaction145
-import CardPaymentTransaction117
+from .CardPaymentTransaction117 import CardPaymentTransaction117
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from .CardPaymentTransaction145 import CardPaymentTransaction145
 
 class AcceptorCancellationResponse13(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_Envt", "_TxRspn"]
+	__slots__ = ["_TxRspn", "_Envt", "_Tx"]
 	@property
-	def Tx(self):
-		return self._Tx
+	def TxRspn(self):
+		return self._TxRspn
 
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+	@TxRspn.setter
+	def TxRspn(self, value):
+		self._TxRspn = value if type(value) != auto else self.make_default("TxRspn")
 
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
+	@TxRspn.deleter
+	def TxRspn(self):
+		del self._TxRspn
+		self._TxRspn = None
 
 	@property
 	def Envt(self):
@@ -33,21 +33,21 @@ class AcceptorCancellationResponse13(base_types._BaseFieldType):
 		self._Envt = None
 
 	@property
-	def TxRspn(self):
-		return self._TxRspn
+	def Tx(self):
+		return self._Tx
 
-	@TxRspn.setter
-	def TxRspn(self, value):
-		self._TxRspn = value if type(value) != auto else self.make_default("TxRspn")
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != auto else self.make_default("Tx")
 
-	@TxRspn.deleter
-	def TxRspn(self):
-		del self._TxRspn
-		self._TxRspn = None
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction117, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxRspn', type=CardPaymentTransaction145, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction117, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-import TradeStatusReportV01
+from .TradeStatusReportV01 import TradeStatusReportV01
 
 class TSRV_018_001_01():
 

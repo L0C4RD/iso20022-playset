@@ -1,13 +1,13 @@
 from . import base_types
-import ISODate
-import CountryCode
-import Max10Text
-import Max35Text
-import ActiveOrHistoricCurrencyAndAmount
+from .CountryCode import CountryCode
+from .Max35Text import Max35Text
+from .Max10Text import Max10Text
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .ISODate import ISODate
 
 class StructuredRegulatoryReporting3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Cd", "_Inf", "_Ctry", "_Dt", "_Amt"]
+	__slots__ = ["_Tp", "_Amt", "_Ctry", "_Dt", "_Cd", "_Inf"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -22,30 +22,17 @@ class StructuredRegulatoryReporting3(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Cd(self):
-		return self._Cd
+	def Amt(self):
+		return self._Amt
 
-	@Cd.setter
-	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@Cd.deleter
-	def Cd(self):
-		del self._Cd
-		self._Cd = None
-
-	@property
-	def Inf(self):
-		return self._Inf
-
-	@Inf.setter
-	def Inf(self, value):
-		self._Inf = value if type(value) != auto else self.make_default("Inf")
-
-	@Inf.deleter
-	def Inf(self):
-		del self._Inf
-		self._Inf = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Ctry(self):
@@ -74,24 +61,37 @@ class StructuredRegulatoryReporting3(base_types._BaseFieldType):
 		self._Dt = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def Cd(self):
+		return self._Cd
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@Cd.setter
+	def Cd(self, value):
+		self._Cd = value if type(value) != auto else self.make_default("Cd")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Cd.deleter
+	def Cd(self):
+		del self._Cd
+		self._Cd = None
+
+	@property
+	def Inf(self):
+		return self._Inf
+
+	@Inf.setter
+	def Inf(self, value):
+		self._Inf = value if type(value) != auto else self.make_default("Inf")
+
+	@Inf.deleter
+	def Inf(self):
+		del self._Inf
+		self._Inf = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cd', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Inf', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cd', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Inf', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

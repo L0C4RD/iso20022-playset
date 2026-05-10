@@ -1,7 +1,7 @@
 from . import base_types
-import TransactionTotalsSet2
-import Max35Text
-import ReconciliationType1Code
+from .Max35Text import Max35Text
+from .TransactionTotalsSet2 import TransactionTotalsSet2
+from .ReconciliationType1Code import ReconciliationType1Code
 
 class ReconciliationResponseData2(base_types._BaseFieldType):
 

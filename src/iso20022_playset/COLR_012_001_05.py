@@ -1,5 +1,5 @@
 from . import base_types
-import CollateralSubstitutionConfirmationV05
+from .CollateralSubstitutionConfirmationV05 import CollateralSubstitutionConfirmationV05
 
 class COLR_012_001_05():
 

@@ -1,24 +1,24 @@
 from . import base_types
-import TransactionIdentification6
-import SupplementaryData1
-import ResponseStatus6Choice
-import TransactionDetails173
+from .TransactionIdentification6 import TransactionIdentification6
+from .TransactionDetails173 import TransactionDetails173
+from .SupplementaryData1 import SupplementaryData1
+from .ResponseStatus6Choice import ResponseStatus6Choice
 
 class SecuritiesSettlementTransactionCounterpartyResponseV05(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TxId", "_RspnSts", "_TxDtls"]
+	__slots__ = ["_RspnSts", "_TxId", "_SplmtryData", "_TxDtls"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def RspnSts(self):
+		return self._RspnSts
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@RspnSts.setter
+	def RspnSts(self, value):
+		self._RspnSts = value if type(value) != auto else self.make_default("RspnSts")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@RspnSts.deleter
+	def RspnSts(self):
+		del self._RspnSts
+		self._RspnSts = None
 
 	@property
 	def TxId(self):
@@ -34,17 +34,17 @@ class SecuritiesSettlementTransactionCounterpartyResponseV05(base_types._BaseFie
 		self._TxId = None
 
 	@property
-	def RspnSts(self):
-		return self._RspnSts
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@RspnSts.setter
-	def RspnSts(self, value):
-		self._RspnSts = value if type(value) != auto else self.make_default("RspnSts")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@RspnSts.deleter
-	def RspnSts(self):
-		del self._RspnSts
-		self._RspnSts = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def TxDtls(self):
@@ -60,9 +60,9 @@ class SecuritiesSettlementTransactionCounterpartyResponseV05(base_types._BaseFie
 		self._TxDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxId', type=TransactionIdentification6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnSts', type=ResponseStatus6Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentification6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxDtls', type=TransactionDetails173, min=0, max=1, mutex_group=None, array=False),
 	))
 

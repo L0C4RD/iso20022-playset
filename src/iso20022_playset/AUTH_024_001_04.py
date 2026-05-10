@@ -1,5 +1,5 @@
 from . import base_types
-import PaymentRegulatoryInformationNotificationV04
+from .PaymentRegulatoryInformationNotificationV04 import PaymentRegulatoryInformationNotificationV04
 
 class AUTH_024_001_04():
 

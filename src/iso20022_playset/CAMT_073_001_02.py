@@ -1,5 +1,5 @@
 from . import base_types
-import IntraBalanceMovementModificationRequestStatusAdviceV02
+from .IntraBalanceMovementModificationRequestStatusAdviceV02 import IntraBalanceMovementModificationRequestStatusAdviceV02
 
 class CAMT_073_001_02():
 

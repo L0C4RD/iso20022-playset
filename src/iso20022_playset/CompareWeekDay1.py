@@ -1,5 +1,5 @@
 from . import base_types
-import WeekDay3Code
+from .WeekDay3Code import WeekDay3Code
 
 class CompareWeekDay1(base_types._BaseFieldType):
 

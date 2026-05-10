@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import LendingTransactionMethod1Code
+from .LendingTransactionMethod1Code import LendingTransactionMethod1Code
+from .GenericIdentification30 import GenericIdentification30
 
 class LendingTransactionMethod2Choice(base_types._BaseFieldType):
 

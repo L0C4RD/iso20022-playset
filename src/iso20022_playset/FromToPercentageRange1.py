@@ -1,5 +1,5 @@
 from . import base_types
-import PercentageRangeBoundary1
+from .PercentageRangeBoundary1 import PercentageRangeBoundary1
 
 class FromToPercentageRange1(base_types._BaseFieldType):
 

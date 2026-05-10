@@ -1,6 +1,6 @@
 from . import base_types
-import ActiveCurrencyAndAmountRange3
-import ImpliedCurrencyAndAmountRange1
+from .ImpliedCurrencyAndAmountRange1 import ImpliedCurrencyAndAmountRange1
+from .ActiveCurrencyAndAmountRange3 import ActiveCurrencyAndAmountRange3
 
 class ActiveAmountRange3Choice(base_types._BaseFieldType):
 

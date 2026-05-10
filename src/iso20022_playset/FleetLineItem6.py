@@ -1,15 +1,28 @@
 from . import base_types
-import UnitOfMeasure1Code
-import TrueFalseIndicator
-import DecimalNumber
-import Max15Text
-import Max35Text
-import FleetServiceType1Code
-import ImpliedCurrencyAndAmount
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .Max35Text import Max35Text
+from .UnitOfMeasure1Code import UnitOfMeasure1Code
+from .TrueFalseIndicator import TrueFalseIndicator
+from .Max15Text import Max15Text
+from .DecimalNumber import DecimalNumber
+from .FleetServiceType1Code import FleetServiceType1Code
 
 class FleetLineItem6(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcTp", "_Fuel", "_UnitOfMeasr", "_TtlAmtExclgTax", "_TtlAmtInclgTax", "_PdctCd", "_AllwdItm", "_PdctCtgy", "_PdctQty"]
+	__slots__ = ["_AllwdItm", "_SvcTp", "_UnitOfMeasr", "_TtlAmtInclgTax", "_PdctQty", "_TtlAmtExclgTax", "_PdctCtgy", "_Fuel", "_PdctCd"]
+	@property
+	def AllwdItm(self):
+		return self._AllwdItm
+
+	@AllwdItm.setter
+	def AllwdItm(self, value):
+		self._AllwdItm = value if type(value) != auto else self.make_default("AllwdItm")
+
+	@AllwdItm.deleter
+	def AllwdItm(self):
+		del self._AllwdItm
+		self._AllwdItm = None
+
 	@property
 	def SvcTp(self):
 		return self._SvcTp
@@ -22,19 +35,6 @@ class FleetLineItem6(base_types._BaseFieldType):
 	def SvcTp(self):
 		del self._SvcTp
 		self._SvcTp = None
-
-	@property
-	def Fuel(self):
-		return self._Fuel
-
-	@Fuel.setter
-	def Fuel(self, value):
-		self._Fuel = value if type(value) != auto else self.make_default("Fuel")
-
-	@Fuel.deleter
-	def Fuel(self):
-		del self._Fuel
-		self._Fuel = None
 
 	@property
 	def UnitOfMeasr(self):
@@ -50,19 +50,6 @@ class FleetLineItem6(base_types._BaseFieldType):
 		self._UnitOfMeasr = None
 
 	@property
-	def TtlAmtExclgTax(self):
-		return self._TtlAmtExclgTax
-
-	@TtlAmtExclgTax.setter
-	def TtlAmtExclgTax(self, value):
-		self._TtlAmtExclgTax = value if type(value) != auto else self.make_default("TtlAmtExclgTax")
-
-	@TtlAmtExclgTax.deleter
-	def TtlAmtExclgTax(self):
-		del self._TtlAmtExclgTax
-		self._TtlAmtExclgTax = None
-
-	@property
 	def TtlAmtInclgTax(self):
 		return self._TtlAmtInclgTax
 
@@ -76,30 +63,30 @@ class FleetLineItem6(base_types._BaseFieldType):
 		self._TtlAmtInclgTax = None
 
 	@property
-	def PdctCd(self):
-		return self._PdctCd
+	def PdctQty(self):
+		return self._PdctQty
 
-	@PdctCd.setter
-	def PdctCd(self, value):
-		self._PdctCd = value if type(value) != auto else self.make_default("PdctCd")
+	@PdctQty.setter
+	def PdctQty(self, value):
+		self._PdctQty = value if type(value) != auto else self.make_default("PdctQty")
 
-	@PdctCd.deleter
-	def PdctCd(self):
-		del self._PdctCd
-		self._PdctCd = None
+	@PdctQty.deleter
+	def PdctQty(self):
+		del self._PdctQty
+		self._PdctQty = None
 
 	@property
-	def AllwdItm(self):
-		return self._AllwdItm
+	def TtlAmtExclgTax(self):
+		return self._TtlAmtExclgTax
 
-	@AllwdItm.setter
-	def AllwdItm(self, value):
-		self._AllwdItm = value if type(value) != auto else self.make_default("AllwdItm")
+	@TtlAmtExclgTax.setter
+	def TtlAmtExclgTax(self, value):
+		self._TtlAmtExclgTax = value if type(value) != auto else self.make_default("TtlAmtExclgTax")
 
-	@AllwdItm.deleter
-	def AllwdItm(self):
-		del self._AllwdItm
-		self._AllwdItm = None
+	@TtlAmtExclgTax.deleter
+	def TtlAmtExclgTax(self):
+		del self._TtlAmtExclgTax
+		self._TtlAmtExclgTax = None
 
 	@property
 	def PdctCtgy(self):
@@ -115,27 +102,40 @@ class FleetLineItem6(base_types._BaseFieldType):
 		self._PdctCtgy = None
 
 	@property
-	def PdctQty(self):
-		return self._PdctQty
+	def Fuel(self):
+		return self._Fuel
 
-	@PdctQty.setter
-	def PdctQty(self, value):
-		self._PdctQty = value if type(value) != auto else self.make_default("PdctQty")
+	@Fuel.setter
+	def Fuel(self, value):
+		self._Fuel = value if type(value) != auto else self.make_default("Fuel")
 
-	@PdctQty.deleter
-	def PdctQty(self):
-		del self._PdctQty
-		self._PdctQty = None
+	@Fuel.deleter
+	def Fuel(self):
+		del self._Fuel
+		self._Fuel = None
+
+	@property
+	def PdctCd(self):
+		return self._PdctCd
+
+	@PdctCd.setter
+	def PdctCd(self, value):
+		self._PdctCd = value if type(value) != auto else self.make_default("PdctCd")
+
+	@PdctCd.deleter
+	def PdctCd(self):
+		del self._PdctCd
+		self._PdctCd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SvcTp', type=FleetServiceType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fuel', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmtExclgTax', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmtInclgTax', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctCd', type=Max15Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AllwdItm', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctCtgy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcTp', type=FleetServiceType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmtInclgTax', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctQty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmtExclgTax', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctCtgy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fuel', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctCd', type=Max15Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

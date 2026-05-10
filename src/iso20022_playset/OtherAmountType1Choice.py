@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification1
-import OtherAmountType1Code
+from .GenericIdentification1 import GenericIdentification1
+from .OtherAmountType1Code import OtherAmountType1Code
 
 class OtherAmountType1Choice(base_types._BaseFieldType):
 

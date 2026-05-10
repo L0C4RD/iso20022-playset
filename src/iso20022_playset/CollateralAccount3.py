@@ -1,7 +1,7 @@
 from . import base_types
-import Max70Text
-import Max35Text
-import CollateralAccountIdentificationType3Choice
+from .Max35Text import Max35Text
+from .Max70Text import Max70Text
+from .CollateralAccountIdentificationType3Choice import CollateralAccountIdentificationType3Choice
 
 class CollateralAccount3(base_types._BaseFieldType):
 

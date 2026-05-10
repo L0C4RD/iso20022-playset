@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification1
-import AnyBICDec2014Identifier
+from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from .GenericIdentification1 import GenericIdentification1
 
 class PartyIdentification177Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import DiscountAmountType1Choice
-import ActiveOrHistoricCurrencyAndAmount
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .DiscountAmountType1Choice import DiscountAmountType1Choice
 
 class DiscountAmountAndType1(base_types._BaseFieldType):
 

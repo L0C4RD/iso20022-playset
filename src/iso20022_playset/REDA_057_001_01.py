@@ -1,5 +1,5 @@
 from . import base_types
-import StandingSettlementInstructionDeletionV01
+from .StandingSettlementInstructionDeletionV01 import StandingSettlementInstructionDeletionV01
 
 class REDA_057_001_01():
 

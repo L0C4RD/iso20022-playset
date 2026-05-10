@@ -1,7 +1,7 @@
 from . import base_types
-import GenericIdentification36
-import CFIOct2015Identifier
-import ExternalFinancialInstrumentProductType1Code
+from .GenericIdentification36 import GenericIdentification36
+from .CFIOct2015Identifier import CFIOct2015Identifier
+from .ExternalFinancialInstrumentProductType1Code import ExternalFinancialInstrumentProductType1Code
 
 class ClassificationType2(base_types._BaseFieldType):
 

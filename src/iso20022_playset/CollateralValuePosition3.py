@@ -1,25 +1,12 @@
 from . import base_types
-import SecuritiesAccount19
-import ISODateTime
-import SecurityCharacteristics3
-import ActiveCurrencyAndAmount
+from .SecuritiesAccount19 import SecuritiesAccount19
+from .ISODateTime import ISODateTime
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .SecurityCharacteristics3 import SecurityCharacteristics3
 
 class CollateralValuePosition3(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlCollValtn", "_SctiesAcct", "_DataAccsTm", "_Scties"]
-	@property
-	def TtlCollValtn(self):
-		return self._TtlCollValtn
-
-	@TtlCollValtn.setter
-	def TtlCollValtn(self, value):
-		self._TtlCollValtn = value if type(value) != auto else self.make_default("TtlCollValtn")
-
-	@TtlCollValtn.deleter
-	def TtlCollValtn(self):
-		del self._TtlCollValtn
-		self._TtlCollValtn = None
-
+	__slots__ = ["_SctiesAcct", "_DataAccsTm", "_TtlCollValtn", "_Scties"]
 	@property
 	def SctiesAcct(self):
 		return self._SctiesAcct
@@ -47,6 +34,19 @@ class CollateralValuePosition3(base_types._BaseFieldType):
 		self._DataAccsTm = None
 
 	@property
+	def TtlCollValtn(self):
+		return self._TtlCollValtn
+
+	@TtlCollValtn.setter
+	def TtlCollValtn(self, value):
+		self._TtlCollValtn = value if type(value) != auto else self.make_default("TtlCollValtn")
+
+	@TtlCollValtn.deleter
+	def TtlCollValtn(self):
+		del self._TtlCollValtn
+		self._TtlCollValtn = None
+
+	@property
 	def Scties(self):
 		return self._Scties
 
@@ -60,9 +60,9 @@ class CollateralValuePosition3(base_types._BaseFieldType):
 		self._Scties = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlCollValtn', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DataAccsTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlCollValtn', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Scties', type=SecurityCharacteristics3, min=0, max=None, mutex_group=None, array=True),
 	))
 

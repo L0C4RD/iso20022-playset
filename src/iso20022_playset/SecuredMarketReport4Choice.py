@@ -1,6 +1,6 @@
 from . import base_types
-import ReportPeriodActivity3Code
-import SecuredMarketTransaction4
+from .ReportPeriodActivity3Code import ReportPeriodActivity3Code
+from .SecuredMarketTransaction4 import SecuredMarketTransaction4
 
 class SecuredMarketReport4Choice(base_types._BaseFieldType):
 

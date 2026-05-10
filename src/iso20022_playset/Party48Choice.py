@@ -1,23 +1,10 @@
 from . import base_types
-import Organisation40
-import IndividualPerson38
+from .IndividualPerson38 import IndividualPerson38
+from .Organisation40 import Organisation40
 
 class Party48Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Org", "_IndvPrsn"]
-	@property
-	def Org(self):
-		return self._Org
-
-	@Org.setter
-	def Org(self, value):
-		self._Org = value if type(value) != auto else self.make_default("Org")
-
-	@Org.deleter
-	def Org(self):
-		del self._Org
-		self._Org = None
-
+	__slots__ = ["_IndvPrsn", "_Org"]
 	@property
 	def IndvPrsn(self):
 		return self._IndvPrsn
@@ -31,8 +18,21 @@ class Party48Choice(base_types._BaseFieldType):
 		del self._IndvPrsn
 		self._IndvPrsn = None
 
+	@property
+	def Org(self):
+		return self._Org
+
+	@Org.setter
+	def Org(self, value):
+		self._Org = value if type(value) != auto else self.make_default("Org")
+
+	@Org.deleter
+	def Org(self):
+		del self._Org
+		self._Org = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Org', type=Organisation40, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IndvPrsn', type=IndividualPerson38, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Org', type=Organisation40, min=0, max=1, mutex_group=1, array=False),
 	))
 

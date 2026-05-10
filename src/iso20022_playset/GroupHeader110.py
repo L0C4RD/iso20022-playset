@@ -1,13 +1,13 @@
 from . import base_types
-import PartyIdentification272
-import ISODateTime
-import Max35Text
-import BranchAndFinancialInstitutionIdentification8
-import Authorisation1Choice
+from .Max35Text import Max35Text
+from .PartyIdentification272 import PartyIdentification272
+from .Authorisation1Choice import Authorisation1Choice
+from .ISODateTime import ISODateTime
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class GroupHeader110(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_InstgAgt", "_Authstn", "_InitgPty", "_InstdAgt", "_CreDtTm"]
+	__slots__ = ["_MsgId", "_InitgPty", "_InstgAgt", "_Authstn", "_InstdAgt", "_CreDtTm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -20,6 +20,19 @@ class GroupHeader110(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
+
+	@property
+	def InitgPty(self):
+		return self._InitgPty
+
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
+
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
 
 	@property
 	def InstgAgt(self):
@@ -46,19 +59,6 @@ class GroupHeader110(base_types._BaseFieldType):
 	def Authstn(self):
 		del self._Authstn
 		self._Authstn = None
-
-	@property
-	def InitgPty(self):
-		return self._InitgPty
-
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
-
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
 
 	@property
 	def InstdAgt(self):
@@ -88,9 +88,9 @@ class GroupHeader110(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Authstn', type=Authorisation1Choice, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))

@@ -1,5 +1,5 @@
 from . import base_types
-import ActiveCurrencyAndAmount
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class BalanceTransferFundingLimit1(base_types._BaseFieldType):
 

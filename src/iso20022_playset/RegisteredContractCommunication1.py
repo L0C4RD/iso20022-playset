@@ -1,6 +1,6 @@
 from . import base_types
-import ISODate
-import CommunicationMethod4Code
+from .ISODate import ISODate
+from .CommunicationMethod4Code import CommunicationMethod4Code
 
 class RegisteredContractCommunication1(base_types._BaseFieldType):
 

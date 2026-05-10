@@ -1,5 +1,5 @@
 from . import base_types
-import PaymentType5Choice
+from .PaymentType5Choice import PaymentType5Choice
 
 class CompareOtherPaymentType1(base_types._BaseFieldType):
 

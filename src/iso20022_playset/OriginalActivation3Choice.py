@@ -1,6 +1,6 @@
 from . import base_types
-import DebtorActivation5
-import Party53Choice
+from .Party53Choice import Party53Choice
+from .DebtorActivation5 import DebtorActivation5
 
 class OriginalActivation3Choice(base_types._BaseFieldType):
 

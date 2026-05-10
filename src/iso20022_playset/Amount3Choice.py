@@ -1,23 +1,10 @@
 from . import base_types
-import ActiveOrHistoricCurrencyAndAmount
-import ImpliedCurrencyAndAmount
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class Amount3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtWthtCcy", "_AmtWthCcy"]
-	@property
-	def AmtWthtCcy(self):
-		return self._AmtWthtCcy
-
-	@AmtWthtCcy.setter
-	def AmtWthtCcy(self, value):
-		self._AmtWthtCcy = value if type(value) != auto else self.make_default("AmtWthtCcy")
-
-	@AmtWthtCcy.deleter
-	def AmtWthtCcy(self):
-		del self._AmtWthtCcy
-		self._AmtWthtCcy = None
-
+	__slots__ = ["_AmtWthCcy", "_AmtWthtCcy"]
 	@property
 	def AmtWthCcy(self):
 		return self._AmtWthCcy
@@ -31,8 +18,21 @@ class Amount3Choice(base_types._BaseFieldType):
 		del self._AmtWthCcy
 		self._AmtWthCcy = None
 
+	@property
+	def AmtWthtCcy(self):
+		return self._AmtWthtCcy
+
+	@AmtWthtCcy.setter
+	def AmtWthtCcy(self, value):
+		self._AmtWthtCcy = value if type(value) != auto else self.make_default("AmtWthtCcy")
+
+	@AmtWthtCcy.deleter
+	def AmtWthtCcy(self):
+		del self._AmtWthtCcy
+		self._AmtWthtCcy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmtWthtCcy', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtWthCcy', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtWthtCcy', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import TaxationBasis5Code
+from .GenericIdentification47 import GenericIdentification47
+from .TaxationBasis5Code import TaxationBasis5Code
 
 class ChargeBasis2Choice(base_types._BaseFieldType):
 

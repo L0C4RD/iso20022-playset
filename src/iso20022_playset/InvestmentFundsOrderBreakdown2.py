@@ -1,23 +1,10 @@
 from . import base_types
-import OrderBreakdownType1Choice
-import ActiveCurrencyAndAmount
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .OrderBreakdownType1Choice import OrderBreakdownType1Choice
 
 class InvestmentFundsOrderBreakdown2(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_OrdrBrkdwnTp"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_OrdrBrkdwnTp", "_Amt"]
 	@property
 	def OrdrBrkdwnTp(self):
 		return self._OrdrBrkdwnTp
@@ -31,8 +18,21 @@ class InvestmentFundsOrderBreakdown2(base_types._BaseFieldType):
 		del self._OrdrBrkdwnTp
 		self._OrdrBrkdwnTp = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrBrkdwnTp', type=OrderBreakdownType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

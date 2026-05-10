@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification13
-import Max4Text
+from .Max4Text import Max4Text
+from .GenericIdentification13 import GenericIdentification13
 
 class CodeOrProprietary1Choice(base_types._BaseFieldType):
 

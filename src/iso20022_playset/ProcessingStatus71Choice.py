@@ -1,40 +1,27 @@
 from . import base_types
-import RejectionOrRepairStatus39Choice
-import ProprietaryReason4
-import PendingStatus38Choice
-import ProprietaryStatusAndReason6
-import DeniedStatus16Choice
-import RejectionOrRepairStatus40Choice
-import AcknowledgedAcceptedStatus21Choice
+from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from .RejectionOrRepairStatus39Choice import RejectionOrRepairStatus39Choice
+from .PendingStatus38Choice import PendingStatus38Choice
+from .AcknowledgedAcceptedStatus21Choice import AcknowledgedAcceptedStatus21Choice
+from .DeniedStatus16Choice import DeniedStatus16Choice
+from .RejectionOrRepairStatus40Choice import RejectionOrRepairStatus40Choice
+from .ProprietaryReason4 import ProprietaryReason4
 
 class ProcessingStatus71Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AckdAccptd", "_Rjctd", "_Cmpltd", "_Pdg", "_Prtry", "_Dnd", "_Rpr"]
+	__slots__ = ["_Dnd", "_Cmpltd", "_Pdg", "_AckdAccptd", "_Rjctd", "_Rpr", "_Prtry"]
 	@property
-	def AckdAccptd(self):
-		return self._AckdAccptd
+	def Dnd(self):
+		return self._Dnd
 
-	@AckdAccptd.setter
-	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
+	@Dnd.setter
+	def Dnd(self, value):
+		self._Dnd = value if type(value) != auto else self.make_default("Dnd")
 
-	@AckdAccptd.deleter
-	def AckdAccptd(self):
-		del self._AckdAccptd
-		self._AckdAccptd = None
-
-	@property
-	def Rjctd(self):
-		return self._Rjctd
-
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
-
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
+	@Dnd.deleter
+	def Dnd(self):
+		del self._Dnd
+		self._Dnd = None
 
 	@property
 	def Cmpltd(self):
@@ -63,30 +50,30 @@ class ProcessingStatus71Choice(base_types._BaseFieldType):
 		self._Pdg = None
 
 	@property
-	def Prtry(self):
-		return self._Prtry
+	def AckdAccptd(self):
+		return self._AckdAccptd
 
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+	@AckdAccptd.setter
+	def AckdAccptd(self, value):
+		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
 
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
+	@AckdAccptd.deleter
+	def AckdAccptd(self):
+		del self._AckdAccptd
+		self._AckdAccptd = None
 
 	@property
-	def Dnd(self):
-		return self._Dnd
+	def Rjctd(self):
+		return self._Rjctd
 
-	@Dnd.setter
-	def Dnd(self, value):
-		self._Dnd = value if type(value) != auto else self.make_default("Dnd")
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
 
-	@Dnd.deleter
-	def Dnd(self):
-		del self._Dnd
-		self._Dnd = None
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
 
 	@property
 	def Rpr(self):
@@ -101,13 +88,26 @@ class ProcessingStatus71Choice(base_types._BaseFieldType):
 		del self._Rpr
 		self._Rpr = None
 
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=RejectionOrRepairStatus40Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Dnd', type=DeniedStatus16Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cmpltd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pdg', type=PendingStatus38Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Dnd', type=DeniedStatus16Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=RejectionOrRepairStatus40Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rpr', type=RejectionOrRepairStatus39Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 	))
 

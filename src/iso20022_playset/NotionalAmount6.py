@@ -1,23 +1,23 @@
 from . import base_types
-import Schedule11
-import ActiveOrHistoricCurrencyCode
-import AmountAndDirection106
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .Schedule11 import Schedule11
+from .AmountAndDirection106 import AmountAndDirection106
 
 class NotionalAmount6(base_types._BaseFieldType):
 
-	__slots__ = ["_SchdlPrd", "_Amt", "_Ccy"]
+	__slots__ = ["_Ccy", "_Amt", "_SchdlPrd"]
 	@property
-	def SchdlPrd(self):
-		return self._SchdlPrd
+	def Ccy(self):
+		return self._Ccy
 
-	@SchdlPrd.setter
-	def SchdlPrd(self, value):
-		self._SchdlPrd = value if type(value) != auto else self.make_default("SchdlPrd")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
 
-	@SchdlPrd.deleter
-	def SchdlPrd(self):
-		del self._SchdlPrd
-		self._SchdlPrd = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def Amt(self):
@@ -33,21 +33,21 @@ class NotionalAmount6(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def SchdlPrd(self):
+		return self._SchdlPrd
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@SchdlPrd.setter
+	def SchdlPrd(self, value):
+		self._SchdlPrd = value if type(value) != auto else self.make_default("SchdlPrd")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@SchdlPrd.deleter
+	def SchdlPrd(self):
+		del self._SchdlPrd
+		self._SchdlPrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SchdlPrd', type=Schedule11, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Amt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchdlPrd', type=Schedule11, min=0, max=None, mutex_group=None, array=True),
 	))
 

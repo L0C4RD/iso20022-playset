@@ -1,5 +1,5 @@
 from . import base_types
-import ISINOct2015Identifier
+from .ISINOct2015Identifier import ISINOct2015Identifier
 
 class CompareISINIdentifier2(base_types._BaseFieldType):
 

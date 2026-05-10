@@ -1,5 +1,5 @@
 from . import base_types
-import NoSpecifiedReason1
+from .NoSpecifiedReason1 import NoSpecifiedReason1
 
 class PendingStatus20Choice(base_types._BaseFieldType):
 

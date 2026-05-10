@@ -1,12 +1,25 @@
 from . import base_types
-import ActiveOrHistoricCurrencyAndAmount
-import CreditLineType1Choice
-import DateAndDateTime2Choice
-import TrueFalseIndicator
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .TrueFalseIndicator import TrueFalseIndicator
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .CreditLineType1Choice import CreditLineType1Choice
 
 class CreditLine3(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_Tp", "_Incl", "_Amt"]
+	__slots__ = ["_Incl", "_Dt", "_Tp", "_Amt"]
+	@property
+	def Incl(self):
+		return self._Incl
+
+	@Incl.setter
+	def Incl(self, value):
+		self._Incl = value if type(value) != auto else self.make_default("Incl")
+
+	@Incl.deleter
+	def Incl(self):
+		del self._Incl
+		self._Incl = None
+
 	@property
 	def Dt(self):
 		return self._Dt
@@ -34,19 +47,6 @@ class CreditLine3(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Incl(self):
-		return self._Incl
-
-	@Incl.setter
-	def Incl(self, value):
-		self._Incl = value if type(value) != auto else self.make_default("Incl")
-
-	@Incl.deleter
-	def Incl(self):
-		del self._Incl
-		self._Incl = None
-
-	@property
 	def Amt(self):
 		return self._Amt
 
@@ -60,9 +60,9 @@ class CreditLine3(base_types._BaseFieldType):
 		self._Amt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Incl', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CreditLineType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Incl', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

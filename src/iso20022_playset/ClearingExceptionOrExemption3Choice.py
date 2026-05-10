@@ -1,6 +1,6 @@
 from . import base_types
-import NoReasonCode
-import ClearingExceptionOrExemption2
+from .ClearingExceptionOrExemption2 import ClearingExceptionOrExemption2
+from .NoReasonCode import NoReasonCode
 
 class ClearingExceptionOrExemption3Choice(base_types._BaseFieldType):
 

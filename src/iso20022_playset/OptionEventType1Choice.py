@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification36
-import OptionEventType1Code
+from .GenericIdentification36 import GenericIdentification36
+from .OptionEventType1Code import OptionEventType1Code
 
 class OptionEventType1Choice(base_types._BaseFieldType):
 

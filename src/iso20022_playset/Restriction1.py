@@ -1,6 +1,6 @@
 from . import base_types
-import CodeOrProprietary1Choice
-import ISODateTime
+from .ISODateTime import ISODateTime
+from .CodeOrProprietary1Choice import CodeOrProprietary1Choice
 
 class Restriction1(base_types._BaseFieldType):
 

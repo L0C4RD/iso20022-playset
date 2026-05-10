@@ -1,6 +1,6 @@
 from . import base_types
-import ReportPeriodActivity1Code
-import SettlementTotalData1
+from .SettlementTotalData1 import SettlementTotalData1
+from .ReportPeriodActivity1Code import ReportPeriodActivity1Code
 
 class SettlementTotalData1Choice(base_types._BaseFieldType):
 

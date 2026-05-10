@@ -1,38 +1,12 @@
 from . import base_types
-import OriginalGroupHeader17
-import PaymentTransaction130
-import SupplementaryData1
-import GroupHeader101
+from .GroupHeader101 import GroupHeader101
+from .SupplementaryData1 import SupplementaryData1
+from .OriginalGroupHeader17 import OriginalGroupHeader17
+from .PaymentTransaction130 import PaymentTransaction130
 
 class FIToFIPaymentStatusReportV12(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TxInfAndSts", "_GrpHdr", "_OrgnlGrpInfAndSts"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def TxInfAndSts(self):
-		return self._TxInfAndSts
-
-	@TxInfAndSts.setter
-	def TxInfAndSts(self, value):
-		self._TxInfAndSts = value if type(value) != auto else self.make_default("TxInfAndSts")
-
-	@TxInfAndSts.deleter
-	def TxInfAndSts(self):
-		del self._TxInfAndSts
-		self._TxInfAndSts = None
-
+	__slots__ = ["_GrpHdr", "_SplmtryData", "_OrgnlGrpInfAndSts", "_TxInfAndSts"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr
@@ -47,6 +21,19 @@ class FIToFIPaymentStatusReportV12(base_types._BaseFieldType):
 		self._GrpHdr = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def OrgnlGrpInfAndSts(self):
 		return self._OrgnlGrpInfAndSts
 
@@ -59,10 +46,23 @@ class FIToFIPaymentStatusReportV12(base_types._BaseFieldType):
 		del self._OrgnlGrpInfAndSts
 		self._OrgnlGrpInfAndSts = None
 
+	@property
+	def TxInfAndSts(self):
+		return self._TxInfAndSts
+
+	@TxInfAndSts.setter
+	def TxInfAndSts(self, value):
+		self._TxInfAndSts = value if type(value) != auto else self.make_default("TxInfAndSts")
+
+	@TxInfAndSts.deleter
+	def TxInfAndSts(self):
+		del self._TxInfAndSts
+		self._TxInfAndSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxInfAndSts', type=PaymentTransaction130, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader101, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlGrpInfAndSts', type=OriginalGroupHeader17, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxInfAndSts', type=PaymentTransaction130, min=0, max=None, mutex_group=None, array=True),
 	))
 

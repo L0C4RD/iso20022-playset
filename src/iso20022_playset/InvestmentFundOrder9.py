@@ -1,6 +1,6 @@
 from . import base_types
-import CancellationReason32Choice
-import Max35Text
+from .CancellationReason32Choice import CancellationReason32Choice
+from .Max35Text import Max35Text
 
 class InvestmentFundOrder9(base_types._BaseFieldType):
 

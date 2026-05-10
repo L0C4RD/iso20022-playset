@@ -1,6 +1,6 @@
 from . import base_types
-import Max350Text
-import ClosurePendingStatusReason2Choice
+from .ClosurePendingStatusReason2Choice import ClosurePendingStatusReason2Choice
+from .Max350Text import Max350Text
 
 class ClosurePendingStatusReason1(base_types._BaseFieldType):
 

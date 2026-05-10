@@ -1,12 +1,12 @@
 from . import base_types
-import ActiveCurrencyAndAmount
-import CFIOct2015Identifier
-import CollateralPool1Code
-import SNA2008SectorIdentifier
+from .CFIOct2015Identifier import CFIOct2015Identifier
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .CollateralPool1Code import CollateralPool1Code
+from .SNA2008SectorIdentifier import SNA2008SectorIdentifier
 
 class CollateralValuation7(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Sctr", "_PoolSts", "_NmnlAmt"]
+	__slots__ = ["_Tp", "_NmnlAmt", "_PoolSts", "_Sctr"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -21,17 +21,17 @@ class CollateralValuation7(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Sctr(self):
-		return self._Sctr
+	def NmnlAmt(self):
+		return self._NmnlAmt
 
-	@Sctr.setter
-	def Sctr(self, value):
-		self._Sctr = value if type(value) != auto else self.make_default("Sctr")
+	@NmnlAmt.setter
+	def NmnlAmt(self, value):
+		self._NmnlAmt = value if type(value) != auto else self.make_default("NmnlAmt")
 
-	@Sctr.deleter
-	def Sctr(self):
-		del self._Sctr
-		self._Sctr = None
+	@NmnlAmt.deleter
+	def NmnlAmt(self):
+		del self._NmnlAmt
+		self._NmnlAmt = None
 
 	@property
 	def PoolSts(self):
@@ -47,22 +47,22 @@ class CollateralValuation7(base_types._BaseFieldType):
 		self._PoolSts = None
 
 	@property
-	def NmnlAmt(self):
-		return self._NmnlAmt
+	def Sctr(self):
+		return self._Sctr
 
-	@NmnlAmt.setter
-	def NmnlAmt(self, value):
-		self._NmnlAmt = value if type(value) != auto else self.make_default("NmnlAmt")
+	@Sctr.setter
+	def Sctr(self, value):
+		self._Sctr = value if type(value) != auto else self.make_default("Sctr")
 
-	@NmnlAmt.deleter
-	def NmnlAmt(self):
-		del self._NmnlAmt
-		self._NmnlAmt = None
+	@Sctr.deleter
+	def Sctr(self):
+		del self._Sctr
+		self._Sctr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=CFIOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sctr', type=SNA2008SectorIdentifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolSts', type=CollateralPool1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmnlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolSts', type=CollateralPool1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sctr', type=SNA2008SectorIdentifier, min=1, max=1, mutex_group=None, array=False),
 	))
 

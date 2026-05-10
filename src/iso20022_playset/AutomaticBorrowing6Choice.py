@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import AutoBorrowing1Code
+from .GenericIdentification30 import GenericIdentification30
+from .AutoBorrowing1Code import AutoBorrowing1Code
 
 class AutomaticBorrowing6Choice(base_types._BaseFieldType):
 

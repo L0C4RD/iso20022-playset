@@ -1,7 +1,7 @@
 from . import base_types
-import ISODate
-import MasterAgreement7
-import Max52Text
+from .MasterAgreement7 import MasterAgreement7
+from .ISODate import ISODate
+from .Max52Text import Max52Text
 
 class LoanData120(base_types._BaseFieldType):
 

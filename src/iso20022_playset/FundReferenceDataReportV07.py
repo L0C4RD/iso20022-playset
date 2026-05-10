@@ -1,12 +1,12 @@
 from . import base_types
-import Max35Text
-import FundReferenceDataReport5
-import MessageIdentification1
-import AdditionalReference10
+from .MessageIdentification1 import MessageIdentification1
+from .FundReferenceDataReport5 import FundReferenceDataReport5
+from .AdditionalReference10 import AdditionalReference10
+from .Max35Text import Max35Text
 
 class FundReferenceDataReportV07(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsRef", "_Rpt", "_RltdRef", "_FndRefDataRptId", "_MsgId"]
+	__slots__ = ["_PrvsRef", "_RltdRef", "_Rpt", "_MsgId", "_FndRefDataRptId"]
 	@property
 	def PrvsRef(self):
 		return self._PrvsRef
@@ -19,19 +19,6 @@ class FundReferenceDataReportV07(base_types._BaseFieldType):
 	def PrvsRef(self):
 		del self._PrvsRef
 		self._PrvsRef = None
-
-	@property
-	def Rpt(self):
-		return self._Rpt
-
-	@Rpt.setter
-	def Rpt(self, value):
-		self._Rpt = value if type(value) != auto else self.make_default("Rpt")
-
-	@Rpt.deleter
-	def Rpt(self):
-		del self._Rpt
-		self._Rpt = None
 
 	@property
 	def RltdRef(self):
@@ -47,17 +34,17 @@ class FundReferenceDataReportV07(base_types._BaseFieldType):
 		self._RltdRef = None
 
 	@property
-	def FndRefDataRptId(self):
-		return self._FndRefDataRptId
+	def Rpt(self):
+		return self._Rpt
 
-	@FndRefDataRptId.setter
-	def FndRefDataRptId(self, value):
-		self._FndRefDataRptId = value if type(value) != auto else self.make_default("FndRefDataRptId")
+	@Rpt.setter
+	def Rpt(self, value):
+		self._Rpt = value if type(value) != auto else self.make_default("Rpt")
 
-	@FndRefDataRptId.deleter
-	def FndRefDataRptId(self):
-		del self._FndRefDataRptId
-		self._FndRefDataRptId = None
+	@Rpt.deleter
+	def Rpt(self):
+		del self._Rpt
+		self._Rpt = None
 
 	@property
 	def MsgId(self):
@@ -72,11 +59,24 @@ class FundReferenceDataReportV07(base_types._BaseFieldType):
 		del self._MsgId
 		self._MsgId = None
 
+	@property
+	def FndRefDataRptId(self):
+		return self._FndRefDataRptId
+
+	@FndRefDataRptId.setter
+	def FndRefDataRptId(self, value):
+		self._FndRefDataRptId = value if type(value) != auto else self.make_default("FndRefDataRptId")
+
+	@FndRefDataRptId.deleter
+	def FndRefDataRptId(self):
+		del self._FndRefDataRptId
+		self._FndRefDataRptId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rpt', type=FundReferenceDataReport5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FndRefDataRptId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rpt', type=FundReferenceDataReport5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FndRefDataRptId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

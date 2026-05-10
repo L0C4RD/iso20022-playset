@@ -1,26 +1,13 @@
 from . import base_types
-import ATMCommand16
-import ATMStatus2
-import ATMCommand15
-import ATMEnvironment6
-import ATMSecurityContext5
+from .ATMSecurityContext5 import ATMSecurityContext5
+from .ATMEnvironment6 import ATMEnvironment6
+from .ATMCommand16 import ATMCommand16
+from .ATMStatus2 import ATMStatus2
+from .ATMCommand15 import ATMCommand15
 
 class ATMDeviceReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_CmdRslt", "_ATMSctyCntxt", "_ATMGblSts", "_Envt", "_CmdCntxt"]
-	@property
-	def CmdRslt(self):
-		return self._CmdRslt
-
-	@CmdRslt.setter
-	def CmdRslt(self, value):
-		self._CmdRslt = value if type(value) != auto else self.make_default("CmdRslt")
-
-	@CmdRslt.deleter
-	def CmdRslt(self):
-		del self._CmdRslt
-		self._CmdRslt = None
-
+	__slots__ = ["_ATMSctyCntxt", "_ATMGblSts", "_CmdRslt", "_Envt", "_CmdCntxt"]
 	@property
 	def ATMSctyCntxt(self):
 		return self._ATMSctyCntxt
@@ -46,6 +33,19 @@ class ATMDeviceReport4(base_types._BaseFieldType):
 	def ATMGblSts(self):
 		del self._ATMGblSts
 		self._ATMGblSts = None
+
+	@property
+	def CmdRslt(self):
+		return self._CmdRslt
+
+	@CmdRslt.setter
+	def CmdRslt(self, value):
+		self._CmdRslt = value if type(value) != auto else self.make_default("CmdRslt")
+
+	@CmdRslt.deleter
+	def CmdRslt(self):
+		del self._CmdRslt
+		self._CmdRslt = None
 
 	@property
 	def Envt(self):
@@ -74,9 +74,9 @@ class ATMDeviceReport4(base_types._BaseFieldType):
 		self._CmdCntxt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CmdRslt', type=ATMCommand15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ATMSctyCntxt', type=ATMSecurityContext5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMGblSts', type=ATMStatus2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmdRslt', type=ATMCommand15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmdCntxt', type=ATMCommand16, min=0, max=1, mutex_group=None, array=False),
 	))

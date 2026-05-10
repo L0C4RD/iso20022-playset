@@ -1,21 +1,21 @@
 from . import base_types
-import ProprietaryReason4
+from .ProprietaryReason4 import ProprietaryReason4
 
 class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Futr", "_Elgblty", "_Tax", "_Ccy", "_MnlyAccptd", "_Excld", "_Wait", "_Amt", "_Csh", "_Pdg"]
+	__slots__ = ["_Tax", "_Elgblty", "_Wait", "_Futr", "_Ccy", "_Csh", "_MnlyAccptd", "_Amt", "_Pdg", "_Excld"]
 	@property
-	def Futr(self):
-		return self._Futr
+	def Tax(self):
+		return self._Tax
 
-	@Futr.setter
-	def Futr(self, value):
-		self._Futr = value if type(value) != auto else self.make_default("Futr")
+	@Tax.setter
+	def Tax(self, value):
+		self._Tax = value if type(value) != auto else self.make_default("Tax")
 
-	@Futr.deleter
-	def Futr(self):
-		del self._Futr
-		self._Futr = None
+	@Tax.deleter
+	def Tax(self):
+		del self._Tax
+		self._Tax = None
 
 	@property
 	def Elgblty(self):
@@ -31,17 +31,30 @@ class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 		self._Elgblty = None
 
 	@property
-	def Tax(self):
-		return self._Tax
+	def Wait(self):
+		return self._Wait
 
-	@Tax.setter
-	def Tax(self, value):
-		self._Tax = value if type(value) != auto else self.make_default("Tax")
+	@Wait.setter
+	def Wait(self, value):
+		self._Wait = value if type(value) != auto else self.make_default("Wait")
 
-	@Tax.deleter
-	def Tax(self):
-		del self._Tax
-		self._Tax = None
+	@Wait.deleter
+	def Wait(self):
+		del self._Wait
+		self._Wait = None
+
+	@property
+	def Futr(self):
+		return self._Futr
+
+	@Futr.setter
+	def Futr(self, value):
+		self._Futr = value if type(value) != auto else self.make_default("Futr")
+
+	@Futr.deleter
+	def Futr(self):
+		del self._Futr
+		self._Futr = None
 
 	@property
 	def Ccy(self):
@@ -57,6 +70,19 @@ class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
+	def Csh(self):
+		return self._Csh
+
+	@Csh.setter
+	def Csh(self, value):
+		self._Csh = value if type(value) != auto else self.make_default("Csh")
+
+	@Csh.deleter
+	def Csh(self):
+		del self._Csh
+		self._Csh = None
+
+	@property
 	def MnlyAccptd(self):
 		return self._MnlyAccptd
 
@@ -68,32 +94,6 @@ class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 	def MnlyAccptd(self):
 		del self._MnlyAccptd
 		self._MnlyAccptd = None
-
-	@property
-	def Excld(self):
-		return self._Excld
-
-	@Excld.setter
-	def Excld(self, value):
-		self._Excld = value if type(value) != auto else self.make_default("Excld")
-
-	@Excld.deleter
-	def Excld(self):
-		del self._Excld
-		self._Excld = None
-
-	@property
-	def Wait(self):
-		return self._Wait
-
-	@Wait.setter
-	def Wait(self, value):
-		self._Wait = value if type(value) != auto else self.make_default("Wait")
-
-	@Wait.deleter
-	def Wait(self):
-		del self._Wait
-		self._Wait = None
 
 	@property
 	def Amt(self):
@@ -109,19 +109,6 @@ class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Csh(self):
-		return self._Csh
-
-	@Csh.setter
-	def Csh(self, value):
-		self._Csh = value if type(value) != auto else self.make_default("Csh")
-
-	@Csh.deleter
-	def Csh(self):
-		del self._Csh
-		self._Csh = None
-
-	@property
 	def Pdg(self):
 		return self._Pdg
 
@@ -134,16 +121,29 @@ class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 		del self._Pdg
 		self._Pdg = None
 
+	@property
+	def Excld(self):
+		return self._Excld
+
+	@Excld.setter
+	def Excld(self, value):
+		self._Excld = value if type(value) != auto else self.make_default("Excld")
+
+	@Excld.deleter
+	def Excld(self):
+		del self._Excld
+		self._Excld = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Futr', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Elgblty', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Tax', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Ccy', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MnlyAccptd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Excld', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Elgblty', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Wait', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Amt', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Futr', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Ccy', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Csh', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MnlyAccptd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Amt', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pdg', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Excld', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 	))
 

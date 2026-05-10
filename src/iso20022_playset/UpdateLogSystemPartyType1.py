@@ -1,5 +1,5 @@
 from . import base_types
-import SystemPartyType1Choice
+from .SystemPartyType1Choice import SystemPartyType1Choice
 
 class UpdateLogSystemPartyType1(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-import CorporateActionMovementConfirmation002V16
+from .CorporateActionMovementConfirmation002V16 import CorporateActionMovementConfirmation002V16
 
 class SEEV_036_002_16():
 

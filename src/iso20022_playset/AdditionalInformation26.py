@@ -1,43 +1,30 @@
 from . import base_types
-import ClassificationType32Choice
-import PartyIdentificationAndAccount195
-import DateAndDateTime2Choice
-import YesNoIndicator
-import BlockChainAddressWallet3
-import FinancialInstrumentQuantity33Choice
-import Max35Text
-import SecuritiesAccount19
-import SecurityIdentification19
-import PartyIdentification136
+from .Max35Text import Max35Text
+from .YesNoIndicator import YesNoIndicator
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .ClassificationType32Choice import ClassificationType32Choice
+from .SecurityIdentification19 import SecurityIdentification19
+from .SecuritiesAccount19 import SecuritiesAccount19
+from .PartyIdentification136 import PartyIdentification136
+from .PartyIdentificationAndAccount195 import PartyIdentificationAndAccount195
+from .BlockChainAddressWallet3 import BlockChainAddressWallet3
+from .FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
 
 class AdditionalInformation26(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrTxId", "_XpryDt", "_FinInstrmId", "_DlvrgPty1", "_SfkpgAcct", "_CutOffDt", "_Qty", "_TxSbjtToBuyIn", "_BlckChainAdrOrWllt", "_ClssfctnTp", "_Invstr", "_RcvgPty1", "_FctvDt"]
+	__slots__ = ["_TxSbjtToBuyIn", "_FinInstrmId", "_SfkpgAcct", "_ClssfctnTp", "_BlckChainAdrOrWllt", "_CutOffDt", "_FctvDt", "_AcctOwnrTxId", "_RcvgPty1", "_DlvrgPty1", "_Qty", "_Invstr", "_XpryDt"]
 	@property
-	def AcctOwnrTxId(self):
-		return self._AcctOwnrTxId
+	def TxSbjtToBuyIn(self):
+		return self._TxSbjtToBuyIn
 
-	@AcctOwnrTxId.setter
-	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != auto else self.make_default("AcctOwnrTxId")
+	@TxSbjtToBuyIn.setter
+	def TxSbjtToBuyIn(self, value):
+		self._TxSbjtToBuyIn = value if type(value) != auto else self.make_default("TxSbjtToBuyIn")
 
-	@AcctOwnrTxId.deleter
-	def AcctOwnrTxId(self):
-		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
-
-	@property
-	def XpryDt(self):
-		return self._XpryDt
-
-	@XpryDt.setter
-	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
-
-	@XpryDt.deleter
-	def XpryDt(self):
-		del self._XpryDt
-		self._XpryDt = None
+	@TxSbjtToBuyIn.deleter
+	def TxSbjtToBuyIn(self):
+		del self._TxSbjtToBuyIn
+		self._TxSbjtToBuyIn = None
 
 	@property
 	def FinInstrmId(self):
@@ -53,19 +40,6 @@ class AdditionalInformation26(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def DlvrgPty1(self):
-		return self._DlvrgPty1
-
-	@DlvrgPty1.setter
-	def DlvrgPty1(self, value):
-		self._DlvrgPty1 = value if type(value) != auto else self.make_default("DlvrgPty1")
-
-	@DlvrgPty1.deleter
-	def DlvrgPty1(self):
-		del self._DlvrgPty1
-		self._DlvrgPty1 = None
-
-	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
 
@@ -77,58 +51,6 @@ class AdditionalInformation26(base_types._BaseFieldType):
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
-
-	@property
-	def CutOffDt(self):
-		return self._CutOffDt
-
-	@CutOffDt.setter
-	def CutOffDt(self, value):
-		self._CutOffDt = value if type(value) != auto else self.make_default("CutOffDt")
-
-	@CutOffDt.deleter
-	def CutOffDt(self):
-		del self._CutOffDt
-		self._CutOffDt = None
-
-	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
-
-	@property
-	def TxSbjtToBuyIn(self):
-		return self._TxSbjtToBuyIn
-
-	@TxSbjtToBuyIn.setter
-	def TxSbjtToBuyIn(self, value):
-		self._TxSbjtToBuyIn = value if type(value) != auto else self.make_default("TxSbjtToBuyIn")
-
-	@TxSbjtToBuyIn.deleter
-	def TxSbjtToBuyIn(self):
-		del self._TxSbjtToBuyIn
-		self._TxSbjtToBuyIn = None
-
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
 
 	@property
 	def ClssfctnTp(self):
@@ -144,17 +66,56 @@ class AdditionalInformation26(base_types._BaseFieldType):
 		self._ClssfctnTp = None
 
 	@property
-	def Invstr(self):
-		return self._Invstr
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
 
-	@Invstr.setter
-	def Invstr(self, value):
-		self._Invstr = value if type(value) != auto else self.make_default("Invstr")
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
 
-	@Invstr.deleter
-	def Invstr(self):
-		del self._Invstr
-		self._Invstr = None
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
+
+	@property
+	def CutOffDt(self):
+		return self._CutOffDt
+
+	@CutOffDt.setter
+	def CutOffDt(self, value):
+		self._CutOffDt = value if type(value) != auto else self.make_default("CutOffDt")
+
+	@CutOffDt.deleter
+	def CutOffDt(self):
+		del self._CutOffDt
+		self._CutOffDt = None
+
+	@property
+	def FctvDt(self):
+		return self._FctvDt
+
+	@FctvDt.setter
+	def FctvDt(self, value):
+		self._FctvDt = value if type(value) != auto else self.make_default("FctvDt")
+
+	@FctvDt.deleter
+	def FctvDt(self):
+		del self._FctvDt
+		self._FctvDt = None
+
+	@property
+	def AcctOwnrTxId(self):
+		return self._AcctOwnrTxId
+
+	@AcctOwnrTxId.setter
+	def AcctOwnrTxId(self, value):
+		self._AcctOwnrTxId = value if type(value) != auto else self.make_default("AcctOwnrTxId")
+
+	@AcctOwnrTxId.deleter
+	def AcctOwnrTxId(self):
+		del self._AcctOwnrTxId
+		self._AcctOwnrTxId = None
 
 	@property
 	def RcvgPty1(self):
@@ -170,31 +131,70 @@ class AdditionalInformation26(base_types._BaseFieldType):
 		self._RcvgPty1 = None
 
 	@property
-	def FctvDt(self):
-		return self._FctvDt
+	def DlvrgPty1(self):
+		return self._DlvrgPty1
 
-	@FctvDt.setter
-	def FctvDt(self, value):
-		self._FctvDt = value if type(value) != auto else self.make_default("FctvDt")
+	@DlvrgPty1.setter
+	def DlvrgPty1(self, value):
+		self._DlvrgPty1 = value if type(value) != auto else self.make_default("DlvrgPty1")
 
-	@FctvDt.deleter
-	def FctvDt(self):
-		del self._FctvDt
-		self._FctvDt = None
+	@DlvrgPty1.deleter
+	def DlvrgPty1(self):
+		del self._DlvrgPty1
+		self._DlvrgPty1 = None
+
+	@property
+	def Qty(self):
+		return self._Qty
+
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != auto else self.make_default("Qty")
+
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
+
+	@property
+	def Invstr(self):
+		return self._Invstr
+
+	@Invstr.setter
+	def Invstr(self, value):
+		self._Invstr = value if type(value) != auto else self.make_default("Invstr")
+
+	@Invstr.deleter
+	def Invstr(self):
+		del self._Invstr
+		self._Invstr = None
+
+	@property
+	def XpryDt(self):
+		return self._XpryDt
+
+	@XpryDt.setter
+	def XpryDt(self, value):
+		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
+
+	@XpryDt.deleter
+	def XpryDt(self):
+		del self._XpryDt
+		self._XpryDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpryDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvrgPty1', type=PartyIdentificationAndAccount195, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CutOffDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity33Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSbjtToBuyIn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType32Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Invstr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcvgPty1', type=PartyIdentificationAndAccount195, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CutOffDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FctvDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvgPty1', type=PartyIdentificationAndAccount195, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrgPty1', type=PartyIdentificationAndAccount195, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity33Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Invstr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpryDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

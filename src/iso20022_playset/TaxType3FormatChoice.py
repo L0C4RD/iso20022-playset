@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification13
-import TaxType3Code
+from .TaxType3Code import TaxType3Code
+from .GenericIdentification13 import GenericIdentification13
 
 class TaxType3FormatChoice(base_types._BaseFieldType):
 

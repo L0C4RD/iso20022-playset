@@ -1,28 +1,15 @@
 from . import base_types
-import StatisticalReportingStatus1Code
-import TradeParty6
-import ISODateTime
-import OriginalMessage7
-import Period4Choice
-import BranchAndFinancialInstitutionIdentification8
-import ValidationStatusReason3
+from .ValidationStatusReason3 import ValidationStatusReason3
+from .Period4Choice import Period4Choice
+from .TradeParty6 import TradeParty6
+from .OriginalMessage7 import OriginalMessage7
+from .StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
+from .ISODateTime import ISODateTime
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgPrd", "_OrgnlRefs", "_RegnAgt", "_StsDtTm", "_StsRsn", "_RptgPty", "_Sts"]
-	@property
-	def RptgPrd(self):
-		return self._RptgPrd
-
-	@RptgPrd.setter
-	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
-
-	@RptgPrd.deleter
-	def RptgPrd(self):
-		del self._RptgPrd
-		self._RptgPrd = None
-
+	__slots__ = ["_OrgnlRefs", "_StsDtTm", "_RegnAgt", "_Sts", "_RptgPrd", "_StsRsn", "_RptgPty"]
 	@property
 	def OrgnlRefs(self):
 		return self._OrgnlRefs
@@ -35,6 +22,19 @@ class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 	def OrgnlRefs(self):
 		del self._OrgnlRefs
 		self._OrgnlRefs = None
+
+	@property
+	def StsDtTm(self):
+		return self._StsDtTm
+
+	@StsDtTm.setter
+	def StsDtTm(self, value):
+		self._StsDtTm = value if type(value) != auto else self.make_default("StsDtTm")
+
+	@StsDtTm.deleter
+	def StsDtTm(self):
+		del self._StsDtTm
+		self._StsDtTm = None
 
 	@property
 	def RegnAgt(self):
@@ -50,17 +50,30 @@ class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 		self._RegnAgt = None
 
 	@property
-	def StsDtTm(self):
-		return self._StsDtTm
+	def Sts(self):
+		return self._Sts
 
-	@StsDtTm.setter
-	def StsDtTm(self, value):
-		self._StsDtTm = value if type(value) != auto else self.make_default("StsDtTm")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
 
-	@StsDtTm.deleter
-	def StsDtTm(self):
-		del self._StsDtTm
-		self._StsDtTm = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
+	@property
+	def RptgPrd(self):
+		return self._RptgPrd
+
+	@RptgPrd.setter
+	def RptgPrd(self, value):
+		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
+
+	@RptgPrd.deleter
+	def RptgPrd(self):
+		del self._RptgPrd
+		self._RptgPrd = None
 
 	@property
 	def StsRsn(self):
@@ -88,26 +101,13 @@ class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 		del self._RptgPty
 		self._RptgPty = None
 
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlRefs', type=OriginalMessage7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRsn', type=ValidationStatusReason3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptgPty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

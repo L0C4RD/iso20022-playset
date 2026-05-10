@@ -1,6 +1,6 @@
 from . import base_types
-import Header41
-import AcceptorRejection2
+from .AcceptorRejection2 import AcceptorRejection2
+from .Header41 import Header41
 
 class SaleToPOIMessageRejectionV02(base_types._BaseFieldType):
 

@@ -1,28 +1,28 @@
 from . import base_types
-import DataSetCategory19Code
-import Max5000Binary
-import TerminalManagementAction3Code
-import Response2Code
-import Max3000Binary
-import Max35Text
-import MaintenanceIdentificationAssociation1
-import ContentInformationType39
+from .Max35Text import Max35Text
+from .ContentInformationType39 import ContentInformationType39
+from .Max5000Binary import Max5000Binary
+from .DataSetCategory19Code import DataSetCategory19Code
+from .TerminalManagementAction3Code import TerminalManagementAction3Code
+from .MaintenanceIdentificationAssociation1 import MaintenanceIdentificationAssociation1
+from .Max3000Binary import Max3000Binary
+from .Response2Code import Response2Code
 
 class MaintenanceDelegation17(base_types._BaseFieldType):
 
-	__slots__ = ["_Rspn", "_RspnRsn", "_DlgtnProof", "_MntncSvc", "_POIIdAssoctn", "_DlgtnScpId", "_PrtctdDlgtnProof", "_DlgtnScpDef", "_POISubset", "_DlgtnTp"]
+	__slots__ = ["_MntncSvc", "_RspnRsn", "_DlgtnTp", "_DlgtnScpId", "_POISubset", "_Rspn", "_DlgtnProof", "_DlgtnScpDef", "_POIIdAssoctn", "_PrtctdDlgtnProof"]
 	@property
-	def Rspn(self):
-		return self._Rspn
+	def MntncSvc(self):
+		return self._MntncSvc
 
-	@Rspn.setter
-	def Rspn(self, value):
-		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
+	@MntncSvc.setter
+	def MntncSvc(self, value):
+		self._MntncSvc = value if type(value) != auto else self.make_default("MntncSvc")
 
-	@Rspn.deleter
-	def Rspn(self):
-		del self._Rspn
-		self._Rspn = None
+	@MntncSvc.deleter
+	def MntncSvc(self):
+		del self._MntncSvc
+		self._MntncSvc = None
 
 	@property
 	def RspnRsn(self):
@@ -38,43 +38,17 @@ class MaintenanceDelegation17(base_types._BaseFieldType):
 		self._RspnRsn = None
 
 	@property
-	def DlgtnProof(self):
-		return self._DlgtnProof
+	def DlgtnTp(self):
+		return self._DlgtnTp
 
-	@DlgtnProof.setter
-	def DlgtnProof(self, value):
-		self._DlgtnProof = value if type(value) != auto else self.make_default("DlgtnProof")
+	@DlgtnTp.setter
+	def DlgtnTp(self, value):
+		self._DlgtnTp = value if type(value) != auto else self.make_default("DlgtnTp")
 
-	@DlgtnProof.deleter
-	def DlgtnProof(self):
-		del self._DlgtnProof
-		self._DlgtnProof = None
-
-	@property
-	def MntncSvc(self):
-		return self._MntncSvc
-
-	@MntncSvc.setter
-	def MntncSvc(self, value):
-		self._MntncSvc = value if type(value) != auto else self.make_default("MntncSvc")
-
-	@MntncSvc.deleter
-	def MntncSvc(self):
-		del self._MntncSvc
-		self._MntncSvc = None
-
-	@property
-	def POIIdAssoctn(self):
-		return self._POIIdAssoctn
-
-	@POIIdAssoctn.setter
-	def POIIdAssoctn(self, value):
-		self._POIIdAssoctn = value if type(value) != auto else self.make_default("POIIdAssoctn")
-
-	@POIIdAssoctn.deleter
-	def POIIdAssoctn(self):
-		del self._POIIdAssoctn
-		self._POIIdAssoctn = None
+	@DlgtnTp.deleter
+	def DlgtnTp(self):
+		del self._DlgtnTp
+		self._DlgtnTp = None
 
 	@property
 	def DlgtnScpId(self):
@@ -90,17 +64,43 @@ class MaintenanceDelegation17(base_types._BaseFieldType):
 		self._DlgtnScpId = None
 
 	@property
-	def PrtctdDlgtnProof(self):
-		return self._PrtctdDlgtnProof
+	def POISubset(self):
+		return self._POISubset
 
-	@PrtctdDlgtnProof.setter
-	def PrtctdDlgtnProof(self, value):
-		self._PrtctdDlgtnProof = value if type(value) != auto else self.make_default("PrtctdDlgtnProof")
+	@POISubset.setter
+	def POISubset(self, value):
+		self._POISubset = value if type(value) != auto else self.make_default("POISubset")
 
-	@PrtctdDlgtnProof.deleter
-	def PrtctdDlgtnProof(self):
-		del self._PrtctdDlgtnProof
-		self._PrtctdDlgtnProof = None
+	@POISubset.deleter
+	def POISubset(self):
+		del self._POISubset
+		self._POISubset = None
+
+	@property
+	def Rspn(self):
+		return self._Rspn
+
+	@Rspn.setter
+	def Rspn(self, value):
+		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
+
+	@Rspn.deleter
+	def Rspn(self):
+		del self._Rspn
+		self._Rspn = None
+
+	@property
+	def DlgtnProof(self):
+		return self._DlgtnProof
+
+	@DlgtnProof.setter
+	def DlgtnProof(self, value):
+		self._DlgtnProof = value if type(value) != auto else self.make_default("DlgtnProof")
+
+	@DlgtnProof.deleter
+	def DlgtnProof(self):
+		del self._DlgtnProof
+		self._DlgtnProof = None
 
 	@property
 	def DlgtnScpDef(self):
@@ -116,41 +116,41 @@ class MaintenanceDelegation17(base_types._BaseFieldType):
 		self._DlgtnScpDef = None
 
 	@property
-	def POISubset(self):
-		return self._POISubset
+	def POIIdAssoctn(self):
+		return self._POIIdAssoctn
 
-	@POISubset.setter
-	def POISubset(self, value):
-		self._POISubset = value if type(value) != auto else self.make_default("POISubset")
+	@POIIdAssoctn.setter
+	def POIIdAssoctn(self, value):
+		self._POIIdAssoctn = value if type(value) != auto else self.make_default("POIIdAssoctn")
 
-	@POISubset.deleter
-	def POISubset(self):
-		del self._POISubset
-		self._POISubset = None
+	@POIIdAssoctn.deleter
+	def POIIdAssoctn(self):
+		del self._POIIdAssoctn
+		self._POIIdAssoctn = None
 
 	@property
-	def DlgtnTp(self):
-		return self._DlgtnTp
+	def PrtctdDlgtnProof(self):
+		return self._PrtctdDlgtnProof
 
-	@DlgtnTp.setter
-	def DlgtnTp(self, value):
-		self._DlgtnTp = value if type(value) != auto else self.make_default("DlgtnTp")
+	@PrtctdDlgtnProof.setter
+	def PrtctdDlgtnProof(self, value):
+		self._PrtctdDlgtnProof = value if type(value) != auto else self.make_default("PrtctdDlgtnProof")
 
-	@DlgtnTp.deleter
-	def DlgtnTp(self):
-		del self._DlgtnTp
-		self._DlgtnTp = None
+	@PrtctdDlgtnProof.deleter
+	def PrtctdDlgtnProof(self):
+		del self._PrtctdDlgtnProof
+		self._PrtctdDlgtnProof = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rspn', type=Response2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlgtnProof', type=Max5000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MntncSvc', type=DataSetCategory19Code, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='POIIdAssoctn', type=MaintenanceIdentificationAssociation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DlgtnScpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdDlgtnProof', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlgtnScpDef', type=Max3000Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POISubset', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RspnRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlgtnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlgtnScpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POISubset', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rspn', type=Response2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlgtnProof', type=Max5000Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlgtnScpDef', type=Max3000Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POIIdAssoctn', type=MaintenanceIdentificationAssociation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrtctdDlgtnProof', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
 	))
 

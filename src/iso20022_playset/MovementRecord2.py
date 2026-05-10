@@ -1,25 +1,25 @@
 from . import base_types
-import PartyIdentification272
-import Number
-import AmountAndDirection5
-import CashAccount40
-import Max35Text
+from .Max35Text import Max35Text
+from .PartyIdentification272 import PartyIdentification272
+from .Number import Number
+from .CashAccount40 import CashAccount40
+from .AmountAndDirection5 import AmountAndDirection5
 
 class MovementRecord2(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_SttlmAgt", "_Ptcpt", "_PtcptAcct", "_SeqNb", "_SttlmAgtAcct", "_Amt", "_Id"]
+	__slots__ = ["_PtcptAcct", "_SttlmAgt", "_Id", "_Ref", "_Ptcpt", "_SeqNb", "_SttlmAgtAcct", "_Amt"]
 	@property
-	def Ref(self):
-		return self._Ref
+	def PtcptAcct(self):
+		return self._PtcptAcct
 
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+	@PtcptAcct.setter
+	def PtcptAcct(self, value):
+		self._PtcptAcct = value if type(value) != auto else self.make_default("PtcptAcct")
 
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
+	@PtcptAcct.deleter
+	def PtcptAcct(self):
+		del self._PtcptAcct
+		self._PtcptAcct = None
 
 	@property
 	def SttlmAgt(self):
@@ -35,6 +35,32 @@ class MovementRecord2(base_types._BaseFieldType):
 		self._SttlmAgt = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
+	@property
 	def Ptcpt(self):
 		return self._Ptcpt
 
@@ -46,19 +72,6 @@ class MovementRecord2(base_types._BaseFieldType):
 	def Ptcpt(self):
 		del self._Ptcpt
 		self._Ptcpt = None
-
-	@property
-	def PtcptAcct(self):
-		return self._PtcptAcct
-
-	@PtcptAcct.setter
-	def PtcptAcct(self, value):
-		self._PtcptAcct = value if type(value) != auto else self.make_default("PtcptAcct")
-
-	@PtcptAcct.deleter
-	def PtcptAcct(self):
-		del self._PtcptAcct
-		self._PtcptAcct = None
 
 	@property
 	def SeqNb(self):
@@ -99,27 +112,14 @@ class MovementRecord2(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAgt', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ptcpt', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtcptAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAgt', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ptcpt', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=AmountAndDirection5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,32 +1,19 @@
 from . import base_types
-import Driver3
-import Max1Number
-import Max10Text
-import PlainCardData23
-import Max35Text
-import FleetTransactionDetail1
-import AdditionalInformation31
-import Vehicle6
-import LocalAmenity1
-import FleetLineItem5
-import Max70Text
+from .Max35Text import Max35Text
+from .FleetLineItem5 import FleetLineItem5
+from .FleetTransactionDetail1 import FleetTransactionDetail1
+from .Vehicle6 import Vehicle6
+from .LocalAmenity1 import LocalAmenity1
+from .Max10Text import Max10Text
+from .Max70Text import Max70Text
+from .PlainCardData23 import PlainCardData23
+from .Max1Number import Max1Number
+from .AdditionalInformation31 import AdditionalInformation31
+from .Driver3 import Driver3
 
 class FleetData6(base_types._BaseFieldType):
 
-	__slots__ = ["_TripBllgId", "_TripJobNb", "_TxRltdData", "_CardFuelPrmptCd", "_TripDlvryTcktNb", "_TripCtrlNb", "_DrvrOrVhclCard", "_LclAmnty", "_AgtFuelPrmptCd", "_AddtlNtrdData", "_Vhcl", "_Drvr", "_TripWorkOrdr", "_TripNb", "_TripInvcNb", "_LineItm"]
-	@property
-	def TripBllgId(self):
-		return self._TripBllgId
-
-	@TripBllgId.setter
-	def TripBllgId(self, value):
-		self._TripBllgId = value if type(value) != auto else self.make_default("TripBllgId")
-
-	@TripBllgId.deleter
-	def TripBllgId(self):
-		del self._TripBllgId
-		self._TripBllgId = None
-
+	__slots__ = ["_TripJobNb", "_LclAmnty", "_AddtlNtrdData", "_CardFuelPrmptCd", "_AgtFuelPrmptCd", "_TripBllgId", "_TxRltdData", "_DrvrOrVhclCard", "_TripDlvryTcktNb", "_LineItm", "_TripNb", "_TripCtrlNb", "_Vhcl", "_TripInvcNb", "_Drvr", "_TripWorkOrdr"]
 	@property
 	def TripJobNb(self):
 		return self._TripJobNb
@@ -39,71 +26,6 @@ class FleetData6(base_types._BaseFieldType):
 	def TripJobNb(self):
 		del self._TripJobNb
 		self._TripJobNb = None
-
-	@property
-	def TxRltdData(self):
-		return self._TxRltdData
-
-	@TxRltdData.setter
-	def TxRltdData(self, value):
-		self._TxRltdData = value if type(value) != auto else self.make_default("TxRltdData")
-
-	@TxRltdData.deleter
-	def TxRltdData(self):
-		del self._TxRltdData
-		self._TxRltdData = None
-
-	@property
-	def CardFuelPrmptCd(self):
-		return self._CardFuelPrmptCd
-
-	@CardFuelPrmptCd.setter
-	def CardFuelPrmptCd(self, value):
-		self._CardFuelPrmptCd = value if type(value) != auto else self.make_default("CardFuelPrmptCd")
-
-	@CardFuelPrmptCd.deleter
-	def CardFuelPrmptCd(self):
-		del self._CardFuelPrmptCd
-		self._CardFuelPrmptCd = None
-
-	@property
-	def TripDlvryTcktNb(self):
-		return self._TripDlvryTcktNb
-
-	@TripDlvryTcktNb.setter
-	def TripDlvryTcktNb(self, value):
-		self._TripDlvryTcktNb = value if type(value) != auto else self.make_default("TripDlvryTcktNb")
-
-	@TripDlvryTcktNb.deleter
-	def TripDlvryTcktNb(self):
-		del self._TripDlvryTcktNb
-		self._TripDlvryTcktNb = None
-
-	@property
-	def TripCtrlNb(self):
-		return self._TripCtrlNb
-
-	@TripCtrlNb.setter
-	def TripCtrlNb(self, value):
-		self._TripCtrlNb = value if type(value) != auto else self.make_default("TripCtrlNb")
-
-	@TripCtrlNb.deleter
-	def TripCtrlNb(self):
-		del self._TripCtrlNb
-		self._TripCtrlNb = None
-
-	@property
-	def DrvrOrVhclCard(self):
-		return self._DrvrOrVhclCard
-
-	@DrvrOrVhclCard.setter
-	def DrvrOrVhclCard(self, value):
-		self._DrvrOrVhclCard = value if type(value) != auto else self.make_default("DrvrOrVhclCard")
-
-	@DrvrOrVhclCard.deleter
-	def DrvrOrVhclCard(self):
-		del self._DrvrOrVhclCard
-		self._DrvrOrVhclCard = None
 
 	@property
 	def LclAmnty(self):
@@ -119,19 +41,6 @@ class FleetData6(base_types._BaseFieldType):
 		self._LclAmnty = None
 
 	@property
-	def AgtFuelPrmptCd(self):
-		return self._AgtFuelPrmptCd
-
-	@AgtFuelPrmptCd.setter
-	def AgtFuelPrmptCd(self, value):
-		self._AgtFuelPrmptCd = value if type(value) != auto else self.make_default("AgtFuelPrmptCd")
-
-	@AgtFuelPrmptCd.deleter
-	def AgtFuelPrmptCd(self):
-		del self._AgtFuelPrmptCd
-		self._AgtFuelPrmptCd = None
-
-	@property
 	def AddtlNtrdData(self):
 		return self._AddtlNtrdData
 
@@ -145,6 +54,123 @@ class FleetData6(base_types._BaseFieldType):
 		self._AddtlNtrdData = None
 
 	@property
+	def CardFuelPrmptCd(self):
+		return self._CardFuelPrmptCd
+
+	@CardFuelPrmptCd.setter
+	def CardFuelPrmptCd(self, value):
+		self._CardFuelPrmptCd = value if type(value) != auto else self.make_default("CardFuelPrmptCd")
+
+	@CardFuelPrmptCd.deleter
+	def CardFuelPrmptCd(self):
+		del self._CardFuelPrmptCd
+		self._CardFuelPrmptCd = None
+
+	@property
+	def AgtFuelPrmptCd(self):
+		return self._AgtFuelPrmptCd
+
+	@AgtFuelPrmptCd.setter
+	def AgtFuelPrmptCd(self, value):
+		self._AgtFuelPrmptCd = value if type(value) != auto else self.make_default("AgtFuelPrmptCd")
+
+	@AgtFuelPrmptCd.deleter
+	def AgtFuelPrmptCd(self):
+		del self._AgtFuelPrmptCd
+		self._AgtFuelPrmptCd = None
+
+	@property
+	def TripBllgId(self):
+		return self._TripBllgId
+
+	@TripBllgId.setter
+	def TripBllgId(self, value):
+		self._TripBllgId = value if type(value) != auto else self.make_default("TripBllgId")
+
+	@TripBllgId.deleter
+	def TripBllgId(self):
+		del self._TripBllgId
+		self._TripBllgId = None
+
+	@property
+	def TxRltdData(self):
+		return self._TxRltdData
+
+	@TxRltdData.setter
+	def TxRltdData(self, value):
+		self._TxRltdData = value if type(value) != auto else self.make_default("TxRltdData")
+
+	@TxRltdData.deleter
+	def TxRltdData(self):
+		del self._TxRltdData
+		self._TxRltdData = None
+
+	@property
+	def DrvrOrVhclCard(self):
+		return self._DrvrOrVhclCard
+
+	@DrvrOrVhclCard.setter
+	def DrvrOrVhclCard(self, value):
+		self._DrvrOrVhclCard = value if type(value) != auto else self.make_default("DrvrOrVhclCard")
+
+	@DrvrOrVhclCard.deleter
+	def DrvrOrVhclCard(self):
+		del self._DrvrOrVhclCard
+		self._DrvrOrVhclCard = None
+
+	@property
+	def TripDlvryTcktNb(self):
+		return self._TripDlvryTcktNb
+
+	@TripDlvryTcktNb.setter
+	def TripDlvryTcktNb(self, value):
+		self._TripDlvryTcktNb = value if type(value) != auto else self.make_default("TripDlvryTcktNb")
+
+	@TripDlvryTcktNb.deleter
+	def TripDlvryTcktNb(self):
+		del self._TripDlvryTcktNb
+		self._TripDlvryTcktNb = None
+
+	@property
+	def LineItm(self):
+		return self._LineItm
+
+	@LineItm.setter
+	def LineItm(self, value):
+		self._LineItm = value if type(value) != auto else self.make_default("LineItm")
+
+	@LineItm.deleter
+	def LineItm(self):
+		del self._LineItm
+		self._LineItm = None
+
+	@property
+	def TripNb(self):
+		return self._TripNb
+
+	@TripNb.setter
+	def TripNb(self, value):
+		self._TripNb = value if type(value) != auto else self.make_default("TripNb")
+
+	@TripNb.deleter
+	def TripNb(self):
+		del self._TripNb
+		self._TripNb = None
+
+	@property
+	def TripCtrlNb(self):
+		return self._TripCtrlNb
+
+	@TripCtrlNb.setter
+	def TripCtrlNb(self, value):
+		self._TripCtrlNb = value if type(value) != auto else self.make_default("TripCtrlNb")
+
+	@TripCtrlNb.deleter
+	def TripCtrlNb(self):
+		del self._TripCtrlNb
+		self._TripCtrlNb = None
+
+	@property
 	def Vhcl(self):
 		return self._Vhcl
 
@@ -156,6 +182,19 @@ class FleetData6(base_types._BaseFieldType):
 	def Vhcl(self):
 		del self._Vhcl
 		self._Vhcl = None
+
+	@property
+	def TripInvcNb(self):
+		return self._TripInvcNb
+
+	@TripInvcNb.setter
+	def TripInvcNb(self, value):
+		self._TripInvcNb = value if type(value) != auto else self.make_default("TripInvcNb")
+
+	@TripInvcNb.deleter
+	def TripInvcNb(self):
+		del self._TripInvcNb
+		self._TripInvcNb = None
 
 	@property
 	def Drvr(self):
@@ -183,61 +222,22 @@ class FleetData6(base_types._BaseFieldType):
 		del self._TripWorkOrdr
 		self._TripWorkOrdr = None
 
-	@property
-	def TripNb(self):
-		return self._TripNb
-
-	@TripNb.setter
-	def TripNb(self, value):
-		self._TripNb = value if type(value) != auto else self.make_default("TripNb")
-
-	@TripNb.deleter
-	def TripNb(self):
-		del self._TripNb
-		self._TripNb = None
-
-	@property
-	def TripInvcNb(self):
-		return self._TripInvcNb
-
-	@TripInvcNb.setter
-	def TripInvcNb(self, value):
-		self._TripInvcNb = value if type(value) != auto else self.make_default("TripInvcNb")
-
-	@TripInvcNb.deleter
-	def TripInvcNb(self):
-		del self._TripInvcNb
-		self._TripInvcNb = None
-
-	@property
-	def LineItm(self):
-		return self._LineItm
-
-	@LineItm.setter
-	def LineItm(self, value):
-		self._LineItm = value if type(value) != auto else self.make_default("LineItm")
-
-	@LineItm.deleter
-	def LineItm(self):
-		del self._LineItm
-		self._LineItm = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TripBllgId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TripJobNb', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxRltdData', type=FleetTransactionDetail1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CardFuelPrmptCd', type=Max1Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TripDlvryTcktNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TripCtrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrvrOrVhclCard', type=PlainCardData23, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LclAmnty', type=LocalAmenity1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AgtFuelPrmptCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlNtrdData', type=AdditionalInformation31, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardFuelPrmptCd', type=Max1Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgtFuelPrmptCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TripBllgId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxRltdData', type=FleetTransactionDetail1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DrvrOrVhclCard', type=PlainCardData23, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TripDlvryTcktNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LineItm', type=FleetLineItem5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TripNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TripCtrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vhcl', type=Vehicle6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TripInvcNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Drvr', type=Driver3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TripWorkOrdr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TripNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TripInvcNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LineItm', type=FleetLineItem5, min=0, max=None, mutex_group=None, array=True),
 	))
 

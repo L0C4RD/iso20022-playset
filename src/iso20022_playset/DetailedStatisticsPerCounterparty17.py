@@ -1,24 +1,24 @@
 from . import base_types
-import ISODate
-import DetailedAbnormalValuesStatistics4Choice
-import DetailedMissingMarginInformationStatistics4Choice
-import DetailedMissingValuationsStatistics4Choice
+from .ISODate import ISODate
+from .DetailedMissingValuationsStatistics4Choice import DetailedMissingValuationsStatistics4Choice
+from .DetailedAbnormalValuesStatistics4Choice import DetailedAbnormalValuesStatistics4Choice
+from .DetailedMissingMarginInformationStatistics4Choice import DetailedMissingMarginInformationStatistics4Choice
 
 class DetailedStatisticsPerCounterparty17(base_types._BaseFieldType):
 
-	__slots__ = ["_MssngMrgnInf", "_MssngValtn", "_AbnrmlVals", "_RefDt"]
+	__slots__ = ["_AbnrmlVals", "_MssngValtn", "_MssngMrgnInf", "_RefDt"]
 	@property
-	def MssngMrgnInf(self):
-		return self._MssngMrgnInf
+	def AbnrmlVals(self):
+		return self._AbnrmlVals
 
-	@MssngMrgnInf.setter
-	def MssngMrgnInf(self, value):
-		self._MssngMrgnInf = value if type(value) != auto else self.make_default("MssngMrgnInf")
+	@AbnrmlVals.setter
+	def AbnrmlVals(self, value):
+		self._AbnrmlVals = value if type(value) != auto else self.make_default("AbnrmlVals")
 
-	@MssngMrgnInf.deleter
-	def MssngMrgnInf(self):
-		del self._MssngMrgnInf
-		self._MssngMrgnInf = None
+	@AbnrmlVals.deleter
+	def AbnrmlVals(self):
+		del self._AbnrmlVals
+		self._AbnrmlVals = None
 
 	@property
 	def MssngValtn(self):
@@ -34,17 +34,17 @@ class DetailedStatisticsPerCounterparty17(base_types._BaseFieldType):
 		self._MssngValtn = None
 
 	@property
-	def AbnrmlVals(self):
-		return self._AbnrmlVals
+	def MssngMrgnInf(self):
+		return self._MssngMrgnInf
 
-	@AbnrmlVals.setter
-	def AbnrmlVals(self, value):
-		self._AbnrmlVals = value if type(value) != auto else self.make_default("AbnrmlVals")
+	@MssngMrgnInf.setter
+	def MssngMrgnInf(self, value):
+		self._MssngMrgnInf = value if type(value) != auto else self.make_default("MssngMrgnInf")
 
-	@AbnrmlVals.deleter
-	def AbnrmlVals(self):
-		del self._AbnrmlVals
-		self._AbnrmlVals = None
+	@MssngMrgnInf.deleter
+	def MssngMrgnInf(self):
+		del self._MssngMrgnInf
+		self._MssngMrgnInf = None
 
 	@property
 	def RefDt(self):
@@ -60,9 +60,9 @@ class DetailedStatisticsPerCounterparty17(base_types._BaseFieldType):
 		self._RefDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MssngMrgnInf', type=DetailedMissingMarginInformationStatistics4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MssngValtn', type=DetailedMissingValuationsStatistics4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AbnrmlVals', type=DetailedAbnormalValuesStatistics4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MssngValtn', type=DetailedMissingValuationsStatistics4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MssngMrgnInf', type=DetailedMissingMarginInformationStatistics4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

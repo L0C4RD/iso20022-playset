@@ -1,5 +1,5 @@
 from . import base_types
-import CancelCaseAssignmentV05
+from .CancelCaseAssignmentV05 import CancelCaseAssignmentV05
 
 class CAMT_032_001_05():
 

@@ -1,68 +1,16 @@
 from . import base_types
-import PartyIdentification272
-import EntryStatus1Code
-import AccountIdentificationSearchCriteria2Choice
-import DateAndDateTimeSearch3Choice
-import BranchAndFinancialInstitutionIdentification8
-import ActiveOrHistoricAmountRange2Choice
-import CreditDebitCode
-import ActiveOrHistoricCurrencyCode
+from .AccountIdentificationSearchCriteria2Choice import AccountIdentificationSearchCriteria2Choice
+from .PartyIdentification272 import PartyIdentification272
+from .DateAndDateTimeSearch3Choice import DateAndDateTimeSearch3Choice
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .ActiveOrHistoricAmountRange2Choice import ActiveOrHistoricAmountRange2Choice
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .EntryStatus1Code import EntryStatus1Code
+from .CreditDebitCode import CreditDebitCode
 
 class CashAccountEntrySearch8(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_NtryAmtCcy", "_AcctSvcr", "_NtryAmt", "_NtrySts", "_NtryDt", "_CdtDbtInd", "_AcctOwnr"]
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
-	@property
-	def NtryAmtCcy(self):
-		return self._NtryAmtCcy
-
-	@NtryAmtCcy.setter
-	def NtryAmtCcy(self, value):
-		self._NtryAmtCcy = value if type(value) != auto else self.make_default("NtryAmtCcy")
-
-	@NtryAmtCcy.deleter
-	def NtryAmtCcy(self):
-		del self._NtryAmtCcy
-		self._NtryAmtCcy = None
-
-	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
-
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
-
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
-
-	@property
-	def NtryAmt(self):
-		return self._NtryAmt
-
-	@NtryAmt.setter
-	def NtryAmt(self, value):
-		self._NtryAmt = value if type(value) != auto else self.make_default("NtryAmt")
-
-	@NtryAmt.deleter
-	def NtryAmt(self):
-		del self._NtryAmt
-		self._NtryAmt = None
-
+	__slots__ = ["_NtrySts", "_NtryDt", "_AcctSvcr", "_AcctId", "_NtryAmt", "_NtryAmtCcy", "_CdtDbtInd", "_AcctOwnr"]
 	@property
 	def NtrySts(self):
 		return self._NtrySts
@@ -88,6 +36,58 @@ class CashAccountEntrySearch8(base_types._BaseFieldType):
 	def NtryDt(self):
 		del self._NtryDt
 		self._NtryDt = None
+
+	@property
+	def AcctSvcr(self):
+		return self._AcctSvcr
+
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
+
+	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
+	@property
+	def NtryAmt(self):
+		return self._NtryAmt
+
+	@NtryAmt.setter
+	def NtryAmt(self, value):
+		self._NtryAmt = value if type(value) != auto else self.make_default("NtryAmt")
+
+	@NtryAmt.deleter
+	def NtryAmt(self):
+		del self._NtryAmt
+		self._NtryAmt = None
+
+	@property
+	def NtryAmtCcy(self):
+		return self._NtryAmtCcy
+
+	@NtryAmtCcy.setter
+	def NtryAmtCcy(self, value):
+		self._NtryAmtCcy = value if type(value) != auto else self.make_default("NtryAmtCcy")
+
+	@NtryAmtCcy.deleter
+	def NtryAmtCcy(self):
+		del self._NtryAmtCcy
+		self._NtryAmtCcy = None
 
 	@property
 	def CdtDbtInd(self):
@@ -116,12 +116,12 @@ class CashAccountEntrySearch8(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctId', type=AccountIdentificationSearchCriteria2Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NtryAmtCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtryAmt', type=ActiveOrHistoricAmountRange2Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NtrySts', type=EntryStatus1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NtryDt', type=DateAndDateTimeSearch3Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=AccountIdentificationSearchCriteria2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NtryAmt', type=ActiveOrHistoricAmountRange2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NtryAmtCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 	))

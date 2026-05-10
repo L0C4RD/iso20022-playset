@@ -1,36 +1,10 @@
 from . import base_types
-import Max35Text
-import TaxExemptionReasonFormatChoice
+from .TaxExemptionReasonFormatChoice import TaxExemptionReasonFormatChoice
+from .Max35Text import Max35Text
 
 class TaxParty3(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxXmptnRsn", "_RegnId", "_TaxId", "_TaxTp"]
-	@property
-	def TaxXmptnRsn(self):
-		return self._TaxXmptnRsn
-
-	@TaxXmptnRsn.setter
-	def TaxXmptnRsn(self, value):
-		self._TaxXmptnRsn = value if type(value) != auto else self.make_default("TaxXmptnRsn")
-
-	@TaxXmptnRsn.deleter
-	def TaxXmptnRsn(self):
-		del self._TaxXmptnRsn
-		self._TaxXmptnRsn = None
-
-	@property
-	def RegnId(self):
-		return self._RegnId
-
-	@RegnId.setter
-	def RegnId(self, value):
-		self._RegnId = value if type(value) != auto else self.make_default("RegnId")
-
-	@RegnId.deleter
-	def RegnId(self):
-		del self._RegnId
-		self._RegnId = None
-
+	__slots__ = ["_TaxId", "_TaxTp", "_RegnId", "_TaxXmptnRsn"]
 	@property
 	def TaxId(self):
 		return self._TaxId
@@ -57,10 +31,36 @@ class TaxParty3(base_types._BaseFieldType):
 		del self._TaxTp
 		self._TaxTp = None
 
+	@property
+	def RegnId(self):
+		return self._RegnId
+
+	@RegnId.setter
+	def RegnId(self, value):
+		self._RegnId = value if type(value) != auto else self.make_default("RegnId")
+
+	@RegnId.deleter
+	def RegnId(self):
+		del self._RegnId
+		self._RegnId = None
+
+	@property
+	def TaxXmptnRsn(self):
+		return self._TaxXmptnRsn
+
+	@TaxXmptnRsn.setter
+	def TaxXmptnRsn(self, value):
+		self._TaxXmptnRsn = value if type(value) != auto else self.make_default("TaxXmptnRsn")
+
+	@TaxXmptnRsn.deleter
+	def TaxXmptnRsn(self):
+		del self._TaxXmptnRsn
+		self._TaxXmptnRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxXmptnRsn', type=TaxExemptionReasonFormatChoice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RegnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxXmptnRsn', type=TaxExemptionReasonFormatChoice, min=0, max=None, mutex_group=None, array=True),
 	))
 

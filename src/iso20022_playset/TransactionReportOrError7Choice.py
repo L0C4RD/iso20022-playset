@@ -1,6 +1,6 @@
 from . import base_types
-import ErrorHandling5
-import Transactions11
+from .Transactions11 import Transactions11
+from .ErrorHandling5 import ErrorHandling5
 
 class TransactionReportOrError7Choice(base_types._BaseFieldType):
 

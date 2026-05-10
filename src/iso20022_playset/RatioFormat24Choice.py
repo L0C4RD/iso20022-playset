@@ -1,25 +1,12 @@
 from . import base_types
-import AmountAndQuantityRatio5
-import QuantityToQuantityRatio2
-import AmountToAmountRatio3
-import RateValueType7Code
+from .RateValueType7Code import RateValueType7Code
+from .QuantityToQuantityRatio2 import QuantityToQuantityRatio2
+from .AmountAndQuantityRatio5 import AmountAndQuantityRatio5
+from .AmountToAmountRatio3 import AmountToAmountRatio3
 
 class RatioFormat24Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_QtyToAmt", "_NotSpcfdRate", "_AmtToQty", "_AmtToAmt", "_QtyToQty"]
-	@property
-	def QtyToAmt(self):
-		return self._QtyToAmt
-
-	@QtyToAmt.setter
-	def QtyToAmt(self, value):
-		self._QtyToAmt = value if type(value) != auto else self.make_default("QtyToAmt")
-
-	@QtyToAmt.deleter
-	def QtyToAmt(self):
-		del self._QtyToAmt
-		self._QtyToAmt = None
-
+	__slots__ = ["_NotSpcfdRate", "_QtyToAmt", "_AmtToAmt", "_AmtToQty", "_QtyToQty"]
 	@property
 	def NotSpcfdRate(self):
 		return self._NotSpcfdRate
@@ -34,17 +21,17 @@ class RatioFormat24Choice(base_types._BaseFieldType):
 		self._NotSpcfdRate = None
 
 	@property
-	def AmtToQty(self):
-		return self._AmtToQty
+	def QtyToAmt(self):
+		return self._QtyToAmt
 
-	@AmtToQty.setter
-	def AmtToQty(self, value):
-		self._AmtToQty = value if type(value) != auto else self.make_default("AmtToQty")
+	@QtyToAmt.setter
+	def QtyToAmt(self, value):
+		self._QtyToAmt = value if type(value) != auto else self.make_default("QtyToAmt")
 
-	@AmtToQty.deleter
-	def AmtToQty(self):
-		del self._AmtToQty
-		self._AmtToQty = None
+	@QtyToAmt.deleter
+	def QtyToAmt(self):
+		del self._QtyToAmt
+		self._QtyToAmt = None
 
 	@property
 	def AmtToAmt(self):
@@ -60,6 +47,19 @@ class RatioFormat24Choice(base_types._BaseFieldType):
 		self._AmtToAmt = None
 
 	@property
+	def AmtToQty(self):
+		return self._AmtToQty
+
+	@AmtToQty.setter
+	def AmtToQty(self, value):
+		self._AmtToQty = value if type(value) != auto else self.make_default("AmtToQty")
+
+	@AmtToQty.deleter
+	def AmtToQty(self):
+		del self._AmtToQty
+		self._AmtToQty = None
+
+	@property
 	def QtyToQty(self):
 		return self._QtyToQty
 
@@ -73,10 +73,10 @@ class RatioFormat24Choice(base_types._BaseFieldType):
 		self._QtyToQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QtyToAmt', type=AmountAndQuantityRatio5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AmtToQty', type=AmountAndQuantityRatio5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='QtyToAmt', type=AmountAndQuantityRatio5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtToAmt', type=AmountToAmountRatio3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtToQty', type=AmountAndQuantityRatio5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='QtyToQty', type=QuantityToQuantityRatio2, min=0, max=1, mutex_group=1, array=False),
 	))
 

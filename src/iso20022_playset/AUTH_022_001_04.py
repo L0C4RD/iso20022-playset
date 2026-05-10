@@ -1,5 +1,5 @@
 from . import base_types
-import ContractRegistrationStatementV04
+from .ContractRegistrationStatementV04 import ContractRegistrationStatementV04
 
 class AUTH_022_001_04():
 

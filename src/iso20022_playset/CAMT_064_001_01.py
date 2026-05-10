@@ -1,5 +1,5 @@
 from . import base_types
-import LimitUtilisationJournalQueryV01
+from .LimitUtilisationJournalQueryV01 import LimitUtilisationJournalQueryV01
 
 class CAMT_064_001_01():
 

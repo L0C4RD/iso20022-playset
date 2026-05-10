@@ -1,11 +1,24 @@
 from . import base_types
-import FinancingInformationAndStatus1
-import MessageIdentification1
-import OriginalRequestInformation1
+from .OriginalRequestInformation1 import OriginalRequestInformation1
+from .MessageIdentification1 import MessageIdentification1
+from .FinancingInformationAndStatus1 import FinancingInformationAndStatus1
 
 class InvoiceFinancingRequestStatusV01(base_types._BaseFieldType):
 
-	__slots__ = ["_FincgInfAndSts", "_StsId", "_OrgnlReqInfAndSts"]
+	__slots__ = ["_OrgnlReqInfAndSts", "_FincgInfAndSts", "_StsId"]
+	@property
+	def OrgnlReqInfAndSts(self):
+		return self._OrgnlReqInfAndSts
+
+	@OrgnlReqInfAndSts.setter
+	def OrgnlReqInfAndSts(self, value):
+		self._OrgnlReqInfAndSts = value if type(value) != auto else self.make_default("OrgnlReqInfAndSts")
+
+	@OrgnlReqInfAndSts.deleter
+	def OrgnlReqInfAndSts(self):
+		del self._OrgnlReqInfAndSts
+		self._OrgnlReqInfAndSts = None
+
 	@property
 	def FincgInfAndSts(self):
 		return self._FincgInfAndSts
@@ -32,22 +45,9 @@ class InvoiceFinancingRequestStatusV01(base_types._BaseFieldType):
 		del self._StsId
 		self._StsId = None
 
-	@property
-	def OrgnlReqInfAndSts(self):
-		return self._OrgnlReqInfAndSts
-
-	@OrgnlReqInfAndSts.setter
-	def OrgnlReqInfAndSts(self, value):
-		self._OrgnlReqInfAndSts = value if type(value) != auto else self.make_default("OrgnlReqInfAndSts")
-
-	@OrgnlReqInfAndSts.deleter
-	def OrgnlReqInfAndSts(self):
-		del self._OrgnlReqInfAndSts
-		self._OrgnlReqInfAndSts = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OrgnlReqInfAndSts', type=OriginalRequestInformation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FincgInfAndSts', type=FinancingInformationAndStatus1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlReqInfAndSts', type=OriginalRequestInformation1, min=1, max=1, mutex_group=None, array=False),
 	))
 

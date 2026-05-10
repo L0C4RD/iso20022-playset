@@ -1,6 +1,6 @@
 from . import base_types
-import PartyIdentification135
-import SkipPayload
+from .SkipPayload import SkipPayload
+from .PartyIdentification135 import PartyIdentification135
 
 class PartyAndSignature3(base_types._BaseFieldType):
 

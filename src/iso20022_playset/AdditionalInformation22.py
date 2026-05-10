@@ -1,13 +1,26 @@
 from . import base_types
-import Max20KText
-import PartyType19Code
-import OutputFormat4Code
-import Max35Text
-import UserInterface8Code
+from .Max35Text import Max35Text
+from .UserInterface8Code import UserInterface8Code
+from .OutputFormat4Code import OutputFormat4Code
+from .Max20KText import Max20KText
+from .PartyType19Code import PartyType19Code
 
 class AdditionalInformation22(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Frmt", "_Val", "_Rcpt", "_Trgt"]
+	__slots__ = ["_Trgt", "_Tp", "_Val", "_Frmt", "_Rcpt"]
+	@property
+	def Trgt(self):
+		return self._Trgt
+
+	@Trgt.setter
+	def Trgt(self, value):
+		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
+
+	@Trgt.deleter
+	def Trgt(self):
+		del self._Trgt
+		self._Trgt = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -20,19 +33,6 @@ class AdditionalInformation22(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
-
-	@property
-	def Frmt(self):
-		return self._Frmt
-
-	@Frmt.setter
-	def Frmt(self, value):
-		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
-
-	@Frmt.deleter
-	def Frmt(self):
-		del self._Frmt
-		self._Frmt = None
 
 	@property
 	def Val(self):
@@ -48,6 +48,19 @@ class AdditionalInformation22(base_types._BaseFieldType):
 		self._Val = None
 
 	@property
+	def Frmt(self):
+		return self._Frmt
+
+	@Frmt.setter
+	def Frmt(self, value):
+		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
+
+	@Frmt.deleter
+	def Frmt(self):
+		del self._Frmt
+		self._Frmt = None
+
+	@property
 	def Rcpt(self):
 		return self._Rcpt
 
@@ -60,24 +73,11 @@ class AdditionalInformation22(base_types._BaseFieldType):
 		del self._Rcpt
 		self._Rcpt = None
 
-	@property
-	def Trgt(self):
-		return self._Trgt
-
-	@Trgt.setter
-	def Trgt(self, value):
-		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
-
-	@Trgt.deleter
-	def Trgt(self):
-		del self._Trgt
-		self._Trgt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frmt', type=OutputFormat4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Val', type=Max20KText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcpt', type=PartyType19Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trgt', type=UserInterface8Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=Max20KText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frmt', type=OutputFormat4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcpt', type=PartyType19Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-import MarketClaimStatusAdviceV03
+from .MarketClaimStatusAdviceV03 import MarketClaimStatusAdviceV03
 
 class SEEV_052_001_03():
 

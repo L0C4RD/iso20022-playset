@@ -1,6 +1,6 @@
 from . import base_types
-import CurrencyConversion29
-import TrueFalseIndicator
+from .TrueFalseIndicator import TrueFalseIndicator
+from .CurrencyConversion29 import CurrencyConversion29
 
 class CurrencyConversion30(base_types._BaseFieldType):
 

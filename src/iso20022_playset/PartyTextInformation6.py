@@ -1,11 +1,11 @@
 from . import base_types
-import Max350Text
-import Max140Text
-import PostalAddress1
+from .PostalAddress1 import PostalAddress1
+from .Max140Text import Max140Text
+from .Max350Text import Max350Text
 
 class PartyTextInformation6(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyCtctDtls", "_RegnAdr", "_DclrtnDtls", "_RegnDtls"]
+	__slots__ = ["_PtyCtctDtls", "_RegnDtls", "_DclrtnDtls", "_RegnAdr"]
 	@property
 	def PtyCtctDtls(self):
 		return self._PtyCtctDtls
@@ -20,17 +20,17 @@ class PartyTextInformation6(base_types._BaseFieldType):
 		self._PtyCtctDtls = None
 
 	@property
-	def RegnAdr(self):
-		return self._RegnAdr
+	def RegnDtls(self):
+		return self._RegnDtls
 
-	@RegnAdr.setter
-	def RegnAdr(self, value):
-		self._RegnAdr = value if type(value) != auto else self.make_default("RegnAdr")
+	@RegnDtls.setter
+	def RegnDtls(self, value):
+		self._RegnDtls = value if type(value) != auto else self.make_default("RegnDtls")
 
-	@RegnAdr.deleter
-	def RegnAdr(self):
-		del self._RegnAdr
-		self._RegnAdr = None
+	@RegnDtls.deleter
+	def RegnDtls(self):
+		del self._RegnDtls
+		self._RegnDtls = None
 
 	@property
 	def DclrtnDtls(self):
@@ -46,22 +46,22 @@ class PartyTextInformation6(base_types._BaseFieldType):
 		self._DclrtnDtls = None
 
 	@property
-	def RegnDtls(self):
-		return self._RegnDtls
+	def RegnAdr(self):
+		return self._RegnAdr
 
-	@RegnDtls.setter
-	def RegnDtls(self, value):
-		self._RegnDtls = value if type(value) != auto else self.make_default("RegnDtls")
+	@RegnAdr.setter
+	def RegnAdr(self, value):
+		self._RegnAdr = value if type(value) != auto else self.make_default("RegnAdr")
 
-	@RegnDtls.deleter
-	def RegnDtls(self):
-		del self._RegnDtls
-		self._RegnDtls = None
+	@RegnAdr.deleter
+	def RegnAdr(self):
+		del self._RegnAdr
+		self._RegnAdr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PtyCtctDtls', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DclrtnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DclrtnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
 	))
 

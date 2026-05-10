@@ -1,5 +1,5 @@
 from . import base_types
-import OrganisationIdentification15Choice
+from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class CounterpartyData87(base_types._BaseFieldType):
 

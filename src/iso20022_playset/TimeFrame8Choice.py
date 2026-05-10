@@ -1,5 +1,5 @@
 from . import base_types
-import Number
+from .Number import Number
 
 class TimeFrame8Choice(base_types._BaseFieldType):
 

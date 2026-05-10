@@ -1,7 +1,7 @@
 from . import base_types
-import RateTypeAndAmountAndStatus32
-import Percentage14Rate
-import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from .Percentage14Rate import Percentage14Rate
+from .RateTypeAndAmountAndStatus32 import RateTypeAndAmountAndStatus32
 
 class InterestRateUsedForPaymentFormat19Choice(base_types._BaseFieldType):
 

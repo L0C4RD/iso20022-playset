@@ -1,13 +1,26 @@
 from . import base_types
-import NonNegativeNumber
-import PositiveNumber
-import BaseOneRate
-import GenericIdentification165
-import ActiveCurrencyAndAmount
+from .GenericIdentification165 import GenericIdentification165
+from .BaseOneRate import BaseOneRate
+from .NonNegativeNumber import NonNegativeNumber
+from .PositiveNumber import PositiveNumber
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class MonthlyResult1(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfXcptns", "_LrgstXcptnId", "_Cvrg", "_LrgstXcptn", "_NbOfObsrvtns", "_AvrgXcptn"]
+	__slots__ = ["_LrgstXcptnId", "_NbOfXcptns", "_AvrgXcptn", "_Cvrg", "_NbOfObsrvtns", "_LrgstXcptn"]
+	@property
+	def LrgstXcptnId(self):
+		return self._LrgstXcptnId
+
+	@LrgstXcptnId.setter
+	def LrgstXcptnId(self, value):
+		self._LrgstXcptnId = value if type(value) != auto else self.make_default("LrgstXcptnId")
+
+	@LrgstXcptnId.deleter
+	def LrgstXcptnId(self):
+		del self._LrgstXcptnId
+		self._LrgstXcptnId = None
+
 	@property
 	def NbOfXcptns(self):
 		return self._NbOfXcptns
@@ -22,17 +35,17 @@ class MonthlyResult1(base_types._BaseFieldType):
 		self._NbOfXcptns = None
 
 	@property
-	def LrgstXcptnId(self):
-		return self._LrgstXcptnId
+	def AvrgXcptn(self):
+		return self._AvrgXcptn
 
-	@LrgstXcptnId.setter
-	def LrgstXcptnId(self, value):
-		self._LrgstXcptnId = value if type(value) != auto else self.make_default("LrgstXcptnId")
+	@AvrgXcptn.setter
+	def AvrgXcptn(self, value):
+		self._AvrgXcptn = value if type(value) != auto else self.make_default("AvrgXcptn")
 
-	@LrgstXcptnId.deleter
-	def LrgstXcptnId(self):
-		del self._LrgstXcptnId
-		self._LrgstXcptnId = None
+	@AvrgXcptn.deleter
+	def AvrgXcptn(self):
+		del self._AvrgXcptn
+		self._AvrgXcptn = None
 
 	@property
 	def Cvrg(self):
@@ -48,19 +61,6 @@ class MonthlyResult1(base_types._BaseFieldType):
 		self._Cvrg = None
 
 	@property
-	def LrgstXcptn(self):
-		return self._LrgstXcptn
-
-	@LrgstXcptn.setter
-	def LrgstXcptn(self, value):
-		self._LrgstXcptn = value if type(value) != auto else self.make_default("LrgstXcptn")
-
-	@LrgstXcptn.deleter
-	def LrgstXcptn(self):
-		del self._LrgstXcptn
-		self._LrgstXcptn = None
-
-	@property
 	def NbOfObsrvtns(self):
 		return self._NbOfObsrvtns
 
@@ -74,24 +74,24 @@ class MonthlyResult1(base_types._BaseFieldType):
 		self._NbOfObsrvtns = None
 
 	@property
-	def AvrgXcptn(self):
-		return self._AvrgXcptn
+	def LrgstXcptn(self):
+		return self._LrgstXcptn
 
-	@AvrgXcptn.setter
-	def AvrgXcptn(self, value):
-		self._AvrgXcptn = value if type(value) != auto else self.make_default("AvrgXcptn")
+	@LrgstXcptn.setter
+	def LrgstXcptn(self, value):
+		self._LrgstXcptn = value if type(value) != auto else self.make_default("LrgstXcptn")
 
-	@AvrgXcptn.deleter
-	def AvrgXcptn(self):
-		del self._AvrgXcptn
-		self._AvrgXcptn = None
+	@LrgstXcptn.deleter
+	def LrgstXcptn(self):
+		del self._LrgstXcptn
+		self._LrgstXcptn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfXcptns', type=NonNegativeNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LrgstXcptnId', type=GenericIdentification165, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cvrg', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LrgstXcptn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfObsrvtns', type=PositiveNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfXcptns', type=NonNegativeNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AvrgXcptn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cvrg', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfObsrvtns', type=PositiveNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LrgstXcptn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

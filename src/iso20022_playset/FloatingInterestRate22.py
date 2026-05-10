@@ -1,13 +1,13 @@
 from . import base_types
-import BenchmarkCurveName10Choice
-import InterestComputationMethodFormat6Choice
-import SecuritiesTransactionPrice18Choice
-import InterestRateContractTerm2
-import RateAdjustment1
+from .SecuritiesTransactionPrice18Choice import SecuritiesTransactionPrice18Choice
+from .InterestComputationMethodFormat6Choice import InterestComputationMethodFormat6Choice
+from .RateAdjustment1 import RateAdjustment1
+from .InterestRateContractTerm2 import InterestRateContractTerm2
+from .BenchmarkCurveName10Choice import BenchmarkCurveName10Choice
 
 class FloatingInterestRate22(base_types._BaseFieldType):
 
-	__slots__ = ["_RstFrqcy", "_RefRate", "_RateAdjstmnt", "_DayCntBsis", "_PmtFrqcy", "_Term", "_Sprd"]
+	__slots__ = ["_RstFrqcy", "_RefRate", "_PmtFrqcy", "_Sprd", "_DayCntBsis", "_Term", "_RateAdjstmnt"]
 	@property
 	def RstFrqcy(self):
 		return self._RstFrqcy
@@ -35,17 +35,30 @@ class FloatingInterestRate22(base_types._BaseFieldType):
 		self._RefRate = None
 
 	@property
-	def RateAdjstmnt(self):
-		return self._RateAdjstmnt
+	def PmtFrqcy(self):
+		return self._PmtFrqcy
 
-	@RateAdjstmnt.setter
-	def RateAdjstmnt(self, value):
-		self._RateAdjstmnt = value if type(value) != auto else self.make_default("RateAdjstmnt")
+	@PmtFrqcy.setter
+	def PmtFrqcy(self, value):
+		self._PmtFrqcy = value if type(value) != auto else self.make_default("PmtFrqcy")
 
-	@RateAdjstmnt.deleter
-	def RateAdjstmnt(self):
-		del self._RateAdjstmnt
-		self._RateAdjstmnt = None
+	@PmtFrqcy.deleter
+	def PmtFrqcy(self):
+		del self._PmtFrqcy
+		self._PmtFrqcy = None
+
+	@property
+	def Sprd(self):
+		return self._Sprd
+
+	@Sprd.setter
+	def Sprd(self, value):
+		self._Sprd = value if type(value) != auto else self.make_default("Sprd")
+
+	@Sprd.deleter
+	def Sprd(self):
+		del self._Sprd
+		self._Sprd = None
 
 	@property
 	def DayCntBsis(self):
@@ -61,19 +74,6 @@ class FloatingInterestRate22(base_types._BaseFieldType):
 		self._DayCntBsis = None
 
 	@property
-	def PmtFrqcy(self):
-		return self._PmtFrqcy
-
-	@PmtFrqcy.setter
-	def PmtFrqcy(self, value):
-		self._PmtFrqcy = value if type(value) != auto else self.make_default("PmtFrqcy")
-
-	@PmtFrqcy.deleter
-	def PmtFrqcy(self):
-		del self._PmtFrqcy
-		self._PmtFrqcy = None
-
-	@property
 	def Term(self):
 		return self._Term
 
@@ -87,25 +87,25 @@ class FloatingInterestRate22(base_types._BaseFieldType):
 		self._Term = None
 
 	@property
-	def Sprd(self):
-		return self._Sprd
+	def RateAdjstmnt(self):
+		return self._RateAdjstmnt
 
-	@Sprd.setter
-	def Sprd(self, value):
-		self._Sprd = value if type(value) != auto else self.make_default("Sprd")
+	@RateAdjstmnt.setter
+	def RateAdjstmnt(self, value):
+		self._RateAdjstmnt = value if type(value) != auto else self.make_default("RateAdjstmnt")
 
-	@Sprd.deleter
-	def Sprd(self):
-		del self._Sprd
-		self._Sprd = None
+	@RateAdjstmnt.deleter
+	def RateAdjstmnt(self):
+		del self._RateAdjstmnt
+		self._RateAdjstmnt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RstFrqcy', type=InterestRateContractTerm2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefRate', type=BenchmarkCurveName10Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RateAdjstmnt', type=RateAdjustment1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DayCntBsis', type=InterestComputationMethodFormat6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtFrqcy', type=InterestRateContractTerm2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Term', type=InterestRateContractTerm2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sprd', type=SecuritiesTransactionPrice18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DayCntBsis', type=InterestComputationMethodFormat6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Term', type=InterestRateContractTerm2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RateAdjstmnt', type=RateAdjustment1, min=0, max=None, mutex_group=None, array=True),
 	))
 

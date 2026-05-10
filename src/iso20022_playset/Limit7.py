@@ -1,13 +1,13 @@
 from . import base_types
-import Amount2Choice
-import PercentageRate
-import LimitStatus1Code
-import DateAndDateTime2Choice
-import CreditDebitCode
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .Amount2Choice import Amount2Choice
+from .CreditDebitCode import CreditDebitCode
+from .LimitStatus1Code import LimitStatus1Code
+from .PercentageRate import PercentageRate
 
 class Limit7(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_RmngAmt", "_UsdAmt", "_CdtDbtInd", "_Amt", "_UsdAmtCdtDbtInd", "_StartDtTm", "_UsdPctg"]
+	__slots__ = ["_Sts", "_StartDtTm", "_RmngAmt", "_UsdAmt", "_CdtDbtInd", "_UsdPctg", "_UsdAmtCdtDbtInd", "_Amt"]
 	@property
 	def Sts(self):
 		return self._Sts
@@ -20,6 +20,19 @@ class Limit7(base_types._BaseFieldType):
 	def Sts(self):
 		del self._Sts
 		self._Sts = None
+
+	@property
+	def StartDtTm(self):
+		return self._StartDtTm
+
+	@StartDtTm.setter
+	def StartDtTm(self, value):
+		self._StartDtTm = value if type(value) != auto else self.make_default("StartDtTm")
+
+	@StartDtTm.deleter
+	def StartDtTm(self):
+		del self._StartDtTm
+		self._StartDtTm = None
 
 	@property
 	def RmngAmt(self):
@@ -61,17 +74,17 @@ class Limit7(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def UsdPctg(self):
+		return self._UsdPctg
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@UsdPctg.setter
+	def UsdPctg(self, value):
+		self._UsdPctg = value if type(value) != auto else self.make_default("UsdPctg")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@UsdPctg.deleter
+	def UsdPctg(self):
+		del self._UsdPctg
+		self._UsdPctg = None
 
 	@property
 	def UsdAmtCdtDbtInd(self):
@@ -87,39 +100,26 @@ class Limit7(base_types._BaseFieldType):
 		self._UsdAmtCdtDbtInd = None
 
 	@property
-	def StartDtTm(self):
-		return self._StartDtTm
+	def Amt(self):
+		return self._Amt
 
-	@StartDtTm.setter
-	def StartDtTm(self, value):
-		self._StartDtTm = value if type(value) != auto else self.make_default("StartDtTm")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@StartDtTm.deleter
-	def StartDtTm(self):
-		del self._StartDtTm
-		self._StartDtTm = None
-
-	@property
-	def UsdPctg(self):
-		return self._UsdPctg
-
-	@UsdPctg.setter
-	def UsdPctg(self, value):
-		self._UsdPctg = value if type(value) != auto else self.make_default("UsdPctg")
-
-	@UsdPctg.deleter
-	def UsdPctg(self):
-		del self._UsdPctg
-		self._UsdPctg = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sts', type=LimitStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmngAmt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsdAmt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UsdAmtCdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsdPctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsdAmtCdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

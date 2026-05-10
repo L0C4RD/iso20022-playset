@@ -1,6 +1,6 @@
 from . import base_types
-import FinancialInstrumentQuantity1Choice
-import ActiveCurrencyAndAmount
+from .FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class QuantityOrAmount2Choice(base_types._BaseFieldType):
 

@@ -1,24 +1,11 @@
 from . import base_types
-import ISOMonth
-import ISOYear
-import SystemAndCurrency1
+from .SystemAndCurrency1 import SystemAndCurrency1
+from .ISOMonth import ISOMonth
+from .ISOYear import ISOYear
 
 class CalendarSearchCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_Svc", "_Mnth", "_Yr"]
-	@property
-	def Svc(self):
-		return self._Svc
-
-	@Svc.setter
-	def Svc(self, value):
-		self._Svc = value if type(value) != auto else self.make_default("Svc")
-
-	@Svc.deleter
-	def Svc(self):
-		del self._Svc
-		self._Svc = None
-
+	__slots__ = ["_Mnth", "_Svc", "_Yr"]
 	@property
 	def Mnth(self):
 		return self._Mnth
@@ -31,6 +18,19 @@ class CalendarSearchCriteria1(base_types._BaseFieldType):
 	def Mnth(self):
 		del self._Mnth
 		self._Mnth = None
+
+	@property
+	def Svc(self):
+		return self._Svc
+
+	@Svc.setter
+	def Svc(self, value):
+		self._Svc = value if type(value) != auto else self.make_default("Svc")
+
+	@Svc.deleter
+	def Svc(self):
+		del self._Svc
+		self._Svc = None
 
 	@property
 	def Yr(self):
@@ -46,8 +46,8 @@ class CalendarSearchCriteria1(base_types._BaseFieldType):
 		self._Yr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Svc', type=SystemAndCurrency1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mnth', type=ISOMonth, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Svc', type=SystemAndCurrency1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Yr', type=ISOYear, min=0, max=1, mutex_group=None, array=False),
 	))
 

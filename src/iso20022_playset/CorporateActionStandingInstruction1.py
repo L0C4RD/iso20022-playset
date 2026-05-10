@@ -1,25 +1,12 @@
 from . import base_types
-import Max350Text
-import StandingInstructionGrossNet1Code
-import CashAccount17
-import SecuritiesAccount6
+from .Max350Text import Max350Text
+from .CashAccount17 import CashAccount17
+from .StandingInstructionGrossNet1Code import StandingInstructionGrossNet1Code
+from .SecuritiesAccount6 import SecuritiesAccount6
 
 class CorporateActionStandingInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_NetOrGrss", "_CshDstrbtnDtls", "_SctiesDstrbtnDtls"]
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
+	__slots__ = ["_NetOrGrss", "_AddtlInf", "_CshDstrbtnDtls", "_SctiesDstrbtnDtls"]
 	@property
 	def NetOrGrss(self):
 		return self._NetOrGrss
@@ -32,6 +19,19 @@ class CorporateActionStandingInstruction1(base_types._BaseFieldType):
 	def NetOrGrss(self):
 		del self._NetOrGrss
 		self._NetOrGrss = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def CshDstrbtnDtls(self):
@@ -60,8 +60,8 @@ class CorporateActionStandingInstruction1(base_types._BaseFieldType):
 		self._SctiesDstrbtnDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetOrGrss', type=StandingInstructionGrossNet1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshDstrbtnDtls', type=CashAccount17, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesDstrbtnDtls', type=SecuritiesAccount6, min=0, max=1, mutex_group=1, array=False),
 	))

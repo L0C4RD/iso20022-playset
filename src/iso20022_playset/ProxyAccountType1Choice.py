@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalProxyAccountType1Code
-import Max35Text
+from .ExternalProxyAccountType1Code import ExternalProxyAccountType1Code
+from .Max35Text import Max35Text
 
 class ProxyAccountType1Choice(base_types._BaseFieldType):
 

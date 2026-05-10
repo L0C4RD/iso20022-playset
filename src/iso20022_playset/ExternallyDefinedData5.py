@@ -1,24 +1,11 @@
 from . import base_types
-import ContentInformationType39
-import Max1025Text
-import Max100KBinary
+from .Max1025Text import Max1025Text
+from .Max100KBinary import Max100KBinary
+from .ContentInformationType39 import ContentInformationType39
 
 class ExternallyDefinedData5(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_PrtctdVal", "_Tp", "_Id"]
-	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
-
+	__slots__ = ["_PrtctdVal", "_Val", "_Tp", "_Id"]
 	@property
 	def PrtctdVal(self):
 		return self._PrtctdVal
@@ -31,6 +18,19 @@ class ExternallyDefinedData5(base_types._BaseFieldType):
 	def PrtctdVal(self):
 		del self._PrtctdVal
 		self._PrtctdVal = None
+
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
 
 	@property
 	def Tp(self):
@@ -59,8 +59,8 @@ class ExternallyDefinedData5(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Val', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdVal', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max1025Text, min=1, max=1, mutex_group=None, array=False),
 	))

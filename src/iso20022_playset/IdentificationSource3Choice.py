@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import ExternalFinancialInstrumentIdentificationType1Code
+from .Max35Text import Max35Text
+from .ExternalFinancialInstrumentIdentificationType1Code import ExternalFinancialInstrumentIdentificationType1Code
 
 class IdentificationSource3Choice(base_types._BaseFieldType):
 

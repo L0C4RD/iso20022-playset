@@ -1,6 +1,6 @@
 from . import base_types
-import FixedRate10
-import FloatingRate13
+from .FixedRate10 import FixedRate10
+from .FloatingRate13 import FloatingRate13
 
 class InterestRate33Choice(base_types._BaseFieldType):
 

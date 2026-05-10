@@ -1,12 +1,12 @@
 from . import base_types
-import Max105Text
-import PartyIdentification272
-import BankTransactionCodeStructure4
-import ReturnReason5Choice
+from .ReturnReason5Choice import ReturnReason5Choice
+from .PartyIdentification272 import PartyIdentification272
+from .BankTransactionCodeStructure4 import BankTransactionCodeStructure4
+from .Max105Text import Max105Text
 
 class PaymentReturnReason8(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlBkTxCd", "_AddtlInf", "_Orgtr", "_Rsn"]
+	__slots__ = ["_OrgnlBkTxCd", "_Rsn", "_AddtlInf", "_Orgtr"]
 	@property
 	def OrgnlBkTxCd(self):
 		return self._OrgnlBkTxCd
@@ -19,6 +19,19 @@ class PaymentReturnReason8(base_types._BaseFieldType):
 	def OrgnlBkTxCd(self):
 		del self._OrgnlBkTxCd
 		self._OrgnlBkTxCd = None
+
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
 	def AddtlInf(self):
@@ -46,23 +59,10 @@ class PaymentReturnReason8(base_types._BaseFieldType):
 		del self._Orgtr
 		self._Orgtr = None
 
-	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlBkTxCd', type=BankTransactionCodeStructure4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=ReturnReason5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Orgtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=ReturnReason5Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

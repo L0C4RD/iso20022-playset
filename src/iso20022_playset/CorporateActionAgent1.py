@@ -1,24 +1,11 @@
 from . import base_types
-import NameAndAddress5
-import AgentRole1FormatChoice
-import PartyIdentification2Choice
+from .PartyIdentification2Choice import PartyIdentification2Choice
+from .AgentRole1FormatChoice import AgentRole1FormatChoice
+from .NameAndAddress5 import NameAndAddress5
 
 class CorporateActionAgent1(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctPrsn", "_AgtId", "_AgtRole"]
-	@property
-	def CtctPrsn(self):
-		return self._CtctPrsn
-
-	@CtctPrsn.setter
-	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != auto else self.make_default("CtctPrsn")
-
-	@CtctPrsn.deleter
-	def CtctPrsn(self):
-		del self._CtctPrsn
-		self._CtctPrsn = None
-
+	__slots__ = ["_AgtId", "_AgtRole", "_CtctPrsn"]
 	@property
 	def AgtId(self):
 		return self._AgtId
@@ -45,9 +32,22 @@ class CorporateActionAgent1(base_types._BaseFieldType):
 		del self._AgtRole
 		self._AgtRole = None
 
+	@property
+	def CtctPrsn(self):
+		return self._CtctPrsn
+
+	@CtctPrsn.setter
+	def CtctPrsn(self, value):
+		self._CtctPrsn = value if type(value) != auto else self.make_default("CtctPrsn")
+
+	@CtctPrsn.deleter
+	def CtctPrsn(self):
+		del self._CtctPrsn
+		self._CtctPrsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtctPrsn', type=NameAndAddress5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtId', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtRole', type=AgentRole1FormatChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctPrsn', type=NameAndAddress5, min=0, max=1, mutex_group=None, array=False),
 	))
 

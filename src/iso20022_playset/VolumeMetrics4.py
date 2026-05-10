@@ -1,6 +1,6 @@
 from . import base_types
-import ReuseValue1Choice
-import ActiveOrHistoricCurrencyAndAmount
+from .ReuseValue1Choice import ReuseValue1Choice
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class VolumeMetrics4(base_types._BaseFieldType):
 

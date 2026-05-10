@@ -1,11 +1,11 @@
 from . import base_types
-import RestrictedFINZMax2048Text
-import RestrictedFINXMax350Text
-import UpdatedURLlnformation7
+from .UpdatedURLlnformation7 import UpdatedURLlnformation7
+from .RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from .RestrictedFINZMax2048Text import RestrictedFINZMax2048Text
 
 class CorporateActionNarrative63(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtPrcgWebSiteAdr", "_NewCpnyNm", "_URLAdr", "_Offerr"]
+	__slots__ = ["_EvtPrcgWebSiteAdr", "_Offerr", "_NewCpnyNm", "_URLAdr"]
 	@property
 	def EvtPrcgWebSiteAdr(self):
 		return self._EvtPrcgWebSiteAdr
@@ -18,6 +18,19 @@ class CorporateActionNarrative63(base_types._BaseFieldType):
 	def EvtPrcgWebSiteAdr(self):
 		del self._EvtPrcgWebSiteAdr
 		self._EvtPrcgWebSiteAdr = None
+
+	@property
+	def Offerr(self):
+		return self._Offerr
+
+	@Offerr.setter
+	def Offerr(self, value):
+		self._Offerr = value if type(value) != auto else self.make_default("Offerr")
+
+	@Offerr.deleter
+	def Offerr(self):
+		del self._Offerr
+		self._Offerr = None
 
 	@property
 	def NewCpnyNm(self):
@@ -45,23 +58,10 @@ class CorporateActionNarrative63(base_types._BaseFieldType):
 		del self._URLAdr
 		self._URLAdr = None
 
-	@property
-	def Offerr(self):
-		return self._Offerr
-
-	@Offerr.setter
-	def Offerr(self, value):
-		self._Offerr = value if type(value) != auto else self.make_default("Offerr")
-
-	@Offerr.deleter
-	def Offerr(self):
-		del self._Offerr
-		self._Offerr = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EvtPrcgWebSiteAdr', type=RestrictedFINZMax2048Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Offerr', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NewCpnyNm', type=RestrictedFINXMax350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URLAdr', type=UpdatedURLlnformation7, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Offerr', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

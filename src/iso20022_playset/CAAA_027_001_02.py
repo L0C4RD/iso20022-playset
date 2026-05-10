@@ -1,5 +1,5 @@
 from . import base_types
-import AcquirerToAcceptorBatchFileExchangeV02
+from .AcquirerToAcceptorBatchFileExchangeV02 import AcquirerToAcceptorBatchFileExchangeV02
 
 class CAAA_027_001_02():
 

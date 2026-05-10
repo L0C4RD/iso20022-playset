@@ -1,5 +1,5 @@
 from . import base_types
-import CardManagementResponseV03
+from .CardManagementResponseV03 import CardManagementResponseV03
 
 class CAIN_024_001_03():
 

@@ -1,7 +1,7 @@
 from . import base_types
-import ContentInformationType38
-import Header41
-import SystemAbort8
+from .ContentInformationType38 import ContentInformationType38
+from .Header41 import Header41
+from .SystemAbort8 import SystemAbort8
 
 class SaleToPOIAbortV07(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-import AccountDetailsConfirmationV08
+from .AccountDetailsConfirmationV08 import AccountDetailsConfirmationV08
 
 class ACMT_002_001_08():
 

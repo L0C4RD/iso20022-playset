@@ -1,6 +1,6 @@
 from . import base_types
-import Max140Text
-import ActiveCurrencyAndAmount
+from .Max140Text import Max140Text
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class OtherInvestment1(base_types._BaseFieldType):
 

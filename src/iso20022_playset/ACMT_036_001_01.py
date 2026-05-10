@@ -1,5 +1,5 @@
 from . import base_types
-import AccountSwitchTerminationSwitchV01
+from .AccountSwitchTerminationSwitchV01 import AccountSwitchTerminationSwitchV01
 
 class ACMT_036_001_01():
 

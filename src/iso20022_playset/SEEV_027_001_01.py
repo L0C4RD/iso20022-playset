@@ -1,5 +1,5 @@
 from . import base_types
-import AgentCAStandingInstructionStatusAdviceV01
+from .AgentCAStandingInstructionStatusAdviceV01 import AgentCAStandingInstructionStatusAdviceV01
 
 class SEEV_027_001_01():
 

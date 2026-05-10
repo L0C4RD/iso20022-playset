@@ -1,6 +1,6 @@
 from . import base_types
-import SubBalanceQuantity2Choice
-import Max4AlphaNumericText
+from .Max4AlphaNumericText import Max4AlphaNumericText
+from .SubBalanceQuantity2Choice import SubBalanceQuantity2Choice
 
 class SecuritiesPosition1(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-import BuyInNotificationV03
+from .BuyInNotificationV03 import BuyInNotificationV03
 
 class SECL_007_001_03():
 

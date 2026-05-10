@@ -1,10 +1,10 @@
 from . import base_types
-import ElectionType1Code
-import DocumentIdentification8
+from .ElectionType1Code import ElectionType1Code
+from .DocumentIdentification8 import DocumentIdentification8
 
 class ElectionAdviceFunction1(base_types._BaseFieldType):
 
-	__slots__ = ["_ElctnTp", "_AgtCAElctnStsAdvcId", "_AgtCAElctnAmdmntReqId", "_PrvsAgtCAElctnAdvcId"]
+	__slots__ = ["_ElctnTp", "_AgtCAElctnAmdmntReqId", "_AgtCAElctnStsAdvcId", "_PrvsAgtCAElctnAdvcId"]
 	@property
 	def ElctnTp(self):
 		return self._ElctnTp
@@ -19,19 +19,6 @@ class ElectionAdviceFunction1(base_types._BaseFieldType):
 		self._ElctnTp = None
 
 	@property
-	def AgtCAElctnStsAdvcId(self):
-		return self._AgtCAElctnStsAdvcId
-
-	@AgtCAElctnStsAdvcId.setter
-	def AgtCAElctnStsAdvcId(self, value):
-		self._AgtCAElctnStsAdvcId = value if type(value) != auto else self.make_default("AgtCAElctnStsAdvcId")
-
-	@AgtCAElctnStsAdvcId.deleter
-	def AgtCAElctnStsAdvcId(self):
-		del self._AgtCAElctnStsAdvcId
-		self._AgtCAElctnStsAdvcId = None
-
-	@property
 	def AgtCAElctnAmdmntReqId(self):
 		return self._AgtCAElctnAmdmntReqId
 
@@ -43,6 +30,19 @@ class ElectionAdviceFunction1(base_types._BaseFieldType):
 	def AgtCAElctnAmdmntReqId(self):
 		del self._AgtCAElctnAmdmntReqId
 		self._AgtCAElctnAmdmntReqId = None
+
+	@property
+	def AgtCAElctnStsAdvcId(self):
+		return self._AgtCAElctnStsAdvcId
+
+	@AgtCAElctnStsAdvcId.setter
+	def AgtCAElctnStsAdvcId(self, value):
+		self._AgtCAElctnStsAdvcId = value if type(value) != auto else self.make_default("AgtCAElctnStsAdvcId")
+
+	@AgtCAElctnStsAdvcId.deleter
+	def AgtCAElctnStsAdvcId(self):
+		del self._AgtCAElctnStsAdvcId
+		self._AgtCAElctnStsAdvcId = None
 
 	@property
 	def PrvsAgtCAElctnAdvcId(self):
@@ -59,8 +59,8 @@ class ElectionAdviceFunction1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ElctnTp', type=ElectionType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtCAElctnStsAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtCAElctnAmdmntReqId', type=DocumentIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgtCAElctnStsAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsAgtCAElctnAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

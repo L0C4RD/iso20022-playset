@@ -1,5 +1,5 @@
 from . import base_types
-import CustomerPaymentReversalV12
+from .CustomerPaymentReversalV12 import CustomerPaymentReversalV12
 
 class PAIN_007_001_12():
 

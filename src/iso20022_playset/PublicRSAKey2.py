@@ -1,6 +1,6 @@
 from . import base_types
-import Algorithm7Code
-import PublicRSAKey1
+from .Algorithm7Code import Algorithm7Code
+from .PublicRSAKey1 import PublicRSAKey1
 
 class PublicRSAKey2(base_types._BaseFieldType):
 

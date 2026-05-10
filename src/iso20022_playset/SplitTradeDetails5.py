@@ -1,7 +1,7 @@
 from . import base_types
-import TradeData16
-import AgreedRate3
-import AmountsAndValueDate8
+from .TradeData16 import TradeData16
+from .AmountsAndValueDate8 import AmountsAndValueDate8
+from .AgreedRate3 import AgreedRate3
 
 class SplitTradeDetails5(base_types._BaseFieldType):
 

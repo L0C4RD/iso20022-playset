@@ -1,24 +1,24 @@
 from . import base_types
-import IdentificationInformation5
-import IdentificationVerificationIndicator
-import Max35Text
-import VerificationReason1Choice
+from .IdentificationVerificationIndicator import IdentificationVerificationIndicator
+from .Max35Text import Max35Text
+from .VerificationReason1Choice import VerificationReason1Choice
+from .IdentificationInformation5 import IdentificationInformation5
 
 class VerificationReport5(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlPtyAndAcctId", "_Rsn", "_UpdtdPtyAndAcctId", "_Vrfctn", "_OrgnlId"]
+	__slots__ = ["_Vrfctn", "_Rsn", "_OrgnlPtyAndAcctId", "_OrgnlId", "_UpdtdPtyAndAcctId"]
 	@property
-	def OrgnlPtyAndAcctId(self):
-		return self._OrgnlPtyAndAcctId
+	def Vrfctn(self):
+		return self._Vrfctn
 
-	@OrgnlPtyAndAcctId.setter
-	def OrgnlPtyAndAcctId(self, value):
-		self._OrgnlPtyAndAcctId = value if type(value) != auto else self.make_default("OrgnlPtyAndAcctId")
+	@Vrfctn.setter
+	def Vrfctn(self, value):
+		self._Vrfctn = value if type(value) != auto else self.make_default("Vrfctn")
 
-	@OrgnlPtyAndAcctId.deleter
-	def OrgnlPtyAndAcctId(self):
-		del self._OrgnlPtyAndAcctId
-		self._OrgnlPtyAndAcctId = None
+	@Vrfctn.deleter
+	def Vrfctn(self):
+		del self._Vrfctn
+		self._Vrfctn = None
 
 	@property
 	def Rsn(self):
@@ -34,30 +34,17 @@ class VerificationReport5(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
-	def UpdtdPtyAndAcctId(self):
-		return self._UpdtdPtyAndAcctId
+	def OrgnlPtyAndAcctId(self):
+		return self._OrgnlPtyAndAcctId
 
-	@UpdtdPtyAndAcctId.setter
-	def UpdtdPtyAndAcctId(self, value):
-		self._UpdtdPtyAndAcctId = value if type(value) != auto else self.make_default("UpdtdPtyAndAcctId")
+	@OrgnlPtyAndAcctId.setter
+	def OrgnlPtyAndAcctId(self, value):
+		self._OrgnlPtyAndAcctId = value if type(value) != auto else self.make_default("OrgnlPtyAndAcctId")
 
-	@UpdtdPtyAndAcctId.deleter
-	def UpdtdPtyAndAcctId(self):
-		del self._UpdtdPtyAndAcctId
-		self._UpdtdPtyAndAcctId = None
-
-	@property
-	def Vrfctn(self):
-		return self._Vrfctn
-
-	@Vrfctn.setter
-	def Vrfctn(self, value):
-		self._Vrfctn = value if type(value) != auto else self.make_default("Vrfctn")
-
-	@Vrfctn.deleter
-	def Vrfctn(self):
-		del self._Vrfctn
-		self._Vrfctn = None
+	@OrgnlPtyAndAcctId.deleter
+	def OrgnlPtyAndAcctId(self):
+		del self._OrgnlPtyAndAcctId
+		self._OrgnlPtyAndAcctId = None
 
 	@property
 	def OrgnlId(self):
@@ -72,11 +59,24 @@ class VerificationReport5(base_types._BaseFieldType):
 		del self._OrgnlId
 		self._OrgnlId = None
 
+	@property
+	def UpdtdPtyAndAcctId(self):
+		return self._UpdtdPtyAndAcctId
+
+	@UpdtdPtyAndAcctId.setter
+	def UpdtdPtyAndAcctId(self, value):
+		self._UpdtdPtyAndAcctId = value if type(value) != auto else self.make_default("UpdtdPtyAndAcctId")
+
+	@UpdtdPtyAndAcctId.deleter
+	def UpdtdPtyAndAcctId(self):
+		del self._UpdtdPtyAndAcctId
+		self._UpdtdPtyAndAcctId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlPtyAndAcctId', type=IdentificationInformation5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=VerificationReason1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UpdtdPtyAndAcctId', type=IdentificationInformation5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrfctn', type=IdentificationVerificationIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=VerificationReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlPtyAndAcctId', type=IdentificationInformation5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdtdPtyAndAcctId', type=IdentificationInformation5, min=0, max=1, mutex_group=None, array=False),
 	))
 

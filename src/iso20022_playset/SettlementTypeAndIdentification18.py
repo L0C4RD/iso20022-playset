@@ -1,11 +1,24 @@
 from . import base_types
-import ReceiveDelivery1Code
-import Max35Text
-import DeliveryReceiptType2Code
+from .Max35Text import Max35Text
+from .DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from .ReceiveDelivery1Code import ReceiveDelivery1Code
 
 class SettlementTypeAndIdentification18(base_types._BaseFieldType):
 
-	__slots__ = ["_Pmt", "_TxId", "_SctiesMvmntTp"]
+	__slots__ = ["_SctiesMvmntTp", "_Pmt", "_TxId"]
+	@property
+	def SctiesMvmntTp(self):
+		return self._SctiesMvmntTp
+
+	@SctiesMvmntTp.setter
+	def SctiesMvmntTp(self, value):
+		self._SctiesMvmntTp = value if type(value) != auto else self.make_default("SctiesMvmntTp")
+
+	@SctiesMvmntTp.deleter
+	def SctiesMvmntTp(self):
+		del self._SctiesMvmntTp
+		self._SctiesMvmntTp = None
+
 	@property
 	def Pmt(self):
 		return self._Pmt
@@ -32,22 +45,9 @@ class SettlementTypeAndIdentification18(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
-	@property
-	def SctiesMvmntTp(self):
-		return self._SctiesMvmntTp
-
-	@SctiesMvmntTp.setter
-	def SctiesMvmntTp(self, value):
-		self._SctiesMvmntTp = value if type(value) != auto else self.make_default("SctiesMvmntTp")
-
-	@SctiesMvmntTp.deleter
-	def SctiesMvmntTp(self):
-		del self._SctiesMvmntTp
-		self._SctiesMvmntTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

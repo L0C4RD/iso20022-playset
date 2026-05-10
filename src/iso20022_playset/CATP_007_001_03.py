@@ -1,5 +1,5 @@
 from . import base_types
-import ATMInquiryResponseV03
+from .ATMInquiryResponseV03 import ATMInquiryResponseV03
 
 class CATP_007_001_03():
 

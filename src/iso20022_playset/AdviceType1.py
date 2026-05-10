@@ -1,5 +1,5 @@
 from . import base_types
-import AdviceType1Choice
+from .AdviceType1Choice import AdviceType1Choice
 
 class AdviceType1(base_types._BaseFieldType):
 

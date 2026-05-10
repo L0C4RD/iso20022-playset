@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import OrganisationType1Code
+from .GenericIdentification47 import GenericIdentification47
+from .OrganisationType1Code import OrganisationType1Code
 
 class OrganisationType1Choice(base_types._BaseFieldType):
 

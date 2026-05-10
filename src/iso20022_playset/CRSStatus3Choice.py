@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import CRSStatus1Code
+from .CRSStatus1Code import CRSStatus1Code
+from .GenericIdentification47 import GenericIdentification47
 
 class CRSStatus3Choice(base_types._BaseFieldType):
 

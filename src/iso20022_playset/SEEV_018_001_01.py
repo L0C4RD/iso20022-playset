@@ -1,5 +1,5 @@
 from . import base_types
-import AgentCAGlobalDistributionStatusAdviceV01
+from .AgentCAGlobalDistributionStatusAdviceV01 import AgentCAGlobalDistributionStatusAdviceV01
 
 class SEEV_018_001_01():
 

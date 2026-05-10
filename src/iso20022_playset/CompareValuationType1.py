@@ -1,5 +1,5 @@
 from . import base_types
-import ValuationType1Code
+from .ValuationType1Code import ValuationType1Code
 
 class CompareValuationType1(base_types._BaseFieldType):
 

@@ -1,14 +1,27 @@
 from . import base_types
-import PartyIdentification272
-import ISODateTime
-import OriginalBusinessQuery1
-import Max500Text
-import Max35Text
-import Pagination1
+from .Max35Text import Max35Text
+from .PartyIdentification272 import PartyIdentification272
+from .Max500Text import Max500Text
+from .Pagination1 import Pagination1
+from .ISODateTime import ISODateTime
+from .OriginalBusinessQuery1 import OriginalBusinessQuery1
 
 class GroupHeader116(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_MsgRcpt", "_OrgnlBizQry", "_AddtlInf", "_CreDtTm", "_MsgPgntn"]
+	__slots__ = ["_MsgRcpt", "_MsgId", "_MsgPgntn", "_OrgnlBizQry", "_AddtlInf", "_CreDtTm"]
+	@property
+	def MsgRcpt(self):
+		return self._MsgRcpt
+
+	@MsgRcpt.setter
+	def MsgRcpt(self, value):
+		self._MsgRcpt = value if type(value) != auto else self.make_default("MsgRcpt")
+
+	@MsgRcpt.deleter
+	def MsgRcpt(self):
+		del self._MsgRcpt
+		self._MsgRcpt = None
+
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -23,17 +36,17 @@ class GroupHeader116(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def MsgRcpt(self):
-		return self._MsgRcpt
+	def MsgPgntn(self):
+		return self._MsgPgntn
 
-	@MsgRcpt.setter
-	def MsgRcpt(self, value):
-		self._MsgRcpt = value if type(value) != auto else self.make_default("MsgRcpt")
+	@MsgPgntn.setter
+	def MsgPgntn(self, value):
+		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
 
-	@MsgRcpt.deleter
-	def MsgRcpt(self):
-		del self._MsgRcpt
-		self._MsgRcpt = None
+	@MsgPgntn.deleter
+	def MsgPgntn(self):
+		del self._MsgPgntn
+		self._MsgPgntn = None
 
 	@property
 	def OrgnlBizQry(self):
@@ -74,25 +87,12 @@ class GroupHeader116(base_types._BaseFieldType):
 		del self._CreDtTm
 		self._CreDtTm = None
 
-	@property
-	def MsgPgntn(self):
-		return self._MsgPgntn
-
-	@MsgPgntn.setter
-	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
-
-	@MsgPgntn.deleter
-	def MsgPgntn(self):
-		del self._MsgPgntn
-		self._MsgPgntn = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgRcpt', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlBizQry', type=OriginalBusinessQuery1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 	))
 

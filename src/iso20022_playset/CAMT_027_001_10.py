@@ -1,5 +1,5 @@
 from . import base_types
-import ClaimNonReceiptV10
+from .ClaimNonReceiptV10 import ClaimNonReceiptV10
 
 class CAMT_027_001_10():
 

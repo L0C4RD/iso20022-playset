@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import SecuritiesSettlementStatus1Code
+from .GenericIdentification30 import GenericIdentification30
+from .SecuritiesSettlementStatus1Code import SecuritiesSettlementStatus1Code
 
 class SettlementStatus26Choice(base_types._BaseFieldType):
 

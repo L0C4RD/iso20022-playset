@@ -1,5 +1,5 @@
 from . import base_types
-import SecuritiesSettlementTransactionGenerationNotification002V11
+from .SecuritiesSettlementTransactionGenerationNotification002V11 import SecuritiesSettlementTransactionGenerationNotification002V11
 
 class SESE_032_002_11():
 

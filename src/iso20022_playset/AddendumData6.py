@@ -1,32 +1,19 @@
 from . import base_types
-import TemporaryServices3
-import TelecomServices3
-import Lodging4
-import Sale3
-import VehicleRentalService3
-import TravelAgency4
-import PassengerTransport3
-import FleetData6
-import ShippingData3
-import AdditionalData2
-import Invoice3
+from .Sale3 import Sale3
+from .VehicleRentalService3 import VehicleRentalService3
+from .Invoice3 import Invoice3
+from .TravelAgency4 import TravelAgency4
+from .Lodging4 import Lodging4
+from .FleetData6 import FleetData6
+from .TemporaryServices3 import TemporaryServices3
+from .TelecomServices3 import TelecomServices3
+from .PassengerTransport3 import PassengerTransport3
+from .AdditionalData2 import AdditionalData2
+from .ShippingData3 import ShippingData3
 
 class AddendumData6(base_types._BaseFieldType):
 
-	__slots__ = ["_TempSvcs", "_Invc", "_ShppgData", "_TelecomSvcs", "_AddtlData", "_Sale", "_Fleet", "_PssngrTrnsprt", "_Ldgg", "_TrvlAgcy", "_VhclRntl"]
-	@property
-	def TempSvcs(self):
-		return self._TempSvcs
-
-	@TempSvcs.setter
-	def TempSvcs(self, value):
-		self._TempSvcs = value if type(value) != auto else self.make_default("TempSvcs")
-
-	@TempSvcs.deleter
-	def TempSvcs(self):
-		del self._TempSvcs
-		self._TempSvcs = None
-
+	__slots__ = ["_Invc", "_AddtlData", "_Ldgg", "_ShppgData", "_TempSvcs", "_PssngrTrnsprt", "_Fleet", "_TrvlAgcy", "_Sale", "_TelecomSvcs", "_VhclRntl"]
 	@property
 	def Invc(self):
 		return self._Invc
@@ -39,32 +26,6 @@ class AddendumData6(base_types._BaseFieldType):
 	def Invc(self):
 		del self._Invc
 		self._Invc = None
-
-	@property
-	def ShppgData(self):
-		return self._ShppgData
-
-	@ShppgData.setter
-	def ShppgData(self, value):
-		self._ShppgData = value if type(value) != auto else self.make_default("ShppgData")
-
-	@ShppgData.deleter
-	def ShppgData(self):
-		del self._ShppgData
-		self._ShppgData = None
-
-	@property
-	def TelecomSvcs(self):
-		return self._TelecomSvcs
-
-	@TelecomSvcs.setter
-	def TelecomSvcs(self, value):
-		self._TelecomSvcs = value if type(value) != auto else self.make_default("TelecomSvcs")
-
-	@TelecomSvcs.deleter
-	def TelecomSvcs(self):
-		del self._TelecomSvcs
-		self._TelecomSvcs = None
 
 	@property
 	def AddtlData(self):
@@ -80,30 +41,43 @@ class AddendumData6(base_types._BaseFieldType):
 		self._AddtlData = None
 
 	@property
-	def Sale(self):
-		return self._Sale
+	def Ldgg(self):
+		return self._Ldgg
 
-	@Sale.setter
-	def Sale(self, value):
-		self._Sale = value if type(value) != auto else self.make_default("Sale")
+	@Ldgg.setter
+	def Ldgg(self, value):
+		self._Ldgg = value if type(value) != auto else self.make_default("Ldgg")
 
-	@Sale.deleter
-	def Sale(self):
-		del self._Sale
-		self._Sale = None
+	@Ldgg.deleter
+	def Ldgg(self):
+		del self._Ldgg
+		self._Ldgg = None
 
 	@property
-	def Fleet(self):
-		return self._Fleet
+	def ShppgData(self):
+		return self._ShppgData
 
-	@Fleet.setter
-	def Fleet(self, value):
-		self._Fleet = value if type(value) != auto else self.make_default("Fleet")
+	@ShppgData.setter
+	def ShppgData(self, value):
+		self._ShppgData = value if type(value) != auto else self.make_default("ShppgData")
 
-	@Fleet.deleter
-	def Fleet(self):
-		del self._Fleet
-		self._Fleet = None
+	@ShppgData.deleter
+	def ShppgData(self):
+		del self._ShppgData
+		self._ShppgData = None
+
+	@property
+	def TempSvcs(self):
+		return self._TempSvcs
+
+	@TempSvcs.setter
+	def TempSvcs(self, value):
+		self._TempSvcs = value if type(value) != auto else self.make_default("TempSvcs")
+
+	@TempSvcs.deleter
+	def TempSvcs(self):
+		del self._TempSvcs
+		self._TempSvcs = None
 
 	@property
 	def PssngrTrnsprt(self):
@@ -119,17 +93,17 @@ class AddendumData6(base_types._BaseFieldType):
 		self._PssngrTrnsprt = None
 
 	@property
-	def Ldgg(self):
-		return self._Ldgg
+	def Fleet(self):
+		return self._Fleet
 
-	@Ldgg.setter
-	def Ldgg(self, value):
-		self._Ldgg = value if type(value) != auto else self.make_default("Ldgg")
+	@Fleet.setter
+	def Fleet(self, value):
+		self._Fleet = value if type(value) != auto else self.make_default("Fleet")
 
-	@Ldgg.deleter
-	def Ldgg(self):
-		del self._Ldgg
-		self._Ldgg = None
+	@Fleet.deleter
+	def Fleet(self):
+		del self._Fleet
+		self._Fleet = None
 
 	@property
 	def TrvlAgcy(self):
@@ -145,6 +119,32 @@ class AddendumData6(base_types._BaseFieldType):
 		self._TrvlAgcy = None
 
 	@property
+	def Sale(self):
+		return self._Sale
+
+	@Sale.setter
+	def Sale(self, value):
+		self._Sale = value if type(value) != auto else self.make_default("Sale")
+
+	@Sale.deleter
+	def Sale(self):
+		del self._Sale
+		self._Sale = None
+
+	@property
+	def TelecomSvcs(self):
+		return self._TelecomSvcs
+
+	@TelecomSvcs.setter
+	def TelecomSvcs(self, value):
+		self._TelecomSvcs = value if type(value) != auto else self.make_default("TelecomSvcs")
+
+	@TelecomSvcs.deleter
+	def TelecomSvcs(self):
+		del self._TelecomSvcs
+		self._TelecomSvcs = None
+
+	@property
 	def VhclRntl(self):
 		return self._VhclRntl
 
@@ -158,16 +158,16 @@ class AddendumData6(base_types._BaseFieldType):
 		self._VhclRntl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TempSvcs', type=TemporaryServices3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Invc', type=Invoice3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShppgData', type=ShippingData3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TelecomSvcs', type=TelecomServices3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sale', type=Sale3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fleet', type=FleetData6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PssngrTrnsprt', type=PassengerTransport3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ldgg', type=Lodging4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ShppgData', type=ShippingData3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TempSvcs', type=TemporaryServices3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PssngrTrnsprt', type=PassengerTransport3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fleet', type=FleetData6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrvlAgcy', type=TravelAgency4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sale', type=Sale3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TelecomSvcs', type=TelecomServices3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VhclRntl', type=VehicleRentalService3, min=0, max=None, mutex_group=None, array=True),
 	))
 

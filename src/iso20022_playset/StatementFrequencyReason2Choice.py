@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import EventFrequency9Code
+from .GenericIdentification47 import GenericIdentification47
+from .EventFrequency9Code import EventFrequency9Code
 
 class StatementFrequencyReason2Choice(base_types._BaseFieldType):
 

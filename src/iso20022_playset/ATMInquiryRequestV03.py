@@ -1,25 +1,12 @@
 from . import base_types
-import ATMInquiryRequest3
-import Header31
-import ContentInformationType10
-import ContentInformationType15
+from .ContentInformationType10 import ContentInformationType10
+from .ATMInquiryRequest3 import ATMInquiryRequest3
+from .Header31 import Header31
+from .ContentInformationType15 import ContentInformationType15
 
 class ATMInquiryRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMNqryReq", "_ATMNqryReq", "_SctyTrlr", "_Hdr"]
-	@property
-	def PrtctdATMNqryReq(self):
-		return self._PrtctdATMNqryReq
-
-	@PrtctdATMNqryReq.setter
-	def PrtctdATMNqryReq(self, value):
-		self._PrtctdATMNqryReq = value if type(value) != auto else self.make_default("PrtctdATMNqryReq")
-
-	@PrtctdATMNqryReq.deleter
-	def PrtctdATMNqryReq(self):
-		del self._PrtctdATMNqryReq
-		self._PrtctdATMNqryReq = None
-
+	__slots__ = ["_ATMNqryReq", "_Hdr", "_SctyTrlr", "_PrtctdATMNqryReq"]
 	@property
 	def ATMNqryReq(self):
 		return self._ATMNqryReq
@@ -32,6 +19,19 @@ class ATMInquiryRequestV03(base_types._BaseFieldType):
 	def ATMNqryReq(self):
 		del self._ATMNqryReq
 		self._ATMNqryReq = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def SctyTrlr(self):
@@ -47,22 +47,22 @@ class ATMInquiryRequestV03(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def PrtctdATMNqryReq(self):
+		return self._PrtctdATMNqryReq
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+	@PrtctdATMNqryReq.setter
+	def PrtctdATMNqryReq(self, value):
+		self._PrtctdATMNqryReq = value if type(value) != auto else self.make_default("PrtctdATMNqryReq")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@PrtctdATMNqryReq.deleter
+	def PrtctdATMNqryReq(self):
+		del self._PrtctdATMNqryReq
+		self._PrtctdATMNqryReq = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctdATMNqryReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMNqryReq', type=ATMInquiryRequest3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMNqryReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 	))
 

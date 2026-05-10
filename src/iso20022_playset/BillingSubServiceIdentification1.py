@@ -1,6 +1,6 @@
 from . import base_types
-import BillingSubServiceQualifier1Choice
-import Max35Text
+from .Max35Text import Max35Text
+from .BillingSubServiceQualifier1Choice import BillingSubServiceQualifier1Choice
 
 class BillingSubServiceIdentification1(base_types._BaseFieldType):
 

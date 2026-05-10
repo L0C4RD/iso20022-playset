@@ -1,26 +1,26 @@
 from . import base_types
-import Number
-import TradingVenueIdentification1Choice
-import ISINOct2015Identifier
-import ISODateTime
-import Pagination1
-import Period11Choice
+from .Number import Number
+from .Period11Choice import Period11Choice
+from .ISINOct2015Identifier import ISINOct2015Identifier
+from .Pagination1 import Pagination1
+from .TradingVenueIdentification1Choice import TradingVenueIdentification1Choice
+from .ISODateTime import ISODateTime
 
 class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgPrd", "_SubmissnDtTm", "_NbRcrds", "_RptgNtty", "_ISIN", "_MsgPgntn"]
+	__slots__ = ["_RptgNtty", "_SubmissnDtTm", "_NbRcrds", "_MsgPgntn", "_RptgPrd", "_ISIN"]
 	@property
-	def RptgPrd(self):
-		return self._RptgPrd
+	def RptgNtty(self):
+		return self._RptgNtty
 
-	@RptgPrd.setter
-	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
+	@RptgNtty.setter
+	def RptgNtty(self, value):
+		self._RptgNtty = value if type(value) != auto else self.make_default("RptgNtty")
 
-	@RptgPrd.deleter
-	def RptgPrd(self):
-		del self._RptgPrd
-		self._RptgPrd = None
+	@RptgNtty.deleter
+	def RptgNtty(self):
+		del self._RptgNtty
+		self._RptgNtty = None
 
 	@property
 	def SubmissnDtTm(self):
@@ -49,17 +49,30 @@ class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 		self._NbRcrds = None
 
 	@property
-	def RptgNtty(self):
-		return self._RptgNtty
+	def MsgPgntn(self):
+		return self._MsgPgntn
 
-	@RptgNtty.setter
-	def RptgNtty(self, value):
-		self._RptgNtty = value if type(value) != auto else self.make_default("RptgNtty")
+	@MsgPgntn.setter
+	def MsgPgntn(self, value):
+		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
 
-	@RptgNtty.deleter
-	def RptgNtty(self):
-		del self._RptgNtty
-		self._RptgNtty = None
+	@MsgPgntn.deleter
+	def MsgPgntn(self):
+		del self._MsgPgntn
+		self._MsgPgntn = None
+
+	@property
+	def RptgPrd(self):
+		return self._RptgPrd
+
+	@RptgPrd.setter
+	def RptgPrd(self, value):
+		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
+
+	@RptgPrd.deleter
+	def RptgPrd(self):
+		del self._RptgPrd
+		self._RptgPrd = None
 
 	@property
 	def ISIN(self):
@@ -74,25 +87,12 @@ class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 		del self._ISIN
 		self._ISIN = None
 
-	@property
-	def MsgPgntn(self):
-		return self._MsgPgntn
-
-	@MsgPgntn.setter
-	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
-
-	@MsgPgntn.deleter
-	def MsgPgntn(self):
-		del self._MsgPgntn
-		self._MsgPgntn = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgPrd', type=Period11Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgNtty', type=TradingVenueIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmissnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbRcrds', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgNtty', type=TradingVenueIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgPrd', type=Period11Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=None, mutex_group=None, array=True),
 	))
 

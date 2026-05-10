@@ -1,9 +1,9 @@
 from . import base_types
-import MarginReportData9
+from .MarginReportData9 import MarginReportData9
 
 class TradeReport34Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Crrctn", "_MrgnUpd", "_New", "_Err"]
+	__slots__ = ["_Crrctn", "_New", "_MrgnUpd", "_Err"]
 	@property
 	def Crrctn(self):
 		return self._Crrctn
@@ -18,19 +18,6 @@ class TradeReport34Choice(base_types._BaseFieldType):
 		self._Crrctn = None
 
 	@property
-	def MrgnUpd(self):
-		return self._MrgnUpd
-
-	@MrgnUpd.setter
-	def MrgnUpd(self, value):
-		self._MrgnUpd = value if type(value) != auto else self.make_default("MrgnUpd")
-
-	@MrgnUpd.deleter
-	def MrgnUpd(self):
-		del self._MrgnUpd
-		self._MrgnUpd = None
-
-	@property
 	def New(self):
 		return self._New
 
@@ -42,6 +29,19 @@ class TradeReport34Choice(base_types._BaseFieldType):
 	def New(self):
 		del self._New
 		self._New = None
+
+	@property
+	def MrgnUpd(self):
+		return self._MrgnUpd
+
+	@MrgnUpd.setter
+	def MrgnUpd(self, value):
+		self._MrgnUpd = value if type(value) != auto else self.make_default("MrgnUpd")
+
+	@MrgnUpd.deleter
+	def MrgnUpd(self):
+		del self._MrgnUpd
+		self._MrgnUpd = None
 
 	@property
 	def Err(self):
@@ -58,8 +58,8 @@ class TradeReport34Choice(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Crrctn', type=MarginReportData9, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MrgnUpd', type=MarginReportData9, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='New', type=MarginReportData9, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MrgnUpd', type=MarginReportData9, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Err', type=MarginReportData9, min=0, max=1, mutex_group=1, array=False),
 	))
 

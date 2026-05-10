@@ -1,24 +1,24 @@
 from . import base_types
-import Header31
-import ATMTransferResponse2
-import ContentInformationType15
-import ContentInformationType10
+from .ATMTransferResponse2 import ATMTransferResponse2
+from .ContentInformationType10 import ContentInformationType10
+from .ContentInformationType15 import ContentInformationType15
+from .Header31 import Header31
 
 class ATMTransferResponseV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_PrtctdATMTrfRspn", "_Hdr", "_ATMTrfRspn"]
+	__slots__ = ["_ATMTrfRspn", "_PrtctdATMTrfRspn", "_Hdr", "_SctyTrlr"]
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def ATMTrfRspn(self):
+		return self._ATMTrfRspn
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+	@ATMTrfRspn.setter
+	def ATMTrfRspn(self, value):
+		self._ATMTrfRspn = value if type(value) != auto else self.make_default("ATMTrfRspn")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@ATMTrfRspn.deleter
+	def ATMTrfRspn(self):
+		del self._ATMTrfRspn
+		self._ATMTrfRspn = None
 
 	@property
 	def PrtctdATMTrfRspn(self):
@@ -47,22 +47,22 @@ class ATMTransferResponseV02(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def ATMTrfRspn(self):
-		return self._ATMTrfRspn
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@ATMTrfRspn.setter
-	def ATMTrfRspn(self, value):
-		self._ATMTrfRspn = value if type(value) != auto else self.make_default("ATMTrfRspn")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
 
-	@ATMTrfRspn.deleter
-	def ATMTrfRspn(self):
-		del self._ATMTrfRspn
-		self._ATMTrfRspn = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMTrfRspn', type=ATMTransferResponse2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMTrfRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMTrfRspn', type=ATMTransferResponse2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

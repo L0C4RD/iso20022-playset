@@ -1,23 +1,10 @@
 from . import base_types
-import SpecificCollateral2
-import GeneralCollateral3
+from .SpecificCollateral2 import SpecificCollateral2
+from .GeneralCollateral3 import GeneralCollateral3
 
 class RepurchaseAgreementType3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_GnlColl", "_SpcfcColl"]
-	@property
-	def GnlColl(self):
-		return self._GnlColl
-
-	@GnlColl.setter
-	def GnlColl(self, value):
-		self._GnlColl = value if type(value) != auto else self.make_default("GnlColl")
-
-	@GnlColl.deleter
-	def GnlColl(self):
-		del self._GnlColl
-		self._GnlColl = None
-
+	__slots__ = ["_SpcfcColl", "_GnlColl"]
 	@property
 	def SpcfcColl(self):
 		return self._SpcfcColl
@@ -31,8 +18,21 @@ class RepurchaseAgreementType3Choice(base_types._BaseFieldType):
 		del self._SpcfcColl
 		self._SpcfcColl = None
 
+	@property
+	def GnlColl(self):
+		return self._GnlColl
+
+	@GnlColl.setter
+	def GnlColl(self, value):
+		self._GnlColl = value if type(value) != auto else self.make_default("GnlColl")
+
+	@GnlColl.deleter
+	def GnlColl(self):
+		del self._GnlColl
+		self._GnlColl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GnlColl', type=GeneralCollateral3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SpcfcColl', type=SpecificCollateral2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='GnlColl', type=GeneralCollateral3, min=0, max=1, mutex_group=1, array=False),
 	))
 

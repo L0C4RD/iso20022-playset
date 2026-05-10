@@ -1,5 +1,5 @@
 from . import base_types
-import ModificationLevel1Code
+from .ModificationLevel1Code import ModificationLevel1Code
 
 class CompareReportingLevelType2(base_types._BaseFieldType):
 

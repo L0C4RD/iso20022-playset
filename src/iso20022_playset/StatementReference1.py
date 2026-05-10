@@ -1,24 +1,11 @@
 from . import base_types
-import DateAndDateTimeChoice
-import Pagination
-import Max35Text
+from .Max35Text import Max35Text
+from .Pagination import Pagination
+from .DateAndDateTimeChoice import DateAndDateTimeChoice
 
 class StatementReference1(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtDtTm", "_StmtId", "_Pgntn"]
-	@property
-	def StmtDtTm(self):
-		return self._StmtDtTm
-
-	@StmtDtTm.setter
-	def StmtDtTm(self, value):
-		self._StmtDtTm = value if type(value) != auto else self.make_default("StmtDtTm")
-
-	@StmtDtTm.deleter
-	def StmtDtTm(self):
-		del self._StmtDtTm
-		self._StmtDtTm = None
-
+	__slots__ = ["_StmtId", "_StmtDtTm", "_Pgntn"]
 	@property
 	def StmtId(self):
 		return self._StmtId
@@ -31,6 +18,19 @@ class StatementReference1(base_types._BaseFieldType):
 	def StmtId(self):
 		del self._StmtId
 		self._StmtId = None
+
+	@property
+	def StmtDtTm(self):
+		return self._StmtDtTm
+
+	@StmtDtTm.setter
+	def StmtDtTm(self, value):
+		self._StmtDtTm = value if type(value) != auto else self.make_default("StmtDtTm")
+
+	@StmtDtTm.deleter
+	def StmtDtTm(self):
+		del self._StmtDtTm
+		self._StmtDtTm = None
 
 	@property
 	def Pgntn(self):
@@ -46,8 +46,8 @@ class StatementReference1(base_types._BaseFieldType):
 		self._Pgntn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination, min=0, max=1, mutex_group=None, array=False),
 	))
 

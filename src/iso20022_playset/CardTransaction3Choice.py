@@ -1,6 +1,6 @@
 from . import base_types
-import CardAggregated2
-import CardIndividualTransaction2
+from .CardIndividualTransaction2 import CardIndividualTransaction2
+from .CardAggregated2 import CardAggregated2
 
 class CardTransaction3Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import YesNoIndicator
-import NationalityCode
+from .NationalityCode import NationalityCode
+from .YesNoIndicator import YesNoIndicator
 
 class CitizenshipInformation2(base_types._BaseFieldType):
 

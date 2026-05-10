@@ -1,6 +1,6 @@
 from . import base_types
-import Amount2Choice
-import CreditDebitCode
+from .CreditDebitCode import CreditDebitCode
+from .Amount2Choice import Amount2Choice
 
 class Limit10(base_types._BaseFieldType):
 

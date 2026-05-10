@@ -1,7 +1,7 @@
 from . import base_types
-import Max70Text
-import Max140Text
-import CollateralAccountIdentificationType3Choice
+from .Max140Text import Max140Text
+from .Max70Text import Max70Text
+from .CollateralAccountIdentificationType3Choice import CollateralAccountIdentificationType3Choice
 
 class BlockChainAddressWallet5(base_types._BaseFieldType):
 

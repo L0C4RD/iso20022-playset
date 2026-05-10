@@ -1,5 +1,5 @@
 from . import base_types
-import FinancialInstrumentContractType2Code
+from .FinancialInstrumentContractType2Code import FinancialInstrumentContractType2Code
 
 class CompareFinancialInstrumentContractType1(base_types._BaseFieldType):
 

@@ -1,25 +1,12 @@
 from . import base_types
-import CurrencyAndAmount
-import PercentageRate
-import Max35Text
-import BankRole1Code
+from .BankRole1Code import BankRole1Code
+from .Max35Text import Max35Text
+from .PercentageRate import PercentageRate
+from .CurrencyAndAmount import CurrencyAndAmount
 
 class Charges5(base_types._BaseFieldType):
 
-	__slots__ = ["_Pctg", "_Tp", "_ChrgsPyee", "_ChrgsPyer", "_Amt"]
-	@property
-	def Pctg(self):
-		return self._Pctg
-
-	@Pctg.setter
-	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
-
-	@Pctg.deleter
-	def Pctg(self):
-		del self._Pctg
-		self._Pctg = None
-
+	__slots__ = ["_Tp", "_ChrgsPyee", "_ChrgsPyer", "_Amt", "_Pctg"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -72,11 +59,24 @@ class Charges5(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def Pctg(self):
+		return self._Pctg
+
+	@Pctg.setter
+	def Pctg(self, value):
+		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+
+	@Pctg.deleter
+	def Pctg(self):
+		del self._Pctg
+		self._Pctg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgsPyee', type=BankRole1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgsPyer', type=BankRole1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

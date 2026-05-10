@@ -1,11 +1,11 @@
 from . import base_types
-import ActiveCurrencyAnd24Amount
-import ISINOct2015Identifier
-import ProductType7Code
+from .ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
+from .ProductType7Code import ProductType7Code
+from .ISINOct2015Identifier import ISINOct2015Identifier
 
 class SecurityIdentificationAndAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_MktVal", "_FinInstrmTp", "_Id"]
+	__slots__ = ["_MktVal", "_Id", "_FinInstrmTp"]
 	@property
 	def MktVal(self):
 		return self._MktVal
@@ -20,19 +20,6 @@ class SecurityIdentificationAndAmount1(base_types._BaseFieldType):
 		self._MktVal = None
 
 	@property
-	def FinInstrmTp(self):
-		return self._FinInstrmTp
-
-	@FinInstrmTp.setter
-	def FinInstrmTp(self, value):
-		self._FinInstrmTp = value if type(value) != auto else self.make_default("FinInstrmTp")
-
-	@FinInstrmTp.deleter
-	def FinInstrmTp(self):
-		del self._FinInstrmTp
-		self._FinInstrmTp = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -45,9 +32,22 @@ class SecurityIdentificationAndAmount1(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def FinInstrmTp(self):
+		return self._FinInstrmTp
+
+	@FinInstrmTp.setter
+	def FinInstrmTp(self, value):
+		self._FinInstrmTp = value if type(value) != auto else self.make_default("FinInstrmTp")
+
+	@FinInstrmTp.deleter
+	def FinInstrmTp(self):
+		del self._FinInstrmTp
+		self._FinInstrmTp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmTp', type=ProductType7Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmTp', type=ProductType7Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

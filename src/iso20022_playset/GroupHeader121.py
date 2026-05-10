@@ -1,7 +1,7 @@
 from . import base_types
-import Party50Choice
-import Max35Text
-import ISODateTime
+from .Max35Text import Max35Text
+from .Party50Choice import Party50Choice
+from .ISODateTime import ISODateTime
 
 class GroupHeader121(base_types._BaseFieldType):
 

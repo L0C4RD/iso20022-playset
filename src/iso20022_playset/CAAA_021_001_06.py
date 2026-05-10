@@ -1,5 +1,5 @@
 from . import base_types
-import TransactionAdviceResponseV06
+from .TransactionAdviceResponseV06 import TransactionAdviceResponseV06
 
 class CAAA_021_001_06():
 

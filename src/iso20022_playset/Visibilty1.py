@@ -1,10 +1,10 @@
 from . import base_types
-import DateAndDateTime2Choice
-import TrueFalseIndicator
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class Visibilty1(base_types._BaseFieldType):
 
-	__slots__ = ["_EndDt", "_LtdVsblty", "_StartDt"]
+	__slots__ = ["_EndDt", "_StartDt", "_LtdVsblty"]
 	@property
 	def EndDt(self):
 		return self._EndDt
@@ -19,19 +19,6 @@ class Visibilty1(base_types._BaseFieldType):
 		self._EndDt = None
 
 	@property
-	def LtdVsblty(self):
-		return self._LtdVsblty
-
-	@LtdVsblty.setter
-	def LtdVsblty(self, value):
-		self._LtdVsblty = value if type(value) != auto else self.make_default("LtdVsblty")
-
-	@LtdVsblty.deleter
-	def LtdVsblty(self):
-		del self._LtdVsblty
-		self._LtdVsblty = None
-
-	@property
 	def StartDt(self):
 		return self._StartDt
 
@@ -44,9 +31,22 @@ class Visibilty1(base_types._BaseFieldType):
 		del self._StartDt
 		self._StartDt = None
 
+	@property
+	def LtdVsblty(self):
+		return self._LtdVsblty
+
+	@LtdVsblty.setter
+	def LtdVsblty(self, value):
+		self._LtdVsblty = value if type(value) != auto else self.make_default("LtdVsblty")
+
+	@LtdVsblty.deleter
+	def LtdVsblty(self):
+		del self._LtdVsblty
+		self._LtdVsblty = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EndDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LtdVsblty', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LtdVsblty', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

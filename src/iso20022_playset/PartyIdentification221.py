@@ -1,11 +1,11 @@
 from . import base_types
-import PartyIdentification198Choice
-import PersonName2
-import Max256Text
+from .Max256Text import Max256Text
+from .PartyIdentification198Choice import PartyIdentification198Choice
+from .PersonName2 import PersonName2
 
 class PartyIdentification221(base_types._BaseFieldType):
 
-	__slots__ = ["_EmailAdr", "_Id", "_NmAndAdr"]
+	__slots__ = ["_EmailAdr", "_NmAndAdr", "_Id"]
 	@property
 	def EmailAdr(self):
 		return self._EmailAdr
@@ -20,19 +20,6 @@ class PartyIdentification221(base_types._BaseFieldType):
 		self._EmailAdr = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def NmAndAdr(self):
 		return self._NmAndAdr
 
@@ -45,9 +32,22 @@ class PartyIdentification221(base_types._BaseFieldType):
 		del self._NmAndAdr
 		self._NmAndAdr = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification198Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=PersonName2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification198Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

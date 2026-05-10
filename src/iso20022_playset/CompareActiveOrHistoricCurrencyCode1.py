@@ -1,5 +1,5 @@
 from . import base_types
-import ActiveOrHistoricCurrencyCode
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 
 class CompareActiveOrHistoricCurrencyCode1(base_types._BaseFieldType):
 

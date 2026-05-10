@@ -1,23 +1,23 @@
 from . import base_types
-import OrganisationIdentification15Choice
-import UniqueTransactionIdentifier1Choice
-import ISODateTime
+from .ISODateTime import ISODateTime
+from .UniqueTransactionIdentifier1Choice import UniqueTransactionIdentifier1Choice
+from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class ClearingPartyAndTime23(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrRctDtTm", "_ClrIdr", "_OrgnlTradRpstryIdr", "_ClrDtTm", "_OrgnlIdr", "_CCP"]
+	__slots__ = ["_OrgnlIdr", "_ClrIdr", "_ClrDtTm", "_ClrRctDtTm", "_CCP", "_OrgnlTradRpstryIdr"]
 	@property
-	def ClrRctDtTm(self):
-		return self._ClrRctDtTm
+	def OrgnlIdr(self):
+		return self._OrgnlIdr
 
-	@ClrRctDtTm.setter
-	def ClrRctDtTm(self, value):
-		self._ClrRctDtTm = value if type(value) != auto else self.make_default("ClrRctDtTm")
+	@OrgnlIdr.setter
+	def OrgnlIdr(self, value):
+		self._OrgnlIdr = value if type(value) != auto else self.make_default("OrgnlIdr")
 
-	@ClrRctDtTm.deleter
-	def ClrRctDtTm(self):
-		del self._ClrRctDtTm
-		self._ClrRctDtTm = None
+	@OrgnlIdr.deleter
+	def OrgnlIdr(self):
+		del self._OrgnlIdr
+		self._OrgnlIdr = None
 
 	@property
 	def ClrIdr(self):
@@ -33,19 +33,6 @@ class ClearingPartyAndTime23(base_types._BaseFieldType):
 		self._ClrIdr = None
 
 	@property
-	def OrgnlTradRpstryIdr(self):
-		return self._OrgnlTradRpstryIdr
-
-	@OrgnlTradRpstryIdr.setter
-	def OrgnlTradRpstryIdr(self, value):
-		self._OrgnlTradRpstryIdr = value if type(value) != auto else self.make_default("OrgnlTradRpstryIdr")
-
-	@OrgnlTradRpstryIdr.deleter
-	def OrgnlTradRpstryIdr(self):
-		del self._OrgnlTradRpstryIdr
-		self._OrgnlTradRpstryIdr = None
-
-	@property
 	def ClrDtTm(self):
 		return self._ClrDtTm
 
@@ -59,17 +46,17 @@ class ClearingPartyAndTime23(base_types._BaseFieldType):
 		self._ClrDtTm = None
 
 	@property
-	def OrgnlIdr(self):
-		return self._OrgnlIdr
+	def ClrRctDtTm(self):
+		return self._ClrRctDtTm
 
-	@OrgnlIdr.setter
-	def OrgnlIdr(self, value):
-		self._OrgnlIdr = value if type(value) != auto else self.make_default("OrgnlIdr")
+	@ClrRctDtTm.setter
+	def ClrRctDtTm(self, value):
+		self._ClrRctDtTm = value if type(value) != auto else self.make_default("ClrRctDtTm")
 
-	@OrgnlIdr.deleter
-	def OrgnlIdr(self):
-		del self._OrgnlIdr
-		self._OrgnlIdr = None
+	@ClrRctDtTm.deleter
+	def ClrRctDtTm(self):
+		del self._ClrRctDtTm
+		self._ClrRctDtTm = None
 
 	@property
 	def CCP(self):
@@ -84,12 +71,25 @@ class ClearingPartyAndTime23(base_types._BaseFieldType):
 		del self._CCP
 		self._CCP = None
 
+	@property
+	def OrgnlTradRpstryIdr(self):
+		return self._OrgnlTradRpstryIdr
+
+	@OrgnlTradRpstryIdr.setter
+	def OrgnlTradRpstryIdr(self, value):
+		self._OrgnlTradRpstryIdr = value if type(value) != auto else self.make_default("OrgnlTradRpstryIdr")
+
+	@OrgnlTradRpstryIdr.deleter
+	def OrgnlTradRpstryIdr(self):
+		del self._OrgnlTradRpstryIdr
+		self._OrgnlTradRpstryIdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrRctDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrIdr', type=UniqueTransactionIdentifier1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlTradRpstryIdr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlIdr', type=UniqueTransactionIdentifier1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrIdr', type=UniqueTransactionIdentifier1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrRctDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CCP', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlTradRpstryIdr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
-import RetailerService1Code
-import Max35Text
-import PointOfInteractionComponent17
+from .Max35Text import Max35Text
+from .RetailerService1Code import RetailerService1Code
+from .PointOfInteractionComponent17 import PointOfInteractionComponent17
 
 class EventContext7(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcTp", "_CmpntId", "_SaleId"]
-	@property
-	def SvcTp(self):
-		return self._SvcTp
-
-	@SvcTp.setter
-	def SvcTp(self, value):
-		self._SvcTp = value if type(value) != auto else self.make_default("SvcTp")
-
-	@SvcTp.deleter
-	def SvcTp(self):
-		del self._SvcTp
-		self._SvcTp = None
-
+	__slots__ = ["_CmpntId", "_SaleId", "_SvcTp"]
 	@property
 	def CmpntId(self):
 		return self._CmpntId
@@ -45,9 +32,22 @@ class EventContext7(base_types._BaseFieldType):
 		del self._SaleId
 		self._SaleId = None
 
+	@property
+	def SvcTp(self):
+		return self._SvcTp
+
+	@SvcTp.setter
+	def SvcTp(self, value):
+		self._SvcTp = value if type(value) != auto else self.make_default("SvcTp")
+
+	@SvcTp.deleter
+	def SvcTp(self):
+		del self._SvcTp
+		self._SvcTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SvcTp', type=RetailerService1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmpntId', type=PointOfInteractionComponent17, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcTp', type=RetailerService1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

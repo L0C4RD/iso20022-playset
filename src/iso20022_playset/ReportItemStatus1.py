@@ -1,24 +1,11 @@
 from . import base_types
-import ReportItemRejectionReason1Choice
-import Max210Text
-import ReportItem1
+from .ReportItemRejectionReason1Choice import ReportItemRejectionReason1Choice
+from .ReportItem1 import ReportItem1
+from .Max210Text import Max210Text
 
 class ReportItemStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Xcptn", "_RptItm", "_AddtlRsnInf"]
-	@property
-	def Xcptn(self):
-		return self._Xcptn
-
-	@Xcptn.setter
-	def Xcptn(self, value):
-		self._Xcptn = value if type(value) != auto else self.make_default("Xcptn")
-
-	@Xcptn.deleter
-	def Xcptn(self):
-		del self._Xcptn
-		self._Xcptn = None
-
+	__slots__ = ["_RptItm", "_AddtlRsnInf", "_Xcptn"]
 	@property
 	def RptItm(self):
 		return self._RptItm
@@ -45,9 +32,22 @@ class ReportItemStatus1(base_types._BaseFieldType):
 		del self._AddtlRsnInf
 		self._AddtlRsnInf = None
 
+	@property
+	def Xcptn(self):
+		return self._Xcptn
+
+	@Xcptn.setter
+	def Xcptn(self, value):
+		self._Xcptn = value if type(value) != auto else self.make_default("Xcptn")
+
+	@Xcptn.deleter
+	def Xcptn(self):
+		del self._Xcptn
+		self._Xcptn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Xcptn', type=ReportItemRejectionReason1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptItm', type=ReportItem1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlRsnInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xcptn', type=ReportItemRejectionReason1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

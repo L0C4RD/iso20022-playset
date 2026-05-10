@@ -1,6 +1,6 @@
 from . import base_types
-import AmountAndDirection30
-import PercentageRate
+from .PercentageRate import PercentageRate
+from .AmountAndDirection30 import AmountAndDirection30
 
 class AmountAndRate2(base_types._BaseFieldType):
 

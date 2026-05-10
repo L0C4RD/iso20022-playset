@@ -1,24 +1,11 @@
 from . import base_types
-import UnmatchedStatus21Choice
-import ProprietaryStatusAndReason7
-import ProprietaryReason5
+from .UnmatchedStatus21Choice import UnmatchedStatus21Choice
+from .ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
+from .ProprietaryReason5 import ProprietaryReason5
 
 class MatchingStatus32Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Mtchd", "_Umtchd", "_Prtry"]
-	@property
-	def Mtchd(self):
-		return self._Mtchd
-
-	@Mtchd.setter
-	def Mtchd(self, value):
-		self._Mtchd = value if type(value) != auto else self.make_default("Mtchd")
-
-	@Mtchd.deleter
-	def Mtchd(self):
-		del self._Mtchd
-		self._Mtchd = None
-
+	__slots__ = ["_Umtchd", "_Prtry", "_Mtchd"]
 	@property
 	def Umtchd(self):
 		return self._Umtchd
@@ -45,9 +32,22 @@ class MatchingStatus32Choice(base_types._BaseFieldType):
 		del self._Prtry
 		self._Prtry = None
 
+	@property
+	def Mtchd(self):
+		return self._Mtchd
+
+	@Mtchd.setter
+	def Mtchd(self, value):
+		self._Mtchd = value if type(value) != auto else self.make_default("Mtchd")
+
+	@Mtchd.deleter
+	def Mtchd(self):
+		del self._Mtchd
+		self._Mtchd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mtchd', type=ProprietaryReason5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Umtchd', type=UnmatchedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Mtchd', type=ProprietaryReason5, min=0, max=1, mutex_group=1, array=False),
 	))
 

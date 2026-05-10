@@ -1,6 +1,6 @@
 from . import base_types
-import InterestComputationMethod2Code
-import GenericIdentification30
+from .GenericIdentification30 import GenericIdentification30
+from .InterestComputationMethod2Code import InterestComputationMethod2Code
 
 class InterestComputationMethodFormat4Choice(base_types._BaseFieldType):
 

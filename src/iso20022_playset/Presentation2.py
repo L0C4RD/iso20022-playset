@@ -1,6 +1,6 @@
 from . import base_types
-import PartyIdentification43
-import ISODate
+from .PartyIdentification43 import PartyIdentification43
+from .ISODate import ISODate
 
 class Presentation2(base_types._BaseFieldType):
 

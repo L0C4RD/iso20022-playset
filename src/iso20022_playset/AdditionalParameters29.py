@@ -1,36 +1,23 @@
 from . import base_types
-import PartialSettlement2Code
-import PreConfirmation1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .PartialSettlement2Code import PartialSettlement2Code
+from .PreConfirmation1Code import PreConfirmation1Code
 
 class AdditionalParameters29(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsPrtlConfId", "_TrptyAgtSvcPrvdrCollInstrId", "_PrtlSttlm", "_PreConf", "_ClntTrptyCollTxId", "_TrptyAgtSvcPrvdrCollTxId", "_ClntCollInstrId"]
+	__slots__ = ["_ClntTrptyCollTxId", "_PrtlSttlm", "_TrptyAgtSvcPrvdrCollTxId", "_ClntCollInstrId", "_TrptyAgtSvcPrvdrCollInstrId", "_PreConf", "_PrvsPrtlConfId"]
 	@property
-	def PrvsPrtlConfId(self):
-		return self._PrvsPrtlConfId
+	def ClntTrptyCollTxId(self):
+		return self._ClntTrptyCollTxId
 
-	@PrvsPrtlConfId.setter
-	def PrvsPrtlConfId(self, value):
-		self._PrvsPrtlConfId = value if type(value) != auto else self.make_default("PrvsPrtlConfId")
+	@ClntTrptyCollTxId.setter
+	def ClntTrptyCollTxId(self, value):
+		self._ClntTrptyCollTxId = value if type(value) != auto else self.make_default("ClntTrptyCollTxId")
 
-	@PrvsPrtlConfId.deleter
-	def PrvsPrtlConfId(self):
-		del self._PrvsPrtlConfId
-		self._PrvsPrtlConfId = None
-
-	@property
-	def TrptyAgtSvcPrvdrCollInstrId(self):
-		return self._TrptyAgtSvcPrvdrCollInstrId
-
-	@TrptyAgtSvcPrvdrCollInstrId.setter
-	def TrptyAgtSvcPrvdrCollInstrId(self, value):
-		self._TrptyAgtSvcPrvdrCollInstrId = value if type(value) != auto else self.make_default("TrptyAgtSvcPrvdrCollInstrId")
-
-	@TrptyAgtSvcPrvdrCollInstrId.deleter
-	def TrptyAgtSvcPrvdrCollInstrId(self):
-		del self._TrptyAgtSvcPrvdrCollInstrId
-		self._TrptyAgtSvcPrvdrCollInstrId = None
+	@ClntTrptyCollTxId.deleter
+	def ClntTrptyCollTxId(self):
+		del self._ClntTrptyCollTxId
+		self._ClntTrptyCollTxId = None
 
 	@property
 	def PrtlSttlm(self):
@@ -44,32 +31,6 @@ class AdditionalParameters29(base_types._BaseFieldType):
 	def PrtlSttlm(self):
 		del self._PrtlSttlm
 		self._PrtlSttlm = None
-
-	@property
-	def PreConf(self):
-		return self._PreConf
-
-	@PreConf.setter
-	def PreConf(self, value):
-		self._PreConf = value if type(value) != auto else self.make_default("PreConf")
-
-	@PreConf.deleter
-	def PreConf(self):
-		del self._PreConf
-		self._PreConf = None
-
-	@property
-	def ClntTrptyCollTxId(self):
-		return self._ClntTrptyCollTxId
-
-	@ClntTrptyCollTxId.setter
-	def ClntTrptyCollTxId(self, value):
-		self._ClntTrptyCollTxId = value if type(value) != auto else self.make_default("ClntTrptyCollTxId")
-
-	@ClntTrptyCollTxId.deleter
-	def ClntTrptyCollTxId(self):
-		del self._ClntTrptyCollTxId
-		self._ClntTrptyCollTxId = None
 
 	@property
 	def TrptyAgtSvcPrvdrCollTxId(self):
@@ -97,13 +58,52 @@ class AdditionalParameters29(base_types._BaseFieldType):
 		del self._ClntCollInstrId
 		self._ClntCollInstrId = None
 
+	@property
+	def TrptyAgtSvcPrvdrCollInstrId(self):
+		return self._TrptyAgtSvcPrvdrCollInstrId
+
+	@TrptyAgtSvcPrvdrCollInstrId.setter
+	def TrptyAgtSvcPrvdrCollInstrId(self, value):
+		self._TrptyAgtSvcPrvdrCollInstrId = value if type(value) != auto else self.make_default("TrptyAgtSvcPrvdrCollInstrId")
+
+	@TrptyAgtSvcPrvdrCollInstrId.deleter
+	def TrptyAgtSvcPrvdrCollInstrId(self):
+		del self._TrptyAgtSvcPrvdrCollInstrId
+		self._TrptyAgtSvcPrvdrCollInstrId = None
+
+	@property
+	def PreConf(self):
+		return self._PreConf
+
+	@PreConf.setter
+	def PreConf(self, value):
+		self._PreConf = value if type(value) != auto else self.make_default("PreConf")
+
+	@PreConf.deleter
+	def PreConf(self):
+		del self._PreConf
+		self._PreConf = None
+
+	@property
+	def PrvsPrtlConfId(self):
+		return self._PrvsPrtlConfId
+
+	@PrvsPrtlConfId.setter
+	def PrvsPrtlConfId(self, value):
+		self._PrvsPrtlConfId = value if type(value) != auto else self.make_default("PrvsPrtlConfId")
+
+	@PrvsPrtlConfId.deleter
+	def PrvsPrtlConfId(self):
+		del self._PrvsPrtlConfId
+		self._PrvsPrtlConfId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrvsPrtlConfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtlSttlm', type=PartialSettlement2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PreConf', type=PreConfirmation1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntTrptyCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtlSttlm', type=PartialSettlement2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntCollInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PreConf', type=PreConfirmation1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsPrtlConfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,24 @@
 from . import base_types
-import BranchAndFinancialInstitutionIdentification8
-import CashAccount40
-import Max35Text
+from .Max35Text import Max35Text
+from .CashAccount40 import CashAccount40
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class StandingOrderIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AcctOwnr", "_Acct"]
+	__slots__ = ["_Acct", "_Id", "_AcctOwnr"]
+	@property
+	def Acct(self):
+		return self._Acct
+
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
+
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -32,22 +45,9 @@ class StandingOrderIdentification8(base_types._BaseFieldType):
 		del self._AcctOwnr
 		self._AcctOwnr = None
 
-	@property
-	def Acct(self):
-		return self._Acct
-
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
-
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Acct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
 	))
 

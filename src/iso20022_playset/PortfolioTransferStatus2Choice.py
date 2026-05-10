@@ -1,12 +1,12 @@
 from . import base_types
-import PendingProcessingStatus17Choice
-import RejectionStatus30Choice
-import ProprietaryStatusAndReason6
-import AcknowledgedAcceptedStatus32Choice
+from .AcknowledgedAcceptedStatus32Choice import AcknowledgedAcceptedStatus32Choice
+from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from .PendingProcessingStatus17Choice import PendingProcessingStatus17Choice
+from .RejectionStatus30Choice import RejectionStatus30Choice
 
 class PortfolioTransferStatus2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgPrcg", "_Prtry", "_AckdAccptd", "_Rjctd"]
+	__slots__ = ["_PdgPrcg", "_Rjctd", "_Prtry", "_AckdAccptd"]
 	@property
 	def PdgPrcg(self):
 		return self._PdgPrcg
@@ -19,6 +19,19 @@ class PortfolioTransferStatus2Choice(base_types._BaseFieldType):
 	def PdgPrcg(self):
 		del self._PdgPrcg
 		self._PdgPrcg = None
+
+	@property
+	def Rjctd(self):
+		return self._Rjctd
+
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
 
 	@property
 	def Prtry(self):
@@ -46,23 +59,10 @@ class PortfolioTransferStatus2Choice(base_types._BaseFieldType):
 		del self._AckdAccptd
 		self._AckdAccptd = None
 
-	@property
-	def Rjctd(self):
-		return self._Rjctd
-
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
-
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PdgPrcg', type=PendingProcessingStatus17Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=RejectionStatus30Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus32Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=RejectionStatus30Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

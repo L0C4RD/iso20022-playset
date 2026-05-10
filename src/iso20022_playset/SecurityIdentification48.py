@@ -1,7 +1,7 @@
 from . import base_types
-import OtherIdentification1
-import Max140Text
-import ISINOct2015Identifier
+from .Max140Text import Max140Text
+from .OtherIdentification1 import OtherIdentification1
+from .ISINOct2015Identifier import ISINOct2015Identifier
 
 class SecurityIdentification48(base_types._BaseFieldType):
 

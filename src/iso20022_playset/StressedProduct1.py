@@ -1,10 +1,23 @@
 from . import base_types
-import StressSize1Choice
-import GenericIdentification168
+from .StressSize1Choice import StressSize1Choice
+from .GenericIdentification168 import GenericIdentification168
 
 class StressedProduct1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_MinStrssSz", "_MaxStrssSz"]
+	__slots__ = ["_MaxStrssSz", "_Id", "_MinStrssSz"]
+	@property
+	def MaxStrssSz(self):
+		return self._MaxStrssSz
+
+	@MaxStrssSz.setter
+	def MaxStrssSz(self, value):
+		self._MaxStrssSz = value if type(value) != auto else self.make_default("MaxStrssSz")
+
+	@MaxStrssSz.deleter
+	def MaxStrssSz(self):
+		del self._MaxStrssSz
+		self._MaxStrssSz = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -31,22 +44,9 @@ class StressedProduct1(base_types._BaseFieldType):
 		del self._MinStrssSz
 		self._MinStrssSz = None
 
-	@property
-	def MaxStrssSz(self):
-		return self._MaxStrssSz
-
-	@MaxStrssSz.setter
-	def MaxStrssSz(self, value):
-		self._MaxStrssSz = value if type(value) != auto else self.make_default("MaxStrssSz")
-
-	@MaxStrssSz.deleter
-	def MaxStrssSz(self):
-		del self._MaxStrssSz
-		self._MaxStrssSz = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MaxStrssSz', type=StressSize1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinStrssSz', type=StressSize1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxStrssSz', type=StressSize1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

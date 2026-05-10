@@ -1,24 +1,11 @@
 from . import base_types
-import Operation3Code
-import CollateralType6Code
-import ExposureType10Code
+from .ExposureType10Code import ExposureType10Code
+from .Operation3Code import Operation3Code
+from .CollateralType6Code import CollateralType6Code
 
 class TradeTypeQueryCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_Oprtr", "_SctiesFincgTxTp", "_CollCmpntTp"]
-	@property
-	def Oprtr(self):
-		return self._Oprtr
-
-	@Oprtr.setter
-	def Oprtr(self, value):
-		self._Oprtr = value if type(value) != auto else self.make_default("Oprtr")
-
-	@Oprtr.deleter
-	def Oprtr(self):
-		del self._Oprtr
-		self._Oprtr = None
-
+	__slots__ = ["_SctiesFincgTxTp", "_CollCmpntTp", "_Oprtr"]
 	@property
 	def SctiesFincgTxTp(self):
 		return self._SctiesFincgTxTp
@@ -45,9 +32,22 @@ class TradeTypeQueryCriteria2(base_types._BaseFieldType):
 		del self._CollCmpntTp
 		self._CollCmpntTp = None
 
+	@property
+	def Oprtr(self):
+		return self._Oprtr
+
+	@Oprtr.setter
+	def Oprtr(self, value):
+		self._Oprtr = value if type(value) != auto else self.make_default("Oprtr")
+
+	@Oprtr.deleter
+	def Oprtr(self):
+		del self._Oprtr
+		self._Oprtr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Oprtr', type=Operation3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesFincgTxTp', type=ExposureType10Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CollCmpntTp', type=CollateralType6Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Oprtr', type=Operation3Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

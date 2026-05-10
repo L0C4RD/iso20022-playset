@@ -1,28 +1,15 @@
 from . import base_types
-import Max2NumericText
-import Max5NumericText
-import Max4NumericText
-import Exact1HexBinaryText
-import Max32HexBinaryText
-import Max16HexBinaryText
-import Max8NumericText
+from .Max2NumericText import Max2NumericText
+from .Max5NumericText import Max5NumericText
+from .Max4NumericText import Max4NumericText
+from .Max16HexBinaryText import Max16HexBinaryText
+from .Exact1HexBinaryText import Exact1HexBinaryText
+from .Max32HexBinaryText import Max32HexBinaryText
+from .Max8NumericText import Max8NumericText
 
 class PINData1(base_types._BaseFieldType):
 
-	__slots__ = ["_PINBlckFrmt", "_KeySetIdr", "_Algo", "_KeyPrtcn", "_DrvdInf", "_Ctrl", "_KeyIndx", "_NcrptdPINBlck", "_KeyLngth"]
-	@property
-	def PINBlckFrmt(self):
-		return self._PINBlckFrmt
-
-	@PINBlckFrmt.setter
-	def PINBlckFrmt(self, value):
-		self._PINBlckFrmt = value if type(value) != auto else self.make_default("PINBlckFrmt")
-
-	@PINBlckFrmt.deleter
-	def PINBlckFrmt(self):
-		del self._PINBlckFrmt
-		self._PINBlckFrmt = None
-
+	__slots__ = ["_KeySetIdr", "_PINBlckFrmt", "_KeyLngth", "_Ctrl", "_KeyIndx", "_Algo", "_NcrptdPINBlck", "_DrvdInf", "_KeyPrtcn"]
 	@property
 	def KeySetIdr(self):
 		return self._KeySetIdr
@@ -37,43 +24,30 @@ class PINData1(base_types._BaseFieldType):
 		self._KeySetIdr = None
 
 	@property
-	def Algo(self):
-		return self._Algo
+	def PINBlckFrmt(self):
+		return self._PINBlckFrmt
 
-	@Algo.setter
-	def Algo(self, value):
-		self._Algo = value if type(value) != auto else self.make_default("Algo")
+	@PINBlckFrmt.setter
+	def PINBlckFrmt(self, value):
+		self._PINBlckFrmt = value if type(value) != auto else self.make_default("PINBlckFrmt")
 
-	@Algo.deleter
-	def Algo(self):
-		del self._Algo
-		self._Algo = None
-
-	@property
-	def KeyPrtcn(self):
-		return self._KeyPrtcn
-
-	@KeyPrtcn.setter
-	def KeyPrtcn(self, value):
-		self._KeyPrtcn = value if type(value) != auto else self.make_default("KeyPrtcn")
-
-	@KeyPrtcn.deleter
-	def KeyPrtcn(self):
-		del self._KeyPrtcn
-		self._KeyPrtcn = None
+	@PINBlckFrmt.deleter
+	def PINBlckFrmt(self):
+		del self._PINBlckFrmt
+		self._PINBlckFrmt = None
 
 	@property
-	def DrvdInf(self):
-		return self._DrvdInf
+	def KeyLngth(self):
+		return self._KeyLngth
 
-	@DrvdInf.setter
-	def DrvdInf(self, value):
-		self._DrvdInf = value if type(value) != auto else self.make_default("DrvdInf")
+	@KeyLngth.setter
+	def KeyLngth(self, value):
+		self._KeyLngth = value if type(value) != auto else self.make_default("KeyLngth")
 
-	@DrvdInf.deleter
-	def DrvdInf(self):
-		del self._DrvdInf
-		self._DrvdInf = None
+	@KeyLngth.deleter
+	def KeyLngth(self):
+		del self._KeyLngth
+		self._KeyLngth = None
 
 	@property
 	def Ctrl(self):
@@ -102,6 +76,19 @@ class PINData1(base_types._BaseFieldType):
 		self._KeyIndx = None
 
 	@property
+	def Algo(self):
+		return self._Algo
+
+	@Algo.setter
+	def Algo(self, value):
+		self._Algo = value if type(value) != auto else self.make_default("Algo")
+
+	@Algo.deleter
+	def Algo(self):
+		del self._Algo
+		self._Algo = None
+
+	@property
 	def NcrptdPINBlck(self):
 		return self._NcrptdPINBlck
 
@@ -115,27 +102,40 @@ class PINData1(base_types._BaseFieldType):
 		self._NcrptdPINBlck = None
 
 	@property
-	def KeyLngth(self):
-		return self._KeyLngth
+	def DrvdInf(self):
+		return self._DrvdInf
 
-	@KeyLngth.setter
-	def KeyLngth(self, value):
-		self._KeyLngth = value if type(value) != auto else self.make_default("KeyLngth")
+	@DrvdInf.setter
+	def DrvdInf(self, value):
+		self._DrvdInf = value if type(value) != auto else self.make_default("DrvdInf")
 
-	@KeyLngth.deleter
-	def KeyLngth(self):
-		del self._KeyLngth
-		self._KeyLngth = None
+	@DrvdInf.deleter
+	def DrvdInf(self):
+		del self._DrvdInf
+		self._DrvdInf = None
+
+	@property
+	def KeyPrtcn(self):
+		return self._KeyPrtcn
+
+	@KeyPrtcn.setter
+	def KeyPrtcn(self, value):
+		self._KeyPrtcn = value if type(value) != auto else self.make_default("KeyPrtcn")
+
+	@KeyPrtcn.deleter
+	def KeyPrtcn(self):
+		del self._KeyPrtcn
+		self._KeyPrtcn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PINBlckFrmt', type=Max2NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeySetIdr', type=Max8NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Algo', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyPrtcn', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrvdInf', type=Max32HexBinaryText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PINBlckFrmt', type=Max2NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyLngth', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctrl', type=Exact1HexBinaryText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyIndx', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Algo', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdPINBlck', type=Max16HexBinaryText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyLngth', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrvdInf', type=Max32HexBinaryText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyPrtcn', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

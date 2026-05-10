@@ -1,5 +1,5 @@
 from . import base_types
-import VerificationResponseV03
+from .VerificationResponseV03 import VerificationResponseV03
 
 class CAIN_019_001_03():
 

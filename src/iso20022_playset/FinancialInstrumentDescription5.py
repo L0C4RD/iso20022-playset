@@ -1,7 +1,7 @@
 from . import base_types
-import SafekeepingPlaceFormat42Choice
-import MarketIdentification3Choice
-import SecurityIdentification19
+from .SecurityIdentification19 import SecurityIdentification19
+from .SafekeepingPlaceFormat42Choice import SafekeepingPlaceFormat42Choice
+from .MarketIdentification3Choice import MarketIdentification3Choice
 
 class FinancialInstrumentDescription5(base_types._BaseFieldType):
 

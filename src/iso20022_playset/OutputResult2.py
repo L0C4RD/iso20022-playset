@@ -1,7 +1,7 @@
 from . import base_types
-import UserInterface4Code
-import InformationQualify1Code
-import ResponseType11
+from .InformationQualify1Code import InformationQualify1Code
+from .UserInterface4Code import UserInterface4Code
+from .ResponseType11 import ResponseType11
 
 class OutputResult2(base_types._BaseFieldType):
 

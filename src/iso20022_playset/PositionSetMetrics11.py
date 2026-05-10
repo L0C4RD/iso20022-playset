@@ -1,6 +1,6 @@
 from . import base_types
-import PercentageRate
-import VolumeMetrics4
+from .PercentageRate import PercentageRate
+from .VolumeMetrics4 import VolumeMetrics4
 
 class PositionSetMetrics11(base_types._BaseFieldType):
 

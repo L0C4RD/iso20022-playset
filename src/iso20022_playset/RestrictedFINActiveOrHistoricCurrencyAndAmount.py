@@ -1,5 +1,5 @@
 from . import base_types
-import ActiveOrHistoricCurrencyCode
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 
 class RestrictedFINActiveOrHistoricCurrencyAndAmount(base_types._BaseDataType_Decimal):
 

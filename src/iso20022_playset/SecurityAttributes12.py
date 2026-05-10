@@ -1,7 +1,7 @@
 from . import base_types
-import CommonFinancialInstrumentAttributes12
-import SupplementaryData1
-import FinancialInstrument97
+from .CommonFinancialInstrumentAttributes12 import CommonFinancialInstrumentAttributes12
+from .SupplementaryData1 import SupplementaryData1
+from .FinancialInstrument97 import FinancialInstrument97
 
 class SecurityAttributes12(base_types._BaseFieldType):
 

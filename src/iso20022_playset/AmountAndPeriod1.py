@@ -1,10 +1,10 @@
 from . import base_types
-import ISODate
-import ActiveCurrencyAndAmount
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .ISODate import ISODate
 
 class AmountAndPeriod1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_StartDt", "_EndDt"]
+	__slots__ = ["_Amt", "_EndDt", "_StartDt"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -19,19 +19,6 @@ class AmountAndPeriod1(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def StartDt(self):
-		return self._StartDt
-
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
-
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
-
-	@property
 	def EndDt(self):
 		return self._EndDt
 
@@ -44,9 +31,22 @@ class AmountAndPeriod1(base_types._BaseFieldType):
 		del self._EndDt
 		self._EndDt = None
 
+	@property
+	def StartDt(self):
+		return self._StartDt
+
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
+
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

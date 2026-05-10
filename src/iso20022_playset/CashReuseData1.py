@@ -1,6 +1,6 @@
 from . import base_types
-import PercentageRate
-import ReinvestedCashTypeAndAmount1
+from .PercentageRate import PercentageRate
+from .ReinvestedCashTypeAndAmount1 import ReinvestedCashTypeAndAmount1
 
 class CashReuseData1(base_types._BaseFieldType):
 

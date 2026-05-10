@@ -1,24 +1,24 @@
 from . import base_types
-import ActiveCurrencyAndAmount
-import AdditionalAmount1Choice
-import DeliveryReceiptType2Code
-import ActiveCurrencyCode
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .AdditionalAmount1Choice import AdditionalAmount1Choice
+from .DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class FundOrderData6(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitCcy", "_SttlmAmt", "_QtdCcy", "_AddtlAmt", "_SttlmMtd"]
+	__slots__ = ["_SttlmMtd", "_SttlmAmt", "_QtdCcy", "_AddtlAmt", "_UnitCcy"]
 	@property
-	def UnitCcy(self):
-		return self._UnitCcy
+	def SttlmMtd(self):
+		return self._SttlmMtd
 
-	@UnitCcy.setter
-	def UnitCcy(self, value):
-		self._UnitCcy = value if type(value) != auto else self.make_default("UnitCcy")
+	@SttlmMtd.setter
+	def SttlmMtd(self, value):
+		self._SttlmMtd = value if type(value) != auto else self.make_default("SttlmMtd")
 
-	@UnitCcy.deleter
-	def UnitCcy(self):
-		del self._UnitCcy
-		self._UnitCcy = None
+	@SttlmMtd.deleter
+	def SttlmMtd(self):
+		del self._SttlmMtd
+		self._SttlmMtd = None
 
 	@property
 	def SttlmAmt(self):
@@ -60,23 +60,23 @@ class FundOrderData6(base_types._BaseFieldType):
 		self._AddtlAmt = None
 
 	@property
-	def SttlmMtd(self):
-		return self._SttlmMtd
+	def UnitCcy(self):
+		return self._UnitCcy
 
-	@SttlmMtd.setter
-	def SttlmMtd(self, value):
-		self._SttlmMtd = value if type(value) != auto else self.make_default("SttlmMtd")
+	@UnitCcy.setter
+	def UnitCcy(self, value):
+		self._UnitCcy = value if type(value) != auto else self.make_default("UnitCcy")
 
-	@SttlmMtd.deleter
-	def SttlmMtd(self):
-		del self._SttlmMtd
-		self._SttlmMtd = None
+	@UnitCcy.deleter
+	def UnitCcy(self):
+		del self._UnitCcy
+		self._UnitCcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmMtd', type=DeliveryReceiptType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlAmt', type=AdditionalAmount1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmMtd', type=DeliveryReceiptType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-import ActiveCurrencyCode
+from .ActiveCurrencyCode import ActiveCurrencyCode
 
 class ActiveCurrencyAnd24Amount(base_types._BaseDataType_Decimal):
 

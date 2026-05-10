@@ -1,5 +1,5 @@
 from . import base_types
-import CCPLiquidityStressTestingResultReportV01
+from .CCPLiquidityStressTestingResultReportV01 import CCPLiquidityStressTestingResultReportV01
 
 class AUTH_063_001_01():
 

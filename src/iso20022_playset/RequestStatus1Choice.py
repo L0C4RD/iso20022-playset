@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import ExternalRequestStatus1Code
+from .Max35Text import Max35Text
+from .ExternalRequestStatus1Code import ExternalRequestStatus1Code
 
 class RequestStatus1Choice(base_types._BaseFieldType):
 

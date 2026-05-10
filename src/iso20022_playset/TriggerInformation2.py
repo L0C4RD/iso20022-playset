@@ -1,8 +1,8 @@
 from . import base_types
-import PartyType5Code
-import ExchangePolicy2Code
-import Max35Text
-import Max70Text
+from .PartyType5Code import PartyType5Code
+from .Max35Text import Max35Text
+from .Max70Text import Max70Text
+from .ExchangePolicy2Code import ExchangePolicy2Code
 
 class TriggerInformation2(base_types._BaseFieldType):
 

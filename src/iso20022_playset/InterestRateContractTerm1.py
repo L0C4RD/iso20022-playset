@@ -1,6 +1,6 @@
 from . import base_types
-import Number
-import RateBasis1Code
+from .RateBasis1Code import RateBasis1Code
+from .Number import Number
 
 class InterestRateContractTerm1(base_types._BaseFieldType):
 

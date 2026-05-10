@@ -1,24 +1,11 @@
 from . import base_types
-import OrganisationIdentification15Choice
-import Max52Text
-import TrueFalseIndicator
+from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from .TrueFalseIndicator import TrueFalseIndicator
+from .Max52Text import Max52Text
 
 class PositionSetDimensions15(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgCtrPty", "_CollPrtflId", "_OtlrsIncl", "_OthrCtrPty"]
-	@property
-	def RptgCtrPty(self):
-		return self._RptgCtrPty
-
-	@RptgCtrPty.setter
-	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
-
-	@RptgCtrPty.deleter
-	def RptgCtrPty(self):
-		del self._RptgCtrPty
-		self._RptgCtrPty = None
-
+	__slots__ = ["_CollPrtflId", "_RptgCtrPty", "_OthrCtrPty", "_OtlrsIncl"]
 	@property
 	def CollPrtflId(self):
 		return self._CollPrtflId
@@ -33,17 +20,17 @@ class PositionSetDimensions15(base_types._BaseFieldType):
 		self._CollPrtflId = None
 
 	@property
-	def OtlrsIncl(self):
-		return self._OtlrsIncl
+	def RptgCtrPty(self):
+		return self._RptgCtrPty
 
-	@OtlrsIncl.setter
-	def OtlrsIncl(self, value):
-		self._OtlrsIncl = value if type(value) != auto else self.make_default("OtlrsIncl")
+	@RptgCtrPty.setter
+	def RptgCtrPty(self, value):
+		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
 
-	@OtlrsIncl.deleter
-	def OtlrsIncl(self):
-		del self._OtlrsIncl
-		self._OtlrsIncl = None
+	@RptgCtrPty.deleter
+	def RptgCtrPty(self):
+		del self._RptgCtrPty
+		self._RptgCtrPty = None
 
 	@property
 	def OthrCtrPty(self):
@@ -58,10 +45,23 @@ class PositionSetDimensions15(base_types._BaseFieldType):
 		del self._OthrCtrPty
 		self._OthrCtrPty = None
 
+	@property
+	def OtlrsIncl(self):
+		return self._OtlrsIncl
+
+	@OtlrsIncl.setter
+	def OtlrsIncl(self, value):
+		self._OtlrsIncl = value if type(value) != auto else self.make_default("OtlrsIncl")
+
+	@OtlrsIncl.deleter
+	def OtlrsIncl(self):
+		del self._OtlrsIncl
+		self._OtlrsIncl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollPrtflId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OtlrsIncl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCtrPty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OtlrsIncl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

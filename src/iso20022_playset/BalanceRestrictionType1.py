@@ -1,7 +1,7 @@
 from . import base_types
-import ProcessingType1Choice
-import GenericIdentification1
-import Max140Text
+from .Max140Text import Max140Text
+from .GenericIdentification1 import GenericIdentification1
+from .ProcessingType1Choice import ProcessingType1Choice
 
 class BalanceRestrictionType1(base_types._BaseFieldType):
 

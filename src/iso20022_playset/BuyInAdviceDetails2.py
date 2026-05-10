@@ -1,29 +1,16 @@
 from . import base_types
-import DateAndDateTime2Choice
-import RateAndAmountFormat39Choice
-import AmountAndDirection102
-import BuyInState1Code
-import BuyInDeferral1Code
-import References31
-import SecurityIdentification19
-import FinancialInstrumentQuantity1Choice
+from .AmountAndDirection102 import AmountAndDirection102
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .BuyInDeferral1Code import BuyInDeferral1Code
+from .SecurityIdentification19 import SecurityIdentification19
+from .RateAndAmountFormat39Choice import RateAndAmountFormat39Choice
+from .FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from .References31 import References31
+from .BuyInState1Code import BuyInState1Code
 
 class BuyInAdviceDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_CshCompstnAmt", "_FinInstrmId", "_Qty", "_BuyInDfrrl", "_BuyInStat", "_BuyInSttlmDt", "_BuyInPric", "_Ref"]
-	@property
-	def CshCompstnAmt(self):
-		return self._CshCompstnAmt
-
-	@CshCompstnAmt.setter
-	def CshCompstnAmt(self, value):
-		self._CshCompstnAmt = value if type(value) != auto else self.make_default("CshCompstnAmt")
-
-	@CshCompstnAmt.deleter
-	def CshCompstnAmt(self):
-		del self._CshCompstnAmt
-		self._CshCompstnAmt = None
-
+	__slots__ = ["_FinInstrmId", "_Qty", "_BuyInSttlmDt", "_CshCompstnAmt", "_BuyInPric", "_BuyInDfrrl", "_BuyInStat", "_Ref"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
@@ -49,6 +36,45 @@ class BuyInAdviceDetails2(base_types._BaseFieldType):
 	def Qty(self):
 		del self._Qty
 		self._Qty = None
+
+	@property
+	def BuyInSttlmDt(self):
+		return self._BuyInSttlmDt
+
+	@BuyInSttlmDt.setter
+	def BuyInSttlmDt(self, value):
+		self._BuyInSttlmDt = value if type(value) != auto else self.make_default("BuyInSttlmDt")
+
+	@BuyInSttlmDt.deleter
+	def BuyInSttlmDt(self):
+		del self._BuyInSttlmDt
+		self._BuyInSttlmDt = None
+
+	@property
+	def CshCompstnAmt(self):
+		return self._CshCompstnAmt
+
+	@CshCompstnAmt.setter
+	def CshCompstnAmt(self, value):
+		self._CshCompstnAmt = value if type(value) != auto else self.make_default("CshCompstnAmt")
+
+	@CshCompstnAmt.deleter
+	def CshCompstnAmt(self):
+		del self._CshCompstnAmt
+		self._CshCompstnAmt = None
+
+	@property
+	def BuyInPric(self):
+		return self._BuyInPric
+
+	@BuyInPric.setter
+	def BuyInPric(self, value):
+		self._BuyInPric = value if type(value) != auto else self.make_default("BuyInPric")
+
+	@BuyInPric.deleter
+	def BuyInPric(self):
+		del self._BuyInPric
+		self._BuyInPric = None
 
 	@property
 	def BuyInDfrrl(self):
@@ -77,32 +103,6 @@ class BuyInAdviceDetails2(base_types._BaseFieldType):
 		self._BuyInStat = None
 
 	@property
-	def BuyInSttlmDt(self):
-		return self._BuyInSttlmDt
-
-	@BuyInSttlmDt.setter
-	def BuyInSttlmDt(self, value):
-		self._BuyInSttlmDt = value if type(value) != auto else self.make_default("BuyInSttlmDt")
-
-	@BuyInSttlmDt.deleter
-	def BuyInSttlmDt(self):
-		del self._BuyInSttlmDt
-		self._BuyInSttlmDt = None
-
-	@property
-	def BuyInPric(self):
-		return self._BuyInPric
-
-	@BuyInPric.setter
-	def BuyInPric(self, value):
-		self._BuyInPric = value if type(value) != auto else self.make_default("BuyInPric")
-
-	@BuyInPric.deleter
-	def BuyInPric(self):
-		del self._BuyInPric
-		self._BuyInPric = None
-
-	@property
 	def Ref(self):
 		return self._Ref
 
@@ -116,13 +116,13 @@ class BuyInAdviceDetails2(base_types._BaseFieldType):
 		self._Ref = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshCompstnAmt', type=AmountAndDirection102, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyInSttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshCompstnAmt', type=AmountAndDirection102, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyInPric', type=RateAndAmountFormat39Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyInDfrrl', type=BuyInDeferral1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyInStat', type=BuyInState1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyInSttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyInPric', type=RateAndAmountFormat39Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=References31, min=1, max=1, mutex_group=None, array=False),
 	))
 

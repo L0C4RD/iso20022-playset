@@ -1,5 +1,5 @@
 from . import base_types
-import SaleToPOIDeviceRequestV07
+from .SaleToPOIDeviceRequestV07 import SaleToPOIDeviceRequestV07
 
 class CASP_016_001_07():
 

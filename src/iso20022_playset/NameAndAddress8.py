@@ -1,24 +1,11 @@
 from . import base_types
-import Max350Text
-import Max35Text
-import PostalAddress1
+from .PostalAddress1 import PostalAddress1
+from .Max35Text import Max35Text
+from .Max350Text import Max350Text
 
 class NameAndAddress8(base_types._BaseFieldType):
 
-	__slots__ = ["_AltrntvIdr", "_Adr", "_Nm"]
-	@property
-	def AltrntvIdr(self):
-		return self._AltrntvIdr
-
-	@AltrntvIdr.setter
-	def AltrntvIdr(self, value):
-		self._AltrntvIdr = value if type(value) != auto else self.make_default("AltrntvIdr")
-
-	@AltrntvIdr.deleter
-	def AltrntvIdr(self):
-		del self._AltrntvIdr
-		self._AltrntvIdr = None
-
+	__slots__ = ["_Adr", "_Nm", "_AltrntvIdr"]
 	@property
 	def Adr(self):
 		return self._Adr
@@ -45,9 +32,22 @@ class NameAndAddress8(base_types._BaseFieldType):
 		del self._Nm
 		self._Nm = None
 
+	@property
+	def AltrntvIdr(self):
+		return self._AltrntvIdr
+
+	@AltrntvIdr.setter
+	def AltrntvIdr(self, value):
+		self._AltrntvIdr = value if type(value) != auto else self.make_default("AltrntvIdr")
+
+	@AltrntvIdr.deleter
+	def AltrntvIdr(self):
+		del self._AltrntvIdr
+		self._AltrntvIdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AltrntvIdr', type=Max35Text, min=0, max=10, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Adr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrntvIdr', type=Max35Text, min=0, max=10, mutex_group=None, array=True),
 	))
 

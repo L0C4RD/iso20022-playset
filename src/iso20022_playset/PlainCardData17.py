@@ -1,14 +1,14 @@
 from . import base_types
-import Min8Max28NumericText
-import CardDataReading5Code
-import Max76Text
-import Max35Text
-import Max37Text
-import Max104Text
+from .Max35Text import Max35Text
+from .Max37Text import Max37Text
+from .Min8Max28NumericText import Min8Max28NumericText
+from .Max76Text import Max76Text
+from .Max104Text import Max104Text
+from .CardDataReading5Code import CardDataReading5Code
 
 class PlainCardData17(base_types._BaseFieldType):
 
-	__slots__ = ["_Trck2", "_PAN", "_Trck1", "_NtryMd", "_AddtlCardData", "_Trck3"]
+	__slots__ = ["_Trck2", "_PAN", "_Trck1", "_AddtlCardData", "_Trck3", "_NtryMd"]
 	@property
 	def Trck2(self):
 		return self._Trck2
@@ -49,19 +49,6 @@ class PlainCardData17(base_types._BaseFieldType):
 		self._Trck1 = None
 
 	@property
-	def NtryMd(self):
-		return self._NtryMd
-
-	@NtryMd.setter
-	def NtryMd(self, value):
-		self._NtryMd = value if type(value) != auto else self.make_default("NtryMd")
-
-	@NtryMd.deleter
-	def NtryMd(self):
-		del self._NtryMd
-		self._NtryMd = None
-
-	@property
 	def AddtlCardData(self):
 		return self._AddtlCardData
 
@@ -87,12 +74,25 @@ class PlainCardData17(base_types._BaseFieldType):
 		del self._Trck3
 		self._Trck3 = None
 
+	@property
+	def NtryMd(self):
+		return self._NtryMd
+
+	@NtryMd.setter
+	def NtryMd(self, value):
+		self._NtryMd = value if type(value) != auto else self.make_default("NtryMd")
+
+	@NtryMd.deleter
+	def NtryMd(self):
+		del self._NtryMd
+		self._NtryMd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Trck2', type=Max37Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PAN', type=Min8Max28NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trck1', type=Max76Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtryMd', type=CardDataReading5Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlCardData', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Trck3', type=Max104Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtryMd', type=CardDataReading5Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

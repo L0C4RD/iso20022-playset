@@ -1,6 +1,6 @@
 from . import base_types
-import DetailedInstructionCancellationStatus15
-import CancellationStatus32Choice
+from .DetailedInstructionCancellationStatus15 import DetailedInstructionCancellationStatus15
+from .CancellationStatus32Choice import CancellationStatus32Choice
 
 class CancellationStatus31Choice(base_types._BaseFieldType):
 

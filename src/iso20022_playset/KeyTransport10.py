@@ -1,8 +1,8 @@
 from . import base_types
-import Number
-import Recipient13Choice
-import Max5000Binary
-import AlgorithmIdentification35
+from .Max5000Binary import Max5000Binary
+from .AlgorithmIdentification35 import AlgorithmIdentification35
+from .Recipient13Choice import Recipient13Choice
+from .Number import Number
 
 class KeyTransport10(base_types._BaseFieldType):
 

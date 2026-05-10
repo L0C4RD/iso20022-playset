@@ -1,22 +1,22 @@
 from . import base_types
-import TaxAuthorisation1
-import Max35Text
+from .Max35Text import Max35Text
+from .TaxAuthorisation1 import TaxAuthorisation1
 
 class TaxParty2(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnId", "_Authstn", "_TaxId", "_TaxTp"]
+	__slots__ = ["_TaxId", "_Authstn", "_TaxTp", "_RegnId"]
 	@property
-	def RegnId(self):
-		return self._RegnId
+	def TaxId(self):
+		return self._TaxId
 
-	@RegnId.setter
-	def RegnId(self, value):
-		self._RegnId = value if type(value) != auto else self.make_default("RegnId")
+	@TaxId.setter
+	def TaxId(self, value):
+		self._TaxId = value if type(value) != auto else self.make_default("TaxId")
 
-	@RegnId.deleter
-	def RegnId(self):
-		del self._RegnId
-		self._RegnId = None
+	@TaxId.deleter
+	def TaxId(self):
+		del self._TaxId
+		self._TaxId = None
 
 	@property
 	def Authstn(self):
@@ -32,19 +32,6 @@ class TaxParty2(base_types._BaseFieldType):
 		self._Authstn = None
 
 	@property
-	def TaxId(self):
-		return self._TaxId
-
-	@TaxId.setter
-	def TaxId(self, value):
-		self._TaxId = value if type(value) != auto else self.make_default("TaxId")
-
-	@TaxId.deleter
-	def TaxId(self):
-		del self._TaxId
-		self._TaxId = None
-
-	@property
 	def TaxTp(self):
 		return self._TaxTp
 
@@ -57,10 +44,23 @@ class TaxParty2(base_types._BaseFieldType):
 		del self._TaxTp
 		self._TaxTp = None
 
+	@property
+	def RegnId(self):
+		return self._RegnId
+
+	@RegnId.setter
+	def RegnId(self, value):
+		self._RegnId = value if type(value) != auto else self.make_default("RegnId")
+
+	@RegnId.deleter
+	def RegnId(self):
+		del self._RegnId
+		self._RegnId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RegnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Authstn', type=TaxAuthorisation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Authstn', type=TaxAuthorisation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,23 @@
 from . import base_types
-import RejectionReason23
-import MessageIdentification1
-import AdditionalReference3
+from .RejectionReason23 import RejectionReason23
+from .MessageIdentification1 import MessageIdentification1
+from .AdditionalReference3 import AdditionalReference3
 
 class SecuritiesMessageRejectionV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_MsgId", "_RltdRef"]
+	__slots__ = ["_RltdRef", "_MsgId", "_Rsn"]
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def RltdRef(self):
+		return self._RltdRef
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
 
 	@property
 	def MsgId(self):
@@ -33,21 +33,21 @@ class SecuritiesMessageRejectionV03(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def RltdRef(self):
-		return self._RltdRef
+	def Rsn(self):
+		return self._Rsn
 
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
 
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rsn', type=RejectionReason23, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=RejectionReason23, min=1, max=1, mutex_group=None, array=False),
 	))
 

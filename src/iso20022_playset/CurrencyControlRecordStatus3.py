@@ -1,13 +1,13 @@
 from . import base_types
-import StatisticalReportingStatus1Code
-import ISODateTime
-import DocumentIdentification28
-import Max35Text
-import ValidationStatusReason3
+from .ValidationStatusReason3 import ValidationStatusReason3
+from .Max35Text import Max35Text
+from .DocumentIdentification28 import DocumentIdentification28
+from .StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
+from .ISODateTime import ISODateTime
 
 class CurrencyControlRecordStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_DocId", "_Sts", "_StsDtTm", "_StsRsn", "_RcrdId"]
+	__slots__ = ["_DocId", "_StsDtTm", "_StsRsn", "_RcrdId", "_Sts"]
 	@property
 	def DocId(self):
 		return self._DocId
@@ -20,19 +20,6 @@ class CurrencyControlRecordStatus3(base_types._BaseFieldType):
 	def DocId(self):
 		del self._DocId
 		self._DocId = None
-
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
 
 	@property
 	def StsDtTm(self):
@@ -73,11 +60,24 @@ class CurrencyControlRecordStatus3(base_types._BaseFieldType):
 		del self._RcrdId
 		self._RcrdId = None
 
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DocId', type=DocumentIdentification28, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRsn', type=ValidationStatusReason3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RcrdId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

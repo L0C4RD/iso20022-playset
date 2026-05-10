@@ -1,6 +1,6 @@
 from . import base_types
-import CommunicationMethod2Code
-import Max35Text
+from .CommunicationMethod2Code import CommunicationMethod2Code
+from .Max35Text import Max35Text
 
 class CommunicationMethod2Choice(base_types._BaseFieldType):
 

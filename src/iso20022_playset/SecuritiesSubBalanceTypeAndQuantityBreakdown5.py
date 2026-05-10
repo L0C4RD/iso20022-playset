@@ -1,23 +1,10 @@
 from . import base_types
-import QuantityBreakdown61
-import SecuritiesBalanceType6Choice
+from .SecuritiesBalanceType6Choice import SecuritiesBalanceType6Choice
+from .QuantityBreakdown61 import QuantityBreakdown61
 
 class SecuritiesSubBalanceTypeAndQuantityBreakdown5(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_QtyBrkdwn"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_QtyBrkdwn", "_Tp"]
 	@property
 	def QtyBrkdwn(self):
 		return self._QtyBrkdwn
@@ -31,8 +18,21 @@ class SecuritiesSubBalanceTypeAndQuantityBreakdown5(base_types._BaseFieldType):
 		del self._QtyBrkdwn
 		self._QtyBrkdwn = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=SecuritiesBalanceType6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown61, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Tp', type=SecuritiesBalanceType6Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,24 @@
 from . import base_types
-import ISODate
-import YesNoIndicator
-import Max140Text
-import ActiveCurrencyAndAmount
+from .Max140Text import Max140Text
+from .YesNoIndicator import YesNoIndicator
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .ISODate import ISODate
 
 class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDtToDbt", "_Rsn", "_AmtToDbt", "_DbtAuthstn"]
+	__slots__ = ["_DbtAuthstn", "_Rsn", "_AmtToDbt", "_ValDtToDbt"]
 	@property
-	def ValDtToDbt(self):
-		return self._ValDtToDbt
+	def DbtAuthstn(self):
+		return self._DbtAuthstn
 
-	@ValDtToDbt.setter
-	def ValDtToDbt(self, value):
-		self._ValDtToDbt = value if type(value) != auto else self.make_default("ValDtToDbt")
+	@DbtAuthstn.setter
+	def DbtAuthstn(self, value):
+		self._DbtAuthstn = value if type(value) != auto else self.make_default("DbtAuthstn")
 
-	@ValDtToDbt.deleter
-	def ValDtToDbt(self):
-		del self._ValDtToDbt
-		self._ValDtToDbt = None
+	@DbtAuthstn.deleter
+	def DbtAuthstn(self):
+		del self._DbtAuthstn
+		self._DbtAuthstn = None
 
 	@property
 	def Rsn(self):
@@ -47,22 +47,22 @@ class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 		self._AmtToDbt = None
 
 	@property
-	def DbtAuthstn(self):
-		return self._DbtAuthstn
+	def ValDtToDbt(self):
+		return self._ValDtToDbt
 
-	@DbtAuthstn.setter
-	def DbtAuthstn(self, value):
-		self._DbtAuthstn = value if type(value) != auto else self.make_default("DbtAuthstn")
+	@ValDtToDbt.setter
+	def ValDtToDbt(self, value):
+		self._ValDtToDbt = value if type(value) != auto else self.make_default("ValDtToDbt")
 
-	@DbtAuthstn.deleter
-	def DbtAuthstn(self):
-		del self._DbtAuthstn
-		self._DbtAuthstn = None
+	@ValDtToDbt.deleter
+	def ValDtToDbt(self):
+		del self._ValDtToDbt
+		self._ValDtToDbt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValDtToDbt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtAuthstn', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtToDbt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtAuthstn', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDtToDbt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

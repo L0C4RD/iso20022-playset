@@ -1,39 +1,39 @@
 from . import base_types
-import DataSetIdentification11
-import PartyType15Code
-import Max9NumericText
-import AcceptorConfigurationContent14
-import TrueFalseIndicator
-import GenericIdentification176
+from .Max9NumericText import Max9NumericText
+from .GenericIdentification176 import GenericIdentification176
+from .PartyType15Code import PartyType15Code
+from .AcceptorConfigurationContent14 import AcceptorConfigurationContent14
+from .TrueFalseIndicator import TrueFalseIndicator
+from .DataSetIdentification11 import DataSetIdentification11
 
 class AcceptorConfigurationDataSet6(base_types._BaseFieldType):
 
-	__slots__ = ["_CfgtnScp", "_POIId", "_Id", "_LastSeq", "_Cntt", "_SeqCntr"]
+	__slots__ = ["_SeqCntr", "_Cntt", "_Id", "_LastSeq", "_CfgtnScp", "_POIId"]
 	@property
-	def CfgtnScp(self):
-		return self._CfgtnScp
+	def SeqCntr(self):
+		return self._SeqCntr
 
-	@CfgtnScp.setter
-	def CfgtnScp(self, value):
-		self._CfgtnScp = value if type(value) != auto else self.make_default("CfgtnScp")
+	@SeqCntr.setter
+	def SeqCntr(self, value):
+		self._SeqCntr = value if type(value) != auto else self.make_default("SeqCntr")
 
-	@CfgtnScp.deleter
-	def CfgtnScp(self):
-		del self._CfgtnScp
-		self._CfgtnScp = None
+	@SeqCntr.deleter
+	def SeqCntr(self):
+		del self._SeqCntr
+		self._SeqCntr = None
 
 	@property
-	def POIId(self):
-		return self._POIId
+	def Cntt(self):
+		return self._Cntt
 
-	@POIId.setter
-	def POIId(self, value):
-		self._POIId = value if type(value) != auto else self.make_default("POIId")
+	@Cntt.setter
+	def Cntt(self, value):
+		self._Cntt = value if type(value) != auto else self.make_default("Cntt")
 
-	@POIId.deleter
-	def POIId(self):
-		del self._POIId
-		self._POIId = None
+	@Cntt.deleter
+	def Cntt(self):
+		del self._Cntt
+		self._Cntt = None
 
 	@property
 	def Id(self):
@@ -62,37 +62,37 @@ class AcceptorConfigurationDataSet6(base_types._BaseFieldType):
 		self._LastSeq = None
 
 	@property
-	def Cntt(self):
-		return self._Cntt
+	def CfgtnScp(self):
+		return self._CfgtnScp
 
-	@Cntt.setter
-	def Cntt(self, value):
-		self._Cntt = value if type(value) != auto else self.make_default("Cntt")
+	@CfgtnScp.setter
+	def CfgtnScp(self, value):
+		self._CfgtnScp = value if type(value) != auto else self.make_default("CfgtnScp")
 
-	@Cntt.deleter
-	def Cntt(self):
-		del self._Cntt
-		self._Cntt = None
+	@CfgtnScp.deleter
+	def CfgtnScp(self):
+		del self._CfgtnScp
+		self._CfgtnScp = None
 
 	@property
-	def SeqCntr(self):
-		return self._SeqCntr
+	def POIId(self):
+		return self._POIId
 
-	@SeqCntr.setter
-	def SeqCntr(self, value):
-		self._SeqCntr = value if type(value) != auto else self.make_default("SeqCntr")
+	@POIId.setter
+	def POIId(self, value):
+		self._POIId = value if type(value) != auto else self.make_default("POIId")
 
-	@SeqCntr.deleter
-	def SeqCntr(self):
-		del self._SeqCntr
-		self._SeqCntr = None
+	@POIId.deleter
+	def POIId(self):
+		del self._POIId
+		self._POIId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CfgtnScp', type=PartyType15Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POIId', type=GenericIdentification176, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SeqCntr', type=Max9NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntt', type=AcceptorConfigurationContent14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DataSetIdentification11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastSeq', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cntt', type=AcceptorConfigurationContent14, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SeqCntr', type=Max9NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CfgtnScp', type=PartyType15Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POIId', type=GenericIdentification176, min=0, max=None, mutex_group=None, array=True),
 	))
 

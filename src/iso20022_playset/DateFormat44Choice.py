@@ -1,11 +1,24 @@
 from . import base_types
-import DateCodeAndTimeFormat3
-import DateAndDateTime2Choice
-import DateCode19Choice
+from .DateCodeAndTimeFormat3 import DateCodeAndTimeFormat3
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .DateCode19Choice import DateCode19Choice
 
 class DateFormat44Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DtCdAndTm", "_DtCd", "_Dt"]
+	__slots__ = ["_Dt", "_DtCdAndTm", "_DtCd"]
+	@property
+	def Dt(self):
+		return self._Dt
+
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != auto else self.make_default("Dt")
+
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
+
 	@property
 	def DtCdAndTm(self):
 		return self._DtCdAndTm
@@ -32,22 +45,9 @@ class DateFormat44Choice(base_types._BaseFieldType):
 		del self._DtCd
 		self._DtCd = None
 
-	@property
-	def Dt(self):
-		return self._Dt
-
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
-
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DtCdAndTm', type=DateCodeAndTimeFormat3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DtCd', type=DateCode19Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

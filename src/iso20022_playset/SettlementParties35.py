@@ -1,7 +1,7 @@
 from . import base_types
-import PartyIdentification99Choice
-import SettlementParties32
-import GenericIdentification49
+from .PartyIdentification99Choice import PartyIdentification99Choice
+from .SettlementParties32 import SettlementParties32
+from .GenericIdentification49 import GenericIdentification49
 
 class SettlementParties35(base_types._BaseFieldType):
 

@@ -1,23 +1,23 @@
 from . import base_types
-import Exact4AlphaNumericText
-import DecimalNumber
-import Max35Text
+from .Max35Text import Max35Text
+from .Exact4AlphaNumericText import Exact4AlphaNumericText
+from .DecimalNumber import DecimalNumber
 
 class GenericIdentification56(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_Bal", "_SchmeNm", "_Id"]
+	__slots__ = ["_SchmeNm", "_Bal", "_Id", "_Issr"]
 	@property
-	def Issr(self):
-		return self._Issr
+	def SchmeNm(self):
+		return self._SchmeNm
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@SchmeNm.setter
+	def SchmeNm(self, value):
+		self._SchmeNm = value if type(value) != auto else self.make_default("SchmeNm")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@SchmeNm.deleter
+	def SchmeNm(self):
+		del self._SchmeNm
+		self._SchmeNm = None
 
 	@property
 	def Bal(self):
@@ -33,19 +33,6 @@ class GenericIdentification56(base_types._BaseFieldType):
 		self._Bal = None
 
 	@property
-	def SchmeNm(self):
-		return self._SchmeNm
-
-	@SchmeNm.setter
-	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != auto else self.make_default("SchmeNm")
-
-	@SchmeNm.deleter
-	def SchmeNm(self):
-		del self._SchmeNm
-		self._SchmeNm = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -58,10 +45,23 @@ class GenericIdentification56(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Issr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Bal', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Bal', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

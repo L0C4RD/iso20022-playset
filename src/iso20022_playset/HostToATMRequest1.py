@@ -1,11 +1,24 @@
 from . import base_types
-import ATMCommandIdentification1
-import MessageFunction8Code
-import ATMEnvironment9
+from .MessageFunction8Code import MessageFunction8Code
+from .ATMEnvironment9 import ATMEnvironment9
+from .ATMCommandIdentification1 import ATMCommandIdentification1
 
 class HostToATMRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_CmdId", "_Envt", "_XpctdMsgFctn"]
+	__slots__ = ["_XpctdMsgFctn", "_CmdId", "_Envt"]
+	@property
+	def XpctdMsgFctn(self):
+		return self._XpctdMsgFctn
+
+	@XpctdMsgFctn.setter
+	def XpctdMsgFctn(self, value):
+		self._XpctdMsgFctn = value if type(value) != auto else self.make_default("XpctdMsgFctn")
+
+	@XpctdMsgFctn.deleter
+	def XpctdMsgFctn(self):
+		del self._XpctdMsgFctn
+		self._XpctdMsgFctn = None
+
 	@property
 	def CmdId(self):
 		return self._CmdId
@@ -32,22 +45,9 @@ class HostToATMRequest1(base_types._BaseFieldType):
 		del self._Envt
 		self._Envt = None
 
-	@property
-	def XpctdMsgFctn(self):
-		return self._XpctdMsgFctn
-
-	@XpctdMsgFctn.setter
-	def XpctdMsgFctn(self, value):
-		self._XpctdMsgFctn = value if type(value) != auto else self.make_default("XpctdMsgFctn")
-
-	@XpctdMsgFctn.deleter
-	def XpctdMsgFctn(self):
-		del self._XpctdMsgFctn
-		self._XpctdMsgFctn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='XpctdMsgFctn', type=MessageFunction8Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmdId', type=ATMCommandIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdMsgFctn', type=MessageFunction8Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

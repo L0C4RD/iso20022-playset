@@ -1,11 +1,24 @@
 from . import base_types
-import ISODate
-import PaymentPeriod3
-import Max140Text
+from .PaymentPeriod3 import PaymentPeriod3
+from .Max140Text import Max140Text
+from .ISODate import ISODate
 
 class PaymentCodeOrOther1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrPmtTerms", "_PmtDueDt", "_PmtCd"]
+	__slots__ = ["_PmtCd", "_OthrPmtTerms", "_PmtDueDt"]
+	@property
+	def PmtCd(self):
+		return self._PmtCd
+
+	@PmtCd.setter
+	def PmtCd(self, value):
+		self._PmtCd = value if type(value) != auto else self.make_default("PmtCd")
+
+	@PmtCd.deleter
+	def PmtCd(self):
+		del self._PmtCd
+		self._PmtCd = None
+
 	@property
 	def OthrPmtTerms(self):
 		return self._OthrPmtTerms
@@ -32,22 +45,9 @@ class PaymentCodeOrOther1Choice(base_types._BaseFieldType):
 		del self._PmtDueDt
 		self._PmtDueDt = None
 
-	@property
-	def PmtCd(self):
-		return self._PmtCd
-
-	@PmtCd.setter
-	def PmtCd(self, value):
-		self._PmtCd = value if type(value) != auto else self.make_default("PmtCd")
-
-	@PmtCd.deleter
-	def PmtCd(self):
-		del self._PmtCd
-		self._PmtCd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PmtCd', type=PaymentPeriod3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OthrPmtTerms', type=Max140Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PmtDueDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PmtCd', type=PaymentPeriod3, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,23 +1,10 @@
 from . import base_types
-import PersonIdentification5
-import OrganisationIdentification4
+from .PersonIdentification5 import PersonIdentification5
+from .OrganisationIdentification4 import OrganisationIdentification4
 
 class Party6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgId", "_PrvtId"]
-	@property
-	def OrgId(self):
-		return self._OrgId
-
-	@OrgId.setter
-	def OrgId(self, value):
-		self._OrgId = value if type(value) != auto else self.make_default("OrgId")
-
-	@OrgId.deleter
-	def OrgId(self):
-		del self._OrgId
-		self._OrgId = None
-
+	__slots__ = ["_PrvtId", "_OrgId"]
 	@property
 	def PrvtId(self):
 		return self._PrvtId
@@ -31,8 +18,21 @@ class Party6Choice(base_types._BaseFieldType):
 		del self._PrvtId
 		self._PrvtId = None
 
+	@property
+	def OrgId(self):
+		return self._OrgId
+
+	@OrgId.setter
+	def OrgId(self, value):
+		self._OrgId = value if type(value) != auto else self.make_default("OrgId")
+
+	@OrgId.deleter
+	def OrgId(self):
+		del self._OrgId
+		self._OrgId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgId', type=OrganisationIdentification4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrvtId', type=PersonIdentification5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OrgId', type=OrganisationIdentification4, min=0, max=1, mutex_group=1, array=False),
 	))
 

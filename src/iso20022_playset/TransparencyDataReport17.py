@@ -1,30 +1,30 @@
 from . import base_types
-import Max350Text
-import TransparencyMethodology2Code
-import MICIdentifier
-import TrueFalseIndicator
-import ISINOct2015Identifier
-import Period4Choice
-import StatisticsTransparency3
-import Max35Text
-import EquityInstrumentReportingClassification1Code
-import MarketDetail2
+from .MICIdentifier import MICIdentifier
+from .Max35Text import Max35Text
+from .EquityInstrumentReportingClassification1Code import EquityInstrumentReportingClassification1Code
+from .StatisticsTransparency3 import StatisticsTransparency3
+from .MarketDetail2 import MarketDetail2
+from .Max350Text import Max350Text
+from .ISINOct2015Identifier import ISINOct2015Identifier
+from .Period4Choice import Period4Choice
+from .TransparencyMethodology2Code import TransparencyMethodology2Code
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class TransparencyDataReport17(base_types._BaseFieldType):
 
-	__slots__ = ["_Sttstcs", "_FinInstrmClssfctn", "_TradgVn", "_Id", "_Mthdlgy", "_TechRcrdId", "_FullNm", "_RptgPrd", "_RlvntMkt", "_Lqdty"]
+	__slots__ = ["_Mthdlgy", "_FinInstrmClssfctn", "_RlvntMkt", "_Sttstcs", "_Id", "_FullNm", "_TradgVn", "_Lqdty", "_RptgPrd", "_TechRcrdId"]
 	@property
-	def Sttstcs(self):
-		return self._Sttstcs
+	def Mthdlgy(self):
+		return self._Mthdlgy
 
-	@Sttstcs.setter
-	def Sttstcs(self, value):
-		self._Sttstcs = value if type(value) != auto else self.make_default("Sttstcs")
+	@Mthdlgy.setter
+	def Mthdlgy(self, value):
+		self._Mthdlgy = value if type(value) != auto else self.make_default("Mthdlgy")
 
-	@Sttstcs.deleter
-	def Sttstcs(self):
-		del self._Sttstcs
-		self._Sttstcs = None
+	@Mthdlgy.deleter
+	def Mthdlgy(self):
+		del self._Mthdlgy
+		self._Mthdlgy = None
 
 	@property
 	def FinInstrmClssfctn(self):
@@ -40,17 +40,30 @@ class TransparencyDataReport17(base_types._BaseFieldType):
 		self._FinInstrmClssfctn = None
 
 	@property
-	def TradgVn(self):
-		return self._TradgVn
+	def RlvntMkt(self):
+		return self._RlvntMkt
 
-	@TradgVn.setter
-	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != auto else self.make_default("TradgVn")
+	@RlvntMkt.setter
+	def RlvntMkt(self, value):
+		self._RlvntMkt = value if type(value) != auto else self.make_default("RlvntMkt")
 
-	@TradgVn.deleter
-	def TradgVn(self):
-		del self._TradgVn
-		self._TradgVn = None
+	@RlvntMkt.deleter
+	def RlvntMkt(self):
+		del self._RlvntMkt
+		self._RlvntMkt = None
+
+	@property
+	def Sttstcs(self):
+		return self._Sttstcs
+
+	@Sttstcs.setter
+	def Sttstcs(self, value):
+		self._Sttstcs = value if type(value) != auto else self.make_default("Sttstcs")
+
+	@Sttstcs.deleter
+	def Sttstcs(self):
+		del self._Sttstcs
+		self._Sttstcs = None
 
 	@property
 	def Id(self):
@@ -66,32 +79,6 @@ class TransparencyDataReport17(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Mthdlgy(self):
-		return self._Mthdlgy
-
-	@Mthdlgy.setter
-	def Mthdlgy(self, value):
-		self._Mthdlgy = value if type(value) != auto else self.make_default("Mthdlgy")
-
-	@Mthdlgy.deleter
-	def Mthdlgy(self):
-		del self._Mthdlgy
-		self._Mthdlgy = None
-
-	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
-
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
-
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
-
-	@property
 	def FullNm(self):
 		return self._FullNm
 
@@ -103,6 +90,32 @@ class TransparencyDataReport17(base_types._BaseFieldType):
 	def FullNm(self):
 		del self._FullNm
 		self._FullNm = None
+
+	@property
+	def TradgVn(self):
+		return self._TradgVn
+
+	@TradgVn.setter
+	def TradgVn(self, value):
+		self._TradgVn = value if type(value) != auto else self.make_default("TradgVn")
+
+	@TradgVn.deleter
+	def TradgVn(self):
+		del self._TradgVn
+		self._TradgVn = None
+
+	@property
+	def Lqdty(self):
+		return self._Lqdty
+
+	@Lqdty.setter
+	def Lqdty(self, value):
+		self._Lqdty = value if type(value) != auto else self.make_default("Lqdty")
+
+	@Lqdty.deleter
+	def Lqdty(self):
+		del self._Lqdty
+		self._Lqdty = None
 
 	@property
 	def RptgPrd(self):
@@ -118,41 +131,28 @@ class TransparencyDataReport17(base_types._BaseFieldType):
 		self._RptgPrd = None
 
 	@property
-	def RlvntMkt(self):
-		return self._RlvntMkt
+	def TechRcrdId(self):
+		return self._TechRcrdId
 
-	@RlvntMkt.setter
-	def RlvntMkt(self, value):
-		self._RlvntMkt = value if type(value) != auto else self.make_default("RlvntMkt")
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
 
-	@RlvntMkt.deleter
-	def RlvntMkt(self):
-		del self._RlvntMkt
-		self._RlvntMkt = None
-
-	@property
-	def Lqdty(self):
-		return self._Lqdty
-
-	@Lqdty.setter
-	def Lqdty(self, value):
-		self._Lqdty = value if type(value) != auto else self.make_default("Lqdty")
-
-	@Lqdty.deleter
-	def Lqdty(self):
-		del self._Lqdty
-		self._Lqdty = None
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sttstcs', type=StatisticsTransparency3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmClssfctn', type=EquityInstrumentReportingClassification1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mthdlgy', type=TransparencyMethodology2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FullNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmClssfctn', type=EquityInstrumentReportingClassification1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RlvntMkt', type=MarketDetail2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sttstcs', type=StatisticsTransparency3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FullNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lqdty', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

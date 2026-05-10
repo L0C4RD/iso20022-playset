@@ -1,6 +1,6 @@
 from . import base_types
-import EventSequenceType1Code
-import GenericIdentification30
+from .GenericIdentification30 import GenericIdentification30
+from .EventSequenceType1Code import EventSequenceType1Code
 
 class EventSequenceTypeFormat1Choice(base_types._BaseFieldType):
 

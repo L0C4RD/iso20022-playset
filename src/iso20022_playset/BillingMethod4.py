@@ -1,6 +1,6 @@
 from . import base_types
-import BillingServiceParameters2
-import TaxCalculation1
+from .BillingServiceParameters2 import BillingServiceParameters2
+from .TaxCalculation1 import TaxCalculation1
 
 class BillingMethod4(base_types._BaseFieldType):
 

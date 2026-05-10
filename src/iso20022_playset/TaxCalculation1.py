@@ -1,12 +1,38 @@
 from . import base_types
-import BillingServicesTax3
-import ActiveOrHistoricCurrencyCode
-import BillingServicesAmount3
-import AmountAndDirection34
+from .BillingServicesTax3 import BillingServicesTax3
+from .AmountAndDirection34 import AmountAndDirection34
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .BillingServicesAmount3 import BillingServicesAmount3
 
 class TaxCalculation1(base_types._BaseFieldType):
 
-	__slots__ = ["_HstCcy", "_TtlTax", "_TaxblSvcChrgConvs", "_TtlTaxblSvcChrgHstAmt", "_TaxId"]
+	__slots__ = ["_TtlTaxblSvcChrgHstAmt", "_TaxId", "_HstCcy", "_TtlTax", "_TaxblSvcChrgConvs"]
+	@property
+	def TtlTaxblSvcChrgHstAmt(self):
+		return self._TtlTaxblSvcChrgHstAmt
+
+	@TtlTaxblSvcChrgHstAmt.setter
+	def TtlTaxblSvcChrgHstAmt(self, value):
+		self._TtlTaxblSvcChrgHstAmt = value if type(value) != auto else self.make_default("TtlTaxblSvcChrgHstAmt")
+
+	@TtlTaxblSvcChrgHstAmt.deleter
+	def TtlTaxblSvcChrgHstAmt(self):
+		del self._TtlTaxblSvcChrgHstAmt
+		self._TtlTaxblSvcChrgHstAmt = None
+
+	@property
+	def TaxId(self):
+		return self._TaxId
+
+	@TaxId.setter
+	def TaxId(self, value):
+		self._TaxId = value if type(value) != auto else self.make_default("TaxId")
+
+	@TaxId.deleter
+	def TaxId(self):
+		del self._TaxId
+		self._TaxId = None
+
 	@property
 	def HstCcy(self):
 		return self._HstCcy
@@ -46,37 +72,11 @@ class TaxCalculation1(base_types._BaseFieldType):
 		del self._TaxblSvcChrgConvs
 		self._TaxblSvcChrgConvs = None
 
-	@property
-	def TtlTaxblSvcChrgHstAmt(self):
-		return self._TtlTaxblSvcChrgHstAmt
-
-	@TtlTaxblSvcChrgHstAmt.setter
-	def TtlTaxblSvcChrgHstAmt(self, value):
-		self._TtlTaxblSvcChrgHstAmt = value if type(value) != auto else self.make_default("TtlTaxblSvcChrgHstAmt")
-
-	@TtlTaxblSvcChrgHstAmt.deleter
-	def TtlTaxblSvcChrgHstAmt(self):
-		del self._TtlTaxblSvcChrgHstAmt
-		self._TtlTaxblSvcChrgHstAmt = None
-
-	@property
-	def TaxId(self):
-		return self._TaxId
-
-	@TaxId.setter
-	def TaxId(self, value):
-		self._TaxId = value if type(value) != auto else self.make_default("TaxId")
-
-	@TaxId.deleter
-	def TaxId(self):
-		del self._TaxId
-		self._TaxId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TtlTaxblSvcChrgHstAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxId', type=BillingServicesTax3, min=1, max=3, mutex_group=None, array=True),
 		base_types.FieldEntry(name='HstCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlTax', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxblSvcChrgConvs', type=BillingServicesAmount3, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlTaxblSvcChrgHstAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxId', type=BillingServicesTax3, min=1, max=3, mutex_group=None, array=True),
 	))
 

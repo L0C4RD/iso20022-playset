@@ -1,12 +1,12 @@
 from . import base_types
-import CancellationStatus14Choice
-import RejectionOrRepairStatus38Choice
-import ProprietaryStatusAndReason6
-import AcknowledgedAcceptedStatus21Choice
+from .AcknowledgedAcceptedStatus21Choice import AcknowledgedAcceptedStatus21Choice
+from .RejectionOrRepairStatus38Choice import RejectionOrRepairStatus38Choice
+from .CancellationStatus14Choice import CancellationStatus14Choice
+from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 
 class ProcessingStatus66Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AckdAccptd", "_Prtry", "_Rpr", "_Canc"]
+	__slots__ = ["_AckdAccptd", "_Canc", "_Rpr", "_Prtry"]
 	@property
 	def AckdAccptd(self):
 		return self._AckdAccptd
@@ -21,17 +21,17 @@ class ProcessingStatus66Choice(base_types._BaseFieldType):
 		self._AckdAccptd = None
 
 	@property
-	def Prtry(self):
-		return self._Prtry
+	def Canc(self):
+		return self._Canc
 
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+	@Canc.setter
+	def Canc(self, value):
+		self._Canc = value if type(value) != auto else self.make_default("Canc")
 
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
+	@Canc.deleter
+	def Canc(self):
+		del self._Canc
+		self._Canc = None
 
 	@property
 	def Rpr(self):
@@ -47,22 +47,22 @@ class ProcessingStatus66Choice(base_types._BaseFieldType):
 		self._Rpr = None
 
 	@property
-	def Canc(self):
-		return self._Canc
+	def Prtry(self):
+		return self._Prtry
 
-	@Canc.setter
-	def Canc(self, value):
-		self._Canc = value if type(value) != auto else self.make_default("Canc")
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
 
-	@Canc.deleter
-	def Canc(self):
-		del self._Canc
-		self._Canc = None
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rpr', type=RejectionOrRepairStatus38Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Canc', type=CancellationStatus14Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rpr', type=RejectionOrRepairStatus38Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 	))
 

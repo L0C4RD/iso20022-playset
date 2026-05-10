@@ -1,24 +1,24 @@
 from . import base_types
-import TerminalHosting1
-import Acquirer7
-import AutomatedTellerMachine5
-import Max35Text
+from .TerminalHosting1 import TerminalHosting1
+from .Max35Text import Max35Text
+from .Acquirer7 import Acquirer7
+from .AutomatedTellerMachine5 import AutomatedTellerMachine5
 
 class ATMEnvironment6(base_types._BaseFieldType):
 
-	__slots__ = ["_ATM", "_HstgNtty", "_ATMMgrId", "_Acqrr"]
+	__slots__ = ["_ATMMgrId", "_HstgNtty", "_ATM", "_Acqrr"]
 	@property
-	def ATM(self):
-		return self._ATM
+	def ATMMgrId(self):
+		return self._ATMMgrId
 
-	@ATM.setter
-	def ATM(self, value):
-		self._ATM = value if type(value) != auto else self.make_default("ATM")
+	@ATMMgrId.setter
+	def ATMMgrId(self, value):
+		self._ATMMgrId = value if type(value) != auto else self.make_default("ATMMgrId")
 
-	@ATM.deleter
-	def ATM(self):
-		del self._ATM
-		self._ATM = None
+	@ATMMgrId.deleter
+	def ATMMgrId(self):
+		del self._ATMMgrId
+		self._ATMMgrId = None
 
 	@property
 	def HstgNtty(self):
@@ -34,17 +34,17 @@ class ATMEnvironment6(base_types._BaseFieldType):
 		self._HstgNtty = None
 
 	@property
-	def ATMMgrId(self):
-		return self._ATMMgrId
+	def ATM(self):
+		return self._ATM
 
-	@ATMMgrId.setter
-	def ATMMgrId(self, value):
-		self._ATMMgrId = value if type(value) != auto else self.make_default("ATMMgrId")
+	@ATM.setter
+	def ATM(self, value):
+		self._ATM = value if type(value) != auto else self.make_default("ATM")
 
-	@ATMMgrId.deleter
-	def ATMMgrId(self):
-		del self._ATMMgrId
-		self._ATMMgrId = None
+	@ATM.deleter
+	def ATM(self):
+		del self._ATM
+		self._ATM = None
 
 	@property
 	def Acqrr(self):
@@ -60,9 +60,9 @@ class ATMEnvironment6(base_types._BaseFieldType):
 		self._Acqrr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HstgNtty', type=TerminalHosting1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMMgrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HstgNtty', type=TerminalHosting1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acqrr', type=Acquirer7, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-import RestrictedFINXMax140Text
+from .RestrictedFINXMax140Text import RestrictedFINXMax140Text
 
 class NameAndAddress12(base_types._BaseFieldType):
 

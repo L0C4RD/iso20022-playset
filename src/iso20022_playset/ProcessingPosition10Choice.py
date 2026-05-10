@@ -1,6 +1,6 @@
 from . import base_types
-import ProcessingPosition3Code
-import GenericIdentification47
+from .GenericIdentification47 import GenericIdentification47
+from .ProcessingPosition3Code import ProcessingPosition3Code
 
 class ProcessingPosition10Choice(base_types._BaseFieldType):
 

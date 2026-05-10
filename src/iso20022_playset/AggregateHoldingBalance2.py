@@ -1,7 +1,7 @@
 from . import base_types
-import SupplementaryData1
-import FinancialInstrumentAggregateBalance1
-import SecurityIdentification19
+from .SecurityIdentification19 import SecurityIdentification19
+from .SupplementaryData1 import SupplementaryData1
+from .FinancialInstrumentAggregateBalance1 import FinancialInstrumentAggregateBalance1
 
 class AggregateHoldingBalance2(base_types._BaseFieldType):
 

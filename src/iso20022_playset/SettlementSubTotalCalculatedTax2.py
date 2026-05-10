@@ -1,25 +1,25 @@
 from . import base_types
-import PercentageRate
-import Max500Text
-import CurrencyAndAmount
-import Max4Text
-import CurrencyReference3
+from .Max4Text import Max4Text
+from .PercentageRate import PercentageRate
+from .CurrencyReference3 import CurrencyReference3
+from .CurrencyAndAmount import CurrencyAndAmount
+from .Max500Text import Max500Text
 
 class SettlementSubTotalCalculatedTax2(base_types._BaseFieldType):
 
-	__slots__ = ["_ClctdRate", "_TpCd", "_XmptnRsnTxt", "_XmptnRsnCd", "_BsisAmt", "_ClctdAmt", "_TaxCcyXchg"]
+	__slots__ = ["_ClctdAmt", "_TpCd", "_XmptnRsnTxt", "_XmptnRsnCd", "_TaxCcyXchg", "_ClctdRate", "_BsisAmt"]
 	@property
-	def ClctdRate(self):
-		return self._ClctdRate
+	def ClctdAmt(self):
+		return self._ClctdAmt
 
-	@ClctdRate.setter
-	def ClctdRate(self, value):
-		self._ClctdRate = value if type(value) != auto else self.make_default("ClctdRate")
+	@ClctdAmt.setter
+	def ClctdAmt(self, value):
+		self._ClctdAmt = value if type(value) != auto else self.make_default("ClctdAmt")
 
-	@ClctdRate.deleter
-	def ClctdRate(self):
-		del self._ClctdRate
-		self._ClctdRate = None
+	@ClctdAmt.deleter
+	def ClctdAmt(self):
+		del self._ClctdAmt
+		self._ClctdAmt = None
 
 	@property
 	def TpCd(self):
@@ -61,32 +61,6 @@ class SettlementSubTotalCalculatedTax2(base_types._BaseFieldType):
 		self._XmptnRsnCd = None
 
 	@property
-	def BsisAmt(self):
-		return self._BsisAmt
-
-	@BsisAmt.setter
-	def BsisAmt(self, value):
-		self._BsisAmt = value if type(value) != auto else self.make_default("BsisAmt")
-
-	@BsisAmt.deleter
-	def BsisAmt(self):
-		del self._BsisAmt
-		self._BsisAmt = None
-
-	@property
-	def ClctdAmt(self):
-		return self._ClctdAmt
-
-	@ClctdAmt.setter
-	def ClctdAmt(self, value):
-		self._ClctdAmt = value if type(value) != auto else self.make_default("ClctdAmt")
-
-	@ClctdAmt.deleter
-	def ClctdAmt(self):
-		del self._ClctdAmt
-		self._ClctdAmt = None
-
-	@property
 	def TaxCcyXchg(self):
 		return self._TaxCcyXchg
 
@@ -99,13 +73,39 @@ class SettlementSubTotalCalculatedTax2(base_types._BaseFieldType):
 		del self._TaxCcyXchg
 		self._TaxCcyXchg = None
 
+	@property
+	def ClctdRate(self):
+		return self._ClctdRate
+
+	@ClctdRate.setter
+	def ClctdRate(self, value):
+		self._ClctdRate = value if type(value) != auto else self.make_default("ClctdRate")
+
+	@ClctdRate.deleter
+	def ClctdRate(self):
+		del self._ClctdRate
+		self._ClctdRate = None
+
+	@property
+	def BsisAmt(self):
+		return self._BsisAmt
+
+	@BsisAmt.setter
+	def BsisAmt(self, value):
+		self._BsisAmt = value if type(value) != auto else self.make_default("BsisAmt")
+
+	@BsisAmt.deleter
+	def BsisAmt(self):
+		del self._BsisAmt
+		self._BsisAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClctdRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClctdAmt', type=CurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TpCd', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XmptnRsnTxt', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XmptnRsnCd', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BsisAmt', type=CurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ClctdAmt', type=CurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TaxCcyXchg', type=CurrencyReference3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClctdRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BsisAmt', type=CurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),
 	))
 

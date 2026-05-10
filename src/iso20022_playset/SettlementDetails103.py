@@ -1,15 +1,41 @@
 from . import base_types
-import Registration11Choice
-import Restriction6Choice
-import SettlementTransactionCondition21Choice
-import TaxCapacityParty5Choice
-import SettlementSystemMethod5Choice
-import GenericIdentification47
-import SecuritiesRTGS5Choice
+from .SecuritiesRTGS5Choice import SecuritiesRTGS5Choice
+from .GenericIdentification47 import GenericIdentification47
+from .SettlementTransactionCondition21Choice import SettlementTransactionCondition21Choice
+from .Restriction6Choice import Restriction6Choice
+from .TaxCapacityParty5Choice import TaxCapacityParty5Choice
+from .Registration11Choice import Registration11Choice
+from .SettlementSystemMethod5Choice import SettlementSystemMethod5Choice
 
 class SettlementDetails103(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxCpcty", "_SttlmSysMtd", "_SttlmTxCond", "_StmpDtyTaxBsis", "_SctiesRTGS", "_LglRstrctns", "_Regn"]
+	__slots__ = ["_SctiesRTGS", "_StmpDtyTaxBsis", "_TaxCpcty", "_SttlmSysMtd", "_Regn", "_SttlmTxCond", "_LglRstrctns"]
+	@property
+	def SctiesRTGS(self):
+		return self._SctiesRTGS
+
+	@SctiesRTGS.setter
+	def SctiesRTGS(self, value):
+		self._SctiesRTGS = value if type(value) != auto else self.make_default("SctiesRTGS")
+
+	@SctiesRTGS.deleter
+	def SctiesRTGS(self):
+		del self._SctiesRTGS
+		self._SctiesRTGS = None
+
+	@property
+	def StmpDtyTaxBsis(self):
+		return self._StmpDtyTaxBsis
+
+	@StmpDtyTaxBsis.setter
+	def StmpDtyTaxBsis(self, value):
+		self._StmpDtyTaxBsis = value if type(value) != auto else self.make_default("StmpDtyTaxBsis")
+
+	@StmpDtyTaxBsis.deleter
+	def StmpDtyTaxBsis(self):
+		del self._StmpDtyTaxBsis
+		self._StmpDtyTaxBsis = None
+
 	@property
 	def TaxCpcty(self):
 		return self._TaxCpcty
@@ -37,6 +63,19 @@ class SettlementDetails103(base_types._BaseFieldType):
 		self._SttlmSysMtd = None
 
 	@property
+	def Regn(self):
+		return self._Regn
+
+	@Regn.setter
+	def Regn(self, value):
+		self._Regn = value if type(value) != auto else self.make_default("Regn")
+
+	@Regn.deleter
+	def Regn(self):
+		del self._Regn
+		self._Regn = None
+
+	@property
 	def SttlmTxCond(self):
 		return self._SttlmTxCond
 
@@ -48,32 +87,6 @@ class SettlementDetails103(base_types._BaseFieldType):
 	def SttlmTxCond(self):
 		del self._SttlmTxCond
 		self._SttlmTxCond = None
-
-	@property
-	def StmpDtyTaxBsis(self):
-		return self._StmpDtyTaxBsis
-
-	@StmpDtyTaxBsis.setter
-	def StmpDtyTaxBsis(self, value):
-		self._StmpDtyTaxBsis = value if type(value) != auto else self.make_default("StmpDtyTaxBsis")
-
-	@StmpDtyTaxBsis.deleter
-	def StmpDtyTaxBsis(self):
-		del self._StmpDtyTaxBsis
-		self._StmpDtyTaxBsis = None
-
-	@property
-	def SctiesRTGS(self):
-		return self._SctiesRTGS
-
-	@SctiesRTGS.setter
-	def SctiesRTGS(self, value):
-		self._SctiesRTGS = value if type(value) != auto else self.make_default("SctiesRTGS")
-
-	@SctiesRTGS.deleter
-	def SctiesRTGS(self):
-		del self._SctiesRTGS
-		self._SctiesRTGS = None
 
 	@property
 	def LglRstrctns(self):
@@ -88,26 +101,13 @@ class SettlementDetails103(base_types._BaseFieldType):
 		del self._LglRstrctns
 		self._LglRstrctns = None
 
-	@property
-	def Regn(self):
-		return self._Regn
-
-	@Regn.setter
-	def Regn(self, value):
-		self._Regn = value if type(value) != auto else self.make_default("Regn")
-
-	@Regn.deleter
-	def Regn(self):
-		del self._Regn
-		self._Regn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SctiesRTGS', type=SecuritiesRTGS5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmpDtyTaxBsis', type=GenericIdentification47, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxCpcty', type=TaxCapacityParty5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmSysMtd', type=SettlementSystemMethod5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmTxCond', type=SettlementTransactionCondition21Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StmpDtyTaxBsis', type=GenericIdentification47, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesRTGS', type=SecuritiesRTGS5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglRstrctns', type=Restriction6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Regn', type=Registration11Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmTxCond', type=SettlementTransactionCondition21Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LglRstrctns', type=Restriction6Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

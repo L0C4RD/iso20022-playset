@@ -1,45 +1,71 @@
 from . import base_types
-import CountryCode
-import YesNoIndicator
-import Max140Text
-import PartyIdentification214
-import SupplementaryData1
-import Max35Text
-import PartyIdentification129Choice
-import DisclosureRequestType1Code
-import SecurityIdentification19
-import DateFormat46Choice
-import DecimalNumber
-import RequestShareHeldDate1Choice
+from .PartyIdentification214 import PartyIdentification214
+from .Max35Text import Max35Text
+from .RequestShareHeldDate1Choice import RequestShareHeldDate1Choice
+from .YesNoIndicator import YesNoIndicator
+from .CountryCode import CountryCode
+from .SecurityIdentification19 import SecurityIdentification19
+from .DecimalNumber import DecimalNumber
+from .Max140Text import Max140Text
+from .SupplementaryData1 import SupplementaryData1
+from .DateFormat46Choice import DateFormat46Choice
+from .PartyIdentification129Choice import PartyIdentification129Choice
+from .DisclosureRequestType1Code import DisclosureRequestType1Code
 
 class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_PlcOfJursdctn", "_AplblLaw", "_IssrDsclsrReqId", "_ShrhldrRghtsDrctvInd", "_RspnThrghChainInd", "_DsclsrRspnRcpt", "_ShrhldrsDsclsrRcrdDt", "_DsclsrReqTp", "_SplmtryData", "_ReqShrHeldDt", "_ShrsQtyThrshld", "_FinInstrmId", "_FwdReqInd", "_IssrDsclsrDdln", "_DsclsrRspnDdln", "_Issr", "_PrvsDsclsrReqId"]
+	__slots__ = ["_ShrhldrRghtsDrctvInd", "_IssrDsclsrDdln", "_PrvsDsclsrReqId", "_FwdReqInd", "_IssrDsclsrReqId", "_FinInstrmId", "_Issr", "_DsclsrRspnRcpt", "_ReqShrHeldDt", "_RspnThrghChainInd", "_ShrhldrsDsclsrRcrdDt", "_DsclsrReqTp", "_PlcOfJursdctn", "_DsclsrRspnDdln", "_SplmtryData", "_AplblLaw", "_ShrsQtyThrshld"]
 	@property
-	def PlcOfJursdctn(self):
-		return self._PlcOfJursdctn
+	def ShrhldrRghtsDrctvInd(self):
+		return self._ShrhldrRghtsDrctvInd
 
-	@PlcOfJursdctn.setter
-	def PlcOfJursdctn(self, value):
-		self._PlcOfJursdctn = value if type(value) != auto else self.make_default("PlcOfJursdctn")
+	@ShrhldrRghtsDrctvInd.setter
+	def ShrhldrRghtsDrctvInd(self, value):
+		self._ShrhldrRghtsDrctvInd = value if type(value) != auto else self.make_default("ShrhldrRghtsDrctvInd")
 
-	@PlcOfJursdctn.deleter
-	def PlcOfJursdctn(self):
-		del self._PlcOfJursdctn
-		self._PlcOfJursdctn = None
+	@ShrhldrRghtsDrctvInd.deleter
+	def ShrhldrRghtsDrctvInd(self):
+		del self._ShrhldrRghtsDrctvInd
+		self._ShrhldrRghtsDrctvInd = None
 
 	@property
-	def AplblLaw(self):
-		return self._AplblLaw
+	def IssrDsclsrDdln(self):
+		return self._IssrDsclsrDdln
 
-	@AplblLaw.setter
-	def AplblLaw(self, value):
-		self._AplblLaw = value if type(value) != auto else self.make_default("AplblLaw")
+	@IssrDsclsrDdln.setter
+	def IssrDsclsrDdln(self, value):
+		self._IssrDsclsrDdln = value if type(value) != auto else self.make_default("IssrDsclsrDdln")
 
-	@AplblLaw.deleter
-	def AplblLaw(self):
-		del self._AplblLaw
-		self._AplblLaw = None
+	@IssrDsclsrDdln.deleter
+	def IssrDsclsrDdln(self):
+		del self._IssrDsclsrDdln
+		self._IssrDsclsrDdln = None
+
+	@property
+	def PrvsDsclsrReqId(self):
+		return self._PrvsDsclsrReqId
+
+	@PrvsDsclsrReqId.setter
+	def PrvsDsclsrReqId(self, value):
+		self._PrvsDsclsrReqId = value if type(value) != auto else self.make_default("PrvsDsclsrReqId")
+
+	@PrvsDsclsrReqId.deleter
+	def PrvsDsclsrReqId(self):
+		del self._PrvsDsclsrReqId
+		self._PrvsDsclsrReqId = None
+
+	@property
+	def FwdReqInd(self):
+		return self._FwdReqInd
+
+	@FwdReqInd.setter
+	def FwdReqInd(self, value):
+		self._FwdReqInd = value if type(value) != auto else self.make_default("FwdReqInd")
+
+	@FwdReqInd.deleter
+	def FwdReqInd(self):
+		del self._FwdReqInd
+		self._FwdReqInd = None
 
 	@property
 	def IssrDsclsrReqId(self):
@@ -55,30 +81,30 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 		self._IssrDsclsrReqId = None
 
 	@property
-	def ShrhldrRghtsDrctvInd(self):
-		return self._ShrhldrRghtsDrctvInd
+	def FinInstrmId(self):
+		return self._FinInstrmId
 
-	@ShrhldrRghtsDrctvInd.setter
-	def ShrhldrRghtsDrctvInd(self, value):
-		self._ShrhldrRghtsDrctvInd = value if type(value) != auto else self.make_default("ShrhldrRghtsDrctvInd")
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
 
-	@ShrhldrRghtsDrctvInd.deleter
-	def ShrhldrRghtsDrctvInd(self):
-		del self._ShrhldrRghtsDrctvInd
-		self._ShrhldrRghtsDrctvInd = None
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
 
 	@property
-	def RspnThrghChainInd(self):
-		return self._RspnThrghChainInd
+	def Issr(self):
+		return self._Issr
 
-	@RspnThrghChainInd.setter
-	def RspnThrghChainInd(self, value):
-		self._RspnThrghChainInd = value if type(value) != auto else self.make_default("RspnThrghChainInd")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@RspnThrghChainInd.deleter
-	def RspnThrghChainInd(self):
-		del self._RspnThrghChainInd
-		self._RspnThrghChainInd = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	@property
 	def DsclsrRspnRcpt(self):
@@ -92,6 +118,32 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 	def DsclsrRspnRcpt(self):
 		del self._DsclsrRspnRcpt
 		self._DsclsrRspnRcpt = None
+
+	@property
+	def ReqShrHeldDt(self):
+		return self._ReqShrHeldDt
+
+	@ReqShrHeldDt.setter
+	def ReqShrHeldDt(self, value):
+		self._ReqShrHeldDt = value if type(value) != auto else self.make_default("ReqShrHeldDt")
+
+	@ReqShrHeldDt.deleter
+	def ReqShrHeldDt(self):
+		del self._ReqShrHeldDt
+		self._ReqShrHeldDt = None
+
+	@property
+	def RspnThrghChainInd(self):
+		return self._RspnThrghChainInd
+
+	@RspnThrghChainInd.setter
+	def RspnThrghChainInd(self, value):
+		self._RspnThrghChainInd = value if type(value) != auto else self.make_default("RspnThrghChainInd")
+
+	@RspnThrghChainInd.deleter
+	def RspnThrghChainInd(self):
+		del self._RspnThrghChainInd
+		self._RspnThrghChainInd = None
 
 	@property
 	def ShrhldrsDsclsrRcrdDt(self):
@@ -120,82 +172,17 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 		self._DsclsrReqTp = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def PlcOfJursdctn(self):
+		return self._PlcOfJursdctn
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@PlcOfJursdctn.setter
+	def PlcOfJursdctn(self, value):
+		self._PlcOfJursdctn = value if type(value) != auto else self.make_default("PlcOfJursdctn")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def ReqShrHeldDt(self):
-		return self._ReqShrHeldDt
-
-	@ReqShrHeldDt.setter
-	def ReqShrHeldDt(self, value):
-		self._ReqShrHeldDt = value if type(value) != auto else self.make_default("ReqShrHeldDt")
-
-	@ReqShrHeldDt.deleter
-	def ReqShrHeldDt(self):
-		del self._ReqShrHeldDt
-		self._ReqShrHeldDt = None
-
-	@property
-	def ShrsQtyThrshld(self):
-		return self._ShrsQtyThrshld
-
-	@ShrsQtyThrshld.setter
-	def ShrsQtyThrshld(self, value):
-		self._ShrsQtyThrshld = value if type(value) != auto else self.make_default("ShrsQtyThrshld")
-
-	@ShrsQtyThrshld.deleter
-	def ShrsQtyThrshld(self):
-		del self._ShrsQtyThrshld
-		self._ShrsQtyThrshld = None
-
-	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
-	@property
-	def FwdReqInd(self):
-		return self._FwdReqInd
-
-	@FwdReqInd.setter
-	def FwdReqInd(self, value):
-		self._FwdReqInd = value if type(value) != auto else self.make_default("FwdReqInd")
-
-	@FwdReqInd.deleter
-	def FwdReqInd(self):
-		del self._FwdReqInd
-		self._FwdReqInd = None
-
-	@property
-	def IssrDsclsrDdln(self):
-		return self._IssrDsclsrDdln
-
-	@IssrDsclsrDdln.setter
-	def IssrDsclsrDdln(self, value):
-		self._IssrDsclsrDdln = value if type(value) != auto else self.make_default("IssrDsclsrDdln")
-
-	@IssrDsclsrDdln.deleter
-	def IssrDsclsrDdln(self):
-		del self._IssrDsclsrDdln
-		self._IssrDsclsrDdln = None
+	@PlcOfJursdctn.deleter
+	def PlcOfJursdctn(self):
+		del self._PlcOfJursdctn
+		self._PlcOfJursdctn = None
 
 	@property
 	def DsclsrRspnDdln(self):
@@ -211,48 +198,61 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 		self._DsclsrRspnDdln = None
 
 	@property
-	def Issr(self):
-		return self._Issr
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
-	def PrvsDsclsrReqId(self):
-		return self._PrvsDsclsrReqId
+	def AplblLaw(self):
+		return self._AplblLaw
 
-	@PrvsDsclsrReqId.setter
-	def PrvsDsclsrReqId(self, value):
-		self._PrvsDsclsrReqId = value if type(value) != auto else self.make_default("PrvsDsclsrReqId")
+	@AplblLaw.setter
+	def AplblLaw(self, value):
+		self._AplblLaw = value if type(value) != auto else self.make_default("AplblLaw")
 
-	@PrvsDsclsrReqId.deleter
-	def PrvsDsclsrReqId(self):
-		del self._PrvsDsclsrReqId
-		self._PrvsDsclsrReqId = None
+	@AplblLaw.deleter
+	def AplblLaw(self):
+		del self._AplblLaw
+		self._AplblLaw = None
+
+	@property
+	def ShrsQtyThrshld(self):
+		return self._ShrsQtyThrshld
+
+	@ShrsQtyThrshld.setter
+	def ShrsQtyThrshld(self, value):
+		self._ShrsQtyThrshld = value if type(value) != auto else self.make_default("ShrsQtyThrshld")
+
+	@ShrsQtyThrshld.deleter
+	def ShrsQtyThrshld(self):
+		del self._ShrsQtyThrshld
+		self._ShrsQtyThrshld = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PlcOfJursdctn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AplblLaw', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrDsclsrReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrhldrRghtsDrctvInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnThrghChainInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrDsclsrDdln', type=DateFormat46Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsDsclsrReqId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FwdReqInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrDsclsrReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=PartyIdentification129Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsclsrRspnRcpt', type=PartyIdentification214, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqShrHeldDt', type=RequestShareHeldDate1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnThrghChainInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrhldrsDsclsrRcrdDt', type=DateFormat46Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsclsrReqTp', type=DisclosureRequestType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqShrHeldDt', type=RequestShareHeldDate1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrsQtyThrshld', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FwdReqInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrDsclsrDdln', type=DateFormat46Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfJursdctn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsclsrRspnDdln', type=DateFormat46Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=PartyIdentification129Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsDsclsrReqId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AplblLaw', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrsQtyThrshld', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

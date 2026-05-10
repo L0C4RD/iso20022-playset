@@ -1,26 +1,39 @@
 from . import base_types
-import PledgeInformation1
-import Max140Text
-import PartyIdentification246Choice
-import HoldingBalance15
-import PartyIdentification231Choice
-import Max35Text
+from .Max35Text import Max35Text
+from .PartyIdentification231Choice import PartyIdentification231Choice
+from .Max140Text import Max140Text
+from .HoldingBalance15 import HoldingBalance15
+from .PartyIdentification246Choice import PartyIdentification246Choice
+from .PledgeInformation1 import PledgeInformation1
 
 class SafekeepingAccount19(base_types._BaseFieldType):
 
-	__slots__ = ["_RghtsHldr", "_PldgDtls", "_BlckChainAdrOrWllt", "_AcctId", "_AcctOwnr", "_SubAcctId", "_InstdBal"]
+	__slots__ = ["_AcctOwnr", "_InstdBal", "_PldgDtls", "_SubAcctId", "_BlckChainAdrOrWllt", "_AcctId", "_RghtsHldr"]
 	@property
-	def RghtsHldr(self):
-		return self._RghtsHldr
+	def AcctOwnr(self):
+		return self._AcctOwnr
 
-	@RghtsHldr.setter
-	def RghtsHldr(self, value):
-		self._RghtsHldr = value if type(value) != auto else self.make_default("RghtsHldr")
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
 
-	@RghtsHldr.deleter
-	def RghtsHldr(self):
-		del self._RghtsHldr
-		self._RghtsHldr = None
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
+	@property
+	def InstdBal(self):
+		return self._InstdBal
+
+	@InstdBal.setter
+	def InstdBal(self, value):
+		self._InstdBal = value if type(value) != auto else self.make_default("InstdBal")
+
+	@InstdBal.deleter
+	def InstdBal(self):
+		del self._InstdBal
+		self._InstdBal = None
 
 	@property
 	def PldgDtls(self):
@@ -34,6 +47,19 @@ class SafekeepingAccount19(base_types._BaseFieldType):
 	def PldgDtls(self):
 		del self._PldgDtls
 		self._PldgDtls = None
+
+	@property
+	def SubAcctId(self):
+		return self._SubAcctId
+
+	@SubAcctId.setter
+	def SubAcctId(self, value):
+		self._SubAcctId = value if type(value) != auto else self.make_default("SubAcctId")
+
+	@SubAcctId.deleter
+	def SubAcctId(self):
+		del self._SubAcctId
+		self._SubAcctId = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -62,51 +88,25 @@ class SafekeepingAccount19(base_types._BaseFieldType):
 		self._AcctId = None
 
 	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
+	def RghtsHldr(self):
+		return self._RghtsHldr
 
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+	@RghtsHldr.setter
+	def RghtsHldr(self, value):
+		self._RghtsHldr = value if type(value) != auto else self.make_default("RghtsHldr")
 
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
-	@property
-	def SubAcctId(self):
-		return self._SubAcctId
-
-	@SubAcctId.setter
-	def SubAcctId(self, value):
-		self._SubAcctId = value if type(value) != auto else self.make_default("SubAcctId")
-
-	@SubAcctId.deleter
-	def SubAcctId(self):
-		del self._SubAcctId
-		self._SubAcctId = None
-
-	@property
-	def InstdBal(self):
-		return self._InstdBal
-
-	@InstdBal.setter
-	def InstdBal(self, value):
-		self._InstdBal = value if type(value) != auto else self.make_default("InstdBal")
-
-	@InstdBal.deleter
-	def InstdBal(self):
-		del self._InstdBal
-		self._InstdBal = None
+	@RghtsHldr.deleter
+	def RghtsHldr(self):
+		del self._RghtsHldr
+		self._RghtsHldr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RghtsHldr', type=PartyIdentification246Choice, min=0, max=250, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification231Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdBal', type=HoldingBalance15, min=1, max=15, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PldgDtls', type=PledgeInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubAcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification231Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubAcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstdBal', type=HoldingBalance15, min=1, max=15, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RghtsHldr', type=PartyIdentification246Choice, min=0, max=250, mutex_group=None, array=True),
 	))
 

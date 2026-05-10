@@ -1,12 +1,12 @@
 from . import base_types
-import Exact4AlphaNumericText
-import SupplementaryData1
-import Max35Text
-import WithdrawalReason1
+from .Max35Text import Max35Text
+from .Exact4AlphaNumericText import Exact4AlphaNumericText
+from .SupplementaryData1 import SupplementaryData1
+from .WithdrawalReason1 import WithdrawalReason1
 
 class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_MtchgSysUnqRef", "_WdrwlRsn", "_SplmtryData", "_SttlmSsnIdr"]
+	__slots__ = ["_MsgId", "_WdrwlRsn", "_SplmtryData", "_SttlmSsnIdr", "_MtchgSysUnqRef"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -19,19 +19,6 @@ class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
-
-	@property
-	def MtchgSysUnqRef(self):
-		return self._MtchgSysUnqRef
-
-	@MtchgSysUnqRef.setter
-	def MtchgSysUnqRef(self, value):
-		self._MtchgSysUnqRef = value if type(value) != auto else self.make_default("MtchgSysUnqRef")
-
-	@MtchgSysUnqRef.deleter
-	def MtchgSysUnqRef(self):
-		del self._MtchgSysUnqRef
-		self._MtchgSysUnqRef = None
 
 	@property
 	def WdrwlRsn(self):
@@ -72,11 +59,24 @@ class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 		del self._SttlmSsnIdr
 		self._SttlmSsnIdr = None
 
+	@property
+	def MtchgSysUnqRef(self):
+		return self._MtchgSysUnqRef
+
+	@MtchgSysUnqRef.setter
+	def MtchgSysUnqRef(self, value):
+		self._MtchgSysUnqRef = value if type(value) != auto else self.make_default("MtchgSysUnqRef")
+
+	@MtchgSysUnqRef.deleter
+	def MtchgSysUnqRef(self):
+		del self._MtchgSysUnqRef
+		self._MtchgSysUnqRef = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtchgSysUnqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WdrwlRsn', type=WithdrawalReason1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtchgSysUnqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

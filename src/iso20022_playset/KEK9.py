@@ -1,12 +1,12 @@
 from . import base_types
-import KEKIdentifier7
-import AlgorithmIdentification32
-import Number
-import Max500Binary
+from .Number import Number
+from .KEKIdentifier7 import KEKIdentifier7
+from .AlgorithmIdentification32 import AlgorithmIdentification32
+from .Max500Binary import Max500Binary
 
 class KEK9(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyNcrptnAlgo", "_KEKId", "_Vrsn", "_NcrptdKey"]
+	__slots__ = ["_KeyNcrptnAlgo", "_NcrptdKey", "_KEKId", "_Vrsn"]
 	@property
 	def KeyNcrptnAlgo(self):
 		return self._KeyNcrptnAlgo
@@ -19,6 +19,19 @@ class KEK9(base_types._BaseFieldType):
 	def KeyNcrptnAlgo(self):
 		del self._KeyNcrptnAlgo
 		self._KeyNcrptnAlgo = None
+
+	@property
+	def NcrptdKey(self):
+		return self._NcrptdKey
+
+	@NcrptdKey.setter
+	def NcrptdKey(self, value):
+		self._NcrptdKey = value if type(value) != auto else self.make_default("NcrptdKey")
+
+	@NcrptdKey.deleter
+	def NcrptdKey(self):
+		del self._NcrptdKey
+		self._NcrptdKey = None
 
 	@property
 	def KEKId(self):
@@ -46,23 +59,10 @@ class KEK9(base_types._BaseFieldType):
 		del self._Vrsn
 		self._Vrsn = None
 
-	@property
-	def NcrptdKey(self):
-		return self._NcrptdKey
-
-	@NcrptdKey.setter
-	def NcrptdKey(self, value):
-		self._NcrptdKey = value if type(value) != auto else self.make_default("NcrptdKey")
-
-	@NcrptdKey.deleter
-	def NcrptdKey(self):
-		del self._NcrptdKey
-		self._NcrptdKey = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification32, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcrptdKey', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KEKId', type=KEKIdentifier7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NcrptdKey', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
 	))
 

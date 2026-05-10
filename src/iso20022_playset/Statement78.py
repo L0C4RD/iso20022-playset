@@ -1,56 +1,17 @@
 from . import base_types
-import Frequency22Choice
-import YesNoIndicator
-import DateAndDateTime2Choice
-import Number3Choice
-import Max35Text
-import StatementStatusType1Code
-import UpdateType15Choice
-import StatementBasis14Choice
-import CollateralRole1Code
+from .Max35Text import Max35Text
+from .YesNoIndicator import YesNoIndicator
+from .StatementBasis14Choice import StatementBasis14Choice
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .CollateralRole1Code import CollateralRole1Code
+from .Number3Choice import Number3Choice
+from .StatementStatusType1Code import StatementStatusType1Code
+from .Frequency22Choice import Frequency22Choice
+from .UpdateType15Choice import UpdateType15Choice
 
 class Statement78(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_CollSd", "_StsTp", "_StmtId", "_StmtBsis", "_StmtDtTm", "_SummryInd", "_Frqcy", "_QryRef", "_RptNb", "_UpdTp"]
-	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
-
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
-
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
-
-	@property
-	def CollSd(self):
-		return self._CollSd
-
-	@CollSd.setter
-	def CollSd(self, value):
-		self._CollSd = value if type(value) != auto else self.make_default("CollSd")
-
-	@CollSd.deleter
-	def CollSd(self):
-		del self._CollSd
-		self._CollSd = None
-
-	@property
-	def StsTp(self):
-		return self._StsTp
-
-	@StsTp.setter
-	def StsTp(self, value):
-		self._StsTp = value if type(value) != auto else self.make_default("StsTp")
-
-	@StsTp.deleter
-	def StsTp(self):
-		del self._StsTp
-		self._StsTp = None
-
+	__slots__ = ["_StmtId", "_StmtBsis", "_QryRef", "_SummryInd", "_Frqcy", "_ActvtyInd", "_CollSd", "_RptNb", "_StmtDtTm", "_UpdTp", "_StsTp"]
 	@property
 	def StmtId(self):
 		return self._StmtId
@@ -78,17 +39,17 @@ class Statement78(base_types._BaseFieldType):
 		self._StmtBsis = None
 
 	@property
-	def StmtDtTm(self):
-		return self._StmtDtTm
+	def QryRef(self):
+		return self._QryRef
 
-	@StmtDtTm.setter
-	def StmtDtTm(self, value):
-		self._StmtDtTm = value if type(value) != auto else self.make_default("StmtDtTm")
+	@QryRef.setter
+	def QryRef(self, value):
+		self._QryRef = value if type(value) != auto else self.make_default("QryRef")
 
-	@StmtDtTm.deleter
-	def StmtDtTm(self):
-		del self._StmtDtTm
-		self._StmtDtTm = None
+	@QryRef.deleter
+	def QryRef(self):
+		del self._QryRef
+		self._QryRef = None
 
 	@property
 	def SummryInd(self):
@@ -117,17 +78,30 @@ class Statement78(base_types._BaseFieldType):
 		self._Frqcy = None
 
 	@property
-	def QryRef(self):
-		return self._QryRef
+	def ActvtyInd(self):
+		return self._ActvtyInd
 
-	@QryRef.setter
-	def QryRef(self, value):
-		self._QryRef = value if type(value) != auto else self.make_default("QryRef")
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
 
-	@QryRef.deleter
-	def QryRef(self):
-		del self._QryRef
-		self._QryRef = None
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
+
+	@property
+	def CollSd(self):
+		return self._CollSd
+
+	@CollSd.setter
+	def CollSd(self, value):
+		self._CollSd = value if type(value) != auto else self.make_default("CollSd")
+
+	@CollSd.deleter
+	def CollSd(self):
+		del self._CollSd
+		self._CollSd = None
 
 	@property
 	def RptNb(self):
@@ -143,6 +117,19 @@ class Statement78(base_types._BaseFieldType):
 		self._RptNb = None
 
 	@property
+	def StmtDtTm(self):
+		return self._StmtDtTm
+
+	@StmtDtTm.setter
+	def StmtDtTm(self, value):
+		self._StmtDtTm = value if type(value) != auto else self.make_default("StmtDtTm")
+
+	@StmtDtTm.deleter
+	def StmtDtTm(self):
+		del self._StmtDtTm
+		self._StmtDtTm = None
+
+	@property
 	def UpdTp(self):
 		return self._UpdTp
 
@@ -155,17 +142,30 @@ class Statement78(base_types._BaseFieldType):
 		del self._UpdTp
 		self._UpdTp = None
 
+	@property
+	def StsTp(self):
+		return self._StsTp
+
+	@StsTp.setter
+	def StsTp(self, value):
+		self._StsTp = value if type(value) != auto else self.make_default("StsTp")
+
+	@StsTp.deleter
+	def StsTp(self):
+		del self._StsTp
+		self._StsTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollSd', type=CollateralRole1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsTp', type=StatementStatusType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtBsis', type=StatementBasis14Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SummryInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency22Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollSd', type=CollateralRole1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptNb', type=Number3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=UpdateType15Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsTp', type=StatementStatusType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

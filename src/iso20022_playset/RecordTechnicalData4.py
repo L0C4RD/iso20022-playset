@@ -1,13 +1,13 @@
 from . import base_types
-import MICIdentifier
-import CountryCode
-import TrueFalseIndicator
-import ISODateTime
-import Period4Choice
+from .CountryCode import CountryCode
+from .MICIdentifier import MICIdentifier
+from .ISODateTime import ISODateTime
+from .Period4Choice import Period4Choice
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class RecordTechnicalData4(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmissnDtTm", "_IncnsstncyInd", "_PblctnPrd", "_RlvntCmptntAuthrty", "_LastUpd", "_NvrPblshd", "_RlvntTradgVn"]
+	__slots__ = ["_SubmissnDtTm", "_NvrPblshd", "_RlvntTradgVn", "_IncnsstncyInd", "_LastUpd", "_PblctnPrd", "_RlvntCmptntAuthrty"]
 	@property
 	def SubmissnDtTm(self):
 		return self._SubmissnDtTm
@@ -20,58 +20,6 @@ class RecordTechnicalData4(base_types._BaseFieldType):
 	def SubmissnDtTm(self):
 		del self._SubmissnDtTm
 		self._SubmissnDtTm = None
-
-	@property
-	def IncnsstncyInd(self):
-		return self._IncnsstncyInd
-
-	@IncnsstncyInd.setter
-	def IncnsstncyInd(self, value):
-		self._IncnsstncyInd = value if type(value) != auto else self.make_default("IncnsstncyInd")
-
-	@IncnsstncyInd.deleter
-	def IncnsstncyInd(self):
-		del self._IncnsstncyInd
-		self._IncnsstncyInd = None
-
-	@property
-	def PblctnPrd(self):
-		return self._PblctnPrd
-
-	@PblctnPrd.setter
-	def PblctnPrd(self, value):
-		self._PblctnPrd = value if type(value) != auto else self.make_default("PblctnPrd")
-
-	@PblctnPrd.deleter
-	def PblctnPrd(self):
-		del self._PblctnPrd
-		self._PblctnPrd = None
-
-	@property
-	def RlvntCmptntAuthrty(self):
-		return self._RlvntCmptntAuthrty
-
-	@RlvntCmptntAuthrty.setter
-	def RlvntCmptntAuthrty(self, value):
-		self._RlvntCmptntAuthrty = value if type(value) != auto else self.make_default("RlvntCmptntAuthrty")
-
-	@RlvntCmptntAuthrty.deleter
-	def RlvntCmptntAuthrty(self):
-		del self._RlvntCmptntAuthrty
-		self._RlvntCmptntAuthrty = None
-
-	@property
-	def LastUpd(self):
-		return self._LastUpd
-
-	@LastUpd.setter
-	def LastUpd(self, value):
-		self._LastUpd = value if type(value) != auto else self.make_default("LastUpd")
-
-	@LastUpd.deleter
-	def LastUpd(self):
-		del self._LastUpd
-		self._LastUpd = None
 
 	@property
 	def NvrPblshd(self):
@@ -99,13 +47,65 @@ class RecordTechnicalData4(base_types._BaseFieldType):
 		del self._RlvntTradgVn
 		self._RlvntTradgVn = None
 
+	@property
+	def IncnsstncyInd(self):
+		return self._IncnsstncyInd
+
+	@IncnsstncyInd.setter
+	def IncnsstncyInd(self, value):
+		self._IncnsstncyInd = value if type(value) != auto else self.make_default("IncnsstncyInd")
+
+	@IncnsstncyInd.deleter
+	def IncnsstncyInd(self):
+		del self._IncnsstncyInd
+		self._IncnsstncyInd = None
+
+	@property
+	def LastUpd(self):
+		return self._LastUpd
+
+	@LastUpd.setter
+	def LastUpd(self, value):
+		self._LastUpd = value if type(value) != auto else self.make_default("LastUpd")
+
+	@LastUpd.deleter
+	def LastUpd(self):
+		del self._LastUpd
+		self._LastUpd = None
+
+	@property
+	def PblctnPrd(self):
+		return self._PblctnPrd
+
+	@PblctnPrd.setter
+	def PblctnPrd(self, value):
+		self._PblctnPrd = value if type(value) != auto else self.make_default("PblctnPrd")
+
+	@PblctnPrd.deleter
+	def PblctnPrd(self):
+		del self._PblctnPrd
+		self._PblctnPrd = None
+
+	@property
+	def RlvntCmptntAuthrty(self):
+		return self._RlvntCmptntAuthrty
+
+	@RlvntCmptntAuthrty.setter
+	def RlvntCmptntAuthrty(self, value):
+		self._RlvntCmptntAuthrty = value if type(value) != auto else self.make_default("RlvntCmptntAuthrty")
+
+	@RlvntCmptntAuthrty.deleter
+	def RlvntCmptntAuthrty(self):
+		del self._RlvntCmptntAuthrty
+		self._RlvntCmptntAuthrty = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SubmissnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IncnsstncyInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PblctnPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RlvntCmptntAuthrty', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastUpd', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NvrPblshd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RlvntTradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IncnsstncyInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastUpd', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PblctnPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RlvntCmptntAuthrty', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

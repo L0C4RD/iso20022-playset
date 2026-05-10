@@ -1,23 +1,23 @@
 from . import base_types
-import SNA2008SectorIdentifier
-import LEIIdentifier
-import ISINOct2015Identifier
+from .LEIIdentifier import LEIIdentifier
+from .ISINOct2015Identifier import ISINOct2015Identifier
+from .SNA2008SectorIdentifier import SNA2008SectorIdentifier
 
 class FinancialInstrument59(base_types._BaseFieldType):
 
-	__slots__ = ["_Sctr", "_Id", "_Issr"]
+	__slots__ = ["_Issr", "_Id", "_Sctr"]
 	@property
-	def Sctr(self):
-		return self._Sctr
+	def Issr(self):
+		return self._Issr
 
-	@Sctr.setter
-	def Sctr(self, value):
-		self._Sctr = value if type(value) != auto else self.make_default("Sctr")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@Sctr.deleter
-	def Sctr(self):
-		del self._Sctr
-		self._Sctr = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	@property
 	def Id(self):
@@ -33,21 +33,21 @@ class FinancialInstrument59(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Issr(self):
-		return self._Issr
+	def Sctr(self):
+		return self._Sctr
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@Sctr.setter
+	def Sctr(self, value):
+		self._Sctr = value if type(value) != auto else self.make_default("Sctr")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@Sctr.deleter
+	def Sctr(self):
+		del self._Sctr
+		self._Sctr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sctr', type=SNA2008SectorIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sctr', type=SNA2008SectorIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

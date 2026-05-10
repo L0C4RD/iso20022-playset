@@ -1,25 +1,25 @@
 from . import base_types
-import PhysicalTransferType1Code
-import SecurityIdentification19
-import SupplementaryData1
-import FormOfSecurity1Code
-import FinancialInstrumentAggregateBalance1
+from .SupplementaryData1 import SupplementaryData1
+from .PhysicalTransferType1Code import PhysicalTransferType1Code
+from .FinancialInstrumentAggregateBalance1 import FinancialInstrumentAggregateBalance1
+from .SecurityIdentification19 import SecurityIdentification19
+from .FormOfSecurity1Code import FormOfSecurity1Code
 
 class AggregateHoldingBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_BalForFinInstrm", "_HldgForm", "_SplmtryData", "_FinInstrmId", "_HldgPhysTp"]
+	__slots__ = ["_SplmtryData", "_HldgForm", "_FinInstrmId", "_BalForFinInstrm", "_HldgPhysTp"]
 	@property
-	def BalForFinInstrm(self):
-		return self._BalForFinInstrm
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@BalForFinInstrm.setter
-	def BalForFinInstrm(self, value):
-		self._BalForFinInstrm = value if type(value) != auto else self.make_default("BalForFinInstrm")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@BalForFinInstrm.deleter
-	def BalForFinInstrm(self):
-		del self._BalForFinInstrm
-		self._BalForFinInstrm = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def HldgForm(self):
@@ -35,19 +35,6 @@ class AggregateHoldingBalance1(base_types._BaseFieldType):
 		self._HldgForm = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
 
@@ -59,6 +46,19 @@ class AggregateHoldingBalance1(base_types._BaseFieldType):
 	def FinInstrmId(self):
 		del self._FinInstrmId
 		self._FinInstrmId = None
+
+	@property
+	def BalForFinInstrm(self):
+		return self._BalForFinInstrm
+
+	@BalForFinInstrm.setter
+	def BalForFinInstrm(self, value):
+		self._BalForFinInstrm = value if type(value) != auto else self.make_default("BalForFinInstrm")
+
+	@BalForFinInstrm.deleter
+	def BalForFinInstrm(self):
+		del self._BalForFinInstrm
+		self._BalForFinInstrm = None
 
 	@property
 	def HldgPhysTp(self):
@@ -74,10 +74,10 @@ class AggregateHoldingBalance1(base_types._BaseFieldType):
 		self._HldgPhysTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BalForFinInstrm', type=FinancialInstrumentAggregateBalance1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='HldgForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='HldgForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalForFinInstrm', type=FinancialInstrumentAggregateBalance1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='HldgPhysTp', type=PhysicalTransferType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

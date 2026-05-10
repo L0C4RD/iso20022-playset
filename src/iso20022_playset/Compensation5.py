@@ -1,12 +1,12 @@
 from . import base_types
-import CashAccount40
-import BranchAndFinancialInstitutionIdentification8
-import CompensationReason1Choice
-import ActiveCurrencyAndAmount
+from .CompensationReason1Choice import CompensationReason1Choice
+from .CashAccount40 import CashAccount40
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class Compensation5(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Rsn", "_DbtrAgt", "_DbtrAgtAcct", "_CdtrAgtAcct", "_CdtrAgt"]
+	__slots__ = ["_Amt", "_CdtrAgt", "_DbtrAgt", "_Rsn", "_CdtrAgtAcct", "_DbtrAgtAcct"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -21,17 +21,17 @@ class Compensation5(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def CdtrAgt(self):
+		return self._CdtrAgt
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+	@CdtrAgt.setter
+	def CdtrAgt(self, value):
+		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@CdtrAgt.deleter
+	def CdtrAgt(self):
+		del self._CdtrAgt
+		self._CdtrAgt = None
 
 	@property
 	def DbtrAgt(self):
@@ -47,17 +47,17 @@ class Compensation5(base_types._BaseFieldType):
 		self._DbtrAgt = None
 
 	@property
-	def DbtrAgtAcct(self):
-		return self._DbtrAgtAcct
+	def Rsn(self):
+		return self._Rsn
 
-	@DbtrAgtAcct.setter
-	def DbtrAgtAcct(self, value):
-		self._DbtrAgtAcct = value if type(value) != auto else self.make_default("DbtrAgtAcct")
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
 
-	@DbtrAgtAcct.deleter
-	def DbtrAgtAcct(self):
-		del self._DbtrAgtAcct
-		self._DbtrAgtAcct = None
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
 	def CdtrAgtAcct(self):
@@ -73,24 +73,24 @@ class Compensation5(base_types._BaseFieldType):
 		self._CdtrAgtAcct = None
 
 	@property
-	def CdtrAgt(self):
-		return self._CdtrAgt
+	def DbtrAgtAcct(self):
+		return self._DbtrAgtAcct
 
-	@CdtrAgt.setter
-	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
+	@DbtrAgtAcct.setter
+	def DbtrAgtAcct(self, value):
+		self._DbtrAgtAcct = value if type(value) != auto else self.make_default("DbtrAgtAcct")
 
-	@CdtrAgt.deleter
-	def CdtrAgt(self):
-		del self._CdtrAgt
-		self._CdtrAgt = None
+	@DbtrAgtAcct.deleter
+	def DbtrAgtAcct(self):
+		del self._DbtrAgtAcct
+		self._DbtrAgtAcct = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=CompensationReason1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=CompensationReason1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 	))
 

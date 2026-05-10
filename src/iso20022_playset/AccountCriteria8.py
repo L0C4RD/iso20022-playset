@@ -1,23 +1,23 @@
 from . import base_types
-import CashAccountReturnCriteria5
-import CashAccountSearchCriteria8
-import Max35Text
+from .CashAccountReturnCriteria5 import CashAccountReturnCriteria5
+from .Max35Text import Max35Text
+from .CashAccountSearchCriteria8 import CashAccountSearchCriteria8
 
 class AccountCriteria8(base_types._BaseFieldType):
 
-	__slots__ = ["_NewQryNm", "_RtrCrit", "_SchCrit"]
+	__slots__ = ["_SchCrit", "_RtrCrit", "_NewQryNm"]
 	@property
-	def NewQryNm(self):
-		return self._NewQryNm
+	def SchCrit(self):
+		return self._SchCrit
 
-	@NewQryNm.setter
-	def NewQryNm(self, value):
-		self._NewQryNm = value if type(value) != auto else self.make_default("NewQryNm")
+	@SchCrit.setter
+	def SchCrit(self, value):
+		self._SchCrit = value if type(value) != auto else self.make_default("SchCrit")
 
-	@NewQryNm.deleter
-	def NewQryNm(self):
-		del self._NewQryNm
-		self._NewQryNm = None
+	@SchCrit.deleter
+	def SchCrit(self):
+		del self._SchCrit
+		self._SchCrit = None
 
 	@property
 	def RtrCrit(self):
@@ -33,21 +33,21 @@ class AccountCriteria8(base_types._BaseFieldType):
 		self._RtrCrit = None
 
 	@property
-	def SchCrit(self):
-		return self._SchCrit
+	def NewQryNm(self):
+		return self._NewQryNm
 
-	@SchCrit.setter
-	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != auto else self.make_default("SchCrit")
+	@NewQryNm.setter
+	def NewQryNm(self, value):
+		self._NewQryNm = value if type(value) != auto else self.make_default("NewQryNm")
 
-	@SchCrit.deleter
-	def SchCrit(self):
-		del self._SchCrit
-		self._SchCrit = None
+	@NewQryNm.deleter
+	def NewQryNm(self):
+		del self._NewQryNm
+		self._NewQryNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrCrit', type=CashAccountReturnCriteria5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=CashAccountSearchCriteria8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RtrCrit', type=CashAccountReturnCriteria5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

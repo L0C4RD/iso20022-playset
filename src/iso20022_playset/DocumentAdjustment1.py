@@ -1,12 +1,12 @@
 from . import base_types
-import Max4Text
-import Max140Text
-import CreditDebitCode
-import ActiveOrHistoricCurrencyAndAmount
+from .Max140Text import Max140Text
+from .Max4Text import Max4Text
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .CreditDebitCode import CreditDebitCode
 
 class DocumentAdjustment1(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_Rsn", "_Amt", "_AddtlInf"]
+	__slots__ = ["_CdtDbtInd", "_AddtlInf", "_Amt", "_Rsn"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
@@ -21,17 +21,17 @@ class DocumentAdjustment1(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def Amt(self):
@@ -47,22 +47,22 @@ class DocumentAdjustment1(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def Rsn(self):
+		return self._Rsn
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

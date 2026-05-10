@@ -1,27 +1,14 @@
 from . import base_types
-import TerminalHosting1
-import AutomatedTellerMachine12
-import ATMCustomer7
-import Acquirer7
-import Max35Text
-import PaymentCard37
+from .TerminalHosting1 import TerminalHosting1
+from .Max35Text import Max35Text
+from .ATMCustomer7 import ATMCustomer7
+from .Acquirer7 import Acquirer7
+from .PaymentCard37 import PaymentCard37
+from .AutomatedTellerMachine12 import AutomatedTellerMachine12
 
 class ATMEnvironment20(base_types._BaseFieldType):
 
-	__slots__ = ["_ATM", "_ATMMgrId", "_Acqrr", "_Cstmr", "_HstgNtty", "_Card"]
-	@property
-	def ATM(self):
-		return self._ATM
-
-	@ATM.setter
-	def ATM(self, value):
-		self._ATM = value if type(value) != auto else self.make_default("ATM")
-
-	@ATM.deleter
-	def ATM(self):
-		del self._ATM
-		self._ATM = None
-
+	__slots__ = ["_ATMMgrId", "_HstgNtty", "_Cstmr", "_Card", "_ATM", "_Acqrr"]
 	@property
 	def ATMMgrId(self):
 		return self._ATMMgrId
@@ -34,32 +21,6 @@ class ATMEnvironment20(base_types._BaseFieldType):
 	def ATMMgrId(self):
 		del self._ATMMgrId
 		self._ATMMgrId = None
-
-	@property
-	def Acqrr(self):
-		return self._Acqrr
-
-	@Acqrr.setter
-	def Acqrr(self, value):
-		self._Acqrr = value if type(value) != auto else self.make_default("Acqrr")
-
-	@Acqrr.deleter
-	def Acqrr(self):
-		del self._Acqrr
-		self._Acqrr = None
-
-	@property
-	def Cstmr(self):
-		return self._Cstmr
-
-	@Cstmr.setter
-	def Cstmr(self, value):
-		self._Cstmr = value if type(value) != auto else self.make_default("Cstmr")
-
-	@Cstmr.deleter
-	def Cstmr(self):
-		del self._Cstmr
-		self._Cstmr = None
 
 	@property
 	def HstgNtty(self):
@@ -75,6 +36,19 @@ class ATMEnvironment20(base_types._BaseFieldType):
 		self._HstgNtty = None
 
 	@property
+	def Cstmr(self):
+		return self._Cstmr
+
+	@Cstmr.setter
+	def Cstmr(self, value):
+		self._Cstmr = value if type(value) != auto else self.make_default("Cstmr")
+
+	@Cstmr.deleter
+	def Cstmr(self):
+		del self._Cstmr
+		self._Cstmr = None
+
+	@property
 	def Card(self):
 		return self._Card
 
@@ -87,12 +61,38 @@ class ATMEnvironment20(base_types._BaseFieldType):
 		del self._Card
 		self._Card = None
 
+	@property
+	def ATM(self):
+		return self._ATM
+
+	@ATM.setter
+	def ATM(self, value):
+		self._ATM = value if type(value) != auto else self.make_default("ATM")
+
+	@ATM.deleter
+	def ATM(self):
+		del self._ATM
+		self._ATM = None
+
+	@property
+	def Acqrr(self):
+		return self._Acqrr
+
+	@Acqrr.setter
+	def Acqrr(self, value):
+		self._Acqrr = value if type(value) != auto else self.make_default("Acqrr")
+
+	@Acqrr.deleter
+	def Acqrr(self):
+		del self._Acqrr
+		self._Acqrr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine12, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMMgrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acqrr', type=Acquirer7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cstmr', type=ATMCustomer7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstgNtty', type=TerminalHosting1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cstmr', type=ATMCustomer7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Card', type=PaymentCard37, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine12, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Acqrr', type=Acquirer7, min=0, max=1, mutex_group=None, array=False),
 	))
 

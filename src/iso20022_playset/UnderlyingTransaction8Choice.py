@@ -1,24 +1,11 @@
 from . import base_types
-import UnderlyingStatementEntry3
-import UnderlyingPaymentTransaction8
-import UnderlyingPaymentInstruction9
+from .UnderlyingStatementEntry3 import UnderlyingStatementEntry3
+from .UnderlyingPaymentInstruction9 import UnderlyingPaymentInstruction9
+from .UnderlyingPaymentTransaction8 import UnderlyingPaymentTransaction8
 
 class UnderlyingTransaction8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtNtry", "_IntrBk", "_Initn"]
-	@property
-	def StmtNtry(self):
-		return self._StmtNtry
-
-	@StmtNtry.setter
-	def StmtNtry(self, value):
-		self._StmtNtry = value if type(value) != auto else self.make_default("StmtNtry")
-
-	@StmtNtry.deleter
-	def StmtNtry(self):
-		del self._StmtNtry
-		self._StmtNtry = None
-
+	__slots__ = ["_IntrBk", "_Initn", "_StmtNtry"]
 	@property
 	def IntrBk(self):
 		return self._IntrBk
@@ -45,9 +32,22 @@ class UnderlyingTransaction8Choice(base_types._BaseFieldType):
 		del self._Initn
 		self._Initn = None
 
+	@property
+	def StmtNtry(self):
+		return self._StmtNtry
+
+	@StmtNtry.setter
+	def StmtNtry(self, value):
+		self._StmtNtry = value if type(value) != auto else self.make_default("StmtNtry")
+
+	@StmtNtry.deleter
+	def StmtNtry(self):
+		del self._StmtNtry
+		self._StmtNtry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StmtNtry', type=UnderlyingStatementEntry3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IntrBk', type=UnderlyingPaymentTransaction8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Initn', type=UnderlyingPaymentInstruction9, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='StmtNtry', type=UnderlyingStatementEntry3, min=0, max=1, mutex_group=1, array=False),
 	))
 

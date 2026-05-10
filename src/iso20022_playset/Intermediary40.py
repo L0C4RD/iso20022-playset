@@ -1,25 +1,12 @@
 from . import base_types
-import OrderOriginatorEligibility1Code
-import InvestmentFundRole2Choice
-import PartyIdentification113
-import Account22
+from .PartyIdentification113 import PartyIdentification113
+from .OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
+from .Account22 import Account22
+from .InvestmentFundRole2Choice import InvestmentFundRole2Choice
 
 class Intermediary40(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_Role", "_Id", "_OrdrOrgtrElgblty"]
-	@property
-	def Acct(self):
-		return self._Acct
-
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
-
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
-
+	__slots__ = ["_Role", "_Acct", "_OrdrOrgtrElgblty", "_Id"]
 	@property
 	def Role(self):
 		return self._Role
@@ -34,17 +21,17 @@ class Intermediary40(base_types._BaseFieldType):
 		self._Role = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def Acct(self):
+		return self._Acct
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
 
 	@property
 	def OrdrOrgtrElgblty(self):
@@ -59,10 +46,23 @@ class Intermediary40(base_types._BaseFieldType):
 		del self._OrdrOrgtrElgblty
 		self._OrdrOrgtrElgblty = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Acct', type=Account22, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Role', type=InvestmentFundRole2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification113, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Acct', type=Account22, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrOrgtrElgblty', type=OrderOriginatorEligibility1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification113, min=1, max=1, mutex_group=None, array=False),
 	))
 

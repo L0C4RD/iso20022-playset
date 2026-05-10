@@ -1,14 +1,14 @@
 from . import base_types
-import OriginalGroupInformation29
-import Charges15
-import ActiveOrHistoricCurrencyAndAmount
-import UUIDv4Identifier
-import Max35Text
-import Purpose2Choice
+from .Max35Text import Max35Text
+from .UUIDv4Identifier import UUIDv4Identifier
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .OriginalGroupInformation29 import OriginalGroupInformation29
+from .Purpose2Choice import Purpose2Choice
+from .Charges15 import Charges15
 
 class StatementResolutionEntry5(base_types._BaseFieldType):
 
-	__slots__ = ["_Purp", "_Chrgs", "_CrrctdAmt", "_OrgnlStmtId", "_UETR", "_OrgnlGrpInf", "_AcctSvcrRef"]
+	__slots__ = ["_Purp", "_Chrgs", "_CrrctdAmt", "_OrgnlStmtId", "_OrgnlGrpInf", "_AcctSvcrRef", "_UETR"]
 	@property
 	def Purp(self):
 		return self._Purp
@@ -62,19 +62,6 @@ class StatementResolutionEntry5(base_types._BaseFieldType):
 		self._OrgnlStmtId = None
 
 	@property
-	def UETR(self):
-		return self._UETR
-
-	@UETR.setter
-	def UETR(self, value):
-		self._UETR = value if type(value) != auto else self.make_default("UETR")
-
-	@UETR.deleter
-	def UETR(self):
-		del self._UETR
-		self._UETR = None
-
-	@property
 	def OrgnlGrpInf(self):
 		return self._OrgnlGrpInf
 
@@ -100,13 +87,26 @@ class StatementResolutionEntry5(base_types._BaseFieldType):
 		del self._AcctSvcrRef
 		self._AcctSvcrRef = None
 
+	@property
+	def UETR(self):
+		return self._UETR
+
+	@UETR.setter
+	def UETR(self, value):
+		self._UETR = value if type(value) != auto else self.make_default("UETR")
+
+	@UETR.deleter
+	def UETR(self):
+		del self._UETR
+		self._UETR = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Purp', type=Purpose2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Chrgs', type=Charges15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CrrctdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlStmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupInformation29, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

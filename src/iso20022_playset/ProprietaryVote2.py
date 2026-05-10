@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import FinancialInstrumentQuantity18Choice
+from .FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
+from .GenericIdentification30 import GenericIdentification30
 
 class ProprietaryVote2(base_types._BaseFieldType):
 

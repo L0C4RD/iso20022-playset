@@ -1,27 +1,40 @@
 from . import base_types
-import ContractModification3
-import Max140Text
-import ReconciliationFlag2
-import TransactionLoanData31Choice
-import CounterpartyData88
-import SupplementaryData1
-import TransactionCollateralData18Choice
+from .Max140Text import Max140Text
+from .SupplementaryData1 import SupplementaryData1
+from .ReconciliationFlag2 import ReconciliationFlag2
+from .ContractModification3 import ContractModification3
+from .TransactionLoanData31Choice import TransactionLoanData31Choice
+from .TransactionCollateralData18Choice import TransactionCollateralData18Choice
+from .CounterpartyData88 import CounterpartyData88
 
 class TradeStateReport16(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtySpcfcData", "_CollData", "_TechRcrdId", "_CtrctMod", "_SplmtryData", "_LnData", "_RcncltnFlg"]
+	__slots__ = ["_LnData", "_RcncltnFlg", "_CollData", "_CtrctMod", "_SplmtryData", "_TechRcrdId", "_CtrPtySpcfcData"]
 	@property
-	def CtrPtySpcfcData(self):
-		return self._CtrPtySpcfcData
+	def LnData(self):
+		return self._LnData
 
-	@CtrPtySpcfcData.setter
-	def CtrPtySpcfcData(self, value):
-		self._CtrPtySpcfcData = value if type(value) != auto else self.make_default("CtrPtySpcfcData")
+	@LnData.setter
+	def LnData(self, value):
+		self._LnData = value if type(value) != auto else self.make_default("LnData")
 
-	@CtrPtySpcfcData.deleter
-	def CtrPtySpcfcData(self):
-		del self._CtrPtySpcfcData
-		self._CtrPtySpcfcData = None
+	@LnData.deleter
+	def LnData(self):
+		del self._LnData
+		self._LnData = None
+
+	@property
+	def RcncltnFlg(self):
+		return self._RcncltnFlg
+
+	@RcncltnFlg.setter
+	def RcncltnFlg(self, value):
+		self._RcncltnFlg = value if type(value) != auto else self.make_default("RcncltnFlg")
+
+	@RcncltnFlg.deleter
+	def RcncltnFlg(self):
+		del self._RcncltnFlg
+		self._RcncltnFlg = None
 
 	@property
 	def CollData(self):
@@ -35,19 +48,6 @@ class TradeStateReport16(base_types._BaseFieldType):
 	def CollData(self):
 		del self._CollData
 		self._CollData = None
-
-	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
-
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
-
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
 
 	@property
 	def CtrctMod(self):
@@ -76,38 +76,38 @@ class TradeStateReport16(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def LnData(self):
-		return self._LnData
+	def TechRcrdId(self):
+		return self._TechRcrdId
 
-	@LnData.setter
-	def LnData(self, value):
-		self._LnData = value if type(value) != auto else self.make_default("LnData")
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
 
-	@LnData.deleter
-	def LnData(self):
-		del self._LnData
-		self._LnData = None
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
 
 	@property
-	def RcncltnFlg(self):
-		return self._RcncltnFlg
+	def CtrPtySpcfcData(self):
+		return self._CtrPtySpcfcData
 
-	@RcncltnFlg.setter
-	def RcncltnFlg(self, value):
-		self._RcncltnFlg = value if type(value) != auto else self.make_default("RcncltnFlg")
+	@CtrPtySpcfcData.setter
+	def CtrPtySpcfcData(self, value):
+		self._CtrPtySpcfcData = value if type(value) != auto else self.make_default("CtrPtySpcfcData")
 
-	@RcncltnFlg.deleter
-	def RcncltnFlg(self):
-		del self._RcncltnFlg
-		self._RcncltnFlg = None
+	@CtrPtySpcfcData.deleter
+	def CtrPtySpcfcData(self):
+		del self._CtrPtySpcfcData
+		self._CtrPtySpcfcData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartyData88, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollData', type=TransactionCollateralData18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctMod', type=ContractModification3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LnData', type=TransactionLoanData31Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnFlg', type=ReconciliationFlag2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollData', type=TransactionCollateralData18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctMod', type=ContractModification3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartyData88, min=1, max=1, mutex_group=None, array=False),
 	))
 

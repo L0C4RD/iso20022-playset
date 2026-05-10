@@ -1,28 +1,15 @@
 from . import base_types
-import PartyIdentification272
-import Max15NumericText
-import ISODateTime
-import Max35Text
-import DecimalNumber
-import BranchAndFinancialInstitutionIdentification8
-import Authorisation1Choice
+from .Max35Text import Max35Text
+from .PartyIdentification272 import PartyIdentification272
+from .Max15NumericText import Max15NumericText
+from .Authorisation1Choice import Authorisation1Choice
+from .DecimalNumber import DecimalNumber
+from .ISODateTime import ISODateTime
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class GroupHeader118(base_types._BaseFieldType):
 
-	__slots__ = ["_InitgPty", "_MsgId", "_Authstn", "_NbOfTxs", "_FwdgAgt", "_CtrlSum", "_CreDtTm"]
-	@property
-	def InitgPty(self):
-		return self._InitgPty
-
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
-
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
-
+	__slots__ = ["_MsgId", "_InitgPty", "_NbOfTxs", "_FwdgAgt", "_Authstn", "_CtrlSum", "_CreDtTm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -37,17 +24,17 @@ class GroupHeader118(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def Authstn(self):
-		return self._Authstn
+	def InitgPty(self):
+		return self._InitgPty
 
-	@Authstn.setter
-	def Authstn(self, value):
-		self._Authstn = value if type(value) != auto else self.make_default("Authstn")
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
 
-	@Authstn.deleter
-	def Authstn(self):
-		del self._Authstn
-		self._Authstn = None
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
 
 	@property
 	def NbOfTxs(self):
@@ -76,6 +63,19 @@ class GroupHeader118(base_types._BaseFieldType):
 		self._FwdgAgt = None
 
 	@property
+	def Authstn(self):
+		return self._Authstn
+
+	@Authstn.setter
+	def Authstn(self, value):
+		self._Authstn = value if type(value) != auto else self.make_default("Authstn")
+
+	@Authstn.deleter
+	def Authstn(self):
+		del self._Authstn
+		self._Authstn = None
+
+	@property
 	def CtrlSum(self):
 		return self._CtrlSum
 
@@ -102,11 +102,11 @@ class GroupHeader118(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Authstn', type=Authorisation1Choice, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FwdgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Authstn', type=Authorisation1Choice, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))

@@ -1,5 +1,5 @@
 from . import base_types
-import FinancialInstrumentReportingTradingVolumeCapDataReportV01
+from .FinancialInstrumentReportingTradingVolumeCapDataReportV01 import FinancialInstrumentReportingTradingVolumeCapDataReportV01
 
 class AUTH_035_001_01():
 

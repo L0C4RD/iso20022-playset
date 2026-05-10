@@ -1,25 +1,12 @@
 from . import base_types
-import SafekeepingPlaceTypeAndAnyBICIdentifier1
-import SafekeepingPlaceTypeAndText6
-import CountryCode
-import GenericIdentification78
+from .CountryCode import CountryCode
+from .SafekeepingPlaceTypeAndAnyBICIdentifier1 import SafekeepingPlaceTypeAndAnyBICIdentifier1
+from .GenericIdentification78 import GenericIdentification78
+from .SafekeepingPlaceTypeAndText6 import SafekeepingPlaceTypeAndText6
 
 class SafekeepingPlaceFormat8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Prtry", "_TpAndId", "_Ctry"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Prtry", "_TpAndId", "_Ctry", "_Id"]
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -59,10 +46,23 @@ class SafekeepingPlaceFormat8Choice(base_types._BaseFieldType):
 		del self._Ctry
 		self._Ctry = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=SafekeepingPlaceTypeAndText6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification78, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TpAndId', type=SafekeepingPlaceTypeAndAnyBICIdentifier1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Id', type=SafekeepingPlaceTypeAndText6, min=0, max=1, mutex_group=1, array=False),
 	))
 

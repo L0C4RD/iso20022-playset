@@ -1,48 +1,22 @@
 from . import base_types
-import CurrencyAndAmount
-import LineItemDetails12
+from .CurrencyAndAmount import CurrencyAndAmount
+from .LineItemDetails12 import LineItemDetails12
 
 class LineItem14(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrdLineItmsTtlAmt", "_PdgTtlNetAmt", "_PdgLineItmsTtlAmt", "_OutsdngLineItmsTtlAmt", "_OrdrdTtlNetAmt", "_AccptdTtlNetAmt", "_AccptdLineItmsTtlAmt", "_LineItmDtls", "_OutsdngTtlNetAmt"]
+	__slots__ = ["_LineItmDtls", "_OutsdngLineItmsTtlAmt", "_PdgTtlNetAmt", "_OrdrdTtlNetAmt", "_PdgLineItmsTtlAmt", "_AccptdTtlNetAmt", "_AccptdLineItmsTtlAmt", "_OutsdngTtlNetAmt", "_OrdrdLineItmsTtlAmt"]
 	@property
-	def OrdrdLineItmsTtlAmt(self):
-		return self._OrdrdLineItmsTtlAmt
+	def LineItmDtls(self):
+		return self._LineItmDtls
 
-	@OrdrdLineItmsTtlAmt.setter
-	def OrdrdLineItmsTtlAmt(self, value):
-		self._OrdrdLineItmsTtlAmt = value if type(value) != auto else self.make_default("OrdrdLineItmsTtlAmt")
+	@LineItmDtls.setter
+	def LineItmDtls(self, value):
+		self._LineItmDtls = value if type(value) != auto else self.make_default("LineItmDtls")
 
-	@OrdrdLineItmsTtlAmt.deleter
-	def OrdrdLineItmsTtlAmt(self):
-		del self._OrdrdLineItmsTtlAmt
-		self._OrdrdLineItmsTtlAmt = None
-
-	@property
-	def PdgTtlNetAmt(self):
-		return self._PdgTtlNetAmt
-
-	@PdgTtlNetAmt.setter
-	def PdgTtlNetAmt(self, value):
-		self._PdgTtlNetAmt = value if type(value) != auto else self.make_default("PdgTtlNetAmt")
-
-	@PdgTtlNetAmt.deleter
-	def PdgTtlNetAmt(self):
-		del self._PdgTtlNetAmt
-		self._PdgTtlNetAmt = None
-
-	@property
-	def PdgLineItmsTtlAmt(self):
-		return self._PdgLineItmsTtlAmt
-
-	@PdgLineItmsTtlAmt.setter
-	def PdgLineItmsTtlAmt(self, value):
-		self._PdgLineItmsTtlAmt = value if type(value) != auto else self.make_default("PdgLineItmsTtlAmt")
-
-	@PdgLineItmsTtlAmt.deleter
-	def PdgLineItmsTtlAmt(self):
-		del self._PdgLineItmsTtlAmt
-		self._PdgLineItmsTtlAmt = None
+	@LineItmDtls.deleter
+	def LineItmDtls(self):
+		del self._LineItmDtls
+		self._LineItmDtls = None
 
 	@property
 	def OutsdngLineItmsTtlAmt(self):
@@ -58,6 +32,19 @@ class LineItem14(base_types._BaseFieldType):
 		self._OutsdngLineItmsTtlAmt = None
 
 	@property
+	def PdgTtlNetAmt(self):
+		return self._PdgTtlNetAmt
+
+	@PdgTtlNetAmt.setter
+	def PdgTtlNetAmt(self, value):
+		self._PdgTtlNetAmt = value if type(value) != auto else self.make_default("PdgTtlNetAmt")
+
+	@PdgTtlNetAmt.deleter
+	def PdgTtlNetAmt(self):
+		del self._PdgTtlNetAmt
+		self._PdgTtlNetAmt = None
+
+	@property
 	def OrdrdTtlNetAmt(self):
 		return self._OrdrdTtlNetAmt
 
@@ -69,6 +56,19 @@ class LineItem14(base_types._BaseFieldType):
 	def OrdrdTtlNetAmt(self):
 		del self._OrdrdTtlNetAmt
 		self._OrdrdTtlNetAmt = None
+
+	@property
+	def PdgLineItmsTtlAmt(self):
+		return self._PdgLineItmsTtlAmt
+
+	@PdgLineItmsTtlAmt.setter
+	def PdgLineItmsTtlAmt(self, value):
+		self._PdgLineItmsTtlAmt = value if type(value) != auto else self.make_default("PdgLineItmsTtlAmt")
+
+	@PdgLineItmsTtlAmt.deleter
+	def PdgLineItmsTtlAmt(self):
+		del self._PdgLineItmsTtlAmt
+		self._PdgLineItmsTtlAmt = None
 
 	@property
 	def AccptdTtlNetAmt(self):
@@ -97,19 +97,6 @@ class LineItem14(base_types._BaseFieldType):
 		self._AccptdLineItmsTtlAmt = None
 
 	@property
-	def LineItmDtls(self):
-		return self._LineItmDtls
-
-	@LineItmDtls.setter
-	def LineItmDtls(self, value):
-		self._LineItmDtls = value if type(value) != auto else self.make_default("LineItmDtls")
-
-	@LineItmDtls.deleter
-	def LineItmDtls(self):
-		del self._LineItmDtls
-		self._LineItmDtls = None
-
-	@property
 	def OutsdngTtlNetAmt(self):
 		return self._OutsdngTtlNetAmt
 
@@ -122,15 +109,28 @@ class LineItem14(base_types._BaseFieldType):
 		del self._OutsdngTtlNetAmt
 		self._OutsdngTtlNetAmt = None
 
+	@property
+	def OrdrdLineItmsTtlAmt(self):
+		return self._OrdrdLineItmsTtlAmt
+
+	@OrdrdLineItmsTtlAmt.setter
+	def OrdrdLineItmsTtlAmt(self, value):
+		self._OrdrdLineItmsTtlAmt = value if type(value) != auto else self.make_default("OrdrdLineItmsTtlAmt")
+
+	@OrdrdLineItmsTtlAmt.deleter
+	def OrdrdLineItmsTtlAmt(self):
+		del self._OrdrdLineItmsTtlAmt
+		self._OrdrdLineItmsTtlAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrdrdLineItmsTtlAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdgTtlNetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdgLineItmsTtlAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LineItmDtls', type=LineItemDetails12, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OutsdngLineItmsTtlAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdgTtlNetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrdTtlNetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdgLineItmsTtlAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptdTtlNetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptdLineItmsTtlAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LineItmDtls', type=LineItemDetails12, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OutsdngTtlNetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrdLineItmsTtlAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification13
-import ElectionMovementType1Code
+from .ElectionMovementType1Code import ElectionMovementType1Code
+from .GenericIdentification13 import GenericIdentification13
 
 class ElectionMovementType1FormatChoice(base_types._BaseFieldType):
 

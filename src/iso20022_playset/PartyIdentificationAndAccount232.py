@@ -1,12 +1,25 @@
 from . import base_types
-import RestrictedFINXMax16Text
-import PartyIdentification147Choice
-import CashAccountIdentification12Choice
-import AlternatePartyIdentification9
+from .AlternatePartyIdentification9 import AlternatePartyIdentification9
+from .PartyIdentification147Choice import PartyIdentification147Choice
+from .CashAccountIdentification12Choice import CashAccountIdentification12Choice
+from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class PartyIdentificationAndAccount232(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AltrnId", "_PrcgId", "_CshAcct"]
+	__slots__ = ["_CshAcct", "_Id", "_PrcgId", "_AltrnId"]
+	@property
+	def CshAcct(self):
+		return self._CshAcct
+
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -19,19 +32,6 @@ class PartyIdentificationAndAccount232(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
-
-	@property
-	def AltrnId(self):
-		return self._AltrnId
-
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
-
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
 
 	@property
 	def PrcgId(self):
@@ -47,22 +47,22 @@ class PartyIdentificationAndAccount232(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	@property
-	def CshAcct(self):
-		return self._CshAcct
+	def AltrnId(self):
+		return self._AltrnId
 
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
 
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=PartyIdentification147Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification12Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification147Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,13 +1,13 @@
 from . import base_types
-import SingleQualifiedPartyIdentification1
-import xs:ID
-import Max256Text
-import PartyIdentification2Choice
-import GenericIdentification1
+from .PartyIdentification2Choice import PartyIdentification2Choice
+from .SingleQualifiedPartyIdentification1 import SingleQualifiedPartyIdentification1
+from .GenericIdentification1 import GenericIdentification1
+from .Max256Text import Max256Text
+from .xs:ID import xs:ID
 
 class QualifiedPartyIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_ShrtId", "_RoleDesc", "_Pty", "_Role"]
+	__slots__ = ["_Id", "_Pty", "_ShrtId", "_RoleDesc", "_Role"]
 	@property
 	def Id(self):
 		return self._Id
@@ -20,6 +20,19 @@ class QualifiedPartyIdentification1(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def Pty(self):
+		return self._Pty
+
+	@Pty.setter
+	def Pty(self, value):
+		self._Pty = value if type(value) != auto else self.make_default("Pty")
+
+	@Pty.deleter
+	def Pty(self):
+		del self._Pty
+		self._Pty = None
 
 	@property
 	def ShrtId(self):
@@ -48,19 +61,6 @@ class QualifiedPartyIdentification1(base_types._BaseFieldType):
 		self._RoleDesc = None
 
 	@property
-	def Pty(self):
-		return self._Pty
-
-	@Pty.setter
-	def Pty(self, value):
-		self._Pty = value if type(value) != auto else self.make_default("Pty")
-
-	@Pty.deleter
-	def Pty(self):
-		del self._Pty
-		self._Pty = None
-
-	@property
 	def Role(self):
 		return self._Role
 
@@ -75,9 +75,9 @@ class QualifiedPartyIdentification1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=XS_ID, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pty', type=SingleQualifiedPartyIdentification1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ShrtId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RoleDesc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pty', type=SingleQualifiedPartyIdentification1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Role', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

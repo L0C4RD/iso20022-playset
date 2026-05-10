@@ -1,5 +1,5 @@
 from . import base_types
-import MeetingVoteExecutionConfirmationV11
+from .MeetingVoteExecutionConfirmationV11 import MeetingVoteExecutionConfirmationV11
 
 class SEEV_007_001_11():
 

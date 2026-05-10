@@ -1,5 +1,5 @@
 from . import base_types
-import AcceptorTransactionLogReportRequestV05
+from .AcceptorTransactionLogReportRequestV05 import AcceptorTransactionLogReportRequestV05
 
 class CAAA_024_001_05():
 

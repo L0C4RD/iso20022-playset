@@ -1,11 +1,11 @@
 from . import base_types
-import DecimalNumber
-import BillingServiceIdentification2
-import AmountAndDirection34
+from .AmountAndDirection34 import AmountAndDirection34
+from .DecimalNumber import DecimalNumber
+from .BillingServiceIdentification2 import BillingServiceIdentification2
 
 class BillingServiceParameters2(base_types._BaseFieldType):
 
-	__slots__ = ["_BkSvc", "_Vol", "_UnitPric", "_SvcChrgAmt"]
+	__slots__ = ["_BkSvc", "_Vol", "_SvcChrgAmt", "_UnitPric"]
 	@property
 	def BkSvc(self):
 		return self._BkSvc
@@ -33,19 +33,6 @@ class BillingServiceParameters2(base_types._BaseFieldType):
 		self._Vol = None
 
 	@property
-	def UnitPric(self):
-		return self._UnitPric
-
-	@UnitPric.setter
-	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
-
-	@UnitPric.deleter
-	def UnitPric(self):
-		del self._UnitPric
-		self._UnitPric = None
-
-	@property
 	def SvcChrgAmt(self):
 		return self._SvcChrgAmt
 
@@ -58,10 +45,23 @@ class BillingServiceParameters2(base_types._BaseFieldType):
 		del self._SvcChrgAmt
 		self._SvcChrgAmt = None
 
+	@property
+	def UnitPric(self):
+		return self._UnitPric
+
+	@UnitPric.setter
+	def UnitPric(self, value):
+		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
+
+	@UnitPric.deleter
+	def UnitPric(self):
+		del self._UnitPric
+		self._UnitPric = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BkSvc', type=BillingServiceIdentification2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vol', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitPric', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcChrgAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitPric', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
 	))
 

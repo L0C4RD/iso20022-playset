@@ -1,5 +1,5 @@
 from . import base_types
-import Max500Text
+from .Max500Text import Max500Text
 
 class CriteriaOrder1(base_types._BaseFieldType):
 

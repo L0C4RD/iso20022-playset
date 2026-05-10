@@ -1,12 +1,12 @@
 from . import base_types
-import PartyIdentification236Choice
-import OrganisationIdentification15Choice
-import Max140Text
-import Max52Text
+from .PartyIdentification236Choice import PartyIdentification236Choice
+from .Max140Text import Max140Text
+from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from .Max52Text import Max52Text
 
 class TradeTransactionIdentification16(base_types._BaseFieldType):
 
-	__slots__ = ["_CollPrtflId", "_TechRcrdId", "_NttyRspnsblForRpt", "_RptgCtrPty", "_OthrCtrPty"]
+	__slots__ = ["_CollPrtflId", "_TechRcrdId", "_RptgCtrPty", "_OthrCtrPty", "_NttyRspnsblForRpt"]
 	@property
 	def CollPrtflId(self):
 		return self._CollPrtflId
@@ -34,19 +34,6 @@ class TradeTransactionIdentification16(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	@property
-	def NttyRspnsblForRpt(self):
-		return self._NttyRspnsblForRpt
-
-	@NttyRspnsblForRpt.setter
-	def NttyRspnsblForRpt(self, value):
-		self._NttyRspnsblForRpt = value if type(value) != auto else self.make_default("NttyRspnsblForRpt")
-
-	@NttyRspnsblForRpt.deleter
-	def NttyRspnsblForRpt(self):
-		del self._NttyRspnsblForRpt
-		self._NttyRspnsblForRpt = None
-
-	@property
 	def RptgCtrPty(self):
 		return self._RptgCtrPty
 
@@ -72,11 +59,24 @@ class TradeTransactionIdentification16(base_types._BaseFieldType):
 		del self._OthrCtrPty
 		self._OthrCtrPty = None
 
+	@property
+	def NttyRspnsblForRpt(self):
+		return self._NttyRspnsblForRpt
+
+	@NttyRspnsblForRpt.setter
+	def NttyRspnsblForRpt(self, value):
+		self._NttyRspnsblForRpt = value if type(value) != auto else self.make_default("NttyRspnsblForRpt")
+
+	@NttyRspnsblForRpt.deleter
+	def NttyRspnsblForRpt(self):
+		del self._NttyRspnsblForRpt
+		self._NttyRspnsblForRpt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollPrtflId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification236Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

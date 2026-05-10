@@ -1,38 +1,12 @@
 from . import base_types
-import TerminalManagementAction3Code
-import Max256Text
-import CryptographicKey18
-import Max140Binary
+from .Max140Binary import Max140Binary
+from .TerminalManagementAction3Code import TerminalManagementAction3Code
+from .CryptographicKey18 import CryptographicKey18
+from .Max256Text import Max256Text
 
 class SecurityParameters16(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyElmt", "_ActnTp", "_POIChllng", "_TMChllng", "_Vrsn"]
-	@property
-	def SctyElmt(self):
-		return self._SctyElmt
-
-	@SctyElmt.setter
-	def SctyElmt(self, value):
-		self._SctyElmt = value if type(value) != auto else self.make_default("SctyElmt")
-
-	@SctyElmt.deleter
-	def SctyElmt(self):
-		del self._SctyElmt
-		self._SctyElmt = None
-
-	@property
-	def ActnTp(self):
-		return self._ActnTp
-
-	@ActnTp.setter
-	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != auto else self.make_default("ActnTp")
-
-	@ActnTp.deleter
-	def ActnTp(self):
-		del self._ActnTp
-		self._ActnTp = None
-
+	__slots__ = ["_POIChllng", "_TMChllng", "_ActnTp", "_SctyElmt", "_Vrsn"]
 	@property
 	def POIChllng(self):
 		return self._POIChllng
@@ -60,6 +34,32 @@ class SecurityParameters16(base_types._BaseFieldType):
 		self._TMChllng = None
 
 	@property
+	def ActnTp(self):
+		return self._ActnTp
+
+	@ActnTp.setter
+	def ActnTp(self, value):
+		self._ActnTp = value if type(value) != auto else self.make_default("ActnTp")
+
+	@ActnTp.deleter
+	def ActnTp(self):
+		del self._ActnTp
+		self._ActnTp = None
+
+	@property
+	def SctyElmt(self):
+		return self._SctyElmt
+
+	@SctyElmt.setter
+	def SctyElmt(self, value):
+		self._SctyElmt = value if type(value) != auto else self.make_default("SctyElmt")
+
+	@SctyElmt.deleter
+	def SctyElmt(self):
+		del self._SctyElmt
+		self._SctyElmt = None
+
+	@property
 	def Vrsn(self):
 		return self._Vrsn
 
@@ -73,10 +73,10 @@ class SecurityParameters16(base_types._BaseFieldType):
 		self._Vrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyElmt', type=CryptographicKey18, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyElmt', type=CryptographicKey18, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

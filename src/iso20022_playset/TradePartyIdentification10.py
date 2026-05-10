@@ -1,26 +1,13 @@
 from . import base_types
-import OptionParty3Code
-import FundIdentification6
-import PartyIdentificationAndAccount119
-import OptionParty1Code
-import PartyIdentification265
+from .PartyIdentification265 import PartyIdentification265
+from .PartyIdentificationAndAccount119 import PartyIdentificationAndAccount119
+from .OptionParty1Code import OptionParty1Code
+from .FundIdentification6 import FundIdentification6
+from .OptionParty3Code import OptionParty3Code
 
 class TradePartyIdentification10(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmitgPty", "_BuyrOrSellrInd", "_TradPtyId", "_FndInf", "_InitrInd"]
-	@property
-	def SubmitgPty(self):
-		return self._SubmitgPty
-
-	@SubmitgPty.setter
-	def SubmitgPty(self, value):
-		self._SubmitgPty = value if type(value) != auto else self.make_default("SubmitgPty")
-
-	@SubmitgPty.deleter
-	def SubmitgPty(self):
-		del self._SubmitgPty
-		self._SubmitgPty = None
-
+	__slots__ = ["_BuyrOrSellrInd", "_TradPtyId", "_InitrInd", "_FndInf", "_SubmitgPty"]
 	@property
 	def BuyrOrSellrInd(self):
 		return self._BuyrOrSellrInd
@@ -48,6 +35,19 @@ class TradePartyIdentification10(base_types._BaseFieldType):
 		self._TradPtyId = None
 
 	@property
+	def InitrInd(self):
+		return self._InitrInd
+
+	@InitrInd.setter
+	def InitrInd(self, value):
+		self._InitrInd = value if type(value) != auto else self.make_default("InitrInd")
+
+	@InitrInd.deleter
+	def InitrInd(self):
+		del self._InitrInd
+		self._InitrInd = None
+
+	@property
 	def FndInf(self):
 		return self._FndInf
 
@@ -61,23 +61,23 @@ class TradePartyIdentification10(base_types._BaseFieldType):
 		self._FndInf = None
 
 	@property
-	def InitrInd(self):
-		return self._InitrInd
+	def SubmitgPty(self):
+		return self._SubmitgPty
 
-	@InitrInd.setter
-	def InitrInd(self, value):
-		self._InitrInd = value if type(value) != auto else self.make_default("InitrInd")
+	@SubmitgPty.setter
+	def SubmitgPty(self, value):
+		self._SubmitgPty = value if type(value) != auto else self.make_default("SubmitgPty")
 
-	@InitrInd.deleter
-	def InitrInd(self):
-		del self._InitrInd
-		self._InitrInd = None
+	@SubmitgPty.deleter
+	def SubmitgPty(self):
+		del self._SubmitgPty
+		self._SubmitgPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubmitgPty', type=PartyIdentificationAndAccount119, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyrOrSellrInd', type=OptionParty1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradPtyId', type=PartyIdentification265, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FndInf', type=FundIdentification6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitrInd', type=OptionParty3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FndInf', type=FundIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitgPty', type=PartyIdentificationAndAccount119, min=1, max=1, mutex_group=None, array=False),
 	))
 

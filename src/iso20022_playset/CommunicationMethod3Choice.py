@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import CommunicationMethod1Code
+from .GenericIdentification47 import GenericIdentification47
+from .CommunicationMethod1Code import CommunicationMethod1Code
 
 class CommunicationMethod3Choice(base_types._BaseFieldType):
 

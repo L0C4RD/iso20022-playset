@@ -1,5 +1,5 @@
 from . import base_types
-import GetMemberV04
+from .GetMemberV04 import GetMemberV04
 
 class CAMT_013_001_04():
 

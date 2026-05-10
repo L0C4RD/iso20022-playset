@@ -1,13 +1,13 @@
 from . import base_types
-import StatementType6Choice
-import DateAndPeriod3Choice
-import StatementBasis9Choice
-import UpdateType16Choice
-import Frequency26Choice
+from .StatementType6Choice import StatementType6Choice
+from .StatementBasis9Choice import StatementBasis9Choice
+from .UpdateType16Choice import UpdateType16Choice
+from .Frequency26Choice import Frequency26Choice
+from .DateAndPeriod3Choice import DateAndPeriod3Choice
 
 class Statement84(base_types._BaseFieldType):
 
-	__slots__ = ["_Frqcy", "_StmtBsis", "_StmtTp", "_StmtDtOrPrd", "_UpdTp"]
+	__slots__ = ["_Frqcy", "_UpdTp", "_StmtDtOrPrd", "_StmtBsis", "_StmtTp"]
 	@property
 	def Frqcy(self):
 		return self._Frqcy
@@ -20,6 +20,32 @@ class Statement84(base_types._BaseFieldType):
 	def Frqcy(self):
 		del self._Frqcy
 		self._Frqcy = None
+
+	@property
+	def UpdTp(self):
+		return self._UpdTp
+
+	@UpdTp.setter
+	def UpdTp(self, value):
+		self._UpdTp = value if type(value) != auto else self.make_default("UpdTp")
+
+	@UpdTp.deleter
+	def UpdTp(self):
+		del self._UpdTp
+		self._UpdTp = None
+
+	@property
+	def StmtDtOrPrd(self):
+		return self._StmtDtOrPrd
+
+	@StmtDtOrPrd.setter
+	def StmtDtOrPrd(self, value):
+		self._StmtDtOrPrd = value if type(value) != auto else self.make_default("StmtDtOrPrd")
+
+	@StmtDtOrPrd.deleter
+	def StmtDtOrPrd(self):
+		del self._StmtDtOrPrd
+		self._StmtDtOrPrd = None
 
 	@property
 	def StmtBsis(self):
@@ -47,37 +73,11 @@ class Statement84(base_types._BaseFieldType):
 		del self._StmtTp
 		self._StmtTp = None
 
-	@property
-	def StmtDtOrPrd(self):
-		return self._StmtDtOrPrd
-
-	@StmtDtOrPrd.setter
-	def StmtDtOrPrd(self, value):
-		self._StmtDtOrPrd = value if type(value) != auto else self.make_default("StmtDtOrPrd")
-
-	@StmtDtOrPrd.deleter
-	def StmtDtOrPrd(self):
-		del self._StmtDtOrPrd
-		self._StmtDtOrPrd = None
-
-	@property
-	def UpdTp(self):
-		return self._UpdTp
-
-	@UpdTp.setter
-	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != auto else self.make_default("UpdTp")
-
-	@UpdTp.deleter
-	def UpdTp(self):
-		del self._UpdTp
-		self._UpdTp = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Frqcy', type=Frequency26Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtDtOrPrd', type=DateAndPeriod3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtBsis', type=StatementBasis9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtTp', type=StatementType6Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtDtOrPrd', type=DateAndPeriod3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,24 @@
 from . import base_types
-import ISODate
-import DecimalNumber
-import UKTaxGroupUnit1Code
-import Max35Text
+from .UKTaxGroupUnit1Code import UKTaxGroupUnit1Code
+from .Max35Text import Max35Text
+from .DecimalNumber import DecimalNumber
+from .ISODate import ISODate
 
 class Unit13(base_types._BaseFieldType):
 
-	__slots__ = ["_CertNb", "_Ref", "_OrdrDt", "_AcqstnDt", "_Grp1Or2Units", "_UnitsNb"]
+	__slots__ = ["_AcqstnDt", "_Ref", "_CertNb", "_Grp1Or2Units", "_OrdrDt", "_UnitsNb"]
 	@property
-	def CertNb(self):
-		return self._CertNb
+	def AcqstnDt(self):
+		return self._AcqstnDt
 
-	@CertNb.setter
-	def CertNb(self, value):
-		self._CertNb = value if type(value) != auto else self.make_default("CertNb")
+	@AcqstnDt.setter
+	def AcqstnDt(self, value):
+		self._AcqstnDt = value if type(value) != auto else self.make_default("AcqstnDt")
 
-	@CertNb.deleter
-	def CertNb(self):
-		del self._CertNb
-		self._CertNb = None
+	@AcqstnDt.deleter
+	def AcqstnDt(self):
+		del self._AcqstnDt
+		self._AcqstnDt = None
 
 	@property
 	def Ref(self):
@@ -34,30 +34,17 @@ class Unit13(base_types._BaseFieldType):
 		self._Ref = None
 
 	@property
-	def OrdrDt(self):
-		return self._OrdrDt
+	def CertNb(self):
+		return self._CertNb
 
-	@OrdrDt.setter
-	def OrdrDt(self, value):
-		self._OrdrDt = value if type(value) != auto else self.make_default("OrdrDt")
+	@CertNb.setter
+	def CertNb(self, value):
+		self._CertNb = value if type(value) != auto else self.make_default("CertNb")
 
-	@OrdrDt.deleter
-	def OrdrDt(self):
-		del self._OrdrDt
-		self._OrdrDt = None
-
-	@property
-	def AcqstnDt(self):
-		return self._AcqstnDt
-
-	@AcqstnDt.setter
-	def AcqstnDt(self, value):
-		self._AcqstnDt = value if type(value) != auto else self.make_default("AcqstnDt")
-
-	@AcqstnDt.deleter
-	def AcqstnDt(self):
-		del self._AcqstnDt
-		self._AcqstnDt = None
+	@CertNb.deleter
+	def CertNb(self):
+		del self._CertNb
+		self._CertNb = None
 
 	@property
 	def Grp1Or2Units(self):
@@ -73,6 +60,19 @@ class Unit13(base_types._BaseFieldType):
 		self._Grp1Or2Units = None
 
 	@property
+	def OrdrDt(self):
+		return self._OrdrDt
+
+	@OrdrDt.setter
+	def OrdrDt(self, value):
+		self._OrdrDt = value if type(value) != auto else self.make_default("OrdrDt")
+
+	@OrdrDt.deleter
+	def OrdrDt(self):
+		del self._OrdrDt
+		self._OrdrDt = None
+
+	@property
 	def UnitsNb(self):
 		return self._UnitsNb
 
@@ -86,11 +86,11 @@ class Unit13(base_types._BaseFieldType):
 		self._UnitsNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CertNb', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcqstnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertNb', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Grp1Or2Units', type=UKTaxGroupUnit1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitsNb', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 	))
 

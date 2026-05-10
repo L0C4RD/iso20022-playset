@@ -1,7 +1,7 @@
 from . import base_types
-import SupplementaryData1
-import InvestigationResponse9
-import InvestigationRequest3
+from .SupplementaryData1 import SupplementaryData1
+from .InvestigationResponse9 import InvestigationResponse9
+from .InvestigationRequest3 import InvestigationRequest3
 
 class InvestigationResponseV02(base_types._BaseFieldType):
 

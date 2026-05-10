@@ -1,43 +1,30 @@
 from . import base_types
-import Max40Text
-import TrueFalseIndicator
-import Max6NumericText
-import ISODateTime
-import Max35Text
-import ShippingPackage3
-import Tax41
-import ImpliedCurrencyAndAmount
-import AdditionalData1
-import Max70Text
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .Max35Text import Max35Text
+from .ISODateTime import ISODateTime
+from .ShippingPackage3 import ShippingPackage3
+from .Tax41 import Tax41
+from .Max40Text import Max40Text
+from .Max70Text import Max70Text
+from .AdditionalData1 import AdditionalData1
+from .TrueFalseIndicator import TrueFalseIndicator
+from .Max6NumericText import Max6NumericText
 
 class ShippingData3(base_types._BaseFieldType):
 
-	__slots__ = ["_InvcNb", "_InvcCreDtTm", "_Tax", "_SvcDscrptrCd", "_SummryCmmdtyId", "_Insrnc", "_NetAmt", "_Packg", "_MiscExpnss", "_AddtlData", "_InsrncAmt", "_IncntivAmt", "_NbOfPackgs"]
+	__slots__ = ["_MiscExpnss", "_Tax", "_NetAmt", "_Packg", "_InsrncAmt", "_SummryCmmdtyId", "_InvcNb", "_NbOfPackgs", "_SvcDscrptrCd", "_Insrnc", "_AddtlData", "_IncntivAmt", "_InvcCreDtTm"]
 	@property
-	def InvcNb(self):
-		return self._InvcNb
+	def MiscExpnss(self):
+		return self._MiscExpnss
 
-	@InvcNb.setter
-	def InvcNb(self, value):
-		self._InvcNb = value if type(value) != auto else self.make_default("InvcNb")
+	@MiscExpnss.setter
+	def MiscExpnss(self, value):
+		self._MiscExpnss = value if type(value) != auto else self.make_default("MiscExpnss")
 
-	@InvcNb.deleter
-	def InvcNb(self):
-		del self._InvcNb
-		self._InvcNb = None
-
-	@property
-	def InvcCreDtTm(self):
-		return self._InvcCreDtTm
-
-	@InvcCreDtTm.setter
-	def InvcCreDtTm(self, value):
-		self._InvcCreDtTm = value if type(value) != auto else self.make_default("InvcCreDtTm")
-
-	@InvcCreDtTm.deleter
-	def InvcCreDtTm(self):
-		del self._InvcCreDtTm
-		self._InvcCreDtTm = None
+	@MiscExpnss.deleter
+	def MiscExpnss(self):
+		del self._MiscExpnss
+		self._MiscExpnss = None
 
 	@property
 	def Tax(self):
@@ -51,45 +38,6 @@ class ShippingData3(base_types._BaseFieldType):
 	def Tax(self):
 		del self._Tax
 		self._Tax = None
-
-	@property
-	def SvcDscrptrCd(self):
-		return self._SvcDscrptrCd
-
-	@SvcDscrptrCd.setter
-	def SvcDscrptrCd(self, value):
-		self._SvcDscrptrCd = value if type(value) != auto else self.make_default("SvcDscrptrCd")
-
-	@SvcDscrptrCd.deleter
-	def SvcDscrptrCd(self):
-		del self._SvcDscrptrCd
-		self._SvcDscrptrCd = None
-
-	@property
-	def SummryCmmdtyId(self):
-		return self._SummryCmmdtyId
-
-	@SummryCmmdtyId.setter
-	def SummryCmmdtyId(self, value):
-		self._SummryCmmdtyId = value if type(value) != auto else self.make_default("SummryCmmdtyId")
-
-	@SummryCmmdtyId.deleter
-	def SummryCmmdtyId(self):
-		del self._SummryCmmdtyId
-		self._SummryCmmdtyId = None
-
-	@property
-	def Insrnc(self):
-		return self._Insrnc
-
-	@Insrnc.setter
-	def Insrnc(self, value):
-		self._Insrnc = value if type(value) != auto else self.make_default("Insrnc")
-
-	@Insrnc.deleter
-	def Insrnc(self):
-		del self._Insrnc
-		self._Insrnc = None
 
 	@property
 	def NetAmt(self):
@@ -118,17 +66,82 @@ class ShippingData3(base_types._BaseFieldType):
 		self._Packg = None
 
 	@property
-	def MiscExpnss(self):
-		return self._MiscExpnss
+	def InsrncAmt(self):
+		return self._InsrncAmt
 
-	@MiscExpnss.setter
-	def MiscExpnss(self, value):
-		self._MiscExpnss = value if type(value) != auto else self.make_default("MiscExpnss")
+	@InsrncAmt.setter
+	def InsrncAmt(self, value):
+		self._InsrncAmt = value if type(value) != auto else self.make_default("InsrncAmt")
 
-	@MiscExpnss.deleter
-	def MiscExpnss(self):
-		del self._MiscExpnss
-		self._MiscExpnss = None
+	@InsrncAmt.deleter
+	def InsrncAmt(self):
+		del self._InsrncAmt
+		self._InsrncAmt = None
+
+	@property
+	def SummryCmmdtyId(self):
+		return self._SummryCmmdtyId
+
+	@SummryCmmdtyId.setter
+	def SummryCmmdtyId(self, value):
+		self._SummryCmmdtyId = value if type(value) != auto else self.make_default("SummryCmmdtyId")
+
+	@SummryCmmdtyId.deleter
+	def SummryCmmdtyId(self):
+		del self._SummryCmmdtyId
+		self._SummryCmmdtyId = None
+
+	@property
+	def InvcNb(self):
+		return self._InvcNb
+
+	@InvcNb.setter
+	def InvcNb(self, value):
+		self._InvcNb = value if type(value) != auto else self.make_default("InvcNb")
+
+	@InvcNb.deleter
+	def InvcNb(self):
+		del self._InvcNb
+		self._InvcNb = None
+
+	@property
+	def NbOfPackgs(self):
+		return self._NbOfPackgs
+
+	@NbOfPackgs.setter
+	def NbOfPackgs(self, value):
+		self._NbOfPackgs = value if type(value) != auto else self.make_default("NbOfPackgs")
+
+	@NbOfPackgs.deleter
+	def NbOfPackgs(self):
+		del self._NbOfPackgs
+		self._NbOfPackgs = None
+
+	@property
+	def SvcDscrptrCd(self):
+		return self._SvcDscrptrCd
+
+	@SvcDscrptrCd.setter
+	def SvcDscrptrCd(self, value):
+		self._SvcDscrptrCd = value if type(value) != auto else self.make_default("SvcDscrptrCd")
+
+	@SvcDscrptrCd.deleter
+	def SvcDscrptrCd(self):
+		del self._SvcDscrptrCd
+		self._SvcDscrptrCd = None
+
+	@property
+	def Insrnc(self):
+		return self._Insrnc
+
+	@Insrnc.setter
+	def Insrnc(self, value):
+		self._Insrnc = value if type(value) != auto else self.make_default("Insrnc")
+
+	@Insrnc.deleter
+	def Insrnc(self):
+		del self._Insrnc
+		self._Insrnc = None
 
 	@property
 	def AddtlData(self):
@@ -144,19 +157,6 @@ class ShippingData3(base_types._BaseFieldType):
 		self._AddtlData = None
 
 	@property
-	def InsrncAmt(self):
-		return self._InsrncAmt
-
-	@InsrncAmt.setter
-	def InsrncAmt(self, value):
-		self._InsrncAmt = value if type(value) != auto else self.make_default("InsrncAmt")
-
-	@InsrncAmt.deleter
-	def InsrncAmt(self):
-		del self._InsrncAmt
-		self._InsrncAmt = None
-
-	@property
 	def IncntivAmt(self):
 		return self._IncntivAmt
 
@@ -170,31 +170,31 @@ class ShippingData3(base_types._BaseFieldType):
 		self._IncntivAmt = None
 
 	@property
-	def NbOfPackgs(self):
-		return self._NbOfPackgs
+	def InvcCreDtTm(self):
+		return self._InvcCreDtTm
 
-	@NbOfPackgs.setter
-	def NbOfPackgs(self, value):
-		self._NbOfPackgs = value if type(value) != auto else self.make_default("NbOfPackgs")
+	@InvcCreDtTm.setter
+	def InvcCreDtTm(self, value):
+		self._InvcCreDtTm = value if type(value) != auto else self.make_default("InvcCreDtTm")
 
-	@NbOfPackgs.deleter
-	def NbOfPackgs(self):
-		del self._NbOfPackgs
-		self._NbOfPackgs = None
+	@InvcCreDtTm.deleter
+	def InvcCreDtTm(self):
+		del self._InvcCreDtTm
+		self._InvcCreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InvcNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvcCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MiscExpnss', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SvcDscrptrCd', type=Max40Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SummryCmmdtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Packg', type=ShippingPackage3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MiscExpnss', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InsrncAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IncntivAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SummryCmmdtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvcNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfPackgs', type=Max6NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcDscrptrCd', type=Max40Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IncntivAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvcCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

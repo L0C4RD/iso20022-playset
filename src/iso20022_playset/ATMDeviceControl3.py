@@ -1,6 +1,6 @@
 from . import base_types
-import ATMEnvironment7
-import ATMCommand14
+from .ATMCommand14 import ATMCommand14
+from .ATMEnvironment7 import ATMEnvironment7
 
 class ATMDeviceControl3(base_types._BaseFieldType):
 

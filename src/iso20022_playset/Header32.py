@@ -1,27 +1,27 @@
 from . import base_types
-import ATMMessageFunction2
-import Number
-import Max6Text
-import Traceability4
-import Max3NumericText
-import ISODateTime
-import Max35Text
+from .Max35Text import Max35Text
+from .Traceability4 import Traceability4
+from .ATMMessageFunction2 import ATMMessageFunction2
+from .Number import Number
+from .Max6Text import Max6Text
+from .ISODateTime import ISODateTime
+from .Max3NumericText import Max3NumericText
 
 class Header32(base_types._BaseFieldType):
 
-	__slots__ = ["_Tracblt", "_MsgFctn", "_RcptPty", "_InitgPty", "_PrtcolVrsn", "_PrcStat", "_ReTrnsmssnCntr", "_XchgId", "_CreDtTm"]
+	__slots__ = ["_XchgId", "_MsgFctn", "_ReTrnsmssnCntr", "_Tracblt", "_RcptPty", "_PrcStat", "_InitgPty", "_PrtcolVrsn", "_CreDtTm"]
 	@property
-	def Tracblt(self):
-		return self._Tracblt
+	def XchgId(self):
+		return self._XchgId
 
-	@Tracblt.setter
-	def Tracblt(self, value):
-		self._Tracblt = value if type(value) != auto else self.make_default("Tracblt")
+	@XchgId.setter
+	def XchgId(self, value):
+		self._XchgId = value if type(value) != auto else self.make_default("XchgId")
 
-	@Tracblt.deleter
-	def Tracblt(self):
-		del self._Tracblt
-		self._Tracblt = None
+	@XchgId.deleter
+	def XchgId(self):
+		del self._XchgId
+		self._XchgId = None
 
 	@property
 	def MsgFctn(self):
@@ -37,6 +37,32 @@ class Header32(base_types._BaseFieldType):
 		self._MsgFctn = None
 
 	@property
+	def ReTrnsmssnCntr(self):
+		return self._ReTrnsmssnCntr
+
+	@ReTrnsmssnCntr.setter
+	def ReTrnsmssnCntr(self, value):
+		self._ReTrnsmssnCntr = value if type(value) != auto else self.make_default("ReTrnsmssnCntr")
+
+	@ReTrnsmssnCntr.deleter
+	def ReTrnsmssnCntr(self):
+		del self._ReTrnsmssnCntr
+		self._ReTrnsmssnCntr = None
+
+	@property
+	def Tracblt(self):
+		return self._Tracblt
+
+	@Tracblt.setter
+	def Tracblt(self, value):
+		self._Tracblt = value if type(value) != auto else self.make_default("Tracblt")
+
+	@Tracblt.deleter
+	def Tracblt(self):
+		del self._Tracblt
+		self._Tracblt = None
+
+	@property
 	def RcptPty(self):
 		return self._RcptPty
 
@@ -48,6 +74,19 @@ class Header32(base_types._BaseFieldType):
 	def RcptPty(self):
 		del self._RcptPty
 		self._RcptPty = None
+
+	@property
+	def PrcStat(self):
+		return self._PrcStat
+
+	@PrcStat.setter
+	def PrcStat(self, value):
+		self._PrcStat = value if type(value) != auto else self.make_default("PrcStat")
+
+	@PrcStat.deleter
+	def PrcStat(self):
+		del self._PrcStat
+		self._PrcStat = None
 
 	@property
 	def InitgPty(self):
@@ -76,45 +115,6 @@ class Header32(base_types._BaseFieldType):
 		self._PrtcolVrsn = None
 
 	@property
-	def PrcStat(self):
-		return self._PrcStat
-
-	@PrcStat.setter
-	def PrcStat(self, value):
-		self._PrcStat = value if type(value) != auto else self.make_default("PrcStat")
-
-	@PrcStat.deleter
-	def PrcStat(self):
-		del self._PrcStat
-		self._PrcStat = None
-
-	@property
-	def ReTrnsmssnCntr(self):
-		return self._ReTrnsmssnCntr
-
-	@ReTrnsmssnCntr.setter
-	def ReTrnsmssnCntr(self, value):
-		self._ReTrnsmssnCntr = value if type(value) != auto else self.make_default("ReTrnsmssnCntr")
-
-	@ReTrnsmssnCntr.deleter
-	def ReTrnsmssnCntr(self):
-		del self._ReTrnsmssnCntr
-		self._ReTrnsmssnCntr = None
-
-	@property
-	def XchgId(self):
-		return self._XchgId
-
-	@XchgId.setter
-	def XchgId(self, value):
-		self._XchgId = value if type(value) != auto else self.make_default("XchgId")
-
-	@XchgId.deleter
-	def XchgId(self):
-		del self._XchgId
-		self._XchgId = None
-
-	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -128,14 +128,14 @@ class Header32(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tracblt', type=Traceability4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='XchgId', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgFctn', type=ATMMessageFunction2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReTrnsmssnCntr', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tracblt', type=Traceability4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RcptPty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcStat', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitgPty', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtcolVrsn', type=Max6Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcStat', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReTrnsmssnCntr', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgId', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

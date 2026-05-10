@@ -1,6 +1,6 @@
 from . import base_types
-import BusinessDayReportOrError10Choice
-import SystemIdentification2Choice
+from .BusinessDayReportOrError10Choice import BusinessDayReportOrError10Choice
+from .SystemIdentification2Choice import SystemIdentification2Choice
 
 class BusinessDay8(base_types._BaseFieldType):
 

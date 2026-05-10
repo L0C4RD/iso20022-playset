@@ -1,11 +1,11 @@
 from . import base_types
-import AcceptorDiagnosticRequest13
-import ContentInformationType37
-import Header70
+from .AcceptorDiagnosticRequest13 import AcceptorDiagnosticRequest13
+from .Header70 import Header70
+from .ContentInformationType37 import ContentInformationType37
 
 class AcceptorDiagnosticRequestV13(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_DgnstcReq", "_Hdr"]
+	__slots__ = ["_SctyTrlr", "_Hdr", "_DgnstcReq"]
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
@@ -20,19 +20,6 @@ class AcceptorDiagnosticRequestV13(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def DgnstcReq(self):
-		return self._DgnstcReq
-
-	@DgnstcReq.setter
-	def DgnstcReq(self, value):
-		self._DgnstcReq = value if type(value) != auto else self.make_default("DgnstcReq")
-
-	@DgnstcReq.deleter
-	def DgnstcReq(self):
-		del self._DgnstcReq
-		self._DgnstcReq = None
-
-	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -45,9 +32,22 @@ class AcceptorDiagnosticRequestV13(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def DgnstcReq(self):
+		return self._DgnstcReq
+
+	@DgnstcReq.setter
+	def DgnstcReq(self, value):
+		self._DgnstcReq = value if type(value) != auto else self.make_default("DgnstcReq")
+
+	@DgnstcReq.deleter
+	def DgnstcReq(self):
+		del self._DgnstcReq
+		self._DgnstcReq = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgnstcReq', type=AcceptorDiagnosticRequest13, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgnstcReq', type=AcceptorDiagnosticRequest13, min=1, max=1, mutex_group=None, array=False),
 	))
 

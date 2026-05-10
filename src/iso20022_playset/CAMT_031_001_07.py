@@ -1,5 +1,5 @@
 from . import base_types
-import RejectInvestigationV07
+from .RejectInvestigationV07 import RejectInvestigationV07
 
 class CAMT_031_001_07():
 

@@ -1,6 +1,6 @@
 from . import base_types
-import ActiveOrHistoricCurrencyAndAmount
-import DigitalTokenAmount3
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .DigitalTokenAmount3 import DigitalTokenAmount3
 
 class CurrencyOrDigitalTokenAmount2Choice(base_types._BaseFieldType):
 

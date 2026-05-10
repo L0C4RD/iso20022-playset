@@ -1,6 +1,6 @@
 from . import base_types
-import ErrorHandling3Choice
-import Max140Text
+from .Max140Text import Max140Text
+from .ErrorHandling3Choice import ErrorHandling3Choice
 
 class ErrorHandling5(base_types._BaseFieldType):
 

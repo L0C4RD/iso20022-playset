@@ -1,14 +1,40 @@
 from . import base_types
-import Max350Text
-import ISODate
-import Max256Text
-import YesNoIndicator
-import ISODateTime
-import Max35Text
+from .Max35Text import Max35Text
+from .YesNoIndicator import YesNoIndicator
+from .Max256Text import Max256Text
+from .ISODate import ISODate
+from .Max350Text import Max350Text
+from .ISODateTime import ISODateTime
 
 class TransferInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry", "_Desc", "_TrfInd", "_StartDtTm", "_StartDt"]
+	__slots__ = ["_TrfInd", "_StartDt", "_Cd", "_Prtry", "_StartDtTm", "_Desc"]
+	@property
+	def TrfInd(self):
+		return self._TrfInd
+
+	@TrfInd.setter
+	def TrfInd(self, value):
+		self._TrfInd = value if type(value) != auto else self.make_default("TrfInd")
+
+	@TrfInd.deleter
+	def TrfInd(self):
+		del self._TrfInd
+		self._TrfInd = None
+
+	@property
+	def StartDt(self):
+		return self._StartDt
+
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
+
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
+
 	@property
 	def Cd(self):
 		return self._Cd
@@ -36,32 +62,6 @@ class TransferInstruction1(base_types._BaseFieldType):
 		self._Prtry = None
 
 	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
-	@property
-	def TrfInd(self):
-		return self._TrfInd
-
-	@TrfInd.setter
-	def TrfInd(self, value):
-		self._TrfInd = value if type(value) != auto else self.make_default("TrfInd")
-
-	@TrfInd.deleter
-	def TrfInd(self):
-		del self._TrfInd
-		self._TrfInd = None
-
-	@property
 	def StartDtTm(self):
 		return self._StartDtTm
 
@@ -75,24 +75,24 @@ class TransferInstruction1(base_types._BaseFieldType):
 		self._StartDtTm = None
 
 	@property
-	def StartDt(self):
-		return self._StartDt
+	def Desc(self):
+		return self._Desc
 
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
 
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TrfInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cd', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prtry', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

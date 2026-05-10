@@ -1,6 +1,6 @@
 from . import base_types
-import VoteInstructionType1Choice
-import Vote16Choice
+from .VoteInstructionType1Choice import VoteInstructionType1Choice
+from .Vote16Choice import Vote16Choice
 
 class Vote15Choice(base_types._BaseFieldType):
 

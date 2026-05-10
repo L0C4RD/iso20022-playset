@@ -1,7 +1,7 @@
 from . import base_types
-import MessageStatusResponse9
-import ContentInformationType38
-import Header41
+from .ContentInformationType38 import ContentInformationType38
+from .Header41 import Header41
+from .MessageStatusResponse9 import MessageStatusResponse9
 
 class SaleToPOIMessageStatusResponseV07(base_types._BaseFieldType):
 

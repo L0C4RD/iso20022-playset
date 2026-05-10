@@ -1,24 +1,24 @@
 from . import base_types
-import Document9
-import Max2000Text
-import YesNoIndicator
-import Max20000Text
+from .Document9 import Document9
+from .Max20000Text import Max20000Text
+from .YesNoIndicator import YesNoIndicator
+from .Max2000Text import Max2000Text
 
 class DemandDocumentation1(base_types._BaseFieldType):
 
-	__slots__ = ["_DmndNrrtv", "_NclsdFile", "_CmpltnInf", "_CmpltInd"]
+	__slots__ = ["_CmpltInd", "_NclsdFile", "_CmpltnInf", "_DmndNrrtv"]
 	@property
-	def DmndNrrtv(self):
-		return self._DmndNrrtv
+	def CmpltInd(self):
+		return self._CmpltInd
 
-	@DmndNrrtv.setter
-	def DmndNrrtv(self, value):
-		self._DmndNrrtv = value if type(value) != auto else self.make_default("DmndNrrtv")
+	@CmpltInd.setter
+	def CmpltInd(self, value):
+		self._CmpltInd = value if type(value) != auto else self.make_default("CmpltInd")
 
-	@DmndNrrtv.deleter
-	def DmndNrrtv(self):
-		del self._DmndNrrtv
-		self._DmndNrrtv = None
+	@CmpltInd.deleter
+	def CmpltInd(self):
+		del self._CmpltInd
+		self._CmpltInd = None
 
 	@property
 	def NclsdFile(self):
@@ -47,22 +47,22 @@ class DemandDocumentation1(base_types._BaseFieldType):
 		self._CmpltnInf = None
 
 	@property
-	def CmpltInd(self):
-		return self._CmpltInd
+	def DmndNrrtv(self):
+		return self._DmndNrrtv
 
-	@CmpltInd.setter
-	def CmpltInd(self, value):
-		self._CmpltInd = value if type(value) != auto else self.make_default("CmpltInd")
+	@DmndNrrtv.setter
+	def DmndNrrtv(self, value):
+		self._DmndNrrtv = value if type(value) != auto else self.make_default("DmndNrrtv")
 
-	@CmpltInd.deleter
-	def CmpltInd(self):
-		del self._CmpltInd
-		self._CmpltInd = None
+	@DmndNrrtv.deleter
+	def DmndNrrtv(self):
+		del self._DmndNrrtv
+		self._DmndNrrtv = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DmndNrrtv', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmpltInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NclsdFile', type=Document9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CmpltnInf', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmpltInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DmndNrrtv', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

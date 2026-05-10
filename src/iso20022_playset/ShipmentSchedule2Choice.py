@@ -1,6 +1,6 @@
 from . import base_types
-import ShipmentDateRange1
-import ShipmentDateRange2
+from .ShipmentDateRange1 import ShipmentDateRange1
+from .ShipmentDateRange2 import ShipmentDateRange2
 
 class ShipmentSchedule2Choice(base_types._BaseFieldType):
 

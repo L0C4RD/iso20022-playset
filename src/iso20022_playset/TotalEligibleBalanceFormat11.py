@@ -1,6 +1,6 @@
 from . import base_types
-import SignedQuantityFormat13
-import Quantity80Choice
+from .Quantity80Choice import Quantity80Choice
+from .SignedQuantityFormat13 import SignedQuantityFormat13
 
 class TotalEligibleBalanceFormat11(base_types._BaseFieldType):
 

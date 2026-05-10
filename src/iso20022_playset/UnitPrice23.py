@@ -1,15 +1,41 @@
 from . import base_types
-import ActiveCurrencyAnd13DecimalAmount
-import Number
-import TypeOfPrice46Choice
-import PriceMethod1Code
-import PriceValue1
-import TaxableIncomePerShareCalculated2Choice
-import ActiveOrHistoricCurrencyAndAmount
+from .TaxableIncomePerShareCalculated2Choice import TaxableIncomePerShareCalculated2Choice
+from .PriceMethod1Code import PriceMethod1Code
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .Number import Number
+from .TypeOfPrice46Choice import TypeOfPrice46Choice
+from .PriceValue1 import PriceValue1
+from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class UnitPrice23(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxblIncmPerShr", "_NbOfDaysAcrd", "_Tp", "_PricMtd", "_TaxblIncmPerShrClctd", "_Val", "_AcrdIntrstNAV"]
+	__slots__ = ["_NbOfDaysAcrd", "_Val", "_TaxblIncmPerShr", "_AcrdIntrstNAV", "_TaxblIncmPerShrClctd", "_Tp", "_PricMtd"]
+	@property
+	def NbOfDaysAcrd(self):
+		return self._NbOfDaysAcrd
+
+	@NbOfDaysAcrd.setter
+	def NbOfDaysAcrd(self, value):
+		self._NbOfDaysAcrd = value if type(value) != auto else self.make_default("NbOfDaysAcrd")
+
+	@NbOfDaysAcrd.deleter
+	def NbOfDaysAcrd(self):
+		del self._NbOfDaysAcrd
+		self._NbOfDaysAcrd = None
+
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
+
 	@property
 	def TaxblIncmPerShr(self):
 		return self._TaxblIncmPerShr
@@ -24,17 +50,30 @@ class UnitPrice23(base_types._BaseFieldType):
 		self._TaxblIncmPerShr = None
 
 	@property
-	def NbOfDaysAcrd(self):
-		return self._NbOfDaysAcrd
+	def AcrdIntrstNAV(self):
+		return self._AcrdIntrstNAV
 
-	@NbOfDaysAcrd.setter
-	def NbOfDaysAcrd(self, value):
-		self._NbOfDaysAcrd = value if type(value) != auto else self.make_default("NbOfDaysAcrd")
+	@AcrdIntrstNAV.setter
+	def AcrdIntrstNAV(self, value):
+		self._AcrdIntrstNAV = value if type(value) != auto else self.make_default("AcrdIntrstNAV")
 
-	@NbOfDaysAcrd.deleter
-	def NbOfDaysAcrd(self):
-		del self._NbOfDaysAcrd
-		self._NbOfDaysAcrd = None
+	@AcrdIntrstNAV.deleter
+	def AcrdIntrstNAV(self):
+		del self._AcrdIntrstNAV
+		self._AcrdIntrstNAV = None
+
+	@property
+	def TaxblIncmPerShrClctd(self):
+		return self._TaxblIncmPerShrClctd
+
+	@TaxblIncmPerShrClctd.setter
+	def TaxblIncmPerShrClctd(self, value):
+		self._TaxblIncmPerShrClctd = value if type(value) != auto else self.make_default("TaxblIncmPerShrClctd")
+
+	@TaxblIncmPerShrClctd.deleter
+	def TaxblIncmPerShrClctd(self):
+		del self._TaxblIncmPerShrClctd
+		self._TaxblIncmPerShrClctd = None
 
 	@property
 	def Tp(self):
@@ -62,52 +101,13 @@ class UnitPrice23(base_types._BaseFieldType):
 		del self._PricMtd
 		self._PricMtd = None
 
-	@property
-	def TaxblIncmPerShrClctd(self):
-		return self._TaxblIncmPerShrClctd
-
-	@TaxblIncmPerShrClctd.setter
-	def TaxblIncmPerShrClctd(self, value):
-		self._TaxblIncmPerShrClctd = value if type(value) != auto else self.make_default("TaxblIncmPerShrClctd")
-
-	@TaxblIncmPerShrClctd.deleter
-	def TaxblIncmPerShrClctd(self):
-		del self._TaxblIncmPerShrClctd
-		self._TaxblIncmPerShrClctd = None
-
-	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
-
-	@property
-	def AcrdIntrstNAV(self):
-		return self._AcrdIntrstNAV
-
-	@AcrdIntrstNAV.setter
-	def AcrdIntrstNAV(self, value):
-		self._AcrdIntrstNAV = value if type(value) != auto else self.make_default("AcrdIntrstNAV")
-
-	@AcrdIntrstNAV.deleter
-	def AcrdIntrstNAV(self):
-		del self._AcrdIntrstNAV
-		self._AcrdIntrstNAV = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxblIncmPerShr', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfDaysAcrd', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=PriceValue1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxblIncmPerShr', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcrdIntrstNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxblIncmPerShrClctd', type=TaxableIncomePerShareCalculated2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=TypeOfPrice46Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricMtd', type=PriceMethod1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxblIncmPerShrClctd', type=TaxableIncomePerShareCalculated2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Val', type=PriceValue1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcrdIntrstNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

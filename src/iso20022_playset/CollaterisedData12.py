@@ -1,37 +1,24 @@
 from . import base_types
-import ISODate
-import TrueFalseIndicator
-import SecurityIdentification26Choice
-import CollateralType21
+from .CollateralType21 import CollateralType21
+from .TrueFalseIndicator import TrueFalseIndicator
+from .SecurityIdentification26Choice import SecurityIdentification26Choice
+from .ISODate import ISODate
 
 class CollaterisedData12(base_types._BaseFieldType):
 
-	__slots__ = ["_BsktIdr", "_CollValDt", "_AsstTp", "_NetXpsrCollstnInd"]
+	__slots__ = ["_NetXpsrCollstnInd", "_AsstTp", "_CollValDt", "_BsktIdr"]
 	@property
-	def BsktIdr(self):
-		return self._BsktIdr
+	def NetXpsrCollstnInd(self):
+		return self._NetXpsrCollstnInd
 
-	@BsktIdr.setter
-	def BsktIdr(self, value):
-		self._BsktIdr = value if type(value) != auto else self.make_default("BsktIdr")
+	@NetXpsrCollstnInd.setter
+	def NetXpsrCollstnInd(self, value):
+		self._NetXpsrCollstnInd = value if type(value) != auto else self.make_default("NetXpsrCollstnInd")
 
-	@BsktIdr.deleter
-	def BsktIdr(self):
-		del self._BsktIdr
-		self._BsktIdr = None
-
-	@property
-	def CollValDt(self):
-		return self._CollValDt
-
-	@CollValDt.setter
-	def CollValDt(self, value):
-		self._CollValDt = value if type(value) != auto else self.make_default("CollValDt")
-
-	@CollValDt.deleter
-	def CollValDt(self):
-		del self._CollValDt
-		self._CollValDt = None
+	@NetXpsrCollstnInd.deleter
+	def NetXpsrCollstnInd(self):
+		del self._NetXpsrCollstnInd
+		self._NetXpsrCollstnInd = None
 
 	@property
 	def AsstTp(self):
@@ -47,22 +34,35 @@ class CollaterisedData12(base_types._BaseFieldType):
 		self._AsstTp = None
 
 	@property
-	def NetXpsrCollstnInd(self):
-		return self._NetXpsrCollstnInd
+	def CollValDt(self):
+		return self._CollValDt
 
-	@NetXpsrCollstnInd.setter
-	def NetXpsrCollstnInd(self, value):
-		self._NetXpsrCollstnInd = value if type(value) != auto else self.make_default("NetXpsrCollstnInd")
+	@CollValDt.setter
+	def CollValDt(self, value):
+		self._CollValDt = value if type(value) != auto else self.make_default("CollValDt")
 
-	@NetXpsrCollstnInd.deleter
-	def NetXpsrCollstnInd(self):
-		del self._NetXpsrCollstnInd
-		self._NetXpsrCollstnInd = None
+	@CollValDt.deleter
+	def CollValDt(self):
+		del self._CollValDt
+		self._CollValDt = None
+
+	@property
+	def BsktIdr(self):
+		return self._BsktIdr
+
+	@BsktIdr.setter
+	def BsktIdr(self, value):
+		self._BsktIdr = value if type(value) != auto else self.make_default("BsktIdr")
+
+	@BsktIdr.deleter
+	def BsktIdr(self):
+		del self._BsktIdr
+		self._BsktIdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BsktIdr', type=SecurityIdentification26Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AsstTp', type=CollateralType21, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetXpsrCollstnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AsstTp', type=CollateralType21, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BsktIdr', type=SecurityIdentification26Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

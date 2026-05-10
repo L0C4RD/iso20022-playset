@@ -1,5 +1,5 @@
 from . import base_types
-import GetAccountV08
+from .GetAccountV08 import GetAccountV08
 
 class CAMT_003_001_08():
 

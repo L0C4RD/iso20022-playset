@@ -1,22 +1,9 @@
 from . import base_types
-import ISODate
+from .ISODate import ISODate
 
 class DatePeriod5(base_types._BaseFieldType):
 
-	__slots__ = ["_CurValDt", "_ReqdValDt"]
-	@property
-	def CurValDt(self):
-		return self._CurValDt
-
-	@CurValDt.setter
-	def CurValDt(self, value):
-		self._CurValDt = value if type(value) != auto else self.make_default("CurValDt")
-
-	@CurValDt.deleter
-	def CurValDt(self):
-		del self._CurValDt
-		self._CurValDt = None
-
+	__slots__ = ["_ReqdValDt", "_CurValDt"]
 	@property
 	def ReqdValDt(self):
 		return self._ReqdValDt
@@ -30,8 +17,21 @@ class DatePeriod5(base_types._BaseFieldType):
 		del self._ReqdValDt
 		self._ReqdValDt = None
 
+	@property
+	def CurValDt(self):
+		return self._CurValDt
+
+	@CurValDt.setter
+	def CurValDt(self, value):
+		self._CurValDt = value if type(value) != auto else self.make_default("CurValDt")
+
+	@CurValDt.deleter
+	def CurValDt(self):
+		del self._CurValDt
+		self._CurValDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CurValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

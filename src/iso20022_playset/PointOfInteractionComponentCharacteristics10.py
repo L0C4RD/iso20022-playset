@@ -1,12 +1,12 @@
 from . import base_types
-import CommunicationCharacteristics5
-import Number
-import CryptographicKey18
-import MemoryCharacteristics1
+from .Number import Number
+from .CommunicationCharacteristics5 import CommunicationCharacteristics5
+from .CryptographicKey18 import CryptographicKey18
+from .MemoryCharacteristics1 import MemoryCharacteristics1
 
 class PointOfInteractionComponentCharacteristics10(base_types._BaseFieldType):
 
-	__slots__ = ["_Com", "_SctyElmt", "_SbcbrIdntyMdls", "_Mmry", "_SctyAccsMdls"]
+	__slots__ = ["_Com", "_Mmry", "_SctyElmt", "_SbcbrIdntyMdls", "_SctyAccsMdls"]
 	@property
 	def Com(self):
 		return self._Com
@@ -19,6 +19,19 @@ class PointOfInteractionComponentCharacteristics10(base_types._BaseFieldType):
 	def Com(self):
 		del self._Com
 		self._Com = None
+
+	@property
+	def Mmry(self):
+		return self._Mmry
+
+	@Mmry.setter
+	def Mmry(self, value):
+		self._Mmry = value if type(value) != auto else self.make_default("Mmry")
+
+	@Mmry.deleter
+	def Mmry(self):
+		del self._Mmry
+		self._Mmry = None
 
 	@property
 	def SctyElmt(self):
@@ -47,19 +60,6 @@ class PointOfInteractionComponentCharacteristics10(base_types._BaseFieldType):
 		self._SbcbrIdntyMdls = None
 
 	@property
-	def Mmry(self):
-		return self._Mmry
-
-	@Mmry.setter
-	def Mmry(self, value):
-		self._Mmry = value if type(value) != auto else self.make_default("Mmry")
-
-	@Mmry.deleter
-	def Mmry(self):
-		del self._Mmry
-		self._Mmry = None
-
-	@property
 	def SctyAccsMdls(self):
 		return self._SctyAccsMdls
 
@@ -74,9 +74,9 @@ class PointOfInteractionComponentCharacteristics10(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Com', type=CommunicationCharacteristics5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Mmry', type=MemoryCharacteristics1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctyElmt', type=CryptographicKey18, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SbcbrIdntyMdls', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mmry', type=MemoryCharacteristics1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctyAccsMdls', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

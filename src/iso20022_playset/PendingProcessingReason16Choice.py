@@ -1,6 +1,6 @@
 from . import base_types
-import PendingFailingReason1Code
-import GenericIdentification30
+from .GenericIdentification30 import GenericIdentification30
+from .PendingFailingReason1Code import PendingFailingReason1Code
 
 class PendingProcessingReason16Choice(base_types._BaseFieldType):
 

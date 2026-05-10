@@ -1,7 +1,7 @@
 from . import base_types
-import GenericIdentification36
-import Exact3UpperCaseAlphaNumericText
-import Max30Text
+from .GenericIdentification36 import GenericIdentification36
+from .Max30Text import Max30Text
+from .Exact3UpperCaseAlphaNumericText import Exact3UpperCaseAlphaNumericText
 
 class IdentificationFormat3Choice(base_types._BaseFieldType):
 

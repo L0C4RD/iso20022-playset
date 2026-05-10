@@ -1,5 +1,5 @@
 from . import base_types
-import StatusReportV14
+from .StatusReportV14 import StatusReportV14
 
 class CATM_001_001_14():
 

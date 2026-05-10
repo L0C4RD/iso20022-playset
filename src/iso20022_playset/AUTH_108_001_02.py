@@ -1,5 +1,5 @@
 from . import base_types
-import DerivativesTradeMarginDataReportV02
+from .DerivativesTradeMarginDataReportV02 import DerivativesTradeMarginDataReportV02
 
 class AUTH_108_001_02():
 

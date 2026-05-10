@@ -1,26 +1,13 @@
 from . import base_types
-import TransactionIdentifications52
-import TransactionDetails174
-import ProcessingStatus84Choice
-import SupplementaryData1
-import Max35Text
+from .Max35Text import Max35Text
+from .SupplementaryData1 import SupplementaryData1
+from .ProcessingStatus84Choice import ProcessingStatus84Choice
+from .TransactionIdentifications52 import TransactionIdentifications52
+from .TransactionDetails174 import TransactionDetails174
 
 class SecuritiesTransactionCancellationRequestStatusAdviceV08(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgSts", "_TxDtls", "_CxlReqRef", "_SplmtryData", "_TxId"]
-	@property
-	def PrcgSts(self):
-		return self._PrcgSts
-
-	@PrcgSts.setter
-	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
-
-	@PrcgSts.deleter
-	def PrcgSts(self):
-		del self._PrcgSts
-		self._PrcgSts = None
-
+	__slots__ = ["_TxDtls", "_CxlReqRef", "_SplmtryData", "_PrcgSts", "_TxId"]
 	@property
 	def TxDtls(self):
 		return self._TxDtls
@@ -61,6 +48,19 @@ class SecuritiesTransactionCancellationRequestStatusAdviceV08(base_types._BaseFi
 		self._SplmtryData = None
 
 	@property
+	def PrcgSts(self):
+		return self._PrcgSts
+
+	@PrcgSts.setter
+	def PrcgSts(self, value):
+		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+
+	@PrcgSts.deleter
+	def PrcgSts(self):
+		del self._PrcgSts
+		self._PrcgSts = None
+
+	@property
 	def TxId(self):
 		return self._TxId
 
@@ -74,10 +74,10 @@ class SecuritiesTransactionCancellationRequestStatusAdviceV08(base_types._BaseFi
 		self._TxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus84Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtls', type=TransactionDetails174, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlReqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus84Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifications52, min=0, max=1, mutex_group=None, array=False),
 	))
 

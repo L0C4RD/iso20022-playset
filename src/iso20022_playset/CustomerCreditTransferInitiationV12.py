@@ -1,7 +1,7 @@
 from . import base_types
-import SupplementaryData1
-import GroupHeader114
-import PaymentInstruction44
+from .PaymentInstruction44 import PaymentInstruction44
+from .SupplementaryData1 import SupplementaryData1
+from .GroupHeader114 import GroupHeader114
 
 class CustomerCreditTransferInitiationV12(base_types._BaseFieldType):
 

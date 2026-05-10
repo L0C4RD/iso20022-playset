@@ -1,11 +1,11 @@
 from . import base_types
-import Max350Text
-import PostalAddress26
-import NamePrefix2Code
+from .PostalAddress26 import PostalAddress26
+from .Max350Text import Max350Text
+from .NamePrefix2Code import NamePrefix2Code
 
 class PersonName3(base_types._BaseFieldType):
 
-	__slots__ = ["_NmPrfx", "_Adr", "_FrstNm", "_Srnm"]
+	__slots__ = ["_NmPrfx", "_Adr", "_Srnm", "_FrstNm"]
 	@property
 	def NmPrfx(self):
 		return self._NmPrfx
@@ -33,19 +33,6 @@ class PersonName3(base_types._BaseFieldType):
 		self._Adr = None
 
 	@property
-	def FrstNm(self):
-		return self._FrstNm
-
-	@FrstNm.setter
-	def FrstNm(self, value):
-		self._FrstNm = value if type(value) != auto else self.make_default("FrstNm")
-
-	@FrstNm.deleter
-	def FrstNm(self):
-		del self._FrstNm
-		self._FrstNm = None
-
-	@property
 	def Srnm(self):
 		return self._Srnm
 
@@ -58,10 +45,23 @@ class PersonName3(base_types._BaseFieldType):
 		del self._Srnm
 		self._Srnm = None
 
+	@property
+	def FrstNm(self):
+		return self._FrstNm
+
+	@FrstNm.setter
+	def FrstNm(self, value):
+		self._FrstNm = value if type(value) != auto else self.make_default("FrstNm")
+
+	@FrstNm.deleter
+	def FrstNm(self):
+		del self._FrstNm
+		self._FrstNm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NmPrfx', type=NamePrefix2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Adr', type=PostalAddress26, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrstNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Srnm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

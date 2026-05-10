@@ -1,5 +1,5 @@
 from . import base_types
-import UndertakingApplicationV01
+from .UndertakingApplicationV01 import UndertakingApplicationV01
 
 class TSIN_005_001_01():
 

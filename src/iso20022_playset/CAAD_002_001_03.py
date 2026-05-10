@@ -1,5 +1,5 @@
 from . import base_types
-import BatchManagementResponseV03
+from .BatchManagementResponseV03 import BatchManagementResponseV03
 
 class CAAD_002_001_03():
 

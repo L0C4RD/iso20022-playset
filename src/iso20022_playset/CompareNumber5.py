@@ -1,5 +1,5 @@
 from . import base_types
-import Max3Number
+from .Max3Number import Max3Number
 
 class CompareNumber5(base_types._BaseFieldType):
 

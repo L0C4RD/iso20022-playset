@@ -1,6 +1,6 @@
 from . import base_types
-import IndividualOrderStatusAndReason8
-import OrderStatusAndReason9
+from .IndividualOrderStatusAndReason8 import IndividualOrderStatusAndReason8
+from .OrderStatusAndReason9 import OrderStatusAndReason9
 
 class Status26Choice(base_types._BaseFieldType):
 

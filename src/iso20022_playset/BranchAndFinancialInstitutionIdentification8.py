@@ -1,23 +1,10 @@
 from . import base_types
-import FinancialInstitutionIdentification23
-import BranchData5
+from .BranchData5 import BranchData5
+from .FinancialInstitutionIdentification23 import FinancialInstitutionIdentification23
 
 class BranchAndFinancialInstitutionIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_BrnchId", "_FinInstnId"]
-	@property
-	def BrnchId(self):
-		return self._BrnchId
-
-	@BrnchId.setter
-	def BrnchId(self, value):
-		self._BrnchId = value if type(value) != auto else self.make_default("BrnchId")
-
-	@BrnchId.deleter
-	def BrnchId(self):
-		del self._BrnchId
-		self._BrnchId = None
-
+	__slots__ = ["_FinInstnId", "_BrnchId"]
 	@property
 	def FinInstnId(self):
 		return self._FinInstnId
@@ -31,8 +18,21 @@ class BranchAndFinancialInstitutionIdentification8(base_types._BaseFieldType):
 		del self._FinInstnId
 		self._FinInstnId = None
 
+	@property
+	def BrnchId(self):
+		return self._BrnchId
+
+	@BrnchId.setter
+	def BrnchId(self, value):
+		self._BrnchId = value if type(value) != auto else self.make_default("BrnchId")
+
+	@BrnchId.deleter
+	def BrnchId(self):
+		del self._BrnchId
+		self._BrnchId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BrnchId', type=BranchData5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstnId', type=FinancialInstitutionIdentification23, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BrnchId', type=BranchData5, min=0, max=1, mutex_group=None, array=False),
 	))
 

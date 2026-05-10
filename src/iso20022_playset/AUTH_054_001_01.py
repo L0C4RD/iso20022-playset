@@ -1,5 +1,5 @@
 from . import base_types
-import CCPClearingMemberReportV01
+from .CCPClearingMemberReportV01 import CCPClearingMemberReportV01
 
 class AUTH_054_001_01():
 

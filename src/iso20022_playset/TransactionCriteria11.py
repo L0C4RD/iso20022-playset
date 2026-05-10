@@ -1,25 +1,12 @@
 from . import base_types
-import ReportIndicator1Code
-import TransactionReturnCriteria5
-import Max35Text
-import TransactionSearchCriteria11
+from .TransactionSearchCriteria11 import TransactionSearchCriteria11
+from .Max35Text import Max35Text
+from .ReportIndicator1Code import ReportIndicator1Code
+from .TransactionReturnCriteria5 import TransactionReturnCriteria5
 
 class TransactionCriteria11(base_types._BaseFieldType):
 
-	__slots__ = ["_NewQryNm", "_RtrCrit", "_StmtRpt", "_SchCrit"]
-	@property
-	def NewQryNm(self):
-		return self._NewQryNm
-
-	@NewQryNm.setter
-	def NewQryNm(self, value):
-		self._NewQryNm = value if type(value) != auto else self.make_default("NewQryNm")
-
-	@NewQryNm.deleter
-	def NewQryNm(self):
-		del self._NewQryNm
-		self._NewQryNm = None
-
+	__slots__ = ["_RtrCrit", "_SchCrit", "_StmtRpt", "_NewQryNm"]
 	@property
 	def RtrCrit(self):
 		return self._RtrCrit
@@ -32,6 +19,19 @@ class TransactionCriteria11(base_types._BaseFieldType):
 	def RtrCrit(self):
 		del self._RtrCrit
 		self._RtrCrit = None
+
+	@property
+	def SchCrit(self):
+		return self._SchCrit
+
+	@SchCrit.setter
+	def SchCrit(self, value):
+		self._SchCrit = value if type(value) != auto else self.make_default("SchCrit")
+
+	@SchCrit.deleter
+	def SchCrit(self):
+		del self._SchCrit
+		self._SchCrit = None
 
 	@property
 	def StmtRpt(self):
@@ -47,22 +47,22 @@ class TransactionCriteria11(base_types._BaseFieldType):
 		self._StmtRpt = None
 
 	@property
-	def SchCrit(self):
-		return self._SchCrit
+	def NewQryNm(self):
+		return self._NewQryNm
 
-	@SchCrit.setter
-	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != auto else self.make_default("SchCrit")
+	@NewQryNm.setter
+	def NewQryNm(self, value):
+		self._NewQryNm = value if type(value) != auto else self.make_default("NewQryNm")
 
-	@SchCrit.deleter
-	def SchCrit(self):
-		del self._SchCrit
-		self._SchCrit = None
+	@NewQryNm.deleter
+	def NewQryNm(self):
+		del self._NewQryNm
+		self._NewQryNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtrCrit', type=TransactionReturnCriteria5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtRpt', type=ReportIndicator1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=TransactionSearchCriteria11, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StmtRpt', type=ReportIndicator1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

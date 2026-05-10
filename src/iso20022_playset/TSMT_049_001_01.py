@@ -1,5 +1,5 @@
 from . import base_types
-import RoleAndBaselineAcceptanceV01
+from .RoleAndBaselineAcceptanceV01 import RoleAndBaselineAcceptanceV01
 
 class TSMT_049_001_01():
 

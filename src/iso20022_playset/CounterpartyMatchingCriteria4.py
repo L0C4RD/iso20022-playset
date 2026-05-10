@@ -1,24 +1,11 @@
 from . import base_types
-import CompareOrganisationIdentification6
-import CompareCounterpartySide2
-import CompareOrganisationIdentification7
+from .CompareOrganisationIdentification7 import CompareOrganisationIdentification7
+from .CompareOrganisationIdentification6 import CompareOrganisationIdentification6
+from .CompareCounterpartySide2 import CompareCounterpartySide2
 
 class CounterpartyMatchingCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgCtrPty", "_CtrPtySd", "_OthrCtrPty"]
-	@property
-	def RptgCtrPty(self):
-		return self._RptgCtrPty
-
-	@RptgCtrPty.setter
-	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
-
-	@RptgCtrPty.deleter
-	def RptgCtrPty(self):
-		del self._RptgCtrPty
-		self._RptgCtrPty = None
-
+	__slots__ = ["_CtrPtySd", "_RptgCtrPty", "_OthrCtrPty"]
 	@property
 	def CtrPtySd(self):
 		return self._CtrPtySd
@@ -31,6 +18,19 @@ class CounterpartyMatchingCriteria4(base_types._BaseFieldType):
 	def CtrPtySd(self):
 		del self._CtrPtySd
 		self._CtrPtySd = None
+
+	@property
+	def RptgCtrPty(self):
+		return self._RptgCtrPty
+
+	@RptgCtrPty.setter
+	def RptgCtrPty(self, value):
+		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
+
+	@RptgCtrPty.deleter
+	def RptgCtrPty(self):
+		del self._RptgCtrPty
+		self._RptgCtrPty = None
 
 	@property
 	def OthrCtrPty(self):
@@ -46,8 +46,8 @@ class CounterpartyMatchingCriteria4(base_types._BaseFieldType):
 		self._OthrCtrPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgCtrPty', type=CompareOrganisationIdentification6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtySd', type=CompareCounterpartySide2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgCtrPty', type=CompareOrganisationIdentification6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCtrPty', type=CompareOrganisationIdentification7, min=0, max=1, mutex_group=None, array=False),
 	))
 

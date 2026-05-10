@@ -1,6 +1,6 @@
 from . import base_types
-import ErrorHandling5
-import PartyAuditTrail2
+from .PartyAuditTrail2 import PartyAuditTrail2
+from .ErrorHandling5 import ErrorHandling5
 
 class PartyAuditTrailOrError4Choice(base_types._BaseFieldType):
 

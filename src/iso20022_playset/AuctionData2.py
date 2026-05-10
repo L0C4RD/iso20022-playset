@@ -1,7 +1,7 @@
 from . import base_types
-import SecuritiesTransactionPrice21Choice
-import FinancialInstrumentQuantity25Choice
-import Max50Text
+from .Max50Text import Max50Text
+from .FinancialInstrumentQuantity25Choice import FinancialInstrumentQuantity25Choice
+from .SecuritiesTransactionPrice21Choice import SecuritiesTransactionPrice21Choice
 
 class AuctionData2(base_types._BaseFieldType):
 

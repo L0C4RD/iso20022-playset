@@ -1,5 +1,5 @@
 from . import base_types
-import Max256Text
+from .Max256Text import Max256Text
 
 class AdditionalInformation5(base_types._BaseFieldType):
 

@@ -1,24 +1,11 @@
 from . import base_types
-import TargetMarket1Choice
-import Max35Text
-import AdditionalInformation15
+from .Max35Text import Max35Text
+from .AdditionalInformation15 import AdditionalInformation15
+from .TargetMarket1Choice import TargetMarket1Choice
 
 class OtherTargetMarketInvestorKnowledge1(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstrKnwldgTp", "_AddtlInf", "_Trgt"]
-	@property
-	def InvstrKnwldgTp(self):
-		return self._InvstrKnwldgTp
-
-	@InvstrKnwldgTp.setter
-	def InvstrKnwldgTp(self, value):
-		self._InvstrKnwldgTp = value if type(value) != auto else self.make_default("InvstrKnwldgTp")
-
-	@InvstrKnwldgTp.deleter
-	def InvstrKnwldgTp(self):
-		del self._InvstrKnwldgTp
-		self._InvstrKnwldgTp = None
-
+	__slots__ = ["_AddtlInf", "_InvstrKnwldgTp", "_Trgt"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -31,6 +18,19 @@ class OtherTargetMarketInvestorKnowledge1(base_types._BaseFieldType):
 	def AddtlInf(self):
 		del self._AddtlInf
 		self._AddtlInf = None
+
+	@property
+	def InvstrKnwldgTp(self):
+		return self._InvstrKnwldgTp
+
+	@InvstrKnwldgTp.setter
+	def InvstrKnwldgTp(self, value):
+		self._InvstrKnwldgTp = value if type(value) != auto else self.make_default("InvstrKnwldgTp")
+
+	@InvstrKnwldgTp.deleter
+	def InvstrKnwldgTp(self):
+		del self._InvstrKnwldgTp
+		self._InvstrKnwldgTp = None
 
 	@property
 	def Trgt(self):
@@ -46,8 +46,8 @@ class OtherTargetMarketInvestorKnowledge1(base_types._BaseFieldType):
 		self._Trgt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InvstrKnwldgTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstrKnwldgTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trgt', type=TargetMarket1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

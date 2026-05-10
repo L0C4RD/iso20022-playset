@@ -1,6 +1,6 @@
 from . import base_types
-import StandingOrderType1Code
-import GenericIdentification1
+from .GenericIdentification1 import GenericIdentification1
+from .StandingOrderType1Code import StandingOrderType1Code
 
 class StandingOrderType1Choice(base_types._BaseFieldType):
 

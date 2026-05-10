@@ -1,5 +1,5 @@
 from . import base_types
-import ATMRejectV02
+from .ATMRejectV02 import ATMRejectV02
 
 class CATP_005_001_02():
 

@@ -1,5 +1,5 @@
 from . import base_types
-import RedemptionBulkOrderCancellationRequestV04
+from .RedemptionBulkOrderCancellationRequestV04 import RedemptionBulkOrderCancellationRequestV04
 
 class SETR_002_001_04():
 

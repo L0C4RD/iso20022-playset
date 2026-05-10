@@ -1,23 +1,23 @@
 from . import base_types
-import DateTimePeriod1Choice
-import Max4AlphaNumericText
-import PaymentStatusCodeSearch2Choice
+from .Max4AlphaNumericText import Max4AlphaNumericText
+from .PaymentStatusCodeSearch2Choice import PaymentStatusCodeSearch2Choice
+from .DateTimePeriod1Choice import DateTimePeriod1Choice
 
 class InstructionStatusSearch5(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtInstrSts", "_PmtInstrStsDtTm", "_PrtryStsRsn"]
+	__slots__ = ["_PrtryStsRsn", "_PmtInstrStsDtTm", "_PmtInstrSts"]
 	@property
-	def PmtInstrSts(self):
-		return self._PmtInstrSts
+	def PrtryStsRsn(self):
+		return self._PrtryStsRsn
 
-	@PmtInstrSts.setter
-	def PmtInstrSts(self, value):
-		self._PmtInstrSts = value if type(value) != auto else self.make_default("PmtInstrSts")
+	@PrtryStsRsn.setter
+	def PrtryStsRsn(self, value):
+		self._PrtryStsRsn = value if type(value) != auto else self.make_default("PrtryStsRsn")
 
-	@PmtInstrSts.deleter
-	def PmtInstrSts(self):
-		del self._PmtInstrSts
-		self._PmtInstrSts = None
+	@PrtryStsRsn.deleter
+	def PrtryStsRsn(self):
+		del self._PrtryStsRsn
+		self._PrtryStsRsn = None
 
 	@property
 	def PmtInstrStsDtTm(self):
@@ -33,21 +33,21 @@ class InstructionStatusSearch5(base_types._BaseFieldType):
 		self._PmtInstrStsDtTm = None
 
 	@property
-	def PrtryStsRsn(self):
-		return self._PrtryStsRsn
+	def PmtInstrSts(self):
+		return self._PmtInstrSts
 
-	@PrtryStsRsn.setter
-	def PrtryStsRsn(self, value):
-		self._PrtryStsRsn = value if type(value) != auto else self.make_default("PrtryStsRsn")
+	@PmtInstrSts.setter
+	def PmtInstrSts(self, value):
+		self._PmtInstrSts = value if type(value) != auto else self.make_default("PmtInstrSts")
 
-	@PrtryStsRsn.deleter
-	def PrtryStsRsn(self):
-		del self._PrtryStsRsn
-		self._PrtryStsRsn = None
+	@PmtInstrSts.deleter
+	def PmtInstrSts(self):
+		del self._PmtInstrSts
+		self._PmtInstrSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtInstrSts', type=PaymentStatusCodeSearch2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtInstrStsDtTm', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtryStsRsn', type=Max4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInstrStsDtTm', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInstrSts', type=PaymentStatusCodeSearch2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

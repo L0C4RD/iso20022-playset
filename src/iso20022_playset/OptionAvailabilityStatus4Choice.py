@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import OptionAvailabilityStatus1Code
+from .GenericIdentification47 import GenericIdentification47
+from .OptionAvailabilityStatus1Code import OptionAvailabilityStatus1Code
 
 class OptionAvailabilityStatus4Choice(base_types._BaseFieldType):
 

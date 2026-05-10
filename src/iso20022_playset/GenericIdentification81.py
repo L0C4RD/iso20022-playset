@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import OtherIdentification3Choice
+from .Max35Text import Max35Text
+from .OtherIdentification3Choice import OtherIdentification3Choice
 
 class GenericIdentification81(base_types._BaseFieldType):
 

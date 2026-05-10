@@ -1,22 +1,9 @@
 from . import base_types
-import DateFormat4Choice
+from .DateFormat4Choice import DateFormat4Choice
 
 class CorporateActionDate3(base_types._BaseFieldType):
 
-	__slots__ = ["_AvlblDt", "_FrstDealgDt", "_PrpssDt", "_PmtDt", "_DvddRnkgDt", "_EarlstPmtDt"]
-	@property
-	def AvlblDt(self):
-		return self._AvlblDt
-
-	@AvlblDt.setter
-	def AvlblDt(self, value):
-		self._AvlblDt = value if type(value) != auto else self.make_default("AvlblDt")
-
-	@AvlblDt.deleter
-	def AvlblDt(self):
-		del self._AvlblDt
-		self._AvlblDt = None
-
+	__slots__ = ["_FrstDealgDt", "_AvlblDt", "_PmtDt", "_DvddRnkgDt", "_PrpssDt", "_EarlstPmtDt"]
 	@property
 	def FrstDealgDt(self):
 		return self._FrstDealgDt
@@ -31,17 +18,17 @@ class CorporateActionDate3(base_types._BaseFieldType):
 		self._FrstDealgDt = None
 
 	@property
-	def PrpssDt(self):
-		return self._PrpssDt
+	def AvlblDt(self):
+		return self._AvlblDt
 
-	@PrpssDt.setter
-	def PrpssDt(self, value):
-		self._PrpssDt = value if type(value) != auto else self.make_default("PrpssDt")
+	@AvlblDt.setter
+	def AvlblDt(self, value):
+		self._AvlblDt = value if type(value) != auto else self.make_default("AvlblDt")
 
-	@PrpssDt.deleter
-	def PrpssDt(self):
-		del self._PrpssDt
-		self._PrpssDt = None
+	@AvlblDt.deleter
+	def AvlblDt(self):
+		del self._AvlblDt
+		self._AvlblDt = None
 
 	@property
 	def PmtDt(self):
@@ -70,6 +57,19 @@ class CorporateActionDate3(base_types._BaseFieldType):
 		self._DvddRnkgDt = None
 
 	@property
+	def PrpssDt(self):
+		return self._PrpssDt
+
+	@PrpssDt.setter
+	def PrpssDt(self, value):
+		self._PrpssDt = value if type(value) != auto else self.make_default("PrpssDt")
+
+	@PrpssDt.deleter
+	def PrpssDt(self):
+		del self._PrpssDt
+		self._PrpssDt = None
+
+	@property
 	def EarlstPmtDt(self):
 		return self._EarlstPmtDt
 
@@ -83,11 +83,11 @@ class CorporateActionDate3(base_types._BaseFieldType):
 		self._EarlstPmtDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AvlblDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstDealgDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrpssDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AvlblDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DvddRnkgDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrpssDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EarlstPmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

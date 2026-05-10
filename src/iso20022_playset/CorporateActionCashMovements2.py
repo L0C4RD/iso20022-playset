@@ -1,25 +1,12 @@
 from . import base_types
-import DateAndDateTimeChoice
-import CashAccount19
-import Max35Text
-import ActiveCurrencyAndAmount
+from .CashAccount19 import CashAccount19
+from .Max35Text import Max35Text
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .DateAndDateTimeChoice import DateAndDateTimeChoice
 
 class CorporateActionCashMovements2(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_PstngId", "_PstngAmt", "_PstngDtTm"]
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
+	__slots__ = ["_PstngId", "_PstngDtTm", "_PstngAmt", "_AcctDtls"]
 	@property
 	def PstngId(self):
 		return self._PstngId
@@ -32,6 +19,19 @@ class CorporateActionCashMovements2(base_types._BaseFieldType):
 	def PstngId(self):
 		del self._PstngId
 		self._PstngId = None
+
+	@property
+	def PstngDtTm(self):
+		return self._PstngDtTm
+
+	@PstngDtTm.setter
+	def PstngDtTm(self, value):
+		self._PstngDtTm = value if type(value) != auto else self.make_default("PstngDtTm")
+
+	@PstngDtTm.deleter
+	def PstngDtTm(self):
+		del self._PstngDtTm
+		self._PstngDtTm = None
 
 	@property
 	def PstngAmt(self):
@@ -47,22 +47,22 @@ class CorporateActionCashMovements2(base_types._BaseFieldType):
 		self._PstngAmt = None
 
 	@property
-	def PstngDtTm(self):
-		return self._PstngDtTm
+	def AcctDtls(self):
+		return self._AcctDtls
 
-	@PstngDtTm.setter
-	def PstngDtTm(self, value):
-		self._PstngDtTm = value if type(value) != auto else self.make_default("PstngDtTm")
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
 
-	@PstngDtTm.deleter
-	def PstngDtTm(self):
-		del self._PstngDtTm
-		self._PstngDtTm = None
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctDtls', type=CashAccount19, min=1, max=2, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstngAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstngAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDtls', type=CashAccount19, min=1, max=2, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,24 @@
 from . import base_types
-import TransportByRail2
-import TransportBySea4
-import TransportByRoad2
-import TransportByAir2
+from .TransportByAir2 import TransportByAir2
+from .TransportByRoad2 import TransportByRoad2
+from .TransportBySea4 import TransportBySea4
+from .TransportByRail2 import TransportByRail2
 
 class SingleTransport3(base_types._BaseFieldType):
 
-	__slots__ = ["_TrnsprtByAir", "_TrnsprtBySea", "_TrnsprtByRoad", "_TrnsprtByRail"]
+	__slots__ = ["_TrnsprtByRail", "_TrnsprtBySea", "_TrnsprtByAir", "_TrnsprtByRoad"]
 	@property
-	def TrnsprtByAir(self):
-		return self._TrnsprtByAir
+	def TrnsprtByRail(self):
+		return self._TrnsprtByRail
 
-	@TrnsprtByAir.setter
-	def TrnsprtByAir(self, value):
-		self._TrnsprtByAir = value if type(value) != auto else self.make_default("TrnsprtByAir")
+	@TrnsprtByRail.setter
+	def TrnsprtByRail(self, value):
+		self._TrnsprtByRail = value if type(value) != auto else self.make_default("TrnsprtByRail")
 
-	@TrnsprtByAir.deleter
-	def TrnsprtByAir(self):
-		del self._TrnsprtByAir
-		self._TrnsprtByAir = None
+	@TrnsprtByRail.deleter
+	def TrnsprtByRail(self):
+		del self._TrnsprtByRail
+		self._TrnsprtByRail = None
 
 	@property
 	def TrnsprtBySea(self):
@@ -34,6 +34,19 @@ class SingleTransport3(base_types._BaseFieldType):
 		self._TrnsprtBySea = None
 
 	@property
+	def TrnsprtByAir(self):
+		return self._TrnsprtByAir
+
+	@TrnsprtByAir.setter
+	def TrnsprtByAir(self, value):
+		self._TrnsprtByAir = value if type(value) != auto else self.make_default("TrnsprtByAir")
+
+	@TrnsprtByAir.deleter
+	def TrnsprtByAir(self):
+		del self._TrnsprtByAir
+		self._TrnsprtByAir = None
+
+	@property
 	def TrnsprtByRoad(self):
 		return self._TrnsprtByRoad
 
@@ -46,23 +59,10 @@ class SingleTransport3(base_types._BaseFieldType):
 		del self._TrnsprtByRoad
 		self._TrnsprtByRoad = None
 
-	@property
-	def TrnsprtByRail(self):
-		return self._TrnsprtByRail
-
-	@TrnsprtByRail.setter
-	def TrnsprtByRail(self, value):
-		self._TrnsprtByRail = value if type(value) != auto else self.make_default("TrnsprtByRail")
-
-	@TrnsprtByRail.deleter
-	def TrnsprtByRail(self):
-		del self._TrnsprtByRail
-		self._TrnsprtByRail = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrnsprtByAir', type=TransportByAir2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrnsprtBySea', type=TransportBySea4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrnsprtByRoad', type=TransportByRoad2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrnsprtByRail', type=TransportByRail2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrnsprtBySea', type=TransportBySea4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrnsprtByAir', type=TransportByAir2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrnsprtByRoad', type=TransportByRoad2, min=0, max=1, mutex_group=None, array=False),
 	))
 

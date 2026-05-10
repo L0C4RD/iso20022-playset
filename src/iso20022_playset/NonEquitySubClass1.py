@@ -1,6 +1,6 @@
 from . import base_types
-import NonEquitySubClassSegmentationCriterion1
-import Max1000Text
+from .NonEquitySubClassSegmentationCriterion1 import NonEquitySubClassSegmentationCriterion1
+from .Max1000Text import Max1000Text
 
 class NonEquitySubClass1(base_types._BaseFieldType):
 

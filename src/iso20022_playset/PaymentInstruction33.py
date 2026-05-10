@@ -1,12 +1,12 @@
 from . import base_types
-import Priority1Choice
-import PaymentType4Choice
-import DateTimePeriod1Choice
-import Instruction1Code
+from .DateTimePeriod1Choice import DateTimePeriod1Choice
+from .Instruction1Code import Instruction1Code
+from .Priority1Choice import Priority1Choice
+from .PaymentType4Choice import PaymentType4Choice
 
 class PaymentInstruction33(base_types._BaseFieldType):
 
-	__slots__ = ["_Prty", "_Tp", "_Instr", "_PrcgVldtyTm"]
+	__slots__ = ["_Prty", "_Instr", "_Tp", "_PrcgVldtyTm"]
 	@property
 	def Prty(self):
 		return self._Prty
@@ -21,19 +21,6 @@ class PaymentInstruction33(base_types._BaseFieldType):
 		self._Prty = None
 
 	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
 	def Instr(self):
 		return self._Instr
 
@@ -45,6 +32,19 @@ class PaymentInstruction33(base_types._BaseFieldType):
 	def Instr(self):
 		del self._Instr
 		self._Instr = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def PrcgVldtyTm(self):
@@ -61,8 +61,8 @@ class PaymentInstruction33(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prty', type=Priority1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=PaymentType4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Instr', type=Instruction1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=PaymentType4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgVldtyTm', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-import FIToFICustomerDirectDebitV11
+from .FIToFICustomerDirectDebitV11 import FIToFICustomerDirectDebitV11
 
 class PACS_003_001_11():
 

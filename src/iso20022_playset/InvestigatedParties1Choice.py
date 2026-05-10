@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import InvestigatedParties1Code
+from .Max35Text import Max35Text
+from .InvestigatedParties1Code import InvestigatedParties1Code
 
 class InvestigatedParties1Choice(base_types._BaseFieldType):
 

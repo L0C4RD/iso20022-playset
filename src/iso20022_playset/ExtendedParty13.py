@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification36
-import ContactAttributes5
+from .GenericIdentification36 import GenericIdentification36
+from .ContactAttributes5 import ContactAttributes5
 
 class ExtendedParty13(base_types._BaseFieldType):
 

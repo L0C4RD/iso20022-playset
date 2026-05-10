@@ -1,5 +1,5 @@
 from . import base_types
-import ProprietaryFormatInvestigationV06
+from .ProprietaryFormatInvestigationV06 import ProprietaryFormatInvestigationV06
 
 class CAMT_035_001_06():
 

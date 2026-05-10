@@ -1,21 +1,21 @@
 from . import base_types
-import RequestedIndicator
+from .RequestedIndicator import RequestedIndicator
 
 class InstructionStatusReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtInstrStsRsnInd", "_PmtInstrStsDtTmInd", "_PmtInstrStsInd"]
+	__slots__ = ["_PmtInstrStsInd", "_PmtInstrStsDtTmInd", "_PmtInstrStsRsnInd"]
 	@property
-	def PmtInstrStsRsnInd(self):
-		return self._PmtInstrStsRsnInd
+	def PmtInstrStsInd(self):
+		return self._PmtInstrStsInd
 
-	@PmtInstrStsRsnInd.setter
-	def PmtInstrStsRsnInd(self, value):
-		self._PmtInstrStsRsnInd = value if type(value) != auto else self.make_default("PmtInstrStsRsnInd")
+	@PmtInstrStsInd.setter
+	def PmtInstrStsInd(self, value):
+		self._PmtInstrStsInd = value if type(value) != auto else self.make_default("PmtInstrStsInd")
 
-	@PmtInstrStsRsnInd.deleter
-	def PmtInstrStsRsnInd(self):
-		del self._PmtInstrStsRsnInd
-		self._PmtInstrStsRsnInd = None
+	@PmtInstrStsInd.deleter
+	def PmtInstrStsInd(self):
+		del self._PmtInstrStsInd
+		self._PmtInstrStsInd = None
 
 	@property
 	def PmtInstrStsDtTmInd(self):
@@ -31,21 +31,21 @@ class InstructionStatusReturnCriteria1(base_types._BaseFieldType):
 		self._PmtInstrStsDtTmInd = None
 
 	@property
-	def PmtInstrStsInd(self):
-		return self._PmtInstrStsInd
+	def PmtInstrStsRsnInd(self):
+		return self._PmtInstrStsRsnInd
 
-	@PmtInstrStsInd.setter
-	def PmtInstrStsInd(self, value):
-		self._PmtInstrStsInd = value if type(value) != auto else self.make_default("PmtInstrStsInd")
+	@PmtInstrStsRsnInd.setter
+	def PmtInstrStsRsnInd(self, value):
+		self._PmtInstrStsRsnInd = value if type(value) != auto else self.make_default("PmtInstrStsRsnInd")
 
-	@PmtInstrStsInd.deleter
-	def PmtInstrStsInd(self):
-		del self._PmtInstrStsInd
-		self._PmtInstrStsInd = None
+	@PmtInstrStsRsnInd.deleter
+	def PmtInstrStsRsnInd(self):
+		del self._PmtInstrStsRsnInd
+		self._PmtInstrStsRsnInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtInstrStsRsnInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtInstrStsDtTmInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtInstrStsInd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInstrStsDtTmInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInstrStsRsnInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

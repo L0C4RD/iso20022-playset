@@ -1,7 +1,7 @@
 from . import base_types
-import ProprietaryReason4
-import ProprietaryStatusAndReason6
-import CancellationReason39Choice
+from .CancellationReason39Choice import CancellationReason39Choice
+from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from .ProprietaryReason4 import ProprietaryReason4
 
 class CancellationProcessingStatus10Choice(base_types._BaseFieldType):
 

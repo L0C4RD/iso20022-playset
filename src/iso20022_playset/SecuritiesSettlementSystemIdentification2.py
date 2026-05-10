@@ -1,13 +1,26 @@
 from . import base_types
-import CountryCode
-import Max140Text
-import Contact9
-import Max35Text
-import LEIIdentifier
+from .CountryCode import CountryCode
+from .Max35Text import Max35Text
+from .Contact9 import Contact9
+from .Max140Text import Max140Text
+from .LEIIdentifier import LEIIdentifier
 
 class SecuritiesSettlementSystemIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_CSDLglNm", "_RspnsblPty", "_LEI", "_SysNm", "_CtryOfJursdctn", "_SysId"]
+	__slots__ = ["_SysNm", "_CSDLglNm", "_RspnsblPty", "_LEI", "_SysId", "_CtryOfJursdctn"]
+	@property
+	def SysNm(self):
+		return self._SysNm
+
+	@SysNm.setter
+	def SysNm(self, value):
+		self._SysNm = value if type(value) != auto else self.make_default("SysNm")
+
+	@SysNm.deleter
+	def SysNm(self):
+		del self._SysNm
+		self._SysNm = None
+
 	@property
 	def CSDLglNm(self):
 		return self._CSDLglNm
@@ -48,17 +61,17 @@ class SecuritiesSettlementSystemIdentification2(base_types._BaseFieldType):
 		self._LEI = None
 
 	@property
-	def SysNm(self):
-		return self._SysNm
+	def SysId(self):
+		return self._SysId
 
-	@SysNm.setter
-	def SysNm(self, value):
-		self._SysNm = value if type(value) != auto else self.make_default("SysNm")
+	@SysId.setter
+	def SysId(self, value):
+		self._SysId = value if type(value) != auto else self.make_default("SysId")
 
-	@SysNm.deleter
-	def SysNm(self):
-		del self._SysNm
-		self._SysNm = None
+	@SysId.deleter
+	def SysId(self):
+		del self._SysId
+		self._SysId = None
 
 	@property
 	def CtryOfJursdctn(self):
@@ -73,25 +86,12 @@ class SecuritiesSettlementSystemIdentification2(base_types._BaseFieldType):
 		del self._CtryOfJursdctn
 		self._CtryOfJursdctn = None
 
-	@property
-	def SysId(self):
-		return self._SysId
-
-	@SysId.setter
-	def SysId(self, value):
-		self._SysId = value if type(value) != auto else self.make_default("SysId")
-
-	@SysId.deleter
-	def SysId(self):
-		del self._SysId
-		self._SysId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SysNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CSDLglNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnsblPty', type=Contact9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryOfJursdctn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfJursdctn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

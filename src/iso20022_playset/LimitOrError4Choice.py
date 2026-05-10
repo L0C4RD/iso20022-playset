@@ -1,23 +1,10 @@
 from . import base_types
-import ErrorHandling5
-import Limit7
+from .Limit7 import Limit7
+from .ErrorHandling5 import ErrorHandling5
 
 class LimitOrError4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Lmt", "_BizErr"]
-	@property
-	def Lmt(self):
-		return self._Lmt
-
-	@Lmt.setter
-	def Lmt(self, value):
-		self._Lmt = value if type(value) != auto else self.make_default("Lmt")
-
-	@Lmt.deleter
-	def Lmt(self):
-		del self._Lmt
-		self._Lmt = None
-
+	__slots__ = ["_BizErr", "_Lmt"]
 	@property
 	def BizErr(self):
 		return self._BizErr
@@ -31,8 +18,21 @@ class LimitOrError4Choice(base_types._BaseFieldType):
 		del self._BizErr
 		self._BizErr = None
 
+	@property
+	def Lmt(self):
+		return self._Lmt
+
+	@Lmt.setter
+	def Lmt(self, value):
+		self._Lmt = value if type(value) != auto else self.make_default("Lmt")
+
+	@Lmt.deleter
+	def Lmt(self):
+		del self._Lmt
+		self._Lmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Lmt', type=Limit7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BizErr', type=ErrorHandling5, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='Lmt', type=Limit7, min=0, max=1, mutex_group=1, array=False),
 	))
 

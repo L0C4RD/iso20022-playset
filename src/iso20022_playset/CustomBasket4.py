@@ -1,7 +1,7 @@
 from . import base_types
-import BasketConstituents3
-import Max52Text
-import LEIIdentifier
+from .LEIIdentifier import LEIIdentifier
+from .Max52Text import Max52Text
+from .BasketConstituents3 import BasketConstituents3
 
 class CustomBasket4(base_types._BaseFieldType):
 

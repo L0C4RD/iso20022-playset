@@ -1,7 +1,7 @@
 from . import base_types
-import ISODateTime
-import Max35Text
-import TrueFalseIndicator
+from .Max35Text import Max35Text
+from .TrueFalseIndicator import TrueFalseIndicator
+from .ISODateTime import ISODateTime
 
 class PayloadData2(base_types._BaseFieldType):
 

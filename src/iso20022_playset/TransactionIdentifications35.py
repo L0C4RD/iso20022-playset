@@ -1,21 +1,21 @@
 from . import base_types
-import RestrictedFINXMax16Text
+from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class TransactionIdentifications35(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_CmonId"]
+	__slots__ = ["_CmonId", "_AcctSvcrTxId", "_AcctOwnrTxId"]
 	@property
-	def AcctOwnrTxId(self):
-		return self._AcctOwnrTxId
+	def CmonId(self):
+		return self._CmonId
 
-	@AcctOwnrTxId.setter
-	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != auto else self.make_default("AcctOwnrTxId")
+	@CmonId.setter
+	def CmonId(self, value):
+		self._CmonId = value if type(value) != auto else self.make_default("CmonId")
 
-	@AcctOwnrTxId.deleter
-	def AcctOwnrTxId(self):
-		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
+	@CmonId.deleter
+	def CmonId(self):
+		del self._CmonId
+		self._CmonId = None
 
 	@property
 	def AcctSvcrTxId(self):
@@ -31,21 +31,21 @@ class TransactionIdentifications35(base_types._BaseFieldType):
 		self._AcctSvcrTxId = None
 
 	@property
-	def CmonId(self):
-		return self._CmonId
+	def AcctOwnrTxId(self):
+		return self._AcctOwnrTxId
 
-	@CmonId.setter
-	def CmonId(self, value):
-		self._CmonId = value if type(value) != auto else self.make_default("CmonId")
+	@AcctOwnrTxId.setter
+	def AcctOwnrTxId(self, value):
+		self._AcctOwnrTxId = value if type(value) != auto else self.make_default("AcctOwnrTxId")
 
-	@CmonId.deleter
-	def CmonId(self):
-		del self._CmonId
-		self._CmonId = None
+	@AcctOwnrTxId.deleter
+	def AcctOwnrTxId(self):
+		del self._AcctOwnrTxId
+		self._AcctOwnrTxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

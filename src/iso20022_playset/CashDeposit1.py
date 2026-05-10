@@ -1,6 +1,6 @@
 from . import base_types
-import Max15NumericText
-import ActiveCurrencyAndAmount
+from .Max15NumericText import Max15NumericText
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class CashDeposit1(base_types._BaseFieldType):
 

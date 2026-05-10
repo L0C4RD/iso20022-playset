@@ -1,6 +1,6 @@
 from . import base_types
-import CorporationActionMovementProcessingStatus2
-import CorporateActionMovementRejectionStatus2
+from .CorporationActionMovementProcessingStatus2 import CorporationActionMovementProcessingStatus2
+from .CorporateActionMovementRejectionStatus2 import CorporateActionMovementRejectionStatus2
 
 class CorporateMovementStatus2(base_types._BaseFieldType):
 

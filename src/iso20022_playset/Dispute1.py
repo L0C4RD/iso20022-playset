@@ -1,11 +1,24 @@
 from . import base_types
-import ISODate
-import Max35Text
-import ActiveCurrencyAndAmount
+from .Max35Text import Max35Text
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .ISODate import ISODate
 
 class Dispute1(base_types._BaseFieldType):
 
-	__slots__ = ["_DsptdAmt", "_DsptDt", "_MrgnCallReqId"]
+	__slots__ = ["_MrgnCallReqId", "_DsptdAmt", "_DsptDt"]
+	@property
+	def MrgnCallReqId(self):
+		return self._MrgnCallReqId
+
+	@MrgnCallReqId.setter
+	def MrgnCallReqId(self, value):
+		self._MrgnCallReqId = value if type(value) != auto else self.make_default("MrgnCallReqId")
+
+	@MrgnCallReqId.deleter
+	def MrgnCallReqId(self):
+		del self._MrgnCallReqId
+		self._MrgnCallReqId = None
+
 	@property
 	def DsptdAmt(self):
 		return self._DsptdAmt
@@ -32,22 +45,9 @@ class Dispute1(base_types._BaseFieldType):
 		del self._DsptDt
 		self._DsptDt = None
 
-	@property
-	def MrgnCallReqId(self):
-		return self._MrgnCallReqId
-
-	@MrgnCallReqId.setter
-	def MrgnCallReqId(self, value):
-		self._MrgnCallReqId = value if type(value) != auto else self.make_default("MrgnCallReqId")
-
-	@MrgnCallReqId.deleter
-	def MrgnCallReqId(self):
-		del self._MrgnCallReqId
-		self._MrgnCallReqId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MrgnCallReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsptdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsptDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrgnCallReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

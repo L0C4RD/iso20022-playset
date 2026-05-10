@@ -1,5 +1,5 @@
 from . import base_types
-import FinancialInstrumentQuantity1
+from .FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
 
 class ClosingBalance3Choice(base_types._BaseFieldType):
 

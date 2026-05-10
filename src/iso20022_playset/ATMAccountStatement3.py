@@ -1,23 +1,23 @@
 from . import base_types
-import AccountIdentification80Choice
-import ATMAccountStatement2
-import Max70Text
+from .Max70Text import Max70Text
+from .ATMAccountStatement2 import ATMAccountStatement2
+from .AccountIdentification80Choice import AccountIdentification80Choice
 
 class ATMAccountStatement3(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctNm", "_AcctIdr", "_AcctStmt"]
+	__slots__ = ["_AcctStmt", "_AcctIdr", "_AcctNm"]
 	@property
-	def AcctNm(self):
-		return self._AcctNm
+	def AcctStmt(self):
+		return self._AcctStmt
 
-	@AcctNm.setter
-	def AcctNm(self, value):
-		self._AcctNm = value if type(value) != auto else self.make_default("AcctNm")
+	@AcctStmt.setter
+	def AcctStmt(self, value):
+		self._AcctStmt = value if type(value) != auto else self.make_default("AcctStmt")
 
-	@AcctNm.deleter
-	def AcctNm(self):
-		del self._AcctNm
-		self._AcctNm = None
+	@AcctStmt.deleter
+	def AcctStmt(self):
+		del self._AcctStmt
+		self._AcctStmt = None
 
 	@property
 	def AcctIdr(self):
@@ -33,21 +33,21 @@ class ATMAccountStatement3(base_types._BaseFieldType):
 		self._AcctIdr = None
 
 	@property
-	def AcctStmt(self):
-		return self._AcctStmt
+	def AcctNm(self):
+		return self._AcctNm
 
-	@AcctStmt.setter
-	def AcctStmt(self, value):
-		self._AcctStmt = value if type(value) != auto else self.make_default("AcctStmt")
+	@AcctNm.setter
+	def AcctNm(self, value):
+		self._AcctNm = value if type(value) != auto else self.make_default("AcctNm")
 
-	@AcctStmt.deleter
-	def AcctStmt(self):
-		del self._AcctStmt
-		self._AcctStmt = None
+	@AcctNm.deleter
+	def AcctNm(self):
+		del self._AcctNm
+		self._AcctNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctIdr', type=AccountIdentification80Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctStmt', type=ATMAccountStatement2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctIdr', type=AccountIdentification80Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

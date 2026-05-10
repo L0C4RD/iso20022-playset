@@ -1,8 +1,8 @@
 from . import base_types
-import Member6
-import MemberIdentification3Choice
-import MessageHeader1
-import SupplementaryData1
+from .Member6 import Member6
+from .MemberIdentification3Choice import MemberIdentification3Choice
+from .MessageHeader1 import MessageHeader1
+from .SupplementaryData1 import SupplementaryData1
 
 class ModifyMemberV04(base_types._BaseFieldType):
 

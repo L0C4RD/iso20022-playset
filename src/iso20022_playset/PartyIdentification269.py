@@ -1,13 +1,26 @@
 from . import base_types
-import PartyIdentification198Choice
-import PersonName2
-import CountryCode
-import Max256Text
-import Max35Text
+from .CountryCode import CountryCode
+from .Max35Text import Max35Text
+from .PartyIdentification198Choice import PartyIdentification198Choice
+from .Max256Text import Max256Text
+from .PersonName2 import PersonName2
 
 class PartyIdentification269(base_types._BaseFieldType):
 
-	__slots__ = ["_CpnyRegrShrhldrId", "_Id", "_EmailAdr", "_NmAndAdr", "_CtryOfIncorprtn"]
+	__slots__ = ["_Id", "_CpnyRegrShrhldrId", "_CtryOfIncorprtn", "_EmailAdr", "_NmAndAdr"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	@property
 	def CpnyRegrShrhldrId(self):
 		return self._CpnyRegrShrhldrId
@@ -22,17 +35,17 @@ class PartyIdentification269(base_types._BaseFieldType):
 		self._CpnyRegrShrhldrId = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def CtryOfIncorprtn(self):
+		return self._CtryOfIncorprtn
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@CtryOfIncorprtn.setter
+	def CtryOfIncorprtn(self, value):
+		self._CtryOfIncorprtn = value if type(value) != auto else self.make_default("CtryOfIncorprtn")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@CtryOfIncorprtn.deleter
+	def CtryOfIncorprtn(self):
+		del self._CtryOfIncorprtn
+		self._CtryOfIncorprtn = None
 
 	@property
 	def EmailAdr(self):
@@ -60,24 +73,11 @@ class PartyIdentification269(base_types._BaseFieldType):
 		del self._NmAndAdr
 		self._NmAndAdr = None
 
-	@property
-	def CtryOfIncorprtn(self):
-		return self._CtryOfIncorprtn
-
-	@CtryOfIncorprtn.setter
-	def CtryOfIncorprtn(self, value):
-		self._CtryOfIncorprtn = value if type(value) != auto else self.make_default("CtryOfIncorprtn")
-
-	@CtryOfIncorprtn.deleter
-	def CtryOfIncorprtn(self):
-		del self._CtryOfIncorprtn
-		self._CtryOfIncorprtn = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CpnyRegrShrhldrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification198Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpnyRegrShrhldrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfIncorprtn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=PersonName2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryOfIncorprtn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

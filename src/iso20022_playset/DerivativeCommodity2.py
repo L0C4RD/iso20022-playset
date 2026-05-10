@@ -1,7 +1,7 @@
 from . import base_types
-import AssetClassTransactionType1Code
-import AssetClassCommodity3Choice
-import AssetPriceType1Code
+from .AssetClassTransactionType1Code import AssetClassTransactionType1Code
+from .AssetClassCommodity3Choice import AssetClassCommodity3Choice
+from .AssetPriceType1Code import AssetPriceType1Code
 
 class DerivativeCommodity2(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import VoteInstruction7Code
+from .VoteInstruction7Code import VoteInstruction7Code
+from .GenericIdentification30 import GenericIdentification30
 
 class VoteInstructionType2Choice(base_types._BaseFieldType):
 

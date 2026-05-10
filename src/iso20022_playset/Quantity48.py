@@ -1,12 +1,12 @@
 from . import base_types
-import Max210Text
-import SecuritiesCertificate4
-import FinancialInstrumentQuantity33Choice
-import QuantityBreakdown62
+from .Max210Text import Max210Text
+from .FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
+from .QuantityBreakdown62 import QuantityBreakdown62
+from .SecuritiesCertificate4 import SecuritiesCertificate4
 
 class Quantity48(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmQty", "_CertNb", "_QtyBrkdwn", "_DnmtnChc"]
+	__slots__ = ["_SttlmQty", "_CertNb", "_DnmtnChc", "_QtyBrkdwn"]
 	@property
 	def SttlmQty(self):
 		return self._SttlmQty
@@ -34,19 +34,6 @@ class Quantity48(base_types._BaseFieldType):
 		self._CertNb = None
 
 	@property
-	def QtyBrkdwn(self):
-		return self._QtyBrkdwn
-
-	@QtyBrkdwn.setter
-	def QtyBrkdwn(self, value):
-		self._QtyBrkdwn = value if type(value) != auto else self.make_default("QtyBrkdwn")
-
-	@QtyBrkdwn.deleter
-	def QtyBrkdwn(self):
-		del self._QtyBrkdwn
-		self._QtyBrkdwn = None
-
-	@property
 	def DnmtnChc(self):
 		return self._DnmtnChc
 
@@ -59,10 +46,23 @@ class Quantity48(base_types._BaseFieldType):
 		del self._DnmtnChc
 		self._DnmtnChc = None
 
+	@property
+	def QtyBrkdwn(self):
+		return self._QtyBrkdwn
+
+	@QtyBrkdwn.setter
+	def QtyBrkdwn(self, value):
+		self._QtyBrkdwn = value if type(value) != auto else self.make_default("QtyBrkdwn")
+
+	@QtyBrkdwn.deleter
+	def QtyBrkdwn(self):
+		del self._QtyBrkdwn
+		self._QtyBrkdwn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SttlmQty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CertNb', type=SecuritiesCertificate4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown62, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DnmtnChc', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown62, min=0, max=None, mutex_group=None, array=True),
 	))
 

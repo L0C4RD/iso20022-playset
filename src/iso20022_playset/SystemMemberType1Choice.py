@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalSystemMemberType1Code
-import Max35Text
+from .ExternalSystemMemberType1Code import ExternalSystemMemberType1Code
+from .Max35Text import Max35Text
 
 class SystemMemberType1Choice(base_types._BaseFieldType):
 

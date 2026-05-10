@@ -1,6 +1,6 @@
 from . import base_types
-import Max210Text
-import AcknowledgementReason12Choice
+from .AcknowledgementReason12Choice import AcknowledgementReason12Choice
+from .Max210Text import Max210Text
 
 class AcknowledgementReason9(base_types._BaseFieldType):
 

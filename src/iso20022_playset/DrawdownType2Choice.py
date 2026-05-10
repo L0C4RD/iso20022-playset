@@ -1,6 +1,6 @@
 from . import base_types
-import DrawdownType2Code
-import GenericIdentification36
+from .DrawdownType2Code import DrawdownType2Code
+from .GenericIdentification36 import GenericIdentification36
 
 class DrawdownType2Choice(base_types._BaseFieldType):
 

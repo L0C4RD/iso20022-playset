@@ -1,38 +1,12 @@
 from . import base_types
-import Max35Text
-import TransactionEnvironment2Code
-import ATMEquipment1
-import PostalAddress17
+from .TransactionEnvironment2Code import TransactionEnvironment2Code
+from .PostalAddress17 import PostalAddress17
+from .Max35Text import Max35Text
+from .ATMEquipment1 import ATMEquipment1
 
 class AutomatedTellerMachine6(base_types._BaseFieldType):
 
-	__slots__ = ["_Eqpmnt", "_AddtlId", "_LctnCtgy", "_Id", "_Lctn", "_SeqNb"]
-	@property
-	def Eqpmnt(self):
-		return self._Eqpmnt
-
-	@Eqpmnt.setter
-	def Eqpmnt(self, value):
-		self._Eqpmnt = value if type(value) != auto else self.make_default("Eqpmnt")
-
-	@Eqpmnt.deleter
-	def Eqpmnt(self):
-		del self._Eqpmnt
-		self._Eqpmnt = None
-
-	@property
-	def AddtlId(self):
-		return self._AddtlId
-
-	@AddtlId.setter
-	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
-
-	@AddtlId.deleter
-	def AddtlId(self):
-		del self._AddtlId
-		self._AddtlId = None
-
+	__slots__ = ["_LctnCtgy", "_SeqNb", "_Id", "_Lctn", "_Eqpmnt", "_AddtlId"]
 	@property
 	def LctnCtgy(self):
 		return self._LctnCtgy
@@ -45,6 +19,19 @@ class AutomatedTellerMachine6(base_types._BaseFieldType):
 	def LctnCtgy(self):
 		del self._LctnCtgy
 		self._LctnCtgy = None
+
+	@property
+	def SeqNb(self):
+		return self._SeqNb
+
+	@SeqNb.setter
+	def SeqNb(self, value):
+		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
+
+	@SeqNb.deleter
+	def SeqNb(self):
+		del self._SeqNb
+		self._SeqNb = None
 
 	@property
 	def Id(self):
@@ -73,24 +60,37 @@ class AutomatedTellerMachine6(base_types._BaseFieldType):
 		self._Lctn = None
 
 	@property
-	def SeqNb(self):
-		return self._SeqNb
+	def Eqpmnt(self):
+		return self._Eqpmnt
 
-	@SeqNb.setter
-	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
+	@Eqpmnt.setter
+	def Eqpmnt(self, value):
+		self._Eqpmnt = value if type(value) != auto else self.make_default("Eqpmnt")
 
-	@SeqNb.deleter
-	def SeqNb(self):
-		del self._SeqNb
-		self._SeqNb = None
+	@Eqpmnt.deleter
+	def Eqpmnt(self):
+		del self._Eqpmnt
+		self._Eqpmnt = None
+
+	@property
+	def AddtlId(self):
+		return self._AddtlId
+
+	@AddtlId.setter
+	def AddtlId(self, value):
+		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
+
+	@AddtlId.deleter
+	def AddtlId(self):
+		del self._AddtlId
+		self._AddtlId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Eqpmnt', type=ATMEquipment1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LctnCtgy', type=TransactionEnvironment2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lctn', type=PostalAddress17, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Eqpmnt', type=ATMEquipment1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

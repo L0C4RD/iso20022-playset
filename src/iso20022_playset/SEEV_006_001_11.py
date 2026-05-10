@@ -1,5 +1,5 @@
 from . import base_types
-import MeetingInstructionStatusV11
+from .MeetingInstructionStatusV11 import MeetingInstructionStatusV11
 
 class SEEV_006_001_11():
 

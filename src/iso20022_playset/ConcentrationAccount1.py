@@ -1,12 +1,12 @@
 from . import base_types
-import Max10NumericText
-import Flows1
-import AmountAndDirection102
-import ActiveCurrencyAndAmount
+from .AmountAndDirection102 import AmountAndDirection102
+from .Max10NumericText import Max10NumericText
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .Flows1 import Flows1
 
 class ConcentrationAccount1(base_types._BaseFieldType):
 
-	__slots__ = ["_PeakCdt", "_OutFlow", "_EndOfDay", "_InFlow", "_LatePmtConf", "_PeakDbt"]
+	__slots__ = ["_PeakCdt", "_OutFlow", "_EndOfDay", "_PeakDbt", "_InFlow", "_LatePmtConf"]
 	@property
 	def PeakCdt(self):
 		return self._PeakCdt
@@ -47,6 +47,19 @@ class ConcentrationAccount1(base_types._BaseFieldType):
 		self._EndOfDay = None
 
 	@property
+	def PeakDbt(self):
+		return self._PeakDbt
+
+	@PeakDbt.setter
+	def PeakDbt(self, value):
+		self._PeakDbt = value if type(value) != auto else self.make_default("PeakDbt")
+
+	@PeakDbt.deleter
+	def PeakDbt(self):
+		del self._PeakDbt
+		self._PeakDbt = None
+
+	@property
 	def InFlow(self):
 		return self._InFlow
 
@@ -72,25 +85,12 @@ class ConcentrationAccount1(base_types._BaseFieldType):
 		del self._LatePmtConf
 		self._LatePmtConf = None
 
-	@property
-	def PeakDbt(self):
-		return self._PeakDbt
-
-	@PeakDbt.setter
-	def PeakDbt(self, value):
-		self._PeakDbt = value if type(value) != auto else self.make_default("PeakDbt")
-
-	@PeakDbt.deleter
-	def PeakDbt(self):
-		del self._PeakDbt
-		self._PeakDbt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PeakCdt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OutFlow', type=Flows1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndOfDay', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PeakDbt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InFlow', type=Flows1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LatePmtConf', type=Max10NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PeakDbt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

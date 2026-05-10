@@ -1,6 +1,6 @@
 from . import base_types
-import Max350Text
-import ConditionallyAcceptedStatusReason3Choice
+from .Max350Text import Max350Text
+from .ConditionallyAcceptedStatusReason3Choice import ConditionallyAcceptedStatusReason3Choice
 
 class ConditionallyAcceptedStatusReason3(base_types._BaseFieldType):
 

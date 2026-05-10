@@ -1,25 +1,12 @@
 from . import base_types
-import AnyBICIdentifier
-import MICIdentifier
-import CountryCode
-import Max35Text
+from .AnyBICIdentifier import AnyBICIdentifier
+from .Max35Text import Max35Text
+from .CountryCode import CountryCode
+from .MICIdentifier import MICIdentifier
 
 class PlaceOfTradeIdentification1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Xchg", "_OverTheCntr", "_Pty", "_Ctry"]
-	@property
-	def Xchg(self):
-		return self._Xchg
-
-	@Xchg.setter
-	def Xchg(self, value):
-		self._Xchg = value if type(value) != auto else self.make_default("Xchg")
-
-	@Xchg.deleter
-	def Xchg(self):
-		del self._Xchg
-		self._Xchg = None
-
+	__slots__ = ["_OverTheCntr", "_Pty", "_Ctry", "_Xchg"]
 	@property
 	def OverTheCntr(self):
 		return self._OverTheCntr
@@ -59,10 +46,23 @@ class PlaceOfTradeIdentification1Choice(base_types._BaseFieldType):
 		del self._Ctry
 		self._Ctry = None
 
+	@property
+	def Xchg(self):
+		return self._Xchg
+
+	@Xchg.setter
+	def Xchg(self, value):
+		self._Xchg = value if type(value) != auto else self.make_default("Xchg")
+
+	@Xchg.deleter
+	def Xchg(self):
+		del self._Xchg
+		self._Xchg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Xchg', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OverTheCntr', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pty', type=AnyBICIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Xchg', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

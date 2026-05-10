@@ -1,12 +1,12 @@
 from . import base_types
-import DocumentAdjustment1
-import TaxAmountAndType1
-import DiscountAmountAndType1
-import ActiveOrHistoricCurrencyAndAmount
+from .DiscountAmountAndType1 import DiscountAmountAndType1
+from .DocumentAdjustment1 import DocumentAdjustment1
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .TaxAmountAndType1 import TaxAmountAndType1
 
 class RemittanceAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtNoteAmt", "_AdjstmntAmtAndRsn", "_DscntApldAmt", "_DuePyblAmt", "_TaxAmt", "_RmtdAmt"]
+	__slots__ = ["_CdtNoteAmt", "_TaxAmt", "_DuePyblAmt", "_RmtdAmt", "_DscntApldAmt", "_AdjstmntAmtAndRsn"]
 	@property
 	def CdtNoteAmt(self):
 		return self._CdtNoteAmt
@@ -19,45 +19,6 @@ class RemittanceAmount2(base_types._BaseFieldType):
 	def CdtNoteAmt(self):
 		del self._CdtNoteAmt
 		self._CdtNoteAmt = None
-
-	@property
-	def AdjstmntAmtAndRsn(self):
-		return self._AdjstmntAmtAndRsn
-
-	@AdjstmntAmtAndRsn.setter
-	def AdjstmntAmtAndRsn(self, value):
-		self._AdjstmntAmtAndRsn = value if type(value) != auto else self.make_default("AdjstmntAmtAndRsn")
-
-	@AdjstmntAmtAndRsn.deleter
-	def AdjstmntAmtAndRsn(self):
-		del self._AdjstmntAmtAndRsn
-		self._AdjstmntAmtAndRsn = None
-
-	@property
-	def DscntApldAmt(self):
-		return self._DscntApldAmt
-
-	@DscntApldAmt.setter
-	def DscntApldAmt(self, value):
-		self._DscntApldAmt = value if type(value) != auto else self.make_default("DscntApldAmt")
-
-	@DscntApldAmt.deleter
-	def DscntApldAmt(self):
-		del self._DscntApldAmt
-		self._DscntApldAmt = None
-
-	@property
-	def DuePyblAmt(self):
-		return self._DuePyblAmt
-
-	@DuePyblAmt.setter
-	def DuePyblAmt(self, value):
-		self._DuePyblAmt = value if type(value) != auto else self.make_default("DuePyblAmt")
-
-	@DuePyblAmt.deleter
-	def DuePyblAmt(self):
-		del self._DuePyblAmt
-		self._DuePyblAmt = None
 
 	@property
 	def TaxAmt(self):
@@ -73,6 +34,19 @@ class RemittanceAmount2(base_types._BaseFieldType):
 		self._TaxAmt = None
 
 	@property
+	def DuePyblAmt(self):
+		return self._DuePyblAmt
+
+	@DuePyblAmt.setter
+	def DuePyblAmt(self, value):
+		self._DuePyblAmt = value if type(value) != auto else self.make_default("DuePyblAmt")
+
+	@DuePyblAmt.deleter
+	def DuePyblAmt(self):
+		del self._DuePyblAmt
+		self._DuePyblAmt = None
+
+	@property
 	def RmtdAmt(self):
 		return self._RmtdAmt
 
@@ -85,12 +59,38 @@ class RemittanceAmount2(base_types._BaseFieldType):
 		del self._RmtdAmt
 		self._RmtdAmt = None
 
+	@property
+	def DscntApldAmt(self):
+		return self._DscntApldAmt
+
+	@DscntApldAmt.setter
+	def DscntApldAmt(self, value):
+		self._DscntApldAmt = value if type(value) != auto else self.make_default("DscntApldAmt")
+
+	@DscntApldAmt.deleter
+	def DscntApldAmt(self):
+		del self._DscntApldAmt
+		self._DscntApldAmt = None
+
+	@property
+	def AdjstmntAmtAndRsn(self):
+		return self._AdjstmntAmtAndRsn
+
+	@AdjstmntAmtAndRsn.setter
+	def AdjstmntAmtAndRsn(self, value):
+		self._AdjstmntAmtAndRsn = value if type(value) != auto else self.make_default("AdjstmntAmtAndRsn")
+
+	@AdjstmntAmtAndRsn.deleter
+	def AdjstmntAmtAndRsn(self):
+		del self._AdjstmntAmtAndRsn
+		self._AdjstmntAmtAndRsn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtNoteAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdjstmntAmtAndRsn', type=DocumentAdjustment1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DscntApldAmt', type=DiscountAmountAndType1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DuePyblAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxAmt', type=TaxAmountAndType1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DuePyblAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmtdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DscntApldAmt', type=DiscountAmountAndType1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AdjstmntAmtAndRsn', type=DocumentAdjustment1, min=0, max=None, mutex_group=None, array=True),
 	))
 

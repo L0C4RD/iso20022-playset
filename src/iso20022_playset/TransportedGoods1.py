@@ -1,23 +1,23 @@
 from . import base_types
-import DocumentIdentification7
-import UserDefinedInformation1
-import Max70Text
+from .Max70Text import Max70Text
+from .UserDefinedInformation1 import UserDefinedInformation1
+from .DocumentIdentification7 import DocumentIdentification7
 
 class TransportedGoods1(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyrDfndInf", "_PurchsOrdrRef", "_GoodsDesc", "_SellrDfndInf"]
+	__slots__ = ["_GoodsDesc", "_PurchsOrdrRef", "_SellrDfndInf", "_BuyrDfndInf"]
 	@property
-	def BuyrDfndInf(self):
-		return self._BuyrDfndInf
+	def GoodsDesc(self):
+		return self._GoodsDesc
 
-	@BuyrDfndInf.setter
-	def BuyrDfndInf(self, value):
-		self._BuyrDfndInf = value if type(value) != auto else self.make_default("BuyrDfndInf")
+	@GoodsDesc.setter
+	def GoodsDesc(self, value):
+		self._GoodsDesc = value if type(value) != auto else self.make_default("GoodsDesc")
 
-	@BuyrDfndInf.deleter
-	def BuyrDfndInf(self):
-		del self._BuyrDfndInf
-		self._BuyrDfndInf = None
+	@GoodsDesc.deleter
+	def GoodsDesc(self):
+		del self._GoodsDesc
+		self._GoodsDesc = None
 
 	@property
 	def PurchsOrdrRef(self):
@@ -33,19 +33,6 @@ class TransportedGoods1(base_types._BaseFieldType):
 		self._PurchsOrdrRef = None
 
 	@property
-	def GoodsDesc(self):
-		return self._GoodsDesc
-
-	@GoodsDesc.setter
-	def GoodsDesc(self, value):
-		self._GoodsDesc = value if type(value) != auto else self.make_default("GoodsDesc")
-
-	@GoodsDesc.deleter
-	def GoodsDesc(self):
-		del self._GoodsDesc
-		self._GoodsDesc = None
-
-	@property
 	def SellrDfndInf(self):
 		return self._SellrDfndInf
 
@@ -58,10 +45,23 @@ class TransportedGoods1(base_types._BaseFieldType):
 		del self._SellrDfndInf
 		self._SellrDfndInf = None
 
+	@property
+	def BuyrDfndInf(self):
+		return self._BuyrDfndInf
+
+	@BuyrDfndInf.setter
+	def BuyrDfndInf(self, value):
+		self._BuyrDfndInf = value if type(value) != auto else self.make_default("BuyrDfndInf")
+
+	@BuyrDfndInf.deleter
+	def BuyrDfndInf(self):
+		del self._BuyrDfndInf
+		self._BuyrDfndInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BuyrDfndInf', type=UserDefinedInformation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GoodsDesc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SellrDfndInf', type=UserDefinedInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BuyrDfndInf', type=UserDefinedInformation1, min=0, max=None, mutex_group=None, array=True),
 	))
 

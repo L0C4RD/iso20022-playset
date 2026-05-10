@@ -1,7 +1,7 @@
 from . import base_types
-import FinancialInstrument58
-import LEIIdentifier
-import ISINOct2015Identifier
+from .LEIIdentifier import LEIIdentifier
+from .ISINOct2015Identifier import ISINOct2015Identifier
+from .FinancialInstrument58 import FinancialInstrument58
 
 class FinancialInstrument48Choice(base_types._BaseFieldType):
 

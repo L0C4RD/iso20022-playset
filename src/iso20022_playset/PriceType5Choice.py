@@ -1,5 +1,5 @@
 from . import base_types
-import Price3
+from .Price3 import Price3
 
 class PriceType5Choice(base_types._BaseFieldType):
 

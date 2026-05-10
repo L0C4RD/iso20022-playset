@@ -1,13 +1,26 @@
 from . import base_types
-import ISODate
-import Frequency37Choice
-import Max3NumericText
-import EndPoint1Choice
-import BusinessDayConvention1Code
+from .BusinessDayConvention1Code import BusinessDayConvention1Code
+from .ISODate import ISODate
+from .Max3NumericText import Max3NumericText
+from .EndPoint1Choice import EndPoint1Choice
+from .Frequency37Choice import Frequency37Choice
 
 class Frequency1(base_types._BaseFieldType):
 
-	__slots__ = ["_NonWorkgDayAdjstmnt", "_ReqdFrqcyPttrn", "_StartDt", "_EndPtChc", "_Seq"]
+	__slots__ = ["_Seq", "_NonWorkgDayAdjstmnt", "_ReqdFrqcyPttrn", "_EndPtChc", "_StartDt"]
+	@property
+	def Seq(self):
+		return self._Seq
+
+	@Seq.setter
+	def Seq(self, value):
+		self._Seq = value if type(value) != auto else self.make_default("Seq")
+
+	@Seq.deleter
+	def Seq(self):
+		del self._Seq
+		self._Seq = None
+
 	@property
 	def NonWorkgDayAdjstmnt(self):
 		return self._NonWorkgDayAdjstmnt
@@ -35,19 +48,6 @@ class Frequency1(base_types._BaseFieldType):
 		self._ReqdFrqcyPttrn = None
 
 	@property
-	def StartDt(self):
-		return self._StartDt
-
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
-
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
-
-	@property
 	def EndPtChc(self):
 		return self._EndPtChc
 
@@ -61,23 +61,23 @@ class Frequency1(base_types._BaseFieldType):
 		self._EndPtChc = None
 
 	@property
-	def Seq(self):
-		return self._Seq
+	def StartDt(self):
+		return self._StartDt
 
-	@Seq.setter
-	def Seq(self, value):
-		self._Seq = value if type(value) != auto else self.make_default("Seq")
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
 
-	@Seq.deleter
-	def Seq(self):
-		del self._Seq
-		self._Seq = None
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Seq', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonWorkgDayAdjstmnt', type=BusinessDayConvention1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdFrqcyPttrn', type=Frequency37Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndPtChc', type=EndPoint1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Seq', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

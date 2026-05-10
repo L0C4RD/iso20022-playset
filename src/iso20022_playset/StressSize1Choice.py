@@ -1,6 +1,6 @@
 from . import base_types
-import BaseOneRate
-import Absolute1
+from .Absolute1 import Absolute1
+from .BaseOneRate import BaseOneRate
 
 class StressSize1Choice(base_types._BaseFieldType):
 

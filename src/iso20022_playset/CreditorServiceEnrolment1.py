@@ -1,25 +1,12 @@
 from . import base_types
-import Visibilty1
-import Max2048Text
-import DateAndDateTime2Choice
-import TrueFalseIndicator
+from .Visibilty1 import Visibilty1
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .TrueFalseIndicator import TrueFalseIndicator
+from .Max2048Text import Max2048Text
 
 class CreditorServiceEnrolment1(base_types._BaseFieldType):
 
-	__slots__ = ["_EnrlmntStartDt", "_Vsblty", "_EnrlmntEndDt", "_SvcDescLk", "_CdtrSvcActvtnLk", "_SvcActvtnAllwd"]
-	@property
-	def EnrlmntStartDt(self):
-		return self._EnrlmntStartDt
-
-	@EnrlmntStartDt.setter
-	def EnrlmntStartDt(self, value):
-		self._EnrlmntStartDt = value if type(value) != auto else self.make_default("EnrlmntStartDt")
-
-	@EnrlmntStartDt.deleter
-	def EnrlmntStartDt(self):
-		del self._EnrlmntStartDt
-		self._EnrlmntStartDt = None
-
+	__slots__ = ["_Vsblty", "_SvcDescLk", "_EnrlmntStartDt", "_SvcActvtnAllwd", "_EnrlmntEndDt", "_CdtrSvcActvtnLk"]
 	@property
 	def Vsblty(self):
 		return self._Vsblty
@@ -32,19 +19,6 @@ class CreditorServiceEnrolment1(base_types._BaseFieldType):
 	def Vsblty(self):
 		del self._Vsblty
 		self._Vsblty = None
-
-	@property
-	def EnrlmntEndDt(self):
-		return self._EnrlmntEndDt
-
-	@EnrlmntEndDt.setter
-	def EnrlmntEndDt(self, value):
-		self._EnrlmntEndDt = value if type(value) != auto else self.make_default("EnrlmntEndDt")
-
-	@EnrlmntEndDt.deleter
-	def EnrlmntEndDt(self):
-		del self._EnrlmntEndDt
-		self._EnrlmntEndDt = None
 
 	@property
 	def SvcDescLk(self):
@@ -60,17 +34,17 @@ class CreditorServiceEnrolment1(base_types._BaseFieldType):
 		self._SvcDescLk = None
 
 	@property
-	def CdtrSvcActvtnLk(self):
-		return self._CdtrSvcActvtnLk
+	def EnrlmntStartDt(self):
+		return self._EnrlmntStartDt
 
-	@CdtrSvcActvtnLk.setter
-	def CdtrSvcActvtnLk(self, value):
-		self._CdtrSvcActvtnLk = value if type(value) != auto else self.make_default("CdtrSvcActvtnLk")
+	@EnrlmntStartDt.setter
+	def EnrlmntStartDt(self, value):
+		self._EnrlmntStartDt = value if type(value) != auto else self.make_default("EnrlmntStartDt")
 
-	@CdtrSvcActvtnLk.deleter
-	def CdtrSvcActvtnLk(self):
-		del self._CdtrSvcActvtnLk
-		self._CdtrSvcActvtnLk = None
+	@EnrlmntStartDt.deleter
+	def EnrlmntStartDt(self):
+		del self._EnrlmntStartDt
+		self._EnrlmntStartDt = None
 
 	@property
 	def SvcActvtnAllwd(self):
@@ -85,12 +59,38 @@ class CreditorServiceEnrolment1(base_types._BaseFieldType):
 		del self._SvcActvtnAllwd
 		self._SvcActvtnAllwd = None
 
+	@property
+	def EnrlmntEndDt(self):
+		return self._EnrlmntEndDt
+
+	@EnrlmntEndDt.setter
+	def EnrlmntEndDt(self, value):
+		self._EnrlmntEndDt = value if type(value) != auto else self.make_default("EnrlmntEndDt")
+
+	@EnrlmntEndDt.deleter
+	def EnrlmntEndDt(self):
+		del self._EnrlmntEndDt
+		self._EnrlmntEndDt = None
+
+	@property
+	def CdtrSvcActvtnLk(self):
+		return self._CdtrSvcActvtnLk
+
+	@CdtrSvcActvtnLk.setter
+	def CdtrSvcActvtnLk(self, value):
+		self._CdtrSvcActvtnLk = value if type(value) != auto else self.make_default("CdtrSvcActvtnLk")
+
+	@CdtrSvcActvtnLk.deleter
+	def CdtrSvcActvtnLk(self):
+		del self._CdtrSvcActvtnLk
+		self._CdtrSvcActvtnLk = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EnrlmntStartDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vsblty', type=Visibilty1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EnrlmntEndDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcDescLk', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrSvcActvtnLk', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EnrlmntStartDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcActvtnAllwd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EnrlmntEndDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrSvcActvtnLk', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

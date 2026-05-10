@@ -1,7 +1,7 @@
 from . import base_types
-import SecuritiesCollateralResponse2
-import CashCollateralResponse3
-import OtherCollateralResponse3
+from .SecuritiesCollateralResponse2 import SecuritiesCollateralResponse2
+from .OtherCollateralResponse3 import OtherCollateralResponse3
+from .CashCollateralResponse3 import CashCollateralResponse3
 
 class CollateralResponse3(base_types._BaseFieldType):
 

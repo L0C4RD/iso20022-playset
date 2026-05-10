@@ -1,11 +1,11 @@
 from . import base_types
-import Limit2
-import EntryStatus1Choice
-import CreditDebitCode
+from .Limit2 import Limit2
+from .CreditDebitCode import CreditDebitCode
+from .EntryStatus1Choice import EntryStatus1Choice
 
 class TransactionType2(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_FlrLmt", "_Sts"]
+	__slots__ = ["_CdtDbtInd", "_Sts", "_FlrLmt"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
@@ -20,19 +20,6 @@ class TransactionType2(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
-	def FlrLmt(self):
-		return self._FlrLmt
-
-	@FlrLmt.setter
-	def FlrLmt(self, value):
-		self._FlrLmt = value if type(value) != auto else self.make_default("FlrLmt")
-
-	@FlrLmt.deleter
-	def FlrLmt(self):
-		del self._FlrLmt
-		self._FlrLmt = None
-
-	@property
 	def Sts(self):
 		return self._Sts
 
@@ -45,9 +32,22 @@ class TransactionType2(base_types._BaseFieldType):
 		del self._Sts
 		self._Sts = None
 
+	@property
+	def FlrLmt(self):
+		return self._FlrLmt
+
+	@FlrLmt.setter
+	def FlrLmt(self, value):
+		self._FlrLmt = value if type(value) != auto else self.make_default("FlrLmt")
+
+	@FlrLmt.deleter
+	def FlrLmt(self):
+		del self._FlrLmt
+		self._FlrLmt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FlrLmt', type=Limit2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=EntryStatus1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FlrLmt', type=Limit2, min=0, max=None, mutex_group=None, array=True),
 	))
 

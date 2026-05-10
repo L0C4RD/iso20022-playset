@@ -1,23 +1,23 @@
 from . import base_types
-import DemandStatus1Code
-import Undertaking9
-import Demand4
+from .Demand4 import Demand4
+from .Undertaking9 import Undertaking9
+from .DemandStatus1Code import DemandStatus1Code
 
 class ExtendOrPayQuery2(base_types._BaseFieldType):
 
-	__slots__ = ["_DmndDtls", "_UdrtkgId", "_Sts"]
+	__slots__ = ["_Sts", "_UdrtkgId", "_DmndDtls"]
 	@property
-	def DmndDtls(self):
-		return self._DmndDtls
+	def Sts(self):
+		return self._Sts
 
-	@DmndDtls.setter
-	def DmndDtls(self, value):
-		self._DmndDtls = value if type(value) != auto else self.make_default("DmndDtls")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
 
-	@DmndDtls.deleter
-	def DmndDtls(self):
-		del self._DmndDtls
-		self._DmndDtls = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	@property
 	def UdrtkgId(self):
@@ -33,21 +33,21 @@ class ExtendOrPayQuery2(base_types._BaseFieldType):
 		self._UdrtkgId = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def DmndDtls(self):
+		return self._DmndDtls
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@DmndDtls.setter
+	def DmndDtls(self, value):
+		self._DmndDtls = value if type(value) != auto else self.make_default("DmndDtls")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@DmndDtls.deleter
+	def DmndDtls(self):
+		del self._DmndDtls
+		self._DmndDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DmndDtls', type=Demand4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=DemandStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DmndDtls', type=Demand4, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
-import Max2000Text
-import Amendment3
-import PartyAndSignature2
+from .PartyAndSignature2 import PartyAndSignature2
+from .Max2000Text import Max2000Text
+from .Amendment3 import Amendment3
 
 class UndertakingAmendmentRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgAmdmntReqDtls", "_InstrsToBk", "_DgtlSgntr"]
-	@property
-	def UdrtkgAmdmntReqDtls(self):
-		return self._UdrtkgAmdmntReqDtls
-
-	@UdrtkgAmdmntReqDtls.setter
-	def UdrtkgAmdmntReqDtls(self, value):
-		self._UdrtkgAmdmntReqDtls = value if type(value) != auto else self.make_default("UdrtkgAmdmntReqDtls")
-
-	@UdrtkgAmdmntReqDtls.deleter
-	def UdrtkgAmdmntReqDtls(self):
-		del self._UdrtkgAmdmntReqDtls
-		self._UdrtkgAmdmntReqDtls = None
-
+	__slots__ = ["_InstrsToBk", "_DgtlSgntr", "_UdrtkgAmdmntReqDtls"]
 	@property
 	def InstrsToBk(self):
 		return self._InstrsToBk
@@ -45,9 +32,22 @@ class UndertakingAmendmentRequestV01(base_types._BaseFieldType):
 		del self._DgtlSgntr
 		self._DgtlSgntr = None
 
+	@property
+	def UdrtkgAmdmntReqDtls(self):
+		return self._UdrtkgAmdmntReqDtls
+
+	@UdrtkgAmdmntReqDtls.setter
+	def UdrtkgAmdmntReqDtls(self, value):
+		self._UdrtkgAmdmntReqDtls = value if type(value) != auto else self.make_default("UdrtkgAmdmntReqDtls")
+
+	@UdrtkgAmdmntReqDtls.deleter
+	def UdrtkgAmdmntReqDtls(self):
+		del self._UdrtkgAmdmntReqDtls
+		self._UdrtkgAmdmntReqDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UdrtkgAmdmntReqDtls', type=Amendment3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrsToBk', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UdrtkgAmdmntReqDtls', type=Amendment3, min=1, max=1, mutex_group=None, array=False),
 	))
 

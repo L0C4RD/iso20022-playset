@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalInvestigationServiceLevel1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ExternalInvestigationServiceLevel1Code import ExternalInvestigationServiceLevel1Code
 
 class InvestigationServiceLevel1Choice(base_types._BaseFieldType):
 

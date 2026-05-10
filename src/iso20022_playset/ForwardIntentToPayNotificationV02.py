@@ -1,28 +1,28 @@
 from . import base_types
-import DocumentIdentification3
-import MessageIdentification1
-import PendingActivity2
-import TransactionStatus4
-import SimpleIdentificationInformation
-import IntentToPay2
-import BICIdentification1
-import DocumentIdentification5
+from .SimpleIdentificationInformation import SimpleIdentificationInformation
+from .MessageIdentification1 import MessageIdentification1
+from .TransactionStatus4 import TransactionStatus4
+from .BICIdentification1 import BICIdentification1
+from .IntentToPay2 import IntentToPay2
+from .PendingActivity2 import PendingActivity2
+from .DocumentIdentification3 import DocumentIdentification3
+from .DocumentIdentification5 import DocumentIdentification5
 
 class ForwardIntentToPayNotificationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_TxSts", "_EstblishdBaselnId", "_BuyrBk", "_InttToPay", "_NtfctnId", "_ReqForActn", "_UsrTxRef", "_SellrBk", "_TxId"]
+	__slots__ = ["_ReqForActn", "_EstblishdBaselnId", "_TxSts", "_TxId", "_UsrTxRef", "_NtfctnId", "_BuyrBk", "_SellrBk", "_InttToPay"]
 	@property
-	def TxSts(self):
-		return self._TxSts
+	def ReqForActn(self):
+		return self._ReqForActn
 
-	@TxSts.setter
-	def TxSts(self, value):
-		self._TxSts = value if type(value) != auto else self.make_default("TxSts")
+	@ReqForActn.setter
+	def ReqForActn(self, value):
+		self._ReqForActn = value if type(value) != auto else self.make_default("ReqForActn")
 
-	@TxSts.deleter
-	def TxSts(self):
-		del self._TxSts
-		self._TxSts = None
+	@ReqForActn.deleter
+	def ReqForActn(self):
+		del self._ReqForActn
+		self._ReqForActn = None
 
 	@property
 	def EstblishdBaselnId(self):
@@ -38,56 +38,30 @@ class ForwardIntentToPayNotificationV02(base_types._BaseFieldType):
 		self._EstblishdBaselnId = None
 
 	@property
-	def BuyrBk(self):
-		return self._BuyrBk
+	def TxSts(self):
+		return self._TxSts
 
-	@BuyrBk.setter
-	def BuyrBk(self, value):
-		self._BuyrBk = value if type(value) != auto else self.make_default("BuyrBk")
+	@TxSts.setter
+	def TxSts(self, value):
+		self._TxSts = value if type(value) != auto else self.make_default("TxSts")
 
-	@BuyrBk.deleter
-	def BuyrBk(self):
-		del self._BuyrBk
-		self._BuyrBk = None
-
-	@property
-	def InttToPay(self):
-		return self._InttToPay
-
-	@InttToPay.setter
-	def InttToPay(self, value):
-		self._InttToPay = value if type(value) != auto else self.make_default("InttToPay")
-
-	@InttToPay.deleter
-	def InttToPay(self):
-		del self._InttToPay
-		self._InttToPay = None
+	@TxSts.deleter
+	def TxSts(self):
+		del self._TxSts
+		self._TxSts = None
 
 	@property
-	def NtfctnId(self):
-		return self._NtfctnId
+	def TxId(self):
+		return self._TxId
 
-	@NtfctnId.setter
-	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@NtfctnId.deleter
-	def NtfctnId(self):
-		del self._NtfctnId
-		self._NtfctnId = None
-
-	@property
-	def ReqForActn(self):
-		return self._ReqForActn
-
-	@ReqForActn.setter
-	def ReqForActn(self, value):
-		self._ReqForActn = value if type(value) != auto else self.make_default("ReqForActn")
-
-	@ReqForActn.deleter
-	def ReqForActn(self):
-		del self._ReqForActn
-		self._ReqForActn = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def UsrTxRef(self):
@@ -103,6 +77,32 @@ class ForwardIntentToPayNotificationV02(base_types._BaseFieldType):
 		self._UsrTxRef = None
 
 	@property
+	def NtfctnId(self):
+		return self._NtfctnId
+
+	@NtfctnId.setter
+	def NtfctnId(self, value):
+		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
+
+	@NtfctnId.deleter
+	def NtfctnId(self):
+		del self._NtfctnId
+		self._NtfctnId = None
+
+	@property
+	def BuyrBk(self):
+		return self._BuyrBk
+
+	@BuyrBk.setter
+	def BuyrBk(self, value):
+		self._BuyrBk = value if type(value) != auto else self.make_default("BuyrBk")
+
+	@BuyrBk.deleter
+	def BuyrBk(self):
+		del self._BuyrBk
+		self._BuyrBk = None
+
+	@property
 	def SellrBk(self):
 		return self._SellrBk
 
@@ -116,27 +116,27 @@ class ForwardIntentToPayNotificationV02(base_types._BaseFieldType):
 		self._SellrBk = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def InttToPay(self):
+		return self._InttToPay
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@InttToPay.setter
+	def InttToPay(self, value):
+		self._InttToPay = value if type(value) != auto else self.make_default("InttToPay")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@InttToPay.deleter
+	def InttToPay(self):
+		del self._InttToPay
+		self._InttToPay = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InttToPay', type=IntentToPay2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InttToPay', type=IntentToPay2, min=1, max=1, mutex_group=None, array=False),
 	))
 

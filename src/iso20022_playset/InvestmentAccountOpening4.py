@@ -1,38 +1,12 @@
 from . import base_types
-import AccountOpeningType1Choice
-import Account23
-import Max35Text
-import AdditionalReference13
+from .Max35Text import Max35Text
+from .AccountOpeningType1Choice import AccountOpeningType1Choice
+from .Account23 import Account23
+from .AdditionalReference13 import AdditionalReference13
 
 class InvestmentAccountOpening4(base_types._BaseFieldType):
 
-	__slots__ = ["_OpngTp", "_ExstgAcctId", "_ClntRef", "_CtrPtyRef", "_AcctApplId"]
-	@property
-	def OpngTp(self):
-		return self._OpngTp
-
-	@OpngTp.setter
-	def OpngTp(self, value):
-		self._OpngTp = value if type(value) != auto else self.make_default("OpngTp")
-
-	@OpngTp.deleter
-	def OpngTp(self):
-		del self._OpngTp
-		self._OpngTp = None
-
-	@property
-	def ExstgAcctId(self):
-		return self._ExstgAcctId
-
-	@ExstgAcctId.setter
-	def ExstgAcctId(self, value):
-		self._ExstgAcctId = value if type(value) != auto else self.make_default("ExstgAcctId")
-
-	@ExstgAcctId.deleter
-	def ExstgAcctId(self):
-		del self._ExstgAcctId
-		self._ExstgAcctId = None
-
+	__slots__ = ["_ClntRef", "_CtrPtyRef", "_OpngTp", "_ExstgAcctId", "_AcctApplId"]
 	@property
 	def ClntRef(self):
 		return self._ClntRef
@@ -60,6 +34,32 @@ class InvestmentAccountOpening4(base_types._BaseFieldType):
 		self._CtrPtyRef = None
 
 	@property
+	def OpngTp(self):
+		return self._OpngTp
+
+	@OpngTp.setter
+	def OpngTp(self, value):
+		self._OpngTp = value if type(value) != auto else self.make_default("OpngTp")
+
+	@OpngTp.deleter
+	def OpngTp(self):
+		del self._OpngTp
+		self._OpngTp = None
+
+	@property
+	def ExstgAcctId(self):
+		return self._ExstgAcctId
+
+	@ExstgAcctId.setter
+	def ExstgAcctId(self, value):
+		self._ExstgAcctId = value if type(value) != auto else self.make_default("ExstgAcctId")
+
+	@ExstgAcctId.deleter
+	def ExstgAcctId(self):
+		del self._ExstgAcctId
+		self._ExstgAcctId = None
+
+	@property
 	def AcctApplId(self):
 		return self._AcctApplId
 
@@ -73,10 +73,10 @@ class InvestmentAccountOpening4(base_types._BaseFieldType):
 		self._AcctApplId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OpngTp', type=AccountOpeningType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExstgAcctId', type=Account23, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OpngTp', type=AccountOpeningType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExstgAcctId', type=Account23, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctApplId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

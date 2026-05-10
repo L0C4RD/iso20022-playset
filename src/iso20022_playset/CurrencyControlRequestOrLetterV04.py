@@ -1,23 +1,23 @@
 from . import base_types
-import SupportingDocumentRequestOrLetter4
-import SupplementaryData1
-import CurrencyControlHeader9
+from .SupportingDocumentRequestOrLetter4 import SupportingDocumentRequestOrLetter4
+from .SupplementaryData1 import SupplementaryData1
+from .CurrencyControlHeader9 import CurrencyControlHeader9
 
 class CurrencyControlRequestOrLetterV04(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_GrpHdr", "_ReqOrLttr"]
+	__slots__ = ["_ReqOrLttr", "_GrpHdr", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def ReqOrLttr(self):
+		return self._ReqOrLttr
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@ReqOrLttr.setter
+	def ReqOrLttr(self, value):
+		self._ReqOrLttr = value if type(value) != auto else self.make_default("ReqOrLttr")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@ReqOrLttr.deleter
+	def ReqOrLttr(self):
+		del self._ReqOrLttr
+		self._ReqOrLttr = None
 
 	@property
 	def GrpHdr(self):
@@ -33,21 +33,21 @@ class CurrencyControlRequestOrLetterV04(base_types._BaseFieldType):
 		self._GrpHdr = None
 
 	@property
-	def ReqOrLttr(self):
-		return self._ReqOrLttr
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@ReqOrLttr.setter
-	def ReqOrLttr(self, value):
-		self._ReqOrLttr = value if type(value) != auto else self.make_default("ReqOrLttr")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@ReqOrLttr.deleter
-	def ReqOrLttr(self):
-		del self._ReqOrLttr
-		self._ReqOrLttr = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqOrLttr', type=SupportingDocumentRequestOrLetter4, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

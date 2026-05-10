@@ -1,12 +1,12 @@
 from . import base_types
-import PartyIdentification120Choice
-import CashAccountIdentification9Choice
-import Max35Text
-import AlternatePartyIdentification7
+from .CashAccountIdentification9Choice import CashAccountIdentification9Choice
+from .Max35Text import Max35Text
+from .PartyIdentification120Choice import PartyIdentification120Choice
+from .AlternatePartyIdentification7 import AlternatePartyIdentification7
 
 class PartyIdentificationAndAccount225(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcct", "_Id", "_PrcgId", "_AltrnId"]
+	__slots__ = ["_CshAcct", "_AltrnId", "_PrcgId", "_Id"]
 	@property
 	def CshAcct(self):
 		return self._CshAcct
@@ -21,17 +21,17 @@ class PartyIdentificationAndAccount225(base_types._BaseFieldType):
 		self._CshAcct = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def AltrnId(self):
+		return self._AltrnId
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
 
 	@property
 	def PrcgId(self):
@@ -47,22 +47,22 @@ class PartyIdentificationAndAccount225(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	@property
-	def AltrnId(self):
-		return self._AltrnId
+	def Id(self):
+		return self._Id
 
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification9Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification120Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification120Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

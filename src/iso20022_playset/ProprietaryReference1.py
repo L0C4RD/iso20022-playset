@@ -1,22 +1,9 @@
 from . import base_types
-import Max35Text
+from .Max35Text import Max35Text
 
 class ProprietaryReference1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_Tp"]
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
+	__slots__ = ["_Tp", "_Ref"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -30,8 +17,21 @@ class ProprietaryReference1(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ref', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

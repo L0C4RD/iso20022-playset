@@ -1,8 +1,8 @@
 from . import base_types
-import RateTypeAndAmountAndStatus57
-import AmountAndRateStatus1
-import ActiveCurrencyAnd13DecimalAmount
-import RateType13Code
+from .AmountAndRateStatus1 import AmountAndRateStatus1
+from .RateType13Code import RateType13Code
+from .RateTypeAndAmountAndStatus57 import RateTypeAndAmountAndStatus57
+from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class GrossDividendRateFormat38Choice(base_types._BaseFieldType):
 

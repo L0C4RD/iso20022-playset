@@ -1,24 +1,24 @@
 from . import base_types
-import CardPaymentEnvironment81
-import SupplementaryData1
-import PaymentContext30
-import EventNotificationData7
+from .PaymentContext30 import PaymentContext30
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from .SupplementaryData1 import SupplementaryData1
+from .EventNotificationData7 import EventNotificationData7
 
 class SystemEventNotification8(base_types._BaseFieldType):
 
-	__slots__ = ["_Cntxt", "_SplmtryData", "_Envt", "_EvtNtfctn"]
+	__slots__ = ["_EvtNtfctn", "_SplmtryData", "_Envt", "_Cntxt"]
 	@property
-	def Cntxt(self):
-		return self._Cntxt
+	def EvtNtfctn(self):
+		return self._EvtNtfctn
 
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+	@EvtNtfctn.setter
+	def EvtNtfctn(self, value):
+		self._EvtNtfctn = value if type(value) != auto else self.make_default("EvtNtfctn")
 
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
+	@EvtNtfctn.deleter
+	def EvtNtfctn(self):
+		del self._EvtNtfctn
+		self._EvtNtfctn = None
 
 	@property
 	def SplmtryData(self):
@@ -47,22 +47,22 @@ class SystemEventNotification8(base_types._BaseFieldType):
 		self._Envt = None
 
 	@property
-	def EvtNtfctn(self):
-		return self._EvtNtfctn
+	def Cntxt(self):
+		return self._Cntxt
 
-	@EvtNtfctn.setter
-	def EvtNtfctn(self, value):
-		self._EvtNtfctn = value if type(value) != auto else self.make_default("EvtNtfctn")
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
 
-	@EvtNtfctn.deleter
-	def EvtNtfctn(self):
-		del self._EvtNtfctn
-		self._EvtNtfctn = None
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtNtfctn', type=EventNotificationData7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtNtfctn', type=EventNotificationData7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
 	))
 

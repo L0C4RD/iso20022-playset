@@ -1,6 +1,6 @@
 from . import base_types
-import PartyIdentificationAndAccount225
-import PartyIdentificationAndAccount226
+from .PartyIdentificationAndAccount226 import PartyIdentificationAndAccount226
+from .PartyIdentificationAndAccount225 import PartyIdentificationAndAccount225
 
 class CashParties43(base_types._BaseFieldType):
 

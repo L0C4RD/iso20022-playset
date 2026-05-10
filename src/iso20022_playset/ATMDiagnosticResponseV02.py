@@ -1,12 +1,12 @@
 from . import base_types
-import ATMDiagnosticResponse2
-import ContentInformationType10
-import ContentInformationType15
-import Header31
+from .ContentInformationType10 import ContentInformationType10
+from .ATMDiagnosticResponse2 import ATMDiagnosticResponse2
+from .ContentInformationType15 import ContentInformationType15
+from .Header31 import Header31
 
 class ATMDiagnosticResponseV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMDgnstcRspn", "_SctyTrlr", "_Hdr", "_PrtctdATMDgnstcRspn"]
+	__slots__ = ["_ATMDgnstcRspn", "_Hdr", "_SctyTrlr", "_PrtctdATMDgnstcRspn"]
 	@property
 	def ATMDgnstcRspn(self):
 		return self._ATMDgnstcRspn
@@ -21,19 +21,6 @@ class ATMDiagnosticResponseV02(base_types._BaseFieldType):
 		self._ATMDgnstcRspn = None
 
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
-	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -45,6 +32,19 @@ class ATMDiagnosticResponseV02(base_types._BaseFieldType):
 	def Hdr(self):
 		del self._Hdr
 		self._Hdr = None
+
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	@property
 	def PrtctdATMDgnstcRspn(self):
@@ -61,8 +61,8 @@ class ATMDiagnosticResponseV02(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMDgnstcRspn', type=ATMDiagnosticResponse2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMDgnstcRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 	))
 

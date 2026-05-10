@@ -1,6 +1,6 @@
 from . import base_types
-import PersonIdentification5
-import OrganisationIdentification8
+from .OrganisationIdentification8 import OrganisationIdentification8
+from .PersonIdentification5 import PersonIdentification5
 
 class Party11Choice(base_types._BaseFieldType):
 

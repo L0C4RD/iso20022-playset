@@ -1,25 +1,25 @@
 from . import base_types
-import DocumentIdentification9
-import References26
-import SupplementaryData1
-import AccountIdentification70
-import CorporateActionGeneralInformation181
+from .References26 import References26
+from .SupplementaryData1 import SupplementaryData1
+from .DocumentIdentification9 import DocumentIdentification9
+from .CorporateActionGeneralInformation181 import CorporateActionGeneralInformation181
+from .AccountIdentification70 import AccountIdentification70
 
 class MarketClaimCancellationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnGnlInf", "_SplmtryData", "_MktClmCreId", "_AcctDtls", "_TxRef"]
+	__slots__ = ["_MktClmCreId", "_SplmtryData", "_AcctDtls", "_TxRef", "_CorpActnGnlInf"]
 	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
+	def MktClmCreId(self):
+		return self._MktClmCreId
 
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
+	@MktClmCreId.setter
+	def MktClmCreId(self, value):
+		self._MktClmCreId = value if type(value) != auto else self.make_default("MktClmCreId")
 
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+	@MktClmCreId.deleter
+	def MktClmCreId(self):
+		del self._MktClmCreId
+		self._MktClmCreId = None
 
 	@property
 	def SplmtryData(self):
@@ -33,19 +33,6 @@ class MarketClaimCancellationRequestV02(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
-
-	@property
-	def MktClmCreId(self):
-		return self._MktClmCreId
-
-	@MktClmCreId.setter
-	def MktClmCreId(self, value):
-		self._MktClmCreId = value if type(value) != auto else self.make_default("MktClmCreId")
-
-	@MktClmCreId.deleter
-	def MktClmCreId(self):
-		del self._MktClmCreId
-		self._MktClmCreId = None
 
 	@property
 	def AcctDtls(self):
@@ -73,11 +60,24 @@ class MarketClaimCancellationRequestV02(base_types._BaseFieldType):
 		del self._TxRef
 		self._TxRef = None
 
+	@property
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
+
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
+
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation181, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MktClmCreId', type=DocumentIdentification9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification70, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxRef', type=References26, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation181, min=1, max=1, mutex_group=None, array=False),
 	))
 

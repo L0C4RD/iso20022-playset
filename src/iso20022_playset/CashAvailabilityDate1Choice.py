@@ -1,6 +1,6 @@
 from . import base_types
-import ISODate
-import Max15PlusSignedNumericText
+from .Max15PlusSignedNumericText import Max15PlusSignedNumericText
+from .ISODate import ISODate
 
 class CashAvailabilityDate1Choice(base_types._BaseFieldType):
 

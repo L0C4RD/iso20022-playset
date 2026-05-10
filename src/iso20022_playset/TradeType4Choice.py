@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import TradeType3Code
+from .GenericIdentification30 import GenericIdentification30
+from .TradeType3Code import TradeType3Code
 
 class TradeType4Choice(base_types._BaseFieldType):
 

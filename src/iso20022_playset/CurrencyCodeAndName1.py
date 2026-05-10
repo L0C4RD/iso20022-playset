@@ -1,6 +1,6 @@
 from . import base_types
-import ActiveOrHistoricCurrencyCode
-import Max70Text
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .Max70Text import Max70Text
 
 class CurrencyCodeAndName1(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import CashSettlementSystem2Code
+from .CashSettlementSystem2Code import CashSettlementSystem2Code
+from .GenericIdentification47 import GenericIdentification47
 
 class CashSettlementSystem5Choice(base_types._BaseFieldType):
 

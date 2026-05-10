@@ -1,12 +1,38 @@
 from . import base_types
-import CalculationMethod1Code
-import AmountAndDirection49
-import Frequency38Choice
-import Max3NumericText
+from .Max3NumericText import Max3NumericText
+from .AmountAndDirection49 import AmountAndDirection49
+from .Frequency38Choice import Frequency38Choice
+from .CalculationMethod1Code import CalculationMethod1Code
 
 class CollateralAmount12(base_types._BaseFieldType):
 
-	__slots__ = ["_CmpndSmplAcrlClctn", "_ValSght", "_Acrd", "_IntrstPmtDely", "_Termntn", "_PmtFrqcy", "_Tx"]
+	__slots__ = ["_Termntn", "_IntrstPmtDely", "_CmpndSmplAcrlClctn", "_PmtFrqcy", "_ValSght", "_Acrd", "_Tx"]
+	@property
+	def Termntn(self):
+		return self._Termntn
+
+	@Termntn.setter
+	def Termntn(self, value):
+		self._Termntn = value if type(value) != auto else self.make_default("Termntn")
+
+	@Termntn.deleter
+	def Termntn(self):
+		del self._Termntn
+		self._Termntn = None
+
+	@property
+	def IntrstPmtDely(self):
+		return self._IntrstPmtDely
+
+	@IntrstPmtDely.setter
+	def IntrstPmtDely(self, value):
+		self._IntrstPmtDely = value if type(value) != auto else self.make_default("IntrstPmtDely")
+
+	@IntrstPmtDely.deleter
+	def IntrstPmtDely(self):
+		del self._IntrstPmtDely
+		self._IntrstPmtDely = None
+
 	@property
 	def CmpndSmplAcrlClctn(self):
 		return self._CmpndSmplAcrlClctn
@@ -19,6 +45,19 @@ class CollateralAmount12(base_types._BaseFieldType):
 	def CmpndSmplAcrlClctn(self):
 		del self._CmpndSmplAcrlClctn
 		self._CmpndSmplAcrlClctn = None
+
+	@property
+	def PmtFrqcy(self):
+		return self._PmtFrqcy
+
+	@PmtFrqcy.setter
+	def PmtFrqcy(self, value):
+		self._PmtFrqcy = value if type(value) != auto else self.make_default("PmtFrqcy")
+
+	@PmtFrqcy.deleter
+	def PmtFrqcy(self):
+		del self._PmtFrqcy
+		self._PmtFrqcy = None
 
 	@property
 	def ValSght(self):
@@ -47,45 +86,6 @@ class CollateralAmount12(base_types._BaseFieldType):
 		self._Acrd = None
 
 	@property
-	def IntrstPmtDely(self):
-		return self._IntrstPmtDely
-
-	@IntrstPmtDely.setter
-	def IntrstPmtDely(self, value):
-		self._IntrstPmtDely = value if type(value) != auto else self.make_default("IntrstPmtDely")
-
-	@IntrstPmtDely.deleter
-	def IntrstPmtDely(self):
-		del self._IntrstPmtDely
-		self._IntrstPmtDely = None
-
-	@property
-	def Termntn(self):
-		return self._Termntn
-
-	@Termntn.setter
-	def Termntn(self, value):
-		self._Termntn = value if type(value) != auto else self.make_default("Termntn")
-
-	@Termntn.deleter
-	def Termntn(self):
-		del self._Termntn
-		self._Termntn = None
-
-	@property
-	def PmtFrqcy(self):
-		return self._PmtFrqcy
-
-	@PmtFrqcy.setter
-	def PmtFrqcy(self, value):
-		self._PmtFrqcy = value if type(value) != auto else self.make_default("PmtFrqcy")
-
-	@PmtFrqcy.deleter
-	def PmtFrqcy(self):
-		del self._PmtFrqcy
-		self._PmtFrqcy = None
-
-	@property
 	def Tx(self):
 		return self._Tx
 
@@ -99,12 +99,12 @@ class CollateralAmount12(base_types._BaseFieldType):
 		self._Tx = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Termntn', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstPmtDely', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmpndSmplAcrlClctn', type=CalculationMethod1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtFrqcy', type=Frequency38Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValSght', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acrd', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstPmtDely', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Termntn', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtFrqcy', type=Frequency38Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
 	))
 

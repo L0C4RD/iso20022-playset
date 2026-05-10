@@ -1,32 +1,32 @@
 from . import base_types
-import ISODate
-import PaymentTerms6
-import DecimalNumber
-import Max2000Text
-import FinancialItem1
-import ValidationStatusInformation1
-import xs:IDREF
-import Max15NumericText
-import PaymentMeans1
-import CurrencyAndAmount
-import PaymentIdentification1
-import FinancialItemParameters1
+from .ValidationStatusInformation1 import ValidationStatusInformation1
+from .ISODate import ISODate
+from .PaymentIdentification1 import PaymentIdentification1
+from .DecimalNumber import DecimalNumber
+from .PaymentMeans1 import PaymentMeans1
+from .CurrencyAndAmount import CurrencyAndAmount
+from .Max15NumericText import Max15NumericText
+from .Max2000Text import Max2000Text
+from .FinancialItem1 import FinancialItem1
+from .PaymentTerms6 import PaymentTerms6
+from .FinancialItemParameters1 import FinancialItemParameters1
+from .xs:IDREF import xs:IDREF
 
 class ReconciliationList1(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdDoc", "_PmtMeans", "_VldtnStsInf", "_PmtRef", "_Params", "_PmtDt", "_Dt", "_ItmCnt", "_Itm", "_CtrlSum", "_PmtAmt", "_Rcpt", "_Advsr", "_PmtTerms", "_AssoctdDoc", "_AddtlInf"]
+	__slots__ = ["_PmtDt", "_PmtMeans", "_PmtTerms", "_VldtnStsInf", "_RltdDoc", "_AddtlInf", "_Params", "_Rcpt", "_Itm", "_PmtRef", "_Dt", "_AssoctdDoc", "_CtrlSum", "_ItmCnt", "_PmtAmt", "_Advsr"]
 	@property
-	def RltdDoc(self):
-		return self._RltdDoc
+	def PmtDt(self):
+		return self._PmtDt
 
-	@RltdDoc.setter
-	def RltdDoc(self, value):
-		self._RltdDoc = value if type(value) != auto else self.make_default("RltdDoc")
+	@PmtDt.setter
+	def PmtDt(self, value):
+		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
 
-	@RltdDoc.deleter
-	def RltdDoc(self):
-		del self._RltdDoc
-		self._RltdDoc = None
+	@PmtDt.deleter
+	def PmtDt(self):
+		del self._PmtDt
+		self._PmtDt = None
 
 	@property
 	def PmtMeans(self):
@@ -42,6 +42,19 @@ class ReconciliationList1(base_types._BaseFieldType):
 		self._PmtMeans = None
 
 	@property
+	def PmtTerms(self):
+		return self._PmtTerms
+
+	@PmtTerms.setter
+	def PmtTerms(self, value):
+		self._PmtTerms = value if type(value) != auto else self.make_default("PmtTerms")
+
+	@PmtTerms.deleter
+	def PmtTerms(self):
+		del self._PmtTerms
+		self._PmtTerms = None
+
+	@property
 	def VldtnStsInf(self):
 		return self._VldtnStsInf
 
@@ -55,17 +68,30 @@ class ReconciliationList1(base_types._BaseFieldType):
 		self._VldtnStsInf = None
 
 	@property
-	def PmtRef(self):
-		return self._PmtRef
+	def RltdDoc(self):
+		return self._RltdDoc
 
-	@PmtRef.setter
-	def PmtRef(self, value):
-		self._PmtRef = value if type(value) != auto else self.make_default("PmtRef")
+	@RltdDoc.setter
+	def RltdDoc(self, value):
+		self._RltdDoc = value if type(value) != auto else self.make_default("RltdDoc")
 
-	@PmtRef.deleter
-	def PmtRef(self):
-		del self._PmtRef
-		self._PmtRef = None
+	@RltdDoc.deleter
+	def RltdDoc(self):
+		del self._RltdDoc
+		self._RltdDoc = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def Params(self):
@@ -81,43 +107,17 @@ class ReconciliationList1(base_types._BaseFieldType):
 		self._Params = None
 
 	@property
-	def PmtDt(self):
-		return self._PmtDt
+	def Rcpt(self):
+		return self._Rcpt
 
-	@PmtDt.setter
-	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
+	@Rcpt.setter
+	def Rcpt(self, value):
+		self._Rcpt = value if type(value) != auto else self.make_default("Rcpt")
 
-	@PmtDt.deleter
-	def PmtDt(self):
-		del self._PmtDt
-		self._PmtDt = None
-
-	@property
-	def Dt(self):
-		return self._Dt
-
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
-
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
-	@property
-	def ItmCnt(self):
-		return self._ItmCnt
-
-	@ItmCnt.setter
-	def ItmCnt(self, value):
-		self._ItmCnt = value if type(value) != auto else self.make_default("ItmCnt")
-
-	@ItmCnt.deleter
-	def ItmCnt(self):
-		del self._ItmCnt
-		self._ItmCnt = None
+	@Rcpt.deleter
+	def Rcpt(self):
+		del self._Rcpt
+		self._Rcpt = None
 
 	@property
 	def Itm(self):
@@ -133,69 +133,30 @@ class ReconciliationList1(base_types._BaseFieldType):
 		self._Itm = None
 
 	@property
-	def CtrlSum(self):
-		return self._CtrlSum
+	def PmtRef(self):
+		return self._PmtRef
 
-	@CtrlSum.setter
-	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != auto else self.make_default("CtrlSum")
+	@PmtRef.setter
+	def PmtRef(self, value):
+		self._PmtRef = value if type(value) != auto else self.make_default("PmtRef")
 
-	@CtrlSum.deleter
-	def CtrlSum(self):
-		del self._CtrlSum
-		self._CtrlSum = None
-
-	@property
-	def PmtAmt(self):
-		return self._PmtAmt
-
-	@PmtAmt.setter
-	def PmtAmt(self, value):
-		self._PmtAmt = value if type(value) != auto else self.make_default("PmtAmt")
-
-	@PmtAmt.deleter
-	def PmtAmt(self):
-		del self._PmtAmt
-		self._PmtAmt = None
+	@PmtRef.deleter
+	def PmtRef(self):
+		del self._PmtRef
+		self._PmtRef = None
 
 	@property
-	def Rcpt(self):
-		return self._Rcpt
+	def Dt(self):
+		return self._Dt
 
-	@Rcpt.setter
-	def Rcpt(self, value):
-		self._Rcpt = value if type(value) != auto else self.make_default("Rcpt")
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != auto else self.make_default("Dt")
 
-	@Rcpt.deleter
-	def Rcpt(self):
-		del self._Rcpt
-		self._Rcpt = None
-
-	@property
-	def Advsr(self):
-		return self._Advsr
-
-	@Advsr.setter
-	def Advsr(self, value):
-		self._Advsr = value if type(value) != auto else self.make_default("Advsr")
-
-	@Advsr.deleter
-	def Advsr(self):
-		del self._Advsr
-		self._Advsr = None
-
-	@property
-	def PmtTerms(self):
-		return self._PmtTerms
-
-	@PmtTerms.setter
-	def PmtTerms(self, value):
-		self._PmtTerms = value if type(value) != auto else self.make_default("PmtTerms")
-
-	@PmtTerms.deleter
-	def PmtTerms(self):
-		del self._PmtTerms
-		self._PmtTerms = None
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
 
 	@property
 	def AssoctdDoc(self):
@@ -211,34 +172,73 @@ class ReconciliationList1(base_types._BaseFieldType):
 		self._AssoctdDoc = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def CtrlSum(self):
+		return self._CtrlSum
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@CtrlSum.setter
+	def CtrlSum(self, value):
+		self._CtrlSum = value if type(value) != auto else self.make_default("CtrlSum")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@CtrlSum.deleter
+	def CtrlSum(self):
+		del self._CtrlSum
+		self._CtrlSum = None
+
+	@property
+	def ItmCnt(self):
+		return self._ItmCnt
+
+	@ItmCnt.setter
+	def ItmCnt(self, value):
+		self._ItmCnt = value if type(value) != auto else self.make_default("ItmCnt")
+
+	@ItmCnt.deleter
+	def ItmCnt(self):
+		del self._ItmCnt
+		self._ItmCnt = None
+
+	@property
+	def PmtAmt(self):
+		return self._PmtAmt
+
+	@PmtAmt.setter
+	def PmtAmt(self, value):
+		self._PmtAmt = value if type(value) != auto else self.make_default("PmtAmt")
+
+	@PmtAmt.deleter
+	def PmtAmt(self):
+		del self._PmtAmt
+		self._PmtAmt = None
+
+	@property
+	def Advsr(self):
+		return self._Advsr
+
+	@Advsr.setter
+	def Advsr(self, value):
+		self._Advsr = value if type(value) != auto else self.make_default("Advsr")
+
+	@Advsr.deleter
+	def Advsr(self):
+		del self._Advsr
+		self._Advsr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdDoc', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PmtMeans', type=PaymentMeans1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtnStsInf', type=ValidationStatusInformation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtRef', type=PaymentIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Params', type=FinancialItemParameters1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Itm', type=FinancialItem1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcpt', type=XS_IDREF, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Advsr', type=XS_IDREF, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtMeans', type=PaymentMeans1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtTerms', type=PaymentTerms6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AssoctdDoc', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='VldtnStsInf', type=ValidationStatusInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdDoc', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Params', type=FinancialItemParameters1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcpt', type=XS_IDREF, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Itm', type=FinancialItem1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PmtRef', type=PaymentIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AssoctdDoc', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Advsr', type=XS_IDREF, min=1, max=1, mutex_group=None, array=False),
 	))
 

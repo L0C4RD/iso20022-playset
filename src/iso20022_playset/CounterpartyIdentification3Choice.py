@@ -1,11 +1,11 @@
 from . import base_types
-import SectorAndLocation1
-import NameAndLocation1
-import LEIIdentifier
+from .SectorAndLocation1 import SectorAndLocation1
+from .LEIIdentifier import LEIIdentifier
+from .NameAndLocation1 import NameAndLocation1
 
 class CounterpartyIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndLctn", "_LEI", "_SctrAndLctn"]
+	__slots__ = ["_NmAndLctn", "_SctrAndLctn", "_LEI"]
 	@property
 	def NmAndLctn(self):
 		return self._NmAndLctn
@@ -20,19 +20,6 @@ class CounterpartyIdentification3Choice(base_types._BaseFieldType):
 		self._NmAndLctn = None
 
 	@property
-	def LEI(self):
-		return self._LEI
-
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
-
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
-
-	@property
 	def SctrAndLctn(self):
 		return self._SctrAndLctn
 
@@ -45,9 +32,22 @@ class CounterpartyIdentification3Choice(base_types._BaseFieldType):
 		del self._SctrAndLctn
 		self._SctrAndLctn = None
 
+	@property
+	def LEI(self):
+		return self._LEI
+
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
+
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NmAndLctn', type=NameAndLocation1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctrAndLctn', type=SectorAndLocation1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

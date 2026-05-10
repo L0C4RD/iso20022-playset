@@ -1,27 +1,27 @@
 from . import base_types
-import SystemPartyIdentification8
-import IntraBalanceReport6
-import DocumentIdentification51
-import IntraBalancePosting5
-import CashAccount40
-import BranchAndFinancialInstitutionIdentification8
-import Pagination1
+from .DocumentIdentification51 import DocumentIdentification51
+from .SystemPartyIdentification8 import SystemPartyIdentification8
+from .IntraBalancePosting5 import IntraBalancePosting5
+from .Pagination1 import Pagination1
+from .IntraBalanceReport6 import IntraBalanceReport6
+from .CashAccount40 import CashAccount40
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class IntraBalanceMovementPostingReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RptGnlDtls", "_SubBal", "_Id", "_CshAcctSvcr", "_CshAcctOwnr", "_Pgntn", "_CshAcct"]
+	__slots__ = ["_Pgntn", "_SubBal", "_Id", "_CshAcctSvcr", "_CshAcct", "_RptGnlDtls", "_CshAcctOwnr"]
 	@property
-	def RptGnlDtls(self):
-		return self._RptGnlDtls
+	def Pgntn(self):
+		return self._Pgntn
 
-	@RptGnlDtls.setter
-	def RptGnlDtls(self, value):
-		self._RptGnlDtls = value if type(value) != auto else self.make_default("RptGnlDtls")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
 
-	@RptGnlDtls.deleter
-	def RptGnlDtls(self):
-		del self._RptGnlDtls
-		self._RptGnlDtls = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def SubBal(self):
@@ -63,32 +63,6 @@ class IntraBalanceMovementPostingReportV02(base_types._BaseFieldType):
 		self._CshAcctSvcr = None
 
 	@property
-	def CshAcctOwnr(self):
-		return self._CshAcctOwnr
-
-	@CshAcctOwnr.setter
-	def CshAcctOwnr(self, value):
-		self._CshAcctOwnr = value if type(value) != auto else self.make_default("CshAcctOwnr")
-
-	@CshAcctOwnr.deleter
-	def CshAcctOwnr(self):
-		del self._CshAcctOwnr
-		self._CshAcctOwnr = None
-
-	@property
-	def Pgntn(self):
-		return self._Pgntn
-
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
-
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
-
-	@property
 	def CshAcct(self):
 		return self._CshAcct
 
@@ -101,13 +75,39 @@ class IntraBalanceMovementPostingReportV02(base_types._BaseFieldType):
 		del self._CshAcct
 		self._CshAcct = None
 
+	@property
+	def RptGnlDtls(self):
+		return self._RptGnlDtls
+
+	@RptGnlDtls.setter
+	def RptGnlDtls(self, value):
+		self._RptGnlDtls = value if type(value) != auto else self.make_default("RptGnlDtls")
+
+	@RptGnlDtls.deleter
+	def RptGnlDtls(self):
+		del self._RptGnlDtls
+		self._RptGnlDtls = None
+
+	@property
+	def CshAcctOwnr(self):
+		return self._CshAcctOwnr
+
+	@CshAcctOwnr.setter
+	def CshAcctOwnr(self, value):
+		self._CshAcctOwnr = value if type(value) != auto else self.make_default("CshAcctOwnr")
+
+	@CshAcctOwnr.deleter
+	def CshAcctOwnr(self):
+		del self._CshAcctOwnr
+		self._CshAcctOwnr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptGnlDtls', type=IntraBalanceReport6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubBal', type=IntraBalancePosting5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptGnlDtls', type=IntraBalanceReport6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

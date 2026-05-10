@@ -1,25 +1,25 @@
 from . import base_types
-import TransactionIdentifications34
-import IntraPositionDetails64
-import IntraPositionProcessingStatus10Choice
-import SettlementStatus20Choice
-import SupplementaryData1
+from .SupplementaryData1 import SupplementaryData1
+from .TransactionIdentifications34 import TransactionIdentifications34
+from .IntraPositionDetails64 import IntraPositionDetails64
+from .IntraPositionProcessingStatus10Choice import IntraPositionProcessingStatus10Choice
+from .SettlementStatus20Choice import SettlementStatus20Choice
 
 class IntraPositionMovementStatusAdvice002V07(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmSts", "_PrcgSts", "_TxId", "_SplmtryData", "_TxDtls"]
+	__slots__ = ["_TxDtls", "_PrcgSts", "_SplmtryData", "_TxId", "_SttlmSts"]
 	@property
-	def SttlmSts(self):
-		return self._SttlmSts
+	def TxDtls(self):
+		return self._TxDtls
 
-	@SttlmSts.setter
-	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != auto else self.make_default("SttlmSts")
+	@TxDtls.setter
+	def TxDtls(self, value):
+		self._TxDtls = value if type(value) != auto else self.make_default("TxDtls")
 
-	@SttlmSts.deleter
-	def SttlmSts(self):
-		del self._SttlmSts
-		self._SttlmSts = None
+	@TxDtls.deleter
+	def TxDtls(self):
+		del self._TxDtls
+		self._TxDtls = None
 
 	@property
 	def PrcgSts(self):
@@ -35,19 +35,6 @@ class IntraPositionMovementStatusAdvice002V07(base_types._BaseFieldType):
 		self._PrcgSts = None
 
 	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -61,23 +48,36 @@ class IntraPositionMovementStatusAdvice002V07(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def TxDtls(self):
-		return self._TxDtls
+	def TxId(self):
+		return self._TxId
 
-	@TxDtls.setter
-	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != auto else self.make_default("TxDtls")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@TxDtls.deleter
-	def TxDtls(self):
-		del self._TxDtls
-		self._TxDtls = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def SttlmSts(self):
+		return self._SttlmSts
+
+	@SttlmSts.setter
+	def SttlmSts(self, value):
+		self._SttlmSts = value if type(value) != auto else self.make_default("SttlmSts")
+
+	@SttlmSts.deleter
+	def SttlmSts(self):
+		del self._SttlmSts
+		self._SttlmSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus20Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgSts', type=IntraPositionProcessingStatus10Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=TransactionIdentifications34, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxDtls', type=IntraPositionDetails64, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgSts', type=IntraPositionProcessingStatus10Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentifications34, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus20Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

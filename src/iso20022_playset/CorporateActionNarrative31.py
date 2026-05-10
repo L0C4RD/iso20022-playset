@@ -1,22 +1,9 @@
 from . import base_types
-import Max350Text
+from .Max350Text import Max350Text
 
 class CorporateActionNarrative31(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxtnConds", "_AddtlTxt", "_NrrtvVrsn", "_PtyCtctNrrtv"]
-	@property
-	def TaxtnConds(self):
-		return self._TaxtnConds
-
-	@TaxtnConds.setter
-	def TaxtnConds(self, value):
-		self._TaxtnConds = value if type(value) != auto else self.make_default("TaxtnConds")
-
-	@TaxtnConds.deleter
-	def TaxtnConds(self):
-		del self._TaxtnConds
-		self._TaxtnConds = None
-
+	__slots__ = ["_AddtlTxt", "_TaxtnConds", "_PtyCtctNrrtv", "_NrrtvVrsn"]
 	@property
 	def AddtlTxt(self):
 		return self._AddtlTxt
@@ -31,17 +18,17 @@ class CorporateActionNarrative31(base_types._BaseFieldType):
 		self._AddtlTxt = None
 
 	@property
-	def NrrtvVrsn(self):
-		return self._NrrtvVrsn
+	def TaxtnConds(self):
+		return self._TaxtnConds
 
-	@NrrtvVrsn.setter
-	def NrrtvVrsn(self, value):
-		self._NrrtvVrsn = value if type(value) != auto else self.make_default("NrrtvVrsn")
+	@TaxtnConds.setter
+	def TaxtnConds(self, value):
+		self._TaxtnConds = value if type(value) != auto else self.make_default("TaxtnConds")
 
-	@NrrtvVrsn.deleter
-	def NrrtvVrsn(self):
-		del self._NrrtvVrsn
-		self._NrrtvVrsn = None
+	@TaxtnConds.deleter
+	def TaxtnConds(self):
+		del self._TaxtnConds
+		self._TaxtnConds = None
 
 	@property
 	def PtyCtctNrrtv(self):
@@ -56,10 +43,23 @@ class CorporateActionNarrative31(base_types._BaseFieldType):
 		del self._PtyCtctNrrtv
 		self._PtyCtctNrrtv = None
 
+	@property
+	def NrrtvVrsn(self):
+		return self._NrrtvVrsn
+
+	@NrrtvVrsn.setter
+	def NrrtvVrsn(self, value):
+		self._NrrtvVrsn = value if type(value) != auto else self.make_default("NrrtvVrsn")
+
+	@NrrtvVrsn.deleter
+	def NrrtvVrsn(self):
+		del self._NrrtvVrsn
+		self._NrrtvVrsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxtnConds', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlTxt', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NrrtvVrsn', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TaxtnConds', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PtyCtctNrrtv', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NrrtvVrsn', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

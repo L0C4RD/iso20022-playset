@@ -1,15 +1,28 @@
 from . import base_types
-import ChargeType8Choice
-import ActiveCurrencyAnd13DecimalAmount
-import PercentageRate
-import IntendedOrActual2Code
-import Period15
-import PlusOrMinusIndicator
-import AdditionalInformation15
+from .IntendedOrActual2Code import IntendedOrActual2Code
+from .ChargeType8Choice import ChargeType8Choice
+from .AdditionalInformation15 import AdditionalInformation15
+from .Period15 import Period15
+from .PlusOrMinusIndicator import PlusOrMinusIndicator
+from .PercentageRate import PercentageRate
+from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class IndividualCostOrCharge2(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_CostTp", "_AddtlInf", "_Rate", "_ExAnteOrExPst", "_RefPrd", "_Sgn"]
+	__slots__ = ["_ExAnteOrExPst", "_Amt", "_CostTp", "_AddtlInf", "_Sgn", "_RefPrd", "_Rate"]
+	@property
+	def ExAnteOrExPst(self):
+		return self._ExAnteOrExPst
+
+	@ExAnteOrExPst.setter
+	def ExAnteOrExPst(self, value):
+		self._ExAnteOrExPst = value if type(value) != auto else self.make_default("ExAnteOrExPst")
+
+	@ExAnteOrExPst.deleter
+	def ExAnteOrExPst(self):
+		del self._ExAnteOrExPst
+		self._ExAnteOrExPst = None
+
 	@property
 	def Amt(self):
 		return self._Amt
@@ -50,30 +63,17 @@ class IndividualCostOrCharge2(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def Rate(self):
-		return self._Rate
+	def Sgn(self):
+		return self._Sgn
 
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
+	@Sgn.setter
+	def Sgn(self, value):
+		self._Sgn = value if type(value) != auto else self.make_default("Sgn")
 
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
-
-	@property
-	def ExAnteOrExPst(self):
-		return self._ExAnteOrExPst
-
-	@ExAnteOrExPst.setter
-	def ExAnteOrExPst(self, value):
-		self._ExAnteOrExPst = value if type(value) != auto else self.make_default("ExAnteOrExPst")
-
-	@ExAnteOrExPst.deleter
-	def ExAnteOrExPst(self):
-		del self._ExAnteOrExPst
-		self._ExAnteOrExPst = None
+	@Sgn.deleter
+	def Sgn(self):
+		del self._Sgn
+		self._Sgn = None
 
 	@property
 	def RefPrd(self):
@@ -89,25 +89,25 @@ class IndividualCostOrCharge2(base_types._BaseFieldType):
 		self._RefPrd = None
 
 	@property
-	def Sgn(self):
-		return self._Sgn
+	def Rate(self):
+		return self._Rate
 
-	@Sgn.setter
-	def Sgn(self, value):
-		self._Sgn = value if type(value) != auto else self.make_default("Sgn")
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != auto else self.make_default("Rate")
 
-	@Sgn.deleter
-	def Sgn(self):
-		del self._Sgn
-		self._Sgn = None
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ExAnteOrExPst', type=IntendedOrActual2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CostTp', type=ChargeType8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExAnteOrExPst', type=IntendedOrActual2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefPrd', type=Period15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefPrd', type=Period15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

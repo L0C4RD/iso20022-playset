@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification13
-import StampDutyType1Code
+from .StampDutyType1Code import StampDutyType1Code
+from .GenericIdentification13 import GenericIdentification13
 
 class StampDutyType1FormatChoice(base_types._BaseFieldType):
 

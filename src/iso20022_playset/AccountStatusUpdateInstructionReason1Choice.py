@@ -1,6 +1,6 @@
 from . import base_types
-import NoReasonCode
-import AccountStatusUpdateInstructionReason1
+from .AccountStatusUpdateInstructionReason1 import AccountStatusUpdateInstructionReason1
+from .NoReasonCode import NoReasonCode
 
 class AccountStatusUpdateInstructionReason1Choice(base_types._BaseFieldType):
 

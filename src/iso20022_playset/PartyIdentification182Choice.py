@@ -1,37 +1,24 @@
 from . import base_types
-import AnyBICDec2014Identifier
-import GenericIdentification1
-import NameAndAddress15
-import Max35Text
+from .GenericIdentification1 import GenericIdentification1
+from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from .Max35Text import Max35Text
+from .NameAndAddress15 import NameAndAddress15
 
 class PartyIdentification182Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryId", "_TaxIdNb", "_NtlRegnNb", "_NmAndAdr", "_AnyBIC"]
+	__slots__ = ["_AnyBIC", "_NtlRegnNb", "_NmAndAdr", "_PrtryId", "_TaxIdNb"]
 	@property
-	def PrtryId(self):
-		return self._PrtryId
+	def AnyBIC(self):
+		return self._AnyBIC
 
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
 
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
-
-	@property
-	def TaxIdNb(self):
-		return self._TaxIdNb
-
-	@TaxIdNb.setter
-	def TaxIdNb(self, value):
-		self._TaxIdNb = value if type(value) != auto else self.make_default("TaxIdNb")
-
-	@TaxIdNb.deleter
-	def TaxIdNb(self):
-		del self._TaxIdNb
-		self._TaxIdNb = None
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
 
 	@property
 	def NtlRegnNb(self):
@@ -60,23 +47,36 @@ class PartyIdentification182Choice(base_types._BaseFieldType):
 		self._NmAndAdr = None
 
 	@property
-	def AnyBIC(self):
-		return self._AnyBIC
+	def PrtryId(self):
+		return self._PrtryId
 
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
 
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
+
+	@property
+	def TaxIdNb(self):
+		return self._TaxIdNb
+
+	@TaxIdNb.setter
+	def TaxIdNb(self, value):
+		self._TaxIdNb = value if type(value) != auto else self.make_default("TaxIdNb")
+
+	@TaxIdNb.deleter
+	def TaxIdNb(self):
+		del self._TaxIdNb
+		self._TaxIdNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NtlRegnNb', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress15, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

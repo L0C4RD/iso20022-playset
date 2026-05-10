@@ -1,36 +1,10 @@
 from . import base_types
-import ActiveCurrencyAnd13DecimalAmount
-import ISODate
+from .ISODate import ISODate
+from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class SubscriptionInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_EqtyCmpnt", "_DtOfFrstSbcpt", "_TtlAmtYrToDt", "_CshCmpnt"]
-	@property
-	def EqtyCmpnt(self):
-		return self._EqtyCmpnt
-
-	@EqtyCmpnt.setter
-	def EqtyCmpnt(self, value):
-		self._EqtyCmpnt = value if type(value) != auto else self.make_default("EqtyCmpnt")
-
-	@EqtyCmpnt.deleter
-	def EqtyCmpnt(self):
-		del self._EqtyCmpnt
-		self._EqtyCmpnt = None
-
-	@property
-	def DtOfFrstSbcpt(self):
-		return self._DtOfFrstSbcpt
-
-	@DtOfFrstSbcpt.setter
-	def DtOfFrstSbcpt(self, value):
-		self._DtOfFrstSbcpt = value if type(value) != auto else self.make_default("DtOfFrstSbcpt")
-
-	@DtOfFrstSbcpt.deleter
-	def DtOfFrstSbcpt(self):
-		del self._DtOfFrstSbcpt
-		self._DtOfFrstSbcpt = None
-
+	__slots__ = ["_TtlAmtYrToDt", "_CshCmpnt", "_DtOfFrstSbcpt", "_EqtyCmpnt"]
 	@property
 	def TtlAmtYrToDt(self):
 		return self._TtlAmtYrToDt
@@ -57,10 +31,36 @@ class SubscriptionInformation2(base_types._BaseFieldType):
 		del self._CshCmpnt
 		self._CshCmpnt = None
 
+	@property
+	def DtOfFrstSbcpt(self):
+		return self._DtOfFrstSbcpt
+
+	@DtOfFrstSbcpt.setter
+	def DtOfFrstSbcpt(self, value):
+		self._DtOfFrstSbcpt = value if type(value) != auto else self.make_default("DtOfFrstSbcpt")
+
+	@DtOfFrstSbcpt.deleter
+	def DtOfFrstSbcpt(self):
+		del self._DtOfFrstSbcpt
+		self._DtOfFrstSbcpt = None
+
+	@property
+	def EqtyCmpnt(self):
+		return self._EqtyCmpnt
+
+	@EqtyCmpnt.setter
+	def EqtyCmpnt(self, value):
+		self._EqtyCmpnt = value if type(value) != auto else self.make_default("EqtyCmpnt")
+
+	@EqtyCmpnt.deleter
+	def EqtyCmpnt(self):
+		del self._EqtyCmpnt
+		self._EqtyCmpnt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EqtyCmpnt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtOfFrstSbcpt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmtYrToDt', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshCmpnt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtOfFrstSbcpt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EqtyCmpnt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

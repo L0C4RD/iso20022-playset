@@ -1,23 +1,23 @@
 from . import base_types
-import FundParameters4Choice
-import MessageIdentification1
-import AdditionalReference10
+from .MessageIdentification1 import MessageIdentification1
+from .AdditionalReference10 import AdditionalReference10
+from .FundParameters4Choice import FundParameters4Choice
 
 class InvestmentFundReportRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_PrvsRef", "_RltdRef", "_RptReq"]
+	__slots__ = ["_RltdRef", "_PrvsRef", "_MsgId", "_RptReq"]
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def RltdRef(self):
+		return self._RltdRef
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
 
 	@property
 	def PrvsRef(self):
@@ -33,17 +33,17 @@ class InvestmentFundReportRequestV03(base_types._BaseFieldType):
 		self._PrvsRef = None
 
 	@property
-	def RltdRef(self):
-		return self._RltdRef
+	def MsgId(self):
+		return self._MsgId
 
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def RptReq(self):
@@ -59,9 +59,9 @@ class InvestmentFundReportRequestV03(base_types._BaseFieldType):
 		self._RptReq = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptReq', type=FundParameters4Choice, min=1, max=None, mutex_group=None, array=True),
 	))
 

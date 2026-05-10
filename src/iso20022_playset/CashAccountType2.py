@@ -1,6 +1,6 @@
 from . import base_types
-import CashAccountType4Code
-import Max35Text
+from .CashAccountType4Code import CashAccountType4Code
+from .Max35Text import Max35Text
 
 class CashAccountType2(base_types._BaseFieldType):
 

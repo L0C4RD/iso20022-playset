@@ -1,5 +1,5 @@
 from . import base_types
-import OutputResult2
+from .OutputResult2 import OutputResult2
 
 class DeviceDisplayResponse2(base_types._BaseFieldType):
 

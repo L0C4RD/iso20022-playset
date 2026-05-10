@@ -1,5 +1,5 @@
 from . import base_types
-import DebitAuthorisationResponseV06
+from .DebitAuthorisationResponseV06 import DebitAuthorisationResponseV06
 
 class CAMT_036_001_06():
 

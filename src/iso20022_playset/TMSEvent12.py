@@ -1,14 +1,27 @@
 from . import base_types
-import TerminalManagementActionResult5Code
-import ISODateTime
-import TMSActionIdentification10
-import DeviceResponse8
-import Max35Text
-import Max70Text
+from .Max35Text import Max35Text
+from .DeviceResponse8 import DeviceResponse8
+from .Max70Text import Max70Text
+from .ISODateTime import ISODateTime
+from .TMSActionIdentification10 import TMSActionIdentification10
+from .TerminalManagementActionResult5Code import TerminalManagementActionResult5Code
 
 class TMSEvent12(base_types._BaseFieldType):
 
-	__slots__ = ["_DvcRspn", "_AddtlErrInf", "_Rslt", "_TermnlMgrId", "_ActnId", "_TmStmp"]
+	__slots__ = ["_ActnId", "_DvcRspn", "_AddtlErrInf", "_TmStmp", "_TermnlMgrId", "_Rslt"]
+	@property
+	def ActnId(self):
+		return self._ActnId
+
+	@ActnId.setter
+	def ActnId(self, value):
+		self._ActnId = value if type(value) != auto else self.make_default("ActnId")
+
+	@ActnId.deleter
+	def ActnId(self):
+		del self._ActnId
+		self._ActnId = None
+
 	@property
 	def DvcRspn(self):
 		return self._DvcRspn
@@ -36,17 +49,17 @@ class TMSEvent12(base_types._BaseFieldType):
 		self._AddtlErrInf = None
 
 	@property
-	def Rslt(self):
-		return self._Rslt
+	def TmStmp(self):
+		return self._TmStmp
 
-	@Rslt.setter
-	def Rslt(self, value):
-		self._Rslt = value if type(value) != auto else self.make_default("Rslt")
+	@TmStmp.setter
+	def TmStmp(self, value):
+		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
 
-	@Rslt.deleter
-	def Rslt(self):
-		del self._Rslt
-		self._Rslt = None
+	@TmStmp.deleter
+	def TmStmp(self):
+		del self._TmStmp
+		self._TmStmp = None
 
 	@property
 	def TermnlMgrId(self):
@@ -62,37 +75,24 @@ class TMSEvent12(base_types._BaseFieldType):
 		self._TermnlMgrId = None
 
 	@property
-	def ActnId(self):
-		return self._ActnId
+	def Rslt(self):
+		return self._Rslt
 
-	@ActnId.setter
-	def ActnId(self, value):
-		self._ActnId = value if type(value) != auto else self.make_default("ActnId")
+	@Rslt.setter
+	def Rslt(self, value):
+		self._Rslt = value if type(value) != auto else self.make_default("Rslt")
 
-	@ActnId.deleter
-	def ActnId(self):
-		del self._ActnId
-		self._ActnId = None
-
-	@property
-	def TmStmp(self):
-		return self._TmStmp
-
-	@TmStmp.setter
-	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
-
-	@TmStmp.deleter
-	def TmStmp(self):
-		del self._TmStmp
-		self._TmStmp = None
+	@Rslt.deleter
+	def Rslt(self):
+		del self._Rslt
+		self._Rslt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ActnId', type=TMSActionIdentification10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DvcRspn', type=DeviceResponse8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlErrInf', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rslt', type=TerminalManagementActionResult5Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TermnlMgrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActnId', type=TMSActionIdentification10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TermnlMgrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rslt', type=TerminalManagementActionResult5Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

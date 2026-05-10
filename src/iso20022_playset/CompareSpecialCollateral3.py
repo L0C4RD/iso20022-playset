@@ -1,22 +1,9 @@
 from . import base_types
-import SpecialCollateral1Code
+from .SpecialCollateral1Code import SpecialCollateral1Code
 
 class CompareSpecialCollateral3(base_types._BaseFieldType):
 
-	__slots__ = ["_Val1", "_Val2"]
-	@property
-	def Val1(self):
-		return self._Val1
-
-	@Val1.setter
-	def Val1(self, value):
-		self._Val1 = value if type(value) != auto else self.make_default("Val1")
-
-	@Val1.deleter
-	def Val1(self):
-		del self._Val1
-		self._Val1 = None
-
+	__slots__ = ["_Val2", "_Val1"]
 	@property
 	def Val2(self):
 		return self._Val2
@@ -30,8 +17,21 @@ class CompareSpecialCollateral3(base_types._BaseFieldType):
 		del self._Val2
 		self._Val2 = None
 
+	@property
+	def Val1(self):
+		return self._Val1
+
+	@Val1.setter
+	def Val1(self, value):
+		self._Val1 = value if type(value) != auto else self.make_default("Val1")
+
+	@Val1.deleter
+	def Val1(self):
+		del self._Val1
+		self._Val1 = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Val1', type=SpecialCollateral1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val2', type=SpecialCollateral1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val1', type=SpecialCollateral1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

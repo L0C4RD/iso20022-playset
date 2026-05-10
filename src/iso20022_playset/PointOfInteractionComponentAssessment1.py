@@ -1,11 +1,24 @@
 from . import base_types
-import POIComponentAssessment1Code
-import Max35Text
-import ISODateTime
+from .Max35Text import Max35Text
+from .ISODateTime import ISODateTime
+from .POIComponentAssessment1Code import POIComponentAssessment1Code
 
 class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 
-	__slots__ = ["_Nb", "_XprtnDt", "_DlvryDt", "_Tp", "_Assgnr"]
+	__slots__ = ["_DlvryDt", "_Nb", "_Assgnr", "_Tp", "_XprtnDt"]
+	@property
+	def DlvryDt(self):
+		return self._DlvryDt
+
+	@DlvryDt.setter
+	def DlvryDt(self, value):
+		self._DlvryDt = value if type(value) != auto else self.make_default("DlvryDt")
+
+	@DlvryDt.deleter
+	def DlvryDt(self):
+		del self._DlvryDt
+		self._DlvryDt = None
+
 	@property
 	def Nb(self):
 		return self._Nb
@@ -20,30 +33,17 @@ class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 		self._Nb = None
 
 	@property
-	def XprtnDt(self):
-		return self._XprtnDt
+	def Assgnr(self):
+		return self._Assgnr
 
-	@XprtnDt.setter
-	def XprtnDt(self, value):
-		self._XprtnDt = value if type(value) != auto else self.make_default("XprtnDt")
+	@Assgnr.setter
+	def Assgnr(self, value):
+		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
 
-	@XprtnDt.deleter
-	def XprtnDt(self):
-		del self._XprtnDt
-		self._XprtnDt = None
-
-	@property
-	def DlvryDt(self):
-		return self._DlvryDt
-
-	@DlvryDt.setter
-	def DlvryDt(self, value):
-		self._DlvryDt = value if type(value) != auto else self.make_default("DlvryDt")
-
-	@DlvryDt.deleter
-	def DlvryDt(self):
-		del self._DlvryDt
-		self._DlvryDt = None
+	@Assgnr.deleter
+	def Assgnr(self):
+		del self._Assgnr
+		self._Assgnr = None
 
 	@property
 	def Tp(self):
@@ -59,23 +59,23 @@ class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Assgnr(self):
-		return self._Assgnr
+	def XprtnDt(self):
+		return self._XprtnDt
 
-	@Assgnr.setter
-	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
+	@XprtnDt.setter
+	def XprtnDt(self, value):
+		self._XprtnDt = value if type(value) != auto else self.make_default("XprtnDt")
 
-	@Assgnr.deleter
-	def Assgnr(self):
-		del self._Assgnr
-		self._Assgnr = None
+	@XprtnDt.deleter
+	def XprtnDt(self):
+		del self._XprtnDt
+		self._XprtnDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XprtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=POIComponentAssessment1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Tp', type=POIComponentAssessment1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XprtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

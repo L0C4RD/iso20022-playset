@@ -1,5 +1,5 @@
 from . import base_types
-import NotificationOfCaseAssignmentV06
+from .NotificationOfCaseAssignmentV06 import NotificationOfCaseAssignmentV06
 
 class CAMT_030_001_06():
 

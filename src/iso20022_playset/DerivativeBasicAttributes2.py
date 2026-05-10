@@ -1,6 +1,6 @@
 from . import base_types
-import RestrictedFINActiveOrHistoricCurrencyAndAmount
-import YesNoIndicator
+from .RestrictedFINActiveOrHistoricCurrencyAndAmount import RestrictedFINActiveOrHistoricCurrencyAndAmount
+from .YesNoIndicator import YesNoIndicator
 
 class DerivativeBasicAttributes2(base_types._BaseFieldType):
 

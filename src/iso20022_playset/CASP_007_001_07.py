@@ -1,5 +1,5 @@
 from . import base_types
-import SaleToPOIAdministrativeRequestV07
+from .SaleToPOIAdministrativeRequestV07 import SaleToPOIAdministrativeRequestV07
 
 class CASP_007_001_07():
 

@@ -1,12 +1,25 @@
 from . import base_types
-import Extension1
-import Status26Choice
-import MessageIdentification1
-import References61Choice
+from .Status26Choice import Status26Choice
+from .MessageIdentification1 import MessageIdentification1
+from .Extension1 import Extension1
+from .References61Choice import References61Choice
 
 class OrderCancellationStatusReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRpt", "_MsgId", "_Xtnsn", "_Ref"]
+	__slots__ = ["_Ref", "_StsRpt", "_MsgId", "_Xtnsn"]
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
 	@property
 	def StsRpt(self):
 		return self._StsRpt
@@ -46,23 +59,10 @@ class OrderCancellationStatusReportV04(base_types._BaseFieldType):
 		del self._Xtnsn
 		self._Xtnsn = None
 
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Ref', type=References61Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRpt', type=Status26Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ref', type=References61Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

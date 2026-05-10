@@ -1,23 +1,10 @@
 from . import base_types
-import ActiveOrHistoricCurrencyAndAmount
-import BranchAndFinancialInstitutionIdentification6
+from .BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class Charges7(base_types._BaseFieldType):
 
-	__slots__ = ["_Agt", "_Amt"]
-	@property
-	def Agt(self):
-		return self._Agt
-
-	@Agt.setter
-	def Agt(self, value):
-		self._Agt = value if type(value) != auto else self.make_default("Agt")
-
-	@Agt.deleter
-	def Agt(self):
-		del self._Agt
-		self._Agt = None
-
+	__slots__ = ["_Amt", "_Agt"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -31,8 +18,21 @@ class Charges7(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def Agt(self):
+		return self._Agt
+
+	@Agt.setter
+	def Agt(self, value):
+		self._Agt = value if type(value) != auto else self.make_default("Agt")
+
+	@Agt.deleter
+	def Agt(self):
+		del self._Agt
+		self._Agt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification6, min=1, max=1, mutex_group=None, array=False),
 	))
 

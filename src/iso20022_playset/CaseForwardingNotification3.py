@@ -1,5 +1,5 @@
 from . import base_types
-import CaseForwardingNotification3Code
+from .CaseForwardingNotification3Code import CaseForwardingNotification3Code
 
 class CaseForwardingNotification3(base_types._BaseFieldType):
 

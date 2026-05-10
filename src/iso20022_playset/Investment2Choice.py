@@ -1,12 +1,12 @@
 from . import base_types
-import OtherInvestment1
-import Deposit1
-import RepurchaseAgreement2
-import SecurityIdentificationAndAmount2
+from .Deposit1 import Deposit1
+from .SecurityIdentificationAndAmount2 import SecurityIdentificationAndAmount2
+from .RepurchaseAgreement2 import RepurchaseAgreement2
+from .OtherInvestment1 import OtherInvestment1
 
 class Investment2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_UscrdCshDpst", "_CntrlBkDpst", "_OthrInvstmts", "_RpAgrmt", "_OutrghtInvstmt"]
+	__slots__ = ["_UscrdCshDpst", "_CntrlBkDpst", "_OutrghtInvstmt", "_RpAgrmt", "_OthrInvstmts"]
 	@property
 	def UscrdCshDpst(self):
 		return self._UscrdCshDpst
@@ -34,17 +34,17 @@ class Investment2Choice(base_types._BaseFieldType):
 		self._CntrlBkDpst = None
 
 	@property
-	def OthrInvstmts(self):
-		return self._OthrInvstmts
+	def OutrghtInvstmt(self):
+		return self._OutrghtInvstmt
 
-	@OthrInvstmts.setter
-	def OthrInvstmts(self, value):
-		self._OthrInvstmts = value if type(value) != auto else self.make_default("OthrInvstmts")
+	@OutrghtInvstmt.setter
+	def OutrghtInvstmt(self, value):
+		self._OutrghtInvstmt = value if type(value) != auto else self.make_default("OutrghtInvstmt")
 
-	@OthrInvstmts.deleter
-	def OthrInvstmts(self):
-		del self._OthrInvstmts
-		self._OthrInvstmts = None
+	@OutrghtInvstmt.deleter
+	def OutrghtInvstmt(self):
+		del self._OutrghtInvstmt
+		self._OutrghtInvstmt = None
 
 	@property
 	def RpAgrmt(self):
@@ -60,23 +60,23 @@ class Investment2Choice(base_types._BaseFieldType):
 		self._RpAgrmt = None
 
 	@property
-	def OutrghtInvstmt(self):
-		return self._OutrghtInvstmt
+	def OthrInvstmts(self):
+		return self._OthrInvstmts
 
-	@OutrghtInvstmt.setter
-	def OutrghtInvstmt(self, value):
-		self._OutrghtInvstmt = value if type(value) != auto else self.make_default("OutrghtInvstmt")
+	@OthrInvstmts.setter
+	def OthrInvstmts(self, value):
+		self._OthrInvstmts = value if type(value) != auto else self.make_default("OthrInvstmts")
 
-	@OutrghtInvstmt.deleter
-	def OutrghtInvstmt(self):
-		del self._OutrghtInvstmt
-		self._OutrghtInvstmt = None
+	@OthrInvstmts.deleter
+	def OthrInvstmts(self):
+		del self._OthrInvstmts
+		self._OthrInvstmts = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UscrdCshDpst', type=Deposit1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CntrlBkDpst', type=Deposit1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='OthrInvstmts', type=OtherInvestment1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RpAgrmt', type=RepurchaseAgreement2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OutrghtInvstmt', type=SecurityIdentificationAndAmount2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RpAgrmt', type=RepurchaseAgreement2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OthrInvstmts', type=OtherInvestment1, min=0, max=1, mutex_group=1, array=False),
 	))
 

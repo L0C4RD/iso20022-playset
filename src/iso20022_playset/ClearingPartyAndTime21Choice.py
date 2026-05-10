@@ -1,6 +1,6 @@
 from . import base_types
-import ClearingPartyAndTime22
-import NoReasonCode
+from .ClearingPartyAndTime22 import ClearingPartyAndTime22
+from .NoReasonCode import NoReasonCode
 
 class ClearingPartyAndTime21Choice(base_types._BaseFieldType):
 

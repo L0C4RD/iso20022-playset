@@ -1,12 +1,12 @@
 from . import base_types
-import OriginalPaymentInstruction51
-import OriginalGroupHeader22
-import SupplementaryData1
-import GroupHeader128
+from .GroupHeader128 import GroupHeader128
+from .SupplementaryData1 import SupplementaryData1
+from .OriginalGroupHeader22 import OriginalGroupHeader22
+from .OriginalPaymentInstruction51 import OriginalPaymentInstruction51
 
 class CustomerPaymentStatusReportV14(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_OrgnlPmtInfAndSts", "_SplmtryData", "_OrgnlGrpInfAndSts"]
+	__slots__ = ["_GrpHdr", "_SplmtryData", "_OrgnlPmtInfAndSts", "_OrgnlGrpInfAndSts"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr
@@ -21,19 +21,6 @@ class CustomerPaymentStatusReportV14(base_types._BaseFieldType):
 		self._GrpHdr = None
 
 	@property
-	def OrgnlPmtInfAndSts(self):
-		return self._OrgnlPmtInfAndSts
-
-	@OrgnlPmtInfAndSts.setter
-	def OrgnlPmtInfAndSts(self, value):
-		self._OrgnlPmtInfAndSts = value if type(value) != auto else self.make_default("OrgnlPmtInfAndSts")
-
-	@OrgnlPmtInfAndSts.deleter
-	def OrgnlPmtInfAndSts(self):
-		del self._OrgnlPmtInfAndSts
-		self._OrgnlPmtInfAndSts = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -45,6 +32,19 @@ class CustomerPaymentStatusReportV14(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def OrgnlPmtInfAndSts(self):
+		return self._OrgnlPmtInfAndSts
+
+	@OrgnlPmtInfAndSts.setter
+	def OrgnlPmtInfAndSts(self, value):
+		self._OrgnlPmtInfAndSts = value if type(value) != auto else self.make_default("OrgnlPmtInfAndSts")
+
+	@OrgnlPmtInfAndSts.deleter
+	def OrgnlPmtInfAndSts(self):
+		del self._OrgnlPmtInfAndSts
+		self._OrgnlPmtInfAndSts = None
 
 	@property
 	def OrgnlGrpInfAndSts(self):
@@ -61,8 +61,8 @@ class CustomerPaymentStatusReportV14(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader128, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlPmtInfAndSts', type=OriginalPaymentInstruction51, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlPmtInfAndSts', type=OriginalPaymentInstruction51, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlGrpInfAndSts', type=OriginalGroupHeader22, min=1, max=1, mutex_group=None, array=False),
 	))
 

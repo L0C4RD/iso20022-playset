@@ -1,39 +1,13 @@
 from . import base_types
-import InvestmentAccount77
-import Account23
-import AccountManagementType3Code
-import Max35Text
-import LinkedMessage5Choice
+from .Max35Text import Max35Text
+from .Account23 import Account23
+from .InvestmentAccount77 import InvestmentAccount77
+from .LinkedMessage5Choice import LinkedMessage5Choice
+from .AccountManagementType3Code import AccountManagementType3Code
 
 class AccountManagementMessageReference5(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstmtAcct", "_StsReqTp", "_ExstgAcctId", "_LkdRef", "_AcctApplId"]
-	@property
-	def InvstmtAcct(self):
-		return self._InvstmtAcct
-
-	@InvstmtAcct.setter
-	def InvstmtAcct(self, value):
-		self._InvstmtAcct = value if type(value) != auto else self.make_default("InvstmtAcct")
-
-	@InvstmtAcct.deleter
-	def InvstmtAcct(self):
-		del self._InvstmtAcct
-		self._InvstmtAcct = None
-
-	@property
-	def StsReqTp(self):
-		return self._StsReqTp
-
-	@StsReqTp.setter
-	def StsReqTp(self, value):
-		self._StsReqTp = value if type(value) != auto else self.make_default("StsReqTp")
-
-	@StsReqTp.deleter
-	def StsReqTp(self):
-		del self._StsReqTp
-		self._StsReqTp = None
-
+	__slots__ = ["_ExstgAcctId", "_InvstmtAcct", "_LkdRef", "_AcctApplId", "_StsReqTp"]
 	@property
 	def ExstgAcctId(self):
 		return self._ExstgAcctId
@@ -46,6 +20,19 @@ class AccountManagementMessageReference5(base_types._BaseFieldType):
 	def ExstgAcctId(self):
 		del self._ExstgAcctId
 		self._ExstgAcctId = None
+
+	@property
+	def InvstmtAcct(self):
+		return self._InvstmtAcct
+
+	@InvstmtAcct.setter
+	def InvstmtAcct(self, value):
+		self._InvstmtAcct = value if type(value) != auto else self.make_default("InvstmtAcct")
+
+	@InvstmtAcct.deleter
+	def InvstmtAcct(self):
+		del self._InvstmtAcct
+		self._InvstmtAcct = None
 
 	@property
 	def LkdRef(self):
@@ -73,11 +60,24 @@ class AccountManagementMessageReference5(base_types._BaseFieldType):
 		del self._AcctApplId
 		self._AcctApplId = None
 
+	@property
+	def StsReqTp(self):
+		return self._StsReqTp
+
+	@StsReqTp.setter
+	def StsReqTp(self, value):
+		self._StsReqTp = value if type(value) != auto else self.make_default("StsReqTp")
+
+	@StsReqTp.deleter
+	def StsReqTp(self):
+		del self._StsReqTp
+		self._StsReqTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InvstmtAcct', type=InvestmentAccount77, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsReqTp', type=AccountManagementType3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExstgAcctId', type=Account23, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstmtAcct', type=InvestmentAccount77, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LkdRef', type=LinkedMessage5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctApplId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsReqTp', type=AccountManagementType3Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

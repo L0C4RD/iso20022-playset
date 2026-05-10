@@ -1,58 +1,19 @@
 from . import base_types
-import UpdateLogDate1
-import UpdateLogAddress2
-import UpdateLogPartyLockStatus1
-import UpdateLogPartyName1
-import UpdateLogContact2
-import UpdateLogMarketSpecificAttribute1
-import UpdateLogResidenceType1
-import UpdateLogTechnicalAddress1
-import UpdateLogSystemPartyType1
-import UpdateLogRestriction1
-import UpdateLogProprietary1
+from .UpdateLogAddress2 import UpdateLogAddress2
+from .UpdateLogPartyName1 import UpdateLogPartyName1
+from .UpdateLogMarketSpecificAttribute1 import UpdateLogMarketSpecificAttribute1
+from .UpdateLogTechnicalAddress1 import UpdateLogTechnicalAddress1
+from .UpdateLogPartyLockStatus1 import UpdateLogPartyLockStatus1
+from .UpdateLogContact2 import UpdateLogContact2
+from .UpdateLogRestriction1 import UpdateLogRestriction1
+from .UpdateLogResidenceType1 import UpdateLogResidenceType1
+from .UpdateLogSystemPartyType1 import UpdateLogSystemPartyType1
+from .UpdateLogProprietary1 import UpdateLogProprietary1
+from .UpdateLogDate1 import UpdateLogDate1
 
 class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Adr", "_TechAdr", "_ClsgDt", "_ResTp", "_Rstrctn", "_Othr", "_Tp", "_LckSts", "_MktSpcfcAttr", "_OpngDt", "_CtctDtls"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def Adr(self):
-		return self._Adr
-
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
-
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
-
-	@property
-	def TechAdr(self):
-		return self._TechAdr
-
-	@TechAdr.setter
-	def TechAdr(self, value):
-		self._TechAdr = value if type(value) != auto else self.make_default("TechAdr")
-
-	@TechAdr.deleter
-	def TechAdr(self):
-		del self._TechAdr
-		self._TechAdr = None
-
+	__slots__ = ["_ClsgDt", "_Tp", "_OpngDt", "_Rstrctn", "_Othr", "_CtctDtls", "_Nm", "_TechAdr", "_MktSpcfcAttr", "_Adr", "_LckSts", "_ResTp"]
 	@property
 	def ClsgDt(self):
 		return self._ClsgDt
@@ -67,17 +28,30 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 		self._ClsgDt = None
 
 	@property
-	def ResTp(self):
-		return self._ResTp
+	def Tp(self):
+		return self._Tp
 
-	@ResTp.setter
-	def ResTp(self, value):
-		self._ResTp = value if type(value) != auto else self.make_default("ResTp")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@ResTp.deleter
-	def ResTp(self):
-		del self._ResTp
-		self._ResTp = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def OpngDt(self):
+		return self._OpngDt
+
+	@OpngDt.setter
+	def OpngDt(self, value):
+		self._OpngDt = value if type(value) != auto else self.make_default("OpngDt")
+
+	@OpngDt.deleter
+	def OpngDt(self):
+		del self._OpngDt
+		self._OpngDt = None
 
 	@property
 	def Rstrctn(self):
@@ -106,30 +80,43 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def CtctDtls(self):
+		return self._CtctDtls
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@CtctDtls.setter
+	def CtctDtls(self, value):
+		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@CtctDtls.deleter
+	def CtctDtls(self):
+		del self._CtctDtls
+		self._CtctDtls = None
 
 	@property
-	def LckSts(self):
-		return self._LckSts
+	def Nm(self):
+		return self._Nm
 
-	@LckSts.setter
-	def LckSts(self, value):
-		self._LckSts = value if type(value) != auto else self.make_default("LckSts")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@LckSts.deleter
-	def LckSts(self):
-		del self._LckSts
-		self._LckSts = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def TechAdr(self):
+		return self._TechAdr
+
+	@TechAdr.setter
+	def TechAdr(self, value):
+		self._TechAdr = value if type(value) != auto else self.make_default("TechAdr")
+
+	@TechAdr.deleter
+	def TechAdr(self):
+		del self._TechAdr
+		self._TechAdr = None
 
 	@property
 	def MktSpcfcAttr(self):
@@ -145,43 +132,56 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 		self._MktSpcfcAttr = None
 
 	@property
-	def OpngDt(self):
-		return self._OpngDt
+	def Adr(self):
+		return self._Adr
 
-	@OpngDt.setter
-	def OpngDt(self, value):
-		self._OpngDt = value if type(value) != auto else self.make_default("OpngDt")
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != auto else self.make_default("Adr")
 
-	@OpngDt.deleter
-	def OpngDt(self):
-		del self._OpngDt
-		self._OpngDt = None
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
 
 	@property
-	def CtctDtls(self):
-		return self._CtctDtls
+	def LckSts(self):
+		return self._LckSts
 
-	@CtctDtls.setter
-	def CtctDtls(self, value):
-		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
+	@LckSts.setter
+	def LckSts(self, value):
+		self._LckSts = value if type(value) != auto else self.make_default("LckSts")
 
-	@CtctDtls.deleter
-	def CtctDtls(self):
-		del self._CtctDtls
-		self._CtctDtls = None
+	@LckSts.deleter
+	def LckSts(self):
+		del self._LckSts
+		self._LckSts = None
+
+	@property
+	def ResTp(self):
+		return self._ResTp
+
+	@ResTp.setter
+	def ResTp(self, value):
+		self._ResTp = value if type(value) != auto else self.make_default("ResTp")
+
+	@ResTp.deleter
+	def ResTp(self):
+		del self._ResTp
+		self._ResTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=UpdateLogPartyName1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Adr', type=UpdateLogAddress2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TechAdr', type=UpdateLogTechnicalAddress1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ClsgDt', type=UpdateLogDate1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ResTp', type=UpdateLogResidenceType1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Tp', type=UpdateLogSystemPartyType1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OpngDt', type=UpdateLogDate1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rstrctn', type=UpdateLogRestriction1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=UpdateLogProprietary1, min=1, max=None, mutex_group=1, array=True),
-		base_types.FieldEntry(name='Tp', type=UpdateLogSystemPartyType1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='LckSts', type=UpdateLogPartyLockStatus1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MktSpcfcAttr', type=UpdateLogMarketSpecificAttribute1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='OpngDt', type=UpdateLogDate1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CtctDtls', type=UpdateLogContact2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Nm', type=UpdateLogPartyName1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TechAdr', type=UpdateLogTechnicalAddress1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MktSpcfcAttr', type=UpdateLogMarketSpecificAttribute1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Adr', type=UpdateLogAddress2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='LckSts', type=UpdateLogPartyLockStatus1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ResTp', type=UpdateLogResidenceType1, min=0, max=1, mutex_group=1, array=False),
 	))
 

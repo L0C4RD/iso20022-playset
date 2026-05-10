@@ -1,6 +1,6 @@
 from . import base_types
-import Max210Text
-import RepairReason19Choice
+from .Max210Text import Max210Text
+from .RepairReason19Choice import RepairReason19Choice
 
 class RepairReason14(base_types._BaseFieldType):
 

@@ -1,10 +1,23 @@
 from . import base_types
-import BaseOneRate
-import ActiveCurrencyAndAmount
+from .BaseOneRate import BaseOneRate
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class CapitalRequirement1(base_types._BaseFieldType):
 
-	__slots__ = ["_BizRsk", "_WndgDwnOrRstrgRsk", "_CntrPtyRsk", "_MktRsk", "_NtfctnBffr", "_CdtRsk", "_OprlAndLglRsk"]
+	__slots__ = ["_NtfctnBffr", "_BizRsk", "_WndgDwnOrRstrgRsk", "_MktRsk", "_CntrPtyRsk", "_CdtRsk", "_OprlAndLglRsk"]
+	@property
+	def NtfctnBffr(self):
+		return self._NtfctnBffr
+
+	@NtfctnBffr.setter
+	def NtfctnBffr(self, value):
+		self._NtfctnBffr = value if type(value) != auto else self.make_default("NtfctnBffr")
+
+	@NtfctnBffr.deleter
+	def NtfctnBffr(self):
+		del self._NtfctnBffr
+		self._NtfctnBffr = None
+
 	@property
 	def BizRsk(self):
 		return self._BizRsk
@@ -32,19 +45,6 @@ class CapitalRequirement1(base_types._BaseFieldType):
 		self._WndgDwnOrRstrgRsk = None
 
 	@property
-	def CntrPtyRsk(self):
-		return self._CntrPtyRsk
-
-	@CntrPtyRsk.setter
-	def CntrPtyRsk(self, value):
-		self._CntrPtyRsk = value if type(value) != auto else self.make_default("CntrPtyRsk")
-
-	@CntrPtyRsk.deleter
-	def CntrPtyRsk(self):
-		del self._CntrPtyRsk
-		self._CntrPtyRsk = None
-
-	@property
 	def MktRsk(self):
 		return self._MktRsk
 
@@ -58,17 +58,17 @@ class CapitalRequirement1(base_types._BaseFieldType):
 		self._MktRsk = None
 
 	@property
-	def NtfctnBffr(self):
-		return self._NtfctnBffr
+	def CntrPtyRsk(self):
+		return self._CntrPtyRsk
 
-	@NtfctnBffr.setter
-	def NtfctnBffr(self, value):
-		self._NtfctnBffr = value if type(value) != auto else self.make_default("NtfctnBffr")
+	@CntrPtyRsk.setter
+	def CntrPtyRsk(self, value):
+		self._CntrPtyRsk = value if type(value) != auto else self.make_default("CntrPtyRsk")
 
-	@NtfctnBffr.deleter
-	def NtfctnBffr(self):
-		del self._NtfctnBffr
-		self._NtfctnBffr = None
+	@CntrPtyRsk.deleter
+	def CntrPtyRsk(self):
+		del self._CntrPtyRsk
+		self._CntrPtyRsk = None
 
 	@property
 	def CdtRsk(self):
@@ -97,11 +97,11 @@ class CapitalRequirement1(base_types._BaseFieldType):
 		self._OprlAndLglRsk = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NtfctnBffr', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BizRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WndgDwnOrRstrgRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CntrPtyRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnBffr', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CntrPtyRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OprlAndLglRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))

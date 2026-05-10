@@ -1,23 +1,10 @@
 from . import base_types
-import FinancialPartyClassification2Choice
-import TrueFalseIndicator
+from .FinancialPartyClassification2Choice import FinancialPartyClassification2Choice
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class FinancialInstitutionSector1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sctr", "_ClrThrshld"]
-	@property
-	def Sctr(self):
-		return self._Sctr
-
-	@Sctr.setter
-	def Sctr(self, value):
-		self._Sctr = value if type(value) != auto else self.make_default("Sctr")
-
-	@Sctr.deleter
-	def Sctr(self):
-		del self._Sctr
-		self._Sctr = None
-
+	__slots__ = ["_ClrThrshld", "_Sctr"]
 	@property
 	def ClrThrshld(self):
 		return self._ClrThrshld
@@ -31,8 +18,21 @@ class FinancialInstitutionSector1(base_types._BaseFieldType):
 		del self._ClrThrshld
 		self._ClrThrshld = None
 
+	@property
+	def Sctr(self):
+		return self._Sctr
+
+	@Sctr.setter
+	def Sctr(self, value):
+		self._Sctr = value if type(value) != auto else self.make_default("Sctr")
+
+	@Sctr.deleter
+	def Sctr(self):
+		del self._Sctr
+		self._Sctr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sctr', type=FinancialPartyClassification2Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClrThrshld', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sctr', type=FinancialPartyClassification2Choice, min=1, max=None, mutex_group=None, array=True),
 	))
 

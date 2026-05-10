@@ -1,37 +1,11 @@
 from . import base_types
-import DeviceIdentificationType1Code
-import Max35Text
-import Max70Text
+from .DeviceIdentificationType1Code import DeviceIdentificationType1Code
+from .Max35Text import Max35Text
+from .Max70Text import Max70Text
 
 class DeviceIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTp", "_Id", "_Tp", "_Assgnr"]
-	@property
-	def OthrTp(self):
-		return self._OthrTp
-
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
-
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Tp", "_OthrTp", "_Assgnr", "_Id"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -46,6 +20,19 @@ class DeviceIdentification1(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
+	def OthrTp(self):
+		return self._OthrTp
+
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
+
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
+
+	@property
 	def Assgnr(self):
 		return self._Assgnr
 
@@ -58,10 +45,23 @@ class DeviceIdentification1(base_types._BaseFieldType):
 		del self._Assgnr
 		self._Assgnr = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=DeviceIdentificationType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgnr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

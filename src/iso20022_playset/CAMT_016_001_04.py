@@ -1,5 +1,5 @@
 from . import base_types
-import GetCurrencyExchangeRateV04
+from .GetCurrencyExchangeRateV04 import GetCurrencyExchangeRateV04
 
 class CAMT_016_001_04():
 

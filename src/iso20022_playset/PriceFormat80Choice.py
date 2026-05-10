@@ -1,24 +1,24 @@
 from . import base_types
-import DecimalNumber
-import PercentagePrice3
-import AmountPrice3
-import PriceValueType10Code
+from .AmountPrice3 import AmountPrice3
+from .DecimalNumber import DecimalNumber
+from .PriceValueType10Code import PriceValueType10Code
+from .PercentagePrice3 import PercentagePrice3
 
 class PriceFormat80Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotSpcfdPric", "_AmtPric", "_IndxPts", "_PctgPric"]
+	__slots__ = ["_IndxPts", "_AmtPric", "_NotSpcfdPric", "_PctgPric"]
 	@property
-	def NotSpcfdPric(self):
-		return self._NotSpcfdPric
+	def IndxPts(self):
+		return self._IndxPts
 
-	@NotSpcfdPric.setter
-	def NotSpcfdPric(self, value):
-		self._NotSpcfdPric = value if type(value) != auto else self.make_default("NotSpcfdPric")
+	@IndxPts.setter
+	def IndxPts(self, value):
+		self._IndxPts = value if type(value) != auto else self.make_default("IndxPts")
 
-	@NotSpcfdPric.deleter
-	def NotSpcfdPric(self):
-		del self._NotSpcfdPric
-		self._NotSpcfdPric = None
+	@IndxPts.deleter
+	def IndxPts(self):
+		del self._IndxPts
+		self._IndxPts = None
 
 	@property
 	def AmtPric(self):
@@ -34,17 +34,17 @@ class PriceFormat80Choice(base_types._BaseFieldType):
 		self._AmtPric = None
 
 	@property
-	def IndxPts(self):
-		return self._IndxPts
+	def NotSpcfdPric(self):
+		return self._NotSpcfdPric
 
-	@IndxPts.setter
-	def IndxPts(self, value):
-		self._IndxPts = value if type(value) != auto else self.make_default("IndxPts")
+	@NotSpcfdPric.setter
+	def NotSpcfdPric(self, value):
+		self._NotSpcfdPric = value if type(value) != auto else self.make_default("NotSpcfdPric")
 
-	@IndxPts.deleter
-	def IndxPts(self):
-		del self._IndxPts
-		self._IndxPts = None
+	@NotSpcfdPric.deleter
+	def NotSpcfdPric(self):
+		del self._NotSpcfdPric
+		self._NotSpcfdPric = None
 
 	@property
 	def PctgPric(self):
@@ -60,9 +60,9 @@ class PriceFormat80Choice(base_types._BaseFieldType):
 		self._PctgPric = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NotSpcfdPric', type=PriceValueType10Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AmtPric', type=AmountPrice3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IndxPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtPric', type=AmountPrice3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotSpcfdPric', type=PriceValueType10Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PctgPric', type=PercentagePrice3, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import Max350Text
-import ProcessedStatus1Format1Choice
+from .ProcessedStatus1Format1Choice import ProcessedStatus1Format1Choice
+from .Max350Text import Max350Text
 
 class NotificationProcessingStatus2(base_types._BaseFieldType):
 

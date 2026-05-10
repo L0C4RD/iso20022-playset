@@ -1,23 +1,23 @@
 from . import base_types
-import Max140Text
-import ContactDetails2
-import PostalAddress6
+from .PostalAddress6 import PostalAddress6
+from .Max140Text import Max140Text
+from .ContactDetails2 import ContactDetails2
 
 class TaxOrganisationIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctDtls", "_Nm", "_PstlAdr"]
+	__slots__ = ["_PstlAdr", "_Nm", "_CtctDtls"]
 	@property
-	def CtctDtls(self):
-		return self._CtctDtls
+	def PstlAdr(self):
+		return self._PstlAdr
 
-	@CtctDtls.setter
-	def CtctDtls(self, value):
-		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
 
-	@CtctDtls.deleter
-	def CtctDtls(self):
-		del self._CtctDtls
-		self._CtctDtls = None
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
 
 	@property
 	def Nm(self):
@@ -33,21 +33,21 @@ class TaxOrganisationIdentification1(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def PstlAdr(self):
-		return self._PstlAdr
+	def CtctDtls(self):
+		return self._CtctDtls
 
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+	@CtctDtls.setter
+	def CtctDtls(self, value):
+		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
 
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
+	@CtctDtls.deleter
+	def CtctDtls(self):
+		del self._CtctDtls
+		self._CtctDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtctDtls', type=ContactDetails2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctDtls', type=ContactDetails2, min=0, max=1, mutex_group=None, array=False),
 	))
 

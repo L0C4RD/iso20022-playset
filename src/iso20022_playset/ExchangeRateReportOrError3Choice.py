@@ -1,6 +1,6 @@
 from . import base_types
-import CurrencyExchangeReport4
-import ErrorHandling3
+from .ErrorHandling3 import ErrorHandling3
+from .CurrencyExchangeReport4 import CurrencyExchangeReport4
 
 class ExchangeRateReportOrError3Choice(base_types._BaseFieldType):
 

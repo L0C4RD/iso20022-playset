@@ -1,5 +1,5 @@
 from . import base_types
-import TradeLegNotificationV04
+from .TradeLegNotificationV04 import TradeLegNotificationV04
 
 class SECL_001_001_04():
 

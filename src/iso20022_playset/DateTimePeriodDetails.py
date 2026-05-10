@@ -1,5 +1,5 @@
 from . import base_types
-import ISODateTime
+from .ISODateTime import ISODateTime
 
 class DateTimePeriodDetails(base_types._BaseFieldType):
 

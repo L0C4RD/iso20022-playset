@@ -1,11 +1,11 @@
 from . import base_types
-import PartyIdentification139
-import FinancialInstitutionIdentification17
-import Max35Text
+from .FinancialInstitutionIdentification17 import FinancialInstitutionIdentification17
+from .PartyIdentification139 import PartyIdentification139
+from .Max35Text import Max35Text
 
 class Cheque12(base_types._BaseFieldType):
 
-	__slots__ = ["_PyeeId", "_DrwrId", "_Nb", "_DrweeId"]
+	__slots__ = ["_PyeeId", "_Nb", "_DrweeId", "_DrwrId"]
 	@property
 	def PyeeId(self):
 		return self._PyeeId
@@ -18,19 +18,6 @@ class Cheque12(base_types._BaseFieldType):
 	def PyeeId(self):
 		del self._PyeeId
 		self._PyeeId = None
-
-	@property
-	def DrwrId(self):
-		return self._DrwrId
-
-	@DrwrId.setter
-	def DrwrId(self, value):
-		self._DrwrId = value if type(value) != auto else self.make_default("DrwrId")
-
-	@DrwrId.deleter
-	def DrwrId(self):
-		del self._DrwrId
-		self._DrwrId = None
 
 	@property
 	def Nb(self):
@@ -58,10 +45,23 @@ class Cheque12(base_types._BaseFieldType):
 		del self._DrweeId
 		self._DrweeId = None
 
+	@property
+	def DrwrId(self):
+		return self._DrwrId
+
+	@DrwrId.setter
+	def DrwrId(self, value):
+		self._DrwrId = value if type(value) != auto else self.make_default("DrwrId")
+
+	@DrwrId.deleter
+	def DrwrId(self):
+		del self._DrwrId
+		self._DrwrId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PyeeId', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrwrId', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrweeId', type=FinancialInstitutionIdentification17, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrwrId', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
 	))
 

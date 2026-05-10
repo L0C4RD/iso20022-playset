@@ -1,6 +1,6 @@
 from . import base_types
-import TransactionReconciliation5
-import CardPaymentEnvironment81
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from .TransactionReconciliation5 import TransactionReconciliation5
 
 class AcceptorReconciliationRequest13(base_types._BaseFieldType):
 

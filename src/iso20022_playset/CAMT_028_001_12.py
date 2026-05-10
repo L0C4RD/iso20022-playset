@@ -1,5 +1,5 @@
 from . import base_types
-import AdditionalPaymentInformationV12
+from .AdditionalPaymentInformationV12 import AdditionalPaymentInformationV12
 
 class CAMT_028_001_12():
 

@@ -1,7 +1,7 @@
 from . import base_types
-import RestrictedFINXMax16Text
-import PartyIdentification145Choice
-import LEIIdentifier
+from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from .PartyIdentification145Choice import PartyIdentification145Choice
+from .LEIIdentifier import LEIIdentifier
 
 class PartyIdentification191(base_types._BaseFieldType):
 

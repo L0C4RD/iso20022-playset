@@ -1,6 +1,6 @@
 from . import base_types
-import AssetClassSubProductType44Code
-import AssetClassProductType5Code
+from .AssetClassProductType5Code import AssetClassProductType5Code
+from .AssetClassSubProductType44Code import AssetClassSubProductType44Code
 
 class FertilizerCommodityUreaAndAmmoniumNitrate2(base_types._BaseFieldType):
 

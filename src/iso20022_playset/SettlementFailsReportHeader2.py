@@ -1,9 +1,9 @@
 from . import base_types
-import TransactionOperationType4Code
-import ISODateTime
-import DatePeriod2
-import SecuritiesSettlementSystemIdentification2
-import ActiveCurrencyCode
+from .ISODateTime import ISODateTime
+from .SecuritiesSettlementSystemIdentification2 import SecuritiesSettlementSystemIdentification2
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .TransactionOperationType4Code import TransactionOperationType4Code
+from .DatePeriod2 import DatePeriod2
 
 class SettlementFailsReportHeader2(base_types._BaseFieldType):
 

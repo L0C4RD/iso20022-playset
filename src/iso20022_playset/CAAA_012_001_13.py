@@ -1,5 +1,5 @@
 from . import base_types
-import AcceptorBatchTransferResponseV13
+from .AcceptorBatchTransferResponseV13 import AcceptorBatchTransferResponseV13
 
 class CAAA_012_001_13():
 

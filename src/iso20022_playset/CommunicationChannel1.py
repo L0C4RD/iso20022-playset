@@ -1,12 +1,12 @@
 from . import base_types
-import PartyType1Choice
-import Max140Text
-import ExternalChannel1Code
-import PostalAddress6
+from .PostalAddress6 import PostalAddress6
+from .Max140Text import Max140Text
+from .PartyType1Choice import PartyType1Choice
+from .ExternalChannel1Code import ExternalChannel1Code
 
 class CommunicationChannel1(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvrToAdr", "_DlvrToPtyTp", "_DlvrToNm", "_Mtd"]
+	__slots__ = ["_DlvrToAdr", "_DlvrToNm", "_DlvrToPtyTp", "_Mtd"]
 	@property
 	def DlvrToAdr(self):
 		return self._DlvrToAdr
@@ -21,19 +21,6 @@ class CommunicationChannel1(base_types._BaseFieldType):
 		self._DlvrToAdr = None
 
 	@property
-	def DlvrToPtyTp(self):
-		return self._DlvrToPtyTp
-
-	@DlvrToPtyTp.setter
-	def DlvrToPtyTp(self, value):
-		self._DlvrToPtyTp = value if type(value) != auto else self.make_default("DlvrToPtyTp")
-
-	@DlvrToPtyTp.deleter
-	def DlvrToPtyTp(self):
-		del self._DlvrToPtyTp
-		self._DlvrToPtyTp = None
-
-	@property
 	def DlvrToNm(self):
 		return self._DlvrToNm
 
@@ -45,6 +32,19 @@ class CommunicationChannel1(base_types._BaseFieldType):
 	def DlvrToNm(self):
 		del self._DlvrToNm
 		self._DlvrToNm = None
+
+	@property
+	def DlvrToPtyTp(self):
+		return self._DlvrToPtyTp
+
+	@DlvrToPtyTp.setter
+	def DlvrToPtyTp(self, value):
+		self._DlvrToPtyTp = value if type(value) != auto else self.make_default("DlvrToPtyTp")
+
+	@DlvrToPtyTp.deleter
+	def DlvrToPtyTp(self):
+		del self._DlvrToPtyTp
+		self._DlvrToPtyTp = None
 
 	@property
 	def Mtd(self):
@@ -61,8 +61,8 @@ class CommunicationChannel1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlvrToAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvrToPtyTp', type=PartyType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvrToNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrToPtyTp', type=PartyType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mtd', type=ExternalChannel1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import Max50Text
-import OrderType3Code
+from .Max50Text import Max50Text
+from .OrderType3Code import OrderType3Code
 
 class OrderClassification2(base_types._BaseFieldType):
 

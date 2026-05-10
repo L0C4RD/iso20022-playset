@@ -1,10 +1,23 @@
 from . import base_types
-import CashAccountIdentification12Choice
-import CashAccountIdentification6Choice
+from .CashAccountIdentification6Choice import CashAccountIdentification6Choice
+from .CashAccountIdentification12Choice import CashAccountIdentification12Choice
 
 class Account11Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxAcct", "_CshAcct", "_ChrgsAcct"]
+	__slots__ = ["_ChrgsAcct", "_TaxAcct", "_CshAcct"]
+	@property
+	def ChrgsAcct(self):
+		return self._ChrgsAcct
+
+	@ChrgsAcct.setter
+	def ChrgsAcct(self, value):
+		self._ChrgsAcct = value if type(value) != auto else self.make_default("ChrgsAcct")
+
+	@ChrgsAcct.deleter
+	def ChrgsAcct(self):
+		del self._ChrgsAcct
+		self._ChrgsAcct = None
+
 	@property
 	def TaxAcct(self):
 		return self._TaxAcct
@@ -31,22 +44,9 @@ class Account11Choice(base_types._BaseFieldType):
 		del self._CshAcct
 		self._CshAcct = None
 
-	@property
-	def ChrgsAcct(self):
-		return self._ChrgsAcct
-
-	@ChrgsAcct.setter
-	def ChrgsAcct(self, value):
-		self._ChrgsAcct = value if type(value) != auto else self.make_default("ChrgsAcct")
-
-	@ChrgsAcct.deleter
-	def ChrgsAcct(self):
-		del self._ChrgsAcct
-		self._ChrgsAcct = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ChrgsAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TaxAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification12Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ChrgsAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

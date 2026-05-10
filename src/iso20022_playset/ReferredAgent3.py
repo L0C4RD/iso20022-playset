@@ -1,23 +1,10 @@
 from . import base_types
-import PartyIdentification125Choice
-import Referred1Code
+from .Referred1Code import Referred1Code
+from .PartyIdentification125Choice import PartyIdentification125Choice
 
 class ReferredAgent3(base_types._BaseFieldType):
 
-	__slots__ = ["_RfrdPlcmntAgt", "_Rfrd"]
-	@property
-	def RfrdPlcmntAgt(self):
-		return self._RfrdPlcmntAgt
-
-	@RfrdPlcmntAgt.setter
-	def RfrdPlcmntAgt(self, value):
-		self._RfrdPlcmntAgt = value if type(value) != auto else self.make_default("RfrdPlcmntAgt")
-
-	@RfrdPlcmntAgt.deleter
-	def RfrdPlcmntAgt(self):
-		del self._RfrdPlcmntAgt
-		self._RfrdPlcmntAgt = None
-
+	__slots__ = ["_Rfrd", "_RfrdPlcmntAgt"]
 	@property
 	def Rfrd(self):
 		return self._Rfrd
@@ -31,8 +18,21 @@ class ReferredAgent3(base_types._BaseFieldType):
 		del self._Rfrd
 		self._Rfrd = None
 
+	@property
+	def RfrdPlcmntAgt(self):
+		return self._RfrdPlcmntAgt
+
+	@RfrdPlcmntAgt.setter
+	def RfrdPlcmntAgt(self, value):
+		self._RfrdPlcmntAgt = value if type(value) != auto else self.make_default("RfrdPlcmntAgt")
+
+	@RfrdPlcmntAgt.deleter
+	def RfrdPlcmntAgt(self):
+		del self._RfrdPlcmntAgt
+		self._RfrdPlcmntAgt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RfrdPlcmntAgt', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rfrd', type=Referred1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RfrdPlcmntAgt', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

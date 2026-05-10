@@ -1,25 +1,38 @@
 from . import base_types
-import CashAccount40
-import GenericIdentification1
-import UnderlyingPaymentInstruction8
-import UnderlyingPaymentTransaction7
-import UnderlyingStatementEntry5
+from .GenericIdentification1 import GenericIdentification1
+from .UnderlyingStatementEntry5 import UnderlyingStatementEntry5
+from .UnderlyingPaymentTransaction7 import UnderlyingPaymentTransaction7
+from .CashAccount40 import CashAccount40
+from .UnderlyingPaymentInstruction8 import UnderlyingPaymentInstruction8
 
 class UnderlyingData2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_Initn", "_StmtNtry", "_Othr", "_IntrBk"]
+	__slots__ = ["_StmtNtry", "_IntrBk", "_Initn", "_Acct", "_Othr"]
 	@property
-	def Acct(self):
-		return self._Acct
+	def StmtNtry(self):
+		return self._StmtNtry
 
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
+	@StmtNtry.setter
+	def StmtNtry(self, value):
+		self._StmtNtry = value if type(value) != auto else self.make_default("StmtNtry")
 
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
+	@StmtNtry.deleter
+	def StmtNtry(self):
+		del self._StmtNtry
+		self._StmtNtry = None
+
+	@property
+	def IntrBk(self):
+		return self._IntrBk
+
+	@IntrBk.setter
+	def IntrBk(self, value):
+		self._IntrBk = value if type(value) != auto else self.make_default("IntrBk")
+
+	@IntrBk.deleter
+	def IntrBk(self):
+		del self._IntrBk
+		self._IntrBk = None
 
 	@property
 	def Initn(self):
@@ -35,17 +48,17 @@ class UnderlyingData2Choice(base_types._BaseFieldType):
 		self._Initn = None
 
 	@property
-	def StmtNtry(self):
-		return self._StmtNtry
+	def Acct(self):
+		return self._Acct
 
-	@StmtNtry.setter
-	def StmtNtry(self, value):
-		self._StmtNtry = value if type(value) != auto else self.make_default("StmtNtry")
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
 
-	@StmtNtry.deleter
-	def StmtNtry(self):
-		del self._StmtNtry
-		self._StmtNtry = None
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
 
 	@property
 	def Othr(self):
@@ -60,24 +73,11 @@ class UnderlyingData2Choice(base_types._BaseFieldType):
 		del self._Othr
 		self._Othr = None
 
-	@property
-	def IntrBk(self):
-		return self._IntrBk
-
-	@IntrBk.setter
-	def IntrBk(self, value):
-		self._IntrBk = value if type(value) != auto else self.make_default("IntrBk")
-
-	@IntrBk.deleter
-	def IntrBk(self):
-		del self._IntrBk
-		self._IntrBk = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Initn', type=UnderlyingPaymentInstruction8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='StmtNtry', type=UnderlyingStatementEntry5, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Othr', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IntrBk', type=UnderlyingPaymentTransaction7, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Initn', type=UnderlyingPaymentInstruction8, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Othr', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
 	))
 

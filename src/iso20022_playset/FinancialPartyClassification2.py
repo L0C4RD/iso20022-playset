@@ -1,23 +1,10 @@
 from . import base_types
-import NACEDomainIdentifier
-import FundType2Code
+from .NACEDomainIdentifier import NACEDomainIdentifier
+from .FundType2Code import FundType2Code
 
 class FinancialPartyClassification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Clssfctn", "_InvstmtFndClssfctn"]
-	@property
-	def Clssfctn(self):
-		return self._Clssfctn
-
-	@Clssfctn.setter
-	def Clssfctn(self, value):
-		self._Clssfctn = value if type(value) != auto else self.make_default("Clssfctn")
-
-	@Clssfctn.deleter
-	def Clssfctn(self):
-		del self._Clssfctn
-		self._Clssfctn = None
-
+	__slots__ = ["_InvstmtFndClssfctn", "_Clssfctn"]
 	@property
 	def InvstmtFndClssfctn(self):
 		return self._InvstmtFndClssfctn
@@ -31,8 +18,21 @@ class FinancialPartyClassification2(base_types._BaseFieldType):
 		del self._InvstmtFndClssfctn
 		self._InvstmtFndClssfctn = None
 
+	@property
+	def Clssfctn(self):
+		return self._Clssfctn
+
+	@Clssfctn.setter
+	def Clssfctn(self, value):
+		self._Clssfctn = value if type(value) != auto else self.make_default("Clssfctn")
+
+	@Clssfctn.deleter
+	def Clssfctn(self):
+		del self._Clssfctn
+		self._Clssfctn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Clssfctn', type=NACEDomainIdentifier, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InvstmtFndClssfctn', type=FundType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Clssfctn', type=NACEDomainIdentifier, min=1, max=None, mutex_group=None, array=True),
 	))
 

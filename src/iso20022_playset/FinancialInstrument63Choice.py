@@ -1,7 +1,7 @@
 from . import base_types
-import CashAsset3
-import FinancialInstrumentIdentification2
-import OtherAsset2
+from .OtherAsset2 import OtherAsset2
+from .FinancialInstrumentIdentification2 import FinancialInstrumentIdentification2
+from .CashAsset3 import CashAsset3
 
 class FinancialInstrument63Choice(base_types._BaseFieldType):
 

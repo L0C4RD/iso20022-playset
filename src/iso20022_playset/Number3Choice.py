@@ -1,6 +1,6 @@
 from . import base_types
-import Exact5NumericText
-import Exact3NumericText
+from .Exact5NumericText import Exact5NumericText
+from .Exact3NumericText import Exact3NumericText
 
 class Number3Choice(base_types._BaseFieldType):
 

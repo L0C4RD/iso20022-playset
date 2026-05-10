@@ -1,8 +1,8 @@
 from . import base_types
-import CFIOct2015Identifier
-import Period4Choice
-import ISODate
-import Modification1Code
+from .Modification1Code import Modification1Code
+from .CFIOct2015Identifier import CFIOct2015Identifier
+from .ISODate import ISODate
+from .Period4Choice import Period4Choice
 
 class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 

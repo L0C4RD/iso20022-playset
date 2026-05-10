@@ -1,6 +1,6 @@
 from . import base_types
-import SystemPartyIdentification8
-import PartyOrBusinessError4Choice
+from .PartyOrBusinessError4Choice import PartyOrBusinessError4Choice
+from .SystemPartyIdentification8 import SystemPartyIdentification8
 
 class PartyReport4(base_types._BaseFieldType):
 

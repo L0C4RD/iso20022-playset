@@ -1,6 +1,6 @@
 from . import base_types
-import ChargeType14Code
-import GenericIdentification13
+from .ChargeType14Code import ChargeType14Code
+from .GenericIdentification13 import GenericIdentification13
 
 class ChargeType2FormatChoice(base_types._BaseFieldType):
 

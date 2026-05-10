@@ -1,23 +1,10 @@
 from . import base_types
-import BaseOneRate
-import CollateralAmount9
+from .CollateralAmount9 import CollateralAmount9
+from .BaseOneRate import BaseOneRate
 
 class ValuationsDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_ValtnDtlsAmt", "_Hrcut"]
-	@property
-	def ValtnDtlsAmt(self):
-		return self._ValtnDtlsAmt
-
-	@ValtnDtlsAmt.setter
-	def ValtnDtlsAmt(self, value):
-		self._ValtnDtlsAmt = value if type(value) != auto else self.make_default("ValtnDtlsAmt")
-
-	@ValtnDtlsAmt.deleter
-	def ValtnDtlsAmt(self):
-		del self._ValtnDtlsAmt
-		self._ValtnDtlsAmt = None
-
+	__slots__ = ["_Hrcut", "_ValtnDtlsAmt"]
 	@property
 	def Hrcut(self):
 		return self._Hrcut
@@ -31,8 +18,21 @@ class ValuationsDetails2(base_types._BaseFieldType):
 		del self._Hrcut
 		self._Hrcut = None
 
+	@property
+	def ValtnDtlsAmt(self):
+		return self._ValtnDtlsAmt
+
+	@ValtnDtlsAmt.setter
+	def ValtnDtlsAmt(self, value):
+		self._ValtnDtlsAmt = value if type(value) != auto else self.make_default("ValtnDtlsAmt")
+
+	@ValtnDtlsAmt.deleter
+	def ValtnDtlsAmt(self):
+		del self._ValtnDtlsAmt
+		self._ValtnDtlsAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValtnDtlsAmt', type=CollateralAmount9, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Hrcut', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnDtlsAmt', type=CollateralAmount9, min=1, max=None, mutex_group=None, array=True),
 	))
 

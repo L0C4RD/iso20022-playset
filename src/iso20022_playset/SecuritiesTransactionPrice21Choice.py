@@ -1,25 +1,12 @@
 from . import base_types
-import PercentageRate
-import DecimalNumber
-import AmountAndDirection53
-import ActiveOrHistoricCurrencyAndAmount
+from .PercentageRate import PercentageRate
+from .AmountAndDirection53 import AmountAndDirection53
+from .DecimalNumber import DecimalNumber
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class SecuritiesTransactionPrice21Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Yld", "_NmnlVal", "_Pctg", "_BsisPts", "_MntryVal"]
-	@property
-	def Yld(self):
-		return self._Yld
-
-	@Yld.setter
-	def Yld(self, value):
-		self._Yld = value if type(value) != auto else self.make_default("Yld")
-
-	@Yld.deleter
-	def Yld(self):
-		del self._Yld
-		self._Yld = None
-
+	__slots__ = ["_NmnlVal", "_MntryVal", "_BsisPts", "_Pctg", "_Yld"]
 	@property
 	def NmnlVal(self):
 		return self._NmnlVal
@@ -34,17 +21,17 @@ class SecuritiesTransactionPrice21Choice(base_types._BaseFieldType):
 		self._NmnlVal = None
 
 	@property
-	def Pctg(self):
-		return self._Pctg
+	def MntryVal(self):
+		return self._MntryVal
 
-	@Pctg.setter
-	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+	@MntryVal.setter
+	def MntryVal(self, value):
+		self._MntryVal = value if type(value) != auto else self.make_default("MntryVal")
 
-	@Pctg.deleter
-	def Pctg(self):
-		del self._Pctg
-		self._Pctg = None
+	@MntryVal.deleter
+	def MntryVal(self):
+		del self._MntryVal
+		self._MntryVal = None
 
 	@property
 	def BsisPts(self):
@@ -60,23 +47,36 @@ class SecuritiesTransactionPrice21Choice(base_types._BaseFieldType):
 		self._BsisPts = None
 
 	@property
-	def MntryVal(self):
-		return self._MntryVal
+	def Pctg(self):
+		return self._Pctg
 
-	@MntryVal.setter
-	def MntryVal(self, value):
-		self._MntryVal = value if type(value) != auto else self.make_default("MntryVal")
+	@Pctg.setter
+	def Pctg(self, value):
+		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
 
-	@MntryVal.deleter
-	def MntryVal(self):
-		del self._MntryVal
-		self._MntryVal = None
+	@Pctg.deleter
+	def Pctg(self):
+		del self._Pctg
+		self._Pctg = None
+
+	@property
+	def Yld(self):
+		return self._Yld
+
+	@Yld.setter
+	def Yld(self, value):
+		self._Yld = value if type(value) != auto else self.make_default("Yld")
+
+	@Yld.deleter
+	def Yld(self):
+		del self._Yld
+		self._Yld = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NmnlVal', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='BsisPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MntryVal', type=AmountAndDirection53, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BsisPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 	))
 

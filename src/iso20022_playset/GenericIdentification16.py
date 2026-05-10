@@ -1,23 +1,10 @@
 from . import base_types
-import PersonIdentificationType3Choice
-import Max35Text
+from .Max35Text import Max35Text
+from .PersonIdentificationType3Choice import PersonIdentificationType3Choice
 
 class GenericIdentification16(base_types._BaseFieldType):
 
-	__slots__ = ["_IdTp", "_Issr", "_Id"]
-	@property
-	def IdTp(self):
-		return self._IdTp
-
-	@IdTp.setter
-	def IdTp(self, value):
-		self._IdTp = value if type(value) != auto else self.make_default("IdTp")
-
-	@IdTp.deleter
-	def IdTp(self):
-		del self._IdTp
-		self._IdTp = None
-
+	__slots__ = ["_Issr", "_Id", "_IdTp"]
 	@property
 	def Issr(self):
 		return self._Issr
@@ -44,9 +31,22 @@ class GenericIdentification16(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def IdTp(self):
+		return self._IdTp
+
+	@IdTp.setter
+	def IdTp(self, value):
+		self._IdTp = value if type(value) != auto else self.make_default("IdTp")
+
+	@IdTp.deleter
+	def IdTp(self):
+		del self._IdTp
+		self._IdTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IdTp', type=PersonIdentificationType3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IdTp', type=PersonIdentificationType3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

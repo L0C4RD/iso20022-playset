@@ -1,25 +1,51 @@
 from . import base_types
-import RemittanceLocation9
-import PaymentIdentification6
-import RemittanceInformation22
-import BranchAndFinancialInstitutionIdentification8
-import ChargeBearerType1Code
-import Purpose2Choice
-import ActiveCurrencyAndAmount
-import Frequency1
-import InstructionForCreditorAgent3
-import RegulatoryReporting3
-import PaymentTypeInformation26
-import Cheque19
-import PartyIdentification272
-import TaxData1
-import TransferInstruction1
-import TaxRateMarker1Code
-import CashAccount40
+from .PartyIdentification272 import PartyIdentification272
+from .TransferInstruction1 import TransferInstruction1
+from .Purpose2Choice import Purpose2Choice
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .Cheque19 import Cheque19
+from .TaxRateMarker1Code import TaxRateMarker1Code
+from .ChargeBearerType1Code import ChargeBearerType1Code
+from .RegulatoryReporting3 import RegulatoryReporting3
+from .RemittanceLocation9 import RemittanceLocation9
+from .TaxData1 import TaxData1
+from .RemittanceInformation22 import RemittanceInformation22
+from .InstructionForCreditorAgent3 import InstructionForCreditorAgent3
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .CashAccount40 import CashAccount40
+from .PaymentIdentification6 import PaymentIdentification6
+from .PaymentTypeInformation26 import PaymentTypeInformation26
+from .Frequency1 import Frequency1
 
 class CreditTransferTransaction59(base_types._BaseFieldType):
 
-	__slots__ = ["_Purp", "_Tax", "_CdtrAcct", "_TaxRateMrkr", "_TrfInstr", "_UltmtCdtr", "_RltdRmtInf", "_RmtInf", "_InstrForCdtrAgt", "_PmtTpInf", "_Cdtr", "_PmtId", "_RgltryRptg", "_IntrmyAgt1", "_UltmtDbtr", "_IntrmyAgt2", "_ChrgBr", "_Amt", "_ChqInstr", "_IntrmyAgt3", "_Frqcy", "_CdtrAgt"]
+	__slots__ = ["_ChrgBr", "_IntrmyAgt2", "_Purp", "_Cdtr", "_PmtId", "_InstrForCdtrAgt", "_Amt", "_TrfInstr", "_ChqInstr", "_Tax", "_RltdRmtInf", "_IntrmyAgt1", "_RmtInf", "_UltmtCdtr", "_CdtrAgt", "_UltmtDbtr", "_Frqcy", "_CdtrAcct", "_PmtTpInf", "_TaxRateMrkr", "_RgltryRptg", "_IntrmyAgt3"]
+	@property
+	def ChrgBr(self):
+		return self._ChrgBr
+
+	@ChrgBr.setter
+	def ChrgBr(self, value):
+		self._ChrgBr = value if type(value) != auto else self.make_default("ChrgBr")
+
+	@ChrgBr.deleter
+	def ChrgBr(self):
+		del self._ChrgBr
+		self._ChrgBr = None
+
+	@property
+	def IntrmyAgt2(self):
+		return self._IntrmyAgt2
+
+	@IntrmyAgt2.setter
+	def IntrmyAgt2(self, value):
+		self._IntrmyAgt2 = value if type(value) != auto else self.make_default("IntrmyAgt2")
+
+	@IntrmyAgt2.deleter
+	def IntrmyAgt2(self):
+		del self._IntrmyAgt2
+		self._IntrmyAgt2 = None
+
 	@property
 	def Purp(self):
 		return self._Purp
@@ -32,123 +58,6 @@ class CreditTransferTransaction59(base_types._BaseFieldType):
 	def Purp(self):
 		del self._Purp
 		self._Purp = None
-
-	@property
-	def Tax(self):
-		return self._Tax
-
-	@Tax.setter
-	def Tax(self, value):
-		self._Tax = value if type(value) != auto else self.make_default("Tax")
-
-	@Tax.deleter
-	def Tax(self):
-		del self._Tax
-		self._Tax = None
-
-	@property
-	def CdtrAcct(self):
-		return self._CdtrAcct
-
-	@CdtrAcct.setter
-	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != auto else self.make_default("CdtrAcct")
-
-	@CdtrAcct.deleter
-	def CdtrAcct(self):
-		del self._CdtrAcct
-		self._CdtrAcct = None
-
-	@property
-	def TaxRateMrkr(self):
-		return self._TaxRateMrkr
-
-	@TaxRateMrkr.setter
-	def TaxRateMrkr(self, value):
-		self._TaxRateMrkr = value if type(value) != auto else self.make_default("TaxRateMrkr")
-
-	@TaxRateMrkr.deleter
-	def TaxRateMrkr(self):
-		del self._TaxRateMrkr
-		self._TaxRateMrkr = None
-
-	@property
-	def TrfInstr(self):
-		return self._TrfInstr
-
-	@TrfInstr.setter
-	def TrfInstr(self, value):
-		self._TrfInstr = value if type(value) != auto else self.make_default("TrfInstr")
-
-	@TrfInstr.deleter
-	def TrfInstr(self):
-		del self._TrfInstr
-		self._TrfInstr = None
-
-	@property
-	def UltmtCdtr(self):
-		return self._UltmtCdtr
-
-	@UltmtCdtr.setter
-	def UltmtCdtr(self, value):
-		self._UltmtCdtr = value if type(value) != auto else self.make_default("UltmtCdtr")
-
-	@UltmtCdtr.deleter
-	def UltmtCdtr(self):
-		del self._UltmtCdtr
-		self._UltmtCdtr = None
-
-	@property
-	def RltdRmtInf(self):
-		return self._RltdRmtInf
-
-	@RltdRmtInf.setter
-	def RltdRmtInf(self, value):
-		self._RltdRmtInf = value if type(value) != auto else self.make_default("RltdRmtInf")
-
-	@RltdRmtInf.deleter
-	def RltdRmtInf(self):
-		del self._RltdRmtInf
-		self._RltdRmtInf = None
-
-	@property
-	def RmtInf(self):
-		return self._RmtInf
-
-	@RmtInf.setter
-	def RmtInf(self, value):
-		self._RmtInf = value if type(value) != auto else self.make_default("RmtInf")
-
-	@RmtInf.deleter
-	def RmtInf(self):
-		del self._RmtInf
-		self._RmtInf = None
-
-	@property
-	def InstrForCdtrAgt(self):
-		return self._InstrForCdtrAgt
-
-	@InstrForCdtrAgt.setter
-	def InstrForCdtrAgt(self, value):
-		self._InstrForCdtrAgt = value if type(value) != auto else self.make_default("InstrForCdtrAgt")
-
-	@InstrForCdtrAgt.deleter
-	def InstrForCdtrAgt(self):
-		del self._InstrForCdtrAgt
-		self._InstrForCdtrAgt = None
-
-	@property
-	def PmtTpInf(self):
-		return self._PmtTpInf
-
-	@PmtTpInf.setter
-	def PmtTpInf(self, value):
-		self._PmtTpInf = value if type(value) != auto else self.make_default("PmtTpInf")
-
-	@PmtTpInf.deleter
-	def PmtTpInf(self):
-		del self._PmtTpInf
-		self._PmtTpInf = None
 
 	@property
 	def Cdtr(self):
@@ -177,69 +86,17 @@ class CreditTransferTransaction59(base_types._BaseFieldType):
 		self._PmtId = None
 
 	@property
-	def RgltryRptg(self):
-		return self._RgltryRptg
+	def InstrForCdtrAgt(self):
+		return self._InstrForCdtrAgt
 
-	@RgltryRptg.setter
-	def RgltryRptg(self, value):
-		self._RgltryRptg = value if type(value) != auto else self.make_default("RgltryRptg")
+	@InstrForCdtrAgt.setter
+	def InstrForCdtrAgt(self, value):
+		self._InstrForCdtrAgt = value if type(value) != auto else self.make_default("InstrForCdtrAgt")
 
-	@RgltryRptg.deleter
-	def RgltryRptg(self):
-		del self._RgltryRptg
-		self._RgltryRptg = None
-
-	@property
-	def IntrmyAgt1(self):
-		return self._IntrmyAgt1
-
-	@IntrmyAgt1.setter
-	def IntrmyAgt1(self, value):
-		self._IntrmyAgt1 = value if type(value) != auto else self.make_default("IntrmyAgt1")
-
-	@IntrmyAgt1.deleter
-	def IntrmyAgt1(self):
-		del self._IntrmyAgt1
-		self._IntrmyAgt1 = None
-
-	@property
-	def UltmtDbtr(self):
-		return self._UltmtDbtr
-
-	@UltmtDbtr.setter
-	def UltmtDbtr(self, value):
-		self._UltmtDbtr = value if type(value) != auto else self.make_default("UltmtDbtr")
-
-	@UltmtDbtr.deleter
-	def UltmtDbtr(self):
-		del self._UltmtDbtr
-		self._UltmtDbtr = None
-
-	@property
-	def IntrmyAgt2(self):
-		return self._IntrmyAgt2
-
-	@IntrmyAgt2.setter
-	def IntrmyAgt2(self, value):
-		self._IntrmyAgt2 = value if type(value) != auto else self.make_default("IntrmyAgt2")
-
-	@IntrmyAgt2.deleter
-	def IntrmyAgt2(self):
-		del self._IntrmyAgt2
-		self._IntrmyAgt2 = None
-
-	@property
-	def ChrgBr(self):
-		return self._ChrgBr
-
-	@ChrgBr.setter
-	def ChrgBr(self, value):
-		self._ChrgBr = value if type(value) != auto else self.make_default("ChrgBr")
-
-	@ChrgBr.deleter
-	def ChrgBr(self):
-		del self._ChrgBr
-		self._ChrgBr = None
+	@InstrForCdtrAgt.deleter
+	def InstrForCdtrAgt(self):
+		del self._InstrForCdtrAgt
+		self._InstrForCdtrAgt = None
 
 	@property
 	def Amt(self):
@@ -255,6 +112,19 @@ class CreditTransferTransaction59(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
+	def TrfInstr(self):
+		return self._TrfInstr
+
+	@TrfInstr.setter
+	def TrfInstr(self, value):
+		self._TrfInstr = value if type(value) != auto else self.make_default("TrfInstr")
+
+	@TrfInstr.deleter
+	def TrfInstr(self):
+		del self._TrfInstr
+		self._TrfInstr = None
+
+	@property
 	def ChqInstr(self):
 		return self._ChqInstr
 
@@ -268,17 +138,95 @@ class CreditTransferTransaction59(base_types._BaseFieldType):
 		self._ChqInstr = None
 
 	@property
-	def IntrmyAgt3(self):
-		return self._IntrmyAgt3
+	def Tax(self):
+		return self._Tax
 
-	@IntrmyAgt3.setter
-	def IntrmyAgt3(self, value):
-		self._IntrmyAgt3 = value if type(value) != auto else self.make_default("IntrmyAgt3")
+	@Tax.setter
+	def Tax(self, value):
+		self._Tax = value if type(value) != auto else self.make_default("Tax")
 
-	@IntrmyAgt3.deleter
-	def IntrmyAgt3(self):
-		del self._IntrmyAgt3
-		self._IntrmyAgt3 = None
+	@Tax.deleter
+	def Tax(self):
+		del self._Tax
+		self._Tax = None
+
+	@property
+	def RltdRmtInf(self):
+		return self._RltdRmtInf
+
+	@RltdRmtInf.setter
+	def RltdRmtInf(self, value):
+		self._RltdRmtInf = value if type(value) != auto else self.make_default("RltdRmtInf")
+
+	@RltdRmtInf.deleter
+	def RltdRmtInf(self):
+		del self._RltdRmtInf
+		self._RltdRmtInf = None
+
+	@property
+	def IntrmyAgt1(self):
+		return self._IntrmyAgt1
+
+	@IntrmyAgt1.setter
+	def IntrmyAgt1(self, value):
+		self._IntrmyAgt1 = value if type(value) != auto else self.make_default("IntrmyAgt1")
+
+	@IntrmyAgt1.deleter
+	def IntrmyAgt1(self):
+		del self._IntrmyAgt1
+		self._IntrmyAgt1 = None
+
+	@property
+	def RmtInf(self):
+		return self._RmtInf
+
+	@RmtInf.setter
+	def RmtInf(self, value):
+		self._RmtInf = value if type(value) != auto else self.make_default("RmtInf")
+
+	@RmtInf.deleter
+	def RmtInf(self):
+		del self._RmtInf
+		self._RmtInf = None
+
+	@property
+	def UltmtCdtr(self):
+		return self._UltmtCdtr
+
+	@UltmtCdtr.setter
+	def UltmtCdtr(self, value):
+		self._UltmtCdtr = value if type(value) != auto else self.make_default("UltmtCdtr")
+
+	@UltmtCdtr.deleter
+	def UltmtCdtr(self):
+		del self._UltmtCdtr
+		self._UltmtCdtr = None
+
+	@property
+	def CdtrAgt(self):
+		return self._CdtrAgt
+
+	@CdtrAgt.setter
+	def CdtrAgt(self, value):
+		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
+
+	@CdtrAgt.deleter
+	def CdtrAgt(self):
+		del self._CdtrAgt
+		self._CdtrAgt = None
+
+	@property
+	def UltmtDbtr(self):
+		return self._UltmtDbtr
+
+	@UltmtDbtr.setter
+	def UltmtDbtr(self, value):
+		self._UltmtDbtr = value if type(value) != auto else self.make_default("UltmtDbtr")
+
+	@UltmtDbtr.deleter
+	def UltmtDbtr(self):
+		del self._UltmtDbtr
+		self._UltmtDbtr = None
 
 	@property
 	def Frqcy(self):
@@ -294,40 +242,92 @@ class CreditTransferTransaction59(base_types._BaseFieldType):
 		self._Frqcy = None
 
 	@property
-	def CdtrAgt(self):
-		return self._CdtrAgt
+	def CdtrAcct(self):
+		return self._CdtrAcct
 
-	@CdtrAgt.setter
-	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
+	@CdtrAcct.setter
+	def CdtrAcct(self, value):
+		self._CdtrAcct = value if type(value) != auto else self.make_default("CdtrAcct")
 
-	@CdtrAgt.deleter
-	def CdtrAgt(self):
-		del self._CdtrAgt
-		self._CdtrAgt = None
+	@CdtrAcct.deleter
+	def CdtrAcct(self):
+		del self._CdtrAcct
+		self._CdtrAcct = None
+
+	@property
+	def PmtTpInf(self):
+		return self._PmtTpInf
+
+	@PmtTpInf.setter
+	def PmtTpInf(self, value):
+		self._PmtTpInf = value if type(value) != auto else self.make_default("PmtTpInf")
+
+	@PmtTpInf.deleter
+	def PmtTpInf(self):
+		del self._PmtTpInf
+		self._PmtTpInf = None
+
+	@property
+	def TaxRateMrkr(self):
+		return self._TaxRateMrkr
+
+	@TaxRateMrkr.setter
+	def TaxRateMrkr(self, value):
+		self._TaxRateMrkr = value if type(value) != auto else self.make_default("TaxRateMrkr")
+
+	@TaxRateMrkr.deleter
+	def TaxRateMrkr(self):
+		del self._TaxRateMrkr
+		self._TaxRateMrkr = None
+
+	@property
+	def RgltryRptg(self):
+		return self._RgltryRptg
+
+	@RgltryRptg.setter
+	def RgltryRptg(self, value):
+		self._RgltryRptg = value if type(value) != auto else self.make_default("RgltryRptg")
+
+	@RgltryRptg.deleter
+	def RgltryRptg(self):
+		del self._RgltryRptg
+		self._RgltryRptg = None
+
+	@property
+	def IntrmyAgt3(self):
+		return self._IntrmyAgt3
+
+	@IntrmyAgt3.setter
+	def IntrmyAgt3(self, value):
+		self._IntrmyAgt3 = value if type(value) != auto else self.make_default("IntrmyAgt3")
+
+	@IntrmyAgt3.deleter
+	def IntrmyAgt3(self):
+		del self._IntrmyAgt3
+		self._IntrmyAgt3 = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ChrgBr', type=ChargeBearerType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrmyAgt2', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Purp', type=Purpose2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tax', type=TaxData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxRateMrkr', type=TaxRateMarker1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfInstr', type=TransferInstruction1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UltmtCdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRmtInf', type=RemittanceLocation9, min=0, max=10, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RmtInf', type=RemittanceInformation22, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrForCdtrAgt', type=InstructionForCreditorAgent3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PmtTpInf', type=PaymentTypeInformation26, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtId', type=PaymentIdentification6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RgltryRptg', type=RegulatoryReporting3, min=0, max=10, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IntrmyAgt1', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UltmtDbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrmyAgt2', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgBr', type=ChargeBearerType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrForCdtrAgt', type=InstructionForCreditorAgent3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfInstr', type=TransferInstruction1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChqInstr', type=Cheque19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrmyAgt3', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frqcy', type=Frequency1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tax', type=TaxData1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRmtInf', type=RemittanceLocation9, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IntrmyAgt1', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmtInf', type=RemittanceInformation22, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UltmtCdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UltmtDbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frqcy', type=Frequency1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtTpInf', type=PaymentTypeInformation26, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRateMrkr', type=TaxRateMarker1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RgltryRptg', type=RegulatoryReporting3, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IntrmyAgt3', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

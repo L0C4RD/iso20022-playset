@@ -1,12 +1,12 @@
 from . import base_types
-import ProductType6Code
-import ActiveCurrencyAnd24Amount
-import DebtIssuerType1Code
-import ISINOct2015Identifier
+from .ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
+from .DebtIssuerType1Code import DebtIssuerType1Code
+from .ProductType6Code import ProductType6Code
+from .ISINOct2015Identifier import ISINOct2015Identifier
 
 class SecurityIdentificationAndAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_MktVal", "_FinInstrmTp", "_DebtIssrTp", "_Id"]
+	__slots__ = ["_MktVal", "_DebtIssrTp", "_Id", "_FinInstrmTp"]
 	@property
 	def MktVal(self):
 		return self._MktVal
@@ -19,19 +19,6 @@ class SecurityIdentificationAndAmount2(base_types._BaseFieldType):
 	def MktVal(self):
 		del self._MktVal
 		self._MktVal = None
-
-	@property
-	def FinInstrmTp(self):
-		return self._FinInstrmTp
-
-	@FinInstrmTp.setter
-	def FinInstrmTp(self, value):
-		self._FinInstrmTp = value if type(value) != auto else self.make_default("FinInstrmTp")
-
-	@FinInstrmTp.deleter
-	def FinInstrmTp(self):
-		del self._FinInstrmTp
-		self._FinInstrmTp = None
 
 	@property
 	def DebtIssrTp(self):
@@ -59,10 +46,23 @@ class SecurityIdentificationAndAmount2(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def FinInstrmTp(self):
+		return self._FinInstrmTp
+
+	@FinInstrmTp.setter
+	def FinInstrmTp(self, value):
+		self._FinInstrmTp = value if type(value) != auto else self.make_default("FinInstrmTp")
+
+	@FinInstrmTp.deleter
+	def FinInstrmTp(self):
+		del self._FinInstrmTp
+		self._FinInstrmTp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmTp', type=ProductType6Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DebtIssrTp', type=DebtIssuerType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmTp', type=ProductType6Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

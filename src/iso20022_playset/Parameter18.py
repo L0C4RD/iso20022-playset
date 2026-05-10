@@ -1,5 +1,5 @@
 from . import base_types
-import Algorithm26Code
+from .Algorithm26Code import Algorithm26Code
 
 class Parameter18(base_types._BaseFieldType):
 

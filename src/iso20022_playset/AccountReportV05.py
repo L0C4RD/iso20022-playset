@@ -1,28 +1,15 @@
 from . import base_types
-import OrganisationIdentification39
-import PartyAndSignature4
-import References5
-import AccountReport36
-import SupplementaryData1
-import BranchAndFinancialInstitutionIdentification8
-import Organisation42
+from .AccountReport36 import AccountReport36
+from .References5 import References5
+from .SupplementaryData1 import SupplementaryData1
+from .PartyAndSignature4 import PartyAndSignature4
+from .Organisation42 import Organisation42
+from .OrganisationIdentification39 import OrganisationIdentification39
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class AccountReportV05(base_types._BaseFieldType):
 
-	__slots__ = ["_Rpt", "_Refs", "_AcctSvcrId", "_Org", "_SplmtryData", "_DgtlSgntr", "_Fr"]
-	@property
-	def Rpt(self):
-		return self._Rpt
-
-	@Rpt.setter
-	def Rpt(self, value):
-		self._Rpt = value if type(value) != auto else self.make_default("Rpt")
-
-	@Rpt.deleter
-	def Rpt(self):
-		del self._Rpt
-		self._Rpt = None
-
+	__slots__ = ["_Refs", "_SplmtryData", "_AcctSvcrId", "_Org", "_Rpt", "_Fr", "_DgtlSgntr"]
 	@property
 	def Refs(self):
 		return self._Refs
@@ -35,6 +22,19 @@ class AccountReportV05(base_types._BaseFieldType):
 	def Refs(self):
 		del self._Refs
 		self._Refs = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def AcctSvcrId(self):
@@ -63,30 +63,17 @@ class AccountReportV05(base_types._BaseFieldType):
 		self._Org = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Rpt(self):
+		return self._Rpt
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@Rpt.setter
+	def Rpt(self, value):
+		self._Rpt = value if type(value) != auto else self.make_default("Rpt")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def DgtlSgntr(self):
-		return self._DgtlSgntr
-
-	@DgtlSgntr.setter
-	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
-
-	@DgtlSgntr.deleter
-	def DgtlSgntr(self):
-		del self._DgtlSgntr
-		self._DgtlSgntr = None
+	@Rpt.deleter
+	def Rpt(self):
+		del self._Rpt
+		self._Rpt = None
 
 	@property
 	def Fr(self):
@@ -101,13 +88,26 @@ class AccountReportV05(base_types._BaseFieldType):
 		del self._Fr
 		self._Fr = None
 
+	@property
+	def DgtlSgntr(self):
+		return self._DgtlSgntr
+
+	@DgtlSgntr.setter
+	def DgtlSgntr(self, value):
+		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
+
+	@DgtlSgntr.deleter
+	def DgtlSgntr(self):
+		del self._DgtlSgntr
+		self._DgtlSgntr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rpt', type=AccountReport36, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Refs', type=References5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Org', type=Organisation42, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rpt', type=AccountReport36, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Fr', type=OrganisationIdentification39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature4, min=0, max=None, mutex_group=None, array=True),
 	))
 

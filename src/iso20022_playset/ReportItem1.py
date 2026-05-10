@@ -1,24 +1,24 @@
 from . import base_types
-import ISODate
-import SecuritiesAccount19
-import HoldingAccountLevel1Code
-import SecurityIdentification19
+from .SecurityIdentification19 import SecurityIdentification19
+from .HoldingAccountLevel1Code import HoldingAccountLevel1Code
+from .SecuritiesAccount19 import SecuritiesAccount19
+from .ISODate import ISODate
 
 class ReportItem1(base_types._BaseFieldType):
 
-	__slots__ = ["_ItmDt", "_FinInstrmId", "_AcctId", "_AcctLvl"]
+	__slots__ = ["_AcctLvl", "_FinInstrmId", "_AcctId", "_ItmDt"]
 	@property
-	def ItmDt(self):
-		return self._ItmDt
+	def AcctLvl(self):
+		return self._AcctLvl
 
-	@ItmDt.setter
-	def ItmDt(self, value):
-		self._ItmDt = value if type(value) != auto else self.make_default("ItmDt")
+	@AcctLvl.setter
+	def AcctLvl(self, value):
+		self._AcctLvl = value if type(value) != auto else self.make_default("AcctLvl")
 
-	@ItmDt.deleter
-	def ItmDt(self):
-		del self._ItmDt
-		self._ItmDt = None
+	@AcctLvl.deleter
+	def AcctLvl(self):
+		del self._AcctLvl
+		self._AcctLvl = None
 
 	@property
 	def FinInstrmId(self):
@@ -47,22 +47,22 @@ class ReportItem1(base_types._BaseFieldType):
 		self._AcctId = None
 
 	@property
-	def AcctLvl(self):
-		return self._AcctLvl
+	def ItmDt(self):
+		return self._ItmDt
 
-	@AcctLvl.setter
-	def AcctLvl(self, value):
-		self._AcctLvl = value if type(value) != auto else self.make_default("AcctLvl")
+	@ItmDt.setter
+	def ItmDt(self, value):
+		self._ItmDt = value if type(value) != auto else self.make_default("ItmDt")
 
-	@AcctLvl.deleter
-	def AcctLvl(self):
-		del self._AcctLvl
-		self._AcctLvl = None
+	@ItmDt.deleter
+	def ItmDt(self):
+		del self._ItmDt
+		self._ItmDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ItmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctLvl', type=HoldingAccountLevel1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctLvl', type=HoldingAccountLevel1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ItmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

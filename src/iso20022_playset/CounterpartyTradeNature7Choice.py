@@ -1,6 +1,6 @@
 from . import base_types
-import FinancialPartyClassification1
-import FinancialPartyClassification2
+from .FinancialPartyClassification2 import FinancialPartyClassification2
+from .FinancialPartyClassification1 import FinancialPartyClassification1
 
 class CounterpartyTradeNature7Choice(base_types._BaseFieldType):
 

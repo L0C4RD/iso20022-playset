@@ -1,25 +1,12 @@
 from . import base_types
-import Max15NumericText
-import DecimalNumber
-import Max35Text
-import ISODateTime
+from .Max35Text import Max35Text
+from .Max15NumericText import Max15NumericText
+from .DecimalNumber import DecimalNumber
+from .ISODateTime import ISODateTime
 
 class OriginalGroupInformation27(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlNbOfTxs", "_OrgnlCtrlSum", "_OrgnlMsgNmId", "_OrgnlCreDtTm", "_OrgnlMsgId"]
-	@property
-	def OrgnlNbOfTxs(self):
-		return self._OrgnlNbOfTxs
-
-	@OrgnlNbOfTxs.setter
-	def OrgnlNbOfTxs(self, value):
-		self._OrgnlNbOfTxs = value if type(value) != auto else self.make_default("OrgnlNbOfTxs")
-
-	@OrgnlNbOfTxs.deleter
-	def OrgnlNbOfTxs(self):
-		del self._OrgnlNbOfTxs
-		self._OrgnlNbOfTxs = None
-
+	__slots__ = ["_OrgnlCtrlSum", "_OrgnlMsgId", "_OrgnlNbOfTxs", "_OrgnlCreDtTm", "_OrgnlMsgNmId"]
 	@property
 	def OrgnlCtrlSum(self):
 		return self._OrgnlCtrlSum
@@ -34,17 +21,30 @@ class OriginalGroupInformation27(base_types._BaseFieldType):
 		self._OrgnlCtrlSum = None
 
 	@property
-	def OrgnlMsgNmId(self):
-		return self._OrgnlMsgNmId
+	def OrgnlMsgId(self):
+		return self._OrgnlMsgId
 
-	@OrgnlMsgNmId.setter
-	def OrgnlMsgNmId(self, value):
-		self._OrgnlMsgNmId = value if type(value) != auto else self.make_default("OrgnlMsgNmId")
+	@OrgnlMsgId.setter
+	def OrgnlMsgId(self, value):
+		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
 
-	@OrgnlMsgNmId.deleter
-	def OrgnlMsgNmId(self):
-		del self._OrgnlMsgNmId
-		self._OrgnlMsgNmId = None
+	@OrgnlMsgId.deleter
+	def OrgnlMsgId(self):
+		del self._OrgnlMsgId
+		self._OrgnlMsgId = None
+
+	@property
+	def OrgnlNbOfTxs(self):
+		return self._OrgnlNbOfTxs
+
+	@OrgnlNbOfTxs.setter
+	def OrgnlNbOfTxs(self, value):
+		self._OrgnlNbOfTxs = value if type(value) != auto else self.make_default("OrgnlNbOfTxs")
+
+	@OrgnlNbOfTxs.deleter
+	def OrgnlNbOfTxs(self):
+		del self._OrgnlNbOfTxs
+		self._OrgnlNbOfTxs = None
 
 	@property
 	def OrgnlCreDtTm(self):
@@ -60,23 +60,23 @@ class OriginalGroupInformation27(base_types._BaseFieldType):
 		self._OrgnlCreDtTm = None
 
 	@property
-	def OrgnlMsgId(self):
-		return self._OrgnlMsgId
+	def OrgnlMsgNmId(self):
+		return self._OrgnlMsgNmId
 
-	@OrgnlMsgId.setter
-	def OrgnlMsgId(self, value):
-		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
+	@OrgnlMsgNmId.setter
+	def OrgnlMsgNmId(self, value):
+		self._OrgnlMsgNmId = value if type(value) != auto else self.make_default("OrgnlMsgNmId")
 
-	@OrgnlMsgId.deleter
-	def OrgnlMsgId(self):
-		del self._OrgnlMsgId
-		self._OrgnlMsgId = None
+	@OrgnlMsgNmId.deleter
+	def OrgnlMsgNmId(self):
+		del self._OrgnlMsgNmId
+		self._OrgnlMsgNmId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlNbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlCtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlNbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

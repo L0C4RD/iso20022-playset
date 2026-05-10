@@ -1,23 +1,23 @@
 from . import base_types
-import GenericIdentification178
-import ActiveOrHistoricCurrencyAndAmount
-import Period4Choice
+from .GenericIdentification178 import GenericIdentification178
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .Period4Choice import Period4Choice
 
 class CollateralTransactionAmountBreakdown2(base_types._BaseFieldType):
 
-	__slots__ = ["_LotNb", "_Prd", "_TxAmt"]
+	__slots__ = ["_TxAmt", "_Prd", "_LotNb"]
 	@property
-	def LotNb(self):
-		return self._LotNb
+	def TxAmt(self):
+		return self._TxAmt
 
-	@LotNb.setter
-	def LotNb(self, value):
-		self._LotNb = value if type(value) != auto else self.make_default("LotNb")
+	@TxAmt.setter
+	def TxAmt(self, value):
+		self._TxAmt = value if type(value) != auto else self.make_default("TxAmt")
 
-	@LotNb.deleter
-	def LotNb(self):
-		del self._LotNb
-		self._LotNb = None
+	@TxAmt.deleter
+	def TxAmt(self):
+		del self._TxAmt
+		self._TxAmt = None
 
 	@property
 	def Prd(self):
@@ -33,21 +33,21 @@ class CollateralTransactionAmountBreakdown2(base_types._BaseFieldType):
 		self._Prd = None
 
 	@property
-	def TxAmt(self):
-		return self._TxAmt
+	def LotNb(self):
+		return self._LotNb
 
-	@TxAmt.setter
-	def TxAmt(self, value):
-		self._TxAmt = value if type(value) != auto else self.make_default("TxAmt")
+	@LotNb.setter
+	def LotNb(self, value):
+		self._LotNb = value if type(value) != auto else self.make_default("LotNb")
 
-	@TxAmt.deleter
-	def TxAmt(self):
-		del self._TxAmt
-		self._TxAmt = None
+	@LotNb.deleter
+	def LotNb(self):
+		del self._LotNb
+		self._LotNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LotNb', type=GenericIdentification178, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LotNb', type=GenericIdentification178, min=1, max=1, mutex_group=None, array=False),
 	))
 

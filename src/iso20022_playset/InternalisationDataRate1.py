@@ -1,22 +1,9 @@
 from . import base_types
-import PercentageRate
+from .PercentageRate import PercentageRate
 
 class InternalisationDataRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_VolPctg", "_Val"]
-	@property
-	def VolPctg(self):
-		return self._VolPctg
-
-	@VolPctg.setter
-	def VolPctg(self, value):
-		self._VolPctg = value if type(value) != auto else self.make_default("VolPctg")
-
-	@VolPctg.deleter
-	def VolPctg(self):
-		del self._VolPctg
-		self._VolPctg = None
-
+	__slots__ = ["_Val", "_VolPctg"]
 	@property
 	def Val(self):
 		return self._Val
@@ -30,8 +17,21 @@ class InternalisationDataRate1(base_types._BaseFieldType):
 		del self._Val
 		self._Val = None
 
+	@property
+	def VolPctg(self):
+		return self._VolPctg
+
+	@VolPctg.setter
+	def VolPctg(self, value):
+		self._VolPctg = value if type(value) != auto else self.make_default("VolPctg")
+
+	@VolPctg.deleter
+	def VolPctg(self):
+		del self._VolPctg
+		self._VolPctg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VolPctg', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VolPctg', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 	))
 

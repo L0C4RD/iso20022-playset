@@ -1,25 +1,25 @@
 from . import base_types
-import CardPaymentEnvironment81
-import PaymentContext30
-import ResponseType11
-import SupplementaryData1
-import ReconciliationResponseData2
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from .SupplementaryData1 import SupplementaryData1
+from .ReconciliationResponseData2 import ReconciliationResponseData2
+from .PaymentContext30 import PaymentContext30
+from .ResponseType11 import ResponseType11
 
 class ReconciliationResponse10(base_types._BaseFieldType):
 
-	__slots__ = ["_Cntxt", "_RcncltnRspnData", "_Envt", "_SplmtryData", "_Rspn"]
+	__slots__ = ["_SplmtryData", "_RcncltnRspnData", "_Rspn", "_Envt", "_Cntxt"]
 	@property
-	def Cntxt(self):
-		return self._Cntxt
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def RcncltnRspnData(self):
@@ -35,6 +35,19 @@ class ReconciliationResponse10(base_types._BaseFieldType):
 		self._RcncltnRspnData = None
 
 	@property
+	def Rspn(self):
+		return self._Rspn
+
+	@Rspn.setter
+	def Rspn(self, value):
+		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
+
+	@Rspn.deleter
+	def Rspn(self):
+		del self._Rspn
+		self._Rspn = None
+
+	@property
 	def Envt(self):
 		return self._Envt
 
@@ -48,36 +61,23 @@ class ReconciliationResponse10(base_types._BaseFieldType):
 		self._Envt = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Cntxt(self):
+		return self._Cntxt
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def Rspn(self):
-		return self._Rspn
-
-	@Rspn.setter
-	def Rspn(self, value):
-		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
-
-	@Rspn.deleter
-	def Rspn(self):
-		del self._Rspn
-		self._Rspn = None
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnRspnData', type=ReconciliationResponseData2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RcncltnRspnData', type=ReconciliationResponseData2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
 	))
 

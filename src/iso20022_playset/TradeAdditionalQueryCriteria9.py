@@ -1,54 +1,28 @@
 from . import base_types
-import ProductType4Code
-import TransactionOperationType8Code
-import CorporateSectorCriteria6
-import SecuritiesTradeVenueCriteria1Choice
-import ModificationLevel1Code
-import ProductClassificationCriteria1
-import PartyNatureType1Code
-import DerivativeEventType3Code
+from .ModificationLevel1Code import ModificationLevel1Code
+from .TransactionOperationType8Code import TransactionOperationType8Code
+from .SecuritiesTradeVenueCriteria1Choice import SecuritiesTradeVenueCriteria1Choice
+from .ProductType4Code import ProductType4Code
+from .DerivativeEventType3Code import DerivativeEventType3Code
+from .PartyNatureType1Code import PartyNatureType1Code
+from .CorporateSectorCriteria6 import CorporateSectorCriteria6
+from .ProductClassificationCriteria1 import ProductClassificationCriteria1
 
 class TradeAdditionalQueryCriteria9(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtTp", "_ExctnVn", "_AsstClss", "_CorpSctr", "_PdctClssfctn", "_ActnTp", "_Lvl", "_NtrOfCtrPty"]
+	__slots__ = ["_NtrOfCtrPty", "_CorpSctr", "_Lvl", "_ExctnVn", "_ActnTp", "_EvtTp", "_AsstClss", "_PdctClssfctn"]
 	@property
-	def EvtTp(self):
-		return self._EvtTp
+	def NtrOfCtrPty(self):
+		return self._NtrOfCtrPty
 
-	@EvtTp.setter
-	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != auto else self.make_default("EvtTp")
+	@NtrOfCtrPty.setter
+	def NtrOfCtrPty(self, value):
+		self._NtrOfCtrPty = value if type(value) != auto else self.make_default("NtrOfCtrPty")
 
-	@EvtTp.deleter
-	def EvtTp(self):
-		del self._EvtTp
-		self._EvtTp = None
-
-	@property
-	def ExctnVn(self):
-		return self._ExctnVn
-
-	@ExctnVn.setter
-	def ExctnVn(self, value):
-		self._ExctnVn = value if type(value) != auto else self.make_default("ExctnVn")
-
-	@ExctnVn.deleter
-	def ExctnVn(self):
-		del self._ExctnVn
-		self._ExctnVn = None
-
-	@property
-	def AsstClss(self):
-		return self._AsstClss
-
-	@AsstClss.setter
-	def AsstClss(self, value):
-		self._AsstClss = value if type(value) != auto else self.make_default("AsstClss")
-
-	@AsstClss.deleter
-	def AsstClss(self):
-		del self._AsstClss
-		self._AsstClss = None
+	@NtrOfCtrPty.deleter
+	def NtrOfCtrPty(self):
+		del self._NtrOfCtrPty
+		self._NtrOfCtrPty = None
 
 	@property
 	def CorpSctr(self):
@@ -64,17 +38,30 @@ class TradeAdditionalQueryCriteria9(base_types._BaseFieldType):
 		self._CorpSctr = None
 
 	@property
-	def PdctClssfctn(self):
-		return self._PdctClssfctn
+	def Lvl(self):
+		return self._Lvl
 
-	@PdctClssfctn.setter
-	def PdctClssfctn(self, value):
-		self._PdctClssfctn = value if type(value) != auto else self.make_default("PdctClssfctn")
+	@Lvl.setter
+	def Lvl(self, value):
+		self._Lvl = value if type(value) != auto else self.make_default("Lvl")
 
-	@PdctClssfctn.deleter
-	def PdctClssfctn(self):
-		del self._PdctClssfctn
-		self._PdctClssfctn = None
+	@Lvl.deleter
+	def Lvl(self):
+		del self._Lvl
+		self._Lvl = None
+
+	@property
+	def ExctnVn(self):
+		return self._ExctnVn
+
+	@ExctnVn.setter
+	def ExctnVn(self, value):
+		self._ExctnVn = value if type(value) != auto else self.make_default("ExctnVn")
+
+	@ExctnVn.deleter
+	def ExctnVn(self):
+		del self._ExctnVn
+		self._ExctnVn = None
 
 	@property
 	def ActnTp(self):
@@ -90,39 +77,52 @@ class TradeAdditionalQueryCriteria9(base_types._BaseFieldType):
 		self._ActnTp = None
 
 	@property
-	def Lvl(self):
-		return self._Lvl
+	def EvtTp(self):
+		return self._EvtTp
 
-	@Lvl.setter
-	def Lvl(self, value):
-		self._Lvl = value if type(value) != auto else self.make_default("Lvl")
+	@EvtTp.setter
+	def EvtTp(self, value):
+		self._EvtTp = value if type(value) != auto else self.make_default("EvtTp")
 
-	@Lvl.deleter
-	def Lvl(self):
-		del self._Lvl
-		self._Lvl = None
+	@EvtTp.deleter
+	def EvtTp(self):
+		del self._EvtTp
+		self._EvtTp = None
 
 	@property
-	def NtrOfCtrPty(self):
-		return self._NtrOfCtrPty
+	def AsstClss(self):
+		return self._AsstClss
 
-	@NtrOfCtrPty.setter
-	def NtrOfCtrPty(self, value):
-		self._NtrOfCtrPty = value if type(value) != auto else self.make_default("NtrOfCtrPty")
+	@AsstClss.setter
+	def AsstClss(self, value):
+		self._AsstClss = value if type(value) != auto else self.make_default("AsstClss")
 
-	@NtrOfCtrPty.deleter
-	def NtrOfCtrPty(self):
-		del self._NtrOfCtrPty
-		self._NtrOfCtrPty = None
+	@AsstClss.deleter
+	def AsstClss(self):
+		del self._AsstClss
+		self._AsstClss = None
+
+	@property
+	def PdctClssfctn(self):
+		return self._PdctClssfctn
+
+	@PdctClssfctn.setter
+	def PdctClssfctn(self, value):
+		self._PdctClssfctn = value if type(value) != auto else self.make_default("PdctClssfctn")
+
+	@PdctClssfctn.deleter
+	def PdctClssfctn(self):
+		del self._PdctClssfctn
+		self._PdctClssfctn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EvtTp', type=DerivativeEventType3Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ExctnVn', type=SecuritiesTradeVenueCriteria1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AsstClss', type=ProductType4Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CorpSctr', type=CorporateSectorCriteria6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctClssfctn', type=ProductClassificationCriteria1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActnTp', type=TransactionOperationType8Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Lvl', type=ModificationLevel1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtrOfCtrPty', type=PartyNatureType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpSctr', type=CorporateSectorCriteria6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lvl', type=ModificationLevel1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctnVn', type=SecuritiesTradeVenueCriteria1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActnTp', type=TransactionOperationType8Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EvtTp', type=DerivativeEventType3Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AsstClss', type=ProductType4Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PdctClssfctn', type=ProductClassificationCriteria1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,21 +1,21 @@
 from . import base_types
-import Max35Text
+from .Max35Text import Max35Text
 
 class References25(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcrTxId", "_MktInfrstrctrTxId", "_PrcrTxId"]
+	__slots__ = ["_PrcrTxId", "_MktInfrstrctrTxId", "_AcctSvcrTxId"]
 	@property
-	def AcctSvcrTxId(self):
-		return self._AcctSvcrTxId
+	def PrcrTxId(self):
+		return self._PrcrTxId
 
-	@AcctSvcrTxId.setter
-	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != auto else self.make_default("AcctSvcrTxId")
+	@PrcrTxId.setter
+	def PrcrTxId(self, value):
+		self._PrcrTxId = value if type(value) != auto else self.make_default("PrcrTxId")
 
-	@AcctSvcrTxId.deleter
-	def AcctSvcrTxId(self):
-		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
+	@PrcrTxId.deleter
+	def PrcrTxId(self):
+		del self._PrcrTxId
+		self._PrcrTxId = None
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -31,21 +31,21 @@ class References25(base_types._BaseFieldType):
 		self._MktInfrstrctrTxId = None
 
 	@property
-	def PrcrTxId(self):
-		return self._PrcrTxId
+	def AcctSvcrTxId(self):
+		return self._AcctSvcrTxId
 
-	@PrcrTxId.setter
-	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != auto else self.make_default("PrcrTxId")
+	@AcctSvcrTxId.setter
+	def AcctSvcrTxId(self, value):
+		self._AcctSvcrTxId = value if type(value) != auto else self.make_default("AcctSvcrTxId")
 
-	@PrcrTxId.deleter
-	def PrcrTxId(self):
-		del self._PrcrTxId
-		self._PrcrTxId = None
+	@AcctSvcrTxId.deleter
+	def AcctSvcrTxId(self):
+		del self._AcctSvcrTxId
+		self._AcctSvcrTxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

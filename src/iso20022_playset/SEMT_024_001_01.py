@@ -1,5 +1,5 @@
 from . import base_types
-import TotalPortfolioValuationReportV01
+from .TotalPortfolioValuationReportV01 import TotalPortfolioValuationReportV01
 
 class SEMT_024_001_01():
 

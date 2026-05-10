@@ -1,6 +1,6 @@
 from . import base_types
-import RestrictedFINActiveOrHistoricCurrencyAndAmount
-import CreditDebitCode
+from .RestrictedFINActiveOrHistoricCurrencyAndAmount import RestrictedFINActiveOrHistoricCurrencyAndAmount
+from .CreditDebitCode import CreditDebitCode
 
 class AmountAndDirection18(base_types._BaseFieldType):
 

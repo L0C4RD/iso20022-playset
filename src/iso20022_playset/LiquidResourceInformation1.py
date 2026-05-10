@@ -1,11 +1,24 @@
 from . import base_types
-import Max35Text
-import AmountAndDirection102
-import TrueFalseIndicator
+from .Max35Text import Max35Text
+from .AmountAndDirection102 import AmountAndDirection102
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class LiquidResourceInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_MktVal", "_LqdRsrcVal", "_AsstNcmbrd", "_Scrd", "_AgcyArrgmnts", "_QlfygRsrc", "_CntrPtyId"]
+	__slots__ = ["_AsstNcmbrd", "_MktVal", "_LqdRsrcVal", "_AgcyArrgmnts", "_Scrd", "_CntrPtyId", "_QlfygRsrc"]
+	@property
+	def AsstNcmbrd(self):
+		return self._AsstNcmbrd
+
+	@AsstNcmbrd.setter
+	def AsstNcmbrd(self, value):
+		self._AsstNcmbrd = value if type(value) != auto else self.make_default("AsstNcmbrd")
+
+	@AsstNcmbrd.deleter
+	def AsstNcmbrd(self):
+		del self._AsstNcmbrd
+		self._AsstNcmbrd = None
+
 	@property
 	def MktVal(self):
 		return self._MktVal
@@ -33,17 +46,17 @@ class LiquidResourceInformation1(base_types._BaseFieldType):
 		self._LqdRsrcVal = None
 
 	@property
-	def AsstNcmbrd(self):
-		return self._AsstNcmbrd
+	def AgcyArrgmnts(self):
+		return self._AgcyArrgmnts
 
-	@AsstNcmbrd.setter
-	def AsstNcmbrd(self, value):
-		self._AsstNcmbrd = value if type(value) != auto else self.make_default("AsstNcmbrd")
+	@AgcyArrgmnts.setter
+	def AgcyArrgmnts(self, value):
+		self._AgcyArrgmnts = value if type(value) != auto else self.make_default("AgcyArrgmnts")
 
-	@AsstNcmbrd.deleter
-	def AsstNcmbrd(self):
-		del self._AsstNcmbrd
-		self._AsstNcmbrd = None
+	@AgcyArrgmnts.deleter
+	def AgcyArrgmnts(self):
+		del self._AgcyArrgmnts
+		self._AgcyArrgmnts = None
 
 	@property
 	def Scrd(self):
@@ -59,17 +72,17 @@ class LiquidResourceInformation1(base_types._BaseFieldType):
 		self._Scrd = None
 
 	@property
-	def AgcyArrgmnts(self):
-		return self._AgcyArrgmnts
+	def CntrPtyId(self):
+		return self._CntrPtyId
 
-	@AgcyArrgmnts.setter
-	def AgcyArrgmnts(self, value):
-		self._AgcyArrgmnts = value if type(value) != auto else self.make_default("AgcyArrgmnts")
+	@CntrPtyId.setter
+	def CntrPtyId(self, value):
+		self._CntrPtyId = value if type(value) != auto else self.make_default("CntrPtyId")
 
-	@AgcyArrgmnts.deleter
-	def AgcyArrgmnts(self):
-		del self._AgcyArrgmnts
-		self._AgcyArrgmnts = None
+	@CntrPtyId.deleter
+	def CntrPtyId(self):
+		del self._CntrPtyId
+		self._CntrPtyId = None
 
 	@property
 	def QlfygRsrc(self):
@@ -84,26 +97,13 @@ class LiquidResourceInformation1(base_types._BaseFieldType):
 		del self._QlfygRsrc
 		self._QlfygRsrc = None
 
-	@property
-	def CntrPtyId(self):
-		return self._CntrPtyId
-
-	@CntrPtyId.setter
-	def CntrPtyId(self, value):
-		self._CntrPtyId = value if type(value) != auto else self.make_default("CntrPtyId")
-
-	@CntrPtyId.deleter
-	def CntrPtyId(self):
-		del self._CntrPtyId
-		self._CntrPtyId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AsstNcmbrd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktVal', type=AmountAndDirection102, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LqdRsrcVal', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AsstNcmbrd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Scrd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgcyArrgmnts', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QlfygRsrc', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Scrd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CntrPtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QlfygRsrc', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

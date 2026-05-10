@@ -1,6 +1,6 @@
 from . import base_types
-import Max350Text
-import ExternalBenchmarkCurveName1Code
+from .Max350Text import Max350Text
+from .ExternalBenchmarkCurveName1Code import ExternalBenchmarkCurveName1Code
 
 class FloatingRateIdentification8Choice(base_types._BaseFieldType):
 

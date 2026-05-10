@@ -1,13 +1,26 @@
 from . import base_types
-import PartyIdentification120Choice
-import BlockChainAddressWallet3
-import Max35Text
-import LEIIdentifier
-import SecuritiesAccount19
+from .Max35Text import Max35Text
+from .BlockChainAddressWallet3 import BlockChainAddressWallet3
+from .LEIIdentifier import LEIIdentifier
+from .SecuritiesAccount19 import SecuritiesAccount19
+from .PartyIdentification120Choice import PartyIdentification120Choice
 
 class PartyIdentificationAndAccount195(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_LEI", "_PrcgId", "_SfkpgAcct", "_Id"]
+	__slots__ = ["_SfkpgAcct", "_BlckChainAdrOrWllt", "_LEI", "_PrcgId", "_Id"]
+	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -48,19 +61,6 @@ class PartyIdentificationAndAccount195(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -74,10 +74,10 @@ class PartyIdentificationAndAccount195(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification120Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

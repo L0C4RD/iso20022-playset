@@ -1,27 +1,14 @@
 from . import base_types
-import CollateralRole1Code
-import PartyIdentification232
-import RequestDetails28
-import SupplementaryData1
-import Max35Text
-import Pagination1
+from .PartyIdentification232 import PartyIdentification232
+from .Max35Text import Max35Text
+from .SupplementaryData1 import SupplementaryData1
+from .RequestDetails28 import RequestDetails28
+from .Pagination1 import Pagination1
+from .CollateralRole1Code import CollateralRole1Code
 
 class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RmvlReqId", "_ReqDtls", "_SplmtryData", "_CollSd", "_PtyA", "_ClntPtyA", "_Pgntn"]
-	@property
-	def RmvlReqId(self):
-		return self._RmvlReqId
-
-	@RmvlReqId.setter
-	def RmvlReqId(self, value):
-		self._RmvlReqId = value if type(value) != auto else self.make_default("RmvlReqId")
-
-	@RmvlReqId.deleter
-	def RmvlReqId(self):
-		del self._RmvlReqId
-		self._RmvlReqId = None
-
+	__slots__ = ["_ReqDtls", "_RmvlReqId", "_Pgntn", "_ClntPtyA", "_CollSd", "_SplmtryData", "_PtyA"]
 	@property
 	def ReqDtls(self):
 		return self._ReqDtls
@@ -36,43 +23,30 @@ class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 		self._ReqDtls = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def RmvlReqId(self):
+		return self._RmvlReqId
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@RmvlReqId.setter
+	def RmvlReqId(self, value):
+		self._RmvlReqId = value if type(value) != auto else self.make_default("RmvlReqId")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def CollSd(self):
-		return self._CollSd
-
-	@CollSd.setter
-	def CollSd(self, value):
-		self._CollSd = value if type(value) != auto else self.make_default("CollSd")
-
-	@CollSd.deleter
-	def CollSd(self):
-		del self._CollSd
-		self._CollSd = None
+	@RmvlReqId.deleter
+	def RmvlReqId(self):
+		del self._RmvlReqId
+		self._RmvlReqId = None
 
 	@property
-	def PtyA(self):
-		return self._PtyA
+	def Pgntn(self):
+		return self._Pgntn
 
-	@PtyA.setter
-	def PtyA(self, value):
-		self._PtyA = value if type(value) != auto else self.make_default("PtyA")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
 
-	@PtyA.deleter
-	def PtyA(self):
-		del self._PtyA
-		self._PtyA = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def ClntPtyA(self):
@@ -88,25 +62,51 @@ class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 		self._ClntPtyA = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def CollSd(self):
+		return self._CollSd
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+	@CollSd.setter
+	def CollSd(self, value):
+		self._CollSd = value if type(value) != auto else self.make_default("CollSd")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@CollSd.deleter
+	def CollSd(self):
+		del self._CollSd
+		self._CollSd = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def PtyA(self):
+		return self._PtyA
+
+	@PtyA.setter
+	def PtyA(self, value):
+		self._PtyA = value if type(value) != auto else self.make_default("PtyA")
+
+	@PtyA.deleter
+	def PtyA(self):
+		del self._PtyA
+		self._PtyA = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RmvlReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqDtls', type=RequestDetails28, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollSd', type=CollateralRole1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyA', type=PartyIdentification232, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntPtyA', type=PartyIdentification232, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmvlReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntPtyA', type=PartyIdentification232, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollSd', type=CollateralRole1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyA', type=PartyIdentification232, min=1, max=1, mutex_group=None, array=False),
 	))
 

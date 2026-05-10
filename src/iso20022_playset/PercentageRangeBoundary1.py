@@ -1,6 +1,6 @@
 from . import base_types
-import PercentageRate
-import YesNoIndicator
+from .PercentageRate import PercentageRate
+from .YesNoIndicator import YesNoIndicator
 
 class PercentageRangeBoundary1(base_types._BaseFieldType):
 

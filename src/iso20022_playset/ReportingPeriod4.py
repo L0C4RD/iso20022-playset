@@ -1,7 +1,7 @@
 from . import base_types
-import QueryType3Code
-import DatePeriod3
-import TimePeriod2
+from .DatePeriod3 import DatePeriod3
+from .QueryType3Code import QueryType3Code
+from .TimePeriod2 import TimePeriod2
 
 class ReportingPeriod4(base_types._BaseFieldType):
 

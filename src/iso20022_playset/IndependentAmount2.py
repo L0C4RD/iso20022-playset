@@ -1,7 +1,7 @@
 from . import base_types
-import IndependentAmountConventionType1Code
-import Max140Text
-import ActiveCurrencyAndAmount
+from .IndependentAmountConventionType1Code import IndependentAmountConventionType1Code
+from .Max140Text import Max140Text
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class IndependentAmount2(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-import ChequeCancellationOrStopReportV02
+from .ChequeCancellationOrStopReportV02 import ChequeCancellationOrStopReportV02
 
 class CAMT_109_001_02():
 

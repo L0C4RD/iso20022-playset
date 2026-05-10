@@ -1,13 +1,13 @@
 from . import base_types
-import ImpliedCurrencyAndAmount
-import TrueFalseIndicator
-import CreditDebit3Code
-import Max35Text
-import CarRentalServiceType2Code
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .Max35Text import Max35Text
+from .CreditDebit3Code import CreditDebit3Code
+from .CarRentalServiceType2Code import CarRentalServiceType2Code
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class Amount21(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTp", "_CdtDbt", "_Tp", "_Amt", "_CstmrNtfd"]
+	__slots__ = ["_OthrTp", "_CdtDbt", "_CstmrNtfd", "_Tp", "_Amt"]
 	@property
 	def OthrTp(self):
 		return self._OthrTp
@@ -35,6 +35,19 @@ class Amount21(base_types._BaseFieldType):
 		self._CdtDbt = None
 
 	@property
+	def CstmrNtfd(self):
+		return self._CstmrNtfd
+
+	@CstmrNtfd.setter
+	def CstmrNtfd(self, value):
+		self._CstmrNtfd = value if type(value) != auto else self.make_default("CstmrNtfd")
+
+	@CstmrNtfd.deleter
+	def CstmrNtfd(self):
+		del self._CstmrNtfd
+		self._CstmrNtfd = None
+
+	@property
 	def Tp(self):
 		return self._Tp
 
@@ -60,24 +73,11 @@ class Amount21(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
-	@property
-	def CstmrNtfd(self):
-		return self._CstmrNtfd
-
-	@CstmrNtfd.setter
-	def CstmrNtfd(self, value):
-		self._CstmrNtfd = value if type(value) != auto else self.make_default("CstmrNtfd")
-
-	@CstmrNtfd.deleter
-	def CstmrNtfd(self):
-		del self._CstmrNtfd
-		self._CstmrNtfd = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrNtfd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CarRentalServiceType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrNtfd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,73 +1,21 @@
 from . import base_types
-import CashAccountCharacteristics5
-import CurrencyExchange6
-import BillingStatementStatus1Code
-import ISODateTime
-import BillingBalance1
-import Max35Text
-import DatePeriod1
-import BalanceAdjustment1
-import BillingServiceAdjustment1
-import BillingCompensation1
-import BillingService2
-import BillingRate1
-import BillingTaxRegion3
+from .BillingCompensation1 import BillingCompensation1
+from .Max35Text import Max35Text
+from .BillingRate1 import BillingRate1
+from .ISODateTime import ISODateTime
+from .BillingBalance1 import BillingBalance1
+from .CashAccountCharacteristics5 import CashAccountCharacteristics5
+from .DatePeriod1 import DatePeriod1
+from .BillingTaxRegion3 import BillingTaxRegion3
+from .BillingStatementStatus1Code import BillingStatementStatus1Code
+from .BalanceAdjustment1 import BalanceAdjustment1
+from .CurrencyExchange6 import CurrencyExchange6
+from .BillingService2 import BillingService2
+from .BillingServiceAdjustment1 import BillingServiceAdjustment1
 
 class BillingStatement5(base_types._BaseFieldType):
 
-	__slots__ = ["_BalAdjstmnt", "_RateData", "_Svc", "_TaxRgn", "_AcctChrtcs", "_SvcAdjstmnt", "_StmtId", "_Bal", "_Compstn", "_FrToDt", "_Sts", "_CcyXchg", "_CreDtTm"]
-	@property
-	def BalAdjstmnt(self):
-		return self._BalAdjstmnt
-
-	@BalAdjstmnt.setter
-	def BalAdjstmnt(self, value):
-		self._BalAdjstmnt = value if type(value) != auto else self.make_default("BalAdjstmnt")
-
-	@BalAdjstmnt.deleter
-	def BalAdjstmnt(self):
-		del self._BalAdjstmnt
-		self._BalAdjstmnt = None
-
-	@property
-	def RateData(self):
-		return self._RateData
-
-	@RateData.setter
-	def RateData(self, value):
-		self._RateData = value if type(value) != auto else self.make_default("RateData")
-
-	@RateData.deleter
-	def RateData(self):
-		del self._RateData
-		self._RateData = None
-
-	@property
-	def Svc(self):
-		return self._Svc
-
-	@Svc.setter
-	def Svc(self, value):
-		self._Svc = value if type(value) != auto else self.make_default("Svc")
-
-	@Svc.deleter
-	def Svc(self):
-		del self._Svc
-		self._Svc = None
-
-	@property
-	def TaxRgn(self):
-		return self._TaxRgn
-
-	@TaxRgn.setter
-	def TaxRgn(self, value):
-		self._TaxRgn = value if type(value) != auto else self.make_default("TaxRgn")
-
-	@TaxRgn.deleter
-	def TaxRgn(self):
-		del self._TaxRgn
-		self._TaxRgn = None
-
+	__slots__ = ["_AcctChrtcs", "_StmtId", "_TaxRgn", "_RateData", "_CcyXchg", "_BalAdjstmnt", "_SvcAdjstmnt", "_Compstn", "_FrToDt", "_Sts", "_Bal", "_Svc", "_CreDtTm"]
 	@property
 	def AcctChrtcs(self):
 		return self._AcctChrtcs
@@ -80,19 +28,6 @@ class BillingStatement5(base_types._BaseFieldType):
 	def AcctChrtcs(self):
 		del self._AcctChrtcs
 		self._AcctChrtcs = None
-
-	@property
-	def SvcAdjstmnt(self):
-		return self._SvcAdjstmnt
-
-	@SvcAdjstmnt.setter
-	def SvcAdjstmnt(self, value):
-		self._SvcAdjstmnt = value if type(value) != auto else self.make_default("SvcAdjstmnt")
-
-	@SvcAdjstmnt.deleter
-	def SvcAdjstmnt(self):
-		del self._SvcAdjstmnt
-		self._SvcAdjstmnt = None
 
 	@property
 	def StmtId(self):
@@ -108,17 +43,69 @@ class BillingStatement5(base_types._BaseFieldType):
 		self._StmtId = None
 
 	@property
-	def Bal(self):
-		return self._Bal
+	def TaxRgn(self):
+		return self._TaxRgn
 
-	@Bal.setter
-	def Bal(self, value):
-		self._Bal = value if type(value) != auto else self.make_default("Bal")
+	@TaxRgn.setter
+	def TaxRgn(self, value):
+		self._TaxRgn = value if type(value) != auto else self.make_default("TaxRgn")
 
-	@Bal.deleter
-	def Bal(self):
-		del self._Bal
-		self._Bal = None
+	@TaxRgn.deleter
+	def TaxRgn(self):
+		del self._TaxRgn
+		self._TaxRgn = None
+
+	@property
+	def RateData(self):
+		return self._RateData
+
+	@RateData.setter
+	def RateData(self, value):
+		self._RateData = value if type(value) != auto else self.make_default("RateData")
+
+	@RateData.deleter
+	def RateData(self):
+		del self._RateData
+		self._RateData = None
+
+	@property
+	def CcyXchg(self):
+		return self._CcyXchg
+
+	@CcyXchg.setter
+	def CcyXchg(self, value):
+		self._CcyXchg = value if type(value) != auto else self.make_default("CcyXchg")
+
+	@CcyXchg.deleter
+	def CcyXchg(self):
+		del self._CcyXchg
+		self._CcyXchg = None
+
+	@property
+	def BalAdjstmnt(self):
+		return self._BalAdjstmnt
+
+	@BalAdjstmnt.setter
+	def BalAdjstmnt(self, value):
+		self._BalAdjstmnt = value if type(value) != auto else self.make_default("BalAdjstmnt")
+
+	@BalAdjstmnt.deleter
+	def BalAdjstmnt(self):
+		del self._BalAdjstmnt
+		self._BalAdjstmnt = None
+
+	@property
+	def SvcAdjstmnt(self):
+		return self._SvcAdjstmnt
+
+	@SvcAdjstmnt.setter
+	def SvcAdjstmnt(self, value):
+		self._SvcAdjstmnt = value if type(value) != auto else self.make_default("SvcAdjstmnt")
+
+	@SvcAdjstmnt.deleter
+	def SvcAdjstmnt(self):
+		del self._SvcAdjstmnt
+		self._SvcAdjstmnt = None
 
 	@property
 	def Compstn(self):
@@ -160,17 +147,30 @@ class BillingStatement5(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
-	def CcyXchg(self):
-		return self._CcyXchg
+	def Bal(self):
+		return self._Bal
 
-	@CcyXchg.setter
-	def CcyXchg(self, value):
-		self._CcyXchg = value if type(value) != auto else self.make_default("CcyXchg")
+	@Bal.setter
+	def Bal(self, value):
+		self._Bal = value if type(value) != auto else self.make_default("Bal")
 
-	@CcyXchg.deleter
-	def CcyXchg(self):
-		del self._CcyXchg
-		self._CcyXchg = None
+	@Bal.deleter
+	def Bal(self):
+		del self._Bal
+		self._Bal = None
+
+	@property
+	def Svc(self):
+		return self._Svc
+
+	@Svc.setter
+	def Svc(self, value):
+		self._Svc = value if type(value) != auto else self.make_default("Svc")
+
+	@Svc.deleter
+	def Svc(self):
+		del self._Svc
+		self._Svc = None
 
 	@property
 	def CreDtTm(self):
@@ -186,18 +186,18 @@ class BillingStatement5(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BalAdjstmnt', type=BalanceAdjustment1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RateData', type=BillingRate1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Svc', type=BillingService2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TaxRgn', type=BillingTaxRegion3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctChrtcs', type=CashAccountCharacteristics5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcAdjstmnt', type=BillingServiceAdjustment1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StmtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Bal', type=BillingBalance1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TaxRgn', type=BillingTaxRegion3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RateData', type=BillingRate1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CcyXchg', type=CurrencyExchange6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BalAdjstmnt', type=BalanceAdjustment1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SvcAdjstmnt', type=BillingServiceAdjustment1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Compstn', type=BillingCompensation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FrToDt', type=DatePeriod1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=BillingStatementStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CcyXchg', type=CurrencyExchange6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Bal', type=BillingBalance1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Svc', type=BillingService2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

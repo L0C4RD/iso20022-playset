@@ -1,36 +1,23 @@
 from . import base_types
-import ISODate
-import Adjustment5
-import ActiveCurrencyAndAmount
+from .Adjustment5 import Adjustment5
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .ISODate import ISODate
 
 class InvoiceTotals1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlTaxAmt", "_TtlTaxblAmt", "_PmtDueDt", "_Adjstmnt", "_TtlInvcAmt"]
+	__slots__ = ["_Adjstmnt", "_PmtDueDt", "_TtlTaxAmt", "_TtlInvcAmt", "_TtlTaxblAmt"]
 	@property
-	def TtlTaxAmt(self):
-		return self._TtlTaxAmt
+	def Adjstmnt(self):
+		return self._Adjstmnt
 
-	@TtlTaxAmt.setter
-	def TtlTaxAmt(self, value):
-		self._TtlTaxAmt = value if type(value) != auto else self.make_default("TtlTaxAmt")
+	@Adjstmnt.setter
+	def Adjstmnt(self, value):
+		self._Adjstmnt = value if type(value) != auto else self.make_default("Adjstmnt")
 
-	@TtlTaxAmt.deleter
-	def TtlTaxAmt(self):
-		del self._TtlTaxAmt
-		self._TtlTaxAmt = None
-
-	@property
-	def TtlTaxblAmt(self):
-		return self._TtlTaxblAmt
-
-	@TtlTaxblAmt.setter
-	def TtlTaxblAmt(self, value):
-		self._TtlTaxblAmt = value if type(value) != auto else self.make_default("TtlTaxblAmt")
-
-	@TtlTaxblAmt.deleter
-	def TtlTaxblAmt(self):
-		del self._TtlTaxblAmt
-		self._TtlTaxblAmt = None
+	@Adjstmnt.deleter
+	def Adjstmnt(self):
+		del self._Adjstmnt
+		self._Adjstmnt = None
 
 	@property
 	def PmtDueDt(self):
@@ -46,17 +33,17 @@ class InvoiceTotals1(base_types._BaseFieldType):
 		self._PmtDueDt = None
 
 	@property
-	def Adjstmnt(self):
-		return self._Adjstmnt
+	def TtlTaxAmt(self):
+		return self._TtlTaxAmt
 
-	@Adjstmnt.setter
-	def Adjstmnt(self, value):
-		self._Adjstmnt = value if type(value) != auto else self.make_default("Adjstmnt")
+	@TtlTaxAmt.setter
+	def TtlTaxAmt(self, value):
+		self._TtlTaxAmt = value if type(value) != auto else self.make_default("TtlTaxAmt")
 
-	@Adjstmnt.deleter
-	def Adjstmnt(self):
-		del self._Adjstmnt
-		self._Adjstmnt = None
+	@TtlTaxAmt.deleter
+	def TtlTaxAmt(self):
+		del self._TtlTaxAmt
+		self._TtlTaxAmt = None
 
 	@property
 	def TtlInvcAmt(self):
@@ -71,11 +58,24 @@ class InvoiceTotals1(base_types._BaseFieldType):
 		del self._TtlInvcAmt
 		self._TtlInvcAmt = None
 
+	@property
+	def TtlTaxblAmt(self):
+		return self._TtlTaxblAmt
+
+	@TtlTaxblAmt.setter
+	def TtlTaxblAmt(self, value):
+		self._TtlTaxblAmt = value if type(value) != auto else self.make_default("TtlTaxblAmt")
+
+	@TtlTaxblAmt.deleter
+	def TtlTaxblAmt(self):
+		del self._TtlTaxblAmt
+		self._TtlTaxblAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlTaxAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlTaxblAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtDueDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Adjstmnt', type=Adjustment5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDueDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlTaxAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlInvcAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlTaxblAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

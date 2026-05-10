@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalSystemPartyType1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ExternalSystemPartyType1Code import ExternalSystemPartyType1Code
 
 class SystemPartyType1Choice(base_types._BaseFieldType):
 

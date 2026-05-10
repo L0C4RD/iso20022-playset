@@ -1,29 +1,16 @@
 from . import base_types
-import CashAccount40
-import ISODateTime
-import IntraBalance5
-import Max35Text
-import BranchAndFinancialInstitutionIdentification8
-import ProcessingStatus71Choice
-import RequestDetails22
-import SystemPartyIdentification8
+from .Max35Text import Max35Text
+from .IntraBalance5 import IntraBalance5
+from .ProcessingStatus71Choice import ProcessingStatus71Choice
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .SystemPartyIdentification8 import SystemPartyIdentification8
+from .RequestDetails22 import RequestDetails22
+from .CashAccount40 import CashAccount40
+from .ISODateTime import ISODateTime
 
 class IntraBalanceModification8(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqRef", "_PrcgSts", "_UndrlygIntraBal", "_StsDt", "_ReqDtls", "_CshAcctOwnr", "_CshAcctSvcr", "_CshAcct"]
-	@property
-	def ReqRef(self):
-		return self._ReqRef
-
-	@ReqRef.setter
-	def ReqRef(self, value):
-		self._ReqRef = value if type(value) != auto else self.make_default("ReqRef")
-
-	@ReqRef.deleter
-	def ReqRef(self):
-		del self._ReqRef
-		self._ReqRef = None
-
+	__slots__ = ["_PrcgSts", "_UndrlygIntraBal", "_ReqRef", "_ReqDtls", "_CshAcct", "_CshAcctSvcr", "_StsDt", "_CshAcctOwnr"]
 	@property
 	def PrcgSts(self):
 		return self._PrcgSts
@@ -51,17 +38,17 @@ class IntraBalanceModification8(base_types._BaseFieldType):
 		self._UndrlygIntraBal = None
 
 	@property
-	def StsDt(self):
-		return self._StsDt
+	def ReqRef(self):
+		return self._ReqRef
 
-	@StsDt.setter
-	def StsDt(self, value):
-		self._StsDt = value if type(value) != auto else self.make_default("StsDt")
+	@ReqRef.setter
+	def ReqRef(self, value):
+		self._ReqRef = value if type(value) != auto else self.make_default("ReqRef")
 
-	@StsDt.deleter
-	def StsDt(self):
-		del self._StsDt
-		self._StsDt = None
+	@ReqRef.deleter
+	def ReqRef(self):
+		del self._ReqRef
+		self._ReqRef = None
 
 	@property
 	def ReqDtls(self):
@@ -77,17 +64,17 @@ class IntraBalanceModification8(base_types._BaseFieldType):
 		self._ReqDtls = None
 
 	@property
-	def CshAcctOwnr(self):
-		return self._CshAcctOwnr
+	def CshAcct(self):
+		return self._CshAcct
 
-	@CshAcctOwnr.setter
-	def CshAcctOwnr(self, value):
-		self._CshAcctOwnr = value if type(value) != auto else self.make_default("CshAcctOwnr")
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
 
-	@CshAcctOwnr.deleter
-	def CshAcctOwnr(self):
-		del self._CshAcctOwnr
-		self._CshAcctOwnr = None
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
 
 	@property
 	def CshAcctSvcr(self):
@@ -103,26 +90,39 @@ class IntraBalanceModification8(base_types._BaseFieldType):
 		self._CshAcctSvcr = None
 
 	@property
-	def CshAcct(self):
-		return self._CshAcct
+	def StsDt(self):
+		return self._StsDt
 
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+	@StsDt.setter
+	def StsDt(self, value):
+		self._StsDt = value if type(value) != auto else self.make_default("StsDt")
 
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
+	@StsDt.deleter
+	def StsDt(self):
+		del self._StsDt
+		self._StsDt = None
+
+	@property
+	def CshAcctOwnr(self):
+		return self._CshAcctOwnr
+
+	@CshAcctOwnr.setter
+	def CshAcctOwnr(self, value):
+		self._CshAcctOwnr = value if type(value) != auto else self.make_default("CshAcctOwnr")
+
+	@CshAcctOwnr.deleter
+	def CshAcctOwnr(self):
+		del self._CshAcctOwnr
+		self._CshAcctOwnr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus71Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygIntraBal', type=IntraBalance5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqDtls', type=RequestDetails22, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

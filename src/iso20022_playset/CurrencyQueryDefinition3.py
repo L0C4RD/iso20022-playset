@@ -1,23 +1,10 @@
 from . import base_types
-import QueryType2Code
-import CurrencyCriteriaDefinition1Choice
+from .CurrencyCriteriaDefinition1Choice import CurrencyCriteriaDefinition1Choice
+from .QueryType2Code import QueryType2Code
 
 class CurrencyQueryDefinition3(base_types._BaseFieldType):
 
-	__slots__ = ["_QryTp", "_CcyCrit"]
-	@property
-	def QryTp(self):
-		return self._QryTp
-
-	@QryTp.setter
-	def QryTp(self, value):
-		self._QryTp = value if type(value) != auto else self.make_default("QryTp")
-
-	@QryTp.deleter
-	def QryTp(self):
-		del self._QryTp
-		self._QryTp = None
-
+	__slots__ = ["_CcyCrit", "_QryTp"]
 	@property
 	def CcyCrit(self):
 		return self._CcyCrit
@@ -31,8 +18,21 @@ class CurrencyQueryDefinition3(base_types._BaseFieldType):
 		del self._CcyCrit
 		self._CcyCrit = None
 
+	@property
+	def QryTp(self):
+		return self._QryTp
+
+	@QryTp.setter
+	def QryTp(self, value):
+		self._QryTp = value if type(value) != auto else self.make_default("QryTp")
+
+	@QryTp.deleter
+	def QryTp(self):
+		del self._QryTp
+		self._QryTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QryTp', type=QueryType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CcyCrit', type=CurrencyCriteriaDefinition1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryTp', type=QueryType2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

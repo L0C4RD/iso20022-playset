@@ -1,6 +1,6 @@
 from . import base_types
-import CorporateActionInstructionProcessingStatus1
-import CorporateActionInstructionRejectionStatus1
+from .CorporateActionInstructionRejectionStatus1 import CorporateActionInstructionRejectionStatus1
+from .CorporateActionInstructionProcessingStatus1 import CorporateActionInstructionProcessingStatus1
 
 class ElectionAdviceStatus1Choice(base_types._BaseFieldType):
 

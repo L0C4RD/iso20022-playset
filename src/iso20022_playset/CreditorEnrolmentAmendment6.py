@@ -1,6 +1,6 @@
 from . import base_types
-import CreditorInvoice5
-import CreditorEnrolment6
+from .CreditorInvoice5 import CreditorInvoice5
+from .CreditorEnrolment6 import CreditorEnrolment6
 
 class CreditorEnrolmentAmendment6(base_types._BaseFieldType):
 

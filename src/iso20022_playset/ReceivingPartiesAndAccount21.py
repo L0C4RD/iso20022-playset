@@ -1,11 +1,24 @@
 from . import base_types
-import Max35Text
-import PartyIdentification255Choice
-import PartyIdentificationAndAccount228
+from .Max35Text import Max35Text
+from .PartyIdentification255Choice import PartyIdentification255Choice
+from .PartyIdentificationAndAccount228 import PartyIdentificationAndAccount228
 
 class ReceivingPartiesAndAccount21(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesSttlmSys", "_Pty2", "_Dpstry", "_Pty1"]
+	__slots__ = ["_Dpstry", "_SctiesSttlmSys", "_Pty2", "_Pty1"]
+	@property
+	def Dpstry(self):
+		return self._Dpstry
+
+	@Dpstry.setter
+	def Dpstry(self, value):
+		self._Dpstry = value if type(value) != auto else self.make_default("Dpstry")
+
+	@Dpstry.deleter
+	def Dpstry(self):
+		del self._Dpstry
+		self._Dpstry = None
+
 	@property
 	def SctiesSttlmSys(self):
 		return self._SctiesSttlmSys
@@ -33,19 +46,6 @@ class ReceivingPartiesAndAccount21(base_types._BaseFieldType):
 		self._Pty2 = None
 
 	@property
-	def Dpstry(self):
-		return self._Dpstry
-
-	@Dpstry.setter
-	def Dpstry(self, value):
-		self._Dpstry = value if type(value) != auto else self.make_default("Dpstry")
-
-	@Dpstry.deleter
-	def Dpstry(self):
-		del self._Dpstry
-		self._Dpstry = None
-
-	@property
 	def Pty1(self):
 		return self._Pty1
 
@@ -59,9 +59,9 @@ class ReceivingPartiesAndAccount21(base_types._BaseFieldType):
 		self._Pty1 = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Dpstry', type=PartyIdentification255Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesSttlmSys', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty2', type=PartyIdentificationAndAccount228, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dpstry', type=PartyIdentification255Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty1', type=PartyIdentificationAndAccount228, min=1, max=1, mutex_group=None, array=False),
 	))
 

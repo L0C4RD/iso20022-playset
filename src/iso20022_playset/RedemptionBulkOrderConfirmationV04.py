@@ -1,14 +1,40 @@
 from . import base_types
-import Extension1
-import MessageIdentification1
-import AdditionalReference8
-import CopyInformation4
-import RedemptionBulkExecution5
-import AdditionalReference9
+from .AdditionalReference8 import AdditionalReference8
+from .MessageIdentification1 import MessageIdentification1
+from .Extension1 import Extension1
+from .CopyInformation4 import CopyInformation4
+from .RedemptionBulkExecution5 import RedemptionBulkExecution5
+from .AdditionalReference9 import AdditionalReference9
 
 class RedemptionBulkOrderConfirmationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Xtnsn", "_BlkExctnDtls", "_MsgId", "_CpyDtls", "_RltdRef", "_PoolRef", "_PrvsRef"]
+	__slots__ = ["_RltdRef", "_MsgId", "_Xtnsn", "_BlkExctnDtls", "_CpyDtls", "_PrvsRef", "_PoolRef"]
+	@property
+	def RltdRef(self):
+		return self._RltdRef
+
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
 	@property
 	def Xtnsn(self):
 		return self._Xtnsn
@@ -36,19 +62,6 @@ class RedemptionBulkOrderConfirmationV04(base_types._BaseFieldType):
 		self._BlkExctnDtls = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
-	@property
 	def CpyDtls(self):
 		return self._CpyDtls
 
@@ -60,32 +73,6 @@ class RedemptionBulkOrderConfirmationV04(base_types._BaseFieldType):
 	def CpyDtls(self):
 		del self._CpyDtls
 		self._CpyDtls = None
-
-	@property
-	def RltdRef(self):
-		return self._RltdRef
-
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
-
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
-
-	@property
-	def PoolRef(self):
-		return self._PoolRef
-
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
-
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
 
 	@property
 	def PrvsRef(self):
@@ -100,13 +87,26 @@ class RedemptionBulkOrderConfirmationV04(base_types._BaseFieldType):
 		del self._PrvsRef
 		self._PrvsRef = None
 
+	@property
+	def PoolRef(self):
+		return self._PoolRef
+
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
+
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BlkExctnDtls', type=RedemptionBulkExecution5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpyDtls', type=CopyInformation4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference9, min=0, max=1, mutex_group=None, array=False),
 	))
 

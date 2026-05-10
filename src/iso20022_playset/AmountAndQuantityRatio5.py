@@ -1,23 +1,10 @@
 from . import base_types
-import RestrictedFINDecimalNumber
-import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from .RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
 
 class AmountAndQuantityRatio5(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Qty"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_Qty", "_Amt"]
 	@property
 	def Qty(self):
 		return self._Qty
@@ -31,8 +18,21 @@ class AmountAndQuantityRatio5(base_types._BaseFieldType):
 		del self._Qty
 		self._Qty = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=RestrictedFINDecimalNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

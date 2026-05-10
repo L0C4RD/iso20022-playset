@@ -1,5 +1,5 @@
 from . import base_types
-import SecurityAttributes12
+from .SecurityAttributes12 import SecurityAttributes12
 
 class UpdateType35Choice(base_types._BaseFieldType):
 

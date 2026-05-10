@@ -1,6 +1,6 @@
 from . import base_types
-import RejectionReason33Code
-import GenericIdentification30
+from .RejectionReason33Code import RejectionReason33Code
+from .GenericIdentification30 import GenericIdentification30
 
 class RejectionAndRepairReason32Choice(base_types._BaseFieldType):
 

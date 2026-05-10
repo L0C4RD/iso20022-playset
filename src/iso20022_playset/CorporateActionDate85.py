@@ -1,9 +1,22 @@
 from . import base_types
-import DateFormat30Choice
+from .DateFormat30Choice import DateFormat30Choice
 
 class CorporateActionDate85(base_types._BaseFieldType):
 
-	__slots__ = ["_LtryDt", "_ExDvddDt", "_RcrdDt"]
+	__slots__ = ["_RcrdDt", "_LtryDt", "_ExDvddDt"]
+	@property
+	def RcrdDt(self):
+		return self._RcrdDt
+
+	@RcrdDt.setter
+	def RcrdDt(self, value):
+		self._RcrdDt = value if type(value) != auto else self.make_default("RcrdDt")
+
+	@RcrdDt.deleter
+	def RcrdDt(self):
+		del self._RcrdDt
+		self._RcrdDt = None
+
 	@property
 	def LtryDt(self):
 		return self._LtryDt
@@ -30,22 +43,9 @@ class CorporateActionDate85(base_types._BaseFieldType):
 		del self._ExDvddDt
 		self._ExDvddDt = None
 
-	@property
-	def RcrdDt(self):
-		return self._RcrdDt
-
-	@RcrdDt.setter
-	def RcrdDt(self, value):
-		self._RcrdDt = value if type(value) != auto else self.make_default("RcrdDt")
-
-	@RcrdDt.deleter
-	def RcrdDt(self):
-		del self._RcrdDt
-		self._RcrdDt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RcrdDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LtryDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExDvddDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcrdDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

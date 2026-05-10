@@ -1,6 +1,6 @@
 from . import base_types
-import InteroperabilityCCP1
-import SupplementaryData1
+from .SupplementaryData1 import SupplementaryData1
+from .InteroperabilityCCP1 import InteroperabilityCCP1
 
 class CCPInteroperabilityReportV01(base_types._BaseFieldType):
 

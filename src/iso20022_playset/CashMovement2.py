@@ -1,6 +1,6 @@
 from . import base_types
-import CashAccount19
-import ActiveCurrencyAndAmount
+from .CashAccount19 import CashAccount19
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class CashMovement2(base_types._BaseFieldType):
 

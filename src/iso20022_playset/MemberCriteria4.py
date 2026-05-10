@@ -1,24 +1,11 @@
 from . import base_types
-import MemberSearchCriteria4
-import MemberReturnCriteria1
-import Max35Text
+from .Max35Text import Max35Text
+from .MemberReturnCriteria1 import MemberReturnCriteria1
+from .MemberSearchCriteria4 import MemberSearchCriteria4
 
 class MemberCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_NewQryNm", "_SchCrit", "_RtrCrit"]
-	@property
-	def NewQryNm(self):
-		return self._NewQryNm
-
-	@NewQryNm.setter
-	def NewQryNm(self, value):
-		self._NewQryNm = value if type(value) != auto else self.make_default("NewQryNm")
-
-	@NewQryNm.deleter
-	def NewQryNm(self):
-		del self._NewQryNm
-		self._NewQryNm = None
-
+	__slots__ = ["_SchCrit", "_RtrCrit", "_NewQryNm"]
 	@property
 	def SchCrit(self):
 		return self._SchCrit
@@ -45,9 +32,22 @@ class MemberCriteria4(base_types._BaseFieldType):
 		del self._RtrCrit
 		self._RtrCrit = None
 
+	@property
+	def NewQryNm(self):
+		return self._NewQryNm
+
+	@NewQryNm.setter
+	def NewQryNm(self, value):
+		self._NewQryNm = value if type(value) != auto else self.make_default("NewQryNm")
+
+	@NewQryNm.deleter
+	def NewQryNm(self):
+		del self._NewQryNm
+		self._NewQryNm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=MemberSearchCriteria4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RtrCrit', type=MemberReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

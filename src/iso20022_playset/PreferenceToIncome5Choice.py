@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import PreferenceToIncome1Code
+from .GenericIdentification30 import GenericIdentification30
+from .PreferenceToIncome1Code import PreferenceToIncome1Code
 
 class PreferenceToIncome5Choice(base_types._BaseFieldType):
 

@@ -1,10 +1,23 @@
 from . import base_types
-import ISODate
-import LEIIdentifier
+from .LEIIdentifier import LEIIdentifier
+from .ISODate import ISODate
 
 class BondDerivative2(base_types._BaseFieldType):
 
-	__slots__ = ["_IssncDt", "_MtrtyDt", "_Issr"]
+	__slots__ = ["_Issr", "_IssncDt", "_MtrtyDt"]
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
 	@property
 	def IssncDt(self):
 		return self._IssncDt
@@ -31,22 +44,9 @@ class BondDerivative2(base_types._BaseFieldType):
 		del self._MtrtyDt
 		self._MtrtyDt = None
 
-	@property
-	def Issr(self):
-		return self._Issr
-
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
-
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Issr', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssncDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 	))
 

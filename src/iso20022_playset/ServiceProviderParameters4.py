@@ -1,39 +1,26 @@
 from . import base_types
-import Max256Text
-import NonFinancialRequestType2Code
-import TerminalManagementAction3Code
-import AcquirerHostConfiguration10
-import Max35Text
-import GenericIdentification176
+from .Max35Text import Max35Text
+from .GenericIdentification176 import GenericIdentification176
+from .TerminalManagementAction3Code import TerminalManagementAction3Code
+from .Max256Text import Max256Text
+from .AcquirerHostConfiguration10 import AcquirerHostConfiguration10
+from .NonFinancialRequestType2Code import NonFinancialRequestType2Code
 
 class ServiceProviderParameters4(base_types._BaseFieldType):
 
-	__slots__ = ["_Hst", "_ApplId", "_ActnTp", "_SvcPrvdrId", "_Vrsn", "_NonFinActnSpprtd"]
+	__slots__ = ["_SvcPrvdrId", "_ActnTp", "_Hst", "_NonFinActnSpprtd", "_ApplId", "_Vrsn"]
 	@property
-	def Hst(self):
-		return self._Hst
+	def SvcPrvdrId(self):
+		return self._SvcPrvdrId
 
-	@Hst.setter
-	def Hst(self, value):
-		self._Hst = value if type(value) != auto else self.make_default("Hst")
+	@SvcPrvdrId.setter
+	def SvcPrvdrId(self, value):
+		self._SvcPrvdrId = value if type(value) != auto else self.make_default("SvcPrvdrId")
 
-	@Hst.deleter
-	def Hst(self):
-		del self._Hst
-		self._Hst = None
-
-	@property
-	def ApplId(self):
-		return self._ApplId
-
-	@ApplId.setter
-	def ApplId(self, value):
-		self._ApplId = value if type(value) != auto else self.make_default("ApplId")
-
-	@ApplId.deleter
-	def ApplId(self):
-		del self._ApplId
-		self._ApplId = None
+	@SvcPrvdrId.deleter
+	def SvcPrvdrId(self):
+		del self._SvcPrvdrId
+		self._SvcPrvdrId = None
 
 	@property
 	def ActnTp(self):
@@ -49,30 +36,17 @@ class ServiceProviderParameters4(base_types._BaseFieldType):
 		self._ActnTp = None
 
 	@property
-	def SvcPrvdrId(self):
-		return self._SvcPrvdrId
+	def Hst(self):
+		return self._Hst
 
-	@SvcPrvdrId.setter
-	def SvcPrvdrId(self, value):
-		self._SvcPrvdrId = value if type(value) != auto else self.make_default("SvcPrvdrId")
+	@Hst.setter
+	def Hst(self, value):
+		self._Hst = value if type(value) != auto else self.make_default("Hst")
 
-	@SvcPrvdrId.deleter
-	def SvcPrvdrId(self):
-		del self._SvcPrvdrId
-		self._SvcPrvdrId = None
-
-	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@Hst.deleter
+	def Hst(self):
+		del self._Hst
+		self._Hst = None
 
 	@property
 	def NonFinActnSpprtd(self):
@@ -87,12 +61,38 @@ class ServiceProviderParameters4(base_types._BaseFieldType):
 		del self._NonFinActnSpprtd
 		self._NonFinActnSpprtd = None
 
+	@property
+	def ApplId(self):
+		return self._ApplId
+
+	@ApplId.setter
+	def ApplId(self, value):
+		self._ApplId = value if type(value) != auto else self.make_default("ApplId")
+
+	@ApplId.deleter
+	def ApplId(self):
+		del self._ApplId
+		self._ApplId = None
+
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hst', type=AcquirerHostConfiguration10, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ApplId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcPrvdrId', type=GenericIdentification176, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hst', type=AcquirerHostConfiguration10, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NonFinActnSpprtd', type=NonFinancialRequestType2Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ApplId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

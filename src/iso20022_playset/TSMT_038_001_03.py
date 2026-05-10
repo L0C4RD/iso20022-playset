@@ -1,5 +1,5 @@
 from . import base_types
-import StatusReportRequestV03
+from .StatusReportRequestV03 import StatusReportRequestV03
 
 class TSMT_038_001_03():
 

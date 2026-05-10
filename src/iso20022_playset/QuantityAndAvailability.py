@@ -1,6 +1,6 @@
 from . import base_types
-import YesNoIndicator
-import FinancialInstrumentQuantityChoice
+from .YesNoIndicator import YesNoIndicator
+from .FinancialInstrumentQuantityChoice import FinancialInstrumentQuantityChoice
 
 class QuantityAndAvailability(base_types._BaseFieldType):
 

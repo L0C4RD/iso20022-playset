@@ -1,18 +1,44 @@
 from . import base_types
-import Address2
-import Max256Text
-import Max140Text
-import Max99Text
-import Max35Text
-import GeographicPointInDecimalDegrees
-import LocalData12
-import TrueFalseIndicator
-import AdditionalData1
-import ISO3NumericCountryCode
+from .Max35Text import Max35Text
+from .LocalData12 import LocalData12
+from .ISO3NumericCountryCode import ISO3NumericCountryCode
+from .GeographicPointInDecimalDegrees import GeographicPointInDecimalDegrees
+from .AdditionalData1 import AdditionalData1
+from .Max140Text import Max140Text
+from .Address2 import Address2
+from .Max256Text import Max256Text
+from .Max99Text import Max99Text
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class SponsoredMerchant3(base_types._BaseFieldType):
 
-	__slots__ = ["_GeogcLctn", "_Ctry", "_Adr", "_AddtlAdr", "_LglCorpNm", "_Frgn", "_Assgnr", "_CmonNm", "_Id", "_AddtlData", "_ShrtNm", "_AddtlId", "_LclData"]
+	__slots__ = ["_Id", "_LglCorpNm", "_GeogcLctn", "_Ctry", "_AddtlAdr", "_AddtlId", "_CmonNm", "_Frgn", "_AddtlData", "_Assgnr", "_Adr", "_ShrtNm", "_LclData"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def LglCorpNm(self):
+		return self._LglCorpNm
+
+	@LglCorpNm.setter
+	def LglCorpNm(self, value):
+		self._LglCorpNm = value if type(value) != auto else self.make_default("LglCorpNm")
+
+	@LglCorpNm.deleter
+	def LglCorpNm(self):
+		del self._LglCorpNm
+		self._LglCorpNm = None
+
 	@property
 	def GeogcLctn(self):
 		return self._GeogcLctn
@@ -40,19 +66,6 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
-	def Adr(self):
-		return self._Adr
-
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
-
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
-
-	@property
 	def AddtlAdr(self):
 		return self._AddtlAdr
 
@@ -64,97 +77,6 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 	def AddtlAdr(self):
 		del self._AddtlAdr
 		self._AddtlAdr = None
-
-	@property
-	def LglCorpNm(self):
-		return self._LglCorpNm
-
-	@LglCorpNm.setter
-	def LglCorpNm(self, value):
-		self._LglCorpNm = value if type(value) != auto else self.make_default("LglCorpNm")
-
-	@LglCorpNm.deleter
-	def LglCorpNm(self):
-		del self._LglCorpNm
-		self._LglCorpNm = None
-
-	@property
-	def Frgn(self):
-		return self._Frgn
-
-	@Frgn.setter
-	def Frgn(self, value):
-		self._Frgn = value if type(value) != auto else self.make_default("Frgn")
-
-	@Frgn.deleter
-	def Frgn(self):
-		del self._Frgn
-		self._Frgn = None
-
-	@property
-	def Assgnr(self):
-		return self._Assgnr
-
-	@Assgnr.setter
-	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
-
-	@Assgnr.deleter
-	def Assgnr(self):
-		del self._Assgnr
-		self._Assgnr = None
-
-	@property
-	def CmonNm(self):
-		return self._CmonNm
-
-	@CmonNm.setter
-	def CmonNm(self, value):
-		self._CmonNm = value if type(value) != auto else self.make_default("CmonNm")
-
-	@CmonNm.deleter
-	def CmonNm(self):
-		del self._CmonNm
-		self._CmonNm = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def AddtlData(self):
-		return self._AddtlData
-
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
-
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
-
-	@property
-	def ShrtNm(self):
-		return self._ShrtNm
-
-	@ShrtNm.setter
-	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
-
-	@ShrtNm.deleter
-	def ShrtNm(self):
-		del self._ShrtNm
-		self._ShrtNm = None
 
 	@property
 	def AddtlId(self):
@@ -170,6 +92,84 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 		self._AddtlId = None
 
 	@property
+	def CmonNm(self):
+		return self._CmonNm
+
+	@CmonNm.setter
+	def CmonNm(self, value):
+		self._CmonNm = value if type(value) != auto else self.make_default("CmonNm")
+
+	@CmonNm.deleter
+	def CmonNm(self):
+		del self._CmonNm
+		self._CmonNm = None
+
+	@property
+	def Frgn(self):
+		return self._Frgn
+
+	@Frgn.setter
+	def Frgn(self, value):
+		self._Frgn = value if type(value) != auto else self.make_default("Frgn")
+
+	@Frgn.deleter
+	def Frgn(self):
+		del self._Frgn
+		self._Frgn = None
+
+	@property
+	def AddtlData(self):
+		return self._AddtlData
+
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
+
+	@property
+	def Assgnr(self):
+		return self._Assgnr
+
+	@Assgnr.setter
+	def Assgnr(self, value):
+		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
+
+	@Assgnr.deleter
+	def Assgnr(self):
+		del self._Assgnr
+		self._Assgnr = None
+
+	@property
+	def Adr(self):
+		return self._Adr
+
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != auto else self.make_default("Adr")
+
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
+
+	@property
+	def ShrtNm(self):
+		return self._ShrtNm
+
+	@ShrtNm.setter
+	def ShrtNm(self, value):
+		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
+
+	@ShrtNm.deleter
+	def ShrtNm(self):
+		del self._ShrtNm
+		self._ShrtNm = None
+
+	@property
 	def LclData(self):
 		return self._LclData
 
@@ -183,18 +183,18 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 		self._LclData = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglCorpNm', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GeogcLctn', type=GeographicPointInDecimalDegrees, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglCorpNm', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frgn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmonNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlId', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CmonNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frgn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LclData', type=LocalData12, min=0, max=None, mutex_group=None, array=True),
 	))
 

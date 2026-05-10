@@ -1,15 +1,15 @@
 from . import base_types
-import ISODate
-import ISO3NumericCurrencyCode
-import TrueFalseIndicator
-import ImpliedCurrencyAndAmount
-import Max35Text
-import BalanceType15Code
-import CreditDebit3Code
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .Max35Text import Max35Text
+from .BalanceType15Code import BalanceType15Code
+from .ISODate import ISODate
+from .CreditDebit3Code import CreditDebit3Code
+from .TrueFalseIndicator import TrueFalseIndicator
+from .ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
 
 class Balance29(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTp", "_Ccy", "_CdtDbt", "_CrdhldrCcy", "_Amt", "_BalDt", "_Tp"]
+	__slots__ = ["_OthrTp", "_Ccy", "_Amt", "_Tp", "_CdtDbt", "_BalDt", "_CrdhldrCcy"]
 	@property
 	def OthrTp(self):
 		return self._OthrTp
@@ -37,32 +37,6 @@ class Balance29(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def CdtDbt(self):
-		return self._CdtDbt
-
-	@CdtDbt.setter
-	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
-
-	@CdtDbt.deleter
-	def CdtDbt(self):
-		del self._CdtDbt
-		self._CdtDbt = None
-
-	@property
-	def CrdhldrCcy(self):
-		return self._CrdhldrCcy
-
-	@CrdhldrCcy.setter
-	def CrdhldrCcy(self, value):
-		self._CrdhldrCcy = value if type(value) != auto else self.make_default("CrdhldrCcy")
-
-	@CrdhldrCcy.deleter
-	def CrdhldrCcy(self):
-		del self._CrdhldrCcy
-		self._CrdhldrCcy = None
-
-	@property
 	def Amt(self):
 		return self._Amt
 
@@ -74,6 +48,32 @@ class Balance29(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def CdtDbt(self):
+		return self._CdtDbt
+
+	@CdtDbt.setter
+	def CdtDbt(self, value):
+		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+
+	@CdtDbt.deleter
+	def CdtDbt(self):
+		del self._CdtDbt
+		self._CdtDbt = None
 
 	@property
 	def BalDt(self):
@@ -89,25 +89,25 @@ class Balance29(base_types._BaseFieldType):
 		self._BalDt = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def CrdhldrCcy(self):
+		return self._CrdhldrCcy
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@CrdhldrCcy.setter
+	def CrdhldrCcy(self, value):
+		self._CrdhldrCcy = value if type(value) != auto else self.make_default("CrdhldrCcy")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@CrdhldrCcy.deleter
+	def CrdhldrCcy(self):
+		del self._CrdhldrCcy
+		self._CrdhldrCcy = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrdhldrCcy', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=BalanceType15Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrdhldrCcy', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

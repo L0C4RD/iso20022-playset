@@ -1,6 +1,6 @@
 from . import base_types
-import DateFormat49Choice
-import PartyIdentification136Choice
+from .PartyIdentification136Choice import PartyIdentification136Choice
+from .DateFormat49Choice import DateFormat49Choice
 
 class BorrowerLendingDeadline6(base_types._BaseFieldType):
 

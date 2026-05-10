@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalBillingRateIdentification1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ExternalBillingRateIdentification1Code import ExternalBillingRateIdentification1Code
 
 class BillingRateIdentification1Choice(base_types._BaseFieldType):
 

@@ -1,23 +1,10 @@
 from . import base_types
-import Max8Text
-import Max35Text
+from .Max35Text import Max35Text
+from .Max8Text import Max8Text
 
 class GenericIdentification7(base_types._BaseFieldType):
 
-	__slots__ = ["_Inf", "_Issr"]
-	@property
-	def Inf(self):
-		return self._Inf
-
-	@Inf.setter
-	def Inf(self, value):
-		self._Inf = value if type(value) != auto else self.make_default("Inf")
-
-	@Inf.deleter
-	def Inf(self):
-		del self._Inf
-		self._Inf = None
-
+	__slots__ = ["_Issr", "_Inf"]
 	@property
 	def Issr(self):
 		return self._Issr
@@ -31,8 +18,21 @@ class GenericIdentification7(base_types._BaseFieldType):
 		del self._Issr
 		self._Issr = None
 
+	@property
+	def Inf(self):
+		return self._Inf
+
+	@Inf.setter
+	def Inf(self, value):
+		self._Inf = value if type(value) != auto else self.make_default("Inf")
+
+	@Inf.deleter
+	def Inf(self):
+		del self._Inf
+		self._Inf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Inf', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max8Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Inf', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

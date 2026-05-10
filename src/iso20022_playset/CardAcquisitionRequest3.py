@@ -1,14 +1,14 @@
 from . import base_types
-import TrueFalseIndicator
-import ImpliedCurrencyAndAmount
-import CardPaymentServiceType13Code
-import TransactionIdentifier1
-import Max35Text
-import Max70Text
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .Max35Text import Max35Text
+from .Max70Text import Max70Text
+from .TransactionIdentifier1 import TransactionIdentifier1
+from .TrueFalseIndicator import TrueFalseIndicator
+from .CardPaymentServiceType13Code import CardPaymentServiceType13Code
 
 class CardAcquisitionRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_CshBckFlg", "_SaleTxId", "_TtlAmt", "_SaleToPOIData", "_SaleToIssrData", "_ForceCstmrSelctnFlg", "_SaleToAcqrrData", "_PmtTp", "_AllwdPmtBrnd", "_AllwdLltyBrnd"]
+	__slots__ = ["_CshBckFlg", "_TtlAmt", "_SaleToAcqrrData", "_SaleToPOIData", "_SaleToIssrData", "_AllwdPmtBrnd", "_SaleTxId", "_PmtTp", "_AllwdLltyBrnd", "_ForceCstmrSelctnFlg"]
 	@property
 	def CshBckFlg(self):
 		return self._CshBckFlg
@@ -23,19 +23,6 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 		self._CshBckFlg = None
 
 	@property
-	def SaleTxId(self):
-		return self._SaleTxId
-
-	@SaleTxId.setter
-	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != auto else self.make_default("SaleTxId")
-
-	@SaleTxId.deleter
-	def SaleTxId(self):
-		del self._SaleTxId
-		self._SaleTxId = None
-
-	@property
 	def TtlAmt(self):
 		return self._TtlAmt
 
@@ -47,6 +34,19 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 	def TtlAmt(self):
 		del self._TtlAmt
 		self._TtlAmt = None
+
+	@property
+	def SaleToAcqrrData(self):
+		return self._SaleToAcqrrData
+
+	@SaleToAcqrrData.setter
+	def SaleToAcqrrData(self, value):
+		self._SaleToAcqrrData = value if type(value) != auto else self.make_default("SaleToAcqrrData")
+
+	@SaleToAcqrrData.deleter
+	def SaleToAcqrrData(self):
+		del self._SaleToAcqrrData
+		self._SaleToAcqrrData = None
 
 	@property
 	def SaleToPOIData(self):
@@ -75,30 +75,30 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 		self._SaleToIssrData = None
 
 	@property
-	def ForceCstmrSelctnFlg(self):
-		return self._ForceCstmrSelctnFlg
+	def AllwdPmtBrnd(self):
+		return self._AllwdPmtBrnd
 
-	@ForceCstmrSelctnFlg.setter
-	def ForceCstmrSelctnFlg(self, value):
-		self._ForceCstmrSelctnFlg = value if type(value) != auto else self.make_default("ForceCstmrSelctnFlg")
+	@AllwdPmtBrnd.setter
+	def AllwdPmtBrnd(self, value):
+		self._AllwdPmtBrnd = value if type(value) != auto else self.make_default("AllwdPmtBrnd")
 
-	@ForceCstmrSelctnFlg.deleter
-	def ForceCstmrSelctnFlg(self):
-		del self._ForceCstmrSelctnFlg
-		self._ForceCstmrSelctnFlg = None
+	@AllwdPmtBrnd.deleter
+	def AllwdPmtBrnd(self):
+		del self._AllwdPmtBrnd
+		self._AllwdPmtBrnd = None
 
 	@property
-	def SaleToAcqrrData(self):
-		return self._SaleToAcqrrData
+	def SaleTxId(self):
+		return self._SaleTxId
 
-	@SaleToAcqrrData.setter
-	def SaleToAcqrrData(self, value):
-		self._SaleToAcqrrData = value if type(value) != auto else self.make_default("SaleToAcqrrData")
+	@SaleTxId.setter
+	def SaleTxId(self, value):
+		self._SaleTxId = value if type(value) != auto else self.make_default("SaleTxId")
 
-	@SaleToAcqrrData.deleter
-	def SaleToAcqrrData(self):
-		del self._SaleToAcqrrData
-		self._SaleToAcqrrData = None
+	@SaleTxId.deleter
+	def SaleTxId(self):
+		del self._SaleTxId
+		self._SaleTxId = None
 
 	@property
 	def PmtTp(self):
@@ -114,19 +114,6 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 		self._PmtTp = None
 
 	@property
-	def AllwdPmtBrnd(self):
-		return self._AllwdPmtBrnd
-
-	@AllwdPmtBrnd.setter
-	def AllwdPmtBrnd(self, value):
-		self._AllwdPmtBrnd = value if type(value) != auto else self.make_default("AllwdPmtBrnd")
-
-	@AllwdPmtBrnd.deleter
-	def AllwdPmtBrnd(self):
-		del self._AllwdPmtBrnd
-		self._AllwdPmtBrnd = None
-
-	@property
 	def AllwdLltyBrnd(self):
 		return self._AllwdLltyBrnd
 
@@ -139,16 +126,29 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 		del self._AllwdLltyBrnd
 		self._AllwdLltyBrnd = None
 
+	@property
+	def ForceCstmrSelctnFlg(self):
+		return self._ForceCstmrSelctnFlg
+
+	@ForceCstmrSelctnFlg.setter
+	def ForceCstmrSelctnFlg(self, value):
+		self._ForceCstmrSelctnFlg = value if type(value) != auto else self.make_default("ForceCstmrSelctnFlg")
+
+	@ForceCstmrSelctnFlg.deleter
+	def ForceCstmrSelctnFlg(self):
+		del self._ForceCstmrSelctnFlg
+		self._ForceCstmrSelctnFlg = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshBckFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleToAcqrrData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleToPOIData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleToIssrData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ForceCstmrSelctnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleToAcqrrData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtTp', type=CardPaymentServiceType13Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AllwdPmtBrnd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtTp', type=CardPaymentServiceType13Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AllwdLltyBrnd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ForceCstmrSelctnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

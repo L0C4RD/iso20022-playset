@@ -1,5 +1,5 @@
 from . import base_types
-import SaleToPOISessionManagementResponseV07
+from .SaleToPOISessionManagementResponseV07 import SaleToPOISessionManagementResponseV07
 
 class CASP_006_001_07():
 

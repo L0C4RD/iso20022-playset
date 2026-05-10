@@ -1,7 +1,7 @@
 from . import base_types
-import CardPaymentBatchTransfer13
-import Header56
-import ContentInformationType37
+from .CardPaymentBatchTransfer13 import CardPaymentBatchTransfer13
+from .Header56 import Header56
+from .ContentInformationType37 import ContentInformationType37
 
 class AcceptorBatchTransferV14(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-import NotificationToReceiveCancellationAdviceV09
+from .NotificationToReceiveCancellationAdviceV09 import NotificationToReceiveCancellationAdviceV09
 
 class CAMT_058_001_09():
 

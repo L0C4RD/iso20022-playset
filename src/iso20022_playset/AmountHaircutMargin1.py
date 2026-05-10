@@ -1,6 +1,6 @@
 from . import base_types
-import PercentageRate
-import AmountAndDirection53
+from .PercentageRate import PercentageRate
+from .AmountAndDirection53 import AmountAndDirection53
 
 class AmountHaircutMargin1(base_types._BaseFieldType):
 

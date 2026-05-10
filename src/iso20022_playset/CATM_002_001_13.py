@@ -1,5 +1,5 @@
 from . import base_types
-import ManagementPlanReplacementV13
+from .ManagementPlanReplacementV13 import ManagementPlanReplacementV13
 
 class CATM_002_001_13():
 

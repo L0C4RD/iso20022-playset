@@ -1,23 +1,10 @@
 from . import base_types
-import Max500Text
-import DocumentType1Choice
+from .DocumentType1Choice import DocumentType1Choice
+from .Max500Text import Max500Text
 
 class ContractReference1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_Tp"]
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
+	__slots__ = ["_Tp", "_Ref"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -31,8 +18,21 @@ class ContractReference1(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ref', type=Max500Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=DocumentType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Max500Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

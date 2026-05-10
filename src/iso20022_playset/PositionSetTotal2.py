@@ -1,11 +1,24 @@
 from . import base_types
-import Max20PositiveNumber
-import ActiveOrHistoricCurrencyAnd19DecimalAmount
-import NotionalAmountLegs6
+from .NotionalAmountLegs6 import NotionalAmountLegs6
+from .ActiveOrHistoricCurrencyAnd19DecimalAmount import ActiveOrHistoricCurrencyAnd19DecimalAmount
+from .Max20PositiveNumber import Max20PositiveNumber
 
 class PositionSetTotal2(base_types._BaseFieldType):
 
-	__slots__ = ["_Ntnl", "_NegVal", "_NbOfTrds", "_PostvVal", "_OthrPmtAmt"]
+	__slots__ = ["_NbOfTrds", "_Ntnl", "_NegVal", "_OthrPmtAmt", "_PostvVal"]
+	@property
+	def NbOfTrds(self):
+		return self._NbOfTrds
+
+	@NbOfTrds.setter
+	def NbOfTrds(self, value):
+		self._NbOfTrds = value if type(value) != auto else self.make_default("NbOfTrds")
+
+	@NbOfTrds.deleter
+	def NbOfTrds(self):
+		del self._NbOfTrds
+		self._NbOfTrds = None
+
 	@property
 	def Ntnl(self):
 		return self._Ntnl
@@ -33,17 +46,17 @@ class PositionSetTotal2(base_types._BaseFieldType):
 		self._NegVal = None
 
 	@property
-	def NbOfTrds(self):
-		return self._NbOfTrds
+	def OthrPmtAmt(self):
+		return self._OthrPmtAmt
 
-	@NbOfTrds.setter
-	def NbOfTrds(self, value):
-		self._NbOfTrds = value if type(value) != auto else self.make_default("NbOfTrds")
+	@OthrPmtAmt.setter
+	def OthrPmtAmt(self, value):
+		self._OthrPmtAmt = value if type(value) != auto else self.make_default("OthrPmtAmt")
 
-	@NbOfTrds.deleter
-	def NbOfTrds(self):
-		del self._NbOfTrds
-		self._NbOfTrds = None
+	@OthrPmtAmt.deleter
+	def OthrPmtAmt(self):
+		del self._OthrPmtAmt
+		self._OthrPmtAmt = None
 
 	@property
 	def PostvVal(self):
@@ -58,24 +71,11 @@ class PositionSetTotal2(base_types._BaseFieldType):
 		del self._PostvVal
 		self._PostvVal = None
 
-	@property
-	def OthrPmtAmt(self):
-		return self._OthrPmtAmt
-
-	@OthrPmtAmt.setter
-	def OthrPmtAmt(self, value):
-		self._OthrPmtAmt = value if type(value) != auto else self.make_default("OthrPmtAmt")
-
-	@OthrPmtAmt.deleter
-	def OthrPmtAmt(self):
-		del self._OthrPmtAmt
-		self._OthrPmtAmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NbOfTrds', type=Max20PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ntnl', type=NotionalAmountLegs6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NegVal', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfTrds', type=Max20PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PostvVal', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrPmtAmt', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PostvVal', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

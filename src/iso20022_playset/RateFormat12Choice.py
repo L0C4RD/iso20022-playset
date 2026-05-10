@@ -1,6 +1,6 @@
 from . import base_types
-import RateType5Code
-import BaseOne14Rate
+from .BaseOne14Rate import BaseOne14Rate
+from .RateType5Code import RateType5Code
 
 class RateFormat12Choice(base_types._BaseFieldType):
 

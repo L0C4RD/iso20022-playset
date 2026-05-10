@@ -1,12 +1,12 @@
 from . import base_types
-import ISODate
-import Max140Text
-import AgreementFramework1Choice
-import ActiveCurrencyCode
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .AgreementFramework1Choice import AgreementFramework1Choice
+from .Max140Text import Max140Text
+from .ISODate import ISODate
 
 class Agreement4(base_types._BaseFieldType):
 
-	__slots__ = ["_BaseCcy", "_AgrmtDtls", "_AgrmtFrmwk", "_AgrmtId", "_AgrmtDt"]
+	__slots__ = ["_BaseCcy", "_AgrmtDt", "_AgrmtDtls", "_AgrmtId", "_AgrmtFrmwk"]
 	@property
 	def BaseCcy(self):
 		return self._BaseCcy
@@ -19,6 +19,19 @@ class Agreement4(base_types._BaseFieldType):
 	def BaseCcy(self):
 		del self._BaseCcy
 		self._BaseCcy = None
+
+	@property
+	def AgrmtDt(self):
+		return self._AgrmtDt
+
+	@AgrmtDt.setter
+	def AgrmtDt(self, value):
+		self._AgrmtDt = value if type(value) != auto else self.make_default("AgrmtDt")
+
+	@AgrmtDt.deleter
+	def AgrmtDt(self):
+		del self._AgrmtDt
+		self._AgrmtDt = None
 
 	@property
 	def AgrmtDtls(self):
@@ -34,19 +47,6 @@ class Agreement4(base_types._BaseFieldType):
 		self._AgrmtDtls = None
 
 	@property
-	def AgrmtFrmwk(self):
-		return self._AgrmtFrmwk
-
-	@AgrmtFrmwk.setter
-	def AgrmtFrmwk(self, value):
-		self._AgrmtFrmwk = value if type(value) != auto else self.make_default("AgrmtFrmwk")
-
-	@AgrmtFrmwk.deleter
-	def AgrmtFrmwk(self):
-		del self._AgrmtFrmwk
-		self._AgrmtFrmwk = None
-
-	@property
 	def AgrmtId(self):
 		return self._AgrmtId
 
@@ -60,23 +60,23 @@ class Agreement4(base_types._BaseFieldType):
 		self._AgrmtId = None
 
 	@property
-	def AgrmtDt(self):
-		return self._AgrmtDt
+	def AgrmtFrmwk(self):
+		return self._AgrmtFrmwk
 
-	@AgrmtDt.setter
-	def AgrmtDt(self, value):
-		self._AgrmtDt = value if type(value) != auto else self.make_default("AgrmtDt")
+	@AgrmtFrmwk.setter
+	def AgrmtFrmwk(self, value):
+		self._AgrmtFrmwk = value if type(value) != auto else self.make_default("AgrmtFrmwk")
 
-	@AgrmtDt.deleter
-	def AgrmtDt(self):
-		del self._AgrmtDt
-		self._AgrmtDt = None
+	@AgrmtFrmwk.deleter
+	def AgrmtFrmwk(self):
+		del self._AgrmtFrmwk
+		self._AgrmtFrmwk = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgrmtDtls', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgrmtFrmwk', type=AgreementFramework1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgrmtId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgrmtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgrmtDtls', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgrmtId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgrmtFrmwk', type=AgreementFramework1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

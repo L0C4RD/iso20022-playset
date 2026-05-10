@@ -1,14 +1,27 @@
 from . import base_types
-import CorporateActionEventProcessingType1FormatChoice
-import PartyIdentification2Choice
-import CorporateActionMandatoryVoluntary1FormatChoice
-import CorporateActionEventType2FormatChoice
-import Max35Text
-import FinancialInstrumentDescription3
+from .Max35Text import Max35Text
+from .PartyIdentification2Choice import PartyIdentification2Choice
+from .CorporateActionMandatoryVoluntary1FormatChoice import CorporateActionMandatoryVoluntary1FormatChoice
+from .FinancialInstrumentDescription3 import FinancialInstrumentDescription3
+from .CorporateActionEventType2FormatChoice import CorporateActionEventType2FormatChoice
+from .CorporateActionEventProcessingType1FormatChoice import CorporateActionEventProcessingType1FormatChoice
 
 class CorporateActionInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtTp", "_UndrlygScty", "_EvtPrcgTp", "_IssrCorpActnId", "_MndtryVlntryEvtTp", "_AgtId", "_CorpActnPrcgId"]
+	__slots__ = ["_IssrCorpActnId", "_EvtTp", "_MndtryVlntryEvtTp", "_UndrlygScty", "_EvtPrcgTp", "_AgtId", "_CorpActnPrcgId"]
+	@property
+	def IssrCorpActnId(self):
+		return self._IssrCorpActnId
+
+	@IssrCorpActnId.setter
+	def IssrCorpActnId(self, value):
+		self._IssrCorpActnId = value if type(value) != auto else self.make_default("IssrCorpActnId")
+
+	@IssrCorpActnId.deleter
+	def IssrCorpActnId(self):
+		del self._IssrCorpActnId
+		self._IssrCorpActnId = None
+
 	@property
 	def EvtTp(self):
 		return self._EvtTp
@@ -21,6 +34,19 @@ class CorporateActionInformation1(base_types._BaseFieldType):
 	def EvtTp(self):
 		del self._EvtTp
 		self._EvtTp = None
+
+	@property
+	def MndtryVlntryEvtTp(self):
+		return self._MndtryVlntryEvtTp
+
+	@MndtryVlntryEvtTp.setter
+	def MndtryVlntryEvtTp(self, value):
+		self._MndtryVlntryEvtTp = value if type(value) != auto else self.make_default("MndtryVlntryEvtTp")
+
+	@MndtryVlntryEvtTp.deleter
+	def MndtryVlntryEvtTp(self):
+		del self._MndtryVlntryEvtTp
+		self._MndtryVlntryEvtTp = None
 
 	@property
 	def UndrlygScty(self):
@@ -49,32 +75,6 @@ class CorporateActionInformation1(base_types._BaseFieldType):
 		self._EvtPrcgTp = None
 
 	@property
-	def IssrCorpActnId(self):
-		return self._IssrCorpActnId
-
-	@IssrCorpActnId.setter
-	def IssrCorpActnId(self, value):
-		self._IssrCorpActnId = value if type(value) != auto else self.make_default("IssrCorpActnId")
-
-	@IssrCorpActnId.deleter
-	def IssrCorpActnId(self):
-		del self._IssrCorpActnId
-		self._IssrCorpActnId = None
-
-	@property
-	def MndtryVlntryEvtTp(self):
-		return self._MndtryVlntryEvtTp
-
-	@MndtryVlntryEvtTp.setter
-	def MndtryVlntryEvtTp(self, value):
-		self._MndtryVlntryEvtTp = value if type(value) != auto else self.make_default("MndtryVlntryEvtTp")
-
-	@MndtryVlntryEvtTp.deleter
-	def MndtryVlntryEvtTp(self):
-		del self._MndtryVlntryEvtTp
-		self._MndtryVlntryEvtTp = None
-
-	@property
 	def AgtId(self):
 		return self._AgtId
 
@@ -101,11 +101,11 @@ class CorporateActionInformation1(base_types._BaseFieldType):
 		self._CorpActnPrcgId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='IssrCorpActnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType2FormatChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MndtryVlntryEvtTp', type=CorporateActionMandatoryVoluntary1FormatChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygScty', type=FinancialInstrumentDescription3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtPrcgTp', type=CorporateActionEventProcessingType1FormatChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrCorpActnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MndtryVlntryEvtTp', type=CorporateActionMandatoryVoluntary1FormatChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtId', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnPrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))

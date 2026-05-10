@@ -1,5 +1,5 @@
 from . import base_types
-import IntraBalanceMovementPendingReportV02
+from .IntraBalanceMovementPendingReportV02 import IntraBalanceMovementPendingReportV02
 
 class CAMT_085_001_02():
 

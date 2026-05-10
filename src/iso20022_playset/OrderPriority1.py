@@ -1,23 +1,10 @@
 from . import base_types
-import PositiveNumber
-import ISODateTime
+from .PositiveNumber import PositiveNumber
+from .ISODateTime import ISODateTime
 
 class OrderPriority1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sz", "_TmStmp"]
-	@property
-	def Sz(self):
-		return self._Sz
-
-	@Sz.setter
-	def Sz(self, value):
-		self._Sz = value if type(value) != auto else self.make_default("Sz")
-
-	@Sz.deleter
-	def Sz(self):
-		del self._Sz
-		self._Sz = None
-
+	__slots__ = ["_TmStmp", "_Sz"]
 	@property
 	def TmStmp(self):
 		return self._TmStmp
@@ -31,8 +18,21 @@ class OrderPriority1(base_types._BaseFieldType):
 		del self._TmStmp
 		self._TmStmp = None
 
+	@property
+	def Sz(self):
+		return self._Sz
+
+	@Sz.setter
+	def Sz(self, value):
+		self._Sz = value if type(value) != auto else self.make_default("Sz")
+
+	@Sz.deleter
+	def Sz(self):
+		del self._Sz
+		self._Sz = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sz', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sz', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

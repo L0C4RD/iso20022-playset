@@ -1,12 +1,12 @@
 from . import base_types
-import Balance21
-import QuantityBreakdown57
-import Max140Text
-import SubBalanceType12Choice
+from .Balance21 import Balance21
+from .Max140Text import Max140Text
+from .QuantityBreakdown57 import QuantityBreakdown57
+from .SubBalanceType12Choice import SubBalanceType12Choice
 
 class AdditionalBalanceInformation20(base_types._BaseFieldType):
 
-	__slots__ = ["_SubBalAddtlDtls", "_QtyBrkdwn", "_SubBalTp", "_Qty"]
+	__slots__ = ["_SubBalAddtlDtls", "_QtyBrkdwn", "_Qty", "_SubBalTp"]
 	@property
 	def SubBalAddtlDtls(self):
 		return self._SubBalAddtlDtls
@@ -34,19 +34,6 @@ class AdditionalBalanceInformation20(base_types._BaseFieldType):
 		self._QtyBrkdwn = None
 
 	@property
-	def SubBalTp(self):
-		return self._SubBalTp
-
-	@SubBalTp.setter
-	def SubBalTp(self, value):
-		self._SubBalTp = value if type(value) != auto else self.make_default("SubBalTp")
-
-	@SubBalTp.deleter
-	def SubBalTp(self):
-		del self._SubBalTp
-		self._SubBalTp = None
-
-	@property
 	def Qty(self):
 		return self._Qty
 
@@ -59,10 +46,23 @@ class AdditionalBalanceInformation20(base_types._BaseFieldType):
 		del self._Qty
 		self._Qty = None
 
+	@property
+	def SubBalTp(self):
+		return self._SubBalTp
+
+	@SubBalTp.setter
+	def SubBalTp(self, value):
+		self._SubBalTp = value if type(value) != auto else self.make_default("SubBalTp")
+
+	@SubBalTp.deleter
+	def SubBalTp(self):
+		del self._SubBalTp
+		self._SubBalTp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SubBalAddtlDtls', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown57, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType12Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=Balance21, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType12Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

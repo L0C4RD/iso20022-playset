@@ -1,6 +1,6 @@
 from . import base_types
-import Max15NumericText
-import ExposureMetrics4
+from .Max15NumericText import Max15NumericText
+from .ExposureMetrics4 import ExposureMetrics4
 
 class VolumeMetrics5(base_types._BaseFieldType):
 

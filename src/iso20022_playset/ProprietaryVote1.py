@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import QuantityOrCode1Choice
+from .GenericIdentification30 import GenericIdentification30
+from .QuantityOrCode1Choice import QuantityOrCode1Choice
 
 class ProprietaryVote1(base_types._BaseFieldType):
 

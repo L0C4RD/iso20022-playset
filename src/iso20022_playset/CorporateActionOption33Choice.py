@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import CorporateActionOption12Code
+from .CorporateActionOption12Code import CorporateActionOption12Code
+from .GenericIdentification30 import GenericIdentification30
 
 class CorporateActionOption33Choice(base_types._BaseFieldType):
 

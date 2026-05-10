@@ -1,13 +1,26 @@
 from . import base_types
-import GenericIdentification36
-import Max50Text
-import AnyBICDec2014Identifier
-import Max35Text
-import LEIIdentifier
+from .Max35Text import Max35Text
+from .LEIIdentifier import LEIIdentifier
+from .Max50Text import Max50Text
+from .GenericIdentification36 import GenericIdentification36
+from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
 
 class PartyIdentification198Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NtlRegnNb", "_ClntId", "_PrtryId", "_LEI", "_AnyBIC"]
+	__slots__ = ["_AnyBIC", "_NtlRegnNb", "_PrtryId", "_ClntId", "_LEI"]
+	@property
+	def AnyBIC(self):
+		return self._AnyBIC
+
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
+
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
+
 	@property
 	def NtlRegnNb(self):
 		return self._NtlRegnNb
@@ -20,19 +33,6 @@ class PartyIdentification198Choice(base_types._BaseFieldType):
 	def NtlRegnNb(self):
 		del self._NtlRegnNb
 		self._NtlRegnNb = None
-
-	@property
-	def ClntId(self):
-		return self._ClntId
-
-	@ClntId.setter
-	def ClntId(self, value):
-		self._ClntId = value if type(value) != auto else self.make_default("ClntId")
-
-	@ClntId.deleter
-	def ClntId(self):
-		del self._ClntId
-		self._ClntId = None
 
 	@property
 	def PrtryId(self):
@@ -48,6 +48,19 @@ class PartyIdentification198Choice(base_types._BaseFieldType):
 		self._PrtryId = None
 
 	@property
+	def ClntId(self):
+		return self._ClntId
+
+	@ClntId.setter
+	def ClntId(self, value):
+		self._ClntId = value if type(value) != auto else self.make_default("ClntId")
+
+	@ClntId.deleter
+	def ClntId(self):
+		del self._ClntId
+		self._ClntId = None
+
+	@property
 	def LEI(self):
 		return self._LEI
 
@@ -60,24 +73,11 @@ class PartyIdentification198Choice(base_types._BaseFieldType):
 		del self._LEI
 		self._LEI = None
 
-	@property
-	def AnyBIC(self):
-		return self._AnyBIC
-
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != auto else self.make_default("AnyBIC")
-
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtlRegnNb', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ClntId', type=Max50Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtryId', type=GenericIdentification36, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NtlRegnNb', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtryId', type=GenericIdentification36, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ClntId', type=Max50Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

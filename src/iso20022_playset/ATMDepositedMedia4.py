@@ -1,38 +1,12 @@
 from . import base_types
-import Number
-import ATMDepositedMediaItem1
-import ATMMediaType3Code
-import ATMMediaType4Code
+from .ATMMediaType3Code import ATMMediaType3Code
+from .ATMMediaType4Code import ATMMediaType4Code
+from .ATMDepositedMediaItem1 import ATMDepositedMediaItem1
+from .Number import Number
 
 class ATMDepositedMedia4(base_types._BaseFieldType):
 
-	__slots__ = ["_MdiaTp", "_MdiaCtgy", "_AcctSeqNb", "_MdiaItm"]
-	@property
-	def MdiaTp(self):
-		return self._MdiaTp
-
-	@MdiaTp.setter
-	def MdiaTp(self, value):
-		self._MdiaTp = value if type(value) != auto else self.make_default("MdiaTp")
-
-	@MdiaTp.deleter
-	def MdiaTp(self):
-		del self._MdiaTp
-		self._MdiaTp = None
-
-	@property
-	def MdiaCtgy(self):
-		return self._MdiaCtgy
-
-	@MdiaCtgy.setter
-	def MdiaCtgy(self, value):
-		self._MdiaCtgy = value if type(value) != auto else self.make_default("MdiaCtgy")
-
-	@MdiaCtgy.deleter
-	def MdiaCtgy(self):
-		del self._MdiaCtgy
-		self._MdiaCtgy = None
-
+	__slots__ = ["_AcctSeqNb", "_MdiaTp", "_MdiaItm", "_MdiaCtgy"]
 	@property
 	def AcctSeqNb(self):
 		return self._AcctSeqNb
@@ -47,6 +21,19 @@ class ATMDepositedMedia4(base_types._BaseFieldType):
 		self._AcctSeqNb = None
 
 	@property
+	def MdiaTp(self):
+		return self._MdiaTp
+
+	@MdiaTp.setter
+	def MdiaTp(self, value):
+		self._MdiaTp = value if type(value) != auto else self.make_default("MdiaTp")
+
+	@MdiaTp.deleter
+	def MdiaTp(self):
+		del self._MdiaTp
+		self._MdiaTp = None
+
+	@property
 	def MdiaItm(self):
 		return self._MdiaItm
 
@@ -59,10 +46,23 @@ class ATMDepositedMedia4(base_types._BaseFieldType):
 		del self._MdiaItm
 		self._MdiaItm = None
 
+	@property
+	def MdiaCtgy(self):
+		return self._MdiaCtgy
+
+	@MdiaCtgy.setter
+	def MdiaCtgy(self, value):
+		self._MdiaCtgy = value if type(value) != auto else self.make_default("MdiaCtgy")
+
+	@MdiaCtgy.deleter
+	def MdiaCtgy(self):
+		del self._MdiaCtgy
+		self._MdiaCtgy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MdiaTp', type=ATMMediaType4Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MdiaCtgy', type=ATMMediaType3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MdiaTp', type=ATMMediaType4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MdiaItm', type=ATMDepositedMediaItem1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MdiaCtgy', type=ATMMediaType3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

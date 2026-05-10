@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import AccountingStatus1Code
+from .AccountingStatus1Code import AccountingStatus1Code
+from .GenericIdentification47 import GenericIdentification47
 
 class AccountingStatus1Choice(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-import CreditorPaymentActivationRequestV11
+from .CreditorPaymentActivationRequestV11 import CreditorPaymentActivationRequestV11
 
 class PAIN_013_001_11():
 

@@ -1,43 +1,17 @@
 from . import base_types
-import Max140Text
-import TransactionIdentifier3
-import ATMTotals4
-import ATMTotals3
-import ATMCassette3
-import Max35Text
-import Number
-import ATMOperation2Code
-import FailureReason9Code
+from .Max35Text import Max35Text
+from .ATMTotals4 import ATMTotals4
+from .TransactionIdentifier3 import TransactionIdentifier3
+from .FailureReason9Code import FailureReason9Code
+from .ATMCassette3 import ATMCassette3
+from .Max140Text import Max140Text
+from .ATMOperation2Code import ATMOperation2Code
+from .Number import Number
+from .ATMTotals3 import ATMTotals3
 
 class ATMReconciliationOperation1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlTxInf", "_TpOfOpr", "_ATMTtls", "_TxTtls", "_TxId", "_Csstt", "_RcncltnId", "_Incdnt", "_RtndCard"]
-	@property
-	def AddtlTxInf(self):
-		return self._AddtlTxInf
-
-	@AddtlTxInf.setter
-	def AddtlTxInf(self, value):
-		self._AddtlTxInf = value if type(value) != auto else self.make_default("AddtlTxInf")
-
-	@AddtlTxInf.deleter
-	def AddtlTxInf(self):
-		del self._AddtlTxInf
-		self._AddtlTxInf = None
-
-	@property
-	def TpOfOpr(self):
-		return self._TpOfOpr
-
-	@TpOfOpr.setter
-	def TpOfOpr(self, value):
-		self._TpOfOpr = value if type(value) != auto else self.make_default("TpOfOpr")
-
-	@TpOfOpr.deleter
-	def TpOfOpr(self):
-		del self._TpOfOpr
-		self._TpOfOpr = None
-
+	__slots__ = ["_ATMTtls", "_RcncltnId", "_TxTtls", "_RtndCard", "_AddtlTxInf", "_TxId", "_Csstt", "_TpOfOpr", "_Incdnt"]
 	@property
 	def ATMTtls(self):
 		return self._ATMTtls
@@ -52,6 +26,19 @@ class ATMReconciliationOperation1(base_types._BaseFieldType):
 		self._ATMTtls = None
 
 	@property
+	def RcncltnId(self):
+		return self._RcncltnId
+
+	@RcncltnId.setter
+	def RcncltnId(self, value):
+		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
+
+	@RcncltnId.deleter
+	def RcncltnId(self):
+		del self._RcncltnId
+		self._RcncltnId = None
+
+	@property
 	def TxTtls(self):
 		return self._TxTtls
 
@@ -63,6 +50,32 @@ class ATMReconciliationOperation1(base_types._BaseFieldType):
 	def TxTtls(self):
 		del self._TxTtls
 		self._TxTtls = None
+
+	@property
+	def RtndCard(self):
+		return self._RtndCard
+
+	@RtndCard.setter
+	def RtndCard(self, value):
+		self._RtndCard = value if type(value) != auto else self.make_default("RtndCard")
+
+	@RtndCard.deleter
+	def RtndCard(self):
+		del self._RtndCard
+		self._RtndCard = None
+
+	@property
+	def AddtlTxInf(self):
+		return self._AddtlTxInf
+
+	@AddtlTxInf.setter
+	def AddtlTxInf(self, value):
+		self._AddtlTxInf = value if type(value) != auto else self.make_default("AddtlTxInf")
+
+	@AddtlTxInf.deleter
+	def AddtlTxInf(self):
+		del self._AddtlTxInf
+		self._AddtlTxInf = None
 
 	@property
 	def TxId(self):
@@ -91,17 +104,17 @@ class ATMReconciliationOperation1(base_types._BaseFieldType):
 		self._Csstt = None
 
 	@property
-	def RcncltnId(self):
-		return self._RcncltnId
+	def TpOfOpr(self):
+		return self._TpOfOpr
 
-	@RcncltnId.setter
-	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
+	@TpOfOpr.setter
+	def TpOfOpr(self, value):
+		self._TpOfOpr = value if type(value) != auto else self.make_default("TpOfOpr")
 
-	@RcncltnId.deleter
-	def RcncltnId(self):
-		del self._RcncltnId
-		self._RcncltnId = None
+	@TpOfOpr.deleter
+	def TpOfOpr(self):
+		del self._TpOfOpr
+		self._TpOfOpr = None
 
 	@property
 	def Incdnt(self):
@@ -116,28 +129,15 @@ class ATMReconciliationOperation1(base_types._BaseFieldType):
 		del self._Incdnt
 		self._Incdnt = None
 
-	@property
-	def RtndCard(self):
-		return self._RtndCard
-
-	@RtndCard.setter
-	def RtndCard(self, value):
-		self._RtndCard = value if type(value) != auto else self.make_default("RtndCard")
-
-	@RtndCard.deleter
-	def RtndCard(self):
-		del self._RtndCard
-		self._RtndCard = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlTxInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TpOfOpr', type=ATMOperation2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMTtls', type=ATMTotals4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTtls', type=ATMTotals3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RtndCard', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlTxInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Csstt', type=ATMCassette3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TpOfOpr', type=ATMOperation2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Incdnt', type=FailureReason9Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RtndCard', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

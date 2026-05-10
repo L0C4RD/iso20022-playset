@@ -1,23 +1,23 @@
 from . import base_types
-import ExternallyDefinedData5
-import NonFinancialRequestType2Code
-import CardPaymentTransaction139
+from .ExternallyDefinedData5 import ExternallyDefinedData5
+from .NonFinancialRequestType2Code import NonFinancialRequestType2Code
+from .CardPaymentTransaction139 import CardPaymentTransaction139
 
 class NonFinancialRequestContentComponent5(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_NonFinReqTp", "_AddtlReq"]
+	__slots__ = ["_AddtlReq", "_NonFinReqTp", "_Tx"]
 	@property
-	def Tx(self):
-		return self._Tx
+	def AddtlReq(self):
+		return self._AddtlReq
 
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+	@AddtlReq.setter
+	def AddtlReq(self, value):
+		self._AddtlReq = value if type(value) != auto else self.make_default("AddtlReq")
 
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
+	@AddtlReq.deleter
+	def AddtlReq(self):
+		del self._AddtlReq
+		self._AddtlReq = None
 
 	@property
 	def NonFinReqTp(self):
@@ -33,21 +33,21 @@ class NonFinancialRequestContentComponent5(base_types._BaseFieldType):
 		self._NonFinReqTp = None
 
 	@property
-	def AddtlReq(self):
-		return self._AddtlReq
+	def Tx(self):
+		return self._Tx
 
-	@AddtlReq.setter
-	def AddtlReq(self, value):
-		self._AddtlReq = value if type(value) != auto else self.make_default("AddtlReq")
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != auto else self.make_default("Tx")
 
-	@AddtlReq.deleter
-	def AddtlReq(self):
-		del self._AddtlReq
-		self._AddtlReq = None
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction139, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonFinReqTp', type=NonFinancialRequestType2Code, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlReq', type=ExternallyDefinedData5, min=0, max=8, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NonFinReqTp', type=NonFinancialRequestType2Code, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction139, min=0, max=1, mutex_group=None, array=False),
 	))
 

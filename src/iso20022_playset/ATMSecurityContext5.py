@@ -1,25 +1,25 @@
 from . import base_types
-import CryptographicKey11
-import Max140Binary
-import ATMSecurityDevice2
-import ATMSecurityScheme4Code
-import ATMSecurityScheme3Code
+from .Max140Binary import Max140Binary
+from .ATMSecurityScheme4Code import ATMSecurityScheme4Code
+from .ATMSecurityDevice2 import ATMSecurityDevice2
+from .ATMSecurityScheme3Code import ATMSecurityScheme3Code
+from .CryptographicKey11 import CryptographicKey11
 
 class ATMSecurityContext5(base_types._BaseFieldType):
 
-	__slots__ = ["_SctySchmeCpblties", "_HstChllng", "_SctyDvc", "_Key", "_CurSctySchme"]
+	__slots__ = ["_Key", "_HstChllng", "_SctyDvc", "_CurSctySchme", "_SctySchmeCpblties"]
 	@property
-	def SctySchmeCpblties(self):
-		return self._SctySchmeCpblties
+	def Key(self):
+		return self._Key
 
-	@SctySchmeCpblties.setter
-	def SctySchmeCpblties(self, value):
-		self._SctySchmeCpblties = value if type(value) != auto else self.make_default("SctySchmeCpblties")
+	@Key.setter
+	def Key(self, value):
+		self._Key = value if type(value) != auto else self.make_default("Key")
 
-	@SctySchmeCpblties.deleter
-	def SctySchmeCpblties(self):
-		del self._SctySchmeCpblties
-		self._SctySchmeCpblties = None
+	@Key.deleter
+	def Key(self):
+		del self._Key
+		self._Key = None
 
 	@property
 	def HstChllng(self):
@@ -48,19 +48,6 @@ class ATMSecurityContext5(base_types._BaseFieldType):
 		self._SctyDvc = None
 
 	@property
-	def Key(self):
-		return self._Key
-
-	@Key.setter
-	def Key(self, value):
-		self._Key = value if type(value) != auto else self.make_default("Key")
-
-	@Key.deleter
-	def Key(self):
-		del self._Key
-		self._Key = None
-
-	@property
 	def CurSctySchme(self):
 		return self._CurSctySchme
 
@@ -73,11 +60,24 @@ class ATMSecurityContext5(base_types._BaseFieldType):
 		del self._CurSctySchme
 		self._CurSctySchme = None
 
+	@property
+	def SctySchmeCpblties(self):
+		return self._SctySchmeCpblties
+
+	@SctySchmeCpblties.setter
+	def SctySchmeCpblties(self, value):
+		self._SctySchmeCpblties = value if type(value) != auto else self.make_default("SctySchmeCpblties")
+
+	@SctySchmeCpblties.deleter
+	def SctySchmeCpblties(self):
+		del self._SctySchmeCpblties
+		self._SctySchmeCpblties = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctySchmeCpblties', type=ATMSecurityScheme4Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Key', type=CryptographicKey11, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='HstChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyDvc', type=ATMSecurityDevice2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Key', type=CryptographicKey11, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CurSctySchme', type=ATMSecurityScheme3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctySchmeCpblties', type=ATMSecurityScheme4Code, min=0, max=None, mutex_group=None, array=True),
 	))
 

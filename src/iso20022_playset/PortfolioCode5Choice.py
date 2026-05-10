@@ -1,6 +1,6 @@
 from . import base_types
-import PortfolioIdentification3
-import NotApplicable1Code
+from .NotApplicable1Code import NotApplicable1Code
+from .PortfolioIdentification3 import PortfolioIdentification3
 
 class PortfolioCode5Choice(base_types._BaseFieldType):
 

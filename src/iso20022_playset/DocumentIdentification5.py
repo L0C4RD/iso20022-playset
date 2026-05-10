@@ -1,6 +1,6 @@
 from . import base_types
-import BICIdentification1
-import Max35Text
+from .BICIdentification1 import BICIdentification1
+from .Max35Text import Max35Text
 
 class DocumentIdentification5(base_types._BaseFieldType):
 

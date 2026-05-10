@@ -1,5 +1,5 @@
 from . import base_types
-import StatementOfInvestmentFundTransactionsV03
+from .StatementOfInvestmentFundTransactionsV03 import StatementOfInvestmentFundTransactionsV03
 
 class SEMT_006_001_03():
 

@@ -1,6 +1,6 @@
 from . import base_types
-import RestrictedFINZMax8000Text
-import ISO2ALanguageCode
+from .RestrictedFINZMax8000Text import RestrictedFINZMax8000Text
+from .ISO2ALanguageCode import ISO2ALanguageCode
 
 class UpdatedAdditionalInformation26(base_types._BaseFieldType):
 

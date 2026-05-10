@@ -1,11 +1,24 @@
 from . import base_types
-import AmountAndQuantityRatio5
-import QuantityToQuantityRatio2
-import AmountToAmountRatio3
+from .AmountAndQuantityRatio5 import AmountAndQuantityRatio5
+from .QuantityToQuantityRatio2 import QuantityToQuantityRatio2
+from .AmountToAmountRatio3 import AmountToAmountRatio3
 
 class RatioFormat22Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtToQty", "_QtyToAmt", "_AmtToAmt", "_QtyToQty"]
+	__slots__ = ["_AmtToAmt", "_AmtToQty", "_QtyToAmt", "_QtyToQty"]
+	@property
+	def AmtToAmt(self):
+		return self._AmtToAmt
+
+	@AmtToAmt.setter
+	def AmtToAmt(self, value):
+		self._AmtToAmt = value if type(value) != auto else self.make_default("AmtToAmt")
+
+	@AmtToAmt.deleter
+	def AmtToAmt(self):
+		del self._AmtToAmt
+		self._AmtToAmt = None
+
 	@property
 	def AmtToQty(self):
 		return self._AmtToQty
@@ -33,19 +46,6 @@ class RatioFormat22Choice(base_types._BaseFieldType):
 		self._QtyToAmt = None
 
 	@property
-	def AmtToAmt(self):
-		return self._AmtToAmt
-
-	@AmtToAmt.setter
-	def AmtToAmt(self, value):
-		self._AmtToAmt = value if type(value) != auto else self.make_default("AmtToAmt")
-
-	@AmtToAmt.deleter
-	def AmtToAmt(self):
-		del self._AmtToAmt
-		self._AmtToAmt = None
-
-	@property
 	def QtyToQty(self):
 		return self._QtyToQty
 
@@ -59,9 +59,9 @@ class RatioFormat22Choice(base_types._BaseFieldType):
 		self._QtyToQty = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AmtToAmt', type=AmountToAmountRatio3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtToQty', type=AmountAndQuantityRatio5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='QtyToAmt', type=AmountAndQuantityRatio5, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AmtToAmt', type=AmountToAmountRatio3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='QtyToQty', type=QuantityToQuantityRatio2, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,12 +1,12 @@
 from . import base_types
-import Header20
-import HostToATMRequest1
-import ContentInformationType10
-import ContentInformationType15
+from .HostToATMRequest1 import HostToATMRequest1
+from .ContentInformationType10 import ContentInformationType10
+from .Header20 import Header20
+from .ContentInformationType15 import ContentInformationType15
 
 class HostToATMRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdHstToATMReq", "_HstToATMReq", "_SctyTrlr", "_Hdr"]
+	__slots__ = ["_PrtctdHstToATMReq", "_Hdr", "_HstToATMReq", "_SctyTrlr"]
 	@property
 	def PrtctdHstToATMReq(self):
 		return self._PrtctdHstToATMReq
@@ -19,6 +19,19 @@ class HostToATMRequestV01(base_types._BaseFieldType):
 	def PrtctdHstToATMReq(self):
 		del self._PrtctdHstToATMReq
 		self._PrtctdHstToATMReq = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def HstToATMReq(self):
@@ -46,23 +59,10 @@ class HostToATMRequestV01(base_types._BaseFieldType):
 		del self._SctyTrlr
 		self._SctyTrlr = None
 
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtctdHstToATMReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header20, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstToATMReq', type=HostToATMRequest1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header20, min=1, max=1, mutex_group=None, array=False),
 	))
 

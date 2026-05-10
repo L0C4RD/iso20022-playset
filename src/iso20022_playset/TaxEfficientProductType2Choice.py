@@ -1,6 +1,6 @@
 from . import base_types
-import TaxEfficientProductType2Code
-import GenericIdentification36
+from .GenericIdentification36 import GenericIdentification36
+from .TaxEfficientProductType2Code import TaxEfficientProductType2Code
 
 class TaxEfficientProductType2Choice(base_types._BaseFieldType):
 

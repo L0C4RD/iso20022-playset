@@ -1,11 +1,11 @@
 from . import base_types
-import ISODate
-import ActiveOrHistoricCurrencyCode
-import ActiveOrHistoricCurrencyAndAmount
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .ISODate import ISODate
 
 class AmountsAndValueDate4(base_types._BaseFieldType):
 
-	__slots__ = ["_FnlSttlmDt", "_PutAmt", "_CallAmt", "_OptnSttlmCcy"]
+	__slots__ = ["_FnlSttlmDt", "_PutAmt", "_OptnSttlmCcy", "_CallAmt"]
 	@property
 	def FnlSttlmDt(self):
 		return self._FnlSttlmDt
@@ -33,19 +33,6 @@ class AmountsAndValueDate4(base_types._BaseFieldType):
 		self._PutAmt = None
 
 	@property
-	def CallAmt(self):
-		return self._CallAmt
-
-	@CallAmt.setter
-	def CallAmt(self, value):
-		self._CallAmt = value if type(value) != auto else self.make_default("CallAmt")
-
-	@CallAmt.deleter
-	def CallAmt(self):
-		del self._CallAmt
-		self._CallAmt = None
-
-	@property
 	def OptnSttlmCcy(self):
 		return self._OptnSttlmCcy
 
@@ -58,10 +45,23 @@ class AmountsAndValueDate4(base_types._BaseFieldType):
 		del self._OptnSttlmCcy
 		self._OptnSttlmCcy = None
 
+	@property
+	def CallAmt(self):
+		return self._CallAmt
+
+	@CallAmt.setter
+	def CallAmt(self, value):
+		self._CallAmt = value if type(value) != auto else self.make_default("CallAmt")
+
+	@CallAmt.deleter
+	def CallAmt(self):
+		del self._CallAmt
+		self._CallAmt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FnlSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PutAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CallAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnSttlmCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CallAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

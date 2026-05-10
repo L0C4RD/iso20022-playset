@@ -1,6 +1,6 @@
 from . import base_types
-import ReceivedReason2Choice
-import NoReasonCode
+from .ReceivedReason2Choice import ReceivedReason2Choice
+from .NoReasonCode import NoReasonCode
 
 class ReceivedReason1Choice(base_types._BaseFieldType):
 

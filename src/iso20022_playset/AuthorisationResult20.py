@@ -1,14 +1,14 @@
 from . import base_types
-import ATMFeeComponent1
-import Max8Text
-import Action7
-import PartyType16Code
-import ResponseType12
-import ResponseType8
+from .ATMFeeComponent1 import ATMFeeComponent1
+from .ResponseType12 import ResponseType12
+from .Action7 import Action7
+from .PartyType16Code import PartyType16Code
+from .ResponseType8 import ResponseType8
+from .Max8Text import Max8Text
 
 class AuthorisationResult20(base_types._BaseFieldType):
 
-	__slots__ = ["_AuthstnRspn", "_AuthstnCd", "_FeeToAdd", "_AuthstnNtty", "_RspnTrac", "_Actn"]
+	__slots__ = ["_AuthstnRspn", "_AuthstnNtty", "_AuthstnCd", "_FeeToAdd", "_Actn", "_RspnTrac"]
 	@property
 	def AuthstnRspn(self):
 		return self._AuthstnRspn
@@ -21,6 +21,19 @@ class AuthorisationResult20(base_types._BaseFieldType):
 	def AuthstnRspn(self):
 		del self._AuthstnRspn
 		self._AuthstnRspn = None
+
+	@property
+	def AuthstnNtty(self):
+		return self._AuthstnNtty
+
+	@AuthstnNtty.setter
+	def AuthstnNtty(self, value):
+		self._AuthstnNtty = value if type(value) != auto else self.make_default("AuthstnNtty")
+
+	@AuthstnNtty.deleter
+	def AuthstnNtty(self):
+		del self._AuthstnNtty
+		self._AuthstnNtty = None
 
 	@property
 	def AuthstnCd(self):
@@ -49,17 +62,17 @@ class AuthorisationResult20(base_types._BaseFieldType):
 		self._FeeToAdd = None
 
 	@property
-	def AuthstnNtty(self):
-		return self._AuthstnNtty
+	def Actn(self):
+		return self._Actn
 
-	@AuthstnNtty.setter
-	def AuthstnNtty(self, value):
-		self._AuthstnNtty = value if type(value) != auto else self.make_default("AuthstnNtty")
+	@Actn.setter
+	def Actn(self, value):
+		self._Actn = value if type(value) != auto else self.make_default("Actn")
 
-	@AuthstnNtty.deleter
-	def AuthstnNtty(self):
-		del self._AuthstnNtty
-		self._AuthstnNtty = None
+	@Actn.deleter
+	def Actn(self):
+		del self._Actn
+		self._Actn = None
 
 	@property
 	def RspnTrac(self):
@@ -74,25 +87,12 @@ class AuthorisationResult20(base_types._BaseFieldType):
 		del self._RspnTrac
 		self._RspnTrac = None
 
-	@property
-	def Actn(self):
-		return self._Actn
-
-	@Actn.setter
-	def Actn(self, value):
-		self._Actn = value if type(value) != auto else self.make_default("Actn")
-
-	@Actn.deleter
-	def Actn(self):
-		del self._Actn
-		self._Actn = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AuthstnRspn', type=ResponseType12, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthstnNtty', type=PartyType16Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthstnCd', type=Max8Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FeeToAdd', type=ATMFeeComponent1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AuthstnNtty', type=PartyType16Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnTrac', type=ResponseType8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Actn', type=Action7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RspnTrac', type=ResponseType8, min=0, max=None, mutex_group=None, array=True),
 	))
 

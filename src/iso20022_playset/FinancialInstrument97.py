@@ -1,8 +1,8 @@
 from . import base_types
-import Warrant4
-import Derivative4
-import Equity3
-import Debt5
+from .Derivative4 import Derivative4
+from .Debt5 import Debt5
+from .Equity3 import Equity3
+from .Warrant4 import Warrant4
 
 class FinancialInstrument97(base_types._BaseFieldType):
 

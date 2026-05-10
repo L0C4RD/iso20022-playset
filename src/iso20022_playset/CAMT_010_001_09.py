@@ -1,5 +1,5 @@
 from . import base_types
-import ReturnLimitV09
+from .ReturnLimitV09 import ReturnLimitV09
 
 class CAMT_010_001_09():
 

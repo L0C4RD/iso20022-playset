@@ -1,11 +1,11 @@
 from . import base_types
-import RequestStatus1Choice
-import Max140Text
-import StatusReasonInformation14
+from .StatusReasonInformation14 import StatusReasonInformation14
+from .Max140Text import Max140Text
+from .RequestStatus1Choice import RequestStatus1Choice
 
 class RequestHandling4(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRsn", "_Desc", "_Sts"]
+	__slots__ = ["_StsRsn", "_Sts", "_Desc"]
 	@property
 	def StsRsn(self):
 		return self._StsRsn
@@ -20,19 +20,6 @@ class RequestHandling4(base_types._BaseFieldType):
 		self._StsRsn = None
 
 	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
-	@property
 	def Sts(self):
 		return self._Sts
 
@@ -45,9 +32,22 @@ class RequestHandling4(base_types._BaseFieldType):
 		del self._Sts
 		self._Sts = None
 
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='StsRsn', type=StatusReasonInformation14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=RequestStatus1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

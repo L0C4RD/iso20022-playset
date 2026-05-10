@@ -1,7 +1,7 @@
 from . import base_types
-import Max140Text
-import Reconciliation3Code
-import ISODateTime
+from .Reconciliation3Code import Reconciliation3Code
+from .ISODateTime import ISODateTime
+from .Max140Text import Max140Text
 
 class TechnicalAttributes5(base_types._BaseFieldType):
 

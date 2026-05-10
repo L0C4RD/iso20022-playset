@@ -1,13 +1,13 @@
 from . import base_types
-import Price3
-import Balance23
-import DateAndDateTime2Choice
-import TypeOfPrice32Choice
-import GenericIdentification39
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .Balance23 import Balance23
+from .Price3 import Price3
+from .TypeOfPrice32Choice import TypeOfPrice32Choice
+from .GenericIdentification39 import GenericIdentification39
 
 class QuantityBreakdown71(base_types._BaseFieldType):
 
-	__slots__ = ["_TpOfPric", "_LotPric", "_LotNb", "_LotQty", "_LotDtTm"]
+	__slots__ = ["_TpOfPric", "_LotNb", "_LotQty", "_LotDtTm", "_LotPric"]
 	@property
 	def TpOfPric(self):
 		return self._TpOfPric
@@ -20,19 +20,6 @@ class QuantityBreakdown71(base_types._BaseFieldType):
 	def TpOfPric(self):
 		del self._TpOfPric
 		self._TpOfPric = None
-
-	@property
-	def LotPric(self):
-		return self._LotPric
-
-	@LotPric.setter
-	def LotPric(self, value):
-		self._LotPric = value if type(value) != auto else self.make_default("LotPric")
-
-	@LotPric.deleter
-	def LotPric(self):
-		del self._LotPric
-		self._LotPric = None
 
 	@property
 	def LotNb(self):
@@ -73,11 +60,24 @@ class QuantityBreakdown71(base_types._BaseFieldType):
 		del self._LotDtTm
 		self._LotDtTm = None
 
+	@property
+	def LotPric(self):
+		return self._LotPric
+
+	@LotPric.setter
+	def LotPric(self, value):
+		self._LotPric = value if type(value) != auto else self.make_default("LotPric")
+
+	@LotPric.deleter
+	def LotPric(self):
+		del self._LotPric
+		self._LotPric = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TpOfPric', type=TypeOfPrice32Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LotPric', type=Price3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LotNb', type=GenericIdentification39, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LotQty', type=Balance23, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LotDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LotPric', type=Price3, min=0, max=1, mutex_group=None, array=False),
 	))
 

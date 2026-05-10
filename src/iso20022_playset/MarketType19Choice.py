@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import MarketType9Code
+from .MarketType9Code import MarketType9Code
+from .GenericIdentification30 import GenericIdentification30
 
 class MarketType19Choice(base_types._BaseFieldType):
 

@@ -1,10 +1,10 @@
 from . import base_types
-import Max350Text
-import PartyIdentification125Choice
-import ISODateTime
-import Max35Text
-import LEIIdentifier
-import ActiveCurrencyAndAmount
+from .Max35Text import Max35Text
+from .ISODateTime import ISODateTime
+from .LEIIdentifier import LEIIdentifier
+from .PartyIdentification125Choice import PartyIdentification125Choice
+from .Max350Text import Max350Text
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class ThirdPartyRights2(base_types._BaseFieldType):
 

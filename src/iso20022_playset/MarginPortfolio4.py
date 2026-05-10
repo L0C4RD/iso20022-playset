@@ -1,5 +1,5 @@
 from . import base_types
-import PortfolioCode5Choice
+from .PortfolioCode5Choice import PortfolioCode5Choice
 
 class MarginPortfolio4(base_types._BaseFieldType):
 

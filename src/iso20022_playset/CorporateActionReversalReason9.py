@@ -1,6 +1,6 @@
 from . import base_types
-import CorporateActionReversalReason11Choice
-import RestrictedFINXMax256Text
+from .CorporateActionReversalReason11Choice import CorporateActionReversalReason11Choice
+from .RestrictedFINXMax256Text import RestrictedFINXMax256Text
 
 class CorporateActionReversalReason9(base_types._BaseFieldType):
 

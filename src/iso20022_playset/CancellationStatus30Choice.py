@@ -1,26 +1,13 @@
 from . import base_types
-import RejectionStatus34Choice
-import PendingStatus56Choice
-import ProprietaryReason4
-import ProprietaryStatusAndReason6
-import CancellationStatus29Choice
+from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from .RejectionStatus34Choice import RejectionStatus34Choice
+from .CancellationStatus29Choice import CancellationStatus29Choice
+from .PendingStatus56Choice import PendingStatus56Choice
+from .ProprietaryReason4 import ProprietaryReason4
 
 class CancellationStatus30Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rjctd", "_Prcd", "_Prtry", "_Pdg", "_Canc"]
-	@property
-	def Rjctd(self):
-		return self._Rjctd
-
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
-
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
-
+	__slots__ = ["_Prcd", "_Pdg", "_Canc", "_Rjctd", "_Prtry"]
 	@property
 	def Prcd(self):
 		return self._Prcd
@@ -33,19 +20,6 @@ class CancellationStatus30Choice(base_types._BaseFieldType):
 	def Prcd(self):
 		del self._Prcd
 		self._Prcd = None
-
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
 
 	@property
 	def Pdg(self):
@@ -73,11 +47,37 @@ class CancellationStatus30Choice(base_types._BaseFieldType):
 		del self._Canc
 		self._Canc = None
 
+	@property
+	def Rjctd(self):
+		return self._Rjctd
+
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
+
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rjctd', type=RejectionStatus34Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prcd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pdg', type=PendingStatus56Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Canc', type=CancellationStatus29Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=RejectionStatus34Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 	))
 

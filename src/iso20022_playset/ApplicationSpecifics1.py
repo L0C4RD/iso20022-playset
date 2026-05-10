@@ -1,23 +1,23 @@
 from . import base_types
-import Number
-import Max140Text
-import SignatureEnvelope
+from .Max140Text import Max140Text
+from .SignatureEnvelope import SignatureEnvelope
+from .Number import Number
 
 class ApplicationSpecifics1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sgntr", "_SysUsr", "_TtlNbOfDocs"]
+	__slots__ = ["_TtlNbOfDocs", "_SysUsr", "_Sgntr"]
 	@property
-	def Sgntr(self):
-		return self._Sgntr
+	def TtlNbOfDocs(self):
+		return self._TtlNbOfDocs
 
-	@Sgntr.setter
-	def Sgntr(self, value):
-		self._Sgntr = value if type(value) != auto else self.make_default("Sgntr")
+	@TtlNbOfDocs.setter
+	def TtlNbOfDocs(self, value):
+		self._TtlNbOfDocs = value if type(value) != auto else self.make_default("TtlNbOfDocs")
 
-	@Sgntr.deleter
-	def Sgntr(self):
-		del self._Sgntr
-		self._Sgntr = None
+	@TtlNbOfDocs.deleter
+	def TtlNbOfDocs(self):
+		del self._TtlNbOfDocs
+		self._TtlNbOfDocs = None
 
 	@property
 	def SysUsr(self):
@@ -33,21 +33,21 @@ class ApplicationSpecifics1(base_types._BaseFieldType):
 		self._SysUsr = None
 
 	@property
-	def TtlNbOfDocs(self):
-		return self._TtlNbOfDocs
+	def Sgntr(self):
+		return self._Sgntr
 
-	@TtlNbOfDocs.setter
-	def TtlNbOfDocs(self, value):
-		self._TtlNbOfDocs = value if type(value) != auto else self.make_default("TtlNbOfDocs")
+	@Sgntr.setter
+	def Sgntr(self, value):
+		self._Sgntr = value if type(value) != auto else self.make_default("Sgntr")
 
-	@TtlNbOfDocs.deleter
-	def TtlNbOfDocs(self):
-		del self._TtlNbOfDocs
-		self._TtlNbOfDocs = None
+	@Sgntr.deleter
+	def Sgntr(self):
+		del self._Sgntr
+		self._Sgntr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sgntr', type=SignatureEnvelope, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysUsr', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfDocs', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysUsr', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sgntr', type=SignatureEnvelope, min=0, max=1, mutex_group=None, array=False),
 	))
 

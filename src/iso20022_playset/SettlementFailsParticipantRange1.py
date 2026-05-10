@@ -1,5 +1,5 @@
 from . import base_types
-import SettlementFailsParticipant1
+from .SettlementFailsParticipant1 import SettlementFailsParticipant1
 
 class SettlementFailsParticipantRange1(base_types._BaseFieldType):
 

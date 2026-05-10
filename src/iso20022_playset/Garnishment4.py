@@ -1,65 +1,26 @@
 from . import base_types
-import ISODate
-import PartyIdentification272
-import Max140Text
-import GarnishmentType1
-import TrueFalseIndicator
-import ActiveOrHistoricCurrencyAndAmount
+from .PartyIdentification272 import PartyIdentification272
+from .GarnishmentType1 import GarnishmentType1
+from .Max140Text import Max140Text
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .ISODate import ISODate
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class Garnishment4(base_types._BaseFieldType):
 
-	__slots__ = ["_FmlyMdclInsrncInd", "_Tp", "_GrnshmtAdmstr", "_RmtdAmt", "_Dt", "_MplyeeTermntnInd", "_Grnshee", "_RefNb"]
+	__slots__ = ["_MplyeeTermntnInd", "_Dt", "_GrnshmtAdmstr", "_Tp", "_RmtdAmt", "_Grnshee", "_RefNb", "_FmlyMdclInsrncInd"]
 	@property
-	def FmlyMdclInsrncInd(self):
-		return self._FmlyMdclInsrncInd
+	def MplyeeTermntnInd(self):
+		return self._MplyeeTermntnInd
 
-	@FmlyMdclInsrncInd.setter
-	def FmlyMdclInsrncInd(self, value):
-		self._FmlyMdclInsrncInd = value if type(value) != auto else self.make_default("FmlyMdclInsrncInd")
+	@MplyeeTermntnInd.setter
+	def MplyeeTermntnInd(self, value):
+		self._MplyeeTermntnInd = value if type(value) != auto else self.make_default("MplyeeTermntnInd")
 
-	@FmlyMdclInsrncInd.deleter
-	def FmlyMdclInsrncInd(self):
-		del self._FmlyMdclInsrncInd
-		self._FmlyMdclInsrncInd = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def GrnshmtAdmstr(self):
-		return self._GrnshmtAdmstr
-
-	@GrnshmtAdmstr.setter
-	def GrnshmtAdmstr(self, value):
-		self._GrnshmtAdmstr = value if type(value) != auto else self.make_default("GrnshmtAdmstr")
-
-	@GrnshmtAdmstr.deleter
-	def GrnshmtAdmstr(self):
-		del self._GrnshmtAdmstr
-		self._GrnshmtAdmstr = None
-
-	@property
-	def RmtdAmt(self):
-		return self._RmtdAmt
-
-	@RmtdAmt.setter
-	def RmtdAmt(self, value):
-		self._RmtdAmt = value if type(value) != auto else self.make_default("RmtdAmt")
-
-	@RmtdAmt.deleter
-	def RmtdAmt(self):
-		del self._RmtdAmt
-		self._RmtdAmt = None
+	@MplyeeTermntnInd.deleter
+	def MplyeeTermntnInd(self):
+		del self._MplyeeTermntnInd
+		self._MplyeeTermntnInd = None
 
 	@property
 	def Dt(self):
@@ -75,17 +36,43 @@ class Garnishment4(base_types._BaseFieldType):
 		self._Dt = None
 
 	@property
-	def MplyeeTermntnInd(self):
-		return self._MplyeeTermntnInd
+	def GrnshmtAdmstr(self):
+		return self._GrnshmtAdmstr
 
-	@MplyeeTermntnInd.setter
-	def MplyeeTermntnInd(self, value):
-		self._MplyeeTermntnInd = value if type(value) != auto else self.make_default("MplyeeTermntnInd")
+	@GrnshmtAdmstr.setter
+	def GrnshmtAdmstr(self, value):
+		self._GrnshmtAdmstr = value if type(value) != auto else self.make_default("GrnshmtAdmstr")
 
-	@MplyeeTermntnInd.deleter
-	def MplyeeTermntnInd(self):
-		del self._MplyeeTermntnInd
-		self._MplyeeTermntnInd = None
+	@GrnshmtAdmstr.deleter
+	def GrnshmtAdmstr(self):
+		del self._GrnshmtAdmstr
+		self._GrnshmtAdmstr = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def RmtdAmt(self):
+		return self._RmtdAmt
+
+	@RmtdAmt.setter
+	def RmtdAmt(self, value):
+		self._RmtdAmt = value if type(value) != auto else self.make_default("RmtdAmt")
+
+	@RmtdAmt.deleter
+	def RmtdAmt(self):
+		del self._RmtdAmt
+		self._RmtdAmt = None
 
 	@property
 	def Grnshee(self):
@@ -113,14 +100,27 @@ class Garnishment4(base_types._BaseFieldType):
 		del self._RefNb
 		self._RefNb = None
 
+	@property
+	def FmlyMdclInsrncInd(self):
+		return self._FmlyMdclInsrncInd
+
+	@FmlyMdclInsrncInd.setter
+	def FmlyMdclInsrncInd(self, value):
+		self._FmlyMdclInsrncInd = value if type(value) != auto else self.make_default("FmlyMdclInsrncInd")
+
+	@FmlyMdclInsrncInd.deleter
+	def FmlyMdclInsrncInd(self):
+		del self._FmlyMdclInsrncInd
+		self._FmlyMdclInsrncInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FmlyMdclInsrncInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=GarnishmentType1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrnshmtAdmstr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmtdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MplyeeTermntnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrnshmtAdmstr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=GarnishmentType1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmtdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Grnshee', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefNb', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FmlyMdclInsrncInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

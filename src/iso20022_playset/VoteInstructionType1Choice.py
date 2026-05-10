@@ -1,23 +1,10 @@
 from . import base_types
-import VoteInstruction6Code
-import GenericIdentification30
+from .GenericIdentification30 import GenericIdentification30
+from .VoteInstruction6Code import VoteInstruction6Code
 
 class VoteInstructionType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Prtry"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_Prtry", "_Tp"]
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -31,8 +18,21 @@ class VoteInstructionType1Choice(base_types._BaseFieldType):
 		del self._Prtry
 		self._Prtry = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=VoteInstruction6Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification30, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Tp', type=VoteInstruction6Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

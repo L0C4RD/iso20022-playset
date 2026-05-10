@@ -1,25 +1,12 @@
 from . import base_types
-import DecimalNumber
-import Max35Text
-import Max15NumericText
-import ISODateTime
+from .Max35Text import Max35Text
+from .Max15NumericText import Max15NumericText
+from .DecimalNumber import DecimalNumber
+from .ISODateTime import ISODateTime
 
 class GroupHeader103(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrlSum", "_MsgId", "_NbOfChqs", "_CreDtTm"]
-	@property
-	def CtrlSum(self):
-		return self._CtrlSum
-
-	@CtrlSum.setter
-	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != auto else self.make_default("CtrlSum")
-
-	@CtrlSum.deleter
-	def CtrlSum(self):
-		del self._CtrlSum
-		self._CtrlSum = None
-
+	__slots__ = ["_MsgId", "_NbOfChqs", "_CtrlSum", "_CreDtTm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -47,6 +34,19 @@ class GroupHeader103(base_types._BaseFieldType):
 		self._NbOfChqs = None
 
 	@property
+	def CtrlSum(self):
+		return self._CtrlSum
+
+	@CtrlSum.setter
+	def CtrlSum(self, value):
+		self._CtrlSum = value if type(value) != auto else self.make_default("CtrlSum")
+
+	@CtrlSum.deleter
+	def CtrlSum(self):
+		del self._CtrlSum
+		self._CtrlSum = None
+
+	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -60,9 +60,9 @@ class GroupHeader103(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfChqs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

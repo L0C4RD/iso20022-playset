@@ -1,6 +1,6 @@
 from . import base_types
-import Number
-import Plan3
+from .Plan3 import Plan3
+from .Number import Number
 
 class Instalment6(base_types._BaseFieldType):
 

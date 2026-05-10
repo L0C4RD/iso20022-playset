@@ -1,15 +1,15 @@
 from . import base_types
-import CAPEExchangeMode1Code
-import TerminalManagementAction3Code
-import CAPEEncodingMode1Code
-import NetworkParameters7
-import PhysicalInterfaceParameter1
-import Max35Text
-import KEKIdentifier5
+from .CAPEEncodingMode1Code import CAPEEncodingMode1Code
+from .Max35Text import Max35Text
+from .TerminalManagementAction3Code import TerminalManagementAction3Code
+from .PhysicalInterfaceParameter1 import PhysicalInterfaceParameter1
+from .NetworkParameters7 import NetworkParameters7
+from .CAPEExchangeMode1Code import CAPEExchangeMode1Code
+from .KEKIdentifier5 import KEKIdentifier5
 
 class HostCommunicationParameter7(base_types._BaseFieldType):
 
-	__slots__ = ["_NcodgMd", "_ActnTp", "_HstId", "_Key", "_XchgMd", "_NtwkSvcPrvdr", "_PhysIntrfc", "_Adr"]
+	__slots__ = ["_NcodgMd", "_Adr", "_HstId", "_NtwkSvcPrvdr", "_PhysIntrfc", "_XchgMd", "_Key", "_ActnTp"]
 	@property
 	def NcodgMd(self):
 		return self._NcodgMd
@@ -24,17 +24,17 @@ class HostCommunicationParameter7(base_types._BaseFieldType):
 		self._NcodgMd = None
 
 	@property
-	def ActnTp(self):
-		return self._ActnTp
+	def Adr(self):
+		return self._Adr
 
-	@ActnTp.setter
-	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != auto else self.make_default("ActnTp")
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != auto else self.make_default("Adr")
 
-	@ActnTp.deleter
-	def ActnTp(self):
-		del self._ActnTp
-		self._ActnTp = None
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
 
 	@property
 	def HstId(self):
@@ -48,32 +48,6 @@ class HostCommunicationParameter7(base_types._BaseFieldType):
 	def HstId(self):
 		del self._HstId
 		self._HstId = None
-
-	@property
-	def Key(self):
-		return self._Key
-
-	@Key.setter
-	def Key(self, value):
-		self._Key = value if type(value) != auto else self.make_default("Key")
-
-	@Key.deleter
-	def Key(self):
-		del self._Key
-		self._Key = None
-
-	@property
-	def XchgMd(self):
-		return self._XchgMd
-
-	@XchgMd.setter
-	def XchgMd(self, value):
-		self._XchgMd = value if type(value) != auto else self.make_default("XchgMd")
-
-	@XchgMd.deleter
-	def XchgMd(self):
-		del self._XchgMd
-		self._XchgMd = None
 
 	@property
 	def NtwkSvcPrvdr(self):
@@ -102,26 +76,52 @@ class HostCommunicationParameter7(base_types._BaseFieldType):
 		self._PhysIntrfc = None
 
 	@property
-	def Adr(self):
-		return self._Adr
+	def XchgMd(self):
+		return self._XchgMd
 
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
+	@XchgMd.setter
+	def XchgMd(self, value):
+		self._XchgMd = value if type(value) != auto else self.make_default("XchgMd")
 
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
+	@XchgMd.deleter
+	def XchgMd(self):
+		del self._XchgMd
+		self._XchgMd = None
+
+	@property
+	def Key(self):
+		return self._Key
+
+	@Key.setter
+	def Key(self, value):
+		self._Key = value if type(value) != auto else self.make_default("Key")
+
+	@Key.deleter
+	def Key(self):
+		del self._Key
+		self._Key = None
+
+	@property
+	def ActnTp(self):
+		return self._ActnTp
+
+	@ActnTp.setter
+	def ActnTp(self, value):
+		self._ActnTp = value if type(value) != auto else self.make_default("ActnTp")
+
+	@ActnTp.deleter
+	def ActnTp(self):
+		del self._ActnTp
+		self._ActnTp = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NcodgMd', type=CAPEEncodingMode1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adr', type=NetworkParameters7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Key', type=KEKIdentifier5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='XchgMd', type=CAPEExchangeMode1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtwkSvcPrvdr', type=NetworkParameters7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PhysIntrfc', type=PhysicalInterfaceParameter1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Adr', type=NetworkParameters7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgMd', type=CAPEExchangeMode1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Key', type=KEKIdentifier5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

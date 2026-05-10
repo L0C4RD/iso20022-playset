@@ -1,24 +1,11 @@
 from . import base_types
-import AuthorityRequestType1
-import CashAccount43
-import InvestigatedParties1Choice
+from .AuthorityRequestType1 import AuthorityRequestType1
+from .InvestigatedParties1Choice import InvestigatedParties1Choice
+from .CashAccount43 import CashAccount43
 
 class AccountAndParties3(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstgtdPties", "_Id", "_AuthrtyReqTp"]
-	@property
-	def InvstgtdPties(self):
-		return self._InvstgtdPties
-
-	@InvstgtdPties.setter
-	def InvstgtdPties(self, value):
-		self._InvstgtdPties = value if type(value) != auto else self.make_default("InvstgtdPties")
-
-	@InvstgtdPties.deleter
-	def InvstgtdPties(self):
-		del self._InvstgtdPties
-		self._InvstgtdPties = None
-
+	__slots__ = ["_Id", "_AuthrtyReqTp", "_InvstgtdPties"]
 	@property
 	def Id(self):
 		return self._Id
@@ -45,9 +32,22 @@ class AccountAndParties3(base_types._BaseFieldType):
 		del self._AuthrtyReqTp
 		self._AuthrtyReqTp = None
 
+	@property
+	def InvstgtdPties(self):
+		return self._InvstgtdPties
+
+	@InvstgtdPties.setter
+	def InvstgtdPties(self, value):
+		self._InvstgtdPties = value if type(value) != auto else self.make_default("InvstgtdPties")
+
+	@InvstgtdPties.deleter
+	def InvstgtdPties(self):
+		del self._InvstgtdPties
+		self._InvstgtdPties = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InvstgtdPties', type=InvestigatedParties1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthrtyReqTp', type=AuthorityRequestType1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InvstgtdPties', type=InvestigatedParties1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

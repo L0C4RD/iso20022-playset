@@ -1,29 +1,16 @@
 from . import base_types
-import YesNoIndicator
-import ModalityOfCounting1Choice
-import PartyIdentification231Choice
-import Max35Text
-import PartyIdentification232Choice
-import Vote19
-import PartyIdentification246Choice
-import DateAndDateTime1Choice
+from .Max35Text import Max35Text
+from .ModalityOfCounting1Choice import ModalityOfCounting1Choice
+from .YesNoIndicator import YesNoIndicator
+from .PartyIdentification231Choice import PartyIdentification231Choice
+from .DateAndDateTime1Choice import DateAndDateTime1Choice
+from .Vote19 import Vote19
+from .PartyIdentification246Choice import PartyIdentification246Choice
+from .PartyIdentification232Choice import PartyIdentification232Choice
 
 class DetailedInstructionStatus19(base_types._BaseFieldType):
 
-	__slots__ = ["_ModltyOfCntg", "_AcctOwnr", "_StgInstr", "_SnglInstrId", "_RghtsHldr", "_Prxy", "_AcctId", "_SubAcctId", "_VoteRctDtTm", "_VotePerRsltn"]
-	@property
-	def ModltyOfCntg(self):
-		return self._ModltyOfCntg
-
-	@ModltyOfCntg.setter
-	def ModltyOfCntg(self, value):
-		self._ModltyOfCntg = value if type(value) != auto else self.make_default("ModltyOfCntg")
-
-	@ModltyOfCntg.deleter
-	def ModltyOfCntg(self):
-		del self._ModltyOfCntg
-		self._ModltyOfCntg = None
-
+	__slots__ = ["_AcctOwnr", "_ModltyOfCntg", "_RghtsHldr", "_SnglInstrId", "_VotePerRsltn", "_SubAcctId", "_StgInstr", "_VoteRctDtTm", "_Prxy", "_AcctId"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
@@ -38,17 +25,30 @@ class DetailedInstructionStatus19(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def StgInstr(self):
-		return self._StgInstr
+	def ModltyOfCntg(self):
+		return self._ModltyOfCntg
 
-	@StgInstr.setter
-	def StgInstr(self, value):
-		self._StgInstr = value if type(value) != auto else self.make_default("StgInstr")
+	@ModltyOfCntg.setter
+	def ModltyOfCntg(self, value):
+		self._ModltyOfCntg = value if type(value) != auto else self.make_default("ModltyOfCntg")
 
-	@StgInstr.deleter
-	def StgInstr(self):
-		del self._StgInstr
-		self._StgInstr = None
+	@ModltyOfCntg.deleter
+	def ModltyOfCntg(self):
+		del self._ModltyOfCntg
+		self._ModltyOfCntg = None
+
+	@property
+	def RghtsHldr(self):
+		return self._RghtsHldr
+
+	@RghtsHldr.setter
+	def RghtsHldr(self, value):
+		self._RghtsHldr = value if type(value) != auto else self.make_default("RghtsHldr")
+
+	@RghtsHldr.deleter
+	def RghtsHldr(self):
+		del self._RghtsHldr
+		self._RghtsHldr = None
 
 	@property
 	def SnglInstrId(self):
@@ -64,17 +64,56 @@ class DetailedInstructionStatus19(base_types._BaseFieldType):
 		self._SnglInstrId = None
 
 	@property
-	def RghtsHldr(self):
-		return self._RghtsHldr
+	def VotePerRsltn(self):
+		return self._VotePerRsltn
 
-	@RghtsHldr.setter
-	def RghtsHldr(self, value):
-		self._RghtsHldr = value if type(value) != auto else self.make_default("RghtsHldr")
+	@VotePerRsltn.setter
+	def VotePerRsltn(self, value):
+		self._VotePerRsltn = value if type(value) != auto else self.make_default("VotePerRsltn")
 
-	@RghtsHldr.deleter
-	def RghtsHldr(self):
-		del self._RghtsHldr
-		self._RghtsHldr = None
+	@VotePerRsltn.deleter
+	def VotePerRsltn(self):
+		del self._VotePerRsltn
+		self._VotePerRsltn = None
+
+	@property
+	def SubAcctId(self):
+		return self._SubAcctId
+
+	@SubAcctId.setter
+	def SubAcctId(self, value):
+		self._SubAcctId = value if type(value) != auto else self.make_default("SubAcctId")
+
+	@SubAcctId.deleter
+	def SubAcctId(self):
+		del self._SubAcctId
+		self._SubAcctId = None
+
+	@property
+	def StgInstr(self):
+		return self._StgInstr
+
+	@StgInstr.setter
+	def StgInstr(self, value):
+		self._StgInstr = value if type(value) != auto else self.make_default("StgInstr")
+
+	@StgInstr.deleter
+	def StgInstr(self):
+		del self._StgInstr
+		self._StgInstr = None
+
+	@property
+	def VoteRctDtTm(self):
+		return self._VoteRctDtTm
+
+	@VoteRctDtTm.setter
+	def VoteRctDtTm(self, value):
+		self._VoteRctDtTm = value if type(value) != auto else self.make_default("VoteRctDtTm")
+
+	@VoteRctDtTm.deleter
+	def VoteRctDtTm(self):
+		del self._VoteRctDtTm
+		self._VoteRctDtTm = None
 
 	@property
 	def Prxy(self):
@@ -102,55 +141,16 @@ class DetailedInstructionStatus19(base_types._BaseFieldType):
 		del self._AcctId
 		self._AcctId = None
 
-	@property
-	def SubAcctId(self):
-		return self._SubAcctId
-
-	@SubAcctId.setter
-	def SubAcctId(self, value):
-		self._SubAcctId = value if type(value) != auto else self.make_default("SubAcctId")
-
-	@SubAcctId.deleter
-	def SubAcctId(self):
-		del self._SubAcctId
-		self._SubAcctId = None
-
-	@property
-	def VoteRctDtTm(self):
-		return self._VoteRctDtTm
-
-	@VoteRctDtTm.setter
-	def VoteRctDtTm(self, value):
-		self._VoteRctDtTm = value if type(value) != auto else self.make_default("VoteRctDtTm")
-
-	@VoteRctDtTm.deleter
-	def VoteRctDtTm(self):
-		del self._VoteRctDtTm
-		self._VoteRctDtTm = None
-
-	@property
-	def VotePerRsltn(self):
-		return self._VotePerRsltn
-
-	@VotePerRsltn.setter
-	def VotePerRsltn(self, value):
-		self._VotePerRsltn = value if type(value) != auto else self.make_default("VotePerRsltn")
-
-	@VotePerRsltn.deleter
-	def VotePerRsltn(self):
-		del self._VotePerRsltn
-		self._VotePerRsltn = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ModltyOfCntg', type=ModalityOfCounting1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification231Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StgInstr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SnglInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ModltyOfCntg', type=ModalityOfCounting1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RghtsHldr', type=PartyIdentification246Choice, min=0, max=250, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SnglInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VotePerRsltn', type=Vote19, min=0, max=1000, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SubAcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StgInstr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VoteRctDtTm', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prxy', type=PartyIdentification232Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubAcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VoteRctDtTm', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VotePerRsltn', type=Vote19, min=0, max=1000, mutex_group=None, array=True),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import UTCOffset1
-import MessageIdentification1
+from .MessageIdentification1 import MessageIdentification1
+from .UTCOffset1 import UTCOffset1
 
 class ActivityReportSetUpRequestV02(base_types._BaseFieldType):
 

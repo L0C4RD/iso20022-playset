@@ -1,12 +1,12 @@
 from . import base_types
-import Max350Text
-import ISODate
-import CountryAndResidentialStatusType2
-import GenericIdentification164
+from .GenericIdentification164 import GenericIdentification164
+from .CountryAndResidentialStatusType2 import CountryAndResidentialStatusType2
+from .Max350Text import Max350Text
+from .ISODate import ISODate
 
 class IndividualPerson32(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_CtryAndResdtlSts", "_OthrId", "_BirthDt"]
+	__slots__ = ["_Nm", "_BirthDt", "_OthrId", "_CtryAndResdtlSts"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -21,17 +21,17 @@ class IndividualPerson32(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def CtryAndResdtlSts(self):
-		return self._CtryAndResdtlSts
+	def BirthDt(self):
+		return self._BirthDt
 
-	@CtryAndResdtlSts.setter
-	def CtryAndResdtlSts(self, value):
-		self._CtryAndResdtlSts = value if type(value) != auto else self.make_default("CtryAndResdtlSts")
+	@BirthDt.setter
+	def BirthDt(self, value):
+		self._BirthDt = value if type(value) != auto else self.make_default("BirthDt")
 
-	@CtryAndResdtlSts.deleter
-	def CtryAndResdtlSts(self):
-		del self._CtryAndResdtlSts
-		self._CtryAndResdtlSts = None
+	@BirthDt.deleter
+	def BirthDt(self):
+		del self._BirthDt
+		self._BirthDt = None
 
 	@property
 	def OthrId(self):
@@ -47,22 +47,22 @@ class IndividualPerson32(base_types._BaseFieldType):
 		self._OthrId = None
 
 	@property
-	def BirthDt(self):
-		return self._BirthDt
+	def CtryAndResdtlSts(self):
+		return self._CtryAndResdtlSts
 
-	@BirthDt.setter
-	def BirthDt(self, value):
-		self._BirthDt = value if type(value) != auto else self.make_default("BirthDt")
+	@CtryAndResdtlSts.setter
+	def CtryAndResdtlSts(self, value):
+		self._CtryAndResdtlSts = value if type(value) != auto else self.make_default("CtryAndResdtlSts")
 
-	@BirthDt.deleter
-	def BirthDt(self):
-		del self._BirthDt
-		self._BirthDt = None
+	@CtryAndResdtlSts.deleter
+	def CtryAndResdtlSts(self):
+		del self._CtryAndResdtlSts
+		self._CtryAndResdtlSts = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryAndResdtlSts', type=CountryAndResidentialStatusType2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrId', type=GenericIdentification164, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrId', type=GenericIdentification164, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtryAndResdtlSts', type=CountryAndResidentialStatusType2, min=0, max=1, mutex_group=None, array=False),
 	))
 

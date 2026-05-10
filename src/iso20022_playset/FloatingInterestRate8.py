@@ -1,6 +1,6 @@
 from . import base_types
-import InterestRateContractTerm2
-import BenchmarkCurveName5Choice
+from .BenchmarkCurveName5Choice import BenchmarkCurveName5Choice
+from .InterestRateContractTerm2 import InterestRateContractTerm2
 
 class FloatingInterestRate8(base_types._BaseFieldType):
 

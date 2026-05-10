@@ -1,39 +1,13 @@
 from . import base_types
-import PartyType1Choice
-import Number
-import Max140Text
-import CommunicationMethod1Choice
-import PostalAddress6
+from .Max140Text import Max140Text
+from .CommunicationMethod1Choice import CommunicationMethod1Choice
+from .Number import Number
+from .PostalAddress6 import PostalAddress6
+from .PartyType1Choice import PartyType1Choice
 
 class NonExtension1(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnPrd", "_NtfctnRcptAdr", "_NtfctnRcptTp", "_NtfctnMtd", "_NtfctnRcptNm"]
-	@property
-	def NtfctnPrd(self):
-		return self._NtfctnPrd
-
-	@NtfctnPrd.setter
-	def NtfctnPrd(self, value):
-		self._NtfctnPrd = value if type(value) != auto else self.make_default("NtfctnPrd")
-
-	@NtfctnPrd.deleter
-	def NtfctnPrd(self):
-		del self._NtfctnPrd
-		self._NtfctnPrd = None
-
-	@property
-	def NtfctnRcptAdr(self):
-		return self._NtfctnRcptAdr
-
-	@NtfctnRcptAdr.setter
-	def NtfctnRcptAdr(self, value):
-		self._NtfctnRcptAdr = value if type(value) != auto else self.make_default("NtfctnRcptAdr")
-
-	@NtfctnRcptAdr.deleter
-	def NtfctnRcptAdr(self):
-		del self._NtfctnRcptAdr
-		self._NtfctnRcptAdr = None
-
+	__slots__ = ["_NtfctnRcptTp", "_NtfctnMtd", "_NtfctnRcptNm", "_NtfctnRcptAdr", "_NtfctnPrd"]
 	@property
 	def NtfctnRcptTp(self):
 		return self._NtfctnRcptTp
@@ -73,11 +47,37 @@ class NonExtension1(base_types._BaseFieldType):
 		del self._NtfctnRcptNm
 		self._NtfctnRcptNm = None
 
+	@property
+	def NtfctnRcptAdr(self):
+		return self._NtfctnRcptAdr
+
+	@NtfctnRcptAdr.setter
+	def NtfctnRcptAdr(self, value):
+		self._NtfctnRcptAdr = value if type(value) != auto else self.make_default("NtfctnRcptAdr")
+
+	@NtfctnRcptAdr.deleter
+	def NtfctnRcptAdr(self):
+		del self._NtfctnRcptAdr
+		self._NtfctnRcptAdr = None
+
+	@property
+	def NtfctnPrd(self):
+		return self._NtfctnPrd
+
+	@NtfctnPrd.setter
+	def NtfctnPrd(self, value):
+		self._NtfctnPrd = value if type(value) != auto else self.make_default("NtfctnPrd")
+
+	@NtfctnPrd.deleter
+	def NtfctnPrd(self):
+		del self._NtfctnPrd
+		self._NtfctnPrd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtfctnPrd', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnRcptAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnRcptTp', type=PartyType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnMtd', type=CommunicationMethod1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnRcptNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnRcptAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnPrd', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

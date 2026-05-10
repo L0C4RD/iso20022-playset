@@ -1,11 +1,24 @@
 from . import base_types
-import AccountIdentification3
-import AccountIdentification1
-import AccountIdentificationAndPurpose
+from .AccountIdentification3 import AccountIdentification3
+from .AccountIdentification1 import AccountIdentification1
+from .AccountIdentificationAndPurpose import AccountIdentificationAndPurpose
 
 class AccountIdentificationFormatChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_IdAsDSS", "_IdAndPurp", "_SmplId"]
+	__slots__ = ["_SmplId", "_IdAsDSS", "_IdAndPurp"]
+	@property
+	def SmplId(self):
+		return self._SmplId
+
+	@SmplId.setter
+	def SmplId(self, value):
+		self._SmplId = value if type(value) != auto else self.make_default("SmplId")
+
+	@SmplId.deleter
+	def SmplId(self):
+		del self._SmplId
+		self._SmplId = None
+
 	@property
 	def IdAsDSS(self):
 		return self._IdAsDSS
@@ -32,22 +45,9 @@ class AccountIdentificationFormatChoice(base_types._BaseFieldType):
 		del self._IdAndPurp
 		self._IdAndPurp = None
 
-	@property
-	def SmplId(self):
-		return self._SmplId
-
-	@SmplId.setter
-	def SmplId(self, value):
-		self._SmplId = value if type(value) != auto else self.make_default("SmplId")
-
-	@SmplId.deleter
-	def SmplId(self):
-		del self._SmplId
-		self._SmplId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SmplId', type=AccountIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IdAsDSS', type=AccountIdentification3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IdAndPurp', type=AccountIdentificationAndPurpose, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SmplId', type=AccountIdentification1, min=0, max=1, mutex_group=1, array=False),
 	))
 

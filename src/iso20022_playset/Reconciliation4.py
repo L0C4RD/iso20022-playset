@@ -1,10 +1,23 @@
 from . import base_types
-import ISODate
-import Max35Text
+from .Max35Text import Max35Text
+from .ISODate import ISODate
 
 class Reconciliation4(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_ChckptRef", "_Dt"]
+	__slots__ = ["_Dt", "_Id", "_ChckptRef"]
+	@property
+	def Dt(self):
+		return self._Dt
+
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != auto else self.make_default("Dt")
+
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -31,22 +44,9 @@ class Reconciliation4(base_types._BaseFieldType):
 		del self._ChckptRef
 		self._ChckptRef = None
 
-	@property
-	def Dt(self):
-		return self._Dt
-
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
-
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChckptRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

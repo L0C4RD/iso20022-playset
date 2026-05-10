@@ -1,6 +1,6 @@
 from . import base_types
-import ActiveCurrencyAnd24Amount
-import PositiveNumber
+from .PositiveNumber import PositiveNumber
+from .ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
 
 class OpenInterest1(base_types._BaseFieldType):
 

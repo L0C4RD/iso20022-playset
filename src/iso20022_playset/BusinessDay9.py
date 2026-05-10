@@ -1,7 +1,7 @@
 from . import base_types
-import SystemStatus3
-import DateAndDateTime2Choice
-import SystemAvailabilityAndEvents3
+from .SystemStatus3 import SystemStatus3
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .SystemAvailabilityAndEvents3 import SystemAvailabilityAndEvents3
 
 class BusinessDay9(base_types._BaseFieldType):
 

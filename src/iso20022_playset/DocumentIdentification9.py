@@ -1,5 +1,5 @@
 from . import base_types
-import Max35Text
+from .Max35Text import Max35Text
 
 class DocumentIdentification9(base_types._BaseFieldType):
 

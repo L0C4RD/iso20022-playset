@@ -1,37 +1,37 @@
 from . import base_types
-import FundDetailedConfirmedCashForecastReport3
-import Pagination
-import MessageIdentification1
-import AdditionalReference3
+from .MessageIdentification1 import MessageIdentification1
+from .FundDetailedConfirmedCashForecastReport3 import FundDetailedConfirmedCashForecastReport3
+from .Pagination import Pagination
+from .AdditionalReference3 import AdditionalReference3
 
 class FundDetailedConfirmedCashForecastReportCancellationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgPgntn", "_RltdRef", "_MsgId", "_PrvsRef", "_PoolRef", "_CshFcstRptToBeCanc"]
+	__slots__ = ["_PrvsRef", "_CshFcstRptToBeCanc", "_MsgId", "_MsgPgntn", "_PoolRef", "_RltdRef"]
 	@property
-	def MsgPgntn(self):
-		return self._MsgPgntn
+	def PrvsRef(self):
+		return self._PrvsRef
 
-	@MsgPgntn.setter
-	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
 
-	@MsgPgntn.deleter
-	def MsgPgntn(self):
-		del self._MsgPgntn
-		self._MsgPgntn = None
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
 
 	@property
-	def RltdRef(self):
-		return self._RltdRef
+	def CshFcstRptToBeCanc(self):
+		return self._CshFcstRptToBeCanc
 
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+	@CshFcstRptToBeCanc.setter
+	def CshFcstRptToBeCanc(self, value):
+		self._CshFcstRptToBeCanc = value if type(value) != auto else self.make_default("CshFcstRptToBeCanc")
 
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
+	@CshFcstRptToBeCanc.deleter
+	def CshFcstRptToBeCanc(self):
+		del self._CshFcstRptToBeCanc
+		self._CshFcstRptToBeCanc = None
 
 	@property
 	def MsgId(self):
@@ -47,17 +47,17 @@ class FundDetailedConfirmedCashForecastReportCancellationV03(base_types._BaseFie
 		self._MsgId = None
 
 	@property
-	def PrvsRef(self):
-		return self._PrvsRef
+	def MsgPgntn(self):
+		return self._MsgPgntn
 
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
+	@MsgPgntn.setter
+	def MsgPgntn(self, value):
+		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
 
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
+	@MsgPgntn.deleter
+	def MsgPgntn(self):
+		del self._MsgPgntn
+		self._MsgPgntn = None
 
 	@property
 	def PoolRef(self):
@@ -73,24 +73,24 @@ class FundDetailedConfirmedCashForecastReportCancellationV03(base_types._BaseFie
 		self._PoolRef = None
 
 	@property
-	def CshFcstRptToBeCanc(self):
-		return self._CshFcstRptToBeCanc
+	def RltdRef(self):
+		return self._RltdRef
 
-	@CshFcstRptToBeCanc.setter
-	def CshFcstRptToBeCanc(self, value):
-		self._CshFcstRptToBeCanc = value if type(value) != auto else self.make_default("CshFcstRptToBeCanc")
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
 
-	@CshFcstRptToBeCanc.deleter
-	def CshFcstRptToBeCanc(self):
-		del self._CshFcstRptToBeCanc
-		self._CshFcstRptToBeCanc = None
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshFcstRptToBeCanc', type=FundDetailedConfirmedCashForecastReport3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference3, min=0, max=None, mutex_group=None, array=True),
 	))
 

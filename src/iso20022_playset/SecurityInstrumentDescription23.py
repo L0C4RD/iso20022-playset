@@ -1,38 +1,25 @@
 from . import base_types
-import Max350Text
-import CFIOct2015Identifier
-import ISINOct2015Identifier
-import OtherIdentification1
-import ActiveOrHistoricCurrencyCode
+from .ISINOct2015Identifier import ISINOct2015Identifier
+from .OtherIdentification1 import OtherIdentification1
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .Max350Text import Max350Text
+from .CFIOct2015Identifier import CFIOct2015Identifier
 
 class SecurityInstrumentDescription23(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrId", "_Id", "_NtnlCcy", "_ClssfctnTp", "_FullNm"]
+	__slots__ = ["_FullNm", "_NtnlCcy", "_Id", "_ClssfctnTp", "_OthrId"]
 	@property
-	def OthrId(self):
-		return self._OthrId
+	def FullNm(self):
+		return self._FullNm
 
-	@OthrId.setter
-	def OthrId(self, value):
-		self._OthrId = value if type(value) != auto else self.make_default("OthrId")
+	@FullNm.setter
+	def FullNm(self, value):
+		self._FullNm = value if type(value) != auto else self.make_default("FullNm")
 
-	@OthrId.deleter
-	def OthrId(self):
-		del self._OthrId
-		self._OthrId = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@FullNm.deleter
+	def FullNm(self):
+		del self._FullNm
+		self._FullNm = None
 
 	@property
 	def NtnlCcy(self):
@@ -48,6 +35,19 @@ class SecurityInstrumentDescription23(base_types._BaseFieldType):
 		self._NtnlCcy = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
 	def ClssfctnTp(self):
 		return self._ClssfctnTp
 
@@ -61,23 +61,23 @@ class SecurityInstrumentDescription23(base_types._BaseFieldType):
 		self._ClssfctnTp = None
 
 	@property
-	def FullNm(self):
-		return self._FullNm
+	def OthrId(self):
+		return self._OthrId
 
-	@FullNm.setter
-	def FullNm(self, value):
-		self._FullNm = value if type(value) != auto else self.make_default("FullNm")
+	@OthrId.setter
+	def OthrId(self, value):
+		self._OthrId = value if type(value) != auto else self.make_default("OthrId")
 
-	@FullNm.deleter
-	def FullNm(self):
-		del self._FullNm
-		self._FullNm = None
+	@OthrId.deleter
+	def OthrId(self):
+		del self._OthrId
+		self._OthrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrId', type=OtherIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClssfctnTp', type=CFIOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FullNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssfctnTp', type=CFIOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrId', type=OtherIdentification1, min=0, max=None, mutex_group=None, array=True),
 	))
 

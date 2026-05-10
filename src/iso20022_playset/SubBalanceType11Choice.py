@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import SecuritiesBalanceType12Code
+from .SecuritiesBalanceType12Code import SecuritiesBalanceType12Code
+from .GenericIdentification30 import GenericIdentification30
 
 class SubBalanceType11Choice(base_types._BaseFieldType):
 

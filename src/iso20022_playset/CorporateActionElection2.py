@@ -1,25 +1,12 @@
 from . import base_types
-import Max350Text
-import CorporateActionOption1FormatChoice
-import UnitOrFaceAmount1Choice
-import Exact3NumericText
+from .Exact3NumericText import Exact3NumericText
+from .UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from .Max350Text import Max350Text
+from .CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
 
 class CorporateActionElection2(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnNb", "_OptnTp", "_NewInstdQty", "_Rsn"]
-	@property
-	def OptnNb(self):
-		return self._OptnNb
-
-	@OptnNb.setter
-	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
-
-	@OptnNb.deleter
-	def OptnNb(self):
-		del self._OptnNb
-		self._OptnNb = None
-
+	__slots__ = ["_OptnTp", "_NewInstdQty", "_Rsn", "_OptnNb"]
 	@property
 	def OptnTp(self):
 		return self._OptnTp
@@ -59,10 +46,23 @@ class CorporateActionElection2(base_types._BaseFieldType):
 		del self._Rsn
 		self._Rsn = None
 
+	@property
+	def OptnNb(self):
+		return self._OptnNb
+
+	@OptnNb.setter
+	def OptnNb(self, value):
+		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
+
+	@OptnNb.deleter
+	def OptnNb(self):
+		del self._OptnNb
+		self._OptnNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewInstdQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

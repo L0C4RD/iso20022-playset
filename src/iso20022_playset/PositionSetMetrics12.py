@@ -1,11 +1,24 @@
 from . import base_types
-import QuantityNominalValue2Choice
-import PercentageRate
-import VolumeMetrics6
+from .PercentageRate import PercentageRate
+from .QuantityNominalValue2Choice import QuantityNominalValue2Choice
+from .VolumeMetrics6 import VolumeMetrics6
 
 class PositionSetMetrics12(base_types._BaseFieldType):
 
-	__slots__ = ["_HrcutOrMrgn", "_VolMtrcs", "_QtyOrNmnlAmt"]
+	__slots__ = ["_QtyOrNmnlAmt", "_HrcutOrMrgn", "_VolMtrcs"]
+	@property
+	def QtyOrNmnlAmt(self):
+		return self._QtyOrNmnlAmt
+
+	@QtyOrNmnlAmt.setter
+	def QtyOrNmnlAmt(self, value):
+		self._QtyOrNmnlAmt = value if type(value) != auto else self.make_default("QtyOrNmnlAmt")
+
+	@QtyOrNmnlAmt.deleter
+	def QtyOrNmnlAmt(self):
+		del self._QtyOrNmnlAmt
+		self._QtyOrNmnlAmt = None
+
 	@property
 	def HrcutOrMrgn(self):
 		return self._HrcutOrMrgn
@@ -32,22 +45,9 @@ class PositionSetMetrics12(base_types._BaseFieldType):
 		del self._VolMtrcs
 		self._VolMtrcs = None
 
-	@property
-	def QtyOrNmnlAmt(self):
-		return self._QtyOrNmnlAmt
-
-	@QtyOrNmnlAmt.setter
-	def QtyOrNmnlAmt(self, value):
-		self._QtyOrNmnlAmt = value if type(value) != auto else self.make_default("QtyOrNmnlAmt")
-
-	@QtyOrNmnlAmt.deleter
-	def QtyOrNmnlAmt(self):
-		del self._QtyOrNmnlAmt
-		self._QtyOrNmnlAmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='QtyOrNmnlAmt', type=QuantityNominalValue2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HrcutOrMrgn', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VolMtrcs', type=VolumeMetrics6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtyOrNmnlAmt', type=QuantityNominalValue2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

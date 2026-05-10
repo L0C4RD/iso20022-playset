@@ -1,24 +1,11 @@
 from . import base_types
-import MessageHeader7
-import SupplementaryData1
-import GeneralBusinessOrError7Choice
+from .MessageHeader7 import MessageHeader7
+from .SupplementaryData1 import SupplementaryData1
+from .GeneralBusinessOrError7Choice import GeneralBusinessOrError7Choice
 
 class ReturnGeneralBusinessInformationV06(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RptOrErr", "_MsgHdr"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_RptOrErr", "_MsgHdr", "_SplmtryData"]
 	@property
 	def RptOrErr(self):
 		return self._RptOrErr
@@ -45,9 +32,22 @@ class ReturnGeneralBusinessInformationV06(base_types._BaseFieldType):
 		del self._MsgHdr
 		self._MsgHdr = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptOrErr', type=GeneralBusinessOrError7Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

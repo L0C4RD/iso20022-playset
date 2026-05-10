@@ -1,5 +1,5 @@
 from . import base_types
-import FIToFIPaymentStatusRequestV06
+from .FIToFIPaymentStatusRequestV06 import FIToFIPaymentStatusRequestV06
 
 class PACS_028_001_06():
 

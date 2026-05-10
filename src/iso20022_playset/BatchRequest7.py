@@ -1,7 +1,7 @@
 from . import base_types
-import TransactionIdentifier1
-import TransactionToPerform7Choice
-import TrueFalseIndicator
+from .TransactionIdentifier1 import TransactionIdentifier1
+from .TransactionToPerform7Choice import TransactionToPerform7Choice
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class BatchRequest7(base_types._BaseFieldType):
 

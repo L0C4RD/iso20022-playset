@@ -1,13 +1,39 @@
 from . import base_types
-import ActivityDetails1
-import PendingActivity2
-import BICIdentification1
-import DocumentIdentification5
-import Max35Text
+from .Max35Text import Max35Text
+from .DocumentIdentification5 import DocumentIdentification5
+from .BICIdentification1 import BICIdentification1
+from .ActivityDetails1 import ActivityDetails1
+from .PendingActivity2 import PendingActivity2
 
 class ActivityReportItems3(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgReqForActn", "_RptdNtty", "_TxId", "_RptdItm", "_UsrTxRef"]
+	__slots__ = ["_RptdItm", "_TxId", "_PdgReqForActn", "_RptdNtty", "_UsrTxRef"]
+	@property
+	def RptdItm(self):
+		return self._RptdItm
+
+	@RptdItm.setter
+	def RptdItm(self, value):
+		self._RptdItm = value if type(value) != auto else self.make_default("RptdItm")
+
+	@RptdItm.deleter
+	def RptdItm(self):
+		del self._RptdItm
+		self._RptdItm = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
 	@property
 	def PdgReqForActn(self):
 		return self._PdgReqForActn
@@ -35,32 +61,6 @@ class ActivityReportItems3(base_types._BaseFieldType):
 		self._RptdNtty = None
 
 	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def RptdItm(self):
-		return self._RptdItm
-
-	@RptdItm.setter
-	def RptdItm(self, value):
-		self._RptdItm = value if type(value) != auto else self.make_default("RptdItm")
-
-	@RptdItm.deleter
-	def RptdItm(self):
-		del self._RptdItm
-		self._RptdItm = None
-
-	@property
 	def UsrTxRef(self):
 		return self._UsrTxRef
 
@@ -74,10 +74,10 @@ class ActivityReportItems3(base_types._BaseFieldType):
 		self._UsrTxRef = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RptdItm', type=ActivityDetails1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdgReqForActn', type=PendingActivity2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptdNtty', type=BICIdentification1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptdItm', type=ActivityDetails1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 	))
 

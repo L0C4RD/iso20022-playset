@@ -1,9 +1,22 @@
 from . import base_types
-import RequestedIndicator
+from .RequestedIndicator import RequestedIndicator
 
 class CollateralValueReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlCollValtnInd", "_SctiesAcctOwnrInd", "_CshAcctSvcrInd", "_Scties", "_SctiesAcctSvcrInd", "_SctiesAcctInd", "_CshAcctOwnrInd"]
+	__slots__ = ["_CshAcctSvcrInd", "_TtlCollValtnInd", "_SctiesAcctInd", "_CshAcctOwnrInd", "_Scties", "_SctiesAcctSvcrInd", "_SctiesAcctOwnrInd"]
+	@property
+	def CshAcctSvcrInd(self):
+		return self._CshAcctSvcrInd
+
+	@CshAcctSvcrInd.setter
+	def CshAcctSvcrInd(self, value):
+		self._CshAcctSvcrInd = value if type(value) != auto else self.make_default("CshAcctSvcrInd")
+
+	@CshAcctSvcrInd.deleter
+	def CshAcctSvcrInd(self):
+		del self._CshAcctSvcrInd
+		self._CshAcctSvcrInd = None
+
 	@property
 	def TtlCollValtnInd(self):
 		return self._TtlCollValtnInd
@@ -18,30 +31,30 @@ class CollateralValueReturnCriteria1(base_types._BaseFieldType):
 		self._TtlCollValtnInd = None
 
 	@property
-	def SctiesAcctOwnrInd(self):
-		return self._SctiesAcctOwnrInd
+	def SctiesAcctInd(self):
+		return self._SctiesAcctInd
 
-	@SctiesAcctOwnrInd.setter
-	def SctiesAcctOwnrInd(self, value):
-		self._SctiesAcctOwnrInd = value if type(value) != auto else self.make_default("SctiesAcctOwnrInd")
+	@SctiesAcctInd.setter
+	def SctiesAcctInd(self, value):
+		self._SctiesAcctInd = value if type(value) != auto else self.make_default("SctiesAcctInd")
 
-	@SctiesAcctOwnrInd.deleter
-	def SctiesAcctOwnrInd(self):
-		del self._SctiesAcctOwnrInd
-		self._SctiesAcctOwnrInd = None
+	@SctiesAcctInd.deleter
+	def SctiesAcctInd(self):
+		del self._SctiesAcctInd
+		self._SctiesAcctInd = None
 
 	@property
-	def CshAcctSvcrInd(self):
-		return self._CshAcctSvcrInd
+	def CshAcctOwnrInd(self):
+		return self._CshAcctOwnrInd
 
-	@CshAcctSvcrInd.setter
-	def CshAcctSvcrInd(self, value):
-		self._CshAcctSvcrInd = value if type(value) != auto else self.make_default("CshAcctSvcrInd")
+	@CshAcctOwnrInd.setter
+	def CshAcctOwnrInd(self, value):
+		self._CshAcctOwnrInd = value if type(value) != auto else self.make_default("CshAcctOwnrInd")
 
-	@CshAcctSvcrInd.deleter
-	def CshAcctSvcrInd(self):
-		del self._CshAcctSvcrInd
-		self._CshAcctSvcrInd = None
+	@CshAcctOwnrInd.deleter
+	def CshAcctOwnrInd(self):
+		del self._CshAcctOwnrInd
+		self._CshAcctOwnrInd = None
 
 	@property
 	def Scties(self):
@@ -70,38 +83,25 @@ class CollateralValueReturnCriteria1(base_types._BaseFieldType):
 		self._SctiesAcctSvcrInd = None
 
 	@property
-	def SctiesAcctInd(self):
-		return self._SctiesAcctInd
+	def SctiesAcctOwnrInd(self):
+		return self._SctiesAcctOwnrInd
 
-	@SctiesAcctInd.setter
-	def SctiesAcctInd(self, value):
-		self._SctiesAcctInd = value if type(value) != auto else self.make_default("SctiesAcctInd")
+	@SctiesAcctOwnrInd.setter
+	def SctiesAcctOwnrInd(self, value):
+		self._SctiesAcctOwnrInd = value if type(value) != auto else self.make_default("SctiesAcctOwnrInd")
 
-	@SctiesAcctInd.deleter
-	def SctiesAcctInd(self):
-		del self._SctiesAcctInd
-		self._SctiesAcctInd = None
-
-	@property
-	def CshAcctOwnrInd(self):
-		return self._CshAcctOwnrInd
-
-	@CshAcctOwnrInd.setter
-	def CshAcctOwnrInd(self, value):
-		self._CshAcctOwnrInd = value if type(value) != auto else self.make_default("CshAcctOwnrInd")
-
-	@CshAcctOwnrInd.deleter
-	def CshAcctOwnrInd(self):
-		del self._CshAcctOwnrInd
-		self._CshAcctOwnrInd = None
+	@SctiesAcctOwnrInd.deleter
+	def SctiesAcctOwnrInd(self):
+		del self._SctiesAcctOwnrInd
+		self._SctiesAcctOwnrInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlCollValtnInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesAcctOwnrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctSvcrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Scties', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesAcctSvcrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlCollValtnInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesAcctInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctOwnrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Scties', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesAcctSvcrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesAcctOwnrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

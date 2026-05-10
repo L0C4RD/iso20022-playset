@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import InvestorType3Code
+from .InvestorType3Code import InvestorType3Code
+from .GenericIdentification47 import GenericIdentification47
 
 class DistributionStrategy1Choice(base_types._BaseFieldType):
 

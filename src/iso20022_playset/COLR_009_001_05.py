@@ -1,5 +1,5 @@
 from . import base_types
-import MarginCallDisputeNotificationV05
+from .MarginCallDisputeNotificationV05 import MarginCallDisputeNotificationV05
 
 class COLR_009_001_05():
 

@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalInvestigationStatus1Code
-import InvestigationStatusReason1Choice
+from .InvestigationStatusReason1Choice import InvestigationStatusReason1Choice
+from .ExternalInvestigationStatus1Code import ExternalInvestigationStatus1Code
 
 class InvestigationStatus2(base_types._BaseFieldType):
 

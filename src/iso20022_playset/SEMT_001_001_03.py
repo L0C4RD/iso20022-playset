@@ -1,5 +1,5 @@
 from . import base_types
-import SecuritiesMessageRejectionV03
+from .SecuritiesMessageRejectionV03 import SecuritiesMessageRejectionV03
 
 class SEMT_001_001_03():
 

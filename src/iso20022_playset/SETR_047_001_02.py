@@ -1,5 +1,5 @@
 from . import base_types
-import SubscriptionOrderConfirmationCancellationInstructionV02
+from .SubscriptionOrderConfirmationCancellationInstructionV02 import SubscriptionOrderConfirmationCancellationInstructionV02
 
 class SETR_047_001_02():
 

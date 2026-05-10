@@ -1,5 +1,5 @@
 from . import base_types
-import PortfolioTransferNotificationV08
+from .PortfolioTransferNotificationV08 import PortfolioTransferNotificationV08
 
 class SESE_037_001_08():
 

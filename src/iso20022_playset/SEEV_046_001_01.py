@@ -1,5 +1,5 @@
 from . import base_types
-import ShareholdersIdentificationDisclosureRequestCancellationAdviceV01
+from .ShareholdersIdentificationDisclosureRequestCancellationAdviceV01 import ShareholdersIdentificationDisclosureRequestCancellationAdviceV01
 
 class SEEV_046_001_01():
 

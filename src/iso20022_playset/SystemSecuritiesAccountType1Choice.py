@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import SystemSecuritiesAccountType1Code
+from .SystemSecuritiesAccountType1Code import SystemSecuritiesAccountType1Code
+from .GenericIdentification30 import GenericIdentification30
 
 class SystemSecuritiesAccountType1Choice(base_types._BaseFieldType):
 

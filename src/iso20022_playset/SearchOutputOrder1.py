@@ -1,5 +1,5 @@
 from . import base_types
-import CriteriaOrder1
+from .CriteriaOrder1 import CriteriaOrder1
 
 class SearchOutputOrder1(base_types._BaseFieldType):
 

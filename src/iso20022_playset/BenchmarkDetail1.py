@@ -1,11 +1,11 @@
 from . import base_types
-import Max350Text
-import BenchmarkCurveName2Code
-import Max20000Text
+from .Max20000Text import Max20000Text
+from .Max350Text import Max350Text
+from .BenchmarkCurveName2Code import BenchmarkCurveName2Code
 
 class BenchmarkDetail1(base_types._BaseFieldType):
 
-	__slots__ = ["_FullNm", "_Indx", "_Cmnt"]
+	__slots__ = ["_FullNm", "_Cmnt", "_Indx"]
 	@property
 	def FullNm(self):
 		return self._FullNm
@@ -20,19 +20,6 @@ class BenchmarkDetail1(base_types._BaseFieldType):
 		self._FullNm = None
 
 	@property
-	def Indx(self):
-		return self._Indx
-
-	@Indx.setter
-	def Indx(self, value):
-		self._Indx = value if type(value) != auto else self.make_default("Indx")
-
-	@Indx.deleter
-	def Indx(self):
-		del self._Indx
-		self._Indx = None
-
-	@property
 	def Cmnt(self):
 		return self._Cmnt
 
@@ -45,9 +32,22 @@ class BenchmarkDetail1(base_types._BaseFieldType):
 		del self._Cmnt
 		self._Cmnt = None
 
+	@property
+	def Indx(self):
+		return self._Indx
+
+	@Indx.setter
+	def Indx(self, value):
+		self._Indx = value if type(value) != auto else self.make_default("Indx")
+
+	@Indx.deleter
+	def Indx(self):
+		del self._Indx
+		self._Indx = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FullNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Indx', type=BenchmarkCurveName2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cmnt', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Indx', type=BenchmarkCurveName2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

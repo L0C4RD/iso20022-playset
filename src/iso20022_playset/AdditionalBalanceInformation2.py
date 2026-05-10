@@ -1,23 +1,23 @@
 from . import base_types
-import SubBalanceQuantity1Choice
-import Extended350Code
-import SecuritiesBalanceType2Code
+from .SecuritiesBalanceType2Code import SecuritiesBalanceType2Code
+from .Extended350Code import Extended350Code
+from .SubBalanceQuantity1Choice import SubBalanceQuantity1Choice
 
 class AdditionalBalanceInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_SubBalTp", "_Qty", "_XtndedSubBalTp"]
+	__slots__ = ["_XtndedSubBalTp", "_Qty", "_SubBalTp"]
 	@property
-	def SubBalTp(self):
-		return self._SubBalTp
+	def XtndedSubBalTp(self):
+		return self._XtndedSubBalTp
 
-	@SubBalTp.setter
-	def SubBalTp(self, value):
-		self._SubBalTp = value if type(value) != auto else self.make_default("SubBalTp")
+	@XtndedSubBalTp.setter
+	def XtndedSubBalTp(self, value):
+		self._XtndedSubBalTp = value if type(value) != auto else self.make_default("XtndedSubBalTp")
 
-	@SubBalTp.deleter
-	def SubBalTp(self):
-		del self._SubBalTp
-		self._SubBalTp = None
+	@XtndedSubBalTp.deleter
+	def XtndedSubBalTp(self):
+		del self._XtndedSubBalTp
+		self._XtndedSubBalTp = None
 
 	@property
 	def Qty(self):
@@ -33,21 +33,21 @@ class AdditionalBalanceInformation2(base_types._BaseFieldType):
 		self._Qty = None
 
 	@property
-	def XtndedSubBalTp(self):
-		return self._XtndedSubBalTp
+	def SubBalTp(self):
+		return self._SubBalTp
 
-	@XtndedSubBalTp.setter
-	def XtndedSubBalTp(self, value):
-		self._XtndedSubBalTp = value if type(value) != auto else self.make_default("XtndedSubBalTp")
+	@SubBalTp.setter
+	def SubBalTp(self, value):
+		self._SubBalTp = value if type(value) != auto else self.make_default("SubBalTp")
 
-	@XtndedSubBalTp.deleter
-	def XtndedSubBalTp(self):
-		del self._XtndedSubBalTp
-		self._XtndedSubBalTp = None
+	@SubBalTp.deleter
+	def SubBalTp(self):
+		del self._SubBalTp
+		self._SubBalTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubBalTp', type=SecuritiesBalanceType2Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XtndedSubBalTp', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubBalTp', type=SecuritiesBalanceType2Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

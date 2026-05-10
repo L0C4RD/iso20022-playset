@@ -1,23 +1,23 @@
 from . import base_types
-import TrueFalseIndicator
-import SecurityIdentification26Choice
-import CollateralType21
+from .CollateralType21 import CollateralType21
+from .TrueFalseIndicator import TrueFalseIndicator
+from .SecurityIdentification26Choice import SecurityIdentification26Choice
 
 class CollateralData35(base_types._BaseFieldType):
 
-	__slots__ = ["_BsktIdr", "_AsstTp", "_NetXpsrCollstnInd"]
+	__slots__ = ["_NetXpsrCollstnInd", "_AsstTp", "_BsktIdr"]
 	@property
-	def BsktIdr(self):
-		return self._BsktIdr
+	def NetXpsrCollstnInd(self):
+		return self._NetXpsrCollstnInd
 
-	@BsktIdr.setter
-	def BsktIdr(self, value):
-		self._BsktIdr = value if type(value) != auto else self.make_default("BsktIdr")
+	@NetXpsrCollstnInd.setter
+	def NetXpsrCollstnInd(self, value):
+		self._NetXpsrCollstnInd = value if type(value) != auto else self.make_default("NetXpsrCollstnInd")
 
-	@BsktIdr.deleter
-	def BsktIdr(self):
-		del self._BsktIdr
-		self._BsktIdr = None
+	@NetXpsrCollstnInd.deleter
+	def NetXpsrCollstnInd(self):
+		del self._NetXpsrCollstnInd
+		self._NetXpsrCollstnInd = None
 
 	@property
 	def AsstTp(self):
@@ -33,21 +33,21 @@ class CollateralData35(base_types._BaseFieldType):
 		self._AsstTp = None
 
 	@property
-	def NetXpsrCollstnInd(self):
-		return self._NetXpsrCollstnInd
+	def BsktIdr(self):
+		return self._BsktIdr
 
-	@NetXpsrCollstnInd.setter
-	def NetXpsrCollstnInd(self, value):
-		self._NetXpsrCollstnInd = value if type(value) != auto else self.make_default("NetXpsrCollstnInd")
+	@BsktIdr.setter
+	def BsktIdr(self, value):
+		self._BsktIdr = value if type(value) != auto else self.make_default("BsktIdr")
 
-	@NetXpsrCollstnInd.deleter
-	def NetXpsrCollstnInd(self):
-		del self._NetXpsrCollstnInd
-		self._NetXpsrCollstnInd = None
+	@BsktIdr.deleter
+	def BsktIdr(self):
+		del self._BsktIdr
+		self._BsktIdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BsktIdr', type=SecurityIdentification26Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AsstTp', type=CollateralType21, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetXpsrCollstnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AsstTp', type=CollateralType21, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BsktIdr', type=SecurityIdentification26Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

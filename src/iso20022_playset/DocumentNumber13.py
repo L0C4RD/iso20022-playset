@@ -1,5 +1,5 @@
 from . import base_types
-import DocumentNumber5Choice
+from .DocumentNumber5Choice import DocumentNumber5Choice
 
 class DocumentNumber13(base_types._BaseFieldType):
 

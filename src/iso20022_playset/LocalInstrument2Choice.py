@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalLocalInstrument1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ExternalLocalInstrument1Code import ExternalLocalInstrument1Code
 
 class LocalInstrument2Choice(base_types._BaseFieldType):
 

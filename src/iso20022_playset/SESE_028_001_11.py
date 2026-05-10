@@ -1,5 +1,5 @@
 from . import base_types
-import SecuritiesSettlementTransactionAllegementNotificationV11
+from .SecuritiesSettlementTransactionAllegementNotificationV11 import SecuritiesSettlementTransactionAllegementNotificationV11
 
 class SESE_028_001_11():
 

@@ -1,6 +1,6 @@
 from . import base_types
-import OfferType1Code
-import GenericIdentification13
+from .OfferType1Code import OfferType1Code
+from .GenericIdentification13 import GenericIdentification13
 
 class OfferType1FormatChoice(base_types._BaseFieldType):
 

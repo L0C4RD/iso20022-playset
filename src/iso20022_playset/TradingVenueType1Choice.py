@@ -1,6 +1,6 @@
 from . import base_types
-import NoReasonCode
-import TradeMarket2Code
+from .NoReasonCode import NoReasonCode
+from .TradeMarket2Code import TradeMarket2Code
 
 class TradingVenueType1Choice(base_types._BaseFieldType):
 

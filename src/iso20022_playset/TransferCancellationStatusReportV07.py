@@ -1,14 +1,14 @@
 from . import base_types
-import References64Choice
-import Extension1
-import MarketPracticeVersion1
-import MessageIdentification1
-import CancellationStatusAndReason5
-import AdditionalReference10
+from .CancellationStatusAndReason5 import CancellationStatusAndReason5
+from .MessageIdentification1 import MessageIdentification1
+from .References64Choice import References64Choice
+from .AdditionalReference10 import AdditionalReference10
+from .Extension1 import Extension1
+from .MarketPracticeVersion1 import MarketPracticeVersion1
 
 class TransferCancellationStatusReportV07(base_types._BaseFieldType):
 
-	__slots__ = ["_MktPrctcVrsn", "_Xtnsn", "_StsRpt", "_MsgId", "_CtrPtyRef", "_Ref"]
+	__slots__ = ["_MktPrctcVrsn", "_CtrPtyRef", "_MsgId", "_Xtnsn", "_Ref", "_StsRpt"]
 	@property
 	def MktPrctcVrsn(self):
 		return self._MktPrctcVrsn
@@ -21,45 +21,6 @@ class TransferCancellationStatusReportV07(base_types._BaseFieldType):
 	def MktPrctcVrsn(self):
 		del self._MktPrctcVrsn
 		self._MktPrctcVrsn = None
-
-	@property
-	def Xtnsn(self):
-		return self._Xtnsn
-
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
-
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
-
-	@property
-	def StsRpt(self):
-		return self._StsRpt
-
-	@StsRpt.setter
-	def StsRpt(self, value):
-		self._StsRpt = value if type(value) != auto else self.make_default("StsRpt")
-
-	@StsRpt.deleter
-	def StsRpt(self):
-		del self._StsRpt
-		self._StsRpt = None
-
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
 
 	@property
 	def CtrPtyRef(self):
@@ -75,6 +36,32 @@ class TransferCancellationStatusReportV07(base_types._BaseFieldType):
 		self._CtrPtyRef = None
 
 	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
+	@property
+	def Xtnsn(self):
+		return self._Xtnsn
+
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
+
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
+
+	@property
 	def Ref(self):
 		return self._Ref
 
@@ -87,12 +74,25 @@ class TransferCancellationStatusReportV07(base_types._BaseFieldType):
 		del self._Ref
 		self._Ref = None
 
+	@property
+	def StsRpt(self):
+		return self._StsRpt
+
+	@StsRpt.setter
+	def StsRpt(self, value):
+		self._StsRpt = value if type(value) != auto else self.make_default("StsRpt")
+
+	@StsRpt.deleter
+	def StsRpt(self):
+		del self._StsRpt
+		self._StsRpt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StsRpt', type=CancellationStatusAndReason5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ref', type=References64Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsRpt', type=CancellationStatusAndReason5, min=1, max=1, mutex_group=None, array=False),
 	))
 

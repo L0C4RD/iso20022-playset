@@ -1,12 +1,38 @@
 from . import base_types
-import GenericIdentification1
-import Max70Text
-import Exact3NumericText
-import PlainCardData1
+from .PlainCardData1 import PlainCardData1
+from .Max70Text import Max70Text
+from .GenericIdentification1 import GenericIdentification1
+from .Exact3NumericText import Exact3NumericText
 
 class PaymentCard4(base_types._BaseFieldType):
 
-	__slots__ = ["_CardBrnd", "_PlainCardData", "_CardCtryCd", "_AddtlCardData"]
+	__slots__ = ["_AddtlCardData", "_CardCtryCd", "_CardBrnd", "_PlainCardData"]
+	@property
+	def AddtlCardData(self):
+		return self._AddtlCardData
+
+	@AddtlCardData.setter
+	def AddtlCardData(self, value):
+		self._AddtlCardData = value if type(value) != auto else self.make_default("AddtlCardData")
+
+	@AddtlCardData.deleter
+	def AddtlCardData(self):
+		del self._AddtlCardData
+		self._AddtlCardData = None
+
+	@property
+	def CardCtryCd(self):
+		return self._CardCtryCd
+
+	@CardCtryCd.setter
+	def CardCtryCd(self, value):
+		self._CardCtryCd = value if type(value) != auto else self.make_default("CardCtryCd")
+
+	@CardCtryCd.deleter
+	def CardCtryCd(self):
+		del self._CardCtryCd
+		self._CardCtryCd = None
+
 	@property
 	def CardBrnd(self):
 		return self._CardBrnd
@@ -33,36 +59,10 @@ class PaymentCard4(base_types._BaseFieldType):
 		del self._PlainCardData
 		self._PlainCardData = None
 
-	@property
-	def CardCtryCd(self):
-		return self._CardCtryCd
-
-	@CardCtryCd.setter
-	def CardCtryCd(self, value):
-		self._CardCtryCd = value if type(value) != auto else self.make_default("CardCtryCd")
-
-	@CardCtryCd.deleter
-	def CardCtryCd(self):
-		del self._CardCtryCd
-		self._CardCtryCd = None
-
-	@property
-	def AddtlCardData(self):
-		return self._AddtlCardData
-
-	@AddtlCardData.setter
-	def AddtlCardData(self, value):
-		self._AddtlCardData = value if type(value) != auto else self.make_default("AddtlCardData")
-
-	@AddtlCardData.deleter
-	def AddtlCardData(self):
-		del self._AddtlCardData
-		self._AddtlCardData = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlCardData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardCtryCd', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardBrnd', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlainCardData', type=PlainCardData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardCtryCd', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlCardData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

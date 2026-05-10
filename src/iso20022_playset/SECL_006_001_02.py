@@ -1,5 +1,5 @@
 from . import base_types
-import DefaultFundContributionReportV02
+from .DefaultFundContributionReportV02 import DefaultFundContributionReportV02
 
 class SECL_006_001_02():
 

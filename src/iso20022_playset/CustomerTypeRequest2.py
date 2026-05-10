@@ -1,7 +1,7 @@
 from . import base_types
-import OrganisationType2
-import PersonType2
-import RequestedIndicator
+from .PersonType2 import PersonType2
+from .RequestedIndicator import RequestedIndicator
+from .OrganisationType2 import OrganisationType2
 
 class CustomerTypeRequest2(base_types._BaseFieldType):
 

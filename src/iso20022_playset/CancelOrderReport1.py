@@ -1,5 +1,5 @@
 from . import base_types
-import Max140Text
+from .Max140Text import Max140Text
 
 class CancelOrderReport1(base_types._BaseFieldType):
 

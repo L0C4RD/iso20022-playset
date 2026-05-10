@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalSecuritiesLendingType1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ExternalSecuritiesLendingType1Code import ExternalSecuritiesLendingType1Code
 
 class SecuritiesLendingType3Choice(base_types._BaseFieldType):
 

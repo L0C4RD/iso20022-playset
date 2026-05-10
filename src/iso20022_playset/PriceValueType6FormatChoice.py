@@ -1,6 +1,6 @@
 from . import base_types
-import PriceValueType6Code
-import GenericIdentification13
+from .PriceValueType6Code import PriceValueType6Code
+from .GenericIdentification13 import GenericIdentification13
 
 class PriceValueType6FormatChoice(base_types._BaseFieldType):
 

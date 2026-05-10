@@ -1,12 +1,12 @@
 from . import base_types
-import References76Choice
-import PartyIdentification136Choice
-import ProcessingPosition18Choice
-import DocumentNumber16Choice
+from .PartyIdentification136Choice import PartyIdentification136Choice
+from .ProcessingPosition18Choice import ProcessingPosition18Choice
+from .References76Choice import References76Choice
+from .DocumentNumber16Choice import DocumentNumber16Choice
 
 class Linkages66(base_types._BaseFieldType):
 
-	__slots__ = ["_RefOwnr", "_MsgNb", "_Ref", "_PrcgPos"]
+	__slots__ = ["_RefOwnr", "_MsgNb", "_PrcgPos", "_Ref"]
 	@property
 	def RefOwnr(self):
 		return self._RefOwnr
@@ -34,19 +34,6 @@ class Linkages66(base_types._BaseFieldType):
 		self._MsgNb = None
 
 	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
-	@property
 	def PrcgPos(self):
 		return self._PrcgPos
 
@@ -59,10 +46,23 @@ class Linkages66(base_types._BaseFieldType):
 		del self._PrcgPos
 		self._PrcgPos = None
 
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RefOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgNb', type=DocumentNumber16Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=References76Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=References76Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

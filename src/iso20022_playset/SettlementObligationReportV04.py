@@ -1,40 +1,27 @@
 from . import base_types
-import Report7
-import ReportParameters8
-import PartyIdentification253Choice
-import SettlementParties37Choice
-import SupplementaryData1
-import Pagination1
-import SecuritiesAccount19
+from .Report7 import Report7
+from .SupplementaryData1 import SupplementaryData1
+from .PartyIdentification253Choice import PartyIdentification253Choice
+from .SettlementParties37Choice import SettlementParties37Choice
+from .ReportParameters8 import ReportParameters8
+from .SecuritiesAccount19 import SecuritiesAccount19
+from .Pagination1 import Pagination1
 
 class SettlementObligationReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSgmt", "_RptParams", "_DlvryAcct", "_RptDtls", "_SplmtryData", "_SttlmPties", "_ClrMmb", "_Pgntn"]
+	__slots__ = ["_RptDtls", "_DlvryAcct", "_RptParams", "_ClrMmb", "_SttlmPties", "_Pgntn", "_SplmtryData", "_ClrSgmt"]
 	@property
-	def ClrSgmt(self):
-		return self._ClrSgmt
+	def RptDtls(self):
+		return self._RptDtls
 
-	@ClrSgmt.setter
-	def ClrSgmt(self, value):
-		self._ClrSgmt = value if type(value) != auto else self.make_default("ClrSgmt")
+	@RptDtls.setter
+	def RptDtls(self, value):
+		self._RptDtls = value if type(value) != auto else self.make_default("RptDtls")
 
-	@ClrSgmt.deleter
-	def ClrSgmt(self):
-		del self._ClrSgmt
-		self._ClrSgmt = None
-
-	@property
-	def RptParams(self):
-		return self._RptParams
-
-	@RptParams.setter
-	def RptParams(self, value):
-		self._RptParams = value if type(value) != auto else self.make_default("RptParams")
-
-	@RptParams.deleter
-	def RptParams(self):
-		del self._RptParams
-		self._RptParams = None
+	@RptDtls.deleter
+	def RptDtls(self):
+		del self._RptDtls
+		self._RptDtls = None
 
 	@property
 	def DlvryAcct(self):
@@ -50,43 +37,17 @@ class SettlementObligationReportV04(base_types._BaseFieldType):
 		self._DlvryAcct = None
 
 	@property
-	def RptDtls(self):
-		return self._RptDtls
+	def RptParams(self):
+		return self._RptParams
 
-	@RptDtls.setter
-	def RptDtls(self, value):
-		self._RptDtls = value if type(value) != auto else self.make_default("RptDtls")
+	@RptParams.setter
+	def RptParams(self, value):
+		self._RptParams = value if type(value) != auto else self.make_default("RptParams")
 
-	@RptDtls.deleter
-	def RptDtls(self):
-		del self._RptDtls
-		self._RptDtls = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def SttlmPties(self):
-		return self._SttlmPties
-
-	@SttlmPties.setter
-	def SttlmPties(self, value):
-		self._SttlmPties = value if type(value) != auto else self.make_default("SttlmPties")
-
-	@SttlmPties.deleter
-	def SttlmPties(self):
-		del self._SttlmPties
-		self._SttlmPties = None
+	@RptParams.deleter
+	def RptParams(self):
+		del self._RptParams
+		self._RptParams = None
 
 	@property
 	def ClrMmb(self):
@@ -102,6 +63,19 @@ class SettlementObligationReportV04(base_types._BaseFieldType):
 		self._ClrMmb = None
 
 	@property
+	def SttlmPties(self):
+		return self._SttlmPties
+
+	@SttlmPties.setter
+	def SttlmPties(self, value):
+		self._SttlmPties = value if type(value) != auto else self.make_default("SttlmPties")
+
+	@SttlmPties.deleter
+	def SttlmPties(self):
+		del self._SttlmPties
+		self._SttlmPties = None
+
+	@property
 	def Pgntn(self):
 		return self._Pgntn
 
@@ -114,14 +88,40 @@ class SettlementObligationReportV04(base_types._BaseFieldType):
 		del self._Pgntn
 		self._Pgntn = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def ClrSgmt(self):
+		return self._ClrSgmt
+
+	@ClrSgmt.setter
+	def ClrSgmt(self, value):
+		self._ClrSgmt = value if type(value) != auto else self.make_default("ClrSgmt")
+
+	@ClrSgmt.deleter
+	def ClrSgmt(self):
+		del self._ClrSgmt
+		self._ClrSgmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrSgmt', type=PartyIdentification253Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptParams', type=ReportParameters8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptDtls', type=Report7, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SttlmPties', type=SettlementParties37Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptParams', type=ReportParameters8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification253Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPties', type=SettlementParties37Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClrSgmt', type=PartyIdentification253Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
-import Max2000Text
-import PartyAndSignature2
-import Undertaking3
+from .PartyAndSignature2 import PartyAndSignature2
+from .Undertaking3 import Undertaking3
+from .Max2000Text import Max2000Text
 
 class UndertakingIssuanceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_BkToBnfcryInf", "_UdrtkgIssncDtls", "_BkToBkInf", "_DgtlSgntr"]
-	@property
-	def BkToBnfcryInf(self):
-		return self._BkToBnfcryInf
-
-	@BkToBnfcryInf.setter
-	def BkToBnfcryInf(self, value):
-		self._BkToBnfcryInf = value if type(value) != auto else self.make_default("BkToBnfcryInf")
-
-	@BkToBnfcryInf.deleter
-	def BkToBnfcryInf(self):
-		del self._BkToBnfcryInf
-		self._BkToBnfcryInf = None
-
+	__slots__ = ["_UdrtkgIssncDtls", "_BkToBkInf", "_DgtlSgntr", "_BkToBnfcryInf"]
 	@property
 	def UdrtkgIssncDtls(self):
 		return self._UdrtkgIssncDtls
@@ -58,10 +45,23 @@ class UndertakingIssuanceV01(base_types._BaseFieldType):
 		del self._DgtlSgntr
 		self._DgtlSgntr = None
 
+	@property
+	def BkToBnfcryInf(self):
+		return self._BkToBnfcryInf
+
+	@BkToBnfcryInf.setter
+	def BkToBnfcryInf(self, value):
+		self._BkToBnfcryInf = value if type(value) != auto else self.make_default("BkToBnfcryInf")
+
+	@BkToBnfcryInf.deleter
+	def BkToBnfcryInf(self):
+		del self._BkToBnfcryInf
+		self._BkToBnfcryInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BkToBnfcryInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UdrtkgIssncDtls', type=Undertaking3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BkToBkInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BkToBnfcryInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 	))
 

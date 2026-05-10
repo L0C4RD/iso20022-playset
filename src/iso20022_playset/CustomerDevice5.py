@@ -1,45 +1,32 @@
 from . import base_types
-import Max256Text
-import ExternalDeviceOperatingSystemType1Code
-import CustomerDeviceType2Code
-import DeviceIdentification1
-import Max35Text
-import Max100Text
-import ISO2ALanguageCode
-import GeographicPointInDecimalDegrees
-import AdditionalData1
-import PhoneNumber
-import ISO3NumericCountryCode
-import Max70Text
+from .Max100Text import Max100Text
+from .Max35Text import Max35Text
+from .ISO3NumericCountryCode import ISO3NumericCountryCode
+from .ISO2ALanguageCode import ISO2ALanguageCode
+from .DeviceIdentification1 import DeviceIdentification1
+from .CustomerDeviceType2Code import CustomerDeviceType2Code
+from .GeographicPointInDecimalDegrees import GeographicPointInDecimalDegrees
+from .AdditionalData1 import AdditionalData1
+from .PhoneNumber import PhoneNumber
+from .Max70Text import Max70Text
+from .Max256Text import Max256Text
+from .ExternalDeviceOperatingSystemType1Code import ExternalDeviceOperatingSystemType1Code
 
 class CustomerDevice5(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Email", "_OthrTp", "_Lang", "_Phne", "_AddtlData", "_OprgSysVrsn", "_LctnCtryCd", "_ManfctrMdlId", "_OthrOprgSysTp", "_GeogcLctn", "_IPAdr", "_OprgSysBld", "_DvcId", "_Manfctr", "_DvcNmNrmlzd", "_Prvdr", "_OprgSysTp", "_OprgSysId", "_DvcNm"]
+	__slots__ = ["_Phne", "_OthrTp", "_OthrOprgSysTp", "_DvcNm", "_OprgSysVrsn", "_Lang", "_LctnCtryCd", "_DvcId", "_Manfctr", "_Tp", "_GeogcLctn", "_OprgSysId", "_OprgSysTp", "_Prvdr", "_ManfctrMdlId", "_OprgSysBld", "_DvcNmNrmlzd", "_AddtlData", "_IPAdr", "_Email"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def Phne(self):
+		return self._Phne
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@Phne.setter
+	def Phne(self, value):
+		self._Phne = value if type(value) != auto else self.make_default("Phne")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def Email(self):
-		return self._Email
-
-	@Email.setter
-	def Email(self, value):
-		self._Email = value if type(value) != auto else self.make_default("Email")
-
-	@Email.deleter
-	def Email(self):
-		del self._Email
-		self._Email = None
+	@Phne.deleter
+	def Phne(self):
+		del self._Phne
+		self._Phne = None
 
 	@property
 	def OthrTp(self):
@@ -55,43 +42,30 @@ class CustomerDevice5(base_types._BaseFieldType):
 		self._OthrTp = None
 
 	@property
-	def Lang(self):
-		return self._Lang
+	def OthrOprgSysTp(self):
+		return self._OthrOprgSysTp
 
-	@Lang.setter
-	def Lang(self, value):
-		self._Lang = value if type(value) != auto else self.make_default("Lang")
+	@OthrOprgSysTp.setter
+	def OthrOprgSysTp(self, value):
+		self._OthrOprgSysTp = value if type(value) != auto else self.make_default("OthrOprgSysTp")
 
-	@Lang.deleter
-	def Lang(self):
-		del self._Lang
-		self._Lang = None
-
-	@property
-	def Phne(self):
-		return self._Phne
-
-	@Phne.setter
-	def Phne(self, value):
-		self._Phne = value if type(value) != auto else self.make_default("Phne")
-
-	@Phne.deleter
-	def Phne(self):
-		del self._Phne
-		self._Phne = None
+	@OthrOprgSysTp.deleter
+	def OthrOprgSysTp(self):
+		del self._OthrOprgSysTp
+		self._OthrOprgSysTp = None
 
 	@property
-	def AddtlData(self):
-		return self._AddtlData
+	def DvcNm(self):
+		return self._DvcNm
 
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+	@DvcNm.setter
+	def DvcNm(self, value):
+		self._DvcNm = value if type(value) != auto else self.make_default("DvcNm")
 
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
+	@DvcNm.deleter
+	def DvcNm(self):
+		del self._DvcNm
+		self._DvcNm = None
 
 	@property
 	def OprgSysVrsn(self):
@@ -107,6 +81,19 @@ class CustomerDevice5(base_types._BaseFieldType):
 		self._OprgSysVrsn = None
 
 	@property
+	def Lang(self):
+		return self._Lang
+
+	@Lang.setter
+	def Lang(self, value):
+		self._Lang = value if type(value) != auto else self.make_default("Lang")
+
+	@Lang.deleter
+	def Lang(self):
+		del self._Lang
+		self._Lang = None
+
+	@property
 	def LctnCtryCd(self):
 		return self._LctnCtryCd
 
@@ -118,71 +105,6 @@ class CustomerDevice5(base_types._BaseFieldType):
 	def LctnCtryCd(self):
 		del self._LctnCtryCd
 		self._LctnCtryCd = None
-
-	@property
-	def ManfctrMdlId(self):
-		return self._ManfctrMdlId
-
-	@ManfctrMdlId.setter
-	def ManfctrMdlId(self, value):
-		self._ManfctrMdlId = value if type(value) != auto else self.make_default("ManfctrMdlId")
-
-	@ManfctrMdlId.deleter
-	def ManfctrMdlId(self):
-		del self._ManfctrMdlId
-		self._ManfctrMdlId = None
-
-	@property
-	def OthrOprgSysTp(self):
-		return self._OthrOprgSysTp
-
-	@OthrOprgSysTp.setter
-	def OthrOprgSysTp(self, value):
-		self._OthrOprgSysTp = value if type(value) != auto else self.make_default("OthrOprgSysTp")
-
-	@OthrOprgSysTp.deleter
-	def OthrOprgSysTp(self):
-		del self._OthrOprgSysTp
-		self._OthrOprgSysTp = None
-
-	@property
-	def GeogcLctn(self):
-		return self._GeogcLctn
-
-	@GeogcLctn.setter
-	def GeogcLctn(self, value):
-		self._GeogcLctn = value if type(value) != auto else self.make_default("GeogcLctn")
-
-	@GeogcLctn.deleter
-	def GeogcLctn(self):
-		del self._GeogcLctn
-		self._GeogcLctn = None
-
-	@property
-	def IPAdr(self):
-		return self._IPAdr
-
-	@IPAdr.setter
-	def IPAdr(self, value):
-		self._IPAdr = value if type(value) != auto else self.make_default("IPAdr")
-
-	@IPAdr.deleter
-	def IPAdr(self):
-		del self._IPAdr
-		self._IPAdr = None
-
-	@property
-	def OprgSysBld(self):
-		return self._OprgSysBld
-
-	@OprgSysBld.setter
-	def OprgSysBld(self, value):
-		self._OprgSysBld = value if type(value) != auto else self.make_default("OprgSysBld")
-
-	@OprgSysBld.deleter
-	def OprgSysBld(self):
-		del self._OprgSysBld
-		self._OprgSysBld = None
 
 	@property
 	def DvcId(self):
@@ -211,43 +133,30 @@ class CustomerDevice5(base_types._BaseFieldType):
 		self._Manfctr = None
 
 	@property
-	def DvcNmNrmlzd(self):
-		return self._DvcNmNrmlzd
+	def Tp(self):
+		return self._Tp
 
-	@DvcNmNrmlzd.setter
-	def DvcNmNrmlzd(self, value):
-		self._DvcNmNrmlzd = value if type(value) != auto else self.make_default("DvcNmNrmlzd")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@DvcNmNrmlzd.deleter
-	def DvcNmNrmlzd(self):
-		del self._DvcNmNrmlzd
-		self._DvcNmNrmlzd = None
-
-	@property
-	def Prvdr(self):
-		return self._Prvdr
-
-	@Prvdr.setter
-	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != auto else self.make_default("Prvdr")
-
-	@Prvdr.deleter
-	def Prvdr(self):
-		del self._Prvdr
-		self._Prvdr = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
-	def OprgSysTp(self):
-		return self._OprgSysTp
+	def GeogcLctn(self):
+		return self._GeogcLctn
 
-	@OprgSysTp.setter
-	def OprgSysTp(self, value):
-		self._OprgSysTp = value if type(value) != auto else self.make_default("OprgSysTp")
+	@GeogcLctn.setter
+	def GeogcLctn(self, value):
+		self._GeogcLctn = value if type(value) != auto else self.make_default("GeogcLctn")
 
-	@OprgSysTp.deleter
-	def OprgSysTp(self):
-		del self._OprgSysTp
-		self._OprgSysTp = None
+	@GeogcLctn.deleter
+	def GeogcLctn(self):
+		del self._GeogcLctn
+		self._GeogcLctn = None
 
 	@property
 	def OprgSysId(self):
@@ -263,38 +172,129 @@ class CustomerDevice5(base_types._BaseFieldType):
 		self._OprgSysId = None
 
 	@property
-	def DvcNm(self):
-		return self._DvcNm
+	def OprgSysTp(self):
+		return self._OprgSysTp
 
-	@DvcNm.setter
-	def DvcNm(self, value):
-		self._DvcNm = value if type(value) != auto else self.make_default("DvcNm")
+	@OprgSysTp.setter
+	def OprgSysTp(self, value):
+		self._OprgSysTp = value if type(value) != auto else self.make_default("OprgSysTp")
 
-	@DvcNm.deleter
-	def DvcNm(self):
-		del self._DvcNm
-		self._DvcNm = None
+	@OprgSysTp.deleter
+	def OprgSysTp(self):
+		del self._OprgSysTp
+		self._OprgSysTp = None
+
+	@property
+	def Prvdr(self):
+		return self._Prvdr
+
+	@Prvdr.setter
+	def Prvdr(self, value):
+		self._Prvdr = value if type(value) != auto else self.make_default("Prvdr")
+
+	@Prvdr.deleter
+	def Prvdr(self):
+		del self._Prvdr
+		self._Prvdr = None
+
+	@property
+	def ManfctrMdlId(self):
+		return self._ManfctrMdlId
+
+	@ManfctrMdlId.setter
+	def ManfctrMdlId(self, value):
+		self._ManfctrMdlId = value if type(value) != auto else self.make_default("ManfctrMdlId")
+
+	@ManfctrMdlId.deleter
+	def ManfctrMdlId(self):
+		del self._ManfctrMdlId
+		self._ManfctrMdlId = None
+
+	@property
+	def OprgSysBld(self):
+		return self._OprgSysBld
+
+	@OprgSysBld.setter
+	def OprgSysBld(self, value):
+		self._OprgSysBld = value if type(value) != auto else self.make_default("OprgSysBld")
+
+	@OprgSysBld.deleter
+	def OprgSysBld(self):
+		del self._OprgSysBld
+		self._OprgSysBld = None
+
+	@property
+	def DvcNmNrmlzd(self):
+		return self._DvcNmNrmlzd
+
+	@DvcNmNrmlzd.setter
+	def DvcNmNrmlzd(self, value):
+		self._DvcNmNrmlzd = value if type(value) != auto else self.make_default("DvcNmNrmlzd")
+
+	@DvcNmNrmlzd.deleter
+	def DvcNmNrmlzd(self):
+		del self._DvcNmNrmlzd
+		self._DvcNmNrmlzd = None
+
+	@property
+	def AddtlData(self):
+		return self._AddtlData
+
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
+
+	@property
+	def IPAdr(self):
+		return self._IPAdr
+
+	@IPAdr.setter
+	def IPAdr(self, value):
+		self._IPAdr = value if type(value) != auto else self.make_default("IPAdr")
+
+	@IPAdr.deleter
+	def IPAdr(self):
+		del self._IPAdr
+		self._IPAdr = None
+
+	@property
+	def Email(self):
+		return self._Email
+
+	@Email.setter
+	def Email(self, value):
+		self._Email = value if type(value) != auto else self.make_default("Email")
+
+	@Email.deleter
+	def Email(self):
+		del self._Email
+		self._Email = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=CustomerDeviceType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lang', type=ISO2ALanguageCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Phne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OprgSysVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LctnCtryCd', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ManfctrMdlId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrOprgSysTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GeogcLctn', type=GeographicPointInDecimalDegrees, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IPAdr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OprgSysBld', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DvcNm', type=Max100Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OprgSysVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lang', type=ISO2ALanguageCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LctnCtryCd', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DvcId', type=DeviceIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Manfctr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DvcNmNrmlzd', type=Max100Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OprgSysTp', type=ExternalDeviceOperatingSystemType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CustomerDeviceType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GeogcLctn', type=GeographicPointInDecimalDegrees, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OprgSysId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DvcNm', type=Max100Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OprgSysTp', type=ExternalDeviceOperatingSystemType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ManfctrMdlId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OprgSysBld', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DvcNmNrmlzd', type=Max100Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IPAdr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

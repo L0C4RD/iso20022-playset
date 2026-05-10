@@ -1,23 +1,10 @@
 from . import base_types
-import ProcessingPosition10Choice
-import CorporateActionEventReference4Choice
+from .CorporateActionEventReference4Choice import CorporateActionEventReference4Choice
+from .ProcessingPosition10Choice import ProcessingPosition10Choice
 
 class CorporateActionEventReference4(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtId", "_LkgTp"]
-	@property
-	def EvtId(self):
-		return self._EvtId
-
-	@EvtId.setter
-	def EvtId(self, value):
-		self._EvtId = value if type(value) != auto else self.make_default("EvtId")
-
-	@EvtId.deleter
-	def EvtId(self):
-		del self._EvtId
-		self._EvtId = None
-
+	__slots__ = ["_LkgTp", "_EvtId"]
 	@property
 	def LkgTp(self):
 		return self._LkgTp
@@ -31,8 +18,21 @@ class CorporateActionEventReference4(base_types._BaseFieldType):
 		del self._LkgTp
 		self._LkgTp = None
 
+	@property
+	def EvtId(self):
+		return self._EvtId
+
+	@EvtId.setter
+	def EvtId(self, value):
+		self._EvtId = value if type(value) != auto else self.make_default("EvtId")
+
+	@EvtId.deleter
+	def EvtId(self):
+		del self._EvtId
+		self._EvtId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EvtId', type=CorporateActionEventReference4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LkgTp', type=ProcessingPosition10Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtId', type=CorporateActionEventReference4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

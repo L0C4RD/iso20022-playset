@@ -1,5 +1,5 @@
 from . import base_types
-import PortfolioTransferCancellationRequestV09
+from .PortfolioTransferCancellationRequestV09 import PortfolioTransferCancellationRequestV09
 
 class SESE_014_001_09():
 

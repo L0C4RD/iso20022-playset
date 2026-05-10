@@ -1,11 +1,24 @@
 from . import base_types
-import TransactionIdentifier1
-import Max35Text
-import Response1Code
+from .TransactionIdentifier1 import TransactionIdentifier1
+from .Response1Code import Response1Code
+from .Max35Text import Max35Text
 
 class CardPaymentTransactionAdviceResponse5(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRefId", "_Rspn", "_TxId"]
+	__slots__ = ["_TxId", "_SaleRefId", "_Rspn"]
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
 	@property
 	def SaleRefId(self):
 		return self._SaleRefId
@@ -32,22 +45,9 @@ class CardPaymentTransactionAdviceResponse5(base_types._BaseFieldType):
 		del self._Rspn
 		self._Rspn = None
 
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rspn', type=Response1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
 	))
 

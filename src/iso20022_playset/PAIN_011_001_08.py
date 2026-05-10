@@ -1,5 +1,5 @@
 from . import base_types
-import MandateCancellationRequestV08
+from .MandateCancellationRequestV08 import MandateCancellationRequestV08
 
 class PAIN_011_001_08():
 

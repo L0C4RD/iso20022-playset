@@ -1,12 +1,25 @@
 from . import base_types
-import BranchAndFinancialInstitutionIdentification8
-import Party50Choice
-import Max35Text
-import ISODateTime
+from .Max35Text import Max35Text
+from .Party50Choice import Party50Choice
+from .ISODateTime import ISODateTime
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class IdentificationAssignment4(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_FrstAgt", "_Cretr", "_Assgne", "_Assgnr", "_CreDtTm"]
+	__slots__ = ["_Assgnr", "_MsgId", "_FrstAgt", "_Cretr", "_Assgne", "_CreDtTm"]
+	@property
+	def Assgnr(self):
+		return self._Assgnr
+
+	@Assgnr.setter
+	def Assgnr(self, value):
+		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
+
+	@Assgnr.deleter
+	def Assgnr(self):
+		del self._Assgnr
+		self._Assgnr = None
+
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -60,19 +73,6 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 		self._Assgne = None
 
 	@property
-	def Assgnr(self):
-		return self._Assgnr
-
-	@Assgnr.setter
-	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
-
-	@Assgnr.deleter
-	def Assgnr(self):
-		del self._Assgnr
-		self._Assgnr = None
-
-	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -86,11 +86,11 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Assgnr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cretr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgne', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

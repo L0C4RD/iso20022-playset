@@ -1,7 +1,7 @@
 from . import base_types
-import PartyIdentification198Choice
-import PersonName2
-import Max256Text
+from .Max256Text import Max256Text
+from .PartyIdentification198Choice import PartyIdentification198Choice
+from .PersonName2 import PersonName2
 
 class PartyIdentification224(base_types._BaseFieldType):
 

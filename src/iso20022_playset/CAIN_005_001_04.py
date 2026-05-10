@@ -1,5 +1,5 @@
 from . import base_types
-import ReversalInitiationV04
+from .ReversalInitiationV04 import ReversalInitiationV04
 
 class CAIN_005_001_04():
 

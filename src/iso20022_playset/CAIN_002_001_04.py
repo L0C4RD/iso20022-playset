@@ -1,5 +1,5 @@
 from . import base_types
-import AuthorisationResponseV04
+from .AuthorisationResponseV04 import AuthorisationResponseV04
 
 class CAIN_002_001_04():
 

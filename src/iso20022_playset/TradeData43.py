@@ -1,40 +1,14 @@
 from . import base_types
-import CommonTradeDataReport71
-import SupplementaryData1
-import TechnicalAttributes5
-import ModificationLevel1Code
-import CounterpartySpecificData36
-import DisseminationData1
+from .ModificationLevel1Code import ModificationLevel1Code
+from .TechnicalAttributes5 import TechnicalAttributes5
+from .SupplementaryData1 import SupplementaryData1
+from .DisseminationData1 import DisseminationData1
+from .CounterpartySpecificData36 import CounterpartySpecificData36
+from .CommonTradeDataReport71 import CommonTradeDataReport71
 
 class TradeData43(base_types._BaseFieldType):
 
-	__slots__ = ["_CmonTradData", "_TechAttrbts", "_PblcDssmntnData", "_SplmtryData", "_Lvl", "_CtrPtySpcfcData"]
-	@property
-	def CmonTradData(self):
-		return self._CmonTradData
-
-	@CmonTradData.setter
-	def CmonTradData(self, value):
-		self._CmonTradData = value if type(value) != auto else self.make_default("CmonTradData")
-
-	@CmonTradData.deleter
-	def CmonTradData(self):
-		del self._CmonTradData
-		self._CmonTradData = None
-
-	@property
-	def TechAttrbts(self):
-		return self._TechAttrbts
-
-	@TechAttrbts.setter
-	def TechAttrbts(self, value):
-		self._TechAttrbts = value if type(value) != auto else self.make_default("TechAttrbts")
-
-	@TechAttrbts.deleter
-	def TechAttrbts(self):
-		del self._TechAttrbts
-		self._TechAttrbts = None
-
+	__slots__ = ["_PblcDssmntnData", "_Lvl", "_TechAttrbts", "_CmonTradData", "_CtrPtySpcfcData", "_SplmtryData"]
 	@property
 	def PblcDssmntnData(self):
 		return self._PblcDssmntnData
@@ -47,19 +21,6 @@ class TradeData43(base_types._BaseFieldType):
 	def PblcDssmntnData(self):
 		del self._PblcDssmntnData
 		self._PblcDssmntnData = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
 
 	@property
 	def Lvl(self):
@@ -75,6 +36,32 @@ class TradeData43(base_types._BaseFieldType):
 		self._Lvl = None
 
 	@property
+	def TechAttrbts(self):
+		return self._TechAttrbts
+
+	@TechAttrbts.setter
+	def TechAttrbts(self, value):
+		self._TechAttrbts = value if type(value) != auto else self.make_default("TechAttrbts")
+
+	@TechAttrbts.deleter
+	def TechAttrbts(self):
+		del self._TechAttrbts
+		self._TechAttrbts = None
+
+	@property
+	def CmonTradData(self):
+		return self._CmonTradData
+
+	@CmonTradData.setter
+	def CmonTradData(self, value):
+		self._CmonTradData = value if type(value) != auto else self.make_default("CmonTradData")
+
+	@CmonTradData.deleter
+	def CmonTradData(self):
+		del self._CmonTradData
+		self._CmonTradData = None
+
+	@property
 	def CtrPtySpcfcData(self):
 		return self._CtrPtySpcfcData
 
@@ -87,12 +74,25 @@ class TradeData43(base_types._BaseFieldType):
 		del self._CtrPtySpcfcData
 		self._CtrPtySpcfcData = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CmonTradData', type=CommonTradeDataReport71, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechAttrbts', type=TechnicalAttributes5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PblcDssmntnData', type=DisseminationData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Lvl', type=ModificationLevel1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechAttrbts', type=TechnicalAttributes5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonTradData', type=CommonTradeDataReport71, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartySpecificData36, min=1, max=2, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,14 +1,40 @@
 from . import base_types
-import PartyIdentificationAndAccount6
-import ValidationStatusInformation1
-import ISODateTime
-import FinancialInstitutionIdentification6
-import Max35Text
-import CancellationStatusInformation1
+from .Max35Text import Max35Text
+from .ValidationStatusInformation1 import ValidationStatusInformation1
+from .PartyIdentificationAndAccount6 import PartyIdentificationAndAccount6
+from .FinancialInstitutionIdentification6 import FinancialInstitutionIdentification6
+from .ISODateTime import ISODateTime
+from .CancellationStatusInformation1 import CancellationStatusInformation1
 
 class OriginalRequestInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_FincgRqstr", "_FrstAgt", "_Id", "_CxlStsInf", "_IntrmyAgt", "_CreDtTm", "_VldtnStsInf"]
+	__slots__ = ["_IntrmyAgt", "_Id", "_FincgRqstr", "_FrstAgt", "_VldtnStsInf", "_CxlStsInf", "_CreDtTm"]
+	@property
+	def IntrmyAgt(self):
+		return self._IntrmyAgt
+
+	@IntrmyAgt.setter
+	def IntrmyAgt(self, value):
+		self._IntrmyAgt = value if type(value) != auto else self.make_default("IntrmyAgt")
+
+	@IntrmyAgt.deleter
+	def IntrmyAgt(self):
+		del self._IntrmyAgt
+		self._IntrmyAgt = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	@property
 	def FincgRqstr(self):
 		return self._FincgRqstr
@@ -36,17 +62,17 @@ class OriginalRequestInformation1(base_types._BaseFieldType):
 		self._FrstAgt = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def VldtnStsInf(self):
+		return self._VldtnStsInf
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@VldtnStsInf.setter
+	def VldtnStsInf(self, value):
+		self._VldtnStsInf = value if type(value) != auto else self.make_default("VldtnStsInf")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@VldtnStsInf.deleter
+	def VldtnStsInf(self):
+		del self._VldtnStsInf
+		self._VldtnStsInf = None
 
 	@property
 	def CxlStsInf(self):
@@ -62,19 +88,6 @@ class OriginalRequestInformation1(base_types._BaseFieldType):
 		self._CxlStsInf = None
 
 	@property
-	def IntrmyAgt(self):
-		return self._IntrmyAgt
-
-	@IntrmyAgt.setter
-	def IntrmyAgt(self, value):
-		self._IntrmyAgt = value if type(value) != auto else self.make_default("IntrmyAgt")
-
-	@IntrmyAgt.deleter
-	def IntrmyAgt(self):
-		del self._IntrmyAgt
-		self._IntrmyAgt = None
-
-	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -87,26 +100,13 @@ class OriginalRequestInformation1(base_types._BaseFieldType):
 		del self._CreDtTm
 		self._CreDtTm = None
 
-	@property
-	def VldtnStsInf(self):
-		return self._VldtnStsInf
-
-	@VldtnStsInf.setter
-	def VldtnStsInf(self, value):
-		self._VldtnStsInf = value if type(value) != auto else self.make_default("VldtnStsInf")
-
-	@VldtnStsInf.deleter
-	def VldtnStsInf(self):
-		del self._VldtnStsInf
-		self._VldtnStsInf = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='IntrmyAgt', type=FinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FincgRqstr', type=PartyIdentificationAndAccount6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstAgt', type=FinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlStsInf', type=CancellationStatusInformation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrmyAgt', type=FinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtnStsInf', type=ValidationStatusInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlStsInf', type=CancellationStatusInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

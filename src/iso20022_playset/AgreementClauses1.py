@@ -1,23 +1,10 @@
 from . import base_types
-import Max350Text
-import Max256Text
+from .Max350Text import Max350Text
+from .Max256Text import Max256Text
 
 class AgreementClauses1(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_DocURL"]
-	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
+	__slots__ = ["_DocURL", "_Desc"]
 	@property
 	def DocURL(self):
 		return self._DocURL
@@ -31,8 +18,21 @@ class AgreementClauses1(base_types._BaseFieldType):
 		del self._DocURL
 		self._DocURL = None
 
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Desc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocURL', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

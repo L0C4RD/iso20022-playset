@@ -1,6 +1,6 @@
 from . import base_types
-import ReportingTransactionType3Choice
-import SupplementaryData1
+from .SupplementaryData1 import SupplementaryData1
+from .ReportingTransactionType3Choice import ReportingTransactionType3Choice
 
 class FinancialInstrumentReportingTransactionReportV03(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import DocumentIdentification7
-import Max70Text
+from .Max70Text import Max70Text
+from .DocumentIdentification7 import DocumentIdentification7
 
 class LineItemAndPOIdentification1(base_types._BaseFieldType):
 

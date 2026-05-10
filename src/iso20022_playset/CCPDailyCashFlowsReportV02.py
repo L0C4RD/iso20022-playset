@@ -1,11 +1,11 @@
 from . import base_types
-import ConcentrationAgent1
-import SupplementaryData1
-import SettlementAgent2
+from .SupplementaryData1 import SupplementaryData1
+from .ConcentrationAgent1 import ConcentrationAgent1
+from .SettlementAgent2 import SettlementAgent2
 
 class CCPDailyCashFlowsReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmAgt", "_CncntrtnAgt", "_SplmtryData"]
+	__slots__ = ["_SttlmAgt", "_SplmtryData", "_CncntrtnAgt"]
 	@property
 	def SttlmAgt(self):
 		return self._SttlmAgt
@@ -20,19 +20,6 @@ class CCPDailyCashFlowsReportV02(base_types._BaseFieldType):
 		self._SttlmAgt = None
 
 	@property
-	def CncntrtnAgt(self):
-		return self._CncntrtnAgt
-
-	@CncntrtnAgt.setter
-	def CncntrtnAgt(self, value):
-		self._CncntrtnAgt = value if type(value) != auto else self.make_default("CncntrtnAgt")
-
-	@CncntrtnAgt.deleter
-	def CncntrtnAgt(self):
-		del self._CncntrtnAgt
-		self._CncntrtnAgt = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -45,9 +32,22 @@ class CCPDailyCashFlowsReportV02(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def CncntrtnAgt(self):
+		return self._CncntrtnAgt
+
+	@CncntrtnAgt.setter
+	def CncntrtnAgt(self, value):
+		self._CncntrtnAgt = value if type(value) != auto else self.make_default("CncntrtnAgt")
+
+	@CncntrtnAgt.deleter
+	def CncntrtnAgt(self):
+		del self._CncntrtnAgt
+		self._CncntrtnAgt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SttlmAgt', type=SettlementAgent2, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CncntrtnAgt', type=ConcentrationAgent1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CncntrtnAgt', type=ConcentrationAgent1, min=1, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,14 +1,40 @@
 from . import base_types
-import Max20KText
-import PartyType19Code
-import ISOMax3ALanguageCode
-import OutputFormat4Code
-import Max35Text
-import UserInterface8Code
+from .Max35Text import Max35Text
+from .UserInterface8Code import UserInterface8Code
+from .OutputFormat4Code import OutputFormat4Code
+from .ISOMax3ALanguageCode import ISOMax3ALanguageCode
+from .Max20KText import Max20KText
+from .PartyType19Code import PartyType19Code
 
 class AdditionalInformation30(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Frmt", "_Lang", "_Val", "_Rcpt", "_Trgt"]
+	__slots__ = ["_Trgt", "_Lang", "_Tp", "_Frmt", "_Val", "_Rcpt"]
+	@property
+	def Trgt(self):
+		return self._Trgt
+
+	@Trgt.setter
+	def Trgt(self, value):
+		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
+
+	@Trgt.deleter
+	def Trgt(self):
+		del self._Trgt
+		self._Trgt = None
+
+	@property
+	def Lang(self):
+		return self._Lang
+
+	@Lang.setter
+	def Lang(self, value):
+		self._Lang = value if type(value) != auto else self.make_default("Lang")
+
+	@Lang.deleter
+	def Lang(self):
+		del self._Lang
+		self._Lang = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -36,19 +62,6 @@ class AdditionalInformation30(base_types._BaseFieldType):
 		self._Frmt = None
 
 	@property
-	def Lang(self):
-		return self._Lang
-
-	@Lang.setter
-	def Lang(self, value):
-		self._Lang = value if type(value) != auto else self.make_default("Lang")
-
-	@Lang.deleter
-	def Lang(self):
-		del self._Lang
-		self._Lang = None
-
-	@property
 	def Val(self):
 		return self._Val
 
@@ -74,25 +87,12 @@ class AdditionalInformation30(base_types._BaseFieldType):
 		del self._Rcpt
 		self._Rcpt = None
 
-	@property
-	def Trgt(self):
-		return self._Trgt
-
-	@Trgt.setter
-	def Trgt(self, value):
-		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
-
-	@Trgt.deleter
-	def Trgt(self):
-		del self._Trgt
-		self._Trgt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Trgt', type=UserInterface8Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frmt', type=OutputFormat4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=Max20KText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcpt', type=PartyType19Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trgt', type=UserInterface8Code, min=0, max=None, mutex_group=None, array=True),
 	))
 

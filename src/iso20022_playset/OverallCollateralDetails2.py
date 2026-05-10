@@ -1,13 +1,13 @@
 from . import base_types
-import Max350Text
-import PercentageRate
-import CollateralStatus1Code
-import DateAndDateTime2Choice
-import CollateralAmount15
+from .CollateralAmount15 import CollateralAmount15
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .CollateralStatus1Code import CollateralStatus1Code
+from .PercentageRate import PercentageRate
+from .Max350Text import Max350Text
 
 class OverallCollateralDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_GblCollSts", "_ValtnAmts", "_CollAddtlDtls", "_MrgnRate", "_ValtnDt"]
+	__slots__ = ["_GblCollSts", "_MrgnRate", "_ValtnAmts", "_CollAddtlDtls", "_ValtnDt"]
 	@property
 	def GblCollSts(self):
 		return self._GblCollSts
@@ -20,6 +20,19 @@ class OverallCollateralDetails2(base_types._BaseFieldType):
 	def GblCollSts(self):
 		del self._GblCollSts
 		self._GblCollSts = None
+
+	@property
+	def MrgnRate(self):
+		return self._MrgnRate
+
+	@MrgnRate.setter
+	def MrgnRate(self, value):
+		self._MrgnRate = value if type(value) != auto else self.make_default("MrgnRate")
+
+	@MrgnRate.deleter
+	def MrgnRate(self):
+		del self._MrgnRate
+		self._MrgnRate = None
 
 	@property
 	def ValtnAmts(self):
@@ -48,19 +61,6 @@ class OverallCollateralDetails2(base_types._BaseFieldType):
 		self._CollAddtlDtls = None
 
 	@property
-	def MrgnRate(self):
-		return self._MrgnRate
-
-	@MrgnRate.setter
-	def MrgnRate(self, value):
-		self._MrgnRate = value if type(value) != auto else self.make_default("MrgnRate")
-
-	@MrgnRate.deleter
-	def MrgnRate(self):
-		del self._MrgnRate
-		self._MrgnRate = None
-
-	@property
 	def ValtnDt(self):
 		return self._ValtnDt
 
@@ -75,9 +75,9 @@ class OverallCollateralDetails2(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GblCollSts', type=CollateralStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgnRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnAmts', type=CollateralAmount15, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrgnRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

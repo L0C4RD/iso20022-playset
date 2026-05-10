@@ -1,5 +1,5 @@
 from . import base_types
-import AgentCAGlobalDistributionAuthorisationRequestV01
+from .AgentCAGlobalDistributionAuthorisationRequestV01 import AgentCAGlobalDistributionAuthorisationRequestV01
 
 class SEEV_017_001_01():
 

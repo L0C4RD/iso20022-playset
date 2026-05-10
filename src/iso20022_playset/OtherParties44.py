@@ -1,23 +1,23 @@
 from . import base_types
-import PartyIdentificationAndAccount208
-import PartyIdentificationAndAccount209
-import PartyIdentificationAndAccount181
+from .PartyIdentificationAndAccount208 import PartyIdentificationAndAccount208
+from .PartyIdentificationAndAccount209 import PartyIdentificationAndAccount209
+from .PartyIdentificationAndAccount181 import PartyIdentificationAndAccount181
 
 class OtherParties44(base_types._BaseFieldType):
 
-	__slots__ = ["_Brkr", "_StockXchg", "_Invstr", "_QlfdFrgnIntrmy", "_TradRgltr", "_TrptyAgt"]
+	__slots__ = ["_QlfdFrgnIntrmy", "_StockXchg", "_TradRgltr", "_Invstr", "_TrptyAgt", "_Brkr"]
 	@property
-	def Brkr(self):
-		return self._Brkr
+	def QlfdFrgnIntrmy(self):
+		return self._QlfdFrgnIntrmy
 
-	@Brkr.setter
-	def Brkr(self, value):
-		self._Brkr = value if type(value) != auto else self.make_default("Brkr")
+	@QlfdFrgnIntrmy.setter
+	def QlfdFrgnIntrmy(self, value):
+		self._QlfdFrgnIntrmy = value if type(value) != auto else self.make_default("QlfdFrgnIntrmy")
 
-	@Brkr.deleter
-	def Brkr(self):
-		del self._Brkr
-		self._Brkr = None
+	@QlfdFrgnIntrmy.deleter
+	def QlfdFrgnIntrmy(self):
+		del self._QlfdFrgnIntrmy
+		self._QlfdFrgnIntrmy = None
 
 	@property
 	def StockXchg(self):
@@ -33,32 +33,6 @@ class OtherParties44(base_types._BaseFieldType):
 		self._StockXchg = None
 
 	@property
-	def Invstr(self):
-		return self._Invstr
-
-	@Invstr.setter
-	def Invstr(self, value):
-		self._Invstr = value if type(value) != auto else self.make_default("Invstr")
-
-	@Invstr.deleter
-	def Invstr(self):
-		del self._Invstr
-		self._Invstr = None
-
-	@property
-	def QlfdFrgnIntrmy(self):
-		return self._QlfdFrgnIntrmy
-
-	@QlfdFrgnIntrmy.setter
-	def QlfdFrgnIntrmy(self, value):
-		self._QlfdFrgnIntrmy = value if type(value) != auto else self.make_default("QlfdFrgnIntrmy")
-
-	@QlfdFrgnIntrmy.deleter
-	def QlfdFrgnIntrmy(self):
-		del self._QlfdFrgnIntrmy
-		self._QlfdFrgnIntrmy = None
-
-	@property
 	def TradRgltr(self):
 		return self._TradRgltr
 
@@ -70,6 +44,19 @@ class OtherParties44(base_types._BaseFieldType):
 	def TradRgltr(self):
 		del self._TradRgltr
 		self._TradRgltr = None
+
+	@property
+	def Invstr(self):
+		return self._Invstr
+
+	@Invstr.setter
+	def Invstr(self, value):
+		self._Invstr = value if type(value) != auto else self.make_default("Invstr")
+
+	@Invstr.deleter
+	def Invstr(self):
+		del self._Invstr
+		self._Invstr = None
 
 	@property
 	def TrptyAgt(self):
@@ -84,12 +71,25 @@ class OtherParties44(base_types._BaseFieldType):
 		del self._TrptyAgt
 		self._TrptyAgt = None
 
+	@property
+	def Brkr(self):
+		return self._Brkr
+
+	@Brkr.setter
+	def Brkr(self, value):
+		self._Brkr = value if type(value) != auto else self.make_default("Brkr")
+
+	@Brkr.deleter
+	def Brkr(self):
+		del self._Brkr
+		self._Brkr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Brkr', type=PartyIdentificationAndAccount209, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StockXchg', type=PartyIdentificationAndAccount181, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Invstr', type=PartyIdentificationAndAccount208, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='QlfdFrgnIntrmy', type=PartyIdentificationAndAccount209, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StockXchg', type=PartyIdentificationAndAccount181, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradRgltr', type=PartyIdentificationAndAccount181, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Invstr', type=PartyIdentificationAndAccount208, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentificationAndAccount209, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Brkr', type=PartyIdentificationAndAccount209, min=0, max=1, mutex_group=None, array=False),
 	))
 

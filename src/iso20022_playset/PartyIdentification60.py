@@ -1,7 +1,7 @@
 from . import base_types
-import Max35Text
-import LEIIdentifier
-import NameAndAddress8
+from .Max35Text import Max35Text
+from .NameAndAddress8 import NameAndAddress8
+from .LEIIdentifier import LEIIdentifier
 
 class PartyIdentification60(base_types._BaseFieldType):
 

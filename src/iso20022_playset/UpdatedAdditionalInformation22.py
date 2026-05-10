@@ -1,5 +1,5 @@
 from . import base_types
-import RestrictedFINXMax350Text
+from .RestrictedFINXMax350Text import RestrictedFINXMax350Text
 
 class UpdatedAdditionalInformation22(base_types._BaseFieldType):
 

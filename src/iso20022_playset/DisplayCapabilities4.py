@@ -1,8 +1,8 @@
 from . import base_types
-import UserInterface4Code
-import Number
-import OutputFormat1Code
-import LanguageCode
+from .OutputFormat1Code import OutputFormat1Code
+from .UserInterface4Code import UserInterface4Code
+from .LanguageCode import LanguageCode
+from .Number import Number
 
 class DisplayCapabilities4(base_types._BaseFieldType):
 

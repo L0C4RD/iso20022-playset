@@ -1,7 +1,7 @@
 from . import base_types
-import Exact4AlphaNumericText
-import RestrictedFINDecimalNumber
-import Max4AlphaNumericText
+from .Max4AlphaNumericText import Max4AlphaNumericText
+from .Exact4AlphaNumericText import Exact4AlphaNumericText
+from .RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
 
 class GenericIdentification144(base_types._BaseFieldType):
 

@@ -1,23 +1,10 @@
 from . import base_types
-import Max210Text
-import ActiveCurrencyAndAmount
+from .Max210Text import Max210Text
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class Result1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_DueToPtyA", "_DueToPtyB"]
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
+	__slots__ = ["_DueToPtyA", "_DueToPtyB", "_AddtlInf"]
 	@property
 	def DueToPtyA(self):
 		return self._DueToPtyA
@@ -44,9 +31,22 @@ class Result1(base_types._BaseFieldType):
 		del self._DueToPtyB
 		self._DueToPtyB = None
 
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DueToPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DueToPtyB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

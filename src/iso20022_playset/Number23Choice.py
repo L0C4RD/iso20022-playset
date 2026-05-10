@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification18
-import Exact3NumericText
+from .GenericIdentification18 import GenericIdentification18
+from .Exact3NumericText import Exact3NumericText
 
 class Number23Choice(base_types._BaseFieldType):
 

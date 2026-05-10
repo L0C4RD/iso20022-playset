@@ -1,5 +1,5 @@
 from . import base_types
-import ReturnMemberV05
+from .ReturnMemberV05 import ReturnMemberV05
 
 class CAMT_014_001_05():
 

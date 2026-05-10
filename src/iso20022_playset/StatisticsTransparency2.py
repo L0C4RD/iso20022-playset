@@ -1,6 +1,6 @@
 from . import base_types
-import Number
-import DecimalNumber
+from .DecimalNumber import DecimalNumber
+from .Number import Number
 
 class StatisticsTransparency2(base_types._BaseFieldType):
 

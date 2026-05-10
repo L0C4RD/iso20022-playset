@@ -1,24 +1,11 @@
 from . import base_types
-import AlgorithmIdentification32
-import Max100KBinary
-import ContentType2Code
+from .ContentType2Code import ContentType2Code
+from .Max100KBinary import Max100KBinary
+from .AlgorithmIdentification32 import AlgorithmIdentification32
 
 class EncryptedContent7(base_types._BaseFieldType):
 
-	__slots__ = ["_CnttTp", "_CnttNcrptnAlgo", "_NcrptdData"]
-	@property
-	def CnttTp(self):
-		return self._CnttTp
-
-	@CnttTp.setter
-	def CnttTp(self, value):
-		self._CnttTp = value if type(value) != auto else self.make_default("CnttTp")
-
-	@CnttTp.deleter
-	def CnttTp(self):
-		del self._CnttTp
-		self._CnttTp = None
-
+	__slots__ = ["_CnttNcrptnAlgo", "_CnttTp", "_NcrptdData"]
 	@property
 	def CnttNcrptnAlgo(self):
 		return self._CnttNcrptnAlgo
@@ -31,6 +18,19 @@ class EncryptedContent7(base_types._BaseFieldType):
 	def CnttNcrptnAlgo(self):
 		del self._CnttNcrptnAlgo
 		self._CnttNcrptnAlgo = None
+
+	@property
+	def CnttTp(self):
+		return self._CnttTp
+
+	@CnttTp.setter
+	def CnttTp(self, value):
+		self._CnttTp = value if type(value) != auto else self.make_default("CnttTp")
+
+	@CnttTp.deleter
+	def CnttTp(self):
+		del self._CnttTp
+		self._CnttTp = None
 
 	@property
 	def NcrptdData(self):
@@ -46,8 +46,8 @@ class EncryptedContent7(base_types._BaseFieldType):
 		self._NcrptdData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CnttNcrptnAlgo', type=AlgorithmIdentification32, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdData', type=Max100KBinary, min=1, max=1, mutex_group=None, array=False),
 	))
 

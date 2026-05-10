@@ -1,13 +1,26 @@
 from . import base_types
-import CountryCode
-import Max140Text
-import OrganisationIdentification8
-import ContactDetails2
-import PostalAddress6
+from .CountryCode import CountryCode
+from .Max140Text import Max140Text
+from .OrganisationIdentification8 import OrganisationIdentification8
+from .PostalAddress6 import PostalAddress6
+from .ContactDetails2 import ContactDetails2
 
 class OrganisationIdentification28(base_types._BaseFieldType):
 
-	__slots__ = ["_CtryOfRes", "_PstlAdr", "_Nm", "_CtctDtls", "_Id"]
+	__slots__ = ["_PstlAdr", "_CtryOfRes", "_Id", "_Nm", "_CtctDtls"]
+	@property
+	def PstlAdr(self):
+		return self._PstlAdr
+
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
+
 	@property
 	def CtryOfRes(self):
 		return self._CtryOfRes
@@ -22,17 +35,17 @@ class OrganisationIdentification28(base_types._BaseFieldType):
 		self._CtryOfRes = None
 
 	@property
-	def PstlAdr(self):
-		return self._PstlAdr
+	def Id(self):
+		return self._Id
 
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Nm(self):
@@ -60,24 +73,11 @@ class OrganisationIdentification28(base_types._BaseFieldType):
 		del self._CtctDtls
 		self._CtctDtls = None
 
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=OrganisationIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctDtls', type=ContactDetails2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=OrganisationIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

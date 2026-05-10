@@ -1,40 +1,27 @@
 from . import base_types
-import TransactionAmendment1
-import DebitAuthorisationConfirmation3
-import PaymentTransactionStatus1
-import AdjustmentCompensation1
-import CompensationResponse1
-import BookingConfirmation5
-import Max500Text
+from .Max500Text import Max500Text
+from .PaymentTransactionStatus1 import PaymentTransactionStatus1
+from .CompensationResponse1 import CompensationResponse1
+from .TransactionAmendment1 import TransactionAmendment1
+from .DebitAuthorisationConfirmation3 import DebitAuthorisationConfirmation3
+from .AdjustmentCompensation1 import AdjustmentCompensation1
+from .BookingConfirmation5 import BookingConfirmation5
 
 class InvestigationDataRecord7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Valtn", "_TxSts", "_Compstn", "_DbtAuthstn", "_RspnNrrtv", "_TxData", "_Conf"]
+	__slots__ = ["_RspnNrrtv", "_Compstn", "_Conf", "_TxData", "_Valtn", "_DbtAuthstn", "_TxSts"]
 	@property
-	def Valtn(self):
-		return self._Valtn
+	def RspnNrrtv(self):
+		return self._RspnNrrtv
 
-	@Valtn.setter
-	def Valtn(self, value):
-		self._Valtn = value if type(value) != auto else self.make_default("Valtn")
+	@RspnNrrtv.setter
+	def RspnNrrtv(self, value):
+		self._RspnNrrtv = value if type(value) != auto else self.make_default("RspnNrrtv")
 
-	@Valtn.deleter
-	def Valtn(self):
-		del self._Valtn
-		self._Valtn = None
-
-	@property
-	def TxSts(self):
-		return self._TxSts
-
-	@TxSts.setter
-	def TxSts(self, value):
-		self._TxSts = value if type(value) != auto else self.make_default("TxSts")
-
-	@TxSts.deleter
-	def TxSts(self):
-		del self._TxSts
-		self._TxSts = None
+	@RspnNrrtv.deleter
+	def RspnNrrtv(self):
+		del self._RspnNrrtv
+		self._RspnNrrtv = None
 
 	@property
 	def Compstn(self):
@@ -50,30 +37,17 @@ class InvestigationDataRecord7Choice(base_types._BaseFieldType):
 		self._Compstn = None
 
 	@property
-	def DbtAuthstn(self):
-		return self._DbtAuthstn
+	def Conf(self):
+		return self._Conf
 
-	@DbtAuthstn.setter
-	def DbtAuthstn(self, value):
-		self._DbtAuthstn = value if type(value) != auto else self.make_default("DbtAuthstn")
+	@Conf.setter
+	def Conf(self, value):
+		self._Conf = value if type(value) != auto else self.make_default("Conf")
 
-	@DbtAuthstn.deleter
-	def DbtAuthstn(self):
-		del self._DbtAuthstn
-		self._DbtAuthstn = None
-
-	@property
-	def RspnNrrtv(self):
-		return self._RspnNrrtv
-
-	@RspnNrrtv.setter
-	def RspnNrrtv(self, value):
-		self._RspnNrrtv = value if type(value) != auto else self.make_default("RspnNrrtv")
-
-	@RspnNrrtv.deleter
-	def RspnNrrtv(self):
-		del self._RspnNrrtv
-		self._RspnNrrtv = None
+	@Conf.deleter
+	def Conf(self):
+		del self._Conf
+		self._Conf = None
 
 	@property
 	def TxData(self):
@@ -89,25 +63,51 @@ class InvestigationDataRecord7Choice(base_types._BaseFieldType):
 		self._TxData = None
 
 	@property
-	def Conf(self):
-		return self._Conf
+	def Valtn(self):
+		return self._Valtn
 
-	@Conf.setter
-	def Conf(self, value):
-		self._Conf = value if type(value) != auto else self.make_default("Conf")
+	@Valtn.setter
+	def Valtn(self, value):
+		self._Valtn = value if type(value) != auto else self.make_default("Valtn")
 
-	@Conf.deleter
-	def Conf(self):
-		del self._Conf
-		self._Conf = None
+	@Valtn.deleter
+	def Valtn(self):
+		del self._Valtn
+		self._Valtn = None
+
+	@property
+	def DbtAuthstn(self):
+		return self._DbtAuthstn
+
+	@DbtAuthstn.setter
+	def DbtAuthstn(self, value):
+		self._DbtAuthstn = value if type(value) != auto else self.make_default("DbtAuthstn")
+
+	@DbtAuthstn.deleter
+	def DbtAuthstn(self):
+		del self._DbtAuthstn
+		self._DbtAuthstn = None
+
+	@property
+	def TxSts(self):
+		return self._TxSts
+
+	@TxSts.setter
+	def TxSts(self, value):
+		self._TxSts = value if type(value) != auto else self.make_default("TxSts")
+
+	@TxSts.deleter
+	def TxSts(self):
+		del self._TxSts
+		self._TxSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Valtn', type=AdjustmentCompensation1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TxSts', type=PaymentTransactionStatus1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Compstn', type=CompensationResponse1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='DbtAuthstn', type=DebitAuthorisationConfirmation3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RspnNrrtv', type=Max500Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TxData', type=TransactionAmendment1, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='Compstn', type=CompensationResponse1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Conf', type=BookingConfirmation5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TxData', type=TransactionAmendment1, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='Valtn', type=AdjustmentCompensation1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DbtAuthstn', type=DebitAuthorisationConfirmation3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TxSts', type=PaymentTransactionStatus1, min=0, max=1, mutex_group=1, array=False),
 	))
 

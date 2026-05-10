@@ -1,25 +1,12 @@
 from . import base_types
-import CashAccount38
-import DateAndDateTime2Choice
-import BlockChainAddressWallet3
-import SecuritiesAccount19
+from .SecuritiesAccount19 import SecuritiesAccount19
+from .BlockChainAddressWallet3 import BlockChainAddressWallet3
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .CashAccount38 import CashAccount38
 
 class AccountLink8(base_types._BaseFieldType):
 
-	__slots__ = ["_VldFr", "_BlckChainAdrOrWllt", "_SctiesAcct", "_CshAcct"]
-	@property
-	def VldFr(self):
-		return self._VldFr
-
-	@VldFr.setter
-	def VldFr(self, value):
-		self._VldFr = value if type(value) != auto else self.make_default("VldFr")
-
-	@VldFr.deleter
-	def VldFr(self):
-		del self._VldFr
-		self._VldFr = None
-
+	__slots__ = ["_BlckChainAdrOrWllt", "_SctiesAcct", "_VldFr", "_CshAcct"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -47,6 +34,19 @@ class AccountLink8(base_types._BaseFieldType):
 		self._SctiesAcct = None
 
 	@property
+	def VldFr(self):
+		return self._VldFr
+
+	@VldFr.setter
+	def VldFr(self, value):
+		self._VldFr = value if type(value) != auto else self.make_default("VldFr")
+
+	@VldFr.deleter
+	def VldFr(self):
+		del self._VldFr
+		self._VldFr = None
+
+	@property
 	def CshAcct(self):
 		return self._CshAcct
 
@@ -60,9 +60,9 @@ class AccountLink8(base_types._BaseFieldType):
 		self._CshAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccount38, min=1, max=1, mutex_group=None, array=False),
 	))
 

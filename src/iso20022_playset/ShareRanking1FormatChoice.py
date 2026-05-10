@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification13
-import ShareRanking1Code
+from .ShareRanking1Code import ShareRanking1Code
+from .GenericIdentification13 import GenericIdentification13
 
 class ShareRanking1FormatChoice(base_types._BaseFieldType):
 

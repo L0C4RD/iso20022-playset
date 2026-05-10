@@ -1,5 +1,5 @@
 from . import base_types
-import ReversalOfTransferOutConfirmationV09
+from .ReversalOfTransferOutConfirmationV09 import ReversalOfTransferOutConfirmationV09
 
 class SESE_004_001_09():
 

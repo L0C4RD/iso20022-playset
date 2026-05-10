@@ -1,28 +1,15 @@
 from . import base_types
-import MessageIdentification1
-import PendingActivity2
-import Reason2
-import DocumentIdentification3
-import DocumentIdentification5
-import TransactionStatus4
-import SimpleIdentificationInformation
+from .MessageIdentification1 import MessageIdentification1
+from .SimpleIdentificationInformation import SimpleIdentificationInformation
+from .TransactionStatus4 import TransactionStatus4
+from .DocumentIdentification5 import DocumentIdentification5
+from .Reason2 import Reason2
+from .PendingActivity2 import PendingActivity2
+from .DocumentIdentification3 import DocumentIdentification3
 
 class StatusExtensionRejectionNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_UsrTxRef", "_NtfctnId", "_ReqForActn", "_NonXtndedSts", "_RjctnRsn", "_EstblishdBaselnId", "_TxId"]
-	@property
-	def UsrTxRef(self):
-		return self._UsrTxRef
-
-	@UsrTxRef.setter
-	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
-
-	@UsrTxRef.deleter
-	def UsrTxRef(self):
-		del self._UsrTxRef
-		self._UsrTxRef = None
-
+	__slots__ = ["_NtfctnId", "_ReqForActn", "_TxId", "_RjctnRsn", "_NonXtndedSts", "_EstblishdBaselnId", "_UsrTxRef"]
 	@property
 	def NtfctnId(self):
 		return self._NtfctnId
@@ -50,17 +37,17 @@ class StatusExtensionRejectionNotificationV03(base_types._BaseFieldType):
 		self._ReqForActn = None
 
 	@property
-	def NonXtndedSts(self):
-		return self._NonXtndedSts
+	def TxId(self):
+		return self._TxId
 
-	@NonXtndedSts.setter
-	def NonXtndedSts(self, value):
-		self._NonXtndedSts = value if type(value) != auto else self.make_default("NonXtndedSts")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@NonXtndedSts.deleter
-	def NonXtndedSts(self):
-		del self._NonXtndedSts
-		self._NonXtndedSts = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def RjctnRsn(self):
@@ -76,6 +63,19 @@ class StatusExtensionRejectionNotificationV03(base_types._BaseFieldType):
 		self._RjctnRsn = None
 
 	@property
+	def NonXtndedSts(self):
+		return self._NonXtndedSts
+
+	@NonXtndedSts.setter
+	def NonXtndedSts(self, value):
+		self._NonXtndedSts = value if type(value) != auto else self.make_default("NonXtndedSts")
+
+	@NonXtndedSts.deleter
+	def NonXtndedSts(self):
+		del self._NonXtndedSts
+		self._NonXtndedSts = None
+
+	@property
 	def EstblishdBaselnId(self):
 		return self._EstblishdBaselnId
 
@@ -89,25 +89,25 @@ class StatusExtensionRejectionNotificationV03(base_types._BaseFieldType):
 		self._EstblishdBaselnId = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def UsrTxRef(self):
+		return self._UsrTxRef
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@UsrTxRef.setter
+	def UsrTxRef(self, value):
+		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@UsrTxRef.deleter
+	def UsrTxRef(self):
+		del self._UsrTxRef
+		self._UsrTxRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonXtndedSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctnRsn', type=Reason2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnRsn', type=Reason2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonXtndedSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 	))
 

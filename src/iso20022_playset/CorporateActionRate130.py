@@ -1,23 +1,23 @@
 from . import base_types
-import Percentage14Rate
-import RateAndAmountFormat65Choice
-import RateAndAmountFormat64Choice
+from .Percentage14Rate import Percentage14Rate
+from .RateAndAmountFormat64Choice import RateAndAmountFormat64Choice
+from .RateAndAmountFormat65Choice import RateAndAmountFormat65Choice
 
 class CorporateActionRate130(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqdWhldgTaxRate", "_OvrsbcptRate", "_ReqdScndLvlTaxRate", "_PropsdRate"]
+	__slots__ = ["_ReqdScndLvlTaxRate", "_OvrsbcptRate", "_ReqdWhldgTaxRate", "_PropsdRate"]
 	@property
-	def ReqdWhldgTaxRate(self):
-		return self._ReqdWhldgTaxRate
+	def ReqdScndLvlTaxRate(self):
+		return self._ReqdScndLvlTaxRate
 
-	@ReqdWhldgTaxRate.setter
-	def ReqdWhldgTaxRate(self, value):
-		self._ReqdWhldgTaxRate = value if type(value) != auto else self.make_default("ReqdWhldgTaxRate")
+	@ReqdScndLvlTaxRate.setter
+	def ReqdScndLvlTaxRate(self, value):
+		self._ReqdScndLvlTaxRate = value if type(value) != auto else self.make_default("ReqdScndLvlTaxRate")
 
-	@ReqdWhldgTaxRate.deleter
-	def ReqdWhldgTaxRate(self):
-		del self._ReqdWhldgTaxRate
-		self._ReqdWhldgTaxRate = None
+	@ReqdScndLvlTaxRate.deleter
+	def ReqdScndLvlTaxRate(self):
+		del self._ReqdScndLvlTaxRate
+		self._ReqdScndLvlTaxRate = None
 
 	@property
 	def OvrsbcptRate(self):
@@ -33,17 +33,17 @@ class CorporateActionRate130(base_types._BaseFieldType):
 		self._OvrsbcptRate = None
 
 	@property
-	def ReqdScndLvlTaxRate(self):
-		return self._ReqdScndLvlTaxRate
+	def ReqdWhldgTaxRate(self):
+		return self._ReqdWhldgTaxRate
 
-	@ReqdScndLvlTaxRate.setter
-	def ReqdScndLvlTaxRate(self, value):
-		self._ReqdScndLvlTaxRate = value if type(value) != auto else self.make_default("ReqdScndLvlTaxRate")
+	@ReqdWhldgTaxRate.setter
+	def ReqdWhldgTaxRate(self, value):
+		self._ReqdWhldgTaxRate = value if type(value) != auto else self.make_default("ReqdWhldgTaxRate")
 
-	@ReqdScndLvlTaxRate.deleter
-	def ReqdScndLvlTaxRate(self):
-		del self._ReqdScndLvlTaxRate
-		self._ReqdScndLvlTaxRate = None
+	@ReqdWhldgTaxRate.deleter
+	def ReqdWhldgTaxRate(self):
+		del self._ReqdWhldgTaxRate
+		self._ReqdWhldgTaxRate = None
 
 	@property
 	def PropsdRate(self):
@@ -59,9 +59,9 @@ class CorporateActionRate130(base_types._BaseFieldType):
 		self._PropsdRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqdWhldgTaxRate', type=RateAndAmountFormat65Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OvrsbcptRate', type=RateAndAmountFormat64Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdScndLvlTaxRate', type=RateAndAmountFormat65Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OvrsbcptRate', type=RateAndAmountFormat64Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdWhldgTaxRate', type=RateAndAmountFormat65Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PropsdRate', type=Percentage14Rate, min=0, max=1, mutex_group=None, array=False),
 	))
 

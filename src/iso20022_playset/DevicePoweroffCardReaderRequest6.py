@@ -1,23 +1,10 @@
 from . import base_types
-import Number
-import ActionMessage11
+from .ActionMessage11 import ActionMessage11
+from .Number import Number
 
 class DevicePoweroffCardReaderRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_DispOutpt", "_PwrOffMaxWtgTm"]
-	@property
-	def DispOutpt(self):
-		return self._DispOutpt
-
-	@DispOutpt.setter
-	def DispOutpt(self, value):
-		self._DispOutpt = value if type(value) != auto else self.make_default("DispOutpt")
-
-	@DispOutpt.deleter
-	def DispOutpt(self):
-		del self._DispOutpt
-		self._DispOutpt = None
-
+	__slots__ = ["_PwrOffMaxWtgTm", "_DispOutpt"]
 	@property
 	def PwrOffMaxWtgTm(self):
 		return self._PwrOffMaxWtgTm
@@ -31,8 +18,21 @@ class DevicePoweroffCardReaderRequest6(base_types._BaseFieldType):
 		del self._PwrOffMaxWtgTm
 		self._PwrOffMaxWtgTm = None
 
+	@property
+	def DispOutpt(self):
+		return self._DispOutpt
+
+	@DispOutpt.setter
+	def DispOutpt(self, value):
+		self._DispOutpt = value if type(value) != auto else self.make_default("DispOutpt")
+
+	@DispOutpt.deleter
+	def DispOutpt(self):
+		del self._DispOutpt
+		self._DispOutpt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DispOutpt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PwrOffMaxWtgTm', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DispOutpt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import AttributeType2Code
-import Max140Text
+from .Max140Text import Max140Text
+from .AttributeType2Code import AttributeType2Code
 
 class RelativeDistinguishedName2(base_types._BaseFieldType):
 

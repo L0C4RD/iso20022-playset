@@ -1,26 +1,26 @@
 from . import base_types
-import Max256Text
-import SecurityIdentification39
-import BenchmarkCurveName7Choice
-import ActiveOrHistoricCurrencyCode
-import DecimalNumber
-import Price8
+from .Price8 import Price8
+from .Max256Text import Max256Text
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .SecurityIdentification39 import SecurityIdentification39
+from .DecimalNumber import DecimalNumber
+from .BenchmarkCurveName7Choice import BenchmarkCurveName7Choice
 
 class BenchmarkCurve6(base_types._BaseFieldType):
 
-	__slots__ = ["_BchmkPric", "_BchmkCrvPt", "_BchmkId", "_BchmkCrvNm", "_BchmkCrvCcy", "_Sprd"]
+	__slots__ = ["_BchmkId", "_BchmkCrvPt", "_BchmkCrvCcy", "_BchmkCrvNm", "_BchmkPric", "_Sprd"]
 	@property
-	def BchmkPric(self):
-		return self._BchmkPric
+	def BchmkId(self):
+		return self._BchmkId
 
-	@BchmkPric.setter
-	def BchmkPric(self, value):
-		self._BchmkPric = value if type(value) != auto else self.make_default("BchmkPric")
+	@BchmkId.setter
+	def BchmkId(self, value):
+		self._BchmkId = value if type(value) != auto else self.make_default("BchmkId")
 
-	@BchmkPric.deleter
-	def BchmkPric(self):
-		del self._BchmkPric
-		self._BchmkPric = None
+	@BchmkId.deleter
+	def BchmkId(self):
+		del self._BchmkId
+		self._BchmkId = None
 
 	@property
 	def BchmkCrvPt(self):
@@ -36,17 +36,17 @@ class BenchmarkCurve6(base_types._BaseFieldType):
 		self._BchmkCrvPt = None
 
 	@property
-	def BchmkId(self):
-		return self._BchmkId
+	def BchmkCrvCcy(self):
+		return self._BchmkCrvCcy
 
-	@BchmkId.setter
-	def BchmkId(self, value):
-		self._BchmkId = value if type(value) != auto else self.make_default("BchmkId")
+	@BchmkCrvCcy.setter
+	def BchmkCrvCcy(self, value):
+		self._BchmkCrvCcy = value if type(value) != auto else self.make_default("BchmkCrvCcy")
 
-	@BchmkId.deleter
-	def BchmkId(self):
-		del self._BchmkId
-		self._BchmkId = None
+	@BchmkCrvCcy.deleter
+	def BchmkCrvCcy(self):
+		del self._BchmkCrvCcy
+		self._BchmkCrvCcy = None
 
 	@property
 	def BchmkCrvNm(self):
@@ -62,17 +62,17 @@ class BenchmarkCurve6(base_types._BaseFieldType):
 		self._BchmkCrvNm = None
 
 	@property
-	def BchmkCrvCcy(self):
-		return self._BchmkCrvCcy
+	def BchmkPric(self):
+		return self._BchmkPric
 
-	@BchmkCrvCcy.setter
-	def BchmkCrvCcy(self, value):
-		self._BchmkCrvCcy = value if type(value) != auto else self.make_default("BchmkCrvCcy")
+	@BchmkPric.setter
+	def BchmkPric(self, value):
+		self._BchmkPric = value if type(value) != auto else self.make_default("BchmkPric")
 
-	@BchmkCrvCcy.deleter
-	def BchmkCrvCcy(self):
-		del self._BchmkCrvCcy
-		self._BchmkCrvCcy = None
+	@BchmkPric.deleter
+	def BchmkPric(self):
+		del self._BchmkPric
+		self._BchmkPric = None
 
 	@property
 	def Sprd(self):
@@ -88,11 +88,11 @@ class BenchmarkCurve6(base_types._BaseFieldType):
 		self._Sprd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BchmkPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BchmkCrvPt', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BchmkId', type=SecurityIdentification39, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BchmkCrvNm', type=BenchmarkCurveName7Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BchmkCrvPt', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BchmkCrvCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BchmkCrvNm', type=BenchmarkCurveName7Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BchmkPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sprd', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

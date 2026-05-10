@@ -1,5 +1,5 @@
 from . import base_types
-import StatusChangeRequestRejectionV02
+from .StatusChangeRequestRejectionV02 import StatusChangeRequestRejectionV02
 
 class TSMT_029_001_02():
 

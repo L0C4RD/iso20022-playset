@@ -1,5 +1,5 @@
 from . import base_types
-import PartyStatusAdviceV01
+from .PartyStatusAdviceV01 import PartyStatusAdviceV01
 
 class REDA_016_001_01():
 

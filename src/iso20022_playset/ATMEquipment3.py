@@ -1,10 +1,88 @@
 from . import base_types
-import ContentInformationType14
-import Max35Text
+from .Max35Text import Max35Text
+from .ContentInformationType14 import ContentInformationType14
 
 class ATMEquipment3(base_types._BaseFieldType):
 
-	__slots__ = ["_SrlNb", "_Mdl", "_FrmwrPrvdr", "_FrmwrVrsn", "_Manfctr", "_SgndSrlNb", "_FrmwrId", "_Vrsn"]
+	__slots__ = ["_Manfctr", "_FrmwrId", "_FrmwrVrsn", "_Vrsn", "_SgndSrlNb", "_FrmwrPrvdr", "_SrlNb", "_Mdl"]
+	@property
+	def Manfctr(self):
+		return self._Manfctr
+
+	@Manfctr.setter
+	def Manfctr(self, value):
+		self._Manfctr = value if type(value) != auto else self.make_default("Manfctr")
+
+	@Manfctr.deleter
+	def Manfctr(self):
+		del self._Manfctr
+		self._Manfctr = None
+
+	@property
+	def FrmwrId(self):
+		return self._FrmwrId
+
+	@FrmwrId.setter
+	def FrmwrId(self, value):
+		self._FrmwrId = value if type(value) != auto else self.make_default("FrmwrId")
+
+	@FrmwrId.deleter
+	def FrmwrId(self):
+		del self._FrmwrId
+		self._FrmwrId = None
+
+	@property
+	def FrmwrVrsn(self):
+		return self._FrmwrVrsn
+
+	@FrmwrVrsn.setter
+	def FrmwrVrsn(self, value):
+		self._FrmwrVrsn = value if type(value) != auto else self.make_default("FrmwrVrsn")
+
+	@FrmwrVrsn.deleter
+	def FrmwrVrsn(self):
+		del self._FrmwrVrsn
+		self._FrmwrVrsn = None
+
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
+	@property
+	def SgndSrlNb(self):
+		return self._SgndSrlNb
+
+	@SgndSrlNb.setter
+	def SgndSrlNb(self, value):
+		self._SgndSrlNb = value if type(value) != auto else self.make_default("SgndSrlNb")
+
+	@SgndSrlNb.deleter
+	def SgndSrlNb(self):
+		del self._SgndSrlNb
+		self._SgndSrlNb = None
+
+	@property
+	def FrmwrPrvdr(self):
+		return self._FrmwrPrvdr
+
+	@FrmwrPrvdr.setter
+	def FrmwrPrvdr(self, value):
+		self._FrmwrPrvdr = value if type(value) != auto else self.make_default("FrmwrPrvdr")
+
+	@FrmwrPrvdr.deleter
+	def FrmwrPrvdr(self):
+		del self._FrmwrPrvdr
+		self._FrmwrPrvdr = None
+
 	@property
 	def SrlNb(self):
 		return self._SrlNb
@@ -31,92 +109,14 @@ class ATMEquipment3(base_types._BaseFieldType):
 		del self._Mdl
 		self._Mdl = None
 
-	@property
-	def FrmwrPrvdr(self):
-		return self._FrmwrPrvdr
-
-	@FrmwrPrvdr.setter
-	def FrmwrPrvdr(self, value):
-		self._FrmwrPrvdr = value if type(value) != auto else self.make_default("FrmwrPrvdr")
-
-	@FrmwrPrvdr.deleter
-	def FrmwrPrvdr(self):
-		del self._FrmwrPrvdr
-		self._FrmwrPrvdr = None
-
-	@property
-	def FrmwrVrsn(self):
-		return self._FrmwrVrsn
-
-	@FrmwrVrsn.setter
-	def FrmwrVrsn(self, value):
-		self._FrmwrVrsn = value if type(value) != auto else self.make_default("FrmwrVrsn")
-
-	@FrmwrVrsn.deleter
-	def FrmwrVrsn(self):
-		del self._FrmwrVrsn
-		self._FrmwrVrsn = None
-
-	@property
-	def Manfctr(self):
-		return self._Manfctr
-
-	@Manfctr.setter
-	def Manfctr(self, value):
-		self._Manfctr = value if type(value) != auto else self.make_default("Manfctr")
-
-	@Manfctr.deleter
-	def Manfctr(self):
-		del self._Manfctr
-		self._Manfctr = None
-
-	@property
-	def SgndSrlNb(self):
-		return self._SgndSrlNb
-
-	@SgndSrlNb.setter
-	def SgndSrlNb(self, value):
-		self._SgndSrlNb = value if type(value) != auto else self.make_default("SgndSrlNb")
-
-	@SgndSrlNb.deleter
-	def SgndSrlNb(self):
-		del self._SgndSrlNb
-		self._SgndSrlNb = None
-
-	@property
-	def FrmwrId(self):
-		return self._FrmwrId
-
-	@FrmwrId.setter
-	def FrmwrId(self, value):
-		self._FrmwrId = value if type(value) != auto else self.make_default("FrmwrId")
-
-	@FrmwrId.deleter
-	def FrmwrId(self):
-		del self._FrmwrId
-		self._FrmwrId = None
-
-	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Manfctr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrmwrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrmwrVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgndSrlNb', type=ContentInformationType14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrmwrPrvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mdl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrmwrPrvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrmwrVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Manfctr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgndSrlNb', type=ContentInformationType14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrmwrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import ShortLong1Code
-import FinancialInstrumentQuantity46Choice
+from .FinancialInstrumentQuantity46Choice import FinancialInstrumentQuantity46Choice
+from .ShortLong1Code import ShortLong1Code
 
 class SignedQuantityFormat15(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import Frequency10Code
+from .Max35Text import Max35Text
+from .Frequency10Code import Frequency10Code
 
 class Frequency37Choice(base_types._BaseFieldType):
 

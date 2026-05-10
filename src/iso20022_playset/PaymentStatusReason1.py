@@ -1,6 +1,6 @@
 from . import base_types
-import StatusReason6Choice
-import Max105Text
+from .StatusReason6Choice import StatusReason6Choice
+from .Max105Text import Max105Text
 
 class PaymentStatusReason1(base_types._BaseFieldType):
 

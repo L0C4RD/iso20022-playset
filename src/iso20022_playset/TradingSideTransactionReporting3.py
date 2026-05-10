@@ -1,7 +1,7 @@
 from . import base_types
-import UniqueTransactionIdentifier3
-import Max35Text
-import PartyIdentification242Choice
+from .UniqueTransactionIdentifier3 import UniqueTransactionIdentifier3
+from .Max35Text import Max35Text
+from .PartyIdentification242Choice import PartyIdentification242Choice
 
 class TradingSideTransactionReporting3(base_types._BaseFieldType):
 

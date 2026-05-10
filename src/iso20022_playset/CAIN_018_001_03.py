@@ -1,5 +1,5 @@
 from . import base_types
-import VerificationInitiationV03
+from .VerificationInitiationV03 import VerificationInitiationV03
 
 class CAIN_018_001_03():
 

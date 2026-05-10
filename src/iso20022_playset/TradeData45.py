@@ -1,14 +1,14 @@
 from . import base_types
-import StatusAndSubStatus2
-import ISODateTime
-import Max35Text
-import StatusSubType2Code
-import Status28Choice
-import Exact4AlphaNumericText
+from .Status28Choice import Status28Choice
+from .Max35Text import Max35Text
+from .StatusAndSubStatus2 import StatusAndSubStatus2
+from .StatusSubType2Code import StatusSubType2Code
+from .Exact4AlphaNumericText import Exact4AlphaNumericText
+from .ISODateTime import ISODateTime
 
 class TradeData45(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_CurStsSubTp", "_PrvsStsSubTp", "_CurSts", "_StsOrgtr", "_CurStsDtTm", "_PrvsSts", "_SttlmSsnIdr", "_PdctTp"]
+	__slots__ = ["_MsgId", "_CurStsSubTp", "_PrvsStsSubTp", "_CurStsDtTm", "_StsOrgtr", "_SttlmSsnIdr", "_PrvsSts", "_CurSts", "_PdctTp"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -49,17 +49,17 @@ class TradeData45(base_types._BaseFieldType):
 		self._PrvsStsSubTp = None
 
 	@property
-	def CurSts(self):
-		return self._CurSts
+	def CurStsDtTm(self):
+		return self._CurStsDtTm
 
-	@CurSts.setter
-	def CurSts(self, value):
-		self._CurSts = value if type(value) != auto else self.make_default("CurSts")
+	@CurStsDtTm.setter
+	def CurStsDtTm(self, value):
+		self._CurStsDtTm = value if type(value) != auto else self.make_default("CurStsDtTm")
 
-	@CurSts.deleter
-	def CurSts(self):
-		del self._CurSts
-		self._CurSts = None
+	@CurStsDtTm.deleter
+	def CurStsDtTm(self):
+		del self._CurStsDtTm
+		self._CurStsDtTm = None
 
 	@property
 	def StsOrgtr(self):
@@ -75,17 +75,17 @@ class TradeData45(base_types._BaseFieldType):
 		self._StsOrgtr = None
 
 	@property
-	def CurStsDtTm(self):
-		return self._CurStsDtTm
+	def SttlmSsnIdr(self):
+		return self._SttlmSsnIdr
 
-	@CurStsDtTm.setter
-	def CurStsDtTm(self, value):
-		self._CurStsDtTm = value if type(value) != auto else self.make_default("CurStsDtTm")
+	@SttlmSsnIdr.setter
+	def SttlmSsnIdr(self, value):
+		self._SttlmSsnIdr = value if type(value) != auto else self.make_default("SttlmSsnIdr")
 
-	@CurStsDtTm.deleter
-	def CurStsDtTm(self):
-		del self._CurStsDtTm
-		self._CurStsDtTm = None
+	@SttlmSsnIdr.deleter
+	def SttlmSsnIdr(self):
+		del self._SttlmSsnIdr
+		self._SttlmSsnIdr = None
 
 	@property
 	def PrvsSts(self):
@@ -101,17 +101,17 @@ class TradeData45(base_types._BaseFieldType):
 		self._PrvsSts = None
 
 	@property
-	def SttlmSsnIdr(self):
-		return self._SttlmSsnIdr
+	def CurSts(self):
+		return self._CurSts
 
-	@SttlmSsnIdr.setter
-	def SttlmSsnIdr(self, value):
-		self._SttlmSsnIdr = value if type(value) != auto else self.make_default("SttlmSsnIdr")
+	@CurSts.setter
+	def CurSts(self, value):
+		self._CurSts = value if type(value) != auto else self.make_default("CurSts")
 
-	@SttlmSsnIdr.deleter
-	def SttlmSsnIdr(self):
-		del self._SttlmSsnIdr
-		self._SttlmSsnIdr = None
+	@CurSts.deleter
+	def CurSts(self):
+		del self._CurSts
+		self._CurSts = None
 
 	@property
 	def PdctTp(self):
@@ -130,11 +130,11 @@ class TradeData45(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurStsSubTp', type=StatusSubType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsStsSubTp', type=StatusSubType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CurSts', type=StatusAndSubStatus2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsOrgtr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurStsDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsSts', type=Status28Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsOrgtr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsSts', type=Status28Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurSts', type=StatusAndSubStatus2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

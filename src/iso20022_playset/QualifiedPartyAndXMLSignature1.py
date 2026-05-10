@@ -1,6 +1,6 @@
 from . import base_types
-import xs:IDREF
-import SignatureEnvelope
+from .SignatureEnvelope import SignatureEnvelope
+from .xs:IDREF import xs:IDREF
 
 class QualifiedPartyAndXMLSignature1(base_types._BaseFieldType):
 

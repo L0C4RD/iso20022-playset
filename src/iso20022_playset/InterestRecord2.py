@@ -1,15 +1,28 @@
 from . import base_types
-import TaxCharges2
-import CreditDebitCode
-import DateTimePeriod1
-import ActiveOrHistoricCurrencyAndAmount
-import InterestType1Choice
-import Max35Text
-import Rate4
+from .Max35Text import Max35Text
+from .Rate4 import Rate4
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .CreditDebitCode import CreditDebitCode
+from .DateTimePeriod1 import DateTimePeriod1
+from .TaxCharges2 import TaxCharges2
+from .InterestType1Choice import InterestType1Choice
 
 class InterestRecord2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Rate", "_Rsn", "_Amt", "_CdtDbtInd", "_Tax", "_FrToDt"]
+	__slots__ = ["_Amt", "_Tp", "_Rate", "_CdtDbtInd", "_Rsn", "_Tax", "_FrToDt"]
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -37,32 +50,6 @@ class InterestRecord2(base_types._BaseFieldType):
 		self._Rate = None
 
 	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
 
@@ -74,6 +61,19 @@ class InterestRecord2(base_types._BaseFieldType):
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
 		self._CdtDbtInd = None
+
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
 	def Tax(self):
@@ -102,11 +102,11 @@ class InterestRecord2(base_types._BaseFieldType):
 		self._FrToDt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=InterestType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=Rate4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tax', type=TaxCharges2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrToDt', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
 	))

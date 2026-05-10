@@ -1,41 +1,28 @@
 from . import base_types
-import TradePartyIdentification9
-import MessageIdentification1
-import Trade8
-import SupplementaryData1
-import TradePartyIdentification10
-import Header23
-import AdditionalReferences2
-import Confirmation1
+from .AdditionalReferences2 import AdditionalReferences2
+from .MessageIdentification1 import MessageIdentification1
+from .TradePartyIdentification10 import TradePartyIdentification10
+from .Trade8 import Trade8
+from .SupplementaryData1 import SupplementaryData1
+from .TradePartyIdentification9 import TradePartyIdentification9
+from .Header23 import Header23
+from .Confirmation1 import Confirmation1
 
 class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_TradDtl", "_TradgSdId", "_ConfInf", "_SplmtryData", "_CtrPtySdId", "_Ref", "_AdvcId"]
+	__slots__ = ["_ConfInf", "_TradgSdId", "_TradDtl", "_CtrPtySdId", "_Ref", "_AdvcId", "_SplmtryData", "_Hdr"]
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def ConfInf(self):
+		return self._ConfInf
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+	@ConfInf.setter
+	def ConfInf(self, value):
+		self._ConfInf = value if type(value) != auto else self.make_default("ConfInf")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
-	@property
-	def TradDtl(self):
-		return self._TradDtl
-
-	@TradDtl.setter
-	def TradDtl(self, value):
-		self._TradDtl = value if type(value) != auto else self.make_default("TradDtl")
-
-	@TradDtl.deleter
-	def TradDtl(self):
-		del self._TradDtl
-		self._TradDtl = None
+	@ConfInf.deleter
+	def ConfInf(self):
+		del self._ConfInf
+		self._ConfInf = None
 
 	@property
 	def TradgSdId(self):
@@ -51,30 +38,17 @@ class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType)
 		self._TradgSdId = None
 
 	@property
-	def ConfInf(self):
-		return self._ConfInf
+	def TradDtl(self):
+		return self._TradDtl
 
-	@ConfInf.setter
-	def ConfInf(self, value):
-		self._ConfInf = value if type(value) != auto else self.make_default("ConfInf")
+	@TradDtl.setter
+	def TradDtl(self, value):
+		self._TradDtl = value if type(value) != auto else self.make_default("TradDtl")
 
-	@ConfInf.deleter
-	def ConfInf(self):
-		del self._ConfInf
-		self._ConfInf = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@TradDtl.deleter
+	def TradDtl(self):
+		del self._TradDtl
+		self._TradDtl = None
 
 	@property
 	def CtrPtySdId(self):
@@ -115,14 +89,40 @@ class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType)
 		del self._AdvcId
 		self._AdvcId = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hdr', type=Header23, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDtl', type=Trade8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgSdId', type=TradePartyIdentification9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfInf', type=Confirmation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TradgSdId', type=TradePartyIdentification9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDtl', type=Trade8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtySdId', type=TradePartyIdentification10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=AdditionalReferences2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AdvcId', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Hdr', type=Header23, min=1, max=1, mutex_group=None, array=False),
 	))
 

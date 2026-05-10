@@ -1,23 +1,23 @@
 from . import base_types
-import ActiveCurrencyAndAmount
-import Max70Text
-import FinancingResult1
+from .Max70Text import Max70Text
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .FinancingResult1 import FinancingResult1
 
 class InstalmentFinancingInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_InstlmtFincgRslt", "_InstlmtTtlAmt", "_InstlmtSeqId"]
+	__slots__ = ["_InstlmtSeqId", "_InstlmtTtlAmt", "_InstlmtFincgRslt"]
 	@property
-	def InstlmtFincgRslt(self):
-		return self._InstlmtFincgRslt
+	def InstlmtSeqId(self):
+		return self._InstlmtSeqId
 
-	@InstlmtFincgRslt.setter
-	def InstlmtFincgRslt(self, value):
-		self._InstlmtFincgRslt = value if type(value) != auto else self.make_default("InstlmtFincgRslt")
+	@InstlmtSeqId.setter
+	def InstlmtSeqId(self, value):
+		self._InstlmtSeqId = value if type(value) != auto else self.make_default("InstlmtSeqId")
 
-	@InstlmtFincgRslt.deleter
-	def InstlmtFincgRslt(self):
-		del self._InstlmtFincgRslt
-		self._InstlmtFincgRslt = None
+	@InstlmtSeqId.deleter
+	def InstlmtSeqId(self):
+		del self._InstlmtSeqId
+		self._InstlmtSeqId = None
 
 	@property
 	def InstlmtTtlAmt(self):
@@ -33,21 +33,21 @@ class InstalmentFinancingInformation1(base_types._BaseFieldType):
 		self._InstlmtTtlAmt = None
 
 	@property
-	def InstlmtSeqId(self):
-		return self._InstlmtSeqId
+	def InstlmtFincgRslt(self):
+		return self._InstlmtFincgRslt
 
-	@InstlmtSeqId.setter
-	def InstlmtSeqId(self, value):
-		self._InstlmtSeqId = value if type(value) != auto else self.make_default("InstlmtSeqId")
+	@InstlmtFincgRslt.setter
+	def InstlmtFincgRslt(self, value):
+		self._InstlmtFincgRslt = value if type(value) != auto else self.make_default("InstlmtFincgRslt")
 
-	@InstlmtSeqId.deleter
-	def InstlmtSeqId(self):
-		del self._InstlmtSeqId
-		self._InstlmtSeqId = None
+	@InstlmtFincgRslt.deleter
+	def InstlmtFincgRslt(self):
+		del self._InstlmtFincgRslt
+		self._InstlmtFincgRslt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstlmtFincgRslt', type=FinancingResult1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstlmtTtlAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstlmtSeqId', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstlmtTtlAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstlmtFincgRslt', type=FinancingResult1, min=1, max=1, mutex_group=None, array=False),
 	))
 

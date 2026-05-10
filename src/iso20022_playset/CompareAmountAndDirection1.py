@@ -1,5 +1,5 @@
 from . import base_types
-import AmountAndDirection53
+from .AmountAndDirection53 import AmountAndDirection53
 
 class CompareAmountAndDirection1(base_types._BaseFieldType):
 

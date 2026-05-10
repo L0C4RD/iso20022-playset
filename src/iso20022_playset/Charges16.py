@@ -1,7 +1,7 @@
 from . import base_types
-import ChargeType3Choice
-import BranchAndFinancialInstitutionIdentification8
-import ActiveOrHistoricCurrencyAndAmount
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .ChargeType3Choice import ChargeType3Choice
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class Charges16(base_types._BaseFieldType):
 

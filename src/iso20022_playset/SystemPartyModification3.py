@@ -1,6 +1,6 @@
 from . import base_types
-import SystemPartyModification3Choice
-import DataModification1Code
+from .SystemPartyModification3Choice import SystemPartyModification3Choice
+from .DataModification1Code import DataModification1Code
 
 class SystemPartyModification3(base_types._BaseFieldType):
 

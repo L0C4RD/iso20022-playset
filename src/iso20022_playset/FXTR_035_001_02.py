@@ -1,5 +1,5 @@
 from . import base_types
-import ForeignExchangeTradeConfirmationRequestAmendmentRequestV02
+from .ForeignExchangeTradeConfirmationRequestAmendmentRequestV02 import ForeignExchangeTradeConfirmationRequestAmendmentRequestV02
 
 class FXTR_035_001_02():
 

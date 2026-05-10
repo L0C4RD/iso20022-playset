@@ -1,7 +1,7 @@
 from . import base_types
-import BranchAndFinancialInstitutionIdentification8
-import Max35Text
-import ISODateTime
+from .Max35Text import Max35Text
+from .ISODateTime import ISODateTime
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class GroupHeader109(base_types._BaseFieldType):
 

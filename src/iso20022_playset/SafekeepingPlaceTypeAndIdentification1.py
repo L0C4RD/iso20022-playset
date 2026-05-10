@@ -1,6 +1,6 @@
 from . import base_types
-import SafekeepingPlace1Code
-import AnyBICDec2014Identifier
+from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from .SafekeepingPlace1Code import SafekeepingPlace1Code
 
 class SafekeepingPlaceTypeAndIdentification1(base_types._BaseFieldType):
 

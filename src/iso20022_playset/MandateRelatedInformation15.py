@@ -1,42 +1,16 @@
 from . import base_types
-import ISODate
-import Frequency36Choice
-import Max35Text
-import AmendmentInformationDetails14
-import Max1025Text
-import TrueFalseIndicator
-import MandateSetupReason1Choice
-import Exact2NumericText
+from .AmendmentInformationDetails14 import AmendmentInformationDetails14
+from .Max35Text import Max35Text
+from .Frequency36Choice import Frequency36Choice
+from .ISODate import ISODate
+from .Exact2NumericText import Exact2NumericText
+from .Max1025Text import Max1025Text
+from .MandateSetupReason1Choice import MandateSetupReason1Choice
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class MandateRelatedInformation15(base_types._BaseFieldType):
 
-	__slots__ = ["_MndtId", "_FrstColltnDt", "_ElctrncSgntr", "_TrckgDays", "_DtOfSgntr", "_Frqcy", "_AmdmntInfDtls", "_Rsn", "_AmdmntInd", "_FnlColltnDt"]
-	@property
-	def MndtId(self):
-		return self._MndtId
-
-	@MndtId.setter
-	def MndtId(self, value):
-		self._MndtId = value if type(value) != auto else self.make_default("MndtId")
-
-	@MndtId.deleter
-	def MndtId(self):
-		del self._MndtId
-		self._MndtId = None
-
-	@property
-	def FrstColltnDt(self):
-		return self._FrstColltnDt
-
-	@FrstColltnDt.setter
-	def FrstColltnDt(self, value):
-		self._FrstColltnDt = value if type(value) != auto else self.make_default("FrstColltnDt")
-
-	@FrstColltnDt.deleter
-	def FrstColltnDt(self):
-		del self._FrstColltnDt
-		self._FrstColltnDt = None
-
+	__slots__ = ["_ElctrncSgntr", "_AmdmntInfDtls", "_Rsn", "_TrckgDays", "_FnlColltnDt", "_DtOfSgntr", "_AmdmntInd", "_FrstColltnDt", "_MndtId", "_Frqcy"]
 	@property
 	def ElctrncSgntr(self):
 		return self._ElctrncSgntr
@@ -49,45 +23,6 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 	def ElctrncSgntr(self):
 		del self._ElctrncSgntr
 		self._ElctrncSgntr = None
-
-	@property
-	def TrckgDays(self):
-		return self._TrckgDays
-
-	@TrckgDays.setter
-	def TrckgDays(self, value):
-		self._TrckgDays = value if type(value) != auto else self.make_default("TrckgDays")
-
-	@TrckgDays.deleter
-	def TrckgDays(self):
-		del self._TrckgDays
-		self._TrckgDays = None
-
-	@property
-	def DtOfSgntr(self):
-		return self._DtOfSgntr
-
-	@DtOfSgntr.setter
-	def DtOfSgntr(self, value):
-		self._DtOfSgntr = value if type(value) != auto else self.make_default("DtOfSgntr")
-
-	@DtOfSgntr.deleter
-	def DtOfSgntr(self):
-		del self._DtOfSgntr
-		self._DtOfSgntr = None
-
-	@property
-	def Frqcy(self):
-		return self._Frqcy
-
-	@Frqcy.setter
-	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != auto else self.make_default("Frqcy")
-
-	@Frqcy.deleter
-	def Frqcy(self):
-		del self._Frqcy
-		self._Frqcy = None
 
 	@property
 	def AmdmntInfDtls(self):
@@ -116,17 +51,17 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
-	def AmdmntInd(self):
-		return self._AmdmntInd
+	def TrckgDays(self):
+		return self._TrckgDays
 
-	@AmdmntInd.setter
-	def AmdmntInd(self, value):
-		self._AmdmntInd = value if type(value) != auto else self.make_default("AmdmntInd")
+	@TrckgDays.setter
+	def TrckgDays(self, value):
+		self._TrckgDays = value if type(value) != auto else self.make_default("TrckgDays")
 
-	@AmdmntInd.deleter
-	def AmdmntInd(self):
-		del self._AmdmntInd
-		self._AmdmntInd = None
+	@TrckgDays.deleter
+	def TrckgDays(self):
+		del self._TrckgDays
+		self._TrckgDays = None
 
 	@property
 	def FnlColltnDt(self):
@@ -141,16 +76,81 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 		del self._FnlColltnDt
 		self._FnlColltnDt = None
 
+	@property
+	def DtOfSgntr(self):
+		return self._DtOfSgntr
+
+	@DtOfSgntr.setter
+	def DtOfSgntr(self, value):
+		self._DtOfSgntr = value if type(value) != auto else self.make_default("DtOfSgntr")
+
+	@DtOfSgntr.deleter
+	def DtOfSgntr(self):
+		del self._DtOfSgntr
+		self._DtOfSgntr = None
+
+	@property
+	def AmdmntInd(self):
+		return self._AmdmntInd
+
+	@AmdmntInd.setter
+	def AmdmntInd(self, value):
+		self._AmdmntInd = value if type(value) != auto else self.make_default("AmdmntInd")
+
+	@AmdmntInd.deleter
+	def AmdmntInd(self):
+		del self._AmdmntInd
+		self._AmdmntInd = None
+
+	@property
+	def FrstColltnDt(self):
+		return self._FrstColltnDt
+
+	@FrstColltnDt.setter
+	def FrstColltnDt(self, value):
+		self._FrstColltnDt = value if type(value) != auto else self.make_default("FrstColltnDt")
+
+	@FrstColltnDt.deleter
+	def FrstColltnDt(self):
+		del self._FrstColltnDt
+		self._FrstColltnDt = None
+
+	@property
+	def MndtId(self):
+		return self._MndtId
+
+	@MndtId.setter
+	def MndtId(self, value):
+		self._MndtId = value if type(value) != auto else self.make_default("MndtId")
+
+	@MndtId.deleter
+	def MndtId(self):
+		del self._MndtId
+		self._MndtId = None
+
+	@property
+	def Frqcy(self):
+		return self._Frqcy
+
+	@Frqcy.setter
+	def Frqcy(self, value):
+		self._Frqcy = value if type(value) != auto else self.make_default("Frqcy")
+
+	@Frqcy.deleter
+	def Frqcy(self):
+		del self._Frqcy
+		self._Frqcy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MndtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrstColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElctrncSgntr', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrckgDays', type=Exact2NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtOfSgntr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frqcy', type=Frequency36Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmdmntInfDtls', type=AmendmentInformationDetails14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=MandateSetupReason1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmdmntInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrckgDays', type=Exact2NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FnlColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtOfSgntr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmdmntInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MndtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frqcy', type=Frequency36Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

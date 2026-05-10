@@ -1,11 +1,24 @@
 from . import base_types
-import MessageHeader1
-import SupplementaryData1
-import SystemPartyIdentification8
+from .SystemPartyIdentification8 import SystemPartyIdentification8
+from .SupplementaryData1 import SupplementaryData1
+from .MessageHeader1 import MessageHeader1
 
 class PartyDeletionRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_SysPtyId", "_MsgHdr"]
+	__slots__ = ["_MsgHdr", "_SplmtryData", "_SysPtyId"]
+	@property
+	def MsgHdr(self):
+		return self._MsgHdr
+
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -32,22 +45,9 @@ class PartyDeletionRequestV01(base_types._BaseFieldType):
 		del self._SysPtyId
 		self._SysPtyId = None
 
-	@property
-	def MsgHdr(self):
-		return self._MsgHdr
-
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
-
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SysPtyId', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 	))
 

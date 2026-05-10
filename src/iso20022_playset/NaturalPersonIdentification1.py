@@ -1,6 +1,6 @@
 from . import base_types
-import IdentificationType45Choice
-import Max35Text
+from .IdentificationType45Choice import IdentificationType45Choice
+from .Max35Text import Max35Text
 
 class NaturalPersonIdentification1(base_types._BaseFieldType):
 

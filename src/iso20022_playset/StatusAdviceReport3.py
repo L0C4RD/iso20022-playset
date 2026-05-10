@@ -1,12 +1,12 @@
 from . import base_types
-import ISODate
-import ReportingMessageStatus1Code
-import OriginalReportStatistics3
-import GenericValidationRuleIdentification1
+from .GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
+from .OriginalReportStatistics3 import OriginalReportStatistics3
+from .ReportingMessageStatus1Code import ReportingMessageStatus1Code
+from .ISODate import ISODate
 
 class StatusAdviceReport3(base_types._BaseFieldType):
 
-	__slots__ = ["_Sttstcs", "_VldtnRule", "_MsgDt", "_Sts"]
+	__slots__ = ["_Sttstcs", "_MsgDt", "_VldtnRule", "_Sts"]
 	@property
 	def Sttstcs(self):
 		return self._Sttstcs
@@ -21,19 +21,6 @@ class StatusAdviceReport3(base_types._BaseFieldType):
 		self._Sttstcs = None
 
 	@property
-	def VldtnRule(self):
-		return self._VldtnRule
-
-	@VldtnRule.setter
-	def VldtnRule(self, value):
-		self._VldtnRule = value if type(value) != auto else self.make_default("VldtnRule")
-
-	@VldtnRule.deleter
-	def VldtnRule(self):
-		del self._VldtnRule
-		self._VldtnRule = None
-
-	@property
 	def MsgDt(self):
 		return self._MsgDt
 
@@ -45,6 +32,19 @@ class StatusAdviceReport3(base_types._BaseFieldType):
 	def MsgDt(self):
 		del self._MsgDt
 		self._MsgDt = None
+
+	@property
+	def VldtnRule(self):
+		return self._VldtnRule
+
+	@VldtnRule.setter
+	def VldtnRule(self, value):
+		self._VldtnRule = value if type(value) != auto else self.make_default("VldtnRule")
+
+	@VldtnRule.deleter
+	def VldtnRule(self):
+		del self._VldtnRule
+		self._VldtnRule = None
 
 	@property
 	def Sts(self):
@@ -61,8 +61,8 @@ class StatusAdviceReport3(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sttstcs', type=OriginalReportStatistics3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=ReportingMessageStatus1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,25 @@
 from . import base_types
-import Header32
-import ATMExceptionAdvice2
-import ContentInformationType10
-import ContentInformationType15
+from .ATMExceptionAdvice2 import ATMExceptionAdvice2
+from .ContentInformationType10 import ContentInformationType10
+from .ContentInformationType15 import ContentInformationType15
+from .Header32 import Header32
 
 class ATMExceptionAdviceV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMXcptnAdvc", "_Hdr", "_PrtctdATMXcptnAdvc", "_SctyTrlr"]
+	__slots__ = ["_PrtctdATMXcptnAdvc", "_ATMXcptnAdvc", "_Hdr", "_SctyTrlr"]
+	@property
+	def PrtctdATMXcptnAdvc(self):
+		return self._PrtctdATMXcptnAdvc
+
+	@PrtctdATMXcptnAdvc.setter
+	def PrtctdATMXcptnAdvc(self, value):
+		self._PrtctdATMXcptnAdvc = value if type(value) != auto else self.make_default("PrtctdATMXcptnAdvc")
+
+	@PrtctdATMXcptnAdvc.deleter
+	def PrtctdATMXcptnAdvc(self):
+		del self._PrtctdATMXcptnAdvc
+		self._PrtctdATMXcptnAdvc = None
+
 	@property
 	def ATMXcptnAdvc(self):
 		return self._ATMXcptnAdvc
@@ -34,19 +47,6 @@ class ATMExceptionAdviceV02(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def PrtctdATMXcptnAdvc(self):
-		return self._PrtctdATMXcptnAdvc
-
-	@PrtctdATMXcptnAdvc.setter
-	def PrtctdATMXcptnAdvc(self, value):
-		self._PrtctdATMXcptnAdvc = value if type(value) != auto else self.make_default("PrtctdATMXcptnAdvc")
-
-	@PrtctdATMXcptnAdvc.deleter
-	def PrtctdATMXcptnAdvc(self):
-		del self._PrtctdATMXcptnAdvc
-		self._PrtctdATMXcptnAdvc = None
-
-	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
 
@@ -60,9 +60,9 @@ class ATMExceptionAdviceV02(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PrtctdATMXcptnAdvc', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMXcptnAdvc', type=ATMExceptionAdvice2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdATMXcptnAdvc', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

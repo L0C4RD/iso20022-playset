@@ -1,5 +1,5 @@
 from . import base_types
-import References47Choice
+from .References47Choice import References47Choice
 
 class Linkages40(base_types._BaseFieldType):
 

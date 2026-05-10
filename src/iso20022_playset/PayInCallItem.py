@@ -1,5 +1,5 @@
 from . import base_types
-import ActiveOrHistoricCurrencyAndAmount
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class PayInCallItem(base_types._BaseFieldType):
 

@@ -1,8 +1,8 @@
 from . import base_types
-import Max30DecimalNumber
-import DecimalNumber
-import Quantity1Code
-import ImpliedCurrencyAndAmount
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .Max30DecimalNumber import Max30DecimalNumber
+from .DecimalNumber import DecimalNumber
+from .Quantity1Code import Quantity1Code
 
 class FinancialInstrumentQuantity46Choice(base_types._BaseFieldType):
 

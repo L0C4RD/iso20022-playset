@@ -1,24 +1,11 @@
 from . import base_types
-import EncryptedContent3
-import Number
-import Recipient4Choice
+from .Recipient4Choice import Recipient4Choice
+from .EncryptedContent3 import EncryptedContent3
+from .Number import Number
 
 class EnvelopedData4(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_NcrptdCntt", "_Rcpt"]
-	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
+	__slots__ = ["_NcrptdCntt", "_Vrsn", "_Rcpt"]
 	@property
 	def NcrptdCntt(self):
 		return self._NcrptdCntt
@@ -31,6 +18,19 @@ class EnvelopedData4(base_types._BaseFieldType):
 	def NcrptdCntt(self):
 		del self._NcrptdCntt
 		self._NcrptdCntt = None
+
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	@property
 	def Rcpt(self):
@@ -46,8 +46,8 @@ class EnvelopedData4(base_types._BaseFieldType):
 		self._Rcpt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdCntt', type=EncryptedContent3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcpt', type=Recipient4Choice, min=1, max=None, mutex_group=None, array=True),
 	))
 

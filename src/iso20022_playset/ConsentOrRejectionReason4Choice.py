@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import CounterpartyResponseStatusReason1Code
+from .GenericIdentification30 import GenericIdentification30
+from .CounterpartyResponseStatusReason1Code import CounterpartyResponseStatusReason1Code
 
 class ConsentOrRejectionReason4Choice(base_types._BaseFieldType):
 

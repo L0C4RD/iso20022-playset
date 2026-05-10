@@ -1,12 +1,12 @@
 from . import base_types
-import IdentificationAssignment4
-import IdentificationModification5
-import SupplementaryData1
-import OriginalTransactionReference43
+from .IdentificationAssignment4 import IdentificationAssignment4
+from .SupplementaryData1 import SupplementaryData1
+from .OriginalTransactionReference43 import OriginalTransactionReference43
+from .IdentificationModification5 import IdentificationModification5
 
 class IdentificationModificationAdviceV04(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_OrgnlTxRef", "_Assgnmt", "_Mod"]
+	__slots__ = ["_SplmtryData", "_Mod", "_Assgnmt", "_OrgnlTxRef"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -21,17 +21,17 @@ class IdentificationModificationAdviceV04(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def OrgnlTxRef(self):
-		return self._OrgnlTxRef
+	def Mod(self):
+		return self._Mod
 
-	@OrgnlTxRef.setter
-	def OrgnlTxRef(self, value):
-		self._OrgnlTxRef = value if type(value) != auto else self.make_default("OrgnlTxRef")
+	@Mod.setter
+	def Mod(self, value):
+		self._Mod = value if type(value) != auto else self.make_default("Mod")
 
-	@OrgnlTxRef.deleter
-	def OrgnlTxRef(self):
-		del self._OrgnlTxRef
-		self._OrgnlTxRef = None
+	@Mod.deleter
+	def Mod(self):
+		del self._Mod
+		self._Mod = None
 
 	@property
 	def Assgnmt(self):
@@ -47,22 +47,22 @@ class IdentificationModificationAdviceV04(base_types._BaseFieldType):
 		self._Assgnmt = None
 
 	@property
-	def Mod(self):
-		return self._Mod
+	def OrgnlTxRef(self):
+		return self._OrgnlTxRef
 
-	@Mod.setter
-	def Mod(self, value):
-		self._Mod = value if type(value) != auto else self.make_default("Mod")
+	@OrgnlTxRef.setter
+	def OrgnlTxRef(self, value):
+		self._OrgnlTxRef = value if type(value) != auto else self.make_default("OrgnlTxRef")
 
-	@Mod.deleter
-	def Mod(self):
-		del self._Mod
-		self._Mod = None
+	@OrgnlTxRef.deleter
+	def OrgnlTxRef(self):
+		del self._OrgnlTxRef
+		self._OrgnlTxRef = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlTxRef', type=OriginalTransactionReference43, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnmt', type=IdentificationAssignment4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mod', type=IdentificationModification5, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Assgnmt', type=IdentificationAssignment4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlTxRef', type=OriginalTransactionReference43, min=0, max=1, mutex_group=None, array=False),
 	))
 

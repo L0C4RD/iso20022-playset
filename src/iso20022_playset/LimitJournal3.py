@@ -1,11 +1,24 @@
 from . import base_types
-import ISODate
-import LimitJournalEntry3
-import LimitAmount1
+from .LimitAmount1 import LimitAmount1
+from .ISODate import ISODate
+from .LimitJournalEntry3 import LimitJournalEntry3
 
 class LimitJournal3(base_types._BaseFieldType):
 
-	__slots__ = ["_Lmt", "_JrnlActvtyDt", "_JrnlNtry"]
+	__slots__ = ["_JrnlNtry", "_Lmt", "_JrnlActvtyDt"]
+	@property
+	def JrnlNtry(self):
+		return self._JrnlNtry
+
+	@JrnlNtry.setter
+	def JrnlNtry(self, value):
+		self._JrnlNtry = value if type(value) != auto else self.make_default("JrnlNtry")
+
+	@JrnlNtry.deleter
+	def JrnlNtry(self):
+		del self._JrnlNtry
+		self._JrnlNtry = None
+
 	@property
 	def Lmt(self):
 		return self._Lmt
@@ -32,22 +45,9 @@ class LimitJournal3(base_types._BaseFieldType):
 		del self._JrnlActvtyDt
 		self._JrnlActvtyDt = None
 
-	@property
-	def JrnlNtry(self):
-		return self._JrnlNtry
-
-	@JrnlNtry.setter
-	def JrnlNtry(self, value):
-		self._JrnlNtry = value if type(value) != auto else self.make_default("JrnlNtry")
-
-	@JrnlNtry.deleter
-	def JrnlNtry(self):
-		del self._JrnlNtry
-		self._JrnlNtry = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='JrnlNtry', type=LimitJournalEntry3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Lmt', type=LimitAmount1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='JrnlActvtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='JrnlNtry', type=LimitJournalEntry3, min=0, max=None, mutex_group=None, array=True),
 	))
 

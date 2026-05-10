@@ -1,12 +1,25 @@
 from . import base_types
-import SettlementObligation7
-import SupplementaryData1
-import BuyIn3
-import Max35Text
+from .BuyIn3 import BuyIn3
+from .Max35Text import Max35Text
+from .SupplementaryData1 import SupplementaryData1
+from .SettlementObligation7 import SettlementObligation7
 
 class BuyInResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TxId", "_BuyInRspnDtls", "_OrgnlSttlmOblgtnDtls"]
+	__slots__ = ["_BuyInRspnDtls", "_SplmtryData", "_TxId", "_OrgnlSttlmOblgtnDtls"]
+	@property
+	def BuyInRspnDtls(self):
+		return self._BuyInRspnDtls
+
+	@BuyInRspnDtls.setter
+	def BuyInRspnDtls(self, value):
+		self._BuyInRspnDtls = value if type(value) != auto else self.make_default("BuyInRspnDtls")
+
+	@BuyInRspnDtls.deleter
+	def BuyInRspnDtls(self):
+		del self._BuyInRspnDtls
+		self._BuyInRspnDtls = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -34,19 +47,6 @@ class BuyInResponseV03(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def BuyInRspnDtls(self):
-		return self._BuyInRspnDtls
-
-	@BuyInRspnDtls.setter
-	def BuyInRspnDtls(self, value):
-		self._BuyInRspnDtls = value if type(value) != auto else self.make_default("BuyInRspnDtls")
-
-	@BuyInRspnDtls.deleter
-	def BuyInRspnDtls(self):
-		del self._BuyInRspnDtls
-		self._BuyInRspnDtls = None
-
-	@property
 	def OrgnlSttlmOblgtnDtls(self):
 		return self._OrgnlSttlmOblgtnDtls
 
@@ -60,9 +60,9 @@ class BuyInResponseV03(base_types._BaseFieldType):
 		self._OrgnlSttlmOblgtnDtls = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BuyInRspnDtls', type=BuyIn3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyInRspnDtls', type=BuyIn3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlSttlmOblgtnDtls', type=SettlementObligation7, min=0, max=1, mutex_group=None, array=False),
 	))
 

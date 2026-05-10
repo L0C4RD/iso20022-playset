@@ -1,5 +1,5 @@
 from . import base_types
-import SecuritiesSettlementAllegementRemovalAdviceV07
+from .SecuritiesSettlementAllegementRemovalAdviceV07 import SecuritiesSettlementAllegementRemovalAdviceV07
 
 class SESE_029_001_07():
 

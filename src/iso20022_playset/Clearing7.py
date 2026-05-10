@@ -1,24 +1,24 @@
 from . import base_types
-import NonGuaranteedTrade4
-import NettingEligible1Code
-import YesNoIndicator
-import PartyIdentification253Choice
+from .NonGuaranteedTrade4 import NonGuaranteedTrade4
+from .PartyIdentification253Choice import PartyIdentification253Choice
+from .YesNoIndicator import YesNoIndicator
+from .NettingEligible1Code import NettingEligible1Code
 
 class Clearing7(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSgmt", "_NonGrntedTrad", "_SttlmNetgElgblCd", "_GrntedTrad"]
+	__slots__ = ["_SttlmNetgElgblCd", "_NonGrntedTrad", "_ClrSgmt", "_GrntedTrad"]
 	@property
-	def ClrSgmt(self):
-		return self._ClrSgmt
+	def SttlmNetgElgblCd(self):
+		return self._SttlmNetgElgblCd
 
-	@ClrSgmt.setter
-	def ClrSgmt(self, value):
-		self._ClrSgmt = value if type(value) != auto else self.make_default("ClrSgmt")
+	@SttlmNetgElgblCd.setter
+	def SttlmNetgElgblCd(self, value):
+		self._SttlmNetgElgblCd = value if type(value) != auto else self.make_default("SttlmNetgElgblCd")
 
-	@ClrSgmt.deleter
-	def ClrSgmt(self):
-		del self._ClrSgmt
-		self._ClrSgmt = None
+	@SttlmNetgElgblCd.deleter
+	def SttlmNetgElgblCd(self):
+		del self._SttlmNetgElgblCd
+		self._SttlmNetgElgblCd = None
 
 	@property
 	def NonGrntedTrad(self):
@@ -34,17 +34,17 @@ class Clearing7(base_types._BaseFieldType):
 		self._NonGrntedTrad = None
 
 	@property
-	def SttlmNetgElgblCd(self):
-		return self._SttlmNetgElgblCd
+	def ClrSgmt(self):
+		return self._ClrSgmt
 
-	@SttlmNetgElgblCd.setter
-	def SttlmNetgElgblCd(self, value):
-		self._SttlmNetgElgblCd = value if type(value) != auto else self.make_default("SttlmNetgElgblCd")
+	@ClrSgmt.setter
+	def ClrSgmt(self, value):
+		self._ClrSgmt = value if type(value) != auto else self.make_default("ClrSgmt")
 
-	@SttlmNetgElgblCd.deleter
-	def SttlmNetgElgblCd(self):
-		del self._SttlmNetgElgblCd
-		self._SttlmNetgElgblCd = None
+	@ClrSgmt.deleter
+	def ClrSgmt(self):
+		del self._ClrSgmt
+		self._ClrSgmt = None
 
 	@property
 	def GrntedTrad(self):
@@ -60,9 +60,9 @@ class Clearing7(base_types._BaseFieldType):
 		self._GrntedTrad = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrSgmt', type=PartyIdentification253Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonGrntedTrad', type=NonGuaranteedTrade4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmNetgElgblCd', type=NettingEligible1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonGrntedTrad', type=NonGuaranteedTrade4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrSgmt', type=PartyIdentification253Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrntedTrad', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

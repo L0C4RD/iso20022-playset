@@ -1,5 +1,5 @@
 from . import base_types
-import DatePeriod5
+from .DatePeriod5 import DatePeriod5
 
 class AdjustmentRequest1(base_types._BaseFieldType):
 

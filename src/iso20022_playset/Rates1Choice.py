@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalRatesAndTenors1Code
-import NoReasonCode
+from .ExternalRatesAndTenors1Code import ExternalRatesAndTenors1Code
+from .NoReasonCode import NoReasonCode
 
 class Rates1Choice(base_types._BaseFieldType):
 

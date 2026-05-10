@@ -1,13 +1,13 @@
 from . import base_types
-import Max350Text
-import ISODate
-import BeneficiaryCertificationCompletion1Code
-import GenericIdentification164
-import CountryAndResidentialStatusType2
+from .BeneficiaryCertificationCompletion1Code import BeneficiaryCertificationCompletion1Code
+from .ISODate import ISODate
+from .GenericIdentification164 import GenericIdentification164
+from .CountryAndResidentialStatusType2 import CountryAndResidentialStatusType2
+from .Max350Text import Max350Text
 
 class IndividualPerson31(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_OthrId", "_BnfcryCertfctnCmpltn", "_BirthDt", "_CtryAndResdtlSts"]
+	__slots__ = ["_Nm", "_BirthDt", "_OthrId", "_CtryAndResdtlSts", "_BnfcryCertfctnCmpltn"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -20,32 +20,6 @@ class IndividualPerson31(base_types._BaseFieldType):
 	def Nm(self):
 		del self._Nm
 		self._Nm = None
-
-	@property
-	def OthrId(self):
-		return self._OthrId
-
-	@OthrId.setter
-	def OthrId(self, value):
-		self._OthrId = value if type(value) != auto else self.make_default("OthrId")
-
-	@OthrId.deleter
-	def OthrId(self):
-		del self._OthrId
-		self._OthrId = None
-
-	@property
-	def BnfcryCertfctnCmpltn(self):
-		return self._BnfcryCertfctnCmpltn
-
-	@BnfcryCertfctnCmpltn.setter
-	def BnfcryCertfctnCmpltn(self, value):
-		self._BnfcryCertfctnCmpltn = value if type(value) != auto else self.make_default("BnfcryCertfctnCmpltn")
-
-	@BnfcryCertfctnCmpltn.deleter
-	def BnfcryCertfctnCmpltn(self):
-		del self._BnfcryCertfctnCmpltn
-		self._BnfcryCertfctnCmpltn = None
 
 	@property
 	def BirthDt(self):
@@ -61,6 +35,19 @@ class IndividualPerson31(base_types._BaseFieldType):
 		self._BirthDt = None
 
 	@property
+	def OthrId(self):
+		return self._OthrId
+
+	@OthrId.setter
+	def OthrId(self, value):
+		self._OthrId = value if type(value) != auto else self.make_default("OthrId")
+
+	@OthrId.deleter
+	def OthrId(self):
+		del self._OthrId
+		self._OthrId = None
+
+	@property
 	def CtryAndResdtlSts(self):
 		return self._CtryAndResdtlSts
 
@@ -73,11 +60,24 @@ class IndividualPerson31(base_types._BaseFieldType):
 		del self._CtryAndResdtlSts
 		self._CtryAndResdtlSts = None
 
+	@property
+	def BnfcryCertfctnCmpltn(self):
+		return self._BnfcryCertfctnCmpltn
+
+	@BnfcryCertfctnCmpltn.setter
+	def BnfcryCertfctnCmpltn(self, value):
+		self._BnfcryCertfctnCmpltn = value if type(value) != auto else self.make_default("BnfcryCertfctnCmpltn")
+
+	@BnfcryCertfctnCmpltn.deleter
+	def BnfcryCertfctnCmpltn(self):
+		del self._BnfcryCertfctnCmpltn
+		self._BnfcryCertfctnCmpltn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrId', type=GenericIdentification164, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BnfcryCertfctnCmpltn', type=BeneficiaryCertificationCompletion1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrId', type=GenericIdentification164, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtryAndResdtlSts', type=CountryAndResidentialStatusType2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BnfcryCertfctnCmpltn', type=BeneficiaryCertificationCompletion1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

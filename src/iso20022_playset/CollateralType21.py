@@ -1,11 +1,11 @@
 from . import base_types
-import AmountHaircutMargin1
-import Security52
-import Commodity43
+from .Security52 import Security52
+from .AmountHaircutMargin1 import AmountHaircutMargin1
+from .Commodity43 import Commodity43
 
 class CollateralType21(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmmdty", "_Csh", "_Scty"]
+	__slots__ = ["_Cmmdty", "_Scty", "_Csh"]
 	@property
 	def Cmmdty(self):
 		return self._Cmmdty
@@ -20,19 +20,6 @@ class CollateralType21(base_types._BaseFieldType):
 		self._Cmmdty = None
 
 	@property
-	def Csh(self):
-		return self._Csh
-
-	@Csh.setter
-	def Csh(self, value):
-		self._Csh = value if type(value) != auto else self.make_default("Csh")
-
-	@Csh.deleter
-	def Csh(self):
-		del self._Csh
-		self._Csh = None
-
-	@property
 	def Scty(self):
 		return self._Scty
 
@@ -45,9 +32,22 @@ class CollateralType21(base_types._BaseFieldType):
 		del self._Scty
 		self._Scty = None
 
+	@property
+	def Csh(self):
+		return self._Csh
+
+	@Csh.setter
+	def Csh(self, value):
+		self._Csh = value if type(value) != auto else self.make_default("Csh")
+
+	@Csh.deleter
+	def Csh(self):
+		del self._Csh
+		self._Csh = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cmmdty', type=Commodity43, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Csh', type=AmountHaircutMargin1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Scty', type=Security52, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Csh', type=AmountHaircutMargin1, min=0, max=None, mutex_group=None, array=True),
 	))
 

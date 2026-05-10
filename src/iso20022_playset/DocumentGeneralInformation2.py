@@ -1,52 +1,26 @@
 from . import base_types
-import ISODate
-import Max256Text
-import Max140Text
-import BinaryFile1
-import ExternalDocumentType1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ExternalDocumentType1Code import ExternalDocumentType1Code
+from .Max140Text import Max140Text
+from .BinaryFile1 import BinaryFile1
+from .Max256Text import Max256Text
+from .ISODate import ISODate
 
 class DocumentGeneralInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_URL", "_DocTp", "_DocNb", "_SndrRcvrSeqId", "_AttchdBinryFile", "_IsseDt"]
+	__slots__ = ["_IsseDt", "_SndrRcvrSeqId", "_AttchdBinryFile", "_URL", "_DocNb", "_DocTp"]
 	@property
-	def URL(self):
-		return self._URL
+	def IsseDt(self):
+		return self._IsseDt
 
-	@URL.setter
-	def URL(self, value):
-		self._URL = value if type(value) != auto else self.make_default("URL")
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
 
-	@URL.deleter
-	def URL(self):
-		del self._URL
-		self._URL = None
-
-	@property
-	def DocTp(self):
-		return self._DocTp
-
-	@DocTp.setter
-	def DocTp(self, value):
-		self._DocTp = value if type(value) != auto else self.make_default("DocTp")
-
-	@DocTp.deleter
-	def DocTp(self):
-		del self._DocTp
-		self._DocTp = None
-
-	@property
-	def DocNb(self):
-		return self._DocNb
-
-	@DocNb.setter
-	def DocNb(self, value):
-		self._DocNb = value if type(value) != auto else self.make_default("DocNb")
-
-	@DocNb.deleter
-	def DocNb(self):
-		del self._DocNb
-		self._DocNb = None
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
 
 	@property
 	def SndrRcvrSeqId(self):
@@ -75,24 +49,50 @@ class DocumentGeneralInformation2(base_types._BaseFieldType):
 		self._AttchdBinryFile = None
 
 	@property
-	def IsseDt(self):
-		return self._IsseDt
+	def URL(self):
+		return self._URL
 
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
+	@URL.setter
+	def URL(self, value):
+		self._URL = value if type(value) != auto else self.make_default("URL")
 
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
+	@URL.deleter
+	def URL(self):
+		del self._URL
+		self._URL = None
+
+	@property
+	def DocNb(self):
+		return self._DocNb
+
+	@DocNb.setter
+	def DocNb(self, value):
+		self._DocNb = value if type(value) != auto else self.make_default("DocNb")
+
+	@DocNb.deleter
+	def DocNb(self):
+		del self._DocNb
+		self._DocNb = None
+
+	@property
+	def DocTp(self):
+		return self._DocTp
+
+	@DocTp.setter
+	def DocTp(self, value):
+		self._DocTp = value if type(value) != auto else self.make_default("DocTp")
+
+	@DocTp.deleter
+	def DocTp(self):
+		del self._DocTp
+		self._DocTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocTp', type=ExternalDocumentType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SndrRcvrSeqId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AttchdBinryFile', type=BinaryFile1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocTp', type=ExternalDocumentType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import MarketType8Choice
-import MarketIdentification1Choice
+from .MarketIdentification1Choice import MarketIdentification1Choice
+from .MarketType8Choice import MarketType8Choice
 
 class MarketIdentification84(base_types._BaseFieldType):
 

@@ -1,24 +1,11 @@
 from . import base_types
-import YesNoIndicator
-import BlockChainAddressWallet3
-import SecuritiesAccount19
+from .BlockChainAddressWallet3 import BlockChainAddressWallet3
+from .SecuritiesAccount19 import SecuritiesAccount19
+from .YesNoIndicator import YesNoIndicator
 
 class IssuanceAccount3(base_types._BaseFieldType):
 
-	__slots__ = ["_IssncBlckChainAdrOrWllt", "_IssncAcct", "_PmryAcctInd"]
-	@property
-	def IssncBlckChainAdrOrWllt(self):
-		return self._IssncBlckChainAdrOrWllt
-
-	@IssncBlckChainAdrOrWllt.setter
-	def IssncBlckChainAdrOrWllt(self, value):
-		self._IssncBlckChainAdrOrWllt = value if type(value) != auto else self.make_default("IssncBlckChainAdrOrWllt")
-
-	@IssncBlckChainAdrOrWllt.deleter
-	def IssncBlckChainAdrOrWllt(self):
-		del self._IssncBlckChainAdrOrWllt
-		self._IssncBlckChainAdrOrWllt = None
-
+	__slots__ = ["_IssncAcct", "_PmryAcctInd", "_IssncBlckChainAdrOrWllt"]
 	@property
 	def IssncAcct(self):
 		return self._IssncAcct
@@ -45,9 +32,22 @@ class IssuanceAccount3(base_types._BaseFieldType):
 		del self._PmryAcctInd
 		self._PmryAcctInd = None
 
+	@property
+	def IssncBlckChainAdrOrWllt(self):
+		return self._IssncBlckChainAdrOrWllt
+
+	@IssncBlckChainAdrOrWllt.setter
+	def IssncBlckChainAdrOrWllt(self, value):
+		self._IssncBlckChainAdrOrWllt = value if type(value) != auto else self.make_default("IssncBlckChainAdrOrWllt")
+
+	@IssncBlckChainAdrOrWllt.deleter
+	def IssncBlckChainAdrOrWllt(self):
+		del self._IssncBlckChainAdrOrWllt
+		self._IssncBlckChainAdrOrWllt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IssncBlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssncAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmryAcctInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssncBlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import Max140Text
-import ISODateTime
+from .Max140Text import Max140Text
+from .ISODateTime import ISODateTime
 
 class TechnicalAttributes6(base_types._BaseFieldType):
 

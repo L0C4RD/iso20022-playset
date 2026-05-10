@@ -1,6 +1,6 @@
 from . import base_types
-import PersonIdentificationSchemeName1Choice
-import RequestedIndicator
+from .RequestedIndicator import RequestedIndicator
+from .PersonIdentificationSchemeName1Choice import PersonIdentificationSchemeName1Choice
 
 class GenericPersonType1(base_types._BaseFieldType):
 

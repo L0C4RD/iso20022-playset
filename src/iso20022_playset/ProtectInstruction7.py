@@ -1,7 +1,7 @@
 from . import base_types
-import ISODate
-import RestrictedFINMax15Text
-import ProtectTransactionType3Code
+from .ProtectTransactionType3Code import ProtectTransactionType3Code
+from .RestrictedFINMax15Text import RestrictedFINMax15Text
+from .ISODate import ISODate
 
 class ProtectInstruction7(base_types._BaseFieldType):
 

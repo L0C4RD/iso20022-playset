@@ -1,5 +1,5 @@
 from . import base_types
-import ReversalResponseV04
+from .ReversalResponseV04 import ReversalResponseV04
 
 class CAIN_006_001_04():
 

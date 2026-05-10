@@ -1,12 +1,12 @@
 from . import base_types
-import NameAndAddress5
-import ClearingSystemMemberIdentification4Choice
-import BICFIDec2014Identifier
-import SimpleIdentificationInformation4
+from .SimpleIdentificationInformation4 import SimpleIdentificationInformation4
+from .BICFIDec2014Identifier import BICFIDec2014Identifier
+from .ClearingSystemMemberIdentification4Choice import ClearingSystemMemberIdentification4Choice
+from .NameAndAddress5 import NameAndAddress5
 
 class FinancialInstitutionIdentification11Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryId", "_BICFI", "_NmAndAdr", "_ClrSysMmbId"]
+	__slots__ = ["_PrtryId", "_NmAndAdr", "_ClrSysMmbId", "_BICFI"]
 	@property
 	def PrtryId(self):
 		return self._PrtryId
@@ -19,19 +19,6 @@ class FinancialInstitutionIdentification11Choice(base_types._BaseFieldType):
 	def PrtryId(self):
 		del self._PrtryId
 		self._PrtryId = None
-
-	@property
-	def BICFI(self):
-		return self._BICFI
-
-	@BICFI.setter
-	def BICFI(self, value):
-		self._BICFI = value if type(value) != auto else self.make_default("BICFI")
-
-	@BICFI.deleter
-	def BICFI(self):
-		del self._BICFI
-		self._BICFI = None
 
 	@property
 	def NmAndAdr(self):
@@ -59,10 +46,23 @@ class FinancialInstitutionIdentification11Choice(base_types._BaseFieldType):
 		del self._ClrSysMmbId
 		self._ClrSysMmbId = None
 
+	@property
+	def BICFI(self):
+		return self._BICFI
+
+	@BICFI.setter
+	def BICFI(self, value):
+		self._BICFI = value if type(value) != auto else self.make_default("BICFI")
+
+	@BICFI.deleter
+	def BICFI(self):
+		del self._BICFI
+		self._BICFI = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtryId', type=SimpleIdentificationInformation4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification4Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,25 +1,12 @@
 from . import base_types
-import ActiveOrHistoricCurrencyCode
-import CashInForecast5
-import NetCashForecast4
-import CashOutForecast5
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .CashInForecast5 import CashInForecast5
+from .CashOutForecast5 import CashOutForecast5
+from .NetCashForecast4 import NetCashForecast4
 
 class BreakdownByCurrency2(base_types._BaseFieldType):
 
-	__slots__ = ["_CshOutFcst", "_CshInFcst", "_Ccy", "_NetCshFcst"]
-	@property
-	def CshOutFcst(self):
-		return self._CshOutFcst
-
-	@CshOutFcst.setter
-	def CshOutFcst(self, value):
-		self._CshOutFcst = value if type(value) != auto else self.make_default("CshOutFcst")
-
-	@CshOutFcst.deleter
-	def CshOutFcst(self):
-		del self._CshOutFcst
-		self._CshOutFcst = None
-
+	__slots__ = ["_CshInFcst", "_CshOutFcst", "_Ccy", "_NetCshFcst"]
 	@property
 	def CshInFcst(self):
 		return self._CshInFcst
@@ -32,6 +19,19 @@ class BreakdownByCurrency2(base_types._BaseFieldType):
 	def CshInFcst(self):
 		del self._CshInFcst
 		self._CshInFcst = None
+
+	@property
+	def CshOutFcst(self):
+		return self._CshOutFcst
+
+	@CshOutFcst.setter
+	def CshOutFcst(self, value):
+		self._CshOutFcst = value if type(value) != auto else self.make_default("CshOutFcst")
+
+	@CshOutFcst.deleter
+	def CshOutFcst(self):
+		del self._CshOutFcst
+		self._CshOutFcst = None
 
 	@property
 	def Ccy(self):
@@ -60,8 +60,8 @@ class BreakdownByCurrency2(base_types._BaseFieldType):
 		self._NetCshFcst = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshOutFcst', type=CashOutForecast5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshInFcst', type=CashInForecast5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshOutFcst', type=CashOutForecast5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetCshFcst', type=NetCashForecast4, min=0, max=None, mutex_group=None, array=True),
 	))

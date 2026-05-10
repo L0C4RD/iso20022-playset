@@ -1,5 +1,5 @@
 from . import base_types
-import ISODate
+from .ISODate import ISODate
 
 class EligibilityDates1(base_types._BaseFieldType):
 

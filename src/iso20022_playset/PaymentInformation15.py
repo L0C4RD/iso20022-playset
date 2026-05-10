@@ -1,6 +1,6 @@
 from . import base_types
-import PaymentMethod4Code
-import CashAccount7
+from .PaymentMethod4Code import PaymentMethod4Code
+from .CashAccount7 import CashAccount7
 
 class PaymentInformation15(base_types._BaseFieldType):
 

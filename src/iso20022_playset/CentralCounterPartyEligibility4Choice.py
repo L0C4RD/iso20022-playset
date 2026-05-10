@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import YesNoIndicator
+from .GenericIdentification30 import GenericIdentification30
+from .YesNoIndicator import YesNoIndicator
 
 class CentralCounterPartyEligibility4Choice(base_types._BaseFieldType):
 

@@ -1,24 +1,24 @@
 from . import base_types
-import ISODateTime
-import PartyIdentification113
-import BaseOneRate
-import ActiveCurrencyCode
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .PartyIdentification113 import PartyIdentification113
+from .ISODateTime import ISODateTime
+from .BaseOneRate import BaseOneRate
 
 class ForeignExchangeTerms32(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitCcy", "_QtnDt", "_XchgRate", "_QtgInstn", "_QtdCcy"]
+	__slots__ = ["_QtgInstn", "_QtnDt", "_UnitCcy", "_XchgRate", "_QtdCcy"]
 	@property
-	def UnitCcy(self):
-		return self._UnitCcy
+	def QtgInstn(self):
+		return self._QtgInstn
 
-	@UnitCcy.setter
-	def UnitCcy(self, value):
-		self._UnitCcy = value if type(value) != auto else self.make_default("UnitCcy")
+	@QtgInstn.setter
+	def QtgInstn(self, value):
+		self._QtgInstn = value if type(value) != auto else self.make_default("QtgInstn")
 
-	@UnitCcy.deleter
-	def UnitCcy(self):
-		del self._UnitCcy
-		self._UnitCcy = None
+	@QtgInstn.deleter
+	def QtgInstn(self):
+		del self._QtgInstn
+		self._QtgInstn = None
 
 	@property
 	def QtnDt(self):
@@ -34,6 +34,19 @@ class ForeignExchangeTerms32(base_types._BaseFieldType):
 		self._QtnDt = None
 
 	@property
+	def UnitCcy(self):
+		return self._UnitCcy
+
+	@UnitCcy.setter
+	def UnitCcy(self, value):
+		self._UnitCcy = value if type(value) != auto else self.make_default("UnitCcy")
+
+	@UnitCcy.deleter
+	def UnitCcy(self):
+		del self._UnitCcy
+		self._UnitCcy = None
+
+	@property
 	def XchgRate(self):
 		return self._XchgRate
 
@@ -45,19 +58,6 @@ class ForeignExchangeTerms32(base_types._BaseFieldType):
 	def XchgRate(self):
 		del self._XchgRate
 		self._XchgRate = None
-
-	@property
-	def QtgInstn(self):
-		return self._QtgInstn
-
-	@QtgInstn.setter
-	def QtgInstn(self, value):
-		self._QtgInstn = value if type(value) != auto else self.make_default("QtgInstn")
-
-	@QtgInstn.deleter
-	def QtgInstn(self):
-		del self._QtgInstn
-		self._QtgInstn = None
 
 	@property
 	def QtdCcy(self):
@@ -73,10 +73,10 @@ class ForeignExchangeTerms32(base_types._BaseFieldType):
 		self._QtdCcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtgInstn', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

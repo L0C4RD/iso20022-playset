@@ -1,26 +1,26 @@
 from . import base_types
-import ChargeBasis2Choice
-import ChargeBearer1Code
-import PartyIdentification139
-import ChargeOrCommissionDiscount2
-import ChargeType6Choice
-import ActiveCurrencyAndAmount
+from .ChargeType6Choice import ChargeType6Choice
+from .ChargeBasis2Choice import ChargeBasis2Choice
+from .PartyIdentification139 import PartyIdentification139
+from .ChargeOrCommissionDiscount2 import ChargeOrCommissionDiscount2
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .ChargeBearer1Code import ChargeBearer1Code
 
 class Fee7(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Amt", "_DscntDtls", "_Bsis", "_RcptId", "_ChrgBr"]
+	__slots__ = ["_RcptId", "_Amt", "_DscntDtls", "_Tp", "_Bsis", "_ChrgBr"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def RcptId(self):
+		return self._RcptId
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@RcptId.setter
+	def RcptId(self, value):
+		self._RcptId = value if type(value) != auto else self.make_default("RcptId")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@RcptId.deleter
+	def RcptId(self):
+		del self._RcptId
+		self._RcptId = None
 
 	@property
 	def Amt(self):
@@ -49,6 +49,19 @@ class Fee7(base_types._BaseFieldType):
 		self._DscntDtls = None
 
 	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
 	def Bsis(self):
 		return self._Bsis
 
@@ -60,19 +73,6 @@ class Fee7(base_types._BaseFieldType):
 	def Bsis(self):
 		del self._Bsis
 		self._Bsis = None
-
-	@property
-	def RcptId(self):
-		return self._RcptId
-
-	@RcptId.setter
-	def RcptId(self, value):
-		self._RcptId = value if type(value) != auto else self.make_default("RcptId")
-
-	@RcptId.deleter
-	def RcptId(self):
-		del self._RcptId
-		self._RcptId = None
 
 	@property
 	def ChrgBr(self):
@@ -88,11 +88,11 @@ class Fee7(base_types._BaseFieldType):
 		self._ChrgBr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=ChargeType6Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcptId', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DscntDtls', type=ChargeOrCommissionDiscount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ChargeType6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bsis', type=ChargeBasis2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcptId', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgBr', type=ChargeBearer1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

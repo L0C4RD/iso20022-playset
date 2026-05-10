@@ -1,6 +1,6 @@
 from . import base_types
-import TradeTransaction50
-import ContractType15
+from .TradeTransaction50 import TradeTransaction50
+from .ContractType15 import ContractType15
 
 class CommonTradeDataReport71(base_types._BaseFieldType):
 

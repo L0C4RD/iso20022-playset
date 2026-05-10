@@ -1,6 +1,6 @@
 from . import base_types
-import TradingVenue2Code
-import Max50Text
+from .Max50Text import Max50Text
+from .TradingVenue2Code import TradingVenue2Code
 
 class TradingVenueIdentification2(base_types._BaseFieldType):
 

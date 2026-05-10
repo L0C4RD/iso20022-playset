@@ -1,5 +1,5 @@
 from . import base_types
-import AssetClassProductType14Code
+from .AssetClassProductType14Code import AssetClassProductType14Code
 
 class AssetClassCommodityOfficialEconomicStatistics1(base_types._BaseFieldType):
 

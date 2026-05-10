@@ -1,6 +1,6 @@
 from . import base_types
-import EventConfirmationStatus1Code
-import EventCompletenessStatus1Code
+from .EventCompletenessStatus1Code import EventCompletenessStatus1Code
+from .EventConfirmationStatus1Code import EventConfirmationStatus1Code
 
 class EventStatus1(base_types._BaseFieldType):
 

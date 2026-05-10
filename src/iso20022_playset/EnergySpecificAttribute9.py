@@ -1,11 +1,24 @@
 from . import base_types
-import EnergyDeliveryAttribute10
-import EnergyLoadType1Code
-import DeliveryInterconnectionPoint1Choice
+from .EnergyLoadType1Code import EnergyLoadType1Code
+from .EnergyDeliveryAttribute10 import EnergyDeliveryAttribute10
+from .DeliveryInterconnectionPoint1Choice import DeliveryInterconnectionPoint1Choice
 
 class EnergySpecificAttribute9(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvryAttr", "_IntrCnnctnPt", "_LdTp", "_DlvryPtOrZone"]
+	__slots__ = ["_LdTp", "_DlvryAttr", "_IntrCnnctnPt", "_DlvryPtOrZone"]
+	@property
+	def LdTp(self):
+		return self._LdTp
+
+	@LdTp.setter
+	def LdTp(self, value):
+		self._LdTp = value if type(value) != auto else self.make_default("LdTp")
+
+	@LdTp.deleter
+	def LdTp(self):
+		del self._LdTp
+		self._LdTp = None
+
 	@property
 	def DlvryAttr(self):
 		return self._DlvryAttr
@@ -33,19 +46,6 @@ class EnergySpecificAttribute9(base_types._BaseFieldType):
 		self._IntrCnnctnPt = None
 
 	@property
-	def LdTp(self):
-		return self._LdTp
-
-	@LdTp.setter
-	def LdTp(self, value):
-		self._LdTp = value if type(value) != auto else self.make_default("LdTp")
-
-	@LdTp.deleter
-	def LdTp(self):
-		del self._LdTp
-		self._LdTp = None
-
-	@property
 	def DlvryPtOrZone(self):
 		return self._DlvryPtOrZone
 
@@ -59,9 +59,9 @@ class EnergySpecificAttribute9(base_types._BaseFieldType):
 		self._DlvryPtOrZone = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='LdTp', type=EnergyLoadType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryAttr', type=EnergyDeliveryAttribute10, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IntrCnnctnPt', type=DeliveryInterconnectionPoint1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LdTp', type=EnergyLoadType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryPtOrZone', type=DeliveryInterconnectionPoint1Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

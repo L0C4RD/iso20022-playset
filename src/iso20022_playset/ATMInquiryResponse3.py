@@ -1,24 +1,11 @@
 from . import base_types
-import ATMContext27
-import ATMEnvironment21
-import ATMTransaction48
+from .ATMContext27 import ATMContext27
+from .ATMTransaction48 import ATMTransaction48
+from .ATMEnvironment21 import ATMEnvironment21
 
 class ATMInquiryResponse3(base_types._BaseFieldType):
 
-	__slots__ = ["_Cntxt", "_Envt", "_Tx"]
-	@property
-	def Cntxt(self):
-		return self._Cntxt
-
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
-
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
-
+	__slots__ = ["_Envt", "_Cntxt", "_Tx"]
 	@property
 	def Envt(self):
 		return self._Envt
@@ -31,6 +18,19 @@ class ATMInquiryResponse3(base_types._BaseFieldType):
 	def Envt(self):
 		del self._Envt
 		self._Envt = None
+
+	@property
+	def Cntxt(self):
+		return self._Cntxt
+
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
 
 	@property
 	def Tx(self):
@@ -46,8 +46,8 @@ class ATMInquiryResponse3(base_types._BaseFieldType):
 		self._Tx = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cntxt', type=ATMContext27, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment21, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntxt', type=ATMContext27, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=ATMTransaction48, min=1, max=1, mutex_group=None, array=False),
 	))
 

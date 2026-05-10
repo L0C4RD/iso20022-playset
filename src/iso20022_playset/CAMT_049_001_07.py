@@ -1,5 +1,5 @@
 from . import base_types
-import DeleteReservationV07
+from .DeleteReservationV07 import DeleteReservationV07
 
 class CAMT_049_001_07():
 

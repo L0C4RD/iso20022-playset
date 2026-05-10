@@ -1,11 +1,11 @@
 from . import base_types
-import ActiveCurrencyAnd13DecimalAmount
-import Percentage14Rate
-import AmountAndQuantityRatio4
+from .AmountAndQuantityRatio4 import AmountAndQuantityRatio4
+from .Percentage14Rate import Percentage14Rate
+from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class SolicitationFeeRateFormat12Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtToQty", "_Rate", "_Amt"]
+	__slots__ = ["_AmtToQty", "_Amt", "_Rate"]
 	@property
 	def AmtToQty(self):
 		return self._AmtToQty
@@ -20,19 +20,6 @@ class SolicitationFeeRateFormat12Choice(base_types._BaseFieldType):
 		self._AmtToQty = None
 
 	@property
-	def Rate(self):
-		return self._Rate
-
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
-
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
-
-	@property
 	def Amt(self):
 		return self._Amt
 
@@ -45,9 +32,22 @@ class SolicitationFeeRateFormat12Choice(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def Rate(self):
+		return self._Rate
+
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != auto else self.make_default("Rate")
+
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtToQty', type=AmountAndQuantityRatio4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
 	))
 

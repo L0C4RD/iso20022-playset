@@ -1,5 +1,5 @@
 from . import base_types
-import IntraBalanceMovementQueryResponseV02
+from .IntraBalanceMovementQueryResponseV02 import IntraBalanceMovementQueryResponseV02
 
 class CAMT_079_001_02():
 

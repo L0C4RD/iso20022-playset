@@ -1,24 +1,11 @@
 from . import base_types
-import AdjustmentDirection1Code
-import AdjustmentType1Choice
-import AmountOrPercentage2Choice
+from .AdjustmentDirection1Code import AdjustmentDirection1Code
+from .AdjustmentType1Choice import AdjustmentType1Choice
+from .AmountOrPercentage2Choice import AmountOrPercentage2Choice
 
 class Adjustment7(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtOrPctg", "_Drctn", "_Tp"]
-	@property
-	def AmtOrPctg(self):
-		return self._AmtOrPctg
-
-	@AmtOrPctg.setter
-	def AmtOrPctg(self, value):
-		self._AmtOrPctg = value if type(value) != auto else self.make_default("AmtOrPctg")
-
-	@AmtOrPctg.deleter
-	def AmtOrPctg(self):
-		del self._AmtOrPctg
-		self._AmtOrPctg = None
-
+	__slots__ = ["_Drctn", "_AmtOrPctg", "_Tp"]
 	@property
 	def Drctn(self):
 		return self._Drctn
@@ -31,6 +18,19 @@ class Adjustment7(base_types._BaseFieldType):
 	def Drctn(self):
 		del self._Drctn
 		self._Drctn = None
+
+	@property
+	def AmtOrPctg(self):
+		return self._AmtOrPctg
+
+	@AmtOrPctg.setter
+	def AmtOrPctg(self, value):
+		self._AmtOrPctg = value if type(value) != auto else self.make_default("AmtOrPctg")
+
+	@AmtOrPctg.deleter
+	def AmtOrPctg(self):
+		del self._AmtOrPctg
+		self._AmtOrPctg = None
 
 	@property
 	def Tp(self):
@@ -46,8 +46,8 @@ class Adjustment7(base_types._BaseFieldType):
 		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmtOrPctg', type=AmountOrPercentage2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Drctn', type=AdjustmentDirection1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtOrPctg', type=AmountOrPercentage2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=AdjustmentType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

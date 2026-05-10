@@ -1,40 +1,27 @@
 from . import base_types
-import Acquirer10
-import ExternallyDefinedData5
-import Action17
-import NonFinancialRequestType2Code
-import NonFinancialResponseRisk1Code
-import ResponseType11
-import RecurringTransaction6
+from .ExternallyDefinedData5 import ExternallyDefinedData5
+from .Action17 import Action17
+from .Acquirer10 import Acquirer10
+from .NonFinancialResponseRisk1Code import NonFinancialResponseRisk1Code
+from .RecurringTransaction6 import RecurringTransaction6
+from .NonFinancialRequestType2Code import NonFinancialRequestType2Code
+from .ResponseType11 import ResponseType11
 
 class NonFinancialResponseContentComponent5(base_types._BaseFieldType):
 
-	__slots__ = ["_RskMgmtRslt", "_Instlmt", "_AddtlRspn", "_Actn", "_NonFinReqTp", "_AcqrrSelctd", "_Rspn"]
+	__slots__ = ["_AcqrrSelctd", "_AddtlRspn", "_RskMgmtRslt", "_Actn", "_Rspn", "_NonFinReqTp", "_Instlmt"]
 	@property
-	def RskMgmtRslt(self):
-		return self._RskMgmtRslt
+	def AcqrrSelctd(self):
+		return self._AcqrrSelctd
 
-	@RskMgmtRslt.setter
-	def RskMgmtRslt(self, value):
-		self._RskMgmtRslt = value if type(value) != auto else self.make_default("RskMgmtRslt")
+	@AcqrrSelctd.setter
+	def AcqrrSelctd(self, value):
+		self._AcqrrSelctd = value if type(value) != auto else self.make_default("AcqrrSelctd")
 
-	@RskMgmtRslt.deleter
-	def RskMgmtRslt(self):
-		del self._RskMgmtRslt
-		self._RskMgmtRslt = None
-
-	@property
-	def Instlmt(self):
-		return self._Instlmt
-
-	@Instlmt.setter
-	def Instlmt(self, value):
-		self._Instlmt = value if type(value) != auto else self.make_default("Instlmt")
-
-	@Instlmt.deleter
-	def Instlmt(self):
-		del self._Instlmt
-		self._Instlmt = None
+	@AcqrrSelctd.deleter
+	def AcqrrSelctd(self):
+		del self._AcqrrSelctd
+		self._AcqrrSelctd = None
 
 	@property
 	def AddtlRspn(self):
@@ -50,6 +37,19 @@ class NonFinancialResponseContentComponent5(base_types._BaseFieldType):
 		self._AddtlRspn = None
 
 	@property
+	def RskMgmtRslt(self):
+		return self._RskMgmtRslt
+
+	@RskMgmtRslt.setter
+	def RskMgmtRslt(self, value):
+		self._RskMgmtRslt = value if type(value) != auto else self.make_default("RskMgmtRslt")
+
+	@RskMgmtRslt.deleter
+	def RskMgmtRslt(self):
+		del self._RskMgmtRslt
+		self._RskMgmtRslt = None
+
+	@property
 	def Actn(self):
 		return self._Actn
 
@@ -61,6 +61,19 @@ class NonFinancialResponseContentComponent5(base_types._BaseFieldType):
 	def Actn(self):
 		del self._Actn
 		self._Actn = None
+
+	@property
+	def Rspn(self):
+		return self._Rspn
+
+	@Rspn.setter
+	def Rspn(self, value):
+		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
+
+	@Rspn.deleter
+	def Rspn(self):
+		del self._Rspn
+		self._Rspn = None
 
 	@property
 	def NonFinReqTp(self):
@@ -76,38 +89,25 @@ class NonFinancialResponseContentComponent5(base_types._BaseFieldType):
 		self._NonFinReqTp = None
 
 	@property
-	def AcqrrSelctd(self):
-		return self._AcqrrSelctd
+	def Instlmt(self):
+		return self._Instlmt
 
-	@AcqrrSelctd.setter
-	def AcqrrSelctd(self, value):
-		self._AcqrrSelctd = value if type(value) != auto else self.make_default("AcqrrSelctd")
+	@Instlmt.setter
+	def Instlmt(self, value):
+		self._Instlmt = value if type(value) != auto else self.make_default("Instlmt")
 
-	@AcqrrSelctd.deleter
-	def AcqrrSelctd(self):
-		del self._AcqrrSelctd
-		self._AcqrrSelctd = None
-
-	@property
-	def Rspn(self):
-		return self._Rspn
-
-	@Rspn.setter
-	def Rspn(self, value):
-		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
-
-	@Rspn.deleter
-	def Rspn(self):
-		del self._Rspn
-		self._Rspn = None
+	@Instlmt.deleter
+	def Instlmt(self):
+		del self._Instlmt
+		self._Instlmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RskMgmtRslt', type=NonFinancialResponseRisk1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Instlmt', type=RecurringTransaction6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlRspn', type=ExternallyDefinedData5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Actn', type=Action17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NonFinReqTp', type=NonFinancialRequestType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcqrrSelctd', type=Acquirer10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlRspn', type=ExternallyDefinedData5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RskMgmtRslt', type=NonFinancialResponseRisk1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Actn', type=Action17, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonFinReqTp', type=NonFinancialRequestType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Instlmt', type=RecurringTransaction6, min=0, max=None, mutex_group=None, array=True),
 	))
 

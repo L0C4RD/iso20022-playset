@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import Max70Text
+from .Max35Text import Max35Text
+from .Max70Text import Max70Text
 
 class LoyaltyProgramme4(base_types._BaseFieldType):
 

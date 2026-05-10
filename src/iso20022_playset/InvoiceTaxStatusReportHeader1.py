@@ -1,12 +1,25 @@
 from . import base_types
-import TaxReportingStatus1Code
-import TaxOrganisationIdentification1
-import MessageIdentification1
-import GenericValidationRuleIdentification1
+from .MessageIdentification1 import MessageIdentification1
+from .GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
+from .TaxReportingStatus1Code import TaxReportingStatus1Code
+from .TaxOrganisationIdentification1 import TaxOrganisationIdentification1
 
 class InvoiceTaxStatusReportHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_VldtnRule", "_TaxAuthrty", "_MsgId", "_OrgnlMsgId", "_RptSts"]
+	__slots__ = ["_MsgId", "_VldtnRule", "_RptSts", "_TaxAuthrty", "_OrgnlMsgId"]
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
 	@property
 	def VldtnRule(self):
 		return self._VldtnRule
@@ -19,6 +32,19 @@ class InvoiceTaxStatusReportHeader1(base_types._BaseFieldType):
 	def VldtnRule(self):
 		del self._VldtnRule
 		self._VldtnRule = None
+
+	@property
+	def RptSts(self):
+		return self._RptSts
+
+	@RptSts.setter
+	def RptSts(self, value):
+		self._RptSts = value if type(value) != auto else self.make_default("RptSts")
+
+	@RptSts.deleter
+	def RptSts(self):
+		del self._RptSts
+		self._RptSts = None
 
 	@property
 	def TaxAuthrty(self):
@@ -34,19 +60,6 @@ class InvoiceTaxStatusReportHeader1(base_types._BaseFieldType):
 		self._TaxAuthrty = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
-	@property
 	def OrgnlMsgId(self):
 		return self._OrgnlMsgId
 
@@ -59,24 +72,11 @@ class InvoiceTaxStatusReportHeader1(base_types._BaseFieldType):
 		del self._OrgnlMsgId
 		self._OrgnlMsgId = None
 
-	@property
-	def RptSts(self):
-		return self._RptSts
-
-	@RptSts.setter
-	def RptSts(self, value):
-		self._RptSts = value if type(value) != auto else self.make_default("RptSts")
-
-	@RptSts.deleter
-	def RptSts(self):
-		del self._RptSts
-		self._RptSts = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TaxAuthrty', type=TaxOrganisationIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlMsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptSts', type=TaxReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxAuthrty', type=TaxOrganisationIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

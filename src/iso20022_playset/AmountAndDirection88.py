@@ -1,25 +1,25 @@
 from . import base_types
-import DateAndDateTime2Choice
-import CreditDebitCode
-import ForeignExchangeTerms23
-import ActiveOrHistoricCurrencyAndAmount
-import ActiveCurrencyAndAmount
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .CreditDebitCode import CreditDebitCode
+from .ForeignExchangeTerms23 import ForeignExchangeTerms23
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class AmountAndDirection88(base_types._BaseFieldType):
 
-	__slots__ = ["_FXDtls", "_ValDt", "_Amt", "_CdtDbtInd", "_OrgnlCcyAndOrdrdAmt"]
+	__slots__ = ["_Amt", "_ValDt", "_CdtDbtInd", "_OrgnlCcyAndOrdrdAmt", "_FXDtls"]
 	@property
-	def FXDtls(self):
-		return self._FXDtls
+	def Amt(self):
+		return self._Amt
 
-	@FXDtls.setter
-	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != auto else self.make_default("FXDtls")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@FXDtls.deleter
-	def FXDtls(self):
-		del self._FXDtls
-		self._FXDtls = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def ValDt(self):
@@ -33,19 +33,6 @@ class AmountAndDirection88(base_types._BaseFieldType):
 	def ValDt(self):
 		del self._ValDt
 		self._ValDt = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
 
 	@property
 	def CdtDbtInd(self):
@@ -73,11 +60,24 @@ class AmountAndDirection88(base_types._BaseFieldType):
 		del self._OrgnlCcyAndOrdrdAmt
 		self._OrgnlCcyAndOrdrdAmt = None
 
+	@property
+	def FXDtls(self):
+		return self._FXDtls
+
+	@FXDtls.setter
+	def FXDtls(self, value):
+		self._FXDtls = value if type(value) != auto else self.make_default("FXDtls")
+
+	@FXDtls.deleter
+	def FXDtls(self):
+		del self._FXDtls
+		self._FXDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms23, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlCcyAndOrdrdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms23, min=0, max=1, mutex_group=None, array=False),
 	))
 

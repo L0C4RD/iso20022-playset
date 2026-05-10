@@ -1,5 +1,5 @@
 from . import base_types
-import ATMReconciliationAdviceV03
+from .ATMReconciliationAdviceV03 import ATMReconciliationAdviceV03
 
 class CAAM_009_001_03():
 

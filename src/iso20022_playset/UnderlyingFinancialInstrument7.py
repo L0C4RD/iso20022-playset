@@ -1,6 +1,6 @@
 from . import base_types
-import FinancialInstrumentAttributes124
-import SecurityIdentification19
+from .FinancialInstrumentAttributes124 import FinancialInstrumentAttributes124
+from .SecurityIdentification19 import SecurityIdentification19
 
 class UnderlyingFinancialInstrument7(base_types._BaseFieldType):
 

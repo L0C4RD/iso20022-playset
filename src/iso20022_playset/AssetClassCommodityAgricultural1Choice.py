@@ -1,42 +1,42 @@
 from . import base_types
-import AgriculturalCommodityForestry1
-import AgriculturalCommodityDairy1
-import AgriculturalCommodityGrain1
-import AgriculturalCommoditySoft1
-import AgriculturalCommodityOliveOil1
-import AgriculturalCommodityLiveStock1
-import AgriculturalCommodityPotato1
-import AgriculturalCommoditySeafood1
-import AgriculturalCommodityOilSeed1
+from .AgriculturalCommoditySeafood1 import AgriculturalCommoditySeafood1
+from .AgriculturalCommodityOliveOil1 import AgriculturalCommodityOliveOil1
+from .AgriculturalCommodityOilSeed1 import AgriculturalCommodityOilSeed1
+from .AgriculturalCommoditySoft1 import AgriculturalCommoditySoft1
+from .AgriculturalCommodityForestry1 import AgriculturalCommodityForestry1
+from .AgriculturalCommodityLiveStock1 import AgriculturalCommodityLiveStock1
+from .AgriculturalCommodityDairy1 import AgriculturalCommodityDairy1
+from .AgriculturalCommodityPotato1 import AgriculturalCommodityPotato1
+from .AgriculturalCommodityGrain1 import AgriculturalCommodityGrain1
 
 class AssetClassCommodityAgricultural1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Grn", "_Sfd", "_LiveStock", "_Ptt", "_GrnOilSeed", "_Soft", "_OlvOil", "_Dairy", "_Frstry"]
+	__slots__ = ["_Ptt", "_Dairy", "_LiveStock", "_Frstry", "_GrnOilSeed", "_Sfd", "_Soft", "_OlvOil", "_Grn"]
 	@property
-	def Grn(self):
-		return self._Grn
+	def Ptt(self):
+		return self._Ptt
 
-	@Grn.setter
-	def Grn(self, value):
-		self._Grn = value if type(value) != auto else self.make_default("Grn")
+	@Ptt.setter
+	def Ptt(self, value):
+		self._Ptt = value if type(value) != auto else self.make_default("Ptt")
 
-	@Grn.deleter
-	def Grn(self):
-		del self._Grn
-		self._Grn = None
+	@Ptt.deleter
+	def Ptt(self):
+		del self._Ptt
+		self._Ptt = None
 
 	@property
-	def Sfd(self):
-		return self._Sfd
+	def Dairy(self):
+		return self._Dairy
 
-	@Sfd.setter
-	def Sfd(self, value):
-		self._Sfd = value if type(value) != auto else self.make_default("Sfd")
+	@Dairy.setter
+	def Dairy(self, value):
+		self._Dairy = value if type(value) != auto else self.make_default("Dairy")
 
-	@Sfd.deleter
-	def Sfd(self):
-		del self._Sfd
-		self._Sfd = None
+	@Dairy.deleter
+	def Dairy(self):
+		del self._Dairy
+		self._Dairy = None
 
 	@property
 	def LiveStock(self):
@@ -52,17 +52,17 @@ class AssetClassCommodityAgricultural1Choice(base_types._BaseFieldType):
 		self._LiveStock = None
 
 	@property
-	def Ptt(self):
-		return self._Ptt
+	def Frstry(self):
+		return self._Frstry
 
-	@Ptt.setter
-	def Ptt(self, value):
-		self._Ptt = value if type(value) != auto else self.make_default("Ptt")
+	@Frstry.setter
+	def Frstry(self, value):
+		self._Frstry = value if type(value) != auto else self.make_default("Frstry")
 
-	@Ptt.deleter
-	def Ptt(self):
-		del self._Ptt
-		self._Ptt = None
+	@Frstry.deleter
+	def Frstry(self):
+		del self._Frstry
+		self._Frstry = None
 
 	@property
 	def GrnOilSeed(self):
@@ -76,6 +76,19 @@ class AssetClassCommodityAgricultural1Choice(base_types._BaseFieldType):
 	def GrnOilSeed(self):
 		del self._GrnOilSeed
 		self._GrnOilSeed = None
+
+	@property
+	def Sfd(self):
+		return self._Sfd
+
+	@Sfd.setter
+	def Sfd(self, value):
+		self._Sfd = value if type(value) != auto else self.make_default("Sfd")
+
+	@Sfd.deleter
+	def Sfd(self):
+		del self._Sfd
+		self._Sfd = None
 
 	@property
 	def Soft(self):
@@ -104,40 +117,27 @@ class AssetClassCommodityAgricultural1Choice(base_types._BaseFieldType):
 		self._OlvOil = None
 
 	@property
-	def Dairy(self):
-		return self._Dairy
+	def Grn(self):
+		return self._Grn
 
-	@Dairy.setter
-	def Dairy(self, value):
-		self._Dairy = value if type(value) != auto else self.make_default("Dairy")
+	@Grn.setter
+	def Grn(self, value):
+		self._Grn = value if type(value) != auto else self.make_default("Grn")
 
-	@Dairy.deleter
-	def Dairy(self):
-		del self._Dairy
-		self._Dairy = None
-
-	@property
-	def Frstry(self):
-		return self._Frstry
-
-	@Frstry.setter
-	def Frstry(self, value):
-		self._Frstry = value if type(value) != auto else self.make_default("Frstry")
-
-	@Frstry.deleter
-	def Frstry(self):
-		del self._Frstry
-		self._Frstry = None
+	@Grn.deleter
+	def Grn(self):
+		del self._Grn
+		self._Grn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Grn', type=AgriculturalCommodityGrain1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Sfd', type=AgriculturalCommoditySeafood1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='LiveStock', type=AgriculturalCommodityLiveStock1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ptt', type=AgriculturalCommodityPotato1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Dairy', type=AgriculturalCommodityDairy1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='LiveStock', type=AgriculturalCommodityLiveStock1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Frstry', type=AgriculturalCommodityForestry1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='GrnOilSeed', type=AgriculturalCommodityOilSeed1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Sfd', type=AgriculturalCommoditySeafood1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Soft', type=AgriculturalCommoditySoft1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OlvOil', type=AgriculturalCommodityOliveOil1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Dairy', type=AgriculturalCommodityDairy1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Frstry', type=AgriculturalCommodityForestry1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Grn', type=AgriculturalCommodityGrain1, min=0, max=1, mutex_group=1, array=False),
 	))
 

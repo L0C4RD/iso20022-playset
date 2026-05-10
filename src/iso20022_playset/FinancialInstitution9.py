@@ -1,38 +1,25 @@
 from . import base_types
-import LocalData14
-import AdditionalData1
-import Max99Text
-import Max35Text
-import ISO3NumericCountryCode
+from .LocalData14 import LocalData14
+from .Max35Text import Max35Text
+from .AdditionalData1 import AdditionalData1
+from .ISO3NumericCountryCode import ISO3NumericCountryCode
+from .Max99Text import Max99Text
 
 class FinancialInstitution9(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_AcctNb", "_LglCorpNm", "_Assgnr", "_Id", "_AddtlId", "_ShrtNm", "_LclData"]
+	__slots__ = ["_Id", "_LglCorpNm", "_Ctry", "_LclData", "_Assgnr", "_AcctNb", "_ShrtNm", "_AddtlId"]
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def Id(self):
+		return self._Id
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
-	@property
-	def AcctNb(self):
-		return self._AcctNb
-
-	@AcctNb.setter
-	def AcctNb(self, value):
-		self._AcctNb = value if type(value) != auto else self.make_default("AcctNb")
-
-	@AcctNb.deleter
-	def AcctNb(self):
-		del self._AcctNb
-		self._AcctNb = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def LglCorpNm(self):
@@ -48,6 +35,32 @@ class FinancialInstitution9(base_types._BaseFieldType):
 		self._LglCorpNm = None
 
 	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
+	@property
+	def LclData(self):
+		return self._LclData
+
+	@LclData.setter
+	def LclData(self, value):
+		self._LclData = value if type(value) != auto else self.make_default("LclData")
+
+	@LclData.deleter
+	def LclData(self):
+		del self._LclData
+		self._LclData = None
+
+	@property
 	def Assgnr(self):
 		return self._Assgnr
 
@@ -61,30 +74,17 @@ class FinancialInstitution9(base_types._BaseFieldType):
 		self._Assgnr = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def AcctNb(self):
+		return self._AcctNb
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@AcctNb.setter
+	def AcctNb(self, value):
+		self._AcctNb = value if type(value) != auto else self.make_default("AcctNb")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def AddtlId(self):
-		return self._AddtlId
-
-	@AddtlId.setter
-	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
-
-	@AddtlId.deleter
-	def AddtlId(self):
-		del self._AddtlId
-		self._AddtlId = None
+	@AcctNb.deleter
+	def AcctNb(self):
+		del self._AcctNb
+		self._AcctNb = None
 
 	@property
 	def ShrtNm(self):
@@ -100,26 +100,26 @@ class FinancialInstitution9(base_types._BaseFieldType):
 		self._ShrtNm = None
 
 	@property
-	def LclData(self):
-		return self._LclData
+	def AddtlId(self):
+		return self._AddtlId
 
-	@LclData.setter
-	def LclData(self, value):
-		self._LclData = value if type(value) != auto else self.make_default("LclData")
+	@AddtlId.setter
+	def AddtlId(self, value):
+		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
 
-	@LclData.deleter
-	def LclData(self):
-		del self._LclData
-		self._LclData = None
+	@AddtlId.deleter
+	def AddtlId(self):
+		del self._AddtlId
+		self._AddtlId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctry', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglCorpNm', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlId', type=AdditionalData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglCorpNm', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LclData', type=LocalData14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlId', type=AdditionalData1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,22 +1,9 @@
 from . import base_types
-import GenericIdentification1
+from .GenericIdentification1 import GenericIdentification1
 
 class BasketIdentificationAndEligibilitySetProfile1(base_types._BaseFieldType):
 
-	__slots__ = ["_ExclsnBsktId", "_ElgbltySetPrfl", "_PrfrntlBsktIdNb", "_FllbckStartgBsktId"]
-	@property
-	def ExclsnBsktId(self):
-		return self._ExclsnBsktId
-
-	@ExclsnBsktId.setter
-	def ExclsnBsktId(self, value):
-		self._ExclsnBsktId = value if type(value) != auto else self.make_default("ExclsnBsktId")
-
-	@ExclsnBsktId.deleter
-	def ExclsnBsktId(self):
-		del self._ExclsnBsktId
-		self._ExclsnBsktId = None
-
+	__slots__ = ["_ElgbltySetPrfl", "_FllbckStartgBsktId", "_ExclsnBsktId", "_PrfrntlBsktIdNb"]
 	@property
 	def ElgbltySetPrfl(self):
 		return self._ElgbltySetPrfl
@@ -31,19 +18,6 @@ class BasketIdentificationAndEligibilitySetProfile1(base_types._BaseFieldType):
 		self._ElgbltySetPrfl = None
 
 	@property
-	def PrfrntlBsktIdNb(self):
-		return self._PrfrntlBsktIdNb
-
-	@PrfrntlBsktIdNb.setter
-	def PrfrntlBsktIdNb(self, value):
-		self._PrfrntlBsktIdNb = value if type(value) != auto else self.make_default("PrfrntlBsktIdNb")
-
-	@PrfrntlBsktIdNb.deleter
-	def PrfrntlBsktIdNb(self):
-		del self._PrfrntlBsktIdNb
-		self._PrfrntlBsktIdNb = None
-
-	@property
 	def FllbckStartgBsktId(self):
 		return self._FllbckStartgBsktId
 
@@ -56,10 +30,36 @@ class BasketIdentificationAndEligibilitySetProfile1(base_types._BaseFieldType):
 		del self._FllbckStartgBsktId
 		self._FllbckStartgBsktId = None
 
+	@property
+	def ExclsnBsktId(self):
+		return self._ExclsnBsktId
+
+	@ExclsnBsktId.setter
+	def ExclsnBsktId(self, value):
+		self._ExclsnBsktId = value if type(value) != auto else self.make_default("ExclsnBsktId")
+
+	@ExclsnBsktId.deleter
+	def ExclsnBsktId(self):
+		del self._ExclsnBsktId
+		self._ExclsnBsktId = None
+
+	@property
+	def PrfrntlBsktIdNb(self):
+		return self._PrfrntlBsktIdNb
+
+	@PrfrntlBsktIdNb.setter
+	def PrfrntlBsktIdNb(self, value):
+		self._PrfrntlBsktIdNb = value if type(value) != auto else self.make_default("PrfrntlBsktIdNb")
+
+	@PrfrntlBsktIdNb.deleter
+	def PrfrntlBsktIdNb(self):
+		del self._PrfrntlBsktIdNb
+		self._PrfrntlBsktIdNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ExclsnBsktId', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElgbltySetPrfl', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrfrntlBsktIdNb', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FllbckStartgBsktId', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExclsnBsktId', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrfrntlBsktIdNb', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

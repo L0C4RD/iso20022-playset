@@ -1,5 +1,5 @@
 from . import base_types
-import RequestToPayDebtorActivationStatusReportV02
+from .RequestToPayDebtorActivationStatusReportV02 import RequestToPayDebtorActivationStatusReportV02
 
 class REDA_073_001_02():
 

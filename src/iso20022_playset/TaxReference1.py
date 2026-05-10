@@ -1,7 +1,7 @@
 from . import base_types
-import TaxReferenceParty1Choice
-import Max35Text
-import TaxReferenceType1Choice
+from .Max35Text import Max35Text
+from .TaxReferenceParty1Choice import TaxReferenceParty1Choice
+from .TaxReferenceType1Choice import TaxReferenceType1Choice
 
 class TaxReference1(base_types._BaseFieldType):
 

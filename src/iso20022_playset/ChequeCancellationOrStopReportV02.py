@@ -1,11 +1,11 @@
 from . import base_types
-import Cheque18
-import SupplementaryData1
-import GroupHeader103
+from .SupplementaryData1 import SupplementaryData1
+from .Cheque18 import Cheque18
+from .GroupHeader103 import GroupHeader103
 
 class ChequeCancellationOrStopReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_GrpHdr", "_Chq"]
+	__slots__ = ["_SplmtryData", "_Chq", "_GrpHdr"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -20,19 +20,6 @@ class ChequeCancellationOrStopReportV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def GrpHdr(self):
-		return self._GrpHdr
-
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
-
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
-
-	@property
 	def Chq(self):
 		return self._Chq
 
@@ -45,9 +32,22 @@ class ChequeCancellationOrStopReportV02(base_types._BaseFieldType):
 		del self._Chq
 		self._Chq = None
 
+	@property
+	def GrpHdr(self):
+		return self._GrpHdr
+
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader103, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Chq', type=Cheque18, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader103, min=1, max=1, mutex_group=None, array=False),
 	))
 

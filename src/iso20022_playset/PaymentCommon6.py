@@ -1,52 +1,13 @@
 from . import base_types
-import DateAndDateTime2Choice
-import CreditDebitCode
-import System3
-import PaymentStatus6
-import PaymentOrigin1Choice
+from .PaymentOrigin1Choice import PaymentOrigin1Choice
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .CreditDebitCode import CreditDebitCode
+from .PaymentStatus6 import PaymentStatus6
+from .System3 import System3
 
 class PaymentCommon6(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtMtd", "_ReqdExctnDt", "_NtryDt", "_CdtDbtInd", "_PmtFr", "_PmtTo", "_CmonSts"]
-	@property
-	def PmtMtd(self):
-		return self._PmtMtd
-
-	@PmtMtd.setter
-	def PmtMtd(self, value):
-		self._PmtMtd = value if type(value) != auto else self.make_default("PmtMtd")
-
-	@PmtMtd.deleter
-	def PmtMtd(self):
-		del self._PmtMtd
-		self._PmtMtd = None
-
-	@property
-	def ReqdExctnDt(self):
-		return self._ReqdExctnDt
-
-	@ReqdExctnDt.setter
-	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != auto else self.make_default("ReqdExctnDt")
-
-	@ReqdExctnDt.deleter
-	def ReqdExctnDt(self):
-		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
-
-	@property
-	def NtryDt(self):
-		return self._NtryDt
-
-	@NtryDt.setter
-	def NtryDt(self, value):
-		self._NtryDt = value if type(value) != auto else self.make_default("NtryDt")
-
-	@NtryDt.deleter
-	def NtryDt(self):
-		del self._NtryDt
-		self._NtryDt = None
-
+	__slots__ = ["_CdtDbtInd", "_PmtFr", "_NtryDt", "_CmonSts", "_PmtMtd", "_PmtTo", "_ReqdExctnDt"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
@@ -74,17 +35,17 @@ class PaymentCommon6(base_types._BaseFieldType):
 		self._PmtFr = None
 
 	@property
-	def PmtTo(self):
-		return self._PmtTo
+	def NtryDt(self):
+		return self._NtryDt
 
-	@PmtTo.setter
-	def PmtTo(self, value):
-		self._PmtTo = value if type(value) != auto else self.make_default("PmtTo")
+	@NtryDt.setter
+	def NtryDt(self, value):
+		self._NtryDt = value if type(value) != auto else self.make_default("NtryDt")
 
-	@PmtTo.deleter
-	def PmtTo(self):
-		del self._PmtTo
-		self._PmtTo = None
+	@NtryDt.deleter
+	def NtryDt(self):
+		del self._NtryDt
+		self._NtryDt = None
 
 	@property
 	def CmonSts(self):
@@ -99,13 +60,52 @@ class PaymentCommon6(base_types._BaseFieldType):
 		del self._CmonSts
 		self._CmonSts = None
 
+	@property
+	def PmtMtd(self):
+		return self._PmtMtd
+
+	@PmtMtd.setter
+	def PmtMtd(self, value):
+		self._PmtMtd = value if type(value) != auto else self.make_default("PmtMtd")
+
+	@PmtMtd.deleter
+	def PmtMtd(self):
+		del self._PmtMtd
+		self._PmtMtd = None
+
+	@property
+	def PmtTo(self):
+		return self._PmtTo
+
+	@PmtTo.setter
+	def PmtTo(self, value):
+		self._PmtTo = value if type(value) != auto else self.make_default("PmtTo")
+
+	@PmtTo.deleter
+	def PmtTo(self):
+		del self._PmtTo
+		self._PmtTo = None
+
+	@property
+	def ReqdExctnDt(self):
+		return self._ReqdExctnDt
+
+	@ReqdExctnDt.setter
+	def ReqdExctnDt(self, value):
+		self._ReqdExctnDt = value if type(value) != auto else self.make_default("ReqdExctnDt")
+
+	@ReqdExctnDt.deleter
+	def ReqdExctnDt(self):
+		del self._ReqdExctnDt
+		self._ReqdExctnDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtMtd', type=PaymentOrigin1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtryDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtFr', type=System3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtTo', type=System3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtryDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonSts', type=PaymentStatus6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PmtMtd', type=PaymentOrigin1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtTo', type=System3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

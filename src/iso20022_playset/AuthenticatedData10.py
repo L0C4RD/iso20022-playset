@@ -1,26 +1,13 @@
 from . import base_types
-import Recipient15Choice
-import Number
-import AlgorithmIdentification31
-import Max140Binary
-import EncapsulatedContent3
+from .Max140Binary import Max140Binary
+from .Recipient15Choice import Recipient15Choice
+from .EncapsulatedContent3 import EncapsulatedContent3
+from .Number import Number
+from .AlgorithmIdentification31 import AlgorithmIdentification31
 
 class AuthenticatedData10(base_types._BaseFieldType):
 
-	__slots__ = ["_Rcpt", "_MACAlgo", "_Vrsn", "_NcpsltdCntt", "_MAC"]
-	@property
-	def Rcpt(self):
-		return self._Rcpt
-
-	@Rcpt.setter
-	def Rcpt(self, value):
-		self._Rcpt = value if type(value) != auto else self.make_default("Rcpt")
-
-	@Rcpt.deleter
-	def Rcpt(self):
-		del self._Rcpt
-		self._Rcpt = None
-
+	__slots__ = ["_MACAlgo", "_Vrsn", "_MAC", "_NcpsltdCntt", "_Rcpt"]
 	@property
 	def MACAlgo(self):
 		return self._MACAlgo
@@ -48,6 +35,19 @@ class AuthenticatedData10(base_types._BaseFieldType):
 		self._Vrsn = None
 
 	@property
+	def MAC(self):
+		return self._MAC
+
+	@MAC.setter
+	def MAC(self, value):
+		self._MAC = value if type(value) != auto else self.make_default("MAC")
+
+	@MAC.deleter
+	def MAC(self):
+		del self._MAC
+		self._MAC = None
+
+	@property
 	def NcpsltdCntt(self):
 		return self._NcpsltdCntt
 
@@ -61,23 +61,23 @@ class AuthenticatedData10(base_types._BaseFieldType):
 		self._NcpsltdCntt = None
 
 	@property
-	def MAC(self):
-		return self._MAC
+	def Rcpt(self):
+		return self._Rcpt
 
-	@MAC.setter
-	def MAC(self, value):
-		self._MAC = value if type(value) != auto else self.make_default("MAC")
+	@Rcpt.setter
+	def Rcpt(self, value):
+		self._Rcpt = value if type(value) != auto else self.make_default("Rcpt")
 
-	@MAC.deleter
-	def MAC(self):
-		del self._MAC
-		self._MAC = None
+	@Rcpt.deleter
+	def Rcpt(self):
+		del self._Rcpt
+		self._Rcpt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rcpt', type=Recipient15Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MACAlgo', type=AlgorithmIdentification31, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MAC', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcpt', type=Recipient15Choice, min=1, max=None, mutex_group=None, array=True),
 	))
 

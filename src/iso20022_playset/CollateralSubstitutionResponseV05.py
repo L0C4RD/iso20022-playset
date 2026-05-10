@@ -1,25 +1,38 @@
 from . import base_types
-import Agreement4
-import SubstitutionResponse2
-import Obligation9
-import SupplementaryData1
-import Max35Text
+from .Max35Text import Max35Text
+from .Agreement4 import Agreement4
+from .SupplementaryData1 import SupplementaryData1
+from .Obligation9 import Obligation9
+from .SubstitutionResponse2 import SubstitutionResponse2
 
 class CollateralSubstitutionResponseV05(base_types._BaseFieldType):
 
-	__slots__ = ["_Agrmt", "_TxId", "_SplmtryData", "_SbstitnRspn", "_Oblgtn"]
+	__slots__ = ["_SplmtryData", "_Oblgtn", "_TxId", "_Agrmt", "_SbstitnRspn"]
 	@property
-	def Agrmt(self):
-		return self._Agrmt
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Agrmt.setter
-	def Agrmt(self, value):
-		self._Agrmt = value if type(value) != auto else self.make_default("Agrmt")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@Agrmt.deleter
-	def Agrmt(self):
-		del self._Agrmt
-		self._Agrmt = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def Oblgtn(self):
+		return self._Oblgtn
+
+	@Oblgtn.setter
+	def Oblgtn(self, value):
+		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
+
+	@Oblgtn.deleter
+	def Oblgtn(self):
+		del self._Oblgtn
+		self._Oblgtn = None
 
 	@property
 	def TxId(self):
@@ -35,17 +48,17 @@ class CollateralSubstitutionResponseV05(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Agrmt(self):
+		return self._Agrmt
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@Agrmt.setter
+	def Agrmt(self, value):
+		self._Agrmt = value if type(value) != auto else self.make_default("Agrmt")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@Agrmt.deleter
+	def Agrmt(self):
+		del self._Agrmt
+		self._Agrmt = None
 
 	@property
 	def SbstitnRspn(self):
@@ -60,24 +73,11 @@ class CollateralSubstitutionResponseV05(base_types._BaseFieldType):
 		del self._SbstitnRspn
 		self._SbstitnRspn = None
 
-	@property
-	def Oblgtn(self):
-		return self._Oblgtn
-
-	@Oblgtn.setter
-	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
-
-	@Oblgtn.deleter
-	def Oblgtn(self):
-		del self._Oblgtn
-		self._Oblgtn = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SbstitnRspn', type=SubstitutionResponse2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SbstitnRspn', type=SubstitutionResponse2, min=1, max=1, mutex_group=None, array=False),
 	))
 

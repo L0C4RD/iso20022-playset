@@ -1,7 +1,7 @@
 from . import base_types
-import Max2000Text
-import PartyAndSignature2
-import Demand1
+from .PartyAndSignature2 import PartyAndSignature2
+from .Max2000Text import Max2000Text
+from .Demand1 import Demand1
 
 class UndertakingDemandV01(base_types._BaseFieldType):
 

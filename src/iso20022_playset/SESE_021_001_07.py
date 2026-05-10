@@ -1,5 +1,5 @@
 from . import base_types
-import SecuritiesTransactionStatusQueryV07
+from .SecuritiesTransactionStatusQueryV07 import SecuritiesTransactionStatusQueryV07
 
 class SESE_021_001_07():
 

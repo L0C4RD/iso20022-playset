@@ -1,24 +1,24 @@
 from . import base_types
-import CorporateActionStandingInstructionGeneralInformation1
-import ContactPerson1
-import CorporateActionStandingInstruction1
-import DocumentIdentification8
+from .CorporateActionStandingInstruction1 import CorporateActionStandingInstruction1
+from .CorporateActionStandingInstructionGeneralInformation1 import CorporateActionStandingInstructionGeneralInformation1
+from .DocumentIdentification8 import DocumentIdentification8
+from .ContactPerson1 import ContactPerson1
 
 class AgentCAStandingInstructionRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_StgInstrGnlInf", "_StgInstrDtls", "_CtctDtls", "_Id"]
+	__slots__ = ["_Id", "_StgInstrDtls", "_CtctDtls", "_StgInstrGnlInf"]
 	@property
-	def StgInstrGnlInf(self):
-		return self._StgInstrGnlInf
+	def Id(self):
+		return self._Id
 
-	@StgInstrGnlInf.setter
-	def StgInstrGnlInf(self, value):
-		self._StgInstrGnlInf = value if type(value) != auto else self.make_default("StgInstrGnlInf")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@StgInstrGnlInf.deleter
-	def StgInstrGnlInf(self):
-		del self._StgInstrGnlInf
-		self._StgInstrGnlInf = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def StgInstrDtls(self):
@@ -47,22 +47,22 @@ class AgentCAStandingInstructionRequestV01(base_types._BaseFieldType):
 		self._CtctDtls = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def StgInstrGnlInf(self):
+		return self._StgInstrGnlInf
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@StgInstrGnlInf.setter
+	def StgInstrGnlInf(self, value):
+		self._StgInstrGnlInf = value if type(value) != auto else self.make_default("StgInstrGnlInf")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@StgInstrGnlInf.deleter
+	def StgInstrGnlInf(self):
+		del self._StgInstrGnlInf
+		self._StgInstrGnlInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StgInstrGnlInf', type=CorporateActionStandingInstructionGeneralInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StgInstrDtls', type=CorporateActionStandingInstruction1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctDtls', type=ContactPerson1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StgInstrGnlInf', type=CorporateActionStandingInstructionGeneralInformation1, min=1, max=1, mutex_group=None, array=False),
 	))
 

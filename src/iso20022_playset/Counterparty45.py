@@ -1,26 +1,26 @@
 from . import base_types
-import CountryCode
-import ReportingExemption1
-import PartyIdentification248Choice
-import TradingCapacity7Code
-import Direction4Choice
-import CounterpartyTradeNature15Choice
+from .CountryCode import CountryCode
+from .Direction4Choice import Direction4Choice
+from .CounterpartyTradeNature15Choice import CounterpartyTradeNature15Choice
+from .ReportingExemption1 import ReportingExemption1
+from .TradingCapacity7Code import TradingCapacity7Code
+from .PartyIdentification248Choice import PartyIdentification248Choice
 
 class Counterparty45(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_DrctnOrSd", "_TradgCpcty", "_BookgLctn", "_Ntr", "_TradrLctn", "_RptgXmptn"]
+	__slots__ = ["_Ntr", "_DrctnOrSd", "_TradgCpcty", "_RptgXmptn", "_Id", "_TradrLctn", "_BookgLctn"]
 	@property
-	def Id(self):
-		return self._Id
+	def Ntr(self):
+		return self._Ntr
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Ntr.setter
+	def Ntr(self, value):
+		self._Ntr = value if type(value) != auto else self.make_default("Ntr")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Ntr.deleter
+	def Ntr(self):
+		del self._Ntr
+		self._Ntr = None
 
 	@property
 	def DrctnOrSd(self):
@@ -49,30 +49,30 @@ class Counterparty45(base_types._BaseFieldType):
 		self._TradgCpcty = None
 
 	@property
-	def BookgLctn(self):
-		return self._BookgLctn
+	def RptgXmptn(self):
+		return self._RptgXmptn
 
-	@BookgLctn.setter
-	def BookgLctn(self, value):
-		self._BookgLctn = value if type(value) != auto else self.make_default("BookgLctn")
+	@RptgXmptn.setter
+	def RptgXmptn(self, value):
+		self._RptgXmptn = value if type(value) != auto else self.make_default("RptgXmptn")
 
-	@BookgLctn.deleter
-	def BookgLctn(self):
-		del self._BookgLctn
-		self._BookgLctn = None
+	@RptgXmptn.deleter
+	def RptgXmptn(self):
+		del self._RptgXmptn
+		self._RptgXmptn = None
 
 	@property
-	def Ntr(self):
-		return self._Ntr
+	def Id(self):
+		return self._Id
 
-	@Ntr.setter
-	def Ntr(self, value):
-		self._Ntr = value if type(value) != auto else self.make_default("Ntr")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@Ntr.deleter
-	def Ntr(self):
-		del self._Ntr
-		self._Ntr = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def TradrLctn(self):
@@ -88,25 +88,25 @@ class Counterparty45(base_types._BaseFieldType):
 		self._TradrLctn = None
 
 	@property
-	def RptgXmptn(self):
-		return self._RptgXmptn
+	def BookgLctn(self):
+		return self._BookgLctn
 
-	@RptgXmptn.setter
-	def RptgXmptn(self, value):
-		self._RptgXmptn = value if type(value) != auto else self.make_default("RptgXmptn")
+	@BookgLctn.setter
+	def BookgLctn(self, value):
+		self._BookgLctn = value if type(value) != auto else self.make_default("BookgLctn")
 
-	@RptgXmptn.deleter
-	def RptgXmptn(self):
-		del self._RptgXmptn
-		self._RptgXmptn = None
+	@BookgLctn.deleter
+	def BookgLctn(self):
+		del self._BookgLctn
+		self._BookgLctn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=PartyIdentification248Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ntr', type=CounterpartyTradeNature15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrctnOrSd', type=Direction4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgCpcty', type=TradingCapacity7Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BookgLctn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ntr', type=CounterpartyTradeNature15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradrLctn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgXmptn', type=ReportingExemption1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification248Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradrLctn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BookgLctn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

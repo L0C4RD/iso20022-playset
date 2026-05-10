@@ -1,40 +1,14 @@
 from . import base_types
-import TradeParty6
-import ReportingPeriod4
-import Max35Text
-import SupplementaryData1
-import BranchAndFinancialInstitutionIdentification8
-import ContractRegistrationStatementCriteria1
+from .Max35Text import Max35Text
+from .SupplementaryData1 import SupplementaryData1
+from .TradeParty6 import TradeParty6
+from .ReportingPeriod4 import ReportingPeriod4
+from .ContractRegistrationStatementCriteria1 import ContractRegistrationStatementCriteria1
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgPrd", "_StmtReqId", "_SplmtryData", "_RegdCtrctId", "_RegnAgt", "_RtrCrit", "_RptgPty"]
-	@property
-	def RptgPrd(self):
-		return self._RptgPrd
-
-	@RptgPrd.setter
-	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
-
-	@RptgPrd.deleter
-	def RptgPrd(self):
-		del self._RptgPrd
-		self._RptgPrd = None
-
-	@property
-	def StmtReqId(self):
-		return self._StmtReqId
-
-	@StmtReqId.setter
-	def StmtReqId(self, value):
-		self._StmtReqId = value if type(value) != auto else self.make_default("StmtReqId")
-
-	@StmtReqId.deleter
-	def StmtReqId(self):
-		del self._StmtReqId
-		self._StmtReqId = None
-
+	__slots__ = ["_SplmtryData", "_RptgPrd", "_RtrCrit", "_RegnAgt", "_StmtReqId", "_RegdCtrctId", "_RptgPty"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -49,30 +23,17 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def RegdCtrctId(self):
-		return self._RegdCtrctId
+	def RptgPrd(self):
+		return self._RptgPrd
 
-	@RegdCtrctId.setter
-	def RegdCtrctId(self, value):
-		self._RegdCtrctId = value if type(value) != auto else self.make_default("RegdCtrctId")
+	@RptgPrd.setter
+	def RptgPrd(self, value):
+		self._RptgPrd = value if type(value) != auto else self.make_default("RptgPrd")
 
-	@RegdCtrctId.deleter
-	def RegdCtrctId(self):
-		del self._RegdCtrctId
-		self._RegdCtrctId = None
-
-	@property
-	def RegnAgt(self):
-		return self._RegnAgt
-
-	@RegnAgt.setter
-	def RegnAgt(self, value):
-		self._RegnAgt = value if type(value) != auto else self.make_default("RegnAgt")
-
-	@RegnAgt.deleter
-	def RegnAgt(self):
-		del self._RegnAgt
-		self._RegnAgt = None
+	@RptgPrd.deleter
+	def RptgPrd(self):
+		del self._RptgPrd
+		self._RptgPrd = None
 
 	@property
 	def RtrCrit(self):
@@ -88,6 +49,45 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 		self._RtrCrit = None
 
 	@property
+	def RegnAgt(self):
+		return self._RegnAgt
+
+	@RegnAgt.setter
+	def RegnAgt(self, value):
+		self._RegnAgt = value if type(value) != auto else self.make_default("RegnAgt")
+
+	@RegnAgt.deleter
+	def RegnAgt(self):
+		del self._RegnAgt
+		self._RegnAgt = None
+
+	@property
+	def StmtReqId(self):
+		return self._StmtReqId
+
+	@StmtReqId.setter
+	def StmtReqId(self, value):
+		self._StmtReqId = value if type(value) != auto else self.make_default("StmtReqId")
+
+	@StmtReqId.deleter
+	def StmtReqId(self):
+		del self._StmtReqId
+		self._StmtReqId = None
+
+	@property
+	def RegdCtrctId(self):
+		return self._RegdCtrctId
+
+	@RegdCtrctId.setter
+	def RegdCtrctId(self, value):
+		self._RegdCtrctId = value if type(value) != auto else self.make_default("RegdCtrctId")
+
+	@RegdCtrctId.deleter
+	def RegdCtrctId(self):
+		del self._RegdCtrctId
+		self._RegdCtrctId = None
+
+	@property
 	def RptgPty(self):
 		return self._RptgPty
 
@@ -101,12 +101,12 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 		self._RptgPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgPrd', type=ReportingPeriod4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RegdCtrctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgPrd', type=ReportingPeriod4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtrCrit', type=ContractRegistrationStatementCriteria1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegdCtrctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgPty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
 	))
 

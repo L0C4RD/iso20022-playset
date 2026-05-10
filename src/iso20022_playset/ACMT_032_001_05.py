@@ -1,5 +1,5 @@
 from . import base_types
-import AccountSwitchBalanceTransferAcknowledgementV05
+from .AccountSwitchBalanceTransferAcknowledgementV05 import AccountSwitchBalanceTransferAcknowledgementV05
 
 class ACMT_032_001_05():
 

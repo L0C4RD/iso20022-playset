@@ -1,23 +1,10 @@
 from . import base_types
-import Max35Text
-import PartyIdentification242Choice
+from .Max35Text import Max35Text
+from .PartyIdentification242Choice import PartyIdentification242Choice
 
 class NettingIdentification2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NetgGrpId", "_TradPty"]
-	@property
-	def NetgGrpId(self):
-		return self._NetgGrpId
-
-	@NetgGrpId.setter
-	def NetgGrpId(self, value):
-		self._NetgGrpId = value if type(value) != auto else self.make_default("NetgGrpId")
-
-	@NetgGrpId.deleter
-	def NetgGrpId(self):
-		del self._NetgGrpId
-		self._NetgGrpId = None
-
+	__slots__ = ["_TradPty", "_NetgGrpId"]
 	@property
 	def TradPty(self):
 		return self._TradPty
@@ -31,8 +18,21 @@ class NettingIdentification2Choice(base_types._BaseFieldType):
 		del self._TradPty
 		self._TradPty = None
 
+	@property
+	def NetgGrpId(self):
+		return self._NetgGrpId
+
+	@NetgGrpId.setter
+	def NetgGrpId(self, value):
+		self._NetgGrpId = value if type(value) != auto else self.make_default("NetgGrpId")
+
+	@NetgGrpId.deleter
+	def NetgGrpId(self):
+		del self._NetgGrpId
+		self._NetgGrpId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NetgGrpId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TradPty', type=PartyIdentification242Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NetgGrpId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

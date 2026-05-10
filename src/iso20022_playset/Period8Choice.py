@@ -1,23 +1,10 @@
 from . import base_types
-import DateTimePeriod1
-import ISODateTime
+from .DateTimePeriod1 import DateTimePeriod1
+from .ISODateTime import ISODateTime
 
 class Period8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ToDtTm", "_FrDtToDt", "_DtTm", "_FrDtTm"]
-	@property
-	def ToDtTm(self):
-		return self._ToDtTm
-
-	@ToDtTm.setter
-	def ToDtTm(self, value):
-		self._ToDtTm = value if type(value) != auto else self.make_default("ToDtTm")
-
-	@ToDtTm.deleter
-	def ToDtTm(self):
-		del self._ToDtTm
-		self._ToDtTm = None
-
+	__slots__ = ["_FrDtToDt", "_ToDtTm", "_FrDtTm", "_DtTm"]
 	@property
 	def FrDtToDt(self):
 		return self._FrDtToDt
@@ -32,17 +19,17 @@ class Period8Choice(base_types._BaseFieldType):
 		self._FrDtToDt = None
 
 	@property
-	def DtTm(self):
-		return self._DtTm
+	def ToDtTm(self):
+		return self._ToDtTm
 
-	@DtTm.setter
-	def DtTm(self, value):
-		self._DtTm = value if type(value) != auto else self.make_default("DtTm")
+	@ToDtTm.setter
+	def ToDtTm(self, value):
+		self._ToDtTm = value if type(value) != auto else self.make_default("ToDtTm")
 
-	@DtTm.deleter
-	def DtTm(self):
-		del self._DtTm
-		self._DtTm = None
+	@ToDtTm.deleter
+	def ToDtTm(self):
+		del self._ToDtTm
+		self._ToDtTm = None
 
 	@property
 	def FrDtTm(self):
@@ -57,10 +44,23 @@ class Period8Choice(base_types._BaseFieldType):
 		del self._FrDtTm
 		self._FrDtTm = None
 
+	@property
+	def DtTm(self):
+		return self._DtTm
+
+	@DtTm.setter
+	def DtTm(self, value):
+		self._DtTm = value if type(value) != auto else self.make_default("DtTm")
+
+	@DtTm.deleter
+	def DtTm(self):
+		del self._DtTm
+		self._DtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ToDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FrDtToDt', type=DateTimePeriod1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ToDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FrDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
 	))
 

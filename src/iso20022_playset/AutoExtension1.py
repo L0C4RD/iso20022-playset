@@ -1,23 +1,23 @@
 from . import base_types
-import ISODate
-import NonExtension1
-import AutoExtend1Choice
+from .NonExtension1 import NonExtension1
+from .AutoExtend1Choice import AutoExtend1Choice
+from .ISODate import ISODate
 
 class AutoExtension1(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_NonXtnsnNtfctn", "_FnlXpryDt"]
+	__slots__ = ["_FnlXpryDt", "_NonXtnsnNtfctn", "_Prd"]
 	@property
-	def Prd(self):
-		return self._Prd
+	def FnlXpryDt(self):
+		return self._FnlXpryDt
 
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
+	@FnlXpryDt.setter
+	def FnlXpryDt(self, value):
+		self._FnlXpryDt = value if type(value) != auto else self.make_default("FnlXpryDt")
 
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
+	@FnlXpryDt.deleter
+	def FnlXpryDt(self):
+		del self._FnlXpryDt
+		self._FnlXpryDt = None
 
 	@property
 	def NonXtnsnNtfctn(self):
@@ -33,21 +33,21 @@ class AutoExtension1(base_types._BaseFieldType):
 		self._NonXtnsnNtfctn = None
 
 	@property
-	def FnlXpryDt(self):
-		return self._FnlXpryDt
+	def Prd(self):
+		return self._Prd
 
-	@FnlXpryDt.setter
-	def FnlXpryDt(self, value):
-		self._FnlXpryDt = value if type(value) != auto else self.make_default("FnlXpryDt")
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != auto else self.make_default("Prd")
 
-	@FnlXpryDt.deleter
-	def FnlXpryDt(self):
-		del self._FnlXpryDt
-		self._FnlXpryDt = None
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prd', type=AutoExtend1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonXtnsnNtfctn', type=NonExtension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FnlXpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonXtnsnNtfctn', type=NonExtension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Prd', type=AutoExtend1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

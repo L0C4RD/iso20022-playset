@@ -1,5 +1,5 @@
 from . import base_types
-import SecuritiesFinancingConfirmation002V11
+from .SecuritiesFinancingConfirmation002V11 import SecuritiesFinancingConfirmation002V11
 
 class SESE_035_002_11():
 

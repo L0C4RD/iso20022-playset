@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import RiskLevel1Code
+from .GenericIdentification47 import GenericIdentification47
+from .RiskLevel1Code import RiskLevel1Code
 
 class RiskLevel2Choice(base_types._BaseFieldType):
 

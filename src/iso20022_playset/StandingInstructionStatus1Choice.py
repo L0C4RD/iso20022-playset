@@ -1,6 +1,6 @@
 from . import base_types
-import CorporateActionStandingInstructionRejectionStatus1
-import CorporateActionStandingInstructionProcessingStatus1
+from .CorporateActionStandingInstructionRejectionStatus1 import CorporateActionStandingInstructionRejectionStatus1
+from .CorporateActionStandingInstructionProcessingStatus1 import CorporateActionStandingInstructionProcessingStatus1
 
 class StandingInstructionStatus1Choice(base_types._BaseFieldType):
 

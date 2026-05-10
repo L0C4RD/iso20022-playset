@@ -1,5 +1,5 @@
 from . import base_types
-import SecuritiesFinancingReportingTransactionStatusAdviceV02
+from .SecuritiesFinancingReportingTransactionStatusAdviceV02 import SecuritiesFinancingReportingTransactionStatusAdviceV02
 
 class AUTH_084_001_02():
 

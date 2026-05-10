@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import SafekeepingPlace3Code
+from .Max35Text import Max35Text
+from .SafekeepingPlace3Code import SafekeepingPlace3Code
 
 class SafekeepingPlaceTypeAndText1(base_types._BaseFieldType):
 

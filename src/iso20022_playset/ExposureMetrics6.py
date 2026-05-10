@@ -1,5 +1,5 @@
 from . import base_types
-import PostedMarginOrCollateral4
+from .PostedMarginOrCollateral4 import PostedMarginOrCollateral4
 
 class ExposureMetrics6(base_types._BaseFieldType):
 

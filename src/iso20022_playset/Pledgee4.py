@@ -1,6 +1,6 @@
 from . import base_types
-import PledgeeFormat6Choice
-import LEIIdentifier
+from .PledgeeFormat6Choice import PledgeeFormat6Choice
+from .LEIIdentifier import LEIIdentifier
 
 class Pledgee4(base_types._BaseFieldType):
 

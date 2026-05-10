@@ -1,6 +1,6 @@
 from . import base_types
-import Max140Text
-import Exact1NumericText
+from .Exact1NumericText import Exact1NumericText
+from .Max140Text import Max140Text
 
 class TrackData1(base_types._BaseFieldType):
 

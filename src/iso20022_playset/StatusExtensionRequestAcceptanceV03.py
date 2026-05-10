@@ -1,24 +1,11 @@
 from . import base_types
-import TransactionStatus4
-import MessageIdentification1
-import SimpleIdentificationInformation
+from .SimpleIdentificationInformation import SimpleIdentificationInformation
+from .TransactionStatus4 import TransactionStatus4
+from .MessageIdentification1 import MessageIdentification1
 
 class StatusExtensionRequestAcceptanceV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmitrTxRef", "_XtndedSts", "_TxId", "_AccptncId"]
-	@property
-	def SubmitrTxRef(self):
-		return self._SubmitrTxRef
-
-	@SubmitrTxRef.setter
-	def SubmitrTxRef(self, value):
-		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
-
-	@SubmitrTxRef.deleter
-	def SubmitrTxRef(self):
-		del self._SubmitrTxRef
-		self._SubmitrTxRef = None
-
+	__slots__ = ["_XtndedSts", "_SubmitrTxRef", "_TxId", "_AccptncId"]
 	@property
 	def XtndedSts(self):
 		return self._XtndedSts
@@ -31,6 +18,19 @@ class StatusExtensionRequestAcceptanceV03(base_types._BaseFieldType):
 	def XtndedSts(self):
 		del self._XtndedSts
 		self._XtndedSts = None
+
+	@property
+	def SubmitrTxRef(self):
+		return self._SubmitrTxRef
+
+	@SubmitrTxRef.setter
+	def SubmitrTxRef(self, value):
+		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
+
+	@SubmitrTxRef.deleter
+	def SubmitrTxRef(self):
+		del self._SubmitrTxRef
+		self._SubmitrTxRef = None
 
 	@property
 	def TxId(self):
@@ -59,8 +59,8 @@ class StatusExtensionRequestAcceptanceV03(base_types._BaseFieldType):
 		self._AccptncId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XtndedSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptncId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))

@@ -1,24 +1,24 @@
 from . import base_types
-import KEKIdentifier4
-import Max5000Binary
-import CryptographicKeyType4Code
-import Max140Binary
+from .Max5000Binary import Max5000Binary
+from .Max140Binary import Max140Binary
+from .KEKIdentifier4 import KEKIdentifier4
+from .CryptographicKeyType4Code import CryptographicKeyType4Code
 
 class ATMConfigurationParameter2(base_types._BaseFieldType):
 
-	__slots__ = ["_Cert", "_HstChllng", "_KeyProps", "_KeyCtgy"]
+	__slots__ = ["_KeyCtgy", "_HstChllng", "_KeyProps", "_Cert"]
 	@property
-	def Cert(self):
-		return self._Cert
+	def KeyCtgy(self):
+		return self._KeyCtgy
 
-	@Cert.setter
-	def Cert(self, value):
-		self._Cert = value if type(value) != auto else self.make_default("Cert")
+	@KeyCtgy.setter
+	def KeyCtgy(self, value):
+		self._KeyCtgy = value if type(value) != auto else self.make_default("KeyCtgy")
 
-	@Cert.deleter
-	def Cert(self):
-		del self._Cert
-		self._Cert = None
+	@KeyCtgy.deleter
+	def KeyCtgy(self):
+		del self._KeyCtgy
+		self._KeyCtgy = None
 
 	@property
 	def HstChllng(self):
@@ -47,22 +47,22 @@ class ATMConfigurationParameter2(base_types._BaseFieldType):
 		self._KeyProps = None
 
 	@property
-	def KeyCtgy(self):
-		return self._KeyCtgy
+	def Cert(self):
+		return self._Cert
 
-	@KeyCtgy.setter
-	def KeyCtgy(self, value):
-		self._KeyCtgy = value if type(value) != auto else self.make_default("KeyCtgy")
+	@Cert.setter
+	def Cert(self, value):
+		self._Cert = value if type(value) != auto else self.make_default("Cert")
 
-	@KeyCtgy.deleter
-	def KeyCtgy(self):
-		del self._KeyCtgy
-		self._KeyCtgy = None
+	@Cert.deleter
+	def Cert(self):
+		del self._Cert
+		self._Cert = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cert', type=Max5000Binary, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='KeyCtgy', type=CryptographicKeyType4Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyProps', type=KEKIdentifier4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='KeyCtgy', type=CryptographicKeyType4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cert', type=Max5000Binary, min=0, max=None, mutex_group=None, array=True),
 	))
 

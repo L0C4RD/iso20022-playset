@@ -1,6 +1,6 @@
 from . import base_types
-import AccountStatusUpdateInstruction1Choice
-import AccountStatusUpdateInstructionReason1Choice
+from .AccountStatusUpdateInstructionReason1Choice import AccountStatusUpdateInstructionReason1Choice
+from .AccountStatusUpdateInstruction1Choice import AccountStatusUpdateInstruction1Choice
 
 class AccountStatusUpdateInstruction1(base_types._BaseFieldType):
 

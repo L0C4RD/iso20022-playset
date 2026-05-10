@@ -1,28 +1,28 @@
 from . import base_types
-import Max6Text
-import Traceability8
-import Max3NumericText
-import ISODateTime
-import GenericIdentification177
-import Number
-import MessageFunction46Code
-import GenericIdentification176
+from .GenericIdentification177 import GenericIdentification177
+from .MessageFunction46Code import MessageFunction46Code
+from .Max6Text import Max6Text
+from .Traceability8 import Traceability8
+from .GenericIdentification176 import GenericIdentification176
+from .Number import Number
+from .Max3NumericText import Max3NumericText
+from .ISODateTime import ISODateTime
 
 class Header70(base_types._BaseFieldType):
 
-	__slots__ = ["_InitgPty", "_ReTrnsmssnCntr", "_RcptPty", "_Tracblt", "_PrtcolVrsn", "_MsgFctn", "_XchgId", "_CreDtTm"]
+	__slots__ = ["_MsgFctn", "_ReTrnsmssnCntr", "_RcptPty", "_XchgId", "_InitgPty", "_Tracblt", "_PrtcolVrsn", "_CreDtTm"]
 	@property
-	def InitgPty(self):
-		return self._InitgPty
+	def MsgFctn(self):
+		return self._MsgFctn
 
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
+	@MsgFctn.setter
+	def MsgFctn(self, value):
+		self._MsgFctn = value if type(value) != auto else self.make_default("MsgFctn")
 
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
+	@MsgFctn.deleter
+	def MsgFctn(self):
+		del self._MsgFctn
+		self._MsgFctn = None
 
 	@property
 	def ReTrnsmssnCntr(self):
@@ -51,6 +51,32 @@ class Header70(base_types._BaseFieldType):
 		self._RcptPty = None
 
 	@property
+	def XchgId(self):
+		return self._XchgId
+
+	@XchgId.setter
+	def XchgId(self, value):
+		self._XchgId = value if type(value) != auto else self.make_default("XchgId")
+
+	@XchgId.deleter
+	def XchgId(self):
+		del self._XchgId
+		self._XchgId = None
+
+	@property
+	def InitgPty(self):
+		return self._InitgPty
+
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
+
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
+
+	@property
 	def Tracblt(self):
 		return self._Tracblt
 
@@ -77,32 +103,6 @@ class Header70(base_types._BaseFieldType):
 		self._PrtcolVrsn = None
 
 	@property
-	def MsgFctn(self):
-		return self._MsgFctn
-
-	@MsgFctn.setter
-	def MsgFctn(self, value):
-		self._MsgFctn = value if type(value) != auto else self.make_default("MsgFctn")
-
-	@MsgFctn.deleter
-	def MsgFctn(self):
-		del self._MsgFctn
-		self._MsgFctn = None
-
-	@property
-	def XchgId(self):
-		return self._XchgId
-
-	@XchgId.setter
-	def XchgId(self, value):
-		self._XchgId = value if type(value) != auto else self.make_default("XchgId")
-
-	@XchgId.deleter
-	def XchgId(self):
-		del self._XchgId
-		self._XchgId = None
-
-	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -116,13 +116,13 @@ class Header70(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InitgPty', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgFctn', type=MessageFunction46Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReTrnsmssnCntr', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptPty', type=GenericIdentification177, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgId', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitgPty', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tracblt', type=Traceability8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrtcolVrsn', type=Max6Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgFctn', type=MessageFunction46Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgId', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

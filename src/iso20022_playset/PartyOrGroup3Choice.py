@@ -1,6 +1,6 @@
 from . import base_types
-import PartyAndCertificate6
-import Max4AlphaNumericText
+from .Max4AlphaNumericText import Max4AlphaNumericText
+from .PartyAndCertificate6 import PartyAndCertificate6
 
 class PartyOrGroup3Choice(base_types._BaseFieldType):
 

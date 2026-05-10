@@ -1,6 +1,6 @@
 from . import base_types
-import DocumentAdjustment1
-import DocumentAmount1
+from .DocumentAmount1 import DocumentAmount1
+from .DocumentAdjustment1 import DocumentAdjustment1
 
 class RemittanceAmount4(base_types._BaseFieldType):
 

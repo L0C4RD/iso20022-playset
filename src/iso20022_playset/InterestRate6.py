@@ -1,6 +1,6 @@
 from . import base_types
-import AmountAndDirection53
-import InterestRate27Choice
+from .AmountAndDirection53 import AmountAndDirection53
+from .InterestRate27Choice import InterestRate27Choice
 
 class InterestRate6(base_types._BaseFieldType):
 

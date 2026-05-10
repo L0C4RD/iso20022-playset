@@ -1,23 +1,10 @@
 from . import base_types
-import PlaceOfPresentation1
-import PresentationParty1Code
+from .PresentationParty1Code import PresentationParty1Code
+from .PlaceOfPresentation1 import PlaceOfPresentation1
 
 class PlaceOrUnderConfirmationChoice1(base_types._BaseFieldType):
 
-	__slots__ = ["_PresntnUdrConf", "_PlcOfPresntn"]
-	@property
-	def PresntnUdrConf(self):
-		return self._PresntnUdrConf
-
-	@PresntnUdrConf.setter
-	def PresntnUdrConf(self, value):
-		self._PresntnUdrConf = value if type(value) != auto else self.make_default("PresntnUdrConf")
-
-	@PresntnUdrConf.deleter
-	def PresntnUdrConf(self):
-		del self._PresntnUdrConf
-		self._PresntnUdrConf = None
-
+	__slots__ = ["_PlcOfPresntn", "_PresntnUdrConf"]
 	@property
 	def PlcOfPresntn(self):
 		return self._PlcOfPresntn
@@ -31,8 +18,21 @@ class PlaceOrUnderConfirmationChoice1(base_types._BaseFieldType):
 		del self._PlcOfPresntn
 		self._PlcOfPresntn = None
 
+	@property
+	def PresntnUdrConf(self):
+		return self._PresntnUdrConf
+
+	@PresntnUdrConf.setter
+	def PresntnUdrConf(self, value):
+		self._PresntnUdrConf = value if type(value) != auto else self.make_default("PresntnUdrConf")
+
+	@PresntnUdrConf.deleter
+	def PresntnUdrConf(self):
+		del self._PresntnUdrConf
+		self._PresntnUdrConf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PresntnUdrConf', type=PresentationParty1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PlcOfPresntn', type=PlaceOfPresentation1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PresntnUdrConf', type=PresentationParty1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

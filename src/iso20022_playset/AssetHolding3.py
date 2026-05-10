@@ -1,24 +1,11 @@
 from . import base_types
-import ActiveCurrencyAnd24Amount
-import CollateralAccountType3Code
-import AssetHolding3Choice
+from .ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
+from .CollateralAccountType3Code import CollateralAccountType3Code
+from .AssetHolding3Choice import AssetHolding3Choice
 
 class AssetHolding3(base_types._BaseFieldType):
 
-	__slots__ = ["_CollRqrmnt", "_AsstTp", "_PstHrcutVal"]
-	@property
-	def CollRqrmnt(self):
-		return self._CollRqrmnt
-
-	@CollRqrmnt.setter
-	def CollRqrmnt(self, value):
-		self._CollRqrmnt = value if type(value) != auto else self.make_default("CollRqrmnt")
-
-	@CollRqrmnt.deleter
-	def CollRqrmnt(self):
-		del self._CollRqrmnt
-		self._CollRqrmnt = None
-
+	__slots__ = ["_AsstTp", "_PstHrcutVal", "_CollRqrmnt"]
 	@property
 	def AsstTp(self):
 		return self._AsstTp
@@ -45,9 +32,22 @@ class AssetHolding3(base_types._BaseFieldType):
 		del self._PstHrcutVal
 		self._PstHrcutVal = None
 
+	@property
+	def CollRqrmnt(self):
+		return self._CollRqrmnt
+
+	@CollRqrmnt.setter
+	def CollRqrmnt(self, value):
+		self._CollRqrmnt = value if type(value) != auto else self.make_default("CollRqrmnt")
+
+	@CollRqrmnt.deleter
+	def CollRqrmnt(self):
+		del self._CollRqrmnt
+		self._CollRqrmnt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollRqrmnt', type=CollateralAccountType3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AsstTp', type=AssetHolding3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstHrcutVal', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollRqrmnt', type=CollateralAccountType3Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

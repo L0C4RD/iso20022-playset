@@ -1,5 +1,5 @@
 from . import base_types
-import Cleared23Choice
+from .Cleared23Choice import Cleared23Choice
 
 class CompareTradeClearingStatus3(base_types._BaseFieldType):
 

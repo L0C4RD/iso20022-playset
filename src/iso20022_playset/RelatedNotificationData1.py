@@ -1,6 +1,6 @@
 from . import base_types
-import NotificationLocationData1
-import Max35Text
+from .Max35Text import Max35Text
+from .NotificationLocationData1 import NotificationLocationData1
 
 class RelatedNotificationData1(base_types._BaseFieldType):
 

@@ -1,24 +1,24 @@
 from . import base_types
-import TransactionDetails157
-import SupplementaryData1
-import ResponseStatus8Choice
-import TransactionIdentification7
+from .TransactionIdentification7 import TransactionIdentification7
+from .ResponseStatus8Choice import ResponseStatus8Choice
+from .SupplementaryData1 import SupplementaryData1
+from .TransactionDetails157 import TransactionDetails157
 
 class SecuritiesSettlementTransactionCounterpartyResponse002V04(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TxDtls", "_RspnSts", "_TxId"]
+	__slots__ = ["_TxId", "_TxDtls", "_RspnSts", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def TxId(self):
+		return self._TxId
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def TxDtls(self):
@@ -47,22 +47,22 @@ class SecuritiesSettlementTransactionCounterpartyResponse002V04(base_types._Base
 		self._RspnSts = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtls', type=TransactionDetails157, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnSts', type=ResponseStatus8Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=TransactionIdentification7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

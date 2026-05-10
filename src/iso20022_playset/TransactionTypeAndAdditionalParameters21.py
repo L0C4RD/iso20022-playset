@@ -1,25 +1,12 @@
 from . import base_types
-import SecuritiesFinancingTransactionType2Code
-import YesNoIndicator
-import Max35Text
-import DeliveryReceiptType2Code
+from .Max35Text import Max35Text
+from .DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from .YesNoIndicator import YesNoIndicator
+from .SecuritiesFinancingTransactionType2Code import SecuritiesFinancingTransactionType2Code
 
 class TransactionTypeAndAdditionalParameters21(base_types._BaseFieldType):
 
-	__slots__ = ["_NonceId", "_SctiesFincgTxTp", "_Pmt", "_CmonId", "_RcncltnInd"]
-	@property
-	def NonceId(self):
-		return self._NonceId
-
-	@NonceId.setter
-	def NonceId(self, value):
-		self._NonceId = value if type(value) != auto else self.make_default("NonceId")
-
-	@NonceId.deleter
-	def NonceId(self):
-		del self._NonceId
-		self._NonceId = None
-
+	__slots__ = ["_SctiesFincgTxTp", "_CmonId", "_Pmt", "_RcncltnInd", "_NonceId"]
 	@property
 	def SctiesFincgTxTp(self):
 		return self._SctiesFincgTxTp
@@ -32,19 +19,6 @@ class TransactionTypeAndAdditionalParameters21(base_types._BaseFieldType):
 	def SctiesFincgTxTp(self):
 		del self._SctiesFincgTxTp
 		self._SctiesFincgTxTp = None
-
-	@property
-	def Pmt(self):
-		return self._Pmt
-
-	@Pmt.setter
-	def Pmt(self, value):
-		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
-
-	@Pmt.deleter
-	def Pmt(self):
-		del self._Pmt
-		self._Pmt = None
 
 	@property
 	def CmonId(self):
@@ -60,6 +34,19 @@ class TransactionTypeAndAdditionalParameters21(base_types._BaseFieldType):
 		self._CmonId = None
 
 	@property
+	def Pmt(self):
+		return self._Pmt
+
+	@Pmt.setter
+	def Pmt(self, value):
+		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
+
+	@Pmt.deleter
+	def Pmt(self):
+		del self._Pmt
+		self._Pmt = None
+
+	@property
 	def RcncltnInd(self):
 		return self._RcncltnInd
 
@@ -72,11 +59,24 @@ class TransactionTypeAndAdditionalParameters21(base_types._BaseFieldType):
 		del self._RcncltnInd
 		self._RcncltnInd = None
 
+	@property
+	def NonceId(self):
+		return self._NonceId
+
+	@NonceId.setter
+	def NonceId(self, value):
+		self._NonceId = value if type(value) != auto else self.make_default("NonceId")
+
+	@NonceId.deleter
+	def NonceId(self):
+		del self._NonceId
+		self._NonceId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NonceId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesFincgTxTp', type=SecuritiesFinancingTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonceId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

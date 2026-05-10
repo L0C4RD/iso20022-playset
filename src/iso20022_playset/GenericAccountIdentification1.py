@@ -1,11 +1,24 @@
 from . import base_types
-import Max34Text
-import Max35Text
-import AccountSchemeName1Choice
+from .Max35Text import Max35Text
+from .Max34Text import Max34Text
+from .AccountSchemeName1Choice import AccountSchemeName1Choice
 
 class GenericAccountIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_SchmeNm", "_Issr"]
+	__slots__ = ["_Issr", "_Id", "_SchmeNm"]
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -32,22 +45,9 @@ class GenericAccountIdentification1(base_types._BaseFieldType):
 		del self._SchmeNm
 		self._SchmeNm = None
 
-	@property
-	def Issr(self):
-		return self._Issr
-
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
-
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max34Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=AccountSchemeName1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

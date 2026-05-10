@@ -1,24 +1,11 @@
 from . import base_types
-import ContentInformationType38
-import CertificateManagementResponse3
-import TMSHeader1
+from .TMSHeader1 import TMSHeader1
+from .ContentInformationType38 import ContentInformationType38
+from .CertificateManagementResponse3 import CertificateManagementResponse3
 
 class CertificateManagementResponseV07(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_Hdr", "_CertMgmtRspn"]
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
+	__slots__ = ["_Hdr", "_SctyTrlr", "_CertMgmtRspn"]
 	@property
 	def Hdr(self):
 		return self._Hdr
@@ -31,6 +18,19 @@ class CertificateManagementResponseV07(base_types._BaseFieldType):
 	def Hdr(self):
 		del self._Hdr
 		self._Hdr = None
+
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	@property
 	def CertMgmtRspn(self):
@@ -46,8 +46,8 @@ class CertificateManagementResponseV07(base_types._BaseFieldType):
 		self._CertMgmtRspn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=TMSHeader1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CertMgmtRspn', type=CertificateManagementResponse3, min=1, max=1, mutex_group=None, array=False),
 	))
 

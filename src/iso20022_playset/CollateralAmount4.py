@@ -1,21 +1,21 @@
 from . import base_types
-import ActiveOrHistoricCurrencyAndAmount
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class CollateralAmount4(base_types._BaseFieldType):
 
-	__slots__ = ["_ActlMktValPstValtnFctr", "_XpsrCollInTxCcy", "_XpsrCollInRptgCcy", "_TtlValOfOwnColl", "_MktValAmtBfrValtnFctr", "_ActlMktValBfrValtnFctr", "_TtlValOfReusdColl", "_MktValAmtPstValtnFctr"]
+	__slots__ = ["_TtlValOfOwnColl", "_XpsrCollInTxCcy", "_ActlMktValBfrValtnFctr", "_ActlMktValPstValtnFctr", "_XpsrCollInRptgCcy", "_MktValAmtBfrValtnFctr", "_MktValAmtPstValtnFctr", "_TtlValOfReusdColl"]
 	@property
-	def ActlMktValPstValtnFctr(self):
-		return self._ActlMktValPstValtnFctr
+	def TtlValOfOwnColl(self):
+		return self._TtlValOfOwnColl
 
-	@ActlMktValPstValtnFctr.setter
-	def ActlMktValPstValtnFctr(self, value):
-		self._ActlMktValPstValtnFctr = value if type(value) != auto else self.make_default("ActlMktValPstValtnFctr")
+	@TtlValOfOwnColl.setter
+	def TtlValOfOwnColl(self, value):
+		self._TtlValOfOwnColl = value if type(value) != auto else self.make_default("TtlValOfOwnColl")
 
-	@ActlMktValPstValtnFctr.deleter
-	def ActlMktValPstValtnFctr(self):
-		del self._ActlMktValPstValtnFctr
-		self._ActlMktValPstValtnFctr = None
+	@TtlValOfOwnColl.deleter
+	def TtlValOfOwnColl(self):
+		del self._TtlValOfOwnColl
+		self._TtlValOfOwnColl = None
 
 	@property
 	def XpsrCollInTxCcy(self):
@@ -31,6 +31,32 @@ class CollateralAmount4(base_types._BaseFieldType):
 		self._XpsrCollInTxCcy = None
 
 	@property
+	def ActlMktValBfrValtnFctr(self):
+		return self._ActlMktValBfrValtnFctr
+
+	@ActlMktValBfrValtnFctr.setter
+	def ActlMktValBfrValtnFctr(self, value):
+		self._ActlMktValBfrValtnFctr = value if type(value) != auto else self.make_default("ActlMktValBfrValtnFctr")
+
+	@ActlMktValBfrValtnFctr.deleter
+	def ActlMktValBfrValtnFctr(self):
+		del self._ActlMktValBfrValtnFctr
+		self._ActlMktValBfrValtnFctr = None
+
+	@property
+	def ActlMktValPstValtnFctr(self):
+		return self._ActlMktValPstValtnFctr
+
+	@ActlMktValPstValtnFctr.setter
+	def ActlMktValPstValtnFctr(self, value):
+		self._ActlMktValPstValtnFctr = value if type(value) != auto else self.make_default("ActlMktValPstValtnFctr")
+
+	@ActlMktValPstValtnFctr.deleter
+	def ActlMktValPstValtnFctr(self):
+		del self._ActlMktValPstValtnFctr
+		self._ActlMktValPstValtnFctr = None
+
+	@property
 	def XpsrCollInRptgCcy(self):
 		return self._XpsrCollInRptgCcy
 
@@ -42,19 +68,6 @@ class CollateralAmount4(base_types._BaseFieldType):
 	def XpsrCollInRptgCcy(self):
 		del self._XpsrCollInRptgCcy
 		self._XpsrCollInRptgCcy = None
-
-	@property
-	def TtlValOfOwnColl(self):
-		return self._TtlValOfOwnColl
-
-	@TtlValOfOwnColl.setter
-	def TtlValOfOwnColl(self, value):
-		self._TtlValOfOwnColl = value if type(value) != auto else self.make_default("TtlValOfOwnColl")
-
-	@TtlValOfOwnColl.deleter
-	def TtlValOfOwnColl(self):
-		del self._TtlValOfOwnColl
-		self._TtlValOfOwnColl = None
 
 	@property
 	def MktValAmtBfrValtnFctr(self):
@@ -70,17 +83,17 @@ class CollateralAmount4(base_types._BaseFieldType):
 		self._MktValAmtBfrValtnFctr = None
 
 	@property
-	def ActlMktValBfrValtnFctr(self):
-		return self._ActlMktValBfrValtnFctr
+	def MktValAmtPstValtnFctr(self):
+		return self._MktValAmtPstValtnFctr
 
-	@ActlMktValBfrValtnFctr.setter
-	def ActlMktValBfrValtnFctr(self, value):
-		self._ActlMktValBfrValtnFctr = value if type(value) != auto else self.make_default("ActlMktValBfrValtnFctr")
+	@MktValAmtPstValtnFctr.setter
+	def MktValAmtPstValtnFctr(self, value):
+		self._MktValAmtPstValtnFctr = value if type(value) != auto else self.make_default("MktValAmtPstValtnFctr")
 
-	@ActlMktValBfrValtnFctr.deleter
-	def ActlMktValBfrValtnFctr(self):
-		del self._ActlMktValBfrValtnFctr
-		self._ActlMktValBfrValtnFctr = None
+	@MktValAmtPstValtnFctr.deleter
+	def MktValAmtPstValtnFctr(self):
+		del self._MktValAmtPstValtnFctr
+		self._MktValAmtPstValtnFctr = None
 
 	@property
 	def TtlValOfReusdColl(self):
@@ -95,27 +108,14 @@ class CollateralAmount4(base_types._BaseFieldType):
 		del self._TtlValOfReusdColl
 		self._TtlValOfReusdColl = None
 
-	@property
-	def MktValAmtPstValtnFctr(self):
-		return self._MktValAmtPstValtnFctr
-
-	@MktValAmtPstValtnFctr.setter
-	def MktValAmtPstValtnFctr(self, value):
-		self._MktValAmtPstValtnFctr = value if type(value) != auto else self.make_default("MktValAmtPstValtnFctr")
-
-	@MktValAmtPstValtnFctr.deleter
-	def MktValAmtPstValtnFctr(self):
-		del self._MktValAmtPstValtnFctr
-		self._MktValAmtPstValtnFctr = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActlMktValPstValtnFctr', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpsrCollInTxCcy', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpsrCollInRptgCcy', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlValOfOwnColl', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktValAmtBfrValtnFctr', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpsrCollInTxCcy', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActlMktValBfrValtnFctr', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlValOfReusdColl', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActlMktValPstValtnFctr', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpsrCollInRptgCcy', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktValAmtBfrValtnFctr', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktValAmtPstValtnFctr', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlValOfReusdColl', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

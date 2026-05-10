@@ -1,11 +1,24 @@
 from . import base_types
-import Max350Text
-import PartyIdentification203Choice
-import PartyAddress1
+from .PartyIdentification203Choice import PartyIdentification203Choice
+from .Max350Text import Max350Text
+from .PartyAddress1 import PartyAddress1
 
 class PartyIdentification214(base_types._BaseFieldType):
 
-	__slots__ = ["_RcptNm", "_RspnRcptAdr", "_Id"]
+	__slots__ = ["_Id", "_RcptNm", "_RspnRcptAdr"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	@property
 	def RcptNm(self):
 		return self._RcptNm
@@ -32,22 +45,9 @@ class PartyIdentification214(base_types._BaseFieldType):
 		del self._RspnRcptAdr
 		self._RspnRcptAdr = None
 
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Id', type=PartyIdentification203Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnRcptAdr', type=PartyAddress1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification203Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

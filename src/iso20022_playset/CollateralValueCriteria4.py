@@ -1,23 +1,23 @@
 from . import base_types
-import CollateralValueReturnCriteria1
-import Max35Text
-import CollateralValueSearchCriteria4
+from .Max35Text import Max35Text
+from .CollateralValueSearchCriteria4 import CollateralValueSearchCriteria4
+from .CollateralValueReturnCriteria1 import CollateralValueReturnCriteria1
 
 class CollateralValueCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_SchCrit", "_QryNm", "_RtrCrit"]
+	__slots__ = ["_RtrCrit", "_QryNm", "_SchCrit"]
 	@property
-	def SchCrit(self):
-		return self._SchCrit
+	def RtrCrit(self):
+		return self._RtrCrit
 
-	@SchCrit.setter
-	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != auto else self.make_default("SchCrit")
+	@RtrCrit.setter
+	def RtrCrit(self, value):
+		self._RtrCrit = value if type(value) != auto else self.make_default("RtrCrit")
 
-	@SchCrit.deleter
-	def SchCrit(self):
-		del self._SchCrit
-		self._SchCrit = None
+	@RtrCrit.deleter
+	def RtrCrit(self):
+		del self._RtrCrit
+		self._RtrCrit = None
 
 	@property
 	def QryNm(self):
@@ -33,21 +33,21 @@ class CollateralValueCriteria4(base_types._BaseFieldType):
 		self._QryNm = None
 
 	@property
-	def RtrCrit(self):
-		return self._RtrCrit
+	def SchCrit(self):
+		return self._SchCrit
 
-	@RtrCrit.setter
-	def RtrCrit(self, value):
-		self._RtrCrit = value if type(value) != auto else self.make_default("RtrCrit")
+	@SchCrit.setter
+	def SchCrit(self, value):
+		self._SchCrit = value if type(value) != auto else self.make_default("SchCrit")
 
-	@RtrCrit.deleter
-	def RtrCrit(self):
-		del self._RtrCrit
-		self._RtrCrit = None
+	@SchCrit.deleter
+	def SchCrit(self):
+		del self._SchCrit
+		self._SchCrit = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SchCrit', type=CollateralValueSearchCriteria4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtrCrit', type=CollateralValueReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchCrit', type=CollateralValueSearchCriteria4, min=0, max=1, mutex_group=None, array=False),
 	))
 

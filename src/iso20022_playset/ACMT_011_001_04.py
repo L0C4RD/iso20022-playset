@@ -1,5 +1,5 @@
 from . import base_types
-import AccountRequestRejectionV04
+from .AccountRequestRejectionV04 import AccountRequestRejectionV04
 
 class ACMT_011_001_04():
 

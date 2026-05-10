@@ -1,5 +1,5 @@
 from . import base_types
-import RedemptionOrderV04
+from .RedemptionOrderV04 import RedemptionOrderV04
 
 class SETR_004_001_04():
 

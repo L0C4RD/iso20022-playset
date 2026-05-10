@@ -1,23 +1,10 @@
 from . import base_types
-import ShortLong1Code
-import Quantity53Choice
+from .ShortLong1Code import ShortLong1Code
+from .Quantity53Choice import Quantity53Choice
 
 class SignedQuantityFormat12(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtLngPos", "_QtyChc"]
-	@property
-	def ShrtLngPos(self):
-		return self._ShrtLngPos
-
-	@ShrtLngPos.setter
-	def ShrtLngPos(self, value):
-		self._ShrtLngPos = value if type(value) != auto else self.make_default("ShrtLngPos")
-
-	@ShrtLngPos.deleter
-	def ShrtLngPos(self):
-		del self._ShrtLngPos
-		self._ShrtLngPos = None
-
+	__slots__ = ["_QtyChc", "_ShrtLngPos"]
 	@property
 	def QtyChc(self):
 		return self._QtyChc
@@ -31,8 +18,21 @@ class SignedQuantityFormat12(base_types._BaseFieldType):
 		del self._QtyChc
 		self._QtyChc = None
 
+	@property
+	def ShrtLngPos(self):
+		return self._ShrtLngPos
+
+	@ShrtLngPos.setter
+	def ShrtLngPos(self, value):
+		self._ShrtLngPos = value if type(value) != auto else self.make_default("ShrtLngPos")
+
+	@ShrtLngPos.deleter
+	def ShrtLngPos(self):
+		del self._ShrtLngPos
+		self._ShrtLngPos = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ShrtLngPos', type=ShortLong1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtyChc', type=Quantity53Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtLngPos', type=ShortLong1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

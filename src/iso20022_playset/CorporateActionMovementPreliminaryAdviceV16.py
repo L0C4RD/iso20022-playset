@@ -1,49 +1,23 @@
 from . import base_types
-import CorporateActionOption232
-import DocumentIdentification32
-import CorporateActionReversalReason8
-import CorporateActionPreliminaryAdviceType4
-import CorporateActionNarrative56
-import SupplementaryData1
-import PartyIdentification129Choice
-import Pagination1
-import DocumentIdentification31
-import CorporateAction69
-import PartyIdentification120Choice
-import CorporateActionEventReference3
-import AccountIdentification70Choice
-import CorporateActionGeneralInformation178
-import DocumentIdentification9
+from .CorporateActionReversalReason8 import CorporateActionReversalReason8
+from .CorporateAction69 import CorporateAction69
+from .CorporateActionNarrative56 import CorporateActionNarrative56
+from .Pagination1 import Pagination1
+from .PartyIdentification120Choice import PartyIdentification120Choice
+from .CorporateActionOption232 import CorporateActionOption232
+from .CorporateActionGeneralInformation178 import CorporateActionGeneralInformation178
+from .DocumentIdentification31 import DocumentIdentification31
+from .SupplementaryData1 import SupplementaryData1
+from .DocumentIdentification9 import DocumentIdentification9
+from .CorporateActionPreliminaryAdviceType4 import CorporateActionPreliminaryAdviceType4
+from .AccountIdentification70Choice import AccountIdentification70Choice
+from .CorporateActionEventReference3 import CorporateActionEventReference3
+from .DocumentIdentification32 import DocumentIdentification32
+from .PartyIdentification129Choice import PartyIdentification129Choice
 
 class CorporateActionMovementPreliminaryAdviceV16(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_RvslRsn", "_TrfAgt", "_EvtsLkg", "_SubPngAgt", "_Pgntn", "_CorpActnGnlInf", "_Regar", "_RsellngAgt", "_InstrId", "_MvmntConfId", "_Offerr", "_InfAgt", "_AddtlInf", "_NtfctnId", "_CorpActnDtls", "_PngAgt", "_SplmtryData", "_OthrDocId", "_PhysSctiesAgt", "_IssrAgt", "_DrpAgt", "_SlctnAgt", "_MvmntPrlimryAdvcGnlInf", "_PrvsMvmntPrlimryAdvcId", "_Issr", "_CorpActnMvmntDtls"]
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
-	@property
-	def RvslRsn(self):
-		return self._RvslRsn
-
-	@RvslRsn.setter
-	def RvslRsn(self, value):
-		self._RvslRsn = value if type(value) != auto else self.make_default("RvslRsn")
-
-	@RvslRsn.deleter
-	def RvslRsn(self):
-		del self._RvslRsn
-		self._RvslRsn = None
-
+	__slots__ = ["_TrfAgt", "_RsellngAgt", "_Pgntn", "_PngAgt", "_InfAgt", "_RvslRsn", "_OthrDocId", "_CorpActnDtls", "_NtfctnId", "_Regar", "_SlctnAgt", "_IssrAgt", "_AcctDtls", "_Issr", "_SubPngAgt", "_MvmntConfId", "_InstrId", "_MvmntPrlimryAdvcGnlInf", "_EvtsLkg", "_PrvsMvmntPrlimryAdvcId", "_DrpAgt", "_AddtlInf", "_CorpActnGnlInf", "_PhysSctiesAgt", "_SplmtryData", "_CorpActnMvmntDtls", "_Offerr"]
 	@property
 	def TrfAgt(self):
 		return self._TrfAgt
@@ -56,71 +30,6 @@ class CorporateActionMovementPreliminaryAdviceV16(base_types._BaseFieldType):
 	def TrfAgt(self):
 		del self._TrfAgt
 		self._TrfAgt = None
-
-	@property
-	def EvtsLkg(self):
-		return self._EvtsLkg
-
-	@EvtsLkg.setter
-	def EvtsLkg(self, value):
-		self._EvtsLkg = value if type(value) != auto else self.make_default("EvtsLkg")
-
-	@EvtsLkg.deleter
-	def EvtsLkg(self):
-		del self._EvtsLkg
-		self._EvtsLkg = None
-
-	@property
-	def SubPngAgt(self):
-		return self._SubPngAgt
-
-	@SubPngAgt.setter
-	def SubPngAgt(self, value):
-		self._SubPngAgt = value if type(value) != auto else self.make_default("SubPngAgt")
-
-	@SubPngAgt.deleter
-	def SubPngAgt(self):
-		del self._SubPngAgt
-		self._SubPngAgt = None
-
-	@property
-	def Pgntn(self):
-		return self._Pgntn
-
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
-
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
-
-	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
-
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
-
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
-
-	@property
-	def Regar(self):
-		return self._Regar
-
-	@Regar.setter
-	def Regar(self, value):
-		self._Regar = value if type(value) != auto else self.make_default("Regar")
-
-	@Regar.deleter
-	def Regar(self):
-		del self._Regar
-		self._Regar = None
 
 	@property
 	def RsellngAgt(self):
@@ -136,95 +45,17 @@ class CorporateActionMovementPreliminaryAdviceV16(base_types._BaseFieldType):
 		self._RsellngAgt = None
 
 	@property
-	def InstrId(self):
-		return self._InstrId
+	def Pgntn(self):
+		return self._Pgntn
 
-	@InstrId.setter
-	def InstrId(self, value):
-		self._InstrId = value if type(value) != auto else self.make_default("InstrId")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
 
-	@InstrId.deleter
-	def InstrId(self):
-		del self._InstrId
-		self._InstrId = None
-
-	@property
-	def MvmntConfId(self):
-		return self._MvmntConfId
-
-	@MvmntConfId.setter
-	def MvmntConfId(self, value):
-		self._MvmntConfId = value if type(value) != auto else self.make_default("MvmntConfId")
-
-	@MvmntConfId.deleter
-	def MvmntConfId(self):
-		del self._MvmntConfId
-		self._MvmntConfId = None
-
-	@property
-	def Offerr(self):
-		return self._Offerr
-
-	@Offerr.setter
-	def Offerr(self, value):
-		self._Offerr = value if type(value) != auto else self.make_default("Offerr")
-
-	@Offerr.deleter
-	def Offerr(self):
-		del self._Offerr
-		self._Offerr = None
-
-	@property
-	def InfAgt(self):
-		return self._InfAgt
-
-	@InfAgt.setter
-	def InfAgt(self, value):
-		self._InfAgt = value if type(value) != auto else self.make_default("InfAgt")
-
-	@InfAgt.deleter
-	def InfAgt(self):
-		del self._InfAgt
-		self._InfAgt = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def NtfctnId(self):
-		return self._NtfctnId
-
-	@NtfctnId.setter
-	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
-
-	@NtfctnId.deleter
-	def NtfctnId(self):
-		del self._NtfctnId
-		self._NtfctnId = None
-
-	@property
-	def CorpActnDtls(self):
-		return self._CorpActnDtls
-
-	@CorpActnDtls.setter
-	def CorpActnDtls(self, value):
-		self._CorpActnDtls = value if type(value) != auto else self.make_default("CorpActnDtls")
-
-	@CorpActnDtls.deleter
-	def CorpActnDtls(self):
-		del self._CorpActnDtls
-		self._CorpActnDtls = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def PngAgt(self):
@@ -240,17 +71,30 @@ class CorporateActionMovementPreliminaryAdviceV16(base_types._BaseFieldType):
 		self._PngAgt = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def InfAgt(self):
+		return self._InfAgt
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@InfAgt.setter
+	def InfAgt(self, value):
+		self._InfAgt = value if type(value) != auto else self.make_default("InfAgt")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@InfAgt.deleter
+	def InfAgt(self):
+		del self._InfAgt
+		self._InfAgt = None
+
+	@property
+	def RvslRsn(self):
+		return self._RvslRsn
+
+	@RvslRsn.setter
+	def RvslRsn(self, value):
+		self._RvslRsn = value if type(value) != auto else self.make_default("RvslRsn")
+
+	@RvslRsn.deleter
+	def RvslRsn(self):
+		del self._RvslRsn
+		self._RvslRsn = None
 
 	@property
 	def OthrDocId(self):
@@ -266,43 +110,43 @@ class CorporateActionMovementPreliminaryAdviceV16(base_types._BaseFieldType):
 		self._OthrDocId = None
 
 	@property
-	def PhysSctiesAgt(self):
-		return self._PhysSctiesAgt
+	def CorpActnDtls(self):
+		return self._CorpActnDtls
 
-	@PhysSctiesAgt.setter
-	def PhysSctiesAgt(self, value):
-		self._PhysSctiesAgt = value if type(value) != auto else self.make_default("PhysSctiesAgt")
+	@CorpActnDtls.setter
+	def CorpActnDtls(self, value):
+		self._CorpActnDtls = value if type(value) != auto else self.make_default("CorpActnDtls")
 
-	@PhysSctiesAgt.deleter
-	def PhysSctiesAgt(self):
-		del self._PhysSctiesAgt
-		self._PhysSctiesAgt = None
-
-	@property
-	def IssrAgt(self):
-		return self._IssrAgt
-
-	@IssrAgt.setter
-	def IssrAgt(self, value):
-		self._IssrAgt = value if type(value) != auto else self.make_default("IssrAgt")
-
-	@IssrAgt.deleter
-	def IssrAgt(self):
-		del self._IssrAgt
-		self._IssrAgt = None
+	@CorpActnDtls.deleter
+	def CorpActnDtls(self):
+		del self._CorpActnDtls
+		self._CorpActnDtls = None
 
 	@property
-	def DrpAgt(self):
-		return self._DrpAgt
+	def NtfctnId(self):
+		return self._NtfctnId
 
-	@DrpAgt.setter
-	def DrpAgt(self, value):
-		self._DrpAgt = value if type(value) != auto else self.make_default("DrpAgt")
+	@NtfctnId.setter
+	def NtfctnId(self, value):
+		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
 
-	@DrpAgt.deleter
-	def DrpAgt(self):
-		del self._DrpAgt
-		self._DrpAgt = None
+	@NtfctnId.deleter
+	def NtfctnId(self):
+		del self._NtfctnId
+		self._NtfctnId = None
+
+	@property
+	def Regar(self):
+		return self._Regar
+
+	@Regar.setter
+	def Regar(self, value):
+		self._Regar = value if type(value) != auto else self.make_default("Regar")
+
+	@Regar.deleter
+	def Regar(self):
+		del self._Regar
+		self._Regar = None
 
 	@property
 	def SlctnAgt(self):
@@ -318,30 +162,30 @@ class CorporateActionMovementPreliminaryAdviceV16(base_types._BaseFieldType):
 		self._SlctnAgt = None
 
 	@property
-	def MvmntPrlimryAdvcGnlInf(self):
-		return self._MvmntPrlimryAdvcGnlInf
+	def IssrAgt(self):
+		return self._IssrAgt
 
-	@MvmntPrlimryAdvcGnlInf.setter
-	def MvmntPrlimryAdvcGnlInf(self, value):
-		self._MvmntPrlimryAdvcGnlInf = value if type(value) != auto else self.make_default("MvmntPrlimryAdvcGnlInf")
+	@IssrAgt.setter
+	def IssrAgt(self, value):
+		self._IssrAgt = value if type(value) != auto else self.make_default("IssrAgt")
 
-	@MvmntPrlimryAdvcGnlInf.deleter
-	def MvmntPrlimryAdvcGnlInf(self):
-		del self._MvmntPrlimryAdvcGnlInf
-		self._MvmntPrlimryAdvcGnlInf = None
+	@IssrAgt.deleter
+	def IssrAgt(self):
+		del self._IssrAgt
+		self._IssrAgt = None
 
 	@property
-	def PrvsMvmntPrlimryAdvcId(self):
-		return self._PrvsMvmntPrlimryAdvcId
+	def AcctDtls(self):
+		return self._AcctDtls
 
-	@PrvsMvmntPrlimryAdvcId.setter
-	def PrvsMvmntPrlimryAdvcId(self, value):
-		self._PrvsMvmntPrlimryAdvcId = value if type(value) != auto else self.make_default("PrvsMvmntPrlimryAdvcId")
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
 
-	@PrvsMvmntPrlimryAdvcId.deleter
-	def PrvsMvmntPrlimryAdvcId(self):
-		del self._PrvsMvmntPrlimryAdvcId
-		self._PrvsMvmntPrlimryAdvcId = None
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
 
 	@property
 	def Issr(self):
@@ -357,6 +201,149 @@ class CorporateActionMovementPreliminaryAdviceV16(base_types._BaseFieldType):
 		self._Issr = None
 
 	@property
+	def SubPngAgt(self):
+		return self._SubPngAgt
+
+	@SubPngAgt.setter
+	def SubPngAgt(self, value):
+		self._SubPngAgt = value if type(value) != auto else self.make_default("SubPngAgt")
+
+	@SubPngAgt.deleter
+	def SubPngAgt(self):
+		del self._SubPngAgt
+		self._SubPngAgt = None
+
+	@property
+	def MvmntConfId(self):
+		return self._MvmntConfId
+
+	@MvmntConfId.setter
+	def MvmntConfId(self, value):
+		self._MvmntConfId = value if type(value) != auto else self.make_default("MvmntConfId")
+
+	@MvmntConfId.deleter
+	def MvmntConfId(self):
+		del self._MvmntConfId
+		self._MvmntConfId = None
+
+	@property
+	def InstrId(self):
+		return self._InstrId
+
+	@InstrId.setter
+	def InstrId(self, value):
+		self._InstrId = value if type(value) != auto else self.make_default("InstrId")
+
+	@InstrId.deleter
+	def InstrId(self):
+		del self._InstrId
+		self._InstrId = None
+
+	@property
+	def MvmntPrlimryAdvcGnlInf(self):
+		return self._MvmntPrlimryAdvcGnlInf
+
+	@MvmntPrlimryAdvcGnlInf.setter
+	def MvmntPrlimryAdvcGnlInf(self, value):
+		self._MvmntPrlimryAdvcGnlInf = value if type(value) != auto else self.make_default("MvmntPrlimryAdvcGnlInf")
+
+	@MvmntPrlimryAdvcGnlInf.deleter
+	def MvmntPrlimryAdvcGnlInf(self):
+		del self._MvmntPrlimryAdvcGnlInf
+		self._MvmntPrlimryAdvcGnlInf = None
+
+	@property
+	def EvtsLkg(self):
+		return self._EvtsLkg
+
+	@EvtsLkg.setter
+	def EvtsLkg(self, value):
+		self._EvtsLkg = value if type(value) != auto else self.make_default("EvtsLkg")
+
+	@EvtsLkg.deleter
+	def EvtsLkg(self):
+		del self._EvtsLkg
+		self._EvtsLkg = None
+
+	@property
+	def PrvsMvmntPrlimryAdvcId(self):
+		return self._PrvsMvmntPrlimryAdvcId
+
+	@PrvsMvmntPrlimryAdvcId.setter
+	def PrvsMvmntPrlimryAdvcId(self, value):
+		self._PrvsMvmntPrlimryAdvcId = value if type(value) != auto else self.make_default("PrvsMvmntPrlimryAdvcId")
+
+	@PrvsMvmntPrlimryAdvcId.deleter
+	def PrvsMvmntPrlimryAdvcId(self):
+		del self._PrvsMvmntPrlimryAdvcId
+		self._PrvsMvmntPrlimryAdvcId = None
+
+	@property
+	def DrpAgt(self):
+		return self._DrpAgt
+
+	@DrpAgt.setter
+	def DrpAgt(self, value):
+		self._DrpAgt = value if type(value) != auto else self.make_default("DrpAgt")
+
+	@DrpAgt.deleter
+	def DrpAgt(self):
+		del self._DrpAgt
+		self._DrpAgt = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
+
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
+
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
+
+	@property
+	def PhysSctiesAgt(self):
+		return self._PhysSctiesAgt
+
+	@PhysSctiesAgt.setter
+	def PhysSctiesAgt(self, value):
+		self._PhysSctiesAgt = value if type(value) != auto else self.make_default("PhysSctiesAgt")
+
+	@PhysSctiesAgt.deleter
+	def PhysSctiesAgt(self):
+		del self._PhysSctiesAgt
+		self._PhysSctiesAgt = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def CorpActnMvmntDtls(self):
 		return self._CorpActnMvmntDtls
 
@@ -369,33 +356,46 @@ class CorporateActionMovementPreliminaryAdviceV16(base_types._BaseFieldType):
 		del self._CorpActnMvmntDtls
 		self._CorpActnMvmntDtls = None
 
+	@property
+	def Offerr(self):
+		return self._Offerr
+
+	@Offerr.setter
+	def Offerr(self, value):
+		self._Offerr = value if type(value) != auto else self.make_default("Offerr")
+
+	@Offerr.deleter
+	def Offerr(self):
+		del self._Offerr
+		self._Offerr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification70Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RvslRsn', type=CorporateActionReversalReason8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfAgt', type=PartyIdentification129Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtsLkg', type=CorporateActionEventReference3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SubPngAgt', type=PartyIdentification120Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation178, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Regar', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RsellngAgt', type=PartyIdentification120Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InstrId', type=DocumentIdentification9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MvmntConfId', type=DocumentIdentification31, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Offerr', type=PartyIdentification129Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InfAgt', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative56, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnId', type=DocumentIdentification31, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnDtls', type=CorporateAction69, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PngAgt', type=PartyIdentification120Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InfAgt', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RvslRsn', type=CorporateActionReversalReason8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrDocId', type=DocumentIdentification32, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PhysSctiesAgt', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrAgt', type=PartyIdentification129Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DrpAgt', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnDtls', type=CorporateAction69, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnId', type=DocumentIdentification31, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Regar', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SlctnAgt', type=PartyIdentification120Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MvmntPrlimryAdvcGnlInf', type=CorporateActionPreliminaryAdviceType4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsMvmntPrlimryAdvcId', type=DocumentIdentification31, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrAgt', type=PartyIdentification129Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification70Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=PartyIdentification129Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubPngAgt', type=PartyIdentification120Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MvmntConfId', type=DocumentIdentification31, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrId', type=DocumentIdentification9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MvmntPrlimryAdvcGnlInf', type=CorporateActionPreliminaryAdviceType4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtsLkg', type=CorporateActionEventReference3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrvsMvmntPrlimryAdvcId', type=DocumentIdentification31, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrpAgt', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative56, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation178, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PhysSctiesAgt', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CorpActnMvmntDtls', type=CorporateActionOption232, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Offerr', type=PartyIdentification129Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

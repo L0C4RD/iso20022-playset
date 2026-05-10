@@ -1,6 +1,6 @@
 from . import base_types
-import ConcentrationAccount1
-import LEIIdentifier
+from .ConcentrationAccount1 import ConcentrationAccount1
+from .LEIIdentifier import LEIIdentifier
 
 class ConcentrationAgent1(base_types._BaseFieldType):
 

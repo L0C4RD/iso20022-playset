@@ -1,11 +1,11 @@
 from . import base_types
-import Max350Text
-import AttendanceAdmissionConditions2
-import DateFormat58Choice
+from .Max350Text import Max350Text
+from .DateFormat58Choice import DateFormat58Choice
+from .AttendanceAdmissionConditions2 import AttendanceAdmissionConditions2
 
 class Attendance2(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfDdln", "_AdmssnConds", "_ConfInf", "_ConfMktDdln"]
+	__slots__ = ["_ConfDdln", "_ConfInf", "_AdmssnConds", "_ConfMktDdln"]
 	@property
 	def ConfDdln(self):
 		return self._ConfDdln
@@ -20,19 +20,6 @@ class Attendance2(base_types._BaseFieldType):
 		self._ConfDdln = None
 
 	@property
-	def AdmssnConds(self):
-		return self._AdmssnConds
-
-	@AdmssnConds.setter
-	def AdmssnConds(self, value):
-		self._AdmssnConds = value if type(value) != auto else self.make_default("AdmssnConds")
-
-	@AdmssnConds.deleter
-	def AdmssnConds(self):
-		del self._AdmssnConds
-		self._AdmssnConds = None
-
-	@property
 	def ConfInf(self):
 		return self._ConfInf
 
@@ -44,6 +31,19 @@ class Attendance2(base_types._BaseFieldType):
 	def ConfInf(self):
 		del self._ConfInf
 		self._ConfInf = None
+
+	@property
+	def AdmssnConds(self):
+		return self._AdmssnConds
+
+	@AdmssnConds.setter
+	def AdmssnConds(self, value):
+		self._AdmssnConds = value if type(value) != auto else self.make_default("AdmssnConds")
+
+	@AdmssnConds.deleter
+	def AdmssnConds(self):
+		del self._AdmssnConds
+		self._AdmssnConds = None
 
 	@property
 	def ConfMktDdln(self):
@@ -60,8 +60,8 @@ class Attendance2(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ConfDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdmssnConds', type=AttendanceAdmissionConditions2, min=0, max=7, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ConfInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdmssnConds', type=AttendanceAdmissionConditions2, min=0, max=7, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ConfMktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

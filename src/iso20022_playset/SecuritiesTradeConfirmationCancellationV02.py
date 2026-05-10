@@ -1,24 +1,24 @@
 from . import base_types
-import TransactiontIdentification4
-import OtherParties45
-import SupplementaryData1
-import Linkages52
+from .SupplementaryData1 import SupplementaryData1
+from .Linkages52 import Linkages52
+from .TransactiontIdentification4 import TransactiontIdentification4
+from .OtherParties45 import OtherParties45
 
 class SecuritiesTradeConfirmationCancellationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Id", "_Refs", "_OthrBizPties"]
+	__slots__ = ["_OthrBizPties", "_Id", "_Refs", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def OthrBizPties(self):
+		return self._OthrBizPties
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@OthrBizPties.setter
+	def OthrBizPties(self, value):
+		self._OthrBizPties = value if type(value) != auto else self.make_default("OthrBizPties")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@OthrBizPties.deleter
+	def OthrBizPties(self):
+		del self._OthrBizPties
+		self._OthrBizPties = None
 
 	@property
 	def Id(self):
@@ -47,22 +47,22 @@ class SecuritiesTradeConfirmationCancellationV02(base_types._BaseFieldType):
 		self._Refs = None
 
 	@property
-	def OthrBizPties(self):
-		return self._OthrBizPties
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@OthrBizPties.setter
-	def OthrBizPties(self, value):
-		self._OthrBizPties = value if type(value) != auto else self.make_default("OthrBizPties")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@OthrBizPties.deleter
-	def OthrBizPties(self):
-		del self._OthrBizPties
-		self._OthrBizPties = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrBizPties', type=OtherParties45, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=TransactiontIdentification4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Refs', type=Linkages52, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrBizPties', type=OtherParties45, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

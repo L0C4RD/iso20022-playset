@@ -1,6 +1,6 @@
 from . import base_types
-import DocumentNumber13
-import DocumentNumber21
+from .DocumentNumber13 import DocumentNumber13
+from .DocumentNumber21 import DocumentNumber21
 
 class StatusOrStatement13Choice(base_types._BaseFieldType):
 

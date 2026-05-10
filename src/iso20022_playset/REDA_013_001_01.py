@@ -1,5 +1,5 @@
 from . import base_types
-import SecurityDeletionRequestV01
+from .SecurityDeletionRequestV01 import SecurityDeletionRequestV01
 
 class REDA_013_001_01():
 

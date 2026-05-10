@@ -1,11 +1,11 @@
 from . import base_types
-import TaxParty3
-import LegalOrganisation1
-import PartyIdentification45
+from .TaxParty3 import TaxParty3
+from .PartyIdentification45 import PartyIdentification45
+from .LegalOrganisation1 import LegalOrganisation1
 
 class TradeParty1(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyId", "_LglOrg", "_TaxPty"]
+	__slots__ = ["_PtyId", "_TaxPty", "_LglOrg"]
 	@property
 	def PtyId(self):
 		return self._PtyId
@@ -20,19 +20,6 @@ class TradeParty1(base_types._BaseFieldType):
 		self._PtyId = None
 
 	@property
-	def LglOrg(self):
-		return self._LglOrg
-
-	@LglOrg.setter
-	def LglOrg(self, value):
-		self._LglOrg = value if type(value) != auto else self.make_default("LglOrg")
-
-	@LglOrg.deleter
-	def LglOrg(self):
-		del self._LglOrg
-		self._LglOrg = None
-
-	@property
 	def TaxPty(self):
 		return self._TaxPty
 
@@ -45,9 +32,22 @@ class TradeParty1(base_types._BaseFieldType):
 		del self._TaxPty
 		self._TaxPty = None
 
+	@property
+	def LglOrg(self):
+		return self._LglOrg
+
+	@LglOrg.setter
+	def LglOrg(self, value):
+		self._LglOrg = value if type(value) != auto else self.make_default("LglOrg")
+
+	@LglOrg.deleter
+	def LglOrg(self):
+		del self._LglOrg
+		self._LglOrg = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PtyId', type=PartyIdentification45, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglOrg', type=LegalOrganisation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxPty', type=TaxParty3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LglOrg', type=LegalOrganisation1, min=0, max=1, mutex_group=None, array=False),
 	))
 

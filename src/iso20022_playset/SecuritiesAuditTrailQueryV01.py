@@ -1,23 +1,23 @@
 from . import base_types
-import MessageHeader1
-import SupplementaryData1
-import SecuritiesAuditTrailSearchCriteria4
+from .SupplementaryData1 import SupplementaryData1
+from .MessageHeader1 import MessageHeader1
+from .SecuritiesAuditTrailSearchCriteria4 import SecuritiesAuditTrailSearchCriteria4
 
 class SecuritiesAuditTrailQueryV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_SchCrit", "_MsgHdr"]
+	__slots__ = ["_MsgHdr", "_SchCrit", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def MsgHdr(self):
+		return self._MsgHdr
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
 
 	@property
 	def SchCrit(self):
@@ -33,21 +33,21 @@ class SecuritiesAuditTrailQueryV01(base_types._BaseFieldType):
 		self._SchCrit = None
 
 	@property
-	def MsgHdr(self):
-		return self._MsgHdr
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SchCrit', type=SecuritiesAuditTrailSearchCriteria4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchCrit', type=SecuritiesAuditTrailSearchCriteria4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,7 +1,7 @@
 from . import base_types
-import OriginalBusinessInstruction1
-import Max35Text
-import ISODateTime
+from .OriginalBusinessInstruction1 import OriginalBusinessInstruction1
+from .Max35Text import Max35Text
+from .ISODateTime import ISODateTime
 
 class MessageHeader12(base_types._BaseFieldType):
 

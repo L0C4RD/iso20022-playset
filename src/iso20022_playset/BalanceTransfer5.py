@@ -1,11 +1,11 @@
 from . import base_types
-import BalanceTransferFundingLimit1
-import SettlementMethod5Choice
-import BalanceTransferReference1
+from .BalanceTransferReference1 import BalanceTransferReference1
+from .SettlementMethod5Choice import SettlementMethod5Choice
+from .BalanceTransferFundingLimit1 import BalanceTransferFundingLimit1
 
 class BalanceTransfer5(base_types._BaseFieldType):
 
-	__slots__ = ["_BalTrfFndgLmt", "_BalTrfRef", "_BalTrfMtd"]
+	__slots__ = ["_BalTrfFndgLmt", "_BalTrfMtd", "_BalTrfRef"]
 	@property
 	def BalTrfFndgLmt(self):
 		return self._BalTrfFndgLmt
@@ -20,19 +20,6 @@ class BalanceTransfer5(base_types._BaseFieldType):
 		self._BalTrfFndgLmt = None
 
 	@property
-	def BalTrfRef(self):
-		return self._BalTrfRef
-
-	@BalTrfRef.setter
-	def BalTrfRef(self, value):
-		self._BalTrfRef = value if type(value) != auto else self.make_default("BalTrfRef")
-
-	@BalTrfRef.deleter
-	def BalTrfRef(self):
-		del self._BalTrfRef
-		self._BalTrfRef = None
-
-	@property
 	def BalTrfMtd(self):
 		return self._BalTrfMtd
 
@@ -45,9 +32,22 @@ class BalanceTransfer5(base_types._BaseFieldType):
 		del self._BalTrfMtd
 		self._BalTrfMtd = None
 
+	@property
+	def BalTrfRef(self):
+		return self._BalTrfRef
+
+	@BalTrfRef.setter
+	def BalTrfRef(self, value):
+		self._BalTrfRef = value if type(value) != auto else self.make_default("BalTrfRef")
+
+	@BalTrfRef.deleter
+	def BalTrfRef(self):
+		del self._BalTrfRef
+		self._BalTrfRef = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalTrfFndgLmt', type=BalanceTransferFundingLimit1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalTrfRef', type=BalanceTransferReference1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalTrfMtd', type=SettlementMethod5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTrfRef', type=BalanceTransferReference1, min=0, max=1, mutex_group=None, array=False),
 	))
 

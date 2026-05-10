@@ -1,58 +1,19 @@
 from . import base_types
-import ISODate
-import PercentageRate
-import Capped1
-import YesNoIndicator
-import Max140Text
-import DrawdownType2Choice
-import BeneficiaryDrawdown1
-import TaxReference2
-import ApplicableRules1Choice
-import ActiveCurrencyAnd13DecimalAmount
-import AdditionalInformation15
+from .AdditionalInformation15 import AdditionalInformation15
+from .YesNoIndicator import YesNoIndicator
+from .ApplicableRules1Choice import ApplicableRules1Choice
+from .BeneficiaryDrawdown1 import BeneficiaryDrawdown1
+from .ISODate import ISODate
+from .PercentageRate import PercentageRate
+from .Capped1 import Capped1
+from .Max140Text import Max140Text
+from .DrawdownType2Choice import DrawdownType2Choice
+from .TaxReference2 import TaxReference2
+from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class Drawdown2(base_types._BaseFieldType):
 
-	__slots__ = ["_BnfcryDtls", "_AddtlFndsDsgntd", "_LftmAllwnc", "_TrchTp", "_InvstrTaxRef", "_AddtlInf", "_PctgOfTtlTrfVal", "_PnsnCmcmntLumpSumDt", "_AplblRules", "_CapdLmts", "_PnsnCmcmntLumpSumRmng", "_Id", "_TtlAmtNetDrwdwn", "_MltplPnsnCmcmntLumpSums", "_RcptOfDrwdwnInd", "_FlxblDrwdwnTrggrdDt"]
-	@property
-	def BnfcryDtls(self):
-		return self._BnfcryDtls
-
-	@BnfcryDtls.setter
-	def BnfcryDtls(self, value):
-		self._BnfcryDtls = value if type(value) != auto else self.make_default("BnfcryDtls")
-
-	@BnfcryDtls.deleter
-	def BnfcryDtls(self):
-		del self._BnfcryDtls
-		self._BnfcryDtls = None
-
-	@property
-	def AddtlFndsDsgntd(self):
-		return self._AddtlFndsDsgntd
-
-	@AddtlFndsDsgntd.setter
-	def AddtlFndsDsgntd(self, value):
-		self._AddtlFndsDsgntd = value if type(value) != auto else self.make_default("AddtlFndsDsgntd")
-
-	@AddtlFndsDsgntd.deleter
-	def AddtlFndsDsgntd(self):
-		del self._AddtlFndsDsgntd
-		self._AddtlFndsDsgntd = None
-
-	@property
-	def LftmAllwnc(self):
-		return self._LftmAllwnc
-
-	@LftmAllwnc.setter
-	def LftmAllwnc(self, value):
-		self._LftmAllwnc = value if type(value) != auto else self.make_default("LftmAllwnc")
-
-	@LftmAllwnc.deleter
-	def LftmAllwnc(self):
-		del self._LftmAllwnc
-		self._LftmAllwnc = None
-
+	__slots__ = ["_TrchTp", "_CapdLmts", "_AddtlInf", "_BnfcryDtls", "_AplblRules", "_Id", "_PnsnCmcmntLumpSumRmng", "_InvstrTaxRef", "_PnsnCmcmntLumpSumDt", "_PctgOfTtlTrfVal", "_TtlAmtNetDrwdwn", "_RcptOfDrwdwnInd", "_LftmAllwnc", "_FlxblDrwdwnTrggrdDt", "_MltplPnsnCmcmntLumpSums", "_AddtlFndsDsgntd"]
 	@property
 	def TrchTp(self):
 		return self._TrchTp
@@ -65,71 +26,6 @@ class Drawdown2(base_types._BaseFieldType):
 	def TrchTp(self):
 		del self._TrchTp
 		self._TrchTp = None
-
-	@property
-	def InvstrTaxRef(self):
-		return self._InvstrTaxRef
-
-	@InvstrTaxRef.setter
-	def InvstrTaxRef(self, value):
-		self._InvstrTaxRef = value if type(value) != auto else self.make_default("InvstrTaxRef")
-
-	@InvstrTaxRef.deleter
-	def InvstrTaxRef(self):
-		del self._InvstrTaxRef
-		self._InvstrTaxRef = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def PctgOfTtlTrfVal(self):
-		return self._PctgOfTtlTrfVal
-
-	@PctgOfTtlTrfVal.setter
-	def PctgOfTtlTrfVal(self, value):
-		self._PctgOfTtlTrfVal = value if type(value) != auto else self.make_default("PctgOfTtlTrfVal")
-
-	@PctgOfTtlTrfVal.deleter
-	def PctgOfTtlTrfVal(self):
-		del self._PctgOfTtlTrfVal
-		self._PctgOfTtlTrfVal = None
-
-	@property
-	def PnsnCmcmntLumpSumDt(self):
-		return self._PnsnCmcmntLumpSumDt
-
-	@PnsnCmcmntLumpSumDt.setter
-	def PnsnCmcmntLumpSumDt(self, value):
-		self._PnsnCmcmntLumpSumDt = value if type(value) != auto else self.make_default("PnsnCmcmntLumpSumDt")
-
-	@PnsnCmcmntLumpSumDt.deleter
-	def PnsnCmcmntLumpSumDt(self):
-		del self._PnsnCmcmntLumpSumDt
-		self._PnsnCmcmntLumpSumDt = None
-
-	@property
-	def AplblRules(self):
-		return self._AplblRules
-
-	@AplblRules.setter
-	def AplblRules(self, value):
-		self._AplblRules = value if type(value) != auto else self.make_default("AplblRules")
-
-	@AplblRules.deleter
-	def AplblRules(self):
-		del self._AplblRules
-		self._AplblRules = None
 
 	@property
 	def CapdLmts(self):
@@ -145,17 +41,43 @@ class Drawdown2(base_types._BaseFieldType):
 		self._CapdLmts = None
 
 	@property
-	def PnsnCmcmntLumpSumRmng(self):
-		return self._PnsnCmcmntLumpSumRmng
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@PnsnCmcmntLumpSumRmng.setter
-	def PnsnCmcmntLumpSumRmng(self, value):
-		self._PnsnCmcmntLumpSumRmng = value if type(value) != auto else self.make_default("PnsnCmcmntLumpSumRmng")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@PnsnCmcmntLumpSumRmng.deleter
-	def PnsnCmcmntLumpSumRmng(self):
-		del self._PnsnCmcmntLumpSumRmng
-		self._PnsnCmcmntLumpSumRmng = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def BnfcryDtls(self):
+		return self._BnfcryDtls
+
+	@BnfcryDtls.setter
+	def BnfcryDtls(self, value):
+		self._BnfcryDtls = value if type(value) != auto else self.make_default("BnfcryDtls")
+
+	@BnfcryDtls.deleter
+	def BnfcryDtls(self):
+		del self._BnfcryDtls
+		self._BnfcryDtls = None
+
+	@property
+	def AplblRules(self):
+		return self._AplblRules
+
+	@AplblRules.setter
+	def AplblRules(self, value):
+		self._AplblRules = value if type(value) != auto else self.make_default("AplblRules")
+
+	@AplblRules.deleter
+	def AplblRules(self):
+		del self._AplblRules
+		self._AplblRules = None
 
 	@property
 	def Id(self):
@@ -171,6 +93,58 @@ class Drawdown2(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def PnsnCmcmntLumpSumRmng(self):
+		return self._PnsnCmcmntLumpSumRmng
+
+	@PnsnCmcmntLumpSumRmng.setter
+	def PnsnCmcmntLumpSumRmng(self, value):
+		self._PnsnCmcmntLumpSumRmng = value if type(value) != auto else self.make_default("PnsnCmcmntLumpSumRmng")
+
+	@PnsnCmcmntLumpSumRmng.deleter
+	def PnsnCmcmntLumpSumRmng(self):
+		del self._PnsnCmcmntLumpSumRmng
+		self._PnsnCmcmntLumpSumRmng = None
+
+	@property
+	def InvstrTaxRef(self):
+		return self._InvstrTaxRef
+
+	@InvstrTaxRef.setter
+	def InvstrTaxRef(self, value):
+		self._InvstrTaxRef = value if type(value) != auto else self.make_default("InvstrTaxRef")
+
+	@InvstrTaxRef.deleter
+	def InvstrTaxRef(self):
+		del self._InvstrTaxRef
+		self._InvstrTaxRef = None
+
+	@property
+	def PnsnCmcmntLumpSumDt(self):
+		return self._PnsnCmcmntLumpSumDt
+
+	@PnsnCmcmntLumpSumDt.setter
+	def PnsnCmcmntLumpSumDt(self, value):
+		self._PnsnCmcmntLumpSumDt = value if type(value) != auto else self.make_default("PnsnCmcmntLumpSumDt")
+
+	@PnsnCmcmntLumpSumDt.deleter
+	def PnsnCmcmntLumpSumDt(self):
+		del self._PnsnCmcmntLumpSumDt
+		self._PnsnCmcmntLumpSumDt = None
+
+	@property
+	def PctgOfTtlTrfVal(self):
+		return self._PctgOfTtlTrfVal
+
+	@PctgOfTtlTrfVal.setter
+	def PctgOfTtlTrfVal(self, value):
+		self._PctgOfTtlTrfVal = value if type(value) != auto else self.make_default("PctgOfTtlTrfVal")
+
+	@PctgOfTtlTrfVal.deleter
+	def PctgOfTtlTrfVal(self):
+		del self._PctgOfTtlTrfVal
+		self._PctgOfTtlTrfVal = None
+
+	@property
 	def TtlAmtNetDrwdwn(self):
 		return self._TtlAmtNetDrwdwn
 
@@ -182,19 +156,6 @@ class Drawdown2(base_types._BaseFieldType):
 	def TtlAmtNetDrwdwn(self):
 		del self._TtlAmtNetDrwdwn
 		self._TtlAmtNetDrwdwn = None
-
-	@property
-	def MltplPnsnCmcmntLumpSums(self):
-		return self._MltplPnsnCmcmntLumpSums
-
-	@MltplPnsnCmcmntLumpSums.setter
-	def MltplPnsnCmcmntLumpSums(self, value):
-		self._MltplPnsnCmcmntLumpSums = value if type(value) != auto else self.make_default("MltplPnsnCmcmntLumpSums")
-
-	@MltplPnsnCmcmntLumpSums.deleter
-	def MltplPnsnCmcmntLumpSums(self):
-		del self._MltplPnsnCmcmntLumpSums
-		self._MltplPnsnCmcmntLumpSums = None
 
 	@property
 	def RcptOfDrwdwnInd(self):
@@ -210,6 +171,19 @@ class Drawdown2(base_types._BaseFieldType):
 		self._RcptOfDrwdwnInd = None
 
 	@property
+	def LftmAllwnc(self):
+		return self._LftmAllwnc
+
+	@LftmAllwnc.setter
+	def LftmAllwnc(self, value):
+		self._LftmAllwnc = value if type(value) != auto else self.make_default("LftmAllwnc")
+
+	@LftmAllwnc.deleter
+	def LftmAllwnc(self):
+		del self._LftmAllwnc
+		self._LftmAllwnc = None
+
+	@property
 	def FlxblDrwdwnTrggrdDt(self):
 		return self._FlxblDrwdwnTrggrdDt
 
@@ -222,22 +196,48 @@ class Drawdown2(base_types._BaseFieldType):
 		del self._FlxblDrwdwnTrggrdDt
 		self._FlxblDrwdwnTrggrdDt = None
 
+	@property
+	def MltplPnsnCmcmntLumpSums(self):
+		return self._MltplPnsnCmcmntLumpSums
+
+	@MltplPnsnCmcmntLumpSums.setter
+	def MltplPnsnCmcmntLumpSums(self, value):
+		self._MltplPnsnCmcmntLumpSums = value if type(value) != auto else self.make_default("MltplPnsnCmcmntLumpSums")
+
+	@MltplPnsnCmcmntLumpSums.deleter
+	def MltplPnsnCmcmntLumpSums(self):
+		del self._MltplPnsnCmcmntLumpSums
+		self._MltplPnsnCmcmntLumpSums = None
+
+	@property
+	def AddtlFndsDsgntd(self):
+		return self._AddtlFndsDsgntd
+
+	@AddtlFndsDsgntd.setter
+	def AddtlFndsDsgntd(self, value):
+		self._AddtlFndsDsgntd = value if type(value) != auto else self.make_default("AddtlFndsDsgntd")
+
+	@AddtlFndsDsgntd.deleter
+	def AddtlFndsDsgntd(self):
+		del self._AddtlFndsDsgntd
+		self._AddtlFndsDsgntd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BnfcryDtls', type=BeneficiaryDrawdown1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlFndsDsgntd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LftmAllwnc', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrchTp', type=DrawdownType2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstrTaxRef', type=TaxReference2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PctgOfTtlTrfVal', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PnsnCmcmntLumpSumDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AplblRules', type=ApplicableRules1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CapdLmts', type=Capped1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PnsnCmcmntLumpSumRmng', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BnfcryDtls', type=BeneficiaryDrawdown1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AplblRules', type=ApplicableRules1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PnsnCmcmntLumpSumRmng', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstrTaxRef', type=TaxReference2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PnsnCmcmntLumpSumDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PctgOfTtlTrfVal', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmtNetDrwdwn', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MltplPnsnCmcmntLumpSums', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptOfDrwdwnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LftmAllwnc', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FlxblDrwdwnTrggrdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MltplPnsnCmcmntLumpSums', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlFndsDsgntd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

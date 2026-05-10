@@ -1,5 +1,5 @@
 from . import base_types
-import SearchOr1
+from .SearchOr1 import SearchOr1
 
 class SearchCriteria1(base_types._BaseFieldType):
 

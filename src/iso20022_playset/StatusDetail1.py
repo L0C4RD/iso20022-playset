@@ -1,25 +1,25 @@
 from . import base_types
-import CountryCode
-import Max10Text
-import Period4Choice
-import Max20000Text
-import SupervisingAuthorityIdentification1
+from .SupervisingAuthorityIdentification1 import SupervisingAuthorityIdentification1
+from .CountryCode import CountryCode
+from .Max10Text import Max10Text
+from .Period4Choice import Period4Choice
+from .Max20000Text import Max20000Text
 
 class StatusDetail1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_CmptntAuthrty", "_Cmnt", "_ActvtyPrd", "_Ctry", "_StsRsn"]
+	__slots__ = ["_ActvtyPrd", "_CmptntAuthrty", "_Cmnt", "_Sts", "_Ctry", "_StsRsn"]
 	@property
-	def Sts(self):
-		return self._Sts
+	def ActvtyPrd(self):
+		return self._ActvtyPrd
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@ActvtyPrd.setter
+	def ActvtyPrd(self, value):
+		self._ActvtyPrd = value if type(value) != auto else self.make_default("ActvtyPrd")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@ActvtyPrd.deleter
+	def ActvtyPrd(self):
+		del self._ActvtyPrd
+		self._ActvtyPrd = None
 
 	@property
 	def CmptntAuthrty(self):
@@ -48,17 +48,17 @@ class StatusDetail1(base_types._BaseFieldType):
 		self._Cmnt = None
 
 	@property
-	def ActvtyPrd(self):
-		return self._ActvtyPrd
+	def Sts(self):
+		return self._Sts
 
-	@ActvtyPrd.setter
-	def ActvtyPrd(self, value):
-		self._ActvtyPrd = value if type(value) != auto else self.make_default("ActvtyPrd")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
 
-	@ActvtyPrd.deleter
-	def ActvtyPrd(self):
-		del self._ActvtyPrd
-		self._ActvtyPrd = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	@property
 	def Ctry(self):
@@ -87,10 +87,10 @@ class StatusDetail1(base_types._BaseFieldType):
 		self._StsRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmptntAuthrty', type=SupervisingAuthorityIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cmnt', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActvtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRsn', type=Max10Text, min=1, max=1, mutex_group=None, array=False),
 	))

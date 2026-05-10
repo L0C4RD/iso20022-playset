@@ -1,22 +1,22 @@
 from . import base_types
-import PartyIdentification136
-import PartyIdentification149
+from .PartyIdentification136 import PartyIdentification136
+from .PartyIdentification149 import PartyIdentification149
 
 class OtherParties39(base_types._BaseFieldType):
 
-	__slots__ = ["_StockXchg", "_TradRgltr", "_Invstr"]
+	__slots__ = ["_Invstr", "_TradRgltr", "_StockXchg"]
 	@property
-	def StockXchg(self):
-		return self._StockXchg
+	def Invstr(self):
+		return self._Invstr
 
-	@StockXchg.setter
-	def StockXchg(self, value):
-		self._StockXchg = value if type(value) != auto else self.make_default("StockXchg")
+	@Invstr.setter
+	def Invstr(self, value):
+		self._Invstr = value if type(value) != auto else self.make_default("Invstr")
 
-	@StockXchg.deleter
-	def StockXchg(self):
-		del self._StockXchg
-		self._StockXchg = None
+	@Invstr.deleter
+	def Invstr(self):
+		del self._Invstr
+		self._Invstr = None
 
 	@property
 	def TradRgltr(self):
@@ -32,21 +32,21 @@ class OtherParties39(base_types._BaseFieldType):
 		self._TradRgltr = None
 
 	@property
-	def Invstr(self):
-		return self._Invstr
+	def StockXchg(self):
+		return self._StockXchg
 
-	@Invstr.setter
-	def Invstr(self, value):
-		self._Invstr = value if type(value) != auto else self.make_default("Invstr")
+	@StockXchg.setter
+	def StockXchg(self, value):
+		self._StockXchg = value if type(value) != auto else self.make_default("StockXchg")
 
-	@Invstr.deleter
-	def Invstr(self):
-		del self._Invstr
-		self._Invstr = None
+	@StockXchg.deleter
+	def StockXchg(self):
+		del self._StockXchg
+		self._StockXchg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StockXchg', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradRgltr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Invstr', type=PartyIdentification149, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradRgltr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StockXchg', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 	))
 

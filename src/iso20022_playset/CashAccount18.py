@@ -1,12 +1,25 @@
 from . import base_types
-import CreditDebitCode
-import CashBalanceType1FormatType
-import PartyIdentification2Choice
-import AccountIdentification2Choice
+from .CashBalanceType1FormatType import CashBalanceType1FormatType
+from .PartyIdentification2Choice import PartyIdentification2Choice
+from .AccountIdentification2Choice import AccountIdentification2Choice
+from .CreditDebitCode import CreditDebitCode
 
 class CashAccount18(base_types._BaseFieldType):
 
-	__slots__ = ["_BalTp", "_AcctOwnrId", "_AcctId", "_CdtDbtInd"]
+	__slots__ = ["_CdtDbtInd", "_BalTp", "_AcctOwnrId", "_AcctId"]
+	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
+
 	@property
 	def BalTp(self):
 		return self._BalTp
@@ -46,23 +59,10 @@ class CashAccount18(base_types._BaseFieldType):
 		del self._AcctId
 		self._AcctId = None
 
-	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
-
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
-
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalTp', type=CashBalanceType1FormatType, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

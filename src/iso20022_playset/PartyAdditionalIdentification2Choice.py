@@ -1,6 +1,6 @@
 from . import base_types
-import ISODate
-import OrganisationIdentification5
+from .OrganisationIdentification5 import OrganisationIdentification5
+from .ISODate import ISODate
 
 class PartyAdditionalIdentification2Choice(base_types._BaseFieldType):
 

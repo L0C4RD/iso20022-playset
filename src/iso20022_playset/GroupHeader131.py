@@ -1,18 +1,18 @@
 from . import base_types
-import ISODate
-import SettlementInstruction15
-import ISODateTime
-import Max35Text
-import BranchAndFinancialInstitutionIdentification8
-import ActiveCurrencyAndAmount
-import Max15NumericText
-import BatchBookingIndicator
-import DecimalNumber
-import PaymentTypeInformation28
+from .Max35Text import Max35Text
+from .ISODate import ISODate
+from .DecimalNumber import DecimalNumber
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .SettlementInstruction15 import SettlementInstruction15
+from .Max15NumericText import Max15NumericText
+from .ISODateTime import ISODateTime
+from .PaymentTypeInformation28 import PaymentTypeInformation28
+from .BatchBookingIndicator import BatchBookingIndicator
 
 class GroupHeader131(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_IntrBkSttlmDt", "_XpryDtTm", "_NbOfTxs", "_CtrlSum", "_InstdAgt", "_PmtTpInf", "_InstgAgt", "_BtchBookg", "_SttlmInf", "_CreDtTm", "_TtlIntrBkSttlmAmt"]
+	__slots__ = ["_MsgId", "_XpryDtTm", "_TtlIntrBkSttlmAmt", "_IntrBkSttlmDt", "_InstgAgt", "_CtrlSum", "_SttlmInf", "_InstdAgt", "_PmtTpInf", "_NbOfTxs", "_BtchBookg", "_CreDtTm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -25,19 +25,6 @@ class GroupHeader131(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
-
-	@property
-	def IntrBkSttlmDt(self):
-		return self._IntrBkSttlmDt
-
-	@IntrBkSttlmDt.setter
-	def IntrBkSttlmDt(self, value):
-		self._IntrBkSttlmDt = value if type(value) != auto else self.make_default("IntrBkSttlmDt")
-
-	@IntrBkSttlmDt.deleter
-	def IntrBkSttlmDt(self):
-		del self._IntrBkSttlmDt
-		self._IntrBkSttlmDt = None
 
 	@property
 	def XpryDtTm(self):
@@ -53,17 +40,43 @@ class GroupHeader131(base_types._BaseFieldType):
 		self._XpryDtTm = None
 
 	@property
-	def NbOfTxs(self):
-		return self._NbOfTxs
+	def TtlIntrBkSttlmAmt(self):
+		return self._TtlIntrBkSttlmAmt
 
-	@NbOfTxs.setter
-	def NbOfTxs(self, value):
-		self._NbOfTxs = value if type(value) != auto else self.make_default("NbOfTxs")
+	@TtlIntrBkSttlmAmt.setter
+	def TtlIntrBkSttlmAmt(self, value):
+		self._TtlIntrBkSttlmAmt = value if type(value) != auto else self.make_default("TtlIntrBkSttlmAmt")
 
-	@NbOfTxs.deleter
-	def NbOfTxs(self):
-		del self._NbOfTxs
-		self._NbOfTxs = None
+	@TtlIntrBkSttlmAmt.deleter
+	def TtlIntrBkSttlmAmt(self):
+		del self._TtlIntrBkSttlmAmt
+		self._TtlIntrBkSttlmAmt = None
+
+	@property
+	def IntrBkSttlmDt(self):
+		return self._IntrBkSttlmDt
+
+	@IntrBkSttlmDt.setter
+	def IntrBkSttlmDt(self, value):
+		self._IntrBkSttlmDt = value if type(value) != auto else self.make_default("IntrBkSttlmDt")
+
+	@IntrBkSttlmDt.deleter
+	def IntrBkSttlmDt(self):
+		del self._IntrBkSttlmDt
+		self._IntrBkSttlmDt = None
+
+	@property
+	def InstgAgt(self):
+		return self._InstgAgt
+
+	@InstgAgt.setter
+	def InstgAgt(self, value):
+		self._InstgAgt = value if type(value) != auto else self.make_default("InstgAgt")
+
+	@InstgAgt.deleter
+	def InstgAgt(self):
+		del self._InstgAgt
+		self._InstgAgt = None
 
 	@property
 	def CtrlSum(self):
@@ -77,6 +90,19 @@ class GroupHeader131(base_types._BaseFieldType):
 	def CtrlSum(self):
 		del self._CtrlSum
 		self._CtrlSum = None
+
+	@property
+	def SttlmInf(self):
+		return self._SttlmInf
+
+	@SttlmInf.setter
+	def SttlmInf(self, value):
+		self._SttlmInf = value if type(value) != auto else self.make_default("SttlmInf")
+
+	@SttlmInf.deleter
+	def SttlmInf(self):
+		del self._SttlmInf
+		self._SttlmInf = None
 
 	@property
 	def InstdAgt(self):
@@ -105,17 +131,17 @@ class GroupHeader131(base_types._BaseFieldType):
 		self._PmtTpInf = None
 
 	@property
-	def InstgAgt(self):
-		return self._InstgAgt
+	def NbOfTxs(self):
+		return self._NbOfTxs
 
-	@InstgAgt.setter
-	def InstgAgt(self, value):
-		self._InstgAgt = value if type(value) != auto else self.make_default("InstgAgt")
+	@NbOfTxs.setter
+	def NbOfTxs(self, value):
+		self._NbOfTxs = value if type(value) != auto else self.make_default("NbOfTxs")
 
-	@InstgAgt.deleter
-	def InstgAgt(self):
-		del self._InstgAgt
-		self._InstgAgt = None
+	@NbOfTxs.deleter
+	def NbOfTxs(self):
+		del self._NbOfTxs
+		self._NbOfTxs = None
 
 	@property
 	def BtchBookg(self):
@@ -131,19 +157,6 @@ class GroupHeader131(base_types._BaseFieldType):
 		self._BtchBookg = None
 
 	@property
-	def SttlmInf(self):
-		return self._SttlmInf
-
-	@SttlmInf.setter
-	def SttlmInf(self, value):
-		self._SttlmInf = value if type(value) != auto else self.make_default("SttlmInf")
-
-	@SttlmInf.deleter
-	def SttlmInf(self):
-		del self._SttlmInf
-		self._SttlmInf = None
-
-	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -156,31 +169,18 @@ class GroupHeader131(base_types._BaseFieldType):
 		del self._CreDtTm
 		self._CreDtTm = None
 
-	@property
-	def TtlIntrBkSttlmAmt(self):
-		return self._TtlIntrBkSttlmAmt
-
-	@TtlIntrBkSttlmAmt.setter
-	def TtlIntrBkSttlmAmt(self, value):
-		self._TtlIntrBkSttlmAmt = value if type(value) != auto else self.make_default("TtlIntrBkSttlmAmt")
-
-	@TtlIntrBkSttlmAmt.deleter
-	def TtlIntrBkSttlmAmt(self):
-		del self._TtlIntrBkSttlmAmt
-		self._TtlIntrBkSttlmAmt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlIntrBkSttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmInf', type=SettlementInstruction15, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtTpInf', type=PaymentTypeInformation28, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BtchBookg', type=BatchBookingIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmInf', type=SettlementInstruction15, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlIntrBkSttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

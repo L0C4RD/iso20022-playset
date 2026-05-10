@@ -1,25 +1,12 @@
 from . import base_types
-import GroupHeader117
-import SupplementaryData1
-import NotificationCancellationReason2
-import OriginalNotification16
+from .SupplementaryData1 import SupplementaryData1
+from .NotificationCancellationReason2 import NotificationCancellationReason2
+from .GroupHeader117 import GroupHeader117
+from .OriginalNotification16 import OriginalNotification16
 
 class NotificationToReceiveCancellationAdviceV09(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_CxlRsn", "_OrgnlNtfctn", "_SplmtryData"]
-	@property
-	def GrpHdr(self):
-		return self._GrpHdr
-
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
-
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
-
+	__slots__ = ["_CxlRsn", "_OrgnlNtfctn", "_GrpHdr", "_SplmtryData"]
 	@property
 	def CxlRsn(self):
 		return self._CxlRsn
@@ -47,6 +34,19 @@ class NotificationToReceiveCancellationAdviceV09(base_types._BaseFieldType):
 		self._OrgnlNtfctn = None
 
 	@property
+	def GrpHdr(self):
+		return self._GrpHdr
+
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
+
+	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -60,9 +60,9 @@ class NotificationToReceiveCancellationAdviceV09(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader117, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRsn', type=NotificationCancellationReason2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlNtfctn', type=OriginalNotification16, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader117, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

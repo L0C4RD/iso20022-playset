@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalTypeOfParty1Code
-import GenericIdentification1
+from .ExternalTypeOfParty1Code import ExternalTypeOfParty1Code
+from .GenericIdentification1 import GenericIdentification1
 
 class PartyType1Choice(base_types._BaseFieldType):
 

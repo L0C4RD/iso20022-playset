@@ -1,5 +1,5 @@
 from . import base_types
-import StressItem1Choice
+from .StressItem1Choice import StressItem1Choice
 
 class StressItem1(base_types._BaseFieldType):
 

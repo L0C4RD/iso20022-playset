@@ -1,6 +1,6 @@
 from . import base_types
-import ErrorHandling5
-import LimitJournalReport4
+from .LimitJournalReport4 import LimitJournalReport4
+from .ErrorHandling5 import ErrorHandling5
 
 class LimitJournalReportOrError7Choice(base_types._BaseFieldType):
 

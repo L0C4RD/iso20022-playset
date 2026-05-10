@@ -1,7 +1,7 @@
 from . import base_types
-import AttestationValue1Code
-import Exemption2Code
-import Max4Text
+from .AttestationValue1Code import AttestationValue1Code
+from .Exemption2Code import Exemption2Code
+from .Max4Text import Max4Text
 
 class Exemption2(base_types._BaseFieldType):
 

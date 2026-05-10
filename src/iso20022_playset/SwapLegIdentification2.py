@@ -1,5 +1,5 @@
 from . import base_types
-import FinancialInstrumentIdentification7Choice
+from .FinancialInstrumentIdentification7Choice import FinancialInstrumentIdentification7Choice
 
 class SwapLegIdentification2(base_types._BaseFieldType):
 

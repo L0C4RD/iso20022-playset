@@ -1,6 +1,6 @@
 from . import base_types
-import ModelFormIdentification1Choice
-import Max35Text
+from .Max35Text import Max35Text
+from .ModelFormIdentification1Choice import ModelFormIdentification1Choice
 
 class ModelFormIdentification1(base_types._BaseFieldType):
 

@@ -1,51 +1,25 @@
 from . import base_types
-import Max350Text
-import PartyIdentification125Choice
-import CashAccount204
-import CountryCode
-import PercentageRate
+from .CountryCode import CountryCode
+from .PartyIdentification125Choice import PartyIdentification125Choice
+from .CashAccount204 import CashAccount204
+from .PercentageRate import PercentageRate
+from .Max350Text import Max350Text
 
 class TaxReporting3(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_TaxRcpt", "_CshAcctDtls", "_TaxRate", "_TaxtnCtry", "_TaxPyer"]
+	__slots__ = ["_TaxtnCtry", "_TaxRate", "_CshAcctDtls", "_TaxRcpt", "_TaxPyer", "_Desc"]
 	@property
-	def Desc(self):
-		return self._Desc
+	def TaxtnCtry(self):
+		return self._TaxtnCtry
 
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+	@TaxtnCtry.setter
+	def TaxtnCtry(self, value):
+		self._TaxtnCtry = value if type(value) != auto else self.make_default("TaxtnCtry")
 
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
-	@property
-	def TaxRcpt(self):
-		return self._TaxRcpt
-
-	@TaxRcpt.setter
-	def TaxRcpt(self, value):
-		self._TaxRcpt = value if type(value) != auto else self.make_default("TaxRcpt")
-
-	@TaxRcpt.deleter
-	def TaxRcpt(self):
-		del self._TaxRcpt
-		self._TaxRcpt = None
-
-	@property
-	def CshAcctDtls(self):
-		return self._CshAcctDtls
-
-	@CshAcctDtls.setter
-	def CshAcctDtls(self, value):
-		self._CshAcctDtls = value if type(value) != auto else self.make_default("CshAcctDtls")
-
-	@CshAcctDtls.deleter
-	def CshAcctDtls(self):
-		del self._CshAcctDtls
-		self._CshAcctDtls = None
+	@TaxtnCtry.deleter
+	def TaxtnCtry(self):
+		del self._TaxtnCtry
+		self._TaxtnCtry = None
 
 	@property
 	def TaxRate(self):
@@ -61,17 +35,30 @@ class TaxReporting3(base_types._BaseFieldType):
 		self._TaxRate = None
 
 	@property
-	def TaxtnCtry(self):
-		return self._TaxtnCtry
+	def CshAcctDtls(self):
+		return self._CshAcctDtls
 
-	@TaxtnCtry.setter
-	def TaxtnCtry(self, value):
-		self._TaxtnCtry = value if type(value) != auto else self.make_default("TaxtnCtry")
+	@CshAcctDtls.setter
+	def CshAcctDtls(self, value):
+		self._CshAcctDtls = value if type(value) != auto else self.make_default("CshAcctDtls")
 
-	@TaxtnCtry.deleter
-	def TaxtnCtry(self):
-		del self._TaxtnCtry
-		self._TaxtnCtry = None
+	@CshAcctDtls.deleter
+	def CshAcctDtls(self):
+		del self._CshAcctDtls
+		self._CshAcctDtls = None
+
+	@property
+	def TaxRcpt(self):
+		return self._TaxRcpt
+
+	@TaxRcpt.setter
+	def TaxRcpt(self, value):
+		self._TaxRcpt = value if type(value) != auto else self.make_default("TaxRcpt")
+
+	@TaxRcpt.deleter
+	def TaxRcpt(self):
+		del self._TaxRcpt
+		self._TaxRcpt = None
 
 	@property
 	def TaxPyer(self):
@@ -86,12 +73,25 @@ class TaxReporting3(base_types._BaseFieldType):
 		del self._TaxPyer
 		self._TaxPyer = None
 
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxRcpt', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctDtls', type=CashAccount204, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxtnCtry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctDtls', type=CashAccount204, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRcpt', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxPyer', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

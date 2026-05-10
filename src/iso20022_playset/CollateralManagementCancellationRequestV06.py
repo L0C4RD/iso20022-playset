@@ -1,12 +1,12 @@
 from . import base_types
-import Obligation8
-import SupplementaryData1
-import CollateralCancellationReason1
-import Reference3Choice
+from .Reference3Choice import Reference3Choice
+from .SupplementaryData1 import SupplementaryData1
+from .Obligation8 import Obligation8
+from .CollateralCancellationReason1 import CollateralCancellationReason1
 
 class CollateralManagementCancellationRequestV06(base_types._BaseFieldType):
 
-	__slots__ = ["_Oblgtn", "_Ref", "_SplmtryData", "_CxlRsn"]
+	__slots__ = ["_Oblgtn", "_SplmtryData", "_CxlRsn", "_Ref"]
 	@property
 	def Oblgtn(self):
 		return self._Oblgtn
@@ -19,19 +19,6 @@ class CollateralManagementCancellationRequestV06(base_types._BaseFieldType):
 	def Oblgtn(self):
 		del self._Oblgtn
 		self._Oblgtn = None
-
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
 
 	@property
 	def SplmtryData(self):
@@ -59,10 +46,23 @@ class CollateralManagementCancellationRequestV06(base_types._BaseFieldType):
 		del self._CxlRsn
 		self._CxlRsn = None
 
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Oblgtn', type=Obligation8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=Reference3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CxlRsn', type=CollateralCancellationReason1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Reference3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

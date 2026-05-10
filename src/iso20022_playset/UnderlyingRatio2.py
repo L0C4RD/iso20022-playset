@@ -1,23 +1,10 @@
 from . import base_types
-import FinancialInstrumentQuantity1Choice
-import SecurityIdentification19
+from .SecurityIdentification19 import SecurityIdentification19
+from .FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 
 class UnderlyingRatio2(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygQtyNmrtr", "_RltdFinInstrmId", "_UndrlygQtyDnmtr"]
-	@property
-	def UndrlygQtyNmrtr(self):
-		return self._UndrlygQtyNmrtr
-
-	@UndrlygQtyNmrtr.setter
-	def UndrlygQtyNmrtr(self, value):
-		self._UndrlygQtyNmrtr = value if type(value) != auto else self.make_default("UndrlygQtyNmrtr")
-
-	@UndrlygQtyNmrtr.deleter
-	def UndrlygQtyNmrtr(self):
-		del self._UndrlygQtyNmrtr
-		self._UndrlygQtyNmrtr = None
-
+	__slots__ = ["_RltdFinInstrmId", "_UndrlygQtyNmrtr", "_UndrlygQtyDnmtr"]
 	@property
 	def RltdFinInstrmId(self):
 		return self._RltdFinInstrmId
@@ -30,6 +17,19 @@ class UnderlyingRatio2(base_types._BaseFieldType):
 	def RltdFinInstrmId(self):
 		del self._RltdFinInstrmId
 		self._RltdFinInstrmId = None
+
+	@property
+	def UndrlygQtyNmrtr(self):
+		return self._UndrlygQtyNmrtr
+
+	@UndrlygQtyNmrtr.setter
+	def UndrlygQtyNmrtr(self, value):
+		self._UndrlygQtyNmrtr = value if type(value) != auto else self.make_default("UndrlygQtyNmrtr")
+
+	@UndrlygQtyNmrtr.deleter
+	def UndrlygQtyNmrtr(self):
+		del self._UndrlygQtyNmrtr
+		self._UndrlygQtyNmrtr = None
 
 	@property
 	def UndrlygQtyDnmtr(self):
@@ -45,8 +45,8 @@ class UnderlyingRatio2(base_types._BaseFieldType):
 		self._UndrlygQtyDnmtr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygQtyNmrtr', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdFinInstrmId', type=SecurityIdentification19, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UndrlygQtyNmrtr', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygQtyDnmtr', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,25 @@
 from . import base_types
-import Price14
-import DateTimePeriod1Choice
-import DateAndDateTime1Choice
-import MarketIdentification93
+from .Price14 import Price14
+from .DateAndDateTime1Choice import DateAndDateTime1Choice
+from .MarketIdentification93 import MarketIdentification93
+from .DateTimePeriod1Choice import DateTimePeriod1Choice
 
 class PriceInformation28(base_types._BaseFieldType):
 
-	__slots__ = ["_PricClctnPrd", "_SrcOfPric", "_Val", "_QtnDt"]
+	__slots__ = ["_Val", "_PricClctnPrd", "_SrcOfPric", "_QtnDt"]
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
+
 	@property
 	def PricClctnPrd(self):
 		return self._PricClctnPrd
@@ -34,19 +47,6 @@ class PriceInformation28(base_types._BaseFieldType):
 		self._SrcOfPric = None
 
 	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
-
-	@property
 	def QtnDt(self):
 		return self._QtnDt
 
@@ -60,9 +60,9 @@ class PriceInformation28(base_types._BaseFieldType):
 		self._QtnDt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Val', type=Price14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricClctnPrd', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrcOfPric', type=MarketIdentification93, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Val', type=Price14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtnDt', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

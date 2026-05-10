@@ -1,5 +1,5 @@
 from . import base_types
-import CurrencyControlRequestOrLetterV04
+from .CurrencyControlRequestOrLetterV04 import CurrencyControlRequestOrLetterV04
 
 class AUTH_026_001_04():
 

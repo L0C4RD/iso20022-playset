@@ -1,24 +1,24 @@
 from . import base_types
-import ActiveCurrencyAnd13DecimalAmount
-import RateValueType7Code
-import DecimalNumber
-import Percentage14Rate
+from .RateValueType7Code import RateValueType7Code
+from .DecimalNumber import DecimalNumber
+from .Percentage14Rate import Percentage14Rate
+from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class RateAndAmountFormat58Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_NotSpcfdRate", "_IndxPts", "_Rate"]
+	__slots__ = ["_IndxPts", "_NotSpcfdRate", "_Amt", "_Rate"]
 	@property
-	def Amt(self):
-		return self._Amt
+	def IndxPts(self):
+		return self._IndxPts
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@IndxPts.setter
+	def IndxPts(self, value):
+		self._IndxPts = value if type(value) != auto else self.make_default("IndxPts")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@IndxPts.deleter
+	def IndxPts(self):
+		del self._IndxPts
+		self._IndxPts = None
 
 	@property
 	def NotSpcfdRate(self):
@@ -34,17 +34,17 @@ class RateAndAmountFormat58Choice(base_types._BaseFieldType):
 		self._NotSpcfdRate = None
 
 	@property
-	def IndxPts(self):
-		return self._IndxPts
+	def Amt(self):
+		return self._Amt
 
-	@IndxPts.setter
-	def IndxPts(self, value):
-		self._IndxPts = value if type(value) != auto else self.make_default("IndxPts")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@IndxPts.deleter
-	def IndxPts(self):
-		del self._IndxPts
-		self._IndxPts = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Rate(self):
@@ -60,9 +60,9 @@ class RateAndAmountFormat58Choice(base_types._BaseFieldType):
 		self._Rate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IndxPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,12 +1,12 @@
 from . import base_types
-import AdditionalBalanceInformation22
-import SubBalanceType11Choice
-import Max140Text
-import SubBalanceQuantity8Choice
+from .SubBalanceQuantity8Choice import SubBalanceQuantity8Choice
+from .SubBalanceType11Choice import SubBalanceType11Choice
+from .AdditionalBalanceInformation22 import AdditionalBalanceInformation22
+from .Max140Text import Max140Text
 
 class SubBalanceInformation22(base_types._BaseFieldType):
 
-	__slots__ = ["_SubBalTp", "_SubBalAddtlDtls", "_Qty", "_AddtlBalBrkdwnDtls"]
+	__slots__ = ["_SubBalTp", "_SubBalAddtlDtls", "_AddtlBalBrkdwnDtls", "_Qty"]
 	@property
 	def SubBalTp(self):
 		return self._SubBalTp
@@ -34,19 +34,6 @@ class SubBalanceInformation22(base_types._BaseFieldType):
 		self._SubBalAddtlDtls = None
 
 	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
-
-	@property
 	def AddtlBalBrkdwnDtls(self):
 		return self._AddtlBalBrkdwnDtls
 
@@ -59,10 +46,23 @@ class SubBalanceInformation22(base_types._BaseFieldType):
 		del self._AddtlBalBrkdwnDtls
 		self._AddtlBalBrkdwnDtls = None
 
+	@property
+	def Qty(self):
+		return self._Qty
+
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != auto else self.make_default("Qty")
+
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType11Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubBalAddtlDtls', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlBalBrkdwnDtls', type=AdditionalBalanceInformation22, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity8Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

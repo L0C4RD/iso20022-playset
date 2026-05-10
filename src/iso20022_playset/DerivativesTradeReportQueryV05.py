@@ -1,23 +1,23 @@
 from . import base_types
-import TradeReportQuery18Choice
-import SupplementaryData1
-import PartyIdentification121Choice
+from .TradeReportQuery18Choice import TradeReportQuery18Choice
+from .PartyIdentification121Choice import PartyIdentification121Choice
+from .SupplementaryData1 import SupplementaryData1
 
 class DerivativesTradeReportQueryV05(base_types._BaseFieldType):
 
-	__slots__ = ["_RqstngAuthrty", "_SplmtryData", "_TradQryData"]
+	__slots__ = ["_TradQryData", "_SplmtryData", "_RqstngAuthrty"]
 	@property
-	def RqstngAuthrty(self):
-		return self._RqstngAuthrty
+	def TradQryData(self):
+		return self._TradQryData
 
-	@RqstngAuthrty.setter
-	def RqstngAuthrty(self, value):
-		self._RqstngAuthrty = value if type(value) != auto else self.make_default("RqstngAuthrty")
+	@TradQryData.setter
+	def TradQryData(self, value):
+		self._TradQryData = value if type(value) != auto else self.make_default("TradQryData")
 
-	@RqstngAuthrty.deleter
-	def RqstngAuthrty(self):
-		del self._RqstngAuthrty
-		self._RqstngAuthrty = None
+	@TradQryData.deleter
+	def TradQryData(self):
+		del self._TradQryData
+		self._TradQryData = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class DerivativesTradeReportQueryV05(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def TradQryData(self):
-		return self._TradQryData
+	def RqstngAuthrty(self):
+		return self._RqstngAuthrty
 
-	@TradQryData.setter
-	def TradQryData(self, value):
-		self._TradQryData = value if type(value) != auto else self.make_default("TradQryData")
+	@RqstngAuthrty.setter
+	def RqstngAuthrty(self, value):
+		self._RqstngAuthrty = value if type(value) != auto else self.make_default("RqstngAuthrty")
 
-	@TradQryData.deleter
-	def TradQryData(self):
-		del self._TradQryData
-		self._TradQryData = None
+	@RqstngAuthrty.deleter
+	def RqstngAuthrty(self):
+		del self._RqstngAuthrty
+		self._RqstngAuthrty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RqstngAuthrty', type=PartyIdentification121Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TradQryData', type=TradeReportQuery18Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RqstngAuthrty', type=PartyIdentification121Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

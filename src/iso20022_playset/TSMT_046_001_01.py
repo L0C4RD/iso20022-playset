@@ -1,5 +1,5 @@
 from . import base_types
-import IntentToPayReportV01
+from .IntentToPayReportV01 import IntentToPayReportV01
 
 class TSMT_046_001_01():
 

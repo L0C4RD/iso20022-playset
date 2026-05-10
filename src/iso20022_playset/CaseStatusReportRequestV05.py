@@ -1,11 +1,24 @@
 from . import base_types
-import Case6
-import SupplementaryData1
-import ReportHeader7
+from .ReportHeader7 import ReportHeader7
+from .SupplementaryData1 import SupplementaryData1
+from .Case6 import Case6
 
 class CaseStatusReportRequestV05(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Case", "_ReqHdr"]
+	__slots__ = ["_ReqHdr", "_SplmtryData", "_Case"]
+	@property
+	def ReqHdr(self):
+		return self._ReqHdr
+
+	@ReqHdr.setter
+	def ReqHdr(self, value):
+		self._ReqHdr = value if type(value) != auto else self.make_default("ReqHdr")
+
+	@ReqHdr.deleter
+	def ReqHdr(self):
+		del self._ReqHdr
+		self._ReqHdr = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -32,22 +45,9 @@ class CaseStatusReportRequestV05(base_types._BaseFieldType):
 		del self._Case
 		self._Case = None
 
-	@property
-	def ReqHdr(self):
-		return self._ReqHdr
-
-	@ReqHdr.setter
-	def ReqHdr(self, value):
-		self._ReqHdr = value if type(value) != auto else self.make_default("ReqHdr")
-
-	@ReqHdr.deleter
-	def ReqHdr(self):
-		del self._ReqHdr
-		self._ReqHdr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ReqHdr', type=ReportHeader7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Case', type=Case6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqHdr', type=ReportHeader7, min=1, max=1, mutex_group=None, array=False),
 	))
 

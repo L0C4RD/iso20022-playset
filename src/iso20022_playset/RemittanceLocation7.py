@@ -1,23 +1,10 @@
 from . import base_types
-import RemittanceLocationData1
-import Max35Text
+from .Max35Text import Max35Text
+from .RemittanceLocationData1 import RemittanceLocationData1
 
 class RemittanceLocation7(base_types._BaseFieldType):
 
-	__slots__ = ["_RmtId", "_RmtLctnDtls"]
-	@property
-	def RmtId(self):
-		return self._RmtId
-
-	@RmtId.setter
-	def RmtId(self, value):
-		self._RmtId = value if type(value) != auto else self.make_default("RmtId")
-
-	@RmtId.deleter
-	def RmtId(self):
-		del self._RmtId
-		self._RmtId = None
-
+	__slots__ = ["_RmtLctnDtls", "_RmtId"]
 	@property
 	def RmtLctnDtls(self):
 		return self._RmtLctnDtls
@@ -31,8 +18,21 @@ class RemittanceLocation7(base_types._BaseFieldType):
 		del self._RmtLctnDtls
 		self._RmtLctnDtls = None
 
+	@property
+	def RmtId(self):
+		return self._RmtId
+
+	@RmtId.setter
+	def RmtId(self, value):
+		self._RmtId = value if type(value) != auto else self.make_default("RmtId")
+
+	@RmtId.deleter
+	def RmtId(self):
+		del self._RmtId
+		self._RmtId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmtLctnDtls', type=RemittanceLocationData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

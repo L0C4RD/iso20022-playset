@@ -1,13 +1,13 @@
 from . import base_types
-import CardholderName2
-import ISOMax3ALanguageCode
-import LocalAddress1
-import AdditionalData1
-import Max35Text
+from .Max35Text import Max35Text
+from .AdditionalData1 import AdditionalData1
+from .LocalAddress1 import LocalAddress1
+from .ISOMax3ALanguageCode import ISOMax3ALanguageCode
+from .CardholderName2 import CardholderName2
 
 class LocalData13(base_types._BaseFieldType):
 
-	__slots__ = ["_Lang", "_AddtlData", "_Adr", "_Nm", "_NcodgFrmt"]
+	__slots__ = ["_Lang", "_Nm", "_NcodgFrmt", "_AddtlData", "_Adr"]
 	@property
 	def Lang(self):
 		return self._Lang
@@ -20,32 +20,6 @@ class LocalData13(base_types._BaseFieldType):
 	def Lang(self):
 		del self._Lang
 		self._Lang = None
-
-	@property
-	def AddtlData(self):
-		return self._AddtlData
-
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
-
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
-
-	@property
-	def Adr(self):
-		return self._Adr
-
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
-
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
 
 	@property
 	def Nm(self):
@@ -73,11 +47,37 @@ class LocalData13(base_types._BaseFieldType):
 		del self._NcodgFrmt
 		self._NcodgFrmt = None
 
+	@property
+	def AddtlData(self):
+		return self._AddtlData
+
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
+
+	@property
+	def Adr(self):
+		return self._Adr
+
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != auto else self.make_default("Adr")
+
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Adr', type=LocalAddress1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=CardholderName2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcodgFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Adr', type=LocalAddress1, min=0, max=1, mutex_group=None, array=False),
 	))
 

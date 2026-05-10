@@ -1,5 +1,5 @@
 from . import base_types
-import InterestComputationMethodFormat6Choice
+from .InterestComputationMethodFormat6Choice import InterestComputationMethodFormat6Choice
 
 class CompareInterestComputationMethod3(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-import AmountAndDirection102
+from .AmountAndDirection102 import AmountAndDirection102
 
 class Flows1(base_types._BaseFieldType):
 

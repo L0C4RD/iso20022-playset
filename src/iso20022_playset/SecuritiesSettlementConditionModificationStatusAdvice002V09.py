@@ -1,28 +1,15 @@
 from . import base_types
-import BlockChainAddressWallet7
-import SecuritiesAccount30
-import PartyIdentification156
-import RequestDetails29
-import RestrictedFINXMax16Text
-import SupplementaryData1
-import ProcessingStatus91Choice
+from .SupplementaryData1 import SupplementaryData1
+from .RequestDetails29 import RequestDetails29
+from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from .BlockChainAddressWallet7 import BlockChainAddressWallet7
+from .ProcessingStatus91Choice import ProcessingStatus91Choice
+from .PartyIdentification156 import PartyIdentification156
+from .SecuritiesAccount30 import SecuritiesAccount30
 
 class SecuritiesSettlementConditionModificationStatusAdvice002V09(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_ReqRef", "_AcctOwnr", "_SplmtryData", "_PrcgSts", "_SfkpgAcct", "_ReqDtls"]
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
+	__slots__ = ["_ReqRef", "_AcctOwnr", "_SplmtryData", "_PrcgSts", "_SfkpgAcct", "_BlckChainAdrOrWllt", "_ReqDtls"]
 	@property
 	def ReqRef(self):
 		return self._ReqRef
@@ -89,6 +76,19 @@ class SecuritiesSettlementConditionModificationStatusAdvice002V09(base_types._Ba
 		self._SfkpgAcct = None
 
 	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
+
+	@property
 	def ReqDtls(self):
 		return self._ReqDtls
 
@@ -102,12 +102,12 @@ class SecuritiesSettlementConditionModificationStatusAdvice002V09(base_types._Ba
 		self._ReqDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqRef', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus91Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqDtls', type=RequestDetails29, min=0, max=1, mutex_group=None, array=False),
 	))
 

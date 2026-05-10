@@ -1,28 +1,28 @@
 from . import base_types
-import Max350Text
-import YesNoIndicator
-import ISOTime
-import ActiveCurrencyCode
-import Number
-import EventFrequency5Code
-import PriceMethod1Code
-import AdditionalInformation15
+from .AdditionalInformation15 import AdditionalInformation15
+from .YesNoIndicator import YesNoIndicator
+from .ISOTime import ISOTime
+from .EventFrequency5Code import EventFrequency5Code
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .Max350Text import Max350Text
+from .PriceMethod1Code import PriceMethod1Code
+from .Number import Number
 
 class ValuationDealingProcessingCharacteristics3(base_types._BaseFieldType):
 
-	__slots__ = ["_ValtnTm", "_ValtnFrqcy", "_AddtlInf", "_DualFndInd", "_PricCcy", "_ValtnFrqcyDesc", "_PricMtd", "_DcmlstnUnits", "_DcmlstnPric"]
+	__slots__ = ["_DcmlstnPric", "_ValtnFrqcy", "_AddtlInf", "_DcmlstnUnits", "_ValtnFrqcyDesc", "_PricCcy", "_DualFndInd", "_PricMtd", "_ValtnTm"]
 	@property
-	def ValtnTm(self):
-		return self._ValtnTm
+	def DcmlstnPric(self):
+		return self._DcmlstnPric
 
-	@ValtnTm.setter
-	def ValtnTm(self, value):
-		self._ValtnTm = value if type(value) != auto else self.make_default("ValtnTm")
+	@DcmlstnPric.setter
+	def DcmlstnPric(self, value):
+		self._DcmlstnPric = value if type(value) != auto else self.make_default("DcmlstnPric")
 
-	@ValtnTm.deleter
-	def ValtnTm(self):
-		del self._ValtnTm
-		self._ValtnTm = None
+	@DcmlstnPric.deleter
+	def DcmlstnPric(self):
+		del self._DcmlstnPric
+		self._DcmlstnPric = None
 
 	@property
 	def ValtnFrqcy(self):
@@ -51,30 +51,17 @@ class ValuationDealingProcessingCharacteristics3(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def DualFndInd(self):
-		return self._DualFndInd
+	def DcmlstnUnits(self):
+		return self._DcmlstnUnits
 
-	@DualFndInd.setter
-	def DualFndInd(self, value):
-		self._DualFndInd = value if type(value) != auto else self.make_default("DualFndInd")
+	@DcmlstnUnits.setter
+	def DcmlstnUnits(self, value):
+		self._DcmlstnUnits = value if type(value) != auto else self.make_default("DcmlstnUnits")
 
-	@DualFndInd.deleter
-	def DualFndInd(self):
-		del self._DualFndInd
-		self._DualFndInd = None
-
-	@property
-	def PricCcy(self):
-		return self._PricCcy
-
-	@PricCcy.setter
-	def PricCcy(self, value):
-		self._PricCcy = value if type(value) != auto else self.make_default("PricCcy")
-
-	@PricCcy.deleter
-	def PricCcy(self):
-		del self._PricCcy
-		self._PricCcy = None
+	@DcmlstnUnits.deleter
+	def DcmlstnUnits(self):
+		del self._DcmlstnUnits
+		self._DcmlstnUnits = None
 
 	@property
 	def ValtnFrqcyDesc(self):
@@ -90,6 +77,32 @@ class ValuationDealingProcessingCharacteristics3(base_types._BaseFieldType):
 		self._ValtnFrqcyDesc = None
 
 	@property
+	def PricCcy(self):
+		return self._PricCcy
+
+	@PricCcy.setter
+	def PricCcy(self, value):
+		self._PricCcy = value if type(value) != auto else self.make_default("PricCcy")
+
+	@PricCcy.deleter
+	def PricCcy(self):
+		del self._PricCcy
+		self._PricCcy = None
+
+	@property
+	def DualFndInd(self):
+		return self._DualFndInd
+
+	@DualFndInd.setter
+	def DualFndInd(self, value):
+		self._DualFndInd = value if type(value) != auto else self.make_default("DualFndInd")
+
+	@DualFndInd.deleter
+	def DualFndInd(self):
+		del self._DualFndInd
+		self._DualFndInd = None
+
+	@property
 	def PricMtd(self):
 		return self._PricMtd
 
@@ -103,40 +116,27 @@ class ValuationDealingProcessingCharacteristics3(base_types._BaseFieldType):
 		self._PricMtd = None
 
 	@property
-	def DcmlstnUnits(self):
-		return self._DcmlstnUnits
+	def ValtnTm(self):
+		return self._ValtnTm
 
-	@DcmlstnUnits.setter
-	def DcmlstnUnits(self, value):
-		self._DcmlstnUnits = value if type(value) != auto else self.make_default("DcmlstnUnits")
+	@ValtnTm.setter
+	def ValtnTm(self, value):
+		self._ValtnTm = value if type(value) != auto else self.make_default("ValtnTm")
 
-	@DcmlstnUnits.deleter
-	def DcmlstnUnits(self):
-		del self._DcmlstnUnits
-		self._DcmlstnUnits = None
-
-	@property
-	def DcmlstnPric(self):
-		return self._DcmlstnPric
-
-	@DcmlstnPric.setter
-	def DcmlstnPric(self, value):
-		self._DcmlstnPric = value if type(value) != auto else self.make_default("DcmlstnPric")
-
-	@DcmlstnPric.deleter
-	def DcmlstnPric(self):
-		del self._DcmlstnPric
-		self._DcmlstnPric = None
+	@ValtnTm.deleter
+	def ValtnTm(self):
+		del self._ValtnTm
+		self._ValtnTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValtnTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DcmlstnPric', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnFrqcy', type=EventFrequency5Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DualFndInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricCcy', type=ActiveCurrencyCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ValtnFrqcyDesc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricMtd', type=PriceMethod1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DcmlstnUnits', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DcmlstnPric', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnFrqcyDesc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricCcy', type=ActiveCurrencyCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DualFndInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricMtd', type=PriceMethod1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

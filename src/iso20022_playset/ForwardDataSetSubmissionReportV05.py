@@ -1,18 +1,31 @@
 from . import base_types
-import InsuranceDataSet1
-import MessageIdentification1
-import OtherCertificateDataSet2
-import PendingActivity2
-import TransportDataSet5
-import SimpleIdentificationInformation
-import CommercialDataSet5
-import DataSetSubmissionReferences4
-import BICIdentification1
-import CertificateDataSet2
+from .SimpleIdentificationInformation import SimpleIdentificationInformation
+from .MessageIdentification1 import MessageIdentification1
+from .TransportDataSet5 import TransportDataSet5
+from .BICIdentification1 import BICIdentification1
+from .CertificateDataSet2 import CertificateDataSet2
+from .PendingActivity2 import PendingActivity2
+from .OtherCertificateDataSet2 import OtherCertificateDataSet2
+from .InsuranceDataSet1 import InsuranceDataSet1
+from .DataSetSubmissionReferences4 import DataSetSubmissionReferences4
+from .CommercialDataSet5 import CommercialDataSet5
 
 class ForwardDataSetSubmissionReportV05(base_types._BaseFieldType):
 
-	__slots__ = ["_ComrclDataSet", "_InsrncDataSet", "_CmonSubmissnRef", "_BuyrBk", "_OthrCertDataSet", "_ReqForActn", "_SellrBk", "_RltdTxRefs", "_CertDataSet", "_RptId", "_Submitr", "_TrnsprtDataSet"]
+	__slots__ = ["_ReqForActn", "_ComrclDataSet", "_TrnsprtDataSet", "_Submitr", "_BuyrBk", "_OthrCertDataSet", "_RltdTxRefs", "_CertDataSet", "_CmonSubmissnRef", "_InsrncDataSet", "_SellrBk", "_RptId"]
+	@property
+	def ReqForActn(self):
+		return self._ReqForActn
+
+	@ReqForActn.setter
+	def ReqForActn(self, value):
+		self._ReqForActn = value if type(value) != auto else self.make_default("ReqForActn")
+
+	@ReqForActn.deleter
+	def ReqForActn(self):
+		del self._ReqForActn
+		self._ReqForActn = None
+
 	@property
 	def ComrclDataSet(self):
 		return self._ComrclDataSet
@@ -27,30 +40,30 @@ class ForwardDataSetSubmissionReportV05(base_types._BaseFieldType):
 		self._ComrclDataSet = None
 
 	@property
-	def InsrncDataSet(self):
-		return self._InsrncDataSet
+	def TrnsprtDataSet(self):
+		return self._TrnsprtDataSet
 
-	@InsrncDataSet.setter
-	def InsrncDataSet(self, value):
-		self._InsrncDataSet = value if type(value) != auto else self.make_default("InsrncDataSet")
+	@TrnsprtDataSet.setter
+	def TrnsprtDataSet(self, value):
+		self._TrnsprtDataSet = value if type(value) != auto else self.make_default("TrnsprtDataSet")
 
-	@InsrncDataSet.deleter
-	def InsrncDataSet(self):
-		del self._InsrncDataSet
-		self._InsrncDataSet = None
+	@TrnsprtDataSet.deleter
+	def TrnsprtDataSet(self):
+		del self._TrnsprtDataSet
+		self._TrnsprtDataSet = None
 
 	@property
-	def CmonSubmissnRef(self):
-		return self._CmonSubmissnRef
+	def Submitr(self):
+		return self._Submitr
 
-	@CmonSubmissnRef.setter
-	def CmonSubmissnRef(self, value):
-		self._CmonSubmissnRef = value if type(value) != auto else self.make_default("CmonSubmissnRef")
+	@Submitr.setter
+	def Submitr(self, value):
+		self._Submitr = value if type(value) != auto else self.make_default("Submitr")
 
-	@CmonSubmissnRef.deleter
-	def CmonSubmissnRef(self):
-		del self._CmonSubmissnRef
-		self._CmonSubmissnRef = None
+	@Submitr.deleter
+	def Submitr(self):
+		del self._Submitr
+		self._Submitr = None
 
 	@property
 	def BuyrBk(self):
@@ -79,32 +92,6 @@ class ForwardDataSetSubmissionReportV05(base_types._BaseFieldType):
 		self._OthrCertDataSet = None
 
 	@property
-	def ReqForActn(self):
-		return self._ReqForActn
-
-	@ReqForActn.setter
-	def ReqForActn(self, value):
-		self._ReqForActn = value if type(value) != auto else self.make_default("ReqForActn")
-
-	@ReqForActn.deleter
-	def ReqForActn(self):
-		del self._ReqForActn
-		self._ReqForActn = None
-
-	@property
-	def SellrBk(self):
-		return self._SellrBk
-
-	@SellrBk.setter
-	def SellrBk(self, value):
-		self._SellrBk = value if type(value) != auto else self.make_default("SellrBk")
-
-	@SellrBk.deleter
-	def SellrBk(self):
-		del self._SellrBk
-		self._SellrBk = None
-
-	@property
 	def RltdTxRefs(self):
 		return self._RltdTxRefs
 
@@ -131,6 +118,45 @@ class ForwardDataSetSubmissionReportV05(base_types._BaseFieldType):
 		self._CertDataSet = None
 
 	@property
+	def CmonSubmissnRef(self):
+		return self._CmonSubmissnRef
+
+	@CmonSubmissnRef.setter
+	def CmonSubmissnRef(self, value):
+		self._CmonSubmissnRef = value if type(value) != auto else self.make_default("CmonSubmissnRef")
+
+	@CmonSubmissnRef.deleter
+	def CmonSubmissnRef(self):
+		del self._CmonSubmissnRef
+		self._CmonSubmissnRef = None
+
+	@property
+	def InsrncDataSet(self):
+		return self._InsrncDataSet
+
+	@InsrncDataSet.setter
+	def InsrncDataSet(self, value):
+		self._InsrncDataSet = value if type(value) != auto else self.make_default("InsrncDataSet")
+
+	@InsrncDataSet.deleter
+	def InsrncDataSet(self):
+		del self._InsrncDataSet
+		self._InsrncDataSet = None
+
+	@property
+	def SellrBk(self):
+		return self._SellrBk
+
+	@SellrBk.setter
+	def SellrBk(self, value):
+		self._SellrBk = value if type(value) != auto else self.make_default("SellrBk")
+
+	@SellrBk.deleter
+	def SellrBk(self):
+		del self._SellrBk
+		self._SellrBk = None
+
+	@property
 	def RptId(self):
 		return self._RptId
 
@@ -143,44 +169,18 @@ class ForwardDataSetSubmissionReportV05(base_types._BaseFieldType):
 		del self._RptId
 		self._RptId = None
 
-	@property
-	def Submitr(self):
-		return self._Submitr
-
-	@Submitr.setter
-	def Submitr(self, value):
-		self._Submitr = value if type(value) != auto else self.make_default("Submitr")
-
-	@Submitr.deleter
-	def Submitr(self):
-		del self._Submitr
-		self._Submitr = None
-
-	@property
-	def TrnsprtDataSet(self):
-		return self._TrnsprtDataSet
-
-	@TrnsprtDataSet.setter
-	def TrnsprtDataSet(self, value):
-		self._TrnsprtDataSet = value if type(value) != auto else self.make_default("TrnsprtDataSet")
-
-	@TrnsprtDataSet.deleter
-	def TrnsprtDataSet(self):
-		del self._TrnsprtDataSet
-		self._TrnsprtDataSet = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ComrclDataSet', type=CommercialDataSet5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InsrncDataSet', type=InsuranceDataSet1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmonSubmissnRef', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrnsprtDataSet', type=TransportDataSet5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Submitr', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCertDataSet', type=OtherCertificateDataSet2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdTxRefs', type=DataSetSubmissionReferences4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CertDataSet', type=CertificateDataSet2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CmonSubmissnRef', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InsrncDataSet', type=InsuranceDataSet1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Submitr', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrnsprtDataSet', type=TransportDataSet5, min=0, max=1, mutex_group=None, array=False),
 	))
 

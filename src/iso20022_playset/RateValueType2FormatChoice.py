@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification13
-import RateValueType2Code
+from .RateValueType2Code import RateValueType2Code
+from .GenericIdentification13 import GenericIdentification13
 
 class RateValueType2FormatChoice(base_types._BaseFieldType):
 

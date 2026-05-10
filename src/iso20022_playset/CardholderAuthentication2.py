@@ -1,6 +1,6 @@
 from . import base_types
-import AuthenticationMethod1Code
-import AuthenticationEntity1Code
+from .AuthenticationMethod1Code import AuthenticationMethod1Code
+from .AuthenticationEntity1Code import AuthenticationEntity1Code
 
 class CardholderAuthentication2(base_types._BaseFieldType):
 

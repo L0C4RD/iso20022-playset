@@ -1,23 +1,10 @@
 from . import base_types
-import ExtendedParty13
-import ContactAttributes5
+from .ExtendedParty13 import ExtendedParty13
+from .ContactAttributes5 import ContactAttributes5
 
 class FundParties1(base_types._BaseFieldType):
 
-	__slots__ = ["_Guarntr", "_Audtr", "_OthrPty", "_Trstee"]
-	@property
-	def Guarntr(self):
-		return self._Guarntr
-
-	@Guarntr.setter
-	def Guarntr(self, value):
-		self._Guarntr = value if type(value) != auto else self.make_default("Guarntr")
-
-	@Guarntr.deleter
-	def Guarntr(self):
-		del self._Guarntr
-		self._Guarntr = None
-
+	__slots__ = ["_Audtr", "_Guarntr", "_OthrPty", "_Trstee"]
 	@property
 	def Audtr(self):
 		return self._Audtr
@@ -30,6 +17,19 @@ class FundParties1(base_types._BaseFieldType):
 	def Audtr(self):
 		del self._Audtr
 		self._Audtr = None
+
+	@property
+	def Guarntr(self):
+		return self._Guarntr
+
+	@Guarntr.setter
+	def Guarntr(self, value):
+		self._Guarntr = value if type(value) != auto else self.make_default("Guarntr")
+
+	@Guarntr.deleter
+	def Guarntr(self):
+		del self._Guarntr
+		self._Guarntr = None
 
 	@property
 	def OthrPty(self):
@@ -58,8 +58,8 @@ class FundParties1(base_types._BaseFieldType):
 		self._Trstee = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Guarntr', type=ContactAttributes5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Audtr', type=ContactAttributes5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Guarntr', type=ContactAttributes5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrPty', type=ExtendedParty13, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Trstee', type=ContactAttributes5, min=0, max=1, mutex_group=None, array=False),
 	))

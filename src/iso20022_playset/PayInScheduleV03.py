@@ -1,27 +1,14 @@
 from . import base_types
-import PayInFactors1
-import ReportData4
-import PartyIdentification73Choice
-import PayInScheduleItems1
-import SupplementaryData1
-import BalanceStatus2
+from .PayInFactors1 import PayInFactors1
+from .SupplementaryData1 import SupplementaryData1
+from .PartyIdentification73Choice import PartyIdentification73Choice
+from .BalanceStatus2 import BalanceStatus2
+from .ReportData4 import ReportData4
+from .PayInScheduleItems1 import PayInScheduleItems1
 
 class PayInScheduleV03(base_types._BaseFieldType):
 
-	__slots__ = ["_PayInFctrs", "_PayInSchdlItm", "_RptData", "_SplmtryData", "_PayInSchdlLngBal", "_PtyId"]
-	@property
-	def PayInFctrs(self):
-		return self._PayInFctrs
-
-	@PayInFctrs.setter
-	def PayInFctrs(self, value):
-		self._PayInFctrs = value if type(value) != auto else self.make_default("PayInFctrs")
-
-	@PayInFctrs.deleter
-	def PayInFctrs(self):
-		del self._PayInFctrs
-		self._PayInFctrs = None
-
+	__slots__ = ["_PayInSchdlItm", "_PtyId", "_PayInSchdlLngBal", "_SplmtryData", "_RptData", "_PayInFctrs"]
 	@property
 	def PayInSchdlItm(self):
 		return self._PayInSchdlItm
@@ -36,30 +23,17 @@ class PayInScheduleV03(base_types._BaseFieldType):
 		self._PayInSchdlItm = None
 
 	@property
-	def RptData(self):
-		return self._RptData
+	def PtyId(self):
+		return self._PtyId
 
-	@RptData.setter
-	def RptData(self, value):
-		self._RptData = value if type(value) != auto else self.make_default("RptData")
+	@PtyId.setter
+	def PtyId(self, value):
+		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
 
-	@RptData.deleter
-	def RptData(self):
-		del self._RptData
-		self._RptData = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@PtyId.deleter
+	def PtyId(self):
+		del self._PtyId
+		self._PtyId = None
 
 	@property
 	def PayInSchdlLngBal(self):
@@ -75,24 +49,50 @@ class PayInScheduleV03(base_types._BaseFieldType):
 		self._PayInSchdlLngBal = None
 
 	@property
-	def PtyId(self):
-		return self._PtyId
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@PtyId.setter
-	def PtyId(self, value):
-		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@PtyId.deleter
-	def PtyId(self):
-		del self._PtyId
-		self._PtyId = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def RptData(self):
+		return self._RptData
+
+	@RptData.setter
+	def RptData(self, value):
+		self._RptData = value if type(value) != auto else self.make_default("RptData")
+
+	@RptData.deleter
+	def RptData(self):
+		del self._RptData
+		self._RptData = None
+
+	@property
+	def PayInFctrs(self):
+		return self._PayInFctrs
+
+	@PayInFctrs.setter
+	def PayInFctrs(self, value):
+		self._PayInFctrs = value if type(value) != auto else self.make_default("PayInFctrs")
+
+	@PayInFctrs.deleter
+	def PayInFctrs(self):
+		del self._PayInFctrs
+		self._PayInFctrs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PayInFctrs', type=PayInFactors1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PayInSchdlItm', type=PayInScheduleItems1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptData', type=ReportData4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PayInSchdlLngBal', type=BalanceStatus2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PtyId', type=PartyIdentification73Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PayInSchdlLngBal', type=BalanceStatus2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptData', type=ReportData4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PayInFctrs', type=PayInFactors1, min=0, max=1, mutex_group=None, array=False),
 	))
 

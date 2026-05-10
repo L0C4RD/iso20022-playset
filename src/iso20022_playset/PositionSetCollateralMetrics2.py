@@ -1,5 +1,5 @@
 from . import base_types
-import PositionSetCollateralTotal2
+from .PositionSetCollateralTotal2 import PositionSetCollateralTotal2
 
 class PositionSetCollateralMetrics2(base_types._BaseFieldType):
 

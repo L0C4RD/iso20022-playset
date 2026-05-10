@@ -1,26 +1,26 @@
 from . import base_types
-import TransactionLoanData30Choice
-import Max140Text
-import CounterpartyData88
-import SupplementaryData1
-import TransactionCollateralData18Choice
-import ModificationLevel1Code
+from .ModificationLevel1Code import ModificationLevel1Code
+from .Max140Text import Max140Text
+from .SupplementaryData1 import SupplementaryData1
+from .CounterpartyData88 import CounterpartyData88
+from .TransactionCollateralData18Choice import TransactionCollateralData18Choice
+from .TransactionLoanData30Choice import TransactionLoanData30Choice
 
 class TradeNewTransaction13(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtySpcfcData", "_CollData", "_TechRcrdId", "_LnData", "_SplmtryData", "_LvlTp"]
+	__slots__ = ["_LvlTp", "_CollData", "_SplmtryData", "_TechRcrdId", "_LnData", "_CtrPtySpcfcData"]
 	@property
-	def CtrPtySpcfcData(self):
-		return self._CtrPtySpcfcData
+	def LvlTp(self):
+		return self._LvlTp
 
-	@CtrPtySpcfcData.setter
-	def CtrPtySpcfcData(self, value):
-		self._CtrPtySpcfcData = value if type(value) != auto else self.make_default("CtrPtySpcfcData")
+	@LvlTp.setter
+	def LvlTp(self, value):
+		self._LvlTp = value if type(value) != auto else self.make_default("LvlTp")
 
-	@CtrPtySpcfcData.deleter
-	def CtrPtySpcfcData(self):
-		del self._CtrPtySpcfcData
-		self._CtrPtySpcfcData = None
+	@LvlTp.deleter
+	def LvlTp(self):
+		del self._LvlTp
+		self._LvlTp = None
 
 	@property
 	def CollData(self):
@@ -34,6 +34,19 @@ class TradeNewTransaction13(base_types._BaseFieldType):
 	def CollData(self):
 		del self._CollData
 		self._CollData = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def TechRcrdId(self):
@@ -62,37 +75,24 @@ class TradeNewTransaction13(base_types._BaseFieldType):
 		self._LnData = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def CtrPtySpcfcData(self):
+		return self._CtrPtySpcfcData
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@CtrPtySpcfcData.setter
+	def CtrPtySpcfcData(self, value):
+		self._CtrPtySpcfcData = value if type(value) != auto else self.make_default("CtrPtySpcfcData")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def LvlTp(self):
-		return self._LvlTp
-
-	@LvlTp.setter
-	def LvlTp(self, value):
-		self._LvlTp = value if type(value) != auto else self.make_default("LvlTp")
-
-	@LvlTp.deleter
-	def LvlTp(self):
-		del self._LvlTp
-		self._LvlTp = None
+	@CtrPtySpcfcData.deleter
+	def CtrPtySpcfcData(self):
+		del self._CtrPtySpcfcData
+		self._CtrPtySpcfcData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartyData88, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LvlTp', type=ModificationLevel1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollData', type=TransactionCollateralData18Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LnData', type=TransactionLoanData30Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LvlTp', type=ModificationLevel1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartyData88, min=1, max=1, mutex_group=None, array=False),
 	))
 

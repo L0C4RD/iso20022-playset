@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import CompanyLink1Code
+from .GenericIdentification47 import GenericIdentification47
+from .CompanyLink1Code import CompanyLink1Code
 
 class CompanyLink1Choice(base_types._BaseFieldType):
 

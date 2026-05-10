@@ -1,9 +1,22 @@
 from . import base_types
-import Max35Text
+from .Max35Text import Max35Text
 
 class CharacterSearch1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NEQ", "_NCT", "_EQ", "_CT"]
+	__slots__ = ["_CT", "_NEQ", "_EQ", "_NCT"]
+	@property
+	def CT(self):
+		return self._CT
+
+	@CT.setter
+	def CT(self, value):
+		self._CT = value if type(value) != auto else self.make_default("CT")
+
+	@CT.deleter
+	def CT(self):
+		del self._CT
+		self._CT = None
+
 	@property
 	def NEQ(self):
 		return self._NEQ
@@ -16,19 +29,6 @@ class CharacterSearch1Choice(base_types._BaseFieldType):
 	def NEQ(self):
 		del self._NEQ
 		self._NEQ = None
-
-	@property
-	def NCT(self):
-		return self._NCT
-
-	@NCT.setter
-	def NCT(self, value):
-		self._NCT = value if type(value) != auto else self.make_default("NCT")
-
-	@NCT.deleter
-	def NCT(self):
-		del self._NCT
-		self._NCT = None
 
 	@property
 	def EQ(self):
@@ -44,22 +44,22 @@ class CharacterSearch1Choice(base_types._BaseFieldType):
 		self._EQ = None
 
 	@property
-	def CT(self):
-		return self._CT
+	def NCT(self):
+		return self._NCT
 
-	@CT.setter
-	def CT(self, value):
-		self._CT = value if type(value) != auto else self.make_default("CT")
+	@NCT.setter
+	def NCT(self, value):
+		self._NCT = value if type(value) != auto else self.make_default("NCT")
 
-	@CT.deleter
-	def CT(self):
-		del self._CT
-		self._CT = None
+	@NCT.deleter
+	def NCT(self):
+		del self._NCT
+		self._NCT = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NEQ', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NCT', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='EQ', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CT', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NEQ', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='EQ', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NCT', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

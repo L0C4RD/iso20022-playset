@@ -1,22 +1,22 @@
 from . import base_types
-import ISODate
-import Period2
+from .Period2 import Period2
+from .ISODate import ISODate
 
 class DateAndPeriod2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_Dt", "_ToDt", "_FrDt"]
+	__slots__ = ["_ToDt", "_Dt", "_Prd", "_FrDt"]
 	@property
-	def Prd(self):
-		return self._Prd
+	def ToDt(self):
+		return self._ToDt
 
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
+	@ToDt.setter
+	def ToDt(self, value):
+		self._ToDt = value if type(value) != auto else self.make_default("ToDt")
 
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
+	@ToDt.deleter
+	def ToDt(self):
+		del self._ToDt
+		self._ToDt = None
 
 	@property
 	def Dt(self):
@@ -32,17 +32,17 @@ class DateAndPeriod2Choice(base_types._BaseFieldType):
 		self._Dt = None
 
 	@property
-	def ToDt(self):
-		return self._ToDt
+	def Prd(self):
+		return self._Prd
 
-	@ToDt.setter
-	def ToDt(self, value):
-		self._ToDt = value if type(value) != auto else self.make_default("ToDt")
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != auto else self.make_default("Prd")
 
-	@ToDt.deleter
-	def ToDt(self):
-		del self._ToDt
-		self._ToDt = None
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
 
 	@property
 	def FrDt(self):
@@ -58,9 +58,9 @@ class DateAndPeriod2Choice(base_types._BaseFieldType):
 		self._FrDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prd', type=Period2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ToDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prd', type=Period2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FrDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 	))
 

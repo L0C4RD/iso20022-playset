@@ -1,6 +1,6 @@
 from . import base_types
-import OrganisationIdentification15Choice
-import Max140Text
+from .Max140Text import Max140Text
+from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class TradeTransactionIdentification17(base_types._BaseFieldType):
 

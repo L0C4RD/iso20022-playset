@@ -1,11 +1,24 @@
 from . import base_types
-import CountryCode
-import Max35Text
-import IdentificationType42Choice
+from .CountryCode import CountryCode
+from .IdentificationType42Choice import IdentificationType42Choice
+from .Max35Text import Max35Text
 
 class AlternatePartyIdentification10(base_types._BaseFieldType):
 
-	__slots__ = ["_TpOfId", "_AltrnId", "_Ctry"]
+	__slots__ = ["_Ctry", "_TpOfId", "_AltrnId"]
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
 	@property
 	def TpOfId(self):
 		return self._TpOfId
@@ -32,22 +45,9 @@ class AlternatePartyIdentification10(base_types._BaseFieldType):
 		del self._AltrnId
 		self._AltrnId = None
 
-	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TpOfId', type=IdentificationType42Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

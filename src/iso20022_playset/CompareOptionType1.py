@@ -1,5 +1,5 @@
 from . import base_types
-import OptionType2Code
+from .OptionType2Code import OptionType2Code
 
 class CompareOptionType1(base_types._BaseFieldType):
 

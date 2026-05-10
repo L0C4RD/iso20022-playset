@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import AwaitingCancellationReason1Code
+from .GenericIdentification30 import GenericIdentification30
+from .AwaitingCancellationReason1Code import AwaitingCancellationReason1Code
 
 class AwaitingCancellationReason2Choice(base_types._BaseFieldType):
 

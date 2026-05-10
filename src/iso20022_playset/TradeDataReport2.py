@@ -1,6 +1,6 @@
 from . import base_types
-import TradeData44
-import Max35Text
+from .TradeData44 import TradeData44
+from .Max35Text import Max35Text
 
 class TradeDataReport2(base_types._BaseFieldType):
 

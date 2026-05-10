@@ -1,9 +1,9 @@
 from . import base_types
-import ActiveCurrencyAndAmount
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class CollateralAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_MktValAmt", "_CollAmt", "_RptdCcyAndAmt", "_AcrdIntrstAmt", "_FeesAndComssns"]
+	__slots__ = ["_MktValAmt", "_FeesAndComssns", "_CollAmt", "_RptdCcyAndAmt", "_AcrdIntrstAmt"]
 	@property
 	def MktValAmt(self):
 		return self._MktValAmt
@@ -16,6 +16,19 @@ class CollateralAmount1(base_types._BaseFieldType):
 	def MktValAmt(self):
 		del self._MktValAmt
 		self._MktValAmt = None
+
+	@property
+	def FeesAndComssns(self):
+		return self._FeesAndComssns
+
+	@FeesAndComssns.setter
+	def FeesAndComssns(self, value):
+		self._FeesAndComssns = value if type(value) != auto else self.make_default("FeesAndComssns")
+
+	@FeesAndComssns.deleter
+	def FeesAndComssns(self):
+		del self._FeesAndComssns
+		self._FeesAndComssns = None
 
 	@property
 	def CollAmt(self):
@@ -56,24 +69,11 @@ class CollateralAmount1(base_types._BaseFieldType):
 		del self._AcrdIntrstAmt
 		self._AcrdIntrstAmt = None
 
-	@property
-	def FeesAndComssns(self):
-		return self._FeesAndComssns
-
-	@FeesAndComssns.setter
-	def FeesAndComssns(self, value):
-		self._FeesAndComssns = value if type(value) != auto else self.make_default("FeesAndComssns")
-
-	@FeesAndComssns.deleter
-	def FeesAndComssns(self):
-		del self._FeesAndComssns
-		self._FeesAndComssns = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MktValAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FeesAndComssns', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptdCcyAndAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FeesAndComssns', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

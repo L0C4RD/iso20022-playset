@@ -1,5 +1,5 @@
 from . import base_types
-import ATMPINManagementRequestV03
+from .ATMPINManagementRequestV03 import ATMPINManagementRequestV03
 
 class CATP_010_001_03():
 

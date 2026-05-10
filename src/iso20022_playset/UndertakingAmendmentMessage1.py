@@ -1,6 +1,6 @@
 from . import base_types
-import Amendment1
-import PartyAndSignature2
+from .PartyAndSignature2 import PartyAndSignature2
+from .Amendment1 import Amendment1
 
 class UndertakingAmendmentMessage1(base_types._BaseFieldType):
 

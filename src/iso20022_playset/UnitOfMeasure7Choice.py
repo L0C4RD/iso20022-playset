@@ -1,6 +1,6 @@
 from . import base_types
-import UnitOfMeasure9Code
-import GenericIdentification30
+from .GenericIdentification30 import GenericIdentification30
+from .UnitOfMeasure9Code import UnitOfMeasure9Code
 
 class UnitOfMeasure7Choice(base_types._BaseFieldType):
 

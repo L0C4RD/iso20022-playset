@@ -1,7 +1,7 @@
 from . import base_types
-import Max35Text
-import NotificationAdviceStatus2Choice
-import ISODateTime
+from .Max35Text import Max35Text
+from .ISODateTime import ISODateTime
+from .NotificationAdviceStatus2Choice import NotificationAdviceStatus2Choice
 
 class AgentNotificationIdentificationAndStatus1(base_types._BaseFieldType):
 

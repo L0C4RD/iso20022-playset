@@ -1,6 +1,6 @@
 from . import base_types
-import CorporateAction1Choice
-import TransactionType2Choice
+from .CorporateAction1Choice import CorporateAction1Choice
+from .TransactionType2Choice import TransactionType2Choice
 
 class TransactionType1Choice(base_types._BaseFieldType):
 

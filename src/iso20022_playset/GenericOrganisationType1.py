@@ -1,6 +1,6 @@
 from . import base_types
-import OrganisationIdentificationSchemeName1Choice
-import RequestedIndicator
+from .RequestedIndicator import RequestedIndicator
+from .OrganisationIdentificationSchemeName1Choice import OrganisationIdentificationSchemeName1Choice
 
 class GenericOrganisationType1(base_types._BaseFieldType):
 

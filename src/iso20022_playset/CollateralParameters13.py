@@ -1,14 +1,27 @@
 from . import base_types
-import GenericIdentification30
-import CollateralRole1Code
-import YesNoIndicator
-import CollateralAmount5
-import CollateralTransactionType1Choice
-import ExposureType23Choice
+from .CollateralAmount5 import CollateralAmount5
+from .GenericIdentification30 import GenericIdentification30
+from .YesNoIndicator import YesNoIndicator
+from .ExposureType23Choice import ExposureType23Choice
+from .CollateralTransactionType1Choice import CollateralTransactionType1Choice
+from .CollateralRole1Code import CollateralRole1Code
 
 class CollateralParameters13(base_types._BaseFieldType):
 
-	__slots__ = ["_CollSd", "_Prty", "_SttlmApprvd", "_CollAmt", "_CollApprvd", "_AutomtcAllcn", "_CollInstrTp", "_XpsrTp"]
+	__slots__ = ["_Prty", "_CollSd", "_CollAmt", "_SttlmApprvd", "_CollInstrTp", "_CollApprvd", "_AutomtcAllcn", "_XpsrTp"]
+	@property
+	def Prty(self):
+		return self._Prty
+
+	@Prty.setter
+	def Prty(self, value):
+		self._Prty = value if type(value) != auto else self.make_default("Prty")
+
+	@Prty.deleter
+	def Prty(self):
+		del self._Prty
+		self._Prty = None
+
 	@property
 	def CollSd(self):
 		return self._CollSd
@@ -23,17 +36,17 @@ class CollateralParameters13(base_types._BaseFieldType):
 		self._CollSd = None
 
 	@property
-	def Prty(self):
-		return self._Prty
+	def CollAmt(self):
+		return self._CollAmt
 
-	@Prty.setter
-	def Prty(self, value):
-		self._Prty = value if type(value) != auto else self.make_default("Prty")
+	@CollAmt.setter
+	def CollAmt(self, value):
+		self._CollAmt = value if type(value) != auto else self.make_default("CollAmt")
 
-	@Prty.deleter
-	def Prty(self):
-		del self._Prty
-		self._Prty = None
+	@CollAmt.deleter
+	def CollAmt(self):
+		del self._CollAmt
+		self._CollAmt = None
 
 	@property
 	def SttlmApprvd(self):
@@ -49,17 +62,17 @@ class CollateralParameters13(base_types._BaseFieldType):
 		self._SttlmApprvd = None
 
 	@property
-	def CollAmt(self):
-		return self._CollAmt
+	def CollInstrTp(self):
+		return self._CollInstrTp
 
-	@CollAmt.setter
-	def CollAmt(self, value):
-		self._CollAmt = value if type(value) != auto else self.make_default("CollAmt")
+	@CollInstrTp.setter
+	def CollInstrTp(self, value):
+		self._CollInstrTp = value if type(value) != auto else self.make_default("CollInstrTp")
 
-	@CollAmt.deleter
-	def CollAmt(self):
-		del self._CollAmt
-		self._CollAmt = None
+	@CollInstrTp.deleter
+	def CollInstrTp(self):
+		del self._CollInstrTp
+		self._CollInstrTp = None
 
 	@property
 	def CollApprvd(self):
@@ -88,19 +101,6 @@ class CollateralParameters13(base_types._BaseFieldType):
 		self._AutomtcAllcn = None
 
 	@property
-	def CollInstrTp(self):
-		return self._CollInstrTp
-
-	@CollInstrTp.setter
-	def CollInstrTp(self, value):
-		self._CollInstrTp = value if type(value) != auto else self.make_default("CollInstrTp")
-
-	@CollInstrTp.deleter
-	def CollInstrTp(self):
-		del self._CollInstrTp
-		self._CollInstrTp = None
-
-	@property
 	def XpsrTp(self):
 		return self._XpsrTp
 
@@ -114,13 +114,13 @@ class CollateralParameters13(base_types._BaseFieldType):
 		self._XpsrTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollSd', type=CollateralRole1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prty', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmApprvd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollSd', type=CollateralRole1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollAmt', type=CollateralAmount5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmApprvd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollInstrTp', type=CollateralTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollApprvd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AutomtcAllcn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollInstrTp', type=CollateralTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpsrTp', type=ExposureType23Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

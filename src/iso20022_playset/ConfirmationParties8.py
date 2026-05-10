@@ -1,23 +1,23 @@
 from . import base_types
-import ConfirmationPartyDetails12
-import ConfirmationPartyDetails15
-import ConfirmationPartyDetails14
+from .ConfirmationPartyDetails14 import ConfirmationPartyDetails14
+from .ConfirmationPartyDetails15 import ConfirmationPartyDetails15
+from .ConfirmationPartyDetails12 import ConfirmationPartyDetails12
 
 class ConfirmationParties8(base_types._BaseFieldType):
 
-	__slots__ = ["_Brrwr", "_Lndr", "_Sellr", "_TradBnfcryPty", "_AffrmgPty", "_Buyr"]
+	__slots__ = ["_TradBnfcryPty", "_Lndr", "_Brrwr", "_AffrmgPty", "_Buyr", "_Sellr"]
 	@property
-	def Brrwr(self):
-		return self._Brrwr
+	def TradBnfcryPty(self):
+		return self._TradBnfcryPty
 
-	@Brrwr.setter
-	def Brrwr(self, value):
-		self._Brrwr = value if type(value) != auto else self.make_default("Brrwr")
+	@TradBnfcryPty.setter
+	def TradBnfcryPty(self, value):
+		self._TradBnfcryPty = value if type(value) != auto else self.make_default("TradBnfcryPty")
 
-	@Brrwr.deleter
-	def Brrwr(self):
-		del self._Brrwr
-		self._Brrwr = None
+	@TradBnfcryPty.deleter
+	def TradBnfcryPty(self):
+		del self._TradBnfcryPty
+		self._TradBnfcryPty = None
 
 	@property
 	def Lndr(self):
@@ -33,30 +33,17 @@ class ConfirmationParties8(base_types._BaseFieldType):
 		self._Lndr = None
 
 	@property
-	def Sellr(self):
-		return self._Sellr
+	def Brrwr(self):
+		return self._Brrwr
 
-	@Sellr.setter
-	def Sellr(self, value):
-		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
+	@Brrwr.setter
+	def Brrwr(self, value):
+		self._Brrwr = value if type(value) != auto else self.make_default("Brrwr")
 
-	@Sellr.deleter
-	def Sellr(self):
-		del self._Sellr
-		self._Sellr = None
-
-	@property
-	def TradBnfcryPty(self):
-		return self._TradBnfcryPty
-
-	@TradBnfcryPty.setter
-	def TradBnfcryPty(self, value):
-		self._TradBnfcryPty = value if type(value) != auto else self.make_default("TradBnfcryPty")
-
-	@TradBnfcryPty.deleter
-	def TradBnfcryPty(self):
-		del self._TradBnfcryPty
-		self._TradBnfcryPty = None
+	@Brrwr.deleter
+	def Brrwr(self):
+		del self._Brrwr
+		self._Brrwr = None
 
 	@property
 	def AffrmgPty(self):
@@ -84,12 +71,25 @@ class ConfirmationParties8(base_types._BaseFieldType):
 		del self._Buyr
 		self._Buyr = None
 
+	@property
+	def Sellr(self):
+		return self._Sellr
+
+	@Sellr.setter
+	def Sellr(self, value):
+		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
+
+	@Sellr.deleter
+	def Sellr(self):
+		del self._Sellr
+		self._Sellr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Brrwr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lndr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sellr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradBnfcryPty', type=ConfirmationPartyDetails14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lndr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Brrwr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AffrmgPty', type=ConfirmationPartyDetails15, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Buyr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sellr', type=ConfirmationPartyDetails12, min=0, max=1, mutex_group=None, array=False),
 	))
 

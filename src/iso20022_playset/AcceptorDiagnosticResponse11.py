@@ -1,23 +1,23 @@
 from . import base_types
-import TMSTrigger1
-import CardPaymentEnvironment81
-import TrueFalseIndicator
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from .TMSTrigger1 import TMSTrigger1
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class AcceptorDiagnosticResponse11(base_types._BaseFieldType):
 
-	__slots__ = ["_AcqrrAvlbl", "_Envt", "_TMSTrggr"]
+	__slots__ = ["_TMSTrggr", "_Envt", "_AcqrrAvlbl"]
 	@property
-	def AcqrrAvlbl(self):
-		return self._AcqrrAvlbl
+	def TMSTrggr(self):
+		return self._TMSTrggr
 
-	@AcqrrAvlbl.setter
-	def AcqrrAvlbl(self, value):
-		self._AcqrrAvlbl = value if type(value) != auto else self.make_default("AcqrrAvlbl")
+	@TMSTrggr.setter
+	def TMSTrggr(self, value):
+		self._TMSTrggr = value if type(value) != auto else self.make_default("TMSTrggr")
 
-	@AcqrrAvlbl.deleter
-	def AcqrrAvlbl(self):
-		del self._AcqrrAvlbl
-		self._AcqrrAvlbl = None
+	@TMSTrggr.deleter
+	def TMSTrggr(self):
+		del self._TMSTrggr
+		self._TMSTrggr = None
 
 	@property
 	def Envt(self):
@@ -33,21 +33,21 @@ class AcceptorDiagnosticResponse11(base_types._BaseFieldType):
 		self._Envt = None
 
 	@property
-	def TMSTrggr(self):
-		return self._TMSTrggr
+	def AcqrrAvlbl(self):
+		return self._AcqrrAvlbl
 
-	@TMSTrggr.setter
-	def TMSTrggr(self, value):
-		self._TMSTrggr = value if type(value) != auto else self.make_default("TMSTrggr")
+	@AcqrrAvlbl.setter
+	def AcqrrAvlbl(self, value):
+		self._AcqrrAvlbl = value if type(value) != auto else self.make_default("AcqrrAvlbl")
 
-	@TMSTrggr.deleter
-	def TMSTrggr(self):
-		del self._TMSTrggr
-		self._TMSTrggr = None
+	@AcqrrAvlbl.deleter
+	def AcqrrAvlbl(self):
+		del self._AcqrrAvlbl
+		self._AcqrrAvlbl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcqrrAvlbl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMSTrggr', type=TMSTrigger1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcqrrAvlbl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

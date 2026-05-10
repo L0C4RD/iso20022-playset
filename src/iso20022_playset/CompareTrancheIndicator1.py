@@ -1,5 +1,5 @@
 from . import base_types
-import TrancheIndicator3Choice
+from .TrancheIndicator3Choice import TrancheIndicator3Choice
 
 class CompareTrancheIndicator1(base_types._BaseFieldType):
 

@@ -1,8 +1,8 @@
 from . import base_types
-import MessageHeader1
-import SupplementaryData1
-import StandingOrderIdentification8
-import StandingOrder10
+from .StandingOrderIdentification8 import StandingOrderIdentification8
+from .SupplementaryData1 import SupplementaryData1
+from .MessageHeader1 import MessageHeader1
+from .StandingOrder10 import StandingOrder10
 
 class CreateStandingOrderV03(base_types._BaseFieldType):
 

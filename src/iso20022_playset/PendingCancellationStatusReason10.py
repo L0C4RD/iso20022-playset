@@ -1,6 +1,6 @@
 from . import base_types
-import Max350Text
-import PendingCancellationReason7Choice
+from .Max350Text import Max350Text
+from .PendingCancellationReason7Choice import PendingCancellationReason7Choice
 
 class PendingCancellationStatusReason10(base_types._BaseFieldType):
 

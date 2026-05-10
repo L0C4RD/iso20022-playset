@@ -1,11 +1,11 @@
 from . import base_types
-import Max350Text
-import ISODate
-import Max35Text
+from .Max35Text import Max35Text
+from .Max350Text import Max350Text
+from .ISODate import ISODate
 
 class PartyName3(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_VldFr", "_ShrtNm"]
+	__slots__ = ["_Nm", "_ShrtNm", "_VldFr"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -20,19 +20,6 @@ class PartyName3(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def VldFr(self):
-		return self._VldFr
-
-	@VldFr.setter
-	def VldFr(self, value):
-		self._VldFr = value if type(value) != auto else self.make_default("VldFr")
-
-	@VldFr.deleter
-	def VldFr(self):
-		del self._VldFr
-		self._VldFr = None
-
-	@property
 	def ShrtNm(self):
 		return self._ShrtNm
 
@@ -45,9 +32,22 @@ class PartyName3(base_types._BaseFieldType):
 		del self._ShrtNm
 		self._ShrtNm = None
 
+	@property
+	def VldFr(self):
+		return self._VldFr
+
+	@VldFr.setter
+	def VldFr(self, value):
+		self._VldFr = value if type(value) != auto else self.make_default("VldFr")
+
+	@VldFr.deleter
+	def VldFr(self):
+		del self._VldFr
+		self._VldFr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldFr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldFr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

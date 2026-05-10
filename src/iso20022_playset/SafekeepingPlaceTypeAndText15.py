@@ -1,6 +1,6 @@
 from . import base_types
-import RestrictedFINXMax30Text
-import SafekeepingPlace3Code
+from .RestrictedFINXMax30Text import RestrictedFINXMax30Text
+from .SafekeepingPlace3Code import SafekeepingPlace3Code
 
 class SafekeepingPlaceTypeAndText15(base_types._BaseFieldType):
 

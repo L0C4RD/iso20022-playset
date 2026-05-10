@@ -1,5 +1,5 @@
 from . import base_types
-import MeetingEntitlementNotificationV10
+from .MeetingEntitlementNotificationV10 import MeetingEntitlementNotificationV10
 
 class SEEV_003_001_10():
 

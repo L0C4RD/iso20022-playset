@@ -1,24 +1,11 @@
 from . import base_types
-import DecimalNumber
-import Quantity1Code
-import ActiveCurrencyAndAmount
+from .DecimalNumber import DecimalNumber
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .Quantity1Code import Quantity1Code
 
 class UnitOrFaceAmountOrCode1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Unit", "_FaceAmt"]
-	@property
-	def Cd(self):
-		return self._Cd
-
-	@Cd.setter
-	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
-
-	@Cd.deleter
-	def Cd(self):
-		del self._Cd
-		self._Cd = None
-
+	__slots__ = ["_Unit", "_Cd", "_FaceAmt"]
 	@property
 	def Unit(self):
 		return self._Unit
@@ -31,6 +18,19 @@ class UnitOrFaceAmountOrCode1Choice(base_types._BaseFieldType):
 	def Unit(self):
 		del self._Unit
 		self._Unit = None
+
+	@property
+	def Cd(self):
+		return self._Cd
+
+	@Cd.setter
+	def Cd(self, value):
+		self._Cd = value if type(value) != auto else self.make_default("Cd")
+
+	@Cd.deleter
+	def Cd(self):
+		del self._Cd
+		self._Cd = None
 
 	@property
 	def FaceAmt(self):
@@ -46,8 +46,8 @@ class UnitOrFaceAmountOrCode1Choice(base_types._BaseFieldType):
 		self._FaceAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cd', type=Quantity1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Unit', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cd', type=Quantity1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FaceAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

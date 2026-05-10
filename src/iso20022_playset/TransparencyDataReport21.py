@@ -1,31 +1,57 @@
 from . import base_types
-import ISODate
-import FinancialInstrumentContractType1Code
-import MICIdentifier
-import Max350Text
-import Derivative3Choice
-import ISINOct2015Identifier
-import DebtInstrument5
-import Max35Text
-import NonEquityInstrumentReportingClassification1Code
-import ExternalProductType1Code
-import ExternalEmissionAllowanceSubProductType1Code
+from .MICIdentifier import MICIdentifier
+from .Max35Text import Max35Text
+from .ISODate import ISODate
+from .DebtInstrument5 import DebtInstrument5
+from .NonEquityInstrumentReportingClassification1Code import NonEquityInstrumentReportingClassification1Code
+from .Max350Text import Max350Text
+from .FinancialInstrumentContractType1Code import FinancialInstrumentContractType1Code
+from .ISINOct2015Identifier import ISINOct2015Identifier
+from .Derivative3Choice import Derivative3Choice
+from .ExternalEmissionAllowanceSubProductType1Code import ExternalEmissionAllowanceSubProductType1Code
+from .ExternalProductType1Code import ExternalProductType1Code
 
 class TransparencyDataReport21(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygInstrmAsstClss", "_EmssnAllwncTp", "_MtrtyDt", "_FinInstrmClssfctn", "_TradgVn", "_Id", "_Bd", "_TechRcrdId", "_DerivCtrctTp", "_FullNm", "_Deriv", "_RptgDt"]
+	__slots__ = ["_DerivCtrctTp", "_Deriv", "_RptgDt", "_EmssnAllwncTp", "_Id", "_FullNm", "_FinInstrmClssfctn", "_TradgVn", "_Bd", "_MtrtyDt", "_UndrlygInstrmAsstClss", "_TechRcrdId"]
 	@property
-	def UndrlygInstrmAsstClss(self):
-		return self._UndrlygInstrmAsstClss
+	def DerivCtrctTp(self):
+		return self._DerivCtrctTp
 
-	@UndrlygInstrmAsstClss.setter
-	def UndrlygInstrmAsstClss(self, value):
-		self._UndrlygInstrmAsstClss = value if type(value) != auto else self.make_default("UndrlygInstrmAsstClss")
+	@DerivCtrctTp.setter
+	def DerivCtrctTp(self, value):
+		self._DerivCtrctTp = value if type(value) != auto else self.make_default("DerivCtrctTp")
 
-	@UndrlygInstrmAsstClss.deleter
-	def UndrlygInstrmAsstClss(self):
-		del self._UndrlygInstrmAsstClss
-		self._UndrlygInstrmAsstClss = None
+	@DerivCtrctTp.deleter
+	def DerivCtrctTp(self):
+		del self._DerivCtrctTp
+		self._DerivCtrctTp = None
+
+	@property
+	def Deriv(self):
+		return self._Deriv
+
+	@Deriv.setter
+	def Deriv(self, value):
+		self._Deriv = value if type(value) != auto else self.make_default("Deriv")
+
+	@Deriv.deleter
+	def Deriv(self):
+		del self._Deriv
+		self._Deriv = None
+
+	@property
+	def RptgDt(self):
+		return self._RptgDt
+
+	@RptgDt.setter
+	def RptgDt(self, value):
+		self._RptgDt = value if type(value) != auto else self.make_default("RptgDt")
+
+	@RptgDt.deleter
+	def RptgDt(self):
+		del self._RptgDt
+		self._RptgDt = None
 
 	@property
 	def EmssnAllwncTp(self):
@@ -41,17 +67,30 @@ class TransparencyDataReport21(base_types._BaseFieldType):
 		self._EmssnAllwncTp = None
 
 	@property
-	def MtrtyDt(self):
-		return self._MtrtyDt
+	def Id(self):
+		return self._Id
 
-	@MtrtyDt.setter
-	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@MtrtyDt.deleter
-	def MtrtyDt(self):
-		del self._MtrtyDt
-		self._MtrtyDt = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def FullNm(self):
+		return self._FullNm
+
+	@FullNm.setter
+	def FullNm(self, value):
+		self._FullNm = value if type(value) != auto else self.make_default("FullNm")
+
+	@FullNm.deleter
+	def FullNm(self):
+		del self._FullNm
+		self._FullNm = None
 
 	@property
 	def FinInstrmClssfctn(self):
@@ -80,19 +119,6 @@ class TransparencyDataReport21(base_types._BaseFieldType):
 		self._TradgVn = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def Bd(self):
 		return self._Bd
 
@@ -104,6 +130,32 @@ class TransparencyDataReport21(base_types._BaseFieldType):
 	def Bd(self):
 		del self._Bd
 		self._Bd = None
+
+	@property
+	def MtrtyDt(self):
+		return self._MtrtyDt
+
+	@MtrtyDt.setter
+	def MtrtyDt(self, value):
+		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
+
+	@MtrtyDt.deleter
+	def MtrtyDt(self):
+		del self._MtrtyDt
+		self._MtrtyDt = None
+
+	@property
+	def UndrlygInstrmAsstClss(self):
+		return self._UndrlygInstrmAsstClss
+
+	@UndrlygInstrmAsstClss.setter
+	def UndrlygInstrmAsstClss(self, value):
+		self._UndrlygInstrmAsstClss = value if type(value) != auto else self.make_default("UndrlygInstrmAsstClss")
+
+	@UndrlygInstrmAsstClss.deleter
+	def UndrlygInstrmAsstClss(self):
+		del self._UndrlygInstrmAsstClss
+		self._UndrlygInstrmAsstClss = None
 
 	@property
 	def TechRcrdId(self):
@@ -118,70 +170,18 @@ class TransparencyDataReport21(base_types._BaseFieldType):
 		del self._TechRcrdId
 		self._TechRcrdId = None
 
-	@property
-	def DerivCtrctTp(self):
-		return self._DerivCtrctTp
-
-	@DerivCtrctTp.setter
-	def DerivCtrctTp(self, value):
-		self._DerivCtrctTp = value if type(value) != auto else self.make_default("DerivCtrctTp")
-
-	@DerivCtrctTp.deleter
-	def DerivCtrctTp(self):
-		del self._DerivCtrctTp
-		self._DerivCtrctTp = None
-
-	@property
-	def FullNm(self):
-		return self._FullNm
-
-	@FullNm.setter
-	def FullNm(self, value):
-		self._FullNm = value if type(value) != auto else self.make_default("FullNm")
-
-	@FullNm.deleter
-	def FullNm(self):
-		del self._FullNm
-		self._FullNm = None
-
-	@property
-	def Deriv(self):
-		return self._Deriv
-
-	@Deriv.setter
-	def Deriv(self, value):
-		self._Deriv = value if type(value) != auto else self.make_default("Deriv")
-
-	@Deriv.deleter
-	def Deriv(self):
-		del self._Deriv
-		self._Deriv = None
-
-	@property
-	def RptgDt(self):
-		return self._RptgDt
-
-	@RptgDt.setter
-	def RptgDt(self, value):
-		self._RptgDt = value if type(value) != auto else self.make_default("RptgDt")
-
-	@RptgDt.deleter
-	def RptgDt(self):
-		del self._RptgDt
-		self._RptgDt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygInstrmAsstClss', type=ExternalProductType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmssnAllwncTp', type=ExternalEmissionAllowanceSubProductType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmClssfctn', type=NonEquityInstrumentReportingClassification1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Bd', type=DebtInstrument5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DerivCtrctTp', type=FinancialInstrumentContractType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FullNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Deriv', type=Derivative3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EmssnAllwncTp', type=ExternalEmissionAllowanceSubProductType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FullNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmClssfctn', type=NonEquityInstrumentReportingClassification1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Bd', type=DebtInstrument5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygInstrmAsstClss', type=ExternalProductType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

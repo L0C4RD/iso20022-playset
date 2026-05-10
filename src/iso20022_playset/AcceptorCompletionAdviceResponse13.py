@@ -1,8 +1,8 @@
 from . import base_types
-import CardPaymentTransactionAdviceResponse8
-import CardPaymentEnvironment81
-import SupplementaryData1
-import TMSTrigger1
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from .SupplementaryData1 import SupplementaryData1
+from .TMSTrigger1 import TMSTrigger1
+from .CardPaymentTransactionAdviceResponse8 import CardPaymentTransactionAdviceResponse8
 
 class AcceptorCompletionAdviceResponse13(base_types._BaseFieldType):
 

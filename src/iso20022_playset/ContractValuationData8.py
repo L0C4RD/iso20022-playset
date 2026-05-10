@@ -1,8 +1,8 @@
 from . import base_types
-import LongFraction19DecimalNumber
-import AmountAndDirection109
-import ValuationType1Code
-import ISODateTime
+from .ValuationType1Code import ValuationType1Code
+from .AmountAndDirection109 import AmountAndDirection109
+from .ISODateTime import ISODateTime
+from .LongFraction19DecimalNumber import LongFraction19DecimalNumber
 
 class ContractValuationData8(base_types._BaseFieldType):
 

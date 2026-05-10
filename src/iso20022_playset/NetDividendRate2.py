@@ -1,6 +1,6 @@
 from . import base_types
-import NetDividendRateType1FormatChoice
-import ActiveCurrencyAndAmount
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .NetDividendRateType1FormatChoice import NetDividendRateType1FormatChoice
 
 class NetDividendRate2(base_types._BaseFieldType):
 

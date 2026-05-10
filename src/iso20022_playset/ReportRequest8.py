@@ -1,27 +1,14 @@
 from . import base_types
-import CardPaymentEnvironment81
-import PaymentContext30
-import ReportGetTotalsRequest1
-import SupplementaryData1
-import ReportTransactionRequest1
-import RetailerService6Code
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from .SupplementaryData1 import SupplementaryData1
+from .RetailerService6Code import RetailerService6Code
+from .ReportGetTotalsRequest1 import ReportGetTotalsRequest1
+from .PaymentContext30 import PaymentContext30
+from .ReportTransactionRequest1 import ReportTransactionRequest1
 
 class ReportRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_Cntxt", "_RptTxReq", "_Envt", "_RptGetTtlsReq", "_SplmtryData", "_SvcCntt"]
-	@property
-	def Cntxt(self):
-		return self._Cntxt
-
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
-
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
-
+	__slots__ = ["_RptTxReq", "_RptGetTtlsReq", "_SplmtryData", "_Cntxt", "_Envt", "_SvcCntt"]
 	@property
 	def RptTxReq(self):
 		return self._RptTxReq
@@ -34,19 +21,6 @@ class ReportRequest8(base_types._BaseFieldType):
 	def RptTxReq(self):
 		del self._RptTxReq
 		self._RptTxReq = None
-
-	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
 
 	@property
 	def RptGetTtlsReq(self):
@@ -75,6 +49,32 @@ class ReportRequest8(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def Cntxt(self):
+		return self._Cntxt
+
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
+
+	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
+
+	@property
 	def SvcCntt(self):
 		return self._SvcCntt
 
@@ -88,11 +88,11 @@ class ReportRequest8(base_types._BaseFieldType):
 		self._SvcCntt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptTxReq', type=ReportTransactionRequest1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptGetTtlsReq', type=ReportGetTotalsRequest1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcCntt', type=RetailerService6Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

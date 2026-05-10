@@ -1,5 +1,5 @@
 from . import base_types
-import RoleAndBaselineAcceptanceNotificationV01
+from .RoleAndBaselineAcceptanceNotificationV01 import RoleAndBaselineAcceptanceNotificationV01
 
 class TSMT_051_001_01():
 

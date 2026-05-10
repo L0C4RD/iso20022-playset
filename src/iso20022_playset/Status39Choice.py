@@ -1,25 +1,12 @@
 from . import base_types
-import MatchingStatus32Choice
-import InstructionProcessingStatus45Choice
-import ProprietaryStatusAndReason7
-import SettlementStatus31Choice
+from .ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
+from .SettlementStatus31Choice import SettlementStatus31Choice
+from .MatchingStatus32Choice import MatchingStatus32Choice
+from .InstructionProcessingStatus45Choice import InstructionProcessingStatus45Choice
 
 class Status39Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MtchgSts", "_SttlmSts", "_Prtry", "_IfrrdMtchgSts", "_InstrPrcgSts"]
-	@property
-	def MtchgSts(self):
-		return self._MtchgSts
-
-	@MtchgSts.setter
-	def MtchgSts(self, value):
-		self._MtchgSts = value if type(value) != auto else self.make_default("MtchgSts")
-
-	@MtchgSts.deleter
-	def MtchgSts(self):
-		del self._MtchgSts
-		self._MtchgSts = None
-
+	__slots__ = ["_SttlmSts", "_MtchgSts", "_Prtry", "_IfrrdMtchgSts", "_InstrPrcgSts"]
 	@property
 	def SttlmSts(self):
 		return self._SttlmSts
@@ -32,6 +19,19 @@ class Status39Choice(base_types._BaseFieldType):
 	def SttlmSts(self):
 		del self._SttlmSts
 		self._SttlmSts = None
+
+	@property
+	def MtchgSts(self):
+		return self._MtchgSts
+
+	@MtchgSts.setter
+	def MtchgSts(self, value):
+		self._MtchgSts = value if type(value) != auto else self.make_default("MtchgSts")
+
+	@MtchgSts.deleter
+	def MtchgSts(self):
+		del self._MtchgSts
+		self._MtchgSts = None
 
 	@property
 	def Prtry(self):
@@ -73,8 +73,8 @@ class Status39Choice(base_types._BaseFieldType):
 		self._InstrPrcgSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus31Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='InstrPrcgSts', type=InstructionProcessingStatus45Choice, min=0, max=1, mutex_group=1, array=False),

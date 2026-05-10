@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import TEFRARules1Code
+from .GenericIdentification30 import GenericIdentification30
+from .TEFRARules1Code import TEFRARules1Code
 
 class TEFRARules3Choice(base_types._BaseFieldType):
 

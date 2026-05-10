@@ -1,6 +1,6 @@
 from . import base_types
-import BaseOneRate
-import ActiveCurrencyCode
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .BaseOneRate import BaseOneRate
 
 class ForeignExchangeTerms19(base_types._BaseFieldType):
 

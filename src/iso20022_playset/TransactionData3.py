@@ -1,25 +1,25 @@
 from . import base_types
-import FinancialInstrumentQuantity25Choice
-import PassiveOrAgressiveType1Code
-import Max52Text
-import Max50Text
-import SecuritiesTransactionPrice4Choice
+from .SecuritiesTransactionPrice4Choice import SecuritiesTransactionPrice4Choice
+from .Max52Text import Max52Text
+from .PassiveOrAgressiveType1Code import PassiveOrAgressiveType1Code
+from .Max50Text import Max50Text
+from .FinancialInstrumentQuantity25Choice import FinancialInstrumentQuantity25Choice
 
 class TransactionData3(base_types._BaseFieldType):
 
-	__slots__ = ["_TraddQty", "_StrtgyLkdOrdrId", "_TxId", "_PssvOrAggrssvInd", "_TxPric"]
+	__slots__ = ["_TxPric", "_StrtgyLkdOrdrId", "_PssvOrAggrssvInd", "_TxId", "_TraddQty"]
 	@property
-	def TraddQty(self):
-		return self._TraddQty
+	def TxPric(self):
+		return self._TxPric
 
-	@TraddQty.setter
-	def TraddQty(self, value):
-		self._TraddQty = value if type(value) != auto else self.make_default("TraddQty")
+	@TxPric.setter
+	def TxPric(self, value):
+		self._TxPric = value if type(value) != auto else self.make_default("TxPric")
 
-	@TraddQty.deleter
-	def TraddQty(self):
-		del self._TraddQty
-		self._TraddQty = None
+	@TxPric.deleter
+	def TxPric(self):
+		del self._TxPric
+		self._TxPric = None
 
 	@property
 	def StrtgyLkdOrdrId(self):
@@ -35,19 +35,6 @@ class TransactionData3(base_types._BaseFieldType):
 		self._StrtgyLkdOrdrId = None
 
 	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
 	def PssvOrAggrssvInd(self):
 		return self._PssvOrAggrssvInd
 
@@ -61,23 +48,36 @@ class TransactionData3(base_types._BaseFieldType):
 		self._PssvOrAggrssvInd = None
 
 	@property
-	def TxPric(self):
-		return self._TxPric
+	def TxId(self):
+		return self._TxId
 
-	@TxPric.setter
-	def TxPric(self, value):
-		self._TxPric = value if type(value) != auto else self.make_default("TxPric")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@TxPric.deleter
-	def TxPric(self):
-		del self._TxPric
-		self._TxPric = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def TraddQty(self):
+		return self._TraddQty
+
+	@TraddQty.setter
+	def TraddQty(self, value):
+		self._TraddQty = value if type(value) != auto else self.make_default("TraddQty")
+
+	@TraddQty.deleter
+	def TraddQty(self):
+		del self._TraddQty
+		self._TraddQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TraddQty', type=FinancialInstrumentQuantity25Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StrtgyLkdOrdrId', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PssvOrAggrssvInd', type=PassiveOrAgressiveType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxPric', type=SecuritiesTransactionPrice4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrtgyLkdOrdrId', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PssvOrAggrssvInd', type=PassiveOrAgressiveType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TraddQty', type=FinancialInstrumentQuantity25Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

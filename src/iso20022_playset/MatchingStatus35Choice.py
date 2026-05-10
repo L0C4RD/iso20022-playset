@@ -1,12 +1,25 @@
 from . import base_types
-import MatchingReason6Choice
-import MatchingReason5Choice
-import ProprietaryReason4
-import ProprietaryStatusAndReason6
+from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from .MatchingReason5Choice import MatchingReason5Choice
+from .MatchingReason6Choice import MatchingReason6Choice
+from .ProprietaryReason4 import ProprietaryReason4
 
 class MatchingStatus35Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtrySts", "_MtchdWthTlrnce", "_Mtchd", "_MtchgAllgd", "_Umtchd"]
+	__slots__ = ["_Umtchd", "_PrtrySts", "_MtchdWthTlrnce", "_Mtchd", "_MtchgAllgd"]
+	@property
+	def Umtchd(self):
+		return self._Umtchd
+
+	@Umtchd.setter
+	def Umtchd(self, value):
+		self._Umtchd = value if type(value) != auto else self.make_default("Umtchd")
+
+	@Umtchd.deleter
+	def Umtchd(self):
+		del self._Umtchd
+		self._Umtchd = None
+
 	@property
 	def PrtrySts(self):
 		return self._PrtrySts
@@ -59,24 +72,11 @@ class MatchingStatus35Choice(base_types._BaseFieldType):
 		del self._MtchgAllgd
 		self._MtchgAllgd = None
 
-	@property
-	def Umtchd(self):
-		return self._Umtchd
-
-	@Umtchd.setter
-	def Umtchd(self, value):
-		self._Umtchd = value if type(value) != auto else self.make_default("Umtchd")
-
-	@Umtchd.deleter
-	def Umtchd(self):
-		del self._Umtchd
-		self._Umtchd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Umtchd', type=MatchingReason6Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MtchdWthTlrnce', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Mtchd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MtchgAllgd', type=MatchingReason5Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Umtchd', type=MatchingReason6Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

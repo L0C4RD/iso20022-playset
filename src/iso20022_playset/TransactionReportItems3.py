@@ -1,30 +1,30 @@
 from . import base_types
-import CountryCode
-import PendingActivity2
-import BICIdentification1
-import DocumentIdentification7
-import TransactionStatus4
-import PartyIdentification26
-import Max35Text
-import DocumentIdentification3
-import DocumentIdentification5
-import CurrencyAndAmount
+from .CountryCode import CountryCode
+from .Max35Text import Max35Text
+from .TransactionStatus4 import TransactionStatus4
+from .BICIdentification1 import BICIdentification1
+from .CurrencyAndAmount import CurrencyAndAmount
+from .PartyIdentification26 import PartyIdentification26
+from .PendingActivity2 import PendingActivity2
+from .DocumentIdentification3 import DocumentIdentification3
+from .DocumentIdentification5 import DocumentIdentification5
+from .DocumentIdentification7 import DocumentIdentification7
 
 class TransactionReportItems3(base_types._BaseFieldType):
 
-	__slots__ = ["_TxSts", "_TtlNetAmt", "_BuyrBkCtry", "_SellrBkCtry", "_EstblishdBaselnId", "_Sellr", "_SellrBk", "_PdgReqForActn", "_TxId", "_Buyr", "_PurchsOrdrRef", "_BuyrBk", "_UsrTxRef", "_OutsdngAmt", "_SubmitgBk", "_OblgrBk"]
+	__slots__ = ["_PurchsOrdrRef", "_TtlNetAmt", "_OutsdngAmt", "_UsrTxRef", "_BuyrBkCtry", "_SellrBkCtry", "_Buyr", "_PdgReqForActn", "_SubmitgBk", "_Sellr", "_TxSts", "_TxId", "_EstblishdBaselnId", "_OblgrBk", "_BuyrBk", "_SellrBk"]
 	@property
-	def TxSts(self):
-		return self._TxSts
+	def PurchsOrdrRef(self):
+		return self._PurchsOrdrRef
 
-	@TxSts.setter
-	def TxSts(self, value):
-		self._TxSts = value if type(value) != auto else self.make_default("TxSts")
+	@PurchsOrdrRef.setter
+	def PurchsOrdrRef(self, value):
+		self._PurchsOrdrRef = value if type(value) != auto else self.make_default("PurchsOrdrRef")
 
-	@TxSts.deleter
-	def TxSts(self):
-		del self._TxSts
-		self._TxSts = None
+	@PurchsOrdrRef.deleter
+	def PurchsOrdrRef(self):
+		del self._PurchsOrdrRef
+		self._PurchsOrdrRef = None
 
 	@property
 	def TtlNetAmt(self):
@@ -38,6 +38,32 @@ class TransactionReportItems3(base_types._BaseFieldType):
 	def TtlNetAmt(self):
 		del self._TtlNetAmt
 		self._TtlNetAmt = None
+
+	@property
+	def OutsdngAmt(self):
+		return self._OutsdngAmt
+
+	@OutsdngAmt.setter
+	def OutsdngAmt(self, value):
+		self._OutsdngAmt = value if type(value) != auto else self.make_default("OutsdngAmt")
+
+	@OutsdngAmt.deleter
+	def OutsdngAmt(self):
+		del self._OutsdngAmt
+		self._OutsdngAmt = None
+
+	@property
+	def UsrTxRef(self):
+		return self._UsrTxRef
+
+	@UsrTxRef.setter
+	def UsrTxRef(self, value):
+		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
+
+	@UsrTxRef.deleter
+	def UsrTxRef(self):
+		del self._UsrTxRef
+		self._UsrTxRef = None
 
 	@property
 	def BuyrBkCtry(self):
@@ -66,43 +92,17 @@ class TransactionReportItems3(base_types._BaseFieldType):
 		self._SellrBkCtry = None
 
 	@property
-	def EstblishdBaselnId(self):
-		return self._EstblishdBaselnId
+	def Buyr(self):
+		return self._Buyr
 
-	@EstblishdBaselnId.setter
-	def EstblishdBaselnId(self, value):
-		self._EstblishdBaselnId = value if type(value) != auto else self.make_default("EstblishdBaselnId")
+	@Buyr.setter
+	def Buyr(self, value):
+		self._Buyr = value if type(value) != auto else self.make_default("Buyr")
 
-	@EstblishdBaselnId.deleter
-	def EstblishdBaselnId(self):
-		del self._EstblishdBaselnId
-		self._EstblishdBaselnId = None
-
-	@property
-	def Sellr(self):
-		return self._Sellr
-
-	@Sellr.setter
-	def Sellr(self, value):
-		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
-
-	@Sellr.deleter
-	def Sellr(self):
-		del self._Sellr
-		self._Sellr = None
-
-	@property
-	def SellrBk(self):
-		return self._SellrBk
-
-	@SellrBk.setter
-	def SellrBk(self, value):
-		self._SellrBk = value if type(value) != auto else self.make_default("SellrBk")
-
-	@SellrBk.deleter
-	def SellrBk(self):
-		del self._SellrBk
-		self._SellrBk = None
+	@Buyr.deleter
+	def Buyr(self):
+		del self._Buyr
+		self._Buyr = None
 
 	@property
 	def PdgReqForActn(self):
@@ -118,6 +118,45 @@ class TransactionReportItems3(base_types._BaseFieldType):
 		self._PdgReqForActn = None
 
 	@property
+	def SubmitgBk(self):
+		return self._SubmitgBk
+
+	@SubmitgBk.setter
+	def SubmitgBk(self, value):
+		self._SubmitgBk = value if type(value) != auto else self.make_default("SubmitgBk")
+
+	@SubmitgBk.deleter
+	def SubmitgBk(self):
+		del self._SubmitgBk
+		self._SubmitgBk = None
+
+	@property
+	def Sellr(self):
+		return self._Sellr
+
+	@Sellr.setter
+	def Sellr(self, value):
+		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
+
+	@Sellr.deleter
+	def Sellr(self):
+		del self._Sellr
+		self._Sellr = None
+
+	@property
+	def TxSts(self):
+		return self._TxSts
+
+	@TxSts.setter
+	def TxSts(self, value):
+		self._TxSts = value if type(value) != auto else self.make_default("TxSts")
+
+	@TxSts.deleter
+	def TxSts(self):
+		del self._TxSts
+		self._TxSts = None
+
+	@property
 	def TxId(self):
 		return self._TxId
 
@@ -131,30 +170,30 @@ class TransactionReportItems3(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def Buyr(self):
-		return self._Buyr
+	def EstblishdBaselnId(self):
+		return self._EstblishdBaselnId
 
-	@Buyr.setter
-	def Buyr(self, value):
-		self._Buyr = value if type(value) != auto else self.make_default("Buyr")
+	@EstblishdBaselnId.setter
+	def EstblishdBaselnId(self, value):
+		self._EstblishdBaselnId = value if type(value) != auto else self.make_default("EstblishdBaselnId")
 
-	@Buyr.deleter
-	def Buyr(self):
-		del self._Buyr
-		self._Buyr = None
+	@EstblishdBaselnId.deleter
+	def EstblishdBaselnId(self):
+		del self._EstblishdBaselnId
+		self._EstblishdBaselnId = None
 
 	@property
-	def PurchsOrdrRef(self):
-		return self._PurchsOrdrRef
+	def OblgrBk(self):
+		return self._OblgrBk
 
-	@PurchsOrdrRef.setter
-	def PurchsOrdrRef(self, value):
-		self._PurchsOrdrRef = value if type(value) != auto else self.make_default("PurchsOrdrRef")
+	@OblgrBk.setter
+	def OblgrBk(self, value):
+		self._OblgrBk = value if type(value) != auto else self.make_default("OblgrBk")
 
-	@PurchsOrdrRef.deleter
-	def PurchsOrdrRef(self):
-		del self._PurchsOrdrRef
-		self._PurchsOrdrRef = None
+	@OblgrBk.deleter
+	def OblgrBk(self):
+		del self._OblgrBk
+		self._OblgrBk = None
 
 	@property
 	def BuyrBk(self):
@@ -170,73 +209,34 @@ class TransactionReportItems3(base_types._BaseFieldType):
 		self._BuyrBk = None
 
 	@property
-	def UsrTxRef(self):
-		return self._UsrTxRef
+	def SellrBk(self):
+		return self._SellrBk
 
-	@UsrTxRef.setter
-	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
+	@SellrBk.setter
+	def SellrBk(self, value):
+		self._SellrBk = value if type(value) != auto else self.make_default("SellrBk")
 
-	@UsrTxRef.deleter
-	def UsrTxRef(self):
-		del self._UsrTxRef
-		self._UsrTxRef = None
-
-	@property
-	def OutsdngAmt(self):
-		return self._OutsdngAmt
-
-	@OutsdngAmt.setter
-	def OutsdngAmt(self, value):
-		self._OutsdngAmt = value if type(value) != auto else self.make_default("OutsdngAmt")
-
-	@OutsdngAmt.deleter
-	def OutsdngAmt(self):
-		del self._OutsdngAmt
-		self._OutsdngAmt = None
-
-	@property
-	def SubmitgBk(self):
-		return self._SubmitgBk
-
-	@SubmitgBk.setter
-	def SubmitgBk(self, value):
-		self._SubmitgBk = value if type(value) != auto else self.make_default("SubmitgBk")
-
-	@SubmitgBk.deleter
-	def SubmitgBk(self):
-		del self._SubmitgBk
-		self._SubmitgBk = None
-
-	@property
-	def OblgrBk(self):
-		return self._OblgrBk
-
-	@OblgrBk.setter
-	def OblgrBk(self, value):
-		self._OblgrBk = value if type(value) != auto else self.make_default("OblgrBk")
-
-	@OblgrBk.deleter
-	def OblgrBk(self):
-		del self._OblgrBk
-		self._OblgrBk = None
+	@SellrBk.deleter
+	def SellrBk(self):
+		del self._SellrBk
+		self._SellrBk = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OutsdngAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BuyrBkCtry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SellrBkCtry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sellr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdgReqForActn', type=PendingActivity2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Buyr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OutsdngAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdgReqForActn', type=PendingActivity2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SubmitgBk', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sellr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OblgrBk', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

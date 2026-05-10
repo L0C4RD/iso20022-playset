@@ -1,11 +1,11 @@
 from . import base_types
-import PriceFormat81Choice
-import PriceFormat80Choice
-import PriceFormat61Choice
+from .PriceFormat61Choice import PriceFormat61Choice
+from .PriceFormat81Choice import PriceFormat81Choice
+from .PriceFormat80Choice import PriceFormat80Choice
 
 class CorporateActionPrice90(base_types._BaseFieldType):
 
-	__slots__ = ["_MinPric", "_MaxPric", "_CshInLieuOfShrPric", "_FrstBidIncrmtPric", "_LastBidIncrmtPric", "_MinMltplCshToInst", "_MaxCshToInst", "_MinCshToInst", "_OverSbcptDpstPric"]
+	__slots__ = ["_MinPric", "_MaxCshToInst", "_FrstBidIncrmtPric", "_CshInLieuOfShrPric", "_LastBidIncrmtPric", "_MinMltplCshToInst", "_MaxPric", "_OverSbcptDpstPric", "_MinCshToInst"]
 	@property
 	def MinPric(self):
 		return self._MinPric
@@ -20,30 +20,17 @@ class CorporateActionPrice90(base_types._BaseFieldType):
 		self._MinPric = None
 
 	@property
-	def MaxPric(self):
-		return self._MaxPric
+	def MaxCshToInst(self):
+		return self._MaxCshToInst
 
-	@MaxPric.setter
-	def MaxPric(self, value):
-		self._MaxPric = value if type(value) != auto else self.make_default("MaxPric")
+	@MaxCshToInst.setter
+	def MaxCshToInst(self, value):
+		self._MaxCshToInst = value if type(value) != auto else self.make_default("MaxCshToInst")
 
-	@MaxPric.deleter
-	def MaxPric(self):
-		del self._MaxPric
-		self._MaxPric = None
-
-	@property
-	def CshInLieuOfShrPric(self):
-		return self._CshInLieuOfShrPric
-
-	@CshInLieuOfShrPric.setter
-	def CshInLieuOfShrPric(self, value):
-		self._CshInLieuOfShrPric = value if type(value) != auto else self.make_default("CshInLieuOfShrPric")
-
-	@CshInLieuOfShrPric.deleter
-	def CshInLieuOfShrPric(self):
-		del self._CshInLieuOfShrPric
-		self._CshInLieuOfShrPric = None
+	@MaxCshToInst.deleter
+	def MaxCshToInst(self):
+		del self._MaxCshToInst
+		self._MaxCshToInst = None
 
 	@property
 	def FrstBidIncrmtPric(self):
@@ -57,6 +44,19 @@ class CorporateActionPrice90(base_types._BaseFieldType):
 	def FrstBidIncrmtPric(self):
 		del self._FrstBidIncrmtPric
 		self._FrstBidIncrmtPric = None
+
+	@property
+	def CshInLieuOfShrPric(self):
+		return self._CshInLieuOfShrPric
+
+	@CshInLieuOfShrPric.setter
+	def CshInLieuOfShrPric(self, value):
+		self._CshInLieuOfShrPric = value if type(value) != auto else self.make_default("CshInLieuOfShrPric")
+
+	@CshInLieuOfShrPric.deleter
+	def CshInLieuOfShrPric(self):
+		del self._CshInLieuOfShrPric
+		self._CshInLieuOfShrPric = None
 
 	@property
 	def LastBidIncrmtPric(self):
@@ -85,30 +85,17 @@ class CorporateActionPrice90(base_types._BaseFieldType):
 		self._MinMltplCshToInst = None
 
 	@property
-	def MaxCshToInst(self):
-		return self._MaxCshToInst
+	def MaxPric(self):
+		return self._MaxPric
 
-	@MaxCshToInst.setter
-	def MaxCshToInst(self, value):
-		self._MaxCshToInst = value if type(value) != auto else self.make_default("MaxCshToInst")
+	@MaxPric.setter
+	def MaxPric(self, value):
+		self._MaxPric = value if type(value) != auto else self.make_default("MaxPric")
 
-	@MaxCshToInst.deleter
-	def MaxCshToInst(self):
-		del self._MaxCshToInst
-		self._MaxCshToInst = None
-
-	@property
-	def MinCshToInst(self):
-		return self._MinCshToInst
-
-	@MinCshToInst.setter
-	def MinCshToInst(self, value):
-		self._MinCshToInst = value if type(value) != auto else self.make_default("MinCshToInst")
-
-	@MinCshToInst.deleter
-	def MinCshToInst(self):
-		del self._MinCshToInst
-		self._MinCshToInst = None
+	@MaxPric.deleter
+	def MaxPric(self):
+		del self._MaxPric
+		self._MaxPric = None
 
 	@property
 	def OverSbcptDpstPric(self):
@@ -123,15 +110,28 @@ class CorporateActionPrice90(base_types._BaseFieldType):
 		del self._OverSbcptDpstPric
 		self._OverSbcptDpstPric = None
 
+	@property
+	def MinCshToInst(self):
+		return self._MinCshToInst
+
+	@MinCshToInst.setter
+	def MinCshToInst(self, value):
+		self._MinCshToInst = value if type(value) != auto else self.make_default("MinCshToInst")
+
+	@MinCshToInst.deleter
+	def MinCshToInst(self):
+		del self._MinCshToInst
+		self._MinCshToInst = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MinPric', type=PriceFormat80Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxPric', type=PriceFormat80Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat81Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxCshToInst', type=PriceFormat61Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstBidIncrmtPric', type=PriceFormat80Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat81Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastBidIncrmtPric', type=PriceFormat80Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinMltplCshToInst', type=PriceFormat61Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxCshToInst', type=PriceFormat61Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinCshToInst', type=PriceFormat61Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxPric', type=PriceFormat80Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OverSbcptDpstPric', type=PriceFormat81Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinCshToInst', type=PriceFormat61Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

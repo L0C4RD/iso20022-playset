@@ -1,6 +1,6 @@
 from . import base_types
-import GeneralBusinessOrError8Choice
-import Max35Text
+from .Max35Text import Max35Text
+from .GeneralBusinessOrError8Choice import GeneralBusinessOrError8Choice
 
 class GeneralBusinessReport6(base_types._BaseFieldType):
 

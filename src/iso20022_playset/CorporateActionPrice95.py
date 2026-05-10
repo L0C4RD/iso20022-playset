@@ -1,13 +1,13 @@
 from . import base_types
-import PriceFormat88Choice
-import PriceFormat58Choice
-import PriceFormat90Choice
-import IndicativeOrMarketPrice17Choice
-import PriceFormat89Choice
+from .PriceFormat58Choice import PriceFormat58Choice
+from .PriceFormat90Choice import PriceFormat90Choice
+from .PriceFormat88Choice import PriceFormat88Choice
+from .IndicativeOrMarketPrice17Choice import IndicativeOrMarketPrice17Choice
+from .PriceFormat89Choice import PriceFormat89Choice
 
 class CorporateActionPrice95(base_types._BaseFieldType):
 
-	__slots__ = ["_CshInLieuOfShrPric", "_IndctvOrMktPric", "_GncCshPricRcvdPerPdct", "_GncCshPricPdPerPdct", "_CshValForTax"]
+	__slots__ = ["_CshInLieuOfShrPric", "_IndctvOrMktPric", "_CshValForTax", "_GncCshPricPdPerPdct", "_GncCshPricRcvdPerPdct"]
 	@property
 	def CshInLieuOfShrPric(self):
 		return self._CshInLieuOfShrPric
@@ -35,17 +35,17 @@ class CorporateActionPrice95(base_types._BaseFieldType):
 		self._IndctvOrMktPric = None
 
 	@property
-	def GncCshPricRcvdPerPdct(self):
-		return self._GncCshPricRcvdPerPdct
+	def CshValForTax(self):
+		return self._CshValForTax
 
-	@GncCshPricRcvdPerPdct.setter
-	def GncCshPricRcvdPerPdct(self, value):
-		self._GncCshPricRcvdPerPdct = value if type(value) != auto else self.make_default("GncCshPricRcvdPerPdct")
+	@CshValForTax.setter
+	def CshValForTax(self, value):
+		self._CshValForTax = value if type(value) != auto else self.make_default("CshValForTax")
 
-	@GncCshPricRcvdPerPdct.deleter
-	def GncCshPricRcvdPerPdct(self):
-		del self._GncCshPricRcvdPerPdct
-		self._GncCshPricRcvdPerPdct = None
+	@CshValForTax.deleter
+	def CshValForTax(self):
+		del self._CshValForTax
+		self._CshValForTax = None
 
 	@property
 	def GncCshPricPdPerPdct(self):
@@ -61,23 +61,23 @@ class CorporateActionPrice95(base_types._BaseFieldType):
 		self._GncCshPricPdPerPdct = None
 
 	@property
-	def CshValForTax(self):
-		return self._CshValForTax
+	def GncCshPricRcvdPerPdct(self):
+		return self._GncCshPricRcvdPerPdct
 
-	@CshValForTax.setter
-	def CshValForTax(self, value):
-		self._CshValForTax = value if type(value) != auto else self.make_default("CshValForTax")
+	@GncCshPricRcvdPerPdct.setter
+	def GncCshPricRcvdPerPdct(self, value):
+		self._GncCshPricRcvdPerPdct = value if type(value) != auto else self.make_default("GncCshPricRcvdPerPdct")
 
-	@CshValForTax.deleter
-	def CshValForTax(self):
-		del self._CshValForTax
-		self._CshValForTax = None
+	@GncCshPricRcvdPerPdct.deleter
+	def GncCshPricRcvdPerPdct(self):
+		del self._GncCshPricRcvdPerPdct
+		self._GncCshPricRcvdPerPdct = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat88Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndctvOrMktPric', type=IndicativeOrMarketPrice17Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GncCshPricRcvdPerPdct', type=PriceFormat90Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat89Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshValForTax', type=PriceFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat89Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GncCshPricRcvdPerPdct', type=PriceFormat90Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

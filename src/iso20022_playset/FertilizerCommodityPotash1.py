@@ -1,6 +1,6 @@
 from . import base_types
-import AssetClassSubProductType41Code
-import AssetClassProductType5Code
+from .AssetClassProductType5Code import AssetClassProductType5Code
+from .AssetClassSubProductType41Code import AssetClassSubProductType41Code
 
 class FertilizerCommodityPotash1(base_types._BaseFieldType):
 

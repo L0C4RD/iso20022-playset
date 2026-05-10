@@ -1,7 +1,7 @@
 from . import base_types
-import ISODate
-import Max6AlphaText
-import Exact4NumericText
+from .Max6AlphaText import Max6AlphaText
+from .ISODate import ISODate
+from .Exact4NumericText import Exact4NumericText
 
 class AgreementConditions1(base_types._BaseFieldType):
 

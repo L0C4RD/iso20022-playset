@@ -1,5 +1,5 @@
 from . import base_types
-import NettingCutOffReferenceDataReportV02
+from .NettingCutOffReferenceDataReportV02 import NettingCutOffReferenceDataReportV02
 
 class REDA_061_001_02():
 

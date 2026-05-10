@@ -1,23 +1,10 @@
 from . import base_types
-import Max350Text
-import RejectedReason45Choice
+from .Max350Text import Max350Text
+from .RejectedReason45Choice import RejectedReason45Choice
 
 class RejectionReason56(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlRsnInf", "_Rsn"]
-	@property
-	def AddtlRsnInf(self):
-		return self._AddtlRsnInf
-
-	@AddtlRsnInf.setter
-	def AddtlRsnInf(self, value):
-		self._AddtlRsnInf = value if type(value) != auto else self.make_default("AddtlRsnInf")
-
-	@AddtlRsnInf.deleter
-	def AddtlRsnInf(self):
-		del self._AddtlRsnInf
-		self._AddtlRsnInf = None
-
+	__slots__ = ["_Rsn", "_AddtlRsnInf"]
 	@property
 	def Rsn(self):
 		return self._Rsn
@@ -31,8 +18,21 @@ class RejectionReason56(base_types._BaseFieldType):
 		del self._Rsn
 		self._Rsn = None
 
+	@property
+	def AddtlRsnInf(self):
+		return self._AddtlRsnInf
+
+	@AddtlRsnInf.setter
+	def AddtlRsnInf(self, value):
+		self._AddtlRsnInf = value if type(value) != auto else self.make_default("AddtlRsnInf")
+
+	@AddtlRsnInf.deleter
+	def AddtlRsnInf(self):
+		del self._AddtlRsnInf
+		self._AddtlRsnInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlRsnInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=RejectedReason45Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlRsnInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

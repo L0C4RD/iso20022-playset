@@ -1,6 +1,6 @@
 from . import base_types
-import DataModification1Code
-import PostalAddress21
+from .PostalAddress21 import PostalAddress21
+from .DataModification1Code import DataModification1Code
 
 class ModificationScope34(base_types._BaseFieldType):
 

@@ -1,25 +1,25 @@
 from . import base_types
-import Case6
-import SupplementaryData1
-import UnderlyingTransaction8Choice
-import CaseAssignment6
-import UnableToApplyJustification4Choice
+from .UnderlyingTransaction8Choice import UnderlyingTransaction8Choice
+from .SupplementaryData1 import SupplementaryData1
+from .CaseAssignment6 import CaseAssignment6
+from .UnableToApplyJustification4Choice import UnableToApplyJustification4Choice
+from .Case6 import Case6
 
 class UnableToApplyV10(base_types._BaseFieldType):
 
-	__slots__ = ["_Justfn", "_Case", "_Assgnmt", "_SplmtryData", "_Undrlyg"]
+	__slots__ = ["_Undrlyg", "_Case", "_SplmtryData", "_Assgnmt", "_Justfn"]
 	@property
-	def Justfn(self):
-		return self._Justfn
+	def Undrlyg(self):
+		return self._Undrlyg
 
-	@Justfn.setter
-	def Justfn(self, value):
-		self._Justfn = value if type(value) != auto else self.make_default("Justfn")
+	@Undrlyg.setter
+	def Undrlyg(self, value):
+		self._Undrlyg = value if type(value) != auto else self.make_default("Undrlyg")
 
-	@Justfn.deleter
-	def Justfn(self):
-		del self._Justfn
-		self._Justfn = None
+	@Undrlyg.deleter
+	def Undrlyg(self):
+		del self._Undrlyg
+		self._Undrlyg = None
 
 	@property
 	def Case(self):
@@ -35,19 +35,6 @@ class UnableToApplyV10(base_types._BaseFieldType):
 		self._Case = None
 
 	@property
-	def Assgnmt(self):
-		return self._Assgnmt
-
-	@Assgnmt.setter
-	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
-
-	@Assgnmt.deleter
-	def Assgnmt(self):
-		del self._Assgnmt
-		self._Assgnmt = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -61,23 +48,36 @@ class UnableToApplyV10(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Undrlyg(self):
-		return self._Undrlyg
+	def Assgnmt(self):
+		return self._Assgnmt
 
-	@Undrlyg.setter
-	def Undrlyg(self, value):
-		self._Undrlyg = value if type(value) != auto else self.make_default("Undrlyg")
+	@Assgnmt.setter
+	def Assgnmt(self, value):
+		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
 
-	@Undrlyg.deleter
-	def Undrlyg(self):
-		del self._Undrlyg
-		self._Undrlyg = None
+	@Assgnmt.deleter
+	def Assgnmt(self):
+		del self._Assgnmt
+		self._Assgnmt = None
+
+	@property
+	def Justfn(self):
+		return self._Justfn
+
+	@Justfn.setter
+	def Justfn(self, value):
+		self._Justfn = value if type(value) != auto else self.make_default("Justfn")
+
+	@Justfn.deleter
+	def Justfn(self):
+		del self._Justfn
+		self._Justfn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Justfn', type=UnableToApplyJustification4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction8Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Justfn', type=UnableToApplyJustification4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

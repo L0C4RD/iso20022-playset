@@ -1,5 +1,5 @@
 from . import base_types
-import CCPAccountPositionReportV01
+from .CCPAccountPositionReportV01 import CCPAccountPositionReportV01
 
 class AUTH_068_001_01():
 

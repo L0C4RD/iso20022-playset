@@ -1,6 +1,6 @@
 from . import base_types
-import BalanceType10Choice
-import BalanceSubType1Choice
+from .BalanceType10Choice import BalanceType10Choice
+from .BalanceSubType1Choice import BalanceSubType1Choice
 
 class BalanceType13(base_types._BaseFieldType):
 

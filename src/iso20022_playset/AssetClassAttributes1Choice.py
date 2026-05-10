@@ -1,23 +1,23 @@
 from . import base_types
-import AssetClassAttributes1
-import DerivativeForeignExchange2
-import DerivativeInterest2
+from .AssetClassAttributes1 import AssetClassAttributes1
+from .DerivativeInterest2 import DerivativeInterest2
+from .DerivativeForeignExchange2 import DerivativeForeignExchange2
 
 class AssetClassAttributes1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FX", "_Intrst", "_Both"]
+	__slots__ = ["_Both", "_Intrst", "_FX"]
 	@property
-	def FX(self):
-		return self._FX
+	def Both(self):
+		return self._Both
 
-	@FX.setter
-	def FX(self, value):
-		self._FX = value if type(value) != auto else self.make_default("FX")
+	@Both.setter
+	def Both(self, value):
+		self._Both = value if type(value) != auto else self.make_default("Both")
 
-	@FX.deleter
-	def FX(self):
-		del self._FX
-		self._FX = None
+	@Both.deleter
+	def Both(self):
+		del self._Both
+		self._Both = None
 
 	@property
 	def Intrst(self):
@@ -33,21 +33,21 @@ class AssetClassAttributes1Choice(base_types._BaseFieldType):
 		self._Intrst = None
 
 	@property
-	def Both(self):
-		return self._Both
+	def FX(self):
+		return self._FX
 
-	@Both.setter
-	def Both(self, value):
-		self._Both = value if type(value) != auto else self.make_default("Both")
+	@FX.setter
+	def FX(self, value):
+		self._FX = value if type(value) != auto else self.make_default("FX")
 
-	@Both.deleter
-	def Both(self):
-		del self._Both
-		self._Both = None
+	@FX.deleter
+	def FX(self):
+		del self._FX
+		self._FX = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FX', type=DerivativeForeignExchange2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Intrst', type=DerivativeInterest2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Both', type=AssetClassAttributes1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Intrst', type=DerivativeInterest2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FX', type=DerivativeForeignExchange2, min=0, max=1, mutex_group=1, array=False),
 	))
 

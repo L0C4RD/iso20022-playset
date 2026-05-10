@@ -1,5 +1,5 @@
 from . import base_types
-import ModifyStandingOrderV08
+from .ModifyStandingOrderV08 import ModifyStandingOrderV08
 
 class CAMT_024_001_08():
 

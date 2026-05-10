@@ -1,23 +1,10 @@
 from . import base_types
-import GenericIdentification175
-import TrueFalseIndicator
+from .GenericIdentification175 import GenericIdentification175
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class NonFinancialInstitutionSector10(base_types._BaseFieldType):
 
-	__slots__ = ["_DrctlyLkdActvty", "_FdrlInstn", "_ClrThrshld", "_Sctr"]
-	@property
-	def DrctlyLkdActvty(self):
-		return self._DrctlyLkdActvty
-
-	@DrctlyLkdActvty.setter
-	def DrctlyLkdActvty(self, value):
-		self._DrctlyLkdActvty = value if type(value) != auto else self.make_default("DrctlyLkdActvty")
-
-	@DrctlyLkdActvty.deleter
-	def DrctlyLkdActvty(self):
-		del self._DrctlyLkdActvty
-		self._DrctlyLkdActvty = None
-
+	__slots__ = ["_FdrlInstn", "_ClrThrshld", "_DrctlyLkdActvty", "_Sctr"]
 	@property
 	def FdrlInstn(self):
 		return self._FdrlInstn
@@ -45,6 +32,19 @@ class NonFinancialInstitutionSector10(base_types._BaseFieldType):
 		self._ClrThrshld = None
 
 	@property
+	def DrctlyLkdActvty(self):
+		return self._DrctlyLkdActvty
+
+	@DrctlyLkdActvty.setter
+	def DrctlyLkdActvty(self, value):
+		self._DrctlyLkdActvty = value if type(value) != auto else self.make_default("DrctlyLkdActvty")
+
+	@DrctlyLkdActvty.deleter
+	def DrctlyLkdActvty(self):
+		del self._DrctlyLkdActvty
+		self._DrctlyLkdActvty = None
+
+	@property
 	def Sctr(self):
 		return self._Sctr
 
@@ -58,9 +58,9 @@ class NonFinancialInstitutionSector10(base_types._BaseFieldType):
 		self._Sctr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DrctlyLkdActvty', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FdrlInstn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrThrshld', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrctlyLkdActvty', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sctr', type=GenericIdentification175, min=1, max=None, mutex_group=None, array=True),
 	))
 

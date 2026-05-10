@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import ExternalPaymentCompensationReason1Code
+from .Max35Text import Max35Text
+from .ExternalPaymentCompensationReason1Code import ExternalPaymentCompensationReason1Code
 
 class CompensationReason1Choice(base_types._BaseFieldType):
 

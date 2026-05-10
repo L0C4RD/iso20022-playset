@@ -1,24 +1,24 @@
 from . import base_types
-import InvoiceIdentification1
-import Adjustment6
-import CurrencyAndAmount
-import ReportLine7
+from .ReportLine7 import ReportLine7
+from .Adjustment6 import Adjustment6
+from .CurrencyAndAmount import CurrencyAndAmount
+from .InvoiceIdentification1 import InvoiceIdentification1
 
 class ReportLine6(base_types._BaseFieldType):
 
-	__slots__ = ["_BrkdwnByPurchsOrdr", "_ComrclDocRef", "_Adjstmnt", "_NetAmt"]
+	__slots__ = ["_NetAmt", "_ComrclDocRef", "_Adjstmnt", "_BrkdwnByPurchsOrdr"]
 	@property
-	def BrkdwnByPurchsOrdr(self):
-		return self._BrkdwnByPurchsOrdr
+	def NetAmt(self):
+		return self._NetAmt
 
-	@BrkdwnByPurchsOrdr.setter
-	def BrkdwnByPurchsOrdr(self, value):
-		self._BrkdwnByPurchsOrdr = value if type(value) != auto else self.make_default("BrkdwnByPurchsOrdr")
+	@NetAmt.setter
+	def NetAmt(self, value):
+		self._NetAmt = value if type(value) != auto else self.make_default("NetAmt")
 
-	@BrkdwnByPurchsOrdr.deleter
-	def BrkdwnByPurchsOrdr(self):
-		del self._BrkdwnByPurchsOrdr
-		self._BrkdwnByPurchsOrdr = None
+	@NetAmt.deleter
+	def NetAmt(self):
+		del self._NetAmt
+		self._NetAmt = None
 
 	@property
 	def ComrclDocRef(self):
@@ -47,22 +47,22 @@ class ReportLine6(base_types._BaseFieldType):
 		self._Adjstmnt = None
 
 	@property
-	def NetAmt(self):
-		return self._NetAmt
+	def BrkdwnByPurchsOrdr(self):
+		return self._BrkdwnByPurchsOrdr
 
-	@NetAmt.setter
-	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != auto else self.make_default("NetAmt")
+	@BrkdwnByPurchsOrdr.setter
+	def BrkdwnByPurchsOrdr(self, value):
+		self._BrkdwnByPurchsOrdr = value if type(value) != auto else self.make_default("BrkdwnByPurchsOrdr")
 
-	@NetAmt.deleter
-	def NetAmt(self):
-		del self._NetAmt
-		self._NetAmt = None
+	@BrkdwnByPurchsOrdr.deleter
+	def BrkdwnByPurchsOrdr(self):
+		del self._BrkdwnByPurchsOrdr
+		self._BrkdwnByPurchsOrdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BrkdwnByPurchsOrdr', type=ReportLine7, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ComrclDocRef', type=InvoiceIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Adjstmnt', type=Adjustment6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BrkdwnByPurchsOrdr', type=ReportLine7, min=1, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,24 +1,24 @@
 from . import base_types
-import Max30DecimalNumber
-import DecimalNumber
-import Quantity4Code
-import ImpliedCurrencyAndAmount
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .DecimalNumber import DecimalNumber
+from .Max30DecimalNumber import Max30DecimalNumber
+from .Quantity4Code import Quantity4Code
 
 class FinancialInstrumentQuantity34Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Unit", "_AmtsdVal", "_Cd", "_DgtlTknUnit", "_FaceAmt"]
+	__slots__ = ["_DgtlTknUnit", "_AmtsdVal", "_Unit", "_Cd", "_FaceAmt"]
 	@property
-	def Unit(self):
-		return self._Unit
+	def DgtlTknUnit(self):
+		return self._DgtlTknUnit
 
-	@Unit.setter
-	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
+	@DgtlTknUnit.setter
+	def DgtlTknUnit(self, value):
+		self._DgtlTknUnit = value if type(value) != auto else self.make_default("DgtlTknUnit")
 
-	@Unit.deleter
-	def Unit(self):
-		del self._Unit
-		self._Unit = None
+	@DgtlTknUnit.deleter
+	def DgtlTknUnit(self):
+		del self._DgtlTknUnit
+		self._DgtlTknUnit = None
 
 	@property
 	def AmtsdVal(self):
@@ -34,6 +34,19 @@ class FinancialInstrumentQuantity34Choice(base_types._BaseFieldType):
 		self._AmtsdVal = None
 
 	@property
+	def Unit(self):
+		return self._Unit
+
+	@Unit.setter
+	def Unit(self, value):
+		self._Unit = value if type(value) != auto else self.make_default("Unit")
+
+	@Unit.deleter
+	def Unit(self):
+		del self._Unit
+		self._Unit = None
+
+	@property
 	def Cd(self):
 		return self._Cd
 
@@ -45,19 +58,6 @@ class FinancialInstrumentQuantity34Choice(base_types._BaseFieldType):
 	def Cd(self):
 		del self._Cd
 		self._Cd = None
-
-	@property
-	def DgtlTknUnit(self):
-		return self._DgtlTknUnit
-
-	@DgtlTknUnit.setter
-	def DgtlTknUnit(self, value):
-		self._DgtlTknUnit = value if type(value) != auto else self.make_default("DgtlTknUnit")
-
-	@DgtlTknUnit.deleter
-	def DgtlTknUnit(self):
-		del self._DgtlTknUnit
-		self._DgtlTknUnit = None
 
 	@property
 	def FaceAmt(self):
@@ -73,10 +73,10 @@ class FinancialInstrumentQuantity34Choice(base_types._BaseFieldType):
 		self._FaceAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Unit', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AmtsdVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cd', type=Quantity4Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DgtlTknUnit', type=Max30DecimalNumber, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtsdVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Unit', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cd', type=Quantity4Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FaceAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,28 +1,15 @@
 from . import base_types
-import ServiceStartEnd3
-import ISO3NumericCurrencyCode
-import Max4NumericText
-import ISODateTime
-import ImpliedCurrencyAndAmount
-import PeriodUnit2Code
-import Max70Text
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .ServiceStartEnd3 import ServiceStartEnd3
+from .Max4NumericText import Max4NumericText
+from .Max70Text import Max70Text
+from .PeriodUnit2Code import PeriodUnit2Code
+from .ISODateTime import ISODateTime
+from .ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
 
 class RentalDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_Start", "_DtTm", "_Id", "_TmPrdRate", "_TmPrd", "_TmPrdUnit", "_Rtr", "_Ccy"]
-	@property
-	def Start(self):
-		return self._Start
-
-	@Start.setter
-	def Start(self, value):
-		self._Start = value if type(value) != auto else self.make_default("Start")
-
-	@Start.deleter
-	def Start(self):
-		del self._Start
-		self._Start = None
-
+	__slots__ = ["_DtTm", "_TmPrdRate", "_Id", "_Rtr", "_TmPrd", "_TmPrdUnit", "_Ccy", "_Start"]
 	@property
 	def DtTm(self):
 		return self._DtTm
@@ -35,6 +22,19 @@ class RentalDetails3(base_types._BaseFieldType):
 	def DtTm(self):
 		del self._DtTm
 		self._DtTm = None
+
+	@property
+	def TmPrdRate(self):
+		return self._TmPrdRate
+
+	@TmPrdRate.setter
+	def TmPrdRate(self, value):
+		self._TmPrdRate = value if type(value) != auto else self.make_default("TmPrdRate")
+
+	@TmPrdRate.deleter
+	def TmPrdRate(self):
+		del self._TmPrdRate
+		self._TmPrdRate = None
 
 	@property
 	def Id(self):
@@ -50,17 +50,17 @@ class RentalDetails3(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def TmPrdRate(self):
-		return self._TmPrdRate
+	def Rtr(self):
+		return self._Rtr
 
-	@TmPrdRate.setter
-	def TmPrdRate(self, value):
-		self._TmPrdRate = value if type(value) != auto else self.make_default("TmPrdRate")
+	@Rtr.setter
+	def Rtr(self, value):
+		self._Rtr = value if type(value) != auto else self.make_default("Rtr")
 
-	@TmPrdRate.deleter
-	def TmPrdRate(self):
-		del self._TmPrdRate
-		self._TmPrdRate = None
+	@Rtr.deleter
+	def Rtr(self):
+		del self._Rtr
+		self._Rtr = None
 
 	@property
 	def TmPrd(self):
@@ -89,19 +89,6 @@ class RentalDetails3(base_types._BaseFieldType):
 		self._TmPrdUnit = None
 
 	@property
-	def Rtr(self):
-		return self._Rtr
-
-	@Rtr.setter
-	def Rtr(self, value):
-		self._Rtr = value if type(value) != auto else self.make_default("Rtr")
-
-	@Rtr.deleter
-	def Rtr(self):
-		del self._Rtr
-		self._Rtr = None
-
-	@property
 	def Ccy(self):
 		return self._Ccy
 
@@ -114,14 +101,27 @@ class RentalDetails3(base_types._BaseFieldType):
 		del self._Ccy
 		self._Ccy = None
 
+	@property
+	def Start(self):
+		return self._Start
+
+	@Start.setter
+	def Start(self, value):
+		self._Start = value if type(value) != auto else self.make_default("Start")
+
+	@Start.deleter
+	def Start(self):
+		del self._Start
+		self._Start = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Start', type=ServiceStartEnd3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmPrdRate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rtr', type=ServiceStartEnd3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmPrd', type=PeriodUnit2Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TmPrdUnit', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rtr', type=ServiceStartEnd3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Start', type=ServiceStartEnd3, min=0, max=1, mutex_group=None, array=False),
 	))
 

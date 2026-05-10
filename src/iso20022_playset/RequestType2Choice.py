@@ -1,24 +1,11 @@
 from . import base_types
-import RequestType1Code
-import GenericIdentification1
-import RequestType2Code
+from .RequestType2Code import RequestType2Code
+from .GenericIdentification1 import GenericIdentification1
+from .RequestType1Code import RequestType1Code
 
 class RequestType2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtCtrl", "_Prtry", "_Enqry"]
-	@property
-	def PmtCtrl(self):
-		return self._PmtCtrl
-
-	@PmtCtrl.setter
-	def PmtCtrl(self, value):
-		self._PmtCtrl = value if type(value) != auto else self.make_default("PmtCtrl")
-
-	@PmtCtrl.deleter
-	def PmtCtrl(self):
-		del self._PmtCtrl
-		self._PmtCtrl = None
-
+	__slots__ = ["_Prtry", "_Enqry", "_PmtCtrl"]
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -45,9 +32,22 @@ class RequestType2Choice(base_types._BaseFieldType):
 		del self._Enqry
 		self._Enqry = None
 
+	@property
+	def PmtCtrl(self):
+		return self._PmtCtrl
+
+	@PmtCtrl.setter
+	def PmtCtrl(self, value):
+		self._PmtCtrl = value if type(value) != auto else self.make_default("PmtCtrl")
+
+	@PmtCtrl.deleter
+	def PmtCtrl(self):
+		del self._PmtCtrl
+		self._PmtCtrl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtCtrl', type=RequestType1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Enqry', type=RequestType2Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PmtCtrl', type=RequestType1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,7 +1,7 @@
 from . import base_types
-import Max256Text
-import ActionType8Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ActionType8Code import ActionType8Code
+from .Max256Text import Max256Text
 
 class RecommendationAction1(base_types._BaseFieldType):
 

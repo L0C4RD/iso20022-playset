@@ -1,23 +1,23 @@
 from . import base_types
-import DetailedTransactionStatistics2Choice
-import SupplementaryData1
-import DetailedReportStatistics5
+from .DetailedReportStatistics5 import DetailedReportStatistics5
+from .SupplementaryData1 import SupplementaryData1
+from .DetailedTransactionStatistics2Choice import DetailedTransactionStatistics2Choice
 
 class TradeData29(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RptSttstcs", "_TxSttstcs"]
+	__slots__ = ["_TxSttstcs", "_RptSttstcs", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def TxSttstcs(self):
+		return self._TxSttstcs
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@TxSttstcs.setter
+	def TxSttstcs(self, value):
+		self._TxSttstcs = value if type(value) != auto else self.make_default("TxSttstcs")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@TxSttstcs.deleter
+	def TxSttstcs(self):
+		del self._TxSttstcs
+		self._TxSttstcs = None
 
 	@property
 	def RptSttstcs(self):
@@ -33,21 +33,21 @@ class TradeData29(base_types._BaseFieldType):
 		self._RptSttstcs = None
 
 	@property
-	def TxSttstcs(self):
-		return self._TxSttstcs
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@TxSttstcs.setter
-	def TxSttstcs(self, value):
-		self._TxSttstcs = value if type(value) != auto else self.make_default("TxSttstcs")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@TxSttstcs.deleter
-	def TxSttstcs(self):
-		del self._TxSttstcs
-		self._TxSttstcs = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptSttstcs', type=DetailedReportStatistics5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxSttstcs', type=DetailedTransactionStatistics2Choice, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptSttstcs', type=DetailedReportStatistics5, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

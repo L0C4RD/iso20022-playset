@@ -1,38 +1,12 @@
 from . import base_types
-import AdvisingPartyAdditionalInformation1
-import UndertakingAmendmentMessage1
-import PartyAndSignature2
-import UndertakingConfirmation1
+from .PartyAndSignature2 import PartyAndSignature2
+from .UndertakingAmendmentMessage1 import UndertakingAmendmentMessage1
+from .AdvisingPartyAdditionalInformation1 import AdvisingPartyAdditionalInformation1
+from .UndertakingConfirmation1 import UndertakingConfirmation1
 
 class Amendment2(base_types._BaseFieldType):
 
-	__slots__ = ["_ScndAdvsgPtyAddtlInf", "_ConfDtls", "_FrstAdvsgPtyAddtlInf", "_UdrtkgAmdmntMsg", "_DgtlSgntr"]
-	@property
-	def ScndAdvsgPtyAddtlInf(self):
-		return self._ScndAdvsgPtyAddtlInf
-
-	@ScndAdvsgPtyAddtlInf.setter
-	def ScndAdvsgPtyAddtlInf(self, value):
-		self._ScndAdvsgPtyAddtlInf = value if type(value) != auto else self.make_default("ScndAdvsgPtyAddtlInf")
-
-	@ScndAdvsgPtyAddtlInf.deleter
-	def ScndAdvsgPtyAddtlInf(self):
-		del self._ScndAdvsgPtyAddtlInf
-		self._ScndAdvsgPtyAddtlInf = None
-
-	@property
-	def ConfDtls(self):
-		return self._ConfDtls
-
-	@ConfDtls.setter
-	def ConfDtls(self, value):
-		self._ConfDtls = value if type(value) != auto else self.make_default("ConfDtls")
-
-	@ConfDtls.deleter
-	def ConfDtls(self):
-		del self._ConfDtls
-		self._ConfDtls = None
-
+	__slots__ = ["_FrstAdvsgPtyAddtlInf", "_UdrtkgAmdmntMsg", "_ScndAdvsgPtyAddtlInf", "_ConfDtls", "_DgtlSgntr"]
 	@property
 	def FrstAdvsgPtyAddtlInf(self):
 		return self._FrstAdvsgPtyAddtlInf
@@ -60,6 +34,32 @@ class Amendment2(base_types._BaseFieldType):
 		self._UdrtkgAmdmntMsg = None
 
 	@property
+	def ScndAdvsgPtyAddtlInf(self):
+		return self._ScndAdvsgPtyAddtlInf
+
+	@ScndAdvsgPtyAddtlInf.setter
+	def ScndAdvsgPtyAddtlInf(self, value):
+		self._ScndAdvsgPtyAddtlInf = value if type(value) != auto else self.make_default("ScndAdvsgPtyAddtlInf")
+
+	@ScndAdvsgPtyAddtlInf.deleter
+	def ScndAdvsgPtyAddtlInf(self):
+		del self._ScndAdvsgPtyAddtlInf
+		self._ScndAdvsgPtyAddtlInf = None
+
+	@property
+	def ConfDtls(self):
+		return self._ConfDtls
+
+	@ConfDtls.setter
+	def ConfDtls(self, value):
+		self._ConfDtls = value if type(value) != auto else self.make_default("ConfDtls")
+
+	@ConfDtls.deleter
+	def ConfDtls(self):
+		del self._ConfDtls
+		self._ConfDtls = None
+
+	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr
 
@@ -73,10 +73,10 @@ class Amendment2(base_types._BaseFieldType):
 		self._DgtlSgntr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ScndAdvsgPtyAddtlInf', type=AdvisingPartyAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConfDtls', type=UndertakingConfirmation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstAdvsgPtyAddtlInf', type=AdvisingPartyAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgAmdmntMsg', type=UndertakingAmendmentMessage1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScndAdvsgPtyAddtlInf', type=AdvisingPartyAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfDtls', type=UndertakingConfirmation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=3, mutex_group=None, array=True),
 	))
 

@@ -1,25 +1,25 @@
 from . import base_types
-import Max350Text
-import PartyIdentification125Choice
-import DateTimePeriod2
-import RestrictionStatus1Choice
-import Max35Text
+from .Max35Text import Max35Text
+from .PartyIdentification125Choice import PartyIdentification125Choice
+from .DateTimePeriod2 import DateTimePeriod2
+from .Max350Text import Max350Text
+from .RestrictionStatus1Choice import RestrictionStatus1Choice
 
 class AdditiononalInformation13(base_types._BaseFieldType):
 
-	__slots__ = ["_Lmttn", "_Tp", "_Sts", "_Rgltr", "_Prd", "_AddtlInf", "_AcctVldtn"]
+	__slots__ = ["_AddtlInf", "_Tp", "_Prd", "_Lmttn", "_Rgltr", "_AcctVldtn", "_Sts"]
 	@property
-	def Lmttn(self):
-		return self._Lmttn
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Lmttn.setter
-	def Lmttn(self, value):
-		self._Lmttn = value if type(value) != auto else self.make_default("Lmttn")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@Lmttn.deleter
-	def Lmttn(self):
-		del self._Lmttn
-		self._Lmttn = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def Tp(self):
@@ -35,17 +35,30 @@ class AdditiononalInformation13(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def Prd(self):
+		return self._Prd
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != auto else self.make_default("Prd")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
+
+	@property
+	def Lmttn(self):
+		return self._Lmttn
+
+	@Lmttn.setter
+	def Lmttn(self, value):
+		self._Lmttn = value if type(value) != auto else self.make_default("Lmttn")
+
+	@Lmttn.deleter
+	def Lmttn(self):
+		del self._Lmttn
+		self._Lmttn = None
 
 	@property
 	def Rgltr(self):
@@ -61,32 +74,6 @@ class AdditiononalInformation13(base_types._BaseFieldType):
 		self._Rgltr = None
 
 	@property
-	def Prd(self):
-		return self._Prd
-
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
-
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
 	def AcctVldtn(self):
 		return self._AcctVldtn
 
@@ -99,13 +86,26 @@ class AdditiononalInformation13(base_types._BaseFieldType):
 		del self._AcctVldtn
 		self._AcctVldtn = None
 
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Lmttn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=RestrictionStatus1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rgltr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prd', type=DateTimePeriod2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prd', type=DateTimePeriod2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lmttn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rgltr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctVldtn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=RestrictionStatus1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

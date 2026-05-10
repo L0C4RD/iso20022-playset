@@ -1,24 +1,24 @@
 from . import base_types
-import Header31
-import ATMConfigurationReportComponent1
-import ContentInformationType15
-import ContentInformationType10
+from .ATMConfigurationReportComponent1 import ATMConfigurationReportComponent1
+from .ContentInformationType10 import ContentInformationType10
+from .ContentInformationType15 import ContentInformationType15
+from .Header31 import Header31
 
 class ATMConfigurationReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_PrtctdATMCfgtnRpt", "_Hdr", "_ATMCfgtnRpt"]
+	__slots__ = ["_ATMCfgtnRpt", "_PrtctdATMCfgtnRpt", "_Hdr", "_SctyTrlr"]
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def ATMCfgtnRpt(self):
+		return self._ATMCfgtnRpt
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+	@ATMCfgtnRpt.setter
+	def ATMCfgtnRpt(self, value):
+		self._ATMCfgtnRpt = value if type(value) != auto else self.make_default("ATMCfgtnRpt")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@ATMCfgtnRpt.deleter
+	def ATMCfgtnRpt(self):
+		del self._ATMCfgtnRpt
+		self._ATMCfgtnRpt = None
 
 	@property
 	def PrtctdATMCfgtnRpt(self):
@@ -47,22 +47,22 @@ class ATMConfigurationReportV01(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def ATMCfgtnRpt(self):
-		return self._ATMCfgtnRpt
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@ATMCfgtnRpt.setter
-	def ATMCfgtnRpt(self, value):
-		self._ATMCfgtnRpt = value if type(value) != auto else self.make_default("ATMCfgtnRpt")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
 
-	@ATMCfgtnRpt.deleter
-	def ATMCfgtnRpt(self):
-		del self._ATMCfgtnRpt
-		self._ATMCfgtnRpt = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMCfgtnRpt', type=ATMConfigurationReportComponent1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMCfgtnRpt', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMCfgtnRpt', type=ATMConfigurationReportComponent1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

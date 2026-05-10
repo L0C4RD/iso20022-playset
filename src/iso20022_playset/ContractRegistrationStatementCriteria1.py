@@ -1,34 +1,21 @@
 from . import base_types
-import TrueFalseIndicator
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_RgltryRuleVldtn", "_AddtlSpprtgDocJrnl", "_TxJrnl", "_SpprtgDocJrnl"]
+	__slots__ = ["_SpprtgDocJrnl", "_TxJrnl", "_AddtlSpprtgDocJrnl", "_RgltryRuleVldtn"]
 	@property
-	def RgltryRuleVldtn(self):
-		return self._RgltryRuleVldtn
+	def SpprtgDocJrnl(self):
+		return self._SpprtgDocJrnl
 
-	@RgltryRuleVldtn.setter
-	def RgltryRuleVldtn(self, value):
-		self._RgltryRuleVldtn = value if type(value) != auto else self.make_default("RgltryRuleVldtn")
+	@SpprtgDocJrnl.setter
+	def SpprtgDocJrnl(self, value):
+		self._SpprtgDocJrnl = value if type(value) != auto else self.make_default("SpprtgDocJrnl")
 
-	@RgltryRuleVldtn.deleter
-	def RgltryRuleVldtn(self):
-		del self._RgltryRuleVldtn
-		self._RgltryRuleVldtn = None
-
-	@property
-	def AddtlSpprtgDocJrnl(self):
-		return self._AddtlSpprtgDocJrnl
-
-	@AddtlSpprtgDocJrnl.setter
-	def AddtlSpprtgDocJrnl(self, value):
-		self._AddtlSpprtgDocJrnl = value if type(value) != auto else self.make_default("AddtlSpprtgDocJrnl")
-
-	@AddtlSpprtgDocJrnl.deleter
-	def AddtlSpprtgDocJrnl(self):
-		del self._AddtlSpprtgDocJrnl
-		self._AddtlSpprtgDocJrnl = None
+	@SpprtgDocJrnl.deleter
+	def SpprtgDocJrnl(self):
+		del self._SpprtgDocJrnl
+		self._SpprtgDocJrnl = None
 
 	@property
 	def TxJrnl(self):
@@ -44,22 +31,35 @@ class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 		self._TxJrnl = None
 
 	@property
-	def SpprtgDocJrnl(self):
-		return self._SpprtgDocJrnl
+	def AddtlSpprtgDocJrnl(self):
+		return self._AddtlSpprtgDocJrnl
 
-	@SpprtgDocJrnl.setter
-	def SpprtgDocJrnl(self, value):
-		self._SpprtgDocJrnl = value if type(value) != auto else self.make_default("SpprtgDocJrnl")
+	@AddtlSpprtgDocJrnl.setter
+	def AddtlSpprtgDocJrnl(self, value):
+		self._AddtlSpprtgDocJrnl = value if type(value) != auto else self.make_default("AddtlSpprtgDocJrnl")
 
-	@SpprtgDocJrnl.deleter
-	def SpprtgDocJrnl(self):
-		del self._SpprtgDocJrnl
-		self._SpprtgDocJrnl = None
+	@AddtlSpprtgDocJrnl.deleter
+	def AddtlSpprtgDocJrnl(self):
+		del self._AddtlSpprtgDocJrnl
+		self._AddtlSpprtgDocJrnl = None
+
+	@property
+	def RgltryRuleVldtn(self):
+		return self._RgltryRuleVldtn
+
+	@RgltryRuleVldtn.setter
+	def RgltryRuleVldtn(self, value):
+		self._RgltryRuleVldtn = value if type(value) != auto else self.make_default("RgltryRuleVldtn")
+
+	@RgltryRuleVldtn.deleter
+	def RgltryRuleVldtn(self):
+		del self._RgltryRuleVldtn
+		self._RgltryRuleVldtn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RgltryRuleVldtn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlSpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlSpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RgltryRuleVldtn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

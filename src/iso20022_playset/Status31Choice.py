@@ -1,25 +1,12 @@
 from . import base_types
-import CancelledCompleteReason1
-import RejectionReason33
-import TransferCancellationPendingStatus1
-import TransferCancellationStatus3
+from .RejectionReason33 import RejectionReason33
+from .TransferCancellationPendingStatus1 import TransferCancellationPendingStatus1
+from .TransferCancellationStatus3 import TransferCancellationStatus3
+from .CancelledCompleteReason1 import CancelledCompleteReason1
 
 class Status31Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Pdg", "_Cmplt", "_Sts", "_Rjctd"]
-	@property
-	def Pdg(self):
-		return self._Pdg
-
-	@Pdg.setter
-	def Pdg(self, value):
-		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
-
-	@Pdg.deleter
-	def Pdg(self):
-		del self._Pdg
-		self._Pdg = None
-
+	__slots__ = ["_Cmplt", "_Sts", "_Pdg", "_Rjctd"]
 	@property
 	def Cmplt(self):
 		return self._Cmplt
@@ -47,6 +34,19 @@ class Status31Choice(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
+	def Pdg(self):
+		return self._Pdg
+
+	@Pdg.setter
+	def Pdg(self, value):
+		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
+
+	@Pdg.deleter
+	def Pdg(self):
+		del self._Pdg
+		self._Pdg = None
+
+	@property
 	def Rjctd(self):
 		return self._Rjctd
 
@@ -60,9 +60,9 @@ class Status31Choice(base_types._BaseFieldType):
 		self._Rjctd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pdg', type=TransferCancellationPendingStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cmplt', type=CancelledCompleteReason1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Sts', type=TransferCancellationStatus3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pdg', type=TransferCancellationPendingStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectionReason33, min=0, max=1, mutex_group=1, array=False),
 	))
 

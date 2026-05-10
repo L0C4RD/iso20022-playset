@@ -1,5 +1,5 @@
 from . import base_types
-import TransactionOperationType11Code
+from .TransactionOperationType11Code import TransactionOperationType11Code
 
 class ContractModification8(base_types._BaseFieldType):
 

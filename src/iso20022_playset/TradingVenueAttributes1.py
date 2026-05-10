@@ -1,11 +1,37 @@
 from . import base_types
-import MICIdentifier
-import TrueFalseIndicator
-import ISODateTime
+from .MICIdentifier import MICIdentifier
+from .ISODateTime import ISODateTime
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class TradingVenueAttributes1(base_types._BaseFieldType):
 
-	__slots__ = ["_FrstTradDt", "_TermntnDt", "_ReqForAdmssnDt", "_IssrReq", "_Id", "_AdmssnApprvlDtByIssr"]
+	__slots__ = ["_Id", "_TermntnDt", "_FrstTradDt", "_AdmssnApprvlDtByIssr", "_ReqForAdmssnDt", "_IssrReq"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def TermntnDt(self):
+		return self._TermntnDt
+
+	@TermntnDt.setter
+	def TermntnDt(self, value):
+		self._TermntnDt = value if type(value) != auto else self.make_default("TermntnDt")
+
+	@TermntnDt.deleter
+	def TermntnDt(self):
+		del self._TermntnDt
+		self._TermntnDt = None
+
 	@property
 	def FrstTradDt(self):
 		return self._FrstTradDt
@@ -20,17 +46,17 @@ class TradingVenueAttributes1(base_types._BaseFieldType):
 		self._FrstTradDt = None
 
 	@property
-	def TermntnDt(self):
-		return self._TermntnDt
+	def AdmssnApprvlDtByIssr(self):
+		return self._AdmssnApprvlDtByIssr
 
-	@TermntnDt.setter
-	def TermntnDt(self, value):
-		self._TermntnDt = value if type(value) != auto else self.make_default("TermntnDt")
+	@AdmssnApprvlDtByIssr.setter
+	def AdmssnApprvlDtByIssr(self, value):
+		self._AdmssnApprvlDtByIssr = value if type(value) != auto else self.make_default("AdmssnApprvlDtByIssr")
 
-	@TermntnDt.deleter
-	def TermntnDt(self):
-		del self._TermntnDt
-		self._TermntnDt = None
+	@AdmssnApprvlDtByIssr.deleter
+	def AdmssnApprvlDtByIssr(self):
+		del self._AdmssnApprvlDtByIssr
+		self._AdmssnApprvlDtByIssr = None
 
 	@property
 	def ReqForAdmssnDt(self):
@@ -58,38 +84,12 @@ class TradingVenueAttributes1(base_types._BaseFieldType):
 		del self._IssrReq
 		self._IssrReq = None
 
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def AdmssnApprvlDtByIssr(self):
-		return self._AdmssnApprvlDtByIssr
-
-	@AdmssnApprvlDtByIssr.setter
-	def AdmssnApprvlDtByIssr(self, value):
-		self._AdmssnApprvlDtByIssr = value if type(value) != auto else self.make_default("AdmssnApprvlDtByIssr")
-
-	@AdmssnApprvlDtByIssr.deleter
-	def AdmssnApprvlDtByIssr(self):
-		del self._AdmssnApprvlDtByIssr
-		self._AdmssnApprvlDtByIssr = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FrstTradDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=MICIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TermntnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstTradDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdmssnApprvlDtByIssr', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqForAdmssnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrReq', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=MICIdentifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdmssnApprvlDtByIssr', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

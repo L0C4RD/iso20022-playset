@@ -1,5 +1,5 @@
 from . import base_types
-import MandateCopyRequestV04
+from .MandateCopyRequestV04 import MandateCopyRequestV04
 
 class PAIN_017_001_04():
 

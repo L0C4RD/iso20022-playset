@@ -1,5 +1,5 @@
 from . import base_types
-import MoneyMarketUnsecuredMarketStatisticalReportV02
+from .MoneyMarketUnsecuredMarketStatisticalReportV02 import MoneyMarketUnsecuredMarketStatisticalReportV02
 
 class AUTH_013_001_02():
 

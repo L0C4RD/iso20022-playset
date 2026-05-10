@@ -1,12 +1,38 @@
 from . import base_types
-import PartyIdentification136
-import PartyIdentificationAndAccount202
-import PartyIdentificationAndAccount203
-import SecuritiesAccount19
+from .SecuritiesAccount19 import SecuritiesAccount19
+from .PartyIdentificationAndAccount203 import PartyIdentificationAndAccount203
+from .PartyIdentification136 import PartyIdentification136
+from .PartyIdentificationAndAccount202 import PartyIdentificationAndAccount202
 
 class CollateralParties10(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyB", "_CollAcct", "_ClntPtyA", "_TrptyAgt", "_PtyA", "_ClntPtyB"]
+	__slots__ = ["_ClntPtyA", "_ClntPtyB", "_PtyB", "_CollAcct", "_TrptyAgt", "_PtyA"]
+	@property
+	def ClntPtyA(self):
+		return self._ClntPtyA
+
+	@ClntPtyA.setter
+	def ClntPtyA(self, value):
+		self._ClntPtyA = value if type(value) != auto else self.make_default("ClntPtyA")
+
+	@ClntPtyA.deleter
+	def ClntPtyA(self):
+		del self._ClntPtyA
+		self._ClntPtyA = None
+
+	@property
+	def ClntPtyB(self):
+		return self._ClntPtyB
+
+	@ClntPtyB.setter
+	def ClntPtyB(self, value):
+		self._ClntPtyB = value if type(value) != auto else self.make_default("ClntPtyB")
+
+	@ClntPtyB.deleter
+	def ClntPtyB(self):
+		del self._ClntPtyB
+		self._ClntPtyB = None
+
 	@property
 	def PtyB(self):
 		return self._PtyB
@@ -34,19 +60,6 @@ class CollateralParties10(base_types._BaseFieldType):
 		self._CollAcct = None
 
 	@property
-	def ClntPtyA(self):
-		return self._ClntPtyA
-
-	@ClntPtyA.setter
-	def ClntPtyA(self, value):
-		self._ClntPtyA = value if type(value) != auto else self.make_default("ClntPtyA")
-
-	@ClntPtyA.deleter
-	def ClntPtyA(self):
-		del self._ClntPtyA
-		self._ClntPtyA = None
-
-	@property
 	def TrptyAgt(self):
 		return self._TrptyAgt
 
@@ -72,25 +85,12 @@ class CollateralParties10(base_types._BaseFieldType):
 		del self._PtyA
 		self._PtyA = None
 
-	@property
-	def ClntPtyB(self):
-		return self._ClntPtyB
-
-	@ClntPtyB.setter
-	def ClntPtyB(self, value):
-		self._ClntPtyB = value if type(value) != auto else self.make_default("ClntPtyB")
-
-	@ClntPtyB.deleter
-	def ClntPtyB(self):
-		del self._ClntPtyB
-		self._ClntPtyB = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ClntPtyA', type=PartyIdentificationAndAccount202, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntPtyB', type=PartyIdentificationAndAccount203, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyB', type=PartyIdentificationAndAccount203, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntPtyA', type=PartyIdentificationAndAccount202, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyA', type=PartyIdentificationAndAccount202, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntPtyB', type=PartyIdentificationAndAccount203, min=0, max=1, mutex_group=None, array=False),
 	))
 

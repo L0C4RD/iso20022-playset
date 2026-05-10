@@ -1,11 +1,11 @@
 from . import base_types
-import ISODate
-import Period2
-import DateTimePeriod1
+from .Period2 import Period2
+from .DateTimePeriod1 import DateTimePeriod1
+from .ISODate import ISODate
 
 class Period11Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FrToDt", "_FrDt", "_ToDt", "_Dt", "_FrToDtTm"]
+	__slots__ = ["_FrToDt", "_ToDt", "_Dt", "_FrToDtTm", "_FrDt"]
 	@property
 	def FrToDt(self):
 		return self._FrToDt
@@ -18,19 +18,6 @@ class Period11Choice(base_types._BaseFieldType):
 	def FrToDt(self):
 		del self._FrToDt
 		self._FrToDt = None
-
-	@property
-	def FrDt(self):
-		return self._FrDt
-
-	@FrDt.setter
-	def FrDt(self, value):
-		self._FrDt = value if type(value) != auto else self.make_default("FrDt")
-
-	@FrDt.deleter
-	def FrDt(self):
-		del self._FrDt
-		self._FrDt = None
 
 	@property
 	def ToDt(self):
@@ -71,11 +58,24 @@ class Period11Choice(base_types._BaseFieldType):
 		del self._FrToDtTm
 		self._FrToDtTm = None
 
+	@property
+	def FrDt(self):
+		return self._FrDt
+
+	@FrDt.setter
+	def FrDt(self, value):
+		self._FrDt = value if type(value) != auto else self.make_default("FrDt")
+
+	@FrDt.deleter
+	def FrDt(self):
+		del self._FrDt
+		self._FrDt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrToDt', type=Period2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='FrDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ToDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FrToDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FrDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 	))
 

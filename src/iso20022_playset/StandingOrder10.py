@@ -1,40 +1,40 @@
 from . import base_types
-import Amount2Choice
-import ExecutionType1Choice
-import DatePeriod2Choice
-import TrueFalseIndicator
-import CashAccount40
-import Frequency2Code
-import BranchAndFinancialInstitutionIdentification8
+from .DatePeriod2Choice import DatePeriod2Choice
+from .Frequency2Code import Frequency2Code
+from .Amount2Choice import Amount2Choice
+from .ExecutionType1Choice import ExecutionType1Choice
+from .CashAccount40 import CashAccount40
+from .TrueFalseIndicator import TrueFalseIndicator
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class StandingOrder10(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_DbtrAcct", "_ZeroSweepInd", "_CdtrAcct", "_Cdtr", "_ExctnTp", "_Dbtr", "_VldtyPrd", "_Frqcy"]
+	__slots__ = ["_Frqcy", "_ExctnTp", "_ZeroSweepInd", "_CdtrAcct", "_Dbtr", "_VldtyPrd", "_Cdtr", "_Amt", "_DbtrAcct"]
 	@property
-	def Amt(self):
-		return self._Amt
+	def Frqcy(self):
+		return self._Frqcy
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@Frqcy.setter
+	def Frqcy(self, value):
+		self._Frqcy = value if type(value) != auto else self.make_default("Frqcy")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Frqcy.deleter
+	def Frqcy(self):
+		del self._Frqcy
+		self._Frqcy = None
 
 	@property
-	def DbtrAcct(self):
-		return self._DbtrAcct
+	def ExctnTp(self):
+		return self._ExctnTp
 
-	@DbtrAcct.setter
-	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != auto else self.make_default("DbtrAcct")
+	@ExctnTp.setter
+	def ExctnTp(self, value):
+		self._ExctnTp = value if type(value) != auto else self.make_default("ExctnTp")
 
-	@DbtrAcct.deleter
-	def DbtrAcct(self):
-		del self._DbtrAcct
-		self._DbtrAcct = None
+	@ExctnTp.deleter
+	def ExctnTp(self):
+		del self._ExctnTp
+		self._ExctnTp = None
 
 	@property
 	def ZeroSweepInd(self):
@@ -63,32 +63,6 @@ class StandingOrder10(base_types._BaseFieldType):
 		self._CdtrAcct = None
 
 	@property
-	def Cdtr(self):
-		return self._Cdtr
-
-	@Cdtr.setter
-	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
-
-	@Cdtr.deleter
-	def Cdtr(self):
-		del self._Cdtr
-		self._Cdtr = None
-
-	@property
-	def ExctnTp(self):
-		return self._ExctnTp
-
-	@ExctnTp.setter
-	def ExctnTp(self, value):
-		self._ExctnTp = value if type(value) != auto else self.make_default("ExctnTp")
-
-	@ExctnTp.deleter
-	def ExctnTp(self):
-		del self._ExctnTp
-		self._ExctnTp = None
-
-	@property
 	def Dbtr(self):
 		return self._Dbtr
 
@@ -115,27 +89,53 @@ class StandingOrder10(base_types._BaseFieldType):
 		self._VldtyPrd = None
 
 	@property
-	def Frqcy(self):
-		return self._Frqcy
+	def Cdtr(self):
+		return self._Cdtr
 
-	@Frqcy.setter
-	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != auto else self.make_default("Frqcy")
+	@Cdtr.setter
+	def Cdtr(self, value):
+		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
 
-	@Frqcy.deleter
-	def Frqcy(self):
-		del self._Frqcy
-		self._Frqcy = None
+	@Cdtr.deleter
+	def Cdtr(self):
+		del self._Cdtr
+		self._Cdtr = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def DbtrAcct(self):
+		return self._DbtrAcct
+
+	@DbtrAcct.setter
+	def DbtrAcct(self, value):
+		self._DbtrAcct = value if type(value) != auto else self.make_default("DbtrAcct")
+
+	@DbtrAcct.deleter
+	def DbtrAcct(self):
+		del self._DbtrAcct
+		self._DbtrAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frqcy', type=Frequency2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctnTp', type=ExecutionType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ZeroSweepInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cdtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExctnTp', type=ExecutionType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dbtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtyPrd', type=DatePeriod2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frqcy', type=Frequency2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cdtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 	))
 

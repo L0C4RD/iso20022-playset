@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalShipmentCondition1Code
-import Max35Text
+from .ExternalShipmentCondition1Code import ExternalShipmentCondition1Code
+from .Max35Text import Max35Text
 
 class ShipmentCondition1Choice(base_types._BaseFieldType):
 

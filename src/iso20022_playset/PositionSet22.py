@@ -1,6 +1,6 @@
 from . import base_types
-import PositionSetCollateralMetrics2
-import PositionSetCollateralDimensions3
+from .PositionSetCollateralMetrics2 import PositionSetCollateralMetrics2
+from .PositionSetCollateralDimensions3 import PositionSetCollateralDimensions3
 
 class PositionSet22(base_types._BaseFieldType):
 

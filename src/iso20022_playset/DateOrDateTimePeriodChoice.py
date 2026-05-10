@@ -1,6 +1,6 @@
 from . import base_types
-import DateTimePeriodDetails
-import DatePeriodDetails
+from .DateTimePeriodDetails import DateTimePeriodDetails
+from .DatePeriodDetails import DatePeriodDetails
 
 class DateOrDateTimePeriodChoice(base_types._BaseFieldType):
 

@@ -1,23 +1,10 @@
 from . import base_types
-import Parameter12
-import Algorithm28Code
+from .Algorithm28Code import Algorithm28Code
+from .Parameter12 import Parameter12
 
 class AlgorithmIdentification32(base_types._BaseFieldType):
 
-	__slots__ = ["_Param", "_Algo"]
-	@property
-	def Param(self):
-		return self._Param
-
-	@Param.setter
-	def Param(self, value):
-		self._Param = value if type(value) != auto else self.make_default("Param")
-
-	@Param.deleter
-	def Param(self):
-		del self._Param
-		self._Param = None
-
+	__slots__ = ["_Algo", "_Param"]
 	@property
 	def Algo(self):
 		return self._Algo
@@ -31,8 +18,21 @@ class AlgorithmIdentification32(base_types._BaseFieldType):
 		del self._Algo
 		self._Algo = None
 
+	@property
+	def Param(self):
+		return self._Param
+
+	@Param.setter
+	def Param(self, value):
+		self._Param = value if type(value) != auto else self.make_default("Param")
+
+	@Param.deleter
+	def Param(self):
+		del self._Param
+		self._Param = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Param', type=Parameter12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Algo', type=Algorithm28Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Param', type=Parameter12, min=0, max=1, mutex_group=None, array=False),
 	))
 

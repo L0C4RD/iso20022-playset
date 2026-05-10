@@ -1,12 +1,12 @@
 from . import base_types
-import DocumentLineInformation1
-import ReferredDocumentType4
-import ISODate
-import Max35Text
+from .ReferredDocumentType4 import ReferredDocumentType4
+from .Max35Text import Max35Text
+from .DocumentLineInformation1 import DocumentLineInformation1
+from .ISODate import ISODate
 
 class ReferredDocumentInformation7(base_types._BaseFieldType):
 
-	__slots__ = ["_Nb", "_Tp", "_LineDtls", "_RltdDt"]
+	__slots__ = ["_Nb", "_Tp", "_RltdDt", "_LineDtls"]
 	@property
 	def Nb(self):
 		return self._Nb
@@ -34,19 +34,6 @@ class ReferredDocumentInformation7(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def LineDtls(self):
-		return self._LineDtls
-
-	@LineDtls.setter
-	def LineDtls(self, value):
-		self._LineDtls = value if type(value) != auto else self.make_default("LineDtls")
-
-	@LineDtls.deleter
-	def LineDtls(self):
-		del self._LineDtls
-		self._LineDtls = None
-
-	@property
 	def RltdDt(self):
 		return self._RltdDt
 
@@ -59,10 +46,23 @@ class ReferredDocumentInformation7(base_types._BaseFieldType):
 		del self._RltdDt
 		self._RltdDt = None
 
+	@property
+	def LineDtls(self):
+		return self._LineDtls
+
+	@LineDtls.setter
+	def LineDtls(self, value):
+		self._LineDtls = value if type(value) != auto else self.make_default("LineDtls")
+
+	@LineDtls.deleter
+	def LineDtls(self):
+		del self._LineDtls
+		self._LineDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ReferredDocumentType4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LineDtls', type=DocumentLineInformation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RltdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LineDtls', type=DocumentLineInformation1, min=0, max=None, mutex_group=None, array=True),
 	))
 

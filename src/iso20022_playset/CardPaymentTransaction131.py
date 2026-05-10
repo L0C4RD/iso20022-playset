@@ -1,24 +1,24 @@
 from . import base_types
-import CurrencyConversion31
-import TransactionIdentifier1
-import Max35Text
-import GenericIdentification32
+from .TransactionIdentifier1 import TransactionIdentifier1
+from .Max35Text import Max35Text
+from .CurrencyConversion31 import CurrencyConversion31
+from .GenericIdentification32 import GenericIdentification32
 
 class CardPaymentTransaction131(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleRefId", "_CcyConvs", "_POIId", "_TxId"]
+	__slots__ = ["_TxId", "_CcyConvs", "_SaleRefId", "_POIId"]
 	@property
-	def SaleRefId(self):
-		return self._SaleRefId
+	def TxId(self):
+		return self._TxId
 
-	@SaleRefId.setter
-	def SaleRefId(self, value):
-		self._SaleRefId = value if type(value) != auto else self.make_default("SaleRefId")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@SaleRefId.deleter
-	def SaleRefId(self):
-		del self._SaleRefId
-		self._SaleRefId = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def CcyConvs(self):
@@ -34,6 +34,19 @@ class CardPaymentTransaction131(base_types._BaseFieldType):
 		self._CcyConvs = None
 
 	@property
+	def SaleRefId(self):
+		return self._SaleRefId
+
+	@SaleRefId.setter
+	def SaleRefId(self, value):
+		self._SaleRefId = value if type(value) != auto else self.make_default("SaleRefId")
+
+	@SaleRefId.deleter
+	def SaleRefId(self):
+		del self._SaleRefId
+		self._SaleRefId = None
+
+	@property
 	def POIId(self):
 		return self._POIId
 
@@ -46,23 +59,10 @@ class CardPaymentTransaction131(base_types._BaseFieldType):
 		del self._POIId
 		self._POIId = None
 
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CcyConvs', type=CurrencyConversion31, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POIId', type=GenericIdentification32, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcyConvs', type=CurrencyConversion31, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POIId', type=GenericIdentification32, min=1, max=1, mutex_group=None, array=False),
 	))
 

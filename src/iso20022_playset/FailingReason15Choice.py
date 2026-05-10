@@ -1,6 +1,6 @@
 from . import base_types
-import FailingReason1Code
-import GenericIdentification47
+from .GenericIdentification47 import GenericIdentification47
+from .FailingReason1Code import FailingReason1Code
 
 class FailingReason15Choice(base_types._BaseFieldType):
 

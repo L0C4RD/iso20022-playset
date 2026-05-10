@@ -1,113 +1,35 @@
 from . import base_types
-import ISODate
-import UnderlyingProductIdentifier1Code
-import Max30Text
-import ISODateTime
-import Max35Text
-import ClearingMethod1Code
-import TradingModeType1Code
-import InstrumentLeg7
-import ActiveCurrencyCode
-import OrderStatus8Code
-import SecurityIdentification38Choice
-import Option16
-import Trade10
-import TradingMethodType1Code
-import AmountAndCurrency2
+from .Max35Text import Max35Text
+from .Max30Text import Max30Text
+from .ISODateTime import ISODateTime
+from .ISODate import ISODate
+from .Option16 import Option16
+from .InstrumentLeg7 import InstrumentLeg7
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .SecurityIdentification38Choice import SecurityIdentification38Choice
+from .UnderlyingProductIdentifier1Code import UnderlyingProductIdentifier1Code
+from .ClearingMethod1Code import ClearingMethod1Code
+from .OrderStatus8Code import OrderStatus8Code
+from .Trade10 import Trade10
+from .TradingMethodType1Code import TradingMethodType1Code
+from .AmountAndCurrency2 import AmountAndCurrency2
+from .TradingModeType1Code import TradingModeType1Code
 
 class Trade7(base_types._BaseFieldType):
 
-	__slots__ = ["_FXTradPdct", "_DtConfd", "_TradgMd", "_DealTcktId", "_BaseCcyOrAmt", "_ClrMtd", "_FXDtls", "_CmbntnDealTcktId", "_SwpLeg", "_SttlmCcy", "_TrgtCcyOrAmt", "_Symb", "_TxTm", "_ExctnTp", "_PdctId", "_ContraCcy", "_TradId", "_TradgMtd", "_DtAndTm", "_PlcOfConf", "_TradgCcy", "_Optn"]
+	__slots__ = ["_ExctnTp", "_CmbntnDealTcktId", "_TradgMtd", "_SwpLeg", "_TradgMd", "_ContraCcy", "_PlcOfConf", "_TrgtCcyOrAmt", "_Optn", "_DealTcktId", "_FXDtls", "_SttlmCcy", "_PdctId", "_TradId", "_TxTm", "_BaseCcyOrAmt", "_TradgCcy", "_DtConfd", "_Symb", "_DtAndTm", "_FXTradPdct", "_ClrMtd"]
 	@property
-	def FXTradPdct(self):
-		return self._FXTradPdct
+	def ExctnTp(self):
+		return self._ExctnTp
 
-	@FXTradPdct.setter
-	def FXTradPdct(self, value):
-		self._FXTradPdct = value if type(value) != auto else self.make_default("FXTradPdct")
+	@ExctnTp.setter
+	def ExctnTp(self, value):
+		self._ExctnTp = value if type(value) != auto else self.make_default("ExctnTp")
 
-	@FXTradPdct.deleter
-	def FXTradPdct(self):
-		del self._FXTradPdct
-		self._FXTradPdct = None
-
-	@property
-	def DtConfd(self):
-		return self._DtConfd
-
-	@DtConfd.setter
-	def DtConfd(self, value):
-		self._DtConfd = value if type(value) != auto else self.make_default("DtConfd")
-
-	@DtConfd.deleter
-	def DtConfd(self):
-		del self._DtConfd
-		self._DtConfd = None
-
-	@property
-	def TradgMd(self):
-		return self._TradgMd
-
-	@TradgMd.setter
-	def TradgMd(self, value):
-		self._TradgMd = value if type(value) != auto else self.make_default("TradgMd")
-
-	@TradgMd.deleter
-	def TradgMd(self):
-		del self._TradgMd
-		self._TradgMd = None
-
-	@property
-	def DealTcktId(self):
-		return self._DealTcktId
-
-	@DealTcktId.setter
-	def DealTcktId(self, value):
-		self._DealTcktId = value if type(value) != auto else self.make_default("DealTcktId")
-
-	@DealTcktId.deleter
-	def DealTcktId(self):
-		del self._DealTcktId
-		self._DealTcktId = None
-
-	@property
-	def BaseCcyOrAmt(self):
-		return self._BaseCcyOrAmt
-
-	@BaseCcyOrAmt.setter
-	def BaseCcyOrAmt(self, value):
-		self._BaseCcyOrAmt = value if type(value) != auto else self.make_default("BaseCcyOrAmt")
-
-	@BaseCcyOrAmt.deleter
-	def BaseCcyOrAmt(self):
-		del self._BaseCcyOrAmt
-		self._BaseCcyOrAmt = None
-
-	@property
-	def ClrMtd(self):
-		return self._ClrMtd
-
-	@ClrMtd.setter
-	def ClrMtd(self, value):
-		self._ClrMtd = value if type(value) != auto else self.make_default("ClrMtd")
-
-	@ClrMtd.deleter
-	def ClrMtd(self):
-		del self._ClrMtd
-		self._ClrMtd = None
-
-	@property
-	def FXDtls(self):
-		return self._FXDtls
-
-	@FXDtls.setter
-	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != auto else self.make_default("FXDtls")
-
-	@FXDtls.deleter
-	def FXDtls(self):
-		del self._FXDtls
-		self._FXDtls = None
+	@ExctnTp.deleter
+	def ExctnTp(self):
+		del self._ExctnTp
+		self._ExctnTp = None
 
 	@property
 	def CmbntnDealTcktId(self):
@@ -123,6 +45,19 @@ class Trade7(base_types._BaseFieldType):
 		self._CmbntnDealTcktId = None
 
 	@property
+	def TradgMtd(self):
+		return self._TradgMtd
+
+	@TradgMtd.setter
+	def TradgMtd(self, value):
+		self._TradgMtd = value if type(value) != auto else self.make_default("TradgMtd")
+
+	@TradgMtd.deleter
+	def TradgMtd(self):
+		del self._TradgMtd
+		self._TradgMtd = None
+
+	@property
 	def SwpLeg(self):
 		return self._SwpLeg
 
@@ -136,82 +71,17 @@ class Trade7(base_types._BaseFieldType):
 		self._SwpLeg = None
 
 	@property
-	def SttlmCcy(self):
-		return self._SttlmCcy
+	def TradgMd(self):
+		return self._TradgMd
 
-	@SttlmCcy.setter
-	def SttlmCcy(self, value):
-		self._SttlmCcy = value if type(value) != auto else self.make_default("SttlmCcy")
+	@TradgMd.setter
+	def TradgMd(self, value):
+		self._TradgMd = value if type(value) != auto else self.make_default("TradgMd")
 
-	@SttlmCcy.deleter
-	def SttlmCcy(self):
-		del self._SttlmCcy
-		self._SttlmCcy = None
-
-	@property
-	def TrgtCcyOrAmt(self):
-		return self._TrgtCcyOrAmt
-
-	@TrgtCcyOrAmt.setter
-	def TrgtCcyOrAmt(self, value):
-		self._TrgtCcyOrAmt = value if type(value) != auto else self.make_default("TrgtCcyOrAmt")
-
-	@TrgtCcyOrAmt.deleter
-	def TrgtCcyOrAmt(self):
-		del self._TrgtCcyOrAmt
-		self._TrgtCcyOrAmt = None
-
-	@property
-	def Symb(self):
-		return self._Symb
-
-	@Symb.setter
-	def Symb(self, value):
-		self._Symb = value if type(value) != auto else self.make_default("Symb")
-
-	@Symb.deleter
-	def Symb(self):
-		del self._Symb
-		self._Symb = None
-
-	@property
-	def TxTm(self):
-		return self._TxTm
-
-	@TxTm.setter
-	def TxTm(self, value):
-		self._TxTm = value if type(value) != auto else self.make_default("TxTm")
-
-	@TxTm.deleter
-	def TxTm(self):
-		del self._TxTm
-		self._TxTm = None
-
-	@property
-	def ExctnTp(self):
-		return self._ExctnTp
-
-	@ExctnTp.setter
-	def ExctnTp(self, value):
-		self._ExctnTp = value if type(value) != auto else self.make_default("ExctnTp")
-
-	@ExctnTp.deleter
-	def ExctnTp(self):
-		del self._ExctnTp
-		self._ExctnTp = None
-
-	@property
-	def PdctId(self):
-		return self._PdctId
-
-	@PdctId.setter
-	def PdctId(self, value):
-		self._PdctId = value if type(value) != auto else self.make_default("PdctId")
-
-	@PdctId.deleter
-	def PdctId(self):
-		del self._PdctId
-		self._PdctId = None
+	@TradgMd.deleter
+	def TradgMd(self):
+		del self._TradgMd
+		self._TradgMd = None
 
 	@property
 	def ContraCcy(self):
@@ -227,6 +97,97 @@ class Trade7(base_types._BaseFieldType):
 		self._ContraCcy = None
 
 	@property
+	def PlcOfConf(self):
+		return self._PlcOfConf
+
+	@PlcOfConf.setter
+	def PlcOfConf(self, value):
+		self._PlcOfConf = value if type(value) != auto else self.make_default("PlcOfConf")
+
+	@PlcOfConf.deleter
+	def PlcOfConf(self):
+		del self._PlcOfConf
+		self._PlcOfConf = None
+
+	@property
+	def TrgtCcyOrAmt(self):
+		return self._TrgtCcyOrAmt
+
+	@TrgtCcyOrAmt.setter
+	def TrgtCcyOrAmt(self, value):
+		self._TrgtCcyOrAmt = value if type(value) != auto else self.make_default("TrgtCcyOrAmt")
+
+	@TrgtCcyOrAmt.deleter
+	def TrgtCcyOrAmt(self):
+		del self._TrgtCcyOrAmt
+		self._TrgtCcyOrAmt = None
+
+	@property
+	def Optn(self):
+		return self._Optn
+
+	@Optn.setter
+	def Optn(self, value):
+		self._Optn = value if type(value) != auto else self.make_default("Optn")
+
+	@Optn.deleter
+	def Optn(self):
+		del self._Optn
+		self._Optn = None
+
+	@property
+	def DealTcktId(self):
+		return self._DealTcktId
+
+	@DealTcktId.setter
+	def DealTcktId(self, value):
+		self._DealTcktId = value if type(value) != auto else self.make_default("DealTcktId")
+
+	@DealTcktId.deleter
+	def DealTcktId(self):
+		del self._DealTcktId
+		self._DealTcktId = None
+
+	@property
+	def FXDtls(self):
+		return self._FXDtls
+
+	@FXDtls.setter
+	def FXDtls(self, value):
+		self._FXDtls = value if type(value) != auto else self.make_default("FXDtls")
+
+	@FXDtls.deleter
+	def FXDtls(self):
+		del self._FXDtls
+		self._FXDtls = None
+
+	@property
+	def SttlmCcy(self):
+		return self._SttlmCcy
+
+	@SttlmCcy.setter
+	def SttlmCcy(self, value):
+		self._SttlmCcy = value if type(value) != auto else self.make_default("SttlmCcy")
+
+	@SttlmCcy.deleter
+	def SttlmCcy(self):
+		del self._SttlmCcy
+		self._SttlmCcy = None
+
+	@property
+	def PdctId(self):
+		return self._PdctId
+
+	@PdctId.setter
+	def PdctId(self, value):
+		self._PdctId = value if type(value) != auto else self.make_default("PdctId")
+
+	@PdctId.deleter
+	def PdctId(self):
+		del self._PdctId
+		self._PdctId = None
+
+	@property
 	def TradId(self):
 		return self._TradId
 
@@ -240,43 +201,30 @@ class Trade7(base_types._BaseFieldType):
 		self._TradId = None
 
 	@property
-	def TradgMtd(self):
-		return self._TradgMtd
+	def TxTm(self):
+		return self._TxTm
 
-	@TradgMtd.setter
-	def TradgMtd(self, value):
-		self._TradgMtd = value if type(value) != auto else self.make_default("TradgMtd")
+	@TxTm.setter
+	def TxTm(self, value):
+		self._TxTm = value if type(value) != auto else self.make_default("TxTm")
 
-	@TradgMtd.deleter
-	def TradgMtd(self):
-		del self._TradgMtd
-		self._TradgMtd = None
-
-	@property
-	def DtAndTm(self):
-		return self._DtAndTm
-
-	@DtAndTm.setter
-	def DtAndTm(self, value):
-		self._DtAndTm = value if type(value) != auto else self.make_default("DtAndTm")
-
-	@DtAndTm.deleter
-	def DtAndTm(self):
-		del self._DtAndTm
-		self._DtAndTm = None
+	@TxTm.deleter
+	def TxTm(self):
+		del self._TxTm
+		self._TxTm = None
 
 	@property
-	def PlcOfConf(self):
-		return self._PlcOfConf
+	def BaseCcyOrAmt(self):
+		return self._BaseCcyOrAmt
 
-	@PlcOfConf.setter
-	def PlcOfConf(self, value):
-		self._PlcOfConf = value if type(value) != auto else self.make_default("PlcOfConf")
+	@BaseCcyOrAmt.setter
+	def BaseCcyOrAmt(self, value):
+		self._BaseCcyOrAmt = value if type(value) != auto else self.make_default("BaseCcyOrAmt")
 
-	@PlcOfConf.deleter
-	def PlcOfConf(self):
-		del self._PlcOfConf
-		self._PlcOfConf = None
+	@BaseCcyOrAmt.deleter
+	def BaseCcyOrAmt(self):
+		del self._BaseCcyOrAmt
+		self._BaseCcyOrAmt = None
 
 	@property
 	def TradgCcy(self):
@@ -292,40 +240,92 @@ class Trade7(base_types._BaseFieldType):
 		self._TradgCcy = None
 
 	@property
-	def Optn(self):
-		return self._Optn
+	def DtConfd(self):
+		return self._DtConfd
 
-	@Optn.setter
-	def Optn(self, value):
-		self._Optn = value if type(value) != auto else self.make_default("Optn")
+	@DtConfd.setter
+	def DtConfd(self, value):
+		self._DtConfd = value if type(value) != auto else self.make_default("DtConfd")
 
-	@Optn.deleter
-	def Optn(self):
-		del self._Optn
-		self._Optn = None
+	@DtConfd.deleter
+	def DtConfd(self):
+		del self._DtConfd
+		self._DtConfd = None
+
+	@property
+	def Symb(self):
+		return self._Symb
+
+	@Symb.setter
+	def Symb(self, value):
+		self._Symb = value if type(value) != auto else self.make_default("Symb")
+
+	@Symb.deleter
+	def Symb(self):
+		del self._Symb
+		self._Symb = None
+
+	@property
+	def DtAndTm(self):
+		return self._DtAndTm
+
+	@DtAndTm.setter
+	def DtAndTm(self, value):
+		self._DtAndTm = value if type(value) != auto else self.make_default("DtAndTm")
+
+	@DtAndTm.deleter
+	def DtAndTm(self):
+		del self._DtAndTm
+		self._DtAndTm = None
+
+	@property
+	def FXTradPdct(self):
+		return self._FXTradPdct
+
+	@FXTradPdct.setter
+	def FXTradPdct(self, value):
+		self._FXTradPdct = value if type(value) != auto else self.make_default("FXTradPdct")
+
+	@FXTradPdct.deleter
+	def FXTradPdct(self):
+		del self._FXTradPdct
+		self._FXTradPdct = None
+
+	@property
+	def ClrMtd(self):
+		return self._ClrMtd
+
+	@ClrMtd.setter
+	def ClrMtd(self, value):
+		self._ClrMtd = value if type(value) != auto else self.make_default("ClrMtd")
+
+	@ClrMtd.deleter
+	def ClrMtd(self):
+		del self._ClrMtd
+		self._ClrMtd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FXTradPdct', type=UnderlyingProductIdentifier1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtConfd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgMd', type=TradingModeType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealTcktId', type=Max30Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BaseCcyOrAmt', type=AmountAndCurrency2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrMtd', type=ClearingMethod1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FXDtls', type=Trade10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmbntnDealTcktId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SwpLeg', type=InstrumentLeg7, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SttlmCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrgtCcyOrAmt', type=AmountAndCurrency2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Symb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExctnTp', type=OrderStatus8Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctId', type=SecurityIdentification38Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ContraCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmbntnDealTcktId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgMtd', type=TradingMethodType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtAndTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SwpLeg', type=InstrumentLeg7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TradgMd', type=TradingModeType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ContraCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlcOfConf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrgtCcyOrAmt', type=AmountAndCurrency2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Optn', type=Option16, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealTcktId', type=Max30Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXDtls', type=Trade10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctId', type=SecurityIdentification38Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BaseCcyOrAmt', type=AmountAndCurrency2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtConfd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Symb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtAndTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXTradPdct', type=UnderlyingProductIdentifier1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrMtd', type=ClearingMethod1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

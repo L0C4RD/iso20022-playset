@@ -1,24 +1,24 @@
 from . import base_types
-import GenericIdentification47
-import RestrictedFINXMax70Text
-import RestrictedFINXMax140Text
-import RestrictedFINXMax16Text
+from .RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from .GenericIdentification47 import GenericIdentification47
+from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from .RestrictedFINXMax70Text import RestrictedFINXMax70Text
 
 class BlockChainAddressWallet8(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Tp", "_Dsgnt", "_Id"]
+	__slots__ = ["_Dsgnt", "_Tp", "_Nm", "_Id"]
 	@property
-	def Nm(self):
-		return self._Nm
+	def Dsgnt(self):
+		return self._Dsgnt
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@Dsgnt.setter
+	def Dsgnt(self, value):
+		self._Dsgnt = value if type(value) != auto else self.make_default("Dsgnt")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@Dsgnt.deleter
+	def Dsgnt(self):
+		del self._Dsgnt
+		self._Dsgnt = None
 
 	@property
 	def Tp(self):
@@ -34,17 +34,17 @@ class BlockChainAddressWallet8(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Dsgnt(self):
-		return self._Dsgnt
+	def Nm(self):
+		return self._Nm
 
-	@Dsgnt.setter
-	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != auto else self.make_default("Dsgnt")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@Dsgnt.deleter
-	def Dsgnt(self):
-		del self._Dsgnt
-		self._Dsgnt = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def Id(self):
@@ -60,9 +60,9 @@ class BlockChainAddressWallet8(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=RestrictedFINXMax70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=GenericIdentification47, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsgnt', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=GenericIdentification47, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=RestrictedFINXMax70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=RestrictedFINXMax140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

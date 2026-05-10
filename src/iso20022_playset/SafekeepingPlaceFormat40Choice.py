@@ -1,12 +1,12 @@
 from . import base_types
-import SafekeepingPlaceTypeAndText6
-import CountryCode
-import SafekeepingPlaceTypeAndAnyBICIdentifier3
-import GenericIdentification78
+from .CountryCode import CountryCode
+from .SafekeepingPlaceTypeAndAnyBICIdentifier3 import SafekeepingPlaceTypeAndAnyBICIdentifier3
+from .GenericIdentification78 import GenericIdentification78
+from .SafekeepingPlaceTypeAndText6 import SafekeepingPlaceTypeAndText6
 
 class SafekeepingPlaceFormat40Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TpAndId", "_Id", "_Prtry", "_Ctry"]
+	__slots__ = ["_TpAndId", "_Prtry", "_Ctry", "_Id"]
 	@property
 	def TpAndId(self):
 		return self._TpAndId
@@ -19,19 +19,6 @@ class SafekeepingPlaceFormat40Choice(base_types._BaseFieldType):
 	def TpAndId(self):
 		del self._TpAndId
 		self._TpAndId = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
 
 	@property
 	def Prtry(self):
@@ -59,10 +46,23 @@ class SafekeepingPlaceFormat40Choice(base_types._BaseFieldType):
 		del self._Ctry
 		self._Ctry = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TpAndId', type=SafekeepingPlaceTypeAndAnyBICIdentifier3, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Id', type=SafekeepingPlaceTypeAndText6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification78, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Id', type=SafekeepingPlaceTypeAndText6, min=0, max=1, mutex_group=1, array=False),
 	))
 

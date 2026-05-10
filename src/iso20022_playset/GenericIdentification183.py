@@ -1,12 +1,12 @@
 from . import base_types
-import PartyType17Code
-import PartyType18Code
-import ISOMax3ACountryCode
-import Max35Text
+from .Max35Text import Max35Text
+from .ISOMax3ACountryCode import ISOMax3ACountryCode
+from .PartyType17Code import PartyType17Code
+from .PartyType18Code import PartyType18Code
 
 class GenericIdentification183(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTp", "_Id", "_Ctry", "_ShrtNm", "_Tp", "_Assgnr"]
+	__slots__ = ["_OthrTp", "_Id", "_Tp", "_Assgnr", "_ShrtNm", "_Ctry"]
 	@property
 	def OthrTp(self):
 		return self._OthrTp
@@ -34,32 +34,6 @@ class GenericIdentification183(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
-	@property
-	def ShrtNm(self):
-		return self._ShrtNm
-
-	@ShrtNm.setter
-	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
-
-	@ShrtNm.deleter
-	def ShrtNm(self):
-		del self._ShrtNm
-		self._ShrtNm = None
-
-	@property
 	def Tp(self):
 		return self._Tp
 
@@ -85,12 +59,38 @@ class GenericIdentification183(base_types._BaseFieldType):
 		del self._Assgnr
 		self._Assgnr = None
 
+	@property
+	def ShrtNm(self):
+		return self._ShrtNm
+
+	@ShrtNm.setter
+	def ShrtNm(self, value):
+		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
+
+	@ShrtNm.deleter
+	def ShrtNm(self):
+		del self._ShrtNm
+		self._ShrtNm = None
+
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PartyType17Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgnr', type=PartyType18Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

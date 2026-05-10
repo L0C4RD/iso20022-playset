@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import ChargeType12Code
+from .GenericIdentification47 import GenericIdentification47
+from .ChargeType12Code import ChargeType12Code
 
 class ChargeType4Choice(base_types._BaseFieldType):
 

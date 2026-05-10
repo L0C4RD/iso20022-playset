@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import FinancingStatusReason1Code
+from .Max35Text import Max35Text
+from .FinancingStatusReason1Code import FinancingStatusReason1Code
 
 class StatusReason4Choice(base_types._BaseFieldType):
 

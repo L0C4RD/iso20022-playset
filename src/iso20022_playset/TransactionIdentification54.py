@@ -1,62 +1,23 @@
 from . import base_types
-import ISODate
-import Exact12Text
-import Max140Text
-import ISOTime
-import ISODateTime
-import Max1000Text
-import Max70Text
-import Max99Text
-import Max35Text
-import Exact15Text
-import Max12NumericText
-import PurchaseIdentifierType2Code
-import LifeCycleSupport1Code
-import Max23NumericText
-import Exact2NumericText
+from .Max35Text import Max35Text
+from .ISOTime import ISOTime
+from .Max12NumericText import Max12NumericText
+from .Max23NumericText import Max23NumericText
+from .ISODate import ISODate
+from .PurchaseIdentifierType2Code import PurchaseIdentifierType2Code
+from .Exact2NumericText import Exact2NumericText
+from .LifeCycleSupport1Code import LifeCycleSupport1Code
+from .Exact12Text import Exact12Text
+from .Max140Text import Max140Text
+from .Max70Text import Max70Text
+from .Exact15Text import Exact15Text
+from .Max99Text import Max99Text
+from .Max1000Text import Max1000Text
+from .ISODateTime import ISODateTime
 
 class TransactionIdentification54(base_types._BaseFieldType):
 
-	__slots__ = ["_LifeCyclSpprt", "_LclDt", "_PresntmntSeqCnt", "_PurchsIdr", "_SysTracAudtNb", "_OthrPurchsIdrTp", "_RtrvlRefNb", "_PresntmntSeqNb", "_IssrRefData", "_PurchsIdrTp", "_AuthntcnTkn", "_AcqrrRefData", "_AuthstnSeqNb", "_AcqrrRefNb", "_LifeCyclId", "_LclTm", "_LifeCyclIdMssng", "_TrnsmssnDtTm", "_TmZone"]
-	@property
-	def LifeCyclSpprt(self):
-		return self._LifeCyclSpprt
-
-	@LifeCyclSpprt.setter
-	def LifeCyclSpprt(self, value):
-		self._LifeCyclSpprt = value if type(value) != auto else self.make_default("LifeCyclSpprt")
-
-	@LifeCyclSpprt.deleter
-	def LifeCyclSpprt(self):
-		del self._LifeCyclSpprt
-		self._LifeCyclSpprt = None
-
-	@property
-	def LclDt(self):
-		return self._LclDt
-
-	@LclDt.setter
-	def LclDt(self, value):
-		self._LclDt = value if type(value) != auto else self.make_default("LclDt")
-
-	@LclDt.deleter
-	def LclDt(self):
-		del self._LclDt
-		self._LclDt = None
-
-	@property
-	def PresntmntSeqCnt(self):
-		return self._PresntmntSeqCnt
-
-	@PresntmntSeqCnt.setter
-	def PresntmntSeqCnt(self, value):
-		self._PresntmntSeqCnt = value if type(value) != auto else self.make_default("PresntmntSeqCnt")
-
-	@PresntmntSeqCnt.deleter
-	def PresntmntSeqCnt(self):
-		del self._PresntmntSeqCnt
-		self._PresntmntSeqCnt = None
-
+	__slots__ = ["_PurchsIdr", "_IssrRefData", "_RtrvlRefNb", "_AuthstnSeqNb", "_AcqrrRefData", "_AcqrrRefNb", "_PresntmntSeqCnt", "_LclDt", "_LifeCyclId", "_SysTracAudtNb", "_TmZone", "_AuthntcnTkn", "_OthrPurchsIdrTp", "_PresntmntSeqNb", "_PurchsIdrTp", "_LclTm", "_LifeCyclIdMssng", "_TrnsmssnDtTm", "_LifeCyclSpprt"]
 	@property
 	def PurchsIdr(self):
 		return self._PurchsIdr
@@ -69,58 +30,6 @@ class TransactionIdentification54(base_types._BaseFieldType):
 	def PurchsIdr(self):
 		del self._PurchsIdr
 		self._PurchsIdr = None
-
-	@property
-	def SysTracAudtNb(self):
-		return self._SysTracAudtNb
-
-	@SysTracAudtNb.setter
-	def SysTracAudtNb(self, value):
-		self._SysTracAudtNb = value if type(value) != auto else self.make_default("SysTracAudtNb")
-
-	@SysTracAudtNb.deleter
-	def SysTracAudtNb(self):
-		del self._SysTracAudtNb
-		self._SysTracAudtNb = None
-
-	@property
-	def OthrPurchsIdrTp(self):
-		return self._OthrPurchsIdrTp
-
-	@OthrPurchsIdrTp.setter
-	def OthrPurchsIdrTp(self, value):
-		self._OthrPurchsIdrTp = value if type(value) != auto else self.make_default("OthrPurchsIdrTp")
-
-	@OthrPurchsIdrTp.deleter
-	def OthrPurchsIdrTp(self):
-		del self._OthrPurchsIdrTp
-		self._OthrPurchsIdrTp = None
-
-	@property
-	def RtrvlRefNb(self):
-		return self._RtrvlRefNb
-
-	@RtrvlRefNb.setter
-	def RtrvlRefNb(self, value):
-		self._RtrvlRefNb = value if type(value) != auto else self.make_default("RtrvlRefNb")
-
-	@RtrvlRefNb.deleter
-	def RtrvlRefNb(self):
-		del self._RtrvlRefNb
-		self._RtrvlRefNb = None
-
-	@property
-	def PresntmntSeqNb(self):
-		return self._PresntmntSeqNb
-
-	@PresntmntSeqNb.setter
-	def PresntmntSeqNb(self, value):
-		self._PresntmntSeqNb = value if type(value) != auto else self.make_default("PresntmntSeqNb")
-
-	@PresntmntSeqNb.deleter
-	def PresntmntSeqNb(self):
-		del self._PresntmntSeqNb
-		self._PresntmntSeqNb = None
 
 	@property
 	def IssrRefData(self):
@@ -136,43 +45,17 @@ class TransactionIdentification54(base_types._BaseFieldType):
 		self._IssrRefData = None
 
 	@property
-	def PurchsIdrTp(self):
-		return self._PurchsIdrTp
+	def RtrvlRefNb(self):
+		return self._RtrvlRefNb
 
-	@PurchsIdrTp.setter
-	def PurchsIdrTp(self, value):
-		self._PurchsIdrTp = value if type(value) != auto else self.make_default("PurchsIdrTp")
+	@RtrvlRefNb.setter
+	def RtrvlRefNb(self, value):
+		self._RtrvlRefNb = value if type(value) != auto else self.make_default("RtrvlRefNb")
 
-	@PurchsIdrTp.deleter
-	def PurchsIdrTp(self):
-		del self._PurchsIdrTp
-		self._PurchsIdrTp = None
-
-	@property
-	def AuthntcnTkn(self):
-		return self._AuthntcnTkn
-
-	@AuthntcnTkn.setter
-	def AuthntcnTkn(self, value):
-		self._AuthntcnTkn = value if type(value) != auto else self.make_default("AuthntcnTkn")
-
-	@AuthntcnTkn.deleter
-	def AuthntcnTkn(self):
-		del self._AuthntcnTkn
-		self._AuthntcnTkn = None
-
-	@property
-	def AcqrrRefData(self):
-		return self._AcqrrRefData
-
-	@AcqrrRefData.setter
-	def AcqrrRefData(self, value):
-		self._AcqrrRefData = value if type(value) != auto else self.make_default("AcqrrRefData")
-
-	@AcqrrRefData.deleter
-	def AcqrrRefData(self):
-		del self._AcqrrRefData
-		self._AcqrrRefData = None
+	@RtrvlRefNb.deleter
+	def RtrvlRefNb(self):
+		del self._RtrvlRefNb
+		self._RtrvlRefNb = None
 
 	@property
 	def AuthstnSeqNb(self):
@@ -188,6 +71,19 @@ class TransactionIdentification54(base_types._BaseFieldType):
 		self._AuthstnSeqNb = None
 
 	@property
+	def AcqrrRefData(self):
+		return self._AcqrrRefData
+
+	@AcqrrRefData.setter
+	def AcqrrRefData(self, value):
+		self._AcqrrRefData = value if type(value) != auto else self.make_default("AcqrrRefData")
+
+	@AcqrrRefData.deleter
+	def AcqrrRefData(self):
+		del self._AcqrrRefData
+		self._AcqrrRefData = None
+
+	@property
 	def AcqrrRefNb(self):
 		return self._AcqrrRefNb
 
@@ -201,6 +97,32 @@ class TransactionIdentification54(base_types._BaseFieldType):
 		self._AcqrrRefNb = None
 
 	@property
+	def PresntmntSeqCnt(self):
+		return self._PresntmntSeqCnt
+
+	@PresntmntSeqCnt.setter
+	def PresntmntSeqCnt(self, value):
+		self._PresntmntSeqCnt = value if type(value) != auto else self.make_default("PresntmntSeqCnt")
+
+	@PresntmntSeqCnt.deleter
+	def PresntmntSeqCnt(self):
+		del self._PresntmntSeqCnt
+		self._PresntmntSeqCnt = None
+
+	@property
+	def LclDt(self):
+		return self._LclDt
+
+	@LclDt.setter
+	def LclDt(self, value):
+		self._LclDt = value if type(value) != auto else self.make_default("LclDt")
+
+	@LclDt.deleter
+	def LclDt(self):
+		del self._LclDt
+		self._LclDt = None
+
+	@property
 	def LifeCyclId(self):
 		return self._LifeCyclId
 
@@ -212,6 +134,84 @@ class TransactionIdentification54(base_types._BaseFieldType):
 	def LifeCyclId(self):
 		del self._LifeCyclId
 		self._LifeCyclId = None
+
+	@property
+	def SysTracAudtNb(self):
+		return self._SysTracAudtNb
+
+	@SysTracAudtNb.setter
+	def SysTracAudtNb(self, value):
+		self._SysTracAudtNb = value if type(value) != auto else self.make_default("SysTracAudtNb")
+
+	@SysTracAudtNb.deleter
+	def SysTracAudtNb(self):
+		del self._SysTracAudtNb
+		self._SysTracAudtNb = None
+
+	@property
+	def TmZone(self):
+		return self._TmZone
+
+	@TmZone.setter
+	def TmZone(self, value):
+		self._TmZone = value if type(value) != auto else self.make_default("TmZone")
+
+	@TmZone.deleter
+	def TmZone(self):
+		del self._TmZone
+		self._TmZone = None
+
+	@property
+	def AuthntcnTkn(self):
+		return self._AuthntcnTkn
+
+	@AuthntcnTkn.setter
+	def AuthntcnTkn(self, value):
+		self._AuthntcnTkn = value if type(value) != auto else self.make_default("AuthntcnTkn")
+
+	@AuthntcnTkn.deleter
+	def AuthntcnTkn(self):
+		del self._AuthntcnTkn
+		self._AuthntcnTkn = None
+
+	@property
+	def OthrPurchsIdrTp(self):
+		return self._OthrPurchsIdrTp
+
+	@OthrPurchsIdrTp.setter
+	def OthrPurchsIdrTp(self, value):
+		self._OthrPurchsIdrTp = value if type(value) != auto else self.make_default("OthrPurchsIdrTp")
+
+	@OthrPurchsIdrTp.deleter
+	def OthrPurchsIdrTp(self):
+		del self._OthrPurchsIdrTp
+		self._OthrPurchsIdrTp = None
+
+	@property
+	def PresntmntSeqNb(self):
+		return self._PresntmntSeqNb
+
+	@PresntmntSeqNb.setter
+	def PresntmntSeqNb(self, value):
+		self._PresntmntSeqNb = value if type(value) != auto else self.make_default("PresntmntSeqNb")
+
+	@PresntmntSeqNb.deleter
+	def PresntmntSeqNb(self):
+		del self._PresntmntSeqNb
+		self._PresntmntSeqNb = None
+
+	@property
+	def PurchsIdrTp(self):
+		return self._PurchsIdrTp
+
+	@PurchsIdrTp.setter
+	def PurchsIdrTp(self, value):
+		self._PurchsIdrTp = value if type(value) != auto else self.make_default("PurchsIdrTp")
+
+	@PurchsIdrTp.deleter
+	def PurchsIdrTp(self):
+		del self._PurchsIdrTp
+		self._PurchsIdrTp = None
 
 	@property
 	def LclTm(self):
@@ -253,37 +253,37 @@ class TransactionIdentification54(base_types._BaseFieldType):
 		self._TrnsmssnDtTm = None
 
 	@property
-	def TmZone(self):
-		return self._TmZone
+	def LifeCyclSpprt(self):
+		return self._LifeCyclSpprt
 
-	@TmZone.setter
-	def TmZone(self, value):
-		self._TmZone = value if type(value) != auto else self.make_default("TmZone")
+	@LifeCyclSpprt.setter
+	def LifeCyclSpprt(self, value):
+		self._LifeCyclSpprt = value if type(value) != auto else self.make_default("LifeCyclSpprt")
 
-	@TmZone.deleter
-	def TmZone(self):
-		del self._TmZone
-		self._TmZone = None
+	@LifeCyclSpprt.deleter
+	def LifeCyclSpprt(self):
+		del self._LifeCyclSpprt
+		self._LifeCyclSpprt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LifeCyclSpprt', type=LifeCycleSupport1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LclDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PresntmntSeqCnt', type=Exact2NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PurchsIdr', type=Max99Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysTracAudtNb', type=Max12NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrPurchsIdrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PresntmntSeqNb', type=Exact2NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrRefData', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PurchsIdrTp', type=PurchaseIdentifierType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthntcnTkn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcqrrRefData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthstnSeqNb', type=Exact2NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcqrrRefData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcqrrRefNb', type=Max23NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PresntmntSeqCnt', type=Exact2NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LclDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysTracAudtNb', type=Max12NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TmZone', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthntcnTkn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrPurchsIdrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PresntmntSeqNb', type=Exact2NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PurchsIdrTp', type=PurchaseIdentifierType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LclTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LifeCyclIdMssng', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrnsmssnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TmZone', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LifeCyclSpprt', type=LifeCycleSupport1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

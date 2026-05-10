@@ -1,9 +1,9 @@
 from . import base_types
-import PartyIdentificationAndAccount222
+from .PartyIdentificationAndAccount222 import PartyIdentificationAndAccount222
 
 class DeliveringPartiesAndAccount20(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvrrsIntrmy1Dtls", "_DlvrgAgtDtls", "_DlvrrsCtdnDtls", "_DlvrrsIntrmy2Dtls"]
+	__slots__ = ["_DlvrrsIntrmy1Dtls", "_DlvrgAgtDtls", "_DlvrrsIntrmy2Dtls", "_DlvrrsCtdnDtls"]
 	@property
 	def DlvrrsIntrmy1Dtls(self):
 		return self._DlvrrsIntrmy1Dtls
@@ -31,19 +31,6 @@ class DeliveringPartiesAndAccount20(base_types._BaseFieldType):
 		self._DlvrgAgtDtls = None
 
 	@property
-	def DlvrrsCtdnDtls(self):
-		return self._DlvrrsCtdnDtls
-
-	@DlvrrsCtdnDtls.setter
-	def DlvrrsCtdnDtls(self, value):
-		self._DlvrrsCtdnDtls = value if type(value) != auto else self.make_default("DlvrrsCtdnDtls")
-
-	@DlvrrsCtdnDtls.deleter
-	def DlvrrsCtdnDtls(self):
-		del self._DlvrrsCtdnDtls
-		self._DlvrrsCtdnDtls = None
-
-	@property
 	def DlvrrsIntrmy2Dtls(self):
 		return self._DlvrrsIntrmy2Dtls
 
@@ -56,10 +43,23 @@ class DeliveringPartiesAndAccount20(base_types._BaseFieldType):
 		del self._DlvrrsIntrmy2Dtls
 		self._DlvrrsIntrmy2Dtls = None
 
+	@property
+	def DlvrrsCtdnDtls(self):
+		return self._DlvrrsCtdnDtls
+
+	@DlvrrsCtdnDtls.setter
+	def DlvrrsCtdnDtls(self, value):
+		self._DlvrrsCtdnDtls = value if type(value) != auto else self.make_default("DlvrrsCtdnDtls")
+
+	@DlvrrsCtdnDtls.deleter
+	def DlvrrsCtdnDtls(self):
+		del self._DlvrrsCtdnDtls
+		self._DlvrrsCtdnDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlvrrsIntrmy1Dtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvrgAgtDtls', type=PartyIdentificationAndAccount222, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvrrsCtdnDtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvrrsIntrmy2Dtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrrsCtdnDtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
 	))
 

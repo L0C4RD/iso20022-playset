@@ -1,12 +1,25 @@
 from . import base_types
-import StatusReportRecord3
-import SupplementaryData1
-import Max140Text
-import StatusAdviceReport3
+from .StatusReportRecord3 import StatusReportRecord3
+from .Max140Text import Max140Text
+from .SupplementaryData1 import SupplementaryData1
+from .StatusAdviceReport3 import StatusAdviceReport3
 
 class MessageReportHeader4(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgRptIdr", "_RcrdSts", "_MsgSts"]
+	__slots__ = ["_MsgSts", "_SplmtryData", "_MsgRptIdr", "_RcrdSts"]
+	@property
+	def MsgSts(self):
+		return self._MsgSts
+
+	@MsgSts.setter
+	def MsgSts(self, value):
+		self._MsgSts = value if type(value) != auto else self.make_default("MsgSts")
+
+	@MsgSts.deleter
+	def MsgSts(self):
+		del self._MsgSts
+		self._MsgSts = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -46,23 +59,10 @@ class MessageReportHeader4(base_types._BaseFieldType):
 		del self._RcrdSts
 		self._RcrdSts = None
 
-	@property
-	def MsgSts(self):
-		return self._MsgSts
-
-	@MsgSts.setter
-	def MsgSts(self, value):
-		self._MsgSts = value if type(value) != auto else self.make_default("MsgSts")
-
-	@MsgSts.deleter
-	def MsgSts(self):
-		del self._MsgSts
-		self._MsgSts = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MsgSts', type=StatusAdviceReport3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgRptIdr', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcrdSts', type=StatusReportRecord3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgSts', type=StatusAdviceReport3, min=0, max=1, mutex_group=None, array=False),
 	))
 

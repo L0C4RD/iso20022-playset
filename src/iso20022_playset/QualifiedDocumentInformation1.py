@@ -1,30 +1,30 @@
 from . import base_types
-import ISODate
-import xs:ID
-import YesNoIndicator
-import Max6Text
-import AlgorithmAndDigest1
-import ExternalDocumentType1Code
-import Max35Text
-import xs:IDREF
-import Max2048Text
-import BinaryFile1
+from .Max35Text import Max35Text
+from .ExternalDocumentType1Code import ExternalDocumentType1Code
+from .YesNoIndicator import YesNoIndicator
+from .BinaryFile1 import BinaryFile1
+from .ISODate import ISODate
+from .Max6Text import Max6Text
+from .xs:ID import xs:ID
+from .Max2048Text import Max2048Text
+from .xs:IDREF import xs:IDREF
+from .AlgorithmAndDigest1 import AlgorithmAndDigest1
 
 class QualifiedDocumentInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_AttchdFile", "_Issr", "_Dt", "_DocTp", "_URL", "_ElctrncOrgnl", "_Id", "_ItmIdr", "_Dgst", "_Vrsn", "_ItmListIdr"]
+	__slots__ = ["_ItmIdr", "_Issr", "_Dgst", "_Id", "_ElctrncOrgnl", "_AttchdFile", "_Dt", "_DocTp", "_URL", "_Vrsn", "_ItmListIdr"]
 	@property
-	def AttchdFile(self):
-		return self._AttchdFile
+	def ItmIdr(self):
+		return self._ItmIdr
 
-	@AttchdFile.setter
-	def AttchdFile(self, value):
-		self._AttchdFile = value if type(value) != auto else self.make_default("AttchdFile")
+	@ItmIdr.setter
+	def ItmIdr(self, value):
+		self._ItmIdr = value if type(value) != auto else self.make_default("ItmIdr")
 
-	@AttchdFile.deleter
-	def AttchdFile(self):
-		del self._AttchdFile
-		self._AttchdFile = None
+	@ItmIdr.deleter
+	def ItmIdr(self):
+		del self._ItmIdr
+		self._ItmIdr = None
 
 	@property
 	def Issr(self):
@@ -38,6 +38,58 @@ class QualifiedDocumentInformation1(base_types._BaseFieldType):
 	def Issr(self):
 		del self._Issr
 		self._Issr = None
+
+	@property
+	def Dgst(self):
+		return self._Dgst
+
+	@Dgst.setter
+	def Dgst(self, value):
+		self._Dgst = value if type(value) != auto else self.make_default("Dgst")
+
+	@Dgst.deleter
+	def Dgst(self):
+		del self._Dgst
+		self._Dgst = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def ElctrncOrgnl(self):
+		return self._ElctrncOrgnl
+
+	@ElctrncOrgnl.setter
+	def ElctrncOrgnl(self, value):
+		self._ElctrncOrgnl = value if type(value) != auto else self.make_default("ElctrncOrgnl")
+
+	@ElctrncOrgnl.deleter
+	def ElctrncOrgnl(self):
+		del self._ElctrncOrgnl
+		self._ElctrncOrgnl = None
+
+	@property
+	def AttchdFile(self):
+		return self._AttchdFile
+
+	@AttchdFile.setter
+	def AttchdFile(self, value):
+		self._AttchdFile = value if type(value) != auto else self.make_default("AttchdFile")
+
+	@AttchdFile.deleter
+	def AttchdFile(self):
+		del self._AttchdFile
+		self._AttchdFile = None
 
 	@property
 	def Dt(self):
@@ -79,58 +131,6 @@ class QualifiedDocumentInformation1(base_types._BaseFieldType):
 		self._URL = None
 
 	@property
-	def ElctrncOrgnl(self):
-		return self._ElctrncOrgnl
-
-	@ElctrncOrgnl.setter
-	def ElctrncOrgnl(self, value):
-		self._ElctrncOrgnl = value if type(value) != auto else self.make_default("ElctrncOrgnl")
-
-	@ElctrncOrgnl.deleter
-	def ElctrncOrgnl(self):
-		del self._ElctrncOrgnl
-		self._ElctrncOrgnl = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def ItmIdr(self):
-		return self._ItmIdr
-
-	@ItmIdr.setter
-	def ItmIdr(self, value):
-		self._ItmIdr = value if type(value) != auto else self.make_default("ItmIdr")
-
-	@ItmIdr.deleter
-	def ItmIdr(self):
-		del self._ItmIdr
-		self._ItmIdr = None
-
-	@property
-	def Dgst(self):
-		return self._Dgst
-
-	@Dgst.setter
-	def Dgst(self, value):
-		self._Dgst = value if type(value) != auto else self.make_default("Dgst")
-
-	@Dgst.deleter
-	def Dgst(self):
-		del self._Dgst
-		self._Dgst = None
-
-	@property
 	def Vrsn(self):
 		return self._Vrsn
 
@@ -157,15 +157,15 @@ class QualifiedDocumentInformation1(base_types._BaseFieldType):
 		self._ItmListIdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AttchdFile', type=BinaryFile1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ItmIdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dgst', type=AlgorithmAndDigest1, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Id', type=XS_ID, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElctrncOrgnl', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AttchdFile', type=BinaryFile1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocTp', type=ExternalDocumentType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URL', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ElctrncOrgnl', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=XS_ID, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ItmIdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dgst', type=AlgorithmAndDigest1, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Vrsn', type=Max6Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ItmListIdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))

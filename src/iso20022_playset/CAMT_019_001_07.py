@@ -1,5 +1,5 @@
 from . import base_types
-import ReturnBusinessDayInformationV07
+from .ReturnBusinessDayInformationV07 import ReturnBusinessDayInformationV07
 
 class CAMT_019_001_07():
 

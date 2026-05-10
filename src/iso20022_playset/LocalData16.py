@@ -1,27 +1,27 @@
 from . import base_types
-import CardholderName2
-import ISOMax3ALanguageCode
-import Max512Text
-import LocalAddress1
-import AdditionalData1
-import AdditionalInformation22
-import Max35Text
+from .Max35Text import Max35Text
+from .AdditionalData1 import AdditionalData1
+from .LocalAddress1 import LocalAddress1
+from .Max512Text import Max512Text
+from .ISOMax3ALanguageCode import ISOMax3ALanguageCode
+from .CardholderName2 import CardholderName2
+from .AdditionalInformation22 import AdditionalInformation22
 
 class LocalData16(base_types._BaseFieldType):
 
-	__slots__ = ["_MlngAdrUstrd", "_NcodgFrmt", "_MldFrPstlCd", "_AddtlInf", "_CrdhldrNm", "_Lang", "_AddtlData", "_MlngAdr"]
+	__slots__ = ["_Lang", "_NcodgFrmt", "_MldFrPstlCd", "_MlngAdrUstrd", "_CrdhldrNm", "_AddtlData", "_MlngAdr", "_AddtlInf"]
 	@property
-	def MlngAdrUstrd(self):
-		return self._MlngAdrUstrd
+	def Lang(self):
+		return self._Lang
 
-	@MlngAdrUstrd.setter
-	def MlngAdrUstrd(self, value):
-		self._MlngAdrUstrd = value if type(value) != auto else self.make_default("MlngAdrUstrd")
+	@Lang.setter
+	def Lang(self, value):
+		self._Lang = value if type(value) != auto else self.make_default("Lang")
 
-	@MlngAdrUstrd.deleter
-	def MlngAdrUstrd(self):
-		del self._MlngAdrUstrd
-		self._MlngAdrUstrd = None
+	@Lang.deleter
+	def Lang(self):
+		del self._Lang
+		self._Lang = None
 
 	@property
 	def NcodgFrmt(self):
@@ -50,17 +50,17 @@ class LocalData16(base_types._BaseFieldType):
 		self._MldFrPstlCd = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def MlngAdrUstrd(self):
+		return self._MlngAdrUstrd
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@MlngAdrUstrd.setter
+	def MlngAdrUstrd(self, value):
+		self._MlngAdrUstrd = value if type(value) != auto else self.make_default("MlngAdrUstrd")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@MlngAdrUstrd.deleter
+	def MlngAdrUstrd(self):
+		del self._MlngAdrUstrd
+		self._MlngAdrUstrd = None
 
 	@property
 	def CrdhldrNm(self):
@@ -74,19 +74,6 @@ class LocalData16(base_types._BaseFieldType):
 	def CrdhldrNm(self):
 		del self._CrdhldrNm
 		self._CrdhldrNm = None
-
-	@property
-	def Lang(self):
-		return self._Lang
-
-	@Lang.setter
-	def Lang(self, value):
-		self._Lang = value if type(value) != auto else self.make_default("Lang")
-
-	@Lang.deleter
-	def Lang(self):
-		del self._Lang
-		self._Lang = None
 
 	@property
 	def AddtlData(self):
@@ -114,14 +101,27 @@ class LocalData16(base_types._BaseFieldType):
 		del self._MlngAdr
 		self._MlngAdr = None
 
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MlngAdrUstrd', type=Max512Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcodgFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MldFrPstlCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation22, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MlngAdrUstrd', type=Max512Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrdhldrNm', type=CardholderName2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MlngAdr', type=LocalAddress1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation22, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-import ChequeCancellationOrStopRequestV02
+from .ChequeCancellationOrStopRequestV02 import ChequeCancellationOrStopRequestV02
 
 class CAMT_108_001_02():
 

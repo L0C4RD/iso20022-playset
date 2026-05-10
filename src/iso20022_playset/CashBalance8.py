@@ -1,26 +1,26 @@
 from . import base_types
-import BalanceType13
-import DateAndDateTime2Choice
-import CreditDebitCode
-import CashAvailability1
-import CreditLine3
-import ActiveOrHistoricCurrencyAndAmount
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .CashAvailability1 import CashAvailability1
+from .CreditDebitCode import CreditDebitCode
+from .BalanceType13 import BalanceType13
+from .CreditLine3 import CreditLine3
 
 class CashBalance8(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Dt", "_Avlbty", "_CdtDbtInd", "_Amt", "_CdtLine"]
+	__slots__ = ["_Amt", "_Dt", "_Avlbty", "_Tp", "_CdtDbtInd", "_CdtLine"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def Amt(self):
+		return self._Amt
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Dt(self):
@@ -49,6 +49,19 @@ class CashBalance8(base_types._BaseFieldType):
 		self._Avlbty = None
 
 	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
 
@@ -60,19 +73,6 @@ class CashBalance8(base_types._BaseFieldType):
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
 		self._CdtDbtInd = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
 
 	@property
 	def CdtLine(self):
@@ -88,11 +88,11 @@ class CashBalance8(base_types._BaseFieldType):
 		self._CdtLine = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=BalanceType13, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Avlbty', type=CashAvailability1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Tp', type=BalanceType13, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtLine', type=CreditLine3, min=0, max=None, mutex_group=None, array=True),
 	))
 

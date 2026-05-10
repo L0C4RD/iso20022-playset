@@ -1,26 +1,13 @@
 from . import base_types
-import CryptographicKeyType3Code
-import Number
-import Min5Max16Binary
-import Max140Text
-import KeyUsage1Code
+from .Max140Text import Max140Text
+from .KeyUsage1Code import KeyUsage1Code
+from .Number import Number
+from .Min5Max16Binary import Min5Max16Binary
+from .CryptographicKeyType3Code import CryptographicKeyType3Code
 
 class KEKIdentifier5(base_types._BaseFieldType):
 
-	__slots__ = ["_SeqNb", "_Fctn", "_Tp", "_KeyVrsn", "_DerivtnId", "_KeyId"]
-	@property
-	def SeqNb(self):
-		return self._SeqNb
-
-	@SeqNb.setter
-	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
-
-	@SeqNb.deleter
-	def SeqNb(self):
-		del self._SeqNb
-		self._SeqNb = None
-
+	__slots__ = ["_Fctn", "_SeqNb", "_DerivtnId", "_KeyVrsn", "_Tp", "_KeyId"]
 	@property
 	def Fctn(self):
 		return self._Fctn
@@ -35,30 +22,17 @@ class KEKIdentifier5(base_types._BaseFieldType):
 		self._Fctn = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def SeqNb(self):
+		return self._SeqNb
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@SeqNb.setter
+	def SeqNb(self, value):
+		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def KeyVrsn(self):
-		return self._KeyVrsn
-
-	@KeyVrsn.setter
-	def KeyVrsn(self, value):
-		self._KeyVrsn = value if type(value) != auto else self.make_default("KeyVrsn")
-
-	@KeyVrsn.deleter
-	def KeyVrsn(self):
-		del self._KeyVrsn
-		self._KeyVrsn = None
+	@SeqNb.deleter
+	def SeqNb(self):
+		del self._SeqNb
+		self._SeqNb = None
 
 	@property
 	def DerivtnId(self):
@@ -74,6 +48,32 @@ class KEKIdentifier5(base_types._BaseFieldType):
 		self._DerivtnId = None
 
 	@property
+	def KeyVrsn(self):
+		return self._KeyVrsn
+
+	@KeyVrsn.setter
+	def KeyVrsn(self, value):
+		self._KeyVrsn = value if type(value) != auto else self.make_default("KeyVrsn")
+
+	@KeyVrsn.deleter
+	def KeyVrsn(self):
+		del self._KeyVrsn
+		self._KeyVrsn = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
 	def KeyId(self):
 		return self._KeyId
 
@@ -87,11 +87,11 @@ class KEKIdentifier5(base_types._BaseFieldType):
 		self._KeyId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fctn', type=KeyUsage1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Tp', type=CryptographicKeyType3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DerivtnId', type=Min5Max16Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CryptographicKeyType3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyId', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

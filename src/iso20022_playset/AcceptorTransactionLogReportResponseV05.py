@@ -1,7 +1,7 @@
 from . import base_types
-import ReportResponse8
-import ContentInformationType37
-import Header70
+from .Header70 import Header70
+from .ReportResponse8 import ReportResponse8
+from .ContentInformationType37 import ContentInformationType37
 
 class AcceptorTransactionLogReportResponseV05(base_types._BaseFieldType):
 

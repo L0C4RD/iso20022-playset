@@ -1,25 +1,38 @@
 from . import base_types
-import Amount2Choice
-import DateAndDateTime2Choice
-import CreditDebitCode
-import Max500Text
-import Max35Text
+from .Max35Text import Max35Text
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .CreditDebitCode import CreditDebitCode
+from .Amount2Choice import Amount2Choice
+from .Max500Text import Max500Text
 
 class LimitJournalEntry3(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlNtryInf", "_CdtDbtInd", "_TxId", "_AcctSvcrRef", "_PrcrTxId", "_Amt", "_MktInfrstrctrTxId", "_JrnlDt"]
+	__slots__ = ["_JrnlDt", "_PrcrTxId", "_CdtDbtInd", "_AddtlNtryInf", "_TxId", "_AcctSvcrRef", "_Amt", "_MktInfrstrctrTxId"]
 	@property
-	def AddtlNtryInf(self):
-		return self._AddtlNtryInf
+	def JrnlDt(self):
+		return self._JrnlDt
 
-	@AddtlNtryInf.setter
-	def AddtlNtryInf(self, value):
-		self._AddtlNtryInf = value if type(value) != auto else self.make_default("AddtlNtryInf")
+	@JrnlDt.setter
+	def JrnlDt(self, value):
+		self._JrnlDt = value if type(value) != auto else self.make_default("JrnlDt")
 
-	@AddtlNtryInf.deleter
-	def AddtlNtryInf(self):
-		del self._AddtlNtryInf
-		self._AddtlNtryInf = None
+	@JrnlDt.deleter
+	def JrnlDt(self):
+		del self._JrnlDt
+		self._JrnlDt = None
+
+	@property
+	def PrcrTxId(self):
+		return self._PrcrTxId
+
+	@PrcrTxId.setter
+	def PrcrTxId(self, value):
+		self._PrcrTxId = value if type(value) != auto else self.make_default("PrcrTxId")
+
+	@PrcrTxId.deleter
+	def PrcrTxId(self):
+		del self._PrcrTxId
+		self._PrcrTxId = None
 
 	@property
 	def CdtDbtInd(self):
@@ -33,6 +46,19 @@ class LimitJournalEntry3(base_types._BaseFieldType):
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
 		self._CdtDbtInd = None
+
+	@property
+	def AddtlNtryInf(self):
+		return self._AddtlNtryInf
+
+	@AddtlNtryInf.setter
+	def AddtlNtryInf(self, value):
+		self._AddtlNtryInf = value if type(value) != auto else self.make_default("AddtlNtryInf")
+
+	@AddtlNtryInf.deleter
+	def AddtlNtryInf(self):
+		del self._AddtlNtryInf
+		self._AddtlNtryInf = None
 
 	@property
 	def TxId(self):
@@ -61,19 +87,6 @@ class LimitJournalEntry3(base_types._BaseFieldType):
 		self._AcctSvcrRef = None
 
 	@property
-	def PrcrTxId(self):
-		return self._PrcrTxId
-
-	@PrcrTxId.setter
-	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != auto else self.make_default("PrcrTxId")
-
-	@PrcrTxId.deleter
-	def PrcrTxId(self):
-		del self._PrcrTxId
-		self._PrcrTxId = None
-
-	@property
 	def Amt(self):
 		return self._Amt
 
@@ -99,27 +112,14 @@ class LimitJournalEntry3(base_types._BaseFieldType):
 		del self._MktInfrstrctrTxId
 		self._MktInfrstrctrTxId = None
 
-	@property
-	def JrnlDt(self):
-		return self._JrnlDt
-
-	@JrnlDt.setter
-	def JrnlDt(self, value):
-		self._JrnlDt = value if type(value) != auto else self.make_default("JrnlDt")
-
-	@JrnlDt.deleter
-	def JrnlDt(self):
-		del self._JrnlDt
-		self._JrnlDt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlNtryInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='JrnlDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlNtryInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='JrnlDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

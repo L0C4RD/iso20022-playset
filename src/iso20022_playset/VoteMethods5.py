@@ -1,12 +1,12 @@
 from . import base_types
-import CommunicationAddress12
-import VoteThroughNetwork1Choice
-import Max35Text
-import MailAddress1
+from .Max35Text import Max35Text
+from .MailAddress1 import MailAddress1
+from .CommunicationAddress12 import CommunicationAddress12
+from .VoteThroughNetwork1Choice import VoteThroughNetwork1Choice
 
 class VoteMethods5(base_types._BaseFieldType):
 
-	__slots__ = ["_VoteByTel", "_VoteThrghNtwk", "_VoteByMail", "_ElctrncVote"]
+	__slots__ = ["_VoteByTel", "_VoteByMail", "_VoteThrghNtwk", "_ElctrncVote"]
 	@property
 	def VoteByTel(self):
 		return self._VoteByTel
@@ -21,19 +21,6 @@ class VoteMethods5(base_types._BaseFieldType):
 		self._VoteByTel = None
 
 	@property
-	def VoteThrghNtwk(self):
-		return self._VoteThrghNtwk
-
-	@VoteThrghNtwk.setter
-	def VoteThrghNtwk(self, value):
-		self._VoteThrghNtwk = value if type(value) != auto else self.make_default("VoteThrghNtwk")
-
-	@VoteThrghNtwk.deleter
-	def VoteThrghNtwk(self):
-		del self._VoteThrghNtwk
-		self._VoteThrghNtwk = None
-
-	@property
 	def VoteByMail(self):
 		return self._VoteByMail
 
@@ -45,6 +32,19 @@ class VoteMethods5(base_types._BaseFieldType):
 	def VoteByMail(self):
 		del self._VoteByMail
 		self._VoteByMail = None
+
+	@property
+	def VoteThrghNtwk(self):
+		return self._VoteThrghNtwk
+
+	@VoteThrghNtwk.setter
+	def VoteThrghNtwk(self, value):
+		self._VoteThrghNtwk = value if type(value) != auto else self.make_default("VoteThrghNtwk")
+
+	@VoteThrghNtwk.deleter
+	def VoteThrghNtwk(self):
+		del self._VoteThrghNtwk
+		self._VoteThrghNtwk = None
 
 	@property
 	def ElctrncVote(self):
@@ -61,8 +61,8 @@ class VoteMethods5(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='VoteByTel', type=Max35Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='VoteThrghNtwk', type=VoteThroughNetwork1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VoteByMail', type=MailAddress1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VoteThrghNtwk', type=VoteThroughNetwork1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElctrncVote', type=CommunicationAddress12, min=0, max=5, mutex_group=None, array=True),
 	))
 

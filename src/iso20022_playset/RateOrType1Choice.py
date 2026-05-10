@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification1
-import PercentageRate
+from .PercentageRate import PercentageRate
+from .GenericIdentification1 import GenericIdentification1
 
 class RateOrType1Choice(base_types._BaseFieldType):
 

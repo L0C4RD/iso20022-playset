@@ -1,26 +1,13 @@
 from . import base_types
-import ProcessingPosition10Choice
-import PairedOrTurnedQuantity6Choice
-import DocumentNumber6Choice
-import PartyIdentification136Choice
-import References78Choice
+from .PartyIdentification136Choice import PartyIdentification136Choice
+from .PairedOrTurnedQuantity6Choice import PairedOrTurnedQuantity6Choice
+from .DocumentNumber6Choice import DocumentNumber6Choice
+from .ProcessingPosition10Choice import ProcessingPosition10Choice
+from .References78Choice import References78Choice
 
 class Linkages68(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_RefOwnr", "_PrcgPos", "_LkdQty", "_MsgNb"]
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
+	__slots__ = ["_RefOwnr", "_MsgNb", "_Ref", "_PrcgPos", "_LkdQty"]
 	@property
 	def RefOwnr(self):
 		return self._RefOwnr
@@ -33,6 +20,32 @@ class Linkages68(base_types._BaseFieldType):
 	def RefOwnr(self):
 		del self._RefOwnr
 		self._RefOwnr = None
+
+	@property
+	def MsgNb(self):
+		return self._MsgNb
+
+	@MsgNb.setter
+	def MsgNb(self, value):
+		self._MsgNb = value if type(value) != auto else self.make_default("MsgNb")
+
+	@MsgNb.deleter
+	def MsgNb(self):
+		del self._MsgNb
+		self._MsgNb = None
+
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	@property
 	def PrcgPos(self):
@@ -60,24 +73,11 @@ class Linkages68(base_types._BaseFieldType):
 		del self._LkdQty
 		self._LkdQty = None
 
-	@property
-	def MsgNb(self):
-		return self._MsgNb
-
-	@MsgNb.setter
-	def MsgNb(self, value):
-		self._MsgNb = value if type(value) != auto else self.make_default("MsgNb")
-
-	@MsgNb.deleter
-	def MsgNb(self):
-		del self._MsgNb
-		self._MsgNb = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ref', type=References78Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgNb', type=DocumentNumber6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=References78Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition10Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LkdQty', type=PairedOrTurnedQuantity6Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgNb', type=DocumentNumber6Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

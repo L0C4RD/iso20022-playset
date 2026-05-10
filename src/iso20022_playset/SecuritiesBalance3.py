@@ -1,21 +1,34 @@
 from . import base_types
-import ActiveOrHistoricCurrencyCode
-import YesNoIndicator
-import BalanceQuantity13Choice
-import BlockChainAddressWallet3
-import ForeignExchangeTerms19
-import ValuationsDetails1
-import SecuritiesAccount19
-import SafeKeepingPlace3
-import PartyIdentification232
-import SecurityIdentification19
-import GenericIdentification178
-import SecuritiesSettlementStatus3Code
-import Rating2
+from .PartyIdentification232 import PartyIdentification232
+from .YesNoIndicator import YesNoIndicator
+from .Rating2 import Rating2
+from .BalanceQuantity13Choice import BalanceQuantity13Choice
+from .SecuritiesAccount19 import SecuritiesAccount19
+from .ForeignExchangeTerms19 import ForeignExchangeTerms19
+from .SecurityIdentification19 import SecurityIdentification19
+from .ValuationsDetails1 import ValuationsDetails1
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .BlockChainAddressWallet3 import BlockChainAddressWallet3
+from .SecuritiesSettlementStatus3Code import SecuritiesSettlementStatus3Code
+from .SafeKeepingPlace3 import SafeKeepingPlace3
+from .GenericIdentification178 import GenericIdentification178
 
 class SecuritiesBalance3(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgAcct", "_CollInd", "_FinInstrmId", "_SttlmSts", "_RatgDtls", "_BlckChainAdrOrWllt", "_TxLotNb", "_FXDtls", "_AcctOwnr", "_Qty", "_SfkpgPlc", "_ValtnDtls", "_DnmtnCcy"]
+	__slots__ = ["_AcctOwnr", "_SfkpgAcct", "_BlckChainAdrOrWllt", "_FXDtls", "_SfkpgPlc", "_TxLotNb", "_CollInd", "_RatgDtls", "_SttlmSts", "_ValtnDtls", "_FinInstrmId", "_Qty", "_DnmtnCcy"]
+	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
 	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
@@ -28,58 +41,6 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
-
-	@property
-	def CollInd(self):
-		return self._CollInd
-
-	@CollInd.setter
-	def CollInd(self, value):
-		self._CollInd = value if type(value) != auto else self.make_default("CollInd")
-
-	@CollInd.deleter
-	def CollInd(self):
-		del self._CollInd
-		self._CollInd = None
-
-	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
-	@property
-	def SttlmSts(self):
-		return self._SttlmSts
-
-	@SttlmSts.setter
-	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != auto else self.make_default("SttlmSts")
-
-	@SttlmSts.deleter
-	def SttlmSts(self):
-		del self._SttlmSts
-		self._SttlmSts = None
-
-	@property
-	def RatgDtls(self):
-		return self._RatgDtls
-
-	@RatgDtls.setter
-	def RatgDtls(self, value):
-		self._RatgDtls = value if type(value) != auto else self.make_default("RatgDtls")
-
-	@RatgDtls.deleter
-	def RatgDtls(self):
-		del self._RatgDtls
-		self._RatgDtls = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -95,19 +56,6 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def TxLotNb(self):
-		return self._TxLotNb
-
-	@TxLotNb.setter
-	def TxLotNb(self, value):
-		self._TxLotNb = value if type(value) != auto else self.make_default("TxLotNb")
-
-	@TxLotNb.deleter
-	def TxLotNb(self):
-		del self._TxLotNb
-		self._TxLotNb = None
-
-	@property
 	def FXDtls(self):
 		return self._FXDtls
 
@@ -119,32 +67,6 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 	def FXDtls(self):
 		del self._FXDtls
 		self._FXDtls = None
-
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
-	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
 
 	@property
 	def SfkpgPlc(self):
@@ -160,6 +82,58 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 		self._SfkpgPlc = None
 
 	@property
+	def TxLotNb(self):
+		return self._TxLotNb
+
+	@TxLotNb.setter
+	def TxLotNb(self, value):
+		self._TxLotNb = value if type(value) != auto else self.make_default("TxLotNb")
+
+	@TxLotNb.deleter
+	def TxLotNb(self):
+		del self._TxLotNb
+		self._TxLotNb = None
+
+	@property
+	def CollInd(self):
+		return self._CollInd
+
+	@CollInd.setter
+	def CollInd(self, value):
+		self._CollInd = value if type(value) != auto else self.make_default("CollInd")
+
+	@CollInd.deleter
+	def CollInd(self):
+		del self._CollInd
+		self._CollInd = None
+
+	@property
+	def RatgDtls(self):
+		return self._RatgDtls
+
+	@RatgDtls.setter
+	def RatgDtls(self, value):
+		self._RatgDtls = value if type(value) != auto else self.make_default("RatgDtls")
+
+	@RatgDtls.deleter
+	def RatgDtls(self):
+		del self._RatgDtls
+		self._RatgDtls = None
+
+	@property
+	def SttlmSts(self):
+		return self._SttlmSts
+
+	@SttlmSts.setter
+	def SttlmSts(self, value):
+		self._SttlmSts = value if type(value) != auto else self.make_default("SttlmSts")
+
+	@SttlmSts.deleter
+	def SttlmSts(self):
+		del self._SttlmSts
+		self._SttlmSts = None
+
+	@property
 	def ValtnDtls(self):
 		return self._ValtnDtls
 
@@ -171,6 +145,32 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 	def ValtnDtls(self):
 		del self._ValtnDtls
 		self._ValtnDtls = None
+
+	@property
+	def FinInstrmId(self):
+		return self._FinInstrmId
+
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
+	@property
+	def Qty(self):
+		return self._Qty
+
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != auto else self.make_default("Qty")
+
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
 
 	@property
 	def DnmtnCcy(self):
@@ -186,18 +186,18 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 		self._DnmtnCcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmSts', type=SecuritiesSettlementStatus3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RatgDtls', type=Rating2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxLotNb', type=GenericIdentification178, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification232, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=BalanceQuantity13Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafeKeepingPlace3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxLotNb', type=GenericIdentification178, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CollInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RatgDtls', type=Rating2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmSts', type=SecuritiesSettlementStatus3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnDtls', type=ValuationsDetails1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qty', type=BalanceQuantity13Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DnmtnCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

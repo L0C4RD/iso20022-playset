@@ -1,14 +1,14 @@
 from . import base_types
-import ISODate
-import PercentageRate
-import DateTimePeriod1Choice
-import ISODateTime
-import Price8
-import CalculationType3Choice
+from .Price8 import Price8
+from .ISODate import ISODate
+from .PercentageRate import PercentageRate
+from .ISODateTime import ISODateTime
+from .CalculationType3Choice import CalculationType3Choice
+from .DateTimePeriod1Choice import DateTimePeriod1Choice
 
 class YieldCalculation6(base_types._BaseFieldType):
 
-	__slots__ = ["_ValPrd", "_RedPric", "_ValDt", "_ClctnTp", "_Val", "_ClctnDt"]
+	__slots__ = ["_ValPrd", "_ClctnDt", "_RedPric", "_Val", "_ClctnTp", "_ValDt"]
 	@property
 	def ValPrd(self):
 		return self._ValPrd
@@ -21,6 +21,19 @@ class YieldCalculation6(base_types._BaseFieldType):
 	def ValPrd(self):
 		del self._ValPrd
 		self._ValPrd = None
+
+	@property
+	def ClctnDt(self):
+		return self._ClctnDt
+
+	@ClctnDt.setter
+	def ClctnDt(self, value):
+		self._ClctnDt = value if type(value) != auto else self.make_default("ClctnDt")
+
+	@ClctnDt.deleter
+	def ClctnDt(self):
+		del self._ClctnDt
+		self._ClctnDt = None
 
 	@property
 	def RedPric(self):
@@ -36,17 +49,17 @@ class YieldCalculation6(base_types._BaseFieldType):
 		self._RedPric = None
 
 	@property
-	def ValDt(self):
-		return self._ValDt
+	def Val(self):
+		return self._Val
 
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != auto else self.make_default("Val")
 
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
 
 	@property
 	def ClctnTp(self):
@@ -62,37 +75,24 @@ class YieldCalculation6(base_types._BaseFieldType):
 		self._ClctnTp = None
 
 	@property
-	def Val(self):
-		return self._Val
+	def ValDt(self):
+		return self._ValDt
 
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != auto else self.make_default("Val")
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
 
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
-
-	@property
-	def ClctnDt(self):
-		return self._ClctnDt
-
-	@ClctnDt.setter
-	def ClctnDt(self, value):
-		self._ClctnDt = value if type(value) != auto else self.make_default("ClctnDt")
-
-	@ClctnDt.deleter
-	def ClctnDt(self):
-		del self._ClctnDt
-		self._ClctnDt = None
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ValPrd', type=DateTimePeriod1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RedPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClctnTp', type=CalculationType3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Val', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClctnDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RedPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClctnTp', type=CalculationType3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

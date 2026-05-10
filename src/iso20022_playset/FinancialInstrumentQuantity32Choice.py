@@ -1,10 +1,23 @@
 from . import base_types
-import LongFraction19DecimalNumber
-import ActiveOrHistoricCurrencyAnd19DecimalAmount
+from .ActiveOrHistoricCurrencyAnd19DecimalAmount import ActiveOrHistoricCurrencyAnd19DecimalAmount
+from .LongFraction19DecimalNumber import LongFraction19DecimalNumber
 
 class FinancialInstrumentQuantity32Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NmnlVal", "_MntryVal", "_Unit"]
+	__slots__ = ["_Unit", "_NmnlVal", "_MntryVal"]
+	@property
+	def Unit(self):
+		return self._Unit
+
+	@Unit.setter
+	def Unit(self, value):
+		self._Unit = value if type(value) != auto else self.make_default("Unit")
+
+	@Unit.deleter
+	def Unit(self):
+		del self._Unit
+		self._Unit = None
+
 	@property
 	def NmnlVal(self):
 		return self._NmnlVal
@@ -31,22 +44,9 @@ class FinancialInstrumentQuantity32Choice(base_types._BaseFieldType):
 		del self._MntryVal
 		self._MntryVal = None
 
-	@property
-	def Unit(self):
-		return self._Unit
-
-	@Unit.setter
-	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
-
-	@Unit.deleter
-	def Unit(self):
-		del self._Unit
-		self._Unit = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Unit', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NmnlVal', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MntryVal', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Unit', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 	))
 

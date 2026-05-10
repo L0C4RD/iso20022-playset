@@ -1,6 +1,6 @@
 from . import base_types
-import Percentage14Rate
-import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from .Percentage14Rate import Percentage14Rate
 
 class RateAndAmountFormat74Choice(base_types._BaseFieldType):
 

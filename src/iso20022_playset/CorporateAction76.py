@@ -1,7 +1,7 @@
 from . import base_types
-import CorporateActionEventStageFormat15Choice
-import CorporateActionDate89
-import LotteryTypeFormat5Choice
+from .LotteryTypeFormat5Choice import LotteryTypeFormat5Choice
+from .CorporateActionDate89 import CorporateActionDate89
+from .CorporateActionEventStageFormat15Choice import CorporateActionEventStageFormat15Choice
 
 class CorporateAction76(base_types._BaseFieldType):
 

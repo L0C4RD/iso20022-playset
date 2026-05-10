@@ -1,24 +1,24 @@
 from . import base_types
-import Extension1
-import IndividualOrderConfirmationStatusAndReason2
-import MessageIdentification1
-import References61Choice
+from .MessageIdentification1 import MessageIdentification1
+from .Extension1 import Extension1
+from .References61Choice import References61Choice
+from .IndividualOrderConfirmationStatusAndReason2 import IndividualOrderConfirmationStatusAndReason2
 
 class OrderConfirmationStatusReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_IndvOrdrConfDtlsRpt", "_MsgId", "_Xtnsn", "_Ref"]
+	__slots__ = ["_Ref", "_MsgId", "_Xtnsn", "_IndvOrdrConfDtlsRpt"]
 	@property
-	def IndvOrdrConfDtlsRpt(self):
-		return self._IndvOrdrConfDtlsRpt
+	def Ref(self):
+		return self._Ref
 
-	@IndvOrdrConfDtlsRpt.setter
-	def IndvOrdrConfDtlsRpt(self, value):
-		self._IndvOrdrConfDtlsRpt = value if type(value) != auto else self.make_default("IndvOrdrConfDtlsRpt")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
 
-	@IndvOrdrConfDtlsRpt.deleter
-	def IndvOrdrConfDtlsRpt(self):
-		del self._IndvOrdrConfDtlsRpt
-		self._IndvOrdrConfDtlsRpt = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	@property
 	def MsgId(self):
@@ -47,22 +47,22 @@ class OrderConfirmationStatusReportV02(base_types._BaseFieldType):
 		self._Xtnsn = None
 
 	@property
-	def Ref(self):
-		return self._Ref
+	def IndvOrdrConfDtlsRpt(self):
+		return self._IndvOrdrConfDtlsRpt
 
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+	@IndvOrdrConfDtlsRpt.setter
+	def IndvOrdrConfDtlsRpt(self, value):
+		self._IndvOrdrConfDtlsRpt = value if type(value) != auto else self.make_default("IndvOrdrConfDtlsRpt")
 
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
+	@IndvOrdrConfDtlsRpt.deleter
+	def IndvOrdrConfDtlsRpt(self):
+		del self._IndvOrdrConfDtlsRpt
+		self._IndvOrdrConfDtlsRpt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IndvOrdrConfDtlsRpt', type=IndividualOrderConfirmationStatusAndReason2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ref', type=References61Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ref', type=References61Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndvOrdrConfDtlsRpt', type=IndividualOrderConfirmationStatusAndReason2, min=1, max=None, mutex_group=None, array=True),
 	))
 

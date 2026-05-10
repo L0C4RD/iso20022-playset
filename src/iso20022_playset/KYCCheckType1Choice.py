@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import KnowYourCustomerCheckType1Code
+from .GenericIdentification47 import GenericIdentification47
+from .KnowYourCustomerCheckType1Code import KnowYourCustomerCheckType1Code
 
 class KYCCheckType1Choice(base_types._BaseFieldType):
 

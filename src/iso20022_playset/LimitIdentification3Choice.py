@@ -1,22 +1,22 @@
 from . import base_types
-import LimitIdentification9
-import LimitIdentification8
+from .LimitIdentification8 import LimitIdentification8
+from .LimitIdentification9 import LimitIdentification9
 
 class LimitIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AllCur", "_AllDflt", "_Dflt", "_Cur"]
+	__slots__ = ["_Cur", "_AllDflt", "_Dflt", "_AllCur"]
 	@property
-	def AllCur(self):
-		return self._AllCur
+	def Cur(self):
+		return self._Cur
 
-	@AllCur.setter
-	def AllCur(self, value):
-		self._AllCur = value if type(value) != auto else self.make_default("AllCur")
+	@Cur.setter
+	def Cur(self, value):
+		self._Cur = value if type(value) != auto else self.make_default("Cur")
 
-	@AllCur.deleter
-	def AllCur(self):
-		del self._AllCur
-		self._AllCur = None
+	@Cur.deleter
+	def Cur(self):
+		del self._Cur
+		self._Cur = None
 
 	@property
 	def AllDflt(self):
@@ -45,22 +45,22 @@ class LimitIdentification3Choice(base_types._BaseFieldType):
 		self._Dflt = None
 
 	@property
-	def Cur(self):
-		return self._Cur
+	def AllCur(self):
+		return self._AllCur
 
-	@Cur.setter
-	def Cur(self, value):
-		self._Cur = value if type(value) != auto else self.make_default("Cur")
+	@AllCur.setter
+	def AllCur(self, value):
+		self._AllCur = value if type(value) != auto else self.make_default("AllCur")
 
-	@Cur.deleter
-	def Cur(self):
-		del self._Cur
-		self._Cur = None
+	@AllCur.deleter
+	def AllCur(self):
+		del self._AllCur
+		self._AllCur = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AllCur', type=LimitIdentification9, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cur', type=LimitIdentification8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AllDflt', type=LimitIdentification9, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dflt', type=LimitIdentification8, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cur', type=LimitIdentification8, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AllCur', type=LimitIdentification9, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,11 +1,24 @@
 from . import base_types
-import RegulatoryReportingType1Code
-import StructuredRegulatoryReporting3
-import RegulatoryAuthority2
+from .RegulatoryAuthority2 import RegulatoryAuthority2
+from .RegulatoryReportingType1Code import RegulatoryReportingType1Code
+from .StructuredRegulatoryReporting3 import StructuredRegulatoryReporting3
 
 class RegulatoryReporting3(base_types._BaseFieldType):
 
-	__slots__ = ["_Dtls", "_Authrty", "_DbtCdtRptgInd"]
+	__slots__ = ["_DbtCdtRptgInd", "_Dtls", "_Authrty"]
+	@property
+	def DbtCdtRptgInd(self):
+		return self._DbtCdtRptgInd
+
+	@DbtCdtRptgInd.setter
+	def DbtCdtRptgInd(self, value):
+		self._DbtCdtRptgInd = value if type(value) != auto else self.make_default("DbtCdtRptgInd")
+
+	@DbtCdtRptgInd.deleter
+	def DbtCdtRptgInd(self):
+		del self._DbtCdtRptgInd
+		self._DbtCdtRptgInd = None
+
 	@property
 	def Dtls(self):
 		return self._Dtls
@@ -32,22 +45,9 @@ class RegulatoryReporting3(base_types._BaseFieldType):
 		del self._Authrty
 		self._Authrty = None
 
-	@property
-	def DbtCdtRptgInd(self):
-		return self._DbtCdtRptgInd
-
-	@DbtCdtRptgInd.setter
-	def DbtCdtRptgInd(self, value):
-		self._DbtCdtRptgInd = value if type(value) != auto else self.make_default("DbtCdtRptgInd")
-
-	@DbtCdtRptgInd.deleter
-	def DbtCdtRptgInd(self):
-		del self._DbtCdtRptgInd
-		self._DbtCdtRptgInd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DbtCdtRptgInd', type=RegulatoryReportingType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dtls', type=StructuredRegulatoryReporting3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Authrty', type=RegulatoryAuthority2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtCdtRptgInd', type=RegulatoryReportingType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

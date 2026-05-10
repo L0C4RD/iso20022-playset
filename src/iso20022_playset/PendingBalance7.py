@@ -1,6 +1,6 @@
 from . import base_types
-import SignedQuantityFormat10
-import SettlementTypeAndIdentification25
+from .SettlementTypeAndIdentification25 import SettlementTypeAndIdentification25
+from .SignedQuantityFormat10 import SignedQuantityFormat10
 
 class PendingBalance7(base_types._BaseFieldType):
 

@@ -1,12 +1,12 @@
 from . import base_types
-import AlgorithmIdentification34
-import Number
-import Algorithm26Code
-import Max140Text
+from .Max140Text import Max140Text
+from .AlgorithmIdentification34 import AlgorithmIdentification34
+from .Algorithm26Code import Algorithm26Code
+from .Number import Number
 
 class Parameter16(base_types._BaseFieldType):
 
-	__slots__ = ["_SaltLngth", "_DgstAlgo", "_OIDCrvNm", "_MskGnrtrAlgo", "_TrlrFld"]
+	__slots__ = ["_SaltLngth", "_OIDCrvNm", "_MskGnrtrAlgo", "_TrlrFld", "_DgstAlgo"]
 	@property
 	def SaltLngth(self):
 		return self._SaltLngth
@@ -19,19 +19,6 @@ class Parameter16(base_types._BaseFieldType):
 	def SaltLngth(self):
 		del self._SaltLngth
 		self._SaltLngth = None
-
-	@property
-	def DgstAlgo(self):
-		return self._DgstAlgo
-
-	@DgstAlgo.setter
-	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
-
-	@DgstAlgo.deleter
-	def DgstAlgo(self):
-		del self._DgstAlgo
-		self._DgstAlgo = None
 
 	@property
 	def OIDCrvNm(self):
@@ -72,11 +59,24 @@ class Parameter16(base_types._BaseFieldType):
 		del self._TrlrFld
 		self._TrlrFld = None
 
+	@property
+	def DgstAlgo(self):
+		return self._DgstAlgo
+
+	@DgstAlgo.setter
+	def DgstAlgo(self, value):
+		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+
+	@DgstAlgo.deleter
+	def DgstAlgo(self):
+		del self._DgstAlgo
+		self._DgstAlgo = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SaltLngth', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgstAlgo', type=Algorithm26Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OIDCrvNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MskGnrtrAlgo', type=AlgorithmIdentification34, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrlrFld', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgstAlgo', type=Algorithm26Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,13 +1,13 @@
 from . import base_types
-import CashAccountIdentification5Choice
-import PartyIdentification245Choice
-import PartyTextInformation1
-import AlternatePartyIdentification10
-import Max35Text
+from .PartyTextInformation1 import PartyTextInformation1
+from .Max35Text import Max35Text
+from .PartyIdentification245Choice import PartyIdentification245Choice
+from .CashAccountIdentification5Choice import CashAccountIdentification5Choice
+from .AlternatePartyIdentification10 import AlternatePartyIdentification10
 
 class PartyIdentificationAndAccount154(base_types._BaseFieldType):
 
-	__slots__ = ["_AltrnId", "_SfkpgAcct", "_PrcgId", "_CshAcct", "_Id", "_AddtlInf"]
+	__slots__ = ["_AltrnId", "_SfkpgAcct", "_CshAcct", "_Id", "_PrcgId", "_AddtlInf"]
 	@property
 	def AltrnId(self):
 		return self._AltrnId
@@ -33,19 +33,6 @@ class PartyIdentificationAndAccount154(base_types._BaseFieldType):
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
-
-	@property
-	def PrcgId(self):
-		return self._PrcgId
-
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
-
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
 
 	@property
 	def CshAcct(self):
@@ -74,6 +61,19 @@ class PartyIdentificationAndAccount154(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def PrcgId(self):
+		return self._PrcgId
+
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
+
+	@property
 	def AddtlInf(self):
 		return self._AddtlInf
 
@@ -89,9 +89,9 @@ class PartyIdentificationAndAccount154(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification245Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation1, min=0, max=1, mutex_group=None, array=False),
 	))
 

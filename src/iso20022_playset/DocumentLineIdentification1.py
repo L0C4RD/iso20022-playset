@@ -1,11 +1,24 @@
 from . import base_types
-import ISODate
-import DocumentLineType1
-import Max35Text
+from .Max35Text import Max35Text
+from .DocumentLineType1 import DocumentLineType1
+from .ISODate import ISODate
 
 class DocumentLineIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdDt", "_Nb", "_Tp"]
+	__slots__ = ["_Tp", "_RltdDt", "_Nb"]
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	@property
 	def RltdDt(self):
 		return self._RltdDt
@@ -32,22 +45,9 @@ class DocumentLineIdentification1(base_types._BaseFieldType):
 		del self._Nb
 		self._Nb = None
 
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Tp', type=DocumentLineType1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=DocumentLineType1, min=0, max=1, mutex_group=None, array=False),
 	))
 

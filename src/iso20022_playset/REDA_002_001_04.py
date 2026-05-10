@@ -1,5 +1,5 @@
 from . import base_types
-import PriceReportCancellationV04
+from .PriceReportCancellationV04 import PriceReportCancellationV04
 
 class REDA_002_001_04():
 

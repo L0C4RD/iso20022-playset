@@ -1,6 +1,6 @@
 from . import base_types
-import MessageIdentification1
-import Max70Text
+from .MessageIdentification1 import MessageIdentification1
+from .Max70Text import Max70Text
 
 class References4(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import PaymentInstrument21Choice
-import PaymentInstrument20Choice
+from .PaymentInstrument21Choice import PaymentInstrument21Choice
+from .PaymentInstrument20Choice import PaymentInstrument20Choice
 
 class CashInOrOut7Choice(base_types._BaseFieldType):
 

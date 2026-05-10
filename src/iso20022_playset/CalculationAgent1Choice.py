@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalCalculationAgent1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ExternalCalculationAgent1Code import ExternalCalculationAgent1Code
 
 class CalculationAgent1Choice(base_types._BaseFieldType):
 

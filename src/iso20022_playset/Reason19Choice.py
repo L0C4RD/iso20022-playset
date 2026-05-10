@@ -1,34 +1,21 @@
 from . import base_types
-import PendingProcessingReason11Choice
-import PendingReason29Choice
-import DeniedReason14Choice
-import GeneratedReasons5Choice
-import AcknowledgementReason13Choice
-import AcknowledgementReason12Choice
-import CancellationReason20Choice
-import PendingReason28Choice
-import RepairReason11Choice
-import FailingReason9Choice
-import RejectionReason45Choice
-import UnmatchedReason22Choice
-import PendingCancellationReasons4Choice
+from .AcknowledgementReason12Choice import AcknowledgementReason12Choice
+from .CancellationReason20Choice import CancellationReason20Choice
+from .RejectionReason45Choice import RejectionReason45Choice
+from .PendingReason28Choice import PendingReason28Choice
+from .UnmatchedReason22Choice import UnmatchedReason22Choice
+from .AcknowledgementReason13Choice import AcknowledgementReason13Choice
+from .DeniedReason14Choice import DeniedReason14Choice
+from .GeneratedReasons5Choice import GeneratedReasons5Choice
+from .PendingReason29Choice import PendingReason29Choice
+from .FailingReason9Choice import FailingReason9Choice
+from .PendingProcessingReason11Choice import PendingProcessingReason11Choice
+from .RepairReason11Choice import RepairReason11Choice
+from .PendingCancellationReasons4Choice import PendingCancellationReasons4Choice
 
 class Reason19Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_GnrtdRsn", "_PdgCxlRsn", "_PdgPrcgRsn", "_RjctnRsn", "_RepoCallAckRsn", "_RprRsn", "_AckdAccptdRsn", "_DndRsn", "_FlngRsn", "_PdgRsn", "_CxlRsn", "_PdgModRsn", "_UmtchdRsn"]
-	@property
-	def GnrtdRsn(self):
-		return self._GnrtdRsn
-
-	@GnrtdRsn.setter
-	def GnrtdRsn(self, value):
-		self._GnrtdRsn = value if type(value) != auto else self.make_default("GnrtdRsn")
-
-	@GnrtdRsn.deleter
-	def GnrtdRsn(self):
-		del self._GnrtdRsn
-		self._GnrtdRsn = None
-
+	__slots__ = ["_PdgCxlRsn", "_RepoCallAckRsn", "_UmtchdRsn", "_PdgModRsn", "_PdgPrcgRsn", "_GnrtdRsn", "_RprRsn", "_DndRsn", "_CxlRsn", "_AckdAccptdRsn", "_FlngRsn", "_PdgRsn", "_RjctnRsn"]
 	@property
 	def PdgCxlRsn(self):
 		return self._PdgCxlRsn
@@ -41,32 +28,6 @@ class Reason19Choice(base_types._BaseFieldType):
 	def PdgCxlRsn(self):
 		del self._PdgCxlRsn
 		self._PdgCxlRsn = None
-
-	@property
-	def PdgPrcgRsn(self):
-		return self._PdgPrcgRsn
-
-	@PdgPrcgRsn.setter
-	def PdgPrcgRsn(self, value):
-		self._PdgPrcgRsn = value if type(value) != auto else self.make_default("PdgPrcgRsn")
-
-	@PdgPrcgRsn.deleter
-	def PdgPrcgRsn(self):
-		del self._PdgPrcgRsn
-		self._PdgPrcgRsn = None
-
-	@property
-	def RjctnRsn(self):
-		return self._RjctnRsn
-
-	@RjctnRsn.setter
-	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != auto else self.make_default("RjctnRsn")
-
-	@RjctnRsn.deleter
-	def RjctnRsn(self):
-		del self._RjctnRsn
-		self._RjctnRsn = None
 
 	@property
 	def RepoCallAckRsn(self):
@@ -82,6 +43,58 @@ class Reason19Choice(base_types._BaseFieldType):
 		self._RepoCallAckRsn = None
 
 	@property
+	def UmtchdRsn(self):
+		return self._UmtchdRsn
+
+	@UmtchdRsn.setter
+	def UmtchdRsn(self, value):
+		self._UmtchdRsn = value if type(value) != auto else self.make_default("UmtchdRsn")
+
+	@UmtchdRsn.deleter
+	def UmtchdRsn(self):
+		del self._UmtchdRsn
+		self._UmtchdRsn = None
+
+	@property
+	def PdgModRsn(self):
+		return self._PdgModRsn
+
+	@PdgModRsn.setter
+	def PdgModRsn(self, value):
+		self._PdgModRsn = value if type(value) != auto else self.make_default("PdgModRsn")
+
+	@PdgModRsn.deleter
+	def PdgModRsn(self):
+		del self._PdgModRsn
+		self._PdgModRsn = None
+
+	@property
+	def PdgPrcgRsn(self):
+		return self._PdgPrcgRsn
+
+	@PdgPrcgRsn.setter
+	def PdgPrcgRsn(self, value):
+		self._PdgPrcgRsn = value if type(value) != auto else self.make_default("PdgPrcgRsn")
+
+	@PdgPrcgRsn.deleter
+	def PdgPrcgRsn(self):
+		del self._PdgPrcgRsn
+		self._PdgPrcgRsn = None
+
+	@property
+	def GnrtdRsn(self):
+		return self._GnrtdRsn
+
+	@GnrtdRsn.setter
+	def GnrtdRsn(self, value):
+		self._GnrtdRsn = value if type(value) != auto else self.make_default("GnrtdRsn")
+
+	@GnrtdRsn.deleter
+	def GnrtdRsn(self):
+		del self._GnrtdRsn
+		self._GnrtdRsn = None
+
+	@property
 	def RprRsn(self):
 		return self._RprRsn
 
@@ -95,19 +108,6 @@ class Reason19Choice(base_types._BaseFieldType):
 		self._RprRsn = None
 
 	@property
-	def AckdAccptdRsn(self):
-		return self._AckdAccptdRsn
-
-	@AckdAccptdRsn.setter
-	def AckdAccptdRsn(self, value):
-		self._AckdAccptdRsn = value if type(value) != auto else self.make_default("AckdAccptdRsn")
-
-	@AckdAccptdRsn.deleter
-	def AckdAccptdRsn(self):
-		del self._AckdAccptdRsn
-		self._AckdAccptdRsn = None
-
-	@property
 	def DndRsn(self):
 		return self._DndRsn
 
@@ -119,6 +119,32 @@ class Reason19Choice(base_types._BaseFieldType):
 	def DndRsn(self):
 		del self._DndRsn
 		self._DndRsn = None
+
+	@property
+	def CxlRsn(self):
+		return self._CxlRsn
+
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
+
+	@property
+	def AckdAccptdRsn(self):
+		return self._AckdAccptdRsn
+
+	@AckdAccptdRsn.setter
+	def AckdAccptdRsn(self, value):
+		self._AckdAccptdRsn = value if type(value) != auto else self.make_default("AckdAccptdRsn")
+
+	@AckdAccptdRsn.deleter
+	def AckdAccptdRsn(self):
+		del self._AckdAccptdRsn
+		self._AckdAccptdRsn = None
 
 	@property
 	def FlngRsn(self):
@@ -147,57 +173,31 @@ class Reason19Choice(base_types._BaseFieldType):
 		self._PdgRsn = None
 
 	@property
-	def CxlRsn(self):
-		return self._CxlRsn
+	def RjctnRsn(self):
+		return self._RjctnRsn
 
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+	@RjctnRsn.setter
+	def RjctnRsn(self, value):
+		self._RjctnRsn = value if type(value) != auto else self.make_default("RjctnRsn")
 
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
-
-	@property
-	def PdgModRsn(self):
-		return self._PdgModRsn
-
-	@PdgModRsn.setter
-	def PdgModRsn(self, value):
-		self._PdgModRsn = value if type(value) != auto else self.make_default("PdgModRsn")
-
-	@PdgModRsn.deleter
-	def PdgModRsn(self):
-		del self._PdgModRsn
-		self._PdgModRsn = None
-
-	@property
-	def UmtchdRsn(self):
-		return self._UmtchdRsn
-
-	@UmtchdRsn.setter
-	def UmtchdRsn(self, value):
-		self._UmtchdRsn = value if type(value) != auto else self.make_default("UmtchdRsn")
-
-	@UmtchdRsn.deleter
-	def UmtchdRsn(self):
-		del self._UmtchdRsn
-		self._UmtchdRsn = None
+	@RjctnRsn.deleter
+	def RjctnRsn(self):
+		del self._RjctnRsn
+		self._RjctnRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GnrtdRsn', type=GeneratedReasons5Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgCxlRsn', type=PendingCancellationReasons4Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PdgPrcgRsn', type=PendingProcessingReason11Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason45Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RepoCallAckRsn', type=AcknowledgementReason13Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='UmtchdRsn', type=UnmatchedReason22Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PdgModRsn', type=PendingReason28Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PdgPrcgRsn', type=PendingProcessingReason11Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='GnrtdRsn', type=GeneratedReasons5Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RprRsn', type=RepairReason11Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AckdAccptdRsn', type=AcknowledgementReason12Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DndRsn', type=DeniedReason14Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=CancellationReason20Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AckdAccptdRsn', type=AcknowledgementReason12Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FlngRsn', type=FailingReason9Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgRsn', type=PendingReason29Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CxlRsn', type=CancellationReason20Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PdgModRsn', type=PendingReason28Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='UmtchdRsn', type=UnmatchedReason22Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason45Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,24 +1,24 @@
 from . import base_types
-import PartyIdentification136
-import PartyIdentification232
-import BlockChainAddressWallet3
-import SecuritiesAccount19
+from .PartyIdentification232 import PartyIdentification232
+from .SecuritiesAccount19 import SecuritiesAccount19
+from .BlockChainAddressWallet3 import BlockChainAddressWallet3
+from .PartyIdentification136 import PartyIdentification136
 
 class CollateralParties11(base_types._BaseFieldType):
 
-	__slots__ = ["_CollAcct", "_BlckChainAdrOrWllt", "_TrptyAgt", "_ClntPtyB", "_PtyB"]
+	__slots__ = ["_ClntPtyB", "_BlckChainAdrOrWllt", "_PtyB", "_CollAcct", "_TrptyAgt"]
 	@property
-	def CollAcct(self):
-		return self._CollAcct
+	def ClntPtyB(self):
+		return self._ClntPtyB
 
-	@CollAcct.setter
-	def CollAcct(self, value):
-		self._CollAcct = value if type(value) != auto else self.make_default("CollAcct")
+	@ClntPtyB.setter
+	def ClntPtyB(self, value):
+		self._ClntPtyB = value if type(value) != auto else self.make_default("ClntPtyB")
 
-	@CollAcct.deleter
-	def CollAcct(self):
-		del self._CollAcct
-		self._CollAcct = None
+	@ClntPtyB.deleter
+	def ClntPtyB(self):
+		del self._ClntPtyB
+		self._ClntPtyB = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -34,32 +34,6 @@ class CollateralParties11(base_types._BaseFieldType):
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def TrptyAgt(self):
-		return self._TrptyAgt
-
-	@TrptyAgt.setter
-	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != auto else self.make_default("TrptyAgt")
-
-	@TrptyAgt.deleter
-	def TrptyAgt(self):
-		del self._TrptyAgt
-		self._TrptyAgt = None
-
-	@property
-	def ClntPtyB(self):
-		return self._ClntPtyB
-
-	@ClntPtyB.setter
-	def ClntPtyB(self, value):
-		self._ClntPtyB = value if type(value) != auto else self.make_default("ClntPtyB")
-
-	@ClntPtyB.deleter
-	def ClntPtyB(self):
-		del self._ClntPtyB
-		self._ClntPtyB = None
-
-	@property
 	def PtyB(self):
 		return self._PtyB
 
@@ -72,11 +46,37 @@ class CollateralParties11(base_types._BaseFieldType):
 		del self._PtyB
 		self._PtyB = None
 
+	@property
+	def CollAcct(self):
+		return self._CollAcct
+
+	@CollAcct.setter
+	def CollAcct(self, value):
+		self._CollAcct = value if type(value) != auto else self.make_default("CollAcct")
+
+	@CollAcct.deleter
+	def CollAcct(self):
+		del self._CollAcct
+		self._CollAcct = None
+
+	@property
+	def TrptyAgt(self):
+		return self._TrptyAgt
+
+	@TrptyAgt.setter
+	def TrptyAgt(self, value):
+		self._TrptyAgt = value if type(value) != auto else self.make_default("TrptyAgt")
+
+	@TrptyAgt.deleter
+	def TrptyAgt(self):
+		del self._TrptyAgt
+		self._TrptyAgt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntPtyB', type=PartyIdentification232, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyB', type=PartyIdentification232, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 	))
 

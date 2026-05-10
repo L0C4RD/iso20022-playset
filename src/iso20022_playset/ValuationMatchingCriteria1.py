@@ -1,6 +1,6 @@
 from . import base_types
-import CompareAmountAndDirection3
-import CompareValuationType1
+from .CompareAmountAndDirection3 import CompareAmountAndDirection3
+from .CompareValuationType1 import CompareValuationType1
 
 class ValuationMatchingCriteria1(base_types._BaseFieldType):
 

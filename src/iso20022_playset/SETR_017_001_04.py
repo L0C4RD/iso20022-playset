@@ -1,5 +1,5 @@
 from . import base_types
-import OrderCancellationStatusReportV04
+from .OrderCancellationStatusReportV04 import OrderCancellationStatusReportV04
 
 class SETR_017_001_04():
 

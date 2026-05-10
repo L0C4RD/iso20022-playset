@@ -1,39 +1,13 @@
 from . import base_types
-import OriginalBusinessInstruction1
-import DebtorActivationAmendmentReason3
-import OriginalActivation3Choice
-import SupplementaryData1
-import DebtorActivationAmendment6
+from .OriginalBusinessInstruction1 import OriginalBusinessInstruction1
+from .DebtorActivationAmendment6 import DebtorActivationAmendment6
+from .SupplementaryData1 import SupplementaryData1
+from .OriginalActivation3Choice import OriginalActivation3Choice
+from .DebtorActivationAmendmentReason3 import DebtorActivationAmendmentReason3
 
 class DebtorActivationAmendment5(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlActvtn", "_Amdmnt", "_OrgnlBizInstr", "_SplmtryData", "_AmdmntRsn"]
-	@property
-	def OrgnlActvtn(self):
-		return self._OrgnlActvtn
-
-	@OrgnlActvtn.setter
-	def OrgnlActvtn(self, value):
-		self._OrgnlActvtn = value if type(value) != auto else self.make_default("OrgnlActvtn")
-
-	@OrgnlActvtn.deleter
-	def OrgnlActvtn(self):
-		del self._OrgnlActvtn
-		self._OrgnlActvtn = None
-
-	@property
-	def Amdmnt(self):
-		return self._Amdmnt
-
-	@Amdmnt.setter
-	def Amdmnt(self, value):
-		self._Amdmnt = value if type(value) != auto else self.make_default("Amdmnt")
-
-	@Amdmnt.deleter
-	def Amdmnt(self):
-		del self._Amdmnt
-		self._Amdmnt = None
-
+	__slots__ = ["_OrgnlBizInstr", "_AmdmntRsn", "_SplmtryData", "_Amdmnt", "_OrgnlActvtn"]
 	@property
 	def OrgnlBizInstr(self):
 		return self._OrgnlBizInstr
@@ -46,6 +20,19 @@ class DebtorActivationAmendment5(base_types._BaseFieldType):
 	def OrgnlBizInstr(self):
 		del self._OrgnlBizInstr
 		self._OrgnlBizInstr = None
+
+	@property
+	def AmdmntRsn(self):
+		return self._AmdmntRsn
+
+	@AmdmntRsn.setter
+	def AmdmntRsn(self, value):
+		self._AmdmntRsn = value if type(value) != auto else self.make_default("AmdmntRsn")
+
+	@AmdmntRsn.deleter
+	def AmdmntRsn(self):
+		del self._AmdmntRsn
+		self._AmdmntRsn = None
 
 	@property
 	def SplmtryData(self):
@@ -61,23 +48,36 @@ class DebtorActivationAmendment5(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def AmdmntRsn(self):
-		return self._AmdmntRsn
+	def Amdmnt(self):
+		return self._Amdmnt
 
-	@AmdmntRsn.setter
-	def AmdmntRsn(self, value):
-		self._AmdmntRsn = value if type(value) != auto else self.make_default("AmdmntRsn")
+	@Amdmnt.setter
+	def Amdmnt(self, value):
+		self._Amdmnt = value if type(value) != auto else self.make_default("Amdmnt")
 
-	@AmdmntRsn.deleter
-	def AmdmntRsn(self):
-		del self._AmdmntRsn
-		self._AmdmntRsn = None
+	@Amdmnt.deleter
+	def Amdmnt(self):
+		del self._Amdmnt
+		self._Amdmnt = None
+
+	@property
+	def OrgnlActvtn(self):
+		return self._OrgnlActvtn
+
+	@OrgnlActvtn.setter
+	def OrgnlActvtn(self, value):
+		self._OrgnlActvtn = value if type(value) != auto else self.make_default("OrgnlActvtn")
+
+	@OrgnlActvtn.deleter
+	def OrgnlActvtn(self):
+		del self._OrgnlActvtn
+		self._OrgnlActvtn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlActvtn', type=OriginalActivation3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amdmnt', type=DebtorActivationAmendment6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlBizInstr', type=OriginalBusinessInstruction1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AmdmntRsn', type=DebtorActivationAmendmentReason3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Amdmnt', type=DebtorActivationAmendment6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlActvtn', type=OriginalActivation3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

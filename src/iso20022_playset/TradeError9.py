@@ -1,12 +1,25 @@
 from . import base_types
-import LoanData86
-import CounterpartyData88
-import SupplementaryData1
-import Max140Text
+from .Max140Text import Max140Text
+from .SupplementaryData1 import SupplementaryData1
+from .CounterpartyData88 import CounterpartyData88
+from .LoanData86 import LoanData86
 
 class TradeError9(base_types._BaseFieldType):
 
-	__slots__ = ["_LnData", "_CtrPtySpcfcData", "_SplmtryData", "_TechRcrdId"]
+	__slots__ = ["_SplmtryData", "_LnData", "_CtrPtySpcfcData", "_TechRcrdId"]
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	@property
 	def LnData(self):
 		return self._LnData
@@ -34,19 +47,6 @@ class TradeError9(base_types._BaseFieldType):
 		self._CtrPtySpcfcData = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def TechRcrdId(self):
 		return self._TechRcrdId
 
@@ -60,9 +60,9 @@ class TradeError9(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LnData', type=LoanData86, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartyData88, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

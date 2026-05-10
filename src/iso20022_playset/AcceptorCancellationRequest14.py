@@ -1,23 +1,23 @@
 from . import base_types
-import CardPaymentTransaction142
-import CardPaymentEnvironment81
-import PaymentContext30
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from .CardPaymentTransaction142 import CardPaymentTransaction142
+from .PaymentContext30 import PaymentContext30
 
 class AcceptorCancellationRequest14(base_types._BaseFieldType):
 
-	__slots__ = ["_Cntxt", "_Envt", "_Tx"]
+	__slots__ = ["_Tx", "_Envt", "_Cntxt"]
 	@property
-	def Cntxt(self):
-		return self._Cntxt
+	def Tx(self):
+		return self._Tx
 
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != auto else self.make_default("Tx")
 
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
 
 	@property
 	def Envt(self):
@@ -33,21 +33,21 @@ class AcceptorCancellationRequest14(base_types._BaseFieldType):
 		self._Envt = None
 
 	@property
-	def Tx(self):
-		return self._Tx
+	def Cntxt(self):
+		return self._Cntxt
 
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
 
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction142, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
 	))
 

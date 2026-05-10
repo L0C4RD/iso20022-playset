@@ -1,5 +1,5 @@
 from . import base_types
-import CustomerDirectDebitInitiationV11
+from .CustomerDirectDebitInitiationV11 import CustomerDirectDebitInitiationV11
 
 class PAIN_008_001_11():
 

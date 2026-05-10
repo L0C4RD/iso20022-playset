@@ -1,5 +1,5 @@
 from . import base_types
-import ResolutionOfInvestigationV13
+from .ResolutionOfInvestigationV13 import ResolutionOfInvestigationV13
 
 class CAMT_029_001_13():
 

@@ -1,6 +1,6 @@
 from . import base_types
-import TransactionOrError6Choice
-import PaymentIdentification8Choice
+from .PaymentIdentification8Choice import PaymentIdentification8Choice
+from .TransactionOrError6Choice import TransactionOrError6Choice
 
 class TransactionReport8(base_types._BaseFieldType):
 

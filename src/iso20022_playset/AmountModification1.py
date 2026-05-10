@@ -1,6 +1,6 @@
 from . import base_types
-import Modification1Code
-import ImpliedCurrencyAndAmount
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .Modification1Code import Modification1Code
 
 class AmountModification1(base_types._BaseFieldType):
 

@@ -1,38 +1,12 @@
 from . import base_types
-import Frequency37Choice
-import PercentageRate
-import TrueFalseIndicator
-import ActiveCurrencyAndAmount
+from .PercentageRate import PercentageRate
+from .TrueFalseIndicator import TrueFalseIndicator
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .Frequency37Choice import Frequency37Choice
 
 class MandateAdjustment1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctgy", "_Amt", "_DtAdjstmntRuleInd", "_Rate"]
-	@property
-	def Ctgy(self):
-		return self._Ctgy
-
-	@Ctgy.setter
-	def Ctgy(self, value):
-		self._Ctgy = value if type(value) != auto else self.make_default("Ctgy")
-
-	@Ctgy.deleter
-	def Ctgy(self):
-		del self._Ctgy
-		self._Ctgy = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_DtAdjstmntRuleInd", "_Rate", "_Ctgy", "_Amt"]
 	@property
 	def DtAdjstmntRuleInd(self):
 		return self._DtAdjstmntRuleInd
@@ -59,10 +33,36 @@ class MandateAdjustment1(base_types._BaseFieldType):
 		del self._Rate
 		self._Rate = None
 
+	@property
+	def Ctgy(self):
+		return self._Ctgy
+
+	@Ctgy.setter
+	def Ctgy(self, value):
+		self._Ctgy = value if type(value) != auto else self.make_default("Ctgy")
+
+	@Ctgy.deleter
+	def Ctgy(self):
+		del self._Ctgy
+		self._Ctgy = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctgy', type=Frequency37Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtAdjstmntRuleInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctgy', type=Frequency37Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,75 +1,23 @@
 from . import base_types
-import ClearingMemberFee1
-import AmountAndDirection102
-import ActiveCurrencyAndAmount
+from .ClearingMemberFee1 import ClearingMemberFee1
+from .AmountAndDirection102 import AmountAndDirection102
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class IncomeStatement2(base_types._BaseFieldType):
 
-	__slots__ = ["_PreTaxPrftOrLoss", "_ClrMmbFee", "_OprgPrftOrLoss", "_NetIntrstIncm", "_NonOprgExpnss", "_OprgExpnss", "_OthrNonOprgRvn", "_PstTaxPrftOrLoss", "_OthrOprgRvn"]
+	__slots__ = ["_PstTaxPrftOrLoss", "_OprgExpnss", "_ClrMmbFee", "_OthrNonOprgRvn", "_OprgPrftOrLoss", "_OthrOprgRvn", "_NonOprgExpnss", "_PreTaxPrftOrLoss", "_NetIntrstIncm"]
 	@property
-	def PreTaxPrftOrLoss(self):
-		return self._PreTaxPrftOrLoss
+	def PstTaxPrftOrLoss(self):
+		return self._PstTaxPrftOrLoss
 
-	@PreTaxPrftOrLoss.setter
-	def PreTaxPrftOrLoss(self, value):
-		self._PreTaxPrftOrLoss = value if type(value) != auto else self.make_default("PreTaxPrftOrLoss")
+	@PstTaxPrftOrLoss.setter
+	def PstTaxPrftOrLoss(self, value):
+		self._PstTaxPrftOrLoss = value if type(value) != auto else self.make_default("PstTaxPrftOrLoss")
 
-	@PreTaxPrftOrLoss.deleter
-	def PreTaxPrftOrLoss(self):
-		del self._PreTaxPrftOrLoss
-		self._PreTaxPrftOrLoss = None
-
-	@property
-	def ClrMmbFee(self):
-		return self._ClrMmbFee
-
-	@ClrMmbFee.setter
-	def ClrMmbFee(self, value):
-		self._ClrMmbFee = value if type(value) != auto else self.make_default("ClrMmbFee")
-
-	@ClrMmbFee.deleter
-	def ClrMmbFee(self):
-		del self._ClrMmbFee
-		self._ClrMmbFee = None
-
-	@property
-	def OprgPrftOrLoss(self):
-		return self._OprgPrftOrLoss
-
-	@OprgPrftOrLoss.setter
-	def OprgPrftOrLoss(self, value):
-		self._OprgPrftOrLoss = value if type(value) != auto else self.make_default("OprgPrftOrLoss")
-
-	@OprgPrftOrLoss.deleter
-	def OprgPrftOrLoss(self):
-		del self._OprgPrftOrLoss
-		self._OprgPrftOrLoss = None
-
-	@property
-	def NetIntrstIncm(self):
-		return self._NetIntrstIncm
-
-	@NetIntrstIncm.setter
-	def NetIntrstIncm(self, value):
-		self._NetIntrstIncm = value if type(value) != auto else self.make_default("NetIntrstIncm")
-
-	@NetIntrstIncm.deleter
-	def NetIntrstIncm(self):
-		del self._NetIntrstIncm
-		self._NetIntrstIncm = None
-
-	@property
-	def NonOprgExpnss(self):
-		return self._NonOprgExpnss
-
-	@NonOprgExpnss.setter
-	def NonOprgExpnss(self, value):
-		self._NonOprgExpnss = value if type(value) != auto else self.make_default("NonOprgExpnss")
-
-	@NonOprgExpnss.deleter
-	def NonOprgExpnss(self):
-		del self._NonOprgExpnss
-		self._NonOprgExpnss = None
+	@PstTaxPrftOrLoss.deleter
+	def PstTaxPrftOrLoss(self):
+		del self._PstTaxPrftOrLoss
+		self._PstTaxPrftOrLoss = None
 
 	@property
 	def OprgExpnss(self):
@@ -85,6 +33,19 @@ class IncomeStatement2(base_types._BaseFieldType):
 		self._OprgExpnss = None
 
 	@property
+	def ClrMmbFee(self):
+		return self._ClrMmbFee
+
+	@ClrMmbFee.setter
+	def ClrMmbFee(self, value):
+		self._ClrMmbFee = value if type(value) != auto else self.make_default("ClrMmbFee")
+
+	@ClrMmbFee.deleter
+	def ClrMmbFee(self):
+		del self._ClrMmbFee
+		self._ClrMmbFee = None
+
+	@property
 	def OthrNonOprgRvn(self):
 		return self._OthrNonOprgRvn
 
@@ -98,17 +59,17 @@ class IncomeStatement2(base_types._BaseFieldType):
 		self._OthrNonOprgRvn = None
 
 	@property
-	def PstTaxPrftOrLoss(self):
-		return self._PstTaxPrftOrLoss
+	def OprgPrftOrLoss(self):
+		return self._OprgPrftOrLoss
 
-	@PstTaxPrftOrLoss.setter
-	def PstTaxPrftOrLoss(self, value):
-		self._PstTaxPrftOrLoss = value if type(value) != auto else self.make_default("PstTaxPrftOrLoss")
+	@OprgPrftOrLoss.setter
+	def OprgPrftOrLoss(self, value):
+		self._OprgPrftOrLoss = value if type(value) != auto else self.make_default("OprgPrftOrLoss")
 
-	@PstTaxPrftOrLoss.deleter
-	def PstTaxPrftOrLoss(self):
-		del self._PstTaxPrftOrLoss
-		self._PstTaxPrftOrLoss = None
+	@OprgPrftOrLoss.deleter
+	def OprgPrftOrLoss(self):
+		del self._OprgPrftOrLoss
+		self._OprgPrftOrLoss = None
 
 	@property
 	def OthrOprgRvn(self):
@@ -123,15 +84,54 @@ class IncomeStatement2(base_types._BaseFieldType):
 		del self._OthrOprgRvn
 		self._OthrOprgRvn = None
 
+	@property
+	def NonOprgExpnss(self):
+		return self._NonOprgExpnss
+
+	@NonOprgExpnss.setter
+	def NonOprgExpnss(self, value):
+		self._NonOprgExpnss = value if type(value) != auto else self.make_default("NonOprgExpnss")
+
+	@NonOprgExpnss.deleter
+	def NonOprgExpnss(self):
+		del self._NonOprgExpnss
+		self._NonOprgExpnss = None
+
+	@property
+	def PreTaxPrftOrLoss(self):
+		return self._PreTaxPrftOrLoss
+
+	@PreTaxPrftOrLoss.setter
+	def PreTaxPrftOrLoss(self, value):
+		self._PreTaxPrftOrLoss = value if type(value) != auto else self.make_default("PreTaxPrftOrLoss")
+
+	@PreTaxPrftOrLoss.deleter
+	def PreTaxPrftOrLoss(self):
+		del self._PreTaxPrftOrLoss
+		self._PreTaxPrftOrLoss = None
+
+	@property
+	def NetIntrstIncm(self):
+		return self._NetIntrstIncm
+
+	@NetIntrstIncm.setter
+	def NetIntrstIncm(self, value):
+		self._NetIntrstIncm = value if type(value) != auto else self.make_default("NetIntrstIncm")
+
+	@NetIntrstIncm.deleter
+	def NetIntrstIncm(self):
+		del self._NetIntrstIncm
+		self._NetIntrstIncm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PreTaxPrftOrLoss', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrMmbFee', type=ClearingMemberFee1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OprgPrftOrLoss', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetIntrstIncm', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonOprgExpnss', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OprgExpnss', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrNonOprgRvn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstTaxPrftOrLoss', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OprgExpnss', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrMmbFee', type=ClearingMemberFee1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrNonOprgRvn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OprgPrftOrLoss', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrOprgRvn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonOprgExpnss', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PreTaxPrftOrLoss', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetIntrstIncm', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import PolypropyleneCommodityPlastic1
-import PolypropyleneCommodityOther1
+from .PolypropyleneCommodityPlastic1 import PolypropyleneCommodityPlastic1
+from .PolypropyleneCommodityOther1 import PolypropyleneCommodityOther1
 
 class AssetClassCommodityPolypropylene3Choice(base_types._BaseFieldType):
 

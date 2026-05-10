@@ -1,5 +1,5 @@
 from . import base_types
-import SecuritiesFinancingReportingMarginDataTransactionStateReportV02
+from .SecuritiesFinancingReportingMarginDataTransactionStateReportV02 import SecuritiesFinancingReportingMarginDataTransactionStateReportV02
 
 class AUTH_085_001_02():
 

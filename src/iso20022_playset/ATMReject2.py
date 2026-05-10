@@ -1,13 +1,13 @@
 from . import base_types
-import ATMCommand7
-import Max100KBinary
-import Max500Text
-import Max35Text
-import RejectReason1Code
+from .Max35Text import Max35Text
+from .ATMCommand7 import ATMCommand7
+from .Max100KBinary import Max100KBinary
+from .RejectReason1Code import RejectReason1Code
+from .Max500Text import Max500Text
 
 class ATMReject2(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgInErr", "_AddtlInf", "_RjctRsn", "_Cmd", "_RjctInitrId"]
+	__slots__ = ["_MsgInErr", "_Cmd", "_RjctRsn", "_AddtlInf", "_RjctInitrId"]
 	@property
 	def MsgInErr(self):
 		return self._MsgInErr
@@ -22,17 +22,17 @@ class ATMReject2(base_types._BaseFieldType):
 		self._MsgInErr = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def Cmd(self):
+		return self._Cmd
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@Cmd.setter
+	def Cmd(self, value):
+		self._Cmd = value if type(value) != auto else self.make_default("Cmd")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@Cmd.deleter
+	def Cmd(self):
+		del self._Cmd
+		self._Cmd = None
 
 	@property
 	def RjctRsn(self):
@@ -48,17 +48,17 @@ class ATMReject2(base_types._BaseFieldType):
 		self._RjctRsn = None
 
 	@property
-	def Cmd(self):
-		return self._Cmd
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Cmd.setter
-	def Cmd(self, value):
-		self._Cmd = value if type(value) != auto else self.make_default("Cmd")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@Cmd.deleter
-	def Cmd(self):
-		del self._Cmd
-		self._Cmd = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def RjctInitrId(self):
@@ -75,9 +75,9 @@ class ATMReject2(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgInErr', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctRsn', type=RejectReason1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cmd', type=ATMCommand7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RjctRsn', type=RejectReason1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctInitrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

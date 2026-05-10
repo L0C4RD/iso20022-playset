@@ -1,11 +1,11 @@
 from . import base_types
-import Max30DecimalNumber
-import RestrictedFINDecimalNumber
-import RestrictedFINImpliedCurrencyAndAmount
+from .RestrictedFINImpliedCurrencyAndAmount import RestrictedFINImpliedCurrencyAndAmount
+from .Max30DecimalNumber import Max30DecimalNumber
+from .RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
 
 class FinancialInstrumentQuantity36Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlTknUnit", "_Unit", "_FaceAmt", "_AmtsdVal"]
+	__slots__ = ["_DgtlTknUnit", "_FaceAmt", "_AmtsdVal", "_Unit"]
 	@property
 	def DgtlTknUnit(self):
 		return self._DgtlTknUnit
@@ -18,19 +18,6 @@ class FinancialInstrumentQuantity36Choice(base_types._BaseFieldType):
 	def DgtlTknUnit(self):
 		del self._DgtlTknUnit
 		self._DgtlTknUnit = None
-
-	@property
-	def Unit(self):
-		return self._Unit
-
-	@Unit.setter
-	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
-
-	@Unit.deleter
-	def Unit(self):
-		del self._Unit
-		self._Unit = None
 
 	@property
 	def FaceAmt(self):
@@ -58,10 +45,23 @@ class FinancialInstrumentQuantity36Choice(base_types._BaseFieldType):
 		del self._AmtsdVal
 		self._AmtsdVal = None
 
+	@property
+	def Unit(self):
+		return self._Unit
+
+	@Unit.setter
+	def Unit(self, value):
+		self._Unit = value if type(value) != auto else self.make_default("Unit")
+
+	@Unit.deleter
+	def Unit(self):
+		del self._Unit
+		self._Unit = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgtlTknUnit', type=Max30DecimalNumber, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Unit', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FaceAmt', type=RestrictedFINImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtsdVal', type=RestrictedFINImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Unit', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=1, array=False),
 	))
 

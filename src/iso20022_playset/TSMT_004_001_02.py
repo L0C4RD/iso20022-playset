@@ -1,5 +1,5 @@
 from . import base_types
-import ActivityReportSetUpRequestV02
+from .ActivityReportSetUpRequestV02 import ActivityReportSetUpRequestV02
 
 class TSMT_004_001_02():
 

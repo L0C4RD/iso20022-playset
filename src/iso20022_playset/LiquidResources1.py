@@ -1,21 +1,21 @@
 from . import base_types
-import LiquidResourceInformation1
+from .LiquidResourceInformation1 import LiquidResourceInformation1
 
 class LiquidResources1(base_types._BaseFieldType):
 
-	__slots__ = ["_FcltiesCmmtdFxSwps", "_FinInstrmsTrsrInvstmts", "_FcltiesCmmtdLinesOfCdt", "_CshDue", "_FinInstrmsDfltrsSttlmColl", "_FcltiesCmmtdRpAgrmts", "_FcltiesOthrCmmtd", "_FcltiesUcmmtd", "_FinInstrmsCCP", "_FinInstrmsDfltrsNonCshColl"]
+	__slots__ = ["_FinInstrmsCCP", "_FinInstrmsTrsrInvstmts", "_FinInstrmsDfltrsNonCshColl", "_FcltiesCmmtdLinesOfCdt", "_FcltiesUcmmtd", "_CshDue", "_FcltiesOthrCmmtd", "_FinInstrmsDfltrsSttlmColl", "_FcltiesCmmtdFxSwps", "_FcltiesCmmtdRpAgrmts"]
 	@property
-	def FcltiesCmmtdFxSwps(self):
-		return self._FcltiesCmmtdFxSwps
+	def FinInstrmsCCP(self):
+		return self._FinInstrmsCCP
 
-	@FcltiesCmmtdFxSwps.setter
-	def FcltiesCmmtdFxSwps(self, value):
-		self._FcltiesCmmtdFxSwps = value if type(value) != auto else self.make_default("FcltiesCmmtdFxSwps")
+	@FinInstrmsCCP.setter
+	def FinInstrmsCCP(self, value):
+		self._FinInstrmsCCP = value if type(value) != auto else self.make_default("FinInstrmsCCP")
 
-	@FcltiesCmmtdFxSwps.deleter
-	def FcltiesCmmtdFxSwps(self):
-		del self._FcltiesCmmtdFxSwps
-		self._FcltiesCmmtdFxSwps = None
+	@FinInstrmsCCP.deleter
+	def FinInstrmsCCP(self):
+		del self._FinInstrmsCCP
+		self._FinInstrmsCCP = None
 
 	@property
 	def FinInstrmsTrsrInvstmts(self):
@@ -31,6 +31,19 @@ class LiquidResources1(base_types._BaseFieldType):
 		self._FinInstrmsTrsrInvstmts = None
 
 	@property
+	def FinInstrmsDfltrsNonCshColl(self):
+		return self._FinInstrmsDfltrsNonCshColl
+
+	@FinInstrmsDfltrsNonCshColl.setter
+	def FinInstrmsDfltrsNonCshColl(self, value):
+		self._FinInstrmsDfltrsNonCshColl = value if type(value) != auto else self.make_default("FinInstrmsDfltrsNonCshColl")
+
+	@FinInstrmsDfltrsNonCshColl.deleter
+	def FinInstrmsDfltrsNonCshColl(self):
+		del self._FinInstrmsDfltrsNonCshColl
+		self._FinInstrmsDfltrsNonCshColl = None
+
+	@property
 	def FcltiesCmmtdLinesOfCdt(self):
 		return self._FcltiesCmmtdLinesOfCdt
 
@@ -42,58 +55,6 @@ class LiquidResources1(base_types._BaseFieldType):
 	def FcltiesCmmtdLinesOfCdt(self):
 		del self._FcltiesCmmtdLinesOfCdt
 		self._FcltiesCmmtdLinesOfCdt = None
-
-	@property
-	def CshDue(self):
-		return self._CshDue
-
-	@CshDue.setter
-	def CshDue(self, value):
-		self._CshDue = value if type(value) != auto else self.make_default("CshDue")
-
-	@CshDue.deleter
-	def CshDue(self):
-		del self._CshDue
-		self._CshDue = None
-
-	@property
-	def FinInstrmsDfltrsSttlmColl(self):
-		return self._FinInstrmsDfltrsSttlmColl
-
-	@FinInstrmsDfltrsSttlmColl.setter
-	def FinInstrmsDfltrsSttlmColl(self, value):
-		self._FinInstrmsDfltrsSttlmColl = value if type(value) != auto else self.make_default("FinInstrmsDfltrsSttlmColl")
-
-	@FinInstrmsDfltrsSttlmColl.deleter
-	def FinInstrmsDfltrsSttlmColl(self):
-		del self._FinInstrmsDfltrsSttlmColl
-		self._FinInstrmsDfltrsSttlmColl = None
-
-	@property
-	def FcltiesCmmtdRpAgrmts(self):
-		return self._FcltiesCmmtdRpAgrmts
-
-	@FcltiesCmmtdRpAgrmts.setter
-	def FcltiesCmmtdRpAgrmts(self, value):
-		self._FcltiesCmmtdRpAgrmts = value if type(value) != auto else self.make_default("FcltiesCmmtdRpAgrmts")
-
-	@FcltiesCmmtdRpAgrmts.deleter
-	def FcltiesCmmtdRpAgrmts(self):
-		del self._FcltiesCmmtdRpAgrmts
-		self._FcltiesCmmtdRpAgrmts = None
-
-	@property
-	def FcltiesOthrCmmtd(self):
-		return self._FcltiesOthrCmmtd
-
-	@FcltiesOthrCmmtd.setter
-	def FcltiesOthrCmmtd(self, value):
-		self._FcltiesOthrCmmtd = value if type(value) != auto else self.make_default("FcltiesOthrCmmtd")
-
-	@FcltiesOthrCmmtd.deleter
-	def FcltiesOthrCmmtd(self):
-		del self._FcltiesOthrCmmtd
-		self._FcltiesOthrCmmtd = None
 
 	@property
 	def FcltiesUcmmtd(self):
@@ -109,41 +70,80 @@ class LiquidResources1(base_types._BaseFieldType):
 		self._FcltiesUcmmtd = None
 
 	@property
-	def FinInstrmsCCP(self):
-		return self._FinInstrmsCCP
+	def CshDue(self):
+		return self._CshDue
 
-	@FinInstrmsCCP.setter
-	def FinInstrmsCCP(self, value):
-		self._FinInstrmsCCP = value if type(value) != auto else self.make_default("FinInstrmsCCP")
+	@CshDue.setter
+	def CshDue(self, value):
+		self._CshDue = value if type(value) != auto else self.make_default("CshDue")
 
-	@FinInstrmsCCP.deleter
-	def FinInstrmsCCP(self):
-		del self._FinInstrmsCCP
-		self._FinInstrmsCCP = None
+	@CshDue.deleter
+	def CshDue(self):
+		del self._CshDue
+		self._CshDue = None
 
 	@property
-	def FinInstrmsDfltrsNonCshColl(self):
-		return self._FinInstrmsDfltrsNonCshColl
+	def FcltiesOthrCmmtd(self):
+		return self._FcltiesOthrCmmtd
 
-	@FinInstrmsDfltrsNonCshColl.setter
-	def FinInstrmsDfltrsNonCshColl(self, value):
-		self._FinInstrmsDfltrsNonCshColl = value if type(value) != auto else self.make_default("FinInstrmsDfltrsNonCshColl")
+	@FcltiesOthrCmmtd.setter
+	def FcltiesOthrCmmtd(self, value):
+		self._FcltiesOthrCmmtd = value if type(value) != auto else self.make_default("FcltiesOthrCmmtd")
 
-	@FinInstrmsDfltrsNonCshColl.deleter
-	def FinInstrmsDfltrsNonCshColl(self):
-		del self._FinInstrmsDfltrsNonCshColl
-		self._FinInstrmsDfltrsNonCshColl = None
+	@FcltiesOthrCmmtd.deleter
+	def FcltiesOthrCmmtd(self):
+		del self._FcltiesOthrCmmtd
+		self._FcltiesOthrCmmtd = None
+
+	@property
+	def FinInstrmsDfltrsSttlmColl(self):
+		return self._FinInstrmsDfltrsSttlmColl
+
+	@FinInstrmsDfltrsSttlmColl.setter
+	def FinInstrmsDfltrsSttlmColl(self, value):
+		self._FinInstrmsDfltrsSttlmColl = value if type(value) != auto else self.make_default("FinInstrmsDfltrsSttlmColl")
+
+	@FinInstrmsDfltrsSttlmColl.deleter
+	def FinInstrmsDfltrsSttlmColl(self):
+		del self._FinInstrmsDfltrsSttlmColl
+		self._FinInstrmsDfltrsSttlmColl = None
+
+	@property
+	def FcltiesCmmtdFxSwps(self):
+		return self._FcltiesCmmtdFxSwps
+
+	@FcltiesCmmtdFxSwps.setter
+	def FcltiesCmmtdFxSwps(self, value):
+		self._FcltiesCmmtdFxSwps = value if type(value) != auto else self.make_default("FcltiesCmmtdFxSwps")
+
+	@FcltiesCmmtdFxSwps.deleter
+	def FcltiesCmmtdFxSwps(self):
+		del self._FcltiesCmmtdFxSwps
+		self._FcltiesCmmtdFxSwps = None
+
+	@property
+	def FcltiesCmmtdRpAgrmts(self):
+		return self._FcltiesCmmtdRpAgrmts
+
+	@FcltiesCmmtdRpAgrmts.setter
+	def FcltiesCmmtdRpAgrmts(self, value):
+		self._FcltiesCmmtdRpAgrmts = value if type(value) != auto else self.make_default("FcltiesCmmtdRpAgrmts")
+
+	@FcltiesCmmtdRpAgrmts.deleter
+	def FcltiesCmmtdRpAgrmts(self):
+		del self._FcltiesCmmtdRpAgrmts
+		self._FcltiesCmmtdRpAgrmts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FcltiesCmmtdFxSwps', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FinInstrmsTrsrInvstmts', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FcltiesCmmtdLinesOfCdt', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CshDue', type=LiquidResourceInformation1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FinInstrmsDfltrsSttlmColl', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FcltiesCmmtdRpAgrmts', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FcltiesOthrCmmtd', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FcltiesUcmmtd', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmsCCP', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FinInstrmsTrsrInvstmts', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmsDfltrsNonCshColl', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FcltiesCmmtdLinesOfCdt', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FcltiesUcmmtd', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshDue', type=LiquidResourceInformation1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FcltiesOthrCmmtd', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FinInstrmsDfltrsSttlmColl', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FcltiesCmmtdFxSwps', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FcltiesCmmtdRpAgrmts', type=LiquidResourceInformation1, min=0, max=None, mutex_group=None, array=True),
 	))
 

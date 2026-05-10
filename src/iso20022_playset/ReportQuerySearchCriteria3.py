@@ -1,16 +1,16 @@
 from . import base_types
-import CashBalance14
-import DateTimePeriod1Choice
-import EventType1Choice
-import Max4AlphaNumericText
-import AccountIdentificationSearchCriteria2Choice
-import Max35Text
-import DatePeriodSearch1Choice
-import PartyIdentification136
+from .Max4AlphaNumericText import Max4AlphaNumericText
+from .AccountIdentificationSearchCriteria2Choice import AccountIdentificationSearchCriteria2Choice
+from .Max35Text import Max35Text
+from .DatePeriodSearch1Choice import DatePeriodSearch1Choice
+from .PartyIdentification136 import PartyIdentification136
+from .EventType1Choice import EventType1Choice
+from .CashBalance14 import CashBalance14
+from .DateTimePeriod1Choice import DateTimePeriod1Choice
 
 class ReportQuerySearchCriteria3(base_types._BaseFieldType):
 
-	__slots__ = ["_DtSch", "_AcctId", "_Evt", "_RspnsblPtyId", "_PtyId", "_SchdldTm", "_MsgNmId", "_Bal", "_RptNm"]
+	__slots__ = ["_DtSch", "_AcctId", "_MsgNmId", "_RspnsblPtyId", "_Evt", "_PtyId", "_Bal", "_SchdldTm", "_RptNm"]
 	@property
 	def DtSch(self):
 		return self._DtSch
@@ -38,17 +38,17 @@ class ReportQuerySearchCriteria3(base_types._BaseFieldType):
 		self._AcctId = None
 
 	@property
-	def Evt(self):
-		return self._Evt
+	def MsgNmId(self):
+		return self._MsgNmId
 
-	@Evt.setter
-	def Evt(self, value):
-		self._Evt = value if type(value) != auto else self.make_default("Evt")
+	@MsgNmId.setter
+	def MsgNmId(self, value):
+		self._MsgNmId = value if type(value) != auto else self.make_default("MsgNmId")
 
-	@Evt.deleter
-	def Evt(self):
-		del self._Evt
-		self._Evt = None
+	@MsgNmId.deleter
+	def MsgNmId(self):
+		del self._MsgNmId
+		self._MsgNmId = None
 
 	@property
 	def RspnsblPtyId(self):
@@ -64,6 +64,19 @@ class ReportQuerySearchCriteria3(base_types._BaseFieldType):
 		self._RspnsblPtyId = None
 
 	@property
+	def Evt(self):
+		return self._Evt
+
+	@Evt.setter
+	def Evt(self, value):
+		self._Evt = value if type(value) != auto else self.make_default("Evt")
+
+	@Evt.deleter
+	def Evt(self):
+		del self._Evt
+		self._Evt = None
+
+	@property
 	def PtyId(self):
 		return self._PtyId
 
@@ -77,32 +90,6 @@ class ReportQuerySearchCriteria3(base_types._BaseFieldType):
 		self._PtyId = None
 
 	@property
-	def SchdldTm(self):
-		return self._SchdldTm
-
-	@SchdldTm.setter
-	def SchdldTm(self, value):
-		self._SchdldTm = value if type(value) != auto else self.make_default("SchdldTm")
-
-	@SchdldTm.deleter
-	def SchdldTm(self):
-		del self._SchdldTm
-		self._SchdldTm = None
-
-	@property
-	def MsgNmId(self):
-		return self._MsgNmId
-
-	@MsgNmId.setter
-	def MsgNmId(self, value):
-		self._MsgNmId = value if type(value) != auto else self.make_default("MsgNmId")
-
-	@MsgNmId.deleter
-	def MsgNmId(self):
-		del self._MsgNmId
-		self._MsgNmId = None
-
-	@property
 	def Bal(self):
 		return self._Bal
 
@@ -114,6 +101,19 @@ class ReportQuerySearchCriteria3(base_types._BaseFieldType):
 	def Bal(self):
 		del self._Bal
 		self._Bal = None
+
+	@property
+	def SchdldTm(self):
+		return self._SchdldTm
+
+	@SchdldTm.setter
+	def SchdldTm(self, value):
+		self._SchdldTm = value if type(value) != auto else self.make_default("SchdldTm")
+
+	@SchdldTm.deleter
+	def SchdldTm(self):
+		del self._SchdldTm
+		self._SchdldTm = None
 
 	@property
 	def RptNm(self):
@@ -131,12 +131,12 @@ class ReportQuerySearchCriteria3(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtSch', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=AccountIdentificationSearchCriteria2Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Evt', type=EventType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnsblPtyId', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyId', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SchdldTm', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgNmId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnsblPtyId', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Evt', type=EventType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyId', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bal', type=CashBalance14, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SchdldTm', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptNm', type=Max4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import LimitIdentification8
-import LimitOrError4Choice
+from .LimitOrError4Choice import LimitOrError4Choice
+from .LimitIdentification8 import LimitIdentification8
 
 class LimitReport8(base_types._BaseFieldType):
 

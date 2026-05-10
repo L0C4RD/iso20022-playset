@@ -1,5 +1,5 @@
 from . import base_types
-import ATMConfigurationControlV01
+from .ATMConfigurationControlV01 import ATMConfigurationControlV01
 
 class CAAM_014_001_01():
 

@@ -1,15 +1,15 @@
 from . import base_types
-import ClosingBalance6
-import FinancialInstrument76
-import PriceInformation24
-import Transaction126
-import SafeKeepingPlace4
-import OpeningBalance6
-import SecurityIdentification20
+from .SecurityIdentification20 import SecurityIdentification20
+from .FinancialInstrument76 import FinancialInstrument76
+from .ClosingBalance6 import ClosingBalance6
+from .SafeKeepingPlace4 import SafeKeepingPlace4
+from .PriceInformation24 import PriceInformation24
+from .OpeningBalance6 import OpeningBalance6
+from .Transaction126 import Transaction126
 
 class FinancialInstrumentDetails43(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstmtFndsFinInstrmAttrbts", "_FinInstrmId", "_PricDtls", "_ClsgBal", "_SfkpgPlc", "_OpngBal", "_Tx"]
+	__slots__ = ["_InvstmtFndsFinInstrmAttrbts", "_FinInstrmId", "_Tx", "_SfkpgPlc", "_PricDtls", "_ClsgBal", "_OpngBal"]
 	@property
 	def InvstmtFndsFinInstrmAttrbts(self):
 		return self._InvstmtFndsFinInstrmAttrbts
@@ -35,6 +35,32 @@ class FinancialInstrumentDetails43(base_types._BaseFieldType):
 	def FinInstrmId(self):
 		del self._FinInstrmId
 		self._FinInstrmId = None
+
+	@property
+	def Tx(self):
+		return self._Tx
+
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != auto else self.make_default("Tx")
+
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
+
+	@property
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
+
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
+
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
 
 	@property
 	def PricDtls(self):
@@ -63,19 +89,6 @@ class FinancialInstrumentDetails43(base_types._BaseFieldType):
 		self._ClsgBal = None
 
 	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
-
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
-
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
-
-	@property
 	def OpngBal(self):
 		return self._OpngBal
 
@@ -88,26 +101,13 @@ class FinancialInstrumentDetails43(base_types._BaseFieldType):
 		del self._OpngBal
 		self._OpngBal = None
 
-	@property
-	def Tx(self):
-		return self._Tx
-
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
-
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvstmtFndsFinInstrmAttrbts', type=FinancialInstrument76, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tx', type=Transaction126, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafeKeepingPlace4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricDtls', type=PriceInformation24, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsgBal', type=ClosingBalance6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=SafeKeepingPlace4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OpngBal', type=OpeningBalance6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tx', type=Transaction126, min=1, max=None, mutex_group=None, array=True),
 	))
 

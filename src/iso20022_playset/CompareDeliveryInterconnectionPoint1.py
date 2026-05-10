@@ -1,5 +1,5 @@
 from . import base_types
-import DeliveryInterconnectionPoint1Choice
+from .DeliveryInterconnectionPoint1Choice import DeliveryInterconnectionPoint1Choice
 
 class CompareDeliveryInterconnectionPoint1(base_types._BaseFieldType):
 

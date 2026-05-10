@@ -1,6 +1,6 @@
 from . import base_types
-import PartyIdentification136
-import PartyIdentificationAndAccount202
+from .PartyIdentification136 import PartyIdentification136
+from .PartyIdentificationAndAccount202 import PartyIdentificationAndAccount202
 
 class CollateralParties9(base_types._BaseFieldType):
 

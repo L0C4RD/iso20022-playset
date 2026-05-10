@@ -1,6 +1,6 @@
 from . import base_types
-import ActiveCurrencyAndAmount
-import ISINOct2015Identifier
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .ISINOct2015Identifier import ISINOct2015Identifier
 
 class CollateralValuation6(base_types._BaseFieldType):
 

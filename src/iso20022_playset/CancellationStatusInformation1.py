@@ -1,7 +1,7 @@
 from . import base_types
-import CancellationStatus4Code
-import Max105Text
-import StatusReason4Choice
+from .StatusReason4Choice import StatusReason4Choice
+from .Max105Text import Max105Text
+from .CancellationStatus4Code import CancellationStatus4Code
 
 class CancellationStatusInformation1(base_types._BaseFieldType):
 

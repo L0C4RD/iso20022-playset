@@ -1,12 +1,12 @@
 from . import base_types
-import Percentage14Rate
-import RateTypeAndPercentageRate17
-import RestrictedFINActiveCurrencyAnd13DecimalAmount
-import RateTypeAndAmountAndStatus54
+from .RateTypeAndPercentageRate17 import RateTypeAndPercentageRate17
+from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from .Percentage14Rate import Percentage14Rate
+from .RateTypeAndAmountAndStatus54 import RateTypeAndAmountAndStatus54
 
 class RateAndAmountFormat68Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Rate", "_RateTpAndRate", "_RateTpAndAmtAndRateSts"]
+	__slots__ = ["_Amt", "_RateTpAndRate", "_RateTpAndAmtAndRateSts", "_Rate"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -19,19 +19,6 @@ class RateAndAmountFormat68Choice(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
-
-	@property
-	def Rate(self):
-		return self._Rate
-
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != auto else self.make_default("Rate")
-
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
 
 	@property
 	def RateTpAndRate(self):
@@ -59,10 +46,23 @@ class RateAndAmountFormat68Choice(base_types._BaseFieldType):
 		del self._RateTpAndAmtAndRateSts
 		self._RateTpAndAmtAndRateSts = None
 
+	@property
+	def Rate(self):
+		return self._Rate
+
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != auto else self.make_default("Rate")
+
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RateTpAndRate', type=RateTypeAndPercentageRate17, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RateTpAndAmtAndRateSts', type=RateTypeAndAmountAndStatus54, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
 	))
 

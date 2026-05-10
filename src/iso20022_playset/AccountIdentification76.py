@@ -1,13 +1,13 @@
 from . import base_types
-import BalanceFormat14Choice
-import RestrictedFINXMax35Text
-import PartyIdentification136Choice
-import RestrictedFINXMax140Text
-import SafekeepingPlaceFormat54Choice
+from .PartyIdentification136Choice import PartyIdentification136Choice
+from .RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from .RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from .BalanceFormat14Choice import BalanceFormat14Choice
+from .SafekeepingPlaceFormat54Choice import SafekeepingPlaceFormat54Choice
 
 class AccountIdentification76(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_ConfdBal", "_SfkpgPlc", "_BlckChainAdrOrWllt", "_SfkpgAcct"]
+	__slots__ = ["_AcctOwnr", "_SfkpgPlc", "_ConfdBal", "_BlckChainAdrOrWllt", "_SfkpgAcct"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
@@ -22,19 +22,6 @@ class AccountIdentification76(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def ConfdBal(self):
-		return self._ConfdBal
-
-	@ConfdBal.setter
-	def ConfdBal(self, value):
-		self._ConfdBal = value if type(value) != auto else self.make_default("ConfdBal")
-
-	@ConfdBal.deleter
-	def ConfdBal(self):
-		del self._ConfdBal
-		self._ConfdBal = None
-
-	@property
 	def SfkpgPlc(self):
 		return self._SfkpgPlc
 
@@ -46,6 +33,19 @@ class AccountIdentification76(base_types._BaseFieldType):
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
 		self._SfkpgPlc = None
+
+	@property
+	def ConfdBal(self):
+		return self._ConfdBal
+
+	@ConfdBal.setter
+	def ConfdBal(self, value):
+		self._ConfdBal = value if type(value) != auto else self.make_default("ConfdBal")
+
+	@ConfdBal.deleter
+	def ConfdBal(self):
+		del self._ConfdBal
+		self._ConfdBal = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -75,8 +75,8 @@ class AccountIdentification76(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConfdBal', type=BalanceFormat14Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat54Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfdBal', type=BalanceFormat14Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 	))

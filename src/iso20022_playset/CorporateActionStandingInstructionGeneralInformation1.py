@@ -1,14 +1,14 @@
 from . import base_types
-import PartyIdentification2Choice
-import StandingInstructionType1Code
-import FinancialInstrumentDescription3
-import CorporateActionEventType2FormatChoice
-import Max35Text
-import IncludedAccount1
+from .Max35Text import Max35Text
+from .PartyIdentification2Choice import PartyIdentification2Choice
+from .IncludedAccount1 import IncludedAccount1
+from .FinancialInstrumentDescription3 import FinancialInstrumentDescription3
+from .CorporateActionEventType2FormatChoice import CorporateActionEventType2FormatChoice
+from .StandingInstructionType1Code import StandingInstructionType1Code
 
 class CorporateActionStandingInstructionGeneralInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygScty", "_StgInstrTp", "_AcctDtls", "_InstgPtyId", "_ClntStgInstrId", "_EvtTp"]
+	__slots__ = ["_UndrlygScty", "_InstgPtyId", "_AcctDtls", "_ClntStgInstrId", "_StgInstrTp", "_EvtTp"]
 	@property
 	def UndrlygScty(self):
 		return self._UndrlygScty
@@ -21,32 +21,6 @@ class CorporateActionStandingInstructionGeneralInformation1(base_types._BaseFiel
 	def UndrlygScty(self):
 		del self._UndrlygScty
 		self._UndrlygScty = None
-
-	@property
-	def StgInstrTp(self):
-		return self._StgInstrTp
-
-	@StgInstrTp.setter
-	def StgInstrTp(self, value):
-		self._StgInstrTp = value if type(value) != auto else self.make_default("StgInstrTp")
-
-	@StgInstrTp.deleter
-	def StgInstrTp(self):
-		del self._StgInstrTp
-		self._StgInstrTp = None
-
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
 
 	@property
 	def InstgPtyId(self):
@@ -62,6 +36,19 @@ class CorporateActionStandingInstructionGeneralInformation1(base_types._BaseFiel
 		self._InstgPtyId = None
 
 	@property
+	def AcctDtls(self):
+		return self._AcctDtls
+
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
+
+	@property
 	def ClntStgInstrId(self):
 		return self._ClntStgInstrId
 
@@ -73,6 +60,19 @@ class CorporateActionStandingInstructionGeneralInformation1(base_types._BaseFiel
 	def ClntStgInstrId(self):
 		del self._ClntStgInstrId
 		self._ClntStgInstrId = None
+
+	@property
+	def StgInstrTp(self):
+		return self._StgInstrTp
+
+	@StgInstrTp.setter
+	def StgInstrTp(self, value):
+		self._StgInstrTp = value if type(value) != auto else self.make_default("StgInstrTp")
+
+	@StgInstrTp.deleter
+	def StgInstrTp(self):
+		del self._StgInstrTp
+		self._StgInstrTp = None
 
 	@property
 	def EvtTp(self):
@@ -89,10 +89,10 @@ class CorporateActionStandingInstructionGeneralInformation1(base_types._BaseFiel
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UndrlygScty', type=FinancialInstrumentDescription3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StgInstrTp', type=StandingInstructionType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctDtls', type=IncludedAccount1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InstgPtyId', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDtls', type=IncludedAccount1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClntStgInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StgInstrTp', type=StandingInstructionType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType2FormatChoice, min=0, max=None, mutex_group=None, array=True),
 	))
 

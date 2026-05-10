@@ -1,12 +1,38 @@
 from . import base_types
-import ISODate
-import Max1025Text
-import ContractRegistrationReference2Choice
-import ActiveCurrencyAndAmount
+from .ContractRegistrationReference2Choice import ContractRegistrationReference2Choice
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .Max1025Text import Max1025Text
+from .ISODate import ISODate
 
 class TransactionCertificateContract2(base_types._BaseFieldType):
 
-	__slots__ = ["_TxAmtInCtrctCcy", "_AddtlInf", "_XpctdShipmntDt", "_CtrctRef", "_XpctdAdvncPmtRtrDt"]
+	__slots__ = ["_XpctdAdvncPmtRtrDt", "_XpctdShipmntDt", "_TxAmtInCtrctCcy", "_AddtlInf", "_CtrctRef"]
+	@property
+	def XpctdAdvncPmtRtrDt(self):
+		return self._XpctdAdvncPmtRtrDt
+
+	@XpctdAdvncPmtRtrDt.setter
+	def XpctdAdvncPmtRtrDt(self, value):
+		self._XpctdAdvncPmtRtrDt = value if type(value) != auto else self.make_default("XpctdAdvncPmtRtrDt")
+
+	@XpctdAdvncPmtRtrDt.deleter
+	def XpctdAdvncPmtRtrDt(self):
+		del self._XpctdAdvncPmtRtrDt
+		self._XpctdAdvncPmtRtrDt = None
+
+	@property
+	def XpctdShipmntDt(self):
+		return self._XpctdShipmntDt
+
+	@XpctdShipmntDt.setter
+	def XpctdShipmntDt(self, value):
+		self._XpctdShipmntDt = value if type(value) != auto else self.make_default("XpctdShipmntDt")
+
+	@XpctdShipmntDt.deleter
+	def XpctdShipmntDt(self):
+		del self._XpctdShipmntDt
+		self._XpctdShipmntDt = None
+
 	@property
 	def TxAmtInCtrctCcy(self):
 		return self._TxAmtInCtrctCcy
@@ -34,19 +60,6 @@ class TransactionCertificateContract2(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def XpctdShipmntDt(self):
-		return self._XpctdShipmntDt
-
-	@XpctdShipmntDt.setter
-	def XpctdShipmntDt(self, value):
-		self._XpctdShipmntDt = value if type(value) != auto else self.make_default("XpctdShipmntDt")
-
-	@XpctdShipmntDt.deleter
-	def XpctdShipmntDt(self):
-		del self._XpctdShipmntDt
-		self._XpctdShipmntDt = None
-
-	@property
 	def CtrctRef(self):
 		return self._CtrctRef
 
@@ -59,24 +72,11 @@ class TransactionCertificateContract2(base_types._BaseFieldType):
 		del self._CtrctRef
 		self._CtrctRef = None
 
-	@property
-	def XpctdAdvncPmtRtrDt(self):
-		return self._XpctdAdvncPmtRtrDt
-
-	@XpctdAdvncPmtRtrDt.setter
-	def XpctdAdvncPmtRtrDt(self, value):
-		self._XpctdAdvncPmtRtrDt = value if type(value) != auto else self.make_default("XpctdAdvncPmtRtrDt")
-
-	@XpctdAdvncPmtRtrDt.deleter
-	def XpctdAdvncPmtRtrDt(self):
-		del self._XpctdAdvncPmtRtrDt
-		self._XpctdAdvncPmtRtrDt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='XpctdAdvncPmtRtrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdShipmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxAmtInCtrctCcy', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdShipmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctRef', type=ContractRegistrationReference2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdAdvncPmtRtrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

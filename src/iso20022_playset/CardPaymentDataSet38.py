@@ -1,24 +1,24 @@
 from . import base_types
-import Max9NumericText
-import ResponseType10
-import CardPaymentEnvironment81
-import CardPaymentTransactionAdviceResponse5
+from .Max9NumericText import Max9NumericText
+from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from .CardPaymentTransactionAdviceResponse5 import CardPaymentTransactionAdviceResponse5
+from .ResponseType10 import ResponseType10
 
 class CardPaymentDataSet38(base_types._BaseFieldType):
 
-	__slots__ = ["_TxSeqCntr", "_TxRspn", "_Envt", "_Tx"]
+	__slots__ = ["_Tx", "_TxRspn", "_Envt", "_TxSeqCntr"]
 	@property
-	def TxSeqCntr(self):
-		return self._TxSeqCntr
+	def Tx(self):
+		return self._Tx
 
-	@TxSeqCntr.setter
-	def TxSeqCntr(self, value):
-		self._TxSeqCntr = value if type(value) != auto else self.make_default("TxSeqCntr")
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != auto else self.make_default("Tx")
 
-	@TxSeqCntr.deleter
-	def TxSeqCntr(self):
-		del self._TxSeqCntr
-		self._TxSeqCntr = None
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
 
 	@property
 	def TxRspn(self):
@@ -47,22 +47,22 @@ class CardPaymentDataSet38(base_types._BaseFieldType):
 		self._Envt = None
 
 	@property
-	def Tx(self):
-		return self._Tx
+	def TxSeqCntr(self):
+		return self._TxSeqCntr
 
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+	@TxSeqCntr.setter
+	def TxSeqCntr(self, value):
+		self._TxSeqCntr = value if type(value) != auto else self.make_default("TxSeqCntr")
 
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
+	@TxSeqCntr.deleter
+	def TxSeqCntr(self):
+		del self._TxSeqCntr
+		self._TxSeqCntr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxSeqCntr', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tx', type=CardPaymentTransactionAdviceResponse5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxRspn', type=ResponseType10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tx', type=CardPaymentTransactionAdviceResponse5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSeqCntr', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

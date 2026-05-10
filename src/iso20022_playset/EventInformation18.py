@@ -1,12 +1,12 @@
 from . import base_types
-import CorporateActionEventType117Choice
-import RestrictedFINXMax16Text
-import NotificationIdentification6
-import CorporateActionMandatoryVoluntary4Choice
+from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from .CorporateActionMandatoryVoluntary4Choice import CorporateActionMandatoryVoluntary4Choice
+from .NotificationIdentification6 import NotificationIdentification6
+from .CorporateActionEventType117Choice import CorporateActionEventType117Choice
 
 class EventInformation18(base_types._BaseFieldType):
 
-	__slots__ = ["_MndtryVlntryEvtTp", "_OffclCorpActnEvtId", "_CorpActnEvtId", "_EvtTp", "_LastNtfctnId"]
+	__slots__ = ["_MndtryVlntryEvtTp", "_LastNtfctnId", "_EvtTp", "_CorpActnEvtId", "_OffclCorpActnEvtId"]
 	@property
 	def MndtryVlntryEvtTp(self):
 		return self._MndtryVlntryEvtTp
@@ -21,30 +21,17 @@ class EventInformation18(base_types._BaseFieldType):
 		self._MndtryVlntryEvtTp = None
 
 	@property
-	def OffclCorpActnEvtId(self):
-		return self._OffclCorpActnEvtId
+	def LastNtfctnId(self):
+		return self._LastNtfctnId
 
-	@OffclCorpActnEvtId.setter
-	def OffclCorpActnEvtId(self, value):
-		self._OffclCorpActnEvtId = value if type(value) != auto else self.make_default("OffclCorpActnEvtId")
+	@LastNtfctnId.setter
+	def LastNtfctnId(self, value):
+		self._LastNtfctnId = value if type(value) != auto else self.make_default("LastNtfctnId")
 
-	@OffclCorpActnEvtId.deleter
-	def OffclCorpActnEvtId(self):
-		del self._OffclCorpActnEvtId
-		self._OffclCorpActnEvtId = None
-
-	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
-
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
-
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
+	@LastNtfctnId.deleter
+	def LastNtfctnId(self):
+		del self._LastNtfctnId
+		self._LastNtfctnId = None
 
 	@property
 	def EvtTp(self):
@@ -60,23 +47,36 @@ class EventInformation18(base_types._BaseFieldType):
 		self._EvtTp = None
 
 	@property
-	def LastNtfctnId(self):
-		return self._LastNtfctnId
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
 
-	@LastNtfctnId.setter
-	def LastNtfctnId(self, value):
-		self._LastNtfctnId = value if type(value) != auto else self.make_default("LastNtfctnId")
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
 
-	@LastNtfctnId.deleter
-	def LastNtfctnId(self):
-		del self._LastNtfctnId
-		self._LastNtfctnId = None
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
+
+	@property
+	def OffclCorpActnEvtId(self):
+		return self._OffclCorpActnEvtId
+
+	@OffclCorpActnEvtId.setter
+	def OffclCorpActnEvtId(self, value):
+		self._OffclCorpActnEvtId = value if type(value) != auto else self.make_default("OffclCorpActnEvtId")
+
+	@OffclCorpActnEvtId.deleter
+	def OffclCorpActnEvtId(self):
+		del self._OffclCorpActnEvtId
+		self._OffclCorpActnEvtId = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MndtryVlntryEvtTp', type=CorporateActionMandatoryVoluntary4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType117Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastNtfctnId', type=NotificationIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType117Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

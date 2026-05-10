@@ -1,6 +1,6 @@
 from . import base_types
-import Number
-import YesNoIndicator
+from .YesNoIndicator import YesNoIndicator
+from .Number import Number
 
 class TimeFrame7Choice(base_types._BaseFieldType):
 

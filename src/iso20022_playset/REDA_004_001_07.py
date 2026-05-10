@@ -1,5 +1,5 @@
 from . import base_types
-import FundReferenceDataReportV07
+from .FundReferenceDataReportV07 import FundReferenceDataReportV07
 
 class REDA_004_001_07():
 

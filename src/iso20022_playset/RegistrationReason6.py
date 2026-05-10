@@ -1,23 +1,10 @@
 from . import base_types
-import RestrictedFINXMax210Text
-import Registration12Choice
+from .RestrictedFINXMax210Text import RestrictedFINXMax210Text
+from .Registration12Choice import Registration12Choice
 
 class RegistrationReason6(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Cd"]
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
+	__slots__ = ["_Cd", "_AddtlInf"]
 	@property
 	def Cd(self):
 		return self._Cd
@@ -31,8 +18,21 @@ class RegistrationReason6(base_types._BaseFieldType):
 		del self._Cd
 		self._Cd = None
 
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInf', type=RestrictedFINXMax210Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cd', type=Registration12Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=RestrictedFINXMax210Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

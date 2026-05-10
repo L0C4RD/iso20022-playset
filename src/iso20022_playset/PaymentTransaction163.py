@@ -1,65 +1,39 @@
 from . import base_types
-import ISODate
-import Priority3Code
-import BranchAndFinancialInstitutionIdentification8
-import Max35Text
-import ActiveCurrencyAndAmount
-import ChargeBearerType1Code
-import CurrencyExchange26
-import BaseOneRate
-import PaymentTypeInformation28
-import OriginalGroupInformation29
-import SupplementaryData1
-import OriginalTransactionReference44
-import Charges16
-import SettlementTimeRequest2
-import PaymentReturnReason7
-import SettlementDateTimeIndication1
-import UUIDv4Identifier
-import TransactionParties11
-import ActiveOrHistoricCurrencyAndAmount
+from .Max35Text import Max35Text
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .ISODate import ISODate
+from .Charges16 import Charges16
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .ChargeBearerType1Code import ChargeBearerType1Code
+from .OriginalTransactionReference44 import OriginalTransactionReference44
+from .PaymentTypeInformation28 import PaymentTypeInformation28
+from .SettlementTimeRequest2 import SettlementTimeRequest2
+from .BaseOneRate import BaseOneRate
+from .PaymentReturnReason7 import PaymentReturnReason7
+from .TransactionParties11 import TransactionParties11
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .SettlementDateTimeIndication1 import SettlementDateTimeIndication1
+from .SupplementaryData1 import SupplementaryData1
+from .CurrencyExchange26 import CurrencyExchange26
+from .OriginalGroupInformation29 import OriginalGroupInformation29
+from .UUIDv4Identifier import UUIDv4Identifier
+from .Priority3Code import Priority3Code
 
 class PaymentTransaction163(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlTxRef", "_OrgnlGrpInf", "_PmtTpInf", "_RtrdIntrBkSttlmAmt", "_InstgAgt", "_RtrId", "_RtrChain", "_OrgnlIntrBkSttlmAmt", "_XchgRate", "_OrgnlUETR", "_SttlmTmIndctn", "_OrgnlEndToEndId", "_IntrBkSttlmDt", "_SttlmTmReq", "_ChrgBr", "_ChrgsInf", "_ClrSysRef", "_SplmtryData", "_OrgnlClrSysRef", "_CompstnAmt", "_InstdAgt", "_RtrRsnInf", "_SttlmPrty", "_OrgnlInstrId", "_RtrdInstdAmt", "_OrgnlTxId", "_AgrdRate", "_OrgnlIntrBkSttlmDt"]
+	__slots__ = ["_OrgnlInstrId", "_RtrdIntrBkSttlmAmt", "_RtrChain", "_ChrgBr", "_OrgnlEndToEndId", "_AgrdRate", "_InstgAgt", "_OrgnlIntrBkSttlmAmt", "_RtrId", "_SttlmTmIndctn", "_SttlmTmReq", "_RtrRsnInf", "_OrgnlGrpInf", "_CompstnAmt", "_OrgnlClrSysRef", "_ChrgsInf", "_SttlmPrty", "_OrgnlIntrBkSttlmDt", "_OrgnlTxRef", "_OrgnlTxId", "_RtrdInstdAmt", "_IntrBkSttlmDt", "_InstdAgt", "_OrgnlUETR", "_SplmtryData", "_ClrSysRef", "_PmtTpInf", "_XchgRate"]
 	@property
-	def OrgnlTxRef(self):
-		return self._OrgnlTxRef
+	def OrgnlInstrId(self):
+		return self._OrgnlInstrId
 
-	@OrgnlTxRef.setter
-	def OrgnlTxRef(self, value):
-		self._OrgnlTxRef = value if type(value) != auto else self.make_default("OrgnlTxRef")
+	@OrgnlInstrId.setter
+	def OrgnlInstrId(self, value):
+		self._OrgnlInstrId = value if type(value) != auto else self.make_default("OrgnlInstrId")
 
-	@OrgnlTxRef.deleter
-	def OrgnlTxRef(self):
-		del self._OrgnlTxRef
-		self._OrgnlTxRef = None
-
-	@property
-	def OrgnlGrpInf(self):
-		return self._OrgnlGrpInf
-
-	@OrgnlGrpInf.setter
-	def OrgnlGrpInf(self, value):
-		self._OrgnlGrpInf = value if type(value) != auto else self.make_default("OrgnlGrpInf")
-
-	@OrgnlGrpInf.deleter
-	def OrgnlGrpInf(self):
-		del self._OrgnlGrpInf
-		self._OrgnlGrpInf = None
-
-	@property
-	def PmtTpInf(self):
-		return self._PmtTpInf
-
-	@PmtTpInf.setter
-	def PmtTpInf(self, value):
-		self._PmtTpInf = value if type(value) != auto else self.make_default("PmtTpInf")
-
-	@PmtTpInf.deleter
-	def PmtTpInf(self):
-		del self._PmtTpInf
-		self._PmtTpInf = None
+	@OrgnlInstrId.deleter
+	def OrgnlInstrId(self):
+		del self._OrgnlInstrId
+		self._OrgnlInstrId = None
 
 	@property
 	def RtrdIntrBkSttlmAmt(self):
@@ -75,32 +49,6 @@ class PaymentTransaction163(base_types._BaseFieldType):
 		self._RtrdIntrBkSttlmAmt = None
 
 	@property
-	def InstgAgt(self):
-		return self._InstgAgt
-
-	@InstgAgt.setter
-	def InstgAgt(self, value):
-		self._InstgAgt = value if type(value) != auto else self.make_default("InstgAgt")
-
-	@InstgAgt.deleter
-	def InstgAgt(self):
-		del self._InstgAgt
-		self._InstgAgt = None
-
-	@property
-	def RtrId(self):
-		return self._RtrId
-
-	@RtrId.setter
-	def RtrId(self, value):
-		self._RtrId = value if type(value) != auto else self.make_default("RtrId")
-
-	@RtrId.deleter
-	def RtrId(self):
-		del self._RtrId
-		self._RtrId = None
-
-	@property
 	def RtrChain(self):
 		return self._RtrChain
 
@@ -112,97 +60,6 @@ class PaymentTransaction163(base_types._BaseFieldType):
 	def RtrChain(self):
 		del self._RtrChain
 		self._RtrChain = None
-
-	@property
-	def OrgnlIntrBkSttlmAmt(self):
-		return self._OrgnlIntrBkSttlmAmt
-
-	@OrgnlIntrBkSttlmAmt.setter
-	def OrgnlIntrBkSttlmAmt(self, value):
-		self._OrgnlIntrBkSttlmAmt = value if type(value) != auto else self.make_default("OrgnlIntrBkSttlmAmt")
-
-	@OrgnlIntrBkSttlmAmt.deleter
-	def OrgnlIntrBkSttlmAmt(self):
-		del self._OrgnlIntrBkSttlmAmt
-		self._OrgnlIntrBkSttlmAmt = None
-
-	@property
-	def XchgRate(self):
-		return self._XchgRate
-
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
-
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
-
-	@property
-	def OrgnlUETR(self):
-		return self._OrgnlUETR
-
-	@OrgnlUETR.setter
-	def OrgnlUETR(self, value):
-		self._OrgnlUETR = value if type(value) != auto else self.make_default("OrgnlUETR")
-
-	@OrgnlUETR.deleter
-	def OrgnlUETR(self):
-		del self._OrgnlUETR
-		self._OrgnlUETR = None
-
-	@property
-	def SttlmTmIndctn(self):
-		return self._SttlmTmIndctn
-
-	@SttlmTmIndctn.setter
-	def SttlmTmIndctn(self, value):
-		self._SttlmTmIndctn = value if type(value) != auto else self.make_default("SttlmTmIndctn")
-
-	@SttlmTmIndctn.deleter
-	def SttlmTmIndctn(self):
-		del self._SttlmTmIndctn
-		self._SttlmTmIndctn = None
-
-	@property
-	def OrgnlEndToEndId(self):
-		return self._OrgnlEndToEndId
-
-	@OrgnlEndToEndId.setter
-	def OrgnlEndToEndId(self, value):
-		self._OrgnlEndToEndId = value if type(value) != auto else self.make_default("OrgnlEndToEndId")
-
-	@OrgnlEndToEndId.deleter
-	def OrgnlEndToEndId(self):
-		del self._OrgnlEndToEndId
-		self._OrgnlEndToEndId = None
-
-	@property
-	def IntrBkSttlmDt(self):
-		return self._IntrBkSttlmDt
-
-	@IntrBkSttlmDt.setter
-	def IntrBkSttlmDt(self, value):
-		self._IntrBkSttlmDt = value if type(value) != auto else self.make_default("IntrBkSttlmDt")
-
-	@IntrBkSttlmDt.deleter
-	def IntrBkSttlmDt(self):
-		del self._IntrBkSttlmDt
-		self._IntrBkSttlmDt = None
-
-	@property
-	def SttlmTmReq(self):
-		return self._SttlmTmReq
-
-	@SttlmTmReq.setter
-	def SttlmTmReq(self, value):
-		self._SttlmTmReq = value if type(value) != auto else self.make_default("SttlmTmReq")
-
-	@SttlmTmReq.deleter
-	def SttlmTmReq(self):
-		del self._SttlmTmReq
-		self._SttlmTmReq = None
 
 	@property
 	def ChrgBr(self):
@@ -218,147 +75,17 @@ class PaymentTransaction163(base_types._BaseFieldType):
 		self._ChrgBr = None
 
 	@property
-	def ChrgsInf(self):
-		return self._ChrgsInf
+	def OrgnlEndToEndId(self):
+		return self._OrgnlEndToEndId
 
-	@ChrgsInf.setter
-	def ChrgsInf(self, value):
-		self._ChrgsInf = value if type(value) != auto else self.make_default("ChrgsInf")
+	@OrgnlEndToEndId.setter
+	def OrgnlEndToEndId(self, value):
+		self._OrgnlEndToEndId = value if type(value) != auto else self.make_default("OrgnlEndToEndId")
 
-	@ChrgsInf.deleter
-	def ChrgsInf(self):
-		del self._ChrgsInf
-		self._ChrgsInf = None
-
-	@property
-	def ClrSysRef(self):
-		return self._ClrSysRef
-
-	@ClrSysRef.setter
-	def ClrSysRef(self, value):
-		self._ClrSysRef = value if type(value) != auto else self.make_default("ClrSysRef")
-
-	@ClrSysRef.deleter
-	def ClrSysRef(self):
-		del self._ClrSysRef
-		self._ClrSysRef = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def OrgnlClrSysRef(self):
-		return self._OrgnlClrSysRef
-
-	@OrgnlClrSysRef.setter
-	def OrgnlClrSysRef(self, value):
-		self._OrgnlClrSysRef = value if type(value) != auto else self.make_default("OrgnlClrSysRef")
-
-	@OrgnlClrSysRef.deleter
-	def OrgnlClrSysRef(self):
-		del self._OrgnlClrSysRef
-		self._OrgnlClrSysRef = None
-
-	@property
-	def CompstnAmt(self):
-		return self._CompstnAmt
-
-	@CompstnAmt.setter
-	def CompstnAmt(self, value):
-		self._CompstnAmt = value if type(value) != auto else self.make_default("CompstnAmt")
-
-	@CompstnAmt.deleter
-	def CompstnAmt(self):
-		del self._CompstnAmt
-		self._CompstnAmt = None
-
-	@property
-	def InstdAgt(self):
-		return self._InstdAgt
-
-	@InstdAgt.setter
-	def InstdAgt(self, value):
-		self._InstdAgt = value if type(value) != auto else self.make_default("InstdAgt")
-
-	@InstdAgt.deleter
-	def InstdAgt(self):
-		del self._InstdAgt
-		self._InstdAgt = None
-
-	@property
-	def RtrRsnInf(self):
-		return self._RtrRsnInf
-
-	@RtrRsnInf.setter
-	def RtrRsnInf(self, value):
-		self._RtrRsnInf = value if type(value) != auto else self.make_default("RtrRsnInf")
-
-	@RtrRsnInf.deleter
-	def RtrRsnInf(self):
-		del self._RtrRsnInf
-		self._RtrRsnInf = None
-
-	@property
-	def SttlmPrty(self):
-		return self._SttlmPrty
-
-	@SttlmPrty.setter
-	def SttlmPrty(self, value):
-		self._SttlmPrty = value if type(value) != auto else self.make_default("SttlmPrty")
-
-	@SttlmPrty.deleter
-	def SttlmPrty(self):
-		del self._SttlmPrty
-		self._SttlmPrty = None
-
-	@property
-	def OrgnlInstrId(self):
-		return self._OrgnlInstrId
-
-	@OrgnlInstrId.setter
-	def OrgnlInstrId(self, value):
-		self._OrgnlInstrId = value if type(value) != auto else self.make_default("OrgnlInstrId")
-
-	@OrgnlInstrId.deleter
-	def OrgnlInstrId(self):
-		del self._OrgnlInstrId
-		self._OrgnlInstrId = None
-
-	@property
-	def RtrdInstdAmt(self):
-		return self._RtrdInstdAmt
-
-	@RtrdInstdAmt.setter
-	def RtrdInstdAmt(self, value):
-		self._RtrdInstdAmt = value if type(value) != auto else self.make_default("RtrdInstdAmt")
-
-	@RtrdInstdAmt.deleter
-	def RtrdInstdAmt(self):
-		del self._RtrdInstdAmt
-		self._RtrdInstdAmt = None
-
-	@property
-	def OrgnlTxId(self):
-		return self._OrgnlTxId
-
-	@OrgnlTxId.setter
-	def OrgnlTxId(self, value):
-		self._OrgnlTxId = value if type(value) != auto else self.make_default("OrgnlTxId")
-
-	@OrgnlTxId.deleter
-	def OrgnlTxId(self):
-		del self._OrgnlTxId
-		self._OrgnlTxId = None
+	@OrgnlEndToEndId.deleter
+	def OrgnlEndToEndId(self):
+		del self._OrgnlEndToEndId
+		self._OrgnlEndToEndId = None
 
 	@property
 	def AgrdRate(self):
@@ -374,6 +101,149 @@ class PaymentTransaction163(base_types._BaseFieldType):
 		self._AgrdRate = None
 
 	@property
+	def InstgAgt(self):
+		return self._InstgAgt
+
+	@InstgAgt.setter
+	def InstgAgt(self, value):
+		self._InstgAgt = value if type(value) != auto else self.make_default("InstgAgt")
+
+	@InstgAgt.deleter
+	def InstgAgt(self):
+		del self._InstgAgt
+		self._InstgAgt = None
+
+	@property
+	def OrgnlIntrBkSttlmAmt(self):
+		return self._OrgnlIntrBkSttlmAmt
+
+	@OrgnlIntrBkSttlmAmt.setter
+	def OrgnlIntrBkSttlmAmt(self, value):
+		self._OrgnlIntrBkSttlmAmt = value if type(value) != auto else self.make_default("OrgnlIntrBkSttlmAmt")
+
+	@OrgnlIntrBkSttlmAmt.deleter
+	def OrgnlIntrBkSttlmAmt(self):
+		del self._OrgnlIntrBkSttlmAmt
+		self._OrgnlIntrBkSttlmAmt = None
+
+	@property
+	def RtrId(self):
+		return self._RtrId
+
+	@RtrId.setter
+	def RtrId(self, value):
+		self._RtrId = value if type(value) != auto else self.make_default("RtrId")
+
+	@RtrId.deleter
+	def RtrId(self):
+		del self._RtrId
+		self._RtrId = None
+
+	@property
+	def SttlmTmIndctn(self):
+		return self._SttlmTmIndctn
+
+	@SttlmTmIndctn.setter
+	def SttlmTmIndctn(self, value):
+		self._SttlmTmIndctn = value if type(value) != auto else self.make_default("SttlmTmIndctn")
+
+	@SttlmTmIndctn.deleter
+	def SttlmTmIndctn(self):
+		del self._SttlmTmIndctn
+		self._SttlmTmIndctn = None
+
+	@property
+	def SttlmTmReq(self):
+		return self._SttlmTmReq
+
+	@SttlmTmReq.setter
+	def SttlmTmReq(self, value):
+		self._SttlmTmReq = value if type(value) != auto else self.make_default("SttlmTmReq")
+
+	@SttlmTmReq.deleter
+	def SttlmTmReq(self):
+		del self._SttlmTmReq
+		self._SttlmTmReq = None
+
+	@property
+	def RtrRsnInf(self):
+		return self._RtrRsnInf
+
+	@RtrRsnInf.setter
+	def RtrRsnInf(self, value):
+		self._RtrRsnInf = value if type(value) != auto else self.make_default("RtrRsnInf")
+
+	@RtrRsnInf.deleter
+	def RtrRsnInf(self):
+		del self._RtrRsnInf
+		self._RtrRsnInf = None
+
+	@property
+	def OrgnlGrpInf(self):
+		return self._OrgnlGrpInf
+
+	@OrgnlGrpInf.setter
+	def OrgnlGrpInf(self, value):
+		self._OrgnlGrpInf = value if type(value) != auto else self.make_default("OrgnlGrpInf")
+
+	@OrgnlGrpInf.deleter
+	def OrgnlGrpInf(self):
+		del self._OrgnlGrpInf
+		self._OrgnlGrpInf = None
+
+	@property
+	def CompstnAmt(self):
+		return self._CompstnAmt
+
+	@CompstnAmt.setter
+	def CompstnAmt(self, value):
+		self._CompstnAmt = value if type(value) != auto else self.make_default("CompstnAmt")
+
+	@CompstnAmt.deleter
+	def CompstnAmt(self):
+		del self._CompstnAmt
+		self._CompstnAmt = None
+
+	@property
+	def OrgnlClrSysRef(self):
+		return self._OrgnlClrSysRef
+
+	@OrgnlClrSysRef.setter
+	def OrgnlClrSysRef(self, value):
+		self._OrgnlClrSysRef = value if type(value) != auto else self.make_default("OrgnlClrSysRef")
+
+	@OrgnlClrSysRef.deleter
+	def OrgnlClrSysRef(self):
+		del self._OrgnlClrSysRef
+		self._OrgnlClrSysRef = None
+
+	@property
+	def ChrgsInf(self):
+		return self._ChrgsInf
+
+	@ChrgsInf.setter
+	def ChrgsInf(self, value):
+		self._ChrgsInf = value if type(value) != auto else self.make_default("ChrgsInf")
+
+	@ChrgsInf.deleter
+	def ChrgsInf(self):
+		del self._ChrgsInf
+		self._ChrgsInf = None
+
+	@property
+	def SttlmPrty(self):
+		return self._SttlmPrty
+
+	@SttlmPrty.setter
+	def SttlmPrty(self, value):
+		self._SttlmPrty = value if type(value) != auto else self.make_default("SttlmPrty")
+
+	@SttlmPrty.deleter
+	def SttlmPrty(self):
+		del self._SttlmPrty
+		self._SttlmPrty = None
+
+	@property
 	def OrgnlIntrBkSttlmDt(self):
 		return self._OrgnlIntrBkSttlmDt
 
@@ -386,34 +256,164 @@ class PaymentTransaction163(base_types._BaseFieldType):
 		del self._OrgnlIntrBkSttlmDt
 		self._OrgnlIntrBkSttlmDt = None
 
+	@property
+	def OrgnlTxRef(self):
+		return self._OrgnlTxRef
+
+	@OrgnlTxRef.setter
+	def OrgnlTxRef(self, value):
+		self._OrgnlTxRef = value if type(value) != auto else self.make_default("OrgnlTxRef")
+
+	@OrgnlTxRef.deleter
+	def OrgnlTxRef(self):
+		del self._OrgnlTxRef
+		self._OrgnlTxRef = None
+
+	@property
+	def OrgnlTxId(self):
+		return self._OrgnlTxId
+
+	@OrgnlTxId.setter
+	def OrgnlTxId(self, value):
+		self._OrgnlTxId = value if type(value) != auto else self.make_default("OrgnlTxId")
+
+	@OrgnlTxId.deleter
+	def OrgnlTxId(self):
+		del self._OrgnlTxId
+		self._OrgnlTxId = None
+
+	@property
+	def RtrdInstdAmt(self):
+		return self._RtrdInstdAmt
+
+	@RtrdInstdAmt.setter
+	def RtrdInstdAmt(self, value):
+		self._RtrdInstdAmt = value if type(value) != auto else self.make_default("RtrdInstdAmt")
+
+	@RtrdInstdAmt.deleter
+	def RtrdInstdAmt(self):
+		del self._RtrdInstdAmt
+		self._RtrdInstdAmt = None
+
+	@property
+	def IntrBkSttlmDt(self):
+		return self._IntrBkSttlmDt
+
+	@IntrBkSttlmDt.setter
+	def IntrBkSttlmDt(self, value):
+		self._IntrBkSttlmDt = value if type(value) != auto else self.make_default("IntrBkSttlmDt")
+
+	@IntrBkSttlmDt.deleter
+	def IntrBkSttlmDt(self):
+		del self._IntrBkSttlmDt
+		self._IntrBkSttlmDt = None
+
+	@property
+	def InstdAgt(self):
+		return self._InstdAgt
+
+	@InstdAgt.setter
+	def InstdAgt(self, value):
+		self._InstdAgt = value if type(value) != auto else self.make_default("InstdAgt")
+
+	@InstdAgt.deleter
+	def InstdAgt(self):
+		del self._InstdAgt
+		self._InstdAgt = None
+
+	@property
+	def OrgnlUETR(self):
+		return self._OrgnlUETR
+
+	@OrgnlUETR.setter
+	def OrgnlUETR(self, value):
+		self._OrgnlUETR = value if type(value) != auto else self.make_default("OrgnlUETR")
+
+	@OrgnlUETR.deleter
+	def OrgnlUETR(self):
+		del self._OrgnlUETR
+		self._OrgnlUETR = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def ClrSysRef(self):
+		return self._ClrSysRef
+
+	@ClrSysRef.setter
+	def ClrSysRef(self, value):
+		self._ClrSysRef = value if type(value) != auto else self.make_default("ClrSysRef")
+
+	@ClrSysRef.deleter
+	def ClrSysRef(self):
+		del self._ClrSysRef
+		self._ClrSysRef = None
+
+	@property
+	def PmtTpInf(self):
+		return self._PmtTpInf
+
+	@PmtTpInf.setter
+	def PmtTpInf(self, value):
+		self._PmtTpInf = value if type(value) != auto else self.make_default("PmtTpInf")
+
+	@PmtTpInf.deleter
+	def PmtTpInf(self):
+		del self._PmtTpInf
+		self._PmtTpInf = None
+
+	@property
+	def XchgRate(self):
+		return self._XchgRate
+
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
+
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlTxRef', type=OriginalTransactionReference44, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupInformation29, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtTpInf', type=PaymentTypeInformation28, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrdIntrBkSttlmAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrChain', type=TransactionParties11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlIntrBkSttlmAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlUETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmTmIndctn', type=SettlementDateTimeIndication1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlEndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmTmReq', type=SettlementTimeRequest2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgBr', type=ChargeBearerType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsInf', type=Charges16, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ClrSysRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlClrSysRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CompstnAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrRsnInf', type=PaymentReturnReason7, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SttlmPrty', type=Priority3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrdInstdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrdIntrBkSttlmAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrChain', type=TransactionParties11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgBr', type=ChargeBearerType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlEndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgrdRate', type=CurrencyExchange26, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlIntrBkSttlmAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmTmIndctn', type=SettlementDateTimeIndication1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmTmReq', type=SettlementTimeRequest2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrRsnInf', type=PaymentReturnReason7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupInformation29, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CompstnAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlClrSysRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsInf', type=Charges16, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmPrty', type=Priority3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlIntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlTxRef', type=OriginalTransactionReference44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrdInstdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlUETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClrSysRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtTpInf', type=PaymentTypeInformation28, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

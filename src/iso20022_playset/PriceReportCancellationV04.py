@@ -1,29 +1,42 @@
 from . import base_types
-import Max350Text
-import Extension1
-import YesNoIndicator
-import MessageIdentification1
-import AdditionalReference3
-import PriceReport3
-import Max35Text
-import Pagination
-import DateAndDateTime1Choice
+from .PriceReport3 import PriceReport3
+from .Max35Text import Max35Text
+from .MessageIdentification1 import MessageIdentification1
+from .YesNoIndicator import YesNoIndicator
+from .Pagination import Pagination
+from .Max350Text import Max350Text
+from .DateAndDateTime1Choice import DateAndDateTime1Choice
+from .Extension1 import Extension1
+from .AdditionalReference3 import AdditionalReference3
 
 class PriceReportCancellationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_CmpltPricCxl", "_PricRptId", "_CancPricValtnDtls", "_CxlId", "_MsgId", "_XpctdPricCrrctnDt", "_MsgPgntn", "_Xtnsn", "_PoolRef", "_CxlRsn", "_PrvsRef"]
+	__slots__ = ["_CxlRsn", "_Xtnsn", "_PricRptId", "_PoolRef", "_XpctdPricCrrctnDt", "_CmpltPricCxl", "_CancPricValtnDtls", "_CxlId", "_PrvsRef", "_MsgId", "_MsgPgntn"]
 	@property
-	def CmpltPricCxl(self):
-		return self._CmpltPricCxl
+	def CxlRsn(self):
+		return self._CxlRsn
 
-	@CmpltPricCxl.setter
-	def CmpltPricCxl(self, value):
-		self._CmpltPricCxl = value if type(value) != auto else self.make_default("CmpltPricCxl")
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
 
-	@CmpltPricCxl.deleter
-	def CmpltPricCxl(self):
-		del self._CmpltPricCxl
-		self._CmpltPricCxl = None
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
+
+	@property
+	def Xtnsn(self):
+		return self._Xtnsn
+
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
+
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	@property
 	def PricRptId(self):
@@ -37,6 +50,45 @@ class PriceReportCancellationV04(base_types._BaseFieldType):
 	def PricRptId(self):
 		del self._PricRptId
 		self._PricRptId = None
+
+	@property
+	def PoolRef(self):
+		return self._PoolRef
+
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
+
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
+
+	@property
+	def XpctdPricCrrctnDt(self):
+		return self._XpctdPricCrrctnDt
+
+	@XpctdPricCrrctnDt.setter
+	def XpctdPricCrrctnDt(self, value):
+		self._XpctdPricCrrctnDt = value if type(value) != auto else self.make_default("XpctdPricCrrctnDt")
+
+	@XpctdPricCrrctnDt.deleter
+	def XpctdPricCrrctnDt(self):
+		del self._XpctdPricCrrctnDt
+		self._XpctdPricCrrctnDt = None
+
+	@property
+	def CmpltPricCxl(self):
+		return self._CmpltPricCxl
+
+	@CmpltPricCxl.setter
+	def CmpltPricCxl(self, value):
+		self._CmpltPricCxl = value if type(value) != auto else self.make_default("CmpltPricCxl")
+
+	@CmpltPricCxl.deleter
+	def CmpltPricCxl(self):
+		del self._CmpltPricCxl
+		self._CmpltPricCxl = None
 
 	@property
 	def CancPricValtnDtls(self):
@@ -65,6 +117,19 @@ class PriceReportCancellationV04(base_types._BaseFieldType):
 		self._CxlId = None
 
 	@property
+	def PrvsRef(self):
+		return self._PrvsRef
+
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
+
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
+
+	@property
 	def MsgId(self):
 		return self._MsgId
 
@@ -76,19 +141,6 @@ class PriceReportCancellationV04(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
-
-	@property
-	def XpctdPricCrrctnDt(self):
-		return self._XpctdPricCrrctnDt
-
-	@XpctdPricCrrctnDt.setter
-	def XpctdPricCrrctnDt(self, value):
-		self._XpctdPricCrrctnDt = value if type(value) != auto else self.make_default("XpctdPricCrrctnDt")
-
-	@XpctdPricCrrctnDt.deleter
-	def XpctdPricCrrctnDt(self):
-		del self._XpctdPricCrrctnDt
-		self._XpctdPricCrrctnDt = None
 
 	@property
 	def MsgPgntn(self):
@@ -103,69 +155,17 @@ class PriceReportCancellationV04(base_types._BaseFieldType):
 		del self._MsgPgntn
 		self._MsgPgntn = None
 
-	@property
-	def Xtnsn(self):
-		return self._Xtnsn
-
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
-
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
-
-	@property
-	def PoolRef(self):
-		return self._PoolRef
-
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
-
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
-
-	@property
-	def CxlRsn(self):
-		return self._CxlRsn
-
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
-
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
-
-	@property
-	def PrvsRef(self):
-		return self._PrvsRef
-
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
-
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CmpltPricCxl', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PricRptId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdPricCrrctnDt', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmpltPricCxl', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CancPricValtnDtls', type=PriceReport3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CxlId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdPricCrrctnDt', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
 	))
 

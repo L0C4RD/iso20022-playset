@@ -1,7 +1,7 @@
 from . import base_types
-import ISODate
-import TradeParty6
-import Max35Text
+from .Max35Text import Max35Text
+from .ISODate import ISODate
+from .TradeParty6 import TradeParty6
 
 class ContractCessionData2(base_types._BaseFieldType):
 

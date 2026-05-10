@@ -1,6 +1,6 @@
 from . import base_types
-import YesNoIndicator
-import Max3NumericText
+from .Max3NumericText import Max3NumericText
+from .YesNoIndicator import YesNoIndicator
 
 class CrystallisationDay1(base_types._BaseFieldType):
 

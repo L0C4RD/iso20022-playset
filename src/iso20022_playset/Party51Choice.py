@@ -1,23 +1,10 @@
 from . import base_types
-import PartyIdentification272
-import BranchAndFinancialInstitutionIdentification8
+from .PartyIdentification272 import PartyIdentification272
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class Party51Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FIId", "_OrgId"]
-	@property
-	def FIId(self):
-		return self._FIId
-
-	@FIId.setter
-	def FIId(self, value):
-		self._FIId = value if type(value) != auto else self.make_default("FIId")
-
-	@FIId.deleter
-	def FIId(self):
-		del self._FIId
-		self._FIId = None
-
+	__slots__ = ["_OrgId", "_FIId"]
 	@property
 	def OrgId(self):
 		return self._OrgId
@@ -31,8 +18,21 @@ class Party51Choice(base_types._BaseFieldType):
 		del self._OrgId
 		self._OrgId = None
 
+	@property
+	def FIId(self):
+		return self._FIId
+
+	@FIId.setter
+	def FIId(self, value):
+		self._FIId = value if type(value) != auto else self.make_default("FIId")
+
+	@FIId.deleter
+	def FIId(self):
+		del self._FIId
+		self._FIId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FIId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OrgId', type=PartyIdentification272, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FIId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=1, array=False),
 	))
 

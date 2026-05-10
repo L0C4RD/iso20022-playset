@@ -1,7 +1,7 @@
 from . import base_types
-import AccountIdentificationFormatChoice
-import YesNoIndicator
-import AggregateBalanceInformation3
+from .YesNoIndicator import YesNoIndicator
+from .AggregateBalanceInformation3 import AggregateBalanceInformation3
+from .AccountIdentificationFormatChoice import AccountIdentificationFormatChoice
 
 class SubAccountIdentification3(base_types._BaseFieldType):
 

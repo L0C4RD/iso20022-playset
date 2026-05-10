@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import DateAndDateTime2Choice
+from .Max35Text import Max35Text
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class ReportParameters8(base_types._BaseFieldType):
 

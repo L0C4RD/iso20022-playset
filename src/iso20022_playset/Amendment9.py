@@ -1,5 +1,5 @@
 from . import base_types
-import UndertakingAmendmentResponseMessage1
+from .UndertakingAmendmentResponseMessage1 import UndertakingAmendmentResponseMessage1
 
 class Amendment9(base_types._BaseFieldType):
 

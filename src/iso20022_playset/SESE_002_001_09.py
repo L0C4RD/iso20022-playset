@@ -1,5 +1,5 @@
 from . import base_types
-import TransferOutCancellationRequestV09
+from .TransferOutCancellationRequestV09 import TransferOutCancellationRequestV09
 
 class SESE_002_001_09():
 

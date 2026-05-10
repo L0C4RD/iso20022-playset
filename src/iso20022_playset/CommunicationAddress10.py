@@ -1,7 +1,7 @@
 from . import base_types
-import PhoneNumber
-import LongPostalAddress1Choice
-import Max2048Text
+from .PhoneNumber import PhoneNumber
+from .LongPostalAddress1Choice import LongPostalAddress1Choice
+from .Max2048Text import Max2048Text
 
 class CommunicationAddress10(base_types._BaseFieldType):
 

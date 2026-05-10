@@ -1,7 +1,7 @@
 from . import base_types
-import ForeignExchangeSwap3Choice
-import SupplementaryData1
-import MoneyMarketReportHeader1
+from .ForeignExchangeSwap3Choice import ForeignExchangeSwap3Choice
+from .SupplementaryData1 import SupplementaryData1
+from .MoneyMarketReportHeader1 import MoneyMarketReportHeader1
 
 class MoneyMarketForeignExchangeSwapsStatisticalReportV02(base_types._BaseFieldType):
 

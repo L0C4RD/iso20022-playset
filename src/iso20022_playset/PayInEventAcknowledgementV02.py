@@ -1,25 +1,12 @@
 from . import base_types
-import Exact4AlphaNumericText
-import SupplementaryData1
-import Max35Text
-import AcknowledgementDetails1Choice
+from .Max35Text import Max35Text
+from .Exact4AlphaNumericText import Exact4AlphaNumericText
+from .SupplementaryData1 import SupplementaryData1
+from .AcknowledgementDetails1Choice import AcknowledgementDetails1Choice
 
 class PayInEventAcknowledgementV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgId", "_SttlmSsnIdr", "_AckDtls"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_MsgId", "_SplmtryData", "_SttlmSsnIdr", "_AckDtls"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -32,6 +19,19 @@ class PayInEventAcknowledgementV02(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def SttlmSsnIdr(self):
@@ -60,8 +60,8 @@ class PayInEventAcknowledgementV02(base_types._BaseFieldType):
 		self._AckDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AckDtls', type=AcknowledgementDetails1Choice, min=1, max=1, mutex_group=None, array=False),
 	))

@@ -1,5 +1,5 @@
 from . import base_types
-import FinancialInstrumentReportingInvalidReferenceDataReportV02
+from .FinancialInstrumentReportingInvalidReferenceDataReportV02 import FinancialInstrumentReportingInvalidReferenceDataReportV02
 
 class AUTH_042_001_02():
 

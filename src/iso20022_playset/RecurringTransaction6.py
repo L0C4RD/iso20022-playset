@@ -1,25 +1,25 @@
 from . import base_types
-import Number
-import GracePeriod1
-import ActionMessage11
-import Frequency3Code
-import Max35Text
+from .Max35Text import Max35Text
+from .GracePeriod1 import GracePeriod1
+from .Number import Number
+from .Frequency3Code import Frequency3Code
+from .ActionMessage11 import ActionMessage11
 
 class RecurringTransaction6(base_types._BaseFieldType):
 
-	__slots__ = ["_PlanNtce", "_SeqNb", "_GracePrd", "_PrdUnit", "_PlanId"]
+	__slots__ = ["_PrdUnit", "_SeqNb", "_PlanId", "_GracePrd", "_PlanNtce"]
 	@property
-	def PlanNtce(self):
-		return self._PlanNtce
+	def PrdUnit(self):
+		return self._PrdUnit
 
-	@PlanNtce.setter
-	def PlanNtce(self, value):
-		self._PlanNtce = value if type(value) != auto else self.make_default("PlanNtce")
+	@PrdUnit.setter
+	def PrdUnit(self, value):
+		self._PrdUnit = value if type(value) != auto else self.make_default("PrdUnit")
 
-	@PlanNtce.deleter
-	def PlanNtce(self):
-		del self._PlanNtce
-		self._PlanNtce = None
+	@PrdUnit.deleter
+	def PrdUnit(self):
+		del self._PrdUnit
+		self._PrdUnit = None
 
 	@property
 	def SeqNb(self):
@@ -35,6 +35,19 @@ class RecurringTransaction6(base_types._BaseFieldType):
 		self._SeqNb = None
 
 	@property
+	def PlanId(self):
+		return self._PlanId
+
+	@PlanId.setter
+	def PlanId(self, value):
+		self._PlanId = value if type(value) != auto else self.make_default("PlanId")
+
+	@PlanId.deleter
+	def PlanId(self):
+		del self._PlanId
+		self._PlanId = None
+
+	@property
 	def GracePrd(self):
 		return self._GracePrd
 
@@ -48,36 +61,23 @@ class RecurringTransaction6(base_types._BaseFieldType):
 		self._GracePrd = None
 
 	@property
-	def PrdUnit(self):
-		return self._PrdUnit
+	def PlanNtce(self):
+		return self._PlanNtce
 
-	@PrdUnit.setter
-	def PrdUnit(self, value):
-		self._PrdUnit = value if type(value) != auto else self.make_default("PrdUnit")
+	@PlanNtce.setter
+	def PlanNtce(self, value):
+		self._PlanNtce = value if type(value) != auto else self.make_default("PlanNtce")
 
-	@PrdUnit.deleter
-	def PrdUnit(self):
-		del self._PrdUnit
-		self._PrdUnit = None
-
-	@property
-	def PlanId(self):
-		return self._PlanId
-
-	@PlanId.setter
-	def PlanId(self, value):
-		self._PlanId = value if type(value) != auto else self.make_default("PlanId")
-
-	@PlanId.deleter
-	def PlanId(self):
-		del self._PlanId
-		self._PlanId = None
+	@PlanNtce.deleter
+	def PlanNtce(self):
+		del self._PlanNtce
+		self._PlanNtce = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PlanNtce', type=ActionMessage11, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GracePrd', type=GracePeriod1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrdUnit', type=Frequency3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlanId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GracePrd', type=GracePeriod1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PlanNtce', type=ActionMessage11, min=0, max=None, mutex_group=None, array=True),
 	))
 

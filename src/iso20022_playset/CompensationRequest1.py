@@ -1,14 +1,53 @@
 from . import base_types
-import ISODate
-import PercentageRate
-import DatePeriod2
-import Max140Text
-import CashAccount40
-import ActiveCurrencyAndAmount
+from .Max140Text import Max140Text
+from .ISODate import ISODate
+from .PercentageRate import PercentageRate
+from .CashAccount40 import CashAccount40
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .DatePeriod2 import DatePeriod2
 
 class CompensationRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrstRate", "_Rsn", "_Prd", "_Amt", "_XpctdValDt", "_CompstnAcct"]
+	__slots__ = ["_XpctdValDt", "_CompstnAcct", "_Prd", "_IntrstRate", "_Rsn", "_Amt"]
+	@property
+	def XpctdValDt(self):
+		return self._XpctdValDt
+
+	@XpctdValDt.setter
+	def XpctdValDt(self, value):
+		self._XpctdValDt = value if type(value) != auto else self.make_default("XpctdValDt")
+
+	@XpctdValDt.deleter
+	def XpctdValDt(self):
+		del self._XpctdValDt
+		self._XpctdValDt = None
+
+	@property
+	def CompstnAcct(self):
+		return self._CompstnAcct
+
+	@CompstnAcct.setter
+	def CompstnAcct(self, value):
+		self._CompstnAcct = value if type(value) != auto else self.make_default("CompstnAcct")
+
+	@CompstnAcct.deleter
+	def CompstnAcct(self):
+		del self._CompstnAcct
+		self._CompstnAcct = None
+
+	@property
+	def Prd(self):
+		return self._Prd
+
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != auto else self.make_default("Prd")
+
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
+
 	@property
 	def IntrstRate(self):
 		return self._IntrstRate
@@ -36,19 +75,6 @@ class CompensationRequest1(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
-	def Prd(self):
-		return self._Prd
-
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
-
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
-
-	@property
 	def Amt(self):
 		return self._Amt
 
@@ -61,38 +87,12 @@ class CompensationRequest1(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
-	@property
-	def XpctdValDt(self):
-		return self._XpctdValDt
-
-	@XpctdValDt.setter
-	def XpctdValDt(self, value):
-		self._XpctdValDt = value if type(value) != auto else self.make_default("XpctdValDt")
-
-	@XpctdValDt.deleter
-	def XpctdValDt(self):
-		del self._XpctdValDt
-		self._XpctdValDt = None
-
-	@property
-	def CompstnAcct(self):
-		return self._CompstnAcct
-
-	@CompstnAcct.setter
-	def CompstnAcct(self, value):
-		self._CompstnAcct = value if type(value) != auto else self.make_default("CompstnAcct")
-
-	@CompstnAcct.deleter
-	def CompstnAcct(self):
-		del self._CompstnAcct
-		self._CompstnAcct = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntrstRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Prd', type=DatePeriod2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CompstnAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prd', type=DatePeriod2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

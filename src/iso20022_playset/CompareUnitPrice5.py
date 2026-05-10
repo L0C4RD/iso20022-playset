@@ -1,5 +1,5 @@
 from . import base_types
-import SecuritiesTransactionPrice17Choice
+from .SecuritiesTransactionPrice17Choice import SecuritiesTransactionPrice17Choice
 
 class CompareUnitPrice5(base_types._BaseFieldType):
 

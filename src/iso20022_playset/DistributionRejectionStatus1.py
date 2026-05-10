@@ -1,6 +1,6 @@
 from . import base_types
-import Max350Text
-import RejectionReason19FormatChoice
+from .Max350Text import Max350Text
+from .RejectionReason19FormatChoice import RejectionReason19FormatChoice
 
 class DistributionRejectionStatus1(base_types._BaseFieldType):
 

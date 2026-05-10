@@ -1,25 +1,12 @@
 from . import base_types
-import Exact2UpperCaseAlphaText
-import CountryCode
-import LEIIdentifier
-import ContactDetails4
+from .CountryCode import CountryCode
+from .ContactDetails4 import ContactDetails4
+from .LEIIdentifier import LEIIdentifier
+from .Exact2UpperCaseAlphaText import Exact2UpperCaseAlphaText
 
 class SettlementInternaliserIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_Ctry", "_BrnchId", "_RspnsblPrsn"]
-	@property
-	def LEI(self):
-		return self._LEI
-
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
-
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
-
+	__slots__ = ["_Ctry", "_LEI", "_BrnchId", "_RspnsblPrsn"]
 	@property
 	def Ctry(self):
 		return self._Ctry
@@ -32,6 +19,19 @@ class SettlementInternaliserIdentification1(base_types._BaseFieldType):
 	def Ctry(self):
 		del self._Ctry
 		self._Ctry = None
+
+	@property
+	def LEI(self):
+		return self._LEI
+
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
+
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	@property
 	def BrnchId(self):
@@ -60,8 +60,8 @@ class SettlementInternaliserIdentification1(base_types._BaseFieldType):
 		self._RspnsblPrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BrnchId', type=Exact2UpperCaseAlphaText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnsblPrsn', type=ContactDetails4, min=1, max=1, mutex_group=None, array=False),
 	))

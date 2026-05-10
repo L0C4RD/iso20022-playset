@@ -1,14 +1,40 @@
 from . import base_types
-import Number
-import Recipient13Choice
-import GenericInformation1
-import AlgorithmIdentification33
-import AlgorithmIdentification36
-import Max3000Binary
+from .AlgorithmIdentification36 import AlgorithmIdentification36
+from .AlgorithmIdentification33 import AlgorithmIdentification33
+from .GenericInformation1 import GenericInformation1
+from .Max3000Binary import Max3000Binary
+from .Number import Number
+from .Recipient13Choice import Recipient13Choice
 
 class Signer8(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_SgntrAlgo", "_Sgntr", "_SgndAttrbts", "_SgnrId", "_DgstAlgo"]
+	__slots__ = ["_DgstAlgo", "_Sgntr", "_Vrsn", "_SgntrAlgo", "_SgndAttrbts", "_SgnrId"]
+	@property
+	def DgstAlgo(self):
+		return self._DgstAlgo
+
+	@DgstAlgo.setter
+	def DgstAlgo(self, value):
+		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+
+	@DgstAlgo.deleter
+	def DgstAlgo(self):
+		del self._DgstAlgo
+		self._DgstAlgo = None
+
+	@property
+	def Sgntr(self):
+		return self._Sgntr
+
+	@Sgntr.setter
+	def Sgntr(self, value):
+		self._Sgntr = value if type(value) != auto else self.make_default("Sgntr")
+
+	@Sgntr.deleter
+	def Sgntr(self):
+		del self._Sgntr
+		self._Sgntr = None
+
 	@property
 	def Vrsn(self):
 		return self._Vrsn
@@ -36,19 +62,6 @@ class Signer8(base_types._BaseFieldType):
 		self._SgntrAlgo = None
 
 	@property
-	def Sgntr(self):
-		return self._Sgntr
-
-	@Sgntr.setter
-	def Sgntr(self, value):
-		self._Sgntr = value if type(value) != auto else self.make_default("Sgntr")
-
-	@Sgntr.deleter
-	def Sgntr(self):
-		del self._Sgntr
-		self._Sgntr = None
-
-	@property
 	def SgndAttrbts(self):
 		return self._SgndAttrbts
 
@@ -74,25 +87,12 @@ class Signer8(base_types._BaseFieldType):
 		del self._SgnrId
 		self._SgnrId = None
 
-	@property
-	def DgstAlgo(self):
-		return self._DgstAlgo
-
-	@DgstAlgo.setter
-	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
-
-	@DgstAlgo.deleter
-	def DgstAlgo(self):
-		del self._DgstAlgo
-		self._DgstAlgo = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification36, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sgntr', type=Max3000Binary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SgntrAlgo', type=AlgorithmIdentification33, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sgntr', type=Max3000Binary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SgndAttrbts', type=GenericInformation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SgnrId', type=Recipient13Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification36, min=1, max=1, mutex_group=None, array=False),
 	))
 

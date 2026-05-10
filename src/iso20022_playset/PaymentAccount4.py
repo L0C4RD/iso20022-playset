@@ -1,25 +1,12 @@
 from . import base_types
-import Max10NumericText
-import AmountAndDirection86
-import ActiveCurrencyCode
-import ImpliedCurrencyAndAmount
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .AmountAndDirection86 import AmountAndDirection86
+from .Max10NumericText import Max10NumericText
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class PaymentAccount4(base_types._BaseFieldType):
 
-	__slots__ = ["_GrssDbts", "_Ccy", "_NetPmt", "_GrssCdts", "_LatePmtConf"]
-	@property
-	def GrssDbts(self):
-		return self._GrssDbts
-
-	@GrssDbts.setter
-	def GrssDbts(self, value):
-		self._GrssDbts = value if type(value) != auto else self.make_default("GrssDbts")
-
-	@GrssDbts.deleter
-	def GrssDbts(self):
-		del self._GrssDbts
-		self._GrssDbts = None
-
+	__slots__ = ["_Ccy", "_GrssDbts", "_NetPmt", "_LatePmtConf", "_GrssCdts"]
 	@property
 	def Ccy(self):
 		return self._Ccy
@@ -32,6 +19,19 @@ class PaymentAccount4(base_types._BaseFieldType):
 	def Ccy(self):
 		del self._Ccy
 		self._Ccy = None
+
+	@property
+	def GrssDbts(self):
+		return self._GrssDbts
+
+	@GrssDbts.setter
+	def GrssDbts(self, value):
+		self._GrssDbts = value if type(value) != auto else self.make_default("GrssDbts")
+
+	@GrssDbts.deleter
+	def GrssDbts(self):
+		del self._GrssDbts
+		self._GrssDbts = None
 
 	@property
 	def NetPmt(self):
@@ -47,19 +47,6 @@ class PaymentAccount4(base_types._BaseFieldType):
 		self._NetPmt = None
 
 	@property
-	def GrssCdts(self):
-		return self._GrssCdts
-
-	@GrssCdts.setter
-	def GrssCdts(self, value):
-		self._GrssCdts = value if type(value) != auto else self.make_default("GrssCdts")
-
-	@GrssCdts.deleter
-	def GrssCdts(self):
-		del self._GrssCdts
-		self._GrssCdts = None
-
-	@property
 	def LatePmtConf(self):
 		return self._LatePmtConf
 
@@ -72,11 +59,24 @@ class PaymentAccount4(base_types._BaseFieldType):
 		del self._LatePmtConf
 		self._LatePmtConf = None
 
+	@property
+	def GrssCdts(self):
+		return self._GrssCdts
+
+	@GrssCdts.setter
+	def GrssCdts(self, value):
+		self._GrssCdts = value if type(value) != auto else self.make_default("GrssCdts")
+
+	@GrssCdts.deleter
+	def GrssCdts(self):
+		del self._GrssCdts
+		self._GrssCdts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GrssDbts', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrssDbts', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetPmt', type=AmountAndDirection86, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrssCdts', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LatePmtConf', type=Max10NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrssCdts', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

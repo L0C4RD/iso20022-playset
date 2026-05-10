@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification1
-import SuspendedStatusReason3Code
+from .SuspendedStatusReason3Code import SuspendedStatusReason3Code
+from .GenericIdentification1 import GenericIdentification1
 
 class SuspendedStatusReason5Choice(base_types._BaseFieldType):
 

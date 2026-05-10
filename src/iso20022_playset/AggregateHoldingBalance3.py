@@ -1,23 +1,10 @@
 from . import base_types
-import AggregateHoldingBalance1
-import Intermediary29
+from .Intermediary29 import Intermediary29
+from .AggregateHoldingBalance1 import AggregateHoldingBalance1
 
 class AggregateHoldingBalance3(base_types._BaseFieldType):
 
-	__slots__ = ["_Agt", "_BalForAcct"]
-	@property
-	def Agt(self):
-		return self._Agt
-
-	@Agt.setter
-	def Agt(self, value):
-		self._Agt = value if type(value) != auto else self.make_default("Agt")
-
-	@Agt.deleter
-	def Agt(self):
-		del self._Agt
-		self._Agt = None
-
+	__slots__ = ["_BalForAcct", "_Agt"]
 	@property
 	def BalForAcct(self):
 		return self._BalForAcct
@@ -31,8 +18,21 @@ class AggregateHoldingBalance3(base_types._BaseFieldType):
 		del self._BalForAcct
 		self._BalForAcct = None
 
+	@property
+	def Agt(self):
+		return self._Agt
+
+	@Agt.setter
+	def Agt(self, value):
+		self._Agt = value if type(value) != auto else self.make_default("Agt")
+
+	@Agt.deleter
+	def Agt(self):
+		del self._Agt
+		self._Agt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Agt', type=Intermediary29, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BalForAcct', type=AggregateHoldingBalance1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Agt', type=Intermediary29, min=0, max=None, mutex_group=None, array=True),
 	))
 

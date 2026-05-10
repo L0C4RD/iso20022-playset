@@ -1,16 +1,55 @@
 from . import base_types
-import Max256Text
-import ISO8583TransactionTypeCode
-import Max1000Text
-import Max35Text
-import Exact1NumericText
-import TrueFalseIndicator
-import ISO8583MessageReasonCode
-import AdditionalData1
+from .Max35Text import Max35Text
+from .AdditionalData1 import AdditionalData1
+from .Max256Text import Max256Text
+from .ISO8583TransactionTypeCode import ISO8583TransactionTypeCode
+from .Exact1NumericText import Exact1NumericText
+from .ISO8583MessageReasonCode import ISO8583MessageReasonCode
+from .Max1000Text import Max1000Text
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class TransactionCharacteristics4(base_types._BaseFieldType):
 
-	__slots__ = ["_AltrnMsgRsn", "_TxDesc", "_TxTp", "_MsgRsn", "_AddtlData", "_FeeColltnCycl", "_Cxl", "_TxSubTp"]
+	__slots__ = ["_FeeColltnCycl", "_TxSubTp", "_Cxl", "_AltrnMsgRsn", "_TxDesc", "_TxTp", "_AddtlData", "_MsgRsn"]
+	@property
+	def FeeColltnCycl(self):
+		return self._FeeColltnCycl
+
+	@FeeColltnCycl.setter
+	def FeeColltnCycl(self, value):
+		self._FeeColltnCycl = value if type(value) != auto else self.make_default("FeeColltnCycl")
+
+	@FeeColltnCycl.deleter
+	def FeeColltnCycl(self):
+		del self._FeeColltnCycl
+		self._FeeColltnCycl = None
+
+	@property
+	def TxSubTp(self):
+		return self._TxSubTp
+
+	@TxSubTp.setter
+	def TxSubTp(self, value):
+		self._TxSubTp = value if type(value) != auto else self.make_default("TxSubTp")
+
+	@TxSubTp.deleter
+	def TxSubTp(self):
+		del self._TxSubTp
+		self._TxSubTp = None
+
+	@property
+	def Cxl(self):
+		return self._Cxl
+
+	@Cxl.setter
+	def Cxl(self, value):
+		self._Cxl = value if type(value) != auto else self.make_default("Cxl")
+
+	@Cxl.deleter
+	def Cxl(self):
+		del self._Cxl
+		self._Cxl = None
+
 	@property
 	def AltrnMsgRsn(self):
 		return self._AltrnMsgRsn
@@ -51,19 +90,6 @@ class TransactionCharacteristics4(base_types._BaseFieldType):
 		self._TxTp = None
 
 	@property
-	def MsgRsn(self):
-		return self._MsgRsn
-
-	@MsgRsn.setter
-	def MsgRsn(self, value):
-		self._MsgRsn = value if type(value) != auto else self.make_default("MsgRsn")
-
-	@MsgRsn.deleter
-	def MsgRsn(self):
-		del self._MsgRsn
-		self._MsgRsn = None
-
-	@property
 	def AddtlData(self):
 		return self._AddtlData
 
@@ -77,52 +103,26 @@ class TransactionCharacteristics4(base_types._BaseFieldType):
 		self._AddtlData = None
 
 	@property
-	def FeeColltnCycl(self):
-		return self._FeeColltnCycl
+	def MsgRsn(self):
+		return self._MsgRsn
 
-	@FeeColltnCycl.setter
-	def FeeColltnCycl(self, value):
-		self._FeeColltnCycl = value if type(value) != auto else self.make_default("FeeColltnCycl")
+	@MsgRsn.setter
+	def MsgRsn(self, value):
+		self._MsgRsn = value if type(value) != auto else self.make_default("MsgRsn")
 
-	@FeeColltnCycl.deleter
-	def FeeColltnCycl(self):
-		del self._FeeColltnCycl
-		self._FeeColltnCycl = None
-
-	@property
-	def Cxl(self):
-		return self._Cxl
-
-	@Cxl.setter
-	def Cxl(self, value):
-		self._Cxl = value if type(value) != auto else self.make_default("Cxl")
-
-	@Cxl.deleter
-	def Cxl(self):
-		del self._Cxl
-		self._Cxl = None
-
-	@property
-	def TxSubTp(self):
-		return self._TxSubTp
-
-	@TxSubTp.setter
-	def TxSubTp(self, value):
-		self._TxSubTp = value if type(value) != auto else self.make_default("TxSubTp")
-
-	@TxSubTp.deleter
-	def TxSubTp(self):
-		del self._TxSubTp
-		self._TxSubTp = None
+	@MsgRsn.deleter
+	def MsgRsn(self):
+		del self._MsgRsn
+		self._MsgRsn = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='FeeColltnCycl', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cxl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnMsgRsn', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxDesc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=ISO8583TransactionTypeCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgRsn', type=ISO8583MessageReasonCode, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FeeColltnCycl', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cxl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxSubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgRsn', type=ISO8583MessageReasonCode, min=0, max=None, mutex_group=None, array=True),
 	))
 

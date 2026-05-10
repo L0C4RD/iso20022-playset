@@ -1,8 +1,8 @@
 from . import base_types
-import AccountIdentification4Choice
-import ActiveOrHistoricCurrencyCode
-import CashAccountType2
-import Max70Text
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .Max70Text import Max70Text
+from .CashAccountType2 import CashAccountType2
+from .AccountIdentification4Choice import AccountIdentification4Choice
 
 class CashAccount16(base_types._BaseFieldType):
 

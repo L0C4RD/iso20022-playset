@@ -1,12 +1,25 @@
 from . import base_types
-import SecurityCSDLink9
-import SupplementaryData1
-import CSDLinkStatus1
-import MessageHeader12
+from .SupplementaryData1 import SupplementaryData1
+from .SecurityCSDLink9 import SecurityCSDLink9
+from .MessageHeader12 import MessageHeader12
+from .CSDLinkStatus1 import CSDLinkStatus1
 
 class SecurityCSDLinkStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyCSDLkSts", "_SplmtryData", "_SctyCSDLkId", "_MsgHdr"]
+	__slots__ = ["_MsgHdr", "_SctyCSDLkSts", "_SplmtryData", "_SctyCSDLkId"]
+	@property
+	def MsgHdr(self):
+		return self._MsgHdr
+
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
+
 	@property
 	def SctyCSDLkSts(self):
 		return self._SctyCSDLkSts
@@ -46,23 +59,10 @@ class SecurityCSDLinkStatusAdviceV01(base_types._BaseFieldType):
 		del self._SctyCSDLkId
 		self._SctyCSDLkId = None
 
-	@property
-	def MsgHdr(self):
-		return self._MsgHdr
-
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
-
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyCSDLkSts', type=CSDLinkStatus1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctyCSDLkId', type=SecurityCSDLink9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader12, min=0, max=1, mutex_group=None, array=False),
 	))
 

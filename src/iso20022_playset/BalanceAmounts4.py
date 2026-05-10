@@ -1,34 +1,21 @@
 from . import base_types
-import AmountAndDirection14
+from .AmountAndDirection14 import AmountAndDirection14
 
 class BalanceAmounts4(base_types._BaseFieldType):
 
-	__slots__ = ["_HldgVal", "_BookVal", "_AcrdIntrstAmt", "_ElgblCollVal", "_PrvsHldgVal"]
+	__slots__ = ["_PrvsHldgVal", "_AcrdIntrstAmt", "_HldgVal", "_ElgblCollVal", "_BookVal"]
 	@property
-	def HldgVal(self):
-		return self._HldgVal
+	def PrvsHldgVal(self):
+		return self._PrvsHldgVal
 
-	@HldgVal.setter
-	def HldgVal(self, value):
-		self._HldgVal = value if type(value) != auto else self.make_default("HldgVal")
+	@PrvsHldgVal.setter
+	def PrvsHldgVal(self, value):
+		self._PrvsHldgVal = value if type(value) != auto else self.make_default("PrvsHldgVal")
 
-	@HldgVal.deleter
-	def HldgVal(self):
-		del self._HldgVal
-		self._HldgVal = None
-
-	@property
-	def BookVal(self):
-		return self._BookVal
-
-	@BookVal.setter
-	def BookVal(self, value):
-		self._BookVal = value if type(value) != auto else self.make_default("BookVal")
-
-	@BookVal.deleter
-	def BookVal(self):
-		del self._BookVal
-		self._BookVal = None
+	@PrvsHldgVal.deleter
+	def PrvsHldgVal(self):
+		del self._PrvsHldgVal
+		self._PrvsHldgVal = None
 
 	@property
 	def AcrdIntrstAmt(self):
@@ -44,6 +31,19 @@ class BalanceAmounts4(base_types._BaseFieldType):
 		self._AcrdIntrstAmt = None
 
 	@property
+	def HldgVal(self):
+		return self._HldgVal
+
+	@HldgVal.setter
+	def HldgVal(self, value):
+		self._HldgVal = value if type(value) != auto else self.make_default("HldgVal")
+
+	@HldgVal.deleter
+	def HldgVal(self):
+		del self._HldgVal
+		self._HldgVal = None
+
+	@property
 	def ElgblCollVal(self):
 		return self._ElgblCollVal
 
@@ -57,23 +57,23 @@ class BalanceAmounts4(base_types._BaseFieldType):
 		self._ElgblCollVal = None
 
 	@property
-	def PrvsHldgVal(self):
-		return self._PrvsHldgVal
+	def BookVal(self):
+		return self._BookVal
 
-	@PrvsHldgVal.setter
-	def PrvsHldgVal(self, value):
-		self._PrvsHldgVal = value if type(value) != auto else self.make_default("PrvsHldgVal")
+	@BookVal.setter
+	def BookVal(self, value):
+		self._BookVal = value if type(value) != auto else self.make_default("BookVal")
 
-	@PrvsHldgVal.deleter
-	def PrvsHldgVal(self):
-		del self._PrvsHldgVal
-		self._PrvsHldgVal = None
+	@BookVal.deleter
+	def BookVal(self):
+		del self._BookVal
+		self._BookVal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='HldgVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BookVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ElgblCollVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsHldgVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HldgVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElgblCollVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BookVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 	))
 

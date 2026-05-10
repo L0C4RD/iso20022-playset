@@ -1,5 +1,5 @@
 from . import base_types
-import SafekeepingAccountIdentification1Code
+from .SafekeepingAccountIdentification1Code import SafekeepingAccountIdentification1Code
 
 class AccountIdentification10(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import NoReasonCode
-import ReportItemStatus1
+from .ReportItemStatus1 import ReportItemStatus1
+from .NoReasonCode import NoReasonCode
 
 class ReportItemStatus1Choice(base_types._BaseFieldType):
 

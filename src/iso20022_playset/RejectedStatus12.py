@@ -1,23 +1,10 @@
 from . import base_types
-import Quantity54Choice
-import RejectedStatus61Choice
+from .RejectedStatus61Choice import RejectedStatus61Choice
+from .Quantity54Choice import Quantity54Choice
 
 class RejectedStatus12(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctdRsn", "_RjctdQty"]
-	@property
-	def RjctdRsn(self):
-		return self._RjctdRsn
-
-	@RjctdRsn.setter
-	def RjctdRsn(self, value):
-		self._RjctdRsn = value if type(value) != auto else self.make_default("RjctdRsn")
-
-	@RjctdRsn.deleter
-	def RjctdRsn(self):
-		del self._RjctdRsn
-		self._RjctdRsn = None
-
+	__slots__ = ["_RjctdQty", "_RjctdRsn"]
 	@property
 	def RjctdQty(self):
 		return self._RjctdQty
@@ -31,8 +18,21 @@ class RejectedStatus12(base_types._BaseFieldType):
 		del self._RjctdQty
 		self._RjctdQty = None
 
+	@property
+	def RjctdRsn(self):
+		return self._RjctdRsn
+
+	@RjctdRsn.setter
+	def RjctdRsn(self, value):
+		self._RjctdRsn = value if type(value) != auto else self.make_default("RjctdRsn")
+
+	@RjctdRsn.deleter
+	def RjctdRsn(self):
+		del self._RjctdRsn
+		self._RjctdRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RjctdRsn', type=RejectedStatus61Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctdQty', type=Quantity54Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctdRsn', type=RejectedStatus61Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

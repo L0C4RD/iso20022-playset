@@ -1,5 +1,5 @@
 from . import base_types
-import SecuritiesSettlementTransactionReversalAdviceV11
+from .SecuritiesSettlementTransactionReversalAdviceV11 import SecuritiesSettlementTransactionReversalAdviceV11
 
 class SESE_026_001_11():
 

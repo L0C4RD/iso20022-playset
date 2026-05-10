@@ -1,23 +1,10 @@
 from . import base_types
-import OtherC10CommodityDeliverable2
-import OtherC10CommodityNonDeliverable2
+from .OtherC10CommodityNonDeliverable2 import OtherC10CommodityNonDeliverable2
+from .OtherC10CommodityDeliverable2 import OtherC10CommodityDeliverable2
 
 class AssetClassCommodityOtherC102Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Dlvrbl", "_NonDlvrbl"]
-	@property
-	def Dlvrbl(self):
-		return self._Dlvrbl
-
-	@Dlvrbl.setter
-	def Dlvrbl(self, value):
-		self._Dlvrbl = value if type(value) != auto else self.make_default("Dlvrbl")
-
-	@Dlvrbl.deleter
-	def Dlvrbl(self):
-		del self._Dlvrbl
-		self._Dlvrbl = None
-
+	__slots__ = ["_NonDlvrbl", "_Dlvrbl"]
 	@property
 	def NonDlvrbl(self):
 		return self._NonDlvrbl
@@ -31,8 +18,21 @@ class AssetClassCommodityOtherC102Choice(base_types._BaseFieldType):
 		del self._NonDlvrbl
 		self._NonDlvrbl = None
 
+	@property
+	def Dlvrbl(self):
+		return self._Dlvrbl
+
+	@Dlvrbl.setter
+	def Dlvrbl(self, value):
+		self._Dlvrbl = value if type(value) != auto else self.make_default("Dlvrbl")
+
+	@Dlvrbl.deleter
+	def Dlvrbl(self):
+		del self._Dlvrbl
+		self._Dlvrbl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dlvrbl', type=OtherC10CommodityDeliverable2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NonDlvrbl', type=OtherC10CommodityNonDeliverable2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Dlvrbl', type=OtherC10CommodityDeliverable2, min=0, max=1, mutex_group=1, array=False),
 	))
 

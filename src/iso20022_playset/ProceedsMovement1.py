@@ -1,7 +1,7 @@
 from . import base_types
-import SecuritiesProceeds1
-import TaxVoucher1
-import CashProceeds1
+from .SecuritiesProceeds1 import SecuritiesProceeds1
+from .CashProceeds1 import CashProceeds1
+from .TaxVoucher1 import TaxVoucher1
 
 class ProceedsMovement1(base_types._BaseFieldType):
 

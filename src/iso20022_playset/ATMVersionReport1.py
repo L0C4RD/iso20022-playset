@@ -1,23 +1,23 @@
 from . import base_types
-import Max35Text
-import ActivationStatus2Code
-import Max70Text
+from .Max35Text import Max35Text
+from .Max70Text import Max70Text
+from .ActivationStatus2Code import ActivationStatus2Code
 
 class ATMVersionReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_FailRsn", "_CfgtnSts", "_CfgtnVrsn"]
+	__slots__ = ["_CfgtnVrsn", "_CfgtnSts", "_FailRsn"]
 	@property
-	def FailRsn(self):
-		return self._FailRsn
+	def CfgtnVrsn(self):
+		return self._CfgtnVrsn
 
-	@FailRsn.setter
-	def FailRsn(self, value):
-		self._FailRsn = value if type(value) != auto else self.make_default("FailRsn")
+	@CfgtnVrsn.setter
+	def CfgtnVrsn(self, value):
+		self._CfgtnVrsn = value if type(value) != auto else self.make_default("CfgtnVrsn")
 
-	@FailRsn.deleter
-	def FailRsn(self):
-		del self._FailRsn
-		self._FailRsn = None
+	@CfgtnVrsn.deleter
+	def CfgtnVrsn(self):
+		del self._CfgtnVrsn
+		self._CfgtnVrsn = None
 
 	@property
 	def CfgtnSts(self):
@@ -33,21 +33,21 @@ class ATMVersionReport1(base_types._BaseFieldType):
 		self._CfgtnSts = None
 
 	@property
-	def CfgtnVrsn(self):
-		return self._CfgtnVrsn
+	def FailRsn(self):
+		return self._FailRsn
 
-	@CfgtnVrsn.setter
-	def CfgtnVrsn(self, value):
-		self._CfgtnVrsn = value if type(value) != auto else self.make_default("CfgtnVrsn")
+	@FailRsn.setter
+	def FailRsn(self, value):
+		self._FailRsn = value if type(value) != auto else self.make_default("FailRsn")
 
-	@CfgtnVrsn.deleter
-	def CfgtnVrsn(self):
-		del self._CfgtnVrsn
-		self._CfgtnVrsn = None
+	@FailRsn.deleter
+	def FailRsn(self):
+		del self._FailRsn
+		self._FailRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FailRsn', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CfgtnSts', type=ActivationStatus2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CfgtnVrsn', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CfgtnSts', type=ActivationStatus2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FailRsn', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

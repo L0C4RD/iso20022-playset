@@ -1,5 +1,5 @@
 from . import base_types
-import PostalAddress28
+from .PostalAddress28 import PostalAddress28
 
 class UpdateLogAddress2(base_types._BaseFieldType):
 

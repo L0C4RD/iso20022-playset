@@ -1,8 +1,8 @@
 from . import base_types
-import ContractSize1
-import PhysicalTransferType4Code
-import GenericIdentification165
-import ActiveCurrencyCode
+from .GenericIdentification165 import GenericIdentification165
+from .PhysicalTransferType4Code import PhysicalTransferType4Code
+from .ContractSize1 import ContractSize1
+from .ActiveCurrencyCode import ActiveCurrencyCode
 
 class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 

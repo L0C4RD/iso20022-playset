@@ -1,6 +1,6 @@
 from . import base_types
-import SecuritiesInstrumentClassification2
-import SupplementaryData1
+from .SupplementaryData1 import SupplementaryData1
+from .SecuritiesInstrumentClassification2 import SecuritiesInstrumentClassification2
 
 class FinancialInstrumentReportingInstrumentClassificationReportV01(base_types._BaseFieldType):
 

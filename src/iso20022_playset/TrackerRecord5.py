@@ -1,24 +1,24 @@
 from . import base_types
-import BranchAndFinancialInstitutionIdentification8
-import CurrencyExchange13
-import ChargeBearerType1Code
-import ActiveCurrencyAndAmount
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .CurrencyExchange13 import CurrencyExchange13
+from .ChargeBearerType1Code import ChargeBearerType1Code
 
 class TrackerRecord5(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgRateData", "_ChrgBr", "_ChrgsAmt", "_Agt"]
+	__slots__ = ["_ChrgsAmt", "_ChrgBr", "_XchgRateData", "_Agt"]
 	@property
-	def XchgRateData(self):
-		return self._XchgRateData
+	def ChrgsAmt(self):
+		return self._ChrgsAmt
 
-	@XchgRateData.setter
-	def XchgRateData(self, value):
-		self._XchgRateData = value if type(value) != auto else self.make_default("XchgRateData")
+	@ChrgsAmt.setter
+	def ChrgsAmt(self, value):
+		self._ChrgsAmt = value if type(value) != auto else self.make_default("ChrgsAmt")
 
-	@XchgRateData.deleter
-	def XchgRateData(self):
-		del self._XchgRateData
-		self._XchgRateData = None
+	@ChrgsAmt.deleter
+	def ChrgsAmt(self):
+		del self._ChrgsAmt
+		self._ChrgsAmt = None
 
 	@property
 	def ChrgBr(self):
@@ -34,17 +34,17 @@ class TrackerRecord5(base_types._BaseFieldType):
 		self._ChrgBr = None
 
 	@property
-	def ChrgsAmt(self):
-		return self._ChrgsAmt
+	def XchgRateData(self):
+		return self._XchgRateData
 
-	@ChrgsAmt.setter
-	def ChrgsAmt(self, value):
-		self._ChrgsAmt = value if type(value) != auto else self.make_default("ChrgsAmt")
+	@XchgRateData.setter
+	def XchgRateData(self, value):
+		self._XchgRateData = value if type(value) != auto else self.make_default("XchgRateData")
 
-	@ChrgsAmt.deleter
-	def ChrgsAmt(self):
-		del self._ChrgsAmt
-		self._ChrgsAmt = None
+	@XchgRateData.deleter
+	def XchgRateData(self):
+		del self._XchgRateData
+		self._XchgRateData = None
 
 	@property
 	def Agt(self):
@@ -60,9 +60,9 @@ class TrackerRecord5(base_types._BaseFieldType):
 		self._Agt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XchgRateData', type=CurrencyExchange13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgBr', type=ChargeBearerType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgsAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgBr', type=ChargeBearerType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRateData', type=CurrencyExchange13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

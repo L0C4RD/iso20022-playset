@@ -1,6 +1,6 @@
 from . import base_types
-import RejectedStatus29Choice
-import AcceptedStatus1
+from .AcceptedStatus1 import AcceptedStatus1
+from .RejectedStatus29Choice import RejectedStatus29Choice
 
 class ResponseProcessingStatus1Choice(base_types._BaseFieldType):
 

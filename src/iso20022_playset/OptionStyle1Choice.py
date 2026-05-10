@@ -1,6 +1,6 @@
 from . import base_types
-import OptionStyle1Code
-import GenericIdentification13
+from .OptionStyle1Code import OptionStyle1Code
+from .GenericIdentification13 import GenericIdentification13
 
 class OptionStyle1Choice(base_types._BaseFieldType):
 

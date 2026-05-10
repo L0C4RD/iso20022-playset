@@ -1,6 +1,6 @@
 from . import base_types
-import SettlementObligation9
-import PartyIdentificationAndAccount227
+from .PartyIdentificationAndAccount227 import PartyIdentificationAndAccount227
+from .SettlementObligation9 import SettlementObligation9
 
 class Report7(base_types._BaseFieldType):
 

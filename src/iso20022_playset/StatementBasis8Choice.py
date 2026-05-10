@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import StatementBasis2Code
+from .GenericIdentification30 import GenericIdentification30
+from .StatementBasis2Code import StatementBasis2Code
 
 class StatementBasis8Choice(base_types._BaseFieldType):
 

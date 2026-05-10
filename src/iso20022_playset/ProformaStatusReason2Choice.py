@@ -1,6 +1,6 @@
 from . import base_types
-import ProformaStatusReason1Code
-import GenericIdentification36
+from .GenericIdentification36 import GenericIdentification36
+from .ProformaStatusReason1Code import ProformaStatusReason1Code
 
 class ProformaStatusReason2Choice(base_types._BaseFieldType):
 

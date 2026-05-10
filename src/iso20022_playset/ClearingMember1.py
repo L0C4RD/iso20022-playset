@@ -1,39 +1,13 @@
 from . import base_types
-import ISODate
-import TrueFalseIndicator
-import ClearingAccount1
-import PartyIdentification118Choice
-import CreditQuality1Code
+from .PartyIdentification118Choice import PartyIdentification118Choice
+from .ClearingAccount1 import ClearingAccount1
+from .CreditQuality1Code import CreditQuality1Code
+from .ISODate import ISODate
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class ClearingMember1(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtQlty", "_MmbshVldTo", "_MmbshVldFr", "_UltmtPrntId", "_ClrAcctOwnr", "_SpnsrgClrMmbId", "_Id", "_FutrsComssnMrchntInd"]
-	@property
-	def CdtQlty(self):
-		return self._CdtQlty
-
-	@CdtQlty.setter
-	def CdtQlty(self, value):
-		self._CdtQlty = value if type(value) != auto else self.make_default("CdtQlty")
-
-	@CdtQlty.deleter
-	def CdtQlty(self):
-		del self._CdtQlty
-		self._CdtQlty = None
-
-	@property
-	def MmbshVldTo(self):
-		return self._MmbshVldTo
-
-	@MmbshVldTo.setter
-	def MmbshVldTo(self, value):
-		self._MmbshVldTo = value if type(value) != auto else self.make_default("MmbshVldTo")
-
-	@MmbshVldTo.deleter
-	def MmbshVldTo(self):
-		del self._MmbshVldTo
-		self._MmbshVldTo = None
-
+	__slots__ = ["_MmbshVldFr", "_CdtQlty", "_ClrAcctOwnr", "_UltmtPrntId", "_Id", "_MmbshVldTo", "_FutrsComssnMrchntInd", "_SpnsrgClrMmbId"]
 	@property
 	def MmbshVldFr(self):
 		return self._MmbshVldFr
@@ -48,17 +22,17 @@ class ClearingMember1(base_types._BaseFieldType):
 		self._MmbshVldFr = None
 
 	@property
-	def UltmtPrntId(self):
-		return self._UltmtPrntId
+	def CdtQlty(self):
+		return self._CdtQlty
 
-	@UltmtPrntId.setter
-	def UltmtPrntId(self, value):
-		self._UltmtPrntId = value if type(value) != auto else self.make_default("UltmtPrntId")
+	@CdtQlty.setter
+	def CdtQlty(self, value):
+		self._CdtQlty = value if type(value) != auto else self.make_default("CdtQlty")
 
-	@UltmtPrntId.deleter
-	def UltmtPrntId(self):
-		del self._UltmtPrntId
-		self._UltmtPrntId = None
+	@CdtQlty.deleter
+	def CdtQlty(self):
+		del self._CdtQlty
+		self._CdtQlty = None
 
 	@property
 	def ClrAcctOwnr(self):
@@ -74,17 +48,17 @@ class ClearingMember1(base_types._BaseFieldType):
 		self._ClrAcctOwnr = None
 
 	@property
-	def SpnsrgClrMmbId(self):
-		return self._SpnsrgClrMmbId
+	def UltmtPrntId(self):
+		return self._UltmtPrntId
 
-	@SpnsrgClrMmbId.setter
-	def SpnsrgClrMmbId(self, value):
-		self._SpnsrgClrMmbId = value if type(value) != auto else self.make_default("SpnsrgClrMmbId")
+	@UltmtPrntId.setter
+	def UltmtPrntId(self, value):
+		self._UltmtPrntId = value if type(value) != auto else self.make_default("UltmtPrntId")
 
-	@SpnsrgClrMmbId.deleter
-	def SpnsrgClrMmbId(self):
-		del self._SpnsrgClrMmbId
-		self._SpnsrgClrMmbId = None
+	@UltmtPrntId.deleter
+	def UltmtPrntId(self):
+		del self._UltmtPrntId
+		self._UltmtPrntId = None
 
 	@property
 	def Id(self):
@@ -100,6 +74,19 @@ class ClearingMember1(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def MmbshVldTo(self):
+		return self._MmbshVldTo
+
+	@MmbshVldTo.setter
+	def MmbshVldTo(self, value):
+		self._MmbshVldTo = value if type(value) != auto else self.make_default("MmbshVldTo")
+
+	@MmbshVldTo.deleter
+	def MmbshVldTo(self):
+		del self._MmbshVldTo
+		self._MmbshVldTo = None
+
+	@property
 	def FutrsComssnMrchntInd(self):
 		return self._FutrsComssnMrchntInd
 
@@ -112,14 +99,27 @@ class ClearingMember1(base_types._BaseFieldType):
 		del self._FutrsComssnMrchntInd
 		self._FutrsComssnMrchntInd = None
 
+	@property
+	def SpnsrgClrMmbId(self):
+		return self._SpnsrgClrMmbId
+
+	@SpnsrgClrMmbId.setter
+	def SpnsrgClrMmbId(self, value):
+		self._SpnsrgClrMmbId = value if type(value) != auto else self.make_default("SpnsrgClrMmbId")
+
+	@SpnsrgClrMmbId.deleter
+	def SpnsrgClrMmbId(self):
+		del self._SpnsrgClrMmbId
+		self._SpnsrgClrMmbId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtQlty', type=CreditQuality1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MmbshVldTo', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MmbshVldFr', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UltmtPrntId', type=PartyIdentification118Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtQlty', type=CreditQuality1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrAcctOwnr', type=ClearingAccount1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SpnsrgClrMmbId', type=PartyIdentification118Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UltmtPrntId', type=PartyIdentification118Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification118Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MmbshVldTo', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FutrsComssnMrchntInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpnsrgClrMmbId', type=PartyIdentification118Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

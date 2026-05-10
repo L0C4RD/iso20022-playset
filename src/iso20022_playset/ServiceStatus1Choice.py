@@ -1,6 +1,6 @@
 from . import base_types
-import ServiceRequestStatus1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ServiceRequestStatus1Code import ServiceRequestStatus1Code
 
 class ServiceStatus1Choice(base_types._BaseFieldType):
 

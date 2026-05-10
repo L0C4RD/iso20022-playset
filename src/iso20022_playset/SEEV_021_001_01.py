@@ -1,5 +1,5 @@
 from . import base_types
-import AgentCAMovementConfirmationV01
+from .AgentCAMovementConfirmationV01 import AgentCAMovementConfirmationV01
 
 class SEEV_021_001_01():
 

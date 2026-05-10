@@ -1,38 +1,25 @@
 from . import base_types
-import CorporateActionAdditionalInformation1
-import ContactPerson1
-import CorporateActionInformation1
-import DocumentIdentification8
-import SecuritiesAccount7
+from .SecuritiesAccount7 import SecuritiesAccount7
+from .CorporateActionInformation1 import CorporateActionInformation1
+from .DocumentIdentification8 import DocumentIdentification8
+from .CorporateActionAdditionalInformation1 import CorporateActionAdditionalInformation1
+from .ContactPerson1 import ContactPerson1
 
 class AgentCAInformationAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_CtctDtls", "_CorpActnGnlInf", "_CorpActnAddtlInf", "_AgtCAElctnAdvcId", "_Id"]
+	__slots__ = ["_CorpActnAddtlInf", "_CorpActnGnlInf", "_AgtCAElctnAdvcId", "_CtctDtls", "_Id", "_AcctDtls"]
 	@property
-	def AcctDtls(self):
-		return self._AcctDtls
+	def CorpActnAddtlInf(self):
+		return self._CorpActnAddtlInf
 
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+	@CorpActnAddtlInf.setter
+	def CorpActnAddtlInf(self, value):
+		self._CorpActnAddtlInf = value if type(value) != auto else self.make_default("CorpActnAddtlInf")
 
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
-	@property
-	def CtctDtls(self):
-		return self._CtctDtls
-
-	@CtctDtls.setter
-	def CtctDtls(self, value):
-		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
-
-	@CtctDtls.deleter
-	def CtctDtls(self):
-		del self._CtctDtls
-		self._CtctDtls = None
+	@CorpActnAddtlInf.deleter
+	def CorpActnAddtlInf(self):
+		del self._CorpActnAddtlInf
+		self._CorpActnAddtlInf = None
 
 	@property
 	def CorpActnGnlInf(self):
@@ -48,19 +35,6 @@ class AgentCAInformationAdviceV01(base_types._BaseFieldType):
 		self._CorpActnGnlInf = None
 
 	@property
-	def CorpActnAddtlInf(self):
-		return self._CorpActnAddtlInf
-
-	@CorpActnAddtlInf.setter
-	def CorpActnAddtlInf(self, value):
-		self._CorpActnAddtlInf = value if type(value) != auto else self.make_default("CorpActnAddtlInf")
-
-	@CorpActnAddtlInf.deleter
-	def CorpActnAddtlInf(self):
-		del self._CorpActnAddtlInf
-		self._CorpActnAddtlInf = None
-
-	@property
 	def AgtCAElctnAdvcId(self):
 		return self._AgtCAElctnAdvcId
 
@@ -72,6 +46,19 @@ class AgentCAInformationAdviceV01(base_types._BaseFieldType):
 	def AgtCAElctnAdvcId(self):
 		del self._AgtCAElctnAdvcId
 		self._AgtCAElctnAdvcId = None
+
+	@property
+	def CtctDtls(self):
+		return self._CtctDtls
+
+	@CtctDtls.setter
+	def CtctDtls(self, value):
+		self._CtctDtls = value if type(value) != auto else self.make_default("CtctDtls")
+
+	@CtctDtls.deleter
+	def CtctDtls(self):
+		del self._CtctDtls
+		self._CtctDtls = None
 
 	@property
 	def Id(self):
@@ -86,12 +73,25 @@ class AgentCAInformationAdviceV01(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def AcctDtls(self):
+		return self._AcctDtls
+
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtctDtls', type=ContactPerson1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnAddtlInf', type=CorporateActionAdditionalInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtCAElctnAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctDtls', type=ContactPerson1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount7, min=1, max=1, mutex_group=None, array=False),
 	))
 

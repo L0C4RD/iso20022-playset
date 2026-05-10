@@ -1,60 +1,47 @@
 from . import base_types
-import ISODate
-import FinancingInformationAndStatus1
-import AgreedRate1
-import FinancingNotificationParties1
-import Max35Text
-import Max2000Text
-import ActiveCurrencyAndAmount
-import FinancialItem1
-import ValidationStatusInformation1
-import xs:IDREF
-import Max15NumericText
-import FinancingRateOrAmountChoice
-import DecimalNumber
-import Instalment2
+from .Max35Text import Max35Text
+from .ValidationStatusInformation1 import ValidationStatusInformation1
+from .FinancingNotificationParties1 import FinancingNotificationParties1
+from .ISODate import ISODate
+from .DecimalNumber import DecimalNumber
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .FinancingRateOrAmountChoice import FinancingRateOrAmountChoice
+from .FinancingInformationAndStatus1 import FinancingInformationAndStatus1
+from .Max2000Text import Max2000Text
+from .FinancialItem1 import FinancialItem1
+from .AgreedRate1 import AgreedRate1
+from .Instalment2 import Instalment2
+from .Max15NumericText import Max15NumericText
+from .xs:IDREF import xs:IDREF
 
 class FinancingItemList1(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdDoc", "_Assgne", "_AmtCutOffDt", "_FincgSts", "_IsseDt", "_VldtnStsInf", "_NtfctnInf", "_FinItm", "_ItmCnt", "_FincgInstlmt", "_CtrlSum", "_TtlReqFincg", "_AgrdRate", "_AddtlInf", "_Idr", "_TtlReqAmt", "_Assgnr"]
+	__slots__ = ["_Idr", "_Assgnr", "_FincgSts", "_VldtnStsInf", "_RltdDoc", "_AgrdRate", "_Assgne", "_TtlReqFincg", "_TtlReqAmt", "_IsseDt", "_AddtlInf", "_NtfctnInf", "_AmtCutOffDt", "_FincgInstlmt", "_CtrlSum", "_FinItm", "_ItmCnt"]
 	@property
-	def RltdDoc(self):
-		return self._RltdDoc
+	def Idr(self):
+		return self._Idr
 
-	@RltdDoc.setter
-	def RltdDoc(self, value):
-		self._RltdDoc = value if type(value) != auto else self.make_default("RltdDoc")
+	@Idr.setter
+	def Idr(self, value):
+		self._Idr = value if type(value) != auto else self.make_default("Idr")
 
-	@RltdDoc.deleter
-	def RltdDoc(self):
-		del self._RltdDoc
-		self._RltdDoc = None
-
-	@property
-	def Assgne(self):
-		return self._Assgne
-
-	@Assgne.setter
-	def Assgne(self, value):
-		self._Assgne = value if type(value) != auto else self.make_default("Assgne")
-
-	@Assgne.deleter
-	def Assgne(self):
-		del self._Assgne
-		self._Assgne = None
+	@Idr.deleter
+	def Idr(self):
+		del self._Idr
+		self._Idr = None
 
 	@property
-	def AmtCutOffDt(self):
-		return self._AmtCutOffDt
+	def Assgnr(self):
+		return self._Assgnr
 
-	@AmtCutOffDt.setter
-	def AmtCutOffDt(self, value):
-		self._AmtCutOffDt = value if type(value) != auto else self.make_default("AmtCutOffDt")
+	@Assgnr.setter
+	def Assgnr(self, value):
+		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
 
-	@AmtCutOffDt.deleter
-	def AmtCutOffDt(self):
-		del self._AmtCutOffDt
-		self._AmtCutOffDt = None
+	@Assgnr.deleter
+	def Assgnr(self):
+		del self._Assgnr
+		self._Assgnr = None
 
 	@property
 	def FincgSts(self):
@@ -70,6 +57,84 @@ class FinancingItemList1(base_types._BaseFieldType):
 		self._FincgSts = None
 
 	@property
+	def VldtnStsInf(self):
+		return self._VldtnStsInf
+
+	@VldtnStsInf.setter
+	def VldtnStsInf(self, value):
+		self._VldtnStsInf = value if type(value) != auto else self.make_default("VldtnStsInf")
+
+	@VldtnStsInf.deleter
+	def VldtnStsInf(self):
+		del self._VldtnStsInf
+		self._VldtnStsInf = None
+
+	@property
+	def RltdDoc(self):
+		return self._RltdDoc
+
+	@RltdDoc.setter
+	def RltdDoc(self, value):
+		self._RltdDoc = value if type(value) != auto else self.make_default("RltdDoc")
+
+	@RltdDoc.deleter
+	def RltdDoc(self):
+		del self._RltdDoc
+		self._RltdDoc = None
+
+	@property
+	def AgrdRate(self):
+		return self._AgrdRate
+
+	@AgrdRate.setter
+	def AgrdRate(self, value):
+		self._AgrdRate = value if type(value) != auto else self.make_default("AgrdRate")
+
+	@AgrdRate.deleter
+	def AgrdRate(self):
+		del self._AgrdRate
+		self._AgrdRate = None
+
+	@property
+	def Assgne(self):
+		return self._Assgne
+
+	@Assgne.setter
+	def Assgne(self, value):
+		self._Assgne = value if type(value) != auto else self.make_default("Assgne")
+
+	@Assgne.deleter
+	def Assgne(self):
+		del self._Assgne
+		self._Assgne = None
+
+	@property
+	def TtlReqFincg(self):
+		return self._TtlReqFincg
+
+	@TtlReqFincg.setter
+	def TtlReqFincg(self, value):
+		self._TtlReqFincg = value if type(value) != auto else self.make_default("TtlReqFincg")
+
+	@TtlReqFincg.deleter
+	def TtlReqFincg(self):
+		del self._TtlReqFincg
+		self._TtlReqFincg = None
+
+	@property
+	def TtlReqAmt(self):
+		return self._TtlReqAmt
+
+	@TtlReqAmt.setter
+	def TtlReqAmt(self, value):
+		self._TtlReqAmt = value if type(value) != auto else self.make_default("TtlReqAmt")
+
+	@TtlReqAmt.deleter
+	def TtlReqAmt(self):
+		del self._TtlReqAmt
+		self._TtlReqAmt = None
+
+	@property
 	def IsseDt(self):
 		return self._IsseDt
 
@@ -83,17 +148,17 @@ class FinancingItemList1(base_types._BaseFieldType):
 		self._IsseDt = None
 
 	@property
-	def VldtnStsInf(self):
-		return self._VldtnStsInf
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@VldtnStsInf.setter
-	def VldtnStsInf(self, value):
-		self._VldtnStsInf = value if type(value) != auto else self.make_default("VldtnStsInf")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@VldtnStsInf.deleter
-	def VldtnStsInf(self):
-		del self._VldtnStsInf
-		self._VldtnStsInf = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def NtfctnInf(self):
@@ -109,30 +174,17 @@ class FinancingItemList1(base_types._BaseFieldType):
 		self._NtfctnInf = None
 
 	@property
-	def FinItm(self):
-		return self._FinItm
+	def AmtCutOffDt(self):
+		return self._AmtCutOffDt
 
-	@FinItm.setter
-	def FinItm(self, value):
-		self._FinItm = value if type(value) != auto else self.make_default("FinItm")
+	@AmtCutOffDt.setter
+	def AmtCutOffDt(self, value):
+		self._AmtCutOffDt = value if type(value) != auto else self.make_default("AmtCutOffDt")
 
-	@FinItm.deleter
-	def FinItm(self):
-		del self._FinItm
-		self._FinItm = None
-
-	@property
-	def ItmCnt(self):
-		return self._ItmCnt
-
-	@ItmCnt.setter
-	def ItmCnt(self, value):
-		self._ItmCnt = value if type(value) != auto else self.make_default("ItmCnt")
-
-	@ItmCnt.deleter
-	def ItmCnt(self):
-		del self._ItmCnt
-		self._ItmCnt = None
+	@AmtCutOffDt.deleter
+	def AmtCutOffDt(self):
+		del self._AmtCutOffDt
+		self._AmtCutOffDt = None
 
 	@property
 	def FincgInstlmt(self):
@@ -161,100 +213,48 @@ class FinancingItemList1(base_types._BaseFieldType):
 		self._CtrlSum = None
 
 	@property
-	def TtlReqFincg(self):
-		return self._TtlReqFincg
+	def FinItm(self):
+		return self._FinItm
 
-	@TtlReqFincg.setter
-	def TtlReqFincg(self, value):
-		self._TtlReqFincg = value if type(value) != auto else self.make_default("TtlReqFincg")
+	@FinItm.setter
+	def FinItm(self, value):
+		self._FinItm = value if type(value) != auto else self.make_default("FinItm")
 
-	@TtlReqFincg.deleter
-	def TtlReqFincg(self):
-		del self._TtlReqFincg
-		self._TtlReqFincg = None
-
-	@property
-	def AgrdRate(self):
-		return self._AgrdRate
-
-	@AgrdRate.setter
-	def AgrdRate(self, value):
-		self._AgrdRate = value if type(value) != auto else self.make_default("AgrdRate")
-
-	@AgrdRate.deleter
-	def AgrdRate(self):
-		del self._AgrdRate
-		self._AgrdRate = None
+	@FinItm.deleter
+	def FinItm(self):
+		del self._FinItm
+		self._FinItm = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def ItmCnt(self):
+		return self._ItmCnt
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@ItmCnt.setter
+	def ItmCnt(self, value):
+		self._ItmCnt = value if type(value) != auto else self.make_default("ItmCnt")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def Idr(self):
-		return self._Idr
-
-	@Idr.setter
-	def Idr(self, value):
-		self._Idr = value if type(value) != auto else self.make_default("Idr")
-
-	@Idr.deleter
-	def Idr(self):
-		del self._Idr
-		self._Idr = None
-
-	@property
-	def TtlReqAmt(self):
-		return self._TtlReqAmt
-
-	@TtlReqAmt.setter
-	def TtlReqAmt(self, value):
-		self._TtlReqAmt = value if type(value) != auto else self.make_default("TtlReqAmt")
-
-	@TtlReqAmt.deleter
-	def TtlReqAmt(self):
-		del self._TtlReqAmt
-		self._TtlReqAmt = None
-
-	@property
-	def Assgnr(self):
-		return self._Assgnr
-
-	@Assgnr.setter
-	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
-
-	@Assgnr.deleter
-	def Assgnr(self):
-		del self._Assgnr
-		self._Assgnr = None
+	@ItmCnt.deleter
+	def ItmCnt(self):
+		del self._ItmCnt
+		self._ItmCnt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdDoc', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Assgne', type=XS_IDREF, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmtCutOffDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Idr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnr', type=XS_IDREF, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FincgSts', type=FinancingInformationAndStatus1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtnStsInf', type=ValidationStatusInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdDoc', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AgrdRate', type=AgreedRate1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgne', type=XS_IDREF, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlReqFincg', type=FinancingRateOrAmountChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlReqAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnInf', type=FinancingNotificationParties1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FinItm', type=FinancialItem1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtCutOffDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FincgInstlmt', type=Instalment2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlReqFincg', type=FinancingRateOrAmountChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgrdRate', type=AgreedRate1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Idr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlReqAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnr', type=XS_IDREF, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinItm', type=FinancialItem1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

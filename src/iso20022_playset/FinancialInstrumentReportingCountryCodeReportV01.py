@@ -1,6 +1,6 @@
 from . import base_types
-import SupplementaryData1
-import SecuritiesCountryIdentification2
+from .SecuritiesCountryIdentification2 import SecuritiesCountryIdentification2
+from .SupplementaryData1 import SupplementaryData1
 
 class FinancialInstrumentReportingCountryCodeReportV01(base_types._BaseFieldType):
 

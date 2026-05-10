@@ -1,21 +1,21 @@
 from . import base_types
-import DateFormat41Choice
+from .DateFormat41Choice import DateFormat41Choice
 
 class CorporateActionDate93(base_types._BaseFieldType):
 
-	__slots__ = ["_LtryDt", "_RcrdDt", "_ExDvddDt"]
+	__slots__ = ["_ExDvddDt", "_RcrdDt", "_LtryDt"]
 	@property
-	def LtryDt(self):
-		return self._LtryDt
+	def ExDvddDt(self):
+		return self._ExDvddDt
 
-	@LtryDt.setter
-	def LtryDt(self, value):
-		self._LtryDt = value if type(value) != auto else self.make_default("LtryDt")
+	@ExDvddDt.setter
+	def ExDvddDt(self, value):
+		self._ExDvddDt = value if type(value) != auto else self.make_default("ExDvddDt")
 
-	@LtryDt.deleter
-	def LtryDt(self):
-		del self._LtryDt
-		self._LtryDt = None
+	@ExDvddDt.deleter
+	def ExDvddDt(self):
+		del self._ExDvddDt
+		self._ExDvddDt = None
 
 	@property
 	def RcrdDt(self):
@@ -31,21 +31,21 @@ class CorporateActionDate93(base_types._BaseFieldType):
 		self._RcrdDt = None
 
 	@property
-	def ExDvddDt(self):
-		return self._ExDvddDt
+	def LtryDt(self):
+		return self._LtryDt
 
-	@ExDvddDt.setter
-	def ExDvddDt(self, value):
-		self._ExDvddDt = value if type(value) != auto else self.make_default("ExDvddDt")
+	@LtryDt.setter
+	def LtryDt(self, value):
+		self._LtryDt = value if type(value) != auto else self.make_default("LtryDt")
 
-	@ExDvddDt.deleter
-	def ExDvddDt(self):
-		del self._ExDvddDt
-		self._ExDvddDt = None
+	@LtryDt.deleter
+	def LtryDt(self):
+		del self._LtryDt
+		self._LtryDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LtryDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcrdDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExDvddDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcrdDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LtryDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

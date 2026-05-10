@@ -1,5 +1,5 @@
 from . import base_types
-import PayInScheduleV03
+from .PayInScheduleV03 import PayInScheduleV03
 
 class CAMT_062_001_03():
 

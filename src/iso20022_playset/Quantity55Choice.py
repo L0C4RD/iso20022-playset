@@ -1,7 +1,7 @@
 from . import base_types
-import FinancialInstrumentQuantity36Choice
-import Quantity1Code
-import OriginalAndCurrentQuantities4
+from .OriginalAndCurrentQuantities4 import OriginalAndCurrentQuantities4
+from .Quantity1Code import Quantity1Code
+from .FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
 
 class Quantity55Choice(base_types._BaseFieldType):
 

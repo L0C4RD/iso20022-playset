@@ -1,6 +1,6 @@
 from . import base_types
-import TRRelatedData2
-import ContentInformationType10
+from .ContentInformationType10 import ContentInformationType10
+from .TRRelatedData2 import TRRelatedData2
 
 class KeyChoiceValue2(base_types._BaseFieldType):
 

@@ -1,23 +1,10 @@
 from . import base_types
-import ModificationReason4
-import NoReasonCode
+from .ModificationReason4 import ModificationReason4
+from .NoReasonCode import NoReasonCode
 
 class ModificationStatus4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoSpcfdRsn", "_Rsn"]
-	@property
-	def NoSpcfdRsn(self):
-		return self._NoSpcfdRsn
-
-	@NoSpcfdRsn.setter
-	def NoSpcfdRsn(self, value):
-		self._NoSpcfdRsn = value if type(value) != auto else self.make_default("NoSpcfdRsn")
-
-	@NoSpcfdRsn.deleter
-	def NoSpcfdRsn(self):
-		del self._NoSpcfdRsn
-		self._NoSpcfdRsn = None
-
+	__slots__ = ["_Rsn", "_NoSpcfdRsn"]
 	@property
 	def Rsn(self):
 		return self._Rsn
@@ -31,8 +18,21 @@ class ModificationStatus4Choice(base_types._BaseFieldType):
 		del self._Rsn
 		self._Rsn = None
 
+	@property
+	def NoSpcfdRsn(self):
+		return self._NoSpcfdRsn
+
+	@NoSpcfdRsn.setter
+	def NoSpcfdRsn(self, value):
+		self._NoSpcfdRsn = value if type(value) != auto else self.make_default("NoSpcfdRsn")
+
+	@NoSpcfdRsn.deleter
+	def NoSpcfdRsn(self):
+		del self._NoSpcfdRsn
+		self._NoSpcfdRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rsn', type=ModificationReason4, min=0, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 	))
 

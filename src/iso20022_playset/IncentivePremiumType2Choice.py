@@ -1,7 +1,7 @@
 from . import base_types
-import VoteTypeAndQuantity1
-import Number
-import YesNoIndicator
+from .VoteTypeAndQuantity1 import VoteTypeAndQuantity1
+from .YesNoIndicator import YesNoIndicator
+from .Number import Number
 
 class IncentivePremiumType2Choice(base_types._BaseFieldType):
 

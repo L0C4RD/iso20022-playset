@@ -1,23 +1,23 @@
 from . import base_types
-import Party50Choice
-import Max35Text
-import ISODateTime
+from .Max35Text import Max35Text
+from .Party50Choice import Party50Choice
+from .ISODateTime import ISODateTime
 
 class OriginalMessage6(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgNmId", "_OrgnlMsgId", "_OrgnlSndr", "_OrgnlCreDtTm", "_OrgnlPackgId", "_OrgnlRcrdId"]
+	__slots__ = ["_OrgnlPackgId", "_OrgnlMsgId", "_OrgnlCreDtTm", "_OrgnlRcrdId", "_OrgnlSndr", "_OrgnlMsgNmId"]
 	@property
-	def OrgnlMsgNmId(self):
-		return self._OrgnlMsgNmId
+	def OrgnlPackgId(self):
+		return self._OrgnlPackgId
 
-	@OrgnlMsgNmId.setter
-	def OrgnlMsgNmId(self, value):
-		self._OrgnlMsgNmId = value if type(value) != auto else self.make_default("OrgnlMsgNmId")
+	@OrgnlPackgId.setter
+	def OrgnlPackgId(self, value):
+		self._OrgnlPackgId = value if type(value) != auto else self.make_default("OrgnlPackgId")
 
-	@OrgnlMsgNmId.deleter
-	def OrgnlMsgNmId(self):
-		del self._OrgnlMsgNmId
-		self._OrgnlMsgNmId = None
+	@OrgnlPackgId.deleter
+	def OrgnlPackgId(self):
+		del self._OrgnlPackgId
+		self._OrgnlPackgId = None
 
 	@property
 	def OrgnlMsgId(self):
@@ -33,19 +33,6 @@ class OriginalMessage6(base_types._BaseFieldType):
 		self._OrgnlMsgId = None
 
 	@property
-	def OrgnlSndr(self):
-		return self._OrgnlSndr
-
-	@OrgnlSndr.setter
-	def OrgnlSndr(self, value):
-		self._OrgnlSndr = value if type(value) != auto else self.make_default("OrgnlSndr")
-
-	@OrgnlSndr.deleter
-	def OrgnlSndr(self):
-		del self._OrgnlSndr
-		self._OrgnlSndr = None
-
-	@property
 	def OrgnlCreDtTm(self):
 		return self._OrgnlCreDtTm
 
@@ -57,19 +44,6 @@ class OriginalMessage6(base_types._BaseFieldType):
 	def OrgnlCreDtTm(self):
 		del self._OrgnlCreDtTm
 		self._OrgnlCreDtTm = None
-
-	@property
-	def OrgnlPackgId(self):
-		return self._OrgnlPackgId
-
-	@OrgnlPackgId.setter
-	def OrgnlPackgId(self, value):
-		self._OrgnlPackgId = value if type(value) != auto else self.make_default("OrgnlPackgId")
-
-	@OrgnlPackgId.deleter
-	def OrgnlPackgId(self):
-		del self._OrgnlPackgId
-		self._OrgnlPackgId = None
 
 	@property
 	def OrgnlRcrdId(self):
@@ -84,12 +58,38 @@ class OriginalMessage6(base_types._BaseFieldType):
 		del self._OrgnlRcrdId
 		self._OrgnlRcrdId = None
 
+	@property
+	def OrgnlSndr(self):
+		return self._OrgnlSndr
+
+	@OrgnlSndr.setter
+	def OrgnlSndr(self, value):
+		self._OrgnlSndr = value if type(value) != auto else self.make_default("OrgnlSndr")
+
+	@OrgnlSndr.deleter
+	def OrgnlSndr(self):
+		del self._OrgnlSndr
+		self._OrgnlSndr = None
+
+	@property
+	def OrgnlMsgNmId(self):
+		return self._OrgnlMsgNmId
+
+	@OrgnlMsgNmId.setter
+	def OrgnlMsgNmId(self, value):
+		self._OrgnlMsgNmId = value if type(value) != auto else self.make_default("OrgnlMsgNmId")
+
+	@OrgnlMsgNmId.deleter
+	def OrgnlMsgNmId(self):
+		del self._OrgnlMsgNmId
+		self._OrgnlMsgNmId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlSndr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlPackgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlRcrdId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlSndr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

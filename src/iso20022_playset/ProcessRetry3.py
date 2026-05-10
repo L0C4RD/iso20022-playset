@@ -1,11 +1,11 @@
 from . import base_types
-import Max9NumericText
-import Number
-import TimeUnit1Code
+from .Max9NumericText import Max9NumericText
+from .TimeUnit1Code import TimeUnit1Code
+from .Number import Number
 
 class ProcessRetry3(base_types._BaseFieldType):
 
-	__slots__ = ["_Dely", "_MaxNb", "_UnitOfTm"]
+	__slots__ = ["_Dely", "_UnitOfTm", "_MaxNb"]
 	@property
 	def Dely(self):
 		return self._Dely
@@ -20,19 +20,6 @@ class ProcessRetry3(base_types._BaseFieldType):
 		self._Dely = None
 
 	@property
-	def MaxNb(self):
-		return self._MaxNb
-
-	@MaxNb.setter
-	def MaxNb(self, value):
-		self._MaxNb = value if type(value) != auto else self.make_default("MaxNb")
-
-	@MaxNb.deleter
-	def MaxNb(self):
-		del self._MaxNb
-		self._MaxNb = None
-
-	@property
 	def UnitOfTm(self):
 		return self._UnitOfTm
 
@@ -45,9 +32,22 @@ class ProcessRetry3(base_types._BaseFieldType):
 		del self._UnitOfTm
 		self._UnitOfTm = None
 
+	@property
+	def MaxNb(self):
+		return self._MaxNb
+
+	@MaxNb.setter
+	def MaxNb(self, value):
+		self._MaxNb = value if type(value) != auto else self.make_default("MaxNb")
+
+	@MaxNb.deleter
+	def MaxNb(self):
+		del self._MaxNb
+		self._MaxNb = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dely', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfTm', type=TimeUnit1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

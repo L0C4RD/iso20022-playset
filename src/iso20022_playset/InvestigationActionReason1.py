@@ -1,23 +1,23 @@
 from . import base_types
-import InvestigationActionReason1Choice
-import PartyIdentification135
-import Max105Text
+from .PartyIdentification135 import PartyIdentification135
+from .InvestigationActionReason1Choice import InvestigationActionReason1Choice
+from .Max105Text import Max105Text
 
 class InvestigationActionReason1(base_types._BaseFieldType):
 
-	__slots__ = ["_Orgtr", "_AddtlInf", "_Rsn"]
+	__slots__ = ["_Rsn", "_AddtlInf", "_Orgtr"]
 	@property
-	def Orgtr(self):
-		return self._Orgtr
+	def Rsn(self):
+		return self._Rsn
 
-	@Orgtr.setter
-	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
 
-	@Orgtr.deleter
-	def Orgtr(self):
-		del self._Orgtr
-		self._Orgtr = None
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
 	def AddtlInf(self):
@@ -33,21 +33,21 @@ class InvestigationActionReason1(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def Orgtr(self):
+		return self._Orgtr
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+	@Orgtr.setter
+	def Orgtr(self, value):
+		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@Orgtr.deleter
+	def Orgtr(self):
+		del self._Orgtr
+		self._Orgtr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Orgtr', type=PartyIdentification135, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rsn', type=InvestigationActionReason1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Orgtr', type=PartyIdentification135, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,88 +1,23 @@
 from . import base_types
-import ProductType4Code
-import TimeToMaturity1Choice
-import MasterAgreement8
-import Max52Text
-import CreditDerivative7
-import ExchangeRateBasis1Choice
-import MarginCollateralReport4
-import FinancialInstrumentContractType2Code
-import AssetClassCommodity6Choice
-import OptionType2Code
-import TrueFalseIndicator
-import ActiveOrHistoricCurrencyCode
-import OtherPayment6
-import TradeCounterpartyReport20
-import SecurityIdentification41Choice
+from .AssetClassCommodity6Choice import AssetClassCommodity6Choice
+from .TimeToMaturity1Choice import TimeToMaturity1Choice
+from .ProductType4Code import ProductType4Code
+from .OptionType2Code import OptionType2Code
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .MasterAgreement8 import MasterAgreement8
+from .OtherPayment6 import OtherPayment6
+from .Max52Text import Max52Text
+from .MarginCollateralReport4 import MarginCollateralReport4
+from .TradeCounterpartyReport20 import TradeCounterpartyReport20
+from .CreditDerivative7 import CreditDerivative7
+from .SecurityIdentification41Choice import SecurityIdentification41Choice
+from .ExchangeRateBasis1Choice import ExchangeRateBasis1Choice
+from .TrueFalseIndicator import TrueFalseIndicator
+from .FinancialInstrumentContractType2Code import FinancialInstrumentContractType2Code
 
 class PositionSetDimensions16(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnTp", "_NtnlCcy", "_XchgRateBsis", "_Clrd", "_Cmmdty", "_Coll", "_NtnlCcyScndLeg", "_IRSTp", "_UndrlygInstrm", "_ValCcy", "_AsstClss", "_IntraGrp", "_SttlmCcy", "_TmToMtrty", "_SttlmCcyScndLeg", "_MstrAgrmt", "_CtrPtyId", "_CtrctTp", "_OthrPmt", "_Cdt"]
-	@property
-	def OptnTp(self):
-		return self._OptnTp
-
-	@OptnTp.setter
-	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
-
-	@OptnTp.deleter
-	def OptnTp(self):
-		del self._OptnTp
-		self._OptnTp = None
-
-	@property
-	def NtnlCcy(self):
-		return self._NtnlCcy
-
-	@NtnlCcy.setter
-	def NtnlCcy(self, value):
-		self._NtnlCcy = value if type(value) != auto else self.make_default("NtnlCcy")
-
-	@NtnlCcy.deleter
-	def NtnlCcy(self):
-		del self._NtnlCcy
-		self._NtnlCcy = None
-
-	@property
-	def XchgRateBsis(self):
-		return self._XchgRateBsis
-
-	@XchgRateBsis.setter
-	def XchgRateBsis(self, value):
-		self._XchgRateBsis = value if type(value) != auto else self.make_default("XchgRateBsis")
-
-	@XchgRateBsis.deleter
-	def XchgRateBsis(self):
-		del self._XchgRateBsis
-		self._XchgRateBsis = None
-
-	@property
-	def Clrd(self):
-		return self._Clrd
-
-	@Clrd.setter
-	def Clrd(self, value):
-		self._Clrd = value if type(value) != auto else self.make_default("Clrd")
-
-	@Clrd.deleter
-	def Clrd(self):
-		del self._Clrd
-		self._Clrd = None
-
-	@property
-	def Cmmdty(self):
-		return self._Cmmdty
-
-	@Cmmdty.setter
-	def Cmmdty(self, value):
-		self._Cmmdty = value if type(value) != auto else self.make_default("Cmmdty")
-
-	@Cmmdty.deleter
-	def Cmmdty(self):
-		del self._Cmmdty
-		self._Cmmdty = None
-
+	__slots__ = ["_Coll", "_UndrlygInstrm", "_CtrPtyId", "_OptnTp", "_AsstClss", "_IRSTp", "_NtnlCcy", "_OthrPmt", "_SttlmCcy", "_MstrAgrmt", "_CtrctTp", "_Cdt", "_IntraGrp", "_TmToMtrty", "_Cmmdty", "_XchgRateBsis", "_ValCcy", "_SttlmCcyScndLeg", "_Clrd", "_NtnlCcyScndLeg"]
 	@property
 	def Coll(self):
 		return self._Coll
@@ -95,32 +30,6 @@ class PositionSetDimensions16(base_types._BaseFieldType):
 	def Coll(self):
 		del self._Coll
 		self._Coll = None
-
-	@property
-	def NtnlCcyScndLeg(self):
-		return self._NtnlCcyScndLeg
-
-	@NtnlCcyScndLeg.setter
-	def NtnlCcyScndLeg(self, value):
-		self._NtnlCcyScndLeg = value if type(value) != auto else self.make_default("NtnlCcyScndLeg")
-
-	@NtnlCcyScndLeg.deleter
-	def NtnlCcyScndLeg(self):
-		del self._NtnlCcyScndLeg
-		self._NtnlCcyScndLeg = None
-
-	@property
-	def IRSTp(self):
-		return self._IRSTp
-
-	@IRSTp.setter
-	def IRSTp(self, value):
-		self._IRSTp = value if type(value) != auto else self.make_default("IRSTp")
-
-	@IRSTp.deleter
-	def IRSTp(self):
-		del self._IRSTp
-		self._IRSTp = None
 
 	@property
 	def UndrlygInstrm(self):
@@ -136,17 +45,30 @@ class PositionSetDimensions16(base_types._BaseFieldType):
 		self._UndrlygInstrm = None
 
 	@property
-	def ValCcy(self):
-		return self._ValCcy
+	def CtrPtyId(self):
+		return self._CtrPtyId
 
-	@ValCcy.setter
-	def ValCcy(self, value):
-		self._ValCcy = value if type(value) != auto else self.make_default("ValCcy")
+	@CtrPtyId.setter
+	def CtrPtyId(self, value):
+		self._CtrPtyId = value if type(value) != auto else self.make_default("CtrPtyId")
 
-	@ValCcy.deleter
-	def ValCcy(self):
-		del self._ValCcy
-		self._ValCcy = None
+	@CtrPtyId.deleter
+	def CtrPtyId(self):
+		del self._CtrPtyId
+		self._CtrPtyId = None
+
+	@property
+	def OptnTp(self):
+		return self._OptnTp
+
+	@OptnTp.setter
+	def OptnTp(self, value):
+		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
+
+	@OptnTp.deleter
+	def OptnTp(self):
+		del self._OptnTp
+		self._OptnTp = None
 
 	@property
 	def AsstClss(self):
@@ -162,95 +84,30 @@ class PositionSetDimensions16(base_types._BaseFieldType):
 		self._AsstClss = None
 
 	@property
-	def IntraGrp(self):
-		return self._IntraGrp
+	def IRSTp(self):
+		return self._IRSTp
 
-	@IntraGrp.setter
-	def IntraGrp(self, value):
-		self._IntraGrp = value if type(value) != auto else self.make_default("IntraGrp")
+	@IRSTp.setter
+	def IRSTp(self, value):
+		self._IRSTp = value if type(value) != auto else self.make_default("IRSTp")
 
-	@IntraGrp.deleter
-	def IntraGrp(self):
-		del self._IntraGrp
-		self._IntraGrp = None
-
-	@property
-	def SttlmCcy(self):
-		return self._SttlmCcy
-
-	@SttlmCcy.setter
-	def SttlmCcy(self, value):
-		self._SttlmCcy = value if type(value) != auto else self.make_default("SttlmCcy")
-
-	@SttlmCcy.deleter
-	def SttlmCcy(self):
-		del self._SttlmCcy
-		self._SttlmCcy = None
+	@IRSTp.deleter
+	def IRSTp(self):
+		del self._IRSTp
+		self._IRSTp = None
 
 	@property
-	def TmToMtrty(self):
-		return self._TmToMtrty
+	def NtnlCcy(self):
+		return self._NtnlCcy
 
-	@TmToMtrty.setter
-	def TmToMtrty(self, value):
-		self._TmToMtrty = value if type(value) != auto else self.make_default("TmToMtrty")
+	@NtnlCcy.setter
+	def NtnlCcy(self, value):
+		self._NtnlCcy = value if type(value) != auto else self.make_default("NtnlCcy")
 
-	@TmToMtrty.deleter
-	def TmToMtrty(self):
-		del self._TmToMtrty
-		self._TmToMtrty = None
-
-	@property
-	def SttlmCcyScndLeg(self):
-		return self._SttlmCcyScndLeg
-
-	@SttlmCcyScndLeg.setter
-	def SttlmCcyScndLeg(self, value):
-		self._SttlmCcyScndLeg = value if type(value) != auto else self.make_default("SttlmCcyScndLeg")
-
-	@SttlmCcyScndLeg.deleter
-	def SttlmCcyScndLeg(self):
-		del self._SttlmCcyScndLeg
-		self._SttlmCcyScndLeg = None
-
-	@property
-	def MstrAgrmt(self):
-		return self._MstrAgrmt
-
-	@MstrAgrmt.setter
-	def MstrAgrmt(self, value):
-		self._MstrAgrmt = value if type(value) != auto else self.make_default("MstrAgrmt")
-
-	@MstrAgrmt.deleter
-	def MstrAgrmt(self):
-		del self._MstrAgrmt
-		self._MstrAgrmt = None
-
-	@property
-	def CtrPtyId(self):
-		return self._CtrPtyId
-
-	@CtrPtyId.setter
-	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != auto else self.make_default("CtrPtyId")
-
-	@CtrPtyId.deleter
-	def CtrPtyId(self):
-		del self._CtrPtyId
-		self._CtrPtyId = None
-
-	@property
-	def CtrctTp(self):
-		return self._CtrctTp
-
-	@CtrctTp.setter
-	def CtrctTp(self, value):
-		self._CtrctTp = value if type(value) != auto else self.make_default("CtrctTp")
-
-	@CtrctTp.deleter
-	def CtrctTp(self):
-		del self._CtrctTp
-		self._CtrctTp = None
+	@NtnlCcy.deleter
+	def NtnlCcy(self):
+		del self._NtnlCcy
+		self._NtnlCcy = None
 
 	@property
 	def OthrPmt(self):
@@ -266,6 +123,45 @@ class PositionSetDimensions16(base_types._BaseFieldType):
 		self._OthrPmt = None
 
 	@property
+	def SttlmCcy(self):
+		return self._SttlmCcy
+
+	@SttlmCcy.setter
+	def SttlmCcy(self, value):
+		self._SttlmCcy = value if type(value) != auto else self.make_default("SttlmCcy")
+
+	@SttlmCcy.deleter
+	def SttlmCcy(self):
+		del self._SttlmCcy
+		self._SttlmCcy = None
+
+	@property
+	def MstrAgrmt(self):
+		return self._MstrAgrmt
+
+	@MstrAgrmt.setter
+	def MstrAgrmt(self, value):
+		self._MstrAgrmt = value if type(value) != auto else self.make_default("MstrAgrmt")
+
+	@MstrAgrmt.deleter
+	def MstrAgrmt(self):
+		del self._MstrAgrmt
+		self._MstrAgrmt = None
+
+	@property
+	def CtrctTp(self):
+		return self._CtrctTp
+
+	@CtrctTp.setter
+	def CtrctTp(self, value):
+		self._CtrctTp = value if type(value) != auto else self.make_default("CtrctTp")
+
+	@CtrctTp.deleter
+	def CtrctTp(self):
+		del self._CtrctTp
+		self._CtrctTp = None
+
+	@property
 	def Cdt(self):
 		return self._Cdt
 
@@ -278,26 +174,130 @@ class PositionSetDimensions16(base_types._BaseFieldType):
 		del self._Cdt
 		self._Cdt = None
 
+	@property
+	def IntraGrp(self):
+		return self._IntraGrp
+
+	@IntraGrp.setter
+	def IntraGrp(self, value):
+		self._IntraGrp = value if type(value) != auto else self.make_default("IntraGrp")
+
+	@IntraGrp.deleter
+	def IntraGrp(self):
+		del self._IntraGrp
+		self._IntraGrp = None
+
+	@property
+	def TmToMtrty(self):
+		return self._TmToMtrty
+
+	@TmToMtrty.setter
+	def TmToMtrty(self, value):
+		self._TmToMtrty = value if type(value) != auto else self.make_default("TmToMtrty")
+
+	@TmToMtrty.deleter
+	def TmToMtrty(self):
+		del self._TmToMtrty
+		self._TmToMtrty = None
+
+	@property
+	def Cmmdty(self):
+		return self._Cmmdty
+
+	@Cmmdty.setter
+	def Cmmdty(self, value):
+		self._Cmmdty = value if type(value) != auto else self.make_default("Cmmdty")
+
+	@Cmmdty.deleter
+	def Cmmdty(self):
+		del self._Cmmdty
+		self._Cmmdty = None
+
+	@property
+	def XchgRateBsis(self):
+		return self._XchgRateBsis
+
+	@XchgRateBsis.setter
+	def XchgRateBsis(self, value):
+		self._XchgRateBsis = value if type(value) != auto else self.make_default("XchgRateBsis")
+
+	@XchgRateBsis.deleter
+	def XchgRateBsis(self):
+		del self._XchgRateBsis
+		self._XchgRateBsis = None
+
+	@property
+	def ValCcy(self):
+		return self._ValCcy
+
+	@ValCcy.setter
+	def ValCcy(self, value):
+		self._ValCcy = value if type(value) != auto else self.make_default("ValCcy")
+
+	@ValCcy.deleter
+	def ValCcy(self):
+		del self._ValCcy
+		self._ValCcy = None
+
+	@property
+	def SttlmCcyScndLeg(self):
+		return self._SttlmCcyScndLeg
+
+	@SttlmCcyScndLeg.setter
+	def SttlmCcyScndLeg(self, value):
+		self._SttlmCcyScndLeg = value if type(value) != auto else self.make_default("SttlmCcyScndLeg")
+
+	@SttlmCcyScndLeg.deleter
+	def SttlmCcyScndLeg(self):
+		del self._SttlmCcyScndLeg
+		self._SttlmCcyScndLeg = None
+
+	@property
+	def Clrd(self):
+		return self._Clrd
+
+	@Clrd.setter
+	def Clrd(self, value):
+		self._Clrd = value if type(value) != auto else self.make_default("Clrd")
+
+	@Clrd.deleter
+	def Clrd(self):
+		del self._Clrd
+		self._Clrd = None
+
+	@property
+	def NtnlCcyScndLeg(self):
+		return self._NtnlCcyScndLeg
+
+	@NtnlCcyScndLeg.setter
+	def NtnlCcyScndLeg(self, value):
+		self._NtnlCcyScndLeg = value if type(value) != auto else self.make_default("NtnlCcyScndLeg")
+
+	@NtnlCcyScndLeg.deleter
+	def NtnlCcyScndLeg(self):
+		del self._NtnlCcyScndLeg
+		self._NtnlCcyScndLeg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OptnTp', type=OptionType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRateBsis', type=ExchangeRateBasis1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Clrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cmmdty', type=AssetClassCommodity6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Coll', type=MarginCollateralReport4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlCcyScndLeg', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IRSTp', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygInstrm', type=SecurityIdentification41Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AsstClss', type=ProductType4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntraGrp', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TmToMtrty', type=TimeToMaturity1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmCcyScndLeg', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyId', type=TradeCounterpartyReport20, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctTp', type=FinancialInstrumentContractType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnTp', type=OptionType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AsstClss', type=ProductType4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IRSTp', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrPmt', type=OtherPayment6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctTp', type=FinancialInstrumentContractType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cdt', type=CreditDerivative7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntraGrp', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TmToMtrty', type=TimeToMaturity1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cmmdty', type=AssetClassCommodity6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRateBsis', type=ExchangeRateBasis1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmCcyScndLeg', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Clrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlCcyScndLeg', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

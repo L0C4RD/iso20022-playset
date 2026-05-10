@@ -1,25 +1,12 @@
 from . import base_types
-import ActiveCurrencyAnd13DecimalAmount
-import AmountAndRateStatus1
-import RateTypeAndAmountAndStatus56
-import RateValueType7Code
+from .RateValueType7Code import RateValueType7Code
+from .AmountAndRateStatus1 import AmountAndRateStatus1
+from .RateTypeAndAmountAndStatus56 import RateTypeAndAmountAndStatus56
+from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class NetDividendRateFormat38Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtAndRateSts", "_NotSpcfdRate", "_RateTpAndAmtAndRateSts", "_Amt"]
-	@property
-	def AmtAndRateSts(self):
-		return self._AmtAndRateSts
-
-	@AmtAndRateSts.setter
-	def AmtAndRateSts(self, value):
-		self._AmtAndRateSts = value if type(value) != auto else self.make_default("AmtAndRateSts")
-
-	@AmtAndRateSts.deleter
-	def AmtAndRateSts(self):
-		del self._AmtAndRateSts
-		self._AmtAndRateSts = None
-
+	__slots__ = ["_NotSpcfdRate", "_RateTpAndAmtAndRateSts", "_Amt", "_AmtAndRateSts"]
 	@property
 	def NotSpcfdRate(self):
 		return self._NotSpcfdRate
@@ -59,10 +46,23 @@ class NetDividendRateFormat38Choice(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def AmtAndRateSts(self):
+		return self._AmtAndRateSts
+
+	@AmtAndRateSts.setter
+	def AmtAndRateSts(self, value):
+		self._AmtAndRateSts = value if type(value) != auto else self.make_default("AmtAndRateSts")
+
+	@AmtAndRateSts.deleter
+	def AmtAndRateSts(self):
+		del self._AmtAndRateSts
+		self._AmtAndRateSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmtAndRateSts', type=AmountAndRateStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RateTpAndAmtAndRateSts', type=RateTypeAndAmountAndStatus56, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtAndRateSts', type=AmountAndRateStatus1, min=0, max=1, mutex_group=1, array=False),
 	))
 

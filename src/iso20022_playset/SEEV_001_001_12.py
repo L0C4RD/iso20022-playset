@@ -1,5 +1,5 @@
 from . import base_types
-import MeetingNotificationV12
+from .MeetingNotificationV12 import MeetingNotificationV12
 
 class SEEV_001_001_12():
 

@@ -1,14 +1,14 @@
 from . import base_types
-import Extension1
-import Statement7
-import AggregateBalanceInformation4
-import SubAccountIdentification5
-import TotalValueInPageAndStatement
-import SafekeepingAccount2
+from .AggregateBalanceInformation4 import AggregateBalanceInformation4
+from .TotalValueInPageAndStatement import TotalValueInPageAndStatement
+from .Extension1 import Extension1
+from .SubAccountIdentification5 import SubAccountIdentification5
+from .SafekeepingAccount2 import SafekeepingAccount2
+from .Statement7 import Statement7
 
 class CustodyStatementOfHoldings2(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtGnlDtls", "_BalForAcct", "_Xtnsn", "_TtlVals", "_SubAcctDtls", "_AcctDtls"]
+	__slots__ = ["_StmtGnlDtls", "_TtlVals", "_Xtnsn", "_AcctDtls", "_SubAcctDtls", "_BalForAcct"]
 	@property
 	def StmtGnlDtls(self):
 		return self._StmtGnlDtls
@@ -21,32 +21,6 @@ class CustodyStatementOfHoldings2(base_types._BaseFieldType):
 	def StmtGnlDtls(self):
 		del self._StmtGnlDtls
 		self._StmtGnlDtls = None
-
-	@property
-	def BalForAcct(self):
-		return self._BalForAcct
-
-	@BalForAcct.setter
-	def BalForAcct(self, value):
-		self._BalForAcct = value if type(value) != auto else self.make_default("BalForAcct")
-
-	@BalForAcct.deleter
-	def BalForAcct(self):
-		del self._BalForAcct
-		self._BalForAcct = None
-
-	@property
-	def Xtnsn(self):
-		return self._Xtnsn
-
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
-
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
 
 	@property
 	def TtlVals(self):
@@ -62,17 +36,17 @@ class CustodyStatementOfHoldings2(base_types._BaseFieldType):
 		self._TtlVals = None
 
 	@property
-	def SubAcctDtls(self):
-		return self._SubAcctDtls
+	def Xtnsn(self):
+		return self._Xtnsn
 
-	@SubAcctDtls.setter
-	def SubAcctDtls(self, value):
-		self._SubAcctDtls = value if type(value) != auto else self.make_default("SubAcctDtls")
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
 
-	@SubAcctDtls.deleter
-	def SubAcctDtls(self):
-		del self._SubAcctDtls
-		self._SubAcctDtls = None
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	@property
 	def AcctDtls(self):
@@ -87,12 +61,38 @@ class CustodyStatementOfHoldings2(base_types._BaseFieldType):
 		del self._AcctDtls
 		self._AcctDtls = None
 
+	@property
+	def SubAcctDtls(self):
+		return self._SubAcctDtls
+
+	@SubAcctDtls.setter
+	def SubAcctDtls(self, value):
+		self._SubAcctDtls = value if type(value) != auto else self.make_default("SubAcctDtls")
+
+	@SubAcctDtls.deleter
+	def SubAcctDtls(self):
+		del self._SubAcctDtls
+		self._SubAcctDtls = None
+
+	@property
+	def BalForAcct(self):
+		return self._BalForAcct
+
+	@BalForAcct.setter
+	def BalForAcct(self, value):
+		self._BalForAcct = value if type(value) != auto else self.make_default("BalForAcct")
+
+	@BalForAcct.deleter
+	def BalForAcct(self):
+		del self._BalForAcct
+		self._BalForAcct = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalForAcct', type=AggregateBalanceInformation4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlVals', type=TotalValueInPageAndStatement, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctDtls', type=SafekeepingAccount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BalForAcct', type=AggregateBalanceInformation4, min=0, max=None, mutex_group=None, array=True),
 	))
 

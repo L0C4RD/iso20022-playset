@@ -1,6 +1,6 @@
 from . import base_types
-import QueryType2Code
-import MemberCriteriaDefinition2Choice
+from .QueryType2Code import QueryType2Code
+from .MemberCriteriaDefinition2Choice import MemberCriteriaDefinition2Choice
 
 class MemberQueryDefinition4(base_types._BaseFieldType):
 

@@ -1,116 +1,38 @@
 from . import base_types
-import YesNoIndicator
-import ISOTime
-import Max10Text
-import ISODateTime
-import DateAndDateTime2Choice
-import AllocationIndicator1Code
-import ClearingBrokerIdentification1
-import Max35Text
-import ProductIdentifier3Choice
-import FXCommissionOrFee1
-import TradingSideTransactionReporting3
-import PartyIdentification242Choice
-import Max210Text
-import CounterpartySideTransactionReporting3
-import CollateralisationIndicator1Code
-import Exact42Text
-import SecurityIdentification19
-import CorporateSectorIdentifier1Code
+from .Max35Text import Max35Text
+from .CollateralisationIndicator1Code import CollateralisationIndicator1Code
+from .YesNoIndicator import YesNoIndicator
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .ClearingBrokerIdentification1 import ClearingBrokerIdentification1
+from .PartyIdentification242Choice import PartyIdentification242Choice
+from .AllocationIndicator1Code import AllocationIndicator1Code
+from .Max10Text import Max10Text
+from .TradingSideTransactionReporting3 import TradingSideTransactionReporting3
+from .ISOTime import ISOTime
+from .ProductIdentifier3Choice import ProductIdentifier3Choice
+from .CorporateSectorIdentifier1Code import CorporateSectorIdentifier1Code
+from .FXCommissionOrFee1 import FXCommissionOrFee1
+from .SecurityIdentification19 import SecurityIdentification19
+from .Exact42Text import Exact42Text
+from .Max210Text import Max210Text
+from .CounterpartySideTransactionReporting3 import CounterpartySideTransactionReporting3
+from .ISODateTime import ISODateTime
 
 class RegulatoryReporting8(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrTmstmp", "_ExctnVn", "_NtrgrpTradInd", "_NonStdFlg", "_CtrPtySdTxRptg", "_CollPrtflInd", "_TradgSdTxRptg", "_CollstnInd", "_CollPrtflCd", "_ClrBrkr", "_PdctIdr", "_ClrThrshldInd", "_ConfDtAndTmstmp", "_AddtlRptgInf", "_FinInstrmId", "_TradWthNonEEACtrPtyInd", "_FinNtrOfTheCtrPtyInd", "_ExctnTmstmp", "_ComssnsAndFees", "_CntrlCtrPtyClrHs", "_AllcnInd", "_ComrclOrTrsrFincgInd", "_ClrBrkrId", "_ClrdPdctId", "_PrtflCmprssnInd", "_ClrXcptnPty", "_CorpSctrInd", "_LkSwpId"]
+	__slots__ = ["_PdctIdr", "_CollstnInd", "_NtrgrpTradInd", "_ExctnTmstmp", "_LkSwpId", "_ClrThrshldInd", "_AllcnInd", "_ClrXcptnPty", "_ClrBrkr", "_FinNtrOfTheCtrPtyInd", "_ClrBrkrId", "_CtrPtySdTxRptg", "_ClrTmstmp", "_CntrlCtrPtyClrHs", "_FinInstrmId", "_TradWthNonEEACtrPtyInd", "_ConfDtAndTmstmp", "_ComssnsAndFees", "_ExctnVn", "_CollPrtflInd", "_PrtflCmprssnInd", "_CorpSctrInd", "_AddtlRptgInf", "_CollPrtflCd", "_NonStdFlg", "_TradgSdTxRptg", "_ComrclOrTrsrFincgInd", "_ClrdPdctId"]
 	@property
-	def ClrTmstmp(self):
-		return self._ClrTmstmp
+	def PdctIdr(self):
+		return self._PdctIdr
 
-	@ClrTmstmp.setter
-	def ClrTmstmp(self, value):
-		self._ClrTmstmp = value if type(value) != auto else self.make_default("ClrTmstmp")
+	@PdctIdr.setter
+	def PdctIdr(self, value):
+		self._PdctIdr = value if type(value) != auto else self.make_default("PdctIdr")
 
-	@ClrTmstmp.deleter
-	def ClrTmstmp(self):
-		del self._ClrTmstmp
-		self._ClrTmstmp = None
-
-	@property
-	def ExctnVn(self):
-		return self._ExctnVn
-
-	@ExctnVn.setter
-	def ExctnVn(self, value):
-		self._ExctnVn = value if type(value) != auto else self.make_default("ExctnVn")
-
-	@ExctnVn.deleter
-	def ExctnVn(self):
-		del self._ExctnVn
-		self._ExctnVn = None
-
-	@property
-	def NtrgrpTradInd(self):
-		return self._NtrgrpTradInd
-
-	@NtrgrpTradInd.setter
-	def NtrgrpTradInd(self, value):
-		self._NtrgrpTradInd = value if type(value) != auto else self.make_default("NtrgrpTradInd")
-
-	@NtrgrpTradInd.deleter
-	def NtrgrpTradInd(self):
-		del self._NtrgrpTradInd
-		self._NtrgrpTradInd = None
-
-	@property
-	def NonStdFlg(self):
-		return self._NonStdFlg
-
-	@NonStdFlg.setter
-	def NonStdFlg(self, value):
-		self._NonStdFlg = value if type(value) != auto else self.make_default("NonStdFlg")
-
-	@NonStdFlg.deleter
-	def NonStdFlg(self):
-		del self._NonStdFlg
-		self._NonStdFlg = None
-
-	@property
-	def CtrPtySdTxRptg(self):
-		return self._CtrPtySdTxRptg
-
-	@CtrPtySdTxRptg.setter
-	def CtrPtySdTxRptg(self, value):
-		self._CtrPtySdTxRptg = value if type(value) != auto else self.make_default("CtrPtySdTxRptg")
-
-	@CtrPtySdTxRptg.deleter
-	def CtrPtySdTxRptg(self):
-		del self._CtrPtySdTxRptg
-		self._CtrPtySdTxRptg = None
-
-	@property
-	def CollPrtflInd(self):
-		return self._CollPrtflInd
-
-	@CollPrtflInd.setter
-	def CollPrtflInd(self, value):
-		self._CollPrtflInd = value if type(value) != auto else self.make_default("CollPrtflInd")
-
-	@CollPrtflInd.deleter
-	def CollPrtflInd(self):
-		del self._CollPrtflInd
-		self._CollPrtflInd = None
-
-	@property
-	def TradgSdTxRptg(self):
-		return self._TradgSdTxRptg
-
-	@TradgSdTxRptg.setter
-	def TradgSdTxRptg(self, value):
-		self._TradgSdTxRptg = value if type(value) != auto else self.make_default("TradgSdTxRptg")
-
-	@TradgSdTxRptg.deleter
-	def TradgSdTxRptg(self):
-		del self._TradgSdTxRptg
-		self._TradgSdTxRptg = None
+	@PdctIdr.deleter
+	def PdctIdr(self):
+		del self._PdctIdr
+		self._PdctIdr = None
 
 	@property
 	def CollstnInd(self):
@@ -126,43 +48,43 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 		self._CollstnInd = None
 
 	@property
-	def CollPrtflCd(self):
-		return self._CollPrtflCd
+	def NtrgrpTradInd(self):
+		return self._NtrgrpTradInd
 
-	@CollPrtflCd.setter
-	def CollPrtflCd(self, value):
-		self._CollPrtflCd = value if type(value) != auto else self.make_default("CollPrtflCd")
+	@NtrgrpTradInd.setter
+	def NtrgrpTradInd(self, value):
+		self._NtrgrpTradInd = value if type(value) != auto else self.make_default("NtrgrpTradInd")
 
-	@CollPrtflCd.deleter
-	def CollPrtflCd(self):
-		del self._CollPrtflCd
-		self._CollPrtflCd = None
-
-	@property
-	def ClrBrkr(self):
-		return self._ClrBrkr
-
-	@ClrBrkr.setter
-	def ClrBrkr(self, value):
-		self._ClrBrkr = value if type(value) != auto else self.make_default("ClrBrkr")
-
-	@ClrBrkr.deleter
-	def ClrBrkr(self):
-		del self._ClrBrkr
-		self._ClrBrkr = None
+	@NtrgrpTradInd.deleter
+	def NtrgrpTradInd(self):
+		del self._NtrgrpTradInd
+		self._NtrgrpTradInd = None
 
 	@property
-	def PdctIdr(self):
-		return self._PdctIdr
+	def ExctnTmstmp(self):
+		return self._ExctnTmstmp
 
-	@PdctIdr.setter
-	def PdctIdr(self, value):
-		self._PdctIdr = value if type(value) != auto else self.make_default("PdctIdr")
+	@ExctnTmstmp.setter
+	def ExctnTmstmp(self, value):
+		self._ExctnTmstmp = value if type(value) != auto else self.make_default("ExctnTmstmp")
 
-	@PdctIdr.deleter
-	def PdctIdr(self):
-		del self._PdctIdr
-		self._PdctIdr = None
+	@ExctnTmstmp.deleter
+	def ExctnTmstmp(self):
+		del self._ExctnTmstmp
+		self._ExctnTmstmp = None
+
+	@property
+	def LkSwpId(self):
+		return self._LkSwpId
+
+	@LkSwpId.setter
+	def LkSwpId(self, value):
+		self._LkSwpId = value if type(value) != auto else self.make_default("LkSwpId")
+
+	@LkSwpId.deleter
+	def LkSwpId(self):
+		del self._LkSwpId
+		self._LkSwpId = None
 
 	@property
 	def ClrThrshldInd(self):
@@ -178,30 +100,108 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 		self._ClrThrshldInd = None
 
 	@property
-	def ConfDtAndTmstmp(self):
-		return self._ConfDtAndTmstmp
+	def AllcnInd(self):
+		return self._AllcnInd
 
-	@ConfDtAndTmstmp.setter
-	def ConfDtAndTmstmp(self, value):
-		self._ConfDtAndTmstmp = value if type(value) != auto else self.make_default("ConfDtAndTmstmp")
+	@AllcnInd.setter
+	def AllcnInd(self, value):
+		self._AllcnInd = value if type(value) != auto else self.make_default("AllcnInd")
 
-	@ConfDtAndTmstmp.deleter
-	def ConfDtAndTmstmp(self):
-		del self._ConfDtAndTmstmp
-		self._ConfDtAndTmstmp = None
+	@AllcnInd.deleter
+	def AllcnInd(self):
+		del self._AllcnInd
+		self._AllcnInd = None
 
 	@property
-	def AddtlRptgInf(self):
-		return self._AddtlRptgInf
+	def ClrXcptnPty(self):
+		return self._ClrXcptnPty
 
-	@AddtlRptgInf.setter
-	def AddtlRptgInf(self, value):
-		self._AddtlRptgInf = value if type(value) != auto else self.make_default("AddtlRptgInf")
+	@ClrXcptnPty.setter
+	def ClrXcptnPty(self, value):
+		self._ClrXcptnPty = value if type(value) != auto else self.make_default("ClrXcptnPty")
 
-	@AddtlRptgInf.deleter
-	def AddtlRptgInf(self):
-		del self._AddtlRptgInf
-		self._AddtlRptgInf = None
+	@ClrXcptnPty.deleter
+	def ClrXcptnPty(self):
+		del self._ClrXcptnPty
+		self._ClrXcptnPty = None
+
+	@property
+	def ClrBrkr(self):
+		return self._ClrBrkr
+
+	@ClrBrkr.setter
+	def ClrBrkr(self, value):
+		self._ClrBrkr = value if type(value) != auto else self.make_default("ClrBrkr")
+
+	@ClrBrkr.deleter
+	def ClrBrkr(self):
+		del self._ClrBrkr
+		self._ClrBrkr = None
+
+	@property
+	def FinNtrOfTheCtrPtyInd(self):
+		return self._FinNtrOfTheCtrPtyInd
+
+	@FinNtrOfTheCtrPtyInd.setter
+	def FinNtrOfTheCtrPtyInd(self, value):
+		self._FinNtrOfTheCtrPtyInd = value if type(value) != auto else self.make_default("FinNtrOfTheCtrPtyInd")
+
+	@FinNtrOfTheCtrPtyInd.deleter
+	def FinNtrOfTheCtrPtyInd(self):
+		del self._FinNtrOfTheCtrPtyInd
+		self._FinNtrOfTheCtrPtyInd = None
+
+	@property
+	def ClrBrkrId(self):
+		return self._ClrBrkrId
+
+	@ClrBrkrId.setter
+	def ClrBrkrId(self, value):
+		self._ClrBrkrId = value if type(value) != auto else self.make_default("ClrBrkrId")
+
+	@ClrBrkrId.deleter
+	def ClrBrkrId(self):
+		del self._ClrBrkrId
+		self._ClrBrkrId = None
+
+	@property
+	def CtrPtySdTxRptg(self):
+		return self._CtrPtySdTxRptg
+
+	@CtrPtySdTxRptg.setter
+	def CtrPtySdTxRptg(self, value):
+		self._CtrPtySdTxRptg = value if type(value) != auto else self.make_default("CtrPtySdTxRptg")
+
+	@CtrPtySdTxRptg.deleter
+	def CtrPtySdTxRptg(self):
+		del self._CtrPtySdTxRptg
+		self._CtrPtySdTxRptg = None
+
+	@property
+	def ClrTmstmp(self):
+		return self._ClrTmstmp
+
+	@ClrTmstmp.setter
+	def ClrTmstmp(self, value):
+		self._ClrTmstmp = value if type(value) != auto else self.make_default("ClrTmstmp")
+
+	@ClrTmstmp.deleter
+	def ClrTmstmp(self):
+		del self._ClrTmstmp
+		self._ClrTmstmp = None
+
+	@property
+	def CntrlCtrPtyClrHs(self):
+		return self._CntrlCtrPtyClrHs
+
+	@CntrlCtrPtyClrHs.setter
+	def CntrlCtrPtyClrHs(self, value):
+		self._CntrlCtrPtyClrHs = value if type(value) != auto else self.make_default("CntrlCtrPtyClrHs")
+
+	@CntrlCtrPtyClrHs.deleter
+	def CntrlCtrPtyClrHs(self):
+		del self._CntrlCtrPtyClrHs
+		self._CntrlCtrPtyClrHs = None
 
 	@property
 	def FinInstrmId(self):
@@ -230,30 +230,17 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 		self._TradWthNonEEACtrPtyInd = None
 
 	@property
-	def FinNtrOfTheCtrPtyInd(self):
-		return self._FinNtrOfTheCtrPtyInd
+	def ConfDtAndTmstmp(self):
+		return self._ConfDtAndTmstmp
 
-	@FinNtrOfTheCtrPtyInd.setter
-	def FinNtrOfTheCtrPtyInd(self, value):
-		self._FinNtrOfTheCtrPtyInd = value if type(value) != auto else self.make_default("FinNtrOfTheCtrPtyInd")
+	@ConfDtAndTmstmp.setter
+	def ConfDtAndTmstmp(self, value):
+		self._ConfDtAndTmstmp = value if type(value) != auto else self.make_default("ConfDtAndTmstmp")
 
-	@FinNtrOfTheCtrPtyInd.deleter
-	def FinNtrOfTheCtrPtyInd(self):
-		del self._FinNtrOfTheCtrPtyInd
-		self._FinNtrOfTheCtrPtyInd = None
-
-	@property
-	def ExctnTmstmp(self):
-		return self._ExctnTmstmp
-
-	@ExctnTmstmp.setter
-	def ExctnTmstmp(self, value):
-		self._ExctnTmstmp = value if type(value) != auto else self.make_default("ExctnTmstmp")
-
-	@ExctnTmstmp.deleter
-	def ExctnTmstmp(self):
-		del self._ExctnTmstmp
-		self._ExctnTmstmp = None
+	@ConfDtAndTmstmp.deleter
+	def ConfDtAndTmstmp(self):
+		del self._ConfDtAndTmstmp
+		self._ConfDtAndTmstmp = None
 
 	@property
 	def ComssnsAndFees(self):
@@ -269,69 +256,30 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 		self._ComssnsAndFees = None
 
 	@property
-	def CntrlCtrPtyClrHs(self):
-		return self._CntrlCtrPtyClrHs
+	def ExctnVn(self):
+		return self._ExctnVn
 
-	@CntrlCtrPtyClrHs.setter
-	def CntrlCtrPtyClrHs(self, value):
-		self._CntrlCtrPtyClrHs = value if type(value) != auto else self.make_default("CntrlCtrPtyClrHs")
+	@ExctnVn.setter
+	def ExctnVn(self, value):
+		self._ExctnVn = value if type(value) != auto else self.make_default("ExctnVn")
 
-	@CntrlCtrPtyClrHs.deleter
-	def CntrlCtrPtyClrHs(self):
-		del self._CntrlCtrPtyClrHs
-		self._CntrlCtrPtyClrHs = None
-
-	@property
-	def AllcnInd(self):
-		return self._AllcnInd
-
-	@AllcnInd.setter
-	def AllcnInd(self, value):
-		self._AllcnInd = value if type(value) != auto else self.make_default("AllcnInd")
-
-	@AllcnInd.deleter
-	def AllcnInd(self):
-		del self._AllcnInd
-		self._AllcnInd = None
+	@ExctnVn.deleter
+	def ExctnVn(self):
+		del self._ExctnVn
+		self._ExctnVn = None
 
 	@property
-	def ComrclOrTrsrFincgInd(self):
-		return self._ComrclOrTrsrFincgInd
+	def CollPrtflInd(self):
+		return self._CollPrtflInd
 
-	@ComrclOrTrsrFincgInd.setter
-	def ComrclOrTrsrFincgInd(self, value):
-		self._ComrclOrTrsrFincgInd = value if type(value) != auto else self.make_default("ComrclOrTrsrFincgInd")
+	@CollPrtflInd.setter
+	def CollPrtflInd(self, value):
+		self._CollPrtflInd = value if type(value) != auto else self.make_default("CollPrtflInd")
 
-	@ComrclOrTrsrFincgInd.deleter
-	def ComrclOrTrsrFincgInd(self):
-		del self._ComrclOrTrsrFincgInd
-		self._ComrclOrTrsrFincgInd = None
-
-	@property
-	def ClrBrkrId(self):
-		return self._ClrBrkrId
-
-	@ClrBrkrId.setter
-	def ClrBrkrId(self, value):
-		self._ClrBrkrId = value if type(value) != auto else self.make_default("ClrBrkrId")
-
-	@ClrBrkrId.deleter
-	def ClrBrkrId(self):
-		del self._ClrBrkrId
-		self._ClrBrkrId = None
-
-	@property
-	def ClrdPdctId(self):
-		return self._ClrdPdctId
-
-	@ClrdPdctId.setter
-	def ClrdPdctId(self, value):
-		self._ClrdPdctId = value if type(value) != auto else self.make_default("ClrdPdctId")
-
-	@ClrdPdctId.deleter
-	def ClrdPdctId(self):
-		del self._ClrdPdctId
-		self._ClrdPdctId = None
+	@CollPrtflInd.deleter
+	def CollPrtflInd(self):
+		del self._CollPrtflInd
+		self._CollPrtflInd = None
 
 	@property
 	def PrtflCmprssnInd(self):
@@ -347,19 +295,6 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 		self._PrtflCmprssnInd = None
 
 	@property
-	def ClrXcptnPty(self):
-		return self._ClrXcptnPty
-
-	@ClrXcptnPty.setter
-	def ClrXcptnPty(self, value):
-		self._ClrXcptnPty = value if type(value) != auto else self.make_default("ClrXcptnPty")
-
-	@ClrXcptnPty.deleter
-	def ClrXcptnPty(self):
-		del self._ClrXcptnPty
-		self._ClrXcptnPty = None
-
-	@property
 	def CorpSctrInd(self):
 		return self._CorpSctrInd
 
@@ -373,46 +308,111 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 		self._CorpSctrInd = None
 
 	@property
-	def LkSwpId(self):
-		return self._LkSwpId
+	def AddtlRptgInf(self):
+		return self._AddtlRptgInf
 
-	@LkSwpId.setter
-	def LkSwpId(self, value):
-		self._LkSwpId = value if type(value) != auto else self.make_default("LkSwpId")
+	@AddtlRptgInf.setter
+	def AddtlRptgInf(self, value):
+		self._AddtlRptgInf = value if type(value) != auto else self.make_default("AddtlRptgInf")
 
-	@LkSwpId.deleter
-	def LkSwpId(self):
-		del self._LkSwpId
-		self._LkSwpId = None
+	@AddtlRptgInf.deleter
+	def AddtlRptgInf(self):
+		del self._AddtlRptgInf
+		self._AddtlRptgInf = None
+
+	@property
+	def CollPrtflCd(self):
+		return self._CollPrtflCd
+
+	@CollPrtflCd.setter
+	def CollPrtflCd(self, value):
+		self._CollPrtflCd = value if type(value) != auto else self.make_default("CollPrtflCd")
+
+	@CollPrtflCd.deleter
+	def CollPrtflCd(self):
+		del self._CollPrtflCd
+		self._CollPrtflCd = None
+
+	@property
+	def NonStdFlg(self):
+		return self._NonStdFlg
+
+	@NonStdFlg.setter
+	def NonStdFlg(self, value):
+		self._NonStdFlg = value if type(value) != auto else self.make_default("NonStdFlg")
+
+	@NonStdFlg.deleter
+	def NonStdFlg(self):
+		del self._NonStdFlg
+		self._NonStdFlg = None
+
+	@property
+	def TradgSdTxRptg(self):
+		return self._TradgSdTxRptg
+
+	@TradgSdTxRptg.setter
+	def TradgSdTxRptg(self, value):
+		self._TradgSdTxRptg = value if type(value) != auto else self.make_default("TradgSdTxRptg")
+
+	@TradgSdTxRptg.deleter
+	def TradgSdTxRptg(self):
+		del self._TradgSdTxRptg
+		self._TradgSdTxRptg = None
+
+	@property
+	def ComrclOrTrsrFincgInd(self):
+		return self._ComrclOrTrsrFincgInd
+
+	@ComrclOrTrsrFincgInd.setter
+	def ComrclOrTrsrFincgInd(self, value):
+		self._ComrclOrTrsrFincgInd = value if type(value) != auto else self.make_default("ComrclOrTrsrFincgInd")
+
+	@ComrclOrTrsrFincgInd.deleter
+	def ComrclOrTrsrFincgInd(self):
+		del self._ComrclOrTrsrFincgInd
+		self._ComrclOrTrsrFincgInd = None
+
+	@property
+	def ClrdPdctId(self):
+		return self._ClrdPdctId
+
+	@ClrdPdctId.setter
+	def ClrdPdctId(self, value):
+		self._ClrdPdctId = value if type(value) != auto else self.make_default("ClrdPdctId")
+
+	@ClrdPdctId.deleter
+	def ClrdPdctId(self):
+		del self._ClrdPdctId
+		self._ClrdPdctId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrTmstmp', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExctnVn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtrgrpTradInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonStdFlg', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtySdTxRptg', type=CounterpartySideTransactionReporting3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CollPrtflInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgSdTxRptg', type=TradingSideTransactionReporting3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CollstnInd', type=CollateralisationIndicator1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollPrtflCd', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrBrkr', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctIdr', type=ProductIdentifier3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollstnInd', type=CollateralisationIndicator1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtrgrpTradInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctnTmstmp', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LkSwpId', type=Exact42Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrThrshldInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConfDtAndTmstmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlRptgInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AllcnInd', type=AllocationIndicator1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrXcptnPty', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrBrkr', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinNtrOfTheCtrPtyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrBrkrId', type=ClearingBrokerIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtySdTxRptg', type=CounterpartySideTransactionReporting3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClrTmstmp', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CntrlCtrPtyClrHs', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradWthNonEEACtrPtyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinNtrOfTheCtrPtyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExctnTmstmp', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfDtAndTmstmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ComssnsAndFees', type=FXCommissionOrFee1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CntrlCtrPtyClrHs', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AllcnInd', type=AllocationIndicator1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ComrclOrTrsrFincgInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrBrkrId', type=ClearingBrokerIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrdPdctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctnVn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollPrtflInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtflCmprssnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrXcptnPty', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpSctrInd', type=CorporateSectorIdentifier1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LkSwpId', type=Exact42Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlRptgInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollPrtflCd', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonStdFlg', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgSdTxRptg', type=TradingSideTransactionReporting3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ComrclOrTrsrFincgInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrdPdctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

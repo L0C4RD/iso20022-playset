@@ -1,5 +1,5 @@
 from . import base_types
-import FinancialInstrumentQuantity33Choice
+from .FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
 
 class PairedOrTurnedQuantity5Choice(base_types._BaseFieldType):
 

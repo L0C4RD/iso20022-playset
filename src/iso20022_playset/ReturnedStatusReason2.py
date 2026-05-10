@@ -1,6 +1,6 @@
 from . import base_types
-import Max210Text
-import ReturnedReason2Choice
+from .ReturnedReason2Choice import ReturnedReason2Choice
+from .Max210Text import Max210Text
 
 class ReturnedStatusReason2(base_types._BaseFieldType):
 

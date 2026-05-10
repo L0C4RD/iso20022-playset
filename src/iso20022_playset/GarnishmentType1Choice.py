@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalGarnishmentType1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ExternalGarnishmentType1Code import ExternalGarnishmentType1Code
 
 class GarnishmentType1Choice(base_types._BaseFieldType):
 

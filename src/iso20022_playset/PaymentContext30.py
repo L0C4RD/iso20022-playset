@@ -1,12 +1,12 @@
 from . import base_types
-import DirectDebitContext1
-import CreditTransferContext1
-import PaymentContext29
-import SaleContext4
+from .CreditTransferContext1 import CreditTransferContext1
+from .PaymentContext29 import PaymentContext29
+from .SaleContext4 import SaleContext4
+from .DirectDebitContext1 import DirectDebitContext1
 
 class PaymentContext30(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtTrfCntxt", "_PmtCntxt", "_SaleCntxt", "_DrctDbtCntxt"]
+	__slots__ = ["_CdtTrfCntxt", "_DrctDbtCntxt", "_PmtCntxt", "_SaleCntxt"]
 	@property
 	def CdtTrfCntxt(self):
 		return self._CdtTrfCntxt
@@ -19,6 +19,19 @@ class PaymentContext30(base_types._BaseFieldType):
 	def CdtTrfCntxt(self):
 		del self._CdtTrfCntxt
 		self._CdtTrfCntxt = None
+
+	@property
+	def DrctDbtCntxt(self):
+		return self._DrctDbtCntxt
+
+	@DrctDbtCntxt.setter
+	def DrctDbtCntxt(self, value):
+		self._DrctDbtCntxt = value if type(value) != auto else self.make_default("DrctDbtCntxt")
+
+	@DrctDbtCntxt.deleter
+	def DrctDbtCntxt(self):
+		del self._DrctDbtCntxt
+		self._DrctDbtCntxt = None
 
 	@property
 	def PmtCntxt(self):
@@ -46,23 +59,10 @@ class PaymentContext30(base_types._BaseFieldType):
 		del self._SaleCntxt
 		self._SaleCntxt = None
 
-	@property
-	def DrctDbtCntxt(self):
-		return self._DrctDbtCntxt
-
-	@DrctDbtCntxt.setter
-	def DrctDbtCntxt(self, value):
-		self._DrctDbtCntxt = value if type(value) != auto else self.make_default("DrctDbtCntxt")
-
-	@DrctDbtCntxt.deleter
-	def DrctDbtCntxt(self):
-		del self._DrctDbtCntxt
-		self._DrctDbtCntxt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtTrfCntxt', type=CreditTransferContext1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrctDbtCntxt', type=DirectDebitContext1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtCntxt', type=PaymentContext29, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleCntxt', type=SaleContext4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrctDbtCntxt', type=DirectDebitContext1, min=0, max=1, mutex_group=None, array=False),
 	))
 

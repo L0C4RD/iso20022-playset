@@ -1,22 +1,9 @@
 from . import base_types
-import ActiveOrHistoricCurrencyAndAmount
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class PrincipalAmount3(base_types._BaseFieldType):
 
-	__slots__ = ["_MtrtyDtAmt", "_ValDtAmt"]
-	@property
-	def MtrtyDtAmt(self):
-		return self._MtrtyDtAmt
-
-	@MtrtyDtAmt.setter
-	def MtrtyDtAmt(self, value):
-		self._MtrtyDtAmt = value if type(value) != auto else self.make_default("MtrtyDtAmt")
-
-	@MtrtyDtAmt.deleter
-	def MtrtyDtAmt(self):
-		del self._MtrtyDtAmt
-		self._MtrtyDtAmt = None
-
+	__slots__ = ["_ValDtAmt", "_MtrtyDtAmt"]
 	@property
 	def ValDtAmt(self):
 		return self._ValDtAmt
@@ -30,8 +17,21 @@ class PrincipalAmount3(base_types._BaseFieldType):
 		del self._ValDtAmt
 		self._ValDtAmt = None
 
+	@property
+	def MtrtyDtAmt(self):
+		return self._MtrtyDtAmt
+
+	@MtrtyDtAmt.setter
+	def MtrtyDtAmt(self, value):
+		self._MtrtyDtAmt = value if type(value) != auto else self.make_default("MtrtyDtAmt")
+
+	@MtrtyDtAmt.deleter
+	def MtrtyDtAmt(self):
+		del self._MtrtyDtAmt
+		self._MtrtyDtAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MtrtyDtAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDtAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDtAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-import CalendarQueryV02
+from .CalendarQueryV02 import CalendarQueryV02
 
 class REDA_064_001_02():
 

@@ -1,11 +1,11 @@
 from . import base_types
-import ActionMessage4
-import MessageFunction11Code
-import ActionType6Code
+from .ActionMessage4 import ActionMessage4
+from .MessageFunction11Code import MessageFunction11Code
+from .ActionType6Code import ActionType6Code
 
 class Action7(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgToPres", "_ActnTp", "_ReqToPrfrm"]
+	__slots__ = ["_MsgToPres", "_ReqToPrfrm", "_ActnTp"]
 	@property
 	def MsgToPres(self):
 		return self._MsgToPres
@@ -20,19 +20,6 @@ class Action7(base_types._BaseFieldType):
 		self._MsgToPres = None
 
 	@property
-	def ActnTp(self):
-		return self._ActnTp
-
-	@ActnTp.setter
-	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != auto else self.make_default("ActnTp")
-
-	@ActnTp.deleter
-	def ActnTp(self):
-		del self._ActnTp
-		self._ActnTp = None
-
-	@property
 	def ReqToPrfrm(self):
 		return self._ReqToPrfrm
 
@@ -45,9 +32,22 @@ class Action7(base_types._BaseFieldType):
 		del self._ReqToPrfrm
 		self._ReqToPrfrm = None
 
+	@property
+	def ActnTp(self):
+		return self._ActnTp
+
+	@ActnTp.setter
+	def ActnTp(self, value):
+		self._ActnTp = value if type(value) != auto else self.make_default("ActnTp")
+
+	@ActnTp.deleter
+	def ActnTp(self):
+		del self._ActnTp
+		self._ActnTp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgToPres', type=ActionMessage4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActnTp', type=ActionType6Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqToPrfrm', type=MessageFunction11Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActnTp', type=ActionType6Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,11 @@
 from . import base_types
-import RestrictedFINXMax16Text
-import ReceiveDelivery1Code
-import DeliveryReceiptType2Code
+from .DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from .ReceiveDelivery1Code import ReceiveDelivery1Code
+from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class SettlementTypeAndAdditionalParameters15(base_types._BaseFieldType):
 
-	__slots__ = ["_CmonId", "_Pmt", "_SctiesMvmntTp"]
+	__slots__ = ["_CmonId", "_SctiesMvmntTp", "_Pmt"]
 	@property
 	def CmonId(self):
 		return self._CmonId
@@ -20,19 +20,6 @@ class SettlementTypeAndAdditionalParameters15(base_types._BaseFieldType):
 		self._CmonId = None
 
 	@property
-	def Pmt(self):
-		return self._Pmt
-
-	@Pmt.setter
-	def Pmt(self, value):
-		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
-
-	@Pmt.deleter
-	def Pmt(self):
-		del self._Pmt
-		self._Pmt = None
-
-	@property
 	def SctiesMvmntTp(self):
 		return self._SctiesMvmntTp
 
@@ -45,9 +32,22 @@ class SettlementTypeAndAdditionalParameters15(base_types._BaseFieldType):
 		del self._SctiesMvmntTp
 		self._SctiesMvmntTp = None
 
+	@property
+	def Pmt(self):
+		return self._Pmt
+
+	@Pmt.setter
+	def Pmt(self, value):
+		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
+
+	@Pmt.deleter
+	def Pmt(self):
+		del self._Pmt
+		self._Pmt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

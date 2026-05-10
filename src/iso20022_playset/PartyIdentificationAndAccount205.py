@@ -1,25 +1,25 @@
 from . import base_types
-import AlternatePartyIdentification9
-import PartyIdentification137Choice
-import RestrictedFINXMax16Text
-import RestrictedFINXMax35Text
-import RestrictedFINXMax140Text
+from .RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from .RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from .AlternatePartyIdentification9 import AlternatePartyIdentification9
+from .PartyIdentification137Choice import PartyIdentification137Choice
 
 class PartyIdentificationAndAccount205(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_PrcgId", "_AltrnId", "_SfkpgAcct", "_BlckChainAdrOrWllt"]
+	__slots__ = ["_AltrnId", "_PrcgId", "_Id", "_BlckChainAdrOrWllt", "_SfkpgAcct"]
 	@property
-	def Id(self):
-		return self._Id
+	def AltrnId(self):
+		return self._AltrnId
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
 
 	@property
 	def PrcgId(self):
@@ -35,30 +35,17 @@ class PartyIdentificationAndAccount205(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	@property
-	def AltrnId(self):
-		return self._AltrnId
+	def Id(self):
+		return self._Id
 
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
-
-	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -73,11 +60,24 @@ class PartyIdentificationAndAccount205(base_types._BaseFieldType):
 		del self._BlckChainAdrOrWllt
 		self._BlckChainAdrOrWllt = None
 
+	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SfkpgAcct', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

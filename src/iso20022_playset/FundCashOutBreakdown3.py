@@ -1,54 +1,28 @@
 from . import base_types
-import YesNoIndicator
-import InvestmentFundTransactionOutType1Choice
-import ActiveCurrencyCode
-import QuantityType1Choice
-import FinancialInstrumentQuantity1
-import Commission21
-import Charge26
-import ActiveOrHistoricCurrencyAndAmount
+from .InvestmentFundTransactionOutType1Choice import InvestmentFundTransactionOutType1Choice
+from .YesNoIndicator import YesNoIndicator
+from .Charge26 import Charge26
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .Commission21 import Commission21
+from .FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
+from .QuantityType1Choice import QuantityType1Choice
 
 class FundCashOutBreakdown3(base_types._BaseFieldType):
 
-	__slots__ = ["_ComssnDtls", "_OrgnlOrdrQtyTp", "_InvstmtFndTxOutTp", "_NewAmtInd", "_UnitsNb", "_SttlmCcy", "_ChrgDtls", "_Amt"]
+	__slots__ = ["_UnitsNb", "_NewAmtInd", "_InvstmtFndTxOutTp", "_SttlmCcy", "_Amt", "_ChrgDtls", "_OrgnlOrdrQtyTp", "_ComssnDtls"]
 	@property
-	def ComssnDtls(self):
-		return self._ComssnDtls
+	def UnitsNb(self):
+		return self._UnitsNb
 
-	@ComssnDtls.setter
-	def ComssnDtls(self, value):
-		self._ComssnDtls = value if type(value) != auto else self.make_default("ComssnDtls")
+	@UnitsNb.setter
+	def UnitsNb(self, value):
+		self._UnitsNb = value if type(value) != auto else self.make_default("UnitsNb")
 
-	@ComssnDtls.deleter
-	def ComssnDtls(self):
-		del self._ComssnDtls
-		self._ComssnDtls = None
-
-	@property
-	def OrgnlOrdrQtyTp(self):
-		return self._OrgnlOrdrQtyTp
-
-	@OrgnlOrdrQtyTp.setter
-	def OrgnlOrdrQtyTp(self, value):
-		self._OrgnlOrdrQtyTp = value if type(value) != auto else self.make_default("OrgnlOrdrQtyTp")
-
-	@OrgnlOrdrQtyTp.deleter
-	def OrgnlOrdrQtyTp(self):
-		del self._OrgnlOrdrQtyTp
-		self._OrgnlOrdrQtyTp = None
-
-	@property
-	def InvstmtFndTxOutTp(self):
-		return self._InvstmtFndTxOutTp
-
-	@InvstmtFndTxOutTp.setter
-	def InvstmtFndTxOutTp(self, value):
-		self._InvstmtFndTxOutTp = value if type(value) != auto else self.make_default("InvstmtFndTxOutTp")
-
-	@InvstmtFndTxOutTp.deleter
-	def InvstmtFndTxOutTp(self):
-		del self._InvstmtFndTxOutTp
-		self._InvstmtFndTxOutTp = None
+	@UnitsNb.deleter
+	def UnitsNb(self):
+		del self._UnitsNb
+		self._UnitsNb = None
 
 	@property
 	def NewAmtInd(self):
@@ -64,17 +38,17 @@ class FundCashOutBreakdown3(base_types._BaseFieldType):
 		self._NewAmtInd = None
 
 	@property
-	def UnitsNb(self):
-		return self._UnitsNb
+	def InvstmtFndTxOutTp(self):
+		return self._InvstmtFndTxOutTp
 
-	@UnitsNb.setter
-	def UnitsNb(self, value):
-		self._UnitsNb = value if type(value) != auto else self.make_default("UnitsNb")
+	@InvstmtFndTxOutTp.setter
+	def InvstmtFndTxOutTp(self, value):
+		self._InvstmtFndTxOutTp = value if type(value) != auto else self.make_default("InvstmtFndTxOutTp")
 
-	@UnitsNb.deleter
-	def UnitsNb(self):
-		del self._UnitsNb
-		self._UnitsNb = None
+	@InvstmtFndTxOutTp.deleter
+	def InvstmtFndTxOutTp(self):
+		del self._InvstmtFndTxOutTp
+		self._InvstmtFndTxOutTp = None
 
 	@property
 	def SttlmCcy(self):
@@ -90,6 +64,19 @@ class FundCashOutBreakdown3(base_types._BaseFieldType):
 		self._SttlmCcy = None
 
 	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
 	def ChrgDtls(self):
 		return self._ChrgDtls
 
@@ -103,26 +90,39 @@ class FundCashOutBreakdown3(base_types._BaseFieldType):
 		self._ChrgDtls = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def OrgnlOrdrQtyTp(self):
+		return self._OrgnlOrdrQtyTp
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@OrgnlOrdrQtyTp.setter
+	def OrgnlOrdrQtyTp(self, value):
+		self._OrgnlOrdrQtyTp = value if type(value) != auto else self.make_default("OrgnlOrdrQtyTp")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@OrgnlOrdrQtyTp.deleter
+	def OrgnlOrdrQtyTp(self):
+		del self._OrgnlOrdrQtyTp
+		self._OrgnlOrdrQtyTp = None
+
+	@property
+	def ComssnDtls(self):
+		return self._ComssnDtls
+
+	@ComssnDtls.setter
+	def ComssnDtls(self, value):
+		self._ComssnDtls = value if type(value) != auto else self.make_default("ComssnDtls")
+
+	@ComssnDtls.deleter
+	def ComssnDtls(self):
+		del self._ComssnDtls
+		self._ComssnDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ComssnDtls', type=Commission21, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlOrdrQtyTp', type=QuantityType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstmtFndTxOutTp', type=InvestmentFundTransactionOutType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewAmtInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewAmtInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstmtFndTxOutTp', type=InvestmentFundTransactionOutType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgDtls', type=Charge26, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgDtls', type=Charge26, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlOrdrQtyTp', type=QuantityType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ComssnDtls', type=Commission21, min=0, max=None, mutex_group=None, array=True),
 	))
 

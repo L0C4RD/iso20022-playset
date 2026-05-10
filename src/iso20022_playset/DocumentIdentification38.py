@@ -1,24 +1,11 @@
 from . import base_types
-import ProcessingPosition10Choice
-import DocumentNumber6Choice
-import DocumentIdentification4Choice
+from .DocumentIdentification4Choice import DocumentIdentification4Choice
+from .DocumentNumber6Choice import DocumentNumber6Choice
+from .ProcessingPosition10Choice import ProcessingPosition10Choice
 
 class DocumentIdentification38(base_types._BaseFieldType):
 
-	__slots__ = ["_LkgTp", "_DocNb", "_Id"]
-	@property
-	def LkgTp(self):
-		return self._LkgTp
-
-	@LkgTp.setter
-	def LkgTp(self, value):
-		self._LkgTp = value if type(value) != auto else self.make_default("LkgTp")
-
-	@LkgTp.deleter
-	def LkgTp(self):
-		del self._LkgTp
-		self._LkgTp = None
-
+	__slots__ = ["_DocNb", "_LkgTp", "_Id"]
 	@property
 	def DocNb(self):
 		return self._DocNb
@@ -31,6 +18,19 @@ class DocumentIdentification38(base_types._BaseFieldType):
 	def DocNb(self):
 		del self._DocNb
 		self._DocNb = None
+
+	@property
+	def LkgTp(self):
+		return self._LkgTp
+
+	@LkgTp.setter
+	def LkgTp(self, value):
+		self._LkgTp = value if type(value) != auto else self.make_default("LkgTp")
+
+	@LkgTp.deleter
+	def LkgTp(self):
+		del self._LkgTp
+		self._LkgTp = None
 
 	@property
 	def Id(self):
@@ -46,8 +46,8 @@ class DocumentIdentification38(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LkgTp', type=ProcessingPosition10Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocNb', type=DocumentNumber6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LkgTp', type=ProcessingPosition10Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

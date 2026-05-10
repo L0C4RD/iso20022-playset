@@ -1,14 +1,14 @@
 from . import base_types
-import Max350Text
-import CashSubBalanceTypeAndQuantityBreakdown3
-import Amount2Choice
-import DateAndDateTime2Choice
-import PriorityNumeric4Choice
-import GenericIdentification37
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuantityBreakdown3
+from .PriorityNumeric4Choice import PriorityNumeric4Choice
+from .Amount2Choice import Amount2Choice
+from .GenericIdentification37 import GenericIdentification37
+from .Max350Text import Max350Text
 
 class IntraBalance5(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrPrcgAddtlDtls", "_BalTo", "_BalFr", "_CshSubBalId", "_Prty", "_SttlmAmt", "_SttlmDt"]
+	__slots__ = ["_InstrPrcgAddtlDtls", "_BalFr", "_BalTo", "_CshSubBalId", "_Prty", "_SttlmAmt", "_SttlmDt"]
 	@property
 	def InstrPrcgAddtlDtls(self):
 		return self._InstrPrcgAddtlDtls
@@ -23,19 +23,6 @@ class IntraBalance5(base_types._BaseFieldType):
 		self._InstrPrcgAddtlDtls = None
 
 	@property
-	def BalTo(self):
-		return self._BalTo
-
-	@BalTo.setter
-	def BalTo(self, value):
-		self._BalTo = value if type(value) != auto else self.make_default("BalTo")
-
-	@BalTo.deleter
-	def BalTo(self):
-		del self._BalTo
-		self._BalTo = None
-
-	@property
 	def BalFr(self):
 		return self._BalFr
 
@@ -47,6 +34,19 @@ class IntraBalance5(base_types._BaseFieldType):
 	def BalFr(self):
 		del self._BalFr
 		self._BalFr = None
+
+	@property
+	def BalTo(self):
+		return self._BalTo
+
+	@BalTo.setter
+	def BalTo(self, value):
+		self._BalTo = value if type(value) != auto else self.make_default("BalTo")
+
+	@BalTo.deleter
+	def BalTo(self):
+		del self._BalTo
+		self._BalTo = None
 
 	@property
 	def CshSubBalId(self):
@@ -102,8 +102,8 @@ class IntraBalance5(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalTo', type=CashSubBalanceTypeAndQuantityBreakdown3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalFr', type=CashSubBalanceTypeAndQuantityBreakdown3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTo', type=CashSubBalanceTypeAndQuantityBreakdown3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshSubBalId', type=GenericIdentification37, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prty', type=PriorityNumeric4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmAmt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),

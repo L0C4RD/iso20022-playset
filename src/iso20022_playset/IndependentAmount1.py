@@ -1,6 +1,6 @@
 from . import base_types
-import IndependentAmountConventionType1Code
-import ActiveCurrencyAndAmount
+from .IndependentAmountConventionType1Code import IndependentAmountConventionType1Code
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class IndependentAmount1(base_types._BaseFieldType):
 

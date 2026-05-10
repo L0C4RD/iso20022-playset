@@ -1,6 +1,6 @@
 from . import base_types
-import TaxBasis1Choice
-import ActiveCurrencyAndAmount
+from .TaxBasis1Choice import TaxBasis1Choice
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class TaxCalculationInformation11(base_types._BaseFieldType):
 

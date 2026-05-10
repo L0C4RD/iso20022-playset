@@ -1,7 +1,7 @@
 from . import base_types
-import AvailableFinancialResourcesAmount2
-import SupplementaryData1
-import ReportingAssetBreakdown2
+from .AvailableFinancialResourcesAmount2 import AvailableFinancialResourcesAmount2
+from .ReportingAssetBreakdown2 import ReportingAssetBreakdown2
+from .SupplementaryData1 import SupplementaryData1
 
 class CCPAvailableFinancialResourcesReportV02(base_types._BaseFieldType):
 

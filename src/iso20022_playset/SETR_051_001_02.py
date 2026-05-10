@@ -1,5 +1,5 @@
 from . import base_types
-import RedemptionOrderConfirmationCancellationInstructionV02
+from .RedemptionOrderConfirmationCancellationInstructionV02 import RedemptionOrderConfirmationCancellationInstructionV02
 
 class SETR_051_001_02():
 

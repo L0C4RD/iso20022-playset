@@ -1,39 +1,26 @@
 from . import base_types
-import TransactionTotals12
-import Traceability8
-import CommonData14
-import DataSetIdentification5
-import GenericIdentification176
-import CardPaymentDataSetTransaction13Choice
+from .TransactionTotals12 import TransactionTotals12
+from .CardPaymentDataSetTransaction13Choice import CardPaymentDataSetTransaction13Choice
+from .Traceability8 import Traceability8
+from .GenericIdentification176 import GenericIdentification176
+from .CommonData14 import CommonData14
+from .DataSetIdentification5 import DataSetIdentification5
 
 class CardPaymentDataSet40(base_types._BaseFieldType):
 
-	__slots__ = ["_DataSetInitr", "_Tracblt", "_DataSetId", "_Tx", "_TxTtls", "_CmonData"]
+	__slots__ = ["_Tx", "_DataSetId", "_CmonData", "_TxTtls", "_Tracblt", "_DataSetInitr"]
 	@property
-	def DataSetInitr(self):
-		return self._DataSetInitr
+	def Tx(self):
+		return self._Tx
 
-	@DataSetInitr.setter
-	def DataSetInitr(self, value):
-		self._DataSetInitr = value if type(value) != auto else self.make_default("DataSetInitr")
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != auto else self.make_default("Tx")
 
-	@DataSetInitr.deleter
-	def DataSetInitr(self):
-		del self._DataSetInitr
-		self._DataSetInitr = None
-
-	@property
-	def Tracblt(self):
-		return self._Tracblt
-
-	@Tracblt.setter
-	def Tracblt(self, value):
-		self._Tracblt = value if type(value) != auto else self.make_default("Tracblt")
-
-	@Tracblt.deleter
-	def Tracblt(self):
-		del self._Tracblt
-		self._Tracblt = None
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
 
 	@property
 	def DataSetId(self):
@@ -49,17 +36,17 @@ class CardPaymentDataSet40(base_types._BaseFieldType):
 		self._DataSetId = None
 
 	@property
-	def Tx(self):
-		return self._Tx
+	def CmonData(self):
+		return self._CmonData
 
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+	@CmonData.setter
+	def CmonData(self, value):
+		self._CmonData = value if type(value) != auto else self.make_default("CmonData")
 
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
+	@CmonData.deleter
+	def CmonData(self):
+		del self._CmonData
+		self._CmonData = None
 
 	@property
 	def TxTtls(self):
@@ -75,24 +62,37 @@ class CardPaymentDataSet40(base_types._BaseFieldType):
 		self._TxTtls = None
 
 	@property
-	def CmonData(self):
-		return self._CmonData
+	def Tracblt(self):
+		return self._Tracblt
 
-	@CmonData.setter
-	def CmonData(self, value):
-		self._CmonData = value if type(value) != auto else self.make_default("CmonData")
+	@Tracblt.setter
+	def Tracblt(self, value):
+		self._Tracblt = value if type(value) != auto else self.make_default("Tracblt")
 
-	@CmonData.deleter
-	def CmonData(self):
-		del self._CmonData
-		self._CmonData = None
+	@Tracblt.deleter
+	def Tracblt(self):
+		del self._Tracblt
+		self._Tracblt = None
+
+	@property
+	def DataSetInitr(self):
+		return self._DataSetInitr
+
+	@DataSetInitr.setter
+	def DataSetInitr(self, value):
+		self._DataSetInitr = value if type(value) != auto else self.make_default("DataSetInitr")
+
+	@DataSetInitr.deleter
+	def DataSetInitr(self):
+		del self._DataSetInitr
+		self._DataSetInitr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DataSetInitr', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tracblt', type=Traceability8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DataSetId', type=DataSetIdentification5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardPaymentDataSetTransaction13Choice, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxTtls', type=TransactionTotals12, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DataSetId', type=DataSetIdentification5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonData', type=CommonData14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTtls', type=TransactionTotals12, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Tracblt', type=Traceability8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DataSetInitr', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,24 @@
 from . import base_types
-import CurrencyControlHeader8
-import SupplementaryData1
-import RegisteredContract16
+from .CurrencyControlHeader8 import CurrencyControlHeader8
+from .SupplementaryData1 import SupplementaryData1
+from .RegisteredContract16 import RegisteredContract16
 
 class ContractRegistrationAmendmentRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_GrpHdr", "_CtrctRegnAmdmnt"]
+	__slots__ = ["_CtrctRegnAmdmnt", "_SplmtryData", "_GrpHdr"]
+	@property
+	def CtrctRegnAmdmnt(self):
+		return self._CtrctRegnAmdmnt
+
+	@CtrctRegnAmdmnt.setter
+	def CtrctRegnAmdmnt(self, value):
+		self._CtrctRegnAmdmnt = value if type(value) != auto else self.make_default("CtrctRegnAmdmnt")
+
+	@CtrctRegnAmdmnt.deleter
+	def CtrctRegnAmdmnt(self):
+		del self._CtrctRegnAmdmnt
+		self._CtrctRegnAmdmnt = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -32,22 +45,9 @@ class ContractRegistrationAmendmentRequestV04(base_types._BaseFieldType):
 		del self._GrpHdr
 		self._GrpHdr = None
 
-	@property
-	def CtrctRegnAmdmnt(self):
-		return self._CtrctRegnAmdmnt
-
-	@CtrctRegnAmdmnt.setter
-	def CtrctRegnAmdmnt(self, value):
-		self._CtrctRegnAmdmnt = value if type(value) != auto else self.make_default("CtrctRegnAmdmnt")
-
-	@CtrctRegnAmdmnt.deleter
-	def CtrctRegnAmdmnt(self):
-		del self._CtrctRegnAmdmnt
-		self._CtrctRegnAmdmnt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CtrctRegnAmdmnt', type=RegisteredContract16, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctRegnAmdmnt', type=RegisteredContract16, min=1, max=None, mutex_group=None, array=True),
 	))
 

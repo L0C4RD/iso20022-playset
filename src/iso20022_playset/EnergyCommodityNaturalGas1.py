@@ -1,7 +1,7 @@
 from . import base_types
-import AssetClassSubProductType7Code
-import AssetClassDetailedSubProductType6Code
-import AssetClassProductType2Code
+from .AssetClassDetailedSubProductType6Code import AssetClassDetailedSubProductType6Code
+from .AssetClassProductType2Code import AssetClassProductType2Code
+from .AssetClassSubProductType7Code import AssetClassSubProductType7Code
 
 class EnergyCommodityNaturalGas1(base_types._BaseFieldType):
 

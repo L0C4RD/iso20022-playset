@@ -1,20 +1,20 @@
 from . import base_types
-import Max140Text
-import Quantity51Choice
-import SafekeepingPlaceFormat42Choice
-import CorporateActionOption41Choice
-import Max35Text
-import ActiveCurrencyAndAmount
-import OptionFeaturesFormat25Choice
-import OptionNumber1Choice
-import PartyIdentification127Choice
-import SignedQuantityFormat11
-import SecurityIdentification19
-import CashAccountIdentification9Choice
+from .CashAccountIdentification9Choice import CashAccountIdentification9Choice
+from .Max35Text import Max35Text
+from .Quantity51Choice import Quantity51Choice
+from .SignedQuantityFormat11 import SignedQuantityFormat11
+from .CorporateActionOption41Choice import CorporateActionOption41Choice
+from .SafekeepingPlaceFormat42Choice import SafekeepingPlaceFormat42Choice
+from .SecurityIdentification19 import SecurityIdentification19
+from .PartyIdentification127Choice import PartyIdentification127Choice
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .Max140Text import Max140Text
+from .OptionNumber1Choice import OptionNumber1Choice
+from .OptionFeaturesFormat25Choice import OptionFeaturesFormat25Choice
 
 class CorporateActionOption239(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnTp", "_AcctOwnr", "_SfkpgPlc", "_FinInstrmId", "_TtlElgblBal", "_SfkpgAcct", "_UinstdBal", "_StsQty", "_PrtctBal", "_StsCshAmt", "_OptnFeatrs", "_BlckChainAdrOrWllt", "_OptnNb", "_CshAcct", "_InstdBal"]
+	__slots__ = ["_OptnTp", "_FinInstrmId", "_UinstdBal", "_SfkpgAcct", "_AcctOwnr", "_OptnNb", "_OptnFeatrs", "_BlckChainAdrOrWllt", "_InstdBal", "_CshAcct", "_StsCshAmt", "_TtlElgblBal", "_SfkpgPlc", "_PrtctBal", "_StsQty"]
 	@property
 	def OptnTp(self):
 		return self._OptnTp
@@ -27,32 +27,6 @@ class CorporateActionOption239(base_types._BaseFieldType):
 	def OptnTp(self):
 		del self._OptnTp
 		self._OptnTp = None
-
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
-	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
-
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
-
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
 
 	@property
 	def FinInstrmId(self):
@@ -68,17 +42,17 @@ class CorporateActionOption239(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def TtlElgblBal(self):
-		return self._TtlElgblBal
+	def UinstdBal(self):
+		return self._UinstdBal
 
-	@TtlElgblBal.setter
-	def TtlElgblBal(self, value):
-		self._TtlElgblBal = value if type(value) != auto else self.make_default("TtlElgblBal")
+	@UinstdBal.setter
+	def UinstdBal(self, value):
+		self._UinstdBal = value if type(value) != auto else self.make_default("UinstdBal")
 
-	@TtlElgblBal.deleter
-	def TtlElgblBal(self):
-		del self._TtlElgblBal
-		self._TtlElgblBal = None
+	@UinstdBal.deleter
+	def UinstdBal(self):
+		del self._UinstdBal
+		self._UinstdBal = None
 
 	@property
 	def SfkpgAcct(self):
@@ -94,56 +68,30 @@ class CorporateActionOption239(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
-	def UinstdBal(self):
-		return self._UinstdBal
+	def AcctOwnr(self):
+		return self._AcctOwnr
 
-	@UinstdBal.setter
-	def UinstdBal(self, value):
-		self._UinstdBal = value if type(value) != auto else self.make_default("UinstdBal")
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
 
-	@UinstdBal.deleter
-	def UinstdBal(self):
-		del self._UinstdBal
-		self._UinstdBal = None
-
-	@property
-	def StsQty(self):
-		return self._StsQty
-
-	@StsQty.setter
-	def StsQty(self, value):
-		self._StsQty = value if type(value) != auto else self.make_default("StsQty")
-
-	@StsQty.deleter
-	def StsQty(self):
-		del self._StsQty
-		self._StsQty = None
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
 
 	@property
-	def PrtctBal(self):
-		return self._PrtctBal
+	def OptnNb(self):
+		return self._OptnNb
 
-	@PrtctBal.setter
-	def PrtctBal(self, value):
-		self._PrtctBal = value if type(value) != auto else self.make_default("PrtctBal")
+	@OptnNb.setter
+	def OptnNb(self, value):
+		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
 
-	@PrtctBal.deleter
-	def PrtctBal(self):
-		del self._PrtctBal
-		self._PrtctBal = None
-
-	@property
-	def StsCshAmt(self):
-		return self._StsCshAmt
-
-	@StsCshAmt.setter
-	def StsCshAmt(self, value):
-		self._StsCshAmt = value if type(value) != auto else self.make_default("StsCshAmt")
-
-	@StsCshAmt.deleter
-	def StsCshAmt(self):
-		del self._StsCshAmt
-		self._StsCshAmt = None
+	@OptnNb.deleter
+	def OptnNb(self):
+		del self._OptnNb
+		self._OptnNb = None
 
 	@property
 	def OptnFeatrs(self):
@@ -172,17 +120,17 @@ class CorporateActionOption239(base_types._BaseFieldType):
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def OptnNb(self):
-		return self._OptnNb
+	def InstdBal(self):
+		return self._InstdBal
 
-	@OptnNb.setter
-	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
+	@InstdBal.setter
+	def InstdBal(self, value):
+		self._InstdBal = value if type(value) != auto else self.make_default("InstdBal")
 
-	@OptnNb.deleter
-	def OptnNb(self):
-		del self._OptnNb
-		self._OptnNb = None
+	@InstdBal.deleter
+	def InstdBal(self):
+		del self._InstdBal
+		self._InstdBal = None
 
 	@property
 	def CshAcct(self):
@@ -198,33 +146,85 @@ class CorporateActionOption239(base_types._BaseFieldType):
 		self._CshAcct = None
 
 	@property
-	def InstdBal(self):
-		return self._InstdBal
+	def StsCshAmt(self):
+		return self._StsCshAmt
 
-	@InstdBal.setter
-	def InstdBal(self, value):
-		self._InstdBal = value if type(value) != auto else self.make_default("InstdBal")
+	@StsCshAmt.setter
+	def StsCshAmt(self, value):
+		self._StsCshAmt = value if type(value) != auto else self.make_default("StsCshAmt")
 
-	@InstdBal.deleter
-	def InstdBal(self):
-		del self._InstdBal
-		self._InstdBal = None
+	@StsCshAmt.deleter
+	def StsCshAmt(self):
+		del self._StsCshAmt
+		self._StsCshAmt = None
+
+	@property
+	def TtlElgblBal(self):
+		return self._TtlElgblBal
+
+	@TtlElgblBal.setter
+	def TtlElgblBal(self, value):
+		self._TtlElgblBal = value if type(value) != auto else self.make_default("TtlElgblBal")
+
+	@TtlElgblBal.deleter
+	def TtlElgblBal(self):
+		del self._TtlElgblBal
+		self._TtlElgblBal = None
+
+	@property
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
+
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
+
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
+
+	@property
+	def PrtctBal(self):
+		return self._PrtctBal
+
+	@PrtctBal.setter
+	def PrtctBal(self, value):
+		self._PrtctBal = value if type(value) != auto else self.make_default("PrtctBal")
+
+	@PrtctBal.deleter
+	def PrtctBal(self):
+		del self._PrtctBal
+		self._PrtctBal = None
+
+	@property
+	def StsQty(self):
+		return self._StsQty
+
+	@StsQty.setter
+	def StsQty(self, value):
+		self._StsQty = value if type(value) != auto else self.make_default("StsQty")
+
+	@StsQty.deleter
+	def StsQty(self):
+		del self._StsQty
+		self._StsQty = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption41Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat42Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlElgblBal', type=SignedQuantityFormat11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UinstdBal', type=SignedQuantityFormat11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsQty', type=Quantity51Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctBal', type=SignedQuantityFormat11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsCshAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnNb', type=OptionNumber1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnFeatrs', type=OptionFeaturesFormat25Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnNb', type=OptionNumber1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdBal', type=SignedQuantityFormat11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification9Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsCshAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlElgblBal', type=SignedQuantityFormat11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat42Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctBal', type=SignedQuantityFormat11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsQty', type=Quantity51Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

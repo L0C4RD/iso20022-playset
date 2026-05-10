@@ -1,6 +1,6 @@
 from . import base_types
-import NarrativeType1Choice
-import Max20000Text
+from .Max20000Text import Max20000Text
+from .NarrativeType1Choice import NarrativeType1Choice
 
 class Narrative1(base_types._BaseFieldType):
 

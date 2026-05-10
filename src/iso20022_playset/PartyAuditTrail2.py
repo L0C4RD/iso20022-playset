@@ -1,37 +1,11 @@
 from . import base_types
-import UpdateLogPartyRecord2Choice
-import Max256Text
-import ISODateTime
+from .UpdateLogPartyRecord2Choice import UpdateLogPartyRecord2Choice
+from .ISODateTime import ISODateTime
+from .Max256Text import Max256Text
 
 class PartyAuditTrail2(base_types._BaseFieldType):
 
-	__slots__ = ["_ApprvgUsr", "_Rcrd", "_InstgUsr", "_OprTmStmp"]
-	@property
-	def ApprvgUsr(self):
-		return self._ApprvgUsr
-
-	@ApprvgUsr.setter
-	def ApprvgUsr(self, value):
-		self._ApprvgUsr = value if type(value) != auto else self.make_default("ApprvgUsr")
-
-	@ApprvgUsr.deleter
-	def ApprvgUsr(self):
-		del self._ApprvgUsr
-		self._ApprvgUsr = None
-
-	@property
-	def Rcrd(self):
-		return self._Rcrd
-
-	@Rcrd.setter
-	def Rcrd(self, value):
-		self._Rcrd = value if type(value) != auto else self.make_default("Rcrd")
-
-	@Rcrd.deleter
-	def Rcrd(self):
-		del self._Rcrd
-		self._Rcrd = None
-
+	__slots__ = ["_InstgUsr", "_ApprvgUsr", "_OprTmStmp", "_Rcrd"]
 	@property
 	def InstgUsr(self):
 		return self._InstgUsr
@@ -46,6 +20,19 @@ class PartyAuditTrail2(base_types._BaseFieldType):
 		self._InstgUsr = None
 
 	@property
+	def ApprvgUsr(self):
+		return self._ApprvgUsr
+
+	@ApprvgUsr.setter
+	def ApprvgUsr(self, value):
+		self._ApprvgUsr = value if type(value) != auto else self.make_default("ApprvgUsr")
+
+	@ApprvgUsr.deleter
+	def ApprvgUsr(self):
+		del self._ApprvgUsr
+		self._ApprvgUsr = None
+
+	@property
 	def OprTmStmp(self):
 		return self._OprTmStmp
 
@@ -58,10 +45,23 @@ class PartyAuditTrail2(base_types._BaseFieldType):
 		del self._OprTmStmp
 		self._OprTmStmp = None
 
+	@property
+	def Rcrd(self):
+		return self._Rcrd
+
+	@Rcrd.setter
+	def Rcrd(self, value):
+		self._Rcrd = value if type(value) != auto else self.make_default("Rcrd")
+
+	@Rcrd.deleter
+	def Rcrd(self):
+		del self._Rcrd
+		self._Rcrd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ApprvgUsr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcrd', type=UpdateLogPartyRecord2Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InstgUsr', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApprvgUsr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OprTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcrd', type=UpdateLogPartyRecord2Choice, min=1, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import Max350Text
-import SupplementaryDataEnvelope1
+from .Max350Text import Max350Text
+from .SupplementaryDataEnvelope1 import SupplementaryDataEnvelope1
 
 class SupplementaryData1(base_types._BaseFieldType):
 

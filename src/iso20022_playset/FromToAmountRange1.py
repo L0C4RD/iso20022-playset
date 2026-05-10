@@ -1,5 +1,5 @@
 from . import base_types
-import AmountRangeBoundary1
+from .AmountRangeBoundary1 import AmountRangeBoundary1
 
 class FromToAmountRange1(base_types._BaseFieldType):
 

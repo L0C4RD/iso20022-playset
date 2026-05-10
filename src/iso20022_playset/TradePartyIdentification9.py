@@ -1,25 +1,25 @@
 from . import base_types
-import OptionParty3Code
-import FundIdentification6
-import PartyIdentification78
-import PartyIdentificationAndAccount119
-import OptionParty1Code
+from .PartyIdentificationAndAccount119 import PartyIdentificationAndAccount119
+from .OptionParty1Code import OptionParty1Code
+from .PartyIdentification78 import PartyIdentification78
+from .FundIdentification6 import FundIdentification6
+from .OptionParty3Code import OptionParty3Code
 
 class TradePartyIdentification9(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmitgPty", "_BuyrOrSellrInd", "_TradPtyId", "_FndInf", "_InitrInd"]
+	__slots__ = ["_TradPtyId", "_BuyrOrSellrInd", "_InitrInd", "_FndInf", "_SubmitgPty"]
 	@property
-	def SubmitgPty(self):
-		return self._SubmitgPty
+	def TradPtyId(self):
+		return self._TradPtyId
 
-	@SubmitgPty.setter
-	def SubmitgPty(self, value):
-		self._SubmitgPty = value if type(value) != auto else self.make_default("SubmitgPty")
+	@TradPtyId.setter
+	def TradPtyId(self, value):
+		self._TradPtyId = value if type(value) != auto else self.make_default("TradPtyId")
 
-	@SubmitgPty.deleter
-	def SubmitgPty(self):
-		del self._SubmitgPty
-		self._SubmitgPty = None
+	@TradPtyId.deleter
+	def TradPtyId(self):
+		del self._TradPtyId
+		self._TradPtyId = None
 
 	@property
 	def BuyrOrSellrInd(self):
@@ -35,17 +35,17 @@ class TradePartyIdentification9(base_types._BaseFieldType):
 		self._BuyrOrSellrInd = None
 
 	@property
-	def TradPtyId(self):
-		return self._TradPtyId
+	def InitrInd(self):
+		return self._InitrInd
 
-	@TradPtyId.setter
-	def TradPtyId(self, value):
-		self._TradPtyId = value if type(value) != auto else self.make_default("TradPtyId")
+	@InitrInd.setter
+	def InitrInd(self, value):
+		self._InitrInd = value if type(value) != auto else self.make_default("InitrInd")
 
-	@TradPtyId.deleter
-	def TradPtyId(self):
-		del self._TradPtyId
-		self._TradPtyId = None
+	@InitrInd.deleter
+	def InitrInd(self):
+		del self._InitrInd
+		self._InitrInd = None
 
 	@property
 	def FndInf(self):
@@ -61,23 +61,23 @@ class TradePartyIdentification9(base_types._BaseFieldType):
 		self._FndInf = None
 
 	@property
-	def InitrInd(self):
-		return self._InitrInd
+	def SubmitgPty(self):
+		return self._SubmitgPty
 
-	@InitrInd.setter
-	def InitrInd(self, value):
-		self._InitrInd = value if type(value) != auto else self.make_default("InitrInd")
+	@SubmitgPty.setter
+	def SubmitgPty(self, value):
+		self._SubmitgPty = value if type(value) != auto else self.make_default("SubmitgPty")
 
-	@InitrInd.deleter
-	def InitrInd(self):
-		del self._InitrInd
-		self._InitrInd = None
+	@SubmitgPty.deleter
+	def SubmitgPty(self):
+		del self._SubmitgPty
+		self._SubmitgPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubmitgPty', type=PartyIdentificationAndAccount119, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrOrSellrInd', type=OptionParty1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradPtyId', type=PartyIdentification78, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FndInf', type=FundIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrOrSellrInd', type=OptionParty1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitrInd', type=OptionParty3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FndInf', type=FundIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitgPty', type=PartyIdentificationAndAccount119, min=1, max=1, mutex_group=None, array=False),
 	))
 

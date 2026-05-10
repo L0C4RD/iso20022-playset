@@ -1,25 +1,25 @@
 from . import base_types
-import MasterAgreement7
-import Max140Text
-import Max52Text
-import OrganisationIdentification15Choice
-import PartyIdentification236Choice
+from .Max140Text import Max140Text
+from .MasterAgreement7 import MasterAgreement7
+from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from .Max52Text import Max52Text
+from .PartyIdentification236Choice import PartyIdentification236Choice
 
 class TradeTransactionIdentification20(base_types._BaseFieldType):
 
-	__slots__ = ["_AgtLndr", "_UnqTradIdr", "_TechRcrdId", "_NttyRspnsblForRpt", "_RptgCtrPty", "_MstrAgrmt", "_TrptyAgt", "_OthrCtrPty"]
+	__slots__ = ["_TrptyAgt", "_UnqTradIdr", "_TechRcrdId", "_RptgCtrPty", "_NttyRspnsblForRpt", "_MstrAgrmt", "_AgtLndr", "_OthrCtrPty"]
 	@property
-	def AgtLndr(self):
-		return self._AgtLndr
+	def TrptyAgt(self):
+		return self._TrptyAgt
 
-	@AgtLndr.setter
-	def AgtLndr(self, value):
-		self._AgtLndr = value if type(value) != auto else self.make_default("AgtLndr")
+	@TrptyAgt.setter
+	def TrptyAgt(self, value):
+		self._TrptyAgt = value if type(value) != auto else self.make_default("TrptyAgt")
 
-	@AgtLndr.deleter
-	def AgtLndr(self):
-		del self._AgtLndr
-		self._AgtLndr = None
+	@TrptyAgt.deleter
+	def TrptyAgt(self):
+		del self._TrptyAgt
+		self._TrptyAgt = None
 
 	@property
 	def UnqTradIdr(self):
@@ -48,19 +48,6 @@ class TradeTransactionIdentification20(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	@property
-	def NttyRspnsblForRpt(self):
-		return self._NttyRspnsblForRpt
-
-	@NttyRspnsblForRpt.setter
-	def NttyRspnsblForRpt(self, value):
-		self._NttyRspnsblForRpt = value if type(value) != auto else self.make_default("NttyRspnsblForRpt")
-
-	@NttyRspnsblForRpt.deleter
-	def NttyRspnsblForRpt(self):
-		del self._NttyRspnsblForRpt
-		self._NttyRspnsblForRpt = None
-
-	@property
 	def RptgCtrPty(self):
 		return self._RptgCtrPty
 
@@ -72,6 +59,19 @@ class TradeTransactionIdentification20(base_types._BaseFieldType):
 	def RptgCtrPty(self):
 		del self._RptgCtrPty
 		self._RptgCtrPty = None
+
+	@property
+	def NttyRspnsblForRpt(self):
+		return self._NttyRspnsblForRpt
+
+	@NttyRspnsblForRpt.setter
+	def NttyRspnsblForRpt(self, value):
+		self._NttyRspnsblForRpt = value if type(value) != auto else self.make_default("NttyRspnsblForRpt")
+
+	@NttyRspnsblForRpt.deleter
+	def NttyRspnsblForRpt(self):
+		del self._NttyRspnsblForRpt
+		self._NttyRspnsblForRpt = None
 
 	@property
 	def MstrAgrmt(self):
@@ -87,17 +87,17 @@ class TradeTransactionIdentification20(base_types._BaseFieldType):
 		self._MstrAgrmt = None
 
 	@property
-	def TrptyAgt(self):
-		return self._TrptyAgt
+	def AgtLndr(self):
+		return self._AgtLndr
 
-	@TrptyAgt.setter
-	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != auto else self.make_default("TrptyAgt")
+	@AgtLndr.setter
+	def AgtLndr(self, value):
+		self._AgtLndr = value if type(value) != auto else self.make_default("AgtLndr")
 
-	@TrptyAgt.deleter
-	def TrptyAgt(self):
-		del self._TrptyAgt
-		self._TrptyAgt = None
+	@AgtLndr.deleter
+	def AgtLndr(self):
+		del self._AgtLndr
+		self._AgtLndr = None
 
 	@property
 	def OthrCtrPty(self):
@@ -113,13 +113,13 @@ class TradeTransactionIdentification20(base_types._BaseFieldType):
 		self._OthrCtrPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AgtLndr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqTradIdr', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrptyAgt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgtLndr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification236Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

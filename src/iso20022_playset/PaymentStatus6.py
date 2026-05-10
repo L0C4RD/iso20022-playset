@@ -1,24 +1,11 @@
 from . import base_types
-import PaymentStatusReason1Choice
-import DateAndDateTime2Choice
-import PaymentStatusCode6Choice
+from .PaymentStatusReason1Choice import PaymentStatusReason1Choice
+from .PaymentStatusCode6Choice import PaymentStatusCode6Choice
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class PaymentStatus6(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_DtTm", "_Rsn"]
-	@property
-	def Cd(self):
-		return self._Cd
-
-	@Cd.setter
-	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
-
-	@Cd.deleter
-	def Cd(self):
-		del self._Cd
-		self._Cd = None
-
+	__slots__ = ["_DtTm", "_Cd", "_Rsn"]
 	@property
 	def DtTm(self):
 		return self._DtTm
@@ -31,6 +18,19 @@ class PaymentStatus6(base_types._BaseFieldType):
 	def DtTm(self):
 		del self._DtTm
 		self._DtTm = None
+
+	@property
+	def Cd(self):
+		return self._Cd
+
+	@Cd.setter
+	def Cd(self, value):
+		self._Cd = value if type(value) != auto else self.make_default("Cd")
+
+	@Cd.deleter
+	def Cd(self):
+		del self._Cd
+		self._Cd = None
 
 	@property
 	def Rsn(self):
@@ -46,8 +46,8 @@ class PaymentStatus6(base_types._BaseFieldType):
 		self._Rsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cd', type=PaymentStatusCode6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cd', type=PaymentStatusCode6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=PaymentStatusReason1Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

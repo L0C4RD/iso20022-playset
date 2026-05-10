@@ -1,8 +1,8 @@
 from . import base_types
-import Header32
-import ATMCompletionAcknowledgement3
-import ContentInformationType10
-import ContentInformationType15
+from .ATMCompletionAcknowledgement3 import ATMCompletionAcknowledgement3
+from .ContentInformationType10 import ContentInformationType10
+from .ContentInformationType15 import ContentInformationType15
+from .Header32 import Header32
 
 class ATMCompletionAcknowledgementV03(base_types._BaseFieldType):
 

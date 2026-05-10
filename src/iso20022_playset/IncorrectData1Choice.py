@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import ExternalUnableToApplyIncorrectData1Code
+from .Max35Text import Max35Text
+from .ExternalUnableToApplyIncorrectData1Code import ExternalUnableToApplyIncorrectData1Code
 
 class IncorrectData1Choice(base_types._BaseFieldType):
 

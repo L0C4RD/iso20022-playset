@@ -1,12 +1,12 @@
 from . import base_types
-import Max35Text
-import InterestComputationMethod2Code
-import GenericIdentification168
-import ActiveCurrencyAndAmount
+from .Max35Text import Max35Text
+from .InterestComputationMethod2Code import InterestComputationMethod2Code
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .GenericIdentification168 import GenericIdentification168
 
 class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 
-	__slots__ = ["_Ntnl", "_IndxId", "_IndxUnit", "_UnitVal", "_IntrstRateTerms"]
+	__slots__ = ["_Ntnl", "_IntrstRateTerms", "_IndxId", "_IndxUnit", "_UnitVal"]
 	@property
 	def Ntnl(self):
 		return self._Ntnl
@@ -19,6 +19,19 @@ class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 	def Ntnl(self):
 		del self._Ntnl
 		self._Ntnl = None
+
+	@property
+	def IntrstRateTerms(self):
+		return self._IntrstRateTerms
+
+	@IntrstRateTerms.setter
+	def IntrstRateTerms(self, value):
+		self._IntrstRateTerms = value if type(value) != auto else self.make_default("IntrstRateTerms")
+
+	@IntrstRateTerms.deleter
+	def IntrstRateTerms(self):
+		del self._IntrstRateTerms
+		self._IntrstRateTerms = None
 
 	@property
 	def IndxId(self):
@@ -59,24 +72,11 @@ class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 		del self._UnitVal
 		self._UnitVal = None
 
-	@property
-	def IntrstRateTerms(self):
-		return self._IntrstRateTerms
-
-	@IntrstRateTerms.setter
-	def IntrstRateTerms(self, value):
-		self._IntrstRateTerms = value if type(value) != auto else self.make_default("IntrstRateTerms")
-
-	@IntrstRateTerms.deleter
-	def IntrstRateTerms(self):
-		del self._IntrstRateTerms
-		self._IntrstRateTerms = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ntnl', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstRateTerms', type=InterestComputationMethod2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndxId', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndxUnit', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstRateTerms', type=InterestComputationMethod2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

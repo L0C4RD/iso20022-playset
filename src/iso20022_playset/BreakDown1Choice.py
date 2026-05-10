@@ -1,6 +1,6 @@
 from . import base_types
-import ReportLine6
-import ReportLine5
+from .ReportLine6 import ReportLine6
+from .ReportLine5 import ReportLine5
 
 class BreakDown1Choice(base_types._BaseFieldType):
 

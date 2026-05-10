@@ -1,6 +1,6 @@
 from . import base_types
-import DetailedTransactionStatistics26
-import ReportPeriodActivity1Code
+from .DetailedTransactionStatistics26 import DetailedTransactionStatistics26
+from .ReportPeriodActivity1Code import ReportPeriodActivity1Code
 
 class DetailedMissingMarginInformationStatistics4Choice(base_types._BaseFieldType):
 

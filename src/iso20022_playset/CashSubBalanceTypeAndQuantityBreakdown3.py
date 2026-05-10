@@ -1,6 +1,6 @@
 from . import base_types
-import CashBalanceType3Choice
-import AmountAndQuantityBreakdown1
+from .AmountAndQuantityBreakdown1 import AmountAndQuantityBreakdown1
+from .CashBalanceType3Choice import CashBalanceType3Choice
 
 class CashSubBalanceTypeAndQuantityBreakdown3(base_types._BaseFieldType):
 

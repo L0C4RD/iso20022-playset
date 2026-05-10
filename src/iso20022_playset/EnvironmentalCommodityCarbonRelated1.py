@@ -1,6 +1,6 @@
 from . import base_types
-import AssetClassSubProductType29Code
-import AssetClassProductType3Code
+from .AssetClassProductType3Code import AssetClassProductType3Code
+from .AssetClassSubProductType29Code import AssetClassSubProductType29Code
 
 class EnvironmentalCommodityCarbonRelated1(base_types._BaseFieldType):
 

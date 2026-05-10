@@ -1,5 +1,5 @@
 from . import base_types
-import TrueFalseIndicator
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class LogoutRequest1(base_types._BaseFieldType):
 

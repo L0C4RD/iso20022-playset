@@ -1,31 +1,31 @@
 from . import base_types
-import ISODate
-import MICIdentifier
-import Max50Text
-import ISODateTime
-import PositiveNumber
-import ValidityPeriod1Choice
-import Max35Text
-import FinancialInstrument99Choice
-import OrderEventType1Choice
-import OrderRestriction1Choice
-import OrderPriority1
+from .MICIdentifier import MICIdentifier
+from .Max35Text import Max35Text
+from .OrderEventType1Choice import OrderEventType1Choice
+from .ISODate import ISODate
+from .ValidityPeriod1Choice import ValidityPeriod1Choice
+from .FinancialInstrument99Choice import FinancialInstrument99Choice
+from .OrderPriority1 import OrderPriority1
+from .Max50Text import Max50Text
+from .PositiveNumber import PositiveNumber
+from .ISODateTime import ISODateTime
+from .OrderRestriction1Choice import OrderRestriction1Choice
 
 class OrderIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtTp", "_OrdrRstrctn", "_VldtyDtTm", "_FinInstrm", "_Prty", "_OrdrBookId", "_TradVn", "_OrdrId", "_SeqNb", "_DtOfRct", "_TmStmp", "_VldtyPrd"]
+	__slots__ = ["_OrdrId", "_OrdrRstrctn", "_SeqNb", "_TradVn", "_Prty", "_DtOfRct", "_EvtTp", "_FinInstrm", "_TmStmp", "_OrdrBookId", "_VldtyPrd", "_VldtyDtTm"]
 	@property
-	def EvtTp(self):
-		return self._EvtTp
+	def OrdrId(self):
+		return self._OrdrId
 
-	@EvtTp.setter
-	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != auto else self.make_default("EvtTp")
+	@OrdrId.setter
+	def OrdrId(self, value):
+		self._OrdrId = value if type(value) != auto else self.make_default("OrdrId")
 
-	@EvtTp.deleter
-	def EvtTp(self):
-		del self._EvtTp
-		self._EvtTp = None
+	@OrdrId.deleter
+	def OrdrId(self):
+		del self._OrdrId
+		self._OrdrId = None
 
 	@property
 	def OrdrRstrctn(self):
@@ -41,56 +41,17 @@ class OrderIdentification2(base_types._BaseFieldType):
 		self._OrdrRstrctn = None
 
 	@property
-	def VldtyDtTm(self):
-		return self._VldtyDtTm
+	def SeqNb(self):
+		return self._SeqNb
 
-	@VldtyDtTm.setter
-	def VldtyDtTm(self, value):
-		self._VldtyDtTm = value if type(value) != auto else self.make_default("VldtyDtTm")
+	@SeqNb.setter
+	def SeqNb(self, value):
+		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
 
-	@VldtyDtTm.deleter
-	def VldtyDtTm(self):
-		del self._VldtyDtTm
-		self._VldtyDtTm = None
-
-	@property
-	def FinInstrm(self):
-		return self._FinInstrm
-
-	@FinInstrm.setter
-	def FinInstrm(self, value):
-		self._FinInstrm = value if type(value) != auto else self.make_default("FinInstrm")
-
-	@FinInstrm.deleter
-	def FinInstrm(self):
-		del self._FinInstrm
-		self._FinInstrm = None
-
-	@property
-	def Prty(self):
-		return self._Prty
-
-	@Prty.setter
-	def Prty(self, value):
-		self._Prty = value if type(value) != auto else self.make_default("Prty")
-
-	@Prty.deleter
-	def Prty(self):
-		del self._Prty
-		self._Prty = None
-
-	@property
-	def OrdrBookId(self):
-		return self._OrdrBookId
-
-	@OrdrBookId.setter
-	def OrdrBookId(self, value):
-		self._OrdrBookId = value if type(value) != auto else self.make_default("OrdrBookId")
-
-	@OrdrBookId.deleter
-	def OrdrBookId(self):
-		del self._OrdrBookId
-		self._OrdrBookId = None
+	@SeqNb.deleter
+	def SeqNb(self):
+		del self._SeqNb
+		self._SeqNb = None
 
 	@property
 	def TradVn(self):
@@ -106,30 +67,17 @@ class OrderIdentification2(base_types._BaseFieldType):
 		self._TradVn = None
 
 	@property
-	def OrdrId(self):
-		return self._OrdrId
+	def Prty(self):
+		return self._Prty
 
-	@OrdrId.setter
-	def OrdrId(self, value):
-		self._OrdrId = value if type(value) != auto else self.make_default("OrdrId")
+	@Prty.setter
+	def Prty(self, value):
+		self._Prty = value if type(value) != auto else self.make_default("Prty")
 
-	@OrdrId.deleter
-	def OrdrId(self):
-		del self._OrdrId
-		self._OrdrId = None
-
-	@property
-	def SeqNb(self):
-		return self._SeqNb
-
-	@SeqNb.setter
-	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
-
-	@SeqNb.deleter
-	def SeqNb(self):
-		del self._SeqNb
-		self._SeqNb = None
+	@Prty.deleter
+	def Prty(self):
+		del self._Prty
+		self._Prty = None
 
 	@property
 	def DtOfRct(self):
@@ -145,6 +93,32 @@ class OrderIdentification2(base_types._BaseFieldType):
 		self._DtOfRct = None
 
 	@property
+	def EvtTp(self):
+		return self._EvtTp
+
+	@EvtTp.setter
+	def EvtTp(self, value):
+		self._EvtTp = value if type(value) != auto else self.make_default("EvtTp")
+
+	@EvtTp.deleter
+	def EvtTp(self):
+		del self._EvtTp
+		self._EvtTp = None
+
+	@property
+	def FinInstrm(self):
+		return self._FinInstrm
+
+	@FinInstrm.setter
+	def FinInstrm(self, value):
+		self._FinInstrm = value if type(value) != auto else self.make_default("FinInstrm")
+
+	@FinInstrm.deleter
+	def FinInstrm(self):
+		del self._FinInstrm
+		self._FinInstrm = None
+
+	@property
 	def TmStmp(self):
 		return self._TmStmp
 
@@ -156,6 +130,19 @@ class OrderIdentification2(base_types._BaseFieldType):
 	def TmStmp(self):
 		del self._TmStmp
 		self._TmStmp = None
+
+	@property
+	def OrdrBookId(self):
+		return self._OrdrBookId
+
+	@OrdrBookId.setter
+	def OrdrBookId(self, value):
+		self._OrdrBookId = value if type(value) != auto else self.make_default("OrdrBookId")
+
+	@OrdrBookId.deleter
+	def OrdrBookId(self):
+		del self._OrdrBookId
+		self._OrdrBookId = None
 
 	@property
 	def VldtyPrd(self):
@@ -170,18 +157,31 @@ class OrderIdentification2(base_types._BaseFieldType):
 		del self._VldtyPrd
 		self._VldtyPrd = None
 
+	@property
+	def VldtyDtTm(self):
+		return self._VldtyDtTm
+
+	@VldtyDtTm.setter
+	def VldtyDtTm(self, value):
+		self._VldtyDtTm = value if type(value) != auto else self.make_default("VldtyDtTm")
+
+	@VldtyDtTm.deleter
+	def VldtyDtTm(self):
+		del self._VldtyDtTm
+		self._VldtyDtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EvtTp', type=OrderEventType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrRstrctn', type=OrderRestriction1Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='VldtyDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrm', type=FinancialInstrument99Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prty', type=OrderPriority1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrBookId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradVn', type=MICIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrId', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrRstrctn', type=OrderRestriction1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SeqNb', type=PositiveNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradVn', type=MICIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prty', type=OrderPriority1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtOfRct', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtTp', type=OrderEventType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrm', type=FinancialInstrument99Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrBookId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtyPrd', type=ValidityPeriod1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtyDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

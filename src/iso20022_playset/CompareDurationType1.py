@@ -1,5 +1,5 @@
 from . import base_types
-import DurationType1Code
+from .DurationType1Code import DurationType1Code
 
 class CompareDurationType1(base_types._BaseFieldType):
 

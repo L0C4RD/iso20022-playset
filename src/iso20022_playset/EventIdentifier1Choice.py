@@ -1,23 +1,10 @@
 from . import base_types
-import PostTradeRiskReductionIdentifier1
-import UTIIdentifier
+from .PostTradeRiskReductionIdentifier1 import PostTradeRiskReductionIdentifier1
+from .UTIIdentifier import UTIIdentifier
 
 class EventIdentifier1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtIdr", "_PstTradRskRdctnIdr"]
-	@property
-	def EvtIdr(self):
-		return self._EvtIdr
-
-	@EvtIdr.setter
-	def EvtIdr(self, value):
-		self._EvtIdr = value if type(value) != auto else self.make_default("EvtIdr")
-
-	@EvtIdr.deleter
-	def EvtIdr(self):
-		del self._EvtIdr
-		self._EvtIdr = None
-
+	__slots__ = ["_PstTradRskRdctnIdr", "_EvtIdr"]
 	@property
 	def PstTradRskRdctnIdr(self):
 		return self._PstTradRskRdctnIdr
@@ -31,8 +18,21 @@ class EventIdentifier1Choice(base_types._BaseFieldType):
 		del self._PstTradRskRdctnIdr
 		self._PstTradRskRdctnIdr = None
 
+	@property
+	def EvtIdr(self):
+		return self._EvtIdr
+
+	@EvtIdr.setter
+	def EvtIdr(self, value):
+		self._EvtIdr = value if type(value) != auto else self.make_default("EvtIdr")
+
+	@EvtIdr.deleter
+	def EvtIdr(self):
+		del self._EvtIdr
+		self._EvtIdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EvtIdr', type=UTIIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PstTradRskRdctnIdr', type=PostTradeRiskReductionIdentifier1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='EvtIdr', type=UTIIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

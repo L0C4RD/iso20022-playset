@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification13
-import ConversionType1Code
+from .ConversionType1Code import ConversionType1Code
+from .GenericIdentification13 import GenericIdentification13
 
 class ConversionType1FormatChoice(base_types._BaseFieldType):
 

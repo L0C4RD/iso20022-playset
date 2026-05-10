@@ -1,7 +1,7 @@
 from . import base_types
-import CountryCode
-import Max35Text
-import CountrySubdivision1Choice
+from .CountryCode import CountryCode
+from .Max35Text import Max35Text
+from .CountrySubdivision1Choice import CountrySubdivision1Choice
 
 class Location2(base_types._BaseFieldType):
 

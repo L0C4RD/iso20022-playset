@@ -1,26 +1,13 @@
 from . import base_types
-import PartyIdentification35Choice
-import SettlementObligation7
-import SupplementaryData1
-import Max35Text
-import BuyIn2
+from .Max35Text import Max35Text
+from .SupplementaryData1 import SupplementaryData1
+from .BuyIn2 import BuyIn2
+from .SettlementObligation7 import SettlementObligation7
+from .PartyIdentification35Choice import PartyIdentification35Choice
 
 class BuyInConfirmationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_SplmtryData", "_BuyInDtls", "_OrgnlSttlmOblgtn", "_ClrMmb"]
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
+	__slots__ = ["_SplmtryData", "_BuyInDtls", "_OrgnlSttlmOblgtn", "_TxId", "_ClrMmb"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -61,6 +48,19 @@ class BuyInConfirmationV03(base_types._BaseFieldType):
 		self._OrgnlSttlmOblgtn = None
 
 	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
 	def ClrMmb(self):
 		return self._ClrMmb
 
@@ -74,10 +74,10 @@ class BuyInConfirmationV03(base_types._BaseFieldType):
 		self._ClrMmb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BuyInDtls', type=BuyIn2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlSttlmOblgtn', type=SettlementObligation7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification35Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

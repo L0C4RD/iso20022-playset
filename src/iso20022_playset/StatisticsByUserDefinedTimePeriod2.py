@@ -1,12 +1,25 @@
 from . import base_types
-import PriceValueChange1
-import PercentageRate
-import DateOrDateTimePeriodChoice
-import PriceValue5
+from .PercentageRate import PercentageRate
+from .PriceValue5 import PriceValue5
+from .DateOrDateTimePeriodChoice import DateOrDateTimePeriodChoice
+from .PriceValueChange1 import PriceValueChange1
 
 class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 
-	__slots__ = ["_HghstPricVal", "_Yld", "_LwstPricVal", "_Prd", "_PricChng"]
+	__slots__ = ["_Prd", "_HghstPricVal", "_PricChng", "_Yld", "_LwstPricVal"]
+	@property
+	def Prd(self):
+		return self._Prd
+
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != auto else self.make_default("Prd")
+
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
+
 	@property
 	def HghstPricVal(self):
 		return self._HghstPricVal
@@ -19,6 +32,19 @@ class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 	def HghstPricVal(self):
 		del self._HghstPricVal
 		self._HghstPricVal = None
+
+	@property
+	def PricChng(self):
+		return self._PricChng
+
+	@PricChng.setter
+	def PricChng(self, value):
+		self._PricChng = value if type(value) != auto else self.make_default("PricChng")
+
+	@PricChng.deleter
+	def PricChng(self):
+		del self._PricChng
+		self._PricChng = None
 
 	@property
 	def Yld(self):
@@ -46,37 +72,11 @@ class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 		del self._LwstPricVal
 		self._LwstPricVal = None
 
-	@property
-	def Prd(self):
-		return self._Prd
-
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
-
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
-
-	@property
-	def PricChng(self):
-		return self._PricChng
-
-	@PricChng.setter
-	def PricChng(self, value):
-		self._PricChng = value if type(value) != auto else self.make_default("PricChng")
-
-	@PricChng.deleter
-	def PricChng(self):
-		del self._PricChng
-		self._PricChng = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Prd', type=DateOrDateTimePeriodChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HghstPricVal', type=PriceValue5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricChng', type=PriceValueChange1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LwstPricVal', type=PriceValue5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prd', type=DateOrDateTimePeriodChoice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricChng', type=PriceValueChange1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import DecimalNumber
-import Max15NumericText
+from .Max15NumericText import Max15NumericText
+from .DecimalNumber import DecimalNumber
 
 class NumberAndSumOfTransactions1(base_types._BaseFieldType):
 

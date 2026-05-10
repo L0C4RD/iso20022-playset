@@ -1,6 +1,6 @@
 from . import base_types
-import Number
-import ValidationResult5
+from .ValidationResult5 import ValidationResult5
+from .Number import Number
 
 class MisMatchReport3(base_types._BaseFieldType):
 

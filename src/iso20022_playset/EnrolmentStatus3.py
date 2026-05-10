@@ -1,14 +1,14 @@
 from . import base_types
-import OriginalBusinessInstruction1
-import ServiceStatus1Choice
-import DateAndDateTime2Choice
-import CreditorEnrolmentStatusReason3
-import OriginalEnrolment3Choice
-import SupplementaryData1
+from .OriginalBusinessInstruction1 import OriginalBusinessInstruction1
+from .CreditorEnrolmentStatusReason3 import CreditorEnrolmentStatusReason3
+from .SupplementaryData1 import SupplementaryData1
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .ServiceStatus1Choice import ServiceStatus1Choice
+from .OriginalEnrolment3Choice import OriginalEnrolment3Choice
 
 class EnrolmentStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlBizInstr", "_Sts", "_SplmtryData", "_StsRsn", "_OrgnlEnrlmntRef", "_FctvEnrlmntDt"]
+	__slots__ = ["_OrgnlBizInstr", "_Sts", "_OrgnlEnrlmntRef", "_StsRsn", "_SplmtryData", "_FctvEnrlmntDt"]
 	@property
 	def OrgnlBizInstr(self):
 		return self._OrgnlBizInstr
@@ -36,17 +36,17 @@ class EnrolmentStatus3(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def OrgnlEnrlmntRef(self):
+		return self._OrgnlEnrlmntRef
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@OrgnlEnrlmntRef.setter
+	def OrgnlEnrlmntRef(self, value):
+		self._OrgnlEnrlmntRef = value if type(value) != auto else self.make_default("OrgnlEnrlmntRef")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@OrgnlEnrlmntRef.deleter
+	def OrgnlEnrlmntRef(self):
+		del self._OrgnlEnrlmntRef
+		self._OrgnlEnrlmntRef = None
 
 	@property
 	def StsRsn(self):
@@ -62,17 +62,17 @@ class EnrolmentStatus3(base_types._BaseFieldType):
 		self._StsRsn = None
 
 	@property
-	def OrgnlEnrlmntRef(self):
-		return self._OrgnlEnrlmntRef
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@OrgnlEnrlmntRef.setter
-	def OrgnlEnrlmntRef(self, value):
-		self._OrgnlEnrlmntRef = value if type(value) != auto else self.make_default("OrgnlEnrlmntRef")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@OrgnlEnrlmntRef.deleter
-	def OrgnlEnrlmntRef(self):
-		del self._OrgnlEnrlmntRef
-		self._OrgnlEnrlmntRef = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def FctvEnrlmntDt(self):
@@ -90,9 +90,9 @@ class EnrolmentStatus3(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlBizInstr', type=OriginalBusinessInstruction1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=ServiceStatus1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StsRsn', type=CreditorEnrolmentStatusReason3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlEnrlmntRef', type=OriginalEnrolment3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsRsn', type=CreditorEnrolmentStatusReason3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FctvEnrlmntDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification13
-import PersonIdentificationType3Code
+from .PersonIdentificationType3Code import PersonIdentificationType3Code
+from .GenericIdentification13 import GenericIdentification13
 
 class PersonIdentificationType3Choice(base_types._BaseFieldType):
 

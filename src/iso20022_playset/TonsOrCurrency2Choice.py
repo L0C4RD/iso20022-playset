@@ -1,6 +1,6 @@
 from . import base_types
-import DecimalNumber
-import ActiveOrHistoricCurrencyAndAmount
+from .DecimalNumber import DecimalNumber
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class TonsOrCurrency2Choice(base_types._BaseFieldType):
 

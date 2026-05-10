@@ -1,6 +1,6 @@
 from . import base_types
-import DecimalNumber
-import ActiveCurrencyAndAmount
+from .DecimalNumber import DecimalNumber
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class UnitOrFaceAmount1Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import AgreedAmount1
-import Amount1
+from .Amount1 import Amount1
+from .AgreedAmount1 import AgreedAmount1
 
 class AgreedAmount1Choice(base_types._BaseFieldType):
 

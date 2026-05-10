@@ -1,7 +1,7 @@
 from . import base_types
-import Max100KBinary
-import ContentType2Code
-import AlgorithmIdentification14
+from .ContentType2Code import ContentType2Code
+from .AlgorithmIdentification14 import AlgorithmIdentification14
+from .Max100KBinary import Max100KBinary
 
 class EncryptedContent3(base_types._BaseFieldType):
 

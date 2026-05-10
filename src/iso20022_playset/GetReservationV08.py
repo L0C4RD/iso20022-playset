@@ -1,7 +1,7 @@
 from . import base_types
-import ReservationQuery6
-import SupplementaryData1
-import MessageHeader9
+from .MessageHeader9 import MessageHeader9
+from .SupplementaryData1 import SupplementaryData1
+from .ReservationQuery6 import ReservationQuery6
 
 class GetReservationV08(base_types._BaseFieldType):
 

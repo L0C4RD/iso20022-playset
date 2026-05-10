@@ -1,68 +1,16 @@
 from . import base_types
-import CorporateActionOption202
-import CorporateActionNarrative19
-import YesNoIndicator
-import AccountIdentification73
-import DocumentIdentification37
-import SupplementaryData1
-import ProtectInstruction7
-import CorporateActionGeneralInformation187
+from .YesNoIndicator import YesNoIndicator
+from .DocumentIdentification37 import DocumentIdentification37
+from .AccountIdentification73 import AccountIdentification73
+from .CorporateActionOption202 import CorporateActionOption202
+from .SupplementaryData1 import SupplementaryData1
+from .CorporateActionGeneralInformation187 import CorporateActionGeneralInformation187
+from .ProtectInstruction7 import ProtectInstruction7
+from .CorporateActionNarrative19 import CorporateActionNarrative19
 
 class CorporateActionInstructionCancellationRequest002V13(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnInstr", "_ChngInstrInd", "_SplmtryData", "_AddtlInf", "_AcctDtls", "_PrtctInstr", "_CorpActnGnlInf", "_InstrId"]
-	@property
-	def CorpActnInstr(self):
-		return self._CorpActnInstr
-
-	@CorpActnInstr.setter
-	def CorpActnInstr(self, value):
-		self._CorpActnInstr = value if type(value) != auto else self.make_default("CorpActnInstr")
-
-	@CorpActnInstr.deleter
-	def CorpActnInstr(self):
-		del self._CorpActnInstr
-		self._CorpActnInstr = None
-
-	@property
-	def ChngInstrInd(self):
-		return self._ChngInstrInd
-
-	@ChngInstrInd.setter
-	def ChngInstrInd(self, value):
-		self._ChngInstrInd = value if type(value) != auto else self.make_default("ChngInstrInd")
-
-	@ChngInstrInd.deleter
-	def ChngInstrInd(self):
-		del self._ChngInstrInd
-		self._ChngInstrInd = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
+	__slots__ = ["_AcctDtls", "_PrtctInstr", "_InstrId", "_SplmtryData", "_ChngInstrInd", "_AddtlInf", "_CorpActnGnlInf", "_CorpActnInstr"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls
@@ -90,6 +38,58 @@ class CorporateActionInstructionCancellationRequest002V13(base_types._BaseFieldT
 		self._PrtctInstr = None
 
 	@property
+	def InstrId(self):
+		return self._InstrId
+
+	@InstrId.setter
+	def InstrId(self, value):
+		self._InstrId = value if type(value) != auto else self.make_default("InstrId")
+
+	@InstrId.deleter
+	def InstrId(self):
+		del self._InstrId
+		self._InstrId = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def ChngInstrInd(self):
+		return self._ChngInstrInd
+
+	@ChngInstrInd.setter
+	def ChngInstrInd(self, value):
+		self._ChngInstrInd = value if type(value) != auto else self.make_default("ChngInstrInd")
+
+	@ChngInstrInd.deleter
+	def ChngInstrInd(self):
+		del self._ChngInstrInd
+		self._ChngInstrInd = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
 	def CorpActnGnlInf(self):
 		return self._CorpActnGnlInf
 
@@ -103,26 +103,26 @@ class CorporateActionInstructionCancellationRequest002V13(base_types._BaseFieldT
 		self._CorpActnGnlInf = None
 
 	@property
-	def InstrId(self):
-		return self._InstrId
+	def CorpActnInstr(self):
+		return self._CorpActnInstr
 
-	@InstrId.setter
-	def InstrId(self, value):
-		self._InstrId = value if type(value) != auto else self.make_default("InstrId")
+	@CorpActnInstr.setter
+	def CorpActnInstr(self, value):
+		self._CorpActnInstr = value if type(value) != auto else self.make_default("CorpActnInstr")
 
-	@InstrId.deleter
-	def InstrId(self):
-		del self._InstrId
-		self._InstrId = None
+	@CorpActnInstr.deleter
+	def CorpActnInstr(self):
+		del self._CorpActnInstr
+		self._CorpActnInstr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CorpActnInstr', type=CorporateActionOption202, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChngInstrInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification73, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctInstr', type=ProtectInstruction7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation187, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrId', type=DocumentIdentification37, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ChngInstrInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation187, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnInstr', type=CorporateActionOption202, min=1, max=1, mutex_group=None, array=False),
 	))
 

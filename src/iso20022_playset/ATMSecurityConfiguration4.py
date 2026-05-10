@@ -1,6 +1,6 @@
 from . import base_types
-import Number
-import Algorithm14Code
+from .Algorithm14Code import Algorithm14Code
+from .Number import Number
 
 class ATMSecurityConfiguration4(base_types._BaseFieldType):
 

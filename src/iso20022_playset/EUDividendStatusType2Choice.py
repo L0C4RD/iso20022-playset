@@ -1,6 +1,6 @@
 from . import base_types
-import EUDividendStatus1Code
-import GenericIdentification47
+from .EUDividendStatus1Code import EUDividendStatus1Code
+from .GenericIdentification47 import GenericIdentification47
 
 class EUDividendStatusType2Choice(base_types._BaseFieldType):
 

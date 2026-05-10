@@ -1,7 +1,7 @@
 from . import base_types
-import CollateralValueCriteriaDefinition4Choice
-import SupplementaryData1
-import MessageHeader3
+from .SupplementaryData1 import SupplementaryData1
+from .MessageHeader3 import MessageHeader3
+from .CollateralValueCriteriaDefinition4Choice import CollateralValueCriteriaDefinition4Choice
 
 class CollateralValueQueryV02(base_types._BaseFieldType):
 

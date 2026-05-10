@@ -1,13 +1,13 @@
 from . import base_types
-import TMSContactLevel2Code
-import ATMCommandParameters1Choice
-import ATMCommand4Code
-import ATMCommandIdentification1
-import ISODateTime
+from .ISODateTime import ISODateTime
+from .ATMCommandParameters1Choice import ATMCommandParameters1Choice
+from .ATMCommandIdentification1 import ATMCommandIdentification1
+from .ATMCommand4Code import ATMCommand4Code
+from .TMSContactLevel2Code import TMSContactLevel2Code
 
 class ATMCommand7(base_types._BaseFieldType):
 
-	__slots__ = ["_DtTm", "_CmdParams", "_CmdId", "_Urgcy", "_Tp"]
+	__slots__ = ["_DtTm", "_CmdId", "_Urgcy", "_CmdParams", "_Tp"]
 	@property
 	def DtTm(self):
 		return self._DtTm
@@ -20,19 +20,6 @@ class ATMCommand7(base_types._BaseFieldType):
 	def DtTm(self):
 		del self._DtTm
 		self._DtTm = None
-
-	@property
-	def CmdParams(self):
-		return self._CmdParams
-
-	@CmdParams.setter
-	def CmdParams(self, value):
-		self._CmdParams = value if type(value) != auto else self.make_default("CmdParams")
-
-	@CmdParams.deleter
-	def CmdParams(self):
-		del self._CmdParams
-		self._CmdParams = None
 
 	@property
 	def CmdId(self):
@@ -61,6 +48,19 @@ class ATMCommand7(base_types._BaseFieldType):
 		self._Urgcy = None
 
 	@property
+	def CmdParams(self):
+		return self._CmdParams
+
+	@CmdParams.setter
+	def CmdParams(self, value):
+		self._CmdParams = value if type(value) != auto else self.make_default("CmdParams")
+
+	@CmdParams.deleter
+	def CmdParams(self):
+		del self._CmdParams
+		self._CmdParams = None
+
+	@property
 	def Tp(self):
 		return self._Tp
 
@@ -75,9 +75,9 @@ class ATMCommand7(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmdParams', type=ATMCommandParameters1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmdId', type=ATMCommandIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Urgcy', type=TMSContactLevel2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmdParams', type=ATMCommandParameters1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ATMCommand4Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

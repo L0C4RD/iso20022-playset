@@ -1,23 +1,10 @@
 from . import base_types
-import ExchangeRateInformation1
-import ActiveCurrencyCode
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .ExchangeRateInformation1 import ExchangeRateInformation1
 
 class CurrencyReference3(base_types._BaseFieldType):
 
-	__slots__ = ["_SrcCcy", "_XchgRateInf", "_TrgtCcy"]
-	@property
-	def SrcCcy(self):
-		return self._SrcCcy
-
-	@SrcCcy.setter
-	def SrcCcy(self, value):
-		self._SrcCcy = value if type(value) != auto else self.make_default("SrcCcy")
-
-	@SrcCcy.deleter
-	def SrcCcy(self):
-		del self._SrcCcy
-		self._SrcCcy = None
-
+	__slots__ = ["_XchgRateInf", "_TrgtCcy", "_SrcCcy"]
 	@property
 	def XchgRateInf(self):
 		return self._XchgRateInf
@@ -44,9 +31,22 @@ class CurrencyReference3(base_types._BaseFieldType):
 		del self._TrgtCcy
 		self._TrgtCcy = None
 
+	@property
+	def SrcCcy(self):
+		return self._SrcCcy
+
+	@SrcCcy.setter
+	def SrcCcy(self, value):
+		self._SrcCcy = value if type(value) != auto else self.make_default("SrcCcy")
+
+	@SrcCcy.deleter
+	def SrcCcy(self):
+		del self._SrcCcy
+		self._SrcCcy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SrcCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRateInf', type=ExchangeRateInformation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TrgtCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrcCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

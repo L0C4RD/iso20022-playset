@@ -1,22 +1,22 @@
 from . import base_types
-import UserInterface2Code
-import Max3NumericText
+from .Max3NumericText import Max3NumericText
+from .UserInterface2Code import UserInterface2Code
 
 class DisplayCapabilities1(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfLines", "_DispTp", "_LineWidth"]
+	__slots__ = ["_LineWidth", "_DispTp", "_NbOfLines"]
 	@property
-	def NbOfLines(self):
-		return self._NbOfLines
+	def LineWidth(self):
+		return self._LineWidth
 
-	@NbOfLines.setter
-	def NbOfLines(self, value):
-		self._NbOfLines = value if type(value) != auto else self.make_default("NbOfLines")
+	@LineWidth.setter
+	def LineWidth(self, value):
+		self._LineWidth = value if type(value) != auto else self.make_default("LineWidth")
 
-	@NbOfLines.deleter
-	def NbOfLines(self):
-		del self._NbOfLines
-		self._NbOfLines = None
+	@LineWidth.deleter
+	def LineWidth(self):
+		del self._LineWidth
+		self._LineWidth = None
 
 	@property
 	def DispTp(self):
@@ -32,21 +32,21 @@ class DisplayCapabilities1(base_types._BaseFieldType):
 		self._DispTp = None
 
 	@property
-	def LineWidth(self):
-		return self._LineWidth
+	def NbOfLines(self):
+		return self._NbOfLines
 
-	@LineWidth.setter
-	def LineWidth(self, value):
-		self._LineWidth = value if type(value) != auto else self.make_default("LineWidth")
+	@NbOfLines.setter
+	def NbOfLines(self, value):
+		self._NbOfLines = value if type(value) != auto else self.make_default("NbOfLines")
 
-	@LineWidth.deleter
-	def LineWidth(self):
-		del self._LineWidth
-		self._LineWidth = None
+	@NbOfLines.deleter
+	def NbOfLines(self):
+		del self._NbOfLines
+		self._NbOfLines = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfLines', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DispTp', type=UserInterface2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LineWidth', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DispTp', type=UserInterface2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfLines', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

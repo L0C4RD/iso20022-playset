@@ -1,6 +1,6 @@
 from . import base_types
-import TradeConfirmationType1Code
-import ISODateTime
+from .TradeConfirmationType1Code import TradeConfirmationType1Code
+from .ISODateTime import ISODateTime
 
 class TradeConfirmation5(base_types._BaseFieldType):
 

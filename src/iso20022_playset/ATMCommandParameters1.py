@@ -1,23 +1,23 @@
 from . import base_types
-import ATMStatus2Code
-import ATMSecurityConfiguration1
-import Max35Text
+from .Max35Text import Max35Text
+from .ATMSecurityConfiguration1 import ATMSecurityConfiguration1
+from .ATMStatus2Code import ATMStatus2Code
 
 class ATMCommandParameters1(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqrdCfgtn", "_SrlNb", "_ReqrdSts"]
+	__slots__ = ["_ReqrdSts", "_SrlNb", "_ReqrdCfgtn"]
 	@property
-	def ReqrdCfgtn(self):
-		return self._ReqrdCfgtn
+	def ReqrdSts(self):
+		return self._ReqrdSts
 
-	@ReqrdCfgtn.setter
-	def ReqrdCfgtn(self, value):
-		self._ReqrdCfgtn = value if type(value) != auto else self.make_default("ReqrdCfgtn")
+	@ReqrdSts.setter
+	def ReqrdSts(self, value):
+		self._ReqrdSts = value if type(value) != auto else self.make_default("ReqrdSts")
 
-	@ReqrdCfgtn.deleter
-	def ReqrdCfgtn(self):
-		del self._ReqrdCfgtn
-		self._ReqrdCfgtn = None
+	@ReqrdSts.deleter
+	def ReqrdSts(self):
+		del self._ReqrdSts
+		self._ReqrdSts = None
 
 	@property
 	def SrlNb(self):
@@ -33,21 +33,21 @@ class ATMCommandParameters1(base_types._BaseFieldType):
 		self._SrlNb = None
 
 	@property
-	def ReqrdSts(self):
-		return self._ReqrdSts
+	def ReqrdCfgtn(self):
+		return self._ReqrdCfgtn
 
-	@ReqrdSts.setter
-	def ReqrdSts(self, value):
-		self._ReqrdSts = value if type(value) != auto else self.make_default("ReqrdSts")
+	@ReqrdCfgtn.setter
+	def ReqrdCfgtn(self, value):
+		self._ReqrdCfgtn = value if type(value) != auto else self.make_default("ReqrdCfgtn")
 
-	@ReqrdSts.deleter
-	def ReqrdSts(self):
-		del self._ReqrdSts
-		self._ReqrdSts = None
+	@ReqrdCfgtn.deleter
+	def ReqrdCfgtn(self):
+		del self._ReqrdCfgtn
+		self._ReqrdCfgtn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqrdCfgtn', type=ATMSecurityConfiguration1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqrdSts', type=ATMStatus2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqrdCfgtn', type=ATMSecurityConfiguration1, min=0, max=1, mutex_group=None, array=False),
 	))
 

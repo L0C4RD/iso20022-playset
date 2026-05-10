@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import SettlementStandingInstructionDatabase1Code
+from .GenericIdentification30 import GenericIdentification30
+from .SettlementStandingInstructionDatabase1Code import SettlementStandingInstructionDatabase1Code
 
 class SettlementStandingInstructionDatabase4Choice(base_types._BaseFieldType):
 

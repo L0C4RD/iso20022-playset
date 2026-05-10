@@ -1,13 +1,26 @@
 from . import base_types
-import AssetHolding3
-import ActiveCurrencyAnd24Amount
-import NonNegativeNumber
-import GenericIdentification168
-import ActiveCurrencyAndAmount
+from .AssetHolding3 import AssetHolding3
+from .NonNegativeNumber import NonNegativeNumber
+from .ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .GenericIdentification168 import GenericIdentification168
 
 class InteroperabilityCCP1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlInitlMrgn", "_AsstHldg", "_GrssNtnlAmt", "_Id", "_TrdsClrd"]
+	__slots__ = ["_Id", "_TtlInitlMrgn", "_AsstHldg", "_GrssNtnlAmt", "_TrdsClrd"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	@property
 	def TtlInitlMrgn(self):
 		return self._TtlInitlMrgn
@@ -48,19 +61,6 @@ class InteroperabilityCCP1(base_types._BaseFieldType):
 		self._GrssNtnlAmt = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def TrdsClrd(self):
 		return self._TrdsClrd
 
@@ -74,10 +74,10 @@ class InteroperabilityCCP1(base_types._BaseFieldType):
 		self._TrdsClrd = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Id', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlInitlMrgn', type=ActiveCurrencyAndAmount, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AsstHldg', type=AssetHolding3, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrssNtnlAmt', type=ActiveCurrencyAnd24Amount, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Id', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrdsClrd', type=NonNegativeNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

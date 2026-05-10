@@ -1,7 +1,7 @@
 from . import base_types
-import ContactIdentification1
-import MICIdentifier
-import PartyIdentification129Choice
+from .ContactIdentification1 import ContactIdentification1
+from .MICIdentifier import MICIdentifier
+from .PartyIdentification129Choice import PartyIdentification129Choice
 
 class MeetingContactPerson3(base_types._BaseFieldType):
 

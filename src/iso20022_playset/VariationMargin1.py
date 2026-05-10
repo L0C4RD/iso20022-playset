@@ -1,11 +1,24 @@
 from . import base_types
-import ThresholdType1Code
-import RoundingMethod1Code
-import ActiveCurrencyAndAmount
+from .RoundingMethod1Code import RoundingMethod1Code
+from .ThresholdType1Code import ThresholdType1Code
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class VariationMargin1(base_types._BaseFieldType):
 
-	__slots__ = ["_ThrshldAmt", "_RndgMtd", "_ThrshldTp", "_MinTrfAmt", "_RndgAmt"]
+	__slots__ = ["_RndgAmt", "_ThrshldAmt", "_RndgMtd", "_MinTrfAmt", "_ThrshldTp"]
+	@property
+	def RndgAmt(self):
+		return self._RndgAmt
+
+	@RndgAmt.setter
+	def RndgAmt(self, value):
+		self._RndgAmt = value if type(value) != auto else self.make_default("RndgAmt")
+
+	@RndgAmt.deleter
+	def RndgAmt(self):
+		del self._RndgAmt
+		self._RndgAmt = None
+
 	@property
 	def ThrshldAmt(self):
 		return self._ThrshldAmt
@@ -33,19 +46,6 @@ class VariationMargin1(base_types._BaseFieldType):
 		self._RndgMtd = None
 
 	@property
-	def ThrshldTp(self):
-		return self._ThrshldTp
-
-	@ThrshldTp.setter
-	def ThrshldTp(self, value):
-		self._ThrshldTp = value if type(value) != auto else self.make_default("ThrshldTp")
-
-	@ThrshldTp.deleter
-	def ThrshldTp(self):
-		del self._ThrshldTp
-		self._ThrshldTp = None
-
-	@property
 	def MinTrfAmt(self):
 		return self._MinTrfAmt
 
@@ -59,23 +59,23 @@ class VariationMargin1(base_types._BaseFieldType):
 		self._MinTrfAmt = None
 
 	@property
-	def RndgAmt(self):
-		return self._RndgAmt
+	def ThrshldTp(self):
+		return self._ThrshldTp
 
-	@RndgAmt.setter
-	def RndgAmt(self, value):
-		self._RndgAmt = value if type(value) != auto else self.make_default("RndgAmt")
+	@ThrshldTp.setter
+	def ThrshldTp(self, value):
+		self._ThrshldTp = value if type(value) != auto else self.make_default("ThrshldTp")
 
-	@RndgAmt.deleter
-	def RndgAmt(self):
-		del self._RndgAmt
-		self._RndgAmt = None
+	@ThrshldTp.deleter
+	def ThrshldTp(self):
+		del self._ThrshldTp
+		self._ThrshldTp = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RndgAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ThrshldAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RndgMtd', type=RoundingMethod1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ThrshldTp', type=ThresholdType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinTrfAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RndgAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ThrshldTp', type=ThresholdType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

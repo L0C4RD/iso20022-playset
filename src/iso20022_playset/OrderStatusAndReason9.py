@@ -1,24 +1,11 @@
 from . import base_types
-import Max35Text
-import PartyIdentification113
-import CancellationStatus22Choice
+from .CancellationStatus22Choice import CancellationStatus22Choice
+from .PartyIdentification113 import PartyIdentification113
+from .Max35Text import Max35Text
 
 class OrderStatusAndReason9(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlSts", "_StsInitr", "_MstrRef"]
-	@property
-	def CxlSts(self):
-		return self._CxlSts
-
-	@CxlSts.setter
-	def CxlSts(self, value):
-		self._CxlSts = value if type(value) != auto else self.make_default("CxlSts")
-
-	@CxlSts.deleter
-	def CxlSts(self):
-		del self._CxlSts
-		self._CxlSts = None
-
+	__slots__ = ["_StsInitr", "_MstrRef", "_CxlSts"]
 	@property
 	def StsInitr(self):
 		return self._StsInitr
@@ -45,9 +32,22 @@ class OrderStatusAndReason9(base_types._BaseFieldType):
 		del self._MstrRef
 		self._MstrRef = None
 
+	@property
+	def CxlSts(self):
+		return self._CxlSts
+
+	@CxlSts.setter
+	def CxlSts(self, value):
+		self._CxlSts = value if type(value) != auto else self.make_default("CxlSts")
+
+	@CxlSts.deleter
+	def CxlSts(self):
+		del self._CxlSts
+		self._CxlSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlSts', type=CancellationStatus22Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlSts', type=CancellationStatus22Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

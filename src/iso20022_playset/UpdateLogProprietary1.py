@@ -1,22 +1,22 @@
 from . import base_types
-import Max350Text
-import Max35Text
+from .Max35Text import Max35Text
+from .Max350Text import Max350Text
 
 class UpdateLogProprietary1(base_types._BaseFieldType):
 
-	__slots__ = ["_FldNm", "_NewFldVal", "_OdFldVal"]
+	__slots__ = ["_OdFldVal", "_NewFldVal", "_FldNm"]
 	@property
-	def FldNm(self):
-		return self._FldNm
+	def OdFldVal(self):
+		return self._OdFldVal
 
-	@FldNm.setter
-	def FldNm(self, value):
-		self._FldNm = value if type(value) != auto else self.make_default("FldNm")
+	@OdFldVal.setter
+	def OdFldVal(self, value):
+		self._OdFldVal = value if type(value) != auto else self.make_default("OdFldVal")
 
-	@FldNm.deleter
-	def FldNm(self):
-		del self._FldNm
-		self._FldNm = None
+	@OdFldVal.deleter
+	def OdFldVal(self):
+		del self._OdFldVal
+		self._OdFldVal = None
 
 	@property
 	def NewFldVal(self):
@@ -32,21 +32,21 @@ class UpdateLogProprietary1(base_types._BaseFieldType):
 		self._NewFldVal = None
 
 	@property
-	def OdFldVal(self):
-		return self._OdFldVal
+	def FldNm(self):
+		return self._FldNm
 
-	@OdFldVal.setter
-	def OdFldVal(self, value):
-		self._OdFldVal = value if type(value) != auto else self.make_default("OdFldVal")
+	@FldNm.setter
+	def FldNm(self, value):
+		self._FldNm = value if type(value) != auto else self.make_default("FldNm")
 
-	@OdFldVal.deleter
-	def OdFldVal(self):
-		del self._OdFldVal
-		self._OdFldVal = None
+	@FldNm.deleter
+	def FldNm(self):
+		del self._FldNm
+		self._FldNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FldNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewFldVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OdFldVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewFldVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FldNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-import IntraPositionMovementInstructionV07
+from .IntraPositionMovementInstructionV07 import IntraPositionMovementInstructionV07
 
 class SEMT_013_001_07():
 

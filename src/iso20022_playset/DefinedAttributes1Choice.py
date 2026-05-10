@@ -1,23 +1,10 @@
 from . import base_types
-import FinancialInstrumentAttributes90
-import FinancialInstrumentAttributes89
+from .FinancialInstrumentAttributes90 import FinancialInstrumentAttributes90
+from .FinancialInstrumentAttributes89 import FinancialInstrumentAttributes89
 
 class DefinedAttributes1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDfndAttrbts", "_QtyDfndAttrbts"]
-	@property
-	def ValDfndAttrbts(self):
-		return self._ValDfndAttrbts
-
-	@ValDfndAttrbts.setter
-	def ValDfndAttrbts(self, value):
-		self._ValDfndAttrbts = value if type(value) != auto else self.make_default("ValDfndAttrbts")
-
-	@ValDfndAttrbts.deleter
-	def ValDfndAttrbts(self):
-		del self._ValDfndAttrbts
-		self._ValDfndAttrbts = None
-
+	__slots__ = ["_QtyDfndAttrbts", "_ValDfndAttrbts"]
 	@property
 	def QtyDfndAttrbts(self):
 		return self._QtyDfndAttrbts
@@ -31,8 +18,21 @@ class DefinedAttributes1Choice(base_types._BaseFieldType):
 		del self._QtyDfndAttrbts
 		self._QtyDfndAttrbts = None
 
+	@property
+	def ValDfndAttrbts(self):
+		return self._ValDfndAttrbts
+
+	@ValDfndAttrbts.setter
+	def ValDfndAttrbts(self, value):
+		self._ValDfndAttrbts = value if type(value) != auto else self.make_default("ValDfndAttrbts")
+
+	@ValDfndAttrbts.deleter
+	def ValDfndAttrbts(self):
+		del self._ValDfndAttrbts
+		self._ValDfndAttrbts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValDfndAttrbts', type=FinancialInstrumentAttributes90, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='QtyDfndAttrbts', type=FinancialInstrumentAttributes89, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ValDfndAttrbts', type=FinancialInstrumentAttributes90, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,12 +1,25 @@
 from . import base_types
-import DebtorActivationCancellationReason3
-import SupplementaryData1
-import OriginalBusinessInstruction1
-import OriginalActivation3Choice
+from .OriginalBusinessInstruction1 import OriginalBusinessInstruction1
+from .OriginalActivation3Choice import OriginalActivation3Choice
+from .SupplementaryData1 import SupplementaryData1
+from .DebtorActivationCancellationReason3 import DebtorActivationCancellationReason3
 
 class DebtorActivationCancellation3(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_CxlRsn", "_OrgnlBizInstr", "_OrgnlActvtn"]
+	__slots__ = ["_OrgnlBizInstr", "_SplmtryData", "_CxlRsn", "_OrgnlActvtn"]
+	@property
+	def OrgnlBizInstr(self):
+		return self._OrgnlBizInstr
+
+	@OrgnlBizInstr.setter
+	def OrgnlBizInstr(self, value):
+		self._OrgnlBizInstr = value if type(value) != auto else self.make_default("OrgnlBizInstr")
+
+	@OrgnlBizInstr.deleter
+	def OrgnlBizInstr(self):
+		del self._OrgnlBizInstr
+		self._OrgnlBizInstr = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -34,19 +47,6 @@ class DebtorActivationCancellation3(base_types._BaseFieldType):
 		self._CxlRsn = None
 
 	@property
-	def OrgnlBizInstr(self):
-		return self._OrgnlBizInstr
-
-	@OrgnlBizInstr.setter
-	def OrgnlBizInstr(self, value):
-		self._OrgnlBizInstr = value if type(value) != auto else self.make_default("OrgnlBizInstr")
-
-	@OrgnlBizInstr.deleter
-	def OrgnlBizInstr(self):
-		del self._OrgnlBizInstr
-		self._OrgnlBizInstr = None
-
-	@property
 	def OrgnlActvtn(self):
 		return self._OrgnlActvtn
 
@@ -60,9 +60,9 @@ class DebtorActivationCancellation3(base_types._BaseFieldType):
 		self._OrgnlActvtn = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OrgnlBizInstr', type=OriginalBusinessInstruction1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CxlRsn', type=DebtorActivationCancellationReason3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlBizInstr', type=OriginalBusinessInstruction1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlActvtn', type=OriginalActivation3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

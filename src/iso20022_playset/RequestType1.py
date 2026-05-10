@@ -1,11 +1,24 @@
 from . import base_types
-import Max500Text
-import TransactionRequestType1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .TransactionRequestType1Code import TransactionRequestType1Code
+from .Max500Text import Max500Text
 
 class RequestType1(base_types._BaseFieldType):
 
-	__slots__ = ["_Nb", "_Tp", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Nb", "_Tp"]
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	@property
 	def Nb(self):
 		return self._Nb
@@ -32,22 +45,9 @@ class RequestType1(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=TransactionRequestType1Code, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

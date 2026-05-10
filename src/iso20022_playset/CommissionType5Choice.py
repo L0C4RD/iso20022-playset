@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import CommissionType6Code
+from .GenericIdentification47 import GenericIdentification47
+from .CommissionType6Code import CommissionType6Code
 
 class CommissionType5Choice(base_types._BaseFieldType):
 

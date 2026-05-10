@@ -1,5 +1,5 @@
 from . import base_types
-import Max16Text
+from .Max16Text import Max16Text
 
 class QueueTransactionIdentification1(base_types._BaseFieldType):
 

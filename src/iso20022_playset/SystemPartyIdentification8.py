@@ -1,5 +1,5 @@
 from . import base_types
-import PartyIdentification136
+from .PartyIdentification136 import PartyIdentification136
 
 class SystemPartyIdentification8(base_types._BaseFieldType):
 

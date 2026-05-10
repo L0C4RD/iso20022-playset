@@ -1,12 +1,12 @@
 from . import base_types
-import DateAndDateTimeChoice
-import Max2000Text
-import AutoExtension1
-import YesNoIndicator
+from .DateAndDateTimeChoice import DateAndDateTimeChoice
+from .Max2000Text import Max2000Text
+from .AutoExtension1 import AutoExtension1
+from .YesNoIndicator import YesNoIndicator
 
 class ExpiryTerms2(base_types._BaseFieldType):
 
-	__slots__ = ["_Cond", "_OpnEnddInd", "_DtTm", "_AutoXtnsn"]
+	__slots__ = ["_Cond", "_AutoXtnsn", "_OpnEnddInd", "_DtTm"]
 	@property
 	def Cond(self):
 		return self._Cond
@@ -19,6 +19,19 @@ class ExpiryTerms2(base_types._BaseFieldType):
 	def Cond(self):
 		del self._Cond
 		self._Cond = None
+
+	@property
+	def AutoXtnsn(self):
+		return self._AutoXtnsn
+
+	@AutoXtnsn.setter
+	def AutoXtnsn(self, value):
+		self._AutoXtnsn = value if type(value) != auto else self.make_default("AutoXtnsn")
+
+	@AutoXtnsn.deleter
+	def AutoXtnsn(self):
+		del self._AutoXtnsn
+		self._AutoXtnsn = None
 
 	@property
 	def OpnEnddInd(self):
@@ -46,23 +59,10 @@ class ExpiryTerms2(base_types._BaseFieldType):
 		del self._DtTm
 		self._DtTm = None
 
-	@property
-	def AutoXtnsn(self):
-		return self._AutoXtnsn
-
-	@AutoXtnsn.setter
-	def AutoXtnsn(self, value):
-		self._AutoXtnsn = value if type(value) != auto else self.make_default("AutoXtnsn")
-
-	@AutoXtnsn.deleter
-	def AutoXtnsn(self):
-		del self._AutoXtnsn
-		self._AutoXtnsn = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cond', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AutoXtnsn', type=AutoExtension1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OpnEnddInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AutoXtnsn', type=AutoExtension1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,10 +1,23 @@
 from . import base_types
-import Max4AlphaNumericText
-import RestrictedFINXMax30Text
+from .Max4AlphaNumericText import Max4AlphaNumericText
+from .RestrictedFINXMax30Text import RestrictedFINXMax30Text
 
 class SecuritiesCertificate5(base_types._BaseFieldType):
 
-	__slots__ = ["_SchmeNm", "_Nb", "_Issr"]
+	__slots__ = ["_Issr", "_SchmeNm", "_Nb"]
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
 	@property
 	def SchmeNm(self):
 		return self._SchmeNm
@@ -31,22 +44,9 @@ class SecuritiesCertificate5(base_types._BaseFieldType):
 		del self._Nb
 		self._Nb = None
 
-	@property
-	def Issr(self):
-		return self._Issr
-
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
-
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Issr', type=Max4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=Max4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=RestrictedFINXMax30Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=Max4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-import SecurityCreationRequestV01
+from .SecurityCreationRequestV01 import SecurityCreationRequestV01
 
 class REDA_006_001_01():
 

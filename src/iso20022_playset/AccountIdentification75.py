@@ -1,12 +1,12 @@
 from . import base_types
-import RestrictedFINXMax35Text
-import PartyIdentification136Choice
-import SafekeepingPlaceFormat51Choice
-import RestrictedFINXMax140Text
+from .PartyIdentification136Choice import PartyIdentification136Choice
+from .RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from .RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from .SafekeepingPlaceFormat51Choice import SafekeepingPlaceFormat51Choice
 
 class AccountIdentification75(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_SfkpgAcct", "_BlckChainAdrOrWllt", "_SfkpgPlc"]
+	__slots__ = ["_AcctOwnr", "_SfkpgPlc", "_BlckChainAdrOrWllt", "_SfkpgAcct"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
@@ -21,17 +21,17 @@ class AccountIdentification75(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
 
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
 
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -47,22 +47,22 @@ class AccountIdentification75(base_types._BaseFieldType):
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
 
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != auto else self.make_default("SfkpgPlc")
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
 
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat51Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

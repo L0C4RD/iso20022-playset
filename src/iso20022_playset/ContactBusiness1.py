@@ -1,38 +1,51 @@
 from . import base_types
-import Max256Text
-import ISO2ALanguageCode
-import PhoneNumber
-import Max35Text
-import Max70Text
+from .Max35Text import Max35Text
+from .Max70Text import Max70Text
+from .PhoneNumber import PhoneNumber
+from .Max256Text import Max256Text
+from .ISO2ALanguageCode import ISO2ALanguageCode
 
 class ContactBusiness1(base_types._BaseFieldType):
 
-	__slots__ = ["_URL", "_LastNm", "_Fax", "_TollFreePhne", "_PrprtyPhne", "_GvnNm", "_Nm", "_Phne", "_Email", "_Lang", "_MddlNm"]
+	__slots__ = ["_Phne", "_PrprtyPhne", "_Lang", "_Fax", "_URL", "_MddlNm", "_LastNm", "_GvnNm", "_Nm", "_TollFreePhne", "_Email"]
 	@property
-	def URL(self):
-		return self._URL
+	def Phne(self):
+		return self._Phne
 
-	@URL.setter
-	def URL(self, value):
-		self._URL = value if type(value) != auto else self.make_default("URL")
+	@Phne.setter
+	def Phne(self, value):
+		self._Phne = value if type(value) != auto else self.make_default("Phne")
 
-	@URL.deleter
-	def URL(self):
-		del self._URL
-		self._URL = None
+	@Phne.deleter
+	def Phne(self):
+		del self._Phne
+		self._Phne = None
 
 	@property
-	def LastNm(self):
-		return self._LastNm
+	def PrprtyPhne(self):
+		return self._PrprtyPhne
 
-	@LastNm.setter
-	def LastNm(self, value):
-		self._LastNm = value if type(value) != auto else self.make_default("LastNm")
+	@PrprtyPhne.setter
+	def PrprtyPhne(self, value):
+		self._PrprtyPhne = value if type(value) != auto else self.make_default("PrprtyPhne")
 
-	@LastNm.deleter
-	def LastNm(self):
-		del self._LastNm
-		self._LastNm = None
+	@PrprtyPhne.deleter
+	def PrprtyPhne(self):
+		del self._PrprtyPhne
+		self._PrprtyPhne = None
+
+	@property
+	def Lang(self):
+		return self._Lang
+
+	@Lang.setter
+	def Lang(self, value):
+		self._Lang = value if type(value) != auto else self.make_default("Lang")
+
+	@Lang.deleter
+	def Lang(self):
+		del self._Lang
+		self._Lang = None
 
 	@property
 	def Fax(self):
@@ -48,30 +61,43 @@ class ContactBusiness1(base_types._BaseFieldType):
 		self._Fax = None
 
 	@property
-	def TollFreePhne(self):
-		return self._TollFreePhne
+	def URL(self):
+		return self._URL
 
-	@TollFreePhne.setter
-	def TollFreePhne(self, value):
-		self._TollFreePhne = value if type(value) != auto else self.make_default("TollFreePhne")
+	@URL.setter
+	def URL(self, value):
+		self._URL = value if type(value) != auto else self.make_default("URL")
 
-	@TollFreePhne.deleter
-	def TollFreePhne(self):
-		del self._TollFreePhne
-		self._TollFreePhne = None
+	@URL.deleter
+	def URL(self):
+		del self._URL
+		self._URL = None
 
 	@property
-	def PrprtyPhne(self):
-		return self._PrprtyPhne
+	def MddlNm(self):
+		return self._MddlNm
 
-	@PrprtyPhne.setter
-	def PrprtyPhne(self, value):
-		self._PrprtyPhne = value if type(value) != auto else self.make_default("PrprtyPhne")
+	@MddlNm.setter
+	def MddlNm(self, value):
+		self._MddlNm = value if type(value) != auto else self.make_default("MddlNm")
 
-	@PrprtyPhne.deleter
-	def PrprtyPhne(self):
-		del self._PrprtyPhne
-		self._PrprtyPhne = None
+	@MddlNm.deleter
+	def MddlNm(self):
+		del self._MddlNm
+		self._MddlNm = None
+
+	@property
+	def LastNm(self):
+		return self._LastNm
+
+	@LastNm.setter
+	def LastNm(self, value):
+		self._LastNm = value if type(value) != auto else self.make_default("LastNm")
+
+	@LastNm.deleter
+	def LastNm(self):
+		del self._LastNm
+		self._LastNm = None
 
 	@property
 	def GvnNm(self):
@@ -100,17 +126,17 @@ class ContactBusiness1(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def Phne(self):
-		return self._Phne
+	def TollFreePhne(self):
+		return self._TollFreePhne
 
-	@Phne.setter
-	def Phne(self, value):
-		self._Phne = value if type(value) != auto else self.make_default("Phne")
+	@TollFreePhne.setter
+	def TollFreePhne(self, value):
+		self._TollFreePhne = value if type(value) != auto else self.make_default("TollFreePhne")
 
-	@Phne.deleter
-	def Phne(self):
-		del self._Phne
-		self._Phne = None
+	@TollFreePhne.deleter
+	def TollFreePhne(self):
+		del self._TollFreePhne
+		self._TollFreePhne = None
 
 	@property
 	def Email(self):
@@ -125,43 +151,17 @@ class ContactBusiness1(base_types._BaseFieldType):
 		del self._Email
 		self._Email = None
 
-	@property
-	def Lang(self):
-		return self._Lang
-
-	@Lang.setter
-	def Lang(self, value):
-		self._Lang = value if type(value) != auto else self.make_default("Lang")
-
-	@Lang.deleter
-	def Lang(self):
-		del self._Lang
-		self._Lang = None
-
-	@property
-	def MddlNm(self):
-		return self._MddlNm
-
-	@MddlNm.setter
-	def MddlNm(self, value):
-		self._MddlNm = value if type(value) != auto else self.make_default("MddlNm")
-
-	@MddlNm.deleter
-	def MddlNm(self):
-		del self._MddlNm
-		self._MddlNm = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fax', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TollFreePhne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Phne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrprtyPhne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lang', type=ISO2ALanguageCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fax', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Phne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TollFreePhne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lang', type=ISO2ALanguageCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

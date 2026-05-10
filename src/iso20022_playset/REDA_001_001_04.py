@@ -1,5 +1,5 @@
 from . import base_types
-import PriceReportV04
+from .PriceReportV04 import PriceReportV04
 
 class REDA_001_001_04():
 

@@ -1,6 +1,6 @@
 from . import base_types
-import UnitOfMeasure11Code
-import DecimalNumber
+from .DecimalNumber import DecimalNumber
+from .UnitOfMeasure11Code import UnitOfMeasure11Code
 
 class Quantity17(base_types._BaseFieldType):
 

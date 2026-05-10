@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import SettlingCapacity1Code
+from .SettlingCapacity1Code import SettlingCapacity1Code
+from .GenericIdentification30 import GenericIdentification30
 
 class SettlingCapacity9Choice(base_types._BaseFieldType):
 

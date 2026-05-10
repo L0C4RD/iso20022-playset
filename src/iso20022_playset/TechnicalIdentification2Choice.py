@@ -1,23 +1,10 @@
 from . import base_types
-import Max256Text
-import BICFIDec2014Identifier
+from .BICFIDec2014Identifier import BICFIDec2014Identifier
+from .Max256Text import Max256Text
 
 class TechnicalIdentification2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_BICFI", "_TechAdr"]
-	@property
-	def BICFI(self):
-		return self._BICFI
-
-	@BICFI.setter
-	def BICFI(self, value):
-		self._BICFI = value if type(value) != auto else self.make_default("BICFI")
-
-	@BICFI.deleter
-	def BICFI(self):
-		del self._BICFI
-		self._BICFI = None
-
+	__slots__ = ["_TechAdr", "_BICFI"]
 	@property
 	def TechAdr(self):
 		return self._TechAdr
@@ -31,8 +18,21 @@ class TechnicalIdentification2Choice(base_types._BaseFieldType):
 		del self._TechAdr
 		self._TechAdr = None
 
+	@property
+	def BICFI(self):
+		return self._BICFI
+
+	@BICFI.setter
+	def BICFI(self, value):
+		self._BICFI = value if type(value) != auto else self.make_default("BICFI")
+
+	@BICFI.deleter
+	def BICFI(self):
+		del self._BICFI
+		self._BICFI = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TechAdr', type=Max256Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

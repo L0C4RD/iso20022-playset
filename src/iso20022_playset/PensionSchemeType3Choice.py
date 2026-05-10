@@ -1,6 +1,6 @@
 from . import base_types
-import PensionSchemeType3Code
-import GenericIdentification36
+from .GenericIdentification36 import GenericIdentification36
+from .PensionSchemeType3Code import PensionSchemeType3Code
 
 class PensionSchemeType3Choice(base_types._BaseFieldType):
 

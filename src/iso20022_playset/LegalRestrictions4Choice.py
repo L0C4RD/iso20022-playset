@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import LegalRestrictions1Code
+from .GenericIdentification30 import GenericIdentification30
+from .LegalRestrictions1Code import LegalRestrictions1Code
 
 class LegalRestrictions4Choice(base_types._BaseFieldType):
 

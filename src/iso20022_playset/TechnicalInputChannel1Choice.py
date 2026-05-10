@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalTechnicalInputChannel1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ExternalTechnicalInputChannel1Code import ExternalTechnicalInputChannel1Code
 
 class TechnicalInputChannel1Choice(base_types._BaseFieldType):
 

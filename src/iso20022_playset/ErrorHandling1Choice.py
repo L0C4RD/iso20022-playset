@@ -1,6 +1,6 @@
 from . import base_types
-import Max4AlphaNumericText
-import ErrorHandling1Code
+from .Max4AlphaNumericText import Max4AlphaNumericText
+from .ErrorHandling1Code import ErrorHandling1Code
 
 class ErrorHandling1Choice(base_types._BaseFieldType):
 

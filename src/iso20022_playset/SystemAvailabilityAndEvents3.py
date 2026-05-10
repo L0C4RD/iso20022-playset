@@ -1,12 +1,12 @@
 from . import base_types
-import TimePeriod1
-import SystemEvent3
-import ActiveCurrencyCode
-import SystemClosure2
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .SystemEvent3 import SystemEvent3
+from .SystemClosure2 import SystemClosure2
+from .TimePeriod1 import TimePeriod1
 
 class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 
-	__slots__ = ["_ClsrInf", "_SysCcy", "_Evt", "_SsnPrd"]
+	__slots__ = ["_ClsrInf", "_Evt", "_SysCcy", "_SsnPrd"]
 	@property
 	def ClsrInf(self):
 		return self._ClsrInf
@@ -21,19 +21,6 @@ class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 		self._ClsrInf = None
 
 	@property
-	def SysCcy(self):
-		return self._SysCcy
-
-	@SysCcy.setter
-	def SysCcy(self, value):
-		self._SysCcy = value if type(value) != auto else self.make_default("SysCcy")
-
-	@SysCcy.deleter
-	def SysCcy(self):
-		del self._SysCcy
-		self._SysCcy = None
-
-	@property
 	def Evt(self):
 		return self._Evt
 
@@ -45,6 +32,19 @@ class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 	def Evt(self):
 		del self._Evt
 		self._Evt = None
+
+	@property
+	def SysCcy(self):
+		return self._SysCcy
+
+	@SysCcy.setter
+	def SysCcy(self, value):
+		self._SysCcy = value if type(value) != auto else self.make_default("SysCcy")
+
+	@SysCcy.deleter
+	def SysCcy(self):
+		del self._SysCcy
+		self._SysCcy = None
 
 	@property
 	def SsnPrd(self):
@@ -61,8 +61,8 @@ class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClsrInf', type=SystemClosure2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SysCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Evt', type=SystemEvent3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SysCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SsnPrd', type=TimePeriod1, min=0, max=1, mutex_group=None, array=False),
 	))
 

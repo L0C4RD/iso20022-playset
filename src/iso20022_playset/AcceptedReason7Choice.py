@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification36
-import ExternalAcceptedReason1Code
+from .GenericIdentification36 import GenericIdentification36
+from .ExternalAcceptedReason1Code import ExternalAcceptedReason1Code
 
 class AcceptedReason7Choice(base_types._BaseFieldType):
 

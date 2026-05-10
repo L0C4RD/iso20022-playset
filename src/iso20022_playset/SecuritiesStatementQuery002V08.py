@@ -1,27 +1,27 @@
 from . import base_types
-import BlockChainAddressWallet7
-import SecuritiesAccount30
-import Statement84
-import DocumentNumber14
-import PartyIdentification156
-import SupplementaryData1
-import AdditionalQueryParameters14
+from .Statement84 import Statement84
+from .AdditionalQueryParameters14 import AdditionalQueryParameters14
+from .SupplementaryData1 import SupplementaryData1
+from .BlockChainAddressWallet7 import BlockChainAddressWallet7
+from .DocumentNumber14 import DocumentNumber14
+from .SecuritiesAccount30 import SecuritiesAccount30
+from .PartyIdentification156 import PartyIdentification156
 
 class SecuritiesStatementQuery002V08(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_AcctOwnr", "_SplmtryData", "_StmtGnlDtls", "_SfkpgAcct", "_StmtReqd", "_AddtlQryParams"]
+	__slots__ = ["_StmtReqd", "_AcctOwnr", "_SplmtryData", "_SfkpgAcct", "_StmtGnlDtls", "_BlckChainAdrOrWllt", "_AddtlQryParams"]
 	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
+	def StmtReqd(self):
+		return self._StmtReqd
 
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+	@StmtReqd.setter
+	def StmtReqd(self, value):
+		self._StmtReqd = value if type(value) != auto else self.make_default("StmtReqd")
 
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+	@StmtReqd.deleter
+	def StmtReqd(self):
+		del self._StmtReqd
+		self._StmtReqd = None
 
 	@property
 	def AcctOwnr(self):
@@ -50,19 +50,6 @@ class SecuritiesStatementQuery002V08(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def StmtGnlDtls(self):
-		return self._StmtGnlDtls
-
-	@StmtGnlDtls.setter
-	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != auto else self.make_default("StmtGnlDtls")
-
-	@StmtGnlDtls.deleter
-	def StmtGnlDtls(self):
-		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
-
-	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
 
@@ -76,17 +63,30 @@ class SecuritiesStatementQuery002V08(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
-	def StmtReqd(self):
-		return self._StmtReqd
+	def StmtGnlDtls(self):
+		return self._StmtGnlDtls
 
-	@StmtReqd.setter
-	def StmtReqd(self, value):
-		self._StmtReqd = value if type(value) != auto else self.make_default("StmtReqd")
+	@StmtGnlDtls.setter
+	def StmtGnlDtls(self, value):
+		self._StmtGnlDtls = value if type(value) != auto else self.make_default("StmtGnlDtls")
 
-	@StmtReqd.deleter
-	def StmtReqd(self):
-		del self._StmtReqd
-		self._StmtReqd = None
+	@StmtGnlDtls.deleter
+	def StmtGnlDtls(self):
+		del self._StmtGnlDtls
+		self._StmtGnlDtls = None
+
+	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
 
 	@property
 	def AddtlQryParams(self):
@@ -102,12 +102,12 @@ class SecuritiesStatementQuery002V08(base_types._BaseFieldType):
 		self._AddtlQryParams = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtReqd', type=DocumentNumber14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StmtGnlDtls', type=Statement84, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtReqd', type=DocumentNumber14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtGnlDtls', type=Statement84, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlQryParams', type=AdditionalQueryParameters14, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
-import PlusOrMinusIndicator
-import ActiveCurrencyCode
-import ImpliedCurrencyAndAmount
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .PlusOrMinusIndicator import PlusOrMinusIndicator
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class AmountAndDirection93(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Sgn", "_Ccy"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_Sgn", "_Ccy", "_Amt"]
 	@property
 	def Sgn(self):
 		return self._Sgn
@@ -45,9 +32,22 @@ class AmountAndDirection93(base_types._BaseFieldType):
 		del self._Ccy
 		self._Ccy = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

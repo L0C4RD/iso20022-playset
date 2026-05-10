@@ -1,7 +1,7 @@
 from . import base_types
-import RequestType3Choice
-import Max35Text
-import ISODateTime
+from .Max35Text import Max35Text
+from .ISODateTime import ISODateTime
+from .RequestType3Choice import RequestType3Choice
 
 class MessageHeader4(base_types._BaseFieldType):
 

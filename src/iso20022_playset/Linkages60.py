@@ -1,12 +1,12 @@
 from . import base_types
-import ProcessingPosition10Choice
-import DocumentNumber6Choice
-import PartyIdentification136Choice
-import References50Choice
+from .PartyIdentification136Choice import PartyIdentification136Choice
+from .References50Choice import References50Choice
+from .ProcessingPosition10Choice import ProcessingPosition10Choice
+from .DocumentNumber6Choice import DocumentNumber6Choice
 
 class Linkages60(base_types._BaseFieldType):
 
-	__slots__ = ["_RefOwnr", "_PrcgPos", "_MsgNb", "_Ref"]
+	__slots__ = ["_RefOwnr", "_PrcgPos", "_Ref", "_MsgNb"]
 	@property
 	def RefOwnr(self):
 		return self._RefOwnr
@@ -34,19 +34,6 @@ class Linkages60(base_types._BaseFieldType):
 		self._PrcgPos = None
 
 	@property
-	def MsgNb(self):
-		return self._MsgNb
-
-	@MsgNb.setter
-	def MsgNb(self, value):
-		self._MsgNb = value if type(value) != auto else self.make_default("MsgNb")
-
-	@MsgNb.deleter
-	def MsgNb(self):
-		del self._MsgNb
-		self._MsgNb = None
-
-	@property
 	def Ref(self):
 		return self._Ref
 
@@ -59,10 +46,23 @@ class Linkages60(base_types._BaseFieldType):
 		del self._Ref
 		self._Ref = None
 
+	@property
+	def MsgNb(self):
+		return self._MsgNb
+
+	@MsgNb.setter
+	def MsgNb(self, value):
+		self._MsgNb = value if type(value) != auto else self.make_default("MsgNb")
+
+	@MsgNb.deleter
+	def MsgNb(self):
+		del self._MsgNb
+		self._MsgNb = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RefOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition10Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgNb', type=DocumentNumber6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=References50Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgNb', type=DocumentNumber6Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

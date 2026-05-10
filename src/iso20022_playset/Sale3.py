@@ -1,12 +1,12 @@
 from . import base_types
-import LoyaltyProgramme4
-import Adjustment13
-import Max35Text
-import SaleItem4
+from .Max35Text import Max35Text
+from .Adjustment13 import Adjustment13
+from .LoyaltyProgramme4 import LoyaltyProgramme4
+from .SaleItem4 import SaleItem4
 
 class Sale3(base_types._BaseFieldType):
 
-	__slots__ = ["_SummryCmmdtyId", "_LineItm", "_LltyPrgrmm", "_Adjstmnt"]
+	__slots__ = ["_SummryCmmdtyId", "_LineItm", "_Adjstmnt", "_LltyPrgrmm"]
 	@property
 	def SummryCmmdtyId(self):
 		return self._SummryCmmdtyId
@@ -34,19 +34,6 @@ class Sale3(base_types._BaseFieldType):
 		self._LineItm = None
 
 	@property
-	def LltyPrgrmm(self):
-		return self._LltyPrgrmm
-
-	@LltyPrgrmm.setter
-	def LltyPrgrmm(self, value):
-		self._LltyPrgrmm = value if type(value) != auto else self.make_default("LltyPrgrmm")
-
-	@LltyPrgrmm.deleter
-	def LltyPrgrmm(self):
-		del self._LltyPrgrmm
-		self._LltyPrgrmm = None
-
-	@property
 	def Adjstmnt(self):
 		return self._Adjstmnt
 
@@ -59,10 +46,23 @@ class Sale3(base_types._BaseFieldType):
 		del self._Adjstmnt
 		self._Adjstmnt = None
 
+	@property
+	def LltyPrgrmm(self):
+		return self._LltyPrgrmm
+
+	@LltyPrgrmm.setter
+	def LltyPrgrmm(self, value):
+		self._LltyPrgrmm = value if type(value) != auto else self.make_default("LltyPrgrmm")
+
+	@LltyPrgrmm.deleter
+	def LltyPrgrmm(self):
+		del self._LltyPrgrmm
+		self._LltyPrgrmm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SummryCmmdtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LineItm', type=SaleItem4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LltyPrgrmm', type=LoyaltyProgramme4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Adjstmnt', type=Adjustment13, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LltyPrgrmm', type=LoyaltyProgramme4, min=0, max=1, mutex_group=None, array=False),
 	))
 

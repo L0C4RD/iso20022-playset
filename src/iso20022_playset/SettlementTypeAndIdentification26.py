@@ -1,23 +1,23 @@
 from . import base_types
-import RestrictedFINXMax16Text
-import DateAndDateTime2Choice
-import DeliveryReceiptType2Code
+from .DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class SettlementTypeAndIdentification26(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmDt", "_TxId", "_Pmt"]
+	__slots__ = ["_Pmt", "_TxId", "_SttlmDt"]
 	@property
-	def SttlmDt(self):
-		return self._SttlmDt
+	def Pmt(self):
+		return self._Pmt
 
-	@SttlmDt.setter
-	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != auto else self.make_default("SttlmDt")
+	@Pmt.setter
+	def Pmt(self, value):
+		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
 
-	@SttlmDt.deleter
-	def SttlmDt(self):
-		del self._SttlmDt
-		self._SttlmDt = None
+	@Pmt.deleter
+	def Pmt(self):
+		del self._Pmt
+		self._Pmt = None
 
 	@property
 	def TxId(self):
@@ -33,21 +33,21 @@ class SettlementTypeAndIdentification26(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def Pmt(self):
-		return self._Pmt
+	def SttlmDt(self):
+		return self._SttlmDt
 
-	@Pmt.setter
-	def Pmt(self, value):
-		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
+	@SttlmDt.setter
+	def SttlmDt(self, value):
+		self._SttlmDt = value if type(value) != auto else self.make_default("SttlmDt")
 
-	@Pmt.deleter
-	def Pmt(self):
-		del self._Pmt
-		self._Pmt = None
+	@SttlmDt.deleter
+	def SttlmDt(self):
+		del self._SttlmDt
+		self._SttlmDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

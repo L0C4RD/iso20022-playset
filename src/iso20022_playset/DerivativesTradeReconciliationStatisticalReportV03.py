@@ -1,6 +1,6 @@
 from . import base_types
-import SupplementaryData1
-import StatisticsPerCounterparty19Choice
+from .SupplementaryData1 import SupplementaryData1
+from .StatisticsPerCounterparty19Choice import StatisticsPerCounterparty19Choice
 
 class DerivativesTradeReconciliationStatisticalReportV03(base_types._BaseFieldType):
 

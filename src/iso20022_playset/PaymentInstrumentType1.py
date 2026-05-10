@@ -1,11 +1,24 @@
 from . import base_types
-import AuthorityRequestType1
-import Max500Text
-import Min8Max28NumericText
+from .AuthorityRequestType1 import AuthorityRequestType1
+from .Min8Max28NumericText import Min8Max28NumericText
+from .Max500Text import Max500Text
 
 class PaymentInstrumentType1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_CardNb", "_AuthrtyReqTp"]
+	__slots__ = ["_AuthrtyReqTp", "_AddtlInf", "_CardNb"]
+	@property
+	def AuthrtyReqTp(self):
+		return self._AuthrtyReqTp
+
+	@AuthrtyReqTp.setter
+	def AuthrtyReqTp(self, value):
+		self._AuthrtyReqTp = value if type(value) != auto else self.make_default("AuthrtyReqTp")
+
+	@AuthrtyReqTp.deleter
+	def AuthrtyReqTp(self):
+		del self._AuthrtyReqTp
+		self._AuthrtyReqTp = None
+
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -32,22 +45,9 @@ class PaymentInstrumentType1(base_types._BaseFieldType):
 		del self._CardNb
 		self._CardNb = None
 
-	@property
-	def AuthrtyReqTp(self):
-		return self._AuthrtyReqTp
-
-	@AuthrtyReqTp.setter
-	def AuthrtyReqTp(self, value):
-		self._AuthrtyReqTp = value if type(value) != auto else self.make_default("AuthrtyReqTp")
-
-	@AuthrtyReqTp.deleter
-	def AuthrtyReqTp(self):
-		del self._AuthrtyReqTp
-		self._AuthrtyReqTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AuthrtyReqTp', type=AuthorityRequestType1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardNb', type=Min8Max28NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthrtyReqTp', type=AuthorityRequestType1, min=1, max=None, mutex_group=None, array=True),
 	))
 

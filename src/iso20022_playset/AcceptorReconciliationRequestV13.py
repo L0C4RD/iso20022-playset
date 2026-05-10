@@ -1,7 +1,7 @@
 from . import base_types
-import AcceptorReconciliationRequest13
-import ContentInformationType37
-import Header70
+from .AcceptorReconciliationRequest13 import AcceptorReconciliationRequest13
+from .Header70 import Header70
+from .ContentInformationType37 import ContentInformationType37
 
 class AcceptorReconciliationRequestV13(base_types._BaseFieldType):
 

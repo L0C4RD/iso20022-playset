@@ -1,5 +1,5 @@
 from . import base_types
-import BaselineAmendmentRequestV05
+from .BaselineAmendmentRequestV05 import BaselineAmendmentRequestV05
 
 class TSMT_009_001_05():
 

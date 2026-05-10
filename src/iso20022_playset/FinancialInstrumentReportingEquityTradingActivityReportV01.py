@@ -1,23 +1,23 @@
 from . import base_types
-import TransparencyDataReport13
-import SecuritiesMarketReportHeader1
-import SupplementaryData1
+from .SupplementaryData1 import SupplementaryData1
+from .SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
+from .TransparencyDataReport13 import TransparencyDataReport13
 
 class FinancialInstrumentReportingEquityTradingActivityReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RptHdr", "_SplmtryData", "_EqtyTrnsprncyData"]
+	__slots__ = ["_EqtyTrnsprncyData", "_SplmtryData", "_RptHdr"]
 	@property
-	def RptHdr(self):
-		return self._RptHdr
+	def EqtyTrnsprncyData(self):
+		return self._EqtyTrnsprncyData
 
-	@RptHdr.setter
-	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
+	@EqtyTrnsprncyData.setter
+	def EqtyTrnsprncyData(self, value):
+		self._EqtyTrnsprncyData = value if type(value) != auto else self.make_default("EqtyTrnsprncyData")
 
-	@RptHdr.deleter
-	def RptHdr(self):
-		del self._RptHdr
-		self._RptHdr = None
+	@EqtyTrnsprncyData.deleter
+	def EqtyTrnsprncyData(self):
+		del self._EqtyTrnsprncyData
+		self._EqtyTrnsprncyData = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class FinancialInstrumentReportingEquityTradingActivityReportV01(base_types._Bas
 		self._SplmtryData = None
 
 	@property
-	def EqtyTrnsprncyData(self):
-		return self._EqtyTrnsprncyData
+	def RptHdr(self):
+		return self._RptHdr
 
-	@EqtyTrnsprncyData.setter
-	def EqtyTrnsprncyData(self, value):
-		self._EqtyTrnsprncyData = value if type(value) != auto else self.make_default("EqtyTrnsprncyData")
+	@RptHdr.setter
+	def RptHdr(self, value):
+		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
 
-	@EqtyTrnsprncyData.deleter
-	def EqtyTrnsprncyData(self):
-		del self._EqtyTrnsprncyData
-		self._EqtyTrnsprncyData = None
+	@RptHdr.deleter
+	def RptHdr(self):
+		del self._RptHdr
+		self._RptHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptHdr', type=SecuritiesMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='EqtyTrnsprncyData', type=TransparencyDataReport13, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptHdr', type=SecuritiesMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
 	))
 

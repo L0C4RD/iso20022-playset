@@ -1,43 +1,17 @@
 from . import base_types
-import NumberCount1Choice
-import IntraBalance5
-import SupplementaryData1
-import BranchAndFinancialInstitutionIdentification8
-import Max35Text
-import Linkages57
-import TransactionAndDocumentIdentification6
-import CashAccount40
-import SystemPartyIdentification8
+from .Max35Text import Max35Text
+from .IntraBalance5 import IntraBalance5
+from .TransactionAndDocumentIdentification6 import TransactionAndDocumentIdentification6
+from .NumberCount1Choice import NumberCount1Choice
+from .Linkages57 import Linkages57
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .SupplementaryData1 import SupplementaryData1
+from .SystemPartyIdentification8 import SystemPartyIdentification8
+from .CashAccount40 import CashAccount40
 
 class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_SplmtryData", "_Lnkgs", "_IntraBal", "_CshAcctSvcr", "_CshAcct", "_CshAcctOwnr", "_CorpActnEvtId", "_NbCounts"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_Lnkgs", "_IntraBal", "_CshAcct", "_CorpActnEvtId", "_Id", "_SplmtryData", "_NbCounts", "_CshAcctSvcr", "_CshAcctOwnr"]
 	@property
 	def Lnkgs(self):
 		return self._Lnkgs
@@ -65,19 +39,6 @@ class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 		self._IntraBal = None
 
 	@property
-	def CshAcctSvcr(self):
-		return self._CshAcctSvcr
-
-	@CshAcctSvcr.setter
-	def CshAcctSvcr(self, value):
-		self._CshAcctSvcr = value if type(value) != auto else self.make_default("CshAcctSvcr")
-
-	@CshAcctSvcr.deleter
-	def CshAcctSvcr(self):
-		del self._CshAcctSvcr
-		self._CshAcctSvcr = None
-
-	@property
 	def CshAcct(self):
 		return self._CshAcct
 
@@ -89,19 +50,6 @@ class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 	def CshAcct(self):
 		del self._CshAcct
 		self._CshAcct = None
-
-	@property
-	def CshAcctOwnr(self):
-		return self._CshAcctOwnr
-
-	@CshAcctOwnr.setter
-	def CshAcctOwnr(self, value):
-		self._CshAcctOwnr = value if type(value) != auto else self.make_default("CshAcctOwnr")
-
-	@CshAcctOwnr.deleter
-	def CshAcctOwnr(self):
-		del self._CshAcctOwnr
-		self._CshAcctOwnr = None
 
 	@property
 	def CorpActnEvtId(self):
@@ -117,6 +65,32 @@ class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 		self._CorpActnEvtId = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def NbCounts(self):
 		return self._NbCounts
 
@@ -129,15 +103,41 @@ class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 		del self._NbCounts
 		self._NbCounts = None
 
+	@property
+	def CshAcctSvcr(self):
+		return self._CshAcctSvcr
+
+	@CshAcctSvcr.setter
+	def CshAcctSvcr(self, value):
+		self._CshAcctSvcr = value if type(value) != auto else self.make_default("CshAcctSvcr")
+
+	@CshAcctSvcr.deleter
+	def CshAcctSvcr(self):
+		del self._CshAcctSvcr
+		self._CshAcctSvcr = None
+
+	@property
+	def CshAcctOwnr(self):
+		return self._CshAcctOwnr
+
+	@CshAcctOwnr.setter
+	def CshAcctOwnr(self, value):
+		self._CshAcctOwnr = value if type(value) != auto else self.make_default("CshAcctOwnr")
+
+	@CshAcctOwnr.deleter
+	def CshAcctOwnr(self):
+		del self._CshAcctOwnr
+		self._CshAcctOwnr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=TransactionAndDocumentIdentification6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Lnkgs', type=Linkages57, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IntraBal', type=IntraBalance5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=TransactionAndDocumentIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NbCounts', type=NumberCount1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

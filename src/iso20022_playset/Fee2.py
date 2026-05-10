@@ -1,28 +1,28 @@
 from . import base_types
-import PercentageRate
-import YesNoIndicator
-import Max35Text
-import ActiveCurrencyAndAmount
-import PartyIdentification113
-import ChargeType5Choice
-import ChargeBasis2Choice
-import ChargeOrCommissionDiscount1
+from .Max35Text import Max35Text
+from .YesNoIndicator import YesNoIndicator
+from .PercentageRate import PercentageRate
+from .PartyIdentification113 import PartyIdentification113
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .ChargeType5Choice import ChargeType5Choice
+from .ChargeBasis2Choice import ChargeBasis2Choice
+from .ChargeOrCommissionDiscount1 import ChargeOrCommissionDiscount1
 
 class Fee2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_ApldAmt", "_RcptId", "_InftvInd", "_DscntDtls", "_NonStdSLARef", "_StdRate", "_Bsis", "_StdAmt", "_ApldRate"]
+	__slots__ = ["_DscntDtls", "_ApldAmt", "_InftvInd", "_RcptId", "_Bsis", "_Tp", "_StdRate", "_ApldRate", "_NonStdSLARef", "_StdAmt"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def DscntDtls(self):
+		return self._DscntDtls
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@DscntDtls.setter
+	def DscntDtls(self, value):
+		self._DscntDtls = value if type(value) != auto else self.make_default("DscntDtls")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@DscntDtls.deleter
+	def DscntDtls(self):
+		del self._DscntDtls
+		self._DscntDtls = None
 
 	@property
 	def ApldAmt(self):
@@ -38,19 +38,6 @@ class Fee2(base_types._BaseFieldType):
 		self._ApldAmt = None
 
 	@property
-	def RcptId(self):
-		return self._RcptId
-
-	@RcptId.setter
-	def RcptId(self, value):
-		self._RcptId = value if type(value) != auto else self.make_default("RcptId")
-
-	@RcptId.deleter
-	def RcptId(self):
-		del self._RcptId
-		self._RcptId = None
-
-	@property
 	def InftvInd(self):
 		return self._InftvInd
 
@@ -64,43 +51,17 @@ class Fee2(base_types._BaseFieldType):
 		self._InftvInd = None
 
 	@property
-	def DscntDtls(self):
-		return self._DscntDtls
+	def RcptId(self):
+		return self._RcptId
 
-	@DscntDtls.setter
-	def DscntDtls(self, value):
-		self._DscntDtls = value if type(value) != auto else self.make_default("DscntDtls")
+	@RcptId.setter
+	def RcptId(self, value):
+		self._RcptId = value if type(value) != auto else self.make_default("RcptId")
 
-	@DscntDtls.deleter
-	def DscntDtls(self):
-		del self._DscntDtls
-		self._DscntDtls = None
-
-	@property
-	def NonStdSLARef(self):
-		return self._NonStdSLARef
-
-	@NonStdSLARef.setter
-	def NonStdSLARef(self, value):
-		self._NonStdSLARef = value if type(value) != auto else self.make_default("NonStdSLARef")
-
-	@NonStdSLARef.deleter
-	def NonStdSLARef(self):
-		del self._NonStdSLARef
-		self._NonStdSLARef = None
-
-	@property
-	def StdRate(self):
-		return self._StdRate
-
-	@StdRate.setter
-	def StdRate(self, value):
-		self._StdRate = value if type(value) != auto else self.make_default("StdRate")
-
-	@StdRate.deleter
-	def StdRate(self):
-		del self._StdRate
-		self._StdRate = None
+	@RcptId.deleter
+	def RcptId(self):
+		del self._RcptId
+		self._RcptId = None
 
 	@property
 	def Bsis(self):
@@ -116,17 +77,30 @@ class Fee2(base_types._BaseFieldType):
 		self._Bsis = None
 
 	@property
-	def StdAmt(self):
-		return self._StdAmt
+	def Tp(self):
+		return self._Tp
 
-	@StdAmt.setter
-	def StdAmt(self, value):
-		self._StdAmt = value if type(value) != auto else self.make_default("StdAmt")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@StdAmt.deleter
-	def StdAmt(self):
-		del self._StdAmt
-		self._StdAmt = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def StdRate(self):
+		return self._StdRate
+
+	@StdRate.setter
+	def StdRate(self, value):
+		self._StdRate = value if type(value) != auto else self.make_default("StdRate")
+
+	@StdRate.deleter
+	def StdRate(self):
+		del self._StdRate
+		self._StdRate = None
 
 	@property
 	def ApldRate(self):
@@ -141,16 +115,42 @@ class Fee2(base_types._BaseFieldType):
 		del self._ApldRate
 		self._ApldRate = None
 
+	@property
+	def NonStdSLARef(self):
+		return self._NonStdSLARef
+
+	@NonStdSLARef.setter
+	def NonStdSLARef(self, value):
+		self._NonStdSLARef = value if type(value) != auto else self.make_default("NonStdSLARef")
+
+	@NonStdSLARef.deleter
+	def NonStdSLARef(self):
+		del self._NonStdSLARef
+		self._NonStdSLARef = None
+
+	@property
+	def StdAmt(self):
+		return self._StdAmt
+
+	@StdAmt.setter
+	def StdAmt(self, value):
+		self._StdAmt = value if type(value) != auto else self.make_default("StdAmt")
+
+	@StdAmt.deleter
+	def StdAmt(self):
+		del self._StdAmt
+		self._StdAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=ChargeType5Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ApldAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcptId', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InftvInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DscntDtls', type=ChargeOrCommissionDiscount1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonStdSLARef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StdRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApldAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InftvInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcptId', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bsis', type=ChargeBasis2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ChargeType5Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StdRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApldRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonStdSLARef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,30 +1,17 @@
 from . import base_types
-import TypeOfRequest1Choice
-import AdditionalInformation25
-import PartyIdentification139
-import References68Choice
-import Max35Text
-import AdditionalReference10
-import Intermediary48
-import Account33
-import FinancialInstrument63Choice
+from .FinancialInstrument63Choice import FinancialInstrument63Choice
+from .Account33 import Account33
+from .AdditionalReference10 import AdditionalReference10
+from .Max35Text import Max35Text
+from .AdditionalInformation25 import AdditionalInformation25
+from .PartyIdentification139 import PartyIdentification139
+from .References68Choice import References68Choice
+from .Intermediary48 import Intermediary48
+from .TypeOfRequest1Choice import TypeOfRequest1Choice
 
 class MessageAndBusinessReference13(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstmtAcctDtls", "_Instrm", "_MstrRef", "_TrfRef", "_TpOfReq", "_ClntRef", "_IntrmyInf", "_ReqIssr", "_CxlRef", "_QryInf", "_ReqRcpt", "_Ref"]
-	@property
-	def InvstmtAcctDtls(self):
-		return self._InvstmtAcctDtls
-
-	@InvstmtAcctDtls.setter
-	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != auto else self.make_default("InvstmtAcctDtls")
-
-	@InvstmtAcctDtls.deleter
-	def InvstmtAcctDtls(self):
-		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
-
+	__slots__ = ["_Instrm", "_InvstmtAcctDtls", "_ReqIssr", "_ClntRef", "_ReqRcpt", "_TrfRef", "_TpOfReq", "_Ref", "_CxlRef", "_QryInf", "_IntrmyInf", "_MstrRef"]
 	@property
 	def Instrm(self):
 		return self._Instrm
@@ -39,17 +26,56 @@ class MessageAndBusinessReference13(base_types._BaseFieldType):
 		self._Instrm = None
 
 	@property
-	def MstrRef(self):
-		return self._MstrRef
+	def InvstmtAcctDtls(self):
+		return self._InvstmtAcctDtls
 
-	@MstrRef.setter
-	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
+	@InvstmtAcctDtls.setter
+	def InvstmtAcctDtls(self, value):
+		self._InvstmtAcctDtls = value if type(value) != auto else self.make_default("InvstmtAcctDtls")
 
-	@MstrRef.deleter
-	def MstrRef(self):
-		del self._MstrRef
-		self._MstrRef = None
+	@InvstmtAcctDtls.deleter
+	def InvstmtAcctDtls(self):
+		del self._InvstmtAcctDtls
+		self._InvstmtAcctDtls = None
+
+	@property
+	def ReqIssr(self):
+		return self._ReqIssr
+
+	@ReqIssr.setter
+	def ReqIssr(self, value):
+		self._ReqIssr = value if type(value) != auto else self.make_default("ReqIssr")
+
+	@ReqIssr.deleter
+	def ReqIssr(self):
+		del self._ReqIssr
+		self._ReqIssr = None
+
+	@property
+	def ClntRef(self):
+		return self._ClntRef
+
+	@ClntRef.setter
+	def ClntRef(self, value):
+		self._ClntRef = value if type(value) != auto else self.make_default("ClntRef")
+
+	@ClntRef.deleter
+	def ClntRef(self):
+		del self._ClntRef
+		self._ClntRef = None
+
+	@property
+	def ReqRcpt(self):
+		return self._ReqRcpt
+
+	@ReqRcpt.setter
+	def ReqRcpt(self, value):
+		self._ReqRcpt = value if type(value) != auto else self.make_default("ReqRcpt")
+
+	@ReqRcpt.deleter
+	def ReqRcpt(self):
+		del self._ReqRcpt
+		self._ReqRcpt = None
 
 	@property
 	def TrfRef(self):
@@ -78,43 +104,17 @@ class MessageAndBusinessReference13(base_types._BaseFieldType):
 		self._TpOfReq = None
 
 	@property
-	def ClntRef(self):
-		return self._ClntRef
+	def Ref(self):
+		return self._Ref
 
-	@ClntRef.setter
-	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != auto else self.make_default("ClntRef")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
 
-	@ClntRef.deleter
-	def ClntRef(self):
-		del self._ClntRef
-		self._ClntRef = None
-
-	@property
-	def IntrmyInf(self):
-		return self._IntrmyInf
-
-	@IntrmyInf.setter
-	def IntrmyInf(self, value):
-		self._IntrmyInf = value if type(value) != auto else self.make_default("IntrmyInf")
-
-	@IntrmyInf.deleter
-	def IntrmyInf(self):
-		del self._IntrmyInf
-		self._IntrmyInf = None
-
-	@property
-	def ReqIssr(self):
-		return self._ReqIssr
-
-	@ReqIssr.setter
-	def ReqIssr(self, value):
-		self._ReqIssr = value if type(value) != auto else self.make_default("ReqIssr")
-
-	@ReqIssr.deleter
-	def ReqIssr(self):
-		del self._ReqIssr
-		self._ReqIssr = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
 
 	@property
 	def CxlRef(self):
@@ -143,43 +143,43 @@ class MessageAndBusinessReference13(base_types._BaseFieldType):
 		self._QryInf = None
 
 	@property
-	def ReqRcpt(self):
-		return self._ReqRcpt
+	def IntrmyInf(self):
+		return self._IntrmyInf
 
-	@ReqRcpt.setter
-	def ReqRcpt(self, value):
-		self._ReqRcpt = value if type(value) != auto else self.make_default("ReqRcpt")
+	@IntrmyInf.setter
+	def IntrmyInf(self, value):
+		self._IntrmyInf = value if type(value) != auto else self.make_default("IntrmyInf")
 
-	@ReqRcpt.deleter
-	def ReqRcpt(self):
-		del self._ReqRcpt
-		self._ReqRcpt = None
+	@IntrmyInf.deleter
+	def IntrmyInf(self):
+		del self._IntrmyInf
+		self._IntrmyInf = None
 
 	@property
-	def Ref(self):
-		return self._Ref
+	def MstrRef(self):
+		return self._MstrRef
 
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
+	@MstrRef.setter
+	def MstrRef(self, value):
+		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
 
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
+	@MstrRef.deleter
+	def MstrRef(self):
+		del self._MstrRef
+		self._MstrRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InvstmtAcctDtls', type=Account33, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Instrm', type=FinancialInstrument63Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstmtAcctDtls', type=Account33, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqIssr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqRcpt', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TpOfReq', type=TypeOfRequest1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrmyInf', type=Intermediary48, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqIssr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=References68Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryInf', type=AdditionalInformation25, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqRcpt', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=References68Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrmyInf', type=Intermediary48, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

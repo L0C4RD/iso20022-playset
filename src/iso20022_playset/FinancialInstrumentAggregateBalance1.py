@@ -1,11 +1,11 @@
 from . import base_types
-import ISODate
-import Price6
-import FinancialInstrumentAggregateBalance1Choice
+from .FinancialInstrumentAggregateBalance1Choice import FinancialInstrumentAggregateBalance1Choice
+from .ISODate import ISODate
+from .Price6 import Price6
 
 class FinancialInstrumentAggregateBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_ItmDt", "_Hldgs", "_Pric"]
+	__slots__ = ["_ItmDt", "_Pric", "_Hldgs"]
 	@property
 	def ItmDt(self):
 		return self._ItmDt
@@ -20,19 +20,6 @@ class FinancialInstrumentAggregateBalance1(base_types._BaseFieldType):
 		self._ItmDt = None
 
 	@property
-	def Hldgs(self):
-		return self._Hldgs
-
-	@Hldgs.setter
-	def Hldgs(self, value):
-		self._Hldgs = value if type(value) != auto else self.make_default("Hldgs")
-
-	@Hldgs.deleter
-	def Hldgs(self):
-		del self._Hldgs
-		self._Hldgs = None
-
-	@property
 	def Pric(self):
 		return self._Pric
 
@@ -45,9 +32,22 @@ class FinancialInstrumentAggregateBalance1(base_types._BaseFieldType):
 		del self._Pric
 		self._Pric = None
 
+	@property
+	def Hldgs(self):
+		return self._Hldgs
+
+	@Hldgs.setter
+	def Hldgs(self, value):
+		self._Hldgs = value if type(value) != auto else self.make_default("Hldgs")
+
+	@Hldgs.deleter
+	def Hldgs(self):
+		del self._Hldgs
+		self._Hldgs = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ItmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hldgs', type=FinancialInstrumentAggregateBalance1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pric', type=Price6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Hldgs', type=FinancialInstrumentAggregateBalance1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

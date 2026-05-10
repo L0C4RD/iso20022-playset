@@ -1,6 +1,6 @@
 from . import base_types
-import ChequeDelivery1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ChequeDelivery1Code import ChequeDelivery1Code
 
 class ChequeDeliveryMethod1Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import ISODate
-import ActiveOrHistoricCurrencyAndAmount
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .ISODate import ISODate
 
 class DateAndAmount2(base_types._BaseFieldType):
 

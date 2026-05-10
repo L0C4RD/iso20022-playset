@@ -1,6 +1,6 @@
 from . import base_types
-import Max5NumericText
-import Modification1Code
+from .Modification1Code import Modification1Code
+from .Max5NumericText import Max5NumericText
 
 class NumberModification1(base_types._BaseFieldType):
 

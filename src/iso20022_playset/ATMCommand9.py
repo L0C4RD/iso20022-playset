@@ -1,23 +1,10 @@
 from . import base_types
-import ATMCommandIdentification1
-import ATMCommand5Code
+from .ATMCommandIdentification1 import ATMCommandIdentification1
+from .ATMCommand5Code import ATMCommand5Code
 
 class ATMCommand9(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_CmdId"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_CmdId", "_Tp"]
 	@property
 	def CmdId(self):
 		return self._CmdId
@@ -31,8 +18,21 @@ class ATMCommand9(base_types._BaseFieldType):
 		del self._CmdId
 		self._CmdId = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=ATMCommand5Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmdId', type=ATMCommandIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ATMCommand5Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

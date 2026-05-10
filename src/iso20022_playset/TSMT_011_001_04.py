@@ -1,5 +1,5 @@
 from . import base_types
-import BaselineReportV04
+from .BaselineReportV04 import BaselineReportV04
 
 class TSMT_011_001_04():
 

@@ -1,25 +1,25 @@
 from . import base_types
-import TradeParty6
-import Max35Text
-import ContractRegistration8
-import SupplementaryData1
-import BranchAndFinancialInstitutionIdentification8
+from .Max35Text import Max35Text
+from .SupplementaryData1 import SupplementaryData1
+from .TradeParty6 import TradeParty6
+from .ContractRegistration8 import ContractRegistration8
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class ContractRegistration7(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctRegnId", "_CtrctRegnOpng", "_SplmtryData", "_RegnAgt", "_RptgPty"]
+	__slots__ = ["_SplmtryData", "_CtrctRegnOpng", "_RegnAgt", "_CtrctRegnId", "_RptgPty"]
 	@property
-	def CtrctRegnId(self):
-		return self._CtrctRegnId
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@CtrctRegnId.setter
-	def CtrctRegnId(self, value):
-		self._CtrctRegnId = value if type(value) != auto else self.make_default("CtrctRegnId")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@CtrctRegnId.deleter
-	def CtrctRegnId(self):
-		del self._CtrctRegnId
-		self._CtrctRegnId = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def CtrctRegnOpng(self):
@@ -35,19 +35,6 @@ class ContractRegistration7(base_types._BaseFieldType):
 		self._CtrctRegnOpng = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def RegnAgt(self):
 		return self._RegnAgt
 
@@ -59,6 +46,19 @@ class ContractRegistration7(base_types._BaseFieldType):
 	def RegnAgt(self):
 		del self._RegnAgt
 		self._RegnAgt = None
+
+	@property
+	def CtrctRegnId(self):
+		return self._CtrctRegnId
+
+	@CtrctRegnId.setter
+	def CtrctRegnId(self, value):
+		self._CtrctRegnId = value if type(value) != auto else self.make_default("CtrctRegnId")
+
+	@CtrctRegnId.deleter
+	def CtrctRegnId(self):
+		del self._CtrctRegnId
+		self._CtrctRegnId = None
 
 	@property
 	def RptgPty(self):
@@ -74,10 +74,10 @@ class ContractRegistration7(base_types._BaseFieldType):
 		self._RptgPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrctRegnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctRegnOpng', type=ContractRegistration8, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrctRegnOpng', type=ContractRegistration8, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctRegnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgPty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
 	))
 

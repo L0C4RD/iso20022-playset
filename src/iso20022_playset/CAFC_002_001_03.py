@@ -1,5 +1,5 @@
 from . import base_types
-import FeeCollectionResponseV03
+from .FeeCollectionResponseV03 import FeeCollectionResponseV03
 
 class CAFC_002_001_03():
 

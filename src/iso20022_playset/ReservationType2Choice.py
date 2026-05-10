@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import ExternalReservationType1Code
+from .Max35Text import Max35Text
+from .ExternalReservationType1Code import ExternalReservationType1Code
 
 class ReservationType2Choice(base_types._BaseFieldType):
 

@@ -1,24 +1,24 @@
 from . import base_types
-import InstalmentFinancingInformation1
-import OriginalInvoiceInformation1
-import PartyIdentification8
-import FinancingResult1
+from .PartyIdentification8 import PartyIdentification8
+from .OriginalInvoiceInformation1 import OriginalInvoiceInformation1
+from .InstalmentFinancingInformation1 import InstalmentFinancingInformation1
+from .FinancingResult1 import FinancingResult1
 
 class InvoiceFinancingDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_InstlmtFincgInf", "_Spplr", "_InvcFincgRslt", "_OrgnlInvcInf"]
+	__slots__ = ["_InvcFincgRslt", "_Spplr", "_InstlmtFincgInf", "_OrgnlInvcInf"]
 	@property
-	def InstlmtFincgInf(self):
-		return self._InstlmtFincgInf
+	def InvcFincgRslt(self):
+		return self._InvcFincgRslt
 
-	@InstlmtFincgInf.setter
-	def InstlmtFincgInf(self, value):
-		self._InstlmtFincgInf = value if type(value) != auto else self.make_default("InstlmtFincgInf")
+	@InvcFincgRslt.setter
+	def InvcFincgRslt(self, value):
+		self._InvcFincgRslt = value if type(value) != auto else self.make_default("InvcFincgRslt")
 
-	@InstlmtFincgInf.deleter
-	def InstlmtFincgInf(self):
-		del self._InstlmtFincgInf
-		self._InstlmtFincgInf = None
+	@InvcFincgRslt.deleter
+	def InvcFincgRslt(self):
+		del self._InvcFincgRslt
+		self._InvcFincgRslt = None
 
 	@property
 	def Spplr(self):
@@ -34,17 +34,17 @@ class InvoiceFinancingDetails1(base_types._BaseFieldType):
 		self._Spplr = None
 
 	@property
-	def InvcFincgRslt(self):
-		return self._InvcFincgRslt
+	def InstlmtFincgInf(self):
+		return self._InstlmtFincgInf
 
-	@InvcFincgRslt.setter
-	def InvcFincgRslt(self, value):
-		self._InvcFincgRslt = value if type(value) != auto else self.make_default("InvcFincgRslt")
+	@InstlmtFincgInf.setter
+	def InstlmtFincgInf(self, value):
+		self._InstlmtFincgInf = value if type(value) != auto else self.make_default("InstlmtFincgInf")
 
-	@InvcFincgRslt.deleter
-	def InvcFincgRslt(self):
-		del self._InvcFincgRslt
-		self._InvcFincgRslt = None
+	@InstlmtFincgInf.deleter
+	def InstlmtFincgInf(self):
+		del self._InstlmtFincgInf
+		self._InstlmtFincgInf = None
 
 	@property
 	def OrgnlInvcInf(self):
@@ -60,9 +60,9 @@ class InvoiceFinancingDetails1(base_types._BaseFieldType):
 		self._OrgnlInvcInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstlmtFincgInf', type=InstalmentFinancingInformation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Spplr', type=PartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvcFincgRslt', type=FinancingResult1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Spplr', type=PartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstlmtFincgInf', type=InstalmentFinancingInformation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlInvcInf', type=OriginalInvoiceInformation1, min=1, max=1, mutex_group=None, array=False),
 	))
 

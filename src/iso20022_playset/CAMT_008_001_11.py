@@ -1,5 +1,5 @@
 from . import base_types
-import CancelTransactionV11
+from .CancelTransactionV11 import CancelTransactionV11
 
 class CAMT_008_001_11():
 

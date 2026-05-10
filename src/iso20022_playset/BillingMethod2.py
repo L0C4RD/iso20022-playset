@@ -1,23 +1,23 @@
 from . import base_types
-import BillingServicesAmount1
-import BillingServicesTax1
-import AmountAndDirection34
+from .BillingServicesTax1 import BillingServicesTax1
+from .AmountAndDirection34 import AmountAndDirection34
+from .BillingServicesAmount1 import BillingServicesAmount1
 
 class BillingMethod2(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcTax", "_TaxId", "_SvcChrgHstAmt"]
+	__slots__ = ["_SvcChrgHstAmt", "_TaxId", "_SvcTax"]
 	@property
-	def SvcTax(self):
-		return self._SvcTax
+	def SvcChrgHstAmt(self):
+		return self._SvcChrgHstAmt
 
-	@SvcTax.setter
-	def SvcTax(self, value):
-		self._SvcTax = value if type(value) != auto else self.make_default("SvcTax")
+	@SvcChrgHstAmt.setter
+	def SvcChrgHstAmt(self, value):
+		self._SvcChrgHstAmt = value if type(value) != auto else self.make_default("SvcChrgHstAmt")
 
-	@SvcTax.deleter
-	def SvcTax(self):
-		del self._SvcTax
-		self._SvcTax = None
+	@SvcChrgHstAmt.deleter
+	def SvcChrgHstAmt(self):
+		del self._SvcChrgHstAmt
+		self._SvcChrgHstAmt = None
 
 	@property
 	def TaxId(self):
@@ -33,21 +33,21 @@ class BillingMethod2(base_types._BaseFieldType):
 		self._TaxId = None
 
 	@property
-	def SvcChrgHstAmt(self):
-		return self._SvcChrgHstAmt
+	def SvcTax(self):
+		return self._SvcTax
 
-	@SvcChrgHstAmt.setter
-	def SvcChrgHstAmt(self, value):
-		self._SvcChrgHstAmt = value if type(value) != auto else self.make_default("SvcChrgHstAmt")
+	@SvcTax.setter
+	def SvcTax(self, value):
+		self._SvcTax = value if type(value) != auto else self.make_default("SvcTax")
 
-	@SvcChrgHstAmt.deleter
-	def SvcChrgHstAmt(self):
-		del self._SvcChrgHstAmt
-		self._SvcChrgHstAmt = None
+	@SvcTax.deleter
+	def SvcTax(self):
+		del self._SvcTax
+		self._SvcTax = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SvcTax', type=BillingServicesAmount1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxId', type=BillingServicesTax1, min=1, max=3, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SvcChrgHstAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxId', type=BillingServicesTax1, min=1, max=3, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SvcTax', type=BillingServicesAmount1, min=1, max=1, mutex_group=None, array=False),
 	))
 

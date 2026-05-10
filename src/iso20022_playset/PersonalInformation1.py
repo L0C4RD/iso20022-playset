@@ -1,9 +1,22 @@
 from . import base_types
-import Max35Text
+from .Max35Text import Max35Text
 
 class PersonalInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_NmOfFthr", "_NmOfPrtnr", "_MdnNmOfMthr"]
+	__slots__ = ["_MdnNmOfMthr", "_NmOfFthr", "_NmOfPrtnr"]
+	@property
+	def MdnNmOfMthr(self):
+		return self._MdnNmOfMthr
+
+	@MdnNmOfMthr.setter
+	def MdnNmOfMthr(self, value):
+		self._MdnNmOfMthr = value if type(value) != auto else self.make_default("MdnNmOfMthr")
+
+	@MdnNmOfMthr.deleter
+	def MdnNmOfMthr(self):
+		del self._MdnNmOfMthr
+		self._MdnNmOfMthr = None
+
 	@property
 	def NmOfFthr(self):
 		return self._NmOfFthr
@@ -30,22 +43,9 @@ class PersonalInformation1(base_types._BaseFieldType):
 		del self._NmOfPrtnr
 		self._NmOfPrtnr = None
 
-	@property
-	def MdnNmOfMthr(self):
-		return self._MdnNmOfMthr
-
-	@MdnNmOfMthr.setter
-	def MdnNmOfMthr(self, value):
-		self._MdnNmOfMthr = value if type(value) != auto else self.make_default("MdnNmOfMthr")
-
-	@MdnNmOfMthr.deleter
-	def MdnNmOfMthr(self):
-		del self._MdnNmOfMthr
-		self._MdnNmOfMthr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MdnNmOfMthr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmOfFthr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmOfPrtnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MdnNmOfMthr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,22 +1,22 @@
 from . import base_types
-import Max35Text
-import AdditionalReference10
+from .Max35Text import Max35Text
+from .AdditionalReference10 import AdditionalReference10
 
 class TransferReference15(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntRef", "_CxlRsn", "_TrfRef", "_CxlRef", "_CtrPtyRef"]
+	__slots__ = ["_CxlRef", "_CxlRsn", "_ClntRef", "_CtrPtyRef", "_TrfRef"]
 	@property
-	def ClntRef(self):
-		return self._ClntRef
+	def CxlRef(self):
+		return self._CxlRef
 
-	@ClntRef.setter
-	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != auto else self.make_default("ClntRef")
+	@CxlRef.setter
+	def CxlRef(self, value):
+		self._CxlRef = value if type(value) != auto else self.make_default("CxlRef")
 
-	@ClntRef.deleter
-	def ClntRef(self):
-		del self._ClntRef
-		self._ClntRef = None
+	@CxlRef.deleter
+	def CxlRef(self):
+		del self._CxlRef
+		self._CxlRef = None
 
 	@property
 	def CxlRsn(self):
@@ -32,30 +32,17 @@ class TransferReference15(base_types._BaseFieldType):
 		self._CxlRsn = None
 
 	@property
-	def TrfRef(self):
-		return self._TrfRef
+	def ClntRef(self):
+		return self._ClntRef
 
-	@TrfRef.setter
-	def TrfRef(self, value):
-		self._TrfRef = value if type(value) != auto else self.make_default("TrfRef")
+	@ClntRef.setter
+	def ClntRef(self, value):
+		self._ClntRef = value if type(value) != auto else self.make_default("ClntRef")
 
-	@TrfRef.deleter
-	def TrfRef(self):
-		del self._TrfRef
-		self._TrfRef = None
-
-	@property
-	def CxlRef(self):
-		return self._CxlRef
-
-	@CxlRef.setter
-	def CxlRef(self, value):
-		self._CxlRef = value if type(value) != auto else self.make_default("CxlRef")
-
-	@CxlRef.deleter
-	def CxlRef(self):
-		del self._CxlRef
-		self._CxlRef = None
+	@ClntRef.deleter
+	def ClntRef(self):
+		del self._ClntRef
+		self._ClntRef = None
 
 	@property
 	def CtrPtyRef(self):
@@ -70,11 +57,24 @@ class TransferReference15(base_types._BaseFieldType):
 		del self._CtrPtyRef
 		self._CtrPtyRef = None
 
+	@property
+	def TrfRef(self):
+		return self._TrfRef
+
+	@TrfRef.setter
+	def TrfRef(self, value):
+		self._TrfRef = value if type(value) != auto else self.make_default("TrfRef")
+
+	@TrfRef.deleter
+	def TrfRef(self):
+		del self._TrfRef
+		self._TrfRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

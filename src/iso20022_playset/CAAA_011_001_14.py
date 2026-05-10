@@ -1,5 +1,5 @@
 from . import base_types
-import AcceptorBatchTransferV14
+from .AcceptorBatchTransferV14 import AcceptorBatchTransferV14
 
 class CAAA_011_001_14():
 

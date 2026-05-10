@@ -1,6 +1,6 @@
 from . import base_types
-import AdditiononalInformation13
-import DataModification1Code
+from .DataModification1Code import DataModification1Code
+from .AdditiononalInformation13 import AdditiononalInformation13
 
 class ModificationScope45(base_types._BaseFieldType):
 

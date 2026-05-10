@@ -1,24 +1,24 @@
 from . import base_types
-import MessageIdentification8
-import IdentificationAssignment4
-import SupplementaryData1
-import VerificationReport5
+from .IdentificationAssignment4 import IdentificationAssignment4
+from .SupplementaryData1 import SupplementaryData1
+from .MessageIdentification8 import MessageIdentification8
+from .VerificationReport5 import VerificationReport5
 
 class IdentificationVerificationReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlAssgnmt", "_Assgnmt", "_SplmtryData", "_Rpt"]
+	__slots__ = ["_SplmtryData", "_Assgnmt", "_OrgnlAssgnmt", "_Rpt"]
 	@property
-	def OrgnlAssgnmt(self):
-		return self._OrgnlAssgnmt
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@OrgnlAssgnmt.setter
-	def OrgnlAssgnmt(self, value):
-		self._OrgnlAssgnmt = value if type(value) != auto else self.make_default("OrgnlAssgnmt")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@OrgnlAssgnmt.deleter
-	def OrgnlAssgnmt(self):
-		del self._OrgnlAssgnmt
-		self._OrgnlAssgnmt = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Assgnmt(self):
@@ -34,17 +34,17 @@ class IdentificationVerificationReportV04(base_types._BaseFieldType):
 		self._Assgnmt = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def OrgnlAssgnmt(self):
+		return self._OrgnlAssgnmt
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@OrgnlAssgnmt.setter
+	def OrgnlAssgnmt(self, value):
+		self._OrgnlAssgnmt = value if type(value) != auto else self.make_default("OrgnlAssgnmt")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@OrgnlAssgnmt.deleter
+	def OrgnlAssgnmt(self):
+		del self._OrgnlAssgnmt
+		self._OrgnlAssgnmt = None
 
 	@property
 	def Rpt(self):
@@ -60,9 +60,9 @@ class IdentificationVerificationReportV04(base_types._BaseFieldType):
 		self._Rpt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlAssgnmt', type=MessageIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnmt', type=IdentificationAssignment4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Assgnmt', type=IdentificationAssignment4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlAssgnmt', type=MessageIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rpt', type=VerificationReport5, min=1, max=None, mutex_group=None, array=True),
 	))
 

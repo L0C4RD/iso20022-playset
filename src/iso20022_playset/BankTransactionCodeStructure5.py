@@ -1,23 +1,10 @@
 from . import base_types
-import BankTransactionCodeStructure6
-import ExternalBankTransactionDomain1Code
+from .BankTransactionCodeStructure6 import BankTransactionCodeStructure6
+from .ExternalBankTransactionDomain1Code import ExternalBankTransactionDomain1Code
 
 class BankTransactionCodeStructure5(base_types._BaseFieldType):
 
-	__slots__ = ["_Fmly", "_Cd"]
-	@property
-	def Fmly(self):
-		return self._Fmly
-
-	@Fmly.setter
-	def Fmly(self, value):
-		self._Fmly = value if type(value) != auto else self.make_default("Fmly")
-
-	@Fmly.deleter
-	def Fmly(self):
-		del self._Fmly
-		self._Fmly = None
-
+	__slots__ = ["_Cd", "_Fmly"]
 	@property
 	def Cd(self):
 		return self._Cd
@@ -31,8 +18,21 @@ class BankTransactionCodeStructure5(base_types._BaseFieldType):
 		del self._Cd
 		self._Cd = None
 
+	@property
+	def Fmly(self):
+		return self._Fmly
+
+	@Fmly.setter
+	def Fmly(self, value):
+		self._Fmly = value if type(value) != auto else self.make_default("Fmly")
+
+	@Fmly.deleter
+	def Fmly(self):
+		del self._Fmly
+		self._Fmly = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Fmly', type=BankTransactionCodeStructure6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cd', type=ExternalBankTransactionDomain1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fmly', type=BankTransactionCodeStructure6, min=1, max=1, mutex_group=None, array=False),
 	))
 

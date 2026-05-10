@@ -1,22 +1,9 @@
 from . import base_types
-import ExposureMetrics5
+from .ExposureMetrics5 import ExposureMetrics5
 
 class VolumeMetrics6(base_types._BaseFieldType):
 
-	__slots__ = ["_Postv", "_Neg"]
-	@property
-	def Postv(self):
-		return self._Postv
-
-	@Postv.setter
-	def Postv(self, value):
-		self._Postv = value if type(value) != auto else self.make_default("Postv")
-
-	@Postv.deleter
-	def Postv(self):
-		del self._Postv
-		self._Postv = None
-
+	__slots__ = ["_Neg", "_Postv"]
 	@property
 	def Neg(self):
 		return self._Neg
@@ -30,8 +17,21 @@ class VolumeMetrics6(base_types._BaseFieldType):
 		del self._Neg
 		self._Neg = None
 
+	@property
+	def Postv(self):
+		return self._Postv
+
+	@Postv.setter
+	def Postv(self, value):
+		self._Postv = value if type(value) != auto else self.make_default("Postv")
+
+	@Postv.deleter
+	def Postv(self):
+		del self._Postv
+		self._Postv = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Postv', type=ExposureMetrics5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Neg', type=ExposureMetrics5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Postv', type=ExposureMetrics5, min=0, max=1, mutex_group=None, array=False),
 	))
 

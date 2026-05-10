@@ -1,12 +1,12 @@
 from . import base_types
-import Recipient15Choice
-import OriginatorInformation1
-import EncryptedContent7
-import Number
+from .Number import Number
+from .Recipient15Choice import Recipient15Choice
+from .OriginatorInformation1 import OriginatorInformation1
+from .EncryptedContent7 import EncryptedContent7
 
 class EnvelopedData11(base_types._BaseFieldType):
 
-	__slots__ = ["_Rcpt", "_OrgtrInf", "_NcrptdCntt", "_Vrsn"]
+	__slots__ = ["_Rcpt", "_NcrptdCntt", "_OrgtrInf", "_Vrsn"]
 	@property
 	def Rcpt(self):
 		return self._Rcpt
@@ -21,19 +21,6 @@ class EnvelopedData11(base_types._BaseFieldType):
 		self._Rcpt = None
 
 	@property
-	def OrgtrInf(self):
-		return self._OrgtrInf
-
-	@OrgtrInf.setter
-	def OrgtrInf(self, value):
-		self._OrgtrInf = value if type(value) != auto else self.make_default("OrgtrInf")
-
-	@OrgtrInf.deleter
-	def OrgtrInf(self):
-		del self._OrgtrInf
-		self._OrgtrInf = None
-
-	@property
 	def NcrptdCntt(self):
 		return self._NcrptdCntt
 
@@ -45,6 +32,19 @@ class EnvelopedData11(base_types._BaseFieldType):
 	def NcrptdCntt(self):
 		del self._NcrptdCntt
 		self._NcrptdCntt = None
+
+	@property
+	def OrgtrInf(self):
+		return self._OrgtrInf
+
+	@OrgtrInf.setter
+	def OrgtrInf(self, value):
+		self._OrgtrInf = value if type(value) != auto else self.make_default("OrgtrInf")
+
+	@OrgtrInf.deleter
+	def OrgtrInf(self):
+		del self._OrgtrInf
+		self._OrgtrInf = None
 
 	@property
 	def Vrsn(self):
@@ -61,8 +61,8 @@ class EnvelopedData11(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rcpt', type=Recipient15Choice, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgtrInf', type=OriginatorInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdCntt', type=EncryptedContent7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgtrInf', type=OriginatorInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

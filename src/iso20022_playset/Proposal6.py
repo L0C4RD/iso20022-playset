@@ -1,6 +1,6 @@
 from . import base_types
-import ProposalType1Code
-import CollateralProposal6Choice
+from .CollateralProposal6Choice import CollateralProposal6Choice
+from .ProposalType1Code import ProposalType1Code
 
 class Proposal6(base_types._BaseFieldType):
 

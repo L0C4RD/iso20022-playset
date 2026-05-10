@@ -1,11 +1,11 @@
 from . import base_types
-import ImpliedCurrencyAmountRange1Choice
-import CreditDebitCode
-import ActiveCurrencyCode
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .ImpliedCurrencyAmountRange1Choice import ImpliedCurrencyAmountRange1Choice
+from .CreditDebitCode import CreditDebitCode
 
 class ActiveCurrencyAndAmountRange3(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_Amt", "_Ccy"]
+	__slots__ = ["_CdtDbtInd", "_Ccy", "_Amt"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
@@ -20,19 +20,6 @@ class ActiveCurrencyAndAmountRange3(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
 	def Ccy(self):
 		return self._Ccy
 
@@ -45,9 +32,22 @@ class ActiveCurrencyAndAmountRange3(base_types._BaseFieldType):
 		del self._Ccy
 		self._Ccy = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAmountRange1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAmountRange1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,14 +1,14 @@
 from . import base_types
-import CorporateActionEventStageFormat15Choice
-import CorporateActionQuantity13
-import LotteryTypeFormat5Choice
-import AdditionalBusinessProcessFormat21Choice
-import IntermediateSecuritiesDistributionTypeFormat18Choice
-import CorporateActionDate93
+from .CorporateActionQuantity13 import CorporateActionQuantity13
+from .LotteryTypeFormat5Choice import LotteryTypeFormat5Choice
+from .CorporateActionDate93 import CorporateActionDate93
+from .AdditionalBusinessProcessFormat21Choice import AdditionalBusinessProcessFormat21Choice
+from .IntermediateSecuritiesDistributionTypeFormat18Choice import IntermediateSecuritiesDistributionTypeFormat18Choice
+from .CorporateActionEventStageFormat15Choice import CorporateActionEventStageFormat15Choice
 
 class CorporateAction77(base_types._BaseFieldType):
 
-	__slots__ = ["_DtDtls", "_SctiesQty", "_IntrmdtSctiesDstrbtnTp", "_AddtlBizPrcInd", "_LtryTp", "_EvtStag"]
+	__slots__ = ["_DtDtls", "_IntrmdtSctiesDstrbtnTp", "_AddtlBizPrcInd", "_EvtStag", "_SctiesQty", "_LtryTp"]
 	@property
 	def DtDtls(self):
 		return self._DtDtls
@@ -21,19 +21,6 @@ class CorporateAction77(base_types._BaseFieldType):
 	def DtDtls(self):
 		del self._DtDtls
 		self._DtDtls = None
-
-	@property
-	def SctiesQty(self):
-		return self._SctiesQty
-
-	@SctiesQty.setter
-	def SctiesQty(self, value):
-		self._SctiesQty = value if type(value) != auto else self.make_default("SctiesQty")
-
-	@SctiesQty.deleter
-	def SctiesQty(self):
-		del self._SctiesQty
-		self._SctiesQty = None
 
 	@property
 	def IntrmdtSctiesDstrbtnTp(self):
@@ -62,19 +49,6 @@ class CorporateAction77(base_types._BaseFieldType):
 		self._AddtlBizPrcInd = None
 
 	@property
-	def LtryTp(self):
-		return self._LtryTp
-
-	@LtryTp.setter
-	def LtryTp(self, value):
-		self._LtryTp = value if type(value) != auto else self.make_default("LtryTp")
-
-	@LtryTp.deleter
-	def LtryTp(self):
-		del self._LtryTp
-		self._LtryTp = None
-
-	@property
 	def EvtStag(self):
 		return self._EvtStag
 
@@ -87,12 +61,38 @@ class CorporateAction77(base_types._BaseFieldType):
 		del self._EvtStag
 		self._EvtStag = None
 
+	@property
+	def SctiesQty(self):
+		return self._SctiesQty
+
+	@SctiesQty.setter
+	def SctiesQty(self, value):
+		self._SctiesQty = value if type(value) != auto else self.make_default("SctiesQty")
+
+	@SctiesQty.deleter
+	def SctiesQty(self):
+		del self._SctiesQty
+		self._SctiesQty = None
+
+	@property
+	def LtryTp(self):
+		return self._LtryTp
+
+	@LtryTp.setter
+	def LtryTp(self, value):
+		self._LtryTp = value if type(value) != auto else self.make_default("LtryTp")
+
+	@LtryTp.deleter
+	def LtryTp(self):
+		del self._LtryTp
+		self._LtryTp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate93, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesQty', type=CorporateActionQuantity13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmdtSctiesDstrbtnTp', type=IntermediateSecuritiesDistributionTypeFormat18Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlBizPrcInd', type=AdditionalBusinessProcessFormat21Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtStag', type=CorporateActionEventStageFormat15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesQty', type=CorporateActionQuantity13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat5Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

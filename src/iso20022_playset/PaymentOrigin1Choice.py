@@ -1,36 +1,23 @@
 from . import base_types
-import PaymentInstrument1Code
-import Max35Text
-import Max3NumericText
+from .PaymentInstrument1Code import PaymentInstrument1Code
+from .Max35Text import Max35Text
+from .Max3NumericText import Max3NumericText
 
 class PaymentOrigin1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_XMLMsgNm", "_FINMT", "_Prtry", "_Instrm"]
+	__slots__ = ["_Instrm", "_Prtry", "_FINMT", "_XMLMsgNm"]
 	@property
-	def XMLMsgNm(self):
-		return self._XMLMsgNm
+	def Instrm(self):
+		return self._Instrm
 
-	@XMLMsgNm.setter
-	def XMLMsgNm(self, value):
-		self._XMLMsgNm = value if type(value) != auto else self.make_default("XMLMsgNm")
+	@Instrm.setter
+	def Instrm(self, value):
+		self._Instrm = value if type(value) != auto else self.make_default("Instrm")
 
-	@XMLMsgNm.deleter
-	def XMLMsgNm(self):
-		del self._XMLMsgNm
-		self._XMLMsgNm = None
-
-	@property
-	def FINMT(self):
-		return self._FINMT
-
-	@FINMT.setter
-	def FINMT(self, value):
-		self._FINMT = value if type(value) != auto else self.make_default("FINMT")
-
-	@FINMT.deleter
-	def FINMT(self):
-		del self._FINMT
-		self._FINMT = None
+	@Instrm.deleter
+	def Instrm(self):
+		del self._Instrm
+		self._Instrm = None
 
 	@property
 	def Prtry(self):
@@ -46,22 +33,35 @@ class PaymentOrigin1Choice(base_types._BaseFieldType):
 		self._Prtry = None
 
 	@property
-	def Instrm(self):
-		return self._Instrm
+	def FINMT(self):
+		return self._FINMT
 
-	@Instrm.setter
-	def Instrm(self, value):
-		self._Instrm = value if type(value) != auto else self.make_default("Instrm")
+	@FINMT.setter
+	def FINMT(self, value):
+		self._FINMT = value if type(value) != auto else self.make_default("FINMT")
 
-	@Instrm.deleter
-	def Instrm(self):
-		del self._Instrm
-		self._Instrm = None
+	@FINMT.deleter
+	def FINMT(self):
+		del self._FINMT
+		self._FINMT = None
+
+	@property
+	def XMLMsgNm(self):
+		return self._XMLMsgNm
+
+	@XMLMsgNm.setter
+	def XMLMsgNm(self, value):
+		self._XMLMsgNm = value if type(value) != auto else self.make_default("XMLMsgNm")
+
+	@XMLMsgNm.deleter
+	def XMLMsgNm(self):
+		del self._XMLMsgNm
+		self._XMLMsgNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XMLMsgNm', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='FINMT', type=Max3NumericText, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Prtry', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Instrm', type=PaymentInstrument1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FINMT', type=Max3NumericText, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='XMLMsgNm', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

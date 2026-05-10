@@ -1,41 +1,15 @@
 from . import base_types
-import PartyIdentificationAndAccount6
-import Max15NumericText
-import ISODateTime
-import Max105Text
-import Max35Text
-import FinancialInstitutionIdentification6
-import ActiveCurrencyAndAmount
+from .Max35Text import Max35Text
+from .Max15NumericText import Max15NumericText
+from .PartyIdentificationAndAccount6 import PartyIdentificationAndAccount6
+from .ISODateTime import ISODateTime
+from .FinancialInstitutionIdentification6 import FinancialInstitutionIdentification6
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .Max105Text import Max105Text
 
 class CancellationRequestInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_FincgRqstr", "_FrstAgt", "_OrgnlCreDtTm", "_CxlRsn", "_OrgnlGrpId", "_IntrmyAgt", "_NbOfInvcReqs", "_TtlBlkInvcAmt"]
-	@property
-	def FincgRqstr(self):
-		return self._FincgRqstr
-
-	@FincgRqstr.setter
-	def FincgRqstr(self, value):
-		self._FincgRqstr = value if type(value) != auto else self.make_default("FincgRqstr")
-
-	@FincgRqstr.deleter
-	def FincgRqstr(self):
-		del self._FincgRqstr
-		self._FincgRqstr = None
-
-	@property
-	def FrstAgt(self):
-		return self._FrstAgt
-
-	@FrstAgt.setter
-	def FrstAgt(self, value):
-		self._FrstAgt = value if type(value) != auto else self.make_default("FrstAgt")
-
-	@FrstAgt.deleter
-	def FrstAgt(self):
-		del self._FrstAgt
-		self._FrstAgt = None
-
+	__slots__ = ["_OrgnlCreDtTm", "_IntrmyAgt", "_FincgRqstr", "_CxlRsn", "_OrgnlGrpId", "_NbOfInvcReqs", "_FrstAgt", "_TtlBlkInvcAmt"]
 	@property
 	def OrgnlCreDtTm(self):
 		return self._OrgnlCreDtTm
@@ -48,6 +22,32 @@ class CancellationRequestInformation1(base_types._BaseFieldType):
 	def OrgnlCreDtTm(self):
 		del self._OrgnlCreDtTm
 		self._OrgnlCreDtTm = None
+
+	@property
+	def IntrmyAgt(self):
+		return self._IntrmyAgt
+
+	@IntrmyAgt.setter
+	def IntrmyAgt(self, value):
+		self._IntrmyAgt = value if type(value) != auto else self.make_default("IntrmyAgt")
+
+	@IntrmyAgt.deleter
+	def IntrmyAgt(self):
+		del self._IntrmyAgt
+		self._IntrmyAgt = None
+
+	@property
+	def FincgRqstr(self):
+		return self._FincgRqstr
+
+	@FincgRqstr.setter
+	def FincgRqstr(self, value):
+		self._FincgRqstr = value if type(value) != auto else self.make_default("FincgRqstr")
+
+	@FincgRqstr.deleter
+	def FincgRqstr(self):
+		del self._FincgRqstr
+		self._FincgRqstr = None
 
 	@property
 	def CxlRsn(self):
@@ -76,19 +76,6 @@ class CancellationRequestInformation1(base_types._BaseFieldType):
 		self._OrgnlGrpId = None
 
 	@property
-	def IntrmyAgt(self):
-		return self._IntrmyAgt
-
-	@IntrmyAgt.setter
-	def IntrmyAgt(self, value):
-		self._IntrmyAgt = value if type(value) != auto else self.make_default("IntrmyAgt")
-
-	@IntrmyAgt.deleter
-	def IntrmyAgt(self):
-		del self._IntrmyAgt
-		self._IntrmyAgt = None
-
-	@property
 	def NbOfInvcReqs(self):
 		return self._NbOfInvcReqs
 
@@ -100,6 +87,19 @@ class CancellationRequestInformation1(base_types._BaseFieldType):
 	def NbOfInvcReqs(self):
 		del self._NbOfInvcReqs
 		self._NbOfInvcReqs = None
+
+	@property
+	def FrstAgt(self):
+		return self._FrstAgt
+
+	@FrstAgt.setter
+	def FrstAgt(self, value):
+		self._FrstAgt = value if type(value) != auto else self.make_default("FrstAgt")
+
+	@FrstAgt.deleter
+	def FrstAgt(self):
+		del self._FrstAgt
+		self._FrstAgt = None
 
 	@property
 	def TtlBlkInvcAmt(self):
@@ -115,13 +115,13 @@ class CancellationRequestInformation1(base_types._BaseFieldType):
 		self._TtlBlkInvcAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FincgRqstr', type=PartyIdentificationAndAccount6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrstAgt', type=FinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrmyAgt', type=FinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FincgRqstr', type=PartyIdentificationAndAccount6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRsn', type=Max105Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlGrpId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrmyAgt', type=FinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfInvcReqs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstAgt', type=FinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlBlkInvcAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

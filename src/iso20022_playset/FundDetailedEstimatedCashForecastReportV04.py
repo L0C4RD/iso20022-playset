@@ -1,40 +1,27 @@
 from . import base_types
-import Extension1
-import Fund3
-import Pagination
-import MessageIdentification1
-import AdditionalReference3
-import NetCashForecast3
-import EstimatedFundCashForecast5
+from .MessageIdentification1 import MessageIdentification1
+from .Extension1 import Extension1
+from .Pagination import Pagination
+from .AdditionalReference3 import AdditionalReference3
+from .NetCashForecast3 import NetCashForecast3
+from .Fund3 import Fund3
+from .EstimatedFundCashForecast5 import EstimatedFundCashForecast5
 
 class FundDetailedEstimatedCashForecastReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_FndOrSubFndDtls", "_CnsltdNetCshFcst", "_EstmtdFndCshFcstDtls", "_RltdRef", "_MsgId", "_MsgPgntn", "_Xtnsn", "_PrvsRef", "_PoolRef"]
+	__slots__ = ["_Xtnsn", "_EstmtdFndCshFcstDtls", "_PoolRef", "_PrvsRef", "_RltdRef", "_MsgId", "_MsgPgntn", "_FndOrSubFndDtls", "_CnsltdNetCshFcst"]
 	@property
-	def FndOrSubFndDtls(self):
-		return self._FndOrSubFndDtls
+	def Xtnsn(self):
+		return self._Xtnsn
 
-	@FndOrSubFndDtls.setter
-	def FndOrSubFndDtls(self, value):
-		self._FndOrSubFndDtls = value if type(value) != auto else self.make_default("FndOrSubFndDtls")
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
 
-	@FndOrSubFndDtls.deleter
-	def FndOrSubFndDtls(self):
-		del self._FndOrSubFndDtls
-		self._FndOrSubFndDtls = None
-
-	@property
-	def CnsltdNetCshFcst(self):
-		return self._CnsltdNetCshFcst
-
-	@CnsltdNetCshFcst.setter
-	def CnsltdNetCshFcst(self, value):
-		self._CnsltdNetCshFcst = value if type(value) != auto else self.make_default("CnsltdNetCshFcst")
-
-	@CnsltdNetCshFcst.deleter
-	def CnsltdNetCshFcst(self):
-		del self._CnsltdNetCshFcst
-		self._CnsltdNetCshFcst = None
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	@property
 	def EstmtdFndCshFcstDtls(self):
@@ -48,6 +35,32 @@ class FundDetailedEstimatedCashForecastReportV04(base_types._BaseFieldType):
 	def EstmtdFndCshFcstDtls(self):
 		del self._EstmtdFndCshFcstDtls
 		self._EstmtdFndCshFcstDtls = None
+
+	@property
+	def PoolRef(self):
+		return self._PoolRef
+
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
+
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
+
+	@property
+	def PrvsRef(self):
+		return self._PrvsRef
+
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
+
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
 
 	@property
 	def RltdRef(self):
@@ -89,53 +102,40 @@ class FundDetailedEstimatedCashForecastReportV04(base_types._BaseFieldType):
 		self._MsgPgntn = None
 
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
+	def FndOrSubFndDtls(self):
+		return self._FndOrSubFndDtls
 
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
+	@FndOrSubFndDtls.setter
+	def FndOrSubFndDtls(self, value):
+		self._FndOrSubFndDtls = value if type(value) != auto else self.make_default("FndOrSubFndDtls")
 
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
-
-	@property
-	def PrvsRef(self):
-		return self._PrvsRef
-
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
-
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
+	@FndOrSubFndDtls.deleter
+	def FndOrSubFndDtls(self):
+		del self._FndOrSubFndDtls
+		self._FndOrSubFndDtls = None
 
 	@property
-	def PoolRef(self):
-		return self._PoolRef
+	def CnsltdNetCshFcst(self):
+		return self._CnsltdNetCshFcst
 
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
+	@CnsltdNetCshFcst.setter
+	def CnsltdNetCshFcst(self, value):
+		self._CnsltdNetCshFcst = value if type(value) != auto else self.make_default("CnsltdNetCshFcst")
 
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
+	@CnsltdNetCshFcst.deleter
+	def CnsltdNetCshFcst(self):
+		del self._CnsltdNetCshFcst
+		self._CnsltdNetCshFcst = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FndOrSubFndDtls', type=Fund3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CnsltdNetCshFcst', type=NetCashForecast3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='EstmtdFndCshFcstDtls', type=EstimatedFundCashForecast5, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FndOrSubFndDtls', type=Fund3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CnsltdNetCshFcst', type=NetCashForecast3, min=0, max=1, mutex_group=None, array=False),
 	))
 

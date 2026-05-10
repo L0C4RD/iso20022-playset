@@ -1,25 +1,12 @@
 from . import base_types
-import TradeData45
-import SupplementaryData1
-import Pagination1
-import TradeDataReport2
+from .TradeDataReport2 import TradeDataReport2
+from .Pagination1 import Pagination1
+from .SupplementaryData1 import SupplementaryData1
+from .TradeData45 import TradeData45
 
 class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_StsDtls", "_TradDataRpt", "_MsgPgntn"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_StsDtls", "_SplmtryData", "_MsgPgntn", "_TradDataRpt"]
 	@property
 	def StsDtls(self):
 		return self._StsDtls
@@ -34,17 +21,17 @@ class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 		self._StsDtls = None
 
 	@property
-	def TradDataRpt(self):
-		return self._TradDataRpt
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@TradDataRpt.setter
-	def TradDataRpt(self, value):
-		self._TradDataRpt = value if type(value) != auto else self.make_default("TradDataRpt")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@TradDataRpt.deleter
-	def TradDataRpt(self):
-		del self._TradDataRpt
-		self._TradDataRpt = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def MsgPgntn(self):
@@ -59,10 +46,23 @@ class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 		del self._MsgPgntn
 		self._MsgPgntn = None
 
+	@property
+	def TradDataRpt(self):
+		return self._TradDataRpt
+
+	@TradDataRpt.setter
+	def TradDataRpt(self, value):
+		self._TradDataRpt = value if type(value) != auto else self.make_default("TradDataRpt")
+
+	@TradDataRpt.deleter
+	def TradDataRpt(self):
+		del self._TradDataRpt
+		self._TradDataRpt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StsDtls', type=TradeData45, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDataRpt', type=TradeDataReport2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDataRpt', type=TradeDataReport2, min=1, max=None, mutex_group=None, array=True),
 	))
 

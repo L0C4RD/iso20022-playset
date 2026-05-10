@@ -1,6 +1,6 @@
 from . import base_types
-import Max25Text
-import ISINOct2015Identifier
+from .Max25Text import Max25Text
+from .ISINOct2015Identifier import ISINOct2015Identifier
 
 class InflationIndex1Choice(base_types._BaseFieldType):
 

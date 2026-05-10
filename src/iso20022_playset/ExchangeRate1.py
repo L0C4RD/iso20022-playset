@@ -1,12 +1,12 @@
 from . import base_types
-import ExchangeRateType1Code
-import ActiveOrHistoricCurrencyCode
-import BaseOneRate
-import Max35Text
+from .Max35Text import Max35Text
+from .ExchangeRateType1Code import ExchangeRateType1Code
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .BaseOneRate import BaseOneRate
 
 class ExchangeRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_RateTp", "_CtrctId", "_UnitCcy", "_XchgRate"]
+	__slots__ = ["_RateTp", "_XchgRate", "_CtrctId", "_UnitCcy"]
 	@property
 	def RateTp(self):
 		return self._RateTp
@@ -19,6 +19,19 @@ class ExchangeRate1(base_types._BaseFieldType):
 	def RateTp(self):
 		del self._RateTp
 		self._RateTp = None
+
+	@property
+	def XchgRate(self):
+		return self._XchgRate
+
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
+
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
 
 	@property
 	def CtrctId(self):
@@ -46,23 +59,10 @@ class ExchangeRate1(base_types._BaseFieldType):
 		del self._UnitCcy
 		self._UnitCcy = None
 
-	@property
-	def XchgRate(self):
-		return self._XchgRate
-
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
-
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RateTp', type=ExchangeRateType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

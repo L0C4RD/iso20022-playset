@@ -1,22 +1,22 @@
 from . import base_types
-import CollateralType1Code
-import ActiveCurrencyAndAmount
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .CollateralType1Code import CollateralType1Code
 
 class Collateral6(base_types._BaseFieldType):
 
-	__slots__ = ["_CollTp", "_MktVal", "_PstHrcutVal"]
+	__slots__ = ["_PstHrcutVal", "_MktVal", "_CollTp"]
 	@property
-	def CollTp(self):
-		return self._CollTp
+	def PstHrcutVal(self):
+		return self._PstHrcutVal
 
-	@CollTp.setter
-	def CollTp(self, value):
-		self._CollTp = value if type(value) != auto else self.make_default("CollTp")
+	@PstHrcutVal.setter
+	def PstHrcutVal(self, value):
+		self._PstHrcutVal = value if type(value) != auto else self.make_default("PstHrcutVal")
 
-	@CollTp.deleter
-	def CollTp(self):
-		del self._CollTp
-		self._CollTp = None
+	@PstHrcutVal.deleter
+	def PstHrcutVal(self):
+		del self._PstHrcutVal
+		self._PstHrcutVal = None
 
 	@property
 	def MktVal(self):
@@ -32,21 +32,21 @@ class Collateral6(base_types._BaseFieldType):
 		self._MktVal = None
 
 	@property
-	def PstHrcutVal(self):
-		return self._PstHrcutVal
+	def CollTp(self):
+		return self._CollTp
 
-	@PstHrcutVal.setter
-	def PstHrcutVal(self, value):
-		self._PstHrcutVal = value if type(value) != auto else self.make_default("PstHrcutVal")
+	@CollTp.setter
+	def CollTp(self, value):
+		self._CollTp = value if type(value) != auto else self.make_default("CollTp")
 
-	@PstHrcutVal.deleter
-	def PstHrcutVal(self):
-		del self._PstHrcutVal
-		self._PstHrcutVal = None
+	@CollTp.deleter
+	def CollTp(self):
+		del self._CollTp
+		self._CollTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollTp', type=CollateralType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstHrcutVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollTp', type=CollateralType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import PercentageRate
-import ActiveOrHistoricCurrencyAndAmount
+from .PercentageRate import PercentageRate
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class Equalisation1(base_types._BaseFieldType):
 

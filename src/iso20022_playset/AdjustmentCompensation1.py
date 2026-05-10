@@ -1,53 +1,14 @@
 from . import base_types
-import PercentageRate
-import CashAccount40
-import Max140Text
-import BranchAndFinancialInstitutionIdentification6
-import DatePeriod5
-import ActiveCurrencyAndAmount
+from .DatePeriod5 import DatePeriod5
+from .Max140Text import Max140Text
+from .PercentageRate import PercentageRate
+from .CashAccount40 import CashAccount40
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
 
 class AdjustmentCompensation1(base_types._BaseFieldType):
 
-	__slots__ = ["_DueChrgs", "_Rsn", "_CompstnAcct", "_AmtDue", "_Prd", "_IntrstRate", "_InitlAmt", "_CompstnAgt"]
-	@property
-	def DueChrgs(self):
-		return self._DueChrgs
-
-	@DueChrgs.setter
-	def DueChrgs(self, value):
-		self._DueChrgs = value if type(value) != auto else self.make_default("DueChrgs")
-
-	@DueChrgs.deleter
-	def DueChrgs(self):
-		del self._DueChrgs
-		self._DueChrgs = None
-
-	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
-
-	@property
-	def CompstnAcct(self):
-		return self._CompstnAcct
-
-	@CompstnAcct.setter
-	def CompstnAcct(self, value):
-		self._CompstnAcct = value if type(value) != auto else self.make_default("CompstnAcct")
-
-	@CompstnAcct.deleter
-	def CompstnAcct(self):
-		del self._CompstnAcct
-		self._CompstnAcct = None
-
+	__slots__ = ["_AmtDue", "_Prd", "_IntrstRate", "_InitlAmt", "_CompstnAcct", "_Rsn", "_CompstnAgt", "_DueChrgs"]
 	@property
 	def AmtDue(self):
 		return self._AmtDue
@@ -101,6 +62,32 @@ class AdjustmentCompensation1(base_types._BaseFieldType):
 		self._InitlAmt = None
 
 	@property
+	def CompstnAcct(self):
+		return self._CompstnAcct
+
+	@CompstnAcct.setter
+	def CompstnAcct(self, value):
+		self._CompstnAcct = value if type(value) != auto else self.make_default("CompstnAcct")
+
+	@CompstnAcct.deleter
+	def CompstnAcct(self):
+		del self._CompstnAcct
+		self._CompstnAcct = None
+
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
+
+	@property
 	def CompstnAgt(self):
 		return self._CompstnAgt
 
@@ -113,14 +100,27 @@ class AdjustmentCompensation1(base_types._BaseFieldType):
 		del self._CompstnAgt
 		self._CompstnAgt = None
 
+	@property
+	def DueChrgs(self):
+		return self._DueChrgs
+
+	@DueChrgs.setter
+	def DueChrgs(self, value):
+		self._DueChrgs = value if type(value) != auto else self.make_default("DueChrgs")
+
+	@DueChrgs.deleter
+	def DueChrgs(self):
+		del self._DueChrgs
+		self._DueChrgs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DueChrgs', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CompstnAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtDue', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prd', type=DatePeriod5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CompstnAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CompstnAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DueChrgs', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

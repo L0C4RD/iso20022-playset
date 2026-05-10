@@ -1,9 +1,9 @@
 from . import base_types
-import Number
+from .Number import Number
 
 class ATMSecurityConfiguration2(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxAsmmtrcKey", "_MaxSmmtrcKey", "_MaxRSAKeyLngth", "_MaxRootKeyLngth"]
+	__slots__ = ["_MaxAsmmtrcKey", "_MaxRootKeyLngth", "_MaxRSAKeyLngth", "_MaxSmmtrcKey"]
 	@property
 	def MaxAsmmtrcKey(self):
 		return self._MaxAsmmtrcKey
@@ -18,17 +18,17 @@ class ATMSecurityConfiguration2(base_types._BaseFieldType):
 		self._MaxAsmmtrcKey = None
 
 	@property
-	def MaxSmmtrcKey(self):
-		return self._MaxSmmtrcKey
+	def MaxRootKeyLngth(self):
+		return self._MaxRootKeyLngth
 
-	@MaxSmmtrcKey.setter
-	def MaxSmmtrcKey(self, value):
-		self._MaxSmmtrcKey = value if type(value) != auto else self.make_default("MaxSmmtrcKey")
+	@MaxRootKeyLngth.setter
+	def MaxRootKeyLngth(self, value):
+		self._MaxRootKeyLngth = value if type(value) != auto else self.make_default("MaxRootKeyLngth")
 
-	@MaxSmmtrcKey.deleter
-	def MaxSmmtrcKey(self):
-		del self._MaxSmmtrcKey
-		self._MaxSmmtrcKey = None
+	@MaxRootKeyLngth.deleter
+	def MaxRootKeyLngth(self):
+		del self._MaxRootKeyLngth
+		self._MaxRootKeyLngth = None
 
 	@property
 	def MaxRSAKeyLngth(self):
@@ -44,22 +44,22 @@ class ATMSecurityConfiguration2(base_types._BaseFieldType):
 		self._MaxRSAKeyLngth = None
 
 	@property
-	def MaxRootKeyLngth(self):
-		return self._MaxRootKeyLngth
+	def MaxSmmtrcKey(self):
+		return self._MaxSmmtrcKey
 
-	@MaxRootKeyLngth.setter
-	def MaxRootKeyLngth(self, value):
-		self._MaxRootKeyLngth = value if type(value) != auto else self.make_default("MaxRootKeyLngth")
+	@MaxSmmtrcKey.setter
+	def MaxSmmtrcKey(self, value):
+		self._MaxSmmtrcKey = value if type(value) != auto else self.make_default("MaxSmmtrcKey")
 
-	@MaxRootKeyLngth.deleter
-	def MaxRootKeyLngth(self):
-		del self._MaxRootKeyLngth
-		self._MaxRootKeyLngth = None
+	@MaxSmmtrcKey.deleter
+	def MaxSmmtrcKey(self):
+		del self._MaxSmmtrcKey
+		self._MaxSmmtrcKey = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MaxAsmmtrcKey', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxSmmtrcKey', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxRSAKeyLngth', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxRootKeyLngth', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxRSAKeyLngth', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxSmmtrcKey', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 from . import base_types
-import GroupHeader110
-import SupplementaryData1
-import MandateCopy4
+from .SupplementaryData1 import SupplementaryData1
+from .MandateCopy4 import MandateCopy4
+from .GroupHeader110 import GroupHeader110
 
 class MandateCopyRequestV04(base_types._BaseFieldType):
 

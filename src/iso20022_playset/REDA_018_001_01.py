@@ -1,5 +1,5 @@
 from . import base_types
-import SecuritiesAccountCreationRequestV01
+from .SecuritiesAccountCreationRequestV01 import SecuritiesAccountCreationRequestV01
 
 class REDA_018_001_01():
 

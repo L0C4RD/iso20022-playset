@@ -1,6 +1,6 @@
 from . import base_types
-import Max256Text
-import GenericIdentification177
+from .GenericIdentification177 import GenericIdentification177
+from .Max256Text import Max256Text
 
 class Acquirer10(base_types._BaseFieldType):
 

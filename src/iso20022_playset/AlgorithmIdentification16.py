@@ -1,5 +1,5 @@
 from . import base_types
-import Algorithm11Code
+from .Algorithm11Code import Algorithm11Code
 
 class AlgorithmIdentification16(base_types._BaseFieldType):
 

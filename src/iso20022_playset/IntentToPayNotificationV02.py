@@ -1,12 +1,25 @@
 from . import base_types
-import BICIdentification1
-import MessageIdentification1
-import IntentToPay2
-import SimpleIdentificationInformation
+from .BICIdentification1 import BICIdentification1
+from .MessageIdentification1 import MessageIdentification1
+from .IntentToPay2 import IntentToPay2
+from .SimpleIdentificationInformation import SimpleIdentificationInformation
 
 class IntentToPayNotificationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmitrTxRef", "_SellrBk", "_BuyrBk", "_InttToPay", "_NtfctnId", "_TxId"]
+	__slots__ = ["_NtfctnId", "_SubmitrTxRef", "_BuyrBk", "_TxId", "_SellrBk", "_InttToPay"]
+	@property
+	def NtfctnId(self):
+		return self._NtfctnId
+
+	@NtfctnId.setter
+	def NtfctnId(self, value):
+		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
+
+	@NtfctnId.deleter
+	def NtfctnId(self):
+		del self._NtfctnId
+		self._NtfctnId = None
+
 	@property
 	def SubmitrTxRef(self):
 		return self._SubmitrTxRef
@@ -19,19 +32,6 @@ class IntentToPayNotificationV02(base_types._BaseFieldType):
 	def SubmitrTxRef(self):
 		del self._SubmitrTxRef
 		self._SubmitrTxRef = None
-
-	@property
-	def SellrBk(self):
-		return self._SellrBk
-
-	@SellrBk.setter
-	def SellrBk(self, value):
-		self._SellrBk = value if type(value) != auto else self.make_default("SellrBk")
-
-	@SellrBk.deleter
-	def SellrBk(self):
-		del self._SellrBk
-		self._SellrBk = None
 
 	@property
 	def BuyrBk(self):
@@ -47,32 +47,6 @@ class IntentToPayNotificationV02(base_types._BaseFieldType):
 		self._BuyrBk = None
 
 	@property
-	def InttToPay(self):
-		return self._InttToPay
-
-	@InttToPay.setter
-	def InttToPay(self, value):
-		self._InttToPay = value if type(value) != auto else self.make_default("InttToPay")
-
-	@InttToPay.deleter
-	def InttToPay(self):
-		del self._InttToPay
-		self._InttToPay = None
-
-	@property
-	def NtfctnId(self):
-		return self._NtfctnId
-
-	@NtfctnId.setter
-	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
-
-	@NtfctnId.deleter
-	def NtfctnId(self):
-		del self._NtfctnId
-		self._NtfctnId = None
-
-	@property
 	def TxId(self):
 		return self._TxId
 
@@ -85,12 +59,38 @@ class IntentToPayNotificationV02(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
+	@property
+	def SellrBk(self):
+		return self._SellrBk
+
+	@SellrBk.setter
+	def SellrBk(self, value):
+		self._SellrBk = value if type(value) != auto else self.make_default("SellrBk")
+
+	@SellrBk.deleter
+	def SellrBk(self):
+		del self._SellrBk
+		self._SellrBk = None
+
+	@property
+	def InttToPay(self):
+		return self._InttToPay
+
+	@InttToPay.setter
+	def InttToPay(self, value):
+		self._InttToPay = value if type(value) != auto else self.make_default("InttToPay")
+
+	@InttToPay.deleter
+	def InttToPay(self):
+		del self._InttToPay
+		self._InttToPay = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InttToPay', type=IntentToPay2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InttToPay', type=IntentToPay2, min=1, max=1, mutex_group=None, array=False),
 	))
 

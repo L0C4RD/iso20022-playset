@@ -1,5 +1,5 @@
 from . import base_types
-import DataSetSubmissionV05
+from .DataSetSubmissionV05 import DataSetSubmissionV05
 
 class TSMT_014_001_05():
 

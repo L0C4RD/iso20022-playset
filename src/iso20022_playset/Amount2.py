@@ -1,23 +1,10 @@
 from . import base_types
-import ImpliedCurrencyAndAmount
-import ActiveCurrencyAndAmount
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class Amount2(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlCcyAmt", "_RptgAmt"]
-	@property
-	def OrgnlCcyAmt(self):
-		return self._OrgnlCcyAmt
-
-	@OrgnlCcyAmt.setter
-	def OrgnlCcyAmt(self, value):
-		self._OrgnlCcyAmt = value if type(value) != auto else self.make_default("OrgnlCcyAmt")
-
-	@OrgnlCcyAmt.deleter
-	def OrgnlCcyAmt(self):
-		del self._OrgnlCcyAmt
-		self._OrgnlCcyAmt = None
-
+	__slots__ = ["_RptgAmt", "_OrgnlCcyAmt"]
 	@property
 	def RptgAmt(self):
 		return self._RptgAmt
@@ -31,8 +18,21 @@ class Amount2(base_types._BaseFieldType):
 		del self._RptgAmt
 		self._RptgAmt = None
 
+	@property
+	def OrgnlCcyAmt(self):
+		return self._OrgnlCcyAmt
+
+	@OrgnlCcyAmt.setter
+	def OrgnlCcyAmt(self, value):
+		self._OrgnlCcyAmt = value if type(value) != auto else self.make_default("OrgnlCcyAmt")
+
+	@OrgnlCcyAmt.deleter
+	def OrgnlCcyAmt(self):
+		del self._OrgnlCcyAmt
+		self._OrgnlCcyAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlCcyAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCcyAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

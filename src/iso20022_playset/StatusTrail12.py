@@ -1,18 +1,18 @@
 from . import base_types
-import ProcessingStatus86Choice
-import ProprietaryReason4
-import ISODateTime
-import SupplementaryData1
-import ModificationProcessingStatus10Choice
-import Max35Text
-import MatchingStatus25Choice
-import SettlementStatus32Choice
-import OrganisationIdentification31
-import ProcessingStatus87Choice
+from .Max35Text import Max35Text
+from .OrganisationIdentification31 import OrganisationIdentification31
+from .SettlementStatus32Choice import SettlementStatus32Choice
+from .ModificationProcessingStatus10Choice import ModificationProcessingStatus10Choice
+from .ProcessingStatus87Choice import ProcessingStatus87Choice
+from .ProprietaryReason4 import ProprietaryReason4
+from .ProcessingStatus86Choice import ProcessingStatus86Choice
+from .SupplementaryData1 import SupplementaryData1
+from .MatchingStatus25Choice import MatchingStatus25Choice
+from .ISODateTime import ISODateTime
 
 class StatusTrail12(base_types._BaseFieldType):
 
-	__slots__ = ["_UsrId", "_SplmtryData", "_StsDt", "_SndgOrgId", "_ModPrcgSts", "_CxlSts", "_PrcgSts", "_SttlmSts", "_IfrrdMtchgSts", "_Sttld", "_MtchgSts"]
+	__slots__ = ["_UsrId", "_SndgOrgId", "_PrcgSts", "_ModPrcgSts", "_CxlSts", "_Sttld", "_IfrrdMtchgSts", "_SplmtryData", "_SttlmSts", "_MtchgSts", "_StsDt"]
 	@property
 	def UsrId(self):
 		return self._UsrId
@@ -27,32 +27,6 @@ class StatusTrail12(base_types._BaseFieldType):
 		self._UsrId = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def StsDt(self):
-		return self._StsDt
-
-	@StsDt.setter
-	def StsDt(self, value):
-		self._StsDt = value if type(value) != auto else self.make_default("StsDt")
-
-	@StsDt.deleter
-	def StsDt(self):
-		del self._StsDt
-		self._StsDt = None
-
-	@property
 	def SndgOrgId(self):
 		return self._SndgOrgId
 
@@ -64,6 +38,19 @@ class StatusTrail12(base_types._BaseFieldType):
 	def SndgOrgId(self):
 		del self._SndgOrgId
 		self._SndgOrgId = None
+
+	@property
+	def PrcgSts(self):
+		return self._PrcgSts
+
+	@PrcgSts.setter
+	def PrcgSts(self, value):
+		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+
+	@PrcgSts.deleter
+	def PrcgSts(self):
+		del self._PrcgSts
+		self._PrcgSts = None
 
 	@property
 	def ModPrcgSts(self):
@@ -92,30 +79,17 @@ class StatusTrail12(base_types._BaseFieldType):
 		self._CxlSts = None
 
 	@property
-	def PrcgSts(self):
-		return self._PrcgSts
+	def Sttld(self):
+		return self._Sttld
 
-	@PrcgSts.setter
-	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+	@Sttld.setter
+	def Sttld(self, value):
+		self._Sttld = value if type(value) != auto else self.make_default("Sttld")
 
-	@PrcgSts.deleter
-	def PrcgSts(self):
-		del self._PrcgSts
-		self._PrcgSts = None
-
-	@property
-	def SttlmSts(self):
-		return self._SttlmSts
-
-	@SttlmSts.setter
-	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != auto else self.make_default("SttlmSts")
-
-	@SttlmSts.deleter
-	def SttlmSts(self):
-		del self._SttlmSts
-		self._SttlmSts = None
+	@Sttld.deleter
+	def Sttld(self):
+		del self._Sttld
+		self._Sttld = None
 
 	@property
 	def IfrrdMtchgSts(self):
@@ -131,17 +105,30 @@ class StatusTrail12(base_types._BaseFieldType):
 		self._IfrrdMtchgSts = None
 
 	@property
-	def Sttld(self):
-		return self._Sttld
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Sttld.setter
-	def Sttld(self, value):
-		self._Sttld = value if type(value) != auto else self.make_default("Sttld")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@Sttld.deleter
-	def Sttld(self):
-		del self._Sttld
-		self._Sttld = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def SttlmSts(self):
+		return self._SttlmSts
+
+	@SttlmSts.setter
+	def SttlmSts(self, value):
+		self._SttlmSts = value if type(value) != auto else self.make_default("SttlmSts")
+
+	@SttlmSts.deleter
+	def SttlmSts(self):
+		del self._SttlmSts
+		self._SttlmSts = None
 
 	@property
 	def MtchgSts(self):
@@ -156,17 +143,30 @@ class StatusTrail12(base_types._BaseFieldType):
 		del self._MtchgSts
 		self._MtchgSts = None
 
+	@property
+	def StsDt(self):
+		return self._StsDt
+
+	@StsDt.setter
+	def StsDt(self, value):
+		self._StsDt = value if type(value) != auto else self.make_default("StsDt")
+
+	@StsDt.deleter
+	def StsDt(self):
+		del self._StsDt
+		self._StsDt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UsrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StsDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SndgOrgId', type=OrganisationIdentification31, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus87Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModPrcgSts', type=ModificationProcessingStatus10Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlSts', type=ProcessingStatus86Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus87Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus32Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus25Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sttld', type=ProprietaryReason4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus25Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus32Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus25Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

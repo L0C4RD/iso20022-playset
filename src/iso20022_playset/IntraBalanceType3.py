@@ -1,5 +1,5 @@
 from . import base_types
-import CashSubBalanceTypeAndQuantityBreakdown3
+from .CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuantityBreakdown3
 
 class IntraBalanceType3(base_types._BaseFieldType):
 

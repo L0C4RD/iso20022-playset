@@ -1,6 +1,6 @@
 from . import base_types
-import ATMEnvironment7
-import ATMTransaction30
+from .ATMTransaction30 import ATMTransaction30
+from .ATMEnvironment7 import ATMEnvironment7
 
 class ATMReconciliationRequestComponent1(base_types._BaseFieldType):
 

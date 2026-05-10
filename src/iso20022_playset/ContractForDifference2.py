@@ -1,22 +1,22 @@
 from . import base_types
-import ActiveOrHistoricCurrencyCode
-import UnderlyingContractForDifferenceType3Code
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .UnderlyingContractForDifferenceType3Code import UnderlyingContractForDifferenceType3Code
 
 class ContractForDifference2(base_types._BaseFieldType):
 
-	__slots__ = ["_NtnlCcy2", "_NtnlCcy1", "_UndrlygTp"]
+	__slots__ = ["_UndrlygTp", "_NtnlCcy1", "_NtnlCcy2"]
 	@property
-	def NtnlCcy2(self):
-		return self._NtnlCcy2
+	def UndrlygTp(self):
+		return self._UndrlygTp
 
-	@NtnlCcy2.setter
-	def NtnlCcy2(self, value):
-		self._NtnlCcy2 = value if type(value) != auto else self.make_default("NtnlCcy2")
+	@UndrlygTp.setter
+	def UndrlygTp(self, value):
+		self._UndrlygTp = value if type(value) != auto else self.make_default("UndrlygTp")
 
-	@NtnlCcy2.deleter
-	def NtnlCcy2(self):
-		del self._NtnlCcy2
-		self._NtnlCcy2 = None
+	@UndrlygTp.deleter
+	def UndrlygTp(self):
+		del self._UndrlygTp
+		self._UndrlygTp = None
 
 	@property
 	def NtnlCcy1(self):
@@ -32,21 +32,21 @@ class ContractForDifference2(base_types._BaseFieldType):
 		self._NtnlCcy1 = None
 
 	@property
-	def UndrlygTp(self):
-		return self._UndrlygTp
+	def NtnlCcy2(self):
+		return self._NtnlCcy2
 
-	@UndrlygTp.setter
-	def UndrlygTp(self, value):
-		self._UndrlygTp = value if type(value) != auto else self.make_default("UndrlygTp")
+	@NtnlCcy2.setter
+	def NtnlCcy2(self, value):
+		self._NtnlCcy2 = value if type(value) != auto else self.make_default("NtnlCcy2")
 
-	@UndrlygTp.deleter
-	def UndrlygTp(self):
-		del self._UndrlygTp
-		self._UndrlygTp = None
+	@NtnlCcy2.deleter
+	def NtnlCcy2(self):
+		del self._NtnlCcy2
+		self._NtnlCcy2 = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtnlCcy2', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlCcy1', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygTp', type=UnderlyingContractForDifferenceType3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlCcy1', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlCcy2', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

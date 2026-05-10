@@ -1,5 +1,5 @@
 from . import base_types
-import IntraBalanceMovementConfirmationV02
+from .IntraBalanceMovementConfirmationV02 import IntraBalanceMovementConfirmationV02
 
 class CAMT_068_001_02():
 

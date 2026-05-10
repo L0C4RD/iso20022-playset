@@ -1,6 +1,6 @@
 from . import base_types
-import PaymentCodeOrOther2Choice
-import AmountOrPercentage2Choice
+from .AmountOrPercentage2Choice import AmountOrPercentage2Choice
+from .PaymentCodeOrOther2Choice import PaymentCodeOrOther2Choice
 
 class PaymentTerms5(base_types._BaseFieldType):
 

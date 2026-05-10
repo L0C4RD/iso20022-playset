@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification13
-import NetDividendRateType1Code
+from .NetDividendRateType1Code import NetDividendRateType1Code
+from .GenericIdentification13 import GenericIdentification13
 
 class NetDividendRateType1FormatChoice(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-import CustomerPaymentCancellationRequestV12
+from .CustomerPaymentCancellationRequestV12 import CustomerPaymentCancellationRequestV12
 
 class CAMT_055_001_12():
 

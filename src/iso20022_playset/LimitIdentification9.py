@@ -1,24 +1,24 @@
 from . import base_types
-import AccountIdentification4Choice
-import SystemIdentification2Choice
-import BranchAndFinancialInstitutionIdentification8
-import LimitType1Choice
+from .LimitType1Choice import LimitType1Choice
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .AccountIdentification4Choice import AccountIdentification4Choice
+from .SystemIdentification2Choice import SystemIdentification2Choice
 
 class LimitIdentification9(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_Tp", "_AcctId", "_SysId"]
+	__slots__ = ["_SysId", "_Tp", "_AcctId", "_AcctOwnr"]
 	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
+	def SysId(self):
+		return self._SysId
 
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+	@SysId.setter
+	def SysId(self, value):
+		self._SysId = value if type(value) != auto else self.make_default("SysId")
 
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
+	@SysId.deleter
+	def SysId(self):
+		del self._SysId
+		self._SysId = None
 
 	@property
 	def Tp(self):
@@ -47,22 +47,22 @@ class LimitIdentification9(base_types._BaseFieldType):
 		self._AcctId = None
 
 	@property
-	def SysId(self):
-		return self._SysId
+	def AcctOwnr(self):
+		return self._AcctOwnr
 
-	@SysId.setter
-	def SysId(self, value):
-		self._SysId = value if type(value) != auto else self.make_default("SysId")
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
 
-	@SysId.deleter
-	def SysId(self):
-		del self._SysId
-		self._SysId = None
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=LimitType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

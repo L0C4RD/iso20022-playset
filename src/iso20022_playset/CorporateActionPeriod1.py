@@ -1,9 +1,22 @@
 from . import base_types
-import Period1
+from .Period1 import Period1
 
 class CorporateActionPeriod1(base_types._BaseFieldType):
 
-	__slots__ = ["_PricClctnPrd", "_CmplsryPurchsPrd", "_ActnPrd", "_BlckgPrd", "_IntrstPrd"]
+	__slots__ = ["_BlckgPrd", "_PricClctnPrd", "_CmplsryPurchsPrd", "_ActnPrd", "_IntrstPrd"]
+	@property
+	def BlckgPrd(self):
+		return self._BlckgPrd
+
+	@BlckgPrd.setter
+	def BlckgPrd(self, value):
+		self._BlckgPrd = value if type(value) != auto else self.make_default("BlckgPrd")
+
+	@BlckgPrd.deleter
+	def BlckgPrd(self):
+		del self._BlckgPrd
+		self._BlckgPrd = None
+
 	@property
 	def PricClctnPrd(self):
 		return self._PricClctnPrd
@@ -44,19 +57,6 @@ class CorporateActionPeriod1(base_types._BaseFieldType):
 		self._ActnPrd = None
 
 	@property
-	def BlckgPrd(self):
-		return self._BlckgPrd
-
-	@BlckgPrd.setter
-	def BlckgPrd(self, value):
-		self._BlckgPrd = value if type(value) != auto else self.make_default("BlckgPrd")
-
-	@BlckgPrd.deleter
-	def BlckgPrd(self):
-		del self._BlckgPrd
-		self._BlckgPrd = None
-
-	@property
 	def IntrstPrd(self):
 		return self._IntrstPrd
 
@@ -70,10 +70,10 @@ class CorporateActionPeriod1(base_types._BaseFieldType):
 		self._IntrstPrd = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BlckgPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricClctnPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmplsryPurchsPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActnPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckgPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 	))
 

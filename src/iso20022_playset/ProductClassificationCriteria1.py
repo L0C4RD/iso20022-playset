@@ -1,6 +1,6 @@
 from . import base_types
-import Max52Text
-import CFIOct2015Identifier
+from .CFIOct2015Identifier import CFIOct2015Identifier
+from .Max52Text import Max52Text
 
 class ProductClassificationCriteria1(base_types._BaseFieldType):
 

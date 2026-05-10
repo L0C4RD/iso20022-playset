@@ -1,38 +1,25 @@
 from . import base_types
-import PercentageRate
-import TrueFalseIndicator
-import ImpliedCurrencyAndAmount
-import Max35Text
-import Max70Text
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .Max35Text import Max35Text
+from .Max70Text import Max70Text
+from .PercentageRate import PercentageRate
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class Adjustment13(base_types._BaseFieldType):
 
-	__slots__ = ["_Pctg", "_Rsn", "_TaxOnOrgnlAmt", "_AddtlTp", "_Tp", "_Desc", "_PrmtnCd", "_Amt"]
+	__slots__ = ["_AddtlTp", "_TaxOnOrgnlAmt", "_Rsn", "_Pctg", "_PrmtnCd", "_Amt", "_Tp", "_Desc"]
 	@property
-	def Pctg(self):
-		return self._Pctg
+	def AddtlTp(self):
+		return self._AddtlTp
 
-	@Pctg.setter
-	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+	@AddtlTp.setter
+	def AddtlTp(self, value):
+		self._AddtlTp = value if type(value) != auto else self.make_default("AddtlTp")
 
-	@Pctg.deleter
-	def Pctg(self):
-		del self._Pctg
-		self._Pctg = None
-
-	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@AddtlTp.deleter
+	def AddtlTp(self):
+		del self._AddtlTp
+		self._AddtlTp = None
 
 	@property
 	def TaxOnOrgnlAmt(self):
@@ -48,43 +35,30 @@ class Adjustment13(base_types._BaseFieldType):
 		self._TaxOnOrgnlAmt = None
 
 	@property
-	def AddtlTp(self):
-		return self._AddtlTp
+	def Rsn(self):
+		return self._Rsn
 
-	@AddtlTp.setter
-	def AddtlTp(self, value):
-		self._AddtlTp = value if type(value) != auto else self.make_default("AddtlTp")
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
 
-	@AddtlTp.deleter
-	def AddtlTp(self):
-		del self._AddtlTp
-		self._AddtlTp = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
-	def Desc(self):
-		return self._Desc
+	def Pctg(self):
+		return self._Pctg
 
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+	@Pctg.setter
+	def Pctg(self, value):
+		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
 
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
+	@Pctg.deleter
+	def Pctg(self):
+		del self._Pctg
+		self._Pctg = None
 
 	@property
 	def PrmtnCd(self):
@@ -112,14 +86,40 @@ class Adjustment13(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxOnOrgnlAmt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxOnOrgnlAmt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrmtnCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

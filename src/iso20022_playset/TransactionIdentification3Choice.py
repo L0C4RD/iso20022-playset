@@ -1,7 +1,7 @@
 from . import base_types
-import TradeTransactionIdentification17
-import TradeTransactionIdentification16
-import TradeTransactionIdentification20
+from .TradeTransactionIdentification20 import TradeTransactionIdentification20
+from .TradeTransactionIdentification17 import TradeTransactionIdentification17
+from .TradeTransactionIdentification16 import TradeTransactionIdentification16
 
 class TransactionIdentification3Choice(base_types._BaseFieldType):
 

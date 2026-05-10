@@ -1,12 +1,12 @@
 from . import base_types
-import SupplementaryData1
-import Max35Text
-import Obligation9
-import CollateralProposalResponse4Choice
+from .Max35Text import Max35Text
+from .CollateralProposalResponse4Choice import CollateralProposalResponse4Choice
+from .SupplementaryData1 import SupplementaryData1
+from .Obligation9 import Obligation9
 
 class CollateralProposalResponseV06(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_PrpslRspn", "_TxId", "_Oblgtn"]
+	__slots__ = ["_SplmtryData", "_Oblgtn", "_TxId", "_PrpslRspn"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -21,17 +21,17 @@ class CollateralProposalResponseV06(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def PrpslRspn(self):
-		return self._PrpslRspn
+	def Oblgtn(self):
+		return self._Oblgtn
 
-	@PrpslRspn.setter
-	def PrpslRspn(self, value):
-		self._PrpslRspn = value if type(value) != auto else self.make_default("PrpslRspn")
+	@Oblgtn.setter
+	def Oblgtn(self, value):
+		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
 
-	@PrpslRspn.deleter
-	def PrpslRspn(self):
-		del self._PrpslRspn
-		self._PrpslRspn = None
+	@Oblgtn.deleter
+	def Oblgtn(self):
+		del self._Oblgtn
+		self._Oblgtn = None
 
 	@property
 	def TxId(self):
@@ -47,22 +47,22 @@ class CollateralProposalResponseV06(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def Oblgtn(self):
-		return self._Oblgtn
+	def PrpslRspn(self):
+		return self._PrpslRspn
 
-	@Oblgtn.setter
-	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
+	@PrpslRspn.setter
+	def PrpslRspn(self, value):
+		self._PrpslRspn = value if type(value) != auto else self.make_default("PrpslRspn")
 
-	@Oblgtn.deleter
-	def Oblgtn(self):
-		del self._Oblgtn
-		self._Oblgtn = None
+	@PrpslRspn.deleter
+	def PrpslRspn(self):
+		del self._PrpslRspn
+		self._PrpslRspn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrpslRspn', type=CollateralProposalResponse4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrpslRspn', type=CollateralProposalResponse4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

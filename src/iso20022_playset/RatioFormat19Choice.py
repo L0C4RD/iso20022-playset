@@ -1,11 +1,11 @@
 from . import base_types
-import AmountToAmountRatio2
-import QuantityToQuantityRatio1
-import AmountAndQuantityRatio4
+from .AmountAndQuantityRatio4 import AmountAndQuantityRatio4
+from .QuantityToQuantityRatio1 import QuantityToQuantityRatio1
+from .AmountToAmountRatio2 import AmountToAmountRatio2
 
 class RatioFormat19Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtToQty", "_QtyToAmt", "_QtyToQty", "_AmtToAmt"]
+	__slots__ = ["_AmtToQty", "_QtyToQty", "_QtyToAmt", "_AmtToAmt"]
 	@property
 	def AmtToQty(self):
 		return self._AmtToQty
@@ -20,19 +20,6 @@ class RatioFormat19Choice(base_types._BaseFieldType):
 		self._AmtToQty = None
 
 	@property
-	def QtyToAmt(self):
-		return self._QtyToAmt
-
-	@QtyToAmt.setter
-	def QtyToAmt(self, value):
-		self._QtyToAmt = value if type(value) != auto else self.make_default("QtyToAmt")
-
-	@QtyToAmt.deleter
-	def QtyToAmt(self):
-		del self._QtyToAmt
-		self._QtyToAmt = None
-
-	@property
 	def QtyToQty(self):
 		return self._QtyToQty
 
@@ -44,6 +31,19 @@ class RatioFormat19Choice(base_types._BaseFieldType):
 	def QtyToQty(self):
 		del self._QtyToQty
 		self._QtyToQty = None
+
+	@property
+	def QtyToAmt(self):
+		return self._QtyToAmt
+
+	@QtyToAmt.setter
+	def QtyToAmt(self, value):
+		self._QtyToAmt = value if type(value) != auto else self.make_default("QtyToAmt")
+
+	@QtyToAmt.deleter
+	def QtyToAmt(self):
+		del self._QtyToAmt
+		self._QtyToAmt = None
 
 	@property
 	def AmtToAmt(self):
@@ -60,8 +60,8 @@ class RatioFormat19Choice(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtToQty', type=AmountAndQuantityRatio4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='QtyToAmt', type=AmountAndQuantityRatio4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='QtyToQty', type=QuantityToQuantityRatio1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='QtyToAmt', type=AmountAndQuantityRatio4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtToAmt', type=AmountToAmountRatio2, min=0, max=1, mutex_group=1, array=False),
 	))
 

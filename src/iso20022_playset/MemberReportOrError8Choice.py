@@ -1,6 +1,6 @@
 from . import base_types
-import Member7
-import ErrorHandling3
+from .Member7 import Member7
+from .ErrorHandling3 import ErrorHandling3
 
 class MemberReportOrError8Choice(base_types._BaseFieldType):
 

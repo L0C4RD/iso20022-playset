@@ -1,12 +1,25 @@
 from . import base_types
-import CashAccount40
-import PaymentCard4
-import CardTransaction3Choice
-import PointOfInteraction1
+from .PointOfInteraction1 import PointOfInteraction1
+from .PaymentCard4 import PaymentCard4
+from .CashAccount40 import CashAccount40
+from .CardTransaction3Choice import CardTransaction3Choice
 
 class CardTransaction18(base_types._BaseFieldType):
 
-	__slots__ = ["_POI", "_Tx", "_PrePdAcct", "_Card"]
+	__slots__ = ["_Card", "_POI", "_Tx", "_PrePdAcct"]
+	@property
+	def Card(self):
+		return self._Card
+
+	@Card.setter
+	def Card(self, value):
+		self._Card = value if type(value) != auto else self.make_default("Card")
+
+	@Card.deleter
+	def Card(self):
+		del self._Card
+		self._Card = None
+
 	@property
 	def POI(self):
 		return self._POI
@@ -46,23 +59,10 @@ class CardTransaction18(base_types._BaseFieldType):
 		del self._PrePdAcct
 		self._PrePdAcct = None
 
-	@property
-	def Card(self):
-		return self._Card
-
-	@Card.setter
-	def Card(self, value):
-		self._Card = value if type(value) != auto else self.make_default("Card")
-
-	@Card.deleter
-	def Card(self):
-		del self._Card
-		self._Card = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Card', type=PaymentCard4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POI', type=PointOfInteraction1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardTransaction3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrePdAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Card', type=PaymentCard4, min=0, max=1, mutex_group=None, array=False),
 	))
 

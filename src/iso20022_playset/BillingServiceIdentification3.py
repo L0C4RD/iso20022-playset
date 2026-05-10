@@ -1,27 +1,14 @@
 from . import base_types
-import BillingServiceCommonIdentification1
-import BankTransactionCodeStructure4
-import BillingSubServiceIdentification1
-import Max12Text
-import Max35Text
-import Max70Text
+from .Max35Text import Max35Text
+from .BillingServiceCommonIdentification1 import BillingServiceCommonIdentification1
+from .BillingSubServiceIdentification1 import BillingSubServiceIdentification1
+from .Max70Text import Max70Text
+from .Max12Text import Max12Text
+from .BankTransactionCodeStructure4 import BankTransactionCodeStructure4
 
 class BillingServiceIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_BkTxCd", "_SubSvc", "_Desc", "_Id", "_SvcTp", "_CmonCd"]
-	@property
-	def BkTxCd(self):
-		return self._BkTxCd
-
-	@BkTxCd.setter
-	def BkTxCd(self, value):
-		self._BkTxCd = value if type(value) != auto else self.make_default("BkTxCd")
-
-	@BkTxCd.deleter
-	def BkTxCd(self):
-		del self._BkTxCd
-		self._BkTxCd = None
-
+	__slots__ = ["_SubSvc", "_BkTxCd", "_Id", "_CmonCd", "_SvcTp", "_Desc"]
 	@property
 	def SubSvc(self):
 		return self._SubSvc
@@ -36,17 +23,17 @@ class BillingServiceIdentification3(base_types._BaseFieldType):
 		self._SubSvc = None
 
 	@property
-	def Desc(self):
-		return self._Desc
+	def BkTxCd(self):
+		return self._BkTxCd
 
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+	@BkTxCd.setter
+	def BkTxCd(self, value):
+		self._BkTxCd = value if type(value) != auto else self.make_default("BkTxCd")
 
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
+	@BkTxCd.deleter
+	def BkTxCd(self):
+		del self._BkTxCd
+		self._BkTxCd = None
 
 	@property
 	def Id(self):
@@ -62,6 +49,19 @@ class BillingServiceIdentification3(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def CmonCd(self):
+		return self._CmonCd
+
+	@CmonCd.setter
+	def CmonCd(self, value):
+		self._CmonCd = value if type(value) != auto else self.make_default("CmonCd")
+
+	@CmonCd.deleter
+	def CmonCd(self):
+		del self._CmonCd
+		self._CmonCd = None
+
+	@property
 	def SvcTp(self):
 		return self._SvcTp
 
@@ -75,24 +75,24 @@ class BillingServiceIdentification3(base_types._BaseFieldType):
 		self._SvcTp = None
 
 	@property
-	def CmonCd(self):
-		return self._CmonCd
+	def Desc(self):
+		return self._Desc
 
-	@CmonCd.setter
-	def CmonCd(self, value):
-		self._CmonCd = value if type(value) != auto else self.make_default("CmonCd")
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
 
-	@CmonCd.deleter
-	def CmonCd(self):
-		del self._CmonCd
-		self._CmonCd = None
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BkTxCd', type=BankTransactionCodeStructure4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubSvc', type=BillingSubServiceIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BkTxCd', type=BankTransactionCodeStructure4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcTp', type=Max12Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonCd', type=BillingServiceCommonIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcTp', type=Max12Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-import AccountingStatementOfHoldingsCancellationV02
+from .AccountingStatementOfHoldingsCancellationV02 import AccountingStatementOfHoldingsCancellationV02
 
 class SEMT_005_001_02():
 

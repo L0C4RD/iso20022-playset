@@ -1,6 +1,6 @@
 from . import base_types
-import LaxPayload
-import PayloadDescription2
+from .LaxPayload import LaxPayload
+from .PayloadDescription2 import PayloadDescription2
 
 class HEAD_002_001_01():
 

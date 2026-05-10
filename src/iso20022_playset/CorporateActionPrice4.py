@@ -1,5 +1,5 @@
 from . import base_types
-import PriceFormat2Choice
+from .PriceFormat2Choice import PriceFormat2Choice
 
 class CorporateActionPrice4(base_types._BaseFieldType):
 

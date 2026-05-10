@@ -1,6 +1,6 @@
 from . import base_types
-import BranchAndFinancialInstitutionIdentification5
-import PartyIdentification42
+from .BranchAndFinancialInstitutionIdentification5 import BranchAndFinancialInstitutionIdentification5
+from .PartyIdentification42 import PartyIdentification42
 
 class Party9Choice(base_types._BaseFieldType):
 

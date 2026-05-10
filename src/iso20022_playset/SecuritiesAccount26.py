@@ -1,24 +1,11 @@
 from . import base_types
-import PurposeCode7Choice
-import Max35Text
-import Max70Text
+from .PurposeCode7Choice import PurposeCode7Choice
+from .Max35Text import Max35Text
+from .Max70Text import Max70Text
 
 class SecuritiesAccount26(base_types._BaseFieldType):
 
-	__slots__ = ["_Dsgnt", "_Nm", "_Id", "_Tp"]
-	@property
-	def Dsgnt(self):
-		return self._Dsgnt
-
-	@Dsgnt.setter
-	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != auto else self.make_default("Dsgnt")
-
-	@Dsgnt.deleter
-	def Dsgnt(self):
-		del self._Dsgnt
-		self._Dsgnt = None
-
+	__slots__ = ["_Nm", "_Dsgnt", "_Id", "_Tp"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -31,6 +18,19 @@ class SecuritiesAccount26(base_types._BaseFieldType):
 	def Nm(self):
 		del self._Nm
 		self._Nm = None
+
+	@property
+	def Dsgnt(self):
+		return self._Dsgnt
+
+	@Dsgnt.setter
+	def Dsgnt(self, value):
+		self._Dsgnt = value if type(value) != auto else self.make_default("Dsgnt")
+
+	@Dsgnt.deleter
+	def Dsgnt(self):
+		del self._Dsgnt
+		self._Dsgnt = None
 
 	@property
 	def Id(self):
@@ -59,8 +59,8 @@ class SecuritiesAccount26(base_types._BaseFieldType):
 		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PurposeCode7Choice, min=0, max=1, mutex_group=None, array=False),
 	))

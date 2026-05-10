@@ -1,5 +1,5 @@
 from . import base_types
-import AccountClosingAdditionalInformationRequestV04
+from .AccountClosingAdditionalInformationRequestV04 import AccountClosingAdditionalInformationRequestV04
 
 class ACMT_021_001_04():
 

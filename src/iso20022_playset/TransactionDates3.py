@@ -1,11 +1,37 @@
 from . import base_types
-import ISODate
-import ProprietaryDate3
-import ISODateTime
+from .ISODateTime import ISODateTime
+from .ProprietaryDate3 import ProprietaryDate3
+from .ISODate import ISODate
 
 class TransactionDates3(base_types._BaseFieldType):
 
-	__slots__ = ["_TradDt", "_IntrBkSttlmDt", "_Prtry", "_TxDtTm", "_AccptncDtTm", "_EndDt", "_TradActvtyCtrctlSttlmDt", "_StartDt"]
+	__slots__ = ["_Prtry", "_StartDt", "_TradDt", "_TradActvtyCtrctlSttlmDt", "_IntrBkSttlmDt", "_TxDtTm", "_AccptncDtTm", "_EndDt"]
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
+
+	@property
+	def StartDt(self):
+		return self._StartDt
+
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
+
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
+
 	@property
 	def TradDt(self):
 		return self._TradDt
@@ -20,6 +46,19 @@ class TransactionDates3(base_types._BaseFieldType):
 		self._TradDt = None
 
 	@property
+	def TradActvtyCtrctlSttlmDt(self):
+		return self._TradActvtyCtrctlSttlmDt
+
+	@TradActvtyCtrctlSttlmDt.setter
+	def TradActvtyCtrctlSttlmDt(self, value):
+		self._TradActvtyCtrctlSttlmDt = value if type(value) != auto else self.make_default("TradActvtyCtrctlSttlmDt")
+
+	@TradActvtyCtrctlSttlmDt.deleter
+	def TradActvtyCtrctlSttlmDt(self):
+		del self._TradActvtyCtrctlSttlmDt
+		self._TradActvtyCtrctlSttlmDt = None
+
+	@property
 	def IntrBkSttlmDt(self):
 		return self._IntrBkSttlmDt
 
@@ -31,19 +70,6 @@ class TransactionDates3(base_types._BaseFieldType):
 	def IntrBkSttlmDt(self):
 		del self._IntrBkSttlmDt
 		self._IntrBkSttlmDt = None
-
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
 
 	@property
 	def TxDtTm(self):
@@ -84,40 +110,14 @@ class TransactionDates3(base_types._BaseFieldType):
 		del self._EndDt
 		self._EndDt = None
 
-	@property
-	def TradActvtyCtrctlSttlmDt(self):
-		return self._TradActvtyCtrctlSttlmDt
-
-	@TradActvtyCtrctlSttlmDt.setter
-	def TradActvtyCtrctlSttlmDt(self, value):
-		self._TradActvtyCtrctlSttlmDt = value if type(value) != auto else self.make_default("TradActvtyCtrctlSttlmDt")
-
-	@TradActvtyCtrctlSttlmDt.deleter
-	def TradActvtyCtrctlSttlmDt(self):
-		del self._TradActvtyCtrctlSttlmDt
-		self._TradActvtyCtrctlSttlmDt = None
-
-	@property
-	def StartDt(self):
-		return self._StartDt
-
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != auto else self.make_default("StartDt")
-
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryDate3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradActvtyCtrctlSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptncDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradActvtyCtrctlSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

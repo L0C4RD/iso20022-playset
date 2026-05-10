@@ -1,6 +1,6 @@
 from . import base_types
-import SecurityAttributes11
-import BusinessError4
+from .SecurityAttributes11 import SecurityAttributes11
+from .BusinessError4 import BusinessError4
 
 class SecurityOrBusinessError4Choice(base_types._BaseFieldType):
 

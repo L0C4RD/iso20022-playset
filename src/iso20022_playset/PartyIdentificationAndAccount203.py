@@ -1,27 +1,14 @@
 from . import base_types
-import PartyIdentification120Choice
-import BlockChainAddressWallet3
-import AlternatePartyIdentification7
-import TradingPartyCapacity5Choice
-import LEIIdentifier
-import SecuritiesAccount19
+from .BlockChainAddressWallet3 import BlockChainAddressWallet3
+from .AlternatePartyIdentification7 import AlternatePartyIdentification7
+from .LEIIdentifier import LEIIdentifier
+from .SecuritiesAccount19 import SecuritiesAccount19
+from .PartyIdentification120Choice import PartyIdentification120Choice
+from .TradingPartyCapacity5Choice import TradingPartyCapacity5Choice
 
 class PartyIdentificationAndAccount203(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_LEI", "_PtyCpcty", "_SfkpgAcct", "_Id", "_AltrnId"]
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
+	__slots__ = ["_LEI", "_SfkpgAcct", "_BlckChainAdrOrWllt", "_PtyCpcty", "_AltrnId", "_Id"]
 	@property
 	def LEI(self):
 		return self._LEI
@@ -34,19 +21,6 @@ class PartyIdentificationAndAccount203(base_types._BaseFieldType):
 	def LEI(self):
 		del self._LEI
 		self._LEI = None
-
-	@property
-	def PtyCpcty(self):
-		return self._PtyCpcty
-
-	@PtyCpcty.setter
-	def PtyCpcty(self, value):
-		self._PtyCpcty = value if type(value) != auto else self.make_default("PtyCpcty")
-
-	@PtyCpcty.deleter
-	def PtyCpcty(self):
-		del self._PtyCpcty
-		self._PtyCpcty = None
 
 	@property
 	def SfkpgAcct(self):
@@ -62,17 +36,30 @@ class PartyIdentificationAndAccount203(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
+
+	@property
+	def PtyCpcty(self):
+		return self._PtyCpcty
+
+	@PtyCpcty.setter
+	def PtyCpcty(self, value):
+		self._PtyCpcty = value if type(value) != auto else self.make_default("PtyCpcty")
+
+	@PtyCpcty.deleter
+	def PtyCpcty(self):
+		del self._PtyCpcty
+		self._PtyCpcty = None
 
 	@property
 	def AltrnId(self):
@@ -87,12 +74,25 @@ class PartyIdentificationAndAccount203(base_types._BaseFieldType):
 		del self._AltrnId
 		self._AltrnId = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyCpcty', type=TradingPartyCapacity5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification120Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyCpcty', type=TradingPartyCapacity5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification120Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

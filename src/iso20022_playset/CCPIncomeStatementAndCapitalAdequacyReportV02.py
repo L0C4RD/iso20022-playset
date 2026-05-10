@@ -1,39 +1,13 @@
 from . import base_types
-import IncomeStatement2
-import HypotheticalCapitalMeasure1
-import CapitalRequirement1
-import SupplementaryData1
-import ActiveCurrencyAndAmount
+from .SupplementaryData1 import SupplementaryData1
+from .IncomeStatement2 import IncomeStatement2
+from .HypotheticalCapitalMeasure1 import HypotheticalCapitalMeasure1
+from .CapitalRequirement1 import CapitalRequirement1
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class CCPIncomeStatementAndCapitalAdequacyReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_CptlRqrmnts", "_LqdFinRsrcs", "_HpthtclCptlMeasr", "_TtlCptl", "_SplmtryData", "_IncmStmt"]
-	@property
-	def CptlRqrmnts(self):
-		return self._CptlRqrmnts
-
-	@CptlRqrmnts.setter
-	def CptlRqrmnts(self, value):
-		self._CptlRqrmnts = value if type(value) != auto else self.make_default("CptlRqrmnts")
-
-	@CptlRqrmnts.deleter
-	def CptlRqrmnts(self):
-		del self._CptlRqrmnts
-		self._CptlRqrmnts = None
-
-	@property
-	def LqdFinRsrcs(self):
-		return self._LqdFinRsrcs
-
-	@LqdFinRsrcs.setter
-	def LqdFinRsrcs(self, value):
-		self._LqdFinRsrcs = value if type(value) != auto else self.make_default("LqdFinRsrcs")
-
-	@LqdFinRsrcs.deleter
-	def LqdFinRsrcs(self):
-		del self._LqdFinRsrcs
-		self._LqdFinRsrcs = None
-
+	__slots__ = ["_HpthtclCptlMeasr", "_IncmStmt", "_TtlCptl", "_CptlRqrmnts", "_SplmtryData", "_LqdFinRsrcs"]
 	@property
 	def HpthtclCptlMeasr(self):
 		return self._HpthtclCptlMeasr
@@ -46,6 +20,19 @@ class CCPIncomeStatementAndCapitalAdequacyReportV02(base_types._BaseFieldType):
 	def HpthtclCptlMeasr(self):
 		del self._HpthtclCptlMeasr
 		self._HpthtclCptlMeasr = None
+
+	@property
+	def IncmStmt(self):
+		return self._IncmStmt
+
+	@IncmStmt.setter
+	def IncmStmt(self, value):
+		self._IncmStmt = value if type(value) != auto else self.make_default("IncmStmt")
+
+	@IncmStmt.deleter
+	def IncmStmt(self):
+		del self._IncmStmt
+		self._IncmStmt = None
 
 	@property
 	def TtlCptl(self):
@@ -61,6 +48,19 @@ class CCPIncomeStatementAndCapitalAdequacyReportV02(base_types._BaseFieldType):
 		self._TtlCptl = None
 
 	@property
+	def CptlRqrmnts(self):
+		return self._CptlRqrmnts
+
+	@CptlRqrmnts.setter
+	def CptlRqrmnts(self, value):
+		self._CptlRqrmnts = value if type(value) != auto else self.make_default("CptlRqrmnts")
+
+	@CptlRqrmnts.deleter
+	def CptlRqrmnts(self):
+		del self._CptlRqrmnts
+		self._CptlRqrmnts = None
+
+	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -74,24 +74,24 @@ class CCPIncomeStatementAndCapitalAdequacyReportV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def IncmStmt(self):
-		return self._IncmStmt
+	def LqdFinRsrcs(self):
+		return self._LqdFinRsrcs
 
-	@IncmStmt.setter
-	def IncmStmt(self, value):
-		self._IncmStmt = value if type(value) != auto else self.make_default("IncmStmt")
+	@LqdFinRsrcs.setter
+	def LqdFinRsrcs(self, value):
+		self._LqdFinRsrcs = value if type(value) != auto else self.make_default("LqdFinRsrcs")
 
-	@IncmStmt.deleter
-	def IncmStmt(self):
-		del self._IncmStmt
-		self._IncmStmt = None
+	@LqdFinRsrcs.deleter
+	def LqdFinRsrcs(self):
+		del self._LqdFinRsrcs
+		self._LqdFinRsrcs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CptlRqrmnts', type=CapitalRequirement1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LqdFinRsrcs', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HpthtclCptlMeasr', type=HypotheticalCapitalMeasure1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlCptl', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IncmStmt', type=IncomeStatement2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlCptl', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CptlRqrmnts', type=CapitalRequirement1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LqdFinRsrcs', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

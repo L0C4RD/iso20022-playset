@@ -1,38 +1,12 @@
 from . import base_types
-import ATMConfigurationControlComponent1
-import Header31
-import ContentInformationType15
-import ContentInformationType10
+from .ATMConfigurationControlComponent1 import ATMConfigurationControlComponent1
+from .ContentInformationType10 import ContentInformationType10
+from .ContentInformationType15 import ContentInformationType15
+from .Header31 import Header31
 
 class ATMConfigurationControlV01(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMCfgtnCtrl", "_SctyTrlr", "_PrtctdATMCfgtnCtrl", "_Hdr"]
-	@property
-	def ATMCfgtnCtrl(self):
-		return self._ATMCfgtnCtrl
-
-	@ATMCfgtnCtrl.setter
-	def ATMCfgtnCtrl(self, value):
-		self._ATMCfgtnCtrl = value if type(value) != auto else self.make_default("ATMCfgtnCtrl")
-
-	@ATMCfgtnCtrl.deleter
-	def ATMCfgtnCtrl(self):
-		del self._ATMCfgtnCtrl
-		self._ATMCfgtnCtrl = None
-
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
+	__slots__ = ["_PrtctdATMCfgtnCtrl", "_ATMCfgtnCtrl", "_Hdr", "_SctyTrlr"]
 	@property
 	def PrtctdATMCfgtnCtrl(self):
 		return self._PrtctdATMCfgtnCtrl
@@ -47,6 +21,19 @@ class ATMConfigurationControlV01(base_types._BaseFieldType):
 		self._PrtctdATMCfgtnCtrl = None
 
 	@property
+	def ATMCfgtnCtrl(self):
+		return self._ATMCfgtnCtrl
+
+	@ATMCfgtnCtrl.setter
+	def ATMCfgtnCtrl(self, value):
+		self._ATMCfgtnCtrl = value if type(value) != auto else self.make_default("ATMCfgtnCtrl")
+
+	@ATMCfgtnCtrl.deleter
+	def ATMCfgtnCtrl(self):
+		del self._ATMCfgtnCtrl
+		self._ATMCfgtnCtrl = None
+
+	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -59,10 +46,23 @@ class ATMConfigurationControlV01(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ATMCfgtnCtrl', type=ATMConfigurationControlComponent1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMCfgtnCtrl', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMCfgtnCtrl', type=ATMConfigurationControlComponent1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

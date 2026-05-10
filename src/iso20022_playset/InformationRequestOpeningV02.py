@@ -1,15 +1,15 @@
 from . import base_types
-import LegalMandate1
-import YesNoIndicator
-import DateOrDateTimePeriod1Choice
-import SupplementaryData1
-import DueDate1
-import Max35Text
-import SearchCriteria2Choice
+from .Max35Text import Max35Text
+from .SearchCriteria2Choice import SearchCriteria2Choice
+from .LegalMandate1 import LegalMandate1
+from .YesNoIndicator import YesNoIndicator
+from .DateOrDateTimePeriod1Choice import DateOrDateTimePeriod1Choice
+from .SupplementaryData1 import SupplementaryData1
+from .DueDate1 import DueDate1
 
 class InformationRequestOpeningV02(base_types._BaseFieldType):
 
-	__slots__ = ["_LglMndtBsis", "_SchCrit", "_InvstgtnPrd", "_CnfdtltySts", "_SplmtryData", "_InvstgtnId", "_DueDt"]
+	__slots__ = ["_LglMndtBsis", "_SchCrit", "_SplmtryData", "_InvstgtnPrd", "_DueDt", "_CnfdtltySts", "_InvstgtnId"]
 	@property
 	def LglMndtBsis(self):
 		return self._LglMndtBsis
@@ -37,6 +37,19 @@ class InformationRequestOpeningV02(base_types._BaseFieldType):
 		self._SchCrit = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def InvstgtnPrd(self):
 		return self._InvstgtnPrd
 
@@ -48,6 +61,19 @@ class InformationRequestOpeningV02(base_types._BaseFieldType):
 	def InvstgtnPrd(self):
 		del self._InvstgtnPrd
 		self._InvstgtnPrd = None
+
+	@property
+	def DueDt(self):
+		return self._DueDt
+
+	@DueDt.setter
+	def DueDt(self, value):
+		self._DueDt = value if type(value) != auto else self.make_default("DueDt")
+
+	@DueDt.deleter
+	def DueDt(self):
+		del self._DueDt
+		self._DueDt = None
 
 	@property
 	def CnfdtltySts(self):
@@ -63,19 +89,6 @@ class InformationRequestOpeningV02(base_types._BaseFieldType):
 		self._CnfdtltySts = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def InvstgtnId(self):
 		return self._InvstgtnId
 
@@ -88,26 +101,13 @@ class InformationRequestOpeningV02(base_types._BaseFieldType):
 		del self._InvstgtnId
 		self._InvstgtnId = None
 
-	@property
-	def DueDt(self):
-		return self._DueDt
-
-	@DueDt.setter
-	def DueDt(self, value):
-		self._DueDt = value if type(value) != auto else self.make_default("DueDt")
-
-	@DueDt.deleter
-	def DueDt(self):
-		del self._DueDt
-		self._DueDt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LglMndtBsis', type=LegalMandate1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=SearchCriteria2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstgtnPrd', type=DateOrDateTimePeriod1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CnfdtltySts', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InvstgtnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstgtnPrd', type=DateOrDateTimePeriod1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DueDt', type=DueDate1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CnfdtltySts', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstgtnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

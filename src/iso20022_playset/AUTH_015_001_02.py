@@ -1,5 +1,5 @@
 from . import base_types
-import MoneyMarketOvernightIndexSwapsStatisticalReportV02
+from .MoneyMarketOvernightIndexSwapsStatisticalReportV02 import MoneyMarketOvernightIndexSwapsStatisticalReportV02
 
 class AUTH_015_001_02():
 

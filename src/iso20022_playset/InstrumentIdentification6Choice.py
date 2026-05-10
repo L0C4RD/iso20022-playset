@@ -1,12 +1,12 @@
 from . import base_types
-import Max52Text
-import GenericIdentification184
-import UniqueProductIdentifier1Choice
-import ISINOct2015Identifier
+from .GenericIdentification184 import GenericIdentification184
+from .UniqueProductIdentifier1Choice import UniqueProductIdentifier1Choice
+from .Max52Text import Max52Text
+from .ISINOct2015Identifier import ISINOct2015Identifier
 
 class InstrumentIdentification6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ISIN", "_UnqPdctIdr", "_OthrId", "_AltrntvInstrmId"]
+	__slots__ = ["_ISIN", "_OthrId", "_AltrntvInstrmId", "_UnqPdctIdr"]
 	@property
 	def ISIN(self):
 		return self._ISIN
@@ -19,19 +19,6 @@ class InstrumentIdentification6Choice(base_types._BaseFieldType):
 	def ISIN(self):
 		del self._ISIN
 		self._ISIN = None
-
-	@property
-	def UnqPdctIdr(self):
-		return self._UnqPdctIdr
-
-	@UnqPdctIdr.setter
-	def UnqPdctIdr(self, value):
-		self._UnqPdctIdr = value if type(value) != auto else self.make_default("UnqPdctIdr")
-
-	@UnqPdctIdr.deleter
-	def UnqPdctIdr(self):
-		del self._UnqPdctIdr
-		self._UnqPdctIdr = None
 
 	@property
 	def OthrId(self):
@@ -59,10 +46,23 @@ class InstrumentIdentification6Choice(base_types._BaseFieldType):
 		del self._AltrntvInstrmId
 		self._AltrntvInstrmId = None
 
+	@property
+	def UnqPdctIdr(self):
+		return self._UnqPdctIdr
+
+	@UnqPdctIdr.setter
+	def UnqPdctIdr(self, value):
+		self._UnqPdctIdr = value if type(value) != auto else self.make_default("UnqPdctIdr")
+
+	@UnqPdctIdr.deleter
+	def UnqPdctIdr(self):
+		del self._UnqPdctIdr
+		self._UnqPdctIdr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='UnqPdctIdr', type=UniqueProductIdentifier1Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OthrId', type=GenericIdentification184, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AltrntvInstrmId', type=Max52Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='UnqPdctIdr', type=UniqueProductIdentifier1Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

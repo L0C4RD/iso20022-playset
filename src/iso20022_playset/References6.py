@@ -1,25 +1,12 @@
 from . import base_types
-import Max350Text
-import UseCases1Code
-import MessageIdentification1
-import Max70Text
+from .MessageIdentification1 import MessageIdentification1
+from .Max70Text import Max70Text
+from .Max350Text import Max350Text
+from .UseCases1Code import UseCases1Code
 
 class References6(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcId", "_RjctdReqId", "_MsgId", "_AttchdDocNm", "_RjctdReqTp", "_RjctnRsn"]
-	@property
-	def PrcId(self):
-		return self._PrcId
-
-	@PrcId.setter
-	def PrcId(self, value):
-		self._PrcId = value if type(value) != auto else self.make_default("PrcId")
-
-	@PrcId.deleter
-	def PrcId(self):
-		del self._PrcId
-		self._PrcId = None
-
+	__slots__ = ["_RjctdReqId", "_MsgId", "_RjctdReqTp", "_RjctnRsn", "_AttchdDocNm", "_PrcId"]
 	@property
 	def RjctdReqId(self):
 		return self._RjctdReqId
@@ -47,19 +34,6 @@ class References6(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def AttchdDocNm(self):
-		return self._AttchdDocNm
-
-	@AttchdDocNm.setter
-	def AttchdDocNm(self, value):
-		self._AttchdDocNm = value if type(value) != auto else self.make_default("AttchdDocNm")
-
-	@AttchdDocNm.deleter
-	def AttchdDocNm(self):
-		del self._AttchdDocNm
-		self._AttchdDocNm = None
-
-	@property
 	def RjctdReqTp(self):
 		return self._RjctdReqTp
 
@@ -85,12 +59,38 @@ class References6(base_types._BaseFieldType):
 		del self._RjctnRsn
 		self._RjctnRsn = None
 
+	@property
+	def AttchdDocNm(self):
+		return self._AttchdDocNm
+
+	@AttchdDocNm.setter
+	def AttchdDocNm(self, value):
+		self._AttchdDocNm = value if type(value) != auto else self.make_default("AttchdDocNm")
+
+	@AttchdDocNm.deleter
+	def AttchdDocNm(self):
+		del self._AttchdDocNm
+		self._AttchdDocNm = None
+
+	@property
+	def PrcId(self):
+		return self._PrcId
+
+	@PrcId.setter
+	def PrcId(self, value):
+		self._PrcId = value if type(value) != auto else self.make_default("PrcId")
+
+	@PrcId.deleter
+	def PrcId(self):
+		del self._PrcId
+		self._PrcId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctdReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AttchdDocNm', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RjctdReqTp', type=UseCases1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnRsn', type=Max350Text, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AttchdDocNm', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrcId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

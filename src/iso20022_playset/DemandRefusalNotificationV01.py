@@ -1,6 +1,6 @@
 from . import base_types
-import PartyAndSignature2
-import DemandRefusal1
+from .PartyAndSignature2 import PartyAndSignature2
+from .DemandRefusal1 import DemandRefusal1
 
 class DemandRefusalNotificationV01(base_types._BaseFieldType):
 

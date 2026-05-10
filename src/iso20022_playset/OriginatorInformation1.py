@@ -1,5 +1,5 @@
 from . import base_types
-import Max5000Binary
+from .Max5000Binary import Max5000Binary
 
 class OriginatorInformation1(base_types._BaseFieldType):
 

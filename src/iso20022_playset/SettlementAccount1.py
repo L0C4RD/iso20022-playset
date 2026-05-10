@@ -1,23 +1,10 @@
 from . import base_types
-import GenericIdentification165
-import AmountAndDirection102
+from .GenericIdentification165 import GenericIdentification165
+from .AmountAndDirection102 import AmountAndDirection102
 
 class SettlementAccount1(base_types._BaseFieldType):
 
-	__slots__ = ["_EndOfDaySttlmClld", "_EndOfDayInitlMrgnClld", "_Id", "_EndOfDayLqdtyClld", "_EndOfDayVartnMrgnClld", "_EndOfDayDfltFndClld", "_EndOfDayOthrClld"]
-	@property
-	def EndOfDaySttlmClld(self):
-		return self._EndOfDaySttlmClld
-
-	@EndOfDaySttlmClld.setter
-	def EndOfDaySttlmClld(self, value):
-		self._EndOfDaySttlmClld = value if type(value) != auto else self.make_default("EndOfDaySttlmClld")
-
-	@EndOfDaySttlmClld.deleter
-	def EndOfDaySttlmClld(self):
-		del self._EndOfDaySttlmClld
-		self._EndOfDaySttlmClld = None
-
+	__slots__ = ["_EndOfDayInitlMrgnClld", "_EndOfDayOthrClld", "_Id", "_EndOfDaySttlmClld", "_EndOfDayLqdtyClld", "_EndOfDayDfltFndClld", "_EndOfDayVartnMrgnClld"]
 	@property
 	def EndOfDayInitlMrgnClld(self):
 		return self._EndOfDayInitlMrgnClld
@@ -30,6 +17,19 @@ class SettlementAccount1(base_types._BaseFieldType):
 	def EndOfDayInitlMrgnClld(self):
 		del self._EndOfDayInitlMrgnClld
 		self._EndOfDayInitlMrgnClld = None
+
+	@property
+	def EndOfDayOthrClld(self):
+		return self._EndOfDayOthrClld
+
+	@EndOfDayOthrClld.setter
+	def EndOfDayOthrClld(self, value):
+		self._EndOfDayOthrClld = value if type(value) != auto else self.make_default("EndOfDayOthrClld")
+
+	@EndOfDayOthrClld.deleter
+	def EndOfDayOthrClld(self):
+		del self._EndOfDayOthrClld
+		self._EndOfDayOthrClld = None
 
 	@property
 	def Id(self):
@@ -45,6 +45,19 @@ class SettlementAccount1(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def EndOfDaySttlmClld(self):
+		return self._EndOfDaySttlmClld
+
+	@EndOfDaySttlmClld.setter
+	def EndOfDaySttlmClld(self, value):
+		self._EndOfDaySttlmClld = value if type(value) != auto else self.make_default("EndOfDaySttlmClld")
+
+	@EndOfDaySttlmClld.deleter
+	def EndOfDaySttlmClld(self):
+		del self._EndOfDaySttlmClld
+		self._EndOfDaySttlmClld = None
+
+	@property
 	def EndOfDayLqdtyClld(self):
 		return self._EndOfDayLqdtyClld
 
@@ -56,19 +69,6 @@ class SettlementAccount1(base_types._BaseFieldType):
 	def EndOfDayLqdtyClld(self):
 		del self._EndOfDayLqdtyClld
 		self._EndOfDayLqdtyClld = None
-
-	@property
-	def EndOfDayVartnMrgnClld(self):
-		return self._EndOfDayVartnMrgnClld
-
-	@EndOfDayVartnMrgnClld.setter
-	def EndOfDayVartnMrgnClld(self, value):
-		self._EndOfDayVartnMrgnClld = value if type(value) != auto else self.make_default("EndOfDayVartnMrgnClld")
-
-	@EndOfDayVartnMrgnClld.deleter
-	def EndOfDayVartnMrgnClld(self):
-		del self._EndOfDayVartnMrgnClld
-		self._EndOfDayVartnMrgnClld = None
 
 	@property
 	def EndOfDayDfltFndClld(self):
@@ -84,25 +84,25 @@ class SettlementAccount1(base_types._BaseFieldType):
 		self._EndOfDayDfltFndClld = None
 
 	@property
-	def EndOfDayOthrClld(self):
-		return self._EndOfDayOthrClld
+	def EndOfDayVartnMrgnClld(self):
+		return self._EndOfDayVartnMrgnClld
 
-	@EndOfDayOthrClld.setter
-	def EndOfDayOthrClld(self, value):
-		self._EndOfDayOthrClld = value if type(value) != auto else self.make_default("EndOfDayOthrClld")
+	@EndOfDayVartnMrgnClld.setter
+	def EndOfDayVartnMrgnClld(self, value):
+		self._EndOfDayVartnMrgnClld = value if type(value) != auto else self.make_default("EndOfDayVartnMrgnClld")
 
-	@EndOfDayOthrClld.deleter
-	def EndOfDayOthrClld(self):
-		del self._EndOfDayOthrClld
-		self._EndOfDayOthrClld = None
+	@EndOfDayVartnMrgnClld.deleter
+	def EndOfDayVartnMrgnClld(self):
+		del self._EndOfDayVartnMrgnClld
+		self._EndOfDayVartnMrgnClld = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EndOfDaySttlmClld', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndOfDayInitlMrgnClld', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndOfDayLqdtyClld', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndOfDayVartnMrgnClld', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndOfDayDfltFndClld', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndOfDayOthrClld', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndOfDaySttlmClld', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndOfDayLqdtyClld', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndOfDayDfltFndClld', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndOfDayVartnMrgnClld', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
 	))
 

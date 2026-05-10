@@ -1,5 +1,5 @@
 from . import base_types
-import ATMDeviceReportV04
+from .ATMDeviceReportV04 import ATMDeviceReportV04
 
 class CAAM_001_001_04():
 

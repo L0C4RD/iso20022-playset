@@ -1,6 +1,6 @@
 from . import base_types
-import WaivingInstruction1Code
-import GenericIdentification47
+from .GenericIdentification47 import GenericIdentification47
+from .WaivingInstruction1Code import WaivingInstruction1Code
 
 class WaivingInstruction2Choice(base_types._BaseFieldType):
 

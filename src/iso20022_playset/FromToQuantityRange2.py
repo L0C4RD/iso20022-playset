@@ -1,5 +1,5 @@
 from . import base_types
-import DecimalNumber
+from .DecimalNumber import DecimalNumber
 
 class FromToQuantityRange2(base_types._BaseFieldType):
 

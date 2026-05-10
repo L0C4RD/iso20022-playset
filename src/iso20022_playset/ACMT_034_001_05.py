@@ -1,5 +1,5 @@
 from . import base_types
-import AccountSwitchRequestPaymentV05
+from .AccountSwitchRequestPaymentV05 import AccountSwitchRequestPaymentV05
 
 class ACMT_034_001_05():
 

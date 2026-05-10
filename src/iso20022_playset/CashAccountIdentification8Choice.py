@@ -1,6 +1,6 @@
 from . import base_types
-import GenericAccountIdentification1
-import IBAN2007Identifier
+from .IBAN2007Identifier import IBAN2007Identifier
+from .GenericAccountIdentification1 import GenericAccountIdentification1
 
 class CashAccountIdentification8Choice(base_types._BaseFieldType):
 

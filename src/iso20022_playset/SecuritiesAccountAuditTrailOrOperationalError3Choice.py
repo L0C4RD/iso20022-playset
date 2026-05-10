@@ -1,6 +1,6 @@
 from . import base_types
-import SecuritiesAccountAuditTrailReport3
-import ErrorHandling5
+from .SecuritiesAccountAuditTrailReport3 import SecuritiesAccountAuditTrailReport3
+from .ErrorHandling5 import ErrorHandling5
 
 class SecuritiesAccountAuditTrailOrOperationalError3Choice(base_types._BaseFieldType):
 

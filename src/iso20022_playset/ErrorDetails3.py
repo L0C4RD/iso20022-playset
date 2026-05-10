@@ -1,25 +1,12 @@
 from . import base_types
-import Max4000Text
-import Max500Text
-import Max35Text
-import MessageError1Code
+from .Max35Text import Max35Text
+from .MessageError1Code import MessageError1Code
+from .Max4000Text import Max4000Text
+from .Max500Text import Max500Text
 
 class ErrorDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTp", "_Desc", "_DataElmtInErr", "_Tp", "_Cd"]
-	@property
-	def OthrTp(self):
-		return self._OthrTp
-
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
-
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
-
+	__slots__ = ["_Desc", "_OthrTp", "_Tp", "_DataElmtInErr", "_Cd"]
 	@property
 	def Desc(self):
 		return self._Desc
@@ -34,17 +21,17 @@ class ErrorDetails3(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
-	def DataElmtInErr(self):
-		return self._DataElmtInErr
+	def OthrTp(self):
+		return self._OthrTp
 
-	@DataElmtInErr.setter
-	def DataElmtInErr(self, value):
-		self._DataElmtInErr = value if type(value) != auto else self.make_default("DataElmtInErr")
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
 
-	@DataElmtInErr.deleter
-	def DataElmtInErr(self):
-		del self._DataElmtInErr
-		self._DataElmtInErr = None
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
 
 	@property
 	def Tp(self):
@@ -60,6 +47,19 @@ class ErrorDetails3(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
+	def DataElmtInErr(self):
+		return self._DataElmtInErr
+
+	@DataElmtInErr.setter
+	def DataElmtInErr(self, value):
+		self._DataElmtInErr = value if type(value) != auto else self.make_default("DataElmtInErr")
+
+	@DataElmtInErr.deleter
+	def DataElmtInErr(self):
+		del self._DataElmtInErr
+		self._DataElmtInErr = None
+
+	@property
 	def Cd(self):
 		return self._Cd
 
@@ -73,10 +73,10 @@ class ErrorDetails3(base_types._BaseFieldType):
 		self._Cd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DataElmtInErr', type=Max4000Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=MessageError1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DataElmtInErr', type=Max4000Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Cd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

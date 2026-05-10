@@ -1,5 +1,5 @@
 from . import base_types
-import CorporateActionMovementPreliminaryAdviceV16
+from .CorporateActionMovementPreliminaryAdviceV16 import CorporateActionMovementPreliminaryAdviceV16
 
 class SEEV_035_001_16():
 

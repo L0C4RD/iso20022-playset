@@ -1,6 +1,6 @@
 from . import base_types
-import CashAssetType1Code
-import GenericIdentification36
+from .CashAssetType1Code import CashAssetType1Code
+from .GenericIdentification36 import GenericIdentification36
 
 class CashAssetType1Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalUndertakingDocumentType1Code
-import GenericIdentification1
+from .GenericIdentification1 import GenericIdentification1
+from .ExternalUndertakingDocumentType1Code import ExternalUndertakingDocumentType1Code
 
 class UndertakingDocumentType1Choice(base_types._BaseFieldType):
 

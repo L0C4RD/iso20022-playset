@@ -1,22 +1,9 @@
 from . import base_types
-import FinancialInstrumentQuantity36Choice
+from .FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
 
 class PairedOrTurnedQuantity6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TrndQty", "_PairdOffQty"]
-	@property
-	def TrndQty(self):
-		return self._TrndQty
-
-	@TrndQty.setter
-	def TrndQty(self, value):
-		self._TrndQty = value if type(value) != auto else self.make_default("TrndQty")
-
-	@TrndQty.deleter
-	def TrndQty(self):
-		del self._TrndQty
-		self._TrndQty = None
-
+	__slots__ = ["_PairdOffQty", "_TrndQty"]
 	@property
 	def PairdOffQty(self):
 		return self._PairdOffQty
@@ -30,8 +17,21 @@ class PairedOrTurnedQuantity6Choice(base_types._BaseFieldType):
 		del self._PairdOffQty
 		self._PairdOffQty = None
 
+	@property
+	def TrndQty(self):
+		return self._TrndQty
+
+	@TrndQty.setter
+	def TrndQty(self, value):
+		self._TrndQty = value if type(value) != auto else self.make_default("TrndQty")
+
+	@TrndQty.deleter
+	def TrndQty(self):
+		del self._TrndQty
+		self._TrndQty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrndQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PairdOffQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TrndQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

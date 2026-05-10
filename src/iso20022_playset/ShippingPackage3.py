@@ -1,151 +1,34 @@
 from . import base_types
-import UnitOfMeasure1Code
-import Max350Text
-import ContactPersonal1
-import ISODate
-import ISOTime
-import Address2
-import Max70Text
-import Max35Text
-import PartyIdentification285
-import Product8
-import ContactBusiness1
-import TrueFalseIndicator
-import DecimalNumber
-import ImpliedCurrencyAndAmount
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .Max35Text import Max35Text
+from .UnitOfMeasure1Code import UnitOfMeasure1Code
+from .ISOTime import ISOTime
+from .ISODate import ISODate
+from .ContactBusiness1 import ContactBusiness1
+from .Max350Text import Max350Text
+from .PartyIdentification285 import PartyIdentification285
+from .DecimalNumber import DecimalNumber
+from .Address2 import Address2
+from .Max70Text import Max70Text
+from .ContactPersonal1 import ContactPersonal1
+from .Product8 import Product8
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class ShippingPackage3(base_types._BaseFieldType):
 
-	__slots__ = ["_SpplrCtct", "_WghtUnit", "_DlvryTm", "_NbOfUnits", "_DlvryInstrs", "_DlvryNoteNb", "_InsrncAmt", "_OthrWghtUnit", "_TrckgNb", "_SpplrNm", "_DlvryCtct", "_Pdct", "_PckpTm", "_PckpDt", "_Insrnc", "_SpplrAdr", "_DlvryAdr", "_DlvryDt", "_SpplrInstrs", "_SpplrId"]
+	__slots__ = ["_SpplrInstrs", "_DlvryCtct", "_PckpDt", "_SpplrCtct", "_SpplrAdr", "_OthrWghtUnit", "_DlvryDt", "_SpplrId", "_DlvryAdr", "_Pdct", "_InsrncAmt", "_WghtUnit", "_NbOfUnits", "_SpplrNm", "_DlvryNoteNb", "_DlvryInstrs", "_Insrnc", "_DlvryTm", "_TrckgNb", "_PckpTm"]
 	@property
-	def SpplrCtct(self):
-		return self._SpplrCtct
+	def SpplrInstrs(self):
+		return self._SpplrInstrs
 
-	@SpplrCtct.setter
-	def SpplrCtct(self, value):
-		self._SpplrCtct = value if type(value) != auto else self.make_default("SpplrCtct")
+	@SpplrInstrs.setter
+	def SpplrInstrs(self, value):
+		self._SpplrInstrs = value if type(value) != auto else self.make_default("SpplrInstrs")
 
-	@SpplrCtct.deleter
-	def SpplrCtct(self):
-		del self._SpplrCtct
-		self._SpplrCtct = None
-
-	@property
-	def WghtUnit(self):
-		return self._WghtUnit
-
-	@WghtUnit.setter
-	def WghtUnit(self, value):
-		self._WghtUnit = value if type(value) != auto else self.make_default("WghtUnit")
-
-	@WghtUnit.deleter
-	def WghtUnit(self):
-		del self._WghtUnit
-		self._WghtUnit = None
-
-	@property
-	def DlvryTm(self):
-		return self._DlvryTm
-
-	@DlvryTm.setter
-	def DlvryTm(self, value):
-		self._DlvryTm = value if type(value) != auto else self.make_default("DlvryTm")
-
-	@DlvryTm.deleter
-	def DlvryTm(self):
-		del self._DlvryTm
-		self._DlvryTm = None
-
-	@property
-	def NbOfUnits(self):
-		return self._NbOfUnits
-
-	@NbOfUnits.setter
-	def NbOfUnits(self, value):
-		self._NbOfUnits = value if type(value) != auto else self.make_default("NbOfUnits")
-
-	@NbOfUnits.deleter
-	def NbOfUnits(self):
-		del self._NbOfUnits
-		self._NbOfUnits = None
-
-	@property
-	def DlvryInstrs(self):
-		return self._DlvryInstrs
-
-	@DlvryInstrs.setter
-	def DlvryInstrs(self, value):
-		self._DlvryInstrs = value if type(value) != auto else self.make_default("DlvryInstrs")
-
-	@DlvryInstrs.deleter
-	def DlvryInstrs(self):
-		del self._DlvryInstrs
-		self._DlvryInstrs = None
-
-	@property
-	def DlvryNoteNb(self):
-		return self._DlvryNoteNb
-
-	@DlvryNoteNb.setter
-	def DlvryNoteNb(self, value):
-		self._DlvryNoteNb = value if type(value) != auto else self.make_default("DlvryNoteNb")
-
-	@DlvryNoteNb.deleter
-	def DlvryNoteNb(self):
-		del self._DlvryNoteNb
-		self._DlvryNoteNb = None
-
-	@property
-	def InsrncAmt(self):
-		return self._InsrncAmt
-
-	@InsrncAmt.setter
-	def InsrncAmt(self, value):
-		self._InsrncAmt = value if type(value) != auto else self.make_default("InsrncAmt")
-
-	@InsrncAmt.deleter
-	def InsrncAmt(self):
-		del self._InsrncAmt
-		self._InsrncAmt = None
-
-	@property
-	def OthrWghtUnit(self):
-		return self._OthrWghtUnit
-
-	@OthrWghtUnit.setter
-	def OthrWghtUnit(self, value):
-		self._OthrWghtUnit = value if type(value) != auto else self.make_default("OthrWghtUnit")
-
-	@OthrWghtUnit.deleter
-	def OthrWghtUnit(self):
-		del self._OthrWghtUnit
-		self._OthrWghtUnit = None
-
-	@property
-	def TrckgNb(self):
-		return self._TrckgNb
-
-	@TrckgNb.setter
-	def TrckgNb(self, value):
-		self._TrckgNb = value if type(value) != auto else self.make_default("TrckgNb")
-
-	@TrckgNb.deleter
-	def TrckgNb(self):
-		del self._TrckgNb
-		self._TrckgNb = None
-
-	@property
-	def SpplrNm(self):
-		return self._SpplrNm
-
-	@SpplrNm.setter
-	def SpplrNm(self, value):
-		self._SpplrNm = value if type(value) != auto else self.make_default("SpplrNm")
-
-	@SpplrNm.deleter
-	def SpplrNm(self):
-		del self._SpplrNm
-		self._SpplrNm = None
+	@SpplrInstrs.deleter
+	def SpplrInstrs(self):
+		del self._SpplrInstrs
+		self._SpplrInstrs = None
 
 	@property
 	def DlvryCtct(self):
@@ -161,32 +44,6 @@ class ShippingPackage3(base_types._BaseFieldType):
 		self._DlvryCtct = None
 
 	@property
-	def Pdct(self):
-		return self._Pdct
-
-	@Pdct.setter
-	def Pdct(self, value):
-		self._Pdct = value if type(value) != auto else self.make_default("Pdct")
-
-	@Pdct.deleter
-	def Pdct(self):
-		del self._Pdct
-		self._Pdct = None
-
-	@property
-	def PckpTm(self):
-		return self._PckpTm
-
-	@PckpTm.setter
-	def PckpTm(self, value):
-		self._PckpTm = value if type(value) != auto else self.make_default("PckpTm")
-
-	@PckpTm.deleter
-	def PckpTm(self):
-		del self._PckpTm
-		self._PckpTm = None
-
-	@property
 	def PckpDt(self):
 		return self._PckpDt
 
@@ -200,17 +57,17 @@ class ShippingPackage3(base_types._BaseFieldType):
 		self._PckpDt = None
 
 	@property
-	def Insrnc(self):
-		return self._Insrnc
+	def SpplrCtct(self):
+		return self._SpplrCtct
 
-	@Insrnc.setter
-	def Insrnc(self, value):
-		self._Insrnc = value if type(value) != auto else self.make_default("Insrnc")
+	@SpplrCtct.setter
+	def SpplrCtct(self, value):
+		self._SpplrCtct = value if type(value) != auto else self.make_default("SpplrCtct")
 
-	@Insrnc.deleter
-	def Insrnc(self):
-		del self._Insrnc
-		self._Insrnc = None
+	@SpplrCtct.deleter
+	def SpplrCtct(self):
+		del self._SpplrCtct
+		self._SpplrCtct = None
 
 	@property
 	def SpplrAdr(self):
@@ -226,17 +83,17 @@ class ShippingPackage3(base_types._BaseFieldType):
 		self._SpplrAdr = None
 
 	@property
-	def DlvryAdr(self):
-		return self._DlvryAdr
+	def OthrWghtUnit(self):
+		return self._OthrWghtUnit
 
-	@DlvryAdr.setter
-	def DlvryAdr(self, value):
-		self._DlvryAdr = value if type(value) != auto else self.make_default("DlvryAdr")
+	@OthrWghtUnit.setter
+	def OthrWghtUnit(self, value):
+		self._OthrWghtUnit = value if type(value) != auto else self.make_default("OthrWghtUnit")
 
-	@DlvryAdr.deleter
-	def DlvryAdr(self):
-		del self._DlvryAdr
-		self._DlvryAdr = None
+	@OthrWghtUnit.deleter
+	def OthrWghtUnit(self):
+		del self._OthrWghtUnit
+		self._OthrWghtUnit = None
 
 	@property
 	def DlvryDt(self):
@@ -252,19 +109,6 @@ class ShippingPackage3(base_types._BaseFieldType):
 		self._DlvryDt = None
 
 	@property
-	def SpplrInstrs(self):
-		return self._SpplrInstrs
-
-	@SpplrInstrs.setter
-	def SpplrInstrs(self, value):
-		self._SpplrInstrs = value if type(value) != auto else self.make_default("SpplrInstrs")
-
-	@SpplrInstrs.deleter
-	def SpplrInstrs(self):
-		del self._SpplrInstrs
-		self._SpplrInstrs = None
-
-	@property
 	def SpplrId(self):
 		return self._SpplrId
 
@@ -277,26 +121,182 @@ class ShippingPackage3(base_types._BaseFieldType):
 		del self._SpplrId
 		self._SpplrId = None
 
+	@property
+	def DlvryAdr(self):
+		return self._DlvryAdr
+
+	@DlvryAdr.setter
+	def DlvryAdr(self, value):
+		self._DlvryAdr = value if type(value) != auto else self.make_default("DlvryAdr")
+
+	@DlvryAdr.deleter
+	def DlvryAdr(self):
+		del self._DlvryAdr
+		self._DlvryAdr = None
+
+	@property
+	def Pdct(self):
+		return self._Pdct
+
+	@Pdct.setter
+	def Pdct(self, value):
+		self._Pdct = value if type(value) != auto else self.make_default("Pdct")
+
+	@Pdct.deleter
+	def Pdct(self):
+		del self._Pdct
+		self._Pdct = None
+
+	@property
+	def InsrncAmt(self):
+		return self._InsrncAmt
+
+	@InsrncAmt.setter
+	def InsrncAmt(self, value):
+		self._InsrncAmt = value if type(value) != auto else self.make_default("InsrncAmt")
+
+	@InsrncAmt.deleter
+	def InsrncAmt(self):
+		del self._InsrncAmt
+		self._InsrncAmt = None
+
+	@property
+	def WghtUnit(self):
+		return self._WghtUnit
+
+	@WghtUnit.setter
+	def WghtUnit(self, value):
+		self._WghtUnit = value if type(value) != auto else self.make_default("WghtUnit")
+
+	@WghtUnit.deleter
+	def WghtUnit(self):
+		del self._WghtUnit
+		self._WghtUnit = None
+
+	@property
+	def NbOfUnits(self):
+		return self._NbOfUnits
+
+	@NbOfUnits.setter
+	def NbOfUnits(self, value):
+		self._NbOfUnits = value if type(value) != auto else self.make_default("NbOfUnits")
+
+	@NbOfUnits.deleter
+	def NbOfUnits(self):
+		del self._NbOfUnits
+		self._NbOfUnits = None
+
+	@property
+	def SpplrNm(self):
+		return self._SpplrNm
+
+	@SpplrNm.setter
+	def SpplrNm(self, value):
+		self._SpplrNm = value if type(value) != auto else self.make_default("SpplrNm")
+
+	@SpplrNm.deleter
+	def SpplrNm(self):
+		del self._SpplrNm
+		self._SpplrNm = None
+
+	@property
+	def DlvryNoteNb(self):
+		return self._DlvryNoteNb
+
+	@DlvryNoteNb.setter
+	def DlvryNoteNb(self, value):
+		self._DlvryNoteNb = value if type(value) != auto else self.make_default("DlvryNoteNb")
+
+	@DlvryNoteNb.deleter
+	def DlvryNoteNb(self):
+		del self._DlvryNoteNb
+		self._DlvryNoteNb = None
+
+	@property
+	def DlvryInstrs(self):
+		return self._DlvryInstrs
+
+	@DlvryInstrs.setter
+	def DlvryInstrs(self, value):
+		self._DlvryInstrs = value if type(value) != auto else self.make_default("DlvryInstrs")
+
+	@DlvryInstrs.deleter
+	def DlvryInstrs(self):
+		del self._DlvryInstrs
+		self._DlvryInstrs = None
+
+	@property
+	def Insrnc(self):
+		return self._Insrnc
+
+	@Insrnc.setter
+	def Insrnc(self, value):
+		self._Insrnc = value if type(value) != auto else self.make_default("Insrnc")
+
+	@Insrnc.deleter
+	def Insrnc(self):
+		del self._Insrnc
+		self._Insrnc = None
+
+	@property
+	def DlvryTm(self):
+		return self._DlvryTm
+
+	@DlvryTm.setter
+	def DlvryTm(self, value):
+		self._DlvryTm = value if type(value) != auto else self.make_default("DlvryTm")
+
+	@DlvryTm.deleter
+	def DlvryTm(self):
+		del self._DlvryTm
+		self._DlvryTm = None
+
+	@property
+	def TrckgNb(self):
+		return self._TrckgNb
+
+	@TrckgNb.setter
+	def TrckgNb(self, value):
+		self._TrckgNb = value if type(value) != auto else self.make_default("TrckgNb")
+
+	@TrckgNb.deleter
+	def TrckgNb(self):
+		del self._TrckgNb
+		self._TrckgNb = None
+
+	@property
+	def PckpTm(self):
+		return self._PckpTm
+
+	@PckpTm.setter
+	def PckpTm(self, value):
+		self._PckpTm = value if type(value) != auto else self.make_default("PckpTm")
+
+	@PckpTm.deleter
+	def PckpTm(self):
+		del self._PckpTm
+		self._PckpTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SpplrCtct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WghtUnit', type=UnitOfMeasure1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfUnits', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryInstrs', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryNoteNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InsrncAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrWghtUnit', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrckgNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SpplrNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryCtct', type=ContactPersonal1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pdct', type=Product8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PckpTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PckpDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SpplrAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SpplrInstrs', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryCtct', type=ContactPersonal1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PckpDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpplrCtct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpplrAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrWghtUnit', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SpplrId', type=PartyIdentification285, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pdct', type=Product8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InsrncAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WghtUnit', type=UnitOfMeasure1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfUnits', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpplrNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryNoteNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryInstrs', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrckgNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PckpTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

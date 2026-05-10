@@ -1,15 +1,54 @@
 from . import base_types
-import Number
-import PercentageRate
-import DebtInstrumentSeniorityType2Code
-import TrancheIndicator3Choice
-import DerivativePartyIdentification1Choice
-import Frequency13Code
-import Max35Text
+from .Max35Text import Max35Text
+from .TrancheIndicator3Choice import TrancheIndicator3Choice
+from .DebtInstrumentSeniorityType2Code import DebtInstrumentSeniorityType2Code
+from .Number import Number
+from .PercentageRate import PercentageRate
+from .Frequency13Code import Frequency13Code
+from .DerivativePartyIdentification1Choice import DerivativePartyIdentification1Choice
 
 class CreditDerivative4(base_types._BaseFieldType):
 
-	__slots__ = ["_ClctnBsis", "_Vrsn", "_IndxFctr", "_Snrty", "_Srs", "_PmtFrqcy", "_RefPty", "_Trch"]
+	__slots__ = ["_Trch", "_RefPty", "_PmtFrqcy", "_ClctnBsis", "_Vrsn", "_Snrty", "_Srs", "_IndxFctr"]
+	@property
+	def Trch(self):
+		return self._Trch
+
+	@Trch.setter
+	def Trch(self, value):
+		self._Trch = value if type(value) != auto else self.make_default("Trch")
+
+	@Trch.deleter
+	def Trch(self):
+		del self._Trch
+		self._Trch = None
+
+	@property
+	def RefPty(self):
+		return self._RefPty
+
+	@RefPty.setter
+	def RefPty(self, value):
+		self._RefPty = value if type(value) != auto else self.make_default("RefPty")
+
+	@RefPty.deleter
+	def RefPty(self):
+		del self._RefPty
+		self._RefPty = None
+
+	@property
+	def PmtFrqcy(self):
+		return self._PmtFrqcy
+
+	@PmtFrqcy.setter
+	def PmtFrqcy(self, value):
+		self._PmtFrqcy = value if type(value) != auto else self.make_default("PmtFrqcy")
+
+	@PmtFrqcy.deleter
+	def PmtFrqcy(self):
+		del self._PmtFrqcy
+		self._PmtFrqcy = None
+
 	@property
 	def ClctnBsis(self):
 		return self._ClctnBsis
@@ -35,19 +74,6 @@ class CreditDerivative4(base_types._BaseFieldType):
 	def Vrsn(self):
 		del self._Vrsn
 		self._Vrsn = None
-
-	@property
-	def IndxFctr(self):
-		return self._IndxFctr
-
-	@IndxFctr.setter
-	def IndxFctr(self, value):
-		self._IndxFctr = value if type(value) != auto else self.make_default("IndxFctr")
-
-	@IndxFctr.deleter
-	def IndxFctr(self):
-		del self._IndxFctr
-		self._IndxFctr = None
 
 	@property
 	def Snrty(self):
@@ -76,52 +102,26 @@ class CreditDerivative4(base_types._BaseFieldType):
 		self._Srs = None
 
 	@property
-	def PmtFrqcy(self):
-		return self._PmtFrqcy
+	def IndxFctr(self):
+		return self._IndxFctr
 
-	@PmtFrqcy.setter
-	def PmtFrqcy(self, value):
-		self._PmtFrqcy = value if type(value) != auto else self.make_default("PmtFrqcy")
+	@IndxFctr.setter
+	def IndxFctr(self, value):
+		self._IndxFctr = value if type(value) != auto else self.make_default("IndxFctr")
 
-	@PmtFrqcy.deleter
-	def PmtFrqcy(self):
-		del self._PmtFrqcy
-		self._PmtFrqcy = None
-
-	@property
-	def RefPty(self):
-		return self._RefPty
-
-	@RefPty.setter
-	def RefPty(self, value):
-		self._RefPty = value if type(value) != auto else self.make_default("RefPty")
-
-	@RefPty.deleter
-	def RefPty(self):
-		del self._RefPty
-		self._RefPty = None
-
-	@property
-	def Trch(self):
-		return self._Trch
-
-	@Trch.setter
-	def Trch(self, value):
-		self._Trch = value if type(value) != auto else self.make_default("Trch")
-
-	@Trch.deleter
-	def Trch(self):
-		del self._Trch
-		self._Trch = None
+	@IndxFctr.deleter
+	def IndxFctr(self):
+		del self._IndxFctr
+		self._IndxFctr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Trch', type=TrancheIndicator3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefPty', type=DerivativePartyIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtFrqcy', type=Frequency13Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClctnBsis', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IndxFctr', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Snrty', type=DebtInstrumentSeniorityType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Srs', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtFrqcy', type=Frequency13Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefPty', type=DerivativePartyIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trch', type=TrancheIndicator3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndxFctr', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,25 @@
 from . import base_types
-import SupplementaryData1
-import CurrencyControlHeader7
-import CurrencyControlPackageStatus3
-import CurrencyControlGroupStatus3
+from .CurrencyControlHeader7 import CurrencyControlHeader7
+from .SupplementaryData1 import SupplementaryData1
+from .CurrencyControlGroupStatus3 import CurrencyControlGroupStatus3
+from .CurrencyControlPackageStatus3 import CurrencyControlPackageStatus3
 
 class CurrencyControlStatusAdviceV04(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpSts", "_SplmtryData", "_GrpHdr", "_PackgSts"]
+	__slots__ = ["_GrpHdr", "_GrpSts", "_SplmtryData", "_PackgSts"]
+	@property
+	def GrpHdr(self):
+		return self._GrpHdr
+
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
+
 	@property
 	def GrpSts(self):
 		return self._GrpSts
@@ -34,19 +47,6 @@ class CurrencyControlStatusAdviceV04(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def GrpHdr(self):
-		return self._GrpHdr
-
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
-
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
-
-	@property
 	def PackgSts(self):
 		return self._PackgSts
 
@@ -60,9 +60,9 @@ class CurrencyControlStatusAdviceV04(base_types._BaseFieldType):
 		self._PackgSts = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrpSts', type=CurrencyControlGroupStatus3, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PackgSts', type=CurrencyControlPackageStatus3, min=0, max=None, mutex_group=None, array=True),
 	))
 

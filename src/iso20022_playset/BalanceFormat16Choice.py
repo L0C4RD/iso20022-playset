@@ -1,10 +1,10 @@
 from . import base_types
-import SignedQuantityFormat13
-import SignedQuantityFormat12
+from .SignedQuantityFormat12 import SignedQuantityFormat12
+from .SignedQuantityFormat13 import SignedQuantityFormat13
 
 class BalanceFormat16Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ElgblBal", "_NotElgblBal", "_PartWayPrdUnits", "_FullPrdUnits", "_Bal"]
+	__slots__ = ["_ElgblBal", "_Bal", "_FullPrdUnits", "_PartWayPrdUnits", "_NotElgblBal"]
 	@property
 	def ElgblBal(self):
 		return self._ElgblBal
@@ -19,30 +19,17 @@ class BalanceFormat16Choice(base_types._BaseFieldType):
 		self._ElgblBal = None
 
 	@property
-	def NotElgblBal(self):
-		return self._NotElgblBal
+	def Bal(self):
+		return self._Bal
 
-	@NotElgblBal.setter
-	def NotElgblBal(self, value):
-		self._NotElgblBal = value if type(value) != auto else self.make_default("NotElgblBal")
+	@Bal.setter
+	def Bal(self, value):
+		self._Bal = value if type(value) != auto else self.make_default("Bal")
 
-	@NotElgblBal.deleter
-	def NotElgblBal(self):
-		del self._NotElgblBal
-		self._NotElgblBal = None
-
-	@property
-	def PartWayPrdUnits(self):
-		return self._PartWayPrdUnits
-
-	@PartWayPrdUnits.setter
-	def PartWayPrdUnits(self, value):
-		self._PartWayPrdUnits = value if type(value) != auto else self.make_default("PartWayPrdUnits")
-
-	@PartWayPrdUnits.deleter
-	def PartWayPrdUnits(self):
-		del self._PartWayPrdUnits
-		self._PartWayPrdUnits = None
+	@Bal.deleter
+	def Bal(self):
+		del self._Bal
+		self._Bal = None
 
 	@property
 	def FullPrdUnits(self):
@@ -58,23 +45,36 @@ class BalanceFormat16Choice(base_types._BaseFieldType):
 		self._FullPrdUnits = None
 
 	@property
-	def Bal(self):
-		return self._Bal
+	def PartWayPrdUnits(self):
+		return self._PartWayPrdUnits
 
-	@Bal.setter
-	def Bal(self, value):
-		self._Bal = value if type(value) != auto else self.make_default("Bal")
+	@PartWayPrdUnits.setter
+	def PartWayPrdUnits(self, value):
+		self._PartWayPrdUnits = value if type(value) != auto else self.make_default("PartWayPrdUnits")
 
-	@Bal.deleter
-	def Bal(self):
-		del self._Bal
-		self._Bal = None
+	@PartWayPrdUnits.deleter
+	def PartWayPrdUnits(self):
+		del self._PartWayPrdUnits
+		self._PartWayPrdUnits = None
+
+	@property
+	def NotElgblBal(self):
+		return self._NotElgblBal
+
+	@NotElgblBal.setter
+	def NotElgblBal(self, value):
+		self._NotElgblBal = value if type(value) != auto else self.make_default("NotElgblBal")
+
+	@NotElgblBal.deleter
+	def NotElgblBal(self):
+		del self._NotElgblBal
+		self._NotElgblBal = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ElgblBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NotElgblBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PartWayPrdUnits', type=SignedQuantityFormat13, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='FullPrdUnits', type=SignedQuantityFormat13, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Bal', type=SignedQuantityFormat12, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FullPrdUnits', type=SignedQuantityFormat13, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PartWayPrdUnits', type=SignedQuantityFormat13, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotElgblBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=1, array=False),
 	))
 

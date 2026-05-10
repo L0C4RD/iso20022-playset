@@ -1,25 +1,25 @@
 from . import base_types
-import ProxyAccountIdentification1
-import AccountIdentification4Choice
-import ActiveOrHistoricCurrencyCode
-import CashAccountType2Choice
-import Max70Text
+from .Max70Text import Max70Text
+from .ProxyAccountIdentification1 import ProxyAccountIdentification1
+from .CashAccountType2Choice import CashAccountType2Choice
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .AccountIdentification4Choice import AccountIdentification4Choice
 
 class CashAccount40(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Prxy", "_Nm", "_Tp", "_Ccy"]
+	__slots__ = ["_Ccy", "_Prxy", "_Nm", "_Id", "_Tp"]
 	@property
-	def Id(self):
-		return self._Id
+	def Ccy(self):
+		return self._Ccy
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def Prxy(self):
@@ -48,6 +48,19 @@ class CashAccount40(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
 	def Tp(self):
 		return self._Tp
 
@@ -60,24 +73,11 @@ class CashAccount40(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prxy', type=ProxyAccountIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CashAccountType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

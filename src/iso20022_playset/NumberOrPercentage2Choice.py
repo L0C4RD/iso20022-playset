@@ -1,6 +1,6 @@
 from . import base_types
-import Number
-import Percentage14Rate
+from .Percentage14Rate import Percentage14Rate
+from .Number import Number
 
 class NumberOrPercentage2Choice(base_types._BaseFieldType):
 

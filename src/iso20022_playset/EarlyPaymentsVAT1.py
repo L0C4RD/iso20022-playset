@@ -1,24 +1,11 @@
 from . import base_types
-import PercentageRate
-import CurrencyAndAmount
-import Max4Text
+from .PercentageRate import PercentageRate
+from .Max4Text import Max4Text
+from .CurrencyAndAmount import CurrencyAndAmount
 
 class EarlyPaymentsVAT1(base_types._BaseFieldType):
 
-	__slots__ = ["_DscntTaxTp", "_DscntTaxAmt", "_TaxRate"]
-	@property
-	def DscntTaxTp(self):
-		return self._DscntTaxTp
-
-	@DscntTaxTp.setter
-	def DscntTaxTp(self, value):
-		self._DscntTaxTp = value if type(value) != auto else self.make_default("DscntTaxTp")
-
-	@DscntTaxTp.deleter
-	def DscntTaxTp(self):
-		del self._DscntTaxTp
-		self._DscntTaxTp = None
-
+	__slots__ = ["_DscntTaxAmt", "_DscntTaxTp", "_TaxRate"]
 	@property
 	def DscntTaxAmt(self):
 		return self._DscntTaxAmt
@@ -31,6 +18,19 @@ class EarlyPaymentsVAT1(base_types._BaseFieldType):
 	def DscntTaxAmt(self):
 		del self._DscntTaxAmt
 		self._DscntTaxAmt = None
+
+	@property
+	def DscntTaxTp(self):
+		return self._DscntTaxTp
+
+	@DscntTaxTp.setter
+	def DscntTaxTp(self, value):
+		self._DscntTaxTp = value if type(value) != auto else self.make_default("DscntTaxTp")
+
+	@DscntTaxTp.deleter
+	def DscntTaxTp(self):
+		del self._DscntTaxTp
+		self._DscntTaxTp = None
 
 	@property
 	def TaxRate(self):
@@ -46,8 +46,8 @@ class EarlyPaymentsVAT1(base_types._BaseFieldType):
 		self._TaxRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DscntTaxTp', type=Max4Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DscntTaxAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DscntTaxTp', type=Max4Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxRate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 	))
 

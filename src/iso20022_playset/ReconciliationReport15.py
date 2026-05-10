@@ -1,6 +1,6 @@
 from . import base_types
-import TradeTransactionIdentification24
-import MatchingCriteria17
+from .MatchingCriteria17 import MatchingCriteria17
+from .TradeTransactionIdentification24 import TradeTransactionIdentification24
 
 class ReconciliationReport15(base_types._BaseFieldType):
 

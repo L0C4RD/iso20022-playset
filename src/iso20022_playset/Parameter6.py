@@ -1,7 +1,7 @@
 from . import base_types
-import BytePadding1Code
-import EncryptionFormat1Code
-import Max500Binary
+from .EncryptionFormat1Code import EncryptionFormat1Code
+from .BytePadding1Code import BytePadding1Code
+from .Max500Binary import Max500Binary
 
 class Parameter6(base_types._BaseFieldType):
 

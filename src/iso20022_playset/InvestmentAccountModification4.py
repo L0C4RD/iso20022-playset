@@ -1,25 +1,12 @@
 from . import base_types
-import Max350Text
-import Account23
-import Max35Text
-import AdditionalReference13
+from .Max35Text import Max35Text
+from .Max350Text import Max350Text
+from .Account23 import Account23
+from .AdditionalReference13 import AdditionalReference13
 
 class InvestmentAccountModification4(base_types._BaseFieldType):
 
-	__slots__ = ["_ExstgAcctId", "_ClntRef", "_CtrPtyRef", "_ModRsn", "_AcctApplId"]
-	@property
-	def ExstgAcctId(self):
-		return self._ExstgAcctId
-
-	@ExstgAcctId.setter
-	def ExstgAcctId(self, value):
-		self._ExstgAcctId = value if type(value) != auto else self.make_default("ExstgAcctId")
-
-	@ExstgAcctId.deleter
-	def ExstgAcctId(self):
-		del self._ExstgAcctId
-		self._ExstgAcctId = None
-
+	__slots__ = ["_ClntRef", "_ModRsn", "_CtrPtyRef", "_ExstgAcctId", "_AcctApplId"]
 	@property
 	def ClntRef(self):
 		return self._ClntRef
@@ -32,19 +19,6 @@ class InvestmentAccountModification4(base_types._BaseFieldType):
 	def ClntRef(self):
 		del self._ClntRef
 		self._ClntRef = None
-
-	@property
-	def CtrPtyRef(self):
-		return self._CtrPtyRef
-
-	@CtrPtyRef.setter
-	def CtrPtyRef(self, value):
-		self._CtrPtyRef = value if type(value) != auto else self.make_default("CtrPtyRef")
-
-	@CtrPtyRef.deleter
-	def CtrPtyRef(self):
-		del self._CtrPtyRef
-		self._CtrPtyRef = None
 
 	@property
 	def ModRsn(self):
@@ -60,6 +34,32 @@ class InvestmentAccountModification4(base_types._BaseFieldType):
 		self._ModRsn = None
 
 	@property
+	def CtrPtyRef(self):
+		return self._CtrPtyRef
+
+	@CtrPtyRef.setter
+	def CtrPtyRef(self, value):
+		self._CtrPtyRef = value if type(value) != auto else self.make_default("CtrPtyRef")
+
+	@CtrPtyRef.deleter
+	def CtrPtyRef(self):
+		del self._CtrPtyRef
+		self._CtrPtyRef = None
+
+	@property
+	def ExstgAcctId(self):
+		return self._ExstgAcctId
+
+	@ExstgAcctId.setter
+	def ExstgAcctId(self, value):
+		self._ExstgAcctId = value if type(value) != auto else self.make_default("ExstgAcctId")
+
+	@ExstgAcctId.deleter
+	def ExstgAcctId(self):
+		del self._ExstgAcctId
+		self._ExstgAcctId = None
+
+	@property
 	def AcctApplId(self):
 		return self._AcctApplId
 
@@ -73,10 +73,10 @@ class InvestmentAccountModification4(base_types._BaseFieldType):
 		self._AcctApplId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ExstgAcctId', type=Account23, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModRsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExstgAcctId', type=Account23, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctApplId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

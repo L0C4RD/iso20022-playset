@@ -1,12 +1,12 @@
 from . import base_types
-import SecuritiesOption76
-import CorporateActionOption30Choice
-import CashOption106
-import Exact3NumericText
+from .Exact3NumericText import Exact3NumericText
+from .SecuritiesOption76 import SecuritiesOption76
+from .CorporateActionOption30Choice import CorporateActionOption30Choice
+from .CashOption106 import CashOption106
 
 class CorporateActionOption234(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesMvmntDtls", "_OptnNb", "_OptnTp", "_CshMvmntDtls"]
+	__slots__ = ["_SctiesMvmntDtls", "_OptnTp", "_CshMvmntDtls", "_OptnNb"]
 	@property
 	def SctiesMvmntDtls(self):
 		return self._SctiesMvmntDtls
@@ -19,19 +19,6 @@ class CorporateActionOption234(base_types._BaseFieldType):
 	def SctiesMvmntDtls(self):
 		del self._SctiesMvmntDtls
 		self._SctiesMvmntDtls = None
-
-	@property
-	def OptnNb(self):
-		return self._OptnNb
-
-	@OptnNb.setter
-	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
-
-	@OptnNb.deleter
-	def OptnNb(self):
-		del self._OptnNb
-		self._OptnNb = None
 
 	@property
 	def OptnTp(self):
@@ -59,10 +46,23 @@ class CorporateActionOption234(base_types._BaseFieldType):
 		del self._CshMvmntDtls
 		self._CshMvmntDtls = None
 
+	@property
+	def OptnNb(self):
+		return self._OptnNb
+
+	@OptnNb.setter
+	def OptnNb(self, value):
+		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
+
+	@OptnNb.deleter
+	def OptnNb(self):
+		del self._OptnNb
+		self._OptnNb = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctiesMvmntDtls', type=SecuritiesOption76, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption30Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshMvmntDtls', type=CashOption106, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

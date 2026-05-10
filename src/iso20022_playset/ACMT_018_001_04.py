@@ -1,5 +1,5 @@
 from . import base_types
-import AccountMandateMaintenanceAmendmentRequestV04
+from .AccountMandateMaintenanceAmendmentRequestV04 import AccountMandateMaintenanceAmendmentRequestV04
 
 class ACMT_018_001_04():
 

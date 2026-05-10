@@ -1,13 +1,52 @@
 from . import base_types
-import Max140Text
-import OtherCollateral9
-import CashCollateral2
-import Max35Text
-import SecuritiesCollateral10
+from .Max35Text import Max35Text
+from .Max140Text import Max140Text
+from .CashCollateral2 import CashCollateral2
+from .SecuritiesCollateral10 import SecuritiesCollateral10
+from .OtherCollateral9 import OtherCollateral9
 
 class Collateral54(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesColl", "_OthrColl", "_MrgnCallReqId", "_StdSttlmInstrs", "_CshColl", "_CollPrpslRspnId", "_MrgnCallRspnId"]
+	__slots__ = ["_MrgnCallReqId", "_MrgnCallRspnId", "_CollPrpslRspnId", "_SctiesColl", "_OthrColl", "_CshColl", "_StdSttlmInstrs"]
+	@property
+	def MrgnCallReqId(self):
+		return self._MrgnCallReqId
+
+	@MrgnCallReqId.setter
+	def MrgnCallReqId(self, value):
+		self._MrgnCallReqId = value if type(value) != auto else self.make_default("MrgnCallReqId")
+
+	@MrgnCallReqId.deleter
+	def MrgnCallReqId(self):
+		del self._MrgnCallReqId
+		self._MrgnCallReqId = None
+
+	@property
+	def MrgnCallRspnId(self):
+		return self._MrgnCallRspnId
+
+	@MrgnCallRspnId.setter
+	def MrgnCallRspnId(self, value):
+		self._MrgnCallRspnId = value if type(value) != auto else self.make_default("MrgnCallRspnId")
+
+	@MrgnCallRspnId.deleter
+	def MrgnCallRspnId(self):
+		del self._MrgnCallRspnId
+		self._MrgnCallRspnId = None
+
+	@property
+	def CollPrpslRspnId(self):
+		return self._CollPrpslRspnId
+
+	@CollPrpslRspnId.setter
+	def CollPrpslRspnId(self, value):
+		self._CollPrpslRspnId = value if type(value) != auto else self.make_default("CollPrpslRspnId")
+
+	@CollPrpslRspnId.deleter
+	def CollPrpslRspnId(self):
+		del self._CollPrpslRspnId
+		self._CollPrpslRspnId = None
+
 	@property
 	def SctiesColl(self):
 		return self._SctiesColl
@@ -35,17 +74,17 @@ class Collateral54(base_types._BaseFieldType):
 		self._OthrColl = None
 
 	@property
-	def MrgnCallReqId(self):
-		return self._MrgnCallReqId
+	def CshColl(self):
+		return self._CshColl
 
-	@MrgnCallReqId.setter
-	def MrgnCallReqId(self, value):
-		self._MrgnCallReqId = value if type(value) != auto else self.make_default("MrgnCallReqId")
+	@CshColl.setter
+	def CshColl(self, value):
+		self._CshColl = value if type(value) != auto else self.make_default("CshColl")
 
-	@MrgnCallReqId.deleter
-	def MrgnCallReqId(self):
-		del self._MrgnCallReqId
-		self._MrgnCallReqId = None
+	@CshColl.deleter
+	def CshColl(self):
+		del self._CshColl
+		self._CshColl = None
 
 	@property
 	def StdSttlmInstrs(self):
@@ -60,52 +99,13 @@ class Collateral54(base_types._BaseFieldType):
 		del self._StdSttlmInstrs
 		self._StdSttlmInstrs = None
 
-	@property
-	def CshColl(self):
-		return self._CshColl
-
-	@CshColl.setter
-	def CshColl(self, value):
-		self._CshColl = value if type(value) != auto else self.make_default("CshColl")
-
-	@CshColl.deleter
-	def CshColl(self):
-		del self._CshColl
-		self._CshColl = None
-
-	@property
-	def CollPrpslRspnId(self):
-		return self._CollPrpslRspnId
-
-	@CollPrpslRspnId.setter
-	def CollPrpslRspnId(self, value):
-		self._CollPrpslRspnId = value if type(value) != auto else self.make_default("CollPrpslRspnId")
-
-	@CollPrpslRspnId.deleter
-	def CollPrpslRspnId(self):
-		del self._CollPrpslRspnId
-		self._CollPrpslRspnId = None
-
-	@property
-	def MrgnCallRspnId(self):
-		return self._MrgnCallRspnId
-
-	@MrgnCallRspnId.setter
-	def MrgnCallRspnId(self, value):
-		self._MrgnCallRspnId = value if type(value) != auto else self.make_default("MrgnCallRspnId")
-
-	@MrgnCallRspnId.deleter
-	def MrgnCallRspnId(self):
-		del self._MrgnCallRspnId
-		self._MrgnCallRspnId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MrgnCallReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgnCallRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollPrpslRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesColl', type=SecuritiesCollateral10, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrColl', type=OtherCollateral9, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MrgnCallReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StdSttlmInstrs', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshColl', type=CashCollateral2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CollPrpslRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrgnCallRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StdSttlmInstrs', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

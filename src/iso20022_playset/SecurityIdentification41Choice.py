@@ -1,28 +1,15 @@
 from . import base_types
-import UniqueProductIdentifier2Choice
-import GenericIdentification184
-import Max52Text
-import ISINOct2015Identifier
-import IndexIdentification1
-import CustomBasket4
-import UnderlyingIdentification1Code
+from .CustomBasket4 import CustomBasket4
+from .IndexIdentification1 import IndexIdentification1
+from .ISINOct2015Identifier import ISINOct2015Identifier
+from .Max52Text import Max52Text
+from .GenericIdentification184 import GenericIdentification184
+from .UnderlyingIdentification1Code import UnderlyingIdentification1Code
+from .UniqueProductIdentifier2Choice import UniqueProductIdentifier2Choice
 
 class SecurityIdentification41Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IdNotAvlbl", "_UnqPdctIdr", "_AltrntvInstrmId", "_Bskt", "_ISIN", "_Indx", "_Othr"]
-	@property
-	def IdNotAvlbl(self):
-		return self._IdNotAvlbl
-
-	@IdNotAvlbl.setter
-	def IdNotAvlbl(self, value):
-		self._IdNotAvlbl = value if type(value) != auto else self.make_default("IdNotAvlbl")
-
-	@IdNotAvlbl.deleter
-	def IdNotAvlbl(self):
-		del self._IdNotAvlbl
-		self._IdNotAvlbl = None
-
+	__slots__ = ["_UnqPdctIdr", "_ISIN", "_Indx", "_Bskt", "_Othr", "_AltrntvInstrmId", "_IdNotAvlbl"]
 	@property
 	def UnqPdctIdr(self):
 		return self._UnqPdctIdr
@@ -35,32 +22,6 @@ class SecurityIdentification41Choice(base_types._BaseFieldType):
 	def UnqPdctIdr(self):
 		del self._UnqPdctIdr
 		self._UnqPdctIdr = None
-
-	@property
-	def AltrntvInstrmId(self):
-		return self._AltrntvInstrmId
-
-	@AltrntvInstrmId.setter
-	def AltrntvInstrmId(self, value):
-		self._AltrntvInstrmId = value if type(value) != auto else self.make_default("AltrntvInstrmId")
-
-	@AltrntvInstrmId.deleter
-	def AltrntvInstrmId(self):
-		del self._AltrntvInstrmId
-		self._AltrntvInstrmId = None
-
-	@property
-	def Bskt(self):
-		return self._Bskt
-
-	@Bskt.setter
-	def Bskt(self, value):
-		self._Bskt = value if type(value) != auto else self.make_default("Bskt")
-
-	@Bskt.deleter
-	def Bskt(self):
-		del self._Bskt
-		self._Bskt = None
 
 	@property
 	def ISIN(self):
@@ -89,6 +50,19 @@ class SecurityIdentification41Choice(base_types._BaseFieldType):
 		self._Indx = None
 
 	@property
+	def Bskt(self):
+		return self._Bskt
+
+	@Bskt.setter
+	def Bskt(self, value):
+		self._Bskt = value if type(value) != auto else self.make_default("Bskt")
+
+	@Bskt.deleter
+	def Bskt(self):
+		del self._Bskt
+		self._Bskt = None
+
+	@property
 	def Othr(self):
 		return self._Othr
 
@@ -101,13 +75,39 @@ class SecurityIdentification41Choice(base_types._BaseFieldType):
 		del self._Othr
 		self._Othr = None
 
+	@property
+	def AltrntvInstrmId(self):
+		return self._AltrntvInstrmId
+
+	@AltrntvInstrmId.setter
+	def AltrntvInstrmId(self, value):
+		self._AltrntvInstrmId = value if type(value) != auto else self.make_default("AltrntvInstrmId")
+
+	@AltrntvInstrmId.deleter
+	def AltrntvInstrmId(self):
+		del self._AltrntvInstrmId
+		self._AltrntvInstrmId = None
+
+	@property
+	def IdNotAvlbl(self):
+		return self._IdNotAvlbl
+
+	@IdNotAvlbl.setter
+	def IdNotAvlbl(self, value):
+		self._IdNotAvlbl = value if type(value) != auto else self.make_default("IdNotAvlbl")
+
+	@IdNotAvlbl.deleter
+	def IdNotAvlbl(self):
+		del self._IdNotAvlbl
+		self._IdNotAvlbl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IdNotAvlbl', type=UnderlyingIdentification1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UnqPdctIdr', type=UniqueProductIdentifier2Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AltrntvInstrmId', type=Max52Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Bskt', type=CustomBasket4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Indx', type=IndexIdentification1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Bskt', type=CustomBasket4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericIdentification184, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AltrntvInstrmId', type=Max52Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IdNotAvlbl', type=UnderlyingIdentification1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

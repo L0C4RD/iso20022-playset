@@ -1,6 +1,6 @@
 from . import base_types
-import DocumentIdentification8
-import CorporateActionNotificationType2Code
+from .DocumentIdentification8 import DocumentIdentification8
+from .CorporateActionNotificationType2Code import CorporateActionNotificationType2Code
 
 class NotificationCancellation1(base_types._BaseFieldType):
 

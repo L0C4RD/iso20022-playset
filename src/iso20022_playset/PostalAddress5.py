@@ -1,37 +1,24 @@
 from . import base_types
-import Max16Text
-import CountryCode
-import Max35Text
-import Max70Text
+from .CountryCode import CountryCode
+from .Max35Text import Max35Text
+from .Max16Text import Max16Text
+from .Max70Text import Max70Text
 
 class PostalAddress5(base_types._BaseFieldType):
 
-	__slots__ = ["_StrtNm", "_TwnNm", "_CtrySubDvsn", "_Ctry", "_PstCdId"]
+	__slots__ = ["_Ctry", "_CtrySubDvsn", "_StrtNm", "_PstCdId", "_TwnNm"]
 	@property
-	def StrtNm(self):
-		return self._StrtNm
+	def Ctry(self):
+		return self._Ctry
 
-	@StrtNm.setter
-	def StrtNm(self, value):
-		self._StrtNm = value if type(value) != auto else self.make_default("StrtNm")
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
 
-	@StrtNm.deleter
-	def StrtNm(self):
-		del self._StrtNm
-		self._StrtNm = None
-
-	@property
-	def TwnNm(self):
-		return self._TwnNm
-
-	@TwnNm.setter
-	def TwnNm(self, value):
-		self._TwnNm = value if type(value) != auto else self.make_default("TwnNm")
-
-	@TwnNm.deleter
-	def TwnNm(self):
-		del self._TwnNm
-		self._TwnNm = None
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
 
 	@property
 	def CtrySubDvsn(self):
@@ -47,17 +34,17 @@ class PostalAddress5(base_types._BaseFieldType):
 		self._CtrySubDvsn = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def StrtNm(self):
+		return self._StrtNm
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+	@StrtNm.setter
+	def StrtNm(self, value):
+		self._StrtNm = value if type(value) != auto else self.make_default("StrtNm")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
+	@StrtNm.deleter
+	def StrtNm(self):
+		del self._StrtNm
+		self._StrtNm = None
 
 	@property
 	def PstCdId(self):
@@ -72,11 +59,24 @@ class PostalAddress5(base_types._BaseFieldType):
 		del self._PstCdId
 		self._PstCdId = None
 
+	@property
+	def TwnNm(self):
+		return self._TwnNm
+
+	@TwnNm.setter
+	def TwnNm(self, value):
+		self._TwnNm = value if type(value) != auto else self.make_default("TwnNm")
+
+	@TwnNm.deleter
+	def TwnNm(self):
+		del self._TwnNm
+		self._TwnNm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StrtNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TwnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrySubDvsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrySubDvsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrtNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstCdId', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TwnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,55 +1,16 @@
 from . import base_types
-import IBEIIdentifier
-import EANGLNIdentifier
-import Max35Text
-import GenericIdentification3
-import BICIdentifier
-import CHIPSUniversalIdentifier
-import BEIIdentifier
-import DunsIdentifier
+from .Max35Text import Max35Text
+from .BICIdentifier import BICIdentifier
+from .BEIIdentifier import BEIIdentifier
+from .IBEIIdentifier import IBEIIdentifier
+from .GenericIdentification3 import GenericIdentification3
+from .DunsIdentifier import DunsIdentifier
+from .CHIPSUniversalIdentifier import CHIPSUniversalIdentifier
+from .EANGLNIdentifier import EANGLNIdentifier
 
 class OrganisationIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_BkPtyId", "_TaxIdNb", "_PrtryId", "_IBEI", "_EANGLN", "_BEI", "_DUNS", "_BIC", "_USCHU"]
-	@property
-	def BkPtyId(self):
-		return self._BkPtyId
-
-	@BkPtyId.setter
-	def BkPtyId(self, value):
-		self._BkPtyId = value if type(value) != auto else self.make_default("BkPtyId")
-
-	@BkPtyId.deleter
-	def BkPtyId(self):
-		del self._BkPtyId
-		self._BkPtyId = None
-
-	@property
-	def TaxIdNb(self):
-		return self._TaxIdNb
-
-	@TaxIdNb.setter
-	def TaxIdNb(self, value):
-		self._TaxIdNb = value if type(value) != auto else self.make_default("TaxIdNb")
-
-	@TaxIdNb.deleter
-	def TaxIdNb(self):
-		del self._TaxIdNb
-		self._TaxIdNb = None
-
-	@property
-	def PrtryId(self):
-		return self._PrtryId
-
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
-
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
-
+	__slots__ = ["_IBEI", "_BEI", "_DUNS", "_USCHU", "_EANGLN", "_PrtryId", "_BkPtyId", "_TaxIdNb", "_BIC"]
 	@property
 	def IBEI(self):
 		return self._IBEI
@@ -62,19 +23,6 @@ class OrganisationIdentification2(base_types._BaseFieldType):
 	def IBEI(self):
 		del self._IBEI
 		self._IBEI = None
-
-	@property
-	def EANGLN(self):
-		return self._EANGLN
-
-	@EANGLN.setter
-	def EANGLN(self, value):
-		self._EANGLN = value if type(value) != auto else self.make_default("EANGLN")
-
-	@EANGLN.deleter
-	def EANGLN(self):
-		del self._EANGLN
-		self._EANGLN = None
 
 	@property
 	def BEI(self):
@@ -103,19 +51,6 @@ class OrganisationIdentification2(base_types._BaseFieldType):
 		self._DUNS = None
 
 	@property
-	def BIC(self):
-		return self._BIC
-
-	@BIC.setter
-	def BIC(self, value):
-		self._BIC = value if type(value) != auto else self.make_default("BIC")
-
-	@BIC.deleter
-	def BIC(self):
-		del self._BIC
-		self._BIC = None
-
-	@property
 	def USCHU(self):
 		return self._USCHU
 
@@ -128,15 +63,80 @@ class OrganisationIdentification2(base_types._BaseFieldType):
 		del self._USCHU
 		self._USCHU = None
 
+	@property
+	def EANGLN(self):
+		return self._EANGLN
+
+	@EANGLN.setter
+	def EANGLN(self, value):
+		self._EANGLN = value if type(value) != auto else self.make_default("EANGLN")
+
+	@EANGLN.deleter
+	def EANGLN(self):
+		del self._EANGLN
+		self._EANGLN = None
+
+	@property
+	def PrtryId(self):
+		return self._PrtryId
+
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
+
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
+
+	@property
+	def BkPtyId(self):
+		return self._BkPtyId
+
+	@BkPtyId.setter
+	def BkPtyId(self, value):
+		self._BkPtyId = value if type(value) != auto else self.make_default("BkPtyId")
+
+	@BkPtyId.deleter
+	def BkPtyId(self):
+		del self._BkPtyId
+		self._BkPtyId = None
+
+	@property
+	def TaxIdNb(self):
+		return self._TaxIdNb
+
+	@TaxIdNb.setter
+	def TaxIdNb(self, value):
+		self._TaxIdNb = value if type(value) != auto else self.make_default("TaxIdNb")
+
+	@TaxIdNb.deleter
+	def TaxIdNb(self):
+		del self._TaxIdNb
+		self._TaxIdNb = None
+
+	@property
+	def BIC(self):
+		return self._BIC
+
+	@BIC.setter
+	def BIC(self, value):
+		self._BIC = value if type(value) != auto else self.make_default("BIC")
+
+	@BIC.deleter
+	def BIC(self):
+		del self._BIC
+		self._BIC = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BkPtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtryId', type=GenericIdentification3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IBEI', type=IBEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EANGLN', type=EANGLNIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BEI', type=BEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DUNS', type=DunsIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BIC', type=BICIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='USCHU', type=CHIPSUniversalIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EANGLN', type=EANGLNIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtryId', type=GenericIdentification3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BkPtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BIC', type=BICIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

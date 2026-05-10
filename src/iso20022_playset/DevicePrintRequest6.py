@@ -1,25 +1,12 @@
 from . import base_types
-import ActionMessage11
-import DocumentType7Code
-import ResponseMode2Code
-import TrueFalseIndicator
+from .ResponseMode2Code import ResponseMode2Code
+from .DocumentType7Code import DocumentType7Code
+from .TrueFalseIndicator import TrueFalseIndicator
+from .ActionMessage11 import ActionMessage11
 
 class DevicePrintRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnMd", "_DocQlfr", "_ReqrdSgntrFlg", "_OutptCntt", "_IntgrtdPrtFlg"]
-	@property
-	def RspnMd(self):
-		return self._RspnMd
-
-	@RspnMd.setter
-	def RspnMd(self, value):
-		self._RspnMd = value if type(value) != auto else self.make_default("RspnMd")
-
-	@RspnMd.deleter
-	def RspnMd(self):
-		del self._RspnMd
-		self._RspnMd = None
-
+	__slots__ = ["_DocQlfr", "_OutptCntt", "_RspnMd", "_ReqrdSgntrFlg", "_IntgrtdPrtFlg"]
 	@property
 	def DocQlfr(self):
 		return self._DocQlfr
@@ -32,19 +19,6 @@ class DevicePrintRequest6(base_types._BaseFieldType):
 	def DocQlfr(self):
 		del self._DocQlfr
 		self._DocQlfr = None
-
-	@property
-	def ReqrdSgntrFlg(self):
-		return self._ReqrdSgntrFlg
-
-	@ReqrdSgntrFlg.setter
-	def ReqrdSgntrFlg(self, value):
-		self._ReqrdSgntrFlg = value if type(value) != auto else self.make_default("ReqrdSgntrFlg")
-
-	@ReqrdSgntrFlg.deleter
-	def ReqrdSgntrFlg(self):
-		del self._ReqrdSgntrFlg
-		self._ReqrdSgntrFlg = None
 
 	@property
 	def OutptCntt(self):
@@ -60,6 +34,32 @@ class DevicePrintRequest6(base_types._BaseFieldType):
 		self._OutptCntt = None
 
 	@property
+	def RspnMd(self):
+		return self._RspnMd
+
+	@RspnMd.setter
+	def RspnMd(self, value):
+		self._RspnMd = value if type(value) != auto else self.make_default("RspnMd")
+
+	@RspnMd.deleter
+	def RspnMd(self):
+		del self._RspnMd
+		self._RspnMd = None
+
+	@property
+	def ReqrdSgntrFlg(self):
+		return self._ReqrdSgntrFlg
+
+	@ReqrdSgntrFlg.setter
+	def ReqrdSgntrFlg(self, value):
+		self._ReqrdSgntrFlg = value if type(value) != auto else self.make_default("ReqrdSgntrFlg")
+
+	@ReqrdSgntrFlg.deleter
+	def ReqrdSgntrFlg(self):
+		del self._ReqrdSgntrFlg
+		self._ReqrdSgntrFlg = None
+
+	@property
 	def IntgrtdPrtFlg(self):
 		return self._IntgrtdPrtFlg
 
@@ -73,10 +73,10 @@ class DevicePrintRequest6(base_types._BaseFieldType):
 		self._IntgrtdPrtFlg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RspnMd', type=ResponseMode2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocQlfr', type=DocumentType7Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqrdSgntrFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OutptCntt', type=ActionMessage11, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnMd', type=ResponseMode2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqrdSgntrFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntgrtdPrtFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

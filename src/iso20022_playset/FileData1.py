@@ -1,14 +1,14 @@
 from . import base_types
-import Max140Text
-import DateAndDateTime2Choice
-import Max2048Text
-import DocumentFormat1Choice
-import DocumentType1Choice
-import Max35Text
+from .Max35Text import Max35Text
+from .Max140Text import Max140Text
+from .DocumentType1Choice import DocumentType1Choice
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .DocumentFormat1Choice import DocumentFormat1Choice
+from .Max2048Text import Max2048Text
 
 class FileData1(base_types._BaseFieldType):
 
-	__slots__ = ["_FileLctnElctrncAdr", "_Id", "_Frmt", "_FileNm", "_NtwkRef", "_IsseDt", "_Tp"]
+	__slots__ = ["_FileLctnElctrncAdr", "_Tp", "_FileNm", "_Id", "_IsseDt", "_NtwkRef", "_Frmt"]
 	@property
 	def FileLctnElctrncAdr(self):
 		return self._FileLctnElctrncAdr
@@ -23,30 +23,17 @@ class FileData1(base_types._BaseFieldType):
 		self._FileLctnElctrncAdr = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def Tp(self):
+		return self._Tp
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def Frmt(self):
-		return self._Frmt
-
-	@Frmt.setter
-	def Frmt(self, value):
-		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
-
-	@Frmt.deleter
-	def Frmt(self):
-		del self._Frmt
-		self._Frmt = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def FileNm(self):
@@ -62,17 +49,17 @@ class FileData1(base_types._BaseFieldType):
 		self._FileNm = None
 
 	@property
-	def NtwkRef(self):
-		return self._NtwkRef
+	def Id(self):
+		return self._Id
 
-	@NtwkRef.setter
-	def NtwkRef(self, value):
-		self._NtwkRef = value if type(value) != auto else self.make_default("NtwkRef")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@NtwkRef.deleter
-	def NtwkRef(self):
-		del self._NtwkRef
-		self._NtwkRef = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def IsseDt(self):
@@ -88,25 +75,38 @@ class FileData1(base_types._BaseFieldType):
 		self._IsseDt = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def NtwkRef(self):
+		return self._NtwkRef
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@NtwkRef.setter
+	def NtwkRef(self, value):
+		self._NtwkRef = value if type(value) != auto else self.make_default("NtwkRef")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@NtwkRef.deleter
+	def NtwkRef(self):
+		del self._NtwkRef
+		self._NtwkRef = None
+
+	@property
+	def Frmt(self):
+		return self._Frmt
+
+	@Frmt.setter
+	def Frmt(self, value):
+		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
+
+	@Frmt.deleter
+	def Frmt(self):
+		del self._Frmt
+		self._Frmt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FileLctnElctrncAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FileNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtwkRef', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=DocumentType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FileNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtwkRef', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

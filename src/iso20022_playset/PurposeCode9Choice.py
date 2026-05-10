@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import SecuritiesAccountPurposeType1Code
+from .GenericIdentification30 import GenericIdentification30
+from .SecuritiesAccountPurposeType1Code import SecuritiesAccountPurposeType1Code
 
 class PurposeCode9Choice(base_types._BaseFieldType):
 

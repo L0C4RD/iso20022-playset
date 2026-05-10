@@ -1,24 +1,11 @@
 from . import base_types
-import DateFormat49Choice
-import DateFormat54Choice
-import BorrowerLendingDeadline6
+from .DateFormat54Choice import DateFormat54Choice
+from .DateFormat49Choice import DateFormat49Choice
+from .BorrowerLendingDeadline6 import BorrowerLendingDeadline6
 
 class CorporateActionDate107(base_types._BaseFieldType):
 
-	__slots__ = ["_StockLndgDdln", "_CoverXprtnDdln", "_MktDdln", "_DpstryCoverXprtnDt", "_DcmnttnDdln", "_RspnDdln", "_PrtctDdln", "_XpryDt", "_EarlyRspnDdln", "_BrrwrStockLndgDdln", "_SbcptCostDbtDt"]
-	@property
-	def StockLndgDdln(self):
-		return self._StockLndgDdln
-
-	@StockLndgDdln.setter
-	def StockLndgDdln(self, value):
-		self._StockLndgDdln = value if type(value) != auto else self.make_default("StockLndgDdln")
-
-	@StockLndgDdln.deleter
-	def StockLndgDdln(self):
-		del self._StockLndgDdln
-		self._StockLndgDdln = None
-
+	__slots__ = ["_CoverXprtnDdln", "_BrrwrStockLndgDdln", "_DcmnttnDdln", "_MktDdln", "_EarlyRspnDdln", "_XpryDt", "_SbcptCostDbtDt", "_PrtctDdln", "_DpstryCoverXprtnDt", "_RspnDdln", "_StockLndgDdln"]
 	@property
 	def CoverXprtnDdln(self):
 		return self._CoverXprtnDdln
@@ -31,97 +18,6 @@ class CorporateActionDate107(base_types._BaseFieldType):
 	def CoverXprtnDdln(self):
 		del self._CoverXprtnDdln
 		self._CoverXprtnDdln = None
-
-	@property
-	def MktDdln(self):
-		return self._MktDdln
-
-	@MktDdln.setter
-	def MktDdln(self, value):
-		self._MktDdln = value if type(value) != auto else self.make_default("MktDdln")
-
-	@MktDdln.deleter
-	def MktDdln(self):
-		del self._MktDdln
-		self._MktDdln = None
-
-	@property
-	def DpstryCoverXprtnDt(self):
-		return self._DpstryCoverXprtnDt
-
-	@DpstryCoverXprtnDt.setter
-	def DpstryCoverXprtnDt(self, value):
-		self._DpstryCoverXprtnDt = value if type(value) != auto else self.make_default("DpstryCoverXprtnDt")
-
-	@DpstryCoverXprtnDt.deleter
-	def DpstryCoverXprtnDt(self):
-		del self._DpstryCoverXprtnDt
-		self._DpstryCoverXprtnDt = None
-
-	@property
-	def DcmnttnDdln(self):
-		return self._DcmnttnDdln
-
-	@DcmnttnDdln.setter
-	def DcmnttnDdln(self, value):
-		self._DcmnttnDdln = value if type(value) != auto else self.make_default("DcmnttnDdln")
-
-	@DcmnttnDdln.deleter
-	def DcmnttnDdln(self):
-		del self._DcmnttnDdln
-		self._DcmnttnDdln = None
-
-	@property
-	def RspnDdln(self):
-		return self._RspnDdln
-
-	@RspnDdln.setter
-	def RspnDdln(self, value):
-		self._RspnDdln = value if type(value) != auto else self.make_default("RspnDdln")
-
-	@RspnDdln.deleter
-	def RspnDdln(self):
-		del self._RspnDdln
-		self._RspnDdln = None
-
-	@property
-	def PrtctDdln(self):
-		return self._PrtctDdln
-
-	@PrtctDdln.setter
-	def PrtctDdln(self, value):
-		self._PrtctDdln = value if type(value) != auto else self.make_default("PrtctDdln")
-
-	@PrtctDdln.deleter
-	def PrtctDdln(self):
-		del self._PrtctDdln
-		self._PrtctDdln = None
-
-	@property
-	def XpryDt(self):
-		return self._XpryDt
-
-	@XpryDt.setter
-	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
-
-	@XpryDt.deleter
-	def XpryDt(self):
-		del self._XpryDt
-		self._XpryDt = None
-
-	@property
-	def EarlyRspnDdln(self):
-		return self._EarlyRspnDdln
-
-	@EarlyRspnDdln.setter
-	def EarlyRspnDdln(self, value):
-		self._EarlyRspnDdln = value if type(value) != auto else self.make_default("EarlyRspnDdln")
-
-	@EarlyRspnDdln.deleter
-	def EarlyRspnDdln(self):
-		del self._EarlyRspnDdln
-		self._EarlyRspnDdln = None
 
 	@property
 	def BrrwrStockLndgDdln(self):
@@ -137,6 +33,58 @@ class CorporateActionDate107(base_types._BaseFieldType):
 		self._BrrwrStockLndgDdln = None
 
 	@property
+	def DcmnttnDdln(self):
+		return self._DcmnttnDdln
+
+	@DcmnttnDdln.setter
+	def DcmnttnDdln(self, value):
+		self._DcmnttnDdln = value if type(value) != auto else self.make_default("DcmnttnDdln")
+
+	@DcmnttnDdln.deleter
+	def DcmnttnDdln(self):
+		del self._DcmnttnDdln
+		self._DcmnttnDdln = None
+
+	@property
+	def MktDdln(self):
+		return self._MktDdln
+
+	@MktDdln.setter
+	def MktDdln(self, value):
+		self._MktDdln = value if type(value) != auto else self.make_default("MktDdln")
+
+	@MktDdln.deleter
+	def MktDdln(self):
+		del self._MktDdln
+		self._MktDdln = None
+
+	@property
+	def EarlyRspnDdln(self):
+		return self._EarlyRspnDdln
+
+	@EarlyRspnDdln.setter
+	def EarlyRspnDdln(self, value):
+		self._EarlyRspnDdln = value if type(value) != auto else self.make_default("EarlyRspnDdln")
+
+	@EarlyRspnDdln.deleter
+	def EarlyRspnDdln(self):
+		del self._EarlyRspnDdln
+		self._EarlyRspnDdln = None
+
+	@property
+	def XpryDt(self):
+		return self._XpryDt
+
+	@XpryDt.setter
+	def XpryDt(self, value):
+		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
+
+	@XpryDt.deleter
+	def XpryDt(self):
+		del self._XpryDt
+		self._XpryDt = None
+
+	@property
 	def SbcptCostDbtDt(self):
 		return self._SbcptCostDbtDt
 
@@ -149,17 +97,69 @@ class CorporateActionDate107(base_types._BaseFieldType):
 		del self._SbcptCostDbtDt
 		self._SbcptCostDbtDt = None
 
+	@property
+	def PrtctDdln(self):
+		return self._PrtctDdln
+
+	@PrtctDdln.setter
+	def PrtctDdln(self, value):
+		self._PrtctDdln = value if type(value) != auto else self.make_default("PrtctDdln")
+
+	@PrtctDdln.deleter
+	def PrtctDdln(self):
+		del self._PrtctDdln
+		self._PrtctDdln = None
+
+	@property
+	def DpstryCoverXprtnDt(self):
+		return self._DpstryCoverXprtnDt
+
+	@DpstryCoverXprtnDt.setter
+	def DpstryCoverXprtnDt(self, value):
+		self._DpstryCoverXprtnDt = value if type(value) != auto else self.make_default("DpstryCoverXprtnDt")
+
+	@DpstryCoverXprtnDt.deleter
+	def DpstryCoverXprtnDt(self):
+		del self._DpstryCoverXprtnDt
+		self._DpstryCoverXprtnDt = None
+
+	@property
+	def RspnDdln(self):
+		return self._RspnDdln
+
+	@RspnDdln.setter
+	def RspnDdln(self, value):
+		self._RspnDdln = value if type(value) != auto else self.make_default("RspnDdln")
+
+	@RspnDdln.deleter
+	def RspnDdln(self):
+		del self._RspnDdln
+		self._RspnDdln = None
+
+	@property
+	def StockLndgDdln(self):
+		return self._StockLndgDdln
+
+	@StockLndgDdln.setter
+	def StockLndgDdln(self, value):
+		self._StockLndgDdln = value if type(value) != auto else self.make_default("StockLndgDdln")
+
+	@StockLndgDdln.deleter
+	def StockLndgDdln(self):
+		del self._StockLndgDdln
+		self._StockLndgDdln = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StockLndgDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CoverXprtnDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DpstryCoverXprtnDt', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DcmnttnDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnDdln', type=DateFormat54Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpryDt', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlyRspnDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BrrwrStockLndgDdln', type=BorrowerLendingDeadline6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DcmnttnDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlyRspnDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpryDt', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SbcptCostDbtDt', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DpstryCoverXprtnDt', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnDdln', type=DateFormat54Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StockLndgDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

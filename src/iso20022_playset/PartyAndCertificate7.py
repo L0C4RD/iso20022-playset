@@ -1,11 +1,24 @@
 from . import base_types
-import PartyIdentification272
-import Max10KBinary
-import Modification1Code
+from .Max10KBinary import Max10KBinary
+from .PartyIdentification272 import PartyIdentification272
+from .Modification1Code import Modification1Code
 
 class PartyAndCertificate7(base_types._BaseFieldType):
 
-	__slots__ = ["_Cert", "_ModCd", "_Pty"]
+	__slots__ = ["_Pty", "_Cert", "_ModCd"]
+	@property
+	def Pty(self):
+		return self._Pty
+
+	@Pty.setter
+	def Pty(self, value):
+		self._Pty = value if type(value) != auto else self.make_default("Pty")
+
+	@Pty.deleter
+	def Pty(self):
+		del self._Pty
+		self._Pty = None
+
 	@property
 	def Cert(self):
 		return self._Cert
@@ -32,22 +45,9 @@ class PartyAndCertificate7(base_types._BaseFieldType):
 		del self._ModCd
 		self._ModCd = None
 
-	@property
-	def Pty(self):
-		return self._Pty
-
-	@Pty.setter
-	def Pty(self, value):
-		self._Pty = value if type(value) != auto else self.make_default("Pty")
-
-	@Pty.deleter
-	def Pty(self):
-		del self._Pty
-		self._Pty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Pty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cert', type=Max10KBinary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
 	))
 

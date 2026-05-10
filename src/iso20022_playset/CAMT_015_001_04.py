@@ -1,5 +1,5 @@
 from . import base_types
-import ModifyMemberV04
+from .ModifyMemberV04 import ModifyMemberV04
 
 class CAMT_015_001_04():
 

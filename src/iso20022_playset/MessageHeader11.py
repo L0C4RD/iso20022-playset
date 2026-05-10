@@ -1,12 +1,12 @@
 from . import base_types
-import OriginalBusinessQuery1
-import RequestType4Choice
-import Max35Text
-import ISODateTime
+from .RequestType4Choice import RequestType4Choice
+from .Max35Text import Max35Text
+from .OriginalBusinessQuery1 import OriginalBusinessQuery1
+from .ISODateTime import ISODateTime
 
 class MessageHeader11(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_ReqTp", "_OrgnlBizQry", "_CreDtTm"]
+	__slots__ = ["_MsgId", "_ReqTp", "_CreDtTm", "_OrgnlBizQry"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -34,19 +34,6 @@ class MessageHeader11(base_types._BaseFieldType):
 		self._ReqTp = None
 
 	@property
-	def OrgnlBizQry(self):
-		return self._OrgnlBizQry
-
-	@OrgnlBizQry.setter
-	def OrgnlBizQry(self, value):
-		self._OrgnlBizQry = value if type(value) != auto else self.make_default("OrgnlBizQry")
-
-	@OrgnlBizQry.deleter
-	def OrgnlBizQry(self):
-		del self._OrgnlBizQry
-		self._OrgnlBizQry = None
-
-	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -59,10 +46,23 @@ class MessageHeader11(base_types._BaseFieldType):
 		del self._CreDtTm
 		self._CreDtTm = None
 
+	@property
+	def OrgnlBizQry(self):
+		return self._OrgnlBizQry
+
+	@OrgnlBizQry.setter
+	def OrgnlBizQry(self, value):
+		self._OrgnlBizQry = value if type(value) != auto else self.make_default("OrgnlBizQry")
+
+	@OrgnlBizQry.deleter
+	def OrgnlBizQry(self):
+		del self._OrgnlBizQry
+		self._OrgnlBizQry = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqTp', type=RequestType4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlBizQry', type=OriginalBusinessQuery1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlBizQry', type=OriginalBusinessQuery1, min=0, max=1, mutex_group=None, array=False),
 	))
 

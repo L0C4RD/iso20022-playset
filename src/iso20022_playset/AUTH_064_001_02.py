@@ -1,5 +1,5 @@
 from . import base_types
-import CCPAvailableFinancialResourcesReportV02
+from .CCPAvailableFinancialResourcesReportV02 import CCPAvailableFinancialResourcesReportV02
 
 class AUTH_064_001_02():
 

@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalReversalReason1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ExternalReversalReason1Code import ExternalReversalReason1Code
 
 class ReversalReason4Choice(base_types._BaseFieldType):
 

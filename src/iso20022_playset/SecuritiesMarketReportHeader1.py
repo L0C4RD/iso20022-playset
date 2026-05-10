@@ -1,23 +1,23 @@
 from . import base_types
-import Period4Choice
-import TradingVenueIdentification1Choice
-import ISODateTime
+from .TradingVenueIdentification1Choice import TradingVenueIdentification1Choice
+from .ISODateTime import ISODateTime
+from .Period4Choice import Period4Choice
 
 class SecuritiesMarketReportHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmissnDtTm", "_RptgPrd", "_RptgNtty"]
+	__slots__ = ["_RptgNtty", "_RptgPrd", "_SubmissnDtTm"]
 	@property
-	def SubmissnDtTm(self):
-		return self._SubmissnDtTm
+	def RptgNtty(self):
+		return self._RptgNtty
 
-	@SubmissnDtTm.setter
-	def SubmissnDtTm(self, value):
-		self._SubmissnDtTm = value if type(value) != auto else self.make_default("SubmissnDtTm")
+	@RptgNtty.setter
+	def RptgNtty(self, value):
+		self._RptgNtty = value if type(value) != auto else self.make_default("RptgNtty")
 
-	@SubmissnDtTm.deleter
-	def SubmissnDtTm(self):
-		del self._SubmissnDtTm
-		self._SubmissnDtTm = None
+	@RptgNtty.deleter
+	def RptgNtty(self):
+		del self._RptgNtty
+		self._RptgNtty = None
 
 	@property
 	def RptgPrd(self):
@@ -33,21 +33,21 @@ class SecuritiesMarketReportHeader1(base_types._BaseFieldType):
 		self._RptgPrd = None
 
 	@property
-	def RptgNtty(self):
-		return self._RptgNtty
+	def SubmissnDtTm(self):
+		return self._SubmissnDtTm
 
-	@RptgNtty.setter
-	def RptgNtty(self, value):
-		self._RptgNtty = value if type(value) != auto else self.make_default("RptgNtty")
+	@SubmissnDtTm.setter
+	def SubmissnDtTm(self, value):
+		self._SubmissnDtTm = value if type(value) != auto else self.make_default("SubmissnDtTm")
 
-	@RptgNtty.deleter
-	def RptgNtty(self):
-		del self._RptgNtty
-		self._RptgNtty = None
+	@SubmissnDtTm.deleter
+	def SubmissnDtTm(self):
+		del self._SubmissnDtTm
+		self._SubmissnDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubmissnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgNtty', type=TradingVenueIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmissnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

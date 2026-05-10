@@ -1,8 +1,8 @@
 from . import base_types
-import Max35Text
-import PartyIdentification240Choice
-import PartyTextInformation5
-import AlternatePartyIdentification8
+from .PartyTextInformation5 import PartyTextInformation5
+from .Max35Text import Max35Text
+from .AlternatePartyIdentification8 import AlternatePartyIdentification8
+from .PartyIdentification240Choice import PartyIdentification240Choice
 
 class ConfirmationPartyDetails11(base_types._BaseFieldType):
 

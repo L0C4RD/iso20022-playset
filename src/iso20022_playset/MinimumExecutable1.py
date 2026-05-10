@@ -1,23 +1,10 @@
 from . import base_types
-import FinancialInstrumentQuantity25Choice
-import TrueFalseIndicator
+from .TrueFalseIndicator import TrueFalseIndicator
+from .FinancialInstrumentQuantity25Choice import FinancialInstrumentQuantity25Choice
 
 class MinimumExecutable1(base_types._BaseFieldType):
 
-	__slots__ = ["_FrstExctnOnly", "_Sz"]
-	@property
-	def FrstExctnOnly(self):
-		return self._FrstExctnOnly
-
-	@FrstExctnOnly.setter
-	def FrstExctnOnly(self, value):
-		self._FrstExctnOnly = value if type(value) != auto else self.make_default("FrstExctnOnly")
-
-	@FrstExctnOnly.deleter
-	def FrstExctnOnly(self):
-		del self._FrstExctnOnly
-		self._FrstExctnOnly = None
-
+	__slots__ = ["_Sz", "_FrstExctnOnly"]
 	@property
 	def Sz(self):
 		return self._Sz
@@ -31,8 +18,21 @@ class MinimumExecutable1(base_types._BaseFieldType):
 		del self._Sz
 		self._Sz = None
 
+	@property
+	def FrstExctnOnly(self):
+		return self._FrstExctnOnly
+
+	@FrstExctnOnly.setter
+	def FrstExctnOnly(self, value):
+		self._FrstExctnOnly = value if type(value) != auto else self.make_default("FrstExctnOnly")
+
+	@FrstExctnOnly.deleter
+	def FrstExctnOnly(self):
+		del self._FrstExctnOnly
+		self._FrstExctnOnly = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FrstExctnOnly', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sz', type=FinancialInstrumentQuantity25Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstExctnOnly', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

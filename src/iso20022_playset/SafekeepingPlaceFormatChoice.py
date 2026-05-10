@@ -1,7 +1,7 @@
 from . import base_types
-import CountryCode
-import GenericIdentification5
-import SafekeepingPlaceAsCodeAndPartyIdentification
+from .CountryCode import CountryCode
+from .SafekeepingPlaceAsCodeAndPartyIdentification import SafekeepingPlaceAsCodeAndPartyIdentification
+from .GenericIdentification5 import GenericIdentification5
 
 class SafekeepingPlaceFormatChoice(base_types._BaseFieldType):
 

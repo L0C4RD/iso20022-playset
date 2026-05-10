@@ -1,23 +1,10 @@
 from . import base_types
-import IssuerAndSerialNumber2
-import Max140Binary
+from .IssuerAndSerialNumber2 import IssuerAndSerialNumber2
+from .Max140Binary import Max140Binary
 
 class Recipient13Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SbjtKeyIdr", "_IssrAndSrlNb"]
-	@property
-	def SbjtKeyIdr(self):
-		return self._SbjtKeyIdr
-
-	@SbjtKeyIdr.setter
-	def SbjtKeyIdr(self, value):
-		self._SbjtKeyIdr = value if type(value) != auto else self.make_default("SbjtKeyIdr")
-
-	@SbjtKeyIdr.deleter
-	def SbjtKeyIdr(self):
-		del self._SbjtKeyIdr
-		self._SbjtKeyIdr = None
-
+	__slots__ = ["_IssrAndSrlNb", "_SbjtKeyIdr"]
 	@property
 	def IssrAndSrlNb(self):
 		return self._IssrAndSrlNb
@@ -31,8 +18,21 @@ class Recipient13Choice(base_types._BaseFieldType):
 		del self._IssrAndSrlNb
 		self._IssrAndSrlNb = None
 
+	@property
+	def SbjtKeyIdr(self):
+		return self._SbjtKeyIdr
+
+	@SbjtKeyIdr.setter
+	def SbjtKeyIdr(self, value):
+		self._SbjtKeyIdr = value if type(value) != auto else self.make_default("SbjtKeyIdr")
+
+	@SbjtKeyIdr.deleter
+	def SbjtKeyIdr(self):
+		del self._SbjtKeyIdr
+		self._SbjtKeyIdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SbjtKeyIdr', type=Max140Binary, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IssrAndSrlNb', type=IssuerAndSerialNumber2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SbjtKeyIdr', type=Max140Binary, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import SignatureType2Code
-import GenericIdentification47
+from .GenericIdentification47 import GenericIdentification47
+from .SignatureType2Code import SignatureType2Code
 
 class SignatureType1Choice(base_types._BaseFieldType):
 

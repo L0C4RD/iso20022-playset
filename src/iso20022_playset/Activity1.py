@@ -1,6 +1,6 @@
 from . import base_types
-import Max140Text
-import Max70Text
+from .Max140Text import Max140Text
+from .Max70Text import Max70Text
 
 class Activity1(base_types._BaseFieldType):
 

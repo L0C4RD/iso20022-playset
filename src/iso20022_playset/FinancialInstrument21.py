@@ -1,55 +1,16 @@
 from . import base_types
-import CountryCode
-import YesNoIndicator
-import Max140Text
-import Max35Text
-import ActiveCurrencyCode
-import DistributionPolicy1Code
-import ActiveOrHistoricCurrencyCode
-import FormOfSecurity1Code
+from .CountryCode import CountryCode
+from .Max35Text import Max35Text
+from .YesNoIndicator import YesNoIndicator
+from .DistributionPolicy1Code import DistributionPolicy1Code
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .FormOfSecurity1Code import FormOfSecurity1Code
+from .Max140Text import Max140Text
 
 class FinancialInstrument21(base_types._BaseFieldType):
 
-	__slots__ = ["_ClssTp", "_CtryOfDmcl", "_UmbrllNm", "_DnmtnCcy", "_DualFndInd", "_ReqdNAVCcy", "_PdctGrp", "_RegdDstrbtnCtry", "_SctiesForm", "_DstrbtnPlcy", "_BaseCcy"]
-	@property
-	def ClssTp(self):
-		return self._ClssTp
-
-	@ClssTp.setter
-	def ClssTp(self, value):
-		self._ClssTp = value if type(value) != auto else self.make_default("ClssTp")
-
-	@ClssTp.deleter
-	def ClssTp(self):
-		del self._ClssTp
-		self._ClssTp = None
-
-	@property
-	def CtryOfDmcl(self):
-		return self._CtryOfDmcl
-
-	@CtryOfDmcl.setter
-	def CtryOfDmcl(self, value):
-		self._CtryOfDmcl = value if type(value) != auto else self.make_default("CtryOfDmcl")
-
-	@CtryOfDmcl.deleter
-	def CtryOfDmcl(self):
-		del self._CtryOfDmcl
-		self._CtryOfDmcl = None
-
-	@property
-	def UmbrllNm(self):
-		return self._UmbrllNm
-
-	@UmbrllNm.setter
-	def UmbrllNm(self, value):
-		self._UmbrllNm = value if type(value) != auto else self.make_default("UmbrllNm")
-
-	@UmbrllNm.deleter
-	def UmbrllNm(self):
-		del self._UmbrllNm
-		self._UmbrllNm = None
-
+	__slots__ = ["_DnmtnCcy", "_ClssTp", "_DualFndInd", "_BaseCcy", "_SctiesForm", "_DstrbtnPlcy", "_RegdDstrbtnCtry", "_UmbrllNm", "_ReqdNAVCcy", "_PdctGrp", "_CtryOfDmcl"]
 	@property
 	def DnmtnCcy(self):
 		return self._DnmtnCcy
@@ -62,6 +23,19 @@ class FinancialInstrument21(base_types._BaseFieldType):
 	def DnmtnCcy(self):
 		del self._DnmtnCcy
 		self._DnmtnCcy = None
+
+	@property
+	def ClssTp(self):
+		return self._ClssTp
+
+	@ClssTp.setter
+	def ClssTp(self, value):
+		self._ClssTp = value if type(value) != auto else self.make_default("ClssTp")
+
+	@ClssTp.deleter
+	def ClssTp(self):
+		del self._ClssTp
+		self._ClssTp = None
 
 	@property
 	def DualFndInd(self):
@@ -77,43 +51,17 @@ class FinancialInstrument21(base_types._BaseFieldType):
 		self._DualFndInd = None
 
 	@property
-	def ReqdNAVCcy(self):
-		return self._ReqdNAVCcy
+	def BaseCcy(self):
+		return self._BaseCcy
 
-	@ReqdNAVCcy.setter
-	def ReqdNAVCcy(self, value):
-		self._ReqdNAVCcy = value if type(value) != auto else self.make_default("ReqdNAVCcy")
+	@BaseCcy.setter
+	def BaseCcy(self, value):
+		self._BaseCcy = value if type(value) != auto else self.make_default("BaseCcy")
 
-	@ReqdNAVCcy.deleter
-	def ReqdNAVCcy(self):
-		del self._ReqdNAVCcy
-		self._ReqdNAVCcy = None
-
-	@property
-	def PdctGrp(self):
-		return self._PdctGrp
-
-	@PdctGrp.setter
-	def PdctGrp(self, value):
-		self._PdctGrp = value if type(value) != auto else self.make_default("PdctGrp")
-
-	@PdctGrp.deleter
-	def PdctGrp(self):
-		del self._PdctGrp
-		self._PdctGrp = None
-
-	@property
-	def RegdDstrbtnCtry(self):
-		return self._RegdDstrbtnCtry
-
-	@RegdDstrbtnCtry.setter
-	def RegdDstrbtnCtry(self, value):
-		self._RegdDstrbtnCtry = value if type(value) != auto else self.make_default("RegdDstrbtnCtry")
-
-	@RegdDstrbtnCtry.deleter
-	def RegdDstrbtnCtry(self):
-		del self._RegdDstrbtnCtry
-		self._RegdDstrbtnCtry = None
+	@BaseCcy.deleter
+	def BaseCcy(self):
+		del self._BaseCcy
+		self._BaseCcy = None
 
 	@property
 	def SctiesForm(self):
@@ -142,29 +90,81 @@ class FinancialInstrument21(base_types._BaseFieldType):
 		self._DstrbtnPlcy = None
 
 	@property
-	def BaseCcy(self):
-		return self._BaseCcy
+	def RegdDstrbtnCtry(self):
+		return self._RegdDstrbtnCtry
 
-	@BaseCcy.setter
-	def BaseCcy(self, value):
-		self._BaseCcy = value if type(value) != auto else self.make_default("BaseCcy")
+	@RegdDstrbtnCtry.setter
+	def RegdDstrbtnCtry(self, value):
+		self._RegdDstrbtnCtry = value if type(value) != auto else self.make_default("RegdDstrbtnCtry")
 
-	@BaseCcy.deleter
-	def BaseCcy(self):
-		del self._BaseCcy
-		self._BaseCcy = None
+	@RegdDstrbtnCtry.deleter
+	def RegdDstrbtnCtry(self):
+		del self._RegdDstrbtnCtry
+		self._RegdDstrbtnCtry = None
+
+	@property
+	def UmbrllNm(self):
+		return self._UmbrllNm
+
+	@UmbrllNm.setter
+	def UmbrllNm(self, value):
+		self._UmbrllNm = value if type(value) != auto else self.make_default("UmbrllNm")
+
+	@UmbrllNm.deleter
+	def UmbrllNm(self):
+		del self._UmbrllNm
+		self._UmbrllNm = None
+
+	@property
+	def ReqdNAVCcy(self):
+		return self._ReqdNAVCcy
+
+	@ReqdNAVCcy.setter
+	def ReqdNAVCcy(self, value):
+		self._ReqdNAVCcy = value if type(value) != auto else self.make_default("ReqdNAVCcy")
+
+	@ReqdNAVCcy.deleter
+	def ReqdNAVCcy(self):
+		del self._ReqdNAVCcy
+		self._ReqdNAVCcy = None
+
+	@property
+	def PdctGrp(self):
+		return self._PdctGrp
+
+	@PdctGrp.setter
+	def PdctGrp(self, value):
+		self._PdctGrp = value if type(value) != auto else self.make_default("PdctGrp")
+
+	@PdctGrp.deleter
+	def PdctGrp(self):
+		del self._PdctGrp
+		self._PdctGrp = None
+
+	@property
+	def CtryOfDmcl(self):
+		return self._CtryOfDmcl
+
+	@CtryOfDmcl.setter
+	def CtryOfDmcl(self, value):
+		self._CtryOfDmcl = value if type(value) != auto else self.make_default("CtryOfDmcl")
+
+	@CtryOfDmcl.deleter
+	def CtryOfDmcl(self):
+		del self._CtryOfDmcl
+		self._CtryOfDmcl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryOfDmcl', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UmbrllNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DnmtnCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DualFndInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdNAVCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctGrp', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegdDstrbtnCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DstrbtnPlcy', type=DistributionPolicy1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegdDstrbtnCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UmbrllNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdNAVCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctGrp', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfDmcl', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

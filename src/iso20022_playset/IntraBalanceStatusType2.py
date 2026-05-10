@@ -1,7 +1,7 @@
 from . import base_types
-import ProprietaryReason4
-import SettlementStatus26Choice
-import ProcessingStatus68Choice
+from .ProcessingStatus68Choice import ProcessingStatus68Choice
+from .SettlementStatus26Choice import SettlementStatus26Choice
+from .ProprietaryReason4 import ProprietaryReason4
 
 class IntraBalanceStatusType2(base_types._BaseFieldType):
 

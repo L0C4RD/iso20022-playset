@@ -1,6 +1,6 @@
 from . import base_types
-import ClearingMember1
-import SupplementaryData1
+from .ClearingMember1 import ClearingMember1
+from .SupplementaryData1 import SupplementaryData1
 
 class CCPClearingMemberReportV01(base_types._BaseFieldType):
 

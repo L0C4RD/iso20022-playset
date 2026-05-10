@@ -1,25 +1,25 @@
 from . import base_types
-import FinancialInstitutionIdentification15
-import PartyIdentification139
-import AccountIdentificationAndName5
-import BranchData4
-import Max35Text
+from .Max35Text import Max35Text
+from .FinancialInstitutionIdentification15 import FinancialInstitutionIdentification15
+from .BranchData4 import BranchData4
+from .PartyIdentification139 import PartyIdentification139
+from .AccountIdentificationAndName5 import AccountIdentificationAndName5
 
 class DirectDebitMandate8(base_types._BaseFieldType):
 
-	__slots__ = ["_MndtId", "_Dbtr", "_DbtrAcct", "_CdtrAgt", "_DbtrNtlRegnNb", "_DbtrAgtBrnch", "_Cdtr", "_CdtrAgtBrnch", "_DbtrAgt", "_DbtrTaxIdNb", "_RegnId"]
+	__slots__ = ["_DbtrAgtBrnch", "_Dbtr", "_DbtrTaxIdNb", "_RegnId", "_DbtrNtlRegnNb", "_Cdtr", "_CdtrAgtBrnch", "_MndtId", "_DbtrAcct", "_DbtrAgt", "_CdtrAgt"]
 	@property
-	def MndtId(self):
-		return self._MndtId
+	def DbtrAgtBrnch(self):
+		return self._DbtrAgtBrnch
 
-	@MndtId.setter
-	def MndtId(self, value):
-		self._MndtId = value if type(value) != auto else self.make_default("MndtId")
+	@DbtrAgtBrnch.setter
+	def DbtrAgtBrnch(self, value):
+		self._DbtrAgtBrnch = value if type(value) != auto else self.make_default("DbtrAgtBrnch")
 
-	@MndtId.deleter
-	def MndtId(self):
-		del self._MndtId
-		self._MndtId = None
+	@DbtrAgtBrnch.deleter
+	def DbtrAgtBrnch(self):
+		del self._DbtrAgtBrnch
+		self._DbtrAgtBrnch = None
 
 	@property
 	def Dbtr(self):
@@ -35,30 +35,30 @@ class DirectDebitMandate8(base_types._BaseFieldType):
 		self._Dbtr = None
 
 	@property
-	def DbtrAcct(self):
-		return self._DbtrAcct
+	def DbtrTaxIdNb(self):
+		return self._DbtrTaxIdNb
 
-	@DbtrAcct.setter
-	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != auto else self.make_default("DbtrAcct")
+	@DbtrTaxIdNb.setter
+	def DbtrTaxIdNb(self, value):
+		self._DbtrTaxIdNb = value if type(value) != auto else self.make_default("DbtrTaxIdNb")
 
-	@DbtrAcct.deleter
-	def DbtrAcct(self):
-		del self._DbtrAcct
-		self._DbtrAcct = None
+	@DbtrTaxIdNb.deleter
+	def DbtrTaxIdNb(self):
+		del self._DbtrTaxIdNb
+		self._DbtrTaxIdNb = None
 
 	@property
-	def CdtrAgt(self):
-		return self._CdtrAgt
+	def RegnId(self):
+		return self._RegnId
 
-	@CdtrAgt.setter
-	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
+	@RegnId.setter
+	def RegnId(self, value):
+		self._RegnId = value if type(value) != auto else self.make_default("RegnId")
 
-	@CdtrAgt.deleter
-	def CdtrAgt(self):
-		del self._CdtrAgt
-		self._CdtrAgt = None
+	@RegnId.deleter
+	def RegnId(self):
+		del self._RegnId
+		self._RegnId = None
 
 	@property
 	def DbtrNtlRegnNb(self):
@@ -72,19 +72,6 @@ class DirectDebitMandate8(base_types._BaseFieldType):
 	def DbtrNtlRegnNb(self):
 		del self._DbtrNtlRegnNb
 		self._DbtrNtlRegnNb = None
-
-	@property
-	def DbtrAgtBrnch(self):
-		return self._DbtrAgtBrnch
-
-	@DbtrAgtBrnch.setter
-	def DbtrAgtBrnch(self, value):
-		self._DbtrAgtBrnch = value if type(value) != auto else self.make_default("DbtrAgtBrnch")
-
-	@DbtrAgtBrnch.deleter
-	def DbtrAgtBrnch(self):
-		del self._DbtrAgtBrnch
-		self._DbtrAgtBrnch = None
 
 	@property
 	def Cdtr(self):
@@ -113,6 +100,32 @@ class DirectDebitMandate8(base_types._BaseFieldType):
 		self._CdtrAgtBrnch = None
 
 	@property
+	def MndtId(self):
+		return self._MndtId
+
+	@MndtId.setter
+	def MndtId(self, value):
+		self._MndtId = value if type(value) != auto else self.make_default("MndtId")
+
+	@MndtId.deleter
+	def MndtId(self):
+		del self._MndtId
+		self._MndtId = None
+
+	@property
+	def DbtrAcct(self):
+		return self._DbtrAcct
+
+	@DbtrAcct.setter
+	def DbtrAcct(self, value):
+		self._DbtrAcct = value if type(value) != auto else self.make_default("DbtrAcct")
+
+	@DbtrAcct.deleter
+	def DbtrAcct(self):
+		del self._DbtrAcct
+		self._DbtrAcct = None
+
+	@property
 	def DbtrAgt(self):
 		return self._DbtrAgt
 
@@ -126,42 +139,29 @@ class DirectDebitMandate8(base_types._BaseFieldType):
 		self._DbtrAgt = None
 
 	@property
-	def DbtrTaxIdNb(self):
-		return self._DbtrTaxIdNb
+	def CdtrAgt(self):
+		return self._CdtrAgt
 
-	@DbtrTaxIdNb.setter
-	def DbtrTaxIdNb(self, value):
-		self._DbtrTaxIdNb = value if type(value) != auto else self.make_default("DbtrTaxIdNb")
+	@CdtrAgt.setter
+	def CdtrAgt(self, value):
+		self._CdtrAgt = value if type(value) != auto else self.make_default("CdtrAgt")
 
-	@DbtrTaxIdNb.deleter
-	def DbtrTaxIdNb(self):
-		del self._DbtrTaxIdNb
-		self._DbtrTaxIdNb = None
-
-	@property
-	def RegnId(self):
-		return self._RegnId
-
-	@RegnId.setter
-	def RegnId(self, value):
-		self._RegnId = value if type(value) != auto else self.make_default("RegnId")
-
-	@RegnId.deleter
-	def RegnId(self):
-		del self._RegnId
-		self._RegnId = None
+	@CdtrAgt.deleter
+	def CdtrAgt(self):
+		del self._CdtrAgt
+		self._CdtrAgt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MndtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dbtr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAcct', type=AccountIdentificationAndName5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAgt', type=FinancialInstitutionIdentification15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrNtlRegnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrAgtBrnch', type=BranchData4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cdtr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAgtBrnch', type=BranchData4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgt', type=FinancialInstitutionIdentification15, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrTaxIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrNtlRegnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cdtr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgtBrnch', type=BranchData4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MndtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAcct', type=AccountIdentificationAndName5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgt', type=FinancialInstitutionIdentification15, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAgt', type=FinancialInstitutionIdentification15, min=0, max=1, mutex_group=None, array=False),
 	))
 

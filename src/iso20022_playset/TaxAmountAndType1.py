@@ -1,6 +1,6 @@
 from . import base_types
-import TaxAmountType1Choice
-import ActiveOrHistoricCurrencyAndAmount
+from .TaxAmountType1Choice import TaxAmountType1Choice
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class TaxAmountAndType1(base_types._BaseFieldType):
 

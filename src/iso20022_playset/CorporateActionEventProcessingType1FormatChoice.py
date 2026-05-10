@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification13
-import CorporateActionEventProcessingType1Code
+from .CorporateActionEventProcessingType1Code import CorporateActionEventProcessingType1Code
+from .GenericIdentification13 import GenericIdentification13
 
 class CorporateActionEventProcessingType1FormatChoice(base_types._BaseFieldType):
 

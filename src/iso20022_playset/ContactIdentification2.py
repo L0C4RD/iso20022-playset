@@ -1,24 +1,37 @@
 from . import base_types
-import Max256Text
-import PhoneNumber
-import Max35Text
-import NamePrefix1Code
+from .Max35Text import Max35Text
+from .PhoneNumber import PhoneNumber
+from .NamePrefix1Code import NamePrefix1Code
+from .Max256Text import Max256Text
 
 class ContactIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_EmailAdr", "_NmPrfx", "_GvnNm", "_FaxNb", "_PhneNb", "_Nm", "_MobNb"]
+	__slots__ = ["_Nm", "_PhneNb", "_NmPrfx", "_GvnNm", "_FaxNb", "_EmailAdr", "_MobNb"]
 	@property
-	def EmailAdr(self):
-		return self._EmailAdr
+	def Nm(self):
+		return self._Nm
 
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def PhneNb(self):
+		return self._PhneNb
+
+	@PhneNb.setter
+	def PhneNb(self, value):
+		self._PhneNb = value if type(value) != auto else self.make_default("PhneNb")
+
+	@PhneNb.deleter
+	def PhneNb(self):
+		del self._PhneNb
+		self._PhneNb = None
 
 	@property
 	def NmPrfx(self):
@@ -60,30 +73,17 @@ class ContactIdentification2(base_types._BaseFieldType):
 		self._FaxNb = None
 
 	@property
-	def PhneNb(self):
-		return self._PhneNb
+	def EmailAdr(self):
+		return self._EmailAdr
 
-	@PhneNb.setter
-	def PhneNb(self, value):
-		self._PhneNb = value if type(value) != auto else self.make_default("PhneNb")
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
 
-	@PhneNb.deleter
-	def PhneNb(self):
-		del self._PhneNb
-		self._PhneNb = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
 
 	@property
 	def MobNb(self):
@@ -99,12 +99,12 @@ class ContactIdentification2(base_types._BaseFieldType):
 		self._MobNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MobNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

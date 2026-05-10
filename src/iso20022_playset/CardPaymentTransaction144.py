@@ -1,15 +1,41 @@
 from . import base_types
-import Action17
-import AuthorisationResult17
-import AmountAndDirection93
-import ContentInformationType40
-import CurrencyConversion29
-import Product4
-import Product5
+from .AuthorisationResult17 import AuthorisationResult17
+from .Action17 import Action17
+from .AmountAndDirection93 import AmountAndDirection93
+from .ContentInformationType40 import ContentInformationType40
+from .Product4 import Product4
+from .Product5 import Product5
+from .CurrencyConversion29 import CurrencyConversion29
 
 class CardPaymentTransaction144(base_types._BaseFieldType):
 
-	__slots__ = ["_Bal", "_AddtlAvlblPdct", "_Actn", "_PrtctdBal", "_CcyConvsElgblty", "_AuthstnRslt", "_AllwdPdctCd", "_NotAllwdPdctCd"]
+	__slots__ = ["_PrtctdBal", "_NotAllwdPdctCd", "_Bal", "_AddtlAvlblPdct", "_CcyConvsElgblty", "_Actn", "_AuthstnRslt", "_AllwdPdctCd"]
+	@property
+	def PrtctdBal(self):
+		return self._PrtctdBal
+
+	@PrtctdBal.setter
+	def PrtctdBal(self, value):
+		self._PrtctdBal = value if type(value) != auto else self.make_default("PrtctdBal")
+
+	@PrtctdBal.deleter
+	def PrtctdBal(self):
+		del self._PrtctdBal
+		self._PrtctdBal = None
+
+	@property
+	def NotAllwdPdctCd(self):
+		return self._NotAllwdPdctCd
+
+	@NotAllwdPdctCd.setter
+	def NotAllwdPdctCd(self, value):
+		self._NotAllwdPdctCd = value if type(value) != auto else self.make_default("NotAllwdPdctCd")
+
+	@NotAllwdPdctCd.deleter
+	def NotAllwdPdctCd(self):
+		del self._NotAllwdPdctCd
+		self._NotAllwdPdctCd = None
+
 	@property
 	def Bal(self):
 		return self._Bal
@@ -37,32 +63,6 @@ class CardPaymentTransaction144(base_types._BaseFieldType):
 		self._AddtlAvlblPdct = None
 
 	@property
-	def Actn(self):
-		return self._Actn
-
-	@Actn.setter
-	def Actn(self, value):
-		self._Actn = value if type(value) != auto else self.make_default("Actn")
-
-	@Actn.deleter
-	def Actn(self):
-		del self._Actn
-		self._Actn = None
-
-	@property
-	def PrtctdBal(self):
-		return self._PrtctdBal
-
-	@PrtctdBal.setter
-	def PrtctdBal(self, value):
-		self._PrtctdBal = value if type(value) != auto else self.make_default("PrtctdBal")
-
-	@PrtctdBal.deleter
-	def PrtctdBal(self):
-		del self._PrtctdBal
-		self._PrtctdBal = None
-
-	@property
 	def CcyConvsElgblty(self):
 		return self._CcyConvsElgblty
 
@@ -74,6 +74,19 @@ class CardPaymentTransaction144(base_types._BaseFieldType):
 	def CcyConvsElgblty(self):
 		del self._CcyConvsElgblty
 		self._CcyConvsElgblty = None
+
+	@property
+	def Actn(self):
+		return self._Actn
+
+	@Actn.setter
+	def Actn(self, value):
+		self._Actn = value if type(value) != auto else self.make_default("Actn")
+
+	@Actn.deleter
+	def Actn(self):
+		del self._Actn
+		self._Actn = None
 
 	@property
 	def AuthstnRslt(self):
@@ -101,27 +114,14 @@ class CardPaymentTransaction144(base_types._BaseFieldType):
 		del self._AllwdPdctCd
 		self._AllwdPdctCd = None
 
-	@property
-	def NotAllwdPdctCd(self):
-		return self._NotAllwdPdctCd
-
-	@NotAllwdPdctCd.setter
-	def NotAllwdPdctCd(self, value):
-		self._NotAllwdPdctCd = value if type(value) != auto else self.make_default("NotAllwdPdctCd")
-
-	@NotAllwdPdctCd.deleter
-	def NotAllwdPdctCd(self):
-		del self._NotAllwdPdctCd
-		self._NotAllwdPdctCd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PrtctdBal', type=ContentInformationType40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NotAllwdPdctCd', type=Product4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Bal', type=AmountAndDirection93, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlAvlblPdct', type=Product5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Actn', type=Action17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrtctdBal', type=ContentInformationType40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CcyConvsElgblty', type=CurrencyConversion29, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Actn', type=Action17, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AuthstnRslt', type=AuthorisationResult17, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AllwdPdctCd', type=Product4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NotAllwdPdctCd', type=Product4, min=0, max=None, mutex_group=None, array=True),
 	))
 

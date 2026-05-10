@@ -1,24 +1,11 @@
 from . import base_types
-import Extension1
-import MessageAndBusinessReference10
-import MessageIdentification1
+from .MessageIdentification1 import MessageIdentification1
+from .Extension1 import Extension1
+from .MessageAndBusinessReference10 import MessageAndBusinessReference10
 
 class RequestForOrderConfirmationStatusReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_ReqDtls", "_Xtnsn"]
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
+	__slots__ = ["_ReqDtls", "_MsgId", "_Xtnsn"]
 	@property
 	def ReqDtls(self):
 		return self._ReqDtls
@@ -31,6 +18,19 @@ class RequestForOrderConfirmationStatusReportV02(base_types._BaseFieldType):
 	def ReqDtls(self):
 		del self._ReqDtls
 		self._ReqDtls = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def Xtnsn(self):
@@ -46,8 +46,8 @@ class RequestForOrderConfirmationStatusReportV02(base_types._BaseFieldType):
 		self._Xtnsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqDtls', type=MessageAndBusinessReference10, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
 

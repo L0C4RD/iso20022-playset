@@ -1,38 +1,12 @@
 from . import base_types
-import ISODate
-import PartyIdentification272
-import Max35Text
-import MandateRelatedInformation16
+from .Max35Text import Max35Text
+from .PartyIdentification272 import PartyIdentification272
+from .MandateRelatedInformation16 import MandateRelatedInformation16
+from .ISODate import ISODate
 
 class DirectDebitTransaction12(base_types._BaseFieldType):
 
-	__slots__ = ["_PreNtfctnId", "_MndtRltdInf", "_CdtrSchmeId", "_PreNtfctnDt"]
-	@property
-	def PreNtfctnId(self):
-		return self._PreNtfctnId
-
-	@PreNtfctnId.setter
-	def PreNtfctnId(self, value):
-		self._PreNtfctnId = value if type(value) != auto else self.make_default("PreNtfctnId")
-
-	@PreNtfctnId.deleter
-	def PreNtfctnId(self):
-		del self._PreNtfctnId
-		self._PreNtfctnId = None
-
-	@property
-	def MndtRltdInf(self):
-		return self._MndtRltdInf
-
-	@MndtRltdInf.setter
-	def MndtRltdInf(self, value):
-		self._MndtRltdInf = value if type(value) != auto else self.make_default("MndtRltdInf")
-
-	@MndtRltdInf.deleter
-	def MndtRltdInf(self):
-		del self._MndtRltdInf
-		self._MndtRltdInf = None
-
+	__slots__ = ["_CdtrSchmeId", "_PreNtfctnId", "_PreNtfctnDt", "_MndtRltdInf"]
 	@property
 	def CdtrSchmeId(self):
 		return self._CdtrSchmeId
@@ -47,6 +21,19 @@ class DirectDebitTransaction12(base_types._BaseFieldType):
 		self._CdtrSchmeId = None
 
 	@property
+	def PreNtfctnId(self):
+		return self._PreNtfctnId
+
+	@PreNtfctnId.setter
+	def PreNtfctnId(self, value):
+		self._PreNtfctnId = value if type(value) != auto else self.make_default("PreNtfctnId")
+
+	@PreNtfctnId.deleter
+	def PreNtfctnId(self):
+		del self._PreNtfctnId
+		self._PreNtfctnId = None
+
+	@property
 	def PreNtfctnDt(self):
 		return self._PreNtfctnDt
 
@@ -59,10 +46,23 @@ class DirectDebitTransaction12(base_types._BaseFieldType):
 		del self._PreNtfctnDt
 		self._PreNtfctnDt = None
 
+	@property
+	def MndtRltdInf(self):
+		return self._MndtRltdInf
+
+	@MndtRltdInf.setter
+	def MndtRltdInf(self, value):
+		self._MndtRltdInf = value if type(value) != auto else self.make_default("MndtRltdInf")
+
+	@MndtRltdInf.deleter
+	def MndtRltdInf(self):
+		del self._MndtRltdInf
+		self._MndtRltdInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PreNtfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MndtRltdInf', type=MandateRelatedInformation16, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrSchmeId', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PreNtfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PreNtfctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MndtRltdInf', type=MandateRelatedInformation16, min=0, max=1, mutex_group=None, array=False),
 	))
 

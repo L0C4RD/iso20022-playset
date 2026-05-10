@@ -1,6 +1,6 @@
 from . import base_types
-import InvestorProfile2
-import DataModification1Code
+from .InvestorProfile2 import InvestorProfile2
+from .DataModification1Code import DataModification1Code
 
 class ModificationScope46(base_types._BaseFieldType):
 

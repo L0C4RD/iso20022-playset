@@ -1,6 +1,6 @@
 from . import base_types
-import TransactionAmendment1Choice
-import Max2048Text
+from .TransactionAmendment1Choice import TransactionAmendment1Choice
+from .Max2048Text import Max2048Text
 
 class TransactionAmendment1(base_types._BaseFieldType):
 

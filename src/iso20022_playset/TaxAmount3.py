@@ -1,11 +1,11 @@
 from . import base_types
-import TaxRecordDetails3
-import PercentageRate
-import ActiveOrHistoricCurrencyAndAmount
+from .PercentageRate import PercentageRate
+from .TaxRecordDetails3 import TaxRecordDetails3
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class TaxAmount3(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxblBaseAmt", "_Dtls", "_Rate", "_TtlAmt"]
+	__slots__ = ["_TaxblBaseAmt", "_TtlAmt", "_Rate", "_Dtls"]
 	@property
 	def TaxblBaseAmt(self):
 		return self._TaxblBaseAmt
@@ -20,17 +20,17 @@ class TaxAmount3(base_types._BaseFieldType):
 		self._TaxblBaseAmt = None
 
 	@property
-	def Dtls(self):
-		return self._Dtls
+	def TtlAmt(self):
+		return self._TtlAmt
 
-	@Dtls.setter
-	def Dtls(self, value):
-		self._Dtls = value if type(value) != auto else self.make_default("Dtls")
+	@TtlAmt.setter
+	def TtlAmt(self, value):
+		self._TtlAmt = value if type(value) != auto else self.make_default("TtlAmt")
 
-	@Dtls.deleter
-	def Dtls(self):
-		del self._Dtls
-		self._Dtls = None
+	@TtlAmt.deleter
+	def TtlAmt(self):
+		del self._TtlAmt
+		self._TtlAmt = None
 
 	@property
 	def Rate(self):
@@ -46,22 +46,22 @@ class TaxAmount3(base_types._BaseFieldType):
 		self._Rate = None
 
 	@property
-	def TtlAmt(self):
-		return self._TtlAmt
+	def Dtls(self):
+		return self._Dtls
 
-	@TtlAmt.setter
-	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != auto else self.make_default("TtlAmt")
+	@Dtls.setter
+	def Dtls(self, value):
+		self._Dtls = value if type(value) != auto else self.make_default("Dtls")
 
-	@TtlAmt.deleter
-	def TtlAmt(self):
-		del self._TtlAmt
-		self._TtlAmt = None
+	@Dtls.deleter
+	def Dtls(self):
+		del self._Dtls
+		self._Dtls = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TaxblBaseAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dtls', type=TaxRecordDetails3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dtls', type=TaxRecordDetails3, min=0, max=None, mutex_group=None, array=True),
 	))
 

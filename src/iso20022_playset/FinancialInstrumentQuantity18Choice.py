@@ -1,6 +1,6 @@
 from . import base_types
-import DecimalNumber
-import ImpliedCurrencyAndAmount
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .DecimalNumber import DecimalNumber
 
 class FinancialInstrumentQuantity18Choice(base_types._BaseFieldType):
 

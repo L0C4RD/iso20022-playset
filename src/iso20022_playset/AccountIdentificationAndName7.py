@@ -1,6 +1,6 @@
 from . import base_types
-import CashAccountIdentification8Choice
-import Max35Text
+from .Max35Text import Max35Text
+from .CashAccountIdentification8Choice import CashAccountIdentification8Choice
 
 class AccountIdentificationAndName7(base_types._BaseFieldType):
 

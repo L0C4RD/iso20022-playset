@@ -1,5 +1,5 @@
 from . import base_types
-import ActiveCurrencyAndAmount
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class ProfitAndLoss2Choice(base_types._BaseFieldType):
 

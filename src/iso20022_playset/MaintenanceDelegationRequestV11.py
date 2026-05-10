@@ -1,7 +1,7 @@
 from . import base_types
-import ContentInformationType38
-import TMSHeader1
-import MaintenanceDelegationRequest11
+from .TMSHeader1 import TMSHeader1
+from .ContentInformationType38 import ContentInformationType38
+from .MaintenanceDelegationRequest11 import MaintenanceDelegationRequest11
 
 class MaintenanceDelegationRequestV11(base_types._BaseFieldType):
 

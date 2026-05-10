@@ -1,6 +1,6 @@
 from . import base_types
-import Max40KText
-import ISOMax3ALanguageCode
+from .ISOMax3ALanguageCode import ISOMax3ALanguageCode
+from .Max40KText import Max40KText
 
 class LocalData9(base_types._BaseFieldType):
 

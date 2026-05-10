@@ -1,6 +1,6 @@
 from . import base_types
-import IBAN2007Identifier
-import RestrictedFINX2Max34Text
+from .IBAN2007Identifier import IBAN2007Identifier
+from .RestrictedFINX2Max34Text import RestrictedFINX2Max34Text
 
 class CashAccountIdentification6Choice(base_types._BaseFieldType):
 

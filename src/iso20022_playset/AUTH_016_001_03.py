@@ -1,5 +1,5 @@
 from . import base_types
-import FinancialInstrumentReportingTransactionReportV03
+from .FinancialInstrumentReportingTransactionReportV03 import FinancialInstrumentReportingTransactionReportV03
 
 class AUTH_016_001_03():
 

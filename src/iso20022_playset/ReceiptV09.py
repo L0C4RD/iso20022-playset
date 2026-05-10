@@ -1,7 +1,7 @@
 from . import base_types
-import Receipt7
-import SupplementaryData1
-import MessageHeader9
+from .MessageHeader9 import MessageHeader9
+from .SupplementaryData1 import SupplementaryData1
+from .Receipt7 import Receipt7
 
 class ReceiptV09(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import BranchAndFinancialInstitutionIdentification8
-import Max35Text
+from .Max35Text import Max35Text
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class ProprietaryAgent5(base_types._BaseFieldType):
 

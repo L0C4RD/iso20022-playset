@@ -1,14 +1,14 @@
 from . import base_types
-import CashAccount40
-import ISODateTime
-import Max35Text
-import TotalCharges7
-import BranchAndFinancialInstitutionIdentification8
-import SettlementInstruction19
+from .Max35Text import Max35Text
+from .SettlementInstruction19 import SettlementInstruction19
+from .CashAccount40 import CashAccount40
+from .ISODateTime import ISODateTime
+from .TotalCharges7 import TotalCharges7
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class GroupHeader130(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_ChrgsAcctAgt", "_ChrgsAcctAgtAcct", "_TtlChrgs", "_SttlmInstr", "_CreDtTm", "_ChrgsRqstr"]
+	__slots__ = ["_MsgId", "_SttlmInstr", "_TtlChrgs", "_ChrgsRqstr", "_ChrgsAcctAgtAcct", "_ChrgsAcctAgt", "_CreDtTm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -21,45 +21,6 @@ class GroupHeader130(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
-
-	@property
-	def ChrgsAcctAgt(self):
-		return self._ChrgsAcctAgt
-
-	@ChrgsAcctAgt.setter
-	def ChrgsAcctAgt(self, value):
-		self._ChrgsAcctAgt = value if type(value) != auto else self.make_default("ChrgsAcctAgt")
-
-	@ChrgsAcctAgt.deleter
-	def ChrgsAcctAgt(self):
-		del self._ChrgsAcctAgt
-		self._ChrgsAcctAgt = None
-
-	@property
-	def ChrgsAcctAgtAcct(self):
-		return self._ChrgsAcctAgtAcct
-
-	@ChrgsAcctAgtAcct.setter
-	def ChrgsAcctAgtAcct(self, value):
-		self._ChrgsAcctAgtAcct = value if type(value) != auto else self.make_default("ChrgsAcctAgtAcct")
-
-	@ChrgsAcctAgtAcct.deleter
-	def ChrgsAcctAgtAcct(self):
-		del self._ChrgsAcctAgtAcct
-		self._ChrgsAcctAgtAcct = None
-
-	@property
-	def TtlChrgs(self):
-		return self._TtlChrgs
-
-	@TtlChrgs.setter
-	def TtlChrgs(self, value):
-		self._TtlChrgs = value if type(value) != auto else self.make_default("TtlChrgs")
-
-	@TtlChrgs.deleter
-	def TtlChrgs(self):
-		del self._TtlChrgs
-		self._TtlChrgs = None
 
 	@property
 	def SttlmInstr(self):
@@ -75,17 +36,17 @@ class GroupHeader130(base_types._BaseFieldType):
 		self._SttlmInstr = None
 
 	@property
-	def CreDtTm(self):
-		return self._CreDtTm
+	def TtlChrgs(self):
+		return self._TtlChrgs
 
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+	@TtlChrgs.setter
+	def TtlChrgs(self, value):
+		self._TtlChrgs = value if type(value) != auto else self.make_default("TtlChrgs")
 
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
+	@TtlChrgs.deleter
+	def TtlChrgs(self):
+		del self._TtlChrgs
+		self._TtlChrgs = None
 
 	@property
 	def ChrgsRqstr(self):
@@ -100,13 +61,52 @@ class GroupHeader130(base_types._BaseFieldType):
 		del self._ChrgsRqstr
 		self._ChrgsRqstr = None
 
+	@property
+	def ChrgsAcctAgtAcct(self):
+		return self._ChrgsAcctAgtAcct
+
+	@ChrgsAcctAgtAcct.setter
+	def ChrgsAcctAgtAcct(self, value):
+		self._ChrgsAcctAgtAcct = value if type(value) != auto else self.make_default("ChrgsAcctAgtAcct")
+
+	@ChrgsAcctAgtAcct.deleter
+	def ChrgsAcctAgtAcct(self):
+		del self._ChrgsAcctAgtAcct
+		self._ChrgsAcctAgtAcct = None
+
+	@property
+	def ChrgsAcctAgt(self):
+		return self._ChrgsAcctAgt
+
+	@ChrgsAcctAgt.setter
+	def ChrgsAcctAgt(self, value):
+		self._ChrgsAcctAgt = value if type(value) != auto else self.make_default("ChrgsAcctAgt")
+
+	@ChrgsAcctAgt.deleter
+	def ChrgsAcctAgt(self):
+		del self._ChrgsAcctAgt
+		self._ChrgsAcctAgt = None
+
+	@property
+	def CreDtTm(self):
+		return self._CreDtTm
+
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsAcctAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsAcctAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlChrgs', type=TotalCharges7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmInstr', type=SettlementInstruction19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlChrgs', type=TotalCharges7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgsRqstr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsAcctAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsAcctAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,24 @@
 from . import base_types
-import GroupCancellationIndicator
-import OriginalNotificationReference14
-import Max35Text
-import ISODateTime
+from .Max35Text import Max35Text
+from .OriginalNotificationReference14 import OriginalNotificationReference14
+from .ISODateTime import ISODateTime
+from .GroupCancellationIndicator import GroupCancellationIndicator
 
 class OriginalNotification16(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlNtfctnRef", "_NtfctnCxl", "_OrgnlCreDtTm", "_OrgnlNtfctnId", "_OrgnlMsgId"]
+	__slots__ = ["_OrgnlNtfctnId", "_NtfctnCxl", "_OrgnlCreDtTm", "_OrgnlNtfctnRef", "_OrgnlMsgId"]
 	@property
-	def OrgnlNtfctnRef(self):
-		return self._OrgnlNtfctnRef
+	def OrgnlNtfctnId(self):
+		return self._OrgnlNtfctnId
 
-	@OrgnlNtfctnRef.setter
-	def OrgnlNtfctnRef(self, value):
-		self._OrgnlNtfctnRef = value if type(value) != auto else self.make_default("OrgnlNtfctnRef")
+	@OrgnlNtfctnId.setter
+	def OrgnlNtfctnId(self, value):
+		self._OrgnlNtfctnId = value if type(value) != auto else self.make_default("OrgnlNtfctnId")
 
-	@OrgnlNtfctnRef.deleter
-	def OrgnlNtfctnRef(self):
-		del self._OrgnlNtfctnRef
-		self._OrgnlNtfctnRef = None
+	@OrgnlNtfctnId.deleter
+	def OrgnlNtfctnId(self):
+		del self._OrgnlNtfctnId
+		self._OrgnlNtfctnId = None
 
 	@property
 	def NtfctnCxl(self):
@@ -47,17 +47,17 @@ class OriginalNotification16(base_types._BaseFieldType):
 		self._OrgnlCreDtTm = None
 
 	@property
-	def OrgnlNtfctnId(self):
-		return self._OrgnlNtfctnId
+	def OrgnlNtfctnRef(self):
+		return self._OrgnlNtfctnRef
 
-	@OrgnlNtfctnId.setter
-	def OrgnlNtfctnId(self, value):
-		self._OrgnlNtfctnId = value if type(value) != auto else self.make_default("OrgnlNtfctnId")
+	@OrgnlNtfctnRef.setter
+	def OrgnlNtfctnRef(self, value):
+		self._OrgnlNtfctnRef = value if type(value) != auto else self.make_default("OrgnlNtfctnRef")
 
-	@OrgnlNtfctnId.deleter
-	def OrgnlNtfctnId(self):
-		del self._OrgnlNtfctnId
-		self._OrgnlNtfctnId = None
+	@OrgnlNtfctnRef.deleter
+	def OrgnlNtfctnRef(self):
+		del self._OrgnlNtfctnRef
+		self._OrgnlNtfctnRef = None
 
 	@property
 	def OrgnlMsgId(self):
@@ -73,10 +73,10 @@ class OriginalNotification16(base_types._BaseFieldType):
 		self._OrgnlMsgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlNtfctnRef', type=OriginalNotificationReference14, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlNtfctnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnCxl', type=GroupCancellationIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlNtfctnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlNtfctnRef', type=OriginalNotificationReference14, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

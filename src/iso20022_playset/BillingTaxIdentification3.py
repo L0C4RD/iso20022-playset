@@ -1,6 +1,6 @@
 from . import base_types
-import Contact13
-import Max35Text
+from .Max35Text import Max35Text
+from .Contact13 import Contact13
 
 class BillingTaxIdentification3(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import ISODate
-import DateType2Choice
+from .DateType2Choice import DateType2Choice
+from .ISODate import ISODate
 
 class DateAndType1(base_types._BaseFieldType):
 

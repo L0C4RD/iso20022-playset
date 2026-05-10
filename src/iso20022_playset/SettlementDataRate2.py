@@ -1,5 +1,5 @@
 from . import base_types
-import PercentageRate
+from .PercentageRate import PercentageRate
 
 class SettlementDataRate2(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-import DeleteStandingOrderV05
+from .DeleteStandingOrderV05 import DeleteStandingOrderV05
 
 class CAMT_071_001_05():
 

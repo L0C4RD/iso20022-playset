@@ -1,5 +1,5 @@
 from . import base_types
-import CustomerCreditTransferInitiationV12
+from .CustomerCreditTransferInitiationV12 import CustomerCreditTransferInitiationV12
 
 class PAIN_001_001_12():
 

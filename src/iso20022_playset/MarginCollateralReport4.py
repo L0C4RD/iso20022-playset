@@ -1,7 +1,7 @@
 from . import base_types
-import CollateralisationType3Code
-import CollateralPortfolioCode5Choice
-import ISODateTime
+from .CollateralisationType3Code import CollateralisationType3Code
+from .CollateralPortfolioCode5Choice import CollateralPortfolioCode5Choice
+from .ISODateTime import ISODateTime
 
 class MarginCollateralReport4(base_types._BaseFieldType):
 

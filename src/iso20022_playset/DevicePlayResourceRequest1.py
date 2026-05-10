@@ -1,39 +1,26 @@
 from . import base_types
-import ProcessingPosition2Code
-import PercentageRate
-import ResponseMode2Code
-import ResourceContent1
-import ResourceAction1Code
-import Max35Text
+from .ResourceContent1 import ResourceContent1
+from .Max35Text import Max35Text
+from .ResponseMode2Code import ResponseMode2Code
+from .PercentageRate import PercentageRate
+from .ProcessingPosition2Code import ProcessingPosition2Code
+from .ResourceAction1Code import ResourceAction1Code
 
 class DevicePlayResourceRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_TmgSlot", "_RsrcActn", "_DispRsltn", "_Rsrc", "_SoundVol", "_RspnMd"]
+	__slots__ = ["_SoundVol", "_DispRsltn", "_RsrcActn", "_RspnMd", "_Rsrc", "_TmgSlot"]
 	@property
-	def TmgSlot(self):
-		return self._TmgSlot
+	def SoundVol(self):
+		return self._SoundVol
 
-	@TmgSlot.setter
-	def TmgSlot(self, value):
-		self._TmgSlot = value if type(value) != auto else self.make_default("TmgSlot")
+	@SoundVol.setter
+	def SoundVol(self, value):
+		self._SoundVol = value if type(value) != auto else self.make_default("SoundVol")
 
-	@TmgSlot.deleter
-	def TmgSlot(self):
-		del self._TmgSlot
-		self._TmgSlot = None
-
-	@property
-	def RsrcActn(self):
-		return self._RsrcActn
-
-	@RsrcActn.setter
-	def RsrcActn(self, value):
-		self._RsrcActn = value if type(value) != auto else self.make_default("RsrcActn")
-
-	@RsrcActn.deleter
-	def RsrcActn(self):
-		del self._RsrcActn
-		self._RsrcActn = None
+	@SoundVol.deleter
+	def SoundVol(self):
+		del self._SoundVol
+		self._SoundVol = None
 
 	@property
 	def DispRsltn(self):
@@ -49,30 +36,17 @@ class DevicePlayResourceRequest1(base_types._BaseFieldType):
 		self._DispRsltn = None
 
 	@property
-	def Rsrc(self):
-		return self._Rsrc
+	def RsrcActn(self):
+		return self._RsrcActn
 
-	@Rsrc.setter
-	def Rsrc(self, value):
-		self._Rsrc = value if type(value) != auto else self.make_default("Rsrc")
+	@RsrcActn.setter
+	def RsrcActn(self, value):
+		self._RsrcActn = value if type(value) != auto else self.make_default("RsrcActn")
 
-	@Rsrc.deleter
-	def Rsrc(self):
-		del self._Rsrc
-		self._Rsrc = None
-
-	@property
-	def SoundVol(self):
-		return self._SoundVol
-
-	@SoundVol.setter
-	def SoundVol(self, value):
-		self._SoundVol = value if type(value) != auto else self.make_default("SoundVol")
-
-	@SoundVol.deleter
-	def SoundVol(self):
-		del self._SoundVol
-		self._SoundVol = None
+	@RsrcActn.deleter
+	def RsrcActn(self):
+		del self._RsrcActn
+		self._RsrcActn = None
 
 	@property
 	def RspnMd(self):
@@ -87,12 +61,38 @@ class DevicePlayResourceRequest1(base_types._BaseFieldType):
 		del self._RspnMd
 		self._RspnMd = None
 
+	@property
+	def Rsrc(self):
+		return self._Rsrc
+
+	@Rsrc.setter
+	def Rsrc(self, value):
+		self._Rsrc = value if type(value) != auto else self.make_default("Rsrc")
+
+	@Rsrc.deleter
+	def Rsrc(self):
+		del self._Rsrc
+		self._Rsrc = None
+
+	@property
+	def TmgSlot(self):
+		return self._TmgSlot
+
+	@TmgSlot.setter
+	def TmgSlot(self, value):
+		self._TmgSlot = value if type(value) != auto else self.make_default("TmgSlot")
+
+	@TmgSlot.deleter
+	def TmgSlot(self):
+		del self._TmgSlot
+		self._TmgSlot = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TmgSlot', type=ProcessingPosition2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsrcActn', type=ResourceAction1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DispRsltn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsrc', type=ResourceContent1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SoundVol', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DispRsltn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsrcActn', type=ResourceAction1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnMd', type=ResponseMode2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsrc', type=ResourceContent1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TmgSlot', type=ProcessingPosition2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

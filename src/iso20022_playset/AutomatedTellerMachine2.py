@@ -1,23 +1,23 @@
 from . import base_types
-import Max35Text
-import PostalAddress17
-import ActiveCurrencyCode
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .Max35Text import Max35Text
+from .PostalAddress17 import PostalAddress17
 
 class AutomatedTellerMachine2(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlId", "_Id", "_Lctn", "_SeqNb", "_BaseCcy"]
+	__slots__ = ["_SeqNb", "_Id", "_Lctn", "_BaseCcy", "_AddtlId"]
 	@property
-	def AddtlId(self):
-		return self._AddtlId
+	def SeqNb(self):
+		return self._SeqNb
 
-	@AddtlId.setter
-	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
+	@SeqNb.setter
+	def SeqNb(self, value):
+		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
 
-	@AddtlId.deleter
-	def AddtlId(self):
-		del self._AddtlId
-		self._AddtlId = None
+	@SeqNb.deleter
+	def SeqNb(self):
+		del self._SeqNb
+		self._SeqNb = None
 
 	@property
 	def Id(self):
@@ -46,19 +46,6 @@ class AutomatedTellerMachine2(base_types._BaseFieldType):
 		self._Lctn = None
 
 	@property
-	def SeqNb(self):
-		return self._SeqNb
-
-	@SeqNb.setter
-	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
-
-	@SeqNb.deleter
-	def SeqNb(self):
-		del self._SeqNb
-		self._SeqNb = None
-
-	@property
 	def BaseCcy(self):
 		return self._BaseCcy
 
@@ -71,11 +58,24 @@ class AutomatedTellerMachine2(base_types._BaseFieldType):
 		del self._BaseCcy
 		self._BaseCcy = None
 
+	@property
+	def AddtlId(self):
+		return self._AddtlId
+
+	@AddtlId.setter
+	def AddtlId(self, value):
+		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
+
+	@AddtlId.deleter
+	def AddtlId(self):
+		del self._AddtlId
+		self._AddtlId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lctn', type=PostalAddress17, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

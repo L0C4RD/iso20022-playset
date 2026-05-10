@@ -1,7 +1,7 @@
 from . import base_types
-import KEK4
-import KeyTransport4
-import KEKIdentifier2
+from .KEK4 import KEK4
+from .KEKIdentifier2 import KEKIdentifier2
+from .KeyTransport4 import KeyTransport4
 
 class Recipient4Choice(base_types._BaseFieldType):
 

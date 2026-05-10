@@ -1,6 +1,6 @@
 from . import base_types
-import AmountPrice6
-import PriceValueType10Code
+from .PriceValueType10Code import PriceValueType10Code
+from .AmountPrice6 import AmountPrice6
 
 class PriceFormat61Choice(base_types._BaseFieldType):
 

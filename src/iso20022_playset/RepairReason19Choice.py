@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import RepairReason7Code
+from .GenericIdentification30 import GenericIdentification30
+from .RepairReason7Code import RepairReason7Code
 
 class RepairReason19Choice(base_types._BaseFieldType):
 

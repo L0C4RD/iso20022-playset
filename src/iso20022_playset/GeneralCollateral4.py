@@ -1,6 +1,6 @@
 from . import base_types
-import ActiveCurrencyAnd24Amount
-import FinancialInstrument104
+from .ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
+from .FinancialInstrument104 import FinancialInstrument104
 
 class GeneralCollateral4(base_types._BaseFieldType):
 

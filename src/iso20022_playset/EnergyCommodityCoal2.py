@@ -1,6 +1,6 @@
 from . import base_types
-import AssetClassSubProductType24Code
-import AssetClassProductType2Code
+from .AssetClassSubProductType24Code import AssetClassSubProductType24Code
+from .AssetClassProductType2Code import AssetClassProductType2Code
 
 class EnergyCommodityCoal2(base_types._BaseFieldType):
 

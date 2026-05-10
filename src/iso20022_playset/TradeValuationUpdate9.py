@@ -1,12 +1,25 @@
 from . import base_types
-import LoanData113
-import CounterpartyData88
-import SupplementaryData1
-import Max140Text
+from .Max140Text import Max140Text
+from .SupplementaryData1 import SupplementaryData1
+from .CounterpartyData88 import CounterpartyData88
+from .LoanData113 import LoanData113
 
 class TradeValuationUpdate9(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_CtrPtySpcfcData", "_LnData", "_TechRcrdId"]
+	__slots__ = ["_LnData", "_SplmtryData", "_CtrPtySpcfcData", "_TechRcrdId"]
+	@property
+	def LnData(self):
+		return self._LnData
+
+	@LnData.setter
+	def LnData(self, value):
+		self._LnData = value if type(value) != auto else self.make_default("LnData")
+
+	@LnData.deleter
+	def LnData(self):
+		del self._LnData
+		self._LnData = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -34,19 +47,6 @@ class TradeValuationUpdate9(base_types._BaseFieldType):
 		self._CtrPtySpcfcData = None
 
 	@property
-	def LnData(self):
-		return self._LnData
-
-	@LnData.setter
-	def LnData(self, value):
-		self._LnData = value if type(value) != auto else self.make_default("LnData")
-
-	@LnData.deleter
-	def LnData(self):
-		del self._LnData
-		self._LnData = None
-
-	@property
 	def TechRcrdId(self):
 		return self._TechRcrdId
 
@@ -60,9 +60,9 @@ class TradeValuationUpdate9(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='LnData', type=LoanData113, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartyData88, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LnData', type=LoanData113, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

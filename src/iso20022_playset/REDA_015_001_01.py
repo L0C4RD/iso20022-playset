@@ -1,5 +1,5 @@
 from . import base_types
-import PartyQueryV01
+from .PartyQueryV01 import PartyQueryV01
 
 class REDA_015_001_01():
 

@@ -1,37 +1,11 @@
 from . import base_types
-import CorporateActionInformation1
-import DocumentIdentification8
-import CorporateActionElection3
+from .CorporateActionInformation1 import CorporateActionInformation1
+from .CorporateActionElection3 import CorporateActionElection3
+from .DocumentIdentification8 import DocumentIdentification8
 
 class AgentCAElectionCancellationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnGnlInf", "_ElctnDtls", "_AgtCAElctnAdvcId", "_Id"]
-	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
-
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
-
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
-
-	@property
-	def ElctnDtls(self):
-		return self._ElctnDtls
-
-	@ElctnDtls.setter
-	def ElctnDtls(self, value):
-		self._ElctnDtls = value if type(value) != auto else self.make_default("ElctnDtls")
-
-	@ElctnDtls.deleter
-	def ElctnDtls(self):
-		del self._ElctnDtls
-		self._ElctnDtls = None
-
+	__slots__ = ["_AgtCAElctnAdvcId", "_Id", "_CorpActnGnlInf", "_ElctnDtls"]
 	@property
 	def AgtCAElctnAdvcId(self):
 		return self._AgtCAElctnAdvcId
@@ -58,10 +32,36 @@ class AgentCAElectionCancellationRequestV01(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
+
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
+
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
+
+	@property
+	def ElctnDtls(self):
+		return self._ElctnDtls
+
+	@ElctnDtls.setter
+	def ElctnDtls(self, value):
+		self._ElctnDtls = value if type(value) != auto else self.make_default("ElctnDtls")
+
+	@ElctnDtls.deleter
+	def ElctnDtls(self):
+		del self._ElctnDtls
+		self._ElctnDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ElctnDtls', type=CorporateActionElection3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtCAElctnAdvcId', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElctnDtls', type=CorporateActionElection3, min=0, max=1, mutex_group=None, array=False),
 	))
 

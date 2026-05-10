@@ -1,23 +1,23 @@
 from . import base_types
-import FinancialInstrument87
-import PercentageRate
-import ActiveCurrencyCode
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .PercentageRate import PercentageRate
+from .FinancialInstrument87 import FinancialInstrument87
 
 class Reinvestment4(base_types._BaseFieldType):
 
-	__slots__ = ["_RinvstmtPctg", "_FinInstrmDtls", "_ReqdNAVCcy"]
+	__slots__ = ["_ReqdNAVCcy", "_FinInstrmDtls", "_RinvstmtPctg"]
 	@property
-	def RinvstmtPctg(self):
-		return self._RinvstmtPctg
+	def ReqdNAVCcy(self):
+		return self._ReqdNAVCcy
 
-	@RinvstmtPctg.setter
-	def RinvstmtPctg(self, value):
-		self._RinvstmtPctg = value if type(value) != auto else self.make_default("RinvstmtPctg")
+	@ReqdNAVCcy.setter
+	def ReqdNAVCcy(self, value):
+		self._ReqdNAVCcy = value if type(value) != auto else self.make_default("ReqdNAVCcy")
 
-	@RinvstmtPctg.deleter
-	def RinvstmtPctg(self):
-		del self._RinvstmtPctg
-		self._RinvstmtPctg = None
+	@ReqdNAVCcy.deleter
+	def ReqdNAVCcy(self):
+		del self._ReqdNAVCcy
+		self._ReqdNAVCcy = None
 
 	@property
 	def FinInstrmDtls(self):
@@ -33,21 +33,21 @@ class Reinvestment4(base_types._BaseFieldType):
 		self._FinInstrmDtls = None
 
 	@property
-	def ReqdNAVCcy(self):
-		return self._ReqdNAVCcy
+	def RinvstmtPctg(self):
+		return self._RinvstmtPctg
 
-	@ReqdNAVCcy.setter
-	def ReqdNAVCcy(self, value):
-		self._ReqdNAVCcy = value if type(value) != auto else self.make_default("ReqdNAVCcy")
+	@RinvstmtPctg.setter
+	def RinvstmtPctg(self, value):
+		self._RinvstmtPctg = value if type(value) != auto else self.make_default("RinvstmtPctg")
 
-	@ReqdNAVCcy.deleter
-	def ReqdNAVCcy(self):
-		del self._ReqdNAVCcy
-		self._ReqdNAVCcy = None
+	@RinvstmtPctg.deleter
+	def RinvstmtPctg(self):
+		del self._RinvstmtPctg
+		self._RinvstmtPctg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RinvstmtPctg', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument87, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdNAVCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument87, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RinvstmtPctg', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 	))
 

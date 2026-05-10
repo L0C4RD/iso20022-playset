@@ -1,46 +1,20 @@
 from . import base_types
-import FinancialInstrumentAttributes5Choice
-import SecuritiesTransactionIndicator2
-import ExecutingParty1Choice
-import InvestmentParty1Choice
-import PartyIdentification79
-import Max52Text
-import SecuritiesTransaction3
-import SupplementaryData1
-import LEIIdentifier
-import RecordTechnicalData5
-import TrueFalseIndicator
-import SecuritiesTransactionTransmission2
+from .PartyIdentification79 import PartyIdentification79
+from .RecordTechnicalData5 import RecordTechnicalData5
+from .SupplementaryData1 import SupplementaryData1
+from .FinancialInstrumentAttributes5Choice import FinancialInstrumentAttributes5Choice
+from .LEIIdentifier import LEIIdentifier
+from .SecuritiesTransactionIndicator2 import SecuritiesTransactionIndicator2
+from .SecuritiesTransaction3 import SecuritiesTransaction3
+from .Max52Text import Max52Text
+from .SecuritiesTransactionTransmission2 import SecuritiesTransactionTransmission2
+from .InvestmentParty1Choice import InvestmentParty1Choice
+from .ExecutingParty1Choice import ExecutingParty1Choice
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class SecuritiesTransactionReport7(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrm", "_ExctgPrsn", "_InvstmtDcsnPrsn", "_ExctgPty", "_AddtlAttrbts", "_TxId", "_InvstmtPtyInd", "_SplmtryData", "_SubmitgPty", "_Buyr", "_Tx", "_TechAttrbts", "_Sellr", "_OrdrTrnsmssn"]
-	@property
-	def FinInstrm(self):
-		return self._FinInstrm
-
-	@FinInstrm.setter
-	def FinInstrm(self, value):
-		self._FinInstrm = value if type(value) != auto else self.make_default("FinInstrm")
-
-	@FinInstrm.deleter
-	def FinInstrm(self):
-		del self._FinInstrm
-		self._FinInstrm = None
-
-	@property
-	def ExctgPrsn(self):
-		return self._ExctgPrsn
-
-	@ExctgPrsn.setter
-	def ExctgPrsn(self, value):
-		self._ExctgPrsn = value if type(value) != auto else self.make_default("ExctgPrsn")
-
-	@ExctgPrsn.deleter
-	def ExctgPrsn(self):
-		del self._ExctgPrsn
-		self._ExctgPrsn = None
-
+	__slots__ = ["_InvstmtDcsnPrsn", "_ExctgPty", "_Tx", "_AddtlAttrbts", "_Buyr", "_TxId", "_FinInstrm", "_TechAttrbts", "_OrdrTrnsmssn", "_SplmtryData", "_InvstmtPtyInd", "_SubmitgPty", "_ExctgPrsn", "_Sellr"]
 	@property
 	def InvstmtDcsnPrsn(self):
 		return self._InvstmtDcsnPrsn
@@ -68,6 +42,19 @@ class SecuritiesTransactionReport7(base_types._BaseFieldType):
 		self._ExctgPty = None
 
 	@property
+	def Tx(self):
+		return self._Tx
+
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != auto else self.make_default("Tx")
+
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
+
+	@property
 	def AddtlAttrbts(self):
 		return self._AddtlAttrbts
 
@@ -79,58 +66,6 @@ class SecuritiesTransactionReport7(base_types._BaseFieldType):
 	def AddtlAttrbts(self):
 		del self._AddtlAttrbts
 		self._AddtlAttrbts = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def InvstmtPtyInd(self):
-		return self._InvstmtPtyInd
-
-	@InvstmtPtyInd.setter
-	def InvstmtPtyInd(self, value):
-		self._InvstmtPtyInd = value if type(value) != auto else self.make_default("InvstmtPtyInd")
-
-	@InvstmtPtyInd.deleter
-	def InvstmtPtyInd(self):
-		del self._InvstmtPtyInd
-		self._InvstmtPtyInd = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def SubmitgPty(self):
-		return self._SubmitgPty
-
-	@SubmitgPty.setter
-	def SubmitgPty(self, value):
-		self._SubmitgPty = value if type(value) != auto else self.make_default("SubmitgPty")
-
-	@SubmitgPty.deleter
-	def SubmitgPty(self):
-		del self._SubmitgPty
-		self._SubmitgPty = None
 
 	@property
 	def Buyr(self):
@@ -146,17 +81,30 @@ class SecuritiesTransactionReport7(base_types._BaseFieldType):
 		self._Buyr = None
 
 	@property
-	def Tx(self):
-		return self._Tx
+	def TxId(self):
+		return self._TxId
 
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def FinInstrm(self):
+		return self._FinInstrm
+
+	@FinInstrm.setter
+	def FinInstrm(self, value):
+		self._FinInstrm = value if type(value) != auto else self.make_default("FinInstrm")
+
+	@FinInstrm.deleter
+	def FinInstrm(self):
+		del self._FinInstrm
+		self._FinInstrm = None
 
 	@property
 	def TechAttrbts(self):
@@ -172,19 +120,6 @@ class SecuritiesTransactionReport7(base_types._BaseFieldType):
 		self._TechAttrbts = None
 
 	@property
-	def Sellr(self):
-		return self._Sellr
-
-	@Sellr.setter
-	def Sellr(self, value):
-		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
-
-	@Sellr.deleter
-	def Sellr(self):
-		del self._Sellr
-		self._Sellr = None
-
-	@property
 	def OrdrTrnsmssn(self):
 		return self._OrdrTrnsmssn
 
@@ -197,20 +132,85 @@ class SecuritiesTransactionReport7(base_types._BaseFieldType):
 		del self._OrdrTrnsmssn
 		self._OrdrTrnsmssn = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def InvstmtPtyInd(self):
+		return self._InvstmtPtyInd
+
+	@InvstmtPtyInd.setter
+	def InvstmtPtyInd(self, value):
+		self._InvstmtPtyInd = value if type(value) != auto else self.make_default("InvstmtPtyInd")
+
+	@InvstmtPtyInd.deleter
+	def InvstmtPtyInd(self):
+		del self._InvstmtPtyInd
+		self._InvstmtPtyInd = None
+
+	@property
+	def SubmitgPty(self):
+		return self._SubmitgPty
+
+	@SubmitgPty.setter
+	def SubmitgPty(self, value):
+		self._SubmitgPty = value if type(value) != auto else self.make_default("SubmitgPty")
+
+	@SubmitgPty.deleter
+	def SubmitgPty(self):
+		del self._SubmitgPty
+		self._SubmitgPty = None
+
+	@property
+	def ExctgPrsn(self):
+		return self._ExctgPrsn
+
+	@ExctgPrsn.setter
+	def ExctgPrsn(self, value):
+		self._ExctgPrsn = value if type(value) != auto else self.make_default("ExctgPrsn")
+
+	@ExctgPrsn.deleter
+	def ExctgPrsn(self):
+		del self._ExctgPrsn
+		self._ExctgPrsn = None
+
+	@property
+	def Sellr(self):
+		return self._Sellr
+
+	@Sellr.setter
+	def Sellr(self, value):
+		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
+
+	@Sellr.deleter
+	def Sellr(self):
+		del self._Sellr
+		self._Sellr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FinInstrm', type=FinancialInstrumentAttributes5Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExctgPrsn', type=ExecutingParty1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstmtDcsnPrsn', type=InvestmentParty1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExctgPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlAttrbts', type=SecuritiesTransactionIndicator2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstmtPtyInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SubmitgPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Buyr', type=PartyIdentification79, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=SecuritiesTransaction3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlAttrbts', type=SecuritiesTransactionIndicator2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Buyr', type=PartyIdentification79, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrm', type=FinancialInstrumentAttributes5Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechAttrbts', type=RecordTechnicalData5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sellr', type=PartyIdentification79, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrTrnsmssn', type=SecuritiesTransactionTransmission2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InvstmtPtyInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitgPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctgPrsn', type=ExecutingParty1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sellr', type=PartyIdentification79, min=1, max=1, mutex_group=None, array=False),
 	))
 

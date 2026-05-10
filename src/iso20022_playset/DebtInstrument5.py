@@ -1,6 +1,6 @@
 from . import base_types
-import ISODate
-import BondType1Code
+from .BondType1Code import BondType1Code
+from .ISODate import ISODate
 
 class DebtInstrument5(base_types._BaseFieldType):
 

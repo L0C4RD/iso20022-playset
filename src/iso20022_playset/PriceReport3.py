@@ -1,5 +1,5 @@
 from . import base_types
-import PriceValuation4
+from .PriceValuation4 import PriceValuation4
 
 class PriceReport3(base_types._BaseFieldType):
 

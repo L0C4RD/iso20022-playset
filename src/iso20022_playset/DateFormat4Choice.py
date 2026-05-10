@@ -1,7 +1,7 @@
 from . import base_types
-import DateAndDateTimeChoice
-import GenericIdentification13
-import DateType6Code
+from .GenericIdentification13 import GenericIdentification13
+from .DateAndDateTimeChoice import DateAndDateTimeChoice
+from .DateType6Code import DateType6Code
 
 class DateFormat4Choice(base_types._BaseFieldType):
 

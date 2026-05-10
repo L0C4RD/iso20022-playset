@@ -1,6 +1,6 @@
 from . import base_types
-import FinancialInstrument87
-import DataModification2Code
+from .DataModification2Code import DataModification2Code
+from .FinancialInstrument87 import FinancialInstrument87
 
 class ModificationScope42(base_types._BaseFieldType):
 

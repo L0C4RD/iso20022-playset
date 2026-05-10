@@ -1,28 +1,41 @@
 from . import base_types
-import PartyIdentification198Choice
-import CountryCode
-import Max256Text
-import ISOYear
-import InvestorType1Choice
-import Ownership1
-import ActivityIndicator1Choice
-import NameAndAddress17
+from .CountryCode import CountryCode
+from .PartyIdentification198Choice import PartyIdentification198Choice
+from .InvestorType1Choice import InvestorType1Choice
+from .ISOYear import ISOYear
+from .Max256Text import Max256Text
+from .Ownership1 import Ownership1
+from .ActivityIndicator1Choice import ActivityIndicator1Choice
+from .NameAndAddress17 import NameAndAddress17
 
 class PartyIdentification275(base_types._BaseFieldType):
 
-	__slots__ = ["_EmailAdr", "_NmAndAdr", "_YrOfIncorprtn", "_ActvtyInd", "_CtryOfIncorprtn", "_Ownrsh", "_Id", "_InvstrTp"]
+	__slots__ = ["_ActvtyInd", "_InvstrTp", "_NmAndAdr", "_YrOfIncorprtn", "_EmailAdr", "_Ownrsh", "_CtryOfIncorprtn", "_Id"]
 	@property
-	def EmailAdr(self):
-		return self._EmailAdr
+	def ActvtyInd(self):
+		return self._ActvtyInd
 
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
 
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
+
+	@property
+	def InvstrTp(self):
+		return self._InvstrTp
+
+	@InvstrTp.setter
+	def InvstrTp(self, value):
+		self._InvstrTp = value if type(value) != auto else self.make_default("InvstrTp")
+
+	@InvstrTp.deleter
+	def InvstrTp(self):
+		del self._InvstrTp
+		self._InvstrTp = None
 
 	@property
 	def NmAndAdr(self):
@@ -51,30 +64,17 @@ class PartyIdentification275(base_types._BaseFieldType):
 		self._YrOfIncorprtn = None
 
 	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
+	def EmailAdr(self):
+		return self._EmailAdr
 
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
 
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
-
-	@property
-	def CtryOfIncorprtn(self):
-		return self._CtryOfIncorprtn
-
-	@CtryOfIncorprtn.setter
-	def CtryOfIncorprtn(self, value):
-		self._CtryOfIncorprtn = value if type(value) != auto else self.make_default("CtryOfIncorprtn")
-
-	@CtryOfIncorprtn.deleter
-	def CtryOfIncorprtn(self):
-		del self._CtryOfIncorprtn
-		self._CtryOfIncorprtn = None
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
 
 	@property
 	def Ownrsh(self):
@@ -90,6 +90,19 @@ class PartyIdentification275(base_types._BaseFieldType):
 		self._Ownrsh = None
 
 	@property
+	def CtryOfIncorprtn(self):
+		return self._CtryOfIncorprtn
+
+	@CtryOfIncorprtn.setter
+	def CtryOfIncorprtn(self, value):
+		self._CtryOfIncorprtn = value if type(value) != auto else self.make_default("CtryOfIncorprtn")
+
+	@CtryOfIncorprtn.deleter
+	def CtryOfIncorprtn(self):
+		del self._CtryOfIncorprtn
+		self._CtryOfIncorprtn = None
+
+	@property
 	def Id(self):
 		return self._Id
 
@@ -102,27 +115,14 @@ class PartyIdentification275(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
-	@property
-	def InvstrTp(self):
-		return self._InvstrTp
-
-	@InvstrTp.setter
-	def InvstrTp(self, value):
-		self._InvstrTp = value if type(value) != auto else self.make_default("InvstrTp")
-
-	@InvstrTp.deleter
-	def InvstrTp(self):
-		del self._InvstrTp
-		self._InvstrTp = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtyInd', type=ActivityIndicator1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstrTp', type=InvestorType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress17, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='YrOfIncorprtn', type=ISOYear, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActvtyInd', type=ActivityIndicator1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryOfIncorprtn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ownrsh', type=Ownership1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfIncorprtn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification198Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstrTp', type=InvestorType1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

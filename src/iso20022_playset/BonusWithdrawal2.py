@@ -1,39 +1,26 @@
 from . import base_types
-import WithdrawalReason1Choice
-import ActiveOrHistoricCurrencyAnd13DecimalAmount
-import YesNoIndicator
-import TypeOfAmount1Choice
-import Max35Text
-import AdditionalInformation15
+from .Max35Text import Max35Text
+from .AdditionalInformation15 import AdditionalInformation15
+from .YesNoIndicator import YesNoIndicator
+from .ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
+from .TypeOfAmount1Choice import TypeOfAmount1Choice
+from .WithdrawalReason1Choice import WithdrawalReason1Choice
 
 class BonusWithdrawal2(base_types._BaseFieldType):
 
-	__slots__ = ["_TpOfAmt", "_UclmdAmt", "_Ref", "_Outsdng", "_Amt", "_AddtlInf", "_Rsn"]
+	__slots__ = ["_Rsn", "_Ref", "_TpOfAmt", "_Amt", "_AddtlInf", "_Outsdng", "_UclmdAmt"]
 	@property
-	def TpOfAmt(self):
-		return self._TpOfAmt
+	def Rsn(self):
+		return self._Rsn
 
-	@TpOfAmt.setter
-	def TpOfAmt(self, value):
-		self._TpOfAmt = value if type(value) != auto else self.make_default("TpOfAmt")
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
 
-	@TpOfAmt.deleter
-	def TpOfAmt(self):
-		del self._TpOfAmt
-		self._TpOfAmt = None
-
-	@property
-	def UclmdAmt(self):
-		return self._UclmdAmt
-
-	@UclmdAmt.setter
-	def UclmdAmt(self, value):
-		self._UclmdAmt = value if type(value) != auto else self.make_default("UclmdAmt")
-
-	@UclmdAmt.deleter
-	def UclmdAmt(self):
-		del self._UclmdAmt
-		self._UclmdAmt = None
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
 	def Ref(self):
@@ -49,17 +36,17 @@ class BonusWithdrawal2(base_types._BaseFieldType):
 		self._Ref = None
 
 	@property
-	def Outsdng(self):
-		return self._Outsdng
+	def TpOfAmt(self):
+		return self._TpOfAmt
 
-	@Outsdng.setter
-	def Outsdng(self, value):
-		self._Outsdng = value if type(value) != auto else self.make_default("Outsdng")
+	@TpOfAmt.setter
+	def TpOfAmt(self, value):
+		self._TpOfAmt = value if type(value) != auto else self.make_default("TpOfAmt")
 
-	@Outsdng.deleter
-	def Outsdng(self):
-		del self._Outsdng
-		self._Outsdng = None
+	@TpOfAmt.deleter
+	def TpOfAmt(self):
+		del self._TpOfAmt
+		self._TpOfAmt = None
 
 	@property
 	def Amt(self):
@@ -88,25 +75,38 @@ class BonusWithdrawal2(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def Outsdng(self):
+		return self._Outsdng
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+	@Outsdng.setter
+	def Outsdng(self, value):
+		self._Outsdng = value if type(value) != auto else self.make_default("Outsdng")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@Outsdng.deleter
+	def Outsdng(self):
+		del self._Outsdng
+		self._Outsdng = None
+
+	@property
+	def UclmdAmt(self):
+		return self._UclmdAmt
+
+	@UclmdAmt.setter
+	def UclmdAmt(self, value):
+		self._UclmdAmt = value if type(value) != auto else self.make_default("UclmdAmt")
+
+	@UclmdAmt.deleter
+	def UclmdAmt(self):
+		del self._UclmdAmt
+		self._UclmdAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TpOfAmt', type=TypeOfAmount1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UclmdAmt', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=WithdrawalReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Outsdng', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TpOfAmt', type=TypeOfAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rsn', type=WithdrawalReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Outsdng', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UclmdAmt', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,65 +1,26 @@
 from . import base_types
-import PartyIdentification72
-import GroupHeader69
-import TradeSettlement2
-import AdditionalInformation1
-import DocumentGeneralInformation2
-import SupplementaryData1
+from .GroupHeader69 import GroupHeader69
+from .AdditionalInformation1 import AdditionalInformation1
+from .SupplementaryData1 import SupplementaryData1
+from .DocumentGeneralInformation2 import DocumentGeneralInformation2
+from .TradeSettlement2 import TradeSettlement2
+from .PartyIdentification72 import PartyIdentification72
 
 class TaxReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_Buyr", "_TradSttlm", "_TaxRptHdr", "_SplmtryData", "_Sellr", "_AddtlRef", "_OthrPty", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Sellr", "_Buyr", "_TaxRptHdr", "_OthrPty", "_TradSttlm", "_SplmtryData", "_AddtlRef"]
 	@property
-	def Buyr(self):
-		return self._Buyr
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Buyr.setter
-	def Buyr(self, value):
-		self._Buyr = value if type(value) != auto else self.make_default("Buyr")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@Buyr.deleter
-	def Buyr(self):
-		del self._Buyr
-		self._Buyr = None
-
-	@property
-	def TradSttlm(self):
-		return self._TradSttlm
-
-	@TradSttlm.setter
-	def TradSttlm(self, value):
-		self._TradSttlm = value if type(value) != auto else self.make_default("TradSttlm")
-
-	@TradSttlm.deleter
-	def TradSttlm(self):
-		del self._TradSttlm
-		self._TradSttlm = None
-
-	@property
-	def TaxRptHdr(self):
-		return self._TaxRptHdr
-
-	@TaxRptHdr.setter
-	def TaxRptHdr(self, value):
-		self._TaxRptHdr = value if type(value) != auto else self.make_default("TaxRptHdr")
-
-	@TaxRptHdr.deleter
-	def TaxRptHdr(self):
-		del self._TaxRptHdr
-		self._TaxRptHdr = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def Sellr(self):
@@ -75,17 +36,30 @@ class TaxReport1(base_types._BaseFieldType):
 		self._Sellr = None
 
 	@property
-	def AddtlRef(self):
-		return self._AddtlRef
+	def Buyr(self):
+		return self._Buyr
 
-	@AddtlRef.setter
-	def AddtlRef(self, value):
-		self._AddtlRef = value if type(value) != auto else self.make_default("AddtlRef")
+	@Buyr.setter
+	def Buyr(self, value):
+		self._Buyr = value if type(value) != auto else self.make_default("Buyr")
 
-	@AddtlRef.deleter
-	def AddtlRef(self):
-		del self._AddtlRef
-		self._AddtlRef = None
+	@Buyr.deleter
+	def Buyr(self):
+		del self._Buyr
+		self._Buyr = None
+
+	@property
+	def TaxRptHdr(self):
+		return self._TaxRptHdr
+
+	@TaxRptHdr.setter
+	def TaxRptHdr(self, value):
+		self._TaxRptHdr = value if type(value) != auto else self.make_default("TaxRptHdr")
+
+	@TaxRptHdr.deleter
+	def TaxRptHdr(self):
+		del self._TaxRptHdr
+		self._TaxRptHdr = None
 
 	@property
 	def OthrPty(self):
@@ -101,26 +75,52 @@ class TaxReport1(base_types._BaseFieldType):
 		self._OthrPty = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def TradSttlm(self):
+		return self._TradSttlm
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@TradSttlm.setter
+	def TradSttlm(self, value):
+		self._TradSttlm = value if type(value) != auto else self.make_default("TradSttlm")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@TradSttlm.deleter
+	def TradSttlm(self):
+		del self._TradSttlm
+		self._TradSttlm = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def AddtlRef(self):
+		return self._AddtlRef
+
+	@AddtlRef.setter
+	def AddtlRef(self, value):
+		self._AddtlRef = value if type(value) != auto else self.make_default("AddtlRef")
+
+	@AddtlRef.deleter
+	def AddtlRef(self):
+		del self._AddtlRef
+		self._AddtlRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Buyr', type=PartyIdentification72, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradSttlm', type=TradeSettlement2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxRptHdr', type=GroupHeader69, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sellr', type=PartyIdentification72, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlRef', type=DocumentGeneralInformation2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrPty', type=PartyIdentification72, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sellr', type=PartyIdentification72, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Buyr', type=PartyIdentification72, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRptHdr', type=GroupHeader69, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrPty', type=PartyIdentification72, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TradSttlm', type=TradeSettlement2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlRef', type=DocumentGeneralInformation2, min=0, max=None, mutex_group=None, array=True),
 	))
 

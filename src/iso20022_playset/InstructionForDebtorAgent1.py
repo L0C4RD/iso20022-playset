@@ -1,6 +1,6 @@
 from . import base_types
-import Max140Text
-import ExternalDebtorAgentInstruction1Code
+from .ExternalDebtorAgentInstruction1Code import ExternalDebtorAgentInstruction1Code
+from .Max140Text import Max140Text
 
 class InstructionForDebtorAgent1(base_types._BaseFieldType):
 

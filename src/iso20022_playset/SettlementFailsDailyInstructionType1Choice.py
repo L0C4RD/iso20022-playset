@@ -1,6 +1,6 @@
 from . import base_types
-import SettlementFailsDailyInstructionType3
-import ReportPeriodActivity1Code
+from .SettlementFailsDailyInstructionType3 import SettlementFailsDailyInstructionType3
+from .ReportPeriodActivity1Code import ReportPeriodActivity1Code
 
 class SettlementFailsDailyInstructionType1Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification30
-import ResponseStatus2Code
+from .GenericIdentification30 import GenericIdentification30
+from .ResponseStatus2Code import ResponseStatus2Code
 
 class ResponseStatus9Choice(base_types._BaseFieldType):
 

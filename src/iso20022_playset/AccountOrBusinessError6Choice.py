@@ -1,23 +1,10 @@
 from . import base_types
-import ErrorHandling5
-import CashAccountData1
+from .CashAccountData1 import CashAccountData1
+from .ErrorHandling5 import ErrorHandling5
 
 class AccountOrBusinessError6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_BizErr", "_Acct"]
-	@property
-	def BizErr(self):
-		return self._BizErr
-
-	@BizErr.setter
-	def BizErr(self, value):
-		self._BizErr = value if type(value) != auto else self.make_default("BizErr")
-
-	@BizErr.deleter
-	def BizErr(self):
-		del self._BizErr
-		self._BizErr = None
-
+	__slots__ = ["_Acct", "_BizErr"]
 	@property
 	def Acct(self):
 		return self._Acct
@@ -31,8 +18,21 @@ class AccountOrBusinessError6Choice(base_types._BaseFieldType):
 		del self._Acct
 		self._Acct = None
 
+	@property
+	def BizErr(self):
+		return self._BizErr
+
+	@BizErr.setter
+	def BizErr(self, value):
+		self._BizErr = value if type(value) != auto else self.make_default("BizErr")
+
+	@BizErr.deleter
+	def BizErr(self):
+		del self._BizErr
+		self._BizErr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BizErr', type=ErrorHandling5, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Acct', type=CashAccountData1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BizErr', type=ErrorHandling5, min=1, max=None, mutex_group=1, array=True),
 	))
 

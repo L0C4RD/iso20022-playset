@@ -1,13 +1,13 @@
 from . import base_types
-import LoyaltyAccount3
-import PaymentReceipt6
-import StoredValueAccount2
-import TransactionIdentifier1
-import PaymentAccount3
+from .PaymentAccount3 import PaymentAccount3
+from .StoredValueAccount2 import StoredValueAccount2
+from .LoyaltyAccount3 import LoyaltyAccount3
+from .TransactionIdentifier1 import TransactionIdentifier1
+from .PaymentReceipt6 import PaymentReceipt6
 
 class BalanceInquiryResponse6(base_types._BaseFieldType):
 
-	__slots__ = ["_Rct", "_StordValAcct", "_SaleTxId", "_PmtAcct", "_POITxId", "_LltyAcct"]
+	__slots__ = ["_Rct", "_SaleTxId", "_LltyAcct", "_PmtAcct", "_POITxId", "_StordValAcct"]
 	@property
 	def Rct(self):
 		return self._Rct
@@ -22,19 +22,6 @@ class BalanceInquiryResponse6(base_types._BaseFieldType):
 		self._Rct = None
 
 	@property
-	def StordValAcct(self):
-		return self._StordValAcct
-
-	@StordValAcct.setter
-	def StordValAcct(self, value):
-		self._StordValAcct = value if type(value) != auto else self.make_default("StordValAcct")
-
-	@StordValAcct.deleter
-	def StordValAcct(self):
-		del self._StordValAcct
-		self._StordValAcct = None
-
-	@property
 	def SaleTxId(self):
 		return self._SaleTxId
 
@@ -46,6 +33,19 @@ class BalanceInquiryResponse6(base_types._BaseFieldType):
 	def SaleTxId(self):
 		del self._SaleTxId
 		self._SaleTxId = None
+
+	@property
+	def LltyAcct(self):
+		return self._LltyAcct
+
+	@LltyAcct.setter
+	def LltyAcct(self, value):
+		self._LltyAcct = value if type(value) != auto else self.make_default("LltyAcct")
+
+	@LltyAcct.deleter
+	def LltyAcct(self):
+		del self._LltyAcct
+		self._LltyAcct = None
 
 	@property
 	def PmtAcct(self):
@@ -74,24 +74,24 @@ class BalanceInquiryResponse6(base_types._BaseFieldType):
 		self._POITxId = None
 
 	@property
-	def LltyAcct(self):
-		return self._LltyAcct
+	def StordValAcct(self):
+		return self._StordValAcct
 
-	@LltyAcct.setter
-	def LltyAcct(self, value):
-		self._LltyAcct = value if type(value) != auto else self.make_default("LltyAcct")
+	@StordValAcct.setter
+	def StordValAcct(self, value):
+		self._StordValAcct = value if type(value) != auto else self.make_default("StordValAcct")
 
-	@LltyAcct.deleter
-	def LltyAcct(self):
-		del self._LltyAcct
-		self._LltyAcct = None
+	@StordValAcct.deleter
+	def StordValAcct(self):
+		del self._StordValAcct
+		self._StordValAcct = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rct', type=PaymentReceipt6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StordValAcct', type=StoredValueAccount2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LltyAcct', type=LoyaltyAccount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtAcct', type=PaymentAccount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POITxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LltyAcct', type=LoyaltyAccount3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StordValAcct', type=StoredValueAccount2, min=0, max=None, mutex_group=None, array=True),
 	))
 

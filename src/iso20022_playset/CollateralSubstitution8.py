@@ -1,16 +1,16 @@
 from . import base_types
-import Reference17
-import SecuritiesCollateral12
-import Max140Text
-import OtherCollateral9
-import CollateralSubstitutionType1Code
-import ActiveCurrencyAndAmount
-import CashCollateral3
-import CollateralSubstitutionSequence1Code
+from .CollateralSubstitutionSequence1Code import CollateralSubstitutionSequence1Code
+from .Reference17 import Reference17
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .OtherCollateral9 import OtherCollateral9
+from .CashCollateral3 import CashCollateral3
+from .Max140Text import Max140Text
+from .CollateralSubstitutionType1Code import CollateralSubstitutionType1Code
+from .SecuritiesCollateral12 import SecuritiesCollateral12
 
 class CollateralSubstitution8(base_types._BaseFieldType):
 
-	__slots__ = ["_CshColl", "_CollSbstitnSeq", "_LkdRefs", "_CollSbstitnTp", "_StdSttlmInstrs", "_SctiesColl", "_OthrColl", "_SbstitnRqrmnt"]
+	__slots__ = ["_CshColl", "_LkdRefs", "_CollSbstitnTp", "_StdSttlmInstrs", "_SctiesColl", "_SbstitnRqrmnt", "_OthrColl", "_CollSbstitnSeq"]
 	@property
 	def CshColl(self):
 		return self._CshColl
@@ -23,19 +23,6 @@ class CollateralSubstitution8(base_types._BaseFieldType):
 	def CshColl(self):
 		del self._CshColl
 		self._CshColl = None
-
-	@property
-	def CollSbstitnSeq(self):
-		return self._CollSbstitnSeq
-
-	@CollSbstitnSeq.setter
-	def CollSbstitnSeq(self, value):
-		self._CollSbstitnSeq = value if type(value) != auto else self.make_default("CollSbstitnSeq")
-
-	@CollSbstitnSeq.deleter
-	def CollSbstitnSeq(self):
-		del self._CollSbstitnSeq
-		self._CollSbstitnSeq = None
 
 	@property
 	def LkdRefs(self):
@@ -90,6 +77,19 @@ class CollateralSubstitution8(base_types._BaseFieldType):
 		self._SctiesColl = None
 
 	@property
+	def SbstitnRqrmnt(self):
+		return self._SbstitnRqrmnt
+
+	@SbstitnRqrmnt.setter
+	def SbstitnRqrmnt(self, value):
+		self._SbstitnRqrmnt = value if type(value) != auto else self.make_default("SbstitnRqrmnt")
+
+	@SbstitnRqrmnt.deleter
+	def SbstitnRqrmnt(self):
+		del self._SbstitnRqrmnt
+		self._SbstitnRqrmnt = None
+
+	@property
 	def OthrColl(self):
 		return self._OthrColl
 
@@ -103,26 +103,26 @@ class CollateralSubstitution8(base_types._BaseFieldType):
 		self._OthrColl = None
 
 	@property
-	def SbstitnRqrmnt(self):
-		return self._SbstitnRqrmnt
+	def CollSbstitnSeq(self):
+		return self._CollSbstitnSeq
 
-	@SbstitnRqrmnt.setter
-	def SbstitnRqrmnt(self, value):
-		self._SbstitnRqrmnt = value if type(value) != auto else self.make_default("SbstitnRqrmnt")
+	@CollSbstitnSeq.setter
+	def CollSbstitnSeq(self, value):
+		self._CollSbstitnSeq = value if type(value) != auto else self.make_default("CollSbstitnSeq")
 
-	@SbstitnRqrmnt.deleter
-	def SbstitnRqrmnt(self):
-		del self._SbstitnRqrmnt
-		self._SbstitnRqrmnt = None
+	@CollSbstitnSeq.deleter
+	def CollSbstitnSeq(self):
+		del self._CollSbstitnSeq
+		self._CollSbstitnSeq = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshColl', type=CashCollateral3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CollSbstitnSeq', type=CollateralSubstitutionSequence1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LkdRefs', type=Reference17, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollSbstitnTp', type=CollateralSubstitutionType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StdSttlmInstrs', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesColl', type=SecuritiesCollateral12, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrColl', type=OtherCollateral9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SbstitnRqrmnt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrColl', type=OtherCollateral9, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CollSbstitnSeq', type=CollateralSubstitutionSequence1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

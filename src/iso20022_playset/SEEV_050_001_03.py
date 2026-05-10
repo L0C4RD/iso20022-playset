@@ -1,5 +1,5 @@
 from . import base_types
-import MarketClaimCreationV03
+from .MarketClaimCreationV03 import MarketClaimCreationV03
 
 class SEEV_050_001_03():
 

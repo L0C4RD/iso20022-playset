@@ -1,36 +1,23 @@
 from . import base_types
-import RejectionReason1Choice
-import MessageIdentification1
-import SimpleIdentificationInformation
+from .RejectionReason1Choice import RejectionReason1Choice
+from .SimpleIdentificationInformation import SimpleIdentificationInformation
+from .MessageIdentification1 import MessageIdentification1
 
 class MisMatchRejectionV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmitrTxRef", "_DataSetMtchRptRef", "_RjctnId", "_RjctnRsn", "_TxId"]
+	__slots__ = ["_TxId", "_RjctnId", "_RjctnRsn", "_DataSetMtchRptRef", "_SubmitrTxRef"]
 	@property
-	def SubmitrTxRef(self):
-		return self._SubmitrTxRef
+	def TxId(self):
+		return self._TxId
 
-	@SubmitrTxRef.setter
-	def SubmitrTxRef(self, value):
-		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@SubmitrTxRef.deleter
-	def SubmitrTxRef(self):
-		del self._SubmitrTxRef
-		self._SubmitrTxRef = None
-
-	@property
-	def DataSetMtchRptRef(self):
-		return self._DataSetMtchRptRef
-
-	@DataSetMtchRptRef.setter
-	def DataSetMtchRptRef(self, value):
-		self._DataSetMtchRptRef = value if type(value) != auto else self.make_default("DataSetMtchRptRef")
-
-	@DataSetMtchRptRef.deleter
-	def DataSetMtchRptRef(self):
-		del self._DataSetMtchRptRef
-		self._DataSetMtchRptRef = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def RjctnId(self):
@@ -59,23 +46,36 @@ class MisMatchRejectionV02(base_types._BaseFieldType):
 		self._RjctnRsn = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def DataSetMtchRptRef(self):
+		return self._DataSetMtchRptRef
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@DataSetMtchRptRef.setter
+	def DataSetMtchRptRef(self, value):
+		self._DataSetMtchRptRef = value if type(value) != auto else self.make_default("DataSetMtchRptRef")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@DataSetMtchRptRef.deleter
+	def DataSetMtchRptRef(self):
+		del self._DataSetMtchRptRef
+		self._DataSetMtchRptRef = None
+
+	@property
+	def SubmitrTxRef(self):
+		return self._SubmitrTxRef
+
+	@SubmitrTxRef.setter
+	def SubmitrTxRef(self, value):
+		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
+
+	@SubmitrTxRef.deleter
+	def SubmitrTxRef(self):
+		del self._SubmitrTxRef
+		self._SubmitrTxRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DataSetMtchRptRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DataSetMtchRptRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 	))
 

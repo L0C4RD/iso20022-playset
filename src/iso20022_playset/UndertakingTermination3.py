@@ -1,23 +1,23 @@
 from . import base_types
-import ISODate
-import Max2000Text
-import TerminationReason1Choice
+from .TerminationReason1Choice import TerminationReason1Choice
+from .Max2000Text import Max2000Text
+from .ISODate import ISODate
 
 class UndertakingTermination3(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_Rsn", "_FctvDt"]
+	__slots__ = ["_FctvDt", "_Rsn", "_AddtlInf"]
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def FctvDt(self):
+		return self._FctvDt
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@FctvDt.setter
+	def FctvDt(self, value):
+		self._FctvDt = value if type(value) != auto else self.make_default("FctvDt")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@FctvDt.deleter
+	def FctvDt(self):
+		del self._FctvDt
+		self._FctvDt = None
 
 	@property
 	def Rsn(self):
@@ -33,21 +33,21 @@ class UndertakingTermination3(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
-	def FctvDt(self):
-		return self._FctvDt
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@FctvDt.setter
-	def FctvDt(self, value):
-		self._FctvDt = value if type(value) != auto else self.make_default("FctvDt")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@FctvDt.deleter
-	def FctvDt(self):
-		del self._FctvDt
-		self._FctvDt = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rsn', type=TerminationReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FctvDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=TerminationReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 	))
 

@@ -1,7 +1,7 @@
 from . import base_types
-import SubBalanceQuantity9Choice
-import SubBalanceType14Choice
-import RestrictedFINXMax140Text
+from .RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from .SubBalanceType14Choice import SubBalanceType14Choice
+from .SubBalanceQuantity9Choice import SubBalanceQuantity9Choice
 
 class AdditionalBalanceInformation23(base_types._BaseFieldType):
 

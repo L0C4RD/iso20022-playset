@@ -1,25 +1,12 @@
 from . import base_types
-import MovementReport1
-import DocumentIdentification51
-import Pagination1
-import IntraBalanceOrOperationalError11Choice
+from .DocumentIdentification51 import DocumentIdentification51
+from .Pagination1 import Pagination1
+from .MovementReport1 import MovementReport1
+from .IntraBalanceOrOperationalError11Choice import IntraBalanceOrOperationalError11Choice
 
 class IntraBalanceMovementQueryResponseV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RptOrErr", "_Id", "_RptGnlDtls", "_Pgntn"]
-	@property
-	def RptOrErr(self):
-		return self._RptOrErr
-
-	@RptOrErr.setter
-	def RptOrErr(self, value):
-		self._RptOrErr = value if type(value) != auto else self.make_default("RptOrErr")
-
-	@RptOrErr.deleter
-	def RptOrErr(self):
-		del self._RptOrErr
-		self._RptOrErr = None
-
+	__slots__ = ["_Id", "_RptGnlDtls", "_Pgntn", "_RptOrErr"]
 	@property
 	def Id(self):
 		return self._Id
@@ -59,10 +46,23 @@ class IntraBalanceMovementQueryResponseV02(base_types._BaseFieldType):
 		del self._Pgntn
 		self._Pgntn = None
 
+	@property
+	def RptOrErr(self):
+		return self._RptOrErr
+
+	@RptOrErr.setter
+	def RptOrErr(self, value):
+		self._RptOrErr = value if type(value) != auto else self.make_default("RptOrErr")
+
+	@RptOrErr.deleter
+	def RptOrErr(self):
+		del self._RptOrErr
+		self._RptOrErr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptOrErr', type=IntraBalanceOrOperationalError11Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptGnlDtls', type=MovementReport1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptOrErr', type=IntraBalanceOrOperationalError11Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

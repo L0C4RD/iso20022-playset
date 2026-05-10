@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import ExternalVerificationReason1Code
+from .Max35Text import Max35Text
+from .ExternalVerificationReason1Code import ExternalVerificationReason1Code
 
 class VerificationReason1Choice(base_types._BaseFieldType):
 

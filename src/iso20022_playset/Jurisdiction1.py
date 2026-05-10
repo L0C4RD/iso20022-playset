@@ -1,6 +1,6 @@
 from . import base_types
-import CountryCode
-import Max70Text
+from .CountryCode import CountryCode
+from .Max70Text import Max70Text
 
 class Jurisdiction1(base_types._BaseFieldType):
 

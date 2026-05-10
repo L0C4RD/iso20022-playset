@@ -1,26 +1,13 @@
 from . import base_types
-import BranchAndFinancialInstitutionIdentification8
-import AccountIdentification4Choice
-import Max35Text
-import SystemIdentification2Choice
-import ReservationType2Choice
+from .Max35Text import Max35Text
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from .AccountIdentification4Choice import AccountIdentification4Choice
+from .ReservationType2Choice import ReservationType2Choice
+from .SystemIdentification2Choice import SystemIdentification2Choice
 
 class ReservationIdentification4(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_Tp", "_SysId", "_AcctId", "_RsvatnId"]
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
+	__slots__ = ["_Tp", "_RsvatnId", "_SysId", "_AcctId", "_AcctOwnr"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -33,6 +20,19 @@ class ReservationIdentification4(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
+
+	@property
+	def RsvatnId(self):
+		return self._RsvatnId
+
+	@RsvatnId.setter
+	def RsvatnId(self, value):
+		self._RsvatnId = value if type(value) != auto else self.make_default("RsvatnId")
+
+	@RsvatnId.deleter
+	def RsvatnId(self):
+		del self._RsvatnId
+		self._RsvatnId = None
 
 	@property
 	def SysId(self):
@@ -61,23 +61,23 @@ class ReservationIdentification4(base_types._BaseFieldType):
 		self._AcctId = None
 
 	@property
-	def RsvatnId(self):
-		return self._RsvatnId
+	def AcctOwnr(self):
+		return self._AcctOwnr
 
-	@RsvatnId.setter
-	def RsvatnId(self, value):
-		self._RsvatnId = value if type(value) != auto else self.make_default("RsvatnId")
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
 
-	@RsvatnId.deleter
-	def RsvatnId(self):
-		del self._RsvatnId
-		self._RsvatnId = None
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ReservationType2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsvatnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsvatnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

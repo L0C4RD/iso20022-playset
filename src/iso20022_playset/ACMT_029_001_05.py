@@ -1,5 +1,5 @@
 from . import base_types
-import AccountSwitchCancelExistingPaymentV05
+from .AccountSwitchCancelExistingPaymentV05 import AccountSwitchCancelExistingPaymentV05
 
 class ACMT_029_001_05():
 

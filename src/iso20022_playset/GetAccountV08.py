@@ -1,11 +1,11 @@
 from . import base_types
-import AccountQuery4
-import SupplementaryData1
-import MessageHeader9
+from .MessageHeader9 import MessageHeader9
+from .AccountQuery4 import AccountQuery4
+from .SupplementaryData1 import SupplementaryData1
 
 class GetAccountV08(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_AcctQryDef", "_MsgHdr"]
+	__slots__ = ["_SplmtryData", "_MsgHdr", "_AcctQryDef"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -20,19 +20,6 @@ class GetAccountV08(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def AcctQryDef(self):
-		return self._AcctQryDef
-
-	@AcctQryDef.setter
-	def AcctQryDef(self, value):
-		self._AcctQryDef = value if type(value) != auto else self.make_default("AcctQryDef")
-
-	@AcctQryDef.deleter
-	def AcctQryDef(self):
-		del self._AcctQryDef
-		self._AcctQryDef = None
-
-	@property
 	def MsgHdr(self):
 		return self._MsgHdr
 
@@ -45,9 +32,22 @@ class GetAccountV08(base_types._BaseFieldType):
 		del self._MsgHdr
 		self._MsgHdr = None
 
+	@property
+	def AcctQryDef(self):
+		return self._AcctQryDef
+
+	@AcctQryDef.setter
+	def AcctQryDef(self, value):
+		self._AcctQryDef = value if type(value) != auto else self.make_default("AcctQryDef")
+
+	@AcctQryDef.deleter
+	def AcctQryDef(self):
+		del self._AcctQryDef
+		self._AcctQryDef = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctQryDef', type=AccountQuery4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctQryDef', type=AccountQuery4, min=0, max=1, mutex_group=None, array=False),
 	))
 

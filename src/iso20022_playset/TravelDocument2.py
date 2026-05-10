@@ -1,51 +1,25 @@
 from . import base_types
-import ISODate
-import OfficialDocumentType1Code
-import ISOMax3ACountryCode
-import PresentationMedium2Code
-import Max70Text
+from .Max70Text import Max70Text
+from .OfficialDocumentType1Code import OfficialDocumentType1Code
+from .PresentationMedium2Code import PresentationMedium2Code
+from .ISODate import ISODate
+from .ISOMax3ACountryCode import ISOMax3ACountryCode
 
 class TravelDocument2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_XprtnDt", "_Ctry", "_IssncDt", "_Form", "_Tp", "_Assgnr"]
+	__slots__ = ["_Form", "_IssncDt", "_XprtnDt", "_Tp", "_Id", "_Ctry", "_Assgnr"]
 	@property
-	def Id(self):
-		return self._Id
+	def Form(self):
+		return self._Form
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Form.setter
+	def Form(self, value):
+		self._Form = value if type(value) != auto else self.make_default("Form")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def XprtnDt(self):
-		return self._XprtnDt
-
-	@XprtnDt.setter
-	def XprtnDt(self, value):
-		self._XprtnDt = value if type(value) != auto else self.make_default("XprtnDt")
-
-	@XprtnDt.deleter
-	def XprtnDt(self):
-		del self._XprtnDt
-		self._XprtnDt = None
-
-	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
+	@Form.deleter
+	def Form(self):
+		del self._Form
+		self._Form = None
 
 	@property
 	def IssncDt(self):
@@ -61,17 +35,17 @@ class TravelDocument2(base_types._BaseFieldType):
 		self._IssncDt = None
 
 	@property
-	def Form(self):
-		return self._Form
+	def XprtnDt(self):
+		return self._XprtnDt
 
-	@Form.setter
-	def Form(self, value):
-		self._Form = value if type(value) != auto else self.make_default("Form")
+	@XprtnDt.setter
+	def XprtnDt(self, value):
+		self._XprtnDt = value if type(value) != auto else self.make_default("XprtnDt")
 
-	@Form.deleter
-	def Form(self):
-		del self._Form
-		self._Form = None
+	@XprtnDt.deleter
+	def XprtnDt(self):
+		del self._XprtnDt
+		self._XprtnDt = None
 
 	@property
 	def Tp(self):
@@ -87,6 +61,32 @@ class TravelDocument2(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
+	@property
 	def Assgnr(self):
 		return self._Assgnr
 
@@ -100,12 +100,12 @@ class TravelDocument2(base_types._BaseFieldType):
 		self._Assgnr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XprtnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssncDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Form', type=PresentationMedium2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssncDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XprtnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=OfficialDocumentType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgnr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

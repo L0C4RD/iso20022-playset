@@ -1,13 +1,13 @@
 from . import base_types
-import Max15NumericText
-import ISODateTime
-import Max35Text
-import DecimalNumber
-import BranchAndFinancialInstitutionIdentification8
+from .Max35Text import Max35Text
+from .Max15NumericText import Max15NumericText
+from .DecimalNumber import DecimalNumber
+from .ISODateTime import ISODateTime
+from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 
 class GroupHeader119(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_InstgAgt", "_NbOfTxs", "_CtrlSum", "_InstdAgt", "_CreDtTm"]
+	__slots__ = ["_MsgId", "_InstgAgt", "_InstdAgt", "_NbOfTxs", "_CtrlSum", "_CreDtTm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -33,6 +33,19 @@ class GroupHeader119(base_types._BaseFieldType):
 	def InstgAgt(self):
 		del self._InstgAgt
 		self._InstgAgt = None
+
+	@property
+	def InstdAgt(self):
+		return self._InstdAgt
+
+	@InstdAgt.setter
+	def InstdAgt(self, value):
+		self._InstdAgt = value if type(value) != auto else self.make_default("InstdAgt")
+
+	@InstdAgt.deleter
+	def InstdAgt(self):
+		del self._InstdAgt
+		self._InstdAgt = None
 
 	@property
 	def NbOfTxs(self):
@@ -61,19 +74,6 @@ class GroupHeader119(base_types._BaseFieldType):
 		self._CtrlSum = None
 
 	@property
-	def InstdAgt(self):
-		return self._InstdAgt
-
-	@InstdAgt.setter
-	def InstdAgt(self, value):
-		self._InstdAgt = value if type(value) != auto else self.make_default("InstdAgt")
-
-	@InstdAgt.deleter
-	def InstdAgt(self):
-		del self._InstdAgt
-		self._InstdAgt = None
-
-	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -89,9 +89,9 @@ class GroupHeader119(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

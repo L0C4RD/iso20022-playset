@@ -1,25 +1,12 @@
 from . import base_types
-import Max35Text
-import CurrencyAndAmount
-import DocumentIdentification7
-import TransactionStatus4
+from .Max35Text import Max35Text
+from .TransactionStatus4 import TransactionStatus4
+from .CurrencyAndAmount import CurrencyAndAmount
+from .DocumentIdentification7 import DocumentIdentification7
 
 class ReportLine1(base_types._BaseFieldType):
 
-	__slots__ = ["_TxSts", "_PurchsOrdrRef", "_TxId", "_PurchsOrdrTtlNetAmt", "_AcmltdNetAmt"]
-	@property
-	def TxSts(self):
-		return self._TxSts
-
-	@TxSts.setter
-	def TxSts(self, value):
-		self._TxSts = value if type(value) != auto else self.make_default("TxSts")
-
-	@TxSts.deleter
-	def TxSts(self):
-		del self._TxSts
-		self._TxSts = None
-
+	__slots__ = ["_PurchsOrdrRef", "_PurchsOrdrTtlNetAmt", "_TxSts", "_TxId", "_AcmltdNetAmt"]
 	@property
 	def PurchsOrdrRef(self):
 		return self._PurchsOrdrRef
@@ -32,19 +19,6 @@ class ReportLine1(base_types._BaseFieldType):
 	def PurchsOrdrRef(self):
 		del self._PurchsOrdrRef
 		self._PurchsOrdrRef = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
 
 	@property
 	def PurchsOrdrTtlNetAmt(self):
@@ -60,6 +34,32 @@ class ReportLine1(base_types._BaseFieldType):
 		self._PurchsOrdrTtlNetAmt = None
 
 	@property
+	def TxSts(self):
+		return self._TxSts
+
+	@TxSts.setter
+	def TxSts(self, value):
+		self._TxSts = value if type(value) != auto else self.make_default("TxSts")
+
+	@TxSts.deleter
+	def TxSts(self):
+		del self._TxSts
+		self._TxSts = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
 	def AcmltdNetAmt(self):
 		return self._AcmltdNetAmt
 
@@ -73,10 +73,10 @@ class ReportLine1(base_types._BaseFieldType):
 		self._AcmltdNetAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PurchsOrdrTtlNetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcmltdNetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

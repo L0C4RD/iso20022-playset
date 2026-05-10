@@ -1,22 +1,9 @@
 from . import base_types
-import UTIIdentifier
+from .UTIIdentifier import UTIIdentifier
 
 class UniqueTransactionIdentifier3(base_types._BaseFieldType):
 
-	__slots__ = ["_UnqTxIdr", "_PrrUnqTxIdr"]
-	@property
-	def UnqTxIdr(self):
-		return self._UnqTxIdr
-
-	@UnqTxIdr.setter
-	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != auto else self.make_default("UnqTxIdr")
-
-	@UnqTxIdr.deleter
-	def UnqTxIdr(self):
-		del self._UnqTxIdr
-		self._UnqTxIdr = None
-
+	__slots__ = ["_PrrUnqTxIdr", "_UnqTxIdr"]
 	@property
 	def PrrUnqTxIdr(self):
 		return self._PrrUnqTxIdr
@@ -30,8 +17,21 @@ class UniqueTransactionIdentifier3(base_types._BaseFieldType):
 		del self._PrrUnqTxIdr
 		self._PrrUnqTxIdr = None
 
+	@property
+	def UnqTxIdr(self):
+		return self._UnqTxIdr
+
+	@UnqTxIdr.setter
+	def UnqTxIdr(self, value):
+		self._UnqTxIdr = value if type(value) != auto else self.make_default("UnqTxIdr")
+
+	@UnqTxIdr.deleter
+	def UnqTxIdr(self):
+		del self._UnqTxIdr
+		self._UnqTxIdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnqTxIdr', type=UTIIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrrUnqTxIdr', type=UTIIdentifier, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UnqTxIdr', type=UTIIdentifier, min=1, max=1, mutex_group=None, array=False),
 	))
 

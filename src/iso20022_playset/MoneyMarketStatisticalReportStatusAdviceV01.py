@@ -1,7 +1,7 @@
 from . import base_types
-import MoneyMarketStatusReportHeader1
-import SupplementaryData1
-import MoneyMarketTransactionStatus2
+from .MoneyMarketTransactionStatus2 import MoneyMarketTransactionStatus2
+from .SupplementaryData1 import SupplementaryData1
+from .MoneyMarketStatusReportHeader1 import MoneyMarketStatusReportHeader1
 
 class MoneyMarketStatisticalReportStatusAdviceV01(base_types._BaseFieldType):
 

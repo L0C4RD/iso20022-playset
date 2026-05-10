@@ -1,24 +1,11 @@
 from . import base_types
-import ISOTime
-import NetworkParameters7
-import Max70Text
+from .Max70Text import Max70Text
+from .NetworkParameters7 import NetworkParameters7
+from .ISOTime import ISOTime
 
 class ClockSynchronisation3(base_types._BaseFieldType):
 
-	__slots__ = ["_Dely", "_POITmZone", "_SynctnSvr"]
-	@property
-	def Dely(self):
-		return self._Dely
-
-	@Dely.setter
-	def Dely(self, value):
-		self._Dely = value if type(value) != auto else self.make_default("Dely")
-
-	@Dely.deleter
-	def Dely(self):
-		del self._Dely
-		self._Dely = None
-
+	__slots__ = ["_POITmZone", "_Dely", "_SynctnSvr"]
 	@property
 	def POITmZone(self):
 		return self._POITmZone
@@ -31,6 +18,19 @@ class ClockSynchronisation3(base_types._BaseFieldType):
 	def POITmZone(self):
 		del self._POITmZone
 		self._POITmZone = None
+
+	@property
+	def Dely(self):
+		return self._Dely
+
+	@Dely.setter
+	def Dely(self, value):
+		self._Dely = value if type(value) != auto else self.make_default("Dely")
+
+	@Dely.deleter
+	def Dely(self):
+		del self._Dely
+		self._Dely = None
 
 	@property
 	def SynctnSvr(self):
@@ -46,8 +46,8 @@ class ClockSynchronisation3(base_types._BaseFieldType):
 		self._SynctnSvr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dely', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POITmZone', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dely', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SynctnSvr', type=NetworkParameters7, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import Modification1Code
-import Max70Text
+from .Modification1Code import Modification1Code
+from .Max70Text import Max70Text
 
 class NameModification1(base_types._BaseFieldType):
 

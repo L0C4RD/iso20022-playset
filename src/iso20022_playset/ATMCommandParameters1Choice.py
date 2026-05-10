@@ -1,24 +1,11 @@
 from . import base_types
-import ATMConfigurationParameter1
-import ATMStatus1Code
-import MessageFunction8Code
+from .MessageFunction8Code import MessageFunction8Code
+from .ATMConfigurationParameter1 import ATMConfigurationParameter1
+from .ATMStatus1Code import ATMStatus1Code
 
 class ATMCommandParameters1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqrdCfgtnParam", "_XpctdMsgFctn", "_ATMReqrdGblSts"]
-	@property
-	def ReqrdCfgtnParam(self):
-		return self._ReqrdCfgtnParam
-
-	@ReqrdCfgtnParam.setter
-	def ReqrdCfgtnParam(self, value):
-		self._ReqrdCfgtnParam = value if type(value) != auto else self.make_default("ReqrdCfgtnParam")
-
-	@ReqrdCfgtnParam.deleter
-	def ReqrdCfgtnParam(self):
-		del self._ReqrdCfgtnParam
-		self._ReqrdCfgtnParam = None
-
+	__slots__ = ["_XpctdMsgFctn", "_ReqrdCfgtnParam", "_ATMReqrdGblSts"]
 	@property
 	def XpctdMsgFctn(self):
 		return self._XpctdMsgFctn
@@ -31,6 +18,19 @@ class ATMCommandParameters1Choice(base_types._BaseFieldType):
 	def XpctdMsgFctn(self):
 		del self._XpctdMsgFctn
 		self._XpctdMsgFctn = None
+
+	@property
+	def ReqrdCfgtnParam(self):
+		return self._ReqrdCfgtnParam
+
+	@ReqrdCfgtnParam.setter
+	def ReqrdCfgtnParam(self, value):
+		self._ReqrdCfgtnParam = value if type(value) != auto else self.make_default("ReqrdCfgtnParam")
+
+	@ReqrdCfgtnParam.deleter
+	def ReqrdCfgtnParam(self):
+		del self._ReqrdCfgtnParam
+		self._ReqrdCfgtnParam = None
 
 	@property
 	def ATMReqrdGblSts(self):
@@ -46,8 +46,8 @@ class ATMCommandParameters1Choice(base_types._BaseFieldType):
 		self._ATMReqrdGblSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqrdCfgtnParam', type=ATMConfigurationParameter1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='XpctdMsgFctn', type=MessageFunction8Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ReqrdCfgtnParam', type=ATMConfigurationParameter1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ATMReqrdGblSts', type=ATMStatus1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

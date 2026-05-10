@@ -1,5 +1,5 @@
 from . import base_types
-import CCPClearedProductReportV02
+from .CCPClearedProductReportV02 import CCPClearedProductReportV02
 
 class AUTH_069_001_02():
 

@@ -1,6 +1,6 @@
 from . import base_types
-import FinancialInstrumentAggregateBalance2
-import YesNoIndicator
+from .YesNoIndicator import YesNoIndicator
+from .FinancialInstrumentAggregateBalance2 import FinancialInstrumentAggregateBalance2
 
 class FinancialInstrumentAggregateBalance1Choice(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-import PresentmentType1Code
+from .PresentmentType1Code import PresentmentType1Code
 
 class ElectronicInvoice1(base_types._BaseFieldType):
 

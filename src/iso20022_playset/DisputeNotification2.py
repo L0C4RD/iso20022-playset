@@ -1,6 +1,6 @@
 from . import base_types
-import SegregatedIndependentAmountDispute2
-import VariationMarginDispute1
+from .VariationMarginDispute1 import VariationMarginDispute1
+from .SegregatedIndependentAmountDispute2 import SegregatedIndependentAmountDispute2
 
 class DisputeNotification2(base_types._BaseFieldType):
 

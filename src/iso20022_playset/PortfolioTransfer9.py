@@ -1,41 +1,15 @@
 from . import base_types
-import ISODate
-import YesNoIndicator
-import FinancialInstrument99
-import ResidualCash1
-import FundPortfolio7Choice
-import Max35Text
-import AdditionalInformation15
+from .Max35Text import Max35Text
+from .AdditionalInformation15 import AdditionalInformation15
+from .YesNoIndicator import YesNoIndicator
+from .ISODate import ISODate
+from .FundPortfolio7Choice import FundPortfolio7Choice
+from .ResidualCash1 import ResidualCash1
+from .FinancialInstrument99 import FinancialInstrument99
 
 class PortfolioTransfer9(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtfl", "_MstrRef", "_TrfConfId", "_RsdlCsh", "_FinInstrmAsstForTrf", "_AddtlInf", "_PrtlDscvry", "_TrfId", "_TaxDt"]
-	@property
-	def Prtfl(self):
-		return self._Prtfl
-
-	@Prtfl.setter
-	def Prtfl(self, value):
-		self._Prtfl = value if type(value) != auto else self.make_default("Prtfl")
-
-	@Prtfl.deleter
-	def Prtfl(self):
-		del self._Prtfl
-		self._Prtfl = None
-
-	@property
-	def MstrRef(self):
-		return self._MstrRef
-
-	@MstrRef.setter
-	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
-
-	@MstrRef.deleter
-	def MstrRef(self):
-		del self._MstrRef
-		self._MstrRef = None
-
+	__slots__ = ["_TrfConfId", "_AddtlInf", "_TrfId", "_PrtlDscvry", "_TaxDt", "_RsdlCsh", "_MstrRef", "_FinInstrmAsstForTrf", "_Prtfl"]
 	@property
 	def TrfConfId(self):
 		return self._TrfConfId
@@ -48,32 +22,6 @@ class PortfolioTransfer9(base_types._BaseFieldType):
 	def TrfConfId(self):
 		del self._TrfConfId
 		self._TrfConfId = None
-
-	@property
-	def RsdlCsh(self):
-		return self._RsdlCsh
-
-	@RsdlCsh.setter
-	def RsdlCsh(self, value):
-		self._RsdlCsh = value if type(value) != auto else self.make_default("RsdlCsh")
-
-	@RsdlCsh.deleter
-	def RsdlCsh(self):
-		del self._RsdlCsh
-		self._RsdlCsh = None
-
-	@property
-	def FinInstrmAsstForTrf(self):
-		return self._FinInstrmAsstForTrf
-
-	@FinInstrmAsstForTrf.setter
-	def FinInstrmAsstForTrf(self, value):
-		self._FinInstrmAsstForTrf = value if type(value) != auto else self.make_default("FinInstrmAsstForTrf")
-
-	@FinInstrmAsstForTrf.deleter
-	def FinInstrmAsstForTrf(self):
-		del self._FinInstrmAsstForTrf
-		self._FinInstrmAsstForTrf = None
 
 	@property
 	def AddtlInf(self):
@@ -89,19 +37,6 @@ class PortfolioTransfer9(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def PrtlDscvry(self):
-		return self._PrtlDscvry
-
-	@PrtlDscvry.setter
-	def PrtlDscvry(self, value):
-		self._PrtlDscvry = value if type(value) != auto else self.make_default("PrtlDscvry")
-
-	@PrtlDscvry.deleter
-	def PrtlDscvry(self):
-		del self._PrtlDscvry
-		self._PrtlDscvry = None
-
-	@property
 	def TrfId(self):
 		return self._TrfId
 
@@ -113,6 +48,19 @@ class PortfolioTransfer9(base_types._BaseFieldType):
 	def TrfId(self):
 		del self._TrfId
 		self._TrfId = None
+
+	@property
+	def PrtlDscvry(self):
+		return self._PrtlDscvry
+
+	@PrtlDscvry.setter
+	def PrtlDscvry(self, value):
+		self._PrtlDscvry = value if type(value) != auto else self.make_default("PrtlDscvry")
+
+	@PrtlDscvry.deleter
+	def PrtlDscvry(self):
+		del self._PrtlDscvry
+		self._PrtlDscvry = None
 
 	@property
 	def TaxDt(self):
@@ -127,15 +75,67 @@ class PortfolioTransfer9(base_types._BaseFieldType):
 		del self._TaxDt
 		self._TaxDt = None
 
+	@property
+	def RsdlCsh(self):
+		return self._RsdlCsh
+
+	@RsdlCsh.setter
+	def RsdlCsh(self, value):
+		self._RsdlCsh = value if type(value) != auto else self.make_default("RsdlCsh")
+
+	@RsdlCsh.deleter
+	def RsdlCsh(self):
+		del self._RsdlCsh
+		self._RsdlCsh = None
+
+	@property
+	def MstrRef(self):
+		return self._MstrRef
+
+	@MstrRef.setter
+	def MstrRef(self, value):
+		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
+
+	@MstrRef.deleter
+	def MstrRef(self):
+		del self._MstrRef
+		self._MstrRef = None
+
+	@property
+	def FinInstrmAsstForTrf(self):
+		return self._FinInstrmAsstForTrf
+
+	@FinInstrmAsstForTrf.setter
+	def FinInstrmAsstForTrf(self, value):
+		self._FinInstrmAsstForTrf = value if type(value) != auto else self.make_default("FinInstrmAsstForTrf")
+
+	@FinInstrmAsstForTrf.deleter
+	def FinInstrmAsstForTrf(self):
+		del self._FinInstrmAsstForTrf
+		self._FinInstrmAsstForTrf = None
+
+	@property
+	def Prtfl(self):
+		return self._Prtfl
+
+	@Prtfl.setter
+	def Prtfl(self, value):
+		self._Prtfl = value if type(value) != auto else self.make_default("Prtfl")
+
+	@Prtfl.deleter
+	def Prtfl(self):
+		del self._Prtfl
+		self._Prtfl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtfl', type=FundPortfolio7Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfConfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsdlCsh', type=ResidualCash1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FinInstrmAsstForTrf', type=FinancialInstrument99, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrtlDscvry', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtlDscvry', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsdlCsh', type=ResidualCash1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmAsstForTrf', type=FinancialInstrument99, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Prtfl', type=FundPortfolio7Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

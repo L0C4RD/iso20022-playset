@@ -1,5 +1,5 @@
 from . import base_types
-import PartyIdentificationAndAccount222
+from .PartyIdentificationAndAccount222 import PartyIdentificationAndAccount222
 
 class ReceivingPartiesAndAccount20(base_types._BaseFieldType):
 

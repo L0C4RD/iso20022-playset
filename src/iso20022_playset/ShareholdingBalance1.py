@@ -1,13 +1,13 @@
 from . import base_types
-import DateFormat57Choice
-import FinancialInstrumentQuantity18Choice
-import PartyIdentification218
-import SupplementaryData1
-import ShareholdingType1Code
+from .FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
+from .PartyIdentification218 import PartyIdentification218
+from .SupplementaryData1 import SupplementaryData1
+from .ShareholdingType1Code import ShareholdingType1Code
+from .DateFormat57Choice import DateFormat57Choice
 
 class ShareholdingBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_ThrdPty", "_SplmtryData", "_ShrhldgTp", "_InitlDtOfShrhldg", "_Qty"]
+	__slots__ = ["_ThrdPty", "_SplmtryData", "_InitlDtOfShrhldg", "_Qty", "_ShrhldgTp"]
 	@property
 	def ThrdPty(self):
 		return self._ThrdPty
@@ -35,19 +35,6 @@ class ShareholdingBalance1(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def ShrhldgTp(self):
-		return self._ShrhldgTp
-
-	@ShrhldgTp.setter
-	def ShrhldgTp(self, value):
-		self._ShrhldgTp = value if type(value) != auto else self.make_default("ShrhldgTp")
-
-	@ShrhldgTp.deleter
-	def ShrhldgTp(self):
-		del self._ShrhldgTp
-		self._ShrhldgTp = None
-
-	@property
 	def InitlDtOfShrhldg(self):
 		return self._InitlDtOfShrhldg
 
@@ -73,11 +60,24 @@ class ShareholdingBalance1(base_types._BaseFieldType):
 		del self._Qty
 		self._Qty = None
 
+	@property
+	def ShrhldgTp(self):
+		return self._ShrhldgTp
+
+	@ShrhldgTp.setter
+	def ShrhldgTp(self, value):
+		self._ShrhldgTp = value if type(value) != auto else self.make_default("ShrhldgTp")
+
+	@ShrhldgTp.deleter
+	def ShrhldgTp(self):
+		del self._ShrhldgTp
+		self._ShrhldgTp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ThrdPty', type=PartyIdentification218, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ShrhldgTp', type=ShareholdingType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitlDtOfShrhldg', type=DateFormat57Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity18Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrhldgTp', type=ShareholdingType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

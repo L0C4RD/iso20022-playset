@@ -1,25 +1,25 @@
 from . import base_types
-import PartyTextInformation4
-import AlternatePartyIdentification9
-import CashAccountIdentification6Choice
-import PartyIdentification137Choice
-import LEIIdentifier
+from .LEIIdentifier import LEIIdentifier
+from .PartyTextInformation4 import PartyTextInformation4
+from .AlternatePartyIdentification9 import AlternatePartyIdentification9
+from .CashAccountIdentification6Choice import CashAccountIdentification6Choice
+from .PartyIdentification137Choice import PartyIdentification137Choice
 
 class PartyIdentificationAndAccount177(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_TaxAcct", "_Id", "_CshAcct", "_AltrnId", "_ChrgsAcct", "_ComssnAcct", "_AddtlInf"]
+	__slots__ = ["_ComssnAcct", "_TaxAcct", "_Id", "_CshAcct", "_AltrnId", "_AddtlInf", "_ChrgsAcct", "_LEI"]
 	@property
-	def LEI(self):
-		return self._LEI
+	def ComssnAcct(self):
+		return self._ComssnAcct
 
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+	@ComssnAcct.setter
+	def ComssnAcct(self, value):
+		self._ComssnAcct = value if type(value) != auto else self.make_default("ComssnAcct")
 
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
+	@ComssnAcct.deleter
+	def ComssnAcct(self):
+		del self._ComssnAcct
+		self._ComssnAcct = None
 
 	@property
 	def TaxAcct(self):
@@ -74,6 +74,19 @@ class PartyIdentificationAndAccount177(base_types._BaseFieldType):
 		self._AltrnId = None
 
 	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
 	def ChrgsAcct(self):
 		return self._ChrgsAcct
 
@@ -87,39 +100,26 @@ class PartyIdentificationAndAccount177(base_types._BaseFieldType):
 		self._ChrgsAcct = None
 
 	@property
-	def ComssnAcct(self):
-		return self._ComssnAcct
+	def LEI(self):
+		return self._LEI
 
-	@ComssnAcct.setter
-	def ComssnAcct(self, value):
-		self._ComssnAcct = value if type(value) != auto else self.make_default("ComssnAcct")
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
 
-	@ComssnAcct.deleter
-	def ComssnAcct(self):
-		del self._ComssnAcct
-		self._ComssnAcct = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ComssnAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ComssnAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

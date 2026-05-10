@@ -1,5 +1,5 @@
 from . import base_types
-import ExtendOrPayRequestV01
+from .ExtendOrPayRequestV01 import ExtendOrPayRequestV01
 
 class TSRV_014_001_01():
 

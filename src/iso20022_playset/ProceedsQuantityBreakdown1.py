@@ -1,5 +1,5 @@
 from . import base_types
-import FinancialInstrumentQuantity18Choice
+from .FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
 
 class ProceedsQuantityBreakdown1(base_types._BaseFieldType):
 

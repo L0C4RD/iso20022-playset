@@ -1,14 +1,14 @@
 from . import base_types
-import Disclosure3Choice
-import DisclosureRequestIdentification1
-import PartyIdentification219
-import SupplementaryData1
-import Max35Text
-import Pagination1
+from .Max35Text import Max35Text
+from .SupplementaryData1 import SupplementaryData1
+from .Disclosure3Choice import Disclosure3Choice
+from .DisclosureRequestIdentification1 import DisclosureRequestIdentification1
+from .Pagination1 import Pagination1
+from .PartyIdentification219 import PartyIdentification219
 
 class ShareholdersIdentificationDisclosureResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Pgntn", "_DsclsrInf", "_RspndgIntrmy", "_SplmtryData", "_DsclsrRspnId", "_IssrDsclsrReqRef"]
+	__slots__ = ["_Pgntn", "_DsclsrInf", "_SplmtryData", "_RspndgIntrmy", "_DsclsrRspnId", "_IssrDsclsrReqRef"]
 	@property
 	def Pgntn(self):
 		return self._Pgntn
@@ -36,19 +36,6 @@ class ShareholdersIdentificationDisclosureResponseV03(base_types._BaseFieldType)
 		self._DsclsrInf = None
 
 	@property
-	def RspndgIntrmy(self):
-		return self._RspndgIntrmy
-
-	@RspndgIntrmy.setter
-	def RspndgIntrmy(self, value):
-		self._RspndgIntrmy = value if type(value) != auto else self.make_default("RspndgIntrmy")
-
-	@RspndgIntrmy.deleter
-	def RspndgIntrmy(self):
-		del self._RspndgIntrmy
-		self._RspndgIntrmy = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -60,6 +47,19 @@ class ShareholdersIdentificationDisclosureResponseV03(base_types._BaseFieldType)
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def RspndgIntrmy(self):
+		return self._RspndgIntrmy
+
+	@RspndgIntrmy.setter
+	def RspndgIntrmy(self, value):
+		self._RspndgIntrmy = value if type(value) != auto else self.make_default("RspndgIntrmy")
+
+	@RspndgIntrmy.deleter
+	def RspndgIntrmy(self):
+		del self._RspndgIntrmy
+		self._RspndgIntrmy = None
 
 	@property
 	def DsclsrRspnId(self):
@@ -90,8 +90,8 @@ class ShareholdersIdentificationDisclosureResponseV03(base_types._BaseFieldType)
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsclsrInf', type=Disclosure3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspndgIntrmy', type=PartyIdentification219, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RspndgIntrmy', type=PartyIdentification219, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsclsrRspnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrDsclsrReqRef', type=DisclosureRequestIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))

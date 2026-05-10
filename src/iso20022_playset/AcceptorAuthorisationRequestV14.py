@@ -1,11 +1,24 @@
 from . import base_types
-import ContentInformationType37
-import AcceptorAuthorisationRequest14
-import Header70
+from .AcceptorAuthorisationRequest14 import AcceptorAuthorisationRequest14
+from .Header70 import Header70
+from .ContentInformationType37 import ContentInformationType37
 
 class AcceptorAuthorisationRequestV14(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_Hdr", "_AuthstnReq"]
+	__slots__ = ["_AuthstnReq", "_SctyTrlr", "_Hdr"]
+	@property
+	def AuthstnReq(self):
+		return self._AuthstnReq
+
+	@AuthstnReq.setter
+	def AuthstnReq(self, value):
+		self._AuthstnReq = value if type(value) != auto else self.make_default("AuthstnReq")
+
+	@AuthstnReq.deleter
+	def AuthstnReq(self):
+		del self._AuthstnReq
+		self._AuthstnReq = None
+
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
@@ -32,22 +45,9 @@ class AcceptorAuthorisationRequestV14(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
-	@property
-	def AuthstnReq(self):
-		return self._AuthstnReq
-
-	@AuthstnReq.setter
-	def AuthstnReq(self, value):
-		self._AuthstnReq = value if type(value) != auto else self.make_default("AuthstnReq")
-
-	@AuthstnReq.deleter
-	def AuthstnReq(self):
-		del self._AuthstnReq
-		self._AuthstnReq = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AuthstnReq', type=AcceptorAuthorisationRequest14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthstnReq', type=AcceptorAuthorisationRequest14, min=1, max=1, mutex_group=None, array=False),
 	))
 

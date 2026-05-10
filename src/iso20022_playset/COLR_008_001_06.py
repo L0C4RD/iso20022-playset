@@ -1,5 +1,5 @@
 from . import base_types
-import CollateralProposalResponseV06
+from .CollateralProposalResponseV06 import CollateralProposalResponseV06
 
 class COLR_008_001_06():
 

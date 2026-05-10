@@ -1,8 +1,8 @@
 from . import base_types
-import MasterAgreement7
-import OrganisationIdentification15Choice
-import PartyIdentification236Choice
-import Max52Text
+from .PartyIdentification236Choice import PartyIdentification236Choice
+from .MasterAgreement7 import MasterAgreement7
+from .Max52Text import Max52Text
+from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class TradeTransactionIdentification18(base_types._BaseFieldType):
 

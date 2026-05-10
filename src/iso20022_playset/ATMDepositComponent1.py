@@ -1,26 +1,13 @@
 from . import base_types
-import CardAccount21
-import DetailedAmount16
-import ATMDepositedMedia4
-import ContentInformationType10
-import Max70Text
+from .ContentInformationType10 import ContentInformationType10
+from .Max70Text import Max70Text
+from .CardAccount21 import CardAccount21
+from .ATMDepositedMedia4 import ATMDepositedMedia4
+from .DetailedAmount16 import DetailedAmount16
 
 class ATMDepositComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctData", "_DtldReqdAmt", "_PrtctdAcctData", "_SubDpstId", "_DpstdMdia"]
-	@property
-	def AcctData(self):
-		return self._AcctData
-
-	@AcctData.setter
-	def AcctData(self, value):
-		self._AcctData = value if type(value) != auto else self.make_default("AcctData")
-
-	@AcctData.deleter
-	def AcctData(self):
-		del self._AcctData
-		self._AcctData = None
-
+	__slots__ = ["_DtldReqdAmt", "_DpstdMdia", "_SubDpstId", "_PrtctdAcctData", "_AcctData"]
 	@property
 	def DtldReqdAmt(self):
 		return self._DtldReqdAmt
@@ -35,17 +22,17 @@ class ATMDepositComponent1(base_types._BaseFieldType):
 		self._DtldReqdAmt = None
 
 	@property
-	def PrtctdAcctData(self):
-		return self._PrtctdAcctData
+	def DpstdMdia(self):
+		return self._DpstdMdia
 
-	@PrtctdAcctData.setter
-	def PrtctdAcctData(self, value):
-		self._PrtctdAcctData = value if type(value) != auto else self.make_default("PrtctdAcctData")
+	@DpstdMdia.setter
+	def DpstdMdia(self, value):
+		self._DpstdMdia = value if type(value) != auto else self.make_default("DpstdMdia")
 
-	@PrtctdAcctData.deleter
-	def PrtctdAcctData(self):
-		del self._PrtctdAcctData
-		self._PrtctdAcctData = None
+	@DpstdMdia.deleter
+	def DpstdMdia(self):
+		del self._DpstdMdia
+		self._DpstdMdia = None
 
 	@property
 	def SubDpstId(self):
@@ -61,23 +48,36 @@ class ATMDepositComponent1(base_types._BaseFieldType):
 		self._SubDpstId = None
 
 	@property
-	def DpstdMdia(self):
-		return self._DpstdMdia
+	def PrtctdAcctData(self):
+		return self._PrtctdAcctData
 
-	@DpstdMdia.setter
-	def DpstdMdia(self, value):
-		self._DpstdMdia = value if type(value) != auto else self.make_default("DpstdMdia")
+	@PrtctdAcctData.setter
+	def PrtctdAcctData(self, value):
+		self._PrtctdAcctData = value if type(value) != auto else self.make_default("PrtctdAcctData")
 
-	@DpstdMdia.deleter
-	def DpstdMdia(self):
-		del self._DpstdMdia
-		self._DpstdMdia = None
+	@PrtctdAcctData.deleter
+	def PrtctdAcctData(self):
+		del self._PrtctdAcctData
+		self._PrtctdAcctData = None
+
+	@property
+	def AcctData(self):
+		return self._AcctData
+
+	@AcctData.setter
+	def AcctData(self, value):
+		self._AcctData = value if type(value) != auto else self.make_default("AcctData")
+
+	@AcctData.deleter
+	def AcctData(self):
+		del self._AcctData
+		self._AcctData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctData', type=CardAccount21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DtldReqdAmt', type=DetailedAmount16, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrtctdAcctData', type=ContentInformationType10, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SubDpstId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DpstdMdia', type=ATMDepositedMedia4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SubDpstId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdAcctData', type=ContentInformationType10, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctData', type=CardAccount21, min=0, max=None, mutex_group=None, array=True),
 	))
 

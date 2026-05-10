@@ -1,24 +1,24 @@
 from . import base_types
-import PendingSettlementStatusReason2Code
-import GenericIdentification1
-import NoReasonCode
-import Extended350Code
+from .Extended350Code import Extended350Code
+from .GenericIdentification1 import GenericIdentification1
+from .PendingSettlementStatusReason2Code import PendingSettlementStatusReason2Code
+from .NoReasonCode import NoReasonCode
 
 class PendingSettlementStatus3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NoSpcfdRsn", "_XtndedRsn", "_DataSrcSchme", "_Rsn"]
+	__slots__ = ["_DataSrcSchme", "_XtndedRsn", "_NoSpcfdRsn", "_Rsn"]
 	@property
-	def NoSpcfdRsn(self):
-		return self._NoSpcfdRsn
+	def DataSrcSchme(self):
+		return self._DataSrcSchme
 
-	@NoSpcfdRsn.setter
-	def NoSpcfdRsn(self, value):
-		self._NoSpcfdRsn = value if type(value) != auto else self.make_default("NoSpcfdRsn")
+	@DataSrcSchme.setter
+	def DataSrcSchme(self, value):
+		self._DataSrcSchme = value if type(value) != auto else self.make_default("DataSrcSchme")
 
-	@NoSpcfdRsn.deleter
-	def NoSpcfdRsn(self):
-		del self._NoSpcfdRsn
-		self._NoSpcfdRsn = None
+	@DataSrcSchme.deleter
+	def DataSrcSchme(self):
+		del self._DataSrcSchme
+		self._DataSrcSchme = None
 
 	@property
 	def XtndedRsn(self):
@@ -34,17 +34,17 @@ class PendingSettlementStatus3Choice(base_types._BaseFieldType):
 		self._XtndedRsn = None
 
 	@property
-	def DataSrcSchme(self):
-		return self._DataSrcSchme
+	def NoSpcfdRsn(self):
+		return self._NoSpcfdRsn
 
-	@DataSrcSchme.setter
-	def DataSrcSchme(self, value):
-		self._DataSrcSchme = value if type(value) != auto else self.make_default("DataSrcSchme")
+	@NoSpcfdRsn.setter
+	def NoSpcfdRsn(self, value):
+		self._NoSpcfdRsn = value if type(value) != auto else self.make_default("NoSpcfdRsn")
 
-	@DataSrcSchme.deleter
-	def DataSrcSchme(self):
-		del self._DataSrcSchme
-		self._DataSrcSchme = None
+	@NoSpcfdRsn.deleter
+	def NoSpcfdRsn(self):
+		del self._NoSpcfdRsn
+		self._NoSpcfdRsn = None
 
 	@property
 	def Rsn(self):
@@ -60,9 +60,9 @@ class PendingSettlementStatus3Choice(base_types._BaseFieldType):
 		self._Rsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='XtndedRsn', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DataSrcSchme', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='XtndedRsn', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rsn', type=PendingSettlementStatusReason2Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

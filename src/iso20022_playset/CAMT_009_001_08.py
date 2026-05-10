@@ -1,5 +1,5 @@
 from . import base_types
-import GetLimitV08
+from .GetLimitV08 import GetLimitV08
 
 class CAMT_009_001_08():
 

@@ -1,6 +1,6 @@
 from . import base_types
-import NotReported1Code
-import ISINOct2015Identifier
+from .NotReported1Code import NotReported1Code
+from .ISINOct2015Identifier import ISINOct2015Identifier
 
 class ISINQueryCriteria1(base_types._BaseFieldType):
 

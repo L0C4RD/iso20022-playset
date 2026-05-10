@@ -1,108 +1,30 @@
 from . import base_types
-import DocumentGeneralInformation5
-import ISODate
-import Party50Choice
-import Max140Text
-import OriginalMessage6
-import SupplementaryData1
-import Max35Text
-import Max1025Text
-import TrueFalseIndicator
-import SupportLetterType1Choice
+from .Max35Text import Max35Text
+from .Party50Choice import Party50Choice
+from .OriginalMessage6 import OriginalMessage6
+from .ISODate import ISODate
+from .Max1025Text import Max1025Text
+from .DocumentGeneralInformation5 import DocumentGeneralInformation5
+from .Max140Text import Max140Text
+from .SupplementaryData1 import SupplementaryData1
+from .SupportLetterType1Choice import SupportLetterType1Choice
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 
-	__slots__ = ["_Attchmnt", "_ReqOrLttrId", "_OrgnlRefs", "_Sndr", "_SplmtryData", "_Rcvr", "_RspnReqrd", "_Dt", "_Sbjt", "_DueDt", "_Desc", "_Tp"]
+	__slots__ = ["_Sbjt", "_Dt", "_Rcvr", "_Sndr", "_ReqOrLttrId", "_RspnReqrd", "_Desc", "_Tp", "_DueDt", "_Attchmnt", "_SplmtryData", "_OrgnlRefs"]
 	@property
-	def Attchmnt(self):
-		return self._Attchmnt
+	def Sbjt(self):
+		return self._Sbjt
 
-	@Attchmnt.setter
-	def Attchmnt(self, value):
-		self._Attchmnt = value if type(value) != auto else self.make_default("Attchmnt")
+	@Sbjt.setter
+	def Sbjt(self, value):
+		self._Sbjt = value if type(value) != auto else self.make_default("Sbjt")
 
-	@Attchmnt.deleter
-	def Attchmnt(self):
-		del self._Attchmnt
-		self._Attchmnt = None
-
-	@property
-	def ReqOrLttrId(self):
-		return self._ReqOrLttrId
-
-	@ReqOrLttrId.setter
-	def ReqOrLttrId(self, value):
-		self._ReqOrLttrId = value if type(value) != auto else self.make_default("ReqOrLttrId")
-
-	@ReqOrLttrId.deleter
-	def ReqOrLttrId(self):
-		del self._ReqOrLttrId
-		self._ReqOrLttrId = None
-
-	@property
-	def OrgnlRefs(self):
-		return self._OrgnlRefs
-
-	@OrgnlRefs.setter
-	def OrgnlRefs(self, value):
-		self._OrgnlRefs = value if type(value) != auto else self.make_default("OrgnlRefs")
-
-	@OrgnlRefs.deleter
-	def OrgnlRefs(self):
-		del self._OrgnlRefs
-		self._OrgnlRefs = None
-
-	@property
-	def Sndr(self):
-		return self._Sndr
-
-	@Sndr.setter
-	def Sndr(self, value):
-		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
-
-	@Sndr.deleter
-	def Sndr(self):
-		del self._Sndr
-		self._Sndr = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def Rcvr(self):
-		return self._Rcvr
-
-	@Rcvr.setter
-	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != auto else self.make_default("Rcvr")
-
-	@Rcvr.deleter
-	def Rcvr(self):
-		del self._Rcvr
-		self._Rcvr = None
-
-	@property
-	def RspnReqrd(self):
-		return self._RspnReqrd
-
-	@RspnReqrd.setter
-	def RspnReqrd(self, value):
-		self._RspnReqrd = value if type(value) != auto else self.make_default("RspnReqrd")
-
-	@RspnReqrd.deleter
-	def RspnReqrd(self):
-		del self._RspnReqrd
-		self._RspnReqrd = None
+	@Sbjt.deleter
+	def Sbjt(self):
+		del self._Sbjt
+		self._Sbjt = None
 
 	@property
 	def Dt(self):
@@ -118,30 +40,56 @@ class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 		self._Dt = None
 
 	@property
-	def Sbjt(self):
-		return self._Sbjt
+	def Rcvr(self):
+		return self._Rcvr
 
-	@Sbjt.setter
-	def Sbjt(self, value):
-		self._Sbjt = value if type(value) != auto else self.make_default("Sbjt")
+	@Rcvr.setter
+	def Rcvr(self, value):
+		self._Rcvr = value if type(value) != auto else self.make_default("Rcvr")
 
-	@Sbjt.deleter
-	def Sbjt(self):
-		del self._Sbjt
-		self._Sbjt = None
+	@Rcvr.deleter
+	def Rcvr(self):
+		del self._Rcvr
+		self._Rcvr = None
 
 	@property
-	def DueDt(self):
-		return self._DueDt
+	def Sndr(self):
+		return self._Sndr
 
-	@DueDt.setter
-	def DueDt(self, value):
-		self._DueDt = value if type(value) != auto else self.make_default("DueDt")
+	@Sndr.setter
+	def Sndr(self, value):
+		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
 
-	@DueDt.deleter
-	def DueDt(self):
-		del self._DueDt
-		self._DueDt = None
+	@Sndr.deleter
+	def Sndr(self):
+		del self._Sndr
+		self._Sndr = None
+
+	@property
+	def ReqOrLttrId(self):
+		return self._ReqOrLttrId
+
+	@ReqOrLttrId.setter
+	def ReqOrLttrId(self, value):
+		self._ReqOrLttrId = value if type(value) != auto else self.make_default("ReqOrLttrId")
+
+	@ReqOrLttrId.deleter
+	def ReqOrLttrId(self):
+		del self._ReqOrLttrId
+		self._ReqOrLttrId = None
+
+	@property
+	def RspnReqrd(self):
+		return self._RspnReqrd
+
+	@RspnReqrd.setter
+	def RspnReqrd(self, value):
+		self._RspnReqrd = value if type(value) != auto else self.make_default("RspnReqrd")
+
+	@RspnReqrd.deleter
+	def RspnReqrd(self):
+		del self._RspnReqrd
+		self._RspnReqrd = None
 
 	@property
 	def Desc(self):
@@ -169,18 +117,70 @@ class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def DueDt(self):
+		return self._DueDt
+
+	@DueDt.setter
+	def DueDt(self, value):
+		self._DueDt = value if type(value) != auto else self.make_default("DueDt")
+
+	@DueDt.deleter
+	def DueDt(self):
+		del self._DueDt
+		self._DueDt = None
+
+	@property
+	def Attchmnt(self):
+		return self._Attchmnt
+
+	@Attchmnt.setter
+	def Attchmnt(self, value):
+		self._Attchmnt = value if type(value) != auto else self.make_default("Attchmnt")
+
+	@Attchmnt.deleter
+	def Attchmnt(self):
+		del self._Attchmnt
+		self._Attchmnt = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def OrgnlRefs(self):
+		return self._OrgnlRefs
+
+	@OrgnlRefs.setter
+	def OrgnlRefs(self, value):
+		self._OrgnlRefs = value if type(value) != auto else self.make_default("OrgnlRefs")
+
+	@OrgnlRefs.deleter
+	def OrgnlRefs(self):
+		del self._OrgnlRefs
+		self._OrgnlRefs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Attchmnt', type=DocumentGeneralInformation5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqOrLttrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlRefs', type=OriginalMessage6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sndr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rcvr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnReqrd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sbjt', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DueDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcvr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sndr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqOrLttrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnReqrd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=SupportLetterType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DueDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Attchmnt', type=DocumentGeneralInformation5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlRefs', type=OriginalMessage6, min=0, max=None, mutex_group=None, array=True),
 	))
 

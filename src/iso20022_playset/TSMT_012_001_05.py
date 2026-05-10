@@ -1,5 +1,5 @@
 from . import base_types
-import BaselineReSubmissionV05
+from .BaselineReSubmissionV05 import BaselineReSubmissionV05
 
 class TSMT_012_001_05():
 

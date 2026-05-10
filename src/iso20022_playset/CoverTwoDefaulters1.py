@@ -1,5 +1,5 @@
 from . import base_types
-import LEIIdentifier
+from .LEIIdentifier import LEIIdentifier
 
 class CoverTwoDefaulters1(base_types._BaseFieldType):
 

@@ -1,22 +1,9 @@
 from . import base_types
-import PartyIdentificationAndAccount147
+from .PartyIdentificationAndAccount147 import PartyIdentificationAndAccount147
 
 class ReceivingPartiesAndAccount16(base_types._BaseFieldType):
 
-	__slots__ = ["_RcvrsCtdnDtls", "_RcvrsIntrmy2Dtls", "_RcvgAgtDtls", "_RcvrsIntrmy1Dtls"]
-	@property
-	def RcvrsCtdnDtls(self):
-		return self._RcvrsCtdnDtls
-
-	@RcvrsCtdnDtls.setter
-	def RcvrsCtdnDtls(self, value):
-		self._RcvrsCtdnDtls = value if type(value) != auto else self.make_default("RcvrsCtdnDtls")
-
-	@RcvrsCtdnDtls.deleter
-	def RcvrsCtdnDtls(self):
-		del self._RcvrsCtdnDtls
-		self._RcvrsCtdnDtls = None
-
+	__slots__ = ["_RcvrsIntrmy2Dtls", "_RcvrsIntrmy1Dtls", "_RcvrsCtdnDtls", "_RcvgAgtDtls"]
 	@property
 	def RcvrsIntrmy2Dtls(self):
 		return self._RcvrsIntrmy2Dtls
@@ -31,19 +18,6 @@ class ReceivingPartiesAndAccount16(base_types._BaseFieldType):
 		self._RcvrsIntrmy2Dtls = None
 
 	@property
-	def RcvgAgtDtls(self):
-		return self._RcvgAgtDtls
-
-	@RcvgAgtDtls.setter
-	def RcvgAgtDtls(self, value):
-		self._RcvgAgtDtls = value if type(value) != auto else self.make_default("RcvgAgtDtls")
-
-	@RcvgAgtDtls.deleter
-	def RcvgAgtDtls(self):
-		del self._RcvgAgtDtls
-		self._RcvgAgtDtls = None
-
-	@property
 	def RcvrsIntrmy1Dtls(self):
 		return self._RcvrsIntrmy1Dtls
 
@@ -56,10 +30,36 @@ class ReceivingPartiesAndAccount16(base_types._BaseFieldType):
 		del self._RcvrsIntrmy1Dtls
 		self._RcvrsIntrmy1Dtls = None
 
+	@property
+	def RcvrsCtdnDtls(self):
+		return self._RcvrsCtdnDtls
+
+	@RcvrsCtdnDtls.setter
+	def RcvrsCtdnDtls(self, value):
+		self._RcvrsCtdnDtls = value if type(value) != auto else self.make_default("RcvrsCtdnDtls")
+
+	@RcvrsCtdnDtls.deleter
+	def RcvrsCtdnDtls(self):
+		del self._RcvrsCtdnDtls
+		self._RcvrsCtdnDtls = None
+
+	@property
+	def RcvgAgtDtls(self):
+		return self._RcvgAgtDtls
+
+	@RcvgAgtDtls.setter
+	def RcvgAgtDtls(self, value):
+		self._RcvgAgtDtls = value if type(value) != auto else self.make_default("RcvgAgtDtls")
+
+	@RcvgAgtDtls.deleter
+	def RcvgAgtDtls(self):
+		del self._RcvgAgtDtls
+		self._RcvgAgtDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcvrsCtdnDtls', type=PartyIdentificationAndAccount147, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvrsIntrmy2Dtls', type=PartyIdentificationAndAccount147, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcvgAgtDtls', type=PartyIdentificationAndAccount147, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvrsIntrmy1Dtls', type=PartyIdentificationAndAccount147, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvrsCtdnDtls', type=PartyIdentificationAndAccount147, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvgAgtDtls', type=PartyIdentificationAndAccount147, min=1, max=1, mutex_group=None, array=False),
 	))
 

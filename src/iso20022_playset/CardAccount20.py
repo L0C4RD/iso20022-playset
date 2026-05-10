@@ -1,27 +1,40 @@
 from . import base_types
-import NameAndAddress3
-import CardAccountType3Code
-import AccountChoiceMethod1Code
-import AccountIdentification80Choice
-import Max70Text
-import PartyIdentification177Choice
-import ActiveCurrencyCode
+from .AccountIdentification80Choice import AccountIdentification80Choice
+from .Max70Text import Max70Text
+from .PartyIdentification177Choice import PartyIdentification177Choice
+from .NameAndAddress3 import NameAndAddress3
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .CardAccountType3Code import CardAccountType3Code
+from .AccountChoiceMethod1Code import AccountChoiceMethod1Code
 
 class CardAccount20(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctNm", "_AcctIdr", "_Svcr", "_AcctOwnr", "_SelctnMtd", "_Ccy", "_SelctdAcctTp"]
+	__slots__ = ["_AcctOwnr", "_Ccy", "_AcctIdr", "_Svcr", "_SelctdAcctTp", "_SelctnMtd", "_AcctNm"]
 	@property
-	def AcctNm(self):
-		return self._AcctNm
+	def AcctOwnr(self):
+		return self._AcctOwnr
 
-	@AcctNm.setter
-	def AcctNm(self, value):
-		self._AcctNm = value if type(value) != auto else self.make_default("AcctNm")
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
 
-	@AcctNm.deleter
-	def AcctNm(self):
-		del self._AcctNm
-		self._AcctNm = None
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def AcctIdr(self):
@@ -50,17 +63,17 @@ class CardAccount20(base_types._BaseFieldType):
 		self._Svcr = None
 
 	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
+	def SelctdAcctTp(self):
+		return self._SelctdAcctTp
 
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+	@SelctdAcctTp.setter
+	def SelctdAcctTp(self, value):
+		self._SelctdAcctTp = value if type(value) != auto else self.make_default("SelctdAcctTp")
 
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
+	@SelctdAcctTp.deleter
+	def SelctdAcctTp(self):
+		del self._SelctdAcctTp
+		self._SelctdAcctTp = None
 
 	@property
 	def SelctnMtd(self):
@@ -76,38 +89,25 @@ class CardAccount20(base_types._BaseFieldType):
 		self._SelctnMtd = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def AcctNm(self):
+		return self._AcctNm
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@AcctNm.setter
+	def AcctNm(self, value):
+		self._AcctNm = value if type(value) != auto else self.make_default("AcctNm")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
-	def SelctdAcctTp(self):
-		return self._SelctdAcctTp
-
-	@SelctdAcctTp.setter
-	def SelctdAcctTp(self, value):
-		self._SelctdAcctTp = value if type(value) != auto else self.make_default("SelctdAcctTp")
-
-	@SelctdAcctTp.deleter
-	def SelctdAcctTp(self):
-		del self._SelctdAcctTp
-		self._SelctdAcctTp = None
+	@AcctNm.deleter
+	def AcctNm(self):
+		del self._AcctNm
+		self._AcctNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=NameAndAddress3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctIdr', type=AccountIdentification80Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Svcr', type=PartyIdentification177Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=NameAndAddress3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SelctnMtd', type=AccountChoiceMethod1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SelctdAcctTp', type=CardAccountType3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SelctnMtd', type=AccountChoiceMethod1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

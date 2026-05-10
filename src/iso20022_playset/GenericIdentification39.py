@@ -1,6 +1,6 @@
 from . import base_types
-import RestrictedFINMax30Text
-import RestrictedFINMax8Text
+from .RestrictedFINMax30Text import RestrictedFINMax30Text
+from .RestrictedFINMax8Text import RestrictedFINMax8Text
 
 class GenericIdentification39(base_types._BaseFieldType):
 

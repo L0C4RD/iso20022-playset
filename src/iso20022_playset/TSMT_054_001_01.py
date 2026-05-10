@@ -1,5 +1,5 @@
 from . import base_types
-import InvoicePaymentReconciliationStatusV01
+from .InvoicePaymentReconciliationStatusV01 import InvoicePaymentReconciliationStatusV01
 
 class TSMT_054_001_01():
 

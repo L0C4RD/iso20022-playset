@@ -1,25 +1,12 @@
 from . import base_types
-import TargetMarket1Code
-import TargetMarket3Code
-import TargetMarket5Choice
-import OtherTargetMarketInvestor1
+from .TargetMarket3Code import TargetMarket3Code
+from .OtherTargetMarketInvestor1 import OtherTargetMarketInvestor1
+from .TargetMarket1Code import TargetMarket1Code
+from .TargetMarket5Choice import TargetMarket5Choice
 
 class InvestorType2(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_InvstrTpRtl", "_InvstrTpPrfssnl", "_InvstrTpElgblCtrPty"]
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
+	__slots__ = ["_InvstrTpRtl", "_InvstrTpPrfssnl", "_Othr", "_InvstrTpElgblCtrPty"]
 	@property
 	def InvstrTpRtl(self):
 		return self._InvstrTpRtl
@@ -47,6 +34,19 @@ class InvestorType2(base_types._BaseFieldType):
 		self._InvstrTpPrfssnl = None
 
 	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
+	@property
 	def InvstrTpElgblCtrPty(self):
 		return self._InvstrTpElgblCtrPty
 
@@ -60,9 +60,9 @@ class InvestorType2(base_types._BaseFieldType):
 		self._InvstrTpElgblCtrPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=OtherTargetMarketInvestor1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InvstrTpRtl', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstrTpPrfssnl', type=TargetMarket5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=OtherTargetMarketInvestor1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InvstrTpElgblCtrPty', type=TargetMarket3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

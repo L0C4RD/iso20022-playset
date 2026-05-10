@@ -1,6 +1,6 @@
 from . import base_types
-import PercentageRate
-import FloatingInterestRate4
+from .PercentageRate import PercentageRate
+from .FloatingInterestRate4 import FloatingInterestRate4
 
 class InterestRate2Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import WithdrawalReason1Code
-import Max4Text
+from .Max4Text import Max4Text
+from .WithdrawalReason1Code import WithdrawalReason1Code
 
 class WithdrawalReason1(base_types._BaseFieldType):
 

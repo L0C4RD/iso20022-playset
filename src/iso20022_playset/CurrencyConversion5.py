@@ -1,12 +1,12 @@
 from . import base_types
-import ImpliedCurrencyAndAmount
-import Exact3NumericText
-import BaseOneRate
-import ActiveCurrencyCode
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .BaseOneRate import BaseOneRate
+from .Exact3NumericText import Exact3NumericText
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class CurrencyConversion5(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_SrcCcy", "_SrcCcyNmrc", "_TrgtCcy", "_ClctdAmt", "_TrgtCcyNmrc"]
+	__slots__ = ["_Rate", "_TrgtCcy", "_ClctdAmt", "_SrcCcyNmrc", "_SrcCcy", "_TrgtCcyNmrc"]
 	@property
 	def Rate(self):
 		return self._Rate
@@ -19,32 +19,6 @@ class CurrencyConversion5(base_types._BaseFieldType):
 	def Rate(self):
 		del self._Rate
 		self._Rate = None
-
-	@property
-	def SrcCcy(self):
-		return self._SrcCcy
-
-	@SrcCcy.setter
-	def SrcCcy(self, value):
-		self._SrcCcy = value if type(value) != auto else self.make_default("SrcCcy")
-
-	@SrcCcy.deleter
-	def SrcCcy(self):
-		del self._SrcCcy
-		self._SrcCcy = None
-
-	@property
-	def SrcCcyNmrc(self):
-		return self._SrcCcyNmrc
-
-	@SrcCcyNmrc.setter
-	def SrcCcyNmrc(self, value):
-		self._SrcCcyNmrc = value if type(value) != auto else self.make_default("SrcCcyNmrc")
-
-	@SrcCcyNmrc.deleter
-	def SrcCcyNmrc(self):
-		del self._SrcCcyNmrc
-		self._SrcCcyNmrc = None
 
 	@property
 	def TrgtCcy(self):
@@ -73,6 +47,32 @@ class CurrencyConversion5(base_types._BaseFieldType):
 		self._ClctdAmt = None
 
 	@property
+	def SrcCcyNmrc(self):
+		return self._SrcCcyNmrc
+
+	@SrcCcyNmrc.setter
+	def SrcCcyNmrc(self, value):
+		self._SrcCcyNmrc = value if type(value) != auto else self.make_default("SrcCcyNmrc")
+
+	@SrcCcyNmrc.deleter
+	def SrcCcyNmrc(self):
+		del self._SrcCcyNmrc
+		self._SrcCcyNmrc = None
+
+	@property
+	def SrcCcy(self):
+		return self._SrcCcy
+
+	@SrcCcy.setter
+	def SrcCcy(self, value):
+		self._SrcCcy = value if type(value) != auto else self.make_default("SrcCcy")
+
+	@SrcCcy.deleter
+	def SrcCcy(self):
+		del self._SrcCcy
+		self._SrcCcy = None
+
+	@property
 	def TrgtCcyNmrc(self):
 		return self._TrgtCcyNmrc
 
@@ -87,10 +87,10 @@ class CurrencyConversion5(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrcCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrcCcyNmrc', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrgtCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClctdAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrcCcyNmrc', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrcCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrgtCcyNmrc', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

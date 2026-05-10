@@ -1,26 +1,13 @@
 from . import base_types
-import ContactIdentification3
-import MessageIdentification1
-import Baseline5
-import ContactIdentification1
-import SimpleIdentificationInformation
+from .ContactIdentification1 import ContactIdentification1
+from .MessageIdentification1 import MessageIdentification1
+from .SimpleIdentificationInformation import SimpleIdentificationInformation
+from .Baseline5 import Baseline5
+from .ContactIdentification3 import ContactIdentification3
 
 class BaselineAmendmentRequestV05(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmitrTxRef", "_ReqId", "_BuyrBkCtctPrsn", "_OthrBkCtctPrsn", "_SellrBkCtctPrsn", "_SellrCtctPrsn", "_Baseln", "_TxId", "_BuyrCtctPrsn"]
-	@property
-	def SubmitrTxRef(self):
-		return self._SubmitrTxRef
-
-	@SubmitrTxRef.setter
-	def SubmitrTxRef(self, value):
-		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
-
-	@SubmitrTxRef.deleter
-	def SubmitrTxRef(self):
-		del self._SubmitrTxRef
-		self._SubmitrTxRef = None
-
+	__slots__ = ["_ReqId", "_SellrCtctPrsn", "_TxId", "_BuyrBkCtctPrsn", "_Baseln", "_OthrBkCtctPrsn", "_SellrBkCtctPrsn", "_BuyrCtctPrsn", "_SubmitrTxRef"]
 	@property
 	def ReqId(self):
 		return self._ReqId
@@ -35,6 +22,32 @@ class BaselineAmendmentRequestV05(base_types._BaseFieldType):
 		self._ReqId = None
 
 	@property
+	def SellrCtctPrsn(self):
+		return self._SellrCtctPrsn
+
+	@SellrCtctPrsn.setter
+	def SellrCtctPrsn(self, value):
+		self._SellrCtctPrsn = value if type(value) != auto else self.make_default("SellrCtctPrsn")
+
+	@SellrCtctPrsn.deleter
+	def SellrCtctPrsn(self):
+		del self._SellrCtctPrsn
+		self._SellrCtctPrsn = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
 	def BuyrBkCtctPrsn(self):
 		return self._BuyrBkCtctPrsn
 
@@ -46,6 +59,19 @@ class BaselineAmendmentRequestV05(base_types._BaseFieldType):
 	def BuyrBkCtctPrsn(self):
 		del self._BuyrBkCtctPrsn
 		self._BuyrBkCtctPrsn = None
+
+	@property
+	def Baseln(self):
+		return self._Baseln
+
+	@Baseln.setter
+	def Baseln(self, value):
+		self._Baseln = value if type(value) != auto else self.make_default("Baseln")
+
+	@Baseln.deleter
+	def Baseln(self):
+		del self._Baseln
+		self._Baseln = None
 
 	@property
 	def OthrBkCtctPrsn(self):
@@ -74,45 +100,6 @@ class BaselineAmendmentRequestV05(base_types._BaseFieldType):
 		self._SellrBkCtctPrsn = None
 
 	@property
-	def SellrCtctPrsn(self):
-		return self._SellrCtctPrsn
-
-	@SellrCtctPrsn.setter
-	def SellrCtctPrsn(self, value):
-		self._SellrCtctPrsn = value if type(value) != auto else self.make_default("SellrCtctPrsn")
-
-	@SellrCtctPrsn.deleter
-	def SellrCtctPrsn(self):
-		del self._SellrCtctPrsn
-		self._SellrCtctPrsn = None
-
-	@property
-	def Baseln(self):
-		return self._Baseln
-
-	@Baseln.setter
-	def Baseln(self, value):
-		self._Baseln = value if type(value) != auto else self.make_default("Baseln")
-
-	@Baseln.deleter
-	def Baseln(self):
-		del self._Baseln
-		self._Baseln = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
 	def BuyrCtctPrsn(self):
 		return self._BuyrCtctPrsn
 
@@ -125,15 +112,28 @@ class BaselineAmendmentRequestV05(base_types._BaseFieldType):
 		del self._BuyrCtctPrsn
 		self._BuyrCtctPrsn = None
 
+	@property
+	def SubmitrTxRef(self):
+		return self._SubmitrTxRef
+
+	@SubmitrTxRef.setter
+	def SubmitrTxRef(self, value):
+		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
+
+	@SubmitrTxRef.deleter
+	def SubmitrTxRef(self):
+		del self._SubmitrTxRef
+		self._SubmitrTxRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrCtctPrsn', type=ContactIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyrBkCtctPrsn', type=ContactIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Baseln', type=Baseline5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrBkCtctPrsn', type=ContactIdentification3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SellrBkCtctPrsn', type=ContactIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SellrCtctPrsn', type=ContactIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Baseln', type=Baseline5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyrCtctPrsn', type=ContactIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 	))
 

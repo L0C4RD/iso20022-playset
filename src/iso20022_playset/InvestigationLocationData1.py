@@ -1,7 +1,7 @@
 from . import base_types
-import InvestigationLocationMethod1Code
-import NameAndAddress16
-import Max2048Text
+from .NameAndAddress16 import NameAndAddress16
+from .InvestigationLocationMethod1Code import InvestigationLocationMethod1Code
+from .Max2048Text import Max2048Text
 
 class InvestigationLocationData1(base_types._BaseFieldType):
 

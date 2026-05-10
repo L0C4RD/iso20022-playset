@@ -1,6 +1,6 @@
 from . import base_types
-import PartyIdentification272
-import AuthorityInvestigation2
+from .PartyIdentification272 import PartyIdentification272
+from .AuthorityInvestigation2 import AuthorityInvestigation2
 
 class CustomerIdentification2(base_types._BaseFieldType):
 

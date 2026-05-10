@@ -1,38 +1,12 @@
 from . import base_types
-import SupplementaryData1
-import Max52Text
-import LEIIdentifier
-import RecordTechnicalData2
+from .RecordTechnicalData2 import RecordTechnicalData2
+from .SupplementaryData1 import SupplementaryData1
+from .Max52Text import Max52Text
+from .LEIIdentifier import LEIIdentifier
 
 class SecuritiesTransactionReport2(base_types._BaseFieldType):
 
-	__slots__ = ["_ExctgPty", "_TxId", "_TechAttrbts", "_SplmtryData", "_SubmitgPty"]
-	@property
-	def ExctgPty(self):
-		return self._ExctgPty
-
-	@ExctgPty.setter
-	def ExctgPty(self, value):
-		self._ExctgPty = value if type(value) != auto else self.make_default("ExctgPty")
-
-	@ExctgPty.deleter
-	def ExctgPty(self):
-		del self._ExctgPty
-		self._ExctgPty = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
+	__slots__ = ["_TechAttrbts", "_SplmtryData", "_ExctgPty", "_SubmitgPty", "_TxId"]
 	@property
 	def TechAttrbts(self):
 		return self._TechAttrbts
@@ -60,6 +34,19 @@ class SecuritiesTransactionReport2(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def ExctgPty(self):
+		return self._ExctgPty
+
+	@ExctgPty.setter
+	def ExctgPty(self, value):
+		self._ExctgPty = value if type(value) != auto else self.make_default("ExctgPty")
+
+	@ExctgPty.deleter
+	def ExctgPty(self):
+		del self._ExctgPty
+		self._ExctgPty = None
+
+	@property
 	def SubmitgPty(self):
 		return self._SubmitgPty
 
@@ -72,11 +59,24 @@ class SecuritiesTransactionReport2(base_types._BaseFieldType):
 		del self._SubmitgPty
 		self._SubmitgPty = None
 
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ExctgPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechAttrbts', type=RecordTechnicalData2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ExctgPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitgPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

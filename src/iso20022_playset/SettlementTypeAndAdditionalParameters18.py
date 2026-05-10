@@ -1,24 +1,24 @@
 from . import base_types
-import RestrictedFINXMax16Text
-import ReceiveDelivery1Code
-import YesNoIndicator
-import DeliveryReceiptType2Code
+from .DeliveryReceiptType2Code import DeliveryReceiptType2Code
+from .YesNoIndicator import YesNoIndicator
+from .ReceiveDelivery1Code import ReceiveDelivery1Code
+from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class SettlementTypeAndAdditionalParameters18(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnEvtId", "_SctiesMvmntTp", "_Pmt", "_CmonId", "_RcncltnInd"]
+	__slots__ = ["_CmonId", "_SctiesMvmntTp", "_CorpActnEvtId", "_RcncltnInd", "_Pmt"]
 	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
+	def CmonId(self):
+		return self._CmonId
 
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
+	@CmonId.setter
+	def CmonId(self, value):
+		self._CmonId = value if type(value) != auto else self.make_default("CmonId")
 
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
+	@CmonId.deleter
+	def CmonId(self):
+		del self._CmonId
+		self._CmonId = None
 
 	@property
 	def SctiesMvmntTp(self):
@@ -34,30 +34,17 @@ class SettlementTypeAndAdditionalParameters18(base_types._BaseFieldType):
 		self._SctiesMvmntTp = None
 
 	@property
-	def Pmt(self):
-		return self._Pmt
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
 
-	@Pmt.setter
-	def Pmt(self, value):
-		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
 
-	@Pmt.deleter
-	def Pmt(self):
-		del self._Pmt
-		self._Pmt = None
-
-	@property
-	def CmonId(self):
-		return self._CmonId
-
-	@CmonId.setter
-	def CmonId(self, value):
-		self._CmonId = value if type(value) != auto else self.make_default("CmonId")
-
-	@CmonId.deleter
-	def CmonId(self):
-		del self._CmonId
-		self._CmonId = None
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
 
 	@property
 	def RcncltnInd(self):
@@ -72,11 +59,24 @@ class SettlementTypeAndAdditionalParameters18(base_types._BaseFieldType):
 		del self._RcncltnInd
 		self._RcncltnInd = None
 
+	@property
+	def Pmt(self):
+		return self._Pmt
+
+	@Pmt.setter
+	def Pmt(self, value):
+		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
+
+	@Pmt.deleter
+	def Pmt(self):
+		del self._Pmt
+		self._Pmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

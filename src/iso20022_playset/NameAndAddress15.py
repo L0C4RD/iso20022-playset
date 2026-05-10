@@ -1,23 +1,10 @@
 from . import base_types
-import Max350Text
-import PostalAddress21
+from .PostalAddress21 import PostalAddress21
+from .Max350Text import Max350Text
 
 class NameAndAddress15(base_types._BaseFieldType):
 
-	__slots__ = ["_PstlAdr", "_Nm"]
-	@property
-	def PstlAdr(self):
-		return self._PstlAdr
-
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
-
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
-
+	__slots__ = ["_Nm", "_PstlAdr"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -31,8 +18,21 @@ class NameAndAddress15(base_types._BaseFieldType):
 		del self._Nm
 		self._Nm = None
 
+	@property
+	def PstlAdr(self):
+		return self._PstlAdr
+
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress21, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress21, min=0, max=1, mutex_group=None, array=False),
 	))
 

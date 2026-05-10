@@ -1,58 +1,32 @@
 from . import base_types
-import PartyIdentification125Choice
-import FinancialInstitutionIdentification11Choice
-import AccountType2Choice
-import AccountIdentificationAndName5
-import BranchData4
-import CashAccountType3Choice
-import GenericIdentification82
-import ActiveCurrencyCode
-import PercentageBoundedRate
-import AccountDesignation1Choice
-import SettlementInstructionReason1Choice
-import CreditDebit3Code
+from .PercentageBoundedRate import PercentageBoundedRate
+from .PartyIdentification125Choice import PartyIdentification125Choice
+from .CreditDebit3Code import CreditDebit3Code
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .BranchData4 import BranchData4
+from .AccountDesignation1Choice import AccountDesignation1Choice
+from .GenericIdentification82 import GenericIdentification82
+from .SettlementInstructionReason1Choice import SettlementInstructionReason1Choice
+from .FinancialInstitutionIdentification11Choice import FinancialInstitutionIdentification11Choice
+from .AccountType2Choice import AccountType2Choice
+from .CashAccountType3Choice import CashAccountType3Choice
+from .AccountIdentificationAndName5 import AccountIdentificationAndName5
 
 class CashAccount204(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcrBrnch", "_SttlmInstrRsn", "_CshAcctPurp", "_AcctOwnr", "_AcctOwnrOthrId", "_InvstmtAcctTp", "_SttlmCcy", "_DvddPctg", "_CdtDbt", "_Id", "_CshAcctDsgnt", "_AcctSvcr"]
+	__slots__ = ["_SttlmCcy", "_AcctOwnr", "_CdtDbt", "_CshAcctPurp", "_AcctOwnrOthrId", "_SttlmInstrRsn", "_AcctSvcrBrnch", "_DvddPctg", "_AcctSvcr", "_Id", "_CshAcctDsgnt", "_InvstmtAcctTp"]
 	@property
-	def AcctSvcrBrnch(self):
-		return self._AcctSvcrBrnch
+	def SttlmCcy(self):
+		return self._SttlmCcy
 
-	@AcctSvcrBrnch.setter
-	def AcctSvcrBrnch(self, value):
-		self._AcctSvcrBrnch = value if type(value) != auto else self.make_default("AcctSvcrBrnch")
+	@SttlmCcy.setter
+	def SttlmCcy(self, value):
+		self._SttlmCcy = value if type(value) != auto else self.make_default("SttlmCcy")
 
-	@AcctSvcrBrnch.deleter
-	def AcctSvcrBrnch(self):
-		del self._AcctSvcrBrnch
-		self._AcctSvcrBrnch = None
-
-	@property
-	def SttlmInstrRsn(self):
-		return self._SttlmInstrRsn
-
-	@SttlmInstrRsn.setter
-	def SttlmInstrRsn(self, value):
-		self._SttlmInstrRsn = value if type(value) != auto else self.make_default("SttlmInstrRsn")
-
-	@SttlmInstrRsn.deleter
-	def SttlmInstrRsn(self):
-		del self._SttlmInstrRsn
-		self._SttlmInstrRsn = None
-
-	@property
-	def CshAcctPurp(self):
-		return self._CshAcctPurp
-
-	@CshAcctPurp.setter
-	def CshAcctPurp(self, value):
-		self._CshAcctPurp = value if type(value) != auto else self.make_default("CshAcctPurp")
-
-	@CshAcctPurp.deleter
-	def CshAcctPurp(self):
-		del self._CshAcctPurp
-		self._CshAcctPurp = None
+	@SttlmCcy.deleter
+	def SttlmCcy(self):
+		del self._SttlmCcy
+		self._SttlmCcy = None
 
 	@property
 	def AcctOwnr(self):
@@ -68,6 +42,32 @@ class CashAccount204(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
+	def CdtDbt(self):
+		return self._CdtDbt
+
+	@CdtDbt.setter
+	def CdtDbt(self, value):
+		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+
+	@CdtDbt.deleter
+	def CdtDbt(self):
+		del self._CdtDbt
+		self._CdtDbt = None
+
+	@property
+	def CshAcctPurp(self):
+		return self._CshAcctPurp
+
+	@CshAcctPurp.setter
+	def CshAcctPurp(self, value):
+		self._CshAcctPurp = value if type(value) != auto else self.make_default("CshAcctPurp")
+
+	@CshAcctPurp.deleter
+	def CshAcctPurp(self):
+		del self._CshAcctPurp
+		self._CshAcctPurp = None
+
+	@property
 	def AcctOwnrOthrId(self):
 		return self._AcctOwnrOthrId
 
@@ -81,30 +81,30 @@ class CashAccount204(base_types._BaseFieldType):
 		self._AcctOwnrOthrId = None
 
 	@property
-	def InvstmtAcctTp(self):
-		return self._InvstmtAcctTp
+	def SttlmInstrRsn(self):
+		return self._SttlmInstrRsn
 
-	@InvstmtAcctTp.setter
-	def InvstmtAcctTp(self, value):
-		self._InvstmtAcctTp = value if type(value) != auto else self.make_default("InvstmtAcctTp")
+	@SttlmInstrRsn.setter
+	def SttlmInstrRsn(self, value):
+		self._SttlmInstrRsn = value if type(value) != auto else self.make_default("SttlmInstrRsn")
 
-	@InvstmtAcctTp.deleter
-	def InvstmtAcctTp(self):
-		del self._InvstmtAcctTp
-		self._InvstmtAcctTp = None
+	@SttlmInstrRsn.deleter
+	def SttlmInstrRsn(self):
+		del self._SttlmInstrRsn
+		self._SttlmInstrRsn = None
 
 	@property
-	def SttlmCcy(self):
-		return self._SttlmCcy
+	def AcctSvcrBrnch(self):
+		return self._AcctSvcrBrnch
 
-	@SttlmCcy.setter
-	def SttlmCcy(self, value):
-		self._SttlmCcy = value if type(value) != auto else self.make_default("SttlmCcy")
+	@AcctSvcrBrnch.setter
+	def AcctSvcrBrnch(self, value):
+		self._AcctSvcrBrnch = value if type(value) != auto else self.make_default("AcctSvcrBrnch")
 
-	@SttlmCcy.deleter
-	def SttlmCcy(self):
-		del self._SttlmCcy
-		self._SttlmCcy = None
+	@AcctSvcrBrnch.deleter
+	def AcctSvcrBrnch(self):
+		del self._AcctSvcrBrnch
+		self._AcctSvcrBrnch = None
 
 	@property
 	def DvddPctg(self):
@@ -120,17 +120,17 @@ class CashAccount204(base_types._BaseFieldType):
 		self._DvddPctg = None
 
 	@property
-	def CdtDbt(self):
-		return self._CdtDbt
+	def AcctSvcr(self):
+		return self._AcctSvcr
 
-	@CdtDbt.setter
-	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
 
-	@CdtDbt.deleter
-	def CdtDbt(self):
-		del self._CdtDbt
-		self._CdtDbt = None
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
 
 	@property
 	def Id(self):
@@ -159,30 +159,30 @@ class CashAccount204(base_types._BaseFieldType):
 		self._CshAcctDsgnt = None
 
 	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
+	def InvstmtAcctTp(self):
+		return self._InvstmtAcctTp
 
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+	@InvstmtAcctTp.setter
+	def InvstmtAcctTp(self, value):
+		self._InvstmtAcctTp = value if type(value) != auto else self.make_default("InvstmtAcctTp")
 
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
+	@InvstmtAcctTp.deleter
+	def InvstmtAcctTp(self):
+		del self._InvstmtAcctTp
+		self._InvstmtAcctTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctSvcrBrnch', type=BranchData4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmInstrRsn', type=SettlementInstructionReason1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctPurp', type=CashAccountType3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrOthrId', type=GenericIdentification82, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InvstmtAcctTp', type=AccountType2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DvddPctg', type=PercentageBoundedRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctPurp', type=CashAccountType3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrOthrId', type=GenericIdentification82, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmInstrRsn', type=SettlementInstructionReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrBrnch', type=BranchData4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DvddPctg', type=PercentageBoundedRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=FinancialInstitutionIdentification11Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentificationAndName5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctDsgnt', type=AccountDesignation1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcr', type=FinancialInstitutionIdentification11Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstmtAcctTp', type=AccountType2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

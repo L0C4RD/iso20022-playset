@@ -1,27 +1,27 @@
 from . import base_types
-import Tax41
-import ImpliedCurrencyAndAmount
-import AdditionalData1
-import Max15Text
-import Max35Text
-import Max4Text
-import CreditDebit3Code
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .Max35Text import Max35Text
+from .AdditionalData1 import AdditionalData1
+from .Max4Text import Max4Text
+from .CreditDebit3Code import CreditDebit3Code
+from .Max15Text import Max15Text
+from .Tax41 import Tax41
 
 class AncillaryPurchase3(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdDocNb", "_Tax", "_SummryCmmdtyId", "_Fee", "_SvcCtgyCd", "_SvcSubCtgyCd", "_Amt", "_CdtDbt", "_SvcPrvdrSvcTp", "_AddtlData", "_DocNb", "_CdtRsnCd"]
+	__slots__ = ["_SvcPrvdrSvcTp", "_Tax", "_Fee", "_SvcCtgyCd", "_SummryCmmdtyId", "_CdtDbt", "_Amt", "_CdtRsnCd", "_AddtlData", "_RltdDocNb", "_DocNb", "_SvcSubCtgyCd"]
 	@property
-	def RltdDocNb(self):
-		return self._RltdDocNb
+	def SvcPrvdrSvcTp(self):
+		return self._SvcPrvdrSvcTp
 
-	@RltdDocNb.setter
-	def RltdDocNb(self, value):
-		self._RltdDocNb = value if type(value) != auto else self.make_default("RltdDocNb")
+	@SvcPrvdrSvcTp.setter
+	def SvcPrvdrSvcTp(self, value):
+		self._SvcPrvdrSvcTp = value if type(value) != auto else self.make_default("SvcPrvdrSvcTp")
 
-	@RltdDocNb.deleter
-	def RltdDocNb(self):
-		del self._RltdDocNb
-		self._RltdDocNb = None
+	@SvcPrvdrSvcTp.deleter
+	def SvcPrvdrSvcTp(self):
+		del self._SvcPrvdrSvcTp
+		self._SvcPrvdrSvcTp = None
 
 	@property
 	def Tax(self):
@@ -35,19 +35,6 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 	def Tax(self):
 		del self._Tax
 		self._Tax = None
-
-	@property
-	def SummryCmmdtyId(self):
-		return self._SummryCmmdtyId
-
-	@SummryCmmdtyId.setter
-	def SummryCmmdtyId(self, value):
-		self._SummryCmmdtyId = value if type(value) != auto else self.make_default("SummryCmmdtyId")
-
-	@SummryCmmdtyId.deleter
-	def SummryCmmdtyId(self):
-		del self._SummryCmmdtyId
-		self._SummryCmmdtyId = None
 
 	@property
 	def Fee(self):
@@ -76,30 +63,17 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 		self._SvcCtgyCd = None
 
 	@property
-	def SvcSubCtgyCd(self):
-		return self._SvcSubCtgyCd
+	def SummryCmmdtyId(self):
+		return self._SummryCmmdtyId
 
-	@SvcSubCtgyCd.setter
-	def SvcSubCtgyCd(self, value):
-		self._SvcSubCtgyCd = value if type(value) != auto else self.make_default("SvcSubCtgyCd")
+	@SummryCmmdtyId.setter
+	def SummryCmmdtyId(self, value):
+		self._SummryCmmdtyId = value if type(value) != auto else self.make_default("SummryCmmdtyId")
 
-	@SvcSubCtgyCd.deleter
-	def SvcSubCtgyCd(self):
-		del self._SvcSubCtgyCd
-		self._SvcSubCtgyCd = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@SummryCmmdtyId.deleter
+	def SummryCmmdtyId(self):
+		del self._SummryCmmdtyId
+		self._SummryCmmdtyId = None
 
 	@property
 	def CdtDbt(self):
@@ -115,17 +89,30 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 		self._CdtDbt = None
 
 	@property
-	def SvcPrvdrSvcTp(self):
-		return self._SvcPrvdrSvcTp
+	def Amt(self):
+		return self._Amt
 
-	@SvcPrvdrSvcTp.setter
-	def SvcPrvdrSvcTp(self, value):
-		self._SvcPrvdrSvcTp = value if type(value) != auto else self.make_default("SvcPrvdrSvcTp")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@SvcPrvdrSvcTp.deleter
-	def SvcPrvdrSvcTp(self):
-		del self._SvcPrvdrSvcTp
-		self._SvcPrvdrSvcTp = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def CdtRsnCd(self):
+		return self._CdtRsnCd
+
+	@CdtRsnCd.setter
+	def CdtRsnCd(self, value):
+		self._CdtRsnCd = value if type(value) != auto else self.make_default("CdtRsnCd")
+
+	@CdtRsnCd.deleter
+	def CdtRsnCd(self):
+		del self._CdtRsnCd
+		self._CdtRsnCd = None
 
 	@property
 	def AddtlData(self):
@@ -141,6 +128,19 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 		self._AddtlData = None
 
 	@property
+	def RltdDocNb(self):
+		return self._RltdDocNb
+
+	@RltdDocNb.setter
+	def RltdDocNb(self, value):
+		self._RltdDocNb = value if type(value) != auto else self.make_default("RltdDocNb")
+
+	@RltdDocNb.deleter
+	def RltdDocNb(self):
+		del self._RltdDocNb
+		self._RltdDocNb = None
+
+	@property
 	def DocNb(self):
 		return self._DocNb
 
@@ -154,30 +154,30 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 		self._DocNb = None
 
 	@property
-	def CdtRsnCd(self):
-		return self._CdtRsnCd
+	def SvcSubCtgyCd(self):
+		return self._SvcSubCtgyCd
 
-	@CdtRsnCd.setter
-	def CdtRsnCd(self, value):
-		self._CdtRsnCd = value if type(value) != auto else self.make_default("CdtRsnCd")
+	@SvcSubCtgyCd.setter
+	def SvcSubCtgyCd(self, value):
+		self._SvcSubCtgyCd = value if type(value) != auto else self.make_default("SvcSubCtgyCd")
 
-	@CdtRsnCd.deleter
-	def CdtRsnCd(self):
-		del self._CdtRsnCd
-		self._CdtRsnCd = None
+	@SvcSubCtgyCd.deleter
+	def SvcSubCtgyCd(self):
+		del self._SvcSubCtgyCd
+		self._SvcSubCtgyCd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdDocNb', type=Max15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcPrvdrSvcTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SummryCmmdtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fee', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcCtgyCd', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcSubCtgyCd', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SummryCmmdtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcPrvdrSvcTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DocNb', type=Max15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtRsnCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RltdDocNb', type=Max15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocNb', type=Max15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcSubCtgyCd', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

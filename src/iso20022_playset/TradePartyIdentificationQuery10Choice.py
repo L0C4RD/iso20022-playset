@@ -1,6 +1,6 @@
 from . import base_types
-import PartyIdentification248Choice
-import NotReported1Code
+from .NotReported1Code import NotReported1Code
+from .PartyIdentification248Choice import PartyIdentification248Choice
 
 class TradePartyIdentificationQuery10Choice(base_types._BaseFieldType):
 

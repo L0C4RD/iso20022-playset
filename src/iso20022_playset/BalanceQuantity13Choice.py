@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification56
-import Quantity51Choice
+from .GenericIdentification56 import GenericIdentification56
+from .Quantity51Choice import Quantity51Choice
 
 class BalanceQuantity13Choice(base_types._BaseFieldType):
 

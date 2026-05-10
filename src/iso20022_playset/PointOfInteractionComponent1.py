@@ -1,12 +1,12 @@
 from . import base_types
-import Max16Text
-import Max35Text
-import POIComponentType1Code
-import Max70Text
+from .Max35Text import Max35Text
+from .Max16Text import Max16Text
+from .Max70Text import Max70Text
+from .POIComponentType1Code import POIComponentType1Code
 
 class PointOfInteractionComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_ManfctrId", "_SrlNb", "_ApprvlNb", "_VrsnNb", "_POICmpntTp", "_Mdl"]
+	__slots__ = ["_ManfctrId", "_ApprvlNb", "_VrsnNb", "_POICmpntTp", "_SrlNb", "_Mdl"]
 	@property
 	def ManfctrId(self):
 		return self._ManfctrId
@@ -19,19 +19,6 @@ class PointOfInteractionComponent1(base_types._BaseFieldType):
 	def ManfctrId(self):
 		del self._ManfctrId
 		self._ManfctrId = None
-
-	@property
-	def SrlNb(self):
-		return self._SrlNb
-
-	@SrlNb.setter
-	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != auto else self.make_default("SrlNb")
-
-	@SrlNb.deleter
-	def SrlNb(self):
-		del self._SrlNb
-		self._SrlNb = None
 
 	@property
 	def ApprvlNb(self):
@@ -73,6 +60,19 @@ class PointOfInteractionComponent1(base_types._BaseFieldType):
 		self._POICmpntTp = None
 
 	@property
+	def SrlNb(self):
+		return self._SrlNb
+
+	@SrlNb.setter
+	def SrlNb(self, value):
+		self._SrlNb = value if type(value) != auto else self.make_default("SrlNb")
+
+	@SrlNb.deleter
+	def SrlNb(self):
+		del self._SrlNb
+		self._SrlNb = None
+
+	@property
 	def Mdl(self):
 		return self._Mdl
 
@@ -87,10 +87,10 @@ class PointOfInteractionComponent1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ManfctrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApprvlNb', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='VrsnNb', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POICmpntTp', type=POIComponentType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mdl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

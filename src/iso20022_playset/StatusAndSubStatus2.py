@@ -1,6 +1,6 @@
 from . import base_types
-import Exact4AlphaNumericText
-import Status27Choice
+from .Status27Choice import Status27Choice
+from .Exact4AlphaNumericText import Exact4AlphaNumericText
 
 class StatusAndSubStatus2(base_types._BaseFieldType):
 

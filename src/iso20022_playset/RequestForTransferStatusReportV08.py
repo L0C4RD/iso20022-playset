@@ -1,24 +1,24 @@
 from . import base_types
-import Extension1
-import MarketPracticeVersion1
-import MessageAndBusinessReference13
-import MessageIdentification1
+from .MessageIdentification1 import MessageIdentification1
+from .MarketPracticeVersion1 import MarketPracticeVersion1
+from .Extension1 import Extension1
+from .MessageAndBusinessReference13 import MessageAndBusinessReference13
 
 class RequestForTransferStatusReportV08(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqDtls", "_MsgId", "_Xtnsn", "_MktPrctcVrsn"]
+	__slots__ = ["_MktPrctcVrsn", "_MsgId", "_Xtnsn", "_ReqDtls"]
 	@property
-	def ReqDtls(self):
-		return self._ReqDtls
+	def MktPrctcVrsn(self):
+		return self._MktPrctcVrsn
 
-	@ReqDtls.setter
-	def ReqDtls(self, value):
-		self._ReqDtls = value if type(value) != auto else self.make_default("ReqDtls")
+	@MktPrctcVrsn.setter
+	def MktPrctcVrsn(self, value):
+		self._MktPrctcVrsn = value if type(value) != auto else self.make_default("MktPrctcVrsn")
 
-	@ReqDtls.deleter
-	def ReqDtls(self):
-		del self._ReqDtls
-		self._ReqDtls = None
+	@MktPrctcVrsn.deleter
+	def MktPrctcVrsn(self):
+		del self._MktPrctcVrsn
+		self._MktPrctcVrsn = None
 
 	@property
 	def MsgId(self):
@@ -47,22 +47,22 @@ class RequestForTransferStatusReportV08(base_types._BaseFieldType):
 		self._Xtnsn = None
 
 	@property
-	def MktPrctcVrsn(self):
-		return self._MktPrctcVrsn
+	def ReqDtls(self):
+		return self._ReqDtls
 
-	@MktPrctcVrsn.setter
-	def MktPrctcVrsn(self, value):
-		self._MktPrctcVrsn = value if type(value) != auto else self.make_default("MktPrctcVrsn")
+	@ReqDtls.setter
+	def ReqDtls(self, value):
+		self._ReqDtls = value if type(value) != auto else self.make_default("ReqDtls")
 
-	@MktPrctcVrsn.deleter
-	def MktPrctcVrsn(self):
-		del self._MktPrctcVrsn
-		self._MktPrctcVrsn = None
+	@ReqDtls.deleter
+	def ReqDtls(self):
+		del self._ReqDtls
+		self._ReqDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqDtls', type=MessageAndBusinessReference13, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqDtls', type=MessageAndBusinessReference13, min=1, max=None, mutex_group=None, array=True),
 	))
 

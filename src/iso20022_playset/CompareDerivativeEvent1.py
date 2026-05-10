@@ -1,5 +1,5 @@
 from . import base_types
-import DerivativeEvent6
+from .DerivativeEvent6 import DerivativeEvent6
 
 class CompareDerivativeEvent1(base_types._BaseFieldType):
 

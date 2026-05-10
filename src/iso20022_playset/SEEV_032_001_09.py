@@ -1,5 +1,5 @@
 from . import base_types
-import CorporateActionEventProcessingStatusAdviceV09
+from .CorporateActionEventProcessingStatusAdviceV09 import CorporateActionEventProcessingStatusAdviceV09
 
 class SEEV_032_001_09():
 

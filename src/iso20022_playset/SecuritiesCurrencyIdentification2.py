@@ -1,27 +1,27 @@
 from . import base_types
-import ISODate
-import Max1Number
-import CurrencyCodeAndName1
-import CountryCodeAndName3
-import TrueFalseIndicator
-import Period4Choice
-import Modification1Code
+from .CurrencyCodeAndName1 import CurrencyCodeAndName1
+from .TrueFalseIndicator import TrueFalseIndicator
+from .ISODate import ISODate
+from .Period4Choice import Period4Choice
+from .Modification1Code import Modification1Code
+from .Max1Number import Max1Number
+from .CountryCodeAndName3 import CountryCodeAndName3
 
 class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Mod", "_CtryDtls", "_FrctnlDgt", "_PreEuro", "_VldtyPrd", "_Ccy", "_LastUpdtd"]
+	__slots__ = ["_PreEuro", "_CtryDtls", "_FrctnlDgt", "_Ccy", "_Mod", "_VldtyPrd", "_LastUpdtd"]
 	@property
-	def Mod(self):
-		return self._Mod
+	def PreEuro(self):
+		return self._PreEuro
 
-	@Mod.setter
-	def Mod(self, value):
-		self._Mod = value if type(value) != auto else self.make_default("Mod")
+	@PreEuro.setter
+	def PreEuro(self, value):
+		self._PreEuro = value if type(value) != auto else self.make_default("PreEuro")
 
-	@Mod.deleter
-	def Mod(self):
-		del self._Mod
-		self._Mod = None
+	@PreEuro.deleter
+	def PreEuro(self):
+		del self._PreEuro
+		self._PreEuro = None
 
 	@property
 	def CtryDtls(self):
@@ -50,17 +50,30 @@ class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 		self._FrctnlDgt = None
 
 	@property
-	def PreEuro(self):
-		return self._PreEuro
+	def Ccy(self):
+		return self._Ccy
 
-	@PreEuro.setter
-	def PreEuro(self, value):
-		self._PreEuro = value if type(value) != auto else self.make_default("PreEuro")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
 
-	@PreEuro.deleter
-	def PreEuro(self):
-		del self._PreEuro
-		self._PreEuro = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
+	def Mod(self):
+		return self._Mod
+
+	@Mod.setter
+	def Mod(self, value):
+		self._Mod = value if type(value) != auto else self.make_default("Mod")
+
+	@Mod.deleter
+	def Mod(self):
+		del self._Mod
+		self._Mod = None
 
 	@property
 	def VldtyPrd(self):
@@ -76,19 +89,6 @@ class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 		self._VldtyPrd = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
 	def LastUpdtd(self):
 		return self._LastUpdtd
 
@@ -102,12 +102,12 @@ class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 		self._LastUpdtd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PreEuro', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryDtls', type=CountryCodeAndName3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrctnlDgt', type=Max1Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PreEuro', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=CurrencyCodeAndName1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastUpdtd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

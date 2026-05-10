@@ -1,5 +1,5 @@
 from . import base_types
-import AccountClosingAmendmentRequestV04
+from .AccountClosingAmendmentRequestV04 import AccountClosingAmendmentRequestV04
 
 class ACMT_020_001_04():
 

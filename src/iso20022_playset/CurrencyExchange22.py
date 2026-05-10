@@ -1,25 +1,12 @@
 from . import base_types
-import ExchangeRateBasis1Choice
-import ActiveOrHistoricCurrencyCode
-import BaseOne18Rate
-import ISODateTime
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .ExchangeRateBasis1Choice import ExchangeRateBasis1Choice
+from .ISODateTime import ISODateTime
+from .BaseOne18Rate import BaseOne18Rate
 
 class CurrencyExchange22(base_types._BaseFieldType):
 
-	__slots__ = ["_FwdXchgRate", "_FxgDt", "_XchgRateBsis", "_DlvrblCrossCcy", "_XchgRate"]
-	@property
-	def FwdXchgRate(self):
-		return self._FwdXchgRate
-
-	@FwdXchgRate.setter
-	def FwdXchgRate(self, value):
-		self._FwdXchgRate = value if type(value) != auto else self.make_default("FwdXchgRate")
-
-	@FwdXchgRate.deleter
-	def FwdXchgRate(self):
-		del self._FwdXchgRate
-		self._FwdXchgRate = None
-
+	__slots__ = ["_FxgDt", "_XchgRate", "_FwdXchgRate", "_DlvrblCrossCcy", "_XchgRateBsis"]
 	@property
 	def FxgDt(self):
 		return self._FxgDt
@@ -34,17 +21,30 @@ class CurrencyExchange22(base_types._BaseFieldType):
 		self._FxgDt = None
 
 	@property
-	def XchgRateBsis(self):
-		return self._XchgRateBsis
+	def XchgRate(self):
+		return self._XchgRate
 
-	@XchgRateBsis.setter
-	def XchgRateBsis(self, value):
-		self._XchgRateBsis = value if type(value) != auto else self.make_default("XchgRateBsis")
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
 
-	@XchgRateBsis.deleter
-	def XchgRateBsis(self):
-		del self._XchgRateBsis
-		self._XchgRateBsis = None
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
+
+	@property
+	def FwdXchgRate(self):
+		return self._FwdXchgRate
+
+	@FwdXchgRate.setter
+	def FwdXchgRate(self, value):
+		self._FwdXchgRate = value if type(value) != auto else self.make_default("FwdXchgRate")
+
+	@FwdXchgRate.deleter
+	def FwdXchgRate(self):
+		del self._FwdXchgRate
+		self._FwdXchgRate = None
 
 	@property
 	def DlvrblCrossCcy(self):
@@ -60,23 +60,23 @@ class CurrencyExchange22(base_types._BaseFieldType):
 		self._DlvrblCrossCcy = None
 
 	@property
-	def XchgRate(self):
-		return self._XchgRate
+	def XchgRateBsis(self):
+		return self._XchgRateBsis
 
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
+	@XchgRateBsis.setter
+	def XchgRateBsis(self, value):
+		self._XchgRateBsis = value if type(value) != auto else self.make_default("XchgRateBsis")
 
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
+	@XchgRateBsis.deleter
+	def XchgRateBsis(self):
+		del self._XchgRateBsis
+		self._XchgRateBsis = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FwdXchgRate', type=BaseOne18Rate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FxgDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRateBsis', type=ExchangeRateBasis1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvrblCrossCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=BaseOne18Rate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FwdXchgRate', type=BaseOne18Rate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrblCrossCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRateBsis', type=ExchangeRateBasis1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

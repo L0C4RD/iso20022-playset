@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import ProductStructure1Code
+from .GenericIdentification47 import GenericIdentification47
+from .ProductStructure1Code import ProductStructure1Code
 
 class ProductStructure1Choice(base_types._BaseFieldType):
 

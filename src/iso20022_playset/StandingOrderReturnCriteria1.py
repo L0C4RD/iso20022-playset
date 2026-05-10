@@ -1,9 +1,74 @@
 from . import base_types
-import RequestedIndicator
+from .RequestedIndicator import RequestedIndicator
 
 class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyInd", "_CdtrAcctInd", "_TtlAmtInd", "_StgOrdrIdInd", "_LkSetIdInd", "_DbtrAcctInd", "_RspnsblPtyInd", "_SysMmbInd", "_VldtyFrInd", "_TpInd", "_AssoctdPoolAcct", "_ZeroSweepInd", "_LkSetOrdrIdInd", "_FrqcyInd", "_VldToInd", "_ExctnTpInd", "_LkSetOrdrSeqInd"]
+	__slots__ = ["_TpInd", "_LkSetOrdrSeqInd", "_FrqcyInd", "_VldToInd", "_LkSetOrdrIdInd", "_CcyInd", "_RspnsblPtyInd", "_SysMmbInd", "_VldtyFrInd", "_ExctnTpInd", "_TtlAmtInd", "_AssoctdPoolAcct", "_CdtrAcctInd", "_LkSetIdInd", "_ZeroSweepInd", "_StgOrdrIdInd", "_DbtrAcctInd"]
+	@property
+	def TpInd(self):
+		return self._TpInd
+
+	@TpInd.setter
+	def TpInd(self, value):
+		self._TpInd = value if type(value) != auto else self.make_default("TpInd")
+
+	@TpInd.deleter
+	def TpInd(self):
+		del self._TpInd
+		self._TpInd = None
+
+	@property
+	def LkSetOrdrSeqInd(self):
+		return self._LkSetOrdrSeqInd
+
+	@LkSetOrdrSeqInd.setter
+	def LkSetOrdrSeqInd(self, value):
+		self._LkSetOrdrSeqInd = value if type(value) != auto else self.make_default("LkSetOrdrSeqInd")
+
+	@LkSetOrdrSeqInd.deleter
+	def LkSetOrdrSeqInd(self):
+		del self._LkSetOrdrSeqInd
+		self._LkSetOrdrSeqInd = None
+
+	@property
+	def FrqcyInd(self):
+		return self._FrqcyInd
+
+	@FrqcyInd.setter
+	def FrqcyInd(self, value):
+		self._FrqcyInd = value if type(value) != auto else self.make_default("FrqcyInd")
+
+	@FrqcyInd.deleter
+	def FrqcyInd(self):
+		del self._FrqcyInd
+		self._FrqcyInd = None
+
+	@property
+	def VldToInd(self):
+		return self._VldToInd
+
+	@VldToInd.setter
+	def VldToInd(self, value):
+		self._VldToInd = value if type(value) != auto else self.make_default("VldToInd")
+
+	@VldToInd.deleter
+	def VldToInd(self):
+		del self._VldToInd
+		self._VldToInd = None
+
+	@property
+	def LkSetOrdrIdInd(self):
+		return self._LkSetOrdrIdInd
+
+	@LkSetOrdrIdInd.setter
+	def LkSetOrdrIdInd(self, value):
+		self._LkSetOrdrIdInd = value if type(value) != auto else self.make_default("LkSetOrdrIdInd")
+
+	@LkSetOrdrIdInd.deleter
+	def LkSetOrdrIdInd(self):
+		del self._LkSetOrdrIdInd
+		self._LkSetOrdrIdInd = None
+
 	@property
 	def CcyInd(self):
 		return self._CcyInd
@@ -16,71 +81,6 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 	def CcyInd(self):
 		del self._CcyInd
 		self._CcyInd = None
-
-	@property
-	def CdtrAcctInd(self):
-		return self._CdtrAcctInd
-
-	@CdtrAcctInd.setter
-	def CdtrAcctInd(self, value):
-		self._CdtrAcctInd = value if type(value) != auto else self.make_default("CdtrAcctInd")
-
-	@CdtrAcctInd.deleter
-	def CdtrAcctInd(self):
-		del self._CdtrAcctInd
-		self._CdtrAcctInd = None
-
-	@property
-	def TtlAmtInd(self):
-		return self._TtlAmtInd
-
-	@TtlAmtInd.setter
-	def TtlAmtInd(self, value):
-		self._TtlAmtInd = value if type(value) != auto else self.make_default("TtlAmtInd")
-
-	@TtlAmtInd.deleter
-	def TtlAmtInd(self):
-		del self._TtlAmtInd
-		self._TtlAmtInd = None
-
-	@property
-	def StgOrdrIdInd(self):
-		return self._StgOrdrIdInd
-
-	@StgOrdrIdInd.setter
-	def StgOrdrIdInd(self, value):
-		self._StgOrdrIdInd = value if type(value) != auto else self.make_default("StgOrdrIdInd")
-
-	@StgOrdrIdInd.deleter
-	def StgOrdrIdInd(self):
-		del self._StgOrdrIdInd
-		self._StgOrdrIdInd = None
-
-	@property
-	def LkSetIdInd(self):
-		return self._LkSetIdInd
-
-	@LkSetIdInd.setter
-	def LkSetIdInd(self, value):
-		self._LkSetIdInd = value if type(value) != auto else self.make_default("LkSetIdInd")
-
-	@LkSetIdInd.deleter
-	def LkSetIdInd(self):
-		del self._LkSetIdInd
-		self._LkSetIdInd = None
-
-	@property
-	def DbtrAcctInd(self):
-		return self._DbtrAcctInd
-
-	@DbtrAcctInd.setter
-	def DbtrAcctInd(self, value):
-		self._DbtrAcctInd = value if type(value) != auto else self.make_default("DbtrAcctInd")
-
-	@DbtrAcctInd.deleter
-	def DbtrAcctInd(self):
-		del self._DbtrAcctInd
-		self._DbtrAcctInd = None
 
 	@property
 	def RspnsblPtyInd(self):
@@ -122,17 +122,30 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 		self._VldtyFrInd = None
 
 	@property
-	def TpInd(self):
-		return self._TpInd
+	def ExctnTpInd(self):
+		return self._ExctnTpInd
 
-	@TpInd.setter
-	def TpInd(self, value):
-		self._TpInd = value if type(value) != auto else self.make_default("TpInd")
+	@ExctnTpInd.setter
+	def ExctnTpInd(self, value):
+		self._ExctnTpInd = value if type(value) != auto else self.make_default("ExctnTpInd")
 
-	@TpInd.deleter
-	def TpInd(self):
-		del self._TpInd
-		self._TpInd = None
+	@ExctnTpInd.deleter
+	def ExctnTpInd(self):
+		del self._ExctnTpInd
+		self._ExctnTpInd = None
+
+	@property
+	def TtlAmtInd(self):
+		return self._TtlAmtInd
+
+	@TtlAmtInd.setter
+	def TtlAmtInd(self, value):
+		self._TtlAmtInd = value if type(value) != auto else self.make_default("TtlAmtInd")
+
+	@TtlAmtInd.deleter
+	def TtlAmtInd(self):
+		del self._TtlAmtInd
+		self._TtlAmtInd = None
 
 	@property
 	def AssoctdPoolAcct(self):
@@ -148,6 +161,32 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 		self._AssoctdPoolAcct = None
 
 	@property
+	def CdtrAcctInd(self):
+		return self._CdtrAcctInd
+
+	@CdtrAcctInd.setter
+	def CdtrAcctInd(self, value):
+		self._CdtrAcctInd = value if type(value) != auto else self.make_default("CdtrAcctInd")
+
+	@CdtrAcctInd.deleter
+	def CdtrAcctInd(self):
+		del self._CdtrAcctInd
+		self._CdtrAcctInd = None
+
+	@property
+	def LkSetIdInd(self):
+		return self._LkSetIdInd
+
+	@LkSetIdInd.setter
+	def LkSetIdInd(self, value):
+		self._LkSetIdInd = value if type(value) != auto else self.make_default("LkSetIdInd")
+
+	@LkSetIdInd.deleter
+	def LkSetIdInd(self):
+		del self._LkSetIdInd
+		self._LkSetIdInd = None
+
+	@property
 	def ZeroSweepInd(self):
 		return self._ZeroSweepInd
 
@@ -161,87 +200,48 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 		self._ZeroSweepInd = None
 
 	@property
-	def LkSetOrdrIdInd(self):
-		return self._LkSetOrdrIdInd
+	def StgOrdrIdInd(self):
+		return self._StgOrdrIdInd
 
-	@LkSetOrdrIdInd.setter
-	def LkSetOrdrIdInd(self, value):
-		self._LkSetOrdrIdInd = value if type(value) != auto else self.make_default("LkSetOrdrIdInd")
+	@StgOrdrIdInd.setter
+	def StgOrdrIdInd(self, value):
+		self._StgOrdrIdInd = value if type(value) != auto else self.make_default("StgOrdrIdInd")
 
-	@LkSetOrdrIdInd.deleter
-	def LkSetOrdrIdInd(self):
-		del self._LkSetOrdrIdInd
-		self._LkSetOrdrIdInd = None
-
-	@property
-	def FrqcyInd(self):
-		return self._FrqcyInd
-
-	@FrqcyInd.setter
-	def FrqcyInd(self, value):
-		self._FrqcyInd = value if type(value) != auto else self.make_default("FrqcyInd")
-
-	@FrqcyInd.deleter
-	def FrqcyInd(self):
-		del self._FrqcyInd
-		self._FrqcyInd = None
+	@StgOrdrIdInd.deleter
+	def StgOrdrIdInd(self):
+		del self._StgOrdrIdInd
+		self._StgOrdrIdInd = None
 
 	@property
-	def VldToInd(self):
-		return self._VldToInd
+	def DbtrAcctInd(self):
+		return self._DbtrAcctInd
 
-	@VldToInd.setter
-	def VldToInd(self, value):
-		self._VldToInd = value if type(value) != auto else self.make_default("VldToInd")
+	@DbtrAcctInd.setter
+	def DbtrAcctInd(self, value):
+		self._DbtrAcctInd = value if type(value) != auto else self.make_default("DbtrAcctInd")
 
-	@VldToInd.deleter
-	def VldToInd(self):
-		del self._VldToInd
-		self._VldToInd = None
-
-	@property
-	def ExctnTpInd(self):
-		return self._ExctnTpInd
-
-	@ExctnTpInd.setter
-	def ExctnTpInd(self, value):
-		self._ExctnTpInd = value if type(value) != auto else self.make_default("ExctnTpInd")
-
-	@ExctnTpInd.deleter
-	def ExctnTpInd(self):
-		del self._ExctnTpInd
-		self._ExctnTpInd = None
-
-	@property
-	def LkSetOrdrSeqInd(self):
-		return self._LkSetOrdrSeqInd
-
-	@LkSetOrdrSeqInd.setter
-	def LkSetOrdrSeqInd(self, value):
-		self._LkSetOrdrSeqInd = value if type(value) != auto else self.make_default("LkSetOrdrSeqInd")
-
-	@LkSetOrdrSeqInd.deleter
-	def LkSetOrdrSeqInd(self):
-		del self._LkSetOrdrSeqInd
-		self._LkSetOrdrSeqInd = None
+	@DbtrAcctInd.deleter
+	def DbtrAcctInd(self):
+		del self._DbtrAcctInd
+		self._DbtrAcctInd = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LkSetOrdrSeqInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrqcyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldToInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LkSetOrdrIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CcyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAcctInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StgOrdrIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LkSetIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAcctInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnsblPtyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysMmbInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtyFrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AssoctdPoolAcct', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ZeroSweepInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LkSetOrdrIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrqcyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldToInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExctnTpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LkSetOrdrSeqInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AssoctdPoolAcct', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAcctInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LkSetIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ZeroSweepInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StgOrdrIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAcctInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

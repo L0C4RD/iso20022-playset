@@ -1,11 +1,11 @@
 from . import base_types
-import Number
-import DecimalNumber
-import FromToQuantityRange2
+from .DecimalNumber import DecimalNumber
+from .FromToQuantityRange2 import FromToQuantityRange2
+from .Number import Number
 
 class TransactionsBin2(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfTxs", "_TtlNtnlAmt", "_Rg"]
+	__slots__ = ["_NbOfTxs", "_Rg", "_TtlNtnlAmt"]
 	@property
 	def NbOfTxs(self):
 		return self._NbOfTxs
@@ -20,19 +20,6 @@ class TransactionsBin2(base_types._BaseFieldType):
 		self._NbOfTxs = None
 
 	@property
-	def TtlNtnlAmt(self):
-		return self._TtlNtnlAmt
-
-	@TtlNtnlAmt.setter
-	def TtlNtnlAmt(self, value):
-		self._TtlNtnlAmt = value if type(value) != auto else self.make_default("TtlNtnlAmt")
-
-	@TtlNtnlAmt.deleter
-	def TtlNtnlAmt(self):
-		del self._TtlNtnlAmt
-		self._TtlNtnlAmt = None
-
-	@property
 	def Rg(self):
 		return self._Rg
 
@@ -45,9 +32,22 @@ class TransactionsBin2(base_types._BaseFieldType):
 		del self._Rg
 		self._Rg = None
 
+	@property
+	def TtlNtnlAmt(self):
+		return self._TtlNtnlAmt
+
+	@TtlNtnlAmt.setter
+	def TtlNtnlAmt(self, value):
+		self._TtlNtnlAmt = value if type(value) != auto else self.make_default("TtlNtnlAmt")
+
+	@TtlNtnlAmt.deleter
+	def TtlNtnlAmt(self):
+		del self._TtlNtnlAmt
+		self._TtlNtnlAmt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NbOfTxs', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNtnlAmt', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rg', type=FromToQuantityRange2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNtnlAmt', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 	))
 

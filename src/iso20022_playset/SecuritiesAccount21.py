@@ -1,24 +1,11 @@
 from . import base_types
-import ActiveOrHistoricCurrencyCode
-import BaseOneRate
-import AccountIdentification5
+from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from .BaseOneRate import BaseOneRate
+from .AccountIdentification5 import AccountIdentification5
 
 class SecuritiesAccount21(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgCcy", "_FXRate", "_SubAcct", "_BaseCcy", "_Acct"]
-	@property
-	def RptgCcy(self):
-		return self._RptgCcy
-
-	@RptgCcy.setter
-	def RptgCcy(self, value):
-		self._RptgCcy = value if type(value) != auto else self.make_default("RptgCcy")
-
-	@RptgCcy.deleter
-	def RptgCcy(self):
-		del self._RptgCcy
-		self._RptgCcy = None
-
+	__slots__ = ["_FXRate", "_SubAcct", "_RptgCcy", "_BaseCcy", "_Acct"]
 	@property
 	def FXRate(self):
 		return self._FXRate
@@ -44,6 +31,19 @@ class SecuritiesAccount21(base_types._BaseFieldType):
 	def SubAcct(self):
 		del self._SubAcct
 		self._SubAcct = None
+
+	@property
+	def RptgCcy(self):
+		return self._RptgCcy
+
+	@RptgCcy.setter
+	def RptgCcy(self, value):
+		self._RptgCcy = value if type(value) != auto else self.make_default("RptgCcy")
+
+	@RptgCcy.deleter
+	def RptgCcy(self):
+		del self._RptgCcy
+		self._RptgCcy = None
 
 	@property
 	def BaseCcy(self):
@@ -72,9 +72,9 @@ class SecuritiesAccount21(base_types._BaseFieldType):
 		self._Acct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FXRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubAcct', type=AccountIdentification5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BaseCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=AccountIdentification5, min=1, max=1, mutex_group=None, array=False),
 	))

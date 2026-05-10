@@ -1,25 +1,12 @@
 from . import base_types
-import GenericFinancialIdentification1
-import ClearingSystemMemberIdentification2
-import BICFIDec2014Identifier
-import LEIIdentifier
+from .BICFIDec2014Identifier import BICFIDec2014Identifier
+from .ClearingSystemMemberIdentification2 import ClearingSystemMemberIdentification2
+from .GenericFinancialIdentification1 import GenericFinancialIdentification1
+from .LEIIdentifier import LEIIdentifier
 
 class FinancialInstitutionIdentification19(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_LEI", "_BICFI", "_ClrSysMmbId"]
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
+	__slots__ = ["_LEI", "_BICFI", "_ClrSysMmbId", "_Othr"]
 	@property
 	def LEI(self):
 		return self._LEI
@@ -59,10 +46,23 @@ class FinancialInstitutionIdentification19(base_types._BaseFieldType):
 		del self._ClrSysMmbId
 		self._ClrSysMmbId = None
 
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=GenericFinancialIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=GenericFinancialIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

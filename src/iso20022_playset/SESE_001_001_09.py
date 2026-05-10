@@ -1,5 +1,5 @@
 from . import base_types
-import TransferOutInstructionV09
+from .TransferOutInstructionV09 import TransferOutInstructionV09
 
 class SESE_001_001_09():
 

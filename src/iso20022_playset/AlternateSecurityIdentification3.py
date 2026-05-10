@@ -1,11 +1,24 @@
 from . import base_types
-import CountryCode
-import Max35Text
-import Max70Text
+from .CountryCode import CountryCode
+from .Max35Text import Max35Text
+from .Max70Text import Max70Text
 
 class AlternateSecurityIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_DmstIdSrc", "_Id", "_PrtryIdSrc"]
+	__slots__ = ["_PrtryIdSrc", "_DmstIdSrc", "_Id"]
+	@property
+	def PrtryIdSrc(self):
+		return self._PrtryIdSrc
+
+	@PrtryIdSrc.setter
+	def PrtryIdSrc(self, value):
+		self._PrtryIdSrc = value if type(value) != auto else self.make_default("PrtryIdSrc")
+
+	@PrtryIdSrc.deleter
+	def PrtryIdSrc(self):
+		del self._PrtryIdSrc
+		self._PrtryIdSrc = None
+
 	@property
 	def DmstIdSrc(self):
 		return self._DmstIdSrc
@@ -32,22 +45,9 @@ class AlternateSecurityIdentification3(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
-	@property
-	def PrtryIdSrc(self):
-		return self._PrtryIdSrc
-
-	@PrtryIdSrc.setter
-	def PrtryIdSrc(self, value):
-		self._PrtryIdSrc = value if type(value) != auto else self.make_default("PrtryIdSrc")
-
-	@PrtryIdSrc.deleter
-	def PrtryIdSrc(self):
-		del self._PrtryIdSrc
-		self._PrtryIdSrc = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PrtryIdSrc', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DmstIdSrc', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Id', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtryIdSrc', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import ConsentReason5
-import NoReasonCode
+from .ConsentReason5 import ConsentReason5
+from .NoReasonCode import NoReasonCode
 
 class ConsentStatus5Choice(base_types._BaseFieldType):
 

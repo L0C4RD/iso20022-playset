@@ -1,6 +1,6 @@
 from . import base_types
-import SettlementFailsJustification1
-import TrueFalseIndicator
+from .SettlementFailsJustification1 import SettlementFailsJustification1
+from .TrueFalseIndicator import TrueFalseIndicator
 
 class SettlementFailsDerogation1(base_types._BaseFieldType):
 

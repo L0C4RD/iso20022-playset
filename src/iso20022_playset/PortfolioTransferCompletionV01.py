@@ -1,30 +1,30 @@
 from . import base_types
-import Extension1
-import MessageIdentification1
-import InvestmentAccount69
-import Organisation36
-import PartyIdentification309
-import AdditionalReference10
-import MarketPracticeVersion1
-import IndividualPerson8
-import PortfolioTransfer13
-import AdditionalReference11
+from .MessageIdentification1 import MessageIdentification1
+from .AdditionalReference10 import AdditionalReference10
+from .MarketPracticeVersion1 import MarketPracticeVersion1
+from .PortfolioTransfer13 import PortfolioTransfer13
+from .IndividualPerson8 import IndividualPerson8
+from .Organisation36 import Organisation36
+from .Extension1 import Extension1
+from .AdditionalReference11 import AdditionalReference11
+from .PartyIdentification309 import PartyIdentification309
+from .InvestmentAccount69 import InvestmentAccount69
 
 class PortfolioTransferCompletionV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MktPrctcVrsn", "_ScndryCorpInvstr", "_RltdRef", "_PrvsRef", "_TrfrAcct", "_PmryCorpInvstr", "_RegdHldr", "_NmneeAcct", "_Xtnsn", "_PdctTrf", "_PmryIndvInvstr", "_OthrIndvInvstr", "_PoolRef", "_MsgRef", "_ScndryIndvInvstr", "_Trfee", "_OthrCorpInvstr"]
+	__slots__ = ["_Xtnsn", "_ScndryCorpInvstr", "_PmryIndvInvstr", "_RltdRef", "_OthrCorpInvstr", "_RegdHldr", "_MsgRef", "_PrvsRef", "_MktPrctcVrsn", "_PmryCorpInvstr", "_ScndryIndvInvstr", "_PoolRef", "_TrfrAcct", "_Trfee", "_OthrIndvInvstr", "_PdctTrf", "_NmneeAcct"]
 	@property
-	def MktPrctcVrsn(self):
-		return self._MktPrctcVrsn
+	def Xtnsn(self):
+		return self._Xtnsn
 
-	@MktPrctcVrsn.setter
-	def MktPrctcVrsn(self, value):
-		self._MktPrctcVrsn = value if type(value) != auto else self.make_default("MktPrctcVrsn")
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
 
-	@MktPrctcVrsn.deleter
-	def MktPrctcVrsn(self):
-		del self._MktPrctcVrsn
-		self._MktPrctcVrsn = None
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
 
 	@property
 	def ScndryCorpInvstr(self):
@@ -40,6 +40,19 @@ class PortfolioTransferCompletionV01(base_types._BaseFieldType):
 		self._ScndryCorpInvstr = None
 
 	@property
+	def PmryIndvInvstr(self):
+		return self._PmryIndvInvstr
+
+	@PmryIndvInvstr.setter
+	def PmryIndvInvstr(self, value):
+		self._PmryIndvInvstr = value if type(value) != auto else self.make_default("PmryIndvInvstr")
+
+	@PmryIndvInvstr.deleter
+	def PmryIndvInvstr(self):
+		del self._PmryIndvInvstr
+		self._PmryIndvInvstr = None
+
+	@property
 	def RltdRef(self):
 		return self._RltdRef
 
@@ -53,43 +66,17 @@ class PortfolioTransferCompletionV01(base_types._BaseFieldType):
 		self._RltdRef = None
 
 	@property
-	def PrvsRef(self):
-		return self._PrvsRef
+	def OthrCorpInvstr(self):
+		return self._OthrCorpInvstr
 
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
+	@OthrCorpInvstr.setter
+	def OthrCorpInvstr(self, value):
+		self._OthrCorpInvstr = value if type(value) != auto else self.make_default("OthrCorpInvstr")
 
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
-
-	@property
-	def TrfrAcct(self):
-		return self._TrfrAcct
-
-	@TrfrAcct.setter
-	def TrfrAcct(self, value):
-		self._TrfrAcct = value if type(value) != auto else self.make_default("TrfrAcct")
-
-	@TrfrAcct.deleter
-	def TrfrAcct(self):
-		del self._TrfrAcct
-		self._TrfrAcct = None
-
-	@property
-	def PmryCorpInvstr(self):
-		return self._PmryCorpInvstr
-
-	@PmryCorpInvstr.setter
-	def PmryCorpInvstr(self, value):
-		self._PmryCorpInvstr = value if type(value) != auto else self.make_default("PmryCorpInvstr")
-
-	@PmryCorpInvstr.deleter
-	def PmryCorpInvstr(self):
-		del self._PmryCorpInvstr
-		self._PmryCorpInvstr = None
+	@OthrCorpInvstr.deleter
+	def OthrCorpInvstr(self):
+		del self._OthrCorpInvstr
+		self._OthrCorpInvstr = None
 
 	@property
 	def RegdHldr(self):
@@ -105,84 +92,6 @@ class PortfolioTransferCompletionV01(base_types._BaseFieldType):
 		self._RegdHldr = None
 
 	@property
-	def NmneeAcct(self):
-		return self._NmneeAcct
-
-	@NmneeAcct.setter
-	def NmneeAcct(self, value):
-		self._NmneeAcct = value if type(value) != auto else self.make_default("NmneeAcct")
-
-	@NmneeAcct.deleter
-	def NmneeAcct(self):
-		del self._NmneeAcct
-		self._NmneeAcct = None
-
-	@property
-	def Xtnsn(self):
-		return self._Xtnsn
-
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
-
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
-
-	@property
-	def PdctTrf(self):
-		return self._PdctTrf
-
-	@PdctTrf.setter
-	def PdctTrf(self, value):
-		self._PdctTrf = value if type(value) != auto else self.make_default("PdctTrf")
-
-	@PdctTrf.deleter
-	def PdctTrf(self):
-		del self._PdctTrf
-		self._PdctTrf = None
-
-	@property
-	def PmryIndvInvstr(self):
-		return self._PmryIndvInvstr
-
-	@PmryIndvInvstr.setter
-	def PmryIndvInvstr(self, value):
-		self._PmryIndvInvstr = value if type(value) != auto else self.make_default("PmryIndvInvstr")
-
-	@PmryIndvInvstr.deleter
-	def PmryIndvInvstr(self):
-		del self._PmryIndvInvstr
-		self._PmryIndvInvstr = None
-
-	@property
-	def OthrIndvInvstr(self):
-		return self._OthrIndvInvstr
-
-	@OthrIndvInvstr.setter
-	def OthrIndvInvstr(self, value):
-		self._OthrIndvInvstr = value if type(value) != auto else self.make_default("OthrIndvInvstr")
-
-	@OthrIndvInvstr.deleter
-	def OthrIndvInvstr(self):
-		del self._OthrIndvInvstr
-		self._OthrIndvInvstr = None
-
-	@property
-	def PoolRef(self):
-		return self._PoolRef
-
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
-
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
-
-	@property
 	def MsgRef(self):
 		return self._MsgRef
 
@@ -194,6 +103,45 @@ class PortfolioTransferCompletionV01(base_types._BaseFieldType):
 	def MsgRef(self):
 		del self._MsgRef
 		self._MsgRef = None
+
+	@property
+	def PrvsRef(self):
+		return self._PrvsRef
+
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
+
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
+
+	@property
+	def MktPrctcVrsn(self):
+		return self._MktPrctcVrsn
+
+	@MktPrctcVrsn.setter
+	def MktPrctcVrsn(self, value):
+		self._MktPrctcVrsn = value if type(value) != auto else self.make_default("MktPrctcVrsn")
+
+	@MktPrctcVrsn.deleter
+	def MktPrctcVrsn(self):
+		del self._MktPrctcVrsn
+		self._MktPrctcVrsn = None
+
+	@property
+	def PmryCorpInvstr(self):
+		return self._PmryCorpInvstr
+
+	@PmryCorpInvstr.setter
+	def PmryCorpInvstr(self, value):
+		self._PmryCorpInvstr = value if type(value) != auto else self.make_default("PmryCorpInvstr")
+
+	@PmryCorpInvstr.deleter
+	def PmryCorpInvstr(self):
+		del self._PmryCorpInvstr
+		self._PmryCorpInvstr = None
 
 	@property
 	def ScndryIndvInvstr(self):
@@ -209,6 +157,32 @@ class PortfolioTransferCompletionV01(base_types._BaseFieldType):
 		self._ScndryIndvInvstr = None
 
 	@property
+	def PoolRef(self):
+		return self._PoolRef
+
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
+
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
+
+	@property
+	def TrfrAcct(self):
+		return self._TrfrAcct
+
+	@TrfrAcct.setter
+	def TrfrAcct(self, value):
+		self._TrfrAcct = value if type(value) != auto else self.make_default("TrfrAcct")
+
+	@TrfrAcct.deleter
+	def TrfrAcct(self):
+		del self._TrfrAcct
+		self._TrfrAcct = None
+
+	@property
 	def Trfee(self):
 		return self._Trfee
 
@@ -222,35 +196,61 @@ class PortfolioTransferCompletionV01(base_types._BaseFieldType):
 		self._Trfee = None
 
 	@property
-	def OthrCorpInvstr(self):
-		return self._OthrCorpInvstr
+	def OthrIndvInvstr(self):
+		return self._OthrIndvInvstr
 
-	@OthrCorpInvstr.setter
-	def OthrCorpInvstr(self, value):
-		self._OthrCorpInvstr = value if type(value) != auto else self.make_default("OthrCorpInvstr")
+	@OthrIndvInvstr.setter
+	def OthrIndvInvstr(self, value):
+		self._OthrIndvInvstr = value if type(value) != auto else self.make_default("OthrIndvInvstr")
 
-	@OthrCorpInvstr.deleter
-	def OthrCorpInvstr(self):
-		del self._OthrCorpInvstr
-		self._OthrCorpInvstr = None
+	@OthrIndvInvstr.deleter
+	def OthrIndvInvstr(self):
+		del self._OthrIndvInvstr
+		self._OthrIndvInvstr = None
+
+	@property
+	def PdctTrf(self):
+		return self._PdctTrf
+
+	@PdctTrf.setter
+	def PdctTrf(self, value):
+		self._PdctTrf = value if type(value) != auto else self.make_default("PdctTrf")
+
+	@PdctTrf.deleter
+	def PdctTrf(self):
+		del self._PdctTrf
+		self._PdctTrf = None
+
+	@property
+	def NmneeAcct(self):
+		return self._NmneeAcct
+
+	@NmneeAcct.setter
+	def NmneeAcct(self, value):
+		self._NmneeAcct = value if type(value) != auto else self.make_default("NmneeAcct")
+
+	@NmneeAcct.deleter
+	def NmneeAcct(self):
+		del self._NmneeAcct
+		self._NmneeAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ScndryCorpInvstr', type=Organisation36, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfrAcct', type=InvestmentAccount69, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmryCorpInvstr', type=Organisation36, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegdHldr', type=IndividualPerson8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmneeAcct', type=InvestmentAccount69, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PdctTrf', type=PortfolioTransfer13, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ScndryCorpInvstr', type=Organisation36, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmryIndvInvstr', type=IndividualPerson8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrIndvInvstr', type=IndividualPerson8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ScndryIndvInvstr', type=IndividualPerson8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trfee', type=PartyIdentification309, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCorpInvstr', type=Organisation36, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RegdHldr', type=IndividualPerson8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmryCorpInvstr', type=Organisation36, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScndryIndvInvstr', type=IndividualPerson8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfrAcct', type=InvestmentAccount69, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trfee', type=PartyIdentification309, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrIndvInvstr', type=IndividualPerson8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PdctTrf', type=PortfolioTransfer13, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NmneeAcct', type=InvestmentAccount69, min=0, max=1, mutex_group=None, array=False),
 	))
 

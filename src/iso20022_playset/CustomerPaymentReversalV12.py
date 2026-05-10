@@ -1,25 +1,12 @@
 from . import base_types
-import OriginalPaymentInstruction50
-import OriginalGroupHeader20
-import GroupHeader124
-import SupplementaryData1
+from .OriginalPaymentInstruction50 import OriginalPaymentInstruction50
+from .OriginalGroupHeader20 import OriginalGroupHeader20
+from .GroupHeader124 import GroupHeader124
+from .SupplementaryData1 import SupplementaryData1
 
 class CustomerPaymentReversalV12(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlGrpInf", "_OrgnlPmtInfAndRvsl", "_GrpHdr", "_SplmtryData"]
-	@property
-	def OrgnlGrpInf(self):
-		return self._OrgnlGrpInf
-
-	@OrgnlGrpInf.setter
-	def OrgnlGrpInf(self, value):
-		self._OrgnlGrpInf = value if type(value) != auto else self.make_default("OrgnlGrpInf")
-
-	@OrgnlGrpInf.deleter
-	def OrgnlGrpInf(self):
-		del self._OrgnlGrpInf
-		self._OrgnlGrpInf = None
-
+	__slots__ = ["_OrgnlPmtInfAndRvsl", "_OrgnlGrpInf", "_SplmtryData", "_GrpHdr"]
 	@property
 	def OrgnlPmtInfAndRvsl(self):
 		return self._OrgnlPmtInfAndRvsl
@@ -34,17 +21,17 @@ class CustomerPaymentReversalV12(base_types._BaseFieldType):
 		self._OrgnlPmtInfAndRvsl = None
 
 	@property
-	def GrpHdr(self):
-		return self._GrpHdr
+	def OrgnlGrpInf(self):
+		return self._OrgnlGrpInf
 
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+	@OrgnlGrpInf.setter
+	def OrgnlGrpInf(self, value):
+		self._OrgnlGrpInf = value if type(value) != auto else self.make_default("OrgnlGrpInf")
 
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
+	@OrgnlGrpInf.deleter
+	def OrgnlGrpInf(self):
+		del self._OrgnlGrpInf
+		self._OrgnlGrpInf = None
 
 	@property
 	def SplmtryData(self):
@@ -59,10 +46,23 @@ class CustomerPaymentReversalV12(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def GrpHdr(self):
+		return self._GrpHdr
+
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupHeader20, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlPmtInfAndRvsl', type=OriginalPaymentInstruction50, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader124, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupHeader20, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader124, min=1, max=1, mutex_group=None, array=False),
 	))
 

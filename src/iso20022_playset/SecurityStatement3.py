@@ -1,23 +1,10 @@
 from . import base_types
-import ISODate
-import SecuritiesReferenceDataChange3
+from .SecuritiesReferenceDataChange3 import SecuritiesReferenceDataChange3
+from .ISODate import ISODate
 
 class SecurityStatement3(base_types._BaseFieldType):
 
-	__slots__ = ["_Chng", "_SysDt"]
-	@property
-	def Chng(self):
-		return self._Chng
-
-	@Chng.setter
-	def Chng(self, value):
-		self._Chng = value if type(value) != auto else self.make_default("Chng")
-
-	@Chng.deleter
-	def Chng(self):
-		del self._Chng
-		self._Chng = None
-
+	__slots__ = ["_SysDt", "_Chng"]
 	@property
 	def SysDt(self):
 		return self._SysDt
@@ -31,8 +18,21 @@ class SecurityStatement3(base_types._BaseFieldType):
 		del self._SysDt
 		self._SysDt = None
 
+	@property
+	def Chng(self):
+		return self._Chng
+
+	@Chng.setter
+	def Chng(self, value):
+		self._Chng = value if type(value) != auto else self.make_default("Chng")
+
+	@Chng.deleter
+	def Chng(self):
+		del self._Chng
+		self._Chng = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Chng', type=SecuritiesReferenceDataChange3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SysDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Chng', type=SecuritiesReferenceDataChange3, min=0, max=None, mutex_group=None, array=True),
 	))
 

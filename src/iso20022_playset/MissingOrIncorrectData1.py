@@ -1,23 +1,23 @@
 from . import base_types
-import UnableToApplyMissing2
-import UnableToApplyIncorrect2
-import AMLIndicator
+from .UnableToApplyIncorrect2 import UnableToApplyIncorrect2
+from .AMLIndicator import AMLIndicator
+from .UnableToApplyMissing2 import UnableToApplyMissing2
 
 class MissingOrIncorrectData1(base_types._BaseFieldType):
 
-	__slots__ = ["_MssngInf", "_IncrrctInf", "_AMLReq"]
+	__slots__ = ["_AMLReq", "_IncrrctInf", "_MssngInf"]
 	@property
-	def MssngInf(self):
-		return self._MssngInf
+	def AMLReq(self):
+		return self._AMLReq
 
-	@MssngInf.setter
-	def MssngInf(self, value):
-		self._MssngInf = value if type(value) != auto else self.make_default("MssngInf")
+	@AMLReq.setter
+	def AMLReq(self, value):
+		self._AMLReq = value if type(value) != auto else self.make_default("AMLReq")
 
-	@MssngInf.deleter
-	def MssngInf(self):
-		del self._MssngInf
-		self._MssngInf = None
+	@AMLReq.deleter
+	def AMLReq(self):
+		del self._AMLReq
+		self._AMLReq = None
 
 	@property
 	def IncrrctInf(self):
@@ -33,21 +33,21 @@ class MissingOrIncorrectData1(base_types._BaseFieldType):
 		self._IncrrctInf = None
 
 	@property
-	def AMLReq(self):
-		return self._AMLReq
+	def MssngInf(self):
+		return self._MssngInf
 
-	@AMLReq.setter
-	def AMLReq(self, value):
-		self._AMLReq = value if type(value) != auto else self.make_default("AMLReq")
+	@MssngInf.setter
+	def MssngInf(self, value):
+		self._MssngInf = value if type(value) != auto else self.make_default("MssngInf")
 
-	@AMLReq.deleter
-	def AMLReq(self):
-		del self._AMLReq
-		self._AMLReq = None
+	@MssngInf.deleter
+	def MssngInf(self):
+		del self._MssngInf
+		self._MssngInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MssngInf', type=UnableToApplyMissing2, min=0, max=10, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IncrrctInf', type=UnableToApplyIncorrect2, min=0, max=10, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AMLReq', type=AMLIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IncrrctInf', type=UnableToApplyIncorrect2, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MssngInf', type=UnableToApplyMissing2, min=0, max=10, mutex_group=None, array=True),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import AssetHolding1
-import GenericIdentification165
+from .GenericIdentification165 import GenericIdentification165
+from .AssetHolding1 import AssetHolding1
 
 class CollateralAccount4(base_types._BaseFieldType):
 

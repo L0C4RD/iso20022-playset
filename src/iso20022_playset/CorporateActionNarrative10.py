@@ -1,5 +1,5 @@
 from . import base_types
-import Max350Text
+from .Max350Text import Max350Text
 
 class CorporateActionNarrative10(base_types._BaseFieldType):
 

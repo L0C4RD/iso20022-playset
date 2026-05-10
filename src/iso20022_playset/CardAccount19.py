@@ -1,40 +1,40 @@
 from . import base_types
-import CardAccountType3Code
-import AmountAndDirection111
-import PartyIdentification177Choice
-import Max70Text
-import AccountIdentification80Choice
-import Max35Text
-import ActiveCurrencyCode
+from .Max35Text import Max35Text
+from .AccountIdentification80Choice import AccountIdentification80Choice
+from .Max70Text import Max70Text
+from .PartyIdentification177Choice import PartyIdentification177Choice
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .CardAccountType3Code import CardAccountType3Code
+from .AmountAndDirection111 import AmountAndDirection111
 
 class CardAccount19(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctNm", "_BalBfr", "_Svcr", "_CdtRef", "_AcctTp", "_Ccy", "_AcctIdr", "_BalAftr"]
+	__slots__ = ["_Ccy", "_BalAftr", "_Svcr", "_AcctTp", "_AcctIdr", "_CdtRef", "_BalBfr", "_AcctNm"]
 	@property
-	def AcctNm(self):
-		return self._AcctNm
+	def Ccy(self):
+		return self._Ccy
 
-	@AcctNm.setter
-	def AcctNm(self, value):
-		self._AcctNm = value if type(value) != auto else self.make_default("AcctNm")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
 
-	@AcctNm.deleter
-	def AcctNm(self):
-		del self._AcctNm
-		self._AcctNm = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
-	def BalBfr(self):
-		return self._BalBfr
+	def BalAftr(self):
+		return self._BalAftr
 
-	@BalBfr.setter
-	def BalBfr(self, value):
-		self._BalBfr = value if type(value) != auto else self.make_default("BalBfr")
+	@BalAftr.setter
+	def BalAftr(self, value):
+		self._BalAftr = value if type(value) != auto else self.make_default("BalAftr")
 
-	@BalBfr.deleter
-	def BalBfr(self):
-		del self._BalBfr
-		self._BalBfr = None
+	@BalAftr.deleter
+	def BalAftr(self):
+		del self._BalAftr
+		self._BalAftr = None
 
 	@property
 	def Svcr(self):
@@ -50,19 +50,6 @@ class CardAccount19(base_types._BaseFieldType):
 		self._Svcr = None
 
 	@property
-	def CdtRef(self):
-		return self._CdtRef
-
-	@CdtRef.setter
-	def CdtRef(self, value):
-		self._CdtRef = value if type(value) != auto else self.make_default("CdtRef")
-
-	@CdtRef.deleter
-	def CdtRef(self):
-		del self._CdtRef
-		self._CdtRef = None
-
-	@property
 	def AcctTp(self):
 		return self._AcctTp
 
@@ -74,19 +61,6 @@ class CardAccount19(base_types._BaseFieldType):
 	def AcctTp(self):
 		del self._AcctTp
 		self._AcctTp = None
-
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
 
 	@property
 	def AcctIdr(self):
@@ -102,26 +76,52 @@ class CardAccount19(base_types._BaseFieldType):
 		self._AcctIdr = None
 
 	@property
-	def BalAftr(self):
-		return self._BalAftr
+	def CdtRef(self):
+		return self._CdtRef
 
-	@BalAftr.setter
-	def BalAftr(self, value):
-		self._BalAftr = value if type(value) != auto else self.make_default("BalAftr")
+	@CdtRef.setter
+	def CdtRef(self, value):
+		self._CdtRef = value if type(value) != auto else self.make_default("CdtRef")
 
-	@BalAftr.deleter
-	def BalAftr(self):
-		del self._BalAftr
-		self._BalAftr = None
+	@CdtRef.deleter
+	def CdtRef(self):
+		del self._CdtRef
+		self._CdtRef = None
+
+	@property
+	def BalBfr(self):
+		return self._BalBfr
+
+	@BalBfr.setter
+	def BalBfr(self, value):
+		self._BalBfr = value if type(value) != auto else self.make_default("BalBfr")
+
+	@BalBfr.deleter
+	def BalBfr(self):
+		del self._BalBfr
+		self._BalBfr = None
+
+	@property
+	def AcctNm(self):
+		return self._AcctNm
+
+	@AcctNm.setter
+	def AcctNm(self, value):
+		self._AcctNm = value if type(value) != auto else self.make_default("AcctNm")
+
+	@AcctNm.deleter
+	def AcctNm(self):
+		del self._AcctNm
+		self._AcctNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalBfr', type=AmountAndDirection111, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Svcr', type=PartyIdentification177Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctTp', type=CardAccountType3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctIdr', type=AccountIdentification80Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalAftr', type=AmountAndDirection111, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Svcr', type=PartyIdentification177Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctTp', type=CardAccountType3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctIdr', type=AccountIdentification80Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalBfr', type=AmountAndDirection111, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

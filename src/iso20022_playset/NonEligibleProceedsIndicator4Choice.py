@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification47
-import NonEligibleProceedsIndicator1Code
+from .GenericIdentification47 import GenericIdentification47
+from .NonEligibleProceedsIndicator1Code import NonEligibleProceedsIndicator1Code
 
 class NonEligibleProceedsIndicator4Choice(base_types._BaseFieldType):
 

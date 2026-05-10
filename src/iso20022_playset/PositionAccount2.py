@@ -1,6 +1,6 @@
 from . import base_types
-import GenericIdentification165
-import Position1
+from .GenericIdentification165 import GenericIdentification165
+from .Position1 import Position1
 
 class PositionAccount2(base_types._BaseFieldType):
 

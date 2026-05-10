@@ -1,5 +1,5 @@
 from . import base_types
-import ISODate
+from .ISODate import ISODate
 
 class FinancingDateDetails1(base_types._BaseFieldType):
 

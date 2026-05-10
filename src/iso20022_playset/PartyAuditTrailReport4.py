@@ -1,7 +1,7 @@
 from . import base_types
-import DatePeriod3Choice
-import PartyAuditTrailOrError4Choice
-import SystemPartyIdentification8
+from .DatePeriod3Choice import DatePeriod3Choice
+from .SystemPartyIdentification8 import SystemPartyIdentification8
+from .PartyAuditTrailOrError4Choice import PartyAuditTrailOrError4Choice
 
 class PartyAuditTrailReport4(base_types._BaseFieldType):
 

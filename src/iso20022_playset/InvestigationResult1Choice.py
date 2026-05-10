@@ -1,6 +1,6 @@
 from . import base_types
-import InvestigationStatus1Code
-import SupplementaryDataEnvelope1
+from .InvestigationStatus1Code import InvestigationStatus1Code
+from .SupplementaryDataEnvelope1 import SupplementaryDataEnvelope1
 
 class InvestigationResult1Choice(base_types._BaseFieldType):
 

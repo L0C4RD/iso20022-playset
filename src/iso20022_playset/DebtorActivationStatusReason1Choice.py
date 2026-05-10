@@ -1,6 +1,6 @@
 from . import base_types
-import ExternalDebtorActivationStatusReason1Code
-import Max35Text
+from .Max35Text import Max35Text
+from .ExternalDebtorActivationStatusReason1Code import ExternalDebtorActivationStatusReason1Code
 
 class DebtorActivationStatusReason1Choice(base_types._BaseFieldType):
 

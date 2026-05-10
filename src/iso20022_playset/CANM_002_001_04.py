@@ -1,5 +1,5 @@
 from . import base_types
-import NetworkManagementResponseV04
+from .NetworkManagementResponseV04 import NetworkManagementResponseV04
 
 class CANM_002_001_04():
 

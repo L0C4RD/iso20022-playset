@@ -1,12 +1,12 @@
 from . import base_types
-import CompareAmountAndDirection3
-import CompareOtherPaymentType1
-import CompareDate3
-import CompareOrganisationIdentification7
+from .CompareAmountAndDirection3 import CompareAmountAndDirection3
+from .CompareOrganisationIdentification7 import CompareOrganisationIdentification7
+from .CompareOtherPaymentType1 import CompareOtherPaymentType1
+from .CompareDate3 import CompareDate3
 
 class CompareOtherPayment1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrPmtDt", "_OthrPmtTp", "_OthrPmtAmt", "_OthrPmtPyer", "_OthrPmtRcvr"]
+	__slots__ = ["_OthrPmtDt", "_OthrPmtAmt", "_OthrPmtTp", "_OthrPmtPyer", "_OthrPmtRcvr"]
 	@property
 	def OthrPmtDt(self):
 		return self._OthrPmtDt
@@ -21,19 +21,6 @@ class CompareOtherPayment1(base_types._BaseFieldType):
 		self._OthrPmtDt = None
 
 	@property
-	def OthrPmtTp(self):
-		return self._OthrPmtTp
-
-	@OthrPmtTp.setter
-	def OthrPmtTp(self, value):
-		self._OthrPmtTp = value if type(value) != auto else self.make_default("OthrPmtTp")
-
-	@OthrPmtTp.deleter
-	def OthrPmtTp(self):
-		del self._OthrPmtTp
-		self._OthrPmtTp = None
-
-	@property
 	def OthrPmtAmt(self):
 		return self._OthrPmtAmt
 
@@ -45,6 +32,19 @@ class CompareOtherPayment1(base_types._BaseFieldType):
 	def OthrPmtAmt(self):
 		del self._OthrPmtAmt
 		self._OthrPmtAmt = None
+
+	@property
+	def OthrPmtTp(self):
+		return self._OthrPmtTp
+
+	@OthrPmtTp.setter
+	def OthrPmtTp(self, value):
+		self._OthrPmtTp = value if type(value) != auto else self.make_default("OthrPmtTp")
+
+	@OthrPmtTp.deleter
+	def OthrPmtTp(self):
+		del self._OthrPmtTp
+		self._OthrPmtTp = None
 
 	@property
 	def OthrPmtPyer(self):
@@ -74,8 +74,8 @@ class CompareOtherPayment1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrPmtDt', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrPmtTp', type=CompareOtherPaymentType1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrPmtAmt', type=CompareAmountAndDirection3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrPmtTp', type=CompareOtherPaymentType1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrPmtPyer', type=CompareOrganisationIdentification7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrPmtRcvr', type=CompareOrganisationIdentification7, min=0, max=1, mutex_group=None, array=False),
 	))

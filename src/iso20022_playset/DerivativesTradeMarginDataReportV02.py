@@ -1,11 +1,24 @@
 from . import base_types
-import SupplementaryData1
-import TradeReportHeader4
-import TradeData61Choice
+from .TradeData61Choice import TradeData61Choice
+from .SupplementaryData1 import SupplementaryData1
+from .TradeReportHeader4 import TradeReportHeader4
 
 class DerivativesTradeMarginDataReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RptHdr", "_TradData"]
+	__slots__ = ["_TradData", "_SplmtryData", "_RptHdr"]
+	@property
+	def TradData(self):
+		return self._TradData
+
+	@TradData.setter
+	def TradData(self, value):
+		self._TradData = value if type(value) != auto else self.make_default("TradData")
+
+	@TradData.deleter
+	def TradData(self):
+		del self._TradData
+		self._TradData = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -32,22 +45,9 @@ class DerivativesTradeMarginDataReportV02(base_types._BaseFieldType):
 		del self._RptHdr
 		self._RptHdr = None
 
-	@property
-	def TradData(self):
-		return self._TradData
-
-	@TradData.setter
-	def TradData(self, value):
-		self._TradData = value if type(value) != auto else self.make_default("TradData")
-
-	@TradData.deleter
-	def TradData(self):
-		del self._TradData
-		self._TradData = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TradData', type=TradeData61Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptHdr', type=TradeReportHeader4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradData', type=TradeData61Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

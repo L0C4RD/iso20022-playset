@@ -1,7 +1,7 @@
 from . import base_types
-import AcceptorCompletionAdviceResponse13
-import ContentInformationType37
-import Header70
+from .Header70 import Header70
+from .AcceptorCompletionAdviceResponse13 import AcceptorCompletionAdviceResponse13
+from .ContentInformationType37 import ContentInformationType37
 
 class AcceptorCompletionAdviceResponseV13(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-import FailingReason8Choice
-import Max210Text
+from .FailingReason8Choice import FailingReason8Choice
+from .Max210Text import Max210Text
 
 class FailingReason8(base_types._BaseFieldType):
 

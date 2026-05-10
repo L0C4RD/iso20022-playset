@@ -1,11 +1,24 @@
 from . import base_types
-import ShipmentCondition1Choice
-import CountryCode
-import ISODate
+from .CountryCode import CountryCode
+from .ShipmentCondition1Choice import ShipmentCondition1Choice
+from .ISODate import ISODate
 
 class ShipmentAttribute2(base_types._BaseFieldType):
 
-	__slots__ = ["_CtryOfCntrPty", "_Conds", "_XpctdDt"]
+	__slots__ = ["_XpctdDt", "_CtryOfCntrPty", "_Conds"]
+	@property
+	def XpctdDt(self):
+		return self._XpctdDt
+
+	@XpctdDt.setter
+	def XpctdDt(self, value):
+		self._XpctdDt = value if type(value) != auto else self.make_default("XpctdDt")
+
+	@XpctdDt.deleter
+	def XpctdDt(self):
+		del self._XpctdDt
+		self._XpctdDt = None
+
 	@property
 	def CtryOfCntrPty(self):
 		return self._CtryOfCntrPty
@@ -32,22 +45,9 @@ class ShipmentAttribute2(base_types._BaseFieldType):
 		del self._Conds
 		self._Conds = None
 
-	@property
-	def XpctdDt(self):
-		return self._XpctdDt
-
-	@XpctdDt.setter
-	def XpctdDt(self, value):
-		self._XpctdDt = value if type(value) != auto else self.make_default("XpctdDt")
-
-	@XpctdDt.deleter
-	def XpctdDt(self):
-		del self._XpctdDt
-		self._XpctdDt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='XpctdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryOfCntrPty', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Conds', type=ShipmentCondition1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

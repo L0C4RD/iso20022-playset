@@ -1,7 +1,7 @@
 from . import base_types
-import EnvironmentalCommodityEmission1
-import EnvironmentalCommodityWeather1
-import EnvironmentalCommodityCarbonRelated1
+from .EnvironmentalCommodityEmission1 import EnvironmentalCommodityEmission1
+from .EnvironmentalCommodityWeather1 import EnvironmentalCommodityWeather1
+from .EnvironmentalCommodityCarbonRelated1 import EnvironmentalCommodityCarbonRelated1
 
 class AssetClassCommodityEnvironmental1Choice(base_types._BaseFieldType):
 

@@ -1,27 +1,14 @@
 from . import base_types
-import DocumentIdentification17
-import CorporateActionNarrative19
-import DocumentIdentification34
-import EventProcessingStatus8Choice
-import SupplementaryData1
-import CorporateActionGeneralInformation185
+from .EventProcessingStatus8Choice import EventProcessingStatus8Choice
+from .CorporateActionGeneralInformation185 import CorporateActionGeneralInformation185
+from .SupplementaryData1 import SupplementaryData1
+from .CorporateActionNarrative19 import CorporateActionNarrative19
+from .DocumentIdentification34 import DocumentIdentification34
+from .DocumentIdentification17 import DocumentIdentification17
 
 class CorporateActionEventProcessingStatusAdvice002V09(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnGnlInf", "_SplmtryData", "_AddtlInf", "_NtfctnId", "_EvtPrcgSts", "_OthrDocId"]
-	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
-
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
-
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
-
+	__slots__ = ["_SplmtryData", "_EvtPrcgSts", "_OthrDocId", "_AddtlInf", "_NtfctnId", "_CorpActnGnlInf"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -34,6 +21,32 @@ class CorporateActionEventProcessingStatusAdvice002V09(base_types._BaseFieldType
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def EvtPrcgSts(self):
+		return self._EvtPrcgSts
+
+	@EvtPrcgSts.setter
+	def EvtPrcgSts(self, value):
+		self._EvtPrcgSts = value if type(value) != auto else self.make_default("EvtPrcgSts")
+
+	@EvtPrcgSts.deleter
+	def EvtPrcgSts(self):
+		del self._EvtPrcgSts
+		self._EvtPrcgSts = None
+
+	@property
+	def OthrDocId(self):
+		return self._OthrDocId
+
+	@OthrDocId.setter
+	def OthrDocId(self, value):
+		self._OthrDocId = value if type(value) != auto else self.make_default("OthrDocId")
+
+	@OthrDocId.deleter
+	def OthrDocId(self):
+		del self._OthrDocId
+		self._OthrDocId = None
 
 	@property
 	def AddtlInf(self):
@@ -62,37 +75,24 @@ class CorporateActionEventProcessingStatusAdvice002V09(base_types._BaseFieldType
 		self._NtfctnId = None
 
 	@property
-	def EvtPrcgSts(self):
-		return self._EvtPrcgSts
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
 
-	@EvtPrcgSts.setter
-	def EvtPrcgSts(self, value):
-		self._EvtPrcgSts = value if type(value) != auto else self.make_default("EvtPrcgSts")
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
 
-	@EvtPrcgSts.deleter
-	def EvtPrcgSts(self):
-		del self._EvtPrcgSts
-		self._EvtPrcgSts = None
-
-	@property
-	def OthrDocId(self):
-		return self._OthrDocId
-
-	@OthrDocId.setter
-	def OthrDocId(self, value):
-		self._OthrDocId = value if type(value) != auto else self.make_default("OthrDocId")
-
-	@OthrDocId.deleter
-	def OthrDocId(self):
-		del self._OthrDocId
-		self._OthrDocId = None
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation185, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnId', type=DocumentIdentification17, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtPrcgSts', type=EventProcessingStatus8Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrDocId', type=DocumentIdentification34, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnId', type=DocumentIdentification17, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation185, min=1, max=1, mutex_group=None, array=False),
 	))
 

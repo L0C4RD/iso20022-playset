@@ -1,6 +1,6 @@
 from . import base_types
-import AccountOwnershipType5Code
-import GenericIdentification30
+from .GenericIdentification30 import GenericIdentification30
+from .AccountOwnershipType5Code import AccountOwnershipType5Code
 
 class OwnershipType3Choice(base_types._BaseFieldType):
 

@@ -1,24 +1,11 @@
 from . import base_types
-import ActiveOrHistoricCurrencyAndAmount
-import CreditDebitCode
-import ForeignExchangeTerms23
+from .ForeignExchangeTerms23 import ForeignExchangeTerms23
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .CreditDebitCode import CreditDebitCode
 
 class AmountAndDirection47(base_types._BaseFieldType):
 
-	__slots__ = ["_FXDtls", "_CdtDbtInd", "_Amt"]
-	@property
-	def FXDtls(self):
-		return self._FXDtls
-
-	@FXDtls.setter
-	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != auto else self.make_default("FXDtls")
-
-	@FXDtls.deleter
-	def FXDtls(self):
-		del self._FXDtls
-		self._FXDtls = None
-
+	__slots__ = ["_CdtDbtInd", "_Amt", "_FXDtls"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
@@ -45,9 +32,22 @@ class AmountAndDirection47(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def FXDtls(self):
+		return self._FXDtls
+
+	@FXDtls.setter
+	def FXDtls(self, value):
+		self._FXDtls = value if type(value) != auto else self.make_default("FXDtls")
+
+	@FXDtls.deleter
+	def FXDtls(self):
+		del self._FXDtls
+		self._FXDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms23, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms23, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,25 @@
 from . import base_types
-import OrderOriginatorEligibility1Code
-import SupplementaryData1
-import PartyIdentification100
-import Role5Choice
+from .PartyIdentification100 import PartyIdentification100
+from .Role5Choice import Role5Choice
+from .SupplementaryData1 import SupplementaryData1
+from .OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
 
 class Intermediary29(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_OrdrOrgtrElgblty", "_Role", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_Id", "_Role", "_OrdrOrgtrElgblty"]
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -19,19 +32,6 @@ class Intermediary29(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
-
-	@property
-	def OrdrOrgtrElgblty(self):
-		return self._OrdrOrgtrElgblty
-
-	@OrdrOrgtrElgblty.setter
-	def OrdrOrgtrElgblty(self, value):
-		self._OrdrOrgtrElgblty = value if type(value) != auto else self.make_default("OrdrOrgtrElgblty")
-
-	@OrdrOrgtrElgblty.deleter
-	def OrdrOrgtrElgblty(self):
-		del self._OrdrOrgtrElgblty
-		self._OrdrOrgtrElgblty = None
 
 	@property
 	def Role(self):
@@ -47,22 +47,22 @@ class Intermediary29(base_types._BaseFieldType):
 		self._Role = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def OrdrOrgtrElgblty(self):
+		return self._OrdrOrgtrElgblty
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@OrdrOrgtrElgblty.setter
+	def OrdrOrgtrElgblty(self, value):
+		self._OrdrOrgtrElgblty = value if type(value) != auto else self.make_default("OrdrOrgtrElgblty")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@OrdrOrgtrElgblty.deleter
+	def OrdrOrgtrElgblty(self):
+		del self._OrdrOrgtrElgblty
+		self._OrdrOrgtrElgblty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrOrgtrElgblty', type=OrderOriginatorEligibility1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Role', type=Role5Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Id', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Role', type=Role5Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrOrgtrElgblty', type=OrderOriginatorEligibility1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

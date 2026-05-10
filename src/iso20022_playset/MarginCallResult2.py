@@ -1,5 +1,5 @@
 from . import base_types
-import Result1
+from .Result1 import Result1
 
 class MarginCallResult2(base_types._BaseFieldType):
 

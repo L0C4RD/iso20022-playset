@@ -1,51 +1,25 @@
 from . import base_types
-import CustomerType2Code
-import TrueFalseIndicator
-import PhoneNumber
-import Max35Text
-import Max70Text
+from .Max35Text import Max35Text
+from .Max70Text import Max70Text
+from .PhoneNumber import PhoneNumber
+from .TrueFalseIndicator import TrueFalseIndicator
+from .CustomerType2Code import CustomerType2Code
 
 class Customer4(base_types._BaseFieldType):
 
-	__slots__ = ["_AuthrsdCtctPhneNb", "_CstmrRltsh", "_RefNb", "_AuthrsdCtctCpny", "_TaxRegnId", "_AuthrsdCtctNm", "_Tp", "_VIPInd"]
+	__slots__ = ["_Tp", "_AuthrsdCtctCpny", "_CstmrRltsh", "_TaxRegnId", "_AuthrsdCtctPhneNb", "_AuthrsdCtctNm", "_RefNb", "_VIPInd"]
 	@property
-	def AuthrsdCtctPhneNb(self):
-		return self._AuthrsdCtctPhneNb
+	def Tp(self):
+		return self._Tp
 
-	@AuthrsdCtctPhneNb.setter
-	def AuthrsdCtctPhneNb(self, value):
-		self._AuthrsdCtctPhneNb = value if type(value) != auto else self.make_default("AuthrsdCtctPhneNb")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@AuthrsdCtctPhneNb.deleter
-	def AuthrsdCtctPhneNb(self):
-		del self._AuthrsdCtctPhneNb
-		self._AuthrsdCtctPhneNb = None
-
-	@property
-	def CstmrRltsh(self):
-		return self._CstmrRltsh
-
-	@CstmrRltsh.setter
-	def CstmrRltsh(self, value):
-		self._CstmrRltsh = value if type(value) != auto else self.make_default("CstmrRltsh")
-
-	@CstmrRltsh.deleter
-	def CstmrRltsh(self):
-		del self._CstmrRltsh
-		self._CstmrRltsh = None
-
-	@property
-	def RefNb(self):
-		return self._RefNb
-
-	@RefNb.setter
-	def RefNb(self, value):
-		self._RefNb = value if type(value) != auto else self.make_default("RefNb")
-
-	@RefNb.deleter
-	def RefNb(self):
-		del self._RefNb
-		self._RefNb = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def AuthrsdCtctCpny(self):
@@ -61,6 +35,19 @@ class Customer4(base_types._BaseFieldType):
 		self._AuthrsdCtctCpny = None
 
 	@property
+	def CstmrRltsh(self):
+		return self._CstmrRltsh
+
+	@CstmrRltsh.setter
+	def CstmrRltsh(self, value):
+		self._CstmrRltsh = value if type(value) != auto else self.make_default("CstmrRltsh")
+
+	@CstmrRltsh.deleter
+	def CstmrRltsh(self):
+		del self._CstmrRltsh
+		self._CstmrRltsh = None
+
+	@property
 	def TaxRegnId(self):
 		return self._TaxRegnId
 
@@ -72,6 +59,19 @@ class Customer4(base_types._BaseFieldType):
 	def TaxRegnId(self):
 		del self._TaxRegnId
 		self._TaxRegnId = None
+
+	@property
+	def AuthrsdCtctPhneNb(self):
+		return self._AuthrsdCtctPhneNb
+
+	@AuthrsdCtctPhneNb.setter
+	def AuthrsdCtctPhneNb(self, value):
+		self._AuthrsdCtctPhneNb = value if type(value) != auto else self.make_default("AuthrsdCtctPhneNb")
+
+	@AuthrsdCtctPhneNb.deleter
+	def AuthrsdCtctPhneNb(self):
+		del self._AuthrsdCtctPhneNb
+		self._AuthrsdCtctPhneNb = None
 
 	@property
 	def AuthrsdCtctNm(self):
@@ -87,17 +87,17 @@ class Customer4(base_types._BaseFieldType):
 		self._AuthrsdCtctNm = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def RefNb(self):
+		return self._RefNb
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@RefNb.setter
+	def RefNb(self, value):
+		self._RefNb = value if type(value) != auto else self.make_default("RefNb")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@RefNb.deleter
+	def RefNb(self):
+		del self._RefNb
+		self._RefNb = None
 
 	@property
 	def VIPInd(self):
@@ -113,13 +113,13 @@ class Customer4(base_types._BaseFieldType):
 		self._VIPInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AuthrsdCtctPhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrRltsh', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthrsdCtctCpny', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxRegnId', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AuthrsdCtctNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CustomerType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthrsdCtctCpny', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrRltsh', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRegnId', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AuthrsdCtctPhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthrsdCtctNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VIPInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

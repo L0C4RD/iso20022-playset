@@ -1,24 +1,24 @@
 from . import base_types
-import ContentInformationType13
-import Header31
-import ATMDeviceControl3
-import ContentInformationType10
+from .ContentInformationType10 import ContentInformationType10
+from .ATMDeviceControl3 import ATMDeviceControl3
+from .Header31 import Header31
+from .ContentInformationType13 import ContentInformationType13
 
 class ATMDeviceControlV04(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMDvcCtrl", "_PrtctdATMDvcCtrl", "_SctyTrlr", "_Hdr"]
+	__slots__ = ["_SctyTrlr", "_PrtctdATMDvcCtrl", "_Hdr", "_ATMDvcCtrl"]
 	@property
-	def ATMDvcCtrl(self):
-		return self._ATMDvcCtrl
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@ATMDvcCtrl.setter
-	def ATMDvcCtrl(self, value):
-		self._ATMDvcCtrl = value if type(value) != auto else self.make_default("ATMDvcCtrl")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
 
-	@ATMDvcCtrl.deleter
-	def ATMDvcCtrl(self):
-		del self._ATMDvcCtrl
-		self._ATMDvcCtrl = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	@property
 	def PrtctdATMDvcCtrl(self):
@@ -34,19 +34,6 @@ class ATMDeviceControlV04(base_types._BaseFieldType):
 		self._PrtctdATMDvcCtrl = None
 
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
-	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -59,10 +46,23 @@ class ATMDeviceControlV04(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def ATMDvcCtrl(self):
+		return self._ATMDvcCtrl
+
+	@ATMDvcCtrl.setter
+	def ATMDvcCtrl(self, value):
+		self._ATMDvcCtrl = value if type(value) != auto else self.make_default("ATMDvcCtrl")
+
+	@ATMDvcCtrl.deleter
+	def ATMDvcCtrl(self):
+		del self._ATMDvcCtrl
+		self._ATMDvcCtrl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ATMDvcCtrl', type=ATMDeviceControl3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdATMDvcCtrl', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMDvcCtrl', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMDvcCtrl', type=ATMDeviceControl3, min=0, max=1, mutex_group=None, array=False),
 	))
 

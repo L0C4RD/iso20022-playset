@@ -1,5 +1,5 @@
 from . import base_types
-import TripartyCollateralTransactionInstructionV01
+from .TripartyCollateralTransactionInstructionV01 import TripartyCollateralTransactionInstructionV01
 
 class COLR_019_001_01():
 

@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import ExternalPurpose1Code
+from .ExternalPurpose1Code import ExternalPurpose1Code
+from .Max35Text import Max35Text
 
 class Purpose2Choice(base_types._BaseFieldType):
 

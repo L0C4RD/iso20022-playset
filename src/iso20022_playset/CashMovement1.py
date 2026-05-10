@@ -1,25 +1,12 @@
 from . import base_types
-import Charges1
-import CashAccount18
-import Max35Text
-import ActiveCurrencyAndAmount
+from .Max35Text import Max35Text
+from .CashAccount18 import CashAccount18
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from .Charges1 import Charges1
 
 class CashMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_Chrgs", "_Amt", "_MvmntId", "_TaxAmt", "_AcctDtls"]
-	@property
-	def Chrgs(self):
-		return self._Chrgs
-
-	@Chrgs.setter
-	def Chrgs(self, value):
-		self._Chrgs = value if type(value) != auto else self.make_default("Chrgs")
-
-	@Chrgs.deleter
-	def Chrgs(self):
-		del self._Chrgs
-		self._Chrgs = None
-
+	__slots__ = ["_Amt", "_Chrgs", "_MvmntId", "_TaxAmt", "_AcctDtls"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -32,6 +19,19 @@ class CashMovement1(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
+
+	@property
+	def Chrgs(self):
+		return self._Chrgs
+
+	@Chrgs.setter
+	def Chrgs(self, value):
+		self._Chrgs = value if type(value) != auto else self.make_default("Chrgs")
+
+	@Chrgs.deleter
+	def Chrgs(self):
+		del self._Chrgs
+		self._Chrgs = None
 
 	@property
 	def MvmntId(self):
@@ -73,8 +73,8 @@ class CashMovement1(base_types._BaseFieldType):
 		self._AcctDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Chrgs', type=Charges1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Chrgs', type=Charges1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=CashAccount18, min=1, max=2, mutex_group=None, array=False),

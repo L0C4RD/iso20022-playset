@@ -1,11 +1,11 @@
 from . import base_types
-import TrackFormat1Code
-import Number
-import Max140Text
+from .TrackFormat1Code import TrackFormat1Code
+from .Max140Text import Max140Text
+from .Number import Number
 
 class TrackData2(base_types._BaseFieldType):
 
-	__slots__ = ["_TrckFrmt", "_TrckNb", "_TrckVal"]
+	__slots__ = ["_TrckFrmt", "_TrckVal", "_TrckNb"]
 	@property
 	def TrckFrmt(self):
 		return self._TrckFrmt
@@ -20,19 +20,6 @@ class TrackData2(base_types._BaseFieldType):
 		self._TrckFrmt = None
 
 	@property
-	def TrckNb(self):
-		return self._TrckNb
-
-	@TrckNb.setter
-	def TrckNb(self, value):
-		self._TrckNb = value if type(value) != auto else self.make_default("TrckNb")
-
-	@TrckNb.deleter
-	def TrckNb(self):
-		del self._TrckNb
-		self._TrckNb = None
-
-	@property
 	def TrckVal(self):
 		return self._TrckVal
 
@@ -45,9 +32,22 @@ class TrackData2(base_types._BaseFieldType):
 		del self._TrckVal
 		self._TrckVal = None
 
+	@property
+	def TrckNb(self):
+		return self._TrckNb
+
+	@TrckNb.setter
+	def TrckNb(self, value):
+		self._TrckNb = value if type(value) != auto else self.make_default("TrckNb")
+
+	@TrckNb.deleter
+	def TrckNb(self):
+		del self._TrckNb
+		self._TrckNb = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TrckFrmt', type=TrackFormat1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrckNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrckVal', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrckNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,25 +1,25 @@
 from . import base_types
-import ISODate
-import RestrictedFINMax15Text
-import ProtectTransactionType3Code
-import ProtectInstructionStatus4Code
-import FinancialInstrumentQuantity31Choice
+from .ProtectTransactionType3Code import ProtectTransactionType3Code
+from .ProtectInstructionStatus4Code import ProtectInstructionStatus4Code
+from .RestrictedFINMax15Text import RestrictedFINMax15Text
+from .ISODate import ISODate
+from .FinancialInstrumentQuantity31Choice import FinancialInstrumentQuantity31Choice
 
 class ProtectInstruction8(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctDt", "_TxTp", "_TxId", "_PrtctTxSts", "_UcvrdPrtctQty"]
+	__slots__ = ["_PrtctTxSts", "_TxTp", "_TxId", "_PrtctDt", "_UcvrdPrtctQty"]
 	@property
-	def PrtctDt(self):
-		return self._PrtctDt
+	def PrtctTxSts(self):
+		return self._PrtctTxSts
 
-	@PrtctDt.setter
-	def PrtctDt(self, value):
-		self._PrtctDt = value if type(value) != auto else self.make_default("PrtctDt")
+	@PrtctTxSts.setter
+	def PrtctTxSts(self, value):
+		self._PrtctTxSts = value if type(value) != auto else self.make_default("PrtctTxSts")
 
-	@PrtctDt.deleter
-	def PrtctDt(self):
-		del self._PrtctDt
-		self._PrtctDt = None
+	@PrtctTxSts.deleter
+	def PrtctTxSts(self):
+		del self._PrtctTxSts
+		self._PrtctTxSts = None
 
 	@property
 	def TxTp(self):
@@ -48,17 +48,17 @@ class ProtectInstruction8(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def PrtctTxSts(self):
-		return self._PrtctTxSts
+	def PrtctDt(self):
+		return self._PrtctDt
 
-	@PrtctTxSts.setter
-	def PrtctTxSts(self, value):
-		self._PrtctTxSts = value if type(value) != auto else self.make_default("PrtctTxSts")
+	@PrtctDt.setter
+	def PrtctDt(self, value):
+		self._PrtctDt = value if type(value) != auto else self.make_default("PrtctDt")
 
-	@PrtctTxSts.deleter
-	def PrtctTxSts(self):
-		del self._PrtctTxSts
-		self._PrtctTxSts = None
+	@PrtctDt.deleter
+	def PrtctDt(self):
+		del self._PrtctDt
+		self._PrtctDt = None
 
 	@property
 	def UcvrdPrtctQty(self):
@@ -74,10 +74,10 @@ class ProtectInstruction8(base_types._BaseFieldType):
 		self._UcvrdPrtctQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctTxSts', type=ProtectInstructionStatus4Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=ProtectTransactionType3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=RestrictedFINMax15Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctTxSts', type=ProtectInstructionStatus4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UcvrdPrtctQty', type=FinancialInstrumentQuantity31Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import StandingOrderCriteria5
+from .Max35Text import Max35Text
+from .StandingOrderCriteria5 import StandingOrderCriteria5
 
 class StandingOrderCriteria5Choice(base_types._BaseFieldType):
 

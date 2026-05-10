@@ -1,11 +1,11 @@
 from . import base_types
-import ImpliedCurrencyAndAmount
-import DetailedAmount18
-import ActiveCurrencyCode
+from .ActiveCurrencyCode import ActiveCurrencyCode
+from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from .DetailedAmount18 import DetailedAmount18
 
 class DetailedAmount17(base_types._BaseFieldType):
 
-	__slots__ = ["_Fees", "_Dontn", "_Ccy", "_AmtToTrf"]
+	__slots__ = ["_Fees", "_Ccy", "_Dontn", "_AmtToTrf"]
 	@property
 	def Fees(self):
 		return self._Fees
@@ -20,19 +20,6 @@ class DetailedAmount17(base_types._BaseFieldType):
 		self._Fees = None
 
 	@property
-	def Dontn(self):
-		return self._Dontn
-
-	@Dontn.setter
-	def Dontn(self, value):
-		self._Dontn = value if type(value) != auto else self.make_default("Dontn")
-
-	@Dontn.deleter
-	def Dontn(self):
-		del self._Dontn
-		self._Dontn = None
-
-	@property
 	def Ccy(self):
 		return self._Ccy
 
@@ -44,6 +31,19 @@ class DetailedAmount17(base_types._BaseFieldType):
 	def Ccy(self):
 		del self._Ccy
 		self._Ccy = None
+
+	@property
+	def Dontn(self):
+		return self._Dontn
+
+	@Dontn.setter
+	def Dontn(self, value):
+		self._Dontn = value if type(value) != auto else self.make_default("Dontn")
+
+	@Dontn.deleter
+	def Dontn(self):
+		del self._Dontn
+		self._Dontn = None
 
 	@property
 	def AmtToTrf(self):
@@ -60,8 +60,8 @@ class DetailedAmount17(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Fees', type=DetailedAmount18, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Dontn', type=DetailedAmount18, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dontn', type=DetailedAmount18, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AmtToTrf', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

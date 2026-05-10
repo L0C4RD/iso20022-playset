@@ -1,5 +1,5 @@
 from . import base_types
-import ActiveCurrencyAndAmount
+from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class BalanceStatus2(base_types._BaseFieldType):
 

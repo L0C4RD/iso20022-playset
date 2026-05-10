@@ -1,7 +1,7 @@
 from . import base_types
-import Amount2Choice
-import DateAndDateTime2Choice
-import CreditDebitCode
+from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from .CreditDebitCode import CreditDebitCode
+from .Amount2Choice import Amount2Choice
 
 class Limit8(base_types._BaseFieldType):
 

@@ -1,24 +1,11 @@
 from . import base_types
-import ISODate
-import Max256Text
-import POIComponentStatus1Code
+from .POIComponentStatus1Code import POIComponentStatus1Code
+from .Max256Text import Max256Text
+from .ISODate import ISODate
 
 class PointOfInteractionComponentStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_VrsnNb", "_XpryDt"]
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
+	__slots__ = ["_VrsnNb", "_XpryDt", "_Sts"]
 	@property
 	def VrsnNb(self):
 		return self._VrsnNb
@@ -45,9 +32,22 @@ class PointOfInteractionComponentStatus3(base_types._BaseFieldType):
 		del self._XpryDt
 		self._XpryDt = None
 
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=POIComponentStatus1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VrsnNb', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=POIComponentStatus1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,13 +1,26 @@
 from . import base_types
-import InternalisationData1
-import SettlementInternaliserClientType1
-import SettlementInternaliserIdentification1
-import SettlementInternaliserTransactionType1
-import SettlementInternaliserFinancialInstrument1
+from .SettlementInternaliserFinancialInstrument1 import SettlementInternaliserFinancialInstrument1
+from .SettlementInternaliserClientType1 import SettlementInternaliserClientType1
+from .SettlementInternaliserTransactionType1 import SettlementInternaliserTransactionType1
+from .SettlementInternaliserIdentification1 import SettlementInternaliserIdentification1
+from .InternalisationData1 import InternalisationData1
 
 class SettlementInternaliser1(base_types._BaseFieldType):
 
-	__slots__ = ["_OvrllTtl", "_Id", "_ClntTp", "_TtlCshTrf", "_TxTp", "_FinInstrm"]
+	__slots__ = ["_TxTp", "_OvrllTtl", "_TtlCshTrf", "_FinInstrm", "_ClntTp", "_Id"]
+	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
 	@property
 	def OvrllTtl(self):
 		return self._OvrllTtl
@@ -20,32 +33,6 @@ class SettlementInternaliser1(base_types._BaseFieldType):
 	def OvrllTtl(self):
 		del self._OvrllTtl
 		self._OvrllTtl = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def ClntTp(self):
-		return self._ClntTp
-
-	@ClntTp.setter
-	def ClntTp(self, value):
-		self._ClntTp = value if type(value) != auto else self.make_default("ClntTp")
-
-	@ClntTp.deleter
-	def ClntTp(self):
-		del self._ClntTp
-		self._ClntTp = None
 
 	@property
 	def TtlCshTrf(self):
@@ -61,19 +48,6 @@ class SettlementInternaliser1(base_types._BaseFieldType):
 		self._TtlCshTrf = None
 
 	@property
-	def TxTp(self):
-		return self._TxTp
-
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
-
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
-
-	@property
 	def FinInstrm(self):
 		return self._FinInstrm
 
@@ -86,12 +60,38 @@ class SettlementInternaliser1(base_types._BaseFieldType):
 		del self._FinInstrm
 		self._FinInstrm = None
 
+	@property
+	def ClntTp(self):
+		return self._ClntTp
+
+	@ClntTp.setter
+	def ClntTp(self, value):
+		self._ClntTp = value if type(value) != auto else self.make_default("ClntTp")
+
+	@ClntTp.deleter
+	def ClntTp(self):
+		del self._ClntTp
+		self._ClntTp = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OvrllTtl', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=SettlementInternaliserIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntTp', type=SettlementInternaliserClientType1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlCshTrf', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=SettlementInternaliserTransactionType1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OvrllTtl', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlCshTrf', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrm', type=SettlementInternaliserFinancialInstrument1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntTp', type=SettlementInternaliserClientType1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=SettlementInternaliserIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

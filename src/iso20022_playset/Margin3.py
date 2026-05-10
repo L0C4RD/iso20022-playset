@@ -1,24 +1,11 @@
 from . import base_types
-import Margin4
-import Amount2
-import VariationMargin3
+from .Margin4 import Margin4
+from .VariationMargin3 import VariationMargin3
+from .Amount2 import Amount2
 
 class Margin3(base_types._BaseFieldType):
 
-	__slots__ = ["_VartnMrgn", "_InitlMrgn", "_OthrMrgn"]
-	@property
-	def VartnMrgn(self):
-		return self._VartnMrgn
-
-	@VartnMrgn.setter
-	def VartnMrgn(self, value):
-		self._VartnMrgn = value if type(value) != auto else self.make_default("VartnMrgn")
-
-	@VartnMrgn.deleter
-	def VartnMrgn(self):
-		del self._VartnMrgn
-		self._VartnMrgn = None
-
+	__slots__ = ["_InitlMrgn", "_VartnMrgn", "_OthrMrgn"]
 	@property
 	def InitlMrgn(self):
 		return self._InitlMrgn
@@ -31,6 +18,19 @@ class Margin3(base_types._BaseFieldType):
 	def InitlMrgn(self):
 		del self._InitlMrgn
 		self._InitlMrgn = None
+
+	@property
+	def VartnMrgn(self):
+		return self._VartnMrgn
+
+	@VartnMrgn.setter
+	def VartnMrgn(self, value):
+		self._VartnMrgn = value if type(value) != auto else self.make_default("VartnMrgn")
+
+	@VartnMrgn.deleter
+	def VartnMrgn(self):
+		del self._VartnMrgn
+		self._VartnMrgn = None
 
 	@property
 	def OthrMrgn(self):
@@ -46,8 +46,8 @@ class Margin3(base_types._BaseFieldType):
 		self._OthrMrgn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VartnMrgn', type=VariationMargin3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InitlMrgn', type=Amount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VartnMrgn', type=VariationMargin3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrMrgn', type=Margin4, min=0, max=None, mutex_group=None, array=True),
 	))
 

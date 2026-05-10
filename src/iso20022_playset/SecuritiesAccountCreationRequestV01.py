@@ -1,23 +1,23 @@
 from . import base_types
-import SystemSecuritiesAccount7
-import MessageHeader1
-import SupplementaryData1
+from .SystemSecuritiesAccount7 import SystemSecuritiesAccount7
+from .SupplementaryData1 import SupplementaryData1
+from .MessageHeader1 import MessageHeader1
 
 class SecuritiesAccountCreationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesAcct", "_SplmtryData", "_MsgHdr"]
+	__slots__ = ["_MsgHdr", "_SplmtryData", "_SctiesAcct"]
 	@property
-	def SctiesAcct(self):
-		return self._SctiesAcct
+	def MsgHdr(self):
+		return self._MsgHdr
 
-	@SctiesAcct.setter
-	def SctiesAcct(self, value):
-		self._SctiesAcct = value if type(value) != auto else self.make_default("SctiesAcct")
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
 
-	@SctiesAcct.deleter
-	def SctiesAcct(self):
-		del self._SctiesAcct
-		self._SctiesAcct = None
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class SecuritiesAccountCreationRequestV01(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def MsgHdr(self):
-		return self._MsgHdr
+	def SctiesAcct(self):
+		return self._SctiesAcct
 
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+	@SctiesAcct.setter
+	def SctiesAcct(self, value):
+		self._SctiesAcct = value if type(value) != auto else self.make_default("SctiesAcct")
 
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
+	@SctiesAcct.deleter
+	def SctiesAcct(self):
+		del self._SctiesAcct
+		self._SctiesAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesAcct', type=SystemSecuritiesAccount7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SctiesAcct', type=SystemSecuritiesAccount7, min=1, max=1, mutex_group=None, array=False),
 	))
 

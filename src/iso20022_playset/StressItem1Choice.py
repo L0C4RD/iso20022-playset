@@ -1,7 +1,7 @@
 from . import base_types
-import Strategy1
-import RiskFactor1
-import StressedProduct1
+from .Strategy1 import Strategy1
+from .StressedProduct1 import StressedProduct1
+from .RiskFactor1 import RiskFactor1
 
 class StressItem1Choice(base_types._BaseFieldType):
 

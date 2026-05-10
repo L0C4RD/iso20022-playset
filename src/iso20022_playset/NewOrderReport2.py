@@ -1,6 +1,6 @@
 from . import base_types
-import Max140Text
-import OrderData3
+from .Max140Text import Max140Text
+from .OrderData3 import OrderData3
 
 class NewOrderReport2(base_types._BaseFieldType):
 

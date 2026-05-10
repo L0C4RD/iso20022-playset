@@ -1,38 +1,25 @@
 from . import base_types
-import CountryCode
-import GenericIdentification85
-import SafekeepingPlaceTypeAndIdentification1
-import SafekeepingPlaceTypeAndText15
-import DTI2024Identifier
+from .CountryCode import CountryCode
+from .GenericIdentification85 import GenericIdentification85
+from .SafekeepingPlaceTypeAndText15 import SafekeepingPlaceTypeAndText15
+from .DTI2024Identifier import DTI2024Identifier
+from .SafekeepingPlaceTypeAndIdentification1 import SafekeepingPlaceTypeAndIdentification1
 
 class SafekeepingPlaceFormat56Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Id", "_Ctry", "_TpAndId", "_DgtlLdgrId"]
+	__slots__ = ["_TpAndId", "_Ctry", "_DgtlLdgrId", "_Id", "_Prtry"]
 	@property
-	def Prtry(self):
-		return self._Prtry
+	def TpAndId(self):
+		return self._TpAndId
 
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+	@TpAndId.setter
+	def TpAndId(self, value):
+		self._TpAndId = value if type(value) != auto else self.make_default("TpAndId")
 
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@TpAndId.deleter
+	def TpAndId(self):
+		del self._TpAndId
+		self._TpAndId = None
 
 	@property
 	def Ctry(self):
@@ -48,19 +35,6 @@ class SafekeepingPlaceFormat56Choice(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
-	def TpAndId(self):
-		return self._TpAndId
-
-	@TpAndId.setter
-	def TpAndId(self, value):
-		self._TpAndId = value if type(value) != auto else self.make_default("TpAndId")
-
-	@TpAndId.deleter
-	def TpAndId(self):
-		del self._TpAndId
-		self._TpAndId = None
-
-	@property
 	def DgtlLdgrId(self):
 		return self._DgtlLdgrId
 
@@ -73,11 +47,37 @@ class SafekeepingPlaceFormat56Choice(base_types._BaseFieldType):
 		del self._DgtlLdgrId
 		self._DgtlLdgrId = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtry', type=GenericIdentification85, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Id', type=SafekeepingPlaceTypeAndText15, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TpAndId', type=SafekeepingPlaceTypeAndIdentification1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DgtlLdgrId', type=DTI2024Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Id', type=SafekeepingPlaceTypeAndText15, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=GenericIdentification85, min=0, max=1, mutex_group=1, array=False),
 	))
 

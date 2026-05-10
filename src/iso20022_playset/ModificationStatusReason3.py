@@ -1,24 +1,11 @@
 from . import base_types
-import PartyIdentification272
-import ModificationStatusReason1Choice
-import Max105Text
+from .PartyIdentification272 import PartyIdentification272
+from .ModificationStatusReason1Choice import ModificationStatusReason1Choice
+from .Max105Text import Max105Text
 
 class ModificationStatusReason3(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_AddtlInf", "_Orgtr"]
-	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
-
+	__slots__ = ["_AddtlInf", "_Rsn", "_Orgtr"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -31,6 +18,19 @@ class ModificationStatusReason3(base_types._BaseFieldType):
 	def AddtlInf(self):
 		del self._AddtlInf
 		self._AddtlInf = None
+
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
 	def Orgtr(self):
@@ -46,8 +46,8 @@ class ModificationStatusReason3(base_types._BaseFieldType):
 		self._Orgtr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rsn', type=ModificationStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rsn', type=ModificationStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Orgtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 	))
 

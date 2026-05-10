@@ -1,6 +1,6 @@
 from . import base_types
-import Max35Text
-import PostalAddress17
+from .Max35Text import Max35Text
+from .PostalAddress17 import PostalAddress17
 
 class AutomatedTellerMachine3(base_types._BaseFieldType):
 

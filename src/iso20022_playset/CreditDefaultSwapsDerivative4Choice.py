@@ -1,24 +1,24 @@
 from . import base_types
-import CreditDefaultSwapIndex3
-import CreditDefaultSwapDerivative6
-import CreditDefaultSwapDerivative5
-import CreditDefaultSwapSingleName2
+from .CreditDefaultSwapDerivative5 import CreditDefaultSwapDerivative5
+from .CreditDefaultSwapDerivative6 import CreditDefaultSwapDerivative6
+from .CreditDefaultSwapIndex3 import CreditDefaultSwapIndex3
+from .CreditDefaultSwapSingleName2 import CreditDefaultSwapSingleName2
 
 class CreditDefaultSwapsDerivative4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDfltSwpIndx", "_CdtDfltSwpIndxDeriv", "_SnglNmCdtDfltSwp", "_SnglNmCdtDfltSwpDeriv"]
+	__slots__ = ["_SnglNmCdtDfltSwpDeriv", "_CdtDfltSwpIndxDeriv", "_CdtDfltSwpIndx", "_SnglNmCdtDfltSwp"]
 	@property
-	def CdtDfltSwpIndx(self):
-		return self._CdtDfltSwpIndx
+	def SnglNmCdtDfltSwpDeriv(self):
+		return self._SnglNmCdtDfltSwpDeriv
 
-	@CdtDfltSwpIndx.setter
-	def CdtDfltSwpIndx(self, value):
-		self._CdtDfltSwpIndx = value if type(value) != auto else self.make_default("CdtDfltSwpIndx")
+	@SnglNmCdtDfltSwpDeriv.setter
+	def SnglNmCdtDfltSwpDeriv(self, value):
+		self._SnglNmCdtDfltSwpDeriv = value if type(value) != auto else self.make_default("SnglNmCdtDfltSwpDeriv")
 
-	@CdtDfltSwpIndx.deleter
-	def CdtDfltSwpIndx(self):
-		del self._CdtDfltSwpIndx
-		self._CdtDfltSwpIndx = None
+	@SnglNmCdtDfltSwpDeriv.deleter
+	def SnglNmCdtDfltSwpDeriv(self):
+		del self._SnglNmCdtDfltSwpDeriv
+		self._SnglNmCdtDfltSwpDeriv = None
 
 	@property
 	def CdtDfltSwpIndxDeriv(self):
@@ -34,6 +34,19 @@ class CreditDefaultSwapsDerivative4Choice(base_types._BaseFieldType):
 		self._CdtDfltSwpIndxDeriv = None
 
 	@property
+	def CdtDfltSwpIndx(self):
+		return self._CdtDfltSwpIndx
+
+	@CdtDfltSwpIndx.setter
+	def CdtDfltSwpIndx(self, value):
+		self._CdtDfltSwpIndx = value if type(value) != auto else self.make_default("CdtDfltSwpIndx")
+
+	@CdtDfltSwpIndx.deleter
+	def CdtDfltSwpIndx(self):
+		del self._CdtDfltSwpIndx
+		self._CdtDfltSwpIndx = None
+
+	@property
 	def SnglNmCdtDfltSwp(self):
 		return self._SnglNmCdtDfltSwp
 
@@ -46,23 +59,10 @@ class CreditDefaultSwapsDerivative4Choice(base_types._BaseFieldType):
 		del self._SnglNmCdtDfltSwp
 		self._SnglNmCdtDfltSwp = None
 
-	@property
-	def SnglNmCdtDfltSwpDeriv(self):
-		return self._SnglNmCdtDfltSwpDeriv
-
-	@SnglNmCdtDfltSwpDeriv.setter
-	def SnglNmCdtDfltSwpDeriv(self, value):
-		self._SnglNmCdtDfltSwpDeriv = value if type(value) != auto else self.make_default("SnglNmCdtDfltSwpDeriv")
-
-	@SnglNmCdtDfltSwpDeriv.deleter
-	def SnglNmCdtDfltSwpDeriv(self):
-		del self._SnglNmCdtDfltSwpDeriv
-		self._SnglNmCdtDfltSwpDeriv = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtDfltSwpIndx', type=CreditDefaultSwapIndex3, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CdtDfltSwpIndxDeriv', type=CreditDefaultSwapDerivative5, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SnglNmCdtDfltSwp', type=CreditDefaultSwapSingleName2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SnglNmCdtDfltSwpDeriv', type=CreditDefaultSwapDerivative6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CdtDfltSwpIndxDeriv', type=CreditDefaultSwapDerivative5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CdtDfltSwpIndx', type=CreditDefaultSwapIndex3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SnglNmCdtDfltSwp', type=CreditDefaultSwapSingleName2, min=0, max=1, mutex_group=1, array=False),
 	))
 

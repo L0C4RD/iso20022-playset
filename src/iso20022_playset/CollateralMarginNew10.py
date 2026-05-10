@@ -1,82 +1,30 @@
 from . import base_types
-import ISODate
-import Max140Text
-import Max52Text
-import ISODateTime
-import Counterparty39
-import SupplementaryData1
-import ContractModification3
-import ReconciliationFlag2
-import PostedMarginOrCollateral4
-import ReceivedMarginOrCollateral4
+from .ReceivedMarginOrCollateral4 import ReceivedMarginOrCollateral4
+from .ReconciliationFlag2 import ReconciliationFlag2
+from .ContractModification3 import ContractModification3
+from .ISODate import ISODate
+from .PostedMarginOrCollateral4 import PostedMarginOrCollateral4
+from .Max140Text import Max140Text
+from .SupplementaryData1 import SupplementaryData1
+from .Max52Text import Max52Text
+from .Counterparty39 import Counterparty39
+from .ISODateTime import ISODateTime
 
 class CollateralMarginNew10(base_types._BaseFieldType):
 
-	__slots__ = ["_CollPrtflId", "_RcvdMrgnOrColl", "_SplmtryData", "_RptgDtTm", "_CtrPty", "_PstdMrgnOrColl", "_RcncltnFlg", "_TechRcrdId", "_CtrctMod", "_EvtDt"]
+	__slots__ = ["_RcncltnFlg", "_PstdMrgnOrColl", "_TechRcrdId", "_RptgDtTm", "_RcvdMrgnOrColl", "_CtrctMod", "_SplmtryData", "_EvtDt", "_CollPrtflId", "_CtrPty"]
 	@property
-	def CollPrtflId(self):
-		return self._CollPrtflId
+	def RcncltnFlg(self):
+		return self._RcncltnFlg
 
-	@CollPrtflId.setter
-	def CollPrtflId(self, value):
-		self._CollPrtflId = value if type(value) != auto else self.make_default("CollPrtflId")
+	@RcncltnFlg.setter
+	def RcncltnFlg(self, value):
+		self._RcncltnFlg = value if type(value) != auto else self.make_default("RcncltnFlg")
 
-	@CollPrtflId.deleter
-	def CollPrtflId(self):
-		del self._CollPrtflId
-		self._CollPrtflId = None
-
-	@property
-	def RcvdMrgnOrColl(self):
-		return self._RcvdMrgnOrColl
-
-	@RcvdMrgnOrColl.setter
-	def RcvdMrgnOrColl(self, value):
-		self._RcvdMrgnOrColl = value if type(value) != auto else self.make_default("RcvdMrgnOrColl")
-
-	@RcvdMrgnOrColl.deleter
-	def RcvdMrgnOrColl(self):
-		del self._RcvdMrgnOrColl
-		self._RcvdMrgnOrColl = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def RptgDtTm(self):
-		return self._RptgDtTm
-
-	@RptgDtTm.setter
-	def RptgDtTm(self, value):
-		self._RptgDtTm = value if type(value) != auto else self.make_default("RptgDtTm")
-
-	@RptgDtTm.deleter
-	def RptgDtTm(self):
-		del self._RptgDtTm
-		self._RptgDtTm = None
-
-	@property
-	def CtrPty(self):
-		return self._CtrPty
-
-	@CtrPty.setter
-	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != auto else self.make_default("CtrPty")
-
-	@CtrPty.deleter
-	def CtrPty(self):
-		del self._CtrPty
-		self._CtrPty = None
+	@RcncltnFlg.deleter
+	def RcncltnFlg(self):
+		del self._RcncltnFlg
+		self._RcncltnFlg = None
 
 	@property
 	def PstdMrgnOrColl(self):
@@ -92,19 +40,6 @@ class CollateralMarginNew10(base_types._BaseFieldType):
 		self._PstdMrgnOrColl = None
 
 	@property
-	def RcncltnFlg(self):
-		return self._RcncltnFlg
-
-	@RcncltnFlg.setter
-	def RcncltnFlg(self, value):
-		self._RcncltnFlg = value if type(value) != auto else self.make_default("RcncltnFlg")
-
-	@RcncltnFlg.deleter
-	def RcncltnFlg(self):
-		del self._RcncltnFlg
-		self._RcncltnFlg = None
-
-	@property
 	def TechRcrdId(self):
 		return self._TechRcrdId
 
@@ -116,6 +51,32 @@ class CollateralMarginNew10(base_types._BaseFieldType):
 	def TechRcrdId(self):
 		del self._TechRcrdId
 		self._TechRcrdId = None
+
+	@property
+	def RptgDtTm(self):
+		return self._RptgDtTm
+
+	@RptgDtTm.setter
+	def RptgDtTm(self, value):
+		self._RptgDtTm = value if type(value) != auto else self.make_default("RptgDtTm")
+
+	@RptgDtTm.deleter
+	def RptgDtTm(self):
+		del self._RptgDtTm
+		self._RptgDtTm = None
+
+	@property
+	def RcvdMrgnOrColl(self):
+		return self._RcvdMrgnOrColl
+
+	@RcvdMrgnOrColl.setter
+	def RcvdMrgnOrColl(self, value):
+		self._RcvdMrgnOrColl = value if type(value) != auto else self.make_default("RcvdMrgnOrColl")
+
+	@RcvdMrgnOrColl.deleter
+	def RcvdMrgnOrColl(self):
+		del self._RcvdMrgnOrColl
+		self._RcvdMrgnOrColl = None
 
 	@property
 	def CtrctMod(self):
@@ -131,6 +92,19 @@ class CollateralMarginNew10(base_types._BaseFieldType):
 		self._CtrctMod = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def EvtDt(self):
 		return self._EvtDt
 
@@ -143,16 +117,42 @@ class CollateralMarginNew10(base_types._BaseFieldType):
 		del self._EvtDt
 		self._EvtDt = None
 
+	@property
+	def CollPrtflId(self):
+		return self._CollPrtflId
+
+	@CollPrtflId.setter
+	def CollPrtflId(self, value):
+		self._CollPrtflId = value if type(value) != auto else self.make_default("CollPrtflId")
+
+	@CollPrtflId.deleter
+	def CollPrtflId(self):
+		del self._CollPrtflId
+		self._CollPrtflId = None
+
+	@property
+	def CtrPty(self):
+		return self._CtrPty
+
+	@CtrPty.setter
+	def CtrPty(self, value):
+		self._CtrPty = value if type(value) != auto else self.make_default("CtrPty")
+
+	@CtrPty.deleter
+	def CtrPty(self):
+		del self._CtrPty
+		self._CtrPty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollPrtflId', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcvdMrgnOrColl', type=ReceivedMarginOrCollateral4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptgDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPty', type=Counterparty39, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstdMrgnOrColl', type=PostedMarginOrCollateral4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnFlg', type=ReconciliationFlag2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstdMrgnOrColl', type=PostedMarginOrCollateral4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvdMrgnOrColl', type=ReceivedMarginOrCollateral4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctMod', type=ContractModification3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='EvtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollPrtflId', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPty', type=Counterparty39, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 from . import base_types
-import UnitOfMeasure8Choice
-import QuantityOrTerm1Choice
-import LongFraction19DecimalNumber
+from .QuantityOrTerm1Choice import QuantityOrTerm1Choice
+from .UnitOfMeasure8Choice import UnitOfMeasure8Choice
+from .LongFraction19DecimalNumber import LongFraction19DecimalNumber
 
 class NotionalQuantity9(base_types._BaseFieldType):
 

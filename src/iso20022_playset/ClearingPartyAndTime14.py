@@ -1,7 +1,7 @@
 from . import base_types
-import OrganisationIdentification15Choice
-import Max52Text
-import ISODateTime
+from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from .ISODateTime import ISODateTime
+from .Max52Text import Max52Text
 
 class ClearingPartyAndTime14(base_types._BaseFieldType):
 

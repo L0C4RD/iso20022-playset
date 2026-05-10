@@ -1,10 +1,23 @@
 from . import base_types
-import RestrictedFINXMax16Text
-import CorporateActionEventType115Choice
+from .CorporateActionEventType115Choice import CorporateActionEventType115Choice
+from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class CorporateActionGeneralInformation186(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtTp", "_OffclCorpActnEvtId", "_ClssActnNb", "_CorpActnEvtId"]
+	__slots__ = ["_CorpActnEvtId", "_EvtTp", "_OffclCorpActnEvtId", "_ClssActnNb"]
+	@property
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
+
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
+
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
+
 	@property
 	def EvtTp(self):
 		return self._EvtTp
@@ -44,23 +57,10 @@ class CorporateActionGeneralInformation186(base_types._BaseFieldType):
 		del self._ClssActnNb
 		self._ClssActnNb = None
 
-	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
-
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != auto else self.make_default("CorpActnEvtId")
-
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType115Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssActnNb', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

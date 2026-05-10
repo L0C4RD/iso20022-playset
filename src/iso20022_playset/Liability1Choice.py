@@ -1,6 +1,6 @@
 from . import base_types
-import Liability1Code
-import GenericIdentification47
+from .GenericIdentification47 import GenericIdentification47
+from .Liability1Code import Liability1Code
 
 class Liability1Choice(base_types._BaseFieldType):
 
