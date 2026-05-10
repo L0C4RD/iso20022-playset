@@ -1,0 +1,113 @@
+from . import base_types
+from .Number import Number
+from .TypeOfPrice46Choice import TypeOfPrice46Choice
+from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from .PriceMethod1Code import PriceMethod1Code
+from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from .TaxableIncomePerShareCalculated2Choice import TaxableIncomePerShareCalculated2Choice
+from .PriceValue1 import PriceValue1
+
+class UnitPrice23(base_types._BaseFieldType):
+
+	__slots__ = ["_AcrdIntrstNAV", "_Tp", "_Val", "_TaxblIncmPerShrClctd", "_PricMtd", "_TaxblIncmPerShr", "_NbOfDaysAcrd"]
+	@property
+	def AcrdIntrstNAV(self):
+		return self._AcrdIntrstNAV
+
+	@AcrdIntrstNAV.setter
+	def AcrdIntrstNAV(self, value):
+		self._AcrdIntrstNAV = value if type(value) != base_types.auto else self.make_default("AcrdIntrstNAV")
+
+	@AcrdIntrstNAV.deleter
+	def AcrdIntrstNAV(self):
+		del self._AcrdIntrstNAV
+		self._AcrdIntrstNAV = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
+
+	@property
+	def TaxblIncmPerShrClctd(self):
+		return self._TaxblIncmPerShrClctd
+
+	@TaxblIncmPerShrClctd.setter
+	def TaxblIncmPerShrClctd(self, value):
+		self._TaxblIncmPerShrClctd = value if type(value) != base_types.auto else self.make_default("TaxblIncmPerShrClctd")
+
+	@TaxblIncmPerShrClctd.deleter
+	def TaxblIncmPerShrClctd(self):
+		del self._TaxblIncmPerShrClctd
+		self._TaxblIncmPerShrClctd = None
+
+	@property
+	def PricMtd(self):
+		return self._PricMtd
+
+	@PricMtd.setter
+	def PricMtd(self, value):
+		self._PricMtd = value if type(value) != base_types.auto else self.make_default("PricMtd")
+
+	@PricMtd.deleter
+	def PricMtd(self):
+		del self._PricMtd
+		self._PricMtd = None
+
+	@property
+	def TaxblIncmPerShr(self):
+		return self._TaxblIncmPerShr
+
+	@TaxblIncmPerShr.setter
+	def TaxblIncmPerShr(self, value):
+		self._TaxblIncmPerShr = value if type(value) != base_types.auto else self.make_default("TaxblIncmPerShr")
+
+	@TaxblIncmPerShr.deleter
+	def TaxblIncmPerShr(self):
+		del self._TaxblIncmPerShr
+		self._TaxblIncmPerShr = None
+
+	@property
+	def NbOfDaysAcrd(self):
+		return self._NbOfDaysAcrd
+
+	@NbOfDaysAcrd.setter
+	def NbOfDaysAcrd(self, value):
+		self._NbOfDaysAcrd = value if type(value) != base_types.auto else self.make_default("NbOfDaysAcrd")
+
+	@NbOfDaysAcrd.deleter
+	def NbOfDaysAcrd(self):
+		del self._NbOfDaysAcrd
+		self._NbOfDaysAcrd = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcrdIntrstNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TypeOfPrice46Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=PriceValue1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxblIncmPerShrClctd', type=TaxableIncomePerShareCalculated2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricMtd', type=PriceMethod1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxblIncmPerShr', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfDaysAcrd', type=Number, min=0, max=1, mutex_group=None, array=False),
+	))
+

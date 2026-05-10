@@ -1,0 +1,68 @@
+from . import base_types
+from .PercentageRate import PercentageRate
+from .Number import Number
+from .AmountAndDirection106 import AmountAndDirection106
+from .BaseOneRate import BaseOneRate
+
+class SecuritiesTransactionPrice13Choice(base_types._BaseFieldType):
+
+	__slots__ = ["_MntryVal", "_Pctg", "_Dcml", "_BsisPtSprd"]
+	@property
+	def MntryVal(self):
+		return self._MntryVal
+
+	@MntryVal.setter
+	def MntryVal(self, value):
+		self._MntryVal = value if type(value) != base_types.auto else self.make_default("MntryVal")
+
+	@MntryVal.deleter
+	def MntryVal(self):
+		del self._MntryVal
+		self._MntryVal = None
+
+	@property
+	def Pctg(self):
+		return self._Pctg
+
+	@Pctg.setter
+	def Pctg(self, value):
+		self._Pctg = value if type(value) != base_types.auto else self.make_default("Pctg")
+
+	@Pctg.deleter
+	def Pctg(self):
+		del self._Pctg
+		self._Pctg = None
+
+	@property
+	def Dcml(self):
+		return self._Dcml
+
+	@Dcml.setter
+	def Dcml(self, value):
+		self._Dcml = value if type(value) != base_types.auto else self.make_default("Dcml")
+
+	@Dcml.deleter
+	def Dcml(self):
+		del self._Dcml
+		self._Dcml = None
+
+	@property
+	def BsisPtSprd(self):
+		return self._BsisPtSprd
+
+	@BsisPtSprd.setter
+	def BsisPtSprd(self, value):
+		self._BsisPtSprd = value if type(value) != base_types.auto else self.make_default("BsisPtSprd")
+
+	@BsisPtSprd.deleter
+	def BsisPtSprd(self):
+		del self._BsisPtSprd
+		self._BsisPtSprd = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='MntryVal', type=AmountAndDirection106, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Dcml', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BsisPtSprd', type=Number, min=0, max=1, mutex_group=1, array=False),
+	))
+

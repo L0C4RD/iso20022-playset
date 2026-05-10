@@ -1,0 +1,53 @@
+from . import base_types
+from .ContentInformationType37 import ContentInformationType37
+from .Header70 import Header70
+from .AcceptorCancellationResponse13 import AcceptorCancellationResponse13
+
+class AcceptorCancellationResponseV13(base_types._BaseFieldType):
+
+	__slots__ = ["_SctyTrlr", "_CxlRspn", "_Hdr"]
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
+	@property
+	def CxlRspn(self):
+		return self._CxlRspn
+
+	@CxlRspn.setter
+	def CxlRspn(self, value):
+		self._CxlRspn = value if type(value) != base_types.auto else self.make_default("CxlRspn")
+
+	@CxlRspn.deleter
+	def CxlRspn(self):
+		del self._CxlRspn
+		self._CxlRspn = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRspn', type=AcceptorCancellationResponse13, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
+	))
+

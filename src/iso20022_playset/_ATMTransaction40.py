@@ -1,0 +1,83 @@
+from . import base_types
+from .TransactionIdentifier3 import TransactionIdentifier3
+from .Max35Text import Max35Text
+from .FailureReason8Code import FailureReason8Code
+from .Max70Text import Max70Text
+from .CurrencyAndAmount import CurrencyAndAmount
+
+class ATMTransaction40(base_types._BaseFieldType):
+
+	__slots__ = ["_ElctrncPrsBal", "_RcncltnId", "_XcptnDtl", "_Xcptn", "_TxId"]
+	@property
+	def ElctrncPrsBal(self):
+		return self._ElctrncPrsBal
+
+	@ElctrncPrsBal.setter
+	def ElctrncPrsBal(self, value):
+		self._ElctrncPrsBal = value if type(value) != base_types.auto else self.make_default("ElctrncPrsBal")
+
+	@ElctrncPrsBal.deleter
+	def ElctrncPrsBal(self):
+		del self._ElctrncPrsBal
+		self._ElctrncPrsBal = None
+
+	@property
+	def RcncltnId(self):
+		return self._RcncltnId
+
+	@RcncltnId.setter
+	def RcncltnId(self, value):
+		self._RcncltnId = value if type(value) != base_types.auto else self.make_default("RcncltnId")
+
+	@RcncltnId.deleter
+	def RcncltnId(self):
+		del self._RcncltnId
+		self._RcncltnId = None
+
+	@property
+	def XcptnDtl(self):
+		return self._XcptnDtl
+
+	@XcptnDtl.setter
+	def XcptnDtl(self, value):
+		self._XcptnDtl = value if type(value) != base_types.auto else self.make_default("XcptnDtl")
+
+	@XcptnDtl.deleter
+	def XcptnDtl(self):
+		del self._XcptnDtl
+		self._XcptnDtl = None
+
+	@property
+	def Xcptn(self):
+		return self._Xcptn
+
+	@Xcptn.setter
+	def Xcptn(self, value):
+		self._Xcptn = value if type(value) != base_types.auto else self.make_default("Xcptn")
+
+	@Xcptn.deleter
+	def Xcptn(self):
+		del self._Xcptn
+		self._Xcptn = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='ElctrncPrsBal', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XcptnDtl', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Xcptn', type=FailureReason8Code, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=0, max=1, mutex_group=None, array=False),
+	))
+

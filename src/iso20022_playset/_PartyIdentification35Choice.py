@@ -1,0 +1,38 @@
+from . import base_types
+from .GenericIdentification29 import GenericIdentification29
+from .AnyBICIdentifier import AnyBICIdentifier
+
+class PartyIdentification35Choice(base_types._BaseFieldType):
+
+	__slots__ = ["_BIC", "_PrtryId"]
+	@property
+	def BIC(self):
+		return self._BIC
+
+	@BIC.setter
+	def BIC(self, value):
+		self._BIC = value if type(value) != base_types.auto else self.make_default("BIC")
+
+	@BIC.deleter
+	def BIC(self):
+		del self._BIC
+		self._BIC = None
+
+	@property
+	def PrtryId(self):
+		return self._PrtryId
+
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='BIC', type=AnyBICIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtryId', type=GenericIdentification29, min=0, max=1, mutex_group=1, array=False),
+	))
+

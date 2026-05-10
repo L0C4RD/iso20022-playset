@@ -1,0 +1,38 @@
+from . import base_types
+from .NotReported1Code import NotReported1Code
+from .DateTimePeriod1 import DateTimePeriod1
+
+class DateTimeOrBlankQuery1Choice(base_types._BaseFieldType):
+
+	__slots__ = ["_Rg", "_NotRptd"]
+	@property
+	def Rg(self):
+		return self._Rg
+
+	@Rg.setter
+	def Rg(self, value):
+		self._Rg = value if type(value) != base_types.auto else self.make_default("Rg")
+
+	@Rg.deleter
+	def Rg(self):
+		del self._Rg
+		self._Rg = None
+
+	@property
+	def NotRptd(self):
+		return self._NotRptd
+
+	@NotRptd.setter
+	def NotRptd(self, value):
+		self._NotRptd = value if type(value) != base_types.auto else self.make_default("NotRptd")
+
+	@NotRptd.deleter
+	def NotRptd(self):
+		del self._NotRptd
+		self._NotRptd = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='Rg', type=DateTimePeriod1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=1, array=False),
+	))
+
