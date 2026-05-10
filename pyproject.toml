@@ -10,7 +10,7 @@ authors = [
   { name="Ed Wilson-Shah", email="L0C4RD@users.noreply.github.com" },
 ]
 description = "Easy, intuitive module for ISO20022 message experimentation."
-readme = "README.md"
+readme = "readme.md"
 requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
